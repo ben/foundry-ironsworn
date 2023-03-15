@@ -20,7 +20,7 @@ import type { ExtractPropTypes } from 'vue'
 import type FontIcon from './font-icon.vue'
 import type IronIcon from './iron-icon.vue'
 
-export function enumHas(enumLike: object, value: string) {
+export function enumHas(enumLike: object, value: string | number) {
 	return Object.values(enumLike).includes(value)
 }
 
@@ -74,6 +74,107 @@ export interface IconPropsCommon {
 	size?: string
 	label?: string
 	role?: string
+}
+
+export interface IronIconProps extends IconPropsCommon {
+	name: IronswornIconName
+	/**
+	 * The color to use for the SVG fill property.
+	 * @default 'currentColor'
+	 */
+	color?: FillProperty
+	/**
+	 * The prefix of the sprite map. You probably don't need to change this.
+	 * @default 'ironsworn'
+	 */
+	prefix?: string
+	size?: string
+	disabled?: boolean
+	stroke?: {
+		width: StrokeWidthProperty<any>
+		color: ColorProperty
+	}
+}
+
+export interface FontAwesomeIconProps extends IconPropsCommon {
+	/**
+	 * @default `span`
+	 */
+	el?: any
+	name: FontAwesome.Name
+	family?: FontAwesome.Family
+	/**
+	 * @remarks FVTT doesn't actually provide the FA6 sharp icons, so this shouldn't be used yet.
+	 */
+	style?: FontAwesome.Style
+	/**
+	 * Unlabelled content is inaccessible, and will be rendered indicating as such so that screen readers don't try to read icon font glyphs.
+	 *
+	 * This can also be omitted if a tooltip or other label is provided for a parent component, like with most buttons.
+	 */
+	label?: string
+	/**
+	 * @see
+	 */
+	border?: boolean
+	/**
+	 * NYI
+	 */
+	borderOptions?: FontAwesome.Border.Options
+	/**
+	 * Rether to render the item at a fixed width.
+	 * @default true
+	 */
+	fw?: boolean // fa-fw
+	/**
+	 * For duotone icons only.
+	 */
+	'swap-opacity'?: boolean // fa-swap-opacity
+	/**
+	 * @see https://fontawesome.com/docs/web/style/lists
+	 */
+	li?: boolean
+	inverse?: boolean
+	rotate?: FontAwesome.Rotate
+	size?: FontAwesome.Size
+	pull?: FontAwesome.Pull
+	animation?: FontAwesome.Animation[]
+	/**
+	 * NYI
+	 */
+	animationOptions?: FontAwesome.Animation.Options
+	/**
+	 * Used with {@link FontIconStack}.
+	 */
+	stack?: 'stack-1x' | 'stack-2x'
+}
+
+/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
+// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
+export function parseClassesToFaProps(cssClasses: string) {
+	const props: Partial<FontAwesomeIconProps> & { class?: string[] } = {}
+	cssClasses.split(' ').forEach((clsName) => {
+		switch (true) {
+			case enumHas(FontAwesome.Style, clsName):
+				props.style = clsName as FontAwesome.Style
+				break
+			case enumHas(FontAwesome.Family, clsName):
+				props.family = clsName as FontAwesome.Family
+				break
+			case enumHas(FontAwesome.Rotate, clsName):
+				props.rotate = clsName as FontAwesome.Rotate
+				break
+			case enumHas(FontAwesome.Animation, clsName):
+				if (!props.animation) props.animation = []
+				props.animation.push(clsName as FontAwesome.Animation)
+				break
+			default:
+				if (!props.class) props.class = []
+				props.class.push(clsName)
+				break
+		}
+	})
+	return props
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -3979,34 +4080,4 @@ export namespace FontAwesome {
 		| 'korvue'
 		| 'pix'
 		| 'steam-symbol'
-}
-
-/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
-// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
-export function parseClassesToFaProps(cssClasses: string) {
-	const props: Partial<ExtractPropTypes<typeof FontIcon>> & {
-		class?: string[]
-	} = {}
-	cssClasses.split(' ').forEach((clsName) => {
-		switch (true) {
-			case enumHas(FontAwesome.Style, clsName):
-				props.style = clsName
-				break
-			case enumHas(FontAwesome.Family, clsName):
-				props.family = clsName
-				break
-			case enumHas(FontAwesome.Rotate, clsName):
-				props.rotate = clsName
-				break
-			case enumHas(FontAwesome.Animation, clsName):
-				if (!props.animation) props.animation = []
-				props.animation.push(clsName)
-				break
-			default:
-				if (!props.class) props.class = []
-				props.class.push(clsName)
-				break
-		}
-	})
-	return props
 }

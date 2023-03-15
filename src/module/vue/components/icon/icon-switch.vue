@@ -24,7 +24,12 @@ import FontIcon from 'component:icon/font-icon.vue'
 import { omit } from 'lodash-es'
 import type { ComputedRef, ExtractPropTypes } from 'vue'
 import { computed, TransitionGroup } from 'vue'
-import type { IconSwitchState, IronswornIconId } from './icon-common'
+import type {
+	FontAwesomeIconProps,
+	IconSwitchState,
+	IronIconProps,
+	IronswornIconId
+} from './icon-common'
 import { parseClassesToFaProps } from './icon-common'
 
 type IronBtnProps = ExtractPropTypes<typeof IronBtn>
@@ -64,17 +69,17 @@ const ironBtnProps: ComputedRef<IronBtnProps> = computed(() => {
 
 function getIconOptions(iconState: IconSwitchState) {
 	const [set, name] = iconState.icon.split(/:/)
-	let props: (typeof iconState)['icon'] extends IronswornIconId
-		? ExtractPropTypes<typeof IronIcon>
-		: ExtractPropTypes<typeof FontIcon> = {
-		name,
+	let props: ((typeof iconState)['icon'] extends IronswornIconId
+		? IronIconProps
+		: FontAwesomeIconProps) & { class?: string[] } = {
+		name: name as any,
 		...(iconState.props ?? {})
 	}
 
 	if (set === 'fa' && iconState.class) {
 		props = foundry.utils.mergeObject(
 			props,
-			parseClassesToFaProps(iconState.class ?? '')
+			parseClassesToFaProps(iconState.class ?? '') as any
 		)
 	}
 

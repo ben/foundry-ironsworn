@@ -19,32 +19,16 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import type { ColorProperty, FillProperty, StrokeWidthProperty } from 'csstype'
-import type { IconPropsCommon, IronswornIconName } from './icon-common'
-
-interface Props extends IconPropsCommon {
-	name: IronswornIconName
-	/**
-	 * The color to use for the SVG fill property.
-	 * @default 'currentColor'
-	 */
-	color?: FillProperty
-	/**
-	 * The prefix of the sprite map. You probably don't need to change this.
-	 * @default 'ironsworn'
-	 */
-	prefix?: string
-	size?: string
-	disabled?: boolean
-	stroke?: {
-		width: StrokeWidthProperty<any>
-		color: ColorProperty
-	}
-}
+import type {
+	IconPropsCommon,
+	IronIconProps,
+	IronswornIconName
+} from './icon-common'
 
 /**
  * Displays a custom SVG icon from the sprite sheet. Anything in `system/assets/icons` is automatically included as a sprite.
  */
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<IronIconProps>(), {
 	prefix: 'ironsworn',
 	size: '1em',
 	color: 'currentColor'
