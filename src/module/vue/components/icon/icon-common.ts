@@ -3981,7 +3981,9 @@ export namespace FontAwesome {
 /* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
 // TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
 export function parseClassesToFaProps(cssClasses: string) {
-	const props: Partial<ExtractPropTypes<typeof FontIcon>> = {}
+	const props: Partial<ExtractPropTypes<typeof FontIcon>> & {
+		class?: string[]
+	} = {}
 	cssClasses.split(' ').forEach((clsName) => {
 		switch (true) {
 			case enumHas(FontAwesome.Style, clsName):

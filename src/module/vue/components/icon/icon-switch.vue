@@ -18,16 +18,14 @@
 
 <script lang="ts" setup>
 import IronBtn from 'component:buttons/iron-btn.vue'
-import type {
-	IconSwitchState,
-	IronswornIconId
-} from 'component:icon/icon-common'
-import { parseClassesToFaProps } from 'component:icon/icon-common'
+
 import IronIcon from 'component:icon/iron-icon.vue'
 import FontIcon from 'component:icon/font-icon.vue'
 import { omit } from 'lodash-es'
 import type { ComputedRef, ExtractPropTypes } from 'vue'
 import { computed, TransitionGroup } from 'vue'
+import type { IconSwitchState, IronswornIconId } from './icon-common'
+import { parseClassesToFaProps } from './icon-common'
 
 type IronBtnProps = ExtractPropTypes<typeof IronBtn>
 interface Props

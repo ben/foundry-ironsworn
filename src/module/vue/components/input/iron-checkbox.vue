@@ -20,10 +20,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { IconSwitchState } from 'component:icon/icon-common'
 import IconSwitch from 'component:icon/icon-switch.vue'
 import type { ExtractPropTypes } from 'vue'
 import { computed, useCssModule, ref } from 'vue'
+import type { IconSwitchState } from '../icon/icon-common'
 
 /**
  * An accessible icon-based checkbox.
