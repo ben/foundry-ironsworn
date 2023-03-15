@@ -15,7 +15,7 @@
 </style>
 
 <script lang="ts" setup>
-import ConditionCheckbox from './condition-checkbox.vue'
+import ConditionCheckbox from './impact-checkbox.vue'
 
 type ImpactData = { globalHint?: boolean; name: string }
 

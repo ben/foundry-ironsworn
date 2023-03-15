@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import ConditionCheckbox from './condition-checkbox.vue'
+import ConditionCheckbox from './impact-checkbox.vue'
 import CustomConditionCheckbox from './custom-condition-checkbox.vue'
 </script>
 
