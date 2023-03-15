@@ -1,5 +1,6 @@
 import { marked } from 'marked'
 import type { Plugin } from 'vue'
+import { capitalize } from '../helpers/util'
 import { formatRollPlusStat } from '../rolls/ironsworn-roll-message.js'
 import { $EnrichHtmlKey, $EnrichMarkdownKey } from './provisions'
 
@@ -46,10 +47,7 @@ export const IronswornVuePlugin: Plugin = {
 				? game.i18n.format(stringId, data)
 				: game.i18n.localize(stringId)
 		app.config.globalProperties.$concat = (...args) => args.join('')
-		app.config.globalProperties.$capitalize = function (txt) {
-			const [first, ...rest] = txt
-			return `${first.toUpperCase()}${rest.join('')}`
-		}
+		app.config.globalProperties.$capitalize = capitalize
 		app.config.globalProperties.$enrichHtml = enrichHtml
 		app.provide($EnrichHtmlKey, enrichHtml)
 
