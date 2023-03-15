@@ -89,7 +89,7 @@ const iconSwitchProps = computed<ExtractPropTypes<typeof IconSwitch>>(() => {
 	return { icons, transitionName: props.transitionName }
 })
 
-function toggle(event) {
+function toggle() {
 	$emit('input', !props.checked)
 	$emit('change', !props.checked)
 }
@@ -125,6 +125,7 @@ defineExpose({
 		:local(.icon) {
 			color: var(--ironsworn-color-warm);
 		}
+		filter: drop-shadow(0 0 5px var(--ironsworn-color-cool));
 	}
 	&[aria-checked='true'] {
 		:local(.icon) {
@@ -137,15 +138,18 @@ defineExpose({
 		cursor: pointer;
 
 		&:hover {
-			:local(.icon) {
-				&[data-icon-state='checked'] {
-					// hover while unchecked: preview checked state
-					opacity: 0.5;
-				}
-			}
 			:local(.checkbox) {
 				&:not(:hover) {
 					@include clickable.textHover;
+				}
+			}
+
+			&[aria-checked='false'] {
+				:local(.icon) {
+					&[data-icon-state='checked'] {
+						// hover while unchecked: preview checked state
+						opacity: 0.5;
+					}
 				}
 			}
 		}

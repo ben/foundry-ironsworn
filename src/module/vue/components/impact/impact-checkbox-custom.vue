@@ -1,5 +1,5 @@
 <template>
-	<ImpactCheckbox :name="debilitykey">
+	<ImpactCheckbox :name="debilitykey" :type="type">
 		<template #default="{ id }">
 			<input
 				:id="id"
@@ -19,7 +19,10 @@ import { computed, inject } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
-const props = defineProps<{ debilitykey: string }>()
+const props = defineProps<{
+	debilitykey: string
+	type: 'debility' | 'impact'
+}>()
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)

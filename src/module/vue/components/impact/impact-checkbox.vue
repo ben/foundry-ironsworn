@@ -10,7 +10,7 @@
 		@change="input($event)">
 		<slot name="default" :id="`label_${baseId}`">
 			<span :id="`label_${baseId}`">
-				{{ $t(`IRONSWORN.${$capitalize(name)}`) }}
+				{{ $t(`IRONSWORN.${type.toUpperCase()}.${$capitalize(name)}`) }}
 			</span>
 		</slot>
 	</IronCheckbox>
@@ -32,6 +32,7 @@ const baseId = computed(() => `condition_${props.name}_${actor.value._id}`)
 
 const props = defineProps<{
 	name: string
+	type: 'impact' | 'debility'
 	global?: boolean
 	globalHint?: boolean
 }>()
