@@ -18,7 +18,7 @@ import { computed } from 'vue'
 import type { FontAwesomeIconProps } from './icon-common'
 import { FontAwesome } from './icon-common'
 
-interface Props extends FontAwesomeIconProps {} // workaround because vue-tsc complains about needing a type literal otherwise
+type Props = FontAwesomeIconProps // workaround because vue-tsc complains about needing a type literal otherwise
 
 /**
  * A FontAwesome 6 icon.

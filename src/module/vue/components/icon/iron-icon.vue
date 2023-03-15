@@ -20,7 +20,9 @@
 import { computed } from 'vue'
 import type { IronIconProps } from './icon-common'
 
-interface Props extends IronIconProps {} // without this, vue-tsc complains  even though it shouldn't
+// without this, vue-tsc complains  even though it shouldn't
+
+type Props = IronIconProps
 
 /**
  * Displays a custom SVG icon from the sprite sheet. Anything in `system/assets/icons` is automatically included as a sprite.
