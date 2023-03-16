@@ -73,7 +73,7 @@ function getIconOptions(iconState: IconSwitchState) {
 	if (set === 'fa' && iconState.class) {
 		props = foundry.utils.mergeObject(
 			props,
-			parseClassesToFaProps(iconState.class ?? '') as any
+			parseClassesToFaProps(iconState.class?.join(' ') ?? '') as any
 		)
 	}
 
