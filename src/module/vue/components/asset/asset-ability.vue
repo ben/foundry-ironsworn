@@ -85,7 +85,9 @@ const iconUnchecked = computed<IconSwitchState>(() => {
 		default:
 			return {
 				icon: 'fa:circle',
-				props: { family: FontAwesome.Family.Regular }
+				props: {
+					family: FontAwesome.Family.Regular
+				}
 			}
 	}
 })
@@ -160,6 +162,11 @@ function updateAbility(delta: Partial<AssetAbility>) {
 
 .bullet {
 	margin-top: 0.075em;
+
+	/** Uncomment to use thematic color for checkbox fill  */
+	// [data-icon-state='checked'] {
+	// 	color: var(--ironsworn-color-thematic, currentcolor);
+	// }
 }
 
 .rulesText {
