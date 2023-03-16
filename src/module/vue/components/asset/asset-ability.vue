@@ -161,7 +161,7 @@ function updateAbility(delta: Partial<AssetAbility>) {
 }
 
 .bullet {
-	margin-top: 0.075em;
+	margin-top: 0.1em;
 
 	/** Uncomment to use thematic color for checkbox fill  */
 	// [data-icon-state='checked'] {
