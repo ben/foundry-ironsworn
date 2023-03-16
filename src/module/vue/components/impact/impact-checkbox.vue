@@ -5,9 +5,15 @@
 		:data-tooltip="state.hintText"
 		class="flexrow"
 		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
-		:icon-unchecked="{ icon: 'fa:circle', props: { family: 'fa-regular' } }"
+		:icon-unchecked="{
+			icon: 'fa:circle',
+			props: { family: FontAwesome.Family.Regular }
+		}"
 		:checked="actor.system.debility[name]"
-		:icon-checked="{ icon: 'fa:dot-circle', props: { family: 'fa-regular' } }"
+		:icon-checked="{
+			icon: 'fa:dot-circle',
+			props: { family: FontAwesome.Family.Regular }
+		}"
 		:aria-labelledby="`label_${baseId}`"
 		@change="input($event)">
 		<slot :id="`label_${baseId}`" name="default">
@@ -26,6 +32,7 @@ import { IronswornSettings } from '../../../helpers/settings'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 import IronCheckbox from '../input/iron-checkbox.vue'
+import { FontAwesome } from '../icon/icon-common'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
