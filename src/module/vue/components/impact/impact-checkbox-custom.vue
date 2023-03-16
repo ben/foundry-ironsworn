@@ -40,6 +40,7 @@ const nameUpdate = throttle(immediateNameUpdate, 1000)
 
 <style lang="scss" module>
 .wrapper {
+	text-align: start;
 }
 .input {
 	outline: 0;
