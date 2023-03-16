@@ -14,10 +14,10 @@
 
 <script lang="ts" setup>
 import IronIcon from 'component:icon/iron-icon.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
 import FontIcon from 'component:icon/font-icon.vue'
-import { omit } from 'lodash-es'
-import type { ComputedRef, ExtractPropTypes } from 'vue'
-import { computed, TransitionGroup } from 'vue'
+import type { ExtractPropTypes } from 'vue'
+import { TransitionGroup } from 'vue'
 import type {
 	FontAwesomeIconProps,
 	IconSwitchState,
@@ -56,16 +56,9 @@ interface Props
 	transitionName?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
 	transitionName: 'fade',
 	is: 'span'
-})
-
-const ironBtnProps: ComputedRef<IronBtnProps> = computed(() => {
-	return {
-		...omit(props, ['iconOn', 'iconOff', 'state', 'readonly']),
-		justify: 'center'
-	}
 })
 
 function getIconOptions(iconState: IconSwitchState) {

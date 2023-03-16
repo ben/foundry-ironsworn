@@ -57,22 +57,11 @@
 					</div>
 				</dl>
 				<ul class="asset-abilities flexcol">
-					<with-rolllisteners
-						v-for="(ability, i) in enabledAbilities"
-						:key="'ability' + i"
-						element="li"
-						:class="`asset-ability marked bullet-${$actor?.toolset}`"
-						@moveclick="moveclick">
-						<div
-							class="asset-ability-text flexcol"
-							v-html="$enrichHtml(ability.description)"></div>
-						<clock
-							v-if="ability.hasClock"
-							class="asset-ability-clock"
-							:wedges="ability.clockMax"
-							:ticked="ability.clockTicks"
-							@click="setAbilityClock(i, $event)" />
-					</with-rolllisteners>
+					<AssetAbility
+						v-for="(ability, i) in asset.system.abilities"
+						:key="`ability${i}`"
+						:ability="ability"
+						:update-fn="(...args) => updateAbility(i, ...args)" />
 				</ul>
 
 				<div class="flexrow nogrow">
@@ -109,11 +98,10 @@
 import type { Ref } from 'vue'
 import { computed, inject, provide } from 'vue'
 import type {
-	AssetAbility,
+	AssetAbility as AssetAbilityType,
 	AssetDataPropertiesData
 } from '../../../item/itemtypes'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
-import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
@@ -121,6 +109,7 @@ import CollapseTransition from '../transition/collapse-transition.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetConditions from './asset-conditions.vue'
 import IronBtn from '../buttons/iron-btn.vue'
+import AssetAbility from './asset-ability.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref
@@ -179,12 +168,19 @@ function exclusiveOptionClick(selectedIdx) {
 function moveclick(item) {
 	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
-function setAbilityClock(abilityIdx: number, clockTicks: number) {
+async function updateAbility(
+	abilityIdx: number,
+	delta: Partial<AssetAbilityType>
+) {
 	const abilities = Object.values(
 		props.asset.system.abilities
-	) as AssetAbility[]
-	abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-	foundryItem?.update({ system: { abilities } })
+	) as AssetAbilityType[]
+
+	abilities[abilityIdx] = mergeObject(
+		abilities[abilityIdx],
+		delta
+	) as AssetAbilityType
+	await foundryItem?.update({ system: { abilities } })
 }
 
 function toggleCondition(idx: number) {
