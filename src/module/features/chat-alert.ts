@@ -176,7 +176,7 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 
 				if (newValue)
 					return game.i18n.format(
-						`IRONSWORN.ChatAlert.Set${capitalize(conditionType)}`,
+						`IRONSWORN.ChatAlert.Marked${capitalize(conditionType)}`,
 						params
 					)
 				return game.i18n.format(
@@ -221,7 +221,7 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 				const params = { impact: i18nImpact }
 				// TODO: use "impact" if this is an SF character
 				if (newValue)
-					return game.i18n.format('IRONSWORN.ChatAlert.SetImpact', params)
+					return game.i18n.format('IRONSWORN.ChatAlert.MarkedImpact', params)
 				return game.i18n.format('IRONSWORN.ChatAlert.ClearedImpact', params)
 			}
 		}

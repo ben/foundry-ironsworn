@@ -238,7 +238,7 @@
 			"MarkedXP": "Zaznaczono {amt} XP",
 			"UnmarkedXP": "Odznaczono {amt} XP",
 			"AdjustedStat": "{amt} {stat} (obecna wartość {val})",
-			"SetCondition": "Zmieniono {condition} stan",
+			"MarkedCondition": "Zmieniono {condition} stan",
 			"ClearedCondition": "Usunięto {condition} stan",
 			"RankChanged": "Ranga zmieniona z {old} to {new}",
 			"rankChanged": "ranga zmieniona z {old} to {new}",
