@@ -13,6 +13,7 @@
 		<template #label>
 			<BtnRollstat
 				v-if="labelPosition != 'none'"
+				:class="$style.btn"
 				tabindex="0"
 				:document-type="documentType"
 				:vertical="sliderStyle === 'vertical'"
@@ -66,3 +67,9 @@ const props = withDefaults(
 	}
 )
 </script>
+
+<style lang="scss" module>
+.btn {
+	text-transform: uppercase;
+}
+</style>

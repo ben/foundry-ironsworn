@@ -1,38 +1,48 @@
 <template>
-	<label
-		class="checkbox"
+	<IronCheckbox
+		is="button"
+		type="button"
 		:data-tooltip="state.hintText"
-		:class="{ 'condition-hint': !!state.hintText }">
-		<input
-			type="checkbox"
-			:checked="actor.system.debility[name]"
-			@change="input" />
-		{{ $t(`IRONSWORN.${$capitalize(name)}`) }}
-	</label>
+		class="flexrow"
+		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
+		:icon-unchecked="{ icon: 'fa:circle', props: { family: 'fa-regular' } }"
+		:checked="actor.system.debility[name]"
+		:icon-checked="{ icon: 'fa:dot-circle', props: { family: 'fa-regular' } }"
+		:aria-labelledby="`label_${baseId}`"
+		@change="input($event)">
+		<slot :id="`label_${baseId}`" name="default">
+			<span :id="`label_${baseId}`" :class="$style.label">
+				{{ label }}
+			</span>
+		</slot>
+	</IronCheckbox>
 </template>
 
 <script lang="ts" setup>
+import { computed, capitalize, inject, nextTick, reactive } from 'vue'
 import type { Ref } from 'vue'
-import { capitalize, inject, nextTick, reactive } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
+import IronCheckbox from '../input/iron-checkbox.vue'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
+const baseId = computed(() => `condition_${props.name}_${actor.value._id}`)
+
 const props = defineProps<{
 	name: string
+	type: 'impact' | 'debility'
 	global?: boolean
 	globalHint?: boolean
 }>()
 
 const state = reactive<{ hintText?: string }>({})
 
-async function input(ev: Event) {
+async function input(value: boolean) {
 	const impactKey = 'debility'
-	const value = (ev.currentTarget as HTMLInputElement)?.checked
 	const data = {
 		system: {
 			[impactKey]: {
@@ -75,7 +85,11 @@ CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name }) => {
 	}
 })
 
-const i18nCondition = game.i18n.localize(`IRONSWORN.${capitalize(props.name)}`)
+const label = computed(() =>
+	game.i18n.localize(
+		`IRONSWORN.${props.type.toUpperCase()}.${capitalize(props.name)}`
+	)
+)
 function refreshGlobalHint() {
 	const { actors, assets } = actorsOrAssetsWithConditionEnabled(props.name)
 	const names = [
@@ -96,15 +110,15 @@ function refreshGlobalHint() {
 		state.hintText = undefined
 	} else if (names.length == 1) {
 		// Condition only set on one other actor
-		state.hintText = game.i18n.format('IRONSWORN.ConditionSetOnOne', {
-			condition: i18nCondition,
+		state.hintText = game.i18n.format('IRONSWORN.ConditionMarkedOnOne', {
+			condition: capitalize(label.value),
 			name: names[0]
 		})
 	} else {
-		// This condition is set on several other actors, display them as a list
+		// This condition is marked on several other actors, display them as a list
 		state.hintText = `
-    <p>${game.i18n.format('IRONSWORN.ConditionSetOnMany', {
-			condition: i18nCondition
+    <p>${game.i18n.format('IRONSWORN.ConditionMarkedOnMany', {
+			condition: capitalize(label.value)
 		})}</p>
     <ul>
       ${names.map((x) => `<li>${x}</li>`).join('\n')}
@@ -115,8 +129,28 @@ function refreshGlobalHint() {
 if (props.globalHint) refreshGlobalHint()
 </script>
 
-<style lang="scss" scoped>
-.condition-hint {
+<style lang="scss" module>
+.wrapper {
+	gap: var(--ironsworn-spacer-sm);
+	align-items: center;
+	line-height: 1;
+	padding: var(--ironsworn-spacer-xs);
+	padding-left: 0;
+	flex-wrap: nowrap;
+}
+button:local(.wrapper) {
+	// a pox upon chrome's user agent style sheet, which aggressively overrides a bunch of stuff that it shouldn't
+	display: flex;
+	flex-direction: row;
+}
+.hint {
 	text-shadow: 0 0 5px var(--ironsworn-color-warning);
+}
+
+.label {
+	text-align: start;
+	&::first-letter {
+		text-transform: uppercase;
+	}
 }
 </style>

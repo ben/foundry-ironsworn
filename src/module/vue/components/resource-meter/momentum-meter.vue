@@ -61,7 +61,9 @@ const actorSys = computed(
 
 .momentum-meter {
 	gap: var(--ironsworn-spacer-md) 0;
-
+	.attr-slider-label button {
+		text-transform: uppercase;
+	}
 	.attr-slider-label:hover ~ .slider-bar {
 		.segment-momentum-reset {
 			@include clickable.blockHover;

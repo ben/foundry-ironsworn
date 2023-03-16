@@ -138,16 +138,14 @@ async function onChange(newValue: number) {
 
 		.attr-slider-label {
 			> * {
+				height: 100%;
+
 				padding-inline-end: var(--ironsworn-segment-border-radius);
 			}
 		}
 	}
 	.attr-slider-label {
-		line-height: 1;
-
-		> * {
-			text-transform: inherit;
-		}
+		line-height: 1 !important;
 	}
 }
 </style>

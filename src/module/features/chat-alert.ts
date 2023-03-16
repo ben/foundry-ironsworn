@@ -93,6 +93,7 @@ export function registerChatAlertHooks() {
 const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 	character: (actor: IronswornActor, data) => {
 		const characterData = actor.system as CharacterDataPropertiesData
+		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
 
 		// Ironsworn XP
 		if (data.system?.xp !== undefined) {
@@ -158,18 +159,32 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 			'custom2'
 		]
 		for (const debility of debilities) {
+			const conditionType = gameIsStarforged ? `impact` : `debility`
 			const newValue = get(data.system?.debility, debility)
+
 			if (newValue !== undefined) {
 				const oldValue = characterData.debility[debility]
 				if (oldValue === newValue) continue
-				const i18nDebility = debility.startsWith('custom')
-					? get(characterData.debility, `${debility}name`)
-					: game.i18n.localize(`IRONSWORN.${capitalize(debility)}`)
-				const params = { condition: i18nDebility }
-				// TODO: use "impact" if this is an SF character
+				const i18nPath = `IRONSWORN.${conditionType.toUpperCase()}`
+				const i18nDebility = `<b class='term ${conditionType}'>${
+					debility.startsWith('custom')
+						? get(characterData.debility, `${debility}name`)
+						: game.i18n.localize(`${i18nPath}.${capitalize(debility)}`)
+				}</b>`
+
+				const params = gameIsStarforged
+					? { impact: i18nDebility }
+					: { debility: i18nDebility }
+
 				if (newValue)
-					return game.i18n.format('IRONSWORN.ChatAlert.SetCondition', params)
-				return game.i18n.format('IRONSWORN.ChatAlert.ClearedCondition', params)
+					return game.i18n.format(
+						`IRONSWORN.ChatAlert.Marked${capitalize(conditionType)}`,
+						params
+					)
+				return game.i18n.format(
+					`IRONSWORN.ChatAlert.Cleared${capitalize(conditionType)}`,
+					params
+				)
 			}
 		}
 
@@ -196,20 +211,20 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 
 	starship: (actor: IronswornActor, data) => {
 		const starshipData = actor.system as StarshipDataPropertiesData
-		const debilities = ['cursed', 'battered']
-		for (const debility of debilities) {
-			const newValue = get(data.system?.debility, debility)
+		const impacts = ['cursed', 'battered']
+		for (const impact of impacts) {
+			const newValue = get(data.system?.debility, impact)
 			if (newValue !== undefined) {
-				const oldValue = starshipData.debility[debility]
+				const oldValue = starshipData.debility[impact]
 				if (oldValue === newValue) continue
-				const i18nDebility = game.i18n.localize(
-					`IRONSWORN.${capitalize(debility)}`
+				const i18nImpact = game.i18n.localize(
+					`IRONSWORN.IMPACT.${capitalize(impact)}`
 				)
-				const params = { condition: i18nDebility }
+				const params = { impact: `<b class'term impact'>${i18nImpact}</b>` }
 				// TODO: use "impact" if this is an SF character
 				if (newValue)
-					return game.i18n.format('IRONSWORN.ChatAlert.SetCondition', params)
-				return game.i18n.format('IRONSWORN.ChatAlert.ClearedCondition', params)
+					return game.i18n.format('IRONSWORN.ChatAlert.MarkedImpact', params)
+				return game.i18n.format('IRONSWORN.ChatAlert.ClearedImpact', params)
 			}
 		}
 
