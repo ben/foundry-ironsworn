@@ -96,32 +96,32 @@ function updateAbility(delta: Partial<AssetAbility>) {
 	display: flex;
 	flex-direction: row;
 	gap: var(--ironsworn-spacer-md);
-	list-style: none;
-	padding: var(--ironsworn-spacer-xs);
 	align-self: start;
+	padding: var(--ironsworn-spacer-xs);
+	list-style: none;
 }
 
 .hoverFx {
 	position: relative;
-
 	border-radius: var(--ironsworn-border-radius-md);
-	&:before {
+	&::before {
 		@include fx.overlay;
 		@include fx.accentGradient(50);
-		border-radius: inherit;
-		opacity: 0;
+
 		transition: opacity var(--ironsworn-transition-timing);
+		opacity: 0;
 		z-index: -1;
+		border-radius: inherit;
 	}
 
 	&:hover {
-		&:before {
+		&::before {
 			opacity: 0.5;
 		}
 	}
 
 	&:active {
-		&:before {
+		&::before {
 			opacity: 1;
 		}
 	}
@@ -138,7 +138,7 @@ function updateAbility(delta: Partial<AssetAbility>) {
 }
 
 .bullet {
-	margin-top: 0.15em;
+	margin-top: 0.075em;
 }
 
 .rulesText {
