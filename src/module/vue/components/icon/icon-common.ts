@@ -39,9 +39,13 @@ export interface IconSwitchState {
 	props?: this['icon'] extends IronswornIconId ? IronIconState : FontIconState
 }
 
-export type IronIconState = Omit<IronIconProps, 'name'>
+export type IronIconState = Omit<ExtractPropTypes<typeof IronIcon>, 'name'> & {
+	class?: string
+}
 
-export type FontIconState = Omit<FontAwesomeIconProps, 'name'>
+export type FontIconState = Omit<ExtractPropTypes<typeof FontIcon>, 'name'> & {
+	class?: string
+}
 
 export type IronswornIconName = (typeof ironswornIconNames)[number]
 
