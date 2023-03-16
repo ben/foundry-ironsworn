@@ -73,7 +73,7 @@ function getIconOptions(iconState: IconSwitchState) {
 	const [set, name] = iconState.icon.split(/:/)
 	let props: ((typeof iconState)['icon'] extends IronswornIconId
 		? IronIconProps
-		: FontAwesomeIconProps) & { class?: string[] } = {
+		: FontAwesomeIconProps) & { class?: string } = {
 		name: name as any,
 		...(iconState.props ?? {})
 	}
