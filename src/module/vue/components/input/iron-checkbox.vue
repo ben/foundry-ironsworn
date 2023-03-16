@@ -49,6 +49,9 @@ const props = withDefaults(
 		 * @default true
 		 */
 		hoverPreview?: boolean
+		/**
+		 * @default 'div'
+		 */
 		is?: any
 	}>(),
 	{

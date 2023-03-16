@@ -19,21 +19,17 @@
 
 		<hr class="nogrow" />
 
-		<section class="flexrow nogrow">
-			<div style="text-align: center">
-				<ImpactCheckbox
-					type="impact"
-					class="nogrow"
-					name="battered"
-					:global-hint="true" />
-			</div>
-			<div style="text-align: center">
-				<ImpactCheckbox
-					type="impact"
-					class="nogrow"
-					name="cursed"
-					:global-hint="true" />
-			</div>
+		<section class="flexrow nogrow" :class="$style.impacts">
+			<ImpactCheckbox
+				type="impact"
+				name="battered"
+				:global-hint="true"
+				:class="$style.impact" />
+			<ImpactCheckbox
+				type="impact"
+				name="cursed"
+				:global-hint="true"
+				:class="$style.impact" />
 		</section>
 	</SheetBasic>
 </template>
@@ -51,7 +47,6 @@ import TabList from './components/tabs/tab-list.vue'
 import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
-import IronButton from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
 	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
@@ -63,5 +58,13 @@ provide(ActorKey, computed(() => props.data.actor) as any)
 <style lang="scss" module>
 .assets {
 	padding-top: var(--ironsworn-spacer-md);
+}
+
+.impacts {
+	justify-content: center;
+	gap: 4ch;
+}
+.impact {
+	max-width: max-content;
 }
 </style>

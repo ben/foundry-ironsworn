@@ -1,24 +1,18 @@
 <template>
-	<IronBtn :class="{ [$style.iconSwitch]: true }" v-bind="ironBtnProps">
-		<template #icon>
-			<TransitionGroup :name="transitionName">
-				<component
-					:is="
-						getIconOptions(iconData).set === 'ironsworn' ? IronIcon : FontIcon
-					"
-					v-for="(iconData, state) in $props.icons"
-					:key="state"
-					:data-icon-state="state"
-					:class="`${$style.icon} ${getIconOptions(iconData).props?.class}`"
-					v-bind="getIconOptions(iconData).props" />
-			</TransitionGroup>
-		</template>
-	</IronBtn>
+	<component :is="is" :class="{ [$style.iconSwitch]: true }">
+		<TransitionGroup :name="transitionName">
+			<component
+				:is="getIconOptions(iconData).set === 'ironsworn' ? IronIcon : FontIcon"
+				v-for="(iconData, state) in $props.icons"
+				:key="state"
+				:data-icon-state="state"
+				:class="`${$style.icon} ${getIconOptions(iconData).props?.class}`"
+				v-bind="getIconOptions(iconData).props" />
+		</TransitionGroup>
+	</component>
 </template>
 
 <script lang="ts" setup>
-import IronBtn from 'component:buttons/iron-btn.vue'
-
 import IronIcon from 'component:icon/iron-icon.vue'
 import FontIcon from 'component:icon/font-icon.vue'
 import { omit } from 'lodash-es'
@@ -35,6 +29,10 @@ import { parseClassesToFaProps } from './icon-common'
 type IronBtnProps = ExtractPropTypes<typeof IronBtn>
 interface Props
 	extends Omit<IronBtnProps, 'text' | 'icon' | 'vertical' | 'justify'> {
+	/**
+	 * @default 'span'
+	 */
+	is?: any
 	/**
 	 * Describes the current state of all icons in this component.
 	 *
@@ -58,7 +56,10 @@ interface Props
 	transitionName?: string
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+	transitionName: 'fade',
+	is: 'span'
+})
 
 const ironBtnProps: ComputedRef<IronBtnProps> = computed(() => {
 	return {

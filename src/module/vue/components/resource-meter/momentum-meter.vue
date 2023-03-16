@@ -60,10 +60,10 @@ const actorSys = computed(
 @use 'mixin:clickable.scss';
 
 .momentum-meter {
-	text-transform: uppercase;
-
 	gap: var(--ironsworn-spacer-md) 0;
-
+	.attr-slider-label button {
+		text-transform: uppercase;
+	}
 	.attr-slider-label:hover ~ .slider-bar {
 		.segment-momentum-reset {
 			@include clickable.blockHover;

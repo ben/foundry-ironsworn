@@ -1,5 +1,7 @@
 <template>
 	<IronCheckbox
+		is="button"
+		type="button"
 		:data-tooltip="state.hintText"
 		class="flexrow"
 		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
@@ -9,7 +11,7 @@
 		:aria-labelledby="`label_${baseId}`"
 		@change="input($event)">
 		<slot :id="`label_${baseId}`" name="default">
-			<span :id="`label_${baseId}`">
+			<span :id="`label_${baseId}`" :class="$style.label">
 				{{ label }}
 			</span>
 		</slot>
@@ -131,8 +133,24 @@ if (props.globalHint) refreshGlobalHint()
 .wrapper {
 	gap: var(--ironsworn-spacer-sm);
 	align-items: center;
+	line-height: 1;
+	padding: var(--ironsworn-spacer-xs);
+	padding-left: 0;
+	flex-wrap: nowrap;
+}
+button:local(.wrapper) {
+	// a pox upon chrome's user agent style sheet, which aggressively overrides a bunch of stuff that it shouldn't
+	display: flex;
+	flex-direction: row;
 }
 .hint {
 	text-shadow: 0 0 5px var(--ironsworn-color-warning);
+}
+
+.label {
+	text-align: start;
+	&::first-letter {
+		text-transform: uppercase;
+	}
 }
 </style>

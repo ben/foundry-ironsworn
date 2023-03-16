@@ -145,11 +145,7 @@ async function onChange(newValue: number) {
 		}
 	}
 	.attr-slider-label {
-		line-height: 1;
-
-		> * {
-			text-transform: inherit;
-		}
+		line-height: 1 !important;
 	}
 }
 </style>
