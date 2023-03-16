@@ -81,16 +81,16 @@
 				"Burdens": "Burdens",
 				"Vehicle": "Current vehicle"
 			},
-			"Wounded": "Herido",
-			"Shaken": "Conmocionado",
-			"Unprepared": "Sin suministros",
-			"Permanentlyharmed": "Permanently Harmed",
-			"Traumatized": "Traumatized",
-			"Tormented": "Atormentado",
-			"Doomed": "Doomed",
-			"Indebted": "Indebted",
-			"Cursed": "Maldito",
-			"Battered": "Battered"
+			"Wounded": "herido",
+			"Shaken": "conmocionado",
+			"Unprepared": "sin suministros",
+			"Permanentlyharmed": "permanently harmed",
+			"Traumatized": "traumatized",
+			"Tormented": "atormentado",
+			"Doomed": "doomed",
+			"Indebted": "indebted",
+			"Cursed": "maldito",
+			"Battered": "battered"
 		},
 		"Debilities": "Debilidades",
 		"DEBILITY": {
@@ -100,14 +100,14 @@
 				"Banes": "Desgracias",
 				"Burdens": "Cargas"
 			},
-			"Wounded": "Herido",
-			"Unprepared": "Sin suministros",
-			"Shaken": "Conmocionado",
-			"Encumbered": "Sobrecargado",
-			"Maimed": "Mutilado",
-			"Corrupted": "Corrompido",
-			"Cursed": "Maldito",
-			"Tormented": "Atormentado"
+			"Wounded": "herido",
+			"Unprepared": "sin suministros",
+			"Shaken": "conmocionado",
+			"Encumbered": "sobrecargado",
+			"Maimed": "mutilado",
+			"Corrupted": "corrompido",
+			"Cursed": "maldito",
+			"Tormented": "atormentado"
 		},
 		"Reroll": "Volver a tirar",
 		"MOVES": {

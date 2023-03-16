@@ -106,16 +106,16 @@
 				"Burdens": "Burdens",
 				"Vehicle": "Current vehicle"
 			},
-			"Wounded": "Blessé",
-			"Shaken": "Secoué",
-			"Unprepared": "Mal préparé",
-			"Permanentlyharmed": "Lésions permanentes",
-			"Traumatized": "Traumatisé",
-			"Tormented": "Tormented",
-			"Doomed": "Maudit",
-			"Indebted": "Endetté",
-			"Cursed": "Maudit",
-			"Battered": "Battu"
+			"Wounded": "blessé",
+			"Shaken": "secoué",
+			"Unprepared": "mal préparé",
+			"Permanentlyharmed": "lésions permanentes",
+			"Traumatized": "traumatisé",
+			"Tormented": "tormented",
+			"Doomed": "maudit",
+			"Indebted": "endetté",
+			"Cursed": "maudit",
+			"Battered": "battu"
 		},
 		"Debilities": "Handicaps",
 		"DEBILITY": {
@@ -125,14 +125,14 @@
 				"Banes": "Fléaux",
 				"Burdens": "Fardeaux"
 			},
-			"Wounded": "Blessé",
-			"Unprepared": "Mal préparé",
-			"Shaken": "Secoué",
-			"Encumbered": "Encombré",
-			"Maimed": "Mutilé",
-			"Corrupted": "Corrompu",
-			"Cursed": "Maudit",
-			"Tormented": "Tourmenté"
+			"Wounded": "blessé",
+			"Unprepared": "mal préparé",
+			"Shaken": "secoué",
+			"Encumbered": "encombré",
+			"Maimed": "mutilé",
+			"Corrupted": "corrompu",
+			"Cursed": "maudit",
+			"Tormented": "tourmenté"
 		},
 
 		"Conditions": "États",
