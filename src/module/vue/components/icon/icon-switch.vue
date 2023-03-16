@@ -25,7 +25,6 @@ import type {
 	IronswornIconId
 } from './icon-common'
 import { parseClassesToFaProps } from './icon-common'
-import type IronBtn from '../buttons/iron-btn.vue'
 
 type IronBtnProps = ExtractPropTypes<typeof IronBtn>
 interface Props
