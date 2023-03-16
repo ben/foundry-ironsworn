@@ -59,6 +59,9 @@ const classes = computed(() => {
 
 <style lang="scss" module>
 .wrapper {
+	display: inline-block;
+	width: var(--ironsworn-icon-size);
+	height: var(--ironsworn-icon-size);
 }
 
 .border {
