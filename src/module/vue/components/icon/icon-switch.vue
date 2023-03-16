@@ -79,7 +79,8 @@ function getIconOptions(iconState: IconSwitchState) {
 
 	return {
 		set,
-		props
+		props,
+		class: props.class
 	}
 }
 </script>
