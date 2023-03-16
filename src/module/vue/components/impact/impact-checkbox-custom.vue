@@ -45,6 +45,7 @@ const nameUpdate = throttle(immediateNameUpdate, 1000)
 	outline: 0;
 	border: 0;
 	border-bottom: var(--ironsworn-border-width-md) solid;
+	text-align: start !important;
 	&:hover {
 		// hides box shadow to avoid doubling up on the glow FX from the checkbox component
 		box-shadow: none !important;
