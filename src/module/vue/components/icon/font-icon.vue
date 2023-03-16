@@ -30,6 +30,7 @@ const props = withDefaults(defineProps<FontAwesomeIconProps>(), {
 const classes = computed(() => {
 	const iconClasses: Record<string, boolean> = {
 		icon: true,
+		fa: true,
 		[`fa-${props.name}`]: true
 	}
 	forEach(props, (value, key) => {

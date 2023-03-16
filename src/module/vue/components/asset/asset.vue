@@ -57,16 +57,18 @@
 					</div>
 				</dl>
 				<ul class="asset-abilities flexcol">
-					<AssetAbility
-						v-for="(ability, i) in asset.system.abilities"
-						:key="`ability${i}`"
-						:ability="ability"
-						:update-fn="(...args) => updateAbility(i, ...args)" />
+					<template v-for="(ability, i) in asset.system.abilities">
+						<li v-if="ability.enabled" :key="`ability${i}`">
+							<AssetAbility
+								:ability="ability"
+								:update-fn="(delta) => updateAbility(i, delta)"
+								class="flexrow" />
+						</li>
+					</template>
 				</ul>
 
-				<div class="flexrow nogrow">
+				<div class="flexrow nogrow" v-if="asset.system.track.enabled">
 					<ConditionMeterSlider
-						v-if="asset.system.track.enabled"
 						slider-style="horizontal"
 						class="asset-condition-meter"
 						document-type="Item"

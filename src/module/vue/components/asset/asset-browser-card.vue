@@ -42,25 +42,9 @@
 					</div>
 				</dl>
 				<ul class="asset-abilities flexcol">
-					<WithRolllisteners
-						v-for="(ability, i) in system.abilities"
-						:key="'ability' + i"
-						element="li"
-						:class="{
-							'asset-ability': true,
-							[`bullet-${toolset}`]: true,
-							marked: ability.enabled
-						}"
-						@moveclick="moveClick">
-						<div
-							class="asset-ability-text flexcol"
-							v-html="$enrichHtml(ability.description)"></div>
-						<clock
-							v-if="ability.hasClock"
-							class="asset-ability-clock"
-							:wedges="ability.clockMax"
-							:ticked="ability.clockTicks" />
-					</WithRolllisteners>
+					<li v-for="(ability, i) in system.abilities" :key="`ability${i}`">
+						<AssetAbility :ability="ability" class="flexrow" />
+					</li>
 				</ul>
 				<AttrSlider
 					v-if="system.track.enabled"
@@ -85,13 +69,11 @@ import { computed, inject, provide, reactive } from 'vue'
 import type { IronswornItem } from '../../../item/item'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions.js'
-
-import Clock from '../clock.vue'
-import WithRolllisteners from '../with-rolllisteners.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
 import FontIcon from '../icon/font-icon.vue'
 import IronBtn from '../buttons/iron-btn.vue'
+import AssetAbility from './asset-ability.vue'
 
 const props = defineProps<{
 	df?: IAsset

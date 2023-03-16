@@ -1,5 +1,5 @@
 <template>
-	<component :is="is" :class="{ [$style.iconSwitch]: true }">
+	<component :is="is" :class="{ [$style.wrapper]: true }">
 		<TransitionGroup :name="transitionName">
 			<component
 				:is="getIconOptions(iconData).set === 'ironsworn' ? IronIcon : FontIcon"
@@ -85,14 +85,18 @@ function getIconOptions(iconState: IconSwitchState) {
 </script>
 
 <style lang="scss" module>
-.iconSwitch {
+.wrapper {
 	// use grid to position stacked icons, which is more flexible than absolute positioning
 	display: grid;
+	height: var(--ironsworn-icon-size);
+	width: var(--ironsworn-icon-size);
 }
 
 .icon {
 	// stacks icons on top of each other by assigning them to the same grid cell
 	grid-row: 1;
 	grid-column: 1;
+	height: inherit;
+	width: inherit;
 }
 </style>

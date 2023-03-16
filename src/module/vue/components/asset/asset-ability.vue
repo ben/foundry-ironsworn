@@ -1,32 +1,32 @@
 <template>
 	<IronCheckbox
-		is="li"
 		:icon-checked="iconChecked"
 		:icon-unchecked="iconUnchecked"
 		:checked="ability.enabled"
-		:class="$style['asset-ability']"
-		@change="updateFn({ enabled: !ability.enabled })">
+		:class="{ [$style.wrapper]: true, [$style.hoverFx]: toggle && canUpdate }"
+		:readonly="!(toggle && canUpdate)"
+		:icon-switch-class="$style.bullet"
+		:content-hover-fx="false"
+		@change="toggleAbility">
 		<WithRolllisteners
 			element="div"
-			:class="$style['asset-ability-text']"
+			:class="$style.rulesText"
 			class="flexcol"
 			@moveclick="moveclick"
 			v-html="$enrichHtml(ability.description)" />
 		<Clock
 			v-if="ability.hasClock"
-			:class="$style['asset-ability-clock']"
+			:class="$style.clock"
 			:wedges="ability.clockMax"
 			:ticked="ability.clockTicks"
-			:aria-readonly="!interactive"
+			:readonly="readonlyClock ?? !canUpdate"
 			@click="updateClock($event)" />
 	</IronCheckbox>
 </template>
 
 <script lang="ts" setup>
-import { computed, inject } from 'vue'
-import type { Ref } from 'vue'
+import { computed } from 'vue'
 import type { AssetAbility } from '../../../item/itemtypes'
-import { ActorKey, $ActorKey, $ItemKey, ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 import type { IconSwitchState } from '../icon/icon-common'
 import { FontAwesome } from '../icon/icon-common'
@@ -34,18 +34,25 @@ import IronCheckbox from '../input/iron-checkbox.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 
 const props = defineProps<{
+	/**
+	 * Can the asset ability be toggled?
+	 */
+	toggle?: boolean
+	/**
+	 * Render the asset ability clock as read-only?
+	 */
+	readonlyClock?: boolean
+	/** NYI */
+	readonlyFields?: boolean
 	ability: AssetAbility
-	updateFn: (delta: Partial<AssetAbility>) => Promise<void>
+	/**
+	 * A function that updates the asset ability via merge. This can safely be omitted if no interactivity is required.
+	 */
+	updateFn?: (delta: Partial<AssetAbility>) => Promise<unknown>
 }>()
 
-const item = inject(ItemKey) as Ref
-const $item = inject($ItemKey)
-
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
-
-// if there's no injected actor, assume it's a statically rendered ability; the clock and the checkbox can't be manipulated
-const interactive = computed(() => !!actor?.value)
+// if there's no provided update function, assume it's a statically rendered ability; the clock and the checkbox can't be manipulated
+const canUpdate = computed(() => !!props.updateFn)
 
 const iconChecked = computed<IconSwitchState>(() => ({
 	icon: 'fa:hexagon',
@@ -69,20 +76,58 @@ function moveclick(item) {
 function updateClock(newValue: number) {
 	if (typeof newValue === 'number') {
 		const delta: Partial<AssetAbility> = { clockTicks: newValue }
-		props.updateFn(delta)
+		updateAbility(delta)
 	}
+}
+
+function toggleAbility() {
+	if (!props.toggle) return
+	updateAbility({ enabled: !props.ability.enabled })
+}
+
+function updateAbility(delta: Partial<AssetAbility>) {
+	if (props.updateFn) props.updateFn(delta)
 }
 </script>
 
 <style lang="scss" module>
-.asset-ability {
+@use 'mixin:fx.scss';
+.wrapper {
 	display: flex;
 	flex-direction: row;
-	gap: var(--ironsworn-asset-spacer);
+	gap: var(--ironsworn-spacer-md);
 	list-style: none;
+	padding: var(--ironsworn-spacer-xs);
+	align-self: start;
 }
 
-.asset-ability-clock {
+.hoverFx {
+	position: relative;
+
+	border-radius: var(--ironsworn-border-radius-md);
+	&:before {
+		@include fx.overlay;
+		@include fx.accentGradient(50);
+		border-radius: inherit;
+		opacity: 0;
+		transition: opacity var(--ironsworn-transition-timing);
+		z-index: -1;
+	}
+
+	&:hover {
+		&:before {
+			opacity: 0.5;
+		}
+	}
+
+	&:active {
+		&:before {
+			opacity: 1;
+		}
+	}
+}
+
+.clock {
 	--ironsworn-clock-size-min: 40px;
 	--ironsworn-clock-size-max: 75px;
 
@@ -92,7 +137,12 @@ function updateClock(newValue: number) {
 	max-height: var(--ironsworn-clock-size-max);
 }
 
-.asset-ability-text {
+.bullet {
+	margin-top: 0.15em;
+}
+
+.rulesText {
+	pointer-events: all;
 	p {
 		margin: 0;
 	}
@@ -100,6 +150,10 @@ function updateClock(newValue: number) {
 	ul,
 	ol {
 		margin: 0;
+		padding-left: 1.25em;
+	}
+	ul li {
+		list-style-type: disc;
 	}
 }
 </style>

@@ -47,9 +47,9 @@
 	}
 
 	.asset-body {
-		gap: var(--ironsworn-asset-spacer);
+		gap: var(--ironsworn-spacer-lg);
 		transition: var(--ironsworn-transition);
-		padding: calc(var(--ironsworn-asset-spacer) / 2);
+		padding: var(--ironsworn-spacer-md);
 		overflow: hidden;
 
 		.asset-fields {
@@ -80,37 +80,18 @@
 		}
 
 		.asset-abilities {
-			gap: var(--ironsworn-asset-spacer);
-			padding-left: var(--ironsworn-asset-spacer);
+			gap: var(--ironsworn-spacer-sm);
+			margin: 0;
+			padding: 0;
+			list-style: none;
 
-			.asset-ability {
-				display: flex;
-				flex-direction: row;
-				gap: var(--ironsworn-asset-spacer);
-				list-style: none;
+			> li {
+				display: contents;
+				> * {
+					width: 100%;
+				}
 			}
 		}
-	}
-
-	.asset-ability-clock {
-		--ironsworn-clock-size-min: 40px;
-		--ironsworn-clock-size-max: 75px;
-
-		min-width: var(--ironsworn-clock-size-min);
-		max-width: var(--ironsworn-clock-size-max);
-		min-height: var(--ironsworn-clock-size-min);
-		max-height: var(--ironsworn-clock-size-max);
-	}
-
-	.asset-ability-text {
-		p {
-			margin: 0;
-		}
-	}
-
-	ul,
-	ol {
-		margin: 0;
 	}
 }
 
@@ -127,85 +108,9 @@
 	}
 }
 
-// Here we encode the bullet styles as classes, and pull them into the
-// ul>li bullet class from there. These will also be available for block
-// elements
-.asset-ability-bullet {
-	display: block;
-	transition: var(--ironsworn-transition);
-	background-position: center;
-	background-repeat: no-repeat;
-	mask-repeat: no-repeat;
-	mask-position: center;
-	mask-size: contain;
-	background-size: contain;
-}
-
-.asset-ability-bullet-marked {
-	background-color: currentcolor;
-}
-
-.asset-ability-bullet-ironsworn {
-	--ironsworn-bullet-height: 0.75em;
-	--ironsworn-bullet-margin-top: 0.15em;
-
-	margin-top: var(--ironsworn-bullet-margin-top);
-	border-width: var(--ironsworn-border-width-md);
-	border-radius: 50%;
-	height: var(--ironsworn-bullet-height);
-	aspect-ratio: 1;
-}
-
-.asset-ability-bullet-starforged {
-	--ironsworn-bullet-height: 1em;
-	--ironsworn-bullet-margin-top: 0.15em;
-
-	margin-top: var(--ironsworn-bullet-margin-top);
-	background-image: var(--starforged-asset-ability-bullet-unchecked);
-	height: var(--ironsworn-bullet-height);
-	aspect-ratio: var(--ironsworn-hexagon-aspect-ratio);
-	mask-image: var(--starforged-asset-ability-bullet-unchecked);
-}
-
-.asset-ability-bullet-starforged-marked {
-	mask-image: var(--starforged-asset-ability-bullet-checked);
-}
-
-.asset-ironsworn,
-.asset-starforged {
-	// common properties for asset ability bullet/checkbox
-	.asset-ability {
-		&::before {
-			content: '';
-			.asset-ability-bullet;
-		}
-
-		&.marked::before {
-			.asset-ability-bullet-marked;
-		}
-	}
-}
-
 .asset-ironsworn {
-	.asset-ability {
-		&::before {
-			.asset-ability-bullet-ironsworn;
-		}
-	}
 }
 
 .asset-starforged {
 	.starforgedAssetDecoMixin(50px, 32px);
-
-	.asset-abilities {
-		.asset-ability {
-			&::before {
-				.asset-ability-bullet-starforged;
-			}
-
-			&.marked::before {
-				.asset-ability-bullet-starforged-marked;
-			}
-		}
-	}
 }
