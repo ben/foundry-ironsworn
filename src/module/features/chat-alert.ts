@@ -166,9 +166,11 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 				const oldValue = characterData.debility[debility]
 				if (oldValue === newValue) continue
 				const i18nPath = `IRONSWORN.${conditionType.toUpperCase()}`
-				const i18nDebility = debility.startsWith('custom')
-					? get(characterData.debility, `${debility}name`)
-					: game.i18n.localize(`${i18nPath}.${capitalize(debility)}`)
+				const i18nDebility = `<b>${
+					debility.startsWith('custom')
+						? get(characterData.debility, `${debility}name`)
+						: game.i18n.localize(`${i18nPath}.${capitalize(debility)}`)
+				}</b>`
 
 				const params = gameIsStarforged
 					? { impact: i18nDebility }
@@ -218,7 +220,7 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 				const i18nImpact = game.i18n.localize(
 					`IRONSWORN.IMPACT.${capitalize(impact)}`
 				)
-				const params = { impact: i18nImpact }
+				const params = { impact: `<b>${i18nImpact}</b>` }
 				// TODO: use "impact" if this is an SF character
 				if (newValue)
 					return game.i18n.format('IRONSWORN.ChatAlert.MarkedImpact', params)
