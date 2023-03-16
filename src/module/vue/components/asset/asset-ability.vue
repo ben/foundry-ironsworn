@@ -26,6 +26,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
+import { IronswornSettings } from '../../../helpers/settings'
 import type { AssetAbility } from '../../../item/itemtypes'
 import Clock from '../clock.vue'
 import type { IconSwitchState } from '../icon/icon-common'
@@ -54,20 +55,40 @@ const props = defineProps<{
 // if there's no provided update function, assume it's a statically rendered ability; the clock and the checkbox can't be manipulated
 const canUpdate = computed(() => !!props.updateFn)
 
-const iconChecked = computed<IconSwitchState>(() => ({
-	icon: 'fa:hexagon',
-	props: {
-		rotate: FontAwesome.Rotate['90deg'],
-		family: FontAwesome.Family.Solid
+const iconChecked = computed<IconSwitchState>(() => {
+	switch (IronswornSettings.starforgedToolsEnabled) {
+		case true:
+			return {
+				icon: 'fa:hexagon',
+				props: {
+					rotate: FontAwesome.Rotate['90deg'],
+					family: FontAwesome.Family.Solid
+				}
+			}
+		default:
+			return {
+				icon: 'fa:circle',
+				props: { family: FontAwesome.Family.Solid }
+			}
 	}
-}))
-const iconUnchecked = computed<IconSwitchState>(() => ({
-	icon: 'fa:hexagon',
-	props: {
-		rotate: FontAwesome.Rotate['90deg'],
-		family: FontAwesome.Family.Regular
+})
+const iconUnchecked = computed<IconSwitchState>(() => {
+	switch (IronswornSettings.starforgedToolsEnabled) {
+		case true:
+			return {
+				icon: 'fa:hexagon',
+				props: {
+					rotate: FontAwesome.Rotate['90deg'],
+					family: FontAwesome.Family.Regular
+				}
+			}
+		default:
+			return {
+				icon: 'fa:circle',
+				props: { family: FontAwesome.Family.Regular }
+			}
 	}
-}))
+})
 
 function moveclick(item) {
 	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
