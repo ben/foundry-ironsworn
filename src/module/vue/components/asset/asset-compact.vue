@@ -21,8 +21,8 @@
 import type { Ref } from 'vue'
 import { computed, inject, provide } from 'vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
-import IronBtn from '../buttons/iron-btn.vue'
-import AssetCard from './asset-card.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
+import AssetCard from 'component:asset/asset-card.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref
