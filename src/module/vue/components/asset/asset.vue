@@ -1,40 +1,45 @@
 <template>
-	<article
-		class="ironsworn__asset"
+	<AssetCard
+		:collapsible="true"
 		:class="{
 			[`asset-${$actor?.toolset}`]: true,
 			[$style.themeColor]: props.asset?.system?.color
 		}"
 		:aria-expanded="expanded">
-		<header class="asset-header nogrow flexrow">
-			<button
-				type="button"
-				:aria-controls="bodyId"
-				class="clickable text asset-expand-toggle"
-				@click="toggle">
-				<h4 class="asset-title">
-					{{ asset.name }}
-				</h4>
-				<span class="asset-type" aria-label="asset type">
-					{{ asset.system.category }}
-				</span>
-			</button>
-			<div class="flexrow nogrow" :class="$style.controls">
-				<IronBtn
-					v-if="editMode"
-					block
-					nogrow
-					icon="fa:trash"
-					@click="destroy" />
-				<IronBtn block nogrow icon="fa:pen-to-square" @click="edit" />
-			</div>
-		</header>
-
-		<CollapseTransition>
+		<template #header>
+			<AssetHeader class="nogrow flexrow">
+				<template #default="{ headerStyles }">
+					<button
+						type="button"
+						:aria-controls="bodyId"
+						:class="headerStyles.toggle"
+						class="clickable text"
+						@click="toggle">
+						<h4 :class="headerStyles.title">
+							{{ asset.name }}
+						</h4>
+						<span :class="headerStyles.type" aria-label="asset type">
+							{{ asset.system.category }}
+						</span>
+					</button>
+					<div class="flexrow nogrow" :class="$style.controls">
+						<IronBtn
+							v-if="editMode"
+							block
+							nogrow
+							icon="fa:trash"
+							@click="destroy" />
+						<IronBtn block nogrow icon="fa:pen-to-square" @click="edit" />
+					</div>
+				</template>
+			</AssetHeader>
+		</template>
+		<template #default="{ styles }">
 			<section
 				v-if="expanded"
 				:id="bodyId"
-				class="asset-body flexcol"
+				:class="styles.body"
+				class="flexcol"
 				:aria-expanded="expanded">
 				<with-rolllisteners
 					v-if="asset.system.description"
@@ -47,14 +52,14 @@
 					@moveclick="moveclick"
 					v-html="$enrichHtml(asset.system.requirement ?? '')" />
 
-				<div v-if="asset.system.fields?.length" class="asset-fields">
+				<div v-if="asset.system.fields?.length" :class="styles.fields">
 					<AssetField
 						v-for="(field, i) in asset.system.fields"
 						:key="i"
 						:field="field"
 						:readonly="true" />
 				</div>
-				<ul class="asset-abilities flexcol">
+				<ul class="flexcol" :class="styles.abilities">
 					<template v-for="(ability, i) in asset.system.abilities">
 						<li v-if="ability.enabled" :key="`ability${i}`">
 							<AssetAbility
@@ -65,52 +70,32 @@
 					</template>
 				</ul>
 
-				<div v-if="asset.system.track.enabled" class="flexrow nogrow">
-					<ConditionMeterSlider
-						slider-style="horizontal"
-						class="asset-condition-meter"
-						document-type="Item"
-						attr="track.current"
-						:current-value="asset.system.track.current"
-						:max="asset.system.track.max"
-						:min="0"
-						:stat-label="asset.system.track.name"
-						label-position="left"
-						:read-only="false" />
-					<AssetConditions :asset="asset" />
-				</div>
+				<AssetConditionMeter
+					v-if="asset.system.track.enabled"
+					class="flexrow nogrow" />
 
-				<section
-					v-if="asset.system.exclusiveOptions.length > 0"
-					class="flexcol stack nogrow">
-					<asset-exclusiveoption
-						v-for="(opt, i) in asset.system.exclusiveOptions"
-						:key="'option' + i"
-						:opt="opt"
-						@click="exclusiveOptionClick(i)" />
-				</section>
+				<AssetToggle
+					v-if="asset.system.exclusiveOptions.length"
+					class="flexcol nogrow" />
 			</section>
-		</CollapseTransition>
-	</article>
+		</template>
+	</AssetCard>
 </template>
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { computed, inject, provide } from 'vue'
-import type {
-	AssetAbility as AssetAbilityType,
-	AssetDataPropertiesData
-} from '../../../item/itemtypes'
+import type { AssetAbility as AssetAbilityType } from '../../../item/itemtypes'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
-import { defaultActor } from '../../../helpers/actors'
-import CollapseTransition from '../transition/collapse-transition.vue'
-import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
-import AssetConditions from './asset-conditions.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import AssetAbility from './asset-ability.vue'
 import AssetField from './asset-field.vue'
+import AssetHeader from './asset-header.vue'
+import AssetCard from './asset-card.vue'
+import AssetConditionMeter from './asset-condition-meter.vue'
+import AssetToggle from './asset-toggle.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref
@@ -133,15 +118,6 @@ const expanded = computed(() => {
 })
 const editMode = computed(() => {
 	return actor.value.flags['foundry-ironsworn']?.['edit-mode']
-})
-const enabledAbilities = computed(() => {
-	const data = props.asset.system as AssetDataPropertiesData
-	const abilities = Object.values(data.abilities)
-	return abilities.filter((x) => x.enabled)
-})
-const actingActor = computed(() => {
-	if (actor.value.type === 'character') return actor.value
-	return defaultActor()?.toObject(false)
 })
 
 function toggle() {
@@ -187,12 +163,6 @@ async function updateAbility(
 		delta
 	) as AssetAbilityType
 	await foundryItem?.update({ system: { abilities } })
-}
-
-function toggleCondition(idx: number) {
-	const { conditions } = props.asset.system
-	conditions[idx].ticked = !conditions[idx].ticked
-	foundryItem?.update({ system: { conditions } })
 }
 </script>
 
