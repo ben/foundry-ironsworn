@@ -71,22 +71,20 @@ const iconChecked = computed<IconSwitchState>(() => {
 	}
 })
 const iconUnchecked = computed<IconSwitchState>(() => {
-	switch (IronswornSettings.starforgedToolsEnabled) {
-		case true:
-			return {
-				icon: 'fa:hexagon',
-				props: {
-					rotate: FontAwesome.Rotate['90deg'],
-					family: FontAwesome.Family.Regular
-				}
+	if (IronswornSettings.starforgedToolsEnabled)
+		return {
+			icon: 'fa:hexagon',
+			props: {
+				rotate: FontAwesome.Rotate['90deg'],
+				family: FontAwesome.Family.Regular
 			}
-		default:
-			return {
-				icon: 'fa:circle',
-				props: {
-					family: FontAwesome.Family.Regular
-				}
-			}
+		}
+
+	return {
+		icon: 'fa:circle',
+		props: {
+			family: FontAwesome.Family.Regular
+		}
 	}
 })
 
