@@ -23,7 +23,7 @@
 							:id="titleId"
 							type="button"
 							:aria-controls="bodyId"
-							:class="$style.toggle"
+							:class="$style.expandToggle"
 							class="clickable text"
 							@click="toggleExpand">
 							<h4 :class="$style.title">
@@ -226,7 +226,7 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	gap: var(--ironsworn-spacer-lg);
 }
 
-.toggle {
+.expandToggle {
 	display: flex;
 	flex-flow: row wrap;
 	gap: var(--ironsworn-spacer-lg);
