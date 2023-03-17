@@ -62,6 +62,7 @@ const classes = computed(() => {
 	display: inline-block;
 	width: var(--ironsworn-icon-size);
 	height: var(--ironsworn-icon-size);
+	line-height: 1 !important;
 }
 
 .border {
