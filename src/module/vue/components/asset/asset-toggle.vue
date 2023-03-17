@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-// TODO: this shares a lot of functionality with sliders; there should be a base "toggle" component that contains e.g. the keybinding functionality and shared styles
+// TODO: this shares a lot of functionality with sliders; there should be a base "toggle" component that contains e.g. the keybinding functionality and shared styles. the slider can be derived from that.
 
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
