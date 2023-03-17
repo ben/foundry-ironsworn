@@ -8,7 +8,8 @@
 			v-model="field.value"
 			type="text"
 			:readonly="!canUpdate"
-			:class="$style.value" />
+			:class="$style.value"
+			@blur="update" />
 	</div>
 </template>
 
@@ -32,10 +33,15 @@ const canUpdate = computed(() => !!props.updateFn && !props.readonly)
 
 const baseId = computed(
 	() =>
-		`field_${props.field.name}_${canUpdate.value ? 'update' : 'readonly'}_${
+		`field_${props.field.name}_${canUpdate.value ? 'writeable' : 'readonly'}_${
 			asset?.value._id
 		}`
 )
+
+function update(event: FocusEvent) {
+	if (!props.updateFn) return
+	props.updateFn({ value: props.field.value })
+}
 </script>
 <style lang="scss" module>
 .wrapper {
