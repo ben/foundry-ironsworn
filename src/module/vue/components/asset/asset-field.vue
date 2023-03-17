@@ -38,7 +38,7 @@ const baseId = computed(
 		}`
 )
 
-function update(event: FocusEvent) {
+function update(_: FocusEvent) {
 	if (!props.updateFn) return
 	props.updateFn({ value: props.field.value })
 }
