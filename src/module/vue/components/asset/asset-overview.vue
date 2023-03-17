@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import AssetCard from './asset-card.vue'
+import AssetCard from 'component:asset/asset-card.vue'
 </script>
 
 <style lang="scss" module>

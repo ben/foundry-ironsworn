@@ -57,9 +57,8 @@ import type { Ref } from 'vue'
 import { computed, inject, onUnmounted } from 'vue'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions'
-import CollapseTransition from '../transition/collapse-transition.vue'
-import Clock from '../clock.vue'
-import IronBtn from '../buttons/iron-btn.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
 
 const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)

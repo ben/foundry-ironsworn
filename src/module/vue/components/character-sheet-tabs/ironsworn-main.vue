@@ -26,7 +26,7 @@
 								:length="assets.length"
 								@sortUp="assetSortUp"
 								@sortDown="assetSortDown" />
-							<Asset :asset="asset" class="item-row" />
+							<AssetCompact :asset="asset" class="item-row" />
 						</div>
 					</CollapseTransition>
 					<div class="flexrow nogrow" style="text-align: center">
@@ -47,15 +47,15 @@
 </template>
 <script lang="ts" setup>
 import type { Ref } from 'vue'
-import { computed, inject, reactive } from 'vue'
+import { computed, inject } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
-import Bonds from '../bonds.vue'
-import OrderButtons from '../order-buttons.vue'
-import Asset from '../asset/asset.vue'
-import IronBtn from '../buttons/iron-btn.vue'
-import ActiveCompletedProgresses from '../active-completed-progresses.vue'
+import Bonds from 'component:bonds.vue'
+import OrderButtons from 'component:order-buttons.vue'
+import AssetCompact from 'component:asset/asset-compact.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
+import ActiveCompletedProgresses from 'component:active-completed-progresses.vue'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
-import CollapseTransition from '../transition/collapse-transition.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
 import DropTarget from '../../drop-target.vue'
 
 const actor = inject(ActorKey) as Ref

@@ -32,7 +32,7 @@
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { ItemKey, $ItemKey, ActorKey, $ActorKey } from '../../provisions'
-import ConditionMeter from '../resource-meter/condition-meter.vue'
+import ConditionMeter from 'component:resource-meter/condition-meter.vue'
 
 const asset = inject(ItemKey) as Ref
 const $asset = inject($ItemKey)

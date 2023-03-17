@@ -114,16 +114,16 @@
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { ItemKey, $ItemKey, ActorKey, $ActorKey } from '../../provisions'
-import CollapseTransition from '../transition/collapse-transition.vue'
-import WithRolllisteners from '../with-rolllisteners.vue'
-import AssetConditionMeter from './asset-condition-meter.vue'
-import AssetToggle from './asset-toggle.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
+import WithRolllisteners from 'component:with-rolllisteners.vue'
+import AssetConditionMeter from 'component:asset/asset-condition-meter.vue'
+import AssetToggle from 'component:asset/asset-toggle.vue'
 import type {
 	AssetAbility as AssetAbilityType,
 	AssetField as AssetFieldType
 } from '../../../item/itemtypes'
-import AssetAbility from './asset-ability.vue'
-import AssetField from './asset-field.vue'
+import AssetAbility from 'component:asset/asset-ability.vue'
+import AssetField from 'component:asset/asset-field.vue'
 import { IronswornSettings } from '../../../helpers/settings'
 
 const asset = inject(ItemKey) as Ref

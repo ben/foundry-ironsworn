@@ -12,7 +12,7 @@
 					:length="assets.length"
 					@sortUp="sortUp"
 					@sortDown="sortDown" />
-				<asset :asset="asset" class="item-row" />
+				<AssetCompact :asset="asset" class="item-row" />
 			</li>
 		</CollapseTransition>
 		<section
@@ -32,12 +32,12 @@
 import { sortBy } from 'lodash-es'
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
-import OrderButtons from '../order-buttons.vue'
-import Asset from '../asset/asset.vue'
-import IronBtn from '../buttons/iron-btn.vue'
+import OrderButtons from 'component:order-buttons.vue'
+import AssetCompact from 'component:asset/asset-compact.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
-import CollapseTransition from '../transition/collapse-transition.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
 import DropTarget from '../../drop-target.vue'
 
 const actor = inject(ActorKey) as Ref

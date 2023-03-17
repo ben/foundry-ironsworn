@@ -40,14 +40,14 @@
 
 <script setup lang="ts">
 import { provide, reactive } from 'vue'
-import WithRolllisteners from './components/with-rolllisteners.vue'
-import AssetBrowserCard from './components/asset/asset-browser-card.vue'
-import CollapseTransition from './components/transition/collapse-transition.vue'
+import WithRolllisteners from 'component:with-rolllisteners.vue'
+import AssetBrowserCard from 'component:asset/asset-browser-card.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
 import {
 	createIronswornAssetTree,
 	createStarforgedAssetTree
 } from '../features/customassets'
-import IronBtn from './components/buttons/iron-btn.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
 
 const props = defineProps<{ data: { toolset: 'starforged' | 'ironsworn' } }>()
 

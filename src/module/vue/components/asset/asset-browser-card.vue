@@ -21,8 +21,8 @@ import type { IAsset } from 'dataforged'
 import { computed, provide, reactive } from 'vue'
 import type { IronswornItem } from '../../../item/item'
 import { $ItemKey, ItemKey } from '../../provisions.js'
-import FontIcon from '../icon/font-icon.vue'
-import AssetCard from './asset-card.vue'
+import FontIcon from 'component:icon/font-icon.vue'
+import AssetCard from 'component:asset/asset-card.vue'
 
 const props = defineProps<{
 	df?: IAsset
