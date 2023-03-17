@@ -49,6 +49,7 @@ const baseId = computed(
 .label {
 	margin: 0;
 	padding: 0;
+	padding-right: var(--ironsworn-spacer-sm);
 }
 
 .value {
@@ -61,8 +62,8 @@ const baseId = computed(
 		// styles for rendering when editable
 	}
 	&[readonly] {
-		border: none;
-		background: none;
+		--ironsworn-color-input-bg: transparent;
+		--ironsworn-color-input-border: transparent;
 		pointer-events: none;
 	}
 }

@@ -1,70 +1,39 @@
-@mixin ironsworn {
-  --ironsworn-asset-ability-bullet-checked: fa:circle;
-  --ironsworn-asset-ability-bullet-unchecked: fa:circle;
-  --ironsworn-asset-ability-bullet-checked-classes: fa-solid;
-  --ironsworn-asset-ability-bullet-unchecked-classes: fa-regular;
-
-  .asset-ironsworn .asset-ability::before {
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
-  }
-}
-
-@mixin starforged {
-  --ironsworn-asset-ability-bullet-checked: fa:hexagon;
-  --ironsworn-asset-ability-bullet-unchecked: fa:hexagon;
-  --ironsworn-asset-ability-bullet-checked-classes: fa-solid fa-rotate-90;
-  --ironsworn-asset-ability-bullet-unchecked-classes: fa-regular fa-rotate-90;
-
-  .asset-ironsworn .asset-ability::before {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-  }
-
-  .asset-starforged .asset-ability::before {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    background-color: var(--ironsworn-color-fg);
-  }
-}
-
 @mixin starforgedAssetDeco(
-  $deco-expanded-height: 50px,
-  $deco-collapsed-height: 32px
+	$deco-expanded-height: 50px,
+	$deco-collapsed-height: 32px
 ) {
-  --ironsworn-deco-aspect-ratio: calc(24 / 28);
-  --ironsworn-deco-expanded-height: $deco-expanded-height;
-  --ironsworn-deco-collapsed-height: $deco-collapsed-height;
+	--ironsworn-deco-aspect-ratio: calc(24 / 28);
+	--ironsworn-deco-expanded-height: $deco-expanded-height;
+	--ironsworn-deco-collapsed-height: $deco-collapsed-height;
 
-  position: relative;
+	position: relative;
 
-  &::before {
-    display: block;
-    position: absolute;
-    top: calc(var(--ironsworn-deco-expanded-height) * -0.09);
-    right: calc(var(--ironsworn-deco-expanded-height) * 0.03);
-    transform: scaleX(-1);
-    z-index: auto;
-    background: var(--ironsworn-color-thematic);
-    height: var(--ironsworn-deco-collapsed-height);
-    content: '';
-    pointer-events: none;
+	&::before {
+		display: block;
+		position: absolute;
+		top: calc(var(--ironsworn-deco-expanded-height) * -0.09);
+		right: calc(var(--ironsworn-deco-expanded-height) * 0.03);
+		transform: scaleX(-1);
+		z-index: auto;
+		background: var(--ironsworn-color-thematic);
+		height: var(--ironsworn-deco-collapsed-height);
+		content: '';
+		pointer-events: none;
 
-    /* This seems wrong, but imports. See https://github.com/vitejs/vite/issues/7651 */
-    mask-image: url('/../../../system/assets/misc/hex-deco.svg');
-    aspect-ratio: var(--ironsworn-asset-deco-aspect-ratio);
-    mask-repeat: no-repeat;
-  }
+		/* This seems wrong, but imports. See https://github.com/vitejs/vite/issues/7651 */
+		mask-image: url('/../../../system/assets/misc/hex-deco.svg');
+		aspect-ratio: var(--ironsworn-asset-deco-aspect-ratio);
+		mask-repeat: no-repeat;
+	}
 
-  & > * {
-    z-index: 2;
-  }
+	& > * {
+		z-index: 2;
+	}
 
-  .asset-header {
-    padding-right: calc(
-      var(--ironsworn-deco-collapsed-height) *
-        var(--ironsworn-deco-aspect-ratio)
-    );
-  }
+	.asset-header {
+		padding-right: calc(
+			var(--ironsworn-deco-collapsed-height) *
+				var(--ironsworn-deco-aspect-ratio)
+		);
+	}
 }
-
-
