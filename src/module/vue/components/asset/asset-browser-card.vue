@@ -1,6 +1,7 @@
 <template>
-	<article
-		class="item-row document ironsworn__asset"
+	<AssetCard
+		:collapsible="true"
+		class="item-row document"
 		draggable="true"
 		:data-pack="foundryItem().pack"
 		:data-id="foundryItem().id"
@@ -8,74 +9,51 @@
 		:class="{ [`asset-${toolset}`]: true }"
 		@dragstart="dragStart"
 		@dragend="dragEnd">
-		<AssetHeader>
-			<template #start>
-				<FontIcon name="grip" class="nogrow block draggable item" />
-			</template>
-			<template #title="{ name, cssClass }">
-				<IronBtn
-					:aria-controls="bodyId"
-					class="asset-expand-toggle"
-					@click="state.expanded = !state.expanded">
-					<template #text>
-						<h4 class="button-text" :class="cssClass">
-							{{ name }}
-						</h4>
-					</template>
-				</IronBtn>
-			</template>
-		</AssetHeader>
-		<header class="asset-header nogrow flexrow">
-			<FontIcon name="grip" class="nogrow block draggable item" />
-			<IronBtn
-				:aria-controls="bodyId"
-				class="asset-expand-toggle"
-				@click="state.expanded = !state.expanded">
-				<template #text>
-					<h4 class="asset-title button-text">
-						{{ foundryItem().name }}
-					</h4>
+		<template #header>
+			<AssetHeader class="nogrow flexrow">
+				<template #default="{ headerStyles }">
+					<FontIcon name="grip" class="nogrow block draggable item" />
+					<IronBtn
+						:aria-controls="bodyId"
+						:class="headerStyles.toggle"
+						@click="state.expanded = !state.expanded">
+						<template #text>
+							<h4 class="button-text" :class="headerStyles.title">
+								{{ foundryItem().name }}
+							</h4>
+						</template>
+					</IronBtn>
 				</template>
-			</IronBtn>
-		</header>
-
-		<CollapseTransition>
+			</AssetHeader>
+		</template>
+		<template #default="{ styles }">
 			<section
 				v-if="state.expanded"
 				:id="bodyId"
-				class="asset-body flexcol"
+				:class="styles.body"
+				class="flexcol"
 				:aria-expanded="state.expanded">
 				<div
 					v-if="system.description"
 					v-html="$enrichHtml(system.description ?? '')"></div>
 				<div v-html="$enrichHtml(system.requirement ?? '')"></div>
-				<div v-if="system.fields?.length" class="asset-fields">
+				<div v-if="system.fields?.length" :class="styles.fields">
 					<AssetField
 						v-for="(field, i) in system.fields"
 						:key="i"
 						:field="field"
 						:readonly="true" />
 				</div>
-				<ul class="asset-abilities flexcol">
+				<ul :class="styles.abilities" class="flexcol">
 					<li v-for="(ability, i) in system.abilities" :key="`ability${i}`">
 						<AssetAbility :ability="ability" class="flexrow" />
 					</li>
 				</ul>
-				<AttrSlider
-					v-if="system.track.enabled"
-					attr="track"
-					document-type="Item"
-					slider-style="horizontal"
-					:max="system.track.max"
-					:current-value="system.track.current"
-					:read-only="true">
-					<template #label>
-						<label>{{ system.track.name }}</label>
-					</template>
-				</AttrSlider>
+
+				<AssetConditionMeter v-if="system.track.enabled" />
 			</section>
-		</CollapseTransition>
-	</article>
+		</template>
+	</AssetCard>
 </template>
 
 <script setup lang="ts">
@@ -84,12 +62,14 @@ import { computed, inject, provide, reactive } from 'vue'
 import type { IronswornItem } from '../../../item/item'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions.js'
-import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
 import FontIcon from '../icon/font-icon.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import AssetAbility from './asset-ability.vue'
 import AssetField from './asset-field.vue'
+import AssetHeader from './asset-header.vue'
+import AssetCard from './asset-card.vue'
+import AssetConditionMeter from './asset-condition-meter.vue'
 
 const props = defineProps<{
 	df?: IAsset
@@ -110,10 +90,6 @@ const state = reactive({
 })
 
 const bodyId = `asset-body-${props.foundryItem().id}`
-
-function moveClick(item) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
 
 function dragStart(ev) {
 	ev.dataTransfer.setData(
