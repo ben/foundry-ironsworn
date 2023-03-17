@@ -47,15 +47,13 @@
 					@moveclick="moveclick"
 					v-html="$enrichHtml(asset.system.requirement ?? '')" />
 
-				<dl v-if="asset.system.fields?.length" class="asset-fields">
-					<div
+				<div v-if="asset.system.fields?.length" class="asset-fields">
+					<AssetField
 						v-for="(field, i) in asset.system.fields"
-						:key="'field' + i"
-						class="asset-field">
-						<dt class="asset-field-label">{{ field.name }}</dt>
-						<dd class="asset-field-value">{{ field.value }}</dd>
-					</div>
-				</dl>
+						:key="i"
+						:field="field"
+						:readonly="true" />
+				</div>
 				<ul class="asset-abilities flexcol">
 					<template v-for="(ability, i) in asset.system.abilities">
 						<li v-if="ability.enabled" :key="`ability${i}`">
@@ -67,7 +65,7 @@
 					</template>
 				</ul>
 
-				<div class="flexrow nogrow" v-if="asset.system.track.enabled">
+				<div v-if="asset.system.track.enabled" class="flexrow nogrow">
 					<ConditionMeterSlider
 						slider-style="horizontal"
 						class="asset-condition-meter"
@@ -105,13 +103,14 @@ import type {
 } from '../../../item/itemtypes'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
-import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
+import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetConditions from './asset-conditions.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import AssetAbility from './asset-ability.vue'
+import AssetField from './asset-field.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref
@@ -120,7 +119,12 @@ const $actor = inject($ActorKey)
 const foundryItem = $actor
 	? $actor?.items.find((x) => x.id === props.asset._id)
 	: game.items?.get(props.asset._id)
+
 provide($ItemKey, foundryItem)
+provide(
+	ItemKey,
+	computed(() => props.asset)
+)
 
 const bodyId = computed(() => `asset-body-${props.asset?._id}`)
 

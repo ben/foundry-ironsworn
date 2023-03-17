@@ -32,15 +32,13 @@
 					v-if="system.description"
 					v-html="$enrichHtml(system.description ?? '')"></div>
 				<div v-html="$enrichHtml(system.requirement ?? '')"></div>
-				<dl v-if="system.fields?.length" class="asset-fields">
-					<div
+				<div v-if="system.fields?.length" class="asset-fields">
+					<AssetField
 						v-for="(field, i) in system.fields"
-						:key="'field' + i"
-						class="asset-field">
-						<dt class="asset-field-label">{{ field.name }}</dt>
-						<dd class="asset-field-value">{{ field.value }}</dd>
-					</div>
-				</dl>
+						:key="i"
+						:field="field"
+						:readonly="true" />
+				</div>
 				<ul class="asset-abilities flexcol">
 					<li v-for="(ability, i) in system.abilities" :key="`ability${i}`">
 						<AssetAbility :ability="ability" class="flexrow" />
@@ -74,6 +72,7 @@ import AttrSlider from '../resource-meter/attr-slider.vue'
 import FontIcon from '../icon/font-icon.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import AssetAbility from './asset-ability.vue'
+import AssetField from './asset-field.vue'
 
 const props = defineProps<{
 	df?: IAsset

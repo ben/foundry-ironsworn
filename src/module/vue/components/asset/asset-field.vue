@@ -7,13 +7,12 @@
 			:id="`input-${baseId}`"
 			v-model="field.value"
 			type="text"
-			:readonly="canUpdate"
+			:readonly="!canUpdate"
 			:class="$style.value" />
 	</div>
 </template>
 
 <script lang="ts" setup>
-import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import type { AssetField } from '../../../item/itemtypes'
 import { ItemKey } from '../../provisions'
@@ -27,11 +26,16 @@ const props = withDefaults(
 	{ readonly: false, updateFn: undefined }
 )
 
-const asset = inject(ItemKey) as Ref
+const asset = inject(ItemKey)
 
 const canUpdate = computed(() => !!props.updateFn && !props.readonly)
 
-const baseId = computed(() => `field_${props.field.name}_${asset.value?._id}`)
+const baseId = computed(
+	() =>
+		`field_${props.field.name}_${canUpdate.value ? 'update' : 'readonly'}_${
+			asset?.value._id
+		}`
+)
 </script>
 <style lang="scss" module>
 .wrapper {
@@ -42,21 +46,26 @@ const baseId = computed(() => `field_${props.field.name}_${asset.value?._id}`)
 	border-bottom-width: var(--ironsworn-border-width-md);
 	border-bottom-style: solid;
 	border-bottom-color: var(--ironsworn-color-thematic);
+	line-height: 1;
 }
 .label {
 	margin: 0;
 	padding: 0;
+	display: flex;
+	align-items: flex-end;
+	flex-grow: 0;
 }
 
 .value {
 	flex-grow: 1;
 	margin: 0;
 	padding: 0 var(--ironsworn-spacer-sm);
-	&[readonly='true'] {
+	&[readonly] {
 		border: none;
 		background: none;
+		pointer-events: none;
 	}
-	&[readonly='false'] {
+	&:not([readonly]) {
 	}
 }
 </style>

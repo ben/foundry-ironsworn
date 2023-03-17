@@ -25,12 +25,13 @@
 				v-html="$enrichHtml(item.system.description)" />
 
 			<!-- FIELDS -->
-			<div
-				v-for="(field, i) in item.system.fields"
-				:key="`field${i}`"
-				class="form-group nogrow">
-				<label>{{ field.name }}</label>
-				<input v-model="field.value" type="text" @blur="saveFields" />
+			<div v-if="item.system.fields?.length" class="asset-fields">
+				<AssetField
+					v-for="(field, i) in item.system.fields"
+					:key="i"
+					:field="field"
+					:update-fn="(delta) => updateField(i, delta)"
+					class="form-group nogrow" />
 			</div>
 
 			<!-- REQUIREMENT -->
@@ -88,12 +89,16 @@
 import type { ComputedRef } from 'vue'
 import { computed, inject, useCssModule } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
-import type { AssetAbility as AssetAbilityType } from '../../../item/itemtypes'
+import type {
+	AssetAbility as AssetAbilityType,
+	AssetField as AssetFieldType
+} from '../../../item/itemtypes'
 import WithRollListeners from '../with-rolllisteners.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import AssetConditions from './asset-conditions.vue'
 import AssetAbility from './asset-ability.vue'
+import AssetField from './asset-field.vue'
 
 const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
@@ -109,23 +114,18 @@ const articleClasses = computed(() => ({
 	[`asset-${toolset.value}`]: true
 }))
 
-function saveFields() {
-	const fields = item.value?.system.fields
-	$item?.update({ system: { fields } })
-}
-
-async function updateAbility(
-	abilityIdx: number,
-	delta: Partial<AssetAbilityType>
-) {
+async function updateAbility(index: number, delta: Partial<AssetAbilityType>) {
 	const abilities = Object.values(
 		item.value.system.abilities
 	) as AssetAbilityType[]
-	abilities[abilityIdx] = mergeObject(
-		abilities[abilityIdx],
-		delta
-	) as AssetAbilityType
+	abilities[index] = mergeObject(abilities[index], delta) as AssetAbilityType
 	return $item?.update({ system: { abilities } })
+}
+
+async function updateField(index: number, delta: Partial<AssetFieldType>) {
+	const fields = Object.values(item.value.system.fields) as AssetFieldType[]
+	fields[index] = mergeObject(fields[index], delta) as AssetFieldType
+	return $item?.update({ system: { fields } })
 }
 
 function exclusiveOptionClick(selectedIdx: number) {

@@ -36,7 +36,7 @@
 		color: var(--ironsworn-color-fg);
 	}
 
-	&:not([aria-readonly='true'], [readonly='true']) {
+	&:not([aria-readonly='true'], [readonly]) {
 		&:hover {
 			@include fx.glowInterior;
 

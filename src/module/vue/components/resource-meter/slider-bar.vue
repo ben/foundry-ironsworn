@@ -236,7 +236,8 @@ const keybindInfo = computed(
 		}
 	}
 
-	&[aria-readonly='true'] {
+	&[aria-readonly='true'],
+	&[readonly] {
 		pointer-events: none !important;
 
 		.slider-segment {
