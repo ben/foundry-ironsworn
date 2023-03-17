@@ -21,6 +21,10 @@ import { ItemKey } from '../../provisions'
 const props = withDefaults(
 	defineProps<{
 		field: AssetField
+		/**
+		 * Is the field's value read-only?
+		 * @default false
+		 */
 		readonly?: boolean
 		updateFn?: (delta: Partial<AssetField>) => Promise<any>
 	}>(),
@@ -40,7 +44,7 @@ const baseId = computed(
 
 function update(_: FocusEvent) {
 	if (!props.updateFn) return
-	props.updateFn({ value: props.field.value })
+	props.updateFn(props.field)
 }
 </script>
 <style lang="scss" module>
