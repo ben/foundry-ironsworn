@@ -2,8 +2,8 @@
 @use 'mixin:fx.scss';
 @use 'mixin:border.scss';
 
-@mixin fieldFocus($spread: 6px) {
-	@include fx.glowExterior($spread);
+@mixin fieldFocus() {
+	@include fx.glowExterior;
 	@include border.accent(
 		var(--ironsworn-color-warm-50),
 		var(--ironsworn-color-cool-50)
@@ -21,7 +21,7 @@
 	color: var(--ironsworn-color-fg);
 }
 
-@mixin field($spread: 6px) {
+@mixin field() {
 	@include clickable.interactive;
 	@include fieldBase;
 
@@ -36,24 +36,26 @@
 		color: var(--ironsworn-color-fg);
 	}
 
-	&:hover {
-		@include fx.glowInterior($spread, 0, var(--ironsworn-color-cool));
-
-		border-color: var(--ironsworn-color-clickable-block-border-hover);
-	}
-
-	&:focus,
-	&:focus-within {
-		@include fieldFocus;
-		@include border.accent(
-			var(--ironsworn-color-warm-80),
-			var(--ironsworn-color-cool-80)
-		);
-
+	&:not([aria-readonly='true'], [readonly='true']) {
 		&:hover {
-			// box-shadow: @include fieldFocus(); [box-shadow],
-			//   @include fx.glowInterior($spread, 0, var(--ironsworn-color-cool));
-			//     [box-shadow];
+			@include fx.glowInterior;
+
+			border-color: var(--ironsworn-color-clickable-block-border-hover);
+		}
+
+		&:focus,
+		&:focus-within {
+			@include fieldFocus;
+			@include border.accent(
+				var(--ironsworn-color-warm-80),
+				var(--ironsworn-color-cool-80)
+			);
+
+			&:hover {
+				// box-shadow: @include fieldFocus(); [box-shadow],
+				//   @include fx.glowInterior($spread, 0, var(--ironsworn-color-cool));
+				//     [box-shadow];
+			}
 		}
 	}
 }
