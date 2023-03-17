@@ -11,7 +11,7 @@ interface ProgressBase {
 
 /// ////////////////////////////
 
-interface AssetField {
+export interface AssetField {
 	name: string
 	value: string
 }
