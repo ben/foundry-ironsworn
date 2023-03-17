@@ -31,7 +31,7 @@
 					:key="i"
 					:field="field"
 					:update-fn="(delta) => updateField(i, delta)"
-					class="form-group nogrow" />
+					class="nogrow" />
 			</div>
 
 			<!-- REQUIREMENT -->

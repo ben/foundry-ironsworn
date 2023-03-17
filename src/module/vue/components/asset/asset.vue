@@ -19,7 +19,7 @@
 					{{ asset.system.category }}
 				</span>
 			</button>
-			<div class="asset-controls flexrow nogrow">
+			<div class="flexrow nogrow" :class="$style.controls">
 				<IronBtn
 					v-if="editMode"
 					block
@@ -199,5 +199,9 @@ function toggleCondition(idx: number) {
 <style lang="scss" module>
 .themeColor {
 	--ironsworn-color-thematic: v-bind('asset?.system?.color');
+}
+
+.controls {
+	justify-items: flex-end;
 }
 </style>

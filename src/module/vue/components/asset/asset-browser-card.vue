@@ -8,6 +8,23 @@
 		:class="{ [`asset-${toolset}`]: true }"
 		@dragstart="dragStart"
 		@dragend="dragEnd">
+		<AssetHeader>
+			<template #start>
+				<FontIcon name="grip" class="nogrow block draggable item" />
+			</template>
+			<template #title="{ name, cssClass }">
+				<IronBtn
+					:aria-controls="bodyId"
+					class="asset-expand-toggle"
+					@click="state.expanded = !state.expanded">
+					<template #text>
+						<h4 class="button-text" :class="cssClass">
+							{{ name }}
+						</h4>
+					</template>
+				</IronBtn>
+			</template>
+		</AssetHeader>
 		<header class="asset-header nogrow flexrow">
 			<FontIcon name="grip" class="nogrow block draggable item" />
 			<IronBtn

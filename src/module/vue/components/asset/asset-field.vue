@@ -1,6 +1,6 @@
 <template>
-	<div :class="$style.wrapper">
-		<label :for="`input-${baseId}`" :class="$style.label">{{
+	<div :class="$style.wrapper" class="flexrow">
+		<label :for="`input-${baseId}`" :class="$style.label" class="nogrow">{{
 			field.name
 		}}</label>
 		<input
@@ -39,10 +39,8 @@ const baseId = computed(
 </script>
 <style lang="scss" module>
 .wrapper {
-	display: flex;
-	flex-direction: row;
-	flex-grow: 0;
 	gap: var(--ironsworn-spacer-sm);
+	align-items: flex-end;
 	border-bottom-width: var(--ironsworn-border-width-md);
 	border-bottom-style: solid;
 	border-bottom-color: var(--ironsworn-color-thematic);
@@ -51,21 +49,21 @@ const baseId = computed(
 .label {
 	margin: 0;
 	padding: 0;
-	display: flex;
-	align-items: flex-end;
-	flex-grow: 0;
 }
 
 .value {
 	flex-grow: 1;
 	margin: 0;
 	padding: 0 var(--ironsworn-spacer-sm);
+	overflow-y: visible;
+	line-height: inherit;
+	&:not([readonly]) {
+		// styles for rendering when editable
+	}
 	&[readonly] {
 		border: none;
 		background: none;
 		pointer-events: none;
-	}
-	&:not([readonly]) {
 	}
 }
 </style>
