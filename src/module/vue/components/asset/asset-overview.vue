@@ -113,14 +113,6 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	return $asset?.update({ system: { fields } })
 }
 
-function exclusiveOptionClick(selectedIdx: number) {
-	const { exclusiveOptions } = asset.value.system
-	for (let i = 0; i < exclusiveOptions.length; i++) {
-		exclusiveOptions[i].selected = i === selectedIdx
-	}
-	$asset?.update({ system: { exclusiveOptions } })
-}
-
 function moveClick(item) {
 	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
