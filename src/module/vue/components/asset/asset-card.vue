@@ -29,7 +29,7 @@
 						type="button"
 						:aria-controls="bodyId"
 						:class="$style.expandToggle"
-						class="clickable text"
+						class="clickable text flexrow"
 						@click="toggleExpand">
 						<h4 :class="$style.title">
 							{{ asset.name }}
@@ -253,13 +253,13 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 }
 
 .expandToggle {
-	display: flex;
-	flex-flow: row wrap;
 	flex-grow: 1;
 	gap: var(--ironsworn-spacer-lg);
 	transition: var(--ironsworn-transition);
 	box-shadow: none !important;
 	background: none;
+	height: 100%;
+	align-content: center;
 }
 
 .title {
@@ -271,6 +271,8 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	letter-spacing: var(--ironsworn-letter-spacing-sm);
 	font-size: var(--font-size-14);
 	font-weight: bold;
+	flex-grow: 0;
+	white-space: nowrap;
 }
 
 .type {
