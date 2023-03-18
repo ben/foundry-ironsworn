@@ -56,39 +56,35 @@ const props = defineProps<{
 const canUpdate = computed(() => !!props.updateFn)
 
 const iconChecked = computed<IconSwitchState>(() => {
-	switch (IronswornSettings.starforgedToolsEnabled) {
-		case true:
-			return {
-				icon: 'fa:hexagon',
-				props: {
-					rotate: FontAwesome.Rotate['90deg'],
-					family: FontAwesome.Family.Solid
-				}
+	if (IronswornSettings.starforgedToolsEnabled) {
+		return {
+			icon: 'fa:hexagon',
+			props: {
+				rotate: FontAwesome.Rotate['90deg'],
+				family: FontAwesome.Family.Solid
 			}
-		default:
-			return {
-				icon: 'fa:circle',
-				props: { family: FontAwesome.Family.Solid }
-			}
+		}
+	}
+	return {
+		icon: 'fa:circle',
+		props: { family: FontAwesome.Family.Solid }
 	}
 })
 const iconUnchecked = computed<IconSwitchState>(() => {
-	switch (IronswornSettings.starforgedToolsEnabled) {
-		case true:
-			return {
-				icon: 'fa:hexagon',
-				props: {
-					rotate: FontAwesome.Rotate['90deg'],
-					family: FontAwesome.Family.Regular
-				}
+	if (IronswornSettings.starforgedToolsEnabled)
+		return {
+			icon: 'fa:hexagon',
+			props: {
+				rotate: FontAwesome.Rotate['90deg'],
+				family: FontAwesome.Family.Regular
 			}
-		default:
-			return {
-				icon: 'fa:circle',
-				props: {
-					family: FontAwesome.Family.Regular
-				}
-			}
+		}
+
+	return {
+		icon: 'fa:circle',
+		props: {
+			family: FontAwesome.Family.Regular
+		}
 	}
 })
 

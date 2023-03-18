@@ -18,10 +18,10 @@
 		</section>
 
 		<section class="flexrow nogrow" :class="$style.conditions">
-			<ConditionCheckbox name="wounded" />
-			<ConditionCheckbox name="unprepared" />
-			<ConditionCheckbox name="shaken" />
-			<ConditionCheckbox name="encumbered" />
+			<ConditionCheckbox type="debility" name="wounded" />
+			<ConditionCheckbox type="debility" name="unprepared" />
+			<ConditionCheckbox type="debility" name="shaken" />
+			<ConditionCheckbox type="debility" name="encumbered" />
 		</section>
 	</div>
 </template>
