@@ -49,7 +49,7 @@
 	.asset-body {
 		gap: var(--ironsworn-spacer-lg);
 		transition: var(--ironsworn-transition);
-		padding: var(--ironsworn-spacer-sm);
+		padding: var(--ironsworn-spacer-ms);
 		overflow: hidden;
 
 		.asset-fields {
@@ -80,8 +80,17 @@
 		}
 
 		.asset-abilities {
-			gap: var(--ironsworn-spacer-lg);
-			padding-left: var(--ironsworn-spacer-lg);
+			gap: var(--ironsworn-spacer-sm);
+			margin: 0;
+			padding: var(--ironsworn-spacer-sm) 0;
+			list-style: none;
+			justify-items: stretch;
+			> li {
+				display: contents;
+				> * {
+					width: 100%;
+				}
+			}
 		}
 	}
 }

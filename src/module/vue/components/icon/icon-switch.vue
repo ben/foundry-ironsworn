@@ -1,5 +1,5 @@
 <template>
-	<component :is="is" :class="{ [$style.iconSwitch]: true }">
+	<component :is="is" :class="{ [$style.wrapper]: true }">
 		<TransitionGroup :name="transitionName">
 			<component
 				:is="getIconOptions(iconData).set === 'ironsworn' ? IronIcon : FontIcon"
@@ -14,10 +14,10 @@
 
 <script lang="ts" setup>
 import IronIcon from 'component:icon/iron-icon.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
 import FontIcon from 'component:icon/font-icon.vue'
-import { omit } from 'lodash-es'
-import type { ComputedRef, ExtractPropTypes } from 'vue'
-import { computed, TransitionGroup } from 'vue'
+import type { ExtractPropTypes } from 'vue'
+import { TransitionGroup } from 'vue'
 import type {
 	FontAwesomeIconProps,
 	IconSwitchState,
@@ -25,7 +25,6 @@ import type {
 	IronswornIconId
 } from './icon-common'
 import { parseClassesToFaProps } from './icon-common'
-import type IronBtn from '../buttons/iron-btn.vue'
 
 type IronBtnProps = ExtractPropTypes<typeof IronBtn>
 interface Props
@@ -57,16 +56,9 @@ interface Props
 	transitionName?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
 	transitionName: 'fade',
 	is: 'span'
-})
-
-const ironBtnProps: ComputedRef<IronBtnProps> = computed(() => {
-	return {
-		...omit(props, ['iconOn', 'iconOff', 'state', 'readonly']),
-		justify: 'center'
-	}
 })
 
 function getIconOptions(iconState: IconSwitchState) {
@@ -81,26 +73,31 @@ function getIconOptions(iconState: IconSwitchState) {
 	if (set === 'fa' && iconState.class) {
 		props = foundry.utils.mergeObject(
 			props,
-			parseClassesToFaProps(iconState.class ?? '') as any
+			parseClassesToFaProps(iconState.class?.join(' ') ?? '') as any
 		)
 	}
 
 	return {
 		set,
-		props
+		props,
+		class: props.class
 	}
 }
 </script>
 
 <style lang="scss" module>
-.iconSwitch {
+.wrapper {
 	// use grid to position stacked icons, which is more flexible than absolute positioning
 	display: grid;
+	height: var(--ironsworn-icon-size);
+	width: var(--ironsworn-icon-size);
 }
 
 .icon {
 	// stacks icons on top of each other by assigning them to the same grid cell
 	grid-row: 1;
 	grid-column: 1;
+	height: inherit;
+	width: inherit;
 }
 </style>

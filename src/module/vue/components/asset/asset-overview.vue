@@ -40,39 +40,16 @@
 				v-html="$enrichMarkdown(item.system.requirement)"></p>
 
 			<!-- ABILITIES -->
-			<div class="asset-abilities flexcol nogrow">
-				<div
-					v-for="(ability, i) in item.system.abilities"
-					:key="`ability${i}`"
-					:class="{
-						flexrow: true,
-						marked: ability.enabled
-					}"
-					@click="toggleAbility(i)">
-					<div class="flexrow nogrow bullet-wrapper">
-						<div
-							:class="{
-								nogrow: true,
-								'asset-ability-bullet': true,
-								'asset-ability-bullet-marked': ability.enabled,
-								[`asset-ability-bullet-${toolset}`]: true,
-								[`asset-ability-bullet-${toolset}-marked`]: ability.enabled
-							}" />
-					</div>
-					<WithRollListeners
-						element="div"
-						class="asset-ability-text flexcol"
-						@moveclick="moveClick"
-						v-html="$enrichHtml(ability.description)">
-					</WithRollListeners>
-					<Clock
-						v-if="ability.hasClock"
-						class="asset-ability-clock"
-						:wedges="ability.clockMax"
-						:ticked="ability.clockTicks"
-						@click="setAbilityClock(i, $event)" />
-				</div>
-			</div>
+			<ul class="asset-abilities flexcol nogrow">
+				<li v-for="(ability, i) in item.system.abilities" :key="`ability${i}`">
+					<AssetAbility
+						:ability="ability"
+						:update-fn="(delta) => updateAbility(i, delta)"
+						:toggle="true"
+						:readonly-clock="true"
+						class="flexrow" />
+				</li>
+			</ul>
 
 			<!-- OPTIONS -->
 			<section
@@ -111,12 +88,12 @@
 import type { ComputedRef } from 'vue'
 import { computed, inject, useCssModule } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
-import type { AssetAbility } from '../../../item/itemtypes'
+import type { AssetAbility as AssetAbilityType } from '../../../item/itemtypes'
 import WithRollListeners from '../with-rolllisteners.vue'
-import Clock from '../clock.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import AssetConditions from './asset-conditions.vue'
+import AssetAbility from './asset-ability.vue'
 
 const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
@@ -137,16 +114,18 @@ function saveFields() {
 	$item?.update({ system: { fields } })
 }
 
-function toggleAbility(i: number) {
-	const { abilities } = item.value.system
-	abilities[i].enabled = !abilities[i].enabled
-	$item?.update({ system: { abilities } })
-}
-
-function setAbilityClock(abilityIdx: number, clockTicks: number) {
-	const abilities = Object.values(item.value.system.abilities) as AssetAbility[]
-	abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-	$item?.update({ system: { abilities } })
+async function updateAbility(
+	abilityIdx: number,
+	delta: Partial<AssetAbilityType>
+) {
+	const abilities = Object.values(
+		item.value.system.abilities
+	) as AssetAbilityType[]
+	abilities[abilityIdx] = mergeObject(
+		abilities[abilityIdx],
+		delta
+	) as AssetAbilityType
+	return $item?.update({ system: { abilities } })
 }
 
 function exclusiveOptionClick(selectedIdx: number) {
@@ -160,32 +139,7 @@ function exclusiveOptionClick(selectedIdx: number) {
 function moveClick(item) {
 	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
-
-function toggleCondition(idx: number) {
-	const { conditions } = item.value.system
-	conditions[idx].ticked = !conditions[idx].ticked
-	$item?.update({ system: { conditions } })
-}
 </script>
-
-<style lang="scss" scoped>
-.bullet-wrapper {
-	flex-basis: 1.5em;
-	align-content: flex-start;
-	padding-top: 0.05em;
-}
-
-.asset-ability-bullet-ironsworn {
-	border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-	height: 15px;
-}
-
-.asset-ability-bullet-starforged {
-	border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-	background-color: var(--ironsworn-color-border);
-	height: 1em;
-}
-</style>
 
 <style lang="scss" module>
 .ironsworn__asset {

@@ -146,6 +146,16 @@ async function onChange(newValue: number) {
 	}
 	.attr-slider-label {
 		line-height: 1 !important;
+		text-transform: uppercase;
+		display: flex;
+
+		> * {
+			align-items: center;
+		}
+		> label {
+			// for e.g. asset browser cards, which don't use a button
+			display: flex;
+		}
 	}
 }
 </style>

@@ -4,7 +4,7 @@
 		ref="$wrapper"
 		role="checkbox"
 		tabindex="0"
-		:class="$style.wrapper"
+		:class="{ [$style.wrapper]: true, [$style.hoverFxAll]: contentHoverFx }"
 		:aria-checked="checked"
 		:aria-readonly="readonly"
 		:aria-disabled="disabled"
@@ -14,7 +14,12 @@
 		@click="toggle">
 		<IconSwitch
 			tabindex="-1"
-			:class="{ [$style.checkbox]: true }"
+			role="presentational"
+			:class="{
+				[$style.checkbox]: true,
+				[iconSwitchClass]: true,
+				[$style.hoverFxCheckboxOnly]: !contentHoverFx
+			}"
 			class="nogrow"
 			v-bind="iconSwitchProps" />
 		<slot name="default"></slot>
@@ -41,26 +46,23 @@ const props = withDefaults(
 		iconChecked: IconSwitchState
 		iconUnchecked: IconSwitchState
 		/**
-		 * @default 'fade'
-		 */
-		transitionName?: string
-		/**
-		 * Show a preview of the toggled result when hovering the checkbox?
-		 * @default true
-		 */
-		hoverPreview?: boolean
-		/**
 		 * @default 'div'
 		 */
 		is?: any
+		iconSwitchClass?: string
+		/**
+		 * Does the slot content receive the same hover effect as the checkbox?
+		 * @default true
+		 */
+		contentHoverFx?: boolean
 	}>(),
 	{
 		checked: false,
-		transitionName: 'fade',
-		hoverPreview: true,
 		readonly: false,
 		disabled: false,
-		is: 'div'
+		is: 'div',
+		iconSwitchClass: '',
+		contentHoverFx: true
 	}
 )
 
@@ -89,10 +91,11 @@ const iconSwitchProps = computed<ExtractPropTypes<typeof IconSwitch>>(() => {
 	if (!icons.unchecked.props) icons.unchecked.props = {}
 	icons.unchecked.props.class =
 		(icons.unchecked.class ?? '') + ' ' + $style.icon
-	return { icons, transitionName: props.transitionName }
+	return { icons, transitionName: 'fade' }
 })
 
 function toggle() {
+	if (props.readonly) return
 	$emit('input', !props.checked)
 	$emit('change', !props.checked)
 }
@@ -108,8 +111,34 @@ defineExpose({
 
 <style lang="scss" module>
 @use 'mixin:clickable.scss';
+
+.hoverFxCheckboxOnly {
+	transition: var(--ironsworn-transition);
+}
+
+:local(.wrapper) {
+	&:not([aria-readonly='true']):not([aria-disabled='true']) {
+		&:hover {
+			:local(.hoverFxCheckboxOnly) {
+				@include clickable.textHover;
+			}
+		}
+	}
+}
+
+.hoverFxAll {
+	@include clickable.text;
+	&:active {
+		:local(.icon) {
+			color: var(--ironsworn-color-warm);
+		}
+		filter: drop-shadow(0 0 5px var(--ironsworn-color-cool));
+	}
+}
 .icon {
 	opacity: 0;
+	display: flex;
+	align-items: center;
 	transition: var(--ironsworn-transition);
 	&[data-icon-state='unchecked'] {
 		// Usually the unchecked state is an empty frame -- so it can say opaque all the time.
@@ -124,12 +153,9 @@ defineExpose({
 }
 
 .wrapper {
-	@include clickable.text;
-	&:active {
-		:local(.icon) {
-			color: var(--ironsworn-color-warm);
-		}
-		filter: drop-shadow(0 0 5px var(--ironsworn-color-cool));
+	justify-content: center;
+	&:not([aria-readonly='true']):not([aria-disabled='true']) {
+		cursor: pointer;
 	}
 	&[aria-checked='true'] {
 		:local(.icon) {
@@ -138,12 +164,11 @@ defineExpose({
 			}
 		}
 	}
-	&:not([aria-readonly='true']) {
-		cursor: pointer;
-	}
 	&[aria-readonly='true'] {
 		// prevent hovereffects when set to readonly
 		pointer-events: none;
+		&:hover {
+		}
 		:local(.icon),
 		:local(.icon) * {
 			pointer-events: none;

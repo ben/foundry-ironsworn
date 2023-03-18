@@ -30,6 +30,7 @@ const props = withDefaults(defineProps<FontAwesomeIconProps>(), {
 const classes = computed(() => {
 	const iconClasses: Record<string, boolean> = {
 		icon: true,
+		fa: true,
 		[`fa-${props.name}`]: true
 	}
 	forEach(props, (value, key) => {
@@ -58,6 +59,9 @@ const classes = computed(() => {
 
 <style lang="scss" module>
 .wrapper {
+	display: inline-block;
+	width: var(--ironsworn-icon-size);
+	height: var(--ironsworn-icon-size);
 }
 
 .border {

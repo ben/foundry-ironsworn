@@ -32,7 +32,7 @@ export interface IconSwitchState {
 	/**
 	 * @default ''
 	 */
-	class?: string
+	class?: string[]
 	/**
 	 * Additional props to be passed to the icon component.
 	 */

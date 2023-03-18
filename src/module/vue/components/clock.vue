@@ -6,6 +6,7 @@
 		:height="size ?? '100px'"
 		:width="size ?? '100px'"
 		viewBox="-55 -55 110 110"
+		:aria-readonly="props.readonly"
 		:aria-valuenow="ticked"
 		:aria-valuetext="`${ticked}⁄${wedges}`">
 		<path
@@ -67,20 +68,24 @@ function tooltipDirection(currentWedge: number, maxWedge: number) {
 	}
 }
 
-const props = defineProps<{
-	/**
-	 * The total number of segments
-	 */
-	wedges: number
-	/**
-	 * The number of filled clock segments.
-	 */
-	ticked: number
-	/**
-	 * The size of the clock to be used as the widget's `height` and `width` attributes.
-	 */
-	size?: string
-}>()
+const props = withDefaults(
+	defineProps<{
+		/**
+		 * The total number of segments
+		 */
+		wedges: number
+		/**
+		 * The number of filled clock segments.
+		 */
+		ticked: number
+		/**
+		 * The size of the clock to be used as the widget's `height` and `width` attributes.
+		 */
+		size?: string
+		readonly?: boolean
+	}>(),
+	{ readonly: false }
+)
 
 const segmentPaths = computed(() => {
 	const ret: string[] = []
@@ -91,7 +96,9 @@ const segmentPaths = computed(() => {
 })
 
 const $emit = defineEmits(['click'])
+
 function click(i: number) {
+	if (props.readonly === true) return
 	// If 1 is marked and the click is on the first wedge, clear the clock
 	if (i === 0 && props.ticked === 1) {
 		i = -1
@@ -101,6 +108,9 @@ function click(i: number) {
 </script>
 
 <style lang="scss" scoped>
+.clock-segment {
+	vector-effect: non-scaling-stroke;
+}
 svg.clock {
 	// so that only *segment* hovers appear
 	pointer-events: none;
@@ -140,15 +150,17 @@ svg.clock {
 		}
 	}
 
-	.clock-segment {
+	&:not([aria-readonly='true']) .clock-segment {
 		transition: var(--ironsworn-transition);
 		cursor: pointer;
-		pointer-events: fill;
-		vector-effect: non-scaling-stroke;
+		pointer-events: visible;
 
 		&:active {
 			fill-opacity: 1;
 		}
+	}
+	&[aria-readonly='true'] .clock-segment {
+		pointer-events: none;
 	}
 }
 </style>
