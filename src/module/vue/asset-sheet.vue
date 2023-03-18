@@ -51,7 +51,24 @@
 				</TabPanel>
 			</TabPanels>
 		</TabSet>
-		<AssetOverview v-else />
+		<AssetCard
+			v-else
+			class="flexcol"
+			:class="$style.asset"
+			:show-disabled-abilities="true"
+			:readonly-clocks="true"
+			:toggle-abilities="true"
+			:readonly-fields="false">
+			<template #title></template>
+			<!--
+        Semi-edit view:
+        * Text entry for field VALUES (not names)
+        * Checkboxes for abilities; clocks not settable to avoid click conflicts
+        * Selection for exclusive options
+        * Track: name and value only
+        * Conditions: checkboxes only
+       -->
+		</AssetCard>
 	</div>
 </template>
 
@@ -63,7 +80,8 @@ import AssetEditDescription from 'component:asset/asset-edit-description.vue'
 import AssetEditFields from 'component:asset/asset-edit-fields.vue'
 import AssetEditAbilities from 'component:asset/asset-edit-abilities.vue'
 import AssetEditOptions from 'component:asset/asset-edit-options.vue'
-import AssetOverview from 'component:asset/asset-overview.vue'
+import AssetCard from 'component:asset/asset-card.vue'
+
 import AssetEditTrack from 'component:asset/asset-edit-track.vue'
 import { $ItemKey, ItemKey } from './provisions'
 import TabSet from 'component:tabs/tab-set.vue'
@@ -105,5 +123,9 @@ function setRequirement() {
 }
 
 .tabPanel {
+}
+.asset {
+	margin: var(--ironsworn-spacer-xl) 0;
+	padding: var(--ironsworn-spacer-md);
 }
 </style>
