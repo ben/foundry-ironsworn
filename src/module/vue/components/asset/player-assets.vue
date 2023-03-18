@@ -12,11 +12,7 @@
 			class="nogrow flexcol item-list"
 			group
 			:class="$style.list">
-			<li
-				v-for="(asset, i) in assets"
-				:key="asset._id"
-				class="flexrow"
-				:class="$style.listItem">
+			<li v-for="(asset, i) in assets" :key="asset._id" class="flexrow">
 				<slot name="orderButtons">
 					<OrderButtons
 						v-if="editMode"
@@ -25,9 +21,7 @@
 						@sortUp="assetSortUp"
 						@sortDown="assetSortDown" />
 				</slot>
-				<slot name="asset">
-					<AssetCompact :asset="asset" />
-				</slot>
+				<AssetCompact :asset="asset" :class="$style.asset" />
 			</li>
 		</CollapseTransition>
 		<section class="flexrow nogrow" :class="$style.controls">
@@ -104,7 +98,7 @@ function assetBrowser() {
 	gap: var(--ironsworn-spacer-md);
 }
 
-.listItem {
+.asset {
 	border-width: var(--ironsworn-border-width-md);
 	border-style: solid;
 	border-radius: var(--ironsworn-border-radius-sm);
