@@ -1,12 +1,13 @@
 <template>
 	<AssetCard
+		:asset="asset().toObject()"
 		:class="$style.wrapper"
 		:expanded="state.expanded"
-		class="item-row document"
+		class="document"
 		draggable="true"
-		:data-pack="foundryItem().pack"
-		:data-id="foundryItem().id"
-		:data-document-id="foundryItem().id"
+		:data-pack="asset().pack"
+		:data-id="asset().id"
+		:data-document-id="asset().id"
 		@dragstart="dragStart"
 		@dragend="dragEnd"
 		@toggle-expand="state.expanded = !state.expanded">
@@ -26,13 +27,13 @@ import AssetCard from 'component:asset/asset-card.vue'
 
 const props = defineProps<{
 	df?: IAsset
-	foundryItem: () => IronswornItem
+	asset: () => IronswornItem
 }>()
 
-provide($ItemKey, props.foundryItem())
+provide($ItemKey, props.asset())
 provide(
 	ItemKey,
-	computed(() => props.foundryItem().toObject() as any)
+	computed(() => props.asset().toObject() as any)
 )
 
 const state = reactive({
@@ -44,15 +45,15 @@ function dragStart(ev) {
 		'text/plain',
 		JSON.stringify({
 			type: 'AssetBrowserData',
-			uuid: props.foundryItem().uuid
+			uuid: props.asset().uuid
 		})
 	)
 
-	CONFIG.IRONSWORN.emitter.emit('dragStart', props.foundryItem().type)
+	CONFIG.IRONSWORN.emitter.emit('dragStart', props.asset().type)
 }
 
 function dragEnd() {
-	CONFIG.IRONSWORN.emitter.emit('dragEnd', props.foundryItem().type)
+	CONFIG.IRONSWORN.emitter.emit('dragEnd', props.asset().type)
 }
 </script>
 
@@ -60,5 +61,10 @@ function dragEnd() {
 .wrapper {
 	margin: var(--ironsworn-spacer-xl) 0;
 	padding: var(--ironsworn-spacer-md);
+
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
 }
 </style>

@@ -1,54 +1,59 @@
 <template>
-	<article :class="$style.card" :aria-labelledby="titleId">
+	<article
+		:class="{
+			[$style.card]: true,
+			[$style.decorated]: !!deco,
+			[$style.undecorated]: !deco
+		}"
+		:aria-labelledby="titleId">
 		<slot name="deco">
 			<svg
 				v-if="deco"
-				:class="$style.deco"
+				:class="$style.decoration"
 				tabindex="-1"
 				role="presentational"
 				aria-hidden="true"
-				:height="deco.height"
 				:width="deco.width"
-				fill="var(--ironsworn-color-thematic)">
+				:height="deco.height">
 				<use :href="deco.href" />
 			</svg>
 		</slot>
-		<slot name="header">
-			<header :class="$style.header">
-				<slot name="headerStart"></slot>
 
-				<template v-if="isCollapsible">
-					<slot name="title" v-bind="{ styles: $style, titleId }">
-						<button
-							:id="titleId"
-							type="button"
-							:aria-controls="bodyId"
-							:class="$style.expandToggle"
-							class="clickable text"
-							@click="toggleExpand">
-							<h4 :class="$style.title">
-								{{ asset.name }}
-							</h4>
-							<span :class="$style.type" aria-label="asset type">
-								{{ asset.system.category }}
-							</span>
-						</button>
-					</slot>
-				</template>
+		<header :class="$style.header">
+			<slot name="headerStart"></slot>
 
-				<template v-else>
-					<slot name="title" v-bind="{ styles: $style }"></slot>
-
-					<slot name="type">
+			<template v-if="isCollapsible === true">
+				<slot name="title" v-bind="{ styles: $style, titleId }">
+					<button
+						:id="titleId"
+						type="button"
+						:aria-controls="bodyId"
+						:class="$style.expandToggle"
+						class="clickable text"
+						@click="toggleExpand">
+						<h4 :class="$style.title">
+							{{ asset.name }}
+						</h4>
 						<span :class="$style.type" aria-label="asset type">
 							{{ asset.system.category }}
 						</span>
-					</slot>
-				</template>
+					</button>
+				</slot>
+			</template>
 
-				<slot name="headerEnd"></slot>
-			</header>
-		</slot>
+			<template v-else>
+				<slot name="title" v-bind="{ styles: $style }"></slot>
+
+				<slot name="type">
+					<span :class="$style.type" aria-label="asset type">
+						{{ asset.system.category }}
+					</span>
+				</slot>
+			</template>
+
+			<slot name="headerEnd"></slot>
+		</header>
+
 		<CollapseTransition>
 			<section
 				v-if="expanded ?? !isCollapsible"
@@ -89,8 +94,9 @@
 					<template
 						v-for="(ability, i) in asset.system.abilities"
 						:key="`ability${i}`">
-						<li v-if="showDisabledAbilities ?? ability.enabled">
+						<li v-if="ability.enabled ?? showDisabledAbilities">
 							<AssetAbility
+								:class="$style.ability"
 								:ability="ability"
 								:update-fn="(delta) => updateAbility(i, delta)"
 								:toggle="toggleAbilities"
@@ -129,8 +135,8 @@ import { IronswornSettings } from '../../../helpers/settings'
 const asset = inject(ItemKey) as Ref
 const $asset = inject($ItemKey)
 
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey, undefined) as Ref
+const $actor = inject($ActorKey, undefined)
 
 const props = withDefaults(
 	defineProps<{
@@ -143,7 +149,7 @@ const props = withDefaults(
 		toggleAbilities?: boolean
 		showDisabledAbilities?: boolean
 	}>(),
-	{ showDisabledAbilities: true }
+	{ showDisabledAbilities: true, expanded: undefined }
 )
 const isCollapsible = computed(() => typeof props.expanded === 'boolean')
 
@@ -160,7 +166,7 @@ const titleId = computed(() => `title_${baseId.value}`)
 
 const deco = computed(() => {
 	if (IronswornSettings.starforgedToolsEnabled) {
-		return { href: '#ironsworn-hex-deco', height: 24, width: 28 }
+		return { href: '#ironsworn-hex-deco', height: 28, width: 24 }
 	}
 	return undefined
 })
@@ -195,40 +201,62 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 <style lang="scss" module>
 .card {
 	--ironsworn-color-thematic: v-bind(asset?.system.color);
+	--ironsworn-asset-header-row: 1;
+	--ironsworn-asset-body-row: 2;
+	--ironsworn-asset-header-column: 1;
 
-	display: flex;
-	position: relative;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
+	display: grid;
 	transition: var(--ironsworn-transition);
 	overflow: hidden;
+	gap: var(--ironsworn-spacer-sm);
+	grid-template-rows: max-content;
+	grid-auto-rows: 1fr;
 }
 
-.deco {
-	position: aboslute;
-	top: 0;
-	right: 0;
-	flex: unset;
+.undecorated {
+	--ironsworn-asset-body-column: 1;
+
+	grid-template-columns: 1fr;
+}
+.decorated {
+	--ironsworn-asset-deco-row: 1;
+	--ironsworn-asset-deco-column: 2;
+	--ironsworn-asset-body-column: 1 / span 2;
+
+	grid-template-columns: 1fr max-content;
+}
+
+.decoration {
+	grid-row: var(--ironsworn-asset-deco-row);
+	grid-column: var(--ironsworn-asset-deco-column);
 	z-index: 0;
-	margin: calc(-1 * var(--ironsworn-spacer-xs));
-	// width: 24px;
-	// height: 28px;
-	color: var(--ironsworn-color-thematic);
+	fill: var(--ironsworn-color-thematic);
 	pointer-events: none;
-	// aspect-ratio: calc(24 / 28);
 }
 
 .header {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
+	grid-row: var(--ironsworn-asset-header-row);
+	grid-column: var(--ironsworn-asset-header-column);
 	gap: var(--ironsworn-spacer-lg);
+	align-items: center;
+}
+
+.body {
+	grid-row: var(--ironsworn-asset-body-row);
+	grid-column: var(--ironsworn-asset-body-column);
+	gap: var(--ironsworn-spacer-lg);
+	transition: var(--ironsworn-transition);
+	padding: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
+	overflow: hidden;
 }
 
 .expandToggle {
 	display: flex;
 	flex-flow: row wrap;
+	flex-grow: 1;
 	gap: var(--ironsworn-spacer-lg);
 	transition: var(--ironsworn-transition);
 	box-shadow: none !important;
@@ -255,13 +283,6 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	font-style: italic;
 }
 
-.body {
-	gap: var(--ironsworn-spacer-lg);
-	transition: var(--ironsworn-transition);
-	padding: var(--ironsworn-spacer-sm);
-	overflow: hidden;
-}
-
 .fields {
 	margin: 0;
 }
@@ -270,13 +291,16 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	gap: var(--ironsworn-spacer-sm);
 	justify-items: stretch;
 	margin: 0;
-	padding: var(--ironsworn-spacer-sm) 0;
+	padding: 0;
 	list-style: none;
 	> li {
 		display: contents;
 		> * {
-			width: 100%;
 		}
 	}
+}
+.ability {
+	width: 100%;
+	padding: var(--ironsworn-spacer-xs);
 }
 </style>

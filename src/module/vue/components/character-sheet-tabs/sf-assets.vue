@@ -12,7 +12,7 @@
 					:length="assets.length"
 					@sortUp="sortUp"
 					@sortDown="sortDown" />
-				<AssetCompact :asset="asset" class="item-row" />
+				<AssetCompact :class="$style.item" :asset="asset" />
 			</li>
 		</CollapseTransition>
 		<section
@@ -91,5 +91,12 @@ function assetBrowser() {
 
 .list {
 	gap: var(--ironsworn-spacer-md);
+}
+
+.item {
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
 }
 </style>

@@ -26,7 +26,7 @@
 								:length="assets.length"
 								@sortUp="assetSortUp"
 								@sortDown="assetSortDown" />
-							<AssetCompact :asset="asset" class="item-row" />
+							<AssetCompact :asset="asset" />
 						</div>
 					</CollapseTransition>
 					<div class="flexrow nogrow" style="text-align: center">
