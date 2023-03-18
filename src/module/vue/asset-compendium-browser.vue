@@ -27,10 +27,9 @@
 						" />
 
 					<AssetBrowserCard
-						v-for="asset in category.assets"
-						:key="asset.foundryItem()?.id ?? ''"
-						:df="asset.df"
-						:foundry-item="asset.foundryItem"
+						v-for="(asset, i) in category.assets"
+						:key="asset.foundryItem()?.id ?? i"
+						:asset="asset.foundryItem"
 						class="nogrow movesheet-row" />
 				</section>
 			</div>

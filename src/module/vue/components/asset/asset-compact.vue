@@ -1,7 +1,8 @@
 <template>
 	<AssetCard
 		:expanded="expanded"
-		:show-disabled-abilities="false"
+		:hide-disabled-abilities="true"
+		:readonly-fields="true"
 		@toggle-expand="toggle">
 		<template #headerEnd>
 			<div class="flexrow nogrow" :class="$style.controls">

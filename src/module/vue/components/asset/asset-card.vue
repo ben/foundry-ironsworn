@@ -80,13 +80,15 @@
 					v-if="asset.system.description"
 					element="div"
 					class="nogrow"
+					:class="$style.requirement"
 					v-html="$enrichHtml(asset.system.description)" />
 
 				<!-- REQUIREMENT -->
 				<WithRolllisteners
 					v-if="asset.system.requirement"
-					element="p"
+					element="div"
 					class="nogrow"
+					:class="$style.requirement"
 					v-html="$enrichMarkdown(asset.system.requirement)" />
 
 				<!-- ABILITIES -->
@@ -94,7 +96,7 @@
 					<template
 						v-for="(ability, i) in asset.system.abilities"
 						:key="`ability${i}`">
-						<li v-if="ability.enabled ?? showDisabledAbilities">
+						<li v-if="hideDisabledAbilities ? ability.enabled : true">
 							<AssetAbility
 								:class="$style.ability"
 								:ability="ability"
@@ -147,9 +149,9 @@ const props = withDefaults(
 		readonlyClocks?: boolean
 		readonlyFields?: boolean
 		toggleAbilities?: boolean
-		showDisabledAbilities?: boolean
+		hideDisabledAbilities?: boolean
 	}>(),
-	{ showDisabledAbilities: true, expanded: undefined }
+	{ hideDisabledAbilities: false, expanded: undefined }
 )
 const isCollapsible = computed(() => typeof props.expanded === 'boolean')
 
@@ -182,7 +184,7 @@ function toggleExpand() {
 }
 
 async function updateAbility(index: number, delta: Partial<AssetAbilityType>) {
-	if (!actor.value) return
+	if (!$asset?.actor) return
 	const abilities = Object.values(
 		asset.value.system.abilities
 	) as AssetAbilityType[]
@@ -191,7 +193,7 @@ async function updateAbility(index: number, delta: Partial<AssetAbilityType>) {
 }
 
 async function updateField(index: number, delta: Partial<AssetFieldType>) {
-	if (!actor.value) return
+	if (!$asset?.actor) return
 	const fields = Object.values(asset.value.system.fields) as AssetFieldType[]
 	fields[index] = mergeObject(fields[index], delta) as AssetFieldType
 	return $asset?.update({ system: { fields } })
@@ -206,11 +208,11 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	--ironsworn-asset-header-column: 1;
 
 	display: grid;
-	transition: var(--ironsworn-transition);
-	overflow: hidden;
-	gap: var(--ironsworn-spacer-sm);
+	// gap: var(--ironsworn-spacer-sm);
 	grid-template-rows: max-content;
 	grid-auto-rows: 1fr;
+	transition: var(--ironsworn-transition);
+	overflow: hidden;
 }
 
 .undecorated {
@@ -230,8 +232,9 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	grid-row: var(--ironsworn-asset-deco-row);
 	grid-column: var(--ironsworn-asset-deco-column);
 	z-index: 0;
-	fill: var(--ironsworn-color-thematic);
+	margin-left: var(--ironsworn-spacer-sm);
 	pointer-events: none;
+	fill: var(--ironsworn-color-thematic);
 }
 
 .header {
@@ -244,13 +247,8 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	align-items: center;
 }
 
-.body {
-	grid-row: var(--ironsworn-asset-body-row);
-	grid-column: var(--ironsworn-asset-body-column);
-	gap: var(--ironsworn-spacer-lg);
-	transition: var(--ironsworn-transition);
-	padding: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
-	overflow: hidden;
+.readonly {
+	pointer-events: none;
 }
 
 .expandToggle {
@@ -282,6 +280,25 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	color: var(--ironsworn-color-thematic);
 	font-style: italic;
 }
+.body {
+	grid-row: var(--ironsworn-asset-body-row);
+	grid-column: var(--ironsworn-asset-body-column);
+	gap: var(--ironsworn-spacer-lg);
+	transition: var(--ironsworn-transition);
+	padding: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
+	overflow: hidden;
+}
+
+.requirement {
+	> * {
+		&:first-child {
+			margin-top: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
 
 .fields {
 	margin: 0;
@@ -300,7 +317,7 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	}
 }
 .ability {
-	width: 100%;
 	padding: var(--ironsworn-spacer-xs);
+	width: 100%;
 }
 </style>

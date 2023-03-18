@@ -55,7 +55,7 @@
 			v-else
 			class="flexcol"
 			:class="$style.asset"
-			:show-disabled-abilities="true"
+			:hide-disabled-abilities="false"
 			:readonly-clocks="true"
 			:toggle-abilities="true"
 			:readonly-fields="false">
@@ -90,26 +90,12 @@ import TabPanels from 'component:tabs/tab-panels.vue'
 import TabPanel from 'component:tabs/tab-panel.vue'
 import Tab from 'component:tabs/tab.vue'
 
-const $item = inject($ItemKey)
-
 const props = defineProps<{ data: { item: any } }>()
 provide(ItemKey, computed(() => props.data.item) as any)
 
 const editMode = computed(() => {
 	return props.data.item.flags['foundry-ironsworn']?.['edit-mode']
 })
-
-const hasOptions = computed(() => {
-	return Object.values(props.data.item.system.exclusiveOptions || []).length > 0
-})
-
-const hasFields = computed(() => {
-	return Object.values(props.data.item.system.fields || []).length > 0
-})
-
-function setRequirement() {
-	$item?.update({ system: { requirement: props.data.item.system.requirement } })
-}
 </script>
 
 <style lang="scss" module>
@@ -125,7 +111,6 @@ function setRequirement() {
 .tabPanel {
 }
 .asset {
-	margin: var(--ironsworn-spacer-xl) 0;
 	padding: var(--ironsworn-spacer-md);
 }
 </style>

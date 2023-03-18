@@ -1,6 +1,6 @@
 <template>
 	<AssetCard
-		:asset="asset().toObject()"
+		:asset="asset().toObject"
 		:class="$style.wrapper"
 		:expanded="state.expanded"
 		class="document"
@@ -8,11 +8,18 @@
 		:data-pack="asset().pack"
 		:data-id="asset().id"
 		:data-document-id="asset().id"
+		:readonly-fields="true"
+		:readonly-clocks="true"
+		:toggle-abilities="false"
+		:hide-disabled-abilities="false"
 		@dragstart="dragStart"
 		@dragend="dragEnd"
 		@toggle-expand="state.expanded = !state.expanded">
 		<template #headerStart>
-			<FontIcon name="grip" class="nogrow block draggable item" />
+			<FontIcon
+				name="grip"
+				class="nogrow block draggable item"
+				:class="$style.dragHandle" />
 		</template>
 	</AssetCard>
 </template>
@@ -26,7 +33,6 @@ import FontIcon from 'component:icon/font-icon.vue'
 import AssetCard from 'component:asset/asset-card.vue'
 
 const props = defineProps<{
-	df?: IAsset
 	asset: () => IronswornItem
 }>()
 
@@ -60,11 +66,14 @@ function dragEnd() {
 <style lang="scss" module>
 .wrapper {
 	margin: var(--ironsworn-spacer-xl) 0;
-	padding: var(--ironsworn-spacer-md);
+	// padding: var(--ironsworn-spacer-md);
 
 	border-width: var(--ironsworn-border-width-md);
 	border-style: solid;
 	border-radius: var(--ironsworn-border-radius-sm);
 	border-color: var(--ironsworn-color-border);
+}
+.dragHandle {
+	margin-left: var(--ironsworn-spacer-md);
 }
 </style>

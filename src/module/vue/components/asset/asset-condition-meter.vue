@@ -1,5 +1,5 @@
 <template>
-	<article :class="$style.wrapper">
+	<article :class="{ [$style.wrapper]: true, [$style.readonly]: readonly }">
 		<ConditionMeter
 			v-if="asset.system.track.enabled"
 			slider-style="horizontal"
@@ -57,6 +57,10 @@ async function toggleCondition(idx: number) {
 
 <style lang="scss" module>
 @use 'mixin:text.scss';
+
+.readonly {
+	pointer-events: none;
+}
 
 .wrapper {
 }
