@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject, provide } from 'vue'
+import { computed, provide } from 'vue'
 import SheetHeader from './sheet-header.vue'
 import DocumentName from 'component:document-name.vue'
 import AssetEditDescription from 'component:asset/asset-edit-description.vue'
@@ -83,7 +83,7 @@ import AssetEditOptions from 'component:asset/asset-edit-options.vue'
 import AssetCard from 'component:asset/asset-card.vue'
 
 import AssetEditTrack from 'component:asset/asset-edit-track.vue'
-import { $ItemKey, ItemKey } from './provisions'
+import { ItemKey } from './provisions'
 import TabSet from 'component:tabs/tab-set.vue'
 import TabList from 'component:tabs/tab-list.vue'
 import TabPanels from 'component:tabs/tab-panels.vue'
