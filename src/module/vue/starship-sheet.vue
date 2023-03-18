@@ -9,7 +9,7 @@
 			</TabList>
 			<TabPanels>
 				<TabPanel tab-key="assets" class="flexcol">
-					<SfAssets :class="$style.assets" />
+					<PlayerAssets :class="$style.assets" />
 				</TabPanel>
 				<TabPanel tab-key="notes" class="flexcol">
 					<SfNotes />
@@ -37,7 +37,6 @@
 <script setup lang="ts">
 import { provide, computed } from 'vue'
 import type { IronswornActor } from '../actor/actor'
-import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ImpactCheckbox from 'component:impact/impact-checkbox.vue'
 import SheetBasic from './sheet-basic.vue'
@@ -47,6 +46,7 @@ import TabList from './components/tabs/tab-list.vue'
 import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
+import PlayerAssets from './components/asset/player-assets.vue'
 
 const props = defineProps<{
 	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
