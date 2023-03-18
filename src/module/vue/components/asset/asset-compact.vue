@@ -70,10 +70,6 @@ function destroy() {
 
 <style lang="scss" module>
 .controls {
-	justify-items: flex-end;
-	display: flex;
-	flex-grow: 0;
-	flex-wrap: nowrap;
-	justify-items: flex-end;
+	margin-right: var(--ironsworn-spacer-sm);
 }
 </style>

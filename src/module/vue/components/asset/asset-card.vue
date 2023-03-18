@@ -206,6 +206,7 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	--ironsworn-asset-header-row: 1;
 	--ironsworn-asset-body-row: 2;
 	--ironsworn-asset-header-column: 1;
+	--ironsworn-asset-header-height: 28px;
 
 	display: grid;
 	// gap: var(--ironsworn-spacer-sm);
@@ -232,7 +233,6 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	grid-row: var(--ironsworn-asset-deco-row);
 	grid-column: var(--ironsworn-asset-deco-column);
 	z-index: 0;
-	margin-left: var(--ironsworn-spacer-sm);
 	pointer-events: none;
 	fill: var(--ironsworn-color-thematic);
 }
@@ -245,6 +245,7 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	grid-column: var(--ironsworn-asset-header-column);
 	gap: var(--ironsworn-spacer-lg);
 	align-items: center;
+	min-height: var(--ironsworn-asset-header-height);
 }
 
 .readonly {
@@ -306,7 +307,6 @@ async function updateField(index: number, delta: Partial<AssetFieldType>) {
 
 .abilities {
 	gap: var(--ironsworn-spacer-sm);
-	justify-items: stretch;
 	margin: 0;
 	padding: 0;
 	list-style: none;

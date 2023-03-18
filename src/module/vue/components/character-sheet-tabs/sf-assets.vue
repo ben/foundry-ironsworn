@@ -83,6 +83,7 @@ function assetBrowser() {
 <style lang="scss" module>
 .controls {
 	--ironsworn-line-height: var(--ironsworn-line-height-sm);
+	margin-right: var(--ironsworn-spacer-sm);
 }
 
 .wrapper {
