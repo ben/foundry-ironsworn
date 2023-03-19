@@ -115,7 +115,7 @@
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import { provide, computed, inject, nextTick, ref } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
-import RankPips from './components/rank-pips/rank-pips.vue'
+import RankPips from './components/progress/rank-pips.vue'
 import BtnCompendium from './components/buttons/btn-compendium.vue'
 import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'

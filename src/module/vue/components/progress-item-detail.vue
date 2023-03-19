@@ -38,7 +38,7 @@ import type { ProgressDataPropertiesData } from '../../item/itemtypes'
 import { $ActorKey, $ItemKey, ActorKey } from '../provisions'
 
 import IronBtn from './buttons/iron-btn.vue'
-import RankPips from './rank-pips/rank-pips.vue'
+import RankPips from './progress/rank-pips.vue'
 import MceEditor from './mce-editor.vue'
 import ProgressTrack from './progress/progress-track.vue'
 import BtnRollprogress from './buttons/btn-rollprogress.vue'
