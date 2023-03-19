@@ -1,11 +1,6 @@
 import { fill, range } from 'lodash-es'
-import {
-	NumericRank,
-	NumericRankI18nKeys,
-	NumericRankIncrements,
-	RANKS,
-	RANK_INCREMENTS
-} from '../../constants'
+import { ChallengeRank, RANK_INCREMENTS } from '../../constants'
+import { localizeRank } from '../../helpers/util'
 import { IronswornPrerollDialog } from '../../rolls'
 
 export class JournalProgressPageSheet extends JournalPageSheet {
@@ -38,13 +33,13 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 	getData(options?: Partial<DocumentSheetOptions> | undefined): any {
 		const data = super.getData(options) as any
 
-		data.currentRank = game.i18n.localize(
-			NumericRankI18nKeys[data.data.system.rank ?? NumericRank.troublesome]
+		data.currentRank = localizeRank(
+			data.data.system.rank ?? ChallengeRank.Troublesome
 		)
-		data.rankButtons = range(1, 6).map((numericRank) => ({
-			rank: numericRank,
-			i18nRank: game.i18n.localize(NumericRankI18nKeys[numericRank]),
-			selected: data.data.system.rank === numericRank
+		data.rankButtons = range(1, 6).map((rank) => ({
+			rank,
+			i18nRank: localizeRank(rank),
+			selected: data.data.system.rank === rank
 		}))
 
 		// Compute some progress numbers
@@ -105,8 +100,8 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 }
 
 function increment(object: any, direction: 1 | -1) {
-	const rank = object.system.rank ?? NumericRank.troublesome
-	const increment = NumericRankIncrements[rank]
+	const rank: ChallengeRank = object.system.rank ?? ChallengeRank.Troublesome
+	const increment = RANK_INCREMENTS[rank]
 	const currentValue = object.system.ticks || 0
 	const newValue = currentValue + increment * direction
 	return object.update({

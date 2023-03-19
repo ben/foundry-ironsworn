@@ -1,4 +1,4 @@
-import type { NumericRank } from '../constants'
+import type { ChallengeRank } from '../constants'
 
 interface CounterBase {
 	max: number
@@ -19,7 +19,7 @@ interface Countdown extends CounterBase {
 
 interface ProgressTrack {
 	ticks: number
-	rank: NumericRank
+	rank: ChallengeRank
 	/**
 	 * For Threat/Menace from Ironsworn: Delve.
 	 */

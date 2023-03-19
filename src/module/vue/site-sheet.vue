@@ -13,7 +13,7 @@
 							class="nogrow"
 							@click="setRank" />
 						<label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
-							rankText
+							localizeRank(data.actor.system.rank)
 						}}</label>
 						<IronBtn
 							v-if="editMode"
@@ -120,7 +120,7 @@ import BtnCompendium from './components/buttons/btn-compendium.vue'
 import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'
 import MceEditor from './components/mce-editor.vue'
-import { RANKS, RANK_INCREMENTS } from '../constants'
+import { RANK_INCREMENTS } from '../constants'
 import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
@@ -128,6 +128,7 @@ import { OracleRollMessage } from '../rolls'
 import type { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
 import type { SiteDataPropertiesData } from '../actor/actortypes'
+import { localizeRank } from '../helpers/util'
 
 const props = defineProps<{
 	data: { actor: any }
@@ -148,10 +149,6 @@ const theme = computed(() => {
 
 const domain = computed(() => {
 	return props.data.actor.items.find((x) => x.type === 'delve-domain')
-})
-
-const rankText = computed(() => {
-	return game.i18n.localize(RANKS[props.data.actor.system.rank])
 })
 
 function setRank(rank) {

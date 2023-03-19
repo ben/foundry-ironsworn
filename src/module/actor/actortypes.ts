@@ -1,4 +1,5 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { ChallengeRank } from '../constants'
 
 interface CharacterDataSourceData {
 	biography: string
@@ -136,7 +137,7 @@ export interface SiteDataSourceData {
 	objective: string
 	description: string
 	notes: string
-	rank: string
+	rank: ChallengeRank
 	current: number
 	denizens: DelveSiteDenizen[]
 }

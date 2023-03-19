@@ -1,5 +1,4 @@
 import { range, sum } from 'lodash-es'
-import { RANKS } from '../constants'
 import { capitalize } from './util'
 import { marked } from 'marked'
 import {
@@ -194,38 +193,6 @@ export class IronswornHandlebarsHelpers {
 		Handlebars.registerHelper('rankIsAtLeast', function (_context, _options) {
 			// const {rank, self} = context.hash
 			return true
-		})
-
-		Handlebars.registerPartial('rankHexes', (ctx, _opts) => {
-			const { rank, id } = ctx
-			const position = Object.keys(RANKS).indexOf(rank)
-			const hexes: string[] = []
-			for (const testRank in RANKS) {
-				const isFilled = position >= Object.keys(RANKS).indexOf(testRank)
-				hexes.push(`
-          <div class="nogrow" title="${game.i18n.localize(
-						`IRONSWORN.CHALLENGERANK.${capitalize(testRank)}`
-					)}">
-            <svg
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              height="15"
-              viewbox="0 0 17.32050807568877 20"
-              class="rank-pip ${
-								isFilled ? 'filled' : ''
-							} clickable svg ironsworn__progress__rank"
-              data-rank="${testRank}"
-              data-item="${id}"
-            >
-              <path
-                stroke-width="1"
-                d="M8.660254037844386 0L17.32050807568877 5L17.32050807568877 15L8.660254037844386 20L0 15L0 5Z">
-              </path>
-            </svg>
-          </div>
-        `)
-			}
-			return hexes.join('')
 		})
 	}
 

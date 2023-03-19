@@ -29,8 +29,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { fill, clamp } from 'lodash-es'
-import type { RANKS } from '../../../constants.js'
-import { NumericRank } from '../../../constants.js'
+import { ChallengeRank } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
 
 const props = defineProps<{
@@ -41,7 +40,7 @@ const props = defineProps<{
 	/**
 	 * Use 'null' if it's an unranked track, such as a Legacy or classic Bonds.
 	 */
-	rank: keyof typeof RANKS | null
+	rank: ChallengeRank | null
 	legacyOverflow?: boolean
 	/**
 	 * When true, renders the progress bar for more compact display.
@@ -59,7 +58,7 @@ const score = computed(() =>
 )
 
 const numericRank = computed(() =>
-	props.rank != null ? NumericRank[props.rank] : null
+	props.rank != null ? ChallengeRank[props.rank] : null
 )
 
 const visibleTicks = computed(() =>
