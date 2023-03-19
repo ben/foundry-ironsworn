@@ -4,7 +4,7 @@
 			<RankPips
 				:current="foeSystem.rank"
 				style="margin-right: 1em"
-				@click="setRank" />
+				@change="setRank" />
 			<h4 style="margin: 0; line-height: 22px">
 				{{ localizeRank(foeSystem?.rank) }}
 			</h4>

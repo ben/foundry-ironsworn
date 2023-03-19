@@ -9,7 +9,7 @@
 			<RankPips
 				class="nogrow"
 				:current="data.item.system.rank"
-				@click="setRank" />
+				@change="setRank" />
 			<h4 style="margin: 0; line-height: 22px">
 				{{ localizeRank(data.item.system.rank) }}
 			</h4>

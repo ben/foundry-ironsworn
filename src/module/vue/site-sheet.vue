@@ -11,7 +11,7 @@
 							:id="`${data.actor._id}_rank`"
 							:current="data.actor.system.rank"
 							class="nogrow"
-							@click="setRank" />
+							@change="setRank" />
 						<label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
 							localizeRank(data.actor.system.rank)
 						}}</label>

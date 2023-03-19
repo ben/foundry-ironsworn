@@ -21,7 +21,7 @@
 		<RankPips
 			class="progress-rank-pips"
 			:current="item.system.rank"
-			@click="rankClick" />
+			@change="setRank" />
 		<section class="progress-controls" data-tooltip-direction="UP">
 			<IronBtn
 				v-if="editMode"
@@ -141,7 +141,7 @@ function destroy() {
 		defaultYes: false
 	})
 }
-function rankClick(rank: ChallengeRank) {
+function setRank(rank: ChallengeRank) {
 	foundryItem?.update({ system: { rank } })
 }
 function advance() {
@@ -190,6 +190,7 @@ function setClock(clockTicks: number) {
 	.progress-rank-pips {
 		grid-row: 1;
 		grid-column: 3 / span 2;
+		align-self: center;
 	}
 
 	.progress-title {
