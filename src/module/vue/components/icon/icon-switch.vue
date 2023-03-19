@@ -1,88 +1,50 @@
 <template>
 	<component :is="is" :class="{ [$style.wrapper]: true }">
 		<TransitionGroup :name="transitionName">
-			<component
-				:is="getIconOptions(iconData).set === 'ironsworn' ? IronIcon : FontIcon"
-				v-for="(iconData, state) in $props.icons"
-				:key="state"
-				:data-icon-state="state"
-				:class="`${$style.icon} ${getIconOptions(iconData).props?.class}`"
-				v-bind="getIconOptions(iconData).props" />
+			<template v-for="iconState in states" :key="iconState">
+				<template v-if="iconState === current">
+					<slot
+						:name="iconState"
+						v-bind="{
+							'data-switch-state': iconState,
+							class: $style.icon
+						}"></slot>
+				</template>
+			</template>
 		</TransitionGroup>
 	</component>
 </template>
 
 <script lang="ts" setup>
-import IronIcon from 'component:icon/iron-icon.vue'
-import IronBtn from 'component:buttons/iron-btn.vue'
-import FontIcon from 'component:icon/font-icon.vue'
+import type IronBtn from 'component:buttons/iron-btn.vue'
 import type { ExtractPropTypes } from 'vue'
 import { TransitionGroup } from 'vue'
-import type {
-	FontAwesomeIconProps,
-	IconSwitchState,
-	IronIconProps,
-	IronswornIconId
-} from './icon-common'
-import { parseClassesToFaProps } from './icon-common'
 
 type IronBtnProps = ExtractPropTypes<typeof IronBtn>
 interface Props
 	extends Omit<IronBtnProps, 'text' | 'icon' | 'vertical' | 'justify'> {
 	/**
-	 * @default 'span'
+	 * A list of unique names for the switch's states.
 	 */
-	is?: any
+	states: Iterable<string>
 	/**
-	 * Describes the current state of all icons in this component.
-	 *
-	 * @example
-	 * ```
-	 * {
-	 *   on: {
-	 *     icon: 'fa:some-icon'
-	 *   },
-	 *   off: {
-	 *     icon: 'fa:some-other-icon'
-	 *     props: { hidden: true }
-	 *   }
-	 * }
-	 * ```
+	 * The currently active state.
 	 */
-	icons: Record<string, IconSwitchState>
+	current: this['states'] extends Iterable<infer U> ? U : never
 	/**
 	 * @default 'fade'
 	 */
 	transitionName?: string
+	/**
+	 * @default 'span'
+	 */
+	is?: any
 }
 
 withDefaults(defineProps<Props>(), {
 	transitionName: 'fade',
 	is: 'span'
 })
-
-function getIconOptions(iconState: IconSwitchState) {
-	const [set, name] = iconState.icon.split(/:/)
-	let props: ((typeof iconState)['icon'] extends IronswornIconId
-		? IronIconProps
-		: FontAwesomeIconProps) & { class?: string } = {
-		name: name as any,
-		...(iconState.props ?? {})
-	}
-
-	if (set === 'fa' && iconState.class) {
-		props = foundry.utils.mergeObject(
-			props,
-			parseClassesToFaProps(iconState.class?.join(' ') ?? '') as any
-		)
-	}
-
-	return {
-		set,
-		props,
-		class: props.class
-	}
-}
 </script>
 
 <style lang="scss" module>
