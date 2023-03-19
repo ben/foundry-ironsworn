@@ -2,8 +2,14 @@
 
 ## Next Release
 
-- Replace the delve theme/domain sheet with a vue implementation ([#677](https://github.com/ben/foundry-ironsworn/pull/677))
 - Disable chat-message copy buttons (and add a tooltip) if access to the clipboard is restricted ([#678](https://github.com/ben/foundry-ironsworn/pull/678))
+- Better condition checkboxes ([#684](https://github.com/ben/foundry-ironsworn/pull/684))
+- Under the hood:
+  - The last remnants of the Handlebars sheets have been swept away ([#676](https://github.com/ben/foundry-ironsworn/pull/676) and [#677](https://github.com/ben/foundry-ironsworn/pull/677))
+  - Challenge ranks are now stored numerically ([#688](https://github.com/ben/foundry-ironsworn/pull/688))
+  - Improvements to the way asset controls are done ([#685](https://github.com/ben/foundry-ironsworn/pull/685), [#686](https://github.com/ben/foundry-ironsworn/pull/686), [#687](https://github.com/ben/foundry-ironsworn/pull/687))
+  - Begin a migration to SASS for styles ([#683](https://github.com/ben/foundry-ironsworn/pull/683))
+  - Dependency updates and code style ([#682](https://github.com/ben/foundry-ironsworn/pull/682))
 
 ## 1.20.29
 
