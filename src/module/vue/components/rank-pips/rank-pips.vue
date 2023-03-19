@@ -9,7 +9,7 @@
 		aria-orientation="horizontal"
 		tabindex="0"
 		:aria-readonly="readonly"
-		role="spinner"
+		role="spinbutton"
 		@keydown.arrow-up="setRank(current + 1)"
 		@keydown.+="setRank(current + 1)"
 		@keydown.arrow-left="setRank(current + 1)"
@@ -33,13 +33,13 @@
 			type="button"
 			class="nogrow"
 			tabindex="-1"
-			@focus.prevent
 			:aria-selected="rank === current"
 			:data-pip-state="getState(rank)"
+			:class="$style.pip"
+			@focus.prevent
 			@mouseover="hovered = rank"
 			@mouseleave="hovered = 0"
-			@click="setRank(rank)"
-			:class="$style.pip">
+			@click="setRank(rank)">
 			<FontIcon
 				v-bind="deco.challengeRank.checked"
 				role="presentational"
@@ -106,6 +106,7 @@ function setRank(rank: ChallengeRank) {
 .wrapper {
 	--ironsworn-pip-spacing: 1px;
 	--fa-display: block;
+
 	display: flex;
 	flex-grow: 0;
 	align-items: center;
@@ -122,8 +123,8 @@ function setRank(rank: ChallengeRank) {
 	background: none;
 	// use padding isntead of margins for one continuous surface -- avoids hover flicker
 	padding: calc(var(--ironsworn-pip-spacing) / 2);
-	height: max-content;
 	width: max-content;
+	height: max-content;
 }
 
 .icon {
@@ -147,13 +148,13 @@ function setRank(rank: ChallengeRank) {
 }
 
 [data-pip-state='preview'] {
-	:local(.checked) {
-		opacity: 0.5;
-	}
 	&:active {
 		:local(.checked) {
 			opacity: 1;
 		}
+	}
+	:local(.checked) {
+		opacity: 0.5;
 	}
 }
 </style>
