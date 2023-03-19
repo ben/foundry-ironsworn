@@ -22,8 +22,8 @@
 <script setup lang="ts">
 import { capitalize, inject } from 'vue'
 import { $ActorKey } from '../../provisions'
-import IronBtn from './buttons/iron-btn.vue'
-import BtnCompendium from './buttons/btn-compendium.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
+import BtnCompendium from 'component:buttons/btn-compendium.vue'
 
 const props = defineProps<{ foeCompendium?: string }>()
 

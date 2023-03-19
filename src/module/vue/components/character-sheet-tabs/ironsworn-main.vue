@@ -24,8 +24,8 @@
 </template>
 <script lang="ts" setup>
 import Bonds from 'component:bonds.vue'
-import ActiveCompletedProgresses from 'component:active-completed-progresses.vue'
-import PlayerAssets from '../asset/player-assets.vue'
+import ActiveCompletedProgresses from 'component:progress/active-completed-progresses.vue'
+import PlayerAssets from 'component:asset/player-assets.vue'
 </script>
 <style lang="scss" module>
 .progress {

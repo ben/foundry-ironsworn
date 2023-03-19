@@ -25,10 +25,10 @@
 import type { Ref } from 'vue'
 import { computed, inject, reactive } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
-import OrderButtons from './order-buttons.vue'
-import ProgressListItem from './progress/progress-list-item.vue'
+import OrderButtons from 'component:order-buttons.vue'
+import ProgressListItem from 'component:progress/progress-list-item.vue'
 import type { ProgressDataPropertiesData } from '../../../item/itemtypes'
-import CollapseTransition from './transition/collapse-transition.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
 import { getProgressItems, isValidProgressItem } from './progress-common'
 
 const props = defineProps<{

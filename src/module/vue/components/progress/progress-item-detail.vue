@@ -37,11 +37,11 @@ import { RANK_INCREMENTS } from '../../../constants'
 import type { ProgressDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 
-import IronBtn from './buttons/iron-btn.vue'
-import RankPips from './progress/rank-pips.vue'
-import MceEditor from './mce-editor.vue'
-import ProgressTrack from './progress/progress-track.vue'
-import BtnRollprogress from './buttons/btn-rollprogress.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
+import RankPips from 'component:progress/rank-pips.vue'
+import MceEditor from 'component:mce-editor.vue'
+import ProgressTrack from 'component:progress/progress-track.vue'
+import BtnRollprogress from 'component:buttons/btn-rollprogress.vue'
 import { localizeRank } from '../../../helpers/util'
 
 const actor = inject(ActorKey)
