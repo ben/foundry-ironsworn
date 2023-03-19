@@ -24,10 +24,10 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { inject, nextTick } from 'vue'
+import { inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
-import CollapseTransition from '../transition/collapse-transition.vue'
-import IronBtn from '../buttons/iron-btn.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
+import IronBtn from 'component:buttons/iron-btn.vue'
 
 const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)

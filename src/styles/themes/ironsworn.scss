@@ -2,7 +2,6 @@
 // Light theme for Ironsworn, with minimal restyling of FVTT's stock UI.
 
 @use 'mixin:color.scss';
-@use 'mixin:decoration.scss';
 
 .theme-ironsworn {
 	// #ff6600 and #ff0000 chosen because they're what FVTT uses for its accents.
@@ -21,7 +20,6 @@
 		'ironsworn-color-clickable-block',
 		'ironsworn-color'
 	);
-	@include decoration.ironsworn;
 
 	--ironsworn-color-text-stroke: transparent;
 

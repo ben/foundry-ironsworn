@@ -311,20 +311,27 @@
 		color: var(--ironsworn-color-fg);
 	}
 
-	&:hover {
-		border-color: var(--ironsworn-color-clickable-block-border-hover);
-		.borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool));
+	&[readonly],
+	&[aria-readonly='true'] {
+		cursor: default;
 	}
 
-	&:focus,
-	&:focus-within {
-		.inputFieldFocusMixin();
-		.borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
-
+	&:not([readonly], [aria-readonly='true']) {
 		&:hover {
-			box-shadow: .inputFieldFocusMixin() [box-shadow],
-				.borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool))
-					[box-shadow];
+			border-color: var(--ironsworn-color-clickable-block-border-hover);
+			.borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool));
+		}
+
+		&:focus,
+		&:focus-within {
+			.inputFieldFocusMixin();
+			.borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
+
+			&:hover {
+				box-shadow: .inputFieldFocusMixin() [box-shadow],
+					.borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool))
+						[box-shadow];
+			}
 		}
 	}
 }

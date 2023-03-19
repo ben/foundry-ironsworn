@@ -49,6 +49,7 @@ module.exports = {
 				'/#\\{.+?\\}/'
 			]
 		},
+		'scss/double-slash-comment-empty-line-before': null,
 		// silence complaints about floating points (which are a temp workaround anyways)
 		'number-max-precision': null,
 		'declaration-block-no-redundant-longhand-properties': null,
@@ -118,6 +119,7 @@ module.exports = {
 					true,
 					{
 						ignoreFunctions: [
+							'v-bind',
 							'getIconVars',
 							'getIconClasses',
 							'setChannel',

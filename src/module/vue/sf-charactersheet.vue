@@ -51,7 +51,7 @@
 							<SfLegacies />
 						</TabPanel>
 						<TabPanel tab-key="assets" class="flexcol">
-							<SfAssets :class="$style.topPadding" />
+							<PlayerAssets :class="$style.topPadding" />
 						</TabPanel>
 						<TabPanel tab-key="progress" class="flexcol">
 							<SfProgresses :class="$style.topPadding" />
@@ -87,7 +87,6 @@ import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
 import SfConnections from './components/character-sheet-tabs/sf-connections.vue'
 import SfCharacterheader from './components/sf-characterheader.vue'
 import SfImpacts from 'component:impact/sf-impacts.vue'
-import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import { ActorKey } from './provisions.js'
@@ -98,6 +97,7 @@ import TabList from './components/tabs/tab-list.vue'
 import Tab from './components/tabs/tab.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
+import PlayerAssets from './components/asset/player-assets.vue'
 
 const props = defineProps<{
 	data: {

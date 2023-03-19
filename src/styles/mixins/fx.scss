@@ -1,21 +1,21 @@
 // special effects
 
 // used to mark focused fields
-@mixin glowExterior($spread: 6px) {
-	box-shadow: 0 0 $spread var(--ironsworn-color-cool);
+@mixin glowExterior() {
+	box-shadow: 0 0 var(--ironsworn-glow-exterior-spread, 6px)
+		var(--ironsworn-glow-exterior-color, var(--ironsworn-color-cool));
 }
 
 // used inside block/tab like elements. it's inset so that both the focus effect and the hover effect can be visible at once.
-@mixin glowInterior(
-	$spread: 5px,
-	$blur: 0,
-	$color: var(--ironsworn-color-cool)
-) {
-	box-shadow: inset 0 0 $spread $blur $color;
+@mixin glowInterior() {
+	box-shadow: inset 0 0 var(--ironsworn-glow-interior-spread, 5px)
+		var(--ironsworn-glow-interior-blur, 0)
+		var(--ironsworn-glow-interior-color, var(--ironsworn-color-cool));
 }
 
-@mixin textGlow($color: var(--ironsworn-color-fg-highlight), $spread: 10px) {
-	text-shadow: 0 0 $spread $color;
+@mixin textGlow() {
+	text-shadow: 0 0 var(--ironsworn-text-glow-spread, 10px)
+		var(--ironsworn-color-text-glow, var(--ironsworn-color-fg-highlight));
 }
 
 // used on draggables, highlighted table rows in chat. set opacity in increments of 10 (because otherwise the CSS variable won't exist).
@@ -31,13 +31,13 @@
 	background-blend-mode: overlay;
 }
 
-@mixin overlay($z-index: var(--ironsworn-z-index-highest)) {
+@mixin overlay() {
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: $z-index;
+	z-index: var(--ironsworn-z-index-overlay, var(--ironsworn-z-index-highest));
 	content: '';
 	pointer-events: none;
 }

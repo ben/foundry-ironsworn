@@ -160,9 +160,9 @@ defineExpose({
 	&[aria-disabled='true'] {
 		color: inherit;
 	}
-
-	& > svg {
+	& > * {
 		// prevents double hover effect on svg hover
+
 		pointer-events: none;
 	}
 

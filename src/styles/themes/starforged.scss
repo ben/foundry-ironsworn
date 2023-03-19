@@ -4,7 +4,6 @@
 @use 'sass:meta';
 @use 'mixin:color.scss';
 @use 'mixin:fvtt.scss';
-@use 'mixin:decoration.scss';
 @import 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap';
 
 .theme-starforged {
@@ -43,5 +42,4 @@
 	@include fvtt.ui;
 
 	// Hexagon motif for certain widgets and decorations
-	@include decoration.starforged;
 }

@@ -1,130 +1,79 @@
 <template>
-	<article
-		class="item-row document ironsworn__asset"
+	<AssetCard
+		:asset="asset().toObject"
+		:class="$style.wrapper"
+		:expanded="state.expanded"
+		class="document"
 		draggable="true"
-		:data-pack="foundryItem().pack"
-		:data-id="foundryItem().id"
-		:data-document-id="foundryItem().id"
-		:class="{ [`asset-${toolset}`]: true }"
+		:data-pack="asset().pack"
+		:data-id="asset().id"
+		:data-document-id="asset().id"
+		:readonly-fields="true"
+		:readonly-clocks="true"
+		:toggle-abilities="false"
+		:hide-disabled-abilities="false"
 		@dragstart="dragStart"
-		@dragend="dragEnd">
-		<header class="asset-header nogrow flexrow">
-			<FontIcon name="grip" class="nogrow block draggable item" />
-			<IronBtn
-				:aria-controls="bodyId"
-				class="asset-expand-toggle"
-				@click="state.expanded = !state.expanded">
-				<template #text>
-					<h4 class="asset-title button-text">
-						{{ foundryItem().name }}
-					</h4>
-				</template>
-			</IronBtn>
-		</header>
-
-		<CollapseTransition>
-			<section
-				v-if="state.expanded"
-				:id="bodyId"
-				class="asset-body flexcol"
-				:aria-expanded="state.expanded">
-				<div
-					v-if="system.description"
-					v-html="$enrichHtml(system.description ?? '')"></div>
-				<div v-html="$enrichHtml(system.requirement ?? '')"></div>
-				<dl v-if="system.fields?.length" class="asset-fields">
-					<div
-						v-for="(field, i) in system.fields"
-						:key="'field' + i"
-						class="asset-field">
-						<dt class="asset-field-label">{{ field.name }}</dt>
-						<dd class="asset-field-value">{{ field.value }}</dd>
-					</div>
-				</dl>
-				<ul class="asset-abilities flexcol">
-					<li v-for="(ability, i) in system.abilities" :key="`ability${i}`">
-						<AssetAbility :ability="ability" class="flexrow" />
-					</li>
-				</ul>
-				<AttrSlider
-					v-if="system.track.enabled"
-					attr="track"
-					document-type="Item"
-					slider-style="horizontal"
-					:max="system.track.max"
-					:current-value="system.track.current"
-					:read-only="true">
-					<template #label>
-						<label>{{ system.track.name }}</label>
-					</template>
-				</AttrSlider>
-			</section>
-		</CollapseTransition>
-	</article>
+		@dragend="dragEnd"
+		@toggle-expand="state.expanded = !state.expanded">
+		<template #headerStart>
+			<FontIcon
+				name="grip"
+				class="nogrow block draggable item"
+				:class="$style.dragHandle" />
+		</template>
+	</AssetCard>
 </template>
 
 <script setup lang="ts">
 import type { IAsset } from 'dataforged'
-import { computed, inject, provide, reactive } from 'vue'
+import { computed, provide, reactive } from 'vue'
 import type { IronswornItem } from '../../../item/item'
-import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions.js'
-import CollapseTransition from '../transition/collapse-transition.vue'
-import AttrSlider from '../resource-meter/attr-slider.vue'
-import FontIcon from '../icon/font-icon.vue'
-import IronBtn from '../buttons/iron-btn.vue'
-import AssetAbility from './asset-ability.vue'
+import FontIcon from 'component:icon/font-icon.vue'
+import AssetCard from 'component:asset/asset-card.vue'
 
 const props = defineProps<{
-	df?: IAsset
-	foundryItem: () => IronswornItem
+	asset: () => IronswornItem
 }>()
 
-const toolset = inject('toolset')
-const system = (props.foundryItem() as any).system as AssetDataPropertiesData
-
-provide($ItemKey, props.foundryItem())
+provide($ItemKey, props.asset())
 provide(
 	ItemKey,
-	computed(() => props.foundryItem().toObject() as any)
+	computed(() => props.asset().toObject() as any)
 )
 
 const state = reactive({
 	expanded: false
 })
 
-const bodyId = `asset-body-${props.foundryItem().id}`
-
-function moveClick(item) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
-
 function dragStart(ev) {
 	ev.dataTransfer.setData(
 		'text/plain',
 		JSON.stringify({
 			type: 'AssetBrowserData',
-			uuid: props.foundryItem().uuid
+			uuid: props.asset().uuid
 		})
 	)
 
-	CONFIG.IRONSWORN.emitter.emit('dragStart', props.foundryItem().type)
+	CONFIG.IRONSWORN.emitter.emit('dragStart', props.asset().type)
 }
 
 function dragEnd() {
-	CONFIG.IRONSWORN.emitter.emit('dragEnd', props.foundryItem().type)
+	CONFIG.IRONSWORN.emitter.emit('dragEnd', props.asset().type)
 }
 </script>
 
-<style lang="scss" scoped>
-.ironsworn .ironsworn__asset {
-	--ironsworn-color-thematic: v-bind('system.color');
-
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
+<style lang="scss" module>
+.wrapper {
 	margin: var(--ironsworn-spacer-xl) 0;
-	padding: var(--ironsworn-spacer-md);
+	// padding: var(--ironsworn-spacer-md);
+
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
+}
+.dragHandle {
+	margin-left: var(--ironsworn-spacer-md);
 }
 </style>

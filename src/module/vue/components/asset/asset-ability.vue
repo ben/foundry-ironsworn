@@ -116,7 +116,6 @@ function updateAbility(delta: Partial<AssetAbility>) {
 	flex-direction: row;
 	gap: var(--ironsworn-spacer-md);
 	align-self: start;
-	padding: var(--ironsworn-spacer-xs);
 	list-style: none;
 }
 

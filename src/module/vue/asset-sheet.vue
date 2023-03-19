@@ -51,28 +51,44 @@
 				</TabPanel>
 			</TabPanels>
 		</TabSet>
-		<AssetOverview v-else />
+		<AssetCard
+			v-else
+			class="flexcol"
+			:class="$style.asset"
+			:hide-disabled-abilities="false"
+			:readonly-clocks="true"
+			:toggle-abilities="true"
+			:readonly-fields="false">
+			<template #title></template>
+			<!--
+        Semi-edit view:
+        * Text entry for field VALUES (not names)
+        * Checkboxes for abilities; clocks not settable to avoid click conflicts
+        * Selection for exclusive options
+        * Track: name and value only
+        * Conditions: checkboxes only
+       -->
+		</AssetCard>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { computed, inject, provide } from 'vue'
+import { computed, provide } from 'vue'
 import SheetHeader from './sheet-header.vue'
-import DocumentName from './components/document-name.vue'
-import AssetEditDescription from './components/asset/asset-edit-description.vue'
-import AssetEditFields from './components/asset/asset-edit-fields.vue'
-import AssetEditAbilities from './components/asset/asset-edit-abilities.vue'
-import AssetEditOptions from './components/asset/asset-edit-options.vue'
-import AssetOverview from './components/asset/asset-overview.vue'
-import AssetEditTrack from './components/asset/asset-edit-track.vue'
-import { $ItemKey, ItemKey } from './provisions'
-import TabSet from './components/tabs/tab-set.vue'
-import TabList from './components/tabs/tab-list.vue'
-import TabPanels from './components/tabs/tab-panels.vue'
-import TabPanel from './components/tabs/tab-panel.vue'
-import Tab from './components/tabs/tab.vue'
+import DocumentName from 'component:document-name.vue'
+import AssetEditDescription from 'component:asset/asset-edit-description.vue'
+import AssetEditFields from 'component:asset/asset-edit-fields.vue'
+import AssetEditAbilities from 'component:asset/asset-edit-abilities.vue'
+import AssetEditOptions from 'component:asset/asset-edit-options.vue'
+import AssetCard from 'component:asset/asset-card.vue'
 
-const $item = inject($ItemKey)
+import AssetEditTrack from 'component:asset/asset-edit-track.vue'
+import { ItemKey } from './provisions'
+import TabSet from 'component:tabs/tab-set.vue'
+import TabList from 'component:tabs/tab-list.vue'
+import TabPanels from 'component:tabs/tab-panels.vue'
+import TabPanel from 'component:tabs/tab-panel.vue'
+import Tab from 'component:tabs/tab.vue'
 
 const props = defineProps<{ data: { item: any } }>()
 provide(ItemKey, computed(() => props.data.item) as any)
@@ -80,18 +96,6 @@ provide(ItemKey, computed(() => props.data.item) as any)
 const editMode = computed(() => {
 	return props.data.item.flags['foundry-ironsworn']?.['edit-mode']
 })
-
-const hasOptions = computed(() => {
-	return Object.values(props.data.item.system.exclusiveOptions || []).length > 0
-})
-
-const hasFields = computed(() => {
-	return Object.values(props.data.item.system.fields || []).length > 0
-})
-
-function setRequirement() {
-	$item?.update({ system: { requirement: props.data.item.system.requirement } })
-}
 </script>
 
 <style lang="scss" module>
@@ -105,5 +109,8 @@ function setRequirement() {
 }
 
 .tabPanel {
+}
+.asset {
+	padding: var(--ironsworn-spacer-md);
 }
 </style>
