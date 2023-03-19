@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import ActiveCompletedProgresses from '../active-completed-progresses.vue'
+import ActiveCompletedProgresses from '../progress/active-completed-progresses.vue'
 </script>

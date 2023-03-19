@@ -17,10 +17,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import ProgressControls from './progress-controls.vue'
-import { IronswornSettings } from '../../helpers/settings'
+import { IronswornSettings } from '../../../helpers/settings'
 import ProgressList from './progress-list.vue'
-import DropTarget from '../drop-target.vue'
-import CompletedProgressList from './completed-progress-list.vue'
+import DropTarget from '../../drop-target.vue'
+import CompletedProgressList from '../completed-progress-list.vue'
 
 defineProps<{
 	/**
