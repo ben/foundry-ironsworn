@@ -364,7 +364,7 @@ async function processSFEncounters() {
 				img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
 				system: {
 					description: variantDescription,
-					rank: 'Rank' in variant ? variant.Rank : encounter.Rank
+					rank: variant.Rank ?? encounter.Rank
 				}
 			})
 		}
