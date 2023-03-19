@@ -14,7 +14,6 @@
 		@click="toggle">
 		<slot name="switch">
 			<IconSwitch
-				ref="$switch"
 				tabindex="-1"
 				role="presentational"
 				:transition="transition"
@@ -77,8 +76,6 @@ const props = withDefaults(
 		transition: 'fade'
 	}
 )
-
-const $switch = ref<InstanceType<typeof IconSwitch>>(null)
 
 const $style = useCssModule()
 
