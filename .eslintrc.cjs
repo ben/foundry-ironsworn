@@ -31,6 +31,8 @@ module.exports = {
 			'warn',
 			{ prefer: 'type-imports' }
 		],
+		// silence complaints about not explicitly declaring global variables in every files
+		'no-undef': 'off',
 
 		// FIXME: part of standard-ts. not an awful idea, but it's not doable via autofix, so it's disabled for now
 		'@typescript-eslint/explicit-function-return-type': 'off'
