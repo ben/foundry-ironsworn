@@ -23,7 +23,7 @@ import { ActorKey } from '../../provisions'
 import Collapsible from '../collapsible/collapsible.vue'
 import type { CompletedProgressType } from './progress-common'
 import { getProgressItems } from './progress-common'
-import ProgressList from 'component:progress/progress-list.vue'
+import ProgressList from './progress-list.vue'
 
 const props = defineProps<{
 	collapsibleProps?: Omit<
