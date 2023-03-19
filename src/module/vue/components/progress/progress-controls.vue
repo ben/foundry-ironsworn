@@ -21,7 +21,7 @@
 </template>
 <script setup lang="ts">
 import { capitalize, inject } from 'vue'
-import { $ActorKey } from '../provisions'
+import { $ActorKey } from '../../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 
