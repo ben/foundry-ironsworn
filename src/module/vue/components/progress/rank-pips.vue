@@ -79,6 +79,8 @@ const deco = computed(() =>
 		: DECORATION.Ironsworn
 )
 
+const pipPadding = computed(() => deco.value.challengeRank.padding)
+
 type PipState = 'filled' | 'empty' | 'preview'
 
 function getState(rank: ChallengeRank): PipState {
@@ -122,13 +124,13 @@ function setRank(rank: ChallengeRank) {
 	box-shadow: none !important;
 	background: none;
 	// use padding isntead of margins for one continuous surface -- avoids hover flicker
-	padding: calc(var(--ironsworn-pip-spacing) / 2);
+	padding: v-bind(pipPadding);
 	width: max-content;
 	height: max-content;
 }
 
 .icon {
-	display: block !important;
+	// display: block !important;
 	// stacks icons on top of each other by assigning them to the same grid cell
 	grid-row: 1;
 	grid-column: 1;

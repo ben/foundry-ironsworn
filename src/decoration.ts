@@ -1,4 +1,4 @@
-import { BorderRadiusProperty, MaskProperty } from 'csstype'
+import { BorderRadiusProperty, MaskProperty, PaddingProperty } from 'csstype'
 import type { FontAwesomeIconProps } from './module/vue/components/icon/icon-common'
 import { FontAwesome } from './module/vue/components/icon/icon-common'
 
@@ -41,7 +41,10 @@ export const DECORATION: Record<string, Theme> = {
 			}
 		},
 		impact: radioCheck,
-		challengeRank: circlePip
+		challengeRank: {
+			padding: '0.5px',
+			...circlePip
+		}
 	},
 	Starforged: {
 		asset: {
@@ -51,14 +54,18 @@ export const DECORATION: Record<string, Theme> = {
 			}
 		},
 		impact: radioCheck,
-		challengeRank: hexPip
+		challengeRank: {
+			// padding omitted because the hexagon shape doesn't need it
+			padding: '0px',
+			...hexPip
+		}
 	}
 }
 
 interface Theme {
 	asset: Asset
 	impact: Checkbox
-	challengeRank: Pip
+	challengeRank: ChallengeRankPips
 }
 
 interface Asset {
@@ -69,6 +76,10 @@ interface Asset {
 interface Pip {
 	checked: FontAwesomeIconProps
 	unchecked: FontAwesomeIconProps
+}
+
+interface ChallengeRankPips extends Pip {
+	padding: PaddingProperty<any>
 }
 
 interface Image {
