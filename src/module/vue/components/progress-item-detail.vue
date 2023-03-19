@@ -5,7 +5,9 @@
 				:current="foeSystem.rank"
 				style="margin-right: 1em"
 				@click="setRank" />
-			<h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
+			<h4 style="margin: 0; line-height: 22px">
+				{{ localizeRank(foeSystem?.rank) }}
+			</h4>
 			<IronBtn
 				v-if="multipleUsers"
 				block
@@ -31,7 +33,7 @@
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
-import { RANKS, RANK_INCREMENTS } from '../../constants'
+import { RANK_INCREMENTS } from '../../constants'
 import type { ProgressDataPropertiesData } from '../../item/itemtypes'
 import { $ActorKey, $ItemKey, ActorKey } from '../provisions'
 
@@ -40,6 +42,7 @@ import RankPips from './rank-pips/rank-pips.vue'
 import MceEditor from './mce-editor.vue'
 import ProgressTrack from './progress/progress-track.vue'
 import BtnRollprogress from './buttons/btn-rollprogress.vue'
+import { localizeRank } from '../../helpers/util'
 
 const actor = inject(ActorKey)
 const $actor = inject($ActorKey)
@@ -51,9 +54,6 @@ provide($ItemKey, $item)
 const foeSystem = computed(
 	() => (props.item as any).system as ProgressDataPropertiesData
 )
-const rankText = computed(() => {
-	return game.i18n.localize(RANKS[foeSystem.value?.rank])
-})
 
 function setRank(rank) {
 	$item?.update({ system: { rank } })

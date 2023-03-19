@@ -2,11 +2,11 @@
 	<article
 		class="rank-pips"
 		:aria-label="$t('IRONSWORN.ChallengeRank')"
-		:aria-valuetext="current">
+		:aria-valuetext="localizeRank(current)">
 		<button
-			v-for="rank in ranks"
+			v-for="rank in 5"
 			:key="rank"
-			:data-tooltip="$t(`IRONSWORN.CHALLENGERANK.${$capitalize(rank)}`)"
+			:data-tooltip="localizeRank(rank)"
 			data-tooltip-direction="UP"
 			type="button"
 			class="rank-pip nogrow theme-pip"
@@ -26,20 +26,19 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { RANKS } from '../../../constants'
 import PipSvgHex from './pip-svg-hex.vue'
 import PipSvgCircle from './pip-svg-circle.vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
+import type { ChallengeRank } from '../../../constants'
+import { localizeRank } from '../../../helpers/util'
 
-const props = defineProps<{
-	current: keyof typeof RANKS
+defineProps<{
+	current: ChallengeRank
 }>()
 
 const pipStyle = computed(() =>
 	IronswornSettings.get('theme') === 'starforged' ? 'hex' : 'circle'
 )
-
-const ranks = Object.keys(RANKS)
 
 defineEmits(['click'])
 </script>

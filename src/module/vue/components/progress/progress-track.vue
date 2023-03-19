@@ -8,7 +8,7 @@
 		role="slider"
 		:aria-label="$t('IRONSWORN.ITEM.TypeProgressTrack')"
 		aria-orientation="horizontal"
-		:data-rank="numericRank"
+		:data-rank="rank"
 		:data-ticks="ticks"
 		:data-score="score"
 		:aria-valuenow="ticks"
@@ -29,8 +29,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { fill, clamp } from 'lodash-es'
-import type { RANKS } from '../../../constants.js'
-import { NumericRank } from '../../../constants.js'
+import type { ChallengeRank } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
 
 const props = defineProps<{
@@ -41,7 +40,7 @@ const props = defineProps<{
 	/**
 	 * Use 'null' if it's an unranked track, such as a Legacy or classic Bonds.
 	 */
-	rank: keyof typeof RANKS | null
+	rank: ChallengeRank | null
 	legacyOverflow?: boolean
 	/**
 	 * When true, renders the progress bar for more compact display.
@@ -56,10 +55,6 @@ const maxTicks = maxBoxes * ticksPerBox
 
 const score = computed(() =>
 	clamp(Math.floor(props.ticks / ticksPerBox), minBoxes, maxBoxes)
-)
-
-const numericRank = computed(() =>
-	props.rank != null ? NumericRank[props.rank] : null
 )
 
 const visibleTicks = computed(() =>
@@ -85,6 +80,7 @@ const boxes = computed(() => {
 .progress-track {
 	--ironsworn-progress-box-border-radius: var(--ironsworn-border-radius-md);
 	--ironsworn-progress-box-border-width: var(--ironsworn-border-width-md);
+
 	// TODO: replace this with a 4px variable when available
 	--ironsworn-progress-box-gap: 4px;
 	--ironsworn-progress-box-max-size: 50px;

@@ -7,8 +7,8 @@ import type {
 	SiteDataPropertiesData,
 	StarshipDataPropertiesData
 } from '../actor/actortypes'
-import { RANKS } from '../constants'
 import { IronswornSettings } from '../helpers/settings'
+import { localizeRank } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
 import type {
 	AssetDataPropertiesData,
@@ -235,11 +235,9 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 		const siteData = actor.system as SiteDataPropertiesData
 
 		if (data.system?.rank) {
-			const oldRank = game.i18n.localize(RANKS[siteData.rank])
-			const newRank = game.i18n.localize(RANKS[data.system.rank])
 			return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
-				old: oldRank,
-				new: newRank
+				old: localizeRank(siteData.rank),
+				new: localizeRank(data.system.rank)
 			})
 		}
 		if (data.system?.current !== undefined) {
@@ -257,11 +255,9 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 	progress: (item: IronswornItem, data) => {
 		const progressData = item.system as ProgressDataPropertiesData
 		if (data.system?.rank) {
-			const oldRank = game.i18n.localize(RANKS[progressData.rank])
-			const newRank = game.i18n.localize(RANKS[data.system.rank])
 			return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
-				old: oldRank,
-				new: newRank
+				old: localizeRank(progressData.rank),
+				new: localizeRank(data.system.rank)
 			})
 		}
 		if (data.system?.current !== undefined) {

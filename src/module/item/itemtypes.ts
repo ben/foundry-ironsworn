@@ -1,10 +1,10 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { IMove } from 'dataforged'
-import type { RANKS } from '../constants'
+import type { ChallengeRank } from '../constants'
 
 interface ProgressBase {
 	description: string
-	rank: keyof typeof RANKS
+	rank: ChallengeRank
 	current: number
 	completed: boolean
 }

@@ -1,7 +1,9 @@
 import type { IronswornActor } from '../actor/actor'
+import { ChallengeRank } from '../constants'
 import type { IronswornItem } from '../item/item'
 import { normalizeTableRows } from './items'
 import { IronswornSettings } from './settings.js'
+import { capitalize } from './util'
 
 // Utilities
 async function everyActor(fn: (a: IronswornActor) => any) {
@@ -104,7 +106,7 @@ async function normalizeDelveTableRows() {
 		const keyToMigrate = 'system.denizens'
 		if ((actor.type as any) === 'site') {
 			const denizens = normalizeTableRows(actor, keyToMigrate, typeToMigrate)
-			actor.update({
+			await actor.update({
 				system: { denizens },
 				type: 'site'
 			})
@@ -125,13 +127,44 @@ async function normalizeDelveTableRows() {
 	})
 }
 
+/**
+ * Migration 5: Convert challenge ranks from strings to numbers.
+ */
+async function convertRanksToNumbers() {
+	function toNumberRank(oldRank: unknown): null | undefined | ChallengeRank {
+		// nullish value - return unchanged
+		if (oldRank == null) return oldRank
+
+		switch (typeof oldRank) {
+			case 'string':
+				return (
+					ChallengeRank[capitalize(oldRank) as keyof typeof ChallengeRank] ??
+					ChallengeRank.Troublesome
+				)
+			case 'number':
+				// already a number - no change required
+				return oldRank
+			default:
+				// something weird -- set a fallback
+				return ChallengeRank.Troublesome
+		}
+	}
+	async function updateDoc(doc: any) {
+		if (doc.system?.rank != null)
+			await doc.update({ system: { rank: toNumberRank(doc.system.rank) } })
+	}
+	await everyActor(updateDoc)
+	await everyItem(updateDoc)
+}
+
 // index 1 is the function to run when upgrading from 1 to 2, and so on
 const MIGRATIONS: Array<() => Promise<any>> = [
 	noop,
 	fixFormidableSpelling,
 	everythingIsAProgress,
 	statsAreAlwaysNumbers,
-	normalizeDelveTableRows
+	normalizeDelveTableRows,
+	convertRanksToNumbers
 ]
 const NEWEST_VERSION = MIGRATIONS.length
 

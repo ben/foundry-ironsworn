@@ -1,39 +1,37 @@
-export const RANKS = {
-	troublesome: 'IRONSWORN.CHALLENGERANK.Troublesome',
-	dangerous: 'IRONSWORN.CHALLENGERANK.Dangerous',
-	formidable: 'IRONSWORN.CHALLENGERANK.Formidable',
-	extreme: 'IRONSWORN.CHALLENGERANK.Extreme',
-	epic: 'IRONSWORN.CHALLENGERANK.Epic'
+export enum ChallengeRank {
+	Troublesome = 1,
+	Dangerous = 2,
+	Formidable = 3,
+	Extreme = 4,
+	Epic = 5
 }
 
+/**
+ * The number of ticks in one unit of progress.
+ */
 export const RANK_INCREMENTS = {
-	troublesome: 12,
-	dangerous: 8,
-	formidable: 4,
-	extreme: 2,
-	epic: 1
+	[ChallengeRank.Troublesome]: 12,
+	[ChallengeRank.Dangerous]: 8,
+	[ChallengeRank.Formidable]: 4,
+	[ChallengeRank.Extreme]: 2,
+	[ChallengeRank.Epic]: 1
 }
 
-export enum NumericRank {
-	'troublesome' = 1,
-	'dangerous' = 2,
-	'formidable' = 3,
-	'extreme' = 4,
-	'epic' = 5
-}
-
-export const NumericRankI18nKeys: { [k in NumericRank]: string } = {
-	[NumericRank.troublesome]: 'IRONSWORN.CHALLENGERANK.Troublesome',
-	[NumericRank.dangerous]: 'IRONSWORN.CHALLENGERANK.Dangerous',
-	[NumericRank.formidable]: 'IRONSWORN.CHALLENGERANK.Formidable',
-	[NumericRank.extreme]: 'IRONSWORN.CHALLENGERANK.Extreme',
-	[NumericRank.epic]: 'IRONSWORN.CHALLENGERANK.Epic'
-}
-
-export const NumericRankIncrements: { [k in NumericRank]: number } = {
-	[NumericRank.troublesome]: 12,
-	[NumericRank.dangerous]: 8,
-	[NumericRank.formidable]: 4,
-	[NumericRank.extreme]: 2,
-	[NumericRank.epic]: 1
+/**
+ * The amount of legacy marked as a reward, when completing a progress track of each challenge rank. (Starforged only).
+ */
+export const RANK_REWARDS_SF = {
+	/**
+	 * A troublesome reward that's been downgraded.
+	 */
+	0: 0,
+	[ChallengeRank.Troublesome]: 1,
+	[ChallengeRank.Dangerous]: 2,
+	[ChallengeRank.Formidable]: 4,
+	[ChallengeRank.Extreme]: 8,
+	[ChallengeRank.Epic]: 12,
+	/**
+	 * An epic reward that's been upgraded.
+	 */
+	6: 16
 }

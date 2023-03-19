@@ -56,7 +56,7 @@
 			"objective": "",
 			"description": "",
 			"notes": "",
-			"rank": "troublesome",
+			"rank": 1,
 			"current": 0,
 			"denizens": [
 				{
@@ -170,7 +170,7 @@
 		"templates": {
 			"progress": {
 				"description": "",
-				"rank": "troublesome",
+				"rank": 1,
 				"current": 0,
 				"completed": false
 			}

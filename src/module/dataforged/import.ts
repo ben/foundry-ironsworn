@@ -16,7 +16,6 @@ import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
-import { NumericRank } from '../constants'
 import type { IronswornItem } from '../item/item'
 import {
 	ISAssetTypes,
@@ -321,22 +320,6 @@ async function processISOracles() {
 	})
 }
 
-function getLegacyRank(numericRank) {
-	switch (numericRank) {
-		case 1:
-			return 'troublesome'
-		case 2:
-			return 'dangerous'
-		case 3:
-			return 'formidable'
-		case 4:
-			return 'extreme'
-		case 5:
-			return 'epic'
-	}
-	return 'epic'
-}
-
 async function processSFEncounters() {
 	const encountersToCreate = [] as Array<
 		ItemDataConstructorData & Record<string, unknown>
@@ -359,7 +342,7 @@ async function processSFEncounters() {
 			img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
 			system: {
 				description,
-				rank: NumericRank[encounter.Rank] as keyof typeof NumericRank
+				rank: encounter.Rank
 			}
 		})
 
@@ -381,9 +364,7 @@ async function processSFEncounters() {
 				img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
 				system: {
 					description: variantDescription,
-					rank: NumericRank[
-						'Rank' in variant ? variant.Rank : encounter.Rank
-					] as keyof typeof NumericRank
+					rank: variant.Rank ?? encounter.Rank
 				}
 			})
 		}

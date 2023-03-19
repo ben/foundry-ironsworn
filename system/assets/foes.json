@@ -7,7 +7,7 @@
 			"Foes": [
 				{
 					"Name": "Broken",
-					"Rank": "Troublesome",
+					"Rank": 1,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "138"
@@ -25,7 +25,7 @@
 				},
 				{
 					"Name": "Common Folk",
-					"Rank": "Troublesome",
+					"Rank": 1,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "139"
@@ -42,7 +42,7 @@
 				},
 				{
 					"Name": "Hunter",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "139"
@@ -59,7 +59,7 @@
 				},
 				{
 					"Name": "Mystic",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "140"
@@ -76,7 +76,7 @@
 				},
 				{
 					"Name": "Raider",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "140"
@@ -94,7 +94,7 @@
 				},
 				{
 					"Name": "Warrior",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "141"
@@ -112,7 +112,7 @@
 				},
 				{
 					"Name": "Husk",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "110"
@@ -138,7 +138,7 @@
 				},
 				{
 					"Name": "Zealot",
-					"Rank": "Troublesome",
+					"Rank": 1,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "111"
@@ -165,7 +165,7 @@
 			"Foes": [
 				{
 					"Name": "Elf",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "142"
@@ -191,7 +191,7 @@
 				},
 				{
 					"Name": "Giant",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "143"
@@ -214,7 +214,7 @@
 				},
 				{
 					"Name": "Primordial",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "144"
@@ -231,7 +231,7 @@
 				},
 				{
 					"Name": "Troll",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "145"
@@ -250,7 +250,7 @@
 				},
 				{
 					"Name": "Varou",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "146"
@@ -275,7 +275,7 @@
 				},
 				{
 					"Name": "Atanya",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "112"
@@ -296,7 +296,7 @@
 				},
 				{
 					"Name": "Merrow",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "113"
@@ -320,7 +320,7 @@
 			"Foes": [
 				{
 					"Name": "Bear",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "147"
@@ -333,7 +333,7 @@
 				},
 				{
 					"Name": "Boar",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "148"
@@ -346,7 +346,7 @@
 				},
 				{
 					"Name": "Gaunt",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "148"
@@ -364,7 +364,7 @@
 				},
 				{
 					"Name": "Marsh Rat",
-					"Rank": "Troublesome",
+					"Rank": 1,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "149"
@@ -377,7 +377,7 @@
 				},
 				{
 					"Name": "Wolf",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "150"
@@ -390,7 +390,7 @@
 				},
 				{
 					"Name": "Bladewing",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "114"
@@ -411,7 +411,7 @@
 				},
 				{
 					"Name": "Carrion Newt",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "115"
@@ -433,7 +433,7 @@
 				},
 				{
 					"Name": "Cave Lion",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "116"
@@ -446,7 +446,7 @@
 				},
 				{
 					"Name": "Deep Rat",
-					"Rank": "Troublesome",
+					"Rank": 1,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "117"
@@ -465,7 +465,7 @@
 				},
 				{
 					"Name": "Nightmare Spider",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "118"
@@ -487,7 +487,7 @@
 				},
 				{
 					"Name": "Shroud Crab",
-					"Rank": "Troublesome",
+					"Rank": 1,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "119"
@@ -509,7 +509,7 @@
 				},
 				{
 					"Name": "Trog",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "120"
@@ -539,7 +539,7 @@
 			"Foes": [
 				{
 					"Name": "Basilisk",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "151"
@@ -562,7 +562,7 @@
 				},
 				{
 					"Name": "Elder Beast",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "152"
@@ -579,7 +579,7 @@
 				},
 				{
 					"Name": "Harrow Spider",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "153"
@@ -596,7 +596,7 @@
 				},
 				{
 					"Name": "Leviathan",
-					"Rank": "Epic",
+					"Rank": 5,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "154"
@@ -619,7 +619,7 @@
 				},
 				{
 					"Name": "Mammoth",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "155"
@@ -640,7 +640,7 @@
 				},
 				{
 					"Name": "Wyvern",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "156"
@@ -664,7 +664,7 @@
 				},
 				{
 					"Name": "Chitter",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "121"
@@ -681,7 +681,7 @@
 				},
 				{
 					"Name": "Gnarl",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "122"
@@ -699,7 +699,7 @@
 				},
 				{
 					"Name": "Iron-Wracked Beast",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "123"
@@ -717,7 +717,7 @@
 				},
 				{
 					"Name": "Kraken",
-					"Rank": "Epic",
+					"Rank": 5,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "124"
@@ -740,7 +740,7 @@
 				},
 				{
 					"Name": "Nightspawn",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "125"
@@ -757,7 +757,7 @@
 				},
 				{
 					"Name": "Rhaskar",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "126"
@@ -780,7 +780,7 @@
 				},
 				{
 					"Name": "Wyrm",
-					"Rank": "Epic",
+					"Rank": 5,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "127"
@@ -810,7 +810,7 @@
 			"Foes": [
 				{
 					"Name": "Bonewalker",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "157"
@@ -831,7 +831,7 @@
 				},
 				{
 					"Name": "Frostbound",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "158"
@@ -849,7 +849,7 @@
 				},
 				{
 					"Name": "Chimera",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "158"
@@ -869,7 +869,7 @@
 				},
 				{
 					"Name": "Haunt",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "159"
@@ -892,7 +892,7 @@
 				},
 				{
 					"Name": "Hollow",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "160"
@@ -914,7 +914,7 @@
 				},
 				{
 					"Name": "Iron Revenant",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "161"
@@ -934,7 +934,7 @@
 				},
 				{
 					"Name": "Sodden",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn rulebook",
 						"Page": "162"
@@ -953,7 +953,7 @@
 				},
 				{
 					"Name": "Blighthound",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "128"
@@ -970,7 +970,7 @@
 				},
 				{
 					"Name": "Bog Rot",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "129"
@@ -992,7 +992,7 @@
 				},
 				{
 					"Name": "Bonehorde",
-					"Rank": "Extreme",
+					"Rank": 4,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "130"
@@ -1013,7 +1013,7 @@
 				},
 				{
 					"Name": "Thrall",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "131"
@@ -1038,7 +1038,7 @@
 				},
 				{
 					"Name": "Wight",
-					"Rank": "Formidable",
+					"Rank": 3,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "132"
@@ -1065,7 +1065,7 @@
 			"Foes": [
 				{
 					"Name": "Blood Thorn",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "138"
@@ -1083,7 +1083,7 @@
 				},
 				{
 					"Name": "Circle of Stones",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "140"
@@ -1105,7 +1105,7 @@
 				},
 				{
 					"Name": "Glimmer",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "142"
@@ -1126,7 +1126,7 @@
 				},
 				{
 					"Name": "Gloom",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "144"
@@ -1145,7 +1145,7 @@
 				},
 				{
 					"Name": "Maelstrom",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "146"
@@ -1168,7 +1168,7 @@
 				},
 				{
 					"Name": "Tempest",
-					"Rank": "Dangerous",
+					"Rank": 2,
 					"Source": {
 						"Name": "Ironsworn: Delve",
 						"Page": "148"

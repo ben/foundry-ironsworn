@@ -88,10 +88,10 @@ import BtnRollprogress from '../buttons/btn-rollprogress.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import RankPips from '../rank-pips/rank-pips.vue'
 import DocumentImg from '../document-img.vue'
-import type { RANKS } from '../../../constants.js'
 import ProgressTrack from './progress-track.vue'
 import FontIcon from '../icon/font-icon.vue'
 import { FontAwesome } from '../icon/icon-common'
+import type { ChallengeRank } from '../../../constants'
 
 const props = defineProps<{
 	item: any
@@ -141,7 +141,7 @@ function destroy() {
 		defaultYes: false
 	})
 }
-function rankClick(rank: keyof typeof RANKS) {
+function rankClick(rank: ChallengeRank) {
 	foundryItem?.update({ system: { rank } })
 }
 function advance() {

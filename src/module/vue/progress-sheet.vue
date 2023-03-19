@@ -10,7 +10,9 @@
 				class="nogrow"
 				:current="data.item.system.rank"
 				@click="setRank" />
-			<h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
+			<h4 style="margin: 0; line-height: 22px">
+				{{ localizeRank(data.item.system.rank) }}
+			</h4>
 			<label class="checkbox nogrow">
 				<input
 					v-model="data.item.system.completed"
@@ -134,7 +136,6 @@
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
-import { RANKS } from '../constants'
 import { $ItemKey, ItemKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import Clock from './components/clock.vue'
@@ -143,6 +144,7 @@ import SheetHeaderBasic from './sheet-header-basic.vue'
 import ProgressTrack from './components/progress/progress-track.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { localizeRank } from '../helpers/util'
 
 const props = defineProps<{ data: { item: any } }>()
 const $item = inject($ItemKey)
@@ -150,10 +152,6 @@ const $item = inject($ItemKey)
 provide(
 	ItemKey,
 	computed(() => props.data.item)
-)
-
-const rankText = computed(() =>
-	game.i18n.localize(RANKS[props.data.item.system.rank])
 )
 
 function setRank(rank) {
