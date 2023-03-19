@@ -149,14 +149,12 @@ async function convertRanksToNumbers() {
 				return ChallengeRank.Troublesome
 		}
 	}
-	await everyActor(async (actor: any) => {
-		if (actor.system.rank != null)
-			await actor.update({ system: { rank: toNumberRank(actor.system.rank) } })
-	})
-	await everyItem(async (item: any) => {
-		if (item.system.rank != null)
-			await item.update({ system: { rank: toNumberRank(item.system.rank) } })
-	})
+	async function updateDoc(doc: any) {
+		if (doc.system?.rank != null)
+			await doc.update({ system: { rank: toNumberRank(doc.system.rank) } })
+	}
+	await everyActor(updateDoc)
+	await everyItem(updateDoc)
 }
 
 // index 1 is the function to run when upgrading from 1 to 2, and so on
