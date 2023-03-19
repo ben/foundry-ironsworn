@@ -23,7 +23,6 @@ import { FontAwesomeIconProps, FontAwesome } from './icon-common'
 const props = withDefaults(defineProps<FontAwesomeIconProps>(), {
 	family: FontAwesome.Family.Solid,
 	style: FontAwesome.Style.Classic,
-	fw: true,
 	el: 'span'
 })
 
