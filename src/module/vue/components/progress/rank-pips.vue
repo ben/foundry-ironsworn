@@ -60,7 +60,7 @@ import { IronswornSettings } from '../../../helpers/settings.js'
 import { ChallengeRank } from '../../../constants'
 import { localizeRank } from '../../../helpers/util'
 import FontIcon from '../icon/font-icon.vue'
-import { clamp } from 'lodash'
+import { clamp } from 'lodash-es'
 
 const props = withDefaults(
 	defineProps<{
