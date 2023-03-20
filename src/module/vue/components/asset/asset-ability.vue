@@ -5,20 +5,20 @@
 		:readonly="!(toggle && canUpdate)"
 		:icon-switch-class="$style.bullet"
 		:content-hover-fx="false"
-		:transition="IronswornSettings.decoration.asset.ability.transition"
+		:transition="IronswornSettings.deco.asset.ability.transition"
 		@change="toggleAbility">
 		<template #checked="scope">
 			<FontIcon
 				v-bind="{
 					...scope,
-					...IronswornSettings.decoration.asset.ability.checked
+					...IronswornSettings.deco.asset.ability.checked
 				}" />
 		</template>
 		<template #unchecked="scope">
 			<FontIcon
 				v-bind="{
 					...scope,
-					...IronswornSettings.decoration.asset.ability.unchecked
+					...IronswornSettings.deco.asset.ability.unchecked
 				}" />
 		</template>
 		<template #default>
