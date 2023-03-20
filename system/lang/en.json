@@ -288,7 +288,7 @@
 			"ColorScheme": {
 				"Name": "Appearance: Color scheme",
 				"Hint": "Each user can set their own color scheme. Requires a reload.",
-				"Classic": "Classic",
+				"Zinc": "Zinc",
 				"Phosphor": "Phosphor"
 			},
 			"Tools": {

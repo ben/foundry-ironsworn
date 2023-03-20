@@ -26,7 +26,7 @@ declare global {
 
 			// APPEARANCE
 			'foundry-ironsworn.theme': keyof typeof THEMES
-			'foundry-ironsworn.color-scheme': 'classic' | 'phosphor'
+			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor'
 
 			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
 			'foundry-ironsworn.shared-supply': boolean
@@ -117,10 +117,10 @@ export class IronswornSettings {
 			config: true,
 			type: String,
 			choices: {
-				classic: 'IRONSWORN.Settings.ColorScheme.Classic',
+				zinc: 'IRONSWORN.Settings.ColorScheme.Zinc',
 				phosphor: 'IRONSWORN.Settings.ColorScheme.Phosphor'
 			},
-			default: 'classic',
+			default: 'zinc',
 			onChange: reload
 		})
 
