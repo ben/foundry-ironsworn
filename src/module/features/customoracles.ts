@@ -11,7 +11,7 @@ import { cachedDocumentsForPack } from './pack-cache'
 
 export interface IOracleTreeNode {
 	dataforgedNode?: IOracle | IOracleCategory
-	tables: Array<() => RollTable>
+	tables: string[] // UUIDs
 	displayName: string
 	children: IOracleTreeNode[]
 	forceExpanded?: boolean
@@ -107,9 +107,9 @@ export async function walkOracle(
 	const node: IOracleTreeNode = {
 		...emptyNode(),
 		dataforgedNode: oracle,
-		tables: compact([table != null ? () => table : undefined]),
+		tables: compact([table?.uuid]),
 		displayName:
-			table?.name ||
+			table?.name ??
 			game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`)
 	}
 
@@ -127,7 +127,7 @@ export async function walkOracle(
 				node.children.push({
 					...emptyNode(),
 					displayName: name,
-					tables: [() => subtable]
+					tables: [subtable.uuid]
 				})
 			}
 		}
@@ -155,7 +155,7 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
 		// Add this folder
 		const newNode: IOracleTreeNode = {
 			...emptyNode(),
-			displayName: folder.name || '(folder)'
+			displayName: folder.name ?? '(folder)'
 		}
 		parent.children.push(newNode)
 
@@ -168,7 +168,7 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
 		for (const table of folder.contents) {
 			newNode.children.push({
 				...emptyNode(),
-				tables: [() => table as RollTable],
+				tables: [table.uuid],
 				displayName: table.name ?? '(table)'
 			})
 		}
@@ -177,14 +177,14 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
 	walkFolder(node, rootFolder)
 }
 
-export function findPathToNodeByTableId(
+export function findPathToNodeByTableUuid(
 	rootNode: IOracleTreeNode,
-	tableId: string
+	tableUuid: string
 ): IOracleTreeNode[] {
 	const ret: IOracleTreeNode[] = []
 	function walk(node: IOracleTreeNode) {
 		ret.push(node)
-		const foundTable = node.tables.find((x) => x().id === tableId)
+		const foundTable = node.tables.find((x) => x === tableUuid)
 		if (foundTable != null) return true
 		for (const child of node.children) {
 			if (walk(child)) return true
