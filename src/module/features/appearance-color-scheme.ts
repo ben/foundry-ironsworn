@@ -4,13 +4,13 @@ import '../../styles/styles.less'
 import '../../styles/themes/classic.less'
 import '../../styles/themes/phosphor.less'
 
-export function themeSetup() {
+export function colorSchemeSetup() {
 	const colorScheme = IronswornSettings.get('color-scheme')
 
 	$(document.body).addClass(IronswornSettings.colors)
 
 	if (colorScheme === 'phosphor') {
-		// TODO decouple font from colour scheme. should it be part of decoration style?
+		// TODO: figure out a way to automate this without calling it out for every single theme.
 		;(<string[]>CONFIG.TinyMCE.content_css)?.push(
 			'/systems/foundry-ironsworn/styles/starforged-tinymce.css'
 		)

@@ -36,43 +36,84 @@ const radioCheck: Checkbox = {
 	unchecked: { name: 'circle', family: FontAwesome.Family.Regular }
 }
 
-export const DECORATION: Record<string, Theme> = {
+export const THEMES: Record<string, Theme> = {
 	ironsworn: {
 		labelKey: 'IRONSWORN.Settings.Theme.Ironsworn',
-		asset: {
-			ability: {
-				transition: 'fade',
+		decoration: {
+			tabs: { transition: 'fade' },
+			asset: {
+				ability: {
+					transition: 'fade',
+					...circlePip
+				}
+			},
+			impact: radioCheck,
+			challengeRank: {
+				padding: '1px',
 				...circlePip
 			}
-		},
-		impact: radioCheck,
-		challengeRank: {
-			padding: '1px',
-			...circlePip
 		}
 	},
 	starforged: {
 		labelKey: 'IRONSWORN.Settings.Theme.Starforged',
-		asset: {
-			ability: {
-				transition: 'fade',
+		decoration: {
+			tabs: { transition: 'slide' },
+			asset: {
+				ability: {
+					transition: 'fade',
+					...hexPip
+				}
+			},
+			impact: radioCheck,
+			challengeRank: {
+				// padding omitted because the hexagon shape doesn't need it
+				padding: '0px',
 				...hexPip
 			}
-		},
-		impact: radioCheck,
-		challengeRank: {
-			// padding omitted because the hexagon shape doesn't need it
-			padding: '0px',
-			...hexPip
 		}
 	}
 } as const
 
 interface Theme {
 	labelKey: string
+	typography?: Typography
+	decoration?: Decoration
+}
+
+interface Decoration {
+	tabs: Tabs
 	asset: Asset
 	impact: Checkbox
 	challengeRank: ChallengeRankPips
+}
+
+interface Typeface extends FontFaceDescriptors {}
+
+interface Typography {
+	/**
+	 * "Display type" refers to big, eye-catching headings. It's used sparingly, and usually at large sizes, so it's more "fault tolerant" where legibility is concerned; it's a great place to use fonts that are evocative, dramatic, or just plain weird.
+	 *
+	 * Falls back to `header` options.
+	 */
+	display?: Typeface
+	/**
+	 * Options used for most headings as well as labels on important elements.
+	 */
+	header: Typeface
+	/**
+	 * Options used for standard body text.
+	 */
+	body: Typeface
+	/**
+	 * Options used for text that's rendered for compact display, like footnotes and chat messages.
+	 *
+	 * Falls back to `body` options.
+	 */
+	compact?: Typeface
+}
+
+interface Tabs {
+	transition: string
 }
 
 interface Asset {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 import { kebabCase, mapValues } from 'lodash'
-import { DECORATION } from '../features/appearance-theme'
+import { THEMES } from '../features/appearance-theme'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
@@ -25,7 +25,7 @@ declare global {
 			'foundry-ironsworn.prompt-world-truths': boolean
 
 			// APPEARANCE
-			'foundry-ironsworn.theme': keyof typeof DECORATION
+			'foundry-ironsworn.theme': keyof typeof THEMES
 			'foundry-ironsworn.color-scheme': 'classic' | 'phosphor'
 
 			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
@@ -47,10 +47,17 @@ export class IronswornSettings {
 	}
 
 	/**
-	 * Returns an object representing the current decoration style.
+	 * Returns an object that represents the current theme.
+	 */
+	static get theme() {
+		return THEMES[IronswornSettings.get('theme')]
+	}
+
+	/**
+	 * Shorthand getter for the current theme's decorations.
 	 */
 	static get deco() {
-		return DECORATION[IronswornSettings.get('theme')]
+		return IronswornSettings.theme.decoration
 	}
 
 	static registerSettings() {
@@ -95,7 +102,7 @@ export class IronswornSettings {
 			scope: 'world',
 			config: true,
 			type: String,
-			choices: mapValues(DECORATION, (v) => v.labelKey),
+			choices: mapValues(THEMES, (v) => v.labelKey),
 			default: 'ironsworn',
 			onChange: reload
 		})
