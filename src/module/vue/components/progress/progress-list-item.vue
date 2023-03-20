@@ -21,7 +21,7 @@
 		<RankPips
 			class="progress-rank-pips"
 			:current="item.system.rank"
-			@click="rankClick" />
+			@change="setRank" />
 		<section class="progress-controls" data-tooltip-direction="UP">
 			<IronBtn
 				v-if="editMode"
@@ -86,7 +86,7 @@ import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
 import IronBtn from '../buttons/iron-btn.vue'
-import RankPips from '../rank-pips/rank-pips.vue'
+import RankPips from './rank-pips.vue'
 import DocumentImg from '../document-img.vue'
 import ProgressTrack from './progress-track.vue'
 import FontIcon from '../icon/font-icon.vue'
@@ -141,7 +141,7 @@ function destroy() {
 		defaultYes: false
 	})
 }
-function rankClick(rank: ChallengeRank) {
+function setRank(rank: ChallengeRank) {
 	foundryItem?.update({ system: { rank } })
 }
 function advance() {
@@ -190,6 +190,7 @@ function setClock(clockTicks: number) {
 	.progress-rank-pips {
 		grid-row: 1;
 		grid-column: 3 / span 2;
+		align-self: center;
 	}
 
 	.progress-title {

@@ -23,7 +23,6 @@ import { FontAwesomeIconProps, FontAwesome } from './icon-common'
 const props = withDefaults(defineProps<FontAwesomeIconProps>(), {
 	family: FontAwesome.Family.Solid,
 	style: FontAwesome.Style.Classic,
-	fw: true,
 	el: 'span'
 })
 
@@ -59,10 +58,10 @@ const classes = computed(() => {
 
 <style lang="scss" module>
 .wrapper {
-	display: inline-block;
-	width: var(--ironsworn-icon-size);
-	height: var(--ironsworn-icon-size);
-	line-height: 1 !important;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .border {

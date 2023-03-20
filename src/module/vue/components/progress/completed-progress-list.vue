@@ -19,8 +19,8 @@
 <script lang="ts" setup>
 import type { ExtractPropTypes, Ref } from 'vue'
 import { computed, inject, ref, watch } from 'vue'
-import { ActorKey } from '../provisions'
-import Collapsible from './collapsible/collapsible.vue'
+import { ActorKey } from '../../provisions'
+import Collapsible from '../collapsible/collapsible.vue'
 import type { CompletedProgressType } from './progress-common'
 import { getProgressItems } from './progress-common'
 import ProgressList from './progress-list.vue'

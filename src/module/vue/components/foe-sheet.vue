@@ -46,7 +46,7 @@ import IronBtn from './buttons/iron-btn.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 import type { FoeDataProperties } from '../../actor/actortypes'
 import DropTarget from '../drop-target.vue'
-import ProgressItemDetail from './progress-item-detail.vue'
+import ProgressItemDetail from 'component:progress/progress-item-detail.vue'
 
 const props = defineProps<{
 	data: {

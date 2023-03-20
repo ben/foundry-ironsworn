@@ -1,5 +1,5 @@
-import type { IronswornActor } from '../../actor/actor'
-import type { ProgressDataPropertiesData } from '../../item/itemtypes'
+import type { IronswornActor } from '../../../actor/actor'
+import type { ProgressDataPropertiesData } from '../../../item/itemtypes'
 
 export type CompletedProgressType = 'completed-only' | 'no-completed' | 'all'
 export type ProgressSubtype = ProgressDataPropertiesData['subtype']

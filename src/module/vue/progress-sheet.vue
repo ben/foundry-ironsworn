@@ -9,7 +9,7 @@
 			<RankPips
 				class="nogrow"
 				:current="data.item.system.rank"
-				@click="setRank" />
+				@change="setRank" />
 			<h4 style="margin: 0; line-height: 22px">
 				{{ localizeRank(data.item.system.rank) }}
 			</h4>
@@ -137,7 +137,7 @@
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import { $ItemKey, ItemKey } from './provisions'
-import RankPips from './components/rank-pips/rank-pips.vue'
+import RankPips from './components/progress/rank-pips.vue'
 import Clock from './components/clock.vue'
 import MceEditor from './components/mce-editor.vue'
 import SheetHeaderBasic from './sheet-header-basic.vue'

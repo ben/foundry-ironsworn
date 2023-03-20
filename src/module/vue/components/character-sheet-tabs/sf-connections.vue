@@ -18,7 +18,7 @@
 import { inject } from 'vue'
 import { $ActorKey } from '../../provisions'
 import IronBtn from '../buttons/iron-btn.vue'
-import ProgressList from '../progress-list.vue'
+import ProgressList from 'component:progress/progress-list.vue'
 
 const $actor = inject($ActorKey)
 

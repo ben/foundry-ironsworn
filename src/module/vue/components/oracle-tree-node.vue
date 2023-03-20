@@ -11,7 +11,7 @@
 			<h4 class="flexrow">
 				<BtnOracle :node="node" :text="node?.displayName">
 					<template #icon>
-						<IronIcon name="oracle" size="1.25em" />
+						<IronIcon name="oracle" :size="spacerSize" />
 					</template>
 				</BtnOracle>
 				<IronBtn
@@ -38,7 +38,7 @@
 					<template #icon>
 						<FontIcon
 							nogrow
-							:size="FontAwesome.Size['lg']"
+							:class="$style.fontIcon"
 							name="caret-right"
 							:rotate="
 								state.manuallyExpanded ? FontAwesome.Rotate['90deg'] : undefined
@@ -51,7 +51,7 @@
 				<div
 					v-show="state.manuallyExpanded"
 					class="flexcol"
-					style="margin-left: 1rem">
+					:class="$style.indent">
 					<oracle-tree-node
 						v-for="child in node?.children"
 						:key="child.displayName"
@@ -83,6 +83,8 @@ const state = reactive({
 	descriptionExpanded: false,
 	highlighted: false
 })
+
+const spacerSize = '18px'
 
 const isLeaf = computed(() => {
 	return props.node.tables.length > 0
@@ -141,6 +143,16 @@ defineExpose({
 <style lang="scss" module>
 .content {
 	margin: var(--ironsworn-spacer-sm);
+}
+
+.indent {
+	margin-left: v-bind(spacerSize);
+}
+
+.fontIcon {
+	font-size: v-bind(spacerSize);
+	height: v-bind(spacerSize);
+	width: v-bind(spacerSize);
 }
 </style>
 

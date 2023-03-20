@@ -5,17 +5,16 @@
 		:data-tooltip="state.hintText"
 		class="flexrow"
 		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
-		:icon-unchecked="{
-			icon: 'fa:circle',
-			props: { family: FontAwesome.Family.Regular }
-		}"
 		:checked="actor.system.debility[name]"
-		:icon-checked="{
-			icon: 'fa:dot-circle',
-			props: { family: FontAwesome.Family.Regular }
-		}"
 		:aria-labelledby="`label_${baseId}`"
+		:transition="deco.impact.transition"
 		@change="input($event)">
+		<template #checked="scope">
+			<FontIcon v-bind="{ ...scope, ...deco.impact.checked }" />
+		</template>
+		<template #unchecked="scope">
+			<FontIcon v-bind="{ ...scope, ...deco.impact.unchecked }" />
+		</template>
 		<slot :id="`label_${baseId}`" name="default">
 			<span :id="`label_${baseId}`" :class="$style.label">
 				{{ label }}
@@ -32,7 +31,8 @@ import { IronswornSettings } from '../../../helpers/settings'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 import IronCheckbox from '../input/iron-checkbox.vue'
-import { FontAwesome } from '../icon/icon-common'
+import { DECORATION } from '../../../../decoration'
+import FontIcon from '../icon/font-icon.vue'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
@@ -45,6 +45,12 @@ const props = defineProps<{
 	global?: boolean
 	globalHint?: boolean
 }>()
+
+const deco = computed(() =>
+	IronswornSettings.starforgedToolsEnabled
+		? DECORATION.Starforged
+		: DECORATION.Ironsworn
+)
 
 const state = reactive<{ hintText?: string }>({})
 
@@ -151,7 +157,7 @@ button:local(.wrapper) {
 	flex-direction: row;
 }
 .hint {
-	text-shadow: 0 0 5px var(--ironsworn-color-warning);
+	filter: drop-shadow(0 0 5px var(--ironsworn-color-warning));
 }
 
 .label {

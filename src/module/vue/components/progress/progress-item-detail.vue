@@ -4,7 +4,7 @@
 			<RankPips
 				:current="foeSystem.rank"
 				style="margin-right: 1em"
-				@click="setRank" />
+				@change="setRank" />
 			<h4 style="margin: 0; line-height: 22px">
 				{{ localizeRank(foeSystem?.rank) }}
 			</h4>
@@ -33,16 +33,16 @@
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
-import { RANK_INCREMENTS } from '../../constants'
-import type { ProgressDataPropertiesData } from '../../item/itemtypes'
-import { $ActorKey, $ItemKey, ActorKey } from '../provisions'
+import { RANK_INCREMENTS } from '../../../constants'
+import type { ProgressDataPropertiesData } from '../../../item/itemtypes'
+import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 
-import IronBtn from './buttons/iron-btn.vue'
-import RankPips from './rank-pips/rank-pips.vue'
-import MceEditor from './mce-editor.vue'
-import ProgressTrack from './progress/progress-track.vue'
-import BtnRollprogress from './buttons/btn-rollprogress.vue'
-import { localizeRank } from '../../helpers/util'
+import IronBtn from 'component:buttons/iron-btn.vue'
+import RankPips from 'component:progress/rank-pips.vue'
+import MceEditor from 'component:mce-editor.vue'
+import ProgressTrack from 'component:progress/progress-track.vue'
+import BtnRollprogress from 'component:buttons/btn-rollprogress.vue'
+import { localizeRank } from '../../../helpers/util'
 
 const actor = inject(ActorKey)
 const $actor = inject($ActorKey)
