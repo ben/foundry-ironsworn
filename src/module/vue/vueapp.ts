@@ -61,7 +61,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 					provide: {
 						context: {
 							options: this.options,
-							themeClass: IronswornSettings.colors,
+							themeClass: IronswornSettings.classes.join(' '),
 							config: CONFIG.IRONSWORN
 						},
 						[$LocalEmitterKey as symbol]: this.localEmitter,
