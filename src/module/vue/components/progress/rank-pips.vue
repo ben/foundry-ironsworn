@@ -106,7 +106,6 @@ function setRank(rank: ChallengeRank) {
 </script>
 <style lang="scss" module>
 .wrapper {
-	--ironsworn-pip-spacing: 1px;
 	--fa-display: block;
 
 	display: flex;
@@ -127,6 +126,7 @@ function setRank(rank: ChallengeRank) {
 	padding: v-bind(pipPadding);
 	width: max-content;
 	height: max-content;
+	color: currentColor;
 }
 
 .icon {
