@@ -1,9 +1,9 @@
 import { IronswornSettings } from '../helpers/settings'
 
 import '../../styles/styles.less'
-import '../../styles/themes/themes.scss'
-import '../../styles/color-schemes/classic.scss'
-import '../../styles/color-schemes/phosphor.scss'
+import '../../styles/_irontheme.scss'
+import '../../styles/_ironcolor/classic.scss'
+import '../../styles/_ironcolor/phosphor.scss'
 
 export function colorSchemeSetup() {
 	const colorScheme = IronswornSettings.get('color-scheme')
