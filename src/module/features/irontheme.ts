@@ -78,7 +78,7 @@ interface Theme {
 	labelKey: string
 	/** NYI */
 	typography?: Typography
-	decoration?: Decoration
+	decoration: Decoration
 }
 
 interface Decoration {
