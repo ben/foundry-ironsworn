@@ -45,7 +45,7 @@ export class IronswornSettings {
 	/**
 	 * Returns the CSS class associated with the current color scheme.
 	 */
-	static get colorScheme() {
+	static get colors() {
 		return `color-scheme__${kebabCase(
 			IronswornSettings.get('theme-color-scheme')
 		)}`
@@ -54,7 +54,7 @@ export class IronswornSettings {
 	/**
 	 * Returns an object representing the current decoration style.
 	 */
-	static get decoration() {
+	static get deco() {
 		return DECORATION[IronswornSettings.get('theme-decoration-style')]
 	}
 

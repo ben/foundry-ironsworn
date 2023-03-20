@@ -7,17 +7,17 @@
 		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
 		:checked="actor.system.debility[name]"
 		:aria-labelledby="`label_${baseId}`"
-		:transition="IronswornSettings.decoration.impact.transition"
+		:transition="IronswornSettings.deco.impact.transition"
 		@change="input($event)">
 		<template #checked="scope">
 			<FontIcon
-				v-bind="{ ...scope, ...IronswornSettings.decoration.impact.checked }" />
+				v-bind="{ ...scope, ...IronswornSettings.deco.impact.checked }" />
 		</template>
 		<template #unchecked="scope">
 			<FontIcon
 				v-bind="{
 					...scope,
-					...IronswornSettings.decoration.impact.unchecked
+					...IronswornSettings.deco.impact.unchecked
 				}" />
 		</template>
 		<slot :id="`label_${baseId}`" name="default">

@@ -41,12 +41,12 @@
 			@mouseleave="hovered = 0"
 			@click="setRank(rank)">
 			<FontIcon
-				v-bind="IronswornSettings.decoration.challengeRank.checked"
+				v-bind="IronswornSettings.deco.challengeRank.checked"
 				role="presentational"
 				:fw="false"
 				:class="[$style.checked, $style.icon]" />
 			<FontIcon
-				v-bind="IronswornSettings.decoration.challengeRank.unchecked"
+				v-bind="IronswornSettings.deco.challengeRank.unchecked"
 				role="presentational"
 				:fw="false"
 				:class="[$style.unchecked, $style.icon]" />
@@ -72,9 +72,7 @@ const props = withDefaults(
 
 const hovered = ref(0)
 
-const pipPadding = computed(
-	() => IronswornSettings.decoration.challengeRank.padding
-)
+const pipPadding = computed(() => IronswornSettings.deco.challengeRank.padding)
 
 type PipState = 'filled' | 'empty' | 'preview'
 

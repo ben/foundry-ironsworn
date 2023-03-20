@@ -25,12 +25,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 			template: 'systems/foundry-ironsworn/templates/actor/create.hbs',
 			id: 'new-actor-dialog',
 			resizable: false,
-			classes: [
-				'ironsworn',
-				'sheet',
-				'new-actor',
-				IronswornSettings.colorScheme
-			],
+			classes: ['ironsworn', 'sheet', 'new-actor', IronswornSettings.colors],
 			width: 650,
 			height: 200
 		} as FormApplicationOptions)
