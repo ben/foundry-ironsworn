@@ -2,7 +2,7 @@ import { IronswornSettings } from '../helpers/settings'
 
 import '../../styles/styles.less'
 import '../../styles/_irontheme.scss'
-import '../../styles/_ironcolor/classic.scss'
+import '../../styles/_ironcolor/zinc.scss'
 import '../../styles/_ironcolor/phosphor.scss'
 
 export function colorSchemeSetup() {
