@@ -44,8 +44,8 @@ export class IronswornSettings {
 	 */
 	static get classes() {
 		return [
-			`theme__${kebabCase(IronswornSettings.get('theme'))}`,
-			`color-scheme__${kebabCase(IronswornSettings.get('color-scheme'))}`
+			`irontheme__${kebabCase(IronswornSettings.get('theme'))}`,
+			`ironcolor__${kebabCase(IronswornSettings.get('color-scheme'))}`
 		]
 	}
 
