@@ -40,10 +40,13 @@ declare global {
 
 export class IronswornSettings {
 	/**
-	 * Returns the CSS class associated with the current color scheme.
+	 * Returns CSS classes for the current theme and color scheme.
 	 */
-	static get colors() {
-		return `color-scheme__${kebabCase(IronswornSettings.get('color-scheme'))}`
+	static get classes() {
+		return [
+			`theme__${kebabCase(IronswornSettings.get('theme'))}`,
+			`color-scheme__${kebabCase(IronswornSettings.get('color-scheme'))}`
+		]
 	}
 
 	/**
