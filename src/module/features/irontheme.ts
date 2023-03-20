@@ -76,6 +76,7 @@ export const THEMES: Record<string, Theme> = {
 
 interface Theme {
 	labelKey: string
+	/** NYI */
 	typography?: Typography
 	decoration?: Decoration
 }
