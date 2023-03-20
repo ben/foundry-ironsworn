@@ -180,7 +180,7 @@ export class IronswornPrerollDialog extends Dialog<
 
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
-			classes: ['ironsworn', 'dialog', IronswornSettings.colorSchemeClass],
+			classes: ['ironsworn', 'dialog', IronswornSettings.colorScheme],
 			width: 500
 		})
 	}

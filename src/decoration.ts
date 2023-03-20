@@ -1,4 +1,8 @@
-import { BorderRadiusProperty, MaskProperty, PaddingProperty } from 'csstype'
+import type {
+	BorderRadiusProperty,
+	MaskProperty,
+	PaddingProperty
+} from 'csstype'
 import type { FontAwesomeIconProps } from './module/vue/components/icon/icon-common'
 import { FontAwesome } from './module/vue/components/icon/icon-common'
 
@@ -33,7 +37,8 @@ const radioCheck: Checkbox = {
 }
 
 export const DECORATION: Record<string, Theme> = {
-	Ironsworn: {
+	'ironsworn-classic': {
+		labelKey: 'IRONSWORN.Settings.ThemeDecorationStyle.IronswornClassic',
 		asset: {
 			ability: {
 				transition: 'fade',
@@ -46,7 +51,8 @@ export const DECORATION: Record<string, Theme> = {
 			...circlePip
 		}
 	},
-	Starforged: {
+	starforged: {
+		labelKey: 'IRONSWORN.Settings.ThemeDecorationStyle.Starforged',
 		asset: {
 			ability: {
 				transition: 'fade',
@@ -63,6 +69,7 @@ export const DECORATION: Record<string, Theme> = {
 }
 
 interface Theme {
+	labelKey: string
 	asset: Asset
 	impact: Checkbox
 	challengeRank: ChallengeRankPips

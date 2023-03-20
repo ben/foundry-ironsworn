@@ -15,7 +15,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 				'ironsworn',
 				'sheet',
 				'world-truths',
-				IronswornSettings.colorSchemeClass
+				IronswornSettings.colorScheme
 			],
 			width: 600,
 			height: 700
