@@ -5,7 +5,7 @@ import '../../styles/themes/classic.less'
 import '../../styles/themes/phosphor.less'
 
 export function themeSetup() {
-	const colorScheme = IronswornSettings.get('theme-color-scheme')
+	const colorScheme = IronswornSettings.get('color-scheme')
 
 	$(document.body).addClass(IronswornSettings.colors)
 

@@ -24,12 +24,9 @@ declare global {
 			// Settings added here will be automatically typed throughout the game system.
 			'foundry-ironsworn.prompt-world-truths': boolean
 
-			/**
-			 * @deprecated
-			 */
-			'foundry-ironsworn.theme': 'ironsworn' | 'starforged'
-			'foundry-ironsworn.theme-color-scheme': 'classic' | 'phosphor'
-			'foundry-ironsworn.theme-decoration-style': keyof typeof DECORATION
+			// APPEARANCE
+			'foundry-ironsworn.theme': keyof typeof DECORATION
+			'foundry-ironsworn.color-scheme': 'classic' | 'phosphor'
 
 			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
 			'foundry-ironsworn.shared-supply': boolean
@@ -46,16 +43,14 @@ export class IronswornSettings {
 	 * Returns the CSS class associated with the current color scheme.
 	 */
 	static get colors() {
-		return `color-scheme__${kebabCase(
-			IronswornSettings.get('theme-color-scheme')
-		)}`
+		return `color-scheme__${kebabCase(IronswornSettings.get('color-scheme'))}`
 	}
 
 	/**
 	 * Returns an object representing the current decoration style.
 	 */
 	static get deco() {
-		return DECORATION[IronswornSettings.get('theme-decoration-style')]
+		return DECORATION[IronswornSettings.get('theme')]
 	}
 
 	static registerSettings() {
@@ -94,43 +89,28 @@ export class IronswornSettings {
 			restricted: true
 		})
 
-		// TODO: remove this once color/decoration style is split
 		game.settings.register('foundry-ironsworn', 'theme', {
 			name: 'IRONSWORN.Settings.Theme.Name',
 			hint: 'IRONSWORN.Settings.Theme.Hint',
 			scope: 'world',
-			config: false,
+			config: true,
 			type: String,
-			choices: {
-				ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
-				starforged: 'IRONSWORN.Settings.Theme.Starforged'
-			},
+			choices: mapValues(DECORATION, (v) => v.labelKey),
 			default: 'ironsworn',
 			onChange: reload
 		})
 
-		game.settings.register('foundry-ironsworn', 'theme-color-scheme', {
-			name: 'IRONSWORN.Settings.ThemeColorScheme.Name',
-			hint: 'IRONSWORN.Settings.ThemeColorScheme.Hint',
+		game.settings.register('foundry-ironsworn', 'color-scheme', {
+			name: 'IRONSWORN.Settings.ColorScheme.Name',
+			hint: 'IRONSWORN.Settings.ColorScheme.Hint',
 			scope: 'client',
 			config: true,
 			type: String,
 			choices: {
-				classic: 'IRONSWORN.Settings.ThemeColorScheme.Classic',
-				phosphor: 'IRONSWORN.Settings.ThemeColorScheme.Phosphor'
+				classic: 'IRONSWORN.Settings.ColorScheme.Classic',
+				phosphor: 'IRONSWORN.Settings.ColorScheme.Phosphor'
 			},
 			default: 'classic',
-			onChange: reload
-		})
-
-		game.settings.register('foundry-ironsworn', 'theme-decoration-style', {
-			name: 'IRONSWORN.Settings.ThemeDecorationStyle.Name',
-			hint: 'IRONSWORN.Settings.ThemeDecorationStyle.Hint',
-			scope: 'world',
-			config: true,
-			type: String,
-			choices: mapValues(DECORATION, (v) => v.labelKey),
-			default: 'ironsworn-classic',
 			onChange: reload
 		})
 
