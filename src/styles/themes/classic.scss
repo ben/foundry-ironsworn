@@ -3,7 +3,7 @@
 
 @use 'mixin:color.scss';
 
-.theme-ironsworn {
+.color-scheme__classic {
 	// #ff6600 and #ff0000 chosen because they're what FVTT uses for its accents.
 
 	@include color.palettize(

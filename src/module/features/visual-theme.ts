@@ -1,15 +1,16 @@
 import { IronswornSettings } from '../helpers/settings'
 
 import '../../styles/styles.less'
-import '../../styles/themes/ironsworn.less'
-import '../../styles/themes/starforged.less'
+import '../../styles/themes/classic.less'
+import '../../styles/themes/phosphor.less'
 
 export function themeSetup() {
-	const currentTheme = IronswornSettings.get('theme')
+	const colorScheme = IronswornSettings.get('theme-color-scheme')
 
-	$(document.body).addClass(`theme-${currentTheme}`)
+	$(document.body).addClass(`color-scheme__${colorScheme}`)
 
-	if (currentTheme === 'starforged') {
+	if (colorScheme === 'phosphor') {
+		// TODO decouple font from colour scheme. should it be part of decoration style?
 		;(<string[]>CONFIG.TinyMCE.content_css)?.push(
 			'/systems/foundry-ironsworn/styles/starforged-tinymce.css'
 		)
