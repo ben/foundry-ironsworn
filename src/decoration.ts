@@ -42,7 +42,7 @@ export const DECORATION: Record<string, Theme> = {
 		},
 		impact: radioCheck,
 		challengeRank: {
-			padding: '0.5px',
+			padding: '1px',
 			...circlePip
 		}
 	},
