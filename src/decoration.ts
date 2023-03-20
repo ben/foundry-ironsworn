@@ -66,7 +66,7 @@ export const DECORATION: Record<string, Theme> = {
 			...hexPip
 		}
 	}
-}
+} as const
 
 interface Theme {
 	labelKey: string

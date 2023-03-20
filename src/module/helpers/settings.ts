@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
-import { kebabCase } from 'lodash'
+import { kebabCase, mapValues } from 'lodash'
+import { DECORATION } from '../../decoration'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
@@ -22,18 +23,13 @@ declare global {
 		interface Values {
 			// Settings added here will be automatically typed throughout the game system.
 			'foundry-ironsworn.prompt-world-truths': boolean
+
 			/**
 			 * @deprecated
 			 */
 			'foundry-ironsworn.theme': 'ironsworn' | 'starforged'
-			'foundry-ironsworn.theme-color-scheme': // from 'ironsworn'
-			| 'classic'
-				// from 'starforged
-				| 'phosphor'
-			'foundry-ironsworn.theme-decoration-style': // from 'ironsworn'
-			| 'ironsworn-classic'
-				// from 'starforged'
-				| 'starforged'
+			'foundry-ironsworn.theme-color-scheme': 'classic' | 'phosphor'
+			'foundry-ironsworn.theme-decoration-style': keyof typeof DECORATION
 
 			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
 			'foundry-ironsworn.shared-supply': boolean
@@ -133,11 +129,7 @@ export class IronswornSettings {
 			scope: 'world',
 			config: true,
 			type: String,
-			choices: {
-				'ironsworn-classic':
-					'IRONSWORN.Settings.ThemeDecorationStyle.IronswornClassic',
-				starforged: 'IRONSWORN.Settings.ThemeDecorationStyle.Starforged'
-			},
+			choices: mapValues(DECORATION, (v) => v.labelKey),
 			default: 'ironsworn-classic',
 			onChange: reload
 		})
