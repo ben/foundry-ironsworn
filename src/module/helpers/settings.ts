@@ -217,7 +217,7 @@ export class IronswornSettings {
 	) {
 		const actorsToUpdate =
 			game.actors?.contents.filter((x) => actorTypes.includes(x.type)) ?? []
-		// FIXME: Document.updateDocuments might make more sense here?
+
 		for (const actor of actorsToUpdate) {
 			await actor.update(data, {
 				suppressLog: true
