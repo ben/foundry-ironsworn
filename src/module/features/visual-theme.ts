@@ -7,7 +7,7 @@ import '../../styles/themes/phosphor.less'
 export function themeSetup() {
 	const colorScheme = IronswornSettings.get('theme-color-scheme')
 
-	$(document.body).addClass(`color-scheme__${colorScheme}`)
+	$(document.body).addClass(IronswornSettings.colorSchemeClass)
 
 	if (colorScheme === 'phosphor') {
 		// TODO decouple font from colour scheme. should it be part of decoration style?
