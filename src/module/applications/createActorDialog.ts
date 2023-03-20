@@ -29,7 +29,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 				'ironsworn',
 				'sheet',
 				'new-actor',
-				IronswornSettings.colorSchemeClass
+				IronswornSettings.colorScheme
 			],
 			width: 650,
 			height: 200
