@@ -62,11 +62,9 @@ const props = defineProps<{
 // if there's no provided update function, assume it's a statically rendered ability; the clock and the checkbox can't be manipulated
 const canUpdate = computed(() => !!props.updateFn)
 
-const deco = computed(() =>
-	IronswornSettings.starforgedToolsEnabled
-		? DECORATION.Starforged
-		: DECORATION.Ironsworn
-)
+const deco = IronswornSettings.starforgedToolsEnabled
+	? DECORATION.Starforged
+	: DECORATION.Ironsworn
 
 function moveclick(item) {
 	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
