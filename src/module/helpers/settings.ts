@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
-import { kebabCase, mapValues } from 'lodash'
+import { kebabCase, mapValues } from 'lodash-es'
 import { THEMES } from '../features/irontheme'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
@@ -20,20 +20,22 @@ async function closeAllMoveSheets() {
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
 	namespace ClientSettings {
+		/** Settings added here will be automatically typed throughout the game system. */
 		interface Values {
-			// Settings added here will be automatically typed throughout the game system.
-			'foundry-ironsworn.prompt-world-truths': boolean
+			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
 
-			// APPEARANCE
 			'foundry-ironsworn.theme': keyof typeof THEMES
 			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor'
-
-			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
-			'foundry-ironsworn.shared-supply': boolean
-			'foundry-ironsworn.log-changes': boolean
 			'foundry-ironsworn.progress-mark-animation': boolean
-			'foundry-ironsworn.data-version': number
+
+			'foundry-ironsworn.log-changes': boolean
+			'foundry-ironsworn.prompt-world-truths': boolean
+
+			'foundry-ironsworn.shared-supply': boolean
+
+			// Internal only
 			'foundry-ironsworn.first-run-tips-shown': boolean
+			'foundry-ironsworn.data-version': number
 		}
 	}
 }
@@ -64,15 +66,66 @@ export class IronswornSettings {
 	}
 
 	static registerSettings() {
-		game.settings.registerMenu('foundry-ironsworn', 'first-start-dialog', {
-			name: 'IRONSWORN.Settings.ConfigurationDialog.Name',
-			label: 'IRONSWORN.Settings.ConfigurationDialog.Label',
-			icon: 'fas fa-cog',
-			hint: 'IRONSWORN.Settings.ConfigurationDialog.Hint',
-			type: FirstStartDialog,
-			restricted: true
+		// Toolbox/ruleset. this goes at the top because it's a "showstopper" if folks need it but can't find it.
+		game.settings.register('foundry-ironsworn', 'toolbox', {
+			name: 'IRONSWORN.Settings.Tools.Name',
+			hint: 'IRONSWORN.Settings.Tools.Hint',
+			scope: 'world',
+			config: true,
+			type: String,
+			choices: {
+				sheet: 'IRONSWORN.Settings.Tools.Sheet',
+				ironsworn: 'IRONSWORN.Ironsworn',
+				starforged: 'IRONSWORN.Starforged'
+			},
+			default: 'sheet',
+			// eslint-disable-next-line @typescript-eslint/no-misused-promises
+			onChange: closeAllMoveSheets
 		})
 
+		// Appearance options. They're impactful and not especially esoteric/technical, so they come next.
+		game.settings.register('foundry-ironsworn', 'theme', {
+			name: 'IRONSWORN.Settings.Theme.Name',
+			hint: 'IRONSWORN.Settings.Theme.Hint',
+			scope: 'world',
+			config: true,
+			type: String,
+			choices: mapValues(THEMES, (v) => v.labelKey),
+			default: 'ironsworn',
+			onChange: reload
+		})
+		game.settings.register('foundry-ironsworn', 'color-scheme', {
+			name: 'IRONSWORN.Settings.ColorScheme.Name',
+			hint: 'IRONSWORN.Settings.ColorScheme.Hint',
+			scope: 'client',
+			config: true,
+			type: String,
+			choices: {
+				zinc: 'IRONSWORN.Settings.ColorScheme.Zinc',
+				phosphor: 'IRONSWORN.Settings.ColorScheme.Phosphor'
+			},
+			default: 'zinc',
+			onChange: reload
+		})
+		game.settings.register('foundry-ironsworn', 'progress-mark-animation', {
+			name: 'IRONSWORN.Settings.ProgressMarkAnimation.Name',
+			hint: 'IRONSWORN.Settings.ProgressMarkAnimation.Hint',
+			scope: 'client',
+			type: Boolean,
+			default: true,
+			config: true,
+			onChange: reload
+		})
+
+		// Log verbosity and missed prompts come next.
+		game.settings.register('foundry-ironsworn', 'log-changes', {
+			name: 'IRONSWORN.Settings.LogChanges.Name',
+			hint: 'IRONSWORN.Settings.LogChanges.Hint',
+			scope: 'world',
+			config: true,
+			type: Boolean,
+			default: true
+		})
 		game.settings.register('foundry-ironsworn', 'prompt-world-truths', {
 			name: 'IRONSWORN.Settings.PromptTruths.Name',
 			hint: 'IRONSWORN.Settings.PromptTruths.Hint',
@@ -81,7 +134,14 @@ export class IronswornSettings {
 			type: Boolean,
 			default: true
 		})
-
+		game.settings.registerMenu('foundry-ironsworn', 'first-start-dialog', {
+			name: 'IRONSWORN.Settings.ConfigurationDialog.Name',
+			label: 'IRONSWORN.Settings.ConfigurationDialog.Label',
+			icon: 'fas fa-cog',
+			hint: 'IRONSWORN.Settings.ConfigurationDialog.Hint',
+			type: FirstStartDialog,
+			restricted: true
+		})
 		game.settings.registerMenu('foundry-ironsworn', 'is-truths-dialog', {
 			name: 'IRONSWORN.Settings.ISTruthsDialog.Name',
 			label: 'IRONSWORN.Settings.ISTruthsDialog.Label',
@@ -99,46 +159,7 @@ export class IronswornSettings {
 			restricted: true
 		})
 
-		game.settings.register('foundry-ironsworn', 'theme', {
-			name: 'IRONSWORN.Settings.Theme.Name',
-			hint: 'IRONSWORN.Settings.Theme.Hint',
-			scope: 'world',
-			config: true,
-			type: String,
-			choices: mapValues(THEMES, (v) => v.labelKey),
-			default: 'ironsworn',
-			onChange: reload
-		})
-
-		game.settings.register('foundry-ironsworn', 'color-scheme', {
-			name: 'IRONSWORN.Settings.ColorScheme.Name',
-			hint: 'IRONSWORN.Settings.ColorScheme.Hint',
-			scope: 'client',
-			config: true,
-			type: String,
-			choices: {
-				zinc: 'IRONSWORN.Settings.ColorScheme.Zinc',
-				phosphor: 'IRONSWORN.Settings.ColorScheme.Phosphor'
-			},
-			default: 'zinc',
-			onChange: reload
-		})
-
-		game.settings.register('foundry-ironsworn', 'toolbox', {
-			name: 'IRONSWORN.Settings.Tools.Name',
-			hint: 'IRONSWORN.Settings.Tools.Hint',
-			scope: 'world',
-			config: true,
-			type: String,
-			choices: {
-				sheet: 'IRONSWORN.Settings.Tools.Sheet',
-				ironsworn: 'IRONSWORN.Ironsworn',
-				starforged: 'IRONSWORN.Starforged'
-			},
-			default: 'sheet',
-			onChange: closeAllMoveSheets
-		})
-
+		// Changing the supply rule represents a divergence from the ruleset; as 'advanced' behavior it can tolerate living at the end of the list.
 		game.settings.register('foundry-ironsworn', 'shared-supply', {
 			name: 'IRONSWORN.Settings.SharedSupply.Name',
 			hint: 'IRONSWORN.Settings.SharedSupply.Hint',
@@ -146,25 +167,6 @@ export class IronswornSettings {
 			config: true,
 			type: Boolean,
 			default: true,
-			onChange: reload
-		})
-
-		game.settings.register('foundry-ironsworn', 'log-changes', {
-			name: 'IRONSWORN.Settings.LogChanges.Name',
-			hint: 'IRONSWORN.Settings.LogChanges.Hint',
-			scope: 'world',
-			config: true,
-			type: Boolean,
-			default: true
-		})
-
-		game.settings.register('foundry-ironsworn', 'progress-mark-animation', {
-			name: 'IRONSWORN.Settings.ProgressMarkAnimation.Name',
-			hint: 'IRONSWORN.Settings.ProgressMarkAnimation.Hint',
-			scope: 'client',
-			type: Boolean,
-			default: true,
-			config: true,
 			onChange: reload
 		})
 
