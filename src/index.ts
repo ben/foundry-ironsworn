@@ -20,7 +20,7 @@ import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
 import { runStartupMacro } from './module/features/startup-macro'
 import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
-import { themeSetup } from './module/features/appearance-color-scheme'
+import { colorSchemeSetup } from './module/features/appearance-color-scheme'
 import { patchZIndex } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { runDataMigrations } from './module/helpers/migrations'
@@ -52,7 +52,7 @@ Hooks.once('init', async () => {
 	IronswornSettings.registerSettings()
 
 	// Theme configuration
-	themeSetup()
+	colorSchemeSetup()
 
 	CONFIG.IRONSWORN = IRONSWORN
 
