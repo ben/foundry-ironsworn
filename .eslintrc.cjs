@@ -35,7 +35,16 @@ module.exports = {
 		'no-undef': 'off',
 
 		// FIXME: part of standard-ts. not an awful idea, but it's not doable via autofix, so it's disabled for now
-		'@typescript-eslint/explicit-function-return-type': 'off'
+		'@typescript-eslint/explicit-function-return-type': 'off',
+
+		// prefer lodash-es to regular lodash
+		'no-restricted-imports': [
+			'error',
+			{
+				name: 'lodash',
+				message: 'Please use `lodash-es` instead.'
+			}
+		]
 	},
 	overrides: [
 		{
