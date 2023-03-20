@@ -280,20 +280,14 @@
 		},
 		"Settings": {
 			"Theme": {
-				"Name": "Visual Theme",
-				"Hint": "Select the visual look for this game. Requires a reload.",
+				"Name": "Appearance: Theme",
+				"Hint": "Sets the game theme, which affects the appearance of some UI elements and the default font. Requires a reload.",
 				"Ironsworn": "Ironsworn Classic",
-				"Starforged": "Starforged (experimental)"
-			},
-			"ThemeDecorationStyle": {
-				"Name": "Theme: Decoration style",
-				"Hint": "Select a decoration style for the game, which affects the appearance of certain checkboxes, bullets, and other UI elements. Requires a reload.",
-				"IronswornClassic": "Ironsworn Classic",
 				"Starforged": "Starforged"
 			},
-			"ThemeColorScheme": {
-				"Name": "Theme: Color scheme",
-				"Hint": "Select a color scheme. Each client sets its own color scheme -- it's not visible to other users. Requires a reload.",
+			"ColorScheme": {
+				"Name": "Appearance: Color scheme",
+				"Hint": "Each user can set their own color scheme. Requires a reload.",
 				"Classic": "Classic",
 				"Phosphor": "Phosphor"
 			},

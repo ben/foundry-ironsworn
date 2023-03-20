@@ -37,8 +37,8 @@ const radioCheck: Checkbox = {
 }
 
 export const DECORATION: Record<string, Theme> = {
-	'ironsworn-classic': {
-		labelKey: 'IRONSWORN.Settings.ThemeDecorationStyle.IronswornClassic',
+	ironsworn: {
+		labelKey: 'IRONSWORN.Settings.Theme.Ironsworn',
 		asset: {
 			ability: {
 				transition: 'fade',
@@ -52,7 +52,7 @@ export const DECORATION: Record<string, Theme> = {
 		}
 	},
 	starforged: {
-		labelKey: 'IRONSWORN.Settings.ThemeDecorationStyle.Starforged',
+		labelKey: 'IRONSWORN.Settings.Theme.Starforged',
 		asset: {
 			ability: {
 				transition: 'fade',
