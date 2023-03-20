@@ -5,7 +5,7 @@
 @use 'mixin:color.scss';
 @use 'mixin:fvtt.scss';
 
-.color-scheme__phosphor {
+.ironcolor__phosphor {
 	@include color.palettize(
 		// FIXME: migrate to OKLCH once this issue is resolved and VSC provides color previews: https://github.com/microsoft/vscode-css-languageservice/issues/305
 		$fg-color: hsl(180deg 70% 60%),
