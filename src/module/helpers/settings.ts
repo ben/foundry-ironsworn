@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 import { kebabCase, mapValues } from 'lodash'
-import { DECORATION } from '../../decoration'
+import { DECORATION } from '../features/decoration'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
@@ -55,7 +55,7 @@ export class IronswornSettings {
 	 * Returns an object representing the current decoration style.
 	 */
 	static get decoration() {
-		return IronswornSettings.get('theme-decoration-style')
+		return DECORATION[IronswornSettings.get('theme-decoration-style')]
 	}
 
 	static registerSettings() {

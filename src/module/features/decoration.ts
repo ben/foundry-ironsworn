@@ -3,8 +3,8 @@ import type {
 	MaskProperty,
 	PaddingProperty
 } from 'csstype'
-import type { FontAwesomeIconProps } from './module/vue/components/icon/icon-common'
-import { FontAwesome } from './module/vue/components/icon/icon-common'
+import type { FontAwesomeIconProps } from '../vue/components/icon/icon-common'
+import { FontAwesome } from '../vue/components/icon/icon-common'
 
 const circlePip: Pip = {
 	checked: {
