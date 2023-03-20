@@ -17,7 +17,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 				'ironsworn',
 				'sheet',
 				'first-start',
-				`theme-${IronswornSettings.get('theme')}`
+				IronswornSettings.colorSchemeClass
 			],
 			width: 600,
 			height: 360

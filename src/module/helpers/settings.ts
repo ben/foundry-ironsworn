@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
+import { kebabCase } from 'lodash'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
@@ -21,7 +22,19 @@ declare global {
 		interface Values {
 			// Settings added here will be automatically typed throughout the game system.
 			'foundry-ironsworn.prompt-world-truths': boolean
+			/**
+			 * @deprecated
+			 */
 			'foundry-ironsworn.theme': 'ironsworn' | 'starforged'
+			'foundry-ironsworn.theme-color-scheme': // from 'ironsworn'
+			| 'classic'
+				// from 'starforged
+				| 'phosphor'
+			'foundry-ironsworn.theme-decoration-style': // from 'ironsworn'
+			| 'ironsworn-classic'
+				// from 'starforged'
+				| 'starforged'
+
 			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
 			'foundry-ironsworn.shared-supply': boolean
 			'foundry-ironsworn.log-changes': boolean
@@ -33,6 +46,12 @@ declare global {
 }
 
 export class IronswornSettings {
+	static get colorSchemeClass() {
+		return `color-scheme__${kebabCase(
+			IronswornSettings.get('theme-color-scheme')
+		)}`
+	}
+
 	static registerSettings() {
 		game.settings.registerMenu('foundry-ironsworn', 'first-start-dialog', {
 			name: 'IRONSWORN.Settings.ConfigurationDialog.Name',
@@ -69,17 +88,47 @@ export class IronswornSettings {
 			restricted: true
 		})
 
+		// TODO: remove this once color/decoration style is split
 		game.settings.register('foundry-ironsworn', 'theme', {
 			name: 'IRONSWORN.Settings.Theme.Name',
 			hint: 'IRONSWORN.Settings.Theme.Hint',
 			scope: 'world',
-			config: true,
+			config: false,
 			type: String,
 			choices: {
 				ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
 				starforged: 'IRONSWORN.Settings.Theme.Starforged'
 			},
 			default: 'ironsworn',
+			onChange: reload
+		})
+
+		game.settings.register('foundry-ironsworn', 'theme-color-scheme', {
+			name: 'IRONSWORN.Settings.ThemeColorScheme.Name',
+			hint: 'IRONSWORN.Settings.ThemeColorScheme.Hint',
+			scope: 'client',
+			config: true,
+			type: String,
+			choices: {
+				classic: 'IRONSWORN.Settings.ThemeColorScheme.Classic',
+				phosphor: 'IRONSWORN.Settings.ThemeColorScheme.Phosphor'
+			},
+			default: 'classic',
+			onChange: reload
+		})
+
+		game.settings.register('foundry-ironsworn', 'theme-decoration-style', {
+			name: 'IRONSWORN.Settings.ThemeDecorationStyle.Name',
+			hint: 'IRONSWORN.Settings.ThemeDecorationStyle.Hint',
+			scope: 'world',
+			config: true,
+			type: String,
+			choices: {
+				'ironsworn-classic':
+					'IRONSWORN.Settings.ThemeDecorationStyle.IronswornClassic',
+				starforged: 'IRONSWORN.Settings.ThemeDecorationStyle.Starforged'
+			},
+			default: 'ironsworn-classic',
 			onChange: reload
 		})
 

@@ -285,6 +285,18 @@
 				"Ironsworn": "Ironsworn Classic",
 				"Starforged": "Starforged (experimental)"
 			},
+			"ThemeDecorationStyle": {
+				"Name": "Theme: Decoration style",
+				"Hint": "Select a decoration style for the game, which affects the appearance of certain checkboxes, bullets, and other UI elements. Requires a reload.",
+				"IronswornClassic": "Ironsworn Classic",
+				"Starforged": "Starforged"
+			},
+			"ThemeColorScheme": {
+				"Name": "Theme: Color scheme",
+				"Hint": "Select a color scheme. Each client sets its own color scheme -- it's not visible to other users. Requires a reload.",
+				"Classic": "Classic",
+				"Phosphor": "Phosphor"
+			},
 			"Tools": {
 				"Name": "Character Tools",
 				"Hint": "Which set of moves and oracles will appear when opening a character sheet.",
