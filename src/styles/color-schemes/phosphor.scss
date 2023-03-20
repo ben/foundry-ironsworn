@@ -23,7 +23,6 @@
 	);
 
 	// TYPOGRAPHY
-	--font-primary: 'Carrois Gothic SC', sans-serif;
 	--ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
 	// CLICKABLE TEXT: HOVER EFFECT
@@ -32,14 +31,9 @@
 	--ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool),
 		0 0 3px var(--ironsworn-color-cool);
 
-	// TABS
-	--ironsworn-tab-transition: slide;
-
 	// now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
 	@include fvtt.colors;
 
 	// Restyle FVTT's UI
 	@include fvtt.ui;
-
-	// Hexagon motif for certain widgets and decorations
 }

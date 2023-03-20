@@ -1,0 +1,10 @@
+@import 'starforged-font.css';
+
+.theme__starforged {
+	--font-primary: 'Carrois Gothic SC', sans-serif;
+	--ironsworn-tab-transition: slide;
+}
+
+.theme__ironsworn {
+	--ironsworn-tab-transition: fade;
+}
