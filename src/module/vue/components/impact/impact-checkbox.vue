@@ -7,13 +7,18 @@
 		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
 		:checked="actor.system.debility[name]"
 		:aria-labelledby="`label_${baseId}`"
-		:transition="deco.impact.transition"
+		:transition="IronswornSettings.decoration.impact.transition"
 		@change="input($event)">
 		<template #checked="scope">
-			<FontIcon v-bind="{ ...scope, ...deco.impact.checked }" />
+			<FontIcon
+				v-bind="{ ...scope, ...IronswornSettings.decoration.impact.checked }" />
 		</template>
 		<template #unchecked="scope">
-			<FontIcon v-bind="{ ...scope, ...deco.impact.unchecked }" />
+			<FontIcon
+				v-bind="{
+					...scope,
+					...IronswornSettings.decoration.impact.unchecked
+				}" />
 		</template>
 		<slot :id="`label_${baseId}`" name="default">
 			<span :id="`label_${baseId}`" :class="$style.label">
@@ -31,7 +36,6 @@ import { IronswornSettings } from '../../../helpers/settings'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 import IronCheckbox from '../input/iron-checkbox.vue'
-import { DECORATION } from '../../../../decoration'
 import FontIcon from '../icon/font-icon.vue'
 
 const actor = inject(ActorKey) as Ref
@@ -45,12 +49,6 @@ const props = defineProps<{
 	global?: boolean
 	globalHint?: boolean
 }>()
-
-const deco = computed(() =>
-	IronswornSettings.starforgedToolsEnabled
-		? DECORATION.Starforged
-		: DECORATION.Ironsworn
-)
 
 const state = reactive<{ hintText?: string }>({})
 
