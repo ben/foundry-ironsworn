@@ -180,11 +180,7 @@ export class IronswornPrerollDialog extends Dialog<
 
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
-			classes: [
-				'ironsworn',
-				'dialog',
-				`theme-${IronswornSettings.get('theme')}`
-			],
+			classes: ['ironsworn', 'dialog'],
 			width: 500
 		})
 	}

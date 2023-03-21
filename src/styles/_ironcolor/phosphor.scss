@@ -4,9 +4,8 @@
 @use 'sass:meta';
 @use 'mixin:color.scss';
 @use 'mixin:fvtt.scss';
-@import 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap';
 
-.theme-starforged {
+.ironcolor__phosphor {
 	@include color.palettize(
 		// FIXME: migrate to OKLCH once this issue is resolved and VSC provides color previews: https://github.com/microsoft/vscode-css-languageservice/issues/305
 		$fg-color: hsl(180deg 70% 60%),
@@ -23,7 +22,6 @@
 	);
 
 	// TYPOGRAPHY
-	--font-primary: 'Carrois Gothic SC', sans-serif;
 	--ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
 	// CLICKABLE TEXT: HOVER EFFECT
@@ -32,14 +30,9 @@
 	--ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool),
 		0 0 3px var(--ironsworn-color-cool);
 
-	// TABS
-	--ironsworn-tab-transition: slide;
-
 	// now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
 	@include fvtt.colors;
 
 	// Restyle FVTT's UI
 	@include fvtt.ui;
-
-	// Hexagon motif for certain widgets and decorations
 }

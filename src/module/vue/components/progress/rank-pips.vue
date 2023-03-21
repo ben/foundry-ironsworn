@@ -41,12 +41,12 @@
 			@mouseleave="hovered = 0"
 			@click="setRank(rank)">
 			<FontIcon
-				v-bind="deco.challengeRank.checked"
+				v-bind="IronswornSettings.deco.challengeRank.checked"
 				role="presentational"
 				:fw="false"
 				:class="[$style.checked, $style.icon]" />
 			<FontIcon
-				v-bind="deco.challengeRank.unchecked"
+				v-bind="IronswornSettings.deco.challengeRank.unchecked"
 				role="presentational"
 				:fw="false"
 				:class="[$style.unchecked, $style.icon]" />
@@ -60,8 +60,7 @@ import { IronswornSettings } from '../../../helpers/settings.js'
 import { ChallengeRank } from '../../../constants'
 import { localizeRank } from '../../../helpers/util'
 import FontIcon from '../icon/font-icon.vue'
-import { DECORATION } from '../../../../decoration'
-import { clamp } from 'lodash'
+import { clamp } from 'lodash-es'
 
 const props = withDefaults(
 	defineProps<{
@@ -73,13 +72,7 @@ const props = withDefaults(
 
 const hovered = ref(0)
 
-const deco = computed(() =>
-	IronswornSettings.starforgedToolsEnabled
-		? DECORATION.Starforged
-		: DECORATION.Ironsworn
-)
-
-const pipPadding = computed(() => deco.value.challengeRank.padding)
+const pipPadding = computed(() => IronswornSettings.deco.challengeRank.padding)
 
 type PipState = 'filled' | 'empty' | 'preview'
 
@@ -106,7 +99,6 @@ function setRank(rank: ChallengeRank) {
 </script>
 <style lang="scss" module>
 .wrapper {
-	--ironsworn-pip-spacing: 1px;
 	--fa-display: block;
 
 	display: flex;
@@ -127,6 +119,7 @@ function setRank(rank: ChallengeRank) {
 	padding: v-bind(pipPadding);
 	width: max-content;
 	height: max-content;
+	color: currentColor;
 }
 
 .icon {

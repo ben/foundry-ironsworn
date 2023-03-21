@@ -280,10 +280,16 @@
 		},
 		"Settings": {
 			"Theme": {
-				"Name": "Visual Theme",
-				"Hint": "Select the visual look for this game. Requires a reload.",
+				"Name": "Appearance: Theme",
+				"Hint": "Sets the game theme, which affects the appearance of some UI elements and the default font. Requires a reload.",
 				"Ironsworn": "Ironsworn Classic",
-				"Starforged": "Starforged (experimental)"
+				"Starforged": "Starforged"
+			},
+			"ColorScheme": {
+				"Name": "Appearance: Color scheme",
+				"Hint": "Each user can set their own color scheme.",
+				"Zinc": "Zinc",
+				"Phosphor": "Phosphor"
 			},
 			"Tools": {
 				"Name": "Character Tools",

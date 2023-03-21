@@ -11,12 +11,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 			template: 'systems/foundry-ironsworn/templates/truths.hbs',
 			id: 'world-truths-dialog',
 			resizable: true,
-			classes: [
-				'ironsworn',
-				'sheet',
-				'world-truths',
-				`theme-${IronswornSettings.get('theme')}`
-			],
+			classes: ['ironsworn', 'sheet', 'world-truths'],
 			width: 600,
 			height: 700
 		} as FormApplicationOptions)

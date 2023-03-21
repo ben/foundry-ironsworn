@@ -5,13 +5,21 @@
 		:readonly="!(toggle && canUpdate)"
 		:icon-switch-class="$style.bullet"
 		:content-hover-fx="false"
-		:transition="deco.asset.ability.transition"
+		:transition="IronswornSettings.deco.asset.ability.transition"
 		@change="toggleAbility">
 		<template #checked="scope">
-			<FontIcon v-bind="{ ...scope, ...deco.asset.ability.checked }" />
+			<FontIcon
+				v-bind="{
+					...scope,
+					...IronswornSettings.deco.asset.ability.checked
+				}" />
 		</template>
 		<template #unchecked="scope">
-			<FontIcon v-bind="{ ...scope, ...deco.asset.ability.unchecked }" />
+			<FontIcon
+				v-bind="{
+					...scope,
+					...IronswornSettings.deco.asset.ability.unchecked
+				}" />
 		</template>
 		<template #default>
 			<WithRolllisteners
@@ -33,7 +41,6 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { DECORATION } from '../../../../decoration'
 import { IronswornSettings } from '../../../helpers/settings'
 import type { AssetAbility } from '../../../item/itemtypes'
 import Clock from '../clock.vue'
@@ -61,10 +68,6 @@ const props = defineProps<{
 
 // if there's no provided update function, assume it's a statically rendered ability; the clock and the checkbox can't be manipulated
 const canUpdate = computed(() => !!props.updateFn)
-
-const deco = IronswornSettings.starforgedToolsEnabled
-	? DECORATION.Starforged
-	: DECORATION.Ironsworn
 
 function moveclick(item) {
 	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
