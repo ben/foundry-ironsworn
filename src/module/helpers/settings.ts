@@ -5,6 +5,7 @@ import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
 import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
+import { updateColorScheme } from '../features/ironcolor'
 
 function reload() {
 	window.location.reload()
@@ -83,7 +84,7 @@ export class IronswornSettings {
 			onChange: closeAllMoveSheets
 		})
 
-		// Appearance options. They're impactful and not especially esoteric/technical, so they come next.
+		// Appearance settings. They're impactful and not especially esoteric/technical, so they come next.
 		game.settings.register('foundry-ironsworn', 'theme', {
 			name: 'IRONSWORN.Settings.Theme.Name',
 			hint: 'IRONSWORN.Settings.Theme.Hint',
@@ -105,7 +106,8 @@ export class IronswornSettings {
 				phosphor: 'IRONSWORN.Settings.ColorScheme.Phosphor'
 			},
 			default: 'zinc',
-			onChange: reload
+			onChange: updateColorScheme
+			// TODO: special behaviour for e.g. PopOut module?
 		})
 		game.settings.register('foundry-ironsworn', 'progress-mark-animation', {
 			name: 'IRONSWORN.Settings.ProgressMarkAnimation.Name',
