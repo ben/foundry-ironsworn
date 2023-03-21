@@ -26,8 +26,25 @@ export function updateColorScheme(
 		game.settings.settings.get('foundry-ironsworn.color-scheme')
 			?.choices as unknown as Record<string, unknown>
 	)
+
 	const classesToRemove = colorSchemes.map((str) => `ironcolor__${str}`)
-	$(document.body)
+
+	const toUpdate = [document.body]
+
+	// FVTT module: PopOut!
+	if (game.modules.get('popout')?.active != null) {
+		// @ts-expect-error
+		const PopOut = PopoutModule.singleton as any
+		const popOuts = PopOut.poppedOut as Map<string, { window: Window | null }>
+
+		for (const [, { window }] of popOuts) {
+			if (window?.document != null) {
+				toUpdate.push(window.document?.body)
+			}
+		}
+	}
+
+	$(toUpdate)
 		.removeClass(classesToRemove.join(' '))
 		.addClass(`ironcolor__${newColorScheme}`)
 }
