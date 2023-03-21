@@ -6,6 +6,8 @@ import type {
 import type { FontAwesomeIconProps } from '../vue/components/icon/icon-common'
 import { FontAwesome } from '../vue/components/icon/icon-common'
 
+export const PREFIX = 'irontheme__'
+
 const circlePip: Pip = {
 	checked: {
 		name: 'circle',

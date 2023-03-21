@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
 import { kebabCase, mapValues } from 'lodash-es'
-import { THEMES } from '../features/irontheme'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
 import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
-import { updateColorScheme } from '../features/ironcolor'
+import * as IronColor from '../features/ironcolor'
+import * as IronTheme from '../features/irontheme'
 
 function reload() {
 	window.location.reload()
@@ -25,7 +25,7 @@ declare global {
 		interface Values {
 			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
 
-			'foundry-ironsworn.theme': keyof typeof THEMES
+			'foundry-ironsworn.theme': keyof typeof IronTheme.THEMES
 			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor'
 			'foundry-ironsworn.progress-mark-animation': boolean
 
@@ -47,8 +47,8 @@ export class IronswornSettings {
 	 */
 	static get classes() {
 		return [
-			`irontheme__${kebabCase(IronswornSettings.get('theme'))}`,
-			`ironcolor__${kebabCase(IronswornSettings.get('color-scheme'))}`
+			`${IronTheme.PREFIX}${kebabCase(IronswornSettings.get('theme'))}`,
+			`${IronColor.PREFIX}${kebabCase(IronswornSettings.get('color-scheme'))}`
 		]
 	}
 
@@ -56,7 +56,7 @@ export class IronswornSettings {
 	 * Returns an object that represents the current theme.
 	 */
 	static get theme() {
-		return THEMES[IronswornSettings.get('theme')]
+		return IronTheme.THEMES[IronswornSettings.get('theme')]
 	}
 
 	/**
@@ -91,7 +91,7 @@ export class IronswornSettings {
 			scope: 'world',
 			config: true,
 			type: String,
-			choices: mapValues(THEMES, (v) => v.labelKey),
+			choices: mapValues(IronTheme.THEMES, (v) => v.labelKey),
 			default: 'ironsworn',
 			onChange: reload
 		})
@@ -106,7 +106,7 @@ export class IronswornSettings {
 				phosphor: 'IRONSWORN.Settings.ColorScheme.Phosphor'
 			},
 			default: 'zinc',
-			onChange: updateColorScheme
+			onChange: IronColor.updateColorScheme
 			// TODO: special behaviour for e.g. PopOut module?
 		})
 		game.settings.register('foundry-ironsworn', 'progress-mark-animation', {
