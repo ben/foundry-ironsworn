@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.30
+
 - Color scheme and decoration theme are now separate settings, and changing the color theme no longer requires a restart ([#695](https://github.com/ben/foundry-ironsworn/pull/695#pullrequestreview-1350439536))
 - Disable chat-message copy buttons (and add a tooltip) if access to the clipboard is restricted ([#678](https://github.com/ben/foundry-ironsworn/pull/678))
 - Better condition checkboxes ([#684](https://github.com/ben/foundry-ironsworn/pull/684))
