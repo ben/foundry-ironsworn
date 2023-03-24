@@ -11,6 +11,7 @@
   - Improvements to the way asset controls are done ([#685](https://github.com/ben/foundry-ironsworn/pull/685), [#686](https://github.com/ben/foundry-ironsworn/pull/686), [#687](https://github.com/ben/foundry-ironsworn/pull/687))
   - Begin a migration to SASS for styles ([#683](https://github.com/ben/foundry-ironsworn/pull/683))
   - Dependency updates and code style ([#682](https://github.com/ben/foundry-ironsworn/pull/682))
+  - Fixed a problem that prevented installation under the Foundry v11dev1
 
 ## 1.20.29
 

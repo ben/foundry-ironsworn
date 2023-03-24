@@ -71,24 +71,21 @@
 			"label": "Ironsworn Foe Actors",
 			"system": "foundry-ironsworn",
 			"path": "packs/foe-actors-is.db",
-			"type": "Actor",
-			"private": false
+			"type": "Actor"
 		},
 		{
 			"name": "foeactorssf",
 			"label": "Starforged Foe Actors",
 			"system": "foundry-ironsworn",
 			"path": "packs/foe-actors-sf.db",
-			"type": "Actor",
-			"private": false
+			"type": "Actor"
 		},
 		{
 			"name": "ironswornoracles",
 			"label": "Ironsworn Oracles",
 			"system": "foundry-ironsworn",
 			"path": "packs/ironsworn-oracles.db",
-			"type": "RollTable",
-			"private": false
+			"type": "RollTable"
 		},
 		{
 			"name": "ironswornmoves",
@@ -102,96 +99,84 @@
 			"label": "Ironsworn Assets",
 			"system": "foundry-ironsworn",
 			"path": "packs/assets.db",
-			"type": "Item",
-			"private": false
+			"type": "Item"
 		},
 		{
 			"name": "ironsworndelvethemes",
 			"label": "Ironsworn Delve Themes",
 			"system": "foundry-ironsworn",
 			"path": "packs/delve-themes.db",
-			"type": "Item",
-			"private": false
+			"type": "Item"
 		},
 		{
 			"name": "ironsworndelvedomains",
 			"label": "Ironsworn Delve Domains",
 			"system": "foundry-ironsworn",
 			"path": "packs/delve-domains.db",
-			"type": "Item",
-			"private": false
+			"type": "Item"
 		},
 		{
 			"name": "ironswornfoes",
 			"label": "Ironsworn Foes",
 			"system": "foundry-ironsworn",
 			"path": "packs/foes.db",
-			"type": "Item",
-			"private": false
+			"type": "Item"
 		},
 		{
 			"name": "ironswornscenes",
 			"label": "Ironsworn Maps",
 			"system": "foundry-ironsworn",
 			"path": "packs/scenes.db",
-			"type": "Scene",
-			"private": false
+			"type": "Scene"
 		},
 		{
 			"name": "starforged-sectors",
 			"label": "Starforged Scenes",
 			"system": "foundry-ironsworn",
 			"path": "packs/starforged-sectors.db",
-			"type": "Scene",
-			"private": false
+			"type": "Scene"
 		},
 		{
 			"name": "starforgedassets",
 			"label": "Starforged Assets",
 			"system": "foundry-ironsworn",
 			"path": "packs/starforged-assets.db",
-			"type": "Item",
-			"private": false
+			"type": "Item"
 		},
 		{
 			"name": "starforgedencounters",
 			"label": "Starforged Encounters",
 			"system": "foundry-ironsworn",
 			"path": "packs/starforged-encounters.db",
-			"type": "Item",
-			"private": false
+			"type": "Item"
 		},
 		{
 			"name": "starforgedmoves",
 			"label": "Starforged Moves",
 			"system": "foundry-ironsworn",
 			"path": "packs/starforged-moves.db",
-			"type": "Item",
-			"private": false
+			"type": "Item"
 		},
 		{
 			"name": "starforgedoracles",
 			"label": "Starforged Oracles",
 			"system": "foundry-ironsworn",
 			"path": "packs/starforged-oracles.db",
-			"type": "RollTable",
-			"private": false
+			"type": "RollTable"
 		},
 		{
 			"name": "starforgedtruths",
 			"label": "Starforged Setting Truths",
 			"system": "foundry-ironsworn",
 			"path": "packs/starforged-truths.db",
-			"type": "JournalEntry",
-			"private": false
+			"type": "JournalEntry"
 		},
 		{
 			"name": "macros",
 			"label": "Ironsworn Macros",
 			"system": "foundry-ironsworn",
 			"path": "packs/macros.db",
-			"type": "Macro",
-			"private": false
+			"type": "Macro"
 		}
 	],
 	"languages": [
