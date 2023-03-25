@@ -222,8 +222,6 @@ Hooks.once('init', async () => {
 	registerCompendiumCategoryHook()
 	await registerTokenHUDButtons()
 	activateSceneButtonListeners()
-
-	await registerDefaultOracleTrees()
 })
 
 Hooks.once('ready', async () => {
@@ -231,11 +229,11 @@ Hooks.once('ready', async () => {
 
 	registerDragAndDropHooks()
 	registerChatAlertHooks()
-	runStartupMacro()
+
+	await registerDefaultOracleTrees()
 
 	await FirstStartDialog.maybeShow()
 	await registerTours()
 
-	// Pre-load all the oracles
-	await primeCommonPackCaches()
+	runStartupMacro()
 })
