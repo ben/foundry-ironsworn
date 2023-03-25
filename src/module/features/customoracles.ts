@@ -46,13 +46,6 @@ async function createOracleTree(
 		rootNode.children.push(await walkOracleCategory(category))
 	}
 
-	// Add in custom oracles from a well-known directory
-	await augmentWithFolderContents(rootNode)
-
-	// Fire the hook and allow extensions to modify the tree
-	// TODO: deprecate this, warning if something is registered
-	Hooks.call('ironswornOracles', rootNode)
-
 	return rootNode
 }
 
@@ -258,4 +251,19 @@ export function registerOracleTree(
 
 export function getOracleTree(category: OracleCategory): IOracleTreeNode {
 	return cloneDeep(ORACLES[category])
+}
+
+export async function getOracleTreeWithCustomOracles(
+	category: OracleCategory
+): Promise<IOracleTreeNode> {
+	const rootNode = getOracleTree(category)
+
+	// Add in custom oracles from a well-known directory
+	await augmentWithFolderContents(rootNode)
+
+	// Fire the hook and allow extensions to modify the tree
+	// TODO: deprecate this, warning if something is registered
+	Hooks.call('ironswornOracles', rootNode)
+
+	return rootNode
 }

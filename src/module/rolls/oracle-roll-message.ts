@@ -5,7 +5,7 @@ import { getFoundryTableByDfId } from '../dataforged'
 import {
 	findPathToNodeByDfId,
 	findPathToNodeByTableUuid,
-	getOracleTree
+	getOracleTreeWithCustomOracles
 } from '../features/customoracles'
 
 export interface TableRow {
@@ -67,7 +67,7 @@ export class OracleRollMessage {
 
 	static async fromDfOracleId(dfOracleId: string): Promise<OracleRollMessage> {
 		// Subtitle can be inferred from the structure of the DF ID
-		const oracleTreeRoot = getOracleTree(
+		const oracleTreeRoot = await getOracleTreeWithCustomOracles(
 			dfOracleId.startsWith('Ironsworn/') ? 'ironsworn' : 'starforged'
 		)
 		const pathElements = findPathToNodeByDfId(oracleTreeRoot, dfOracleId)
@@ -173,8 +173,8 @@ export class OracleRollMessage {
 	private async oraclePath(): Promise<string | undefined> {
 		if (this.tableUuid == null) return undefined
 
-		const starforgedRoot = getOracleTree('starforged')
-		const ironswornRoot = getOracleTree('ironsworn')
+		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
+		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
 
 		const pathElements =
 			findPathToNodeByTableUuid(starforgedRoot, this.tableUuid) ??

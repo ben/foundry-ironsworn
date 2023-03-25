@@ -36,14 +36,14 @@
 import { nextTick, provide, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import { getOracleTree } from '../../features/customoracles'
+import { getOracleTreeWithCustomOracles } from '../../features/customoracles'
 import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)
 
-const tempTreeRoot = getOracleTree(props.toolset)
+const tempTreeRoot = await getOracleTreeWithCustomOracles(props.toolset)
 
 const treeRoot = reactive<IOracleTreeNode>(tempTreeRoot)
 type ReactiveNode = typeof treeRoot
