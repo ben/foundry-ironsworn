@@ -5,7 +5,7 @@ import type {
 	Ironsworn
 } from 'dataforged'
 import { starforged, ironsworn } from 'dataforged'
-import { compact } from 'lodash-es'
+import { cloneDeep, compact } from 'lodash-es'
 import { getFoundryTableByDfId } from '../dataforged'
 import { cachedDocumentsForPack } from './pack-cache'
 
@@ -257,5 +257,5 @@ export function registerOracleTree(
 }
 
 export function getOracleTree(category: OracleCategory): IOracleTreeNode {
-	return ORACLES[category]
+	return cloneDeep(ORACLES[category])
 }
