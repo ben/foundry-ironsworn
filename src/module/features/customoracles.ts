@@ -262,7 +262,6 @@ export async function getOracleTreeWithCustomOracles(
 	await augmentWithFolderContents(rootNode)
 
 	// Fire the hook and allow extensions to modify the tree
-	// TODO: deprecate this, warning if something is registered
 	Hooks.call('ironswornOracles', rootNode)
 
 	return rootNode
