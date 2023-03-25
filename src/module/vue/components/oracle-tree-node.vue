@@ -24,7 +24,7 @@
 				<RulesTextOracle
 					v-if="state.descriptionExpanded"
 					:class="$style.content"
-					:oracle-table="node.tables[0]"
+					:oracle-table-uuid="node.tables[0]"
 					:source="node.dataforgedNode?.Source"
 					@moveclick="moveclick"
 					@oracleclick="oracleclick" />
