@@ -38,6 +38,7 @@ import { registerTours } from './module/features/tours'
 import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 import 'virtual:svg-icons-register'
+import { registerDefaultOracleTrees } from './module/features/customoracles'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -221,6 +222,8 @@ Hooks.once('init', async () => {
 	registerCompendiumCategoryHook()
 	await registerTokenHUDButtons()
 	activateSceneButtonListeners()
+
+	await registerDefaultOracleTrees()
 })
 
 Hooks.once('ready', async () => {

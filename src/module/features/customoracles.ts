@@ -26,12 +26,11 @@ const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
 	'Oracle Categories'
 ]
 
-const emptyNode = () =>
-	({
-		displayName: '',
-		tables: [],
-		children: []
-	} as IOracleTreeNode)
+const emptyNode: () => IOracleTreeNode = () => ({
+	displayName: '',
+	tables: [],
+	children: []
+})
 
 async function createOracleTree(
 	compendium: string,
@@ -211,4 +210,52 @@ export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfId: string) {
 
 	walk(rootNode)
 	return ret
+}
+
+type OracleCategory = 'ironsworn' | 'starforged'
+
+const ORACLES: Record<OracleCategory, IOracleTreeNode> = {
+	ironsworn: emptyNode(),
+	starforged: emptyNode()
+}
+
+export function registerOracleTreeInternal(
+	category: OracleCategory,
+	rootNode: IOracleTreeNode
+) {
+	ORACLES[category] = rootNode
+}
+
+let defaultTreesInitialized = false
+
+export async function registerDefaultOracleTrees() {
+	const ironswornOracles = await createIronswornOracleTree()
+	registerOracleTreeInternal('ironsworn', ironswornOracles)
+
+	const starforgedOracles = await createStarforgedOracleTree()
+	registerOracleTreeInternal('starforged', starforgedOracles)
+
+	defaultTreesInitialized = true
+	console.log({ ORACLES })
+}
+
+// Available in browser
+export function registerOracleTree(
+	category: OracleCategory,
+	rootNode: IOracleTreeNode
+) {
+	// Check if internal registrations have been done
+	// If not, do nothing and send a warning to the UI
+	if (!defaultTreesInitialized) {
+		const message =
+			'Not ready yet. Call registerOracleTree from a "ready" hook please.'
+		ui.notifications?.warn(message)
+		throw new Error(message)
+	}
+
+	registerOracleTreeInternal(category, rootNode)
+}
+
+export function getOracleTree(category: OracleCategory): IOracleTreeNode {
+	return ORACLES[category]
 }
