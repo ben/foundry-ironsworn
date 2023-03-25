@@ -50,19 +50,20 @@ async function createOracleTree(
 	await augmentWithFolderContents(rootNode)
 
 	// Fire the hook and allow extensions to modify the tree
-	await Hooks.call('ironswornOracles', rootNode)
+	// TODO: deprecate this, warning if something is registered
+	Hooks.call('ironswornOracles', rootNode)
 
 	return rootNode
 }
 
-export async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
+async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
 	return await createOracleTree(
 		'foundry-ironsworn.ironswornoracles',
 		ISOracleCategories
 	)
 }
 
-export async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
+async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
 	return await createOracleTree(
 		'foundry-ironsworn.starforgedoracles',
 		SFOracleCategories
