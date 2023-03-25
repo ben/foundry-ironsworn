@@ -237,7 +237,6 @@ export async function registerDefaultOracleTrees() {
 	registerOracleTreeInternal('starforged', starforgedOracles)
 
 	defaultTreesInitialized = true
-	console.log({ ORACLES })
 }
 
 // Available in browser
