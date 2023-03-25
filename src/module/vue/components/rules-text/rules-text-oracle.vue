@@ -1,7 +1,7 @@
 <template>
 	<RulesText class="rules-text-oracle" :source="source" type="slot">
 		<template #default>
-			<OracleTable :oracle-table="oracleTable" />
+			<OracleTable :oracle-table-uuid="oracleTableUuid" />
 		</template>
 		<template #before-main>
 			<slot name="before-main"></slot>
@@ -20,5 +20,8 @@ import RulesText from './rules-text.vue'
 import OracleTable from './oracle-table.vue'
 import type { ISource } from 'dataforged'
 
-const props = defineProps<{ oracleTable: () => RollTable; source?: ISource }>()
+const props = defineProps<{
+	oracleTableUuid: string
+	source?: ISource
+}>()
 </script>

@@ -1,8 +1,8 @@
 <template>
 	<table class="oracle-table">
 		<caption
-			v-if="!noCaption && oracleTable().description"
-			v-html="enrichMarkdown(oracleTable().description ?? '')" />
+			v-if="!noCaption && rollTable?.description"
+			v-html="enrichMarkdown(rollTable?.description ?? '')" />
 		<thead>
 			<tr>
 				<th scope="col" class="oracle-table-column-roll-range">
@@ -31,9 +31,13 @@ import { enrichMarkdown } from '../../vue-plugin.js'
 
 // FIXME: use v10 types when available, or hack some together for tables
 const props = defineProps<{
-	oracleTable: () => any
+	oracleTableUuid: string
 	noCaption?: boolean
 }>()
+
+const rollTable = (await fromUuid(props.oracleTableUuid)) as
+	| (RollTable & { description?: string })
+	| undefined
 
 type TableRowData = {
 	low: number
@@ -50,7 +54,7 @@ function rangeString({ low, high }: TableRowData) {
 }
 const tableRows = computed(() =>
 	sortBy(
-		props.oracleTable().results.contents.map(
+		(rollTable?.results?.contents ?? []).map(
 			(row: any) =>
 				({
 					low: row.range[0],
