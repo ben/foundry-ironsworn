@@ -4,6 +4,7 @@
 
 - Fixed bug with growth behaviour of player asset list ([#700](https://github.com/ben/foundry-ironsworn/pull/700))
 - Fixed bug with Starforged asset decoration; it should now switch with the game theme as intended ([#700](https://github.com/ben/foundry-ironsworn/pull/700))
+- Drop the custom font ([#702](https://github.com/ben/foundry-ironsworn/pull/702))
 
 ## 1.20.30
 
