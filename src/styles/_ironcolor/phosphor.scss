@@ -6,6 +6,8 @@
 @use 'mixin:fvtt.scss';
 
 .ironcolor__phosphor {
+	--font-primary: 'Carrois Gothic SC', sans-serif;
+
 	@include color.palettize(
 		// FIXME: migrate to OKLCH once this issue is resolved and VSC provides color previews: https://github.com/microsoft/vscode-css-languageservice/issues/305
 		$fg-color: hsl(180deg 70% 60%),
