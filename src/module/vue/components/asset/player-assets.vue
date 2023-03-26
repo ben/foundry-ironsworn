@@ -9,10 +9,10 @@
 
 		<CollapseTransition
 			tag="ul"
-			class="nogrow flexcol item-list"
+			class="flexcol item-list"
 			group
 			:class="$style.list">
-			<li v-for="(asset, i) in assets" :key="asset._id" class="flexrow">
+			<li v-for="(asset, i) in assets" :key="asset._id" class="flexrow nogrow">
 				<slot name="orderButtons">
 					<OrderButtons
 						v-if="editMode"
