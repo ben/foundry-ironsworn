@@ -166,12 +166,7 @@ const bodyId = computed(() => `body_${baseId.value}`)
 
 const titleId = computed(() => `title_${baseId.value}`)
 
-const deco = computed(() => {
-	if (IronswornSettings.starforgedToolsEnabled) {
-		return { href: '#ironsworn-hex-deco', height: 28, width: 24 }
-	}
-	return undefined
-})
+const deco = computed(() => IronswornSettings.deco.asset.header)
 
 const $emit = defineEmits<{
 	(name: 'toggleExpand', isExpanded: boolean): void
