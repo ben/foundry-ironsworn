@@ -61,6 +61,7 @@ export const THEMES: Record<string, Theme> = {
 		decoration: {
 			tabs: { transition: 'slide' },
 			asset: {
+				header: { href: '#ironsworn-hex-deco', height: 28, width: 24 },
 				ability: {
 					transition: 'fade',
 					...hexPip
@@ -134,7 +135,9 @@ interface ChallengeRankPips extends Pip {
 }
 
 interface Image {
-	use: string
+	href: string
+	height: number
+	width: number
 }
 
 interface Checkbox extends Pip {

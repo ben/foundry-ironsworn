@@ -2,6 +2,9 @@
 
 ## Next Release
 
+- Fixed bug with growth behaviour of player asset list
+- Fixed bug with Starforged asset decoration; it should now switch with the game theme as intended
+
 ## 1.20.30
 
 - Color scheme and decoration theme are now separate settings, and changing the color theme no longer requires a restart ([#695](https://github.com/ben/foundry-ironsworn/pull/695#pullrequestreview-1350439536))
