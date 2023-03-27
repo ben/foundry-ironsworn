@@ -160,7 +160,9 @@ export function activateSceneButtonListeners() {
 					{
 						name: 'edit',
 						icon: 'isicon-region-sf',
-						title: game.i18n.localize('IRONSWORN.EditSector'),
+						title: game.i18n.format('DOCUMENT.Update', {
+							type: game.i18n.localize('IRONSWORN.SCENE.TypeSector')
+						}),
 						onClick: editSector
 					},
 					// { // TODO: maybe reenable this when we have a good way of doing it
