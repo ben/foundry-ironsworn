@@ -2,11 +2,11 @@
 
 ## Next Release
 
-- Fixed bug with growth behaviour of player asset list ([#700](https://github.com/ben/foundry-ironsworn/pull/700))
-- Fixed bug with Starforged asset decoration; it should now switch with the game theme as intended ([#700](https://github.com/ben/foundry-ironsworn/pull/700))
+- Added a new method of customizing oracles, which should work better for larger projects like Ironsmith ([#686](https://github.com/ben/foundry-ironsworn/pull/696))
 - Drop the custom font ([#702](https://github.com/ben/foundry-ironsworn/pull/702))
 - Fix a tooltip bug on the edit-sector button
-- Added a new method of customizing oracles, which should work better for larger projects like Ironsmith ([#686](https://github.com/ben/foundry-ironsworn/pull/696))
+- Fixed bug with growth behaviour of player asset list ([#700](https://github.com/ben/foundry-ironsworn/pull/700))
+- Fixed bug with Starforged asset decoration; it should now switch with the game theme as intended ([#700](https://github.com/ben/foundry-ironsworn/pull/700))
 
 ## 1.20.30
 
