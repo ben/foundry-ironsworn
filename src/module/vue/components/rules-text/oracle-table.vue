@@ -1,8 +1,8 @@
 <template>
 	<table class="oracle-table">
 		<caption
-			v-if="!noCaption && oracleTable().description"
-			v-html="enrichMarkdown(oracleTable().description ?? '')" />
+			v-if="!noCaption && tableDescription"
+			v-html="enrichMarkdown(tableDescription ?? '')" />
 		<thead>
 			<tr>
 				<th scope="col" class="oracle-table-column-roll-range">
@@ -25,15 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { sortBy } from 'lodash-es'
 import { enrichMarkdown } from '../../vue-plugin.js'
-
-// FIXME: use v10 types when available, or hack some together for tables
-const props = defineProps<{
-	oracleTable: () => any
-	noCaption?: boolean
-}>()
 
 type TableRowData = {
 	low: number
@@ -42,26 +34,19 @@ type TableRowData = {
 	selected: boolean
 }
 
+// FIXME: use v10 types when available, or hack some together for tables
+const props = defineProps<{
+	tableRows: TableRowData[]
+	tableDescription: string
+	noCaption?: boolean
+}>()
+
 function rangeString({ low, high }: TableRowData) {
 	if (low === high) {
 		return low.toString()
 	}
 	return `${low}-${high}`
 }
-const tableRows = computed(() =>
-	sortBy(
-		props.oracleTable().results.contents.map(
-			(row: any) =>
-				({
-					low: row.range[0],
-					high: row.range[1],
-					text: row.text,
-					selected: false
-				} as TableRowData)
-		),
-		'low'
-	)
-)
 </script>
 
 <style lang="scss" scoped>

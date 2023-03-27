@@ -38,6 +38,7 @@ import { registerTours } from './module/features/tours'
 import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 import 'virtual:svg-icons-register'
+import { registerDefaultOracleTrees } from './module/features/customoracles'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -228,11 +229,11 @@ Hooks.once('ready', async () => {
 
 	registerDragAndDropHooks()
 	registerChatAlertHooks()
-	runStartupMacro()
+
+	await registerDefaultOracleTrees()
 
 	await FirstStartDialog.maybeShow()
 	await registerTours()
 
-	// Pre-load all the oracles
-	await primeCommonPackCaches()
+	runStartupMacro()
 })

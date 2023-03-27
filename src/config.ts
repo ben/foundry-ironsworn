@@ -15,6 +15,10 @@ import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTruthsDialog'
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { OracleWindow } from './module/applications/oracle-window'
+import {
+	getOracleTree,
+	registerOracleTree
+} from './module/features/customoracles'
 
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
@@ -27,7 +31,6 @@ export type IronswornEmitter = Emitter<EmitterEvents>
 
 export interface IronswornConfig {
 	actorClass: typeof IronswornActor
-	importFromDatasworn: typeof importFromDatasworn
 
 	applications: {
 		// Dialogs
@@ -44,10 +47,15 @@ export interface IronswornConfig {
 		OracleRollMessage: typeof OracleRollMessage
 	}
 
+	importFromDatasworn: typeof importFromDatasworn
+
 	Dataforged: typeof starforged
 	dataforgedHelpers: typeof dataforgedHelpers
 
 	emitter: IronswornEmitter
+
+	registerOracleTree: typeof registerOracleTree
+	getOracleTree: typeof getOracleTree
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -71,5 +79,8 @@ export const IRONSWORN: IronswornConfig = {
 	Dataforged: starforged,
 	dataforgedHelpers,
 
-	emitter: Mitt<EmitterEvents>()
+	emitter: Mitt<EmitterEvents>(),
+
+	registerOracleTree,
+	getOracleTree
 }

@@ -3,10 +3,9 @@ import { compact, pick, sortBy } from 'lodash-es'
 import { marked } from 'marked'
 import { getFoundryTableByDfId } from '../dataforged'
 import {
-	createIronswornOracleTree,
-	createStarforgedOracleTree,
 	findPathToNodeByDfId,
-	findPathToNodeByTableId
+	findPathToNodeByTableUuid,
+	getOracleTreeWithCustomOracles
 } from '../features/customoracles'
 
 export interface TableRow {
@@ -68,9 +67,9 @@ export class OracleRollMessage {
 
 	static async fromDfOracleId(dfOracleId: string): Promise<OracleRollMessage> {
 		// Subtitle can be inferred from the structure of the DF ID
-		const oracleTreeRoot = await (dfOracleId.startsWith('Ironsworn/')
-			? createIronswornOracleTree
-			: createStarforgedOracleTree)()
+		const oracleTreeRoot = await getOracleTreeWithCustomOracles(
+			dfOracleId.startsWith('Ironsworn/') ? 'ironsworn' : 'starforged'
+		)
 		const pathElements = findPathToNodeByDfId(oracleTreeRoot, dfOracleId)
 		const pathNames = pathElements.map((x) => x.displayName)
 		pathNames.shift() // root node has no display name
@@ -172,18 +171,17 @@ export class OracleRollMessage {
 	}
 
 	private async oraclePath(): Promise<string | undefined> {
-		if (!this.tableUuid) return undefined
-		const uuid = _parseUuid(this.tableUuid)
+		if (this.tableUuid == null) return undefined
 
-		const [starforgedRoot, ironswornRooot] = await Promise.all([
-			createStarforgedOracleTree(),
-			createIronswornOracleTree()
-		])
+		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
+		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
+
 		const pathElements =
-			findPathToNodeByTableId(starforgedRoot, uuid.documentId!) ??
-			findPathToNodeByTableId(ironswornRooot, uuid.documentId!)
+			findPathToNodeByTableUuid(starforgedRoot, this.tableUuid) ??
+			findPathToNodeByTableUuid(ironswornRoot, this.tableUuid)
 		pathElements.shift() // no display name for root node
 		pathElements.pop() // last node is the table we rolled
+
 		return pathElements.map((x) => x.displayName).join(' / ')
 	}
 

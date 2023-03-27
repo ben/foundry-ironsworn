@@ -5,13 +5,13 @@ import type {
 	Ironsworn
 } from 'dataforged'
 import { starforged, ironsworn } from 'dataforged'
-import { compact } from 'lodash-es'
+import { cloneDeep, compact } from 'lodash-es'
 import { getFoundryTableByDfId } from '../dataforged'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface IOracleTreeNode {
 	dataforgedNode?: IOracle | IOracleCategory
-	tables: Array<() => RollTable>
+	tables: string[] // UUIDs
 	displayName: string
 	children: IOracleTreeNode[]
 	forceExpanded?: boolean
@@ -26,12 +26,11 @@ const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
 	'Oracle Categories'
 ]
 
-const emptyNode = () =>
-	({
-		displayName: '',
-		tables: [],
-		children: []
-	} as IOracleTreeNode)
+const emptyNode: () => IOracleTreeNode = () => ({
+	displayName: '',
+	tables: [],
+	children: []
+})
 
 async function createOracleTree(
 	compendium: string,
@@ -47,23 +46,17 @@ async function createOracleTree(
 		rootNode.children.push(await walkOracleCategory(category))
 	}
 
-	// Add in custom oracles from a well-known directory
-	await augmentWithFolderContents(rootNode)
-
-	// Fire the hook and allow extensions to modify the tree
-	await Hooks.call('ironswornOracles', rootNode)
-
 	return rootNode
 }
 
-export async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
+async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
 	return await createOracleTree(
 		'foundry-ironsworn.ironswornoracles',
 		ISOracleCategories
 	)
 }
 
-export async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
+async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
 	return await createOracleTree(
 		'foundry-ironsworn.starforgedoracles',
 		SFOracleCategories
@@ -107,9 +100,9 @@ export async function walkOracle(
 	const node: IOracleTreeNode = {
 		...emptyNode(),
 		dataforgedNode: oracle,
-		tables: compact([table != null ? () => table : undefined]),
+		tables: compact([table?.uuid]),
 		displayName:
-			table?.name ||
+			table?.name ??
 			game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`)
 	}
 
@@ -127,7 +120,7 @@ export async function walkOracle(
 				node.children.push({
 					...emptyNode(),
 					displayName: name,
-					tables: [() => subtable]
+					tables: [subtable.uuid]
 				})
 			}
 		}
@@ -155,7 +148,7 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
 		// Add this folder
 		const newNode: IOracleTreeNode = {
 			...emptyNode(),
-			displayName: folder.name || '(folder)'
+			displayName: folder.name ?? '(folder)'
 		}
 		parent.children.push(newNode)
 
@@ -168,7 +161,7 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
 		for (const table of folder.contents) {
 			newNode.children.push({
 				...emptyNode(),
-				tables: [() => table as RollTable],
+				tables: [table.uuid],
 				displayName: table.name ?? '(table)'
 			})
 		}
@@ -177,14 +170,14 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
 	walkFolder(node, rootFolder)
 }
 
-export function findPathToNodeByTableId(
+export function findPathToNodeByTableUuid(
 	rootNode: IOracleTreeNode,
-	tableId: string
+	tableUuid: string
 ): IOracleTreeNode[] {
 	const ret: IOracleTreeNode[] = []
 	function walk(node: IOracleTreeNode) {
 		ret.push(node)
-		const foundTable = node.tables.find((x) => x().id === tableId)
+		const foundTable = node.tables.find((x) => x === tableUuid)
 		if (foundTable != null) return true
 		for (const child of node.children) {
 			if (walk(child)) return true
@@ -211,4 +204,65 @@ export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfId: string) {
 
 	walk(rootNode)
 	return ret
+}
+
+type OracleCategory = 'ironsworn' | 'starforged'
+
+const ORACLES: Record<OracleCategory, IOracleTreeNode> = {
+	ironsworn: emptyNode(),
+	starforged: emptyNode()
+}
+
+export function registerOracleTreeInternal(
+	category: OracleCategory,
+	rootNode: IOracleTreeNode
+) {
+	ORACLES[category] = rootNode
+}
+
+let defaultTreesInitialized = false
+
+export async function registerDefaultOracleTrees() {
+	const ironswornOracles = await createIronswornOracleTree()
+	registerOracleTreeInternal('ironsworn', ironswornOracles)
+
+	const starforgedOracles = await createStarforgedOracleTree()
+	registerOracleTreeInternal('starforged', starforgedOracles)
+
+	defaultTreesInitialized = true
+}
+
+// Available in browser
+export function registerOracleTree(
+	category: OracleCategory,
+	rootNode: IOracleTreeNode
+) {
+	// Check if internal registrations have been done
+	// If not, do nothing and send a warning to the UI
+	if (!defaultTreesInitialized) {
+		const message =
+			'Not ready yet. Call registerOracleTree from a "ready" hook please.'
+		ui.notifications?.warn(message)
+		throw new Error(message)
+	}
+
+	registerOracleTreeInternal(category, rootNode)
+}
+
+export function getOracleTree(category: OracleCategory): IOracleTreeNode {
+	return cloneDeep(ORACLES[category])
+}
+
+export async function getOracleTreeWithCustomOracles(
+	category: OracleCategory
+): Promise<IOracleTreeNode> {
+	const rootNode = getOracleTree(category)
+
+	// Add in custom oracles from a well-known directory
+	await augmentWithFolderContents(rootNode)
+
+	// Fire the hook and allow extensions to modify the tree
+	Hooks.call('ironswornOracles', rootNode)
+
+	return rootNode
 }

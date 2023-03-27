@@ -24,7 +24,8 @@
 				<RulesTextOracle
 					v-if="state.descriptionExpanded"
 					:class="$style.content"
-					:oracle-table="node.tables[0]"
+					:table-rows="state.tableRows"
+					:table-description="state.tableDescription"
 					:source="node.dataforgedNode?.Source"
 					@moveclick="moveclick"
 					@oracleclick="oracleclick" />
@@ -65,7 +66,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, ref } from 'vue'
+import { computed, nextTick, reactive, ref } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { FontAwesome } from './icon/icon-common'
 import BtnOracle from './buttons/btn-oracle.vue'
@@ -78,9 +79,19 @@ import IronIcon from './icon/iron-icon.vue'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 
+// FIXME: use v10 types when available, or hack some together for tables
+type TableRowData = {
+	low: number
+	high: number
+	text: string
+	selected: boolean
+}
+
 const state = reactive({
 	manuallyExpanded: props.node.forceExpanded ?? false,
 	descriptionExpanded: false,
+	tableRows: [] as Array<TableRowData>,
+	tableDescription: '',
 	highlighted: false
 })
 
@@ -90,7 +101,18 @@ const isLeaf = computed(() => {
 	return props.node.tables.length > 0
 })
 
-function toggleDescription() {
+async function toggleDescription() {
+	if (!state.tableDescription) {
+		const table = (await fromUuid(props.node.tables[0])) as RollTable
+		state.tableRows = table.results.map((row: any) => ({
+			low: row.range[0],
+			high: row.range[1],
+			text: row.text,
+			selected: false
+		}))
+		state.tableDescription = (table as any).description ?? ''
+		await nextTick()
+	}
 	state.descriptionExpanded = !state.descriptionExpanded
 }
 function toggleManually() {
