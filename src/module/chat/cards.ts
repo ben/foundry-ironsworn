@@ -49,31 +49,30 @@ export class IronswornChatCard {
 		)
 	}
 
-	updateBinding(message: ChatMessage, html: JQuery) {
+	async updateBinding(message: ChatMessage, html: JQuery) {
 		// Do not store html here
 		this.id = message.id
 
-		this.attachMoveOracleContextMenu(html)
+		await this.attachMoveOracleContextMenu(html)
 
 		html
 			.find('a.content-link')
-			.removeClass('content-link') // Prevent default Foundry behavior
-			.on('click', async (ev) => await this._moveNavigate.call(this, ev))
+			.on('click', (ev) => this._moveNavigate.call(this, ev))
 		html
 			.find('a.oracle-category-link')
-			.on('click', async (ev) => { await this._oracleNavigate.call(this, ev); })
+			.on('click', (ev) => this._oracleNavigate.call(this, ev))
 		html
 			.find('.burn-momentum')
-			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
+			.on('click', (ev) => this._burnMomentum.call(this, ev))
 		html
 			.find('.burn-momentum-sf')
-			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
+			.on('click', (ev) => this._burnMomentum.call(this, ev))
 		html
 			.find('.ironsworn-roll-burn-momentum')
-			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
+			.on('click', (ev) => this._burnMomentum.call(this, ev))
 		html
 			.find('.oracle-roll .oracle-reroll')
-			.on('click', async (ev) => await this._oracleReroll.call(this, ev))
+			.on('click', (ev) => this._oracleReroll.call(this, ev))
 		if (!navigator.clipboard) {
 			html
 				.find('.copy-result')
@@ -84,26 +83,27 @@ export class IronswornChatCard {
 		} else {
 			html
 				.find('.copy-result')
-				.on('click', async (ev) => { await this._oracleResultCopy.call(this, ev); })
+				.on('click', (ev) => this._oracleResultCopy.call(this, ev))
 		}
 		html
 			.find('.ironsworn-roll-resolve')
-			.on('click', async (ev) => { await this._resolveChallenge.call(this, ev); })
+			.on('click', (ev) => this._resolveChallenge.call(this, ev))
 		html
 			.find('.starforged__oracle__roll')
-			.on('click', async (ev) => { await this._oracleRoll.call(this, ev); })
+			.on('click', (ev) => this._oracleRoll.call(this, ev))
 	}
 
 	async _moveNavigate(ev: JQuery.ClickEvent) {
-		ev.preventDefault()
 		const { uuid } = ev.currentTarget.dataset
 
 		const item = (await fromUuid(uuid)) as IronswornItem
 		if (item?.type !== 'sfmove') {
 			console.log('falling through')
-			return (TextEditor as any)._onClickContentLink(ev)
+			return // (TextEditor as any)._onClickContentLink(ev)
 		}
 
+		ev.preventDefault()
+		ev.stopPropagation()
 		CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 	}
 

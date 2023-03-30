@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix drag-and-drop of items from chat messages
+
 ## 1.21.1
 
 ## 1.21.0
