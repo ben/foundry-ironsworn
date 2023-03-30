@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.21.1
+
 ## 1.21.0
 
 - Added a new method of customizing oracles, which should work better for larger projects like Ironsmith ([#686](https://github.com/ben/foundry-ironsworn/pull/696))
