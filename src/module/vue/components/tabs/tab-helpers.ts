@@ -55,11 +55,9 @@ export function getSlideTransitionName(
 	switch (true) {
 		case horizontal && oldIndex < newIndex && thisIndex === oldIndex:
 		case horizontal && oldIndex > newIndex && thisIndex === newIndex:
-			console.log('slideLeft')
 			return 'slideLeft'
 		case horizontal && oldIndex < newIndex && thisIndex === newIndex:
 		case horizontal && oldIndex > newIndex && thisIndex === oldIndex:
-			console.log('slideRight')
 			return 'slideRight'
 		case vertical && oldIndex < newIndex && thisIndex === oldIndex:
 		case vertical && oldIndex > newIndex && thisIndex === newIndex:
