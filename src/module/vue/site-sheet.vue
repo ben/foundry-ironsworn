@@ -121,7 +121,6 @@ import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'
 import MceEditor from './components/mce-editor.vue'
 import { RANK_INCREMENTS } from '../constants'
-import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import { OracleRollMessage } from '../rolls'
@@ -167,21 +166,27 @@ function markProgress() {
 
 const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
-	const roll = await new Roll('1d100').evaluate({ async: true })
-	const result = roll.total
 	const denizens = (props.data.actor.system as SiteDataPropertiesData).denizens
-	const denizen = denizens.find(
-		(x) => x.range[0] <= result && x.range[1] >= result
+	const rows = denizens.map((x) => ({
+		low: x.range[0],
+		high: x.range[1],
+		text: x.text ?? '',
+		selected: false
+	}))
+	const orm = OracleRollMessage.fromRows(
+		rows,
+		game.i18n.localize('IRONSWORN.DELVESITE.Denizen'),
+		props.data.actor.name
 	)
-	if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
-	const idx = props.data.actor.system.denizens.indexOf(denizen)
-	await createIronswornDenizenChat({
-		roll,
-		denizen,
-		site: $actor!
-	})
+	await orm.createOrUpdate()
 
-	// Denizen slot is empty; set focus and add a class
+	// If denizen slot is empty, set focus and add a class
+	const result = await orm.getResult()
+	if (!result) return
+	const idx = denizens.findIndex(
+		(x) => x.range[0] <= result.low && x.range[1] >= result.high
+	)
+	const denizen = denizens[idx]
 	if (!denizen?.text) {
 		await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
 		await nextTick()
