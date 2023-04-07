@@ -111,29 +111,9 @@ Promise.resolve().then(async () => {
 async function revealADanger() {
 	if (!hasThemeAndDomain.value) return
 
-	const oracle = await getFoundryTableByDfId(
-		'Ironsworn/Oracles/Moves/Reveal_a_Danger'
-	)
-	if (!oracle) return
+	const table = await $site?.getDangers()
 
-	const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
-	const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-
-	const tableResults = [
-		...themeData.dangers,
-		...domainData.dangers,
-		// Omits the first two rows
-		...oracle.results.contents.slice(2)
-	]
-
-	const title = moves.revealADanger.moveItem().name ?? 'Reveal a Danger'
-	const subtitle = `${$site?.name} – ${theme.value?.name} ${domain.value?.name}`
-	const orm = await OracleRollMessage.fromTableResults(
-		tableResults as TableResultDataConstructorData[],
-		title,
-		subtitle
-	)
-	orm.createOrUpdate()
+	return table?.draw({ displayChat: true })
 }
 
 async function locateObjective() {
