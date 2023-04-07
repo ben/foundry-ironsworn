@@ -57,11 +57,13 @@ export interface AssetDataPropertiesData extends AssetDataSourceData {}
 export interface AssetDataSource {
 	type: 'asset'
 	data: AssetDataSourceData
+	system: AssetDataSourceData
 }
 
 export interface AssetDataProperties {
 	type: 'asset'
 	data: AssetDataPropertiesData
+	system: AssetDataPropertiesData
 }
 
 /// ////////////////////////////
@@ -79,10 +81,12 @@ export interface ProgressDataPropertiesData extends ProgressDataSourceData {}
 export interface ProgressDataSource {
 	type: 'progress'
 	data: ProgressDataSourceData
+	system: ProgressDataSourceData
 }
 export interface ProgressDataProperties {
 	type: 'progress'
 	data: ProgressDataPropertiesData
+	system: ProgressDataPropertiesData
 }
 
 /// ////////////////////////////
@@ -100,10 +104,12 @@ export interface BondsetDataPropertiesData extends BondsetDataSourceData {}
 export interface BondsetDataSource {
 	type: 'bondset'
 	data: BondsetDataSourceData
+	system: BondsetDataSourceData
 }
 export interface BondsetDataProperties {
 	type: 'bondset'
 	data: BondsetDataPropertiesData
+	system: BondsetDataPropertiesData
 }
 
 /// ////////////////////////////
@@ -151,10 +157,12 @@ export interface DelveThemeDataPropertiesData
 export interface DelveThemeDataSource {
 	type: 'delve-theme'
 	data: DelveThemeDataSourceData
+	system: DelveThemeDataSourceData
 }
 export interface DelveThemeDataProperties {
 	type: 'delve-theme'
 	data: DelveThemeDataPropertiesData
+	system: DelveThemeDataPropertiesData
 }
 /// ////////////////////////////
 
@@ -170,10 +178,12 @@ export interface DelveDomainDataPropertiesData
 export interface DelveDomainDataSource {
 	type: 'delve-domain'
 	data: DelveDomainDataSourceData
+	system: DelveDomainDataSourceData
 }
 export interface DelveDomainDataProperties {
 	type: 'delve-domain'
 	data: DelveDomainDataPropertiesData
+	system: DelveDomainDataPropertiesData
 }
 
 /// ////////////////////////////
@@ -185,10 +195,12 @@ export interface SFMoveDataPropertiesData extends IMove {
 export interface SFMoveDataSource {
 	type: 'sfmove'
 	data: SFMoveDataPropertiesData
+	system: SFMoveDataPropertiesData
 }
 export interface SFMoveDataProperties {
 	type: 'sfmove'
 	data: SFMoveDataPropertiesData
+	system: SFMoveDataPropertiesData
 }
 
 /// ////////////////////////////
