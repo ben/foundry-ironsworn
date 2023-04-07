@@ -123,11 +123,9 @@ import MceEditor from './components/mce-editor.vue'
 import { RANK_INCREMENTS } from '../constants'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
-import { OracleRollMessage } from '../rolls'
-import type { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
-import type { SiteDataPropertiesData } from '../actor/actortypes'
 import { localizeRank } from '../helpers/util'
+import { OracleTableResult } from '../roll-table/oracle-table-result'
 
 const props = defineProps<{
 	data: { actor: any }
@@ -143,11 +141,11 @@ const editMode = computed(() => {
 })
 
 const theme = computed(() => {
-	return props.data.actor.items.find((x) => x.type === 'delve-theme')
+	return $actor?.theme?.toObject()
 })
 
 const domain = computed(() => {
-	return props.data.actor.items.find((x) => x.type === 'delve-domain')
+	return $actor?.domain?.toObject()
 })
 
 function setRank(rank) {
@@ -166,27 +164,31 @@ function markProgress() {
 
 const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
-	const denizens = (props.data.actor.system as SiteDataPropertiesData).denizens
-	const rows = denizens.map((x) => ({
-		low: x.range[0],
-		high: x.range[1],
-		text: x.text ?? '',
-		selected: false
-	}))
-	const orm = OracleRollMessage.fromRows(
-		rows,
-		game.i18n.localize('IRONSWORN.DELVESITE.Denizen'),
-		props.data.actor.name
-	)
-	await orm.createOrUpdate()
+	const denizens = $actor?.getDenizens()
+	if (!denizens) return
+	// LoFD are *not* consistent with FVTT's actual source code, here.
+	// when displaychat === true, denizens.draw calls RollTable#toMessage, which calls to ChatMessage#create
+	const msg = (await denizens?.draw({ displayChat: true })) as unknown as
+		| ChatMessage
+		| undefined
+
+	if (!msg) return
+
+	const roll = msg.rolls?.[0]
+
+	if (!roll) return
+	if (!roll.total) return
 
 	// If denizen slot is empty, set focus and add a class
-	const result = await orm.getResult()
-	if (!result) return
-	const idx = denizens.findIndex(
-		(x) => x.range[0] <= result.low && x.range[1] >= result.high
+
+	const idx = denizens.results.contents.findIndex(
+		// @ts-expect-error
+		(x: OracleTableResult, _i, _) =>
+			x.range[0] <= (roll.total as number) &&
+			(roll.total as number) <= x.range[1]
 	)
-	const denizen = denizens[idx]
+	const denizen = denizens.results.contents[idx]
+	// @ts-expect-error
 	if (!denizen?.text) {
 		await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
 		await nextTick()
@@ -199,18 +201,7 @@ const hasThemeAndDomain = computed(() => {
 })
 
 async function randomFeature() {
-	if (!hasThemeAndDomain.value) return
-
-	const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
-	const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-	const title = game.i18n.localize('IRONSWORN.DELVESITE.Feature')
-	const subtitle = `${$actor?.name} – ${theme.value?.name} ${domain.value?.name}`
-	const orm = OracleRollMessage.fromTableResults(
-		[...themeData.features, ...domainData.features],
-		title,
-		subtitle
-	)
-	orm.createOrUpdate()
+	return $actor?.getFeatures()?.draw({ displayChat: true })
 }
 
 function saveDescription() {

@@ -55,14 +55,12 @@
 </template>
 
 <script lang="ts" setup>
-import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { computed, inject, reactive } from 'vue'
 import type { SiteDataPropertiesData } from '../../../actor/actortypes'
 import { getFoundryTableByDfId } from '../../../dataforged'
 import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
-import type { DelveThemeDataSourceData } from '../../../item/itemtypes'
-import { OracleRollMessage, IronswornPrerollDialog } from '../../../rolls'
+import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 import SfMoverow from '../sf-moverow.vue'
