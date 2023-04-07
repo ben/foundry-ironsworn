@@ -1,12 +1,15 @@
 import type { TableResultData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
 import type { OracleTable } from './oracle-table'
 
-export class IronTableResult extends TableResult {
+/** Extends FVTT's default TableResult with functionality specific to this system. */
+export class OracleTableResult extends TableResult {
 	declare parent: OracleTable
 
 	// in a universe that made sense i would not have to declare these, yet here we are
 	declare range: TableResultData['range']
-	declare text: string
+	declare text: TableResultData['text']
+	declare type: TableResultData['type']
+	declare img: TableResultData['img']
 
 	/**
 	 * Returns the table rows immediately above and below this row.
@@ -20,10 +23,13 @@ export class IronTableResult extends TableResult {
 		const next = this.collection.find(
 			(result) => result.range[0] === this.range[1] + 1
 		)
-
 		return [prev, next]
 	}
 
+	/**
+	 * Convenience getter that returns the adjacent rows *plus* this row in an ordered tuple.
+	 * @return A ordered tuple containing the previous result, the current result, and the next result,
+	 */
 	get displayRows(): [this | undefined, this, this | undefined] {
 		const [prev, next] = this.adjacentRows
 		return [prev, this, next]

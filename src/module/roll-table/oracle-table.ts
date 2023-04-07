@@ -1,3 +1,4 @@
+import type { ChatSpeakerData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatSpeakerData'
 import { hashLookup } from '../dataforged'
 import {
 	findPathToNodeByTableUuid,
@@ -5,19 +6,29 @@ import {
 } from '../features/customoracles'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 
-import { IronTableResult as OracleTableResult } from './oracle-table-result'
+import { OracleTableResult } from './oracle-table-result'
+
+declare global {
+	interface ChatMessage {
+		/** shim for v10; technically, ChatMessage#roll is deprecated, and it just gets ChatMessage#roll[0]. */
+		rolls?: Roll[] | null | undefined
+	}
+}
 
 interface OracleTableDraw extends RollTableDraw {
 	roll: Roll
 	results: OracleTableResult[]
 }
-
+/** Extends FVTT's default RollTable with functionality specific to this system. */
 export class OracleTable extends RollTable {
 	// missing from the LoFD types package
 	declare description: string
 	declare draw: (
 		options?: RollTable.DrawOptions | undefined
 	) => Promise<OracleTableDraw>
+
+	static resultTemplate =
+		'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 
 	// TODO: remove the old getFoundryTableByDfId function in favour of this static method
 	static async getByDfId(
@@ -29,7 +40,7 @@ export class OracleTable extends RollTable {
 		const sfd = await cachedDocumentsForPack(
 			'foundry-ironsworn.starforgedoracles'
 		)
-		const matcher = (x) => x.id === hashLookup(dfid)
+		const matcher = (x: { id: string }) => x.id === hashLookup(dfid)
 		return (isd?.find(matcher) ?? sfd?.find(matcher)) as
 			| StoredDocument<OracleTable>
 			| undefined
@@ -54,8 +65,32 @@ export class OracleTable extends RollTable {
 		return pathNames.join(' / ')
 	}
 
+	async _prepareTemplateData(results: OracleTableResult[], roll: null | Roll) {
+		return {
+			// NB: with these options, this is async in v10
+			// eslint-disable-next-line @typescript-eslint/await-thenable
+			description: await TextEditor.enrichHTML(this.description, {
+				documents: true,
+				// @ts-expect-error exists in v10
+				async: true
+			}),
+			results: results.map((result) => {
+				const r = result.toObject(false)
+				r.text = result.getChatText()
+				// @ts-expect-error exists in v10
+				r.icon = result.icon
+				// @ts-expect-error
+				r.displayRows = result.displayRows
+				return r
+			}),
+			subtitle: await this.getDfPath(),
+			roll: roll?.toJSON(),
+			table: this
+		}
+	}
+
 	override async toMessage(
-		results: TableResult[],
+		results: OracleTableResult[],
 		{
 			roll = null,
 			messageData = {},
@@ -100,31 +135,11 @@ export class OracleTable extends RollTable {
 			messageData
 		)
 
-		const templateData = {
-			// NB: with these options, this is async in v10
-			// eslint-disable-next-line @typescript-eslint/await-thenable
-			description: await TextEditor.enrichHTML(this.description, {
-				documents: true,
-				// @ts-expect-error exists in v10
-				async: true
-			}),
-			results: results.map((result) => {
-				const r = result.toObject(false)
-				r.text = result.getChatText()
-				// @ts-expect-error exists in v10
-				r.icon = result.icon
-				// @ts-expect-error
-				r.displayRows = result.displayRows
-				return r
-			}),
-			subtitle: await this.getDfPath(),
-			roll: roll?.toJSON(),
-			table: this
-		}
+		const templateData = await this._prepareTemplateData(results, roll)
 
 		// Render the chat card which combines the dice roll with the drawn results
 		messageData.content = await renderTemplate(
-			'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs',
+			OracleTable.resultTemplate,
 			templateData
 		)
 
@@ -132,24 +147,64 @@ export class OracleTable extends RollTable {
 		return await cls.create(messageData, messageOptions)
 	}
 
-	/** Rerolls an oracle result message, replacing it with the new result */
+	/**
+	 * Rerolls an oracle result message, replacing it with the new result
+	 */
 	static async reroll(messageId: string) {
 		const msg = game.messages?.get(messageId)
-		const rollTableUuid = msg?.getFlag('foundry-ironsworn', 'RollTable') as
+		if (msg == null) return
+		const rollTableUuid = msg.getFlag('foundry-ironsworn', 'RollTable') as
 			| string
 			| undefined
+		const rerolls = (msg.getFlag('foundry-ironsworn', 'rerolls') ??
+			[]) as number[]
 		if (rollTableUuid == null) return
-		const rollTable = (await fromUuid(rollTableUuid)) as RollTable | undefined
+		const rollTable = (await fromUuid(rollTableUuid)) as OracleTable | undefined
 
+		if (rollTable == null) return
 		// defer render to chat so we can manually set the chat message id
-		const draw = await rollTable?.draw({ displayChat: false })
+		const { results, roll } = await rollTable.draw({ displayChat: false })
 
-		if (draw == null) return
-		const { results, roll } = draw
+		const templateData = await rollTable._prepareTemplateData(results, roll)
 
-		await rollTable?.toMessage(results, {
-			roll,
-			messageData: { _id: messageId }
+		// module: Dice So Nice
+		await game.dice3d?.showForRoll(roll, game.user, true)
+
+		await msg.update({
+			content: await renderTemplate(OracleTable.resultTemplate, templateData),
+			flags: {
+				'foundry-ironsworn.rerolls': [...rerolls, roll.total]
+			}
 		})
+	}
+}
+
+declare global {
+	interface Game {
+		// module: Dice So Nice
+
+		dice3d?: {
+			/**
+			 * Show the 3D Dice animation for the Roll made by the User.
+			 *
+			 * @param roll - an instance of Roll class to show 3D dice animation.
+			 * @param user - the user who made the roll (game.user by default).
+			 * @param synchronize - if the animation needs to be shown to other players. Default: false
+			 * @param whisper - list of users or userId who can see the roll, set it to null if everyone can see. Default: null
+			 * @param blind - if the roll is blind for the current user. Default: false
+			 * @param chatMessageID  -A chatMessage ID to reveal when the roll ends. Default: null
+			 * @param speaker - An object using the same data schema than ChatSpeakerData. Needed to hide NPCs roll when the GM enables this setting.
+			 * @returns {Promise<boolean>} when resolved true if the animation was displayed, false if not.
+			 */
+			showForRoll: (
+				roll: Roll,
+				user?: User | null,
+				synchronize?: boolean,
+				whisper?: Array<string | User>,
+				blind?: boolean,
+				chatMessageID?: string | null,
+				speaker?: ChatSpeakerData
+			) => Promise<boolean>
+		}
 	}
 }
