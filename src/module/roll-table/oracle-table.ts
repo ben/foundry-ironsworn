@@ -50,7 +50,6 @@ export class OracleTable extends RollTable {
 	async getDfPath() {
 		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
 		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
-		console.log(starforgedRoot, ironswornRoot)
 
 		const pathElements =
 			findPathToNodeByTableUuid(starforgedRoot, this.uuid) ??
