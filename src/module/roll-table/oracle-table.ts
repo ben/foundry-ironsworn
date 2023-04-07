@@ -1,17 +1,28 @@
-import { hashLookup } from '../../dataforged'
+import { hashLookup } from '../dataforged'
 import {
 	findPathToNodeByTableUuid,
 	getOracleTreeWithCustomOracles
-} from '../../features/customoracles'
-import { cachedDocumentsForPack } from '../../features/pack-cache'
-import type { IronTableResult } from './iron-table-result'
+} from '../features/customoracles'
+import { cachedDocumentsForPack } from '../features/pack-cache'
 
-export class IronRollTable extends RollTable {
-	// TODO: remove the old getFoundryTableByDfId function in favour of this static method
+import { IronTableResult as OracleTableResult } from './oracle-table-result'
+
+interface OracleTableDraw extends RollTableDraw {
+	roll: Roll
+	results: OracleTableResult[]
+}
+
+export class OracleTable extends RollTable {
+	// missing from the LoFD types package
 	declare description: string
-	static async fromDfId(
+	declare draw: (
+		options?: RollTable.DrawOptions | undefined
+	) => Promise<OracleTableDraw>
+
+	// TODO: remove the old getFoundryTableByDfId function in favour of this static method
+	static async getByDfId(
 		dfid: string
-	): Promise<StoredDocument<IronRollTable> | undefined> {
+	): Promise<StoredDocument<OracleTable> | undefined> {
 		const isd = await cachedDocumentsForPack(
 			'foundry-ironsworn.ironswornoracles'
 		)
@@ -20,27 +31,31 @@ export class IronRollTable extends RollTable {
 		)
 		const matcher = (x) => x.id === hashLookup(dfid)
 		return (isd?.find(matcher) ?? sfd?.find(matcher)) as
-			| StoredDocument<IronRollTable>
+			| StoredDocument<OracleTable>
 			| undefined
 	}
 
-	async getDataforgedPath() {
+	/** A string representing the path this table in the Ironsworn oracle tree (not including this table) */
+	async getDfPath() {
 		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
 		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
+		console.log(starforgedRoot, ironswornRoot)
 
 		const pathElements =
 			findPathToNodeByTableUuid(starforgedRoot, this.uuid) ??
 			findPathToNodeByTableUuid(ironswornRoot, this.uuid)
 
 		const pathNames = pathElements.map((x) => x.displayName)
-		pathNames.shift() // root node has no display name
-		pathNames.pop() // this is the one we rolled, it gets the main title
+		// root node (0) has no display name
+		pathNames.shift()
+		// last node  is *this* node
+		pathNames.pop()
 
-		return pathElements.map((x) => x.displayName).join(' / ')
+		return pathNames.join(' / ')
 	}
 
 	override async toMessage(
-		results: IronTableResult[],
+		results: TableResult[],
 		{
 			roll = null,
 			messageData = {},
@@ -51,12 +66,16 @@ export class IronRollTable extends RollTable {
 		// these are loosely based on FVTT v10 RollTable#toMessage
 
 		// TODO This is a fallback to handle tables that can produce multiple results from a single roll, which foundry-ironsworn doesn't presently use. There might be some utility to them doing so, however...
-		if (results.length > 1)
+		if (
+			results.length > 1 ||
+			results.some((result) => !(result instanceof OracleTableResult))
+		)
 			return await super.toMessage(results, {
 				roll,
 				messageData,
+				// @ts-expect-error
 				messageOptions
-			} as any)
+			})
 
 		const cls = getDocumentClass('ChatMessage')
 
@@ -73,7 +92,10 @@ export class IronRollTable extends RollTable {
 						: CONST.CHAT_MESSAGE_TYPES.OTHER,
 				roll,
 				sound: roll != null ? CONFIG.sounds.dice : null,
-				flags: { 'core.RollTable': this.id }
+				flags: {
+					'core.RollTable': this.id,
+					'foundry-ironsworn.RollTable': this.uuid
+				}
 			},
 			messageData
 		)
@@ -95,7 +117,7 @@ export class IronRollTable extends RollTable {
 				r.displayRows = result.displayRows
 				return r
 			}),
-			subtitle: await this.getDataforgedPath(),
+			subtitle: await this.getDfPath(),
 			roll: roll?.toJSON(),
 			table: this
 		}
@@ -108,5 +130,26 @@ export class IronRollTable extends RollTable {
 
 		// Create the chat message
 		return await cls.create(messageData, messageOptions)
+	}
+
+	/** Rerolls an oracle result message, replacing it with the new result */
+	static async reroll(messageId: string) {
+		const msg = game.messages?.get(messageId)
+		const rollTableUuid = msg?.getFlag('foundry-ironsworn', 'RollTable') as
+			| string
+			| undefined
+		if (rollTableUuid == null) return
+		const rollTable = (await fromUuid(rollTableUuid)) as RollTable | undefined
+
+		// defer render to chat so we can manually set the chat message id
+		const draw = await rollTable?.draw({ displayChat: false })
+
+		if (draw == null) return
+		const { results, roll } = draw
+
+		await rollTable?.toMessage(results, {
+			roll,
+			messageData: { _id: messageId }
+		})
 	}
 }

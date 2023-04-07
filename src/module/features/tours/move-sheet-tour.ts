@@ -1,4 +1,4 @@
-import { OracleRollMessage } from '../../rolls'
+import { OracleTable } from '../../roll-table/oracle-table'
 import { IronswornTour } from './ironsworn_tour'
 
 export class MoveSheetTour extends IronswornTour {
@@ -140,9 +140,10 @@ export class MoveSheetTour extends IronswornTour {
 					tooltipDirection: 'LEFT',
 					async hook() {
 						await sheet.minimize()
-						await new OracleRollMessage({
-							dfOracleId: 'Starforged/Oracles/Core/Action'
-						}).createOrUpdate()
+						const tbl = await OracleTable.getByDfId(
+							'Starforged/Oracles/Core/Action'
+						)
+						await tbl?.draw({ displayChat: true })
 						await new Promise((r) => setTimeout(r, 300))
 					}
 				},

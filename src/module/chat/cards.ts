@@ -1,9 +1,10 @@
 import { compact, flatten } from 'lodash-es'
 import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import type { IronswornItem } from '../item/item'
-import { IronswornRollMessage, OracleRollMessage } from '../rolls'
+import { IronswornRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { getFoundryTableByDfId } from '../dataforged'
+import { OracleTable } from '../roll-table/oracle-table'
 
 export class IronswornChatCard {
 	id?: string | null
@@ -39,12 +40,9 @@ export class IronswornChatCard {
 			html,
 			`.message-content`,
 			tables.map((t) => ({
-				name: t.name || '',
+				name: t.name ?? '',
 				icon: '<i class="isicon-oracle"></i>',
-				callback: async () => {
-					const msg = await OracleRollMessage.fromTableUuid(t.uuid)
-					msg.createOrUpdate()
-				}
+				callback: async () => await t.draw({ displayChat: true })
 			}))
 		)
 	}
@@ -132,9 +130,7 @@ export class IronswornChatCard {
 		ev.preventDefault()
 
 		const msgId = $(ev.target).parents('.chat-message').data('message-id')
-		const orm = await OracleRollMessage.fromMessage(msgId)
-		await orm?.forceRoll()
-		return await orm?.createOrUpdate()
+		await OracleTable.reroll(msgId)
 	}
 
 	async _oracleRoll(ev: JQuery.ClickEvent) {
@@ -143,11 +139,10 @@ export class IronswornChatCard {
 		const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
 		const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
 		const table = ((await sfPack?.getDocument(tableid)) ??
-			(await isPack?.getDocument(tableid))) as RollTable | undefined
+			(await isPack?.getDocument(tableid))) as OracleTable | undefined
 		if (!table?.id) return
 
-		const msg = await OracleRollMessage.fromTableUuid(table.uuid)
-		msg.createOrUpdate()
+		await table.draw({ displayChat: true })
 	}
 
 	async _oracleResultCopy(ev: JQuery.ClickEvent) {

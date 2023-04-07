@@ -1,11 +1,12 @@
 import type { TableResultData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
-import type { IronRollTable } from './iron-roll-table'
+import type { OracleTable } from './oracle-table'
 
 export class IronTableResult extends TableResult {
-	declare parent: IronRollTable
+	declare parent: OracleTable
 
-	// in a universe that made sense i would not have to do this, yet here we are
+	// in a universe that made sense i would not have to declare these, yet here we are
 	declare range: TableResultData['range']
+	declare text: string
 
 	/**
 	 * Returns the table rows immediately above and below this row.

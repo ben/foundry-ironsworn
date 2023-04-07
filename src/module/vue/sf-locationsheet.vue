@@ -142,10 +142,10 @@ import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 
 import MceEditor from './components/mce-editor.vue'
-import { OracleRollMessage } from '../rolls'
 import type { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { OracleTable } from '../roll-table/oracle-table'
 
 const props = defineProps<{
 	data: { actor: any }
@@ -569,13 +569,14 @@ async function saveKlass(klass) {
 }
 
 async function drawAndReturnResult(
-	table?: RollTable
+	table?: OracleTable
 ): Promise<string | undefined> {
 	if (!table) return undefined
 
-	const orm = await OracleRollMessage.fromTableUuid(table.uuid)
-	orm.createOrUpdate()
-	const result = await orm.getResult()
+	const {
+		results: [result]
+	} = await table.draw({ displayChat: true })
+
 	return result?.text
 }
 
@@ -589,10 +590,9 @@ async function randomizeName() {
 		)
 		name = sample(json?.['Sample Names'] ?? [])
 	} else if (subtype === 'settlement') {
-		const table =
-			await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
-				'Starforged/Oracles/Settlements/Name'
-			)
+		const table = await OracleTable.getByDfId(
+			'Starforged/Oracles/Settlements/Name'
+		)
 		name = await drawAndReturnResult(table)
 	}
 
@@ -616,9 +616,7 @@ async function randomizeKlass() {
 		tableKey = 'Starforged/Oracles/Vaults/Location'
 	}
 
-	const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
-		tableKey
-	)
+	const table = await OracleTable.getByDfId(tableKey)
 	const rawText = await drawAndReturnResult(table)
 	if (!rawText) return
 
@@ -640,9 +638,7 @@ async function rollFirstLook() {
 }
 
 async function rollOracle(oracle) {
-	const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
-		oracle.dfId
-	)
+	const table = await OracleTable.getByDfId(oracle.dfId)
 	const drawText = await drawAndReturnResult(table)
 	if (!drawText) return
 
