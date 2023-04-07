@@ -39,6 +39,8 @@ import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 import 'virtual:svg-icons-register'
 import { registerDefaultOracleTrees } from './module/features/customoracles'
+import { IronRollTable } from './module/roll-table/sheets/iron-roll-table'
+import { IronTableResult } from './module/roll-table/sheets/iron-table-result'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -61,9 +63,10 @@ Hooks.once('init', async () => {
 	CONFIG.Actor.documentClass = IronswornActor
 	CONFIG.Item.documentClass = IronswornItem
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
-
+	CONFIG.TableResult.documentClass = IronTableResult
+	CONFIG.RollTable.documentClass = IronRollTable
 	// CONFIG.RollTable.resultTemplate =
-	//   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
+	// 	'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 
 	// Turn off Foundry defaults
 	Actors.unregisterSheet('core', ActorSheet)
