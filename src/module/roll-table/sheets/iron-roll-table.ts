@@ -4,7 +4,7 @@ import {
 	getOracleTreeWithCustomOracles
 } from '../../features/customoracles'
 import { cachedDocumentsForPack } from '../../features/pack-cache'
-import { IronTableResult } from './iron-table-result'
+import type { IronTableResult } from './iron-table-result'
 
 export class IronRollTable extends RollTable {
 	// TODO: remove the old getFoundryTableByDfId function in favour of this static method
