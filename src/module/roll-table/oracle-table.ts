@@ -82,7 +82,9 @@ export class OracleTable extends RollTable {
 				r.displayRows = result.displayRows
 				return r
 			}),
-			subtitle: await this.getDfPath(),
+			subtitle:
+				this.getFlag('foundry-ironsworn', 'subtitle') ??
+				(await this.getDfPath()),
 			roll: roll?.toJSON(),
 			table: this
 		}

@@ -126,9 +126,9 @@ export interface DelveSiteDenizen extends TableResultDataConstructorData {
 		'foundry-ironsworn': {
 			type: 'delve-site-denizen'
 			/**
-			 * The ID of the originating Actor.
+			 * The UUID of the originating Actor.
 			 */
-			sourceId: Actor['id']
+			sourceUuid: Actor['uuid']
 		}
 	}
 }
