@@ -28,33 +28,6 @@ export class IronswornActor extends Actor {
 
 	moveSheet?: SFCharacterMoveSheet
 
-	protected override _onCreate(
-		data: this['data']['_source'],
-		options: DocumentModificationOptions,
-		userId: string
-	): void {
-		super._onCreate(data, options, userId)
-		switch (this.type) {
-			case 'site':
-				// initialize sourceId flags for denizens
-				{
-					const denizens = (this.system as SiteDataPropertiesData).denizens.map(
-						(denizen) =>
-							mergeObject(denizen, {
-								flags: {
-									'foundry-ironsworn': { sourceId: this.uuid }
-								}
-							})
-					)
-					void this.update({ system: { denizens } })
-				}
-
-				break
-			default:
-				break
-		}
-	}
-
 	static async createDialog(data, _options = {}) {
 		if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog()
 		CREATE_DIALOG.options.folder = data?.folder
