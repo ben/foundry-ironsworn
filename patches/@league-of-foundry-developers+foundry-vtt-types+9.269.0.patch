@@ -62,6 +62,22 @@ index ca6d3f2..34792e6 100644
      }
  
      /**
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/journalEntryPageData.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/journalEntryPageData.d.ts
+index e1da7b2..32f2e72 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/journalEntryPageData.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/journalEntryPageData.d.ts
+@@ -315,4 +315,10 @@ export class JournalEntryPageData extends DocumentData<
+ }
+ 
+ // eslint-disable-next-line @typescript-eslint/no-empty-interface
+-export interface JournalEntryPageData extends JournalEntryPageDataProperties {}
++export interface JournalEntryPageData extends JournalEntryPageDataProperties {
++  /**
++   * An object of optional key/value flags
++   * @defaultValue `{}`
++   */
++  flags: ConfiguredFlags<"JournalEntryPage"> & CoreFlags;
++}
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
 index 25cb406..73c2658 100644
 --- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
