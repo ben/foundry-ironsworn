@@ -63,84 +63,84 @@
 					"range": [1, 27],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [28, 41],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [42, 55],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [56, 69],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [70, 75],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [76, 81],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [82, 87],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [88, 93],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [94, 95],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [96, 97],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [98, 99],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				},
 				{
 					"range": [100, 100],
 					"text": "",
 					"flags": {
-						"type": "delve-site-denizen"
+						"foundry-ironsworn": { "type": "delve-site-denizen" }
 					}
 				}
 			]
