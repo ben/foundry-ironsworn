@@ -168,10 +168,9 @@ async function randomDenizen() {
 	const denizens = $actor?.denizens
 	if (!denizens) return
 
-	const { roll, results } = await denizens.draw()
+	const { roll } = await denizens.draw()
 
-	if (!roll) return
-	if (!roll.total) return
+	if (!roll || !roll.total) return
 
 	// If denizen slot is empty, set focus and add a class
 
