@@ -108,7 +108,7 @@ index e1da7b2..c865bb4 100644
 +  flags: ConfiguredFlags<"JournalEntryPage"> & CoreFlags;
 +}
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
-index 25cb406..73c2658 100644
+index 25cb406..ce8ce9b 100644
 --- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
 +++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
 @@ -15,6 +15,7 @@ type JournalEntryPageMetadata = Merge<
@@ -119,6 +119,31 @@ index 25cb406..73c2658 100644
    }
  >;
  
+@@ -43,4 +44,24 @@ export declare class BaseJournalEntryPage extends Document<
+   static get TYPES(): DocumentSubTypes<"JournalEntryPage">[];
+ 
+   getUserLevel(user: BaseUser): ValueOf<typeof CONST.DOCUMENT_OWNERSHIP_LEVELS> | null;
++
++  /**
++   * Data that control's the display of this page's title.
++   */
++  title: JournalEntryPageDataProperties.Title;
++
++  /**
++   * Data particular to image journal entry pages.
++   */
++  image: JournalEntryPageDataProperties.Image;
++
++  /**
++   * Data particular to text journal entry pages.
++   */
++  text: JournalEntryPageDataProperties.Text;
++
++  /**
++   * Data particular to video journal entry pages.
++   */
++  video: JournalEntryPageDataProperties.Video;
+ }
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.d.ts
 index eb3fa4c..f45b1d5 100644
 --- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.d.ts
