@@ -39,12 +39,14 @@ export class IronswornActor extends Actor {
 				// initialize sourceUuid flags for denizens
 				{
 					const denizens = (this.system as SiteDataPropertiesData).denizens.map(
-						(denizen) => {
-							denizen.flags['foundry-ironsworn'].sourceUuid = this.id
-							return denizen
-						}
+						(denizen) =>
+							mergeObject(denizen, {
+								flags: {
+									'foundry-ironsworn': { sourceUuid: this.id }
+								}
+							})
 					)
-					this.update({ system: { denizens } })
+					void this.update({ system: { denizens } })
 				}
 
 				break

@@ -1,3 +1,4 @@
+import { ISettingTruthOption } from 'dataforged'
 import type { ChallengeRank } from '../constants'
 
 interface CounterBase {
@@ -63,12 +64,32 @@ export interface ClockDataProperties {
 	system: ClockDataPropertiesData
 }
 
+/// ///////// SETTING TRUTH OPTION
+export interface TruthOptionDataSourceData extends ISettingTruthOption {
+	dfid: string
+	Quest: string
+}
+export interface TruthOptionDataPropertiesData
+	extends TruthOptionDataSourceData {}
+export interface TruthOptionDataSource {
+	system: TruthOptionDataSourceData
+	type: 'truth'
+}
+export interface TruthOptionDataProperties {
+	system: TruthOptionDataPropertiesData
+	type: 'truth'
+}
+
+/// DATA MODEL TYPING
+
 export type JournalEntryPageDataSource =
 	| ProgressTrackDataSource
 	| ClockDataSource
+	| TruthOptionDataSource
 export type JournalEntryPageDataProperties =
 	| ProgressTrackDataProperties
 	| ClockDataProperties
+	| TruthOptionDataProperties
 
 declare global {
 	interface SourceConfig {

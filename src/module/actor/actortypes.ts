@@ -121,17 +121,7 @@ export interface FoeDataProperties {
 /**
  * Represents an entry in the delve site denizen matrix.
  */
-export interface DelveSiteDenizen extends TableResultDataConstructorData {
-	flags: {
-		'foundry-ironsworn': {
-			type: 'delve-site-denizen'
-			/**
-			 * The UUID of the originating Actor.
-			 */
-			sourceUuid: Actor['uuid']
-		}
-	}
-}
+export interface DelveSiteDenizen extends TableResultDataConstructorData {}
 
 export interface SiteDataSourceData {
 	objective: string

@@ -1,8 +1,17 @@
 import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
+import type { IRow } from 'dataforged'
 import { clamp } from 'lodash-es'
 import { ChallengeRank, RANK_INCREMENTS } from '../constants'
-import type { ProgressTrackDataPropertiesData } from './journal-entry-page-types'
+import { OracleTable } from '../roll-table/oracle-table'
+import { OracleTableResult } from '../roll-table/oracle-table-result'
+import type {
+	ProgressTrackDataPropertiesData,
+	TruthOptionDataProperties,
+	TruthOptionDataPropertiesData
+} from './journal-entry-page-types'
 
 /**
  * Extends the base {@link JournalEntryPage} document class.
@@ -10,8 +19,8 @@ import type { ProgressTrackDataPropertiesData } from './journal-entry-page-types
 export class IronswornJournalPage<
 	T extends DataConfig['JournalEntryPage'] = DataConfig['JournalEntryPage']
 > extends JournalEntryPage {
-	system!: T['system']
-	type!: T['type']
+	declare system: T['system']
+	declare type: T['type']
 	protected override async _preCreate(
 		data: JournalEntryPageData.ConstructorData,
 		options: DocumentModificationOptions,
@@ -32,6 +41,46 @@ export class IronswornJournalPage<
 			this.updateSource({ system: newSourceData })
 		}
 		await super._preCreate(data, options, user)
+	}
+
+	toTableResultData() {
+		if (this.type !== 'truth') return undefined
+		const system = this.system as TruthOptionDataPropertiesData
+		const data: TableResultDataConstructorData = {
+			range: [system.Floor ?? 0, system.Ceiling ?? 100],
+			text: system.Result,
+			flags: {
+				'foundry-ironsworn': {
+					sourceUuid: this.uuid,
+					type: 'truth-option'
+				}
+			}
+		}
+		return data
+	}
+
+	// SETTING TRUTH OPTION METHODS
+	get subtable() {
+		if (this.type !== 'truth') return undefined
+		const pageSystem = this.system as TruthOptionDataPropertiesData
+		if (pageSystem.Subtable?.length == null) return undefined
+		const results = pageSystem.Subtable.map((row) =>
+			OracleTableResult.fromDataforged(
+				row as IRow & { Floor: number; Ceiling: number }
+			)
+		)
+		const tableData: RollTableDataConstructorData = {
+			name: this.name ?? '???',
+			results,
+			flags: {
+				'foundry-ironsworn': {
+					subtitle: game.i18n.localize('IRONSWORN.First Start.SettingTruths'),
+					sourceUuid: this.uuid,
+					type: 'truth-option-subtable'
+				}
+			}
+		}
+		return new OracleTable(tableData)
 	}
 
 	// PROGRESS METHODS

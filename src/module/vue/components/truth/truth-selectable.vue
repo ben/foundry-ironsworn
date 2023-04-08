@@ -46,7 +46,7 @@ import type { TableRow } from '../../../rolls'
 import { OracleRollMessage } from '../../../rolls'
 
 const props = defineProps<{
-	//@ts-ignore
+	// @ts-ignore
 	page: IronswornJournalPage
 	radioGroup: string
 }>()
@@ -84,6 +84,7 @@ function emitValue() {
 }
 
 const suboptions = ref<HTMLElement[]>([])
+
 async function selectAndRandomize() {
 	topRadio.value?.click()
 

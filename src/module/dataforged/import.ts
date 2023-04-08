@@ -7,6 +7,7 @@ import type {
 	IOracle,
 	IOracleCategory,
 	Ironsworn,
+	IRow,
 	ISettingTruth,
 	Starforged
 } from 'dataforged'
@@ -18,6 +19,7 @@ import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
+import { OracleTableResult } from '../roll-table/oracle-table-result'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -266,23 +268,16 @@ async function processOracle(
 				category: oracle.Category
 			},
 			name: oracle.Name,
-			img: 'icons/dice/d10black.svg',
 			description,
 			formula: `d${maxRoll as number}`,
 			replacement: true,
 			displayRoll: true,
 			/* folder: // would require using an additional module */
-			results: oracle.Table?.map((tableRow) => {
-				let text: string
-				if (tableRow.Result && tableRow.Summary) {
-					text = `${tableRow.Result} (${tableRow.Summary})`
-				} else text = tableRow.Result ?? ''
-				return {
-					_id: hashLookup(tableRow.$id ?? ''),
-					range: [tableRow.Floor, tableRow.Ceiling],
-					text: tableRow.Result && renderLinksInStr(text)
-				} as TableResultDataConstructorData
-			}).filter((x) => x.range[0] !== null)
+			results: oracle.Table?.filter((x) => x.Floor !== null).map((tableRow) =>
+				OracleTableResult.fromDataforged(
+					tableRow as IRow & { Floor: number; Ceiling: number }
+				)
+			)
 		})
 	}
 

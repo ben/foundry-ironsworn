@@ -1,5 +1,27 @@
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { TableResultData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
+import type { IRow } from 'dataforged'
+import { hashLookup, renderLinksInStr } from '../dataforged'
 import type { OracleTable } from './oracle-table'
+
+declare global {
+	interface FlagConfig {
+		TableResult: {
+			'foundry-ironsworn'?: {
+				/** The UUID of the originating document */
+				sourceUuid?: Actor['uuid'] | Item['uuid'] | null | undefined
+				type?: ComputedTableResultType
+			}
+		}
+	}
+}
+
+export type ComputedTableResultType =
+	| 'delve-site-denizen'
+	| 'delve-site-feature'
+	| 'delve-site-danger'
+	| 'truth-option'
+	| 'truth-option-subtable-result'
 
 /** Extends FVTT's default TableResult with functionality specific to this system. */
 export class OracleTableResult extends TableResult {
@@ -42,8 +64,23 @@ export class OracleTableResult extends TableResult {
 		return [prev, this, next]
 	}
 
-	// TODO: This might be a better way to manage summary text as a separate field in flags (distinct from the primary text)
-	getChatText(): string {
-		return super.getChatText()
+	// TODO: TableResult#getChatText might be a better way to manage summary text as a separate field in flags (distinct from the primary text)
+
+	/** Converts a Dataforged IRow object into OracleTableResult constructor data. */
+	static fromDataforged(
+		tableRow: IRow & { Floor: number; Ceiling: number }
+	): TableResultDataConstructorData {
+		let text: string
+		if (tableRow.Result && tableRow.Summary) {
+			text = `${tableRow.Result} (${tableRow.Summary})`
+		} else text = tableRow.Result ?? ''
+
+		const data: TableResultDataConstructorData = {
+			_id: hashLookup(tableRow.$id ?? ''),
+			range: [tableRow.Floor, tableRow.Ceiling],
+			text: tableRow.Result && renderLinksInStr(text)
+		}
+
+		return data
 	}
 }

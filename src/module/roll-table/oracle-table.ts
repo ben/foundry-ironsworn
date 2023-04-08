@@ -1,6 +1,10 @@
 import type { ChatSpeakerData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatSpeakerData'
+import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
+import type { IOracle, IRow } from 'dataforged'
+import { max } from 'lodash-es'
+import { marked } from 'marked'
 import type { IronswornActor } from '../actor/actor'
-import { hashLookup } from '../dataforged'
+import { hashLookup, renderLinksInStr } from '../dataforged'
 import {
 	findPathToNodeByTableUuid,
 	getOracleTreeWithCustomOracles
@@ -14,12 +18,29 @@ declare global {
 		/** shim for v10; technically, ChatMessage#roll is deprecated, and it just gets ChatMessage#roll[0]. */
 		rolls?: Roll[] | null | undefined
 	}
+
+	interface FlagConfig {
+		RollTable: {
+			dfId?: string
+			category?: string
+			'foundry-ironsworn'?: {
+				/**
+				 * The UUID of the originating document.
+				 */
+				sourceUuid?: Actor['uuid'] | Item['uuid'] | null | undefined
+				type?: ComputedTableType
+				subtitle?: string | null | undefined
+			}
+		}
+	}
 }
 
 export type ComputedTableType =
 	| 'delve-site-denizens'
 	| 'delve-site-features'
 	| 'delve-site-dangers'
+	| 'truth-options'
+	| 'truth-option-subtable'
 
 interface OracleTableDraw extends RollTableDraw {
 	roll: Roll
@@ -33,6 +54,7 @@ export class OracleTable extends RollTable {
 		options?: RollTable.DrawOptions | undefined
 	) => Promise<OracleTableDraw>
 
+	/** The custom template used for rendering oracle results */
 	static resultTemplate =
 		'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 
@@ -68,6 +90,35 @@ export class OracleTable extends RollTable {
 		pathNames.pop()
 
 		return pathNames.join(' / ')
+	}
+
+	/** Transforms a Dataforged IOracle table into RollTable constructor data. */
+	static fromDataforged(
+		oracle: IOracle & { Table: IRow[] }
+	): RollTableDataConstructorData {
+		const description = marked.parseInline(
+			renderLinksInStr(oracle.Description ?? '')
+		)
+		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
+		const data: RollTableDataConstructorData = {
+			_id: hashLookup(oracle.$id),
+			flags: {
+				dfId: oracle.$id,
+				category: oracle.Category
+			},
+			name: oracle.Name,
+			description,
+			formula: `d${maxRoll as number}`,
+			replacement: true,
+			displayRoll: true,
+			/* folder: // would require using an additional module */
+			results: oracle.Table?.filter((x) => x.Floor !== null).map((tableRow) =>
+				OracleTableResult.fromDataforged(
+					tableRow as IRow & { Floor: number; Ceiling: number }
+				)
+			)
+		}
+		return data
 	}
 
 	async _prepareTemplateData(results: OracleTableResult[], roll: null | Roll) {

@@ -28,7 +28,9 @@
 
 <script lang="ts" setup>
 import type { ISettingTruth, ISettingTruthOption } from 'dataforged'
-import { reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
+import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
+import type { TruthOptionDataProperties } from '../../../journal/journal-entry-page-types'
 import type { TableRow } from '../../../rolls'
 import { OracleRollMessage } from '../../../rolls'
 import { enrichMarkdown } from '../../vue-plugin'
@@ -42,7 +44,9 @@ const props = defineProps<{
 }>()
 
 const jePages = (props.je() as any | undefined)?.pages ?? []
-const truthPages = jePages.filter((p) => p.type === 'truth')
+const truthPages = jePages.filter(
+	(p) => p.type === 'truth'
+) as IronswornJournalPage<TruthOptionDataProperties>[]
 const nonTruthPages = jePages.filter((p) => p.type !== 'truth')
 
 const state = reactive<{
@@ -88,6 +92,19 @@ function scrollIntoView() {
 
 const selectables = ref<(typeof TruthSelectable)[]>([])
 const customTruth = ref<typeof CustomTruth>()
+
+const truthTable = computed(() => {
+	const rows = truthPages
+		.map((p) => p.system as ISettingTruthOption)
+		.map(
+			(sys: ISettingTruthOption): TableRow => ({
+				low: sys.Floor || 0,
+				high: sys.Ceiling || 100,
+				text: sys.Result,
+				selected: false
+			})
+		)
+})
 
 async function randomize() {
 	// Roll it like an oracle

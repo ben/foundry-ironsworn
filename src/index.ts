@@ -41,6 +41,7 @@ import 'virtual:svg-icons-register'
 import { registerDefaultOracleTrees } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
 import { OracleTableResult } from './module/roll-table/oracle-table-result'
+import { BaseRollTable } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -59,12 +60,19 @@ Hooks.once('init', async () => {
 
 	CONFIG.IRONSWORN = IRONSWORN
 
+	/**
+	 * The default icon used for newly created RollTable documents
+	 */
+	// @ts-expect-error
+	BaseRollTable.DEFAULT_ICON = 'icons/dice/d10black.svg'
+
 	// Define custom Entity classes
 	CONFIG.Actor.documentClass = IronswornActor
 	CONFIG.Item.documentClass = IronswornItem
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 	CONFIG.TableResult.documentClass = OracleTableResult
 	CONFIG.RollTable.documentClass = OracleTable
+	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
 	// CONFIG.RollTable.resultTemplate =
 	// 	'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 
