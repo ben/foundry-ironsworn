@@ -19,6 +19,8 @@ export class OracleTable extends RollTable {
 	// missing from the LoFD types package
 	declare description: string
 
+	static DEFAULT_ICON = 'icons/dice/d10black.svg'
+
 	/** The custom template used for rendering oracle results */
 	static resultTemplate =
 		'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
@@ -46,8 +48,9 @@ export class OracleTable extends RollTable {
 	 * @param options Options to configure the `RollTable#draw` method.
 	 * @see https://foundryvtt.com/api/classes/client.RollTable.html#draw
 	 */
-	static async ask(id: string | string[], options?: RollTable.DrawOptions) {
-		const ids = typeof id === 'string' ? [id] : id
+	static async ask(ids: string | string[], options?: RollTable.DrawOptions) {
+		if (typeof ids === 'string') ids = [ids]
+		const draws: RollTableDraw[] = []
 
 		for await (const id of ids) {
 			let tbl: OracleTable | undefined
@@ -67,11 +70,13 @@ export class OracleTable extends RollTable {
 			}
 			if (tbl == null) {
 				logger.warn(`Couldn't find an oracle for ID: ${id}`)
-
 				continue
+			} else {
+				const result = await tbl.draw(options)
+				draws.push(result)
 			}
-			await tbl?.draw(options)
 		}
+		return draws
 	}
 
 	/** A string representing the path this table in the Ironsworn oracle tree (not including this table) */
