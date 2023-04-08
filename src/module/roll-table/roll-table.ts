@@ -26,7 +26,6 @@ export class OracleTable extends RollTable {
 	static resultTemplate =
 		'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 
-	// TODO: remove the old getFoundryTableByDfId function in favour of this static method
 	static async getByDfId(
 		dfid: string
 	): Promise<StoredDocument<OracleTable> | undefined> {

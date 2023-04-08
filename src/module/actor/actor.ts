@@ -1,5 +1,4 @@
 import { CreateActorDialog } from '../applications/createActorDialog'
-import { getFoundryTableByDfId } from '../dataforged'
 import type {
 	CharacterDataPropertiesData,
 	SiteDataPropertiesData
@@ -91,7 +90,7 @@ export class IronswornActor extends Actor {
 			return undefined
 
 		// TODO: is it worth trying to cache this?
-		const oracle = await getFoundryTableByDfId(
+		const oracle = await OracleTable.getByDfId(
 			'Ironsworn/Oracles/Moves/Reveal_a_Danger'
 		)
 		if (oracle == null) return

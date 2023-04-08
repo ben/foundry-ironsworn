@@ -3,7 +3,6 @@ import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
-import { getFoundryTableByDfId } from '../dataforged'
 import { OracleTable } from '../roll-table/roll-table'
 
 export class IronswornChatCard {
@@ -30,7 +29,7 @@ export class IronswornChatCard {
 
 			const system = fItem.system as SFMoveDataPropertiesData
 			const oracleIds = system.Oracles ?? []
-			return await Promise.all(oracleIds.map(getFoundryTableByDfId))
+			return await Promise.all(oracleIds.map(OracleTable.getByDfId))
 		})
 		const tables = compact(flatten(await Promise.all(maybeTablePromises)))
 		if (tables.length === 0) return

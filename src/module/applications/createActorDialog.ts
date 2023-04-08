@@ -1,7 +1,6 @@
 import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
-import { getFoundryTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
 import { OracleTable } from '../roll-table/roll-table'
 
@@ -159,10 +158,10 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	}
 
 	async _ironlanderNameTables(): Promise<OracleTable[] | undefined> {
-		const tableA = (await getFoundryTableByDfId(
+		const tableA = (await OracleTable.getByDfId(
 			'Ironsworn/Oracles/Name/Ironlander/A'
 		)) as any
-		const tableB = (await getFoundryTableByDfId(
+		const tableB = (await OracleTable.getByDfId(
 			'Ironsworn/Oracles/Name/Ironlander/B'
 		)) as any
 		if (tableA && tableB) return [tableA, tableB]

@@ -57,7 +57,6 @@
 <script lang="ts" setup>
 import { computed, inject, reactive } from 'vue'
 import type { SiteDataPropertiesData } from '../../../actor/actortypes'
-import { getFoundryTableByDfId } from '../../../dataforged'
 import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
 import { IronswornPrerollDialog } from '../../../rolls'

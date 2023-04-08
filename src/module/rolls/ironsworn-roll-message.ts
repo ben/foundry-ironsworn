@@ -9,9 +9,8 @@ import {
 import { IronswornRoll } from '.'
 import type { IronswornActor } from '../actor/actor'
 import type { CharacterDataPropertiesData } from '../actor/actortypes'
-import { getFoundryTableByDfId } from '../dataforged'
 import type { SFMoveDataPropertiesData } from '../item/itemtypes'
-import { SFMoveDataProperties } from '../item/itemtypes'
+import { OracleTable } from '../roll-table/roll-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
@@ -324,7 +323,7 @@ export class IronswornRollMessage {
 		const system = move.system as SFMoveDataPropertiesData
 		const dfids = system.Oracles ?? []
 		const nextOracles = compact(
-			await Promise.all(dfids.map(getFoundryTableByDfId))
+			await Promise.all(dfids.map(OracleTable.getByDfId))
 		)
 		return { nextOracles }
 	}
