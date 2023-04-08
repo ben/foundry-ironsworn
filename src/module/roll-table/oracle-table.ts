@@ -248,8 +248,7 @@ export class OracleTable extends RollTable {
 
 declare global {
 	interface Game {
-		// module: Dice So Nice
-
+		// MODULE: Dice So Nice
 		dice3d?: {
 			/**
 			 * Show the 3D Dice animation for the Roll made by the User.

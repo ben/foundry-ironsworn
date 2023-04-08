@@ -43,9 +43,6 @@ import type {
 import { inRange } from 'lodash-es'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
-import { OracleTableResult } from '../../../roll-table/oracle-table-result'
-import type { TableRow } from '../../../rolls'
-import { OracleRollMessage } from '../../../rolls'
 
 const props = defineProps<{
 	// @ts-ignore
@@ -105,29 +102,7 @@ async function selectAndRandomize() {
 		const selectedIndex = props.page.subtable.results.contents.findIndex(
 			(row) => inRange(roll.total as number, ...row.range)
 		)
-	}
-
-	if (pageSystem.Subtable && pageSystem.Subtable.length > 0) {
-		const rows = pageSystem.Subtable.map(
-			(x): TableRow => ({
-				low: x.Floor || 0,
-				high: x.Ceiling || 100,
-				text: x.Result,
-				selected: false
-			})
-		)
-		const msg = OracleRollMessage.fromRows(
-			rows,
-			props.page.name ?? '???',
-			game.i18n.localize('IRONSWORN.First Start.SettingTruths')
-		)
-		await msg.createOrUpdate()
-
-		const result = await msg.getResult()
-		const dfRow = pageSystem.Subtable.find((x) => x.Floor === result?.low)
-		if (!dfRow) throw new Error('wtf')
-		const idx = pageSystem.Subtable.indexOf(dfRow)
-		suboptions.value[idx]?.click()
+		suboptions.value[selectedIndex]?.click()
 	}
 }
 

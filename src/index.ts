@@ -42,10 +42,23 @@ import { registerDefaultOracleTrees } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
 import { OracleTableResult } from './module/roll-table/oracle-table-result'
 import { BaseRollTable } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
+import type {
+	DocumentSubTypes,
+	DocumentType
+} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 declare global {
 	interface LenientGlobalVariableTypes {
 		game: never // the type doesn't matter
+	}
+
+	// fix missing LoFD type inference
+	interface Game {
+		documentTypes: { [P in DocumentType]: Array<DocumentSubTypes<P>> } & {
+			JournalEntryPage: Array<
+				JournalEntryPageDataProperties['type'] | CONFIG['JournalEntryPage']
+			>
+		}
 	}
 }
 

@@ -1,23 +1,23 @@
 import type { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
-import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type {
 	IAssetType,
 	IMoveCategory,
 	IOracle,
 	IOracleCategory,
-	Ironsworn,
 	IRow,
 	ISettingTruth,
 	Starforged
 } from 'dataforged'
-import { ironsworn, starforged } from 'dataforged'
+import { starforged } from 'dataforged'
 import { isArray, isObject, max } from 'lodash-es'
 import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
+import { IronswornJournalEntry } from '../journal/journal-entry'
+import { IronswornJournalPage } from '../journal/journal-entry-page'
 import { OracleTable } from '../roll-table/oracle-table'
 import { OracleTableResult } from '../roll-table/oracle-table-result'
 import {
@@ -403,16 +403,18 @@ async function processTruths(
 	if (pack == null) throw new Error(`Couldn't find ${outputCompendium}`)
 
 	for (const truth of truths) {
-		const je = await JournalEntry.create(
+		const je = await IronswornJournalEntry.create(
 			{
 				name: truth.Display.Title,
-				flags: { 'foundry-ironsworn': { dfid: truth.$id } }
+				flags: {
+					'foundry-ironsworn': { dfid: truth.$id, type: 'truth-category' }
+				}
 			},
 			{ pack: outputCompendium }
 		)
 
 		for (const entry of truth.Table) {
-			await JournalEntryPage.create(
+			await IronswornJournalPage.create(
 				{
 					type: 'truth',
 					name: entry.Result,
@@ -427,7 +429,7 @@ async function processTruths(
 			)
 		}
 
-		await JournalEntryPage.create(
+		await IronswornJournalPage.create(
 			{
 				name: 'Character Inspiration',
 				text: {
@@ -448,12 +450,6 @@ async function processTruths(
 async function processSFTruths() {
 	await processTruths(
 		((starforged as any).default as Starforged)['Setting Truths'],
-		'foundry-ironsworn.starforgedtruths'
-	)
-}
-async function processISTruths() {
-	await processTruths(
-		((ironsworn as any).default as Ironsworn)['Setting Truths']!,
 		'foundry-ironsworn.starforgedtruths'
 	)
 }

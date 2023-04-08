@@ -1,5 +1,6 @@
-import { ISettingTruthOption } from 'dataforged'
+import type { ISettingTruthOption } from 'dataforged'
 import type { ChallengeRank } from '../constants'
+import type { IronswornJournalPage } from './journal-entry-page'
 
 interface CounterBase {
 	max: number
@@ -83,19 +84,36 @@ export interface TruthOptionDataProperties {
 /// DATA MODEL TYPING
 
 export type JournalEntryPageDataSource =
+	| { type: ValueOf<CONFIG['JournalEntryPage']['coreTypes']>; system: object }
 	| ProgressTrackDataSource
 	| ClockDataSource
 	| TruthOptionDataSource
 export type JournalEntryPageDataProperties =
+	| { type: ValueOf<CONFIG['JournalEntryPage']['coreTypes']>; system: object }
 	| ProgressTrackDataProperties
 	| ClockDataProperties
 	| TruthOptionDataProperties
 
 declare global {
+	type JournalEntryPageType = JournalEntryPageDataSource['type']
+	type JournalEntryPageSystem<
+		T extends JournalEntryPageType = JournalEntryPageType
+	> = (JournalEntryPageDataProperties & { type: T })['system']
+
 	interface SourceConfig {
 		JournalEntryPage: JournalEntryPageDataSource
 	}
 	interface DataConfig {
 		JournalEntryPage: JournalEntryPageDataProperties
+	}
+	interface DocumentClassConfig {
+		JournalEntryPage: typeof IronswornJournalPage
+	}
+	interface FlagConfig {
+		JournalEntryPage: {
+			'foundry-ironsworn'?: {
+				assets?: string[]
+			}
+		}
 	}
 }
