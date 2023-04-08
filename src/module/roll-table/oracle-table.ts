@@ -40,7 +40,7 @@ export class OracleTable extends RollTable {
 	}
 
 	/**
-	 * "Ask the Oracle": Convenience method that retrieves one or more oracle tables and immediately rolls on them.
+	 * "Ask the Oracle": Retrieve one or more oracle tables and immediately rolls on them.
 	 *
 	 * @param id A table ID, a table UUID, or Dataforged ID. Alternatively, an array of IDs may be provided, and each will be rolled.
 	 * @param options Options to configure the `RollTable#draw` method.
