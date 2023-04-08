@@ -1,6 +1,5 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import type { LegacyFeatureOrDanger } from '../item/itemtypes'
-import type { TableRow } from '../rolls'
+import type { LegacyTableRow } from '../item/itemtypes'
 
 /**
  *
@@ -14,9 +13,7 @@ export function normalizeTableRows(
 	key: string,
 	type: string
 ): TableResultDataConstructorData[] {
-	const oldRows = getProperty(document, key) as Array<
-		TableRow | LegacyFeatureOrDanger
-	>
+	const oldRows = getProperty(document, key) as LegacyTableRow[]
 	if (!Array.isArray(oldRows)) {
 		console.log(
 			`Unable to migrate because this document lacks a "${key}" key `,
@@ -39,14 +36,13 @@ export function normalizeTableRows(
 }
 
 export function toTableResult(
-	tableRow: TableRow | LegacyFeatureOrDanger,
+	tableRow: LegacyTableRow,
 	flags?: Record<string, unknown>
 ): TableResultDataConstructorData {
-	const text =
-		(tableRow as LegacyFeatureOrDanger).description ??
-		(tableRow as TableRow).text
+	const text = tableRow.description ?? tableRow.text
 	return {
-		range: (tableRow as any).range ?? [tableRow.low, tableRow.high],
+		// @ts-expect-error
+		range: tableRow.range ?? [tableRow.low, tableRow.high],
 		text,
 		flags
 	} as TableResultDataConstructorData

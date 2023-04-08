@@ -18,7 +18,7 @@ import { sample } from 'lodash-es'
 import type { ExtractPropTypes } from 'vue'
 import { inject } from 'vue'
 import type { IOracleTreeNode } from '../../../features/customoracles.js'
-import type { OracleTable } from '../../../roll-table/oracle-table'
+import { OracleTable } from '../../../roll-table/oracle-table'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {}
@@ -41,8 +41,6 @@ async function rollOracle() {
 	const randomTableUuid = sample(props.node.tables)
 	if (!randomTableUuid) return
 
-	const table = (await fromUuid(randomTableUuid)) as OracleTable | undefined
-
-	await table?.draw({ displayChat: true })
+	OracleTable.ask(randomTableUuid)
 }
 </script>

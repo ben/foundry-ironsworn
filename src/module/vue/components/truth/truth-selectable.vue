@@ -88,14 +88,7 @@ async function selectAndRandomize() {
 	topRadio.value?.click()
 
 	if (props.page.subtable) {
-		// LoFD is *not* consistent with FVTT's actual source code, here.
-		// when displaychat === true, denizens.draw calls RollTable#toMessage, which calls to ChatMessage#create
-		const msg = (await props.page.subtable.draw({
-			displayChat: true
-		})) as unknown as ChatMessage
-		if (!msg) return
-
-		const roll = msg.rolls?.[0]
+		const { roll } = await props.page.subtable.draw()
 
 		if (!roll || !roll.total) return
 

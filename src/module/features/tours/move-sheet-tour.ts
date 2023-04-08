@@ -140,10 +140,7 @@ export class MoveSheetTour extends IronswornTour {
 					tooltipDirection: 'LEFT',
 					async hook() {
 						await sheet.minimize()
-						const tbl = await OracleTable.getByDfId(
-							'Starforged/Oracles/Core/Action'
-						)
-						await tbl?.draw({ displayChat: true })
+						await OracleTable.ask('Starforged/Oracles/Core/Action')
 						await new Promise((r) => setTimeout(r, 300))
 					}
 				},

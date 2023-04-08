@@ -99,14 +99,8 @@ async function randomize() {
 	const tbl = props.je().truthTable
 	if (!tbl) return
 
-	// LoFD is *not* consistent with FVTT's actual source code, here.
-	// when displaychat === true, denizens.draw calls RollTable#toMessage, which calls to ChatMessage#create
-	const msg = (await tbl.draw({
-		displayChat: true
-	})) as unknown as ChatMessage
-	if (!msg) return
+	const { roll, results } = await tbl.draw()
 
-	const roll = msg.rolls?.[0]
 	if (!roll || !roll.total) return
 
 	// Find the result and activate it
