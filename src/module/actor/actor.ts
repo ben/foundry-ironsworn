@@ -136,12 +136,7 @@ export class IronswornActor extends Actor {
 		return new OracleTable({
 			name,
 			formula: '1d100',
-			results: (this.system as SiteDataPropertiesData).denizens.map(
-				(denizen) => {
-					denizen.drawn = false
-					return denizen
-				}
-			),
+			results: (this.system as SiteDataPropertiesData).denizens,
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: this.subtitle,
