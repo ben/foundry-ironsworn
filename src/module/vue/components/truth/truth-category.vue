@@ -99,7 +99,7 @@ async function randomize() {
 	const tbl = props.je().truthTable
 	if (!tbl) return
 
-	const { roll, results } = await tbl.draw()
+	const { roll } = await tbl.draw()
 
 	if (!roll || !roll.total) return
 

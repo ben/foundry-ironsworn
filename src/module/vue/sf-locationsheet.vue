@@ -575,7 +575,7 @@ async function drawAndReturnResult(
 
 	const {
 		results: [result]
-	} = await table.draw({ displayChat: true })
+	} = await table.draw()
 
 	return result?.text
 }

@@ -42,7 +42,7 @@ export class IronswornChatCard {
 			tables.map((t) => ({
 				name: t.name ?? '',
 				icon: '<i class="isicon-oracle"></i>',
-				callback: async () => await t.draw({ displayChat: true })
+				callback: async () => await t.draw()
 			}))
 		)
 	}
@@ -142,7 +142,7 @@ export class IronswornChatCard {
 			(await isPack?.getDocument(tableid))) as OracleTable | undefined
 		if (!table?.id) return
 
-		await table.draw({ displayChat: true })
+		await table.draw()
 	}
 
 	async _oracleResultCopy(ev: JQuery.ClickEvent) {

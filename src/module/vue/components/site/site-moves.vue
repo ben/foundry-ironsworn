@@ -110,7 +110,7 @@ async function revealADanger() {
 	if (!hasThemeAndDomain.value) return
 
 	const table = await $site?.getDangers()
-	return await table?.draw({ displayChat: true })
+	return await table?.draw()
 }
 
 async function locateObjective() {

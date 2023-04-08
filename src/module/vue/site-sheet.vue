@@ -190,7 +190,7 @@ const hasThemeAndDomain = computed(() => {
 })
 
 async function randomFeature() {
-	return $actor?.features?.draw({ displayChat: true })
+	return $actor?.features?.draw()
 }
 
 function saveDescription() {
