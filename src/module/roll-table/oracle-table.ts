@@ -1,4 +1,5 @@
 import type { ChatSpeakerData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatSpeakerData'
+import type { IronswornActor } from '../actor/actor'
 import { hashLookup } from '../dataforged'
 import {
 	findPathToNodeByTableUuid,
@@ -14,6 +15,11 @@ declare global {
 		rolls?: Roll[] | null | undefined
 	}
 }
+
+export type ComputedTableType =
+	| 'delve-site-denizens'
+	| 'delve-site-features'
+	| 'delve-site-dangers'
 
 interface OracleTableDraw extends RollTableDraw {
 	roll: Roll
@@ -148,34 +154,78 @@ export class OracleTable extends RollTable {
 		return await cls.create(messageData, messageOptions)
 	}
 
+	/** Retrieve a computed oracle table from its originating document. This allows rehydration of computed tables from e.g. chat message flags. */
+	static async getComputedTable(sourceUuid: string, type: ComputedTableType) {
+		const source = await fromUuid(sourceUuid)
+		if (source == null) return undefined
+		let table: OracleTable | undefined
+		switch (type) {
+			case 'delve-site-dangers':
+				table = await (source as IronswornActor).getDangers()
+				break
+			case 'delve-site-denizens':
+				table = (source as IronswornActor).denizens
+				break
+			case 'delve-site-features':
+				table = (source as IronswornActor).features
+				break
+			default:
+				break
+		}
+		return table
+	}
+
 	/**
-	 * Rerolls an oracle result message, replacing it with the new result
+	 * Rerolls an oracle result message, replacing the message content with the new result
 	 */
 	static async reroll(messageId: string) {
 		const msg = game.messages?.get(messageId)
 		if (msg == null) return
-		const rollTableUuid = msg.getFlag('foundry-ironsworn', 'RollTable') as
+		const oracleTableUuid = msg.getFlag('foundry-ironsworn', 'RollTable') as
 			| string
 			| undefined
 		const rerolls = (msg.getFlag('foundry-ironsworn', 'rerolls') ??
 			[]) as number[]
-		if (rollTableUuid == null) return
-		const rollTable = (await fromUuid(rollTableUuid)) as OracleTable | undefined
 
-		if (rollTable == null) return
+		const sourceUuid = msg.getFlag('foundry-ironsworn', 'sourceUuid') as
+			| string
+			| undefined
+		const computedTableType = msg.getFlag('foundry-ironsworn', 'type') as
+			| ComputedTableType
+			| undefined
+
+		if (
+			oracleTableUuid == null &&
+			(sourceUuid == null || computedTableType == null)
+		)
+			return
+		let oracleTable: OracleTable | undefined
+		if (oracleTableUuid != null)
+			oracleTable = (await fromUuid(oracleTableUuid)) as OracleTable | undefined
+		else
+			oracleTable = await OracleTable.getComputedTable(
+				sourceUuid as string,
+				computedTableType as ComputedTableType
+			)
+
+		if (oracleTable == null) return
 		// defer render to chat so we can manually set the chat message id
-		const { results, roll } = await rollTable.draw({ displayChat: false })
+		const { results, roll } = await oracleTable.draw({ displayChat: false })
 
-		const templateData = await rollTable._prepareTemplateData(results, roll)
+		const templateData = await oracleTable._prepareTemplateData(results, roll)
+
+		const flags = foundry.utils.mergeObject(msg.toObject().flags, {
+			'foundry-ironsworn': {
+				rerolls: [...rerolls, roll.total]
+			}
+		})
 
 		// module: Dice So Nice
 		await game.dice3d?.showForRoll(roll, game.user, true)
 
 		await msg.update({
 			content: await renderTemplate(OracleTable.resultTemplate, templateData),
-			flags: {
-				'foundry-ironsworn.rerolls': [...rerolls, roll.total]
-			}
+			flags
 		})
 	}
 }

@@ -16,7 +16,10 @@ export class OracleTableResult extends TableResult {
 	 * @return A tuple of the previous row (if it exists) and the next row (if it exists).
 	 * @remarks Doesn't take into account overlapping ranges because 1) it's complicated and 2) none of our tables utilize that (currently).
 	 */
-	get adjacentRows(): [this | undefined, this | undefined] {
+	get adjacentRows(): [
+		OracleTableResult | undefined,
+		OracleTableResult | undefined
+	] {
 		const prev = this.collection.find(
 			(result) => result.range[1] === this.range[0] - 1
 		)
@@ -30,7 +33,11 @@ export class OracleTableResult extends TableResult {
 	 * Convenience getter that returns the adjacent rows *plus* this row in an ordered tuple.
 	 * @return A ordered tuple containing the previous result, the current result, and the next result,
 	 */
-	get displayRows(): [this | undefined, this, this | undefined] {
+	get displayRows(): [
+		OracleTableResult | undefined,
+		this,
+		OracleTableResult | undefined
+	] {
 		const [prev, next] = this.adjacentRows
 		return [prev, this, next]
 	}
