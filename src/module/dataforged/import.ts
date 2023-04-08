@@ -73,7 +73,7 @@ const PACKS = [
 	'foundry-ironsworn.ironswornoracles',
 	'foundry-ironsworn.ironswornmoves',
 	'foundry-ironsworn.ironsworntruths'
-]
+] as const
 
 /**
  * Converts JSON from dataforged resources into foundry packs. Requires packs to
@@ -434,6 +434,7 @@ async function processTruths(
 		await IronswornJournalPage.create(
 			{
 				name: 'Character Inspiration',
+				type: 'text',
 				text: {
 					markdown: truth.Character,
 					format: 2 // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN
