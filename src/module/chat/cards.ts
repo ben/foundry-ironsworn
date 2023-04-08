@@ -167,10 +167,3 @@ export class IronswornChatCard {
 		Hooks.on('renderChatMessage', IronswornChatCard.bind)
 	}
 }
-
-// Extend type
-declare global {
-	interface ChatMessage {
-		ironswornCard?: IronswornChatCard
-	}
-}

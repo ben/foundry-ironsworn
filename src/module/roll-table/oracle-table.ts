@@ -14,13 +14,6 @@ import { cachedDocumentsForPack } from '../features/pack-cache'
 import { OracleTableResult } from './oracle-table-result'
 import type { ComputedTableType } from './roll-table-types'
 
-declare global {
-	interface ChatMessage {
-		/** shim for v10; technically, ChatMessage#roll is deprecated, and it just gets ChatMessage#roll[0]. */
-		rolls?: Roll[] | null | undefined
-	}
-}
-
 /** Extends FVTT's default RollTable with functionality specific to this system. */
 export class OracleTable extends RollTable {
 	// missing from the LoFD types package
