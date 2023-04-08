@@ -9,7 +9,7 @@ const THEME_IMAGES = {
 	Infested: 'icons/creatures/eyes/icy-cluster-blue.webp',
 	Ravaged: 'icons/environment/settlement/building-rubble.webp',
 	Wild: 'icons/magic/nature/root-vines-grow-brown.webp'
-}
+} as const
 
 const THEME_IDS = {
 	Ancient: '9RnSqMcrekJoJbXH',
@@ -20,7 +20,7 @@ const THEME_IDS = {
 	Infested: 'H5aJvBKwPrbEnzMe',
 	Ravaged: 'iDOVA8797p4kYar7',
 	Wild: 'v3jYuNrr1Jt4TzNZ'
-}
+} as const
 
 const DOMAIN_IMAGES = {
 	Barrow: 'icons/environment/wilderness/cave-entrance-dwarven-hill.webp',
@@ -35,7 +35,7 @@ const DOMAIN_IMAGES = {
 	Stronghold: 'icons/environment/settlement/castle.webp',
 	Tanglewood: 'icons/environment/wilderness/terrain-forest-gray.webp',
 	Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp'
-}
+} as const
 
 const DOMAIN_IDS = {
 	Barrow: 'LIoWYBGBBMPlPNam',
@@ -50,7 +50,7 @@ const DOMAIN_IDS = {
 	Stronghold: 'Yy9KkvSOvB2tWxOp',
 	Tanglewood: 'MbJlpR81C4Q4WDV2',
 	Underkeep: 'vyyrG8pPtDQ6FAgG'
-}
+} as const
 
 const PACKS = [
 	'foundry-ironsworn.ironsworndelvethemes',
@@ -58,17 +58,24 @@ const PACKS = [
 	'foundry-ironsworn.ironswornfoes',
 	'foundry-ironsworn.foeactorsis',
 	'foundry-ironsworn.ironswornoracles'
-]
+] as const
 
 interface RawFeatureOrDanger {
 	Chance: number
 	Description: string
 }
+interface RawThemeOrDomain {
+	Name: keyof typeof THEME_IDS | keyof typeof DOMAIN_IDS
+	Summary: string
+	Description: string
+	Features: RawFeatureOrDanger[]
+	Dangers: RawFeatureOrDanger[]
+}
 
 function importDelveFeaturesOrDangers(
 	rawFeaturesOrDangers: RawFeatureOrDanger[],
 	type: 'feature' | 'danger',
-	sourceId?: Item['uuid'],
+	sourceId: Item['uuid'],
 	low = 1
 ) {
 	const result: DelveSiteFeatureOrDanger[] = []
@@ -103,74 +110,86 @@ export async function importFromDatasworn() {
 	}
 
 	// Themes
+	let pack: ValueOf<typeof PACKS> = 'foundry-ironsworn.ironsworndelvethemes'
 	const themesJson = await fetch(
 		'systems/foundry-ironsworn/assets/delve-themes.json'
 	).then(async (x) => await x.json())
-	const themesToCreate = themesJson.Themes.map((rawTheme) => {
-		const _id = THEME_IDS[rawTheme.Name]
-		const themeData = {
-			_id,
-			type: 'delve-theme',
-			name: rawTheme.Name,
-			img: THEME_IMAGES[rawTheme.Name],
-			system: {
-				summary: rawTheme.Summary,
-				description: rawTheme.Description,
-				features: importDelveFeaturesOrDangers(
-					rawTheme.Features,
-					'feature',
-					_id,
-					1
-				),
-				dangers: importDelveFeaturesOrDangers(
-					rawTheme.Dangers,
-					'danger',
-					_id,
-					1
-				)
-			}
-		}
+	const themesToCreate = (themesJson.Themes as RawThemeOrDomain[]).map(
+		(rawTheme) => {
+			const _id = THEME_IDS[rawTheme.Name as keyof typeof THEME_IDS]
+			const uuid = `${pack}.${_id}`
 
-		return themeData
-	})
+			const themeData = {
+				_id,
+				type: 'delve-theme',
+				name: rawTheme.Name,
+				img: THEME_IMAGES[rawTheme.Name],
+				system: {
+					summary: rawTheme.Summary,
+					description: rawTheme.Description,
+					features: importDelveFeaturesOrDangers(
+						rawTheme.Features,
+						'feature',
+						uuid,
+						1
+					),
+					dangers: importDelveFeaturesOrDangers(
+						rawTheme.Dangers,
+						'danger',
+						uuid,
+						1
+					)
+				}
+			}
+
+			return themeData
+		}
+	)
+	// @ts-expect-error until v10 types are available
 	await Item.createDocuments(themesToCreate, {
-		pack: 'foundry-ironsworn.ironsworndelvethemes',
+		pack,
 		keepId: true
 	})
 
 	// Domains
+	pack = 'foundry-ironsworn.ironsworndelvedomains'
 	const domainsJson = await fetch(
 		'systems/foundry-ironsworn/assets/delve-domains.json'
 	).then(async (x) => await x.json())
-	const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
-		const _id = DOMAIN_IDS[rawDomain.Name]
-		const domainData = {
-			_id,
-			type: 'delve-domain',
-			name: rawDomain.Name,
-			img: DOMAIN_IMAGES[rawDomain.Name],
-			system: {
-				summary: rawDomain.Summary,
-				description: rawDomain.Description,
-				features: importDelveFeaturesOrDangers(
-					rawDomain.Features,
-					'feature',
-					_id,
-					21
-				),
-				dangers: importDelveFeaturesOrDangers(
-					rawDomain.Dangers,
-					'danger',
-					_id,
-					31
-				)
-			}
-		}
+	const domainsToCreate = (domainsJson.Domains as RawThemeOrDomain[]).map(
+		(rawDomain) => {
+			const _id = DOMAIN_IDS[rawDomain.Name as keyof typeof DOMAIN_IDS]
+			const uuid = `${pack}.${_id}`
 
-		return domainData
-	})
+			const domainData = {
+				_id,
+				type: 'delve-domain',
+				name: rawDomain.Name,
+				img: DOMAIN_IMAGES[rawDomain.Name],
+				system: {
+					summary: rawDomain.Summary,
+					description: rawDomain.Description,
+					features: importDelveFeaturesOrDangers(
+						rawDomain.Features,
+						'feature',
+						uuid,
+						21
+					),
+					dangers: importDelveFeaturesOrDangers(
+						rawDomain.Dangers,
+						'danger',
+						uuid,
+						31
+					)
+				}
+			}
+
+			return domainData
+		}
+	)
+	// @ts-expect-error until v10 types are available
 	await Item.createDocuments(domainsToCreate, {
-		pack: 'foundry-ironsworn.ironsworndelvedomains',
+		pack,
 		keepId: true
 	})
 
