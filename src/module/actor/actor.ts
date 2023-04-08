@@ -1,4 +1,3 @@
-import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import { getFoundryTableByDfId } from '../dataforged'
 import type {
@@ -6,15 +5,7 @@ import type {
 	SiteDataPropertiesData
 } from './actortypes'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
-import type {
-	DelveThemeDataProperties,
-	DelveDomainDataProperties
-} from '../item/itemtypes'
 import { OracleTable } from '../roll-table/oracle-table'
-import {
-	TableResultDataConstructorData,
-	TableResultDataProperties
-} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 
 let CREATE_DIALOG: CreateActorDialog
 
@@ -32,7 +23,7 @@ export class IronswornActor extends Actor {
 		if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog()
 		CREATE_DIALOG.options.folder = data?.folder
 		CREATE_DIALOG.render(true)
-		return undefined
+		return undefine3d
 	}
 
 	async burnMomentum() {
@@ -72,16 +63,14 @@ export class IronswornActor extends Actor {
 		// TODO: is there a good way to cache this?
 		if (this.type !== 'site' || this.theme == null || this.domain == null)
 			return undefined
-		const results = [
-			// @ts-expect-error
-			...this.theme.system.features,
-			// @ts-expect-error
-			...this.domain.system.features
-		] as TableResultDataConstructorData[]
-
 		return new OracleTable({
 			name: game.i18n.localize('IRONSWORN.DELVESITE.Features'),
-			results,
+			results: [
+				// @ts-expect-error
+				...this.theme.system.features,
+				// @ts-expect-error
+				...this.domain.system.features
+			],
 			formula: '1d100',
 			flags: {
 				'foundry-ironsworn': {
@@ -106,18 +95,17 @@ export class IronswornActor extends Actor {
 			'Ironsworn/Oracles/Moves/Reveal_a_Danger'
 		)
 		if (oracle == null) return
-		const results = [
-			// @ts-expect-error
-			...this.theme.system.dangers,
-			// @ts-expect-error
-			...this.domain.system.dangers,
-			// Omits the first two rows
-			...oracle.toObject().results.slice(2)
-		] as TableResultDataConstructorData[]
 
 		return new OracleTable({
 			name: game.i18n.localize('IRONSWORN.DELVESITE.Dangers'),
-			results,
+			results: [
+				// @ts-expect-error
+				...this.theme.system.dangers,
+				// @ts-expect-error
+				...this.domain.system.dangers,
+				// Omits the first two rows
+				...oracle.toObject().results.slice(2)
+			],
 			formula: '1d100',
 			flags: {
 				'foundry-ironsworn': {
@@ -132,9 +120,8 @@ export class IronswornActor extends Actor {
 	/** The delve site's computed Denizens table */
 	get denizens() {
 		if (this.type !== 'site') return
-		const name = game.i18n.localize('IRONSWORN.DELVESITE.Denizens')
 		return new OracleTable({
-			name,
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Denizens'),
 			formula: '1d100',
 			results: (this.system as SiteDataPropertiesData).denizens,
 			flags: {

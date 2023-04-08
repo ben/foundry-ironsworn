@@ -6,9 +6,9 @@ import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 export async function createSfMoveChatMessage(move: IronswornItem) {
 	const { dfid, Oracles } = move.system as SFMoveDataPropertiesData
 	const dfMove = await getDFMoveByDfId(dfid)
-	const dfIds = Oracles ?? dfMove?.Oracles ?? []
+	const dfids = Oracles ?? dfMove?.Oracles ?? []
 	const nextOracles = compact(
-		await Promise.all(dfIds.map(getFoundryTableByDfId))
+		await Promise.all(dfids.map(getFoundryTableByDfId))
 	)
 
 	const params = { move, nextOracles }

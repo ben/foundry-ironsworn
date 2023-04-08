@@ -26,13 +26,13 @@ export type ComputedTableType =
 declare global {
 	interface FlagConfig {
 		RollTable: {
-			dfId?: string
-			category?: string
 			'foundry-ironsworn'?: {
 				/** The UUID of the originating document, for computed RollTables */
 				sourceId?: Actor['uuid'] | Item['uuid'] | null | undefined
 				type?: ComputedTableType
 				subtitle?: string | null | undefined
+				dfid?: string
+				category?: string
 			}
 		}
 		TableResult: {

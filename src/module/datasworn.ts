@@ -1,7 +1,3 @@
-import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
-import { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { IronswornActor } from './actor/actor'
-import { IronswornItem } from './item/item.js'
 import type { DelveSiteFeatureOrDanger } from './item/itemtypes'
 
 const THEME_IMAGES = {
@@ -54,70 +50,6 @@ const DOMAIN_IDS = {
 	Stronghold: 'Yy9KkvSOvB2tWxOp',
 	Tanglewood: 'MbJlpR81C4Q4WDV2',
 	Underkeep: 'vyyrG8pPtDQ6FAgG'
-}
-
-const FOE_IMAGES = {
-	Broken: 'icons/creatures/mammals/humanoid-fox-cat-archer.webp',
-	'Common Folk': 'icons/tools/hand/shovel-spade-steel-blue-brown.webp',
-	Hunter: 'icons/environment/people/archer.webp',
-	Mystic: 'icons/environment/people/cleric-orange.webp',
-	Raider: 'icons/sundries/flags/banner-flag-pirate.webp',
-	Warrior: 'icons/skills/melee/hand-grip-sword-red.webp',
-	Husk: 'icons/magic/earth/strike-body-stone-crumble.webp',
-	Zealot: 'icons/environment/people/cleric-grey.webp',
-	Elf: 'icons/creatures/magical/humanoid-horned-rider.webp',
-	Giant: 'icons/creatures/magical/humanoid-giant-forest-blue.webp',
-	Primordial: 'icons/creatures/magical/spirit-undead-horned-blue.webp',
-	Troll: 'icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp',
-	Varou: 'icons/creatures/mammals/wolf-shadow-black.webp',
-	Atanya: 'icons/magic/air/wind-weather-sailing-ship.webp',
-	Merrow: 'icons/creatures/fish/fish-man-eye-green.webp',
-	Bear: 'icons/creatures/abilities/bear-roar-bite-brown-green.webp',
-	Boar: 'icons/commodities/treasure/figurine-boar.webp',
-	Gaunt: 'icons/magic/fire/elemental-creature-horse.webp',
-	'Marsh Rat': 'icons/creatures/mammals/rodent-rat-diseaed-gray.webp',
-	Wolf: 'icons/creatures/abilities/wolf-howl-moon-purple.webp',
-	Bladewing: 'icons/creatures/magical/spirit-undead-winged-ghost.webp',
-	'Carrion Newt':
-		'icons/creatures/reptiles/chameleon-camouflage-green-brown.webp',
-	'Cave Lion': 'icons/creatures/abilities/lion-roar-yellow.webp',
-	'Deep Rat': 'icons/creatures/mammals/rodent-rat-green.webp',
-	'Nightmare Spider':
-		'icons/creatures/invertebrates/spider-mandibles-brown.webp',
-	'Shroud Crab': 'icons/consumables/meat/claw-crab-lobster-serrated-pink.webp',
-	Trog: 'icons/creatures/reptiles/lizard-iguana-green.webp',
-	Basilisk: 'icons/creatures/reptiles/snake-poised-white.webp',
-	'Elder Beast':
-		'icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp',
-	'Harrow Spider': 'icons/creatures/invertebrates/spider-web-black.webp',
-	Leviathan: 'icons/creatures/reptiles/serpent-horned-green.webp',
-	Mammoth: 'icons/commodities/leather/fur-white.webp',
-	Wyvern: 'icons/creatures/abilities/wolf-heads-swirl-purple.webp',
-	Chitter: 'icons/creatures/invertebrates/bug-sixlegged-gray.webp',
-	Gnarl: 'icons/magic/nature/tree-animated-strike.webp',
-	'Iron-Wracked Beast': 'icons/environment/wilderness/statue-hound-horned.webp',
-	Kraken: 'icons/creatures/fish/squid-kraken-orange.webp',
-	Nightspawn: 'icons/creatures/unholy/demon-horned-black-yellow.webp',
-	Rhaskar: 'icons/creatures/fish/fish-marlin-swordfight-blue.webp',
-	Wyrm: 'icons/creatures/eyes/lizard-single-slit-pink.webp',
-	Bonewalker: 'icons/magic/death/undead-skeleton-worn-blue.webp',
-	Frostbound: 'icons/creatures/magical/spirit-undead-ghost-blue.webp',
-	Chimera: 'icons/creatures/magical/spirit-earth-stone-magma-yellow.webp',
-	Haunt: 'icons/magic/death/undead-ghost-strike-white.webp',
-	Hollow: 'icons/consumables/plants/grass-leaves-green.webp',
-	'Iron Revenant': 'icons/creatures/magical/construct-golem-stone-blue.webp',
-	Sodden: 'icons/magic/death/undead-ghost-scream-teal.webp',
-	Blighthound: 'icons/commodities/treasure/figurine-dog.webp',
-	'Bog Rot': 'icons/magic/death/hand-dirt-undead-zombie.webp',
-	Bonehorde: 'icons/skills/trades/academics-study-archaeology-bones.webp',
-	Thrall: 'icons/creatures/abilities/mouth-teeth-human.webp',
-	Wight: 'icons/creatures/magical/humanoid-silhouette-green.webp',
-	'Blood Thorn': 'icons/consumables/plants/thorned-stem-vine-green.webp',
-	'Circle of Stones': 'icons/environment/wilderness/arch-stone.webp',
-	Glimmer: 'icons/magic/nature/elemental-plant-humanoid.webp',
-	Gloom: 'icons/magic/perception/silhouette-stealth-shadow.webp',
-	Maelstrom: 'icons/magic/water/vortex-water-whirlpool.webp',
-	Tempest: 'icons/magic/lightning/bolts-salvo-clouds-sky.webp'
 }
 
 const PACKS = [

@@ -1,5 +1,6 @@
 import type { ChatSpeakerData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatSpeakerData'
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
+import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { IOracle, IRow } from 'dataforged'
 import { max } from 'lodash-es'
 import { marked } from 'marked'
@@ -91,7 +92,7 @@ export class OracleTable extends RollTable {
 		const pathNames = pathElements.map((x) => x.displayName)
 		// root node (0) has no display name
 		pathNames.shift()
-		// last node  is *this* node
+		// last node is *this* node
 		pathNames.pop()
 
 		return pathNames.join(' / ')
@@ -108,8 +109,7 @@ export class OracleTable extends RollTable {
 		const data: RollTableDataConstructorData = {
 			_id: hashLookup(oracle.$id),
 			flags: {
-				dfId: oracle.$id,
-				category: oracle.Category
+				'foundry-ironsworn': { dfid: oracle.$id, category: oracle.Category }
 			},
 			name: oracle.Name,
 			description,
@@ -178,6 +178,13 @@ export class OracleTable extends RollTable {
 		const cls = getDocumentClass('ChatMessage')
 
 		const speaker = cls.getSpeaker()
+		const flags: ConfiguredFlags<'ChatMessage'> = {
+			core: { RollTable: this.id },
+			'foundry-ironsworn': {
+				rollTableType: this.getFlag('foundry-ironsworn', 'rollTableType'),
+				sourceId: this.getFlag('foundry-ironsworn', 'sourceId') ?? this.uuid
+			}
+		}
 
 		// Construct chat data
 		messageData = foundry.utils.mergeObject(
@@ -190,10 +197,7 @@ export class OracleTable extends RollTable {
 						: CONST.CHAT_MESSAGE_TYPES.OTHER,
 				roll,
 				sound: roll != null ? CONFIG.sounds.dice : null,
-				flags: {
-					'core.RollTable': this.id,
-					'foundry-ironsworn.RollTable': this.uuid
-				}
+				flags
 			},
 			messageData
 		)
@@ -243,36 +247,22 @@ export class OracleTable extends RollTable {
 	static async reroll(messageId: string) {
 		const msg = game.messages?.get(messageId)
 		if (msg == null) return
-		const oracleTableUuid = msg.getFlag('foundry-ironsworn', 'RollTable') as
-			| string
-			| undefined
-		const rerolls = (msg.getFlag('foundry-ironsworn', 'rerolls') ??
-			[]) as number[]
 
-		const sourceId = msg.getFlag('foundry-ironsworn', 'sourceId') as
-			| string
-			| undefined
-		const computedTableType = msg.getFlag('foundry-ironsworn', 'type') as
-			| ComputedTableType
-			| undefined
+		const rerolls = msg.getFlag('foundry-ironsworn', 'rerolls') ?? []
+		const sourceId = msg.getFlag('foundry-ironsworn', 'sourceId')
+		const rollTableType = msg.getFlag('foundry-ironsworn', 'rollTableType')
 
-		console.log(oracleTableUuid, rerolls, sourceId, computedTableType)
+		console.log(rerolls, sourceId, rollTableType)
 
-		if (
-			oracleTableUuid == null &&
-			(sourceId == null || computedTableType == null)
-		)
-			return
+		if (sourceId == null) return
 		let oracleTable: OracleTable | undefined
-		if (oracleTableUuid != null)
-			oracleTable = (await fromUuid(oracleTableUuid)) as OracleTable | undefined
-		else
-			oracleTable = await OracleTable.getComputedTable(
-				sourceId as string,
-				computedTableType as ComputedTableType
-			)
-
+		if (rollTableType == null)
+			oracleTable = (await fromUuid(sourceId)) as OracleTable | undefined
+		else {
+			oracleTable = await OracleTable.getComputedTable(sourceId, rollTableType)
+		}
 		if (oracleTable == null) return
+
 		// defer render to chat so we can manually set the chat message id
 		const { results, roll } = await oracleTable.draw({ displayChat: false })
 
@@ -282,7 +272,7 @@ export class OracleTable extends RollTable {
 			'foundry-ironsworn': {
 				rerolls: [...rerolls, roll.total]
 			}
-		})
+		}) as ConfiguredFlags<'ChatMessage'>
 
 		// trigger sound manually because updating the message won't
 		await game.audio.play(CONFIG.sounds.dice)

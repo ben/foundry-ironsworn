@@ -322,9 +322,9 @@ export class IronswornRollMessage {
 		if (move?.type !== 'sfmove') return {}
 
 		const system = move.system as SFMoveDataPropertiesData
-		const dfIds = system.Oracles ?? []
+		const dfids = system.Oracles ?? []
 		const nextOracles = compact(
-			await Promise.all(dfIds.map(getFoundryTableByDfId))
+			await Promise.all(dfids.map(getFoundryTableByDfId))
 		)
 		return { nextOracles }
 	}

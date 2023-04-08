@@ -128,14 +128,8 @@ export interface DelveSiteFeatureOrDanger<
 > extends TableResultDataConstructorData {
 	flags: {
 		'foundry-ironsworn': {
-			/**
-			 * Whether this is a site danger or a site feature.
-			 */
-			type?: T
-			/**
-			 * The UUID of the originating Item.
-			 */
-			sourceId?: string
+			type: T
+			sourceId: string
 		}
 	}
 }
