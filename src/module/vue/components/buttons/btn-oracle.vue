@@ -18,7 +18,7 @@ import { sample } from 'lodash-es'
 import type { ExtractPropTypes } from 'vue'
 import { inject } from 'vue'
 import type { IOracleTreeNode } from '../../../features/customoracles.js'
-import { OracleTable } from '../../../roll-table/oracle-table'
+import { OracleTable } from '../../../roll-table/roll-table'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {}

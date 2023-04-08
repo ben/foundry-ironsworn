@@ -125,7 +125,7 @@ import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { localizeRank } from '../helpers/util'
-import type { OracleTableResult } from '../roll-table/oracle-table-result'
+import type { OracleTableResult } from '../roll-table/table-result'
 import { inRange } from 'lodash'
 
 const props = defineProps<{

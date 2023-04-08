@@ -5,7 +5,7 @@ import type {
 	SiteDataPropertiesData
 } from './actortypes'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
-import { OracleTable } from '../roll-table/oracle-table'
+import { OracleTable } from '../roll-table/roll-table'
 
 let CREATE_DIALOG: CreateActorDialog
 

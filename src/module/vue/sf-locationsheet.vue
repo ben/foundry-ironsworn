@@ -145,7 +145,7 @@ import MceEditor from './components/mce-editor.vue'
 import type { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
-import { OracleTable } from '../roll-table/oracle-table'
+import { OracleTable } from '../roll-table/roll-table'
 
 const props = defineProps<{
 	data: { actor: any }

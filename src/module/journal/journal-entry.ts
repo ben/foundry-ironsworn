@@ -1,4 +1,4 @@
-import { OracleTable } from '../roll-table/oracle-table'
+import { OracleTable } from '../roll-table/roll-table'
 import type { IronswornJournalPage } from './journal-entry-page'
 
 export class IronswornJournalEntry extends JournalEntry {

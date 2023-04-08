@@ -12,7 +12,7 @@ import {
 } from '../features/customoracles'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 
-import { OracleTableResult } from './oracle-table-result'
+import { OracleTableResult } from './table-result'
 import type { ComputedTableType } from './roll-table-types'
 
 /** Extends FVTT's default RollTable with functionality specific to this system. */
