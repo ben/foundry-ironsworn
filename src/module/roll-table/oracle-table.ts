@@ -210,9 +210,12 @@ export class OracleTable extends RollTable {
 		return await cls.create(messageData, messageOptions)
 	}
 
-	/** Retrieve a computed oracle table from its originating document. This allows rehydration of computed tables from e.g. chat message flags. */
-	static async getComputedTable(sourceUuid: string, type: ComputedTableType) {
-		const source = await fromUuid(sourceUuid)
+	/**
+	 * Retrieve a computed oracle table from its originating document. This allows rehydration of computed tables from e.g. chat message flags.
+	 * @param sourceId The UUID of the original source of the computed table, usually an Actor or Item.
+	 */
+	static async getComputedTable(sourceId: string, type: ComputedTableType) {
+		const source = await fromUuid(sourceId)
 		if (source == null) return undefined
 		let table: OracleTable | undefined
 		switch (type) {
@@ -225,6 +228,9 @@ export class OracleTable extends RollTable {
 			case 'delve-site-features':
 				table = (source as IronswornActor).features
 				break
+			// TODO
+			case 'truth-options':
+			case 'truth-option-subtable':
 			default:
 				break
 		}
@@ -243,16 +249,18 @@ export class OracleTable extends RollTable {
 		const rerolls = (msg.getFlag('foundry-ironsworn', 'rerolls') ??
 			[]) as number[]
 
-		const sourceUuid = msg.getFlag('foundry-ironsworn', 'sourceUuid') as
+		const sourceId = msg.getFlag('foundry-ironsworn', 'sourceId') as
 			| string
 			| undefined
 		const computedTableType = msg.getFlag('foundry-ironsworn', 'type') as
 			| ComputedTableType
 			| undefined
 
+		console.log(oracleTableUuid, rerolls, sourceId, computedTableType)
+
 		if (
 			oracleTableUuid == null &&
-			(sourceUuid == null || computedTableType == null)
+			(sourceId == null || computedTableType == null)
 		)
 			return
 		let oracleTable: OracleTable | undefined
@@ -260,7 +268,7 @@ export class OracleTable extends RollTable {
 			oracleTable = (await fromUuid(oracleTableUuid)) as OracleTable | undefined
 		else
 			oracleTable = await OracleTable.getComputedTable(
-				sourceUuid as string,
+				sourceId as string,
 				computedTableType as ComputedTableType
 			)
 
@@ -275,6 +283,9 @@ export class OracleTable extends RollTable {
 				rerolls: [...rerolls, roll.total]
 			}
 		})
+
+		// trigger sound manually because updating the message won't
+		await game.audio.play(CONFIG.sounds.dice)
 
 		// module: Dice So Nice
 		await game.dice3d?.showForRoll(roll, game.user, true)

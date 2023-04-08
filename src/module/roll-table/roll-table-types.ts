@@ -29,16 +29,16 @@ declare global {
 			dfId?: string
 			category?: string
 			'foundry-ironsworn'?: {
-				/** The UUID of the originating document. */
-				sourceUuid?: Actor['uuid'] | Item['uuid'] | null | undefined
+				/** The UUID of the originating document, for computed RollTables */
+				sourceId?: Actor['uuid'] | Item['uuid'] | null | undefined
 				type?: ComputedTableType
 				subtitle?: string | null | undefined
 			}
 		}
 		TableResult: {
 			'foundry-ironsworn'?: {
-				/** The UUID of the originating document */
-				sourceUuid?: Actor['uuid'] | Item['uuid'] | null | undefined
+				/** The UUID of the originating document, for computed TableResults */
+				sourceId?: Actor['uuid'] | Item['uuid'] | null | undefined
 				type?: ComputedTableResultType
 			}
 		}

@@ -23,7 +23,7 @@ export function normalizeTableRows(
 	const flags = {
 		'foundry-ironsworn': {
 			type,
-			sourceId: document.id
+			sourceId: document.uuid
 		}
 	}
 	return oldRows.map((row) => {

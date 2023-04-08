@@ -36,13 +36,13 @@ export class IronswornActor extends Actor {
 		super._onCreate(data, options, userId)
 		switch (this.type) {
 			case 'site':
-				// initialize sourceUuid flags for denizens
+				// initialize sourceId flags for denizens
 				{
 					const denizens = (this.system as SiteDataPropertiesData).denizens.map(
 						(denizen) =>
 							mergeObject(denizen, {
 								flags: {
-									'foundry-ironsworn': { sourceUuid: this.id }
+									'foundry-ironsworn': { sourceId: this.uuid }
 								}
 							})
 					)
@@ -113,7 +113,7 @@ export class IronswornActor extends Actor {
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: this.subtitle,
-					sourceUuid: this.uuid,
+					sourceId: this.uuid,
 					type: 'delve-site-features'
 				}
 			}
@@ -149,7 +149,7 @@ export class IronswornActor extends Actor {
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: this.subtitle,
-					sourceUuid: this.uuid,
+					sourceId: this.uuid,
 					type: 'delve-site-dangers'
 				}
 			}
@@ -172,7 +172,7 @@ export class IronswornActor extends Actor {
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: this.subtitle,
-					sourceUuid: this.uuid,
+					sourceId: this.uuid,
 					type: 'delve-site-denizens'
 				}
 			}

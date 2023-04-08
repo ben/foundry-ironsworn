@@ -12,7 +12,7 @@ export class IronswornJournalEntry extends JournalEntry {
 			results,
 			flags: {
 				'foundry-ironsworn': {
-					sourceUuid: this.uuid,
+					sourceId: this.uuid,
 					type: 'truth-options',
 					subtitle: game.i18n.localize('IRONSWORN.First Start.SettingTruths')
 				}

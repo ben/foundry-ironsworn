@@ -1,4 +1,5 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+import { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import { IronswornActor } from './actor/actor'
 import { IronswornItem } from './item/item.js'
 import type { DelveSiteFeatureOrDanger } from './item/itemtypes'
@@ -135,7 +136,7 @@ interface RawFeatureOrDanger {
 function importDelveFeaturesOrDangers(
 	rawFeaturesOrDangers: RawFeatureOrDanger[],
 	type: 'feature' | 'danger',
-	sourceId: Item['id'] = null,
+	sourceId?: Item['uuid'],
 	low = 1
 ) {
 	const result: DelveSiteFeatureOrDanger[] = []

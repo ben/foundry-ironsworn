@@ -47,7 +47,7 @@ export class IronswornJournalPage<
 			text: system.Result,
 			flags: {
 				'foundry-ironsworn': {
-					sourceUuid: this.uuid,
+					sourceId: this.uuid,
 					type: 'truth-option'
 				}
 			}
@@ -71,7 +71,7 @@ export class IronswornJournalPage<
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: game.i18n.localize('IRONSWORN.First Start.SettingTruths'),
-					sourceUuid: this.uuid,
+					sourceId: this.uuid,
 					type: 'truth-option-subtable'
 				}
 			}

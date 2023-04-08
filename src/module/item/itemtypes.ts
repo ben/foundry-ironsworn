@@ -131,11 +131,11 @@ export interface DelveSiteFeatureOrDanger<
 			/**
 			 * Whether this is a site danger or a site feature.
 			 */
-			type: T
+			type?: T
 			/**
-			 * The ID of the originating Item.
+			 * The UUID of the originating Item.
 			 */
-			sourceId: Item['id']
+			sourceId?: string
 		}
 	}
 }
