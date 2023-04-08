@@ -39,6 +39,41 @@ export class OracleTable extends RollTable {
 			| undefined
 	}
 
+	/**
+	 * "Ask the Oracle": Convenience method that retrieves one or more oracle tables and immediately rolls on them.
+	 *
+	 * @param id A table ID, a table UUID, or Dataforged ID. Alternatively, an array of IDs may be provided, and each will be rolled.
+	 * @param options Options to configure the `RollTable#draw` method.
+	 * @see https://foundryvtt.com/api/classes/client.RollTable.html#draw
+	 */
+	static async ask(id: string | string[], options?: RollTable.DrawOptions) {
+		const ids = typeof id === 'string' ? [id] : id
+
+		for await (const id of ids) {
+			let tbl: OracleTable | undefined
+			switch (true) {
+				case /^(ironsworn|starforged)\/oracles/i.test(id):
+					// A Dataforged ID
+					tbl = await OracleTable.getByDfId(id)
+					break
+				case /^(RollTable|Compendium)\./.test(id):
+					// A UUID
+					tbl = (await fromUuid(id)) as OracleTable | undefined
+					break
+				default:
+					// Fall back to world tables
+					tbl = game.tables?.get(id)
+					break
+			}
+			if (tbl == null) {
+				logger.warn(`Couldn't find an oracle for ID: ${id}`)
+
+				continue
+			}
+			await tbl?.draw(options)
+		}
+	}
+
 	/** A string representing the path this table in the Ironsworn oracle tree (not including this table) */
 	async getDfPath() {
 		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
