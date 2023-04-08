@@ -30,8 +30,12 @@ declare global {
 				/** The UUID of the originating document, for computed RollTables */
 				sourceId?: Actor['uuid'] | Item['uuid'] | null | undefined
 				type?: ComputedTableType
+				/** A subtitle to be included in smaller text above a chat message's header. Standard oracles default to displaying their category flag, so they don't need to set this unless an override is needed.
+				 */
 				subtitle?: string | null | undefined
+				/** The Dataforged ID associated with this oracle. */
 				dfid?: string
+				/** The category associated with the Dataforged oracle. */
 				category?: string
 			}
 		}
