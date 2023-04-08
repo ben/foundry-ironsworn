@@ -62,6 +62,18 @@ index ca6d3f2..34792e6 100644
      }
  
      /**
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
+index 25cb406..73c2658 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
+@@ -15,6 +15,7 @@ type JournalEntryPageMetadata = Merge<
+     label: "DOCUMENT.JournalEntryPage";
+     labelPlural: "DOCUMENT.JournalEntryPages";
+     coreTypes: ["image", "pdf", "text", "video"];
++    isEmbedded: true
+   }
+ >;
+ 
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
 index 8cc4b52..197c630 100644
 --- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
