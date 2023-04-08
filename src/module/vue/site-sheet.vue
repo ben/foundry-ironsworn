@@ -164,7 +164,7 @@ function markProgress() {
 
 const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
-	const denizens = $actor?.getDenizens()
+	const denizens = $actor?.denizens
 	if (!denizens) return
 	// LoFD are *not* consistent with FVTT's actual source code, here.
 	// when displaychat === true, denizens.draw calls RollTable#toMessage, which calls to ChatMessage#create
@@ -201,7 +201,7 @@ const hasThemeAndDomain = computed(() => {
 })
 
 async function randomFeature() {
-	return $actor?.getFeatures()?.draw({ displayChat: true })
+	return $actor?.features?.draw({ displayChat: true })
 }
 
 function saveDescription() {

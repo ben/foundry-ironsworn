@@ -93,7 +93,7 @@ export class IronswornActor extends Actor {
 	}
 
 	/** The delve site's computed Features table */
-	getFeatures() {
+	get features() {
 		// TODO: is there a good way to cache this?
 		if (this.type !== 'site' || this.theme == null || this.domain == null)
 			return undefined
@@ -104,11 +104,10 @@ export class IronswornActor extends Actor {
 			...this.domain.system.features
 		] as TableResultDataConstructorData[]
 
-		const name = game.i18n.localize('IRONSWORN.DELVESITE.Features')
-
 		return new OracleTable({
-			name,
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Features'),
 			results,
+			formula: '1d100',
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: this.subtitle,
@@ -119,12 +118,15 @@ export class IronswornActor extends Actor {
 		})
 	}
 
-	/** The delve site's computed Dangers table */
+	/**
+	 * The delve site's computed Dangers table.
+	 * @remarks Ideally this would be a sync getter like its brothers, but currently it needs to grab results from a table by its Dataforged ID.
+	 */
 	async getDangers() {
-		// TODO: is it worth trying to cache this?
 		if (this.type !== 'site' || this.theme == null || this.domain == null)
 			return undefined
 
+		// TODO: is it worth trying to cache this?
 		const oracle = await getFoundryTableByDfId(
 			'Ironsworn/Oracles/Moves/Reveal_a_Danger'
 		)
@@ -135,14 +137,13 @@ export class IronswornActor extends Actor {
 			// @ts-expect-error
 			...this.domain.system.dangers,
 			// Omits the first two rows
-			...oracle.results.contents.slice(2)
+			...oracle.toObject().results.slice(2)
 		] as TableResultDataConstructorData[]
 
-		const name = game.i18n.localize('IRONSWORN.DELVESITE.Dangers')
-
 		return new OracleTable({
-			name,
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Dangers'),
 			results,
+			formula: '1d100',
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: this.subtitle,
@@ -154,12 +155,18 @@ export class IronswornActor extends Actor {
 	}
 
 	/** The delve site's computed Denizens table */
-	getDenizens() {
+	get denizens() {
 		if (this.type !== 'site') return
 		const name = game.i18n.localize('IRONSWORN.DELVESITE.Denizens')
 		return new OracleTable({
 			name,
-			results: (this.system as SiteDataPropertiesData).denizens,
+			formula: '1d100',
+			results: (this.system as SiteDataPropertiesData).denizens.map(
+				(denizen) => {
+					denizen.drawn = false
+					return denizen
+				}
+			),
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: this.subtitle,
