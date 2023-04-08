@@ -12,47 +12,19 @@ import {
 import { cachedDocumentsForPack } from '../features/pack-cache'
 
 import { OracleTableResult } from './oracle-table-result'
+import type { ComputedTableType } from './roll-table-types'
 
 declare global {
 	interface ChatMessage {
 		/** shim for v10; technically, ChatMessage#roll is deprecated, and it just gets ChatMessage#roll[0]. */
 		rolls?: Roll[] | null | undefined
 	}
-
-	interface FlagConfig {
-		RollTable: {
-			dfId?: string
-			category?: string
-			'foundry-ironsworn'?: {
-				/**
-				 * The UUID of the originating document.
-				 */
-				sourceUuid?: Actor['uuid'] | Item['uuid'] | null | undefined
-				type?: ComputedTableType
-				subtitle?: string | null | undefined
-			}
-		}
-	}
 }
 
-export type ComputedTableType =
-	| 'delve-site-denizens'
-	| 'delve-site-features'
-	| 'delve-site-dangers'
-	| 'truth-options'
-	| 'truth-option-subtable'
-
-interface OracleTableDraw extends RollTableDraw {
-	roll: Roll
-	results: OracleTableResult[]
-}
 /** Extends FVTT's default RollTable with functionality specific to this system. */
 export class OracleTable extends RollTable {
 	// missing from the LoFD types package
 	declare description: string
-	declare draw: (
-		options?: RollTable.DrawOptions | undefined
-	) => Promise<OracleTableDraw>
 
 	/** The custom template used for rendering oracle results */
 	static resultTemplate =

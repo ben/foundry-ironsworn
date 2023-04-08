@@ -126,6 +126,7 @@ import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { localizeRank } from '../helpers/util'
 import type { OracleTableResult } from '../roll-table/oracle-table-result'
+import { inRange } from 'lodash'
 
 const props = defineProps<{
 	data: { actor: any }
@@ -181,14 +182,10 @@ async function randomDenizen() {
 
 	// If denizen slot is empty, set focus and add a class
 
-	const idx = denizens.results.contents.findIndex(
-		// @ts-expect-error
-		(x: OracleTableResult, _i, _) =>
-			x.range[0] <= (roll.total as number) &&
-			(roll.total as number) <= x.range[1]
+	const idx = denizens.results.contents.findIndex((x) =>
+		inRange(roll.total as number, ...x.range)
 	)
 	const denizen = denizens.results.contents[idx]
-	// @ts-expect-error
 	if (!denizen?.text) {
 		await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
 		await nextTick()

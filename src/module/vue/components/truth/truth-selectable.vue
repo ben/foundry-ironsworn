@@ -40,8 +40,10 @@ import type {
 	ISettingTruthOption,
 	ISettingTruthOptionSubtableRow
 } from 'dataforged'
+import { inRange } from 'lodash-es'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
+import { OracleTableResult } from '../../../roll-table/oracle-table-result'
 import type { TableRow } from '../../../rolls'
 import { OracleRollMessage } from '../../../rolls'
 
@@ -87,6 +89,23 @@ const suboptions = ref<HTMLElement[]>([])
 
 async function selectAndRandomize() {
 	topRadio.value?.click()
+
+	if (props.page.subtable) {
+		// LoFD is *not* consistent with FVTT's actual source code, here.
+		// when displaychat === true, denizens.draw calls RollTable#toMessage, which calls to ChatMessage#create
+		const msg = (await props.page.subtable.draw({
+			displayChat: true
+		})) as unknown as ChatMessage
+		if (!msg) return
+
+		const roll = msg.rolls?.[0]
+
+		if (!roll) return
+		if (!roll.total) return
+		const selectedIndex = props.page.subtable.results.contents.findIndex(
+			(row) => inRange(roll.total as number, ...row.range)
+		)
+	}
 
 	if (pageSystem.Subtable && pageSystem.Subtable.length > 0) {
 		const rows = pageSystem.Subtable.map(
