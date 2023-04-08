@@ -23,7 +23,7 @@ export class IronswornActor extends Actor {
 		if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog()
 		CREATE_DIALOG.options.folder = data?.folder
 		CREATE_DIALOG.render(true)
-		return undefine3d
+		return undefined
 	}
 
 	async burnMomentum() {
