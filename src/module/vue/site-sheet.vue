@@ -166,7 +166,7 @@ const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
 	const denizens = $actor?.denizens
 	if (!denizens) return
-	// LoFD are *not* consistent with FVTT's actual source code, here.
+	// LoFD is *not* consistent with FVTT's actual source code, here.
 	// when displaychat === true, denizens.draw calls RollTable#toMessage, which calls to ChatMessage#create
 	const msg = (await denizens?.draw({ displayChat: true })) as unknown as
 		| ChatMessage

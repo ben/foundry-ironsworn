@@ -17,6 +17,7 @@ import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
+import { OracleTable } from '../roll-table/oracle-table'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -302,7 +303,7 @@ async function processSFOracles() {
 	for (const category of SFOracleCategories) {
 		await processOracleCategory(category, oraclesToCreate)
 	}
-	await RollTable.createDocuments(oraclesToCreate, {
+	await OracleTable.createDocuments(oraclesToCreate, {
 		pack: 'foundry-ironsworn.starforgedoracles',
 		keepId: true
 	})
@@ -314,7 +315,7 @@ async function processISOracles() {
 	for (const category of ISOracleCategories) {
 		await processOracleCategory(category, oraclesToCreate)
 	}
-	await RollTable.createDocuments(oraclesToCreate, {
+	await OracleTable.createDocuments(oraclesToCreate, {
 		pack: 'foundry-ironsworn.ironswornoracles',
 		keepId: true
 	})
