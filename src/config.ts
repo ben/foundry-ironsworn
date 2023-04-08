@@ -7,8 +7,7 @@ import Mitt from 'mitt'
 import {
 	IronswornRoll,
 	IronswornPrerollDialog,
-	IronswornRollMessage,
-	OracleRollMessage
+	IronswornRollMessage
 } from './module/rolls'
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
@@ -44,7 +43,6 @@ export interface IronswornConfig {
 		IronswornRoll: typeof IronswornRoll
 		IronswornPrerollDialog: typeof IronswornPrerollDialog
 		IronswornRollMessage: typeof IronswornRollMessage
-		OracleRollMessage: typeof OracleRollMessage
 	}
 
 	importFromDatasworn: typeof importFromDatasworn
@@ -70,8 +68,7 @@ export const IRONSWORN: IronswornConfig = {
 
 		IronswornRoll,
 		IronswornPrerollDialog,
-		IronswornRollMessage,
-		OracleRollMessage
+		IronswornRollMessage
 	},
 
 	importFromDatasworn,

@@ -26,8 +26,7 @@ export class IronswornJournalPage<
 		// FIXME: JEPs aren't initialized with proper defaults, so we DIY it.
 		// https://github.com/foundryvtt/foundryvtt/issues/8628
 		const defaults = game.system.template.JournalEntryPage?.[
-			// @ts-expect-error
-			data.type
+			(data as any).type
 		] as JournalEntryPageDataSource
 		if (defaults) {
 			const alreadySet = data.system
@@ -40,7 +39,7 @@ export class IronswornJournalPage<
 		await super._preCreate(data, options, user)
 	}
 
-	toTableResultData() {
+	toTruthTableResultData() {
 		if (this.type !== 'truth') return undefined
 		const system = this.system as TruthOptionDataPropertiesData
 		const data: TableResultDataConstructorData = {

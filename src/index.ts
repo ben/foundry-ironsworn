@@ -54,10 +54,11 @@ declare global {
 
 	// fix missing LoFD type inference
 	interface Game {
-		documentTypes: { [P in DocumentType]: Array<DocumentSubTypes<P>> } & {
-			JournalEntryPage: Array<
-				JournalEntryPageDataProperties['type'] | CONFIG['JournalEntryPage']
-			>
+		documentTypes: {
+			[P in DocumentType as Omit<DocumentType, 'JournalEntryPage'> &
+				DocumentType]: Array<DocumentSubTypes<P>>
+		} & {
+			JournalEntryPage: JournalEntryPageType[]
 		}
 	}
 }

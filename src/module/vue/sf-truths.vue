@@ -28,8 +28,7 @@
 			<TruthCategory
 				v-for="truth in data.truths"
 				ref="categoryComponents"
-				:key="truth.df.$id"
-				:df="truth.df"
+				:key="(truth.je()._id as string)"
 				:je="truth.je" />
 		</section>
 	</div>
@@ -41,12 +40,13 @@ import type { ISettingTruth } from 'dataforged'
 import { $LocalEmitterKey } from './provisions'
 import IronBtn from './components/buttons/iron-btn.vue'
 import TruthCategory from './components/truth/truth-category.vue'
+import { IronswornJournalEntry } from '../journal/journal-entry'
 
 const props = defineProps<{
 	data: {
 		truths: {
 			df: ISettingTruth
-			je: () => JournalEntry
+			je: () => IronswornJournalEntry
 		}[]
 	}
 }>()
@@ -73,7 +73,7 @@ async function saveTruths() {
 		)
 		.join('\n\n')
 
-	const journal = await JournalEntry.create({
+	const journal = await IronswornJournalEntry.create({
 		name: game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth'),
 		content
 	})

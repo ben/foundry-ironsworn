@@ -97,8 +97,8 @@ async function selectAndRandomize() {
 
 		const roll = msg.rolls?.[0]
 
-		if (!roll) return
-		if (!roll.total) return
+		if (!roll || !roll.total) return
+
 		const selectedIndex = props.page.subtable.results.contents.findIndex(
 			(row) => inRange(roll.total as number, ...row.range)
 		)
