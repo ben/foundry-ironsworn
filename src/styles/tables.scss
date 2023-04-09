@@ -14,7 +14,7 @@ table {
 		border-color: var(--ironsworn-color-border-muted);
 	}
 
-	tr:nth-child(even) {
+	&:not(.oracle-table-partial) tr:nth-child(even) {
 		background-color: var(--ironsworn-color-fg-10);
 	}
 }
