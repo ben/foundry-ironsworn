@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.21.3
+
 - Fix a race condition in the location sheet, where sometimes the chat message and the text pasted into the description were different
 
 ## 1.21.2
