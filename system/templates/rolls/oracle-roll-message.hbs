@@ -33,12 +33,10 @@
         <td class="oracle-table-column-result-text">{{{this.text}}}
         </td>
         <td class="oracle-table-column-roll-result" >
-
           {{#if (eq @index 1)}}
           <span class="oracle-row-content">
             <i class="icon isicon-d10-tilt" role="presentational"></i>
-
-            <span>{{{../../roll.total}}}</span>
+            <span>{{{ @root.roll.total }}}</span>
           </span>
           <button type='button'
             data-action="oracleReroll"
