@@ -284,14 +284,11 @@ export class OracleTable extends RollTable {
 			}
 		}) as ConfiguredFlags<'ChatMessage'>
 
-		// trigger sound manually because updating the message won't
-		// FIXME: this appears to load, but doesn't play
-		await game.audio.play(CONFIG.sounds.dice)
+		// trigger sound + 3d dice manually because updating the message won't
+		void AudioHelper.play({ src: CONFIG.sounds.dice })
+		void game.dice3d?.showForRoll(roll, game.user, true)
 
-		// module: Dice So Nice
-		await game.dice3d?.showForRoll(roll, game.user, true)
-
-		await msg.update({
+		return await msg.update({
 			content: await renderTemplate(OracleTable.resultTemplate, templateData),
 			flags
 		})
