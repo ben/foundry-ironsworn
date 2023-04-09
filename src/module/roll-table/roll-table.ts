@@ -14,7 +14,6 @@ import { cachedDocumentsForPack } from '../features/pack-cache'
 
 import { OracleTableResult } from './table-result'
 import type { ComputedTableType } from './roll-table-types'
-import { ActorDataSource } from '../actor/actortypes'
 
 /** Extends FVTT's default RollTable with functionality specific to this system. */
 export class OracleTable extends RollTable {
