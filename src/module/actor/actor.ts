@@ -49,13 +49,6 @@ export class IronswornActor extends Actor {
 		return this.itemTypes['delve-domain'][0]
 	}
 
-	/** A computed subtitle used by this site in feature, danger, and denizen roll messages  */
-	get subtitle() {
-		return undefined
-		// if (this.type !== 'site') return undefined
-		// return `${this.theme?.name as string} ${this.domain?.name as string}`
-	}
-
 	/** The delve site's computed Features table */
 	get features() {
 		// TODO: is there a good way to cache this?
@@ -72,7 +65,6 @@ export class IronswornActor extends Actor {
 			formula: '1d100',
 			flags: {
 				'foundry-ironsworn': {
-					subtitle: this.subtitle,
 					sourceId: this.uuid,
 					type: 'delve-site-features'
 				}
@@ -107,7 +99,6 @@ export class IronswornActor extends Actor {
 			formula: '1d100',
 			flags: {
 				'foundry-ironsworn': {
-					subtitle: this.subtitle,
 					sourceId: this.uuid,
 					type: 'delve-site-dangers'
 				}
@@ -124,7 +115,6 @@ export class IronswornActor extends Actor {
 			results: (this.system as SiteDataPropertiesData).denizens,
 			flags: {
 				'foundry-ironsworn': {
-					subtitle: this.subtitle,
 					sourceId: this.uuid,
 					type: 'delve-site-denizens'
 				}
