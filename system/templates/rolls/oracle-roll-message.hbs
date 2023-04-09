@@ -1,4 +1,4 @@
-<article class="ironsworn table-draw oracle-roll flexcol" data-table-id="{{ table.id }}" >
+<article class="ironsworn table-draw oracle-roll flexcol" {{#if table.id}} data-table-id="{{ table.id }}"{{/if}} {{#if sourceId}}data-table-source-uuid="{{sourceId}}"{{/if}} {{#if rollTableType}}data-computed-table-type="{{rollTableType}}"{{/if}}>
   <header>
     <small class="subtitle">{{subtitle}}</small>
     <h2 class="ironsworn-roll-title">{{table.name}}</h2>

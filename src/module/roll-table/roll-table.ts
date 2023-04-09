@@ -206,7 +206,8 @@ export class OracleTable extends RollTable {
 						: CONST.CHAT_MESSAGE_TYPES.OTHER,
 				roll,
 				sound: roll != null ? CONFIG.sounds.dice : null,
-				flags
+				flags,
+				...flags['foundry-ironsworn']
 			},
 			messageData
 		)
