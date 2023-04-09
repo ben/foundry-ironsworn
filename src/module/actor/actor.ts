@@ -51,10 +51,9 @@ export class IronswornActor extends Actor {
 
 	/** A computed subtitle used by this site in feature, danger, and denizen roll messages  */
 	get subtitle() {
-		if (this.type !== 'site') return undefined
-		return `${this.name as string} – ${this.theme?.name as string} ${
-			this.domain?.name as string
-		}`
+		return undefined
+		// if (this.type !== 'site') return undefined
+		// return `${this.theme?.name as string} ${this.domain?.name as string}`
 	}
 
 	/** The delve site's computed Features table */
