@@ -1,9 +1,16 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { IRow } from 'dataforged'
+import { inRange } from 'lodash-es'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 
 /** Extends FVTT's default TableResult with functionality specific to this system. */
 export class OracleTableResult extends TableResult {
+	/** Does the number value fall within the range of this TableResult? */
+	hasInRange(value: number) {
+		const [low, high] = this.range
+		return inRange(value, low, high + 1)
+	}
+
 	/**
 	 * Returns the table rows immediately above and below this row.
 	 * @return A tuple of the previous row (if it exists) and the next row (if it exists).

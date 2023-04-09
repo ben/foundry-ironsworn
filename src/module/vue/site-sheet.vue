@@ -102,7 +102,7 @@
 					:class="{ [$style.featureBtn]: true }"
 					icon="ironsworn:d10-tilt"
 					:text="$t('IRONSWORN.DELVESITE.Feature')"
-					@click="randomFeature" />
+					@click="$actor?.features?.draw()" />
 			</div>
 			<MceEditor
 				v-model="data.actor.system.description"
@@ -175,7 +175,7 @@ async function randomDenizen() {
 	// If denizen slot is empty, set focus and add a class
 
 	const idx = denizens.results.contents.findIndex((x) =>
-		inRange(roll.total as number, ...x.range)
+		x.hasInRange(roll.total as number)
 	)
 	const denizen = denizens.results.contents[idx]
 	if (!denizen?.text) {
@@ -188,10 +188,6 @@ async function randomDenizen() {
 const hasThemeAndDomain = computed(() => {
 	return !!(theme.value && domain.value)
 })
-
-async function randomFeature() {
-	return $actor?.features?.draw()
-}
 
 function saveDescription() {
 	$actor?.update({ 'system.description': props.data.actor.system.description })

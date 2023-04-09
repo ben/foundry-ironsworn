@@ -34,12 +34,15 @@ declare global {
 			foundry.documents.BaseJournalEntryPage
 		> {
 		type: T
-		system: JournalEntryPageSystem<T>
+		system: JournalEntryPageSystem<this['type']>
 	}
 
 	interface JournalEntryPage<
 		T extends JournalEntryPageType = JournalEntryPageType
-	> extends Omit<JournalEntryPageData<T>, 'toObject' | 'toJSON' | 'update'> {}
+	> extends Omit<JournalEntryPageData<T>, 'toObject' | 'toJSON' | 'update'> {
+		type: T
+		system: JournalEntryPageSystem<this['type']>
+	}
 }
 
 /** "Fake" JournalEntry types, set in the document flags at `foundry-ironsworn.type` */

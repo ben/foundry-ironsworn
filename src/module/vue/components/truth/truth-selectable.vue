@@ -5,7 +5,7 @@
 			type="radio"
 			class="nogrow"
 			:name="radioGroup"
-			@change="select" />
+			@change="emitValue" />
 		<div class="flexcol">
 			<p>
 				<strong>{{ page.name }}</strong>
@@ -36,27 +36,16 @@
 </template>
 
 <script setup lang="ts">
-import type {
-	ISettingTruthOption,
-	ISettingTruthOptionSubtableRow
-} from 'dataforged'
-import { inRange } from 'lodash-es'
+import type { ISettingTruthOptionSubtableRow } from 'dataforged'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
+import type { TruthOptionDataPropertiesData } from '../../../journal/journal-entry-page-types'
 
 const props = defineProps<{
-	// @ts-ignore
-	page: IronswornJournalPage
+	page: IronswornJournalPage<'truth'>
 	radioGroup: string
 }>()
-const pageSystem = (props.page as any).system as ISettingTruthOption & {
-	dfid: string
-	Quest: string
-}
-
-function select() {
-	emitValue()
-}
+const pageSystem = props.page.system as TruthOptionDataPropertiesData
 
 const topRadio = ref<HTMLElement>()
 const state = reactive({ suboption: undefined as string | undefined })
@@ -93,7 +82,7 @@ async function selectAndRandomize() {
 		if (!roll || !roll.total) return
 
 		const selectedIndex = props.page.subtable.results.contents.findIndex(
-			(row) => inRange(roll.total as number, ...row.range)
+			(row) => row.hasInRange(roll.total as number)
 		)
 		suboptions.value[selectedIndex]?.click()
 	}

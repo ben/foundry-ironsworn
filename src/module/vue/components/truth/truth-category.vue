@@ -106,7 +106,7 @@ async function randomize() {
 	// Find the result and activate it
 
 	const selectedIndex = tbl.results.contents.findIndex((row) =>
-		inRange(roll.total as number, ...row.range)
+		row.hasInRange(roll.total as number)
 	)
 	await selectables.value[selectedIndex]?.selectAndRandomize()
 }

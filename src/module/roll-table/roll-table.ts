@@ -14,6 +14,7 @@ import { cachedDocumentsForPack } from '../features/pack-cache'
 
 import { OracleTableResult } from './table-result'
 import type { ComputedTableType } from './roll-table-types'
+import { ActorDataSource } from '../actor/actortypes'
 
 /** Extends FVTT's default RollTable with functionality specific to this system. */
 export class OracleTable extends RollTable {
@@ -160,6 +161,13 @@ export class OracleTable extends RollTable {
 		}
 	}
 
+	/** Retrieve the originating document of a computed OracleTable.  */
+	async getSourceDocument() {
+		const uuid = this.getFlag('foundry-ironsworn', 'sourceId')
+		if (uuid == null) return undefined
+		return (await fromUuid(uuid)) as IronswornActor
+	}
+
 	override async toMessage(
 		results: OracleTableResult[],
 		{
@@ -168,6 +176,25 @@ export class OracleTable extends RollTable {
 			messageOptions = {}
 		}: DeepPartial<RollTable.ToMessageOptions> = {}
 	) {
+		const cls = getDocumentClass('ChatMessage')
+		const rollTableType = this.getFlag('foundry-ironsworn', 'type')
+
+		const speakerOptions: ChatMessage.GetSpeakerOptions = {}
+
+		// intentionally left as a switch for later expansion
+		switch (rollTableType) {
+			case 'delve-site-dangers':
+			case 'delve-site-denizens':
+			case 'delve-site-features':
+				// delve site oracles are attributed
+				speakerOptions.actor = await this.getSourceDocument()
+				break
+			default:
+				break
+		}
+
+		const speaker = cls.getSpeaker(speakerOptions)
+
 		// options for this aren't exposed prior to running the method, so we have to rebuild them from scratch
 		// these are loosely based on FVTT v10 RollTable#toMessage
 
@@ -183,9 +210,6 @@ export class OracleTable extends RollTable {
 				messageOptions
 			})
 
-		const cls = getDocumentClass('ChatMessage')
-
-		const speaker = cls.getSpeaker()
 		const flags: ConfiguredFlags<'ChatMessage'> = {
 			core: { RollTable: this.id },
 			'foundry-ironsworn': {
