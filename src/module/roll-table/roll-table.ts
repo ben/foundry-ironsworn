@@ -63,9 +63,18 @@ export class OracleTable extends RollTable {
 					// A UUID
 					tbl = (await fromUuid(id)) as OracleTable | undefined
 					break
-				default:
-					// Fall back to world tables
+				case game.tables?.has(id):
+					// check world tables
 					tbl = game.tables?.get(id)
+					break
+				default:
+					{
+						// fall back to oracle packs
+						const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
+						const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
+						tbl = ((await sfPack?.getDocument(id)) ??
+							(await isPack?.getDocument(id))) as OracleTable | undefined
+					}
 					break
 			}
 			if (tbl == null) {
@@ -79,7 +88,8 @@ export class OracleTable extends RollTable {
 		return draws
 	}
 
-	/** A string representing the path this table in the Ironsworn oracle tree (not including this table) */
+	/**
+	 * @returns a string representing the path this table in the Ironsworn oracle tree (not including this table) */
 	async getDfPath() {
 		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
 		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
@@ -180,7 +190,7 @@ export class OracleTable extends RollTable {
 		const flags: ConfiguredFlags<'ChatMessage'> = {
 			core: { RollTable: this.id },
 			'foundry-ironsworn': {
-				rollTableType: this.getFlag('foundry-ironsworn', 'rollTableType'),
+				rollTableType: this.getFlag('foundry-ironsworn', 'type'),
 				sourceId: this.getFlag('foundry-ironsworn', 'sourceId') ?? this.uuid
 			}
 		}
@@ -251,7 +261,7 @@ export class OracleTable extends RollTable {
 		const sourceId = msg.getFlag('foundry-ironsworn', 'sourceId')
 		const rollTableType = msg.getFlag('foundry-ironsworn', 'rollTableType')
 
-		console.log(rerolls, sourceId, rollTableType)
+		// console.log(rerolls, sourceId, rollTableType)
 
 		if (sourceId == null) return
 		let oracleTable: OracleTable | undefined
@@ -274,6 +284,7 @@ export class OracleTable extends RollTable {
 		}) as ConfiguredFlags<'ChatMessage'>
 
 		// trigger sound manually because updating the message won't
+		// FIXME: this appears to load, but doesn't play
 		await game.audio.play(CONFIG.sounds.dice)
 
 		// module: Dice So Nice

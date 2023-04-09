@@ -21,7 +21,7 @@ export class IronswornChatCard {
 		const moveLinks = html.find('a[draggable]')
 		const maybeTablePromises = moveLinks.map(async (_i, el) => {
 			const { pack, id } = el.dataset
-			if (!pack || !id) return []
+			if (pack == null || id == null) return []
 
 			const fPack = game.packs.get(pack)
 			const fItem = fPack?.get(id) as IronswornItem
@@ -135,13 +135,7 @@ export class IronswornChatCard {
 	async _oracleRoll(ev: JQuery.ClickEvent) {
 		ev.preventDefault()
 		const { tableid } = ev.currentTarget.dataset
-		const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
-		const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
-		const table = ((await sfPack?.getDocument(tableid)) ??
-			(await isPack?.getDocument(tableid))) as OracleTable | undefined
-		if (!table?.id) return
-
-		await table.draw()
+		return await OracleTable.ask(tableid)
 	}
 
 	async _oracleResultCopy(ev: JQuery.ClickEvent) {

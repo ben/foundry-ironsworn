@@ -106,10 +106,7 @@ Promise.resolve().then(async () => {
 })
 
 async function revealADanger() {
-	if (!hasThemeAndDomain.value) return
-
-	const table = await $site?.getDangers()
-	return await table?.draw()
+	return (await $site?.getDangers())?.draw()
 }
 
 async function locateObjective() {
