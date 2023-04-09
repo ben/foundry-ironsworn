@@ -1,10 +1,14 @@
-<article class="ironsworn table-draw oracle-roll flexcol" {{#if table.id}} data-table-id="{{ table.id }}"{{/if}} {{#if sourceId}}data-table-source-uuid="{{sourceId}}"{{/if}} {{#if rollTableType}}data-computed-table-type="{{rollTableType}}"{{/if}}>
-  <header>
-    <small class="subtitle">{{subtitle}}</small>
-    <h2 class="ironsworn-roll-title">{{table.name}}</h2>
-  </header>
+<article class="ironsworn table-draw oracle-roll flexcol" {{#if table.id}} data-table-id="{{ table.id }}"{{/if}} {{#if sourceId}}data-table-source-uuid="{{sourceId}}"{{/if}} {{#if rollTableType}}data-computed-table-type="{{rollTableType}}"{{/if}} >
   {{#each results}}
   <table class="oracle-table oracle-table-partial">
+    <thead>
+      <caption>
+        {{#if subtitle}}
+        <small class="subtitle">{{subtitle}}</small>
+        {{/if}}
+        <span class="ironsworn-roll-title">{{table.name}}</span>
+      </caption>
+    </thead>
     <tbody>
       {{#each displayRows}}
         {{#if this}}
