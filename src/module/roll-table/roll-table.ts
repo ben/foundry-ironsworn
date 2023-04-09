@@ -136,6 +136,10 @@ export class OracleTable extends RollTable {
 		return data
 	}
 
+	/**
+	 * Prepares handlebars template data for an oracle roll message.
+	 * @remarks This is provided as its own method so that it can be reused to 'fake' rerolls in OracleTable#reroll
+	 */
 	async _prepareTemplateData(results: OracleTableResult[], roll: null | Roll) {
 		const result = results[0]
 		return {
@@ -185,8 +189,7 @@ export class OracleTable extends RollTable {
 		switch (rollTableType) {
 			case 'delve-site-dangers':
 			case 'delve-site-denizens':
-			case 'delve-site-features':
-				// delve site oracles are attributed
+			case 'delve-site-features': // delve site oracles are attributed
 				speakerOptions.actor = await this.getSourceDocument()
 				break
 			default:
