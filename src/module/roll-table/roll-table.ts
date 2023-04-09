@@ -136,6 +136,7 @@ export class OracleTable extends RollTable {
 	}
 
 	async _prepareTemplateData(results: OracleTableResult[], roll: null | Roll) {
+		const result = results[0]
 		return {
 			// NB: with these options, this is async in v10
 			// eslint-disable-next-line @typescript-eslint/await-thenable
@@ -144,20 +145,18 @@ export class OracleTable extends RollTable {
 				// @ts-expect-error exists in v10
 				async: true
 			}),
-			results: results.map((result) => {
-				const r = result.toObject(false)
-				r.text = result.getChatText()
-				// @ts-expect-error exists in v10
-				r.icon = result.icon
-				// @ts-expect-error
-				r.displayRows = result.displayRows
-				return r
+			result: mergeObject(result.toObject(false), {
+				text: result.getChatText(),
+				icon: result.icon,
+				displayRows: result.displayRows.map((row) => row?.toObject())
 			}),
+			roll: roll?.toJSON(),
+			table: this,
 			subtitle:
 				this.getFlag('foundry-ironsworn', 'subtitle') ??
 				(await this.getDfPath()),
-			roll: roll?.toJSON(),
-			table: this
+			rollTableType: this.getFlag('foundry-ironsworn', 'type'),
+			sourceId: this.getFlag('foundry-ironsworn', 'sourceId')
 		}
 	}
 
@@ -206,11 +205,12 @@ export class OracleTable extends RollTable {
 						: CONST.CHAT_MESSAGE_TYPES.OTHER,
 				roll,
 				sound: roll != null ? CONFIG.sounds.dice : null,
-				flags,
-				...flags['foundry-ironsworn']
+				flags
 			},
 			messageData
 		)
+
+		console.log('messageData', messageData)
 
 		const templateData = await this._prepareTemplateData(results, roll)
 
