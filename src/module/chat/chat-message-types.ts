@@ -13,7 +13,7 @@ declare global {
 				RollTable?: RollTable['id']
 			}
 			'foundry-ironsworn'?: {
-				/** The values of rerolls that have been executed on an oracle roll message. The last value is the most recent. */
+				/** The dice totals of rerolls that have been executed on an oracle roll message. The last value is the most recent. */
 				rerolls?: number[]
 				rollTableType?: ComputedTableType
 				sourceId?:
