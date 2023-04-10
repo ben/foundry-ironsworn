@@ -1,6 +1,5 @@
 import type { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
-import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type {
 	IAssetType,
 	IMoveCategory,
@@ -11,12 +10,12 @@ import type {
 	Starforged
 } from 'dataforged'
 import { ironsworn, starforged } from 'dataforged'
-import { isArray, isObject, max } from 'lodash-es'
-import { marked } from 'marked'
+import { isArray, isObject } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
+import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
 import {
@@ -255,36 +254,8 @@ async function processOracle(
 ) {
 	// Oracles JSON is a tree we wish to iterate through depth first adding
 	// parents prior to their children, and children in order
-	if (oracle.Table != null) {
-		const description = marked.parseInline(
-			renderLinksInStr(oracle.Description ?? '')
-		)
-		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
-		output.push({
-			_id: hashLookup(oracle.$id),
-			flags: {
-				'foundry-ironsworn': { dfid: oracle.$id, category: oracle.Category }
-			},
-			name: oracle.Name,
-			img: 'icons/dice/d10black.svg',
-			description,
-			formula: `d${maxRoll as number}`,
-			replacement: true,
-			displayRoll: true,
-			/* folder: // would require using an additional module */
-			results: oracle.Table?.map((tableRow) => {
-				let text: string
-				if (tableRow.Result && tableRow.Summary) {
-					text = `${tableRow.Result} (${tableRow.Summary})`
-				} else text = tableRow.Result ?? ''
-				return {
-					_id: hashLookup(tableRow.$id ?? ''),
-					range: [tableRow.Floor, tableRow.Ceiling],
-					text: tableRow.Result && renderLinksInStr(text)
-				} as TableResultDataConstructorData
-			}).filter((x) => x.range[0] !== null)
-		})
-	}
+	if (oracle.Table != null)
+		output.push(OracleTable.fromDataforged(oracle as any))
 
 	for (const child of oracle.Oracles ?? []) await processOracle(child, output)
 }
@@ -303,7 +274,7 @@ async function processSFOracles() {
 	for (const category of SFOracleCategories) {
 		await processOracleCategory(category, oraclesToCreate)
 	}
-	await RollTable.createDocuments(oraclesToCreate, {
+	await OracleTable.createDocuments(oraclesToCreate, {
 		pack: 'foundry-ironsworn.starforgedoracles',
 		keepId: true
 	})
@@ -315,7 +286,7 @@ async function processISOracles() {
 	for (const category of ISOracleCategories) {
 		await processOracleCategory(category, oraclesToCreate)
 	}
-	await RollTable.createDocuments(oraclesToCreate, {
+	await OracleTable.createDocuments(oraclesToCreate, {
 		pack: 'foundry-ironsworn.ironswornoracles',
 		keepId: true
 	})

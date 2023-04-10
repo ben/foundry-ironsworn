@@ -39,6 +39,8 @@ import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 import 'virtual:svg-icons-register'
 import { registerDefaultOracleTrees } from './module/features/customoracles'
+import { OracleTable } from './module/roll-table/oracle-table'
+import { OracleTableResult } from './module/roll-table/oracle-table-result'
 import { IronswornJournalEntry } from './module/journal/journal-entry'
 
 declare global {
@@ -61,8 +63,10 @@ Hooks.once('init', async () => {
 	// Define custom Entity classes
 	CONFIG.Actor.documentClass = IronswornActor
 	CONFIG.Item.documentClass = IronswornItem
-	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
+	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
+	CONFIG.RollTable.documentClass = OracleTable
+	CONFIG.TableResult.documentClass = OracleTableResult
 
 	// CONFIG.RollTable.resultTemplate =
 	//   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'

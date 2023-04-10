@@ -4,6 +4,7 @@ import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { getFoundryTableByDfId } from '../dataforged'
+import type { OracleTable } from '../roll-table/oracle-table'
 
 export class IronswornChatCard {
 	id?: string | null
@@ -55,24 +56,24 @@ export class IronswornChatCard {
 
 		await this.attachMoveOracleContextMenu(html)
 
-		html
-			.find('a.content-link')
-			.on('click', (ev) => this._moveNavigate.call(this, ev))
-		html
-			.find('a.oracle-category-link')
-			.on('click', (ev) => this._oracleNavigate.call(this, ev))
+		html.find('a.content-link').on('click', async (ev) => {
+			await this._moveNavigate.call(this, ev)
+		})
+		html.find('a.oracle-category-link').on('click', async (ev) => {
+			await this._oracleNavigate.call(this, ev)
+		})
 		html
 			.find('.burn-momentum')
-			.on('click', (ev) => this._burnMomentum.call(this, ev))
+			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
 			.find('.burn-momentum-sf')
-			.on('click', (ev) => this._burnMomentum.call(this, ev))
+			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
 			.find('.ironsworn-roll-burn-momentum')
-			.on('click', (ev) => this._burnMomentum.call(this, ev))
+			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
 			.find('.oracle-roll .oracle-reroll')
-			.on('click', (ev) => this._oracleReroll.call(this, ev))
+			.on('click', async (ev) => await this._oracleReroll.call(this, ev))
 		if (!navigator.clipboard) {
 			html
 				.find('.copy-result')
@@ -81,16 +82,16 @@ export class IronswornChatCard {
 				.attr('data-tooltip', game.i18n.localize('IRONSWORN.ClipboardDisabled'))
 				.attr('data-tooltip-direction', 'LEFT')
 		} else {
-			html
-				.find('.copy-result')
-				.on('click', (ev) => this._oracleResultCopy.call(this, ev))
+			html.find('.copy-result').on('click', async (ev) => {
+				await this._oracleResultCopy.call(this, ev)
+			})
 		}
-		html
-			.find('.ironsworn-roll-resolve')
-			.on('click', (ev) => this._resolveChallenge.call(this, ev))
-		html
-			.find('.starforged__oracle__roll')
-			.on('click', (ev) => this._oracleRoll.call(this, ev))
+		html.find('.ironsworn-roll-resolve').on('click', async (ev) => {
+			await this._resolveChallenge.call(this, ev)
+		})
+		html.find('.starforged__oracle__roll').on('click', async (ev) => {
+			await this._oracleRoll.call(this, ev)
+		})
 	}
 
 	async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -143,7 +144,7 @@ export class IronswornChatCard {
 		const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
 		const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
 		const table = ((await sfPack?.getDocument(tableid)) ??
-			(await isPack?.getDocument(tableid))) as RollTable | undefined
+			(await isPack?.getDocument(tableid))) as OracleTable | undefined
 		if (!table?.id) return
 
 		const msg = await OracleRollMessage.fromTableUuid(table.uuid)
