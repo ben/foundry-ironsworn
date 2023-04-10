@@ -30,6 +30,9 @@ export class IronswornActor extends Actor {
 				{
 					const denizens = (this.system as SiteDataPropertiesData).denizens.map(
 						(denizen) => {
+							if (denizen.flags == null) denizen.flags = {}
+							if (denizen.flags['foundry-ironsworn'] == null)
+								denizen.flags['foundry-ironsworn'] = {}
 							denizen.flags['foundry-ironsworn'].sourceId = this.id
 							return denizen
 						}
