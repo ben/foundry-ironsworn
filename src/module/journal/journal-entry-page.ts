@@ -28,7 +28,7 @@ export class IronswornJournalPage<
 		const defaults = game.system.template.JournalEntryPage?.[
 			data.type
 		] as JournalEntryPageDataSource
-		if (defaults) {
+		if (defaults != null) {
 			const alreadySet = data.system
 			const newSourceData = mergeObject(defaults, alreadySet ?? {}, {
 				recursive: true
