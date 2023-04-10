@@ -30,14 +30,7 @@ index da561df..3665779 100644
      };
 
      /**
-@@ -1485,6 +1491,7 @@ declare global {
-       };
-       defaultType: "text";
-       sidebarIcon: "fas fa-book-open";
-+      coreTypes: ["image", "pdf", "text", "video"]
-     };
 
-     /**
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts
 index ca6d3f2..34792e6 100644
 --- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts
