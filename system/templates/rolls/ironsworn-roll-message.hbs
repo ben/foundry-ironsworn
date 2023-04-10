@@ -58,7 +58,8 @@
 			<section class='move-oracle-buttons flexrow'>
 				{{#each nextOracles}}
 					<button
-						class='starforged__oracle__roll icon-button clickable isicon-oracle'
+						class='icon-button clickable isicon-oracle'
+						data-iron-action='oracleRoll'
 						data-tooltip='{{{localize "IRONSWORN.RollOracleTable" title=name}}}'
 						data-tableid='{{id}}'
 						type='button'

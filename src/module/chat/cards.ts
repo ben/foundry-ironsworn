@@ -71,7 +71,7 @@ export class IronswornChatCard {
 			.find('.ironsworn-roll-burn-momentum')
 			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
-			.find('.oracle-roll .oracle-reroll')
+			.find('[data-iron-action="oracleReroll"]')
 			.on('click', async (ev) => await this._oracleReroll.call(this, ev))
 		if (!navigator.clipboard) {
 			html
@@ -88,7 +88,7 @@ export class IronswornChatCard {
 		html.find('.ironsworn-roll-resolve').on('click', async (ev) => {
 			await this._resolveChallenge.call(this, ev)
 		})
-		html.find('.starforged__oracle__roll').on('click', async (ev) => {
+		html.find('[data-iron-action="oracleRoll"]').on('click', async (ev) => {
 			await this._oracleRoll.call(this, ev)
 		})
 	}
