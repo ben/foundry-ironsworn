@@ -6,19 +6,16 @@ import type {
 	IOracle,
 	IOracleCategory,
 	Ironsworn,
-	IRow,
 	ISettingTruth,
 	Starforged
 } from 'dataforged'
 import { ironsworn, starforged } from 'dataforged'
-import { isArray, isObject, max } from 'lodash-es'
-import { marked } from 'marked'
+import { isArray, isObject } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/roll-table'
-import { OracleTableResult } from '../roll-table/table-result'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
