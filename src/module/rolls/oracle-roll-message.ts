@@ -114,7 +114,7 @@ export class OracleRollMessage {
 		}
 
 		if (this.tableUuid) {
-			return (await fromUuid(this.tableUuid)) as RollTable
+			return (await fromUuid(this.tableUuid)) as OracleTable
 		}
 
 		return undefined

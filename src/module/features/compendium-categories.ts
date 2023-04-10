@@ -1,3 +1,5 @@
+import type { OracleTable } from '../roll-table/oracle-table'
+
 export function registerCompendiumCategoryHook() {
 	Hooks.on('renderCompendium', async (_app, html: JQuery, opts) => {
 		if (opts.documentCls !== 'rolltable') return
@@ -6,7 +8,7 @@ export function registerCompendiumCategoryHook() {
 		for (const el of html.find('.directory-item')) {
 			const table = (await collection.getDocument(
 				el.dataset.documentId
-			)) as RollTable
+			)) as OracleTable
 			if ((table as any)?.flags?.category) {
 				const cat = ((table as any).flags.category as string)
 					.replace(/(Starforged|Ironsworn)\/Oracles\//, '')

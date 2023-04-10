@@ -2,6 +2,7 @@ import type { BaseAdventure } from '@league-of-foundry-developers/foundry-vtt-ty
 import type { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
+import type { OracleTable } from '../roll-table/oracle-table'
 
 const ONE_MINUTE_IN_MS = 60 * 1000
 
@@ -14,7 +15,7 @@ type PackContents = Array<
 		| IronswornJournalEntry
 		| Macro
 		| Playlist
-		| RollTable
+		| OracleTable
 		| BaseAdventure
 	>
 >

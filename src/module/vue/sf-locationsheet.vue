@@ -570,7 +570,7 @@ async function saveKlass(klass) {
 }
 
 async function drawAndReturnResult(
-	table?: RollTable
+	table?: OracleTable
 ): Promise<string | undefined> {
 	if (!table) return undefined
 
