@@ -179,75 +179,80 @@ export class OracleTable extends RollTable {
 			messageOptions = {}
 		}: DeepPartial<RollTable.ToMessageOptions> = {}
 	) {
-		const cls = getDocumentClass('ChatMessage')
-		const rollTableType = this.getFlag('foundry-ironsworn', 'type')
+		return await super.toMessage(results, {
+			roll,
+			messageData,
+			messageOptions
+		} as any)
+		// const cls = getDocumentClass('ChatMessage')
+		// const rollTableType = this.getFlag('foundry-ironsworn', 'type')
 
-		const speakerOptions: ChatMessage.GetSpeakerOptions = {}
+		// const speakerOptions: ChatMessage.GetSpeakerOptions = {}
 
-		// intentionally left as a switch for later expansion
-		switch (rollTableType) {
-			case 'delve-site-dangers':
-			case 'delve-site-denizens':
-			case 'delve-site-features': // delve site oracles are attributed
-				speakerOptions.actor = await this.getSourceDocument()
-				break
-			default:
-				break
-		}
+		// // intentionally left as a switch for later expansion
+		// switch (rollTableType) {
+		// 	case 'delve-site-dangers':
+		// 	case 'delve-site-denizens':
+		// 	case 'delve-site-features': // delve site oracles are attributed
+		// 		speakerOptions.actor = await this.getSourceDocument()
+		// 		break
+		// 	default:
+		// 		break
+		// }
 
-		const speaker = cls.getSpeaker(speakerOptions)
+		// const speaker = cls.getSpeaker(speakerOptions)
 
-		// options for this aren't exposed prior to running the method, so we have to rebuild them from scratch
-		// these are loosely based on FVTT v10 RollTable#toMessage
+		// // options for this aren't exposed prior to running the method, so we have to rebuild them from scratch
+		// // these are loosely based on FVTT v10 RollTable#toMessage
 
-		// TODO This is a fallback to handle tables that can produce multiple results from a single roll, which foundry-ironsworn doesn't presently use. There might be some utility to them doing so, however...
-		if (
-			results.length > 1 ||
-			results.some((result) => !(result instanceof OracleTableResult))
-		)
-			return await super.toMessage(results, {
-				roll,
-				messageData,
-				// @ts-expect-error
-				messageOptions
-			})
+		// // TODO This is a fallback to handle tables that can produce multiple results from a single roll, which foundry-ironsworn doesn't presently use. There might be some utility to them doing so, however...
+		// if (
+		// 	results.length > 1 ||
+		// 	results.some((result) => !(result instanceof OracleTableResult))
+		// )
+		// 	return await super.toMessage(results, {
+		// 		roll,
+		// 		messageData,
+		// 		// @ts-expect-error
+		// 		messageOptions
+		// 	})
 
-		const flags: ConfiguredFlags<'ChatMessage'> = {
-			core: { RollTable: this.id },
-			'foundry-ironsworn': {
-				rollTableType: this.getFlag('foundry-ironsworn', 'type'),
-				sourceId: this.getFlag('foundry-ironsworn', 'sourceId') ?? this.uuid
-			}
-		}
+		// const flags: ConfiguredFlags<'ChatMessage'> = {
+		// 	core: { RollTable: this.id },
+		// 	'foundry-ironsworn': {
+		// 		rollTableType: this.getFlag('foundry-ironsworn', 'type'),
+		// 		sourceId: this.getFlag('foundry-ironsworn', 'sourceId') ?? this.uuid
+		// 	}
+		// }
 
-		// Construct chat data
-		messageData = foundry.utils.mergeObject(
-			{
-				user: game.user?.id,
-				speaker,
-				type:
-					roll != null
-						? CONST.CHAT_MESSAGE_TYPES.ROLL
-						: CONST.CHAT_MESSAGE_TYPES.OTHER,
-				roll,
-				sound: roll != null ? CONFIG.sounds.dice : null,
-				flags
-			},
-			messageData
-		)
+		// // Construct chat data
+		// messageData = foundry.utils.mergeObject(
+		// 	{
+		// 		user: game.user?.id,
+		// 		speaker,
+		// 		type:
+		// 			roll != null
+		// 				? CONST.CHAT_MESSAGE_TYPES.ROLL
+		// 				: CONST.CHAT_MESSAGE_TYPES.OTHER,
+		// 		roll,
+		// 		sound: roll != null ? CONFIG.sounds.dice : null,
+		// 		flags
+		// 	},
+		// 	messageData
+		// )
 
-		console.log('messageData', messageData)
+		// console.log('messageData', messageData)
 
-		const templateData = await this._prepareTemplateData(results, roll)
+		// const templateData = await this._prepareTemplateData(results, roll)
 
-		// Render the chat card which combines the dice roll with the drawn results
-		messageData.content = await renderTemplate(
-			OracleTable.resultTemplate,
-			templateData
-		)
+		// // Render the chat card which combines the dice roll with the drawn results
+		// messageData.content = await renderTemplate(
+		// 	OracleTable.resultTemplate,
+		// 	templateData
+		// )
 
-		// Create the chat message
-		return await cls.create(messageData, messageOptions)
+		// // Create the chat message
+		// return await cls.create(messageData, messageOptions)
 	}
 
 	/**
