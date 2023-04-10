@@ -7,20 +7,6 @@ import {
 	ISOracleCategories
 } from './data'
 import { hashLookup } from './import'
-import type { OracleTable } from '../roll-table/oracle-table'
-
-export async function getFoundryTableByDfId(
-	dfid: string
-): Promise<StoredDocument<OracleTable> | undefined> {
-	const isd = await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
-	const sfd = await cachedDocumentsForPack(
-		'foundry-ironsworn.starforgedoracles'
-	)
-	const matcher = (x) => x.id === hashLookup(dfid)
-	return (isd?.find(matcher) ?? sfd?.find(matcher)) as
-		| StoredDocument<OracleTable>
-		| undefined
-}
 
 export async function getFoundryMoveByDfId(
 	dfid: string

@@ -1,9 +1,8 @@
 import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
-import { getFoundryTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
-import type { OracleTable } from '../roll-table/oracle-table'
+import { OracleTable } from '../roll-table/oracle-table'
 
 interface CreateActorDialogOptions extends FormApplicationOptions {
 	folder: string
@@ -159,10 +158,10 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	}
 
 	async _ironlanderNameTables(): Promise<OracleTable[] | undefined> {
-		const tableA = (await getFoundryTableByDfId(
+		const tableA = (await OracleTable.getByDfId(
 			'Ironsworn/Oracles/Name/Ironlander/A'
 		)) as any
-		const tableB = (await getFoundryTableByDfId(
+		const tableB = (await OracleTable.getByDfId(
 			'Ironsworn/Oracles/Name/Ironlander/B'
 		)) as any
 		if (tableA && tableB) return [tableA, tableB]
@@ -170,10 +169,10 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	}
 
 	async _randomStarforgedName(): Promise<string | undefined> {
-		const firstTable = (await getFoundryTableByDfId(
+		const firstTable = (await OracleTable.getByDfId(
 			'Starforged/Oracles/Characters/Name/Given_Name'
 		)) as any
-		const lastTable = (await getFoundryTableByDfId(
+		const lastTable = (await OracleTable.getByDfId(
 			'Starforged/Oracles/Characters/Name/Family_Name'
 		)) as any
 		if (!firstTable || !lastTable) return undefined

@@ -129,7 +129,7 @@ export interface DelveSiteFeatureOrDanger<
 	flags: {
 		'foundry-ironsworn': {
 			type: T
-			sourceId: string
+			sourceId?: string | null
 		}
 	}
 }

@@ -6,7 +6,7 @@ import type {
 } from 'dataforged'
 import { starforged, ironsworn } from 'dataforged'
 import { cloneDeep, compact } from 'lodash-es'
-import { getFoundryTableByDfId } from '../dataforged'
+import { OracleTable } from '../roll-table/oracle-table'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface IOracleTreeNode {
@@ -95,7 +95,7 @@ export async function walkOracle(
 ): Promise<IOracleTreeNode> {
 	if (oracle == null) return emptyNode()
 
-	const table = await getFoundryTableByDfId(oracle.$id)
+	const table = await OracleTable.getByDfId(oracle.$id)
 
 	const node: IOracleTreeNode = {
 		...emptyNode(),
@@ -115,7 +115,7 @@ export async function walkOracle(
 	for (const entry of oracle.Table ?? []) {
 		const name = entry.Result
 		if (entry.Subtable != null) {
-			const subtable = await getFoundryTableByDfId(`${oracle.$id}/${name}`)
+			const subtable = await OracleTable.getByDfId(`${oracle.$id}/${name}`)
 			if (subtable != null) {
 				node.children.push({
 					...emptyNode(),

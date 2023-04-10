@@ -58,10 +58,10 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { computed, inject, reactive } from 'vue'
 import type { SiteDataPropertiesData } from '../../../actor/actortypes'
-import { getFoundryTableByDfId } from '../../../dataforged'
 import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
 import type { DelveThemeDataSourceData } from '../../../item/itemtypes'
+import { OracleTable } from '../../../roll-table/oracle-table'
 import { OracleRollMessage, IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
@@ -111,7 +111,7 @@ Promise.resolve().then(async () => {
 async function revealADanger() {
 	if (!hasThemeAndDomain.value) return
 
-	const oracle = await getFoundryTableByDfId(
+	const oracle = await OracleTable.getByDfId(
 		'Ironsworn/Oracles/Moves/Reveal_a_Danger'
 	)
 	if (!oracle) return
