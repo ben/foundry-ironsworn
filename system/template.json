@@ -269,28 +269,36 @@
 					"range": [1, 4],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [5, 8],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [9, 12],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [13, 16],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
@@ -303,84 +311,108 @@
 					"range": [1, 5],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [6, 10],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [11, 12],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [13, 14],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [15, 16],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [17, 18],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [19, 20],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [21, 22],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [23, 24],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [25, 26],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [27, 28],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [29, 30],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				}
 			]
@@ -393,84 +425,108 @@
 					"range": [21, 43],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [44, 56],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [57, 64],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [65, 68],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [69, 72],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [73, 76],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [77, 80],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [81, 84],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [85, 88],
 					"text": "",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [89, 98],
 					"description": "Something unusual or unexpected",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [99, 99],
 					"description": "You transition into a new theme",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				},
 				{
 					"range": [100, 100],
 					"description": "You transition into a new domain",
 					"flags": {
-						"type": "delve-site-feature"
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
 					}
 				}
 			],
@@ -479,35 +535,45 @@
 					"range": [31, 33],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [34, 36],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [37, 39],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [40, 42],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				},
 				{
 					"range": [43, 45],
 					"text": "",
 					"flags": {
-						"type": "delve-site-danger"
+						"foundry-ironsworn": {
+							"type": "delve-site-danger"
+						}
 					}
 				}
 			]
