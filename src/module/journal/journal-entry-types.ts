@@ -34,7 +34,7 @@ declare global {
 		JournalEntry: {
 			'foundry-ironsworn'?: {
 				dfid?: string
-				type: JournalEntryType
+				type?: JournalEntryType
 			}
 		}
 	}
