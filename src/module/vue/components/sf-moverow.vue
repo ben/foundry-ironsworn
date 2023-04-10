@@ -57,7 +57,6 @@
 <script setup lang="ts">
 import type { ExtractPropTypes } from 'vue'
 import { computed, provide, reactive, ref } from 'vue'
-import { getDFOracleByDfId } from '../../dataforged'
 import type { Move } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { walkOracle } from '../../features/customoracles'
@@ -73,6 +72,7 @@ import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
 import type { SFMoveDataPropertiesData } from '../../item/itemtypes'
 import { uniq } from 'lodash-es'
+import { OracleTable } from '../../roll-table/oracle-table'
 
 const props = withDefaults(
 	defineProps<{
@@ -153,10 +153,12 @@ const oracleIds = uniq([
 	...($itemSystem.value?.Oracles ?? []),
 	...(props.move.dataforgedMove?.Oracles ?? [])
 ])
-Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
-	const nodes = await Promise.all(dfOracles.map(walkOracle))
-	data.oracles.push(...nodes)
-})
+Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(
+	async (dfOracles) => {
+		const nodes = await Promise.all(dfOracles.map(walkOracle))
+		data.oracles.push(...nodes)
+	}
+)
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
