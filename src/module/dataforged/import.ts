@@ -102,12 +102,13 @@ export async function importFromDataforged() {
 		processSFAssets(),
 		processISAssets(),
 		processSFOracles(),
-		processSFEncounters(),
-		processSFFoes(),
 		processISMoves(),
 		processISOracles(),
-		//  processISTruths(), // Re-enable when DF includes them
-		processSFTruths()
+		// processISTruths(), // Re-enable when DF includes them
+		processSFTruths(),
+		processSFEncounters().then(async () => {
+			await processSFFoes()
+		})
 	])
 
 	// Lock the packs again
@@ -212,7 +213,7 @@ function assetsForTypes(types: IAssetType[]) {
 					return ret
 				}),
 				track: {
-					enabled: !(asset['Condition Meter'] == null),
+					enabled: asset['Condition Meter'] != null,
 					name: asset['Condition Meter']?.Name,
 					current: asset['Condition Meter']?.Value,
 					max: asset['Condition Meter']?.Max
@@ -375,9 +376,9 @@ async function processSFEncounters() {
 	})
 }
 
+/** Processes *existing* Starforged encounter Items into actors. Run it immediately after processSFEncounters or it won't work! */
 async function processSFFoes() {
 	const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
-	console.log('foundry-ironsworn.starforgedencounters', foesPack)
 	const foeItems = (await foesPack?.getDocuments()) as Array<
 		StoredDocument<IronswornItem>
 	>
