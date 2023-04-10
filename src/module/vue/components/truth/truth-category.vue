@@ -27,7 +27,6 @@
 </template>
 
 <script lang="ts" setup>
-import { inRange } from 'lodash-es'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalEntry } from '../../../journal/journal-entry'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
