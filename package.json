@@ -37,7 +37,7 @@
 		"cssnano": "^6.0.0",
 		"dataforged": "^1.0",
 		"eslint": "^8.36.0",
-		"eslint-config-prettier": "^8.6.0",
+		"eslint-config-prettier": "^8.8.0",
 		"eslint-config-standard-with-typescript": "^34.0.1",
 		"eslint-plugin-vue": "^9.9.0",
 		"less": "^4.1.3",
