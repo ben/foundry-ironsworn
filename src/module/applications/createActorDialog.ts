@@ -3,6 +3,7 @@ import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
+import type { OracleTable } from '../roll-table/roll-table'
 
 interface CreateActorDialogOptions extends FormApplicationOptions {
 	folder: string
@@ -157,7 +158,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		await this.close()
 	}
 
-	async _ironlanderNameTables(): Promise<RollTable[] | undefined> {
+	async _ironlanderNameTables(): Promise<OracleTable[] | undefined> {
 		const tableA = (await getFoundryTableByDfId(
 			'Ironsworn/Oracles/Name/Ironlander/A'
 		)) as any
