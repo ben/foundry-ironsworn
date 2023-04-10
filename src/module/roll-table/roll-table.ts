@@ -255,69 +255,71 @@ export class OracleTable extends RollTable {
 	 * @param sourceId The UUID of the original source of the computed table, usually an Actor or Item.
 	 */
 	static async getComputedTable(sourceId: string, type: ComputedTableType) {
-		const source = await fromUuid(sourceId)
-		if (source == null) return undefined
-		let table: OracleTable | undefined
-		switch (type) {
-			case 'delve-site-dangers':
-				table = await (source as IronswornActor).getDangers()
-				break
-			case 'delve-site-denizens':
-				table = (source as IronswornActor).denizens
-				break
-			case 'delve-site-features':
-				table = (source as IronswornActor).features
-				break
-			// TODO
-			case 'truth-options':
-			case 'truth-option-subtable':
-			default:
-				break
-		}
-		return table
+		throw new Error('NYI')
+		// const source = await fromUuid(sourceId)
+		// if (source == null) return undefined
+		// let table: OracleTable | undefined
+		// switch (type) {
+		// 	case 'delve-site-dangers':
+		// 		table = await (source as IronswornActor).getDangers()
+		// 		break
+		// 	case 'delve-site-denizens':
+		// 		table = (source as IronswornActor).denizens
+		// 		break
+		// 	case 'delve-site-features':
+		// 		table = (source as IronswornActor).features
+		// 		break
+		// 	// TODO
+		// 	case 'truth-options':
+		// 	case 'truth-option-subtable':
+		// 	default:
+		// 		break
+		// }
+		// return table
 	}
 
 	/**
 	 * Rerolls an oracle result message, replacing the message content with the new result
 	 */
 	static async reroll(messageId: string) {
-		const msg = game.messages?.get(messageId)
-		if (msg == null) return
+		throw new Error('NYI')
+		// 	const msg = game.messages?.get(messageId)
+		// 	if (msg == null) return
 
-		const rerolls = msg.getFlag('foundry-ironsworn', 'rerolls') ?? []
-		const sourceId = msg.getFlag('foundry-ironsworn', 'sourceId')
-		const rollTableType = msg.getFlag('foundry-ironsworn', 'rollTableType')
+		// 	const rerolls = msg.getFlag('foundry-ironsworn', 'rerolls') ?? []
+		// 	const sourceId = msg.getFlag('foundry-ironsworn', 'sourceId')
+		// 	const rollTableType = msg.getFlag('foundry-ironsworn', 'rollTableType')
 
-		// console.log(rerolls, sourceId, rollTableType)
+		// 	// console.log(rerolls, sourceId, rollTableType)
 
-		if (sourceId == null) return
-		let oracleTable: OracleTable | undefined
-		if (rollTableType == null)
-			oracleTable = (await fromUuid(sourceId)) as OracleTable | undefined
-		else {
-			oracleTable = await OracleTable.getComputedTable(sourceId, rollTableType)
-		}
-		if (oracleTable == null) return
+		// 	if (sourceId == null) return
+		// 	let oracleTable: OracleTable | undefined
+		// 	if (rollTableType == null)
+		// 		oracleTable = (await fromUuid(sourceId)) as OracleTable | undefined
+		// 	else {
+		// 		oracleTable = await OracleTable.getComputedTable(sourceId, rollTableType)
+		// 	}
+		// 	if (oracleTable == null) return
 
-		// defer render to chat so we can manually set the chat message id
-		const { results, roll } = await oracleTable.draw({ displayChat: false })
+		// 	// defer render to chat so we can manually set the chat message id
+		// 	const { results, roll } = await oracleTable.draw({ displayChat: false })
 
-		const templateData = await oracleTable._prepareTemplateData(results, roll)
+		// 	const templateData = await oracleTable._prepareTemplateData(results, roll)
 
-		const flags = foundry.utils.mergeObject(msg.toObject().flags, {
-			'foundry-ironsworn': {
-				rerolls: [...rerolls, roll.total]
-			}
-		}) as ConfiguredFlags<'ChatMessage'>
+		// 	const flags = foundry.utils.mergeObject(msg.toObject().flags, {
+		// 		'foundry-ironsworn': {
+		// 			rerolls: [...rerolls, roll.total]
+		// 		}
+		// 	}) as ConfiguredFlags<'ChatMessage'>
 
-		// trigger sound + 3d dice manually because updating the message won't
-		void AudioHelper.play({ src: CONFIG.sounds.dice })
-		void game.dice3d?.showForRoll(roll, game.user, true)
+		// 	// trigger sound + 3d dice manually because updating the message won't
+		// 	void AudioHelper.play({ src: CONFIG.sounds.dice })
+		// 	void game.dice3d?.showForRoll(roll, game.user, true)
 
-		return await msg.update({
-			content: await renderTemplate(OracleTable.resultTemplate, templateData),
-			flags
-		})
+		// 	return await msg.update({
+		// 		content: await renderTemplate(OracleTable.resultTemplate, templateData),
+		// 		flags
+		// 	})
 	}
 }
 

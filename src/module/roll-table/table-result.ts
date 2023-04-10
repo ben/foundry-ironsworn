@@ -48,17 +48,18 @@ export class OracleTableResult extends TableResult {
 	static fromDataforged(
 		tableRow: IRow & { Floor: number; Ceiling: number }
 	): TableResultDataConstructorData {
-		let text: string
-		if (tableRow.Result && tableRow.Summary) {
-			text = `${tableRow.Result} (${tableRow.Summary})`
-		} else text = tableRow.Result ?? ''
+		throw new Error('NYI')
+		// let text: string
+		// if (tableRow.Result && tableRow.Summary) {
+		// 	text = `${tableRow.Result} (${tableRow.Summary})`
+		// } else text = tableRow.Result ?? ''
 
-		const data: TableResultDataConstructorData = {
-			_id: hashLookup(tableRow.$id ?? ''),
-			range: [tableRow.Floor, tableRow.Ceiling],
-			text: tableRow.Result && renderLinksInStr(text)
-		}
+		// const data: TableResultDataConstructorData = {
+		// 	_id: hashLookup(tableRow.$id ?? ''),
+		// 	range: [tableRow.Floor, tableRow.Ceiling],
+		// 	text: tableRow.Result && renderLinksInStr(text)
+		// }
 
-		return data
+		// return data
 	}
 }
