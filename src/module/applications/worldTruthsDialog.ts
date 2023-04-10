@@ -1,4 +1,5 @@
 import { IronswornSettings } from '../helpers/settings'
+import { IronswornJournalEntry } from '../journal/journal-entry'
 
 export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 	constructor() {
@@ -75,7 +76,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 			sections.push(`<h2>${category}</h2> ${description}`)
 		}
 
-		const journal = await JournalEntry.create({
+		const journal = await IronswornJournalEntry.create({
 			name: game.i18n.localize('IRONSWORN.YourWorldTruths'),
 			content: sections.join('\n')
 		})
