@@ -116,7 +116,7 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
 	// Walk the component tree, expanding as we go
 	let children = oracles.value
 	for (const dataNode of dfOraclePath) {
-		const child = children?.find((x: any) => x.dfId() === dataNode.$id)
+		const child = children?.find((x: any) => x.dfid() === dataNode.$id)
 		if (!child) break
 		child.expand()
 		await nextTick()

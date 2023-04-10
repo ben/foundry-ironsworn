@@ -261,7 +261,7 @@ async function processOracle(
 		output.push({
 			_id: hashLookup(oracle.$id),
 			flags: {
-				dfId: oracle.$id,
+				dfid: oracle.$id,
 				category: oracle.Category
 			},
 			name: oracle.Name,

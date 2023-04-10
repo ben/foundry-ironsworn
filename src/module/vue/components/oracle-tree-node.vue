@@ -156,7 +156,7 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
 })
 
 defineExpose({
-	dfId: () => props.node.dataforgedNode?.$id,
+	dfid: () => props.node.dataforgedNode?.$id,
 	expand,
 	collapse
 })
