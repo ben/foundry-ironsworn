@@ -1,7 +1,8 @@
 import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
-import { starforged } from 'dataforged'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { starforged, ironsworn } from 'dataforged'
 import type { Emitter, EventType } from 'mitt'
 import Mitt from 'mitt'
 import {
