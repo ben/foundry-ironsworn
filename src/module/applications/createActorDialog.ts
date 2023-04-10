@@ -2,7 +2,7 @@ import type { ActorDataConstructorData } from '@league-of-foundry-developers/fou
 import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
 import { IronswornSettings } from '../helpers/settings'
-import { OracleTable } from '../roll-table/roll-table'
+import { OracleTable } from '../roll-table/oracle-table'
 
 interface CreateActorDialogOptions extends FormApplicationOptions {
 	folder: string

@@ -1,4 +1,4 @@
-import { OracleTable } from '../../roll-table/roll-table'
+import { OracleTable } from '../../roll-table/oracle-table'
 import { IronswornTour } from './ironsworn_tour'
 
 export class MoveSheetTour extends IronswornTour {

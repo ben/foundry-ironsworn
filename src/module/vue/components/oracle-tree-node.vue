@@ -76,7 +76,7 @@ import CollapseTransition from './transition/collapse-transition.vue'
 import IronBtn from './buttons/iron-btn.vue'
 import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
-import type { OracleTable } from '../../roll-table/roll-table'
+import type { OracleTable } from '../../roll-table/oracle-table'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 

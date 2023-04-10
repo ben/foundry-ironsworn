@@ -5,8 +5,8 @@ import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/s
 import type { IRow } from 'dataforged'
 import { clamp } from 'lodash-es'
 import { ChallengeRank, RANK_INCREMENTS } from '../constants'
-import { OracleTable } from '../roll-table/roll-table'
-import { OracleTableResult } from '../roll-table/table-result'
+import { OracleTable } from '../roll-table/oracle-table'
+import { OracleTableResult } from '../roll-table/oracle-table-result'
 import type {
 	ProgressTrackDataPropertiesData,
 	TruthOptionDataPropertiesData

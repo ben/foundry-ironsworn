@@ -3,7 +3,7 @@ import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
-import { OracleTable } from '../roll-table/roll-table'
+import { OracleTable } from '../roll-table/oracle-table'
 
 export class IronswornChatCard {
 	id?: string | null

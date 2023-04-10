@@ -1,4 +1,4 @@
-import type { OracleTable } from '../roll-table/roll-table'
+import type { OracleTable } from '../roll-table/oracle-table'
 
 export function registerCompendiumCategoryHook() {
 	Hooks.on('renderCompendium', async (_app, html: JQuery, opts) => {

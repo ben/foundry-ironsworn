@@ -39,8 +39,8 @@ import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 import 'virtual:svg-icons-register'
 import { registerDefaultOracleTrees } from './module/features/customoracles'
-import { OracleTable } from './module/roll-table/roll-table'
-import { OracleTableResult } from './module/roll-table/table-result'
+import { OracleTable } from './module/roll-table/oracle-table'
+import { OracleTableResult } from './module/roll-table/oracle-table-result'
 import type {
 	DocumentSubTypes,
 	DocumentType

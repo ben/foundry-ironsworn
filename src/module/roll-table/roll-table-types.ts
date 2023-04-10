@@ -1,6 +1,6 @@
 import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
-import type { OracleTableResult } from './table-result'
-import type { OracleTable } from './roll-table'
+import type { OracleTableResult } from './oracle-table-result'
+import type { OracleTable } from './oracle-table'
 import type {
 	RollTableData,
 	TableResultData
