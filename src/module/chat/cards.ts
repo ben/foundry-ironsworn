@@ -52,21 +52,21 @@ export class IronswornChatCard {
 
 		await this.attachMoveOracleContextMenu(html)
 
-		html
-			.find('a.content-link')
-			.on('click', (ev) => this._moveNavigate.call(this, ev))
-		html
-			.find('a.oracle-category-link')
-			.on('click', (ev) => this._oracleNavigate.call(this, ev))
+		html.find('a.content-link').on('click', async (ev) => {
+			await this._moveNavigate.call(this, ev)
+		})
+		html.find('a.oracle-category-link').on('click', async (ev) => {
+			await this._oracleNavigate.call(this, ev)
+		})
 		html
 			.find('.burn-momentum')
-			.on('click', (ev) => this._burnMomentum.call(this, ev))
+			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
 			.find('.burn-momentum-sf')
-			.on('click', (ev) => this._burnMomentum.call(this, ev))
+			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
 			.find('.ironsworn-roll-burn-momentum')
-			.on('click', (ev) => this._burnMomentum.call(this, ev))
+			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
 			.find('[data-action="oracleReroll"]')
 			.on('click', (ev) => this._oracleReroll.call(this, ev))
@@ -78,9 +78,9 @@ export class IronswornChatCard {
 				.attr('data-tooltip', game.i18n.localize('IRONSWORN.ClipboardDisabled'))
 				.attr('data-tooltip-direction', 'LEFT')
 		} else {
-			html
-				.find('.copy-result')
-				.on('click', (ev) => this._oracleResultCopy.call(this, ev))
+			html.find('.copy-result').on('click', async (ev) => {
+				await this._oracleResultCopy.call(this, ev)
+			})
 		}
 		html
 			.find('.ironsworn-roll-resolve')

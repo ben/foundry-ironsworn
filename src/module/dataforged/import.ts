@@ -18,9 +18,9 @@ import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
+import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
-import { OracleTable } from '../roll-table/oracle-table'
 import { OracleTableResult } from '../roll-table/oracle-table-result'
 import {
 	ISAssetTypes,
