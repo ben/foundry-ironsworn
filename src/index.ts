@@ -39,6 +39,7 @@ import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 import 'virtual:svg-icons-register'
 import { registerDefaultOracleTrees } from './module/features/customoracles'
+import { IronswornJournalEntry } from './module/journal/journal-entry'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -61,6 +62,7 @@ Hooks.once('init', async () => {
 	CONFIG.Actor.documentClass = IronswornActor
 	CONFIG.Item.documentClass = IronswornItem
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
+	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 
 	// CONFIG.RollTable.resultTemplate =
 	//   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'

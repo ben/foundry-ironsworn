@@ -17,6 +17,7 @@ import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
+import { IronswornJournalEntry } from '../journal/journal-entry'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -406,7 +407,7 @@ async function processTruths(
 	if (pack == null) throw new Error(`Couldn't find ${outputCompendium}`)
 
 	for (const truth of truths) {
-		const je = await JournalEntry.create(
+		const je = await IronswornJournalEntry.create(
 			{
 				name: truth.Display.Title,
 				flags: { 'foundry-ironsworn': { dfid: truth.$id } }
