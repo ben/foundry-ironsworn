@@ -489,7 +489,7 @@ const canRandomizeName = computed(() => {
 
 	if (subtype === 'planet') {
 		const kc = capitalize(klass)
-		const json = CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
+		const json = OracleTable.getDFOracleByDfId(
 			`Starforged/Oracles/Planets/${kc}`
 		)
 		if (json) return true
@@ -585,7 +585,7 @@ async function randomizeName() {
 	let name
 	if (subtype === 'planet') {
 		const kc = capitalize(klass)
-		const json = await CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
+		const json = await OracleTable.getDFOracleByDfId(
 			`Starforged/Oracles/Planets/${kc}`
 		)
 		name = sample(json?.['Sample Names'] ?? [])

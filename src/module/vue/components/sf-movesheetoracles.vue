@@ -34,9 +34,9 @@
 
 <script setup lang="ts">
 import { nextTick, provide, reactive, ref, watch } from 'vue'
-import { findOracleWithIntermediateNodes } from '../../dataforged'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { getOracleTreeWithCustomOracles } from '../../features/customoracles'
+import { OracleTable } from '../../roll-table/oracle-table'
 import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 
@@ -106,7 +106,7 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
 	clearSearch()
 
 	// Find the path in the data tree
-	const dfOraclePath = findOracleWithIntermediateNodes(dfid)
+	const dfOraclePath = OracleTable.findOracleWithIntermediateNodes(dfid)
 
 	// Wait for children to be present
 	while (!oracles.value) {
