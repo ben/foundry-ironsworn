@@ -77,9 +77,12 @@ Hooks.once('init', async () => {
 	// Define custom Entity classes
 	CONFIG.Actor.documentClass = IronswornActor
 	CONFIG.Item.documentClass = IronswornItem
+
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
+
 	CONFIG.RollTable.documentClass = OracleTable
+	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
 	CONFIG.TableResult.documentClass = OracleTableResult
 
 	// CONFIG.RollTable.resultTemplate =
