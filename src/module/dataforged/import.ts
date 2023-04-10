@@ -379,7 +379,7 @@ async function processSFFoes() {
 	const foeItems = (await foesPack?.getDocuments()) as Array<
 		StoredDocument<IronswornItem>
 	>
-	for await (const foeItem of foeItems ?? []) {
+	for (const foeItem of foeItems ?? []) {
 		const actor = await IronswornActor.create(
 			{
 				name: foeItem.name ?? 'wups',
