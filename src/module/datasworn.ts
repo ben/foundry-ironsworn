@@ -12,7 +12,7 @@ const THEME_IMAGES = {
 	Infested: 'icons/creatures/eyes/icy-cluster-blue.webp',
 	Ravaged: 'icons/environment/settlement/building-rubble.webp',
 	Wild: 'icons/magic/nature/root-vines-grow-brown.webp'
-}
+} as const
 
 const THEME_IDS = {
 	Ancient: '9RnSqMcrekJoJbXH',
@@ -23,7 +23,7 @@ const THEME_IDS = {
 	Infested: 'H5aJvBKwPrbEnzMe',
 	Ravaged: 'iDOVA8797p4kYar7',
 	Wild: 'v3jYuNrr1Jt4TzNZ'
-}
+} as const
 
 const DOMAIN_IMAGES = {
 	Barrow: 'icons/environment/wilderness/cave-entrance-dwarven-hill.webp',
@@ -38,7 +38,7 @@ const DOMAIN_IMAGES = {
 	Stronghold: 'icons/environment/settlement/castle.webp',
 	Tanglewood: 'icons/environment/wilderness/terrain-forest-gray.webp',
 	Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp'
-}
+} as const
 
 const DOMAIN_IDS = {
 	Barrow: 'LIoWYBGBBMPlPNam',
@@ -53,7 +53,7 @@ const DOMAIN_IDS = {
 	Stronghold: 'Yy9KkvSOvB2tWxOp',
 	Tanglewood: 'MbJlpR81C4Q4WDV2',
 	Underkeep: 'vyyrG8pPtDQ6FAgG'
-}
+} as const
 
 const FOE_IMAGES = {
 	Broken: 'icons/creatures/mammals/humanoid-fox-cat-archer.webp',
@@ -117,7 +117,7 @@ const FOE_IMAGES = {
 	Gloom: 'icons/magic/perception/silhouette-stealth-shadow.webp',
 	Maelstrom: 'icons/magic/water/vortex-water-whirlpool.webp',
 	Tempest: 'icons/magic/lightning/bolts-salvo-clouds-sky.webp'
-}
+} as const
 
 const PACKS = [
 	'foundry-ironsworn.ironsworndelvethemes',
@@ -125,7 +125,7 @@ const PACKS = [
 	'foundry-ironsworn.ironswornfoes',
 	'foundry-ironsworn.foeactorsis',
 	'foundry-ironsworn.ironswornoracles'
-]
+] as const
 
 interface RawFeatureOrDanger {
 	Chance: number
