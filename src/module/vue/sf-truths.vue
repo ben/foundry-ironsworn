@@ -47,7 +47,7 @@ const props = defineProps<{
 	data: {
 		truths: {
 			df: ISettingTruth
-			je: () => JournalEntry
+			je: () => IronswornJournalEntry
 		}[]
 	}
 }>()
