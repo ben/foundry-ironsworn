@@ -8,10 +8,8 @@ import type { ProgressTrackDataPropertiesData } from './journal-entry-page-types
  * Extends the base {@link JournalEntryPage} document class.
  */
 export class IronswornJournalPage<
-	T extends DataConfig['JournalEntryPage'] = DataConfig['JournalEntryPage']
-> extends JournalEntryPage {
-	system!: T['system']
-	type!: T['type']
+	T extends JournalEntryPageType = JournalEntryPageType
+> extends JournalEntryPage<T> {
 	protected override async _preCreate(
 		data: JournalEntryPageData.ConstructorData,
 		options: DocumentModificationOptions,
@@ -48,25 +46,5 @@ export class IronswornJournalPage<
 		const increment = RANK_INCREMENTS[legacyRank] * progressUnits
 		const newValue = clamp(oldTicks + increment, minTicks, maxTicks)
 		return await this.update({ 'system.ticks': newValue })
-	}
-}
-
-declare global {
-	interface DocumentClassConfig {
-		JournalEntryPage: typeof IronswornJournalPage
-	}
-	// eslint-disable-next-line @typescript-eslint/no-namespace
-	namespace Game {
-		interface SystemData<T> extends PackageData<T> {
-			model: {
-				JournalEntryPage: Record<string, Record<string, unknown>>
-			}
-			template: {
-				JournalEntryPage?: {
-					types: string[]
-					templates?: Record<string, unknown>
-				} & Record<string, unknown>
-			}
-		}
 	}
 }

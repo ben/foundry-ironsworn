@@ -33,12 +33,13 @@ import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 import { IronswornJournalPage } from './module/journal/journal-entry-page'
 import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
-import { TruthJournalPageSheet } from './module/journal/truth-page'
+import { TruthJournalPageSheet } from './module/journal/sheet/truth-page'
 import { registerTours } from './module/features/tours'
 import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 import 'virtual:svg-icons-register'
 import { registerDefaultOracleTrees } from './module/features/customoracles'
+import { IronswornJournalEntry } from './module/journal/journal-entry'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -61,6 +62,7 @@ Hooks.once('init', async () => {
 	CONFIG.Actor.documentClass = IronswornActor
 	CONFIG.Item.documentClass = IronswornItem
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
+	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 
 	// CONFIG.RollTable.resultTemplate =
 	//   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
