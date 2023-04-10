@@ -267,10 +267,7 @@ async function processOracle(
 		output.push({
 			_id: hashLookup(oracle.$id),
 			flags: {
-				'foundry-ironsworn': {
-					dfid: oracle.$id,
-					category: oracle.Category
-				}
+				'foundry-ironsworn': { dfid: oracle.$id, category: oracle.Category }
 			},
 			name: oracle.Name,
 			description,
