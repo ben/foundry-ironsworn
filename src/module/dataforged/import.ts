@@ -5,6 +5,7 @@ import type {
 	IMoveCategory,
 	IOracle,
 	IOracleCategory,
+	Ironsworn,
 	IRow,
 	ISettingTruth,
 	Starforged
@@ -376,10 +377,11 @@ async function processSFEncounters() {
 
 async function processSFFoes() {
 	const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
+	console.log('foundry-ironsworn.starforgedencounters', foesPack)
 	const foeItems = (await foesPack?.getDocuments()) as Array<
 		StoredDocument<IronswornItem>
 	>
-	for (const foeItem of foeItems ?? []) {
+	for await (const foeItem of foeItems ?? []) {
 		const actor = await IronswornActor.create(
 			{
 				name: foeItem.name ?? 'wups',
@@ -454,6 +456,13 @@ async function processTruths(
 async function processSFTruths() {
 	await processTruths(
 		((starforged as any).default as Starforged)['Setting Truths'],
+		'foundry-ironsworn.starforgedtruths'
+	)
+}
+
+async function processISTruths() {
+	await processTruths(
+		((ironsworn as any).default as Ironsworn)['Setting Truths']!,
 		'foundry-ironsworn.starforgedtruths'
 	)
 }
