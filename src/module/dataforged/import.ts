@@ -96,18 +96,18 @@ export async function importFromDataforged() {
 		await Item.deleteDocuments(idsToDelete, { pack: key })
 	}
 
-	await processSFMoves()
-	await processSFAssets()
-	await processISAssets()
-	await processSFOracles()
-	await processSFEncounters()
-	await processSFFoes()
-
-	await processISMoves()
-	await processISOracles()
-
-	// await processISTruths() // Re-enable when DF includes them
-	await processSFTruths()
+	await Promise.all([
+		processSFMoves(),
+		processSFAssets(),
+		processISAssets(),
+		processSFOracles(),
+		processSFEncounters(),
+		processSFFoes(),
+		processISMoves(),
+		processISOracles(),
+		//  processISTruths(), // Re-enable when DF includes them
+		processSFTruths()
+	])
 
 	// Lock the packs again
 	for (const key of PACKS) {
