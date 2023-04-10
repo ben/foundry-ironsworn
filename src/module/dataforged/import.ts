@@ -18,6 +18,7 @@ import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import { IronswornJournalEntry } from '../journal/journal-entry'
+import { IronswornJournalPage } from '../journal/journal-entry-page'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -416,7 +417,7 @@ async function processTruths(
 		)
 
 		for (const entry of truth.Table) {
-			await JournalEntryPage.create(
+			await IronswornJournalPage.create(
 				{
 					type: 'truth',
 					name: entry.Result,
@@ -431,7 +432,7 @@ async function processTruths(
 			)
 		}
 
-		await JournalEntryPage.create(
+		await IronswornJournalPage.create(
 			{
 				name: 'Character Inspiration',
 				text: {
