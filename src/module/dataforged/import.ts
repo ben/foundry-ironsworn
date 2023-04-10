@@ -259,29 +259,8 @@ async function processOracle(
 ) {
 	// Oracles JSON is a tree we wish to iterate through depth first adding
 	// parents prior to their children, and children in order
-	if (oracle.Table != null) {
-		const description = marked.parseInline(
-			renderLinksInStr(oracle.Description ?? '')
-		)
-		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
-		output.push({
-			_id: hashLookup(oracle.$id),
-			flags: {
-				'foundry-ironsworn': { dfid: oracle.$id, category: oracle.Category }
-			},
-			name: oracle.Name,
-			description,
-			formula: `d${maxRoll as number}`,
-			replacement: true,
-			displayRoll: true,
-			/* folder: // would require using an additional module */
-			results: oracle.Table?.filter((x) => x.Floor !== null).map((tableRow) =>
-				OracleTableResult.fromDataforged(
-					tableRow as IRow & { Floor: number; Ceiling: number }
-				)
-			)
-		})
-	}
+	if (oracle.Table != null)
+		output.push(OracleTable.fromDataforged(oracle as any))
 
 	for (const child of oracle.Oracles ?? []) await processOracle(child, output)
 }
