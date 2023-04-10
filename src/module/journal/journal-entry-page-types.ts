@@ -64,9 +64,11 @@ export interface ClockDataProperties {
 }
 
 export type JournalEntryPageDataSource =
+	| { type: ValueOf<typeof CONFIG.JournalEntryPage.coreTypes>; system: object }
 	| ProgressTrackDataSource
 	| ClockDataSource
 export type JournalEntryPageDataProperties =
+	| { type: ValueOf<typeof CONFIG.JournalEntryPage.coreTypes>; system: object }
 	| ProgressTrackDataProperties
 	| ClockDataProperties
 
@@ -76,5 +78,30 @@ declare global {
 	}
 	interface DataConfig {
 		JournalEntryPage: JournalEntryPageDataProperties
+	}
+
+	type JournalEntryPageType = JournalEntryPageDataSource['type']
+
+	interface JournalEntryPageData<
+		T extends JournalEntryPageType = JournalEntryPageType
+	> extends foundry.abstract.DocumentData<
+			JournalEntryPageDataSchema,
+			JournalEntryPageDataProperties,
+			JournalEntryPageDataSource,
+			JournalEntryPageData.ConstructorData,
+			foundry.documents.BaseJournalEntryPage
+		> {
+		type: T
+		system: Extract<JournalEntryPageDataSource, { type: T }>['system']
+	}
+
+	interface JournalEntryPage<
+		T extends JournalEntryPageType = JournalEntryPageType
+	> extends Omit<
+			JournalEntryPageData<T>,
+			'toObject' | 'toJSON' | 'update' | 'system'
+		> {
+		type: T
+		system: Extract<JournalEntryPageDataProperties, { type: T }>['system']
 	}
 }

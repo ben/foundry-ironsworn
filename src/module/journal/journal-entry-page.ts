@@ -20,10 +20,9 @@ export class IronswornJournalPage<
 		// FIXME: JEPs aren't initialized with proper defaults, so we DIY it.
 		// https://github.com/foundryvtt/foundryvtt/issues/8628
 		const defaults = game.system.template.JournalEntryPage?.[
-			// @ts-expect-error
 			data.type
 		] as JournalEntryPageDataSource
-		if (defaults) {
+		if (defaults != null) {
 			const alreadySet = data.system
 			const newSourceData = mergeObject(defaults, alreadySet ?? {}, {
 				recursive: true
