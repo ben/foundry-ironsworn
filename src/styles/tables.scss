@@ -14,8 +14,15 @@ table {
 		border-color: var(--ironsworn-color-border-muted);
 	}
 
-	tr:nth-child(even) {
-		background-color: var(--ironsworn-color-fg-10);
+	&:not(.oracle-table-partial) {
+		tr:nth-child(even) {
+			background-color: var(--ironsworn-color-fg-10);
+		}
+	}
+	&.oracle-table-partial {
+		tr:nth-child(even) {
+			background-color: transparent;
+		}
 	}
 }
 
@@ -32,7 +39,7 @@ table {
 
 	td,
 	th {
-		// hack that forces the roll range column to its minimum size
+		// HACK: forces the roll range column to its minimum size
 		width: auto;
 
 		&.oracle-table-column-roll-range {
@@ -45,7 +52,7 @@ table {
 	.oracle-result-row {
 		&.selected,
 		&[aria-selected='true'] {
-			@include fx.accentGradient(20);
+			@include fx.accentGradient(30);
 		}
 	}
 }
