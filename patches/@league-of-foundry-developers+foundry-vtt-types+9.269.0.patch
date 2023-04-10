@@ -1,26 +1,34 @@
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/config.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/config.d.ts
-index da561df..740b40e 100644
+index da561df..3665779 100644
 --- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/config.d.ts
 +++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/config.d.ts
 @@ -128,6 +128,9 @@ declare global {
- 
+
        /** @defaultValue `{}` */
        typeLabels: Record<string, string>;
 +
 +      /** @defaultValue `{}` */
 +      typeIcons: Record<string, string>;
      };
- 
+
      /**
 @@ -332,6 +335,9 @@ declare global {
- 
+
        /** @defaultValue `{}` */
        typeLabels: Record<string, string>;
 +
 +      /** @defaultValue `{}` */
 +      typeIcons: Record<string, string>;
      };
- 
+
+     /**
+@@ -1485,6 +1491,7 @@ declare global {
+       };
+       defaultType: "text";
+       sidebarIcon: "fas fa-book-open";
++      coreTypes: ["image", "pdf", "text", "video"]
+     };
+
      /**
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts
 index ca6d3f2..34792e6 100644
@@ -32,36 +40,126 @@ index ca6d3f2..34792e6 100644
         */
 -      roll: Roll;
 +      roll?: Roll;
- 
+
        /**
         * Allow drawing recursively from inner RollTable results
         * @defaultValue `true`
         */
 -      recursive: boolean;
 +      recursive?: boolean;
- 
+
        /**
         * One or more table results which have been drawn
         * @defaultValue `[]`
         */
 -      results: foundry.data.TableResultData[];
 +      results?: foundry.data.TableResultData[];
- 
+
        /**
         * Whether to automatically display the results in chat
         * @defaultValue `true`
         */
 -      displayChat: boolean;
 +      displayChat?: boolean;
- 
+
        /**
         * The chat roll mode to use when displaying the result
         */
 -      rollMode: keyof CONFIG.Dice.RollModes | "roll";
 +      rollMode?: keyof CONFIG.Dice.RollModes | "roll";
      }
- 
+
      /**
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/journalEntryPageData.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/journalEntryPageData.d.ts
+index e1da7b2..c865bb4 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/journalEntryPageData.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/journalEntryPageData.d.ts
+@@ -165,9 +165,12 @@ declare global {
+      */
+     name: string;
+
++
+     /**
+      * The type of this page, in {@link BaseJournalEntryPage.TYPES}.
+      */
++    type: ValueOf<typeof foundry.documents.BaseJournalEntryPage.TYPES>
++
+     content: ValueOf<typeof foundry.CONST.JOURNAL_ENTRY_PAGE_FORMATS>;
+
+     /**
+@@ -217,6 +220,7 @@ declare global {
+      * @defaultValue `{}`
+      */
+     flags: ConfiguredFlags<"JournalEntryPage">;
++
+   }
+
+   namespace JournalEntryPageDataProperties {
+@@ -315,4 +319,10 @@ export class JournalEntryPageData extends DocumentData<
+ }
+
+ // eslint-disable-next-line @typescript-eslint/no-empty-interface
+-export interface JournalEntryPageData extends JournalEntryPageDataProperties {}
++export interface JournalEntryPageData extends JournalEntryPageDataProperties {
++  /**
++   * An object of optional key/value flags
++   * @defaultValue `{}`
++   */
++  flags: ConfiguredFlags<"JournalEntryPage"> & CoreFlags;
++}
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
+index 25cb406..ce8ce9b 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseJournalEntryPage.d.ts
+@@ -15,6 +15,7 @@ type JournalEntryPageMetadata = Merge<
+     label: "DOCUMENT.JournalEntryPage";
+     labelPlural: "DOCUMENT.JournalEntryPages";
+     coreTypes: ["image", "pdf", "text", "video"];
++    isEmbedded: true
+   }
+ >;
+
+@@ -43,4 +44,24 @@ export declare class BaseJournalEntryPage extends Document<
+   static get TYPES(): DocumentSubTypes<"JournalEntryPage">[];
+
+   getUserLevel(user: BaseUser): ValueOf<typeof CONST.DOCUMENT_OWNERSHIP_LEVELS> | null;
++
++  /**
++   * Data that control's the display of this page's title.
++   */
++  title: JournalEntryPageDataProperties.Title;
++
++  /**
++   * Data particular to image journal entry pages.
++   */
++  image: JournalEntryPageDataProperties.Image;
++
++  /**
++   * Data particular to text journal entry pages.
++   */
++  text: JournalEntryPageDataProperties.Text;
++
++  /**
++   * Data particular to video journal entry pages.
++   */
++  video: JournalEntryPageDataProperties.Video;
+ }
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.d.ts
+index eb3fa4c..f45b1d5 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.d.ts
+@@ -106,7 +106,10 @@ export type PlaceableDocumentType =
+ export type DocumentSubTypes<T extends DocumentType> = "type" extends keyof InstanceType<
+   ConfiguredDocumentClassForName<T>
+ >["data"]
+-  ? InstanceType<ConfiguredDocumentClassForName<T>>["data"]["type"]
++  ? InstanceType<ConfiguredDocumentClassForName<T>>["data"]["type"] : "type" extends keyof InstanceType<
++  ConfiguredDocumentClassForName<T>
++>
++  ? InstanceType<ConfiguredDocumentClassForName<T>>["type"]
+   : typeof foundry.CONST.BASE_DOCUMENT_TYPE;
+
+ export type ConfiguredDocumentClassForName<Name extends DocumentType> = CONFIG[Name]["documentClass"];
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
 index 8cc4b52..197c630 100644
 --- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
@@ -90,5 +188,5 @@ index 8cc4b52..197c630 100644
 +    } )
 +  : T[P];
  };
- 
+
  /**

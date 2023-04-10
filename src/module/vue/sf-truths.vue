@@ -41,6 +41,7 @@ import type { ISettingTruth } from 'dataforged'
 import { $LocalEmitterKey } from './provisions'
 import IronBtn from './components/buttons/iron-btn.vue'
 import TruthCategory from './components/truth/truth-category.vue'
+import { IronswornJournalEntry } from '../journal/journal-entry'
 
 const props = defineProps<{
 	data: {
@@ -73,7 +74,7 @@ async function saveTruths() {
 		)
 		.join('\n\n')
 
-	const journal = await JournalEntry.create({
+	const journal = await IronswornJournalEntry.create({
 		name: game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth'),
 		content
 	})

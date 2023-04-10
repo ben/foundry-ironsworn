@@ -45,8 +45,8 @@ const data = reactive({ editing: props.editing ?? false })
 function moveClick(move: IronswornItem) {
 	CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
 }
-function oracleClick(dfId: string) {
-	CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfId)
+function oracleClick(dfid: string) {
+	CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
 }
 
 const $emit = defineEmits<{ (e: 'save') }>()

@@ -33,7 +33,7 @@ import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 import { IronswornJournalPage } from './module/journal/journal-entry-page'
 import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
-import { TruthJournalPageSheet } from './module/journal/truth-page'
+import { TruthJournalPageSheet } from './module/journal/sheet/truth-page'
 import { registerTours } from './module/features/tours'
 import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
@@ -41,6 +41,7 @@ import 'virtual:svg-icons-register'
 import { registerDefaultOracleTrees } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/roll-table'
 import { OracleTableResult } from './module/roll-table/table-result'
+import { IronswornJournalEntry } from './module/journal/journal-entry'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -62,6 +63,7 @@ Hooks.once('init', async () => {
 	// Define custom Entity classes
 	CONFIG.Actor.documentClass = IronswornActor
 	CONFIG.Item.documentClass = IronswornItem
+	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 	CONFIG.RollTable.documentClass = OracleTable
 	CONFIG.TableResult.documentClass = OracleTableResult

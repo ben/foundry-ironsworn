@@ -16,6 +16,8 @@ import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/roll-table'
+import { IronswornJournalEntry } from '../journal/journal-entry'
+import { IronswornJournalPage } from '../journal/journal-entry-page'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -377,7 +379,7 @@ async function processTruths(
 	if (pack == null) throw new Error(`Couldn't find ${outputCompendium}`)
 
 	for (const truth of truths) {
-		const je = await JournalEntry.create(
+		const je = await IronswornJournalEntry.create(
 			{
 				name: truth.Display.Title,
 				flags: { 'foundry-ironsworn': { dfid: truth.$id } }
@@ -386,7 +388,7 @@ async function processTruths(
 		)
 
 		for (const entry of truth.Table) {
-			await JournalEntryPage.create(
+			await IronswornJournalPage.create(
 				{
 					type: 'truth',
 					name: entry.Result,
@@ -401,7 +403,7 @@ async function processTruths(
 			)
 		}
 
-		await JournalEntryPage.create(
+		await IronswornJournalPage.create(
 			{
 				name: 'Character Inspiration',
 				text: {
