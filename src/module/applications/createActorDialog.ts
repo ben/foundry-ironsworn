@@ -3,7 +3,7 @@ import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
-import type { OracleTable } from '../roll-table/roll-table'
+import type { OracleTable } from '../roll-table/oracle-table'
 
 interface CreateActorDialogOptions extends FormApplicationOptions {
 	folder: string

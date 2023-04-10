@@ -15,7 +15,7 @@ import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
-import { OracleTable } from '../roll-table/roll-table'
+import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
 import {

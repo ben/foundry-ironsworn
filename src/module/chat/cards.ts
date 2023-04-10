@@ -4,7 +4,7 @@ import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { getFoundryTableByDfId } from '../dataforged'
-import type { OracleTable } from '../roll-table/roll-table'
+import type { OracleTable } from '../roll-table/oracle-table'
 
 export class IronswornChatCard {
 	id?: string | null

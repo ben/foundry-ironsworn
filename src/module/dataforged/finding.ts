@@ -7,7 +7,7 @@ import {
 	ISOracleCategories
 } from './data'
 import { hashLookup } from './import'
-import type { OracleTable } from '../roll-table/roll-table'
+import type { OracleTable } from '../roll-table/oracle-table'
 
 export async function getFoundryTableByDfId(
 	dfid: string
