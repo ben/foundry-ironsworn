@@ -41,10 +41,6 @@ import 'virtual:svg-icons-register'
 import { registerDefaultOracleTrees } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
 import { OracleTableResult } from './module/roll-table/oracle-table-result'
-import type {
-	DocumentSubTypes,
-	DocumentType
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import { IronswornJournalEntry } from './module/journal/journal-entry'
 import type {
 	DocumentSubTypes,
