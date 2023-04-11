@@ -29,7 +29,7 @@ export class OracleTable extends RollTable {
 	static getDFOracleByDfId(
 		dfid: string
 	): IOracle | IOracleCategory | undefined {
-		const nodes = this.findOracleWithIntermediateNodes(dfid)
+		const nodes = OracleTable.findOracleWithIntermediateNodes(dfid)
 		return nodes[nodes.length - 1]
 	}
 
