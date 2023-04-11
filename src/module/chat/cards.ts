@@ -26,7 +26,7 @@ export class IronswornChatCard {
 
 			const fPack = game.packs.get(pack)
 			const fItem = fPack?.get(id) as IronswornItem
-			if (fItem?.type !== 'sfmove') return []
+			if (fItem?.type !== 'move') return []
 
 			const system = fItem.system as SFMoveDataPropertiesData
 			const oracleIds = system.Oracles ?? []
@@ -98,7 +98,7 @@ export class IronswornChatCard {
 		const { uuid } = ev.currentTarget.dataset
 
 		const item = (await fromUuid(uuid)) as IronswornItem
-		if (item?.type !== 'sfmove') {
+		if (item?.type !== 'move') {
 			console.log('falling through')
 			return // (TextEditor as any)._onClickContentLink(ev)
 		}

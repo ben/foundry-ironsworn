@@ -163,7 +163,7 @@
 			"asset",
 			"progress",
 			"bondset",
-			"sfmove",
+			"move",
 			"delve-theme",
 			"delve-domain"
 		],
@@ -234,7 +234,7 @@
 			],
 			"conditions": []
 		},
-		"sfmove": {
+		"move": {
 			"dfid": "",
 			"Category": "",
 			"Progress Move": false,

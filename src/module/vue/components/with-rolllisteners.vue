@@ -39,7 +39,7 @@ async function click(ev: JQuery.ClickEvent) {
 	const { uuid, dfid } = ev.currentTarget.dataset
 	if (uuid) {
 		const gameItem = (await fromUuid(uuid)) as IronswornItem | IronswornActor
-		if (gameItem?.type === 'sfmove') {
+		if (gameItem?.type === 'move') {
 			$emit('moveclick', gameItem)
 			return !!$attrs['onMoveclick']
 		}

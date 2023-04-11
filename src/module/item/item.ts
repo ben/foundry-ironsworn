@@ -12,6 +12,19 @@ import type {
 	SFMoveDataPropertiesData
 } from './itemtypes'
 
+declare global {
+	namespace Item {
+		/**
+		 * Migrate candidate source data for this DataModel which may require initial cleaning or transformations.
+		 * @param source - The candidate source data from which the model will be constructed
+		 * @returns Migrated source data, if necessary
+		 */
+		function migrateData(
+			source: Record<string, unknown>
+		): Record<string, unknown>
+	}
+}
+
 /**
  * Extend the base Item entity
  * @extends {Item}
@@ -20,6 +33,15 @@ export class IronswornItem extends Item {
 	// Type hacks for v10 compatibility updates
 	declare system: typeof this.data.data
 	declare sort: typeof this.data.sort
+
+	static override migrateData(source: Record<string, unknown>) {
+		// run tihs first so we don't have to worry about e.g. data => system
+		source = super.migrateData(source)
+
+		/** Migration 6: rename type since it's the only kind of move we use now */
+		if (source.type === 'sfmove') source.type = 'move'
+		return source
+	}
 
 	protected override _onCreate(
 		data: this['data']['_source'],
@@ -126,7 +148,7 @@ export class IronswornItem extends Item {
 	 * Move methods
 	 */
 	isProgressMove(): boolean | undefined {
-		if (this.type !== 'sfmove') return
+		if (this.type !== 'move') return
 
 		const sfMoveSystem = this.system as SFMoveDataPropertiesData
 		return sfMoveSystem.Trigger.Options?.some(

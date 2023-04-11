@@ -56,7 +56,7 @@ function rollableOptions(trigger: IMoveTrigger) {
 }
 
 export function moveHasRollableOptions(move: IronswornItem) {
-	if (move.type !== 'sfmove') return false
+	if (move.type !== 'move') return false
 	const data = move.system as SFMoveDataPropertiesData
 	const options = rollableOptions(data.Trigger)
 	return options.length > 0
@@ -285,7 +285,7 @@ export class IronswornPrerollDialog extends Dialog<
 	}
 
 	static async showForMove(move: IronswornItem, opts?: showForMoveOpts) {
-		if (move.type !== 'sfmove') {
+		if (move.type !== 'move') {
 			throw new Error('this only works with SF moves')
 		}
 
