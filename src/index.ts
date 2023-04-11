@@ -46,6 +46,10 @@ import type {
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import { IronswornJournalEntry } from './module/journal/journal-entry'
+import type {
+	DocumentSubTypes,
+	DocumentType
+} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 declare global {
 	interface LenientGlobalVariableTypes {
