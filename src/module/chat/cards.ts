@@ -3,8 +3,7 @@ import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
-import { getFoundryTableByDfId } from '../dataforged'
-import type { OracleTable } from '../roll-table/oracle-table'
+import { OracleTable } from '../roll-table/oracle-table'
 
 export class IronswornChatCard {
 	id?: string | null
@@ -30,7 +29,7 @@ export class IronswornChatCard {
 
 			const system = fItem.system as SFMoveDataPropertiesData
 			const oracleIds = system.Oracles ?? []
-			return await Promise.all(oracleIds.map(getFoundryTableByDfId))
+			return await Promise.all(oracleIds.map(OracleTable.getByDfId))
 		})
 		const tables = compact(flatten(await Promise.all(maybeTablePromises)))
 		if (tables.length === 0) return
@@ -72,7 +71,7 @@ export class IronswornChatCard {
 			.find('.ironsworn-roll-burn-momentum')
 			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
-			.find('.oracle-roll .oracle-reroll')
+			.find('[data-iron-action="oracleReroll"]')
 			.on('click', async (ev) => await this._oracleReroll.call(this, ev))
 		if (!navigator.clipboard) {
 			html
@@ -89,7 +88,7 @@ export class IronswornChatCard {
 		html.find('.ironsworn-roll-resolve').on('click', async (ev) => {
 			await this._resolveChallenge.call(this, ev)
 		})
-		html.find('.starforged__oracle__roll').on('click', async (ev) => {
+		html.find('[data-iron-action="oracleRoll"]').on('click', async (ev) => {
 			await this._oracleRoll.call(this, ev)
 		})
 	}

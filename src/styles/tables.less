@@ -13,8 +13,15 @@ table {
 		border-color: var(--ironsworn-color-border-muted);
 	}
 
-	tr:nth-child(even) {
-		background-color: var(--ironsworn-color-fg-10);
+	&:not(.oracle-table-partial) {
+		tr:nth-child(even) {
+			background-color: var(--ironsworn-color-fg-10);
+		}
+	}
+	&.oracle-table-partial {
+		tr:nth-child(even) {
+			background-color: transparent;
+		}
 	}
 }
 
@@ -44,7 +51,7 @@ table {
 	.oracle-result-row {
 		&.selected,
 		&[aria-selected='true'] {
-			.staticHighlightMixin(20);
+			.staticHighlightMixin(30);
 		}
 	}
 }

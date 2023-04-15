@@ -146,6 +146,7 @@ import { OracleRollMessage } from '../rolls'
 import type { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { OracleTable } from '../roll-table/oracle-table'
 
 const props = defineProps<{
 	data: { actor: any }
@@ -489,7 +490,7 @@ const canRandomizeName = computed(() => {
 
 	if (subtype === 'planet') {
 		const kc = capitalize(klass)
-		const json = CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
+		const json = OracleTable.getDFOracleByDfId(
 			`Starforged/Oracles/Planets/${kc}`
 		)
 		if (json) return true
@@ -569,7 +570,7 @@ async function saveKlass(klass) {
 }
 
 async function drawAndReturnResult(
-	table?: RollTable
+	table?: OracleTable
 ): Promise<string | undefined> {
 	if (!table) return undefined
 
@@ -584,15 +585,14 @@ async function randomizeName() {
 	let name
 	if (subtype === 'planet') {
 		const kc = capitalize(klass)
-		const json = await CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
+		const json = await OracleTable.getDFOracleByDfId(
 			`Starforged/Oracles/Planets/${kc}`
 		)
 		name = sample(json?.['Sample Names'] ?? [])
 	} else if (subtype === 'settlement') {
-		const table =
-			await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
-				'Starforged/Oracles/Settlements/Name'
-			)
+		const table = await OracleTable.getByDfId(
+			'Starforged/Oracles/Settlements/Name'
+		)
 		name = await drawAndReturnResult(table)
 	}
 
@@ -616,9 +616,7 @@ async function randomizeKlass() {
 		tableKey = 'Starforged/Oracles/Vaults/Location'
 	}
 
-	const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
-		tableKey
-	)
+	const table = await OracleTable.getByDfId(tableKey)
 	const rawText = await drawAndReturnResult(table)
 	if (!rawText) return
 
@@ -640,9 +638,7 @@ async function rollFirstLook() {
 }
 
 async function rollOracle(oracle) {
-	const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
-		oracle.dfid
-	)
+	const table = await OracleTable.getByDfId(oracle.dfid)
 	const drawText = await drawAndReturnResult(table)
 	if (!drawText) return
 

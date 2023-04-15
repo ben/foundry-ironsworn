@@ -42,10 +42,24 @@ import { registerDefaultOracleTrees } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
 import { OracleTableResult } from './module/roll-table/oracle-table-result'
 import { IronswornJournalEntry } from './module/journal/journal-entry'
+import type {
+	DocumentSubTypes,
+	DocumentType
+} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 declare global {
 	interface LenientGlobalVariableTypes {
 		game: never // the type doesn't matter
+	}
+
+	// fix missing LoFD type inference
+	interface Game {
+		documentTypes: {
+			[P in DocumentType as Omit<DocumentType, 'JournalEntryPage'> &
+				DocumentType]: Array<DocumentSubTypes<P>>
+		} & {
+			JournalEntryPage: JournalEntryPageType[]
+		}
 	}
 }
 
@@ -63,9 +77,12 @@ Hooks.once('init', async () => {
 	// Define custom Entity classes
 	CONFIG.Actor.documentClass = IronswornActor
 	CONFIG.Item.documentClass = IronswornItem
+
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
+
 	CONFIG.RollTable.documentClass = OracleTable
+	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
 	CONFIG.TableResult.documentClass = OracleTableResult
 
 	// CONFIG.RollTable.resultTemplate =

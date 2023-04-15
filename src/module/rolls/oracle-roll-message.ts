@@ -1,12 +1,12 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { compact, pick, sortBy } from 'lodash-es'
 import { marked } from 'marked'
-import { getFoundryTableByDfId } from '../dataforged'
 import {
 	findPathToNodeByDfId,
 	findPathToNodeByTableUuid,
 	getOracleTreeWithCustomOracles
 } from '../features/customoracles'
+import { OracleTable } from '../roll-table/oracle-table'
 
 export interface TableRow {
 	low: number
@@ -110,11 +110,11 @@ export class OracleRollMessage {
 		if (this.tableRows != null) return undefined
 
 		if (this.dfOracleId) {
-			return await getFoundryTableByDfId(this.dfOracleId)
+			return await OracleTable.getByDfId(this.dfOracleId)
 		}
 
 		if (this.tableUuid) {
-			return (await fromUuid(this.tableUuid)) as RollTable
+			return (await fromUuid(this.tableUuid)) as OracleTable
 		}
 
 		return undefined

@@ -31,7 +31,8 @@
             {{../oracleRoll.roll.total}}
           </span>
           <button type='button'
-            class="oracle-result-control oracle-reroll clickable text"
+            data-iron-action="oracleReroll"
+            class="oracle-result-control clickable text"
             data-tooltip="{{localize 'IRONSWORN.Reroll'}}"
             aria-label="{{{localize 'IRONSWORN.OracleTable.ColumnLabel.DiceRollResult' dice='d100'}}}"
             >

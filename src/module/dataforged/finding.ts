@@ -1,26 +1,8 @@
-import type { IMove, IOracle, IOracleCategory } from 'dataforged'
+import type { IMove } from 'dataforged'
 import type { IronswornItem } from '../item/item'
 import { cachedDocumentsForPack } from '../features/pack-cache'
-import {
-	SFMoveCategories,
-	SFOracleCategories,
-	ISOracleCategories
-} from './data'
+import { SFMoveCategories } from './data'
 import { hashLookup } from './import'
-import type { OracleTable } from '../roll-table/oracle-table'
-
-export async function getFoundryTableByDfId(
-	dfid: string
-): Promise<StoredDocument<OracleTable> | undefined> {
-	const isd = await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
-	const sfd = await cachedDocumentsForPack(
-		'foundry-ironsworn.starforgedoracles'
-	)
-	const matcher = (x) => x.id === hashLookup(dfid)
-	return (isd?.find(matcher) ?? sfd?.find(matcher)) as
-		| StoredDocument<OracleTable>
-		| undefined
-}
 
 export async function getFoundryMoveByDfId(
 	dfid: string
@@ -43,49 +25,4 @@ export async function getDFMoveByDfId(
 		}
 	}
 	return undefined
-}
-
-export function getDFOracleByDfId(
-	dfid: string
-): IOracle | IOracleCategory | undefined {
-	const nodes = findOracleWithIntermediateNodes(dfid)
-	return nodes[nodes.length - 1]
-}
-
-export function findOracleWithIntermediateNodes(
-	dfid: string
-): Array<IOracle | IOracleCategory> {
-	const ret: Array<IOracle | IOracleCategory> = []
-
-	function walkCategory(cat: IOracleCategory): boolean {
-		ret.push(cat)
-
-		if (cat.$id === dfid) return true
-		for (const oracle of cat.Oracles ?? []) {
-			if (walkOracle(oracle)) return true
-		}
-		for (const childCat of cat.Categories ?? []) {
-			if (walkCategory(childCat)) return true
-		}
-
-		ret.pop()
-		return false
-	}
-
-	function walkOracle(oracle: IOracle): boolean {
-		ret.push(oracle)
-
-		if (oracle.$id === dfid) return true
-		for (const childOracle of oracle.Oracles ?? []) {
-			if (walkOracle(childOracle)) return true
-		}
-
-		ret.pop()
-		return false
-	}
-
-	for (const cat of [...SFOracleCategories, ...ISOracleCategories]) {
-		walkCategory(cat)
-	}
-	return ret
 }

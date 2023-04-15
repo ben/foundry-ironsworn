@@ -76,6 +76,7 @@ import CollapseTransition from './transition/collapse-transition.vue'
 import IronBtn from './buttons/iron-btn.vue'
 import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
+import type { OracleTable } from '../../roll-table/oracle-table'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 
@@ -103,7 +104,7 @@ const isLeaf = computed(() => {
 
 async function toggleDescription() {
 	if (!state.tableDescription) {
-		const table = (await fromUuid(props.node.tables[0])) as RollTable
+		const table = (await fromUuid(props.node.tables[0])) as OracleTable
 		state.tableRows = table.results.map((row: any) => ({
 			low: row.range[0],
 			high: row.range[1],
@@ -141,7 +142,7 @@ function expand() {
 	state.manuallyExpanded = true
 }
 
-let $el = ref<HTMLElement>()
+const $el = ref<HTMLElement>()
 CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
 	if (props.node.dataforgedNode?.$id === dfid) {
 		state.highlighted = true

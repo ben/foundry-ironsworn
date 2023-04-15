@@ -29,6 +29,7 @@
 <script lang="ts" setup>
 import type { ISettingTruth, ISettingTruthOption } from 'dataforged'
 import { reactive, ref } from 'vue'
+import type { IronswornJournalEntry } from '../../../journal/journal-entry'
 import type { TableRow } from '../../../rolls'
 import { OracleRollMessage } from '../../../rolls'
 import { enrichMarkdown } from '../../vue-plugin'
@@ -38,7 +39,7 @@ import TruthSelectable from './truth-selectable.vue'
 
 const props = defineProps<{
 	df: ISettingTruth
-	je: () => JournalEntry
+	je: () => IronswornJournalEntry
 }>()
 
 const jePages = (props.je() as any | undefined)?.pages ?? []
