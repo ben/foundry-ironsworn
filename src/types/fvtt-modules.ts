@@ -12,9 +12,9 @@ declare global {
 			 * @param synchronize - if the animation needs to be shown to other players. Default: false
 			 * @param whisper - list of users or userId who can see the roll, set it to null if everyone can see. Default: null
 			 * @param blind - if the roll is blind for the current user. Default: false
-			 * @param chatMessageID  -A chatMessage ID to reveal when the roll ends. Default: null
+			 * @param chatMessageID - A chatMessage ID to reveal when the roll ends. Default: null
 			 * @param speaker - An object using the same data schema than ChatSpeakerData. Needed to hide NPCs roll when the GM enables this setting.
-			 * @returns {Promise<boolean>} when resolved true if the animation was displayed, false if not.
+			 * @returns when resolved true if the animation was displayed, false if not.
 			 */
 			showForRoll: (
 				roll: Roll,
