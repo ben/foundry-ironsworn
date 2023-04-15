@@ -9,6 +9,7 @@ export class IronswornJournalEntry extends JournalEntry {
 		)
 		return new OracleTable({
 			name: this.name ?? '',
+			formula: '1d100',
 			results,
 			flags: {
 				'foundry-ironsworn': {

@@ -67,6 +67,7 @@ export class IronswornJournalPage<
 		)
 		const tableData: RollTableDataConstructorData = {
 			name: this.name ?? '???',
+			formula: '1d100',
 			results,
 			flags: {
 				'foundry-ironsworn': {
