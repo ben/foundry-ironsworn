@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import type { LegacyTableRow } from '../../../item/itemtypes'
+import type { LegacyTableRow } from '../../../roll-table/roll-table-types'
 import { enrichMarkdown } from '../../vue-plugin.js'
 
 const props = defineProps<{

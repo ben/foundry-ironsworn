@@ -1,5 +1,5 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import type { LegacyTableRow } from '../item/itemtypes'
+import type { LegacyTableRow } from '../roll-table/roll-table-types'
 
 /**
  *

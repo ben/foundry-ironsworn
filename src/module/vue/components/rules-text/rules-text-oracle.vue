@@ -21,7 +21,7 @@
 import RulesText from './rules-text.vue'
 import OracleTable from './oracle-table.vue'
 import type { ISource } from 'dataforged'
-import type { LegacyTableRow } from '../../../item/itemtypes'
+import type { LegacyTableRow } from '../../../roll-table/roll-table-types'
 
 const props = defineProps<{
 	tableRows: LegacyTableRow[]

@@ -77,7 +77,7 @@ import IronBtn from './buttons/iron-btn.vue'
 import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
 import type { OracleTable } from '../../roll-table/oracle-table'
-import type { LegacyTableRow } from '../../item/itemtypes'
+import type { LegacyTableRow } from '../../roll-table/roll-table-types'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 

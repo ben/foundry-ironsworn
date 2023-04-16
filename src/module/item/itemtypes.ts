@@ -114,14 +114,6 @@ export interface BondsetDataProperties {
 
 /// ////////////////////////////
 
-export interface LegacyTableRow {
-	low: number
-	high: number
-	description?: string
-	text?: string
-	selected?: boolean
-}
-
 export interface DelveSiteFeatureOrDanger<
 	T extends 'delve-site-danger' | 'delve-site-feature' =
 		| 'delve-site-danger'
