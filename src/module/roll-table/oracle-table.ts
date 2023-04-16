@@ -281,7 +281,7 @@ export class OracleTable extends RollTable {
 			messageData
 		)
 
-		console.log('messageData', messageData)
+		// console.log('messageData', messageData)
 
 		const templateData = await this._prepareTemplateData(results, roll)
 
