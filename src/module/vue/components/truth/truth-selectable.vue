@@ -13,9 +13,9 @@
 
 			<div v-html="$enrichMarkdown(pageSystem.Description)" />
 
-			<section v-if="pageSystem.Subtable">
+			<section v-if="page.subtable">
 				<label
-					v-for="(entry, i) in pageSystem.Subtable"
+					v-for="(entry, i) in page.subtable.results"
 					:key="`subtableRow${i}`"
 					class="flexrow nogrow">
 					<input
@@ -23,8 +23,8 @@
 						type="radio"
 						class="nogrow"
 						:name="pageSystem.dfid"
-						@change="subtableSelect(entry as any)" />
-					<p v-html="entry.Result" />
+						@change="subtableSelect(entry)" />
+					<p v-html="entry.text" />
 				</label>
 
 				<!-- TODO: custom input -->
@@ -40,6 +40,7 @@ import type { ISettingTruthOptionSubtableRow } from 'dataforged'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
 import type { TruthOptionDataPropertiesData } from '../../../journal/journal-entry-page-types'
+import { OracleTableResult } from '../../../roll-table/oracle-table-result'
 
 const props = defineProps<{
 	page: IronswornJournalPage<'truth'>
@@ -49,8 +50,8 @@ const pageSystem = props.page.system as TruthOptionDataPropertiesData
 
 const topRadio = ref<HTMLElement>()
 const state = reactive({ suboption: undefined as string | undefined })
-function subtableSelect(entry: ISettingTruthOptionSubtableRow) {
-	state.suboption = entry.Result
+function subtableSelect(entry: OracleTableResult) {
+	state.suboption = entry.text
 	topRadio.value?.click()
 	emitValue()
 }
