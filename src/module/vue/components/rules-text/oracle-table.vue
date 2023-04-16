@@ -25,23 +25,16 @@
 </template>
 
 <script setup lang="ts">
+import type { LegacyTableRow } from '../../../item/itemtypes'
 import { enrichMarkdown } from '../../vue-plugin.js'
 
-type TableRowData = {
-	low: number
-	high: number
-	text: string
-	selected: boolean
-}
-
-// FIXME: use v10 types when available, or hack some together for tables
 const props = defineProps<{
-	tableRows: TableRowData[]
+	tableRows: LegacyTableRow[]
 	tableDescription: string
 	noCaption?: boolean
 }>()
 
-function rangeString({ low, high }: TableRowData) {
+function rangeString({ low, high }: LegacyTableRow) {
 	if (low === high) {
 		return low.toString()
 	}

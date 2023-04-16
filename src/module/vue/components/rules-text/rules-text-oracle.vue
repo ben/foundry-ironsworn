@@ -21,16 +21,10 @@
 import RulesText from './rules-text.vue'
 import OracleTable from './oracle-table.vue'
 import type { ISource } from 'dataforged'
-
-type TableRowData = {
-	low: number
-	high: number
-	text: string
-	selected: boolean
-}
+import type { LegacyTableRow } from '../../../item/itemtypes'
 
 const props = defineProps<{
-	tableRows: TableRowData[]
+	tableRows: LegacyTableRow[]
 	tableDescription: string
 	source?: ISource
 }>()

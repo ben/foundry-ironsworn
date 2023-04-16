@@ -77,21 +77,14 @@ import IronBtn from './buttons/iron-btn.vue'
 import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
 import type { OracleTable } from '../../roll-table/oracle-table'
+import type { LegacyTableRow } from '../../item/itemtypes'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
-
-// FIXME: use v10 types when available, or hack some together for tables
-type TableRowData = {
-	low: number
-	high: number
-	text: string
-	selected: boolean
-}
 
 const state = reactive({
 	manuallyExpanded: props.node.forceExpanded ?? false,
 	descriptionExpanded: false,
-	tableRows: [] as Array<TableRowData>,
+	tableRows: [] as Array<LegacyTableRow>,
 	tableDescription: '',
 	highlighted: false
 })
