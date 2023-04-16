@@ -60,15 +60,14 @@ export class IronswornJournalPage<
 		if (this.type !== 'truth') return undefined
 		const pageSystem = this.system as TruthOptionDataPropertiesData
 		if (pageSystem.Subtable?.length == null) return undefined
-		const results = pageSystem.Subtable.map((row) =>
-			OracleTableResult.fromDataforged(
-				row as IRow & { Floor: number; Ceiling: number }
-			)
-		)
-		const tableData: RollTableDataConstructorData = {
+		return new OracleTable({
 			name: this.name ?? '???',
 			formula: '1d100',
-			results,
+			results: pageSystem.Subtable.map((row) =>
+				OracleTableResult.fromDataforged(
+					row as IRow & { Floor: number; Ceiling: number }
+				)
+			),
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: game.i18n.localize('IRONSWORN.First Start.SettingTruths'),
@@ -76,8 +75,7 @@ export class IronswornJournalPage<
 					type: 'truth-option-subtable'
 				}
 			}
-		}
-		return new OracleTable(tableData)
+		})
 	}
 
 	// PROGRESS METHODS
