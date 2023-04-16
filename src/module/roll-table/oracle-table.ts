@@ -11,6 +11,8 @@ import {
 	getOracleTreeWithCustomOracles
 } from '../features/customoracles'
 import { cachedDocumentsForPack } from '../features/pack-cache'
+import type { IronswornJournalEntry } from '../journal/journal-entry'
+import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
 import { OracleTableResult } from './oracle-table-result'
 import type { ComputedTableType } from './roll-table-types'
@@ -233,7 +235,7 @@ export class OracleTable extends RollTable {
 		switch (rollTableType) {
 			case 'delve-site-dangers':
 			case 'delve-site-denizens':
-			case 'delve-site-features': // delve site oracles are attributed
+			case 'delve-site-features': // delve site oracles are attributed to the delve site
 				speakerOptions.actor = await this.getSourceDocument()
 				break
 			default:
@@ -313,9 +315,12 @@ export class OracleTable extends RollTable {
 			case 'delve-site-features':
 				table = (source as IronswornActor).features
 				break
-			// TODO
 			case 'truth-options':
+				table = (source as IronswornJournalEntry).truthTable
+				break
 			case 'truth-option-subtable':
+				table = (source as IronswornJournalPage).subtable
+				break
 			default:
 				break
 		}
