@@ -119,6 +119,7 @@ export interface LegacyTableRow {
 	high: number
 	description?: string
 	text?: string
+	selected?: boolean
 }
 
 export interface DelveSiteFeatureOrDanger<
