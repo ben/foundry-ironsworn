@@ -1,6 +1,7 @@
 <template>
 	<div class="flexcol">
 		<SheetHeader class="nogrow">
+			<DocumentImg class="nogrow" :document="data.item" />
 			<DocumentName :document="data.item" />
 		</SheetHeader>
 		<TabSet
@@ -89,6 +90,7 @@ import TabList from 'component:tabs/tab-list.vue'
 import TabPanels from 'component:tabs/tab-panels.vue'
 import TabPanel from 'component:tabs/tab-panel.vue'
 import Tab from 'component:tabs/tab.vue'
+import DocumentImg from './components/document-img.vue'
 
 const props = defineProps<{ data: { item: any } }>()
 provide(ItemKey, computed(() => props.data.item) as any)
