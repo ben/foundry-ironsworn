@@ -1,8 +1,6 @@
 <template>
-	<div class="move-sheet flexcol">
-		<SheetHeader class="nogrow">
-			<document-name :document="data.item" />
-		</SheetHeader>
+	<div class="move-sheet flexcol" style="gap: 5px">
+		<SheetHeaderBasic class="nogrow" :document="data.item"> </SheetHeaderBasic>
 
 		<div class="flexrow">
 			<!-- Tab selection on left -->
@@ -106,11 +104,10 @@
 </template>
 
 <script setup lang="ts">
-import SheetHeader from './sheet-header.vue'
+import SheetHeaderBasic from './sheet-header-basic.vue'
 import { provide, computed, reactive, inject } from 'vue'
 import { get, set } from 'lodash-es'
 import { $ItemKey, ItemKey } from './provisions'
-import DocumentName from './components/document-name.vue'
 import SfmoveTab from './components/sfmove-tab.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 
