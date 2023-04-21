@@ -1,8 +1,6 @@
 <template>
-	<div class="flexcol">
-		<SheetHeader class="nogrow">
-			<DocumentName :document="data.item" />
-		</SheetHeader>
+	<div class="flexcol" style="gap: 5px">
+		<SheetHeaderBasic class="nogrow" :document="data.item"> </SheetHeaderBasic>
 		<TabSet
 			v-if="editMode"
 			:id="`${data.item._id}-asset-sheet`"
@@ -74,8 +72,7 @@
 
 <script setup lang="ts">
 import { computed, provide } from 'vue'
-import SheetHeader from './sheet-header.vue'
-import DocumentName from 'component:document-name.vue'
+import SheetHeaderBasic from './sheet-header-basic.vue'
 import AssetEditDescription from 'component:asset/asset-edit-description.vue'
 import AssetEditFields from 'component:asset/asset-edit-fields.vue'
 import AssetEditAbilities from 'component:asset/asset-edit-abilities.vue'
