@@ -3,6 +3,7 @@
 ## Next Release
 
 - Allow custom images for assets and moves ([#734](https://github.com/ben/foundry-ironsworn/pull/734))
+- Under the hood: dependency updates and refactoring
 
 ## 1.21.3
 
