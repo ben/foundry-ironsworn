@@ -45,7 +45,7 @@ export class OracleTableResult extends TableResult {
 	// TODO: TableResult#getChatText might be a better way to manage summary text as a separate field in flags (distinct from the primary text)
 
 	/** Converts a Dataforged IRow object into OracleTableResult constructor data. */
-	static fromDataforged(
+	static getConstructorData(
 		tableRow: IRow & { Floor: number; Ceiling: number; dfid?: string }
 	): TableResultDataConstructorData {
 		let text: string

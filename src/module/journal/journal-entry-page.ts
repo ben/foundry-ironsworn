@@ -64,7 +64,7 @@ export class IronswornJournalPage<
 			name: this.name ?? '???',
 			formula: '1d100',
 			results: pageSystem.Subtable.map((row) =>
-				OracleTableResult.fromDataforged(
+				OracleTableResult.getConstructorData(
 					row as IRow & { Floor: number; Ceiling: number }
 				)
 			),

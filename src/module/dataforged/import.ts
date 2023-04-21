@@ -260,7 +260,7 @@ async function processOracle(
 	// Oracles JSON is a tree we wish to iterate through depth first adding
 	// parents prior to their children, and children in order
 	if (oracle.Table != null)
-		output.push(OracleTable.fromDataforged(oracle as any))
+		output.push(OracleTable.getConstructorData(oracle as any))
 
 	for (const child of oracle.Oracles ?? []) await processOracle(child, output)
 }

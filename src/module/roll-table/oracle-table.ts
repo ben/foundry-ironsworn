@@ -155,7 +155,7 @@ export class OracleTable extends RollTable {
 	}
 
 	/** Transforms a Dataforged IOracle table into RollTable constructor data. */
-	static fromDataforged(
+	static getConstructorData(
 		oracle: IOracle & { Table: IRow[] }
 	): RollTableDataConstructorData {
 		const description = marked.parseInline(
@@ -174,7 +174,7 @@ export class OracleTable extends RollTable {
 			displayRoll: true,
 			/* folder: // would require using an additional module */
 			results: oracle.Table?.filter((x) => x.Floor !== null).map((tableRow) =>
-				OracleTableResult.fromDataforged(
+				OracleTableResult.getConstructorData(
 					tableRow as IRow & { Floor: number; Ceiling: number }
 				)
 			)
