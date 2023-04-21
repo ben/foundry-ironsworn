@@ -156,7 +156,7 @@ export class OracleTable extends RollTable {
 
 	/** Transforms a Dataforged IOracle table into RollTable constructor data. */
 	static getConstructorData(
-		oracle: IOracle & { Table: IRow[] }
+		oracle: OracleTable.IOracleLeaf
 	): RollTableDataConstructorData {
 		const description = marked.parseInline(
 			renderLinksInStr(oracle.Description ?? '')
@@ -180,6 +180,55 @@ export class OracleTable extends RollTable {
 			)
 		}
 		return data
+	}
+
+	/**
+	 * Initialize one or more instances of OracleTable from a Dataforged {@link IOracle} node.
+	 * @param options Default constructor options for the tables.
+	 * @param context Default constructor context for the tables
+	 */
+	static async fromDataforged(
+		tableData: OracleTable.IOracleLeaf,
+		options?: Partial<RollTableDataConstructorData>,
+		context?: DocumentModificationContext
+	): Promise<OracleTable | undefined>
+	static async fromDataforged(
+		tableData: OracleTable.IOracleLeaf[],
+		options?: Partial<RollTableDataConstructorData>,
+		context?: DocumentModificationContext
+	): Promise<OracleTable[]>
+	static async fromDataforged(
+		tableData: OracleTable.IOracleLeaf | OracleTable.IOracleLeaf[],
+		options: Partial<RollTableDataConstructorData> = {},
+		context: DocumentModificationContext = {}
+	): Promise<OracleTable | OracleTable[] | undefined> {
+		const clonedOptions = deepClone(options)
+
+		if (!Array.isArray(tableData)) {
+			logger.info(`Building ${tableData.$id}`)
+			return await OracleTable.create(
+				mergeObject(clonedOptions, OracleTable.getConstructorData(tableData), {
+					overwrite: false,
+					inplace: false
+				}) as RollTableDataConstructorData,
+				context
+			)
+		}
+		logger.info(`Building ${tableData.map((item) => item.$id).join(', ')}`)
+		return await OracleTable.createDocuments(
+			tableData.map(
+				(table) =>
+					mergeObject(
+						deepClone(clonedOptions),
+						OracleTable.getConstructorData(table),
+						{
+							overwrite: false,
+							inplace: false
+						}
+					) as RollTableDataConstructorData
+			),
+			context
+		)
 	}
 
 	/**
@@ -369,4 +418,8 @@ export class OracleTable extends RollTable {
 			flags
 		})
 	}
+}
+
+export namespace OracleTable {
+	export type IOracleLeaf = IOracle & { Table: IRow[] }
 }
