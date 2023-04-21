@@ -361,8 +361,8 @@ export class OracleTable extends RollTable {
 		}) as ConfiguredFlags<'ChatMessage'>
 
 		// trigger sound + 3d dice manually because updating the message won't
-		void AudioHelper.play({ src: CONFIG.sounds.dice })
-		void game.dice3d?.showForRoll(roll, game.user, true)
+		if (game.dice3d) void game.dice3d.showForRoll(roll, game.user, true)
+		else void AudioHelper.play({ src: CONFIG.sounds.dice })
 
 		return await msg.update({
 			content: await renderTemplate(OracleTable.resultTemplate, templateData),
