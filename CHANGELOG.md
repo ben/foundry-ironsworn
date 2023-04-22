@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Bump dataforged, and fix the link to the _Find an Opportunity_ oracle ([#735](https://github.com/ben/foundry-ironsworn/pull/735))
+
 ## 1.21.4
 
 - Allow custom images for assets and moves ([#734](https://github.com/ben/foundry-ironsworn/pull/734))
