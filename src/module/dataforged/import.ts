@@ -132,11 +132,6 @@ function movesForCategories(
 			renderLinksInMove(move)
 			const cleanMove = cleanDollars(move)
 
-			// Patch one or two missing things in Dataforged
-			if (move.$id === 'Ironsworn/Moves/Delve/Find_an_Opportunity') {
-				move.Oracles = ['Ironsworn/Oracles/Moves/Find_an_Opportunity']
-			}
-
 			console.log(move.Name, move.$id)
 			movesToCreate.push({
 				_id: hashLookup(cleanMove.dfid),
