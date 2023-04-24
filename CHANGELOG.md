@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Under the hood: update dependencies([#742](https://github.com/ben/foundry-ironsworn/pull/742))
+
 ## 1.21.5
 
 - Bump dataforged, and fix the link to the _Find an Opportunity_ oracle ([#735](https://github.com/ben/foundry-ironsworn/pull/735))
