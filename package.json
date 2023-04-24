@@ -50,7 +50,7 @@
 		"postcss-html": "^1.5.0",
 		"postcss-less": "^6.0.0",
 		"postcss-preset-env": "^8.3.2",
-		"prettier": "^2.8.7",
+		"prettier": "^2.8.8",
 		"prettier-config-standard": "^5.0.0",
 		"sass": "^1.62.0",
 		"sha.js": "^2.4.11",
