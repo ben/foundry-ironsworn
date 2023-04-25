@@ -116,7 +116,7 @@ export class OracleTable extends RollTable {
 				dataforged: pickDataforged(
 					oracle,
 					'Source',
-					'Display.Title',
+					'Display',
 					'Usage',
 					'Aliases'
 				)
