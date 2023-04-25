@@ -61,7 +61,6 @@ declare global {
 		RollTable: {
 			'foundry-ironsworn'?: {
 				dfid?: string
-				parentDfid?: string
 				dataforged?: DataforgedFlags<
 					IOracleLeaf,
 					'Source' | 'Display' | 'Usage' | 'Aliases'

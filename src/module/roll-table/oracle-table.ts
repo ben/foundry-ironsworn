@@ -41,6 +41,11 @@ export class OracleTable extends RollTable {
 		return this.getFlag('foundry-ironsworn', 'dfid')
 	}
 
+	get parentDfid() {
+		if (!this.dfid) return
+		return this.dfid.split('/').slice(0, -1).join('/')
+	}
+
 	get dataforged() {
 		return this.getFlag('foundry-ironsworn', 'dataforged')
 	}
@@ -108,11 +113,10 @@ export class OracleTable extends RollTable {
 		const flags: ConfiguredFlags<'RollTable'> = {
 			'foundry-ironsworn': {
 				dfid: oracle.$id,
-				parentDfid: oracle['Member of'] ?? oracle.Category,
 				dataforged: pickDataforged(
 					oracle,
 					'Source',
-					'Display',
+					'Display.Title',
 					'Usage',
 					'Aliases'
 				)
@@ -164,25 +168,26 @@ export class OracleTable extends RollTable {
 		return data
 	}
 
-	override toCompendium(
-		...[pack, options]: Parameters<RollTable['toCompendium']>
-	) {
-		const data = super.toCompendium(pack, options)
+	// override toCompendium(
+	// 	...[pack, options]: Parameters<RollTable['toCompendium']>
+	// ) {
+	// 	const data = super.toCompendium(pack, options)
 
-		if (options == null) return data
+	// 	if (options == null) return data
 
-		const canonicalPacks = Object.values(OracleTree.CANONICAL_PACKS).flat()
+	// 	const canonicalPacks = Object.values(OracleTree.CANONICAL_PACKS).flat()
 
-		// Patch: FVTT v10 doesn't properly clear the ownership flag when clearPermissions is set.
-		if (options.clearOwnership ?? options.clearPermissions ?? false) {
-			delete (data as any).ownership
-		}
-		if (canonicalPacks.includes(pack?.collection as any)) {
-			setProperty(data, 'flags.foundry-ironsworn.canonical', undefined)
-		}
+	// 	// Patch: FVTT v10 doesn't properly clear the ownership flag when clearPermissions is set.
+	// 	// @ts-expect-error
+	// 	if (options.clearOwnership ?? options.clearPermissions ?? false) {
+	// 		delete (data as any).ownership
+	// 	}
+	// 	if (canonicalPacks.includes(pack?.collection as any)) {
+	// 		setProperty(data, 'flags.foundry-ironsworn.canonical', undefined)
+	// 	}
 
-		return data
-	}
+	// 	return data
+	// }
 
 	/**
 	 * Initialize one or more instances of OracleTable from a Dataforged {@link IOracle} node.

@@ -37,6 +37,11 @@ export class IronFolder<
 		return this.getFlag('foundry-ironsworn', 'dfid')
 	}
 
+	get parentDfid() {
+		if (!this.dfid) return
+		return this.dfid.split('/').slice(0, -1).join('/')
+	}
+
 	get dataforged() {
 		return this.getFlag('foundry-ironsworn', 'dataforged')
 	}
