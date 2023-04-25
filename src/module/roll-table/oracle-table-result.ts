@@ -1,7 +1,14 @@
-import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import type { IRow } from 'dataforged'
-import { inRange } from 'lodash-es'
-import { hashLookup, renderLinksInStr } from '../dataforged'
+import type {
+	TableResultDataConstructorData,
+	TableResultDataProperties,
+	TableResultDataSource
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { IRow, RequireKey } from 'dataforged'
+import { inRange, keyBy, snakeCase } from 'lodash-es'
+import type { helpers } from '../../types/utils'
+import { hashLookup, pickDataforged, renderLinksInStr } from '../dataforged'
+import { OracleTree } from './oracle-tree'
+import { CompendiumCollection } from '../compendium/compendium'
 
 /** Extends FVTT's default TableResult with functionality specific to this system. */
 export class OracleTableResult extends TableResult {
@@ -46,26 +53,129 @@ export class OracleTableResult extends TableResult {
 
 	/** Converts a Dataforged IRow object into OracleTableResult constructor data. */
 	static getConstructorData(
-		tableRow: IRow & { Floor: number; Ceiling: number; dfid?: string }
+		row: OracleTableResult.IRollableRow
 	): TableResultDataConstructorData {
 		let text: string
-		if (tableRow.Result && tableRow.Summary) {
-			text = `${tableRow.Result} (${tableRow.Summary})`
-		} else text = tableRow.Result ?? ''
+		if (row.Result && row.Summary) {
+			text = `${row.Result} (${row.Summary})`
+		} else text = row.Result ?? ''
 
-		const data: TableResultDataConstructorData = {
-			range: [tableRow.Floor, tableRow.Ceiling],
-			text: tableRow.Result && renderLinksInStr(text)
+		let img: undefined | string
+		if (row.Display?.Icon)
+			img = row.Display.Icon.replace(
+				/^.*?\/Oracles\//,
+				'systems/foundry-ironsworn/assets/oracles/'
+			).toLowerCase()
+		if (!img) {
+			const attrs = Object.fromEntries(
+				(row.Attributes ?? []).map((attr) => Object.values(attr))
+			)
+
+			if (attrs.Location)
+				img = `systems/foundry-ironsworn/assets/oracles/location/${snakeCase(
+					attrs.Location
+				)}.svg`
+			if (attrs['Location Theme'])
+				img = `systems/foundry-ironsworn/assets/oracles/location_theme/${snakeCase(
+					attrs['Location Theme']
+				)}.svg`
+			if (attrs.Environment)
+				img = `systems/foundry-ironsworn/assets/oracles/creature/environment/${snakeCase(
+					attrs.Environment
+				)}.svg`
 		}
 
-		const _id =
-			tableRow.dfid ??
-			(tableRow as any).system?.dfid ??
-			(tableRow as any).flags?.['foundry-ironsworn']?.dfid ??
-			tableRow.$id
+		const data: TableResultDataConstructorData = {
+			range: [row.Floor, row.Ceiling],
+			text: row.Result && renderLinksInStr(text),
+			img,
+			flags: {
+				'foundry-ironsworn': {
+					dfid: row.$id ?? undefined
+				}
+			}
+		}
 
-		if (_id != null) data._id = hashLookup(_id)
+		const dataforged = pickDataforged(
+			row,
+			'Attributes',
+			'Suggestions',
+			'Oracle rolls',
+			'Game objects'
+		)
+
+		// TODO: extract color + icon from IRow.Display
+		if (
+			Object.keys(dataforged).length > 0 &&
+			data.flags?.['foundry-ironsworn'] != null
+		)
+			data.flags['foundry-ironsworn'].dataforged = dataforged
+
+		const rawId =
+			row.dfid ??
+			(row as any).system?.dfid ??
+			(row as any).flags?.['foundry-ironsworn']?.dfid ??
+			row.$id
+
+		if (rawId != null) data._id = hashLookup(rawId)
 
 		return data
+	}
+
+	/** Does the row data have a numeric range? */
+	static isRollableRow(row: IRow): row is OracleTableResult.IRollableRow {
+		return typeof row.Floor === 'number' && typeof row.Ceiling === 'number'
+	}
+
+	static isEmbeddedRow(row: IRow): row is OracleTableResult.IEmbeddedRow {
+		return typeof (row as OracleTableResult.IEmbeddedRow)?.dfid === 'string'
+	}
+
+	/**
+	 * Initialize one or more instances of OracleTable from Dataforged's data.
+	 * @param options Default constructor options for the tables.
+	 * @param context Default constructor context for the tables
+	 */
+	static async fromDataforged(
+		rowData: OracleTableResult.IRollableRow,
+		options?: Partial<TableResultDataConstructorData>,
+		context?: DocumentModificationContext
+	): Promise<OracleTableResult | undefined>
+	static async fromDataforged(
+		rowData: OracleTableResult.IRollableRow[],
+		options?: Partial<TableResultDataConstructorData>,
+		context?: DocumentModificationContext
+	): Promise<OracleTableResult[]>
+	static async fromDataforged(
+		rowData: OracleTableResult.IRollableRow | OracleTableResult.IRollableRow[],
+		options: Partial<TableResultDataConstructorData> = {},
+		context: DocumentModificationContext = {}
+	): Promise<OracleTableResult | OracleTableResult[] | undefined> {
+		if (!Array.isArray(rowData)) {
+			return await OracleTableResult.create(
+				mergeObject(
+					options,
+					OracleTableResult.getConstructorData(rowData)
+				) as TableResultDataConstructorData,
+				context
+			)
+		}
+		return await OracleTableResult.createDocuments(
+			rowData.map(
+				(row) =>
+					mergeObject(
+						options,
+						OracleTableResult.getConstructorData(row)
+					) as TableResultDataConstructorData
+			),
+			context
+		)
+	}
+}
+
+export namespace OracleTableResult {
+	export type IEmbeddedRow = IRow & { dfid: string }
+	export type IRollableRow = RequireKey<IRow, 'Floor' | 'Ceiling'> & {
+		dfid?: string
 	}
 }

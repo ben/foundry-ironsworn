@@ -1,92 +1,60 @@
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { IOracle, IOracleCategory, IRow } from 'dataforged'
-import { max } from 'lodash-es'
+import type { IOracle, IRow } from 'dataforged'
+import { max, snakeCase } from 'lodash-es'
 import { marked } from 'marked'
 import type { IronswornActor } from '../actor/actor'
-import { hashLookup, renderLinksInStr } from '../dataforged'
-import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
-import {
-	findPathToNodeByTableUuid,
-	getOracleTreeWithCustomOracles
-} from '../features/customoracles'
-import { cachedDocumentsForPack } from '../features/pack-cache'
+import { hashLookup, pickDataforged, renderLinksInStr } from '../dataforged'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
 import { OracleTableResult } from './oracle-table-result'
-import type { ComputedTableType } from './roll-table-types'
+import type { ComputedTableType, IOracleLeaf } from './roll-table-types'
+import type { DataforgedNamespace } from './oracle-tree'
+import { OracleTree } from './oracle-tree'
+import type { IronFolder } from '../folder/folder'
 
 /** Extends FVTT's default RollTable with functionality specific to this system. */
+// @ts-expect-error
 export class OracleTable extends RollTable {
 	// missing from the LoFD types package
-	declare description: string
+
+	/** Rolls on the table and returns the text of the first result. */
+	async drawText(options: RollTable.DrawOptions = {}) {
+		const {
+			results: [result]
+		} = await this.draw(options)
+		return result.getChatText()
+	}
+
+	/** An array of the OracleTable's ancestor folders, if any. */
+	get ancestors() {
+		if (this.folder == null) return []
+		return [...this.folder.ancestors, this.folder]
+	}
+
+	get canonical() {
+		return Boolean(this.getFlag('foundry-ironsworn', 'canonical'))
+	}
+
+	get dfid() {
+		return this.getFlag('foundry-ironsworn', 'dfid')
+	}
+
+	get dataforged() {
+		return this.getFlag('foundry-ironsworn', 'dataforged')
+	}
+
+	get setting() {
+		if (this.dfid == null) return undefined
+		return this.dfid.split('/')[0] as DataforgedNamespace
+	}
 
 	static DEFAULT_ICON = 'icons/dice/d10black.svg'
 
 	/** The custom template used for rendering oracle results */
 	static resultTemplate =
 		'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
-
-	static getDFOracleByDfId(
-		dfid: string
-	): IOracle | IOracleCategory | undefined {
-		const nodes = OracleTable.findOracleWithIntermediateNodes(dfid)
-		return nodes[nodes.length - 1]
-	}
-
-	static findOracleWithIntermediateNodes(
-		dfid: string
-	): Array<IOracle | IOracleCategory> {
-		const ret: Array<IOracle | IOracleCategory> = []
-
-		function walkCategory(cat: IOracleCategory): boolean {
-			ret.push(cat)
-
-			if (cat.$id === dfid) return true
-			for (const oracle of cat.Oracles ?? []) {
-				if (walkOracle(oracle)) return true
-			}
-			for (const childCat of cat.Categories ?? []) {
-				if (walkCategory(childCat)) return true
-			}
-
-			ret.pop()
-			return false
-		}
-
-		function walkOracle(oracle: IOracle): boolean {
-			ret.push(oracle)
-
-			if (oracle.$id === dfid) return true
-			for (const childOracle of oracle.Oracles ?? []) {
-				if (walkOracle(childOracle)) return true
-			}
-
-			ret.pop()
-			return false
-		}
-
-		for (const cat of [...SFOracleCategories, ...ISOracleCategories]) {
-			walkCategory(cat)
-		}
-		return ret
-	}
-
-	static async getByDfId(
-		dfid: string
-	): Promise<StoredDocument<OracleTable> | undefined> {
-		const isd = await cachedDocumentsForPack(
-			'foundry-ironsworn.ironswornoracles'
-		)
-		const sfd = await cachedDocumentsForPack(
-			'foundry-ironsworn.starforgedoracles'
-		)
-		const matcher = (x: { id: string }) => x.id === hashLookup(dfid)
-		return (isd?.find(matcher) ?? sfd?.find(matcher)) as
-			| StoredDocument<OracleTable>
-			| undefined
-	}
 
 	/**
 	 * "Ask the Oracle": Retrieve one or more oracle tables and immediately rolls on them.
@@ -100,58 +68,33 @@ export class OracleTable extends RollTable {
 		const draws: RollTableDraw[] = []
 
 		for await (const id of ids) {
-			let tbl: OracleTable | undefined
+			let oracleTable: OracleTable | undefined
 			switch (true) {
-				case /^(ironsworn|starforged)\/oracles/i.test(id):
-					// A Dataforged ID
-					tbl = await OracleTable.getByDfId(id)
+				case /^(Ironsworn|Starforged)\/Oracles\//.test(id): // A Dataforged ID
+					oracleTable = OracleTree.find(id)
 					break
-				case /^(RollTable|Compendium)\./.test(id):
-					// A UUID
-					tbl = (await fromUuid(id)) as OracleTable | undefined
+				case game.tables?.has(id): // A table ID
+					oracleTable = game.tables?.get(id)
 					break
-				case game.tables?.has(id):
-					// check world tables
-					tbl = game.tables?.get(id)
-					break
-				default:
-					{
-						// fall back to oracle packs
-						const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
-						const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
-						tbl = ((await sfPack?.getDocument(id)) ??
-							(await isPack?.getDocument(id))) as OracleTable | undefined
-					}
+				case /^(RollTable|Compendium)\./.test(id): // A UUID
+					oracleTable = fromUuidSync(id) as OracleTable | undefined
 					break
 			}
-			if (tbl == null) {
+			if (oracleTable instanceof OracleTable) {
+				draws.push(await oracleTable.draw(options))
+			} else {
 				logger.warn(`Couldn't find an oracle for ID: ${id}`)
 				continue
-			} else {
-				const result = await tbl.draw(options)
-				draws.push(result)
 			}
 		}
 		return draws
 	}
 
 	/**
-	 * @returns a string representing the path this table in the Ironsworn oracle tree (not including this table) */
-	async getDfPath() {
-		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
-		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
-
-		const pathElements =
-			findPathToNodeByTableUuid(starforgedRoot, this.uuid) ??
-			findPathToNodeByTableUuid(ironswornRoot, this.uuid)
-
-		const pathNames = pathElements.map((x) => x.displayName)
-		// root node (0) has no display name
-		pathNames.shift()
-		// last node is *this* node
-		pathNames.pop()
-
-		return pathNames.join(' / ')
+	 * @returns A "breadcrumb" string representing the path this table in the Ironsworn oracle tree (not including this table). */
+	getDfPath() {
+		if (this.dfid == null || this.ancestors.length === 0) return null
+		return this.ancestors.map((ancestor) => ancestor.name).join(' / ')
 	}
 
 	/** Transforms a Dataforged IOracle table into RollTable constructor data. */
@@ -161,24 +104,83 @@ export class OracleTable extends RollTable {
 		const description = marked.parseInline(
 			renderLinksInStr(oracle.Description ?? '')
 		)
-		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
+		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0))
+		const flags: ConfiguredFlags<'RollTable'> = {
+			'foundry-ironsworn': {
+				dfid: oracle.$id,
+				parentDfid: oracle['Member of'] ?? oracle.Category,
+				dataforged: pickDataforged(
+					oracle,
+					'Source',
+					'Display',
+					'Usage',
+					'Aliases'
+				)
+			}
+		}
+
+		// remove some redundant flags
+		const flagsRemoved = ['Display.Title', 'Display.Table']
+		flagsRemoved.forEach((flg) =>
+			setProperty(flags, `foundry-ironsworn.dataforged.${flg}`, undefined)
+		)
+
+		let name = oracle.Display.Title
+
+		// strip "Oracle XX: " from some ironsworn titles
+		if (name.includes(':') && oracle.$id.startsWith('Ironsworn'))
+			name = name.replace(/^.*?: /, '')
+
+		let img: undefined | string
+		if (oracle.Display.Icon)
+			img = oracle.Display.Icon.replace(
+				/^.*?\/Oracles\//,
+				'systems/foundry-ironsworn/assets/oracles/'
+			).toLowerCase()
+
+		if (!img) {
+			if (['Orbital', 'Planetside', 'Deep Space'].includes(name))
+				img = `systems/foundry-ironsworn/assets/oracles/location/${snakeCase(
+					name
+				)}.svg`
+		}
+
 		const data: RollTableDataConstructorData = {
 			_id: hashLookup(oracle.$id),
-			flags: {
-				'foundry-ironsworn': { dfid: oracle.$id, category: oracle.Category }
-			},
-			name: oracle.Name,
+			name,
+			img,
+			sort: oracle.Source.Page,
 			description,
-			formula: `d${maxRoll as number}`,
+			formula: `1d${maxRoll as number}`,
 			replacement: true,
 			displayRoll: true,
-			/* folder: // would require using an additional module */
 			results: oracle.Table?.filter((x) => x.Floor !== null).map((tableRow) =>
 				OracleTableResult.getConstructorData(
 					tableRow as IRow & { Floor: number; Ceiling: number }
 				)
-			)
+			),
+			flags
 		}
+		return data
+	}
+
+	override toCompendium(
+		...[pack, options]: Parameters<RollTable['toCompendium']>
+	) {
+		const data = super.toCompendium(pack, options)
+
+		if (options == null) return data
+
+		const canonicalPacks = Object.values(OracleTree.CANONICAL_PACKS).flat()
+
+		// Patch: FVTT v10 doesn't properly clear the ownership flag when clearPermissions is set.
+		if (options.clearOwnership ?? options.clearPermissions ?? false) {
+			delete (data as any).ownership
+		}
+		if (canonicalPacks.includes(pack?.collection as any)) {
+			setProperty(data, 'flags.foundry-ironsworn.canonical', undefined)
+		}
+
 		return data
 	}
 
@@ -202,12 +204,10 @@ export class OracleTable extends RollTable {
 		options: Partial<RollTableDataConstructorData> = {},
 		context: DocumentModificationContext = {}
 	): Promise<OracleTable | OracleTable[] | undefined> {
-		const clonedOptions = deepClone(options)
-
 		if (!Array.isArray(tableData)) {
 			logger.info(`Building ${tableData.$id}`)
 			return await OracleTable.create(
-				mergeObject(clonedOptions, OracleTable.getConstructorData(tableData), {
+				mergeObject(OracleTable.getConstructorData(tableData) as any, options, {
 					overwrite: false,
 					inplace: false
 				}) as RollTableDataConstructorData,
@@ -218,14 +218,10 @@ export class OracleTable extends RollTable {
 		return await OracleTable.createDocuments(
 			tableData.map(
 				(table) =>
-					mergeObject(
-						deepClone(clonedOptions),
-						OracleTable.getConstructorData(table),
-						{
-							overwrite: false,
-							inplace: false
-						}
-					) as RollTableDataConstructorData
+					mergeObject(OracleTable.getConstructorData(table) as any, options, {
+						overwrite: false,
+						inplace: false
+					}) as RollTableDataConstructorData
 			),
 			context
 		)
@@ -245,26 +241,29 @@ export class OracleTable extends RollTable {
 				// @ts-expect-error exists in v10
 				async: true
 			}),
-			result: mergeObject(result.toObject(false), {
-				text: result.getChatText(),
-				icon: result.icon,
-				displayRows: result.displayRows.map((row) => row?.toObject())
-			}),
+			result: mergeObject(
+				result.toObject(false),
+				{
+					text: result.getChatText(),
+					icon: result.icon,
+					displayRows: result.displayRows.map((row) => row?.toObject())
+				},
+				{ inplace: false }
+			),
 			roll: roll?.toJSON(),
 			table: this,
 			subtitle:
-				this.getFlag('foundry-ironsworn', 'subtitle') ??
-				(await this.getDfPath()),
+				this.getFlag('foundry-ironsworn', 'subtitle') ?? this.getDfPath(),
 			rollTableType: this.getFlag('foundry-ironsworn', 'type'),
 			sourceId: this.getFlag('foundry-ironsworn', 'sourceId')
 		}
 	}
 
 	/** Retrieve the originating document of a computed OracleTable.  */
-	async getSourceDocument() {
+	getSourceDocument() {
 		const uuid = this.getFlag('foundry-ironsworn', 'sourceId')
 		if (uuid == null) return undefined
-		return (await fromUuid(uuid)) as IronswornActor
+		return fromUuidSync(uuid) as IronswornActor
 	}
 
 	override async toMessage(
@@ -285,7 +284,7 @@ export class OracleTable extends RollTable {
 			case 'delve-site-dangers':
 			case 'delve-site-denizens':
 			case 'delve-site-features': // delve site oracles are attributed to the delve site
-				speakerOptions.actor = await this.getSourceDocument()
+				speakerOptions.actor = this.getSourceDocument()
 				break
 			default:
 				break
@@ -329,7 +328,8 @@ export class OracleTable extends RollTable {
 				sound: roll != null ? CONFIG.sounds.dice : null,
 				flags
 			},
-			messageData
+			messageData,
+			{ inplace: false }
 		)
 
 		// console.log('messageData', messageData)
@@ -349,6 +349,7 @@ export class OracleTable extends RollTable {
 	/**
 	 * Retrieve a computed oracle table from its originating document. This allows rehydration of computed tables from e.g. chat message flags.
 	 * @param sourceId The UUID of the original source of the computed table, usually an Actor or Item.
+	 * @param type The expected type of the computed table
 	 */
 	static async getComputedTable(sourceId: string, type: ComputedTableType) {
 		const source = await fromUuid(sourceId)
@@ -356,7 +357,7 @@ export class OracleTable extends RollTable {
 		let table: OracleTable | undefined
 		switch (type) {
 			case 'delve-site-dangers':
-				table = await (source as IronswornActor).getDangers()
+				table = (source as IronswornActor).dangers
 				break
 			case 'delve-site-denizens':
 				table = (source as IronswornActor).denizens
@@ -403,14 +404,18 @@ export class OracleTable extends RollTable {
 
 		const templateData = await oracleTable._prepareTemplateData(results, roll)
 
-		const flags = foundry.utils.mergeObject(msg.toObject().flags, {
-			'foundry-ironsworn': {
-				rerolls: [...rerolls, roll.total]
-			}
-		}) as ConfiguredFlags<'ChatMessage'>
+		const flags = foundry.utils.mergeObject(
+			msg.toObject().flags,
+			{
+				'foundry-ironsworn': {
+					rerolls: [...rerolls, roll.total]
+				}
+			},
+			{ inplace: false }
+		) as ConfiguredFlags<'ChatMessage'>
 
 		// trigger sound + 3d dice manually because updating the message won't
-		if (game.dice3d) void game.dice3d.showForRoll(roll, game.user, true)
+		if (game.dice3d != null) void game.dice3d.showForRoll(roll, game.user, true)
 		else void AudioHelper.play({ src: CONFIG.sounds.dice })
 
 		return await msg.update({
@@ -418,6 +423,11 @@ export class OracleTable extends RollTable {
 			flags
 		})
 	}
+}
+
+// @ts-expect-error
+export interface OracleTable extends RollTable {
+	get folder(): IronFolder<OracleTable> | null
 }
 
 export namespace OracleTable {

@@ -12,7 +12,7 @@ import type {
 } from 'dataforged'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { starforged, ironsworn } from 'dataforged'
-import { isArray, isObject, max } from 'lodash-es'
+import { isArray, isObject, max, pick } from 'lodash-es'
 import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
@@ -21,7 +21,6 @@ import type { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
-import { OracleTableResult } from '../roll-table/oracle-table-result'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -33,7 +32,22 @@ import {
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
 
-export function cleanDollars(obj): any {
+type StripDollarKey<K> = K extends `$${infer P}` ? `df${P}` : K
+export type StripDollars<T> = { [K in keyof T as StripDollarKey<K>]: T[K] }
+/**
+ * Picks keys, and replaces any keys starting with '$' with 'df'
+ */
+export type DataforgedFlags<T, K extends keyof T> = StripDollars<Pick<T, K>>
+
+export function pickDataforged<T extends object, K extends keyof T>(
+	obj: T,
+	...keys: K[]
+) {
+	const newObj = pick(obj, ...keys)
+	return cleanDollars(newObj) as DataforgedFlags<T, K>
+}
+
+export function cleanDollars(obj) {
 	if (isArray(obj)) {
 		const ret = [] as any[]
 		for (const item of obj) {
@@ -64,7 +78,7 @@ export function hash(str: string): string {
 	return shajs('sha256').update(str).digest('hex').substring(48)
 }
 
-const PACKS = [
+export const PACKS = [
 	'foundry-ironsworn.starforgedassets',
 	'foundry-ironsworn.starforgedencounters',
 	'foundry-ironsworn.starforgedmoves',
@@ -384,7 +398,11 @@ async function processTruths(
 			{
 				name: truth.Display.Title,
 				flags: {
-					'foundry-ironsworn': { dfid: truth.$id, type: 'truth-category' }
+					'foundry-ironsworn': {
+						type: 'truth-category',
+						dfid: truth.$id,
+						dataforged: pickDataforged(truth, 'Suggestions', 'Source')
+					}
 				}
 			},
 			{ pack: outputCompendium }
@@ -395,12 +413,16 @@ async function processTruths(
 				{
 					type: 'truth',
 					name: entry.Result,
+					// TODO -- consider managing this with pick() or sth similar ?
 					system: cleanDollars({
 						Subtable: [], // work around a Foundry bug
 						...entry,
 						Quest: entry['Quest Starter'],
 						'Quest Starter': undefined
-					})
+					}),
+					flags: {
+						'foundry-ironsworn': { dfid: entry.$id }
+					}
 				},
 				{ parent: je }
 			)
@@ -416,7 +438,7 @@ async function processTruths(
 				},
 				flags: {
 					'foundry-ironsworn': {
-						assets: truth.Suggestions?.Assets ?? []
+						dataforged: pickDataforged(truth, 'Suggestions')
 					}
 				}
 			},
