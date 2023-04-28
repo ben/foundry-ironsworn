@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.21.6
+
 - Fix a bug that caused an exception when creating a custom delve theme
 
 ## 1.21.5
