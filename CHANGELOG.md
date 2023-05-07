@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Expand Spanish translation to be on par with the English language file ([#749](https://github.com/ben/foundry-ironsworn/pull/749), thanks [@erizocosmico](https://github.com/erizocosmico)!)
+
 ## 1.21.6
 
 - Fix a bug that caused an exception when creating a custom delve theme
