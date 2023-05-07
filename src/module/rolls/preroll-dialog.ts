@@ -350,8 +350,19 @@ export class IronswornPrerollDialog extends Dialog<
 		})
 		const buttons = {}
 		const addButton = (i: number, mode: RollMethod, stats: string[]) => {
-			// TODO: i18n
-			const label = mode === 'Any' ? stats[0] : `${mode} of ${stats.join(', ')}`
+			const localizedStats = stats.map((s) =>
+				game.i18n.localize(`IRONSWORN.${capitalize(s)}`)
+			)
+
+			let label = localizedStats[0]
+			if (mode !== 'Any') {
+				label = game.i18n.format(
+					`IRONSWORN.PreRollMethod.${capitalize(mode)}`,
+					{
+						statList: localizedStats.join(', ')
+					}
+				)
+			}
 
 			buttons[i.toString()] = {
 				// use the below instead as a silly method for sneaking classes in
