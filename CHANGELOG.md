@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Expand Spanish translation to be on par with the English language file.
+
 ## 1.21.6
 
 - Fix a bug that caused an exception when creating a custom delve theme
