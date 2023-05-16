@@ -9,7 +9,7 @@ module.exports = {
 		'prettier'
 	],
 	parser: 'vue-eslint-parser',
-	ignorePatterns: ['.eslintrc.cjs'],
+	ignorePatterns: ['.eslintrc.cjs', '*.d.ts'],
 	parserOptions: {
 		parser: '@typescript-eslint/parser',
 		ecmaVersion: 11,
