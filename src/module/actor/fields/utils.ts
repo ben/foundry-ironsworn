@@ -1,28 +1,74 @@
-import type { StringField } from './StringField'
-import type { DataField } from './DataField'
-import type { NumberField } from './NumberField'
-import type { BooleanField } from './BooleanField'
-import type { ArrayField, SetField } from './ArrayField'
-import { SchemaField } from './SchemaField'
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
+/* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 
-export type FieldDataType<T extends DataField<any, any>> = T extends DataField<
-	infer U,
-	any
->
-	? U
-	: never
+import { SystemDocumentType, SystemTypeData } from '../../../types/helperTypes'
+import { DataSchema } from './DataModel'
 
 export type ToField<T> = T extends string
-	? StringField<T>
+	? foundry.data.fields.StringField<T>
 	: T extends number
-	? NumberField<T>
+	? foundry.data.fields.NumberField<T>
 	: T extends boolean
-	? BooleanField
+	? foundry.data.fields.BooleanField
 	: T extends Array<infer U>
-	? ArrayField<DataField<U, any>>
+	? foundry.data.fields.ArrayField<foundry.data.fields.DataField<U, any>>
 	: T extends Set<infer U>
-	? SetField<DataField<U, any>>
+	? foundry.data.fields.SetField<foundry.data.fields.DataField<U, any>>
+	: T extends SystemTypeData<infer U, infer F>
+	? foundry.data.fields.TypeDataField<U, F>
 	: // TODO add collection field when it's done
 	T extends Record<string, any>
-	? SchemaField<T>
+	? foundry.data.fields.SchemaField<T>
 	: never
+
+type SystemDataModels<T extends SystemDocumentType> = Partial<{
+	[K in keyof DataConfig[T]]: foundry.abstract.DataModel<
+		DataConfig[T][K],
+		DataSchema
+	>
+}>
+
+declare global {
+	interface SourceConfig {
+		Card: Record<string, unknown>
+		Cards: Record<string, unknown>
+	}
+
+	interface DataConfig {
+		Card: Record<string, unknown>
+		Cards: Record<string, unknown>
+	}
+
+	interface CONFIG {
+		Cards: {
+			/** @deprecated since v10. Use `#dataModels` instead */
+			systemDataModels: SystemDataModels<'Cards'>
+			/** @defaultValue `{}` */
+			dataModels: SystemDataModels<'Cards'>
+		}
+		Card: {
+			/** @deprecated since v10. Use `#dataModels` instead */
+			systemDataModels: SystemDataModels<'Card'>
+			/** @defaultValue `{}` */
+			dataModels: SystemDataModels<'Card'>
+		}
+		Actor: {
+			/** @deprecated since v10. Use `#dataModels` instead */
+			systemDataModels: SystemDataModels<'Actor'>
+			/** @defaultValue `{}` */
+			dataModels: SystemDataModels<'Actor'>
+		}
+		Item: {
+			/** @deprecated since v10. Use `#dataModels` instead */
+			systemDataModels: SystemDataModels<'Item'>
+			/** @defaultValue `{}` */
+			dataModels: SystemDataModels<'Item'>
+		}
+		JournalEntryPage: {
+			/** @deprecated since v10. Use `#dataModels` instead */
+			systemDataModels: SystemDataModels<'JournalEntryPage'>
+			/** @defaultValue `{}` */
+			dataModels: SystemDataModels<'JournalEntryPage'>
+		}
+	}
+}
