@@ -1,7 +1,4 @@
-import type {
-	TableResultDataConstructorData,
-	TableResultDataSchema
-} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { ChallengeRankField } from '../../fields/ChallengeRankField'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { IronswornActor } from '../actor'
@@ -9,24 +6,25 @@ import type { SchemaToSourceData } from '../../fields/utils'
 import { OracleTableResult } from '../../roll-table/oracle-table-result'
 import SchemaField from '../../fields/types/SchemaField'
 import { clone, omit } from 'lodash-es'
+import { TableResultField } from '../../fields/TableResultField'
 
-export class StaticOracleResult extends foundry.data.fields.SchemaField<any> {
-	constructor(options?) {
-		const fields = clone(
-			foundry.documents.BaseTableResult.defineSchema() as Record<
-				string,
-				foundry.data.fields.DataField.Any
-			>
-		)
-		// fields.range.initial = range
-		fields.range.readonly = true
-		for (const [k, v] of Object.entries(fields)) {
-			v.required = false
-		}
+const denizenRanges: Array<[number, number]> = [
+	[1, 27],
+	[28, 41],
+	[42, 55],
+	[56, 69],
+	[70, 75],
+	[76, 81],
+	[82, 87],
+	[88, 93],
+	[94, 95],
+	[96, 97],
+	[98, 99],
+	[100, 100]
+]
 
-		super(fields, options)
-	}
-}
+const denizenOptions: Array<Partial<TableResultField.Options>> =
+	denizenRanges.map((staticRange) => ({ staticRange }))
 
 export class SiteData extends foundry.abstract.DataModel<
 	any,
@@ -42,6 +40,14 @@ export class SiteData extends foundry.abstract.DataModel<
 		}
 	}
 
+	get theme() {
+		return this.parent.itemTypes['delve-theme'][0]
+	}
+
+	get domain() {
+		return this.parent.itemTypes['delve-domain'][0]
+	}
+
 	static override defineSchema() {
 		const fields = foundry.data.fields
 		return {
@@ -50,106 +56,16 @@ export class SiteData extends foundry.abstract.DataModel<
 			objective: new fields.HTMLField(),
 			description: new fields.HTMLField(),
 			notes: new fields.HTMLField(),
-			denizens: new fields.ArrayField(new StaticOracleResult(), {
-				initial: [
-					{
-						range: [1, 27],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [28, 41],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [42, 55],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [56, 69],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [70, 75],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [76, 81],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [82, 87],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [88, 93],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [94, 95],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [96, 97],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [98, 99],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					},
-					{
-						range: [100, 100],
-						text: '',
-						flags: {
-							'foundry-ironsworn': { type: 'delve-site-denizen' }
-						}
-					}
-				].map((item) => new OracleTableResult(item as any))
+			denizens: new fields.ArrayField(new TableResultField(), {
+				initial: denizenOptions.map((item) => new TableResultField(item))
 			})
 		}
 	}
 }
 
 export interface SiteData extends SchemaToSourceData<typeof SiteData> {
-	denizens: StaticOracleResult[]
+	denizens: TableResultDataConstructorData[]
 }
-
-/**
- * Represents an entry in the delve site denizen matrix.
- */
-export interface StaticOracleResult extends TableResultDataConstructorData {}
 
 export interface SiteDataSource {
 	type: 'site'

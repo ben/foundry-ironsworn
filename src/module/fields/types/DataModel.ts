@@ -3,10 +3,12 @@
 import { Data } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll'
 import type { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
 import type { SchemaField } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
-import { DataToField } from '../utils'
+import { DataToField, DataToFields } from '../utils'
 
-export interface DataSchema
-	extends Record<string, foundry.data.fields.DataField.Any> {}
+// export interface DataSchema
+// 	extends Record<string, foundry.data.fields.DataField.Any> {}
+export type DataSchema<T extends Record<string, any> = Record<string, any>> =
+	DataToFields<T>
 
 type AnyDocument = Document<any, any, any>
 

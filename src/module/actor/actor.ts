@@ -1,21 +1,32 @@
-import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type {
+	ConfiguredData,
+	ConfiguredDocumentClassForName
+} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import { CreateActorDialog } from '../applications/createActorDialog'
-import type { systemDataModels } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
+import type ActorConfig from './config'
+import type { IronswornItem } from '../item/item'
+import type { ActorDataProperties } from './config'
+import {
+	ConfiguredDocumentClass,
+	DocumentSubTypes
+} from '../../types/helperTypes'
+import { ItemDataProperties } from '../item/itemtypes'
 
 let CREATE_DIALOG: CreateActorDialog
 
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
- * @extends {Actor}
  */
 export class IronswornActor<
 	T extends ConfiguredData<'Actor'>['type'] = ConfiguredData<'Actor'>['type']
 > extends Actor {
-	// Type hack for v10 compatibility updates
-	declare system: InstanceType<(typeof systemDataModels)[T]>
-	// @ts-expect-error
-	declare type: T
+	// // Type hack for v10 compatibility updates
+	// declare system: InstanceType<(typeof systemDataModels)[T]>
+	// // @ts-expect-error
+	// declare type: T
+	// // @ts-expect-error
+	// declare itemTypes
 
 	moveSheet?: SFCharacterMoveSheet
 
@@ -63,6 +74,19 @@ export class IronswornActor<
 			'ironsworn.StarforgedCharacterSheet'
 			? 'starforged'
 			: 'ironsworn'
+	}
+}
+
+export interface IronswornActor<
+	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
+> extends Actor {
+	// Type hack for v10 compatibility updates
+	system: (ActorDataProperties & { type: T })['system']
+	get type(): T
+	get itemTypes(): {
+		[K in DocumentSubTypes<'Item'>]: Array<
+			ConfiguredDocumentClassForName<'Item'> & ItemDataProperties & { type: K }
+		>
 	}
 }
 

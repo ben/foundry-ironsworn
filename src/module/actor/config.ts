@@ -1,3 +1,4 @@
+import { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import { IronswornActor } from './actor'
 import type {
 	CharacterDataProperties,
@@ -24,16 +25,33 @@ import type {
 } from './subtypes/StarshipData'
 import { StarshipData } from './subtypes/StarshipData'
 
-const config: Partial<CONFIG['Actor']> = {
+const systemDataModels: Record<
+	ConfiguredData<'Actor'>['type'],
+	typeof foundry.abstract.DataModel<any, any>
+> = {
+	character: CharacterData,
+	foe: FoeData,
+	location: LocationData,
+	shared: SharedData,
+	site: SiteData,
+	starship: StarshipData
+}
+
+type ActorType = ConfiguredData<'Actor'>['type']
+type _actorConfig = (typeof CONFIG)['Actor']
+
+export interface ActorConfig extends _actorConfig {
+	systemDataModels: Record<
+		ActorType,
+		typeof foundry.abstract.DataModel<any, any>
+	>
+	typeLabels: Record<ActorType, string>
+	typeIcons: Record<ActorType, string>
+}
+
+const config: Partial<ActorConfig> = {
 	documentClass: IronswornActor,
-	systemDataModels: {
-		character: CharacterData,
-		foe: FoeData,
-		location: LocationData,
-		shared: SharedData,
-		site: SiteData,
-		starship: StarshipData
-	},
+	systemDataModels,
 	typeLabels: {
 		character: 'IRONSWORN.ACTOR.TypeCharacter',
 		foe: 'IRONSWORN.ACTOR.TypeFoe',
@@ -50,7 +68,7 @@ const config: Partial<CONFIG['Actor']> = {
 		site: 'fa-solid fa-dungeon',
 		starship: 'fa-solid fa-starship-freighter'
 	}
-}
+} as const
 
 export default config
 

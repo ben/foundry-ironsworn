@@ -8,7 +8,7 @@ declare global {
 				export abstract class DataField<
 					T,
 					TOptions extends DataField.Options<T> = DataField.Options<T>
-				> implements DataField.Options<T>
+				> implements Omit<DataField.Options<T>, 'validate'>
 				{
 					constructor(options?: Partial<TOptions>)
 					readonly: boolean
@@ -216,10 +216,7 @@ declare global {
 						/**
 						 * A data validation function which accepts one argument with the current value.
 						 */
-						validate: (
-							value: unknown,
-							options?: ValidateOptions<TValue>
-						) => DataModelValidationFailure<TValue>
+						validate: (value: any) => boolean
 						/**
 						 * Should the prepared value of the field be read-only, preventing it from being changed unless a change to the _source data is applied.
 						 * @default false
