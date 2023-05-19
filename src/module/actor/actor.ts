@@ -1,17 +1,9 @@
-import type {
-	ConfiguredData,
-	ConfiguredDocumentClassForName
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { DocumentSubTypes } from '../../types/helperTypes'
 import { CreateActorDialog } from '../applications/createActorDialog'
-import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
-import type ActorConfig from './config'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties } from './config'
-import {
-	ConfiguredDocumentClass,
-	DocumentSubTypes
-} from '../../types/helperTypes'
-import { ItemDataProperties } from '../item/itemtypes'
+import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 let CREATE_DIALOG: CreateActorDialog
 
@@ -19,14 +11,19 @@ let CREATE_DIALOG: CreateActorDialog
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  */
 export class IronswornActor<
-	T extends ConfiguredData<'Actor'>['type'] = ConfiguredData<'Actor'>['type']
+	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
 > extends Actor {
-	// // Type hack for v10 compatibility updates
-	// declare system: InstanceType<(typeof systemDataModels)[T]>
-	// // @ts-expect-error
-	// declare type: T
-	// // @ts-expect-error
-	// declare itemTypes
+	// Type hack for v10 compatibility updates
+	declare system: Extract<ActorDataProperties, { type: T }>['system']
+	get type() {
+		return super.type as T
+	}
+
+	override get itemTypes() {
+		return super.itemTypes as Actor['itemTypes'] & {
+			[K in DocumentSubTypes<'Item'>]: Array<IronswornItem<K>>
+		}
+	}
 
 	moveSheet?: SFCharacterMoveSheet
 
@@ -79,16 +76,7 @@ export class IronswornActor<
 
 export interface IronswornActor<
 	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
-> extends Actor {
-	// Type hack for v10 compatibility updates
-	system: (ActorDataProperties & { type: T })['system']
-	get type(): T
-	get itemTypes(): {
-		[K in DocumentSubTypes<'Item'>]: Array<
-			ConfiguredDocumentClassForName<'Item'> & ItemDataProperties & { type: K }
-		>
-	}
-}
+> extends Actor {}
 
 declare global {
 	interface DocumentClassConfig {

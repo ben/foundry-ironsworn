@@ -1,12 +1,9 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { ChallengeRankField } from '../../fields/ChallengeRankField'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import type { IronswornActor } from '../actor'
-import type { SchemaToSourceData } from '../../fields/utils'
-import { OracleTableResult } from '../../roll-table/oracle-table-result'
-import SchemaField from '../../fields/types/SchemaField'
-import { clone, omit } from 'lodash-es'
 import { TableResultField } from '../../fields/TableResultField'
+import type { SchemaToSourceData } from '../../fields/utils'
+import type { IronswornActor } from '../actor'
 
 const denizenRanges: Array<[number, number]> = [
 	[1, 27],
@@ -46,6 +43,10 @@ export class SiteData extends foundry.abstract.DataModel<
 
 	get domain() {
 		return this.parent.itemTypes['delve-domain'][0]
+	}
+
+	get hasThemeAndDomain() {
+		return this.theme != null && this.domain != null
 	}
 
 	static override defineSchema() {
