@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 
 export function enumEntries<T extends Record<any, unknown>>(enumLike: T) {
-	const keys = Object.values(enumLike).filter(
+	const values = Object.values(enumLike).filter(
 		(x) => !isNaN(+(x as number | string))
-	) as Array<keyof T>
-	return keys.map((k) => [k, enumLike[k]]) as [[keyof T, T[keyof T]]]
+	) as Array<T[keyof T]>
+	return values.map((v) => [enumLike[v], v]) as [[keyof T, T[keyof T]]]
 }
 
 export type FieldToData<T extends foundry.data.fields.DataField.Any> =

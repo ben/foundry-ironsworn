@@ -23,7 +23,7 @@ declare global {
 					 * @param element         A DataField instance which defines the type of element contained in the Array.
 					 * @param options  Options which configure the behavior of the field
 					 */
-					constructor(element: TElementField, options?: TOptions)
+					constructor(element: TElementField, options?: Partial<TOptions>)
 
 					element: TElementField
 

@@ -19,7 +19,10 @@ export class ChallengeRankField extends foundry.data.fields
 			label: 'IRONSWORN.ChallengeRank',
 			// @ts-expect-error
 			choices: Object.fromEntries(
-				enumEntries(ChallengeRank).map(([k, v]) => [v, localizeRank(v)])
+				enumEntries(ChallengeRank).map(([k, v]) => [
+					v,
+					`IRONSWORN.CHALLENGERANK.${k}`
+				])
 			),
 			initial: ChallengeRank.Troublesome,
 			step: 1,
