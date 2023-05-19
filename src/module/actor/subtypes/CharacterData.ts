@@ -4,6 +4,7 @@ import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { SchemaToSourceData } from '../../fields/utils'
+import { clamp } from 'lodash-es'
 
 export class CharacterData extends foundry.abstract.DataModel<
 	any,
@@ -30,14 +31,19 @@ export class CharacterData extends foundry.abstract.DataModel<
 	}
 
 	get momentumReset() {
-		return Math.max(
+		return clamp(
+			CharacterData.MOMENTUM_INITIAL - this.#impactCount,
 			CharacterData.MOMENTUM_RESET_MIN,
-			CharacterData.MOMENTUM_INITIAL - this.#impactCount
+			CharacterData.MOMENTUM_MAX
 		)
 	}
 
 	get momentumMax() {
-		return CharacterData.MOMENTUM_MAX - this.#impactCount
+		return clamp(
+			CharacterData.MOMENTUM_MAX - this.#impactCount,
+			CharacterData.MOMENTUM_MIN,
+			CharacterData.MOMENTUM_MAX
+		)
 	}
 
 	static override defineSchema() {

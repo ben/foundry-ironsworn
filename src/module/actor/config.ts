@@ -1,4 +1,3 @@
-import type { FieldToData } from '../fields/utils'
 import type {
 	CharacterDataProperties,
 	CharacterDataSource
