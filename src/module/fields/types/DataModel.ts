@@ -3,7 +3,7 @@
 import { Data } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll'
 import type { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
 import type { SchemaField } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
-import type { ToField } from './utils'
+import { DataToField } from '../utils'
 
 export interface DataSchema
 	extends Record<string, foundry.data.fields.DataField.Any> {}
@@ -14,7 +14,6 @@ declare global {
 	namespace foundry {
 		namespace abstract {
 			export abstract class DataModel<
-				Schema extends SchemaField.Any,
 				ConcreteDataSchema extends DataSchema,
 				Parent extends DataModel.Any | null = null
 			> {
@@ -30,12 +29,12 @@ declare global {
 				 */
 				protected _configure(
 					options?: foundry.data.fields.DataField.ValidateOptions
-				)
+				): void
 				/**
 				 * The source data object for this DataModel instance.
 				 * Once constructed, the source object is sealed such that no keys may be added nor removed.
 				 */
-				_source: ConcreteDataSchema
+				readonly _source: ConcreteDataSchema
 
 				/**
 				 * The defined and cached Data Schema for all instances of this DataModel.
@@ -45,7 +44,7 @@ declare global {
 				/**
 				 * An immutable reverse-reference to a parent DataModel to which this model belongs.
 				 */
-				parent: Parent
+				readonly parent: Parent
 
 				/* ---------------------------------------- */
 				/*  Data Schema                             */
@@ -56,7 +55,7 @@ declare global {
 				 * The schema is populated the first time it is accessed and cached for future reuse.
 				 * @abstract
 				 */
-				static defineSchema()
+				static defineSchema(): DataSchema
 
 				/**
 				 * The Data Schema for all instances of this DataModel.
@@ -314,7 +313,7 @@ declare global {
 
 			export namespace DataModel {
 				export type SchemaToData<T extends DataSchema> = {
-					[K in keyof T]: ToField<T[K]>
+					[K in keyof T]: DataToField<T[K]>
 				}
 
 				export type SchemaToSource<T extends DataSchema> = SchemaToData<T>
@@ -418,7 +417,7 @@ declare global {
 					recursive?: boolean
 					_collections?: Record<
 						string,
-						foundry.data.fields.EmbeddedCollectionField<any, any, any>
+						foundry.data.fields.EmbeddedCollectionField<any, any>
 					>
 					_diff: Record<string, unknown>
 				}
@@ -555,7 +554,8 @@ declare global {
 				// 		>
 				// 	>
 
-				export type Any = DataModel<any, any>
+				// HACK: in v10+, documents derive from DataModel
+				export type Any = DataModel<any, any> | AnyDocument
 
 				export type AnyConstructor = Pick<
 					typeof DataModel,
