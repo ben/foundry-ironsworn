@@ -3,7 +3,6 @@
  */
 
 import { IRONSWORN } from './config'
-import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { FoeSheet } from './module/actor/sheets/foesheet'
 import { StarforgedCharacterSheet } from './module/actor/sheets/sf-charactersheet'
@@ -46,7 +45,7 @@ import type {
 	DocumentSubTypes,
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import * as ActorConfig from './module/actor/config'
+import ActorConfig from './module/actor/config'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -75,10 +74,9 @@ Hooks.once('init', async () => {
 
 	CONFIG.IRONSWORN = IRONSWORN
 
-	// Define custom Entity classes
-	CONFIG.Actor.documentClass = IronswornActor
-	CONFIG.Actor.systemDataModels = ActorConfig.systemDataModels
+	mergeObject(CONFIG.Actor, ActorConfig)
 
+	// Define custom Entity classes
 	CONFIG.Item.documentClass = IronswornItem
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
@@ -207,23 +205,6 @@ Hooks.once('init', async () => {
 		// FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
 		'delve-domain': 'fa-duotone fa-cards-blank',
 		'delve-theme': 'fa-duotone fa-cards-blank'
-	})
-
-	CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
-		character: 'IRONSWORN.ACTOR.TypeCharacter',
-		foe: 'IRONSWORN.ACTOR.TypeFoe',
-		location: 'IRONSWORN.ACTOR.TypeLocation',
-		shared: 'IRONSWORN.ACTOR.TypeShared',
-		site: 'IRONSWORN.ACTOR.TypeDelveSite',
-		starship: 'IRONSWORN.ACTOR.TypeStarship'
-	})
-	CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
-		character: 'fa-solid fa-user-pen',
-		foe: 'fa-solid fa-masks-theater',
-		location: 'fa-solid fa-location-dot',
-		shared: 'fa-solid fa-people-group',
-		site: 'fa-solid fa-dungeon',
-		starship: 'fa-solid fa-starship-freighter'
 	})
 
 	CONFIG.JournalEntryPage.typeLabels = mergeObject(
