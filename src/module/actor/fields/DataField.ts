@@ -1,55 +1,22 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import { DataModelValidationFailure } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
-import DataModel from '../../../types/abstract/data'
-
 declare global {
 	namespace foundry {
 		namespace data {
 			namespace fields {
-				export class DataModelValidationFailure<T = any>
-					implements DataModelValidationFailure.Options<T>
-				{
-					constructor(options?: Partial<DataModelValidationFailure.Options<T>>)
-					invalidValue: unknown
-					fallback: T
-					dropped: boolean
-					message: string
-					unresolved: boolean
-				}
-				export namespace DataModelValidationFailure {
-					export interface Options<T = any> {
-						/** The value that failed validation for this field. */
-						invalidValue: unknown
-						/**
-						 * The value it was replaced by, if any.
-						 */
-						fallback: T
-						/**
-						 * Whether the value was dropped from some parent collection.
-						 * @default false
-						 */
-						dropped: boolean
-						/**  The validation error message. */
-						message: string
-						/**  Whether this failure was unresolved */
-						unresolved: boolean
-					}
-				}
-
 				export abstract class DataField<
 					T,
-					TOptions extends DataField.Options<T>
+					TOptions extends DataField.Options<T> = DataField.Options<T>
 				> implements DataField.Options<T>
 				{
-					constructor(options: Partial<TOptions>)
+					constructor(options?: Partial<TOptions>)
 					readonly: boolean
 
 					required: boolean
 					nullable: boolean
 
-					initial: (data: object) => T
+					initial: ((data: object) => T) | T
 
 					label: string
 					hint: string
@@ -245,7 +212,7 @@ declare global {
 						/**
 						 * The initial value of a field, or a function which assigns that initial value.
 						 */
-						initial: (data: object) => TValue | TValue
+						initial: TValue | ((data: object) => TValue)
 						/**
 						 * A data validation function which accepts one argument with the current value.
 						 */
@@ -273,6 +240,36 @@ declare global {
 					}
 				}
 
+				export class DataModelValidationFailure<T = any>
+					implements DataModelValidationFailure.Options<T>
+				{
+					constructor(options?: Partial<DataModelValidationFailure.Options<T>>)
+					invalidValue: unknown
+					fallback: T
+					dropped: boolean
+					message: string
+					unresolved: boolean
+				}
+				export namespace DataModelValidationFailure {
+					export interface Options<T = any> {
+						/** The value that failed validation for this field. */
+						invalidValue: unknown
+						/**
+						 * The value it was replaced by, if any.
+						 */
+						fallback: T
+						/**
+						 * Whether the value was dropped from some parent collection.
+						 * @default false
+						 */
+						dropped: boolean
+						/**  The validation error message. */
+						message: string
+						/**  Whether this failure was unresolved */
+						unresolved: boolean
+					}
+				}
+
 				type ExtractMethods<
 					T,
 					F extends (...args: any[]) => any = (...args: any[]) => any
@@ -286,4 +283,5 @@ declare global {
 	}
 }
 
+export default foundry.data.fields
 export {}

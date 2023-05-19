@@ -1,7 +1,7 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { ChallengeRank } from '../constants'
 
-interface CharacterDataSourceData {
+export interface CharacterDataSourceData {
 	biography: string
 	notes: string
 	edge: number
@@ -14,8 +14,6 @@ interface CharacterDataSourceData {
 	supply: number
 	experience: number
 	momentum: number
-	momentumReset: number
-	momentumMax: number
 	debility: {
 		corrupted: boolean
 		cursed: boolean
@@ -71,7 +69,7 @@ export interface CharacterDataSource {
 
 /// /////////////////////////////////////
 
-interface SharedDataSourceData {
+export interface SharedDataSourceData {
 	biography: string
 	supply: number
 }
@@ -96,8 +94,8 @@ export interface SharedDataProperties {
 
 /// /////////////////////////////////////
 
-interface FoeDataSourceData {}
-type FoeDataPropertiesData = FoeDataSourceData
+export interface FoeDataSourceData {}
+export type FoeDataPropertiesData = FoeDataSourceData
 
 interface FoeDataSource {
 	type: 'foe'
@@ -152,7 +150,7 @@ export interface SiteDataProperties {
 
 /// /////////////////////////////////////
 
-interface StarshipDataSourceData {
+export interface StarshipDataSourceData {
 	health: number
 	debility: {
 		battered: boolean
@@ -180,12 +178,12 @@ export interface StarshipDataProperties {
 
 /// /////////////////////////////////////
 
-interface LocationDataSourceData {
+export interface LocationDataSourceData {
 	subtype: string
 	klass: string
 	description: string
 }
-type LocationDataPropertiesData = LocationDataSourceData
+export type LocationDataPropertiesData = LocationDataSourceData
 
 export interface LocationDataSource {
 	type: 'location'

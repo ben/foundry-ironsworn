@@ -46,6 +46,14 @@ import type {
 	DocumentSubTypes,
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import {
+	CharacterData,
+	FoeData,
+	SharedData,
+	SiteData,
+	StarshipData,
+	LocationData
+} from './module/actor/model'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -76,6 +84,14 @@ Hooks.once('init', async () => {
 
 	// Define custom Entity classes
 	CONFIG.Actor.documentClass = IronswornActor
+	CONFIG.Actor.systemDataModels = {
+		character: CharacterData,
+		shared: SharedData,
+		foe: FoeData,
+		site: SiteData,
+		starship: StarshipData,
+		location: LocationData
+	}
 	CONFIG.Item.documentClass = IronswornItem
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry

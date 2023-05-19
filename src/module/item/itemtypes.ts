@@ -183,7 +183,7 @@ export interface DelveDomainDataProperties {
 
 /// ////////////////////////////
 
-export interface SFMoveDataPropertiesData extends IMove {
+export interface SFMoveDataPropertiesData extends Omit<IMove, '$id'> {
 	dfid: string
 }
 

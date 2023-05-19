@@ -2,9 +2,11 @@
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 
 import { SystemDocumentType, SystemTypeData } from '../../../types/helperTypes'
+import DataField from './DataField'
 import { DataSchema } from './DataModel'
+import SchemaField from './SchemaField'
 
-export type ToField<T> = T extends string
+export type DataToField<T> = T extends string
 	? foundry.data.fields.StringField<T>
 	: T extends number
 	? foundry.data.fields.NumberField<T>
@@ -15,14 +17,21 @@ export type ToField<T> = T extends string
 	: T extends Set<infer U>
 	? foundry.data.fields.SetField<foundry.data.fields.DataField<U, any>>
 	: T extends SystemTypeData<infer U, infer F>
-	? foundry.data.fields.TypeDataField<U, F>
-	: // TODO add collection field when it's done
-	T extends Record<string, any>
-	? foundry.data.fields.SchemaField<T>
-	: never
+	? foundry.data.fields.SystemDataField<U, F>
+	: T extends Record<string, any>
+	? // TODO add collection field when it's done
+	  foundry.data.fields.SchemaField<DataSchema<T>>
+	: foundry.data.fields.DataField.Any
+
+export type FieldToData<T extends foundry.data.fields.DataField.Any> =
+	T extends foundry.data.fields.SchemaField<infer U>
+		? { [K in keyof U]: FieldToData<U[K]> }
+		: T extends foundry.data.fields.DataField<infer U>
+		? U
+		: unknown
 
 type SystemDataModels<T extends SystemDocumentType> = Partial<{
-	[K in keyof DataConfig[T]]: foundry.abstract.DataModel<
+	[K in keyof DataConfig[T]]: foundry.abstract.SystemDataField<
 		DataConfig[T][K],
 		DataSchema
 	>
@@ -40,18 +49,6 @@ declare global {
 	}
 
 	interface CONFIG {
-		Cards: {
-			/** @deprecated since v10. Use `#dataModels` instead */
-			systemDataModels: SystemDataModels<'Cards'>
-			/** @defaultValue `{}` */
-			dataModels: SystemDataModels<'Cards'>
-		}
-		Card: {
-			/** @deprecated since v10. Use `#dataModels` instead */
-			systemDataModels: SystemDataModels<'Card'>
-			/** @defaultValue `{}` */
-			dataModels: SystemDataModels<'Card'>
-		}
 		Actor: {
 			/** @deprecated since v10. Use `#dataModels` instead */
 			systemDataModels: SystemDataModels<'Actor'>
@@ -70,5 +67,18 @@ declare global {
 			/** @defaultValue `{}` */
 			dataModels: SystemDataModels<'JournalEntryPage'>
 		}
+
+		// Cards: {
+		// 	/** @deprecated since v10. Use `#dataModels` instead */
+		// 	systemDataModels: SystemDataModels<'Cards'>
+		// 	/** @defaultValue `{}` */
+		// 	dataModels: SystemDataModels<'Cards'>
+		// }
+		// Card: {
+		// 	/** @deprecated since v10. Use `#dataModels` instead */
+		// 	systemDataModels: SystemDataModels<'Card'>
+		// 	/** @defaultValue `{}` */
+		// 	dataModels: SystemDataModels<'Card'>
+		// }
 	}
 }

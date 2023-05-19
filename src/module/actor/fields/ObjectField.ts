@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
+import { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type {
 	DocumentSubTypes,
 	DocumentType,
 	SystemDocument,
+	SystemDocumentType,
 	SystemTypeData
 } from '../../../types/helperTypes'
+import { DataSchema } from './DataModel'
 
 declare global {
 	namespace foundry {
@@ -61,56 +64,9 @@ declare global {
 				export namespace DocumentOwnershipField {
 					export interface Options extends ObjectField.Options<DocumentStats> {}
 				}
-
-				/**
-				 * A subclass of [ObjectField]{@link ObjectField} which supports a type-specific data object.
-				 */
-				export class TypeDataField<
-					TDocType extends SystemDocument,
-					TSubtype extends DocumentSubTypes<TDocType['documentName']>,
-					TSubtypeData extends SystemTypeData<TDocType, TSubtype>
-				> extends ObjectField<
-					TSubtypeData,
-					TypeDataField.Options<TSubtypeData>
-				> {
-					/**
-					 * @param document - The base document class which belongs in this field
-					 * @param options - Options which configure the behavior of the field
-					 */
-					constructor(
-						document: TDocType,
-						options?: TypeDataField.Options<TSubtypeData>
-					)
-
-					/**
-					 * Return the package that provides the sub-type for the given model.
-					 * @param {DataModel} model       The model instance created for this sub-type.
-					 * @returns {System|Module|null}
-					 */
-					static getModelProvider<
-						T extends TypeDataField<SystemDocument, any, any>
-					>(model: T): foundry.packages.SystemData | foundry.packages.ModuleData
-
-					document: InstanceType<TDocType>
-					get documentName(): TDocType['documentName']
-
-					/**
-					 * Get the DataModel definition that should be used for this type of document.
-					 * @param {string} type              The Document instance type
-					 * @returns {typeof DataModel|null}  The DataModel class or null
-					 */
-					getModelForType(type: DocumentSubTypes<TDocType['documentName']>) // TODO: point it at configured model types
-				}
-				export namespace TypeDataField {
-					export interface Options<T extends SystemTypeData>
-						extends ObjectField.Options<T> {
-						/** @default true */
-						required: ObjectField.Options<T>['required']
-					}
-				}
 			}
 		}
 	}
 }
 
-export {}
+export default foundry.data.fields

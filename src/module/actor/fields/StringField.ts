@@ -147,7 +147,9 @@ declare global {
 				 * This class does not override any StringField behaviors, but is used by the server-side to identify fields which
 				 * require sanitization of user input.
 				 */
-				export class HTMLField extends StringField<string, HTMLField.Options> {}
+				export class HTMLField
+					extends StringField<string, HTMLField.Options>
+					implements HTMLField.Options {}
 				export namespace HTMLField {
 					export interface Options extends StringField.Options {
 						/** @default true */
@@ -161,4 +163,4 @@ declare global {
 	}
 }
 
-export {}
+export default foundry.data.fields

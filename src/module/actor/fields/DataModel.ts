@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
 import { Data } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll'
-import { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
-import { SchemaField } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
-import { ToField } from './utils'
+import type { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
+import type { SchemaField } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
+import type { ToField } from './utils'
 
 export interface DataSchema
 	extends Record<string, foundry.data.fields.DataField.Any> {}
@@ -56,7 +56,7 @@ declare global {
 				 * The schema is populated the first time it is accessed and cached for future reuse.
 				 * @abstract
 				 */
-				static defineSchema<T extends DataModel.Any = DataModel.Any>(): T
+				static defineSchema()
 
 				/**
 				 * The Data Schema for all instances of this DataModel.

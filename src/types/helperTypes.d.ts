@@ -29,20 +29,24 @@ export type ConfiguredDocumentClass<T extends DocumentConstructor> =
 
 export type SystemDocumentType = Extract<
 	DocumentType,
-	'Actor' | 'Card' | 'Cards' | 'Item' | 'JournalEntryPage'
+	// these can get configured subtypes, but this system doesn't use them right now
+	// | 'Card'
+	// | 'Cards'
+	'Actor' | 'Item' | 'JournalEntryPage'
 >
 
 export type SystemDocument<T extends SystemDocumentType = SystemDocumentType> =
 	ConfiguredDocumentClassForName<T> & { documentName: T }
 
 export type SystemTypeData<
-	T extends SystemDocument<SystemDocumentType> = SystemDocument<SystemDocumentType>,
-	U extends DocumentSubTypes<T['documentName']> = DocumentSubTypes<
-		T['documentName']
-	>
-> = U extends string
-	? ConfiguredData<T extends SystemDocument<infer X> ? X : never> & { type: U }
-	: Record<string, unknown>
+	T extends SystemDocumentType,
+	U extends DocumentSubTypes<T>
+> = U extends 'base' ? Record<string, unknown> : ConfiguredData<T>
+
+export type DocumentSubTypes<T extends DocumentType> =
+	T extends SystemDocumentType
+		? ConfiguredData<T>['type']
+		: typeof foundry.CONST.BASE_DOCUMENT_TYPE
 
 export type DocumentType =
 	| 'Actor'
@@ -84,8 +88,3 @@ export type PlaceableDocumentType =
 	| 'Tile'
 	| 'Token'
 	| 'Wall'
-
-export type DocumentSubTypes<T extends DocumentType> =
-	T extends SystemDocumentType
-		? ConfiguredDocumentClassForName<T>
-		: typeof foundry.CONST.BASE_DOCUMENT_TYPE

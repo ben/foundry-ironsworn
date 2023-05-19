@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 /* eslint-disable @typescript-eslint/no-namespace */
 
+import { AnyDocumentData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/data.mjs'
 import EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
-import { EmbeddedCollectionFieldOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
+import { DocumentConstructor } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 declare global {
 	namespace foundry {
@@ -12,17 +13,19 @@ declare global {
 				 * A subclass of [DataField]{@link DataField} which deals with array-typed data.
 				 */
 				export class ArrayField<
-					TElementField extends DataField<any, any>,
-					T extends Iterable<
+					TElementField extends DataField.Any,
+					TIterable extends Iterable<any> = Array<
 						TElementField extends DataField<infer U, any> ? U : never
-					> = Array<TElementField extends DataField<infer U, any> ? U : never>,
-					TOptions extends ArrayField.Options<T> = ArrayField.Options<T>
-				> extends DataField<T, TOptions> {
+					>,
+					TOptions extends ArrayField.Options<TIterable> = ArrayField.Options<TIterable>
+				> extends DataField<TIterable, TOptions> {
 					/**
 					 * @param element         A DataField instance which defines the type of element contained in the Array.
 					 * @param options  Options which configure the behavior of the field
 					 */
-					constructor(element: TElementField, options: TOptions)
+					constructor(element: TElementField, options?: TOptions)
+
+					element: TElementField
 
 					static _validateElementType(element: unknown)
 
@@ -45,8 +48,7 @@ declare global {
 					migrateSource(sourceData: object, fieldData: any): void
 				}
 				export namespace ArrayField {
-					export interface Options<T extends Iterable<any>>
-						extends DataField.Options<T> {
+					export interface Options<T> extends DataField.Options<T> {
 						/** @default true */
 						required: DataField.Options<T>['required']
 						/** @default false */
@@ -69,12 +71,18 @@ declare global {
 
 				// TODO
 				// eslint-disable-next-line @typescript-eslint/no-extraneous-class
+				// @ts-expect-error
 				export class EmbeddedCollectionField<
-					TElement extends DataField<
-						foundry.abstract.Document<any, any, any>,
-						any
-					>
+					ConcreteDocumentConstructor extends DocumentConstructor
+				> extends ArrayField<
+					DataField<ConcreteDocumentConstructor>,
+					// @ts-expect-error *sigh*
+					EmbeddedCollection<ConcreteDocumentConstructor, any>
 				> {}
+
+				export namespace EmbeddedCollectionField {
+					type Any = EmbeddedCollectionField<DocumentConstructor>
+				}
 
 				// export class EmbeddedCollectionField<
 				// 		TElement extends DataField<foundry.abstract.Document<any, any, any>, any>
@@ -96,4 +104,4 @@ declare global {
 	}
 }
 
-export {}
+export default foundry.data.fields
