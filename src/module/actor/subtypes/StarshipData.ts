@@ -1,4 +1,4 @@
-import { MeterField } from '../../fields/MeterField'
+import { MeterValueField } from '../../fields/MeterField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import type { SchemaToSourceData } from '../../fields/utils'
@@ -11,7 +11,7 @@ export class StarshipData extends foundry.abstract.DataModel<
 
 	static override defineSchema() {
 		return {
-			health: new MeterField({ label: 'IRONSWORN.Integrity' }),
+			health: new MeterValueField({ label: 'IRONSWORN.Integrity' }),
 			debility: new foundry.data.fields.SchemaField({
 				battered: new ImpactField(),
 				cursed: new ImpactField()

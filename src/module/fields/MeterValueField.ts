@@ -1,4 +1,4 @@
-export class MeterField extends foundry.data.fields.NumberField {
+export class MeterValueField extends foundry.data.fields.NumberField {
 	constructor({
 		label,
 		max = 5,

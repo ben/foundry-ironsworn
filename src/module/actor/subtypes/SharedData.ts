@@ -1,4 +1,4 @@
-import { MeterField } from '../../fields/MeterField'
+import { MeterValueField } from '../../fields/MeterField'
 import type { IronswornActor } from '../actor'
 import type { SchemaToSourceData } from '../../fields/utils'
 
@@ -11,7 +11,7 @@ export class SharedData extends foundry.abstract.DataModel<
 	static override defineSchema() {
 		return {
 			biography: new foundry.data.fields.HTMLField(),
-			supply: new MeterField({ label: 'IRONSWORN.Supply' })
+			supply: new MeterValueField({ label: 'IRONSWORN.Supply' })
 		}
 	}
 }

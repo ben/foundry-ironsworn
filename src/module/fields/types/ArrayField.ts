@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import { AnyDocumentData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/data.mjs'
-import EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
-import { DocumentConstructor } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
+import type { DocumentConstructor } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 declare global {
 	namespace foundry {
@@ -57,47 +56,31 @@ declare global {
 						initial: DataField.Options<T>['initial']
 					}
 				}
-
-				export class SetField<TElement extends DataField<any, any>>
-					extends ArrayField<
-						TElement,
-						Set<TElement extends DataField<infer U, any> ? U : never>
-					>
-					implements SetField.Options<Set<any>> {}
-				export namespace SetField {
-					export interface Options<T extends Set<any>>
-						extends ArrayField.Options<T> {}
-				}
-
-				// TODO
-				// eslint-disable-next-line @typescript-eslint/no-extraneous-class
-				// @ts-expect-error
-				export class EmbeddedCollectionField<
-					ConcreteDocumentConstructor extends DocumentConstructor
-				> extends ArrayField<
-					DataField<ConcreteDocumentConstructor>,
-					// @ts-expect-error *sigh*
-					EmbeddedCollection<ConcreteDocumentConstructor, any>
-				> {}
-
-				export namespace EmbeddedCollectionField {
-					type Any = EmbeddedCollectionField<DocumentConstructor>
-				}
-
-				// export class EmbeddedCollectionField<
-				// 		TElement extends DataField<foundry.abstract.Document<any, any, any>, any>
-				// 	>
+				// // @ts-expect-error
+				// export class SetField<TElement extends DataField<any, any>>
 				// 	extends ArrayField<
 				// 		TElement,
-				// 		EmbeddedCollection<
-				// 			TElement extends DataField<infer U, any> ? U : never,
-				// 			TElement extends DataField<infer U, any> ? U['parent'] : never
-				// 		>
+				// 		Set<TElement extends DataField<infer U, any> ? U : never>
 				// 	>
-				// 	implements EmbeddedCollectionField.Options<EmbeddedCollection<any, any>> {}
-				// export namespace EmbeddedCollectionField {
-				// 	export interface Options<T extends EmbeddedCollection<any, any>>
+				// 	implements SetField.Options<Set<any>> {}
+				// export namespace SetField {
+				// 	export interface Options<T extends Set<any>>
 				// 		extends ArrayField.Options<T> {}
+				// }
+
+				// // TODO
+				// // eslint-disable-next-line @typescript-eslint/no-extraneous-class
+				// // @ts-expect-error
+				// export class EmbeddedCollectionField<
+				// 	ConcreteDocumentConstructor extends DocumentConstructor
+				// > extends ArrayField<
+				// 	DataField<ConcreteDocumentConstructor>,
+				// 	// @ts-expect-error *sigh*
+				// 	EmbeddedCollection<ConcreteDocumentConstructor, any>
+				// > {}
+
+				// export namespace EmbeddedCollectionField {
+				// 	type Any = EmbeddedCollectionField<DocumentConstructor>
 				// }
 			}
 		}

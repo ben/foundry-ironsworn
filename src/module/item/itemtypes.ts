@@ -25,17 +25,17 @@ export interface AssetAbility {
 	clockTicks: number
 }
 
-interface AssetExclusiveOption {
+export interface AssetExclusiveOption {
 	name: string
 	selected: boolean
 }
 
-interface AssetCondition {
+export interface AssetCondition {
 	name: string
 	ticked: boolean
 }
 
-interface AssetDataSourceData {
+export interface AssetDataSourceData {
 	category: string
 	description?: string
 	requirement: string
@@ -68,7 +68,7 @@ export interface AssetDataProperties {
 
 /// ////////////////////////////
 
-interface ProgressDataSourceData extends ProgressBase {
+export interface ProgressDataSourceData extends ProgressBase {
 	subtype: string
 	starred: boolean
 	hasTrack: boolean

@@ -1,5 +1,5 @@
 import { StatField } from '../../fields/StatField'
-import { MeterField } from '../../fields/MeterField'
+import { MeterValueField } from '../../fields/MeterField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
@@ -10,6 +10,10 @@ export class CharacterData extends foundry.abstract.DataModel<
 	any,
 	IronswornActor<'character'>
 > {
+	protected override _configure(...args) {
+		super._configure(...args)
+	}
+
 	static _enableV10Validation = true
 
 	static readonly MOMENTUM_MAX = 10
@@ -58,11 +62,11 @@ export class CharacterData extends foundry.abstract.DataModel<
 			shadow: new StatField({ label: 'IRONSWORN.Shadow' }),
 			wits: new StatField({ label: 'IRONSWORN.Wits' }),
 
-			health: new MeterField({ label: 'IRONSWORN.Health' }),
-			spirit: new MeterField({ label: 'IRONSWORN.Spirit' }),
-			supply: new MeterField({ label: 'IRONSWORN.Supply' }),
+			health: new MeterValueField({ label: 'IRONSWORN.Health' }),
+			spirit: new MeterValueField({ label: 'IRONSWORN.Spirit' }),
+			supply: new MeterValueField({ label: 'IRONSWORN.Supply' }),
 
-			momentum: new MeterField({
+			momentum: new MeterValueField({
 				label: 'IRONSWORN.Momentum',
 				initial: (source) => (source as any).momentumReset,
 				max: this.MOMENTUM_MAX,

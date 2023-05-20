@@ -9,7 +9,7 @@ declare global {
 						TOptions extends NumberField.Options<T> = NumberField.Options<T>
 					>
 					extends DataField<T, TOptions>
-					implements NumberField.Options<T>
+					implements Omit<NumberField.Options<T>, 'validate'>
 				{
 					min: T | undefined
 					max: T | undefined

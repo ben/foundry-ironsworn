@@ -9,7 +9,7 @@ declare global {
 						TOptions extends StringField.Options<T> = StringField.Options<T>
 					>
 					extends DataField<T, TOptions>
-					implements StringField.Options<T>
+					implements Omit<StringField.Options<T>, 'validate'>
 				{
 					blank: boolean
 					trim: boolean
@@ -41,7 +41,7 @@ declare global {
 				 */
 				export class DocumentIdField
 					extends StringField<string, DocumentIdField.Options>
-					implements DocumentIdField.Options {}
+					implements Omit<DocumentIdField.Options, 'validate'> {}
 				export namespace DocumentIdField {
 					export interface Options extends StringField.Options {
 						/** @default true */
@@ -99,7 +99,7 @@ declare global {
 						T extends FilePathField.FileCategory = FilePathField.FileCategory
 					>
 					extends StringField<string, FilePathField.Options<T>>
-					implements FilePathField.Options<T>
+					implements Omit<FilePathField.Options<T>, 'validate'>
 				{
 					categories: T[]
 					base64: boolean
@@ -149,7 +149,7 @@ declare global {
 				 */
 				export class HTMLField
 					extends StringField<string, HTMLField.Options>
-					implements HTMLField.Options {}
+					implements Omit<HTMLField.Options, 'validate'> {}
 				export namespace HTMLField {
 					export interface Options extends StringField.Options {
 						/** @default true */
