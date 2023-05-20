@@ -5,12 +5,12 @@
 		document-type="Actor"
 		:label-position="labelPosition"
 		:slider-style="props.sliderStyle"
-		:current-value="actorSys.momentum ?? 2"
-		:min="-6"
-		:max="10"
-		:soft-max="actorSys.momentumMax"
+		:current-value="actor.system.momentum ?? CharacterData.MOMENTUM_INITIAL"
+		:min="CharacterData.MOMENTUM_MIN"
+		:max="CharacterData.MOMENTUM_MAX"
+		:soft-max="$actor.system.momentumMax"
 		:segment-class="{
-			[actorSys.momentumReset]: 'segment-momentum-reset'
+			[$actor.system.momentumReset]: 'segment-momentum-reset'
 		}">
 		<template #label>
 			<BtnMomentumburn
@@ -18,8 +18,8 @@
 				:text="$t('IRONSWORN.Momentum')"
 				:tooltip="
 					$t('IRONSWORN.BurnMomentumAndResetTo', {
-						value: actorSys.momentum,
-						resetValue: actorSys.momentumReset
+						value: actor.system.momentum,
+						resetValue: $actor.system.momentumReset
 					})
 				">
 			</BtnMomentumburn>
@@ -29,13 +29,12 @@
 
 <script lang="ts" setup>
 import type { Ref } from 'vue'
-import { computed, inject } from 'vue'
+import { inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor.js'
-import type {
-	CharacterDataProperties,
-	CharacterData
-} from '../../../actor/actortypes.js'
-import { ActorKey } from '../../provisions.js'
+import type { CharacterDataSource } from '../../../actor/subtypes/CharacterData'
+import { CharacterData } from '../../../actor/subtypes/CharacterData'
+import { SourceData } from '../../../fields/utils'
+import { $ActorKey, ActorKey } from '../../provisions.js'
 import BtnMomentumburn from '../buttons/btn-momentumburn.vue'
 
 import AttrSlider from './attr-slider.vue'
@@ -48,10 +47,8 @@ const props = withDefaults(
 	{ sliderStyle: 'vertical', labelPosition: 'left' }
 )
 
-const actor = inject(ActorKey) as Ref<
-	ReturnType<typeof IronswornActor.prototype.toObject> & CharacterDataProperties
->
-const actorSys = computed(() => (actor.value as any)?.system as CharacterData)
+const actor = inject(ActorKey) as Ref<SourceData<IronswornActor, 'character'>>
+const $actor = inject($ActorKey) as IronswornActor<'character'>
 </script>
 
 <style lang="scss">

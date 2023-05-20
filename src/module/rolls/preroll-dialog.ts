@@ -20,6 +20,7 @@ import { renderRollGraphic } from './roll-graphic'
 import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
 import { ChallengeResolutionDialog } from './challenge-resolution-dialog'
+import { DocumentSubTypes } from '../../types/helperTypes'
 
 interface showForMoveOpts {
 	actor?: IronswornActor
@@ -187,7 +188,7 @@ export class IronswornPrerollDialog extends Dialog<
 	static async showForStat(
 		name: string,
 		value: number,
-		actor?: IronswornActor
+		actor?: IronswornActor<'character'>
 	) {
 		let statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
 		if (statText.startsWith('IRONSWORN.')) statText = name
@@ -226,7 +227,7 @@ export class IronswornPrerollDialog extends Dialog<
 	static async showForProgress(
 		name: string,
 		value: number,
-		actor?: IronswornActor,
+		actor?: IronswornActor<any>,
 		moveDfId?: string
 	) {
 		const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')

@@ -6,21 +6,10 @@ declare global {
 		namespace data {
 			namespace fields {
 				export abstract class DataField<
-					T,
-					TOptions extends DataField.Options<T> = DataField.Options<T>
-				> implements Omit<DataField.Options<T>, 'validate'>
-				{
+					ConcreteData = unknown,
+					TOptions extends DataField.Options<ConcreteData> = DataField.Options<ConcreteData>
+				> {
 					constructor(options?: Partial<TOptions>)
-					readonly: boolean
-
-					required: boolean
-					nullable: boolean
-
-					initial: ((data: object) => T) | T
-
-					label: string
-					hint: string
-					validationError: string
 
 					static _defaults: DataField.Options
 
@@ -35,15 +24,15 @@ declare global {
 					 * @param fn The function to apply
 					 * @param value The current value of this field
 					 * @param {object} [options={}]         Additional options passed to the applied function
-					 * @returns {object}                    The results object
+					 * @returns The results object
 					 */
 					apply(
 						fn:
 							| MethodKeys<this, (...args: any[]) => any>
 							| ((...args: any[]) => any),
-						value: T,
+						value: ConcreteData,
 						options?
-					)
+					): DeepPartial<ConcreteData>
 
 					/* -------------------------------------------- */
 					/*  Field Cleaning                              */
@@ -57,7 +46,7 @@ declare global {
 					 * @param options Additional options for how the field is cleaned
 					 * @returns The cast value
 					 */
-					clean(value: unknown, options: DataField.CleanOptions): T
+					clean(value: unknown, options: DataField.CleanOptions): ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -67,7 +56,10 @@ declare global {
 					 * @param options Additional options for how the field is cleaned.
 					 * @returns The cleaned value.
 					 */
-					protected _cleanType(value: T, options: DataField.CleanOptions): T
+					protected _cleanType(
+						value: ConcreteData,
+						options: DataField.CleanOptions
+					): ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -76,7 +68,7 @@ declare global {
 					 * @param value The provided non-default value
 					 * @returns The standardized value
 					 */
-					protected _cast(value: unknown): T
+					protected _cast(value: unknown): ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -86,7 +78,7 @@ declare global {
 					 * @returns A valid initial value
 					 * @throws An error if there is no valid initial value defined
 					 */
-					getInitialValue(data): T
+					getInitialValue(data): ConcreteData
 
 					/* -------------------------------------------- */
 					/*  Field Validation                            */
@@ -103,8 +95,8 @@ declare global {
 					 */
 					validate: (
 						value: unknown,
-						options?: DataField.ValidateOptions<T>
-					) => DataModelValidationFailure<T>
+						options?: DataField.ValidateOptions<ConcreteData>
+					) => DataModelValidationFailure<ConcreteData>
 
 					/* -------------------------------------------- */
 
@@ -128,8 +120,8 @@ declare global {
 					 */
 					protected _validateType(
 						value: unknown,
-						options?: DataField.ValidateOptions
-					): boolean | DataModelValidationFailure | void
+						options?: DataField.ValidateOptions<ConcreteData>
+					): boolean | DataModelValidationFailure<ConcreteData> | void
 
 					/* -------------------------------------------- */
 
@@ -154,7 +146,7 @@ declare global {
 					 * @param options Initialization options
 					 * @returns An initialized copy of the source data
 					 */
-					initialize(value: unknown, model, options?): T
+					initialize(value: unknown, model, options?): ConcreteData
 
 					/**
 					 * Export the current value of the field into a serializable object.
@@ -162,8 +154,10 @@ declare global {
 					 * @returns An exported representation of the field
 					 */
 					toObject(
-						value: T
-					): T extends { toObject: () => any } ? ReturnType<T['toObject']> : T
+						value: ConcreteData
+					): ConcreteData extends { toObject: (...args: any[]) => any }
+						? ReturnType<ConcreteData['toObject']>
+						: ConcreteData
 
 					/**
 					 * Recursively traverse a schema and retrieve a field specification by a given path
@@ -171,6 +165,13 @@ declare global {
 					 * @protected
 					 */
 					_getField(path): undefined | this
+				}
+				export interface DataField<ConcreteData = unknown>
+					extends Omit<
+						DataField.Options<ConcreteData>,
+						'validate' | 'initial'
+					> {
+					initial: ((data: unknown) => ConcreteData) | ConcreteData
 				}
 				export namespace DataField {
 					export type Any = DataField<any, any>
@@ -212,7 +213,7 @@ declare global {
 						/**
 						 * The initial value of a field, or a function which assigns that initial value.
 						 */
-						initial: TValue | ((data: object) => TValue)
+						initial?: TValue | ((data: object) => TValue) | undefined
 						/**
 						 * A data validation function which accepts one argument with the current value.
 						 */
@@ -237,7 +238,7 @@ declare global {
 					}
 				}
 
-				export class DataModelValidationFailure<T = any>
+				export class DataModelValidationFailure<T = unknown>
 					implements DataModelValidationFailure.Options<T>
 				{
 					constructor(options?: Partial<DataModelValidationFailure.Options<T>>)

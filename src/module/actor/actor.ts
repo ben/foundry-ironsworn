@@ -2,7 +2,7 @@ import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-t
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import type { IronswornItem } from '../item/item'
-import type { ActorDataProperties } from './config'
+import type { ActorDataProperties, ActorDataSource } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 let CREATE_DIALOG: CreateActorDialog
@@ -14,7 +14,9 @@ export class IronswornActor<
 	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
 > extends Actor {
 	// Type hack for v10 compatibility updates
+	// declare system:
 	declare system: Extract<ActorDataProperties, { type: T }>['system']
+
 	get type() {
 		return super.type as T
 	}
@@ -72,6 +74,11 @@ export class IronswornActor<
 			? 'starforged'
 			: 'ironsworn'
 	}
+}
+export interface IronswornActor<
+	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
+> extends Actor {
+	type: T
 }
 
 declare global {

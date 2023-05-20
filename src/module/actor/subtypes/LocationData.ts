@@ -1,8 +1,8 @@
 import type { IronswornActor } from '../actor'
-import type { SchemaToSourceData } from '../../fields/utils'
+import type { SchemaToSource } from '../../fields/utils'
 
 export class LocationData extends foundry.abstract.DataModel<
-	any,
+	LocationDataSourceData,
 	IronswornActor<'location'>
 > {
 	static _enableV10Validation = true
@@ -16,21 +16,27 @@ export class LocationData extends foundry.abstract.DataModel<
 		}
 	}
 }
-export interface LocationData extends SchemaToSourceData<typeof LocationData> {}
+export interface LocationData extends LocationDataSourceData {}
+
+interface LocationDataSourceData {
+	subtype: string
+	klass: string
+	description: string
+}
 
 export interface LocationDataSource {
 	type: 'location'
 	/**
 	 * @deprecated
 	 */
-	data: LocationData
-	system: LocationData
+	data: LocationDataSourceData
+	system: LocationDataSourceData
 }
 export interface LocationDataProperties {
 	type: 'location'
 	/**
 	 * @deprecated
 	 */
-	data: InstanceType<typeof LocationData>
-	system: InstanceType<typeof LocationData>
+	data: LocationData
+	system: LocationData
 }

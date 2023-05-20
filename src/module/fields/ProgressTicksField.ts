@@ -1,7 +1,4 @@
 export class ProgressTicksField extends foundry.data.fields.NumberField {
-	/**
-	 *
-	 */
 	constructor(
 		options?: Omit<
 			Partial<foundry.data.fields.NumberField>,
@@ -14,7 +11,8 @@ export class ProgressTicksField extends foundry.data.fields.NumberField {
 			max: 40,
 			integer: true,
 			step: 1,
-			...options
+			...(options as any)
 		})
 	}
 }
+export interface ProgressTicksFields extends foundry.data.fields.NumberField {}

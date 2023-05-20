@@ -19,7 +19,7 @@ declare global {
 						/** @default false */
 						nullable: DataField.Options['nullable']
 						/** @default false */
-						initial: DataField.Options['initial']
+						initial?: DataField.Options['initial']
 					}
 				}
 			}

@@ -35,8 +35,7 @@ export type SystemDocumentType = Extract<
 	'Actor' | 'Item' | 'JournalEntryPage'
 >
 
-export type SystemDocument<T extends SystemDocumentType = SystemDocumentType> =
-	ConfiguredDocumentClassForName<T> & { documentName: T }
+export type SystemDocument = ConfiguredDocumentClassForName<SystemDocumentType>
 
 export type SystemTypeData<
 	T extends SystemDocumentType,

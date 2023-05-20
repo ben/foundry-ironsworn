@@ -1,14 +1,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import { Data } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll'
 import type { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
-import type { SchemaField } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
-import { DataToField, DataToFields } from '../utils'
-
-// export interface DataSchema
-// 	extends Record<string, foundry.data.fields.DataField.Any> {}
-export type DataSchema<T extends Record<string, any> = Record<string, any>> =
-	DataToFields<T>
+import type { SourceToField, DataSchema } from '../utils'
 
 type AnyDocument = Document<any, any, any>
 
@@ -16,11 +9,11 @@ declare global {
 	namespace foundry {
 		namespace abstract {
 			export abstract class DataModel<
-				ConcreteDataSchema extends DataSchema,
+				ConcreteData extends object,
 				Parent extends DataModel.Any | null = null
 			> {
 				constructor(
-					data: ConcreteDataSchema,
+					data: ConcreteData,
 					options?: foundry.data.fields.DataField.ValidateOptions & {
 						parent?: Parent
 					}
@@ -37,7 +30,7 @@ declare global {
 				 * The source data object for this DataModel instance.
 				 * Once constructed, the source object is sealed such that no keys may be added nor removed.
 				 */
-				readonly _source: ConcreteDataSchema
+				readonly _source: ConcreteData
 
 				/**
 				 * The defined and cached Data Schema for all instances of this DataModel.
@@ -58,19 +51,17 @@ declare global {
 				 * The schema is populated the first time it is accessed and cached for future reuse.
 				 * @abstract
 				 */
-				static defineSchema(): DataSchema
+				static defineSchema(): DataSchema<any>
 
 				/**
 				 * The Data Schema for all instances of this DataModel.
 				 */
-				static get schema(): foundry.data.fields.SchemaField<
-					Record<string, any>
-				>
+				static get schema(): ReturnType<(typeof this)['defineSchema']>
 
 				/**
 				 * Define the data schema for this document instance.
 				 */
-				get schema(): foundry.data.fields.SchemaField<ConcreteDataSchema>
+				get schema(): foundry.data.fields.SchemaField<ConcreteData>
 
 				/**
 				 * Is the current state of this DataModel invalid?
@@ -82,8 +73,8 @@ declare global {
 				 * An array of validation failure instances which may have occurred when this instance was last validated.
 				 */
 				get validationFailures(): {
-					fields: DataModelValidationFailure<ConcreteDataSchema> | null
-					joint: DataModelValidationFailure<ConcreteDataSchema> | null
+					fields: DataModelValidationFailure<ConcreteData> | null
+					joint: DataModelValidationFailure<ConcreteData> | null
 				}
 
 				/* ---------------------------------------- */
@@ -100,7 +91,7 @@ declare global {
 				protected _initializeSource(
 					data: object | this,
 					options?: object
-				): object
+				): ConcreteData
 
 				/**
 				 * Clean a data source object to conform to a specific provided schema.
@@ -108,7 +99,7 @@ declare global {
 				 * @param options Additional options which are passed to field cleaning methods
 				 * @returns The cleaned source data
 				 */
-				static cleanData(source?: object, options?: object): object
+				static cleanData<T extends object>(source?: T, options?: object): T
 
 				/* ---------------------------------------- */
 				/*  Data Initialization                     */
@@ -192,9 +183,9 @@ declare global {
 				 * @returns - An object containing the changed keys and values
 				 */
 				updateSource(
-					changes?: DeepPartial<DataModel.SchemaToSource<ConcreteDataSchema>>,
+					changes?: DeepPartial<ConcreteData>,
 					options?: DataModel.UpdateSourceOptions
-				): Partial<DataModel.SchemaToSource<ConcreteDataSchema>>
+				): DeepPartial<ConcreteData>
 
 				/* ---------------------------------------- */
 
@@ -208,8 +199,8 @@ declare global {
 				 * @returns The updated source data
 				 * @throws - An error if the update operation was unsuccessful
 				 */
-				static #updateData(
-					schema: DataSchema,
+				static #updateData<T extends foundry.data.fields.SchemaField<any>>(
+					schema: T,
 					source: Record<string, unknown>,
 					changes: Record<string, unknown>,
 					options: DataModel.UpdateDataOptions
@@ -245,9 +236,9 @@ declare global {
 				 *                 (default: `true`)
 				 * @returns The extracted primitive object
 				 */
-				toObject(source?: true): this['_source']
+				toObject<Source extends true>(source?: Source): this['_source']
 
-				toObject(source: false): object
+				toObject<Source extends false>(source: Source): ConcreteData
 
 				/* ---------------------------------------- */
 
@@ -255,7 +246,7 @@ declare global {
 				 * Extract the source data for the DataModel into a simple object format that can be serialized.
 				 * @returns - The document source data expressed as a plain object
 				 */
-				toJSON(): object // ToObjectType<this, true>
+				toJSON(): this['_source']
 
 				/* -------------------------------------------- */
 
@@ -265,10 +256,13 @@ declare global {
 				 * @param source - Initial document data which comes from a trusted source.
 				 * @param context - Model construction context
 				 */
-				protected static fromSource(
-					source: object,
+				protected static fromSource<
+					ConcreteData extends object,
+					Parent extends DataModel.Any | null = null
+				>(
+					source: ConcreteData,
 					context: DataModel.FromSourceContext
-				): DataModel.Any
+				): DataModel<ConcreteData, Parent>
 
 				/* ---------------------------------------- */
 
@@ -277,7 +271,10 @@ declare global {
 				 * @param json - Serialized document data in string format
 				 * @returns - A constructed data model instance
 				 */
-				static fromJSON(json: string): DataModel.Any
+				static fromJSON<
+					ConcreteData extends object,
+					Parent extends DataModel.Any | null = null
+				>(json: string): DataModel<ConcreteData, Parent>
 
 				/* -------------------------------------------- */
 
@@ -316,7 +313,7 @@ declare global {
 
 			export namespace DataModel {
 				export type SchemaToData<T extends DataSchema> = {
-					[K in keyof T]: DataToField<T[K]>
+					[K in keyof T]: SourceToField<T[K]>
 				}
 
 				export type SchemaToSource<T extends DataSchema> = SchemaToData<T>
@@ -433,138 +430,8 @@ declare global {
 					embedded: boolean
 				}>
 
-				// export type InitializedDataFor<Model extends Any> =
-				// 	Model extends DataModel<any, infer ConcreteDataSchema>
-				// 		? SchemaToData<ConcreteDataSchema>
-				// 		: never
-
-				// export type SchemaToSourceInputSimple<
-				// 	ConcreteDataSchema extends DataSchema
-				// > = FlattenSystem<
-				// 	GetSchemaValue<
-				// 		ConstructReadonly<RemoveIndex<ConcreteDataSchema>>,
-				// 		'SourceType'
-				// 	>
-				// >
-
-				// export type SchemaToSourceInput<ConcreteDataSchema extends DataSchema> =
-				// 	FlattenSystem<
-				// 		// TODO
-				// 		GetSchemaValue<
-				// 			ConstructPartial<
-				// 				ConstructReadonly<RemoveIndex<ConcreteDataSchema>>,
-				// 				'SourceType'
-				// 			>,
-				// 			'SourceType'
-				// 		>
-				// 	>
-
-				// type ConstructPartial<
-				// 	ConcreteDataSchema extends DataSchema,
-				// 	ExtendsOptionsKey extends keyof foundry.data.fields.DataField.AnyExtendsOptions
-				// > = PartialProps<
-				// 	ConcreteDataSchema,
-				// 	{
-				// 		// Essentially tests this condition that will give if it's required:
-				// 		//   !fieldTypes(field, ExtendsOptionsKey).includes(initial) ||
-				// 		//   (field instanceof StringField && blank === false && initial === '')
-				// 		// In both cases validation will automatically fail if given no value thusly a value must be given to prevent this error.
-				// 		[K in keyof ConcreteDataSchema]: Or<
-				// 			// Check if the initial type is in any of the field source types
-				// 			Not<
-				// 				ItemExtends<
-				// 					foundry.data.fields.DataField.InitialTypeFor<
-				// 						ConcreteDataSchema[K]
-				// 					>,
-				// 					FieldType<ConcreteDataSchema[K], ExtendsOptionsKey>
-				// 				>
-				// 			>,
-				// 			'blank' extends keyof ConcreteDataSchema[K]
-				// 				? And<
-				// 						Extends<ConcreteDataSchema[K]['blank'], false>,
-				// 						Equals<ConcreteDataSchema[K]['initial'], ''>
-				// 				  >
-				// 				: false
-				// 		> extends false
-				// 			? K
-				// 			: never
-				// 	}[keyof ConcreteDataSchema]
-				// >
-
-				// export type SchemaToSource<ConcreteDataSchema extends DataSchema> =
-				// 	FlattenSystem<
-				// 		GetSchemaValue<
-				// 			ConstructReadonly<RemoveIndex<ConcreteDataSchema>>,
-				// 			'SourceType'
-				// 		>
-				// 	>
-
-				// export type FieldType<
-				// 	Field extends foundry.data.fields.DataField.Any,
-				// 	Key extends keyof foundry.data.fields.DataField.AnyExtendsOptions
-				// > =
-				// 	| foundry.data.fields.DataField.ExtendsOptionsFor<Field>[Key]
-				// 	| foundry.data.fields.DataField.ExtraTypes<Field>
-
-				// export type GetSchemaValue<
-				// 	ConcreteDataSchema extends DataSchema,
-				// 	ExtendsOptionsKey extends keyof foundry.data.fields.DataField.AnyExtendsOptions
-				// > = {
-				// 	[K in keyof ConcreteDataSchema]: GetFieldType<
-				// 		ConcreteDataSchema[K],
-				// 		ExtendsOptionsKey
-				// 	>
-				// }
-
-				// export type GetFieldType<
-				// 	T,
-				// 	ExtendsOptionsKey extends keyof foundry.data.fields.DataField.AnyExtendsOptions
-				// > = T extends DataField<infer Options, infer ExtendsOptions>
-				// 	? FieldType<T, ExtendsOptionsKey>
-				// 	: T
-
-				// export type ConstructReadonly<ConcreteDataSchema extends DataSchema> =
-				// 	ReadonlyProps<
-				// 		ConcreteDataSchema,
-				// 		{
-				// 			[K in keyof ConcreteDataSchema]: ConcreteDataSchema[K]['readonly'] extends true
-				// 				? K
-				// 				: never
-				// 		}[keyof ConcreteDataSchema]
-				// 	>
-
-				// The given source and data type of system is a lie. It's a union that looks like `{ type: SubType1, system: SystemData1 } | ...`, when in reality it's just `SystemData1 | SystemData2 | ...`
-				// However, it keeps these types extraordinarily simple compared to alternatives.
-				type DistributeSystem<
-					ConstructedSchema extends Record<string, unknown>
-				> = [unknown] extends ConstructedSchema['system']
-					? ConstructedSchema
-					: ConstructedSchema['system'] &
-							Omit<ConstructedSchema, 'type' | 'system'>
-
-				// type FlattenSystem<ConstructedSchema extends Record<string, unknown>> =
-				// 	[unknown] extends ConstructedSchema['system']
-				// 		? ConstructedSchema
-				// 		: {
-				// 				system: GetKey<ConstructedSchema['system'], 'system', never>
-				// 		  } & Omit<ConstructedSchema, 'system'>
-
-				// export type SchemaToData<ConcreteDataSchema extends DataSchema> =
-				// 	FlattenSystem<
-				// 		GetSchemaValue<
-				// 			ConstructReadonly<RemoveIndex<ConcreteDataSchema>>,
-				// 			'InitializedType'
-				// 		>
-				// 	>
-
 				// HACK: in v10+, documents derive from DataModel
 				export type Any = DataModel<any, any> | AnyDocument
-
-				export type AnyConstructor = Pick<
-					typeof DataModel,
-					keyof typeof DataModel
-				> &
-					(abstract new (...params: any[]) => DataModel.Any)
 			}
 
 			export class DataModelValidationFailure<T = unknown>

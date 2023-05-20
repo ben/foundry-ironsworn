@@ -16,6 +16,8 @@
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import type { ExtractPropTypes } from 'vue'
 import { inject, useSlots } from 'vue'
+import { IronswornActor } from '../../../actor/actor'
+import { IronswornItem } from '../../../item/item'
 import type { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, $ItemKey } from '../../provisions'
@@ -32,8 +34,10 @@ interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
 
 const props = defineProps<Props>()
 
-const $actor = inject($ActorKey, undefined)
-const $item = inject($ItemKey, undefined)
+const $actor = inject($ActorKey, undefined) as
+	| IronswornActor<'character'>
+	| undefined
+const $item = inject($ItemKey, undefined) as IronswornItem<'asset'>
 
 function rollStat(): any {
 	if (props.documentType === 'Item') {

@@ -2,19 +2,17 @@ import { ChallengeRank } from '../constants'
 import { capitalize } from '../helpers/util'
 import { enumEntries } from '../fields/utils'
 
-export class ChallengeRankField extends foundry.data.fields
-	.NumberField<ChallengeRank> {
+export class ChallengeRankField extends foundry.data.fields.NumberField {
 	constructor(
 		options?: Partial<
 			Omit<
-				foundry.data.fields.NumberField.Options<ChallengeRank>,
+				foundry.data.fields.NumberField.Options,
 				'choices' | 'step' | 'integer' | 'max' | 'min' | 'positive'
 			>
 		>
 	) {
 		super({
 			label: 'IRONSWORN.ChallengeRank',
-			// @ts-expect-error
 			choices: Object.fromEntries(
 				enumEntries(ChallengeRank).map(([k, v]) => [
 					v,
@@ -46,3 +44,5 @@ export class ChallengeRankField extends foundry.data.fields
 		}
 	}
 }
+
+export interface ChallengeRankField extends foundry.data.fields.NumberField {}

@@ -1,8 +1,7 @@
 import type { IronswornActor } from '../actor'
-import type { SchemaToSourceData } from '../../fields/utils'
 
 export class FoeData extends foundry.abstract.DataModel<
-	any,
+	FoeDataSourceData,
 	IronswornActor<'foe'>
 > {
 	static _enableV10Validation = true
@@ -11,21 +10,22 @@ export class FoeData extends foundry.abstract.DataModel<
 		return {}
 	}
 }
-export interface FoeData extends SchemaToSourceData<typeof FoeData> {}
+export interface FoeData extends FoeDataSourceData {}
+export interface FoeDataSourceData {}
 
 export interface FoeDataSource {
 	type: 'foe'
 	/**
 	 * @deprecated
 	 */
-	data: FoeData
-	system: FoeData
+	data: FoeDataSourceData
+	system: FoeDataSourceData
 }
 export interface FoeDataProperties {
 	type: 'foe'
 	/**
 	 * @deprecated
 	 */
-	data: InstanceType<typeof FoeData>
-	system: InstanceType<typeof FoeData>
+	data: FoeData
+	system: FoeData
 }

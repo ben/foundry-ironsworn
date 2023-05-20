@@ -1,9 +1,9 @@
 import { MeterValueField } from '../../fields/MeterValueField'
 import type { IronswornActor } from '../actor'
-import type { SchemaToSourceData } from '../../fields/utils'
+import type { SchemaToSource } from '../../fields/utils'
 
 export class SharedData extends foundry.abstract.DataModel<
-	any,
+	SharedDataSourceData,
 	IronswornActor<'shared'>
 > {
 	static _enableV10Validation = true
@@ -15,21 +15,26 @@ export class SharedData extends foundry.abstract.DataModel<
 		}
 	}
 }
-export interface SharedData extends SchemaToSourceData<typeof SharedData> {}
+export interface SharedData extends SharedDataSourceData {}
+
+interface SharedDataSourceData {
+	biography: string
+	supply: number
+}
 
 export interface SharedDataSource {
 	type: 'shared'
 	/**
 	 * @deprecated
 	 */
-	data: SharedData
-	system: SharedData
+	data: SharedDataSourceData
+	system: SharedDataSourceData
 }
 export interface SharedDataProperties {
 	type: 'shared'
 	/**
 	 * @deprecated
 	 */
-	data: InstanceType<typeof SharedData>
-	system: InstanceType<typeof SharedData>
+	data: SharedData
+	system: SharedData
 }

@@ -1,8 +1,12 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { ChallengeRank } from 'dataforged'
 import { ChallengeRankField } from '../../fields/ChallengeRankField'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import { TableResultField } from '../../fields/TableResultField'
-import type { SchemaToSourceData } from '../../fields/utils'
+import {
+	TableResultField,
+	TableResultStub
+} from '../../fields/TableResultField'
+import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
 const denizenRanges: Array<[number, number]> = [
@@ -24,7 +28,7 @@ const denizenOptions: Array<Partial<TableResultField.Options>> =
 	denizenRanges.map((staticRange) => ({ staticRange }))
 
 export class SiteData extends foundry.abstract.DataModel<
-	any,
+	SiteDataSourceData,
 	IronswornActor<'site'>
 > {
 	static _enableV10Validation = true
@@ -49,7 +53,7 @@ export class SiteData extends foundry.abstract.DataModel<
 		return this.theme != null && this.domain != null
 	}
 
-	static override defineSchema() {
+	static override defineSchema(): DataSchema<SiteDataSourceData> {
 		const fields = foundry.data.fields
 		return {
 			rank: new ChallengeRankField(),
@@ -58,14 +62,21 @@ export class SiteData extends foundry.abstract.DataModel<
 			description: new fields.HTMLField(),
 			notes: new fields.HTMLField(),
 			denizens: new fields.ArrayField(new TableResultField(), {
-				initial: denizenOptions.map((item) => new TableResultField(item))
+				initial: denizenOptions.map((item) => new TableResultField(item)) as any
 			})
 		}
 	}
 }
 
-export interface SiteData extends SchemaToSourceData<typeof SiteData> {
-	denizens: TableResultDataConstructorData[]
+export interface SiteData extends SiteDataSourceData {}
+
+interface SiteDataSourceData {
+	objective: string
+	description: string
+	notes: string
+	rank: ChallengeRank
+	current: number
+	denizens: TableResultStub[]
 }
 
 export interface SiteDataSource {
@@ -73,14 +84,14 @@ export interface SiteDataSource {
 	/**
 	 * @deprecated
 	 */
-	data: SiteData
-	system: SiteData
+	data: SiteDataSourceData
+	system: SiteDataSourceData
 }
 export interface SiteDataProperties {
 	type: 'site'
 	/**
 	 * @deprecated
 	 */
-	data: InstanceType<typeof SiteData>
-	system: InstanceType<typeof SiteData>
+	data: SiteData
+	system: SiteData
 }

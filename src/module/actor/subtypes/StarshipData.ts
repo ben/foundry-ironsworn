@@ -1,10 +1,10 @@
 import { MeterValueField } from '../../fields/MeterValueField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
-import type { SchemaToSourceData } from '../../fields/utils'
+import type { SchemaToSource } from '../../fields/utils'
 
 export class StarshipData extends foundry.abstract.DataModel<
-	any,
+	StarshipDataSourceData,
 	IronswornActor<'starship'>
 > {
 	static _enableV10Validation = true
@@ -19,21 +19,28 @@ export class StarshipData extends foundry.abstract.DataModel<
 		}
 	}
 }
-export interface StarshipData extends SchemaToSourceData<typeof StarshipData> {}
+export interface StarshipData extends StarshipDataSourceData {}
 
+interface StarshipDataSourceData {
+	health: number
+	debility: {
+		battered: boolean
+		cursed: boolean
+	}
+}
 export interface StarshipDataSource {
 	type: 'starship'
 	/**
 	 * @deprecated
 	 */
-	data: StarshipData
-	system: StarshipData
+	data: StarshipDataSourceData
+	system: StarshipDataSourceData
 }
 export interface StarshipDataProperties {
 	type: 'starship'
 	/**
 	 * @deprecated
 	 */
-	data: InstanceType<typeof StarshipData>
-	system: InstanceType<typeof StarshipData>
+	data: StarshipData
+	system: StarshipData
 }

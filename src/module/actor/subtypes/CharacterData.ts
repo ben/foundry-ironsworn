@@ -3,17 +3,12 @@ import { MeterValueField } from '../../fields/MeterValueField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import type { SchemaToSourceData } from '../../fields/utils'
 import { clamp } from 'lodash-es'
 
 export class CharacterData extends foundry.abstract.DataModel<
-	any,
+	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
-	protected override _configure(...args) {
-		super._configure(...args)
-	}
-
 	static _enableV10Validation = true
 
 	static readonly MOMENTUM_MAX = 10
@@ -88,7 +83,7 @@ export class CharacterData extends foundry.abstract.DataModel<
 				initial: 0
 			}),
 
-			debility: new fields.SchemaField({
+			debility: new fields.SchemaField<CharacterDataSourceData['debility']>({
 				corrupted: new ImpactField(),
 				cursed: new ImpactField(),
 				encumbered: new ImpactField(),
@@ -109,45 +104,80 @@ export class CharacterData extends foundry.abstract.DataModel<
 				custom2name: new fields.StringField({})
 			}),
 
-			legacies: new fields.SchemaField({
+			legacies: new fields.SchemaField<CharacterDataSourceData['legacies']>({
 				quests: new ProgressTicksField({
-					max: undefined,
-					required: true
+					max: undefined
 				}),
 				questsXpSpent: new fields.NumberField({
-					initial: 0,
-					required: true
+					initial: 0
 				}),
 				bonds: new ProgressTicksField({
-					max: undefined,
-					required: true
+					max: undefined
 				}),
 				bondsXpSpent: new fields.NumberField({
-					initial: 0,
-					required: true
+					initial: 0
 				}),
 				discoveries: new ProgressTicksField({
-					max: undefined,
-					required: true
+					max: undefined
 				}),
 				discoveriesXpSpent: new fields.NumberField({
-					initial: 0,
-					required: true
+					initial: 0
 				})
 			})
 		}
 	}
 }
-export interface CharacterData
-	extends SchemaToSourceData<typeof CharacterData> {}
+export interface CharacterData extends CharacterDataSourceData {}
+export interface CharacterDataSourceData {
+	biography: string
+	notes: string
+	edge: number
+	heart: number
+	iron: number
+	shadow: number
+	wits: number
+	health: number
+	spirit: number
+	supply: number
+	experience: number
+	momentum: number
+	debility: {
+		corrupted: boolean
+		cursed: boolean
+		encumbered: boolean
+		maimed: boolean
+		shaken: boolean
+		tormented: boolean
+		unprepared: boolean
+		wounded: boolean
+		permanentlyharmed: boolean
+		traumatized: boolean
+		doomed: boolean
+		indebted: boolean
+		battered: boolean
+		custom1: boolean
+		custom1name: string
+		custom2: boolean
+		custom2name: string
+	}
+	legacies: {
+		quests: number
+		questsXpSpent: number
+		bonds: number
+		bondsXpSpent: number
+		discoveries: number
+		discoveriesXpSpent: number
+	}
+	xp: number
+}
 
 export interface CharacterDataSource {
 	type: 'character'
 	/**
 	 * @deprecated
 	 */
-	data: CharacterData
-	system: CharacterData
+	data: CharacterDataSourceData
+	system: CharacterDataSourceData
 }
 
 export interface CharacterDataProperties {
@@ -155,6 +185,6 @@ export interface CharacterDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: InstanceType<typeof CharacterData>
-	system: InstanceType<typeof CharacterData>
+	data: CharacterData
+	system: CharacterData
 }

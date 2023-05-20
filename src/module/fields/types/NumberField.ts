@@ -4,33 +4,24 @@ declare global {
 	namespace foundry {
 		namespace data {
 			namespace fields {
-				export class NumberField<
-						T extends number = number,
-						TOptions extends NumberField.Options<T> = NumberField.Options<T>
-					>
-					extends DataField<T, TOptions>
-					implements Omit<NumberField.Options<T>, 'validate'>
-				{
-					min: T | undefined
-					max: T | undefined
-					step: number | undefined
-					integer: boolean
-					positive: boolean
-					choices: DataField.Choices<T>
-
+				export class NumberField extends DataField<
+					number,
+					NumberField.Options
+				> {
 					static override _defaults: NumberField.Options
 				}
+				export interface NumberField
+					extends Omit<NumberField.Options, 'validate' | 'initial'> {}
 				export namespace NumberField {
-					export interface Options<T extends number = number>
-						extends DataField.Options<T> {
+					export interface Options extends DataField.Options<number> {
 						/**
 						 * A minimum allowed value
 						 */
-						min: T | undefined
+						min: number | undefined
 						/**
 						 * A maximum allowed value
 						 */
-						max: T | undefined
+						max: number | undefined
 						/**
 						 * A permitted step size
 						 */
@@ -48,7 +39,7 @@ declare global {
 						/**
 						 * An array of values or an object of values/labels which represent allowed choices for the field. A function may be provided which dynamically returns the array of choices.
 						 */
-						choices: DataField.Choices<T>
+						choices: DataField.Choices<number> | undefined
 					}
 				}
 				/**
@@ -56,13 +47,13 @@ declare global {
 				 */
 				// @ts-expect-error
 				export class AngleField
-					extends NumberField<number, AngleField.Options>
+					extends NumberField
 					implements AngleField.Options
 				{
 					base: number
 				}
 				export namespace AngleField {
-					export interface Options extends NumberField.Options<number> {
+					export interface Options extends NumberField.Options {
 						/** @default true */
 						required: NumberField.Options['required']
 						/** @default false */
@@ -86,7 +77,7 @@ declare global {
 				 */
 				// @ts-expect-error
 				export class AlphaField
-					extends NumberField<number, AlphaField.Options>
+					extends NumberField
 					implements AlphaField.Options {}
 				export namespace AlphaField {
 					export interface Options extends NumberField.Options {
@@ -133,3 +124,4 @@ declare global {
 }
 
 export default foundry.data.fields
+export {}

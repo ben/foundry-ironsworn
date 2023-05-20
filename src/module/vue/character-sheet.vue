@@ -68,7 +68,6 @@
 <script setup lang="ts">
 import { ActorKey } from './provisions'
 import AttrBox from './components/attr-box.vue'
-import type { IronswornActor } from '../actor/actor'
 import { provide, computed } from 'vue'
 import CharacterHeader from './components/character-header.vue'
 import Conditions from 'component:impact/debilities-classic.vue'
@@ -82,9 +81,10 @@ import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
+import type { ActorSource } from '../fields/utils'
 
 const props = defineProps<{
-	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
+	data: { actor: ActorSource<'character'> }
 }>()
 
 provide(

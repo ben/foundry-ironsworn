@@ -1,15 +1,5 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type {
-	DocumentSubTypes,
-	DocumentType,
-	SystemDocument,
-	SystemDocumentType,
-	SystemTypeData
-} from '../../../types/helperTypes'
-import { DataSchema } from './DataModel'
-
 declare global {
 	namespace foundry {
 		namespace data {
@@ -19,13 +9,16 @@ declare global {
 				 */
 				// @ts-expect-error
 				export class ObjectField<
-					T extends Record<string, any>,
-					TOptions extends DataField.Options<T>
-				> extends DataField<T, TOptions> {
-					override _cast: DataField<T, TOptions>['_cast']
-					override initialize: DataField<T, TOptions>['initialize']
-					override toObject: DataField<T, TOptions>['toObject']
-					override _validateType: DataField<T, TOptions>['_validateType']
+					ConcreteData extends Record<string, any>,
+					TOptions extends DataField.Options<ConcreteData>
+				> extends DataField<ConcreteData, TOptions> {
+					override _cast: DataField<ConcreteData, TOptions>['_cast']
+					override initialize: DataField<ConcreteData, TOptions>['initialize']
+					override toObject: DataField<ConcreteData, TOptions>['toObject']
+					override _validateType: DataField<
+						ConcreteData,
+						TOptions
+					>['_validateType']
 				}
 				export namespace ObjectField {
 					export interface Options<T extends Record<string, any>>

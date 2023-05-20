@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
-import type { DocumentConstructor } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { IterableElement } from '../utils'
 
 declare global {
 	namespace foundry {
@@ -12,12 +11,12 @@ declare global {
 				 * A subclass of [DataField]{@link DataField} which deals with array-typed data.
 				 */
 				export class ArrayField<
-					TElementField extends DataField.Any,
-					TIterable extends Iterable<any> = Array<
-						TElementField extends DataField<infer U, any> ? U : never
-					>,
-					TOptions extends ArrayField.Options<TIterable> = ArrayField.Options<TIterable>
-				> extends DataField<TIterable, TOptions> {
+					ConcreteData extends Iterable<any> = any[],
+					TElementField extends DataField<
+						IterableElement<ConcreteData>
+					> = DataField<IterableElement<ConcreteData>>,
+					TOptions extends ArrayField.Options<ConcreteData> = ArrayField.Options<ConcreteData>
+				> extends DataField<ConcreteData, TOptions> {
 					/**
 					 * @param element         A DataField instance which defines the type of element contained in the Array.
 					 * @param options  Options which configure the behavior of the field
@@ -37,7 +36,7 @@ declare global {
 					protected _validateElements(
 						value: unknown[],
 						options: DataField.ValidateOptions
-					): DataModelValidationFailure | void
+					): DataModelValidationFailure<IterableElement<ConcreteData>> | void
 
 					/**
 					 * Migrate this field's candidate source data.
@@ -46,14 +45,24 @@ declare global {
 					 */
 					migrateSource(sourceData: object, fieldData: any): void
 				}
+				export interface ArrayField<
+					ConcreteData extends Iterable<any> = any[],
+					TElementField extends DataField<
+						IterableElement<ConcreteData>
+					> = DataField<IterableElement<ConcreteData>>,
+					TOptions extends ArrayField.Options<ConcreteData> = ArrayField.Options<ConcreteData>
+				> extends DataField<ConcreteData, TOptions> {}
+
 				export namespace ArrayField {
-					export interface Options<T> extends DataField.Options<T> {
+					export interface Options<
+						ConcreteData extends Iterable<any> = Iterable<any>
+					> extends DataField.Options<ConcreteData> {
 						/** @default true */
-						required: DataField.Options<T>['required']
+						required: DataField.Options<ConcreteData>['required']
 						/** @default false */
-						nullable: DataField.Options<T>['nullable']
+						nullable: DataField.Options<ConcreteData>['nullable']
 						/** @default () => [] */
-						initial: DataField.Options<T>['initial']
+						initial?: DataField.Options<ConcreteData>['initial']
 					}
 				}
 				// // @ts-expect-error

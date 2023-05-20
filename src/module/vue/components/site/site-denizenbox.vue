@@ -27,25 +27,25 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { reactive } from 'vue'
-import { inject } from 'vue'
-import { computed, ref } from 'vue'
-import type { DelveSiteDenizen, SiteData } from '../../../actor/config'
+import { reactive, inject, computed, ref } from 'vue'
+import { IronswornActor } from '../../../actor/actor'
+import type { SiteData } from '../../../actor/config'
+import { SourceData } from '../../../fields/utils'
 import DropTarget from '../../drop-target.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 const props = defineProps<{ idx: number }>()
 const data = reactive({ focused: false })
 
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey) as Ref<SourceData<IronswornActor, 'site'>>
+const $actor = inject($ActorKey) as IronswornActor<'site'>
 
 const editMode = computed(() => {
 	return actor.value?.flags['foundry-ironsworn']?.['edit-mode']
 })
 
 const denizen = computed(() => {
-	return actor.value?.system.denizens[props.idx] as DelveSiteDenizen
+	return actor.value?.system.denizens[props.idx]
 })
 
 /**

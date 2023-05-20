@@ -1,7 +1,19 @@
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 
+import {
+	ConfiguredDocumentClassForName,
+	ConfiguredSource
+} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import { Ironsworn } from 'dataforged'
 import { cloneDeep, mapValues } from 'lodash-es'
+import {
+	ConfiguredDocumentClass,
+	DocumentSubTypes,
+	SystemDocument,
+	SystemDocumentType
+} from '../../types/helperTypes'
+import { IronswornActor } from '../actor/actor'
 
 export function Partial<
 	T extends Record<string, foundry.data.fields.DataField.Any>
@@ -25,35 +37,48 @@ export function enumValues<T extends Record<any, unknown>>(enumLike: T) {
 	return enumEntries(enumLike).map(([_, v]) => v)
 }
 
-export type FieldToData<T extends foundry.data.fields.DataField.Any> =
-	T extends foundry.data.fields.SchemaField<infer U>
-		? { [K in keyof U]: FieldToData<U[K]> }
-		: T extends foundry.data.fields.DataField<infer U>
-		? U
-		: unknown
+export type FieldToSource<T extends foundry.data.fields.DataField.Any> =
+	T extends foundry.data.fields.DataField<infer U> ? U : never
 
-export type SchemaToSourceData<
-	T extends typeof foundry.abstract.DataModel<any, any>
+export type SchemaToSource<
+	T extends Record<string, foundry.data.fields.DataField.Any>
 > = {
-	[K in keyof ReturnType<T['defineSchema']>]: FieldToData<
-		ReturnType<T['defineSchema']>[K]
-	>
+	[K in keyof T]: FieldToSource<T[K]>
 }
 
-export type DataToField<T> = T extends foundry.data.fields.DataField.Any
+export type IterableElement<T extends Iterable<any>> = T extends Iterable<
+	infer U
+>
+	? U
+	: never
+
+export type ActorSource<T extends DocumentSubTypes<'Actor'>> = ReturnType<
+	Actor['toObject']
+> &
+	ConfiguredSource<'Actor'> & { type: T }
+
+export type SourceData<
+	DocumentInstance extends InstanceType<SystemDocument>,
+	Subtype extends DocumentInstance['type'] = DocumentInstance['type']
+> = ReturnType<DocumentInstance['toObject']> &
+	SourceConfig[DocumentInstance['documentName']] & { type: Subtype }
+
+export type SourceToField<T> = T extends foundry.data.fields.DataField.Any
 	? T
+	: T extends string
+	? foundry.data.fields.StringField<T>
+	: T extends Iterable<any>
+	? foundry.data.fields.ArrayField<T, SourceToField<IterableElement<T>>>
 	: T extends number
 	? foundry.data.fields.NumberField
-	: T extends string
-	? foundry.data.fields.StringField
 	: T extends boolean
 	? foundry.data.fields.BooleanField
-	: T extends Iterable<infer U>
-	? foundry.data.fields.ArrayField<DataToField<U>, T>
-	: T extends Record<infer K, infer U>
-	? foundry.data.fields.SchemaField<Record<K, DataToField<U>>>
-	: foundry.data.fields.DataField.Any
+	: T extends Record<any, any>
+	? foundry.data.fields.SchemaField<T>
+	: foundry.data.fields.DataField<T>
 
-export type DataToFields<T extends Record<string, any>> = {
-	[K in keyof T]: DataToField<T[K]>
+export type DataSchema<
+	T extends Record<string, any> = Record<string, unknown>
+> = {
+	[K in keyof T]-?: SourceToField<T[K]>
 }

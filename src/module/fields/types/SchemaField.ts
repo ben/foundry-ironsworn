@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import type { DataSchema } from './DataModel'
+import type { DataSchema } from '../utils'
 
 declare global {
 	namespace foundry {
@@ -9,49 +9,52 @@ declare global {
 				/**
 				 * A special class of {@link DataField} which defines a data schema.
 				 */
-				export class SchemaField<TDataSchema extends DataSchema>
-					extends DataField<TDataSchema, SchemaField.Options<TDataSchema>>
-					implements Iterable<ValueOf<TDataSchema>>
+				export class SchemaField<ConcreteData extends object>
+					extends DataField<ConcreteData, SchemaField.Options<ConcreteData>>
+					implements
+						Iterable<ValueOf<DataSchema<ConcreteData>>>,
+						Omit<SchemaField.Options<ConcreteData>, 'validate'>
 				{
 					constructor(
-						fields: TDataSchema,
-						options?: SchemaField.Options<TDataSchema>
+						fields: DataSchema<ConcreteData>,
+						options?: Partial<SchemaField.Options<ConcreteData>>
 					)
 
 					/** The contained field definitions. */
-					fields: TDataSchema
+					fields: DataSchema<ConcreteData>
 
 					/**
 					 * Initialize and validate the structure of the provided field definitions.
 					 * @param fields     The provided field definitions
 					 * @returns The validated schema
 					 */
-					protected _initialize(fields: DataSchema): TDataSchema
+					protected _initialize(fields: DataSchema): this['fields']
 
 					/**
 					 * Iterate over a SchemaField by iterating over its fields.
 					 */
-					[Symbol.iterator](): Iterator<ValueOf<TDataSchema>, any, undefined>
+					[Symbol.iterator](): Iterator<ValueOf<this['fields']>, any, undefined>
 
 					/**
 					 * An array of field names which are present in the schema.
 					 */
-					keys(): Array<keyof TDataSchema>
+					keys(): Array<keyof this['fields']>
 
 					/**
 					 * An array of DataField instances which are present in the schema.
 					 */
-					values(): Array<ValueOf<TDataSchema>>
+					values(): Array<ValueOf<this['fields']>>
 
 					/**
 					 * An array of [name, DataField] tuples which define the schema.
 					 */
-					entries(): Array<[keyof TDataSchema, ValueOf<TDataSchema>]>
+					entries(): Array<[keyof this['fields'], ValueOf<this['fields']>]>
 					/**
 					 * Test whether a certain field name belongs to this schema definition.
 					 * @param fieldName The field name
 					 * @returns Does the named field exist in this schema?
 					 */
+					has<T extends keyof this['fields']>(fieldName: T): true
 					has(fieldName: string): boolean
 
 					/**
@@ -59,7 +62,7 @@ declare global {
 					 * @param fieldName The field name
 					 * @returns The DataField instance or undefined
 					 */
-					get<T extends keyof TDataSchema>(fieldName: T): TDataSchema[T]
+					get<T extends keyof this['fields']>(fieldName: T): this['fields'][T]
 					get(fieldName: string): undefined
 					get(fieldName: string): DataField.Any | undefined
 
@@ -72,14 +75,14 @@ declare global {
 						fieldName: string[] | string
 					): SchemaField.Any | DataField.Any | undefined
 
-					override _getField(path): undefined | this
-					override _cast(value) // TODO
-					_cleanType(data, options) // TODO
-					override initialize(value, model, options) // TODO
-					override _validateType(data, options) // TODO
-					override _validateModel(changes, options) // TODO
-					override toObject(value) // TODO
-					override apply(fn, data, options) // TODO
+					// override _getField(path): undefined | this
+					// override _cast(value) // TODO
+					// _cleanType(data, options) // TODO
+					// override initialize(value, model, options) // TODO
+					// override _validateType(data, options) // TODO
+					// override _validateModel(changes, options) // TODO
+					// override toObject(value) // TODO
+					// override apply(fn, data, options) // TODO
 
 					/**
 					 * Migrate this field's candidate source data.
@@ -91,14 +94,14 @@ declare global {
 				export namespace SchemaField {
 					/** Any SchemaField. */
 					export type Any = SchemaField<any>
-					export interface Options<T extends DataSchema>
-						extends DataField.Options<T> {
+					export interface Options<ConcreteData extends object>
+						extends DataField.Options<ConcreteData> {
 						/** @default true */
-						required: DataField.Options<T>['required']
+						required: DataField.Options<ConcreteData>['required']
 						/** @default false */
-						nullable: DataField.Options<T>['nullable']
+						nullable: DataField.Options<ConcreteData>['nullable']
 						/** @default {} */
-						initial: DataField.Options<T>['initial']
+						initial: DataField.Options<ConcreteData>['initial']
 					}
 				}
 
@@ -119,20 +122,20 @@ declare global {
 					 */
 					model: T
 
-					/** @override */
-					_initialize(schema)
-					/** @override */
-					initialize(value, model, options?)
-					/** @override */
-					toObject(value)
+					// /** @override */
+					// _initialize(schema)
+					// /** @override */
+					// initialize(value, model, options?)
+					// /** @override */
+					// toObject(value)
 					/**
 					 * Migrate this field's candidate source data.
 					 * @param {object} sourceData   Candidate source data of the root model
 					 * @param {any} fieldData       The value of this field within the source data
 					 */
 					migrateSource(sourceData, fieldData)
-					/** @override */
-					_validateModel(changes, options)
+					// /** @override */
+					// _validateModel(changes, options)
 				}
 			}
 		}
