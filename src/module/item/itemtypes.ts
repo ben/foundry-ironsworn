@@ -25,17 +25,17 @@ export interface AssetAbility {
 	clockTicks: number
 }
 
-export interface AssetExclusiveOption {
+interface AssetExclusiveOption {
 	name: string
 	selected: boolean
 }
 
-export interface AssetCondition {
+interface AssetCondition {
 	name: string
 	ticked: boolean
 }
 
-export interface AssetDataSourceData {
+interface AssetDataSourceData {
 	category: string
 	description?: string
 	requirement: string
@@ -68,7 +68,7 @@ export interface AssetDataProperties {
 
 /// ////////////////////////////
 
-export interface ProgressDataSourceData extends ProgressBase {
+interface ProgressDataSourceData extends ProgressBase {
 	subtype: string
 	starred: boolean
 	hasTrack: boolean
@@ -183,7 +183,7 @@ export interface DelveDomainDataProperties {
 
 /// ////////////////////////////
 
-export interface SFMoveDataPropertiesData extends Omit<IMove, '$id'> {
+export interface SFMoveDataPropertiesData extends IMove {
 	dfid: string
 }
 
