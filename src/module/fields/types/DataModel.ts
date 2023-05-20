@@ -28,6 +28,7 @@ declare global {
 
 				/**
 				 * Configure the data model instance before validation and initialization workflows are performed.
+				 * @remarks Source code comments indicate that this is intended for use for subclass configuration.
 				 */
 				protected _configure(
 					options?: foundry.data.fields.DataField.ValidateOptions
