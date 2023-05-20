@@ -303,7 +303,12 @@
 				},
 				{
 					"range": [17, 20],
-					"text": ""
+					"text": "",
+					"flags": {
+						"foundry-ironsworn": {
+							"type": "delve-site-feature"
+						}
+					}
 				}
 			],
 			"dangers": [
