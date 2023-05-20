@@ -31,9 +31,8 @@
 import type { Ref } from 'vue'
 import { inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor.js'
-import type { CharacterDataSource } from '../../../actor/subtypes/CharacterData'
-import { CharacterData } from '../../../actor/subtypes/CharacterData'
-import { SourceData } from '../../../fields/utils'
+import { CharacterData } from '../../../actor/subtypes/character'
+import type { SourceData } from '../../../fields/utils'
 import { $ActorKey, ActorKey } from '../../provisions.js'
 import BtnMomentumburn from '../buttons/btn-momentumburn.vue'
 
@@ -62,6 +61,7 @@ const $actor = inject($ActorKey) as IronswornActor<'character'>
 	.attr-slider-label:hover ~ .slider-bar {
 		.segment-momentum-reset {
 			@include clickable.blockHover;
+
 			box-shadow: 0 0 5px var(--ironsworn-color-warm) inset;
 		}
 	}

@@ -1,5 +1,4 @@
 import type { IronswornActor } from '../actor'
-import type { SchemaToSource } from '../../fields/utils'
 
 export class LocationData extends foundry.abstract.DataModel<
 	LocationDataSourceData,

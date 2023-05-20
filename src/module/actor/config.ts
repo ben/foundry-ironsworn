@@ -3,27 +3,24 @@ import { IronswornActor } from './actor'
 import type {
 	CharacterDataProperties,
 	CharacterDataSource
-} from './subtypes/CharacterData'
-import { CharacterData } from './subtypes/CharacterData'
-import type { FoeDataProperties, FoeDataSource } from './subtypes/FoeData'
-import { FoeData } from './subtypes/FoeData'
+} from './subtypes/character'
+import { CharacterData } from './subtypes/character'
+import type { FoeDataProperties, FoeDataSource } from './subtypes/foe'
+import { FoeData } from './subtypes/foe'
 import type {
 	LocationDataProperties,
 	LocationDataSource
-} from './subtypes/LocationData'
-import { LocationData } from './subtypes/LocationData'
-import type {
-	SharedDataProperties,
-	SharedDataSource
-} from './subtypes/SharedData'
-import { SharedData } from './subtypes/SharedData'
-import type { SiteDataProperties, SiteDataSource } from './subtypes/SiteData'
-import { SiteData } from './subtypes/SiteData'
+} from './subtypes/location'
+import { LocationData } from './subtypes/location'
+import type { SharedDataProperties, SharedDataSource } from './subtypes/shared'
+import { SharedData } from './subtypes/shared'
+import type { SiteDataProperties, SiteDataSource } from './subtypes/site'
+import { SiteData } from './subtypes/site'
 import type {
 	StarshipDataProperties,
 	StarshipDataSource
-} from './subtypes/StarshipData'
-import { StarshipData } from './subtypes/StarshipData'
+} from './subtypes/starship'
+import { StarshipData } from './subtypes/starship'
 
 const systemDataModels: Record<
 	ConfiguredData<'Actor'>['type'],

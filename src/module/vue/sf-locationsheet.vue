@@ -146,7 +146,7 @@ import { OracleRollMessage } from '../rolls'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { OracleTable } from '../roll-table/oracle-table'
-import { LocationDataProperties } from '../actor/subtypes/LocationData'
+import type { LocationDataProperties } from '../actor/subtypes/location'
 
 const props = defineProps<{
 	data: { actor: any }

@@ -1,7 +1,6 @@
 import { MeterValueField } from '../../fields/MeterValueField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
-import type { SchemaToSource } from '../../fields/utils'
 
 export class StarshipData extends foundry.abstract.DataModel<
 	StarshipDataSourceData,

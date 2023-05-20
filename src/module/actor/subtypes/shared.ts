@@ -1,6 +1,5 @@
 import { MeterValueField } from '../../fields/MeterValueField'
 import type { IronswornActor } from '../actor'
-import type { SchemaToSource } from '../../fields/utils'
 
 export class SharedData extends foundry.abstract.DataModel<
 	SharedDataSourceData,

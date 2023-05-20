@@ -1,11 +1,8 @@
-import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { ChallengeRank } from 'dataforged'
 import { ChallengeRankField } from '../../fields/ChallengeRankField'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import {
-	TableResultField,
-	TableResultStub
-} from '../../fields/TableResultField'
+import type { TableResultStub } from '../../fields/TableResultField'
+import { TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 

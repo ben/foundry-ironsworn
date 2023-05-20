@@ -50,7 +50,7 @@ import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import IronIcon from './components/icon/iron-icon.vue'
-import type { CharacterDataProperties } from '../actor/subtypes/CharacterData'
+import type { CharacterDataProperties } from '../actor/subtypes/character'
 
 const props = defineProps<{
 	data: {
