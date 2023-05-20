@@ -14,7 +14,15 @@ export function enumEntries<T extends Record<any, unknown>>(enumLike: T) {
 	const values = Object.values(enumLike).filter(
 		(x) => !isNaN(+(x as number | string))
 	) as Array<T[keyof T]>
-	return values.map((v) => [enumLike[v], v]) as [[keyof T, T[keyof T]]]
+	return values.map((v) => [enumLike[v], v]) as Array<[keyof T, T[keyof T]]>
+}
+
+export function enumKeys<T extends Record<any, unknown>>(enumLike: T) {
+	return enumEntries(enumLike).map(([k]) => k)
+}
+
+export function enumValues<T extends Record<any, unknown>>(enumLike: T) {
+	return enumEntries(enumLike).map(([_, v]) => v)
 }
 
 export type FieldToData<T extends foundry.data.fields.DataField.Any> =
