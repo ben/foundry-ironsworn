@@ -1,4 +1,4 @@
-import { MeterValueField } from '../../fields/MeterField'
+import { MeterValueField } from '../../fields/MeterValueField'
 import type { IronswornActor } from '../actor'
 import type { SchemaToSourceData } from '../../fields/utils'
 

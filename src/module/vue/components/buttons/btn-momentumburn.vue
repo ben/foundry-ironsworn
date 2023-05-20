@@ -15,7 +15,7 @@
 import { computed } from 'vue'
 import type { ExtractPropTypes } from 'vue'
 import { inject } from 'vue'
-import type { CharacterDataPropertiesData } from '../../../actor/actortypes'
+import type { CharacterData } from '../../../actor/config'
 import { $ActorKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
@@ -25,8 +25,7 @@ defineProps<Props>()
 const $actor = inject($ActorKey)
 
 const tooltip = computed(() => {
-	const { momentum, momentumReset } =
-		$actor?.system as CharacterDataPropertiesData
+	const { momentum, momentumReset } = $actor?.system as CharacterData
 	return game.i18n.format('IRONSWORN.BurnMomentumAndResetTo', {
 		value: momentum,
 		resetValue: momentumReset

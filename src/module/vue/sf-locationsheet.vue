@@ -143,10 +143,10 @@ import { $ActorKey, ActorKey } from './provisions'
 
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
-import type { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { OracleTable } from '../roll-table/oracle-table'
+import { LocationDataProperties } from '../actor/subtypes/LocationData'
 
 const props = defineProps<{
 	data: { actor: any }

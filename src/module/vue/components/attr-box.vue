@@ -21,7 +21,7 @@
 import type { Ref } from 'vue'
 import { inject, computed, capitalize } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
-import type { CharacterDataPropertiesData } from '../../actor/actortypes'
+import type { CharacterData } from '../../actor/config'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 
@@ -30,9 +30,7 @@ const $actor = inject($ActorKey)
 const actor = inject(ActorKey) as Ref<
 	ReturnType<typeof IronswornActor.prototype.toObject>
 >
-const actorSys = computed(
-	() => (actor.value as any)?.system as CharacterDataPropertiesData
-)
+const actorSys = computed(() => (actor.value as any)?.system as CharacterData)
 
 const classes = computed(() => ({
 	clickable: !editMode.value,

@@ -126,7 +126,7 @@ import SiteMoves from './components/site/site-moves.vue'
 import { OracleRollMessage } from '../rolls'
 import type { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
-import type { SiteDataPropertiesData } from '../actor/actortypes'
+import type { SiteData } from '../actor/config'
 import { localizeRank } from '../helpers/util'
 
 const props = defineProps<{
@@ -166,7 +166,7 @@ function markProgress() {
 
 const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
-	const denizens = (props.data.actor.system as SiteDataPropertiesData).denizens
+	const denizens = (props.data.actor.system as SiteData).denizens
 	const rows = denizens.map((x) => ({
 		low: x.range[0],
 		high: x.range[1],

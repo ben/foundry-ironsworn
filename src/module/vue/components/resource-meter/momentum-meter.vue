@@ -33,7 +33,7 @@ import { computed, inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor.js'
 import type {
 	CharacterDataProperties,
-	CharacterDataPropertiesData
+	CharacterData
 } from '../../../actor/actortypes.js'
 import { ActorKey } from '../../provisions.js'
 import BtnMomentumburn from '../buttons/btn-momentumburn.vue'
@@ -51,9 +51,7 @@ const props = withDefaults(
 const actor = inject(ActorKey) as Ref<
 	ReturnType<typeof IronswornActor.prototype.toObject> & CharacterDataProperties
 >
-const actorSys = computed(
-	() => (actor.value as any)?.system as CharacterDataPropertiesData
-)
+const actorSys = computed(() => (actor.value as any)?.system as CharacterData)
 </script>
 
 <style lang="scss">

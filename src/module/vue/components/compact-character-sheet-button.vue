@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { capitalize, computed, inject } from 'vue'
-import type { CharacterDataPropertiesData } from '../../actor/actortypes'
+import type { CharacterData } from '../../actor/config'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
@@ -42,7 +42,7 @@ const tooltip = computed(() =>
 
 const actor = inject(ActorKey)
 const actorSystem = computed(
-	() => (actor?.value as any)?.system as CharacterDataPropertiesData
+	() => (actor?.value as any)?.system as CharacterData
 )
 const value = computed(() => actorSystem?.value?.[propKey])
 const $actor = inject($ActorKey)

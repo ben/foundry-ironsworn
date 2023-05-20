@@ -1,5 +1,5 @@
 import { StatField } from '../../fields/StatField'
-import { MeterValueField } from '../../fields/MeterField'
+import { MeterValueField } from '../../fields/MeterValueField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'

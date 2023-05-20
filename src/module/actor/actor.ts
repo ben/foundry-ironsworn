@@ -74,10 +74,6 @@ export class IronswornActor<
 	}
 }
 
-export interface IronswornActor<
-	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
-> extends Actor {}
-
 declare global {
 	interface DocumentClassConfig {
 		Actor: typeof IronswornActor

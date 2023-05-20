@@ -30,10 +30,7 @@ import type { Ref } from 'vue'
 import { reactive } from 'vue'
 import { inject } from 'vue'
 import { computed, ref } from 'vue'
-import type {
-	DelveSiteDenizen,
-	SiteDataPropertiesData
-} from '../../../actor/actortypes'
+import type { DelveSiteDenizen, SiteData } from '../../../actor/config'
 import DropTarget from '../../drop-target.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 
@@ -76,7 +73,7 @@ const frequencyLabel = computed(() =>
 
 function input(ev) {
 	const val = ev.currentTarget.value || ''
-	const data = $actor?.system as SiteDataPropertiesData | undefined
+	const data = $actor?.system as SiteData | undefined
 	if (!data) return
 	const denizens = Object.values(data.denizens)
 	denizens[props.idx].text = val

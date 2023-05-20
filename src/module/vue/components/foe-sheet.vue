@@ -44,7 +44,7 @@ import type { IronswornActor } from '../../actor/actor'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
-import type { FoeDataProperties } from '../../actor/actortypes'
+import type { FoeDataProperties } from '../../actor/config'
 import DropTarget from '../drop-target.vue'
 import ProgressItemDetail from 'component:progress/progress-item-detail.vue'
 

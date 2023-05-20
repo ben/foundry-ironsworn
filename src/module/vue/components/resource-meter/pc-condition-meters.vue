@@ -21,16 +21,14 @@ import { computed, inject } from 'vue'
 import { ActorKey } from '../../provisions.js'
 import ConditionMeterSlider from './condition-meter.vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
-import type { CharacterDataPropertiesData } from '../../../actor/actortypes.js'
+import type { CharacterData } from '../../../actor/actortypes.js'
 
 const props = defineProps<{
 	labelPosition: 'left' | 'right'
 }>()
 
 const actor = inject(ActorKey)
-const actorSys = computed(
-	() => (actor?.value as any)?.system as CharacterDataPropertiesData
-)
+const actorSys = computed(() => (actor?.value as any)?.system as CharacterData)
 </script>
 <style lang="scss">
 .condition-meters {

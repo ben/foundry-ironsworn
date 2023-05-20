@@ -57,7 +57,7 @@
 <script lang="ts" setup>
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { computed, inject, reactive } from 'vue'
-import type { SiteDataPropertiesData } from '../../../actor/actortypes'
+import type { SiteData } from '../../../actor/config'
 import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
 import type { DelveThemeDataSourceData } from '../../../item/itemtypes'
@@ -138,7 +138,7 @@ async function revealADanger() {
 
 async function locateObjective() {
 	if (!$site) return
-	const siteSys = $site.system as SiteDataPropertiesData
+	const siteSys = $site.system as SiteData
 	const progress = Math.floor(siteSys.current / 4)
 
 	IronswornPrerollDialog.showForOfficialMove(

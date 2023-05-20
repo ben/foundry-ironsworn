@@ -1,4 +1,4 @@
-import { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import { IronswornActor } from './actor'
 import type {
 	CharacterDataProperties,
@@ -71,6 +71,15 @@ const config: Partial<ActorConfig> = {
 } as const
 
 export default config
+
+export {
+	CharacterData,
+	FoeData,
+	LocationData,
+	SharedData,
+	SiteData,
+	StarshipData
+}
 
 export type ActorDataSource =
 	| CharacterDataSource
