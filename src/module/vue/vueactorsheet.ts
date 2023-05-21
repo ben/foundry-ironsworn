@@ -1,4 +1,7 @@
+import type { DropData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/abstract/client-document'
+import type { ConfiguredDocumentClass } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { App } from 'vue'
+import type { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import { $ActorKey } from './provisions'
 import { VueAppMixin } from './vueapp.js'
@@ -47,6 +50,31 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 		this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
 	}
 
+	protected async _onDropActor(
+		event: DragEvent,
+		data: ActorSheet.DropData.Actor &
+			(
+				| DropData<InstanceType<ConfiguredDocumentClass<typeof Actor>>>
+				| { uuid: string }
+			)
+	): Promise<unknown> {
+		const result = await super._onDropActor(event, data)
+		if (result === false) return result
+		console.log('drop data', data)
+
+		if (this.actor.type !== 'character' || (data as any).uuid == null)
+			return false
+
+		const document = (await fromUuid((data as any).uuid)) as
+			| StoredDocument<IronswornActor>
+			| undefined
+		if (document == null || document.type !== 'foe') return false
+		return await this.actor.createEmbeddedDocuments(
+			'Item',
+			document.items.map((item) => item.toObject(true)) as any
+		)
+	}
+
 	protected async _onDrop(event: DragEvent) {
 		const data = (TextEditor as any).getDragEventData(event)
 
@@ -56,7 +84,7 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 				| undefined
 
 			if (document != null) {
-				this.actor.createEmbeddedDocuments('Item', [
+				await this.actor.createEmbeddedDocuments('Item', [
 					(document as any).toObject()
 				])
 			}
@@ -64,4 +92,8 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 
 		super._onDrop(event)
 	}
+}
+export interface VueActorSheet
+	extends ReturnType<typeof VueAppMixin<typeof ActorSheet>> {
+	get actor(): IronswornActor
 }
