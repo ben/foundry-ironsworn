@@ -99,8 +99,6 @@ export interface SharedDataProperties {
 
 interface FoeDataSourceData {
 	dfid?: string
-	description?: string
-	rank?: ChallengeRank
 }
 type FoeDataPropertiesData = FoeDataSourceData
 

@@ -27,7 +27,7 @@
 				data-tooltip-direction="RIGHT" />
 		</div>
 
-		<MceEditor v-model="actor.system.description" @save="saveDescription" />
+		<MceEditor v-model="foeSystem.description" @save="saveDescription" />
 	</div>
 </template>
 
@@ -57,7 +57,9 @@ const actor = inject(ActorKey) as unknown as Ref<
 const $actor = inject($ActorKey) as IronswornActor & FoeDataProperties
 
 const props = defineProps<{ item: any }>()
+
 const $item = $actor?.items.get(props.item._id)
+
 provide($ItemKey, $item)
 
 const foeSystem = computed(
@@ -66,8 +68,6 @@ const foeSystem = computed(
 
 function setRank(rank: ChallengeRank) {
 	$item?.update({ system: { rank } })
-	// update actor rank to keep it synced
-	$actor?.update({ system: { rank } })
 }
 
 function clearProgress() {
@@ -100,7 +100,7 @@ function markProgress() {
 
 function saveDescription() {
 	$actor?.update({
-		system: { description: actor?.value?.system.description }
+		system: { description: foeSystem.value.description }
 	})
 }
 </script>
