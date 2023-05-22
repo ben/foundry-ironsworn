@@ -37,7 +37,7 @@ defineProps<{
 
 const foeCompendium = computed(() => {
 	return IronswornSettings.starforgedToolsEnabled
-		? 'starforgedencounters'
-		: 'ironswornfoes'
+		? 'foeactorssf'
+		: 'foeactorsis'
 })
 </script>

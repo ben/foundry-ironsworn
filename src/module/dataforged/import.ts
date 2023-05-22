@@ -10,7 +10,7 @@ import type {
 	Starforged
 } from 'dataforged'
 import { ironsworn, starforged } from 'dataforged'
-import { isArray, isObject } from 'lodash-es'
+import { isArray, isObject, omit } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
@@ -28,6 +28,8 @@ import {
 } from './data'
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
+import { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
+import { ConfiguredSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 export function cleanDollars(obj): any {
 	if (isArray(obj)) {
@@ -62,7 +64,6 @@ export function hash(str: string): string {
 
 const PACKS = [
 	'foundry-ironsworn.starforgedassets',
-	'foundry-ironsworn.starforgedencounters',
 	'foundry-ironsworn.starforgedmoves',
 	'foundry-ironsworn.starforgedoracles',
 	'foundry-ironsworn.starforgedtruths',
@@ -97,7 +98,7 @@ export async function importFromDataforged() {
 	await processSFAssets()
 	await processISAssets()
 	await processSFOracles()
-	await processSFEncounters()
+
 	await processSFFoes()
 
 	await processISMoves()
@@ -292,9 +293,9 @@ async function processISOracles() {
 	})
 }
 
-async function processSFEncounters() {
+async function processSFFoes() {
 	const encountersToCreate = [] as Array<
-		ItemDataConstructorData & Record<string, unknown>
+		Omit<ActorDataConstructorData & ConfiguredSource<'Actor'>, 'data'>
 	>
 	for (const encounter of starforged.Encounters) {
 		const description = await renderTemplate(
@@ -309,7 +310,7 @@ async function processSFEncounters() {
 
 		encountersToCreate.push({
 			_id: hashLookup(encounter.$id),
-			type: 'progress',
+			type: 'foe',
 			name: encounter.Name,
 			img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
 			system: {
@@ -331,7 +332,7 @@ async function processSFEncounters() {
 
 			encountersToCreate.push({
 				_id: hashLookup(variant.$id),
-				type: 'progress',
+				type: 'foe',
 				name: variant.Name,
 				img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
 				system: {
@@ -341,32 +342,13 @@ async function processSFEncounters() {
 			})
 		}
 	}
-	await Item.createDocuments(encountersToCreate, {
-		pack: 'foundry-ironsworn.starforgedencounters',
-		keepId: true
-	})
-}
 
-async function processSFFoes() {
-	const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
-	const foeItems = (await foesPack?.getDocuments()) as Array<
-		StoredDocument<IronswornItem>
-	>
-	for (const foeItem of foeItems ?? []) {
-		const actor = await IronswornActor.create(
-			{
-				name: foeItem.name ?? 'wups',
-				img: foeItem.img,
-				type: 'foe'
-			},
-			{ pack: 'foundry-ironsworn.foeactorssf' }
-		)
+	for (const encounter of encountersToCreate ?? []) {
+		const actor = await IronswornActor.create(encounter, {
+			pack: 'foundry-ironsworn.foeactorssf'
+		})
 		await actor?.createEmbeddedDocuments('Item', [
-			{
-				name: foeItem.name ?? 'wups',
-				type: 'progress',
-				system: foeItem.system as unknown as Record<string, unknown>
-			}
+			{ ...omit(encounter, '_id', 'type'), type: 'progress' }
 		])
 	}
 }

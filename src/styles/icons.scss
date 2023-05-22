@@ -272,8 +272,8 @@ a[data-pack='foundry-ironsworn.starforgedmoves'] {
 }
 
 // NPC progress track
-a[data-pack='foundry-ironsworn.ironswornfoes'],
-a[data-pack='foundry-ironsworn.starforgedencounters'] {
+a[data-pack='foundry-ironsworn.foeactorsis'],
+a[data-pack='foundry-ironsworn.foeactorssf'] {
 	i::before {
 		content: '\2a';
 	}

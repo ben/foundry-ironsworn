@@ -15,7 +15,7 @@
 		<btn-compendium
 			:class="$style.btn"
 			block
-			:compendium="props.foeCompendium ?? 'ironswornfoes'"
+			:compendium="props.foeCompendium ?? 'foeactorsis'"
 			:text="$t('IRONSWORN.Foes')" />
 	</div>
 </template>

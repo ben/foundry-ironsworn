@@ -26,12 +26,12 @@
 			<BtnCompendium
 				block
 				nogrow
-				compendium="ironswornfoes"
+				compendium="foeactorsis"
 				:text="`${$t('IRONSWORN.Foes')} (Ironsworn)`" />
 			<BtnCompendium
 				block
 				nogrow
-				compendium="starforgedencounters"
+				compendium="foeactorssf"
 				:text="`${$t('IRONSWORN.Foes')} (Starforged)`" />
 		</DropTarget>
 	</div>
