@@ -51,7 +51,9 @@
 			"biography": "",
 			"supply": 5
 		},
-		"foe": {},
+		"foe": {
+			"dfid": ""
+		},
 		"site": {
 			"objective": "",
 			"description": "",

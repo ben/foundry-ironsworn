@@ -96,7 +96,9 @@ export interface SharedDataProperties {
 
 /// /////////////////////////////////////
 
-interface FoeDataSourceData {}
+interface FoeDataSourceData {
+	dfid?: string
+}
 type FoeDataPropertiesData = FoeDataSourceData
 
 interface FoeDataSource {
