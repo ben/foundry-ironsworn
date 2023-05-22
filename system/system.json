@@ -68,14 +68,14 @@
 	"packs": [
 		{
 			"name": "foeactorsis",
-			"label": "Ironsworn Foe Actors",
+			"label": "Ironsworn Encounters",
 			"system": "foundry-ironsworn",
 			"path": "packs/foe-actors-is.db",
 			"type": "Actor"
 		},
 		{
 			"name": "foeactorssf",
-			"label": "Starforged Foe Actors",
+			"label": "Starforged Encounters",
 			"system": "foundry-ironsworn",
 			"path": "packs/foe-actors-sf.db",
 			"type": "Actor"
