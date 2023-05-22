@@ -52,9 +52,7 @@
 			"supply": 5
 		},
 		"foe": {
-			"dfid": "",
-			"description": "",
-			"rank": 1
+			"dfid": ""
 		},
 		"site": {
 			"objective": "",
