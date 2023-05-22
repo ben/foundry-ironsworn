@@ -1,6 +1,7 @@
 import { MeterValueField } from '../../fields/MeterValueField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
+import type { DataSchema } from '../../fields/utils'
 
 export class StarshipData extends foundry.abstract.DataModel<
 	StarshipDataSourceData,
@@ -8,10 +9,12 @@ export class StarshipData extends foundry.abstract.DataModel<
 > {
 	static _enableV10Validation = true
 
-	static override defineSchema() {
+	static override defineSchema(): DataSchema<StarshipDataSourceData> {
 		return {
 			health: new MeterValueField({ label: 'IRONSWORN.Integrity' }),
-			debility: new foundry.data.fields.SchemaField({
+			debility: new foundry.data.fields.SchemaField<
+				StarshipDataSourceData['debility']
+			>({
 				battered: new ImpactField(),
 				cursed: new ImpactField()
 			})

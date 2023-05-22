@@ -1,4 +1,5 @@
 import { MeterValueField } from '../../fields/MeterValueField'
+import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
 export class SharedData extends foundry.abstract.DataModel<
@@ -7,7 +8,7 @@ export class SharedData extends foundry.abstract.DataModel<
 > {
 	static _enableV10Validation = true
 
-	static override defineSchema() {
+	static override defineSchema(): DataSchema<SharedDataSourceData> {
 		return {
 			biography: new foundry.data.fields.HTMLField(),
 			supply: new MeterValueField({ label: 'IRONSWORN.Supply' })

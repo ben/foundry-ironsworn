@@ -1,3 +1,4 @@
+import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
 export class LocationData extends foundry.abstract.DataModel<
@@ -6,7 +7,7 @@ export class LocationData extends foundry.abstract.DataModel<
 > {
 	static _enableV10Validation = true
 
-	static override defineSchema() {
+	static override defineSchema(): DataSchema<LocationDataSourceData> {
 		const fields = foundry.data.fields
 		return {
 			subtype: new fields.StringField(),

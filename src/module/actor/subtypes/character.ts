@@ -4,6 +4,7 @@ import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import { clamp } from 'lodash-es'
+import type { DataSchema } from '../../fields/utils'
 
 export class CharacterData extends foundry.abstract.DataModel<
 	CharacterDataSourceData,
@@ -45,7 +46,7 @@ export class CharacterData extends foundry.abstract.DataModel<
 		)
 	}
 
-	static override defineSchema() {
+	static override defineSchema(): DataSchema<CharacterDataSourceData> {
 		const fields = foundry.data.fields
 		return {
 			biography: new fields.HTMLField(),

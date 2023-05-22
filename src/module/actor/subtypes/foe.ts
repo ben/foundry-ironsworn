@@ -1,3 +1,5 @@
+import { DataforgedIDField } from '../../fields/DataforgedIDField'
+import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
 export class FoeData extends foundry.abstract.DataModel<
@@ -6,12 +8,16 @@ export class FoeData extends foundry.abstract.DataModel<
 > {
 	static _enableV10Validation = true
 
-	static override defineSchema() {
-		return {}
+	static override defineSchema(): DataSchema<FoeDataSourceData> {
+		return {
+			dfid: new DataforgedIDField()
+		}
 	}
 }
 export interface FoeData extends FoeDataSourceData {}
-export interface FoeDataSourceData {}
+export interface FoeDataSourceData {
+	dfid: string | null
+}
 
 export interface FoeDataSource {
 	type: 'foe'
