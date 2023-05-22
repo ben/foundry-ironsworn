@@ -2,6 +2,7 @@ import type { DropData } from '@league-of-foundry-developers/foundry-vtt-types/s
 import type { ConfiguredDocumentClass } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { App } from 'vue'
 import type { IronswornActor } from '../actor/actor'
+import type { FoeDataProperties } from '../actor/actortypes'
 import type { IronswornItem } from '../item/item'
 import { $ActorKey } from './provisions'
 import { VueAppMixin } from './vueapp.js'
@@ -70,7 +71,13 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 		if (document == null || document.type !== 'foe') return false
 		return await this.actor.createEmbeddedDocuments(
 			'Item',
-			document.items.map((item) => item.toObject(true)) as any
+			document.items.map((item) =>
+				mergeObject(item.toObject(true), {
+					system: {
+						description: (document as FoeDataProperties).system.description
+					}
+				})
+			) as any
 		)
 	}
 

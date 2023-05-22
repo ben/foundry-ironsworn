@@ -389,7 +389,11 @@ async function processISFoes() {
 			keepEmbeddedIds: true
 		})
 		await actor?.createEmbeddedDocuments('Item', [
-			{ ...omit(encounter, '_id', 'type', 'system.dfid'), type: 'progress' }
+			{
+				// system.description omitted so that there's a single source of truth for the progress description; when a foe actor is dropped, the description is passed to its progress data instead
+				...omit(encounter, '_id', 'type', 'system.dfid', 'system.description'),
+				type: 'progress'
+			}
 		])
 	}
 }
@@ -453,7 +457,10 @@ async function processSFEncounters() {
 			keepEmbeddedIds: true
 		})
 		await actor?.createEmbeddedDocuments('Item', [
-			{ ...omit(encounter, '_id', 'type', 'system.dfid'), type: 'progress' }
+			{
+				...omit(encounter, '_id', 'type', 'system.dfid', 'system.description'),
+				type: 'progress'
+			}
 		])
 	}
 }

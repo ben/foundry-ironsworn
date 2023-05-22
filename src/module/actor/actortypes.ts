@@ -98,10 +98,11 @@ export interface SharedDataProperties {
 
 interface FoeDataSourceData {
 	dfid?: string
+	description?: string
 }
 type FoeDataPropertiesData = FoeDataSourceData
 
-interface FoeDataSource {
+export interface FoeDataSource {
 	type: 'foe'
 	/**
 	 * @deprecated
