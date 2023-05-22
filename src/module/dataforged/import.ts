@@ -164,11 +164,11 @@ export async function importFromDataforged() {
 
 	await processSFMoves()
 	await processSFAssets()
-	await processISAssets()
 	await processSFOracles()
 	await processSFEncounters()
 
 	await processISMoves()
+	await processISAssets()
 	await processISOracles()
 	await processISFoes()
 
