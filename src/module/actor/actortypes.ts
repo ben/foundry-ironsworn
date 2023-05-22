@@ -225,6 +225,15 @@ export type ActorDataProperties =
 	| LocationDataProperties
 
 declare global {
+	interface FlagConfig {
+		Actor: {
+			'foundry-ironsworn'?: {
+				'edit-mode'?: boolean
+				muteBroadcast?: boolean
+			}
+		}
+	}
+
 	interface SourceConfig {
 		Actor: ActorDataSource
 	}
