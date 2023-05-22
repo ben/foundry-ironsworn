@@ -86,11 +86,7 @@ Hooks.once('init', async () => {
 	CONFIG.TableResult.documentClass = OracleTableResult
 
 	// configure index fields
-	CONFIG.Actor.compendiumIndexFields = [
-		...CONFIG.Actor.compendiumIndexFields,
-		'system.dfid',
-		'system.rank'
-	]
+	CONFIG.Actor.compendiumIndexFields.push('system.dfid')
 
 	// CONFIG.RollTable.resultTemplate =
 	//   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
