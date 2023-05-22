@@ -2,6 +2,9 @@ import type { ItemDataConstructorData } from '@league-of-foundry-developers/foun
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type {
 	IAssetType,
+	IEncounterIronsworn,
+	IEncounterStarforged,
+	IEncounterVariant,
 	IMoveCategory,
 	IOracle,
 	IOracleCategory,
@@ -10,7 +13,7 @@ import type {
 	Starforged
 } from 'dataforged'
 import { ironsworn, starforged } from 'dataforged'
-import { isArray, isObject, omit } from 'lodash-es'
+import { isArray, isObject } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
@@ -28,8 +31,8 @@ import {
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
 import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
-import type { ConfiguredSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { FoeDataSource } from '../actor/actortypes'
+import type { FoeDataSource } from '../actor/actortypes'
+import type { ProgressDataSource } from '../item/itemtypes'
 
 export function cleanDollars(obj): any {
 	if (isArray(obj)) {
@@ -358,126 +361,99 @@ async function processISOracles() {
 	})
 }
 
-async function processISFoes() {
-	const encountersToCreate = [] as Array<
-		Omit<ActorDataConstructorData & FoeDataSource, 'data'>
-	>
-	for (const encounterType of ironsworn.Encounters) {
-		for (const encounter of encounterType.Encounters) {
-			const description = await renderTemplate(
-				'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
-				encounter
-			)
+type EncounterConstructorData = Omit<
+	ActorDataConstructorData & DeepPartial<FoeDataSource>,
+	'data'
+>
 
-			encountersToCreate.push({
-				_id: hashLookup(encounter.$id),
-				type: 'foe',
-				name: encounter.Name,
-				img: FOE_IMAGES[encounter.Name],
-				system: {
-					dfid: encounter.$id,
-					description,
-					rank: encounter.Rank
-				}
-			})
+function hasVariants(data: unknown): data is IEncounterStarforged {
+	return Array.isArray((data as any).Variants)
+}
+
+async function processEncounter(
+	encounter: IEncounterIronsworn | IEncounterStarforged | IEncounterVariant,
+	img: string
+): Promise<EncounterConstructorData> {
+	let variantLinks: string[] = []
+	if (hasVariants(encounter)) {
+		variantLinks = encounter.Variants.map((x) =>
+			renderLinksInStr(`[${x.Name}](${x.$id})`)
+		)
+	}
+	const description = await renderTemplate(
+		'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
+		{ ...encounter, variantLinks }
+	)
+
+	const progressTrack: Omit<
+		ItemDataConstructorData & DeepPartial<ProgressDataSource>,
+		'data'
+	> = {
+		type: 'progress',
+		name: encounter.Name,
+		img,
+		system: {
+			subtype: 'foe',
+			starred: false,
+			hasTrack: true,
+			rank: encounter.Rank,
+			description
 		}
 	}
-
-	for (const encounter of encountersToCreate ?? []) {
-		const actor = await IronswornActor.create(encounter, {
-			pack: 'foundry-ironsworn.ironswornfoes',
-			keepId: true,
-			keepEmbeddedIds: true
-		})
-		await actor?.createEmbeddedDocuments('Item', [
-			{
-				// system.description omitted so that there's a single source of truth for the progress description; when a foe actor is dropped, the description is passed to its progress data instead
-				...omit(
-					encounter,
-					'_id',
-					'type',
-					'system.dfid',
-					'system.description',
-					'system.source'
-				),
-				type: 'progress'
-			}
-		])
+	return {
+		_id: hashLookup(encounter.$id),
+		type: 'foe',
+		name: encounter.Name,
+		img,
+		items: [progressTrack],
+		system: {
+			dfid: encounter.$id
+		}
 	}
 }
 
+async function processISFoes() {
+	const encountersToCreate: Array<Promise<EncounterConstructorData>> = []
+	for (const encounterType of ironsworn.Encounters) {
+		for (const encounter of encounterType.Encounters) {
+			const img = FOE_IMAGES[encounter.Name]
+			encountersToCreate.push(processEncounter(encounter, img))
+		}
+	}
+	await IronswornActor.createDocuments(await Promise.all(encountersToCreate), {
+		pack: 'foundry-ironsworn.ironswornfoes',
+		keepId: true,
+		keepEmbeddedIds: true,
+		recursive: true
+	})
+}
+
 async function processSFEncounters() {
-	const encountersToCreate = [] as Array<
-		Omit<ActorDataConstructorData & FoeDataSource, 'data'>
-	>
+	const encountersToCreate: Array<Promise<EncounterConstructorData>> = []
 	for (const encounter of starforged.Encounters) {
-		const description = await renderTemplate(
-			'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
-			{
-				...encounter,
-				variantLinks: encounter.Variants.map((x) =>
-					renderLinksInStr(`[${x.Name}](${x.$id})`)
-				)
-			}
+		encountersToCreate.push(
+			processEncounter(
+				encounter,
+				DATAFORGED_ICON_MAP.starforged.foe[encounter.$id]
+			)
 		)
 
-		encountersToCreate.push({
-			_id: hashLookup(encounter.$id),
-			type: 'foe',
-			name: encounter.Name,
-			img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
-			system: {
-				dfid: encounter.$id,
-				description,
-				rank: encounter.Rank
-			}
-		})
-
 		for (const variant of encounter.Variants) {
-			const variantDescription = await renderTemplate(
-				'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
-				{
-					...encounter,
-					...variant,
-					Category: variant.Nature ?? encounter.Nature,
-					CategoryDescription: (variant as any).Summary ?? encounter.Summary
-				}
+			encountersToCreate.push(
+				processEncounter(
+					variant,
+					DATAFORGED_ICON_MAP.starforged.foe[encounter.$id]
+				)
 			)
-
-			encountersToCreate.push({
-				_id: hashLookup(variant.$id),
-				type: 'foe',
-				name: variant.Name,
-				img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
-				system: {
-					dfid: variant.$id,
-					description: variantDescription,
-					rank: variant.Rank ?? encounter.Rank
-				}
-			})
 		}
 	}
 
-	for (const encounter of encountersToCreate ?? []) {
-		const actor = await IronswornActor.create(encounter, {
-			pack: 'foundry-ironsworn.starforgedencounters',
-			keepId: true,
-			keepEmbeddedIds: true
-		})
-		await actor?.createEmbeddedDocuments('Item', [
-			{
-				...omit(
-					encounter,
-					'_id',
-					'type',
-					'system.dfid',
-					'system.description',
-					'system.source'
-				),
-				type: 'progress'
-			}
-		])
-	}
+	await IronswornActor.createDocuments(await Promise.all(encountersToCreate), {
+		pack: 'foundry-ironsworn.ironswornfoes',
+		keepId: true,
+		keepEmbeddedIds: true,
+		recursive: true
+	})
 }
 
 async function processTruths(
