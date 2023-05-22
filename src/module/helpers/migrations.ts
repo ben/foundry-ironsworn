@@ -157,16 +157,6 @@ async function convertRanksToNumbers() {
 	await everyItem(updateDoc)
 }
 
-async function replaceFoeLinks() {
-	// replace links to canonical foes in:
-	// foe entries
-	// journal entry pages
-	// delve site denizen entries
-	//
-	// ironswornfoes => ironswornfoes
-	// starforgedencounters => starforgedencounters
-}
-
 // index 1 is the function to run when upgrading from 1 to 2, and so on
 const MIGRATIONS: Array<() => Promise<any>> = [
 	noop,
