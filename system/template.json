@@ -53,7 +53,8 @@
 		},
 		"foe": {
 			"dfid": "",
-			"description": ""
+			"description": "",
+			"rank": 1
 		},
 		"site": {
 			"objective": "",

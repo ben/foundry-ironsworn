@@ -1,4 +1,5 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import { ISource } from 'dataforged'
 import type { ChallengeRank } from '../constants'
 
 interface CharacterDataSourceData {
@@ -99,6 +100,7 @@ export interface SharedDataProperties {
 interface FoeDataSourceData {
 	dfid?: string
 	description?: string
+	rank?: ChallengeRank
 }
 type FoeDataPropertiesData = FoeDataSourceData
 

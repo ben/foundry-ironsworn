@@ -29,6 +29,7 @@ import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
 import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import type { ConfiguredSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import { FoeDataSource } from '../actor/actortypes'
 
 export function cleanDollars(obj): any {
 	if (isArray(obj)) {
@@ -359,7 +360,7 @@ async function processISOracles() {
 
 async function processISFoes() {
 	const encountersToCreate = [] as Array<
-		Omit<ActorDataConstructorData & ConfiguredSource<'Actor'>, 'data'>
+		Omit<ActorDataConstructorData & FoeDataSource, 'data'>
 	>
 	for (const encounterType of ironsworn.Encounters) {
 		for (const encounter of encounterType.Encounters) {
@@ -391,7 +392,14 @@ async function processISFoes() {
 		await actor?.createEmbeddedDocuments('Item', [
 			{
 				// system.description omitted so that there's a single source of truth for the progress description; when a foe actor is dropped, the description is passed to its progress data instead
-				...omit(encounter, '_id', 'type', 'system.dfid', 'system.description'),
+				...omit(
+					encounter,
+					'_id',
+					'type',
+					'system.dfid',
+					'system.description',
+					'system.source'
+				),
 				type: 'progress'
 			}
 		])
@@ -400,7 +408,7 @@ async function processISFoes() {
 
 async function processSFEncounters() {
 	const encountersToCreate = [] as Array<
-		Omit<ActorDataConstructorData & ConfiguredSource<'Actor'>, 'data'>
+		Omit<ActorDataConstructorData & FoeDataSource, 'data'>
 	>
 	for (const encounter of starforged.Encounters) {
 		const description = await renderTemplate(
@@ -458,7 +466,14 @@ async function processSFEncounters() {
 		})
 		await actor?.createEmbeddedDocuments('Item', [
 			{
-				...omit(encounter, '_id', 'type', 'system.dfid', 'system.description'),
+				...omit(
+					encounter,
+					'_id',
+					'type',
+					'system.dfid',
+					'system.description',
+					'system.source'
+				),
 				type: 'progress'
 			}
 		])
