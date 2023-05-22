@@ -68,14 +68,14 @@
 	"packs": [
 		{
 			"name": "ironswornfoes",
-			"label": "Ironsworn NPCs",
+			"label": "Ironsworn Foes",
 			"system": "foundry-ironsworn",
 			"path": "packs/ironsworn-foes.db",
 			"type": "Actor"
 		},
 		{
 			"name": "starforgedencounters",
-			"label": "Starforged NPCs",
+			"label": "Starforged Encounters",
 			"system": "foundry-ironsworn",
 			"path": "packs/starforged-encounters.db",
 			"type": "Actor"
