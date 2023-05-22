@@ -454,7 +454,7 @@ async function processSFEncounters() {
 			keepEmbeddedIds: true
 		})
 		await actor?.createEmbeddedDocuments('Item', [
-			{ ...omit(encounter, '_id', 'type'), type: 'progress' }
+			{ ...omit(encounter, '_id', 'type', 'system.dfid'), type: 'progress' }
 		])
 	}
 }
