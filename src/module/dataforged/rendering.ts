@@ -8,7 +8,7 @@ const COMPENDIUM_KEY_MAP = {
 	'Ironsworn/Oracles': 'ironswornoracles',
 	'Starforged/Moves': 'starforgedmoves',
 	'Starforged/Oracles': 'starforgedoracles',
-	'Starforged/Encounters': 'foeactorssf'
+	'Starforged/Encounters': 'starforgedencounters'
 }
 const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
 const DESCRIPTOR_FOCUS_RE = /\[Descriptor \+ Focus\]\(.*?\)/

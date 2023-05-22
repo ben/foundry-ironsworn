@@ -57,7 +57,7 @@
 							style="padding: var(--ironsworn-spacer-xs)"
 							icon="ironsworn:d10-tilt"
 							@click="randomDenizen" />
-						<BtnCompendium compendium="foeactorsis" nogrow />
+						<BtnCompendium compendium="ironswornfoes" nogrow />
 					</h2>
 					<div class="boxgroup nogrow">
 						<div class="flexrow boxrow">

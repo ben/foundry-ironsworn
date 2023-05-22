@@ -1,7 +1,7 @@
 <template>
 	<DropTarget
 		is="div"
-		:drop-types="['progress']"
+		:drop-types="['foe']"
 		class="box flexrow ironsworn__denizen__drop"
 		:data-idx="idx">
 		<label

@@ -60,7 +60,6 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 	): Promise<unknown> {
 		const result = await super._onDropActor(event, data)
 		if (result === false) return result
-		console.log('drop data', data)
 
 		if (this.actor.type !== 'character' || (data as any).uuid == null)
 			return false

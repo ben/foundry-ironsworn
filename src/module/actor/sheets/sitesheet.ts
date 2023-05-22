@@ -11,12 +11,12 @@ export class IronswornSiteSheet extends VueActorSheet {
 		}) as any
 	}
 
-	async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
-		// Fetch the item. We only want to override denizens (progress-type items)
-		const item = await Item.fromDropData(data)
-		if (item == null) return false
-		if (item.type !== 'progress') {
-			return await super._onDropItem(event, data)
+	async _onDropActor(event: DragEvent, data: ActorSheet.DropData.Actor) {
+		// Fetch the actor. We only want to override denizens (foe-type actors)
+		const droppedActor = await Actor.fromDropData(data)
+		if (droppedActor == null) return false
+		if (droppedActor.type !== 'foe') {
+			return await super._onDropActor(event, data)
 		}
 
 		// Find which denizen slot this is going into
@@ -29,7 +29,7 @@ export class IronswornSiteSheet extends VueActorSheet {
 		if (!denizens[idx]) return false
 
 		// Set the denizen description
-		denizens[idx].text = item.link
+		denizens[idx].text = droppedActor.link
 		this.actor.update({ system: { denizens } }, { render: true })
 		return true
 	}

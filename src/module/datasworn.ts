@@ -1,5 +1,10 @@
+import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+import type { ConfiguredSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import { IEncounterIronsworn, ironsworn } from 'dataforged'
+import { omit } from 'lodash-es'
 import { IronswornActor } from './actor/actor'
+import { hashLookup } from './dataforged'
 import { IronswornItem } from './item/item.js'
 import type { DelveSiteFeatureOrDanger } from './item/itemtypes'
 
@@ -119,10 +124,46 @@ const FOE_IMAGES = {
 	Tempest: 'icons/magic/lightning/bolts-salvo-clouds-sky.webp'
 } as const
 
+async function progressISFoes() {
+	const encountersToCreate = [] as Array<
+		Omit<ActorDataConstructorData & ConfiguredSource<'Actor'>, 'data'>
+	>
+	for (const type of ironsworn.Encounters) {
+		for (const encounter of type.Encounters) {
+			const description = await renderTemplate(
+				'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
+				encounter
+			)
+
+			encountersToCreate.push({
+				_id: hashLookup(encounter.$id),
+				type: 'foe',
+				name: encounter.Name,
+				img: FOE_IMAGES[encounter.Name],
+				system: {
+					description,
+					rank: encounter.Rank
+				}
+			})
+		}
+	}
+
+	for (const encounter of encountersToCreate ?? []) {
+		const actor = await IronswornActor.create(encounter, {
+			pack: 'foundry-ironsworn.ironswornfoes',
+			keepId: true,
+			keepEmbeddedIds: true
+		})
+		await actor?.createEmbeddedDocuments('Item', [
+			{ ...omit(encounter, '_id', 'type'), type: 'progress' }
+		])
+	}
+}
+
 const PACKS = [
 	'foundry-ironsworn.ironsworndelvethemes',
 	'foundry-ironsworn.ironsworndelvedomains',
-	'foundry-ironsworn.foeactorsis',
+	'foundry-ironsworn.ironswornfoes',
 	'foundry-ironsworn.ironswornoracles'
 ] as const
 

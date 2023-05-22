@@ -67,7 +67,7 @@ const PACKS = [
 	'foundry-ironsworn.starforgedmoves',
 	'foundry-ironsworn.starforgedoracles',
 	'foundry-ironsworn.starforgedtruths',
-	'foundry-ironsworn.foeactorssf',
+	'foundry-ironsworn.starforgedencounters',
 	'foundry-ironsworn.ironswornassets',
 	'foundry-ironsworn.ironswornoracles',
 	'foundry-ironsworn.ironswornmoves',
@@ -345,7 +345,9 @@ async function processSFFoes() {
 
 	for (const encounter of encountersToCreate ?? []) {
 		const actor = await IronswornActor.create(encounter, {
-			pack: 'foundry-ironsworn.foeactorssf'
+			pack: 'foundry-ironsworn.starforgedencounters',
+			keepId: true,
+			keepEmbeddedIds: true
 		})
 		await actor?.createEmbeddedDocuments('Item', [
 			{ ...omit(encounter, '_id', 'type'), type: 'progress' }
