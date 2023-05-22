@@ -1,8 +1,7 @@
-import type { DropData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/abstract/client-document'
-import type { ConfiguredDocumentClass } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+
 import type { App } from 'vue'
 import type { IronswornActor } from '../actor/actor'
-import type { FoeDataProperties } from '../actor/actortypes'
 import type { IronswornItem } from '../item/item'
 import { $ActorKey } from './provisions'
 import { VueAppMixin } from './vueapp.js'
@@ -53,30 +52,22 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 
 	protected async _onDropActor(
 		event: DragEvent,
-		data: ActorSheet.DropData.Actor &
-			(
-				| DropData<InstanceType<ConfiguredDocumentClass<typeof Actor>>>
-				| { uuid: string }
-			)
+		data: ActorSheet.DropData.Actor
 	): Promise<unknown> {
-		const result = await super._onDropActor(event, data)
+		const result = await super._onDropActor(event as any, data as any)
 		if (result === false) return result
 
 		if (this.actor.type !== 'character' || (data as any).uuid == null)
 			return false
 
 		const document = (await fromUuid((data as any).uuid)) as
-			| StoredDocument<IronswornActor>
+			| IronswornActor
 			| undefined
 		if (document == null || document.type !== 'foe') return false
 		return await this.actor.createEmbeddedDocuments(
 			'Item',
-			document.items.map((item) =>
-				mergeObject(item.toObject(true), {
-					system: {
-						description: (document as FoeDataProperties).system.description
-					}
-				})
+			document.items.map(
+				(item) => item.toObject(true) as ItemDataConstructorData
 			) as any
 		)
 	}
@@ -85,13 +76,11 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 		const data = (TextEditor as any).getDragEventData(event)
 
 		if (data.type === 'AssetBrowserData') {
-			const document = (await fromUuid(data.uuid)) as
-				| StoredDocument<IronswornItem>
-				| undefined
+			const document = (await fromUuid(data.uuid)) as IronswornItem | undefined
 
 			if (document != null) {
 				await this.actor.createEmbeddedDocuments('Item', [
-					(document as any).toObject()
+					document.toObject() as any
 				])
 			}
 		}

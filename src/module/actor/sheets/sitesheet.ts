@@ -1,7 +1,6 @@
 import type { SiteDataSourceData } from '../actortypes'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import siteSheetVue from '../../vue/site-sheet.vue'
-
 export class IronswornSiteSheet extends VueActorSheet {
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
@@ -13,7 +12,7 @@ export class IronswornSiteSheet extends VueActorSheet {
 
 	async _onDropActor(event: DragEvent, data: ActorSheet.DropData.Actor) {
 		// Fetch the actor. We only want to override denizens (foe-type actors)
-		const droppedActor = await Actor.fromDropData(data)
+		const droppedActor = await Actor.fromDropData(data as any)
 		if (droppedActor == null) return false
 		if (droppedActor.type !== 'foe') {
 			return await super._onDropActor(event, data)
@@ -23,8 +22,8 @@ export class IronswornSiteSheet extends VueActorSheet {
 		const dropTarget = $(event.target as HTMLElement).parents(
 			'.ironsworn__denizen__drop'
 		)[0]
-		if (!dropTarget) return false
-		const idx = parseInt(dropTarget.dataset.idx || '')
+		if (dropTarget == null) return false
+		const idx = parseInt(dropTarget?.dataset.idx || '')
 		const { denizens } = this.actor.system as SiteDataSourceData
 		if (!denizens[idx]) return false
 
