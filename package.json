@@ -68,7 +68,7 @@
 		"vite-plugin-vue-inspector": "^3.4.1",
 		"vue": "^3.2.47",
 		"vue-loading-overlay": "^6.0.3",
-		"vue-tsc": "^1.1.5",
+		"vue-tsc": "^1.6.5",
 		"vue2-animate": "^2.1.4"
 	},
 	"browserslist": [
