@@ -35,7 +35,7 @@
 						<SiteDroparea
 							class="box"
 							:item="theme"
-							item-type="delve-theme"
+							:item-types="['delve-theme']"
 							compendium-key="ironsworndelvethemes"
 							title-key="IRONSWORN.ITEM.TypeDelveTheme" />
 					</div>
@@ -43,7 +43,7 @@
 						<SiteDroparea
 							class="box"
 							:item="domain"
-							item-type="delve-domain"
+							:item-types="['delve-domain']"
 							compendium-key="ironsworndelvedomains"
 							title-key="IRONSWORN.ITEM.TypeDelveDomain" />
 					</div>

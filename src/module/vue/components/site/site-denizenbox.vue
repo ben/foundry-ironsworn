@@ -1,7 +1,7 @@
 <template>
 	<DropTarget
 		is="div"
-		drop-type="progress"
+		:drop-types="['progress']"
 		class="box flexrow ironsworn__denizen__drop"
 		:data-idx="idx">
 		<label
@@ -27,9 +27,7 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { reactive } from 'vue'
-import { inject } from 'vue'
-import { computed, ref } from 'vue'
+import { reactive, inject, computed, ref } from 'vue'
 import type {
 	DelveSiteDenizen,
 	SiteDataPropertiesData

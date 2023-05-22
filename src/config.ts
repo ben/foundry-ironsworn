@@ -20,13 +20,18 @@ import {
 	registerOracleTree
 } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
+import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+
+export type SystemSubtype = ConfiguredData<
+	'Actor' | 'Item' | 'JournalEntryPage'
+>['type']
 
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
 	highlightOracle: string // DF ID
 	globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
-	dragStart: string // type of item
-	dragEnd: string // type of item
+	dragStart: SystemSubtype // type of item
+	dragEnd: SystemSubtype // type of item
 }
 export type IronswornEmitter = Emitter<EmitterEvents>
 

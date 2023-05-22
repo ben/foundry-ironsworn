@@ -3,7 +3,7 @@
 		v-bind="($attrs, $props)"
 		:is="is"
 		:class="$style.wrapper"
-		:data-ironsworn-drop-type="dropType"
+		:data-ironsworn-drop-types="dropTypes"
 		:data-ironsworn-drop-active="state.active">
 		<slot />
 	</component>
@@ -11,19 +11,25 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive } from 'vue'
+import type { SystemSubtype } from '../../config'
 
-const props = defineProps<{ is: any; dropType: string }>()
+const props = defineProps<{
+	is: any
+	dropTypes: SystemSubtype[]
+}>()
+
+// or have it do a special data type?
 
 const state = reactive({
 	active: false
 })
 
-function dragStart(type: string) {
-	if (type === props.dropType) state.active = true
+function dragStart(type: SystemSubtype) {
+	if (props.dropTypes.includes(type)) state.active = true
 }
 
-function dragEnd(type: string) {
-	if (type === props.dropType) state.active = false
+function dragEnd(type: SystemSubtype) {
+	if (props.dropTypes.includes(type)) state.active = false
 }
 
 onMounted(() => {

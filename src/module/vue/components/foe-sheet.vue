@@ -6,7 +6,7 @@
 		<DropTarget
 			is="div"
 			v-else
-			drop-type="progress"
+			:drop-types="['progress']"
 			class="flexcol"
 			:class="$style.dropTarget">
 			<IronBtn

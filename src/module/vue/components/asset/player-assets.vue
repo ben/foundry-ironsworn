@@ -1,7 +1,7 @@
 <template>
 	<DropTarget
 		is="article"
-		drop-type="asset"
+		:drop-types="['asset']"
 		class="flexcol"
 		:aria-label="$t('IRONSWORN.ITEMS.TypeAsset')"
 		:class="$style.wrapper">
