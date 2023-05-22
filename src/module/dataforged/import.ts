@@ -449,7 +449,7 @@ async function processSFEncounters() {
 	}
 
 	await IronswornActor.createDocuments(await Promise.all(encountersToCreate), {
-		pack: 'foundry-ironsworn.ironswornfoes',
+		pack: 'foundry-ironsworn.starforgedencounters',
 		keepId: true,
 		keepEmbeddedIds: true,
 		recursive: true
