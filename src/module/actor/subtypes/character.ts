@@ -4,15 +4,23 @@ import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
+import type { PartialBy } from 'dataforged'
 
 export class CharacterData extends foundry.abstract.DataModel<
 	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
-	constructor(...args: any[]) {
+	constructor(
+		...args: ConstructorParameters<
+			typeof foundry.abstract.DataModel<
+				CharacterDataSourceData,
+				IronswornActor<'character'>
+			>
+		>
+	) {
 		super(...args)
-		this.burnMomentum = this.burnMomentum.bind(this)
-		this.toggleActiveEffect = this.toggleActiveEffect.bind(this)
+		this.burnMomentum = this.burnMomentum.bind(this.parent)
+		this.toggleActiveEffect = this.toggleActiveEffect.bind(this.parent)
 	}
 
 	static _enableV10Validation = true
@@ -22,16 +30,17 @@ export class CharacterData extends foundry.abstract.DataModel<
 	static readonly MOMENTUM_INITIAL = 2
 	static readonly MOMENTUM_RESET_MIN = 0
 
-	async burnMomentum() {
-		if (this.momentum > this.momentumReset) {
-			await this.parent.update({
-				system: { momentum: this.momentumReset }
+	async burnMomentum(this: IronswornActor<'character'>) {
+		if (this.system.momentum > this.system.momentumReset) {
+			await this.update({
+				system: { momentum: this.system.momentumReset }
 			})
 		}
 	}
 
 	/**
 	 * A helper function to toggle a status effect which includes an Active Effect template
+	 * @remarks Patterned after `Token#toggleActiveEffect`
 	 * @param effectData The Active Effect data, including statusId
 	 * @param options Options to configure application of the Active Effect
 	 * @param options.overlay Should the Active Effect icon be displayed as an overlay on the token? (default: `true`)
@@ -39,26 +48,30 @@ export class CharacterData extends foundry.abstract.DataModel<
 	 * @returns Whether the Active Effect is now on or off
 	 */
 	async toggleActiveEffect(
+		this: IronswornActor<'character'>,
 		effectData: { id: string; label: string; icon: string },
 		options: { overlay?: boolean; active?: boolean }
 	): Promise<boolean> {
 		if (effectData.id == null) return false
 
 		// Remove an existing effect
-		const existing = this.parent.effects.find(
+		const existing = this.effects.find(
 			(e) => e.getFlag('core', 'statusId') === effectData.id
 		)
-		const state = options.active ?? !existing
-		if (!state && existing) await existing.delete()
+		const state = options.active ?? existing == null
+		if (!state && existing != null) await existing.delete()
 		// Add a new effect
 		else if (state) {
-			const createData = foundry.utils.deepClone(effectData)
+			const createData = foundry.utils.deepClone(effectData) as PartialBy<
+				typeof effectData,
+				'id'
+			>
 			createData.label = game.i18n.localize(effectData.label)
 			createData['flags.core.statusId'] = effectData.id
 			if (options.overlay != null) createData['flags.core.overlay'] = true
 			delete createData.id
 			const cls = getDocumentClass('ActiveEffect')
-			await cls.create(createData, { parent: this.parent })
+			await cls.create(createData, { parent: this })
 		}
 		return state
 	}
