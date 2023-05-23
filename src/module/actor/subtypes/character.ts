@@ -3,13 +3,17 @@ import { MeterValueField } from '../../fields/MeterValueField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import { clamp } from 'lodash-es'
 import type { DataSchema } from '../../fields/utils'
 
 export class CharacterData extends foundry.abstract.DataModel<
 	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
+	constructor(...args: any[]) {
+		super(...args)
+		this.burnMomentum = this.burnMomentum.bind(this)
+	}
+
 	static _enableV10Validation = true
 
 	static readonly MOMENTUM_MAX = 10
@@ -24,27 +28,6 @@ export class CharacterData extends foundry.abstract.DataModel<
 			})
 		}
 	}
-
-	get #impactCount() {
-		return Object.values(this.debility as any).filter((value) => value === true)
-			.length
-	}
-
-	// get momentumReset() {
-	// 	return clamp(
-	// 		CharacterData.MOMENTUM_INITIAL - this.#impactCount,
-	// 		CharacterData.MOMENTUM_RESET_MIN,
-	// 		CharacterData.MOMENTUM_MAX
-	// 	)
-	// }
-
-	// get momentumMax() {
-	// 	return clamp(
-	// 		CharacterData.MOMENTUM_MAX - this.#impactCount,
-	// 		CharacterData.MOMENTUM_MIN,
-	// 		CharacterData.MOMENTUM_MAX
-	// 	)
-	// }
 
 	static override defineSchema(): DataSchema<CharacterDataSourceData> {
 		const fields = foundry.data.fields
