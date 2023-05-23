@@ -24,9 +24,8 @@ export class IronswornItem<
 > extends Item {
 	// Type hacks for v10 compatibility updates
 	declare system: Extract<ItemDataProperties, { type: T }>['system']
-	get type() {
-		return super.type as T
-	}
+	// @ts-expect-error
+	declare type: T
 
 	declare sort: typeof this.data.sort
 

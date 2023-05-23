@@ -17,9 +17,8 @@ export class IronswornActor<
 	// declare system:
 	declare system: Extract<ActorDataProperties, { type: T }>['system']
 
-	get type() {
-		return super.type as T
-	}
+	// @ts-expect-error
+	declare type: T
 
 	override get itemTypes() {
 		return super.itemTypes as Actor['itemTypes'] & {
