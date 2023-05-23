@@ -5,10 +5,10 @@
 		:data-tooltip="state.hintText"
 		class="flexrow"
 		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
-		:checked="actor.system.debility[name]"
+		:checked="checked"
 		:aria-labelledby="`label_${baseId}`"
 		:transition="IronswornSettings.deco.impact.transition"
-		@change="input($event)">
+		@change="input">
 		<template #checked="scope">
 			<FontIcon
 				v-bind="{ ...scope, ...IronswornSettings.deco.impact.checked }" />
@@ -37,9 +37,11 @@ import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 import IronCheckbox from '../input/iron-checkbox.vue'
 import FontIcon from '../icon/font-icon.vue'
+import type { IronswornActor } from '../../../actor/actor'
+import type { ActorSource } from '../../../fields/utils'
 
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
+const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 const baseId = computed(() => `condition_${props.name}_${actor.value._id}`)
 
@@ -50,42 +52,38 @@ const props = defineProps<{
 	globalHint?: boolean
 }>()
 
+const statusId = computed(() => `${props.type}_${props.name}`)
+const effectData = computed(() =>
+	CONFIG.statusEffects.find((fx) => fx.id === statusId.value)
+)
+const checked = computed(() =>
+	actor.value.effects.some((fx) => fx.flags.core?.statusId === statusId.value)
+)
+
 const state = reactive<{ hintText?: string }>({})
 
-async function input(value: boolean) {
-	const impactKey = 'debility'
-	const data = {
-		system: {
-			[impactKey]: {
-				[props.name]: value
-			}
-		}
-	}
-	await $actor?.update(data)
+async function input() {
+	if (effectData.value == null) throw new Error()
+
+	$actor?.system.toggleActiveEffect(
+		effectData.value as { id: string; label: string; icon: string },
+		{}
+	)
 	await nextTick()
-	const numDebilitiesMarked = Object.values(actor.value.system.debility).filter(
-		(x) => x === true
-	).length
-	await $actor?.update({
-		system: {
-			momentumMax: 10 - numDebilitiesMarked,
-			momentumReset: Math.max(0, 2 - numDebilitiesMarked)
-		}
-	})
 
-	if (props.global) {
-		await IronswornSettings.updateGlobalAttribute(data, [
-			'character',
-			'starship'
-		])
-	}
+	// if (props.global) {
+	// 	await IronswornSettings.updateGlobalAttribute(data, [
+	// 		'character',
+	// 		'starship'
+	// 	])
+	// }
 
-	if (props.globalHint) {
-		CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
-			name: props.name,
-			enabled: value
-		})
-	}
+	// if (props.globalHint) {
+	// 	CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
+	// 		name: props.name,
+	// 		enabled: value
+	// 	})
+	// }
 }
 
 // We can't watch this directly, we just have to trust that a broadcast will happen

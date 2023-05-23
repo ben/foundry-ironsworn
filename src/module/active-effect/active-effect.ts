@@ -69,9 +69,9 @@ export class IronActiveEffect extends ActiveEffect {
 			global: true,
 			icon: 'systems/foundry-ironsworn/assets/icons/impacts/unprepared.svg'
 		},
-		impact_permanently_harmed: {
+		impact_permanentlyharmed: {
 			label: 'IRONSWORN.IMPACT.Permanentlyharmed',
-			icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanently_harmed.svg'
+			icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanentlyharmed.svg'
 		},
 		impact_traumatized: {
 			label: 'IRONSWORN.IMPACT.Traumatized',
@@ -127,7 +127,7 @@ export class IronActiveEffect extends ActiveEffect {
 		},
 		debility_maimed: {
 			label: 'IRONSWORN.DEBILITY.Maimed',
-			icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanently_harmed.svg'
+			icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanentlyharmed.svg'
 		},
 		debility_corrupted: {
 			label: 'IRONSWORN.DEBILITY.Corrupted',

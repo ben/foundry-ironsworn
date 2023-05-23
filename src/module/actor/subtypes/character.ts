@@ -12,6 +12,7 @@ export class CharacterData extends foundry.abstract.DataModel<
 	constructor(...args: any[]) {
 		super(...args)
 		this.burnMomentum = this.burnMomentum.bind(this)
+		this.toggleActiveEffect = this.toggleActiveEffect.bind(this)
 	}
 
 	static _enableV10Validation = true
@@ -27,6 +28,39 @@ export class CharacterData extends foundry.abstract.DataModel<
 				system: { momentum: this.momentumReset }
 			})
 		}
+	}
+
+	/**
+	 * A helper function to toggle a status effect which includes an Active Effect template
+	 * @param effectData The Active Effect data, including statusId
+	 * @param options Options to configure application of the Active Effect
+	 * @param options.overlay Should the Active Effect icon be displayed as an overlay on the token? (default: `true`)
+	 * @param options.active Force a certain active state for the effect.
+	 * @returns Whether the Active Effect is now on or off
+	 */
+	async toggleActiveEffect(
+		effectData: { id: string; label: string; icon: string },
+		options: { overlay?: boolean; active?: boolean }
+	): Promise<boolean> {
+		if (effectData.id == null) return false
+
+		// Remove an existing effect
+		const existing = this.parent.effects.find(
+			(e) => e.getFlag('core', 'statusId') === effectData.id
+		)
+		const state = options.active ?? !existing
+		if (!state && existing) await existing.delete()
+		// Add a new effect
+		else if (state) {
+			const createData = foundry.utils.deepClone(effectData)
+			createData.label = game.i18n.localize(effectData.label)
+			createData['flags.core.statusId'] = effectData.id
+			if (options.overlay != null) createData['flags.core.overlay'] = true
+			delete createData.id
+			const cls = getDocumentClass('ActiveEffect')
+			await cls.create(createData, { parent: this.parent })
+		}
+		return state
 	}
 
 	static override defineSchema(): DataSchema<CharacterDataSourceData> {
