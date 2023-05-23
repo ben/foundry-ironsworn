@@ -85,10 +85,18 @@ Hooks.once('init', async () => {
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
-	CONFIG.statusEffects = Object.entries({
-		...IronActiveEffect.starforgedImpacts,
-		...IronActiveEffect.classicDebilities
-	}).map(([k, v]) => ({ id: k, ...IronActiveEffect.createImpact(v) }))
+	// set statusEffects as a getter, so that it dynamically provides the correct status effects for the selected toolset
+	Object.defineProperty(CONFIG, 'statusEffects', {
+		get() {
+			const data = IronswornSettings.starforgedToolsEnabled
+				? IronActiveEffect.starforgedImpacts
+				: IronActiveEffect.classicDebilities
+			return Object.entries(data).map(([k, v]) => ({
+				id: k,
+				...IronActiveEffect.createImpact(v)
+			}))
+		}
+	})
 
 	CONFIG.RollTable.documentClass = OracleTable
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
