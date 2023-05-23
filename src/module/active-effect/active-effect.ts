@@ -31,16 +31,7 @@ export class IronActiveEffect extends ActiveEffect {
 					key: 'system.momentumReset',
 					mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM,
 					value: '-1'
-				},
-				...(preventRecover != null
-					? [
-							{
-								key: preventRecover,
-								mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
-								value: '0'
-							}
-					  ]
-					: [])
+				}
 			],
 			flags: {
 				'foundry-ironsworn': {
@@ -49,6 +40,12 @@ export class IronActiveEffect extends ActiveEffect {
 				}
 			}
 		}
+		if (preventRecover != null)
+			result.changes?.push({
+				key: preventRecover,
+				mode: CONST.ACTIVE_EFFECT_MODES.DOWNGRADE,
+				value: '0'
+			})
 		return result
 	}
 

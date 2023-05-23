@@ -20,7 +20,7 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
 		return {
 			...super.getData(options),
 			toolset: this.toolset,
-			actor: this.actor.toObject()
+			actor: this.actor.toObject(false)
 		}
 	}
 
