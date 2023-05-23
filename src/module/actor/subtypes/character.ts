@@ -30,21 +30,21 @@ export class CharacterData extends foundry.abstract.DataModel<
 			.length
 	}
 
-	get momentumReset() {
-		return clamp(
-			CharacterData.MOMENTUM_INITIAL - this.#impactCount,
-			CharacterData.MOMENTUM_RESET_MIN,
-			CharacterData.MOMENTUM_MAX
-		)
-	}
+	// get momentumReset() {
+	// 	return clamp(
+	// 		CharacterData.MOMENTUM_INITIAL - this.#impactCount,
+	// 		CharacterData.MOMENTUM_RESET_MIN,
+	// 		CharacterData.MOMENTUM_MAX
+	// 	)
+	// }
 
-	get momentumMax() {
-		return clamp(
-			CharacterData.MOMENTUM_MAX - this.#impactCount,
-			CharacterData.MOMENTUM_MIN,
-			CharacterData.MOMENTUM_MAX
-		)
-	}
+	// get momentumMax() {
+	// 	return clamp(
+	// 		CharacterData.MOMENTUM_MAX - this.#impactCount,
+	// 		CharacterData.MOMENTUM_MIN,
+	// 		CharacterData.MOMENTUM_MAX
+	// 	)
+	// }
 
 	static override defineSchema(): DataSchema<CharacterDataSourceData> {
 		const fields = foundry.data.fields
@@ -64,9 +64,26 @@ export class CharacterData extends foundry.abstract.DataModel<
 
 			momentum: new MeterValueField({
 				label: 'IRONSWORN.Momentum',
-				initial: (source) => (source as any).momentumReset,
-				max: this.MOMENTUM_MAX,
-				min: this.MOMENTUM_MIN
+				initial: (source) => {
+					console.log('ironsworn momentum', source)
+					return (source as any).momentumReset
+				},
+				max: CharacterData.MOMENTUM_MAX,
+				min: CharacterData.MOMENTUM_MIN
+			}),
+
+			momentumMax: new fields.NumberField({
+				integer: true,
+				step: 1,
+				initial: CharacterData.MOMENTUM_MAX,
+				max: CharacterData.MOMENTUM_MAX
+			}),
+			momentumReset: new fields.NumberField({
+				integer: true,
+				step: 1,
+				initial: CharacterData.MOMENTUM_INITIAL,
+				max: CharacterData.MOMENTUM_MAX,
+				min: CharacterData.MOMENTUM_RESET_MIN
 			}),
 
 			experience: new fields.NumberField({
@@ -142,6 +159,8 @@ export interface CharacterDataSourceData {
 	supply: number
 	experience: number
 	momentum: number
+	momentumMax: number
+	momentumReset: number
 	debility: {
 		corrupted: boolean
 		cursed: boolean

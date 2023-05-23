@@ -14,9 +14,7 @@ export class IronswornActor<
 	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
 > extends Actor {
 	// Type hack for v10 compatibility updates
-	// declare system:
 	declare system: Extract<ActorDataProperties, { type: T }>['system']
-
 	// @ts-expect-error
 	declare type: T
 
