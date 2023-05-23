@@ -46,6 +46,7 @@ import type {
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
+import { IronActiveEffect } from './module/active-effect/active-effect'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -77,10 +78,17 @@ Hooks.once('init', async () => {
 	mergeObject(CONFIG.Actor, ActorConfig)
 
 	// Define custom Entity classes
+	CONFIG.ActiveEffect.documentClass = IronActiveEffect
+
 	CONFIG.Item.documentClass = IronswornItem
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
+
+	CONFIG.statusEffects = Object.entries({
+		...IronActiveEffect.starforgedImpacts,
+		...IronActiveEffect.classicDebilities
+	}).map(([k, v]) => ({ id: k, ...IronActiveEffect.createImpact(v) }))
 
 	CONFIG.RollTable.documentClass = OracleTable
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
