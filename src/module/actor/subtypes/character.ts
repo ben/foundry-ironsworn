@@ -10,6 +10,11 @@ export class CharacterData extends foundry.abstract.DataModel<
 	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
+	constructor(...args: any[]) {
+		super(...args)
+		this.burnMomentum = this.burnMomentum.bind(this)
+	}
+
 	static _enableV10Validation = true
 
 	static readonly MOMENTUM_MAX = 10
@@ -17,9 +22,9 @@ export class CharacterData extends foundry.abstract.DataModel<
 	static readonly MOMENTUM_INITIAL = 2
 	static readonly MOMENTUM_RESET_MIN = 0
 
-	async burnMomentum() {
-		if (this.momentum > this.momentumReset) {
-			await this.parent.update({
+	burnMomentum() {
+		if (this.parent.system.momentum > this.parent.system.momentumReset) {
+			void this.parent.update({
 				system: { momentum: this.momentumReset }
 			})
 		}
