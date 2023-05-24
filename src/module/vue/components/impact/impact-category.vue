@@ -6,10 +6,9 @@
 		<div :class="impactsClass">
 			<ImpactCheckbox
 				v-for="impact in impacts"
-				:key="impact.name"
-				:type="type"
-				:name="impact.name"
-				:global-hint="impact.globalHint" />
+				:key="impact.id"
+				:effect-data="impact"
+				:type="type" />
 		</div>
 	</div>
 </template>
@@ -17,21 +16,27 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
+import type { ImpactCategory } from '../../../active-effect/active-effect'
+import { IronActiveEffect } from '../../../active-effect/active-effect'
 import { capitalize } from '../../../helpers/util'
 import { ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
-type ImpactData = { globalHint?: boolean; name: string }
-
 const props = withDefaults(
 	defineProps<{
-		name: string
 		type: 'debility' | 'impact'
-		impacts: ImpactData[]
+		name: ImpactCategory
 		impactsClass?: any
 	}>(),
 	{ impactsClass: {} }
 )
+
+const statusEffectKey = props.type === 'impact' ? 'starforged' : 'classic'
+
+const impacts =
+	IronActiveEffect.statusEffects[statusEffectKey]?.filter(
+		(fx) => fx.flags?.['foundry-ironsworn']?.category === props.name
+	) ?? []
 
 const actor = inject(ActorKey) as Ref
 

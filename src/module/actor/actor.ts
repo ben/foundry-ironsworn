@@ -1,5 +1,10 @@
+import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
+import { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
+import { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { DocumentSubTypes } from '../../types/helperTypes'
+import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties, ActorDataSource } from './config'
@@ -25,6 +30,55 @@ export class IronswornActor<
 	}
 
 	moveSheet?: SFCharacterMoveSheet
+
+	protected override async _preCreate(
+		data: ActorDataConstructorData,
+		options: DocumentModificationOptions,
+		user: BaseUser
+	): Promise<void> {
+		if (data.type === 'character') {
+			// insert disabled placeholder effects for custom impacts, which are used to persist player-set labels
+			const effectIDs = ['custom1', 'custom2']
+			if (data.effects == null) data.effects = []
+			for (const id of effectIDs) {
+				const fxIdx = data.effects.findIndex((fx) => fx?._id === id)
+				if (fxIdx === -1)
+					data.effects.push(
+						IronActiveEffect.createImpact({ id, disabled: true })
+					)
+			}
+		}
+		await super._preCreate(data, options, user)
+	}
+
+	/**
+	 * A helper function to toggle a status effect which includes an Active Effect template
+	 * @remarks Patterned after `Token#toggleActiveEffect`
+	 * @param effectData The Active Effect data, including statusId
+	 * @param options Options to configure application of the Active Effect
+	 * @param options.overlay Should the Active Effect icon be displayed as an overlay on the token? (default: `true`)
+	 * @param options.active Force a certain active state for the effect.
+	 * @returns Whether the Active Effect is now on or off
+	 */
+	async toggleActiveEffect(
+		effectData: StatusEffect,
+		options: { overlay?: boolean; active?: boolean }
+	): Promise<boolean> {
+		// Remove an existing effect
+		const existing = this.effects.find(
+			(e) => e.getFlag('core', 'statusId') === effectData.id
+		)
+		const state = options.active ?? existing == null
+		if (!state && existing != null) await existing.delete()
+		// Add a new effect
+		else if (state) {
+			const createData = IronActiveEffect.statusToActiveEffectData(effectData)
+			if (options.overlay != null) createData['flags.core.overlay'] = true
+			const cls = getDocumentClass('ActiveEffect')
+			await cls.create(createData, { parent: this })
+		}
+		return state
+	}
 
 	/**
 	 * Typeguard: is the provided value an IronswornActor instance of the specified type?

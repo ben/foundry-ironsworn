@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
+import { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import { kebabCase, mapValues } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
@@ -209,7 +210,7 @@ export class IronswornSettings {
 	}
 
 	/**
-	 * Upddate all actors of the provided types with a single data object.
+	 * Update all actors of the provided types with a single data object.
 	 * @param data The data to pass to each actor's `update()` method.
 	 * @param actorTypes The subtypes of actor to apply the change to.
 	 */
@@ -224,6 +225,25 @@ export class IronswornSettings {
 			await actor.update(data, {
 				suppressLog: true
 			} as any)
+		}
+	}
+
+	/**
+	 * Update all actors of the provided types
+	 * @param data The data to pass to each actor's `update()` method.
+	 * @param actorTypes The subtypes of actor to apply the change to.
+	 */
+	static async updateGlobalStatusEffect(
+		statusEffect: StatusEffect,
+		actorTypes: Array<IronswornActor['type']> = ['character', 'shared']
+	) {
+		const actorsToUpdate =
+			game.actors?.contents.filter((x) => actorTypes.includes(x.type)) ?? []
+
+		for (const actor of actorsToUpdate) {
+			// await actor.update(data, {
+			// 	suppressLog: true
+			// } as any)
 		}
 	}
 }

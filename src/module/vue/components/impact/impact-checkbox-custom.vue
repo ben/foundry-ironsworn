@@ -1,9 +1,12 @@
 <template>
-	<ImpactCheckbox :name="debilitykey" :type="type" :class="$style.wrapper">
+	<ImpactCheckbox
+		:keep-effect="true"
+		:effect-data="activeEffect"
+		:class="$style.wrapper">
 		<template #default="{ id }">
 			<input
 				:id="id"
-				v-model="actor.system.debility[labelKey]"
+				v-model="activeEffect.label"
 				:class="$style.input"
 				type="text"
 				@input="nameUpdate"
@@ -13,26 +16,39 @@
 </template>
 
 <script lang="ts" setup>
+import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
+import type { ActiveEffectDataSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
 import { throttle } from 'lodash-es'
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
+import type { IronswornActor } from '../../../actor/actor'
+import type { ActorSource } from '../../../fields/utils'
 import { $ActorKey, ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
 const props = defineProps<{
-	debilitykey: string
-	type: 'debility' | 'impact'
+	statusId: string // e.g. custom1 or custom2
 }>()
 
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
+const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const labelKey = computed(() => `${props.debilitykey}name`)
+const activeEffectIndex = computed(() =>
+	(actor.value.effects as ActiveEffectDataSource[])?.findIndex(
+		(fx) => fx._id === props.statusId
+	)
+)
+const activeEffect = computed(
+	() =>
+		({
+			...actor.value.effects[activeEffectIndex.value],
+			id: actor.value.effects[activeEffectIndex.value]._id
+		} as StatusEffect)
+)
 
 async function immediateNameUpdate(e) {
-	const nk = labelKey.value
 	await $actor?.update({
-		[`system.debility.${nk}`]: actor.value.system.debility[nk]
+		[`effects.${activeEffectIndex.value}.label`]: activeEffect.value.label
 	})
 }
 const nameUpdate = throttle(immediateNameUpdate, 1000)

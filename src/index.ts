@@ -88,13 +88,9 @@ Hooks.once('init', async () => {
 	// set statusEffects as a getter, so that it dynamically provides the correct status effects for the selected toolset
 	Object.defineProperty(CONFIG, 'statusEffects', {
 		get() {
-			const data = IronswornSettings.starforgedToolsEnabled
-				? IronActiveEffect.starforgedImpacts
-				: IronActiveEffect.classicDebilities
-			return Object.entries(data).map(([k, v]) => ({
-				id: k,
-				...IronActiveEffect.createImpact(v)
-			}))
+			return IronswornSettings.starforgedToolsEnabled
+				? IronActiveEffect.statusEffects.starforged
+				: IronActiveEffect.statusEffects.classic
 		}
 	})
 
