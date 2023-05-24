@@ -85,9 +85,9 @@ Hooks.once('init', async () => {
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
-	// set statusEffects as a getter, so that it dynamically provides the correct status effects for the selected toolset
+	// cheat CONFIG.statusEffects as a getter, so that it dynamically provides the correct status effects for the selected toolset
 	Object.defineProperty(CONFIG, 'statusEffects', {
-		get() {
+		get(): StatusEffect[] {
 			return IronswornSettings.starforgedToolsEnabled
 				? IronActiveEffect.statusEffects.starforged
 				: IronActiveEffect.statusEffects.classic
