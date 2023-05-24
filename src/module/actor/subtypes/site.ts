@@ -30,10 +30,12 @@ export class SiteData extends foundry.abstract.DataModel<
 > {
 	static _enableV10Validation = true
 
-	protected override _configure(...args) {
-		super._configure(...args)
+	protected override _configure(
+		options?: foundry.data.fields.DataField.ValidateOptions
+	) {
+		super._configure(options)
 		// brand denizens so that the originating delve site can be retrieved from message data
-		for (const denizen of this.denizens) {
+		for (const denizen of this._source.denizens) {
 			setProperty(denizen, 'flags.foundry-ironsworn.sourceId', this.parent.id)
 		}
 	}

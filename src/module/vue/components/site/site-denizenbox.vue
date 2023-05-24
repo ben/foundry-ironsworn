@@ -28,9 +28,8 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { reactive, inject, computed, ref } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
-import type { SiteData } from '../../../actor/config'
-import { SourceData } from '../../../fields/utils'
+import type { IronswornActor } from '../../../actor/actor'
+import type { SourceData } from '../../../fields/utils'
 import DropTarget from '../../drop-target.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 
@@ -71,16 +70,14 @@ const frequencyLabel = computed(() =>
 	getFrequencyDescriptor(...denizen.value.range)
 )
 
-function input(ev) {
-	const val = ev.currentTarget.value || ''
-	const data = $actor?.system as SiteData | undefined
-	if (!data) return
-	const denizens = Object.values(data.denizens)
-	denizens[props.idx].text = val
-	$actor?.update({ system: { denizens } })
+function input(ev: Event) {
+	const target = ev.currentTarget as HTMLInputElement
+	$actor?.update({
+		[`system.denizens.${props.idx}`]: { text: target.value || '' }
+	})
 }
 
-const description = ref<HTMLElement>()
+const description = ref<HTMLTextAreaElement>()
 function focus() {
 	data.focused = true
 	description.value?.focus()

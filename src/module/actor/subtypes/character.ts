@@ -19,8 +19,8 @@ export class CharacterData extends foundry.abstract.DataModel<
 		>
 	) {
 		super(...args)
-		this.burnMomentum = this.burnMomentum.bind(this.parent)
-		this.toggleActiveEffect = this.toggleActiveEffect.bind(this.parent)
+		this.burnMomentum = this.burnMomentum.bind(this)
+		this.toggleActiveEffect = this.toggleActiveEffect.bind(this)
 	}
 
 	static _enableV10Validation = true
@@ -30,10 +30,10 @@ export class CharacterData extends foundry.abstract.DataModel<
 	static readonly MOMENTUM_INITIAL = 2
 	static readonly MOMENTUM_RESET_MIN = 0
 
-	async burnMomentum(this: IronswornActor<'character'>) {
-		if (this.system.momentum > this.system.momentumReset) {
-			await this.update({
-				system: { momentum: this.system.momentumReset }
+	async burnMomentum(this: CharacterData) {
+		if (this.parent.system.momentum > this.parent.system.momentumReset) {
+			await this.parent.update({
+				system: { momentum: this.parent.system.momentumReset }
 			})
 		}
 	}
@@ -48,14 +48,14 @@ export class CharacterData extends foundry.abstract.DataModel<
 	 * @returns Whether the Active Effect is now on or off
 	 */
 	async toggleActiveEffect(
-		this: IronswornActor<'character'>,
+		this: CharacterData,
 		effectData: { id: string; label: string; icon: string },
 		options: { overlay?: boolean; active?: boolean }
 	): Promise<boolean> {
 		if (effectData.id == null) return false
 
 		// Remove an existing effect
-		const existing = this.effects.find(
+		const existing = this.parent.effects.find(
 			(e) => e.getFlag('core', 'statusId') === effectData.id
 		)
 		const state = options.active ?? existing == null
@@ -71,7 +71,7 @@ export class CharacterData extends foundry.abstract.DataModel<
 			if (options.overlay != null) createData['flags.core.overlay'] = true
 			delete createData.id
 			const cls = getDocumentClass('ActiveEffect')
-			await cls.create(createData, { parent: this })
+			await cls.create(createData, { parent: this.parent })
 		}
 		return state
 	}
