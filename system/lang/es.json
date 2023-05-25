@@ -9,7 +9,7 @@
 		"CustomTruth": "Otra verdad",
 		"Roll": "Tirar",
 		"SendToChat": "Mostrar las reglas en el chat",
-		"Adds": "Adds",
+		"Adds": "Bonificadores",
 		"Versus": "vs.",
 		"CappedAt10": "La puntuación total de la acción está limitada a 10",
 		"Strong_hit": "Éxito total",
@@ -24,6 +24,7 @@
 		"UnmarkProgress": "Desmarcar el progreso",
 		"ProgressRoll": "Tirada de progreso",
 		"MakeAProgressRoll": "Hacer una tirada con {score} de progreso",
+		"MarkLegacy": "Marcar {amount} en tu registro de legado {legacy}",
 		"StarProgress": "Cuando se activa, este elemento también aparecerá en la pestaña 'Legados'.",
 		"Troublesome": "Problemático",
 		"Dangerous": "Peligroso",
@@ -34,8 +35,22 @@
 		"OracleTable": {
 			"ColumnLabel": {
 				"Roll": "Tirada",
-				"Result": "Resultado"
+				"Result": "Resultado",
+				"RollRange": "Rango de tirada",
+				"DiceRollResult": "Resultado de la tirada {dice}"
 			}
+		},
+		"JOURNALENTRYPAGE": {
+			"TypeProgressTrack": "Registro de progreso",
+			"TypeTruth": "Verdad del escenario",
+			"TypeTruthClassic": "Verdad del mundo",
+			"TypeTruthStarforged": "Verdad del escenario"
+		},
+		"JOURNALENTRYPAGES": {
+			"TypeProgressTrack": "Registros de progreso",
+			"TypeTruth": "Verdades del escenario",
+			"TypeTruthClassic": "Verdades del mundo",
+			"TypeTruthStarforged": "Verdades del escenario"
 		},
 		"roll +x": "tira +{stat}",
 		"Roll +x": "Tira +{stat}",
@@ -72,29 +87,29 @@
 		},
 		"Clock": "Reloj",
 
-		"Impacts": "Impacts",
+		"Impacts": "Impactos",
 		"IMPACT": {
-			"Custom": "Custom impact",
+			"Custom": "Impacto personalizado",
 			"CATEGORY": {
-				"Misfortunes": "Misfortunes",
-				"LastingEffects": "Lasting Effects",
-				"Burdens": "Burdens",
-				"Vehicle": "Current vehicle"
+				"Misfortunes": "Desgracias",
+				"LastingEffects": "Efectos permanentes",
+				"Burdens": "Cargas",
+				"Vehicle": "Vehículo actual"
 			},
 			"Wounded": "herido",
 			"Shaken": "conmocionado",
 			"Unprepared": "sin suministros",
-			"Permanentlyharmed": "permanently harmed",
-			"Traumatized": "traumatized",
+			"Permanentlyharmed": "herido permanentemente",
+			"Traumatized": "traumatizado",
 			"Tormented": "atormentado",
-			"Doomed": "doomed",
-			"Indebted": "indebted",
+			"Doomed": "condenado",
+			"Indebted": "endeudado",
 			"Cursed": "maldito",
-			"Battered": "battered"
+			"Battered": "maltrecho"
 		},
 		"Debilities": "Debilidades",
 		"DEBILITY": {
-			"Custom": "Custom debility",
+			"Custom": "Debilidad personalizada",
 			"CATEGORY": {
 				"Conditions": "Condiciones",
 				"Banes": "Desgracias",
@@ -113,12 +128,22 @@
 		"MOVES": {
 			"Adventure": "Movimientos de aventura",
 			"Combat": "Movimientos de combate",
+			"Connection": "Movimientos de conexión",
 			"Custom": "Movimientos personalizados",
+			"Delve": "Movimientos de profundizar",
 			"Exploration": "Movimientos de exploración",
+			"Failure": "Movimientos de fallo",
 			"Fate": "Movimientos del destino",
 			"Legacy": "Movimientos de legado",
+			"Quest": "Movimientos de búsqueda",
+			"Rarity": "Movimientos de rareza",
+			"Recover": "Movimientos de recuperación",
 			"Relationship": "Movimientos de relación",
-			"Suffer": "Movimientos de sufrimiento"
+			"Scene Challenge": "Movimientos de reto de escena",
+			"Session": "Movimientos de sesión",
+			"Suffer": "Movimientos de sufrimiento",
+			"Threat": "Movimientos de amenaza",
+			"Threshold": "Movimientos de límite"
 		},
 		"LocationType": "Tipo de localización",
 		"RollForDetails": "Tirar los detalles de la localización",
@@ -130,8 +155,8 @@
 		"MomentumBurnt": "Impulso aprovechado",
 		"NegativeMomentumCancel": "Dado de acción cancelado por el impulso negativo",
 		"Pronouns": "Pronombres",
-		"Callsign": "Callsign",
-		"Characteristics": "Characteristics",
+		"Callsign": "Distintivo",
+		"Characteristics": "Características",
 		"Summary": "Resumen",
 		"Trigger": "Disparador",
 		"FullText": "Texto completo",
@@ -139,11 +164,22 @@
 		"Label": "Etiqueta",
 		"Value": "Valor",
 		"Abilities": "Capacidades",
+		"Ability": "Capacidad",
+		"Option": "Opción",
 		"Options": "Opciones",
 		"Track": "Registro",
 		"Enabled": "Activado",
+		"Category": "Categoría",
 		"ChallengeRank": "Nivel de desafío",
+		"CHALLENGERANK": {
+			"Dangerous": "Peligroso",
+			"Epic": "Épico",
+			"Extreme": "Extremo",
+			"Formidable": "Formidable",
+			"Troublesome": "Problemático"
+		},
 		"Completed": "Completado",
+		"NoBonds": "Sin vínculos",
 		"NotCompleted": "Sin completar",
 		"Foes": "Oponentes",
 		"Foe": "Oponente",
@@ -154,37 +190,72 @@
 		"RollOracleTable": "Tirar Oráculo: <i>{title}</i>",
 		"RollMove": "Tirar movimiento: <i>{title}</i>",
 		"PageReference": "p. {page}",
-		"PlanetType": "Type of planet",
-		"RandomPlanetType": "Random planet type",
-		"SettlementType": "Type of settlement",
-		"RandomSettlementType": "Random settlement type",
-		"StarType": "Type of star",
-		"RandomStarType": "Random star type",
-		"DerelictType": "Type of derelict",
-		"RandomDerelictType": "Random derelict type",
-		"VaultType": "Type of vault",
-		"RandomVaultType": "Random vault type",
+		"PlanetType": "Tipo de planeta",
+		"PROGRESS": {
+			"BOX": {
+				"1": "1 casilla",
+				"2": "2 casillas",
+				"3": "3 casillas"
+			},
+			"TICK": {
+				"1": "1 marca",
+				"2": "2 marcas",
+				"3": "3 marcas",
+				"4": "4 marcas"
+			},
+			"Ticks": "{ticks} marcas",
+			"Current": "{score} progreso ({ticks} marcas)"
+		},
+		"ProgressMove": "Movimiento de progreso",
+		"RandomizeAll": "Aleatorizar todo",
+		"TruthsAreOptional": "Crear verdades es un paso opcional. Siempre puedes volver más tarde desde la configuración.",
+		"Threat": "Amenaza",
+		"Stats": "Estadísticas",
+		"Segments": "Segmentos",
+		"SCENES": {
+			"TypeSector": "Sectores"
+		},
+		"RandomPlanetType": "Tipo de planeta aleatorio",
+		"SettlementType": "Tipo de asentamiento",
+		"RandomSettlementType": "Tipo de asentamiento aleatorio",
+		"StarType": "Tipo de estrella",
+		"RandomStarType": "Tipo de estrella aleatorio",
+		"DerelictType": "Tipo de ruina",
+		"RandomDerelictType": "Tipo de ruina aleatorio",
+		"VaultType": "Tipo de cámara",
+		"RandomVaultType": "Tipo de cámara aleatorio",
 		"First": "primera",
 		"Second": "segunda",
 		"Third": "tercera",
 		"Fourth": "cuarta",
 		"Fifth": "quinta",
-		"StarforgedTools": "Starforged Tools",
-		"Region": "Region",
+		"StarforgedTools": "Herramientas de Starforged",
+		"Region": "Región",
 		"Terminus": "Terminus",
-		"Outlands": "Outlands",
-		"Expanse": "Expanse",
-		"RotateCCW": "Rotate counter-clockwise",
-		"RotateCW": "Rotate clockwise",
+		"Outlands": "Tierras Lejanas",
+		"Expanse": "Expansión",
+		"RotateCCW": "Rotar en sentido contrario",
+		"RotateCW": "Rotar",
+		"RegionTop": "Esto establece la región por defecto para localizaciones en esta escena. Afecta el resultado de algunos oráculos de localización.",
+		"REGION": {
+			"Expanse": "Expansión",
+			"Outlands": "Tierras Lejanas",
+			"Terminus": "Terminus"
+		},
+		"Rarity": "Rareza",
 		"RollDialog": {
 			"AdvancedRollOptions": "Opciones avanzadas",
 			"PresetActionDie": "Dado de acción predefinido",
 			"PredeterminedOutcome": "Resultado predeterminado",
-			"ExtraChallengeDice": "Dados de desafío adicionales"
+			"ExtraChallengeDice": "Dados de desafío adicionales",
+			"PresetChallengeDice": "Dados de desafío preestablecidos"
 		},
 		"ChatAlert": {
 			"Renamed": "Renombrado a {name}",
 			"renamed": "renombrado a {name}",
+			"ToggleMute": "Alternar silencio",
+			"Muted": "Notificando actualizaciones al usuario que las activó",
+			"Unmuted": "Notificando a todos los usuarios de actualizaciones",
 			"Added": "{name} añadido",
 			"Deleted": "{name} eliminado",
 			"MarkedXP": "Marcó {amt} PE",
@@ -192,6 +263,10 @@
 			"AdjustedStat": "{amt} {stat} (ahora {val})",
 			"MarkedCondition": "Marcó la condición {condition}",
 			"ClearedCondition": "Eliminó la condición {condition}",
+			"MarkedImpact": "Marcó el impacto {impact}",
+			"ClearedImpact": "Eliminó el impacto {impact}",
+			"MarkedDebility": "Marcó la debilidad {debility}",
+			"ClearedDebility": "Eliminó la debilidad {debility}",
 			"RankChanged": "Cambió el nivel de {old} a {new}",
 			"rankChanged": "cambió el nivel de {old} a {new}",
 			"ProgressAdvanced": "Aumentó su progreso",
@@ -214,12 +289,29 @@
 			"clockCompletedManySegments": "el reloj avanzó {change} segmentos a {new}⁄{max}—¡reloj completado!",
 			"clockSet": "reloj establecido a {new}⁄{max}"
 		},
+		"ClipboardDisabled": "El navegador ha impedido el acceso al portapapeles. Tendrás que cargar Foundryu desde localhost o usando una URL <code>https://</code> para usar esta funcionalidad.",
+		"Color": "Color",
+		"Condition": "Condición",
+		"ConditionMarkedOnMany": "{condition} está marcada en:",
+		"ConditionMarkedOnOne": "{condition} está marcada en {name}",
+		"Connection": "Conexión",
+		"Connections": "Conexiones",
+		"CopyTextToClipboard": "Copiar el texto al portapapeles",
+		"Failure": "Fallo",
+		"Field": "Campo",
+		"IronswornTools": "Herramientas de Ironsworn",
 		"Settings": {
 			"Theme": {
 				"Name": "Tema",
 				"Hint": "Selecciona el aspecto visual para este mundo. Requiere recargar la página.",
 				"Ironsworn": "Ironsworn clásico",
 				"Starforged": "Starforged (experimental)"
+			},
+			"ColorScheme": {
+				"Name": "Apariencia: Esquema de color",
+				"Hint": "Cada usuario puede elegir su propio esquema de color.",
+				"Zinc": "Zinc",
+				"Phosphor": "Fósforo"
 			},
 			"Tools": {
 				"Name": "Herramientas del personaje",
@@ -243,6 +335,16 @@
 				"Name": "Ventana emergente de configuración",
 				"Hint": "Elige entre los elementos de la interfaz de usuario de Ironsworn o Starforged."
 			},
+			"ISTruthsDialog": {
+				"Label": "Verdades de Ironsworn",
+				"Name": "Verdades de Ironsworn",
+				"Hint": "Abrir el diálogo para generar las verdades de tu escenario de Ironsworn."
+			},
+			"SFTruthsDialog": {
+				"Label": "Verdades de Starforged",
+				"Name": "Verdades de Starforged",
+				"Hint": "Abrir el diálogo para generar las verdades de tu escenario de Starforged."
+			},
 			"SFBeta": {
 				"Name": "Mostrar contenido beta de Starforged",
 				"Hint": "Activa las características de Starforged en desarrollo."
@@ -250,12 +352,19 @@
 			"DataforgedIronswornMoves": {
 				"Name": "(Beta) Nueva interfaz de la hoja de movimientos de Ironsworn",
 				"Hint": "Si está activada, utiliza la interfaz del estilo Starforged para la hoja de movimientos/oráculo de Ironsworn, y permite entradas y ganchos personalizados para la personalización."
+			},
+			"ProgressMarkAnimation": {
+				"Name": "Activar animación de marcas de progreso",
+				"Hint": "Activar/desactivar la animación de marcas de progreso. La animación no bloquea el botón de marcar, así que este cambio es puramente cosmético."
 			}
 		},
 		"First Start": {
 			"Welcome": "Bienvenidos",
-			"Intro": "¡Bienvenido a Ironsworn! Sólo hay que elegir algunas opciones antes de empezar."
+			"Intro": "Escoge el sistema que vas a usar principalmente. Esto establece la hoja de personaje y los movimientos y oráculos por defecto. Hay configuraciones más detalladas en las preferencias",
+			"SettingTruths": "Verdades de escenario",
+			"SettingTruth": "Verdad de escenario"
 		},
+		"Tours": {},
 		"WorldTruths": {
 			"The Old World": {
 				"name": "El Viejo Mundo",
@@ -361,9 +470,9 @@
 			"Access": "Access",
 			"Action and Theme": "Acción y Tema",
 			"Ask the Oracle": "Pregunta al Oráculo",
-			"Basic Form": "Basic Form",
+			"Basic Form": "Forma básica",
 			"Challenge Rank": "Nivel de desafío",
-			"Chaotic": "Chaotic",
+			"Chaotic": "Caótico",
 			"Character Creation": "Creación de personaje",
 			"Character Name": "Nombre del personaje",
 			"Character": "Personaje",
@@ -372,65 +481,112 @@
 			"Community": "Comunidad",
 			"Core": "Core",
 			"Creatures": "Criaturas",
-			"Delve the Depths": "Delve the Depths",
-			"Derelicts": "Derelicts",
-			"Desert": "Desert",
+			"Delve the Depths": "Explora las profundidades",
+			"Derelicts": "Ruinas",
+			"Desert": "Desierto",
 			"Engineering": "Engineering",
-			"Factions": "Factions",
+			"Factions": "Facciones",
 			"Feature": "Rasgo",
-			"Fortified": "Fortified",
-			"Furnace": "Furnace",
-			"Grave": "Grave",
-			"Haunted": "Haunted",
-			"Ice": "Ice",
-			"Infested": "Infested",
-			"Inhabited": "Inhabited",
+			"Fortified": "Fortificado",
+			"Furnace": "Horno",
+			"Grave": "Cementerio",
+			"Haunted": "Embrujado",
+			"Ice": "Hielo",
+			"Infested": "Infestado",
+			"Inhabited": "Habitado",
 			"Interior": "Interior",
 			"Ironlander": "Pueblo del Hierro",
-			"Jovian": "Jovian",
-			"Jungle": "Jungle",
-			"Living": "Living",
-			"Location Themes": "Location Themes",
-			"Mechanical": "Mechanical",
-			"Medical": "Medical",
-			"Misc": "Misc",
-			"Mission": "Mission",
+			"Jovian": "Joviano",
+			"Jungle": "Jungla",
+			"Living": "Viviente",
+			"Location Themes": "Temas de localización",
+			"Mechanical": "Mecánico",
+			"Medical": "Médico",
+			"Misc": "Misceláneo",
+			"Mission": "Misión",
 			"Monstrosity": "Monstruosidad",
 			"Moves": "Movimientos",
 			"Name": "Nombre",
-			"Ocean": "Ocean",
-			"Operations": "Operations",
-			"Opportunity": "Opportunity",
+			"Ocean": "Océano",
+			"Operations": "Operaciones",
+			"Opportunity": "Oportunidad",
 			"Other": "Otro",
-			"Peril": "Peril",
+			"Peril": "Peligro",
 			"Place": "Sitios",
-			"Planets": "Planets",
-			"Population": "Population",
-			"Production": "Production",
+			"Planets": "Planetas",
+			"Population": "Poblacióh",
+			"Production": "Producción",
 			"Quick Name": "Nombre rápido",
-			"Research": "Research",
-			"Rocky": "Rocky",
-			"Ruined": "Ruined",
-			"Sacred": "Sacred",
-			"Sanctum": "Sanctum",
-			"Sector Name": "Sector Name",
+			"Research": "Investigación",
+			"Rocky": "Rocoso",
+			"Ruined": "Arruinado",
+			"Sacred": "Sagrado",
+			"Sanctum": "Santuario",
+			"Sector Name": "Nombre de sector",
 			"Settlement": "Asentamiento",
 			"Settlements": "Asentamientos",
-			"Shattered": "Shattered",
-			"Sighting": "Sighting",
+			"Shattered": "Fracturado",
+			"Sighting": "Observación",
 			"Site Name": "Nombre del emplazamiento",
 			"Site Nature": "Naturaleza del emplazamiento",
-			"Space": "Space",
-			"Starships": "Starships",
-			"Tainted": "Tainted",
+			"Space": "Espacio",
+			"Starships": "Naves estelares",
+			"Tainted": "Contaminado",
 			"Threat": "Amenaza",
 			"Trap": "Trampa",
 			"Turning Point": "Punto de inflexión",
 			"Type": "Tipo",
-			"Vaults": "Vaults",
+			"Vaults": "Cámaras",
 			"Vital": "Vital",
-			"Zones": "Zones",
+			"Zones": "Zonas",
 			"Custom": "Oráculos personalizados"
+		},
+		"Asset Categories": {
+			"Custom": "Recursos Personalizados",
+			"Ironsworn": {
+				"Companion": {
+					"Title": "Compañero",
+					"Description": "Los compañeros son tus PNJ ayudantes. Al adquirir un compañero dale un nombre y visualiza su apariencia y personalidad. Si no tiene una habilidad inicial elige una. Mejorar un compañero proporciona habilidades adicionales.\n\nLos compañeros usan un registro de salud y pueden sufrir daño como resultado de tus movimientos. Cuando tu compañero recibe daño usa el movimiento [Tu compañero sufre daño](Ironsworn/Moves/Suffer/Companion_Endure_Harm) (página 94) para determinar el resultado. Ver página 43 para más información."
+				},
+				"Path": {
+					"Title": "Senda",
+					"Description": "Las **Sendas** son tu trasfondo, intereses, entrenamiento, habilidades, poderes y equipo clave. Te proporcionan ventajas mecánicas y narrativas, pero también reflejan quien eres y cómo interactúas con el mundo. Por ejemplo, un **Ritualista** se verá diferente a un **Veterano**. Elegir estas dos sendas puede reflejar la evolución de tu personaje o un trasfondo interesante."
+				},
+				"Combat Talent": {
+					"Title": "Talento de combate",
+					"Description": "Se asume que los personajes de *Ironsworn* son luchadores habilidosos. Incluso sin un talento de combate puedes blandir armas y realizar movimientos de combate (página 78). Un talento de combate refleja un área particular de pericia y te proporciona opciones y bonos adicionales.\n\nLos recursos de talentos de combate típicamente requieren que blandas un arma específica, como indica en el texto del recurso. Por ejemplo, si tienes **Maestría con el escudo** y no tienes un escudo preparado no puedes usar las habilidades del recurso."
+				},
+				"Ritual": {
+					"Title": "Ritual",
+					"Description": "La magia en *Ironsworn* se realiza a través de rituales que ayudan a tus acciones o actúan como movimientos únicos. Como todos los recursos los rituales pueden ser seleccionados al ganar experiencia y mejorados con el paso del tiempo para hacerlos más flexibles o poderosos.\n\nTodos los rituales usan un movimiento como su habilidad marcada por defecto. Debes hacer este movimiento y la tirada asociada para activar el efecto. Cualquier habilidad secundaria que ganes mejorando el recurso es dependiente de realizar el ritual tal y como se describe en la habilidad por defecto."
+				}
+			},
+			"Starforged": {
+				"Command Vehicle": {
+					"Title": "Vehículo de mando",
+					"Description": "El **vehículo de mando** es tu nave interestelar. Es un recurso por defecto para tu personaje, obtenido al empezar la campaña. Si estás jugando con otros es un recurso compartido; cada uno de vosotros podéis usar las habilidades de la NAVE ESTELAR mientras estéis a bordo.\n\nEl vehículo de mando tiene un contador de integridad y empieza a 5 de integridad. Cuando tu NAVE ESTELAR recibe un impacto haz el movimiento @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Resistir el daño} para ver qué pasa."
+				},
+				"Module": {
+					"Title": "Módulo",
+					"Description": "Los **módulos** están unidos a tu NAVE ESTELAR y ofrecen opciones y ventajas adicionales mientras estás en el vehículo.\n\nEstos recursos pueden ser obtenidos y gestionados por un único personaje. Pueden ser compartidos con aliados, pero solo si es práctico que hagan uso de ellos (no todo el mundo sabe como usar un LABORATORIO DE INVESTIGACIÓN).\n\nAl @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Resistir el daño} y obtener un fallo puedes marcar un módulo como roto para desviar daño de tu NAVE ESTELAR. Voltea la carta para indicar que está roto. Un módulo roto no puede ser usado hasta @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Reparar} el módulo."
+				},
+				"Support Vehicle": {
+					"Title": "Vehículo de soporte",
+					"Description": "Los **vehículos de soporte** complementan tus vehículos de mando en operaciones a corta distancia o en la superfície planeataria. Si estás jugando con otros uno de vosotros puede actuar como el piloto o dueño de un vehículo de soporte, pero cualquiera a bordo puede usar sus habilidades según la situación.\n\nLos vehículos de soporte tienen registros de integridad, igual que los vehículos de mando. El máximo de integridad varía según el tipo de vehículo. Cuando un vehículo de soporte se enfrenta a una situación o ambiente dañino debes @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Resistir el daño} para ver cómo le va."
+				},
+				"Path": {
+					"Title": "Senda",
+					"Description": "Las **Sendas** son tu trasfondo, intereses, entrenamiento, habilidades, poderes y equipo clave. Te proporcionan ventajas mecánicas y narrativas, pero también reflejan quien eres y cómo interactúas con el mundo. Cuando crees tu personaje en el próximo capítulo elegirás al menos dos sendas para empezar.\n\nAlgunas sendas representan tu habilidad con una arma predilecta o un equipo concreto. Si ves un requisito en la parte superior de la carta de recurso, como por ejemplo “Si llevas un arma de filo…” el recurso solo puede usarse al realizar una acción con dicho objeto."
+				},
+				"Companion": {
+					"Title": "Compañero",
+					"Description": "Los **Compañeros** son PNJ ayudantes. Al ganar un compañero dales un nombre y visualiza su aspecto y personalidad.\n\nLos compañeros usan un registro de salud y pueden sufrir daño si un resultado los pone en peligro. Cuando tu compañero recibe daño usa el movimiento @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Tu compañero sufre daño}. Cuando su salud llega a 0 corren el riesgo de morir o ser destruidos."
+				},
+				"Deed": {
+					"Title": "Hazaña",
+					"Description": "Las **Hazañas** representan un logro notable en tu historia y cómo esos eventos cambian tu personaje.\n\nLas hazañas tienen un requisito en la parte superior de la carta del tipo “Al \\[...\\].” No puedes gastar experiencia para adquirir una hazaña hasta cumplir el requisito y no puedes elegir una hazaña al crear el personaje."
+				}
+			}
 		},
 		"ROLLTABLE": {
 			"TypeOracle": "Oráculo"
@@ -442,14 +598,30 @@
 			"TypeSector": "Sector"
 		},
 		"ACTOR": {
+			"SheetCompact": "Compacta",
+			"SheetFoe": "Enemigo",
+			"SheetStarforgedLocation": "Localización (Starforged)",
+			"SubtypeDerelict": "Ruina",
+			"SubtypePlanet": "Planeta",
+			"SubtypeSettlement": "Asentamiento",
+			"SubtypeStar": "Objeto Estelar",
+			"SubtypeVault": "Cámara de los Precursores",
 			"TypeCharacter": "Personaje",
 			"TypeFoe": "PNJ",
 			"TypeLocation": "Localización",
-			"TypeShared": "Ficha compartida"
+			"TypeShared": "Ficha compartida",
+			"TypeStarship": "Nave estelar"
 		},
 		"ACTORS": {
+			"SubtypeDerelict": "Ruinas",
+			"SubtypePlanet": "Planetas",
+			"SubtypeSettlement": "Asentamientos",
+			"SubtypeStar": "Objetos estelares",
+			"SubtypeVault": "Cámaras de los Precursores",
 			"TypeCharacter": "Personajes",
-			"TypeFoe": "PNJs"
+			"TypeFoe": "PNJs",
+			"TypeLocation": "Localizaciones",
+			"TypeStarship": "Naves estelares"
 		},
 		"ITEM": {
 			"TypeAsset": "Recurso",
@@ -457,19 +629,39 @@
 			"SubtypeConnection": "Conexión",
 			"SubtypeProgress": "Progreso",
 			"SubtypeVow": "Juramento",
-			"TypeBond": "Vínculo"
+			"TypeBond": "Vínculo",
+			"TypeBondset": "Grupo de vínculo",
+			"TypeProgressTrack": "Registro de progreso",
+			"TypeDelveThemeOrDomain": "Dominio/tema del sitio",
+			"TypeDelveTheme": "Tema del sitio",
+			"TypeDelveDomain": "Dominio del sitio"
 		},
 		"ITEMS": {
 			"TypeAsset": "Recursos",
 			"TypeMove": "Movimientos",
 			"TypeBond": "Vínculos",
 			"SubtypeProgress": "Progreso",
-			"SubtypeVow": "Juramentos"
+			"SubtypeVow": "Juramentos",
+			"SubtypeConnection": "Conexiones",
+			"TypeProgressTrack": "Registros de progreso",
+			"TypeBondset": "Grupo de vínculos",
+			"TypeDelveDomain": "Dominios del sitio",
+			"TypeDelveThemes": "Temas del sitio"
 		},
 		"DELVESITE": {
 			"Features": "Impresiones",
 			"Feature": "Impresión",
-			"Dangers": "Peligros"
+			"Dangers": "Peligros",
+			"Danger": "Peligro",
+			"Denizen": "Morador",
+			"Denizens": "Moradores",
+			"FREQUENCY": {
+				"Common": "Común",
+				"Rare": "Raro",
+				"Uncommon": "Poco común",
+				"Unforeseen": "Nunca visto antes",
+				"VeryCommon": "Muy común"
+			}
 		}
 	}
 }
