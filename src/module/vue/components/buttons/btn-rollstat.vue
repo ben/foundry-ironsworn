@@ -15,9 +15,9 @@
 <script lang="ts" setup>
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import type { ExtractPropTypes } from 'vue'
-import { inject, useSlots } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
-import { IronswornItem } from '../../../item/item'
+import { inject } from 'vue'
+import type { IronswornActor } from '../../../actor/actor'
+import type { IronswornItem } from '../../../item/item'
 import type { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, $ItemKey } from '../../provisions'
