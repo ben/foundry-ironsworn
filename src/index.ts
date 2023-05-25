@@ -47,6 +47,7 @@ import type {
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
 import { IronActiveEffect } from './module/active-effect/active-effect'
+import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 
 declare global {
 	interface LenientGlobalVariableTypes {
