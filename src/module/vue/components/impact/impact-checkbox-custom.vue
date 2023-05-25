@@ -1,15 +1,14 @@
 <template>
 	<ImpactCheckbox
 		:keep-effect="true"
-		:effect-data="activeEffect"
+		:effect-data="{ ...activeEffect, id: statusId }"
 		:class="$style.wrapper">
-		<template #default="{ id }">
+		<template #default>
 			<input
-				:id="id"
 				v-model="activeEffect.label"
 				:class="$style.input"
 				type="text"
-				@input="nameUpdate"
+				@blur="updateName"
 				@click.stop />
 		</template>
 	</ImpactCheckbox>
@@ -21,37 +20,24 @@ import type { ActiveEffectDataSource } from '@league-of-foundry-developers/found
 import { throttle } from 'lodash-es'
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
+import { IronActiveEffect } from '../../../active-effect/active-effect'
 import type { IronswornActor } from '../../../actor/actor'
 import type { ActorSource } from '../../../fields/utils'
 import { $ActorKey, ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
 const props = defineProps<{
-	statusId: string // e.g. custom1 or custom2
+	activeEffect: ActiveEffectDataSource
+	statusId: string
 }>()
 
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const activeEffectIndex = computed(() =>
-	(actor.value.effects as ActiveEffectDataSource[])?.findIndex(
-		(fx) => fx._id === props.statusId
-	)
-)
-const activeEffect = computed(
-	() =>
-		({
-			...actor.value.effects[activeEffectIndex.value],
-			id: actor.value.effects[activeEffectIndex.value]._id
-		} as StatusEffect)
-)
-
-async function immediateNameUpdate(e) {
-	await $actor?.update({
-		[`effects.${activeEffectIndex.value}.label`]: activeEffect.value.label
-	})
+async function updateName(e) {
+	const { _id, label } = props.activeEffect
+	await $actor.updateEmbeddedDocuments('ActiveEffect', [{ _id, label }])
 }
-const nameUpdate = throttle(immediateNameUpdate, 1000)
 </script>
 
 <style lang="scss" module>

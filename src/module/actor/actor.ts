@@ -1,13 +1,23 @@
 import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
-import { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
-import { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
-import { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
-import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { DocumentSubTypes } from '../../types/helperTypes'
+import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
+import type {
+	ActorData,
+	ActorDataConstructorData
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
+import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
+import type {
+	ConfiguredData,
+	ConfiguredDocumentClassForName
+} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type {
+	ConfiguredDocumentClass,
+	DocumentSubTypes
+} from '../../types/helperTypes'
 import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import type { IronswornItem } from '../item/item'
-import type { ActorDataProperties, ActorDataSource } from './config'
+import type { ActorDataProperties } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 let CREATE_DIALOG: CreateActorDialog
@@ -31,50 +41,63 @@ export class IronswornActor<
 
 	moveSheet?: SFCharacterMoveSheet
 
-	protected override async _preCreate(
-		data: ActorDataConstructorData,
-		options: DocumentModificationOptions,
-		user: BaseUser
-	): Promise<void> {
-		if (data.type === 'character') {
-			// insert disabled placeholder effects for custom impacts, which are used to persist player-set labels
-			const effectIDs = ['custom1', 'custom2']
-			if (data.effects == null) data.effects = []
-			for (const id of effectIDs) {
-				const fxIdx = data.effects.findIndex((fx) => fx?._id === id)
-				if (fxIdx === -1)
-					data.effects.push(
-						IronActiveEffect.createImpact({ id, disabled: true })
-					)
-			}
-		}
-		await super._preCreate(data, options, user)
-	}
+	// protected override async _preCreate(
+	// 	data: ActorDataConstructorData,
+	// 	options: DocumentModificationOptions,
+	// 	user: BaseUser
+	// ): Promise<void> {
+	// 	if (data.type === 'character') {
+	// 		console.log('Actor#_preCreate', data)
+	// 		// insert disabled placeholder effects for custom impacts, which are used to persist player-set labels
+	// 		const effectIDs = ['custom1', 'custom2']
+	// 		if (data.effects == null) data.effects = []
+	// 		for (const id of effectIDs) {
+	// 			const fxIdx = data.effects.findIndex((fx) => fx?._id === id)
+	// 			if (fxIdx === -1)
+	// 				data.effects.push(
+	// 					IronActiveEffect.createImpact({ id, disabled: true })
+	// 				)
+	// 		}
+	// 	}
+	// 	await super._preCreate(data, options, user)
+	// }
 
 	/**
 	 * A helper function to toggle a status effect which includes an Active Effect template
-	 * @remarks Patterned after `Token#toggleActiveEffect`
-	 * @param effectData The Active Effect data, including statusId
-	 * @param options Options to configure application of the Active Effect
-	 * @param options.overlay Should the Active Effect icon be displayed as an overlay on the token? (default: `true`)
-	 * @param options.active Force a certain active state for the effect.
+	 * @param effectData The Active Effect data
+	 * @param overlay Should the Active Effect icon be displayed as an overlay on the token?
+	 * @param active Force a certain active state for the effect.
 	 * @returns Whether the Active Effect is now on or off
 	 */
 	async toggleActiveEffect(
 		effectData: StatusEffect,
-		options: { overlay?: boolean; active?: boolean }
+		{ overlay = false, active }: { overlay?: boolean; active?: boolean } = {}
 	): Promise<boolean> {
-		// Remove an existing effect
-		const existing = this.effects.find(
-			(e) => e.getFlag('core', 'statusId') === effectData.id
-		)
-		const state = options.active ?? existing == null
-		if (!state && existing != null) await existing.delete()
+		if (effectData.id == null) return false
+
+		// Remove existing single-status effects.
+		const existing = this.effects.reduce((arr: string[], e) => {
+			if (
+				(e as IronActiveEffect).statuses.size === 1 &&
+				(e as IronActiveEffect).statuses.has(effectData.id)
+			)
+				arr.push(e.id as string)
+			return arr
+		}, [])
+		const state = active ?? existing.length === 0
+		if (!state && existing.length > 0)
+			await this.deleteEmbeddedDocuments('ActiveEffect', existing)
 		// Add a new effect
 		else if (state) {
-			const createData = IronActiveEffect.statusToActiveEffectData(effectData)
-			if (options.overlay != null) createData['flags.core.overlay'] = true
-			const cls = getDocumentClass('ActiveEffect')
+			const cls = getDocumentClass('ActiveEffect') as typeof IronActiveEffect
+			const createData = foundry.utils.deepClone(effectData)
+			;(createData as any).statuses = [effectData.id]
+			// @ts-expect-error
+			delete createData.id
+			;(cls as any).migrateDataSafe(createData)
+			;(cls as any).cleanData(createData)
+			createData.label = game.i18n.localize(createData.label as string)
+			if (overlay) createData['flags.core.overlay'] = true
 			await cls.create(createData, { parent: this })
 		}
 		return state
@@ -126,10 +149,16 @@ export class IronswornActor<
 			: 'ironsworn'
 	}
 }
+
 export interface IronswornActor<
 	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
 > extends Actor {
 	type: T
+	statuses: Set<string>
+	get effects(): EmbeddedCollection<
+		ConfiguredDocumentClassForName<'ActiveEffect'>,
+		ActorData
+	>
 }
 
 declare global {
@@ -145,4 +174,14 @@ Hooks.on('createActor', async (actor: IronswornActor) => {
 		parent: actor,
 		suppressLog: true
 	} as any)
+	if (actor.type === 'character') {
+		// insert disabled placeholder effects for custom impacts, which are used to persist player-set labels
+		const effectIDs = ['custom1', 'custom2']
+		for (const id of effectIDs) {
+			if (!actor.effects.contents.some((fx: any) => fx.statuses.has(id)))
+				await actor.createEmbeddedDocuments('ActiveEffect', [
+					IronActiveEffect.createImpact({ id, disabled: true }) as any
+				])
+		}
+	}
 })

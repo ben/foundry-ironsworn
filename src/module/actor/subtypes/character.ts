@@ -32,6 +32,13 @@ export class CharacterData extends foundry.abstract.DataModel<
 		}
 	}
 
+	get customImpacts() {
+		const customImpactIDs = ['custom1', 'custom2']
+		return this.parent.effects.filter((impact) =>
+			customImpactIDs.some((id) => (impact as any).statuses.has(id))
+		)
+	}
+
 	static _enableV10Validation = true
 
 	static readonly MOMENTUM_MAX = 10
@@ -95,7 +102,7 @@ export class CharacterData extends foundry.abstract.DataModel<
 
 			momentum: new MeterValueField({
 				label: 'IRONSWORN.Momentum',
-				initial: (source) => (source as any).momentumReset,
+				initial: CharacterData.MOMENTUM_INITIAL,
 				max: CharacterData.MOMENTUM_MAX,
 				min: CharacterData.MOMENTUM_MIN
 			}),

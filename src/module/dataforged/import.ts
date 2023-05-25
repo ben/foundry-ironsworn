@@ -13,7 +13,6 @@ import { ironsworn, starforged } from 'dataforged'
 import { isArray, isObject } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
-import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
@@ -353,7 +352,7 @@ async function processSFFoes() {
 		StoredDocument<IronswornItem>
 	>
 	for (const foeItem of foeItems ?? []) {
-		const actor = await IronswornActor.create(
+		const actor = await getDocumentClass('Actor').create(
 			{
 				name: foeItem.name ?? 'wups',
 				img: foeItem.img,

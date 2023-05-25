@@ -1,4 +1,3 @@
-import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { starforged } from 'dataforged'
@@ -19,6 +18,7 @@ import {
 	getOracleTree,
 	registerOracleTree
 } from './module/features/customoracles'
+import { IronswornActor } from './module/actor/actor'
 import { OracleTable } from './module/roll-table/oracle-table'
 
 export interface EmitterEvents extends Record<EventType, unknown> {

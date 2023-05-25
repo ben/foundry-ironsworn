@@ -1,54 +1,35 @@
 <template>
 	<div :class="$style.grid" :aria-label="$t('IRONSWORN.Impacts')">
-		<ImpactCategory
-			type="impact"
-			name="misfortunes"
-			class="flexcol"
-			:impacts="[
-				{ name: 'wounded' },
-				{ name: 'shaken' },
-				{ name: 'unprepared' }
-			]" />
+		<ImpactCategory type="impact" name="misfortunes" class="flexcol" />
 
-		<ImpactCategory
-			type="impact"
-			name="lastingEffects"
-			class="flexcol"
-			:impacts="[{ name: 'permanentlyharmed' }, { name: 'traumatized' }]" />
+		<ImpactCategory type="impact" name="lastingEffects" class="flexcol" />
 
-		<ImpactCategory
-			type="impact"
-			name="burdens"
-			class="flexcol"
-			:impacts="[
-				{ name: 'doomed' },
-				{ name: 'tormented' },
-				{ name: 'indebted' }
-			]" />
+		<ImpactCategory type="impact" name="burdens" class="flexcol" />
 
-		<ImpactCategory
-			type="impact"
-			name="vehicle"
-			class="flexcol"
-			:impacts="[
-				{ name: 'battered', globalHint: true },
-				{ name: 'cursed', globalHint: true }
-			]" />
+		<ImpactCategory type="impact" name="vehicle" class="flexcol" />
 
 		<ImpactCheckboxCustom
-			type="impact"
 			style="grid-column: 1 / 3"
-			debilitykey="custom1" />
+			status-id="custom1"
+			:active-effect="custom1" />
 		<ImpactCheckboxCustom
-			type="impact"
 			style="grid-column: 3 / 5"
-			debilitykey="custom2" />
+			status-id="custom2"
+			:active-effect="custom2" />
 	</div>
 </template>
 
 <script setup lang="ts">
 import ImpactCheckboxCustom from './impact-checkbox-custom.vue'
 import ImpactCategory from './impact-category.vue'
+import { computed, inject } from 'vue'
+import { $ActorKey } from '../../provisions'
+import type { IronswornActor } from '../../../actor/actor'
+const $actor = inject($ActorKey) as IronswornActor<'character'>
+
+const [custom1, custom2] = computed(() =>
+	$actor.system.customImpacts.map((x) => x.toObject())
+).value
 </script>
 
 <style lang="scss" module>

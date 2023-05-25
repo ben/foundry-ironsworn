@@ -1,31 +1,40 @@
 <template>
-	<IronCheckbox
-		is="button"
-		type="button"
-		:data-tooltip="state.hintText"
-		class="flexrow"
-		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
-		:checked="checked"
-		:aria-labelledby="`label_${baseId}`"
-		:transition="IronswornSettings.deco.impact.transition"
-		@change="input">
-		<template #checked="scope">
-			<FontIcon
-				v-bind="{ ...scope, ...IronswornSettings.deco.impact.checked }" />
-		</template>
-		<template #unchecked="scope">
-			<FontIcon
-				v-bind="{
-					...scope,
-					...IronswornSettings.deco.impact.unchecked
-				}" />
-		</template>
-		<slot :id="`label_${baseId}`" name="default">
-			<span :id="`label_${baseId}`" :class="$style.label">
-				{{ $capitalize(props.effectData.label) }}
-			</span>
-		</slot>
-	</IronCheckbox>
+	<span
+		class="flexrow nowrap"
+		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }">
+		<IronCheckbox
+			is="button"
+			:id="`checkbox_${baseId}`"
+			type="button"
+			:data-tooltip="state.hintText"
+			class="flexrow nogrow"
+			:checked="checked"
+			:aria-labelledby="`label_${baseId}`"
+			:transition="IronswornSettings.deco.impact.transition"
+			@change="input">
+			<template #checked="scope">
+				<FontIcon
+					v-bind="{ ...scope, ...IronswornSettings.deco.impact.checked }" />
+			</template>
+			<template #unchecked="scope">
+				<FontIcon
+					v-bind="{
+						...scope,
+						...IronswornSettings.deco.impact.unchecked
+					}" />
+			</template>
+		</IronCheckbox>
+		<label
+			:id="`label_${baseId}`"
+			:for="`checkbox_${baseId}`"
+			class="text clickable">
+			<slot name="default">
+				<span :class="$style.label">
+					{{ $capitalize($t(props.effectData.label as string)) }}
+				</span>
+			</slot>
+		</label>
+	</span>
 </template>
 
 <script lang="ts" setup>
@@ -54,27 +63,29 @@ const props = withDefaults(
 		effectData: StatusEffect
 		/** Should a disabled ActiveEffect object be left in place on the character? */
 		keepEffect?: boolean
-		global?: boolean
-		globalHint?: boolean
 	}>(),
 	{ keepEffect: false }
 )
 
 const checked = computed(() =>
-	actor.value.effects.some(
-		(fx) => fx.flags.core?.statusId === props.effectData.id
-	)
+	actor.value.effects.some((fx) => {
+		const statuses = (fx as any).statuses as Array<string>
+		return statuses.includes(props.effectData.id) && fx.disabled !== true
+	})
 )
 
 const state = reactive<{ hintText?: string }>({})
 
 async function input() {
-	if (props.keepEffect && checked.value) {
+	if (props.keepEffect) {
 		// turning a kept effect off -- set it to disabled instead of removing it
-		const idx = actor.value.effects.findIndex(
-			(fx) => fx._id === props.effectData.id
+		const effect = actor.value.effects.find((fx) =>
+			(fx as any).statuses.includes(props.effectData.id)
 		)
-		await $actor.update({ [`effects.${idx}.enabled`]: !checked.value })
+		console.log('found effect', effect)
+		await $actor.updateEmbeddedDocuments('ActiveEffect', [
+			{ _id: effect?._id, disabled: !effect?.disabled }
+		])
 	} else {
 		if (props.effectData.flags?.['foundry-ironsworn']?.global)
 			await IronActiveEffect.setGlobal(props.effectData, !checked.value)
@@ -137,7 +148,8 @@ function refreshGlobalHint() {
     `.trim()
 	}
 }
-if (props.globalHint) refreshGlobalHint()
+if (props.effectData.flags?.['foundry-ironsworn']?.globalHint)
+	refreshGlobalHint()
 </script>
 
 <style lang="scss" module>
@@ -145,14 +157,13 @@ if (props.globalHint) refreshGlobalHint()
 	flex-wrap: nowrap;
 	gap: var(--ironsworn-spacer-sm);
 	align-items: center;
-	padding: var(--ironsworn-spacer-xs);
-	padding-left: 0;
 	line-height: 1;
 }
 button:local(.wrapper) {
 	// a pox upon chrome's user agent style sheet, which aggressively overrides a bunch of stuff that it shouldn't
 	display: flex;
 	flex-direction: row;
+	padding: 0;
 }
 .hint {
 	filter: drop-shadow(0 0 5px var(--ironsworn-color-warning));

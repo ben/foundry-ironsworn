@@ -21,7 +21,7 @@ import { computed, inject } from 'vue'
 import { ActorKey } from '../../provisions.js'
 import ConditionMeterSlider from './condition-meter.vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
-import type { CharacterData } from '../../../actor/config'
+import type { CharacterData } from '../../../actor/subtypes/character'
 
 const props = defineProps<{
 	labelPosition: 'left' | 'right'

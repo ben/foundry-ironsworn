@@ -1,11 +1,10 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { IronswornActor } from './actor'
 import type {
 	CharacterDataProperties,
 	CharacterDataSource
 } from './subtypes/character'
-import { CharacterData } from './subtypes/character'
 import type { FoeDataProperties, FoeDataSource } from './subtypes/foe'
+import { CharacterData } from './subtypes/character'
 import { FoeData } from './subtypes/foe'
 import type {
 	LocationDataProperties,
@@ -21,6 +20,7 @@ import type {
 	StarshipDataSource
 } from './subtypes/starship'
 import { StarshipData } from './subtypes/starship'
+import { IronswornActor } from './actor'
 
 const systemDataModels: Record<
 	ConfiguredData<'Actor'>['type'],
@@ -47,7 +47,6 @@ export interface ActorConfig extends _actorConfig {
 }
 
 const config: Partial<ActorConfig> = {
-	documentClass: IronswornActor,
 	systemDataModels,
 	typeLabels: {
 		character: 'IRONSWORN.ACTOR.TypeCharacter',
@@ -65,6 +64,8 @@ const config: Partial<ActorConfig> = {
 		site: 'fa-solid fa-dungeon',
 		starship: 'fa-solid fa-starship-freighter'
 	}
+
+	// documentClass: IronswornActor
 } as const
 
 export default config

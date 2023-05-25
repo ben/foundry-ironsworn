@@ -1,7 +1,7 @@
 import type { IronswornActor } from '../actor/actor'
 import type { EffectChangeData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
 import type { PartialBy, PartialDeep } from 'dataforged'
-import { CharacterData } from '../actor/config'
+import { CharacterData } from '../actor/subtypes/character'
 import { clamp } from 'lodash-es'
 import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import { IronswornSettings } from '../helpers/settings'
@@ -31,7 +31,9 @@ interface ImpactFlags {
 }
 
 type ImpactOptions = StatusEffect & ImpactFlags
-
+export interface IronActiveEffect {
+	statuses: Set<string>
+}
 export class IronActiveEffect extends ActiveEffect {
 	static get customLabelFallback() {
 		return IronswornSettings.starforgedToolsEnabled
@@ -92,9 +94,10 @@ export class IronActiveEffect extends ActiveEffect {
 			label:
 				typeof label === 'string' && label.length > 0
 					? label
-					: IronActiveEffect.customLabelFallback,
+					: game.i18n.localize(IronActiveEffect.customLabelFallback),
 			icon: icon ?? IronActiveEffect.IMPACT_ICON_DEFAULT,
 			duration: null,
+			statuses: [id],
 			changes: [
 				{
 					key: 'system.momentumMax',
@@ -269,6 +272,7 @@ Hooks.on(
 		delta: typeof current,
 		changes: PartialDeep<typeof actor>
 	) => {
+		if (actor.type !== 'character') return change
 		switch (change.key) {
 			case 'system.momentumMax':
 				if (typeof current !== 'number' || typeof delta !== 'number')

@@ -20,23 +20,14 @@
 		<hr class="nogrow" />
 
 		<section class="flexrow nogrow" :class="$style.impacts">
-			<ImpactCheckbox
-				type="impact"
-				name="battered"
-				:global-hint="true"
-				:class="$style.impact" />
-			<ImpactCheckbox
-				type="impact"
-				name="cursed"
-				:global-hint="true"
-				:class="$style.impact" />
+			<ImpactCheckbox :effect-data="batteredEffect" :class="$style.impact" />
+			<ImpactCheckbox :effect-data="cursedEffect" :class="$style.impact" />
 		</section>
 	</SheetBasic>
 </template>
 
 <script setup lang="ts">
 import { provide, computed } from 'vue'
-import type { IronswornActor } from '../actor/actor'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ImpactCheckbox from 'component:impact/impact-checkbox.vue'
 import SheetBasic from './sheet-basic.vue'
@@ -47,12 +38,25 @@ import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import PlayerAssets from './components/asset/player-assets.vue'
+import type { ActorSource } from '../fields/utils'
+import { IronActiveEffect } from '../active-effect/active-effect'
 
 const props = defineProps<{
-	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
+	data: { actor: ActorSource<'starship'> }
 }>()
 
-provide(ActorKey, computed(() => props.data.actor) as any)
+provide(
+	ActorKey,
+	computed(() => props.data.actor)
+)
+
+const batteredEffect = IronActiveEffect.statusEffects.starforged.find(
+	(fx) => fx.id === 'battered'
+)
+
+const cursedEffect = IronActiveEffect.statusEffects.starforged.find(
+	(fx) => fx.id === 'cursed'
+)
 </script>
 
 <style lang="scss" module>

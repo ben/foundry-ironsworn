@@ -2,7 +2,6 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
-import { IRONSWORN } from './config'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { FoeSheet } from './module/actor/sheets/foesheet'
 import { StarforgedCharacterSheet } from './module/actor/sheets/sf-charactersheet'
@@ -48,6 +47,8 @@ import type {
 import ActorConfig from './module/actor/config'
 import { IronActiveEffect } from './module/active-effect/active-effect'
 import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
+import { IronswornActor } from './module/actor/actor'
+import { IRONSWORN } from './config'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -74,9 +75,12 @@ Hooks.once('init', async () => {
 	// Theme configuration
 	IronColor.colorSchemeSetup()
 
+	CONFIG.compatibility.excludePatterns.push(/ActiveEffect\#label/)
+
 	CONFIG.IRONSWORN = IRONSWORN
 
 	mergeObject(CONFIG.Actor, ActorConfig)
+	CONFIG.Actor.documentClass = IronswornActor
 
 	// Define custom Entity classes
 	CONFIG.ActiveEffect.documentClass = IronActiveEffect
