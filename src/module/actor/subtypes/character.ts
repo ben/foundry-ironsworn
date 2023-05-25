@@ -136,27 +136,6 @@ export class CharacterData extends foundry.abstract.DataModel<
 				initial: 0
 			}),
 
-			// debility: new fields.SchemaField<CharacterDataSourceData['debility']>({
-			// 	corrupted: new ImpactField(),
-			// 	cursed: new ImpactField(),
-			// 	encumbered: new ImpactField(),
-			// 	maimed: new ImpactField(),
-			// 	shaken: new ImpactField(),
-			// 	tormented: new ImpactField(),
-			// 	unprepared: new ImpactField(),
-			// 	wounded: new ImpactField(),
-			// 	permanentlyharmed: new ImpactField(),
-			// 	traumatized: new ImpactField(),
-			// 	doomed: new ImpactField(),
-			// 	indebted: new ImpactField(),
-			// 	battered: new ImpactField(),
-
-			// 	custom1: new ImpactField(),
-			// 	custom1name: new fields.StringField({}),
-			// 	custom2: new ImpactField(),
-			// 	custom2name: new fields.StringField({})
-			// }),
-
 			legacies: new fields.SchemaField<CharacterDataSourceData['legacies']>({
 				quests: new ProgressTicksField({
 					max: undefined
