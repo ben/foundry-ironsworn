@@ -1,19 +1,9 @@
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 
-import {
-	ConfiguredDocumentClassForName,
-	ConfiguredSource
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { Ironsworn } from 'dataforged'
+import type { ConfiguredSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import { cloneDeep, mapValues } from 'lodash-es'
-import {
-	ConfiguredDocumentClass,
-	DocumentSubTypes,
-	SystemDocument,
-	SystemDocumentType
-} from '../../types/helperTypes'
-import { IronswornActor } from '../actor/actor'
+import type { DocumentSubTypes, SystemDocument } from '../../types/helperTypes'
 
 export function Partial<
 	T extends Record<string, foundry.data.fields.DataField.Any>
