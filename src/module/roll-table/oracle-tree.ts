@@ -90,29 +90,10 @@ export class OracleTree extends RollTables {
 	/**
 	 * Find an oracle tree node by its Dataforged ID.
 	 * @param dfid The Dataforged ID to find.
-	 * @param includeFolders Should {@link IronFolder} results be included?
 	 */
 	static async find(
-		dfid: string,
-		includeFolders?: false
-	): Promise<StoredDocument<OracleTable> | undefined>
-	static async find(
-		dfid: string,
-		includeFolders: true
-	): Promise<StoredDocument<OracleTree.Node> | undefined>
-	static async find(
-		dfid: string,
-		includeFolders = false
-	): Promise<StoredDocument<OracleTree.Node> | undefined> {
-		if (includeFolders) {
-			if (game.folders == null)
-				throw new Error('game.folders has not been initialized')
-			const folder = game.folders.find(
-				(folder) => folder.type === 'RollTable' && folder.dfid === dfid
-			) as StoredDocument<IronFolder<OracleTable>>
-			if (folder != null) return folder
-		}
-
+		dfid: string
+	): Promise<StoredDocument<OracleTable> | undefined> {
 		if (game.tables == null)
 			throw new Error('game.tables has not been initialized')
 		// try world collection first
