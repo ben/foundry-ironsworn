@@ -73,11 +73,9 @@ export const PACKS = [
 	'foundry-ironsworn.starforgedassets',
 	'foundry-ironsworn.starforgedencounters',
 	'foundry-ironsworn.starforgedmoves',
-	'foundry-ironsworn.starforgedoracles',
 	'foundry-ironsworn.starforgedtruths',
 	'foundry-ironsworn.foeactorssf',
 	'foundry-ironsworn.ironswornassets',
-	'foundry-ironsworn.ironswornoracles',
 	'foundry-ironsworn.ironswornmoves',
 	'foundry-ironsworn.ironsworntruths'
 ] as const
@@ -106,9 +104,7 @@ export async function importFromDataforged() {
 		processSFMoves(),
 		processSFAssets(),
 		processISAssets(),
-		// processSFOracles(),
 		processISMoves(),
-		// processISOracles(),
 		// processISTruths(), // Re-enable when DF includes them
 		processSFTruths(),
 		processSFEncounters().then(async () => {
