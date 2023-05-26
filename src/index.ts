@@ -204,8 +204,6 @@ Hooks.once('init', async () => {
 		asset: 'fa-solid fa-cards-blank',
 		progress: 'fa-solid fa-asterisk',
 		bondset: 'fa-solid fa-handshake',
-		// possible alternates: fa-right-left-large
-		// fa-dice-d10
 		sfmove: 'icon isicon-d10-tilt',
 		// FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
 		'delve-domain': 'fa-duotone fa-cards-blank',
