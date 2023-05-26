@@ -12,25 +12,14 @@ import type {
 } from './roll-table-types'
 import { OracleTable } from './oracle-table'
 import type { IronFolder } from '../folder/folder'
-import { compact, pickBy } from 'lodash-es'
+import { compact } from 'lodash-es'
 import type { helpers } from '../../types/utils'
-import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
-import type {
-	ConfiguredDocumentClassForName,
-	ConfiguredFlags
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { FolderDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import { deleteEmptyPackFolders, emptyPack } from '../dataforged/pack'
-import { FolderableDocument } from '../folder/folder-types'
 
 export type DataforgedNamespace = 'Starforged' | 'Ironsworn'
-
-interface OracleTableIndexEntry {
-	_id: string
-	name: string
-	flags: { 'foundry-ironsworn'?: { dfid?: string } }
-}
 
 /**
  * Extends FVTT's {@link RollTables} to manage the Dataforged oracle tree.
@@ -44,7 +33,7 @@ export class OracleTree extends RollTables {
 	 * @remarks Based on ClientDocumentMixin#importFromJSONDialog
 	 */
 	static async importFromDataforgedDialog(
-		packId: string = 'foundry-ironsworn.starforgedoracles',
+		packId = 'foundry-ironsworn.starforgedoracles',
 		sourcePattern: RegExp | undefined = undefined
 	) {
 		new Dialog(
@@ -71,14 +60,10 @@ export class OracleTree extends RollTables {
 
 							const pack = game.packs.get(packId)
 							if (pack == null) throw new Error()
+							// @ts-expect-error
 							await pack.configure({ locked: false, sorting: 'm' })
 
 							await emptyPack(pack)
-
-							const folders = await getDocumentClass('Folder').createDocuments(
-								ctorData.folders,
-								{ pack: pack.metadata.id, keepEmbeddedIds: true, keepId: true }
-							)
 
 							if (sourcePattern != null)
 								ctorData.tables = ctorData.tables.filter((table) =>
@@ -91,6 +76,7 @@ export class OracleTree extends RollTables {
 							const oracles = await getDocumentClass(
 								'RollTable'
 							).createDocuments(ctorData.tables, {
+								// @ts-expect-error
 								pack: pack.metadata.id,
 								keepEmbeddedIds: true,
 								keepId: true
@@ -161,7 +147,9 @@ export class OracleTree extends RollTables {
 		for await (const pack of oraclePacks) {
 			const index = await pack.getIndex()
 			const found = index.find(
-				(tbl) => tbl.flags?.['foundry-ironsworn']?.dfid === dfid
+				(tbl) =>
+					(tbl.flags as ConfiguredFlags<'RollTable'>)?.['foundry-ironsworn']
+						?.dfid === dfid
 			)
 			if (found != null)
 				return (await pack.getDocument(
@@ -211,7 +199,9 @@ export class OracleTree extends RollTables {
 		for (const branch of branches) {
 			if (!OracleTree.isBranch(branch) && !OracleTree.isCategoryBranch(branch))
 				throw new Error(
-					`Dataforged ID "${branch.$id}" doesn't appear to be a valid oracle branch.`
+					`Dataforged ID "${
+						(branch as any).$id as string
+					}" doesn't appear to be a valid oracle branch.`
 				)
 			results = OracleTree.getBranchConstructorData(branch, results)
 		}
