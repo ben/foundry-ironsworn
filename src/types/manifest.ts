@@ -317,14 +317,14 @@ const system: SystemManifestData = {
 			name: 'ironswornoracles',
 			label: 'Ironsworn Oracles',
 			system: 'foundry-ironsworn',
-			path: 'packs/ironsworn-oracles.db',
+			path: 'packs/ironsworn-oracles',
 			type: 'RollTable'
 		},
 		{
 			name: 'delve-oracles',
 			label: 'Ironsworn: Delve Oracles',
 			system: 'foundry-ironsworn',
-			path: 'packs/delve-oracles.db',
+			path: 'packs/delve-oracles',
 			type: 'RollTable'
 		},
 		{
@@ -401,7 +401,7 @@ const system: SystemManifestData = {
 			name: 'starforgedoracles',
 			label: 'Starforged Oracles',
 			system: 'foundry-ironsworn',
-			path: 'packs/starforged-oracles.db',
+			path: 'packs/starforged-oracles',
 			type: 'RollTable'
 		},
 		{
