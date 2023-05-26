@@ -1,33 +1,24 @@
 import type { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
-import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type {
 	IAssetType,
 	IMoveCategory,
-	IOracle,
-	IOracleCategory,
-	Ironsworn,
-	IRow,
 	ISettingTruth,
 	Starforged
 } from 'dataforged'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { starforged, ironsworn } from 'dataforged'
-import { isArray, isObject, max, pick } from 'lodash-es'
-import { marked } from 'marked'
+import { isArray, isObject, pick } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
-import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
-	ISOracleCategories,
 	SFAssetTypes,
-	SFMoveCategories,
-	SFOracleCategories
+	SFMoveCategories
 } from './data'
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
@@ -115,9 +106,9 @@ export async function importFromDataforged() {
 		processSFMoves(),
 		processSFAssets(),
 		processISAssets(),
-		processSFOracles(),
+		// processSFOracles(),
 		processISMoves(),
-		processISOracles(),
+		// processISOracles(),
 		// processISTruths(), // Re-enable when DF includes them
 		processSFTruths(),
 		processSFEncounters().then(async () => {
@@ -255,53 +246,6 @@ async function processISAssets() {
 	const assetsToCreate = assetsForTypes(ISAssetTypes)
 	await Item.createDocuments(assetsToCreate, {
 		pack: 'foundry-ironsworn.ironswornassets',
-		keepId: true
-	})
-}
-
-/**
- * ORACLES
- */
-async function processOracle(
-	oracle: IOracle,
-	output: RollTableDataConstructorData[]
-) {
-	// Oracles JSON is a tree we wish to iterate through depth first adding
-	// parents prior to their children, and children in order
-	if (oracle.Table != null)
-		output.push(OracleTable.getConstructorData(oracle as any))
-
-	for (const child of oracle.Oracles ?? []) await processOracle(child, output)
-}
-async function processOracleCategory(
-	cat: IOracleCategory,
-	output: RollTableDataConstructorData[]
-) {
-	for (const oracle of cat.Oracles ?? []) await processOracle(oracle, output)
-	for (const child of cat.Categories ?? [])
-		await processOracleCategory(child, output)
-}
-
-async function processSFOracles() {
-	const oraclesToCreate: RollTableDataConstructorData[] = []
-
-	for (const category of SFOracleCategories) {
-		await processOracleCategory(category, oraclesToCreate)
-	}
-	await OracleTable.createDocuments(oraclesToCreate, {
-		pack: 'foundry-ironsworn.starforgedoracles',
-		keepId: true
-	})
-}
-
-async function processISOracles() {
-	const oraclesToCreate: RollTableDataConstructorData[] = []
-
-	for (const category of ISOracleCategories) {
-		await processOracleCategory(category, oraclesToCreate)
-	}
-	await OracleTable.createDocuments(oraclesToCreate, {
-		pack: 'foundry-ironsworn.ironswornoracles',
 		keepId: true
 	})
 }
@@ -450,13 +394,6 @@ async function processTruths(
 async function processSFTruths() {
 	await processTruths(
 		((starforged as any).default as Starforged)['Setting Truths'],
-		'foundry-ironsworn.starforgedtruths'
-	)
-}
-
-async function processISTruths() {
-	await processTruths(
-		((ironsworn as any).default as Ironsworn)['Setting Truths']!,
 		'foundry-ironsworn.starforgedtruths'
 	)
 }
