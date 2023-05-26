@@ -51,12 +51,8 @@ export class OracleTree extends RollTables {
 			{
 				title: `Import Dataforged v1 oracles`,
 				content: await renderTemplate('templates/apps/import-data.html', {
-					hint1: game.i18n.format('DOCUMENT.ImportDataHint1', {
-						document: this.documentName
-					}),
-					hint2: game.i18n.format('DOCUMENT.ImportDataHint2', {
-						name: this.name
-					})
+					hint1: 'Choose a JSON file containing Dataforged v1 oracle data.',
+					hint2: `This will <strong>completely replace</strong> the contents of the pack: ${packId}`
 				}),
 				buttons: {
 					import: {
