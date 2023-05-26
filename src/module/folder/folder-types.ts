@@ -2,13 +2,9 @@ import type {
 	COMPENDIUM_DOCUMENT_TYPES,
 	FOLDER_DOCUMENT_TYPES
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/constants.mjs'
-import { CONST } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/module.mjs'
-import type {
-	ConfiguredDocumentClassForName,
-	ConfiguredFlags
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { IAssetType, IHasId, IMoveCategory } from 'dataforged'
-import type { DataforgedFlags, StripDollars } from '../dataforged'
+import type { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { IAssetType, IMoveCategory } from 'dataforged'
+import type { DataforgedFlags } from '../dataforged'
 import type {
 	IOracleBranch,
 	IOracleCategoryBranch
@@ -40,7 +36,6 @@ declare global {
 		Folder: {
 			'foundry-ironsworn'?: {
 				dfid?: string
-				parentDfid?: string
 				dataforged?:
 					| DataforgedFlags<
 							IOracleBranch,

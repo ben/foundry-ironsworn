@@ -2,7 +2,6 @@ import { compact } from 'lodash-es'
 import { getDFMoveByDfId } from '../dataforged'
 import type { IronswornItem } from '../item/item'
 import type { SFMoveDataPropertiesData } from '../item/itemtypes'
-import { OracleTable } from '../roll-table/oracle-table'
 import { OracleTree } from '../roll-table/oracle-tree'
 
 export async function createSfMoveChatMessage(move: IronswornItem) {

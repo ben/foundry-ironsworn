@@ -19,8 +19,7 @@ import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-
 import type { FolderDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
 import type {
 	RollTableDataConstructorData,
-	RollTableDataProperties,
-	RollTableDataSource
+	RollTableDataProperties
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import { importFromDataforgedDialog } from '../dataforged/pack'
 import type {
