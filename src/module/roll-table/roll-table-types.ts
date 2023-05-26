@@ -71,10 +71,6 @@ declare global {
 				/** A subtitle to be included in smaller text above a chat message's header. Standard oracles default to displaying their category flag, so they don't need to set this unless an override is needed.
 				 */
 				subtitle?: string | null | undefined
-				/**
-				 * Is this a canonical table?
-				 */
-				canonical?: boolean
 				forceExpanded?: boolean
 			}
 		}

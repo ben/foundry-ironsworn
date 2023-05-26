@@ -5,12 +5,39 @@ import {
 
 export async function emptyPack<
 	TPack extends CompendiumCollection<CompendiumCollection.Metadata>
->(pack: TPack) {
+>(pack: TPack): Promise<TPack> {
 	const index = await pack.getIndex()
 	const keys = Array.from(index.keys())
 	await pack.documentClass.deleteDocuments(keys, {
 		pack: pack.collection
 	})
+	return pack
+}
+
+export async function deleteBy<
+	TPack extends CompendiumCollection<CompendiumCollection.Metadata>
+>(pack: TPack, test: (obj: InstanceType<TPack['documentClass']>) => boolean) {
+	for await (const entry of pack) {
+		if (test(entry as InstanceType<TPack['documentClass']>)) continue
+		await entry.delete()
+	}
+}
+
+export async function deleteEmptyPackFolders<
+	TPack extends CompendiumCollection<CompendiumCollection.Metadata>
+>(pack: TPack) {
+	const emptyFolders = (
+		(pack as any).folders as CompendiumFolderCollection
+	)?.filter((obj) => {
+		const hasDocumentChildren = obj.contents.length > 0
+		const hasDocumentDescendants =
+			obj.getSubfolders(true).flatMap((subfolder) => subfolder.contents)
+				.length > 0
+		return !hasDocumentChildren && !hasDocumentDescendants
+	})
+	for await (const emptyFolder of emptyFolders) {
+		await emptyFolder.delete()
+	}
 	return pack
 }
 

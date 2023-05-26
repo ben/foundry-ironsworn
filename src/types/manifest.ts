@@ -322,7 +322,7 @@ const system: SystemManifestData = {
 		},
 		{
 			name: 'delve-oracles',
-			label: 'Ironsworn: Delve oracles',
+			label: 'Ironsworn: Delve Oracles',
 			system: 'foundry-ironsworn',
 			path: 'packs/delve-oracles.db',
 			type: 'RollTable'

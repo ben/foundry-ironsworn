@@ -33,10 +33,6 @@ export class OracleTable extends RollTable {
 		return [...this.folder.ancestors, this.folder]
 	}
 
-	get canonical() {
-		return Boolean(this.getFlag('foundry-ironsworn', 'canonical'))
-	}
-
 	get dfid() {
 		return this.getFlag('foundry-ironsworn', 'dfid')
 	}
@@ -76,7 +72,7 @@ export class OracleTable extends RollTable {
 			let oracleTable: OracleTable | undefined
 			switch (true) {
 				case /^(Ironsworn|Starforged)\/Oracles\//.test(id): // A Dataforged ID
-					oracleTable = OracleTree.find(id)
+					oracleTable = await OracleTree.find(id)
 					break
 				case game.tables?.has(id): // A table ID
 					oracleTable = game.tables?.get(id)
@@ -167,27 +163,6 @@ export class OracleTable extends RollTable {
 		}
 		return data
 	}
-
-	// override toCompendium(
-	// 	...[pack, options]: Parameters<RollTable['toCompendium']>
-	// ) {
-	// 	const data = super.toCompendium(pack, options)
-
-	// 	if (options == null) return data
-
-	// 	const canonicalPacks = Object.values(OracleTree.CANONICAL_PACKS).flat()
-
-	// 	// Patch: FVTT v10 doesn't properly clear the ownership flag when clearPermissions is set.
-	// 	// @ts-expect-error
-	// 	if (options.clearOwnership ?? options.clearPermissions ?? false) {
-	// 		delete (data as any).ownership
-	// 	}
-	// 	if (canonicalPacks.includes(pack?.collection as any)) {
-	// 		setProperty(data, 'flags.foundry-ironsworn.canonical', undefined)
-	// 	}
-
-	// 	return data
-	// }
 
 	/**
 	 * Initialize one or more instances of OracleTable from a Dataforged {@link IOracle} node.
