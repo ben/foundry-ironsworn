@@ -2,9 +2,10 @@ import type {
 	GameDataRoot,
 	IOracleBase,
 	IOracleCategory,
+	PartialDeep,
 	RequireKey
 } from 'dataforged'
-import { hash, hashLookup, pickDataforged } from '../dataforged'
+import { hashLookup, pickDataforged } from '../dataforged'
 import type {
 	IOracleBranch,
 	IOracleCategoryBranch,
@@ -16,94 +17,74 @@ import { compact } from 'lodash-es'
 import type { helpers } from '../../types/utils'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { FolderDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
-import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
-import { deleteEmptyPackFolders, emptyPack } from '../dataforged/pack'
+import type {
+	RollTableDataConstructorData,
+	RollTableDataProperties,
+	RollTableDataSource
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
+import { importFromDataforgedDialog } from '../dataforged/pack'
+import type {
+	FolderableDocument,
+	PackableDocument
+} from '../folder/folder-types'
 
 export type DataforgedNamespace = 'Starforged' | 'Ironsworn'
 
+export interface CompendiumTreeNode<
+	TContents extends PackableDocument & FolderableDocument
+> {
+	children: CompendiumTreeNode<TContents>[]
+	depth: number
+	/** The index entries */
+	entries: PartialDeep<TContents>[]
+	root: boolean
+	/** The folder that represents this node. `null` if `root` is `true` */
+	folder: IronFolder<TContents>
+	visible: boolean
+}
+
+export interface OracleIndexEntry
+	extends Pick<
+		RollTableDataProperties,
+		| 'description'
+		| 'flags'
+		| 'folder'
+		| 'formula'
+		| 'img'
+		| 'name'
+		| 'sort'
+		| '_id'
+	> {
+	/** e.g. "Compendium.foundry-ironsworn.delve-oracles.RollTable.aedcfc2f2a96a454" */
+	uuid: string
+}
+
 /**
  * Extends FVTT's {@link RollTables} to manage the Dataforged oracle tree.
- * @remarks This is a singleton at runtime, but it intentionally implements its Ironsworn-specific static methods so that they're available as (e.g.) `OracleTree.find()` instead of `game.tables?.find()`.
+ * @remarks This is a singleton at runtime, but it intentionally implements its Ironsworn-specific functionality as static methods so that they're available as (e.g.) `OracleTree.find()` instead of `game.tables?.find()`.
  */
 export class OracleTree extends RollTables {
 	/**
 	 * Render an import dialog for updating the data related to this Document through an exported JSON file
 	 * @param packId The pack to rebuild with this data.
-	 * @param sourcePattern An optional regular expressiong, tested against the flag `dataforged.Source.Title`
-	 * @remarks Based on ClientDocumentMixin#importFromJSONDialog
+	 * @param sourcePattern An optional regular expression, tested against the flag `dataforged.Source.Title`. Use it to build only the content from a specific sourcebook.
 	 */
 	static async importFromDataforgedDialog(
 		packId = 'foundry-ironsworn.starforgedoracles',
 		sourcePattern: RegExp | undefined = undefined
 	) {
-		new Dialog(
-			{
-				title: `Import Dataforged v1 oracles`,
-				content: await renderTemplate('templates/apps/import-data.html', {
-					hint1: 'Choose a JSON file containing Dataforged v1 oracle data.',
-					hint2: `This will <strong>completely replace</strong> the contents of the pack: ${packId}`
-				}),
-				buttons: {
-					import: {
-						icon: '<i class="fas fa-file-import"></i>',
-						label: 'Import',
-						callback: async (html) => {
-							const form = (html as JQuery<HTMLElement>).find('form')[0]
-							if (!form.data.files.length) {
-								ui.notifications?.error('You did not upload a data file!')
-								return
-							}
-							const json = await OracleTree.readDataforged(
-								await readTextFromFile(form.data.files[0])
-							)
-							const ctorData = OracleTree.getConstructorData(json)
-
-							const pack = game.packs.get(packId)
-							if (pack == null) throw new Error()
-							// @ts-expect-error
-							await pack.configure({ locked: false, sorting: 'm' })
-
-							await emptyPack(pack)
-
-							if (sourcePattern != null)
-								ctorData.tables = ctorData.tables.filter((table) =>
-									sourcePattern.test(
-										table.flags?.['foundry-ironsworn']?.dataforged?.Source
-											.Title as string
-									)
-								)
-
-							const oracles = await getDocumentClass(
-								'RollTable'
-							).createDocuments(ctorData.tables, {
-								// @ts-expect-error
-								pack: pack.metadata.id,
-								keepEmbeddedIds: true,
-								keepId: true
-							})
-
-							for await (const oracle of oracles) {
-								await oracle.update({
-									folder: hash(oracle.parentDfid as string)
-								})
-							}
-
-							await deleteEmptyPackFolders(pack)
-
-							await pack.configure({ locked: true })
-						}
-					},
-					no: {
-						icon: '<i class="fas fa-times"></i>',
-						label: 'Cancel'
-					}
-				},
-				default: 'import'
-			},
-			{
-				width: 400
-			}
-		).render(true)
+		void importFromDataforgedDialog('RollTable', packId, async (json, _) => {
+			const ctorData = OracleTree.getConstructorData(
+				await OracleTree.readDataforged(json)
+			)
+			if (sourcePattern != null)
+				ctorData.contents = ctorData.contents.filter((obj) =>
+					sourcePattern.exec(
+						obj.flags?.['foundry-ironsworn']?.dataforged?.Source.Title as string
+					)
+				)
+			return ctorData
+		})
 	}
 
 	/**
@@ -174,9 +155,6 @@ export class OracleTree extends RollTables {
 	static async readDataforged(data: string) {
 		const json = JSON.parse(data) as GameDataRoot | IOracleCategory[]
 
-		// node_modules/dataforged/dist/starforged/oracles.json
-		// node_modules/dataforged/dist/ironsworn/oracles.json
-
 		let categories: IOracleCategory[] | undefined
 		if (Array.isArray(json)) {
 			categories = json
@@ -192,7 +170,7 @@ export class OracleTree extends RollTables {
 
 	static getConstructorData(branches: IOracleBranch[]) {
 		let results: ReturnType<(typeof OracleTree)['getBranchConstructorData']> = {
-			tables: [],
+			contents: [],
 			folders: []
 		}
 
@@ -332,8 +310,8 @@ export class OracleTree extends RollTables {
 		// options: Partial<FolderDataConstructorData> = {},
 		results: {
 			folders: FolderDataConstructorData[]
-			tables: RollTableDataConstructorData[]
-		} = { folders: [], tables: [] }
+			contents: RollTableDataConstructorData[]
+		} = { folders: [], contents: [] }
 	) {
 		const folderData = OracleTree.getFolderConstructorData(branch)
 
@@ -382,7 +360,7 @@ export class OracleTree extends RollTables {
 					}
 				}
 
-				results.tables.push(tableChild)
+				results.contents.push(tableChild)
 			}
 		}
 

@@ -51,7 +51,7 @@ export class OracleTable extends RollTable {
 		return this.dfid.split('/')[0] as DataforgedNamespace
 	}
 
-	static DEFAULT_ICON = 'icons/dice/d10black.svg'
+	static DEFAULT_ICON = 'systems/foundry-ironsworn/assets/icons/oracle-lg.svg'
 
 	/** The custom template used for rendering oracle results */
 	static resultTemplate =

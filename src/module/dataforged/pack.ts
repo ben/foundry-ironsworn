@@ -1,7 +1,121 @@
-import {
-	ConstructorDataType,
-	DocumentConstructor
+import type { DocumentDataType } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import type { FolderDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
+import type {
+	ConfiguredDocumentClassForName,
+	ConstructorDataType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { PackableDocument } from '../folder/folder-types'
+import { hash } from './import'
+
+interface DataforgedPackData<T extends PackableDocument> {
+	folders: FolderDataConstructorData[]
+	contents: ConstructorDataType<DocumentDataType<T>>[]
+}
+
+/**
+ * Dialog for operations common to importing Dataforged v1 from Dataforged
+ * @param type The canonical name of the document type to be created.
+ * @param packId The ID of the pack whose contents are to be replaced.
+ * @param transform A function that parses the raw JSON string into constructor data for folders and compendium contents.
+ * @remarks Based on ClientDocumentMixin#importFromJSONDialog
+ */
+export async function importFromDataforgedDialog<
+	T extends foundry.CONST.COMPENDIUM_DOCUMENT_TYPES
+>(
+	type: T,
+	packId: string,
+	transform: (
+		json: string,
+		pack: CompendiumCollection<CompendiumCollection.Metadata & { type: T }>
+	) => Promise<
+		DataforgedPackData<InstanceType<ConfiguredDocumentClassForName<T>>>
+	>
+) {
+	new Dialog(
+		{
+			title: `Import Dataforged v1 as ${type}s`,
+			content: await renderTemplate('templates/apps/import-data.html', {
+				hint1: `Choose a JSON file containing Dataforged v1 data to be converted into ${type}s`,
+				hint2: `This will <strong>completely replace</strong> the contents of the pack: ${packId}`
+			}),
+			buttons: {
+				import: {
+					icon: '<i class="fas fa-file-import"></i>',
+					label: 'Import',
+					callback: async (html) => {
+						const form = (html as JQuery<HTMLElement>).find('form')[0]
+						if (!form.data.files.length) {
+							ui.notifications?.error('You did not upload a data file!')
+							return
+						}
+
+						const pack = game.packs.get(packId) as CompendiumCollection<
+							CompendiumCollection.Metadata & { type: T }
+						>
+						if (pack == null)
+							return ui.notifications?.error(
+								`Could not find a pack with the ID ${packId}`
+							)
+						if (pack.metadata.type !== type)
+							return ui.notifications?.error(
+								`Expected pack with the type ${type}, but ${packId} has the type ${pack.metadata.type}`
+							)
+
+						const json = await readTextFromFile(form.data.files[0])
+
+						// @ts-expect-error
+						await pack.configure({ locked: false, sorting: 'm' })
+
+						const ctorData = await transform(json, pack)
+
+						await emptyPack(pack)
+
+						const folders = await getDocumentClass('Folder').createDocuments(
+							ctorData.folders,
+							{
+								// @ts-expect-error
+								pack: pack.metadata.id,
+								keepEmbeddedIds: true,
+								keepId: true
+							}
+						)
+
+						const contents = (await getDocumentClass(type)
+							// @ts-expect-error
+							.createDocuments(ctorData.contents, {
+								// @ts-expect-error
+								pack: pack.metadata.id,
+								keepEmbeddedIds: true,
+								keepId: true
+							})) as InstanceType<ConfiguredDocumentClassForName<T>>[]
+
+						if (
+							folders.length > 0 &&
+							contents.some((item) => 'parentDfid' in item)
+						)
+							for await (const entry of contents) {
+								await entry.update({
+									folder: hash((entry as { parentDfid: string }).parentDfid)
+								})
+							}
+						// clean up any empty folders
+						await deleteEmptyPackFolders(pack)
+						// all done -- lock the pack again
+						await pack.configure({ locked: true })
+					}
+				},
+				no: {
+					icon: '<i class="fas fa-times"></i>',
+					label: 'Cancel'
+				}
+			},
+			default: 'import'
+		},
+		{
+			width: 400
+		}
+	).render(true)
+}
 
 export async function emptyPack<
 	TPack extends CompendiumCollection<CompendiumCollection.Metadata>

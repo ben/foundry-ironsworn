@@ -151,7 +151,7 @@ function movesForCategories(
 				_id: hashLookup(cleanMove.dfid),
 				type: 'sfmove',
 				name: move.Name,
-				img: 'icons/dice/d10black.svg',
+				img: 'icons/svg/d10-grey.svg',
 				system: cleanMove
 			})
 		}

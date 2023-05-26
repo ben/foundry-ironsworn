@@ -1,4 +1,7 @@
-import type { FOLDER_DOCUMENT_TYPES } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/constants.mjs'
+import type {
+	COMPENDIUM_DOCUMENT_TYPES,
+	FOLDER_DOCUMENT_TYPES
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/constants.mjs'
 import { CONST } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/module.mjs'
 import type {
 	ConfiguredDocumentClassForName,
@@ -14,6 +17,9 @@ import type { IronFolder } from './folder'
 
 export type FolderableDocument = InstanceType<
 	ConfiguredDocumentClassForName<FOLDER_DOCUMENT_TYPES>
+>
+export type PackableDocument = InstanceType<
+	ConfiguredDocumentClassForName<COMPENDIUM_DOCUMENT_TYPES>
 >
 
 declare global {
