@@ -84,11 +84,13 @@ export interface TruthOptionDataProperties {
 /// DATA MODEL TYPING
 
 export type JournalEntryPageDataSource =
+	// @ts-expect-error
 	| { type: ValueOf<CONFIG['JournalEntryPage']['coreTypes']>; system: object }
 	| ProgressTrackDataSource
 	| ClockDataSource
 	| TruthOptionDataSource
 export type JournalEntryPageDataProperties =
+	// @ts-expect-error
 	| { type: ValueOf<CONFIG['JournalEntryPage']['coreTypes']>; system: object }
 	| ProgressTrackDataProperties
 	| ClockDataProperties
@@ -141,6 +143,7 @@ declare global {
 		system: Extract<JournalEntryPageDataSource, { type: T }>['system']
 	}
 
+	// @ts-expect-error
 	interface JournalEntryPage<
 		T extends JournalEntryPageType = JournalEntryPageType
 	> extends Omit<

@@ -12,6 +12,7 @@ export class IronswornJournalEntry extends JournalEntry {
 			])
 		)
 		for (const item of this.pages.values()) {
+			// @ts-expect-error
 			types[item.type].push(item)
 		}
 		return types as {
