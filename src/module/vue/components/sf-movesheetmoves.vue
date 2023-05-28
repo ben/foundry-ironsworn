@@ -126,7 +126,7 @@ function collapseMoveCategories() {
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 	clearSearch()
 	await nextTick()
-	const { documentId } = _parseUuid(targetMoveUuid)
+	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
 	const categoryWithMove = allCategories.value.find((moveCategory) =>
 		moveCategory.moveItems.has(documentId ?? '')
 	)
