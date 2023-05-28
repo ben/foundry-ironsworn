@@ -2,8 +2,10 @@
 
 ## Next Release
 
+- The system is now officially compatible with v10 and v11 ([#772](https://github.com/ben/foundry-ironsworn/pull/772))
 - Expand Spanish translation to be on par with the English language file ([#749](https://github.com/ben/foundry-ironsworn/pull/749), thanks [@erizocosmico](https://github.com/erizocosmico)!)
 - Improved dropdown menu styling for the "Phosphor" colorway
+- Fix some warnings and errors when running under v11 ([#772](https://github.com/ben/foundry-ironsworn/pull/772))
 
 ## 1.21.6
 
