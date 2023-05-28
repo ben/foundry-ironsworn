@@ -3,6 +3,7 @@
 ## Next Release
 
 - Expand Spanish translation to be on par with the English language file ([#749](https://github.com/ben/foundry-ironsworn/pull/749), thanks [@erizocosmico](https://github.com/erizocosmico)!)
+- Improved dropdown menu styling for the "Phosphor" colorway
 
 ## 1.21.6
 
