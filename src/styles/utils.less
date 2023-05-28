@@ -88,7 +88,7 @@
 		z-index: auto;
 		border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
 		border-radius: 0;
-		border-top: none;
+		border-top-width: 0;
 		padding: 0;
 		min-width: var(--ironsworn-vertical-slider-width);
 		text-align: center;
@@ -104,6 +104,7 @@
 		}
 
 		&:first-child {
+			border-top-width: 1px;
 			border-top-left-radius: var(--ironsworn-border-radius-lg) !important;
 			border-top-right-radius: var(--ironsworn-border-radius-lg) !important;
 		}
