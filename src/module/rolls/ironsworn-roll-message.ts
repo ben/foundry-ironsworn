@@ -156,7 +156,7 @@ export class IronswornRollMessage {
 
 		const r = IronswornRoll.fromJson(json)
 		r.chatMessageId = messageId
-		// @ts-expect-error
+
 		r.roll = msg?.rolls?.[0] ?? undefined
 
 		return new IronswornRollMessage(r)
