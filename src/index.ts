@@ -61,6 +61,9 @@ declare global {
 			JournalEntryPage: JournalEntryPageType[]
 		}
 	}
+
+	// v11 renames this function
+	function parseUuid(uuid: string, relative?: any): ResolvedUUID
 }
 
 Hooks.once('init', async () => {

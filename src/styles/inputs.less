@@ -8,8 +8,24 @@
 
 select {
 	.inputFieldMixin();
-
 	border-style: outset;
+	::selection {
+		background: var(--ironsworn-color-clickable-block-bg-hover);
+		color: var(--ironsworn-color-clickable-block-fg-hover);
+	}
+	option,
+	optgroup {
+		font-family: inherit;
+		background: var(--ironsworn-color-input-bg-opaque);
+		color: var(--ironsworn-color-clickable-block-fg);
+
+		&:hover,
+		&:focus,
+		&::selection {
+			background: var(--ironsworn-color-clickable-block-bg-hover);
+			color: var(--ironsworn-color-clickable-block-fg-hover);
+		}
+	}
 }
 
 textarea {
