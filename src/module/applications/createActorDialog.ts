@@ -3,7 +3,7 @@ import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
 import { IronswornSettings } from '../helpers/settings'
 import { OracleTable } from '../roll-table/oracle-table'
-import { OracleTree } from '../roll-table/oracle-tree'
+import { Oracles } from '../roll-table/oracles'
 
 interface CreateActorDialogOptions extends FormApplicationOptions {
 	folder: string
@@ -159,10 +159,10 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	}
 
 	async _ironlanderNameTables(): Promise<OracleTable[] | undefined> {
-		const tableA = (await OracleTree.find(
+		const tableA = (await Oracles.find(
 			'Ironsworn/Oracles/Name/Ironlander/A'
 		)) as any
-		const tableB = (await OracleTree.find(
+		const tableB = (await Oracles.find(
 			'Ironsworn/Oracles/Name/Ironlander/B'
 		)) as any
 		if (tableA && tableB) return [tableA, tableB]

@@ -7,7 +7,7 @@ import type { IRow, RequireKey } from 'dataforged'
 import { inRange, keyBy, snakeCase } from 'lodash-es'
 import type { helpers } from '../../types/utils'
 import { hashLookup, pickDataforged, renderLinksInStr } from '../dataforged'
-import { OracleTree } from './oracle-tree'
+import { Oracles } from './oracles'
 import { CompendiumCollection } from '../compendium/compendium'
 
 /** Extends FVTT's default TableResult with functionality specific to this system. */

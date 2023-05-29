@@ -45,7 +45,7 @@ import type {
 	DocumentSubTypes,
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { OracleTree } from './module/roll-table/oracle-tree'
+import { Oracles } from './module/roll-table/oracles'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -85,7 +85,7 @@ Hooks.once('init', async () => {
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
 	CONFIG.RollTable.documentClass = OracleTable
-	CONFIG.RollTable.collection = OracleTree
+	CONFIG.RollTable.collection = Oracles
 	// CONFIG.RollTable.sidebarIcon = 'fa-solid fa-crystal-ball'
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
 	CONFIG.TableResult.documentClass = OracleTableResult

@@ -60,21 +60,21 @@ export interface OracleIndexEntry
 
 /**
  * Extends FVTT's {@link RollTables} to manage the Dataforged oracle tree.
- * @remarks This is a singleton at runtime, but it intentionally implements its Ironsworn-specific functionality as static methods so that they're available as (e.g.) `OracleTree.find()` instead of `game.tables?.find()`.
+ * @remarks This is a singleton at runtime, but it intentionally implements its Ironsworn-specific functionality as static methods so that they're available as (e.g.) `Oracles.find()` instead of `game.tables?.find()`.
  */
-export class OracleTree extends RollTables {
+export class Oracles extends RollTables {
 	/**
 	 * Render an import dialog for updating the data related to this Document through an exported JSON file
 	 * @param packId The pack to rebuild with this data.
-	 * @param sourcePattern An optional regular expression, tested against the flag `dataforged.Source.Title`. Use it to build only the content from a specific sourcebook.
+	 * @param sourcePattern An optional regular `expression, tested against the flag `dataforged.Source.Title`. Use it to build only the content from a specific sourcebook.
 	 */
 	static async importFromDataforgedDialog(
 		packId = 'foundry-ironsworn.starforgedoracles',
 		sourcePattern: RegExp | undefined = undefined
 	) {
 		void importFromDataforgedDialog('RollTable', packId, async (json, _) => {
-			const ctorData = OracleTree.getConstructorData(
-				await OracleTree.readDataforged(json)
+			const ctorData = Oracles.getConstructorData(
+				await Oracles.readDataforged(json)
 			)
 			if (sourcePattern != null)
 				ctorData.contents = ctorData.contents.filter((obj) =>
@@ -149,19 +149,19 @@ export class OracleTree extends RollTables {
 	}
 
 	static getConstructorData(branches: IOracleBranch[]) {
-		let results: ReturnType<(typeof OracleTree)['getBranchConstructorData']> = {
+		let results: ReturnType<(typeof Oracles)['getBranchConstructorData']> = {
 			contents: [],
 			folders: []
 		}
 
 		for (const branch of branches) {
-			if (!OracleTree.isBranch(branch) && !OracleTree.isCategoryBranch(branch))
+			if (!Oracles.isBranch(branch) && !Oracles.isCategoryBranch(branch))
 				throw new Error(
 					`Dataforged ID "${
 						(branch as any).$id as string
 					}" doesn't appear to be a valid oracle branch.`
 				)
-			results = OracleTree.getBranchConstructorData(branch, results)
+			results = Oracles.getBranchConstructorData(branch, results)
 		}
 
 		return results
@@ -193,7 +193,7 @@ export class OracleTree extends RollTables {
 			oracleBranch.Source.Page = Math.min(...compact(childPages))
 		}
 
-		if (OracleTree.isBranch(oracleBranch))
+		if (Oracles.isBranch(oracleBranch))
 			flags['foundry-ironsworn'].dataforged = pickDataforged(
 				oracleBranch,
 				'Display',
@@ -201,7 +201,7 @@ export class OracleTree extends RollTables {
 				'Aliases',
 				'Usage'
 			)
-		else if (OracleTree.isCategoryBranch(oracleBranch))
+		else if (Oracles.isCategoryBranch(oracleBranch))
 			flags['foundry-ironsworn'].dataforged = pickDataforged(
 				oracleBranch,
 				'Display',
@@ -293,7 +293,7 @@ export class OracleTree extends RollTables {
 			contents: RollTableDataConstructorData[]
 		} = { folders: [], contents: [] }
 	) {
-		const folderData = OracleTree.getFolderConstructorData(branch)
+		const folderData = Oracles.getFolderConstructorData(branch)
 
 		results.folders.push(folderData)
 		// OracleTree.folderIndex.set(branch.$id, folder)
@@ -320,12 +320,12 @@ export class OracleTree extends RollTables {
 		]
 
 		for (const child of childrenData) {
-			if (OracleTree.isBranch(child) || OracleTree.isCategoryBranch(child))
-				results = OracleTree.getBranchConstructorData(
+			if (Oracles.isBranch(child) || Oracles.isCategoryBranch(child))
+				results = Oracles.getBranchConstructorData(
 					mergeObject(child, folderChildOptions, { inplace: false }),
 					results
 				)
-			else if (OracleTree.isLeaf(child)) {
+			else if (Oracles.isLeaf(child)) {
 				const tableChild = OracleTable.getConstructorData(child)
 				const heritableKeyMap: Record<string, string> = {
 					img: 'flags.foundry-ironsworn.Display.Icon',

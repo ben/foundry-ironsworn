@@ -11,7 +11,7 @@ import type { IronswornActor } from '../actor/actor'
 import type { CharacterDataPropertiesData } from '../actor/actortypes'
 import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { OracleTable } from '../roll-table/oracle-table'
-import { OracleTree } from '../roll-table/oracle-tree'
+import { Oracles } from '../roll-table/oracles'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
@@ -324,7 +324,7 @@ export class IronswornRollMessage {
 
 		const system = move.system as SFMoveDataPropertiesData
 		const dfids = system.Oracles ?? []
-		const nextOracles = compact(await Promise.all(dfids.map(OracleTree.find)))
+		const nextOracles = compact(await Promise.all(dfids.map(Oracles.find)))
 		return { nextOracles }
 	}
 }

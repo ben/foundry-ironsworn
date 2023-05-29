@@ -6,7 +6,7 @@ import type {
 	RollTableData,
 	TableResultData
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
-import type { OracleTree } from './oracle-tree'
+import type { Oracles } from './oracles'
 import type { IOracle, IOracleCategory, IRow, RequireKey } from 'dataforged'
 import type { helpers } from '../../types/utils'
 import type { DataforgedFlags } from '../dataforged'
@@ -15,17 +15,17 @@ import type { DataforgedFlags } from '../dataforged'
 
 /**
  * A Dataforged oracle category with a Categories property. In other words, it has {@link IOracleCategory} children.
- * @see {OracleTree.isCategoryBranch} The corresponding type guard.
+ * @see {Oracles.isCategoryBranch} The corresponding type guard.
  */
 export type IOracleCategoryBranch = RequireKey<IOracleCategory, 'Categories'>
 /**
  * A Dataforged oracle with an Oracles property. In other words, it has {@link IOracle} children.
- * @see {OracleTree.isBranch} The corresponding type guard.
+ * @see {Oracles.isBranch} The corresponding type guard.
  */
 export type IOracleBranch = RequireKey<IOracleCategory | IOracle, 'Oracles'>
 /**
  * A Dataforged oracle with a Table property, which is necessary to build a valid {@link OracleTable}.
- * @see {OracleTree.isLeaf} The corresponding type guard method.
+ * @see {Oracles.isLeaf} The corresponding type guard method.
  */
 export type IOracleLeaf = RequireKey<IOracle, 'Table'>
 
@@ -98,7 +98,7 @@ declare global {
 	interface DocumentClassConfig {
 		TableResult: typeof OracleTableResult
 		RollTable: typeof OracleTable
-		RollTables: typeof OracleTree
+		RollTables: typeof Oracles
 	}
 
 	interface RollTableDraw {

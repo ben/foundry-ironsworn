@@ -1,6 +1,6 @@
 import type { FolderData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
 import { compact } from 'lodash-es'
-import type { DataforgedNamespace } from '../roll-table/oracle-tree'
+import type { DataforgedNamespace } from '../roll-table/oracles'
 import type { FolderableDocument } from './folder-types'
 
 // @ts-expect-error IDFK you want from me, typescript. IronFolder<T> should be a valid narrowing of Folder :(

@@ -4,7 +4,7 @@ import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { OracleTable } from '../roll-table/oracle-table'
-import { OracleTree } from '../roll-table/oracle-tree'
+import { Oracles } from '../roll-table/oracles'
 
 export class IronswornChatCard {
 	id?: string | null
@@ -30,7 +30,7 @@ export class IronswornChatCard {
 
 			const system = fItem.system as SFMoveDataPropertiesData
 			const oracleIds = system.Oracles ?? []
-			return await Promise.all(oracleIds.map(OracleTree.find))
+			return await Promise.all(oracleIds.map(Oracles.find))
 		})
 		const tables = compact(flatten(await Promise.all(maybeTablePromises)))
 		if (tables.length === 0) return

@@ -10,8 +10,8 @@ import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
 import { OracleTableResult } from './oracle-table-result'
 import type { ComputedTableType, IOracleLeaf } from './roll-table-types'
-import type { DataforgedNamespace } from './oracle-tree'
-import { OracleTree } from './oracle-tree'
+import type { DataforgedNamespace } from './oracles'
+import { Oracles } from './oracles'
 import type { IronFolder } from '../folder/folder'
 
 /** Extends FVTT's default RollTable with functionality specific to this system. */
@@ -72,7 +72,7 @@ export class OracleTable extends RollTable {
 			let oracleTable: OracleTable | undefined
 			switch (true) {
 				case /^(Ironsworn|Starforged)\/Oracles\//.test(id): // A Dataforged ID
-					oracleTable = await OracleTree.find(id)
+					oracleTable = await Oracles.find(id)
 					break
 				case game.tables?.has(id): // A table ID
 					oracleTable = game.tables?.get(id)

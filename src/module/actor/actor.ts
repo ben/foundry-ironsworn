@@ -5,7 +5,7 @@ import type {
 } from './actortypes'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 import { OracleTable } from '../roll-table/oracle-table'
-import { OracleTree } from '../roll-table/oracle-tree'
+import { Oracles } from '../roll-table/oracles'
 
 let CREATE_DIALOG: CreateActorDialog
 
@@ -82,9 +82,7 @@ export class IronswornActor extends Actor {
 			return undefined
 
 		// TODO: is it worth trying to cache this?
-		const oracle = await OracleTree.find(
-			'Ironsworn/Oracles/Moves/Reveal_a_Danger'
-		)
+		const oracle = await Oracles.find('Ironsworn/Oracles/Moves/Reveal_a_Danger')
 		if (oracle == null) return
 
 		return new OracleTable({
