@@ -44,7 +44,7 @@ async function click(ev: JQuery.ClickEvent) {
 			return !!$attrs['onMoveclick']
 		}
 
-		// @ts-ignore
+		// @ts-expect-error
 		return gameItem?._onClickDocumentLink?.(ev)
 	}
 

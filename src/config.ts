@@ -59,6 +59,9 @@ export interface IronswornConfig {
 
 	registerOracleTree: typeof registerOracleTree
 	getOracleTree: typeof getOracleTree
+
+	// Patch for v10 + v11 compat
+	parseUuid: typeof _parseUuid
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -86,5 +89,7 @@ export const IRONSWORN: IronswornConfig = {
 	emitter: Mitt<EmitterEvents>(),
 
 	registerOracleTree,
-	getOracleTree
+	getOracleTree,
+
+	parseUuid: typeof parseUuid === 'function' ? parseUuid : _parseUuid
 }
