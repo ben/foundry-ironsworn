@@ -15,10 +15,9 @@
 <script lang="ts" setup>
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import type { ExtractPropTypes } from 'vue'
-import { inject, useSlots } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
-import { IronswornItem } from '../../../item/item'
-import type { AssetDataProperties } from '../../../item/itemtypes.js'
+import { inject } from 'vue'
+import type { IronswornActor } from '../../../actor/actor'
+import type { IronswornItem } from '../../../item/item'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
@@ -44,11 +43,8 @@ function rollStat(): any {
 		const name = `${props.statLabel} (${$item?.name})`
 		// FIXME: this should take `attr` instead to get the value, but there doesn't seem to be a simple way to (de)stringify the path to deeper props like there is with e.g. Actor.update()
 		// so, for now, we assume that assets are the only Items that we bother to roll with.
-		return IronswornPrerollDialog.showForStat(
-			name,
-			($item?.data as AssetDataProperties).data.track.current,
-			$actor
-		)
+		const value = $item?.system?.track?.current
+		return IronswornPrerollDialog.showForStat(name, value, $actor)
 	} else if (props.documentType === 'Actor') {
 		const name = `${props.statLabel} (${$actor?.name})`
 

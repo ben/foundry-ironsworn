@@ -46,7 +46,6 @@ import type { TableRow } from '../../../rolls'
 import { OracleRollMessage } from '../../../rolls'
 
 const props = defineProps<{
-	//@ts-ignore
 	page: IronswornJournalPage
 	radioGroup: string
 }>()
