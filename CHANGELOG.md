@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Improve appearance of v11 compendium sidebar and popouts with the "Phosphor" theme
+
 ## 1.21.7
 
 - The system is now officially compatible with v10 and v11 ([#772](https://github.com/ben/foundry-ironsworn/pull/772))
