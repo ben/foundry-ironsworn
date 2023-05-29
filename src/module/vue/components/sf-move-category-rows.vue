@@ -88,7 +88,7 @@ async function expandAndHighlightMove(targetMoveUuid: string) {
 		$collapsible.value.expand()
 		await nextTick()
 	}
-	const { documentId } = _parseUuid(targetMoveUuid)
+	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
 	const move = $children.value.find((child) => child.moveId === documentId)
 	highlightMove(move?.$collapsible?.$element as HTMLElement)
 	if (move?.$collapsible?.isExpanded === false) {

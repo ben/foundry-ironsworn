@@ -41,7 +41,9 @@
 
 	// INPUT
 	--#{$prefix}-input-bg: var(--#{$prefix}-#{$fg-type}-10);
+	--#{$prefix}-input-bg-opaque: var(--#{$prefix}-midtone-10);
 	--#{$prefix}-input-border: var(--#{$prefix}-#{$fg-type}-10);
+	--#{$prefix}-input-border-opaque: var(--#{$prefix}-midtone-10);
 
 	// CLICKABLE TEXT
 	--#{$prefix}-clickable-text: inherit;

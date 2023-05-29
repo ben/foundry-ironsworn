@@ -143,7 +143,7 @@ const preventOracle = computed(() => {
 })
 
 const toggleTooltip = computed(() =>
-	// @ts-ignore
+	// @ts-expect-error
 	enrichMarkdown($item.value.system.Trigger?.Text)
 )
 
