@@ -137,16 +137,14 @@
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { camelCase, capitalize, flatten, sample } from 'lodash-es'
+import { capitalize, flatten, sample } from 'lodash-es'
 import { provide, computed, reactive, inject, onMounted } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 
 import MceEditor from './components/mce-editor.vue'
 import type {
 	ActorDataSource,
-	LocationDataProperties,
-	SiteDataSource,
-	SiteDataSourceData
+	LocationDataProperties
 } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
@@ -499,12 +497,18 @@ const firstLookWillRandomizeKlass = computed(() => {
 	return !props.data.actor.system.klass
 })
 
-// FIXME: a crappy workaround so that this can be sync; fix it once oracle refactor for v11 is complete
-const canRandomizeName = computed(
-	() =>
-		props.data.actor.system.subtype === 'planet' ||
-		props.data.actor.system.subtype === 'settlement'
-)
+const canRandomizeName = computed(() => {
+	const { subtype, klass } = props.data.actor.system
+
+	if (subtype === 'planet') {
+		const kc = capitalize(klass)
+		const json = Oracles.findSync(`Starforged/Oracles/Planets/${kc}`)
+		if (json != null) return true
+	} else if (subtype === 'settlement') {
+		return true
+	}
+	return false
+})
 
 const firstLookWillRandomizeName = computed(() => {
 	const { subtype, klass } = props.data.actor.system
