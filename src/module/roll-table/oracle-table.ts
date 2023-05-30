@@ -13,6 +13,7 @@ import type { ComputedTableType, IOracleLeaf } from './roll-table-types'
 import type { DataforgedNamespace } from './oracles'
 import { Oracles } from './oracles'
 import type { IronFolder } from '../folder/folder'
+import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
 
 /** Extends FVTT's default RollTable with functionality specific to this system. */
 // @ts-expect-error
@@ -24,6 +25,44 @@ export class OracleTable extends RollTable {
 	): IOracle | IOracleCategory | undefined {
 		const nodes = OracleTable.findOracleWithIntermediateNodes(dfid)
 		return nodes[nodes.length - 1]
+	}
+
+	static findOracleWithIntermediateNodes(
+		dfid: string
+	): Array<IOracle | IOracleCategory> {
+		const ret: Array<IOracle | IOracleCategory> = []
+
+		function walkCategory(cat: IOracleCategory): boolean {
+			ret.push(cat)
+
+			if (cat.$id === dfid) return true
+			for (const oracle of cat.Oracles ?? []) {
+				if (walkOracle(oracle)) return true
+			}
+			for (const childCat of cat.Categories ?? []) {
+				if (walkCategory(childCat)) return true
+			}
+
+			ret.pop()
+			return false
+		}
+
+		function walkOracle(oracle: IOracle): boolean {
+			ret.push(oracle)
+
+			if (oracle.$id === dfid) return true
+			for (const childOracle of oracle.Oracles ?? []) {
+				if (walkOracle(childOracle)) return true
+			}
+
+			ret.pop()
+			return false
+		}
+
+		for (const cat of [...SFOracleCategories, ...ISOracleCategories]) {
+			walkCategory(cat)
+		}
+		return ret
 	}
 
 	/** Rolls on the table and returns the text of the first result. */
