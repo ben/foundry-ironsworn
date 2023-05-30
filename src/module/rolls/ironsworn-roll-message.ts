@@ -9,10 +9,10 @@ import {
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { SFMoveDataPropertiesData } from '../item/itemtypes'
+import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
-import { OracleTable } from '../roll-table/oracle-table'
 
 interface MoveTemplateData {
 	outcomeClass?: string
@@ -154,7 +154,7 @@ export class IronswornRollMessage {
 
 		const r = IronswornRoll.fromJson(json)
 		r.chatMessageId = messageId
-		// @ts-expect-error
+
 		r.roll = msg?.rolls?.[0] ?? undefined
 
 		return new IronswornRollMessage(r)

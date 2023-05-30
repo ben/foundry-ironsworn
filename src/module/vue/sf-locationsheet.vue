@@ -142,7 +142,6 @@ import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 
 import MceEditor from './components/mce-editor.vue'
-import { OracleRollMessage } from '../rolls'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { OracleTable } from '../roll-table/oracle-table'
@@ -574,9 +573,10 @@ async function drawAndReturnResult(
 ): Promise<string | undefined> {
 	if (!table) return undefined
 
-	const orm = await OracleRollMessage.fromTableUuid(table.uuid)
-	await orm.createOrUpdate()
-	const result = await orm.getResult()
+	const {
+		results: [result]
+	} = await table.draw()
+
 	return result?.text
 }
 

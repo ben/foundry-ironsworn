@@ -1,9 +1,15 @@
+import {
+	TableResultDataConstructorData,
+	TableResultDataSource
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { ChallengeRank } from 'dataforged'
+import { FlowFlags } from 'typescript'
 import { ChallengeRankField } from '../../fields/ChallengeRankField'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { TableResultStub } from '../../fields/TableResultField'
 import { TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
+import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
 
 const denizenRanges: Array<[number, number]> = [
@@ -30,14 +36,33 @@ export class SiteData extends foundry.abstract.DataModel<
 > {
 	static _enableV10Validation = true
 
-	protected override _configure(
-		options?: foundry.data.fields.DataField.ValidateOptions
-	) {
-		super._configure(options)
-		// brand denizens so that the originating delve site can be retrieved from message data
-		for (const denizen of this._source.denizens) {
-			setProperty(denizen, 'flags.foundry-ironsworn.sourceId', this.parent.id)
-		}
+	get denizenTable() {
+		return new OracleTable({
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Denizens'),
+			formula: '1d100',
+			results: this.denizens.map(
+				(row) =>
+					mergeObject(
+						row,
+						{
+							flags: {
+								'foundry-ironsworn': {
+									sourceId: this.parent.uuid,
+									type: 'delve-site-denizen'
+								}
+							}
+						},
+						{ inplace: false }
+					) as TableResultDataConstructorData
+			),
+			flags: {
+				'foundry-ironsworn': {
+					subtitle: this.parent.name,
+					type: 'delve-site-denizens',
+					sourceId: this.parent.uuid
+				}
+			}
+		})
 	}
 
 	get theme() {
@@ -46,6 +71,61 @@ export class SiteData extends foundry.abstract.DataModel<
 
 	get domain() {
 		return this.parent.itemTypes['delve-domain'][0]
+	}
+
+	get features() {
+		return new OracleTable({
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Features'),
+			formula: '1d100',
+			results: [...this.theme.system.features, ...this.domain.system.features],
+			flags: {
+				'foundry-ironsworn': {
+					subtitle: this.parent.name,
+					type: 'delve-site-features',
+					sourceId: this.parent.uuid
+				}
+			}
+		})
+	}
+
+	async getDangers() {
+		const revealADanger = await OracleTable.getByDfId(
+			'Ironsworn/Oracles/Moves/Reveal_a_Danger'
+		)
+		// skip the "Check the theme/domain card" rows
+		const dangerRows = revealADanger?.results.contents.slice(2)
+		if (dangerRows == null) return
+
+		return new OracleTable({
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Dangers'),
+			formula: '1d100',
+			results: [
+				...dangerRows.map(
+					(row) =>
+						mergeObject(
+							row.toObject(),
+							{
+								flags: {
+									'foundry-ironsworn': {
+										sourceId: this.parent.uuid,
+										type: 'delve-site-danger'
+									}
+								}
+							},
+							{ inplace: false }
+						) as TableResultDataConstructorData
+				),
+				...this.theme.system.dangers,
+				...this.domain.system.dangers
+			],
+			flags: {
+				'foundry-ironsworn': {
+					subtitle: this.parent.name,
+					type: 'delve-site-dangers',
+					sourceId: this.parent.uuid
+				}
+			}
+		})
 	}
 
 	get hasThemeAndDomain() {

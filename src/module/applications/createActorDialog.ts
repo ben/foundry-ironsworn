@@ -169,16 +169,13 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	}
 
 	async _randomStarforgedName(): Promise<string | undefined> {
-		const firstTable = (await OracleTable.getByDfId(
-			'Starforged/Oracles/Characters/Name/Given_Name'
-		)) as any
-		const lastTable = (await OracleTable.getByDfId(
-			'Starforged/Oracles/Characters/Name/Family_Name'
-		)) as any
-		if (!firstTable || !lastTable) return undefined
-
-		const first = await firstTable.draw({ displayChat: false })
-		const last = await lastTable.draw({ displayChat: false })
-		return `${first?.results[0]?.text} ${last?.results[0]?.text}`
+		const [givenName, familyName] = await OracleTable.ask(
+			[
+				'Starforged/Oracles/Characters/Name/Given_Name',
+				'Starforged/Oracles/Characters/Name/Family_Name'
+			],
+			{ displayChat: false }
+		)
+		return `${givenName?.results[0]?.text} ${familyName?.results[0]?.text}`
 	}
 }

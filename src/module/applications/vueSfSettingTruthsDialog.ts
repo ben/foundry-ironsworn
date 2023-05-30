@@ -1,5 +1,6 @@
 import type { Starforged } from 'dataforged'
 import { starforged } from 'dataforged'
+import { IronswornJournalEntry } from '../journal/journal-entry'
 import sfTruthsVue from '../vue/sf-truths.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 
@@ -34,7 +35,7 @@ export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
 	): MaybePromise<object>
 	async getData(options?: unknown) {
 		const pack = game.packs.get('foundry-ironsworn.starforgedtruths')
-		const documents = (await pack?.getDocuments()) as JournalEntry[]
+		const documents = (await pack?.getDocuments()) as IronswornJournalEntry[]
 		if (!documents) throw new Error("can't load truth JEs")
 
 		// Avoid rollupjs's over-aggressive tree shaking

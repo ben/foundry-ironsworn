@@ -4,6 +4,7 @@ import { CreateActorDialog } from '../applications/createActorDialog'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties, ActorDataSource } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
+import { OracleTable } from '../roll-table/oracle-table'
 
 let CREATE_DIALOG: CreateActorDialog
 
@@ -11,7 +12,7 @@ let CREATE_DIALOG: CreateActorDialog
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  */
 export class IronswornActor<
-	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
+	T extends DocumentSubTypes<'Actor'> = any
 > extends Actor {
 	// Type hack for v10 compatibility updates
 	// declare system:

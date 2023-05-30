@@ -102,7 +102,7 @@
 					:class="{ [$style.featureBtn]: true }"
 					icon="ironsworn:d10-tilt"
 					:text="$t('IRONSWORN.DELVESITE.Feature')"
-					@click="randomFeature" />
+					@click="$actor?.system.features?.draw()" />
 			</div>
 			<MceEditor
 				v-model="data.actor.system.description"
@@ -123,31 +123,33 @@ import MceEditor from './components/mce-editor.vue'
 import { RANK_INCREMENTS } from '../constants'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
-import { OracleRollMessage } from '../rolls'
-import type { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
-import type { SiteData } from '../actor/config'
 import { localizeRank } from '../helpers/util'
+import type { IronswornActor } from '../actor/actor'
+import type { ActorSource } from '../fields/utils'
 
 const props = defineProps<{
-	data: { actor: any }
+	data: { actor: ActorSource<'site'> }
 }>()
 
-provide(ActorKey, computed(() => props.data.actor) as any)
+provide(
+	ActorKey,
+	computed(() => props.data.actor)
+)
 provide('toolset', 'ironsworn')
 
-const $actor = inject($ActorKey)
+const $actor = inject($ActorKey) as IronswornActor<'site'>
 
 const editMode = computed(() => {
-	return (props.data.actor.flags['foundry-ironsworn'] as any)?.['edit-mode']
+	return props.data.actor.flags['foundry-ironsworn']?.['edit-mode']
 })
 
 const theme = computed(() => {
-	return props.data.actor.items.find((x) => x.type === 'delve-theme')
+	return $actor?.system.theme?.toObject()
 })
 
 const domain = computed(() => {
-	return props.data.actor.items.find((x) => x.type === 'delve-domain')
+	return $actor?.system.domain?.toObject()
 })
 
 function setRank(rank) {
@@ -166,27 +168,18 @@ function markProgress() {
 
 const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
-	const denizens = (props.data.actor.system as SiteData).denizens
-	const rows = denizens.map((x) => ({
-		low: x.range[0],
-		high: x.range[1],
-		text: x.text ?? '',
-		selected: false
-	}))
-	const orm = OracleRollMessage.fromRows(
-		rows,
-		game.i18n.localize('IRONSWORN.DELVESITE.Denizen'),
-		props.data.actor.name
-	)
-	await orm.createOrUpdate()
+	if ($actor?.system.denizens == null) return
+
+	const { roll } = await $actor.system.denizenTable.draw()
+
+	if (!roll || !roll.total) return
 
 	// If denizen slot is empty, set focus and add a class
-	const result = await orm.getResult()
-	if (!result) return
-	const idx = denizens.findIndex(
-		(x) => x.range[0] <= result.low && x.range[1] >= result.high
+
+	const idx = $actor.system.denizenTable.results.contents.findIndex((x) =>
+		x.hasInRange(roll.total as number)
 	)
-	const denizen = denizens[idx]
+	const denizen = $actor.system.denizenTable.results.contents[idx]
 	if (!denizen?.text) {
 		await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
 		await nextTick()
@@ -197,21 +190,6 @@ async function randomDenizen() {
 const hasThemeAndDomain = computed(() => {
 	return !!(theme.value && domain.value)
 })
-
-async function randomFeature() {
-	if (!hasThemeAndDomain.value) return
-
-	const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
-	const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-	const title = game.i18n.localize('IRONSWORN.DELVESITE.Feature')
-	const subtitle = `${$actor?.name} – ${theme.value?.name} ${domain.value?.name}`
-	const orm = OracleRollMessage.fromTableResults(
-		[...themeData.features, ...domainData.features],
-		title,
-		subtitle
-	)
-	orm.createOrUpdate()
-}
 
 function saveDescription() {
 	$actor?.update({ 'system.description': props.data.actor.system.description })

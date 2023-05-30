@@ -114,13 +114,6 @@ export interface BondsetDataProperties {
 
 /// ////////////////////////////
 
-export interface LegacyTableRow {
-	low: number
-	high: number
-	description?: string
-	text?: string
-}
-
 export interface DelveSiteFeatureOrDanger<
 	T extends 'delve-site-danger' | 'delve-site-feature' =
 		| 'delve-site-danger'
@@ -129,7 +122,7 @@ export interface DelveSiteFeatureOrDanger<
 	flags: {
 		'foundry-ironsworn': {
 			type: T
-			sourceId?: string | null
+			sourceId: string
 		}
 	}
 }
