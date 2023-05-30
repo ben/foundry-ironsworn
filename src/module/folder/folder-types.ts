@@ -18,6 +18,28 @@ export type PackableDocument = InstanceType<
 	ConfiguredDocumentClassForName<COMPENDIUM_DOCUMENT_TYPES>
 >
 
+interface FolderFlagsBase {
+	forceExpanded?: boolean
+}
+
+type OracleBranchFlags = FolderFlagsBase &
+	(
+		| DataforgedFlags<
+				IOracleCategoryBranch,
+				'$id' | 'Display' | 'Source' | 'Aliases' | 'Usage' | 'Sample Names'
+		  >
+		| DataforgedFlags<
+				IOracleBranch,
+				'$id' | 'Display' | 'Source' | 'Aliases' | 'Usage'
+		  >
+	)
+
+type MoveCategoryFlags = FolderFlagsBase &
+	DataforgedFlags<IMoveCategory, '$id' | 'Display' | 'Source'>
+
+type AssetTypeFlags = FolderFlagsBase &
+	DataforgedFlags<IAssetType, '$id' | 'Display' | 'Source'>
+
 declare global {
 	interface Folder<T extends FolderableDocument = FolderableDocument> {
 		/**
@@ -34,21 +56,10 @@ declare global {
 	}
 	interface FlagConfig {
 		Folder: {
-			'foundry-ironsworn'?: {
-				dfid?: string
-				dataforged?:
-					| DataforgedFlags<
-							IOracleBranch,
-							'Display' | 'Source' | 'Aliases' | 'Usage'
-					  >
-					| DataforgedFlags<
-							IOracleCategoryBranch,
-							'Display' | 'Source' | 'Aliases' | 'Usage' | 'Sample Names'
-					  >
-					| DataforgedFlags<IMoveCategory, 'Display' | 'Source'>
-					| DataforgedFlags<IAssetType, 'Display' | 'Source'>
-				forceExpanded?: boolean
-			}
+			'foundry-ironsworn'?:
+				| OracleBranchFlags
+				| MoveCategoryFlags
+				| AssetTypeFlags
 		}
 	}
 	interface DocumentClassConfig {

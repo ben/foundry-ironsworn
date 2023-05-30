@@ -42,10 +42,6 @@ export class OracleTable extends RollTable {
 		return this.dfid.split('/').slice(0, -1).join('/')
 	}
 
-	get dataforged() {
-		return this.getFlag('foundry-ironsworn', 'dataforged')
-	}
-
 	get setting() {
 		if (this.dfid == null) return undefined
 		return this.dfid.split('/')[0] as DataforgedNamespace
@@ -107,22 +103,20 @@ export class OracleTable extends RollTable {
 		)
 		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0))
 		const flags: ConfiguredFlags<'RollTable'> = {
-			'foundry-ironsworn': {
-				dfid: oracle.$id,
-				dataforged: pickDataforged(
-					oracle,
-					'Source',
-					'Display',
-					'Usage',
-					'Aliases'
-				)
-			}
+			'foundry-ironsworn': pickDataforged(
+				oracle,
+				'$id',
+				'Source',
+				'Display',
+				'Usage',
+				'Aliases'
+			)
 		}
 
 		// remove some redundant flags
 		const flagsRemoved = ['Display.Title', 'Display.Table']
 		flagsRemoved.forEach((flg) =>
-			setProperty(flags, `foundry-ironsworn.dataforged.${flg}`, undefined)
+			setProperty(flags, `foundry-ironsworn.${flg}`, undefined)
 		)
 
 		let name = oracle.Display.Title
@@ -337,7 +331,7 @@ export class OracleTable extends RollTable {
 		let table: OracleTable | undefined
 		switch (type) {
 			case 'delve-site-dangers':
-				table = (source as IronswornActor).dangers
+				table = await (source as IronswornActor).getDangers()
 				break
 			case 'delve-site-denizens':
 				table = (source as IronswornActor).denizens

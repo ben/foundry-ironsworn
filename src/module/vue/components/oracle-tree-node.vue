@@ -9,7 +9,10 @@
 		<!-- Leaf node -->
 		<div v-if="isLeaf">
 			<h4 class="flexrow">
-				<BtnOracle :node="node" :text="node?.displayName">
+				<BtnOracle
+					:name="node.displayName"
+					:oracle-id="(node.dataforgedNode?.$id as string)"
+					:text="node?.displayName">
 					<template #icon>
 						<IronIcon name="oracle" :size="spacerSize" />
 					</template>

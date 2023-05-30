@@ -1,14 +1,7 @@
-import type {
-	TableResultDataConstructorData,
-	TableResultDataProperties,
-	TableResultDataSource
-} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { IRow, RequireKey } from 'dataforged'
-import { inRange, keyBy, snakeCase } from 'lodash-es'
-import type { helpers } from '../../types/utils'
+import { inRange, snakeCase } from 'lodash-es'
 import { hashLookup, pickDataforged, renderLinksInStr } from '../dataforged'
-import { Oracles } from './oracles'
-import { CompendiumCollection } from '../compendium/compendium'
 
 /** Extends FVTT's default TableResult with functionality specific to this system. */
 export class OracleTableResult extends TableResult {
@@ -90,26 +83,16 @@ export class OracleTableResult extends TableResult {
 			text: row.Result && renderLinksInStr(text),
 			img,
 			flags: {
-				'foundry-ironsworn': {
-					dfid: row.$id ?? undefined
-				}
+				'foundry-ironsworn': pickDataforged(
+					row,
+					'$id',
+					'Attributes',
+					'Suggestions',
+					'Oracle rolls',
+					'Game objects'
+				)
 			}
 		}
-
-		const dataforged = pickDataforged(
-			row,
-			'Attributes',
-			'Suggestions',
-			'Oracle rolls',
-			'Game objects'
-		)
-
-		// TODO: extract color + icon from IRow.Display
-		if (
-			Object.keys(dataforged).length > 0 &&
-			data.flags?.['foundry-ironsworn'] != null
-		)
-			data.flags['foundry-ironsworn'].dataforged = dataforged
 
 		const rawId =
 			row.dfid ??

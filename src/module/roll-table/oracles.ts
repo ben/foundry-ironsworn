@@ -66,7 +66,7 @@ export class Oracles extends RollTables {
 	/**
 	 * Render an import dialog for updating the data related to this Document through an exported JSON file
 	 * @param packId The pack to rebuild with this data.
-	 * @param sourcePattern An optional regular `expression, tested against the flag `dataforged.Source.Title`. Use it to build only the content from a specific sourcebook.
+	 * @param sourcePattern An optional regular `expression, tested against the flag `Source.Title`. Use it to build only the content from a specific sourcebook.
 	 */
 	static async importFromDataforgedDialog(
 		packId = 'foundry-ironsworn.starforgedoracles',
@@ -79,7 +79,7 @@ export class Oracles extends RollTables {
 			if (sourcePattern != null)
 				ctorData.contents = ctorData.contents.filter((obj) =>
 					sourcePattern.exec(
-						obj.flags?.['foundry-ironsworn']?.dataforged?.Source.Title as string
+						obj.flags?.['foundry-ironsworn']?.Source?.Title as string
 					)
 				)
 			return ctorData
@@ -194,16 +194,18 @@ export class Oracles extends RollTables {
 		}
 
 		if (Oracles.isBranch(oracleBranch))
-			flags['foundry-ironsworn'].dataforged = pickDataforged(
+			flags['foundry-ironsworn'] = pickDataforged(
 				oracleBranch,
+				'$id',
 				'Display',
 				'Source',
 				'Aliases',
 				'Usage'
 			)
 		else if (Oracles.isCategoryBranch(oracleBranch))
-			flags['foundry-ironsworn'].dataforged = pickDataforged(
+			flags['foundry-ironsworn'] = pickDataforged(
 				oracleBranch,
+				'$id',
 				'Display',
 				'Source',
 				'Aliases',
@@ -219,13 +221,13 @@ export class Oracles extends RollTables {
 			'Source.Date'
 		]
 		toStrip.forEach((key) =>
-			setProperty(flags, `foundry-ironsworn.dataforged.${key}`, undefined)
+			setProperty(flags, `foundry-ironsworn.${key}`, undefined)
 		)
 
-		if (flags['foundry-ironsworn'].dataforged?.Display.Images != null) {
-			flags['foundry-ironsworn'].dataforged.Display.Images = flags[
+		if (flags['foundry-ironsworn']?.Display?.Images != null) {
+			flags['foundry-ironsworn'].Display.Images = flags[
 				'foundry-ironsworn'
-			].dataforged.Display.Images.map((img) =>
+			].Display?.Images.map((img) =>
 				img
 					.replace(
 						/^.*img\/raster\/webp\/planet\//,
@@ -235,10 +237,10 @@ export class Oracles extends RollTables {
 			)
 		}
 
-		if (flags['foundry-ironsworn'].dataforged?.Display.Icon != null) {
-			flags['foundry-ironsworn'].dataforged.Display.Icon = flags[
+		if (flags['foundry-ironsworn']?.Display?.Icon != null) {
+			flags['foundry-ironsworn'].Display.Icon = flags[
 				'foundry-ironsworn'
-			].dataforged.Display.Icon.replace(
+			].Display.Icon.replace(
 				/^.*img\/vector\/(Oracles\/)?/,
 				'systems/foundry-ironsworn/assets/oracles/'
 			).toLowerCase()
@@ -303,8 +305,8 @@ export class Oracles extends RollTables {
 		> = { parent: folderData._id as string }
 
 		const heritableKeys = [
-			'flags.foundry-ironsworn.dataforged.Display.Icon',
-			'flags.foundry-ironsworn.dataforged.Source',
+			'flags.foundry-ironsworn.Display.Icon',
+			'flags.foundry-ironsworn.Source',
 			'color'
 		]
 
@@ -329,8 +331,7 @@ export class Oracles extends RollTables {
 				const tableChild = OracleTable.getConstructorData(child)
 				const heritableKeyMap: Record<string, string> = {
 					img: 'flags.foundry-ironsworn.Display.Icon',
-					'flags.foundry-ironsworn.dataforged.Source':
-						'flags.foundry-ironsworn.dataforged.Source'
+					'flags.foundry-ironsworn.Source': 'flags.foundry-ironsworn.Source'
 				}
 
 				for (const [newKey, oldKey] of Object.entries(heritableKeyMap)) {

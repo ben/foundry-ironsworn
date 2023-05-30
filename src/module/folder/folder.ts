@@ -8,7 +8,7 @@ export class IronFolder<
 	T extends FolderableDocument = FolderableDocument
 > extends Folder {
 	get img() {
-		return this.dataforged?.Display?.Icon
+		return this.getFlag('foundry-ironsworn', 'Display.Icon')
 	}
 
 	get setting() {
@@ -24,10 +24,6 @@ export class IronFolder<
 	get parentDfid() {
 		if (!this.dfid) return
 		return this.dfid.split('/').slice(0, -1).join('/')
-	}
-
-	get dataforged() {
-		return this.getFlag('foundry-ironsworn', 'dataforged')
 	}
 }
 

@@ -56,36 +56,35 @@ export type ComputedTableType =
 	| 'truth-options'
 	| 'truth-option-subtable'
 
+type OracleFlags = DataforgedFlags<
+	IOracleLeaf,
+	'$id' | 'Source' | 'Display' | 'Usage' | 'Aliases'
+> & {
+	/** The UUID of the originating document, for computed RollTables */
+	sourceId?: Actor['uuid'] | Item['uuid'] | null | undefined
+	type?: ComputedTableType
+	/** A subtitle to be included in smaller text above a chat message's header. Standard oracles default to displaying their category flag, so they don't need to set this unless an override is needed.
+	 */
+	subtitle?: string | null | undefined
+	forceExpanded?: boolean
+}
+
+type OracleRowFlags = DataforgedFlags<
+	IRow,
+	'$id' | 'Attributes' | 'Suggestions' | 'Game objects' | 'Oracle rolls'
+> & {
+	/** The UUID of the originating document, for computed TableResults */
+	sourceId?: Actor['uuid'] | Item['uuid'] | null | undefined
+	type?: ComputedTableResultType
+}
+
 declare global {
 	interface FlagConfig {
 		RollTable: {
-			'foundry-ironsworn'?: {
-				dfid?: string
-				dataforged?: DataforgedFlags<
-					IOracleLeaf,
-					'Source' | 'Display' | 'Usage' | 'Aliases'
-				>
-				/** The UUID of the originating document, for computed RollTables */
-				sourceId?: Actor['uuid'] | Item['uuid'] | null | undefined
-				type?: ComputedTableType
-				/** A subtitle to be included in smaller text above a chat message's header. Standard oracles default to displaying their category flag, so they don't need to set this unless an override is needed.
-				 */
-				subtitle?: string | null | undefined
-				forceExpanded?: boolean
-			}
+			'foundry-ironsworn'?: OracleFlags
 		}
 		TableResult: {
-			'foundry-ironsworn'?: {
-				dfid?: string
-				dataforged?: DataforgedFlags<
-					IRow,
-					'Attributes' | 'Suggestions' | 'Game objects' | 'Oracle rolls'
-				>
-
-				/** The UUID of the originating document, for computed TableResults */
-				sourceId?: Actor['uuid'] | Item['uuid'] | null | undefined
-				type?: ComputedTableResultType
-			}
+			'foundry-ironsworn'?: OracleRowFlags
 		}
 	}
 

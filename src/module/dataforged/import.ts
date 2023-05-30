@@ -28,7 +28,9 @@ export type StripDollars<T> = { [K in keyof T as StripDollarKey<K>]: T[K] }
 /**
  * Picks keys, and replaces any keys starting with '$' with 'df'
  */
-export type DataforgedFlags<T, K extends keyof T> = StripDollars<Pick<T, K>>
+export type DataforgedFlags<T, K extends keyof T> = Partial<
+	StripDollars<Pick<T, K>>
+>
 
 export function pickDataforged<T extends object, K extends keyof T>(
 	obj: T,
@@ -340,8 +342,7 @@ async function processTruths(
 				flags: {
 					'foundry-ironsworn': {
 						type: 'truth-category',
-						dfid: truth.$id,
-						dataforged: pickDataforged(truth, 'Suggestions', 'Source')
+						...pickDataforged(truth, 'Suggestions', 'Source', '$id')
 					}
 				}
 			},
@@ -361,7 +362,7 @@ async function processTruths(
 						'Quest Starter': undefined
 					}),
 					flags: {
-						'foundry-ironsworn': { dfid: entry.$id }
+						'foundry-ironsworn': pickDataforged(entry, '$id')
 					}
 				},
 				{ parent: je }
@@ -377,9 +378,7 @@ async function processTruths(
 					format: 2 // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN
 				},
 				flags: {
-					'foundry-ironsworn': {
-						dataforged: pickDataforged(truth, 'Suggestions')
-					}
+					'foundry-ironsworn': pickDataforged(truth, 'Suggestions') as any
 				}
 			},
 			{ parent: je }

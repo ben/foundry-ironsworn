@@ -138,21 +138,33 @@
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import { camelCase, capitalize, flatten, sample } from 'lodash-es'
-import { provide, computed, reactive, inject } from 'vue'
+import { provide, computed, reactive, inject, onMounted } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 
 import MceEditor from './components/mce-editor.vue'
-import type { LocationDataProperties } from '../actor/actortypes'
+import type {
+	ActorDataSource,
+	LocationDataProperties,
+	SiteDataSource,
+	SiteDataSourceData
+} from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
-import { OracleTable } from '../roll-table/oracle-table'
+import type { OracleTable } from '../roll-table/oracle-table'
 import { Oracles } from '../roll-table/oracles'
+import type { IronswornActor } from '../actor/actor'
 
 const props = defineProps<{
-	data: { actor: any }
+	data: {
+		actor: ReturnType<IronswornActor['toObject']> &
+			Extract<ActorDataSource, { type: 'location' }>
+	}
 }>()
 
-provide(ActorKey, computed(() => props.data.actor) as any)
+provide(
+	ActorKey,
+	computed(() => props.data.actor)
+)
 const $actor = inject($ActorKey)
 
 const sceneId = game.user?.viewedScene
@@ -163,6 +175,8 @@ const state = reactive({
 	region,
 	firstLookHighlight: false
 })
+
+onMounted(async () => {})
 
 function randomImage(subtype, klass): string | void {
 	if (subtype === 'planet') {
@@ -485,18 +499,12 @@ const firstLookWillRandomizeKlass = computed(() => {
 	return !props.data.actor.system.klass
 })
 
-const canRandomizeName = computed(() => {
-	const { subtype, klass } = props.data.actor.system
-
-	if (subtype === 'planet') {
-		const kc = capitalize(klass)
-		const json = Oracles.find(`Starforged/Oracles/Planets/${kc}`)
-		if (json) return true
-	} else if (subtype === 'settlement') {
-		return true
-	}
-	return false
-})
+// FIXME: a crappy workaround so that this can be sync; fix it once oracle refactor for v11 is complete
+const canRandomizeName = computed(
+	() =>
+		props.data.actor.system.subtype === 'planet' ||
+		props.data.actor.system.subtype === 'settlement'
+)
 
 const firstLookWillRandomizeName = computed(() => {
 	const { subtype, klass } = props.data.actor.system
@@ -508,7 +516,7 @@ const firstLookWillRandomizeName = computed(() => {
 	const newThingName = game.i18n.format('DOCUMENT.New', {
 		type: game.i18n.localize(`IRONSWORN.${i18nKey}`)
 	})
-	if (props.data.actor.name === newThingName) return canRandomizeName.value
+	if (props.data.actor.name === newThingName) return canRandomizeName
 
 	return false
 })
@@ -584,10 +592,8 @@ async function randomizeName() {
 	let name
 	if (subtype === 'planet') {
 		const kc = capitalize(klass)
-		const json = await OracleTable.getDFOracleByDfId(
-			`Starforged/Oracles/Planets/${kc}`
-		)
-		name = sample(json?.['Sample Names'] ?? [])
+		const json = await Oracles.find(`Starforged/Oracles/Planets/${kc}`)
+		name = sample(json?.flags?.['foundry-ironsworn']?.['Sample Names'] ?? [])
 	} else if (subtype === 'settlement') {
 		const table = await Oracles.find('Starforged/Oracles/Settlements/Name')
 		name = await drawAndReturnResult(table)
