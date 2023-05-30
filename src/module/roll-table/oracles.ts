@@ -120,6 +120,36 @@ export class Oracles extends RollTables {
 		return undefined
 	}
 
+	/**
+	 * Synchronously find an oracle tree node by its Dataforged ID. If the node is only available in a pack, return its index entry instead.
+	 * @see find
+	 * @param dfid The Dataforged ID to find.
+	 */
+	static findSync(dfid: string) {
+		if (game.tables == null)
+			throw new Error('game.tables has not been initialized')
+		// try world collection first
+		const syncTable = game.tables.find((tbl) => tbl.dfid === dfid)
+		// table available in world collection -- return it
+		if (syncTable != null) return syncTable
+		// try oracle packs
+
+		const oraclePacks = game.packs.filter(
+			(pack) => pack.documentName === 'RollTable'
+		)
+		if (oraclePacks.length === 0) return undefined
+
+		for (const pack of oraclePacks) {
+			const indexEntry = pack.index.find(
+				(tbl) =>
+					(tbl.flags as ConfiguredFlags<'RollTable'>)?.['foundry-ironsworn']
+						?.dfid === dfid
+			)
+			if (indexEntry != null) return indexEntry
+		}
+		return undefined
+	}
+
 	/*********************************
 	 * Dataforged adaption
 	 *********************************/
