@@ -42,9 +42,11 @@ export class OracleTableResult extends TableResult {
 		return [prev, this, next]
 	}
 
+	// TODO: TableResult#getChatText might be a better way to manage summary text as a separate field in flags (distinct from the primary text)
+
 	/** Converts a Dataforged IRow object into OracleTableResult constructor data. */
-	static fromDataforged(
-		tableRow: IRow & { Floor: number; Ceiling: number }
+	static getConstructorData(
+		tableRow: IRow & { Floor: number; Ceiling: number; dfid?: string }
 	): TableResultDataConstructorData {
 		let text: string
 		if (tableRow.Result && tableRow.Summary) {
@@ -52,10 +54,17 @@ export class OracleTableResult extends TableResult {
 		} else text = tableRow.Result ?? ''
 
 		const data: TableResultDataConstructorData = {
-			_id: hashLookup(tableRow.$id ?? ''),
 			range: [tableRow.Floor, tableRow.Ceiling],
 			text: tableRow.Result && renderLinksInStr(text)
 		}
+
+		const _id =
+			tableRow.dfid ??
+			(tableRow as any).system?.dfid ??
+			(tableRow as any).flags?.['foundry-ironsworn']?.dfid ??
+			tableRow.$id
+
+		if (_id != null) data._id = hashLookup(_id)
 
 		return data
 	}

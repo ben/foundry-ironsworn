@@ -31,6 +31,10 @@ module.exports = {
 			'warn',
 			{ prefer: 'type-imports' }
 		],
+
+		// LoFD uses them, which means our augments do too (for both namespaces and extending static methods)
+		'@typescript-eslint/no-namespace': 'off',
+
 		// silence complaints about not explicitly declaring global variables in every files
 		'no-undef': 'off',
 

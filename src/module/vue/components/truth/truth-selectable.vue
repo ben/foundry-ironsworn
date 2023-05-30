@@ -5,7 +5,7 @@
 			type="radio"
 			class="nogrow"
 			:name="radioGroup"
-			@change="select" />
+			@change="emitValue" />
 		<div class="flexcol">
 			<p>
 				<strong>{{ page.name }}</strong>
@@ -13,9 +13,9 @@
 
 			<div v-html="$enrichMarkdown(pageSystem.Description)" />
 
-			<section v-if="pageSystem.Subtable">
+			<section v-if="page.subtable">
 				<label
-					v-for="(entry, i) in pageSystem.Subtable"
+					v-for="(entry, i) in page.subtable.results"
 					:key="`subtableRow${i}`"
 					class="flexrow nogrow">
 					<input
@@ -23,8 +23,8 @@
 						type="radio"
 						class="nogrow"
 						:name="pageSystem.dfid"
-						@change="subtableSelect(entry as any)" />
-					<p v-html="entry.Result" />
+						@change="subtableSelect(entry)" />
+					<p v-html="entry.text" />
 				</label>
 
 				<!-- TODO: custom input -->
@@ -36,32 +36,22 @@
 </template>
 
 <script setup lang="ts">
-import type {
-	ISettingTruthOption,
-	ISettingTruthOptionSubtableRow
-} from 'dataforged'
+import type { ISettingTruthOptionSubtableRow } from 'dataforged'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
-import type { TableRow } from '../../../rolls'
-import { OracleRollMessage } from '../../../rolls'
+import type { TruthOptionDataPropertiesData } from '../../../journal/journal-entry-page-types'
+import { OracleTableResult } from '../../../roll-table/oracle-table-result'
 
 const props = defineProps<{
-	page: IronswornJournalPage
+	page: IronswornJournalPage<'truth'>
 	radioGroup: string
 }>()
-const pageSystem = (props.page as any).system as ISettingTruthOption & {
-	dfid: string
-	Quest: string
-}
-
-function select() {
-	emitValue()
-}
+const pageSystem = props.page.system as TruthOptionDataPropertiesData
 
 const topRadio = ref<HTMLElement>()
 const state = reactive({ suboption: undefined as string | undefined })
-function subtableSelect(entry: ISettingTruthOptionSubtableRow) {
-	state.suboption = entry.Result
+function subtableSelect(entry: OracleTableResult) {
+	state.suboption = entry.text
 	topRadio.value?.click()
 	emitValue()
 }
@@ -83,30 +73,19 @@ function emitValue() {
 }
 
 const suboptions = ref<HTMLElement[]>([])
+
 async function selectAndRandomize() {
 	topRadio.value?.click()
 
-	if (pageSystem.Subtable && pageSystem.Subtable.length > 0) {
-		const rows = pageSystem.Subtable.map(
-			(x): TableRow => ({
-				low: x.Floor || 0,
-				high: x.Ceiling || 100,
-				text: x.Result,
-				selected: false
-			})
-		)
-		const msg = OracleRollMessage.fromRows(
-			rows,
-			props.page.name ?? '???',
-			game.i18n.localize('IRONSWORN.First Start.SettingTruths')
-		)
-		await msg.createOrUpdate()
+	if (props.page.subtable) {
+		const { roll } = await props.page.subtable.draw()
 
-		const result = await msg.getResult()
-		const dfRow = pageSystem.Subtable.find((x) => x.Floor === result?.low)
-		if (!dfRow) throw new Error('wtf')
-		const idx = pageSystem.Subtable.indexOf(dfRow)
-		suboptions.value[idx]?.click()
+		if (!roll || !roll.total) return
+
+		const selectedIndex = props.page.subtable.results.contents.findIndex(
+			(row) => row.hasInRange(roll.total as number)
+		)
+		suboptions.value[selectedIndex]?.click()
 	}
 }
 

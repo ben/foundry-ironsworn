@@ -1,10 +1,10 @@
-import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import type {
 	CharacterDataPropertiesData,
 	SiteDataPropertiesData
 } from './actortypes'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
+import { OracleTable } from '../roll-table/oracle-table'
 
 let CREATE_DIALOG: CreateActorDialog
 
@@ -18,34 +18,6 @@ export class IronswornActor extends Actor {
 
 	moveSheet?: SFCharacterMoveSheet
 
-	protected override _onCreate(
-		data: this['data']['_source'],
-		options: DocumentModificationOptions,
-		userId: string
-	): void {
-		super._onCreate(data, options, userId)
-		switch (this.type) {
-			case 'site':
-				// initialize sourceId flags for denizens
-				{
-					const denizens = (this.system as SiteDataPropertiesData).denizens.map(
-						(denizen) => {
-							if (denizen.flags == null) denizen.flags = {}
-							if (denizen.flags['foundry-ironsworn'] == null)
-								denizen.flags['foundry-ironsworn'] = {}
-							denizen.flags['foundry-ironsworn'].sourceId = this.id
-							return denizen
-						}
-					)
-					this.update({ system: { denizens } })
-				}
-
-				break
-			default:
-				break
-		}
-	}
-
 	static async createDialog(data, _options = {}) {
 		if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog()
 		CREATE_DIALOG.options.folder = data?.folder
@@ -54,7 +26,7 @@ export class IronswornActor extends Actor {
 	}
 
 	async burnMomentum() {
-		if (this.type != 'character') return
+		if (this.type !== 'character') return
 		const { momentum, momentumReset } = this
 			.system as CharacterDataPropertiesData
 		console.log({ momentum, momentumReset })
@@ -63,6 +35,91 @@ export class IronswornActor extends Actor {
 				system: { momentum: momentumReset }
 			})
 		}
+	}
+
+	/** The delve site's theme. */
+	get theme() {
+		if (this.type !== 'site') return undefined
+		return this.itemTypes['delve-theme'][0]
+	}
+
+	/** The delve site's domain. */
+	get domain() {
+		if (this.type !== 'site') return undefined
+		return this.itemTypes['delve-domain'][0]
+	}
+
+	/** The delve site's computed Features table */
+	get features() {
+		// TODO: is there a good way to cache this?
+		if (this.type !== 'site' || this.theme == null || this.domain == null)
+			return undefined
+		return new OracleTable({
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Features'),
+			results: [
+				// @ts-expect-error
+				...this.theme.system.features,
+				// @ts-expect-error
+				...this.domain.system.features
+			],
+			formula: '1d100',
+			flags: {
+				'foundry-ironsworn': {
+					sourceId: this.uuid,
+					type: 'delve-site-features'
+				}
+			}
+		})
+	}
+
+	/**
+	 * The delve site's computed Dangers table.
+	 * @remarks Ideally this would be a sync getter like its brothers, but currently it needs to grab results from a table by its Dataforged ID.
+	 */
+	async getDangers() {
+		if (this.type !== 'site' || this.theme == null || this.domain == null)
+			return undefined
+
+		// TODO: is it worth trying to cache this?
+		const oracle = await OracleTable.getByDfId(
+			'Ironsworn/Oracles/Moves/Reveal_a_Danger'
+		)
+		if (oracle == null) return
+
+		return new OracleTable({
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Dangers'),
+			results: [
+				// @ts-expect-error
+				...this.theme.system.dangers,
+				// @ts-expect-error
+				...this.domain.system.dangers,
+				// Omits the first two rows
+				...oracle.toObject().results.slice(2)
+			],
+			formula: '1d100',
+			flags: {
+				'foundry-ironsworn': {
+					sourceId: this.uuid,
+					type: 'delve-site-dangers'
+				}
+			}
+		})
+	}
+
+	/** The delve site's computed Denizens table */
+	get denizens() {
+		if (this.type !== 'site') return
+		return new OracleTable({
+			name: game.i18n.localize('IRONSWORN.DELVESITE.Denizens'),
+			formula: '1d100',
+			results: (this.system as SiteDataPropertiesData).denizens,
+			flags: {
+				'foundry-ironsworn': {
+					sourceId: this.uuid,
+					type: 'delve-site-denizens'
+				}
+			}
+		})
 	}
 
 	get toolset(): 'ironsworn' | 'starforged' {

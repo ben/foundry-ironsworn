@@ -38,12 +38,12 @@ export class IronswornItem extends Item {
 						| DelveThemeDataPropertiesData
 					const features = this.system.features.map(
 						(feature: DelveSiteFeature) => {
-							feature.flags['foundry-ironsworn'].sourceId = this.id
+							feature.flags['foundry-ironsworn'].sourceId = this.uuid
 							return feature
 						}
 					)
 					const dangers = this.system.dangers.map((danger: DelveSiteDanger) => {
-						danger.flags['foundry-ironsworn'].sourceId = this.id
+						danger.flags['foundry-ironsworn'].sourceId = this.uuid
 						return danger
 					})
 					this.update({ system: { features, dangers } })

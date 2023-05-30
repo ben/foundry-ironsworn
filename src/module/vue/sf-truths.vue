@@ -28,8 +28,7 @@
 			<TruthCategory
 				v-for="truth in data.truths"
 				ref="categoryComponents"
-				:key="truth.df.$id"
-				:df="truth.df"
+				:key="(truth.je()._id as string)"
 				:je="truth.je" />
 		</section>
 	</div>
