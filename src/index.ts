@@ -86,7 +86,6 @@ Hooks.once('init', async () => {
 
 	CONFIG.RollTable.documentClass = OracleTable
 	CONFIG.RollTable.collection = Oracles
-	// CONFIG.RollTable.sidebarIcon = 'fa-solid fa-crystal-ball'
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
 	CONFIG.TableResult.documentClass = OracleTableResult
 
