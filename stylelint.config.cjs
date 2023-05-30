@@ -13,8 +13,6 @@ module.exports = {
 		 */
 		'stylelint-config-standard-vue/scss',
 
-		/** This isn't required by newer versions of stylelint, but we're stuck with 14.3 for the moment.  */
-		'stylelint-config-prettier',
 		/**
 		 * Orders properties beginning with properties that exist outside the styled box (e.g. `margin`), with subsequent properties moving inwards from that. This way, properties that affect placement of sibling elements are always at the top.
 		 * @see https://github.com/chaucerbao/stylelint-config-concentric-order
