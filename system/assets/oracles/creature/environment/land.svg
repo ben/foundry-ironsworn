@@ -9,5 +9,5 @@
     </g>
   </g>
   <path fill="#fff" fill-opacity=".3" fill-rule="nonzero" d="m101.57 50.49-19.9 36.55-12.8-5.98-22.04 23.46-17.78-11.36 11.38 19.89-5.69 11.14L73.6 101.9l28.44 11.14 8.53-23.94zm25.59 62.56 23.72 1.65 12.83-23.89Z"/>
-  <path fill="none" stroke="#231f20" stroke-linejoin="miter" stroke-width="5.83" d="M184.55 160.67V55.8L93.73 3.37 2.92 55.8v104.87l90.81 52.43z"/>
+  <path fill="none" stroke="#000" stroke-linejoin="miter" stroke-width="5.83" d="M184.55 160.67V55.8L93.73 3.37 2.92 55.8v104.87l90.81 52.43z"/>
 </svg>
