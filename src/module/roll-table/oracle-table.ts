@@ -1,6 +1,6 @@
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { IOracle, IRow } from 'dataforged'
+import type { IOracle, IOracleCategory, IRow } from 'dataforged'
 import { max, snakeCase } from 'lodash-es'
 import { marked } from 'marked'
 import type { IronswornActor } from '../actor/actor'
@@ -18,6 +18,13 @@ import type { IronFolder } from '../folder/folder'
 // @ts-expect-error
 export class OracleTable extends RollTable {
 	// missing from the LoFD types package
+
+	static getDFOracleByDfId(
+		dfid: string
+	): IOracle | IOracleCategory | undefined {
+		const nodes = OracleTable.findOracleWithIntermediateNodes(dfid)
+		return nodes[nodes.length - 1]
+	}
 
 	/** Rolls on the table and returns the text of the first result. */
 	async drawText(options: RollTable.DrawOptions = {}) {
