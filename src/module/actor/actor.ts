@@ -75,9 +75,8 @@ export class IronswornActor<
 			: 'ironsworn'
 	}
 }
-export interface IronswornActor<
-	T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
-> extends Actor {
+export interface IronswornActor<T extends DocumentSubTypes<'Actor'> = any>
+	extends Actor {
 	type: T
 }
 
