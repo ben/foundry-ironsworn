@@ -69,6 +69,11 @@
 				"fallback": "tira la más baja de {statList}"
 			}
 		},
+		"PreRollMethod": {
+			"All": "Todos {statList}",
+			"Highest": "Mayor de {statList}",
+			"Lowest": "Menor de {statList}"
+		},
 		"Momentum": "impulso",
 		"Health": "salud",
 		"Spirit": "entereza",
