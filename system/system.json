@@ -79,6 +79,39 @@
 			}
 		]
   },
+  "packFolders": [
+		{
+			"name": "Ironsworn Core Rulebook",
+			"packs": [
+        "ironswornfoes",
+				"foeactorsis",
+				"ironswornoracles",
+				"ironswornmoves",
+				"ironswornassets",
+				"ironswornfoes",
+				"ironswornscenes"
+			]
+		},
+		{
+			"name": "Ironsworn: Delve",
+			"packs": [
+				"ironsworndelvethemes",
+				"ironsworndelvedomains"
+			]
+		},
+		{
+			"name": "Starforged Core Rulebook",
+			"packs": [
+				"foeactorssf",
+				"starforgedencounters",
+				"starforged-sectors",
+				"starforgedassets",
+				"starforgedmoves",
+				"starforgedoracles",
+				"starforgedtruths"
+			]
+		}
+	],
   "packs": [
     {
       "name": "foeactorsis",
