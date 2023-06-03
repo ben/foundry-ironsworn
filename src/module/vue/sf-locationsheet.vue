@@ -148,7 +148,7 @@ import { OracleTable } from '../roll-table/oracle-table'
 import type { LocationDataProperties } from '../actor/subtypes/location'
 
 const props = defineProps<{
-	data: { actor: any }
+	data: { actor: ActorSource<'location'> }
 }>()
 
 provide(ActorKey, computed(() => props.data.actor) as any)

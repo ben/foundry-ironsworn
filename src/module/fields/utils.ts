@@ -1,19 +1,11 @@
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 
-import {
-	ConfiguredDocumentClassForName,
-	ConfiguredSource
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { Ironsworn } from 'dataforged'
+import type { ConfiguredSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import { cloneDeep, mapValues } from 'lodash-es'
-import {
-	ConfiguredDocumentClass,
-	DocumentSubTypes,
-	SystemDocument,
-	SystemDocumentType
-} from '../../types/helperTypes'
-import { IronswornActor } from '../actor/actor'
+import type { DocumentSubTypes, SystemDocument } from '../../types/helperTypes'
+import type { IronswornActor } from '../actor/actor'
+import type { IronswornItem } from '../item/item'
 
 export function Partial<
 	T extends Record<string, foundry.data.fields.DataField.Any>
@@ -52,16 +44,24 @@ export type IterableElement<T extends Iterable<any>> = T extends Iterable<
 	? U
 	: never
 
-export type ActorSource<T extends DocumentSubTypes<'Actor'>> = ReturnType<
-	Actor['toObject']
-> &
-	ConfiguredSource<'Actor'> & { type: T }
+declare global {
+	export type ItemSource<
+		T extends DocumentSubTypes<'Item'> = DocumentSubTypes<'Item'>
+	> = ReturnType<IronswornItem['toObject']> &
+		Extract<ConfiguredSource<'Item'>, { type: T }>
+	export type ActorSource<
+		T extends DocumentSubTypes<'Actor'> = DocumentSubTypes<'Actor'>
+	> = ReturnType<IronswornActor['toObject']> &
+		Extract<ConfiguredSource<'Actor'>, { type: T }> & {
+			items?: ItemSource[]
+		}
+}
 
 export type SourceData<
 	DocumentInstance extends InstanceType<SystemDocument>,
 	Subtype extends DocumentInstance['type'] = DocumentInstance['type']
 > = ReturnType<DocumentInstance['toObject']> &
-	SourceConfig[DocumentInstance['documentName']] & { type: Subtype }
+	Extract<SourceConfig[DocumentInstance['documentName']], { type: Subtype }>
 
 export type SourceToField<T> = T extends foundry.data.fields.DataField.Any
 	? T
