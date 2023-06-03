@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Organize compendium packs into folders
 - Improve appearance of v11 compendium sidebar and popouts with the "Phosphor" theme
 - Under the hood: refactor all `RollTable`s and oracle rolls to use a single standardized pipeline (with `foundry-ironsworn`-style table roll messages) by default; certain kinds of results will fall back to FVTT-style messages instead.
 - Include most of Starforged's oracle icons in the `foundry-ironsworn/assets` directory -- use them as symbolic tokens, map pins, etc
