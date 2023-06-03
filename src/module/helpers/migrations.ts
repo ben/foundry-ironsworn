@@ -50,17 +50,6 @@ async function noop() {
 	// no-op
 }
 
-// Migration 1: "formidible" -> "formidable"
-async function fixFormidableSpelling() {
-	// Iterate through everything that has a rank (sites, items, owned items), and change "formidible" to "formidable"
-	await everyItem(async (x) => {
-		if ((x?.data?.data as any).rank === 'formidible') {
-			console.log(`Upgrading ${x.type} / ${x.name}`)
-			await x.update({ system: { rank: 'formidable' } })
-		}
-	})
-}
-
 // Migration 2: convert vows to progresses with the "vow" subtype
 async function everythingIsAProgress() {
 	await everyItem(async (x) => {
@@ -71,28 +60,6 @@ async function everythingIsAProgress() {
 				system: { subtype: x.type }
 			})
 		}
-	})
-}
-
-// Migration 3: Cast any string values that should be numbers
-async function statsAreAlwaysNumbers() {
-	await everyActor(async (actor) => {
-		if (actor.type !== 'character') return
-		const statKeys = [
-			'edge',
-			'heart',
-			'iron',
-			'shadow',
-			'wits',
-			'health',
-			'spirit',
-			'supply'
-		]
-		const update = {}
-		for (const k of statKeys) {
-			update[k] = parseInt(actor.data.data[k] || '0', 10)
-		}
-		await actor.update({ system: update })
 	})
 }
 
@@ -131,6 +98,8 @@ async function normalizeDelveTableRows() {
  * Migration 5: Convert challenge ranks from strings to numbers.
  */
 async function convertRanksToNumbers() {
+	// for Actors this is now managed by ChallengeRankField
+	// once item data models are implemented, this can be removed
 	function toNumberRank(oldRank: unknown): null | undefined | ChallengeRank {
 		// nullish value - return unchanged
 		if (oldRank == null) return oldRank
@@ -153,16 +122,15 @@ async function convertRanksToNumbers() {
 		if (doc.system?.rank != null)
 			await doc.update({ system: { rank: toNumberRank(doc.system.rank) } })
 	}
-	await everyActor(updateDoc)
 	await everyItem(updateDoc)
 }
 
 // index 1 is the function to run when upgrading from 1 to 2, and so on
 const MIGRATIONS: Array<() => Promise<any>> = [
 	noop,
-	fixFormidableSpelling,
+	noop, // Migration 1: "formidible" -> "formidable"; now handled by data model
 	everythingIsAProgress,
-	statsAreAlwaysNumbers,
+	noop, // Migration 3: Cast any string values that should be numbers; now handled by data model
 	normalizeDelveTableRows,
 	convertRanksToNumbers
 ]
