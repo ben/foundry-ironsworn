@@ -55,12 +55,11 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, inject, reactive, Ref } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
-import type { SiteData } from '../../../actor/config'
+import type { Ref } from 'vue'
+import { computed, inject, reactive } from 'vue'
+import type { IronswornActor } from '../../../actor/actor'
 import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
-import { ActorSource } from '../../../fields/utils'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 

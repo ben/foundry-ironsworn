@@ -126,7 +126,6 @@ import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { localizeRank } from '../helpers/util'
 import type { IronswornActor } from '../actor/actor'
-import type { ActorSource } from '../fields/utils'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'site'> }

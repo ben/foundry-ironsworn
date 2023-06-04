@@ -643,7 +643,6 @@ async function rollOracle(oracle) {
 	if (!drawText) return
 
 	// Append to description
-	const actor = props.data.actor as LocationDataProperties
 	const parts = [
 		props.data.actor.system.description,
 		'<p><strong>',
