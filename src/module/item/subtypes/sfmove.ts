@@ -14,6 +14,8 @@ import { enumValues } from '../../fields/utils'
 
 export class SFMoveData extends foundry.abstract
 	.DataModel<SFMoveDataPropertiesData> {
+	static _enableV10Validation = true
+
 	static override defineSchema(): DataSchema<SFMoveDataPropertiesData> {
 		const fields = foundry.data.fields
 		return {
