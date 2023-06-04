@@ -4,25 +4,25 @@ import type { IronswornItem } from '../item'
 import type { DelveSiteDanger, DelveSiteFeature } from './common'
 
 const domainFeatures = [
-	[21, 43],
-	[44, 56],
-	[57, 64],
-	[65, 68],
-	[69, 72],
-	[73, 76],
-	[77, 80],
-	[81, 84],
-	[85, 88],
-	[89, 98],
-	[99, 99],
-	[100, 100]
+	{ range: [21, 43] },
+	{ range: [44, 56] },
+	{ range: [57, 64] },
+	{ range: [65, 68] },
+	{ range: [69, 72] },
+	{ range: [73, 76] },
+	{ range: [77, 80] },
+	{ range: [81, 84] },
+	{ range: [85, 88] },
+	{ range: [89, 98], text: 'Something unusual or unexpected' },
+	{ range: [99, 99], text: 'You transition into a new theme' },
+	{ range: [100, 100], text: 'You transition into a new domain' }
 ]
 const domainDangers = [
-	[31, 33],
-	[34, 36],
-	[37, 39],
-	[40, 42],
-	[43, 45]
+	{ range: [31, 33] },
+	{ range: [34, 36] },
+	{ range: [37, 39] },
+	{ range: [40, 42] },
+	{ range: [43, 45] }
 ]
 
 export class DelveDomainData extends foundry.abstract.DataModel<
@@ -38,13 +38,13 @@ export class DelveDomainData extends foundry.abstract.DataModel<
 			description: new fields.HTMLField(),
 			features: new fields.ArrayField(new TableResultField() as any, {
 				initial: domainFeatures.map((row) => ({
-					range: row,
+					...row,
 					flags: { 'foundry-ironsworn': { type: 'delve-site-feature' } }
 				})) as DelveSiteFeature[]
 			}),
 			dangers: new fields.ArrayField(new TableResultField() as any, {
 				initial: domainDangers.map((row) => ({
-					range: row,
+					...row,
 					flags: { 'foundry-ironsworn': { type: 'delve-site-danger' } }
 				})) as DelveSiteDanger[]
 			})
