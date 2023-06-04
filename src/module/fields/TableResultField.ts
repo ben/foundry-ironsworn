@@ -18,7 +18,7 @@ export class TableResultField extends foundry.data.fields
 				initial: CONST.TABLE_RESULT_TYPES.TEXT,
 				validationError: 'must be a value in CONST.TABLE_RESULT_TYPES'
 			}),
-			text: new fields.HTMLField(),
+			text: new fields.HTMLField({ required: false }),
 			img: new fields.FilePathField({ categories: ['IMAGE'] }),
 
 			range: new fields.ArrayField(new fields.NumberField({ integer: true }), {
@@ -30,7 +30,7 @@ export class TableResultField extends foundry.data.fields
 				validationError: 'must be a length-2 array of ascending integers'
 			}),
 			// the typings infer this more strictly, but internally, this is consistent with every other flag field
-			flags: new fields.ObjectField() as any
+			flags: new fields.ObjectField({ required: false }) as any
 		})
 	}
 

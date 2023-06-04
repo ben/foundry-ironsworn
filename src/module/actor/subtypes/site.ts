@@ -23,8 +23,7 @@ const denizenRanges: Array<[number, number]> = [
 	[100, 100]
 ]
 
-const denizenOptions: Array<Partial<TableResultField.Options>> =
-	denizenRanges.map((staticRange) => ({ staticRange }))
+const denizenOptions = denizenRanges.map((range) => ({ range }))
 
 export class SiteData extends foundry.abstract.DataModel<
 	SiteDataSourceData,
@@ -137,7 +136,7 @@ export class SiteData extends foundry.abstract.DataModel<
 			description: new fields.HTMLField(),
 			notes: new fields.HTMLField(),
 			denizens: new fields.ArrayField(new TableResultField(), {
-				initial: denizenOptions.map((item) => new TableResultField(item)) as any
+				initial: denizenOptions
 			})
 		}
 	}
