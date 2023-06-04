@@ -3,33 +3,34 @@ import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 import type { DelveSiteDanger, DelveSiteFeature } from './common'
 
-const themeFeatures = [
-	[1, 4],
-	[5, 8],
-	[9, 12],
-	[13, 16],
-	[17, 20]
-]
-const themeDangers = [
-	[1, 5],
-	[6, 10],
-	[11, 12],
-	[13, 14],
-	[15, 16],
-	[17, 18],
-	[19, 20],
-	[21, 22],
-	[23, 24],
-	[25, 26],
-	[27, 28],
-	[29, 30]
-]
-
 export class DelveThemeData extends foundry.abstract.DataModel<
 	DelveThemeDataSourceData,
 	IronswornItem<'delve-theme'>
 > {
 	static _enableV10Validation = true
+
+	static readonly features: Array<Partial<DelveSiteFeature>> = [
+		{ range: [1, 4] },
+		{ range: [5, 8] },
+		{ range: [9, 12] },
+		{ range: [13, 16] },
+		{ range: [17, 20] }
+	]
+
+	static readonly dangers: Array<Partial<DelveSiteDanger>> = [
+		{ range: [1, 5] },
+		{ range: [6, 10] },
+		{ range: [11, 12] },
+		{ range: [13, 14] },
+		{ range: [15, 16] },
+		{ range: [17, 18] },
+		{ range: [19, 20] },
+		{ range: [21, 22] },
+		{ range: [23, 24] },
+		{ range: [25, 26] },
+		{ range: [27, 28] },
+		{ range: [29, 30] }
+	]
 
 	static override defineSchema(): DataSchema<DelveThemeDataSourceData> {
 		const fields = foundry.data.fields
@@ -37,16 +38,10 @@ export class DelveThemeData extends foundry.abstract.DataModel<
 			summary: new fields.HTMLField(),
 			description: new fields.HTMLField(),
 			features: new fields.ArrayField(new TableResultField() as any, {
-				initial: themeFeatures.map((row) => ({
-					range: row,
-					flags: { 'foundry-ironsworn': { type: 'delve-site-feature' } }
-				})) as DelveSiteFeature[]
+				initial: DelveThemeData.features as DelveSiteFeature[]
 			}),
 			dangers: new fields.ArrayField(new TableResultField() as any, {
-				initial: themeDangers.map((row) => ({
-					range: row,
-					flags: { 'foundry-ironsworn': { type: 'delve-site-danger' } }
-				})) as DelveSiteDanger[]
+				initial: DelveThemeData.dangers as DelveSiteDanger[]
 			})
 		}
 	}
