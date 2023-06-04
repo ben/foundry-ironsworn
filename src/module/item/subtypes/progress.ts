@@ -42,10 +42,9 @@ export class ProgressData extends foundry.abstract.DataModel<
 					: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
 		}
 
-		const progress = Math.floor(this.current / 4)
 		return await IronswornPrerollDialog.showForProgress(
 			this.parent.name ?? '(progress)',
-			progress,
+			this.score,
 			this.parent.actor ?? undefined,
 			moveDfId
 		)
