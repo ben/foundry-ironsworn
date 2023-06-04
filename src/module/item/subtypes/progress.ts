@@ -5,6 +5,7 @@ import type { DataSchema } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../itemtypes'
+import { ClockSchema } from './common'
 
 export class ProgressData extends foundry.abstract.DataModel<
 	ProgressDataSourceData,
@@ -55,18 +56,7 @@ export class ProgressData extends foundry.abstract.DataModel<
 			subtype: new fields.StringField(),
 			starred: new fields.BooleanField({ initial: false }),
 			hasTrack: new fields.BooleanField({ initial: true }),
-			hasClock: new fields.BooleanField({ initial: false }),
-			clockTicks: new fields.NumberField({
-				initial: 0,
-				integer: true,
-				min: 0,
-				max: 10
-			}),
-			clockMax: new fields.NumberField({
-				initial: 4,
-				integer: true,
-				choices: [4, 6, 8, 10]
-			}),
+			...ClockSchema,
 			completed: new fields.BooleanField({ initial: false }),
 			current: new ProgressTicksField(),
 			description: new fields.StringField(),

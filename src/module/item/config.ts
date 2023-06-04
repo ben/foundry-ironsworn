@@ -1,6 +1,7 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { PartialDeep } from 'dataforged'
 import { IronswornItem } from './item'
+import { AssetData } from './subtypes/asset'
 import { DelveDomainData } from './subtypes/delve-domain'
 import { DelveThemeData } from './subtypes/delve-theme'
 import { ProgressData } from './subtypes/progress'
@@ -13,7 +14,8 @@ const dataModels: Partial<
 > = {
 	'delve-theme': DelveThemeData,
 	'delve-domain': DelveDomainData,
-	progress: ProgressData
+	progress: ProgressData,
+	asset: AssetData
 }
 
 type ItemType = ConfiguredData<'Item'>['type']

@@ -1,5 +1,6 @@
 import type { IMove } from 'dataforged'
 import type { ChallengeRank } from '../constants'
+import type { AssetDataProperties, AssetDataSource } from './subtypes/asset'
 import type {
 	DelveDomainDataProperties,
 	DelveDomainDataSource
@@ -19,65 +20,6 @@ export interface ProgressBase {
 	current: number
 	completed: boolean
 }
-
-/// ////////////////////////////
-
-export interface AssetField {
-	name: string
-	value: string
-}
-
-export interface AssetAbility {
-	name?: string
-	enabled: boolean
-	description: string
-	hasClock: boolean
-	clockMax: number
-	clockTicks: number
-}
-
-interface AssetExclusiveOption {
-	name: string
-	selected: boolean
-}
-
-interface AssetCondition {
-	name: string
-	ticked: boolean
-}
-
-interface AssetDataSourceData {
-	category: string
-	description?: string
-	requirement: string
-	color: string
-	fields: AssetField[]
-	abilities: AssetAbility[]
-	track: {
-		enabled: boolean
-		name: string
-		current: number
-		max: number
-	}
-	exclusiveOptions: AssetExclusiveOption[]
-	conditions: AssetCondition[]
-}
-
-export interface AssetDataPropertiesData extends AssetDataSourceData {}
-
-export interface AssetDataSource {
-	type: 'asset'
-	data: AssetDataSourceData
-	system: AssetDataSourceData
-}
-
-export interface AssetDataProperties {
-	type: 'asset'
-	data: AssetDataPropertiesData
-	system: AssetDataPropertiesData
-}
-
-/// ////////////////////////////
 
 /// ////////////////////////////
 
@@ -101,8 +43,6 @@ export interface BondsetDataProperties {
 	data: BondsetDataPropertiesData
 	system: BondsetDataPropertiesData
 }
-
-/// ////////////////////////////
 
 /// ////////////////////////////
 
