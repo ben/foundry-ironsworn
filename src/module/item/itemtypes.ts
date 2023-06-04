@@ -13,6 +13,7 @@ import type {
 	ProgressDataProperties,
 	ProgressDataSource
 } from './subtypes/progress'
+import { SFMoveDataProperties, SFMoveDataSource } from './subtypes/sfmove'
 
 export interface ProgressBase {
 	description: string
@@ -42,23 +43,6 @@ export interface BondsetDataProperties {
 	type: 'bondset'
 	data: BondsetDataPropertiesData
 	system: BondsetDataPropertiesData
-}
-
-/// ////////////////////////////
-
-export interface SFMoveDataPropertiesData extends IMove {
-	dfid: string
-}
-
-export interface SFMoveDataSource {
-	type: 'sfmove'
-	data: SFMoveDataPropertiesData
-	system: SFMoveDataPropertiesData
-}
-export interface SFMoveDataProperties {
-	type: 'sfmove'
-	data: SFMoveDataPropertiesData
-	system: SFMoveDataPropertiesData
 }
 
 /// ////////////////////////////
