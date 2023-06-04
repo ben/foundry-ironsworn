@@ -6,6 +6,8 @@ export class AssetData extends foundry.abstract.DataModel<
 	AssetDataSourceData,
 	IronswornItem<'asset'>
 > {
+	static _enableV10Validation = true
+
 	static override defineSchema(): DataSchema<AssetDataSourceData> {
 		const fields = foundry.data.fields
 
