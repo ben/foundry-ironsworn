@@ -1,6 +1,9 @@
+import type { ChallengeRank } from '../../constants'
+import { RANK_INCREMENTS } from '../../constants'
 import { ChallengeRankField } from '../../fields/ChallengeRankField'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
+import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../itemtypes'
 
@@ -9,6 +12,44 @@ export class ProgressData extends foundry.abstract.DataModel<
 	IronswornItem<'progress'>
 > {
 	static _enableV10Validation = true
+
+	static readonly TICKS = 4
+	static readonly BOXES = 10
+
+	/** The derived progress score, which is an integer from 0 to 10 */
+	get score() {
+		return Math.min(
+			Math.floor(this.current / ProgressData.TICKS),
+			ProgressData.BOXES
+		)
+	}
+
+	async markProgress(units = 1) {
+		const increment = RANK_INCREMENTS[this.rank] * units
+		let newValue = this.current + increment
+		newValue = Math.min(newValue, 40)
+		newValue = Math.max(newValue, 0)
+		return await this.parent.update({ 'system.current': newValue })
+	}
+
+	async fulfill() {
+		let moveDfId: string | undefined
+		if (this.subtype === 'vow') {
+			const toolset = this.parent.actor?.toolset ?? 'starforged'
+			moveDfId =
+				toolset === 'starforged'
+					? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+					: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+		}
+
+		const progress = Math.floor(this.current / 4)
+		return await IronswornPrerollDialog.showForProgress(
+			this.parent.name ?? '(progress)',
+			progress,
+			this.parent.actor ?? undefined,
+			moveDfId
+		)
+	}
 
 	static override defineSchema(): DataSchema<ProgressDataSourceData> {
 		const fields = foundry.data.fields
@@ -54,6 +95,6 @@ export interface ProgressDataSource {
 }
 export interface ProgressDataProperties {
 	type: 'progress'
-	data: ProgressDataPropertiesData
-	system: ProgressDataPropertiesData
+	data: ProgressData
+	system: ProgressData
 }

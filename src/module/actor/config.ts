@@ -101,4 +101,11 @@ declare global {
 	interface DataConfig {
 		Actor: ActorDataProperties
 	}
+
+	interface FlagConfig {
+		Actor: {
+			core: { sheetClass: string }
+			'foundry-ironsworn'?: { muteBroadcast?: boolean; 'edit-mode'?: boolean }
+		}
+	}
 }

@@ -145,9 +145,10 @@ import ProgressTrack from './components/progress/progress-track.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { localizeRank } from '../helpers/util'
+import type { IronswornItem } from '../item/item'
 
-const props = defineProps<{ data: { item: any } }>()
-const $item = inject($ItemKey)
+const props = defineProps<{ data: { item: ItemSource<'progress'> } }>()
+const $item = inject<IronswornItem<'progress'>>($ItemKey)
 
 provide(
 	ItemKey,
@@ -159,10 +160,10 @@ function setRank(rank) {
 }
 
 function advance() {
-	$item?.markProgress(1)
+	$item?.system.markProgress(1)
 }
 function retreat() {
-	$item?.markProgress(-1)
+	$item?.system.markProgress(-1)
 }
 
 function subtypeChange() {
@@ -171,7 +172,7 @@ function subtypeChange() {
 
 function clockMaxChange() {
 	$item?.update({
-		system: { clockMax: parseInt(props.data.item.system.clockMax) }
+		system: { clockMax: parseInt(props.data.item.system.clockMax as any) }
 	})
 }
 

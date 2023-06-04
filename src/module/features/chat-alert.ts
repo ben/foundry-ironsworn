@@ -10,11 +10,6 @@ import type {
 import { IronswornSettings } from '../helpers/settings'
 import { localizeRank } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
-import type {
-	AssetDataPropertiesData,
-	BondsetDataPropertiesData,
-	ProgressDataPropertiesData
-} from '../item/itemtypes'
 
 type ActorTypeHandler = (IronswornActor, any) => string | undefined
 

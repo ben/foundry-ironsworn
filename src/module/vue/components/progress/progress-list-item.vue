@@ -15,13 +15,13 @@
 				size="50px"
 				:wedges="item.system.clockMax"
 				:ticked="item.system.clockTicks"
-				@click="setClock" />
+				@click="(clockTicks) => $item.update({ system: { clockTicks } })" />
 		</section>
 		<DocumentImg class="progress-img" :document="item" size="40px" />
 		<RankPips
 			class="progress-rank-pips"
 			:current="item.system.rank"
-			@change="setRank" />
+			@change="(rank) => $item.update({ system: { rank } })" />
 		<section class="progress-controls" data-tooltip-direction="UP">
 			<IronBtn
 				v-if="editMode"
@@ -49,13 +49,13 @@
 				block
 				icon="fa:caret-left"
 				:tooltip="$t('IRONSWORN.UnmarkProgress')"
-				@click="retreat" />
+				@click="$item?.system.markProgress(-1)" />
 			<IronBtn
 				v-if="item.system.hasTrack"
 				block
 				icon="fa:caret-right"
 				:tooltip="$t('IRONSWORN.MarkProgress')"
-				@click="advance" />
+				@click="$item?.system.markProgress(1)" />
 			<BtnRollprogress v-if="item.system.hasTrack" :item="item" block />
 			<IronBtn
 				v-if="showStar"
@@ -81,7 +81,7 @@
 </template>
 
 <script lang="ts" setup>
-import { capitalize, computed, inject, provide, Ref } from 'vue'
+import { capitalize, computed, inject, provide } from 'vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
@@ -91,10 +91,10 @@ import DocumentImg from '../document-img.vue'
 import ProgressTrack from './progress-track.vue'
 import FontIcon from '../icon/font-icon.vue'
 import { FontAwesome } from '../icon/icon-common'
-import type { ChallengeRank } from '../../../constants'
+import type { IronswornItem } from '../../../item/item'
 
 const props = defineProps<{
-	item: any
+	item: ItemSource<'progress'>
 	showStar?: boolean
 	/**
 	 * When true, renders the progress bar for more compact display.
@@ -105,10 +105,12 @@ const props = defineProps<{
 const actor = inject(ActorKey)
 const $actor = inject($ActorKey)
 
-const foundryItem = $actor?.items.get(props.item.id ?? props.item._id)
+const $item = $actor?.items.get(
+	props.item._id as string
+) as IronswornItem<'progress'>
 
-provide(ItemKey, computed(() => foundryItem?.toObject()) as any)
-provide($ItemKey, foundryItem)
+provide(ItemKey, computed(() => $item?.toObject()) as any)
+provide($ItemKey, $item as any)
 
 const editMode = computed(() => {
 	return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
@@ -127,7 +129,7 @@ const completedTooltip = computed(() => {
 })
 
 function edit() {
-	foundryItem?.sheet?.render(true)
+	$item?.sheet?.render(true)
 }
 function destroy() {
 	Dialog.confirm({
@@ -137,34 +139,21 @@ function destroy() {
 		content: `<p><strong>${game.i18n.localize(
 			'IRONSWORN.ConfirmDelete'
 		)}</strong></p>`,
-		yes: () => foundryItem?.delete(),
+		yes: () => $item?.delete(),
 		defaultYes: false
 	})
 }
-function setRank(rank: ChallengeRank) {
-	foundryItem?.update({ system: { rank } })
-}
-function advance() {
-	foundryItem?.markProgress(1)
-}
-function retreat() {
-	foundryItem?.markProgress(-1)
-}
-
 const $emit = defineEmits(['completed'])
 
 function toggleComplete() {
 	const completed = !props.item.system.completed
 	if (completed) $emit('completed')
-	foundryItem?.update({ system: { completed } })
+	$item?.update({ system: { completed } })
 }
 function toggleStar() {
-	foundryItem?.update({
+	$item?.update({
 		system: { starred: !props.item.system.starred }
 	})
-}
-function setClock(clockTicks: number) {
-	foundryItem?.update({ system: { clockTicks } })
 }
 </script>
 

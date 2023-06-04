@@ -1,10 +1,10 @@
 <template>
 	<IronBtn
-		:tooltip="$t('IRONSWORN.MakeAProgressRoll', { score: progressScore })"
+		:tooltip="$t('IRONSWORN.MakeAProgressRoll', { score: $item?.system.score })"
 		class="progress-roll"
 		icon="ironsworn:d10-tilt"
 		v-bind="($props, $attrs)"
-		@click="rollProgress()">
+		@click="$item?.system.fulfill()">
 		<template v-for="(_, slot) of $slots" #[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
@@ -14,22 +14,15 @@
 <script setup lang="ts">
 import type { ExtractPropTypes } from 'vue'
 import { computed, inject } from 'vue'
+import { IronswornItem } from '../../../item/item'
 import { $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends ExtractPropTypes<typeof IronBtn> {
-	item: any
+	item: ItemSource<'progress'>
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 
-const $item = inject($ItemKey, undefined)
-
-const progressScore = computed(() => {
-	return Math.floor(props.item.system.current / 4)
-})
-
-function rollProgress() {
-	$item?.fulfill()
-}
+const $item = inject<IronswornItem<'progress'> | undefined>($ItemKey, undefined)
 </script>
