@@ -13,7 +13,7 @@ import type {
 	ProgressDataProperties,
 	ProgressDataSource
 } from './subtypes/progress'
-import { SFMoveDataProperties, SFMoveDataSource } from './subtypes/sfmove'
+import type { SFMoveDataProperties, SFMoveDataSource } from './subtypes/sfmove'
 
 export interface ProgressBase {
 	description: string
