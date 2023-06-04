@@ -1,6 +1,13 @@
-import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { IMove } from 'dataforged'
 import type { ChallengeRank } from '../constants'
+import type {
+	DelveDomainDataProperties,
+	DelveDomainDataSource
+} from './subtypes/delve-domain'
+import type {
+	DelveThemeDataProperties,
+	DelveThemeDataSource
+} from './subtypes/delve-theme'
 
 interface ProgressBase {
 	description: string
@@ -113,66 +120,6 @@ export interface BondsetDataProperties {
 }
 
 /// ////////////////////////////
-
-export interface DelveSiteFeatureOrDanger<
-	T extends 'delve-site-danger' | 'delve-site-feature' =
-		| 'delve-site-danger'
-		| 'delve-site-feature'
-> extends TableResultDataConstructorData {
-	flags: {
-		'foundry-ironsworn': {
-			type: T
-			sourceId: string
-		}
-	}
-}
-
-export interface DelveSiteFeature
-	extends DelveSiteFeatureOrDanger<'delve-site-feature'> {}
-
-export interface DelveSiteDanger
-	extends DelveSiteFeatureOrDanger<'delve-site-danger'> {}
-
-export interface DelveThemeDataSourceData {
-	summary: string
-	description: string
-	features: DelveSiteFeature[]
-	dangers: DelveSiteDanger[]
-}
-export interface DelveThemeDataPropertiesData
-	extends DelveThemeDataSourceData {}
-
-export interface DelveThemeDataSource {
-	type: 'delve-theme'
-	data: DelveThemeDataSourceData
-	system: DelveThemeDataSourceData
-}
-export interface DelveThemeDataProperties {
-	type: 'delve-theme'
-	data: DelveThemeDataPropertiesData
-	system: DelveThemeDataPropertiesData
-}
-/// ////////////////////////////
-
-export interface DelveDomainDataSourceData {
-	summary: string
-	description: string
-	features: DelveSiteFeature[]
-	dangers: DelveSiteDanger[]
-}
-export interface DelveDomainDataPropertiesData
-	extends DelveDomainDataSourceData {}
-
-export interface DelveDomainDataSource {
-	type: 'delve-domain'
-	data: DelveDomainDataSourceData
-	system: DelveDomainDataSourceData
-}
-export interface DelveDomainDataProperties {
-	type: 'delve-domain'
-	data: DelveDomainDataPropertiesData
-	system: DelveDomainDataPropertiesData
-}
 
 /// ////////////////////////////
 

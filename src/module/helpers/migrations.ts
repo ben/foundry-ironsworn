@@ -64,28 +64,6 @@ async function everythingIsAProgress() {
 }
 
 /**
- * Migration 4:
- * Transform site features, and site dangers into a {@link TableResult}-like format.
- */
-async function normalizeDelveTableRows() {
-	// delve site actors are now managed by the TableResultField migration
-	// once item data models are implemented, this can be removed
-	await everyItem(async (item) => {
-		const typesToMigrate = ['delve-domain', 'delve-theme'] as Array<
-			SourceConfig['Item']['type']
-		>
-		const keysToMigrate = ['system.features', 'system.dangers']
-		if (typesToMigrate.includes(item.type)) {
-			keysToMigrate.forEach((key) => {
-				item.update({
-					[key]: normalizeTableRows(item, key, item.type)
-				})
-			})
-		}
-	})
-}
-
-/**
  * Migration 5: Convert challenge ranks from strings to numbers.
  */
 async function convertRanksToNumbers() {
@@ -122,7 +100,7 @@ const MIGRATIONS: Array<() => Promise<any>> = [
 	noop, // Migration 1: "formidible" -> "formidable"; now handled by data model
 	everythingIsAProgress,
 	noop, // Migration 3: Cast any string values that should be numbers; now handled by data model
-	normalizeDelveTableRows,
+	noop, // Migration 4: Transform delve features, dangers, and denizens into a TableResult-like format; now handled by data model
 	convertRanksToNumbers
 ]
 const NEWEST_VERSION = MIGRATIONS.length
