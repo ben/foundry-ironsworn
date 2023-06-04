@@ -1,4 +1,5 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { LegacyTableRow } from '../roll-table/roll-table-types'
 
 export type TableResultStub = Omit<
 	TableResultDataConstructorData,
@@ -31,6 +32,18 @@ export class TableResultField extends foundry.data.fields
 			// the typings infer this more strictly, but internally, this is consistent with every other flag field
 			flags: new fields.ObjectField() as any
 		})
+	}
+
+	migrateSource(
+		sourceData: unknown,
+		fieldData: TableResultDataConstructorData
+	) {
+		if (hasProperty(sourceData as object, 'low')) {
+			const legacyRowData = sourceData as LegacyTableRow
+			fieldData.range = [legacyRowData.low, legacyRowData.high]
+			fieldData.text = legacyRowData.text ?? legacyRowData.description
+		}
+		return fieldData
 	}
 }
 export interface TableResultField

@@ -65,20 +65,11 @@ async function everythingIsAProgress() {
 
 /**
  * Migration 4:
- * Transform site denizens, site features, and site dangers into a {@link TableResult}-like format.
+ * Transform site features, and site dangers into a {@link TableResult}-like format.
  */
 async function normalizeDelveTableRows() {
-	await everyActor(async (actor) => {
-		const typeToMigrate = 'site'
-		const keyToMigrate = 'system.denizens'
-		if ((actor.type as any) === 'site') {
-			const denizens = normalizeTableRows(actor, keyToMigrate, typeToMigrate)
-			await actor.update({
-				system: { denizens },
-				type: 'site'
-			})
-		}
-	})
+	// delve site actors are now managed by the TableResultField migration
+	// once item data models are implemented, this can be removed
 	await everyItem(async (item) => {
 		const typesToMigrate = ['delve-domain', 'delve-theme'] as Array<
 			SourceConfig['Item']['type']
