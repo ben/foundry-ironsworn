@@ -1,4 +1,3 @@
-import type { ChallengeRank } from '../../constants'
 import { RANK_INCREMENTS } from '../../constants'
 import { ChallengeRankField } from '../../fields/ChallengeRankField'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'

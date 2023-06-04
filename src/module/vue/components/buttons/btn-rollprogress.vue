@@ -13,8 +13,8 @@
 
 <script setup lang="ts">
 import type { ExtractPropTypes } from 'vue'
-import { computed, inject } from 'vue'
-import { IronswornItem } from '../../../item/item'
+import { inject } from 'vue'
+import type { IronswornItem } from '../../../item/item'
 import { $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
