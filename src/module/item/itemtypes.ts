@@ -1,6 +1,9 @@
-import type { IMove } from 'dataforged'
 import type { ChallengeRank } from '../constants'
 import type { AssetDataProperties, AssetDataSource } from './subtypes/asset'
+import type {
+	BondsetDataProperties,
+	BondsetDataSource
+} from './subtypes/bondset'
 import type {
 	DelveDomainDataProperties,
 	DelveDomainDataSource
@@ -23,27 +26,6 @@ export interface ProgressBase {
 }
 
 /// ////////////////////////////
-
-interface Bond {
-	name: string
-	notes: string
-}
-
-interface BondsetDataSourceData {
-	bonds: Bond[]
-}
-export interface BondsetDataPropertiesData extends BondsetDataSourceData {}
-
-export interface BondsetDataSource {
-	type: 'bondset'
-	data: BondsetDataSourceData
-	system: BondsetDataSourceData
-}
-export interface BondsetDataProperties {
-	type: 'bondset'
-	data: BondsetDataPropertiesData
-	system: BondsetDataPropertiesData
-}
 
 /// ////////////////////////////
 

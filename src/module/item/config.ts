@@ -2,22 +2,22 @@ import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-t
 import type { PartialDeep } from 'dataforged'
 import { IronswornItem } from './item'
 import { AssetData } from './subtypes/asset'
+import { BondsetData } from './subtypes/bondset'
 import { DelveDomainData } from './subtypes/delve-domain'
 import { DelveThemeData } from './subtypes/delve-theme'
 import { ProgressData } from './subtypes/progress'
 import { SFMoveData } from './subtypes/sfmove'
 
-const dataModels: Partial<
-	Record<
-		ConfiguredData<'Item'>['type'],
-		typeof foundry.abstract.DataModel<any, any>
-	>
+const dataModels: Record<
+	ConfiguredData<'Item'>['type'],
+	typeof foundry.abstract.DataModel<any, any>
 > = {
 	'delve-theme': DelveThemeData,
 	'delve-domain': DelveDomainData,
 	progress: ProgressData,
 	asset: AssetData,
-	sfmove: SFMoveData
+	sfmove: SFMoveData,
+	bondset: BondsetData
 }
 
 type ItemType = ConfiguredData<'Item'>['type']
