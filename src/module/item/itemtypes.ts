@@ -8,8 +8,12 @@ import type {
 	DelveThemeDataProperties,
 	DelveThemeDataSource
 } from './subtypes/delve-theme'
+import type {
+	ProgressDataProperties,
+	ProgressDataSource
+} from './subtypes/progress'
 
-interface ProgressBase {
+export interface ProgressBase {
 	description: string
 	rank: ChallengeRank
 	current: number
@@ -74,27 +78,6 @@ export interface AssetDataProperties {
 }
 
 /// ////////////////////////////
-
-interface ProgressDataSourceData extends ProgressBase {
-	subtype: string
-	starred: boolean
-	hasTrack: boolean
-	hasClock: boolean
-	clockTicks: number
-	clockMax: number
-}
-export interface ProgressDataPropertiesData extends ProgressDataSourceData {}
-
-export interface ProgressDataSource {
-	type: 'progress'
-	data: ProgressDataSourceData
-	system: ProgressDataSourceData
-}
-export interface ProgressDataProperties {
-	type: 'progress'
-	data: ProgressDataPropertiesData
-	system: ProgressDataPropertiesData
-}
 
 /// ////////////////////////////
 

@@ -3,6 +3,7 @@ import type { PartialDeep } from 'dataforged'
 import { IronswornItem } from './item'
 import { DelveDomainData } from './subtypes/delve-domain'
 import { DelveThemeData } from './subtypes/delve-theme'
+import { ProgressData } from './subtypes/progress'
 
 const dataModels: Partial<
 	Record<
@@ -11,7 +12,8 @@ const dataModels: Partial<
 	>
 > = {
 	'delve-theme': DelveThemeData,
-	'delve-domain': DelveDomainData
+	'delve-domain': DelveDomainData,
+	progress: ProgressData
 }
 
 type ItemType = ConfiguredData<'Item'>['type']
