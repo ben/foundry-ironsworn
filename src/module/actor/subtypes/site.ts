@@ -8,23 +8,6 @@ import type { DataSchema } from '../../fields/utils'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
 
-const denizenRanges: Array<[number, number]> = [
-	[1, 27],
-	[28, 41],
-	[42, 55],
-	[56, 69],
-	[70, 75],
-	[76, 81],
-	[82, 87],
-	[88, 93],
-	[94, 95],
-	[96, 97],
-	[98, 99],
-	[100, 100]
-]
-
-const denizenOptions = denizenRanges.map((range) => ({ range }))
-
 export class SiteData extends foundry.abstract.DataModel<
 	SiteDataSourceData,
 	IronswornActor<'site'>
@@ -136,7 +119,56 @@ export class SiteData extends foundry.abstract.DataModel<
 			description: new fields.HTMLField(),
 			notes: new fields.HTMLField(),
 			denizens: new fields.ArrayField(new TableResultField(), {
-				initial: denizenOptions
+				initial: [
+					{
+						range: [1, 27],
+						text: ''
+					},
+					{
+						range: [28, 41],
+						text: ''
+					},
+					{
+						range: [42, 55],
+						text: ''
+					},
+					{
+						range: [56, 69],
+						text: ''
+					},
+					{
+						range: [70, 75],
+						text: ''
+					},
+					{
+						range: [76, 81],
+						text: ''
+					},
+					{
+						range: [82, 87],
+						text: ''
+					},
+					{
+						range: [88, 93],
+						text: ''
+					},
+					{
+						range: [94, 95],
+						text: ''
+					},
+					{
+						range: [96, 97],
+						text: ''
+					},
+					{
+						range: [98, 99],
+						text: ''
+					},
+					{
+						range: [100, 100],
+						text: ''
+					}
+				]
 			})
 		}
 	}
