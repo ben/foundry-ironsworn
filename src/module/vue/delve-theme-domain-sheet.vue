@@ -3,17 +3,21 @@
 		<SheetHeaderBasic class="nogrow" :document="data.item" />
 
 		<input
-			v-model="typedSystem.summary"
+			v-model="data.item.system.summary"
 			class="nogrow"
 			type="text"
 			:placeholder="$t('IRONSWORN.Summary')"
 			@blur="save" />
-		<MceEditor v-model="typedSystem.description" style="flex-basis: 8rem" />
+		<MceEditor
+			v-model="data.item.system.description"
+			style="flex-basis: 8rem" />
 
 		<h3 class="nogrow">{{ $t('IRONSWORN.DELVESITE.Features') }}</h3>
 		<table>
 			<tbody>
-				<tr v-for="(feature, i) in typedSystem.features" :key="`feature${i}`">
+				<tr
+					v-for="(feature, i) in data.item.system.features"
+					:key="`feature${i}`">
 					<td>{{ formattedRange(feature.range) }}</td>
 					<td>
 						<input v-model="feature.text" type="text" @blur="save" />
@@ -25,7 +29,7 @@
 		<h3 class="nogrow">{{ $t('IRONSWORN.DELVESITE.Dangers') }}</h3>
 		<table>
 			<tbody>
-				<tr v-for="(danger, i) in typedSystem.dangers" :key="`danger${i}`">
+				<tr v-for="(danger, i) in data.item.system.dangers" :key="`danger${i}`">
 					<td>{{ formattedRange(danger.range) }}</td>
 					<td>
 						<input v-model="danger.text" type="text" @blur="save" />
@@ -38,17 +42,19 @@
 
 <script setup lang="ts">
 import { inject, provide, computed } from 'vue'
-import type { DelveThemeDataPropertiesData } from '../item/itemtypes'
+import type { IronswornItem } from '../item/item'
 import MceEditor from './components/mce-editor.vue'
 import { $ItemKey, ItemKey } from './provisions'
 import SheetHeaderBasic from './sheet-header-basic.vue'
 
-const $item = inject($ItemKey)
+const $item = inject<
+	IronswornItem<'delve-domain'> | IronswornItem<'delve-theme'>
+>($ItemKey)
 
-const props = defineProps<{ data: { item: any } }>()
+const props = defineProps<{
+	data: { item: ItemSource<'delve-domain'> | ItemSource<'delve-theme'> }
+}>()
 provide(ItemKey, computed(() => props.data.item) as any)
-
-const typedSystem = props.data.item.system as DelveThemeDataPropertiesData
 
 function formattedRange(range: [number, number]): string {
 	if (range[0] === range[1]) return `${range[0]}`
@@ -56,7 +62,7 @@ function formattedRange(range: [number, number]): string {
 }
 
 function save() {
-	const { summary, description, features, dangers } = typedSystem
+	const { summary, description, features, dangers } = props.data.item.system
 	$item?.update({
 		system: { summary, description, features, dangers }
 	})
