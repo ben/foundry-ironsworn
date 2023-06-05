@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import type { AssetField } from '../../../item/itemtypes'
+import type { AssetField } from '../../../item/subtypes/asset'
 import { ItemKey } from '../../provisions'
 
 const props = withDefaults(
