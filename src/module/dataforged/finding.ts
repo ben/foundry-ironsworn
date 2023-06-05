@@ -6,14 +6,14 @@ import { hashLookup } from './import'
 
 export async function getFoundryMoveByDfId(
 	dfid: string
-): Promise<IronswornItem | undefined> {
+): Promise<IronswornItem<'sfmove'> | undefined> {
 	const sfDocuments =
 		(await cachedDocumentsForPack('foundry-ironsworn.starforgedmoves')) ?? []
 	const isDocuments =
 		(await cachedDocumentsForPack('foundry-ironsworn.ironswornmoves')) ?? []
 	return [...sfDocuments, ...isDocuments]?.find(
 		(x) => x.id === hashLookup(dfid)
-	) as IronswornItem | undefined
+	) as IronswornItem<'sfmove'> | undefined
 }
 
 export async function getDFMoveByDfId(
