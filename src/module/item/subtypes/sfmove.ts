@@ -6,13 +6,40 @@ import type {
 	IMoveTriggerOptionProgress,
 	IOutcomeInfo
 } from 'dataforged'
-import { RerollType, MoveOutcome, RollType, RollMethod } from 'dataforged'
+import { MoveOutcome, RollType, RollMethod } from 'dataforged'
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { Display } from '../../fields/DisplayField'
 import { DisplayField } from '../../fields/DisplayField'
 import { SourceField } from '../../fields/SourceField'
 import type { DataSchema } from '../../fields/utils'
 import { enumKeys, enumValues } from '../../fields/utils'
+
+/**
+ * Enumerates which dice are to be rerolled.
+ * @public
+ */
+export enum RerollType {
+	/**
+	 * The player can pick and choose which dice to reroll.
+	 */
+	Any = 'Any',
+	/**
+	 * The player can pick and choose which challenge dice to reroll.
+	 */
+	ChallengeDice = 'Challenge dice',
+	/**
+	 * The action die is rerolled.
+	 */
+	ActionDie = 'Action die',
+	/**
+	 * The player can choose one challenge die to reroll.
+	 */
+	ChallengeDie = 'Challenge die',
+	/**
+	 * Reroll *all* dice
+	 */
+	All = 'All'
+}
 
 export class SFMoveData extends foundry.abstract
 	.DataModel<SFMoveDataSourceData> {
