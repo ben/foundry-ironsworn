@@ -1,4 +1,3 @@
-import { field } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
 import type {
 	IMove,
 	IMoveReroll,
@@ -7,13 +6,7 @@ import type {
 	IMoveTriggerOptionProgress,
 	IOutcomeInfo
 } from 'dataforged'
-import {
-	RerollType,
-	IMoveOutcomes,
-	MoveOutcome,
-	RollType,
-	RollMethod
-} from 'dataforged'
+import { RerollType, MoveOutcome, RollType, RollMethod } from 'dataforged'
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { Display } from '../../fields/DisplayField'
 import { DisplayField } from '../../fields/DisplayField'
@@ -22,10 +15,18 @@ import type { DataSchema } from '../../fields/utils'
 import { enumKeys, enumValues } from '../../fields/utils'
 
 export class SFMoveData extends foundry.abstract
-	.DataModel<SFMoveDataPropertiesData> {
+	.DataModel<SFMoveDataSourceData> {
 	static _enableV10Validation = true
 
-	static override defineSchema(): DataSchema<SFMoveDataPropertiesData> {
+	get isProgressMove(): boolean {
+		return (
+			this.Trigger.Options?.some(
+				(option) => option['Roll type'] === 'Progress roll'
+			) ?? false
+		)
+	}
+
+	static override defineSchema(): DataSchema<SFMoveDataSourceData> {
 		const fields = foundry.data.fields
 		return {
 			dfid: new DataforgedIDField(),
@@ -111,9 +112,9 @@ export class SFMoveOutcomeMatchableField extends foundry.data.fields
 		)
 	}
 }
-export interface SFMoveData extends SFMoveDataPropertiesData {}
+export interface SFMoveData extends SFMoveDataSourceData {}
 
-export interface SFMoveDataPropertiesData
+export interface SFMoveDataSourceData
 	extends Required<
 		Pick<IMove, 'Category' | 'Source' | 'Text' | 'Oracles' | 'Progress Move'>
 	> {
@@ -166,11 +167,11 @@ export class SFMoveTriggerField extends foundry.data.fields
 
 export interface SFMoveDataSource {
 	type: 'sfmove'
-	data: SFMoveDataPropertiesData
-	system: SFMoveDataPropertiesData
+	data: SFMoveDataSourceData
+	system: SFMoveDataSourceData
 }
 export interface SFMoveDataProperties {
 	type: 'sfmove'
-	data: SFMoveDataPropertiesData
-	system: SFMoveDataPropertiesData
+	data: SFMoveData
+	system: SFMoveData
 }
