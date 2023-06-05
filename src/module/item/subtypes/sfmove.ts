@@ -6,44 +6,79 @@ import type {
 	IMoveTriggerOptionProgress,
 	IOutcomeInfo
 } from 'dataforged'
-import { MoveOutcome, RollType, RollMethod } from 'dataforged'
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { Display } from '../../fields/DisplayField'
 import { DisplayField } from '../../fields/DisplayField'
 import { SourceField } from '../../fields/SourceField'
 import type { DataSchema } from '../../fields/utils'
-import { enumKeys, enumValues } from '../../fields/utils'
-
-/**
- * Enumerates which dice are to be rerolled.
- * @public
- */
-export enum RerollType {
-	/**
-	 * The player can pick and choose which dice to reroll.
-	 */
-	Any = 'Any',
-	/**
-	 * The player can pick and choose which challenge dice to reroll.
-	 */
-	ChallengeDice = 'Challenge dice',
-	/**
-	 * The action die is rerolled.
-	 */
-	ActionDie = 'Action die',
-	/**
-	 * The player can choose one challenge die to reroll.
-	 */
-	ChallengeDie = 'Challenge die',
-	/**
-	 * Reroll *all* dice
-	 */
-	All = 'All'
-}
 
 export class SFMoveData extends foundry.abstract
 	.DataModel<SFMoveDataSourceData> {
 	static _enableV10Validation = true
+
+	static readonly rerollType = [
+		/**
+		 * The player can pick and choose which dice to reroll.
+		 */
+		'Any',
+		/**
+		 * The player can pick and choose which challenge dice to reroll.
+		 */
+		'Challenge dice',
+		/**
+		 * The action die is rerolled.
+		 */
+		'Action die',
+		/**
+		 * The player can choose one challenge die to reroll.
+		 */
+		'Challenge die',
+		/**
+		 * Reroll *all* dice
+		 */
+		'All'
+	]
+
+	static readonly outcome = ['Miss', 'Weak Hit', 'Strong Hit']
+
+	static readonly rollType = ['Action roll', 'Progress roll']
+
+	static readonly rollMethod = [
+		/**
+		 * When rolling with this move trigger option, *every* stat or progress track of the `Using` key is rolled.
+		 */
+		'All',
+		/**
+		 * When rolling with this move trigger option, use the highest/best option from the `Using` key.
+		 */
+		'Highest',
+		/**
+		 * When rolling with this move trigger option, use the lowest/worst option from the `Using` key.
+		 */
+		'Lowest',
+		/**
+		 * When rolling with this move trigger option, the user picks which stat to use.
+		 *
+		 * This is the default option for triggers that offer a single stat.
+		 */
+		'Any',
+		/**
+		 * This move trigger option has no roll method of its own, and must inherit its roll from another move trigger option.
+		 *
+		 * If the parent's `Using` is defined, the inherited roll must use one of those stats/progress tracks.
+		 *
+		 * Typically appears on children of `IAlterMove`.
+		 */
+		'Inherit',
+		/**
+		 * The move trigger option results in an automatic strong hit - no roll required.
+		 */
+		'Strong Hit',
+		/**
+		 * The move trigger option results in an automatic weak hit - no roll required.
+		 */
+		'Weak Hit'
+	]
 
 	get isProgressMove(): boolean {
 		return (
@@ -94,15 +129,17 @@ export class SFMoveOutcomeField extends foundry.data.fields
 					{
 						Text: new fields.HTMLField(),
 						// @ts-expect-error
-						Dice: new fields.StringField<RerollType>({
-							choices: enumValues(RerollType)
-						})
+						Dice: new fields.StringField<ValueOf<typeof SFMoveData.rerollType>>(
+							{
+								choices: SFMoveData.rerollType
+							}
+						)
 					},
 					{ required: false }
 				),
 				// @ts-expect-error
-				'Count as': new fields.StringField<keyof typeof MoveOutcome>({
-					choices: enumKeys(MoveOutcome),
+				'Count as': new fields.StringField<ValueOf<typeof SFMoveData.outcome>>({
+					choices: SFMoveData.outcome,
 					required: false
 				})
 			},
@@ -122,15 +159,17 @@ export class SFMoveOutcomeMatchableField extends foundry.data.fields
 					{
 						Text: new fields.HTMLField(),
 						// @ts-expect-error
-						Dice: new fields.StringField<RerollType>({
-							choices: enumValues(RerollType)
-						})
+						Dice: new fields.StringField<ValueOf<typeof SFMoveData.rerollType>>(
+							{
+								choices: SFMoveData.rerollType
+							}
+						)
 					},
 					{ required: false }
 				),
 				// @ts-expect-error
-				'Count as': new fields.StringField<keyof typeof MoveOutcome>({
-					choices: enumKeys(MoveOutcome),
+				'Count as': new fields.StringField<ValueOf<typeof SFMoveData.outcome>>({
+					choices: SFMoveData.outcome,
 					required: false
 				}),
 				'With a Match': new SFMoveOutcomeField({ required: false })
@@ -170,11 +209,11 @@ export class SFMoveTriggerOptionField extends foundry.data.fields
 		const fields = foundry.data.fields
 		super({
 			'Roll type': new fields.StringField<any, any>({
-				choices: enumValues(RollType)
+				choices: SFMoveData.rollType
 			}),
 			Text: new fields.HTMLField(),
 			Method: new fields.StringField<any, any>({
-				choices: enumValues(RollMethod)
+				choices: SFMoveData.rollMethod
 			}),
 			Using: new fields.ArrayField(new fields.StringField())
 		})
