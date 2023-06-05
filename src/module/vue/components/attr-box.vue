@@ -21,7 +21,6 @@
 import type { Ref } from 'vue'
 import { inject, computed, capitalize } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
-import type { ActorSource } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 

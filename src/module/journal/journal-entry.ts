@@ -1,12 +1,32 @@
+import { OracleTable } from '../roll-table/oracle-table'
 import type { IronswornJournalPage } from './journal-entry-page'
 
 export class IronswornJournalEntry extends JournalEntry {
+	get truthTable() {
+		if (this.pageTypes.truth.length === 0) return undefined
+		const results = this.pageTypes.truth.map((truth) =>
+			truth.toTruthTableResultData()
+		)
+		return new OracleTable({
+			name: this.name ?? '',
+			formula: '1d100',
+			results,
+			flags: {
+				'foundry-ironsworn': {
+					sourceId: this.uuid,
+					type: 'truth-options',
+					subtitle: game.i18n.localize('IRONSWORN.First Start.SettingTruths')
+				}
+			}
+		})
+	}
+
 	/**
 	 * Provide an object which organizes all embedded JournalEntryPage instances by their type
 	 */
 	get pageTypes() {
 		const types = Object.fromEntries(
-			(game as any).documentTypes.JournalEntryPage.map((t) => [
+			game.documentTypes.JournalEntryPage.map((t) => [
 				t,
 				[] as Array<IronswornJournalPage<typeof t>>
 			])

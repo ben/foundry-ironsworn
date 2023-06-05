@@ -56,11 +56,11 @@ export class IronswornItem<
 		if (this.assert('delve-theme') || this.assert('delve-domain')) {
 			// initialize sourceId flags for delve site features and dangers
 			const features = this.system.features.map((feature: DelveSiteFeature) => {
-				feature.flags['foundry-ironsworn'].sourceId = this.id
+				feature.flags['foundry-ironsworn'].sourceId = this.id as string
 				return feature
 			})
 			const dangers = this.system.dangers.map((danger: DelveSiteDanger) => {
-				danger.flags['foundry-ironsworn'].sourceId = this.id
+				danger.flags['foundry-ironsworn'].sourceId = this.id as string
 				return danger
 			})
 			void this.update({ system: { features, dangers } })

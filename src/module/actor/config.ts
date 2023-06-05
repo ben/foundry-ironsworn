@@ -22,7 +22,7 @@ import type {
 import { StarshipData } from './subtypes/starship'
 import { IronswornActor } from './actor'
 
-const systemDataModels: Record<
+const dataModels: Record<
 	ConfiguredData<'Actor'>['type'],
 	typeof foundry.abstract.DataModel<any, any>
 > = {
@@ -35,19 +35,20 @@ const systemDataModels: Record<
 }
 
 type ActorType = ConfiguredData<'Actor'>['type']
-type _actorConfig = (typeof CONFIG)['Actor']
+// v11+ uses 'dataModels' instead
+type _actorConfig = Omit<(typeof CONFIG)['Actor'], 'systemDataModels'> & {
+	dataModels: (typeof CONFIG)['Actor']['systemDataModels']
+}
 
 export interface ActorConfig extends _actorConfig {
-	systemDataModels: Record<
-		ActorType,
-		typeof foundry.abstract.DataModel<any, any>
-	>
+	dataModels: Record<ActorType, typeof foundry.abstract.DataModel<any, any>>
 	typeLabels: Record<ActorType, string>
 	typeIcons: Record<ActorType, string>
 }
 
 const config: Partial<ActorConfig> = {
-	systemDataModels,
+	documentClass: IronswornActor,
+	dataModels,
 	typeLabels: {
 		character: 'IRONSWORN.ACTOR.TypeCharacter',
 		foe: 'IRONSWORN.ACTOR.TypeFoe',

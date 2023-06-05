@@ -24,7 +24,9 @@ const PACK_CACHE: Record<string, PackContents | undefined> = {}
 async function populateCacheForPack(packName: string) {
 	console.log(`Loading documents for pack ${packName}`)
 	const pack = game.packs.get(packName)
-	PACK_CACHE[packName] = await pack?.getDocuments()
+	PACK_CACHE[packName] = (await pack?.getDocuments()) as
+		| PackContents
+		| undefined
 }
 
 export async function cachedDocumentsForPack(packName: string) {

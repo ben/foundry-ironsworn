@@ -72,8 +72,10 @@ const frequencyLabel = computed(() =>
 
 function input(ev: Event) {
 	const target = ev.currentTarget as HTMLInputElement
+	const newDenizens = foundry.utils.deepClone(actor.value.system.denizens)
+	setProperty(newDenizens, `${props.idx}.text`, target.value ?? '')
 	$actor?.update({
-		[`system.denizens.${props.idx}`]: { text: target.value || '' }
+		[`system.denizens`]: newDenizens
 	})
 }
 

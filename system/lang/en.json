@@ -80,6 +80,11 @@
 				"fallback": "roll lowest of {statList}"
 			}
 		},
+		"PreRollMethod": {
+			"All": "All of {statList}",
+			"Highest": "Highest of {statList}",
+			"Lowest": "Lowest of {statList}"
+		},
 		"Momentum": "momentum",
 		"Health": "health",
 		"Spirit": "spirit",

@@ -10,12 +10,12 @@
 			:key="`truthPage${i}`"
 			ref="selectables"
 			:page="page"
-			:radio-group="df.$id"
+			:radio-group="dfid"
 			@change="valueChange" />
 
 		<CustomTruth
 			ref="customTruth"
-			:radio-group="df.$id"
+			:radio-group="dfid"
 			@change="customValueChange" />
 
 		<div
@@ -27,24 +27,26 @@
 </template>
 
 <script lang="ts" setup>
-import type { ISettingTruth, ISettingTruthOption } from 'dataforged'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalEntry } from '../../../journal/journal-entry'
-import type { TableRow } from '../../../rolls'
-import { OracleRollMessage } from '../../../rolls'
+import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
 import { enrichMarkdown } from '../../vue-plugin'
 import IronBtn from '../buttons/iron-btn.vue'
 import CustomTruth from './custom-truth.vue'
 import TruthSelectable from './truth-selectable.vue'
 
 const props = defineProps<{
-	df: ISettingTruth
 	je: () => IronswornJournalEntry
 }>()
 
-const jePages = (props.je() as any | undefined)?.pages ?? []
-const truthPages = jePages.filter((p) => p.type === 'truth')
-const nonTruthPages = jePages.filter((p) => p.type !== 'truth')
+type NonTruthPage = IronswornJournalPage<Exclude<JournalEntryPageType, 'truth'>>
+
+const truthPages = props.je()?.pageTypes.truth
+const nonTruthPages = props
+	.je()
+	?.pages.filter((p) => p.type !== 'truth') as NonTruthPage[]
+
+const dfid = props.je().getFlag('foundry-ironsworn', 'dfid') as string
 
 const state = reactive<{
 	title?: string
@@ -70,10 +72,10 @@ function selectedValue() {
       ${enrichMarkdown(state.text)}
     `
 	}
-	html += nonTruthPages.map((x) => x.text.content).join('\n\n')
+	html += nonTruthPages?.map((x) => x.text.content).join('\n\n')
 
 	return {
-		title: props.je().name,
+		title: props.je()?.name,
 		html: html.trim(),
 		valid: !!(state.title || state.html)
 	}
@@ -92,29 +94,20 @@ const customTruth = ref<typeof CustomTruth>()
 
 async function randomize() {
 	// Roll it like an oracle
-	const rows = truthPages
-		.map((p) => p.system as ISettingTruthOption)
-		.map(
-			(sys: ISettingTruthOption): TableRow => ({
-				low: sys.Floor || 0,
-				high: sys.Ceiling || 100,
-				text: sys.Result,
-				selected: false
-			})
-		)
-	const msg = OracleRollMessage.fromRows(
-		rows,
-		props.je().name ?? '',
-		game.i18n.localize('IRONSWORN.First Start.SettingTruths')
-	)
-	await msg.createOrUpdate()
+
+	const tbl = props.je().truthTable
+	if (!tbl) return
+
+	const { roll } = await tbl.draw()
+
+	if (!roll || !roll.total) return
 
 	// Find the result and activate it
-	const result = await msg.getResult()
-	const dfRow = props.df.Table.find((x) => x.Floor === result?.low)
-	if (!dfRow) throw new Error('wtf')
-	const idx = props.df.Table.indexOf(dfRow)
-	await selectables.value[idx]?.selectAndRandomize()
+
+	const selectedIndex = tbl.results.contents.findIndex((row) =>
+		row.hasInRange(roll.total as number)
+	)
+	await selectables.value[selectedIndex]?.selectAndRandomize()
 }
 
 defineExpose({ selectedValue, scrollIntoView, randomize })

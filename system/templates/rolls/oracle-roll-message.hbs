@@ -1,38 +1,44 @@
-<article class="ironsworn table-draw oracle-roll flexcol" data-oracleroll="{{json oracleRoll}}">
+<article class="ironsworn table-draw oracle-roll flexcol"
+  {{#if table.id}}data-table-id="{{ table.id }}"{{/if}}
+  {{#if sourceId}}data-table-source-uuid="{{sourceId}}"{{/if}}
+  {{#if rollTableType}}data-computed-table-type="{{rollTableType}}"{{/if}}
+>
   <table class="oracle-table oracle-table-partial">
     <caption>
       {{#if subtitle}}
       <small class="subtitle">{{subtitle}}</small>
       {{/if}}
-      <span class="ironsworn-roll-title">{{title}}</span>
+      <span class="ironsworn-roll-title">{{table.name}}</span>
     </caption>
     <tbody>
-      {{#each displayRows}}
-      <tr class="oracle-result-row" {{#if selected}}aria-selected="true"{{/if}}>
+    {{#each result.displayRows}}
+      {{#if this}}
+      <tr class="oracle-result-row" {{#if (eq @index 1)}}aria-selected="true"{{/if}}>
         <td class="oracle-table-column-roll-range">
           <span class="oracle-row-content">
-          {{#if (eq low high)}}{{low}}{{else}}{{low}}–{{high}}{{/if}}
+          {{#if (eq this.range.[0] this.range.[1])}}{{this.range.[0]}}{{else}}{{this.range.[0]}}–{{this.range.[1]}}{{/if}}
           </span>
           <button
             type="button"
             class="oracle-result-control copy-result clickable text"
-            data-result="{{text}}"
+            data-result="{{this.text}}"
             data-tooltip="{{localize 'IRONSWORN.CopyTextToClipboard'}}"
             data-tooltip-direction="LEFT"
           >
             <i class="icon fas fa-copy" role="presentational"></i>
           </button>
         </td>
-        <td class="oracle-table-column-result-text">{{{text}}}</td>
-        <td class="oracle-table-column-roll-result">
-          {{#if selected}}
+        <td class="oracle-table-column-result-text">{{{this.text}}}
+        </td>
+        <td class="oracle-table-column-roll-result" >
+          {{#if (eq @index 1)}}
           <span class="oracle-row-content">
             <i class="icon isicon-d10-tilt" role="presentational"></i>
-            {{../oracleRoll.roll.total}}
+            <span>{{{ @root.roll.total }}}</span>
           </span>
           <button type='button'
             data-iron-action="oracleReroll"
-            class="oracle-result-control clickable text"
+            class="oracle-result-control oracle-reroll clickable text"
             data-tooltip="{{localize 'IRONSWORN.Reroll'}}"
             aria-label="{{{localize 'IRONSWORN.OracleTable.ColumnLabel.DiceRollResult' dice='d100'}}}"
             >
@@ -41,8 +47,8 @@
           {{/if}}
         </td>
       </tr>
-      {{/each}}
+      {{/if}}
+    {{/each}}
     </tbody>
   </table>
-
 </article>

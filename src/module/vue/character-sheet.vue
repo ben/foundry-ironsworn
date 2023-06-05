@@ -81,7 +81,6 @@ import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
-import type { ActorSource } from '../fields/utils'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'character'> }

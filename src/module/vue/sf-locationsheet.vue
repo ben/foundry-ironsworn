@@ -142,14 +142,13 @@ import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 
 import MceEditor from './components/mce-editor.vue'
-import { OracleRollMessage } from '../rolls'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { OracleTable } from '../roll-table/oracle-table'
 import type { LocationDataProperties } from '../actor/subtypes/location'
 
 const props = defineProps<{
-	data: { actor: any }
+	data: { actor: ActorSource<'location'> }
 }>()
 
 provide(ActorKey, computed(() => props.data.actor) as any)
@@ -574,9 +573,10 @@ async function drawAndReturnResult(
 ): Promise<string | undefined> {
 	if (!table) return undefined
 
-	const orm = await OracleRollMessage.fromTableUuid(table.uuid)
-	await orm.createOrUpdate()
-	const result = await orm.getResult()
+	const {
+		results: [result]
+	} = await table.draw()
+
 	return result?.text
 }
 
@@ -643,7 +643,6 @@ async function rollOracle(oracle) {
 	if (!drawText) return
 
 	// Append to description
-	const actor = props.data.actor as LocationDataProperties
 	const parts = [
 		props.data.actor.system.description,
 		'<p><strong>',

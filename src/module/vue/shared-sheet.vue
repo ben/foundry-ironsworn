@@ -37,14 +37,15 @@ import ConditionMeter from './components/resource-meter/condition-meter.vue'
 import { IronswornSettings } from '../helpers/settings.js'
 
 const props = defineProps<{
-	data: { actor: any }
+	data: { actor: ActorSource<'shared'> }
 }>()
 provide(ActorKey, computed(() => props.data.actor) as any)
 const $actor = inject($ActorKey)
 
 const hasBonds = computed(() => {
-	const bonds = props.data.actor.items.find((x) => x.type === 'bondset')
-		?.system as BondsetDataPropertiesData | undefined
+	const bonds = (
+		props.data.actor.items.find((x) => x.type === 'bondset') as any
+	)?.system as BondsetDataPropertiesData | undefined
 	const markedBonds = bonds?.bonds?.length
 	return markedBonds && markedBonds > 0
 })

@@ -52,6 +52,70 @@ const DOMAIN_IDS = {
 	Underkeep: 'vyyrG8pPtDQ6FAgG'
 } as const
 
+export const FOE_IMAGES = {
+	Broken: 'icons/creatures/mammals/humanoid-fox-cat-archer.webp',
+	'Common Folk': 'icons/tools/hand/shovel-spade-steel-blue-brown.webp',
+	Hunter: 'icons/environment/people/archer.webp',
+	Mystic: 'icons/environment/people/cleric-orange.webp',
+	Raider: 'icons/sundries/flags/banner-flag-pirate.webp',
+	Warrior: 'icons/skills/melee/hand-grip-sword-red.webp',
+	Husk: 'icons/magic/earth/strike-body-stone-crumble.webp',
+	Zealot: 'icons/environment/people/cleric-grey.webp',
+	Elf: 'icons/creatures/magical/humanoid-horned-rider.webp',
+	Giant: 'icons/creatures/magical/humanoid-giant-forest-blue.webp',
+	Primordial: 'icons/creatures/magical/spirit-undead-horned-blue.webp',
+	Troll: 'icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp',
+	Varou: 'icons/creatures/mammals/wolf-shadow-black.webp',
+	Atanya: 'icons/magic/air/wind-weather-sailing-ship.webp',
+	Merrow: 'icons/creatures/fish/fish-man-eye-green.webp',
+	Bear: 'icons/creatures/abilities/bear-roar-bite-brown-green.webp',
+	Boar: 'icons/commodities/treasure/figurine-boar.webp',
+	Gaunt: 'icons/magic/fire/elemental-creature-horse.webp',
+	'Marsh Rat': 'icons/creatures/mammals/rodent-rat-diseaed-gray.webp',
+	Wolf: 'icons/creatures/abilities/wolf-howl-moon-purple.webp',
+	Bladewing: 'icons/creatures/magical/spirit-undead-winged-ghost.webp',
+	'Carrion Newt':
+		'icons/creatures/reptiles/chameleon-camouflage-green-brown.webp',
+	'Cave Lion': 'icons/creatures/abilities/lion-roar-yellow.webp',
+	'Deep Rat': 'icons/creatures/mammals/rodent-rat-green.webp',
+	'Nightmare Spider':
+		'icons/creatures/invertebrates/spider-mandibles-brown.webp',
+	'Shroud Crab': 'icons/consumables/meat/claw-crab-lobster-serrated-pink.webp',
+	Trog: 'icons/creatures/reptiles/lizard-iguana-green.webp',
+	Basilisk: 'icons/creatures/reptiles/snake-poised-white.webp',
+	'Elder Beast':
+		'icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp',
+	'Harrow Spider': 'icons/creatures/invertebrates/spider-web-black.webp',
+	Leviathan: 'icons/creatures/reptiles/serpent-horned-green.webp',
+	Mammoth: 'icons/commodities/leather/fur-white.webp',
+	Wyvern: 'icons/creatures/abilities/wolf-heads-swirl-purple.webp',
+	Chitter: 'icons/creatures/invertebrates/bug-sixlegged-gray.webp',
+	Gnarl: 'icons/magic/nature/tree-animated-strike.webp',
+	'Iron-Wracked Beast': 'icons/environment/wilderness/statue-hound-horned.webp',
+	Kraken: 'icons/creatures/fish/squid-kraken-orange.webp',
+	Nightspawn: 'icons/creatures/unholy/demon-horned-black-yellow.webp',
+	Rhaskar: 'icons/creatures/fish/fish-marlin-swordfight-blue.webp',
+	Wyrm: 'icons/creatures/eyes/lizard-single-slit-pink.webp',
+	Bonewalker: 'icons/magic/death/undead-skeleton-worn-blue.webp',
+	Frostbound: 'icons/creatures/magical/spirit-undead-ghost-blue.webp',
+	Chimera: 'icons/creatures/magical/spirit-earth-stone-magma-yellow.webp',
+	Haunt: 'icons/magic/death/undead-ghost-strike-white.webp',
+	Hollow: 'icons/consumables/plants/grass-leaves-green.webp',
+	'Iron Revenant': 'icons/creatures/magical/construct-golem-stone-blue.webp',
+	Sodden: 'icons/magic/death/undead-ghost-scream-teal.webp',
+	Blighthound: 'icons/commodities/treasure/figurine-dog.webp',
+	'Bog Rot': 'icons/magic/death/hand-dirt-undead-zombie.webp',
+	Bonehorde: 'icons/skills/trades/academics-study-archaeology-bones.webp',
+	Thrall: 'icons/creatures/abilities/mouth-teeth-human.webp',
+	Wight: 'icons/creatures/magical/humanoid-silhouette-green.webp',
+	'Blood Thorn': 'icons/consumables/plants/thorned-stem-vine-green.webp',
+	'Circle of Stones': 'icons/environment/wilderness/arch-stone.webp',
+	Glimmer: 'icons/magic/nature/elemental-plant-humanoid.webp',
+	Gloom: 'icons/magic/perception/silhouette-stealth-shadow.webp',
+	Maelstrom: 'icons/magic/water/vortex-water-whirlpool.webp',
+	Tempest: 'icons/magic/lightning/bolts-salvo-clouds-sky.webp'
+} as const
+
 const PACKS = [
 	'foundry-ironsworn.ironsworndelvethemes',
 	'foundry-ironsworn.ironsworndelvedomains',
@@ -64,11 +128,18 @@ interface RawFeatureOrDanger {
 	Chance: number
 	Description: string
 }
+interface RawThemeOrDomain {
+	Name: keyof typeof THEME_IDS | keyof typeof DOMAIN_IDS
+	Summary: string
+	Description: string
+	Features: RawFeatureOrDanger[]
+	Dangers: RawFeatureOrDanger[]
+}
 
 function importDelveFeaturesOrDangers(
 	rawFeaturesOrDangers: RawFeatureOrDanger[],
 	type: 'feature' | 'danger',
-	sourceId: Item['id'] = null,
+	sourceId: Item['uuid'],
 	low = 1
 ) {
 	const result: DelveSiteFeatureOrDanger[] = []
@@ -103,74 +174,86 @@ export async function importFromDatasworn() {
 	}
 
 	// Themes
+	let pack: ValueOf<typeof PACKS> = 'foundry-ironsworn.ironsworndelvethemes'
 	const themesJson = await fetch(
 		'systems/foundry-ironsworn/assets/delve-themes.json'
 	).then(async (x) => await x.json())
-	const themesToCreate = themesJson.Themes.map((rawTheme) => {
-		const _id = THEME_IDS[rawTheme.Name]
-		const themeData = {
-			_id,
-			type: 'delve-theme',
-			name: rawTheme.Name,
-			img: THEME_IMAGES[rawTheme.Name],
-			system: {
-				summary: rawTheme.Summary,
-				description: rawTheme.Description,
-				features: importDelveFeaturesOrDangers(
-					rawTheme.Features,
-					'feature',
-					_id,
-					1
-				),
-				dangers: importDelveFeaturesOrDangers(
-					rawTheme.Dangers,
-					'danger',
-					_id,
-					1
-				)
-			}
-		}
+	const themesToCreate = (themesJson.Themes as RawThemeOrDomain[]).map(
+		(rawTheme) => {
+			const _id = THEME_IDS[rawTheme.Name as keyof typeof THEME_IDS]
+			const uuid = `${pack}.${_id}`
 
-		return themeData
-	})
+			const themeData = {
+				_id,
+				type: 'delve-theme',
+				name: rawTheme.Name,
+				img: THEME_IMAGES[rawTheme.Name],
+				system: {
+					summary: rawTheme.Summary,
+					description: rawTheme.Description,
+					features: importDelveFeaturesOrDangers(
+						rawTheme.Features,
+						'feature',
+						uuid,
+						1
+					),
+					dangers: importDelveFeaturesOrDangers(
+						rawTheme.Dangers,
+						'danger',
+						uuid,
+						1
+					)
+				}
+			}
+
+			return themeData
+		}
+	)
+	// @ts-expect-error until v10 types are available
 	await Item.createDocuments(themesToCreate, {
-		pack: 'foundry-ironsworn.ironsworndelvethemes',
+		pack,
 		keepId: true
 	})
 
 	// Domains
+	pack = 'foundry-ironsworn.ironsworndelvedomains'
 	const domainsJson = await fetch(
 		'systems/foundry-ironsworn/assets/delve-domains.json'
 	).then(async (x) => await x.json())
-	const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
-		const _id = DOMAIN_IDS[rawDomain.Name]
-		const domainData = {
-			_id,
-			type: 'delve-domain',
-			name: rawDomain.Name,
-			img: DOMAIN_IMAGES[rawDomain.Name],
-			system: {
-				summary: rawDomain.Summary,
-				description: rawDomain.Description,
-				features: importDelveFeaturesOrDangers(
-					rawDomain.Features,
-					'feature',
-					_id,
-					21
-				),
-				dangers: importDelveFeaturesOrDangers(
-					rawDomain.Dangers,
-					'danger',
-					_id,
-					31
-				)
-			}
-		}
+	const domainsToCreate = (domainsJson.Domains as RawThemeOrDomain[]).map(
+		(rawDomain) => {
+			const _id = DOMAIN_IDS[rawDomain.Name as keyof typeof DOMAIN_IDS]
+			const uuid = `${pack}.${_id}`
 
-		return domainData
-	})
+			const domainData = {
+				_id,
+				type: 'delve-domain',
+				name: rawDomain.Name,
+				img: DOMAIN_IMAGES[rawDomain.Name],
+				system: {
+					summary: rawDomain.Summary,
+					description: rawDomain.Description,
+					features: importDelveFeaturesOrDangers(
+						rawDomain.Features,
+						'feature',
+						uuid,
+						21
+					),
+					dangers: importDelveFeaturesOrDangers(
+						rawDomain.Dangers,
+						'danger',
+						uuid,
+						31
+					)
+				}
+			}
+
+			return domainData
+		}
+	)
+	// @ts-expect-error until v10 types are available
 	await Item.createDocuments(domainsToCreate, {
-		pack: 'foundry-ironsworn.ironsworndelvedomains',
+		pack,
 		keepId: true
 	})
 

@@ -24,17 +24,16 @@
 import type { Ref } from 'vue'
 import { capitalize, computed, inject } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
-import type { ActorSource } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 
-const { propKey } = defineProps<{
+const props = defineProps<{
 	propKey: string
 }>()
 
-const isMomentum = propKey === 'momentum'
-const i18nKey = `IRONSWORN.${capitalize(propKey)}`
+const isMomentum = props.propKey === 'momentum'
+const i18nKey = `IRONSWORN.${capitalize(props.propKey)}`
 const i18nStat = game.i18n.localize(i18nKey)
 const tooltip = computed(() =>
 	isMomentum
@@ -44,11 +43,11 @@ const tooltip = computed(() =>
 
 const actor = inject(ActorKey) as unknown as Ref<ActorSource<'character'>>
 const actorSystem = computed(() => (actor?.value as any)?.system)
-const value = computed(() => actorSystem?.value?.[propKey])
+const value = computed(() => actorSystem?.value?.[props.propKey])
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 function increment(delta: number) {
-	$actor?.update({ system: { [propKey]: value.value + delta } })
+	$actor?.update({ system: { [props.propKey]: value.value + delta } })
 }
 
 const burnMomentumTooltip = computed(() =>
@@ -60,7 +59,11 @@ const burnMomentumTooltip = computed(() =>
 
 function click() {
 	if (isMomentum) return
-	IronswornPrerollDialog.showForStat(i18nStat, $actor?.system[propKey], $actor)
+	IronswornPrerollDialog.showForStat(
+		i18nStat,
+		$actor?.system[props.propKey],
+		$actor
+	)
 }
 </script>
 
