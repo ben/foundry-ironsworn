@@ -2,7 +2,7 @@
 	<div class="flexcol nogrow" style="margin-top: 1em">
 		<CollapseTransition group tag="div" class="nogrow">
 			<div
-				v-for="(ability, i) in item.system.abilities"
+				v-for="(ability, i) in abilities"
 				:key="`ability${i}`"
 				class="flexcol nogrow">
 				<textarea
@@ -36,7 +36,7 @@
 							icon="fa:trash"
 							block
 							nogrow
-							:class="{ disabled: item.system.abilities.length < 2 }"
+							:class="{ disabled: abilities.length < 2 }"
 							@click="deleteAbility(i)" />
 					</div>
 				</div>
@@ -54,30 +54,30 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { computed, inject, onUnmounted } from 'vue'
-import type { AssetDataPropertiesData } from '../../../item/itemtypes'
+import { computed, inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 import IronBtn from 'component:buttons/iron-btn.vue'
+import type { IronswornItem } from '../../../item/item'
 
-const item = inject(ItemKey) as Ref
-const $item = inject($ItemKey)
+const item = inject<Ref<ItemSource<'asset'>>>(ItemKey)
+const $item = inject<IronswornItem<'asset'>>($ItemKey)
 
 const editMode = computed(
-	() => item.value?.flags['foundry-ironsworn']?.['edit-mode']
+	() => item?.value.flags['foundry-ironsworn']?.['edit-mode']
+)
+
+const abilities = computed(() =>
+	Object.values(item?.value.system.abilities ?? [])
 )
 
 function deleteAbility(idx: number) {
-	const data = item.value?.data as AssetDataPropertiesData
-	const abilities = Object.values(data.abilities)
-	abilities.splice(idx, 1)
+	abilities.value.splice(idx, 1)
 	$item?.update({ system: { abilities } })
 }
 
 function addAbility() {
-	const data = item.value?.data as AssetDataPropertiesData
-	const abilities = Object.values(data.abilities)
-	abilities.push({
+	abilities.value.push({
 		description: '',
 		enabled: false,
 		hasClock: false,
@@ -87,34 +87,20 @@ function addAbility() {
 	$item?.update({ system: { abilities } })
 }
 
-function markAbility(idx) {
-	const data = item.value?.data as AssetDataPropertiesData
-	const abilities = Object.values(data.abilities)
-	abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
-	$item?.update({ system: { abilities } })
-}
-
-function enableClock(idx) {
-	const data = item.value?.data as AssetDataPropertiesData
-	const abilities = Object.values(data.abilities)
-	abilities[idx] = { ...abilities[idx], hasClock: !abilities[idx].hasClock }
+function enableClock(idx: number) {
+	abilities.value[idx] = {
+		...abilities[idx],
+		hasClock: !abilities[idx].hasClock
+	}
 	$item?.update({ system: { abilities } })
 }
 
 function clockMaxChange(idx: number) {
-	const abilities = Object.values(item.value?.data.abilities) as any[]
-	abilities[idx].clockMax = parseInt(abilities[idx].clockMax)
-	$item?.update({ system: { abilities } })
-}
-
-function setClock(abilityIdx: number, clockTicks: number) {
-	const abilities = Object.values(item.value?.data.abilities) as any[]
-	abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
+	abilities.value[idx].clockMax = parseInt(abilities[idx].clockMax)
 	$item?.update({ system: { abilities } })
 }
 
 function save() {
-	const { abilities } = item.value?.data
 	$item?.update({ system: { abilities } })
 }
 </script>
