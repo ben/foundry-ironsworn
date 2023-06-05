@@ -1,7 +1,6 @@
 import type { IMove, IMoveCategory } from 'dataforged'
 import { ISMoveCategories, SFMoveCategories } from '../dataforged/data'
 import type { IronswornItem } from '../item/item'
-import type { SFMoveDataPropertiesData } from '../item/config'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface MoveCategory {
@@ -14,7 +13,7 @@ export interface MoveCategory {
 export interface Move {
 	color: string | null
 	displayName: string
-	moveItem: () => IronswornItem
+	moveItem: () => IronswornItem<'sfmove'>
 	dataforgedMove?: IMove
 }
 
@@ -31,7 +30,9 @@ async function createMoveTree(
 
 	// Construct the base tree
 	for (const category of categories) {
-		ret.push(walkCategory(category, compendiumMoves as IronswornItem[]))
+		ret.push(
+			walkCategory(category, compendiumMoves as Array<IronswornItem<'sfmove'>>)
+		)
 	}
 
 	// Add custom moves from well-known folder
@@ -85,7 +86,7 @@ enum MoveCategoryColor {
 
 function walkCategory(
 	category: IMoveCategory,
-	compendiumMoves: IronswornItem[]
+	compendiumMoves: Array<IronswornItem<'sfmove'>>
 ): MoveCategory {
 	const newCategory: MoveCategory = {
 		// FIXME: revert to pulling directly from DF when it's fixed in 2.0
@@ -96,9 +97,7 @@ function walkCategory(
 	}
 
 	for (const move of category.Moves) {
-		const moveItem = compendiumMoves?.find(
-			(x) => (x.system as SFMoveDataPropertiesData).dfid === move.$id
-		)
+		const moveItem = compendiumMoves?.find((x) => x.system.dfid === move.$id)
 		if (moveItem != null) {
 			newCategory.moves.push({
 				color: category.Display.Color ?? null,
@@ -130,7 +129,7 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
 
 	const customMoves = [] as Move[]
 	for (const moveItem of folder.contents) {
-		if (moveItem.documentName !== 'Item' || moveItem.type !== 'sfmove') continue
+		if (moveItem.documentName !== 'Item' || !moveItem.assert('sfmove')) continue
 		customMoves.push({
 			color,
 			displayName: moveItem.name ?? '(move)',

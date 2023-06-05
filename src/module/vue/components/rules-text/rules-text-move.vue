@@ -26,15 +26,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { Move } from '../../../features/custommoves.js'
-import type { SFMoveDataPropertiesData } from '../../../item/itemtypes.js'
 
 import RulesText from './rules-text.vue'
 
 const props = defineProps<{ move: Move }>()
 const content = computed(() => {
 	const moveItem = props.move.moveItem()
-	const sys = moveItem.system as SFMoveDataPropertiesData
-	return sys.Text
+	return moveItem.system.Text
 })
 
 const hasOracles = computed(

@@ -42,7 +42,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { IronswornSettings } from '../../../helpers/settings'
-import type { AssetAbility } from '../../../item/itemtypes'
+import type { AssetAbility } from '../../../item/subtypes/asset'
 import Clock from '../clock.vue'
 import FontIcon from '../icon/font-icon.vue'
 import IronCheckbox from '../input/iron-checkbox.vue'

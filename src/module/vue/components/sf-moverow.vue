@@ -70,7 +70,6 @@ import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
-import type { SFMoveDataPropertiesData } from '../../item/itemtypes'
 import { uniq } from 'lodash-es'
 import { OracleTable } from '../../roll-table/oracle-table'
 
@@ -110,13 +109,10 @@ const props = withDefaults(
 	}
 )
 
-const $item = computed(() => props.move.moveItem() as IronswornItem)
-const $itemSystem = computed(
-	() => $item.value?.system as SFMoveDataPropertiesData
-)
+const $item = computed(() => props.move.moveItem())
 
 provide(ItemKey, computed(() => $item.value.toObject()) as any)
-provide($ItemKey, $item.value)
+provide($ItemKey, $item.value as any)
 
 const data = reactive({
 	oracles: [] as IOracleTreeNode[]
@@ -143,14 +139,13 @@ const preventOracle = computed(() => {
 })
 
 const toggleTooltip = computed(() =>
-	// @ts-expect-error
 	enrichMarkdown($item.value.system.Trigger?.Text)
 )
 
 const moveId = computed(() => props.move.moveItem().id)
 
 const oracleIds = uniq([
-	...($itemSystem.value?.Oracles ?? []),
+	...($item?.value.system.Oracles ?? []),
 	...(props.move.dataforgedMove?.Oracles ?? [])
 ])
 Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(

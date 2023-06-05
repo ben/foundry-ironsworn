@@ -1,16 +1,25 @@
+import { field } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
 import type {
 	IMove,
+	IMoveReroll,
 	IMoveTrigger,
 	IMoveTriggerOptionAction,
-	IMoveTriggerOptionProgress
+	IMoveTriggerOptionProgress,
+	IOutcomeInfo
 } from 'dataforged'
-import { RollType, RollMethod } from 'dataforged'
+import {
+	RerollType,
+	IMoveOutcomes,
+	MoveOutcome,
+	RollType,
+	RollMethod
+} from 'dataforged'
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { Display } from '../../fields/DisplayField'
 import { DisplayField } from '../../fields/DisplayField'
 import { SourceField } from '../../fields/SourceField'
 import type { DataSchema } from '../../fields/utils'
-import { enumValues } from '../../fields/utils'
+import { enumKeys, enumValues } from '../../fields/utils'
 
 export class SFMoveData extends foundry.abstract
 	.DataModel<SFMoveDataPropertiesData> {
@@ -26,11 +35,82 @@ export class SFMoveData extends foundry.abstract
 			Display: new DisplayField(),
 			Text: new fields.HTMLField(),
 			Oracles: new fields.ArrayField(new DataforgedIDField()),
-			Trigger: new SFMoveTriggerField()
+			Trigger: new SFMoveTriggerField(),
+			// @ts-expect-error
+			Outcomes: new fields.SchemaField(
+				{
+					'Strong Hit': new SFMoveOutcomeMatchableField(),
+					'Weak Hit': new SFMoveOutcomeField(),
+					Miss: new SFMoveOutcomeMatchableField()
+				},
+				{ required: false }
+			)
 		}
 	}
 }
 
+export interface SFMoveOutcome
+	extends Omit<IOutcomeInfo, 'With a Match' | '$id'> {}
+export interface SFMoveOutcomeMatchable extends SFMoveOutcome {
+	'With a Match'?: SFMoveOutcome
+}
+
+export class SFMoveOutcomeField extends foundry.data.fields
+	.SchemaField<SFMoveOutcome> {
+	constructor(options = {}) {
+		const fields = foundry.data.fields
+		super(
+			{
+				Text: new fields.HTMLField(),
+				Reroll: new fields.SchemaField<IMoveReroll>(
+					{
+						Text: new fields.HTMLField(),
+						// @ts-expect-error
+						Dice: new fields.StringField<RerollType>({
+							choices: enumValues(RerollType)
+						})
+					},
+					{ required: false }
+				),
+				// @ts-expect-error
+				'Count as': new fields.StringField<keyof typeof MoveOutcome>({
+					choices: enumKeys(MoveOutcome),
+					required: false
+				})
+			},
+			options
+		)
+	}
+}
+
+export class SFMoveOutcomeMatchableField extends foundry.data.fields
+	.SchemaField<SFMoveOutcomeMatchable> {
+	constructor(options = {}) {
+		const fields = foundry.data.fields
+		super(
+			{
+				Text: new fields.HTMLField(),
+				Reroll: new fields.SchemaField<IMoveReroll>(
+					{
+						Text: new fields.HTMLField(),
+						// @ts-expect-error
+						Dice: new fields.StringField<RerollType>({
+							choices: enumValues(RerollType)
+						})
+					},
+					{ required: false }
+				),
+				// @ts-expect-error
+				'Count as': new fields.StringField<keyof typeof MoveOutcome>({
+					choices: enumKeys(MoveOutcome),
+					required: false
+				}),
+				'With a Match': new SFMoveOutcomeField({ required: false })
+			},
+			options
+		)
+	}
+}
 export interface SFMoveData extends SFMoveDataPropertiesData {}
 
 export interface SFMoveDataPropertiesData
@@ -40,9 +120,14 @@ export interface SFMoveDataPropertiesData
 	dfid: string
 	Trigger: SFMoveTrigger
 	Display: Display
+	Outcomes?: {
+		'Strong Hit': SFMoveOutcomeMatchable
+		'Weak Hit': SFMoveOutcome
+		Miss: SFMoveOutcomeMatchable
+	}
 }
 
-interface SFMoveTrigger extends Pick<IMoveTrigger, 'Text'> {
+export interface SFMoveTrigger extends Pick<IMoveTrigger, 'Text'> {
 	Options: SFMoveTriggerOption[]
 }
 

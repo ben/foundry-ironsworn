@@ -2,18 +2,15 @@ import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-t
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornPrerollDialog } from '../rolls'
-import type {
-	BondsetDataPropertiesData,
-	ItemDataProperties,
-	SFMoveDataPropertiesData
-} from './config'
+import type { ItemDataProperties } from './config'
+import { BondsetDataPropertiesData } from './subtypes/bondset'
 
 /**
  * Extend the base Item entity
  * @extends {Item}
  */
 export class IronswornItem<
-	T extends DocumentSubTypes<'Item'> = DocumentSubTypes<'Item'>
+	T extends DocumentSubTypes<'Item'> = any
 > extends Item {
 	// Type hacks for v10 compatibility updates
 	declare system: Extract<ItemDataProperties, { type: T }>['system']
@@ -69,10 +66,9 @@ export class IronswornItem<
 	 * Move methods
 	 */
 	isProgressMove(): boolean | undefined {
-		if (this.type !== 'sfmove') return
+		if (!this.assert('sfmove')) return
 
-		const sfMoveSystem = this.system as SFMoveDataPropertiesData
-		return sfMoveSystem.Trigger.Options?.some(
+		return this.system.Trigger.Options?.some(
 			(option) => option['Roll type'] === 'Progress roll'
 		)
 	}

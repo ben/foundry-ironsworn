@@ -433,10 +433,11 @@ export class IronswornRoll {
 		return this.rawOutcome
 	}
 
-	get moveItem(): Promise<IronswornItem | undefined> | undefined {
+	get moveItem(): Promise<IronswornItem<'sfmove'> | undefined> | undefined {
 		const { moveDfId, moveId } = this.preRollOptions
-		if (moveDfId) return getFoundryMoveByDfId(moveDfId)
-		if (moveId) return Promise.resolve(game.items?.get(moveId))
+		if (moveDfId != null) return getFoundryMoveByDfId(moveDfId)
+		if (moveId != null)
+			return Promise.resolve(game.items?.get(moveId) as IronswornItem<'sfmove'>)
 		return undefined
 	}
 
