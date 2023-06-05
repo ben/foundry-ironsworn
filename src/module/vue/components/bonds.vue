@@ -13,12 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ActorDataBaseSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
-import { inject, computed, Ref } from 'vue'
-import type {
-	BondsetDataPropertiesData,
-	BondsetDataSource
-} from '../../item/itemtypes.js'
+import { inject, computed } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 import ProgressTrack from './progress/progress-track.vue'
@@ -31,14 +26,11 @@ const $actor = inject($ActorKey)
 const bonds = computed(() => {
 	return actor?.value?.items.find(
 		(x) => x.type === 'bondset'
-	) as unknown as ActorDataBaseSource & BondsetDataSource
+	) as ItemSource<'bondset'>
 })
 const bondcount = computed(() => {
-	const sys = (bonds.value as any)?.system as
-		| BondsetDataPropertiesData
-		| undefined
-	if (!sys?.bonds) return 0
-	return Object.values(sys.bonds).length
+	if (bonds?.value?.system.bonds == null) return 0
+	return Object.values(bonds?.value?.system.bonds).length
 })
 
 function editBonds() {

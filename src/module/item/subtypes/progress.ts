@@ -4,7 +4,7 @@ import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
-import type { ProgressBase } from '../itemtypes'
+import type { ProgressBase } from '../config'
 import { ClockSchema } from './common'
 
 export class ProgressData extends foundry.abstract.DataModel<

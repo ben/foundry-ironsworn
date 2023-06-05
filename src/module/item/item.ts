@@ -6,7 +6,7 @@ import type {
 	BondsetDataPropertiesData,
 	ItemDataProperties,
 	SFMoveDataPropertiesData
-} from './itemtypes'
+} from './config'
 
 /**
  * Extend the base Item entity

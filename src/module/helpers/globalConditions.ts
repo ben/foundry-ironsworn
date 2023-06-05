@@ -1,6 +1,6 @@
 import type { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
-import type { AssetDataPropertiesData } from '../item/itemtypes'
+import type { AssetDataPropertiesData } from '../item/config'
 
 interface ActorsAndAssets {
 	actors: IronswornActor[]

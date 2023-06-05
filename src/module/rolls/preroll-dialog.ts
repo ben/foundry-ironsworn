@@ -9,7 +9,7 @@ import type { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
+import type { SFMoveDataPropertiesData } from '../item/config'
 import type {
 	PreRollOptions,
 	RollOutcome,
@@ -55,7 +55,7 @@ function rollableOptions(trigger: IMoveTrigger) {
 	)
 }
 
-export function moveHasRollableOptions(move: IronswornItem) {
+export function moveHasRollableOptions(move: IronswornItem<any>) {
 	if (move.type !== 'sfmove') return false
 	const data = move.system as SFMoveDataPropertiesData
 	const options = rollableOptions(data.Trigger)

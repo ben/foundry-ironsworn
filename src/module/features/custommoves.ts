@@ -1,7 +1,7 @@
 import type { IMove, IMoveCategory } from 'dataforged'
 import { ISMoveCategories, SFMoveCategories } from '../dataforged/data'
 import type { IronswornItem } from '../item/item'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
+import type { SFMoveDataPropertiesData } from '../item/config'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface MoveCategory {

@@ -8,7 +8,7 @@ import {
 } from 'lodash-es'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
+import type { SFMoveDataPropertiesData } from '../item/config'
 import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
