@@ -181,12 +181,12 @@ export interface SFMoveDataPropertiesData extends IMove {
 }
 
 export interface SFMoveDataSource {
-	type: 'sfmove'
+	type: 'move'
 	data: SFMoveDataPropertiesData
 	system: SFMoveDataPropertiesData
 }
 export interface SFMoveDataProperties {
-	type: 'sfmove'
+	type: 'move'
 	data: SFMoveDataPropertiesData
 	system: SFMoveDataPropertiesData
 }

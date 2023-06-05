@@ -135,7 +135,7 @@ function movesForCategories(
 			console.log(move.Name, move.$id)
 			movesToCreate.push({
 				_id: hashLookup(cleanMove.dfid),
-				type: 'sfmove',
+				type: 'move',
 				name: move.Name,
 				img: 'icons/dice/d10black.svg',
 				system: cleanMove

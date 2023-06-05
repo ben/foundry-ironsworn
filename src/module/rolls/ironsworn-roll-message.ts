@@ -260,7 +260,7 @@ export class IronswornRollMessage {
 				this.roll.postRollOptions.replacedOutcome?.source
 		}
 		const move = await this.roll.moveItem
-		if (move?.type !== 'sfmove') return ret
+		if (move?.type !== 'move') return ret
 
 		const key = DfRollOutcome[theOutcome]
 		const moveSystem = move.system as SFMoveDataPropertiesData
@@ -319,7 +319,7 @@ export class IronswornRollMessage {
 
 	private async oraclesData(): Promise<any> {
 		const move = await this.roll.moveItem
-		if (move?.type !== 'sfmove') return {}
+		if (move?.type !== 'move') return {}
 
 		const system = move.system as SFMoveDataPropertiesData
 		const dfids = system.Oracles ?? []

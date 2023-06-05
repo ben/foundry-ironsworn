@@ -153,7 +153,7 @@ Hooks.once('init', async () => {
 	})
 
 	Items.registerSheet('ironsworn', SFMoveSheet, {
-		types: ['sfmove'],
+		types: ['move'],
 		label: 'IRONSWORN.ITEM.TypeMove'
 	})
 
@@ -195,7 +195,7 @@ Hooks.once('init', async () => {
 		asset: 'IRONSWORN.ITEM.TypeAsset',
 		progress: 'IRONSWORN.ITEM.TypeProgressTrack',
 		bondset: 'IRONSWORN.ITEM.TypeBondset',
-		sfmove: 'IRONSWORN.ITEM.TypeMove',
+		move: 'IRONSWORN.ITEM.TypeMove',
 		'delve-domain': 'IRONSWORN.ITEM.TypeDelveDomain',
 		'delve-theme': 'IRONSWORN.ITEM.TypeDelveTheme'
 	})
@@ -203,7 +203,7 @@ Hooks.once('init', async () => {
 		asset: 'fa-solid fa-cards-blank',
 		progress: 'fa-solid fa-asterisk',
 		bondset: 'fa-solid fa-handshake',
-		sfmove: 'icon isicon-d10-tilt',
+		move: 'icon isicon-d10-tilt',
 		// FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
 		'delve-domain': 'fa-duotone fa-cards-blank',
 		'delve-theme': 'fa-duotone fa-cards-blank'

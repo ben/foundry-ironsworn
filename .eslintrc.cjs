@@ -22,6 +22,8 @@ module.exports = {
 	},
 	plugins: ['@typescript-eslint'],
 	rules: {
+		// LoFD, the target of most of our augmentations, uses namespaces. More generally, namespaces are necessary to augment static class members.
+		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/no-unused-vars': [1, { argsIgnorePattern: '^_' }],
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
 		'@typescript-eslint/ban-ts-comment': 'off',

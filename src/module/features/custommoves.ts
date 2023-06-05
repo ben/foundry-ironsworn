@@ -130,7 +130,7 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
 
 	const customMoves = [] as Move[]
 	for (const moveItem of folder.contents) {
-		if (moveItem.documentName !== 'Item' || moveItem.type !== 'sfmove') continue
+		if (moveItem.documentName !== 'Item' || moveItem.type !== 'move') continue
 		customMoves.push({
 			color,
 			displayName: moveItem.name ?? '(move)',
