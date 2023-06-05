@@ -1,17 +1,15 @@
 <template>
 	<RulesText
 		class="rules-text-move"
-		:source="move.dataforgedMove?.Source"
-		:content="content"
+		:source="data.system.Source"
+		:content="data.system.Text"
 		:strip-tables="hasOracles"
 		type="markdown">
 		<template #before-main>
 			<slot name="before-main">
-				<i
-					v-if="move.moveItem().isProgressMove()"
-					:class="$style.progressMoveLabel"
-					>{{ $t('IRONSWORN.ProgressMove') }}</i
-				>
+				<i v-if="isProgressMove" :class="$style.progressMoveLabel">{{
+					$t('IRONSWORN.ProgressMove')
+				}}</i>
 			</slot>
 		</template>
 		<template #after-main>
@@ -25,19 +23,13 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { Move } from '../../../features/custommoves.js'
-
 import RulesText from './rules-text.vue'
 
-const props = defineProps<{ move: Move }>()
-const content = computed(() => {
-	const moveItem = props.move.moveItem()
-	return moveItem.system.Text
-})
-
-const hasOracles = computed(
-	() => (props.move?.dataforgedMove?.Oracles?.length ?? 0) > 0
-)
+const props = defineProps<{
+	data: ItemSource<'sfmove'>
+	isProgressMove: boolean
+}>()
+const hasOracles = computed(() => (props.data.system.Oracles?.length ?? 0) > 0)
 </script>
 
 <style lang="scss" module>

@@ -61,17 +61,6 @@ export class IronswornItem<
 			}
 		)
 	}
-
-	/**
-	 * Move methods
-	 */
-	isProgressMove(): boolean | undefined {
-		if (!this.assert('sfmove')) return
-
-		return this.system.Trigger.Options?.some(
-			(option) => option['Roll type'] === 'Progress roll'
-		)
-	}
 }
 
 declare global {
