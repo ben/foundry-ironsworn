@@ -144,11 +144,15 @@ const editMode = computed(() => {
 })
 
 const theme = computed(() => {
-	return $actor?.system.theme?.toObject()
+	return props.data.actor.items.find(
+		(item) => item.type === 'delve-theme'
+	) as ItemSource<'delve-theme'>
 })
 
 const domain = computed(() => {
-	return $actor?.system.domain?.toObject()
+	return props.data.actor.items.find(
+		(item) => item.type === 'delve-domain'
+	) as ItemSource<'delve-domain'>
 })
 
 function markProgress() {
