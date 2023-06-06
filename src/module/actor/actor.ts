@@ -1,6 +1,6 @@
 import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
-import EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
+import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
 import type {
 	ActorData,
 	ActorDataConstructorData
@@ -42,27 +42,6 @@ export class IronswornActor<
 
 	moveSheet?: SFCharacterMoveSheet
 
-	// protected override async _preCreate(
-	// 	data: ActorDataConstructorData,
-	// 	options: DocumentModificationOptions,
-	// 	user: BaseUser
-	// ): Promise<void> {
-	// 	if (data.type === 'character') {
-	// 		console.log('Actor#_preCreate', data)
-	// 		// insert disabled placeholder effects for custom impacts, which are used to persist player-set labels
-	// 		const effectIDs = ['custom1', 'custom2']
-	// 		if (data.effects == null) data.effects = []
-	// 		for (const id of effectIDs) {
-	// 			const fxIdx = data.effects.findIndex((fx) => fx?._id === id)
-	// 			if (fxIdx === -1)
-	// 				data.effects.push(
-	// 					IronActiveEffect.createImpact({ id, disabled: true })
-	// 				)
-	// 		}
-	// 	}
-	// 	await super._preCreate(data, options, user)
-	// }
-
 	/**
 	 * A helper function to toggle a status effect which includes an Active Effect template
 	 * @param effectData The Active Effect data
@@ -77,14 +56,14 @@ export class IronswornActor<
 		if (effectData.id == null) return false
 
 		// Remove existing single-status effects.
-		const existing = this.effects.reduce((arr: string[], e) => {
-			if (
-				(e as IronActiveEffect).statuses.size === 1 &&
-				(e as IronActiveEffect).statuses.has(effectData.id)
-			)
-				arr.push(e.id as string)
-			return arr
-		}, [])
+		const existing = this.effects.reduce(
+			(arr: string[], e: IronActiveEffect) => {
+				if (e.statuses.size === 1 && e.statuses.has(effectData.id))
+					arr.push(e.id as string)
+				return arr
+			},
+			[]
+		)
 		const state = active ?? existing.length === 0
 		if (!state && existing.length > 0)
 			await this.deleteEmbeddedDocuments('ActiveEffect', existing)

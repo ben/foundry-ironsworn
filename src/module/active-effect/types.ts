@@ -1,11 +1,11 @@
 declare global {
 	export namespace foundry {
 		export namespace data {
-			interface ActiveEffectDataProperties
+			export interface ActiveEffectDataProperties
 				extends Required<ActiveEffectDataConstructorData> {
 				statuses: Set<string>
 			}
-			interface ActiveEffectData extends ActiveEffectDataProperties {}
+			export interface ActiveEffectData extends ActiveEffectDataProperties {}
 		}
 		export namespace documents {}
 	}
@@ -29,6 +29,7 @@ declare global {
 		 */
 		description?: string
 	}
+	export interface StatusEffect extends ActiveEffectDataConstructorData {}
 }
 
 export {}
