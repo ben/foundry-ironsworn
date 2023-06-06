@@ -37,8 +37,8 @@ import ConditionMeter from 'component:resource-meter/condition-meter.vue'
 const asset = inject(ItemKey) as Ref
 const $asset = inject($ItemKey)
 
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey, undefined)
+const $actor = inject($ActorKey, undefined)
 
 const readonly = computed(() => !actor?.value)
 
