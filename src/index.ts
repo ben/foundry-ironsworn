@@ -22,7 +22,6 @@ import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
 import * as IronColor from './module/features/ironcolor'
 import { patchZIndex } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
-import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
 import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
@@ -217,8 +216,6 @@ Hooks.once('init', async () => {
 })
 
 Hooks.once('ready', async () => {
-	await runDataMigrations()
-
 	registerDragAndDropHooks()
 	registerChatAlertHooks()
 

@@ -39,6 +39,17 @@ export class IronswornItem<
 		return IronswornItem.assert(this, subtype)
 	}
 
+	// @ts-expect-error Inheritor? I hardly even know 'er!
+	static override migrateData(data: any) {
+		// Migration 2: convert vows to progresses with the "vow" subtype
+		if (data.type === 'vow') {
+			data.system.subtype = data.type.valueOf()
+			data.type = 'progress'
+		}
+		// @ts-expect-error
+		return super.migrateData(data)
+	}
+
 	/**
 	 * Bondset methods
 	 */
@@ -77,6 +88,8 @@ export class IronswornItem<
 		)
 	}
 }
+export interface IronswornItem<T extends DocumentSubTypes<'Item'> = any>
+	extends Item {}
 
 declare global {
 	interface DocumentClassConfig {
