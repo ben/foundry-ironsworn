@@ -137,9 +137,6 @@ import { IronswornSettings } from '../../../helpers/settings'
 const asset = inject(ItemKey) as Ref
 const $asset = inject($ItemKey)
 
-const actor = inject(ActorKey, undefined) as Ref
-const $actor = inject($ActorKey, undefined)
-
 const props = withDefaults(
 	defineProps<{
 		/**
