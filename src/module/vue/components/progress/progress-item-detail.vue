@@ -6,7 +6,7 @@
 				style="margin-right: 1em"
 				@change="(rank) => $item?.update({ system: { rank } })" />
 			<h4 style="margin: 0; line-height: 22px">
-				{{ localizeRank(item?.system.rank) }}
+				{{ $item.system.localizeRank() }}
 			</h4>
 			<IronBtn
 				v-if="multipleUsers"
@@ -24,7 +24,7 @@
 				block
 				nogrow
 				icon="fa:caret-right"
-				@click="$item?.system.markProgress" />
+				@click="$item?.system.markProgress()" />
 			<BtnRollprogress block nogrow :item="item" />
 		</div>
 
@@ -49,7 +49,6 @@ import RankPips from 'component:progress/rank-pips.vue'
 import MceEditor from 'component:mce-editor.vue'
 import ProgressTrack from 'component:progress/progress-track.vue'
 import BtnRollprogress from 'component:buttons/btn-rollprogress.vue'
-import { localizeRank } from '../../../helpers/util'
 import type { IronswornItem } from '../../../item/item'
 import type { IronswornActor } from '../../../actor/actor'
 
@@ -60,7 +59,7 @@ const props = defineProps<{ item: ItemSource<'progress'> }>()
 const $item = $actor?.items.get(
 	props.item._id as string
 ) as IronswornItem<'progress'>
-provide($ItemKey, $item as IronswornItem)
+provide($ItemKey, $item)
 
 const multipleUsers = (game.users?.contents?.length ?? 0) > 1
 const whisperIcon = computed(() =>

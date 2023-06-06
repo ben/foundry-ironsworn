@@ -11,7 +11,7 @@
 				:current="data.item.system.rank"
 				@change="setRank" />
 			<h4 style="margin: 0; line-height: 22px">
-				{{ localizeRank(data.item.system.rank) }}
+				{{ $item?.system.localizeRank() }}
 			</h4>
 			<label class="checkbox nogrow">
 				<input
@@ -62,14 +62,14 @@
 							nogrow
 							:tooltip="$t('IRONSWORN.UnmarkProgress')"
 							icon="fa:caret-left"
-							@click="retreat" />
+							@click="$item?.system.markProgress(-1)" />
 						<IronBtn
 							v-if="data.item.system.hasTrack"
 							block
 							nogrow
 							:tooltip="$t('IRONSWORN.MarkProgress')"
 							icon="fa:caret-right"
-							@click="advance" />
+							@click="$item?.system.markProgress(1)" />
 					</div>
 					<!-- PROGRESS -->
 					<div class="flexrow track nogrow" style="margin-bottom: 1em">
@@ -144,7 +144,6 @@ import SheetHeaderBasic from './sheet-header-basic.vue'
 import ProgressTrack from './components/progress/progress-track.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
-import { localizeRank } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
 
 const props = defineProps<{ data: { item: ItemSource<'progress'> } }>()
@@ -157,13 +156,6 @@ provide(
 
 function setRank(rank) {
 	$item?.update({ system: { rank } })
-}
-
-function advance() {
-	$item?.system.markProgress(1)
-}
-function retreat() {
-	$item?.system.markProgress(-1)
 }
 
 function subtypeChange() {

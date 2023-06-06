@@ -13,7 +13,7 @@ import type {
  * @extends {Item}
  */
 export class IronswornItem<
-	T extends DocumentSubTypes<'Item'> = DocumentSubTypes<'Item'>
+	T extends DocumentSubTypes<'Item'> = any
 > extends Item {
 	// Type hacks for v10 compatibility updates
 	declare system: Extract<ItemDataProperties, { type: T }>['system']

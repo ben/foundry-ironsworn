@@ -12,8 +12,8 @@
 		:data-ticks="ticks"
 		:data-score="score"
 		:aria-valuenow="ticks"
-		:aria-valuemin="0"
-		:aria-valuemax="40"
+		:aria-valuemin="ProgressData.TICKS_MIN"
+		:aria-valuemax="ProgressData.TICKS_MAX"
 		:aria-valuetext="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
 		:data-tooltip="$t('IRONSWORN.PROGRESS.Current', { score, ticks })">
 		<ProgressTrackBox
@@ -21,7 +21,7 @@
 			:key="`progress-box-${i + 1}`"
 			tabindex="-1"
 			role="presentational"
-			:ticks="boxTicks ?? 0"
+			:ticks="boxTicks ?? ProgressData.TICKS_MIN"
 			:is-overflow-box="legacyOverflow" />
 	</article>
 </template>
@@ -31,6 +31,7 @@ import { computed } from 'vue'
 import { fill, clamp } from 'lodash-es'
 import type { ChallengeRank } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
+import { ProgressData } from '../../../item/subtypes/progress'
 
 const props = defineProps<{
 	/**
@@ -48,25 +49,28 @@ const props = defineProps<{
 	compactProgress?: boolean
 }>()
 
-const minBoxes = 0
-const maxBoxes = 10
-const ticksPerBox = 4
-const maxTicks = maxBoxes * ticksPerBox
-
 const score = computed(() =>
-	clamp(Math.floor(props.ticks / ticksPerBox), minBoxes, maxBoxes)
+	clamp(
+		Math.floor(props.ticks / ProgressData.TICKS_PER_BOX),
+		ProgressData.SCORE_MIN,
+		ProgressData.SCORE_MAX
+	)
 )
 
 const visibleTicks = computed(() =>
-	props.ticks > maxTicks ? props.ticks % maxTicks : props.ticks
+	props.ticks > ProgressData.TICKS_MAX
+		? props.ticks % ProgressData.TICKS_MAX
+		: props.ticks
 )
 
 const boxes = computed(() => {
-	const boxTicks = Array<number>(maxBoxes)
-	const filledBoxes = Math.floor(visibleTicks.value / ticksPerBox)
-	const ticksRemainder = visibleTicks.value % ticksPerBox
+	const boxTicks = Array<number>(ProgressData.BOXES)
+	const filledBoxes = Math.floor(
+		visibleTicks.value / ProgressData.TICKS_PER_BOX
+	)
+	const ticksRemainder = visibleTicks.value % ProgressData.TICKS_PER_BOX
 
-	fill(boxTicks, ticksPerBox, 0, filledBoxes)
+	fill(boxTicks, ProgressData.TICKS_PER_BOX, 0, filledBoxes)
 	if (ticksRemainder > 0) {
 		boxTicks[filledBoxes] = ticksRemainder
 	}
