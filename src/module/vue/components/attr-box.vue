@@ -9,7 +9,7 @@
 			<div v-if="editMode" class="clickable text" @click="decrement">
 				&minus;
 			</div>
-			<span :class="$style.value">{{ actorSys[attr] }}</span>
+			<span :class="$style.value">{{ actor.system[attr] }}</span>
 			<div v-if="editMode" class="clickable text" @click="increment">
 				&plus;
 			</div>
@@ -21,18 +21,12 @@
 import type { Ref } from 'vue'
 import { inject, computed, capitalize } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
-import type { CharacterDataPropertiesData } from '../../actor/actortypes'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 
 const props = defineProps<{ attr: string }>()
-const $actor = inject($ActorKey)
-const actor = inject(ActorKey) as Ref<
-	ReturnType<typeof IronswornActor.prototype.toObject>
->
-const actorSys = computed(
-	() => (actor.value as any)?.system as CharacterDataPropertiesData
-)
+const $actor = inject($ActorKey) as IronswornActor<'character'>
+const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 
 const classes = computed(() => ({
 	clickable: !editMode.value,
@@ -53,11 +47,11 @@ function click() {
 }
 
 function increment() {
-	const value = parseInt(actorSys.value?.[props.attr]) + 1
+	const value = parseInt(actor.value.system[props.attr]) + 1
 	$actor?.update({ system: { [props.attr]: value } })
 }
 function decrement() {
-	const value = parseInt(actorSys.value?.[props.attr]) - 1
+	const value = parseInt(actor.value.system[props.attr]) - 1
 	$actor?.update({ system: { [props.attr]: value } })
 }
 </script>

@@ -7,8 +7,7 @@ import {
 	kebabCase
 } from 'lodash-es'
 import { IronswornRoll } from '.'
-import type { IronswornActor } from '../actor/actor'
-import type { CharacterDataPropertiesData } from '../actor/actortypes'
+import { IronswornActor } from '../actor/actor'
 import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
@@ -162,13 +161,13 @@ export class IronswornRollMessage {
 	}
 
 	async burnMomentum() {
-		if (this.actor?.type !== 'character') return
-		const { momentum } = this.actor.system as CharacterDataPropertiesData
+		if (!IronswornActor.assert(this.actor, 'character')) return
+		const { momentum } = this.actor.system
 
 		const [c1, c2] = this.roll.finalChallengeDice ?? []
 		if (c1 === undefined || c2 === undefined) return
 
-		await this.actor.burnMomentum()
+		await this.actor.system.burnMomentum()
 		this.roll.postRollOptions.replacedOutcome = {
 			value: computeRollOutcome(momentum, c1.value, c2.value),
 			source: game.i18n.localize('IRONSWORN.MomentumBurnt')
@@ -291,7 +290,7 @@ export class IronswornRollMessage {
 	}
 
 	private momentumData() {
-		if (this.actor?.type !== 'character') return {}
+		if (!IronswornActor.assert(this.actor, 'character')) return {}
 
 		// Can't burn momentum on progress rolls
 		if (this.roll.preRollOptions.progress != null) return {}
@@ -302,7 +301,7 @@ export class IronswornRollMessage {
 		const [c1, c2] = this.roll.finalChallengeDice ?? []
 		if (c1 === undefined || c2 === undefined) return {}
 
-		const { momentum } = this.actor.system as CharacterDataPropertiesData
+		const { momentum } = this.actor.system
 		const rawOutcome = this.roll.rawOutcome?.value
 		const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
 

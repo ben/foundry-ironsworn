@@ -55,8 +55,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { Ref } from 'vue'
 import { computed, inject, reactive } from 'vue'
-import type { SiteDataPropertiesData } from '../../../actor/actortypes'
+import type { IronswornActor } from '../../../actor/actor'
 import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
 import { IronswornPrerollDialog } from '../../../rolls'
@@ -64,8 +65,8 @@ import { $ActorKey, ActorKey } from '../../provisions'
 
 import SfMoverow from '../sf-moverow.vue'
 
-const site = inject(ActorKey)
-const $site = inject($ActorKey)
+const site = inject(ActorKey) as Ref<ActorSource<'site'>>
+const $site = inject($ActorKey) as IronswornActor<'site'>
 
 const theme = computed(() => {
 	return site?.value?.items.find((x) => x.type === 'delve-theme')
@@ -106,13 +107,12 @@ Promise.resolve().then(async () => {
 })
 
 async function revealADanger() {
-	return (await $site?.getDangers())?.draw()
+	return (await $site?.system.getDangers())?.draw()
 }
 
 async function locateObjective() {
 	if (!$site) return
-	const siteSys = $site.system as SiteDataPropertiesData
-	const progress = Math.floor(siteSys.current / 4)
+	const progress = Math.floor($site.system.current / 4)
 
 	IronswornPrerollDialog.showForOfficialMove(
 		'Ironsworn/Moves/Delve/Locate_Your_Objective',

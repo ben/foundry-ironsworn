@@ -36,7 +36,6 @@
 
 <script setup lang="ts">
 import { provide, computed } from 'vue'
-import type { IronswornActor } from '../actor/actor'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ImpactCheckbox from 'component:impact/impact-checkbox.vue'
 import SheetBasic from './sheet-basic.vue'
@@ -49,7 +48,7 @@ import TabPanel from './components/tabs/tab-panel.vue'
 import PlayerAssets from './components/asset/player-assets.vue'
 
 const props = defineProps<{
-	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
+	data: { actor: ActorSource<'starship'> }
 }>()
 
 provide(ActorKey, computed(() => props.data.actor) as any)

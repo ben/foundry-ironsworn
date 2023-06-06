@@ -2,11 +2,11 @@ import type { ChatMessageDataConstructorData } from '@league-of-foundry-develope
 import { capitalize, compact, get } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import type {
-	CharacterDataPropertiesData,
-	SharedDataPropertiesData,
-	SiteDataPropertiesData,
-	StarshipDataPropertiesData
-} from '../actor/actortypes'
+	CharacterData,
+	SharedData,
+	SiteData,
+	StarshipData
+} from '../actor/config'
 import { IronswornSettings } from '../helpers/settings'
 import { localizeRank } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
@@ -92,7 +92,7 @@ export function registerChatAlertHooks() {
 
 const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 	character: (actor: IronswornActor, data) => {
-		const characterData = actor.system as CharacterDataPropertiesData
+		const characterData = actor.system as CharacterData
 		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
 
 		// Ironsworn XP
@@ -192,7 +192,7 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 	},
 
 	shared: (actor: IronswornActor, data) => {
-		const sharedData = actor.system as SharedDataPropertiesData
+		const sharedData = actor.system as SharedData
 
 		if (data.system?.supply !== undefined) {
 			const newValue = data.system.supply
@@ -210,7 +210,7 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 	},
 
 	starship: (actor: IronswornActor, data) => {
-		const starshipData = actor.system as StarshipDataPropertiesData
+		const starshipData = actor.system as StarshipData
 		const impacts = ['cursed', 'battered']
 		for (const impact of impacts) {
 			const newValue = get(data.system?.debility, impact)
@@ -232,7 +232,7 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 	},
 
 	site: (actor: IronswornActor, data) => {
-		const siteData = actor.system as SiteDataPropertiesData
+		const siteData = actor.system as SiteData
 
 		if (data.system?.rank) {
 			return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
@@ -252,8 +252,8 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 
 type ItemTypeHandler = (IronswornItem, any) => string | undefined
 const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
-	progress: (item: IronswornItem, data) => {
-		const progressData = item.system as ProgressDataPropertiesData
+	progress: (item: IronswornItem<'progress'>, data) => {
+		const progressData = item.system
 		if (data.system?.rank) {
 			return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
 				old: localizeRank(progressData.rank),
@@ -310,8 +310,8 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 	},
 	vow: (item, data) => ITEM_TYPE_HANDLERS.progress(item, data),
 
-	asset: (item: IronswornItem, data) => {
-		const assetData = item.system as AssetDataPropertiesData
+	asset: (item: IronswornItem<'asset'>, data) => {
+		const assetData = item.system
 		if (data.system?.abilities !== undefined) {
 			const oldEnables = assetData.abilities.map((x) => x.enabled)
 			const newEnables = data.system.abilities.map((x) => x.enabled)
@@ -368,8 +368,8 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 		return undefined
 	},
 
-	bondset: (item: IronswornItem, data) => {
-		const bondsetData = item.system as BondsetDataPropertiesData
+	bondset: (item: IronswornItem<'bondset'>, data) => {
+		const bondsetData = item.system
 		if (data.system?.bonds !== undefined) {
 			const oldLen = Object.values(bondsetData.bonds).length
 			const newLen = Object.values(data.system.bonds).length

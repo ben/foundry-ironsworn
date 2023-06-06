@@ -356,13 +356,13 @@ export class OracleTable extends RollTable {
 		let table: OracleTable | undefined
 		switch (type) {
 			case 'delve-site-dangers':
-				table = await (source as IronswornActor).getDangers()
+				table = await (source as IronswornActor<'site'>).system.getDangers()
 				break
 			case 'delve-site-denizens':
-				table = (source as IronswornActor).denizens
+				table = (source as IronswornActor<'site'>).system.denizenTable
 				break
 			case 'delve-site-features':
-				table = (source as IronswornActor).features
+				table = (source as IronswornActor<'site'>).system.features
 				break
 			case 'truth-options':
 				table = (source as IronswornJournalEntry).truthTable
@@ -410,7 +410,7 @@ export class OracleTable extends RollTable {
 		}) as ConfiguredFlags<'ChatMessage'>
 
 		// trigger sound + 3d dice manually because updating the message won't
-		if (game.dice3d) void game.dice3d.showForRoll(roll, game.user, true)
+		if (game.dice3d != null) void game.dice3d.showForRoll(roll, game.user, true)
 		else void AudioHelper.play({ src: CONFIG.sounds.dice })
 
 		return await msg.update({
