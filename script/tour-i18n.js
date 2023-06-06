@@ -29,7 +29,7 @@ async function doit() {
 			// Update the entries
 			for (const entry of entries) {
 				const description = marked
-					.parse(entry.content)
+					.parse(entry.content, { gfm: true, headerIds: false, mangle: false })
 					.replace(/<\/p>\n<p>/g, '</p><p>') // remove extra newlines
 					.trim()
 				set(i18njson, `${rootKey}.${entry.key}Title`, entry.title)
@@ -39,7 +39,7 @@ async function doit() {
 			// Write the i18n json file
 			await fs.writeFile(
 				`./system/lang/${lang}.json`,
-				JSON.stringify(i18njson, null, 2)
+				JSON.stringify(i18njson, null, '\t') + '\n'
 			)
 		}
 	}

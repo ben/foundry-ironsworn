@@ -211,7 +211,11 @@ export class IronswornHandlebarsHelpers {
 
 	static enrichMarkdown(md?: string) {
 		if (!md) return ''
-		const html = marked.parse(md, { gfm: true })
+		const html = marked.parse(md, {
+			gfm: true,
+			mangle: false,
+			headerIds: false
+		})
 		return IronswornHandlebarsHelpers.enrichHtml(html)
 	}
 
