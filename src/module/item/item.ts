@@ -1,15 +1,10 @@
-import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
-import { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { DocumentSubTypes } from '../../types/helperTypes'
+import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { DocumentSubTypes } from '../../types/helperTypes'
 import { RANK_INCREMENTS } from '../constants'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornPrerollDialog } from '../rolls'
 import type {
 	BondsetDataPropertiesData,
-	DelveDomainDataPropertiesData,
-	DelveSiteDanger,
-	DelveSiteFeature,
-	DelveThemeDataPropertiesData,
 	ItemDataProperties,
 	ProgressDataPropertiesData,
 	SFMoveDataPropertiesData
@@ -44,27 +39,6 @@ export class IronswornItem<
 		subtype: T
 	): this is IronswornItem<T> {
 		return IronswornItem.assert(this, subtype)
-	}
-
-	protected override _onCreate(
-		data: this['data']['_source'],
-		options: DocumentModificationOptions,
-		userId: string
-	): void {
-		super._onCreate(data, options, userId)
-
-		if (this.assert('delve-theme') || this.assert('delve-domain')) {
-			// initialize sourceId flags for delve site features and dangers
-			const features = this.system.features.map((feature: DelveSiteFeature) => {
-				feature.flags['foundry-ironsworn'].sourceId = this.id as string
-				return feature
-			})
-			const dangers = this.system.dangers.map((danger: DelveSiteDanger) => {
-				danger.flags['foundry-ironsworn'].sourceId = this.id as string
-				return danger
-			})
-			void this.update({ system: { features, dangers } })
-		}
 	}
 
 	/**
