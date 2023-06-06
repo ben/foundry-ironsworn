@@ -13,7 +13,7 @@ import type {
  * @extends {Item}
  */
 export class IronswornItem<
-	T extends DocumentSubTypes<'Item'> = DocumentSubTypes<'Item'>
+	T extends DocumentSubTypes<'Item'> = any
 > extends Item {
 	// Type hacks for v10 compatibility updates
 	declare system: Extract<ItemDataProperties, { type: T }>['system']
@@ -37,6 +37,17 @@ export class IronswornItem<
 		subtype: T
 	): this is IronswornItem<T> {
 		return IronswornItem.assert(this, subtype)
+	}
+
+	// @ts-expect-error Inheritor? I hardly even know 'er!
+	static override migrateData(data: any) {
+		// Migration 2: convert vows to progresses with the "vow" subtype
+		if (data.type === 'vow') {
+			data.system.subtype = data.type.valueOf()
+			data.type = 'progress'
+		}
+		// @ts-expect-error
+		return super.migrateData(data)
 	}
 
 	/**
@@ -77,6 +88,8 @@ export class IronswornItem<
 		)
 	}
 }
+export interface IronswornItem<T extends DocumentSubTypes<'Item'> = any>
+	extends Item {}
 
 declare global {
 	interface DocumentClassConfig {
