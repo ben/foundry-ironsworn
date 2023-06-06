@@ -102,7 +102,7 @@
 					:class="{ [$style.featureBtn]: true }"
 					icon="ironsworn:d10-tilt"
 					:text="$t('IRONSWORN.DELVESITE.Feature')"
-					@click="$actor?.features?.draw()" />
+					@click="$actor?.system.features?.draw()" />
 			</div>
 			<MceEditor
 				v-model="data.actor.system.description"
@@ -125,26 +125,34 @@ import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import { localizeRank } from '../helpers/util'
+import type { IronswornActor } from '../actor/actor'
 
 const props = defineProps<{
-	data: { actor: any }
+	data: { actor: ActorSource<'site'> }
 }>()
 
-provide(ActorKey, computed(() => props.data.actor) as any)
+provide(
+	ActorKey,
+	computed(() => props.data.actor)
+)
 provide('toolset', 'ironsworn')
 
-const $actor = inject($ActorKey)
+const $actor = inject($ActorKey) as IronswornActor<'site'>
 
 const editMode = computed(() => {
-	return (props.data.actor.flags['foundry-ironsworn'] as any)?.['edit-mode']
+	return props.data.actor.flags['foundry-ironsworn']?.['edit-mode']
 })
 
 const theme = computed(() => {
-	return $actor?.theme?.toObject()
+	return props.data.actor.items.find(
+		(item) => item.type === 'delve-theme'
+	) as ItemSource<'delve-theme'>
 })
 
 const domain = computed(() => {
-	return $actor?.domain?.toObject()
+	return props.data.actor.items.find(
+		(item) => item.type === 'delve-domain'
+	) as ItemSource<'delve-domain'>
 })
 
 function setRank(rank) {
@@ -163,19 +171,18 @@ function markProgress() {
 
 const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
-	const denizens = $actor?.denizens
-	if (!denizens) return
+	if ($actor?.system.denizens == null) return
 
-	const { roll } = await denizens.draw()
+	const { roll } = await $actor.system.denizenTable.draw()
 
 	if (!roll || !roll.total) return
 
 	// If denizen slot is empty, set focus and add a class
 
-	const idx = denizens.results.contents.findIndex((x) =>
+	const idx = $actor.system.denizenTable.results.contents.findIndex((x) =>
 		x.hasInRange(roll.total as number)
 	)
-	const denizen = denizens.results.contents[idx]
+	const denizen = $actor.system.denizenTable.results.contents[idx]
 	if (!denizen?.text) {
 		await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
 		await nextTick()

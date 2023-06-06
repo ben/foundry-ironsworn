@@ -377,13 +377,13 @@ export class OracleTable extends RollTable {
 		let table: OracleTable | undefined
 		switch (type) {
 			case 'delve-site-dangers':
-				table = await (source as IronswornActor).getDangers()
+				table = await (source as IronswornActor<'site'>).system.getDangers()
 				break
 			case 'delve-site-denizens':
-				table = (source as IronswornActor).denizens
+				table = (source as IronswornActor<'site'>).system.denizenTable
 				break
 			case 'delve-site-features':
-				table = (source as IronswornActor).features
+				table = (source as IronswornActor<'site'>).system.features
 				break
 			case 'truth-options':
 				table = (source as IronswornJournalEntry).truthTable

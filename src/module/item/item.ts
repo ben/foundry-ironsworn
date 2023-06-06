@@ -1,4 +1,6 @@
 import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import { DocumentSubTypes } from '../../types/helperTypes'
 import { RANK_INCREMENTS } from '../constants'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornPrerollDialog } from '../rolls'
@@ -8,6 +10,7 @@ import type {
 	DelveSiteDanger,
 	DelveSiteFeature,
 	DelveThemeDataPropertiesData,
+	ItemDataProperties,
 	ProgressDataPropertiesData,
 	SFMoveDataPropertiesData
 } from './itemtypes'
@@ -16,10 +19,32 @@ import type {
  * Extend the base Item entity
  * @extends {Item}
  */
-export class IronswornItem extends Item {
+export class IronswornItem<
+	T extends DocumentSubTypes<'Item'> = DocumentSubTypes<'Item'>
+> extends Item {
 	// Type hacks for v10 compatibility updates
-	declare system: typeof this.data.data
+	declare system: Extract<ItemDataProperties, { type: T }>['system']
+	// @ts-expect-error
+	declare type: T
+
 	declare sort: typeof this.data.sort
+
+	/**
+	 * Typeguard: is the provided value an IronswornItem instance of the specified type?
+	 */
+	static assert<T extends ConfiguredData<'Item'>['type']>(
+		item: unknown,
+		subtype: T
+	): item is IronswornItem<T> {
+		return item instanceof IronswornItem && item.type === subtype
+	}
+
+	/** Typeguard: is this an instance of the specified type? */
+	assert<T extends ConfiguredData<'Item'>['type']>(
+		subtype: T
+	): this is IronswornItem<T> {
+		return IronswornItem.assert(this, subtype)
+	}
 
 	protected override _onCreate(
 		data: this['data']['_source'],
@@ -28,30 +53,17 @@ export class IronswornItem extends Item {
 	): void {
 		super._onCreate(data, options, userId)
 
-		switch (this.type) {
-			case 'delve-theme':
-			case 'delve-domain':
-				{
-					// initialize sourceId flags for delve site features and dangers
-					this.system = this.system as
-						| DelveDomainDataPropertiesData
-						| DelveThemeDataPropertiesData
-					const features = this.system.features.map(
-						(feature: DelveSiteFeature) => {
-							feature.flags['foundry-ironsworn'].sourceId = this.uuid
-							return feature
-						}
-					)
-					const dangers = this.system.dangers.map((danger: DelveSiteDanger) => {
-						danger.flags['foundry-ironsworn'].sourceId = this.uuid
-						return danger
-					})
-					this.update({ system: { features, dangers } })
-				}
-				break
-
-			default:
-				break
+		if (this.assert('delve-theme') || this.assert('delve-domain')) {
+			// initialize sourceId flags for delve site features and dangers
+			const features = this.system.features.map((feature: DelveSiteFeature) => {
+				feature.flags['foundry-ironsworn'].sourceId = this.id as string
+				return feature
+			})
+			const dangers = this.system.dangers.map((danger: DelveSiteDanger) => {
+				danger.flags['foundry-ironsworn'].sourceId = this.id as string
+				return danger
+			})
+			void this.update({ system: { features, dangers } })
 		}
 	}
 
@@ -110,7 +122,7 @@ export class IronswornItem extends Item {
 		if (move == null) throw new Error('Problem loading write-epilogue move')
 
 		const progress = Math.floor(Object.values(system.bonds).length / 4)
-		IronswornPrerollDialog.showForOfficialMove(
+		void IronswornPrerollDialog.showForOfficialMove(
 			'Ironsworn/Moves/Relationship/Write_Your_Epilogue',
 			{
 				actor: this.actor ?? undefined,

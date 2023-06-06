@@ -9,7 +9,7 @@ module.exports = {
 		'prettier'
 	],
 	parser: 'vue-eslint-parser',
-	ignorePatterns: ['.eslintrc.cjs'],
+	ignorePatterns: ['.eslintrc.cjs', '*.d.ts'],
 	parserOptions: {
 		parser: '@typescript-eslint/parser',
 		ecmaVersion: 11,
@@ -24,8 +24,7 @@ module.exports = {
 	rules: {
 		// nesting *more* pointy brackets is  harder to read with most generics, IMO
 		'@typescript-eslint/array-type': 'off',
-		// this is mostly annoying tbh
-		'@typescript-eslint/strict-boolean-expressions': 'off',
+		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/no-unused-vars': [1, { argsIgnorePattern: '^_' }],
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
 		'@typescript-eslint/ban-ts-comment': 'off',

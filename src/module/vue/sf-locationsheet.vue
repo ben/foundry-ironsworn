@@ -136,27 +136,16 @@
 </template>
 
 <script setup lang="ts">
-import SheetHeaderBasic from './sheet-header-basic.vue'
-import { capitalize, flatten, sample } from 'lodash-es'
-import { provide, computed, reactive, inject, onMounted } from 'vue'
-import { $ActorKey, ActorKey } from './provisions'
-
-import MceEditor from './components/mce-editor.vue'
-import type {
-	ActorDataSource,
-	LocationDataProperties
-} from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import type { OracleTable } from '../roll-table/oracle-table'
+import { provide, computed, inject, reactive, onMounted } from 'vue'
+import { $ActorKey, ActorKey } from './provisions'
+import { capitalize, flatten, sample } from 'lodash'
 import { Oracles } from '../roll-table/oracles'
-import type { IronswornActor } from '../actor/actor'
 
 const props = defineProps<{
-	data: {
-		actor: ReturnType<IronswornActor['toObject']> &
-			Extract<ActorDataSource, { type: 'location' }>
-	}
+	data: { actor: ActorSource<'location'> }
 }>()
 
 provide(
@@ -650,7 +639,6 @@ async function rollOracle(oracle) {
 	if (!drawText) return
 
 	// Append to description
-	const actor = props.data.actor as LocationDataProperties
 	const parts = [
 		props.data.actor.system.description,
 		'<p><strong>',

@@ -2,7 +2,7 @@ import type { IronswornActor } from '../actor/actor'
 import { IronswornPrerollDialog } from '../rolls'
 
 interface InlineRollListenerOptions {
-	actor?: IronswornActor
+	actor?: IronswornActor<'character'>
 	name?: string
 }
 
