@@ -73,7 +73,7 @@ export class ProgressData extends foundry.abstract.DataModel<
 	static override defineSchema(): DataSchema<ProgressDataSourceData> {
 		const fields = foundry.data.fields
 		return {
-			subtype: new fields.StringField(),
+			subtype: new fields.StringField({ initial: 'progress' }),
 			starred: new fields.BooleanField({ initial: false }),
 			hasTrack: new fields.BooleanField({ initial: true }),
 			hasClock: new fields.BooleanField({ initial: false }),
