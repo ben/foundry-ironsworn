@@ -2,9 +2,8 @@ import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-t
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import type { IronswornItem } from '../item/item'
-import type { ActorDataProperties, ActorDataSource } from './config'
+import type { ActorDataProperties } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
-import { OracleTable } from '../roll-table/oracle-table'
 
 let CREATE_DIALOG: CreateActorDialog
 
