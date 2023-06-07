@@ -11,9 +11,12 @@ import type { Display } from '../../fields/DisplayField'
 import { DisplayField } from '../../fields/DisplayField'
 import { SourceField } from '../../fields/SourceField'
 import type { DataSchema } from '../../fields/utils'
+import type { IronswornItem } from '../item'
 
-export class SFMoveData extends foundry.abstract
-	.DataModel<SFMoveDataSourceData> {
+export class SFMoveData extends foundry.abstract.TypeDataModel<
+	SFMoveDataSourceData,
+	IronswornItem<'sfmove'>
+> {
 	static _enableV10Validation = true
 
 	static readonly rerollType = [
@@ -178,7 +181,12 @@ export class SFMoveOutcomeMatchableField extends foundry.data.fields
 		)
 	}
 }
-export interface SFMoveData extends SFMoveDataSourceData {}
+export interface SFMoveData
+	extends SFMoveDataSourceData,
+		foundry.abstract.TypeDataModel<
+			SFMoveDataSourceData,
+			IronswornItem<'sfmove'>
+		> {}
 
 export interface SFMoveDataSourceData
 	extends Required<
