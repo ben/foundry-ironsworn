@@ -7,7 +7,6 @@ import { localizeRank } from '../../helpers/util'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../itemtypes'
-import { ClockSchema } from './common'
 
 export class ProgressData extends foundry.abstract.DataModel<
 	ProgressDataSourceData,
@@ -77,7 +76,17 @@ export class ProgressData extends foundry.abstract.DataModel<
 			subtype: new fields.StringField({ initial: 'progress' }),
 			starred: new fields.BooleanField({ initial: false }),
 			hasTrack: new fields.BooleanField({ initial: true }),
-			...ClockSchema,
+			hasClock: new foundry.data.fields.BooleanField(),
+			clockTicks: new foundry.data.fields.NumberField({
+				initial: 0,
+				integer: true,
+				min: 0,
+				max: 12
+			}),
+			clockMax: new foundry.data.fields.NumberField({
+				initial: 4,
+				choices: [4, 6, 8, 10, 12]
+			}),
 			completed: new fields.BooleanField({ initial: false }),
 			current: new ProgressTicksField(),
 			description: new fields.HTMLField(),
