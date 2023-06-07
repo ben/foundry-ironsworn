@@ -1,12 +1,10 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { DocumentSubTypes } from '../../types/helperTypes'
-import { RANK_INCREMENTS } from '../constants'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornPrerollDialog } from '../rolls'
 import type {
 	BondsetDataPropertiesData,
 	ItemDataProperties,
-	ProgressDataPropertiesData,
 	SFMoveDataPropertiesData
 } from './itemtypes'
 
@@ -15,7 +13,7 @@ import type {
  * @extends {Item}
  */
 export class IronswornItem<
-	T extends DocumentSubTypes<'Item'> = DocumentSubTypes<'Item'>
+	T extends DocumentSubTypes<'Item'> = any
 > extends Item {
 	// Type hacks for v10 compatibility updates
 	declare system: Extract<ItemDataProperties, { type: T }>['system']
@@ -41,45 +39,15 @@ export class IronswornItem<
 		return IronswornItem.assert(this, subtype)
 	}
 
-	/**
-	 * Progress methods
-	 */
-	async markProgress(numMarks = 1) {
-		if (this.type !== 'progress') return
-		const system = this.system as ProgressDataPropertiesData
-
-		const increment = RANK_INCREMENTS[system.rank] * numMarks
-		let newValue = system.current + increment
-		newValue = Math.min(newValue, 40)
-		newValue = Math.max(newValue, 0)
-		return await this.update({ 'system.current': newValue })
-	}
-
-	async clearProgress() {
-		if (this.data.type !== 'progress') return
-		return await this.update({ 'system.current': 0 })
-	}
-
-	async fulfill() {
-		if (this.type !== 'progress') return
-		const system = this.system as ProgressDataPropertiesData
-
-		let moveDfId: string | undefined
-		if (system.subtype === 'vow') {
-			const toolset = this.actor?.toolset ?? 'starforged'
-			moveDfId =
-				toolset === 'starforged'
-					? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
-					: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+	// @ts-expect-error Inheritor? I hardly even know 'er!
+	static override migrateData(data: any) {
+		// Migration 2: convert vows to progresses with the "vow" subtype
+		if (data.type === 'vow') {
+			data.system.subtype = data.type.valueOf()
+			data.type = 'progress'
 		}
-
-		const progress = Math.floor(system.current / 4)
-		return await IronswornPrerollDialog.showForProgress(
-			this.name ?? '(progress)',
-			progress,
-			this.actor ?? undefined,
-			moveDfId
-		)
+		// @ts-expect-error
+		return super.migrateData(data)
 	}
 
 	/**
@@ -120,6 +88,8 @@ export class IronswornItem<
 		)
 	}
 }
+export interface IronswornItem<T extends DocumentSubTypes<'Item'> = any>
+	extends Item {}
 
 declare global {
 	interface DocumentClassConfig {

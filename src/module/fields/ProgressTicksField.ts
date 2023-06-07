@@ -15,4 +15,4 @@ export class ProgressTicksField extends foundry.data.fields.NumberField {
 		})
 	}
 }
-export interface ProgressTicksFields extends foundry.data.fields.NumberField {}
+export interface ProgressTicksField extends foundry.data.fields.NumberField {}

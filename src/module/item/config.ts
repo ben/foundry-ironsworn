@@ -3,15 +3,17 @@ import type { PartialDeep } from 'dataforged'
 import { IronswornItem } from './item'
 import { DelveDomainData } from './subtypes/delve-domain'
 import { DelveThemeData } from './subtypes/delve-theme'
+import { ProgressData } from './subtypes/progress'
 
 const dataModels: Partial<
 	Record<
 		ConfiguredData<'Item'>['type'],
-		typeof foundry.abstract.DataModel<any, any>
+		typeof foundry.abstract.TypeDataModel<any, any>
 	>
 > = {
 	'delve-theme': DelveThemeData,
-	'delve-domain': DelveDomainData
+	'delve-domain': DelveDomainData,
+	progress: ProgressData
 }
 
 type ItemType = ConfiguredData<'Item'>['type']
@@ -24,7 +26,7 @@ type _itemConfig = Omit<(typeof CONFIG)['Item'], 'systemDataModels'> & {
 }
 
 export interface ItemConfig extends _itemConfig {
-	dataModels: Record<ItemType, typeof foundry.abstract.DataModel<any, any>>
+	dataModels: Record<ItemType, typeof foundry.abstract.TypeDataModel<any, any>>
 	typeLabels: Record<ItemType, string>
 	typeIcons: Record<ItemType, string>
 }

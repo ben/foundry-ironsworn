@@ -11,7 +11,7 @@
 							:id="`${data.actor._id}_rank`"
 							:current="data.actor.system.rank"
 							class="nogrow"
-							@change="setRank" />
+							@change="(rank) => $actor.update({ system: { rank } })" />
 						<label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
 							localizeRank(data.actor.system.rank)
 						}}</label>
@@ -20,7 +20,7 @@
 							block
 							nogrow
 							icon="fa:trash"
-							@click="clearProgress" />
+							@click="$actor.update({ system: { current: 0 } })" />
 						<IronBtn block nogrow icon="fa:caret-right" @click="markProgress" />
 					</div>
 					<!-- PROGRESS -->
@@ -154,14 +154,6 @@ const domain = computed(() => {
 		(item) => item.type === 'delve-domain'
 	) as ItemSource<'delve-domain'>
 })
-
-function setRank(rank) {
-	$actor?.update({ system: { rank } })
-}
-
-function clearProgress() {
-	$actor?.update({ 'system.current': 0 })
-}
 
 function markProgress() {
 	const increment = RANK_INCREMENTS[props.data.actor.system.rank]
