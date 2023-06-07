@@ -129,7 +129,7 @@ import AssetToggle from 'component:asset/asset-toggle.vue'
 import type {
 	AssetAbility as AssetAbilityType,
 	AssetField as AssetFieldType
-} from '../../../item/itemtypes'
+} from '../../../item/subtypes/asset'
 import AssetAbility from 'component:asset/asset-ability.vue'
 import AssetField from 'component:asset/asset-field.vue'
 import { IronswornSettings } from '../../../helpers/settings'

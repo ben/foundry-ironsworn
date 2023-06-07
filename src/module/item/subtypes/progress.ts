@@ -76,16 +76,15 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 			subtype: new fields.StringField({ initial: 'progress' }),
 			starred: new fields.BooleanField({ initial: false }),
 			hasTrack: new fields.BooleanField({ initial: true }),
-			hasClock: new fields.BooleanField({ initial: false }),
-			clockTicks: new fields.NumberField({
+			hasClock: new foundry.data.fields.BooleanField(),
+			clockTicks: new foundry.data.fields.NumberField({
 				initial: 0,
 				integer: true,
 				min: 0,
 				max: 12
 			}),
-			clockMax: new fields.NumberField({
+			clockMax: new foundry.data.fields.NumberField({
 				initial: 4,
-				integer: true,
 				choices: [4, 6, 8, 10, 12]
 			}),
 			completed: new fields.BooleanField({ initial: false }),
