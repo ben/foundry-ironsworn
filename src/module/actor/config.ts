@@ -24,7 +24,7 @@ import { StarshipData } from './subtypes/starship'
 
 const dataModels: Record<
 	ConfiguredData<'Actor'>['type'],
-	typeof foundry.abstract.DataModel<any, any>
+	typeof foundry.abstract.TypeDataModel<any, any>
 > = {
 	character: CharacterData,
 	foe: FoeData,
@@ -41,7 +41,7 @@ type _actorConfig = Omit<(typeof CONFIG)['Actor'], 'systemDataModels'> & {
 }
 
 export interface ActorConfig extends _actorConfig {
-	dataModels: Record<ActorType, typeof foundry.abstract.DataModel<any, any>>
+	dataModels: Record<ActorType, typeof foundry.abstract.TypeDataModel<any, any>>
 	typeLabels: Record<ActorType, string>
 	typeIcons: Record<ActorType, string>
 }

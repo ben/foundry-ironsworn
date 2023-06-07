@@ -6,13 +6,13 @@ import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import { clamp } from 'lodash-es'
 import type { DataSchema } from '../../fields/utils'
 
-export class CharacterData extends foundry.abstract.DataModel<
+export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
 	constructor(
 		...args: ConstructorParameters<
-			typeof foundry.abstract.DataModel<
+			typeof foundry.abstract.TypeDataModel<
 				CharacterDataSourceData,
 				IronswornActor<'character'>
 			>

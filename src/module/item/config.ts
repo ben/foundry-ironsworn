@@ -10,7 +10,7 @@ import { SFMoveData } from './subtypes/sfmove'
 const dataModels: Partial<
 	Record<
 		ConfiguredData<'Item'>['type'],
-		typeof foundry.abstract.DataModel<any, any>
+		typeof foundry.abstract.TypeDataModel<any, any>
 	>
 > = {
 	'delve-theme': DelveThemeData,
@@ -30,7 +30,7 @@ type _itemConfig = Omit<(typeof CONFIG)['Item'], 'systemDataModels'> & {
 }
 
 export interface ItemConfig extends _itemConfig {
-	dataModels: Record<ItemType, typeof foundry.abstract.DataModel<any, any>>
+	dataModels: Record<ItemType, typeof foundry.abstract.TypeDataModel<any, any>>
 	typeLabels: Record<ItemType, string>
 	typeIcons: Record<ItemType, string>
 }

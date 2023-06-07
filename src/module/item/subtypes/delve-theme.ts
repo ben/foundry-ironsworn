@@ -3,7 +3,7 @@ import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 import type { DelveSiteDanger, DelveSiteFeature } from './common'
 
-export class DelveThemeData extends foundry.abstract.DataModel<
+export class DelveThemeData extends foundry.abstract.TypeDataModel<
 	DelveThemeDataSourceData,
 	IronswornItem<'delve-theme'>
 > {

@@ -2,7 +2,7 @@ import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
-export class FoeData extends foundry.abstract.DataModel<
+export class FoeData extends foundry.abstract.TypeDataModel<
 	FoeDataSourceData,
 	IronswornActor<'foe'>
 > {
