@@ -1,40 +1,88 @@
-import type { IronswornActor } from '../actor/actor'
+import { IronswornActor } from '../actor/actor'
 import type { EffectChangeData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
 import type { PartialBy, PartialDeep } from 'dataforged'
 import { CharacterData } from '../actor/subtypes/character'
 import { clamp } from 'lodash-es'
-import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import { IronswornSettings } from '../helpers/settings'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
 import type { DocumentSubTypes } from '../../types/helperTypes'
+import { sendToChat } from '../features/chat-alert'
+import type { ImpactOptions } from './types'
 
-type ImpactCategoryStarforged = 'conditions' | 'banes' | 'burdens'
-type DebilityCategoryClassic =
-	| 'misfortunes'
-	| 'lastingEffects'
-	| 'burdens'
-	| 'vehicle'
-
-export type ImpactCategory = ImpactCategoryStarforged | DebilityCategoryClassic
-
-interface ImpactFlags {
-	/**
-	 * Some impacts, like Wounded, prevent recovery of a certain player resource. Include an actor path to the resource in question (e.g. `system.health`) if this is desired.
-	 */
-	preventRecovery?: string
-	global?: boolean
-	globalHint?: boolean
-	/**
-	 * A value for the `foundry-ironsworn.category` flag.
-	 */
-	category?: ImpactCategory
-}
-
-type ImpactOptions = StatusEffect & ImpactFlags
 export interface IronActiveEffect {
 	statuses: Set<string>
 }
 export class IronActiveEffect extends ActiveEffect {
+	async toMessage(active: boolean) {
+		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
+		const params = gameIsStarforged
+			? { impact: this.name }
+			: { debility: this.name }
+		const i18nKey = active
+			? IronActiveEffect.impactMarkedString
+			: IronActiveEffect.impactClearedString
+		const msg = game.i18n.format(i18nKey, params)
+		const speaker =
+			this.parent instanceof IronswornActor ? this.parent : this.parent?.parent
+		if (!(speaker instanceof IronswornActor)) return
+		return await sendToChat(speaker, msg)
+	}
+
+	override _onCreate(data, options, userId) {
+		super._onCreate(data, options, userId)
+		switch (this.getFlag('foundry-ironsworn', 'type')) {
+			case 'impact':
+				if (this.modifiesActor && IronswornSettings.get('log-changes'))
+					void this.toMessage(true)
+				break
+
+			default:
+				break
+		}
+	}
+
+	override _onUpdate(data, options, userId) {
+		super._onUpdate(data, options, userId)
+		switch (this.getFlag('foundry-ironsworn', 'type')) {
+			case 'impact':
+				{
+					if (!(this.target instanceof Actor)) return
+					const activeChanged = 'disabled' in data
+					if (activeChanged && IronswornSettings.get('log-changes'))
+						void this.toMessage(this.active)
+				}
+				break
+			default:
+				break
+		}
+	}
+
+	override _onDelete(options, userId) {
+		super._onDelete(options, userId)
+		switch (this.getFlag('foundry-ironsworn', 'type')) {
+			case 'impact':
+				if (this.modifiesActor && IronswornSettings.get('log-changes'))
+					void this.toMessage(false)
+				break
+			default:
+				break
+		}
+	}
+
+	static get impactMarkedString() {
+		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
+		return gameIsStarforged
+			? `IRONSWORN.ChatAlert.MarkedImpact`
+			: 'IRONSWORN.ChatAlert.MarkedDebility'
+	}
+
+	static get impactClearedString() {
+		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
+		return gameIsStarforged
+			? `IRONSWORN.ChatAlert.ClearedImpact`
+			: 'IRONSWORN.ChatAlert.ClearedDebility'
+	}
+
 	static get customLabelFallback() {
 		return IronswornSettings.starforgedToolsEnabled
 			? 'IRONSWORN.IMPACT.Custom'
@@ -299,11 +347,3 @@ Hooks.on(
 		return changes
 	}
 )
-
-declare global {
-	interface FlagConfig {
-		ActiveEffect: {
-			'foundry-ironsworn': ImpactFlags & { type: 'impact' }
-		}
-	}
-}

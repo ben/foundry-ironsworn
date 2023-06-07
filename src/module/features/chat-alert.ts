@@ -1,22 +1,16 @@
 import type { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
+import type { PartialDeep } from 'dataforged'
 import { capitalize, compact, get } from 'lodash-es'
+import type { DocumentSubTypes } from '../../types/helperTypes'
 import type { IronswornActor } from '../actor/actor'
-import type {
-	CharacterData,
-	SharedData,
-	SiteData,
-	StarshipData
-} from '../actor/config'
 import { IronswornSettings } from '../helpers/settings'
 import { localizeRank } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
-import type {
-	AssetDataPropertiesData,
-	BondsetDataPropertiesData,
-	ProgressDataPropertiesData
-} from '../item/itemtypes'
 
-type ActorTypeHandler = (IronswornActor, any) => string | undefined
+type ActorTypeHandler<T extends DocumentSubTypes<'Actor'> = any> = (
+	IronswornActor: IronswornActor<T>,
+	any: PartialDeep<ActorSource<T>>
+) => string | undefined
 
 export function registerChatAlertHooks() {
 	Hooks.on(
@@ -90,15 +84,14 @@ export function registerChatAlertHooks() {
 	)
 }
 
-const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
-	character: (actor: IronswornActor, data) => {
-		const characterData = actor.system as CharacterData
-		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
-
+const ACTOR_TYPE_HANDLERS: Partial<{
+	[K in DocumentSubTypes<'Actor'>]: ActorTypeHandler<K>
+}> = {
+	character: (actor, data) => {
 		// Ironsworn XP
 		if (data.system?.xp !== undefined) {
-			const oldXp = characterData.xp
-			const newXp = data.system.xp as number
+			const oldXp = actor.system.xp
+			const newXp = data.system.xp
 			if (newXp > oldXp) {
 				return game.i18n.format('IRONSWORN.ChatAlert.MarkedXP', {
 					amt: newXp - oldXp
@@ -112,8 +105,8 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 
 		// Starforged legacy XP
 		for (const kind of ['quests', 'bonds', 'discoveries']) {
-			const oldXp = characterData.legacies[`${kind}XpSpent`]
-			const newXp = get(data.system, `legacies.${kind}XpSpent`)
+			const oldXp = actor.system.legacies[`${kind}XpSpent`]
+			const newXp = getProperty(data, `system.legacies.${kind}XpSpent`)
 			if (newXp !== undefined) {
 				if (newXp > oldXp) {
 					return game.i18n.format('IRONSWORN.ChatAlert.MarkedXP', {
@@ -130,7 +123,7 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 		for (const stat of ['momentum', 'health', 'spirit', 'supply']) {
 			const newValue = get(data.system, stat)
 			if (newValue !== undefined) {
-				const oldValue = get(characterData, stat)
+				const oldValue = get(actor.system, stat)
 				const signPrefix = newValue > oldValue ? '+' : ''
 				const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
 				return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
@@ -141,62 +134,13 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 			}
 		}
 
-		const debilities = [
-			'corrupted',
-			'cursed',
-			'encumbered',
-			'maimed',
-			'shaken',
-			'tormented',
-			'unprepared',
-			'wounded',
-			'permanentlyharmed',
-			'traumatized',
-			'doomed',
-			'indebted',
-			'battered',
-			'custom1',
-			'custom2'
-		]
-		for (const debility of debilities) {
-			const conditionType = gameIsStarforged ? `impact` : `debility`
-			const newValue = get(data.system?.debility, debility)
-
-			if (newValue !== undefined) {
-				const oldValue = characterData.debility[debility]
-				if (oldValue === newValue) continue
-				const i18nPath = `IRONSWORN.${conditionType.toUpperCase()}`
-				const i18nDebility = `<b class='term ${conditionType}'>${
-					debility.startsWith('custom')
-						? get(characterData.debility, `${debility}name`)
-						: game.i18n.localize(`${i18nPath}.${capitalize(debility)}`)
-				}</b>`
-
-				const params = gameIsStarforged
-					? { impact: i18nDebility }
-					: { debility: i18nDebility }
-
-				if (newValue)
-					return game.i18n.format(
-						`IRONSWORN.ChatAlert.Marked${capitalize(conditionType)}`,
-						params
-					)
-				return game.i18n.format(
-					`IRONSWORN.ChatAlert.Cleared${capitalize(conditionType)}`,
-					params
-				)
-			}
-		}
-
 		return undefined
 	},
 
-	shared: (actor: IronswornActor, data) => {
-		const sharedData = actor.system as SharedData
-
+	shared: (actor, data) => {
 		if (data.system?.supply !== undefined) {
 			const newValue = data.system.supply
-			const oldValue = sharedData.supply
+			const oldValue = actor.system.supply
 			const signPrefix = newValue > oldValue ? '+' : ''
 			const i18nStat = game.i18n.localize('IRONSWORN.Supply')
 			return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
@@ -209,30 +153,8 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 		return undefined
 	},
 
-	starship: (actor: IronswornActor, data) => {
-		const starshipData = actor.system as StarshipData
-		const impacts = ['cursed', 'battered']
-		for (const impact of impacts) {
-			const newValue = get(data.system?.debility, impact)
-			if (newValue !== undefined) {
-				const oldValue = starshipData.debility[impact]
-				if (oldValue === newValue) continue
-				const i18nImpact = game.i18n.localize(
-					`IRONSWORN.IMPACT.${capitalize(impact)}`
-				)
-				const params = { impact: `<b class'term impact'>${i18nImpact}</b>` }
-				// TODO: use "impact" if this is an SF character
-				if (newValue)
-					return game.i18n.format('IRONSWORN.ChatAlert.MarkedImpact', params)
-				return game.i18n.format('IRONSWORN.ChatAlert.ClearedImpact', params)
-			}
-		}
-
-		return undefined
-	},
-
-	site: (actor: IronswornActor, data) => {
-		const siteData = actor.system as SiteData
+	site: (actor, data) => {
+		const siteData = actor.system
 
 		if (data.system?.rank) {
 			return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
@@ -250,26 +172,31 @@ const ACTOR_TYPE_HANDLERS: Record<string, ActorTypeHandler> = {
 	}
 }
 
-type ItemTypeHandler = (IronswornItem, any) => string | undefined
-const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
-	progress: (item: IronswornItem<'progress'>, data) => {
-		const progressData = item.system
+type ItemTypeHandler<T extends DocumentSubTypes<'Item'> = any> = (
+	IronswornItem: IronswornItem<T>,
+	any: PartialDeep<ItemSource<T>>
+) => string | undefined
+
+const ITEM_TYPE_HANDLERS: Partial<{
+	[K in DocumentSubTypes<'Item'>]: ItemTypeHandler<K>
+}> = {
+	progress: (item, data) => {
 		if (data.system?.rank) {
 			return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
-				old: localizeRank(progressData.rank),
+				old: localizeRank(item.system.rank),
 				new: localizeRank(data.system.rank)
 			})
 		}
 		if (data.system?.current !== undefined) {
-			const advanced = data.system.current > progressData.current
+			const advanced = data.system.current > item.system.current
 			return game.i18n.localize(
 				`IRONSWORN.ChatAlert.progress${advanced ? 'Advanced' : 'Reduced'}`
 			)
 		}
 		if (data.system?.clockTicks !== undefined) {
-			const change = data.system.clockTicks - progressData.clockTicks
-			const advanced = data.system.clockTicks > progressData.clockTicks
-			const completed = data.system.clockTicks >= progressData.clockMax
+			const change = data.system.clockTicks - item.system.clockTicks
+			const advanced = data.system.clockTicks > item.system.clockTicks
+			const completed = data.system.clockTicks >= item.system.clockMax
 			let i18nKey = 'IRONSWORN.ChatAlert.clock'
 			switch (true) {
 				case completed: {
@@ -294,8 +221,8 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 			}
 			return game.i18n.format(i18nKey, {
 				change,
-				max: progressData.clockMax,
-				old: progressData.clockTicks,
+				max: item.system.clockMax,
+				old: item.system.clockTicks,
 				new: data.system.clockTicks
 			})
 		}
@@ -308,12 +235,10 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 		}
 		return undefined
 	},
-	vow: (item, data) => ITEM_TYPE_HANDLERS.progress(item, data),
 
-	asset: (item: IronswornItem<'asset'>, data) => {
-		const assetData = item.system
+	asset: (item, data) => {
 		if (data.system?.abilities !== undefined) {
-			const oldEnables = assetData.abilities.map((x) => x.enabled)
+			const oldEnables = item.system.abilities.map((x) => x.enabled)
 			const newEnables = data.system.abilities.map((x) => x.enabled)
 			for (let i = 0; i < oldEnables.length; i++) {
 				if (oldEnables[i] !== newEnables[i]) {
@@ -332,11 +257,11 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 
 		if (data.system?.track?.current !== undefined) {
 			const newValue = data.system.track.current
-			const oldValue = assetData.track.current
+			const oldValue = item.system.track.current
 			const signPrefix = newValue > oldValue ? '+' : ''
 			return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
 				amt: `${signPrefix}${newValue - oldValue}`,
-				stat: assetData.track.name,
+				stat: item.system.track.name,
 				val: newValue
 			})
 		}
@@ -346,14 +271,14 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 				(x) => x.selected
 			)
 			return game.i18n.format('IRONSWORN.ChatAlert.MarkedOption', {
-				name: selectedOption.name
+				name: selectedOption?.name
 			})
 		}
 
 		if (data.system?.fields !== undefined) {
 			for (let i = 0; i < data.system.fields.length; i++) {
 				const newField = data.system.fields[i]
-				const oldField = assetData.fields[i]
+				const oldField = item.system.fields[i]
 				if (oldField && oldField?.value !== newField.value) {
 					return game.i18n.format('IRONSWORN.ChatAlert.SetField', {
 						name: newField.name,
@@ -368,7 +293,7 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 		return undefined
 	},
 
-	bondset: (item: IronswornItem<'bondset'>, data) => {
+	bondset: (item, data) => {
 		const bondsetData = item.system
 		if (data.system?.bonds !== undefined) {
 			const oldLen = Object.values(bondsetData.bonds).length
@@ -384,9 +309,11 @@ const ITEM_TYPE_HANDLERS: Record<string, ItemTypeHandler> = {
 	}
 }
 
-async function sendToChat(speaker: IronswornActor, msg: string) {
-	const whisperToCurrentUser =
-		speaker.getFlag('foundry-ironsworn', 'muteBroadcast') ?? (false as boolean)
+export async function sendToChat(speaker: IronswornActor, msg: string) {
+	const whisperToCurrentUser = (speaker.getFlag(
+		'foundry-ironsworn',
+		'muteBroadcast'
+	) ?? false) as boolean
 	const whisper = whisperToCurrentUser ? compact([game.user?.id]) : undefined
 
 	const messageData: ChatMessageDataConstructorData = {
