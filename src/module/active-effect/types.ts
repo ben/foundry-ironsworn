@@ -110,7 +110,6 @@ declare global {
 		get target(): InstanceType<ConfiguredDocumentClassForName<'Actor'>> | null
 		/**
 		 * Whether the Active Effect currently applying its changes to the target.
-		 * @type {boolean}
 		 */
 		get active(): boolean
 		/**
