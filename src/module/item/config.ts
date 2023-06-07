@@ -5,6 +5,7 @@ import { AssetData } from './subtypes/asset'
 import { DelveDomainData } from './subtypes/delve-domain'
 import { DelveThemeData } from './subtypes/delve-theme'
 import { ProgressData } from './subtypes/progress'
+import { SFMoveData } from './subtypes/sfmove'
 
 const dataModels: Partial<
 	Record<
@@ -15,7 +16,8 @@ const dataModels: Partial<
 	'delve-theme': DelveThemeData,
 	'delve-domain': DelveDomainData,
 	progress: ProgressData,
-	asset: AssetData
+	asset: AssetData,
+	sfmove: SFMoveData
 }
 
 type ItemType = ConfiguredData<'Item'>['type']

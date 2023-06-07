@@ -2,11 +2,7 @@ import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-t
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornPrerollDialog } from '../rolls'
-import type {
-	BondsetDataPropertiesData,
-	ItemDataProperties,
-	SFMoveDataPropertiesData
-} from './itemtypes'
+import type { BondsetDataPropertiesData, ItemDataProperties } from './itemtypes'
 
 /**
  * Extend the base Item entity
@@ -73,18 +69,6 @@ export class IronswornItem<
 					value: progress
 				}
 			}
-		)
-	}
-
-	/**
-	 * Move methods
-	 */
-	isProgressMove(): boolean | undefined {
-		if (this.type !== 'sfmove') return
-
-		const sfMoveSystem = this.system as SFMoveDataPropertiesData
-		return sfMoveSystem.Trigger.Options?.some(
-			(option) => option['Roll type'] === 'Progress roll'
 		)
 	}
 }
