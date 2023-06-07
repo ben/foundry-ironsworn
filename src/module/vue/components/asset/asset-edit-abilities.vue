@@ -2,7 +2,7 @@
 	<div class="flexcol nogrow" style="margin-top: 1em">
 		<CollapseTransition group tag="div" class="nogrow">
 			<div
-				v-for="(ability, i) in abilities"
+				v-for="(ability, i) in item?.system.abilities"
 				:key="`ability${i}`"
 				class="flexcol nogrow">
 				<textarea
@@ -36,7 +36,7 @@
 							icon="fa:trash"
 							block
 							nogrow
-							:class="{ disabled: abilities.length < 2 }"
+							:class="{ disabled: item!.system.abilities.length < 2 }"
 							@click="deleteAbility(i)" />
 					</div>
 				</div>
@@ -67,17 +67,15 @@ const editMode = computed(
 	() => item?.value.flags['foundry-ironsworn']?.['edit-mode']
 )
 
-const abilities = computed(() =>
-	Object.values(item?.value.system.abilities ?? [])
-)
-
 function deleteAbility(idx: number) {
-	abilities.value.splice(idx, 1)
+	const abilities = Object.values(item!.value.system.abilities)
+	abilities.splice(idx, 1)
 	$item?.update({ system: { abilities } })
 }
 
 function addAbility() {
-	abilities.value.push({
+	const abilities = Object.values(item!.value.system.abilities)
+	abilities.push({
 		description: '',
 		enabled: false,
 		hasClock: false,
@@ -87,20 +85,32 @@ function addAbility() {
 	$item?.update({ system: { abilities } })
 }
 
-function enableClock(idx: number) {
-	abilities.value[idx] = {
-		...abilities[idx],
-		hasClock: !abilities[idx].hasClock
-	}
+function markAbility(idx) {
+	const abilities = Object.values(item!.value.system.abilities)
+	abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
+	$item?.update({ system: { abilities } })
+}
+
+function enableClock(idx) {
+	const abilities = Object.values(item!.value.system.abilities)
+	abilities[idx] = { ...abilities[idx], hasClock: !abilities[idx].hasClock }
 	$item?.update({ system: { abilities } })
 }
 
 function clockMaxChange(idx: number) {
-	abilities.value[idx].clockMax = parseInt(abilities[idx].clockMax)
+	const abilities = Object.values(item!.value?.system.abilities) as any[]
+	abilities[idx].clockMax = parseInt(abilities[idx].clockMax)
+	$item?.update({ system: { abilities } })
+}
+
+function setClock(abilityIdx: number, clockTicks: number) {
+	const abilities = Object.values(item!.value?.data.abilities) as any[]
+	abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
 	$item?.update({ system: { abilities } })
 }
 
 function save() {
+	const abilities = Object.values(item!.value?.data.abilities) as any[]
 	$item?.update({ system: { abilities } })
 }
 </script>

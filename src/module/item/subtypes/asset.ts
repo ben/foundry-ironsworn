@@ -1,6 +1,5 @@
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
-import { ClockSchema } from './common'
 
 export class AssetData extends foundry.abstract.DataModel<
 	AssetDataSourceData,
@@ -80,7 +79,17 @@ export class AssetAbilityField extends foundry.data.fields
 			}),
 			enabled: new fields.BooleanField(),
 			description: new fields.HTMLField(),
-			...ClockSchema
+			hasClock: new foundry.data.fields.BooleanField(),
+			clockTicks: new foundry.data.fields.NumberField({
+				initial: 0,
+				integer: true,
+				min: 0,
+				max: 12
+			}),
+			clockMax: new foundry.data.fields.NumberField({
+				initial: 4,
+				choices: [4, 6, 8, 10, 12]
+			})
 		})
 	}
 }
