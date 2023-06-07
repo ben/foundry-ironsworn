@@ -7,7 +7,6 @@ import { localizeRank } from '../../helpers/util'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../itemtypes'
-import { ClockSchema } from './common'
 
 export class ProgressData extends foundry.abstract.DataModel<
 	ProgressDataSourceData,
