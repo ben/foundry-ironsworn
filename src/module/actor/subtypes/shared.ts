@@ -2,7 +2,7 @@ import { MeterValueField } from '../../fields/MeterValueField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
-export class SharedData extends foundry.abstract.DataModel<
+export class SharedData extends foundry.abstract.TypeDataModel<
 	SharedDataSourceData,
 	IronswornActor<'shared'>
 > {
