@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
 import type { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
+import {
+	ModuleData,
+	SystemData
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/packages.mjs'
 import type { SourceToField, DataSchema } from '../utils'
 
-type AnyDocument = Document<any, any, any>
-
 declare global {
+	export type AnyDocument = Document<any, any, any>
+
 	namespace foundry {
 		namespace abstract {
 			export abstract class DataModel<
@@ -596,6 +600,32 @@ declare global {
 					| DataModelValidationFailure
 					| Record<string, DataModelValidationFailure>
 			}
+
+			export abstract class TypeDataModel<
+				ConcreteData extends object,
+				Parent extends AnyDocument
+			> extends DataModel<ConcreteData, Parent> {
+				/**
+				 * The package that is providing this DataModel for the given sub-type.
+				 */
+				get modelProvider(): SystemData | ModuleData | null
+
+				/**
+				 * Prepare data related to this DataModel itself, before any derived data is computed.
+				 */
+				prepareBaseData(): void
+
+				/**
+				 * Apply transformations of derivations to the values of the source data object.
+				 * Compute data fields whose values are not stored to the database.
+				 */
+				prepareDerivedData(): void
+			}
+			export interface TypeDataModel<
+				ConcreteData extends object,
+				Parent extends AnyDocument
+			> extends DataModel<ConcreteData, Parent> {}
+			export namespace TypeDataModel {}
 		}
 	}
 }

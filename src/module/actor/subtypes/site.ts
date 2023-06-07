@@ -8,7 +8,7 @@ import type { DataSchema } from '../../fields/utils'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
 
-export class SiteData extends foundry.abstract.DataModel<
+export class SiteData extends foundry.abstract.TypeDataModel<
 	SiteDataSourceData,
 	IronswornActor<'site'>
 > {

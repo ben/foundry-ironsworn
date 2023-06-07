@@ -1,7 +1,7 @@
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
-export class LocationData extends foundry.abstract.DataModel<
+export class LocationData extends foundry.abstract.TypeDataModel<
 	LocationDataSourceData,
 	IronswornActor<'location'>
 > {
