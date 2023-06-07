@@ -26,10 +26,10 @@ export const ClockSchema = {
 		initial: 0,
 		integer: true,
 		min: 0,
-		max: 10
+		max: 12
 	}),
 	clockMax: new foundry.data.fields.NumberField({
 		initial: 4,
-		choices: [4, 6, 8, 10]
+		choices: [4, 6, 8, 10, 12]
 	})
 }
