@@ -8,7 +8,7 @@ import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../config'
 
-export class ProgressData extends foundry.abstract.DataModel<
+export class ProgressData extends foundry.abstract.TypeDataModel<
 	ProgressDataSourceData,
 	IronswornItem<'progress'>
 > {
