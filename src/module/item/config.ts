@@ -2,10 +2,30 @@ import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-t
 import type { PartialDeep } from 'dataforged'
 import { IronswornItem } from './item'
 import { AssetData } from './subtypes/asset'
+import { BondsetData } from './subtypes/bondset'
 import { DelveDomainData } from './subtypes/delve-domain'
 import { DelveThemeData } from './subtypes/delve-theme'
 import { ProgressData } from './subtypes/progress'
 import { SFMoveData } from './subtypes/sfmove'
+import type { ChallengeRank } from '../constants'
+import type { AssetDataProperties, AssetDataSource } from './subtypes/asset'
+import type {
+	BondsetDataProperties,
+	BondsetDataSource
+} from './subtypes/bondset'
+import type {
+	DelveDomainDataProperties,
+	DelveDomainDataSource
+} from './subtypes/delve-domain'
+import type {
+	DelveThemeDataProperties,
+	DelveThemeDataSource
+} from './subtypes/delve-theme'
+import type {
+	ProgressDataProperties,
+	ProgressDataSource
+} from './subtypes/progress'
+import type { SFMoveDataProperties, SFMoveDataSource } from './subtypes/sfmove'
 
 const dataModels: Partial<
 	Record<
@@ -17,7 +37,8 @@ const dataModels: Partial<
 	'delve-domain': DelveDomainData,
 	progress: ProgressData,
 	asset: AssetData,
-	sfmove: SFMoveData
+	sfmove: SFMoveData,
+	bondset: BondsetData
 }
 
 type ItemType = ConfiguredData<'Item'>['type']
@@ -58,3 +79,35 @@ const config: PartialDeep<ItemConfig> = {
 } as const
 
 export default config
+
+export interface ProgressBase {
+	description: string
+	rank: ChallengeRank
+	current: number
+	completed: boolean
+}
+
+export type ItemDataSource =
+	| AssetDataSource
+	| ProgressDataSource
+	| BondsetDataSource
+	| SFMoveDataSource
+	| DelveThemeDataSource
+	| DelveDomainDataSource
+export type ItemDataProperties =
+	| AssetDataProperties
+	| ProgressDataProperties
+	| BondsetDataProperties
+	| SFMoveDataProperties
+	| DelveThemeDataProperties
+	| DelveDomainDataProperties
+
+declare global {
+	interface SourceConfig {
+		Item: ItemDataSource
+	}
+
+	interface DataConfig {
+		Item: ItemDataProperties
+	}
+}

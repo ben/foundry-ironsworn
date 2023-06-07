@@ -6,7 +6,7 @@ import type { DataSchema } from '../../fields/utils'
 import { localizeRank } from '../../helpers/util'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
-import type { ProgressBase } from '../itemtypes'
+import type { ProgressBase } from '../config'
 
 export class ProgressData extends foundry.abstract.TypeDataModel<
 	ProgressDataSourceData,
