@@ -164,7 +164,7 @@ function subtypeChange() {
 
 function clockMaxChange() {
 	$item?.update({
-		system: { clockMax: parseInt(props.data.item.system.clockMax as any) }
+		system: { clockMax: props.data.item.system.clockMax }
 	})
 }
 
