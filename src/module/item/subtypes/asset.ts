@@ -1,7 +1,7 @@
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 
-export class AssetData extends foundry.abstract.DataModel<
+export class AssetData extends foundry.abstract.TypeDataModel<
 	AssetDataSourceData,
 	IronswornItem<'asset'>
 > {
