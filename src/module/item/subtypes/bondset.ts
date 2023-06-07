@@ -3,7 +3,7 @@ import type { DataSchema } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 
-export class BondsetData extends foundry.abstract.DataModel<
+export class BondsetData extends foundry.abstract.TypeDataModel<
 	BondsetDataSourceData,
 	IronswornItem<'bondset'>
 > {
