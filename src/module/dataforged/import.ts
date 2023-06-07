@@ -13,7 +13,6 @@ import type {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { starforged, ironsworn } from 'dataforged'
 import { isArray, isObject, max } from 'lodash-es'
-import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
