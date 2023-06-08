@@ -84,14 +84,12 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			experience: new fields.NumberField({
 				integer: true,
 				required: true,
-				step: 1,
 				initial: 0,
 				min: 0
 			}),
 			xp: new fields.NumberField({
 				integer: true,
 				required: true,
-				step: 1,
 				min: 0,
 				initial: 0
 			}),
