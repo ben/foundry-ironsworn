@@ -168,7 +168,7 @@ export class IronswornRollMessage {
 
 		await this.actor.system.burnMomentum()
 		this.roll.postRollOptions.replacedOutcome = {
-			value: computeRollOutcome(momentum, c1.value, c2.value),
+			value: computeRollOutcome(momentum.value, c1.value, c2.value),
 			source: game.i18n.localize('IRONSWORN.MomentumBurnt')
 		}
 		return await this.createOrUpdate()
@@ -302,7 +302,11 @@ export class IronswornRollMessage {
 
 		const { momentum } = this.actor.system
 		const rawOutcome = this.roll.rawOutcome?.value
-		const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
+		const momentumBurnOutcome = computeRollOutcome(
+			momentum.value,
+			c1.value,
+			c2.value
+		)
 
 		if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
 			return {

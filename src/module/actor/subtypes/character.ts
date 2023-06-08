@@ -5,6 +5,11 @@ import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import { clamp } from 'lodash-es'
 import type { DataSchema } from '../../fields/utils'
+import type {
+	ConditionMeterSource,
+	MomentumSource
+} from '../../fields/MeterField'
+import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
 
 export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
@@ -24,15 +29,12 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 	static _enableV10Validation = true
 
-	static readonly MOMENTUM_MAX = 10
-	static readonly MOMENTUM_MIN = -6
-	static readonly MOMENTUM_INITIAL = 2
-	static readonly MOMENTUM_RESET_MIN = 0
-
 	async burnMomentum(this: CharacterData) {
-		if (this.parent.system.momentum > this.parent.system.momentumReset) {
+		if (
+			this.parent.system.momentum.value > this.parent.system.momentum.resetValue
+		) {
 			await this.parent.update({
-				system: { momentum: this.parent.system.momentumReset }
+				system: { momentum: this.parent.system.momentum.resetValue }
 			})
 		}
 	}
@@ -42,19 +44,17 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			.length
 	}
 
-	get momentumReset() {
-		return clamp(
-			CharacterData.MOMENTUM_INITIAL - this.#impactCount,
-			CharacterData.MOMENTUM_RESET_MIN,
-			CharacterData.MOMENTUM_MAX
+	override prepareDerivedData(): void {
+		// update momentum max/reset
+		this.momentum.max = clamp(
+			MomentumField.MAX - this.#impactCount,
+			MomentumField.MIN,
+			MomentumField.MAX
 		)
-	}
-
-	get momentumMax() {
-		return clamp(
-			CharacterData.MOMENTUM_MAX - this.#impactCount,
-			CharacterData.MOMENTUM_MIN,
-			CharacterData.MOMENTUM_MAX
+		this.momentum.resetValue = clamp(
+			MomentumField.INITIAL - this.#impactCount,
+			MomentumField.RESET_MIN,
+			MomentumField.MAX
 		)
 	}
 
@@ -70,28 +70,26 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			shadow: new StatField({ label: 'IRONSWORN.Shadow' }),
 			wits: new StatField({ label: 'IRONSWORN.Wits' }),
 
-			health: new MeterValueField({ label: 'IRONSWORN.Health' }),
-			spirit: new MeterValueField({ label: 'IRONSWORN.Spirit' }),
-			supply: new MeterValueField({ label: 'IRONSWORN.Supply' }),
+			// health: new MeterValueField({ label: 'IRONSWORN.Health' }),
+			// spirit: new MeterValueField({ label: 'IRONSWORN.Spirit' }),
+			// supply: new MeterValueField({ label: 'IRONSWORN.Supply' }),
 
-			momentum: new MeterValueField({
-				label: 'IRONSWORN.Momentum',
-				initial: (source) => (source as any).momentumReset,
-				max: this.MOMENTUM_MAX,
-				min: this.MOMENTUM_MIN
-			}),
+			// TODO: add a localized `hint` property, and have the vue sheet automatically pull these in as tooltips
+			health: new ConditionMeterField({ label: 'IRONSWORN.Health' }),
+			spirit: new ConditionMeterField({ label: 'IRONSWORN.Spirit' }),
+			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' }),
+
+			momentum: new MomentumField(),
 
 			experience: new fields.NumberField({
 				integer: true,
 				required: true,
-				step: 1,
 				initial: 0,
 				min: 0
 			}),
 			xp: new fields.NumberField({
 				integer: true,
 				required: true,
-				step: 1,
 				min: 0,
 				initial: 0
 			}),
@@ -149,11 +147,12 @@ export interface CharacterDataSourceData {
 	iron: number
 	shadow: number
 	wits: number
-	health: number
-	spirit: number
-	supply: number
+
+	health: ConditionMeterSource
+	spirit: ConditionMeterSource
+	supply: ConditionMeterSource
 	experience: number
-	momentum: number
+	momentum: MomentumSource
 	debility: {
 		corrupted: boolean
 		cursed: boolean

@@ -51,10 +51,10 @@ function increment(delta: number) {
 }
 
 const burnMomentumTooltip = computed(() =>
-	game.i18n.format('IRONSWORN.BurnMomentumAndResetTo', {
-		value: actorSystem.value?.momentum,
-		resetValue: actorSystem.value?.momentumReset
-	})
+	game.i18n.format(
+		'IRONSWORN.BurnMomentumAndResetTo',
+		actorSystem.value.momentum as any
+	)
 )
 
 function click() {
