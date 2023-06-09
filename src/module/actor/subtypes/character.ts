@@ -8,8 +8,6 @@ import type {
 	MomentumSource
 } from '../../fields/MeterField'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
-import { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
-import { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 
 export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
