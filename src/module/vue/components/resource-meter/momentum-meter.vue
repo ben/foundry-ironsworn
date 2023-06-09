@@ -18,8 +18,8 @@
 				:text="$t('IRONSWORN.Momentum')"
 				:tooltip="
 					$t('IRONSWORN.BurnMomentumAndResetTo', {
-						resetValue: $actor.system.momentumReset,
-						value: actor.system.momentum.value
+						value: actor.system.momentum.value,
+						resetValue: $actor.system.momentumReset
 					})
 				">
 			</BtnMomentumburn>
