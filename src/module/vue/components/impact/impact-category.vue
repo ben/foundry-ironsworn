@@ -34,7 +34,7 @@ const props = withDefaults(
 const statusEffectKey = props.type === 'impact' ? 'starforged' : 'classic'
 
 const impacts =
-	IronActiveEffect.statusEffects[statusEffectKey]?.filter(
+	IronActiveEffect.STATUS_EFFECTS[statusEffectKey]?.filter(
 		(fx) => fx.flags?.['foundry-ironsworn']?.category === props.name
 	) ?? []
 

@@ -55,14 +55,11 @@ export class IronswornActor<
 		if (effectData.id == null) return false
 
 		// Remove existing single-status effects.
-		const existing = this.effects.reduce(
-			(arr: string[], e: IronActiveEffect) => {
-				if (e.statuses.size === 1 && e.statuses.has(effectData.id))
-					arr.push(e.id as string)
-				return arr
-			},
-			[]
-		)
+		const existing = this.effects.reduce((arr: string[], e: ActiveEffect) => {
+			if (e.statuses.size === 1 && e.statuses.has(effectData.id))
+				arr.push(e.id as string)
+			return arr
+		}, [])
 		const state = active ?? existing.length === 0
 		if (!state && existing.length > 0)
 			await this.deleteEmbeddedDocuments('ActiveEffect', existing)

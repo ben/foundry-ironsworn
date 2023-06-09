@@ -189,7 +189,7 @@ export class IronActiveEffect extends ActiveEffect {
 		return result
 	}
 
-	static readonly statusEffects: Record<string, StatusEffect[]> = {
+	static readonly STATUS_EFFECTS: Record<string, StatusEffect[]> = {
 		starforged: [
 			this.createImpact({
 				id: 'wounded',
@@ -313,6 +313,11 @@ export class IronActiveEffect extends ActiveEffect {
 			})
 		]
 	}
+
+	/** A flat array of all status IDs across all rulesets. */
+	static readonly CANONICAL_IMPACT_IDS = Array.from(
+		new Set(Object.values(this.STATUS_EFFECTS).flat())
+	).map(({ id }) => id)
 }
 
 Hooks.on(

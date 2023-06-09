@@ -94,8 +94,8 @@ Hooks.once('init', async () => {
 	Object.defineProperty(CONFIG, 'statusEffects', {
 		get(): StatusEffect[] {
 			return IronswornSettings.starforgedToolsEnabled
-				? IronActiveEffect.statusEffects.starforged
-				: IronActiveEffect.statusEffects.classic
+				? IronActiveEffect.STATUS_EFFECTS.starforged
+				: IronActiveEffect.STATUS_EFFECTS.classic
 		}
 	})
 

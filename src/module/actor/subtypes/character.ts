@@ -79,7 +79,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 				const foundEffect =
 					CONFIG.statusEffects.find((fx) => fx.id === key) ??
 					// not found -- try broadening the search
-					Object.values(IronActiveEffect.statusEffects)
+					Object.values(IronActiveEffect.STATUS_EFFECTS)
 						.flat()
 						.find((fx) => fx.id === key)
 				if (foundEffect == null) continue

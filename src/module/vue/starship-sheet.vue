@@ -50,11 +50,11 @@ provide(
 	computed(() => props.data.actor)
 )
 
-const batteredEffect = IronActiveEffect.statusEffects.starforged.find(
+const batteredEffect = IronActiveEffect.STATUS_EFFECTS.starforged.find(
 	(fx) => fx.id === 'battered'
 )
 
-const cursedEffect = IronActiveEffect.statusEffects.starforged.find(
+const cursedEffect = IronActiveEffect.STATUS_EFFECTS.starforged.find(
 	(fx) => fx.id === 'cursed'
 )
 </script>

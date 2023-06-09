@@ -9,15 +9,12 @@ export class StarshipData extends foundry.abstract.TypeDataModel<
 > {
 	static _enableV10Validation = true
 
+	/** Impact status IDs permitted for starships */
+	static readonly IMPACTS = ['battered', 'cursed']
+
 	static override defineSchema(): DataSchema<StarshipDataSourceData> {
 		return {
-			health: new MeterValueField({ label: 'IRONSWORN.Integrity' }),
-			debility: new foundry.data.fields.SchemaField<
-				StarshipDataSourceData['debility']
-			>({
-				battered: new ImpactField(),
-				cursed: new ImpactField()
-			})
+			health: new MeterValueField({ label: 'IRONSWORN.Integrity' })
 		}
 	}
 }
@@ -25,10 +22,6 @@ export interface StarshipData extends StarshipDataSourceData {}
 
 interface StarshipDataSourceData {
 	health: number
-	debility: {
-		battered: boolean
-		cursed: boolean
-	}
 }
 export interface StarshipDataSource {
 	type: 'starship'
