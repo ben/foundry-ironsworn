@@ -137,6 +137,7 @@ export interface CharacterData extends CharacterDataSourceData {}
 export interface CharacterDataSourceData {
 	biography: string
 	notes: string
+
 	edge: number
 	heart: number
 	iron: number
@@ -147,6 +148,17 @@ export interface CharacterDataSourceData {
 	spirit: ConditionMeterSource
 	supply: ConditionMeterSource
 	momentum: MomentumSource
+
+	xp: number
+	legacies: {
+		quests: number
+		questsXpSpent: number
+		bonds: number
+		bondsXpSpent: number
+		discoveries: number
+		discoveriesXpSpent: number
+	}
+
 	debility: {
 		corrupted: boolean
 		cursed: boolean
@@ -166,15 +178,6 @@ export interface CharacterDataSourceData {
 		custom2: boolean
 		custom2name: string
 	}
-	legacies: {
-		quests: number
-		questsXpSpent: number
-		bonds: number
-		bondsXpSpent: number
-		discoveries: number
-		discoveriesXpSpent: number
-	}
-	xp: number
 }
 
 export interface CharacterDataSource {
