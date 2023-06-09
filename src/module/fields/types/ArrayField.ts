@@ -25,6 +25,9 @@ declare global {
 
 					element: TElementField
 
+					/** @default true */
+					static override recursive: boolean
+
 					static _validateElementType(element: unknown)
 
 					/**

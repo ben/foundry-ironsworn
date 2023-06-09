@@ -1,18 +1,41 @@
 import { IronswornActor } from '../actor/actor'
-import type { EffectChangeData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
+import type {
+	EffectChangeData,
+	EffectChangeDataConstructorData
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
 import type { PartialBy, PartialDeep } from 'dataforged'
-import { CharacterData } from '../actor/subtypes/character'
-import { clamp } from 'lodash-es'
 import { IronswornSettings } from '../helpers/settings'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import { sendToChat } from '../features/chat-alert'
 import type { ImpactOptions } from './types'
+import { MomentumField } from '../fields/MeterField'
+import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 export interface IronActiveEffect {
 	statuses: Set<string>
 }
 export class IronActiveEffect extends ActiveEffect {
+	static readonly MOMENTUM_RESET_PATH = 'system.momentum.resetValue'
+	static readonly MOMENTUM_MAX_PATH = 'system.momentum.max'
+	static readonly PRESETS: Record<
+		Required<ConfiguredFlags<'ActiveEffect'>['foundry-ironsworn']>['type'],
+		EffectChangeDataConstructorData[]
+	> = {
+		impact: [
+			{
+				key: this.MOMENTUM_MAX_PATH,
+				mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM,
+				value: '-1'
+			},
+			{
+				key: this.MOMENTUM_RESET_PATH,
+				mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM,
+				value: '-1'
+			}
+		]
+	}
+
 	async toMessage(active: boolean) {
 		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
 		const params = gameIsStarforged
@@ -123,7 +146,7 @@ export class IronActiveEffect extends ActiveEffect {
 	}
 
 	/**
-	 * Create constructor data for an active effect that represents and impact/debility.
+	 * Create constructor data for an ActiveEffect that represents an impact.
 	 */
 	static createImpact({
 		id,
@@ -146,18 +169,7 @@ export class IronActiveEffect extends ActiveEffect {
 			icon: icon ?? IronActiveEffect.IMPACT_ICON_DEFAULT,
 			duration: null,
 			statuses: [id],
-			changes: [
-				{
-					key: 'system.momentumMax',
-					mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM,
-					value: '-1'
-				},
-				{
-					key: 'system.momentumReset',
-					mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM,
-					value: '-1'
-				}
-			],
+			changes: this.PRESETS.impact,
 			flags: {
 				'foundry-ironsworn': {
 					type: 'impact',
@@ -322,22 +334,22 @@ Hooks.on(
 	) => {
 		if (actor.type !== 'character') return change
 		switch (change.key) {
-			case 'system.momentumMax':
+			case IronActiveEffect.MOMENTUM_MAX_PATH:
 				if (typeof current !== 'number' || typeof delta !== 'number')
 					throw new Error()
-				changes[change.key] = clamp(
+				changes[change.key] = Math.clamped(
 					current + delta,
-					CharacterData.MOMENTUM_MIN,
-					CharacterData.MOMENTUM_MAX
+					MomentumField.MIN,
+					MomentumField.MAX
 				)
 				break
-			case 'system.momentumReset':
+			case IronActiveEffect.MOMENTUM_RESET_PATH:
 				if (typeof current !== 'number' || typeof delta !== 'number')
 					throw new Error()
-				changes[change.key] = clamp(
+				changes[change.key] = Math.clamped(
 					current + delta,
-					CharacterData.MOMENTUM_RESET_MIN,
-					CharacterData.MOMENTUM_MAX
+					MomentumField.RESET_MIN,
+					MomentumField.MAX
 				)
 				break
 			default:

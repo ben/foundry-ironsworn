@@ -20,6 +20,9 @@ declare global {
 						options?: Partial<SchemaField.Options<ConcreteData>>
 					)
 
+					/** @default true */
+					static override recursive: boolean
+
 					/** The contained field definitions. */
 					fields: DataSchema<ConcreteData>
 
@@ -109,13 +112,13 @@ declare global {
 				 * A subclass of [ObjectField]{@link ObjectField} which embeds some other DataModel definition as an inner object.
 				 */
 				export class EmbeddedDataField<
-					T extends typeof foundry.abstract.DataModel
+					T extends typeof foundry.abstract.DataModel<any, any>
 				> extends SchemaField<InstanceType<T>['schema']['fields']> {
 					/**
 					 * @param model - The class of DataModel which should be embedded in this field
 					 * @param options - Options which configure the behavior of the field
 					 */
-					constructor(model: T, options?: DataField.Options)
+					constructor(model: T, options?: Partial<DataField.Options>)
 
 					/**
 					 * The embedded DataModel definition which is contained in this field.

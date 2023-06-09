@@ -67,10 +67,16 @@ export interface MomentumSource extends MeterSource {
 }
 
 export class MomentumField extends MeterField<MomentumSource> {
+	/** The absolute maximum for `Momentum.value` */
 	static readonly MAX = 10
+	/** The absolute minimum for `Momentum.value` */
 	static readonly MIN = -6
+	/** The default `Momentum.resetValue`, also used to initialize `Momentum.value` */
 	static readonly INITIAL = 2
+	/** The absolute minimum of `Momentum.resetValue` */
 	static readonly RESET_MIN = 0
+	/** The minimum `Momentum.value` required before burning momentum. */
+	static readonly BURN_MIN = 3
 
 	constructor() {
 		const fields = foundry.data.fields
@@ -98,7 +104,6 @@ export class MomentumField extends MeterField<MomentumSource> {
 	): void {
 		super.migrateSource(sourceData, fieldData)
 		if (typeof sourceData?.momentum === 'number') {
-			console.log('Migrating sourceData, fieldData', sourceData, fieldData)
 			IronswornActor._addDataFieldMigration(
 				sourceData,
 				'momentumReset',
