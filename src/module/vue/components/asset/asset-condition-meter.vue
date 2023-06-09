@@ -5,10 +5,10 @@
 			slider-style="horizontal"
 			:class="$style.meter"
 			document-type="Item"
-			attr="track.current"
-			:current-value="asset.system.track.current"
+			attr="track.value"
+			:current-value="asset.system.track.value"
 			:max="asset.system.track.max"
-			:min="0"
+			:min="asset.system.track.min"
 			:stat-label="asset.system.track.name"
 			label-position="left"
 			:read-only="readonly" />
@@ -33,9 +33,10 @@ import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { ItemKey, $ItemKey, ActorKey, $ActorKey } from '../../provisions'
 import ConditionMeter from 'component:resource-meter/condition-meter.vue'
+import { IronswornItem } from '../../../item/item'
 
-const asset = inject(ItemKey) as Ref
-const $asset = inject($ItemKey)
+const asset = inject(ItemKey) as Ref<ItemSource<'asset'>>
+const $asset = inject($ItemKey) as IronswornItem<'asset'>
 
 const actor = inject(ActorKey, undefined)
 const $actor = inject($ActorKey, undefined)
