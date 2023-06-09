@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { fill, clamp } from 'lodash-es'
+import { fill } from 'lodash-es'
 import type { ChallengeRank } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
 import { ProgressData } from '../../../item/subtypes/progress'
@@ -50,7 +50,7 @@ const props = defineProps<{
 }>()
 
 const score = computed(() =>
-	clamp(
+	Math.clamped(
 		Math.floor(props.ticks / ProgressData.TICKS_PER_BOX),
 		ProgressData.SCORE_MIN,
 		ProgressData.SCORE_MAX

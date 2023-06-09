@@ -142,4 +142,5 @@ declare global {
 	}
 }
 
+export {}
 export default foundry.data.fields

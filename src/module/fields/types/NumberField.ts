@@ -4,7 +4,7 @@ declare global {
 	namespace foundry {
 		namespace data {
 			namespace fields {
-				export class NumberField extends DataField<
+				export class NumberField extends foundry.data.fields.DataField<
 					number,
 					NumberField.Options
 				> {
@@ -13,7 +13,8 @@ declare global {
 				export interface NumberField
 					extends Omit<NumberField.Options, 'validate' | 'initial'> {}
 				export namespace NumberField {
-					export interface Options extends DataField.Options<number> {
+					export interface Options
+						extends foundry.data.fields.DataField.Options<number> {
 						/**
 						 * A minimum allowed value
 						 */
@@ -39,7 +40,7 @@ declare global {
 						/**
 						 * An array of values or an object of values/labels which represent allowed choices for the field. A function may be provided which dynamically returns the array of choices.
 						 */
-						choices: DataField.Choices<number> | undefined
+						choices: foundry.data.fields.DataField.Choices<number> | undefined
 					}
 				}
 				/**

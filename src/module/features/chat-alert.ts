@@ -1,5 +1,4 @@
 import type { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
-import type { PartialDeep } from 'dataforged'
 import { capitalize, compact, get } from 'lodash-es'
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import type { IronswornActor } from '../actor/actor'
@@ -8,9 +7,22 @@ import { localizeRank } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
 
 type ActorTypeHandler<T extends DocumentSubTypes<'Actor'> = any> = (
-	IronswornActor: IronswornActor<T>,
-	any: PartialDeep<ActorSource<T>>
+	actor: IronswornActor<T>,
+	data: Partial<ActorSource<T>>
 ) => string | undefined
+
+type ActorTypeHandlers = {
+	[Subtype in DocumentSubTypes<'Actor'>]?: ActorTypeHandler<Subtype>
+}
+
+type ItemTypeHandler<T extends DocumentSubTypes<'Item'> = any> = (
+	actor: IronswornItem<T>,
+	data: Partial<ItemSource<T>>
+) => string | undefined
+
+type ItemTypeHandlers = {
+	[Subtype in DocumentSubTypes<'Item'>]?: ItemTypeHandler<Subtype>
+}
 
 export function registerChatAlertHooks() {
 	Hooks.on(
@@ -35,19 +47,24 @@ export function registerChatAlertHooks() {
 
 	Hooks.on(
 		'preUpdateItem',
-		async (item: IronswornItem, data: any, _options, _userId: number) => {
+		async (
+			item: IronswornItem,
+			data: ActorSource,
+			_options,
+			_userId: number
+		) => {
 			if (!IronswornSettings.get('log-changes')) return
 			if (item.parent == null) return // No logging for unowned items, they don't matter
 
 			let content: string | undefined
-			if (data.name) {
+			if (data.name != null) {
 				content = game.i18n.format('IRONSWORN.ChatAlert.renamed', {
 					name: data.name
 				})
 			} else {
 				content = ITEM_TYPE_HANDLERS[item.type]?.(item, data)
 			}
-			if (!content) return
+			if (content == null) return
 
 			const itemName = item.type === 'bondset' ? '' : item.name
 			sendToChat(item.parent, `${itemName} ${content}`)
@@ -62,7 +79,7 @@ export function registerChatAlertHooks() {
 			if (options.suppressLog) return
 			if (item.type === 'bondset') return // No need to log this
 
-			sendToChat(
+			void sendToChat(
 				item.parent,
 				game.i18n.format('IRONSWORN.ChatAlert.Added', { name: item.name })
 			)
@@ -76,7 +93,7 @@ export function registerChatAlertHooks() {
 			if (item.parent == null) return // No logging for unowned items, they don't matter
 			if (options.suppressLog) return
 
-			sendToChat(
+			void sendToChat(
 				item.parent,
 				game.i18n.format('IRONSWORN.ChatAlert.Deleted', { name: item.name })
 			)
@@ -84,10 +101,10 @@ export function registerChatAlertHooks() {
 	)
 }
 
-const ACTOR_TYPE_HANDLERS: Partial<{
-	[K in DocumentSubTypes<'Actor'>]: ActorTypeHandler<K>
-}> = {
+const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 	character: (actor, data) => {
+		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
+
 		// Ironsworn XP
 		if (data.system?.xp !== undefined) {
 			const oldXp = actor.system.xp
@@ -104,9 +121,9 @@ const ACTOR_TYPE_HANDLERS: Partial<{
 		}
 
 		// Starforged legacy XP
-		for (const kind of ['quests', 'bonds', 'discoveries']) {
+		for (const kind of ['quests', 'bonds', 'discoveries'] as const) {
 			const oldXp = actor.system.legacies[`${kind}XpSpent`]
-			const newXp = getProperty(data, `system.legacies.${kind}XpSpent`)
+			const newXp = get(data.system, `legacies.${kind}XpSpent`)
 			if (newXp !== undefined) {
 				if (newXp > oldXp) {
 					return game.i18n.format('IRONSWORN.ChatAlert.MarkedXP', {
@@ -120,12 +137,17 @@ const ACTOR_TYPE_HANDLERS: Partial<{
 			}
 		}
 
-		for (const stat of ['momentum', 'health', 'spirit', 'supply']) {
-			const newValue = get(data.system, stat)
+		for (const resource of [
+			'momentum',
+			'health',
+			'spirit',
+			'supply'
+		] as const) {
+			const newValue = get(data.system, resource)?.value
 			if (newValue !== undefined) {
-				const oldValue = get(actor.system, stat)
+				const oldValue = get(actor.system, resource).value
 				const signPrefix = newValue > oldValue ? '+' : ''
-				const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
+				const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(resource)}`)
 				return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
 					amt: `${signPrefix}${newValue - oldValue}`,
 					stat: i18nStat,
@@ -139,8 +161,8 @@ const ACTOR_TYPE_HANDLERS: Partial<{
 
 	shared: (actor, data) => {
 		if (data.system?.supply !== undefined) {
-			const newValue = data.system.supply
-			const oldValue = actor.system.supply
+			const newValue = data.system.supply.value
+			const oldValue = actor.system.supply.value
 			const signPrefix = newValue > oldValue ? '+' : ''
 			const i18nStat = game.i18n.localize('IRONSWORN.Supply')
 			return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
@@ -154,16 +176,14 @@ const ACTOR_TYPE_HANDLERS: Partial<{
 	},
 
 	site: (actor, data) => {
-		const siteData = actor.system
-
-		if (data.system?.rank) {
+		if (data.system?.rank != null) {
 			return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
-				old: localizeRank(siteData.rank),
+				old: localizeRank(actor.system.rank),
 				new: localizeRank(data.system.rank)
 			})
 		}
 		if (data.system?.current !== undefined) {
-			const advanced = data.system.current > siteData.current
+			const advanced = data.system.current > actor.system.current
 			return game.i18n.localize(
 				`IRONSWORN.ChatAlert.Progress${advanced ? 'Advanced' : 'Reduced'}`
 			)
@@ -172,14 +192,7 @@ const ACTOR_TYPE_HANDLERS: Partial<{
 	}
 }
 
-type ItemTypeHandler<T extends DocumentSubTypes<'Item'> = any> = (
-	IronswornItem: IronswornItem<T>,
-	any: PartialDeep<ItemSource<T>>
-) => string | undefined
-
-const ITEM_TYPE_HANDLERS: Partial<{
-	[K in DocumentSubTypes<'Item'>]: ItemTypeHandler<K>
-}> = {
+const ITEM_TYPE_HANDLERS: ItemTypeHandlers = {
 	progress: (item, data) => {
 		if (data.system?.rank) {
 			return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
@@ -255,9 +268,9 @@ const ITEM_TYPE_HANDLERS: Partial<{
 			}
 		}
 
-		if (data.system?.track?.current !== undefined) {
-			const newValue = data.system.track.current
-			const oldValue = item.system.track.current
+		if (data.system?.track?.value !== undefined) {
+			const newValue = data.system.track.value
+			const oldValue = item.system.track.value
 			const signPrefix = newValue > oldValue ? '+' : ''
 			return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
 				amt: `${signPrefix}${newValue - oldValue}`,
@@ -270,6 +283,7 @@ const ITEM_TYPE_HANDLERS: Partial<{
 			const selectedOption = data.system.exclusiveOptions.find(
 				(x) => x.selected
 			)
+			if (selectedOption == null) return
 			return game.i18n.format('IRONSWORN.ChatAlert.MarkedOption', {
 				name: selectedOption?.name
 			})
@@ -279,7 +293,7 @@ const ITEM_TYPE_HANDLERS: Partial<{
 			for (let i = 0; i < data.system.fields.length; i++) {
 				const newField = data.system.fields[i]
 				const oldField = item.system.fields[i]
-				if (oldField && oldField?.value !== newField.value) {
+				if (oldField != null && oldField?.value !== newField.value) {
 					return game.i18n.format('IRONSWORN.ChatAlert.SetField', {
 						name: newField.name,
 						val: newField.value
@@ -294,9 +308,8 @@ const ITEM_TYPE_HANDLERS: Partial<{
 	},
 
 	bondset: (item, data) => {
-		const bondsetData = item.system
 		if (data.system?.bonds !== undefined) {
-			const oldLen = Object.values(bondsetData.bonds).length
+			const oldLen = Object.values(item.system.bonds).length
 			const newLen = Object.values(data.system.bonds).length
 			if (oldLen < newLen) {
 				return game.i18n.localize('IRONSWORN.ChatAlert.AddBond')
@@ -310,10 +323,8 @@ const ITEM_TYPE_HANDLERS: Partial<{
 }
 
 export async function sendToChat(speaker: IronswornActor, msg: string) {
-	const whisperToCurrentUser = (speaker.getFlag(
-		'foundry-ironsworn',
-		'muteBroadcast'
-	) ?? false) as boolean
+	const whisperToCurrentUser =
+		speaker.getFlag('foundry-ironsworn', 'muteBroadcast') ?? false
 	const whisper = whisperToCurrentUser ? compact([game.user?.id]) : undefined
 
 	const messageData: ChatMessageDataConstructorData = {

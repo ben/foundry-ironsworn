@@ -10,7 +10,6 @@ export class MeterValueField extends foundry.data.fields.NumberField {
 			label,
 			integer: true,
 			required: true,
-			step: 1,
 			min,
 			max,
 			initial

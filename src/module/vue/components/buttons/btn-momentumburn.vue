@@ -24,10 +24,7 @@ defineProps<Props>()
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 const tooltip = computed(() => {
-	const { momentum, momentumReset } = $actor.system
-	return game.i18n.format('IRONSWORN.BurnMomentumAndResetTo', {
-		value: momentum,
-		resetValue: momentumReset
-	})
+	const { momentum } = $actor.system
+	return game.i18n.format('IRONSWORN.BurnMomentumAndResetTo', momentum as any)
 })
 </script>

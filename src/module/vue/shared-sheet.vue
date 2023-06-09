@@ -5,9 +5,9 @@
 				slider-style="horizontal"
 				attr="supply"
 				:stat-label="$t('IRONSWORN.Supply')"
-				:max="5"
-				:min="0"
-				:current-value="data.actor.system.supply"
+				:max="data.actor.system.supply.max"
+				:min="data.actor.system.supply.min"
+				:current-value="data.actor.system.supply.value"
 				document-type="Actor"
 				:global="IronswornSettings.get('shared-supply')" />
 		</section>

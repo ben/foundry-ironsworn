@@ -43,7 +43,7 @@ function rollStat(): any {
 		const name = `${props.statLabel} (${$item?.name})`
 		// FIXME: this should take `attr` instead to get the value, but there doesn't seem to be a simple way to (de)stringify the path to deeper props like there is with e.g. Actor.update()
 		// so, for now, we assume that assets are the only Items that we bother to roll with.
-		const value = $item?.system?.track?.current
+		const value = $item?.system?.track?.value
 		return IronswornPrerollDialog.showForStat(name, value, $actor)
 	} else if (props.documentType === 'Actor') {
 		const name = `${props.statLabel} (${$actor?.name})`

@@ -1,12 +1,15 @@
 import { StatField } from '../../fields/StatField'
-import { MeterValueField } from '../../fields/MeterValueField'
-import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
 import type { ActorDataSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
 import { IronActiveEffect } from '../../active-effect/active-effect'
+import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
+import type {
+	ConditionMeterSource,
+	MomentumSource
+} from '../../fields/MeterField'
 
 export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
@@ -24,10 +27,12 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 		this.burnMomentum = this.burnMomentum.bind(this)
 	}
 
+	static _enableV10Validation = true
+
 	async burnMomentum(this: CharacterData) {
-		if (this.parent.system.momentum > this.parent.system.momentumReset) {
+		if (this.canBurnMomentum) {
 			await this.parent.update({
-				system: { momentum: this.parent.system.momentumReset }
+				system: { 'momentum.value': this.parent.system.momentum.resetValue }
 			})
 		}
 	}
@@ -38,13 +43,6 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			customImpactIDs.some((id) => (impact as any).statuses.has(id))
 		)
 	}
-
-	static _enableV10Validation = true
-
-	static readonly MOMENTUM_MAX = 10
-	static readonly MOMENTUM_MIN = -6
-	static readonly MOMENTUM_INITIAL = 2
-	static readonly MOMENTUM_RESET_MIN = 0
 
 	static override migrateData(source: Record<string, unknown>) {
 		source = super.migrateData(source) as Record<string, unknown> &
@@ -96,42 +94,16 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			shadow: new StatField({ label: 'IRONSWORN.Shadow' }),
 			wits: new StatField({ label: 'IRONSWORN.Wits' }),
 
-			health: new MeterValueField({ label: 'IRONSWORN.Health' }),
-			spirit: new MeterValueField({ label: 'IRONSWORN.Spirit' }),
-			supply: new MeterValueField({ label: 'IRONSWORN.Supply' }),
+			// TODO: add a localized `hint` property, and have the vue sheet automatically pull these in as tooltips
+			health: new ConditionMeterField({ label: 'IRONSWORN.Health' }),
+			spirit: new ConditionMeterField({ label: 'IRONSWORN.Spirit' }),
+			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' }),
 
-			momentum: new MeterValueField({
-				label: 'IRONSWORN.Momentum',
-				initial: CharacterData.MOMENTUM_INITIAL,
-				max: CharacterData.MOMENTUM_MAX,
-				min: CharacterData.MOMENTUM_MIN
-			}),
+			momentum: new MomentumField(),
 
-			momentumMax: new fields.NumberField({
-				integer: true,
-				step: 1,
-				initial: CharacterData.MOMENTUM_MAX,
-				max: CharacterData.MOMENTUM_MAX
-			}),
-			momentumReset: new fields.NumberField({
-				integer: true,
-				step: 1,
-				initial: CharacterData.MOMENTUM_INITIAL,
-				max: CharacterData.MOMENTUM_MAX,
-				min: CharacterData.MOMENTUM_RESET_MIN
-			}),
-
-			experience: new fields.NumberField({
-				integer: true,
-				required: true,
-				step: 1,
-				initial: 0,
-				min: 0
-			}),
 			xp: new fields.NumberField({
 				integer: true,
 				required: true,
-				step: 1,
 				min: 0,
 				initial: 0
 			}),
@@ -163,18 +135,19 @@ export interface CharacterData extends CharacterDataSourceData {}
 export interface CharacterDataSourceData {
 	biography: string
 	notes: string
+
 	edge: number
 	heart: number
 	iron: number
 	shadow: number
 	wits: number
-	health: number
-	spirit: number
-	supply: number
-	experience: number
-	momentum: number
-	momentumMax: number
-	momentumReset: number
+
+	health: ConditionMeterSource
+	spirit: ConditionMeterSource
+	supply: ConditionMeterSource
+	momentum: MomentumSource
+
+	xp: number
 	legacies: {
 		quests: number
 		questsXpSpent: number
@@ -183,7 +156,6 @@ export interface CharacterDataSourceData {
 		discoveries: number
 		discoveriesXpSpent: number
 	}
-	xp: number
 }
 
 export interface CharacterDataSource {
