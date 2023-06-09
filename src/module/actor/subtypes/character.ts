@@ -15,6 +15,8 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
+	static _enableV10Validation = true
+
 	constructor(
 		...args: ConstructorParameters<
 			typeof foundry.abstract.TypeDataModel<
@@ -26,8 +28,6 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 		super(...args)
 		this.burnMomentum = this.burnMomentum.bind(this)
 	}
-
-	static _enableV10Validation = true
 
 	async burnMomentum(this: CharacterData) {
 		if (this.canBurnMomentum) {
