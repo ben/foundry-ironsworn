@@ -42,7 +42,6 @@ import { computed, inject, nextTick, reactive } from 'vue'
 import type { Ref } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'
-import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 import IronCheckbox from '../input/iron-checkbox.vue'
 import FontIcon from '../icon/font-icon.vue'
@@ -117,8 +116,7 @@ function refreshGlobalHint() {
 	const names = [
 		...actors.map((x) => x.name),
 		...assets.map((x) => {
-			const assetData = x.system as AssetDataPropertiesData
-			const nameField = assetData.fields.find((x) => {
+			const nameField = x.system.fields.find((x) => {
 				const downcase = x.name.toLowerCase()
 				if (downcase === game.i18n.localize('Name').toLowerCase()) return true
 				if (downcase === 'name') return true

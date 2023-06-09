@@ -1,11 +1,10 @@
 import { compact } from 'lodash-es'
 import { getDFMoveByDfId } from '../dataforged'
 import type { IronswornItem } from '../item/item'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { OracleTable } from '../roll-table/oracle-table'
 
-export async function createSfMoveChatMessage(move: IronswornItem) {
-	const { dfid, Oracles } = move.system as SFMoveDataPropertiesData
+export async function createSfMoveChatMessage(move: IronswornItem<'sfmove'>) {
+	const { dfid, Oracles } = move.system
 	const dfMove = await getDFMoveByDfId(dfid)
 	const dfids = Oracles ?? dfMove?.Oracles ?? []
 	const nextOracles = compact(

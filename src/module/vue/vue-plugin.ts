@@ -33,7 +33,7 @@ export function enrichHtml(text) {
 
 export function enrichMarkdown(md?: string): string {
 	if (!md) return ''
-	const html = marked.parse(md)
+	const html = marked.parse(md, { mangle: false, gfm: true, headerIds: false })
 	return enrichHtml(html)
 }
 

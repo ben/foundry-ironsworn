@@ -8,13 +8,13 @@ import type { ActorDataSource } from '@league-of-foundry-developers/foundry-vtt-
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
 import { IronActiveEffect } from '../../active-effect/active-effect'
 
-export class CharacterData extends foundry.abstract.DataModel<
+export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
 	constructor(
 		...args: ConstructorParameters<
-			typeof foundry.abstract.DataModel<
+			typeof foundry.abstract.TypeDataModel<
 				CharacterDataSourceData,
 				IronswornActor<'character'>
 			>

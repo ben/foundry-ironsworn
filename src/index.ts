@@ -21,12 +21,10 @@ import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
 import * as IronColor from './module/features/ironcolor'
 import { patchZIndex } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
-import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
 import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
 import { ThemeDomainSheet } from './module/item/delve-theme-domain/theme-domain-sheet'
-import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 import { IronswornJournalPage } from './module/journal/journal-entry-page'
@@ -47,8 +45,8 @@ import type {
 import ActorConfig from './module/actor/config'
 import { IronActiveEffect } from './module/active-effect/active-effect'
 import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
-import { IronswornActor } from './module/actor/actor'
 import { IRONSWORN } from './config'
+import ItemConfig from './module/item/config'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -83,12 +81,11 @@ Hooks.once('init', async () => {
 	CONFIG.IRONSWORN = IRONSWORN
 
 	mergeObject(CONFIG.Actor, ActorConfig)
-	CONFIG.Actor.documentClass = IronswornActor
+	mergeObject(CONFIG.Item, ItemConfig)
 
 	// Define custom Entity classes
-	CONFIG.ActiveEffect.documentClass = IronActiveEffect
 
-	CONFIG.Item.documentClass = IronswornItem
+	CONFIG.ActiveEffect.documentClass = IronActiveEffect
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
@@ -209,24 +206,6 @@ Hooks.once('init', async () => {
 		}
 	)
 
-	CONFIG.Item.typeLabels = mergeObject(CONFIG.Item.typeLabels, {
-		asset: 'IRONSWORN.ITEM.TypeAsset',
-		progress: 'IRONSWORN.ITEM.TypeProgressTrack',
-		bondset: 'IRONSWORN.ITEM.TypeBondset',
-		sfmove: 'IRONSWORN.ITEM.TypeMove',
-		'delve-domain': 'IRONSWORN.ITEM.TypeDelveDomain',
-		'delve-theme': 'IRONSWORN.ITEM.TypeDelveTheme'
-	})
-	CONFIG.Item.typeIcons = mergeObject(CONFIG.Item.typeIcons, {
-		asset: 'fa-solid fa-cards-blank',
-		progress: 'fa-solid fa-asterisk',
-		bondset: 'fa-solid fa-handshake',
-		sfmove: 'icon isicon-d10-tilt',
-		// FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
-		'delve-domain': 'fa-duotone fa-cards-blank',
-		'delve-theme': 'fa-duotone fa-cards-blank'
-	})
-
 	CONFIG.JournalEntryPage.typeLabels = mergeObject(
 		CONFIG.JournalEntryPage.typeLabels,
 		{
@@ -252,8 +231,6 @@ Hooks.once('init', async () => {
 })
 
 Hooks.once('ready', async () => {
-	await runDataMigrations()
-
 	registerDragAndDropHooks()
 	registerChatAlertHooks()
 

@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
+import { RequireKey } from 'dataforged'
+
 declare global {
 	namespace foundry {
 		namespace data {
@@ -14,6 +16,8 @@ declare global {
 					blank: boolean
 					trim: boolean
 					choices: DataField.Choices<T> | undefined
+					// @ts-expect-error
+					nullable: boolean
 				}
 				export namespace StringField {
 					export interface Options<T extends string = string>
@@ -80,10 +84,15 @@ declare global {
 				/**
 				 * A special [StringField]{@link StringField} which records a standardized CSS color string.
 				 */
-				// @ts-expect-error
-				export class ColorField extends StringField {}
+				export class ColorField extends StringField<
+					string,
+					ColorField.Options
+				> {
+					// @ts-expect-error
+					nullable: boolean
+				}
 				export namespace ColorField {
-					export interface Options extends StringField.Options {
+					export interface Options extends StringField.Options<string> {
 						/** @default true */
 						nullable: StringField.Options['nullable']
 						/** @default null */
@@ -104,6 +113,10 @@ declare global {
 					categories: T[]
 					base64: boolean
 					wildcard: boolean
+
+					constructor(
+						options: RequireKey<Partial<FilePathField.Options<T>>, 'categories'>
+					)
 				}
 
 				export namespace FilePathField {

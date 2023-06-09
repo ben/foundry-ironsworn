@@ -8,7 +8,6 @@ import {
 } from 'lodash-es'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
@@ -262,7 +261,7 @@ export class IronswornRollMessage {
 		if (move?.type !== 'sfmove') return ret
 
 		const key = DfRollOutcome[theOutcome]
-		const moveSystem = move.system as SFMoveDataPropertiesData
+		const moveSystem = move.system
 		let moveOutcome = moveSystem.Outcomes?.[key] as IOutcomeInfo
 		if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
 			moveOutcome = moveOutcome['With a Match']
@@ -320,7 +319,7 @@ export class IronswornRollMessage {
 		const move = await this.roll.moveItem
 		if (move?.type !== 'sfmove') return {}
 
-		const system = move.system as SFMoveDataPropertiesData
+		const system = move.system
 		const dfids = system.Oracles ?? []
 		const nextOracles = compact(
 			await Promise.all(dfids.map(OracleTable.getByDfId))

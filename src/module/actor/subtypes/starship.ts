@@ -3,7 +3,7 @@ import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import type { DataSchema } from '../../fields/utils'
 
-export class StarshipData extends foundry.abstract.DataModel<
+export class StarshipData extends foundry.abstract.TypeDataModel<
 	StarshipDataSourceData,
 	IronswornActor<'starship'>
 > {

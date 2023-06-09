@@ -1,4 +1,4 @@
-import type { DelveSiteFeatureOrDanger } from './item/itemtypes'
+import type { DelveSiteFeatureOrDanger } from './item/subtypes/common'
 
 const THEME_IMAGES = {
 	Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
