@@ -15,6 +15,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 	IronswornActor<'character'>
 > {
 	static _enableV10Validation = true
+	static readonly CUSTOM_IMPACTS = ['custom1', 'custom2']
 
 	constructor(
 		...args: ConstructorParameters<
@@ -45,9 +46,10 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 	/** A convenience getter that returns all custom impactsts on the PC. */
 	get customImpacts() {
-		const customImpactIDs = ['custom1', 'custom2'] as const
 		return this.parent.effects.filter((impact) =>
-			customImpactIDs.some((id) => (impact as any).statuses.has(id))
+			CharacterData.CUSTOM_IMPACTS.some((id) =>
+				(impact as any).statuses.has(id)
+			)
 		)
 	}
 
@@ -60,9 +62,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			if (source.effects == null)
 				source.effects = [] as ActiveEffectDataConstructorData[]
 
-			const customKeys = ['custom1', 'custom2']
-
-			for (const id of customKeys) {
+			for (const id of this.CUSTOM_IMPACTS) {
 				const value = debilities[id]
 				if (value !== true) continue
 				const label = (debilities[`${id}name`] as string) ?? ''
