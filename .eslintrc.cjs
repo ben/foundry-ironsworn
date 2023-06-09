@@ -42,12 +42,21 @@ module.exports = {
 		// FIXME: part of standard-ts. not an awful idea, but it's not doable via autofix, so it's disabled for now
 		'@typescript-eslint/explicit-function-return-type': 'off',
 
-		// prefer lodash-es to regular lodash
+		// prefer lodash-es to regular lodash, and FVTT-provided utilities to lodash utilities
 		'no-restricted-imports': [
 			'error',
 			{
-				name: 'lodash',
-				message: 'Please use `lodash-es` instead.'
+				paths: [
+					{
+						name: 'lodash',
+						message: 'Please use lodash-es instead.'
+					},
+					{
+						name: 'lodash-es',
+						importNames: ['clamp'],
+						message: "Please use FVTT's Math.clamped instead."
+					}
+				]
 			}
 		]
 	},
