@@ -82,6 +82,12 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 			momentum: new MomentumField(),
 
+			experience: new fields.NumberField({
+				integer: true,
+				required: true,
+				initial: 0,
+				min: 0
+			}),
 			xp: new fields.NumberField({
 				integer: true,
 				required: true,
