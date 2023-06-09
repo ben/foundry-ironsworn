@@ -1,15 +1,15 @@
 import { StatField } from '../../fields/StatField'
-import { MeterValueField } from '../../fields/MeterValueField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import { clamp } from 'lodash-es'
 import type { DataSchema } from '../../fields/utils'
 import type {
 	ConditionMeterSource,
 	MomentumSource
 } from '../../fields/MeterField'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
+import { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
+import { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 
 export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
@@ -30,13 +30,17 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 	static _enableV10Validation = true
 
 	async burnMomentum(this: CharacterData) {
-		if (
-			this.parent.system.momentum.value > this.parent.system.momentum.resetValue
-		) {
+		if (this.canBurnMomentum) {
 			await this.parent.update({
-				system: { momentum: this.parent.system.momentum.resetValue }
+				system: { 'momentum.value': this.parent.system.momentum.resetValue }
 			})
 		}
+	}
+
+	get canBurnMomentum() {
+		return (
+			this.parent.system.momentum.value > this.parent.system.momentum.resetValue
+		)
 	}
 
 	get #impactCount() {
@@ -44,16 +48,19 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			.length
 	}
 
-	override prepareDerivedData(): void {
-		// update momentum max/reset
-		this.momentum.max = clamp(
-			MomentumField.MAX - this.#impactCount,
-			MomentumField.MIN,
-			MomentumField.MAX
-		)
-		this.momentum.resetValue = clamp(
-			MomentumField.INITIAL - this.#impactCount,
+	// FIXME: These won't be required when impacts are represented as ActiveEffects
+	get momentumReset() {
+		return Math.clamped(
+			this.momentum.resetValue - this.#impactCount,
 			MomentumField.RESET_MIN,
+			this.momentum.max
+		)
+	}
+
+	get momentumMax() {
+		return Math.clamped(
+			this.momentum.max - this.#impactCount,
+			MomentumField.MIN,
 			MomentumField.MAX
 		)
 	}
@@ -70,10 +77,6 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			shadow: new StatField({ label: 'IRONSWORN.Shadow' }),
 			wits: new StatField({ label: 'IRONSWORN.Wits' }),
 
-			// health: new MeterValueField({ label: 'IRONSWORN.Health' }),
-			// spirit: new MeterValueField({ label: 'IRONSWORN.Spirit' }),
-			// supply: new MeterValueField({ label: 'IRONSWORN.Supply' }),
-
 			// TODO: add a localized `hint` property, and have the vue sheet automatically pull these in as tooltips
 			health: new ConditionMeterField({ label: 'IRONSWORN.Health' }),
 			spirit: new ConditionMeterField({ label: 'IRONSWORN.Spirit' }),
@@ -81,12 +84,6 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 			momentum: new MomentumField(),
 
-			experience: new fields.NumberField({
-				integer: true,
-				required: true,
-				initial: 0,
-				min: 0
-			}),
 			xp: new fields.NumberField({
 				integer: true,
 				required: true,
@@ -151,7 +148,6 @@ export interface CharacterDataSourceData {
 	health: ConditionMeterSource
 	spirit: ConditionMeterSource
 	supply: ConditionMeterSource
-	experience: number
 	momentum: MomentumSource
 	debility: {
 		corrupted: boolean

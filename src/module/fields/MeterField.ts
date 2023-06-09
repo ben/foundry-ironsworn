@@ -1,4 +1,6 @@
-import { inRange } from 'lodash-es'
+import { IronswornActor } from '../actor/actor'
+import type { CharacterDataSourceData } from '../actor/subtypes/character'
+import type { DataSchema } from './utils'
 
 export interface MeterField extends MeterSource {}
 export interface MeterSource {
@@ -7,44 +9,54 @@ export interface MeterSource {
 	min: number
 }
 
-function migrateMeterField(_: object, fieldData: any) {
-	if (typeof fieldData === 'number') {
-		fieldData = { value: fieldData }
-	}
-}
-
-interface ConditionMeterFieldOptions
-	extends foundry.data.fields.SchemaField.Options<ConditionMeterSource> {
+interface MeterFieldOptions<
+	T extends ConditionMeterSource = ConditionMeterSource
+> extends foundry.data.fields.SchemaField.Options<T> {
 	meterMax: number
+	meterMin: number
 	initialValue: number
 }
 
-export class ConditionMeterField extends foundry.data.fields
-	.SchemaField<ConditionMeterSource> {
-	constructor({
-		meterMax = 5,
-		initialValue = meterMax,
-		...options
-	}: Partial<ConditionMeterFieldOptions>) {
-		const fields = foundry.data.fields
-		super(
-			{
-				value: new fields.NumberField({ integer: true, initial: initialValue }),
-				max: new fields.NumberField({ integer: true, initial: meterMax }),
-				min: new fields.NumberField({
-					integer: true,
-					readonly: true,
-					initial: 0
-				})
-			},
-
-			options
-		)
+export abstract class MeterField<
+	T extends MeterSource = MeterSource
+> extends foundry.data.fields.SchemaField<T> {
+	constructor(
+		{
+			meterMin = 0,
+			meterMax = 5,
+			initialValue = meterMax,
+			...options
+		}: Partial<MeterFieldOptions<T>>,
+		extendFields: DataSchema<Omit<T, keyof MeterSource>>
+	) {
+		const Fields = foundry.data.fields
+		const schema: DataSchema<T> = {
+			value: new Fields.NumberField({ integer: true, initial: initialValue }),
+			max: new Fields.NumberField({ integer: true, initial: meterMax }),
+			min: new Fields.NumberField({
+				integer: true,
+				readonly: true,
+				initial: meterMin
+			}),
+			...(extendFields ?? {})
+		} as any
+		super(schema, options)
 	}
 
 	migrateSource(sourceData: object, fieldData: any) {
-		migrateMeterField(sourceData, fieldData)
+		if (typeof fieldData === 'number') {
+			fieldData = { value: fieldData }
+		}
+
+		IronswornActor._addDataFieldMigration(fieldData, 'current', 'value')
+
 		super.migrateSource(sourceData, fieldData)
+	}
+}
+
+export class ConditionMeterField extends MeterField {
+	constructor(options) {
+		super(options, {})
 	}
 }
 
@@ -54,8 +66,7 @@ export interface MomentumSource extends MeterSource {
 	resetValue: number
 }
 
-export class MomentumField extends foundry.data.fields
-	.SchemaField<MomentumSource> {
+export class MomentumField extends MeterField<MomentumSource> {
 	static readonly MAX = 10
 	static readonly MIN = -6
 	static readonly INITIAL = 2
@@ -65,31 +76,40 @@ export class MomentumField extends foundry.data.fields
 		const fields = foundry.data.fields
 		super(
 			{
-				max: new fields.NumberField({
-					initial: MomentumField.MAX,
-					max: MomentumField.MAX
-				}),
-				min: new fields.NumberField({
-					initial: MomentumField.MIN,
-					readonly: true
-				}),
-				value: new fields.NumberField({
-					initial: MomentumField.INITIAL,
-					max: MomentumField.MAX,
-					min: MomentumField.MIN
-				}),
+				meterMax: MomentumField.MAX,
+				meterMin: MomentumField.MIN,
+				initialValue: MomentumField.INITIAL,
+				label: 'IRONSWORN.Momentum'
+			},
+			{
 				resetValue: new fields.NumberField({
 					initial: MomentumField.INITIAL,
-					min: MomentumField.RESET_MIN
+					min: MomentumField.RESET_MIN,
+					max: MomentumField.MAX,
+					integer: true
 				})
-			},
-			{ label: 'IRONSWORN.Momentum' }
+			}
 		)
 	}
 
-	migrateSource(sourceData: object, fieldData: any) {
-		migrateMeterField(sourceData, fieldData)
+	override migrateSource(
+		sourceData: CharacterDataSourceData,
+		fieldData: MomentumSource
+	): void {
 		super.migrateSource(sourceData, fieldData)
+		if (typeof sourceData?.momentum === 'number') {
+			console.log('Migrating sourceData, fieldData', sourceData, fieldData)
+			IronswornActor._addDataFieldMigration(
+				sourceData,
+				'momentumReset',
+				'momentum.resetValue'
+			)
+			IronswornActor._addDataFieldMigration(
+				sourceData,
+				'momentumMax',
+				'momentum.max'
+			)
+		}
 	}
 }
 export interface MomentumField extends MomentumSource {}
