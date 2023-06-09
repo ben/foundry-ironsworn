@@ -121,7 +121,7 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
-import { ItemKey, $ItemKey, ActorKey, $ActorKey } from '../../provisions'
+import { ItemKey, $ItemKey } from '../../provisions'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 import WithRolllisteners from 'component:with-rolllisteners.vue'
 import AssetConditionMeter from 'component:asset/asset-condition-meter.vue'

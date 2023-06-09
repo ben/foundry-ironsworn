@@ -1,3 +1,4 @@
+import { MeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 
@@ -35,22 +36,22 @@ export class AssetData extends foundry.abstract.TypeDataModel<
 					value: new fields.StringField()
 				})
 			),
-			track: new ConditionMeterField()
+			track: new AssetConditionMeterField()
 		}
 	}
 }
 
-export class ConditionMeterField extends foundry.data.fields
-	.SchemaField<AssetConditionMeter> {
+export class AssetConditionMeterField extends MeterField<AssetConditionMeter> {
 	constructor() {
 		const fields = foundry.data.fields
 
-		super({
-			enabled: new fields.BooleanField(),
-			name: new fields.StringField(),
-			current: new fields.NumberField({ integer: true, min: 0, initial: 5 }),
-			max: new fields.NumberField({ integer: true, min: 0, initial: 5 })
-		})
+		super(
+			{},
+			{
+				enabled: new fields.BooleanField(),
+				name: new fields.StringField()
+			}
+		)
 	}
 }
 export interface AssetData extends AssetDataPropertiesData {}
@@ -58,7 +59,8 @@ export interface AssetData extends AssetDataPropertiesData {}
 export interface AssetConditionMeter {
 	enabled: boolean
 	name: string
-	current: number
+	value: number
+	min: number
 	max: number
 }
 

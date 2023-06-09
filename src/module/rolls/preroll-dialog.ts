@@ -377,7 +377,7 @@ export class IronswornPrerollDialog extends Dialog<
 					}
 
 					// Set up for the roll
-					prerollOptions.momentum = rollingActor.system.momentum
+					prerollOptions.momentum = rollingActor.system.momentum.value
 					prerollOptions.stat = chooseStatToRoll(mode, stats, rollingActor)
 
 					void IronswornPrerollDialog.submitRoll(el, prerollOptions)

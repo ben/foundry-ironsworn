@@ -1,13 +1,13 @@
 <template>
 	<AttrSlider
 		class="momentum-meter"
-		attr="momentum"
+		attr="momentum.value"
 		document-type="Actor"
 		:label-position="labelPosition"
 		:slider-style="props.sliderStyle"
-		:current-value="actor.system.momentum ?? CharacterData.MOMENTUM_INITIAL"
-		:min="CharacterData.MOMENTUM_MIN"
-		:max="CharacterData.MOMENTUM_MAX"
+		:current-value="actor.system.momentum.value ?? MomentumField.INITIAL"
+		:min="MomentumField.MIN"
+		:max="MomentumField.MAX"
 		:soft-max="$actor.system.momentumMax"
 		:segment-class="{
 			[$actor.system.momentumReset]: 'segment-momentum-reset'
@@ -18,7 +18,7 @@
 				:text="$t('IRONSWORN.Momentum')"
 				:tooltip="
 					$t('IRONSWORN.BurnMomentumAndResetTo', {
-						value: actor.system.momentum,
+						value: actor.system.momentum.value,
 						resetValue: $actor.system.momentumReset
 					})
 				">
@@ -30,9 +30,8 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue'
 import { inject } from 'vue'
-import type { IronswornActor } from '../../../actor/actor.js'
-import { CharacterData } from '../../../actor/subtypes/character'
-import type { SourceData } from '../../../fields/utils'
+import type { IronswornActor } from '../../../actor/actor'
+import { MomentumField } from '../../../fields/MeterField'
 import { $ActorKey, ActorKey } from '../../provisions.js'
 import BtnMomentumburn from '../buttons/btn-momentumburn.vue'
 
@@ -46,7 +45,8 @@ const props = withDefaults(
 	{ sliderStyle: 'vertical', labelPosition: 'left' }
 )
 
-const actor = inject(ActorKey) as Ref<SourceData<IronswornActor, 'character'>>
+const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
+
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 </script>
 
