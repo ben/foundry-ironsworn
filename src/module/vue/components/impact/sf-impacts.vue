@@ -11,11 +11,11 @@
 		<ImpactCheckboxCustom
 			style="grid-column: 1 / 3"
 			status-id="custom1"
-			:active-effect="custom1" />
+			:active-effect="customImpacts[0]" />
 		<ImpactCheckboxCustom
 			style="grid-column: 3 / 5"
 			status-id="custom2"
-			:active-effect="custom2" />
+			:active-effect="customImpacts[1]" />
 	</div>
 </template>
 
@@ -27,9 +27,9 @@ import { $ActorKey } from '../../provisions'
 import type { IronswornActor } from '../../../actor/actor'
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const [custom1, custom2] = computed(() =>
-	$actor.system.customImpacts.map((x) => x.toObject())
-).value
+const customImpacts = computed(() =>
+	$actor.system.customImpacts.map((x) => x.toObject() as any)
+)
 </script>
 
 <style lang="scss" module>

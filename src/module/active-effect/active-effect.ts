@@ -10,7 +10,7 @@ import type { DocumentSubTypes } from '../../types/helperTypes'
 import { sendToChat } from '../features/chat-alert'
 import type { ImpactOptions } from './types'
 import { MomentumField } from '../fields/MeterField'
-import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ImpactFlags } from './config'
 
 export interface IronActiveEffect {
 	statuses: Set<string>
@@ -19,7 +19,7 @@ export class IronActiveEffect extends ActiveEffect {
 	static readonly MOMENTUM_RESET_PATH = 'system.momentum.resetValue'
 	static readonly MOMENTUM_MAX_PATH = 'system.momentum.max'
 	static readonly PRESETS: Record<
-		Required<ConfiguredFlags<'ActiveEffect'>['foundry-ironsworn']>['type'],
+		Required<ImpactFlags>['type'],
 		EffectChangeDataConstructorData[]
 	> = {
 		impact: [
@@ -362,5 +362,32 @@ Hooks.on(
 		}
 
 		return changes
+	}
+)
+
+/**
+ * Filter token HUD status effect toggles by actor subtype by referencing its TypeDataModel#tokenStatusEffects property.
+ */
+Hooks.on(
+	'renderTokenHUD',
+	async (
+		app: TokenHUD,
+		// technically an HTMLFormElement, but we don't care about that
+		html: JQuery<HTMLElement>,
+		_: TokenHUD.RenderOptions
+	) => {
+		const actor = app.object?.actor
+
+		// fall back to allowing everything if the required info is missing
+		if (actor == null || actor.system.tokenStatusEffects == null) return
+
+		// select all elements with a statusId data attribute that *aren't* a legal status effect
+		const selector = `[data-status-id]${actor.system.tokenStatusEffects
+			.map(({ id }) => `:not([data-status-id="${id}"])`)
+			.join('')}`
+
+		for (const el of html.find(selector)) {
+			el.remove()
+		}
 	}
 )

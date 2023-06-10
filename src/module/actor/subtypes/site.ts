@@ -14,6 +14,11 @@ export class SiteData extends foundry.abstract.TypeDataModel<
 > {
 	static _enableV10Validation = true
 
+	/** Status effects toggles shown on tokens of this subtype **/
+	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
+		return []
+	}
+
 	get denizenTable() {
 		return new OracleTable({
 			name: game.i18n.localize('IRONSWORN.DELVESITE.Denizens'),

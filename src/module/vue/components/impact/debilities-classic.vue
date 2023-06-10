@@ -23,19 +23,27 @@
 			:impacts="[{ name: 'cursed' }, { name: 'tormented' }]" />
 
 		<ImpactCheckboxCustom
-			type="debility"
 			style="grid-column: 1 / 3"
-			debilitykey="custom1" />
+			status-id="custom1"
+			:active-effect="customDebilities[0]" />
 		<ImpactCheckboxCustom
-			type="debility"
 			style="grid-column: 3 / 5"
-			debilitykey="custom2" />
+			status-id="custom2"
+			:active-effect="customDebilities[1]" />
 	</div>
 </template>
 
 <script setup lang="ts">
 import ImpactCheckboxCustom from './impact-checkbox-custom.vue'
 import ImpactCategory from './impact-category.vue'
+import { $ActorKey } from '../../provisions'
+import type { IronswornActor } from '../../../actor/actor'
+import { inject, computed } from 'vue'
+
+const $actor = inject($ActorKey) as IronswornActor<'character'>
+const customDebilities = computed(() =>
+	$actor.system.customImpacts.map((x) => x.toObject() as any)
+)
 </script>
 
 <style lang="scss" module>

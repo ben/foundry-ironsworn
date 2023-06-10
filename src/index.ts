@@ -44,7 +44,6 @@ import type {
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
 import { IronActiveEffect } from './module/active-effect/active-effect'
-import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import { IRONSWORN } from './config'
 import ItemConfig from './module/item/config'
 
@@ -90,7 +89,7 @@ Hooks.once('init', async () => {
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
-	// cheat CONFIG.statusEffects as a getter, so that it dynamically provides the correct status effects for the selected toolset
+	// HACK: CONFIG.statusEffects as a getter, so that it dynamically provides the correct status effects for the selected toolset
 	Object.defineProperty(CONFIG, 'statusEffects', {
 		get(): StatusEffect[] {
 			return IronswornSettings.starforgedToolsEnabled

@@ -14,12 +14,15 @@ export interface ImpactFlags {
 	type?: 'impact'
 }
 
-export type ActiveEffectFlags = ImpactFlags
+export type IronActiveEffectFlags = ImpactFlags
 
 declare global {
 	interface FlagConfig {
 		ActiveEffect: {
-			'foundry-ironsworn': ActiveEffectFlags
+			core?: {
+				statusId?: string
+			}
+			'foundry-ironsworn'?: IronActiveEffectFlags
 		}
 	}
 }

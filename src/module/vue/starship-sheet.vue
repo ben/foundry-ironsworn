@@ -38,7 +38,6 @@ import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import PlayerAssets from './components/asset/player-assets.vue'
-import type { ActorSource } from '../fields/utils'
 import { IronActiveEffect } from '../active-effect/active-effect'
 
 const props = defineProps<{

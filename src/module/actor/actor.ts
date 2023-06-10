@@ -1,19 +1,11 @@
 import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
-import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
-import type {
-	ActorData,
-	ActorDataConstructorData
-} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
-import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
+import type { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import type {
 	ConfiguredData,
 	ConfiguredDocumentClassForName
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type {
-	ConfiguredDocumentClass,
-	DocumentSubTypes
-} from '../../types/helperTypes'
+import type { DocumentSubTypes } from '../../types/helperTypes'
 import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import type { IronswornItem } from '../item/item'
@@ -124,6 +116,30 @@ export class IronswornActor<
 			? 'starforged'
 			: 'ironsworn'
 	}
+
+	protected override _onCreate(_data, _options, _userId): void {
+		if (this.assert('character')) {
+			// insert disabled placeholder effects for custom impacts, which are used to persist player-set labels
+			const effectIDs = ['custom1', 'custom2']
+			for (const id of effectIDs) {
+				if (!this.effects.contents.some((fx: any) => fx.statuses.has(id)))
+					void this.createEmbeddedDocuments(
+						'ActiveEffect',
+						[IronActiveEffect.createImpact({ id, disabled: true }) as any],
+						{ suppressLog: true } as any
+					)
+			}
+		}
+
+		if (this.assert('character') || this.assert('shared'))
+			void this.createEmbeddedDocuments(
+				'Item',
+				[{ type: 'bondset', name: 'bonds' }],
+				{
+					suppressLog: true
+				} as any
+			)
+	}
 }
 export interface IronswornActor<T extends DocumentSubTypes<'Actor'> = any>
 	extends Actor {
@@ -142,20 +158,10 @@ declare global {
 }
 
 // TODO: would it make sense to do this with IronswornActor#_onCreate instead?
-Hooks.on('createActor', async (actor: IronswornActor) => {
-	if (!['character', 'shared'].includes(actor.type)) return
-	await Item.createDocuments([{ type: 'bondset', name: 'bonds' }], {
-		parent: actor,
-		suppressLog: true
-	} as any)
-	if (actor.type === 'character') {
-		// insert disabled placeholder effects for custom impacts, which are used to persist player-set labels
-		const effectIDs = ['custom1', 'custom2']
-		for (const id of effectIDs) {
-			if (!actor.effects.contents.some((fx: any) => fx.statuses.has(id)))
-				await actor.createEmbeddedDocuments('ActiveEffect', [
-					IronActiveEffect.createImpact({ id, disabled: true }) as any
-				])
-		}
-	}
-})
+// Hooks.on('createActor', async (actor: IronswornActor) => {
+// 	if (!['character', 'shared'].includes(actor.type)) return
+// 	await Item.createDocuments([{ type: 'bondset', name: 'bonds' }], {
+// 		parent: actor,
+// 		suppressLog: true
+// 	} as any)
+// })

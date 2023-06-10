@@ -15,7 +15,14 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 	IronswornActor<'character'>
 > {
 	static _enableV10Validation = true
-	static readonly CUSTOM_IMPACTS = ['custom1', 'custom2']
+	static readonly CUSTOM_IMPACT_IDS = ['custom1', 'custom2']
+
+	/** Status effects toggles shown on tokens of this subtype **/
+	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
+		return CONFIG.statusEffects.filter(
+			(status) => status.flags?.['foundry-ironsworn']?.category !== 'vehicle'
+		)
+	}
 
 	constructor(
 		...args: ConstructorParameters<
@@ -44,13 +51,11 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 		if (this.canBurnMomentum) await this.resetMomentum()
 	}
 
-	/** A convenience getter that returns all custom impactsts on the PC. */
+	/** A convenience getter that returns all custom impacts on the PC. */
 	get customImpacts() {
 		return this.parent.effects.filter((impact) =>
-			CharacterData.CUSTOM_IMPACTS.some((id) =>
-				(impact as any).statuses.has(id)
-			)
-		)
+			CharacterData.CUSTOM_IMPACT_IDS.some((id) => impact.statuses.has(id))
+		) as IronActiveEffect[]
 	}
 
 	static override migrateData(source: Record<string, unknown>) {
@@ -62,7 +67,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 			if (source.effects == null)
 				source.effects = [] as ActiveEffectDataConstructorData[]
 
-			for (const id of this.CUSTOM_IMPACTS) {
+			for (const id of this.CUSTOM_IMPACT_IDS) {
 				const value = debilities[id]
 				if (value !== true) continue
 				const label = (debilities[`${id}name`] as string) ?? ''

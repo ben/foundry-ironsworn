@@ -46,30 +46,36 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import IronCheckbox from '../input/iron-checkbox.vue'
 import FontIcon from '../icon/font-icon.vue'
 import type { IronswornActor } from '../../../actor/actor'
-import type { ActorSource } from '../../../fields/utils'
-import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import { IronActiveEffect } from '../../../active-effect/active-effect'
+import type { ActiveEffectDataProperties } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
+import type { PropertiesToSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 const baseId = computed(
-	() => `condition_${props.effectData.label}_${actor.value._id}`
+	() => `condition_${props.effectData.name}_${actor.value._id}`
 )
 
 const props = withDefaults(
 	defineProps<{
-		effectData: StatusEffect
+		effectData: PropertiesToSource<ActiveEffectDataProperties> | StatusEffect
 		/** Should a disabled ActiveEffect object be left in place on the character? */
 		keepEffect?: boolean
 	}>(),
 	{ keepEffect: false }
 )
 
+const statusId = computed(
+	() =>
+		((props.effectData as StatusEffect).id ??
+			props.effectData.flags?.core?.statusId) as string
+)
+
 const checked = computed(() =>
 	actor.value.effects.some((fx) => {
 		const statuses = (fx as any).statuses as Array<string>
-		return statuses.includes(props.effectData.id) && fx.disabled !== true
+		return statuses.includes(statusId.value) && fx.disabled !== true
 	})
 )
 
@@ -79,16 +85,18 @@ async function input() {
 	if (props.keepEffect) {
 		// turning a kept effect off -- set it to disabled instead of removing it
 		const effect = actor.value.effects.find((fx) =>
-			(fx as any).statuses.includes(props.effectData.id)
+			(fx as any).statuses.includes(statusId.value)
 		)
-		console.log('found effect', effect)
 		await $actor.updateEmbeddedDocuments('ActiveEffect', [
 			{ _id: effect?._id, disabled: !effect?.disabled }
 		])
 	} else {
 		if (props.effectData.flags?.['foundry-ironsworn']?.global)
-			await IronActiveEffect.setGlobal(props.effectData, !checked.value)
-		else await $actor?.toggleActiveEffect(props.effectData, {})
+			await IronActiveEffect.setGlobal(
+				props.effectData as StatusEffect,
+				!checked.value
+			)
+		else await $actor?.toggleActiveEffect(props.effectData as StatusEffect, {})
 	}
 
 	await nextTick()
@@ -110,9 +118,7 @@ CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name }) => {
 })
 
 function refreshGlobalHint() {
-	const { actors, assets } = actorsOrAssetsWithConditionEnabled(
-		props.effectData.id
-	)
+	const { actors, assets } = actorsOrAssetsWithConditionEnabled(statusId.value)
 	const names = [
 		...actors.map((x) => x.name),
 		...assets.map((x) => {

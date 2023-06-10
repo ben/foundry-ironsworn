@@ -16,8 +16,11 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
-import type { ImpactCategory } from '../../../active-effect/active-effect'
 import { IronActiveEffect } from '../../../active-effect/active-effect'
+import type {
+	DebilityCategoryClassic,
+	ImpactCategoryStarforged
+} from '../../../active-effect/types'
 import { capitalize } from '../../../helpers/util'
 import { ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
@@ -25,7 +28,7 @@ import ImpactCheckbox from './impact-checkbox.vue'
 const props = withDefaults(
 	defineProps<{
 		type: 'debility' | 'impact'
-		name: ImpactCategory
+		name: ImpactCategoryStarforged | DebilityCategoryClassic
 		impactsClass?: any
 	}>(),
 	{ impactsClass: {} }

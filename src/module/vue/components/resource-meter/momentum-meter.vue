@@ -8,9 +8,9 @@
 		:current-value="actor.system.momentum.value ?? MomentumField.INITIAL"
 		:min="MomentumField.MIN"
 		:max="MomentumField.MAX"
-		:soft-max="$actor.system.momentumMax"
+		:soft-max="actor.system.momentum.max"
 		:segment-class="{
-			[$actor.system.momentumReset]: 'segment-momentum-reset'
+			[actor.system.momentum.resetValue]: 'segment-momentum-reset'
 		}">
 		<template #label>
 			<BtnMomentumburn
@@ -19,7 +19,7 @@
 				:tooltip="
 					$t('IRONSWORN.BurnMomentumAndResetTo', {
 						value: actor.system.momentum.value,
-						resetValue: $actor.system.momentumReset
+						resetValue: actor.system.momentum.resetValue
 					})
 				">
 			</BtnMomentumburn>

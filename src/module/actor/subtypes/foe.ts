@@ -8,6 +8,11 @@ export class FoeData extends foundry.abstract.TypeDataModel<
 > {
 	static _enableV10Validation = true
 
+	/** Status effects toggles shown on tokens of this subtype **/
+	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
+		return []
+	}
+
 	static override defineSchema(): DataSchema<FoeDataSourceData> {
 		return {
 			dfid: new DataforgedIDField()

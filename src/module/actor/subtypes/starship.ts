@@ -9,8 +9,12 @@ export class StarshipData extends foundry.abstract.TypeDataModel<
 > {
 	static _enableV10Validation = true
 
-	/** Impact status IDs permitted for starships */
-	static readonly IMPACTS = ['battered', 'cursed']
+	/** Status effects toggles shown on tokens of this subtype **/
+	get tokenStatusEffects() {
+		return CONFIG.statusEffects.filter(
+			(status) => status.flags?.['foundry-ironsworn']?.category === 'vehicle'
+		)
+	}
 
 	static override defineSchema(): DataSchema<StarshipDataSourceData> {
 		return {
