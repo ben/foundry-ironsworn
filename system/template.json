@@ -11,13 +11,15 @@
 			"iron": 1,
 			"shadow": 1,
 			"wits": 1,
-			"health": 5,
-			"spirit": 5,
-			"supply": 5,
+			"health": {"value": 5, "max": 5},
+			"spirit": {"value": 5, "max": 5},
+			"supply": {"value": 5, "max": 5},
 			"experience": 0,
-			"momentum": 2,
-			"momentumReset": 2,
-			"momentumMax": 10,
+			"momentum": {
+        "resetValue": 2,
+        "max": 10,
+        "value": 2
+      },
 			"legacies": {
 				"quests": 0,
 				"questsXpSpent": 0,
@@ -26,30 +28,11 @@
 				"discoveries": 0,
 				"discoveriesXpSpent": 0
 			},
-			"debility": {
-				"corrupted": false,
-				"cursed": false,
-				"encumbered": false,
-				"maimed": false,
-				"shaken": false,
-				"tormented": false,
-				"unprepared": false,
-				"wounded": false,
-				"permanentlyharmed": false,
-				"traumatized": false,
-				"doomed": false,
-				"indebted": false,
-				"battered": false,
-				"custom1": false,
-				"custom1name": "",
-				"custom2": false,
-				"custom2name": ""
-			},
 			"xp": 0
 		},
 		"shared": {
 			"biography": "",
-			"supply": 5
+			"supply": {"value": 5, "max": 5}
 		},
 		"foe": {
 			"dfid": ""
@@ -148,11 +131,7 @@
 			]
 		},
 		"starship": {
-			"health": 5,
-			"debility": {
-				"battered": false,
-				"cursed": false
-			}
+			"health": 5
 		},
 		"location": {
 			"description": "",
