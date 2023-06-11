@@ -47,7 +47,7 @@ export class IronswornActor<
 		if (effectData.id == null) return false
 
 		// Remove existing single-status effects.
-		const existing = this.effects.reduce((arr: string[], e: ActiveEffect) => {
+		const existing = this.effects.reduce((arr: string[], e) => {
 			if (e.statuses.size === 1 && e.statuses.has(effectData.id))
 				arr.push(e.id as string)
 			return arr
