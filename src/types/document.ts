@@ -4,6 +4,11 @@ import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/s
 declare global {
 	export namespace foundry {
 		export namespace abstract {
+			export interface Document<
+				ConcreteDocumentData extends AnyDocumentData,
+				Parent extends Document<any, any> | null = null,
+				ConcreteMetadata extends Metadata<any> = any
+			> {}
 			export namespace Document {
 				/**
 				 * Define a simple migration from one field name to another.
@@ -24,10 +29,7 @@ declare global {
 					apply?: (data: TIn) => TOut
 				): void
 
-				export function migrateData<TData>(
-					this: typeof Actor,
-					source: TData
-				): unknown
+				export function migrateData(source: any): any
 			}
 		}
 	}

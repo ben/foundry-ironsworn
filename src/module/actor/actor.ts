@@ -156,12 +156,3 @@ declare global {
 		Actor: typeof IronswornActor
 	}
 }
-
-// TODO: would it make sense to do this with IronswornActor#_onCreate instead?
-// Hooks.on('createActor', async (actor: IronswornActor) => {
-// 	if (!['character', 'shared'].includes(actor.type)) return
-// 	await Item.createDocuments([{ type: 'bondset', name: 'bonds' }], {
-// 		parent: actor,
-// 		suppressLog: true
-// 	} as any)
-// })
