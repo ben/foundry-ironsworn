@@ -6,7 +6,7 @@ declare global {
 		export namespace abstract {
 			export interface Document<
 				ConcreteDocumentData extends AnyDocumentData,
-				Parent extends Document<any, any> | null = null,
+				Parent extends Document<any, any, any> | null = null,
 				ConcreteMetadata extends Metadata<any> = any
 			> {}
 			export namespace Document {
