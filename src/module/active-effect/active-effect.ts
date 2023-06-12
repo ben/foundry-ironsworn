@@ -112,8 +112,7 @@ export class IronActiveEffect extends ActiveEffect {
 			: 'IRONSWORN.DEBILITY.Custom'
 	}
 
-	static IMPACT_ICON_DEFAULT =
-		'systems/foundry-ironsworn/assets/icons/impacts/custom.svg'
+	static IMPACT_ICON_DEFAULT = 'icons/svg/downgrade.svg'
 
 	/**
 	 * Sets an active effect across all actors of the provided types.
