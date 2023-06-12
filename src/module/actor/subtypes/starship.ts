@@ -1,5 +1,3 @@
-import { MeterValueField } from '../../fields/MeterValueField'
-import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import type { DataSchema } from '../../fields/utils'
 
@@ -17,16 +15,12 @@ export class StarshipData extends foundry.abstract.TypeDataModel<
 	}
 
 	static override defineSchema(): DataSchema<StarshipDataSourceData> {
-		return {
-			health: new MeterValueField({ label: 'IRONSWORN.Integrity' })
-		}
+		return {}
 	}
 }
 export interface StarshipData extends StarshipDataSourceData {}
 
-interface StarshipDataSourceData {
-	health: number
-}
+interface StarshipDataSourceData {}
 export interface StarshipDataSource {
 	type: 'starship'
 	/**
