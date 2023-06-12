@@ -98,12 +98,11 @@ export class MomentumField extends MeterField<MomentumSource> {
 		)
 	}
 
-	override migrateSource(
-		sourceData: CharacterDataSourceData,
-		fieldData: MomentumSource
-	): void {
+	override migrateSource(sourceData: any, fieldData: any): void {
 		super.migrateSource(sourceData, fieldData)
-		if (typeof sourceData?.momentum === 'number') {
+		if (typeof sourceData.momentum === 'number') {
+			sourceData.momentum = { value: sourceData.momentum.valueOf() }
+
 			IronswornActor._addDataFieldMigration(
 				sourceData,
 				'momentumReset',
