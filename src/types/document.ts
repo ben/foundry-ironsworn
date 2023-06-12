@@ -5,8 +5,14 @@ declare global {
 	export namespace foundry {
 		export namespace abstract {
 			export interface Document<
-				ConcreteDocumentData extends AnyDocumentData,
-				Parent extends Document<any, any, any> | null = null,
+				ConcreteDocumentData extends foundry.abstract.DocumentData<
+					any,
+					any,
+					any,
+					any,
+					any
+				>,
+				Parent extends foundry.abstract.Document<any, any> | null = null,
 				ConcreteMetadata extends Metadata<any> = any
 			> {}
 			export namespace Document {
