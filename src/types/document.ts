@@ -1,20 +1,6 @@
-import type { AnyDocumentData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/data.mjs'
-import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
-
 declare global {
 	export namespace foundry {
 		export namespace abstract {
-			export interface Document<
-				ConcreteDocumentData extends foundry.abstract.DocumentData<
-					any,
-					any,
-					any,
-					any,
-					any
-				>,
-				Parent extends foundry.abstract.Document<any, any> | null = null,
-				ConcreteMetadata extends Metadata<any> = any
-			> {}
 			export namespace Document {
 				/**
 				 * Define a simple migration from one field name to another.
