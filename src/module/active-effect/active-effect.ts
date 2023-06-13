@@ -21,7 +21,7 @@ export class IronActiveEffect extends ActiveEffect {
 	static readonly PRESETS: Record<
 		Required<ImpactFlags>['type'],
 		EffectChangeDataConstructorData[]
-	> = Object.freeze({
+	> = {
 		impact: [
 			{
 				key: this.MOMENTUM_MAX_PATH,
@@ -34,7 +34,7 @@ export class IronActiveEffect extends ActiveEffect {
 				value: '-1'
 			}
 		]
-	})
+	}
 
 	async toMessage(active: boolean) {
 		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
@@ -140,7 +140,7 @@ export class IronActiveEffect extends ActiveEffect {
 		>
 		createData.name = game.i18n.localize(effectData.name as string)
 		createData['flags.core.statusId'] = effectData.id
-		delete createData.id
+		// delete createData.id
 		return createData as ActiveEffectDataConstructorData
 	}
 
@@ -161,10 +161,7 @@ export class IronActiveEffect extends ActiveEffect {
 		const result: StatusEffect = {
 			id,
 			disabled,
-			name:
-				typeof name === 'string' && name.length > 0
-					? name
-					: game.i18n.localize(IronActiveEffect.customLabelFallback),
+			name,
 			icon: icon ?? IronActiveEffect.IMPACT_ICON_DEFAULT,
 			duration: null,
 			statuses: [id],
@@ -179,6 +176,10 @@ export class IronActiveEffect extends ActiveEffect {
 				}
 			}
 		}
+
+		if (result.name == null || result.name.length === 0)
+			result.name = IronActiveEffect.customLabelFallback
+
 		if (preventRecovery != null)
 			result.changes?.push({
 				key: preventRecovery,
@@ -363,6 +364,16 @@ Hooks.on(
 		return changes
 	}
 )
+
+// Hooks.on('init', () => {
+// 	IronActiveEffect.STATUS_EFFECTS.starforged.forEach(
+// 		(fx) => (fx.name = game.i18n.localize(fx.name as string))
+// 	)
+// 	IronActiveEffect.STATUS_EFFECTS.ironsworn.forEach(
+// 		(fx) => (fx.name = game.i18n.localize(fx.name as string))
+// 	)
+// 	Object.freeze(IronActiveEffect.STATUS_EFFECTS)
+// })
 
 /**
  * Filter token HUD status effect toggles by actor subtype by referencing its TypeDataModel#tokenStatusEffects property.
