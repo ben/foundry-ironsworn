@@ -145,7 +145,8 @@ export class OracleTable extends RollTable {
 		oracle: OracleTable.IOracleLeaf
 	): RollTableDataConstructorData {
 		const description = marked.parseInline(
-			renderLinksInStr(oracle.Description ?? '')
+			renderLinksInStr(oracle.Description ?? ''),
+			{ gfm: true, mangle: false, headerIds: false }
 		)
 		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0))
 		const flags: ConfiguredFlags<'RollTable'> = {

@@ -10,7 +10,7 @@ import { OracleTableResult } from '../../roll-table/oracle-table-result'
 import { Oracles } from '../../roll-table/oracles'
 import type { IronswornActor } from '../actor'
 
-export class SiteData extends foundry.abstract.DataModel<
+export class SiteData extends foundry.abstract.TypeDataModel<
 	SiteDataSourceData,
 	IronswornActor<'site'>
 > {

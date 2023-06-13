@@ -8,7 +8,6 @@ import {
 } from 'lodash-es'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { OracleTable } from '../roll-table/oracle-table'
 import { Oracles } from '../roll-table/oracles'
 import { enrichMarkdown } from '../vue/vue-plugin'
@@ -170,7 +169,7 @@ export class IronswornRollMessage {
 
 		await this.actor.system.burnMomentum()
 		this.roll.postRollOptions.replacedOutcome = {
-			value: computeRollOutcome(momentum, c1.value, c2.value),
+			value: computeRollOutcome(momentum.value, c1.value, c2.value),
 			source: game.i18n.localize('IRONSWORN.MomentumBurnt')
 		}
 		return await this.createOrUpdate()
@@ -263,7 +262,7 @@ export class IronswornRollMessage {
 		if (move?.type !== 'sfmove') return ret
 
 		const key = DfRollOutcome[theOutcome]
-		const moveSystem = move.system as SFMoveDataPropertiesData
+		const moveSystem = move.system
 		let moveOutcome = moveSystem.Outcomes?.[key] as IOutcomeInfo
 		if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
 			moveOutcome = moveOutcome['With a Match']
@@ -304,7 +303,11 @@ export class IronswornRollMessage {
 
 		const { momentum } = this.actor.system
 		const rawOutcome = this.roll.rawOutcome?.value
-		const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
+		const momentumBurnOutcome = computeRollOutcome(
+			momentum.value,
+			c1.value,
+			c2.value
+		)
 
 		if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
 			return {
@@ -321,7 +324,7 @@ export class IronswornRollMessage {
 		const move = await this.roll.moveItem
 		if (move?.type !== 'sfmove') return {}
 
-		const system = move.system as SFMoveDataPropertiesData
+		const system = move.system
 		const dfids = system.Oracles ?? []
 		const nextOracles = compact(await Promise.all(dfids.map(Oracles.find)))
 		return { nextOracles }

@@ -21,11 +21,15 @@ export function enumEntries<T extends Record<any, unknown>>(enumLike: T) {
 	return values.map((v) => [enumLike[v], v]) as Array<[keyof T, T[keyof T]]>
 }
 
-export function enumKeys<T extends Record<any, unknown>>(enumLike: T) {
+export function enumKeys<T extends Record<any, unknown>>(
+	enumLike: T
+): Array<keyof T> {
 	return enumEntries(enumLike).map(([k]) => k)
 }
 
-export function enumValues<T extends Record<any, unknown>>(enumLike: T) {
+export function enumValues<T extends Record<any, unknown>>(
+	enumLike: T
+): Array<T[keyof T]> {
 	return enumEntries(enumLike).map(([_, v]) => v)
 }
 

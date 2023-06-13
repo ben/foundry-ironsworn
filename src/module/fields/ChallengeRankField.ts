@@ -20,7 +20,6 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 				])
 			),
 			initial: ChallengeRank.Troublesome,
-			step: 1,
 			integer: true,
 			max: ChallengeRank.Epic,
 			min: ChallengeRank.Troublesome,

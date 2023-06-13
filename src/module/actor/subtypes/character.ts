@@ -1,18 +1,21 @@
 import { StatField } from '../../fields/StatField'
-import { MeterValueField } from '../../fields/MeterValueField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import { clamp } from 'lodash-es'
 import type { DataSchema } from '../../fields/utils'
+import type {
+	ConditionMeterSource,
+	MomentumSource
+} from '../../fields/MeterField'
+import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
 
-export class CharacterData extends foundry.abstract.DataModel<
+export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
 	constructor(
 		...args: ConstructorParameters<
-			typeof foundry.abstract.DataModel<
+			typeof foundry.abstract.TypeDataModel<
 				CharacterDataSourceData,
 				IronswornActor<'character'>
 			>
@@ -24,17 +27,18 @@ export class CharacterData extends foundry.abstract.DataModel<
 
 	static _enableV10Validation = true
 
-	static readonly MOMENTUM_MAX = 10
-	static readonly MOMENTUM_MIN = -6
-	static readonly MOMENTUM_INITIAL = 2
-	static readonly MOMENTUM_RESET_MIN = 0
-
 	async burnMomentum(this: CharacterData) {
-		if (this.parent.system.momentum > this.parent.system.momentumReset) {
+		if (this.canBurnMomentum) {
 			await this.parent.update({
-				system: { momentum: this.parent.system.momentumReset }
+				system: { 'momentum.value': this.parent.system.momentum.resetValue }
 			})
 		}
+	}
+
+	get canBurnMomentum() {
+		return (
+			this.parent.system.momentum.value > this.parent.system.momentum.resetValue
+		)
 	}
 
 	get #impactCount() {
@@ -42,19 +46,20 @@ export class CharacterData extends foundry.abstract.DataModel<
 			.length
 	}
 
+	// FIXME: These won't be required when impacts are represented as ActiveEffects
 	get momentumReset() {
-		return clamp(
-			CharacterData.MOMENTUM_INITIAL - this.#impactCount,
-			CharacterData.MOMENTUM_RESET_MIN,
-			CharacterData.MOMENTUM_MAX
+		return Math.clamped(
+			this.momentum.resetValue - this.#impactCount,
+			MomentumField.RESET_MIN,
+			this.momentum.max
 		)
 	}
 
 	get momentumMax() {
-		return clamp(
-			CharacterData.MOMENTUM_MAX - this.#impactCount,
-			CharacterData.MOMENTUM_MIN,
-			CharacterData.MOMENTUM_MAX
+		return Math.clamped(
+			this.momentum.max - this.#impactCount,
+			MomentumField.MIN,
+			MomentumField.MAX
 		)
 	}
 
@@ -70,28 +75,16 @@ export class CharacterData extends foundry.abstract.DataModel<
 			shadow: new StatField({ label: 'IRONSWORN.Shadow' }),
 			wits: new StatField({ label: 'IRONSWORN.Wits' }),
 
-			health: new MeterValueField({ label: 'IRONSWORN.Health' }),
-			spirit: new MeterValueField({ label: 'IRONSWORN.Spirit' }),
-			supply: new MeterValueField({ label: 'IRONSWORN.Supply' }),
+			// TODO: add a localized `hint` property, and have the vue sheet automatically pull these in as tooltips
+			health: new ConditionMeterField({ label: 'IRONSWORN.Health' }),
+			spirit: new ConditionMeterField({ label: 'IRONSWORN.Spirit' }),
+			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' }),
 
-			momentum: new MeterValueField({
-				label: 'IRONSWORN.Momentum',
-				initial: (source) => (source as any).momentumReset,
-				max: this.MOMENTUM_MAX,
-				min: this.MOMENTUM_MIN
-			}),
+			momentum: new MomentumField(),
 
-			experience: new fields.NumberField({
-				integer: true,
-				required: true,
-				step: 1,
-				initial: 0,
-				min: 0
-			}),
 			xp: new fields.NumberField({
 				integer: true,
 				required: true,
-				step: 1,
 				min: 0,
 				initial: 0
 			}),
@@ -144,16 +137,28 @@ export interface CharacterData extends CharacterDataSourceData {}
 export interface CharacterDataSourceData {
 	biography: string
 	notes: string
+
 	edge: number
 	heart: number
 	iron: number
 	shadow: number
 	wits: number
-	health: number
-	spirit: number
-	supply: number
-	experience: number
-	momentum: number
+
+	health: ConditionMeterSource
+	spirit: ConditionMeterSource
+	supply: ConditionMeterSource
+	momentum: MomentumSource
+
+	xp: number
+	legacies: {
+		quests: number
+		questsXpSpent: number
+		bonds: number
+		bondsXpSpent: number
+		discoveries: number
+		discoveriesXpSpent: number
+	}
+
 	debility: {
 		corrupted: boolean
 		cursed: boolean
@@ -173,15 +178,6 @@ export interface CharacterDataSourceData {
 		custom2: boolean
 		custom2name: string
 	}
-	legacies: {
-		quests: number
-		questsXpSpent: number
-		bonds: number
-		bondsXpSpent: number
-		discoveries: number
-		discoveriesXpSpent: number
-	}
-	xp: number
 }
 
 export interface CharacterDataSource {

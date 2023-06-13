@@ -112,8 +112,8 @@ declare global {
 					T extends typeof foundry.abstract.DataModel
 				> extends SchemaField<InstanceType<T>['schema']['fields']> {
 					/**
-					 * @param model          The class of DataModel which should be embedded in this field
-					 * @param options        Options which configure the behavior of the field
+					 * @param model - The class of DataModel which should be embedded in this field
+					 * @param options - Options which configure the behavior of the field
 					 */
 					constructor(model: T, options?: DataField.Options)
 
@@ -130,10 +130,10 @@ declare global {
 					// toObject(value)
 					/**
 					 * Migrate this field's candidate source data.
-					 * @param {object} sourceData   Candidate source data of the root model
-					 * @param {any} fieldData       The value of this field within the source data
+					 * @param sourceData - Candidate source data of the root model
+					 * @param fieldData - The value of this field within the source data
 					 */
-					migrateSource(sourceData, fieldData)
+					migrateSource(sourceData: object, fieldData: any): void
 					// /** @override */
 					// _validateModel(changes, options)
 				}
@@ -142,4 +142,5 @@ declare global {
 	}
 }
 
+export {}
 export default foundry.data.fields

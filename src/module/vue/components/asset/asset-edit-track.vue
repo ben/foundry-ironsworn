@@ -26,10 +26,11 @@
 
 		<AttrSlider
 			style="margin-top: var(--ironsworn-spacer-md)"
-			attr="track.current"
+			attr="track.value"
 			document-type="Item"
+			:min="item.system.track.min"
 			:max="item.system.track.max"
-			:current-value="item.system.track.current"
+			:current-value="item.system.track.value"
 			slider-style="horizontal" />
 
 		<hr />
@@ -60,9 +61,10 @@ import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 import AttrSlider from 'component:resource-meter/attr-slider.vue'
 import IronBtn from 'component:buttons/iron-btn.vue'
+import type { IronswornItem } from '../../../item/item'
 
-const item = inject(ItemKey) as Ref
-const $item = inject($ItemKey)
+const item = inject(ItemKey) as Ref<ItemSource<'asset'>>
+const $item = inject($ItemKey) as IronswornItem<'asset'>
 
 const editMode = computed(() => {
 	return item.value.flags['foundry-ironsworn']?.['edit-mode']

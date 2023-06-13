@@ -217,7 +217,7 @@ declare global {
 						/**
 						 * A data validation function which accepts one argument with the current value.
 						 */
-						validate: (value: any) => boolean
+						validate: (value: TValue) => boolean
 						/**
 						 * Should the prepared value of the field be read-only, preventing it from being changed unless a change to the _source data is applied.
 						 * @default false

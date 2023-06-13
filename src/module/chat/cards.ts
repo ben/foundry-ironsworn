@@ -1,5 +1,4 @@
 import { compact, flatten } from 'lodash-es'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
@@ -10,11 +9,11 @@ export class IronswornChatCard {
 	id?: string | null
 
 	constructor(message: ChatMessage, html: JQuery) {
-		this.updateBinding(message, html)
+		void this.updateBinding(message, html)
 	}
 
 	get message(): ChatMessage | undefined {
-		return game.messages?.get(this.id || '')
+		return game.messages?.get(this.id ?? '')
 	}
 
 	async attachMoveOracleContextMenu(html: JQuery) {
@@ -25,10 +24,10 @@ export class IronswornChatCard {
 			if (pack == null || id == null) return []
 
 			const fPack = game.packs.get(pack)
-			const fItem = fPack?.get(id) as IronswornItem
+			const fItem = fPack?.get(id) as IronswornItem<'sfmove'>
 			if (fItem?.type !== 'sfmove') return []
 
-			const system = fItem.system as SFMoveDataPropertiesData
+			const system = fItem.system
 			const oracleIds = system.Oracles ?? []
 			return await Promise.all(oracleIds.map(Oracles.find))
 		})
@@ -123,7 +122,7 @@ export class IronswornChatCard {
 		ev.preventDefault()
 
 		const msgId = $(ev.target).parents('.chat-message').data('message-id')
-		ChallengeResolutionDialog.showForMessage(msgId)
+		void ChallengeResolutionDialog.showForMessage(msgId)
 	}
 
 	async _oracleReroll(ev: JQuery.ClickEvent) {
@@ -151,7 +150,7 @@ export class IronswornChatCard {
 	static async bind(message: ChatMessage, html: JQuery) {
 		const existing = message.ironswornCard
 		if (existing != null) {
-			existing.updateBinding(message, html)
+			void existing.updateBinding(message, html)
 		} else {
 			message.ironswornCard = new IronswornChatCard(message, html)
 		}

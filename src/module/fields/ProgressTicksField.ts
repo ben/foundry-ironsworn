@@ -10,9 +10,8 @@ export class ProgressTicksField extends foundry.data.fields.NumberField {
 			initial: 0,
 			max: 40,
 			integer: true,
-			step: 1,
 			...(options as any)
 		})
 	}
 }
-export interface ProgressTicksFields extends foundry.data.fields.NumberField {}
+export interface ProgressTicksField extends foundry.data.fields.NumberField {}

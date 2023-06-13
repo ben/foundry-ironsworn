@@ -50,7 +50,7 @@
 /**
  * A bar that functions as a number slider.
  */
-import { clamp, inRange, min, range, rangeRight } from 'lodash-es'
+import { inRange, rangeRight } from 'lodash-es'
 import { computed } from 'vue'
 
 const props = withDefaults(
@@ -62,7 +62,7 @@ const props = withDefaults(
 		 */
 		min?: number | undefined
 		max: number
-		softMax?: number | undefined
+		softMax?: number | null
 		/**
 		 * @default "vertical"
 		 */
@@ -80,7 +80,8 @@ const props = withDefaults(
 	{
 		readOnly: false,
 		orientation: 'vertical',
-		min: 0
+		min: 0,
+		softMax: null
 	}
 )
 
@@ -99,7 +100,7 @@ function setSliderValue(newValue: number, event: Event) {
 		return
 	}
 	event.preventDefault()
-	$emit('change', clamp(newValue, props.min, currentMax.value))
+	$emit('change', Math.clamped(newValue, props.min, currentMax.value))
 }
 
 /**

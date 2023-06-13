@@ -7,7 +7,7 @@ import type {
 } from 'dataforged'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { starforged, ironsworn } from 'dataforged'
-import { isArray, isObject, pick } from 'lodash-es'
+import { isObject, max, pick } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
@@ -41,7 +41,7 @@ export function pickDataforged<T extends object, K extends keyof T>(
 }
 
 export function cleanDollars(obj) {
-	if (isArray(obj)) {
+	if (Array.isArray(obj)) {
 		const ret = [] as any[]
 		for (const item of obj) {
 			ret.push(cleanDollars(item))
