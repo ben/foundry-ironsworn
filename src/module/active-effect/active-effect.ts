@@ -327,50 +327,6 @@ export class IronActiveEffect extends ActiveEffect {
 			({ id }) => id
 		)
 	}
-
-	static renderStatusEffectHUD(
-		effects: IronActiveEffect[],
-		effectsClass: string
-	) {
-		// adapted from templates/hud/token-hud.html (v11)
-		return `
-      <div class="control-icon ${effectsClass}" data-action="effects">
-        <img src="${
-					CONFIG.controlIcons.effects
-				}" width="36" height="36" title="${game.i18n.localize(
-			'HUD.AssignStatusEffects'
-		)}"/>
-        <div class="status-effects">
-         ${effects.map((fx) => fx.renderStatusToggle()).join('')}
-        </div>
-      </div>`
-	}
-
-	renderStatusToggle() {
-		// adapted from templates/hud/token-hud.html (v11)
-		const cssClass = this.active ? 'active' : ''
-		return `<img class="effect-control ${cssClass}" src="${this.img}"
-                     title="${capitalize(this.name)}" data-status-id="${
-			this.statuses[0] as string
-		}"/>`
-	}
-
-	static getStatusEffectRenderData(e: StatusEffect) {
-		const isActive
-		const isOverlay
-
-		return {
-			id: e.id ?? '',
-			title: e.name ? game.i18n.localize(e.name) : null,
-			src: e.icon,
-			isActive,
-			isOverlay,
-			cssClass: [
-				isActive ? 'active' : null,
-				isOverlay ? 'overlay' : null
-			].filterJoin(' ')
-		}
-	}
 }
 
 Hooks.on(
@@ -417,10 +373,6 @@ Hooks.on(
 		return changes
 	}
 )
-
-// Hooks.on('init', async () => {
-// 	CONFIG.controlIcons.effects = IronActiveEffect.IMPACT_ICON_DEFAULT
-// })
 
 /**
  * Filter token HUD status effect toggles by actor subtype by referencing its TypeDataModel#tokenStatusEffects property.
