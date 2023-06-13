@@ -20,6 +20,7 @@ import {
 } from './module/features/customoracles'
 import { IronswornActor } from './module/actor/actor'
 import { OracleTable } from './module/roll-table/oracle-table'
+import { IronActiveEffect } from './module/active-effect/active-effect'
 
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
@@ -33,6 +34,7 @@ export type IronswornEmitter = Emitter<EmitterEvents>
 export interface IronswornConfig {
 	actorClass: typeof IronswornActor
 	OracleTable: typeof OracleTable
+	IronActiveEffect: typeof IronActiveEffect
 
 	applications: {
 		// Dialogs
@@ -65,6 +67,7 @@ export interface IronswornConfig {
 export const IRONSWORN: IronswornConfig = {
 	actorClass: IronswornActor,
 	OracleTable,
+	IronActiveEffect,
 
 	applications: {
 		FirstStartDialog,
