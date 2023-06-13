@@ -30,7 +30,7 @@
 			class="text clickable">
 			<slot name="default">
 				<span :class="$style.label">
-					{{ $capitalize($t(props.effectData.label as string)) }}
+					{{ $capitalize($t(data.name as string)) }}
 				</span>
 			</slot>
 		</label>
@@ -47,30 +47,22 @@ import IronCheckbox from '../input/iron-checkbox.vue'
 import FontIcon from '../icon/font-icon.vue'
 import type { IronswornActor } from '../../../actor/actor'
 import { IronActiveEffect } from '../../../active-effect/active-effect'
-import type { ActiveEffectDataProperties } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
-import type { PropertiesToSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const baseId = computed(
-	() => `condition_${props.effectData.label}_${actor.value._id}`
-)
+const baseId = computed(() => `condition_${props.data.id}_${actor.value._id}`)
 
 const props = withDefaults(
 	defineProps<{
-		effectData: PropertiesToSource<ActiveEffectDataProperties> | StatusEffect
+		data: StatusEffect
 		/** Should a disabled ActiveEffect object be left in place on the character? */
 		keepEffect?: boolean
 	}>(),
 	{ keepEffect: false }
 )
 
-const statusId = computed(
-	() =>
-		((props.effectData as StatusEffect).id ??
-			props.effectData.flags?.core?.statusId) as string
-)
+const statusId = computed(() => props.data.id)
 
 const checked = computed(() =>
 	actor.value.effects.some((fx) => {
@@ -91,19 +83,16 @@ async function input() {
 			{ _id: effect?._id, disabled: !effect?.disabled }
 		])
 	} else {
-		if (props.effectData.flags?.['foundry-ironsworn']?.global)
-			await IronActiveEffect.setGlobal(
-				props.effectData as StatusEffect,
-				!checked.value
-			)
-		else await $actor?.toggleActiveEffect(props.effectData as StatusEffect, {})
+		if (props.data.flags?.['foundry-ironsworn']?.global)
+			await IronActiveEffect.setGlobal(props.data, !checked.value)
+		else await $actor?.toggleActiveEffect(props.data, {})
 	}
 
 	await nextTick()
 
-	if (props.effectData.flags?.['foundry-ironsworn']?.globalHint) {
+	if (props.data.flags?.['foundry-ironsworn']?.globalHint) {
 		CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
-			name: props.effectData.label as string,
+			id: props.data.id,
 			enabled: checked.value
 		})
 	}
@@ -111,8 +100,8 @@ async function input() {
 
 // We can't watch this directly, we just have to trust that a broadcast will happen
 // when it changes
-CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name }) => {
-	if (name === props.effectData.label) {
+CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ id }) => {
+	if (id === props.data.id) {
 		refreshGlobalHint()
 	}
 })
@@ -137,14 +126,14 @@ function refreshGlobalHint() {
 	} else if (names.length === 1) {
 		// Condition only set on one other actor
 		state.hintText = game.i18n.format('IRONSWORN.ConditionMarkedOnOne', {
-			condition: props.effectData.label,
+			condition: props.data.name,
 			name: names[0]
 		})
 	} else {
 		// This condition is marked on several other actors, display them as a list
 		state.hintText = `
     <p>${game.i18n.format('IRONSWORN.ConditionMarkedOnMany', {
-			condition: props.effectData.label
+			condition: props.data.name
 		})}</p>
     <ul>
       ${names.map((x) => `<li>${x}</li>`).join('\n')}
@@ -152,8 +141,7 @@ function refreshGlobalHint() {
     `.trim()
 	}
 }
-if (props.effectData.flags?.['foundry-ironsworn']?.globalHint)
-	refreshGlobalHint()
+if (props.data.flags?.['foundry-ironsworn']?.globalHint) refreshGlobalHint()
 </script>
 
 <style lang="scss" module>

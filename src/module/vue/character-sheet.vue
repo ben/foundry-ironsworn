@@ -52,7 +52,7 @@
 
 			<!-- Conditions & Banes & Burdens -->
 			<section class="sheet-area nogrow" data-tourid="conditions">
-				<conditions />
+				<PcImpacts />
 			</section>
 		</div>
 
@@ -81,6 +81,7 @@ import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
+import PcImpacts from './components/impact/pc-impacts.vue'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'character'> }

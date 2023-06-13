@@ -50,7 +50,7 @@ async function toggleCondition(idx: number) {
 	await $asset?.update({ system: { conditions } })
 
 	CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
-		name: conditions[idx].name.toLowerCase(),
+		id: conditions[idx].name.toLowerCase(),
 		enabled: conditions[idx].ticked
 	})
 }

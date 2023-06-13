@@ -1,12 +1,11 @@
 <template>
-	<ImpactCheckbox
-		:keep-effect="true"
-		:effect-data="{ ...activeEffect, id: statusId }"
-		:class="$style.wrapper">
+	<ImpactCheckbox :keep-effect="true" :data="data" :class="$style.wrapper">
 		<template #default>
 			<input
-				v-model="activeEffect.label"
+				v-model="data.name"
 				:class="$style.input"
+				:placeholder="placeholder"
+				:aria-label="placeholder"
 				type="text"
 				@blur="updateName"
 				@click.stop />
@@ -15,8 +14,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { ActiveEffectDataProperties } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
-import type { PropertiesToSource } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { Ref } from 'vue'
 import { inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
@@ -24,16 +21,16 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
 const props = defineProps<{
-	activeEffect: PropertiesToSource<ActiveEffectDataProperties> | StatusEffect
-	statusId: string
+	data: StatusEffect
+	placeholder: string
 }>()
 
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 async function updateName(e) {
-	const { _id, label } = props.activeEffect
-	await $actor.updateEmbeddedDocuments('ActiveEffect', [{ _id, label }])
+	const { _id, name } = props.data
+	await $actor.updateEmbeddedDocuments('ActiveEffect', [{ _id, name }])
 }
 </script>
 

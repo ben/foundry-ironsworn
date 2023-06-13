@@ -7,49 +7,45 @@
 			<ImpactCheckbox
 				v-for="impact in impacts"
 				:key="impact.id"
-				:effect-data="impact"
-				:type="type" />
+				:data="impact" />
 		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
-import { IronActiveEffect } from '../../../active-effect/active-effect'
 import type {
 	DebilityCategoryClassic,
 	ImpactCategoryStarforged
 } from '../../../active-effect/types'
 import { capitalize } from '../../../helpers/util'
-import { ActorKey } from '../../provisions'
+import { $ActorKey, ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
 const props = withDefaults(
 	defineProps<{
-		type: 'debility' | 'impact'
-		name: ImpactCategoryStarforged | DebilityCategoryClassic
+		category: ImpactCategoryStarforged | DebilityCategoryClassic
 		impactsClass?: any
 	}>(),
 	{ impactsClass: {} }
 )
 
-const statusEffectKey = props.type === 'impact' ? 'starforged' : 'classic'
+const $actor = inject($ActorKey)
+const actor = inject(ActorKey)
 
-const impacts =
-	IronActiveEffect.STATUS_EFFECTS[statusEffectKey]?.filter(
-		(fx) => fx.flags?.['foundry-ironsworn']?.category === props.name
-	) ?? []
-
-const actor = inject(ActorKey) as Ref
+const impacts = CONFIG.statusEffects.filter(
+	(fx) => fx.flags?.['foundry-ironsworn']?.category === props.category
+) as StatusEffect[]
 
 const label = computed(() =>
 	game.i18n.localize(
-		`IRONSWORN.${props.type.toUpperCase()}.CATEGORY.${capitalize(props.name)}`
+		`IRONSWORN.${
+			$actor?.toolset === 'starforged' ? 'IMPACT' : 'DEBILITY'
+		}.CATEGORY.${capitalize(props.category)}`
 	)
 )
 
-const baseId = computed(() => `impacts_${props.name}_${actor.value._id}`)
+const baseId = computed(() => `impacts_${props.category}_${actor?.value._id}`)
 </script>
 
 <style lang="scss" module>
