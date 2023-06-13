@@ -11,6 +11,7 @@ import { sendToChat } from '../features/chat-alert'
 import type { ImpactOptions } from './types'
 import { MomentumField } from '../fields/MeterField'
 import type { ImpactFlags } from './config'
+import { capitalize } from '../helpers/util'
 
 type Ruleset = 'starforged' | 'classic'
 
@@ -164,6 +165,7 @@ export class IronActiveEffect extends ActiveEffect {
 			id,
 			disabled,
 			name,
+			label: name, // workaround for a bug in 11.301: https://github.com/foundryvtt/foundryvtt/issues/9618
 			icon: icon ?? IronActiveEffect.IMPACT_ICON_DEFAULT,
 			duration: null,
 			statuses: [id],
@@ -325,6 +327,50 @@ export class IronActiveEffect extends ActiveEffect {
 			({ id }) => id
 		)
 	}
+
+	static renderStatusEffectHUD(
+		effects: IronActiveEffect[],
+		effectsClass: string
+	) {
+		// adapted from templates/hud/token-hud.html (v11)
+		return `
+      <div class="control-icon ${effectsClass}" data-action="effects">
+        <img src="${
+					CONFIG.controlIcons.effects
+				}" width="36" height="36" title="${game.i18n.localize(
+			'HUD.AssignStatusEffects'
+		)}"/>
+        <div class="status-effects">
+         ${effects.map((fx) => fx.renderStatusToggle()).join('')}
+        </div>
+      </div>`
+	}
+
+	renderStatusToggle() {
+		// adapted from templates/hud/token-hud.html (v11)
+		const cssClass = this.active ? 'active' : ''
+		return `<img class="effect-control ${cssClass}" src="${this.img}"
+                     title="${capitalize(this.name)}" data-status-id="${
+			this.statuses[0] as string
+		}"/>`
+	}
+
+	static getStatusEffectRenderData(e: StatusEffect) {
+		const isActive
+		const isOverlay
+
+		return {
+			id: e.id ?? '',
+			title: e.name ? game.i18n.localize(e.name) : null,
+			src: e.icon,
+			isActive,
+			isOverlay,
+			cssClass: [
+				isActive ? 'active' : null,
+				isOverlay ? 'overlay' : null
+			].filterJoin(' ')
+		}
+	}
 }
 
 Hooks.on(
@@ -372,14 +418,8 @@ Hooks.on(
 	}
 )
 
-// Hooks.on('init', () => {
-// 	IronActiveEffect.STATUS_EFFECTS.starforged.forEach(
-// 		(fx) => (fx.name = game.i18n.localize(fx.name as string))
-// 	)
-// 	IronActiveEffect.STATUS_EFFECTS.ironsworn.forEach(
-// 		(fx) => (fx.name = game.i18n.localize(fx.name as string))
-// 	)
-// 	Object.freeze(IronActiveEffect.STATUS_EFFECTS)
+// Hooks.on('init', async () => {
+// 	CONFIG.controlIcons.effects = IronActiveEffect.IMPACT_ICON_DEFAULT
 // })
 
 /**
@@ -400,7 +440,7 @@ Hooks.on(
 
 		// select all elements with a statusId data attribute that *aren't* a legal status effect
 		const selector = `[data-status-id]${actor.system.tokenStatusEffects
-			.map(({ id }) => `:not([data-status-id="${id}"])`)
+			.map(({ id }) => `:not([data-status-id="${id as string}"])`)
 			.join('')}`
 
 		for (const el of html.find(selector)) {

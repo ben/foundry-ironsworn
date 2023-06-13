@@ -19,9 +19,12 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 	/** Status effects toggles shown on tokens of this subtype **/
 	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
-		return CONFIG.statusEffects.filter(
-			(status) => status.flags?.['foundry-ironsworn']?.category !== 'vehicle'
+		const standardImpacts = CONFIG.statusEffects.filter(
+			(status) =>
+				status.flags?.['foundry-ironsworn']?.type === 'impact' &&
+				status.flags?.['foundry-ironsworn']?.category !== 'vehicle'
 		)
+		return [...standardImpacts, ...this.customImpacts] as StatusEffect[]
 	}
 
 	constructor(
