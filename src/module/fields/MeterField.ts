@@ -44,10 +44,12 @@ export abstract class MeterField<
 	}
 
 	migrateSource(sourceData: object, fieldData: any) {
+		// migrate single value meters to unified meter format
 		if (typeof fieldData === 'number') {
-			fieldData = { value: fieldData }
+			fieldData = { value: fieldData.valueOf() }
 		}
 
+		// migrate asset meters to unified meter format
 		IronswornActor._addDataFieldMigration(fieldData, 'current', 'value')
 
 		super.migrateSource(sourceData, fieldData)
@@ -100,6 +102,8 @@ export class MomentumField extends MeterField<MomentumSource> {
 
 	override migrateSource(sourceData: any, fieldData: any): void {
 		super.migrateSource(sourceData, fieldData)
+
+		// migrate to momentum object
 		if (typeof sourceData.momentum === 'number') {
 			sourceData.momentum = { value: sourceData.momentum.valueOf() }
 
