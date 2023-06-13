@@ -11,7 +11,6 @@ import { sendToChat } from '../features/chat-alert'
 import type { ImpactOptions } from './types'
 import { MomentumField } from '../fields/MeterField'
 import type { ImpactFlags } from './config'
-import { capitalize } from '../helpers/util'
 
 type Ruleset = 'starforged' | 'classic'
 
