@@ -5,7 +5,7 @@
 		:class="$style.wrapper">
 		<template #default>
 			<input
-				v-model="activeEffect.name"
+				v-model="activeEffect.label"
 				:class="$style.input"
 				type="text"
 				@blur="updateName"
@@ -32,8 +32,8 @@ const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 async function updateName(e) {
-	const { _id, name } = props.activeEffect
-	await $actor.updateEmbeddedDocuments('ActiveEffect', [{ _id, name }])
+	const { _id, label } = props.activeEffect
+	await $actor.updateEmbeddedDocuments('ActiveEffect', [{ _id, label }])
 }
 </script>
 

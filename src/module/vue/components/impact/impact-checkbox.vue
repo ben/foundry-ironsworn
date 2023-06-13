@@ -54,7 +54,7 @@ const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 const baseId = computed(
-	() => `condition_${props.effectData.name}_${actor.value._id}`
+	() => `condition_${props.effectData.label}_${actor.value._id}`
 )
 
 const props = withDefaults(
