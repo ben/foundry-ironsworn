@@ -138,7 +138,7 @@ export class IronActiveEffect extends ActiveEffect {
 			typeof effectData,
 			'id'
 		>
-		createData.label = game.i18n.localize(effectData.label as string)
+		createData.name = game.i18n.localize(effectData.name as string)
 		createData['flags.core.statusId'] = effectData.id
 		delete createData.id
 		return createData as ActiveEffectDataConstructorData
@@ -149,7 +149,7 @@ export class IronActiveEffect extends ActiveEffect {
 	 */
 	static createImpact({
 		id,
-		label,
+		name,
 		icon,
 		preventRecovery,
 		global,
@@ -161,9 +161,9 @@ export class IronActiveEffect extends ActiveEffect {
 		const result: StatusEffect = {
 			id,
 			disabled,
-			label:
-				typeof label === 'string' && label.length > 0
-					? label
+			name:
+				typeof name === 'string' && name.length > 0
+					? name
 					: game.i18n.localize(IronActiveEffect.customLabelFallback),
 			icon: icon ?? IronActiveEffect.IMPACT_ICON_DEFAULT,
 			duration: null,
@@ -192,66 +192,66 @@ export class IronActiveEffect extends ActiveEffect {
 		starforged: [
 			this.createImpact({
 				id: 'wounded',
-				label: 'IRONSWORN.IMPACT.Wounded',
+				name: 'IRONSWORN.IMPACT.Wounded',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/wounded.svg',
-				preventRecovery: 'system.health',
+				preventRecovery: 'system.health.value',
 				category: 'misfortunes'
 			}),
 			this.createImpact({
 				id: 'shaken',
-				label: 'IRONSWORN.IMPACT.Shaken',
+				name: 'IRONSWORN.IMPACT.Shaken',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/shaken.svg',
-				preventRecovery: 'system.spirit',
+				preventRecovery: 'system.spirit.value',
 				category: 'misfortunes'
 			}),
 			this.createImpact({
 				id: 'unprepared',
-				label: 'IRONSWORN.IMPACT.Unprepared',
+				name: 'IRONSWORN.IMPACT.Unprepared',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/unprepared.svg',
-				preventRecovery: 'system.supply',
+				preventRecovery: 'system.supply.value',
 				category: 'misfortunes',
 				global: true
 			}),
 			this.createImpact({
 				id: 'permanentlyharmed',
-				label: 'IRONSWORN.IMPACT.Permanentlyharmed',
+				name: 'IRONSWORN.IMPACT.Permanentlyharmed',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanentlyharmed.svg',
 				category: 'lastingEffects'
 			}),
 			this.createImpact({
 				id: 'traumatized',
-				label: 'IRONSWORN.IMPACT.Traumatized',
+				name: 'IRONSWORN.IMPACT.Traumatized',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/traumatized.svg',
 				category: 'lastingEffects'
 			}),
 			this.createImpact({
 				id: 'tormented',
-				label: 'IRONSWORN.IMPACT.Tormented',
+				name: 'IRONSWORN.IMPACT.Tormented',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/tormented.svg',
 				category: 'burdens'
 			}),
 			this.createImpact({
 				id: 'doomed',
-				label: 'IRONSWORN.IMPACT.Doomed',
+				name: 'IRONSWORN.IMPACT.Doomed',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/doomed.svg',
 				category: 'burdens'
 			}),
 			this.createImpact({
 				id: 'indebted',
-				label: 'IRONSWORN.IMPACT.Indebted',
+				name: 'IRONSWORN.IMPACT.Indebted',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/indebted.svg',
 				category: 'burdens'
 			}),
 			this.createImpact({
 				id: 'cursed',
-				label: 'IRONSWORN.IMPACT.Cursed',
+				name: 'IRONSWORN.IMPACT.Cursed',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/cursed_starforged.svg',
 				globalHint: true,
 				category: 'vehicle'
 			}),
 			this.createImpact({
 				id: 'battered',
-				label: 'IRONSWORN.IMPACT.Battered',
+				name: 'IRONSWORN.IMPACT.Battered',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/battered.svg',
 				globalHint: true,
 				category: 'vehicle'
@@ -260,54 +260,54 @@ export class IronActiveEffect extends ActiveEffect {
 		classic: [
 			this.createImpact({
 				id: 'wounded',
-				label: 'IRONSWORN.DEBILITY.Wounded',
+				name: 'IRONSWORN.DEBILITY.Wounded',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/wounded.svg',
-				preventRecovery: 'system.health',
+				preventRecovery: 'system.health.value',
 				category: 'conditions'
 			}),
 			this.createImpact({
 				id: 'unprepared',
-				label: 'IRONSWORN.DEBILITY.Unprepared',
+				name: 'IRONSWORN.DEBILITY.Unprepared',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/unprepared.svg',
-				preventRecovery: 'system.supply',
+				preventRecovery: 'system.supply.value',
 				global: true,
 				category: 'conditions'
 			}),
 			this.createImpact({
 				id: 'shaken',
-				label: 'IRONSWORN.DEBILITY.Shaken',
+				name: 'IRONSWORN.DEBILITY.Shaken',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/shaken.svg',
-				preventRecovery: 'system.spirit',
+				preventRecovery: 'system.spirit.value',
 				category: 'conditions'
 			}),
 			this.createImpact({
 				id: 'encumbered',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/encumbered.svg',
-				label: 'IRONSWORN.DEBILITY.Encumbered',
+				name: 'IRONSWORN.DEBILITY.Encumbered',
 				category: 'conditions'
 			}),
 			this.createImpact({
 				id: 'maimed',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanentlyharmed.svg',
-				label: 'IRONSWORN.DEBILITY.Maimed',
+				name: 'IRONSWORN.DEBILITY.Maimed',
 				category: 'banes'
 			}),
 			this.createImpact({
 				id: 'corrupted',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/corrupted.svg',
-				label: 'IRONSWORN.DEBILITY.Corrupted',
+				name: 'IRONSWORN.DEBILITY.Corrupted',
 				category: 'banes'
 			}),
 			this.createImpact({
 				id: 'cursed',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/doomed.svg',
-				label: 'IRONSWORN.DEBILITY.Cursed',
+				name: 'IRONSWORN.DEBILITY.Cursed',
 				category: 'burdens'
 			}),
 			this.createImpact({
 				id: 'tormented',
 				icon: 'systems/foundry-ironsworn/assets/icons/impacts/tormented.svg',
-				label: 'IRONSWORN.DEBILITY.Tormented',
+				name: 'IRONSWORN.DEBILITY.Tormented',
 				category: 'burdens'
 			})
 		]
