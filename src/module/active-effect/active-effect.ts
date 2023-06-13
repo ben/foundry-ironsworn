@@ -21,7 +21,7 @@ export class IronActiveEffect extends ActiveEffect {
 	static readonly PRESETS: Record<
 		Required<ImpactFlags>['type'],
 		EffectChangeDataConstructorData[]
-	> = {
+	> = Object.freeze({
 		impact: [
 			{
 				key: this.MOMENTUM_MAX_PATH,
@@ -34,7 +34,7 @@ export class IronActiveEffect extends ActiveEffect {
 				value: '-1'
 			}
 		]
-	}
+	})
 
 	async toMessage(active: boolean) {
 		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
