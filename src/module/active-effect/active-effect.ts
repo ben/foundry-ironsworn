@@ -168,7 +168,7 @@ export class IronActiveEffect extends ActiveEffect {
 			icon: icon ?? IronActiveEffect.IMPACT_ICON_DEFAULT,
 			duration: null,
 			statuses: [id],
-			changes: this.PRESETS.impact,
+			changes: foundry.utils.deepClone(this.PRESETS.impact),
 			flags: {
 				'foundry-ironsworn': {
 					type: 'impact',
