@@ -39,8 +39,8 @@ export class IronActiveEffect extends ActiveEffect {
 	async toMessage(active: boolean) {
 		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
 		const params = gameIsStarforged
-			? { impact: this.label }
-			: { debility: this.label }
+			? { impact: game.i18n.localize(this.name) }
+			: { debility: game.i18n.localize(this.name) }
 		const i18nKey = active
 			? IronActiveEffect.impactMarkedString
 			: IronActiveEffect.impactClearedString
@@ -138,7 +138,7 @@ export class IronActiveEffect extends ActiveEffect {
 			typeof effectData,
 			'id'
 		>
-		createData.label = game.i18n.localize(effectData.label as string)
+		createData.name = game.i18n.localize(effectData.name as string)
 		createData['flags.core.statusId'] = effectData.id
 		delete createData.id
 		return createData as ActiveEffectDataConstructorData
