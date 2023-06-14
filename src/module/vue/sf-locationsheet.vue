@@ -275,7 +275,7 @@ interface OracleSpec {
 const oracles = computed((): OracleSpec[][] => {
 	const { subtype, klass } = props.data.actor.system
 	const kc = klass
-		.split(' ')
+		?.split(' ')
 		.map((x) => capitalize(x))
 		.join(' ')
 	const rc = capitalize(state.region)
@@ -488,7 +488,7 @@ const canRandomizeName = computed(() => {
 	const { subtype, klass } = props.data.actor.system
 
 	if (subtype === 'planet') {
-		const kc = capitalize(klass)
+		const kc = capitalize(klass ?? '')
 		const json = OracleTable.getDFOracleByDfId(
 			`Starforged/Oracles/Planets/${kc}`
 		)
@@ -584,7 +584,7 @@ async function randomizeName() {
 	const { subtype, klass } = props.data.actor.system
 	let name
 	if (subtype === 'planet') {
-		const kc = capitalize(klass)
+		const kc = capitalize(klass ?? '')
 		const json = await OracleTable.getDFOracleByDfId(
 			`Starforged/Oracles/Planets/${kc}`
 		)

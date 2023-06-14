@@ -10,8 +10,8 @@ export class LocationData extends foundry.abstract.TypeDataModel<
 	static override defineSchema(): DataSchema<LocationDataSourceData> {
 		const fields = foundry.data.fields
 		return {
-			subtype: new fields.StringField(),
-			klass: new fields.StringField(),
+			subtype: new fields.StringField({ initial: 'star' }),
+			klass: new fields.StringField({ nullable: true }),
 			description: new fields.HTMLField()
 		}
 	}
@@ -20,7 +20,7 @@ export interface LocationData extends LocationDataSourceData {}
 
 interface LocationDataSourceData {
 	subtype: string
-	klass: string
+	klass: string | null
 	description: string
 }
 
