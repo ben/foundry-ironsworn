@@ -28,7 +28,7 @@ interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
 	 * This string will be inserted in into the tooltip text "Roll +{x}". It should already be localized.
 	 */
 	statLabel: string
-	attr: string
+	value: number
 }
 
 const props = defineProps<Props>()
@@ -48,11 +48,7 @@ function rollStat(): any {
 	} else if (props.documentType === 'Actor') {
 		const name = `${props.statLabel} (${$actor?.name})`
 
-		return IronswornPrerollDialog.showForStat(
-			name,
-			$actor?.system[props.attr],
-			$actor
-		)
+		return IronswornPrerollDialog.showForStat(name, props.value, $actor)
 	}
 }
 </script>

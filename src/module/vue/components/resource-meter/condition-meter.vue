@@ -17,7 +17,7 @@
 				tabindex="0"
 				:document-type="documentType"
 				:vertical="sliderStyle === 'vertical'"
-				:attr="attr"
+				:value="currentValue"
 				:stat-label="statLabel"
 				:text="statLabel" />
 		</template>
@@ -28,8 +28,6 @@
 import AttrSlider from './attr-slider.vue'
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
-import { inject } from 'vue'
-import { ItemKey } from '../../provisions.js'
 
 const props = withDefaults(
 	defineProps<{
