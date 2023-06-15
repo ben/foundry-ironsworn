@@ -133,7 +133,7 @@ declare global {
 		 * @returns     Does any element in the set satisfy the test criterion?
 		 */
 		some(
-			predicate: (value: T, index: number, set: this) => unknown,
+			test: (value: T, index: number, set: this) => unknown,
 			thisArg?: any
 		): boolean
 	}
