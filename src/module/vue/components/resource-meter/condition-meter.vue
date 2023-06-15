@@ -26,7 +26,7 @@ import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-typ
 import BtnRollstat from '../buttons/btn-rollstat.vue'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument'
 import { computed } from 'vue'
-import { AssetConditionMeterField } from '../../../item/subtypes/asset'
+import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
 import type { MeterField } from '../../../fields/MeterField'
 
 const props = withDefaults(
