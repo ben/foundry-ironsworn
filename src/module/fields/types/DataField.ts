@@ -14,6 +14,20 @@ declare global {
 					static _defaults: DataField.Options
 
 					/**
+					 * Whether this field defines part of a Document/Embedded Document hierarchy.
+					 * @default false
+					 */
+					static hierarchical: boolean
+
+					/**
+					 * Does this field type contain other fields in a recursive structure?
+					 * Examples of recursive fields are SchemaField, ArrayField, or TypeDataField
+					 * Examples of non-recursive fields are StringField, NumberField, or ObjectField
+					 * @default false
+					 */
+					static recursive: boolean
+
+					/**
 					 * A dot-separated string representation of the field path within the parent schema.
 					 * @type {string}
 					 */
