@@ -65,6 +65,6 @@ export interface DelveThemeDataSource {
 }
 export interface DelveThemeDataProperties {
 	type: 'delve-theme'
-	data: DelveThemeDataPropertiesData
-	system: DelveThemeDataPropertiesData
+	data: DelveThemeData
+	system: DelveThemeData
 }

@@ -7,7 +7,6 @@
 				:stat-label="$t('IRONSWORN.Supply')"
 				:max="data.actor.system.supply.max"
 				:min="data.actor.system.supply.min"
-				:current-value="data.actor.system.supply.value"
 				document-type="Actor"
 				:global="IronswornSettings.get('shared-supply')" />
 		</section>

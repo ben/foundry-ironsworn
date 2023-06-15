@@ -4,10 +4,6 @@
 		:document-type="documentType"
 		:attr="props.attr"
 		:slider-style="sliderStyle"
-		:current-value="currentValue"
-		:min="0"
-		:max="max"
-		:soft-max="softMax"
 		:read-only="readOnly"
 		:global="global">
 		<template #label>
@@ -17,7 +13,7 @@
 				tabindex="0"
 				:document-type="documentType"
 				:vertical="sliderStyle === 'vertical'"
-				:value="currentValue"
+				:attr="props.attr"
 				:stat-label="statLabel"
 				:text="statLabel" />
 		</template>
@@ -28,11 +24,15 @@
 import AttrSlider from './attr-slider.vue'
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
+import { pickInjectedDocument } from '../../composable/pickInjectedDocument'
+import { computed } from 'vue'
+import { AssetConditionMeterField } from '../../../item/subtypes/asset'
+import type { MeterField } from '../../../fields/MeterField'
 
 const props = withDefaults(
 	defineProps<{
 		/**
-		 * The key of the attribute controlled by the slider. This is the property of the injected document that will be controlled.
+		 * The key of the attribute (within `system`) controlled by the slider. This is the property of the injected document that will be controlled.
 		 */
 		attr: string
 		/**
@@ -46,15 +46,8 @@ const props = withDefaults(
 		 * When 'true' and documentType is set to "Actor", updates *all* actors of the 'shared' and 'character' types.
 		 */
 		global?: boolean
-		max: number
-		softMax?: number
-		currentValue: number
 		sliderStyle?: 'vertical' | 'horizontal'
 		labelPosition?: 'right' | 'left' | 'none'
-		/**
-		 * This string will be inserted in into the tooltip text "Roll +{x}" on the roll button. It should already be localized.
-		 */
-		statLabel: string
 		readOnly?: boolean
 	}>(),
 	{
@@ -64,6 +57,23 @@ const props = withDefaults(
 		global: false
 	}
 )
+
+const { document, $document } = pickInjectedDocument(props.documentType)
+
+const field = computed(
+	() =>
+		$document?.system.schema.getField(props.attr) as
+			| AssetConditionMeterField
+			| MeterField
+			| foundry.data.fields.NumberField
+)
+
+const statLabel = computed(() => {
+	return (
+		document?.value.system[props.attr].name ??
+		game.i18n.localize(field.value.label)
+	)
+})
 </script>
 
 <style lang="scss" module>

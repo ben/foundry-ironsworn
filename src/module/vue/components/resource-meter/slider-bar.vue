@@ -6,16 +6,16 @@
 		:aria-readonly="props.readOnly"
 		:aria-valuemin="props.min"
 		:aria-valuemax="currentMax"
-		:aria-valuenow="currentValue"
+		:aria-valuenow="value"
 		:aria-orientation="orientation"
-		@keydown.arrow-up="setSliderValue(currentValue + 1, $event)"
-		@keydown.+="setSliderValue(currentValue + 1, $event)"
-		@keydown.arrow-left="setSliderValue(currentValue + 1, $event)"
-		@keydown.page-up="setSliderValue(currentValue + 2, $event)"
-		@keydown.-="setSliderValue(currentValue - 1, $event)"
-		@keydown.arrow-down="setSliderValue(currentValue - 1, $event)"
-		@keydown.arrow-right="setSliderValue(currentValue - 1, $event)"
-		@keydown.page-down="setSliderValue(currentValue - 2, $event)"
+		@keydown.arrow-up="setSliderValue(value + 1, $event)"
+		@keydown.+="setSliderValue(value + 1, $event)"
+		@keydown.arrow-left="setSliderValue(value + 1, $event)"
+		@keydown.page-up="setSliderValue(value + 2, $event)"
+		@keydown.-="setSliderValue(value - 1, $event)"
+		@keydown.arrow-down="setSliderValue(value - 1, $event)"
+		@keydown.arrow-right="setSliderValue(value - 1, $event)"
+		@keydown.page-down="setSliderValue(value - 2, $event)"
 		@keydown.home="setSliderValue(min, $event)"
 		@keydown.end="setSliderValue(currentMax, $event)"
 		@keydown.0="setSliderValue(0, $event)"
@@ -35,7 +35,7 @@
 			class="slider-segment clickable block"
 			:class="props.segmentClass?.[segment]"
 			tabindex="-1"
-			:aria-selected="segment === currentValue"
+			:aria-selected="segment === value"
 			:aria-disabled="!inRange(segment, props.min, currentMax + 1)"
 			@click.capture="setSliderValue(segment, $event)"
 			@focus.prevent>
@@ -56,7 +56,8 @@ import { computed } from 'vue'
 const props = withDefaults(
 	defineProps<{
 		readOnly?: boolean
-		currentValue: number
+		/** The current value of the bar. */
+		value: number
 		/**
 		 * @default 0
 		 */
@@ -75,13 +76,14 @@ const props = withDefaults(
 		 * {[reset]: 'momentum-reset'}
 		 * ```
 		 */
-		segmentClass?: Record<number, any>
+		segmentClass?: Record<number, any> | undefined
 	}>(),
 	{
 		readOnly: false,
 		orientation: 'vertical',
 		min: 0,
-		softMax: null
+		softMax: null,
+		segmentClass: undefined
 	}
 )
 
@@ -140,7 +142,6 @@ const keybindInfo = computed(
 </script>
 
 <style lang="scss" scoped>
-/* stylelint-disable no-descending-specificity */
 @use 'mixin:clickable.scss';
 
 .slider-bar {

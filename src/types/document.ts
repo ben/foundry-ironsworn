@@ -4,11 +4,11 @@ import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/s
 declare global {
 	namespace foundry {
 		namespace abstract {
-			export interface Document<
-				ConcreteDocumentData extends AnyDocumentData,
-				Parent extends Document<any, any, Metadata<any>> | null = null,
-				ConcreteMetadata extends Metadata<any> = Metadata<any>
-			> {}
+			// export interface Document<
+			// 	ConcreteDocumentData extends AnyDocumentData,
+			// 	Parent extends Document<any, any, Metadata<any>> | null = null,
+			// 	ConcreteMetadata extends Metadata<any> = Metadata<any>
+			// > {}
 			export namespace Document {
 				/**
 				 * Define a simple migration from one field name to another.
