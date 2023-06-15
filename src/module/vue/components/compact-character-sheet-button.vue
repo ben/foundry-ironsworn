@@ -29,6 +29,7 @@ import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 
 const props = defineProps<{
+	/** The property key within `Actor#system` */
 	propKey: string
 }>()
 
@@ -59,11 +60,7 @@ const burnMomentumTooltip = computed(() =>
 
 function click() {
 	if (isMomentum) return
-	IronswornPrerollDialog.showForStat(
-		i18nStat,
-		$actor?.system[props.propKey],
-		$actor
-	)
+	IronswornPrerollDialog.showForStat(props.propKey, $actor)
 }
 </script>
 

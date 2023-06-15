@@ -110,4 +110,14 @@ declare global {
 	interface DataConfig {
 		Item: ItemDataProperties
 	}
+
+	interface FlagConfig {
+		Item: {
+			'foundry-ironsworn'?: {
+				expanded?: boolean
+				muteBroadcast?: boolean
+				'edit-mode'?: boolean
+			}
+		}
+	}
 }

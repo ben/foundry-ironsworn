@@ -40,6 +40,39 @@ export class AssetData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
+export interface AssetData extends AssetDataSourceData {}
+
+export interface AssetDataSourceData {
+	category: string
+	description?: string
+	requirement: string
+	color: string
+	fields: AssetField[]
+	abilities: AssetAbility[]
+	track: AssetConditionMeter
+	exclusiveOptions: AssetExclusiveOption[]
+	conditions: AssetCondition[]
+}
+
+export interface AssetDataPropertiesData extends AssetDataSourceData {}
+
+export interface AssetDataSource {
+	type: 'asset'
+	/**
+	 * @deprecated
+	 */
+	data: AssetDataSourceData
+	system: AssetDataSourceData
+}
+
+export interface AssetDataProperties {
+	type: 'asset'
+	/**
+	 * @deprecated
+	 */
+	data: AssetData
+	system: AssetData
+}
 
 export class AssetConditionMeterField extends MeterField<AssetConditionMeter> {
 	constructor() {
@@ -54,7 +87,6 @@ export class AssetConditionMeterField extends MeterField<AssetConditionMeter> {
 		)
 	}
 }
-export interface AssetData extends AssetDataPropertiesData {}
 
 export interface AssetConditionMeter {
 	enabled: boolean
@@ -113,30 +145,4 @@ interface AssetExclusiveOption {
 interface AssetCondition {
 	name: string
 	ticked: boolean
-}
-
-interface AssetDataSourceData {
-	category: string
-	description?: string
-	requirement: string
-	color: string
-	fields: AssetField[]
-	abilities: AssetAbility[]
-	track: AssetConditionMeter
-	exclusiveOptions: AssetExclusiveOption[]
-	conditions: AssetCondition[]
-}
-
-export interface AssetDataPropertiesData extends AssetDataSourceData {}
-
-export interface AssetDataSource {
-	type: 'asset'
-	data: AssetDataSourceData
-	system: AssetDataSourceData
-}
-
-export interface AssetDataProperties {
-	type: 'asset'
-	data: AssetDataPropertiesData
-	system: AssetDataPropertiesData
 }
