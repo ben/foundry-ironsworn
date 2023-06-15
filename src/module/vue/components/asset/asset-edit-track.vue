@@ -26,11 +26,10 @@
 
 		<AttrSlider
 			style="margin-top: var(--ironsworn-spacer-md)"
-			attr="track.value"
+			attr="track"
 			document-type="Item"
 			:min="item.system.track.min"
 			:max="item.system.track.max"
-			:current-value="item.system.track.value"
 			slider-style="horizontal" />
 
 		<hr />

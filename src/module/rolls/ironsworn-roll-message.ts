@@ -8,6 +8,7 @@ import {
 } from 'lodash-es'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
+import { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
@@ -30,10 +31,10 @@ interface MoveTemplateData {
  * // returns "roll +heart" for en.json
  * ```
  */
-export function formatRollPlusStat(stat: string) {
-	let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
-	if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
-	return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
+export function formatRollPlusStat(stat: string, initialCaps = false) {
+	if (stat.startsWith('IRONSWORN.')) stat = game.i18n.localize(stat)
+	const key = initialCaps ? 'IRONSWORN.Roll +x' : 'IRONSWORN.roll +x'
+	return game.i18n.format(key, { stat })
 }
 
 /**
