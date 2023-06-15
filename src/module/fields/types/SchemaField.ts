@@ -119,7 +119,6 @@ declare global {
 					 * @param options - Options which configure the behavior of the field
 					 */
 					constructor(model: T, options?: Partial<DataField.Options>)
-
 					/**
 					 * The embedded DataModel definition which is contained in this field.
 					 */
