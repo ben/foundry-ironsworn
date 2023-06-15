@@ -22,6 +22,7 @@ module.exports = {
 	},
 	plugins: ['@typescript-eslint'],
 	rules: {
+		'@typescript-eslint/method-signature-style': 'off',
 		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/no-unused-vars': [1, { argsIgnorePattern: '^_' }],
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
