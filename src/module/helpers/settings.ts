@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-extraneous-class */
-import { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
+import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import { kebabCase, mapValues } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
@@ -20,7 +20,6 @@ async function closeAllMoveSheets() {
 }
 
 declare global {
-	// eslint-disable-next-line @typescript-eslint/no-namespace
 	namespace ClientSettings {
 		/** Settings added here will be automatically typed throughout the game system. */
 		interface Values {
