@@ -3,9 +3,9 @@
 		tabindex="0"
 		role="slider"
 		class="slider-bar"
-		:aria-readonly="props.readOnly"
-		:aria-valuemin="props.min"
-		:aria-valuemax="currentMax"
+		:aria-readonly="readOnly"
+		:aria-valuemin="min"
+		:aria-valuemax="max"
 		:aria-valuenow="value"
 		:aria-orientation="orientation"
 		@keydown.arrow-up="setSliderValue(value + 1, $event)"
@@ -17,7 +17,7 @@
 		@keydown.arrow-right="setSliderValue(value - 1, $event)"
 		@keydown.page-down="setSliderValue(value - 2, $event)"
 		@keydown.home="setSliderValue(min, $event)"
-		@keydown.end="setSliderValue(currentMax, $event)"
+		@keydown.end="setSliderValue(max, $event)"
 		@keydown.0="setSliderValue(0, $event)"
 		@keydown.1="setSliderValue(1, $event)"
 		@keydown.2="setSliderValue(2, $event)"
@@ -36,7 +36,7 @@
 			:class="props.segmentClass?.[segment]"
 			tabindex="-1"
 			:aria-selected="segment === value"
-			:aria-disabled="!inRange(segment, props.min, currentMax + 1)"
+			:aria-disabled="!inRange(segment, props.min, max + 1)"
 			@click.capture="setSliderValue(segment, $event)"
 			@focus.prevent>
 			<span tabindex="-1" class="slider-segment-text">
@@ -58,12 +58,17 @@ const props = withDefaults(
 		readOnly?: boolean
 		/** The current value of the bar. */
 		value: number
+		/** The highest selectable value on the bar */
+		max: number
 		/**
+		 * The lowest selectable value on the bar
 		 * @default 0
 		 */
 		min?: number | undefined
-		max: number
-		softMax?: number | null
+		/** The maximum value visible on the bar, if it's different from `max` */
+		barMax?: number | undefined
+		/** The lowest value visible on the bar, if it's different from `min` */
+		barMin?: number | undefined
 		/**
 		 * @default "vertical"
 		 */
@@ -82,7 +87,8 @@ const props = withDefaults(
 		readOnly: false,
 		orientation: 'vertical',
 		min: 0,
-		softMax: null,
+		barMax: undefined,
+		barMin: undefined,
 		segmentClass: undefined
 	}
 )
@@ -91,10 +97,8 @@ const $emit = defineEmits<{
 	(e: 'change', value: number): void
 }>()
 
-const sliderSegments = computed(() => rangeRight(props.min, props.max + 1))
-
-const currentMax = computed(() =>
-	Math.min(props.softMax ?? props.max, props.max)
+const sliderSegments = computed(() =>
+	rangeRight(props.min, (props.barMax ?? props.max) + 1)
 )
 
 function setSliderValue(newValue: number, event: Event) {
@@ -102,7 +106,7 @@ function setSliderValue(newValue: number, event: Event) {
 		return
 	}
 	event.preventDefault()
-	$emit('change', Math.clamped(newValue, props.min, currentMax.value))
+	$emit('change', Math.clamped(newValue, props.min, props.max))
 }
 
 /**
@@ -131,7 +135,7 @@ const keybindInfo = computed(
 <dt><kbd>LeftArrow</kbd></dt>
 <dd>Decrease by 1.</dd>
 <dt><kbd>Home</kbd></dt>
-<dd>Set to maximum (${currentMax.value}).</dd>
+<dd>Set to maximum (${props.max}).</dd>
 <dt><kbd>End</kbd></dt>
 <dd>Set to minimum (${props.min}).</dd>
 <dt><kbd>0-9</kbd></dt>

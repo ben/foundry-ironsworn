@@ -17,9 +17,10 @@
 		<SliderBar
 			class="attr-slider-bar"
 			:orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
-			:max="max"
+			:bar-max="barMax"
+			:bar-min="barMin"
 			:min="min"
-			:soft-max="softMax"
+			:max="max"
 			:value="value"
 			:segment-class="segmentClass"
 			:read-only="readOnly"
@@ -56,7 +57,10 @@ const props = withDefaults(
 		 * The minimum value to be shown on the bar, if it differs from the attribute's `min` property
 		 */
 		barMin?: number | undefined
-		softMax?: number | undefined
+		/** The bar's maximum selectable value. Default: inferred from field `max` */
+		max?: number | undefined
+		/** The bar's minimum selectable value. Default: inferred from field `min`, or 0 if there isn't one. */
+		min?: number | undefined
 		/**
 		 * The type of injectable document to use. Currently only "Actor" and "Item" work - they'll target `ActorKey`/`$ActorKey` or `ItemKey`/`$ItemKey` as appropriate.
 		 * @see {$ActorKey}
@@ -81,8 +85,10 @@ const props = withDefaults(
 		sliderStyle: 'vertical',
 		labelPosition: 'left',
 		segmentClass: undefined,
-		softMax: undefined,
-		barMax: undefined
+		max: undefined,
+		min: undefined,
+		barMax: undefined,
+		barMin: undefined
 	}
 )
 
@@ -103,7 +109,7 @@ const min = computed(
 	() =>
 		props.barMin ??
 		document?.value.system[props.attr].min ??
-		field.value.min ??
+		field.value.fields.min.min ??
 		0
 )
 

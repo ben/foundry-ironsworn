@@ -5,10 +5,9 @@
 		document-type="Actor"
 		:label-position="labelPosition"
 		:slider-style="props.sliderStyle"
-		:current-value="actor.system.momentum.value ?? MomentumField.INITIAL"
-		:min="MomentumField.MIN"
+		:bar-min="MomentumField.MIN"
 		:bar-max="MomentumField.MAX"
-		:soft-max="actor.system.momentum.max"
+		:max="actor.system.momentum.max"
 		:segment-class="{
 			[actor.system.momentum.resetValue]: 'segment-momentum-reset'
 		}">
@@ -17,10 +16,7 @@
 				:vertical="sliderStyle === 'vertical'"
 				:text="$t('IRONSWORN.Momentum')"
 				:tooltip="
-					$t('IRONSWORN.BurnMomentumAndResetTo', {
-						value: actor.system.momentum.value,
-						resetValue: actor.system.momentum.resetValue
-					})
+					$t('IRONSWORN.BurnMomentumAndResetTo', actor.system.momentum as any)
 				">
 			</BtnMomentumburn>
 		</template>
