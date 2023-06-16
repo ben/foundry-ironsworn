@@ -44,8 +44,8 @@ export class IronActiveEffect extends ActiveEffect {
 			? { impact: game.i18n.localize(this.name) }
 			: { debility: game.i18n.localize(this.name) }
 		const i18nKey = active
-			? IronActiveEffect.impactMarkedString
-			: IronActiveEffect.impactClearedString
+			? IronActiveEffect.impactMarkedKey
+			: IronActiveEffect.impactClearedKey
 		const msg = game.i18n.format(i18nKey, params)
 		const speaker =
 			this.parent instanceof IronswornActor ? this.parent : this.parent?.parent
@@ -94,14 +94,14 @@ export class IronActiveEffect extends ActiveEffect {
 		}
 	}
 
-	static get impactMarkedString() {
+	static get impactMarkedKey() {
 		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
 		return gameIsStarforged
 			? `IRONSWORN.ChatAlert.MarkedImpact`
 			: 'IRONSWORN.ChatAlert.MarkedDebility'
 	}
 
-	static get impactClearedString() {
+	static get impactClearedKey() {
 		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
 		return gameIsStarforged
 			? `IRONSWORN.ChatAlert.ClearedImpact`
@@ -110,8 +110,8 @@ export class IronActiveEffect extends ActiveEffect {
 
 	static get customLabelFallback() {
 		return IronswornSettings.starforgedToolsEnabled
-			? 'IRONSWORN.IMPACT.Custom'
-			: 'IRONSWORN.DEBILITY.Custom'
+			? game.i18n.localize('IRONSWORN.IMPACT.Custom')
+			: game.i18n.localize('IRONSWORN.DEBILITY.Custom')
 	}
 
 	static IMPACT_ICON_DEFAULT = 'icons/svg/downgrade.svg'
@@ -164,7 +164,7 @@ export class IronActiveEffect extends ActiveEffect {
 			id,
 			disabled,
 			name,
-			label: name, // workaround for a bug in 11.301: https://github.com/foundryvtt/foundryvtt/issues/9618
+			label: name, // June 15, 2023: workaround for a bug in 11.301 https://github.com/foundryvtt/foundryvtt/issues/9618
 			icon: icon ?? IronActiveEffect.IMPACT_ICON_DEFAULT,
 			duration: null,
 			statuses: [id],
