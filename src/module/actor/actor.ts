@@ -100,11 +100,7 @@ export class IronswornActor<
 		const override = this.getFlag('foundry-ironsworn', 'impacts')
 		if (override != null) return override
 
-		const sheetClass = this.getFlag('core', 'sheetClass')
-		const sfSheets = ['StarforgedCharacterSheet', 'StarshipSheet']
-		const classicSheets = ['IronswornCharacterSheetV2']
-		if (sfSheets.includes(sheetClass)) return 'starforged'
-		if (classicSheets.includes(sheetClass)) return 'classic'
+		if (this.hasStarforgedSheet) return 'starforged'
 
 		return IronswornSettings.impactSetDefault
 	}
@@ -119,6 +115,11 @@ export class IronswornActor<
 		}
 	}
 
+	get hasStarforgedSheet() {
+		const sfSheets = ['StarforgedCharacterSheet', 'StarshipSheet']
+		return sfSheets.includes(this.sheet?.constructor.name as string)
+	}
+
 	get toolset(): 'ironsworn' | 'starforged' {
 		// We can't use IronswornSettings helpers here, it breaks the import orders
 		// First check if the toolbox is set to one or the other
@@ -127,10 +128,9 @@ export class IronswornActor<
 		if (toolbox === 'starforged') return 'starforged'
 
 		// Set to "match sheet", so check for a specific setting on this actor
+
 		if (this.type === 'character') {
-			return this.sheet?.constructor.name === 'StarforgedCharacterSheet'
-				? 'starforged'
-				: 'ironsworn'
+			return this.hasStarforgedSheet ? 'starforged' : 'ironsworn'
 		}
 
 		// Nope, now check the default character sheet class
