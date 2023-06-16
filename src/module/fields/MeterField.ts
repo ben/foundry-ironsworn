@@ -14,6 +14,8 @@ interface MeterFieldOptions<
 > extends foundry.data.fields.SchemaField.Options<T> {
 	meterMax: number
 	meterMin: number
+	absoluteMin?: number
+	absoluteMax?: number
 	initialValue: number
 }
 
@@ -25,18 +27,28 @@ export abstract class MeterField<
 			meterMin = 0,
 			meterMax = 5,
 			initialValue = meterMax,
+			absoluteMax,
+			absoluteMin = 0,
 			...options
 		}: Partial<MeterFieldOptions<T>>,
 		extendFields: DataSchema<Omit<T, keyof MeterSource>>
 	) {
 		const Fields = foundry.data.fields
 		const schema: DataSchema<T> = {
-			value: new Fields.NumberField({ integer: true, initial: initialValue }),
-			max: new Fields.NumberField({ integer: true, initial: meterMax }),
+			value: new Fields.NumberField({
+				integer: true,
+				initial: initialValue
+			}),
+			max: new Fields.NumberField({
+				integer: true,
+				initial: meterMax,
+				max: absoluteMax
+			}),
 			min: new Fields.NumberField({
 				integer: true,
 				readonly: true,
-				initial: meterMin
+				initial: meterMin,
+				min: absoluteMin
 			}),
 			...(extendFields ?? {})
 		} as any
@@ -86,6 +98,8 @@ export class MomentumField extends MeterField<MomentumSource> {
 			{
 				meterMax: MomentumField.MAX,
 				meterMin: MomentumField.MIN,
+				absoluteMax: MomentumField.MAX,
+				absoluteMin: MomentumField.MIN,
 				initialValue: MomentumField.INITIAL,
 				label: 'IRONSWORN.Momentum'
 			},

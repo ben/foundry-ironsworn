@@ -7,7 +7,7 @@
 		:slider-style="props.sliderStyle"
 		:current-value="actor.system.momentum.value ?? MomentumField.INITIAL"
 		:min="MomentumField.MIN"
-		:max="MomentumField.MAX"
+		:bar-max="MomentumField.MAX"
 		:soft-max="actor.system.momentum.max"
 		:segment-class="{
 			[actor.system.momentum.resetValue]: 'segment-momentum-reset'
@@ -48,6 +48,8 @@ const props = withDefaults(
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 
 const $actor = inject($ActorKey) as IronswornActor<'character'>
+
+console.log(actor.value.system.momentum)
 </script>
 
 <style lang="scss">

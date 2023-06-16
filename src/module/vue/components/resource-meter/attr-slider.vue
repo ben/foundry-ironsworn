@@ -35,6 +35,7 @@
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { computed } from 'vue'
 import type { MeterField } from '../../../fields/MeterField'
+import NumberField from '../../../fields/types/NumberField'
 import { IronswornSettings } from '../../../helpers/settings.js'
 import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument.js'
@@ -46,6 +47,15 @@ const props = withDefaults(
 		 * The key of the attribute controlled by the slider (within `system`). This is the property of the injected document that will be controlled.
 		 */
 		attr: string
+		/**
+		 * The maximum value to be shown on the bar, if it differs from the attribute's `max` property
+		 */
+		barMax?: number | undefined
+
+		/**
+		 * The minimum value to be shown on the bar, if it differs from the attribute's `min` property
+		 */
+		barMin?: number | undefined
 		softMax?: number | undefined
 		/**
 		 * The type of injectable document to use. Currently only "Actor" and "Item" work - they'll target `ActorKey`/`$ActorKey` or `ItemKey`/`$ItemKey` as appropriate.
@@ -71,7 +81,8 @@ const props = withDefaults(
 		sliderStyle: 'vertical',
 		labelPosition: 'left',
 		segmentClass: undefined,
-		softMax: undefined
+		softMax: undefined,
+		barMax: undefined
 	}
 )
 
@@ -86,29 +97,22 @@ const field = computed(
 		$document?.system.schema.getField(props.attr) as
 			| AssetConditionMeterField
 			| MeterField
-			| foundry.data.fields.NumberField
 )
 
 const min = computed(
-	() => document?.value.system[props.attr].min ?? field.value.min ?? 0
+	() =>
+		props.barMin ??
+		document?.value.system[props.attr].min ??
+		field.value.min ??
+		0
 )
 
 const max = computed(() => {
-	const fieldMax = field.value.max
-	const currentMax = document?.value?.system[props.attr].max as
-		| number
-		| undefined
-	if (fieldMax == null) return currentMax as number
-	if (currentMax == null) return fieldMax as number
-	if (fieldMax > currentMax) return fieldMax as number
-	return currentMax
+	if (typeof props.barMax === 'number') return props.barMax
+	return document?.value?.system[props.attr].max as number
 })
 
-const targetKey = computed(() =>
-	field.value instanceof foundry.data.fields.NumberField
-		? `system.${props.attr}`
-		: `system.${props.attr}.value`
-)
+const targetKey = computed(() => `system.${props.attr}.value`)
 
 const value = computed(
 	() => getProperty(document?.value as any, targetKey.value) as number
