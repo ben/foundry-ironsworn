@@ -186,12 +186,13 @@ export class IronActiveEffect extends ActiveEffect {
 		if (result.name == null || result.name.length === 0)
 			result.name = IronActiveEffect.customLabelFallback
 
-		if (preventRecovery != null)
-			result.changes?.push({
-				key: preventRecovery,
-				mode: CONST.ACTIVE_EFFECT_MODES.DOWNGRADE,
-				value: '0'
-			})
+		// TODO: finish implementation of these
+		// if (preventRecovery != null)
+		// 	result.changes?.push({
+		// 		key: preventRecovery,
+		// 		mode: CONST.ACTIVE_EFFECT_MODES.DOWNGRADE,
+		// 		value: '0'
+		// 	})
 		return result
 	}
 
@@ -407,28 +408,29 @@ Hooks.on(
 	) => {
 		const doc = app.object?.actor
 
-		// exit if the effects flyout isn't open
-
-		console.log('renderTokenHUD', data)
-
 		// fall back to allowing everything if the required info is missing
 		if (doc == null || doc.system.tokenStatusEffects == null) return
 
 		const statuses = Object.fromEntries(
-			doc.system.tokenStatusEffects.map((status) => [
-				status.icon,
-				{
-					id: status.id,
-					title: capitalize(status.name),
-					src: status.icon,
-					isActive: doc.statuses.has(status.id),
-					// isOverlay: !!status.overlay ?? doc.overlayEffect === src
-					cssClass: [
-						doc.statuses.has(status.id) ? 'active' : null
-						// isOverlay ? 'overlay' : null
-					].filterJoin(' ')
-				}
-			])
+			doc.system.tokenStatusEffects.map((status) => {
+				const isActive = doc.statuses.has(status.id)
+				const isOverlay = (status.overlay ??
+					(doc as any).overlayEffect === status.icon) as boolean
+				return [
+					status.icon,
+					{
+						id: status.id,
+						title: capitalize(status.name),
+						src: status.icon,
+						isActive,
+						isOverlay,
+						cssClass: [
+							isActive ? 'active' : null,
+							isOverlay ? 'overlay' : null
+						].filterJoin(' ')
+					}
+				]
+			})
 		)
 
 		const buttons = Object.values(statuses)
@@ -445,15 +447,5 @@ Hooks.on(
 		data.statusEffects = statuses
 
 		html.find('.status-effects').html(buttons)
-
-		console.log(html.find('.status-effects'))
-		// // select all elements with a statusId data attribute that *aren't* a legal status effect
-		// const selector = `[data-status-id]${actor.system.tokenStatusEffects
-		// 	.map(({ id }) => `:not([data-status-id="${id as string}"])`)
-		// 	.join('')}`
-
-		// for (const el of html.find(selector)) {
-		// 	el.remove()
-		// }
 	}
 )
