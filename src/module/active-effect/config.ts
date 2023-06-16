@@ -1,3 +1,4 @@
+import type { Ruleset } from './active-effect'
 import type { DebilityCategoryClassic, ImpactCategoryStarforged } from './types'
 
 export interface ImpactFlags {
@@ -12,6 +13,7 @@ export interface ImpactFlags {
 	 */
 	category?: DebilityCategoryClassic | ImpactCategoryStarforged
 	type?: 'impact'
+	ruleset?: Ruleset
 }
 
 export type IronActiveEffectFlags = ImpactFlags

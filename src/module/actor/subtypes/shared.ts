@@ -1,3 +1,4 @@
+import { IronActiveEffect } from '../../active-effect/active-effect'
 import type { ConditionMeterSource } from '../../fields/MeterField'
 import { ConditionMeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
@@ -11,8 +12,11 @@ export class SharedData extends foundry.abstract.TypeDataModel<
 
 	/** Status effects toggles shown on tokens of this subtype **/
 	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
-		return CONFIG.statusEffects.filter(
-			(status) => status.flags?.['foundry-ironsworn']?.global
+		return IronActiveEffect.STATUS_EFFECTS[this.parent.impactSet].filter(
+			(status) =>
+				status.flags?.['foundry-ironsworn']?.type === 'impact' &&
+				status.flags?.['foundry-ironsworn']?.global &&
+				status.flags?.['foundry-ironsworn'].ruleset === this.parent.impactSet
 		)
 	}
 

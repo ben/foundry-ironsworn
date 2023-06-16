@@ -89,14 +89,12 @@ Hooks.once('init', async () => {
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
-	// HACK: CONFIG.statusEffects as a getter, so that it dynamically provides the correct status effects for the selected toolset
-	Object.defineProperty(CONFIG, 'statusEffects', {
-		get(): StatusEffect[] {
-			return IronswornSettings.starforgedToolsEnabled
-				? IronActiveEffect.STATUS_EFFECTS.starforged
-				: IronActiveEffect.STATUS_EFFECTS.classic
-		}
-	})
+	// HACK: CONFIG.statusEffects as a getter, so that it dynamically provides status effects
+	// Object.defineProperty(CONFIG, 'statusEffects', {
+	// 	get(): StatusEffect[] {
+	// 		return Object.values(IronActiveEffect.STATUS_EFFECTS).flat()
+	// 	}
+	// })
 
 	CONFIG.RollTable.documentClass = OracleTable
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'

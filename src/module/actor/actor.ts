@@ -8,6 +8,7 @@ import type {
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
+import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
@@ -93,6 +94,29 @@ export class IronswornActor<
 		CREATE_DIALOG.options.folder = data?.folder
 		CREATE_DIALOG.render(true)
 		return undefined
+	}
+
+	get impactSet() {
+		const override = this.getFlag('foundry-ironsworn', 'impacts')
+		if (override != null) return override
+
+		const sheetClass = this.getFlag('core', 'sheetClass')
+		const sfSheets = ['StarforgedCharacterSheet', 'StarshipSheet']
+		const classicSheets = ['IronswornCharacterSheetV2']
+		if (sfSheets.includes(sheetClass)) return 'starforged'
+		if (classicSheets.includes(sheetClass)) return 'classic'
+
+		return IronswornSettings.impactSetDefault
+	}
+
+	get impactType() {
+		switch (this.impactSet) {
+			case 'starforged':
+				return 'impact'
+			case 'classic':
+			default:
+				return 'debility'
+		}
 	}
 
 	get toolset(): 'ironsworn' | 'starforged' {

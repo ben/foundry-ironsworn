@@ -9,14 +9,16 @@
 				:class="$style.conditions"
 				:impacts-class="$style.conditionsContents" />
 		</div>
-		<div class="flexrow">
-			<ImpactCheckboxCustom
-				v-for="impact in $actor.system.customImpacts"
-				:key="(impact.id as string)"
-				:placeholder="`${labelKey}.Custom`"
-				:status-id="(impact.id as string)"
-				:data="(impact.toObject() as StatusEffect)" />
-		</div>
+		<template v-if="$actor.system.customImpacts?.length">
+			<div class="flexrow">
+				<ImpactCheckboxCustom
+					v-for="impact in $actor.system.customImpacts"
+					:key="(impact.id as string)"
+					:placeholder="$t(`${labelKey}.Custom`)"
+					:status-id="(impact.id as string)"
+					:data="(impact.toObject() as StatusEffect)" />
+			</div>
+		</template>
 	</div>
 </template>
 
@@ -30,13 +32,12 @@ import type { ImpactFlags } from '../../../active-effect/config'
 
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const labelKey =
-	$actor.toolset === 'starforged' ? 'IRONSWORN.IMPACT' : 'IRONSWORN.DEBILITY'
+const labelKey = computed(() => `IRONSWORN.${$actor.impactType.toUpperCase()}`)
 
 const categories = computed(() => {
 	const result = new Set<ImpactFlags['category'] & string>()
 
-	for (const fx of CONFIG.statusEffects) {
+	for (const fx of $actor?.system.tokenStatusEffects ?? []) {
 		if (
 			fx.flags?.['foundry-ironsworn']?.type === 'impact' &&
 			typeof fx.flags?.['foundry-ironsworn']?.category === 'string'

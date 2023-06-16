@@ -11,8 +11,10 @@ import { sendToChat } from '../features/chat-alert'
 import type { ImpactOptions } from './types'
 import { MomentumField } from '../fields/MeterField'
 import type { ImpactFlags } from './config'
+import { capitalize } from '../helpers/util'
+import { data } from 'jquery'
 
-type Ruleset = 'starforged' | 'classic'
+export type Ruleset = 'starforged' | 'classic'
 
 export interface IronActiveEffect {
 	statuses: Set<string>
@@ -157,7 +159,8 @@ export class IronActiveEffect extends ActiveEffect {
 		global,
 		globalHint,
 		category,
-		disabled
+		disabled,
+		ruleset
 	}: ImpactOptions) {
 		if (icon == null) icon = this.IMPACT_ICON_DEFAULT
 		const result: StatusEffect = {
@@ -175,7 +178,8 @@ export class IronActiveEffect extends ActiveEffect {
 					preventRecovery,
 					globalHint,
 					global,
-					category
+					category,
+					ruleset
 				}
 			}
 		}
@@ -198,6 +202,7 @@ export class IronActiveEffect extends ActiveEffect {
 			starforged: [
 				this.createImpact({
 					id: 'wounded',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Wounded'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/wounded.svg',
 					preventRecovery: 'system.health.value',
@@ -205,6 +210,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'shaken',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Shaken'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/shaken.svg',
 					preventRecovery: 'system.spirit.value',
@@ -212,6 +218,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'unprepared',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Unprepared'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/unprepared.svg',
 					preventRecovery: 'system.supply.value',
@@ -220,36 +227,42 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'permanentlyharmed',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Permanentlyharmed'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanentlyharmed.svg',
 					category: 'lastingEffects'
 				}),
 				this.createImpact({
 					id: 'traumatized',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Traumatized'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/traumatized.svg',
 					category: 'lastingEffects'
 				}),
 				this.createImpact({
 					id: 'tormented',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Tormented'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/tormented.svg',
 					category: 'burdens'
 				}),
 				this.createImpact({
 					id: 'doomed',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Doomed'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/doomed.svg',
 					category: 'burdens'
 				}),
 				this.createImpact({
 					id: 'indebted',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Indebted'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/indebted.svg',
 					category: 'burdens'
 				}),
 				this.createImpact({
-					id: 'cursed',
+					id: 'cursed_vehicle',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Cursed'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/cursed_starforged.svg',
 					globalHint: true,
@@ -257,6 +270,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'battered',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Battered'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/battered.svg',
 					globalHint: true,
@@ -266,6 +280,7 @@ export class IronActiveEffect extends ActiveEffect {
 			classic: [
 				this.createImpact({
 					id: 'wounded',
+					ruleset: 'classic',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Wounded'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/wounded.svg',
 					preventRecovery: 'system.health.value',
@@ -273,6 +288,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'unprepared',
+					ruleset: 'classic',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Unprepared'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/unprepared.svg',
 					preventRecovery: 'system.supply.value',
@@ -281,6 +297,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'shaken',
+					ruleset: 'classic',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Shaken'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/shaken.svg',
 					preventRecovery: 'system.spirit.value',
@@ -288,30 +305,35 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'encumbered',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/encumbered.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Encumbered'),
 					category: 'conditions'
 				}),
 				this.createImpact({
 					id: 'maimed',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanentlyharmed.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Maimed'),
 					category: 'banes'
 				}),
 				this.createImpact({
 					id: 'corrupted',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/corrupted.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Corrupted'),
 					category: 'banes'
 				}),
 				this.createImpact({
 					id: 'cursed',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/doomed.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Cursed'),
 					category: 'burdens'
 				}),
 				this.createImpact({
 					id: 'tormented',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/tormented.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Tormented'),
 					category: 'burdens'
@@ -382,20 +404,57 @@ Hooks.on(
 		app: TokenHUD,
 		// technically an HTMLFormElement, but we don't care about that
 		html: JQuery<HTMLElement>,
-		_: TokenHUD.RenderOptions
+		data: TokenHUD.RenderOptions
 	) => {
-		const actor = app.object?.actor
+		const doc = app.object?.actor
+
+		// exit if the effects flyout isn't open
+
+		console.log('renderTokenHUD', data)
 
 		// fall back to allowing everything if the required info is missing
-		if (actor == null || actor.system.tokenStatusEffects == null) return
+		if (doc == null || doc.system.tokenStatusEffects == null) return
 
-		// select all elements with a statusId data attribute that *aren't* a legal status effect
-		const selector = `[data-status-id]${actor.system.tokenStatusEffects
-			.map(({ id }) => `:not([data-status-id="${id as string}"])`)
-			.join('')}`
+		const statuses = Object.fromEntries(
+			doc.system.tokenStatusEffects.map((status) => [
+				status.icon,
+				{
+					id: status.id,
+					title: capitalize(status.name),
+					src: status.icon,
+					isActive: doc.statuses.has(status.id),
+					// isOverlay: !!status.overlay ?? doc.overlayEffect === src
+					cssClass: [
+						doc.statuses.has(status.id) ? 'active' : null
+						// isOverlay ? 'overlay' : null
+					].filterJoin(' ')
+				}
+			])
+		)
 
-		for (const el of html.find(selector)) {
-			el.remove()
-		}
+		const buttons = Object.values(statuses)
+			.map(
+				(status: any) =>
+					`<img class="effect-control ${
+						(status.isActive as boolean) ? 'active' : ''
+					}" src="${status.src as string}" title="${
+						status.title as string
+					}" data-status-id="${status.id as string}">`
+			)
+			.join('\n')
+
+		data.statusEffects = statuses
+
+		html.find('.status-effects').html(buttons)
+
+		console.log(html.find('.status-effects'))
+		// // select all elements with a statusId data attribute that *aren't* a legal status effect
+		// const selector = `[data-status-id]${actor.system.tokenStatusEffects
+		// 	.map(({ id }) => `:not([data-status-id="${id as string}"])`)
+		// 	.join('')}`
+
+		// for (const el of html.find(selector)) {
+		// 	el.remove()
+		// }
 	}
 )

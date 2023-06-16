@@ -290,6 +290,12 @@
 				"Ironsworn": "Ironsworn Classic",
 				"Starforged": "Starforged"
 			},
+			"Impacts": {
+				"Name": "Rules: Debilities and Impacts",
+				"Hint": "The default set of conditions provided on sheets and tokens. Individual sheets may override this.",
+				"Classic": "Debilities (Ironsworn classic)",
+				"Starforged": "Impacts (Starforged)"
+			},
 			"ColorScheme": {
 				"Name": "Appearance: Color scheme",
 				"Hint": "Each user can set their own color scheme.",
