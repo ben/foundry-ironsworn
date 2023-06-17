@@ -1,6 +1,6 @@
 import type { IronswornActor } from '../actor'
 import type { DataSchema } from '../../fields/utils'
-import { IronActorModel } from './common'
+import type { IronActorModel } from './common'
 
 export class StarshipData
 	extends foundry.abstract.TypeDataModel<
@@ -11,20 +11,13 @@ export class StarshipData
 {
 	static _enableV10Validation = true
 
-	get tokenStatusEffects(): IronActorModel['tokenStatusEffects'] {
-		return []
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		return (
+			statusEffect.flags?.['foundry-ironsworn']?.category === 'vehicle' &&
+			statusEffect.flags?.['foundry-ironsworn'].ruleset ===
+				this.parent.impactSet
+		)
 	}
-
-	/** Status effects toggles shown on tokens of this subtype **/
-	// get tokenStatusEffects() {
-	// 	return CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
-	// 		this.parent.impactSet
-	// 	].filter(
-	// 		(status) =>
-	// 			status.flags?.['foundry-ironsworn']?.category === 'vehicle' &&
-	// 			status.flags?.['foundry-ironsworn'].ruleset === this.parent.impactSet
-	// 	)
-	// }
 
 	static override defineSchema(): DataSchema<StarshipDataSourceData> {
 		return {}

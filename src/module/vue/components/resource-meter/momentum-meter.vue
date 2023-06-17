@@ -44,8 +44,6 @@ const props = withDefaults(
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 
 const $actor = inject($ActorKey) as IronswornActor<'character'>
-
-console.log(actor.value.system.momentum)
 </script>
 
 <style lang="scss">

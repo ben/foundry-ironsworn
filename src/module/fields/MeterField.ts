@@ -4,6 +4,7 @@ import type { DataSchema } from './utils'
 
 export interface MeterField extends MeterSource {}
 export interface MeterSource {
+	noRecover?: boolean | undefined
 	value: number
 	max: number
 	min: number
@@ -35,6 +36,11 @@ export abstract class MeterField<
 	) {
 		const Fields = foundry.data.fields
 		const schema: DataSchema<T> = {
+			noRecover: new Fields.BooleanField({
+				required: false,
+				initial: undefined,
+				nullable: true
+			}),
 			value: new Fields.NumberField({
 				integer: true,
 				initial: initialValue
