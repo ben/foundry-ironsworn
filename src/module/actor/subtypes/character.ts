@@ -19,7 +19,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 	/** Status effects toggles shown on tokens of this subtype **/
 	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
-		const standardImpacts = IronActiveEffect.STATUS_EFFECTS[
+		const standardImpacts = CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
 			this.parent.impactSet
 		].filter((status) => {
 			// not an impact - skip
@@ -83,8 +83,8 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 				const label = (debilities[`${id}name`] as string) ?? ''
 
 				;(source.effects as ActiveEffectDataConstructorData[]).push(
-					IronActiveEffect.statusToActiveEffectData(
-						IronActiveEffect.createImpact({ id, label })
+					CONFIG.IRONSWORN.IronActiveEffect.statusToActiveEffectData(
+						CONFIG.IRONSWORN.IronActiveEffect.createImpact({ id, label })
 					)
 				)
 			}
@@ -96,7 +96,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 				const foundEffect =
 					CONFIG.statusEffects.find((fx) => fx.id === key) ??
 					// not found -- try broadening the search
-					Object.values(IronActiveEffect.STATUS_EFFECTS)
+					Object.values(CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS)
 						.flat()
 						.find((fx) => fx.id === key)
 				if (foundEffect == null) continue
