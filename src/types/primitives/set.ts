@@ -1,3 +1,4 @@
+// common/primitives/set.mjs
 declare global {
 	interface Set<T> {
 		/**
