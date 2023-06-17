@@ -5,7 +5,11 @@ import type {
 	ConfiguredData,
 	ConfiguredDocumentClassForName
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { DocumentSubTypes } from '../../types/helperTypes'
+import type {
+	ConfiguredDocumentClass,
+	DocumentConstructor,
+	DocumentSubTypes
+} from '../../types/helperTypes'
 import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import { IronswornSettings } from '../helpers/settings'
@@ -58,7 +62,7 @@ export class IronswornActor<
 			await this.deleteEmbeddedDocuments('ActiveEffect', existing)
 		// Add a new effect
 		else if (state) {
-			const cls = getDocumentClass('ActiveEffect') as typeof IronActiveEffect
+			const cls = getDocumentClass('ActiveEffect')
 			const createData = foundry.utils.deepClone(effectData)
 			;(createData as any).statuses = [effectData.id]
 			// @ts-expect-error
@@ -149,7 +153,12 @@ export class IronswornActor<
 				if (!this.effects.contents.some((fx: any) => fx.statuses.has(id)))
 					void this.createEmbeddedDocuments(
 						'ActiveEffect',
-						[IronActiveEffect.createImpact({ id, disabled: true }) as any],
+						[
+							CONFIG.IRONSWORN.IronActiveEffect.createImpact({
+								id,
+								disabled: true
+							}) as any
+						],
 						{ suppressLog: true } as any
 					)
 			}
@@ -170,7 +179,8 @@ export interface IronswornActor<T extends DocumentSubTypes<'Actor'> = any>
 	type: T
 	statuses: Set<string>
 	get effects(): EmbeddedCollection<
-		ConfiguredDocumentClassForName<'ActiveEffect'>,
+		ConfiguredDocumentClass<typeof foundry.documents.BaseActiveEffect> &
+			DocumentConstructor,
 		ActorData
 	>
 }
