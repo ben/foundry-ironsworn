@@ -84,7 +84,10 @@ async function input() {
 		])
 	} else {
 		if (props.data.flags?.['foundry-ironsworn']?.global)
-			await IronActiveEffect.setGlobal(props.data, !checked.value)
+			await CONFIG.IRONSWORN.IronActiveEffect.setGlobal(
+				props.data,
+				!checked.value
+			)
 		else await $actor?.toggleActiveEffect(props.data, {})
 	}
 

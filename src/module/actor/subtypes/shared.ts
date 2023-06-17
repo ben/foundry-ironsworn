@@ -12,7 +12,9 @@ export class SharedData extends foundry.abstract.TypeDataModel<
 
 	/** Status effects toggles shown on tokens of this subtype **/
 	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
-		return IronActiveEffect.STATUS_EFFECTS[this.parent.impactSet].filter(
+		return CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
+			this.parent.impactSet
+		].filter(
 			(status) =>
 				status.flags?.['foundry-ironsworn']?.type === 'impact' &&
 				status.flags?.['foundry-ironsworn']?.global &&

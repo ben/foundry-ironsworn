@@ -1,6 +1,5 @@
 import type { IronswornActor } from '../actor'
 import type { DataSchema } from '../../fields/utils'
-import { IronActiveEffect } from '../../active-effect/active-effect'
 
 export class StarshipData extends foundry.abstract.TypeDataModel<
 	StarshipDataSourceData,
@@ -10,7 +9,9 @@ export class StarshipData extends foundry.abstract.TypeDataModel<
 
 	/** Status effects toggles shown on tokens of this subtype **/
 	get tokenStatusEffects() {
-		return IronActiveEffect.STATUS_EFFECTS[this.parent.impactSet].filter(
+		return CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
+			this.parent.impactSet
+		].filter(
 			(status) =>
 				status.flags?.['foundry-ironsworn']?.category === 'vehicle' &&
 				status.flags?.['foundry-ironsworn'].ruleset === this.parent.impactSet
