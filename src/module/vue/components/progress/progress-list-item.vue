@@ -81,7 +81,7 @@
 </template>
 
 <script lang="ts" setup>
-import { capitalize, computed, inject, provide } from 'vue'
+import { computed, inject, provide } from 'vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
@@ -116,7 +116,7 @@ const editMode = computed(() => {
 	return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 })
 const subtitle = computed(() => {
-	let subtype = capitalize(props.item.system.subtype)
+	let subtype = props.item.system.subtype.capitalize()
 	if (subtype === 'Bond') subtype = 'Connection' // translate name
 	return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)
 })

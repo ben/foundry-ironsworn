@@ -1,7 +1,7 @@
 <template>
 	<article ref="legacyTrack" class="legacy-track flexcol" :data-legacy="legacy">
 		<h4 class="legacy-track-title">
-			{{ $t(`IRONSWORN.LEGACY.${capitalize(legacy)}`) }}
+			{{ $t(`IRONSWORN.LEGACY.${legacy.capitalize()}`) }}
 		</h4>
 
 		<section class="legacy-track-controls flexrow" data-tooltip-direction="UP">
@@ -42,7 +42,7 @@ import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
-import { capitalize, clamp } from 'lodash-es'
+import { clamp } from 'lodash-es'
 import XpTrack from './xp-track.vue'
 import ProgressTrack from './progress/progress-track.vue'
 
@@ -94,7 +94,7 @@ const xpSpent = computed(
 
 const markTooltip = computed(() => {
 	let legacy = game.i18n.localize(
-		`IRONSWORN.LEGACY.${capitalize(props.legacy)}`
+		`IRONSWORN.LEGACY.${props.legacy.capitalize()}`
 	)
 	let amount = game.i18n.localize(`IRONSWORN.PROGRESS.TICK.1`)
 	return game.i18n.format(`IRONSWORN.MarkLegacy`, { amount, legacy })

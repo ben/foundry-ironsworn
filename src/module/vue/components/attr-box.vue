@@ -19,7 +19,7 @@
 
 <script lang="ts" setup>
 import type { Ref } from 'vue'
-import { inject, computed, capitalize } from 'vue'
+import { inject, computed } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
 import { IronswornPrerollDialog } from '../../rolls'
 import { formatRollPlusStat } from '../../rolls/ironsworn-roll-message'
@@ -36,7 +36,7 @@ const classes = computed(() => ({
 	clickable: !editMode.value,
 	'isiconbg-d10-tilt': !editMode.value
 }))
-const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
+const i18nKey = computed(() => `IRONSWORN.${props.attr.capitalize()}`)
 const editMode = computed(
 	() => !!(actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 )
