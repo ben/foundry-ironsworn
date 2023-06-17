@@ -1,4 +1,4 @@
-import { MeterField } from '../../fields/MeterField'
+import { ConditionMeterSource, MeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 
@@ -88,12 +88,9 @@ export class AssetConditionMeterField extends MeterField<AssetConditionMeter> {
 	}
 }
 
-export interface AssetConditionMeter {
+export interface AssetConditionMeter extends ConditionMeterSource {
 	enabled: boolean
 	name: string
-	value: number
-	min: number
-	max: number
 }
 
 export interface AssetField {

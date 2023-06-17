@@ -7,6 +7,7 @@ import type {
 	DocumentConstructor,
 	DocumentSubTypes
 } from '../../types/helperTypes'
+import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
@@ -32,6 +33,11 @@ export class IronswornActor<
 		return super.itemTypes as Actor['itemTypes'] & {
 			[K in DocumentSubTypes<'Item'>]: Array<IronswornItem<K>>
 		}
+	}
+
+	get validImpacts() {
+		const impactSet = IronActiveEffect.statusEffects[this.impactSet]
+		return impactSet.filter(this.system.isValidImpact)
 	}
 
 	get impactSet(): 'starforged' | 'classic' {
@@ -154,7 +160,7 @@ export class IronswornActor<
 							CONFIG.IRONSWORN.IronActiveEffect.createImpact({
 								id,
 								disabled: true
-							}) as any
+							} as any) as any
 						],
 						{ suppressLog: true } as any
 					)

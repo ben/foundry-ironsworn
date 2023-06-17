@@ -1,7 +1,7 @@
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
-import { IronActorModel } from './common'
+import type { IronActorModel } from './common'
 
 export class FoeData
 	extends foundry.abstract.TypeDataModel<
@@ -12,9 +12,8 @@ export class FoeData
 {
 	static _enableV10Validation = true
 
-	/** Status effects toggles shown on tokens of this subtype **/
-	get tokenStatusEffects(): IronActorModel['tokenStatusEffects'] {
-		return []
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		return false
 	}
 
 	static override defineSchema(): DataSchema<FoeDataSourceData> {

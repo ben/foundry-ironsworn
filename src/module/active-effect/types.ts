@@ -1,8 +1,12 @@
 import type {
 	EffectChangeData,
-	EffectChangeDataConstructorData
+	EffectChangeDataConstructorData,
+	EffectChangeDataProperties
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
-import type { EffectDurationDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectDurationData'
+import type {
+	EffectDurationDataConstructorData,
+	EffectDurationDataSource
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectDurationData'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { ConfiguredDocumentClass } from '../../types/helperTypes'
 import type { ImpactFlags } from './config'
@@ -69,8 +73,17 @@ declare global {
 		statuses?: Set<string> | string[]
 		flags?: ConfiguredFlags<'ActiveEffect'>
 	}
-	export interface StatusEffectV11 extends ActiveEffectDataConstructorData {
+	export interface StatusEffectV11 {
 		id: string
+		name: string
+		changes?: EffectChangeDataProperties[]
+		disabled?: boolean
+		duration?: EffectDurationDataSource
+		description?: string
+		icon: string
+		overlay?: boolean
+		tint?: string
+		flags?: ConfiguredFlags<'ActiveEffect'>
 	}
 	export namespace foundry {
 		export namespace data {

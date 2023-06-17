@@ -21,7 +21,7 @@
 
 		<section class="flexrow nogrow" :class="$style.impacts">
 			<ImpactCheckbox
-				v-for="impact in $actor?.system.tokenStatusEffects"
+				v-for="impact in $actor?.validImpacts"
 				:key="impact.id"
 				:data="impact"
 				:class="$style.impact" />

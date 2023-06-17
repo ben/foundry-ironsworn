@@ -36,7 +36,7 @@
 			:class="props.segmentClass?.[segment]"
 			tabindex="-1"
 			:aria-selected="segment === value"
-			:aria-disabled="!inRange(segment, props.min, max + 1)"
+			:aria-disabled="!inRange(segment, min, max + 1)"
 			@click.capture="setSliderValue(segment, $event)"
 			@focus.prevent>
 			<span tabindex="-1" class="slider-segment-text">

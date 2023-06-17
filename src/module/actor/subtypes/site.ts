@@ -7,7 +7,7 @@ import { TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
-import { IronActorModel } from './common'
+import type { IronActorModel } from './common'
 
 export class SiteData
 	extends foundry.abstract.TypeDataModel<
@@ -18,9 +18,8 @@ export class SiteData
 {
 	static _enableV10Validation = true
 
-	/** Status effects toggles shown on tokens of this subtype **/
-	get tokenStatusEffects(): IronActorModel['tokenStatusEffects'] {
-		return []
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		return false
 	}
 
 	get denizenTable() {

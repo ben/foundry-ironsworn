@@ -107,27 +107,28 @@ const field = computed(
 
 const min = computed(
 	() =>
-		props.barMin ??
-		document?.value.system[props.attr].min ??
-		field.value.fields.min.min ??
-		0
+		(props.min ??
+			document?.value.system[props.attr].min ??
+			field.value.fields.min.min ??
+			0) as number
 )
 
-const max = computed(() => {
-	if (typeof props.barMax === 'number') return props.barMax
-	return document?.value?.system[props.attr].max as number
-})
-
-const targetKey = computed(() => `system.${props.attr}.value`)
+const max = computed(
+	() =>
+		(props.max ??
+			document?.value?.system[props.attr].max ??
+			field.value.fields.max.max) as number
+)
 
 const value = computed(
-	() => getProperty(document?.value as any, targetKey.value) as number
+	() =>
+		getProperty(document?.value as any, `system.${props.attr}.value`) as number
 )
 
 async function onChange(newValue: number) {
-	const data = { [targetKey.value]: newValue }
+	const data = { [`system.${props.attr}.value`]: newValue }
 
-	console.log('updating with data', data)
+	// console.log('updating with data', data)
 	// redundant with the below if it's global, but fires anyway so that a single message appears in the chatlog.
 	await $document?.update(data)
 	if (props.global) {

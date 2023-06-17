@@ -3,13 +3,15 @@ import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
-import type { IronActiveEffect } from '../../active-effect/active-effect'
+import { IronActiveEffect } from '../../active-effect/active-effect'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
 import type {
 	ConditionMeterSource,
 	MomentumSource
 } from '../../fields/MeterField'
-import { IronActorModel } from './common'
+import type { IronActorModel } from './common'
+import { IronswornSettings } from '../../helpers/settings'
+import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 export class CharacterData
 	extends foundry.abstract.TypeDataModel<
@@ -20,24 +22,17 @@ export class CharacterData
 {
 	static _enableV10Validation = true
 	static readonly CUSTOM_IMPACT_IDS = ['custom1', 'custom2']
-	get tokenStatusEffects(): IronActorModel['tokenStatusEffects'] {
-		return []
-	}
-	/** Status effects toggles shown on tokens of this subtype **/
-	// get tokenStatusEffects() {
-	// 	const standardImpacts = CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
-	// 		this.parent.impactSet
-	// 	].filter((status) => {
-	// 		// not an impact - skip
-	// 		if (status.flags?.['foundry-ironsworn']?.type !== 'impact') return false
-	// 		// vehicle impact - skip
-	// 		if (status.flags?.['foundry-ironsworn'].category === 'vehicle')
-	// 			return false
 
-	// 		return true
-	// 	})
-	// 	return [...standardImpacts, ...this.customImpacts] as StatusEffect[]
-	// }
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		// not an impact - skip
+		if (statusEffect.flags?.['foundry-ironsworn']?.type !== 'impact')
+			return false
+		// vehicle impact - skip
+		if (statusEffect.flags?.['foundry-ironsworn'].category === 'vehicle')
+			return false
+
+		return true
+	}
 
 	constructor(
 		...args: ConstructorParameters<
@@ -81,27 +76,39 @@ export class CharacterData
 			const debilities = source.debility as Record<string, boolean | string>
 			if (source.effects == null)
 				source.effects = [] as ActiveEffectDataConstructorData[]
-
+			// convert any custom impacts
 			for (const id of this.CUSTOM_IMPACT_IDS) {
 				const value = debilities[id]
 				if (value !== true) continue
-				const label = (debilities[`${id}name`] as string) ?? ''
+				const name = (debilities[`${id}name`] as string) ?? ''
 
 				;(source.effects as ActiveEffectDataConstructorData[]).push(
 					CONFIG.IRONSWORN.IronActiveEffect.statusToActiveEffectData(
-						CONFIG.IRONSWORN.IronActiveEffect.createImpact({ id, label })
+						CONFIG.IRONSWORN.IronActiveEffect.createImpact({ id, name } as any)
 					)
 				)
 			}
 
+			const sheetClass = (source.flags as ConfiguredFlags<'Actor'>)?.core
+				?.sheetClass
+
+			const preferredRuleset =
+				source.type === 'starship' || sheetClass?.includes('Starforged')
+					? 'starforged'
+					: IronswornSettings.impactSetDefault
+
 			for (const [key, value] of Object.entries(debilities)) {
 				if (key.startsWith('custom') || value !== true) continue
+				const id = key === 'permanentlyharmed' ? 'permanently_harmed' : key
 				const foundEffect =
-					CONFIG.statusEffects.find((fx) => fx.id === key) ??
-					// not found -- try broadening the search
-					Object.values(CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS)
+					IronActiveEffect.statusEffects[preferredRuleset].find((fx) =>
+						// use startsWith to catch things that now have a suffix, like cursed_starforged
+						fx.id.startsWith(id)
+					) ??
+					Object.values(IronActiveEffect.statusEffects)
 						.flat()
-						.find((fx) => fx.id === key)
+						.find((fx) => fx.id.startsWith(id))
+
 				if (foundEffect == null) continue
 				;(source.effects as any[]).push(foundry.utils.deepClone(foundEffect))
 			}
