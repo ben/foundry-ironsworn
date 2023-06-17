@@ -17,7 +17,6 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
-import { capitalize } from '../../../helpers/util'
 import { ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
@@ -37,7 +36,7 @@ const actor = inject(ActorKey) as Ref
 
 const label = computed(() =>
 	game.i18n.localize(
-		`IRONSWORN.${props.type.toUpperCase()}.CATEGORY.${capitalize(props.name)}`
+		`IRONSWORN.${props.type.toUpperCase()}.CATEGORY.${props.name.capitalize()}`
 	)
 )
 

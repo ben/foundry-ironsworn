@@ -1,11 +1,5 @@
 import type { IOutcomeInfo, RollMethod } from 'dataforged'
-import {
-	capitalize,
-	compact,
-	fromPairs,
-	isUndefined,
-	kebabCase
-} from 'lodash-es'
+import { compact, fromPairs, isUndefined, kebabCase } from 'lodash-es'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
@@ -53,7 +47,7 @@ export function formatRollMethod(rollMethod: RollMethod, stats: string[]) {
 	}
 	// canonical triggers have 2 stats; there's a good chance a nice string already exists, so we check for that first.
 	const localizedStats = stats.map((stat) =>
-		game.i18n.localize('IRONSWORN.' + capitalize(stat))
+		game.i18n.localize('IRONSWORN.' + stat.capitalize())
 	)
 	const methodKeyRoot = `IRONSWORN.roll method.${rollMethod}`
 	const possibleNiceKey = `${methodKeyRoot}.${stats.length}`
@@ -236,7 +230,7 @@ export class IronswornRollMessage {
 			return { title: `${move.name} +${stat.source}` }
 		}
 		let localizedStat = game.i18n.localize(
-			'IRONSWORN.' + capitalize(stat.source)
+			'IRONSWORN.' + stat.source.capitalize()
 		)
 		if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat.source
 		return {

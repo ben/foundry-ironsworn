@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { capitalize, computed, inject } from 'vue'
+import { computed, inject } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
@@ -34,7 +34,7 @@ const props = defineProps<{
 }>()
 
 const isMomentum = props.propKey === 'momentum'
-const i18nKey = `IRONSWORN.${capitalize(props.propKey)}`
+const i18nKey = `IRONSWORN.${props.propKey.capitalize()}`
 const i18nStat = game.i18n.localize(i18nKey)
 const tooltip = computed(() =>
 	isMomentum

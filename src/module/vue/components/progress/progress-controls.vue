@@ -20,7 +20,7 @@
 	</div>
 </template>
 <script setup lang="ts">
-import { capitalize, inject } from 'vue'
+import { inject } from 'vue'
 import { $ActorKey } from '../../provisions'
 import IronBtn from 'component:buttons/iron-btn.vue'
 import BtnCompendium from 'component:buttons/btn-compendium.vue'
@@ -31,7 +31,7 @@ const $actor = inject($ActorKey)
 
 async function addProgressItem(subtype) {
 	const itemData = {
-		name: capitalize(subtype),
+		name: subtype.capitalize(),
 		type: 'progress',
 		data: { subtype },
 		sort: 9000000

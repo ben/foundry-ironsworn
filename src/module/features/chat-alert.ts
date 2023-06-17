@@ -1,5 +1,5 @@
 import type { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
-import { capitalize, compact, get } from 'lodash-es'
+import { compact, get } from 'lodash-es'
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import type { IronswornActor } from '../actor/actor'
 import { IronswornSettings } from '../helpers/settings'
@@ -147,7 +147,9 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 			if (newValue !== undefined) {
 				const oldValue = get(actor.system, resource).value
 				const signPrefix = newValue > oldValue ? '+' : ''
-				const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(resource)}`)
+				const i18nStat = game.i18n.localize(
+					`IRONSWORN.${resource.capitalize()}`
+				)
 				return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
 					amt: `${signPrefix}${newValue - oldValue}`,
 					stat: i18nStat,
@@ -184,7 +186,7 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 				const i18nDebility = `<b class='term ${conditionType}'>${
 					debility.startsWith('custom')
 						? get(actor.system.debility, `${debility}name`)
-						: game.i18n.localize(`${i18nPath}.${capitalize(debility)}`)
+						: game.i18n.localize(`${i18nPath}.${debility.capitalize()}`)
 				}</b>`
 
 				const params = gameIsStarforged
@@ -193,11 +195,11 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 
 				if (newValue)
 					return game.i18n.format(
-						`IRONSWORN.ChatAlert.Marked${capitalize(conditionType)}`,
+						`IRONSWORN.ChatAlert.Marked${conditionType.capitalize()}`,
 						params
 					)
 				return game.i18n.format(
-					`IRONSWORN.ChatAlert.Cleared${capitalize(conditionType)}`,
+					`IRONSWORN.ChatAlert.Cleared${conditionType.capitalize()}`,
 					params
 				)
 			}
@@ -230,7 +232,7 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 				const oldValue = actor.system.debility[impact]
 				if (oldValue === newValue) continue
 				const i18nImpact = game.i18n.localize(
-					`IRONSWORN.IMPACT.${capitalize(impact)}`
+					`IRONSWORN.IMPACT.${impact.capitalize()}`
 				)
 				const params = { impact: `<b class'term impact'>${i18nImpact}</b>` }
 				// TODO: use "impact" if this is an SF character

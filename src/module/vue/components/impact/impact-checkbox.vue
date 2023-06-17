@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, capitalize, inject, nextTick, reactive } from 'vue'
+import { computed, inject, nextTick, reactive } from 'vue'
 import type { Ref } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'
@@ -97,7 +97,7 @@ CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name }) => {
 
 const label = computed(() =>
 	game.i18n.localize(
-		`IRONSWORN.${props.type.toUpperCase()}.${capitalize(props.name)}`
+		`IRONSWORN.${props.type.toUpperCase()}.${props.name.capitalize()}`
 	)
 )
 function refreshGlobalHint() {
@@ -120,14 +120,14 @@ function refreshGlobalHint() {
 	} else if (names.length == 1) {
 		// Condition only set on one other actor
 		state.hintText = game.i18n.format('IRONSWORN.ConditionMarkedOnOne', {
-			condition: capitalize(label.value),
+			condition: label.value.capitalize(),
 			name: names[0]
 		})
 	} else {
 		// This condition is marked on several other actors, display them as a list
 		state.hintText = `
     <p>${game.i18n.format('IRONSWORN.ConditionMarkedOnMany', {
-			condition: capitalize(label.value)
+			condition: label.value.capitalize()
 		})}</p>
     <ul>
       ${names.map((x) => `<li>${x}</li>`).join('\n')}
