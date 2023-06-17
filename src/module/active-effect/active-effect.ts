@@ -429,20 +429,48 @@ Hooks.on(
 		app: TokenHUD,
 		// technically an HTMLFormElement, but we don't care about that
 		html: JQuery<HTMLElement>,
-		_: TokenHUD.RenderOptions
+		data: TokenHUD.RenderOptions
 	) => {
-		const actor = app.object?.actor
+		const doc = app.object?.actor
 
 		// fall back to allowing everything if the required info is missing
-		if (actor == null || actor.system.tokenStatusEffects == null) return
+		if (doc == null || doc.system.tokenStatusEffects == null) return
 
-		// select all elements with a statusId data attribute that *aren't* a legal status effect
-		const selector = `[data-status-id]${actor.system.tokenStatusEffects
-			.map(({ id }) => `:not([data-status-id="${id as string}"])`)
-			.join('')}`
+		const statuses = Object.fromEntries(
+			doc.system.tokenStatusEffects.map((status) => {
+				const isActive = doc.statuses.has(status.id)
+				const isOverlay = (status.overlay ??
+					(doc as any).overlayEffect === status.icon) as boolean
+				return [
+					status.icon,
+					{
+						id: status.id,
+						title: status.name.capitalize(),
+						src: status.icon,
+						isActive,
+						isOverlay,
+						cssClass: [
+							isActive ? 'active' : null,
+							isOverlay ? 'overlay' : null
+						].filterJoin(' ')
+					}
+				]
+			})
+		)
 
-		for (const el of html.find(selector)) {
-			el.remove()
-		}
+		const buttons = Object.values(statuses)
+			.map(
+				(status: any) =>
+					`<img class="effect-control ${
+						(status.isActive as boolean) ? 'active' : ''
+					}" src="${status.src as string}" title="${
+						status.title as string
+					}" data-status-id="${status.id as string}">`
+			)
+			.join('\n')
+
+		data.statusEffects = statuses
+
+		html.find('.status-effects').html(buttons)
 	}
 )
