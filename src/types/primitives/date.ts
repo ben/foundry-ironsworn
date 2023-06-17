@@ -11,12 +11,12 @@ declare global {
 		 * Return a standard YYYY-MM-DD string for the Date instance.
 		 * @returns The date in YYYY-MM-DD format
 		 */
-		toDateInputString(): string
+		toDateInputString(): `${number}-${number}-${number}`
 		/**
 		 * Return a standard H:M:S.Z string for the Date instance.
 		 * @returns The time in H:M:S format
 		 */
-		toTimeInputString(): string
+		toTimeInputString(): `${number}:${number}:${number}.${number}`
 	}
 }
 
