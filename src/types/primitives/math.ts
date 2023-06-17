@@ -67,7 +67,7 @@ declare global {
 			minVal: number,
 			maxVal: number,
 			t: number,
-			p: number,
+			p?: number,
 			func?: (x: number) => number
 		): number
 	}
