@@ -1,6 +1,6 @@
 // common/primitives/date.mjs v11.301
 declare global {
-	interface Data {
+	interface Date {
 		/**
 		 * Test whether a Date instance is valid.
 		 * A valid date returns a number for its timestamp, and NaN otherwise.
@@ -19,3 +19,5 @@ declare global {
 		toTimeInputString(): string
 	}
 }
+
+export {}
