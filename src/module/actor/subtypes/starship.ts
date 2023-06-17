@@ -9,13 +9,9 @@ export class StarshipData extends foundry.abstract.TypeDataModel<
 
 	/** Status effects toggles shown on tokens of this subtype **/
 	get tokenStatusEffects() {
-		return CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
-			this.parent.impactSet
-		].filter(
-			(status) =>
-				status.flags?.['foundry-ironsworn']?.category === 'vehicle' &&
-				status.flags?.['foundry-ironsworn'].ruleset === this.parent.impactSet
-		)
+		return CONFIG.statusEffects.filter(
+			(status) => status.flags?.['foundry-ironsworn']?.category === 'vehicle'
+		) as StatusEffect[]
 	}
 
 	static override defineSchema(): DataSchema<StarshipDataSourceData> {

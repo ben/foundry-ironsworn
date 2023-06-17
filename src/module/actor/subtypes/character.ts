@@ -19,18 +19,11 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 	/** Status effects toggles shown on tokens of this subtype **/
 	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
-		const standardImpacts = CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
-			this.parent.impactSet
-		].filter((status) => {
-			// not an impact - skip
-			if (status.flags?.['foundry-ironsworn']?.type !== 'impact') return false
-			// vehicle impact - skip
-			if (status.flags?.['foundry-ironsworn'].category === 'vehicle')
-				return false
-
-			return true
-		})
-		console.log([...standardImpacts, ...this.customImpacts])
+		const standardImpacts = CONFIG.statusEffects.filter(
+			(status) =>
+				status.flags?.['foundry-ironsworn']?.type === 'impact' &&
+				status.flags?.['foundry-ironsworn']?.category !== 'vehicle'
+		)
 		return [...standardImpacts, ...this.customImpacts] as StatusEffect[]
 	}
 
@@ -88,8 +81,6 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 					)
 				)
 			}
-
-			// TODO: infer which version of the impact they want from their sheet? might be able to just like. look at the computed property?
 
 			for (const [key, value] of Object.entries(debilities)) {
 				if (key.startsWith('custom') || value !== true) continue

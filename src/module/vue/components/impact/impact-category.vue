@@ -33,17 +33,15 @@ const props = withDefaults(
 const $actor = inject($ActorKey)
 const actor = inject(ActorKey)
 
-const impacts = ($actor?.system.tokenStatusEffects as StatusEffect[]).filter(
-	(fx) =>
-		fx.flags?.['foundry-ironsworn']?.type === 'impact' &&
-		fx.flags?.['foundry-ironsworn']?.category === props.category
+const impacts = CONFIG.statusEffects.filter(
+	(fx) => fx.flags?.['foundry-ironsworn']?.category === props.category
 ) as StatusEffect[]
 
 const label = computed(() =>
 	game.i18n.localize(
-		`IRONSWORN.${$actor?.impactType.toUpperCase()}.CATEGORY.${capitalize(
-			props.category
-		)}`
+		`IRONSWORN.${
+			$actor?.toolset === 'starforged' ? 'IMPACT' : 'DEBILITY'
+		}.CATEGORY.${capitalize(props.category)}`
 	)
 )
 
