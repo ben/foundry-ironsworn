@@ -30,7 +30,7 @@
 			class="text clickable">
 			<slot name="default">
 				<span :class="$style.label">
-					{{ $capitalize($t(data.name as string)) }}
+					{{ $t(data.name as string).capitalize() }}
 				</span>
 			</slot>
 		</label>

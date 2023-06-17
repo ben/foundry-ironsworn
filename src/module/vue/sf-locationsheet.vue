@@ -137,7 +137,7 @@
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { camelCase, capitalize, flatten, sample } from 'lodash-es'
+import { camelCase, flatten, sample } from 'lodash-es'
 import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 
@@ -165,7 +165,7 @@ const state = reactive({
 
 function randomImage(subtype, klass): string | void {
 	if (subtype === 'planet') {
-		const name = capitalize(klass)
+		const name = klass.capitalize()
 		const i = Math.floor(Math.random() * 2) + 1
 		return `systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-${name}-0${i}.webp`
 	}
@@ -276,9 +276,9 @@ const oracles = computed((): OracleSpec[][] => {
 	const { subtype, klass } = props.data.actor.system
 	const kc = klass
 		?.split(' ')
-		.map((x) => capitalize(x))
+		.map((x) => x.capitalize())
 		.join(' ')
-	const rc = capitalize(state.region)
+	const rc = state.region.capitalize()
 	switch (subtype) {
 		case 'planet':
 			return [
@@ -488,7 +488,7 @@ const canRandomizeName = computed(() => {
 	const { subtype, klass } = props.data.actor.system
 
 	if (subtype === 'planet') {
-		const kc = capitalize(klass ?? '')
+		const kc = (klass ?? '').capitalize()
 		const json = OracleTable.getDFOracleByDfId(
 			`Starforged/Oracles/Planets/${kc}`
 		)
@@ -505,7 +505,7 @@ const firstLookWillRandomizeName = computed(() => {
 	// No klass? We only randomize names for settlements and planets
 	if (!klass) return ['settlement', 'planet'].includes(subtype)
 
-	const i18nKey = `ACTOR.Subtype${capitalize(subtype)}`
+	const i18nKey = `ACTOR.Subtype${subtype.capitalize()}`
 	const newThingName = game.i18n.format('DOCUMENT.New', {
 		type: game.i18n.localize(`IRONSWORN.${i18nKey}`)
 	})
@@ -516,12 +516,12 @@ const firstLookWillRandomizeName = computed(() => {
 
 const randomKlassTooltip = computed(() => {
 	const { subtype } = props.data.actor.system
-	return game.i18n.localize(`IRONSWORN.Random${capitalize(subtype)}Type`)
+	return game.i18n.localize(`IRONSWORN.Random${subtype.capitalize()}Type`)
 })
 
 const subtypeSelectText = computed(() => {
 	const { subtype } = props.data.actor.system
-	return game.i18n.localize(`IRONSWORN.${capitalize(subtype)}Type`)
+	return game.i18n.localize(`IRONSWORN.${subtype.capitalize()}Type`)
 })
 
 const klassIsNotValid = computed(() => {
@@ -584,7 +584,7 @@ async function randomizeName() {
 	const { subtype, klass } = props.data.actor.system
 	let name
 	if (subtype === 'planet') {
-		const kc = capitalize(klass ?? '')
+		const kc = (klass ?? '').capitalize()
 		const json = await OracleTable.getDFOracleByDfId(
 			`Starforged/Oracles/Planets/${kc}`
 		)

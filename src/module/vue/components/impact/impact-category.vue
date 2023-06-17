@@ -18,7 +18,6 @@ import type {
 	DebilityCategoryClassic,
 	ImpactCategoryStarforged
 } from '../../../active-effect/types'
-import { capitalize } from '../../../helpers/util'
 import { $ActorKey, ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
@@ -41,7 +40,7 @@ const label = computed(() =>
 	game.i18n.localize(
 		`IRONSWORN.${
 			$actor?.toolset === 'starforged' ? 'IMPACT' : 'DEBILITY'
-		}.CATEGORY.${capitalize(props.category)}`
+		}.CATEGORY.${props.category.capitalize()}`
 	)
 )
 

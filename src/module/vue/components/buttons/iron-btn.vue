@@ -8,7 +8,7 @@
 			[$style.iconOnly]: !hasText,
 			[$style.block]: block,
 			[$style.noBlock]: !block,
-			[$style[`flex${capitalize(justify)}`]]: true,
+			[$style[`flex${justify.capitalize()}`]]: true,
 			nogrow
 		}"
 		type="button"
@@ -36,7 +36,6 @@
 	</button>
 </template>
 <script setup lang="ts">
-import { capitalize } from 'lodash-es'
 import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
 import FontIcon from '../icon/font-icon.vue'
 import type { IconId } from '../icon/icon-common'

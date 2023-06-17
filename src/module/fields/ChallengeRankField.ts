@@ -1,5 +1,4 @@
 import { ChallengeRank } from '../constants'
-import { capitalize } from '../helpers/util'
 import { enumEntries } from '../fields/utils'
 
 export class ChallengeRankField extends foundry.data.fields.NumberField {
@@ -36,7 +35,9 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 			// migration: string-based challenge ranks to numeric ones
 			// TODO: use this instead of migration #5
 			case typeof value === 'string':
-				return ChallengeRank[capitalize(value as string) as keyof ChallengeRank]
+				return ChallengeRank[
+					(value as string).capitalize() as keyof ChallengeRank
+				]
 			default: {
 				return super._cast(value)
 			}

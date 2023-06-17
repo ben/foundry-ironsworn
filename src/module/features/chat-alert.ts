@@ -1,5 +1,5 @@
 import type { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
-import { capitalize, compact, get } from 'lodash-es'
+import { compact, get } from 'lodash-es'
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import type { IronswornActor } from '../actor/actor'
 import { IronswornSettings } from '../helpers/settings'
@@ -147,7 +147,9 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 			if (newValue !== undefined) {
 				const oldValue = get(actor.system, resource).value
 				const signPrefix = newValue > oldValue ? '+' : ''
-				const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(resource)}`)
+				const i18nStat = game.i18n.localize(
+					`IRONSWORN.${resource.capitalize()}`
+				)
 				return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
 					amt: `${signPrefix}${newValue - oldValue}`,
 					stat: i18nStat,

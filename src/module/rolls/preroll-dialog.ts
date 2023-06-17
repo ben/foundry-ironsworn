@@ -6,7 +6,7 @@ import type {
 	RollType,
 	Stat
 } from 'dataforged'
-import { capitalize, cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
+import { cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
@@ -401,13 +401,13 @@ export class IronswornPrerollDialog extends Dialog<
 		const buttons = {}
 		const addButton = (i: number, mode: RollMethod, stats: string[]) => {
 			const localizedStats = stats.map((s) =>
-				game.i18n.localize(`IRONSWORN.${capitalize(s)}`)
+				game.i18n.localize(`IRONSWORN.${s.capitalize()}`)
 			)
 
 			let label = localizedStats[0]
 			if (mode !== 'Any') {
 				label = game.i18n.format(
-					`IRONSWORN.PreRollMethod.${capitalize(mode)}`,
+					`IRONSWORN.PreRollMethod.${mode.capitalize()}`,
 					{
 						statList: localizedStats.join(', ')
 					}
