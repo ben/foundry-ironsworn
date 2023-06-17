@@ -8,8 +8,6 @@ import type {
 import type { SourceToField, DataSchema } from '../utils'
 
 declare global {
-	export type AnyDocument = Document<any, any, any>
-
 	namespace foundry {
 		namespace abstract {
 			export abstract class DataModel<
@@ -435,7 +433,9 @@ declare global {
 				}>
 
 				// HACK: in v10+, documents derive from DataModel
-				export type Any = DataModel<any, any> | AnyDocument
+				export type Any =
+					| DataModel<any, any>
+					| foundry.abstract.Document<any, any, any>
 			}
 
 			export class DataModelValidationFailure<T = unknown>
@@ -660,7 +660,7 @@ declare global {
 			 */
 			export abstract class TypeDataModel<
 				ConcreteData extends object,
-				Parent extends AnyDocument
+				Parent extends foundry.abstract.Document<any, any, any>
 			> extends DataModel<ConcreteData, Parent> {
 				/**
 				 * The package that is providing this DataModel for the given sub-type.
@@ -680,7 +680,7 @@ declare global {
 			}
 			export interface TypeDataModel<
 				ConcreteData extends object,
-				Parent extends AnyDocument
+				Parent extends foundry.abstract.Document<any, any, any>
 			> extends DataModel<ConcreteData, Parent> {}
 			export namespace TypeDataModel {}
 		}
