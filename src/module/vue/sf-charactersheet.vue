@@ -74,9 +74,10 @@
 				data-tourid="resources" />
 		</div>
 
-		<!-- Impacts -->
 		<hr class="nogrow" />
-		<PcImpacts class="nogrow" data-tourid="impacts" />
+
+		<!-- Impacts -->
+		<PcImpacts class="nogrow" data-tourid="impacts" :class="$style.impacts" />
 	</article>
 </template>
 
@@ -111,6 +112,9 @@ provide(ActorKey, computed(() => props.data.actor) as any)
 <style lang="scss" module>
 .topPadding {
 	padding-top: var(--ironsworn-spacer-md);
+}
+.impacts {
+	padding: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
 }
 </style>
 

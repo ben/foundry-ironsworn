@@ -20,9 +20,6 @@ export type IronActiveEffectFlags = ImpactFlags
 declare global {
 	interface FlagConfig {
 		ActiveEffect: {
-			core?: {
-				statusId?: string
-			}
 			'foundry-ironsworn'?: IronActiveEffectFlags
 		}
 	}

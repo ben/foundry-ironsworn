@@ -1,5 +1,5 @@
 /** Standardizes some properties across the various actor models. */
 export interface IronActorModel {
-	/** Canonical status effects that are permitted on this character. */
+	/** Is an impact valid for use on this actor subtype? */
 	isValidImpact(statusEffect: StatusEffectV11): boolean
 }

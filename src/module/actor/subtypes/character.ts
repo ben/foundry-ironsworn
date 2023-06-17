@@ -3,7 +3,7 @@ import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
-import { IronActiveEffect } from '../../active-effect/active-effect'
+import type { IronActiveEffect } from '../../active-effect/active-effect'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
 import type {
 	ConditionMeterSource,
@@ -28,8 +28,9 @@ export class CharacterData
 		if (statusEffect.flags?.['foundry-ironsworn']?.type !== 'impact')
 			return false
 		// vehicle impact - skip
-		if (statusEffect.flags?.['foundry-ironsworn'].category === 'vehicle')
-			return false
+		// TODO: remove this when asset-provided impacts are implemented
+		// if (statusEffect.flags?.['foundry-ironsworn'].category === 'vehicle')
+		// 	return false
 
 		return true
 	}
@@ -59,64 +60,6 @@ export class CharacterData
 
 	async burnMomentum(this: CharacterData) {
 		if (this.canBurnMomentum) await this.resetMomentum()
-	}
-
-	/** A convenience getter that returns all custom impacts on the PC. */
-	get customImpacts() {
-		return this.parent.effects.filter((impact) =>
-			CharacterData.CUSTOM_IMPACT_IDS.some((id) => impact.statuses.has(id))
-		) as IronActiveEffect[]
-	}
-
-	static override migrateData(source: Record<string, unknown>) {
-		source = super.migrateData(source)
-
-		// Migrate boolean debility record object to ActiveEffect-based impacts
-		if ('debility' in source) {
-			const debilities = source.debility as Record<string, boolean | string>
-			if (source.effects == null)
-				source.effects = [] as ActiveEffectDataConstructorData[]
-			// convert any custom impacts
-			for (const id of this.CUSTOM_IMPACT_IDS) {
-				const value = debilities[id]
-				if (value !== true) continue
-				const name = (debilities[`${id}name`] as string) ?? ''
-
-				;(source.effects as ActiveEffectDataConstructorData[]).push(
-					CONFIG.IRONSWORN.IronActiveEffect.statusToActiveEffectData(
-						CONFIG.IRONSWORN.IronActiveEffect.createImpact({ id, name } as any)
-					)
-				)
-			}
-
-			const sheetClass = (source.flags as ConfiguredFlags<'Actor'>)?.core
-				?.sheetClass
-
-			const preferredRuleset =
-				source.type === 'starship' || sheetClass?.includes('Starforged')
-					? 'starforged'
-					: IronswornSettings.impactSetDefault
-
-			for (const [key, value] of Object.entries(debilities)) {
-				if (key.startsWith('custom') || value !== true) continue
-				const id = key === 'permanentlyharmed' ? 'permanently_harmed' : key
-				const foundEffect =
-					IronActiveEffect.statusEffects[preferredRuleset].find((fx) =>
-						// use startsWith to catch things that now have a suffix, like cursed_starforged
-						fx.id.startsWith(id)
-					) ??
-					Object.values(IronActiveEffect.statusEffects)
-						.flat()
-						.find((fx) => fx.id.startsWith(id))
-
-				if (foundEffect == null) continue
-				;(source.effects as any[]).push(foundry.utils.deepClone(foundEffect))
-			}
-
-			delete source.debility
-		}
-
-		return source
 	}
 
 	static override defineSchema(): DataSchema<CharacterDataSourceData> {

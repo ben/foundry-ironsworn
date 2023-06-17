@@ -1,14 +1,27 @@
 <template>
-	<ImpactCheckbox :keep-effect="true" :data="data" :class="$style.wrapper">
-		<template #default>
+	<ImpactCheckbox
+		:keep-effect="true"
+		:data="(data as any)"
+		:class="$style.wrapper">
+		<template #label>
 			<input
-				v-model="data.name"
+				v-model="(data as any).name"
 				:class="$style.input"
 				:placeholder="placeholder"
 				:aria-label="placeholder"
 				type="text"
-				@blur="updateName"
+				@blur="
+					$actor.updateEmbeddedDocuments('ActiveEffect', [
+						{ id: data._id, name: (data as any).name }
+					])
+				"
 				@click.stop />
+		</template>
+		<template #default>
+			<IronBtn
+				@click="
+					$actor.deleteEmbeddedDocuments('ActiveEffect', [data._id as string])
+				" />
 		</template>
 	</ImpactCheckbox>
 </template>
@@ -16,22 +29,19 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue'
 import { inject } from 'vue'
+import type { IronActiveEffect } from '../../../active-effect/active-effect'
 import type { IronswornActor } from '../../../actor/actor'
 import { $ActorKey, ActorKey } from '../../provisions'
+import IronBtn from '../buttons/iron-btn.vue'
 import ImpactCheckbox from './impact-checkbox.vue'
 
-const props = defineProps<{
-	data: StatusEffectV11
+defineProps<{
+	data: ReturnType<IronActiveEffect['toObject']>
 	placeholder: string
 }>()
 
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
-
-async function updateName(e) {
-	const { _id, name } = props.data
-	await $actor.updateEmbeddedDocuments('ActiveEffect', [{ _id, name }])
-}
 </script>
 
 <style lang="scss" module>

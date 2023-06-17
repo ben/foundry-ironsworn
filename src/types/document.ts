@@ -49,7 +49,7 @@ declare global {
 				 * @param source - The candidate source data from which the model will be constructed
 				 * @returns Migrated source data, if necessary
 				 */
-				export function migrateData(source: object): object
+				export function migrateData(source: any): any
 				/**
 				 * Take data which conforms to the current data schema and add backwards-compatible accessors to it in order to support older code which uses this data.
 				 * @param data - Data which matches the current schema

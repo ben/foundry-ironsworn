@@ -28,12 +28,13 @@
 			:id="`label_${baseId}`"
 			:for="`checkbox_${baseId}`"
 			class="text clickable">
-			<slot name="default">
+			<slot name="label">
 				<span :class="$style.label">
-					{{ $t(data.name as string).capitalize() }}
+					{{ $t((data as any).name).capitalize() }}
 				</span>
 			</slot>
 		</label>
+		<slot name="default"></slot>
 	</span>
 </template>
 
@@ -46,28 +47,38 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import IronCheckbox from '../input/iron-checkbox.vue'
 import FontIcon from '../icon/font-icon.vue'
 import type { IronswornActor } from '../../../actor/actor'
-import { IronActiveEffect } from '../../../active-effect/active-effect'
+import type { IronActiveEffect } from '../../../active-effect/active-effect'
 
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const baseId = computed(() => `condition_${props.data.id}_${actor.value._id}`)
+const baseId = computed(
+	() => `condition_${props.data.statuses?.[0]}_${actor.value._id}`
+)
+
+type AESource = ReturnType<IronActiveEffect['toObject']> & {
+	name: string
+	statuses: string[]
+}
 
 const props = withDefaults(
 	defineProps<{
-		data: StatusEffectV11
+		data: StatusEffectV11 | AESource
 		/** Should a disabled ActiveEffect object be left in place on the character? */
 		keepEffect?: boolean
 	}>(),
 	{ keepEffect: false }
 )
 
-const statusId = computed(() => props.data.id)
+const statusId = computed(() => props.data.statuses?.[0])
+
+console.log($actor)
 
 const checked = computed(() =>
 	actor.value.effects.some((fx) => {
-		const statuses = (fx as any).statuses as Array<string>
-		return statuses.includes(statusId.value) && fx.disabled !== true
+		return (
+			(fx as AESource).statuses.includes(statusId.value) && fx.disabled !== true
+		)
 	})
 )
 
@@ -76,26 +87,26 @@ const state = reactive<{ hintText?: string }>({})
 async function input() {
 	if (props.keepEffect) {
 		// turning a kept effect off -- set it to disabled instead of removing it
-		const effect = actor.value.effects.find((fx) =>
-			(fx as any).statuses.includes(statusId.value)
-		)
+		const effect = actor.value.effects.find((fx: any) =>
+			fx.statuses.includes(statusId.value)
+		) as undefined | AESource
 		await $actor.updateEmbeddedDocuments('ActiveEffect', [
 			{ _id: effect?._id, disabled: !effect?.disabled }
 		])
 	} else {
 		if (props.data.flags?.['foundry-ironsworn']?.global)
 			await CONFIG.IRONSWORN.IronActiveEffect.setGlobal(
-				props.data,
+				props.data as any,
 				!checked.value
 			)
-		else await $actor?.toggleActiveEffect(props.data, {})
+		else await $actor?.toggleActiveEffect(props.data as StatusEffectV11, {})
 	}
 
 	await nextTick()
 
 	if (props.data.flags?.['foundry-ironsworn']?.globalHint) {
 		CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
-			id: props.data.id,
+			id: props.data.statuses?.[0],
 			enabled: checked.value
 		})
 	}
@@ -104,7 +115,7 @@ async function input() {
 // We can't watch this directly, we just have to trust that a broadcast will happen
 // when it changes
 CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ id }) => {
-	if (id === props.data.id) {
+	if (id === props.data.statuses?.[0]) {
 		refreshGlobalHint()
 	}
 })
@@ -129,14 +140,14 @@ function refreshGlobalHint() {
 	} else if (names.length === 1) {
 		// Condition only set on one other actor
 		state.hintText = game.i18n.format('IRONSWORN.ConditionMarkedOnOne', {
-			condition: props.data.name,
+			condition: (props.data as any).name,
 			name: names[0]
 		})
 	} else {
 		// This condition is marked on several other actors, display them as a list
 		state.hintText = `
     <p>${game.i18n.format('IRONSWORN.ConditionMarkedOnMany', {
-			condition: props.data.name
+			condition: (props.data as any).name
 		})}</p>
     <ul>
       ${names.map((x) => `<li>${x}</li>`).join('\n')}

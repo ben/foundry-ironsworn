@@ -17,6 +17,7 @@ import type { ImpactFlags } from './config'
 type Ruleset = 'starforged' | 'classic'
 
 export class IronActiveEffect extends ActiveEffect {
+	static readonly CUSTOM_IMPACT_PREFIX = `CustomImpact`
 	static readonly MOMENTUM_RESET_PATH = 'system.momentum.resetValue'
 	static readonly MOMENTUM_MAX_PATH = 'system.momentum.max'
 	static readonly PRESETS: Record<
@@ -37,7 +38,11 @@ export class IronActiveEffect extends ActiveEffect {
 		]
 	}
 
-	/** All status effects, organized by ruleset */
+  get isCustomImpact() {
+    return this.getFlag('foundry-ironsworn', 'type') === 'impact' && this.statuses.some(statusId => statusId.startsWith(CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX))
+  }
+
+	/** All canonical status effects, organized by ruleset */
 	static get statusEffects() {
 		return {
 			starforged: [
@@ -200,10 +205,24 @@ export class IronActiveEffect extends ActiveEffect {
 
 	override _onCreate(data, options, userId) {
 		super._onCreate(data, options, userId)
+
 		switch (this.getFlag('foundry-ironsworn', 'type')) {
 			case 'impact':
-				if (this.modifiesActor && IronswornSettings.get('log-changes'))
-					void this.toMessage(true)
+				{
+					/** The expected status ID, if this is a custom impact */
+					const expectedStatusId = `${CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX}:${this.uuid}`
+					/** Remap any custom status IDs in case this is a clone of another ActiveEffect */
+					this.statuses = this.statuses.map((statusId) =>
+						statusId.startsWith(
+							CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX
+						) && statusId !== expectedStatusId
+							? expectedStatusId
+							: statusId
+					)
+
+					if (this.modifiesActor && IronswornSettings.get('log-changes'))
+						void this.toMessage(true)
+				}
 				break
 
 			default:
@@ -286,9 +305,9 @@ export class IronActiveEffect extends ActiveEffect {
 			'id'
 		>
 		createData.name = game.i18n.localize(effectData.name)
-		;(createData as any).statuses = new Set(effectData.id)
+		;(createData as any).statuses = new Set([effectData.id])
 		delete createData.id
-		return createData as ActiveEffectDataConstructorData
+		return createData as ActiveEffectDataConstructorData & { name: string }
 	}
 
 	/**
@@ -298,7 +317,7 @@ export class IronActiveEffect extends ActiveEffect {
 		id,
 		name,
 		icon,
-		noRecover: preventRecovery,
+		noRecover,
 		global,
 		globalHint,
 		category,
@@ -315,7 +334,7 @@ export class IronActiveEffect extends ActiveEffect {
 			flags: {
 				'foundry-ironsworn': {
 					type: 'impact',
-					noRecover: preventRecovery,
+					noRecover,
 					globalHint,
 					global,
 					category
@@ -326,17 +345,16 @@ export class IronActiveEffect extends ActiveEffect {
 		if (result.name == null || result.name.length === 0)
 			result.name = this.customLabelFallback
 
-		if (preventRecovery != null)
+		if (noRecover != null)
 			result.changes?.push(
 				{
-					key: `${preventRecovery}.value`,
+					key: `${noRecover}.value`,
 					mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
 					value: '0',
 					priority: 10
 				},
 				{
-					// TODO: revisit this. it might be better handled with a property that doesnt overlap with other things. 'noRecover'?
-					key: `${preventRecovery}.noRecover`,
+					key: `${noRecover}.noRecover`,
 					mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
 					value: 'true',
 					priority: 10
@@ -436,9 +454,11 @@ Hooks.on(
 		// fall back to allowing everything if the required info is missing
 		if (doc == null || doc.validImpacts == null) return
 
-		const statuses = Object.fromEntries(
-			doc.validImpacts.map((status) => {
-				const isActive = doc.statuses.has(status.id)
+		const statusEffects = [...doc.validImpacts, ...doc.customImpacts]
+
+		const statusRenderData = Object.fromEntries(
+		statusEffects.map((status) => {
+				const isActive = doc.statuses.has((status as StatusEffectV11).id ?? ().statuses.find())
 				const isOverlay = ((status as any).overlay ??
 					(doc as any).overlayEffect === status.icon) as boolean
 				return [
@@ -458,7 +478,7 @@ Hooks.on(
 			})
 		)
 
-		const buttons = Object.values(statuses)
+		const buttons = Object.values(statusRenderData)
 			.map(
 				(status: any) =>
 					`<img class="effect-control ${
@@ -469,7 +489,7 @@ Hooks.on(
 			)
 			.join('\n')
 
-		data.statusEffects = statuses
+		data.statusEffects = statusRenderData
 
 		html.find('.status-effects').html(buttons)
 	}

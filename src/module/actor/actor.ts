@@ -1,6 +1,9 @@
 import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
-import type { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
+import type {
+	ActorData,
+	ActorDataConstructorData
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type {
 	ConfiguredDocumentClass,
@@ -11,7 +14,7 @@ import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
-import type { ActorDataProperties } from './config'
+import type { ActorDataProperties, ActorDataSource } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 let CREATE_DIALOG: CreateActorDialog
@@ -35,9 +38,17 @@ export class IronswornActor<
 		}
 	}
 
+	/** The common status effects that are valid for this actor type */
 	get validImpacts() {
 		const impactSet = IronActiveEffect.statusEffects[this.impactSet]
 		return impactSet.filter(this.system.isValidImpact)
+	}
+
+	/** A convenience getter that returns all custom impacts on the PC. */
+	get customImpacts() {
+		return this.effects.filter(
+			(ae: IronActiveEffect) => ae.isCustomImpact
+		) as IronActiveEffect[]
 	}
 
 	get impactSet(): 'starforged' | 'classic' {
@@ -68,30 +79,40 @@ export class IronswornActor<
 	 * @returns Whether the Active Effect is now on or off
 	 */
 	async toggleActiveEffect(
-		effectData: StatusEffect,
+		effectData: StatusEffectV11,
 		{ overlay = false, active }: { overlay?: boolean; active?: boolean } = {}
 	): Promise<boolean> {
 		if (effectData.id == null) return false
 
 		// Remove existing single-status effects.
-		const existing = this.effects.reduce((arr: string[], e) => {
-			if (e.statuses.size === 1 && e.statuses.has(effectData.id))
-				arr.push(e.id as string)
-			return arr
-		}, [])
+		const existing = this.effects.reduce(
+			(
+				arr: string[],
+				e: InstanceType<
+					ConfiguredDocumentClass<typeof foundry.documents.BaseActiveEffect>
+				>
+			) => {
+				if (e.statuses.size === 1 && e.statuses.has(effectData.id))
+					arr.push(e.id as string)
+				return arr
+			},
+			[]
+		)
 		const state = active ?? existing.length === 0
 		if (!state && existing.length > 0)
 			await this.deleteEmbeddedDocuments('ActiveEffect', existing)
 		// Add a new effect
 		else if (state) {
 			const cls = getDocumentClass('ActiveEffect')
-			const createData = foundry.utils.deepClone(effectData)
-			;(createData as any).statuses = [effectData.id]
+			const createData = foundry.utils.deepClone(
+				effectData
+			) as ActiveEffectDataConstructorData
+			createData.statuses = [effectData.id]
 			// @ts-expect-error
 			delete createData.id
 			;(cls as any).migrateDataSafe(createData)
 			;(cls as any).cleanData(createData)
-			createData.label = game.i18n.localize(createData.label as string)
+			createData.name = game.i18n.localize(createData.name ?? '')
 			if (overlay) createData['flags.core.overlay'] = true
 			await cls.create(createData, { parent: this })
 		}
@@ -175,6 +196,75 @@ export class IronswornActor<
 					suppressLog: true
 				} as any
 			)
+	}
+
+	static override migrateData(src: ActorDataConstructorData) {
+		src = super.migrateData(src)
+
+		if ('debility' in src) {
+			const source = src as ActorDataConstructorData & {
+				debility: Record<string, boolean | string>
+			}
+			const sheetClass = source.flags?.core?.sheetClass
+
+			const preferredRuleset =
+				source.type === 'starship' ?? sheetClass?.includes('Starforged')
+					? 'starforged'
+					: IronswornSettings.impactSetDefault
+			const preferredImpactType =
+				preferredRuleset === 'starforged' ? 'impact' : 'debility'
+
+			// Migrate boolean debility record object to ActiveEffect-based impacts
+			if (source.effects == null)
+				source.effects = [] as ActiveEffectDataConstructorData[]
+			// convert any custom impacts
+			let customImpactCount = 0
+			const legacyCustomIDs = ['custom1', 'custom2']
+			for (const id of legacyCustomIDs) {
+				const value = source.debility[id]
+				if (value !== true) continue
+				const name =
+					(source.debility[`${id}name`] as string) ??
+					game.i18n.localize(
+						`IRONSWORN.${preferredImpactType.toUpperCase()}.Custom`
+					)
+
+				source.effects.push(
+					CONFIG.IRONSWORN.IronActiveEffect.statusToActiveEffectData(
+						CONFIG.IRONSWORN.IronActiveEffect.createImpact({
+							id: `${CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX}:${customImpactCount}`,
+							name,
+							icon: CONFIG.IRONSWORN.IronActiveEffect.IMPACT_ICON_DEFAULT
+						})
+					) as any
+				)
+
+				customImpactCount++
+			}
+
+			for (const [key, value] of Object.entries(source.debility)) {
+				// skip custom debilities, and anything that isn't toggled on
+				if (key.startsWith('custom') || value !== true) continue
+				const id = key === 'permanentlyharmed' ? 'permanently_harmed' : key
+				const foundEffect =
+					IronActiveEffect.statusEffects[preferredRuleset].find((fx) =>
+						// use startsWith to catch things that now have a suffix, like cursed_starforged
+						fx.id.startsWith(id)
+					) ??
+					// widen search to all available effects if none found in the preferred set
+					Object.values(IronActiveEffect.statusEffects)
+						.flat()
+						.find((fx) => fx.id.startsWith(id))
+
+				if (foundEffect == null) continue
+				;(source.effects as any[]).push(foundry.utils.deepClone(foundEffect))
+			}
+
+			// @ts-expect-error
+			delete source.debility
+		}
+
+		return src
 	}
 }
 export interface IronswornActor<T extends DocumentSubTypes<'Actor'> = any>

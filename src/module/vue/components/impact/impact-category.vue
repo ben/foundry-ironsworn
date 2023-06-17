@@ -1,7 +1,11 @@
 <template>
 	<div :class="$style.wrapper" :aria-labelledby="`title_${baseId}`">
 		<h4 :id="`title_${baseId}`" :class="$style.title">
-			{{ label }}
+			{{
+				$t(
+					`IRONSWORN.${$actor?.impactType.toUpperCase()}.CATEGORY.${props.category.capitalize()}`
+				)
+			}}
 		</h4>
 		<div :class="impactsClass">
 			<ImpactCheckbox
@@ -32,17 +36,9 @@ const props = withDefaults(
 const $actor = inject($ActorKey)
 const actor = inject(ActorKey)
 
-const impacts = CONFIG.statusEffects.filter(
+const impacts = $actor?.validImpacts.filter(
 	(fx) => fx.flags?.['foundry-ironsworn']?.category === props.category
 ) as StatusEffectV11[]
-
-const label = computed(() =>
-	game.i18n.localize(
-		`IRONSWORN.${
-			$actor?.toolset === 'starforged' ? 'IMPACT' : 'DEBILITY'
-		}.CATEGORY.${props.category.capitalize()}`
-	)
-)
 
 const baseId = computed(() => `impacts_${props.category}_${actor?.value._id}`)
 </script>

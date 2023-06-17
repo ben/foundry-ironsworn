@@ -1,3 +1,4 @@
+import type { ActiveEffectDataSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
 import type {
 	EffectChangeData,
 	EffectChangeDataConstructorData,
@@ -80,6 +81,7 @@ declare global {
 		disabled?: boolean
 		duration?: EffectDurationDataSource
 		description?: string
+		statuses?: string[] | Set<string>
 		icon: string
 		overlay?: boolean
 		tint?: string
@@ -102,7 +104,14 @@ declare global {
 
 				statuses: Set<string>
 			}
-			export interface ActiveEffectData extends ActiveEffectDataProperties {}
+
+			type ActiveEffectDataSourceV11 = ActiveEffectDataSource & {
+				name: string
+				statuses: string[]
+			}
+			export interface ActiveEffectData extends ActiveEffectDataProperties {
+				toJSON(): ActiveEffectDataSourceV11
+			}
 		}
 	}
 
