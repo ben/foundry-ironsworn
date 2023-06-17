@@ -1,4 +1,11 @@
 // common/primitives/set.mjs v11.301
+
+type SetTestPredicate<T, S extends T> = (
+	value: T,
+	index: number,
+	set: Set<T>
+) => value is S
+
 declare global {
 	interface Set<T> {
 		/**
@@ -76,20 +83,19 @@ declare global {
 		/**
 		 * Filter this set to create a subset of elements which satisfy a certain test criterion.
 		 * @see Array#filter
-		 * @param {function(*,number,Set): boolean} test  The test criterion to apply. Positional arguments are the value,
-		 * the index of iteration, and the set being filtered.
-		 * @returns {Set}  A new Set containing only elements which satisfy the test criterion.
+		 * @param test - The test criterion to apply. Positional arguments are the value, the index of iteration, and the set being filtered.
+		 * @returns A new Set containing only elements which satisfy the test criterion.
 		 */
-		filter(test: (item: T, index: number, set: this) => boolean): Set<T>
+		filter<S extends T>(test: SetTestPredicate<T, S>): Set<S>
 
 		/**
 		 * Find the first element in this set which satisfies a certain test criterion.
 		 * @see Array#find
-		 * @param {function(*,number,Set): boolean} test  The test criterion to apply. Positional arguments are the value,
+		 * @param test - The test criterion to apply. Positional arguments are the value,
 		 * the index of iteration, and the set being searched.
-		 * @returns {*|undefined}  The first element in the set which satisfies the test criterion, or undefined.
+		 * @returns The first element in the set which satisfies the test criterion, or undefined.
 		 */
-		find(test: (item: T, index: number, set: this) => boolean): T | undefined
+		find<S extends T>(test: SetTestPredicate<T, S>): S | undefined
 
 		/**
 		 * Create a new Set where every element is modified by a provided transformation function.
@@ -98,15 +104,17 @@ declare global {
 		 * the value, the index of iteration, and the set being transformed.
 		 * @returns A new Set of equal size containing transformed elements.
 		 */
-		map<U>(transform: (item: T, index: number, set: this) => U): Set<U>
+		map<U>(
+			transform: (value: T, index: number, set: Set<T>) => U,
+			thisArg?: any
+		): Set<U>
 
 		/**
 		 * Create a new Set with elements that are filtered and transformed by a provided reducer function.
 		 * @see Array#reduce
-		 * @param {function(*,*,number,Set): *} reducer  A reducer function applied to each value. Positional
-		 * arguments are the accumulator, the value, the index of iteration, and the set being reduced.
-		 * @param {*} accumulator       The initial value of the returned accumulator.
-		 * @returns {*}                 The final value of the accumulator.
+		 * @param reducer  A reducer function applied to each value. Positional arguments are the accumulator, the value, the index of iteration, and the set being reduced.
+		 * @param accumulator The initial value of the returned accumulator.
+		 * @returns The final value of the accumulator.
 		 */
 		reduce(
 			reducer: (
@@ -129,12 +137,11 @@ declare global {
 		/**
 		 * Test whether any element in this Set satisfies a certain test criterion.
 		 * @see Array#some
-		 * @param test   The test criterion to apply. Positional arguments are the value,
-		 * the index of iteration, and the set being tested.
-		 * @returns     Does any element in the set satisfy the test criterion?
+		 * @param test The test criterion to apply. Positional arguments are the value, the index of iteration, and the set being tested.
+		 * @returns Does any element in the set satisfy the test criterion?
 		 */
 		some(
-			test: (value: T, index: number, set: this) => unknown,
+			test: (value: T, index: number, array: Set<T>) => unknown,
 			thisArg?: any
 		): boolean
 	}
