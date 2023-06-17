@@ -122,7 +122,7 @@ export class IronActiveEffect extends ActiveEffect {
 	 * @param actorTypes The types of actor for this effect to be applied to. (default: `['character', 'starship']`)
 	 */
 	static async setGlobal(
-		statusEffect: StatusEffect,
+		statusEffect: StatusEffectV11,
 		active: boolean,
 		actorTypes: Array<DocumentSubTypes<'Actor'>> = ['character', 'starship']
 	) {
@@ -134,7 +134,7 @@ export class IronActiveEffect extends ActiveEffect {
 		}
 	}
 
-	static statusToActiveEffectData(effectData: StatusEffect) {
+	static statusToActiveEffectData(effectData: StatusEffectV11) {
 		const createData = foundry.utils.deepClone(effectData) as PartialBy<
 			typeof effectData,
 			'id'
@@ -159,7 +159,7 @@ export class IronActiveEffect extends ActiveEffect {
 		disabled
 	}: ImpactOptions) {
 		if (icon == null) icon = this.IMPACT_ICON_DEFAULT
-		const result: StatusEffect = {
+		const result: StatusEffectV11 = {
 			id,
 			disabled,
 			name,
@@ -193,7 +193,7 @@ export class IronActiveEffect extends ActiveEffect {
 	}
 
 	/** All status effects, organized by ruleset */
-	static get STATUS_EFFECTS(): Record<Ruleset, StatusEffect[]> {
+	static get STATUS_EFFECTS(): Record<Ruleset, StatusEffectV11[]> {
 		return {
 			starforged: [
 				this.createImpact({
@@ -439,13 +439,13 @@ Hooks.on(
 		const statuses = Object.fromEntries(
 			doc.system.tokenStatusEffects.map((status) => {
 				const isActive = doc.statuses.has(status.id)
-				const isOverlay = (status.overlay ??
+				const isOverlay = ((status as any).overlay ??
 					(doc as any).overlayEffect === status.icon) as boolean
 				return [
 					status.icon,
 					{
 						id: status.id,
-						title: status.name.capitalize(),
+						title: status.name?.capitalize(),
 						src: status.icon,
 						isActive,
 						isOverlay,

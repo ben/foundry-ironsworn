@@ -15,7 +15,7 @@
 				:key="(impact.id as string)"
 				:placeholder="`${labelKey}.Custom`"
 				:status-id="(impact.id as string)"
-				:data="(impact.toObject() as StatusEffect)" />
+				:data="(impact.toObject() as StatusEffectV11)" />
 		</div>
 	</div>
 </template>

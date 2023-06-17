@@ -1,14 +1,18 @@
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
+import { IronActorModel } from './common'
 
-export class LocationData extends foundry.abstract.TypeDataModel<
-	LocationDataSourceData,
-	IronswornActor<'location'>
-> {
+export class LocationData
+	extends foundry.abstract.TypeDataModel<
+		LocationDataSourceData,
+		IronswornActor<'location'>
+	>
+	implements IronActorModel
+{
 	static _enableV10Validation = true
 
 	/** Status effects toggles shown on tokens of this subtype **/
-	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
+	get tokenStatusEffects(): IronActorModel['tokenStatusEffects'] {
 		return []
 	}
 

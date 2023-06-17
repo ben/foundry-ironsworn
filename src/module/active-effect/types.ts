@@ -14,7 +14,7 @@ export type DebilityCategoryClassic =
 	| 'burdens'
 	| 'vehicle'
 
-export type ImpactOptions = StatusEffect & ImpactFlags
+export type ImpactOptions = StatusEffectV11 & ImpactFlags
 
 declare global {
 	export interface DurationSummary {
@@ -69,7 +69,7 @@ declare global {
 		statuses?: Set<string> | string[]
 		flags?: ConfiguredFlags<'ActiveEffect'>
 	}
-	export interface StatusEffect extends ActiveEffectDataConstructorData {
+	export interface StatusEffectV11 extends ActiveEffectDataConstructorData {
 		id: string
 	}
 	export namespace foundry {

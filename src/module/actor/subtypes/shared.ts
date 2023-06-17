@@ -2,19 +2,30 @@ import type { ConditionMeterSource } from '../../fields/MeterField'
 import { ConditionMeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
+import { IronActorModel } from './common'
 
-export class SharedData extends foundry.abstract.TypeDataModel<
-	SharedDataSourceData,
-	IronswornActor<'shared'>
-> {
+export class SharedData
+	extends foundry.abstract.TypeDataModel<
+		SharedDataSourceData,
+		IronswornActor<'shared'>
+	>
+	implements IronActorModel
+{
 	static _enableV10Validation = true
-
-	/** Status effects toggles shown on tokens of this subtype **/
-	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
-		return CONFIG.statusEffects.filter(
-			(status) => status.flags?.['foundry-ironsworn']?.global
-		)
+	get tokenStatusEffects(): IronActorModel['tokenStatusEffects'] {
+		return []
 	}
+	/** Status effects toggles shown on tokens of this subtype **/
+	// get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
+	// 	return CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
+	// 		this.parent.impactSet
+	// 	].filter(
+	// 		(status) =>
+	// 			status.flags?.['foundry-ironsworn']?.type === 'impact' &&
+	// 			status.flags?.['foundry-ironsworn']?.global &&
+	// 			status.flags?.['foundry-ironsworn'].ruleset === this.parent.impactSet
+	// 	)
+	// }
 
 	static override defineSchema(): DataSchema<SharedDataSourceData> {
 		return {

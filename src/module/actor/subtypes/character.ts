@@ -3,29 +3,41 @@ import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
-import { IronActiveEffect } from '../../active-effect/active-effect'
+import type { IronActiveEffect } from '../../active-effect/active-effect'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
 import type {
 	ConditionMeterSource,
 	MomentumSource
 } from '../../fields/MeterField'
+import { IronActorModel } from './common'
 
-export class CharacterData extends foundry.abstract.TypeDataModel<
-	CharacterDataSourceData,
-	IronswornActor<'character'>
-> {
+export class CharacterData
+	extends foundry.abstract.TypeDataModel<
+		CharacterDataSourceData,
+		IronswornActor<'character'>
+	>
+	implements IronActorModel
+{
 	static _enableV10Validation = true
 	static readonly CUSTOM_IMPACT_IDS = ['custom1', 'custom2']
-
-	/** Status effects toggles shown on tokens of this subtype **/
-	get tokenStatusEffects(): (typeof CONFIG)['statusEffects'] {
-		const standardImpacts = CONFIG.statusEffects.filter(
-			(status) =>
-				status.flags?.['foundry-ironsworn']?.type === 'impact' &&
-				status.flags?.['foundry-ironsworn']?.category !== 'vehicle'
-		)
-		return [...standardImpacts, ...this.customImpacts] as StatusEffect[]
+	get tokenStatusEffects(): IronActorModel['tokenStatusEffects'] {
+		return []
 	}
+	/** Status effects toggles shown on tokens of this subtype **/
+	// get tokenStatusEffects() {
+	// 	const standardImpacts = CONFIG.IRONSWORN.IronActiveEffect.STATUS_EFFECTS[
+	// 		this.parent.impactSet
+	// 	].filter((status) => {
+	// 		// not an impact - skip
+	// 		if (status.flags?.['foundry-ironsworn']?.type !== 'impact') return false
+	// 		// vehicle impact - skip
+	// 		if (status.flags?.['foundry-ironsworn'].category === 'vehicle')
+	// 			return false
+
+	// 		return true
+	// 	})
+	// 	return [...standardImpacts, ...this.customImpacts] as StatusEffect[]
+	// }
 
 	constructor(
 		...args: ConstructorParameters<

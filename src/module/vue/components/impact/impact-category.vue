@@ -34,7 +34,7 @@ const actor = inject(ActorKey)
 
 const impacts = CONFIG.statusEffects.filter(
 	(fx) => fx.flags?.['foundry-ironsworn']?.category === props.category
-) as StatusEffect[]
+) as StatusEffectV11[]
 
 const label = computed(() =>
 	game.i18n.localize(

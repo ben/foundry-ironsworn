@@ -55,7 +55,7 @@ const baseId = computed(() => `condition_${props.data.id}_${actor.value._id}`)
 
 const props = withDefaults(
 	defineProps<{
-		data: StatusEffect
+		data: StatusEffectV11
 		/** Should a disabled ActiveEffect object be left in place on the character? */
 		keepEffect?: boolean
 	}>(),

@@ -8,6 +8,7 @@ import type {
 	DocumentSubTypes
 } from '../../types/helperTypes'
 import { CreateActorDialog } from '../applications/createActorDialog'
+import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
@@ -25,13 +26,33 @@ export class IronswornActor<
 	// @ts-expect-error
 	declare type: T
 
+	moveSheet?: SFCharacterMoveSheet
+
 	override get itemTypes() {
 		return super.itemTypes as Actor['itemTypes'] & {
 			[K in DocumentSubTypes<'Item'>]: Array<IronswornItem<K>>
 		}
 	}
 
-	moveSheet?: SFCharacterMoveSheet
+	get impactSet(): 'starforged' | 'classic' {
+		const override = this.getFlag('foundry-ironsworn', 'impacts')
+		if (override != null) return override
+
+		if (this.isStarforgedOnlySheet) return 'starforged'
+		if (this.isClassicOnlySheet) return 'classic'
+
+		return IronswornSettings.impactSetDefault
+	}
+
+	get impactType() {
+		switch (this.impactSet) {
+			case 'starforged':
+				return 'impact'
+			case 'classic':
+			default:
+				return 'debility'
+		}
+	}
 
 	/**
 	 * A helper function to toggle a status effect which includes an Active Effect template
@@ -98,6 +119,11 @@ export class IronswornActor<
 	get isStarforgedOnlySheet() {
 		const sfSheets = ['StarforgedCharacterSheet', 'StarshipSheet']
 		return sfSheets.includes(this.sheet?.constructor.name as string)
+	}
+
+	get isClassicOnlySheet() {
+		const classicSheets = ['IronswornCharacterSheetV2', 'IronswornSiteSheet']
+		return classicSheets.includes(this.sheet?.constructor.name as string)
 	}
 
 	get toolset(): 'ironsworn' | 'starforged' {

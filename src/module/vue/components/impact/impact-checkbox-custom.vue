@@ -21,7 +21,7 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
 
 const props = defineProps<{
-	data: StatusEffect
+	data: StatusEffectV11
 	placeholder: string
 }>()
 

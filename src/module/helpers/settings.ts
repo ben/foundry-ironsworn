@@ -19,11 +19,19 @@ async function closeAllMoveSheets() {
 	}
 }
 
+async function closeAllActorSheets() {
+	for (const actor of game.actors?.contents ?? []) {
+		await actor.sheet?.close()
+	}
+}
+
 declare global {
 	namespace ClientSettings {
 		/** Settings added here will be automatically typed throughout the game system. */
 		interface Values {
 			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
+
+			'foundry-ironsworn.impacts': 'classic' | 'starforged'
 
 			'foundry-ironsworn.theme': keyof typeof IronTheme.THEMES
 			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor'
@@ -66,6 +74,21 @@ export class IronswornSettings {
 		return IronswornSettings.theme.decoration
 	}
 
+	/** The world's default impact set, which can be overridden by individual sheets or character options. */
+	static get impactSetDefault() {
+		return IronswornSettings.get('impacts')
+	}
+
+	static get impactTypeDefault() {
+		switch (this.impactSetDefault) {
+			case 'starforged':
+				return 'impact'
+			case 'classic':
+			default:
+				return 'debility'
+		}
+	}
+
 	static registerSettings() {
 		// Toolbox/ruleset. this goes at the top because it's a "showstopper" if folks need it but can't find it.
 		game.settings.register('foundry-ironsworn', 'toolbox', {
@@ -83,6 +106,34 @@ export class IronswornSettings {
 			// eslint-disable-next-line @typescript-eslint/no-misused-promises
 			onChange: closeAllMoveSheets
 		})
+
+		game.settings.register(
+			'foundry-ironsworn',
+			'impacts',
+			Object.defineProperty(
+				{
+					name: 'IRONSWORN.Settings.Impacts.Name',
+					hint: 'IRONSWORN.Settings.Impacts.Hint',
+					scope: 'world',
+					config: true,
+					type: String,
+					choices: {
+						classic: 'IRONSWORN.Settings.Impacts.Classic',
+						starforged: 'IRONSWORN.Settings.Impacts.Starforged'
+					},
+					onChange: closeAllActorSheets
+				},
+				// set default as a getter so that it'll dynamically infer a default when undefined
+				'default',
+				{
+					get() {
+						const toolbox = game.settings.get('foundry-ironsworn', 'toolbox')
+						if (toolbox === 'starforged') return 'starforged'
+						return 'classic'
+					}
+				}
+			)
+		)
 
 		// Appearance settings. They're impactful and not especially esoteric/technical, so they come next.
 		game.settings.register('foundry-ironsworn', 'theme', {
