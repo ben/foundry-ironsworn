@@ -1,4 +1,4 @@
-// common/primitives/math.mjs
+// common/primitives/math.mjs v11.301
 declare module 'Math' {
 	/**
 	 * Bound a number between some minimum and maximum value, inclusively.

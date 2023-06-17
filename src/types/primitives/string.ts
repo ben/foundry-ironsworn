@@ -1,4 +1,4 @@
-// from common/primitives/string.mjs
+// from common/primitives/string.mjs v11.301
 declare global {
 	interface String {
 		/**
