@@ -1,4 +1,4 @@
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 import type {
 	EffectChangeData,
 	EffectChangeDataConstructorData
@@ -6,18 +6,20 @@ import type {
 import type { PartialBy, PartialDeep } from 'dataforged'
 import { IronswornSettings } from '../helpers/settings'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
-import type { DocumentSubTypes } from '../../types/helperTypes'
+import type {
+	ConfiguredDocumentClass,
+	DocumentSubTypes
+} from '../../types/helperTypes'
 import { sendToChat } from '../features/chat-alert'
 import type { ImpactOptions } from './types'
 import { MomentumField } from '../fields/MeterField'
 import type { ImpactFlags } from './config'
 import { capitalize } from '../helpers/util'
+import type { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ClientDocumentMixin } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/abstract/client-document'
 
 export type Ruleset = 'starforged' | 'classic'
 
-export interface IronActiveEffect {
-	statuses: Set<string>
-}
 export class IronActiveEffect extends ActiveEffect {
 	static readonly MOMENTUM_RESET_PATH = 'system.momentum.resetValue'
 	static readonly MOMENTUM_MAX_PATH = 'system.momentum.max'
@@ -45,12 +47,12 @@ export class IronActiveEffect extends ActiveEffect {
 			? { impact: game.i18n.localize(this.name) }
 			: { debility: game.i18n.localize(this.name) }
 		const i18nKey = active
-			? IronActiveEffect.impactMarkedKey
-			: IronActiveEffect.impactClearedKey
+			? CONFIG.IRONSWORN.IronActiveEffect.impactMarkedKey
+			: CONFIG.IRONSWORN.IronActiveEffect.impactClearedKey
 		const msg = game.i18n.format(i18nKey, params)
-		const speaker =
-			this.parent instanceof IronswornActor ? this.parent : this.parent?.parent
-		if (!(speaker instanceof IronswornActor)) return
+		const ActorClass = getDocumentClass('Actor')
+		const speaker = this.parent
+		if (!(speaker instanceof ActorClass)) return
 		return await sendToChat(speaker, msg)
 	}
 
@@ -167,7 +169,7 @@ export class IronActiveEffect extends ActiveEffect {
 			disabled,
 			name,
 			label: name, // June 15, 2023: workaround for a bug in 11.301 https://github.com/foundryvtt/foundryvtt/issues/9618
-			icon: icon ?? IronActiveEffect.IMPACT_ICON_DEFAULT,
+			icon: icon ?? this.IMPACT_ICON_DEFAULT,
 			duration: null,
 			statuses: [id],
 			changes: foundry.utils.deepClone(this.PRESETS.impact),
@@ -184,7 +186,7 @@ export class IronActiveEffect extends ActiveEffect {
 		}
 
 		if (result.name == null || result.name.length === 0)
-			result.name = IronActiveEffect.customLabelFallback
+			result.name = this.customLabelFallback
 
 		// TODO: finish implementation of these
 		// if (preventRecovery != null)
@@ -350,6 +352,32 @@ export class IronActiveEffect extends ActiveEffect {
 	}
 }
 
+export interface IronActiveEffect
+	extends ClientDocumentMixin<foundry.documents.BaseActiveEffect> {
+	statuses: Set<string>
+	parent: InstanceType<
+		ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
+	> | null
+	get name(): string
+	/**
+	 * Provide forward-compatibility with other Document types which use img as their primary image or icon.
+	 * We are likely to formally migrate this in the future, but for now this getter provides compatible read access.
+	 */
+	get img(): string
+	/**
+	 * Retrieve the Document that this ActiveEffect targets for modification.
+	 */
+	get target(): InstanceType<ConfiguredDocumentClassForName<'Actor'>> | null
+	/**
+	 * Whether the Active Effect currently applying its changes to the target.
+	 */
+	get active(): boolean
+	/**
+	 * Does this Active Effect currently modify an Actor?
+	 */
+	get modifiesActor(): boolean
+}
+
 Hooks.on(
 	'applyActiveEffect',
 	/**
@@ -361,7 +389,9 @@ Hooks.on(
 	 * @param changes An object which accumulates changes to be applied
 	 */
 	(
-		actor: IronswornActor,
+		actor: InstanceType<
+			ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
+		>,
 		change: EffectChangeData,
 		current: boolean | string | number,
 		delta: typeof current,
@@ -369,7 +399,7 @@ Hooks.on(
 	) => {
 		if (actor.type !== 'character') return change
 		switch (change.key) {
-			case IronActiveEffect.MOMENTUM_MAX_PATH:
+			case CONFIG.IRONSWORN.IronActiveEffect.MOMENTUM_MAX_PATH:
 				if (typeof current !== 'number' || typeof delta !== 'number')
 					throw new Error()
 				changes[change.key] = Math.clamped(
@@ -378,7 +408,7 @@ Hooks.on(
 					MomentumField.MAX
 				)
 				break
-			case IronActiveEffect.MOMENTUM_RESET_PATH:
+			case CONFIG.IRONSWORN.IronActiveEffect.MOMENTUM_RESET_PATH:
 				if (typeof current !== 'number' || typeof delta !== 'number')
 					throw new Error()
 				changes[change.key] = Math.clamped(
