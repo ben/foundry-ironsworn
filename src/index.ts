@@ -89,13 +89,6 @@ Hooks.once('init', async () => {
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
-	// HACK: CONFIG.statusEffects as a getter, so that it dynamically provides status effects
-	// Object.defineProperty(CONFIG, 'statusEffects', {
-	// 	get(): StatusEffect[] {
-	// 		return Object.values(IronActiveEffect.STATUS_EFFECTS).flat()
-	// 	}
-	// })
-
 	CONFIG.RollTable.documentClass = OracleTable
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
 	CONFIG.TableResult.documentClass = OracleTableResult
