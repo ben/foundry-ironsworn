@@ -1,16 +1,12 @@
 import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
 import type { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
-import type {
-	ConfiguredData,
-	ConfiguredDocumentClassForName
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type {
 	ConfiguredDocumentClass,
 	DocumentConstructor,
 	DocumentSubTypes
 } from '../../types/helperTypes'
-import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties } from './config'
@@ -99,18 +95,18 @@ export class IronswornActor<
 		return undefined
 	}
 
+	get isStarforgedOnlySheet() {
+		const sfSheets = ['StarforgedCharacterSheet', 'StarshipSheet']
+		return sfSheets.includes(this.sheet?.constructor.name as string)
+	}
+
 	get toolset(): 'ironsworn' | 'starforged' {
 		// We can't use IronswornSettings helpers here, it breaks the import orders
 		// First check if the toolbox is set to one or the other
-		const toolbox = game.settings.get('foundry-ironsworn', 'toolbox') as string
-		if (toolbox === 'ironsworn') return 'ironsworn'
-		if (toolbox === 'starforged') return 'starforged'
-
+		const toolbox = game.settings.get('foundry-ironsworn', 'toolbox')
+		if (toolbox !== 'sheet') return toolbox
 		// Set to "match sheet", so check for a specific setting on this actor
-
-		if (this.type === 'character') {
-			return this.hasStarforgedSheet ? 'starforged' : 'ironsworn'
-		}
+		if (this.isStarforgedOnlySheet) return 'starforged'
 
 		// Nope, now check the default character sheet class
 		const sheetClasses = game.settings.get('core', 'sheetClasses') as any

@@ -1,4 +1,3 @@
-import type { IronswornActor } from '../actor/actor'
 import type {
 	EffectChangeData,
 	EffectChangeDataConstructorData
@@ -199,6 +198,7 @@ export class IronActiveEffect extends ActiveEffect {
 			starforged: [
 				this.createImpact({
 					id: 'wounded',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Wounded'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/wounded.svg',
 					preventRecovery: 'system.health.value',
@@ -206,6 +206,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'shaken',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Shaken'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/shaken.svg',
 					preventRecovery: 'system.spirit.value',
@@ -213,6 +214,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'unprepared',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Unprepared'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/unprepared.svg',
 					preventRecovery: 'system.supply.value',
@@ -221,36 +223,42 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'permanentlyharmed',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Permanentlyharmed'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanentlyharmed.svg',
 					category: 'lastingEffects'
 				}),
 				this.createImpact({
 					id: 'traumatized',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Traumatized'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/traumatized.svg',
 					category: 'lastingEffects'
 				}),
 				this.createImpact({
 					id: 'tormented',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Tormented'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/tormented.svg',
 					category: 'burdens'
 				}),
 				this.createImpact({
 					id: 'doomed',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Doomed'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/doomed.svg',
 					category: 'burdens'
 				}),
 				this.createImpact({
 					id: 'indebted',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Indebted'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/indebted.svg',
 					category: 'burdens'
 				}),
 				this.createImpact({
 					id: 'cursed',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Cursed'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/cursed_starforged.svg',
 					globalHint: true,
@@ -258,6 +266,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'battered',
+					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Battered'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/battered.svg',
 					globalHint: true,
@@ -267,6 +276,7 @@ export class IronActiveEffect extends ActiveEffect {
 			classic: [
 				this.createImpact({
 					id: 'wounded',
+					ruleset: 'classic',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Wounded'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/wounded.svg',
 					preventRecovery: 'system.health.value',
@@ -274,6 +284,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'unprepared',
+					ruleset: 'classic',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Unprepared'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/unprepared.svg',
 					preventRecovery: 'system.supply.value',
@@ -282,6 +293,7 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'shaken',
+					ruleset: 'classic',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Shaken'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/shaken.svg',
 					preventRecovery: 'system.spirit.value',
@@ -289,30 +301,35 @@ export class IronActiveEffect extends ActiveEffect {
 				}),
 				this.createImpact({
 					id: 'encumbered',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/encumbered.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Encumbered'),
 					category: 'conditions'
 				}),
 				this.createImpact({
 					id: 'maimed',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/permanentlyharmed.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Maimed'),
 					category: 'banes'
 				}),
 				this.createImpact({
 					id: 'corrupted',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/corrupted.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Corrupted'),
 					category: 'banes'
 				}),
 				this.createImpact({
-					id: 'cursed',
+					id: 'cursed_classic',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/doomed.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Cursed'),
 					category: 'burdens'
 				}),
 				this.createImpact({
 					id: 'tormented',
+					ruleset: 'classic',
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/tormented.svg',
 					name: game.i18n.localize('IRONSWORN.DEBILITY.Tormented'),
 					category: 'burdens'
@@ -329,8 +346,7 @@ export class IronActiveEffect extends ActiveEffect {
 	}
 }
 
-export interface IronActiveEffect
-	extends ClientDocumentMixin<foundry.documents.BaseActiveEffect> {
+export interface IronActiveEffect {
 	statuses: Set<string>
 	parent: InstanceType<
 		ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
@@ -344,7 +360,9 @@ export interface IronActiveEffect
 	/**
 	 * Retrieve the Document that this ActiveEffect targets for modification.
 	 */
-	get target(): InstanceType<ConfiguredDocumentClassForName<'Actor'>> | null
+	get target(): InstanceType<
+		ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
+	> | null
 	/**
 	 * Whether the Active Effect currently applying its changes to the target.
 	 */
