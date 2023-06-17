@@ -3,10 +3,8 @@ import type {
 	EffectChangeDataConstructorData
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
 import type { EffectDurationDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectDurationData'
-import type {
-	ConfiguredDocumentClassForName,
-	ConfiguredFlags
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ConfiguredDocumentClass } from '../../types/helperTypes'
 import type { ImpactFlags } from './config'
 
 export type ImpactCategoryStarforged = 'conditions' | 'banes' | 'burdens'
@@ -93,7 +91,6 @@ declare global {
 			}
 			export interface ActiveEffectData extends ActiveEffectDataProperties {}
 		}
-		export namespace documents {}
 	}
 
 	export interface ActiveEffect
@@ -107,7 +104,9 @@ declare global {
 		/**
 		 * Retrieve the Document that this ActiveEffect targets for modification.
 		 */
-		get target(): InstanceType<ConfiguredDocumentClassForName<'Actor'>> | null
+		get target(): InstanceType<
+			ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
+		> | null
 		/**
 		 * Whether the Active Effect currently applying its changes to the target.
 		 */
