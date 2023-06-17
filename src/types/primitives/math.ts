@@ -16,7 +16,7 @@ declare module 'Math' {
 	 * @param w   A weight between 0 and 1.
 	 * @return    The interpolated value between a and b with weight w.
 	 */
-	export function mix(a: number, b: number, w): number
+	export function mix(a: number, b: number, w: number): number
 
 	/**
 	 * Transform an angle in degrees to be bounded within the domain [0, 360]
