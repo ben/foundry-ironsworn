@@ -101,8 +101,8 @@ export class IronswornActor<
 					ConfiguredDocumentClass<typeof foundry.documents.BaseActiveEffect>
 				>
 			) => {
-				if (e.statuses.size === 1 && e.statuses.has(effectData.id))
-					arr.push(e.id as string) && console.log(e)
+				if (e.statuses.size === 1 && e.statuses.has(effectData.id as string))
+					arr.push(e.id as string)
 				return arr
 			},
 			[]
