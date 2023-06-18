@@ -18,7 +18,7 @@
 		</section>
 		<slot name="default"></slot>
 		<SliderBar
-			:class="$style.bar"
+			:class="[$style.bar, barClass]"
 			:orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
 			:bar-max="barMax"
 			:bar-min="barMin"
@@ -87,6 +87,8 @@ const props = withDefaults(
 		 * @see {@link sliderBar} props for more info
 		 */
 		segmentClass?: Record<number, any> | undefined
+		labelClass?: any
+		barClass?: any
 		readOnly?: boolean
 		disabled?: boolean
 	}>(),
@@ -95,12 +97,14 @@ const props = withDefaults(
 		readOnly: false,
 		sliderStyle: 'vertical',
 		labelPosition: 'left',
+		labelClass: undefined,
 		segmentClass: undefined,
 		sliderClass: undefined,
 		max: undefined,
 		min: undefined,
 		barMax: undefined,
-		barMin: undefined
+		barMin: undefined,
+		barClass: undefined
 	}
 )
 
