@@ -38,9 +38,32 @@ export class IronActiveEffect extends ActiveEffect {
 		]
 	}
 
-  get isCustomImpact() {
-    return this.getFlag('foundry-ironsworn', 'type') === 'impact' && this.statuses.some(statusId => statusId.startsWith(CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX))
-  }
+	get isCustomImpact() {
+		return (
+			this.getFlag('foundry-ironsworn', 'type') === 'impact' &&
+			this.statuses.some((statusId) =>
+				statusId.startsWith(
+					CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX
+				)
+			)
+		)
+	}
+
+	get type() {
+		return this.getFlag('foundry-ironsworn', 'type')
+	}
+
+	get impactSubtype() {
+		if (this.type !== 'impact') return null
+		switch (this.getFlag('foundry-ironsworn', 'ruleset')) {
+			case 'starforged':
+				return 'impact'
+			case 'classic':
+				return 'debility'
+			default:
+				return this.parent?.impactType ?? null
+		}
+	}
 
 	/** All canonical status effects, organized by ruleset */
 	static get statusEffects() {
@@ -203,26 +226,40 @@ export class IronActiveEffect extends ActiveEffect {
 		return await sendToChat(speaker, msg)
 	}
 
+	override prepareData() {
+		super.prepareData()
+
+		switch (this.getFlag('foundry-ironsworn', 'type')) {
+			case 'impact': {
+				if (
+					// inference: is this a custom impact?
+					this.statuses.filter(
+						(status) =>
+							!status.startsWith(
+								CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX
+							)
+					).size === 0
+				)
+					// update statuses to match the UUID
+					this.statuses = new Set([
+						`${CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX}:${this.uuid}`
+					])
+				break
+			}
+
+			default:
+				break
+		}
+	}
+
 	override _onCreate(data, options, userId) {
 		super._onCreate(data, options, userId)
 
 		switch (this.getFlag('foundry-ironsworn', 'type')) {
 			case 'impact':
-				{
-					/** The expected status ID, if this is a custom impact */
-					const expectedStatusId = `${CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX}:${this.uuid}`
-					/** Remap any custom status IDs in case this is a clone of another ActiveEffect */
-					this.statuses = this.statuses.map((statusId) =>
-						statusId.startsWith(
-							CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX
-						) && statusId !== expectedStatusId
-							? expectedStatusId
-							: statusId
-					)
+				if (this.modifiesActor && IronswornSettings.get('log-changes'))
+					void this.toMessage(true)
 
-					if (this.modifiesActor && IronswornSettings.get('log-changes'))
-						void this.toMessage(true)
-				}
 				break
 
 			default:
@@ -305,7 +342,8 @@ export class IronActiveEffect extends ActiveEffect {
 			'id'
 		>
 		createData.name = game.i18n.localize(effectData.name)
-		;(createData as any).statuses = new Set([effectData.id])
+		;(createData as any).statuses = [effectData.id]
+		console.log(createData)
 		delete createData.id
 		return createData as ActiveEffectDataConstructorData & { name: string }
 	}
@@ -328,7 +366,7 @@ export class IronActiveEffect extends ActiveEffect {
 			id,
 			disabled,
 			name,
-			// label: name, // June 15, 2023: workaround for a bug in 11.301 https://github.com/foundryvtt/foundryvtt/issues/9618
+			statuses: new Set([id]),
 			icon: icon ?? this.IMPACT_ICON_DEFAULT,
 			changes: foundry.utils.deepClone(this.PRESETS.impact) as any,
 			flags: {
@@ -361,6 +399,23 @@ export class IronActiveEffect extends ActiveEffect {
 				}
 			)
 		return result
+	}
+
+	static async createCustomImpact(context: DocumentModificationContext = {}) {
+		const data: ActiveEffectDataConstructorData = {
+			...this.statusToActiveEffectData(
+				this.createImpact({
+					id: this.CUSTOM_IMPACT_PREFIX,
+					name: game.i18n.localize(`IRONSWORN.IMPACT.Custom`),
+					icon: this.IMPACT_ICON_DEFAULT
+				})
+			),
+			disabled: true
+		}
+
+		console.log('createCustomImpact', data)
+
+		return await this.create(data, context)
 	}
 }
 
@@ -445,52 +500,52 @@ Hooks.on(
 	'renderTokenHUD',
 	async (
 		app: TokenHUD,
-		// technically an HTMLFormElement, but we don't care about that
-		html: JQuery<HTMLElement>,
+		html: JQuery<HTMLFormElement>,
 		data: TokenHUD.RenderOptions
 	) => {
-		const doc = app.object?.actor
+		const token = app.object?.document
+		const actor = app.object?.actor
 
-		// fall back to allowing everything if the required info is missing
-		if (doc == null || doc.validImpacts == null) return
+		// fall back to default rendering if the required data is missing
+		if (token == null || actor == null || actor.validImpacts == null) return
 
-		const statusEffects = [...doc.validImpacts, ...doc.customImpacts]
+		const statusEffects = [...actor.validImpacts, ...actor.customImpacts]
 
-		const statusRenderData = Object.fromEntries(
-		statusEffects.map((status) => {
-				const isActive = doc.statuses.has((status as StatusEffectV11).id ?? ().statuses.find())
-				const isOverlay = ((status as any).overlay ??
-					(doc as any).overlayEffect === status.icon) as boolean
-				return [
-					status.icon,
-					{
-						id: status.id,
-						title: status.name?.capitalize(),
-						src: status.icon,
-						isActive,
-						isOverlay,
-						cssClass: [
-							isActive ? 'active' : null,
-							isOverlay ? 'overlay' : null
-						].filterJoin(' ')
-					}
-				]
-			})
-		)
+		data.statusEffects = {}
+		const buttons: string[] = []
 
-		const buttons = Object.values(statusRenderData)
-			.map(
-				(status: any) =>
-					`<img class="effect-control ${
-						(status.isActive as boolean) ? 'active' : ''
-					}" src="${status.src as string}" title="${
-						status.title as string
-					}" data-status-id="${status.id as string}">`
+		statusEffects.forEach((status) => {
+			const statuses = new Set(status.statuses)
+			const statusIntersection = statuses.intersection(actor.statuses)
+			const isActive = statusIntersection.size > 0
+			const [id] = statusIntersection
+			const isOverlay =
+				(status as StatusEffectV11).overlay ??
+				token.overlayEffect === status.icon
+
+			const toggleRenderData = {
+				id,
+				title: status.name?.capitalize(),
+				src: status.icon,
+				isActive,
+				isOverlay,
+				cssClass: [
+					isActive ? 'active' : null,
+					isOverlay ? 'overlay' : null
+				].filterJoin(' ')
+			}
+
+			data.statusEffects[status.icon] = toggleRenderData
+
+			buttons.push(
+				`<img class="effect-control ${
+					toggleRenderData.isActive ? 'active' : ''
+				}" src="${toggleRenderData.src}" title="${
+					toggleRenderData.title
+				}" data-status-id="${toggleRenderData.id}">`
 			)
-			.join('\n')
+		})
 
-		data.statusEffects = statusRenderData
-
-		html.find('.status-effects').html(buttons)
+		html.find('.status-effects').html(buttons.join('\n'))
 	}
 )

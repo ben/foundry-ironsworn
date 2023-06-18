@@ -10,42 +10,56 @@
 				:placeholder="placeholder"
 				:aria-label="placeholder"
 				type="text"
-				@blur="
-					$actor.updateEmbeddedDocuments('ActiveEffect', [
-						{ id: data._id, name: (data as any).name }
-					])
-				"
+				@blur="$activeEffect.update({ name: (data as any).name })"
 				@click.stop />
 		</template>
 		<template #default>
 			<IronBtn
+				icon="fa:trash"
+				nogrow
+				block
 				@click="
-					$actor.deleteEmbeddedDocuments('ActiveEffect', [data._id as string])
+					$activeEffect.deleteDialog({
+						title: deleteDialogTitle
+					})
 				" />
 		</template>
 	</ImpactCheckbox>
 </template>
 
 <script lang="ts" setup>
-import type { Ref } from 'vue'
-import { inject } from 'vue'
+import { computed, inject } from 'vue'
 import type { IronActiveEffect } from '../../../active-effect/active-effect'
 import type { IronswornActor } from '../../../actor/actor'
-import { $ActorKey, ActorKey } from '../../provisions'
+import { $ActorKey } from '../../provisions'
 import IronBtn from '../buttons/iron-btn.vue'
 import ImpactCheckbox from './impact-checkbox.vue'
 
-defineProps<{
+const props = defineProps<{
 	data: ReturnType<IronActiveEffect['toObject']>
 	placeholder: string
 }>()
 
-const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
+
+const $activeEffect = computed(
+	() => $actor.effects.get(props.data._id as string) as IronActiveEffect
+)
+
+const deleteDialogTitle = computed(() =>
+	game.i18n.format('DOCUMENT.Delete', {
+		type: game.i18n.localize(`IRONSWORN.${$actor.impactType.capitalize()}`)
+	})
+)
 </script>
 
 <style lang="scss" module>
 .wrapper {
+	--ironsworn-input-min-width: 20%;
+	--ironsworn-input-max-width: 50%;
+
+	min-width: var(--ironsworn-input-min-width);
+	max-width: var(--ironsworn-input-max-width);
 	text-align: start;
 }
 .input {

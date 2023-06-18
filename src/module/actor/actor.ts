@@ -73,16 +73,25 @@ export class IronswornActor<
 
 	/**
 	 * A helper function to toggle a status effect which includes an Active Effect template
-	 * @param effectData The Active Effect data
+	 * @param effectData The Active Effect data, or the status ID of an effect.
 	 * @param overlay Should the Active Effect icon be displayed as an overlay on the token?
 	 * @param active Force a certain active state for the effect.
 	 * @returns Whether the Active Effect is now on or off
 	 */
 	async toggleActiveEffect(
-		effectData: StatusEffectV11,
+		effect: StatusEffectV11 | string,
 		{ overlay = false, active }: { overlay?: boolean; active?: boolean } = {}
 	): Promise<boolean> {
-		if (effectData.id == null) return false
+		const effectData =
+			typeof effect === 'string'
+				? [...this.validImpacts, ...this.customImpacts].find((ae) =>
+						ae.statuses instanceof Set
+							? ae.statuses?.has(effect)
+							: ae.statuses?.includes(effect) ?? ae.id === effect
+				  )
+				: effect
+
+		if (effectData?.id == null) return false
 
 		// Remove existing single-status effects.
 		const existing = this.effects.reduce(
@@ -93,7 +102,7 @@ export class IronswornActor<
 				>
 			) => {
 				if (e.statuses.size === 1 && e.statuses.has(effectData.id))
-					arr.push(e.id as string)
+					arr.push(e.id as string) && console.log(e)
 				return arr
 			},
 			[]
@@ -170,24 +179,6 @@ export class IronswornActor<
 	}
 
 	protected override _onCreate(_data, _options, _userId): void {
-		if (this.assert('character')) {
-			// insert disabled placeholder effects for custom impacts, which are used to persist player-set labels
-			const effectIDs = ['custom1', 'custom2']
-			for (const id of effectIDs) {
-				if (!this.effects.contents.some((fx: any) => fx.statuses.has(id)))
-					void this.createEmbeddedDocuments(
-						'ActiveEffect',
-						[
-							CONFIG.IRONSWORN.IronActiveEffect.createImpact({
-								id,
-								disabled: true
-							} as any) as any
-						],
-						{ suppressLog: true } as any
-					)
-			}
-		}
-
 		if (this.assert('character') || this.assert('shared'))
 			void this.createEmbeddedDocuments(
 				'Item',

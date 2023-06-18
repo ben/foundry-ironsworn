@@ -6,25 +6,34 @@
 				:key="category"
 				:category="category"
 				class="flexcol"
-				:class="$style.conditions"
+				:class="$style.impactCategory"
 				:impacts-class="$style.conditionsContents" />
 		</div>
-		<div :class="$style.customImpacts" class="flexcol">
-			<div v-if="customImpacts?.length" class="flexrow">
+		<div :class="$style.customImpactControls" class="flexcol">
+			<div
+				v-if="customImpacts?.length"
+				class="flexrow"
+				:class="$style.customImpacts">
 				<ImpactCheckboxCustom
 					v-for="impact in customImpacts"
 					:key="(impact._id as string)"
 					:placeholder="
 						$t(`IRONSWORN.${$actor.impactType.toUpperCase()}.Custom`)
 					"
+					:class="$style.customImpact"
 					:status-id="(impact._id as string)"
 					:data="impact" />
 			</div>
 			<IronBtn
 				:text="addCustomImpactLabel"
+				block
 				:icon="'fa:plus'"
 				justify="center"
-				@click="addCustomImpact" />
+				@click="
+					IronActiveEffect.createCustomImpact({
+						parent: $actor
+					})
+				" />
 		</div>
 	</div>
 </template>
@@ -65,21 +74,6 @@ const addCustomImpactLabel = computed(() =>
 	})
 )
 
-function addCustomImpact() {
-	$actor.createEmbeddedDocuments('ActiveEffect', [
-		{
-			name: game.i18n.localize(
-				`IRONSWORN.${$actor.impactType.toUpperCase()}.Custom`
-			),
-			statuses: [
-				`${IronActiveEffect.CUSTOM_IMPACT_PREFIX}:${
-					$actor.customImpacts.length + 1
-				}`
-			]
-		}
-	])
-}
-
 const categories = computed(() => {
 	const result = new Set<ImpactFlags['category'] & string>()
 
@@ -97,11 +91,22 @@ const categories = computed(() => {
 
 <style lang="scss" module>
 .wrapper {
+	gap: var(--ironsworn-spacer-md);
+}
+.customImpactControls {
+}
+.customImpact {
 }
 .customImpacts {
 }
 
 .commonImpacts {
 	gap: var(--ironsworn-spacer-lg);
+
+	justify-content: space-between;
+}
+
+.impactCategory {
+	max-width: max-content;
 }
 </style>

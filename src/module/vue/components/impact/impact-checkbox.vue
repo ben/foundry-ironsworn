@@ -8,7 +8,7 @@
 			type="button"
 			:data-tooltip="state.hintText"
 			class="flexrow nogrow"
-			:checked="checked"
+			:checked="isActive"
 			:aria-labelledby="`label_${baseId}`"
 			:transition="IronswornSettings.deco.impact.transition"
 			@change="input">
@@ -52,10 +52,6 @@ import type { IronActiveEffect } from '../../../active-effect/active-effect'
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const baseId = computed(
-	() => `condition_${props.data.statuses?.[0]}_${actor.value._id}`
-)
-
 type AESource = ReturnType<IronActiveEffect['toObject']> & {
 	name: string
 	statuses: string[]
@@ -64,23 +60,27 @@ type AESource = ReturnType<IronActiveEffect['toObject']> & {
 const props = withDefaults(
 	defineProps<{
 		data: StatusEffectV11 | AESource
-		/** Should a disabled ActiveEffect object be left in place on the character? */
+		/** Should a disabled ActiveEffect object be left in place on the character?
+		 * @default false
+		 */
 		keepEffect?: boolean
 	}>(),
 	{ keepEffect: false }
 )
 
-const statusId = computed(() => props.data.statuses?.[0])
-
-console.log($actor)
-
-const checked = computed(() =>
-	actor.value.effects.some((fx) => {
-		return (
-			(fx as AESource).statuses.includes(statusId.value) && fx.disabled !== true
-		)
-	})
+const statusId = computed(
+	() => props.data.statuses?.[0] ?? (props.data as StatusEffectV11).id
 )
+
+const baseId = computed(() => `condition_${statusId.value}_${actor.value._id}`)
+
+const isActive = computed(() =>
+	actor.value.effects?.some(
+		(fx) => fx.statuses.includes(statusId.value) && fx.disabled !== true
+	)
+)
+
+console.log(actor.value.effects)
 
 const state = reactive<{ hintText?: string }>({})
 
@@ -97,7 +97,7 @@ async function input() {
 		if (props.data.flags?.['foundry-ironsworn']?.global)
 			await CONFIG.IRONSWORN.IronActiveEffect.setGlobal(
 				props.data as any,
-				!checked.value
+				!isActive.value
 			)
 		else await $actor?.toggleActiveEffect(props.data as StatusEffectV11, {})
 	}
@@ -107,7 +107,7 @@ async function input() {
 	if (props.data.flags?.['foundry-ironsworn']?.globalHint) {
 		CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
 			id: props.data.statuses?.[0],
-			enabled: checked.value
+			enabled: isActive.value
 		})
 	}
 }
