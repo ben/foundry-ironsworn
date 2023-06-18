@@ -70,12 +70,17 @@ const $actor = inject($ActorKey) as IronswornActor<'character'>
 }
 
 .resetValue {
+	--ironsworn-color-clickable-block-bg: var(
+		--ironsworn-color-clickable-block-bg-hover
+	);
+	--ironsworn-color-clickable-block-fg: var(
+		--ironsworn-color-clickable-block-fg-hover
+	);
+
 	@include clickable.blockHover;
 
 	z-index: var(--ironsworn-z-index-highest);
 	box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
 		0 0 5px var(--ironsworn-color-warm) !important;
-	background-color: var(--ironsworn-color-clickable-block-bg-hover) !important;
-	color: var(--ironsworn-color-clickable-block-fg-hover) !important;
 }
 </style>

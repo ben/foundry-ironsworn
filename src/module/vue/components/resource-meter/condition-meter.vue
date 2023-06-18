@@ -25,7 +25,7 @@
 					:class="$style.lockOverlay"
 					:data-tooltip="isLocked ? lockedTooltip : null">
 					<FontIcon
-						name="lock"
+						name="cancel"
 						:size="FontAwesome.Size['xl']"
 						:class="$style.icon" />
 				</div>
