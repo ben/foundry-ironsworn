@@ -16,7 +16,6 @@
 				:document-type="documentType"
 				:vertical="sliderStyle === 'vertical'"
 				:attr="props.attr"
-				:stat-label="statLabel"
 				:text="statLabel" />
 		</template>
 		<template #default>
@@ -46,6 +45,7 @@ import type { MeterField } from '../../../fields/MeterField'
 import FontIcon from '../icon/font-icon.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import { FontAwesome } from '../icon/icon-common'
+import IronIcon from '../icon/iron-icon.vue'
 
 const props = withDefaults(
 	defineProps<{
@@ -109,9 +109,13 @@ const lockedBy = computed(() => {
 
 const lockedTooltip = computed(() => {
 	if (lockedBy.value == null) return
-	return `You can't recover ${statLabel.value} because you are ${
+	return `
+  <img src='${
+		lockedBy.value.icon
+	}' height='50px' width='50px' style='float: left; padding-right: 0.5em;'>
+  <p>You can't recover ${statLabel.value} because you are ${
 		(lockedBy.value as any).name
-	}`
+	}.</p>`
 })
 </script>
 

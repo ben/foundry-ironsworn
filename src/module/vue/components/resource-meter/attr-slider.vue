@@ -163,12 +163,18 @@ async function onChange(newValue: number) {
 }
 .labelLeft {
 	grid-template-areas: 'label bar';
+	grid-template-columns: max-content 1fr;
 }
 .labelRight {
 	grid-template-areas: 'bar label';
+	grid-template-columns: 1fr max-content;
 }
 .bar {
 	grid-area: bar;
+	[aria-orientation='horizontal'] & {
+		width: 100%;
+		height: 100%;
+	}
 }
 .label {
 	display: flex;
@@ -188,6 +194,7 @@ async function onChange(newValue: number) {
 		max-height: 50%;
 	}
 	[aria-orientation='horizontal'] & {
+		height: 100%;
 		> * {
 			padding-inline-end: var(--ironsworn-segment-border-radius);
 			height: 100%;

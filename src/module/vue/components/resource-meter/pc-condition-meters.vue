@@ -8,7 +8,6 @@
 			document-type="Actor"
 			:global="resource === 'Supply' && IronswornSettings.get('shared-supply')"
 			:attr="resource.toLowerCase()"
-			:stat-label="$t(`IRONSWORN.${resource}`)"
 			:label-position="props.labelPosition" />
 	</div>
 </template>
