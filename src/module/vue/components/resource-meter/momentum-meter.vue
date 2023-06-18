@@ -76,5 +76,6 @@ const $actor = inject($ActorKey) as IronswornActor<'character'>
 	box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
 		0 0 5px var(--ironsworn-color-warm) !important;
 	background-color: var(--ironsworn-color-clickable-block-bg-hover) !important;
+	color: var(--ironsworn-color-clickable-block-fg-hover) !important;
 }
 </style>
