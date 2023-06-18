@@ -4,9 +4,10 @@
 		role="slider"
 		class="slider-bar"
 		:aria-readonly="readOnly"
+		:aria-disabled="disabled"
 		:aria-valuemin="min"
 		:aria-valuemax="max"
-		:aria-valuenow="value"
+		:aria-valuenow="disabled ? 0 : value"
 		:aria-orientation="orientation"
 		@keydown.arrow-up="setSliderValue(value + 1, $event)"
 		@keydown.+="setSliderValue(value + 1, $event)"
@@ -28,6 +29,7 @@
 		@keydown.7="setSliderValue(7, $event)"
 		@keydown.8="setSliderValue(8, $event)"
 		@keydown.9="setSliderValue(9, $event)">
+		<slot name="start"></slot>
 		<button
 			v-for="segment in sliderSegments"
 			:key="segment"
@@ -35,7 +37,7 @@
 			class="slider-segment clickable block"
 			:class="props.segmentClass?.[segment]"
 			tabindex="-1"
-			:aria-selected="segment === value"
+			:aria-selected="!disabled && segment === value"
 			:aria-disabled="!inRange(segment, min, max + 1)"
 			@click.capture="setSliderValue(segment, $event)"
 			@focus.prevent>
@@ -43,6 +45,7 @@
 				{{ segmentLabel(segment) }}
 			</span>
 		</button>
+		<slot name="end"></slot>
 	</article>
 </template>
 
@@ -82,6 +85,7 @@ const props = withDefaults(
 		 * ```
 		 */
 		segmentClass?: Record<number, any> | undefined
+		disabled?: boolean
 	}>(),
 	{
 		readOnly: false,
@@ -102,7 +106,7 @@ const sliderSegments = computed(() =>
 )
 
 function setSliderValue(newValue: number, event: Event) {
-	if (props.readOnly) {
+	if (props.readOnly || props.disabled) {
 		return
 	}
 	event.preventDefault()
@@ -157,6 +161,7 @@ const keybindInfo = computed(
 	);
 
 	display: flex;
+	position: relative;
 	flex-wrap: none;
 	grid-row: 1;
 	border: 0;
@@ -167,22 +172,10 @@ const keybindInfo = computed(
 		@include clickable.focusOutline;
 	}
 
-	.slider-segment {
-		box-sizing: border-box;
-		position: relative;
-		z-index: 1;
-		border: var(--ironsworn-slider-segment-border-width) solid currentcolor;
-		border-radius: 0;
-		padding: 0;
-		min-width: max-content;
-		text-align: center;
-		line-height: var(--ironsworn-slider-segment-line-height);
-
-		&:hover,
-		&[aria-selected='true'] {
-			// with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
-			z-index: 10;
-		}
+	.locked & {
+		opacity: 0.5;
+		background-color: var(--ironsworn-bar-lock-color);
+		overflow: clip;
 	}
 
 	&[aria-orientation='vertical'] {
@@ -193,20 +186,20 @@ const keybindInfo = computed(
 			flex: 0 0 auto;
 			width: var(--ironsworn-slider-segment-vertical-width);
 
-			&:not(:first-child) {
+			&:not(:first-of-type) {
 				margin-block-start: calc(
 					-1 * var(--ironsworn-slider-segment-border-width)
 				);
 			}
 
-			&:first-child {
+			&:first-of-type {
 				border-start-start-radius: var(
 					--ironsworn-slider-segment-border-radius
 				);
 				border-start-end-radius: var(--ironsworn-slider-segment-border-radius);
 			}
 
-			&:last-child {
+			&:last-of-type {
 				border-end-start-radius: var(--ironsworn-slider-segment-border-radius);
 				border-end-end-radius: var(--ironsworn-slider-segment-border-radius);
 			}
@@ -220,20 +213,20 @@ const keybindInfo = computed(
 		.slider-segment {
 			flex-grow: 1;
 
-			&:not(:first-child) {
+			&:not(:first-of-type) {
 				margin-inline-start: calc(
 					-1 * var(--ironsworn-slider-segment-border-width)
 				);
 			}
 
-			&:first-child {
+			&:first-of-type {
 				border-top-left-radius: var(--ironsworn-slider-segment-border-radius);
 				border-bottom-left-radius: var(
 					--ironsworn-slider-segment-border-radius
 				);
 			}
 
-			&:last-child {
+			&:last-of-type {
 				border-top-right-radius: var(--ironsworn-slider-segment-border-radius);
 				border-bottom-right-radius: var(
 					--ironsworn-slider-segment-border-radius
@@ -242,6 +235,7 @@ const keybindInfo = computed(
 		}
 	}
 
+	&[aria-disabled='true'],
 	&[aria-readonly='true'],
 	&[readonly] {
 		pointer-events: none !important;
@@ -249,6 +243,24 @@ const keybindInfo = computed(
 		.slider-segment {
 			pointer-events: none !important;
 		}
+	}
+}
+
+.slider-segment {
+	box-sizing: border-box;
+	position: relative;
+	z-index: 1;
+	border: var(--ironsworn-slider-segment-border-width) solid currentcolor;
+	border-radius: 0;
+	padding: 0;
+	min-width: max-content;
+	text-align: center;
+	line-height: var(--ironsworn-slider-segment-line-height);
+
+	&:hover,
+	&[aria-selected='true'] {
+		// with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
+		z-index: 10;
 	}
 }
 </style>

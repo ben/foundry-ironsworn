@@ -25,10 +25,15 @@
 					:data="impact" />
 			</div>
 			<IronBtn
-				:text="addCustomImpactLabel"
+				:text="$t(`IRONSWORN.${$actor.impactType.toUpperCase()}.Custom`)"
 				block
 				:icon="'fa:plus'"
 				justify="center"
+				:aria-label="
+					$t(`DOCUMENT.New`, {
+						type: $t(`IRONSWORN.${$actor.impactType.toUpperCase()}.Custom`)
+					})
+				"
 				@click="
 					IronActiveEffect.createCustomImpact({
 						parent: $actor
@@ -66,14 +71,6 @@ const customImpacts = computed(() =>
 	)
 )
 
-const addCustomImpactLabel = computed(() =>
-	game.i18n.format(`DOCUMENT.New`, {
-		type: game.i18n.localize(
-			`IRONSWORN.${$actor.impactType.toUpperCase()}.Custom`
-		)
-	})
-)
-
 const categories = computed(() => {
 	const result = new Set<ImpactFlags['category'] & string>()
 
@@ -102,7 +99,6 @@ const categories = computed(() => {
 
 .commonImpacts {
 	gap: var(--ironsworn-spacer-lg);
-
 	justify-content: space-between;
 }
 

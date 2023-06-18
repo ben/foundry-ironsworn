@@ -1,13 +1,16 @@
 <template>
 	<article
-		class="attr-slider"
-		:class="{ [`label-${labelPosition}`]: true }"
+		:class="{
+			[$style[`label${labelPosition.capitalize()}`]]: true,
+			[$style.wrapper]: true
+		}"
 		:aria-labelledby="`${baseId}-label`"
 		:aria-orientation="sliderStyle !== 'compact' ? sliderStyle : undefined">
 		<section
 			v-if="labelPosition != 'none'"
 			:id="`${baseId}-label`"
-			class="attr-slider-label nogrow">
+			class="nogrow"
+			:class="$style.label">
 			<slot name="label">
 				<!-- button or static label goes here -->
 				<!-- the tabindex for this item should be -1 -->
@@ -15,16 +18,24 @@
 		</section>
 		<slot name="default"></slot>
 		<SliderBar
-			class="attr-slider-bar"
+			:class="$style.bar"
 			:orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
 			:bar-max="barMax"
 			:bar-min="barMin"
 			:min="min"
 			:max="max"
 			:value="value"
+			:disabled="disabled"
 			:segment-class="segmentClass"
 			:read-only="readOnly"
 			@change="onChange">
+			<template #start>
+				<slot name="sliderStart"></slot>
+			</template>
+
+			<template #end>
+				<slot name="sliderEnd"></slot>
+			</template>
 		</SliderBar>
 	</article>
 </template>
@@ -36,7 +47,6 @@
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { computed } from 'vue'
 import type { MeterField } from '../../../fields/MeterField'
-import NumberField from '../../../fields/types/NumberField'
 import { IronswornSettings } from '../../../helpers/settings.js'
 import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument.js'
@@ -78,6 +88,7 @@ const props = withDefaults(
 		 */
 		segmentClass?: Record<number, any> | undefined
 		readOnly?: boolean
+		disabled?: boolean
 	}>(),
 	{
 		global: false,
@@ -85,6 +96,7 @@ const props = withDefaults(
 		sliderStyle: 'vertical',
 		labelPosition: 'left',
 		segmentClass: undefined,
+		sliderClass: undefined,
 		max: undefined,
 		min: undefined,
 		barMax: undefined,
@@ -137,68 +149,48 @@ async function onChange(newValue: number) {
 }
 </script>
 
-<style lang="scss">
-.attr-slider {
+<style lang="scss" module>
+.wrapper {
 	--ironsworn-segment-border-width: var(--ironsworn-border-width-md);
 	--ironsworn-segment-border-radius: var(--ironsworn-border-radius-lg);
 
-	&[aria-orientation='vertical'] {
-		display: grid;
-		grid-template-rows: max-content max-content max-content;
-		grid-template-columns: max-content max-content;
-		grid-auto-flow: column;
-		place-items: start;
+	display: grid;
+	place-items: start;
+}
 
-		.attr-slider-label {
-			grid-row: 1;
-			max-height: 50%;
-		}
+.labelNone {
+	grid-template-areas: 'bar';
+}
+.labelLeft {
+	grid-template-areas: 'label bar';
+}
+.labelRight {
+	grid-template-areas: 'bar label';
+}
+.bar {
+	grid-area: bar;
+}
+.label {
+	display: flex;
+	grid-area: label;
+	text-transform: uppercase;
+	line-height: 1 !important;
 
-		.attr-slider-bar {
-			grid-row: 1;
-		}
-
-		&.label-none {
-			display: flex;
-		}
-
-		&.label-left {
-			.attr-slider-label {
-				grid-column: 1;
-			}
-		}
-
-		&.label-right {
-			.attr-slider-label {
-				grid-column: 2;
-			}
-		}
+	> * {
+		align-items: center;
+	}
+	> label {
+		// for e.g. asset browser cards, which don't use a button
+		display: flex;
 	}
 
-	&[aria-orientation='horizontal'] {
-		display: flex;
-		flex-flow: row wrap;
-		justify-items: space-between;
-
-		.attr-slider-label {
-			> * {
-				height: 100%;
-
-				padding-inline-end: var(--ironsworn-segment-border-radius);
-			}
-		}
+	[aria-orientation='vertical'] & {
+		max-height: 50%;
 	}
-	.attr-slider-label {
-		line-height: 1 !important;
-		text-transform: uppercase;
-		display: flex;
-
+	[aria-orientation='horizontal'] & {
 		> * {
-			align-items: center;
-		}
-		> label {
-			// for e.g. asset browser cards, which don't use a button
-			display: flex;
+			padding-inline-end: var(--ironsworn-segment-border-radius);
+			height: 100%;
 		}
 	}
 }
