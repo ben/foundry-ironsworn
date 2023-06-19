@@ -1,7 +1,7 @@
 <template>
 	<AttrSlider
 		class="condition-meter"
-		:class="{ [$style.wrapper]: true, locked: isLocked }"
+		:class="{ [$style.wrapper]: true }"
 		:document-type="documentType"
 		:attr="props.attr"
 		:slider-style="sliderStyle"
@@ -11,24 +11,27 @@
 		<template #label>
 			<BtnRollstat
 				v-if="labelPosition != 'none'"
-				:class="$style.btn"
+				:class="[$style.btn, labelClass]"
 				tabindex="0"
+				:data-tooltip-direction="labelPosition.toUpperCase()"
 				:document-type="documentType"
 				:vertical="sliderStyle === 'vertical'"
 				:attr="props.attr"
 				:text="statLabel" />
 		</template>
-		<template #default>
+		<template #bar="{ onChange, ...barAttributes }">
 			<Transition name="fade">
-				<div
-					v-if="isLocked"
-					:class="$style.lockOverlay"
-					:data-tooltip="isLocked ? lockedTooltip : null">
+				<div v-if="isLocked" :class="$style.lockOverlay" role="presentational">
 					<FontIcon
 						name="cancel"
 						:size="FontAwesome.Size['xl']"
-						:class="$style.icon" />
+						:class="$style.lockIcon" />
 				</div>
+				<SliderBar
+					v-bind="barAttributes"
+					:class="$style.lockableBar"
+					:data-tooltip="isLocked ? lockedTooltip : null"
+					@change="onChange" />
 			</Transition>
 		</template>
 	</AttrSlider>
@@ -45,7 +48,7 @@ import type { MeterField } from '../../../fields/MeterField'
 import FontIcon from '../icon/font-icon.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import { FontAwesome } from '../icon/icon-common'
-import IronIcon from '../icon/iron-icon.vue'
+import SliderBar from './slider-bar.vue'
 
 const props = withDefaults(
 	defineProps<{
@@ -67,10 +70,12 @@ const props = withDefaults(
 		sliderStyle?: 'vertical' | 'horizontal'
 		labelPosition?: 'right' | 'left' | 'none'
 		readOnly?: boolean
+		labelClass?: any
 	}>(),
 	{
 		sliderStyle: 'vertical',
 		labelPosition: 'left',
+		labelClass: undefined,
 		readOnly: false,
 		global: false
 	}
@@ -109,27 +114,37 @@ const lockedBy = computed(() => {
 
 const lockedTooltip = computed(() => {
 	if (lockedBy.value == null) return
+	const message = game.i18n.format('IRONSWORN.IMPACT.NoRecoverHint', {
+		resource: statLabel.value,
+		status: (lockedBy.value as any).name
+	})
 	return `
-  <img src='${
-		lockedBy.value.icon
-	}' height='50px' width='50px' style='float: left; padding-right: 0.5em;'>
-  <p>You can't recover ${statLabel.value} because you are ${
-		(lockedBy.value as any).name
-	}.</p>`
+  <img src='${lockedBy.value.icon}' height='50px' width='50px' style='float: left; padding-right: 0.5em;'>
+  <p>${message}</p>`
 })
 </script>
 
 <style lang="scss" module>
 @use 'mixin:text.scss';
 
-.btn {
-	text-transform: uppercase;
-}
 .wrapper {
-	--ironsworn-bar-lock-color: var(--ironsworn-color-danger);
+	--ironsworn-bar-locked-color: var(--ironsworn-color-danger);
+	--ironsworn-bar-locked-opacity: 0.5;
 
 	position: relative;
 }
+
+.btn {
+	text-transform: uppercase;
+}
+.lockableBar {
+	&[aria-disabled='true'] {
+		opacity: var(--ironsworn-bar-locked-opacity);
+		background-color: var(--ironsworn-bar-locked-color);
+		overflow: clip;
+	}
+}
+
 .lockOverlay {
 	display: flex;
 	position: absolute;
@@ -141,9 +156,10 @@ const lockedTooltip = computed(() => {
 	z-index: var(--ironsworn-z-index-higher);
 	width: 100%;
 	height: 100%;
+	pointer-events: none;
 }
 
-.icon {
+.lockIcon {
 	--ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
 	@include text.stroke;

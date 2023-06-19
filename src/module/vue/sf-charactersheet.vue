@@ -69,7 +69,7 @@
 			<!-- Stats on right -->
 			<PcConditionMeters
 				class="flexcol margin-right"
-				data-tooltip-direction="UP"
+				data-tooltip-direction="RIGHT"
 				label-position="left"
 				data-tourid="resources" />
 		</div>

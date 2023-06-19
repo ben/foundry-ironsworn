@@ -17,26 +17,17 @@
 			</slot>
 		</section>
 		<slot name="default"></slot>
-		<SliderBar
-			:class="[$style.bar, barClass]"
-			:orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
-			:bar-max="barMax"
-			:bar-min="barMin"
-			:min="min"
-			:max="max"
-			:value="value"
-			:disabled="disabled"
-			:segment-class="segmentClass"
-			:read-only="readOnly"
-			@change="onChange">
-			<template #start>
-				<slot name="sliderStart"></slot>
-			</template>
+		<slot name="bar" v-bind="{ ...barAttributes, onChange }">
+			<SliderBar v-bind="barAttributes" @change="onChange">
+				<template #start>
+					<slot name="barStart"></slot>
+				</template>
 
-			<template #end>
-				<slot name="sliderEnd"></slot>
-			</template>
-		</SliderBar>
+				<template #end>
+					<slot name="barEnd"></slot>
+				</template>
+			</SliderBar>
+		</slot>
 	</article>
 </template>
 
@@ -45,7 +36,7 @@
  * A slider that controls the value of an attribute.
  */
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import { computed } from 'vue'
+import { computed, useCssModule } from 'vue'
 import type { MeterField } from '../../../fields/MeterField'
 import { IronswornSettings } from '../../../helpers/settings.js'
 import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
@@ -140,6 +131,21 @@ const value = computed(
 	() =>
 		getProperty(document?.value as any, `system.${props.attr}.value`) as number
 )
+
+const useStyle = useCssModule()
+
+const barAttributes = computed(() => ({
+	class: [useStyle.bar, props.barClass],
+	orientation: props.sliderStyle !== 'compact' ? props.sliderStyle : undefined,
+	barMax: props.barMax,
+	barMin: props.barMin,
+	min: min.value,
+	max: max.value,
+	value: value.value,
+	disabled: props.disabled,
+	segmentClass: props.segmentClass,
+	readOnly: props.readOnly
+}))
 
 async function onChange(newValue: number) {
 	const data = { [`system.${props.attr}.value`]: newValue }

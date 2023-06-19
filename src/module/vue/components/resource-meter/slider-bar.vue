@@ -172,12 +172,6 @@ const keybindInfo = computed(
 		@include clickable.focusOutline;
 	}
 
-	.locked & {
-		opacity: 0.5;
-		background-color: var(--ironsworn-bar-lock-color);
-		overflow: clip;
-	}
-
 	&[aria-orientation='vertical'] {
 		flex-direction: column;
 		flex-grow: 0;
@@ -238,8 +232,6 @@ const keybindInfo = computed(
 	&[aria-disabled='true'],
 	&[aria-readonly='true'],
 	&[readonly] {
-		pointer-events: none !important;
-
 		.slider-segment {
 			pointer-events: none !important;
 		}
