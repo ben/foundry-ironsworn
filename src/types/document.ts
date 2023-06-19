@@ -1,6 +1,33 @@
+import type { AnyDocumentData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/data.mjs'
+import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import type { SourceDataType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+
 declare global {
 	export namespace foundry {
 		export namespace abstract {
+			export interface Document<
+				ConcreteDocumentData extends AnyDocumentData,
+				Parent extends Document<any, any, Metadata<any>> | null = null,
+				ConcreteMetadata extends Metadata<any> = Metadata<any>
+			> {
+				// from DataModel
+				/**
+				 * Update the DataModel locally by applying an object of changes to its source data.
+				 * The provided changes are cleaned, validated, and stored to the source data object for this model.
+				 * The source data is then re-initialized to apply those changes to the prepared data.
+				 * The method returns an object of differential changes which modified the original data.
+				 *
+				 * @param changes - New values which should be applied to the data model
+				 *                  (default: `{}`)
+				 * @param options - Options which determine how the new data is merged
+				 *                  (default: `{}`)
+				 * @returns - An object containing the changed keys and values
+				 */
+				updateSource(
+					changes?: DeepPartial<SourceDataType<ConcreteDocumentData>>,
+					options?: DataModel.UpdateSourceOptions
+				): DeepPartial<SourceDataType<ConcreteDocumentData>>
+			}
 			export namespace Document {
 				/**
 				 * A reusable helper for adding migration shims.
