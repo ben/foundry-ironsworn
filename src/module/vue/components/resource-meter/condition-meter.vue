@@ -119,7 +119,7 @@ const lockedTooltip = computed(() => {
 		status: (lockedBy.value as any).name
 	})
 	return `
-  <img src='${lockedBy.value.icon}' height='50px' width='50px' style='float: left; padding-right: 0.5em;'>
+  <img src='${lockedBy.value.icon}' height='3em' width='3em' style='float: left; padding-right: 0.5em;'>
   <p>${message}</p>`
 })
 </script>
