@@ -14,7 +14,7 @@
 		</div>
 		<CustomImpactControls
 			:class="$style.customImpactControls"
-			class="flexcol" />
+			class="flexrow" />
 	</div>
 </template>
 
@@ -52,6 +52,7 @@ const categories = computed(() => {
 	gap: var(--ironsworn-spacer-md);
 }
 .customImpactControls {
+	gap: var(--ironsworn-spacer-lg);
 }
 .commonImpacts {
 	gap: var(--ironsworn-spacer-lg);

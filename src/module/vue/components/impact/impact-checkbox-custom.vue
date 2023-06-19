@@ -15,6 +15,7 @@
 		</template>
 		<template #default>
 			<IronBtn
+				v-if="editMode"
 				icon="fa:trash"
 				nogrow
 				block
@@ -31,7 +32,7 @@
 import { computed, inject } from 'vue'
 import type { IronActiveEffect } from '../../../active-effect/active-effect'
 import type { IronswornActor } from '../../../actor/actor'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, ActorKey } from '../../provisions'
 import IronBtn from '../buttons/iron-btn.vue'
 import ImpactCheckbox from './impact-checkbox.vue'
 
@@ -41,6 +42,12 @@ const props = defineProps<{
 }>()
 
 const $actor = inject($ActorKey) as IronswornActor<'character'>
+
+const actor = inject(ActorKey)
+
+const editMode = computed(
+	() => actor?.value.flags?.['foundry-ironsworn']?.['edit-mode']
+)
 
 const $activeEffect = computed(
 	() => $actor.effects.get(props.data._id as string) as IronActiveEffect
@@ -55,11 +62,7 @@ const deleteDialogTitle = computed(() =>
 
 <style lang="scss" module>
 .wrapper {
-	--ironsworn-input-min-width: 20%;
-	--ironsworn-input-max-width: 50%;
-
-	min-width: var(--ironsworn-input-min-width);
-	max-width: var(--ironsworn-input-max-width);
+	// width: 20ch;
 	text-align: start;
 }
 .input {

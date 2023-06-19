@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.wrapper">
-		<div v-if="customImpacts?.length" class="flexrow" :class="$style.impacts">
+		<div v-if="customImpacts?.length" :class="$style.impacts">
 			<ImpactCheckboxCustom
 				v-for="impact in customImpacts"
 				:key="(impact._id as string)"
@@ -50,6 +50,7 @@ const customImpacts = computed(() =>
 .wrapper {
 }
 .impacts {
+	display: contents;
 }
 .impact {
 }
