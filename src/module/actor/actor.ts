@@ -38,10 +38,18 @@ export class IronswornActor<
 		}
 	}
 
+	/** The impacts valid to toggled from this actor's token. */
+	get tokenImpacts() {
+		return this.validImpacts
+		// FIXME: ideally this would include custom impacts, too, but there's some difficulties with toggling them on/off cleanly.
+		// return [...this.validImpacts, ...this.customImpacts]
+	}
+
 	/** The common status effects that are valid for this actor type */
 	get validImpacts() {
-		const impactSet = IronActiveEffect.statusEffects[this.impactSet]
-		return impactSet.filter(this.system.isValidImpact)
+		return IronActiveEffect.statusEffects[this.impactSet].filter(
+			this.system.isValidImpact
+		)
 	}
 
 	/** A convenience getter that returns all custom impacts on the PC. */
@@ -209,7 +217,6 @@ export class IronswornActor<
 			if (source.effects == null)
 				source.effects = [] as ActiveEffectDataConstructorData[]
 			// convert any custom impacts
-			let customImpactCount = 0
 			const legacyCustomIDs = ['custom1', 'custom2']
 			for (const id of legacyCustomIDs) {
 				const value = source.debility[id]
@@ -223,14 +230,12 @@ export class IronswornActor<
 				source.effects.push(
 					CONFIG.IRONSWORN.IronActiveEffect.statusToActiveEffectData(
 						CONFIG.IRONSWORN.IronActiveEffect.createImpact({
-							id: `${CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX}:${customImpactCount}`,
+							id: 'CustomImpact',
 							name,
 							icon: CONFIG.IRONSWORN.IronActiveEffect.IMPACT_ICON_DEFAULT
 						})
 					) as any
 				)
-
-				customImpactCount++
 			}
 
 			for (const [key, value] of Object.entries(source.debility)) {

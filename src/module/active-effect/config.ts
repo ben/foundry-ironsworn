@@ -14,6 +14,7 @@ export interface ImpactFlags {
 	category?: DebilityCategoryClassic | ImpactCategoryStarforged
 	type?: 'impact'
 	ruleset?: 'classic' | 'starforged'
+	isCustomImpact?: boolean
 }
 
 export type IronActiveEffectFlags = ImpactFlags

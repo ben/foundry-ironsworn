@@ -46,6 +46,7 @@ import ActorConfig from './module/actor/config'
 import { ConfigActiveEffect } from './module/active-effect/config'
 import { IRONSWORN } from './config'
 import ItemConfig from './module/item/config'
+import { IronActiveEffect } from './module/active-effect/active-effect'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -80,6 +81,21 @@ Hooks.once('init', async () => {
 	mergeObject(CONFIG.Actor, ActorConfig)
 	mergeObject(CONFIG.Item, ItemConfig)
 	mergeObject(CONFIG.ActiveEffect, ConfigActiveEffect)
+
+	Object.defineProperty(CONFIG, 'statusEffects', {
+		get: () => {
+			const currentActor = canvas?.hud?.token.object?.actor
+			if (currentActor == null) return []
+			return currentActor.validImpacts.map((impact) => {
+				if (impact instanceof IronActiveEffect) {
+					const newObj = impact.toObject() as any
+					newObj.id = newObj._id
+					return newObj
+				}
+				return impact
+			})
+		}
+	})
 
 	// Define custom Entity classes
 

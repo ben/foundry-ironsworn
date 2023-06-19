@@ -27,12 +27,13 @@
 						:size="FontAwesome.Size['xl']"
 						:class="$style.lockIcon" />
 				</div>
-				<SliderBar
-					v-bind="barAttributes"
-					:class="$style.lockableBar"
-					:data-tooltip="isLocked ? lockedTooltip : null"
-					@change="onChange" />
 			</Transition>
+
+			<SliderBar
+				v-bind="barAttributes"
+				:class="$style.lockableBar"
+				:data-tooltip="isLocked ? lockedTooltip : null"
+				@change="onChange" />
 		</template>
 	</AttrSlider>
 </template>
@@ -42,7 +43,7 @@ import AttrSlider from './attr-slider.vue'
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument'
-import { computed, inject } from 'vue'
+import { computed, inject, TransitionGroup } from 'vue'
 import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
 import type { MeterField } from '../../../fields/MeterField'
 import FontIcon from '../icon/font-icon.vue'
@@ -119,7 +120,7 @@ const lockedTooltip = computed(() => {
 		status: (lockedBy.value as any).name
 	})
 	return `
-  <img src='${lockedBy.value.icon}' height='3em' width='3em' style='float: left; padding-right: 0.5em;'>
+  <img src='${lockedBy.value.icon}' height='48px' width='48px' style='float: left; padding-right: 0.5em;'>
   <p>${message}</p>`
 })
 </script>

@@ -10,7 +10,7 @@ type PackContents = Array<
 	StoredDocument<
 		| Scene
 		| IronswornActor
-		| Cards
+		// | Cards
 		| IronswornItem
 		| IronswornJournalEntry
 		| Macro

@@ -9,66 +9,24 @@
 				:class="$style.impactCategory"
 				:impacts-class="$style.conditionsContents" />
 		</div>
-		<div :class="$style.customImpactControls" class="flexcol">
-			<div
-				v-if="customImpacts?.length"
-				class="flexrow"
-				:class="$style.customImpacts">
-				<ImpactCheckboxCustom
-					v-for="impact in customImpacts"
-					:key="(impact._id as string)"
-					:placeholder="
-						$t(`IRONSWORN.${$actor.impactType.toUpperCase()}.Custom`)
-					"
-					:class="$style.customImpact"
-					:status-id="(impact._id as string)"
-					:data="impact" />
-			</div>
-			<IronBtn
-				:text="$t(`IRONSWORN.${$actor.impactType.toUpperCase()}.Custom`)"
-				block
-				:icon="'fa:plus'"
-				justify="center"
-				:aria-label="
-					$t(`DOCUMENT.New`, {
-						type: $t(`IRONSWORN.${$actor.impactType.toUpperCase()}.Custom`)
-					})
-				"
-				@click="
-					IronActiveEffect.createCustomImpact({
-						parent: $actor
-					})
-				" />
-		</div>
+		<CustomImpactControls
+			:class="$style.customImpactControls"
+			class="flexcol" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import ImpactCheckboxCustom from './impact-checkbox-custom.vue'
 import ImpactCategory from './impact-category.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import type { IronswornActor } from '../../../actor/actor'
 import { inject, computed } from 'vue'
 import type { ImpactFlags } from '../../../active-effect/config'
-import IronBtn from '../buttons/iron-btn.vue'
-import { IronActiveEffect } from '../../../active-effect/active-effect'
+import CustomImpactControls from './custom-impact-controls.vue'
 
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const actor = inject(ActorKey)
-
 const labelKey = computed(
 	() => `IRONSWORN.${$actor.impactType === 'impact' ? 'Impacts' : 'Debilities'}`
-)
-
-const customImpacts = computed(() =>
-	actor?.value.effects.filter((ae) =>
-		(ae as any).statuses.some((statusId: string) =>
-			statusId.startsWith(
-				CONFIG.IRONSWORN.IronActiveEffect.CUSTOM_IMPACT_PREFIX
-			)
-		)
-	)
 )
 
 const categories = computed(() => {
@@ -92,11 +50,6 @@ const categories = computed(() => {
 }
 .customImpactControls {
 }
-.customImpact {
-}
-.customImpacts {
-}
-
 .commonImpacts {
 	gap: var(--ironsworn-spacer-lg);
 	justify-content: space-between;

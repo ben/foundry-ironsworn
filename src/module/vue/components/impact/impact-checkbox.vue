@@ -68,8 +68,13 @@ const props = withDefaults(
 	{ keepEffect: false }
 )
 
+props.keepEffect && console.log('ImpactCheckbox', props.data)
+
 const statusId = computed(
-	() => props.data.statuses?.[0] ?? (props.data as StatusEffectV11).id
+	() =>
+		props.data.statuses?.[0] ??
+		(props.data as StatusEffectV11).id ??
+		(props.data as any)._id
 )
 
 const baseId = computed(() => `condition_${statusId.value}_${actor.value._id}`)
@@ -80,8 +85,6 @@ const isActive = computed(() =>
 	)
 )
 
-console.log(actor.value.effects)
-
 const state = reactive<{ hintText?: string }>({})
 
 async function input() {
@@ -90,6 +93,7 @@ async function input() {
 		const effect = actor.value.effects.find((fx: any) =>
 			fx.statuses.includes(statusId.value)
 		) as undefined | AESource
+		console.log('input for effect:', effect)
 		await $actor.updateEmbeddedDocuments('ActiveEffect', [
 			{ _id: effect?._id, disabled: !effect?.disabled }
 		])
