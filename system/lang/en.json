@@ -106,6 +106,7 @@
 		"Segments": "Segments",
 		"Impacts": "Impacts",
 		"IMPACT": {
+			"NoRecoverHint": "You can't recover {resource} because you are {status}.",
 			"Custom": "Custom impact",
 			"CATEGORY": {
 				"Misfortunes": "Misfortunes",
