@@ -93,7 +93,6 @@ async function input() {
 		const effect = actor.value.effects.find((fx: any) =>
 			fx.statuses.includes(statusId.value)
 		) as undefined | AESource
-		console.log('input for effect:', effect)
 		await $actor.updateEmbeddedDocuments('ActiveEffect', [
 			{ _id: effect?._id, disabled: !effect?.disabled }
 		])
