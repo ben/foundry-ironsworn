@@ -122,18 +122,18 @@ export class IronActiveEffect extends ActiveEffect {
 					category: 'burdens'
 				}),
 				CONFIG.IRONSWORN.IronActiveEffect.createImpact({
-					id: 'cursed_starforged',
-					ruleset: 'starforged',
-					name: game.i18n.localize('IRONSWORN.IMPACT.Cursed'),
-					icon: 'systems/foundry-ironsworn/assets/icons/impacts/cursed_starforged.svg',
-					globalHint: true,
-					category: 'vehicle'
-				}),
-				CONFIG.IRONSWORN.IronActiveEffect.createImpact({
 					id: 'battered',
 					ruleset: 'starforged',
 					name: game.i18n.localize('IRONSWORN.IMPACT.Battered'),
 					icon: 'systems/foundry-ironsworn/assets/icons/impacts/battered.svg',
+					globalHint: true,
+					category: 'vehicle'
+				}),
+				CONFIG.IRONSWORN.IronActiveEffect.createImpact({
+					id: 'cursed_starforged',
+					ruleset: 'starforged',
+					name: game.i18n.localize('IRONSWORN.IMPACT.Cursed'),
+					icon: 'systems/foundry-ironsworn/assets/icons/impacts/cursed_starforged.svg',
 					globalHint: true,
 					category: 'vehicle'
 				})

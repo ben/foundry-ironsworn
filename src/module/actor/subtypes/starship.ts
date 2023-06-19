@@ -13,9 +13,8 @@ export class StarshipData
 
 	isValidImpact(statusEffect: StatusEffectV11): boolean {
 		return (
-			statusEffect.flags?.['foundry-ironsworn']?.category === 'vehicle' &&
-			statusEffect.flags?.['foundry-ironsworn'].ruleset ===
-				this.parent.impactSet
+			statusEffect.flags?.['foundry-ironsworn']?.type === 'impact' &&
+			statusEffect.flags?.['foundry-ironsworn']?.category === 'vehicle'
 		)
 	}
 

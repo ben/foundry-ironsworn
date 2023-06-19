@@ -24,15 +24,12 @@ export class CharacterData
 	static readonly CUSTOM_IMPACT_IDS = ['custom1', 'custom2']
 
 	isValidImpact(statusEffect: StatusEffectV11): boolean {
-		// not an impact - skip
-		if (statusEffect.flags?.['foundry-ironsworn']?.type !== 'impact')
-			return false
 		// vehicle impact - skip
 		// TODO: remove this when asset-provided impacts are implemented
 		// if (statusEffect.flags?.['foundry-ironsworn'].category === 'vehicle')
 		// 	return false
 
-		return true
+		return statusEffect.flags?.['foundry-ironsworn']?.type === 'impact'
 	}
 
 	constructor(

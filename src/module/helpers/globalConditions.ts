@@ -13,8 +13,7 @@ export function actorsOrAssetsWithConditionEnabled(
 	const ret: ActorsAndAssets = { actors: [], assets: [] }
 
 	for (const actor of game.actors?.contents ?? []) {
-		const actorData = actor.system as any
-		if (actorData.debility?.[condition]) {
+		if (actor.statuses.has(condition)) {
 			ret.actors.push(actor as any)
 		}
 

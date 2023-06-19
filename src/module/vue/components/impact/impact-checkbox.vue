@@ -1,15 +1,15 @@
 <template>
 	<span
 		class="flexrow nowrap"
+		:data-tooltip="state.hintText"
+		:aria-labelledby="`label_${baseId}`"
 		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }">
 		<IronCheckbox
 			is="button"
 			:id="`checkbox_${baseId}`"
 			type="button"
-			:data-tooltip="state.hintText"
 			class="flexrow nogrow"
 			:checked="isActive"
-			:aria-labelledby="`label_${baseId}`"
 			:transition="IronswornSettings.deco.impact.transition"
 			@change="input">
 			<template #checked="scope">
@@ -69,17 +69,15 @@ const props = withDefaults(
 )
 
 const statusId = computed(
-	() =>
-		props.data.statuses?.[0] ??
-		(props.data as StatusEffectV11).id ??
-		(props.data as any)._id
+	() => (props.data as StatusEffectV11).id ?? (props.data as AESource)._id
 )
 
 const baseId = computed(() => `condition_${statusId.value}_${actor.value._id}`)
 
 const isActive = computed(() =>
 	actor.value.effects?.some(
-		(fx) => fx.statuses.includes(statusId.value) && fx.disabled !== true
+		(fx) =>
+			(fx as any).statuses.includes(statusId.value) && fx.disabled !== true
 	)
 )
 
@@ -106,8 +104,9 @@ async function input() {
 	await nextTick()
 
 	if (props.data.flags?.['foundry-ironsworn']?.globalHint) {
+		console.log('sent globalImpactChanged')
 		CONFIG.IRONSWORN.emitter.emit('globalImpactChanged', {
-			id: props.data.statuses?.[0],
+			id: statusId.value,
 			enabled: isActive.value
 		})
 	}
@@ -115,8 +114,9 @@ async function input() {
 
 // We can't watch this directly, we just have to trust that a broadcast will happen
 // when it changes
-CONFIG.IRONSWORN.emitter.on('globalImpactChanged', ({ id }) => {
-	if (id === props.data.statuses?.[0]) {
+CONFIG.IRONSWORN.emitter.on('globalImpactChanged', (data) => {
+	if (data.id === statusId.value) {
+		console.log('received globalImpactChanged', data)
 		refreshGlobalHint()
 	}
 })
@@ -141,14 +141,14 @@ function refreshGlobalHint() {
 	} else if (names.length === 1) {
 		// Condition only set on one other actor
 		state.hintText = game.i18n.format('IRONSWORN.ConditionMarkedOnOne', {
-			condition: (props.data as any).name,
+			condition: (props.data as any).name.capitalize(),
 			name: names[0]
 		})
 	} else {
 		// This condition is marked on several other actors, display them as a list
 		state.hintText = `
     <p>${game.i18n.format('IRONSWORN.ConditionMarkedOnMany', {
-			condition: (props.data as any).name
+			condition: (props.data as any).name.capitalize()
 		})}</p>
     <ul>
       ${names.map((x) => `<li>${x}</li>`).join('\n')}
@@ -160,6 +160,8 @@ if (props.data.flags?.['foundry-ironsworn']?.globalHint) refreshGlobalHint()
 </script>
 
 <style lang="scss" module>
+@use 'mixin:clickable.scss';
+
 .wrapper {
 	flex-wrap: nowrap;
 	gap: var(--ironsworn-spacer-sm);
@@ -173,7 +175,7 @@ button:local(.wrapper) {
 	padding: 0;
 }
 .hint {
-	filter: drop-shadow(0 0 5px var(--ironsworn-color-warning));
+	filter: var(--ironsworn-filter-highlight-warm);
 }
 
 .label {

@@ -1,6 +1,9 @@
 <template>
 	<div class="flexcol" :aria-label="$t(labelKey)" :class="$style.wrapper">
-		<div class="flexrow" :class="$style.commonImpacts">
+		<div
+			class="flexrow"
+			:class="$style.commonImpacts"
+			data-tooltip-direction="UP">
 			<ImpactCategory
 				v-for="category in categories"
 				:key="category"
@@ -17,7 +20,7 @@
 
 <script setup lang="ts">
 import ImpactCategory from './impact-category.vue'
-import { $ActorKey, ActorKey } from '../../provisions'
+import { $ActorKey } from '../../provisions'
 import type { IronswornActor } from '../../../actor/actor'
 import { inject, computed } from 'vue'
 import type { ImpactFlags } from '../../../active-effect/config'
