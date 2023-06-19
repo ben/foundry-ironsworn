@@ -2,6 +2,7 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
+import { IRONSWORN } from './config'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { FoeSheet } from './module/actor/sheets/foesheet'
 import { StarforgedCharacterSheet } from './module/actor/sheets/sf-charactersheet'
@@ -44,9 +45,7 @@ import type {
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
 import { ConfigActiveEffect } from './module/active-effect/config'
-import { IRONSWORN } from './config'
 import ItemConfig from './module/item/config'
-import { IronActiveEffect } from './module/active-effect/active-effect'
 
 declare global {
 	interface LenientGlobalVariableTypes {
