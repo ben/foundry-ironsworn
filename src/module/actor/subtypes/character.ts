@@ -71,8 +71,6 @@ export class CharacterData
 			shadow: new StatField({ label: 'IRONSWORN.Shadow' }),
 			wits: new StatField({ label: 'IRONSWORN.Wits' }),
 
-			// TODO: add a localized `hint` property, and have the vue sheet automatically pull these in as tooltips
-			// TODO: pass the labels to $capitalize ahead of time
 			health: new ConditionMeterField({ label: 'IRONSWORN.Health' }),
 			spirit: new ConditionMeterField({ label: 'IRONSWORN.Spirit' }),
 			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' }),
