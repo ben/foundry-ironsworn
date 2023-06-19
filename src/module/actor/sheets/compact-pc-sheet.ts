@@ -24,7 +24,7 @@ export class CompactPCSheet extends VueActorSheet {
 				}
 			},
 			...super._getHeaderButtons()
-		]
+		].map((btn) => Object.assign(btn, { tooltip: btn.label, label: '' }))
 	}
 
 	_openMoveSheet(e?: JQuery.ClickEvent) {
