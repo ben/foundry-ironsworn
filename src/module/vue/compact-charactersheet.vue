@@ -17,7 +17,7 @@
 			</div>
 		</section>
 
-		<section class="flexrow nogrow" :class="$style.conditions">
+		<section class="flexrow nogrow" :class="$style.impacts">
 			<PcImpacts />
 		</section>
 	</div>
@@ -57,12 +57,14 @@ provide(ActorKey, computed(() => props.data.actor) as any)
 	padding: var(--ironsworn-spacer-sm);
 }
 
-.conditions {
+.impacts {
 	align-items: center;
 	justify-content: space-around;
-
-	label {
-		flex-grow: 0;
+	padding: 0 var(--ironsworn-spacer-sm);
+	input[type='text'] {
+		width: 15ch;
+		min-width: 10ch;
+		max-width: 30ch;
 	}
 }
 </style>

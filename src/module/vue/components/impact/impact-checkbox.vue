@@ -27,7 +27,7 @@
 		<label
 			:id="`label_${baseId}`"
 			:for="`checkbox_${baseId}`"
-			class="text clickable">
+			class="text clickable flexrow">
 			<slot name="label">
 				<span :class="$style.label">
 					{{ $t((data as any).name).capitalize() }}
@@ -180,5 +180,6 @@ button:local(.wrapper) {
 
 .label {
 	text-align: start;
+	white-space: nowrap;
 }
 </style>

@@ -53,5 +53,9 @@ const customImpacts = computed(() =>
 	display: contents;
 }
 .impact {
+	flex: 1;
+	input[type='text'] {
+		flex: 1;
+	}
 }
 </style>

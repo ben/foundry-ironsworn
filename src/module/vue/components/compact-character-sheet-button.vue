@@ -110,7 +110,7 @@ function click() {
 
 		&::before {
 			opacity: 1;
-			background-color: var(--ironsworn-color-fg);
+			background-color: var(--ironsworn-color-fg-30);
 		}
 	}
 }
