@@ -86,18 +86,10 @@ Hooks.once('init', async () => {
 			const currentActor = canvas?.hud?.token.object?.actor
 			if (currentActor == null) return []
 			return currentActor.validImpacts
-			// .map((impact) => {
-			// 	if (impact instanceof IronActiveEffect) {
-			// 		const newObj = impact.toObject() as any
-			// 		newObj.id = newObj._id
-			// 		return newObj
-			// 	}
-			// 	return impact
-			// })
 		}
 	})
 
-	// Define custom Entity classes
+	// Define custom Document classes
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
