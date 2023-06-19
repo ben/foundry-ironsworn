@@ -104,7 +104,6 @@ async function input() {
 	await nextTick()
 
 	if (props.data.flags?.['foundry-ironsworn']?.globalHint) {
-		console.log('sent globalImpactChanged')
 		CONFIG.IRONSWORN.emitter.emit('globalImpactChanged', {
 			id: statusId.value,
 			enabled: isActive.value
@@ -115,10 +114,7 @@ async function input() {
 // We can't watch this directly, we just have to trust that a broadcast will happen
 // when it changes
 CONFIG.IRONSWORN.emitter.on('globalImpactChanged', (data) => {
-	if (data.id === statusId.value) {
-		console.log('received globalImpactChanged', data)
-		refreshGlobalHint()
-	}
+	if (data.id === statusId.value) refreshGlobalHint()
 })
 
 function refreshGlobalHint() {
