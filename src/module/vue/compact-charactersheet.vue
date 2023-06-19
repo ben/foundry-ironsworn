@@ -18,10 +18,7 @@
 		</section>
 
 		<section class="flexrow nogrow" :class="$style.conditions">
-			<ConditionCheckbox type="debility" name="wounded" />
-			<ConditionCheckbox type="debility" name="unprepared" />
-			<ConditionCheckbox type="debility" name="shaken" />
-			<ConditionCheckbox type="debility" name="encumbered" />
+			<PcImpacts />
 		</section>
 	</div>
 </template>
@@ -32,6 +29,7 @@ import AttrBox from './components/attr-box.vue'
 import CompactCharacterSheetButton from './components/compact-character-sheet-button.vue'
 import ConditionCheckbox from 'component:impact/impact-checkbox.vue'
 import { ActorKey } from './provisions'
+import PcImpacts from './components/impact/pc-impacts.vue'
 
 const props = defineProps<{
 	data: {

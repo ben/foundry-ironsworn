@@ -6,8 +6,10 @@
 			[$style.interactive]: !isMomentum,
 			'isiconbg-d10-tilt': !isMomentum
 		}">
-		<h4 :data-tooltip="tooltip" @click="click">{{ i18nStat }}</h4>
-		<h4 :data-tooltip="tooltip" @click="click">{{ value }}</h4>
+		<h4 :data-tooltip="tooltip" @click="click">
+			{{ $t($field.label).capitalize() }}
+		</h4>
+		<h4 :data-tooltip="tooltip" @click="click">{{ attr.value }}</h4>
 		<div class="flexrow clickable" style="flex: 1; justify-content: center">
 			<IronBtn icon="fa:subtract" @click="increment(-1)" />
 			<IronBtn
@@ -24,6 +26,12 @@
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
+import {
+	ConditionMeterField,
+	ConditionMeterSource,
+	MomentumField,
+	MomentumSource
+} from '../../fields/MeterField'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
@@ -42,19 +50,34 @@ const tooltip = computed(() =>
 		: game.i18n.format('IRONSWORN.Roll +x', { stat: i18nStat })
 )
 
-const actor = inject(ActorKey) as unknown as Ref<ActorSource<'character'>>
-const actorSystem = computed(() => (actor?.value as any)?.system)
-const value = computed(() => actorSystem?.value?.[props.propKey])
+const actor = inject<Ref<ActorSource<'character'>>>(ActorKey)
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
+const $field = computed(
+	() =>
+		$actor.system.schema.getField(props.propKey) as
+			| ConditionMeterField
+			| MomentumField
+)
+const attr = computed(
+	() =>
+		actor?.value?.system[props.propKey] as ConditionMeterSource | MomentumSource
+)
+
 function increment(delta: number) {
-	$actor?.update({ system: { [props.propKey]: value.value + delta } })
+	$actor?.update({
+		[`system.${props.propKey}.value`]: Math.clamped(
+			attr.value.value + delta,
+			attr.value.min,
+			attr.value.max
+		)
+	})
 }
 
 const burnMomentumTooltip = computed(() =>
 	game.i18n.format(
 		'IRONSWORN.BurnMomentumAndResetTo',
-		actorSystem.value.momentum as any
+		actor?.value.system.momentum as any
 	)
 )
 
