@@ -43,7 +43,7 @@ import type {
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
-import { IronActiveEffect } from './module/active-effect/active-effect'
+import { ConfigActiveEffect } from './module/active-effect/config'
 import { IRONSWORN } from './config'
 import ItemConfig from './module/item/config'
 
@@ -81,10 +81,9 @@ Hooks.once('init', async () => {
 
 	mergeObject(CONFIG.Actor, ActorConfig)
 	mergeObject(CONFIG.Item, ItemConfig)
+	mergeObject(CONFIG.ActiveEffect, ConfigActiveEffect)
 
 	// Define custom Entity classes
-
-	CONFIG.ActiveEffect.documentClass = IronActiveEffect
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
