@@ -54,7 +54,7 @@
 		"prettier-config-standard": "^5.0.0",
 		"sass": "^1.62.1",
 		"sha.js": "^2.4.11",
-		"stylelint": "^15.7.0",
+		"stylelint": "^15.8.0",
 		"stylelint-config-concentric-order": "^5.1.0",
 		"stylelint-config-css-modules": "^4.2.0",
 		"stylelint-config-recommended-vue": "^1.4.0",
