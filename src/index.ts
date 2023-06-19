@@ -86,14 +86,15 @@ Hooks.once('init', async () => {
 		get: () => {
 			const currentActor = canvas?.hud?.token.object?.actor
 			if (currentActor == null) return []
-			return currentActor.validImpacts.map((impact) => {
-				if (impact instanceof IronActiveEffect) {
-					const newObj = impact.toObject() as any
-					newObj.id = newObj._id
-					return newObj
-				}
-				return impact
-			})
+			return currentActor.validImpacts
+			// .map((impact) => {
+			// 	if (impact instanceof IronActiveEffect) {
+			// 		const newObj = impact.toObject() as any
+			// 		newObj.id = newObj._id
+			// 		return newObj
+			// 	}
+			// 	return impact
+			// })
 		}
 	})
 
