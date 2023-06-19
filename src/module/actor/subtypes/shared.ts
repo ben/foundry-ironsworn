@@ -14,11 +14,7 @@ export class SharedData
 	static _enableV10Validation = true
 
 	isValidImpact(status: StatusEffectV11) {
-		return (
-			status.flags?.['foundry-ironsworn']?.type === 'impact' &&
-			status.flags?.['foundry-ironsworn']?.global === true &&
-			status.flags?.['foundry-ironsworn'].ruleset === this.parent.impactSet
-		)
+		return false
 	}
 
 	static override defineSchema(): DataSchema<SharedDataSourceData> {
