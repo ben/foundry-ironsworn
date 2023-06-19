@@ -75,8 +75,6 @@ Hooks.once('init', async () => {
 	// Theme configuration
 	IronColor.colorSchemeSetup()
 
-	CONFIG.compatibility.excludePatterns.push(/ActiveEffect#label/)
-
 	CONFIG.IRONSWORN = IRONSWORN
 
 	mergeObject(CONFIG.Actor, ActorConfig)
