@@ -65,8 +65,6 @@ const config: Partial<ActorConfig> = {
 		site: 'fa-solid fa-dungeon',
 		starship: 'fa-solid fa-starship-freighter'
 	}
-
-	// documentClass: IronswornActor
 } as const
 
 export default config
