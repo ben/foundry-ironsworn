@@ -24,8 +24,13 @@
 	--ironsworn-color-text-stroke: transparent;
 
 	// CLICKABLE TEXT: HOVER FILTER EFFECT
-	--ironsworn-filter-highlight: drop-shadow(
+	--ironsworn-filter-highlight-cool: drop-shadow(
 		0 0 3px var(--ironsworn-color-cool)
 	);
-	--ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool);
+	--ironsworn-box-shadow-highlight-cool: 0 0 3px var(--ironsworn-color-cool);
+	--ironsworn-filter-highlight-warm: drop-shadow(
+			0 0 3px var(--ironsworn-color-warm)
+		)
+		drop-shadow(0 0 3px var(--ironsworn-color-warm));
+	--ironsworn-box-shadow-highlight-warm: 0 0 3px var(--ironsworn-color-warm);
 }
