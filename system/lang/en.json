@@ -305,8 +305,8 @@
 			"Impacts": {
 				"Name": "Rules: Debilities and Impacts",
 				"Hint": "The default set of conditions provided on sheets and tokens. Individual sheets may override this.",
-				"Classic": "Debilities (Ironsworn classic)",
-				"Starforged": "Impacts (Starforged)"
+				"Classic": "Debilities (Ironsworn Rulebook, p. 36)",
+				"Starforged": "Impacts (Starforged, p. 50)"
 			},
 			"SharedSupply": {
 				"Name": "Shared Supply Tracker",
