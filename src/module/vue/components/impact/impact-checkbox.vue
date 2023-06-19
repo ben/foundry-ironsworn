@@ -68,8 +68,6 @@ const props = withDefaults(
 	{ keepEffect: false }
 )
 
-props.keepEffect && console.log('ImpactCheckbox', props.data)
-
 const statusId = computed(
 	() =>
 		props.data.statuses?.[0] ??
