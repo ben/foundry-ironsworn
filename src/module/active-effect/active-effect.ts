@@ -465,7 +465,7 @@ Hooks.on(
 )
 
 /**
- * Set title attributes to title case.
+ * Disable the button if no impacts are available for the actor, and set title attributes to title case.
  */
 Hooks.on(
 	'renderTokenHUD',
