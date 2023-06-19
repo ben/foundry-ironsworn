@@ -82,11 +82,7 @@ Hooks.once('init', async () => {
 	mergeObject(CONFIG.ActiveEffect, ConfigActiveEffect)
 
 	Object.defineProperty(CONFIG, 'statusEffects', {
-		get: () => {
-			const currentActor = canvas?.hud?.token.object?.actor
-			if (currentActor == null) return []
-			return currentActor.validImpacts
-		}
+		get: () => canvas?.hud?.token.object?.actor?.validImpacts ?? []
 	})
 
 	// Define custom Document classes
