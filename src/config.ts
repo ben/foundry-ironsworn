@@ -25,7 +25,7 @@ import { IronActiveEffect } from './module/active-effect/active-effect'
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
 	highlightOracle: string // DF ID
-	globalConditionChanged: { id: string; enabled: boolean } // info about condition that changed
+	globalImpactChanged: { id: string; enabled: boolean } // info about condition that changed
 	dragStart: string // type of item
 	dragEnd: string // type of item
 }

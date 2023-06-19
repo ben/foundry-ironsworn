@@ -105,7 +105,7 @@ async function input() {
 	await nextTick()
 
 	if (props.data.flags?.['foundry-ironsworn']?.globalHint) {
-		CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
+		CONFIG.IRONSWORN.emitter.emit('globalImpactChanged', {
 			id: props.data.statuses?.[0],
 			enabled: isActive.value
 		})
@@ -114,7 +114,7 @@ async function input() {
 
 // We can't watch this directly, we just have to trust that a broadcast will happen
 // when it changes
-CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ id }) => {
+CONFIG.IRONSWORN.emitter.on('globalImpactChanged', ({ id }) => {
 	if (id === props.data.statuses?.[0]) {
 		refreshGlobalHint()
 	}

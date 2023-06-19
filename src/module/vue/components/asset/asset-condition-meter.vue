@@ -45,7 +45,7 @@ async function toggleCondition(idx: number) {
 	conditions[idx].ticked = !conditions[idx].ticked
 	await $asset?.update({ system: { conditions } })
 
-	CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
+	CONFIG.IRONSWORN.emitter.emit('globalImpactChanged', {
 		id: conditions[idx].name.toLowerCase(),
 		enabled: conditions[idx].ticked
 	})
