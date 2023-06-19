@@ -1,3 +1,4 @@
+import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -18,7 +19,6 @@ import {
 	getOracleTree,
 	registerOracleTree
 } from './module/features/customoracles'
-import { IronswornActor } from './module/actor/actor'
 import { OracleTable } from './module/roll-table/oracle-table'
 import { IronActiveEffect } from './module/active-effect/active-effect'
 
