@@ -302,6 +302,12 @@
 				"Hint": "Which set of moves and oracles will appear when opening a character sheet.",
 				"Sheet": "Match sheet"
 			},
+			"Impacts": {
+				"Name": "Rules: Debilities and Impacts",
+				"Hint": "The default set of conditions provided on sheets and tokens. Individual sheets may override this.",
+				"Classic": "Debilities (Ironsworn classic)",
+				"Starforged": "Impacts (Starforged)"
+			},
 			"SharedSupply": {
 				"Name": "Shared Supply Tracker",
 				"Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
