@@ -480,8 +480,28 @@ Hooks.on(
 		// fall back to default rendering if the required data is missing
 		if (token == null || actor == null || actor.validImpacts == null) return
 
-		html.find('.status-effects .effect-control').each((_, el) => {
-			el.title = el.title.capitalize()
-		})
+		const iconSize = 36
+		const hudLabelKey = `IRONSWORN.HUD.Mark${
+			actor.impactType === 'debility' ? 'Debilities' : 'Impacts'
+		}`
+
+		const statusEffectToggle = html
+			.find<HTMLImageElement>('[data-action="effects"]')
+			.first()
+		const toggleIcon = statusEffectToggle.find<HTMLImageElement>('img').first()
+
+		toggleIcon
+			.attr('title', game.i18n.localize(hudLabelKey))
+			.attr('src', IronActiveEffect.IMPACT_ICON_DEFAULT)
+		if (actor.validImpacts.length === 0)
+			statusEffectToggle.attr('aria-disabled', 'true')
+
+		html
+			.find<HTMLImageElement>('.status-effects .effect-control')
+			.each((_, el) => {
+				el.title = el.title.capitalize()
+				el.height = iconSize
+				el.width = iconSize
+			})
 	}
 )

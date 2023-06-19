@@ -105,9 +105,13 @@
 		"Clock": "Clock",
 		"Segments": "Segments",
 		"Impacts": "Impacts",
+		"HUD": {
+			"MarkImpacts": "Mark Impacts",
+			"MarkDebilities": "Mark Debilities"
+		},
 		"IMPACT": {
 			"NoRecoverHint": "You can't recover {resource} because you are {status}.",
-			"Custom": "Custom impact",
+			"Custom": "Custom Impact",
 			"CATEGORY": {
 				"Misfortunes": "Misfortunes",
 				"LastingEffects": "Lasting effects",
@@ -127,7 +131,7 @@
 		},
 		"Debilities": "Debilities",
 		"DEBILITY": {
-			"Custom": "Custom debility",
+			"Custom": "Custom Debility",
 			"CATEGORY": {
 				"Conditions": "Conditions",
 				"Banes": "Banes",

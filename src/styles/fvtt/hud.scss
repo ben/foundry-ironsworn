@@ -1,3 +1,7 @@
+#token-hud [aria-disabled='true'] {
+	opacity: 0.4;
+	pointer-events: none;
+}
 #token-hud .status-effects {
 	// intent: 3 columns because impact categories are usually groups of 3
 	grid-template-columns: 1fr 1fr 1fr;
