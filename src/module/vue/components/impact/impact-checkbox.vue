@@ -174,14 +174,11 @@ button:local(.wrapper) {
 	flex-direction: row;
 	padding: 0;
 }
-.hint {
+.hint > * {
 	filter: var(--ironsworn-filter-highlight-warm);
 }
 
 .label {
 	text-align: start;
-	&::first-letter {
-		text-transform: uppercase;
-	}
 }
 </style>
