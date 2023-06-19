@@ -140,14 +140,14 @@ function refreshGlobalHint() {
 		state.hintText = undefined
 	} else if (names.length === 1) {
 		// Condition only set on one other actor
-		state.hintText = game.i18n.format('IRONSWORN.ConditionMarkedOnOne', {
+		state.hintText = game.i18n.format(`IRONSWORN.ImpactMarkedOnOne`, {
 			condition: (props.data as any).name.capitalize(),
 			name: names[0]
 		})
 	} else {
 		// This condition is marked on several other actors, display them as a list
 		state.hintText = `
-    <p>${game.i18n.format('IRONSWORN.ConditionMarkedOnMany', {
+    <p>${game.i18n.format(`IRONSWORN.ImpactMarkedOnMany`, {
 			condition: (props.data as any).name.capitalize()
 		})}</p>
     <ul>

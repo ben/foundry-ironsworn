@@ -137,8 +137,8 @@
 
 		"Conditions": "États",
 		"Condition": "État",
-		"ConditionMarkedOnOne": "{condition} is marked on {name}",
-		"ConditionMarkedOnMany": "{condition} is marked on:",
+		"ImpactMarkedOnOne": "{condition} is marked on {name}",
+		"ImpactMarkedOnMany": "{condition} is marked on:",
 		"Reroll": "Relancez les dés",
 		"Connections": "Connections",
 		"Connection": "Connection",
