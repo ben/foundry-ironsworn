@@ -20,7 +20,6 @@ export class CharacterData
 	>
 	implements IronActorModel
 {
-	static _enableV10Validation = true
 	static readonly CUSTOM_IMPACT_IDS = ['custom1', 'custom2']
 
 	isValidImpact(statusEffect: StatusEffectV11): boolean {

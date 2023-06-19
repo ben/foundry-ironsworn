@@ -9,8 +9,6 @@ export class StarshipData
 	>
 	implements IronActorModel
 {
-	static _enableV10Validation = true
-
 	isValidImpact(statusEffect: StatusEffectV11): boolean {
 		return (
 			statusEffect.flags?.['foundry-ironsworn']?.type === 'impact' &&

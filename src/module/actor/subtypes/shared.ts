@@ -11,8 +11,6 @@ export class SharedData
 	>
 	implements IronActorModel
 {
-	static _enableV10Validation = true
-
 	isValidImpact(status: StatusEffectV11) {
 		return false
 	}

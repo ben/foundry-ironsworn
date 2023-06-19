@@ -16,8 +16,6 @@ export class SiteData
 	>
 	implements IronActorModel
 {
-	static _enableV10Validation = true
-
 	isValidImpact(statusEffect: StatusEffectV11): boolean {
 		return false
 	}
