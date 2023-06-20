@@ -230,7 +230,7 @@ export class IronActiveEffect extends ActiveEffect {
 	/**
 	 * Helper method that clamps number field changes, so that they respect the changed field's `min` and `max` properties.
 	 * @param actor The Actor instance
-	 * @param changes The changes object, which will be mutated.
+	 * @param changes The changes object, which will be mutated by this method.
 	 * @param attr The dot-separated attribute key to clamp.
 	 * @return The mutated `changes` object.
 	 */
