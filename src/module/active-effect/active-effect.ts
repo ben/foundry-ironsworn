@@ -1,4 +1,7 @@
-import type { EffectChangeDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
+import type {
+	EffectChangeData,
+	EffectChangeDataConstructorData
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
 import type { PartialBy } from 'dataforged'
 import { IronswornSettings } from '../helpers/settings'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
@@ -257,21 +260,26 @@ export class IronActiveEffect extends ActiveEffect {
 	}
 
 	/**
-	 * @remarks AEs don't respect field minimums/maximums out of the box, so we do some DIY for the attributes where it matters.
+	 * @remarks AEs don't respect field minimums/maximums by default, so we DIY it.
 	 * @see https://github.com/foundryvtt/foundryvtt/issues/9468
 	 */
-	override apply(actor, change) {
+	override apply(
+		actor: InstanceType<
+			ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
+		>,
+		change: EffectChangeData
+	) {
 		let changes = super.apply(actor, change) as Record<string, unknown> // a flattened dot notation object
 
-		let updated = false
+		let isUpdated = false
 
 		for (const attr in changes)
 			if (attr in changes) {
 				changes = IronActiveEffect.#clampFieldChange(actor, changes, attr)
-				updated ||= true
+				isUpdated ||= true
 			}
 
-		if (updated) foundry.utils.mergeObject(actor, changes)
+		if (isUpdated) foundry.utils.mergeObject(actor, changes)
 
 		return changes
 	}
