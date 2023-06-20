@@ -3,13 +3,14 @@
 ## Next Release
 
 - Ironsworn debilities and Starforged impacts have been rewritten to take advantage of FVTT's ActiveEffects API.
-  - Unlimited Suffering! Player characters can now have any number of custom impacts
+  - Unlimited Suffering! Player characters can now have any number of custom impacts.
     - Note that custom impacts can't be managed from the token HUD yet, but we plan to add this in the future
-  - Ironsworn-style debilities or Starforged-style impacts can be selected independent of toolbox (though certain Starforged-specific sheets will override it)
-  - Impacts/debilities that prevent recovery of resources (e.g. wounded, shaken, unprepared) now 'lock' the condition meter in question (with a tooltip that identifies the culprit)
-  - Plus some features standard to ActiveEffects, including:
-    - Impacts/debilities can be marked/cleared from the actor token HUD
-    - Impacts/debilities show an icon on the actor token when marked
+  - Ironsworn-style debilities or Starforged-style impacts can be selected independent of toolbox (though certain Starforged-specific sheets will override this)
+  - Plus some features standard to ActiveEffects, including token HUD integration
+- Impacts/debilities that prevent recovery of resources (e.g. wounded, shaken, unprepared) now 'lock' the condition meter in question (with a tooltip that identifies the culprit)
+- Make player condition meters and momentum available as bar displays on actor tokens
+  - Under the hood: all meter fields are now objects with `max` and `value` properties, rather than a single number value
+- Under the hood: Migrate all actor and item subclasses to DataModel API. This brings several benefits such as stricter run-time validation which improve the reliability of the data used in `foundry-ironsworn`, and near-instant data migrations. It also makes it _much_ easier to implement data migrations for new features in the future.
 - Organize compendium packs into folders
 - Improve appearance of v11 compendium sidebar and popouts with the "Phosphor" theme
 - Under the hood: refactor all `RollTable`s and oracle rolls to use a single standardized pipeline (with `foundry-ironsworn`-style table roll messages) by default; certain kinds of results will fall back to FVTT-style messages instead.
