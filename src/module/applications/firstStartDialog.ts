@@ -37,32 +37,43 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 		ev.preventDefault()
 
 		// Character sheet
-		const setting = game.settings.get('core', 'sheetClasses')
-		foundry.utils.mergeObject(setting, {
+		const sheetClasses = game.settings.get('core', 'sheetClasses')
+		foundry.utils.mergeObject(sheetClasses, {
 			'Actor.character': 'ironsworn.IronswornCharacterSheetV2'
 		})
-		await game.settings.set('core', 'sheetClasses', setting)
+		await Promise.all([
+			game.settings.set('core', 'sheetClasses', sheetClasses),
+			game.settings.set('foundry-ironsworn', 'impacts', 'classic')
+		])
 
 		// Truths
-		new WorldTruthsDialog().render(true)
-		game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
-		this.close()
+		await Promise.all([
+			new WorldTruthsDialog().render(true),
+			game.settings.set('foundry-ironsworn', 'prompt-world-truths', false),
+			this.close()
+		])
 	}
 
 	async _selectStarforged(ev) {
 		ev.preventDefault()
 
 		// Character sheet
-		const setting = game.settings.get('core', 'sheetClasses')
-		foundry.utils.mergeObject(setting, {
+		const sheetClasses = game.settings.get('core', 'sheetClasses')
+		foundry.utils.mergeObject(sheetClasses, {
 			'Actor.character': 'ironsworn.StarforgedCharacterSheet'
 		})
-		await game.settings.set('core', 'sheetClasses', setting)
+
+		await Promise.all([
+			game.settings.set('core', 'sheetClasses', sheetClasses),
+			game.settings.set('foundry-ironsworn', 'impacts', 'starforged')
+		])
 
 		// Truths
-		new SFSettingTruthsDialogVue().render(true)
-		game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
-		this.close()
+		await Promise.all([
+			new SFSettingTruthsDialogVue().render(true),
+			game.settings.set('foundry-ironsworn', 'prompt-world-truths', false),
+			this.close()
+		])
 	}
 
 	static async maybeShow() {
