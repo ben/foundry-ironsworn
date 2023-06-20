@@ -1,7 +1,7 @@
 <template>
 	<AttrSlider
 		class="momentum-meter"
-		attr="momentum.value"
+		attr="momentum"
 		document-type="Actor"
 		:label-position="labelPosition"
 		:slider-style="props.sliderStyle"

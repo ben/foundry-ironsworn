@@ -2,7 +2,7 @@
 	<div
 		class="block"
 		:class="{ [$style.box]: true, ...classes }"
-		:data-tooltip="$t('IRONSWORN.Roll +x', { stat: $t(i18nKey) })"
+		:data-tooltip="formatRollPlusStat(attr, true)"
 		@click="click">
 		<label :class="$style.label">{{ $t(i18nKey) }}</label>
 		<div class="flexrow">
@@ -19,12 +19,16 @@
 
 <script lang="ts" setup>
 import type { Ref } from 'vue'
-import { inject, computed, capitalize } from 'vue'
+import { inject, computed } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
 import { IronswornPrerollDialog } from '../../rolls'
+import { formatRollPlusStat } from '../../rolls/ironsworn-roll-message'
 import { $ActorKey, ActorKey } from '../provisions'
 
-const props = defineProps<{ attr: string }>()
+const props = defineProps<{
+	/** The property key within `system` */
+	attr: string
+}>()
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 
@@ -32,7 +36,7 @@ const classes = computed(() => ({
 	clickable: !editMode.value,
 	'isiconbg-d10-tilt': !editMode.value
 }))
-const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
+const i18nKey = computed(() => `IRONSWORN.${props.attr.capitalize()}`)
 const editMode = computed(
 	() => !!(actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 )
@@ -40,10 +44,7 @@ const editMode = computed(
 function click() {
 	if (editMode.value) return
 
-	let attrName = game.i18n.localize('IRONSWORN.' + capitalize(props.attr))
-	if (attrName.startsWith('IRONSWORN.')) attrName = props.attr
-	const name = `${attrName} (${$actor?.name})`
-	IronswornPrerollDialog.showForStat(name, $actor?.system[props.attr], $actor)
+	IronswornPrerollDialog.showForStat(props.attr, $actor, true)
 }
 
 function increment() {

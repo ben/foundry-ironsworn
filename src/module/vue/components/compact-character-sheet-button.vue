@@ -22,18 +22,19 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { capitalize, computed, inject } from 'vue'
+import { computed, inject } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 
 const props = defineProps<{
+	/** The property key within `Actor#system` */
 	propKey: string
 }>()
 
 const isMomentum = props.propKey === 'momentum'
-const i18nKey = `IRONSWORN.${capitalize(props.propKey)}`
+const i18nKey = `IRONSWORN.${props.propKey.capitalize()}`
 const i18nStat = game.i18n.localize(i18nKey)
 const tooltip = computed(() =>
 	isMomentum
@@ -59,11 +60,7 @@ const burnMomentumTooltip = computed(() =>
 
 function click() {
 	if (isMomentum) return
-	IronswornPrerollDialog.showForStat(
-		i18nStat,
-		$actor?.system[props.propKey],
-		$actor
-	)
+	IronswornPrerollDialog.showForStat(props.propKey, $actor)
 }
 </script>
 

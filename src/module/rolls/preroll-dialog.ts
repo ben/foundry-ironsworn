@@ -1,8 +1,15 @@
-import type { ProgressTypeIronsworn, RollMethod, RollType } from 'dataforged'
-import { capitalize, cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
-import type { IronswornActor } from '../actor/actor'
+import type {
+	PlayerConditionMeter,
+	ProgressTypeIronsworn,
+	RollableStat,
+	RollMethod,
+	RollType,
+	Stat
+} from 'dataforged'
+import { cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
+import { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
-import type { IronswornItem } from '../item/item'
+import { IronswornItem } from '../item/item'
 import type {
 	PreRollOptions,
 	RollOutcome,
@@ -14,6 +21,10 @@ import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
 import { ChallengeResolutionDialog } from './challenge-resolution-dialog'
 import type { SFMoveTrigger } from '../item/subtypes/sfmove'
+import type { ConditionMeterSource } from '../fields/MeterField'
+import { ConditionMeterField } from '../fields/MeterField'
+import type { AssetConditionMeter } from '../item/subtypes/asset'
+import { AssetConditionMeterField } from '../item/subtypes/asset'
 
 interface showForMoveOpts {
 	actor?: IronswornActor
@@ -54,10 +65,55 @@ export function moveHasRollableOptions(move: IronswornItem<'sfmove'>) {
 	return options.length > 0
 }
 
+export function getStatData(
+	attr: string,
+	document:
+		| IronswornActor<'character'>
+		| IronswornActor<'starship'>
+		| IronswornActor<'shared'>
+		| IronswornItem<'asset'>,
+	appendNameToLabel = false
+): SourcedValue<number> | undefined {
+	const key = attr.toLowerCase()
+	if (key === 'progress') return undefined
+
+	let source: string
+	let value: number
+
+	const field = document.system.schema.getField(key) as
+		| foundry.data.fields.NumberField
+		| ConditionMeterField
+		| AssetConditionMeterField
+
+	if (field == null) return undefined
+
+	if (field instanceof ConditionMeterField) {
+		const data = document.system[key] as ConditionMeterSource
+		source = field.label
+		value = data.value
+	} else if (field instanceof AssetConditionMeterField) {
+		const data = document.system[key] as AssetConditionMeter
+		source = data.name
+		value = data.value
+	} else {
+		source = field.label
+		value = document.system[key]
+	}
+
+	if (source == null || value == null) return undefined
+
+	if (source.startsWith('IRONSWORN.')) source = game.i18n.localize(source)
+
+	if (appendNameToLabel && document.name != null)
+		source += ` (${document.name})`
+
+	return { source, value }
+}
+
 function chooseStatToRoll(
 	mode: RollMethod,
 	stats: string[],
-	actor: IronswornActor<'character'>
+	actor: IronswornActor<'character'> | IronswornActor<'starship'>
 ): SourcedValue | undefined {
 	const normalizedStats = stats.map((x) => x.toLowerCase())
 	let stat = normalizedStats[0]
@@ -77,8 +133,7 @@ function chooseStatToRoll(
 		throw new Error(`Cannot handle rolling with '${mode}' mode`)
 	}
 
-	const source = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
-	return { source, value: actor.system[stat] }
+	return getStatData(stat, actor)
 }
 
 /**
@@ -178,21 +233,23 @@ export class IronswornPrerollDialog extends Dialog<
 	}
 
 	static async showForStat(
-		name: string,
-		value: number,
-		actor?: IronswornActor<'character'>
+		...[dataforgedStat, document, appendNameToLabel]: Parameters<
+			typeof getStatData
+		>
 	) {
-		let statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
-		if (statText.startsWith('IRONSWORN.')) statText = name
-		const title = formatRollPlusStat(name)
+		const statData = getStatData(dataforgedStat, document, appendNameToLabel)
+		if (statData == null) return
+
+		const title = formatRollPlusStat(statData.source)
 
 		const prerollOptions: PreRollOptions = {
-			stat: {
-				source: name,
-				value
-			},
-
-			actorId: actor?.id ?? undefined
+			stat: statData,
+			actorId:
+				document instanceof IronswornActor
+					? (document.id as string)
+					: document instanceof IronswornItem
+					? (document.parent?.id as string)
+					: undefined
 		}
 
 		const content = await this.renderContent({
@@ -200,8 +257,8 @@ export class IronswornPrerollDialog extends Dialog<
 			action: true
 		})
 		const buttons = {
-			[name]: {
-				label: `<span class=button-text>${statText}</span>`,
+			[dataforgedStat]: {
+				label: `<span class="button-text">${statData.source}</span>`,
 				icon: '<i class="isicon-d10-tilt juicy"></i>',
 				callback: async (el: HTMLElement | JQuery<HTMLElement>) => {
 					void IronswornPrerollDialog.submitRoll(el, prerollOptions)
@@ -212,7 +269,7 @@ export class IronswornPrerollDialog extends Dialog<
 			title,
 			content,
 			buttons,
-			default: name
+			default: dataforgedStat
 		}).render(true)
 	}
 
@@ -344,13 +401,13 @@ export class IronswornPrerollDialog extends Dialog<
 		const buttons = {}
 		const addButton = (i: number, mode: RollMethod, stats: string[]) => {
 			const localizedStats = stats.map((s) =>
-				game.i18n.localize(`IRONSWORN.${capitalize(s)}`)
+				game.i18n.localize(`IRONSWORN.${s.capitalize()}`)
 			)
 
 			let label = localizedStats[0]
 			if (mode !== 'Any') {
 				label = game.i18n.format(
-					`IRONSWORN.PreRollMethod.${capitalize(mode)}`,
+					`IRONSWORN.PreRollMethod.${mode.capitalize()}`,
 					{
 						statList: localizedStats.join(', ')
 					}

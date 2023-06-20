@@ -64,6 +64,6 @@ export interface DelveDomainDataSource {
 }
 export interface DelveDomainDataProperties {
 	type: 'delve-domain'
-	data: DelveDomainDataPropertiesData
-	system: DelveDomainDataPropertiesData
+	data: DelveDomainData
+	system: DelveDomainData
 }

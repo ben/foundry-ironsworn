@@ -24,6 +24,7 @@ module.exports = {
 	rules: {
 		// nesting *more* pointy brackets is  harder to read with most generics, IMO
 		'@typescript-eslint/array-type': 'off',
+		'@typescript-eslint/method-signature-style': 'off',
 		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/no-unused-vars': [1, { argsIgnorePattern: '^_' }],
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -56,7 +57,18 @@ module.exports = {
 					{
 						name: 'lodash-es',
 						importNames: ['clamp'],
-						message: "Please use FVTT's Math.clamped instead."
+						message: 'Please use FVTT Math.clamped instead.'
+					},
+					{
+						name: 'lodash-es',
+						importNames: ['capitalize'],
+						message: 'Please use FVTT String#capitalize instead.'
+					},
+					{
+						name: 'lodash-es',
+						importNames: ['range'],
+						message:
+							'Please use FVTT Array#fromRange instead, where possible. Note that Array#fromRange orders its parameters differently, and its maximum is inclusive rather than exclusive.'
 					}
 				]
 			}

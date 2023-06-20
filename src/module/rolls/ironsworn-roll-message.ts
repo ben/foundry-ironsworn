@@ -1,13 +1,8 @@
 import type { IOutcomeInfo, RollMethod } from 'dataforged'
-import {
-	capitalize,
-	compact,
-	fromPairs,
-	isUndefined,
-	kebabCase
-} from 'lodash-es'
+import { compact, fromPairs, isUndefined, kebabCase } from 'lodash-es'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
+import { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
 import { Oracles } from '../roll-table/oracles'
 import { enrichMarkdown } from '../vue/vue-plugin'
@@ -31,10 +26,10 @@ interface MoveTemplateData {
  * // returns "roll +heart" for en.json
  * ```
  */
-export function formatRollPlusStat(stat: string) {
-	let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
-	if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
-	return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
+export function formatRollPlusStat(stat: string, initialCaps = false) {
+	if (stat.startsWith('IRONSWORN.')) stat = game.i18n.localize(stat)
+	const key = initialCaps ? 'IRONSWORN.Roll +x' : 'IRONSWORN.roll +x'
+	return game.i18n.format(key, { stat })
 }
 
 /**
@@ -53,7 +48,7 @@ export function formatRollMethod(rollMethod: RollMethod, stats: string[]) {
 	}
 	// canonical triggers have 2 stats; there's a good chance a nice string already exists, so we check for that first.
 	const localizedStats = stats.map((stat) =>
-		game.i18n.localize('IRONSWORN.' + capitalize(stat))
+		game.i18n.localize('IRONSWORN.' + stat.capitalize())
 	)
 	const methodKeyRoot = `IRONSWORN.roll method.${rollMethod}`
 	const possibleNiceKey = `${methodKeyRoot}.${stats.length}`
@@ -236,7 +231,7 @@ export class IronswornRollMessage {
 			return { title: `${move.name} +${stat.source}` }
 		}
 		let localizedStat = game.i18n.localize(
-			'IRONSWORN.' + capitalize(stat.source)
+			'IRONSWORN.' + stat.source.capitalize()
 		)
 		if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat.source
 		return {

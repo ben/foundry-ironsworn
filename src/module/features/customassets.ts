@@ -1,5 +1,4 @@
 import type { IAsset, IAssetType } from 'dataforged'
-import { capitalize } from 'vue'
 import { renderLinksInStr, hashLookup } from '../dataforged'
 import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
 import type { IronswornItem } from '../item/item'
@@ -58,7 +57,7 @@ async function compendiumMoves(
 	if (pack == null) throw new Error(`can't load pack ${compendiumName}`)
 
 	const i18n = (categoryName: string, extension: string) => {
-		const capCat = capitalize(categoryName)
+		const capCat = categoryName.capitalize()
 		return game.i18n.localize(
 			`IRONSWORN.Asset Categories.${i18nkeyslug}.${capCat}.${extension}`
 		)
