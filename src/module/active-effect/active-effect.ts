@@ -41,7 +41,7 @@ export class IronActiveEffect extends ActiveEffect {
 		return this.getFlag('foundry-ironsworn', 'type')
 	}
 
-	get impactSubtype() {
+	get impactType() {
 		if (this.type !== 'impact') return null
 		switch (this.getFlag('foundry-ironsworn', 'ruleset')) {
 			case 'starforged':
@@ -200,52 +200,59 @@ export class IronActiveEffect extends ActiveEffect {
 	}
 
 	async toMessage(active: boolean) {
-		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
-		const params = gameIsStarforged
-			? { impact: game.i18n.localize(this.name) }
-			: { debility: game.i18n.localize(this.name) }
-		const i18nKey = active
-			? CONFIG.IRONSWORN.IronActiveEffect.impactMarkedKey
-			: CONFIG.IRONSWORN.IronActiveEffect.impactClearedKey
-		const msg = game.i18n.format(i18nKey, params)
 		const ActorClass = getDocumentClass('Actor')
-		const speaker = this.parent
-		if (!(speaker instanceof ActorClass)) return
-		return await sendToChat(speaker, msg)
+		const actor = this.parent
+		if (!(actor instanceof ActorClass)) return
+
+		const action = active ? 'Marked' : 'Cleared'
+
+		let msg: string
+		switch (this.type) {
+			case 'impact':
+				{
+					const params = { [actor.impactType]: game.i18n.localize(this.name) }
+
+					const i18nKey = `IRONSWORN.ChatAlert.${action}${actor.impactType.capitalize()}`
+
+					msg = game.i18n.format(i18nKey, params)
+				}
+				break
+			default:
+				return
+		}
+
+		return await sendToChat(actor, msg)
 	}
 
 	/**
-	 * Makes active effect changes obey a numeric field's `min` and `max` properties.
-	 * @remarks Mutates `changes`
+	 * Helper that clamps number field changes, so that they respect the changed field's `min` and `max` properties. Mutates `changes`.
 	 */
-	static #clampChangesToField(
+	static #clampFieldChange(
 		actor: InstanceType<
 			ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
 		>,
-		changes: object,
+		changes: Record<string, unknown>,
 		attr: string
 	) {
 		const value = changes[attr]
 
-		if (typeof value !== 'number') return changes
+		if (typeof value !== 'number') return changes // not a number value, skip it
 		const [head, ...tail] = attr.split('.')
-		if (head !== 'system') return changes
+		if (head !== 'system') return changes // not our property, skip it
 
 		const field = actor.system.schema.getField(tail)
 
-		// const systemAttr =
+		if (!(field instanceof foundry.data.fields.NumberField)) return changes // not a number field, skip it
 
-		if (!(field instanceof foundry.data.fields.NumberField)) return changes
 		const { min, max } = field
 		let newValue: number
 		if (typeof min === 'number' && typeof max === 'number')
 			newValue = Math.clamped(value, min, max)
 		else if (typeof min === 'number') newValue = Math.max(value, min)
-		else if (typeof max === 'number') newValue = Math.max(value, max)
-		else return changes
+		else if (typeof max === 'number') newValue = Math.min(value, max)
+		else return changes // nothing to clamp, skip it
 
 		changes[attr] = newValue
-
 		return changes
 	}
 
@@ -254,20 +261,15 @@ export class IronActiveEffect extends ActiveEffect {
 	 * @see https://github.com/foundryvtt/foundryvtt/issues/9468
 	 */
 	override apply(actor, change) {
-		let changes = super.apply(actor, change) as object
+		let changes = super.apply(actor, change) as Record<string, unknown> // a flattened dot notation object
 
 		let updated = false
 
-		// this is intentionally limited in scope for now, but this could probably be applied to other attributes
-		for (const attr of [
-			IronActiveEffect.MOMENTUM_RESET_PATH,
-			IronActiveEffect.MOMENTUM_MAX_PATH
-		]) {
+		for (const attr in changes)
 			if (attr in changes) {
-				changes = IronActiveEffect.#clampChangesToField(actor, changes, attr)
-				updated = true
+				changes = IronActiveEffect.#clampFieldChange(actor, changes, attr)
+				updated ||= true
 			}
-		}
 
 		if (updated) foundry.utils.mergeObject(actor, changes)
 
@@ -324,26 +326,6 @@ export class IronActiveEffect extends ActiveEffect {
 		}
 	}
 
-	static get impactMarkedKey() {
-		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
-		return gameIsStarforged
-			? `IRONSWORN.ChatAlert.MarkedImpact`
-			: 'IRONSWORN.ChatAlert.MarkedDebility'
-	}
-
-	static get impactClearedKey() {
-		const gameIsStarforged = IronswornSettings.starforgedToolsEnabled
-		return gameIsStarforged
-			? `IRONSWORN.ChatAlert.ClearedImpact`
-			: 'IRONSWORN.ChatAlert.ClearedDebility'
-	}
-
-	static get customLabelFallback() {
-		return IronswornSettings.starforgedToolsEnabled
-			? game.i18n.localize('IRONSWORN.IMPACT.Custom')
-			: game.i18n.localize('IRONSWORN.DEBILITY.Custom')
-	}
-
 	static IMPACT_ICON_DEFAULT = 'icons/svg/downgrade.svg'
 
 	/**
@@ -384,12 +366,13 @@ export class IronActiveEffect extends ActiveEffect {
 		name,
 		icon,
 		noRecover,
+		ruleset,
 		global,
 		globalHint,
 		category,
 		disabled
 	}: ImpactOptions) {
-		if (icon == null) icon = this.IMPACT_ICON_DEFAULT
+		icon ||= this.IMPACT_ICON_DEFAULT
 		const result: StatusEffectV11 = {
 			id,
 			disabled,
@@ -403,13 +386,20 @@ export class IronActiveEffect extends ActiveEffect {
 					noRecover,
 					globalHint,
 					global,
-					category
+					category,
+					ruleset
 				}
 			}
 		}
 
 		if (result.name == null || result.name.length === 0)
-			result.name = this.customLabelFallback
+			result.name =
+				typeof ruleset === 'string'
+					? `IRONSWORN.${(ruleset === 'classic'
+							? 'debilities'
+							: 'impacts'
+					  )?.toUpperCase()}.Custom`
+					: ''
 
 		if (noRecover != null)
 			result.changes?.push(
