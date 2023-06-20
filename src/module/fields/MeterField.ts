@@ -48,12 +48,14 @@ export abstract class MeterField<
 			max: new Fields.NumberField({
 				integer: true,
 				initial: meterMax,
-				max: absoluteMax
+				max: absoluteMax,
+				min: absoluteMin
 			}),
 			min: new Fields.NumberField({
 				integer: true,
 				readonly: true,
 				initial: meterMin,
+				max: absoluteMax,
 				min: absoluteMin
 			}),
 			...(extendFields ?? {})
