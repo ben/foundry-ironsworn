@@ -1,8 +1,5 @@
-import type {
-	EffectChangeData,
-	EffectChangeDataConstructorData
-} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
-import type { PartialBy, PartialDeep } from 'dataforged'
+import type { EffectChangeDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
+import type { PartialBy } from 'dataforged'
 import { IronswornSettings } from '../helpers/settings'
 import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
 import type {
@@ -11,7 +8,6 @@ import type {
 } from '../../types/helperTypes'
 import { sendToChat } from '../features/chat-alert'
 import type { ImpactOptions } from './types'
-import { MomentumField } from '../fields/MeterField'
 import type { ImpactFlags } from './config'
 
 type Ruleset = 'starforged' | 'classic'
@@ -26,12 +22,12 @@ export class IronActiveEffect extends ActiveEffect {
 		impact: [
 			{
 				key: this.MOMENTUM_MAX_PATH,
-				mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM,
+				mode: CONST.ACTIVE_EFFECT_MODES.ADD,
 				value: '-1'
 			},
 			{
 				key: this.MOMENTUM_RESET_PATH,
-				mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM,
+				mode: CONST.ACTIVE_EFFECT_MODES.ADD,
 				value: '-1'
 			}
 		]
@@ -216,6 +212,66 @@ export class IronActiveEffect extends ActiveEffect {
 		const speaker = this.parent
 		if (!(speaker instanceof ActorClass)) return
 		return await sendToChat(speaker, msg)
+	}
+
+	/**
+	 * Makes active effect changes obey a numeric field's `min` and `max` properties.
+	 * @remarks Mutates `changes`
+	 */
+	static #clampChangesToField(
+		actor: InstanceType<
+			ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
+		>,
+		changes: object,
+		attr: string
+	) {
+		const value = changes[attr]
+
+		if (typeof value !== 'number') return changes
+		const [head, ...tail] = attr.split('.')
+		if (head !== 'system') return changes
+
+		const field = actor.system.schema.getField(tail)
+
+		// const systemAttr =
+
+		if (!(field instanceof foundry.data.fields.NumberField)) return changes
+		const { min, max } = field
+		let newValue: number
+		if (typeof min === 'number' && typeof max === 'number')
+			newValue = Math.clamped(value, min, max)
+		else if (typeof min === 'number') newValue = Math.max(value, min)
+		else if (typeof max === 'number') newValue = Math.max(value, max)
+		else return changes
+
+		changes[attr] = newValue
+
+		return changes
+	}
+
+	/**
+	 * @remarks AEs don't respect field minimums/maximums out of the box, so we do some DIY for the attributes where it matters.
+	 * @see https://github.com/foundryvtt/foundryvtt/issues/9468
+	 */
+	override apply(actor, change) {
+		let changes = super.apply(actor, change) as object
+
+		let updated = false
+
+		// this is intentionally limited in scope for now, but this could probably be applied to other attributes
+		for (const attr of [
+			IronActiveEffect.MOMENTUM_RESET_PATH,
+			IronActiveEffect.MOMENTUM_MAX_PATH
+		]) {
+			if (attr in changes) {
+				changes = IronActiveEffect.#clampChangesToField(actor, changes, attr)
+				updated = true
+			}
+		}
+
+		if (updated) foundry.utils.mergeObject(actor, changes)
+
+		return changes
 	}
 
 	override _onCreate(data, options, userId) {
@@ -416,53 +472,6 @@ export interface IronActiveEffect {
 	 */
 	get modifiesActor(): boolean
 }
-
-Hooks.on(
-	'applyActiveEffect',
-	/**
-	 * Apply an ActiveEffect that uses a CUSTOM application mode.
-	 * @param actor The actor the active effect is being applied to
-	 * @param change The change data being applied
-	 * @param current The current value being modified
-	 * @param delta The parsed value of the change object
-	 * @param changes An object which accumulates changes to be applied
-	 */
-	(
-		actor: InstanceType<
-			ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
-		>,
-		change: EffectChangeData,
-		current: boolean | string | number,
-		delta: typeof current,
-		changes: PartialDeep<typeof actor>
-	) => {
-		if (actor.type !== 'character') return change
-		switch (change.key) {
-			case CONFIG.IRONSWORN.IronActiveEffect.MOMENTUM_MAX_PATH:
-				if (typeof current !== 'number' || typeof delta !== 'number')
-					throw new Error()
-				changes[change.key] = Math.clamped(
-					current + delta,
-					MomentumField.MIN,
-					MomentumField.MAX
-				)
-				break
-			case CONFIG.IRONSWORN.IronActiveEffect.MOMENTUM_RESET_PATH:
-				if (typeof current !== 'number' || typeof delta !== 'number')
-					throw new Error()
-				changes[change.key] = Math.clamped(
-					current + delta,
-					MomentumField.RESET_MIN,
-					MomentumField.MAX
-				)
-				break
-			default:
-				break
-		}
-
-		return changes
-	}
-)
 
 /**
  * Disable the button if no impacts are available for the actor, and set title attributes to title case.
