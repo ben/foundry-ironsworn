@@ -25,7 +25,7 @@ declare global {
 				 */
 				updateSource(
 					changes?: DeepPartial<SourceDataType<ConcreteDocumentData>>,
-					options?: DataModel.UpdateSourceOptions
+					options?: foundry.abstract.DataModel.UpdateSourceOptions
 				): DeepPartial<SourceDataType<ConcreteDocumentData>>
 			}
 			export namespace Document {
