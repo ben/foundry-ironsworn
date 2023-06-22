@@ -9,22 +9,14 @@ declare global {
 				 * A subclass of [DataField]{@link DataField} which deals with array-typed data.
 				 */
 				export class ArrayField<
+					SourceData extends any[] = any[],
+					ConcreteData extends Iterable<any> = SourceData,
 					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
-					ConcreteData extends Iterable<
-						foundry.abstract.ConcreteDataOf<ElementField>
-					> = Array<foundry.abstract.ConcreteDataOf<ElementField>>,
-					Options extends ArrayField.Options<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
+					Options extends foundry.data.fields.DataField.Options<
+						SourceData,
 						ConcreteData
-					> = ArrayField.Options<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
-						ConcreteData
-					>
-				> extends DataField<
-					Array<foundry.abstract.SourceDataOf<ElementField>>,
-					ConcreteData,
-					Options
-				> {
+					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
+				> extends DataField<SourceData, ConcreteData, Options> {
 					/**
 					 * @param element         A DataField instance which defines the type of element contained in the Array.
 					 * @param options  Options which configure the behavior of the field
@@ -33,12 +25,7 @@ declare global {
 
 					element: ElementField
 
-					static _validateElementType<
-						T extends ConstructorOf<ArrayField<any, any, any>>
-					>(
-						this: T,
-						element: foundry.abstract.SourceDataOf<InstanceType<T>> | unknown
-					)
+					static _validateElementType(element: unknown)
 
 					/**
 					 * Validate every element of the ArrayField
@@ -48,37 +35,25 @@ declare global {
 					 */
 					protected _validateElements(
 						value: unknown[],
-						options: DataField.ValidateOptions<
-							foundry.abstract.SourceDataOf<ElementField>
-						>
-					): DataModelValidationFailure<
-						foundry.abstract.SourceDataOf<ElementField>
-					> | void
+						options: DataField.ValidateOptions<SourceData>
+					): DataModelValidationFailure<SourceData> | void
 
 					/**
 					 * Migrate this field's candidate source data.
 					 * @param sourceData Candidate source data of the root model
 					 * @param fieldData The value of this field within the source data
 					 */
-					migrateSource(sourceData: object, fieldData: any): void
+					migrateSource(sourceData: unknown, fieldData: unknown): void
 				}
 				export interface ArrayField<
+					SourceData extends any[] = any[],
+					ConcreteData extends Iterable<any> = SourceData,
 					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
-					ConcreteData extends Iterable<
-						foundry.abstract.ConcreteDataOf<ElementField>
-					> = Array<foundry.abstract.ConcreteDataOf<ElementField>>,
-					Options extends ArrayField.Options<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
+					Options extends foundry.data.fields.DataField.Options<
+						SourceData,
 						ConcreteData
-					> = ArrayField.Options<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
-						ConcreteData
-					>
-				> extends DataField<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
-						ConcreteData,
-						Options
-					> {}
+					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
+				> extends DataField<SourceData, ConcreteData, Options> {}
 
 				export namespace ArrayField {
 					export interface Options<
@@ -95,32 +70,24 @@ declare global {
 				}
 
 				export class SetField<
+					SourceData extends any[] = any[],
+					ConcreteData extends Set<any> = Set<any>,
 					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
-					ConcreteData extends Set<
-						foundry.abstract.ConcreteDataOf<ElementField>
-					> = Set<foundry.abstract.ConcreteDataOf<ElementField>>,
-					Options extends ArrayField.Options<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
+					Options extends foundry.data.fields.DataField.Options<
+						SourceData,
 						ConcreteData
-					> = ArrayField.Options<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
-						ConcreteData
-					>
-				> extends ArrayField<ElementField, ConcreteData, Options> {}
+					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
+				> extends ArrayField<SourceData, ConcreteData, ElementField, Options> {}
 
 				export interface SetField<
+					SourceData extends any[] = any[],
+					ConcreteData extends Set<any> = Set<any>,
 					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
-					ConcreteData extends Set<
-						foundry.abstract.ConcreteDataOf<ElementField>
-					> = Set<foundry.abstract.ConcreteDataOf<ElementField>>,
-					Options extends ArrayField.Options<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
+					Options extends foundry.data.fields.DataField.Options<
+						SourceData,
 						ConcreteData
-					> = ArrayField.Options<
-						Array<foundry.abstract.SourceDataOf<ElementField>>,
-						ConcreteData
-					>
-				> extends ArrayField<ElementField, ConcreteData, Options> {}
+					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
+				> extends ArrayField<SourceData, ConcreteData, ElementField, Options> {}
 
 				// // TODO
 				// // eslint-disable-next-line @typescript-eslint/no-extraneous-class
