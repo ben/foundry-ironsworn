@@ -15,7 +15,7 @@ export class FoeData
 		return false
 	}
 
-	static override defineSchema(): DataSchema<FoeDataSourceData> {
+	static override defineSchema() {
 		return {
 			dfid: new DataforgedIDField()
 		}

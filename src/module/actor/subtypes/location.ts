@@ -20,7 +20,7 @@ export class LocationData
 			subtype: new fields.StringField({ initial: 'star' }),
 			klass: new fields.StringField({ nullable: true }),
 			description: new fields.HTMLField()
-		}
+		} as const
 	}
 }
 export interface LocationData extends LocationDataSourceData {}

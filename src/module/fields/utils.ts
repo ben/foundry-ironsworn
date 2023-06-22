@@ -62,7 +62,23 @@ export type SourceData<
 	Extract<SourceConfig[DocumentInstance['documentName']], { type: Subtype }>
 
 export type DataSchema<
-	T extends Record<string, any> = Record<string, unknown>
+	SourceData extends Record<string, any> = Record<string, unknown>,
+	ConcreteData extends Record<string, any> = SourceData
 > = {
-	[K in keyof T]-?: foundry.data.fields.DataField<any, T[K], any>
+	[K in keyof ConcreteData]-?: SelectFieldTypeFor<
+		K extends keyof SourceData ? NonNullish<SourceData[K]> : any,
+		NonNullish<ConcreteData[K]>
+	>
 }
+
+type NonNullish<T> = Exclude<T, undefined | null>
+
+type SelectFieldTypeFor<SourceData, ConcreteData> = SourceData extends number
+	? foundry.data.fields.NumberField
+	: SourceData extends string
+	? ConcreteData extends string
+		? foundry.data.fields.StringField
+		: foundry.data.fields.StringField<string, ConcreteData>
+	: SourceData extends boolean
+	? foundry.data.fields.BooleanField
+	: foundry.data.fields.DataField<SourceData, ConcreteData, any>

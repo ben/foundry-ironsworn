@@ -1,8 +1,10 @@
 import { ChallengeRank } from '../constants'
 import { enumEntries } from '../fields/utils'
 
-export class ChallengeRankField extends foundry.data.fields
-	.NumberField<ChallengeRank> {
+export class ChallengeRankField extends foundry.data.fields.NumberField<
+	ChallengeRank,
+	ChallengeRank
+> {
 	constructor(
 		options?: Partial<
 			Omit<
