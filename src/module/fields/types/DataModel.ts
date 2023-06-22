@@ -676,7 +676,9 @@ declare global {
 			export abstract class TypeDataModel<
 				SourceData extends object = object,
 				ConcreteData extends object = SourceData,
-				Parent extends AnyDocument = AnyDocument
+				Parent extends AnyDocument & { system: object } = AnyDocument & {
+					system: object
+				}
 			> extends DataModel<SourceData, ConcreteData, Parent> {
 				/**
 				 * The package that is providing this DataModel for the given sub-type.
@@ -697,7 +699,9 @@ declare global {
 			export interface TypeDataModel<
 				SourceData extends object = object,
 				ConcreteData extends object = SourceData,
-				Parent extends AnyDocument = AnyDocument
+				Parent extends AnyDocument & { system: object } = AnyDocument & {
+					system: object
+				}
 			> extends DataModel<SourceData, ConcreteData, Parent> {}
 			export namespace TypeDataModel {}
 
