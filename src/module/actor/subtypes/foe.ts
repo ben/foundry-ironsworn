@@ -4,6 +4,7 @@ import type { IronswornActor } from '../actor'
 
 export class FoeData extends foundry.abstract.TypeDataModel<
 	FoeDataSourceData,
+	FoeDataSourceData,
 	IronswornActor<'foe'>
 > {
 	static _enableV10Validation = true

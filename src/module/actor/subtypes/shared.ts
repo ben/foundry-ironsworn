@@ -8,6 +8,7 @@ import type { IronswornActor } from '../actor'
 
 export class SharedData extends foundry.abstract.TypeDataModel<
 	SharedDataSourceData,
+	SharedDataSourceData,
 	IronswornActor<'shared'>
 > {
 	static _enableV10Validation = true
@@ -15,6 +16,7 @@ export class SharedData extends foundry.abstract.TypeDataModel<
 	static override defineSchema(): DataSchema<SharedDataSourceData> {
 		return {
 			biography: new foundry.data.fields.HTMLField(),
+			// @ts-expect-error
 			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' })
 		}
 	}

@@ -9,34 +9,35 @@ declare global {
 				 * A subclass of [DataField]{@link DataField} which deals with array-typed data.
 				 */
 				export class ArrayField<
+					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
 					SourceData extends any[] = any[],
 					ConcreteData extends Iterable<any> = SourceData,
-					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
 					Options extends foundry.data.fields.DataField.Options<
 						SourceData,
 						ConcreteData
 					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
 				> extends DataField<SourceData, ConcreteData, Options> {
 					/**
-					 * @param element         A DataField instance which defines the type of element contained in the Array.
-					 * @param options  Options which configure the behavior of the field
+					 * @param element - A DataField instance which defines the type of element contained in the Array.
+					 * @param options - Options which configure the behavior of the field
 					 */
 					constructor(element: ElementField, options?: Partial<Options>)
 
 					element: ElementField
 
-					static _validateElementType(element: unknown)
+					static _validateElementType(element: unknown): void
 
 					/**
 					 * Validate every element of the ArrayField
 					 * @param value The array to validate
 					 * @param options Validation options
 					 * @returns A validation failure if any of the elements failed validation, otherwise void.
+					 * @throws {DataModelValidationFailure<SourceData>}
 					 */
 					protected _validateElements(
 						value: unknown[],
-						options: DataField.ValidateOptions<SourceData>
-					): DataModelValidationFailure<SourceData> | void
+						options?: DataField.ValidateOptions<SourceData>
+					): void
 
 					/**
 					 * Migrate this field's candidate source data.
@@ -45,15 +46,11 @@ declare global {
 					 */
 					migrateSource(sourceData: unknown, fieldData: unknown): void
 				}
-				export interface ArrayField<
-					SourceData extends any[] = any[],
-					ConcreteData extends Iterable<any> = SourceData,
-					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
-					Options extends foundry.data.fields.DataField.Options<
-						SourceData,
-						ConcreteData
-					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
-				> extends DataField<SourceData, ConcreteData, Options> {}
+
+				// type FieldConcreteData<T extends foundry.data.fields.DataField.Any> =
+				// 	ReturnType<T['initialize']>
+				// type FieldSourceData<T extends foundry.data.fields.DataField.Any> =
+				// 	ReturnType<T['toObject']>
 
 				export namespace ArrayField {
 					export interface Options<
@@ -70,24 +67,14 @@ declare global {
 				}
 
 				export class SetField<
+					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
 					SourceData extends any[] = any[],
 					ConcreteData extends Set<any> = Set<any>,
-					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
 					Options extends foundry.data.fields.DataField.Options<
 						SourceData,
 						ConcreteData
 					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
-				> extends ArrayField<SourceData, ConcreteData, ElementField, Options> {}
-
-				export interface SetField<
-					SourceData extends any[] = any[],
-					ConcreteData extends Set<any> = Set<any>,
-					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
-					Options extends foundry.data.fields.DataField.Options<
-						SourceData,
-						ConcreteData
-					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
-				> extends ArrayField<SourceData, ConcreteData, ElementField, Options> {}
+				> extends ArrayField<ElementField, SourceData, ConcreteData, Options> {}
 
 				// // TODO
 				// // eslint-disable-next-line @typescript-eslint/no-extraneous-class

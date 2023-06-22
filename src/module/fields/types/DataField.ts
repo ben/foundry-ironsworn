@@ -16,6 +16,7 @@ declare global {
 					constructor(options?: Partial<Options>)
 
 					static _defaults: DataField.Options
+					options: Options
 
 					/**
 					 * Whether this field defines part of a Document/Embedded Document hierarchy.
@@ -33,7 +34,6 @@ declare global {
 
 					/**
 					 * A dot-separated string representation of the field path within the parent schema.
-					 * @type {string}
 					 */
 					get fieldPath(): string
 
@@ -41,14 +41,10 @@ declare global {
 					 * Apply a function to this DataField which propagates through recursively to any contained data schema.
 					 * @param fn The function to apply
 					 * @param value The current value of this field
-					 * @param {object} [options={}]         Additional options passed to the applied function
+					 * @param options         Additional options passed to the applied function
 					 * @returns The results object
 					 */
-					apply(
-						fn: MethodKeys<this, (value: any, options?: any) => any> | AnyFn,
-						value: ConcreteData,
-						options?
-					): DeepPartial<ConcreteData>
+					apply(fn, value, options?): unknown // DeepPartial<ConcreteData>
 
 					/* -------------------------------------------- */
 					/*  Field Cleaning                              */
@@ -62,10 +58,7 @@ declare global {
 					 * @param options Additional options for how the field is cleaned
 					 * @returns The cast value
 					 */
-					clean(
-						value: SourceData | unknown,
-						options: DataField.CleanOptions
-					): ConcreteData
+					clean(value: SourceData | unknown, options: DataField.CleanOptions) // ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -75,10 +68,7 @@ declare global {
 					 * @param options Additional options for how the field is cleaned.
 					 * @returns The cleaned value.
 					 */
-					protected _cleanType(
-						value: ConcreteData,
-						options: DataField.CleanOptions
-					): ConcreteData
+					protected _cleanType(value, options) // ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -87,7 +77,7 @@ declare global {
 					 * @param value The provided non-default value
 					 * @returns The standardized value
 					 */
-					protected _cast(value: unknown): ConcreteData
+					protected _cast(value): ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -167,7 +157,7 @@ declare global {
 					initialize(
 						value: SourceData,
 						model: foundry.abstract.DataModel.AnyOrDoc,
-						options: object
+						options?: object
 					): ConcreteData
 
 					/**

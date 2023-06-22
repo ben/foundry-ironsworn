@@ -11,17 +11,17 @@ import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
 
 export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
+	CharacterDataSourceData,
 	IronswornActor<'character'>
 > {
 	constructor(
-		...args: ConstructorParameters<
-			typeof foundry.abstract.TypeDataModel<
-				CharacterDataSourceData,
-				IronswornActor<'character'>
-			>
-		>
+		data: CharacterDataSourceData,
+		options: foundry.data.fields.DataField.Options<
+			CharacterDataSourceData,
+			CharacterDataSourceData
+		> & { parent: IronswornActor<'character'> }
 	) {
-		super(...args)
+		super(data, options)
 		this.burnMomentum = this.burnMomentum.bind(this)
 	}
 
@@ -63,7 +63,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 		)
 	}
 
-	static override defineSchema(): DataSchema<CharacterDataSourceData> {
+	static override defineSchema() {
 		const fields = foundry.data.fields
 		return {
 			biography: new fields.HTMLField(),

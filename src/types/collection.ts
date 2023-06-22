@@ -3,6 +3,9 @@
  * This concept is reused throughout Foundry VTT where a collection of uniquely identified elements is required.
  */
 
+import type { AnyDocumentData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/data.mjs'
+import type { DocumentConstructor } from './helperTypes'
+
 type TestFn<V, K, C, S = V> = (
 	value: V,
 	key: K,

@@ -27,7 +27,7 @@ export class ChallengeRankField extends foundry.data.fields
 		})
 	}
 
-	override _cast(value: unknown) {
+	override _cast(value) {
 		switch (true) {
 			// migration: "formidible" -> "formidable"
 			// TODO: use this instead of migration #1

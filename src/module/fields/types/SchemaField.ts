@@ -76,25 +76,14 @@ declare global {
 					 * @param fieldName       A field path like ["abilities", "strength"] or "abilities.strength"
 					 * @returns The corresponding DataField definition for that field, or undefined
 					 */
-					getField(
-						fieldName: string[] | string
-					): SchemaField.Any | DataField.Any | undefined
-
-					// override _getField(path): undefined | this
-					// override _cast(value) // TODO
-					// _cleanType(data, options) // TODO
-					// override initialize(value, model, options) // TODO
-					// override _validateType(data, options) // TODO
-					// override _validateModel(changes, options) // TODO
-					// override toObject(value) // TODO
-					// override apply(fn, data, options) // TODO
+					getField(fieldName: string[] | string): DataField.Any | undefined
 
 					/**
 					 * Migrate this field's candidate source data.
 					 * @param {object} sourceData   Candidate source data of the root model
 					 * @param {any} fieldData       The value of this field within the source data
 					 */
-					migrateSource(sourceData, fieldData) // TODO
+					migrateSource(sourceData, fieldData): void | SourceData // TODO
 				}
 				export interface SchemaField<
 					SourceData extends object = object,
