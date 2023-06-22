@@ -9,12 +9,14 @@ declare global {
 				/**
 				 * A special class of {@link DataField} which defines a data schema.
 				 */
-				export class SchemaField<ConcreteData extends object>
-					extends DataField<ConcreteData, SchemaField.Options<ConcreteData>>
-					implements
-						Iterable<ValueOf<DataSchema<ConcreteData>>>,
-						Omit<SchemaField.Options<ConcreteData>, 'validate'>
-				{
+				export class SchemaField<
+					SourceData extends object = object,
+					ConcreteData extends object = SourceData,
+					Options extends SchemaField.Options<
+						SourceData,
+						ConcreteData
+					> = SchemaField.Options<SourceData, ConcreteData>
+				> extends DataField<ConcreteData, SchemaField.Options<ConcreteData>> {
 					constructor(
 						fields: DataSchema<ConcreteData>,
 						options?: Partial<SchemaField.Options<ConcreteData>>
@@ -94,17 +96,31 @@ declare global {
 					 */
 					migrateSource(sourceData, fieldData) // TODO
 				}
+				export interface SchemaField<
+					SourceData extends object = object,
+					ConcreteData extends object = SourceData,
+					Options extends SchemaField.Options<
+						SourceData,
+						ConcreteData
+					> = SchemaField.Options<SourceData, ConcreteData>
+				> extends Iterable<ValueOf<DataSchema<ConcreteData>>>,
+						Omit<
+							SchemaField.Options<SourceData, ConcreteData>,
+							'validate' | 'initial'
+						> {}
 				export namespace SchemaField {
 					/** Any SchemaField. */
-					export type Any = SchemaField<any>
-					export interface Options<ConcreteData extends object>
-						extends DataField.Options<ConcreteData> {
+					export type Any = SchemaField<any, any, any>
+					export interface Options<
+						SourceData extends object = object,
+						ConcreteData extends object = SourceData
+					> extends DataField.Options<SourceData, ConcreteData> {
 						/** @default true */
-						required: DataField.Options<ConcreteData>['required']
+						required: DataField.Options<SourceData, ConcreteData>['required']
 						/** @default false */
-						nullable: DataField.Options<ConcreteData>['nullable']
+						nullable: DataField.Options<SourceData, ConcreteData>['nullable']
 						/** @default {} */
-						initial: DataField.Options<ConcreteData>['initial']
+						initial: DataField.Options<SourceData, ConcreteData>['initial']
 					}
 				}
 
@@ -112,17 +128,32 @@ declare global {
 				 * A subclass of [ObjectField]{@link ObjectField} which embeds some other DataModel definition as an inner object.
 				 */
 				export class EmbeddedDataField<
-					T extends typeof foundry.abstract.DataModel<any, any>
-				> extends SchemaField<InstanceType<T>['schema']['fields']> {
+					ConcreteConstructor extends foundry.abstract.DataModelConstructor<
+						any,
+						any,
+						any
+					> = foundry.abstract.DataModelConstructor<any, any, any>,
+					Options extends foundry.data.fields.SchemaField.Options<
+						InstanceType<ConcreteConstructor>['_source'],
+						InstanceType<ConcreteConstructor>
+					> = foundry.data.fields.SchemaField.Options<
+						InstanceType<ConcreteConstructor>['_source'],
+						InstanceType<ConcreteConstructor>
+					>
+				> extends SchemaField<
+					InstanceType<ConcreteConstructor>['_source'],
+					InstanceType<ConcreteConstructor>,
+					Options
+				> {
 					/**
 					 * @param model - The class of DataModel which should be embedded in this field
 					 * @param options - Options which configure the behavior of the field
 					 */
-					constructor(model: T, options?: Partial<DataField.Options>)
+					constructor(model: ConcreteConstructor, options?: Partial<Options>)
 					/**
 					 * The embedded DataModel definition which is contained in this field.
 					 */
-					model: T
+					model: ConcreteConstructor
 
 					// /** @override */
 					// _initialize(schema)
@@ -135,10 +166,33 @@ declare global {
 					 * @param sourceData - Candidate source data of the root model
 					 * @param fieldData - The value of this field within the source data
 					 */
-					migrateSource(sourceData: object, fieldData: any): void
+					migrateSource(
+						sourceData:
+							| InstanceType<ConcreteConstructor>['parent']['_source']
+							| unknown,
+						fieldData: InstanceType<ConcreteConstructor>['_source'] | unknown
+					): void
 					// /** @override */
 					// _validateModel(changes, options)
 				}
+				export interface EmbeddedDataField<
+					ConcreteConstructor extends foundry.abstract.DataModelConstructor<
+						any,
+						any,
+						any
+					> = foundry.abstract.DataModelConstructor<any, any, any>,
+					Options extends foundry.data.fields.SchemaField.Options<
+						InstanceType<ConcreteConstructor>['_source'],
+						InstanceType<ConcreteConstructor>
+					> = foundry.data.fields.SchemaField.Options<
+						InstanceType<ConcreteConstructor>['_source'],
+						InstanceType<ConcreteConstructor>
+					>
+				> extends SchemaField<
+						InstanceType<ConcreteConstructor>['_source'],
+						InstanceType<ConcreteConstructor>,
+						Options
+					> {}
 			}
 		}
 	}

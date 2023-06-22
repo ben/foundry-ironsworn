@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import type { IterableElement } from '../utils'
-
 declare global {
 	namespace foundry {
 		namespace data {
@@ -11,21 +9,36 @@ declare global {
 				 * A subclass of [DataField]{@link DataField} which deals with array-typed data.
 				 */
 				export class ArrayField<
-					ConcreteData extends Iterable<any> = any[],
-					TElementField extends DataField<
-						IterableElement<ConcreteData>
-					> = DataField<IterableElement<ConcreteData>>,
-					TOptions extends ArrayField.Options<ConcreteData> = ArrayField.Options<ConcreteData>
-				> extends DataField<ConcreteData, TOptions> {
+					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
+					ConcreteData extends Iterable<
+						foundry.abstract.ConcreteDataOf<ElementField>
+					> = Array<foundry.abstract.ConcreteDataOf<ElementField>>,
+					Options extends ArrayField.Options<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData
+					> = ArrayField.Options<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData
+					>
+				> extends DataField<
+					Array<foundry.abstract.SourceDataOf<ElementField>>,
+					ConcreteData,
+					Options
+				> {
 					/**
 					 * @param element         A DataField instance which defines the type of element contained in the Array.
 					 * @param options  Options which configure the behavior of the field
 					 */
-					constructor(element: TElementField, options?: Partial<TOptions>)
+					constructor(element: ElementField, options?: Partial<Options>)
 
-					element: TElementField
+					element: ElementField
 
-					static _validateElementType(element: unknown)
+					static _validateElementType<
+						T extends ConstructorOf<ArrayField<any, any, any>>
+					>(
+						this: T,
+						element: foundry.abstract.SourceDataOf<InstanceType<T>> | unknown
+					)
 
 					/**
 					 * Validate every element of the ArrayField
@@ -35,8 +48,12 @@ declare global {
 					 */
 					protected _validateElements(
 						value: unknown[],
-						options: DataField.ValidateOptions
-					): DataModelValidationFailure<IterableElement<ConcreteData>> | void
+						options: DataField.ValidateOptions<
+							foundry.abstract.SourceDataOf<ElementField>
+						>
+					): DataModelValidationFailure<
+						foundry.abstract.SourceDataOf<ElementField>
+					> | void
 
 					/**
 					 * Migrate this field's candidate source data.
@@ -46,36 +63,64 @@ declare global {
 					migrateSource(sourceData: object, fieldData: any): void
 				}
 				export interface ArrayField<
-					ConcreteData extends Iterable<any> = any[],
-					TElementField extends DataField<
-						IterableElement<ConcreteData>
-					> = DataField<IterableElement<ConcreteData>>,
-					TOptions extends ArrayField.Options<ConcreteData> = ArrayField.Options<ConcreteData>
-				> extends DataField<ConcreteData, TOptions> {}
+					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
+					ConcreteData extends Iterable<
+						foundry.abstract.ConcreteDataOf<ElementField>
+					> = Array<foundry.abstract.ConcreteDataOf<ElementField>>,
+					Options extends ArrayField.Options<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData
+					> = ArrayField.Options<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData
+					>
+				> extends DataField<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData,
+						Options
+					> {}
 
 				export namespace ArrayField {
 					export interface Options<
-						ConcreteData extends Iterable<any> = Iterable<any>
-					> extends DataField.Options<ConcreteData> {
+						SourceData extends any[] = any[],
+						ConcreteData extends Iterable<any> = SourceData
+					> extends DataField.Options<SourceData, ConcreteData> {
 						/** @default true */
-						required: DataField.Options<ConcreteData>['required']
+						required: DataField.Options<SourceData, ConcreteData>['required']
 						/** @default false */
-						nullable: DataField.Options<ConcreteData>['nullable']
+						nullable: DataField.Options<SourceData, ConcreteData>['nullable']
 						/** @default () => [] */
-						initial?: DataField.Options<ConcreteData>['initial']
+						initial?: DataField.Options<SourceData, ConcreteData>['initial']
 					}
 				}
-				// // @ts-expect-error
-				// export class SetField<TElement extends DataField<any, any>>
-				// 	extends ArrayField<
-				// 		TElement,
-				// 		Set<TElement extends DataField<infer U, any> ? U : never>
-				// 	>
-				// 	implements SetField.Options<Set<any>> {}
-				// export namespace SetField {
-				// 	export interface Options<T extends Set<any>>
-				// 		extends ArrayField.Options<T> {}
-				// }
+
+				export class SetField<
+					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
+					ConcreteData extends Set<
+						foundry.abstract.ConcreteDataOf<ElementField>
+					> = Set<foundry.abstract.ConcreteDataOf<ElementField>>,
+					Options extends ArrayField.Options<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData
+					> = ArrayField.Options<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData
+					>
+				> extends ArrayField<ElementField, ConcreteData, Options> {}
+
+				export interface SetField<
+					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
+					ConcreteData extends Set<
+						foundry.abstract.ConcreteDataOf<ElementField>
+					> = Set<foundry.abstract.ConcreteDataOf<ElementField>>,
+					Options extends ArrayField.Options<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData
+					> = ArrayField.Options<
+						Array<foundry.abstract.SourceDataOf<ElementField>>,
+						ConcreteData
+					>
+				> extends ArrayField<ElementField, ConcreteData, Options> {}
 
 				// // TODO
 				// // eslint-disable-next-line @typescript-eslint/no-extraneous-class

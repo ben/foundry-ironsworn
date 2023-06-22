@@ -7,44 +7,48 @@ declare global {
 				/**
 				 * A subclass of [DataField]{@link DataField} which deals with object-typed data.
 				 */
-				// @ts-expect-error
 				export class ObjectField<
-					ConcreteData extends Record<string, any>,
-					TOptions extends DataField.Options<ConcreteData>
-				> extends DataField<ConcreteData, TOptions> {
-					override _cast: DataField<ConcreteData, TOptions>['_cast']
-					override initialize: DataField<ConcreteData, TOptions>['initialize']
-					override toObject: DataField<ConcreteData, TOptions>['toObject']
-					override _validateType: DataField<
-						ConcreteData,
-						TOptions
-					>['_validateType']
-				}
+					SourceData extends object = object,
+					ConcreteData extends object = SourceData,
+					Options extends ObjectField.Options<
+						SourceData,
+						ConcreteData
+					> = ObjectField.Options<SourceData, ConcreteData>
+				> extends DataField<SourceData, ConcreteData, Options> {}
+				export interface ObjectField<
+					SourceData extends object = object,
+					ConcreteData extends object = SourceData,
+					Options extends ObjectField.Options<
+						SourceData,
+						ConcreteData
+					> = ObjectField.Options<SourceData, ConcreteData>
+				> extends DataField<SourceData, ConcreteData, Options> {}
+
 				export namespace ObjectField {
-					export interface Options<T extends Record<string, any>>
-						extends DataField.Options<T> {
+					export interface Options<SourceData, ConcreteData>
+						extends DataField.Options<SourceData, ConcreteData> {
 						/** @default true */
-						required: DataField.Options<T>['required']
+						required: DataField.Options<SourceData, ConcreteData>['required']
 						/** @default false */
-						nullable: DataField.Options<T>['nullable']
+						nullable: DataField.Options<SourceData, ConcreteData>['nullable']
 						/** @default () => {} */
-						initial: DataField.Options<T>['initial'] // To ensure each instance is independent
+						initial: DataField.Options<SourceData, ConcreteData>['initial'] // To ensure each instance is independent
 					}
 				}
 
 				export interface DocumentStats {
 					/** The package name of the system the Document was created in. */
-					systemId: string
+					systemId?: string
 					/** The version of the system the Document was created in. */
-					systemVersion: string
+					systemVersion?: string
 					/** The core version the Document was created in. */
-					coreVersion: string
+					coreVersion?: string
 					/** A timestamp of when the Document was created. */
-					createdTime: number
+					createdTime?: number
 					/** A timestamp of when the Document was last modified. */
-					modifiedTime: number
+					modifiedTime?: number
 					/** The ID of the user who last modified the Document. */
-					lastModifiedBy: string
+					lastModifiedBy?: string
 				}
 
 				/**
@@ -52,11 +56,10 @@ declare global {
 				 */
 				export class DocumentOwnershipField extends ObjectField<
 					DocumentStats,
-					DocumentOwnershipField.Options
+					DocumentStats
 				> {}
-				export namespace DocumentOwnershipField {
-					export interface Options extends ObjectField.Options<DocumentStats> {}
-				}
+				export interface DocumentOwnershipField
+					extends ObjectField<DocumentStats, DocumentStats> {}
 			}
 		}
 	}
