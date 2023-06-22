@@ -5,20 +5,26 @@ import type {
 	ModuleData,
 	SystemData
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/packages.mjs'
-import type { SourceToField, DataSchema } from '../utils'
+import type { DataSchema } from '../utils'
 
 declare global {
 	export type AnyDocument = Document<any, any, any>
 
 	namespace foundry {
 		namespace abstract {
+			/**
+			 * @template SourceData
+			 * @template ConcreteData
+			 * @template Parent
+			 */
 			export abstract class DataModel<
-				ConcreteData extends object,
-				Parent extends DataModel.Any | null = null
+				SourceData extends object,
+				ConcreteData extends object = SourceData,
+				Parent extends DataModel.AnyOrDoc | null = null
 			> {
 				constructor(
-					data: ConcreteData,
-					options?: foundry.data.fields.DataField.ValidateOptions & {
+					data: SourceData,
+					options?: foundry.data.fields.DataField.ValidateOptions<SourceData> & {
 						parent?: Parent
 					}
 				)
@@ -28,13 +34,13 @@ declare global {
 				 * @remarks Source code comments indicate that this is intended for use for subclass configuration.
 				 */
 				protected _configure(
-					options?: foundry.data.fields.DataField.ValidateOptions
+					options?: foundry.data.fields.DataField.ValidateOptions<SourceData>
 				): void
 				/**
 				 * The source data object for this DataModel instance.
 				 * Once constructed, the source object is sealed such that no keys may be added nor removed.
 				 */
-				readonly _source: ConcreteData
+				readonly _source: Readonly<SourceData>
 
 				/**
 				 * The defined and cached Data Schema for all instances of this DataModel.
@@ -55,17 +61,19 @@ declare global {
 				 * The schema is populated the first time it is accessed and cached for future reuse.
 				 * @abstract
 				 */
-				static defineSchema(): DataSchema<any>
+				static defineSchema<T extends DataModelConstructor>(
+					this: T
+				): T['schema']
 
 				/**
 				 * The Data Schema for all instances of this DataModel.
 				 */
-				static get schema(): ReturnType<(typeof this)['defineSchema']>
+				static get schema(): DataSchema<any>
 
 				/**
 				 * Define the data schema for this document instance.
 				 */
-				get schema(): foundry.data.fields.SchemaField<ConcreteData>
+				get schema(): foundry.data.fields.SchemaField<SourceData, ConcreteData>
 
 				/**
 				 * Is the current state of this DataModel invalid?
@@ -103,7 +111,10 @@ declare global {
 				 * @param options Additional options which are passed to field cleaning methods
 				 * @returns The cleaned source data
 				 */
-				static cleanData<T extends object>(source?: T, options?: object): T
+				static cleanData<T extends DataModelConstructor>(
+					source?: InstanceType<T>['_source'],
+					options?: object
+				): InstanceType<T>['_source']
 
 				/* ---------------------------------------- */
 				/*  Data Initialization                     */
@@ -112,8 +123,10 @@ declare global {
 				/**
 				 * A generator that orders the DataFields in the DataSchema into an expected initialization order.
 				 */
-				protected static _initializationOrder(): Generator<
-					[string, foundry.data.fields.DataField<any, any>]
+				protected static _initializationOrder<
+					T extends DataModelConstructor
+				>(): Generator<
+					[keyof InstanceType<T>['schema'], ValueOf<InstanceType<T>['schema']>]
 				>
 
 				/**
@@ -166,9 +179,7 @@ declare global {
 				 * @param data - The candidate data object to validate
 				 * @throws - An error if a validation failure is detected
 				 */
-				protected _validateModel(
-					data: object // foundry.abstract.DataModel.Schema<this['schema']>
-				): void
+				protected _validateModel(data: unknown): void
 
 				/* ---------------------------------------- */
 				/*  Data Management                         */
@@ -187,9 +198,9 @@ declare global {
 				 * @returns - An object containing the changed keys and values
 				 */
 				updateSource(
-					changes?: DeepPartial<ConcreteData>,
+					changes?: DeepPartial<SourceData>,
 					options?: DataModel.UpdateSourceOptions
-				): DeepPartial<ConcreteData>
+				): DeepPartial<SourceData>
 
 				/* ---------------------------------------- */
 
@@ -203,12 +214,12 @@ declare global {
 				 * @returns The updated source data
 				 * @throws - An error if the update operation was unsuccessful
 				 */
-				static #updateData<T extends foundry.data.fields.SchemaField<any>>(
-					schema: T,
-					source: Record<string, unknown>,
-					changes: Record<string, unknown>,
-					options: DataModel.UpdateDataOptions
-				): Record<string, unknown>
+				// static #updateData(
+				// 	schema: any,
+				// 	source: Record<string, unknown>,
+				// 	changes: Record<string, unknown>,
+				// 	options: DataModel.UpdateDataOptions
+				// ): Record<string, unknown>
 
 				/* ---------------------------------------- */
 
@@ -221,13 +232,14 @@ declare global {
 				 * @param options - Options which modify the update workflow
 				 * @throws - An error if the new candidate value is invalid
 				 */
-				static #updateField(
-					name: string,
-					field: foundry.data.fields.DataField.Any,
-					source: Record<string, unknown>,
-					value: unknown,
-					options: Record<string, unknown>
-				): Record<string, unknown>
+				// static #updateField<T extends DataModelConstructor>(
+				// 	this: T,
+				// 	name: string,
+				// 	field: foundry.data.fields.DataField.Any,
+				// 	source: Record<string, unknown>,
+				// 	value: unknown,
+				// 	options: Record<string, unknown>
+				// )
 
 				/* ---------------------------------------- */
 				/*  Serialization and Storage               */
@@ -240,9 +252,8 @@ declare global {
 				 *                 (default: `true`)
 				 * @returns The extracted primitive object
 				 */
-				toObject<Source extends true>(source?: Source): this['_source']
-
-				toObject<Source extends false>(source: Source): ConcreteData
+				toObject<Source extends true>(source?: Source): SourceData
+				toObject<Source extends false>(source: Source): SourceData
 
 				/* ---------------------------------------- */
 
@@ -250,7 +261,7 @@ declare global {
 				 * Extract the source data for the DataModel into a simple object format that can be serialized.
 				 * @returns - The document source data expressed as a plain object
 				 */
-				toJSON(): this['_source']
+				toJSON(): SourceData
 
 				/* -------------------------------------------- */
 
@@ -260,13 +271,11 @@ declare global {
 				 * @param source - Initial document data which comes from a trusted source.
 				 * @param context - Model construction context
 				 */
-				protected static fromSource<
-					ConcreteData extends object,
-					Parent extends DataModel.Any | null = null
-				>(
-					source: ConcreteData,
+				protected static fromSource<T extends DataModelConstructor>(
+					this: T,
+					source: InstanceType<T>['_source'],
 					context: DataModel.FromSourceContext
-				): DataModel<ConcreteData, Parent>
+				): InstanceType<T>
 
 				/* ---------------------------------------- */
 
@@ -275,17 +284,17 @@ declare global {
 				 * @param json - Serialized document data in string format
 				 * @returns - A constructed data model instance
 				 */
-				static fromJSON<
-					ConcreteData extends object,
-					Parent extends DataModel.Any | null = null
-				>(json: string): DataModel<ConcreteData, Parent>
+				static fromJSON<T extends DataModelConstructor>(
+					this: T,
+					json: string
+				): InstanceType<T>
 
 				/* -------------------------------------------- */
 
 				/**
 				 * View the schema of this data model in a representative "flattened" format.
 				 */
-				static get flatSchema(): DataSchema
+				static get flatSchema(): DataSchema<any>
 
 				/* -------------------------------------------- */
 				/*  Deprecations and Compatibility              */
@@ -296,9 +305,10 @@ declare global {
 				 * @param source - The candidate source data from which the model will be constructed
 				 * @returns Migrated source data, if necessary
 				 */
-				static migrateData(
+				static migrateData<T extends DataModelConstructor>(
+					this: T,
 					source: Record<string, unknown>
-				): Record<string, unknown>
+				): InstanceType<T>['_source']
 
 				/* ---------------------------------------- */
 
@@ -309,25 +319,20 @@ declare global {
 				 *                  (default: `{}`)
 				 * @returns - Data with added backwards-compatible properties
 				 */
-				static shimData(
-					data: Record<string, unknown>,
-					options: DataModel.ShimDataOptions
+				static shimData<T extends DataModelConstructor>(
+					this: T,
+					data: InstanceType<T>['_source'],
+					options?: DataModel.ShimDataOptions
 				): Record<string, unknown>
 			}
 
 			export namespace DataModel {
-				export type SchemaToData<T extends DataSchema> = {
-					[K in keyof T]: SourceToField<T[K]>
-				}
-
-				export type SchemaToSource<T extends DataSchema> = SchemaToData<T>
-
 				export type ConstructorOptions = InexactPartial<{
 					/**
 					 * A parent DataModel instance to which this DataModel belongs
 					 * @default null
 					 */
-					parent: Any | null
+					parent: AnyOrDoc | null
 					/**
 					 * Control the strictness of validation for initially provided data
 					 * @default true
@@ -434,8 +439,10 @@ declare global {
 					embedded: boolean
 				}>
 
+				export type Any = DataModel<any, any, any>
+
 				// HACK: in v10+, documents derive from DataModel
-				export type Any = DataModel<any, any> | AnyDocument
+				export type AnyOrDoc = Any | AnyDocument
 			}
 
 			export class DataModelValidationFailure<T = unknown>
@@ -659,9 +666,12 @@ declare global {
 			 * ```
 			 */
 			export abstract class TypeDataModel<
-				ConcreteData extends object,
-				Parent extends AnyDocument
-			> extends DataModel<ConcreteData, Parent> {
+				SourceData extends object = object,
+				ConcreteData extends object = SourceData,
+				Parent extends AnyDocument & { system: object } = AnyDocument & {
+					system: object
+				}
+			> extends DataModel<SourceData, ConcreteData, Parent> {
 				/**
 				 * The package that is providing this DataModel for the given sub-type.
 				 */
@@ -679,10 +689,68 @@ declare global {
 				prepareDerivedData(): void
 			}
 			export interface TypeDataModel<
-				ConcreteData extends object,
-				Parent extends AnyDocument
-			> extends DataModel<ConcreteData, Parent> {}
+				SourceData extends object = object,
+				ConcreteData extends object = SourceData,
+				Parent extends AnyDocument & { system: object } = AnyDocument & {
+					system: object
+				}
+			> extends DataModel<SourceData, ConcreteData, Parent> {}
 			export namespace TypeDataModel {}
+
+			// UTILITY TYPES
+
+			export type DataModelConstructor<
+				SourceData extends object = object,
+				ConcreteData extends object = SourceData,
+				Parent extends DataModel.AnyOrDoc | null = null
+			> = Pick<
+				typeof DataModel<SourceData, ConcreteData, Parent>,
+				keyof typeof DataModel<SourceData, ConcreteData, Parent>
+			> &
+				(new (...args: any[]) => DataModel<SourceData, ConcreteData, Parent>)
+
+			// export type ConcreteDataOf<
+			// 	T extends
+			// 		| foundry.data.fields.DataField.Any
+			// 		| ConstructorOf<foundry.data.fields.DataField.Any>
+			// 		| DataModel.Any
+			// 		| DataModelConstructor
+			// > = T extends DataModel<any, infer ConcreteData, any>
+			// 	? ConcreteData
+			// 	: T extends ConstructorOf<DataModel<any, infer ConcreteData, any>>
+			// 	? ConcreteData
+			// 	: T extends foundry.data.fields.DataField<any, infer ConcreteData, any>
+			// 	? ConcreteData
+			// 	: T extends ConstructorOf<
+			// 			foundry.data.fields.DataField<any, infer ConcreteData, any>
+			// 	  >
+			// 	? ConcreteData
+			// 	: never
+
+			// export type SourceDataOf<
+			// 	T extends
+			// 		| DataModel.Any
+			// 		| DataModelConstructor
+			// 		| foundry.data.fields.DataField.Any
+			// 		| ConstructorOf<foundry.data.fields.DataField.Any>
+			// > = T extends DataModel<infer SourceData, any, any>
+			// 	? SourceData
+			// 	: T extends ConstructorOf<DataModel<infer SourceData, any, any>>
+			// 	? SourceData
+			// 	: T extends foundry.data.fields.DataField<infer SourceData, any, any>
+			// 	? SourceData
+			// 	: T extends ConstructorOf<
+			// 			foundry.data.fields.DataField<infer SourceData, any, any>
+			// 	  >
+			// 	? SourceData
+			// 	: never
+
+			export type SchemaOf<T extends DataModel.Any | DataModelConstructor> =
+				T extends DataModel<any, any, any>
+					? T['schema']
+					: T extends ConstructorOf<infer U extends DataModel<any, any, any>>
+					? U['schema']
+					: never
 		}
 	}
 }

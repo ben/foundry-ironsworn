@@ -3,6 +3,7 @@ import type { IronswornActor } from '../actor'
 
 export class LocationData extends foundry.abstract.TypeDataModel<
 	LocationDataSourceData,
+	LocationDataSourceData,
 	IronswornActor<'location'>
 > {
 	static _enableV10Validation = true

@@ -15,6 +15,7 @@ import type { IronswornItem } from '../item'
 
 export class SFMoveData extends foundry.abstract.TypeDataModel<
 	SFMoveDataSourceData,
+	SFMoveDataSourceData,
 	IronswornItem<'sfmove'>
 > {
 	static _enableV10Validation = true
@@ -91,7 +92,7 @@ export class SFMoveData extends foundry.abstract.TypeDataModel<
 		)
 	}
 
-	static override defineSchema(): DataSchema<SFMoveDataSourceData> {
+	static override defineSchema() {
 		const fields = foundry.data.fields
 		return {
 			dfid: new DataforgedIDField(),
@@ -102,7 +103,6 @@ export class SFMoveData extends foundry.abstract.TypeDataModel<
 			Text: new fields.HTMLField(),
 			Oracles: new fields.ArrayField(new DataforgedIDField()),
 			Trigger: new SFMoveTriggerField(),
-			// @ts-expect-error
 			Outcomes: new fields.SchemaField(
 				{
 					'Strong Hit': new SFMoveOutcomeMatchableField(),
@@ -121,17 +121,17 @@ export interface SFMoveOutcomeMatchable extends SFMoveOutcome {
 	'With a Match'?: SFMoveOutcome
 }
 
-export class SFMoveOutcomeField extends foundry.data.fields
-	.SchemaField<SFMoveOutcome> {
+export class SFMoveOutcomeField extends foundry.data.fields.SchemaField<
+	Omit<SFMoveOutcome, 'In Control'>
+> {
 	constructor(options = {}) {
 		const fields = foundry.data.fields
 		super(
 			{
 				Text: new fields.HTMLField(),
-				Reroll: new fields.SchemaField<IMoveReroll>(
+				Reroll: new fields.SchemaField(
 					{
 						Text: new fields.HTMLField(),
-						// @ts-expect-error
 						Dice: new fields.StringField<ValueOf<typeof SFMoveData.rerollType>>(
 							{
 								choices: SFMoveData.rerollType
@@ -139,10 +139,9 @@ export class SFMoveOutcomeField extends foundry.data.fields
 						)
 					},
 					{ required: false }
-				),
-				// @ts-expect-error
-				'Count as': new fields.StringField<ValueOf<typeof SFMoveData.outcome>>({
-					choices: SFMoveData.outcome,
+				) as any,
+				'Count as': new fields.StringField({
+					choices: SFMoveData.outcome as any,
 					required: false
 				})
 			},
@@ -152,16 +151,15 @@ export class SFMoveOutcomeField extends foundry.data.fields
 }
 
 export class SFMoveOutcomeMatchableField extends foundry.data.fields
-	.SchemaField<SFMoveOutcomeMatchable> {
+	.SchemaField<Omit<SFMoveOutcomeMatchable, 'In Control'>> {
 	constructor(options = {}) {
 		const fields = foundry.data.fields
 		super(
 			{
 				Text: new fields.HTMLField(),
-				Reroll: new fields.SchemaField<IMoveReroll>(
+				Reroll: new fields.SchemaField(
 					{
 						Text: new fields.HTMLField(),
-						// @ts-expect-error
 						Dice: new fields.StringField<ValueOf<typeof SFMoveData.rerollType>>(
 							{
 								choices: SFMoveData.rerollType
@@ -169,24 +167,18 @@ export class SFMoveOutcomeMatchableField extends foundry.data.fields
 						)
 					},
 					{ required: false }
-				),
-				// @ts-expect-error
+				) as any,
 				'Count as': new fields.StringField<ValueOf<typeof SFMoveData.outcome>>({
 					choices: SFMoveData.outcome,
 					required: false
-				}),
-				'With a Match': new SFMoveOutcomeField({ required: false })
+				}) as any,
+				'With a Match': new SFMoveOutcomeField({ required: false }) as any
 			},
 			options
 		)
 	}
 }
-export interface SFMoveData
-	extends SFMoveDataSourceData,
-		foundry.abstract.TypeDataModel<
-			SFMoveDataSourceData,
-			IronswornItem<'sfmove'>
-		> {}
+export interface SFMoveData extends SFMoveDataSourceData {}
 
 export interface SFMoveDataSourceData
 	extends Required<
@@ -223,7 +215,7 @@ export class SFMoveTriggerOptionField extends foundry.data.fields
 			Method: new fields.StringField<any, any>({
 				choices: SFMoveData.rollMethod
 			}),
-			Using: new fields.ArrayField(new fields.StringField())
+			Using: new fields.ArrayField(new fields.StringField() as any)
 		})
 	}
 }

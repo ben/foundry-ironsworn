@@ -10,6 +10,7 @@ import type { IronswornActor } from '../actor'
 
 export class SiteData extends foundry.abstract.TypeDataModel<
 	SiteDataSourceData,
+	SiteDataSourceData,
 	IronswornActor<'site'>
 > {
 	static _enableV10Validation = true

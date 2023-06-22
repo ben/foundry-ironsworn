@@ -10,6 +10,7 @@ import type { ProgressBase } from '../config'
 
 export class ProgressData extends foundry.abstract.TypeDataModel<
 	ProgressDataSourceData,
+	ProgressDataSourceData,
 	IronswornItem<'progress'>
 > {
 	static _enableV10Validation = true

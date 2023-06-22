@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import type { IterableElement } from '../utils'
-
 declare global {
 	namespace foundry {
 		namespace data {
@@ -11,71 +9,72 @@ declare global {
 				 * A subclass of [DataField]{@link DataField} which deals with array-typed data.
 				 */
 				export class ArrayField<
-					ConcreteData extends Iterable<any> = any[],
-					TElementField extends DataField<
-						IterableElement<ConcreteData>
-					> = DataField<IterableElement<ConcreteData>>,
-					TOptions extends ArrayField.Options<ConcreteData> = ArrayField.Options<ConcreteData>
-				> extends DataField<ConcreteData, TOptions> {
+					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
+					SourceData extends any[] = any[],
+					ConcreteData extends Iterable<any> = SourceData,
+					Options extends foundry.data.fields.DataField.Options<
+						SourceData,
+						ConcreteData
+					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
+				> extends DataField<SourceData, ConcreteData, Options> {
 					/**
-					 * @param element         A DataField instance which defines the type of element contained in the Array.
-					 * @param options  Options which configure the behavior of the field
+					 * @param element - A DataField instance which defines the type of element contained in the Array.
+					 * @param options - Options which configure the behavior of the field
 					 */
-					constructor(element: TElementField, options?: Partial<TOptions>)
+					constructor(element: ElementField, options?: Partial<Options>)
 
-					element: TElementField
+					element: ElementField
 
-					static _validateElementType(element: unknown)
+					static _validateElementType(element: unknown): void
 
 					/**
 					 * Validate every element of the ArrayField
 					 * @param value The array to validate
 					 * @param options Validation options
 					 * @returns A validation failure if any of the elements failed validation, otherwise void.
+					 * @throws {DataModelValidationFailure<SourceData>}
 					 */
 					protected _validateElements(
 						value: unknown[],
-						options: DataField.ValidateOptions
-					): DataModelValidationFailure<IterableElement<ConcreteData>> | void
+						options?: DataField.ValidateOptions<SourceData>
+					): void
 
 					/**
 					 * Migrate this field's candidate source data.
 					 * @param sourceData Candidate source data of the root model
 					 * @param fieldData The value of this field within the source data
 					 */
-					migrateSource(sourceData: object, fieldData: any): void
+					migrateSource(sourceData: unknown, fieldData: unknown): void
 				}
-				export interface ArrayField<
-					ConcreteData extends Iterable<any> = any[],
-					TElementField extends DataField<
-						IterableElement<ConcreteData>
-					> = DataField<IterableElement<ConcreteData>>,
-					TOptions extends ArrayField.Options<ConcreteData> = ArrayField.Options<ConcreteData>
-				> extends DataField<ConcreteData, TOptions> {}
+
+				// type FieldConcreteData<T extends foundry.data.fields.DataField.Any> =
+				// 	ReturnType<T['initialize']>
+				// type FieldSourceData<T extends foundry.data.fields.DataField.Any> =
+				// 	ReturnType<T['toObject']>
 
 				export namespace ArrayField {
 					export interface Options<
-						ConcreteData extends Iterable<any> = Iterable<any>
-					> extends DataField.Options<ConcreteData> {
+						SourceData extends any[] = any[],
+						ConcreteData extends Iterable<any> = SourceData
+					> extends DataField.Options<SourceData, ConcreteData> {
 						/** @default true */
-						required: DataField.Options<ConcreteData>['required']
+						required: DataField.Options<SourceData, ConcreteData>['required']
 						/** @default false */
-						nullable: DataField.Options<ConcreteData>['nullable']
+						nullable: DataField.Options<SourceData, ConcreteData>['nullable']
 						/** @default () => [] */
-						initial?: DataField.Options<ConcreteData>['initial']
+						initial?: DataField.Options<SourceData, ConcreteData>['initial']
 					}
 				}
-				// // @ts-expect-error
-				// export class SetField<TElement extends DataField<any, any>>
-				// 	extends ArrayField<
-				// 		TElement,
-				// 		Set<TElement extends DataField<infer U, any> ? U : never>
-				// 	>
-				// 	implements SetField.Options<Set<any>> {}
-				// export namespace SetField {
-				// 	export interface Options<T extends Set<any>>
-				// 		extends ArrayField.Options<T> {}
-				// }
+
+				export class SetField<
+					ElementField extends foundry.data.fields.DataField.Any = foundry.data.fields.DataField.Any,
+					SourceData extends any[] = any[],
+					ConcreteData extends Set<any> = Set<any>,
+					Options extends foundry.data.fields.DataField.Options<
+						SourceData,
+						ConcreteData
+					> = foundry.data.fields.DataField.Options<SourceData, ConcreteData>
+				> extends ArrayField<ElementField, SourceData, ConcreteData, Options> {}
 
 				// // TODO
 				// // eslint-disable-next-line @typescript-eslint/no-extraneous-class

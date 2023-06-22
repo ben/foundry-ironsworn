@@ -42,12 +42,6 @@ export type SchemaToSource<
 	[K in keyof T]: FieldToSource<T[K]>
 }
 
-export type IterableElement<T extends Iterable<any>> = T extends Iterable<
-	infer U
->
-	? U
-	: never
-
 declare global {
 	export type ItemSource<
 		T extends DocumentSubTypes<'Item'> = DocumentSubTypes<'Item'>
@@ -67,22 +61,8 @@ export type SourceData<
 > = ReturnType<DocumentInstance['toObject']> &
 	Extract<SourceConfig[DocumentInstance['documentName']], { type: Subtype }>
 
-export type SourceToField<T> = T extends foundry.data.fields.DataField.Any
-	? T
-	: T extends string
-	? foundry.data.fields.StringField<T>
-	: T extends Iterable<any>
-	? foundry.data.fields.ArrayField<T, SourceToField<IterableElement<T>>>
-	: T extends number
-	? foundry.data.fields.NumberField
-	: T extends boolean
-	? foundry.data.fields.BooleanField
-	: T extends Record<any, any>
-	? foundry.data.fields.SchemaField<T>
-	: foundry.data.fields.DataField<T>
-
 export type DataSchema<
 	T extends Record<string, any> = Record<string, unknown>
 > = {
-	[K in keyof T]-?: SourceToField<T[K]>
+	[K in keyof T]-?: foundry.data.fields.DataField<any, T[K], any>
 }
