@@ -89,8 +89,7 @@ const field = computed(
 )
 
 const min = computed(
-	// @ts-expect-error
-	() => document?.value.system[props.attr].min ?? field.value.min ?? 0
+	() => document?.value.system[props.attr].min ?? field.value.fields.min ?? 0
 )
 
 const max = computed(() => {
