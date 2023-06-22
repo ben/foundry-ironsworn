@@ -6,6 +6,7 @@ import type { IronActorModel } from './common'
 export class FoeData
 	extends foundry.abstract.TypeDataModel<
 		FoeDataSourceData,
+		FoeDataSourceData,
 		IronswornActor<'foe'>
 	>
 	implements IronActorModel

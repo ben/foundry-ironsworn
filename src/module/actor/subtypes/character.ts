@@ -16,12 +16,11 @@ import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-
 export class CharacterData
 	extends foundry.abstract.TypeDataModel<
 		CharacterDataSourceData,
+		CharacterDataSourceData,
 		IronswornActor<'character'>
 	>
 	implements IronActorModel
 {
-	static readonly CUSTOM_IMPACT_IDS = ['custom1', 'custom2']
-
 	isValidImpact(statusEffect: StatusEffectV11): boolean {
 		// vehicle impact - skip
 		// TODO: remove this when asset-provided impacts are implemented
@@ -32,14 +31,13 @@ export class CharacterData
 	}
 
 	constructor(
-		...args: ConstructorParameters<
-			typeof foundry.abstract.TypeDataModel<
-				CharacterDataSourceData,
-				IronswornActor<'character'>
-			>
-		>
+		data: CharacterDataSourceData,
+		options: foundry.data.fields.DataField.Options<
+			CharacterDataSourceData,
+			CharacterDataSourceData
+		> & { parent: IronswornActor<'character'> }
 	) {
-		super(...args)
+		super(data, options)
 		this.resetMomentum = this.resetMomentum.bind(this)
 		this.burnMomentum = this.burnMomentum.bind(this)
 	}
@@ -58,7 +56,7 @@ export class CharacterData
 		if (this.canBurnMomentum) await this.resetMomentum()
 	}
 
-	static override defineSchema(): DataSchema<CharacterDataSourceData> {
+	static override defineSchema() {
 		const fields = foundry.data.fields
 		return {
 			biography: new fields.HTMLField(),

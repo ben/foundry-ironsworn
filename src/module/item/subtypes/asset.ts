@@ -4,6 +4,7 @@ import type { IronswornItem } from '../item'
 
 export class AssetData extends foundry.abstract.TypeDataModel<
 	AssetDataSourceData,
+	AssetDataPropertiesData,
 	IronswornItem<'asset'>
 > {
 	static _enableV10Validation = true
@@ -36,6 +37,7 @@ export class AssetData extends foundry.abstract.TypeDataModel<
 					value: new fields.StringField()
 				})
 			),
+			// @ts-expect-error
 			track: new AssetConditionMeterField()
 		}
 	}

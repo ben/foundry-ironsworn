@@ -5,6 +5,7 @@ import type { IronActorModel } from './common'
 export class LocationData
 	extends foundry.abstract.TypeDataModel<
 		LocationDataSourceData,
+		LocationDataSourceData,
 		IronswornActor<'location'>
 	>
 	implements IronActorModel

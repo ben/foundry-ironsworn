@@ -7,6 +7,7 @@ import type { IronActorModel } from './common'
 export class SharedData
 	extends foundry.abstract.TypeDataModel<
 		SharedDataSourceData,
+		SharedDataSourceData,
 		IronswornActor<'shared'>
 	>
 	implements IronActorModel
@@ -18,6 +19,7 @@ export class SharedData
 	static override defineSchema(): DataSchema<SharedDataSourceData> {
 		return {
 			biography: new foundry.data.fields.HTMLField(),
+			// @ts-expect-error
 			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' })
 		}
 	}

@@ -1,7 +1,8 @@
 import { ChallengeRank } from '../constants'
 import { enumEntries } from '../fields/utils'
 
-export class ChallengeRankField extends foundry.data.fields.NumberField {
+export class ChallengeRankField extends foundry.data.fields
+	.NumberField<ChallengeRank> {
 	constructor(
 		options?: Partial<
 			Omit<
@@ -17,7 +18,7 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 					v,
 					`IRONSWORN.CHALLENGERANK.${k}`
 				])
-			),
+			) as any,
 			initial: ChallengeRank.Troublesome,
 			integer: true,
 			max: ChallengeRank.Epic,
@@ -26,7 +27,7 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 		})
 	}
 
-	override _cast(value: unknown) {
+	override _cast(value) {
 		switch (true) {
 			// migration: "formidible" -> "formidable"
 			// TODO: use this instead of migration #1
@@ -45,4 +46,5 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 	}
 }
 
-export interface ChallengeRankField extends foundry.data.fields.NumberField {}
+export interface ChallengeRankField
+	extends foundry.data.fields.NumberField<ChallengeRank> {}

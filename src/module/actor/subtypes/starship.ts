@@ -5,6 +5,7 @@ import type { IronActorModel } from './common'
 export class StarshipData
 	extends foundry.abstract.TypeDataModel<
 		StarshipDataSourceData,
+		StarshipDataSourceData,
 		IronswornActor<'starship'>
 	>
 	implements IronActorModel

@@ -14,7 +14,7 @@ export class TableResultField extends foundry.data.fields
 		// based on BaseTableResult#defineSchema
 		super({
 			type: new fields.NumberField({
-				choices: Object.values(CONST.TABLE_RESULT_TYPES),
+				choices: Object.values(CONST.TABLE_RESULT_TYPES) as any,
 				initial: CONST.TABLE_RESULT_TYPES.TEXT,
 				validationError: 'must be a value in CONST.TABLE_RESULT_TYPES'
 			}),

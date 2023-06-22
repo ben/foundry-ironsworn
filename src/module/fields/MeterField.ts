@@ -2,7 +2,6 @@ import { IronswornActor } from '../actor/actor'
 import type { CharacterDataSourceData } from '../actor/subtypes/character'
 import type { DataSchema } from './utils'
 
-export interface MeterField extends MeterSource {}
 export interface MeterSource {
 	noRecover?: boolean | undefined
 	value: number
@@ -22,7 +21,7 @@ interface MeterFieldOptions<
 
 export abstract class MeterField<
 	T extends MeterSource = MeterSource
-> extends foundry.data.fields.SchemaField<T> {
+> extends foundry.data.fields.SchemaField<T, T> {
 	constructor(
 		{
 			meterMin = 0,
@@ -72,7 +71,7 @@ export abstract class MeterField<
 		// migrate asset meters to unified meter format
 		IronswornActor._addDataFieldMigration(fieldData, 'current', 'value')
 
-		super.migrateSource(sourceData, fieldData)
+		return super.migrateSource(sourceData, fieldData)
 	}
 }
 

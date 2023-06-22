@@ -5,6 +5,7 @@ import type { IronswornItem } from '../item'
 
 export class BondsetData extends foundry.abstract.TypeDataModel<
 	BondsetDataSourceData,
+	BondsetDataSourceData,
 	IronswornItem<'bondset'>
 > {
 	static _enableV10Validation = true

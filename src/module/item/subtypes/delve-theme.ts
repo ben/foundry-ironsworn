@@ -5,6 +5,7 @@ import type { DelveSiteDanger, DelveSiteFeature } from './common'
 
 export class DelveThemeData extends foundry.abstract.TypeDataModel<
 	DelveThemeDataSourceData,
+	DelveThemeDataSourceData,
 	IronswornItem<'delve-theme'>
 > {
 	static _enableV10Validation = true

@@ -12,6 +12,7 @@ import type { IronActorModel } from './common'
 export class SiteData
 	extends foundry.abstract.TypeDataModel<
 		SiteDataSourceData,
+		SiteDataSourceData,
 		IronswornActor<'site'>
 	>
 	implements IronActorModel
