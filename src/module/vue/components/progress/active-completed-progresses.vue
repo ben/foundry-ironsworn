@@ -25,7 +25,7 @@ import CompletedProgressList from 'component:progress/completed-progress-list.vu
 defineProps<{
 	/**
 	 * List of progress subtypes to exclude from the list. To leave out
-	 * connections, pass `['bond']` here.
+	 * connections, pass `['connection']` here.
 	 */
 	excludedSubtypes?: string[]
 	progressStars?: boolean
