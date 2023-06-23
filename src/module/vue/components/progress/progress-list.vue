@@ -32,7 +32,7 @@ import { getProgressItems, isValidProgressItem } from './progress-common'
 import type { ProgressDataPropertiesData } from '../../../item/subtypes/progress'
 
 const props = defineProps<{
-	excludedSubtypes?: ProgressDataPropertiesData['subtype'][]
+	excludedSubtypes?: ProgressDataPropertiesData['track']['subtype'][]
 	showCompleted: 'completed-only' | 'no-completed' | 'all'
 	progressStars?: boolean
 	/**
