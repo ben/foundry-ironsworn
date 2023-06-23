@@ -1,10 +1,9 @@
 import type { ChallengeRank } from 'dataforged'
-import { IRONSWORN } from '../../config'
 import type { IronswornActor } from '../actor/actor'
 import { ChallengeRankField } from '../fields/ChallengeRankField'
 import type { DataSchema } from '../fields/utils'
-import type { IronswornItem } from '../item/item'
 import { IronswornPrerollDialog } from '../rolls'
+import { IronswornSettings } from '../helpers/settings'
 
 export class ProgressTrack<
 	Parent extends foundry.abstract.DataModel.AnyOrDoc = foundry.abstract.DataModel.AnyOrDoc
@@ -47,18 +46,18 @@ export class ProgressTrack<
 	/** Make a progress roll to resolve the progress track. */
 	async resolve(actor?: IronswornActor, objective?: string) {
 		let moveDfId: string | undefined
-		const toolset = actor?.toolset ?? 'starforged'
+		const isStarforged =
+			actor?.toolset === 'starforged' ??
+			IronswornSettings.starforgedToolsEnabled
 
 		switch (this.subtype) {
 			case 'vow':
-				moveDfId =
-					toolset === 'starforged'
-						? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
-						: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+				moveDfId = isStarforged
+					? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+					: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
 				break
 			case 'connection':
-				if (toolset === 'starforged')
-					moveDfId = 'Starforged/Moves/Connection/Forge_a_Bond'
+				if (isStarforged) moveDfId = 'Starforged/Moves/Connection/Forge_a_Bond'
 				break
 			default:
 				break
@@ -73,6 +72,7 @@ export class ProgressTrack<
 	}
 
 	static override migrateData(source) {
+		// @ts-expect-error
 		source = super.migrateData(source)
 		foundry.abstract.Document._addDataFieldMigration(source, 'current', 'ticks')
 
@@ -97,14 +97,6 @@ export class ProgressTrack<
 			}),
 			enabled: new fields.BooleanField({ initial: true }),
 			rank: new ChallengeRankField(),
-			// @ts-expect-error
-			progress_move: new fields.ForeignDocumentField(
-				IRONSWORN.IronswornItem as any,
-				{
-					required: false,
-					nullable: true
-				}
-			),
 			subtype: new fields.StringField({
 				choices: {
 					progress: 'IRONSWORN.ITEM.SubtypeProgress',
@@ -160,13 +152,9 @@ type ProgressSubtype = 'vow' | 'progress' | 'connection' | 'foe'
 
 export interface ProgressTrackSource {
 	rank: ChallengeRank
-	ticks: number // previously: current
+	ticks: number
 	subtype: ProgressSubtype
 	enabled?: boolean
-	progress_move?: string | null
 }
 
-export interface ProgressTrackPropertiesData
-	extends Omit<ProgressTrackSource, 'progress_move'> {
-	progress_move: IronswornItem<'sfmove'> | null
-}
+export interface ProgressTrackPropertiesData extends ProgressTrackSource {}
