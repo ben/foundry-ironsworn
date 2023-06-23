@@ -4,23 +4,23 @@
 		<h5 class="progress-subtitle vertical-text">{{ subtitle }}</h5>
 		<section class="progress-widgets flexrow">
 			<ProgressTrack
-				v-if="item.system.hasTrack"
+				v-if="item.system.track?.enabled"
 				class="progress-track"
-				:rank="item.system.rank"
-				:ticks="item.system.current"
+				:rank="item.system.track.rank"
+				:ticks="item.system.track.ticks"
 				:compact-progress="compactProgress" />
 			<Clock
-				v-if="item.system.hasClock"
+				v-if="item.system.clock?.enabled"
 				class="progress-clock nogrow"
 				size="50px"
-				:wedges="item.system.clockMax"
-				:ticked="item.system.clockTicks"
+				:wedges="item.system.clock?.max"
+				:ticked="item.system.clock?.value"
 				@click="(clockTicks) => $item.update({ system: { clockTicks } })" />
 		</section>
 		<DocumentImg class="progress-img" :document="item" size="40px" />
 		<RankPips
 			class="progress-rank-pips"
-			:current="item.system.rank"
+			:current="item.system.track.rank"
 			@change="(rank) => $item.update({ system: { rank } })" />
 		<section class="progress-controls" data-tooltip-direction="UP">
 			<IronBtn
@@ -45,18 +45,18 @@
 				:tooltip="completedTooltip"
 				@click="toggleComplete" />
 			<IronBtn
-				v-if="editMode && item.system.hasTrack"
+				v-if="editMode && item.system.track?.enabled"
 				block
 				icon="fa:caret-left"
 				:tooltip="$t('IRONSWORN.UnmarkProgress')"
 				@click="$item?.system.markProgress(-1)" />
 			<IronBtn
-				v-if="item.system.hasTrack"
+				v-if="item.system.track?.enabled"
 				block
 				icon="fa:caret-right"
 				:tooltip="$t('IRONSWORN.MarkProgress')"
-				@click="$item?.system.markProgress(1)" />
-			<BtnRollprogress v-if="item.system.hasTrack" :item="item" block />
+				@click="$item?.system.markProgress()" />
+			<BtnRollprogress v-if="item.system.track?.enabled" :item="item" block />
 			<IronBtn
 				v-if="showStar"
 				class="star-progress"
@@ -69,7 +69,7 @@
 						<FontIcon
 							name="star"
 							:family="
-								item.system.starred
+								item.flags['foundry-ironsworn']?.starred
 									? FontAwesome.Family.Solid
 									: FontAwesome.Family.Regular
 							" />
@@ -116,8 +116,7 @@ const editMode = computed(() => {
 	return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 })
 const subtitle = computed(() => {
-	let subtype = props.item.system.subtype.capitalize()
-	if (subtype === 'Bond') subtype = 'Connection' // translate name
+	const subtype = props.item.system.track.subtype.capitalize()
 	return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)
 })
 const completedIcon = computed(() => {
@@ -151,9 +150,11 @@ function toggleComplete() {
 	$item?.update({ system: { completed } })
 }
 function toggleStar() {
-	$item?.update({
-		system: { starred: !props.item.system.starred }
-	})
+	$item?.setFlag(
+		'foundry-ironsworn',
+		'starred',
+		!props.item.flags['foundry-ironsworn']?.starred
+	)
 }
 </script>
 
