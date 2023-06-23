@@ -1,19 +1,27 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import type { ChallengeRank } from 'dataforged'
-import { ChallengeRankField } from '../../fields/ChallengeRankField'
-import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { TableResultStub } from '../../fields/TableResultField'
 import { TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
+import type {
+	ProgressTrackPropertiesData,
+	ProgressTrackSource
+} from '../../model/progress-track'
+import { ProgressTrack } from '../../model/progress-track'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
+import type { IronActorModel } from './common'
 
-export class SiteData extends foundry.abstract.TypeDataModel<
-	SiteDataSourceData,
-	SiteDataSourceData,
-	IronswornActor<'site'>
-> {
-	static _enableV10Validation = true
+export class SiteData
+	extends foundry.abstract.TypeDataModel<
+		SiteDataSourceData,
+		SiteDataPropertiesData,
+		IronswornActor<'site'>
+	>
+	implements IronActorModel
+{
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		return false
+	}
 
 	get denizenTable() {
 		return new OracleTable({
@@ -111,11 +119,28 @@ export class SiteData extends foundry.abstract.TypeDataModel<
 		return this.theme != null && this.domain != null
 	}
 
-	static override defineSchema(): DataSchema<SiteDataSourceData> {
+	async markProgress(times = 1) {
+		return await this.parent.update({
+			system: { track: this.track.getMarkData(times) }
+		})
+	}
+
+	prepareDerivedData(): void {
+		super.prepareDerivedData()
+
+		this.track.value = this.track.score
+		this.track.max = ProgressTrack.SCORE_MAX
+	}
+
+	static override defineSchema(): DataSchema<
+		SiteDataSourceData,
+		SiteDataPropertiesData
+	> {
 		const fields = foundry.data.fields
 		return {
-			rank: new ChallengeRankField(),
-			current: new ProgressTicksField(),
+			track: new fields.EmbeddedDataField(ProgressTrack, {
+				initial: { enabled: true }
+			}) as any,
 			objective: new fields.HTMLField(),
 			description: new fields.HTMLField(),
 			notes: new fields.HTMLField(),
@@ -173,17 +198,29 @@ export class SiteData extends foundry.abstract.TypeDataModel<
 			})
 		}
 	}
+
+	static migrateData(source) {
+		const migrate = foundry.abstract.Document._addDataFieldMigration
+		migrate(source, 'rank', 'track.rank')
+		migrate(source, 'current', 'track.ticks')
+
+		return source
+	}
 }
 
-export interface SiteData extends SiteDataSourceData {}
+export interface SiteData extends SiteDataPropertiesData {
+	track: ProgressTrack
+}
 
 interface SiteDataSourceData {
 	objective: string
 	description: string
 	notes: string
-	rank: ChallengeRank
-	current: number
 	denizens: TableResultStub[]
+	track: ProgressTrackSource
+}
+interface SiteDataPropertiesData extends Omit<SiteDataSourceData, 'track'> {
+	track: ProgressTrackPropertiesData
 }
 
 export interface SiteDataSource {
