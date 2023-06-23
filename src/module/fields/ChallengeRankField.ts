@@ -1,8 +1,16 @@
-import { ChallengeRank } from '../constants'
-import { enumEntries } from '../fields/utils'
+export class ChallengeRankField extends foundry.data.fields.NumberField {
+	/**
+	 * Enumerates challenge ranks.
+	 * @enum
+	 */
+	static readonly RANK = {
+		Troublesome: 1,
+		Dangerous: 2,
+		Formidable: 3,
+		Extreme: 4,
+		Epic: 5
+	} as const
 
-export class ChallengeRankField extends foundry.data.fields
-	.NumberField<ChallengeRank> {
 	constructor(
 		options?: Partial<
 			Omit<
@@ -14,30 +22,28 @@ export class ChallengeRankField extends foundry.data.fields
 		super({
 			label: 'IRONSWORN.ChallengeRank',
 			choices: Object.fromEntries(
-				enumEntries(ChallengeRank).map(([k, v]) => [
-					v,
-					`IRONSWORN.CHALLENGERANK.${k}`
+				Object.entries(ChallengeRankField.RANK).map(([key, numericValue]) => [
+					numericValue,
+					`IRONSWORN.CHALLENGERANK.${key}`
 				])
-			) as any,
-			initial: ChallengeRank.Troublesome,
+			) as {
+				[R in keyof typeof ChallengeRankField.RANK as (typeof ChallengeRankField)['RANK'][R]]: string
+			},
+			initial: ChallengeRankField.RANK.Troublesome as number,
 			integer: true,
-			max: ChallengeRank.Epic,
-			min: ChallengeRank.Troublesome,
+			min: ChallengeRankField.RANK.Troublesome,
+			max: ChallengeRankField.RANK.Epic,
 			...options
 		})
 	}
 
-	override _cast(value) {
+	override _cast(value: unknown) {
 		switch (true) {
-			// migration: "formidible" -> "formidable"
-			// TODO: use this instead of migration #1
 			case value === 'formidible':
-				return ChallengeRank.Formidable
-			// migration: string-based challenge ranks to numeric ones
-			// TODO: use this instead of migration #5
+				return ChallengeRankField.RANK.Formidable
 			case typeof value === 'string':
-				return ChallengeRank[
-					(value as string).capitalize() as keyof ChallengeRank
+				return ChallengeRankField.RANK[
+					(value as string).capitalize() as keyof typeof ChallengeRankField.RANK
 				]
 			default: {
 				return super._cast(value)
@@ -45,6 +51,4 @@ export class ChallengeRankField extends foundry.data.fields
 		}
 	}
 }
-
-export interface ChallengeRankField
-	extends foundry.data.fields.NumberField<ChallengeRank> {}
+export interface ChallengeRankField extends foundry.data.fields.NumberField {}
