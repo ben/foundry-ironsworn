@@ -1,7 +1,6 @@
-import type { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { ChallengeRank } from 'dataforged'
 import { IRONSWORN } from '../../config'
-import type { DocumentType } from '../../types/helperTypes'
+import type { IronswornActor } from '../actor/actor'
 import { ChallengeRankField } from '../fields/ChallengeRankField'
 import type { DataSchema } from '../fields/utils'
 import type { IronswornItem } from '../item/item'
@@ -14,44 +13,6 @@ export class ProgressTrack<
 	ProgressTrackPropertiesData,
 	Parent
 > {
-	/** Get the most recent Document ancestor */
-	getNearestDocument(): Parent extends foundry.abstract.Document<any, any, any>
-		? Parent
-		: foundry.abstract.Document<any, any, any> | null
-	getNearestDocument<T extends DocumentType>(
-		type: T
-	): Parent extends InstanceType<ConfiguredDocumentClassForName<T>>
-		? Parent
-		: InstanceType<ConfiguredDocumentClassForName<T>> | null
-	getNearestDocument<T extends DocumentType | undefined = undefined>(
-		type?: T
-	): T extends DocumentType
-		? Parent extends InstanceType<ConfiguredDocumentClassForName<T>>
-			? Parent
-			: InstanceType<ConfiguredDocumentClassForName<T>> | null
-		: foundry.abstract.Document<any, any, any> | null {
-		let DocClass: typeof foundry.abstract.Document
-
-		if (type == null) DocClass = foundry.abstract.Document
-		else
-			DocClass = getDocumentClass(type) as ConfiguredDocumentClassForName<
-				Exclude<T, undefined>
-			>
-
-		if (DocClass == null) return null as any
-
-		if (this.parent instanceof DocClass) return this.parent as any
-
-		let current: foundry.abstract.DataModel.AnyOrDoc | null | undefined =
-			this.parent
-
-		while (current != null)
-			if (current.parent instanceof DocClass) return current.parent as any
-			else current = current.parent
-
-		return null as any
-	}
-
 	max?: number
 	value?: number
 
@@ -83,21 +44,9 @@ export class ProgressTrack<
 		}
 	}
 
-	#inferObjective(): string | null {
-		if (typeof (this.parent as any)?.objective === 'string')
-			return (this.parent as any).objective
-		const docTypes: DocumentType[] = ['Item', 'JournalEntryPage']
-		for (const docType of docTypes) {
-			const doc = this.getNearestDocument(docType) as any
-			if (doc != null) return doc.name ?? null
-		}
-		return null
-	}
-
 	/** Make a progress roll to resolve the progress track. */
-	async resolve(objective?: string) {
+	async resolve(actor?: IronswornActor, objective?: string) {
 		let moveDfId: string | undefined
-		const actor = this.getNearestDocument('Actor')
 		const toolset = actor?.toolset ?? 'starforged'
 
 		switch (this.subtype) {
@@ -116,7 +65,7 @@ export class ProgressTrack<
 		}
 
 		return await IronswornPrerollDialog.showForProgress(
-			objective ?? this.#inferObjective() ?? '(progress)',
+			objective ?? '(progress)',
 			this.score,
 			actor ?? undefined,
 			moveDfId
@@ -124,7 +73,6 @@ export class ProgressTrack<
 	}
 
 	static override migrateData(source) {
-		// @ts-expect-error
 		source = super.migrateData(source)
 		foundry.abstract.Document._addDataFieldMigration(source, 'current', 'ticks')
 
@@ -149,13 +97,14 @@ export class ProgressTrack<
 			}),
 			enabled: new fields.BooleanField({ initial: true }),
 			rank: new ChallengeRankField(),
+			// @ts-expect-error
 			progress_move: new fields.ForeignDocumentField(
 				IRONSWORN.IronswornItem as any,
 				{
 					required: false,
 					nullable: true
 				}
-			) as any,
+			),
 			subtype: new fields.StringField({
 				choices: {
 					progress: 'IRONSWORN.ITEM.SubtypeProgress',

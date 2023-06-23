@@ -51,4 +51,8 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 		}
 	}
 }
-export interface ChallengeRankField extends foundry.data.fields.NumberField {}
+export interface ChallengeRankField extends foundry.data.fields.NumberField {
+	choices: {
+		[R in keyof typeof ChallengeRankField.RANK as (typeof ChallengeRankField)['RANK'][R]]: string
+	}
+}
