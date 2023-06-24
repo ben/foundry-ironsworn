@@ -1,5 +1,5 @@
 import type { ISettingTruthOption } from 'dataforged'
-import { DfidField } from '../../fields/DfidField'
+import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornJournalPage } from '../journal-entry-page'
 
@@ -11,7 +11,7 @@ export class TruthModel extends foundry.abstract.TypeDataModel<
 	static override defineSchema(): DataSchema<TruthOptionDataPropertiesData> {
 		const fields = foundry.data.fields
 		return {
-			dfid: new DfidField('truth'),
+			dfid: new DataforgedIDField(),
 			Floor: new fields.NumberField({ integer: true }),
 			Ceiling: new fields.NumberField({ integer: true }),
 			Summary: new fields.HTMLField(),
