@@ -1,14 +1,15 @@
 import type { IronswornActor } from '../../../actor/actor'
+import { IronswornItem } from '../../../item/item'
 import type { ProgressDataPropertiesData } from '../../../item/subtypes/progress'
 
 export type CompletedProgressType = 'completed-only' | 'no-completed' | 'all'
 export type ProgressSubtype = ProgressDataPropertiesData['track']['subtype']
 
 export function isValidProgressItem(
-	item: ItemSource<'progress'>,
+	item: ItemSource | IronswornItem,
 	showCompleted: CompletedProgressType,
 	excludedSubtypes?: ProgressSubtype[]
-) {
+): item is ItemSource<'progress'> | IronswornItem<'progress'> {
 	if (item.type === 'progress') {
 		switch (showCompleted) {
 			case 'completed-only': {
@@ -26,7 +27,12 @@ export function isValidProgressItem(
 			default:
 				break
 		}
-		if ((excludedSubtypes ?? []).includes(item.system.track.subtype)) {
+		if (
+			(excludedSubtypes ?? []).includes(
+				(item as IronswornItem<'progress'> | ItemSource<'progress'>).system
+					.track?.subtype
+			)
+		) {
 			return false
 		}
 		return true
@@ -43,6 +49,6 @@ export function getProgressItems(
 		.filter((item) =>
 			isValidProgressItem(item, showCompleted, excludedSubtypes ?? [])
 		)
-		.sort((a, b) => (a.sort || 0) - (b.sort || 0)) as any[]
+		.sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0)) as any[]
 	return items ?? []
 }
