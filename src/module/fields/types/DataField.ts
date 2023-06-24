@@ -6,7 +6,7 @@ declare global {
 		namespace data {
 			namespace fields {
 				export abstract class DataField<
-					SourceData = unknown,
+					SourceData = any,
 					ConcreteData = SourceData,
 					Options extends DataField.Options<
 						SourceData,
@@ -174,7 +174,7 @@ declare global {
 					protected _getField(path: string[]): undefined | this
 				}
 				export interface DataField<
-					SourceData = unknown,
+					SourceData = any,
 					ConcreteData = SourceData,
 					Options extends DataField.Options<
 						SourceData,

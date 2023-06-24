@@ -2,10 +2,10 @@
 	<article :class="$style.wrapper" class="sf-legacies flexcol">
 		<section class="legacy-tracks flexcol" :class="$style.legacyTracks">
 			<LegacyTrack
-				v-for="legacy in ['quests', 'bonds', 'discoveries']"
+				v-for="(_legacySource, legacy) in actor.system.legacies"
 				:key="legacy"
 				:actor="actor"
-				:legacy="(legacy as any)"
+				:legacy="legacy"
 				class="nogrow"
 				:class="$style.legacyTrack" />
 		</section>
@@ -30,7 +30,7 @@ import ProgressListItem from '../progress/progress-list-item.vue'
 import { ActorKey } from '../../provisions.js'
 import type { ProgressDataPropertiesData } from '../../../item/subtypes/progress'
 
-const actor = inject(ActorKey) as Ref
+const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 
 const starredProgresses = computed(() =>
 	actor?.value.items.filter(

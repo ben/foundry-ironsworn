@@ -13,13 +13,13 @@
 				block
 				nogrow
 				icon="fa:caret-left"
-				@click="decrease" />
+				@click="adjustTrack(-1)" />
 			<IronBtn
 				block
 				nogrow
 				icon="fa:caret-right"
 				:data-tooltip="markTooltip"
-				@click="increase" />
+				@click="adjustTrack(1)" />
 		</section>
 
 		<ProgressTrack
@@ -27,11 +27,11 @@
 			:ticks="ticksDisplayed"
 			:rank="null"
 			:aria-valuemax="undefined"
-			:legacy-overflow="ticks >= maxTicks"
+			:legacy-overflow="legacyTrack.ticks >= LegacyTrack.TICKS_TO_OVERFLOW"
 			data-tooltip-direction="UP" />
 		<XpTrack
-			:max="xpEarned"
-			:marked="xpSpent"
+			:max="$legacyTrack.xpEarned"
+			:marked="legacyTrack.xpSpent"
 			class="legacy-track-xp"
 			@click="setXp" />
 	</article>
@@ -42,73 +42,52 @@ import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
-import { clamp } from 'lodash-es'
 import XpTrack from './xp-track.vue'
 import ProgressTrack from './progress/progress-track.vue'
-
-// TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
-type LegacyType = 'quests' | 'bonds' | 'discoveries'
-
-// TODO: switch to Dataforged consts when available thru DF2
-const maxBoxes = 10
-const maxScore = maxBoxes
-const ticksPerBox = 4
-const maxTicks = maxBoxes * ticksPerBox
-const minTicks = 0
-const xpEarnedPerBox = 2
-const xpEarnedPerOverflowBox = 1
+import type { IronswornActor } from '../../actor/actor'
+import type { LegacyTrackSource } from '../../model/LegacyTrack'
+import { LegacyTrack } from '../../model/LegacyTrack'
 
 const props = defineProps<{
 	/**
 	 * The legacy track type.
 	 */
-	legacy: LegacyType
+	legacy: keyof IronswornActor<'character'>['system']['legacies']
 }>()
 
-const $actor = inject($ActorKey)
-const actor = inject(ActorKey) as Ref
+const $actor = inject<IronswornActor<'character'>>($ActorKey)
+const actor = inject<Ref<ActorSource<'character'>>>(ActorKey)
 
-const ticks = computed(
-	() => actor.value.system.legacies?.[props.legacy] ?? minTicks
+const $legacyTrack = computed(
+	() => $actor?.system.legacies[props.legacy] as LegacyTrack
 )
-const ticksDisplayed = computed(() => ticks.value % maxTicks)
-
-const score = computed(() =>
-	clamp(Math.floor(ticks.value / ticksPerBox), 0, maxScore)
+const legacyTrack = computed(
+	() => $legacyTrack.value?.toObject() as LegacyTrackSource
 )
 
-const xpEarned = computed(() => {
-	const fullRateXp = score.value * xpEarnedPerBox
-	if (ticks.value > maxTicks) {
-		const overflowTicks = ticks.value - maxTicks
-		const overflowBoxes = Math.floor(overflowTicks / ticksPerBox)
-		const overflowXp = overflowBoxes * xpEarnedPerOverflowBox
-		return fullRateXp + overflowXp
-	}
-	return fullRateXp
-})
-
-const xpSpent = computed(
-	() => actor.value.system?.legacies[`${props.legacy}XpSpent`] ?? 0
+const ticksDisplayed = computed(
+	() => legacyTrack.value?.ticks % LegacyTrack.TICKS_MAX
 )
 
 const markTooltip = computed(() => {
-	let legacy = game.i18n.localize(
+	// TODO: pull this from the field, instead
+	const legacy = game.i18n.localize(
 		`IRONSWORN.LEGACY.${props.legacy.capitalize()}`
 	)
-	let amount = game.i18n.localize(`IRONSWORN.PROGRESS.TICK.1`)
+	const amount = game.i18n.localize(`IRONSWORN.PROGRESS.TICK.1`)
 	return game.i18n.format(`IRONSWORN.MarkLegacy`, { amount, legacy })
 })
 
 const editMode = computed(
 	() =>
-		(actor.value.flags as Record<string, any>)['foundry-ironsworn']?.[
+		(actor?.value.flags as Record<string, any>)['foundry-ironsworn']?.[
 			'edit-mode'
 		]
 )
 
 const overflowLabel = computed(() => {
-	const n = Math.floor(ticks.value / maxTicks) * 10
+	const n =
+		Math.floor(legacyTrack.value?.ticks / LegacyTrack.TICKS_TO_OVERFLOW) * 10
 	if (n > 0) {
 		return `(+${n})`
 	}
@@ -117,21 +96,15 @@ const overflowLabel = computed(() => {
 
 function setXp(newValue: number) {
 	$actor?.update({
-		[`system.legacies.${props.legacy}XpSpent`]: newValue
+		[`system.legacies.${props.legacy}.xpSpent`]: newValue
 	})
 }
 
 function adjustTrack(inc) {
-	const current = actor.value.system?.legacies[props.legacy] ?? 0
+	const current = actor?.value.system?.legacies[props.legacy].ticks ?? 0
 	$actor?.update({
-		[`system.legacies.${props.legacy}`]: current + inc
+		[`system.legacies.${props.legacy}.ticks`]: current + inc
 	})
-}
-function increase() {
-	adjustTrack(1)
-}
-function decrease() {
-	adjustTrack(-1)
 }
 </script>
 <style lang="scss">

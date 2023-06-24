@@ -17,7 +17,7 @@
 		:aria-valuetext="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
 		:data-tooltip="$t('IRONSWORN.PROGRESS.Current', { score, ticks })">
 		<ProgressTrackBox
-			v-for="(boxTicks, i) in boxes"
+			v-for="(boxTicks, i) in ProgressTrack.getBoxValues(ticks)"
 			:key="`progress-box-${i + 1}`"
 			tabindex="-1"
 			role="presentational"
@@ -28,10 +28,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { fill } from 'lodash-es'
 import type { ChallengeRank } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
-import { ProgressTrack } from '../../../model/progress-track'
+import { ProgressTrack } from '../../../model/ProgressTrack'
 
 const props = defineProps<{
 	/**
@@ -49,33 +48,7 @@ const props = defineProps<{
 	compactProgress?: boolean
 }>()
 
-const score = computed(() =>
-	Math.clamped(
-		Math.floor(props.ticks / ProgressTrack.TICKS_PER_BOX),
-		ProgressTrack.SCORE_MIN,
-		ProgressTrack.SCORE_MAX
-	)
-)
-
-const visibleTicks = computed(() =>
-	props.ticks > ProgressTrack.TICKS_MAX
-		? props.ticks % ProgressTrack.TICKS_MAX
-		: props.ticks
-)
-
-const boxes = computed(() => {
-	const boxTicks = Array<number>(ProgressTrack.BOXES)
-	const filledBoxes = Math.floor(
-		visibleTicks.value / ProgressTrack.TICKS_PER_BOX
-	)
-	const ticksRemainder = visibleTicks.value % ProgressTrack.TICKS_PER_BOX
-
-	fill(boxTicks, ProgressTrack.TICKS_PER_BOX, 0, filledBoxes)
-	if (ticksRemainder > 0) {
-		boxTicks[filledBoxes] = ticksRemainder
-	}
-	return boxTicks
-})
+const score = computed(() => ProgressTrack.getScore(props.ticks))
 </script>
 
 <style lang="scss">

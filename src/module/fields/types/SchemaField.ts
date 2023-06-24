@@ -18,7 +18,7 @@ declare global {
 					> = SchemaField.Options<SourceData, ConcreteData>
 				> extends DataField<ConcreteData, SchemaField.Options<ConcreteData>> {
 					constructor(
-						fields: DataSchema<ConcreteData>,
+						fields: DataSchema<SourceData, ConcreteData>,
 						options?: Partial<SchemaField.Options<ConcreteData>>
 					)
 
@@ -26,7 +26,7 @@ declare global {
 					static override recursive: boolean
 
 					/** The contained field definitions. */
-					fields: DataSchema<ConcreteData>
+					fields: DataSchema<SourceData, ConcreteData>
 
 					/**
 					 * Initialize and validate the structure of the provided field definitions.
@@ -34,7 +34,7 @@ declare global {
 					 * @returns The validated schema
 					 */
 					protected _initialize(
-						fields: DataSchema<ConcreteData>
+						fields: DataSchema<SourceData, ConcreteData>
 					): this['fields']
 
 					/**
@@ -88,15 +88,13 @@ declare global {
 					migrateSource(sourceData, fieldData): void | SourceData // TODO
 				}
 				export interface SchemaField<
+					SourceData,
+					ConcreteData = SourceData,
+					Options extends DataField.Options<
 						SourceData,
-						ConcreteData = SourceData,
-						Options extends DataField.Options<
-							SourceData,
-							ConcreteData
-						> = SchemaField.Options<SourceData, ConcreteData>
-					>
-					// Iterable<ValueOf<DataSchema<ConcreteData>>>,
-					extends Omit<
+						ConcreteData
+					> = SchemaField.Options<SourceData, ConcreteData>
+				> extends Omit<
 						SchemaField.Options<SourceData, ConcreteData>,
 						'validate' | 'initial'
 					> {}
@@ -114,13 +112,18 @@ declare global {
 					}
 				}
 
+				type ModelSource<T extends foundry.abstract.DataModel.Any> =
+					T extends foundry.abstract.DataModel<infer U, any, any> ? U : never
+
 				/**
 				 * A subclass of [ObjectField]{@link ObjectField} which embeds some other DataModel definition as an inner object.
 				 */
 				export class EmbeddedDataField<
-					SourceData,
-					ConcreteData extends foundry.abstract.DataModel.Any,
-					ModelConstructor extends ConstructorOf<ConcreteData>,
+					ModelConstructor extends ConstructorOf<foundry.abstract.DataModel.Any>,
+					SourceData extends ModelSource<
+						InstanceType<ModelConstructor>
+					> = ModelSource<InstanceType<ModelConstructor>>,
+					ConcreteData extends InstanceType<ModelConstructor> = InstanceType<ModelConstructor>,
 					Options extends foundry.data.fields.DataField.Options<
 						SourceData,
 						ConcreteData
@@ -148,16 +151,18 @@ declare global {
 					 * @param fieldData - The value of this field within the source data
 					 */
 					migrateSource(
-						sourceData: ConcreteData['parent']['_source'] | unknown,
+						sourceData: ModelSource<ConcreteData['parent']> | unknown,
 						fieldData: SourceData | unknown
 					): void
 					// /** @override */
 					// _validateModel(changes, options)
 				}
 				export interface EmbeddedDataField<
-					SourceData,
-					ConcreteData extends foundry.abstract.DataModel.Any,
-					ModelConstructor extends ConstructorOf<ConcreteData>,
+					ModelConstructor extends ConstructorOf<foundry.abstract.DataModel.Any>,
+					SourceData extends ModelSource<
+						InstanceType<ModelConstructor>
+					> = ModelSource<InstanceType<ModelConstructor>>,
+					ConcreteData extends InstanceType<ModelConstructor> = InstanceType<ModelConstructor>,
 					Options extends foundry.data.fields.DataField.Options<
 						SourceData,
 						ConcreteData

@@ -3,10 +3,10 @@ import type { TableResultStub } from '../../fields/TableResultField'
 import { TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
 import type {
-	ProgressTrackPropertiesData,
+	ProgressTrackProperties,
 	ProgressTrackSource
-} from '../../model/progress-track'
-import { ProgressTrack } from '../../model/progress-track'
+} from '../../model/ProgressTrack'
+import { ProgressTrack } from '../../model/ProgressTrack'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
 
@@ -124,7 +124,10 @@ export class SiteData extends foundry.abstract.TypeDataModel<
 
 	/** Make a progress roll with the Locate Your Objective move. */
 	async locateYourObjective() {
-		return await this.track.roll(this.parent, this.objective)
+		return await this.track.roll({
+			actor: this.parent,
+			objective: this.objective
+		})
 	}
 
 	static override defineSchema(): DataSchema<
@@ -215,7 +218,7 @@ interface SiteDataSourceData {
 	track: ProgressTrackSource
 }
 interface SiteDataPropertiesData extends Omit<SiteDataSourceData, 'track'> {
-	track: ProgressTrackPropertiesData
+	track: ProgressTrackProperties
 }
 
 export interface SiteDataSource {

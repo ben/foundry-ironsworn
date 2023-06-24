@@ -5,7 +5,7 @@ import type { DelveSiteDanger, DelveSiteFeature } from './common'
 
 export class DelveDomainData extends foundry.abstract.TypeDataModel<
 	DelveDomainDataSourceData,
-	DelveDomainDataSourceData,
+	DelveDomainDataPropertiesData,
 	IronswornItem<'delve-domain'>
 > {
 	static _enableV10Validation = true
@@ -33,7 +33,10 @@ export class DelveDomainData extends foundry.abstract.TypeDataModel<
 		{ range: [43, 45] }
 	]
 
-	static override defineSchema(): DataSchema<DelveDomainDataSourceData> {
+	static override defineSchema(): DataSchema<
+		DelveDomainDataSourceData,
+		DelveDomainDataPropertiesData
+	> {
 		const fields = foundry.data.fields
 		return {
 			summary: new fields.HTMLField(),

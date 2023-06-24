@@ -1,29 +1,16 @@
-import type { ChallengeRank } from 'dataforged'
 import type { IronswornActor } from '../actor/actor'
 import { ChallengeRankField } from '../fields/ChallengeRankField'
 import type { DataSchema } from '../fields/utils'
-import { IronswornPrerollDialog } from '../rolls'
 import { IronswornSettings } from '../helpers/settings'
+import type { ProgressLikeSource, ProgressLikeProperties } from './ProgressLike'
+import { ProgressLike } from './ProgressLike'
 
 /** Represents an Ironsworn progress track. */
 export class ProgressTrack<
 	Parent extends foundry.abstract.DataModel.AnyOrDoc = foundry.abstract.DataModel.AnyOrDoc
-> extends foundry.abstract.DataModel<
-	ProgressTrackSource,
-	ProgressTrackPropertiesData,
-	Parent
-> {
+> extends ProgressLike<ProgressTrackSource, ProgressTrackProperties, Parent> {
 	max?: number
 	value?: number
-
-	/** The derived progress score, an integer from 0 to 10. */
-	get score() {
-		return Math.clamped(
-			Math.floor(this.ticks / ProgressTrack.TICKS_PER_BOX),
-			ProgressTrack.SCORE_MIN,
-			ProgressTrack.SCORE_MAX
-		)
-	}
 
 	/** The number of ticks per unit of progress (in other words, per instance of "mark progress") for this track's challenge rank. */
 	get #unit() {
@@ -44,44 +31,36 @@ export class ProgressTrack<
 		}
 	}
 
-	/** Make a progress roll against this progress track. */
-	async roll(actor?: IronswornActor, objective?: string) {
-		let moveDfId: string | undefined
+	#getDefaultProgressMove(actor?: IronswornActor) {
 		const isStarforged =
 			actor?.toolset === 'starforged' ??
 			IronswornSettings.starforgedToolsEnabled
 
 		switch (this.subtype) {
 			case 'vow':
-				moveDfId = isStarforged
+				return isStarforged
 					? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
 					: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
-				break
 			case 'connection':
-				if (isStarforged) moveDfId = 'Starforged/Moves/Connection/Forge_a_Bond'
+				if (isStarforged) return 'Starforged/Moves/Connection/Forge_a_Bond'
 				break
 			case 'delve':
-				moveDfId = 'Ironsworn/Moves/Delve/Locate_Your_Objective'
-				break
-			default:
-				break
+				return 'Ironsworn/Moves/Delve/Locate_Your_Objective'
 		}
+		return undefined
+	}
 
-		if (moveDfId == null)
-			return await IronswornPrerollDialog.showForProgress(
-				objective ?? '(progress)',
-				this.score,
-				actor ?? undefined,
-				moveDfId
-			)
-		else
-			return await IronswornPrerollDialog.showForOfficialMove(moveDfId, {
-				actor,
-				progress: {
-					source: objective ?? '',
-					value: this.score
-				}
-			})
+	/** Make a progress roll against this progress track. */
+	async roll({
+		actor,
+		objective,
+		moveDfid = this.#getDefaultProgressMove(actor)
+	}: {
+		actor?: IronswornActor
+		objective?: string
+		moveDfid?: string
+	} = {}) {
+		return await super.roll({ actor, objective, moveDfid })
 	}
 
 	static override migrateData(source) {
@@ -100,13 +79,17 @@ export class ProgressTrack<
 		return game.i18n.localize(field.choices[this.rank])
 	}
 
-	static override defineSchema(): DataSchema<ProgressTrackPropertiesData> {
+	static override defineSchema(): DataSchema<
+		ProgressTrackSource,
+		ProgressTrackProperties
+	> {
 		const fields = foundry.data.fields
 		return {
 			ticks: new fields.NumberField({
 				initial: this.TICKS_MIN,
 				min: this.TICKS_MIN,
-				max: this.TICKS_MAX
+				max: this.TICKS_MAX,
+				integer: true
 			}),
 			enabled: new fields.BooleanField({ initial: true }),
 			rank: new ChallengeRankField(),
@@ -122,19 +105,6 @@ export class ProgressTrack<
 			})
 		}
 	}
-
-	/** The minimum score when making a progress roll. */
-	static readonly SCORE_MIN = 0
-	/** The maximum score when making a progress roll. */
-	static readonly SCORE_MAX = 10
-	/** The number of ticks in one box of progress. */
-	static readonly TICKS_PER_BOX = 4
-	/** The number of boxes in a progress track. */
-	static readonly BOXES = this.SCORE_MAX
-	/** The minimum number of ticks in a progress track. */
-	static readonly TICKS_MIN = 0
-	/** The maximum number of ticks in a progress track. */
-	static readonly TICKS_MAX = this.TICKS_PER_BOX * this.BOXES
 
 	static readonly INCREMENT: Record<
 		| ValueOf<(typeof ChallengeRankField)['RANK']>
@@ -157,18 +127,19 @@ export interface ProgressTrack<
 	Parent extends foundry.abstract.DataModel.AnyOrDoc
 > extends foundry.abstract.DataModel<
 			ProgressTrackSource,
-			ProgressTrackPropertiesData,
+			ProgressTrackProperties,
 			Parent
 		>,
-		ProgressTrackPropertiesData {}
+		ProgressTrackProperties {}
 
 type ProgressSubtype = 'vow' | 'progress' | 'connection' | 'foe' | 'delve'
 
-export interface ProgressTrackSource {
-	rank: ChallengeRank
-	ticks: number
+export interface ProgressTrackSource extends ProgressLikeSource {
+	rank: ChallengeRankField.Rank
 	subtype: ProgressSubtype
 	enabled?: boolean
 }
 
-export interface ProgressTrackPropertiesData extends ProgressTrackSource {}
+export interface ProgressTrackProperties
+	extends ProgressLikeProperties,
+		ProgressTrackSource {}

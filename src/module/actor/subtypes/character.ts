@@ -8,10 +8,12 @@ import type {
 	MomentumSource
 } from '../../fields/MeterField'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
+import { DataModelConstructor } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
+import { LegacyTrack, LegacyTrackSource } from '../../model/LegacyTrack'
 
 export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
-	CharacterDataSourceData,
+	CharacterDataPropertiesData,
 	IronswornActor<'character'>
 > {
 	constructor(
@@ -110,30 +112,49 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 				custom2name: new fields.StringField({})
 			}),
 
-			legacies: new fields.SchemaField<CharacterDataSourceData['legacies']>({
-				quests: new ProgressTicksField({
-					max: undefined
+			legacies: new fields.SchemaField({
+				quests: new fields.EmbeddedDataField(LegacyTrack, {
+					label: 'IRONSWORN.LEGACY.Quests'
 				}),
-				questsXpSpent: new fields.NumberField({
-					initial: 0
+				bonds: new fields.EmbeddedDataField(LegacyTrack, {
+					label: 'IRONSWORN.LEGACY.Bonds'
 				}),
-				bonds: new ProgressTicksField({
-					max: undefined
-				}),
-				bondsXpSpent: new fields.NumberField({
-					initial: 0
-				}),
-				discoveries: new ProgressTicksField({
-					max: undefined
-				}),
-				discoveriesXpSpent: new fields.NumberField({
-					initial: 0
+				discoveries: new fields.EmbeddedDataField(LegacyTrack, {
+					label: 'IRONSWORN.LEGACY.Discoveries'
 				})
 			})
 		}
 	}
+
+	static migrateData(source: Record<string, unknown>) {
+		// @ts-expect-error
+		super.migrateData(source)
+		const migrate = foundry.abstract.Document._addDataFieldMigration
+
+		const legacies = ['quests', 'bonds', 'discoveries']
+
+		for (const legacy of legacies) {
+			if (typeof source[legacy] === 'number')
+				source[legacy] = { ticks: source[legacy] }
+			migrate(source, `legacies.${legacy}XpSpent`, `legacies.${legacy}.xpSpent`)
+		}
+
+		return source
+	}
 }
-export interface CharacterData extends CharacterDataSourceData {}
+export interface CharacterData extends CharacterDataPropertiesData {}
+export interface CharacterDataPropertiesData extends CharacterDataSourceData {
+	health: ConditionMeterField
+	spirit: ConditionMeterField
+	supply: ConditionMeterField
+	momentum: MomentumField
+
+	legacies: {
+		quests: LegacyTrack
+		bonds: LegacyTrack
+		discoveries: LegacyTrack
+	}
+}
 export interface CharacterDataSourceData {
 	biography: string
 	notes: string
@@ -150,13 +171,11 @@ export interface CharacterDataSourceData {
 	momentum: MomentumSource
 
 	xp: number
+
 	legacies: {
-		quests: number
-		questsXpSpent: number
-		bonds: number
-		bondsXpSpent: number
-		discoveries: number
-		discoveriesXpSpent: number
+		quests: LegacyTrackSource
+		bonds: LegacyTrackSource
+		discoveries: LegacyTrackSource
 	}
 
 	debility: {

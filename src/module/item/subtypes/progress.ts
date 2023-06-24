@@ -1,11 +1,12 @@
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
-import type { ProgressTrackSource } from '../../model/progress-track'
-import { ProgressTrack } from '../../model/progress-track'
-import type { ClockSource } from '../../model/clock'
-import { Clock } from '../../model/clock'
+import type { ProgressTrackSource } from '../../model/ProgressTrack'
+import { ProgressTrack } from '../../model/ProgressTrack'
+import type { ClockSource } from '../../model/Clock'
+import { Clock } from '../../model/Clock'
+import type { IronswornActor } from '../../actor/actor'
 
-/** TypeDataModel for the `progress` {@link IronswornItem} subtype. */
+/** TypeDataModel for the `progress` {@link IronswornItem} subtype. A general purpose tracker that embeds a ProgressTrack and a Clock */
 export class ProgressData extends foundry.abstract.TypeDataModel<
 	ProgressDataSourceData,
 	ProgressDataPropertiesData,
@@ -22,11 +23,18 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 	}
 
 	/** Make a progress roll against the progress track's progress score. */
-	async rollProgress() {
-		return await this.track.roll(
-			this.parent.actor ?? undefined,
-			this.parent.name as string
-		)
+	async rollProgress({
+		actor = this.parent.actor ?? undefined,
+		moveDfid
+	}: {
+		actor?: IronswornActor
+		moveDfid?: string
+	} = {}) {
+		return await this.track.roll({
+			actor,
+			objective: this.parent.name ?? undefined,
+			moveDfid
+		})
 	}
 
 	static override migrateData(source) {
@@ -46,7 +54,10 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 		return source
 	}
 
-	static override defineSchema(): DataSchema<ProgressDataPropertiesData> {
+	static override defineSchema(): DataSchema<
+		ProgressDataSourceData,
+		ProgressDataPropertiesData
+	> {
 		const fields = foundry.data.fields
 		return {
 			track: new fields.EmbeddedDataField(ProgressTrack, {

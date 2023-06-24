@@ -8,7 +8,10 @@ export class TruthModel extends foundry.abstract.TypeDataModel<
 	TruthOptionDataPropertiesData,
 	IronswornJournalPage<'truth'> & foundry.abstract.Document<any, any, any>
 > {
-	static override defineSchema(): DataSchema<TruthOptionDataPropertiesData> {
+	static override defineSchema(): DataSchema<
+		TruthOptionDataSourceData,
+		TruthOptionDataPropertiesData
+	> {
 		const fields = foundry.data.fields
 		return {
 			dfid: new DataforgedIDField(),
