@@ -117,6 +117,7 @@ declare global {
 				expanded?: boolean
 				muteBroadcast?: boolean
 				'edit-mode'?: boolean
+				starred?: boolean
 			}
 		}
 	}
