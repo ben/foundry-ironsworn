@@ -62,7 +62,7 @@ const $actor = inject($ActorKey)
 
 function addEmpty() {
 	Item.create(
-		{ name: 'NPC', type: 'progress', data: { subtype: 'foe' } },
+		{ name: 'NPC', type: 'progress', system: { track: { subtype: 'foe' } } },
 		{ parent: $actor }
 	)
 }

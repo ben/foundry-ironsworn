@@ -233,7 +233,8 @@ declare global {
 						 */
 						initial?:
 							| ConcreteData
-							| ((data: SourceData) => ConcreteData)
+							| Partial<ConcreteData>
+							| ((data: SourceData) => ConcreteData | Partial<ConcreteData>)
 							| undefined
 						/**
 						 * A data validation function which accepts one argument with the current value.

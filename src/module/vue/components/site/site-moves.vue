@@ -112,7 +112,6 @@ async function revealADanger() {
 
 async function locateObjective() {
 	if (!$site) return
-	const progress = Math.floor($site.system.current / 4)
 
 	IronswornPrerollDialog.showForOfficialMove(
 		'Ironsworn/Moves/Delve/Locate_Your_Objective',
@@ -120,7 +119,7 @@ async function locateObjective() {
 			actor: $site,
 			progress: {
 				source: $site.name ?? '',
-				value: progress
+				value: $site.system.track.score
 			}
 		}
 	)

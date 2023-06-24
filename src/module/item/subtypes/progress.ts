@@ -10,10 +10,19 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 	ProgressDataPropertiesData,
 	IronswornItem<'progress'>
 > {
+	/**
+	 * Mark the progress track. Use negative `times` to erase progress.
+	 * @param times The number of units of progress to be marked (default: `1`).
+	 */
 	async markProgress(times = 1) {
 		return await this.parent.update({
 			system: { track: this.track.getMarkData(times) }
 		})
+	}
+
+	/** Make a progress roll against the progress track's progress score. */
+	async roll() {
+		return await this.track.roll(this.parent.actor, this.parent.name as string)
 	}
 
 	static override migrateData(source) {

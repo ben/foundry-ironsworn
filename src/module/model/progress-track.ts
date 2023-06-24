@@ -44,7 +44,7 @@ export class ProgressTrack<
 	}
 
 	/** Make a progress roll to resolve the progress track. */
-	async resolve(actor?: IronswornActor, objective?: string) {
+	async roll(actor?: IronswornActor | null, objective?: string) {
 		let moveDfId: string | undefined
 		const isStarforged =
 			actor?.toolset === 'starforged' ??

@@ -34,9 +34,8 @@ const actor = inject(ActorKey) as Ref
 
 const starredProgresses = computed(() =>
 	actor?.value.items.filter(
-		(item) =>
-			item.type === 'progress' &&
-			(item.system as unknown as ProgressDataPropertiesData)?.starred
+		(item: ItemSource) =>
+			item.type === 'progress' && item.flags?.['foundry-ironsworn']?.starred
 	)
 )
 </script>

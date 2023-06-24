@@ -1,10 +1,12 @@
 <template>
 	<IronBtn
-		:tooltip="$t('IRONSWORN.MakeAProgressRoll', { score: $item?.system.score })"
+		:tooltip="
+			$t('IRONSWORN.MakeAProgressRoll', { score: $item?.system.track.score })
+		"
 		class="progress-roll"
 		icon="ironsworn:d10-tilt"
 		v-bind="($props, $attrs)"
-		@click="$item?.system.fulfill()">
+		@click="$item?.system.roll()">
 		<template v-for="(_, slot) of $slots" #[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
