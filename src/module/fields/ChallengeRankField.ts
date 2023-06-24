@@ -11,6 +11,20 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 		Epic: 5
 	} as const
 
+	static readonly i18nKeys = Object.fromEntries(
+		Object.entries(ChallengeRankField.RANK).map(([key, numericValue]) => [
+			numericValue,
+			`IRONSWORN.CHALLENGERANK.${key}`
+		])
+	) as Record<ChallengeRankField.Rank, string>
+
+	static readonly RANK_MIN = this.RANK.Troublesome
+	static readonly RANK_MAX = this.RANK.Epic
+
+	static localizeValue(rank: ChallengeRankField.Rank) {
+		return game.i18n.localize(ChallengeRankField.i18nKeys[rank])
+	}
+
 	constructor(
 		options?: Partial<
 			Omit<
@@ -21,18 +35,11 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 	) {
 		super({
 			label: 'IRONSWORN.ChallengeRank',
-			choices: Object.fromEntries(
-				Object.entries(ChallengeRankField.RANK).map(([key, numericValue]) => [
-					numericValue,
-					`IRONSWORN.CHALLENGERANK.${key}`
-				])
-			) as {
-				[R in keyof typeof ChallengeRankField.RANK as (typeof ChallengeRankField)['RANK'][R]]: string
-			},
-			initial: ChallengeRankField.RANK.Troublesome as number,
+			choices: ChallengeRankField.i18nKeys,
+			initial: ChallengeRankField.RANK_MIN as number,
 			integer: true,
-			min: ChallengeRankField.RANK.Troublesome,
-			max: ChallengeRankField.RANK.Epic,
+			min: ChallengeRankField.RANK_MIN,
+			max: ChallengeRankField.RANK_MAX,
 			...options
 		})
 	}
@@ -53,6 +60,10 @@ export class ChallengeRankField extends foundry.data.fields.NumberField {
 }
 export interface ChallengeRankField extends foundry.data.fields.NumberField {
 	choices: {
-		[R in keyof typeof ChallengeRankField.RANK as (typeof ChallengeRankField)['RANK'][R]]: string
+		[R in ChallengeRankField.Rank]: string
 	}
+}
+
+export namespace ChallengeRankField {
+	export type Rank = ValueOf<(typeof ChallengeRankField)['RANK']>
 }
