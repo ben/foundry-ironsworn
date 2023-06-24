@@ -46,6 +46,7 @@ import type {
 import ActorConfig from './module/actor/config'
 import ItemConfig from './module/item/config'
 import { ProgressTrackModel } from './module/journal/subtypes/progress'
+import { TruthModel } from './module/journal/subtypes/truth'
 
 declare global {
 	interface LenientGlobalVariableTypes {
