@@ -7,7 +7,6 @@ import { DelveDomainData } from './subtypes/delve-domain'
 import { DelveThemeData } from './subtypes/delve-theme'
 import { ProgressData } from './subtypes/progress'
 import { SFMoveData } from './subtypes/sfmove'
-import type { ChallengeRank } from '../constants'
 import type { AssetDataProperties, AssetDataSource } from './subtypes/asset'
 import type {
 	BondsetDataProperties,
@@ -79,13 +78,6 @@ const config: PartialDeep<ItemConfig> = {
 } as const
 
 export default config
-
-export interface ProgressBase {
-	description: string
-	rank: ChallengeRank
-	current: number
-	completed: boolean
-}
 
 export type ItemDataSource =
 	| AssetDataSource
