@@ -26,7 +26,7 @@
 		@keydown.4="setRank(4)"
 		@keydown.5="setRank(5)">
 		<button
-			v-for="rank in Object.values(ChallengeRankField.RANK)"
+			v-for="rank in ChallengeRankField.RANK"
 			:key="rank"
 			:data-tooltip="ChallengeRankField.localizeValue(rank)"
 			data-tooltip-direction="UP"
@@ -34,7 +34,7 @@
 			class="nogrow"
 			tabindex="-1"
 			:aria-selected="rank === current"
-			:data-pip-state="getState(rank as any)"
+			:data-pip-state="getState(rank)"
 			:class="$style.pip"
 			@focus.prevent
 			@mouseover="hovered = rank"
