@@ -11,15 +11,16 @@ export function isValidProgressItem(
 	excludedSubtypes?: ProgressSubtype[]
 ): item is ItemSource<'progress'> | IronswornItem<'progress'> {
 	if (item.type === 'progress') {
+		const progress = item as ItemSource<'progress'> | IronswornItem<'progress'>
 		switch (showCompleted) {
 			case 'completed-only': {
-				if (!item.system.completed) {
+				if (!progress.system.completed) {
 					return false
 				}
 				break
 			}
 			case 'no-completed': {
-				if (item.system.completed) {
+				if (progress.system.completed) {
 					return false
 				}
 				break
@@ -27,12 +28,7 @@ export function isValidProgressItem(
 			default:
 				break
 		}
-		if (
-			(excludedSubtypes ?? []).includes(
-				(item as IronswornItem<'progress'> | ItemSource<'progress'>).system
-					.track?.subtype
-			)
-		) {
+		if ((excludedSubtypes ?? []).includes(progress.system.track?.subtype)) {
 			return false
 		}
 		return true

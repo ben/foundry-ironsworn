@@ -9,20 +9,12 @@ import type {
 import { ProgressTrack } from '../../model/progress-track'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
-import type { IronActorModel } from './common'
 
-export class SiteData
-	extends foundry.abstract.TypeDataModel<
-		SiteDataSourceData,
-		SiteDataPropertiesData,
-		IronswornActor<'site'>
-	>
-	implements IronActorModel
-{
-	isValidImpact(statusEffect: StatusEffectV11): boolean {
-		return false
-	}
-
+export class SiteData extends foundry.abstract.TypeDataModel<
+	SiteDataSourceData,
+	SiteDataPropertiesData,
+	IronswornActor<'site'>
+> {
 	get denizenTable() {
 		return new OracleTable({
 			name: game.i18n.localize('IRONSWORN.DELVESITE.Denizens'),
@@ -139,7 +131,7 @@ export class SiteData
 		const fields = foundry.data.fields
 		return {
 			track: new fields.EmbeddedDataField(ProgressTrack, {
-				initial: { enabled: true }
+				initial: { enabled: true } as any
 			}) as any,
 			objective: new fields.HTMLField(),
 			description: new fields.HTMLField(),

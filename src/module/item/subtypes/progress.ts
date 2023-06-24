@@ -37,7 +37,7 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 		const fields = foundry.data.fields
 		return {
 			track: new fields.EmbeddedDataField(ProgressTrack, {
-				initial: { enabled: true }
+				initial: { enabled: true } as any
 			}),
 			clock: new fields.EmbeddedDataField(Clock),
 			completed: new fields.BooleanField({ required: false }),
