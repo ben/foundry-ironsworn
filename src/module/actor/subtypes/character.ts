@@ -1,15 +1,13 @@
-import { StatField } from '../../fields/StatField'
 import { ImpactField } from '../../fields/ImpactField'
-import type { IronswornActor } from '../actor'
-import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import type { DataSchema } from '../../fields/utils'
 import type {
 	ConditionMeterSource,
 	MomentumSource
 } from '../../fields/MeterField'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
-import { DataModelConstructor } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
-import { LegacyTrack, LegacyTrackSource } from '../../model/LegacyTrack'
+import { StatField } from '../../fields/StatField'
+import type { LegacyTrackSource } from '../../model/LegacyTrack'
+import { LegacyTrack } from '../../model/LegacyTrack'
+import type { IronswornActor } from '../actor'
 
 export class CharacterData extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
