@@ -13,7 +13,6 @@ export class StarshipData extends foundry.abstract.TypeDataModel<
 	static override defineSchema(): DataSchema<StarshipDataSourceData> {
 		return {
 			health: new MeterValueField({ label: 'IRONSWORN.Integrity' }),
-			// @ts-expect-error
 			debility: new foundry.data.fields.SchemaField<
 				StarshipDataSourceData['debility']
 			>({
