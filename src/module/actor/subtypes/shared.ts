@@ -1,8 +1,5 @@
-import {
-	ConditionMeterField,
-	ConditionMeterSource
-} from '../../fields/MeterField'
-import { MeterValueField } from '../../fields/MeterValueField'
+import type { ConditionMeterSource } from '../../fields/MeterField'
+import { ConditionMeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
