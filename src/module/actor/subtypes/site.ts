@@ -117,11 +117,14 @@ export class SiteData extends foundry.abstract.TypeDataModel<
 		})
 	}
 
-	prepareDerivedData(): void {
-		super.prepareDerivedData()
+	/** Make the Reveal a Danger move and roll a random danger from this delve site. */
+	async revealADanger() {
+		return await (await this.getDangers())?.draw()
+	}
 
-		this.track.value = this.track.score
-		this.track.max = ProgressTrack.SCORE_MAX
+	/** Make a progress roll with the Locate Your Objective move. */
+	async locateYourObjective() {
+		return await this.track.roll(this.parent, this.objective)
 	}
 
 	static override defineSchema(): DataSchema<
@@ -131,7 +134,7 @@ export class SiteData extends foundry.abstract.TypeDataModel<
 		const fields = foundry.data.fields
 		return {
 			track: new fields.EmbeddedDataField(ProgressTrack, {
-				initial: { enabled: true } as any
+				initial: { enabled: true, subtype: 'delve' } as any
 			}) as any,
 			objective: new fields.HTMLField(),
 			description: new fields.HTMLField(),

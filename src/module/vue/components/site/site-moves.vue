@@ -24,7 +24,7 @@
 				:move="moves.revealADanger"
 				class="nogrow"
 				:oracle-disabled="!hasThemeAndDomain"
-				@oracleClick="revealADanger" />
+				@oracleClick="$site.system.revealADanger" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
@@ -37,7 +37,7 @@
 				v-if="moves.locateObjective"
 				:move="moves.locateObjective"
 				class="nogrow"
-				@rollClick="locateObjective" />
+				@rollClick="$site.system.locateYourObjective" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
@@ -105,25 +105,6 @@ Promise.resolve().then(async () => {
 		)!
 	}
 })
-
-async function revealADanger() {
-	return (await $site?.system.getDangers())?.draw()
-}
-
-async function locateObjective() {
-	if (!$site) return
-
-	IronswornPrerollDialog.showForOfficialMove(
-		'Ironsworn/Moves/Delve/Locate_Your_Objective',
-		{
-			actor: $site,
-			progress: {
-				source: $site.name ?? '',
-				value: $site.system.track.score
-			}
-		}
-	)
-}
 </script>
 
 <style lang="scss" module>

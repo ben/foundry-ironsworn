@@ -5,6 +5,7 @@ import { ProgressTrack } from '../../model/progress-track'
 import type { ClockSource } from '../../model/clock'
 import { Clock } from '../../model/clock'
 
+/** TypeDataModel for the `progress` {@link IronswornItem} subtype. */
 export class ProgressData extends foundry.abstract.TypeDataModel<
 	ProgressDataSourceData,
 	ProgressDataPropertiesData,
@@ -21,8 +22,11 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 	}
 
 	/** Make a progress roll against the progress track's progress score. */
-	async roll() {
-		return await this.track.roll(this.parent.actor, this.parent.name as string)
+	async rollProgress() {
+		return await this.track.roll(
+			this.parent.actor ?? undefined,
+			this.parent.name as string
+		)
 	}
 
 	static override migrateData(source) {

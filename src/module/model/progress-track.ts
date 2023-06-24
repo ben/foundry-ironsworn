@@ -5,6 +5,7 @@ import type { DataSchema } from '../fields/utils'
 import { IronswornPrerollDialog } from '../rolls'
 import { IronswornSettings } from '../helpers/settings'
 
+/** Represents an Ironsworn progress track. */
 export class ProgressTrack<
 	Parent extends foundry.abstract.DataModel.AnyOrDoc = foundry.abstract.DataModel.AnyOrDoc
 > extends foundry.abstract.DataModel<
@@ -44,7 +45,7 @@ export class ProgressTrack<
 	}
 
 	/** Make a progress roll to resolve the progress track. */
-	async roll(actor?: IronswornActor | null, objective?: string) {
+	async roll(actor?: IronswornActor, objective?: string) {
 		let moveDfId: string | undefined
 		const isStarforged =
 			actor?.toolset === 'starforged' ??
@@ -59,16 +60,28 @@ export class ProgressTrack<
 			case 'connection':
 				if (isStarforged) moveDfId = 'Starforged/Moves/Connection/Forge_a_Bond'
 				break
+			case 'delve':
+				moveDfId = 'Ironsworn/Moves/Delve/Locate_Your_Objective'
+				break
 			default:
 				break
 		}
 
-		return await IronswornPrerollDialog.showForProgress(
-			objective ?? '(progress)',
-			this.score,
-			actor ?? undefined,
-			moveDfId
-		)
+		if (moveDfId == null)
+			return await IronswornPrerollDialog.showForProgress(
+				objective ?? '(progress)',
+				this.score,
+				actor ?? undefined,
+				moveDfId
+			)
+		else
+			return await IronswornPrerollDialog.showForOfficialMove(moveDfId, {
+				actor,
+				progress: {
+					source: objective ?? '',
+					value: this.score
+				}
+			})
 	}
 
 	static override migrateData(source) {
@@ -102,7 +115,8 @@ export class ProgressTrack<
 					progress: 'IRONSWORN.ITEM.SubtypeProgress',
 					vow: 'IRONSWORN.ITEM.SubtypeVow',
 					connection: 'IRONSWORN.ITEM.SubtypeConnection',
-					foe: 'IRONSWORN.ITEM.SubtypeFoe'
+					foe: 'IRONSWORN.ITEM.SubtypeFoe',
+					delve: 'IRONSWORN.Delve'
 				},
 				initial: 'progress'
 			})
@@ -148,7 +162,7 @@ export interface ProgressTrack<
 		>,
 		ProgressTrackPropertiesData {}
 
-type ProgressSubtype = 'vow' | 'progress' | 'connection' | 'foe'
+type ProgressSubtype = 'vow' | 'progress' | 'connection' | 'foe' | 'delve'
 
 export interface ProgressTrackSource {
 	rank: ChallengeRank

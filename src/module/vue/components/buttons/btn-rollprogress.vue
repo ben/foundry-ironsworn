@@ -6,7 +6,7 @@
 		class="progress-roll"
 		icon="ironsworn:d10-tilt"
 		v-bind="($props, $attrs)"
-		@click="$item?.system.roll()">
+		@click="$item?.system.rollProgress()">
 		<template v-for="(_, slot) of $slots" #[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
