@@ -12,6 +12,7 @@ import type {
 import { sendToChat } from '../features/chat-alert'
 import type { ImpactOptions } from './types'
 import type { ImpactFlags } from './config'
+import { typedDeleteDialog } from '../helpers/util'
 
 type Ruleset = 'starforged' | 'classic'
 
@@ -41,7 +42,7 @@ export class IronActiveEffect extends ActiveEffect {
 	}
 
 	get type() {
-		return this.getFlag('foundry-ironsworn', 'type')
+		return this.getFlag('foundry-ironsworn', 'type') ?? 'base'
 	}
 
 	get impactType() {
@@ -445,6 +446,10 @@ export class IronActiveEffect extends ActiveEffect {
 		setProperty(data, 'flags.foundry-ironsworn.isCustomImpact', true)
 
 		return await this.create(data, context)
+	}
+
+	override async deleteDialog(options?: Partial<DialogOptions>) {
+		return (await typedDeleteDialog(this, options)) as any
 	}
 }
 
