@@ -9,7 +9,7 @@ import type {
 } from '../../fields/MeterField'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
 
-export class CharacterData extends foundry.abstract.TypeDataModel<
+export class CharacterModel extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
 	CharacterDataSourceData,
 	IronswornActor<'character'>
@@ -27,7 +27,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 	static _enableV10Validation = true
 
-	async burnMomentum(this: CharacterData) {
+	async burnMomentum(this: CharacterModel) {
 		if (this.canBurnMomentum) {
 			await this.parent.update({
 				system: { 'momentum.value': this.parent.system.momentum.resetValue }
@@ -133,7 +133,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface CharacterData extends CharacterDataSourceData {}
+export interface CharacterModel extends CharacterDataSourceData {}
 export interface CharacterDataSourceData {
 	biography: string
 	notes: string
@@ -194,6 +194,6 @@ export interface CharacterDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: CharacterData
-	system: CharacterData
+	data: CharacterModel
+	system: CharacterModel
 }

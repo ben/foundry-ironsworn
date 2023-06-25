@@ -3,7 +3,7 @@ import type { DataSchema } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 
-export class BondsetData extends foundry.abstract.TypeDataModel<
+export class BondsetModel extends foundry.abstract.TypeDataModel<
 	BondsetDataSourceData,
 	BondsetDataSourceData,
 	IronswornItem<'bondset'>
@@ -41,7 +41,7 @@ export class BondsetData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface BondsetData extends BondsetDataSourceData {}
+export interface BondsetModel extends BondsetDataSourceData {}
 
 export interface Bond {
 	name: string
@@ -58,6 +58,6 @@ export interface BondsetDataSource {
 }
 export interface BondsetDataProperties {
 	type: 'bondset'
-	data: BondsetData
-	system: BondsetData
+	data: BondsetModel
+	system: BondsetModel
 }
