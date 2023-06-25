@@ -1,10 +1,11 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import { IronswornActor } from './actor'
 import type {
 	CharacterDataProperties,
 	CharacterDataSource
 } from './subtypes/character'
-import type { FoeDataProperties, FoeDataSource } from './subtypes/foe'
 import { CharacterModel } from './subtypes/character'
+import type { FoeDataProperties, FoeDataSource } from './subtypes/foe'
 import { FoeModel } from './subtypes/foe'
 import type {
 	LocationDataProperties,
@@ -20,7 +21,6 @@ import type {
 	StarshipDataSource
 } from './subtypes/starship'
 import { StarshipModel } from './subtypes/starship'
-import { IronswornActor } from './actor'
 
 const dataModels: Record<
 	ConfiguredData<'Actor'>['type'],
