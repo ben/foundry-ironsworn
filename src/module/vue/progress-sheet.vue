@@ -132,7 +132,7 @@
 			:text="
 				$t(`DOCUMENT.Delete`, { type: $t('IRONSWORN.ITEM.TypeProgressTrack') })
 			"
-			@click="destroy" />
+			@click="$item?.deleteDialog()" />
 	</div>
 </template>
 
@@ -171,19 +171,6 @@ function update(...keys: string[]) {
 		data[key] = newValue
 	}
 	$item?.update(data)
-}
-
-function destroy() {
-	Dialog.confirm({
-		title: game.i18n.format('DOCUMENT.Delete', {
-			type: game.i18n.localize('IRONSWORN.ITEM.TypeProgressTrack')
-		}),
-		content: `<p><strong>${game.i18n.localize(
-			'IRONSWORN.ConfirmDelete'
-		)}</strong></p>`,
-		yes: () => $item?.delete(),
-		defaultYes: false
-	})
 }
 </script>
 

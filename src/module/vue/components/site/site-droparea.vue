@@ -23,7 +23,10 @@
 						top: var(--ironsworn-spacer-md);
 						right: var(--ironsworn-spacer-md);
 					">
-					<IronBtn block icon="fa:trash" @click="destroy" />
+					<IronBtn
+						block
+						icon="fa:trash"
+						@click="foundryitem()?.deleteDialog()" />
 					<IronBtn block icon="fa:pen-to-square" @click="edit" />
 				</div>
 			</div>
@@ -45,13 +48,13 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { inject } from 'vue'
+import { inject, computed } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
-import { computed } from 'vue'
 import DocumentImg from '../document-img.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 import DropTarget from '../../drop-target.vue'
+import type { IronswornItem } from '../../../item/item'
 
 const props = defineProps<{
 	item: any
@@ -68,20 +71,9 @@ const editMode = computed(() => {
 })
 
 function foundryitem() {
-	return props.item && $actor?.items.get(props.item._id)
-}
-
-function destroy() {
-	Dialog.confirm({
-		title: game.i18n.format('DOCUMENT.Delete', {
-			type: game.i18n.localize('DOCUMENT.Item')
-		}),
-		content: `<p><strong>${game.i18n.localize(
-			'IRONSWORN.ConfirmDelete'
-		)}</strong></p>`,
-		yes: () => foundryitem()?.delete(),
-		defaultYes: false
-	})
+	return (props.item && $actor?.items.get(props.item._id)) as
+		| IronswornItem<'delve-theme'>
+		| IronswornItem<'delve-domain'>
 }
 
 function edit() {

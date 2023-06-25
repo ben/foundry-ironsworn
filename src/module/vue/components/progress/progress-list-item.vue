@@ -32,7 +32,7 @@
 						type: $t('IRONSWORN.ITEM.TypeProgressTrack')
 					})
 				"
-				@click="destroy" />
+				@click="$item.deleteDialog()" />
 			<IronBtn
 				block
 				icon="fa:pen-to-square"
@@ -130,18 +130,7 @@ const completedTooltip = computed(() => {
 function edit() {
 	$item?.sheet?.render(true)
 }
-function destroy() {
-	Dialog.confirm({
-		title: game.i18n.format('DOCUMENT.Delete', {
-			type: game.i18n.localize('IRONSWORN.ITEM.TypeProgressTrack')
-		}),
-		content: `<p><strong>${game.i18n.localize(
-			'IRONSWORN.ConfirmDelete'
-		)}</strong></p>`,
-		yes: () => $item?.delete(),
-		defaultYes: false
-	})
-}
+
 const $emit = defineEmits(['completed'])
 
 function toggleComplete() {

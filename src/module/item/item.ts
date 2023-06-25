@@ -1,5 +1,6 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { DocumentSubTypes } from '../../types/helperTypes'
+import { typedDeleteDialog } from '../helpers/util'
 import type { ItemDataProperties } from './config'
 
 /**
@@ -40,6 +41,10 @@ export class IronswornItem<
 			data.type = 'progress'
 		}
 		return super.migrateData(data)
+	}
+
+	override async deleteDialog(options: Partial<DialogOptions> = {}) {
+		return await typedDeleteDialog(this, options)
 	}
 }
 export interface IronswornItem<T extends DocumentSubTypes<'Item'> = any>

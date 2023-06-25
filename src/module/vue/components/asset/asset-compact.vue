@@ -11,7 +11,7 @@
 					block
 					nogrow
 					icon="fa:trash"
-					@click="destroy" />
+					@click="$asset?.deleteDialog()" />
 				<IronBtn block nogrow icon="fa:pen-to-square" @click="edit" />
 			</div>
 		</template>
@@ -56,15 +56,6 @@ function toggle() {
 function edit() {
 	$asset?.sheet?.render(true)
 	return false
-}
-function destroy() {
-	Dialog.confirm({
-		title: game.i18n.format('DOCUMENT.Delete', {
-			type: game.i18n.localize('IRONSWORN.ITEM.TypeAsset')
-		}),
-		yes: () => $asset?.delete(),
-		defaultYes: false
-	})
 }
 </script>
 
