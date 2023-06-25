@@ -1,6 +1,5 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import type { ChallengeRank } from 'dataforged'
-import { ChallengeRankField } from '../../fields/ChallengeRankField'
+import { ChallengeRank } from '../../fields/ChallengeRank'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { TableResultStub } from '../../fields/TableResultField'
 import { TableResultField } from '../../fields/TableResultField'
@@ -114,7 +113,7 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 	static override defineSchema(): DataSchema<SiteDataSourceData> {
 		const fields = foundry.data.fields
 		return {
-			rank: new ChallengeRankField(),
+			rank: new ChallengeRank(),
 			current: new ProgressTicksField(),
 			objective: new fields.HTMLField(),
 			description: new fields.HTMLField(),
@@ -181,7 +180,7 @@ interface SiteDataSourceData {
 	objective: string
 	description: string
 	notes: string
-	rank: ChallengeRank
+	rank: ChallengeRank.Value
 	current: number
 	denizens: TableResultStub[]
 }

@@ -1,5 +1,5 @@
 import type { ISettingTruthOption } from 'dataforged'
-import type { ChallengeRank } from '../constants'
+import type { ChallengeRank } from '../fields/ChallengeRank'
 import type { IronswornJournalPage } from './journal-entry-page'
 
 interface CounterBase {
@@ -21,7 +21,7 @@ interface Countdown extends CounterBase {
 
 interface ProgressTrack {
 	ticks: number
-	rank: ChallengeRank
+	rank: ChallengeRank.Value
 	/**
 	 * For Threat/Menace from Ironsworn: Delve.
 	 */

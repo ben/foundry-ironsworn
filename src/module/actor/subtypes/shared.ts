@@ -13,7 +13,6 @@ export class SharedModel extends foundry.abstract.TypeDataModel<
 	static override defineSchema(): DataSchema<SharedDataSourceData> {
 		return {
 			biography: new foundry.data.fields.HTMLField(),
-			// @ts-expect-error
 			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' })
 		}
 	}

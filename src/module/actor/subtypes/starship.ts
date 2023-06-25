@@ -11,7 +11,6 @@ export class StarshipModel extends foundry.abstract.TypeDataModel<
 
 	static override defineSchema(): DataSchema<StarshipDataSourceData> {
 		return {
-			// @ts-expect-error
 			debility: new foundry.data.fields.SchemaField<
 				StarshipDataSourceData['debility']
 			>({
