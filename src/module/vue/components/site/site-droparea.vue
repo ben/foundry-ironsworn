@@ -23,7 +23,7 @@
 						top: var(--ironsworn-spacer-md);
 						right: var(--ironsworn-spacer-md);
 					">
-					<BtnDelete block :document="foundryitem()" />
+					<BtnDocDelete block :document="foundryitem()" />
 					<IronBtn block icon="fa:pen-to-square" @click="edit" />
 				</div>
 			</div>
@@ -45,14 +45,13 @@
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { inject } from 'vue'
+import { inject, computed } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
-import { computed } from 'vue'
 import DocumentImg from '../document-img.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 import DropTarget from '../../drop-target.vue'
-import BtnDelete from '../buttons/btn-delete.vue'
+import BtnDocDelete from '../buttons/btn-doc-delete.vue'
 
 const props = defineProps<{
 	item: any

@@ -2,7 +2,9 @@
 	<IronBtn
 		:class="$style.wrapper"
 		aria-haspopup="dialog"
-		:tooltip="text"
+		:tooltip="btnText ? undefined : text"
+		:text="btnText ? text : undefined"
+		:icon="'fa:trash'"
 		v-bind="($props, $attrs)"
 		@click=";(document as any).deleteDialog(dialogOptions)">
 		<template v-for="(_, slot) of $slots" #[slot]="scope">
@@ -19,21 +21,23 @@ import type {
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
-interface Props extends PropsOf<typeof IronBtn> {
+interface Props extends Omit<PropsOf<typeof IronBtn>, 'text' | 'icon'> {
 	document: InstanceType<ConfiguredDocumentClassForName<DocumentType>>
 	dialogOptions?: Partial<DialogOptions>
+	/** @default `false` */
+	btnText?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	icon: 'fa:trash',
-	dialogOptions: {} as any
+	dialogOptions: {} as any,
+	btnText: false
 })
 
 const typeLabel = computed<string>(() => {
 	const type =
 		(props.document as any).type ??
 		props.document.getFlag('foundry-ironsworn', 'type')
-	const docConfig = CONFIG[props.document.documentName]
+	const docConfig = CONFIG[(props.document as any).documentName]
 	if ('typeLabels' in docConfig)
 		return game.i18n.localize(docConfig.typeLabels?.[type])
 
