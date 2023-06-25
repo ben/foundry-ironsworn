@@ -5,6 +5,8 @@ import type { TableResultStub } from '../../fields/TableResultField'
 import { TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
 import { OracleTable } from '../../roll-table/oracle-table'
+import { OracleTableResult } from '../../roll-table/oracle-table-result'
+import { Oracles } from '../../roll-table/oracles'
 import type { IronswornActor } from '../actor'
 
 export class SiteModel extends foundry.abstract.TypeDataModel<
@@ -67,35 +69,21 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 	}
 
 	async getDangers() {
-		const revealADanger = await OracleTable.getByDfId(
-			'Ironsworn/Oracles/Moves/Reveal_a_Danger'
-		)
-		// skip the "Check the theme/domain card" rows
-		const dangerRows = revealADanger?.results.contents.slice(2)
-		if (dangerRows == null) return
+		if (!this.hasThemeAndDomain) return undefined
+
+		// TODO: is it worth trying to cache this?
+		const oracle = await Oracles.find('Ironsworn/Oracles/Moves/Reveal_a_Danger')
+		if (oracle == null) return
 
 		return new OracleTable({
 			name: game.i18n.localize('IRONSWORN.DELVESITE.Dangers'),
-			formula: '1d100',
 			results: [
-				...dangerRows.map(
-					(row) =>
-						mergeObject(
-							row.toObject(),
-							{
-								flags: {
-									'foundry-ironsworn': {
-										sourceId: this.parent.uuid,
-										type: 'delve-site-danger'
-									}
-								}
-							},
-							{ inplace: false }
-						) as TableResultDataConstructorData
-				),
 				...this.theme.system.dangers,
-				...this.domain.system.dangers
-			],
+				...this.domain.system.dangers,
+				// Omits the first two rows
+				...oracle.toObject().results.slice(2)
+			] as TableResultDataConstructorData[],
+			formula: '1d100',
 			flags: {
 				'foundry-ironsworn': {
 					subtitle: this.parent.name,

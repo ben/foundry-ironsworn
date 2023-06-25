@@ -1,4 +1,6 @@
+import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { ISettingTruthOption } from 'dataforged'
+import type { DataforgedFlags } from '../dataforged'
 import type { ChallengeRank } from '../fields/ChallengeRank'
 import type { IronswornJournalPage } from './journal-entry-page'
 
@@ -112,7 +114,7 @@ declare global {
 	}
 	interface FlagConfig {
 		JournalEntryPage: {
-			'foundry-ironsworn'?: {
+			'foundry-ironsworn'?: DataforgedFlags<ISettingTruthOption, '$id'> & {
 				assets?: string[]
 			}
 		}
@@ -139,6 +141,7 @@ declare global {
 	> {
 		type: T
 		system: Extract<JournalEntryPageDataSource, { type: T }>['system']
+		flags?: ConfiguredFlags<'JournalEntryPage'>
 	}
 
 	interface JournalEntryPage<

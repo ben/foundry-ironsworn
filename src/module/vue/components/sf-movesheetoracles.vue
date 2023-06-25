@@ -37,6 +37,7 @@ import { nextTick, provide, reactive, ref, watch } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { getOracleTreeWithCustomOracles } from '../../features/customoracles'
 import { OracleTable } from '../../roll-table/oracle-table'
+import { Oracles } from '../../roll-table/oracles'
 import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 
@@ -104,24 +105,6 @@ function collapseAll() {
 
 CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
 	clearSearch()
-
-	// Find the path in the data tree
-	const dfOraclePath = OracleTable.findOracleWithIntermediateNodes(dfid)
-
-	// Wait for children to be present
-	while (!oracles.value) {
-		await nextTick()
-	}
-
-	// Walk the component tree, expanding as we go
-	let children = oracles.value
-	for (const dataNode of dfOraclePath) {
-		const child = children?.find((x: any) => x.dfid() === dataNode.$id)
-		if (!child) break
-		child.expand()
-		await nextTick()
-		children = child.$refs.children as any
-	}
 })
 </script>
 

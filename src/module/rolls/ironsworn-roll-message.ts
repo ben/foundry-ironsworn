@@ -4,6 +4,7 @@ import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
+import { Oracles } from '../roll-table/oracles'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
@@ -320,9 +321,7 @@ export class IronswornRollMessage {
 
 		const system = move.system
 		const dfids = system.Oracles ?? []
-		const nextOracles = compact(
-			await Promise.all(dfids.map(OracleTable.getByDfId))
-		)
+		const nextOracles = compact(await Promise.all(dfids.map(Oracles.find)))
 		return { nextOracles }
 	}
 }

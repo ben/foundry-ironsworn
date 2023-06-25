@@ -29,7 +29,8 @@
 					:override-click="onRollClick !== undefined"
 					@click="$emit('rollClick')" />
 				<BtnOracle
-					:node="data.oracles[0] ?? {}"
+					:oracle-id="(data.oracles[0].dataforgedNode?.$id as string)"
+					:name="data.oracles[0].displayName"
 					:disabled="preventOracle"
 					:class="$style.btn"
 					:override-click="onOracleClick !== undefined"

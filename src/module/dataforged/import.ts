@@ -1,39 +1,47 @@
 import type { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
-import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type {
 	IAssetType,
 	IMoveCategory,
-	IOracle,
-	IOracleCategory,
-	Ironsworn,
-	IRow,
 	ISettingTruth,
 	Starforged
 } from 'dataforged'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { starforged, ironsworn } from 'dataforged'
-import { isArray, isObject, max } from 'lodash-es'
+import { isObject, max, pick } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
-import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
-import { OracleTableResult } from '../roll-table/oracle-table-result'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
-	ISOracleCategories,
 	SFAssetTypes,
-	SFMoveCategories,
-	SFOracleCategories
+	SFMoveCategories
 } from './data'
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
 
-export function cleanDollars(obj): any {
-	if (isArray(obj)) {
+type StripDollarKey<K> = K extends `$${infer P}` ? `df${P}` : K
+export type StripDollars<T> = { [K in keyof T as StripDollarKey<K>]: T[K] }
+/**
+ * Picks keys, and replaces any keys starting with '$' with 'df'
+ */
+export type DataforgedFlags<T, K extends keyof T> = Partial<
+	StripDollars<Pick<T, K>>
+>
+
+export function pickDataforged<T extends object, K extends keyof T>(
+	obj: T,
+	...keys: K[]
+) {
+	const newObj = pick(obj, ...keys)
+	return cleanDollars(newObj) as DataforgedFlags<T, K>
+}
+
+export function cleanDollars(obj) {
+	if (Array.isArray(obj)) {
 		const ret = [] as any[]
 		for (const item of obj) {
 			ret.push(cleanDollars(item))
@@ -63,15 +71,13 @@ export function hash(str: string): string {
 	return shajs('sha256').update(str).digest('hex').substring(48)
 }
 
-const PACKS = [
+export const PACKS = [
 	'foundry-ironsworn.starforgedassets',
 	'foundry-ironsworn.starforgedencounters',
 	'foundry-ironsworn.starforgedmoves',
-	'foundry-ironsworn.starforgedoracles',
 	'foundry-ironsworn.starforgedtruths',
 	'foundry-ironsworn.foeactorssf',
 	'foundry-ironsworn.ironswornassets',
-	'foundry-ironsworn.ironswornoracles',
 	'foundry-ironsworn.ironswornmoves',
 	'foundry-ironsworn.ironsworntruths'
 ] as const
@@ -100,9 +106,7 @@ export async function importFromDataforged() {
 		processSFMoves(),
 		processSFAssets(),
 		processISAssets(),
-		processSFOracles(),
 		processISMoves(),
-		processISOracles(),
 		// processISTruths(), // Re-enable when DF includes them
 		processSFTruths(),
 		processSFEncounters().then(async () => {
@@ -136,7 +140,7 @@ function movesForCategories(
 				_id: hashLookup(cleanMove.dfid),
 				type: 'sfmove',
 				name: move.Name,
-				img: 'icons/dice/d10black.svg',
+				img: 'icons/svg/d10-grey.svg',
 				system: cleanMove
 			})
 		}
@@ -244,53 +248,6 @@ async function processISAssets() {
 	})
 }
 
-/**
- * ORACLES
- */
-async function processOracle(
-	oracle: IOracle,
-	output: RollTableDataConstructorData[]
-) {
-	// Oracles JSON is a tree we wish to iterate through depth first adding
-	// parents prior to their children, and children in order
-	if (oracle.Table != null)
-		output.push(OracleTable.getConstructorData(oracle as any))
-
-	for (const child of oracle.Oracles ?? []) await processOracle(child, output)
-}
-async function processOracleCategory(
-	cat: IOracleCategory,
-	output: RollTableDataConstructorData[]
-) {
-	for (const oracle of cat.Oracles ?? []) await processOracle(oracle, output)
-	for (const child of cat.Categories ?? [])
-		await processOracleCategory(child, output)
-}
-
-async function processSFOracles() {
-	const oraclesToCreate: RollTableDataConstructorData[] = []
-
-	for (const category of SFOracleCategories) {
-		await processOracleCategory(category, oraclesToCreate)
-	}
-	await OracleTable.createDocuments(oraclesToCreate, {
-		pack: 'foundry-ironsworn.starforgedoracles',
-		keepId: true
-	})
-}
-
-async function processISOracles() {
-	const oraclesToCreate: RollTableDataConstructorData[] = []
-
-	for (const category of ISOracleCategories) {
-		await processOracleCategory(category, oraclesToCreate)
-	}
-	await OracleTable.createDocuments(oraclesToCreate, {
-		pack: 'foundry-ironsworn.ironswornoracles',
-		keepId: true
-	})
-}
-
 async function processSFEncounters() {
 	const encountersToCreate = [] as Array<
 		ItemDataConstructorData & Record<string, unknown>
@@ -383,7 +340,10 @@ async function processTruths(
 			{
 				name: truth.Display.Title,
 				flags: {
-					'foundry-ironsworn': { dfid: truth.$id, type: 'truth-category' }
+					'foundry-ironsworn': {
+						type: 'truth-category',
+						...pickDataforged(truth, 'Suggestions', 'Source', '$id')
+					}
 				}
 			},
 			{ pack: outputCompendium }
@@ -394,12 +354,16 @@ async function processTruths(
 				{
 					type: 'truth',
 					name: entry.Result,
+					// TODO -- consider managing this with pick() or sth similar ?
 					system: cleanDollars({
 						Subtable: [], // work around a Foundry bug
 						...entry,
 						Quest: entry['Quest Starter'],
 						'Quest Starter': undefined
-					})
+					}),
+					flags: {
+						'foundry-ironsworn': pickDataforged(entry, '$id')
+					}
 				},
 				{ parent: je }
 			)
@@ -414,9 +378,7 @@ async function processTruths(
 					format: 2 // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN
 				},
 				flags: {
-					'foundry-ironsworn': {
-						assets: truth.Suggestions?.Assets ?? []
-					}
+					'foundry-ironsworn': pickDataforged(truth, 'Suggestions') as any
 				}
 			},
 			{ parent: je }
@@ -427,13 +389,6 @@ async function processTruths(
 async function processSFTruths() {
 	await processTruths(
 		((starforged as any).default as Starforged)['Setting Truths'],
-		'foundry-ironsworn.starforgedtruths'
-	)
-}
-
-async function processISTruths() {
-	await processTruths(
-		((ironsworn as any).default as Ironsworn)['Setting Truths']!,
 		'foundry-ironsworn.starforgedtruths'
 	)
 }

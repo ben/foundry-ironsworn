@@ -1,9 +1,7 @@
 <template>
 	<IronBtn
 		class="oracle-roll"
-		:tooltip="
-			$t('IRONSWORN.RollOracleTable', { title: props.node.displayName })
-		"
+		:tooltip="$t('IRONSWORN.RollOracleTable', { title: name })"
 		icon="ironsworn:oracle"
 		v-bind="($props, $attrs)"
 		@click="rollOracle">
@@ -14,13 +12,13 @@
 </template>
 
 <script setup lang="ts">
-import { sample } from 'lodash-es'
-import type { IOracleTreeNode } from '../../../features/customoracles.js'
 import { OracleTable } from '../../../roll-table/oracle-table'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
-	node: IOracleTreeNode
+	name: string
+
+	oracleId: string
 	overrideClick?: boolean
 	// Hack: if we declare `click` in the emits, there's no $attrs['onClick']
 	// This allows us to check for presence and still use $emit('click')
@@ -35,9 +33,6 @@ const $emit = defineEmits(['click'])
 async function rollOracle() {
 	if (props.overrideClick && props.onClick) return $emit('click')
 
-	const randomTableUuid = sample(props.node.tables)
-	if (!randomTableUuid) return
-
-	OracleTable.ask(randomTableUuid)
+	OracleTable.ask(props.oracleId)
 }
 </script>

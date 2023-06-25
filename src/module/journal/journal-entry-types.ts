@@ -1,5 +1,6 @@
 import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
 import type { IronswornJournalEntry } from './journal-entry'
+import { IronswornJournalPage } from './journal-entry-page'
 
 // Type augments for base JournalEntry class
 

@@ -22,6 +22,8 @@ module.exports = {
 	},
 	plugins: ['@typescript-eslint'],
 	rules: {
+		// nesting *more* pointy brackets is  harder to read with most generics, IMO
+		'@typescript-eslint/array-type': 'off',
 		'@typescript-eslint/method-signature-style': 'off',
 		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/no-unused-vars': [1, { argsIgnorePattern: '^_' }],

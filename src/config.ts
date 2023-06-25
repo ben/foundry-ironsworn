@@ -20,6 +20,7 @@ import {
 	registerOracleTree
 } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
+import { Oracles } from './module/roll-table/oracles'
 
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
@@ -33,6 +34,7 @@ export type IronswornEmitter = Emitter<EmitterEvents>
 export interface IronswornConfig {
 	actorClass: typeof IronswornActor
 	OracleTable: typeof OracleTable
+	Oracles: typeof Oracles
 
 	applications: {
 		// Dialogs
@@ -65,6 +67,7 @@ export interface IronswornConfig {
 export const IRONSWORN: IronswornConfig = {
 	actorClass: IronswornActor,
 	OracleTable,
+	Oracles,
 
 	applications: {
 		FirstStartDialog,

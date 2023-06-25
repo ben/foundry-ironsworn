@@ -13,7 +13,6 @@ import { StarshipSheet } from './module/actor/sheets/starshipsheet'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { registerChatAlertHooks } from './module/features/chat-alert'
-import { registerCompendiumCategoryHook } from './module/features/compendium-categories'
 import { registerDragAndDropHooks } from './module/features/drag-and-drop'
 import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
@@ -43,6 +42,7 @@ import type {
 	DocumentSubTypes,
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import { Oracles } from './module/roll-table/oracles'
 import ActorConfig from './module/actor/config'
 import ItemConfig from './module/item/config'
 
@@ -85,8 +85,11 @@ Hooks.once('init', async () => {
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
 	CONFIG.RollTable.documentClass = OracleTable
+	CONFIG.RollTable.collection = Oracles
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
 	CONFIG.TableResult.documentClass = OracleTableResult
+
+	CONFIG.RollTable.compendiumIndexFields.push('flags.foundry-ironsworn.dfid')
 
 	// CONFIG.RollTable.resultTemplate =
 	// 	'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
@@ -210,7 +213,6 @@ Hooks.once('init', async () => {
 	IronswornHandlebarsHelpers.registerHelpers()
 	IronswornChatCard.registerHooks()
 	patchZIndex()
-	registerCompendiumCategoryHook()
 	await registerTokenHUDButtons()
 	activateSceneButtonListeners()
 })
