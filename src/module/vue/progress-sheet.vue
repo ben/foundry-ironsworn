@@ -124,15 +124,12 @@
 		<MceEditor
 			v-model="data.item.system.description"
 			@save="update('system.description')" />
-		<IronBtn
+		<BtnDocDelete
 			nogrow
 			block
 			:class="$style.danger"
-			icon="fa:trash"
-			:text="
-				$t(`DOCUMENT.Delete`, { type: $t('IRONSWORN.ITEM.TypeProgressTrack') })
-			"
-			@click="$item?.deleteDialog()" />
+			:btn-text="true"
+			:document="$item" />
 	</div>
 </template>
 
@@ -147,9 +144,10 @@ import ProgressTrack from './components/progress/progress-track.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import type { IronswornItem } from '../item/item'
+import BtnDocDelete from './components/buttons/btn-doc-delete.vue'
 
 const props = defineProps<{ data: { item: ItemSource<'progress'> } }>()
-const $item = inject<IronswornItem<'progress'>>($ItemKey)
+const $item = inject($ItemKey) as IronswornItem<'progress'>
 
 provide(
 	ItemKey,

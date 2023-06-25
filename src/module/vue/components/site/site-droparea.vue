@@ -23,10 +23,10 @@
 						top: var(--ironsworn-spacer-md);
 						right: var(--ironsworn-spacer-md);
 					">
-					<IronBtn
+					<BtnDocDelete
+						v-if="foundryitem() != null"
 						block
-						icon="fa:trash"
-						@click="foundryitem()?.deleteDialog()" />
+						:document="(foundryitem() as IronswornItem)" />
 					<IronBtn block icon="fa:pen-to-square" @click="edit" />
 				</div>
 			</div>
@@ -54,10 +54,11 @@ import DocumentImg from '../document-img.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 import DropTarget from '../../drop-target.vue'
+import BtnDocDelete from '../buttons/btn-doc-delete.vue'
 import type { IronswornItem } from '../../../item/item'
 
 const props = defineProps<{
-	item: any
+	item: ItemSource<'delve-domain'> | ItemSource<'delve-theme'>
 	itemType: string
 	titleKey: string
 	compendiumKey: string
@@ -71,9 +72,12 @@ const editMode = computed(() => {
 })
 
 function foundryitem() {
-	return (props.item && $actor?.items.get(props.item._id)) as
-		| IronswornItem<'delve-theme'>
-		| IronswornItem<'delve-domain'>
+	return (
+		props.item &&
+		($actor?.items.get(props.item._id as string) as
+			| IronswornItem<'delve-theme'>
+			| IronswornItem<'delve-domain'>)
+	)
 }
 
 function edit() {

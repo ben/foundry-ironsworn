@@ -58,7 +58,6 @@
 import { computed, ref } from 'vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
 import FontIcon from '../icon/font-icon.vue'
-import { clamp } from 'lodash-es'
 import { ChallengeRank } from '../../../fields/ChallengeRank'
 
 const props = withDefaults(
@@ -94,7 +93,11 @@ function setRank(rank: number) {
 	if (props.readonly) return
 	$emit(
 		'change',
-		clamp(rank, ChallengeRank.MIN, ChallengeRank.MAX) as ChallengeRank.Value
+		Math.clamped(
+			rank,
+			ChallengeRank.MIN,
+			ChallengeRank.MAX
+		) as ChallengeRank.Value
 	)
 }
 </script>

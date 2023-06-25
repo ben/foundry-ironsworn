@@ -16,13 +16,14 @@
 </template>
 
 <script lang="ts" setup>
-import type IronBtn from 'component:buttons/iron-btn.vue'
-import type { ExtractPropTypes } from 'vue'
+import type IronBtn from '../buttons/iron-btn.vue'
 import { TransitionGroup } from 'vue'
 
-type IronBtnProps = ExtractPropTypes<typeof IronBtn>
 interface Props
-	extends Omit<IronBtnProps, 'text' | 'icon' | 'vertical' | 'justify'> {
+	extends Omit<
+		PropsOf<typeof IronBtn>,
+		'text' | 'icon' | 'vertical' | 'justify'
+	> {
 	/**
 	 * A list of unique names for the switch's states.
 	 */
@@ -51,15 +52,15 @@ withDefaults(defineProps<Props>(), {
 .wrapper {
 	// use grid to position stacked icons, which is more flexible than absolute positioning
 	display: grid;
-	height: var(--ironsworn-icon-size);
 	width: var(--ironsworn-icon-size);
+	height: var(--ironsworn-icon-size);
 }
 
 .icon {
 	// stacks icons on top of each other by assigning them to the same grid cell
 	grid-row: 1;
 	grid-column: 1;
-	height: inherit;
 	width: inherit;
+	height: inherit;
 }
 </style>

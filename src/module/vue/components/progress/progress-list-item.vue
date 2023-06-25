@@ -23,16 +23,7 @@
 			:current="item.system.track.rank"
 			@change="(rank) => $item.update({ system: { rank } })" />
 		<section class="progress-controls" data-tooltip-direction="UP">
-			<IronBtn
-				v-if="editMode"
-				block
-				icon="fa:trash"
-				:tooltip="
-					$t('DOCUMENT.Delete', {
-						type: $t('IRONSWORN.ITEM.TypeProgressTrack')
-					})
-				"
-				@click="$item.deleteDialog()" />
+			<BtnDocDelete v-if="editMode" block :document="$item" />
 			<IronBtn
 				block
 				icon="fa:pen-to-square"
@@ -92,6 +83,7 @@ import ProgressTrack from './progress-track.vue'
 import FontIcon from '../icon/font-icon.vue'
 import { FontAwesome } from '../icon/icon-common'
 import type { IronswornItem } from '../../../item/item'
+import BtnDocDelete from '../buttons/btn-doc-delete.vue'
 
 const props = defineProps<{
 	item: ItemSource<'progress'>

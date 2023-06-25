@@ -42,7 +42,6 @@
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
 import { computed, provide, ref } from 'vue'
-import type { CharacterModel } from '../actor/config'
 import { ActorKey } from './provisions.js'
 import TabSet from './components/tabs/tab-set.vue'
 import TabList from './components/tabs/tab-list.vue'
@@ -50,11 +49,10 @@ import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import IronIcon from './components/icon/iron-icon.vue'
-import type { CharacterDataProperties } from '../actor/subtypes/character'
 
 const props = defineProps<{
 	data: {
-		actor: CharacterDataProperties
+		actor: ActorSource<'character'>
 		toolset: 'ironsworn' | 'starforged'
 	}
 }>()

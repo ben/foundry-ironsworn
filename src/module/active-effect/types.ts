@@ -1,12 +1,15 @@
+import type { ActiveEffectDataSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
 import type {
 	EffectChangeData,
-	EffectChangeDataConstructorData
+	EffectChangeDataConstructorData,
+	EffectChangeDataProperties
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectChangeData'
-import type { EffectDurationDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectDurationData'
 import type {
-	ConfiguredDocumentClassForName,
-	ConfiguredFlags
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+	EffectDurationDataConstructorData,
+	EffectDurationDataSource
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectDurationData'
+import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ConfiguredDocumentClass } from '../../types/helperTypes'
 
 export type ImpactCategoryStarforged = 'conditions' | 'banes' | 'burdens'
 export type DebilityCategoryClassic =
@@ -68,8 +71,18 @@ declare global {
 		statuses?: Set<string> | string[]
 		flags?: ConfiguredFlags<'ActiveEffect'>
 	}
-	export interface StatusEffect extends ActiveEffectDataConstructorData {
+	export interface StatusEffectV11 {
 		id: string
+		name: string
+		changes?: EffectChangeDataProperties[]
+		disabled?: boolean
+		duration?: EffectDurationDataSource
+		description?: string
+		statuses?: string[] | Set<string>
+		icon: string
+		overlay?: boolean
+		tint?: string
+		flags?: ConfiguredFlags<'ActiveEffect'>
 	}
 	export namespace foundry {
 		export namespace data {
@@ -88,9 +101,15 @@ declare global {
 
 				statuses: Set<string>
 			}
-			export interface ActiveEffectData extends ActiveEffectDataProperties {}
+
+			type ActiveEffectDataSourceV11 = ActiveEffectDataSource & {
+				name: string
+				statuses: string[]
+			}
+			export interface ActiveEffectData extends ActiveEffectDataProperties {
+				toJSON(): ActiveEffectDataSourceV11
+			}
 		}
-		export namespace documents {}
 	}
 
 	export interface ActiveEffect
@@ -104,7 +123,9 @@ declare global {
 		/**
 		 * Retrieve the Document that this ActiveEffect targets for modification.
 		 */
-		get target(): InstanceType<ConfiguredDocumentClassForName<'Actor'>> | null
+		get target(): InstanceType<
+			ConfiguredDocumentClass<typeof foundry.documents.BaseActor>
+		> | null
 		/**
 		 * Whether the Active Effect currently applying its changes to the target.
 		 */

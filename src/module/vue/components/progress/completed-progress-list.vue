@@ -26,12 +26,9 @@ import { getProgressItems } from './progress-common'
 import ProgressList from './progress-list.vue'
 
 const props = defineProps<{
-	collapsibleProps?: Omit<
-		ExtractPropTypes<typeof Collapsible>,
-		'toggleLabel' | 'baseId'
-	>
+	collapsibleProps?: Omit<PropsOf<typeof Collapsible>, 'toggleLabel' | 'baseId'>
 	collapsibleAttrs?: Record<string, any>
-	listProps?: Omit<ExtractPropTypes<typeof ProgressList>, 'showCompleted'>
+	listProps?: Omit<PropsOf<typeof ProgressList>, 'showCompleted'>
 	listAttrs?: Record<string, any>
 }>()
 

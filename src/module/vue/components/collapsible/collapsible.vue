@@ -70,7 +70,6 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes } from 'vue'
 import { reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import { computed, ref } from 'vue'
@@ -82,7 +81,7 @@ import FontIcon from '../icon/font-icon.vue'
 
 const props = withDefaults(
 	defineProps<{
-		duration?: ExtractPropTypes<typeof CollapseTransition>['duration']
+		duration?: PropsOf<typeof CollapseTransition>['duration']
 		/**
 		 * The text displayed on the button element that controls the expand/collapse toggle.
 		 */
@@ -129,7 +128,7 @@ const props = withDefaults(
 		 * @inheritdoc
 		 */
 		collapseTransition?: Omit<
-			ExtractPropTypes<typeof CollapseTransition>,
+			PropsOf<typeof CollapseTransition>,
 			'dimension' | 'duration'
 		>
 		/**

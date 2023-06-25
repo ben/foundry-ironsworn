@@ -78,6 +78,10 @@ export class IronswornActor<
 			? 'starforged'
 			: 'ironsworn'
 	}
+
+	override async deleteDialog(options?: Partial<DialogOptions>) {
+		return await typedDeleteDialog(this, options)
+	}
 }
 export interface IronswornActor<T extends DocumentSubTypes<'Actor'> = any>
 	extends Actor {

@@ -14,13 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes } from 'vue'
 import { inject } from 'vue'
 import type { IronswornItem } from '../../../item/item'
 import { $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends ExtractPropTypes<typeof IronBtn> {
+interface Props extends PropsOf<typeof IronBtn> {
 	item: ItemSource<'progress'>
 }
 

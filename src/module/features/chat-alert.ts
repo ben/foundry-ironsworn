@@ -4,7 +4,6 @@ import type { DocumentSubTypes } from '../../types/helperTypes'
 import type { IronswornActor } from '../actor/actor'
 import { ChallengeRank } from '../fields/ChallengeRank'
 import { IronswornSettings } from '../helpers/settings'
-
 import type { IronswornItem } from '../item/item'
 
 type ActorTypeHandler<T extends DocumentSubTypes<'Actor'> = any> = (
