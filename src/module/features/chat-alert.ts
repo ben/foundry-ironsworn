@@ -2,8 +2,8 @@ import type { ChatMessageDataConstructorData } from '@league-of-foundry-develope
 import { compact, get } from 'lodash-es'
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import type { IronswornActor } from '../actor/actor'
+import { ChallengeRank } from '../fields/ChallengeRank'
 import { IronswornSettings } from '../helpers/settings'
-import { localizeRank } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
 
 type ActorTypeHandler<T extends DocumentSubTypes<'Actor'> = any> = (
@@ -248,8 +248,8 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 	site: (actor, data) => {
 		if (data.system?.rank != null) {
 			return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
-				old: localizeRank(actor.system.rank),
-				new: localizeRank(data.system.rank)
+				old: ChallengeRank.localizeValue(actor.system.rank),
+				new: ChallengeRank.localizeValue(data.system.rank)
 			})
 		}
 		if (data.system?.current !== undefined) {
@@ -266,8 +266,8 @@ const ITEM_TYPE_HANDLERS: ItemTypeHandlers = {
 	progress: (item, data) => {
 		if (data.system?.rank) {
 			return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
-				old: localizeRank(item.system.rank),
-				new: localizeRank(data.system.rank)
+				old: ChallengeRank.localizeValue(item.system.rank),
+				new: ChallengeRank.localizeValue(data.system.rank)
 			})
 		}
 		if (data.system?.current !== undefined) {

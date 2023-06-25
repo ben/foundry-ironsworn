@@ -86,14 +86,14 @@ const field = computed(
 		$document?.system.schema.getField(props.attr) as
 			| AssetConditionMeterField
 			| MeterField
-			| foundry.data.fields.NumberField
 )
 
 const min = computed(
-	() => document?.value.system[props.attr].min ?? field.value.min ?? 0
+	() => document?.value.system[props.attr].min ?? field.value.fields.min ?? 0
 )
 
 const max = computed(() => {
+	// @ts-expect-error
 	const fieldMax = field.value.max
 	const currentMax = document?.value?.system[props.attr].max as
 		| number

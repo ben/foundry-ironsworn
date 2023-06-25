@@ -4,17 +4,47 @@ declare global {
 	namespace foundry {
 		namespace data {
 			namespace fields {
-				export class NumberField extends foundry.data.fields.DataField<
-					number,
-					NumberField.Options
+				export class NumberField<
+					SourceData extends number = number,
+					ConcreteData = SourceData,
+					Options extends NumberField.Options<
+						SourceData,
+						ConcreteData
+					> = NumberField.Options<SourceData, ConcreteData>
+				> extends foundry.data.fields.DataField<
+					SourceData,
+					ConcreteData,
+					Options
 				> {
-					static override _defaults: NumberField.Options
+					static override _defaults: NumberField.Options<any, any>
 				}
-				export interface NumberField
-					extends Omit<NumberField.Options, 'validate' | 'initial'> {}
+				export interface NumberField<
+					SourceData extends number = number,
+					ConcreteData = SourceData,
+					Options extends NumberField.Options<
+						SourceData,
+						ConcreteData
+					> = NumberField.Options<SourceData, ConcreteData>
+				> extends foundry.data.fields.DataField<
+						SourceData,
+						ConcreteData,
+						Options
+					> {
+					min: Options['min']
+					max: Options['max']
+					step: Options['step']
+					integer: Options['integer']
+					positive: Options['positive']
+					choices: Options['choices']
+				}
 				export namespace NumberField {
-					export interface Options
-						extends foundry.data.fields.DataField.Options<number> {
+					export interface Options<
+						SourceData extends number = number,
+						ConcreteData = SourceData
+					> extends foundry.data.fields.DataField.Options<
+							SourceData,
+							ConcreteData
+						> {
 						/**
 						 * A minimum allowed value
 						 */
@@ -40,19 +70,25 @@ declare global {
 						/**
 						 * An array of values or an object of values/labels which represent allowed choices for the field. A function may be provided which dynamically returns the array of choices.
 						 */
-						choices: foundry.data.fields.DataField.Choices<number> | undefined
+						choices: ConcreteData extends number
+							? foundry.data.fields.DataField.Choices<ConcreteData> | undefined
+							: never
 					}
 				}
 				/**
 				 * A special [NumberField]{@link NumberField} which represents an angle of rotation in degrees between 0 and 360.
 				 */
 				// @ts-expect-error
-				export class AngleField
-					extends NumberField
-					implements AngleField.Options
-				{
-					base: number
+				export class AngleField<
+					Options extends AngleField.Options = AngleField.Options
+				> extends NumberField<number, number, Options> {}
+
+				export interface AngleField<
+					Options extends AngleField.Options = AngleField.Options
+				> extends NumberField<number, number, Options> {
+					base: Options['base']
 				}
+
 				export namespace AngleField {
 					export interface Options extends NumberField.Options {
 						/** @default true */
@@ -64,7 +100,7 @@ declare global {
 						/**
 						 * Whether the base angle should be treated as 360 or as 0
 						 * @default 0 */
-						base: number
+						base: 0 | 360
 						/** @default 0 */
 						min: NumberField.Options['min']
 						/** @default 360 */

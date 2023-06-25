@@ -13,7 +13,7 @@
 							class="nogrow"
 							@change="(rank) => $actor.update({ system: { rank } })" />
 						<label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
-							localizeRank(data.actor.system.rank)
+							ChallengeRank.localizeValue(data.actor.system.rank)
 						}}</label>
 						<IronBtn
 							v-if="editMode"
@@ -124,8 +124,8 @@ import { RANK_INCREMENTS } from '../constants'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
-import { localizeRank } from '../helpers/util'
 import type { IronswornActor } from '../actor/actor'
+import { ChallengeRank } from '../fields/ChallengeRank'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'site'> }

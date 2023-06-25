@@ -6,12 +6,17 @@ declare global {
 		namespace data {
 			namespace fields {
 				export abstract class DataField<
-					ConcreteData = unknown,
-					TOptions extends DataField.Options<ConcreteData> = DataField.Options<ConcreteData>
+					SourceData = any,
+					ConcreteData = SourceData,
+					Options extends DataField.Options<
+						SourceData,
+						ConcreteData
+					> = DataField.Options<SourceData, ConcreteData>
 				> {
-					constructor(options?: Partial<TOptions>)
+					constructor(options?: Partial<Options>)
 
 					static _defaults: DataField.Options
+					options: Options
 
 					/**
 					 * Whether this field defines part of a Document/Embedded Document hierarchy.
@@ -29,7 +34,6 @@ declare global {
 
 					/**
 					 * A dot-separated string representation of the field path within the parent schema.
-					 * @type {string}
 					 */
 					get fieldPath(): string
 
@@ -37,16 +41,10 @@ declare global {
 					 * Apply a function to this DataField which propagates through recursively to any contained data schema.
 					 * @param fn The function to apply
 					 * @param value The current value of this field
-					 * @param {object} [options={}]         Additional options passed to the applied function
+					 * @param options         Additional options passed to the applied function
 					 * @returns The results object
 					 */
-					apply(
-						fn:
-							| MethodKeys<this, (...args: any[]) => any>
-							| ((...args: any[]) => any),
-						value: ConcreteData,
-						options?
-					): DeepPartial<ConcreteData>
+					apply(fn, value, options?): unknown // DeepPartial<ConcreteData>
 
 					/* -------------------------------------------- */
 					/*  Field Cleaning                              */
@@ -60,7 +58,7 @@ declare global {
 					 * @param options Additional options for how the field is cleaned
 					 * @returns The cast value
 					 */
-					clean(value: unknown, options: DataField.CleanOptions): ConcreteData
+					clean(value: SourceData | unknown, options: DataField.CleanOptions) // ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -70,10 +68,7 @@ declare global {
 					 * @param options Additional options for how the field is cleaned.
 					 * @returns The cleaned value.
 					 */
-					protected _cleanType(
-						value: ConcreteData,
-						options: DataField.CleanOptions
-					): ConcreteData
+					protected _cleanType(value, options) // ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -82,7 +77,7 @@ declare global {
 					 * @param value The provided non-default value
 					 * @returns The standardized value
 					 */
-					protected _cast(value: unknown): ConcreteData
+					protected _cast(value): ConcreteData
 
 					/* -------------------------------------------- */
 
@@ -109,8 +104,8 @@ declare global {
 					 */
 					validate: (
 						value: unknown,
-						options?: DataField.ValidateOptions<ConcreteData>
-					) => DataModelValidationFailure<ConcreteData>
+						options?: DataField.ValidateOptions<SourceData>
+					) => DataModelValidationFailure<SourceData>
 
 					/* -------------------------------------------- */
 
@@ -133,21 +128,20 @@ declare global {
 					 * @throws May throw a specific error if the value is not valid
 					 */
 					protected _validateType(
-						value: unknown,
-						options?: DataField.ValidateOptions<ConcreteData>
-					): boolean | DataModelValidationFailure<ConcreteData> | void
+						value: SourceData | unknown,
+						options?: DataField.ValidateOptions<SourceData>
+					): boolean | DataModelValidationFailure<SourceData> | void
 
 					/* -------------------------------------------- */
 
 					/**
 					 * Certain fields may declare joint data validation criteria.
 					 * This method will only be called if the field is designated as recursive.
-					 * @param {object} data       Candidate data for joint model validation
-					 * @param {object} options    Options which modify joint model validation
+					 * @param data - Candidate data for joint model validation
+					 * @param options - Options which modify joint model validation
 					 * @throws  An error if joint model validation fails
-					 * @internal
 					 */
-					_validateModel(data, options?)
+					protected _validateModel(data: object, options: object)
 
 					/* -------------------------------------------- */
 					/*  Initialization and Serialization            */
@@ -156,64 +150,74 @@ declare global {
 					/**
 					 * Initialize the original source data into a mutable copy for the DataModel instance.
 					 * @param value The source value of the field
-					 * @param {Object} model The DataModel instance that this field belongs to
+					 * @param model The DataModel instance that this field belongs to
 					 * @param options Initialization options
 					 * @returns An initialized copy of the source data
 					 */
-					initialize(value: unknown, model, options?): ConcreteData
+					initialize(
+						value: SourceData,
+						model: foundry.abstract.DataModel.AnyOrDoc,
+						options?: object
+					): ConcreteData
 
 					/**
 					 * Export the current value of the field into a serializable object.
 					 * @param value The initialized value of the field
 					 * @returns An exported representation of the field
 					 */
-					toObject(
-						value: ConcreteData
-					): ConcreteData extends { toObject: (...args: any[]) => any }
-						? ReturnType<ConcreteData['toObject']>
-						: ConcreteData
+					toObject(value: ConcreteData): SourceData
 
 					/**
 					 * Recursively traverse a schema and retrieve a field specification by a given path
-					 * @param {string[]} path             The field path as an array of strings
-					 * @protected
+					 * @param path - The field path as an array of strings
 					 */
-					_getField(path): undefined | this
+					protected _getField(path: string[]): undefined | this
 				}
-				export interface DataField<ConcreteData = unknown>
-					extends Omit<
-						DataField.Options<ConcreteData>,
-						'validate' | 'initial'
-					> {
+				export interface DataField<
+					SourceData = any,
+					ConcreteData = SourceData,
+					Options extends DataField.Options<
+						SourceData,
+						ConcreteData
+					> = DataField.Options<SourceData, ConcreteData>
+				> {
 					initial: ((data: unknown) => ConcreteData) | ConcreteData
+					required: Options['required']
+					nullable: Options['nullable']
+					readonly: Options['readonly']
+					label: Options['label']
+					hint: Options['hint']
 				}
 				export namespace DataField {
-					export type Any = DataField<any, any>
+					export type Any = DataField<any, any, any>
 					export interface CleanOptions {
 						/**  Whether to perform partial cleaning? */
 						partial?: boolean
 						/** The root data model being cleaned */
-						source?: object
+						source?: unknown
 					}
 					export type Choices<T extends number | string> =
 						| T[]
 						| Record<T, string>
-						| ((...args: any[]) => T[])
+						| (() => T[] | Record<T, string>)
 
-					export interface ValidateOptions<TValue = any> {
+					export interface ValidateOptions<SourceData = any> {
 						/** Whether this is a partial schema validation, or a complete one.  */
 						partial?: boolean
 						/**  Whether to allow replacing invalid values with valid fallbacks. */
 						fallback?: boolean
 						/** The full source object being evaluated. */
-						source?: TValue
+						source?: SourceData
 						/**
 						 * If true, invalid embedded documents will emit a warning and be placed in the invalidDocuments collection rather than causing the parent to be considered invalid.
 						 */
 						dropInvalidEmbedded?: boolean
 					}
 
-					export interface Options<TValue = any> {
+					export interface Options<
+						SourceData = unknown,
+						ConcreteData = SourceData
+					> {
 						/**
 						 * Is this field required to be populated?
 						 * @default false
@@ -227,11 +231,15 @@ declare global {
 						/**
 						 * The initial value of a field, or a function which assigns that initial value.
 						 */
-						initial?: TValue | ((data: object) => TValue) | undefined
+						initial?:
+							| ConcreteData
+							| Partial<ConcreteData>
+							| ((data: SourceData) => ConcreteData | Partial<ConcreteData>)
+							| undefined
 						/**
 						 * A data validation function which accepts one argument with the current value.
 						 */
-						validate: (value: TValue) => boolean
+						validate: (value: SourceData) => boolean
 						/**
 						 * Should the prepared value of the field be read-only, preventing it from being changed unless a change to the _source data is applied.
 						 * @default false
@@ -251,6 +259,19 @@ declare global {
 						validationError: string
 					}
 				}
+
+				export type DataFieldConstructor<
+					SourceData = unknown,
+					ConcreteData = SourceData,
+					Options extends DataField.Options<
+						SourceData,
+						ConcreteData
+					> = DataField.Options<SourceData, ConcreteData>
+				> = Pick<
+					typeof DataField<SourceData, ConcreteData, Options>,
+					keyof typeof DataField<SourceData, ConcreteData, Options>
+				> &
+					(new (...args: any[]) => DataField<SourceData, ConcreteData, Options>)
 
 				export class DataModelValidationFailure<T = unknown>
 					implements DataModelValidationFailure.Options<T>
@@ -282,14 +303,22 @@ declare global {
 					}
 				}
 
-				type ExtractMethods<
-					T,
-					F extends (...args: any[]) => any = (...args: any[]) => any
-				> = Extract<T[keyof T], F>
-				type MethodKeys<
-					T,
-					F extends (...args: any[]) => any = (...args: any[]) => any
-				> = keyof ExtractMethods<T, F>
+				type AnyFn = (...args: any[]) => any
+
+				type ApplyOption<T> = MethodKeys<T, AnyFn> | AnyFn
+
+				type ApplyMethod<
+					This,
+					Options,
+					Value = unknown,
+					ReturnValue = unknown
+				> = (this: This, value: Value, options?: Options) => ReturnValue
+				type ApplyMethodByKey<T, K extends keyof T> = T[K] extends AnyFn
+					? T[K]
+					: never
+
+				type ExtractMethods<T, F extends AnyFn = AnyFn> = Extract<T[keyof T], F>
+				type MethodKeys<T, F extends AnyFn = AnyFn> = keyof ExtractMethods<T, F>
 			}
 		}
 	}

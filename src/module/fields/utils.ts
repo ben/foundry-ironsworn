@@ -42,12 +42,6 @@ export type SchemaToSource<
 	[K in keyof T]: FieldToSource<T[K]>
 }
 
-export type IterableElement<T extends Iterable<any>> = T extends Iterable<
-	infer U
->
-	? U
-	: never
-
 declare global {
 	export type ItemSource<
 		T extends DocumentSubTypes<'Item'> = DocumentSubTypes<'Item'>
@@ -67,22 +61,30 @@ export type SourceData<
 > = ReturnType<DocumentInstance['toObject']> &
 	Extract<SourceConfig[DocumentInstance['documentName']], { type: Subtype }>
 
-export type SourceToField<T> = T extends foundry.data.fields.DataField.Any
-	? T
-	: T extends string
-	? foundry.data.fields.StringField<T>
-	: T extends Iterable<any>
-	? foundry.data.fields.ArrayField<T, SourceToField<IterableElement<T>>>
-	: T extends number
-	? foundry.data.fields.NumberField
-	: T extends boolean
-	? foundry.data.fields.BooleanField
-	: T extends Record<any, any>
-	? foundry.data.fields.SchemaField<T>
-	: foundry.data.fields.DataField<T>
-
-export type DataSchema<
-	T extends Record<string, any> = Record<string, unknown>
-> = {
-	[K in keyof T]-?: SourceToField<T[K]>
+export type DataSchema<SourceData, ConcreteData = SourceData> = {
+	[K in keyof ConcreteData]-?: SelectFieldTypeFor<
+		K extends keyof SourceData ? NonNullish<SourceData[K]> : any,
+		NonNullish<ConcreteData[K]>
+	>
 }
+
+type NonNullish<T> = Exclude<T, undefined | null>
+
+type SelectFieldTypeFor<SourceData, ConcreteData> =
+	ConcreteData extends foundry.abstract.DataModel.Any
+		? foundry.data.fields.EmbeddedDataField<any, ConcreteData, any, any>
+		: SourceData extends number
+		? foundry.data.fields.NumberField<number, number, any>
+		: SourceData extends boolean
+		? foundry.data.fields.BooleanField
+		: SourceData extends string
+		? ConcreteData extends string
+			? foundry.data.fields.StringField<string, string, any>
+			: ConcreteData extends foundry.abstract.Document<any, any, any>
+			? foundry.data.fields.StringField<string, ConcreteData, any>
+			: foundry.data.fields.StringField<string, any, any>
+		: SourceData extends any[]
+		? foundry.data.fields.ArrayField<any, SourceData, any>
+		: SourceData extends object
+		? foundry.data.fields.SchemaField<SourceData, ConcreteData, any>
+		: foundry.data.fields.DataField<SourceData, ConcreteData, any>

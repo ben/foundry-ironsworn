@@ -1,27 +1,40 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import { RequireKey } from 'dataforged'
+import type { RequireKey } from 'dataforged'
 
 declare global {
 	namespace foundry {
 		namespace data {
 			namespace fields {
 				export class StringField<
-						T extends string = string,
-						TOptions extends StringField.Options<T> = StringField.Options<T>
-					>
-					extends DataField<T, TOptions>
-					implements Omit<StringField.Options<T>, 'validate'>
-				{
-					blank: boolean
-					trim: boolean
-					choices: DataField.Choices<T> | undefined
+					SourceData extends string = string,
+					ConcreteData = SourceData,
+					Options extends StringField.Options<
+						SourceData,
+						ConcreteData
+					> = StringField.Options<SourceData, ConcreteData>
+				> extends DataField<SourceData, ConcreteData, Options> {}
+
+				export interface StringField<
+					SourceData extends string = string,
+					ConcreteData = SourceData,
+					Options extends StringField.Options<
+						SourceData,
+						ConcreteData
+					> = StringField.Options<SourceData, ConcreteData>
+				> extends DataField<SourceData, ConcreteData, Options> {
+					blank: Options['blank']
+					trim: Options['trim']
+					choices: Options['choices'] | undefined
 					// @ts-expect-error
-					nullable: boolean
+					nullable: Options['nullable']
 				}
+
 				export namespace StringField {
-					export interface Options<T extends string = string>
-						extends DataField.Options<T> {
+					export interface Options<
+						SourceData extends string = string,
+						ConcreteData = SourceData
+					> extends DataField.Options<SourceData, ConcreteData> {
 						/**
 						 * Is the string allowed to be blank (empty)?
 						 * @default true
@@ -35,7 +48,9 @@ declare global {
 						/**
 						 * An array of values or an object of values/labels which represent allowed choices for the field. A function may be provided which dynamically returns the array of choices.
 						 */
-						choices: DataField.Choices<T> | undefined
+						choices: ConcreteData extends string | number
+							? DataField.Choices<ConcreteData> | undefined
+							: never
 					}
 				}
 
@@ -43,39 +58,69 @@ declare global {
 				 * A subclass of [StringField]{@link StringField} which provides the primary _id for a Document.
 				 * The field may be initially null, but it must be non-null when it is saved to the database.
 				 */
-				export class DocumentIdField
-					extends StringField<string, DocumentIdField.Options>
-					implements Omit<DocumentIdField.Options, 'validate'> {}
+				export class DocumentIdField<
+					ConcreteData extends
+						| foundry.abstract.Document<any, any, any>
+						| string = string,
+					Options extends DocumentIdField.Options<ConcreteData> = DocumentIdField.Options<ConcreteData>
+				> extends StringField<string, ConcreteData, Options> {}
 				export namespace DocumentIdField {
-					export interface Options extends StringField.Options {
+					export interface Options<
+						ConcreteData extends
+							| foundry.abstract.Document<any, any, any>
+							| string = string
+					> extends StringField.Options<string, ConcreteData> {
 						/** @default true */
-						required: StringField.Options['required']
+						required: StringField.Options<string, ConcreteData>['required']
 						/** @default false */
-						blank: StringField.Options['blank']
+						blank: StringField.Options<string, ConcreteData>['blank']
 						/** @default true */
-						nullable: StringField.Options['nullable']
+						nullable: StringField.Options<string, ConcreteData>['nullable']
 						/** @default null */
-						initial: StringField.Options['initial']
+						initial: StringField.Options<string, ConcreteData>['initial']
 						/** @default true */
-						readonly: StringField.Options['readonly']
+						readonly: StringField.Options<string, ConcreteData>['readonly']
 						/** @default "is not a valid Document ID string" */
-						validationError: StringField.Options['validationError']
+						validationError: StringField.Options<
+							string,
+							ConcreteData
+						>['validationError']
 					}
 				}
 
 				// @ts-expect-error
-				export class ForeignDocumentField
-					extends DocumentIdField
-					implements ForeignDocumentField.Options
-				{
-					idOnly: boolean
+				export class ForeignDocumentField<
+					ConcreteData extends foundry.abstract.Document<
+						any,
+						any,
+						any
+					> = foundry.abstract.Document<any, any, any>,
+					Options extends ForeignDocumentField.Options<ConcreteData> = ForeignDocumentField.Options<ConcreteData>
+				> extends DocumentIdField<ConcreteData, Options> {}
+				// @ts-expect-error
+				export interface ForeignDocumentField<
+					ConcreteData extends foundry.abstract.Document<
+						any,
+						any,
+						any
+					> = foundry.abstract.Document<any, any, any>,
+					Options extends ForeignDocumentField.Options<ConcreteData> = ForeignDocumentField.Options<ConcreteData>
+				> extends DocumentIdField<ConcreteData, Options> {
+					idOnly: Options['idOnly']
 				}
+
 				export namespace ForeignDocumentField {
-					export interface Options extends DocumentIdField.Options {
+					export interface Options<
+						ConcreteData extends foundry.abstract.Document<
+							any,
+							any,
+							any
+						> = foundry.abstract.Document<any, any, any>
+					> extends DocumentIdField.Options<ConcreteData> {
 						/** @default true */
-						nullable: DocumentIdField.Options['nullable']
+						nullable: DocumentIdField.Options<ConcreteData>['nullable']
 						/** @default true */
-						readonly: DocumentIdField.Options['readonly']
+						readonly: DocumentIdField.Options<ConcreteData>['readonly']
 						/** @default false */
 						idOnly: boolean
 					}
@@ -86,11 +131,14 @@ declare global {
 				 */
 				export class ColorField extends StringField<
 					string,
+					string,
 					ColorField.Options
 				> {
 					// @ts-expect-error
 					nullable: boolean
 				}
+				export interface ColorField
+					extends StringField<string, string, ColorField.Options> {}
 				export namespace ColorField {
 					export interface Options extends StringField.Options<string> {
 						/** @default true */
@@ -105,11 +153,8 @@ declare global {
 				}
 
 				export class FilePathField<
-						T extends FilePathField.FileCategory = FilePathField.FileCategory
-					>
-					extends StringField<string, FilePathField.Options<T>>
-					implements Omit<FilePathField.Options<T>, 'validate'>
-				{
+					T extends FilePathField.FileCategory = FilePathField.FileCategory
+				> extends StringField<string, string, FilePathField.Options<T>> {
 					categories: T[]
 					base64: boolean
 					wildcard: boolean
@@ -118,6 +163,9 @@ declare global {
 						options: RequireKey<Partial<FilePathField.Options<T>>, 'categories'>
 					)
 				}
+				export interface FilePathField<
+					T extends FilePathField.FileCategory = FilePathField.FileCategory
+				> extends StringField<string, string, FilePathField.Options<T>> {}
 
 				export namespace FilePathField {
 					export type FileCategory = keyof typeof CONST.FILE_CATEGORIES
@@ -143,15 +191,29 @@ declare global {
 				/**
 				 * A special [StringField]{@link StringField} which contains serialized JSON data.
 				 */
-				export class JSONField extends StringField<string, JSONField.Options> {}
+				export class JSONField<ConcreteData = any> extends StringField<
+					string,
+					ConcreteData,
+					JSONField.Options<ConcreteData>
+				> {}
+				export interface JSONField<ConcreteData = any>
+					extends StringField<
+						string,
+						ConcreteData,
+						JSONField.Options<ConcreteData>
+					> {}
 				export namespace JSONField {
-					export interface Options extends StringField.Options {
+					export interface Options<ConcreteData>
+						extends StringField.Options<string, ConcreteData> {
 						/** @default false */
-						blank: StringField.Options['blank']
+						blank: StringField.Options<string, ConcreteData>['blank']
 						/** @default undefined */
-						initial: StringField.Options['initial']
+						initial: StringField.Options<string, ConcreteData>['initial']
 						/** @default 'is not a valid JSON string' */
-						validationError: StringField.Options['validationError']
+						validationError: StringField.Options<
+							string,
+							ConcreteData
+						>['validationError']
 					}
 				}
 
@@ -160,9 +222,14 @@ declare global {
 				 * This class does not override any StringField behaviors, but is used by the server-side to identify fields which
 				 * require sanitization of user input.
 				 */
-				export class HTMLField
-					extends StringField<string, HTMLField.Options>
-					implements Omit<HTMLField.Options, 'validate'> {}
+				export class HTMLField extends StringField<
+					string,
+					string,
+					HTMLField.Options
+				> {}
+				export interface HTMLField
+					extends StringField<string, string, HTMLField.Options> {}
+
 				export namespace HTMLField {
 					export interface Options extends StringField.Options {
 						/** @default true */

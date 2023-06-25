@@ -13,16 +13,15 @@
 </template>
 
 <script lang="ts" setup>
-import type { ExtractPropTypes } from 'vue'
 import type FontIcon from './font-icon.vue'
 import Icon from './icon-helpers.vue'
 
 interface IconStackLayerOptions
-	extends Omit<ExtractPropTypes<typeof FontIcon>, 'size' | 'label'> {}
+	extends Omit<PropsOf<typeof FontIcon>, 'size' | 'label'> {}
 
 interface IconStackOptions
 	extends Omit<
-		ExtractPropTypes<typeof FontIcon>,
+		PropsOf<typeof FontIcon>,
 		'icon' | 'stack' | 'family' | 'style'
 	> {
 	bgOptions?: IconStackLayerOptions

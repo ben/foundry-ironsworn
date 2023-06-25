@@ -1,14 +1,14 @@
 import { clamp } from 'lodash-es'
 import { RANK_INCREMENTS } from '../../constants'
-import { ChallengeRankField } from '../../fields/ChallengeRankField'
+import { ChallengeRank } from '../../fields/ChallengeRank'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
-import { localizeRank } from '../../helpers/util'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../config'
 
-export class ProgressData extends foundry.abstract.TypeDataModel<
+export class ProgressModel extends foundry.abstract.TypeDataModel<
+	ProgressDataSourceData,
 	ProgressDataSourceData,
 	IronswornItem<'progress'>
 > {
@@ -24,8 +24,8 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 	/** The derived progress score, which is an integer from 0 to 10. */
 	get score() {
 		return Math.min(
-			Math.floor(this.current / ProgressData.TICKS_PER_BOX),
-			ProgressData.SCORE_MAX
+			Math.floor(this.current / ProgressModel.TICKS_PER_BOX),
+			ProgressModel.SCORE_MAX
 		)
 	}
 
@@ -41,8 +41,8 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 		return await this.parent.update({
 			'system.current': clamp(
 				this.current + this.unit * units,
-				ProgressData.TICKS_MIN,
-				ProgressData.TICKS_MAX
+				ProgressModel.TICKS_MIN,
+				ProgressModel.TICKS_MAX
 			)
 		})
 	}
@@ -67,7 +67,7 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 
 	/** Provide a localized label for this progress track's challenge rank. */
 	localizeRank() {
-		return localizeRank(this.rank)
+		return ChallengeRank.localizeValue(this.rank)
 	}
 
 	static override defineSchema(): DataSchema<ProgressDataSourceData> {
@@ -90,11 +90,11 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 			completed: new fields.BooleanField({ initial: false }),
 			current: new ProgressTicksField(),
 			description: new fields.HTMLField(),
-			rank: new ChallengeRankField()
+			rank: new ChallengeRank()
 		}
 	}
 }
-export interface ProgressData extends ProgressDataPropertiesData {}
+export interface ProgressModel extends ProgressDataPropertiesData {}
 
 export interface ProgressDataSourceData extends ProgressBase {
 	subtype: string
@@ -113,6 +113,6 @@ export interface ProgressDataSource {
 }
 export interface ProgressDataProperties {
 	type: 'progress'
-	data: ProgressData
-	system: ProgressData
+	data: ProgressModel
+	system: ProgressModel
 }

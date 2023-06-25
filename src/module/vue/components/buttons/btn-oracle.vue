@@ -12,24 +12,22 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes } from 'vue'
-import { inject } from 'vue'
 import { OracleTable } from '../../../roll-table/oracle-table'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {}
-
-const props = defineProps<{
-	oracleId: string
+interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	name: string
+
+	oracleId: string
 	overrideClick?: boolean
 	// Hack: if we declare `click` in the emits, there's no $attrs['onClick']
 	// This allows us to check for presence and still use $emit('click')
 	// https://github.com/vuejs/core/issues/4736#issuecomment-934156497
 	onClick?: Function
-}>()
+}
 
-const toolset = inject<'ironsworn' | 'starforged'>('toolset')
+const props = defineProps<Props>()
+
 const $emit = defineEmits(['click'])
 
 async function rollOracle() {

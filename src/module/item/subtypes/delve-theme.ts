@@ -3,7 +3,8 @@ import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 import type { DelveSiteDanger, DelveSiteFeature } from './common'
 
-export class DelveThemeData extends foundry.abstract.TypeDataModel<
+export class DelveThemeModel extends foundry.abstract.TypeDataModel<
+	DelveThemeDataSourceData,
 	DelveThemeDataSourceData,
 	IronswornItem<'delve-theme'>
 > {
@@ -38,15 +39,15 @@ export class DelveThemeData extends foundry.abstract.TypeDataModel<
 			summary: new fields.HTMLField(),
 			description: new fields.HTMLField(),
 			features: new fields.ArrayField(new TableResultField() as any, {
-				initial: DelveThemeData.features as DelveSiteFeature[]
+				initial: DelveThemeModel.features as DelveSiteFeature[]
 			}),
 			dangers: new fields.ArrayField(new TableResultField() as any, {
-				initial: DelveThemeData.dangers as DelveSiteDanger[]
+				initial: DelveThemeModel.dangers as DelveSiteDanger[]
 			})
 		}
 	}
 }
-export interface DelveThemeData extends DelveThemeDataPropertiesData {}
+export interface DelveThemeModel extends DelveThemeDataPropertiesData {}
 
 export interface DelveThemeDataSourceData {
 	summary: string
@@ -65,6 +66,6 @@ export interface DelveThemeDataSource {
 }
 export interface DelveThemeDataProperties {
 	type: 'delve-theme'
-	data: DelveThemeData
-	system: DelveThemeData
+	data: DelveThemeModel
+	system: DelveThemeModel
 }

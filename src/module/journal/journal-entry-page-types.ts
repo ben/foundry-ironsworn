@@ -1,7 +1,7 @@
-import { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { ISettingTruthOption } from 'dataforged'
-import type { ChallengeRank } from '../constants'
-import { DataforgedFlags } from '../dataforged'
+import type { DataforgedFlags } from '../dataforged'
+import type { ChallengeRank } from '../fields/ChallengeRank'
 import type { IronswornJournalPage } from './journal-entry-page'
 
 interface CounterBase {
@@ -23,7 +23,7 @@ interface Countdown extends CounterBase {
 
 interface ProgressTrack {
 	ticks: number
-	rank: ChallengeRank
+	rank: ChallengeRank.Value
 	/**
 	 * For Threat/Menace from Ironsworn: Delve.
 	 */

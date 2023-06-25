@@ -2,8 +2,9 @@ import { MeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 
-export class AssetData extends foundry.abstract.TypeDataModel<
+export class AssetModel extends foundry.abstract.TypeDataModel<
 	AssetDataSourceData,
+	AssetDataPropertiesData,
 	IronswornItem<'asset'>
 > {
 	static _enableV10Validation = true
@@ -40,7 +41,7 @@ export class AssetData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface AssetData extends AssetDataSourceData {}
+export interface AssetModel extends AssetDataSourceData {}
 
 export interface AssetDataSourceData {
 	category: string
@@ -70,8 +71,8 @@ export interface AssetDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: AssetData
-	system: AssetData
+	data: AssetModel
+	system: AssetModel
 }
 
 export class AssetConditionMeterField extends MeterField<AssetConditionMeter> {
