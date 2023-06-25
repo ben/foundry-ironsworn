@@ -12,14 +12,13 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes } from 'vue'
 import { inject } from 'vue'
 import { createSfMoveChatMessage } from '../../../chat/sf-move-chat-message'
 import type { Move } from '../../../features/custommoves'
 import { $ItemKey } from '../../provisions.js'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
+interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	move: Move
 }
 

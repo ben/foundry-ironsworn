@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { IronIconProps } from './icon-common'
+import type { IronIconProps } from './icon-common'
 
 // without this, vue-tsc complains  even though it shouldn't
 

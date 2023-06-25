@@ -17,14 +17,13 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes } from 'vue'
 import { inject } from 'vue'
 import type { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
+interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	move?: Move
 	overrideClick?: boolean
 

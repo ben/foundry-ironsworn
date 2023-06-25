@@ -16,9 +16,6 @@ import type {
 } from 'csstype'
 
 import type ironswornIconNames from 'virtual:svg-icons-names'
-import type { ExtractPropTypes } from 'vue'
-import type FontIcon from './font-icon.vue'
-import type IronIcon from './iron-icon.vue'
 
 export function enumHas(enumLike: object, value: string | number) {
 	return Object.values(enumLike).includes(value)
@@ -39,11 +36,11 @@ export interface IconSwitchState {
 	props?: this['icon'] extends IronswornIconId ? IronIconState : FontIconState
 }
 
-export type IronIconState = Omit<ExtractPropTypes<typeof IronIcon>, 'name'> & {
+export type IronIconState = Omit<IronIconProps, 'name'> & {
 	class?: string
 }
 
-export type FontIconState = Omit<ExtractPropTypes<typeof FontIcon>, 'name'> & {
+export type FontIconState = Omit<FontAwesomeIconProps, 'name'> & {
 	class?: string
 }
 
@@ -151,34 +148,6 @@ export interface FontAwesomeIconProps extends IconPropsCommon {
 	 * Used with {@link FontIconStack}.
 	 */
 	stack?: 'stack-1x' | 'stack-2x'
-}
-
-/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
-// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
-export function parseClassesToFaProps(cssClasses: string) {
-	const props: Partial<FontAwesomeIconProps> & { class?: string[] } = {}
-	cssClasses.split(' ').forEach((clsName) => {
-		switch (true) {
-			case enumHas(FontAwesome.Style, clsName):
-				props.style = clsName as FontAwesome.Style
-				break
-			case enumHas(FontAwesome.Family, clsName):
-				props.family = clsName as FontAwesome.Family
-				break
-			case enumHas(FontAwesome.Rotate, clsName):
-				props.rotate = clsName as FontAwesome.Rotate
-				break
-			case enumHas(FontAwesome.Animation, clsName):
-				if (!props.animation) props.animation = []
-				props.animation.push(clsName as FontAwesome.Animation)
-				break
-			default:
-				if (!props.class) props.class = []
-				props.class.push(clsName)
-				break
-		}
-	})
-	return props
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -4154,4 +4123,32 @@ export namespace FontAwesome {
 		| 'korvue'
 		| 'pix'
 		| 'steam-symbol'
+}
+
+/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
+// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
+export function parseClassesToFaProps(cssClasses: string) {
+	const props: Partial<FontAwesomeIconProps> & { class?: string[] } = {}
+	cssClasses.split(' ').forEach((clsName) => {
+		switch (true) {
+			case enumHas(FontAwesome.Style, clsName):
+				props.style = clsName as FontAwesome.Style
+				break
+			case enumHas(FontAwesome.Family, clsName):
+				props.family = clsName as FontAwesome.Family
+				break
+			case enumHas(FontAwesome.Rotate, clsName):
+				props.rotate = clsName as FontAwesome.Rotate
+				break
+			case enumHas(FontAwesome.Animation, clsName):
+				if (!props.animation) props.animation = []
+				props.animation.push(clsName as FontAwesome.Animation)
+				break
+			default:
+				if (!props.class) props.class = []
+				props.class.push(clsName)
+				break
+		}
+	})
+	return props
 }
