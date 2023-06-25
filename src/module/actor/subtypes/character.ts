@@ -101,7 +101,7 @@ export class CharacterModel
 					initial: 0
 				})
 			})
-		} as const
+		}
 	}
 }
 export interface CharacterModel extends CharacterDataSourceData {}

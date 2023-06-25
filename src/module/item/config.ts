@@ -76,7 +76,7 @@ const config: PartialDeep<ItemConfig> = {
 		'delve-domain': 'fa-duotone fa-cards-blank',
 		'delve-theme': 'fa-duotone fa-cards-blank'
 	}
-} as const
+}
 
 export default config
 
