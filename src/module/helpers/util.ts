@@ -16,8 +16,10 @@ export async function typedDeleteDialog<
 			{ typeLabels: Record<T['type'], string> }
 		>
 	const typeLabelKey = CONFIG[docType]?.typeLabels?.[document.type]
-	// if there's no available label key, fall back to the standard dialog
-	if (typeLabelKey == null) return (document as any).deleteDialog(options)
+
+	if (typeLabelKey == null)
+		// no available label key -- fall back to the standard dialog
+		return (document as any).deleteDialog(options)
 
 	const type = game.i18n.localize(typeLabelKey)
 
