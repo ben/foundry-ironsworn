@@ -2,8 +2,9 @@ import type { ChatMessageDataConstructorData } from '@league-of-foundry-develope
 import { compact, get } from 'lodash-es'
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import type { IronswornActor } from '../actor/actor'
+import { ChallengeRank } from '../fields/ChallengeRank'
 import { IronswornSettings } from '../helpers/settings'
-import { localizeRank } from '../helpers/util'
+
 import type { IronswornItem } from '../item/item'
 
 type ActorTypeHandler<T extends DocumentSubTypes<'Actor'> = any> = (
@@ -122,8 +123,8 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 
 		// Starforged legacy XP
 		for (const kind of ['quests', 'bonds', 'discoveries'] as const) {
-			const oldXp = actor.system.legacies[`${kind}XpSpent`]
-			const newXp = get(data.system, `legacies.${kind}XpSpent`)
+			const oldXp = actor.system.legacies[kind].xpSpent
+			const newXp = get(data.system, `legacies.${kind}.xpSpent`)
 			if (newXp !== undefined) {
 				if (newXp > oldXp) {
 					return game.i18n.format('IRONSWORN.ChatAlert.MarkedXP', {
@@ -180,8 +181,8 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 	site: (actor, data) => {
 		if (data.system?.track.rank != null) {
 			return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
-				old: localizeRank(actor.system.track.rank),
-				new: localizeRank(data.system.track.rank)
+				old: ChallengeRank.localizeValue(actor.system.track.rank),
+				new: ChallengeRank.localizeValue(data.system.track.rank)
 			})
 		}
 		if (data.system?.track.ticks !== undefined) {
@@ -196,10 +197,10 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 
 const ITEM_TYPE_HANDLERS: ItemTypeHandlers = {
 	progress: (item, data) => {
-		if (data.system?.track.rank) {
+		if (data.system?.track.rank !== undefined) {
 			return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
-				old: localizeRank(item.system.track.rank),
-				new: localizeRank(data.system.track.rank)
+				old: ChallengeRank.localizeValue(item.system.track.rank),
+				new: ChallengeRank.localizeValue(data.system.track.rank)
 			})
 		}
 		if (data.system?.track.ticks !== undefined) {

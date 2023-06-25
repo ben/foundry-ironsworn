@@ -1,5 +1,5 @@
 import type { CharacterData } from '../actor/config'
-import { ChallengeRankField } from '../fields/ChallengeRankField'
+import { ChallengeRank } from '../fields/ChallengeRank'
 import type { DataSchema } from '../fields/utils'
 import type { ProgressLikeSource, ProgressLikeProperties } from './ProgressLike'
 import { ProgressLike } from './ProgressLike'
@@ -13,20 +13,20 @@ export class LegacyTrack extends ProgressLike<
 > {
 	/** The number of ticks marked on the legacy track for completing a progress track of the given rank. */
 	static readonly REWARD: Record<
-		LegacyTrack.RewardRank | keyof (typeof ChallengeRankField)['RANK'],
+		LegacyTrack.RewardRank | keyof (typeof ChallengeRank)['RANK'],
 		number
 	> = {
 		/** Use for Troublesome tracks that have their reward reduced (e.g. from selecting that option after a weak hit from a progress move). */
 		0: 0,
-		[ChallengeRankField.RANK.Troublesome]: 1,
+		[ChallengeRank.RANK.Troublesome]: 1,
 		Troublesome: 1,
-		[ChallengeRankField.RANK.Dangerous]: 2,
+		[ChallengeRank.RANK.Dangerous]: 2,
 		Dangerous: 2,
-		[ChallengeRankField.RANK.Formidable]: 4,
+		[ChallengeRank.RANK.Formidable]: 4,
 		Formidable: 4,
-		[ChallengeRankField.RANK.Extreme]: 8,
+		[ChallengeRank.RANK.Extreme]: 8,
 		Extreme: 8,
-		[ChallengeRankField.RANK.Epic]: 12,
+		[ChallengeRank.RANK.Epic]: 12,
 		Epic: 12,
 		/** Use for Epic tracks that have their reward increased (e.g. from selecting that option after a weak hit from a progress move). */
 		6: 16
@@ -39,7 +39,7 @@ export class LegacyTrack extends ProgressLike<
 		LegacyTrack.BOXES * LegacyTrack.TICKS_PER_BOX
 
 	getMarkData(
-		rewardRank: LegacyTrack.RewardRank = ChallengeRankField.RANK.Troublesome
+		rewardRank: LegacyTrack.RewardRank = ChallengeRank.RANK.Troublesome
 	): { ticks: number } {
 		return { ticks: this.ticks + LegacyTrack.REWARD[rewardRank] }
 	}
@@ -109,5 +109,5 @@ export interface LegacyTrackSource extends ProgressLikeSource {
 }
 
 export namespace LegacyTrack {
-	export type RewardRank = 0 | ChallengeRankField.Rank | 6
+	export type RewardRank = 0 | ChallengeRank.Value | 6
 }

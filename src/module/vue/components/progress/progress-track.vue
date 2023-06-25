@@ -28,9 +28,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { ChallengeRank } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
 import { ProgressTrack } from '../../../model/ProgressTrack'
+import type { ChallengeRank } from '../../../fields/ChallengeRank'
 
 const props = defineProps<{
 	/**
@@ -40,7 +40,7 @@ const props = defineProps<{
 	/**
 	 * Use 'null' if it's an unranked track, such as a Legacy or classic Bonds.
 	 */
-	rank: ChallengeRank | null
+	rank: ChallengeRank.Value | null
 	legacyOverflow?: boolean
 	/**
 	 * When true, renders the progress bar for more compact display.

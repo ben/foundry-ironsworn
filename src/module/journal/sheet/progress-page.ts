@@ -1,9 +1,10 @@
-import { fill, range } from 'lodash-es'
-import { ChallengeRank, RANK_INCREMENTS } from '../../constants'
-import { localizeRank } from '../../helpers/util'
-import { IronswornPrerollDialog } from '../../rolls'
+import { ChallengeRank } from '../../fields/ChallengeRank'
+import type { ProgressTrackSource } from '../../model/ProgressTrack'
+import type { IronswornJournalPage } from '../journal-entry-page'
 
 export class JournalProgressPageSheet extends JournalPageSheet {
+	declare object: IronswornJournalPage<'progress'>
+
 	static get defaultOptions() {
 		const options = super.defaultOptions
 		options.height = 300
@@ -31,45 +32,40 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 	}
 
 	getData(options?: Partial<DocumentSheetOptions> | undefined): any {
-		const data = super.getData(options) as any
+		const data = super.getData(options) as any as JournalPageSheet.Data & {
+			document: IronswornJournalPage<'progress'>
+			data: { system: ProgressTrackSource }
+			currentRank: string
+			rankButtons: Array<{ rank: number; i18nRank: string; selected: boolean }>
+			filledBoxes: number
+			boxes: Array<{
+				ticks: number
+				lineTransforms: string[]
+			}>
+		}
 
-		data.currentRank = localizeRank(
-			data.data.system.rank ?? ChallengeRank.Troublesome
-		)
-		data.rankButtons = range(1, 6).map((rank) => ({
+		data.filledBoxes = data.document.system.filledBoxes
+
+		data.currentRank = data.document.system.localizeRank()
+
+		data.rankButtons = Object.values(ChallengeRank.RANK).map((rank) => ({
 			rank,
-			i18nRank: localizeRank(rank),
+			i18nRank: ChallengeRank.localizeValue(rank),
 			selected: data.data.system.rank === rank
 		}))
 
-		// Compute some progress numbers
-		const boxes = range(10).map((_) => ({
-			ticks: 0,
-			lineTransforms: [] as string[]
-		}))
-		const ticksRemainder = data.data.system.ticks % 4
-		data.filledBoxes = Math.floor(data.data.system.ticks / 4)
-
-		fill(boxes, { ticks: 4, lineTransforms: [] }, 0, data.filledBoxes)
-		boxes[data.filledBoxes] = { ticks: ticksRemainder, lineTransforms: [] }
-
-		// List of line transforms
+		// SVG line transforms for each tick
 		const transforms = [
-			'rotate(-45, 50, 50)',
-			'rotate(45, 50, 50)',
-			'rotate(-90, 50, 50)',
-			''
+			'rotate(-45, 50, 50)', // tick 1
+			'rotate(45, 50, 50)', // tick 2
+			'rotate(-90, 50, 50)', // tick 3
+			'' // tick 4
 		]
-		for (let i = 0; i < boxes.length; i++) {
-			const box = boxes[i]
 
-			if (box.ticks > 0) box.lineTransforms.push(transforms[0])
-			if (box.ticks > 1) box.lineTransforms.push(transforms[1])
-			if (box.ticks > 2) box.lineTransforms.push(transforms[2])
-			if (box.ticks > 3) box.lineTransforms.push(transforms[3])
-		}
-		data.boxes = boxes
-
+		data.boxes = data.document.system.boxValues.map((ticks) => ({
+			ticks,
+			lineTransforms: transforms.slice(0, ticks)
+		}))
 		return data
 	}
 
@@ -82,29 +78,15 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 			this.render()
 		})
 		html.find('.ironsworn__progress__mark').on('click', async () => {
-			await increment(this.object, 1)
+			await this.object.system.mark(1)
 			this.render()
 		})
 		html.find('.ironsworn__progress__unmark').on('click', async () => {
-			await increment(this.object, -1)
+			await this.object.system.mark(-1)
 			this.render()
 		})
-		html.find('.ironsworn__progress__roll').on('click', async () => {
-			const { filledBoxes } = await this.getData()
-			IronswornPrerollDialog.showForProgress(
-				this.object.name ?? '(progress)',
-				filledBoxes
-			)
-		})
+		html
+			.find('.ironsworn__progress__roll')
+			.on('click', async () => this.object.system.roll())
 	}
-}
-
-function increment(object: any, direction: 1 | -1) {
-	const rank: ChallengeRank = object.system.rank ?? ChallengeRank.Troublesome
-	const increment = RANK_INCREMENTS[rank]
-	const currentValue = object.system.ticks || 0
-	const newValue = currentValue + increment * direction
-	return object.update({
-		system: { ticks: Math.min(Math.max(newValue, 0), 40) }
-	})
 }

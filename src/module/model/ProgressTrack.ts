@@ -1,5 +1,5 @@
 import type { IronswornActor } from '../actor/actor'
-import { ChallengeRankField } from '../fields/ChallengeRankField'
+import { ChallengeRank } from '../fields/ChallengeRank'
 import type { DataSchema } from '../fields/utils'
 import { IronswornSettings } from '../helpers/settings'
 import type { ProgressLikeSource, ProgressLikeProperties } from './ProgressLike'
@@ -9,8 +9,8 @@ import { ProgressLike } from './ProgressLike'
 export class ProgressTrack<
 	Parent extends foundry.abstract.DataModel.AnyOrDoc = foundry.abstract.DataModel.AnyOrDoc
 > extends ProgressLike<ProgressTrackSource, ProgressTrackProperties, Parent> {
-	max?: number
-	value?: number
+	// max?: number
+	// value?: number
 
 	/** The number of ticks per unit of progress (in other words, per instance of "mark progress") for this track's challenge rank. */
 	get #unit() {
@@ -75,7 +75,7 @@ export class ProgressTrack<
 
 	/** Provide a localized label for this progress track's challenge rank. */
 	localizeRank() {
-		const field = this.schema.getField('rank') as unknown as ChallengeRankField
+		const field = this.schema.getField('rank') as unknown as ChallengeRank
 		return game.i18n.localize(field.choices[this.rank])
 	}
 
@@ -92,7 +92,7 @@ export class ProgressTrack<
 				integer: true
 			}),
 			enabled: new fields.BooleanField({ initial: true }),
-			rank: new ChallengeRankField(),
+			rank: new ChallengeRank(),
 			subtype: new fields.StringField({
 				choices: {
 					progress: 'IRONSWORN.ITEM.SubtypeProgress',
@@ -106,20 +106,22 @@ export class ProgressTrack<
 		}
 	}
 
+	/**
+	 * The number of ticks in one unit of progress, for each challenge rank.
+	 */
 	static readonly INCREMENT: Record<
-		| ValueOf<(typeof ChallengeRankField)['RANK']>
-		| keyof (typeof ChallengeRankField)['RANK'],
+		ChallengeRank.Value | keyof (typeof ChallengeRank)['RANK'],
 		number
 	> = {
-		[ChallengeRankField.RANK.Troublesome]: 12,
+		[ChallengeRank.RANK.Troublesome]: 12,
 		Troublesome: 12,
-		[ChallengeRankField.RANK.Dangerous]: 8,
+		[ChallengeRank.RANK.Dangerous]: 8,
 		Dangerous: 8,
-		[ChallengeRankField.RANK.Formidable]: 4,
+		[ChallengeRank.RANK.Formidable]: 4,
 		Formidable: 4,
-		[ChallengeRankField.RANK.Extreme]: 2,
+		[ChallengeRank.RANK.Extreme]: 2,
 		Extreme: 2,
-		[ChallengeRankField.RANK.Epic]: 1,
+		[ChallengeRank.RANK.Epic]: 1,
 		Epic: 1
 	} as const
 }
@@ -135,7 +137,7 @@ export interface ProgressTrack<
 type ProgressSubtype = 'vow' | 'progress' | 'connection' | 'foe' | 'delve'
 
 export interface ProgressTrackSource extends ProgressLikeSource {
-	rank: ChallengeRankField.Rank
+	rank: ChallengeRank.Value
 	subtype: ProgressSubtype
 	enabled?: boolean
 }

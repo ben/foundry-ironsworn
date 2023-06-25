@@ -23,6 +23,17 @@ export abstract class ProgressLike<
 
 	abstract getMarkData(value?: number): { ticks: number }
 
+	// getAlertText(changes: Partial<SourceData>) {
+	// 	if (changes.ticks != null) {
+	// 		const advanced = changes.ticks > this.ticks
+
+	// 		return game.i18n.localize(
+	// 			`IRONSWORN.ChatAlert.Progress${advanced ? 'Advanced' : 'Reduced'}`
+	// 		)
+	// 	}
+	// 	return undefined
+	// }
+
 	/** Make a progress roll against this track. */
 	async roll({
 		actor,
@@ -50,13 +61,26 @@ export abstract class ProgressLike<
 		)
 	}
 
-	/** The derived progress score, an integer from 0 to 10. */
+	/** The derived progress score, an integer from 0 to 10. Capped at SCORE_MAX. */
 	get score() {
 		return ProgressLike.getScore(this.ticks)
 	}
 
+	/** The derived progress score, with remainder ticks represented as a decimal value (`0.25` per tick). Capped at SCORE_MAX. */
+	get decimalValue() {
+		return ProgressLike.getScore(this.ticks, true)
+	}
+
+	/** The number of filled progress boxes. Unlike `score`, this is *not* capped by SCORE_MAX. */
 	get filledBoxes() {
 		return ProgressLike.getFilledBoxes(this.ticks)
+	}
+
+	/** Computes the visible ticks in each box of this progress track.
+	 * @return An array of numbers. Each value in the array represents the number of ticks in a progress box.
+	 * */
+	get boxValues() {
+		return ProgressLike.getBoxValues(this.ticks)
 	}
 
 	/**
@@ -84,7 +108,8 @@ export abstract class ProgressLike<
 
 	/** Computes the ticks in each box of a progress track.
 	 * @param ticks - The number of ticks on the progress track.
-	 * @param ignoreScoreMax - Can the result have more than 10 progress boxes? If `false`, only the last 10 boxes will be returned. (default: `false`)
+	 * @param ignoreScoreMax - Can the result have more than 10 progress boxes? If `false`, only the *last* 10 boxes will be returned. (default: `false`)
+	 * @return An array of numbers. Each value in the array represents the number of ticks in a progress box.
 	 */
 	static getBoxValues(ticks: number, ignoreScoreMax = false) {
 		const tracksFilled = Math.floor(this.getFilledBoxes(ticks) / this.BOXES)

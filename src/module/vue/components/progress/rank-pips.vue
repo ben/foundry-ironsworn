@@ -2,9 +2,9 @@
 	<article
 		:class="$style.wrapper"
 		:aria-label="$t('IRONSWORN.ChallengeRank')"
-		:aria-valuetext="ChallengeRankField.localizeValue(current)"
-		:aria-valuemin="ChallengeRankField.RANK_MIN"
-		:aria-valuemax="ChallengeRankField.RANK_MAX"
+		:aria-valuetext="ChallengeRank.localizeValue(current)"
+		:aria-valuemin="ChallengeRank.MIN"
+		:aria-valuemax="ChallengeRank.MAX"
 		:aria-valuenow="current"
 		aria-orientation="horizontal"
 		tabindex="0"
@@ -18,17 +18,17 @@
 		@keydown.arrow-down="setRank(current - 1)"
 		@keydown.arrow-right="setRank(current - 1)"
 		@keydown.page-down="setRank(current - 2)"
-		@keydown.home="setRank(ChallengeRankField.RANK_MIN)"
-		@keydown.end="setRank(ChallengeRankField.RANK_MAX)"
+		@keydown.home="setRank(ChallengeRank.MIN)"
+		@keydown.end="setRank(ChallengeRank.MAX)"
 		@keydown.1="setRank(1)"
 		@keydown.2="setRank(2)"
 		@keydown.3="setRank(3)"
 		@keydown.4="setRank(4)"
 		@keydown.5="setRank(5)">
 		<button
-			v-for="rank in ChallengeRankField.RANK"
+			v-for="rank in ChallengeRank.RANK"
 			:key="rank"
-			:data-tooltip="ChallengeRankField.localizeValue(rank)"
+			:data-tooltip="ChallengeRank.localizeValue(rank)"
 			data-tooltip-direction="UP"
 			type="button"
 			class="nogrow"
@@ -59,11 +59,11 @@ import { computed, ref } from 'vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
 import FontIcon from '../icon/font-icon.vue'
 import { clamp } from 'lodash-es'
-import { ChallengeRankField } from '../../../fields/ChallengeRankField'
+import { ChallengeRank } from '../../../fields/ChallengeRank'
 
 const props = withDefaults(
 	defineProps<{
-		current: ChallengeRankField.Rank
+		current: ChallengeRank.Value
 		readonly?: boolean
 	}>(),
 	{ readonly: false }
@@ -75,7 +75,7 @@ const pipPadding = computed(() => IronswornSettings.deco.challengeRank.padding)
 
 type PipState = 'filled' | 'empty' | 'preview'
 
-function getState(rank: ChallengeRankField.Rank): PipState {
+function getState(rank: ChallengeRank.Value): PipState {
 	switch (true) {
 		case hovered.value === 0 && rank <= props.current:
 			return 'filled'
@@ -87,18 +87,14 @@ function getState(rank: ChallengeRankField.Rank): PipState {
 }
 
 const $emit = defineEmits<{
-	(event: 'change', newRank: ChallengeRankField.Rank): void
+	(event: 'change', newRank: ChallengeRank.Value): void
 }>()
 
 function setRank(rank: number) {
 	if (props.readonly) return
 	$emit(
 		'change',
-		clamp(
-			rank,
-			ChallengeRankField.RANK_MIN,
-			ChallengeRankField.RANK_MAX
-		) as ChallengeRankField.Rank
+		clamp(rank, ChallengeRank.MIN, ChallengeRank.MAX) as ChallengeRank.Value
 	)
 }
 </script>

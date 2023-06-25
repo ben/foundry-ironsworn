@@ -15,7 +15,7 @@
 								(rank) => $actor.update({ system: { track: { rank } } })
 							" />
 						<label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
-							localizeRank(data.actor.system.track.rank)
+							$actor.system.track.localizeRank()
 						}}</label>
 						<IronBtn
 							v-if="editMode"
@@ -129,7 +129,6 @@ import MceEditor from './components/mce-editor.vue'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
-import { localizeRank } from '../helpers/util'
 import type { IronswornActor } from '../actor/actor'
 
 const props = defineProps<{

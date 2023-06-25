@@ -33,10 +33,12 @@ import type { ProgressDataPropertiesData } from '../../../item/subtypes/progress
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 
 const starredProgresses = computed(() =>
-	actor?.value.items.filter(
-		(item: ItemSource) =>
-			item.type === 'progress' && item.flags?.['foundry-ironsworn']?.starred
-	)
+	actor?.value.items.filter(function (item): item is ItemSource<'progress'> {
+		return (
+			item.type === 'progress' &&
+			item.flags?.['foundry-ironsworn']?.starred === true
+		)
+	})
 )
 </script>
 
