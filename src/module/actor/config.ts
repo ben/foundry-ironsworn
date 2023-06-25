@@ -32,7 +32,7 @@ const dataModels: Record<
 	shared: SharedModel,
 	site: SiteModel,
 	starship: StarshipModel
-} as const
+}
 
 type ActorType = ConfiguredData<'Actor'>['type']
 // v11+ uses 'dataModels' instead
