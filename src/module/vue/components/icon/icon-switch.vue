@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import type IronBtn from 'component:buttons/iron-btn.vue'
+import type IronBtn from '../buttons/iron-btn.vue'
 
 import { TransitionGroup } from 'vue'
 

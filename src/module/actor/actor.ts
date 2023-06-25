@@ -1,6 +1,7 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import { CreateActorDialog } from '../applications/createActorDialog'
+import { typedDeleteDialog } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
@@ -72,6 +73,10 @@ export class IronswornActor<
 			'ironsworn.StarforgedCharacterSheet'
 			? 'starforged'
 			: 'ironsworn'
+	}
+
+	override async deleteDialog(options?: Partial<DialogOptions>) {
+		return await typedDeleteDialog(this, options)
 	}
 }
 export interface IronswornActor<T extends DocumentSubTypes<'Actor'> = any>

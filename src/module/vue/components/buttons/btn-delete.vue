@@ -26,7 +26,7 @@ interface Props extends PropsOf<typeof IronBtn> {
 
 const props = withDefaults(defineProps<Props>(), {
 	icon: 'fa:trash',
-	dialogOptions: {}
+	dialogOptions: {} as any
 })
 
 const typeLabel = computed<string>(() => {
