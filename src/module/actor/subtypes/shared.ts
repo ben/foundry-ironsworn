@@ -1,8 +1,5 @@
-import {
-	ConditionMeterField,
-	ConditionMeterSource
-} from '../../fields/MeterField'
-import { MeterValueField } from '../../fields/MeterValueField'
+import type { ConditionMeterSource } from '../../fields/MeterField'
+import { ConditionMeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
@@ -16,7 +13,6 @@ export class SharedModel extends foundry.abstract.TypeDataModel<
 	static override defineSchema(): DataSchema<SharedDataSourceData> {
 		return {
 			biography: new foundry.data.fields.HTMLField(),
-			// @ts-expect-error
 			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' })
 		}
 	}

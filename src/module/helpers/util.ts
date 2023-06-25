@@ -1,14 +1,5 @@
-import { ChallengeRank } from '../constants'
 import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import type { KeysWithValuesOfType } from 'dataforged'
-
-/**
- * @returns A localized string label for the challenge rank.
- */
-export function localizeRank(rank: ChallengeRank | keyof typeof ChallengeRank) {
-	const key = typeof rank === 'string' ? rank : ChallengeRank[rank]
-	return game.i18n.localize(`IRONSWORN.CHALLENGERANK.${key}`)
-}
 
 /**
  * @remarks A document-subtype-sensitive replacement for the FVTT document deletion dialog.

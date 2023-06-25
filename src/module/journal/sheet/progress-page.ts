@@ -1,6 +1,6 @@
 import { fill, range } from 'lodash-es'
-import { ChallengeRank, RANK_INCREMENTS } from '../../constants'
-import { localizeRank } from '../../helpers/util'
+import { RANK_INCREMENTS } from '../../constants'
+import { ChallengeRank } from '../../fields/ChallengeRank'
 import { IronswornPrerollDialog } from '../../rolls'
 
 export class JournalProgressPageSheet extends JournalPageSheet {
@@ -33,12 +33,12 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 	getData(options?: Partial<DocumentSheetOptions> | undefined): any {
 		const data = super.getData(options) as any
 
-		data.currentRank = localizeRank(
-			data.data.system.rank ?? ChallengeRank.Troublesome
+		data.currentRank = ChallengeRank.localizeValue(
+			data.data.system.rank ?? ChallengeRank.RANK.Troublesome
 		)
-		data.rankButtons = range(1, 6).map((rank) => ({
+		data.rankButtons = Object.values(ChallengeRank.RANK).map((rank) => ({
 			rank,
-			i18nRank: localizeRank(rank),
+			i18nRank: ChallengeRank.localizeValue(rank),
 			selected: data.data.system.rank === rank
 		}))
 
@@ -100,7 +100,8 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 }
 
 function increment(object: any, direction: 1 | -1) {
-	const rank: ChallengeRank = object.system.rank ?? ChallengeRank.Troublesome
+	const rank: ChallengeRank.Value =
+		object.system.rank ?? ChallengeRank.RANK.Troublesome
 	const increment = RANK_INCREMENTS[rank]
 	const currentValue = object.system.ticks || 0
 	const newValue = currentValue + increment * direction
