@@ -1,3 +1,4 @@
+import { IronswornSettings } from '../helpers/settings'
 import { IronActiveEffect } from './active-effect'
 import type { DebilityCategoryClassic, ImpactCategoryStarforged } from './types'
 
@@ -27,15 +28,34 @@ declare global {
 	}
 }
 
-export const ConfigActiveEffect = {
-	documentClass: IronActiveEffect,
+type ActiveEffectConfigV9 = (typeof CONFIG)['ActiveEffect']
+
+interface ActiveEffectConfigV11 extends ActiveEffectConfigV9 {
 	/**
 	 * If true, Active Effects on Items will be copied to the Actor when the Item is created on the Actor if the
 	 * Active Effect's transfer property is true, and will be deleted when that Item is deleted from the Actor.
 	 * If false, Active Effects are never copied to the Actor, but will still apply to the Actor from within the Item
 	 * if the transfer property on the Active Effect is true.
 	 */
-	legacyTransferral: false
+	legacyTransferral: boolean
+
+	/** FVTT doesn't use this by default, but some of our stuff does; it's stored here so it's consistent with other document config objects */
+	typeIcons: Record<IronActiveEffectFlags['type'] & string, string>
+	/** FVTT doesn't use this by default, but some of our stuff does; it's stored here so it's consistent with other document config objects */
+	typeLabels: Record<IronActiveEffectFlags['type'] & string, string>
+}
+
+export const ConfigActiveEffect: ActiveEffectConfigV11 = {
+	documentClass: IronActiveEffect,
+	legacyTransferral: false,
+	typeIcons: {
+		impact: 'fa-solid fa-angles-down'
+	},
+	typeLabels: {
+		get impact() {
+			return `IRONSWORN.${IronswornSettings.impactTypeDefault.capitalize()}`
+		}
+	}
 }
 
 export {}
