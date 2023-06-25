@@ -32,7 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes } from 'vue'
 import { computed, nextTick, ref } from 'vue'
 import type { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
@@ -49,7 +48,7 @@ const props = withDefaults(
 		highlightDuration?: number
 		headingLevel?: number
 		collapsible?: Omit<
-			ExtractPropTypes<typeof Collapsible>,
+			PropsOf<typeof Collapsible>,
 			| 'toggleButtonClass'
 			| 'toggleTooltip'
 			| 'toggleWrapperIs'

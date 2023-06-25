@@ -12,10 +12,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { ExtractPropTypes } from 'vue'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends ExtractPropTypes<typeof IronBtn> {
+interface Props extends PropsOf<typeof IronBtn> {
 	compendium: string
 }
 

@@ -13,6 +13,7 @@ import type {
 import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import { IronswornSettings } from '../helpers/settings'
+import { typedDeleteDialog } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties, ActorDataSource } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
@@ -261,6 +262,10 @@ export class IronswornActor<
 		}
 
 		return src
+	}
+
+	override async deleteDialog(options?: Partial<DialogOptions>) {
+		return typedDeleteDialog(this, options)
 	}
 }
 export interface IronswornActor<T extends DocumentSubTypes<'Actor'> = any>

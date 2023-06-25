@@ -14,20 +14,18 @@
 
 <script lang="ts" setup>
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import { computed } from '@vue/reactivity'
-import type { ExtractPropTypes } from 'vue'
-import { inject } from 'vue'
+import { computed, inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
-import { MeterField } from '../../../fields/MeterField'
+import type { MeterField } from '../../../fields/MeterField'
 import type { IronswornItem } from '../../../item/item'
-import { AssetConditionMeterField } from '../../../item/subtypes/asset'
+import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { formatRollPlusStat } from '../../../rolls/ironsworn-roll-message'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
+interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	documentType: DocumentType
 	/**
 	 * The key of the stat value within `system`
@@ -43,7 +41,6 @@ const field = computed(
 		$document?.system.schema.getField(props.attr) as
 			| AssetConditionMeterField
 			| MeterField
-			| foundry.data.fields.NumberField
 )
 
 const statLabel = computed(() => {

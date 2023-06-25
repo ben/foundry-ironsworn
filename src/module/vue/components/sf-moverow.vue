@@ -56,7 +56,6 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes } from 'vue'
 import { computed, provide, reactive, ref } from 'vue'
 import type { Move } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
@@ -91,7 +90,7 @@ const props = withDefaults(
 		 * Props to be passed to the Collapsible component.
 		 */
 		collapsible?: Omit<
-			ExtractPropTypes<typeof Collapsible>,
+			PropsOf<typeof Collapsible>,
 			| 'contentWrapperClass'
 			| 'toggleWrapperIs'
 			| 'toggleSectionClass'

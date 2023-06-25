@@ -3,6 +3,15 @@ import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/s
 import type { SourceDataType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 declare global {
+	/** A type alias for any client document. */
+	export type ClientDocument<
+		T extends foundry.abstract.Document<
+			any,
+			any,
+			any
+		> = foundry.abstract.Document<any, any, any>
+	> = InstanceType<ReturnType<typeof ClientDocumentMixin<ConstructorOf<T>>>>
+
 	export namespace foundry {
 		export namespace abstract {
 			export interface Document<

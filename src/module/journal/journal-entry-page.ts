@@ -5,6 +5,7 @@ import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/s
 import type { IRow } from 'dataforged'
 import { clamp } from 'lodash-es'
 import { ChallengeRank, RANK_INCREMENTS } from '../constants'
+import { typedDeleteDialog } from '../helpers/util'
 import { OracleTable } from '../roll-table/oracle-table'
 import { OracleTableResult } from '../roll-table/oracle-table-result'
 import type {
@@ -93,5 +94,9 @@ export class IronswornJournalPage<
 		const increment = RANK_INCREMENTS[legacyRank] * progressUnits
 		const newValue = clamp(oldTicks + increment, minTicks, maxTicks)
 		return await this.update({ 'system.ticks': newValue })
+	}
+
+	override async deleteDialog(options?: Partial<DialogOptions>) {
+		return await typedDeleteDialog(this, options)
 	}
 }
