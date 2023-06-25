@@ -127,7 +127,7 @@
 			block
 			:class="$style.danger"
 			:btn-text="true"
-			:document="($item as any)" />
+			:document="$item" />
 	</div>
 </template>
 
@@ -145,7 +145,7 @@ import type { IronswornItem } from '../item/item'
 import BtnDocDelete from './components/buttons/btn-doc-delete.vue'
 
 const props = defineProps<{ data: { item: ItemSource<'progress'> } }>()
-const $item = inject<IronswornItem<'progress'>>($ItemKey)
+const $item = inject($ItemKey) as IronswornItem<'progress'>
 
 provide(
 	ItemKey,

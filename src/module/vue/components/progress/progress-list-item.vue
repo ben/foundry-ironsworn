@@ -23,7 +23,7 @@
 			:current="item.system.rank"
 			@change="(rank) => $item.update({ system: { rank } })" />
 		<section class="progress-controls" data-tooltip-direction="UP">
-			<BtnDocDelete v-if="editMode" block :document="($item as any)" />
+			<BtnDocDelete v-if="editMode" block :document="$item" />
 			<IronBtn
 				block
 				icon="fa:pen-to-square"

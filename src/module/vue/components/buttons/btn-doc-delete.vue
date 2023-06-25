@@ -6,7 +6,7 @@
 		:text="btnText ? text : undefined"
 		:icon="'fa:trash'"
 		v-bind="($props, $attrs)"
-		@click=";(document as any).deleteDialog(dialogOptions)">
+		@click="document.deleteDialog(dialogOptions)">
 		<template v-for="(_, slot) of $slots" #[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
@@ -16,13 +16,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import IronBtn from './iron-btn.vue'
-import type {
-	ConfiguredDocumentClassForName,
-	DocumentType
-} from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 interface Props extends Omit<PropsOf<typeof IronBtn>, 'text' | 'icon'> {
-	document: InstanceType<ConfiguredDocumentClassForName<DocumentType>>
+	document: ClientDocument
 	dialogOptions?: Partial<DialogOptions>
 	/** @default `false` */
 	btnText?: boolean
