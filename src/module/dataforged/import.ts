@@ -9,20 +9,19 @@ import type {
 	IOracle,
 	IOracleCategory,
 	Ironsworn,
-	IRow,
 	ISettingTruth,
 	Starforged
 } from 'dataforged'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { starforged, ironsworn } from 'dataforged'
-import { isArray, isObject, max } from 'lodash-es'
+import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
+import { ironsworn, starforged } from 'dataforged'
+import { isArray, isObject } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
-import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
-import { OracleTableResult } from '../roll-table/oracle-table-result'
+import { OracleTable } from '../roll-table/oracle-table'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -33,9 +32,6 @@ import {
 } from './data'
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
-import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
-import type { FoeDataSource } from '../actor/actortypes'
-import type { ProgressDataSource } from '../item/itemtypes'
 
 export function cleanDollars(obj): any {
 	if (isArray(obj)) {
@@ -359,7 +355,7 @@ async function processISOracles() {
 }
 
 type EncounterConstructorData = Omit<
-	ActorDataConstructorData & DeepPartial<FoeDataSource>,
+	ActorDataConstructorData & DeepPartial<ActorSource<'foe'>>,
 	'data'
 >
 
@@ -383,7 +379,7 @@ async function processEncounter(
 	)
 
 	const progressTrack: Omit<
-		ItemDataConstructorData & DeepPartial<ProgressDataSource>,
+		ItemDataConstructorData & DeepPartial<ItemSource<'progress'>>,
 		'data'
 	> = {
 		type: 'progress',
@@ -446,7 +442,7 @@ async function processSFEncounters() {
 	}
 
 	await IronswornActor.createDocuments(await Promise.all(encountersToCreate), {
-		pack: 'foundry-ironsworn.starforgedencounters',
+		pack: 'foundry-ironsworn.starforged-encounters',
 		keepId: true,
 		keepEmbeddedIds: true,
 		recursive: true
