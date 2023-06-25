@@ -6,7 +6,7 @@ declare global {
 		namespace data {
 			namespace fields {
 				export abstract class DataField<
-					SourceData = unknown,
+					SourceData = any,
 					ConcreteData = SourceData,
 					Options extends DataField.Options<
 						SourceData,
@@ -174,7 +174,7 @@ declare global {
 					protected _getField(path: string[]): undefined | this
 				}
 				export interface DataField<
-					SourceData = unknown,
+					SourceData = any,
 					ConcreteData = SourceData,
 					Options extends DataField.Options<
 						SourceData,
@@ -233,7 +233,8 @@ declare global {
 						 */
 						initial?:
 							| ConcreteData
-							| ((data: SourceData) => ConcreteData)
+							| Partial<ConcreteData>
+							| ((data: SourceData) => ConcreteData | Partial<ConcreteData>)
 							| undefined
 						/**
 						 * A data validation function which accepts one argument with the current value.

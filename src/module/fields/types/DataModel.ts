@@ -179,7 +179,7 @@ declare global {
 				 * @param data - The candidate data object to validate
 				 * @throws - An error if a validation failure is detected
 				 */
-				protected _validateModel(data: unknown): void
+				protected _validateModel(data: SourceData): void
 
 				/* ---------------------------------------- */
 				/*  Data Management                         */
