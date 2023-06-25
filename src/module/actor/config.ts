@@ -70,12 +70,12 @@ const config: Partial<ActorConfig> = {
 export default config
 
 export {
-	CharacterModel as CharacterData,
-	FoeModel as FoeData,
-	LocationModel as LocationData,
-	SharedModel as SharedData,
-	SiteModel as SiteData,
-	StarshipModel as StarshipData
+	CharacterModel,
+	FoeModel,
+	LocationModel,
+	SharedModel,
+	SiteModel,
+	StarshipModel
 }
 
 export type ActorDataSource =
