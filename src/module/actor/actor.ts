@@ -53,10 +53,6 @@ export class IronswornActor<
 		return undefined
 	}
 
-	override async deleteDialog(options: Partial<DialogOptions> = {}) {
-		return await typedDeleteDialog(this, options)
-	}
-
 	get toolset(): 'ironsworn' | 'starforged' {
 		// We can't use IronswornSettings helpers here, it breaks the import orders
 		// First check if the toolbox is set to one or the other
