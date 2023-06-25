@@ -13,7 +13,7 @@ import type { IronActorModel } from './common'
 import { IronswornSettings } from '../../helpers/settings'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
-export class CharacterData
+export class CharacterModel
 	extends foundry.abstract.TypeDataModel<
 		CharacterDataSourceData,
 		CharacterDataSourceData,
@@ -52,7 +52,7 @@ export class CharacterData
 		})
 	}
 
-	async burnMomentum(this: CharacterData) {
+	async burnMomentum(this: CharacterModel) {
 		if (this.canBurnMomentum) await this.resetMomentum()
 	}
 
@@ -104,7 +104,7 @@ export class CharacterData
 		} as const
 	}
 }
-export interface CharacterData extends CharacterDataSourceData {}
+export interface CharacterModel extends CharacterDataSourceData {}
 export interface CharacterDataSourceData {
 	biography: string
 	notes: string
@@ -145,6 +145,6 @@ export interface CharacterDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: CharacterData
-	system: CharacterData
+	data: CharacterModel
+	system: CharacterModel
 }

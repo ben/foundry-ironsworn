@@ -2,7 +2,7 @@ import type { IronswornActor } from '../actor'
 import type { DataSchema } from '../../fields/utils'
 import type { IronActorModel } from './common'
 
-export class StarshipData
+export class StarshipModel
 	extends foundry.abstract.TypeDataModel<
 		StarshipDataSourceData,
 		StarshipDataSourceData,
@@ -21,7 +21,7 @@ export class StarshipData
 		return {}
 	}
 }
-export interface StarshipData extends StarshipDataSourceData {}
+export interface StarshipModel extends StarshipDataSourceData {}
 
 interface StarshipDataSourceData {}
 export interface StarshipDataSource {
@@ -37,6 +37,6 @@ export interface StarshipDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: StarshipData
-	system: StarshipData
+	data: StarshipModel
+	system: StarshipModel
 }

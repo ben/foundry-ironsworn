@@ -4,7 +4,7 @@ import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 import type { IronActorModel } from './common'
 
-export class SharedData
+export class SharedModel
 	extends foundry.abstract.TypeDataModel<
 		SharedDataSourceData,
 		SharedDataSourceData,
@@ -24,7 +24,7 @@ export class SharedData
 		}
 	}
 }
-export interface SharedData extends SharedDataSourceData {}
+export interface SharedModel extends SharedDataSourceData {}
 
 interface SharedDataSourceData {
 	biography: string
@@ -44,6 +44,6 @@ export interface SharedDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: SharedData
-	system: SharedData
+	data: SharedModel
+	system: SharedModel
 }

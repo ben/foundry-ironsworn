@@ -2,7 +2,7 @@ import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 import type { IronActorModel } from './common'
 
-export class LocationData
+export class LocationModel
 	extends foundry.abstract.TypeDataModel<
 		LocationDataSourceData,
 		LocationDataSourceData,
@@ -23,7 +23,7 @@ export class LocationData
 		} as const
 	}
 }
-export interface LocationData extends LocationDataSourceData {}
+export interface LocationModel extends LocationDataSourceData {}
 
 interface LocationDataSourceData {
 	subtype: string
@@ -44,6 +44,6 @@ export interface LocationDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: LocationData
-	system: LocationData
+	data: LocationModel
+	system: LocationModel
 }

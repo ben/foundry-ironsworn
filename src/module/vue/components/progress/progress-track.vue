@@ -12,8 +12,8 @@
 		:data-ticks="ticks"
 		:data-score="score"
 		:aria-valuenow="ticks"
-		:aria-valuemin="ProgressData.TICKS_MIN"
-		:aria-valuemax="ProgressData.TICKS_MAX"
+		:aria-valuemin="ProgressModel.TICKS_MIN"
+		:aria-valuemax="ProgressModel.TICKS_MAX"
 		:aria-valuetext="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
 		:data-tooltip="$t('IRONSWORN.PROGRESS.Current', { score, ticks })">
 		<ProgressTrackBox
@@ -21,7 +21,7 @@
 			:key="`progress-box-${i + 1}`"
 			tabindex="-1"
 			role="presentational"
-			:ticks="boxTicks ?? ProgressData.TICKS_MIN"
+			:ticks="boxTicks ?? ProgressModel.TICKS_MIN"
 			:is-overflow-box="legacyOverflow" />
 	</article>
 </template>
@@ -31,7 +31,7 @@ import { computed } from 'vue'
 import { fill } from 'lodash-es'
 import type { ChallengeRank } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
-import { ProgressData } from '../../../item/subtypes/progress'
+import { ProgressModel } from '../../../item/subtypes/progress'
 
 const props = defineProps<{
 	/**
@@ -51,26 +51,26 @@ const props = defineProps<{
 
 const score = computed(() =>
 	Math.clamped(
-		Math.floor(props.ticks / ProgressData.TICKS_PER_BOX),
-		ProgressData.SCORE_MIN,
-		ProgressData.SCORE_MAX
+		Math.floor(props.ticks / ProgressModel.TICKS_PER_BOX),
+		ProgressModel.SCORE_MIN,
+		ProgressModel.SCORE_MAX
 	)
 )
 
 const visibleTicks = computed(() =>
-	props.ticks > ProgressData.TICKS_MAX
-		? props.ticks % ProgressData.TICKS_MAX
+	props.ticks > ProgressModel.TICKS_MAX
+		? props.ticks % ProgressModel.TICKS_MAX
 		: props.ticks
 )
 
 const boxes = computed(() => {
-	const boxTicks = Array<number>(ProgressData.BOXES)
+	const boxTicks = Array<number>(ProgressModel.BOXES)
 	const filledBoxes = Math.floor(
-		visibleTicks.value / ProgressData.TICKS_PER_BOX
+		visibleTicks.value / ProgressModel.TICKS_PER_BOX
 	)
-	const ticksRemainder = visibleTicks.value % ProgressData.TICKS_PER_BOX
+	const ticksRemainder = visibleTicks.value % ProgressModel.TICKS_PER_BOX
 
-	fill(boxTicks, ProgressData.TICKS_PER_BOX, 0, filledBoxes)
+	fill(boxTicks, ProgressModel.TICKS_PER_BOX, 0, filledBoxes)
 	if (ticksRemainder > 0) {
 		boxTicks[filledBoxes] = ticksRemainder
 	}

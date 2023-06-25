@@ -8,7 +8,7 @@ import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../config'
 
-export class ProgressData extends foundry.abstract.TypeDataModel<
+export class ProgressModel extends foundry.abstract.TypeDataModel<
 	ProgressDataSourceData,
 	ProgressDataSourceData,
 	IronswornItem<'progress'>
@@ -25,8 +25,8 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 	/** The derived progress score, which is an integer from 0 to 10. */
 	get score() {
 		return Math.min(
-			Math.floor(this.current / ProgressData.TICKS_PER_BOX),
-			ProgressData.SCORE_MAX
+			Math.floor(this.current / ProgressModel.TICKS_PER_BOX),
+			ProgressModel.SCORE_MAX
 		)
 	}
 
@@ -42,8 +42,8 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 		return await this.parent.update({
 			'system.current': clamp(
 				this.current + this.unit * units,
-				ProgressData.TICKS_MIN,
-				ProgressData.TICKS_MAX
+				ProgressModel.TICKS_MIN,
+				ProgressModel.TICKS_MAX
 			)
 		})
 	}
@@ -95,7 +95,7 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface ProgressData extends ProgressDataPropertiesData {}
+export interface ProgressModel extends ProgressDataPropertiesData {}
 
 export interface ProgressDataSourceData extends ProgressBase {
 	subtype: string
@@ -114,6 +114,6 @@ export interface ProgressDataSource {
 }
 export interface ProgressDataProperties {
 	type: 'progress'
-	data: ProgressData
-	system: ProgressData
+	data: ProgressModel
+	system: ProgressModel
 }

@@ -3,7 +3,7 @@ import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 import type { DelveSiteDanger, DelveSiteFeature } from './common'
 
-export class DelveDomainData extends foundry.abstract.TypeDataModel<
+export class DelveDomainModel extends foundry.abstract.TypeDataModel<
 	DelveDomainDataSourceData,
 	DelveDomainDataSourceData,
 	IronswornItem<'delve-domain'>
@@ -47,7 +47,7 @@ export class DelveDomainData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface DelveDomainData extends DelveDomainDataPropertiesData {}
+export interface DelveDomainModel extends DelveDomainDataPropertiesData {}
 
 export interface DelveDomainDataSourceData {
 	summary: string
@@ -65,6 +65,6 @@ export interface DelveDomainDataSource {
 }
 export interface DelveDomainDataProperties {
 	type: 'delve-domain'
-	data: DelveDomainData
-	system: DelveDomainData
+	data: DelveDomainModel
+	system: DelveDomainModel
 }

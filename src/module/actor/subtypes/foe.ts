@@ -3,7 +3,7 @@ import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 import type { IronActorModel } from './common'
 
-export class FoeData
+export class FoeModel
 	extends foundry.abstract.TypeDataModel<
 		FoeDataSourceData,
 		FoeDataSourceData,
@@ -21,7 +21,7 @@ export class FoeData
 		}
 	}
 }
-export interface FoeData extends FoeDataSourceData {}
+export interface FoeModel extends FoeDataSourceData {}
 export interface FoeDataSourceData {
 	dfid: string | null
 }
@@ -39,6 +39,6 @@ export interface FoeDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: FoeData
-	system: FoeData
+	data: FoeModel
+	system: FoeModel
 }
