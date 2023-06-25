@@ -14,13 +14,11 @@
 
 <script lang="ts" setup>
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import { computed } from '@vue/reactivity'
-
-import { inject } from 'vue'
+import { computed, inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
-import { MeterField } from '../../../fields/MeterField'
+import type { MeterField } from '../../../fields/MeterField'
 import type { IronswornItem } from '../../../item/item'
-import { AssetConditionMeterField } from '../../../item/subtypes/asset'
+import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { formatRollPlusStat } from '../../../rolls/ironsworn-roll-message'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument'
@@ -43,7 +41,6 @@ const field = computed(
 		$document?.system.schema.getField(props.attr) as
 			| AssetConditionMeterField
 			| MeterField
-			| foundry.data.fields.NumberField
 )
 
 const statLabel = computed(() => {
