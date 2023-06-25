@@ -4,7 +4,7 @@ import type { TableResultDataConstructorData } from '@league-of-foundry-develope
 import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
 import type { IRow } from 'dataforged'
 import { clamp } from 'lodash-es'
-import { ChallengeRank, RANK_INCREMENTS } from '../constants'
+import { RANK_INCREMENTS } from '../constants'
 import { typedDeleteDialog } from '../helpers/util'
 import { OracleTable } from '../roll-table/oracle-table'
 import { OracleTableResult } from '../roll-table/oracle-table-result'
@@ -87,11 +87,10 @@ export class IronswornJournalPage<
 	async markProgress(progressUnits = 1) {
 		if (this.type !== 'progress') return
 		const system = this.system as ProgressTrackDataPropertiesData
-		const legacyRank = ChallengeRank[system.rank]
 		const oldTicks = system.ticks ?? 0
 		const minTicks = 0
 		const maxTicks = 40
-		const increment = RANK_INCREMENTS[legacyRank] * progressUnits
+		const increment = RANK_INCREMENTS[system.rank] * progressUnits
 		const newValue = clamp(oldTicks + increment, minTicks, maxTicks)
 		return await this.update({ 'system.ticks': newValue })
 	}

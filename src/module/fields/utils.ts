@@ -61,10 +61,7 @@ export type SourceData<
 > = ReturnType<DocumentInstance['toObject']> &
 	Extract<SourceConfig[DocumentInstance['documentName']], { type: Subtype }>
 
-export type DataSchema<
-	SourceData extends Record<string, any> = Record<string, unknown>,
-	ConcreteData extends Record<string, any> = SourceData
-> = {
+export type DataSchema<SourceData, ConcreteData = SourceData> = {
 	[K in keyof ConcreteData]-?: SelectFieldTypeFor<
 		K extends keyof SourceData ? NonNullish<SourceData[K]> : any,
 		NonNullish<ConcreteData[K]>
@@ -73,12 +70,21 @@ export type DataSchema<
 
 type NonNullish<T> = Exclude<T, undefined | null>
 
-type SelectFieldTypeFor<SourceData, ConcreteData> = SourceData extends number
-	? foundry.data.fields.NumberField
-	: SourceData extends string
-	? ConcreteData extends string
-		? foundry.data.fields.StringField
-		: foundry.data.fields.StringField<string, ConcreteData>
-	: SourceData extends boolean
-	? foundry.data.fields.BooleanField
-	: foundry.data.fields.DataField<SourceData, ConcreteData, any>
+type SelectFieldTypeFor<SourceData, ConcreteData> =
+	ConcreteData extends foundry.abstract.DataModel.Any
+		? foundry.data.fields.EmbeddedDataField<any, ConcreteData, any, any>
+		: SourceData extends number
+		? foundry.data.fields.NumberField<number, number, any>
+		: SourceData extends boolean
+		? foundry.data.fields.BooleanField
+		: SourceData extends string
+		? ConcreteData extends string
+			? foundry.data.fields.StringField<string, string, any>
+			: ConcreteData extends foundry.abstract.Document<any, any, any>
+			? foundry.data.fields.StringField<string, ConcreteData, any>
+			: foundry.data.fields.StringField<string, any, any>
+		: SourceData extends any[]
+		? foundry.data.fields.ArrayField<any, SourceData, any>
+		: SourceData extends object
+		? foundry.data.fields.SchemaField<SourceData, ConcreteData, any>
+		: foundry.data.fields.DataField<SourceData, ConcreteData, any>

@@ -37,7 +37,6 @@ export class AssetModel extends foundry.abstract.TypeDataModel<
 					value: new fields.StringField()
 				})
 			),
-			// @ts-expect-error
 			track: new AssetConditionMeterField()
 		}
 	}

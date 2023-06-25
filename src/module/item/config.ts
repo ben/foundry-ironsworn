@@ -7,7 +7,6 @@ import { DelveDomainModel } from './subtypes/delve-domain'
 import { DelveThemeModel } from './subtypes/delve-theme'
 import { ProgressModel } from './subtypes/progress'
 import { SFMoveModel } from './subtypes/sfmove'
-import type { ChallengeRank } from '../constants'
 import type { AssetDataProperties, AssetDataSource } from './subtypes/asset'
 import type {
 	BondsetDataProperties,
@@ -26,6 +25,7 @@ import type {
 	ProgressDataSource
 } from './subtypes/progress'
 import type { SFMoveDataProperties, SFMoveDataSource } from './subtypes/sfmove'
+import { ChallengeRank } from '../fields/ChallengeRank'
 
 const dataModels: Partial<
 	Record<
@@ -82,7 +82,7 @@ export default config
 
 export interface ProgressBase {
 	description: string
-	rank: ChallengeRank
+	rank: ChallengeRank.Value
 	current: number
 	completed: boolean
 }

@@ -1,9 +1,8 @@
 import { clamp } from 'lodash-es'
 import { RANK_INCREMENTS } from '../../constants'
-import { ChallengeRankField } from '../../fields/ChallengeRankField'
+import { ChallengeRank } from '../../fields/ChallengeRank'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { DataSchema } from '../../fields/utils'
-import { localizeRank } from '../../helpers/util'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../config'
@@ -68,7 +67,7 @@ export class ProgressModel extends foundry.abstract.TypeDataModel<
 
 	/** Provide a localized label for this progress track's challenge rank. */
 	localizeRank() {
-		return localizeRank(this.rank)
+		return ChallengeRank.localizeValue(this.rank)
 	}
 
 	static override defineSchema(): DataSchema<ProgressDataSourceData> {
@@ -91,7 +90,7 @@ export class ProgressModel extends foundry.abstract.TypeDataModel<
 			completed: new fields.BooleanField({ initial: false }),
 			current: new ProgressTicksField(),
 			description: new fields.HTMLField(),
-			rank: new ChallengeRankField()
+			rank: new ChallengeRank()
 		}
 	}
 }
