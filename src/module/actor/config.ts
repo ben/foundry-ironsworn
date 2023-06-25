@@ -44,6 +44,7 @@ export interface ActorConfig extends _actorConfig {
 	dataModels: Record<ActorType, typeof foundry.abstract.TypeDataModel<any, any>>
 	typeLabels: Record<ActorType, string>
 	typeIcons: Record<ActorType, string>
+	trackableAttributes: Record<ActorType, { bar: string[]; value: string[] }>
 }
 
 const config: Partial<ActorConfig> = {
@@ -64,6 +65,17 @@ const config: Partial<ActorConfig> = {
 		shared: 'fa-solid fa-people-group',
 		site: 'fa-solid fa-dungeon',
 		starship: 'fa-solid fa-starship-freighter'
+	},
+	trackableAttributes: {
+		character: {
+			bar: ['momentum', 'health', 'spirit', 'supply'],
+			value: ['edge', 'heart', 'iron', 'shadow', 'wits']
+		},
+		foe: { bar: [], value: [] },
+		location: { bar: [], value: [] },
+		shared: { bar: ['supply'], value: [] },
+		site: { bar: [], value: [] },
+		starship: { bar: [], value: [] }
 	}
 }
 
