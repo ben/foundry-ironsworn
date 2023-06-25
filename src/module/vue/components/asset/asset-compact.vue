@@ -6,12 +6,7 @@
 		@toggle-expand="toggle">
 		<template #headerEnd>
 			<div class="flexrow nogrow" :class="$style.controls">
-				<IronBtn
-					v-if="editMode"
-					block
-					nogrow
-					icon="fa:trash"
-					@click="destroy" />
+				<IronBtn v-if="editMode" block nogrow :document="$asset" />
 				<IronBtn block nogrow icon="fa:pen-to-square" @click="edit" />
 			</div>
 		</template>
@@ -56,15 +51,6 @@ function toggle() {
 function edit() {
 	$asset?.sheet?.render(true)
 	return false
-}
-function destroy() {
-	Dialog.confirm({
-		title: game.i18n.format('DOCUMENT.Delete', {
-			type: game.i18n.localize('IRONSWORN.ITEM.TypeAsset')
-		}),
-		yes: () => $asset?.delete(),
-		defaultYes: false
-	})
 }
 </script>
 

@@ -122,15 +122,14 @@
 		<hr class="nogrow" />
 		<!-- DESCRIPTION -->
 		<MceEditor v-model="data.item.system.description" @save="saveDescription" />
-		<IronBtn
+		<BtnDelete
 			nogrow
 			block
 			:class="$style.danger"
-			icon="fa:trash"
 			:text="
 				$t(`DOCUMENT.Delete`, { type: $t('IRONSWORN.ITEM.TypeProgressTrack') })
 			"
-			@click="destroy" />
+			:document="($item as any)" />
 	</div>
 </template>
 
@@ -145,6 +144,7 @@ import ProgressTrack from './components/progress/progress-track.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import type { IronswornItem } from '../item/item'
+import BtnDelete from './components/buttons/btn-delete.vue'
 
 const props = defineProps<{ data: { item: ItemSource<'progress'> } }>()
 const $item = inject<IronswornItem<'progress'>>($ItemKey)
@@ -184,19 +184,6 @@ function setClock(num) {
 
 function saveDescription() {
 	$item?.update({ system: { description: props.data.item.system.description } })
-}
-
-function destroy() {
-	Dialog.confirm({
-		title: game.i18n.format('DOCUMENT.Delete', {
-			type: game.i18n.localize('IRONSWORN.ITEM.TypeProgressTrack')
-		}),
-		content: `<p><strong>${game.i18n.localize(
-			'IRONSWORN.ConfirmDelete'
-		)}</strong></p>`,
-		yes: () => $item?.delete(),
-		defaultYes: false
-	})
 }
 </script>
 

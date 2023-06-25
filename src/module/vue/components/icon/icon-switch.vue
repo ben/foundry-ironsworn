@@ -17,10 +17,10 @@
 
 <script lang="ts" setup>
 import type IronBtn from 'component:buttons/iron-btn.vue'
-import type { ExtractPropTypes } from 'vue'
+
 import { TransitionGroup } from 'vue'
 
-type IronBtnProps = ExtractPropTypes<typeof IronBtn>
+type IronBtnProps = PropsOf<typeof IronBtn>
 interface Props
 	extends Omit<IronBtnProps, 'text' | 'icon' | 'vertical' | 'justify'> {
 	/**

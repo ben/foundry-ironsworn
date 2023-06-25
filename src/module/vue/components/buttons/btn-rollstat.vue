@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { computed } from '@vue/reactivity'
-import type { ExtractPropTypes } from 'vue'
+
 import { inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
 import { MeterField } from '../../../fields/MeterField'
@@ -27,7 +27,7 @@ import { pickInjectedDocument } from '../../composable/pickInjectedDocument'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
+interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	documentType: DocumentType
 	/**
 	 * The key of the stat value within `system`

@@ -20,7 +20,7 @@
 </template>
 <script lang="ts" setup>
 import { omit } from 'lodash-es'
-import type { ExtractPropTypes } from 'vue'
+
 import { computed, inject, nextTick, ref, watch } from 'vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import type {
@@ -37,7 +37,7 @@ import {
 	TabStateKey
 } from './tab-helpers.js'
 
-interface Props extends ExtractPropTypes<typeof IronBtn> {
+interface Props extends PropsOf<typeof IronBtn> {
 	/**
 	 * The tab's key must match the key of a {@link TabPanel}.
 	 */

@@ -23,7 +23,7 @@
 						top: var(--ironsworn-spacer-md);
 						right: var(--ironsworn-spacer-md);
 					">
-					<IronBtn block icon="fa:trash" @click="destroy" />
+					<BtnDelete block :document="foundryitem()" />
 					<IronBtn block icon="fa:pen-to-square" @click="edit" />
 				</div>
 			</div>
@@ -52,6 +52,7 @@ import DocumentImg from '../document-img.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 import DropTarget from '../../drop-target.vue'
+import BtnDelete from '../buttons/btn-delete.vue'
 
 const props = defineProps<{
 	item: any
@@ -69,19 +70,6 @@ const editMode = computed(() => {
 
 function foundryitem() {
 	return props.item && $actor?.items.get(props.item._id)
-}
-
-function destroy() {
-	Dialog.confirm({
-		title: game.i18n.format('DOCUMENT.Delete', {
-			type: game.i18n.localize('DOCUMENT.Item')
-		}),
-		content: `<p><strong>${game.i18n.localize(
-			'IRONSWORN.ConfirmDelete'
-		)}</strong></p>`,
-		yes: () => foundryitem()?.delete(),
-		defaultYes: false
-	})
 }
 
 function edit() {

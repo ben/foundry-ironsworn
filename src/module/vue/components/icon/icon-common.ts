@@ -16,7 +16,7 @@ import type {
 } from 'csstype'
 
 import type ironswornIconNames from 'virtual:svg-icons-names'
-import type { ExtractPropTypes } from 'vue'
+
 import type FontIcon from './font-icon.vue'
 import type IronIcon from './iron-icon.vue'
 
@@ -39,11 +39,11 @@ export interface IconSwitchState {
 	props?: this['icon'] extends IronswornIconId ? IronIconState : FontIconState
 }
 
-export type IronIconState = Omit<ExtractPropTypes<typeof IronIcon>, 'name'> & {
+export type IronIconState = Omit<PropsOf<typeof IronIcon>, 'name'> & {
 	class?: string
 }
 
-export type FontIconState = Omit<ExtractPropTypes<typeof FontIcon>, 'name'> & {
+export type FontIconState = Omit<PropsOf<typeof FontIcon>, 'name'> & {
 	class?: string
 }
 
