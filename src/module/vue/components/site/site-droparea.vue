@@ -72,7 +72,7 @@ const editMode = computed(() => {
 })
 
 function foundryitem() {
-	return props.item && $actor?.items.get(props.item._id)
+	return props.item && $actor?.items.get(props.item._id as string)
 }
 
 function edit() {
