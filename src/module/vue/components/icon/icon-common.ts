@@ -16,9 +16,6 @@ import type {
 } from 'csstype'
 
 import type ironswornIconNames from 'virtual:svg-icons-names'
-import type { ExtractPropTypes } from 'vue'
-import type FontIcon from './font-icon.vue'
-import type IronIcon from './iron-icon.vue'
 
 export function enumHas(enumLike: object, value: string | number) {
 	return Object.values(enumLike).includes(value)
@@ -39,11 +36,11 @@ export interface IconSwitchState {
 	props?: this['icon'] extends IronswornIconId ? IronIconState : FontIconState
 }
 
-export type IronIconState = Omit<ExtractPropTypes<typeof IronIcon>, 'name'> & {
+export type IronIconState = Omit<IronIconProps, 'name'> & {
 	class?: string
 }
 
-export type FontIconState = Omit<ExtractPropTypes<typeof FontIcon>, 'name'> & {
+export type FontIconState = Omit<FontAwesomeIconProps, 'name'> & {
 	class?: string
 }
 
@@ -151,34 +148,6 @@ export interface FontAwesomeIconProps extends IconPropsCommon {
 	 * Used with {@link FontIconStack}.
 	 */
 	stack?: 'stack-1x' | 'stack-2x'
-}
-
-/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
-// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
-export function parseClassesToFaProps(cssClasses: string) {
-	const props: Partial<FontAwesomeIconProps> & { class?: string[] } = {}
-	cssClasses.split(' ').forEach((clsName) => {
-		switch (true) {
-			case enumHas(FontAwesome.Style, clsName):
-				props.style = clsName as FontAwesome.Style
-				break
-			case enumHas(FontAwesome.Family, clsName):
-				props.family = clsName as FontAwesome.Family
-				break
-			case enumHas(FontAwesome.Rotate, clsName):
-				props.rotate = clsName as FontAwesome.Rotate
-				break
-			case enumHas(FontAwesome.Animation, clsName):
-				if (!props.animation) props.animation = []
-				props.animation.push(clsName as FontAwesome.Animation)
-				break
-			default:
-				if (!props.class) props.class = []
-				props.class.push(clsName)
-				break
-		}
-	})
-	return props
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -679,6 +648,7 @@ export namespace FontAwesome {
 		| 'person-arrow-up-from-line'
 		| 'down-right'
 		| 'torah'
+		| 'webhook'
 		| 'blinds-open'
 		| 'fence'
 		| 'up'
@@ -720,6 +690,7 @@ export namespace FontAwesome {
 		| 'flushed'
 		| 'hospital-user'
 		| 'microwave'
+		| 'chf-sign'
 		| 'tent-arrow-left-right'
 		| 'cart-circle-arrow-up'
 		| 'trash-clock'
@@ -743,6 +714,7 @@ export namespace FontAwesome {
 		| 'message-pen'
 		| 'concierge-bell'
 		| 'pencil-ruler'
+		| 'arrow-progress'
 		| 'chess-rook-piece'
 		| 'square-root'
 		| 'album-collection-circle-plus'
@@ -756,6 +728,7 @@ export namespace FontAwesome {
 		| 'sun-plant-wilt'
 		| 'toilets-portable'
 		| 'hockey-puck'
+		| 'mustache'
 		| 'hyphen'
 		| 'table'
 		| 'user-chef'
@@ -837,6 +810,7 @@ export namespace FontAwesome {
 		| 'face-cowboy-hat'
 		| 'hanukiah'
 		| 'chart-scatter-3d'
+		| 'display-chart-up'
 		| 'square-code'
 		| 'feather'
 		| 'volume-low'
@@ -915,6 +889,7 @@ export namespace FontAwesome {
 		| 'lightbulb-on'
 		| 'utensil-knife'
 		| 'share-nodes'
+		| 'display-chart-up-circle-dollar'
 		| 'wave-sine'
 		| 'heart-circle-minus'
 		| 'circle-w'
@@ -983,6 +958,7 @@ export namespace FontAwesome {
 		| 'grin-tongue'
 		| 'up-to-dotted-line'
 		| 'thought-bubble'
+		| 'skeleton-ribs'
 		| 'raygun'
 		| 'flute'
 		| 'acorn'
@@ -1004,9 +980,11 @@ export namespace FontAwesome {
 		| 'octagon-minus'
 		| 'square-rss'
 		| 'face-zany'
+		| 'tricycle'
 		| 'land-mine-on'
 		| 'square-arrow-up-left'
 		| 'i-cursor'
+		| 'chart-mixed-up-circle-dollar'
 		| 'salt-shaker'
 		| 'stamp'
 		| 'file-plus'
@@ -1124,6 +1102,7 @@ export namespace FontAwesome {
 		| 'plane-up-slash'
 		| 'radiation'
 		| 'pen-circle'
+		| 'bag-seedling'
 		| 'chart-simple'
 		| 'crutches'
 		| 'parking-circle'
@@ -1184,6 +1163,7 @@ export namespace FontAwesome {
 		| 'money-bill-wave'
 		| 'chart-area'
 		| 'house-flag'
+		| 'circle-three-quarters-stroke'
 		| 'person-circle-minus'
 		| 'scalpel'
 		| 'cancel'
@@ -1210,6 +1190,7 @@ export namespace FontAwesome {
 		| 'clock-four-thirty'
 		| 'signal-bars-good'
 		| 'cactus'
+		| 'lightbulb-gear'
 		| 'maximize'
 		| 'charging-station'
 		| 'triangle-circle-square'
@@ -1225,6 +1206,7 @@ export namespace FontAwesome {
 		| 'running'
 		| 'mobile-retro'
 		| 'grip-lines-vertical'
+		| 'bin-bottles-recycle'
 		| 'arrow-up-from-square'
 		| 'page-break'
 		| 'bracket-curly-right'
@@ -1245,6 +1227,7 @@ export namespace FontAwesome {
 		| 'coffin-cross'
 		| 'spell-check'
 		| 'map-marker-xmark'
+		| 'circle-quarter-stroke'
 		| 'lasso'
 		| 'slash'
 		| 'portal-enter'
@@ -1259,6 +1242,7 @@ export namespace FontAwesome {
 		| 'store-alt-slash'
 		| 'wind-turbine'
 		| 'sliders-simple'
+		| 'grid-round'
 		| 'badge-sheriff'
 		| 'server'
 		| 'virus-covid-slash'
@@ -1274,6 +1258,7 @@ export namespace FontAwesome {
 		| 'message-arrow-up'
 		| 'lightbulb-exclamation'
 		| 'layer-minus'
+		| 'chart-pie-simple-circle-currency'
 		| 'circle-e'
 		| 'building-wheat'
 		| 'tachometer-alt-fastest'
@@ -1388,6 +1373,7 @@ export namespace FontAwesome {
 		| 'umbrella-simple'
 		| 'rectangle-history-circle-plus'
 		| 'underline'
+		| 'prescription-bottle-pill'
 		| 'user-pen'
 		| 'binary-slash'
 		| 'square-o'
@@ -1413,6 +1399,7 @@ export namespace FontAwesome {
 		| 'dog-leashed'
 		| 'car-battery'
 		| 'face-downcast-sweat'
+		| 'mailbox-flag-up'
 		| 'memo-circle-info'
 		| 'gift'
 		| 'dice-two'
@@ -1440,6 +1427,7 @@ export namespace FontAwesome {
 		| 'person-chalkboard'
 		| 'mars-stroke-right'
 		| 'hand-rock'
+		| 'grid-round-5'
 		| 'tally'
 		| 'square-caret-up'
 		| 'cloud-showers-water'
@@ -1480,6 +1468,7 @@ export namespace FontAwesome {
 		| 'window-frame'
 		| 'microphone'
 		| 'cow'
+		| 'file-zip'
 		| 'square-ring'
 		| 'down-from-line'
 		| 'caret-up'
@@ -1520,6 +1509,7 @@ export namespace FontAwesome {
 		| 'euro'
 		| 'chair'
 		| 'circle-check'
+		| 'square-dashed-circle-plus'
 		| 'money-simple-from-bracket'
 		| 'bat'
 		| 'stop-circle'
@@ -1536,6 +1526,7 @@ export namespace FontAwesome {
 		| 'id-badge'
 		| 'kazoo'
 		| 'marker'
+		| 'bin-bottles'
 		| 'laugh-beam'
 		| 'square-arrow-down-left'
 		| 'battery-bolt'
@@ -1543,6 +1534,7 @@ export namespace FontAwesome {
 		| 'helicopter-symbol'
 		| 'aperture'
 		| 'universal-access'
+		| 'gear-complex'
 		| 'file-search'
 		| 'up-right'
 		| 'circle-chevron-up'
@@ -1615,6 +1607,7 @@ export namespace FontAwesome {
 		| 'cloud-upload'
 		| 'palette'
 		| 'transporter-4'
+		| 'chart-mixed-up-circle-currency'
 		| 'objects-align-right'
 		| 'arrows-turn-right'
 		| 'vest'
@@ -1637,9 +1630,11 @@ export namespace FontAwesome {
 		| 'candy-cane'
 		| 'sort-amount-down'
 		| 'usd-square'
+		| 'phone-arrow-right'
 		| 'hand-holding-seedling'
 		| 'message-check'
 		| 'thunderstorm'
+		| 'chart-line-up-down'
 		| 'text-slash'
 		| 'watch'
 		| 'circle-down-left'
@@ -1700,6 +1695,7 @@ export namespace FontAwesome {
 		| 'truck-plow'
 		| 'book-atlas'
 		| 'virus'
+		| 'grid-round-2'
 		| 'comment-middle-top'
 		| 'envelope-circle-check'
 		| 'layer-group'
@@ -1726,6 +1722,7 @@ export namespace FontAwesome {
 		| 'snowmobile'
 		| 'face-hushed'
 		| 'comments-dollar'
+		| 'pickaxe'
 		| 'link-simple-slash'
 		| 'democrat'
 		| 'face-confused'
@@ -1743,6 +1740,7 @@ export namespace FontAwesome {
 		| 'sausage'
 		| 'trash-can-clock'
 		| 'p'
+		| 'broom-wide'
 		| 'snowflake'
 		| 'stomach'
 		| 'newspaper'
@@ -1760,6 +1758,7 @@ export namespace FontAwesome {
 		| 'unsorted'
 		| 'list-ol'
 		| 'chart-waterfall'
+		| 'sparkle'
 		| 'face-party'
 		| 'kidneys'
 		| 'wifi-exclamation'
@@ -1884,6 +1883,7 @@ export namespace FontAwesome {
 		| 'trophy-star'
 		| 'plug-circle-bolt'
 		| 'face-thermometer'
+		| 'grid-round-4'
 		| 'shirt-running'
 		| 'book-circle-arrow-up'
 		| 'face-nauseated'
@@ -1911,8 +1911,10 @@ export namespace FontAwesome {
 		| 'value-absolute'
 		| 'rabbit'
 		| 'toilet-paper-slash'
+		| 'circle-euro'
 		| 'apple-whole'
 		| 'kitchen-set'
+		| 'diamond-half'
 		| 'lock-keyhole'
 		| 'r'
 		| 'thermometer-quarter'
@@ -1941,6 +1943,7 @@ export namespace FontAwesome {
 		| 'fast-backward'
 		| 'recycle'
 		| 'user-astronaut'
+		| 'interrobang'
 		| 'plane-slash'
 		| 'circle-dashed'
 		| 'trademark'
@@ -1979,6 +1982,7 @@ export namespace FontAwesome {
 		| 'file-image'
 		| 'question-circle'
 		| 'image-user'
+		| 'buoy'
 		| 'plane-departure'
 		| 'handshake-slash'
 		| 'book-bookmark'
@@ -1997,6 +2001,7 @@ export namespace FontAwesome {
 		| 'bridge'
 		| 'phone-flip'
 		| 'arrow-down-from-dotted-line'
+		| 'file-doc'
 		| 'square-quarters'
 		| 'truck-front'
 		| 'cat'
@@ -2191,6 +2196,7 @@ export namespace FontAwesome {
 		| 'hose'
 		| 'clock-six'
 		| 'tshirt'
+		| 'billboard'
 		| 'square-r'
 		| 'cubes'
 		| 'envelope-open-dollar'
@@ -2277,6 +2283,7 @@ export namespace FontAwesome {
 		| 'book-section'
 		| 'inboxes'
 		| 'coffee-bean'
+		| 'circle-yen'
 		| 'brackets-curly'
 		| 'ellipsis-v-alt'
 		| 'comment'
@@ -2287,6 +2294,7 @@ export namespace FontAwesome {
 		| 'dolly-empty'
 		| 'face-tissue'
 		| 'angles-up'
+		| 'bin-recycle'
 		| 'paperclip'
 		| 'chart-line-down'
 		| 'arrow-right-to-city'
@@ -2323,6 +2331,7 @@ export namespace FontAwesome {
 		| 'info-circle'
 		| 'fishing-rod'
 		| 'hammer-crash'
+		| 'message-heart'
 		| 'cloud-meatball'
 		| 'camera-polaroid'
 		| 'camera'
@@ -2332,8 +2341,10 @@ export namespace FontAwesome {
 		| 'car-on'
 		| 'sleigh'
 		| 'sort-numeric-down'
+		| 'buoy-mooring'
 		| 'square-4'
 		| 'hand-holding-water'
+		| 'tricycle-adult'
 		| 'waveform'
 		| 'water'
 		| 'star-sharp-half-stroke'
@@ -2355,6 +2366,7 @@ export namespace FontAwesome {
 		| 'person-cane'
 		| 'alien'
 		| 'tent'
+		| 'laptop-binary'
 		| 'vest-patches'
 		| 'people-dress-simple'
 		| 'check-double'
@@ -2393,6 +2405,7 @@ export namespace FontAwesome {
 		| 'distribute-spacing-vertical'
 		| 'signal-bars-fair'
 		| 'sportsball'
+		| 'game-console-handheld-crank'
 		| 'train-subway'
 		| 'chart-gantt'
 		| 'face-smile-upside-down'
@@ -2410,11 +2423,11 @@ export namespace FontAwesome {
 		| 'dna'
 		| 'virus-slash'
 		| 'bracket-round-right'
+		| 'circle-sterling'
 		| 'circle-5'
 		| 'subtract'
 		| 'flame'
 		| 'right-to-line'
-		| 'child-rifle'
 		| 'gif'
 		| 'chess'
 		| 'trash-slash'
@@ -2579,6 +2592,7 @@ export namespace FontAwesome {
 		| 'face-spiral-eyes'
 		| 'compress-wide'
 		| 'phone-circle-down'
+		| 'gear-complex-code'
 		| 'house-medical-circle-exclamation'
 		| 'badminton'
 		| 'closed-captioning'
@@ -2612,6 +2626,7 @@ export namespace FontAwesome {
 		| 'grin'
 		| 'delete-left'
 		| 'oven'
+		| 'cloud-binary'
 		| 'eyedropper'
 		| 'comment-captions'
 		| 'comments-question'
@@ -2657,6 +2672,7 @@ export namespace FontAwesome {
 		| 'rotate-right'
 		| 'utensils'
 		| 'sort-amount-up'
+		| 'chart-pie-simple-circle-dollar'
 		| 'balloons'
 		| 'mill-sign'
 		| 'bowl-rice'
@@ -2680,6 +2696,7 @@ export namespace FontAwesome {
 		| 'up-from-line'
 		| 'upload'
 		| 'hurricane'
+		| 'grid-round-2-plus'
 		| 'people-pants'
 		| 'mound'
 		| 'windsock'
@@ -2707,6 +2724,7 @@ export namespace FontAwesome {
 		| 'toilet'
 		| 'plane-circle-xmark'
 		| 'yen'
+		| 'gear-code'
 		| 'notes'
 		| 'ruble'
 		| 'trash-undo'
@@ -2732,6 +2750,7 @@ export namespace FontAwesome {
 		| 'industry'
 		| 'image-polaroid'
 		| 'wave-triangle'
+		| 'person-running-fast'
 		| 'circle-down'
 		| 'grill'
 		| 'arrows-turn-to-dots'
@@ -2801,6 +2820,7 @@ export namespace FontAwesome {
 		| 'square-c'
 		| 'clock-two'
 		| 'square-ellipsis-vertical'
+		| 'calendar-users'
 		| 'podcast'
 		| 'bee'
 		| 'thermometer-full'
@@ -2847,6 +2867,7 @@ export namespace FontAwesome {
 		| 'hat-chef'
 		| 'hand-back-point-right'
 		| 'dove'
+		| 'snowflake-droplets'
 		| 'battery-empty'
 		| 'grid-4'
 		| 'socks'
@@ -2958,6 +2979,7 @@ export namespace FontAwesome {
 		| 'school-lock'
 		| 'tower-cell'
 		| 'sd-cards'
+		| 'jug-bottle'
 		| 'long-arrow-alt-down'
 		| 'envelopes'
 		| 'phone-office'
@@ -2985,6 +3007,7 @@ export namespace FontAwesome {
 		| 'mushroom'
 		| 'user-shield'
 		| 'megaphone'
+		| 'wreath-laurel'
 		| 'circle-exclamation-check'
 		| 'wind'
 		| 'box-usd'
@@ -2996,7 +3019,9 @@ export namespace FontAwesome {
 		| 'square-chevron-right'
 		| 'lacrosse-stick-ball'
 		| 'truck-fast'
+		| 'user-magnifying-glass'
 		| 'star-sharp'
+		| 'comment-heart'
 		| 'circle-1'
 		| 'star-circle'
 		| 'fish'
@@ -3011,6 +3036,7 @@ export namespace FontAwesome {
 		| 'circle-half-stroke'
 		| 'arrow-right-long-to-line'
 		| 'square-arrow-down'
+		| 'diamond-half-stroke'
 		| 'clapperboard'
 		| 'square-chevron-left'
 		| 'phone-intercom'
@@ -3041,8 +3067,10 @@ export namespace FontAwesome {
 		| 'grip'
 		| 'share-square'
 		| 'keynote'
+		| 'child-rifle'
 		| 'gun'
 		| 'square-phone'
+		| 'hat-beach'
 		| 'plus'
 		| 'expand'
 		| 'computer'
@@ -3072,6 +3100,7 @@ export namespace FontAwesome {
 		| 'ruler-combined'
 		| 'symbols'
 		| 'copyright'
+		| 'flask-gear'
 		| 'highlighter-line'
 		| 'bracket'
 		| 'island-tropical'
@@ -3128,9 +3157,11 @@ export namespace FontAwesome {
 		| 'fill'
 		| 'message-minus'
 		| 'angle-up'
+		| 'dinosaur'
 		| 'drumstick-bite'
 		| 'link-horizontal-slash'
 		| 'holly-berry'
+		| 'nose'
 		| 'chevron-left'
 		| 'bacteria'
 		| 'clouds'
@@ -3208,6 +3239,7 @@ export namespace FontAwesome {
 		| 'gears'
 		| 'sun-bright'
 		| 'warehouse'
+		| 'conveyor-belt-arm'
 		| 'lock-open-alt'
 		| 'square-wine-glass-crack'
 		| 'arrow-up-right-dots'
@@ -3231,6 +3263,7 @@ export namespace FontAwesome {
 		| 'person-falling-burst'
 		| 'pennant'
 		| 'conveyor-belt-empty'
+		| 'user-group-simple'
 		| 'award'
 		| 'ticket-simple'
 		| 'building'
@@ -3295,6 +3328,7 @@ export namespace FontAwesome {
 		| 'code-commit'
 		| 'temperature-low'
 		| 'person-biking'
+		| 'display-chart-up-circle-currency'
 		| 'skeleton'
 		| 'circle-g'
 		| 'circle-arrow-up-left'
@@ -3332,6 +3366,7 @@ export namespace FontAwesome {
 		| 'person-walking-luggage'
 		| 'caravan-simple'
 		| 'turtle'
+		| 'pencil-mechanical'
 		| 'up-down'
 		| 'cloud-moon-rain'
 		| 'booth-curtain'
@@ -3516,7 +3551,9 @@ export namespace FontAwesome {
 		| 'calendar-heart'
 		| 'search-minus'
 		| 'flower'
+		| 'right-left-large'
 		| 'ruler-vertical'
+		| 'circles-overlap'
 		| 'user-large'
 		| 'starship-freighter'
 		| 'train-tram'
@@ -4043,8 +4080,10 @@ export namespace FontAwesome {
 		| 'dribbble'
 		| 'stumbleupon-circle'
 		| 'internet-explorer'
+		| 'stubber'
 		| 'telegram'
 		| 'old-republic'
+		| 'odysee'
 		| 'whatsapp-square'
 		| 'node-js'
 		| 'edge-legacy'
@@ -4084,4 +4123,32 @@ export namespace FontAwesome {
 		| 'korvue'
 		| 'pix'
 		| 'steam-symbol'
+}
+
+/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
+// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
+export function parseClassesToFaProps(cssClasses: string) {
+	const props: Partial<FontAwesomeIconProps> & { class?: string[] } = {}
+	cssClasses.split(' ').forEach((clsName) => {
+		switch (true) {
+			case enumHas(FontAwesome.Style, clsName):
+				props.style = clsName as FontAwesome.Style
+				break
+			case enumHas(FontAwesome.Family, clsName):
+				props.family = clsName as FontAwesome.Family
+				break
+			case enumHas(FontAwesome.Rotate, clsName):
+				props.rotate = clsName as FontAwesome.Rotate
+				break
+			case enumHas(FontAwesome.Animation, clsName):
+				if (!props.animation) props.animation = []
+				props.animation.push(clsName as FontAwesome.Animation)
+				break
+			default:
+				if (!props.class) props.class = []
+				props.class.push(clsName)
+				break
+		}
+	})
+	return props
 }

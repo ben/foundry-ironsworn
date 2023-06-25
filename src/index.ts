@@ -3,7 +3,6 @@
  */
 
 import { IRONSWORN } from './config'
-import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { FoeSheet } from './module/actor/sheets/foesheet'
 import { StarforgedCharacterSheet } from './module/actor/sheets/sf-charactersheet'
@@ -23,12 +22,10 @@ import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
 import * as IronColor from './module/features/ironcolor'
 import { patchZIndex } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
-import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
 import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
 import { ThemeDomainSheet } from './module/item/delve-theme-domain/theme-domain-sheet'
-import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 import { IronswornJournalPage } from './module/journal/journal-entry-page'
@@ -46,6 +43,8 @@ import type {
 	DocumentSubTypes,
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import ActorConfig from './module/actor/config'
+import ItemConfig from './module/item/config'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -77,9 +76,10 @@ Hooks.once('init', async () => {
 
 	CONFIG.IRONSWORN = IRONSWORN
 
+	mergeObject(CONFIG.Actor, ActorConfig)
+	mergeObject(CONFIG.Item, ItemConfig)
+
 	// Define custom Entity classes
-	CONFIG.Actor.documentClass = IronswornActor
-	CONFIG.Item.documentClass = IronswornItem
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
@@ -92,7 +92,7 @@ Hooks.once('init', async () => {
 	CONFIG.Actor.compendiumIndexFields.push('system.dfid')
 
 	// CONFIG.RollTable.resultTemplate =
-	//   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
+	// 	'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 
 	// Turn off Foundry defaults
 	Actors.unregisterSheet('core', ActorSheet)
@@ -194,41 +194,6 @@ Hooks.once('init', async () => {
 		}
 	)
 
-	CONFIG.Item.typeLabels = mergeObject(CONFIG.Item.typeLabels, {
-		asset: 'IRONSWORN.ITEM.TypeAsset',
-		progress: 'IRONSWORN.ITEM.TypeProgressTrack',
-		bondset: 'IRONSWORN.ITEM.TypeBondset',
-		sfmove: 'IRONSWORN.ITEM.TypeMove',
-		'delve-domain': 'IRONSWORN.ITEM.TypeDelveDomain',
-		'delve-theme': 'IRONSWORN.ITEM.TypeDelveTheme'
-	})
-	CONFIG.Item.typeIcons = mergeObject(CONFIG.Item.typeIcons, {
-		asset: 'fa-solid fa-cards-blank',
-		progress: 'fa-solid fa-asterisk',
-		bondset: 'fa-solid fa-handshake',
-		sfmove: 'icon isicon-d10-tilt',
-		// FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
-		'delve-domain': 'fa-duotone fa-cards-blank',
-		'delve-theme': 'fa-duotone fa-cards-blank'
-	})
-
-	CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
-		character: 'IRONSWORN.ACTOR.TypeCharacter',
-		foe: 'IRONSWORN.ACTOR.TypeFoe',
-		location: 'IRONSWORN.ACTOR.TypeLocation',
-		shared: 'IRONSWORN.ACTOR.TypeShared',
-		site: 'IRONSWORN.ACTOR.TypeDelveSite',
-		starship: 'IRONSWORN.ACTOR.TypeStarship'
-	})
-	CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
-		character: 'fa-solid fa-user-pen', // \f4ff
-		foe: 'fa-solid fa-masks-theater', // \f630
-		location: 'fa-solid fa-location-dot', // \f3c5
-		shared: 'fa-solid fa-people-group', // \e533
-		site: 'fa-solid fa-dungeon', // \f6d9
-		starship: 'fa-solid fa-starship-freighter' // \e03a
-	})
-
 	CONFIG.JournalEntryPage.typeLabels = mergeObject(
 		CONFIG.JournalEntryPage.typeLabels,
 		{
@@ -254,8 +219,6 @@ Hooks.once('init', async () => {
 })
 
 Hooks.once('ready', async () => {
-	await runDataMigrations()
-
 	registerDragAndDropHooks()
 	registerChatAlertHooks()
 

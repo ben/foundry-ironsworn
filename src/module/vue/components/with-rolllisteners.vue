@@ -13,7 +13,9 @@ import { $ActorKey } from '../provisions'
 
 const props = defineProps<{ element: string }>()
 
-const $actor = inject($ActorKey, undefined)
+const $actor = inject($ActorKey, undefined) as
+	| IronswornActor<'character'>
+	| undefined
 const el = ref<HTMLElement>()
 onMounted(() => {
 	if (!el.value) {

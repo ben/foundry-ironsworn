@@ -1,5 +1,4 @@
 import { range, sum } from 'lodash-es'
-import { capitalize } from './util'
 import { marked } from 'marked'
 import {
 	ACTION_DICE_ROLLED,
@@ -56,12 +55,12 @@ export class IronswornHandlebarsHelpers {
 	static registerHelpers() {
 		Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''))
 
-		Handlebars.registerHelper('sum', (a, b) => a + b)
-		Handlebars.registerHelper('capitalize', localeCapitalize)
+		Handlebars.registerHelper('sum', (a: number, b: number) => a + b)
+		Handlebars.registerHelper('capitalize', (str: string) => str.capitalize())
 		Handlebars.registerHelper('formatRollPlusStat', formatRollPlusStat)
 		Handlebars.registerHelper('formatRollMethod', formatRollMethod)
 		Handlebars.registerHelper('computeOutcomeText', computeOutcomeText)
-		Handlebars.registerHelper('lowercase', (str) => str.toLowerCase())
+		Handlebars.registerHelper('lowercase', (str: string) => str.toLowerCase())
 
 		Handlebars.registerHelper('json', function (context) {
 			return JSON.stringify(context, null, 2)
@@ -211,7 +210,11 @@ export class IronswornHandlebarsHelpers {
 
 	static enrichMarkdown(md?: string) {
 		if (!md) return ''
-		const html = marked.parse(md, { gfm: true })
+		const html = marked.parse(md, {
+			gfm: true,
+			mangle: false,
+			headerIds: false
+		})
 		return IronswornHandlebarsHelpers.enrichHtml(html)
 	}
 

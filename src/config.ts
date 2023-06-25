@@ -1,14 +1,14 @@
 import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
-import { starforged } from 'dataforged'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { starforged, ironsworn } from 'dataforged'
 import type { Emitter, EventType } from 'mitt'
 import Mitt from 'mitt'
 import {
 	IronswornRoll,
 	IronswornPrerollDialog,
-	IronswornRollMessage,
-	OracleRollMessage
+	IronswornRollMessage
 } from './module/rolls'
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
@@ -51,7 +51,6 @@ export interface IronswornConfig {
 		IronswornRoll: typeof IronswornRoll
 		IronswornPrerollDialog: typeof IronswornPrerollDialog
 		IronswornRollMessage: typeof IronswornRollMessage
-		OracleRollMessage: typeof OracleRollMessage
 	}
 
 	importFromDatasworn: typeof importFromDatasworn
@@ -81,8 +80,7 @@ export const IRONSWORN: IronswornConfig = {
 
 		IronswornRoll,
 		IronswornPrerollDialog,
-		IronswornRollMessage,
-		OracleRollMessage
+		IronswornRollMessage
 	},
 
 	importFromDatasworn,

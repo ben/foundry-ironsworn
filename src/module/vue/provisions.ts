@@ -4,6 +4,7 @@ import type { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import type { Emitter, EventType } from 'mitt'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
+import { SourceData } from '../fields/utils'
 
 // Provided by the Vue plugin
 export const $EnrichHtmlKey = Symbol('$enrichHtml') as InjectionKey<
@@ -26,15 +27,15 @@ export const $LocalEmitterKey = Symbol(
 // Sheets have to provide these
 export const $ActorKey = Symbol('$actor') as InjectionKey<IronswornActor>
 export const ActorKey = Symbol('actor') as InjectionKey<
-	Ref<ReturnType<typeof IronswornActor.prototype.toObject>>
+	Ref<SourceData<IronswornActor>>
 >
 
 export const $ItemKey = Symbol('$item') as InjectionKey<IronswornItem>
 export const ItemKey = Symbol('item') as InjectionKey<
-	Ref<ReturnType<typeof IronswornItem.prototype.toObject>>
+	Ref<SourceData<IronswornItem>>
 >
 
 export const $PageKey = Symbol('$page') as InjectionKey<IronswornJournalPage>
 export const PageKey = Symbol('page') as InjectionKey<
-	Ref<ReturnType<typeof IronswornJournalPage.prototype.toObject>>
+	Ref<SourceData<IronswornJournalPage>>
 >

@@ -2,7 +2,7 @@ import type { IronswornActor } from '../actor/actor'
 import { IronswornPrerollDialog } from '../rolls'
 
 interface InlineRollListenerOptions {
-	actor?: IronswornActor
+	actor?: IronswornActor<'character'>
 	name?: string
 }
 
@@ -20,6 +20,6 @@ export function attachInlineRollListeners(
 		if (!stat || !statValue) return
 		ev.preventDefault()
 
-		IronswornPrerollDialog.showForStat(stat, statValue, realOpts.actor)
+		void IronswornPrerollDialog.showForStat(stat, realOpts.actor)
 	})
 }

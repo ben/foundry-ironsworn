@@ -2,14 +2,14 @@
 	<div
 		class="block"
 		:class="{ [$style.box]: true, ...classes }"
-		:data-tooltip="$t('IRONSWORN.Roll +x', { stat: $t(i18nKey) })"
+		:data-tooltip="formatRollPlusStat(attr, true)"
 		@click="click">
 		<label :class="$style.label">{{ $t(i18nKey) }}</label>
 		<div class="flexrow">
 			<div v-if="editMode" class="clickable text" @click="decrement">
 				&minus;
 			</div>
-			<span :class="$style.value">{{ actorSys[attr] }}</span>
+			<span :class="$style.value">{{ actor.system[attr] }}</span>
 			<div v-if="editMode" class="clickable text" @click="increment">
 				&plus;
 			</div>
@@ -19,26 +19,24 @@
 
 <script lang="ts" setup>
 import type { Ref } from 'vue'
-import { inject, computed, capitalize } from 'vue'
+import { inject, computed } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
-import type { CharacterDataPropertiesData } from '../../actor/actortypes'
 import { IronswornPrerollDialog } from '../../rolls'
+import { formatRollPlusStat } from '../../rolls/ironsworn-roll-message'
 import { $ActorKey, ActorKey } from '../provisions'
 
-const props = defineProps<{ attr: string }>()
-const $actor = inject($ActorKey)
-const actor = inject(ActorKey) as Ref<
-	ReturnType<typeof IronswornActor.prototype.toObject>
->
-const actorSys = computed(
-	() => (actor.value as any)?.system as CharacterDataPropertiesData
-)
+const props = defineProps<{
+	/** The property key within `system` */
+	attr: string
+}>()
+const $actor = inject($ActorKey) as IronswornActor<'character'>
+const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 
 const classes = computed(() => ({
 	clickable: !editMode.value,
 	'isiconbg-d10-tilt': !editMode.value
 }))
-const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
+const i18nKey = computed(() => `IRONSWORN.${props.attr.capitalize()}`)
 const editMode = computed(
 	() => !!(actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 )
@@ -46,18 +44,15 @@ const editMode = computed(
 function click() {
 	if (editMode.value) return
 
-	let attrName = game.i18n.localize('IRONSWORN.' + capitalize(props.attr))
-	if (attrName.startsWith('IRONSWORN.')) attrName = props.attr
-	const name = `${attrName} (${$actor?.name})`
-	IronswornPrerollDialog.showForStat(name, $actor?.system[props.attr], $actor)
+	IronswornPrerollDialog.showForStat(props.attr, $actor, true)
 }
 
 function increment() {
-	const value = parseInt(actorSys.value?.[props.attr]) + 1
+	const value = parseInt(actor.value.system[props.attr]) + 1
 	$actor?.update({ system: { [props.attr]: value } })
 }
 function decrement() {
-	const value = parseInt(actorSys.value?.[props.attr]) - 1
+	const value = parseInt(actor.value.system[props.attr]) - 1
 	$actor?.update({ system: { [props.attr]: value } })
 }
 </script>

@@ -1,68 +1,56 @@
-import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+import type { DocumentSubTypes } from '../../types/helperTypes'
 import { CreateActorDialog } from '../applications/createActorDialog'
-import type {
-	CharacterDataPropertiesData,
-	SiteDataPropertiesData
-} from './actortypes'
+import { typedDeleteDialog } from '../helpers/util'
+import type { IronswornItem } from '../item/item'
+import type { ActorDataProperties } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 let CREATE_DIALOG: CreateActorDialog
 
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
- * @extends {Actor}
  */
-export class IronswornActor extends Actor {
+export class IronswornActor<
+	T extends DocumentSubTypes<'Actor'> = any
+> extends Actor {
 	// Type hack for v10 compatibility updates
-	declare system: typeof this.data.data
+	// declare system:
+	declare system: Extract<ActorDataProperties, { type: T }>['system']
+
+	// @ts-expect-error
+	declare type: T
+
+	override get itemTypes() {
+		return super.itemTypes as Actor['itemTypes'] & {
+			[K in DocumentSubTypes<'Item'>]: Array<IronswornItem<K>>
+		}
+	}
 
 	moveSheet?: SFCharacterMoveSheet
 
-	protected override _onCreate(
-		data: this['data']['_source'],
-		options: DocumentModificationOptions,
-		userId: string
-	): void {
-		super._onCreate(data, options, userId)
-		switch (this.type) {
-			case 'site':
-				// initialize sourceId flags for denizens
-				{
-					const denizens = (this.system as SiteDataPropertiesData).denizens.map(
-						(denizen) => {
-							if (denizen.flags == null) denizen.flags = {}
-							if (denizen.flags['foundry-ironsworn'] == null)
-								denizen.flags['foundry-ironsworn'] = {}
-							denizen.flags['foundry-ironsworn'].sourceId = this.id
-							return denizen
-						}
-					)
-					this.update({ system: { denizens } })
-				}
+	/**
+	 * Typeguard: is the provided value an IronswornActor instance of the specified type?
+	 */
+	static assert<T extends ConfiguredData<'Actor'>['type']>(
+		actor: unknown,
+		subtype: T
+	): actor is IronswornActor<T> {
+		return actor instanceof IronswornActor && actor.type === subtype
+	}
 
-				break
-			default:
-				break
-		}
+	/** Typeguard: is this an instance of the specified type? */
+	assert<T extends ConfiguredData<'Actor'>['type']>(
+		subtype: T
+	): this is IronswornActor<T> {
+		return IronswornActor.assert(this, subtype)
 	}
 
 	static async createDialog(data, _options = {}) {
-		if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog()
+		if (CREATE_DIALOG == null) CREATE_DIALOG = new CreateActorDialog()
 		CREATE_DIALOG.options.folder = data?.folder
 		CREATE_DIALOG.render(true)
 		return undefined
-	}
-
-	async burnMomentum() {
-		if (this.type != 'character') return
-		const { momentum, momentumReset } = this
-			.system as CharacterDataPropertiesData
-		console.log({ momentum, momentumReset })
-		if (momentum > momentumReset) {
-			this.update({
-				system: { momentum: momentumReset }
-			})
-		}
 	}
 
 	get toolset(): 'ironsworn' | 'starforged' {
@@ -86,6 +74,14 @@ export class IronswornActor extends Actor {
 			? 'starforged'
 			: 'ironsworn'
 	}
+
+	override async deleteDialog(options?: Partial<DialogOptions>) {
+		return await typedDeleteDialog(this, options)
+	}
+}
+export interface IronswornActor<T extends DocumentSubTypes<'Actor'> = any>
+	extends Actor {
+	type: T
 }
 
 declare global {
@@ -94,6 +90,7 @@ declare global {
 	}
 }
 
+// TODO: would it make sense to do this with IronswornActor#_onCreate instead?
 Hooks.on('createActor', async (actor: IronswornActor) => {
 	if (!['character', 'shared'].includes(actor.type)) return
 	await Item.createDocuments([{ type: 'bondset', name: 'bonds' }], {

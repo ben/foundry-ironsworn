@@ -15,31 +15,29 @@
 
 <script setup lang="ts">
 import { sample } from 'lodash-es'
-import type { ExtractPropTypes } from 'vue'
-import { inject } from 'vue'
 import type { IOracleTreeNode } from '../../../features/customoracles.js'
-import { OracleRollMessage } from '../../../rolls'
+import { OracleTable } from '../../../roll-table/oracle-table'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {}
-
-const props = defineProps<{
+interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	node: IOracleTreeNode
 	overrideClick?: boolean
 	// Hack: if we declare `click` in the emits, there's no $attrs['onClick']
 	// This allows us to check for presence and still use $emit('click')
 	// https://github.com/vuejs/core/issues/4736#issuecomment-934156497
 	onClick?: Function
-}>()
+}
 
-const toolset = inject<'ironsworn' | 'starforged'>('toolset')
+const props = defineProps<Props>()
+
 const $emit = defineEmits(['click'])
 
 async function rollOracle() {
 	if (props.overrideClick && props.onClick) return $emit('click')
 
-	const randomTable = sample(props.node.tables)
-	const orm = await OracleRollMessage.fromTableUuid(randomTable ?? '')
-	orm.createOrUpdate()
+	const randomTableUuid = sample(props.node.tables)
+	if (!randomTableUuid) return
+
+	OracleTable.ask(randomTableUuid)
 }
 </script>

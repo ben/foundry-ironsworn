@@ -8,6 +8,18 @@ import type {
 
 // Ironsworn-specific augmentations
 
+/**
+ * Used in some migrations and Vue components
+ * @deprecated
+ */
+export interface LegacyTableRow {
+	low: number
+	high: number
+	description?: string
+	text?: string
+	selected?: boolean
+}
+
 /** "Fake" types used to distinguish certain kinds of computed OracleTableResults. They're set in OracleTableResult#flags['foundry-ironsworn'].type */
 export type ComputedTableResultType =
 	| 'delve-site-denizen'

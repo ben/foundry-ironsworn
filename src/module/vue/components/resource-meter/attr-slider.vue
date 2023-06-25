@@ -17,10 +17,10 @@
 		<SliderBar
 			class="attr-slider-bar"
 			:orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
-			:max="props.max"
-			:min="props.min ?? 0"
-			:soft-max="props.softMax"
-			:current-value="props.currentValue"
+			:max="max"
+			:min="min"
+			:soft-max="softMax"
+			:value="value"
 			:segment-class="segmentClass"
 			:read-only="readOnly"
 			@change="onChange">
@@ -32,19 +32,21 @@
 /**
  * A slider that controls the value of an attribute.
  */
-import { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs.js'
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { computed } from 'vue'
+import type { MeterField } from '../../../fields/MeterField'
 import { IronswornSettings } from '../../../helpers/settings.js'
+import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument.js'
 import SliderBar from './slider-bar.vue'
 
 const props = withDefaults(
 	defineProps<{
 		/**
-		 * The key of the attribute controlled by the slider. This is the property of the injected document that will be controlled.
+		 * The key of the attribute controlled by the slider (within `system`). This is the property of the injected document that will be controlled.
 		 */
 		attr: string
+		softMax?: number | undefined
 		/**
 		 * The type of injectable document to use. Currently only "Actor" and "Item" work - they'll target `ActorKey`/`$ActorKey` or `ItemKey`/`$ItemKey` as appropriate.
 		 * @see {$ActorKey}
@@ -55,36 +57,67 @@ const props = withDefaults(
 		 * When 'true' and documentType is set to "Actor", updates *all* actors of the 'shared' and 'character' types.
 		 */
 		global?: boolean
-		max: number
-		min?: number
-		softMax?: number
-		currentValue: number
 		sliderStyle?: 'vertical' | 'horizontal' | 'compact'
 		labelPosition?: 'right' | 'left' | 'none'
 		/**
 		 * @see {@link sliderBar} props for more info
 		 */
-		segmentClass?: Record<number, any>
+		segmentClass?: Record<number, any> | undefined
 		readOnly?: boolean
 	}>(),
 	{
 		global: false,
 		readOnly: false,
 		sliderStyle: 'vertical',
-		labelPosition: 'left'
+		labelPosition: 'left',
+		segmentClass: undefined,
+		softMax: undefined
 	}
 )
 
-const { $document } = pickInjectedDocument(props.documentType)
+const { $document, document } = pickInjectedDocument(props.documentType)
 
 const baseId = computed(() => {
-	return `${$document?.id}-attr-slider-${props.attr}`
+	return `${document?.value?._id}-attr-slider-${props.attr}`
 })
 
+const field = computed(
+	() =>
+		$document?.system.schema.getField(props.attr) as
+			| AssetConditionMeterField
+			| MeterField
+)
+
+const min = computed(
+	() => document?.value.system[props.attr].min ?? field.value.fields.min ?? 0
+)
+
+const max = computed(() => {
+	// @ts-expect-error
+	const fieldMax = field.value.max
+	const currentMax = document?.value?.system[props.attr].max as
+		| number
+		| undefined
+	if (fieldMax == null) return currentMax as number
+	if (currentMax == null) return fieldMax as number
+	if (fieldMax > currentMax) return fieldMax as number
+	return currentMax
+})
+
+const targetKey = computed(() =>
+	field.value instanceof foundry.data.fields.NumberField
+		? `system.${props.attr}`
+		: `system.${props.attr}.value`
+)
+
+const value = computed(
+	() => getProperty(document?.value as any, targetKey.value) as number
+)
+
 async function onChange(newValue: number) {
-	const data = {
-		system: { [props.attr]: newValue }
-	}
+	const data = { [targetKey.value]: newValue }
+
+	console.log('updating with data', data)
 	// redundant with the below if it's global, but fires anyway so that a single message appears in the chatlog.
 	await $document?.update(data)
 	if (props.global) {

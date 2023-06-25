@@ -5,7 +5,7 @@
 		class="movesheet-row"
 		:class="$style.wrapper"
 		data-tooltip-direction="LEFT"
-		:base-id="`move_row_${move.moveItem().id}`"
+		:base-id="`move_row_${item._id}`"
 		:content-wrapper-class="$style.contentWrapper"
 		:toggle-wrapper-is="`h${headingLevel}`"
 		:toggle-section-class="[$style.toggleSection, toggleSectionClass]"
@@ -14,8 +14,8 @@
 		:toggle-tooltip="toggleTooltip"
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-label="move?.displayName"
-		:data-move-id="move.moveItem().id"
-		:data-move-uuid="move.moveItem().uuid">
+		:data-move-id="item._id"
+		:data-move-uuid="$item.uuid">
 		<template #after-toggle>
 			<section
 				:class="$style.controls"
@@ -39,7 +39,8 @@
 		</template>
 		<template #default>
 			<RulesTextMove
-				:move="move"
+				:data="item"
+				:is-progress-move="$item.system.isProgressMove"
 				:class="$style.summary"
 				@moveclick="moveClick">
 				<template #after-footer>
@@ -55,7 +56,6 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes } from 'vue'
 import { computed, provide, reactive, ref } from 'vue'
 import type { Move } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
@@ -70,7 +70,6 @@ import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
-import type { SFMoveDataPropertiesData } from '../../item/itemtypes'
 import { uniq } from 'lodash-es'
 import { OracleTable } from '../../roll-table/oracle-table'
 
@@ -91,7 +90,7 @@ const props = withDefaults(
 		 * Props to be passed to the Collapsible component.
 		 */
 		collapsible?: Omit<
-			ExtractPropTypes<typeof Collapsible>,
+			PropsOf<typeof Collapsible>,
 			| 'contentWrapperClass'
 			| 'toggleWrapperIs'
 			| 'toggleSectionClass'
@@ -110,13 +109,13 @@ const props = withDefaults(
 	}
 )
 
-const $item = computed(() => props.move.moveItem() as IronswornItem)
-const $itemSystem = computed(
-	() => $item.value?.system as SFMoveDataPropertiesData
+const $item = computed(() => props.move.moveItem())
+const item = computed(
+	() => props.move.moveItem().toObject() as ItemSource<'sfmove'>
 )
 
 provide(ItemKey, computed(() => $item.value.toObject()) as any)
-provide($ItemKey, $item.value)
+provide($ItemKey, $item.value as any)
 
 const data = reactive({
 	oracles: [] as IOracleTreeNode[]
@@ -143,14 +142,13 @@ const preventOracle = computed(() => {
 })
 
 const toggleTooltip = computed(() =>
-	// @ts-expect-error
 	enrichMarkdown($item.value.system.Trigger?.Text)
 )
 
 const moveId = computed(() => props.move.moveItem().id)
 
 const oracleIds = uniq([
-	...($itemSystem.value?.Oracles ?? []),
+	...($item?.value.system.Oracles ?? []),
 	...(props.move.dataforgedMove?.Oracles ?? [])
 ])
 Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(

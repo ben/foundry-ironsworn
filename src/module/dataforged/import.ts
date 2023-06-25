@@ -9,17 +9,20 @@ import type {
 	IOracle,
 	IOracleCategory,
 	Ironsworn,
+	IRow,
 	ISettingTruth,
 	Starforged
 } from 'dataforged'
-import { ironsworn, starforged } from 'dataforged'
-import { isArray, isObject } from 'lodash-es'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { starforged, ironsworn } from 'dataforged'
+import { isArray, isObject, max } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
+import { OracleTableResult } from '../roll-table/oracle-table-result'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -70,12 +73,12 @@ const PACKS = [
 	'foundry-ironsworn.starforgedmoves',
 	'foundry-ironsworn.starforgedoracles',
 	'foundry-ironsworn.starforgedtruths',
-	'foundry-ironsworn.starforgedencounters',
+	'foundry-ironsworn.starforged-encounters',
 	'foundry-ironsworn.ironswornassets',
 	'foundry-ironsworn.ironswornoracles',
 	'foundry-ironsworn.ironswornmoves',
 	'foundry-ironsworn.ironsworntruths',
-	'foundry-ironsworn.ironswornfoes'
+	'foundry-ironsworn.ironsworn-encounters'
 ]
 
 const FOE_IMAGES = {
@@ -162,18 +165,17 @@ export async function importFromDataforged() {
 		await Item.deleteDocuments(idsToDelete, { pack: key })
 	}
 
-	await processSFMoves()
-	await processSFAssets()
-	await processSFOracles()
-	await processSFEncounters()
-
-	await processISMoves()
-	await processISAssets()
-	await processISOracles()
-	await processISFoes()
-
-	// await processISTruths() // Re-enable when DF includes them
-	await processSFTruths()
+	await Promise.all([
+		processSFMoves(),
+		processSFAssets(),
+		processISAssets(),
+		processSFOracles(),
+		processISMoves(),
+		processISOracles(),
+		// processISTruths(), // Re-enable when DF includes them
+		processSFTruths(),
+		processSFEncounters()
+	])
 
 	// Lock the packs again
 	for (const key of PACKS) {
@@ -195,11 +197,6 @@ function movesForCategories(
 		for (const move of category.Moves) {
 			renderLinksInMove(move)
 			const cleanMove = cleanDollars(move)
-
-			// Patch one or two missing things in Dataforged
-			if (move.$id === 'Ironsworn/Moves/Delve/Find_an_Opportunity') {
-				move.Oracles = ['Ironsworn/Oracles/Moves/Find_an_Opportunity']
-			}
 
 			console.log(move.Name, move.$id)
 			movesToCreate.push({
@@ -277,7 +274,7 @@ function assetsForTypes(types: IAssetType[]) {
 					return ret
 				}),
 				track: {
-					enabled: !(asset['Condition Meter'] == null),
+					enabled: asset['Condition Meter'] != null,
 					name: asset['Condition Meter']?.Name,
 					current: asset['Condition Meter']?.Value,
 					max: asset['Condition Meter']?.Max
@@ -324,7 +321,7 @@ async function processOracle(
 	// Oracles JSON is a tree we wish to iterate through depth first adding
 	// parents prior to their children, and children in order
 	if (oracle.Table != null)
-		output.push(OracleTable.fromDataforged(oracle as any))
+		output.push(OracleTable.getConstructorData(oracle as any))
 
 	for (const child of oracle.Oracles ?? []) await processOracle(child, output)
 }
@@ -467,7 +464,9 @@ async function processTruths(
 		const je = await IronswornJournalEntry.create(
 			{
 				name: truth.Display.Title,
-				flags: { 'foundry-ironsworn': { dfid: truth.$id } }
+				flags: {
+					'foundry-ironsworn': { dfid: truth.$id, type: 'truth-category' }
+				}
 			},
 			{ pack: outputCompendium }
 		)
@@ -491,6 +490,7 @@ async function processTruths(
 		await IronswornJournalPage.create(
 			{
 				name: 'Character Inspiration',
+				type: 'text',
 				text: {
 					markdown: truth.Character,
 					format: 2 // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN
@@ -512,6 +512,7 @@ async function processSFTruths() {
 		'foundry-ironsworn.starforgedtruths'
 	)
 }
+
 async function processISTruths() {
 	await processTruths(
 		((ironsworn as any).default as Ironsworn)['Setting Truths']!,

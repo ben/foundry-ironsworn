@@ -68,11 +68,9 @@
 <script setup lang="ts">
 import { ActorKey } from './provisions'
 import AttrBox from './components/attr-box.vue'
-import type { IronswornActor } from '../actor/actor'
 import { provide, computed } from 'vue'
 import CharacterHeader from './components/character-header.vue'
 import Conditions from 'component:impact/debilities-classic.vue'
-import { CharacterDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
 import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
@@ -85,7 +83,7 @@ import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
 
 const props = defineProps<{
-	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
+	data: { actor: ActorSource<'character'> }
 }>()
 
 provide(

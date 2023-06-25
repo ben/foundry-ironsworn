@@ -2,6 +2,14 @@
 
 ## Next Release
 
+- Make player condition meters and momentum available as bar displays on actor tokens
+  - Under the hood: all meter fields are now objects with `max` and `value` properties, rather than a single number value
+- Under the hood: Migrate all actor and item subclasses to DataModel API. This brings several benefits such as stricter run-time validation which improve the reliability of the data used in `foundry-ironsworn`, and near-instant data migrations. It also makes it _much_ easier to implement data migrations for new features in the future.
+- Organize compendium packs into folders
+- Improve appearance of v11 compendium sidebar and popouts with the "Phosphor" theme
+- Under the hood: refactor all `RollTable`s and oracle rolls to use a single standardized pipeline (with `foundry-ironsworn`-style table roll messages) by default; certain kinds of results will fall back to FVTT-style messages instead.
+- Include most of Starforged's oracle icons in the `foundry-ironsworn/assets` directory -- use them as symbolic tokens, map pins, etc
+
 ## 1.21.7
 
 - The system is now officially compatible with v10 and v11 ([#772](https://github.com/ben/foundry-ironsworn/pull/772))

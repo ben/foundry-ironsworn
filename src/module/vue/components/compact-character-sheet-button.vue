@@ -14,25 +14,27 @@
 				v-if="isMomentum"
 				icon="fa:fire"
 				:data-tooltip="burnMomentumTooltip"
-				@click="$actor?.burnMomentum()" />
+				@click="$actor?.system.burnMomentum()" />
 			<IronBtn icon="fa:plus" @click="increment(1)" />
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { capitalize, computed, inject } from 'vue'
-import type { CharacterDataPropertiesData } from '../../actor/actortypes'
+import type { Ref } from 'vue'
+import { computed, inject } from 'vue'
+import type { IronswornActor } from '../../actor/actor'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 
-const { propKey } = defineProps<{
+const props = defineProps<{
+	/** The property key within `Actor#system` */
 	propKey: string
 }>()
 
-const isMomentum = propKey === 'momentum'
-const i18nKey = `IRONSWORN.${capitalize(propKey)}`
+const isMomentum = props.propKey === 'momentum'
+const i18nKey = `IRONSWORN.${props.propKey.capitalize()}`
 const i18nStat = game.i18n.localize(i18nKey)
 const tooltip = computed(() =>
 	isMomentum
@@ -40,27 +42,25 @@ const tooltip = computed(() =>
 		: game.i18n.format('IRONSWORN.Roll +x', { stat: i18nStat })
 )
 
-const actor = inject(ActorKey)
-const actorSystem = computed(
-	() => (actor?.value as any)?.system as CharacterDataPropertiesData
-)
-const value = computed(() => actorSystem?.value?.[propKey])
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey) as unknown as Ref<ActorSource<'character'>>
+const actorSystem = computed(() => (actor?.value as any)?.system)
+const value = computed(() => actorSystem?.value?.[props.propKey])
+const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 function increment(delta: number) {
-	$actor?.update({ system: { [propKey]: value.value + delta } })
+	$actor?.update({ system: { [props.propKey]: value.value + delta } })
 }
 
 const burnMomentumTooltip = computed(() =>
-	game.i18n.format('IRONSWORN.BurnMomentumAndResetTo', {
-		value: actorSystem.value?.momentum,
-		resetValue: actorSystem.value?.momentumReset
-	})
+	game.i18n.format(
+		'IRONSWORN.BurnMomentumAndResetTo',
+		actorSystem.value.momentum as any
+	)
 )
 
 function click() {
 	if (isMomentum) return
-	IronswornPrerollDialog.showForStat(i18nStat, $actor?.system[propKey], $actor)
+	IronswornPrerollDialog.showForStat(props.propKey, $actor)
 }
 </script>
 

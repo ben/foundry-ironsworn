@@ -12,8 +12,8 @@
 		:data-ticks="ticks"
 		:data-score="score"
 		:aria-valuenow="ticks"
-		:aria-valuemin="0"
-		:aria-valuemax="40"
+		:aria-valuemin="ProgressModel.TICKS_MIN"
+		:aria-valuemax="ProgressModel.TICKS_MAX"
 		:aria-valuetext="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
 		:data-tooltip="$t('IRONSWORN.PROGRESS.Current', { score, ticks })">
 		<ProgressTrackBox
@@ -21,16 +21,17 @@
 			:key="`progress-box-${i + 1}`"
 			tabindex="-1"
 			role="presentational"
-			:ticks="boxTicks ?? 0"
+			:ticks="boxTicks ?? ProgressModel.TICKS_MIN"
 			:is-overflow-box="legacyOverflow" />
 	</article>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { fill, clamp } from 'lodash-es'
-import type { ChallengeRank } from '../../../constants.js'
+import { fill } from 'lodash-es'
 import ProgressTrackBox from './progress-track-box.vue'
+import { ProgressModel } from '../../../item/subtypes/progress'
+import type { ChallengeRank } from '../../../fields/ChallengeRank'
 
 const props = defineProps<{
 	/**
@@ -40,7 +41,7 @@ const props = defineProps<{
 	/**
 	 * Use 'null' if it's an unranked track, such as a Legacy or classic Bonds.
 	 */
-	rank: ChallengeRank | null
+	rank: ChallengeRank.Value | null
 	legacyOverflow?: boolean
 	/**
 	 * When true, renders the progress bar for more compact display.
@@ -48,25 +49,28 @@ const props = defineProps<{
 	compactProgress?: boolean
 }>()
 
-const minBoxes = 0
-const maxBoxes = 10
-const ticksPerBox = 4
-const maxTicks = maxBoxes * ticksPerBox
-
 const score = computed(() =>
-	clamp(Math.floor(props.ticks / ticksPerBox), minBoxes, maxBoxes)
+	Math.clamped(
+		Math.floor(props.ticks / ProgressModel.TICKS_PER_BOX),
+		ProgressModel.SCORE_MIN,
+		ProgressModel.SCORE_MAX
+	)
 )
 
 const visibleTicks = computed(() =>
-	props.ticks > maxTicks ? props.ticks % maxTicks : props.ticks
+	props.ticks > ProgressModel.TICKS_MAX
+		? props.ticks % ProgressModel.TICKS_MAX
+		: props.ticks
 )
 
 const boxes = computed(() => {
-	const boxTicks = Array<number>(maxBoxes)
-	const filledBoxes = Math.floor(visibleTicks.value / ticksPerBox)
-	const ticksRemainder = visibleTicks.value % ticksPerBox
+	const boxTicks = Array<number>(ProgressModel.BOXES)
+	const filledBoxes = Math.floor(
+		visibleTicks.value / ProgressModel.TICKS_PER_BOX
+	)
+	const ticksRemainder = visibleTicks.value % ProgressModel.TICKS_PER_BOX
 
-	fill(boxTicks, ticksPerBox, 0, filledBoxes)
+	fill(boxTicks, ProgressModel.TICKS_PER_BOX, 0, filledBoxes)
 	if (ticksRemainder > 0) {
 		boxTicks[filledBoxes] = ticksRemainder
 	}

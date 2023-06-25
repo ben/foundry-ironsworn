@@ -11,6 +11,8 @@ import {
 	getOracleTreeWithCustomOracles
 } from '../features/customoracles'
 import { cachedDocumentsForPack } from '../features/pack-cache'
+import type { IronswornJournalEntry } from '../journal/journal-entry'
+import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
 import { OracleTableResult } from './oracle-table-result'
 import type { ComputedTableType } from './roll-table-types'
@@ -153,11 +155,12 @@ export class OracleTable extends RollTable {
 	}
 
 	/** Transforms a Dataforged IOracle table into RollTable constructor data. */
-	static fromDataforged(
-		oracle: IOracle & { Table: IRow[] }
+	static getConstructorData(
+		oracle: OracleTable.IOracleLeaf
 	): RollTableDataConstructorData {
 		const description = marked.parseInline(
-			renderLinksInStr(oracle.Description ?? '')
+			renderLinksInStr(oracle.Description ?? ''),
+			{ gfm: true, mangle: false, headerIds: false }
 		)
 		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
 		const data: RollTableDataConstructorData = {
@@ -172,12 +175,61 @@ export class OracleTable extends RollTable {
 			displayRoll: true,
 			/* folder: // would require using an additional module */
 			results: oracle.Table?.filter((x) => x.Floor !== null).map((tableRow) =>
-				OracleTableResult.fromDataforged(
+				OracleTableResult.getConstructorData(
 					tableRow as IRow & { Floor: number; Ceiling: number }
 				)
 			)
 		}
 		return data
+	}
+
+	/**
+	 * Initialize one or more instances of OracleTable from a Dataforged {@link IOracle} node.
+	 * @param options Default constructor options for the tables.
+	 * @param context Default constructor context for the tables
+	 */
+	static async fromDataforged(
+		tableData: OracleTable.IOracleLeaf,
+		options?: Partial<RollTableDataConstructorData>,
+		context?: DocumentModificationContext
+	): Promise<OracleTable | undefined>
+	static async fromDataforged(
+		tableData: OracleTable.IOracleLeaf[],
+		options?: Partial<RollTableDataConstructorData>,
+		context?: DocumentModificationContext
+	): Promise<OracleTable[]>
+	static async fromDataforged(
+		tableData: OracleTable.IOracleLeaf | OracleTable.IOracleLeaf[],
+		options: Partial<RollTableDataConstructorData> = {},
+		context: DocumentModificationContext = {}
+	): Promise<OracleTable | OracleTable[] | undefined> {
+		const clonedOptions = deepClone(options)
+
+		if (!Array.isArray(tableData)) {
+			logger.info(`Building ${tableData.$id}`)
+			return await OracleTable.create(
+				mergeObject(clonedOptions, OracleTable.getConstructorData(tableData), {
+					overwrite: false,
+					inplace: false
+				}) as RollTableDataConstructorData,
+				context
+			)
+		}
+		logger.info(`Building ${tableData.map((item) => item.$id).join(', ')}`)
+		return await OracleTable.createDocuments(
+			tableData.map(
+				(table) =>
+					mergeObject(
+						deepClone(clonedOptions),
+						OracleTable.getConstructorData(table),
+						{
+							overwrite: false,
+							inplace: false
+						}
+					) as RollTableDataConstructorData
+			),
+			context
+		)
 	}
 
 	/**
@@ -215,4 +267,160 @@ export class OracleTable extends RollTable {
 		if (uuid == null) return undefined
 		return (await fromUuid(uuid)) as IronswornActor
 	}
+
+	override async toMessage(
+		results: OracleTableResult[],
+		{
+			roll = null,
+			messageData = {},
+			messageOptions = {}
+		}: DeepPartial<RollTable.ToMessageOptions> = {}
+	) {
+		const cls = getDocumentClass('ChatMessage')
+		const rollTableType = this.getFlag('foundry-ironsworn', 'type')
+
+		const speakerOptions: ChatMessage.GetSpeakerOptions = {}
+
+		// intentionally left as a switch for later expansion
+		switch (rollTableType) {
+			case 'delve-site-dangers':
+			case 'delve-site-denizens':
+			case 'delve-site-features': // delve site oracles are attributed to the delve site
+				speakerOptions.actor = await this.getSourceDocument()
+				break
+			default:
+				break
+		}
+
+		const speaker = cls.getSpeaker(speakerOptions)
+
+		// options for this aren't exposed prior to running the method, so we have to rebuild them from scratch
+		// these are loosely based on FVTT v10 RollTable#toMessage
+
+		// TODO This is a fallback to handle tables that can produce multiple results from a single roll, which foundry-ironsworn doesn't presently use. There might be some utility to them doing so, however...
+		if (
+			results.length > 1 ||
+			results.some((result) => !(result instanceof OracleTableResult))
+		)
+			return await super.toMessage(results, {
+				roll,
+				messageData,
+				// @ts-expect-error
+				messageOptions
+			})
+
+		const flags: ConfiguredFlags<'ChatMessage'> = {
+			core: { RollTable: this.id },
+			'foundry-ironsworn': {
+				rollTableType: this.getFlag('foundry-ironsworn', 'type'),
+				sourceId: this.getFlag('foundry-ironsworn', 'sourceId') ?? this.uuid
+			}
+		}
+
+		// Construct chat data
+		messageData = foundry.utils.mergeObject(
+			{
+				user: game.user?.id,
+				speaker,
+				type:
+					roll != null
+						? CONST.CHAT_MESSAGE_TYPES.ROLL
+						: CONST.CHAT_MESSAGE_TYPES.OTHER,
+				roll,
+				sound: roll != null ? CONFIG.sounds.dice : null,
+				flags
+			},
+			messageData
+		)
+
+		// console.log('messageData', messageData)
+
+		const templateData = await this._prepareTemplateData(results, roll)
+
+		// Render the chat card which combines the dice roll with the drawn results
+		messageData.content = await renderTemplate(
+			OracleTable.resultTemplate,
+			templateData
+		)
+
+		// Create the chat message
+		return await cls.create(messageData, messageOptions)
+	}
+
+	/**
+	 * Retrieve a computed oracle table from its originating document. This allows rehydration of computed tables from e.g. chat message flags.
+	 * @param sourceId The UUID of the original source of the computed table, usually an Actor or Item.
+	 */
+	static async getComputedTable(sourceId: string, type: ComputedTableType) {
+		const source = await fromUuid(sourceId)
+		if (source == null) return undefined
+		let table: OracleTable | undefined
+		switch (type) {
+			case 'delve-site-dangers':
+				table = await (source as IronswornActor<'site'>).system.getDangers()
+				break
+			case 'delve-site-denizens':
+				table = (source as IronswornActor<'site'>).system.denizenTable
+				break
+			case 'delve-site-features':
+				table = (source as IronswornActor<'site'>).system.features
+				break
+			case 'truth-options':
+				table = (source as IronswornJournalEntry).truthTable
+				break
+			case 'truth-option-subtable':
+				table = (source as IronswornJournalPage).subtable
+				break
+			default:
+				break
+		}
+		return table
+	}
+
+	/**
+	 * Rerolls an oracle result message, replacing the message content with the new result
+	 */
+	static async reroll(messageId: string) {
+		const msg = game.messages?.get(messageId)
+		if (msg == null) return
+
+		const rerolls = msg.getFlag('foundry-ironsworn', 'rerolls') ?? []
+		const sourceId = msg.getFlag('foundry-ironsworn', 'sourceId')
+		const rollTableType = msg.getFlag('foundry-ironsworn', 'rollTableType')
+
+		// console.log(rerolls, sourceId, rollTableType)
+
+		if (sourceId == null) return
+		let oracleTable: OracleTable | undefined
+		if (rollTableType == null)
+			oracleTable = (await fromUuid(sourceId)) as OracleTable | undefined
+		else {
+			oracleTable = await OracleTable.getComputedTable(sourceId, rollTableType)
+		}
+		if (oracleTable == null) return
+
+		// defer render to chat so we can manually set the chat message id
+		const { results, roll } = await oracleTable.draw({ displayChat: false })
+
+		const templateData = await oracleTable._prepareTemplateData(results, roll)
+
+		const flags = foundry.utils.mergeObject(msg.toObject().flags, {
+			'foundry-ironsworn': {
+				rerolls: [...rerolls, roll.total]
+			}
+		}) as ConfiguredFlags<'ChatMessage'>
+
+		// trigger sound + 3d dice manually because updating the message won't
+		if (game.dice3d != null) void game.dice3d.showForRoll(roll, game.user, true)
+		else void AudioHelper.play({ src: CONFIG.sounds.dice })
+
+		return await msg.update({
+			content: await renderTemplate(OracleTable.resultTemplate, templateData),
+			flags
+		})
+	}
+}
+
+export namespace OracleTable {
+	export type IOracleLeaf = IOracle & { Table: IRow[] }
 }

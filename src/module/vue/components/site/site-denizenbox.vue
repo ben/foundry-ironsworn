@@ -28,25 +28,23 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import { reactive, inject, computed, ref } from 'vue'
-import type {
-	DelveSiteDenizen,
-	SiteDataPropertiesData
-} from '../../../actor/actortypes'
+import type { IronswornActor } from '../../../actor/actor'
+import type { SourceData } from '../../../fields/utils'
 import DropTarget from '../../drop-target.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 const props = defineProps<{ idx: number }>()
 const data = reactive({ focused: false })
 
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey) as Ref<SourceData<IronswornActor, 'site'>>
+const $actor = inject($ActorKey) as IronswornActor<'site'>
 
 const editMode = computed(() => {
 	return actor.value?.flags['foundry-ironsworn']?.['edit-mode']
 })
 
 const denizen = computed(() => {
-	return actor.value?.system.denizens[props.idx] as DelveSiteDenizen
+	return actor.value?.system.denizens[props.idx]
 })
 
 /**
@@ -72,16 +70,16 @@ const frequencyLabel = computed(() =>
 	getFrequencyDescriptor(...denizen.value.range)
 )
 
-function input(ev) {
-	const val = ev.currentTarget.value || ''
-	const data = $actor?.system as SiteDataPropertiesData | undefined
-	if (!data) return
-	const denizens = Object.values(data.denizens)
-	denizens[props.idx].text = val
-	$actor?.update({ system: { denizens } })
+function input(ev: Event) {
+	const target = ev.currentTarget as HTMLInputElement
+	const newDenizens = foundry.utils.deepClone(actor.value.system.denizens)
+	setProperty(newDenizens, `${props.idx}.text`, target.value ?? '')
+	$actor?.update({
+		[`system.denizens`]: newDenizens
+	})
 }
 
-const description = ref<HTMLElement>()
+const description = ref<HTMLTextAreaElement>()
 function focus() {
 	data.focused = true
 	description.value?.focus()

@@ -1,7 +1,6 @@
 import { compact, flatten } from 'lodash-es'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import type { IronswornItem } from '../item/item'
-import { IronswornRollMessage, OracleRollMessage } from '../rolls'
+import { IronswornRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { OracleTable } from '../roll-table/oracle-table'
 
@@ -9,11 +8,11 @@ export class IronswornChatCard {
 	id?: string | null
 
 	constructor(message: ChatMessage, html: JQuery) {
-		this.updateBinding(message, html)
+		void this.updateBinding(message, html)
 	}
 
 	get message(): ChatMessage | undefined {
-		return game.messages?.get(this.id || '')
+		return game.messages?.get(this.id ?? '')
 	}
 
 	async attachMoveOracleContextMenu(html: JQuery) {
@@ -21,13 +20,13 @@ export class IronswornChatCard {
 		const moveLinks = html.find('a[draggable]')
 		const maybeTablePromises = moveLinks.map(async (_i, el) => {
 			const { pack, id } = el.dataset
-			if (!pack || !id) return []
+			if (pack == null || id == null) return []
 
 			const fPack = game.packs.get(pack)
-			const fItem = fPack?.get(id) as IronswornItem
+			const fItem = fPack?.get(id) as IronswornItem<'sfmove'>
 			if (fItem?.type !== 'sfmove') return []
 
-			const system = fItem.system as SFMoveDataPropertiesData
+			const system = fItem.system
 			const oracleIds = system.Oracles ?? []
 			return await Promise.all(oracleIds.map(OracleTable.getByDfId))
 		})
@@ -39,12 +38,9 @@ export class IronswornChatCard {
 			html,
 			`.message-content`,
 			tables.map((t) => ({
-				name: t.name || '',
+				name: t.name ?? '',
 				icon: '<i class="isicon-oracle"></i>',
-				callback: async () => {
-					const msg = await OracleRollMessage.fromTableUuid(t.uuid)
-					msg.createOrUpdate()
-				}
+				callback: async () => await t.draw()
 			}))
 		)
 	}
@@ -72,7 +68,7 @@ export class IronswornChatCard {
 			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
 		html
 			.find('[data-iron-action="oracleReroll"]')
-			.on('click', async (ev) => await this._oracleReroll.call(this, ev))
+			.on('click', (ev) => this._oracleReroll.call(this, ev))
 		if (!navigator.clipboard) {
 			html
 				.find('.copy-result')
@@ -85,12 +81,12 @@ export class IronswornChatCard {
 				await this._oracleResultCopy.call(this, ev)
 			})
 		}
-		html.find('.ironsworn-roll-resolve').on('click', async (ev) => {
-			await this._resolveChallenge.call(this, ev)
-		})
-		html.find('[data-iron-action="oracleRoll"]').on('click', async (ev) => {
-			await this._oracleRoll.call(this, ev)
-		})
+		html
+			.find('.ironsworn-roll-resolve')
+			.on('click', (ev) => this._resolveChallenge.call(this, ev))
+		html
+			.find('[data-iron-action="oracleRoll"]')
+			.on('click', (ev) => this._oracleRoll.call(this, ev))
 	}
 
 	async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -125,29 +121,20 @@ export class IronswornChatCard {
 		ev.preventDefault()
 
 		const msgId = $(ev.target).parents('.chat-message').data('message-id')
-		ChallengeResolutionDialog.showForMessage(msgId)
+		void ChallengeResolutionDialog.showForMessage(msgId)
 	}
 
 	async _oracleReroll(ev: JQuery.ClickEvent) {
 		ev.preventDefault()
 
 		const msgId = $(ev.target).parents('.chat-message').data('message-id')
-		const orm = await OracleRollMessage.fromMessage(msgId)
-		await orm?.forceRoll()
-		return await orm?.createOrUpdate()
+		await OracleTable.reroll(msgId)
 	}
 
 	async _oracleRoll(ev: JQuery.ClickEvent) {
 		ev.preventDefault()
 		const { tableid } = ev.currentTarget.dataset
-		const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
-		const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
-		const table = ((await sfPack?.getDocument(tableid)) ??
-			(await isPack?.getDocument(tableid))) as OracleTable | undefined
-		if (!table?.id) return
-
-		const msg = await OracleRollMessage.fromTableUuid(table.uuid)
-		msg.createOrUpdate()
+		return await OracleTable.ask(tableid)
 	}
 
 	async _oracleResultCopy(ev: JQuery.ClickEvent) {
@@ -162,7 +149,7 @@ export class IronswornChatCard {
 	static async bind(message: ChatMessage, html: JQuery) {
 		const existing = message.ironswornCard
 		if (existing != null) {
-			existing.updateBinding(message, html)
+			void existing.updateBinding(message, html)
 		} else {
 			message.ironswornCard = new IronswornChatCard(message, html)
 		}
@@ -170,12 +157,5 @@ export class IronswornChatCard {
 
 	static registerHooks() {
 		Hooks.on('renderChatMessage', IronswornChatCard.bind)
-	}
-}
-
-// Extend type
-declare global {
-	interface ChatMessage {
-		ironswornCard?: IronswornChatCard
 	}
 }

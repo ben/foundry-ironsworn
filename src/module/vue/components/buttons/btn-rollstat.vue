@@ -1,6 +1,6 @@
 <template>
 	<IronBtn
-		:data-tooltip="$t('IRONSWORN.Roll +x', { stat: statLabel })"
+		:data-tooltip="formatRollPlusStat(statLabel, true)"
 		class="action-roll stat-roll"
 		aria-haspopup="dialog"
 		icon="ironsworn:d10-tilt"
@@ -14,42 +14,57 @@
 
 <script lang="ts" setup>
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import type { ExtractPropTypes } from 'vue'
-import { inject } from 'vue'
-import type { AssetDataPropertiesData } from '../../../item/itemtypes.js'
+import { computed, inject } from 'vue'
+import type { IronswornActor } from '../../../actor/actor'
+import type { MeterField } from '../../../fields/MeterField'
+import type { IronswornItem } from '../../../item/item'
+import type { AssetConditionMeterField } from '../../../item/subtypes/asset'
 import { IronswornPrerollDialog } from '../../../rolls'
+import { formatRollPlusStat } from '../../../rolls/ironsworn-roll-message'
+import { pickInjectedDocument } from '../../composable/pickInjectedDocument'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
+interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	documentType: DocumentType
 	/**
-	 * This string will be inserted in into the tooltip text "Roll +{x}". It should already be localized.
+	 * The key of the stat value within `system`
 	 */
-	statLabel: string
 	attr: string
 }
 
 const props = defineProps<Props>()
+const { document, $document } = pickInjectedDocument(props.documentType)
 
-const $actor = inject($ActorKey, undefined)
-const $item = inject($ItemKey, undefined)
+const field = computed(
+	() =>
+		$document?.system.schema.getField(props.attr) as
+			| AssetConditionMeterField
+			| MeterField
+)
+
+const statLabel = computed(() => {
+	return (
+		document?.value.system[props.attr].name ??
+		game.i18n.localize(field.value.label)
+	)
+})
+
+const $actor = inject($ActorKey, undefined) as
+	| IronswornActor<'character'>
+	| IronswornActor<'starship'>
+	| IronswornActor<'shared'>
+	| undefined
+const $item = inject($ItemKey, undefined) as IronswornItem<'asset'>
 
 function rollStat(): any {
+	if ($actor == null) return
 	if (props.documentType === 'Item') {
-		const name = `${props.statLabel} (${$item?.name})`
 		// FIXME: this should take `attr` instead to get the value, but there doesn't seem to be a simple way to (de)stringify the path to deeper props like there is with e.g. Actor.update()
 		// so, for now, we assume that assets are the only Items that we bother to roll with.
-		const value = ($item?.system as AssetDataPropertiesData)?.track?.current
-		return IronswornPrerollDialog.showForStat(name, value, $actor)
+		return IronswornPrerollDialog.showForStat(props.attr, $item, true)
 	} else if (props.documentType === 'Actor') {
-		const name = `${props.statLabel} (${$actor?.name})`
-
-		return IronswornPrerollDialog.showForStat(
-			name,
-			$actor?.system[props.attr],
-			$actor
-		)
+		return IronswornPrerollDialog.showForStat(props.attr, $actor)
 	}
 }
 </script>

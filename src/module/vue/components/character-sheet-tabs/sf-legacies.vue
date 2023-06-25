@@ -27,8 +27,8 @@ import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import LegacyTrack from '../legacy-track.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
-import type { ProgressDataPropertiesData } from '../../../item/itemtypes.js'
 import { ActorKey } from '../../provisions.js'
+import type { ProgressDataPropertiesData } from '../../../item/subtypes/progress'
 
 const actor = inject(ActorKey) as Ref
 

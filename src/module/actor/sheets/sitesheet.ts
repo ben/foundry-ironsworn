@@ -1,4 +1,3 @@
-import type { SiteDataSourceData } from '../actortypes'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import siteSheetVue from '../../vue/site-sheet.vue'
 export class IronswornSiteSheet extends VueActorSheet {
@@ -16,6 +15,19 @@ export class IronswornSiteSheet extends VueActorSheet {
 		if (droppedActor == null) return false
 		if (droppedActor.type !== 'foe') {
 			return await super._onDropActor(event, data)
+		}
+	}
+
+	async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
+		if (!this.actor.assert('site'))
+			throw new Error(
+				'IronswornSiteSheet has an actor, but it doesn\'t have the "site" subtype'
+			)
+		// Fetch the item. We only want to override denizens (progress-type items)
+		const item = await Item.fromDropData(data)
+		if (item == null) return false
+		if (!item.assert('progress')) {
+			return await super._onDropItem(event, data)
 		}
 
 		// Find which denizen slot this is going into

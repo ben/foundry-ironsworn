@@ -55,20 +55,18 @@
 </template>
 
 <script lang="ts" setup>
-import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { Ref } from 'vue'
 import { computed, inject, reactive } from 'vue'
-import type { SiteDataPropertiesData } from '../../../actor/actortypes'
+import type { IronswornActor } from '../../../actor/actor'
 import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
-import type { DelveThemeDataSourceData } from '../../../item/itemtypes'
-import { OracleTable } from '../../../roll-table/oracle-table'
-import { OracleRollMessage, IronswornPrerollDialog } from '../../../rolls'
+import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 import SfMoverow from '../sf-moverow.vue'
 
-const site = inject(ActorKey)
-const $site = inject($ActorKey)
+const site = inject(ActorKey) as Ref<ActorSource<'site'>>
+const $site = inject($ActorKey) as IronswornActor<'site'>
 
 const theme = computed(() => {
 	return site?.value?.items.find((x) => x.type === 'delve-theme')
@@ -109,37 +107,12 @@ Promise.resolve().then(async () => {
 })
 
 async function revealADanger() {
-	if (!hasThemeAndDomain.value) return
-
-	const oracle = await OracleTable.getByDfId(
-		'Ironsworn/Oracles/Moves/Reveal_a_Danger'
-	)
-	if (!oracle) return
-
-	const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
-	const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-
-	const tableResults = [
-		...themeData.dangers,
-		...domainData.dangers,
-		// Omits the first two rows
-		...oracle.results.contents.slice(2)
-	]
-
-	const title = moves.revealADanger.moveItem().name ?? 'Reveal a Danger'
-	const subtitle = `${$site?.name} – ${theme.value?.name} ${domain.value?.name}`
-	const orm = await OracleRollMessage.fromTableResults(
-		tableResults as TableResultDataConstructorData[],
-		title,
-		subtitle
-	)
-	orm.createOrUpdate()
+	return (await $site?.system.getDangers())?.draw()
 }
 
 async function locateObjective() {
 	if (!$site) return
-	const siteSys = $site.system as SiteDataPropertiesData
-	const progress = Math.floor(siteSys.current / 4)
+	const progress = Math.floor($site.system.current / 4)
 
 	IronswornPrerollDialog.showForOfficialMove(
 		'Ironsworn/Moves/Delve/Locate_Your_Objective',

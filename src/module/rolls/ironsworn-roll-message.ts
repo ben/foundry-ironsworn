@@ -1,19 +1,12 @@
 import type { IOutcomeInfo, RollMethod } from 'dataforged'
-import {
-	capitalize,
-	compact,
-	fromPairs,
-	isUndefined,
-	kebabCase
-} from 'lodash-es'
+import { compact, fromPairs, isUndefined, kebabCase } from 'lodash-es'
 import { IronswornRoll } from '.'
-import type { IronswornActor } from '../actor/actor'
-import type { CharacterDataPropertiesData } from '../actor/actortypes'
-import type { SFMoveDataPropertiesData } from '../item/itemtypes'
+import { IronswornActor } from '../actor/actor'
+import { IronswornItem } from '../item/item'
+import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
-import { OracleTable } from '../roll-table/oracle-table'
 
 interface MoveTemplateData {
 	outcomeClass?: string
@@ -32,10 +25,10 @@ interface MoveTemplateData {
  * // returns "roll +heart" for en.json
  * ```
  */
-export function formatRollPlusStat(stat: string) {
-	let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
-	if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
-	return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
+export function formatRollPlusStat(stat: string, initialCaps = false) {
+	if (stat.startsWith('IRONSWORN.')) stat = game.i18n.localize(stat)
+	const key = initialCaps ? 'IRONSWORN.Roll +x' : 'IRONSWORN.roll +x'
+	return game.i18n.format(key, { stat })
 }
 
 /**
@@ -54,7 +47,7 @@ export function formatRollMethod(rollMethod: RollMethod, stats: string[]) {
 	}
 	// canonical triggers have 2 stats; there's a good chance a nice string already exists, so we check for that first.
 	const localizedStats = stats.map((stat) =>
-		game.i18n.localize('IRONSWORN.' + capitalize(stat))
+		game.i18n.localize('IRONSWORN.' + stat.capitalize())
 	)
 	const methodKeyRoot = `IRONSWORN.roll method.${rollMethod}`
 	const possibleNiceKey = `${methodKeyRoot}.${stats.length}`
@@ -155,22 +148,22 @@ export class IronswornRollMessage {
 
 		const r = IronswornRoll.fromJson(json)
 		r.chatMessageId = messageId
-		// @ts-expect-error
+
 		r.roll = msg?.rolls?.[0] ?? undefined
 
 		return new IronswornRollMessage(r)
 	}
 
 	async burnMomentum() {
-		if (this.actor?.type !== 'character') return
-		const { momentum } = this.actor.system as CharacterDataPropertiesData
+		if (!IronswornActor.assert(this.actor, 'character')) return
+		const { momentum } = this.actor.system
 
 		const [c1, c2] = this.roll.finalChallengeDice ?? []
 		if (c1 === undefined || c2 === undefined) return
 
-		await this.actor.burnMomentum()
+		await this.actor.system.burnMomentum()
 		this.roll.postRollOptions.replacedOutcome = {
-			value: computeRollOutcome(momentum, c1.value, c2.value),
+			value: computeRollOutcome(momentum.value, c1.value, c2.value),
 			source: game.i18n.localize('IRONSWORN.MomentumBurnt')
 		}
 		return await this.createOrUpdate()
@@ -237,7 +230,7 @@ export class IronswornRollMessage {
 			return { title: `${move.name} +${stat.source}` }
 		}
 		let localizedStat = game.i18n.localize(
-			'IRONSWORN.' + capitalize(stat.source)
+			'IRONSWORN.' + stat.source.capitalize()
 		)
 		if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat.source
 		return {
@@ -263,7 +256,7 @@ export class IronswornRollMessage {
 		if (move?.type !== 'sfmove') return ret
 
 		const key = DfRollOutcome[theOutcome]
-		const moveSystem = move.system as SFMoveDataPropertiesData
+		const moveSystem = move.system
 		let moveOutcome = moveSystem.Outcomes?.[key] as IOutcomeInfo
 		if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
 			moveOutcome = moveOutcome['With a Match']
@@ -291,7 +284,7 @@ export class IronswornRollMessage {
 	}
 
 	private momentumData() {
-		if (this.actor?.type !== 'character') return {}
+		if (!IronswornActor.assert(this.actor, 'character')) return {}
 
 		// Can't burn momentum on progress rolls
 		if (this.roll.preRollOptions.progress != null) return {}
@@ -302,9 +295,13 @@ export class IronswornRollMessage {
 		const [c1, c2] = this.roll.finalChallengeDice ?? []
 		if (c1 === undefined || c2 === undefined) return {}
 
-		const { momentum } = this.actor.system as CharacterDataPropertiesData
+		const { momentum } = this.actor.system
 		const rawOutcome = this.roll.rawOutcome?.value
-		const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
+		const momentumBurnOutcome = computeRollOutcome(
+			momentum.value,
+			c1.value,
+			c2.value
+		)
 
 		if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
 			return {
@@ -321,7 +318,7 @@ export class IronswornRollMessage {
 		const move = await this.roll.moveItem
 		if (move?.type !== 'sfmove') return {}
 
-		const system = move.system as SFMoveDataPropertiesData
+		const system = move.system
 		const dfids = system.Oracles ?? []
 		const nextOracles = compact(
 			await Promise.all(dfids.map(OracleTable.getByDfId))
