@@ -1,5 +1,4 @@
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
-import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 import type { IronActorModel } from './common'
 

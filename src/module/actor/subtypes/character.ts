@@ -1,17 +1,12 @@
-import { StatField } from '../../fields/StatField'
-import type { IronswornActor } from '../actor'
-import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import type { DataSchema } from '../../fields/utils'
-import type { ActiveEffectDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/activeEffectData'
-import type { IronActiveEffect } from '../../active-effect/active-effect'
-import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
 import type {
 	ConditionMeterSource,
 	MomentumSource
 } from '../../fields/MeterField'
+import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
+import { ProgressTicksField } from '../../fields/ProgressTicksField'
+import { StatField } from '../../fields/StatField'
+import type { IronswornActor } from '../actor'
 import type { IronActorModel } from './common'
-import { IronswornSettings } from '../../helpers/settings'
-import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 export class CharacterModel
 	extends foundry.abstract.TypeDataModel<
