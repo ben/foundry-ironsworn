@@ -7,7 +7,7 @@ import { Clock } from '../../model/Clock'
 import type { IronswornActor } from '../../actor/actor'
 
 /** TypeDataModel for the `progress` {@link IronswornItem} subtype. A general purpose tracker that embeds a ProgressTrack and a Clock */
-export class ProgressData extends foundry.abstract.TypeDataModel<
+export class ProgressModel extends foundry.abstract.TypeDataModel<
 	ProgressDataSourceData,
 	ProgressDataPropertiesData,
 	IronswornItem<'progress'>
@@ -69,7 +69,7 @@ export class ProgressData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface ProgressData extends ProgressDataPropertiesData {}
+export interface ProgressModel extends ProgressDataPropertiesData {}
 
 export interface ProgressDataSourceData {
 	description: string
@@ -89,6 +89,6 @@ export interface ProgressDataSource {
 }
 export interface ProgressDataProperties {
 	type: 'progress'
-	data: ProgressData
-	system: ProgressData
+	data: ProgressModel
+	system: ProgressModel
 }

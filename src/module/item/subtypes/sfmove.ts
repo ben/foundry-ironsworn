@@ -13,7 +13,7 @@ import { SourceField } from '../../fields/SourceField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 
-export class SFMoveData extends foundry.abstract.TypeDataModel<
+export class SFMoveModel extends foundry.abstract.TypeDataModel<
 	SFMoveDataSourceData,
 	SFMoveDataSourceData,
 	IronswornItem<'sfmove'>
@@ -132,16 +132,16 @@ export class SFMoveOutcomeField extends foundry.data.fields.SchemaField<
 				Reroll: new fields.SchemaField(
 					{
 						Text: new fields.HTMLField(),
-						Dice: new fields.StringField<ValueOf<typeof SFMoveData.rerollType>>(
-							{
-								choices: SFMoveData.rerollType
-							}
-						)
+						Dice: new fields.StringField<
+							ValueOf<typeof SFMoveModel.rerollType>
+						>({
+							choices: SFMoveModel.rerollType
+						})
 					},
 					{ required: false }
 				) as any,
 				'Count as': new fields.StringField({
-					choices: SFMoveData.outcome as any,
+					choices: SFMoveModel.outcome as any,
 					required: false
 				})
 			},
@@ -160,25 +160,27 @@ export class SFMoveOutcomeMatchableField extends foundry.data.fields
 				Reroll: new fields.SchemaField(
 					{
 						Text: new fields.HTMLField(),
-						Dice: new fields.StringField<ValueOf<typeof SFMoveData.rerollType>>(
-							{
-								choices: SFMoveData.rerollType
-							}
-						)
+						Dice: new fields.StringField<
+							ValueOf<typeof SFMoveModel.rerollType>
+						>({
+							choices: SFMoveModel.rerollType
+						})
 					},
 					{ required: false }
 				) as any,
-				'Count as': new fields.StringField<ValueOf<typeof SFMoveData.outcome>>({
-					choices: SFMoveData.outcome,
-					required: false
-				}) as any,
+				'Count as': new fields.StringField<ValueOf<typeof SFMoveModel.outcome>>(
+					{
+						choices: SFMoveModel.outcome,
+						required: false
+					}
+				) as any,
 				'With a Match': new SFMoveOutcomeField({ required: false }) as any
 			},
 			options
 		)
 	}
 }
-export interface SFMoveData extends SFMoveDataSourceData {}
+export interface SFMoveModel extends SFMoveDataSourceData {}
 
 export interface SFMoveDataSourceData
 	extends Required<
@@ -209,11 +211,11 @@ export class SFMoveTriggerOptionField extends foundry.data.fields
 		const fields = foundry.data.fields
 		super({
 			'Roll type': new fields.StringField<any, any>({
-				choices: SFMoveData.rollType
+				choices: SFMoveModel.rollType
 			}),
 			Text: new fields.HTMLField(),
 			Method: new fields.StringField<any, any>({
-				choices: SFMoveData.rollMethod
+				choices: SFMoveModel.rollMethod
 			}),
 			Using: new fields.ArrayField(new fields.StringField() as any)
 		})
@@ -238,6 +240,6 @@ export interface SFMoveDataSource {
 }
 export interface SFMoveDataProperties {
 	type: 'sfmove'
-	data: SFMoveData
-	system: SFMoveData
+	data: SFMoveModel
+	system: SFMoveModel
 }

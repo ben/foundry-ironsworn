@@ -3,7 +3,7 @@ import { ConditionMeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
-export class SharedData extends foundry.abstract.TypeDataModel<
+export class SharedModel extends foundry.abstract.TypeDataModel<
 	SharedDataSourceData,
 	SharedDataSourceData,
 	IronswornActor<'shared'>
@@ -17,7 +17,7 @@ export class SharedData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface SharedData extends SharedDataSourceData {}
+export interface SharedModel extends SharedDataSourceData {}
 
 interface SharedDataSourceData {
 	biography: string
@@ -37,6 +37,6 @@ export interface SharedDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: SharedData
-	system: SharedData
+	data: SharedModel
+	system: SharedModel
 }

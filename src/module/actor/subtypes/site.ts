@@ -10,7 +10,7 @@ import { ProgressTrack } from '../../model/ProgressTrack'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
 
-export class SiteData extends foundry.abstract.TypeDataModel<
+export class SiteModel extends foundry.abstract.TypeDataModel<
 	SiteDataSourceData,
 	SiteDataPropertiesData,
 	IronswornActor<'site'>
@@ -206,7 +206,7 @@ export class SiteData extends foundry.abstract.TypeDataModel<
 	}
 }
 
-export interface SiteData extends SiteDataPropertiesData {
+export interface SiteModel extends SiteDataPropertiesData {
 	track: ProgressTrack
 }
 
@@ -234,6 +234,6 @@ export interface SiteDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: SiteData
-	system: SiteData
+	data: SiteModel
+	system: SiteModel
 }

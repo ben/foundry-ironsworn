@@ -42,7 +42,7 @@
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
 import { computed, provide, ref } from 'vue'
-import type { CharacterData } from '../actor/config'
+import type { CharacterModel } from '../actor/config'
 import { ActorKey } from './provisions.js'
 import TabSet from './components/tabs/tab-set.vue'
 import TabList from './components/tabs/tab-list.vue'

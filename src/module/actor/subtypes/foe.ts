@@ -2,7 +2,7 @@ import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
 
-export class FoeData extends foundry.abstract.TypeDataModel<
+export class FoeModel extends foundry.abstract.TypeDataModel<
 	FoeDataSourceData,
 	FoeDataSourceData,
 	IronswornActor<'foe'>
@@ -15,7 +15,7 @@ export class FoeData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface FoeData extends FoeDataSourceData {}
+export interface FoeModel extends FoeDataSourceData {}
 export interface FoeDataSourceData {
 	dfid: string | null
 }
@@ -33,6 +33,6 @@ export interface FoeDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: FoeData
-	system: FoeData
+	data: FoeModel
+	system: FoeModel
 }

@@ -1,4 +1,4 @@
-import type { CharacterData } from '../actor/config'
+import type { CharacterModel } from '../actor/config'
 import { ChallengeRank } from '../fields/ChallengeRank'
 import type { DataSchema } from '../fields/utils'
 import type { ProgressLikeSource, ProgressLikeProperties } from './ProgressLike'
@@ -9,7 +9,7 @@ import { ProgressLike } from './ProgressLike'
 export class LegacyTrack extends ProgressLike<
 	LegacyTrackSource,
 	LegacyTrackProperties,
-	CharacterData
+	CharacterModel
 > {
 	/** The number of ticks marked on the legacy track for completing a progress track of the given rank. */
 	static readonly REWARD: Record<
@@ -99,7 +99,11 @@ export class LegacyTrack extends ProgressLike<
 	}
 }
 export interface LegacyTrack
-	extends ProgressLike<LegacyTrackSource, LegacyTrackProperties, CharacterData>,
+	extends ProgressLike<
+			LegacyTrackSource,
+			LegacyTrackProperties,
+			CharacterModel
+		>,
 		LegacyTrackProperties {}
 export interface LegacyTrackProperties
 	extends ProgressLikeProperties,

@@ -9,7 +9,7 @@ import type { LegacyTrackSource } from '../../model/LegacyTrack'
 import { LegacyTrack } from '../../model/LegacyTrack'
 import type { IronswornActor } from '../actor'
 
-export class CharacterData extends foundry.abstract.TypeDataModel<
+export class CharacterModel extends foundry.abstract.TypeDataModel<
 	CharacterDataSourceData,
 	CharacterDataPropertiesData,
 	IronswornActor<'character'>
@@ -27,7 +27,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 
 	static _enableV10Validation = true
 
-	async burnMomentum(this: CharacterData) {
+	async burnMomentum(this: CharacterModel) {
 		if (this.canBurnMomentum) {
 			await this.parent.update({
 				system: { 'momentum.value': this.parent.system.momentum.resetValue }
@@ -140,7 +140,7 @@ export class CharacterData extends foundry.abstract.TypeDataModel<
 		return source
 	}
 }
-export interface CharacterData extends CharacterDataPropertiesData {}
+export interface CharacterModel extends CharacterDataPropertiesData {}
 export interface CharacterDataPropertiesData extends CharacterDataSourceData {
 	health: ConditionMeterField
 	spirit: ConditionMeterField
@@ -211,6 +211,6 @@ export interface CharacterDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: CharacterData
-	system: CharacterData
+	data: CharacterModel
+	system: CharacterModel
 }

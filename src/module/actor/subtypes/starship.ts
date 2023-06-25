@@ -2,7 +2,7 @@ import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import type { DataSchema } from '../../fields/utils'
 
-export class StarshipData extends foundry.abstract.TypeDataModel<
+export class StarshipModel extends foundry.abstract.TypeDataModel<
 	StarshipDataSourceData,
 	StarshipDataSourceData,
 	IronswornActor<'starship'>
@@ -20,7 +20,7 @@ export class StarshipData extends foundry.abstract.TypeDataModel<
 		}
 	}
 }
-export interface StarshipData extends StarshipDataSourceData {}
+export interface StarshipModel extends StarshipDataSourceData {}
 
 interface StarshipDataSourceData {
 	debility: {
@@ -41,6 +41,6 @@ export interface StarshipDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: StarshipData
-	system: StarshipData
+	data: StarshipModel
+	system: StarshipModel
 }
