@@ -1,12 +1,12 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { PartialDeep } from 'dataforged'
 import { IronswornItem } from './item'
-import { AssetData } from './subtypes/asset'
-import { BondsetData } from './subtypes/bondset'
-import { DelveDomainData } from './subtypes/delve-domain'
-import { DelveThemeData } from './subtypes/delve-theme'
-import { ProgressData } from './subtypes/progress'
-import { SFMoveData } from './subtypes/sfmove'
+import { AssetModel } from './subtypes/asset'
+import { BondsetModel } from './subtypes/bondset'
+import { DelveDomainModel } from './subtypes/delve-domain'
+import { DelveThemeModel } from './subtypes/delve-theme'
+import { ProgressModel } from './subtypes/progress'
+import { SFMoveModel } from './subtypes/sfmove'
 import type { ChallengeRank } from '../constants'
 import type { AssetDataProperties, AssetDataSource } from './subtypes/asset'
 import type {
@@ -33,12 +33,12 @@ const dataModels: Partial<
 		typeof foundry.abstract.TypeDataModel<any, any>
 	>
 > = {
-	'delve-theme': DelveThemeData,
-	'delve-domain': DelveDomainData,
-	progress: ProgressData,
-	asset: AssetData,
-	sfmove: SFMoveData,
-	bondset: BondsetData
+	'delve-theme': DelveThemeModel,
+	'delve-domain': DelveDomainModel,
+	progress: ProgressModel,
+	asset: AssetModel,
+	sfmove: SFMoveModel,
+	bondset: BondsetModel
 }
 
 type ItemType = ConfiguredData<'Item'>['type']

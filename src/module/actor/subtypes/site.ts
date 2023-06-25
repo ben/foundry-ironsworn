@@ -8,7 +8,7 @@ import type { DataSchema } from '../../fields/utils'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
 
-export class SiteData extends foundry.abstract.TypeDataModel<
+export class SiteModel extends foundry.abstract.TypeDataModel<
 	SiteDataSourceData,
 	SiteDataSourceData,
 	IronswornActor<'site'>
@@ -175,7 +175,7 @@ export class SiteData extends foundry.abstract.TypeDataModel<
 	}
 }
 
-export interface SiteData extends SiteDataSourceData {}
+export interface SiteModel extends SiteDataSourceData {}
 
 interface SiteDataSourceData {
 	objective: string
@@ -199,6 +199,6 @@ export interface SiteDataProperties {
 	/**
 	 * @deprecated
 	 */
-	data: SiteData
-	system: SiteData
+	data: SiteModel
+	system: SiteModel
 }
