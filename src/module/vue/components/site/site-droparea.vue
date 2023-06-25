@@ -23,7 +23,10 @@
 						top: var(--ironsworn-spacer-md);
 						right: var(--ironsworn-spacer-md);
 					">
-					<BtnDocDelete block :document="foundryitem()" />
+					<BtnDocDelete
+						v-if="foundryitem() != null"
+						block
+						:document="(foundryitem() as IronswornItem)" />
 					<IronBtn block icon="fa:pen-to-square" @click="edit" />
 				</div>
 			</div>
@@ -52,9 +55,10 @@ import IronBtn from '../buttons/iron-btn.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 import DropTarget from '../../drop-target.vue'
 import BtnDocDelete from '../buttons/btn-doc-delete.vue'
+import type { IronswornItem } from '../../../item/item'
 
 const props = defineProps<{
-	item: any
+	item: ItemSource<'delve-domain'> | ItemSource<'delve-theme'>
 	itemType: string
 	titleKey: string
 	compendiumKey: string

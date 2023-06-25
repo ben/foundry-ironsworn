@@ -20,8 +20,7 @@
 </template>
 <script lang="ts" setup>
 import { omit } from 'lodash-es'
-
-import { computed, inject, nextTick, ref, watch } from 'vue'
+import { computed, inject, ref } from 'vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import type {
 	FocusActivePanel,
@@ -81,17 +80,21 @@ function handleKeydown(event: KeyboardEvent) {
 	switch (true) {
 		case horizontal && event.key === 'ArrowRight':
 		case vertical && event.key === 'ArrowDown':
-			event.preventDefault()
-			const nextTabIndex = Math.min(currentTabIndex + 1, lastTabIndex)
-			const nextTabKey = tabState.tabKeys[nextTabIndex]
-			setActiveTab(nextTabKey)
+			{
+				event.preventDefault()
+				const nextTabIndex = Math.min(currentTabIndex + 1, lastTabIndex)
+				const nextTabKey = tabState.tabKeys[nextTabIndex]
+				setActiveTab(nextTabKey)
+			}
 			break
 		case horizontal && event.key === 'ArrowLeft':
 		case vertical && event.key === 'ArrowUp':
-			event.preventDefault()
-			const previousTabIndex = Math.max(currentTabIndex - 1, 0)
-			const previousTabKey = tabState.tabKeys[previousTabIndex]
-			setActiveTab(previousTabKey)
+			{
+				event.preventDefault()
+				const previousTabIndex = Math.max(currentTabIndex - 1, 0)
+				const previousTabKey = tabState.tabKeys[previousTabIndex]
+				setActiveTab(previousTabKey)
+			}
 			break
 		// If in horizontal mode, focus the active panel on ArrowDown, for screenreaders
 		case horizontal && event.key === 'ArrowDown':
