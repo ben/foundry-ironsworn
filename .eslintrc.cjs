@@ -41,42 +41,48 @@ module.exports = {
 		'no-undef': 'off',
 
 		// FIXME: part of standard-ts. not an awful idea, but it's not doable via autofix, so it's disabled for now
-		'@typescript-eslint/explicit-function-return-type': 'off',
+		'@typescript-eslint/explicit-function-return-type': 'off'
 
 		// prefer lodash-es to regular lodash, and FVTT-provided utilities to lodash utilities
-		'no-restricted-imports': [
-			'error',
-			{
-				paths: [
+	},
+	overrides: [
+		{
+			files: '*.ts',
+			rules: {
+				// restrict imports that duplicate libraries provided by FVTT at run-time
+				'no-restricted-imports': [
+					'error',
 					{
-						name: 'marked',
-						message: 'Please use CONFIG.IRONSWORN.showdown instead.'
-					},
-					{
-						name: 'lodash',
-						message: 'Please use lodash-es instead.'
-					},
-					{
-						name: 'lodash-es',
-						importNames: ['clamp'],
-						message: 'Please use FVTT Math.clamped instead.'
-					},
-					{
-						name: 'lodash-es',
-						importNames: ['capitalize'],
-						message: 'Please use FVTT String#capitalize instead.'
-					},
-					{
-						name: 'lodash-es',
-						importNames: ['range'],
-						message:
-							'Please use FVTT Array#fromRange instead, where possible. Note that Array#fromRange orders its parameters differently, and its maximum is inclusive rather than exclusive.'
+						paths: [
+							{
+								name: 'marked',
+								message: 'Please use CONFIG.IRONSWORN.showdown instead.'
+							},
+							{
+								name: 'lodash',
+								message: 'Please use lodash-es instead.'
+							},
+							{
+								name: 'lodash-es',
+								importNames: ['clamp'],
+								message: 'Please use FVTT Math.clamped instead.'
+							},
+							{
+								name: 'lodash-es',
+								importNames: ['capitalize'],
+								message: 'Please use FVTT String#capitalize instead.'
+							},
+							{
+								name: 'lodash-es',
+								importNames: ['range'],
+								message:
+									'Please use FVTT Array#fromRange instead, where possible. Note that Array#fromRange orders its parameters differently, and its maximum is inclusive rather than exclusive.'
+							}
+						]
 					}
 				]
 			}
-		]
-	},
-	overrides: [
+		},
 		{
 			files: ['*.ts', '*.js', '*.cjs'],
 			parserOptions: { project: './tsconfig.json' }
