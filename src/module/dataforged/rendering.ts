@@ -1,6 +1,5 @@
 import type { IMove } from 'dataforged'
 import { get, set } from 'lodash-es'
-import { marked } from 'marked'
 import { hash } from '.'
 
 const COMPENDIUM_KEY_MAP = {
@@ -49,8 +48,8 @@ export function renderLinksInStr(text: string): string {
 	})
 }
 
-export function renderMarkdown(md: string, markedFn = marked.parse) {
-	return markedFn(renderLinksInStr(md))
+export function renderMarkdown(md: string) {
+	return CONFIG.IRONSWORN.showdown.makeHtml(renderLinksInStr(md))
 }
 
 export function renderLinksInMove(move: IMove) {

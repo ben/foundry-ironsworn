@@ -6,7 +6,8 @@
 		"lib": ["es2015", "es2019", "dom"],
 		"types": [
 			"@league-of-foundry-developers/foundry-vtt-types",
-			"vite-plugin-svg-icons/client"
+			"vite-plugin-svg-icons/client",
+			"showdown"
 		],
 		"moduleResolution": "node",
 		"sourceMap": true,

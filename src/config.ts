@@ -34,6 +34,8 @@ export interface IronswornConfig {
 	actorClass: typeof IronswornActor
 	OracleTable: typeof OracleTable
 
+	showdown: showdown.Converter
+
 	applications: {
 		// Dialogs
 		FirstStartDialog: typeof FirstStartDialog
@@ -65,6 +67,11 @@ export interface IronswornConfig {
 export const IRONSWORN: IronswornConfig = {
 	actorClass: IronswornActor,
 	OracleTable,
+
+	// TODO: if we wanted to implement enrichMarkdown as a showdown plugin, we could use our own instance instead.
+	get showdown() {
+		return JournalTextPageSheet._converter
+	},
 
 	applications: {
 		FirstStartDialog,

@@ -1,5 +1,4 @@
 import { range, sum } from 'lodash-es'
-import { marked } from 'marked'
 import {
 	ACTION_DICE_ROLLED,
 	ACTION_DIE_SIDES,
@@ -209,12 +208,8 @@ export class IronswornHandlebarsHelpers {
 	}
 
 	static enrichMarkdown(md?: string) {
-		if (!md) return ''
-		const html = marked.parse(md, {
-			gfm: true,
-			mangle: false,
-			headerIds: false
-		})
+		if (md == null) return ''
+		const html = CONFIG.IRONSWORN.showdown.makeHtml(md)
 		return IronswornHandlebarsHelpers.enrichHtml(html)
 	}
 
