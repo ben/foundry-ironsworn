@@ -22,9 +22,14 @@
 			<SfMoverow
 				v-if="moves.revealADanger"
 				:move="moves.revealADanger"
-				class="nogrow"
-				:oracle-disabled="!hasThemeAndDomain"
-				@oracleClick="revealADanger" />
+				class="nogrow">
+				<template #btn-oracle="{ disabled, ...props }">
+					<BtnOracle
+						v-bind="props"
+						:disabled="disabled || !hasThemeAndDomain"
+						@click="revealADanger" />
+				</template>
+			</SfMoverow>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
@@ -36,8 +41,11 @@
 			<SfMoverow
 				v-if="moves.locateObjective"
 				:move="moves.locateObjective"
-				class="nogrow"
-				@rollClick="locateObjective" />
+				class="nogrow">
+				<template #btn-roll-move="{ disabled, ...props }">
+					<BtnRollmove v-bind="props" :clickFn="locateObjective" />
+				</template>
+			</SfMoverow>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
@@ -62,6 +70,8 @@ import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
+import BtnOracle from '../buttons/btn-oracle.vue'
+import BtnRollmove from '../buttons/btn-rollmove.vue'
 
 import SfMoverow from '../sf-moverow.vue'
 
@@ -114,15 +124,11 @@ async function locateObjective() {
 	if (!$site) return
 	const progress = Math.floor($site.system.current / 4)
 
-	IronswornPrerollDialog.showForOfficialMove(
-		'Ironsworn/Moves/Delve/Locate_Your_Objective',
-		{
-			actor: $site,
-			progress: {
-				source: $site.name ?? '',
-				value: progress
-			}
-		}
+	IronswornPrerollDialog.showForProgress(
+		$site.name ?? '',
+		progress,
+		$site,
+		'Ironsworn/Moves/Delve/Locate_Your_Objective'
 	)
 }
 </script>
