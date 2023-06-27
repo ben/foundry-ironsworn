@@ -49,6 +49,10 @@ module.exports = {
 			{
 				paths: [
 					{
+						name: 'marked',
+						message: 'Please use CONFIG.IRONSWORN.showdown instead.'
+					},
+					{
 						name: 'lodash',
 						message: 'Please use lodash-es instead.'
 					},
