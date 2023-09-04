@@ -5,6 +5,7 @@ import { hash } from '.'
 const COMPENDIUM_KEY_MAP = {
 	'Ironsworn/Moves': 'ironswornmoves',
 	'Ironsworn/Oracles': 'ironswornoracles',
+	'Ironsworn/Encounters': 'ironswornfoes',
 	'Starforged/Moves': 'starforgedmoves',
 	'Starforged/Oracles': 'starforgedoracles',
 	'Starforged/Encounters': 'starforgedencounters'

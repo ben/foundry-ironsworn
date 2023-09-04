@@ -2,25 +2,26 @@ import type { ItemDataConstructorData } from '@league-of-foundry-developers/foun
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type {
 	IAssetType,
+	IEncounterIronsworn,
+	IEncounterStarforged,
+	IEncounterVariant,
 	IMoveCategory,
 	IOracle,
 	IOracleCategory,
 	Ironsworn,
-	IRow,
 	ISettingTruth,
 	Starforged
 } from 'dataforged'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { starforged, ironsworn } from 'dataforged'
-import { isArray, isObject, max } from 'lodash-es'
+import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
+import { ironsworn, starforged } from 'dataforged'
+import { isArray, isObject } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
-import type { IronswornItem } from '../item/item'
-import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import { IronswornJournalPage } from '../journal/journal-entry-page'
-import { OracleTableResult } from '../roll-table/oracle-table-result'
+import { OracleTable } from '../roll-table/oracle-table'
 import {
 	ISAssetTypes,
 	ISMoveCategories,
@@ -65,16 +66,80 @@ export function hash(str: string): string {
 
 const PACKS = [
 	'foundry-ironsworn.starforgedassets',
-	'foundry-ironsworn.starforgedencounters',
 	'foundry-ironsworn.starforgedmoves',
 	'foundry-ironsworn.starforgedoracles',
 	'foundry-ironsworn.starforgedtruths',
-	'foundry-ironsworn.foeactorssf',
+	'foundry-ironsworn.starforged-encounters',
 	'foundry-ironsworn.ironswornassets',
 	'foundry-ironsworn.ironswornoracles',
 	'foundry-ironsworn.ironswornmoves',
-	'foundry-ironsworn.ironsworntruths'
-] as const
+	'foundry-ironsworn.ironsworntruths',
+	'foundry-ironsworn.ironsworn-encounters'
+]
+
+const FOE_IMAGES = {
+	Broken: 'icons/creatures/mammals/humanoid-fox-cat-archer.webp',
+	'Common Folk': 'icons/tools/hand/shovel-spade-steel-blue-brown.webp',
+	Hunter: 'icons/environment/people/archer.webp',
+	Mystic: 'icons/environment/people/cleric-orange.webp',
+	Raider: 'icons/sundries/flags/banner-flag-pirate.webp',
+	Warrior: 'icons/skills/melee/hand-grip-sword-red.webp',
+	Husk: 'icons/magic/earth/strike-body-stone-crumble.webp',
+	Zealot: 'icons/environment/people/cleric-grey.webp',
+	Elf: 'icons/creatures/magical/humanoid-horned-rider.webp',
+	Giant: 'icons/creatures/magical/humanoid-giant-forest-blue.webp',
+	Primordial: 'icons/creatures/magical/spirit-undead-horned-blue.webp',
+	Troll: 'icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp',
+	Varou: 'icons/creatures/mammals/wolf-shadow-black.webp',
+	Atanya: 'icons/magic/air/wind-weather-sailing-ship.webp',
+	Merrow: 'icons/creatures/fish/fish-man-eye-green.webp',
+	Bear: 'icons/creatures/abilities/bear-roar-bite-brown-green.webp',
+	Boar: 'icons/commodities/treasure/figurine-boar.webp',
+	Gaunt: 'icons/magic/fire/elemental-creature-horse.webp',
+	'Marsh Rat': 'icons/creatures/mammals/rodent-rat-diseaed-gray.webp',
+	Wolf: 'icons/creatures/abilities/wolf-howl-moon-purple.webp',
+	Bladewing: 'icons/creatures/magical/spirit-undead-winged-ghost.webp',
+	'Carrion Newt':
+		'icons/creatures/reptiles/chameleon-camouflage-green-brown.webp',
+	'Cave Lion': 'icons/creatures/abilities/lion-roar-yellow.webp',
+	'Deep Rat': 'icons/creatures/mammals/rodent-rat-green.webp',
+	'Nightmare Spider':
+		'icons/creatures/invertebrates/spider-mandibles-brown.webp',
+	'Shroud Crab': 'icons/consumables/meat/claw-crab-lobster-serrated-pink.webp',
+	Trog: 'icons/creatures/reptiles/lizard-iguana-green.webp',
+	Basilisk: 'icons/creatures/reptiles/snake-poised-white.webp',
+	'Elder Beast':
+		'icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp',
+	'Harrow Spider': 'icons/creatures/invertebrates/spider-web-black.webp',
+	Leviathan: 'icons/creatures/reptiles/serpent-horned-green.webp',
+	Mammoth: 'icons/commodities/leather/fur-white.webp',
+	Wyvern: 'icons/creatures/abilities/wolf-heads-swirl-purple.webp',
+	Chitter: 'icons/creatures/invertebrates/bug-sixlegged-gray.webp',
+	Gnarl: 'icons/magic/nature/tree-animated-strike.webp',
+	'Iron-Wracked Beast': 'icons/environment/wilderness/statue-hound-horned.webp',
+	Kraken: 'icons/creatures/fish/squid-kraken-orange.webp',
+	Nightspawn: 'icons/creatures/unholy/demon-horned-black-yellow.webp',
+	Rhaskar: 'icons/creatures/fish/fish-marlin-swordfight-blue.webp',
+	Wyrm: 'icons/creatures/eyes/lizard-single-slit-pink.webp',
+	Bonewalker: 'icons/magic/death/undead-skeleton-worn-blue.webp',
+	Frostbound: 'icons/creatures/magical/spirit-undead-ghost-blue.webp',
+	Chimera: 'icons/creatures/magical/spirit-earth-stone-magma-yellow.webp',
+	Haunt: 'icons/magic/death/undead-ghost-strike-white.webp',
+	Hollow: 'icons/consumables/plants/grass-leaves-green.webp',
+	'Iron Revenant': 'icons/creatures/magical/construct-golem-stone-blue.webp',
+	Sodden: 'icons/magic/death/undead-ghost-scream-teal.webp',
+	Blighthound: 'icons/commodities/treasure/figurine-dog.webp',
+	'Bog Rot': 'icons/magic/death/hand-dirt-undead-zombie.webp',
+	Bonehorde: 'icons/skills/trades/academics-study-archaeology-bones.webp',
+	Thrall: 'icons/creatures/abilities/mouth-teeth-human.webp',
+	Wight: 'icons/creatures/magical/humanoid-silhouette-green.webp',
+	'Blood Thorn': 'icons/consumables/plants/thorned-stem-vine-green.webp',
+	'Circle of Stones': 'icons/environment/wilderness/arch-stone.webp',
+	Glimmer: 'icons/magic/nature/elemental-plant-humanoid.webp',
+	Gloom: 'icons/magic/perception/silhouette-stealth-shadow.webp',
+	Maelstrom: 'icons/magic/water/vortex-water-whirlpool.webp',
+	Tempest: 'icons/magic/lightning/bolts-salvo-clouds-sky.webp'
+} as const
 
 /**
  * Converts JSON from dataforged resources into foundry packs. Requires packs to
@@ -105,9 +170,7 @@ export async function importFromDataforged() {
 		processISOracles(),
 		// processISTruths(), // Re-enable when DF includes them
 		processSFTruths(),
-		processSFEncounters().then(async () => {
-			await processSFFoes()
-		})
+		processSFEncounters()
 	])
 
 	// Lock the packs again
@@ -291,84 +354,99 @@ async function processISOracles() {
 	})
 }
 
-async function processSFEncounters() {
-	const encountersToCreate = [] as Array<
-		ItemDataConstructorData & Record<string, unknown>
-	>
-	for (const encounter of starforged.Encounters) {
-		const description = await renderTemplate(
-			'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
-			{
-				...encounter,
-				variantLinks: encounter.Variants.map((x) =>
-					renderLinksInStr(`[${x.Name}](${x.$id})`)
-				)
-			}
+type EncounterConstructorData = Omit<
+	ActorDataConstructorData & DeepPartial<ActorSource<'foe'>>,
+	'data'
+>
+
+function hasVariants(data: unknown): data is IEncounterStarforged {
+	return Array.isArray((data as any).Variants)
+}
+
+async function processEncounter(
+	encounter: IEncounterIronsworn | IEncounterStarforged | IEncounterVariant,
+	img: string
+): Promise<EncounterConstructorData> {
+	let variantLinks: string[] = []
+	if (hasVariants(encounter)) {
+		variantLinks = encounter.Variants.map((x) =>
+			renderLinksInStr(`[${x.Name}](${x.$id})`)
 		)
+	}
+	const description = await renderTemplate(
+		'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
+		{ ...encounter, variantLinks }
+	)
 
-		encountersToCreate.push({
-			_id: hashLookup(encounter.$id),
-			type: 'progress',
-			name: encounter.Name,
-			img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
-			system: {
-				description,
-				rank: encounter.Rank
-			}
-		})
-
-		for (const variant of encounter.Variants) {
-			const variantDescription = await renderTemplate(
-				'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
-				{
-					...encounter,
-					...variant,
-					Category: variant.Nature ?? encounter.Nature,
-					CategoryDescription: (variant as any).Summary ?? encounter.Summary
-				}
-			)
-
-			encountersToCreate.push({
-				_id: hashLookup(variant.$id),
-				type: 'progress',
-				name: variant.Name,
-				img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
-				system: {
-					description: variantDescription,
-					rank: variant.Rank ?? encounter.Rank
-				}
-			})
+	const progressTrack: Omit<
+		ItemDataConstructorData & DeepPartial<ItemSource<'progress'>>,
+		'data'
+	> = {
+		type: 'progress',
+		name: encounter.Name,
+		img,
+		system: {
+			subtype: 'foe',
+			starred: false,
+			hasTrack: true,
+			rank: encounter.Rank,
+			description
 		}
 	}
-	await Item.createDocuments(encountersToCreate, {
-		pack: 'foundry-ironsworn.starforgedencounters',
-		keepId: true
+	return {
+		_id: hashLookup(encounter.$id),
+		type: 'foe',
+		name: encounter.Name,
+		img,
+		items: [progressTrack],
+		system: {
+			dfid: encounter.$id
+		}
+	}
+}
+
+async function processISFoes() {
+	const encountersToCreate: Array<Promise<EncounterConstructorData>> = []
+	for (const encounterType of ironsworn.Encounters) {
+		for (const encounter of encounterType.Encounters) {
+			const img = FOE_IMAGES[encounter.Name]
+			encountersToCreate.push(processEncounter(encounter, img))
+		}
+	}
+	await IronswornActor.createDocuments(await Promise.all(encountersToCreate), {
+		pack: 'foundry-ironsworn.ironswornfoes',
+		keepId: true,
+		keepEmbeddedIds: true,
+		recursive: true
 	})
 }
 
-/** Processes *existing* Starforged encounter Items into actors. Run it immediately after processSFEncounters or it won't work! */
-async function processSFFoes() {
-	const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
-	const foeItems = (await foesPack?.getDocuments()) as Array<
-		StoredDocument<IronswornItem>
-	>
-	for (const foeItem of foeItems ?? []) {
-		const actor = await IronswornActor.create(
-			{
-				name: foeItem.name ?? 'wups',
-				img: foeItem.img,
-				type: 'foe'
-			},
-			{ pack: 'foundry-ironsworn.foeactorssf' }
+async function processSFEncounters() {
+	const encountersToCreate: Array<Promise<EncounterConstructorData>> = []
+	for (const encounter of starforged.Encounters) {
+		encountersToCreate.push(
+			processEncounter(
+				encounter,
+				DATAFORGED_ICON_MAP.starforged.foe[encounter.$id]
+			)
 		)
-		await actor?.createEmbeddedDocuments('Item', [
-			{
-				name: foeItem.name ?? 'wups',
-				type: 'progress',
-				system: foeItem.system as unknown as Record<string, unknown>
-			}
-		])
+
+		for (const variant of encounter.Variants) {
+			encountersToCreate.push(
+				processEncounter(
+					variant,
+					DATAFORGED_ICON_MAP.starforged.foe[encounter.$id]
+				)
+			)
+		}
 	}
+
+	await IronswornActor.createDocuments(await Promise.all(encountersToCreate), {
+		pack: 'foundry-ironsworn.starforged-encounters',
+		keepId: true,
+		keepEmbeddedIds: true,
+		recursive: true
+	})
 }
 
 async function processTruths(

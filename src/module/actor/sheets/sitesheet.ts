@@ -1,6 +1,5 @@
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import siteSheetVue from '../../vue/site-sheet.vue'
-
 export class IronswornSiteSheet extends VueActorSheet {
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
@@ -8,6 +7,15 @@ export class IronswornSiteSheet extends VueActorSheet {
 			height: 700,
 			rootComponent: siteSheetVue
 		}) as any
+	}
+
+	async _onDropActor(event: DragEvent, data: ActorSheet.DropData.Actor) {
+		// Fetch the actor. We only want to override denizens (foe-type actors)
+		const droppedActor = await Actor.fromDropData(data as any)
+		if (droppedActor == null) return false
+		if (droppedActor.type !== 'foe') {
+			return await super._onDropActor(event, data)
+		}
 	}
 
 	async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
@@ -27,13 +35,13 @@ export class IronswornSiteSheet extends VueActorSheet {
 			'.ironsworn__denizen__drop'
 		)[0]
 		if (dropTarget == null) return false
-		const idx = parseInt(dropTarget.dataset.idx || '')
-		const { denizens } = this.actor.system
+		const idx = parseInt(dropTarget?.dataset.idx || '')
+		const { denizens } = this.actor.system as SiteDataSourceData
 		if (!denizens[idx]) return false
 
 		// Set the denizen description
-		denizens[idx].text = item.link
-		void this.actor.update({ system: { denizens } }, { render: true })
+		denizens[idx].text = droppedActor.link
+		this.actor.update({ system: { denizens } }, { render: true })
 		return true
 	}
 }

@@ -1,3 +1,5 @@
+import type { SystemSubtype } from '../../config'
+
 function getIndexEntry(el: HTMLElement) {
 	const { documentId } = el.dataset
 	const packId = $(el).parents('.compendium').data('pack')
@@ -17,7 +19,10 @@ export function registerDragAndDropHooks() {
 						typeof getIndexEntry
 					> & { type: string }
 
-					CONFIG.IRONSWORN.emitter.emit('dragStart', indexEntry?.type)
+					CONFIG.IRONSWORN.emitter.emit(
+						'dragStart',
+						indexEntry?.type as SystemSubtype
+					)
 				}
 			)
 			.on(
@@ -27,7 +32,10 @@ export function registerDragAndDropHooks() {
 						typeof getIndexEntry
 					> & { type: string }
 
-					CONFIG.IRONSWORN.emitter.emit('dragEnd', indexEntry?.type)
+					CONFIG.IRONSWORN.emitter.emit(
+						'dragEnd',
+						indexEntry?.type as SystemSubtype
+					)
 				}
 			)
 	})

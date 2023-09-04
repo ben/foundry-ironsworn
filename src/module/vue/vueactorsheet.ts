@@ -1,4 +1,7 @@
+import type { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+
 import type { App } from 'vue'
+import type { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import { $ActorKey } from './provisions'
 import { VueAppMixin } from './vueapp.js'
@@ -47,21 +50,45 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 		this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
 	}
 
+	protected async _onDropActor(
+		event: DragEvent,
+		data: ActorSheet.DropData.Actor
+	): Promise<unknown> {
+		const result = await super._onDropActor(event as any, data as any)
+		if (result === false) return result
+
+		if (this.actor.type !== 'character' || (data as any).uuid == null)
+			return false
+
+		const document = (await fromUuid((data as any).uuid)) as
+			| IronswornActor
+			| undefined
+		if (document == null || document.type !== 'foe') return false
+		return await this.actor.createEmbeddedDocuments(
+			'Item',
+			document.items.map(
+				(item) => item.toObject(true) as ItemDataConstructorData
+			) as any
+		)
+	}
+
 	protected async _onDrop(event: DragEvent) {
 		const data = (TextEditor as any).getDragEventData(event)
 
 		if (data.type === 'AssetBrowserData') {
-			const document = (await fromUuid(data.uuid)) as
-				| StoredDocument<IronswornItem>
-				| undefined
+			const document = (await fromUuid(data.uuid)) as IronswornItem | undefined
 
 			if (document != null) {
-				this.actor.createEmbeddedDocuments('Item', [
-					(document as any).toObject()
+				await this.actor.createEmbeddedDocuments('Item', [
+					document.toObject() as any
 				])
 			}
 		}
 
 		super._onDrop(event)
 	}
+}
+export interface VueActorSheet
+	extends ReturnType<typeof VueAppMixin<typeof ActorSheet>> {
+	get actor(): IronswornActor
 }

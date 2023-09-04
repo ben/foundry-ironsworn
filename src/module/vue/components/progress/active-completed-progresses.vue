@@ -2,7 +2,7 @@
 	<article class="flexcol">
 		<DropTarget
 			:is="ProgressList"
-			drop-type="progress"
+			:drop-types="['progress', 'foe']"
 			:compact-progress="compactProgress"
 			:excluded-subtypes="excludedSubtypes"
 			:progress-stars="progressStars"

@@ -215,8 +215,8 @@ i {
 // FVTT doesn't get subtype icons from items in compendium packs, so we override them depending on the pack
 
 // NPC actor
-a[data-pack='foundry-ironsworn.foeactorsis'],
-a[data-pack='foundry-ironsworn.foeactorssf'] {
+a[data-pack='foundry-ironsworn.ironswornfoes'],
+a[data-pack='foundry-ironsworn.starforgedencounters'] {
 	i::before {
 		content: '\f630';
 	}
@@ -268,13 +268,5 @@ a[data-pack='foundry-ironsworn.starforgedmoves'] {
 			mask-size: contain;
 			mask-image: var(--isicon-d10-tilt);
 		}
-	}
-}
-
-// NPC progress track
-a[data-pack='foundry-ironsworn.ironswornfoes'],
-a[data-pack='foundry-ironsworn.starforgedencounters'] {
-	i::before {
-		content: '\2a';
 	}
 }

@@ -88,6 +88,9 @@ Hooks.once('init', async () => {
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'
 	CONFIG.TableResult.documentClass = OracleTableResult
 
+	// configure index fields
+	CONFIG.Actor.compendiumIndexFields.push('system.dfid')
+
 	// CONFIG.RollTable.resultTemplate =
 	// 	'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 

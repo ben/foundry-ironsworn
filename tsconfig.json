@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"target": "es2018",
 		"module": "esnext",
-		"lib": ["es2015", "es2019", "dom"],
+		"lib": ["es2015", "es2019", "es2021", "dom"],
 		"types": [
 			"@league-of-foundry-developers/foundry-vtt-types",
 			"vite-plugin-svg-icons/client",

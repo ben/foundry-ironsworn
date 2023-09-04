@@ -1,5 +1,5 @@
 <template>
-	<DropTarget is="div" class="flexcol box" :drop-type="itemType">
+	<DropTarget is="div" class="flexcol box" :drop-types="itemTypes">
 		<div
 			v-if="item"
 			style="position: relative; padding: var(--ironsworn-spacer-xl)">
@@ -56,10 +56,11 @@ import BtnCompendium from '../buttons/btn-compendium.vue'
 import DropTarget from '../../drop-target.vue'
 import BtnDocDelete from '../buttons/btn-doc-delete.vue'
 import type { IronswornItem } from '../../../item/item'
+import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 const props = defineProps<{
 	item: ItemSource<'delve-domain'> | ItemSource<'delve-theme'>
-	itemType: string
+	itemTypes: ConfiguredData<'Item'>['type'][]
 	titleKey: string
 	compendiumKey: string
 }>()

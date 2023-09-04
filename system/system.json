@@ -91,12 +91,10 @@
 		{
 			"name": "Ironsworn Core Rulebook",
 			"packs": [
-        "ironswornfoes",
-				"foeactorsis",
+        "ironsworn-encounters",
 				"ironswornoracles",
 				"ironswornmoves",
 				"ironswornassets",
-				"ironswornfoes",
 				"ironswornscenes"
 			]
 		},
@@ -110,8 +108,7 @@
 		{
 			"name": "Starforged Core Rulebook",
 			"packs": [
-				"foeactorssf",
-				"starforgedencounters",
+				"starforged-encounters",
 				"starforged-sectors",
 				"starforgedassets",
 				"starforgedmoves",
@@ -122,17 +119,17 @@
 	],
   "packs": [
     {
-      "name": "foeactorsis",
-      "label": "Ironsworn Foe Actors",
+      "name": "ironsworn-encounters",
+      "label": "Ironsworn Encounters",
       "system": "foundry-ironsworn",
-      "path": "packs/foe-actors-is.db",
+      "path": "packs/ironsworn-encounters.db",
       "type": "Actor"
     },
     {
-      "name": "foeactorssf",
-      "label": "Starforged Foe Actors",
+      "name": "starforged-encounters",
+      "label": "Starforged Encounters",
       "system": "foundry-ironsworn",
-      "path": "packs/foe-actors-sf.db",
+      "path": "packs/starforged-encounters.db",
       "type": "Actor"
     },
     {
@@ -171,13 +168,6 @@
       "type": "Item"
     },
     {
-      "name": "ironswornfoes",
-      "label": "Ironsworn Foes",
-      "system": "foundry-ironsworn",
-      "path": "packs/foes.db",
-      "type": "Item"
-    },
-    {
       "name": "ironswornscenes",
       "label": "Ironsworn Maps",
       "system": "foundry-ironsworn",
@@ -196,13 +186,6 @@
       "label": "Starforged Assets",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-assets.db",
-      "type": "Item"
-    },
-    {
-      "name": "starforgedencounters",
-      "label": "Starforged Encounters",
-      "system": "foundry-ironsworn",
-      "path": "packs/starforged-encounters.db",
       "type": "Item"
     },
     {

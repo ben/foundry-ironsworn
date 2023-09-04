@@ -49,13 +49,14 @@ import RankPips from 'component:progress/rank-pips.vue'
 import MceEditor from 'component:mce-editor.vue'
 import ProgressTrack from 'component:progress/progress-track.vue'
 import BtnRollprogress from 'component:buttons/btn-rollprogress.vue'
-import type { IronswornItem } from '../../../item/item'
 import type { IronswornActor } from '../../../actor/actor'
+import type { IronswornItem } from '../../../item/item'
 
 const actor = inject<Ref<ActorSource<'foe'>>>(ActorKey)
 const $actor = inject<IronswornActor<'foe'>>($ActorKey)
 
 const props = defineProps<{ item: ItemSource<'progress'> }>()
+
 const $item = $actor?.items.get(
 	props.item._id as string
 ) as IronswornItem<'progress'>
