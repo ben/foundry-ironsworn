@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.0
+
 - Add a hook that fires when custom oracle registration is ready ([#864](https://github.com/ben/foundry-ironsworn/pull/864))
 - Organize compendium packs into folders
 - Improve appearance of v11 compendium sidebar and popouts with the "Phosphor" theme

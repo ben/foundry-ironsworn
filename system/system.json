@@ -3,10 +3,10 @@
   "title": "Ironsworn & Starforged",
   "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkin.",
   "license": "LICENSE.txt",
-  "version": "1.21.7",
+  "version": "1.22.0",
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
-  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.21.7/ironsworn.zip",
+  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.22.0/ironsworn.zip",
   "compatibility": {
     "minimum": 11,
     "verified": 11
@@ -77,49 +77,49 @@
   "relationships": {
     "requires": [],
     "recommends": [
-			{
-				"id": "dice-so-nice",
-				"type": "module",
-				"compatibility": {
-					"verified": "4.6.8"
-				},
-				"reason": "Makes rolling oracles even more fun. 🎲 Make sure you check the 'Enable 3D dice on Roll Tables' option!"
-			}
-		]
+      {
+        "id": "dice-so-nice",
+        "type": "module",
+        "compatibility": {
+          "verified": "4.6.8"
+        },
+        "reason": "Makes rolling oracles even more fun. 🎲 Make sure you check the 'Enable 3D dice on Roll Tables' option!"
+      }
+    ]
   },
   "packFolders": [
-		{
-			"name": "Ironsworn Core Rulebook",
-			"packs": [
+    {
+      "name": "Ironsworn Core Rulebook",
+      "packs": [
         "ironswornfoes",
-				"foeactorsis",
-				"ironswornoracles",
-				"ironswornmoves",
-				"ironswornassets",
-				"ironswornfoes",
-				"ironswornscenes"
-			]
-		},
-		{
-			"name": "Ironsworn: Delve",
-			"packs": [
-				"ironsworndelvethemes",
-				"ironsworndelvedomains"
-			]
-		},
-		{
-			"name": "Starforged Core Rulebook",
-			"packs": [
-				"foeactorssf",
-				"starforgedencounters",
-				"starforged-sectors",
-				"starforgedassets",
-				"starforgedmoves",
-				"starforgedoracles",
-				"starforgedtruths"
-			]
-		}
-	],
+        "foeactorsis",
+        "ironswornoracles",
+        "ironswornmoves",
+        "ironswornassets",
+        "ironswornfoes",
+        "ironswornscenes"
+      ]
+    },
+    {
+      "name": "Ironsworn: Delve",
+      "packs": [
+        "ironsworndelvethemes",
+        "ironsworndelvedomains"
+      ]
+    },
+    {
+      "name": "Starforged Core Rulebook",
+      "packs": [
+        "foeactorssf",
+        "starforgedencounters",
+        "starforged-sectors",
+        "starforgedassets",
+        "starforgedmoves",
+        "starforgedoracles",
+        "starforgedtruths"
+      ]
+    }
+  ],
   "packs": [
     {
       "name": "foeactorsis",
