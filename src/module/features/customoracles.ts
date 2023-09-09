@@ -230,6 +230,7 @@ export async function registerDefaultOracleTrees() {
 	registerOracleTreeInternal('starforged', starforgedOracles)
 
 	defaultTreesInitialized = true
+	Hooks.call('ironswornOracleTreesReady')
 }
 
 // Available in browser
