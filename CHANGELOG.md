@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fixed a bug where pronouns and callsign wouldn't save ([#870](https://github.com/ben/foundry-ironsworn/pull/870))
+
 ## 1.22.0
 
 - Drop support for Foundry v10, we only support v11 and up now.
