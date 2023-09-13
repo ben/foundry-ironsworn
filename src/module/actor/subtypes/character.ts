@@ -68,8 +68,8 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 		return {
 			biography: new fields.HTMLField(),
 			notes: new fields.HTMLField(),
-			pronouns: new fields.HTMLField(),
-			callsign: new fields.HTMLField(),
+			pronouns: new fields.StringField(),
+			callsign: new fields.StringField(),
 
 			edge: new StatField({ label: 'IRONSWORN.Edge' }),
 			heart: new StatField({ label: 'IRONSWORN.Heart' }),
