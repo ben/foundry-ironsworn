@@ -139,6 +139,8 @@ export interface CharacterModel extends CharacterDataSourceData {}
 export interface CharacterDataSourceData {
 	biography: string
 	notes: string
+	pronouns: string
+	callsign: string
 
 	edge: number
 	heart: number
