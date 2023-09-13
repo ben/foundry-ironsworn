@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.1
+
 - Fixed a bug where pronouns and callsign wouldn't save ([#870](https://github.com/ben/foundry-ironsworn/pull/870))
 
 ## 1.22.0
