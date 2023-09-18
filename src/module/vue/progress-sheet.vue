@@ -8,10 +8,10 @@
 			style="gap: 1em; margin: var(--ironsworn-spacer-lg) 0">
 			<RankPips
 				class="nogrow"
-				:current="data.item.system.track.rank"
-				@change="(r) => set('system.track.rank', r)" />
+				:current="data.item.system.progressTrack.rank"
+				@change="(r) => set('system.progressTrack.rank', r)" />
 			<h4 style="margin: 0; line-height: 22px">
-				{{ $item?.system.track.localizeRank() }}
+				{{ $item?.system.progressTrack.localizeRank() }}
 			</h4>
 			<label class="checkbox nogrow">
 				<input
@@ -23,9 +23,9 @@
 		</div>
 
 		<select
-			v-model="data.item.system.track.subtype"
+			v-model="data.item.system.progressTrack.subtype"
 			class="nogrow"
-			@change="update('system.track.subtype')">
+			@change="update('system.progressTrack.subtype')">
 			<option value="vow">
 				{{ $t('IRONSWORN.ITEM.SubtypeVow') }}
 			</option>
@@ -42,14 +42,14 @@
 		<div class="nogrow">
 			<label class="checkbox">
 				<input
-					v-model="data.item.system.track.enabled"
+					v-model="data.item.system.progressTrack.enabled"
 					type="checkbox"
 					@change="saveChecks" />
 				{{ $t('IRONSWORN.Track') }}
 			</label>
 
 			<CollapseTransition>
-				<div v-if="data.item.system.track?.enabled" class="nogrow">
+				<div v-if="data.item.system.progressTrack?.enabled" class="nogrow">
 					<div
 						class="flexrow nogrow"
 						style="
@@ -57,14 +57,14 @@
 							margin-bottom: var(--ironsworn-spacer-sm);
 						">
 						<IronBtn
-							v-if="data.item.system.track?.enabled"
+							v-if="data.item.system.progressTrack?.enabled"
 							block
 							nogrow
 							:tooltip="$t('IRONSWORN.UnmarkProgress')"
 							icon="fa:caret-left"
 							@click="$item?.system.markProgress(-1)" />
 						<IronBtn
-							v-if="data.item.system.track?.enabled"
+							v-if="data.item.system.progressTrack?.enabled"
 							block
 							nogrow
 							:tooltip="$t('IRONSWORN.MarkProgress')"
@@ -74,8 +74,8 @@
 					<!-- PROGRESS -->
 					<div class="flexrow track nogrow" style="margin-bottom: 1em">
 						<ProgressTrack
-							:ticks="data.item.system.track.ticks"
-							:rank="data.item.system.track.rank" />
+							:ticks="data.item.system.progressTrack.ticks"
+							:rank="data.item.system.progressTrack.rank" />
 					</div>
 				</div>
 			</CollapseTransition>
@@ -155,7 +155,11 @@ provide(
 )
 
 function saveChecks() {
-	update('system.completed', 'system.track.enabled', 'system.clock.enabled')
+	update(
+		'system.completed',
+		'system.progressTrack.enabled',
+		'system.clock.enabled'
+	)
 }
 
 function set(key, value) {

@@ -5,7 +5,8 @@ import type { IronswornJournalPage } from '../journal-entry-page'
 
 /** Model for journal entry pages of the `progress` subtype. Represents a single progress track. */
 export class ProgressTrackModel extends ProgressTrack<
-	IronswornJournalPage<'progress'> & foundry.abstract.Document<any, any, any>
+	IronswornJournalPage<'progressTrack'> &
+		foundry.abstract.Document<any, any, any>
 > {
 	/**
 	 * Mark progress on this track, incrementing `ticks` according to the track's challenge rank.
@@ -33,14 +34,15 @@ export class ProgressTrackModel extends ProgressTrack<
 }
 export interface ProgressTrackModel
 	extends ProgressTrack<
-		IronswornJournalPage<'progress'> & foundry.abstract.Document<any, any, any>
+		IronswornJournalPage<'progressTrack'> &
+			foundry.abstract.Document<any, any, any>
 	> {}
 
 export interface ProgressTrackDataProperties {
-	type: 'progress'
+	type: 'progressTrack'
 	system: ProgressTrackModel
 }
 export interface ProgressTrackDataSource {
-	type: 'progress'
+	type: 'progressTrack'
 	system: ProgressTrackSource
 }

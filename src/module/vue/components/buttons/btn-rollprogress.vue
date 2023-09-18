@@ -1,7 +1,9 @@
 <template>
 	<IronBtn
 		:tooltip="
-			$t('IRONSWORN.MakeAProgressRoll', { score: $item?.system.track.score })
+			$t('IRONSWORN.MakeAProgressRoll', {
+				score: $item?.system.progressTrack.score
+			})
 		"
 		class="progress-roll"
 		icon="ironsworn:d10-tilt"

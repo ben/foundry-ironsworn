@@ -9,20 +9,22 @@
 					<div class="flexrow nogrow" :class="$style.progressTopRow">
 						<RankPips
 							:id="`${data.actor._id}_rank`"
-							:current="data.actor.system.track.rank"
+							:current="data.actor.system.progressTrack.rank"
 							class="nogrow"
 							@change="
-								(rank) => $actor.update({ system: { track: { rank } } })
+								(rank) => $actor.update({ system: { progressTrack: { rank } } })
 							" />
 						<label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
-							$actor.system.track.localizeRank()
+							$actor.system.progressTrack.localizeRank()
 						}}</label>
 						<IronBtn
 							v-if="editMode"
 							block
 							nogrow
 							icon="fa:trash"
-							@click="$actor.update({ system: { track: { ticks: 0 } } })" />
+							@click="
+								$actor.update({ system: { progressTrack: { ticks: 0 } } })
+							" />
 						<IronBtn
 							block
 							nogrow
@@ -32,8 +34,8 @@
 					<!-- PROGRESS -->
 					<ProgressTrack
 						class="nogrow"
-						:ticks="data.actor.system.track.ticks"
-						:rank="data.actor.system.track.rank" />
+						:ticks="data.actor.system.progressTrack.ticks"
+						:rank="data.actor.system.progressTrack.rank" />
 				</article>
 				<!-- THEME/DOMAIN -->
 				<div class="boxgroup flexcol nogrow">

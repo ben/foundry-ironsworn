@@ -3,7 +3,7 @@ import type { ProgressTrackSource } from '../../model/ProgressTrack'
 import type { IronswornJournalPage } from '../journal-entry-page'
 
 export class JournalProgressPageSheet extends JournalPageSheet {
-	declare object: IronswornJournalPage<'progress'>
+	declare object: IronswornJournalPage<'progressTrack'>
 
 	static get defaultOptions() {
 		const options = super.defaultOptions
@@ -33,7 +33,7 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 
 	getData(options?: Partial<DocumentSheetOptions> | undefined): any {
 		const data = super.getData(options) as any as JournalPageSheet.Data & {
-			document: IronswornJournalPage<'progress'>
+			document: IronswornJournalPage<'progressTrack'>
 			data: { system: ProgressTrackSource }
 			currentRank: string
 			rankButtons: Array<{ rank: number; i18nRank: string; selected: boolean }>

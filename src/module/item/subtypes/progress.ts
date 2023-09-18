@@ -18,7 +18,7 @@ export class ProgressModel extends foundry.abstract.TypeDataModel<
 	 */
 	async markProgress(times = 1) {
 		return await this.parent.update({
-			system: { track: this.track.getMarkData(times) }
+			system: { progressTrack: this.progressTrack.getMarkData(times) }
 		})
 	}
 
@@ -30,7 +30,7 @@ export class ProgressModel extends foundry.abstract.TypeDataModel<
 		actor?: IronswornActor
 		moveDfid?: string
 	} = {}) {
-		return await this.track.roll({
+		return await this.progressTrack.roll({
 			actor,
 			objective: this.parent.name ?? undefined,
 			moveDfid
@@ -45,11 +45,11 @@ export class ProgressModel extends foundry.abstract.TypeDataModel<
 			migrate(source, 'clockMax', 'clock.max')
 		}
 
-		migrate(source, 'subtype', 'track.subtype')
+		migrate(source, 'subtype', 'progressTrack.subtype')
 		migrate(source, 'starred', 'flags.foundry-ironsworn.starred')
-		migrate(source, 'hasTrack', 'track.enabled')
-		migrate(source, 'rank', 'track.rank')
-		migrate(source, 'current', 'track.ticks')
+		migrate(source, 'hasTrack', 'progressTrack.enabled')
+		migrate(source, 'rank', 'progressTrack.rank')
+		migrate(source, 'current', 'progressTrack.ticks')
 
 		return source
 	}
@@ -60,7 +60,7 @@ export class ProgressModel extends foundry.abstract.TypeDataModel<
 	> {
 		const fields = foundry.data.fields
 		return {
-			track: new fields.EmbeddedDataField(ProgressTrack, {
+			progressTrack: new fields.EmbeddedDataField(ProgressTrack, {
 				initial: { enabled: true } as any
 			}),
 			clock: new fields.EmbeddedDataField(Clock),
@@ -73,12 +73,12 @@ export interface ProgressModel extends ProgressDataPropertiesData {}
 
 export interface ProgressDataSourceData {
 	description: string
-	track: ProgressTrackSource
+	progressTrack: ProgressTrackSource
 	completed?: boolean
 	clock?: ClockSource
 }
 export interface ProgressDataPropertiesData extends ProgressDataSourceData {
-	track: ProgressTrack
+	progressTrack: ProgressTrack
 	clock?: Clock
 }
 

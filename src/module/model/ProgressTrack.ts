@@ -19,6 +19,9 @@ export class ProgressTrack<
 
 	/**
 	 * Configure a `Document.update` data object for use in marking this progress track. Use negative `times` to erase progress.
+	 *
+	 * Note that this only creates the data object. You still need to send it with e.g. `Document.update`.
+	 *
 	 * @param times The number of units of progress to be marked (default: `1`).
 	 */
 	getMarkData(times = 1) {

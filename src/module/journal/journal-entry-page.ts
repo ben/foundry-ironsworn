@@ -9,4 +9,9 @@ export class IronswornJournalPage<
 	override async deleteDialog(options: Partial<DialogOptions> = {}) {
 		return await typedDeleteDialog(this, options)
 	}
+
+	static override migrateData(data: any) {
+		if (data.type === 'progress') data.type = 'progressTrack'
+		return super.migrateData(data)
+	}
 }

@@ -178,14 +178,15 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 	},
 
 	site: (actor, data) => {
-		if (data.system?.track.rank != null) {
+		if (data.system?.progressTrack.rank != null) {
 			return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
-				old: ChallengeRank.localizeValue(actor.system.track.rank),
-				new: ChallengeRank.localizeValue(data.system.track.rank)
+				old: ChallengeRank.localizeValue(actor.system.progressTrack.rank),
+				new: ChallengeRank.localizeValue(data.system.progressTrack.rank)
 			})
 		}
-		if (data.system?.track.ticks !== undefined) {
-			const advanced = data.system.track.ticks > actor.system.track.ticks
+		if (data.system?.progressTrack.ticks !== undefined) {
+			const advanced =
+				data.system.progressTrack.ticks > actor.system.progressTrack.ticks
 			return game.i18n.localize(
 				`IRONSWORN.ChatAlert.Progress${advanced ? 'Advanced' : 'Reduced'}`
 			)
@@ -196,14 +197,15 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 
 const ITEM_TYPE_HANDLERS: ItemTypeHandlers = {
 	progress: (item, data) => {
-		if (data.system?.track.rank !== undefined) {
+		if (data.system?.progressTrack.rank !== undefined) {
 			return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
-				old: ChallengeRank.localizeValue(item.system.track.rank),
-				new: ChallengeRank.localizeValue(data.system.track.rank)
+				old: ChallengeRank.localizeValue(item.system.progressTrack.rank),
+				new: ChallengeRank.localizeValue(data.system.progressTrack.rank)
 			})
 		}
-		if (data.system?.track.ticks !== undefined) {
-			const advanced = data.system.track.ticks > item.system.track.ticks
+		if (data.system?.progressTrack.ticks !== undefined) {
+			const advanced =
+				data.system.progressTrack.ticks > item.system.progressTrack.ticks
 			return game.i18n.localize(
 				`IRONSWORN.ChatAlert.progress${advanced ? 'Advanced' : 'Reduced'}`
 			)

@@ -113,7 +113,7 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 
 	async markProgress(times = 1) {
 		return await this.parent.update({
-			system: { track: this.track.getMarkData(times) }
+			system: { progressTrack: this.progressTrack.getMarkData(times) }
 		})
 	}
 
@@ -124,7 +124,7 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 
 	/** Make a progress roll with the Locate Your Objective move. */
 	async locateYourObjective() {
-		return await this.track.roll({
+		return await this.progressTrack.roll({
 			actor: this.parent,
 			objective: this.objective
 		})
@@ -136,7 +136,7 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 	> {
 		const fields = foundry.data.fields
 		return {
-			track: new fields.EmbeddedDataField(ProgressTrack, {
+			progressTrack: new fields.EmbeddedDataField(ProgressTrack, {
 				initial: { enabled: true, subtype: 'delve' } as any
 			}) as any,
 			objective: new fields.HTMLField(),
@@ -199,15 +199,15 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 
 	static migrateData(source) {
 		const migrate = foundry.abstract.Document._addDataFieldMigration
-		migrate(source, 'rank', 'track.rank')
-		migrate(source, 'current', 'track.ticks')
+		migrate(source, 'rank', 'progressTrack.rank')
+		migrate(source, 'current', 'progressTrack.ticks')
 
 		return source
 	}
 }
 
 export interface SiteModel extends SiteDataPropertiesData {
-	track: ProgressTrack
+	progressTrack: ProgressTrack
 }
 
 interface SiteDataSourceData {
@@ -215,10 +215,11 @@ interface SiteDataSourceData {
 	description: string
 	notes: string
 	denizens: TableResultStub[]
-	track: ProgressTrackSource
+	progressTrack: ProgressTrackSource
 }
-interface SiteDataPropertiesData extends Omit<SiteDataSourceData, 'track'> {
-	track: ProgressTrackProperties
+interface SiteDataPropertiesData
+	extends Omit<SiteDataSourceData, 'progressTrack'> {
+	progressTrack: ProgressTrackProperties
 }
 
 export interface SiteDataSource {

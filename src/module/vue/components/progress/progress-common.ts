@@ -3,7 +3,8 @@ import { IronswornItem } from '../../../item/item'
 import type { ProgressDataPropertiesData } from '../../../item/subtypes/progress'
 
 export type CompletedProgressType = 'completed-only' | 'no-completed' | 'all'
-export type ProgressSubtype = ProgressDataPropertiesData['track']['subtype']
+export type ProgressSubtype =
+	ProgressDataPropertiesData['progressTrack']['subtype']
 
 export function isValidProgressItem(
 	item: ItemSource | IronswornItem,
@@ -28,7 +29,9 @@ export function isValidProgressItem(
 			default:
 				break
 		}
-		if ((excludedSubtypes ?? []).includes(progress.system.track?.subtype)) {
+		if (
+			(excludedSubtypes ?? []).includes(progress.system.progressTrack?.subtype)
+		) {
 			return false
 		}
 		return true

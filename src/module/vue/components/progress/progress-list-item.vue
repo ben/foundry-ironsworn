@@ -4,10 +4,10 @@
 		<h5 class="progress-subtitle vertical-text">{{ subtitle }}</h5>
 		<section class="progress-widgets flexrow">
 			<ProgressTrack
-				v-if="item.system.track?.enabled"
+				v-if="item.system.progressTrack?.enabled"
 				class="progress-track"
-				:rank="item.system.track.rank"
-				:ticks="item.system.track.ticks"
+				:rank="item.system.progressTrack.rank"
+				:ticks="item.system.progressTrack.ticks"
 				:compact-progress="compactProgress" />
 			<Clock
 				v-if="item.system.clock?.enabled"
@@ -20,7 +20,7 @@
 		<DocumentImg class="progress-img" :document="item" size="40px" />
 		<RankPips
 			class="progress-rank-pips"
-			:current="item.system.track.rank"
+			:current="item.system.progressTrack.rank"
 			@change="(rank) => $item.update({ system: { rank } })" />
 		<section class="progress-controls" data-tooltip-direction="UP">
 			<BtnDocDelete v-if="editMode" block :document="$item" />
@@ -36,18 +36,21 @@
 				:tooltip="completedTooltip"
 				@click="toggleComplete" />
 			<IronBtn
-				v-if="editMode && item.system.track?.enabled"
+				v-if="editMode && item.system.progressTrack?.enabled"
 				block
 				icon="fa:caret-left"
 				:tooltip="$t('IRONSWORN.UnmarkProgress')"
 				@click="$item?.system.markProgress(-1)" />
 			<IronBtn
-				v-if="item.system.track?.enabled"
+				v-if="item.system.progressTrack?.enabled"
 				block
 				icon="fa:caret-right"
 				:tooltip="$t('IRONSWORN.MarkProgress')"
 				@click="$item?.system.markProgress()" />
-			<BtnRollprogress v-if="item.system.track?.enabled" :item="item" block />
+			<BtnRollprogress
+				v-if="item.system.progressTrack?.enabled"
+				:item="item"
+				block />
 			<IronBtn
 				v-if="showStar"
 				class="star-progress"
@@ -108,7 +111,7 @@ const editMode = computed(() => {
 	return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 })
 const subtitle = computed(() => {
-	const subtype = props.item.system.track.subtype.capitalize()
+	const subtype = props.item.system.progressTrack.subtype.capitalize()
 	return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)
 })
 const completedIcon = computed(() => {
