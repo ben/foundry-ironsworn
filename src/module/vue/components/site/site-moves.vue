@@ -22,9 +22,14 @@
 			<SfMoverow
 				v-if="moves.revealADanger"
 				:move="moves.revealADanger"
-				class="nogrow"
-				:oracle-disabled="!hasThemeAndDomain"
-				@oracleClick="$site.system.revealADanger" />
+				class="nogrow">
+				<template #btn-oracle="{ disabled, ...props }">
+					<BtnOracle
+						v-bind="props"
+						:disabled="disabled || !hasThemeAndDomain"
+						@click="$site.system.revealADanger" />
+				</template>
+			</SfMoverow>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
@@ -36,8 +41,14 @@
 			<SfMoverow
 				v-if="moves.locateObjective"
 				:move="moves.locateObjective"
-				class="nogrow"
-				@rollClick="$site.system.locateYourObjective" />
+				class="nogrow">
+				<template #btn-roll-move="{ disabled, ...props }">
+					<BtnRollmove
+						v-bind="props"
+						:click-fn="$site.system.locateYourObjective"
+						:disabled="disabled || !hasThemeAndDomain" />
+				</template>
+			</SfMoverow>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
@@ -62,21 +73,19 @@ import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
+import BtnOracle from '../buttons/btn-oracle.vue'
+import BtnRollmove from '../buttons/btn-rollmove.vue'
 
 import SfMoverow from '../sf-moverow.vue'
 
 const site = inject(ActorKey) as Ref<ActorSource<'site'>>
 const $site = inject($ActorKey) as IronswornActor<'site'>
 
-const theme = computed(() => {
-	return site?.value?.items.find((x) => x.type === 'delve-theme')
-})
-const domain = computed(() => {
-	return site?.value?.items.find((x) => x.type === 'delve-domain')
-})
-
 const hasThemeAndDomain = computed(() => {
-	return !!(theme.value && domain.value)
+	return !!(
+		site?.value?.items.find((x) => x.type === 'delve-theme') &&
+		site?.value?.items.find((x) => x.type === 'delve-domain')
+	)
 })
 
 // Construct some moves to use with the new pipeline

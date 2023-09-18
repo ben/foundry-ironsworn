@@ -2,7 +2,6 @@ import type { RollTableDataConstructorData } from '@league-of-foundry-developers
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { IOracle, IOracleCategory, IRow } from 'dataforged'
 import { max } from 'lodash-es'
-import { marked } from 'marked'
 import type { IronswornActor } from '../actor/actor'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
@@ -158,9 +157,8 @@ export class OracleTable extends RollTable {
 	static getConstructorData(
 		oracle: OracleTable.IOracleLeaf
 	): RollTableDataConstructorData {
-		const description = marked.parseInline(
-			renderLinksInStr(oracle.Description ?? ''),
-			{ gfm: true, mangle: false, headerIds: false }
+		const description = CONFIG.IRONSWORN.showdown.makeHtml(
+			renderLinksInStr(oracle.Description ?? '')
 		)
 		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
 		const data: RollTableDataConstructorData = {
