@@ -62,15 +62,6 @@ async function input(value: boolean) {
 	}
 	await $actor?.update(data)
 	await nextTick()
-	const numDebilitiesMarked = Object.values(actor.value.system.debility).filter(
-		(x) => x === true
-	).length
-	await $actor?.update({
-		system: {
-			momentumMax: 10 - numDebilitiesMarked,
-			momentumReset: Math.max(0, 2 - numDebilitiesMarked)
-		}
-	})
 
 	if (props.global) {
 		await IronswornSettings.updateGlobalAttribute(data, [
