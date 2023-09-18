@@ -42,10 +42,9 @@ export abstract class MeterField<
 		super(schema, options)
 	}
 
-	migrateSource(sourceData: object, fieldData: any) {
-		if (typeof fieldData === 'number') {
-			fieldData = { value: fieldData }
-		}
+	override migrateSource(sourceData: object, fieldData: any) {
+		if (typeof fieldData === 'number')
+			fieldData = { value: fieldData.valueOf() }
 
 		IronswornActor._addDataFieldMigration(fieldData, 'current', 'value')
 
@@ -89,26 +88,6 @@ export class MomentumField extends MeterField<MomentumSource> {
 				})
 			}
 		)
-	}
-
-	override migrateSource(
-		sourceData: CharacterDataSourceData,
-		fieldData: MomentumSource
-	): void {
-		super.migrateSource(sourceData, fieldData)
-		if (typeof sourceData?.momentum === 'number') {
-			console.log('Migrating sourceData, fieldData', sourceData, fieldData)
-			IronswornActor._addDataFieldMigration(
-				sourceData,
-				'momentumReset',
-				'momentum.resetValue'
-			)
-			IronswornActor._addDataFieldMigration(
-				sourceData,
-				'momentumMax',
-				'momentum.max'
-			)
-		}
 	}
 }
 export interface MomentumField extends MomentumSource {}
