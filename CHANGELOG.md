@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fixed a bug where "legacy" health, spirit, supply, and momentum values weren't migrating correctly to our new meter object format ([#865](https://github.com/ben/foundry-ironsworn/issues/865))
+
 ## 1.22.1
 
 - Fixed a bug where pronouns and callsign wouldn't save ([#870](https://github.com/ben/foundry-ironsworn/pull/870))
