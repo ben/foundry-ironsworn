@@ -2,7 +2,6 @@ import { StatField } from '../../fields/StatField'
 import { ImpactField } from '../../fields/ImpactField'
 import type { IronswornActor } from '../actor'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
-import type { DataSchema } from '../../fields/utils'
 import type {
 	ConditionMeterSource,
 	MomentumSource
@@ -30,15 +29,13 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 	async burnMomentum(this: CharacterModel) {
 		if (this.canBurnMomentum) {
 			await this.parent.update({
-				system: { 'momentum.value': this.parent.system.momentum.resetValue }
+				system: { 'momentum.value': this.parent.system.momentumReset }
 			})
 		}
 	}
 
 	get canBurnMomentum() {
-		return (
-			this.parent.system.momentum.value > this.parent.system.momentum.resetValue
-		)
+		return this.parent.system.momentum.value > this.parent.system.momentumReset
 	}
 
 	get #impactCount() {

@@ -42,11 +42,18 @@ export abstract class MeterField<
 		super(schema, options)
 	}
 
-	override migrateSource(sourceData: object, fieldData: any) {
-		if (typeof fieldData === 'number')
-			fieldData = { value: fieldData.valueOf() }
+	override _cast(value: unknown): any {
+		// Cast numberish values to a meter-shaped object
+		return Number.isNumeric(value)
+			? { value: Number(value) }
+			: super._cast(value)
+	}
 
+	override migrateSource(sourceData: object, fieldData: any) {
+		// migrate legacy asset condition meters
 		IronswornActor._addDataFieldMigration(fieldData, 'current', 'value')
+
+		// the _cast method above handles migrations from simple number values
 
 		return super.migrateSource(sourceData, fieldData)
 	}
@@ -80,6 +87,8 @@ export class MomentumField extends MeterField<MomentumSource> {
 				label: 'IRONSWORN.Momentum'
 			},
 			{
+				// it's for later use by ActiveEffect to model impact/debility behavior
+				// if you need to get at the resetValue, use the getter Actor.system.momentumReset instead. otherwise, it won't be sensitive to impacts.
 				resetValue: new fields.NumberField({
 					initial: MomentumField.INITIAL,
 					min: MomentumField.RESET_MIN,
