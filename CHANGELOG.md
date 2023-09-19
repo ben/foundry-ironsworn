@@ -2,7 +2,7 @@
 
 ## Next Release
 
-- Fixed a bug where "legacy" health, spirit, supply, and momentum values weren't migrating correctly to our new meter object format ([#865](https://github.com/ben/foundry-ironsworn/issues/865))
+- Fixed a bug that sometimes caused health, supply, momentum, or spirit to reset when loading an older world ([#865](https://github.com/ben/foundry-ironsworn/issues/865))
 
 ## 1.22.1
 
