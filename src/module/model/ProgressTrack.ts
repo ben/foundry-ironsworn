@@ -1,7 +1,10 @@
+import { ForeignDocumentField } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs'
 import type { IronswornActor } from '../actor/actor'
+import { getFoundryMoveByDfId, hashLookup } from '../dataforged'
 import { ChallengeRank } from '../fields/ChallengeRank'
 import type { DataSchema } from '../fields/utils'
 import { IronswornSettings } from '../helpers/settings'
+import { IronswornItem } from '../item/item'
 import type { ProgressLikeSource, ProgressLikeProperties } from './ProgressLike'
 import { ProgressLike } from './ProgressLike'
 
@@ -71,7 +74,29 @@ export class ProgressTrack<
 		source = super.migrateData(source)
 		foundry.abstract.Document._addDataFieldMigration(source, 'current', 'ticks')
 
-		if (source.subtype === 'bond') source.subtype = 'connection'
+		// if (source.subtype === 'bond') source.subtype = 'connection'
+
+		if (typeof source.subtype === 'string') {
+			const subtype = source.subtype as ProgressSubtype | 'bond'
+			const isStarforged = true
+			let dfid: string | null = null
+			switch (subtype) {
+				case 'vow':
+					dfid = isStarforged
+						? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+						: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+					break
+				case 'bond':
+				case 'connection':
+					dfid = 'Starforged/Moves/Connection/Forge_a_Bond'
+					break
+			}
+			if (dfid != null) {
+				source.move = hashLookup(dfid)
+				// fvttt would attempt Item.get(id, {pack: somePack})
+				// but how do i get it to initialize with specific options in order to specify the pack in the first place???
+			}
+		}
 
 		return source
 	}
@@ -96,16 +121,8 @@ export class ProgressTrack<
 			}),
 			enabled: new fields.BooleanField({ initial: true }),
 			rank: new ChallengeRank(),
-			subtype: new fields.StringField({
-				choices: {
-					progress: 'IRONSWORN.ITEM.SubtypeProgress',
-					vow: 'IRONSWORN.ITEM.SubtypeVow',
-					connection: 'IRONSWORN.ITEM.SubtypeConnection',
-					foe: 'IRONSWORN.ITEM.SubtypeFoe',
-					delve: 'IRONSWORN.Delve'
-				},
-				initial: 'progress'
-			})
+			// TODO: improve the typing for this
+			move: new fields.ForeignDocumentField(foundry.documents.BaseItem)
 		}
 	}
 
@@ -143,8 +160,11 @@ export interface ProgressTrackSource extends ProgressLikeSource {
 	rank: ChallengeRank.Value
 	subtype: ProgressSubtype
 	enabled?: boolean
+	move?: string
 }
 
 export interface ProgressTrackProperties
 	extends ProgressLikeProperties,
-		ProgressTrackSource {}
+		Omit<ProgressTrackSource, 'move'> {
+	move: IronswornItem<'sfmove'> | null
+}

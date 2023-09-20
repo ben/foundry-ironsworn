@@ -77,7 +77,8 @@ export interface ProgressDataSourceData {
 	completed?: boolean
 	clock?: ClockSource
 }
-export interface ProgressDataPropertiesData extends ProgressDataSourceData {
+export interface ProgressDataPropertiesData
+	extends Omit<ProgressDataSourceData, 'progressTrack'> {
 	progressTrack: ProgressTrack
 	clock?: Clock
 }

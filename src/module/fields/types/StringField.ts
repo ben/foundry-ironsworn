@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
+import { DataModel } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs'
 import type { RequireKey } from 'dataforged'
 
 declare global {
@@ -96,7 +97,19 @@ declare global {
 						any
 					> = foundry.abstract.Document<any, any, any>,
 					Options extends ForeignDocumentField.Options<ConcreteData> = ForeignDocumentField.Options<ConcreteData>
-				> extends DocumentIdField<ConcreteData, Options> {}
+				> extends DocumentIdField<ConcreteData, Options> {
+					/**
+					 * @param model - The foreign DataModel class definition which this field should link to.
+					 * @param options - Options which configure the behavior of the field
+					 */
+					constructor(
+						model: ConstructorOf<ConcreteData>,
+						options?: Partial<Options>
+					)
+
+					model: ConstructorOf<ConcreteData>
+				}
+
 				// @ts-expect-error
 				export interface ForeignDocumentField<
 					ConcreteData extends foundry.abstract.Document<
