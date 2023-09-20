@@ -9,25 +9,33 @@
 					<div class="flexrow nogrow" :class="$style.progressTopRow">
 						<RankPips
 							:id="`${data.actor._id}_rank`"
-							:current="data.actor.system.rank"
+							:current="data.actor.system.progressTrack.rank"
 							class="nogrow"
-							@change="(rank) => $actor.update({ system: { rank } })" />
+							@change="
+								(rank) => $actor.update({ system: { progressTrack: { rank } } })
+							" />
 						<label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
-							ChallengeRank.localizeValue(data.actor.system.rank)
+							$actor.system.progressTrack.localizeRank()
 						}}</label>
 						<IronBtn
 							v-if="editMode"
 							block
 							nogrow
 							icon="fa:trash"
-							@click="$actor.update({ system: { current: 0 } })" />
-						<IronBtn block nogrow icon="fa:caret-right" @click="markProgress" />
+							@click="
+								$actor.update({ system: { progressTrack: { ticks: 0 } } })
+							" />
+						<IronBtn
+							block
+							nogrow
+							icon="fa:caret-right"
+							@click="$actor.system.markProgress()" />
 					</div>
 					<!-- PROGRESS -->
 					<ProgressTrack
 						class="nogrow"
-						:ticks="data.actor.system.current"
-						:rank="data.actor.system.rank" />
+						:ticks="data.actor.system.progressTrack.ticks"
+						:rank="data.actor.system.progressTrack.rank" />
 				</article>
 				<!-- THEME/DOMAIN -->
 				<div class="boxgroup flexcol nogrow">
@@ -120,12 +128,10 @@ import BtnCompendium from './components/buttons/btn-compendium.vue'
 import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'
 import MceEditor from './components/mce-editor.vue'
-import { RANK_INCREMENTS } from '../constants'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import type { IronswornActor } from '../actor/actor'
-import { ChallengeRank } from '../fields/ChallengeRank'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'site'> }
@@ -154,12 +160,6 @@ const domain = computed(() => {
 		(item) => item.type === 'delve-domain'
 	) as ItemSource<'delve-domain'>
 })
-
-function markProgress() {
-	const increment = RANK_INCREMENTS[props.data.actor.system.rank]
-	const newValue = Math.min(props.data.actor.system.current + increment, 40)
-	$actor?.update({ 'system.current': newValue })
-}
 
 const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {

@@ -72,7 +72,12 @@ const editMode = computed(() => {
 })
 
 function foundryitem() {
-	return props.item && $actor?.items.get(props.item._id as string)
+	return (
+		props.item &&
+		($actor?.items.get(props.item._id as string) as
+			| IronswornItem<'delve-theme'>
+			| IronswornItem<'delve-domain'>)
+	)
 }
 
 function edit() {

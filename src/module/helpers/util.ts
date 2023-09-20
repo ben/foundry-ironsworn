@@ -3,7 +3,7 @@ import type { KeysWithValuesOfType } from 'dataforged'
 
 /**
  * @remarks A document-subtype-sensitive replacement for the FVTT document deletion dialog.
- * @see {@link ClientDocumentMixin#deleteDialog}
+ * @see {@link ClientDocumentMixin.deleteDialog}
  */
 export async function typedDeleteDialog<
 	T extends foundry.abstract.Document<any, any, Metadata<any>> & {

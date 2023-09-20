@@ -27,7 +27,7 @@ async function newConnection() {
 		{
 			name: game.i18n.localize('IRONSWORN.ITEM.SubtypeConnection'),
 			type: 'progress',
-			system: { subtype: 'bond' },
+			system: { progressTrack: { subtype: 'connection' } },
 			sort: 9000000
 		},
 		{ parent: $actor }

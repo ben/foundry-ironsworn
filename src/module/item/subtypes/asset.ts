@@ -9,7 +9,10 @@ export class AssetModel extends foundry.abstract.TypeDataModel<
 > {
 	static _enableV10Validation = true
 
-	static override defineSchema(): DataSchema<AssetDataSourceData> {
+	static override defineSchema(): DataSchema<
+		AssetDataSourceData,
+		AssetDataPropertiesData
+	> {
 		const fields = foundry.data.fields
 
 		return {

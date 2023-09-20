@@ -1,19 +1,20 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import { ChallengeRank } from '../../fields/ChallengeRank'
-import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { TableResultStub } from '../../fields/TableResultField'
 import { TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
+import type {
+	ProgressTrackProperties,
+	ProgressTrackSource
+} from '../../model/ProgressTrack'
+import { ProgressTrack } from '../../model/ProgressTrack'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
 
 export class SiteModel extends foundry.abstract.TypeDataModel<
 	SiteDataSourceData,
-	SiteDataSourceData,
+	SiteDataPropertiesData,
 	IronswornActor<'site'>
 > {
-	static _enableV10Validation = true
-
 	get denizenTable() {
 		return new OracleTable({
 			name: game.i18n.localize('IRONSWORN.DELVESITE.Denizens'),
@@ -110,11 +111,34 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 		return this.theme != null && this.domain != null
 	}
 
-	static override defineSchema(): DataSchema<SiteDataSourceData> {
+	async markProgress(times = 1) {
+		return await this.parent.update({
+			system: { progressTrack: this.progressTrack.getMarkData(times) }
+		})
+	}
+
+	/** Make the Reveal a Danger move and roll a random danger from this delve site. */
+	async revealADanger() {
+		return await (await this.getDangers())?.draw()
+	}
+
+	/** Make a progress roll with the Locate Your Objective move. */
+	async locateYourObjective() {
+		return await this.progressTrack.roll({
+			actor: this.parent,
+			objective: this.objective
+		})
+	}
+
+	static override defineSchema(): DataSchema<
+		SiteDataSourceData,
+		SiteDataPropertiesData
+	> {
 		const fields = foundry.data.fields
 		return {
-			rank: new ChallengeRank(),
-			current: new ProgressTicksField(),
+			progressTrack: new fields.EmbeddedDataField(ProgressTrack, {
+				initial: { enabled: true, subtype: 'delve' } as any
+			}) as any,
 			objective: new fields.HTMLField(),
 			description: new fields.HTMLField(),
 			notes: new fields.HTMLField(),
@@ -172,17 +196,30 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 			})
 		}
 	}
+
+	static migrateData(source) {
+		const migrate = foundry.abstract.Document._addDataFieldMigration
+		migrate(source, 'rank', 'progressTrack.rank')
+		migrate(source, 'current', 'progressTrack.ticks')
+
+		return source
+	}
 }
 
-export interface SiteModel extends SiteDataSourceData {}
+export interface SiteModel extends SiteDataPropertiesData {
+	progressTrack: ProgressTrack
+}
 
 interface SiteDataSourceData {
 	objective: string
 	description: string
 	notes: string
-	rank: ChallengeRank.Value
-	current: number
 	denizens: TableResultStub[]
+	progressTrack: ProgressTrackSource
+}
+interface SiteDataPropertiesData
+	extends Omit<SiteDataSourceData, 'progressTrack'> {
+	progressTrack: ProgressTrackProperties
 }
 
 export interface SiteDataSource {

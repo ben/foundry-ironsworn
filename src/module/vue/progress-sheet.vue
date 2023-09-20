@@ -8,10 +8,10 @@
 			style="gap: 1em; margin: var(--ironsworn-spacer-lg) 0">
 			<RankPips
 				class="nogrow"
-				:current="data.item.system.rank"
-				@change="setRank" />
+				:current="data.item.system.progressTrack.rank"
+				@change="(r) => set('system.progressTrack.rank', r)" />
 			<h4 style="margin: 0; line-height: 22px">
-				{{ $item?.system.localizeRank() }}
+				{{ $item?.system.progressTrack.localizeRank() }}
 			</h4>
 			<label class="checkbox nogrow">
 				<input
@@ -23,16 +23,16 @@
 		</div>
 
 		<select
-			v-model="data.item.system.subtype"
+			v-model="data.item.system.progressTrack.subtype"
 			class="nogrow"
-			@change="subtypeChange">
+			@change="update('system.progressTrack.subtype')">
 			<option value="vow">
 				{{ $t('IRONSWORN.ITEM.SubtypeVow') }}
 			</option>
 			<option value="progress">
 				{{ $t('IRONSWORN.ITEM.SubtypeProgress') }}
 			</option>
-			<option value="bond">
+			<option value="connection">
 				{{ $t('IRONSWORN.ITEM.SubtypeConnection') }}
 			</option>
 		</select>
@@ -42,14 +42,14 @@
 		<div class="nogrow">
 			<label class="checkbox">
 				<input
-					v-model="data.item.system.hasTrack"
+					v-model="data.item.system.progressTrack.enabled"
 					type="checkbox"
 					@change="saveChecks" />
 				{{ $t('IRONSWORN.Track') }}
 			</label>
 
 			<CollapseTransition>
-				<div v-if="data.item.system.hasTrack" class="nogrow">
+				<div v-if="data.item.system.progressTrack?.enabled" class="nogrow">
 					<div
 						class="flexrow nogrow"
 						style="
@@ -57,14 +57,14 @@
 							margin-bottom: var(--ironsworn-spacer-sm);
 						">
 						<IronBtn
-							v-if="data.item.system.hasTrack"
+							v-if="data.item.system.progressTrack?.enabled"
 							block
 							nogrow
 							:tooltip="$t('IRONSWORN.UnmarkProgress')"
 							icon="fa:caret-left"
 							@click="$item?.system.markProgress(-1)" />
 						<IronBtn
-							v-if="data.item.system.hasTrack"
+							v-if="data.item.system.progressTrack?.enabled"
 							block
 							nogrow
 							:tooltip="$t('IRONSWORN.MarkProgress')"
@@ -74,8 +74,8 @@
 					<!-- PROGRESS -->
 					<div class="flexrow track nogrow" style="margin-bottom: 1em">
 						<ProgressTrack
-							:ticks="data.item.system.current"
-							:rank="data.item.system.rank" />
+							:ticks="data.item.system.progressTrack.ticks"
+							:rank="data.item.system.progressTrack.rank" />
 					</div>
 				</div>
 			</CollapseTransition>
@@ -86,27 +86,27 @@
 		<div class="nogrow">
 			<label class="checkbox">
 				<input
-					v-model="data.item.system.hasClock"
+					v-model="data.item.system.clock!.enabled"
 					type="checkbox"
 					@change="saveChecks" />
 				{{ $t('IRONSWORN.Clock') }}
 			</label>
 
 			<CollapseTransition>
-				<div v-if="data.item.system.hasClock" class="flexrow nogrow">
+				<div v-if="data.item.system.clock?.enabled" class="flexrow nogrow">
 					<div class="nogrow" style="margin: 0 1rem">
 						<Clock
-							:wedges="data.item.system.clockMax"
-							:ticked="data.item.system.clockTicks"
-							@click="setClock" />
+							:wedges="data.item.system.clock.max"
+							:ticked="data.item.system.clock.value"
+							@click="(v) => set('system.clock.value', v)" />
 					</div>
 					<div class="flexcol">
 						{{ $t('IRONSWORN.Segments') }}:
 						<select
-							v-model="data.item.system.clockMax"
+							v-model="data.item.system.clock.max"
 							class="nogrow"
 							style="margin: var(--ironsworn-spacer-lg) 0"
-							@change="clockMaxChange">
+							@change="update('system.clock.max')">
 							<option
 								v-for="clockSize in [4, 6, 8, 10, 12]"
 								:key="clockSize"
@@ -121,7 +121,9 @@
 
 		<hr class="nogrow" />
 		<!-- DESCRIPTION -->
-		<MceEditor v-model="data.item.system.description" @save="saveDescription" />
+		<MceEditor
+			v-model="data.item.system.description"
+			@save="update('system.description')" />
 		<BtnDocDelete
 			nogrow
 			block
@@ -152,36 +154,25 @@ provide(
 	computed(() => props.data.item)
 )
 
-function setRank(rank) {
-	$item?.update({ system: { rank } })
-}
-
-function subtypeChange() {
-	$item?.update({ system: { subtype: props.data.item.system.subtype } })
-}
-
-function clockMaxChange() {
-	$item?.update({
-		system: { clockMax: props.data.item.system.clockMax }
-	})
-}
-
 function saveChecks() {
-	$item?.update({
-		system: {
-			completed: props.data.item.system.completed,
-			hasTrack: props.data.item.system.hasTrack,
-			hasClock: props.data.item.system.hasClock
-		}
-	})
+	update(
+		'system.completed',
+		'system.progressTrack.enabled',
+		'system.clock.enabled'
+	)
 }
 
-function setClock(num) {
-	$item?.update({ system: { clockTicks: num } })
+function set(key, value) {
+	$item?.update({ [key]: value })
 }
 
-function saveDescription() {
-	$item?.update({ system: { description: props.data.item.system.description } })
+function update(...keys: string[]) {
+	const data = {}
+	for (const key of keys) {
+		const newValue = getProperty(props.data.item, key)
+		data[key] = newValue
+	}
+	$item?.update(data)
 }
 </script>
 

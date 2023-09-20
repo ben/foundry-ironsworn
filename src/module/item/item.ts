@@ -43,7 +43,7 @@ export class IronswornItem<
 		return super.migrateData(data)
 	}
 
-	override async deleteDialog(options?: Partial<DialogOptions>) {
+	override async deleteDialog(options: Partial<DialogOptions> = {}) {
 		return await typedDeleteDialog(this, options)
 	}
 }

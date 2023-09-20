@@ -18,7 +18,7 @@ export class IronswornSiteSheet extends VueActorSheet {
 		// Fetch the item. We only want to override denizens (progress-type items)
 		const item = await Item.fromDropData(data)
 		if (item == null) return false
-		if (!item.assert('progress')) {
+		if (!item.assert('progressTrack')) {
 			return await super._onDropItem(event, data)
 		}
 

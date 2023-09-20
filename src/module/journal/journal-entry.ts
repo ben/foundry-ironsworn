@@ -5,7 +5,7 @@ export class IronswornJournalEntry extends JournalEntry {
 	get truthTable() {
 		if (this.pageTypes.truth.length === 0) return undefined
 		const results = this.pageTypes.truth.map((truth) =>
-			truth.toTruthTableResultData()
+			truth.system.toTruthTableResultData()
 		)
 		return new OracleTable({
 			name: this.name ?? '',

@@ -2,11 +2,11 @@
 	<div v-if="item" class="flexcol">
 		<div class="flexrow nogrow" style="margin: 0.5rem 0">
 			<RankPips
-				:current="item?.system.rank"
+				:current="item?.system.progressTrack.rank"
 				style="margin-right: 1em"
 				@change="(rank) => $item?.update({ system: { rank } })" />
 			<h4 style="margin: 0; line-height: 22px">
-				{{ $item.system.localizeRank() }}
+				{{ $item.system.progressTrack.localizeRank() }}
 			</h4>
 			<IronBtn
 				v-if="multipleUsers"
@@ -24,14 +24,14 @@
 				block
 				nogrow
 				icon="fa:caret-right"
-				@click="$item?.system.markProgress()" />
+				@click="$item?.system.markProgress" />
 			<BtnRollprogress block nogrow :item="item" />
 		</div>
 
 		<div class="flexrow track nogrow" style="margin-bottom: 1em">
 			<ProgressTrack
-				:rank="item?.system.rank"
-				:ticks="item?.system.current"
+				:rank="item?.system.progressTrack.rank"
+				:ticks="item?.system.progressTrack.ticks"
 				data-tooltip-direction="RIGHT" />
 		</div>
 

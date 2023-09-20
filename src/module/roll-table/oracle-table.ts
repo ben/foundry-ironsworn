@@ -367,7 +367,7 @@ export class OracleTable extends RollTable {
 				table = (source as IronswornJournalEntry).truthTable
 				break
 			case 'truth-option-subtable':
-				table = (source as IronswornJournalPage).subtable
+				table = (source as IronswornJournalPage<'truth'>).system.subtable
 				break
 			default:
 				break

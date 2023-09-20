@@ -25,7 +25,6 @@ import type {
 	ProgressDataSource
 } from './subtypes/progress'
 import type { SFMoveDataProperties, SFMoveDataSource } from './subtypes/sfmove'
-import { ChallengeRank } from '../fields/ChallengeRank'
 
 const dataModels: Partial<
 	Record<
@@ -80,13 +79,6 @@ const config: PartialDeep<ItemConfig> = {
 
 export default config
 
-export interface ProgressBase {
-	description: string
-	rank: ChallengeRank.Value
-	current: number
-	completed: boolean
-}
-
 export type ItemDataSource =
 	| AssetDataSource
 	| ProgressDataSource
@@ -117,6 +109,7 @@ declare global {
 				expanded?: boolean
 				muteBroadcast?: boolean
 				'edit-mode'?: boolean
+				starred?: boolean
 			}
 		}
 	}

@@ -24,16 +24,17 @@ import { inject } from 'vue'
 import { $ActorKey } from '../../provisions'
 import IronBtn from 'component:buttons/iron-btn.vue'
 import BtnCompendium from 'component:buttons/btn-compendium.vue'
+import type { ProgressSubtype } from './progress-common'
 
 const props = defineProps<{ foeCompendium?: string }>()
 
 const $actor = inject($ActorKey)
 
-async function addProgressItem(subtype) {
+async function addProgressItem(subtype: ProgressSubtype) {
 	const itemData = {
 		name: subtype.capitalize(),
 		type: 'progress',
-		data: { subtype },
+		system: { subtype },
 		sort: 9000000
 	}
 	const item = await Item.create(itemData as any, { parent: $actor })

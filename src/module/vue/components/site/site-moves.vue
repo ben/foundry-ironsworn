@@ -27,7 +27,7 @@
 					<BtnOracle
 						v-bind="props"
 						:disabled="disabled || !hasThemeAndDomain"
-						@click="revealADanger" />
+						@click="$site.system.revealADanger" />
 				</template>
 			</SfMoverow>
 		</li>
@@ -43,7 +43,10 @@
 				:move="moves.locateObjective"
 				class="nogrow">
 				<template #btn-roll-move="{ disabled, ...props }">
-					<BtnRollmove v-bind="props" :clickFn="locateObjective" />
+					<BtnRollmove
+						v-bind="props"
+						:click-fn="$site.system.locateYourObjective"
+						:disabled="disabled || !hasThemeAndDomain" />
 				</template>
 			</SfMoverow>
 		</li>
@@ -78,15 +81,11 @@ import SfMoverow from '../sf-moverow.vue'
 const site = inject(ActorKey) as Ref<ActorSource<'site'>>
 const $site = inject($ActorKey) as IronswornActor<'site'>
 
-const theme = computed(() => {
-	return site?.value?.items.find((x) => x.type === 'delve-theme')
-})
-const domain = computed(() => {
-	return site?.value?.items.find((x) => x.type === 'delve-domain')
-})
-
 const hasThemeAndDomain = computed(() => {
-	return !!(theme.value && domain.value)
+	return !!(
+		site?.value?.items.find((x) => x.type === 'delve-theme') &&
+		site?.value?.items.find((x) => x.type === 'delve-domain')
+	)
 })
 
 // Construct some moves to use with the new pipeline
@@ -115,22 +114,6 @@ Promise.resolve().then(async () => {
 		)!
 	}
 })
-
-async function revealADanger() {
-	return (await $site?.system.getDangers())?.draw()
-}
-
-async function locateObjective() {
-	if (!$site) return
-	const progress = Math.floor($site.system.current / 4)
-
-	IronswornPrerollDialog.showForProgress(
-		$site.name ?? '',
-		progress,
-		$site,
-		'Ironsworn/Moves/Delve/Locate_Your_Objective'
-	)
-}
 </script>
 
 <style lang="scss" module>

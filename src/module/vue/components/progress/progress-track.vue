@@ -12,25 +12,24 @@
 		:data-ticks="ticks"
 		:data-score="score"
 		:aria-valuenow="ticks"
-		:aria-valuemin="ProgressModel.TICKS_MIN"
-		:aria-valuemax="ProgressModel.TICKS_MAX"
+		:aria-valuemin="ProgressTrack.TICKS_MIN"
+		:aria-valuemax="ProgressTrack.TICKS_MAX"
 		:aria-valuetext="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
 		:data-tooltip="$t('IRONSWORN.PROGRESS.Current', { score, ticks })">
 		<ProgressTrackBox
-			v-for="(boxTicks, i) in boxes"
+			v-for="(boxTicks, i) in ProgressTrack.getBoxValues(ticks)"
 			:key="`progress-box-${i + 1}`"
 			tabindex="-1"
 			role="presentational"
-			:ticks="boxTicks ?? ProgressModel.TICKS_MIN"
+			:ticks="boxTicks ?? ProgressTrack.TICKS_MIN"
 			:is-overflow-box="legacyOverflow" />
 	</article>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { fill } from 'lodash-es'
 import ProgressTrackBox from './progress-track-box.vue'
-import { ProgressModel } from '../../../item/subtypes/progress'
+import { ProgressTrack } from '../../../model/ProgressTrack'
 import type { ChallengeRank } from '../../../fields/ChallengeRank'
 
 const props = defineProps<{
@@ -49,33 +48,7 @@ const props = defineProps<{
 	compactProgress?: boolean
 }>()
 
-const score = computed(() =>
-	Math.clamped(
-		Math.floor(props.ticks / ProgressModel.TICKS_PER_BOX),
-		ProgressModel.SCORE_MIN,
-		ProgressModel.SCORE_MAX
-	)
-)
-
-const visibleTicks = computed(() =>
-	props.ticks > ProgressModel.TICKS_MAX
-		? props.ticks % ProgressModel.TICKS_MAX
-		: props.ticks
-)
-
-const boxes = computed(() => {
-	const boxTicks = Array<number>(ProgressModel.BOXES)
-	const filledBoxes = Math.floor(
-		visibleTicks.value / ProgressModel.TICKS_PER_BOX
-	)
-	const ticksRemainder = visibleTicks.value % ProgressModel.TICKS_PER_BOX
-
-	fill(boxTicks, ProgressModel.TICKS_PER_BOX, 0, filledBoxes)
-	if (ticksRemainder > 0) {
-		boxTicks[filledBoxes] = ticksRemainder
-	}
-	return boxTicks
-})
+const score = computed(() => ProgressTrack.getScore(props.ticks))
 </script>
 
 <style lang="scss">

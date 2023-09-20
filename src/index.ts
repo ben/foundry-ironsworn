@@ -45,6 +45,8 @@ import type {
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
 import ItemConfig from './module/item/config'
+import { ProgressTrackModel } from './module/journal/subtypes/progress'
+import { TruthModel } from './module/journal/subtypes/truth'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -83,6 +85,10 @@ Hooks.once('init', async () => {
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
+	;(CONFIG.JournalEntryPage as any).dataModels = {
+		progress: ProgressTrackModel,
+		truth: TruthModel
+	}
 
 	CONFIG.RollTable.documentClass = OracleTable
 	CONFIG.RollTable.resultIcon = 'icons/dice/d10black.svg'

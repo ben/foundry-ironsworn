@@ -58,6 +58,7 @@ export class ConditionMeterField extends MeterField {
 		super(options, {})
 	}
 }
+export interface ConditionMeterField extends MeterField, ConditionMeterSource {}
 
 export interface ConditionMeterSource extends MeterSource {}
 
