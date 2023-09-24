@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fixed a bug that sometimes caused health, supply, momentum, or spirit to reset when loading an older world ([#865](https://github.com/ben/foundry-ironsworn/issues/865))
+
 ## 1.22.1
 
 - Fixed a bug where pronouns and callsign wouldn't save ([#870](https://github.com/ben/foundry-ironsworn/pull/870))
