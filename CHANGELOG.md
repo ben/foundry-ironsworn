@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.2
+
 - Fixed a bug that sometimes caused health, supply, momentum, or spirit to reset when loading an older world ([#865](https://github.com/ben/foundry-ironsworn/issues/865))
 
 ## 1.22.1
