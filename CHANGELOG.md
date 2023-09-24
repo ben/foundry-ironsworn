@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.3
+
 - Reinstated the template.json to fix installation errors
 
 ## 1.22.2
