@@ -1,5 +1,4 @@
 import { IronswornActor } from '../actor/actor'
-import type { CharacterDataSourceData } from '../actor/subtypes/character'
 import type { DataSchema } from './utils'
 
 export interface MeterSource {
