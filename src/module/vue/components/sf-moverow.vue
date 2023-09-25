@@ -22,19 +22,31 @@
 				class="nogrow"
 				data-tooltip-direction="UP"
 				data-tourid="move-buttons">
-				<BtnRollmove
-					:disabled="!canRoll"
-					:move="move"
-					:class="$style.btn"
-					:override-click="onRollClick !== undefined"
-					@click="$emit('rollClick')" />
-				<BtnOracle
-					:node="data.oracles[0] ?? {}"
-					:disabled="preventOracle"
-					:class="$style.btn"
-					:override-click="onOracleClick !== undefined"
-					@click="$emit('oracleClick')" />
-				<BtnSendmovetochat :move="move" :class="$style.btn" />
+				<slot name="controls">
+					<slot
+						name="btn-roll-move"
+						v-bind="{ disabled: !canRoll, move, class: $style.btn }">
+						<BtnRollmove
+							:disabled="!canRoll"
+							:move="move"
+							:class="$style.btn" />
+					</slot>
+					<slot
+						name="btn-oracle"
+						v-bind="{
+							node: data.oracles[0] ?? {},
+							disabled: preventOracle,
+							class: $style.btn
+						}">
+						<BtnOracle
+							:node="data.oracles[0] ?? {}"
+							:disabled="preventOracle"
+							:class="$style.btn" />
+					</slot>
+					<slot name="btn-chat" v-bind="{ move, class: $style.btn }">
+						<BtnSendmovetochat :move="move" :class="$style.btn" />
+					</slot>
+				</slot>
 			</section>
 		</template>
 		<template #default>
@@ -79,13 +91,6 @@ const props = withDefaults(
 		headingLevel?: number
 		toggleSectionClass?: any
 		toggleButtonClass?: any
-		oracleDisabled?: true | false | null
-
-		// Hack: if we declare `click` in the emits, there's no $attrs['onClick']
-		// This allows us to check for presence and still use $emit('click')
-		// https://github.com/vuejs/core/issues/4736#issuecomment-934156497
-		onRollClick?: Function
-		onOracleClick?: Function
 		/**
 		 * Props to be passed to the Collapsible component.
 		 */
@@ -123,21 +128,10 @@ const data = reactive({
 
 const $collapsible = ref<typeof Collapsible>()
 
-type CollapsibleEmits = (typeof Collapsible)['$emit']
-
-interface MoveRowEmits extends CollapsibleEmits {
-	rollClick(): void
-	oracleClick(): void
-}
-
-const $emit = defineEmits<MoveRowEmits>()
-
 const canRoll = computed(() => {
-	if (props.onRollClick) return true
 	return moveHasRollableOptions($item.value)
 })
 const preventOracle = computed(() => {
-	if (props.oracleDisabled !== null) return props.oracleDisabled
 	return data.oracles.length !== 1
 })
 

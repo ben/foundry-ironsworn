@@ -1,4 +1,3 @@
-import { marked } from 'marked'
 import type { Plugin } from 'vue'
 import { formatRollPlusStat } from '../rolls/ironsworn-roll-message.js'
 import { $EnrichHtmlKey, $EnrichMarkdownKey } from './provisions'
@@ -30,8 +29,10 @@ export function enrichHtml(text) {
 }
 
 export function enrichMarkdown(md?: string): string {
-	if (!md) return ''
-	const html = marked.parse(md, { mangle: false, gfm: true, headerIds: false })
+	if (md == null) return ''
+
+	const html = CONFIG.IRONSWORN.showdown.makeHtml(md)
+
 	return enrichHtml(html)
 }
 

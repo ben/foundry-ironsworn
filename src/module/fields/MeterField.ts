@@ -62,14 +62,18 @@ export abstract class MeterField<
 		super(schema, options)
 	}
 
-	migrateSource(sourceData: object, fieldData: any) {
-		// migrate single value meters to unified meter format
-		if (typeof fieldData === 'number') {
-			fieldData = { value: fieldData.valueOf() }
-		}
+	override _cast(value: unknown): any {
+		// Cast numberish values to a meter-shaped object
+		return Number.isNumeric(value)
+			? { value: Number(value) }
+			: super._cast(value)
+	}
 
-		// migrate asset meters to unified meter format
+	override migrateSource(sourceData: object, fieldData: any) {
+		// migrate legacy asset condition meters
 		IronswornActor._addDataFieldMigration(fieldData, 'current', 'value')
+
+		// the _cast method above handles migrations from simple number values
 
 		return super.migrateSource(sourceData, fieldData)
 	}
@@ -111,6 +115,8 @@ export class MomentumField extends MeterField<MomentumSource> {
 				label: 'IRONSWORN.Momentum'
 			},
 			{
+				// it's for later use by ActiveEffect to model impact/debility behavior
+				// if you need to get at the resetValue, use the getter Actor.system.momentumReset instead. otherwise, it won't be sensitive to impacts.
 				resetValue: new fields.NumberField({
 					initial: MomentumField.INITIAL,
 					min: MomentumField.RESET_MIN,
@@ -119,26 +125,6 @@ export class MomentumField extends MeterField<MomentumSource> {
 				})
 			}
 		)
-	}
-
-	override migrateSource(sourceData: any, fieldData: any): void {
-		super.migrateSource(sourceData, fieldData)
-
-		// migrate to momentum object
-		if (typeof sourceData.momentum === 'number') {
-			sourceData.momentum = { value: sourceData.momentum.valueOf() }
-
-			IronswornActor._addDataFieldMigration(
-				sourceData,
-				'momentumReset',
-				'momentum.resetValue'
-			)
-			IronswornActor._addDataFieldMigration(
-				sourceData,
-				'momentumMax',
-				'momentum.max'
-			)
-		}
 	}
 }
 export interface MomentumField extends MomentumSource {}
