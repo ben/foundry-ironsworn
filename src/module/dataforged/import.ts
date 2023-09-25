@@ -30,6 +30,7 @@ import {
 } from './data'
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
+import { AssetDataSourceData } from '../item/subtypes/asset'
 
 export function cleanDollars(obj): any {
 	if (isArray(obj)) {
@@ -183,7 +184,7 @@ function assetsForTypes(types: IAssetType[]) {
 				}
 			}
 
-			const data = {
+			const data: AssetDataSourceData = {
 				requirement: renderMarkdown(asset.Requirement ?? ''),
 				category: assetType.Name,
 				color: assetType.Display.Color ?? '',
@@ -207,13 +208,14 @@ function assetsForTypes(types: IAssetType[]) {
 				}),
 				track: {
 					enabled: asset['Condition Meter'] != null,
-					name: asset['Condition Meter']?.Name,
-					current: asset['Condition Meter']?.Value,
-					max: asset['Condition Meter']?.Max
+					name: asset['Condition Meter']?.Name as string,
+					value: asset['Condition Meter']?.Value as number,
+					max: asset['Condition Meter']?.Max as number,
+					min: asset['Condition Meter']?.Min ?? 0
 				},
 				exclusiveOptions,
 				conditions: (asset['Condition Meter']?.Conditions ?? []).map(
-					(name) => ({ name, selected: false })
+					(name) => ({ name, ticked: false })
 				)
 			}
 			assetsToCreate.push({
