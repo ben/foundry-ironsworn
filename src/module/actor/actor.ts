@@ -1,8 +1,5 @@
 import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
-import type {
-	ActorData,
-	ActorDataConstructorData
-} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
+import type { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type {
 	ConfiguredDocumentClass,
@@ -12,7 +9,7 @@ import type {
 import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
 import { MomentumField } from '../fields/MeterField'
-import { SourceData } from '../fields/utils'
+import type { SourceData } from '../fields/utils'
 import { IronswornSettings } from '../helpers/settings'
 import { typedDeleteDialog } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
@@ -204,7 +201,8 @@ export class IronswornActor<
 	static override migrateData(src: SourceData<IronswornActor>) {
 		src = super.migrateData(src)
 
-		if ('debility' in src.system) {
+		// FIXME this needs to be present to handle new Starship actors, which have an empty system
+		if ('system' in src && 'debility' in src.system) {
 			const source = src as LegacyDebilityActor
 			const sheetClass = source.flags?.core?.sheetClass
 
@@ -257,12 +255,12 @@ export class IronswornActor<
 				;(source.effects as any[]).push(foundry.utils.deepClone(foundEffect))
 			}
 
-			// @ts-expect-error
-			delete source.system.debility
-
 			// set this manually to ensure the derived value is recalculated
 			if ('momentum' in source.system)
 				source.system.momentum.resetValue = MomentumField.INITIAL
+
+			// @ts-expect-error
+			delete source.system.debility
 		}
 
 		return src
