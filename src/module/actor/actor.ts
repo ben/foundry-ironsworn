@@ -11,6 +11,7 @@ import type {
 } from '../../types/helperTypes'
 import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
+import { MomentumField } from '../fields/MeterField'
 import { SourceData } from '../fields/utils'
 import { IronswornSettings } from '../helpers/settings'
 import { typedDeleteDialog } from '../helpers/util'
@@ -257,7 +258,11 @@ export class IronswornActor<
 			}
 
 			// @ts-expect-error
-			delete source.debility
+			delete source.system.debility
+
+			// set this manually to ensure the derived value is recalculated
+			if ('momentum' in source.system)
+				source.system.momentum.resetValue = MomentumField.INITIAL
 		}
 
 		return src
