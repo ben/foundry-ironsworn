@@ -114,8 +114,6 @@ export class MomentumField extends MeterField<MomentumSource> {
 				label: 'IRONSWORN.Momentum'
 			},
 			{
-				// it's for later use by ActiveEffect to model impact/debility behavior
-				// if you need to get at the resetValue, use the getter Actor.system.momentumReset instead. otherwise, it won't be sensitive to impacts.
 				resetValue: new fields.NumberField({
 					initial: MomentumField.INITIAL,
 					min: MomentumField.RESET_MIN,
