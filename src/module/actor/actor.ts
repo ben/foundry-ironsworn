@@ -1,4 +1,3 @@
-import type { StatusEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token'
 import type EmbeddedCollection from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/embedded-collection.mjs'
 import type {
 	ActorData,
@@ -15,7 +14,7 @@ import { CreateActorDialog } from '../applications/createActorDialog'
 import { IronswornSettings } from '../helpers/settings'
 import { typedDeleteDialog } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
-import type { ActorDataProperties, ActorDataSource } from './config'
+import type { ActorDataProperties } from './config'
 import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 let CREATE_DIALOG: CreateActorDialog
