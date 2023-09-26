@@ -187,7 +187,9 @@ export class IronswornActor<
 			: 'ironsworn'
 	}
 
-	protected override _onCreate(_data, _options, _userId): void {
+	protected override _onCreate(data, options, userId): void {
+		super._onCreate(data, options, userId)
+
 		if (this.assert('character') || this.assert('shared'))
 			void this.createEmbeddedDocuments(
 				'Item',
