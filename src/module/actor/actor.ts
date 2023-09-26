@@ -11,6 +11,7 @@ import type {
 } from '../../types/helperTypes'
 import { IronActiveEffect } from '../active-effect/active-effect'
 import { CreateActorDialog } from '../applications/createActorDialog'
+import { SourceData } from '../fields/utils'
 import { IronswornSettings } from '../helpers/settings'
 import { typedDeleteDialog } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
@@ -199,13 +200,11 @@ export class IronswornActor<
 			)
 	}
 
-	static override migrateData(src: ActorDataConstructorData) {
+	static override migrateData(src: SourceData<IronswornActor>) {
 		src = super.migrateData(src)
 
-		if ('debility' in src) {
-			const source = src as ActorDataConstructorData & {
-				debility: Record<string, boolean | string>
-			}
+		if ('debility' in src.system) {
+			const source = src as LegacyDebilityActor
 			const sheetClass = source.flags?.core?.sheetClass
 
 			const preferredRuleset =
@@ -216,15 +215,14 @@ export class IronswornActor<
 				preferredRuleset === 'starforged' ? 'impact' : 'debility'
 
 			// Migrate boolean debility record object to ActiveEffect-based impacts
-			if (source.effects == null)
-				source.effects = [] as ActiveEffectDataConstructorData[]
+			if (source.effects == null) source.effects = []
 			// convert any custom impacts
 			const legacyCustomIDs = ['custom1', 'custom2']
 			for (const id of legacyCustomIDs) {
-				const value = source.debility[id]
+				const value = source.system.debility[id]
 				if (value !== true) continue
 				const name =
-					(source.debility[`${id}name`] as string) ??
+					(source.system.debility[`${id}name`] as string) ??
 					game.i18n.localize(
 						`IRONSWORN.${preferredImpactType.toUpperCase()}.Custom`
 					)
@@ -240,7 +238,7 @@ export class IronswornActor<
 				)
 			}
 
-			for (const [key, value] of Object.entries(source.debility)) {
+			for (const [key, value] of Object.entries(source.system.debility)) {
 				// skip custom debilities, and anything that isn't toggled on
 				if (key.startsWith('custom') || value !== true) continue
 				const id = key === 'permanentlyharmed' ? 'permanently_harmed' : key
@@ -285,3 +283,15 @@ declare global {
 		Actor: typeof IronswornActor
 	}
 }
+
+type LegacyDebilityActor = SourceData<IronswornActor> &
+	(
+		| {
+				type: 'character'
+		  }
+		| { type: 'starship' }
+	) & {
+		system: {
+			debility: Record<string, boolean | string>
+		}
+	}
