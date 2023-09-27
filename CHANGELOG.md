@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a bug with "highest-of" stat selection, as with _Endure Stress_ ([#880](https://github.com/ben/foundry-ironsworn/pull/880))
+
 ## 1.22.3
 
 - Reinstated the template.json to fix installation errors
