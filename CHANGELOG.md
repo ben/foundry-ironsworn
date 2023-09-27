@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.4
+
 - Fix a bug with "highest-of" stat selection, as with _Endure Stress_ ([#880](https://github.com/ben/foundry-ironsworn/pull/880))
 
 ## 1.22.3
