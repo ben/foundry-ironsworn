@@ -2,6 +2,9 @@
 
 ## Next Release
 
+- Add compendium folders for oracles, moves, assets
+  - these don't affect our custom oracle/move/asset tree displays yet, but this changes lays some groundwork for it
+
 ## 1.22.4
 
 - Fix a bug with "highest-of" stat selection, as with _Endure Stress_ ([#880](https://github.com/ben/foundry-ironsworn/pull/880))
