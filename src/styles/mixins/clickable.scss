@@ -13,15 +13,16 @@
 
 @mixin textHover() {
 	color: var(--ironsworn-color-clickable-text-hover);
-	filter: var(--ironsworn-filter-highlight);
+	filter: var(--ironsworn-filter-highlight-cool);
 }
+
 @mixin textFocus() {
 	@include focusOutline;
 }
 
 @mixin textActive() {
 	color: var(--ironsworn-color-clickable-text-selected);
-	filter: var(--ironsworn-filter-highlight);
+	filter: var(--ironsworn-filter-highlight-warm);
 }
 
 @mixin text() {

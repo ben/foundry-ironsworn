@@ -7,10 +7,22 @@ export class CompactPCSheet extends VueActorSheet {
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
 			width: 560,
-			height: 210,
+			height: 300,
 			resizable: true,
 			rootComponent: CompactCharacterSheet
 		}) as any
+	}
+
+	constructor(
+		...[object, options]: ConstructorParameters<typeof VueActorSheet>
+	) {
+		const baseHeight = 240
+		const customImpactRowHeight = 35
+		// the extra +1 represents the "add custom impact" button
+		const customImpactRows = Math.ceil((object.customImpacts.length + 1) / 3)
+		const height = baseHeight + customImpactRowHeight * customImpactRows
+
+		super(object, { ...options, height })
 	}
 
 	_getHeaderButtons() {
@@ -24,7 +36,7 @@ export class CompactPCSheet extends VueActorSheet {
 				}
 			},
 			...super._getHeaderButtons()
-		]
+		].map((btn) => Object.assign(btn, { tooltip: btn.label, label: '' }))
 	}
 
 	_openMoveSheet(e?: JQuery.ClickEvent) {

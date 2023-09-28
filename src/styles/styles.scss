@@ -42,6 +42,7 @@
 	@include meta.load-css('list');
 	@include meta.load-css('sheet');
 	@include meta.load-css('transitions');
+	@include meta.load-css('fvtt/hud');
 
 	// transitions for interactive elements
 	a,

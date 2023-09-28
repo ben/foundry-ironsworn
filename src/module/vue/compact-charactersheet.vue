@@ -17,11 +17,8 @@
 			</div>
 		</section>
 
-		<section class="flexrow nogrow" :class="$style.conditions">
-			<ConditionCheckbox type="debility" name="wounded" />
-			<ConditionCheckbox type="debility" name="unprepared" />
-			<ConditionCheckbox type="debility" name="shaken" />
-			<ConditionCheckbox type="debility" name="encumbered" />
+		<section class="flexrow nogrow" :class="$style.impacts">
+			<PcImpacts />
 		</section>
 	</div>
 </template>
@@ -32,6 +29,7 @@ import AttrBox from './components/attr-box.vue'
 import CompactCharacterSheetButton from './components/compact-character-sheet-button.vue'
 import ConditionCheckbox from 'component:impact/impact-checkbox.vue'
 import { ActorKey } from './provisions'
+import PcImpacts from './components/impact/pc-impacts.vue'
 
 const props = defineProps<{
 	data: {
@@ -59,12 +57,14 @@ provide(ActorKey, computed(() => props.data.actor) as any)
 	padding: var(--ironsworn-spacer-sm);
 }
 
-.conditions {
+.impacts {
 	align-items: center;
 	justify-content: space-around;
-
-	label {
-		flex-grow: 0;
+	padding: 0 var(--ironsworn-spacer-sm);
+	input[type='text'] {
+		width: 15ch;
+		min-width: 10ch;
+		max-width: 30ch;
 	}
 }
 </style>

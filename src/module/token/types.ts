@@ -1,4 +1,12 @@
 declare global {
+	export namespace foundry {
+		export namespace documents {
+			export interface BaseToken {
+				/** A single icon path which is displayed as an overlay on the Token */
+				overlayEffect: string
+			}
+		}
+	}
 	export interface TokenHUD<
 		Options extends ApplicationOptions = ApplicationOptions
 	> {}

@@ -1,31 +1,41 @@
 <template>
-	<IronCheckbox
-		is="button"
-		type="button"
+	<span
+		class="flexrow nowrap"
 		:data-tooltip="state.hintText"
-		class="flexrow"
-		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
-		:checked="actor.system.debility[name]"
 		:aria-labelledby="`label_${baseId}`"
-		:transition="IronswornSettings.deco.impact.transition"
-		@change="input($event)">
-		<template #checked="scope">
-			<FontIcon
-				v-bind="{ ...scope, ...IronswornSettings.deco.impact.checked }" />
-		</template>
-		<template #unchecked="scope">
-			<FontIcon
-				v-bind="{
-					...scope,
-					...IronswornSettings.deco.impact.unchecked
-				}" />
-		</template>
-		<slot :id="`label_${baseId}`" name="default">
-			<span :id="`label_${baseId}`" :class="$style.label">
-				{{ label }}
-			</span>
-		</slot>
-	</IronCheckbox>
+		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }">
+		<IronCheckbox
+			is="button"
+			:id="`checkbox_${baseId}`"
+			type="button"
+			class="flexrow nogrow"
+			:checked="isActive"
+			:transition="IronswornSettings.deco.impact.transition"
+			@change="input">
+			<template #checked="scope">
+				<FontIcon
+					v-bind="{ ...scope, ...IronswornSettings.deco.impact.checked }" />
+			</template>
+			<template #unchecked="scope">
+				<FontIcon
+					v-bind="{
+						...scope,
+						...IronswornSettings.deco.impact.unchecked
+					}" />
+			</template>
+		</IronCheckbox>
+		<label
+			:id="`label_${baseId}`"
+			:for="`checkbox_${baseId}`"
+			class="text clickable flexrow">
+			<slot name="label">
+				<span :class="$style.label">
+					{{ $t((data as any).name).capitalize() }}
+				</span>
+			</slot>
+		</label>
+		<slot name="default"></slot>
+	</span>
 </template>
 
 <script lang="ts" setup>
@@ -36,63 +46,79 @@ import { IronswornSettings } from '../../../helpers/settings'
 import { $ActorKey, ActorKey } from '../../provisions'
 import IronCheckbox from '../input/iron-checkbox.vue'
 import FontIcon from '../icon/font-icon.vue'
+import type { IronswornActor } from '../../../actor/actor'
+import type { IronActiveEffect } from '../../../active-effect/active-effect'
 
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
+const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const baseId = computed(() => `condition_${props.name}_${actor.value._id}`)
-
-const props = defineProps<{
+type AESource = ReturnType<IronActiveEffect['toObject']> & {
 	name: string
-	type: 'impact' | 'debility'
-	global?: boolean
-	globalHint?: boolean
-}>()
+	statuses: string[]
+}
+
+const props = withDefaults(
+	defineProps<{
+		data: StatusEffectV11 | AESource
+		/** Should a disabled ActiveEffect object be left in place on the character?
+		 * @default false
+		 */
+		keepEffect?: boolean
+	}>(),
+	{ keepEffect: false }
+)
+
+const statusId = computed(
+	() => (props.data as StatusEffectV11).id ?? (props.data as AESource)._id
+)
+
+const baseId = computed(() => `condition_${statusId.value}_${actor.value._id}`)
+
+const isActive = computed(() =>
+	actor.value.effects?.some(
+		(fx) =>
+			(fx as any).statuses.includes(statusId.value) && fx.disabled !== true
+	)
+)
 
 const state = reactive<{ hintText?: string }>({})
 
-async function input(value: boolean) {
-	const impactKey = 'debility'
-	const data = {
-		system: {
-			[impactKey]: {
-				[props.name]: value
-			}
-		}
+async function input() {
+	if (props.keepEffect) {
+		// turning a kept effect off -- set it to disabled instead of removing it
+		const effect = actor.value.effects.find((fx: any) =>
+			fx.statuses.includes(statusId.value)
+		) as undefined | AESource
+		await $actor.updateEmbeddedDocuments('ActiveEffect', [
+			{ _id: effect?._id, disabled: !effect?.disabled }
+		])
+	} else {
+		if (props.data.flags?.['foundry-ironsworn']?.global)
+			await CONFIG.IRONSWORN.IronActiveEffect.setGlobal(
+				props.data as any,
+				!isActive.value
+			)
+		else await $actor?.toggleActiveEffect(props.data as StatusEffectV11, {})
 	}
-	await $actor?.update(data)
+
 	await nextTick()
 
-	if (props.global) {
-		await IronswornSettings.updateGlobalAttribute(data, [
-			'character',
-			'starship'
-		])
-	}
-
-	if (props.globalHint) {
-		CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
-			name: props.name,
-			enabled: value
+	if (props.data.flags?.['foundry-ironsworn']?.globalHint) {
+		CONFIG.IRONSWORN.emitter.emit('globalImpactChanged', {
+			id: statusId.value,
+			enabled: isActive.value
 		})
 	}
 }
 
 // We can't watch this directly, we just have to trust that a broadcast will happen
 // when it changes
-CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name }) => {
-	if (name === props.name) {
-		refreshGlobalHint()
-	}
+CONFIG.IRONSWORN.emitter.on('globalImpactChanged', (data) => {
+	if (data.id === statusId.value) refreshGlobalHint()
 })
 
-const label = computed(() =>
-	game.i18n.localize(
-		`IRONSWORN.${props.type.toUpperCase()}.${props.name.capitalize()}`
-	)
-)
 function refreshGlobalHint() {
-	const { actors, assets } = actorsOrAssetsWithConditionEnabled(props.name)
+	const { actors, assets } = actorsOrAssetsWithConditionEnabled(statusId.value)
 	const names = [
 		...actors.map((x) => x.name),
 		...assets.map((x) => {
@@ -106,19 +132,19 @@ function refreshGlobalHint() {
 		})
 	].filter((x) => x !== actor.value.name)
 
-	if (names.length == 0) {
+	if (names.length === 0) {
 		state.hintText = undefined
-	} else if (names.length == 1) {
+	} else if (names.length === 1) {
 		// Condition only set on one other actor
-		state.hintText = game.i18n.format('IRONSWORN.ConditionMarkedOnOne', {
-			condition: label.value.capitalize(),
+		state.hintText = game.i18n.format(`IRONSWORN.ImpactMarkedOnOne`, {
+			condition: (props.data as any).name.capitalize(),
 			name: names[0]
 		})
 	} else {
 		// This condition is marked on several other actors, display them as a list
 		state.hintText = `
-    <p>${game.i18n.format('IRONSWORN.ConditionMarkedOnMany', {
-			condition: label.value.capitalize()
+    <p>${game.i18n.format(`IRONSWORN.ImpactMarkedOnMany`, {
+			condition: (props.data as any).name.capitalize()
 		})}</p>
     <ul>
       ${names.map((x) => `<li>${x}</li>`).join('\n')}
@@ -126,31 +152,30 @@ function refreshGlobalHint() {
     `.trim()
 	}
 }
-if (props.globalHint) refreshGlobalHint()
+if (props.data.flags?.['foundry-ironsworn']?.globalHint) refreshGlobalHint()
 </script>
 
 <style lang="scss" module>
+@use 'mixin:clickable.scss';
+
 .wrapper {
+	flex-wrap: nowrap;
 	gap: var(--ironsworn-spacer-sm);
 	align-items: center;
 	line-height: 1;
-	padding: var(--ironsworn-spacer-xs);
-	padding-left: 0;
-	flex-wrap: nowrap;
 }
 button:local(.wrapper) {
 	// a pox upon chrome's user agent style sheet, which aggressively overrides a bunch of stuff that it shouldn't
 	display: flex;
 	flex-direction: row;
+	padding: 0;
 }
-.hint {
-	filter: drop-shadow(0 0 5px var(--ironsworn-color-warning));
+.hint > * {
+	filter: var(--ironsworn-filter-highlight-warm);
 }
 
 .label {
 	text-align: start;
-	&::first-letter {
-		text-transform: uppercase;
-	}
+	white-space: nowrap;
 }
 </style>

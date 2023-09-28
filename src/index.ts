@@ -44,6 +44,7 @@ import type {
 	DocumentType
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
+import { ConfigActiveEffect } from './module/active-effect/config'
 import ItemConfig from './module/item/config'
 
 declare global {
@@ -78,8 +79,20 @@ Hooks.once('init', async () => {
 
 	mergeObject(CONFIG.Actor, ActorConfig)
 	mergeObject(CONFIG.Item, ItemConfig)
+	mergeObject(CONFIG.ActiveEffect, ConfigActiveEffect)
 
-	// Define custom Entity classes
+	/**
+	 * FVTT provides the same status effects to everyone by default. We circumvent this by making it a getter that accesses the current actor of the token HUD.
+	 *
+	 * Since the HUD is a singleton, that actor *should* always be the same as the actor who we're rendering status effects for.
+	 *
+	 * @see https://github.com/foundryvtt/foundryvtt/issues/9593
+	 */
+	Object.defineProperty(CONFIG, 'statusEffects', {
+		get: () => canvas?.hud?.token.object?.actor?.validImpacts ?? []
+	})
+
+	// Define custom Document classes
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage

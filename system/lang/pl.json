@@ -106,7 +106,7 @@
 			"Wounded": "zraniony",
 			"Shaken": "wstrząśnięy",
 			"Unprepared": "nieprzygotowany",
-			"Permanentlyharmed": "trwale zraniony",
+			"PermanentlyHarmed": "trwale zraniony",
 			"Traumatized": "straumatyzowany",
 			"Tormented": "dręczony",
 			"Doomed": "zgubiony",

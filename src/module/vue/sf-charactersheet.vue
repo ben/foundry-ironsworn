@@ -69,14 +69,15 @@
 			<!-- Stats on right -->
 			<PcConditionMeters
 				class="flexcol margin-right"
-				data-tooltip-direction="UP"
+				data-tooltip-direction="RIGHT"
 				label-position="left"
 				data-tourid="resources" />
 		</div>
 
-		<!-- Impacts -->
 		<hr class="nogrow" />
-		<sf-impacts class="nogrow" data-tourid="impacts" />
+
+		<!-- Impacts -->
+		<PcImpacts class="nogrow" data-tourid="impacts" :class="$style.impacts" />
 	</article>
 </template>
 
@@ -86,7 +87,6 @@ import AttrBox from './components/attr-box.vue'
 import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
 import SfConnections from './components/character-sheet-tabs/sf-connections.vue'
 import SfCharacterheader from './components/sf-characterheader.vue'
-import SfImpacts from 'component:impact/sf-impacts.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import { ActorKey } from './provisions.js'
@@ -98,6 +98,7 @@ import Tab from './components/tabs/tab.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import PlayerAssets from './components/asset/player-assets.vue'
+import PcImpacts from './components/impact/pc-impacts.vue'
 
 const props = defineProps<{
 	data: {
@@ -111,6 +112,9 @@ provide(ActorKey, computed(() => props.data.actor) as any)
 <style lang="scss" module>
 .topPadding {
 	padding-top: var(--ironsworn-spacer-md);
+}
+.impacts {
+	padding: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
 }
 </style>
 

@@ -1,45 +1,68 @@
 <template>
-	<ImpactCheckbox :name="debilitykey" :type="type" :class="$style.wrapper">
-		<template #default="{ id }">
+	<ImpactCheckbox
+		:keep-effect="true"
+		:data="(data as any)"
+		:class="$style.wrapper">
+		<template #label>
 			<input
-				:id="id"
-				v-model="actor.system.debility[labelKey]"
+				v-model="(data as any).name"
 				:class="$style.input"
+				:placeholder="placeholder"
+				:aria-label="placeholder"
 				type="text"
-				@input="nameUpdate"
+				@blur="$activeEffect.update({ name: (data as any).name })"
 				@click.stop />
+		</template>
+		<template #default>
+			<IronBtn
+				v-if="editMode"
+				icon="fa:trash"
+				nogrow
+				block
+				@click="
+					$activeEffect.deleteDialog({
+						title: deleteDialogTitle
+					})
+				" />
 		</template>
 	</ImpactCheckbox>
 </template>
 
 <script lang="ts" setup>
-import { throttle } from 'lodash-es'
-import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
+import type { IronActiveEffect } from '../../../active-effect/active-effect'
+import type { IronswornActor } from '../../../actor/actor'
 import { $ActorKey, ActorKey } from '../../provisions'
+import IronBtn from '../buttons/iron-btn.vue'
 import ImpactCheckbox from './impact-checkbox.vue'
 
 const props = defineProps<{
-	debilitykey: string
-	type: 'debility' | 'impact'
+	data: ReturnType<IronActiveEffect['toObject']>
+	placeholder: string
 }>()
 
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
+const $actor = inject($ActorKey) as IronswornActor<'character'>
 
-const labelKey = computed(() => `${props.debilitykey}name`)
+const actor = inject(ActorKey)
 
-async function immediateNameUpdate(e) {
-	const nk = labelKey.value
-	await $actor?.update({
-		[`system.debility.${nk}`]: actor.value.system.debility[nk]
+const editMode = computed(
+	() => actor?.value.flags?.['foundry-ironsworn']?.['edit-mode']
+)
+
+const $activeEffect = computed(
+	() => $actor.effects.get(props.data._id as string) as IronActiveEffect
+)
+
+const deleteDialogTitle = computed(() =>
+	game.i18n.format('DOCUMENT.Delete', {
+		type: game.i18n.localize(`IRONSWORN.${$actor.impactType.capitalize()}`)
 	})
-}
-const nameUpdate = throttle(immediateNameUpdate, 1000)
+)
 </script>
 
 <style lang="scss" module>
 .wrapper {
+	// width: 20ch;
 	text-align: start;
 }
 .input {

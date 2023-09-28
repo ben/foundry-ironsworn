@@ -1,15 +1,20 @@
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
-import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
+import type { IronActorModel } from './common'
 
-export class FoeModel extends foundry.abstract.TypeDataModel<
-	FoeDataSourceData,
-	FoeDataSourceData,
-	IronswornActor<'foe'>
-> {
-	static _enableV10Validation = true
+export class FoeModel
+	extends foundry.abstract.TypeDataModel<
+		FoeDataSourceData,
+		FoeDataSourceData,
+		IronswornActor<'foe'>
+	>
+	implements IronActorModel
+{
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		return false
+	}
 
-	static override defineSchema(): DataSchema<FoeDataSourceData> {
+	static override defineSchema() {
 		return {
 			dfid: new DataforgedIDField()
 		}

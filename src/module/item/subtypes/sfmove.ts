@@ -108,7 +108,7 @@ export class SFMoveModel extends foundry.abstract.TypeDataModel<
 					'Strong Hit': new SFMoveOutcomeMatchableField(),
 					'Weak Hit': new SFMoveOutcomeField(),
 					Miss: new SFMoveOutcomeMatchableField()
-				},
+				} as any,
 				{ required: false }
 			)
 		}

@@ -17,7 +17,7 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 	getData(...args): MaybePromise<object> {
 		return {
 			...super.getData(...args),
-			actor: this.actor.toObject()
+			actor: this.actor.toObject(false)
 		}
 	}
 

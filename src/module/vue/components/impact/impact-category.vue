@@ -1,46 +1,46 @@
 <template>
 	<div :class="$style.wrapper" :aria-labelledby="`title_${baseId}`">
 		<h4 :id="`title_${baseId}`" :class="$style.title">
-			{{ label }}
+			{{
+				$t(
+					`IRONSWORN.${$actor?.impactType.toUpperCase()}.CATEGORY.${props.category.capitalize()}`
+				)
+			}}
 		</h4>
 		<div :class="impactsClass">
 			<ImpactCheckbox
 				v-for="impact in impacts"
-				:key="impact.name"
-				:type="type"
-				:name="impact.name"
-				:global-hint="impact.globalHint" />
+				:key="impact.id"
+				:data="impact" />
 		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
-import { ActorKey } from '../../provisions'
+import type {
+	DebilityCategoryClassic,
+	ImpactCategoryStarforged
+} from '../../../active-effect/types'
+import { $ActorKey, ActorKey } from '../../provisions'
 import ImpactCheckbox from './impact-checkbox.vue'
-
-type ImpactData = { globalHint?: boolean; name: string }
 
 const props = withDefaults(
 	defineProps<{
-		name: string
-		type: 'debility' | 'impact'
-		impacts: ImpactData[]
+		category: ImpactCategoryStarforged | DebilityCategoryClassic
 		impactsClass?: any
 	}>(),
 	{ impactsClass: {} }
 )
 
-const actor = inject(ActorKey) as Ref
+const $actor = inject($ActorKey)
+const actor = inject(ActorKey)
 
-const label = computed(() =>
-	game.i18n.localize(
-		`IRONSWORN.${props.type.toUpperCase()}.CATEGORY.${props.name.capitalize()}`
-	)
-)
+const impacts = $actor?.validImpacts.filter(
+	(fx) => fx.flags?.['foundry-ironsworn']?.category === props.category
+) as StatusEffectV11[]
 
-const baseId = computed(() => `impacts_${props.name}_${actor.value._id}`)
+const baseId = computed(() => `impacts_${props.category}_${actor?.value._id}`)
 </script>
 
 <style lang="scss" module>

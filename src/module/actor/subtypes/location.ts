@@ -1,12 +1,18 @@
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
+import type { IronActorModel } from './common'
 
-export class LocationModel extends foundry.abstract.TypeDataModel<
-	LocationDataSourceData,
-	LocationDataSourceData,
-	IronswornActor<'location'>
-> {
-	static _enableV10Validation = true
+export class LocationModel
+	extends foundry.abstract.TypeDataModel<
+		LocationDataSourceData,
+		LocationDataSourceData,
+		IronswornActor<'location'>
+	>
+	implements IronActorModel
+{
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		return false
+	}
 
 	static override defineSchema(): DataSchema<LocationDataSourceData> {
 		const fields = foundry.data.fields

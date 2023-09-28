@@ -6,13 +6,19 @@ import { TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
+import type { IronActorModel } from './common'
 
-export class SiteModel extends foundry.abstract.TypeDataModel<
-	SiteDataSourceData,
-	SiteDataSourceData,
-	IronswornActor<'site'>
-> {
-	static _enableV10Validation = true
+export class SiteModel
+	extends foundry.abstract.TypeDataModel<
+		SiteDataSourceData,
+		SiteDataSourceData,
+		IronswornActor<'site'>
+	>
+	implements IronActorModel
+{
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		return false
+	}
 
 	get denizenTable() {
 		return new OracleTable({

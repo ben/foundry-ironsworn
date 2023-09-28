@@ -1,35 +1,37 @@
 <template>
 	<AttrSlider
-		class="momentum-meter"
 		attr="momentum"
 		document-type="Actor"
+		:class="$style.wrapper"
 		:label-position="labelPosition"
 		:slider-style="props.sliderStyle"
-		:current-value="actor.system.momentum.value ?? MomentumField.INITIAL"
-		:min="MomentumField.MIN"
-		:max="MomentumField.MAX"
-		:soft-max="$actor.system.momentumMax"
+		:bar-min="MomentumField.MIN"
+		:bar-max="MomentumField.MAX"
+		:max="actor.system.momentum.max"
+		:bar-class="$style.bar"
+		:label-class="$style.label"
 		:segment-class="{
-			[$actor.system.momentumReset]: 'segment-momentum-reset'
+			[actor.system.momentum.resetValue]: [
+				{ [$style.resetValue]: state.highlightResetValue }
+			]
 		}">
 		<template #label>
 			<BtnMomentumburn
+				:class="$style.btn"
 				:vertical="sliderStyle === 'vertical'"
 				:text="$t('IRONSWORN.Momentum')"
 				:tooltip="
-					$t('IRONSWORN.BurnMomentumAndResetTo', {
-						value: actor.system.momentum.value,
-						resetValue: $actor.system.momentumReset
-					})
-				">
-			</BtnMomentumburn>
+					$t('IRONSWORN.BurnMomentumAndResetTo', actor.system.momentum as any)
+				"
+				@mouseenter="state.highlightResetValue = true"
+				@mouseleave="state.highlightResetValue = false" />
 		</template>
 	</AttrSlider>
 </template>
 
 <script lang="ts" setup>
 import type { Ref } from 'vue'
-import { inject } from 'vue'
+import { reactive, inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
 import { MomentumField } from '../../../fields/MeterField'
 import { $ActorKey, ActorKey } from '../../provisions.js'
@@ -45,25 +47,40 @@ const props = withDefaults(
 	{ sliderStyle: 'vertical', labelPosition: 'left' }
 )
 
+const state = reactive({
+	highlightResetValue: false
+})
+
 const actor = inject(ActorKey) as Ref<ActorSource<'character'>>
 
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 @use 'mixin:clickable.scss';
 
-.momentum-meter {
+.wrapper {
 	gap: var(--ironsworn-spacer-md) 0;
-	.attr-slider-label button {
-		text-transform: uppercase;
-	}
-	.attr-slider-label:hover ~ .slider-bar {
-		.segment-momentum-reset {
-			@include clickable.blockHover;
+}
 
-			box-shadow: 0 0 5px var(--ironsworn-color-warm) inset;
-		}
-	}
+.btn {
+	text-transform: uppercase;
+}
+.bar {
+}
+
+.resetValue {
+	--ironsworn-color-clickable-block-bg: var(
+		--ironsworn-color-clickable-block-bg-hover
+	);
+	--ironsworn-color-clickable-block-fg: var(
+		--ironsworn-color-clickable-block-fg-hover
+	);
+
+	@include clickable.blockHover;
+
+	z-index: var(--ironsworn-z-index-highest);
+	box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
+		0 0 5px var(--ironsworn-color-warm) !important;
 }
 </style>

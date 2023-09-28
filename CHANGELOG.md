@@ -2,6 +2,14 @@
 
 ## Next Release
 
+- Ironsworn debilities and Starforged impacts have been rewritten to take advantage of FVTT's ActiveEffects API.
+  - Unlimited Suffering! Player characters can now have any number of custom impacts.
+    - Note that custom impacts can't be managed from the token HUD yet, but we plan to add this in the future
+  - Ironsworn-style debilities or Starforged-style impacts can be selected independent of toolbox (though certain Starforged-specific sheets will override this)
+  - Plus some features standard to ActiveEffects, including token HUD integration
+- Impacts/debilities that prevent recovery of resources (e.g. wounded, shaken, unprepared) now 'lock' the condition meter in question (with a tooltip that identifies the culprit)
+- Make player condition meters and momentum available as bar displays on actor tokens
+
 ## 1.22.4
 
 - Fix a bug with "highest-of" stat selection, as with _Endure Stress_ ([#880](https://github.com/ben/foundry-ironsworn/pull/880))

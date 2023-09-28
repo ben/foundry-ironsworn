@@ -1,4 +1,4 @@
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 import { OracleWindow } from '../applications/oracle-window'
 import { EditSectorDialog } from '../applications/sf/editSectorApp'
 import { IronswornSettings } from '../helpers/settings'
@@ -83,7 +83,7 @@ async function newLocation(subtype: string, i18nKey: string, scale = 1) {
 		'Locations',
 		game.scenes?.current?.name ?? '???'
 	)
-	const loc = await IronswornActor.create({
+	const loc = await getDocumentClass('Actor').create({
 		type: 'location',
 		name,
 		data: { subtype },

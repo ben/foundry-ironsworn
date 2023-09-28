@@ -15,7 +15,6 @@ import { starforged, ironsworn } from 'dataforged'
 import { isArray, isObject, max } from 'lodash-es'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
-import { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornJournalEntry } from '../journal/journal-entry'
@@ -31,6 +30,7 @@ import {
 } from './data'
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
+import { AssetDataSourceData } from '../item/subtypes/asset'
 
 export function cleanDollars(obj): any {
 	if (isArray(obj)) {
@@ -184,7 +184,7 @@ function assetsForTypes(types: IAssetType[]) {
 				}
 			}
 
-			const data = {
+			const data: AssetDataSourceData = {
 				requirement: renderMarkdown(asset.Requirement ?? ''),
 				category: assetType.Name,
 				color: assetType.Display.Color ?? '',
@@ -208,13 +208,14 @@ function assetsForTypes(types: IAssetType[]) {
 				}),
 				track: {
 					enabled: asset['Condition Meter'] != null,
-					name: asset['Condition Meter']?.Name,
-					current: asset['Condition Meter']?.Value,
-					max: asset['Condition Meter']?.Max
+					name: asset['Condition Meter']?.Name as string,
+					value: asset['Condition Meter']?.Value as number,
+					max: asset['Condition Meter']?.Max as number,
+					min: asset['Condition Meter']?.Min ?? 0
 				},
 				exclusiveOptions,
 				conditions: (asset['Condition Meter']?.Conditions ?? []).map(
-					(name) => ({ name, selected: false })
+					(name) => ({ name, ticked: false })
 				)
 			}
 			assetsToCreate.push({
@@ -353,7 +354,7 @@ async function processSFFoes() {
 		StoredDocument<IronswornItem>
 	>
 	for (const foeItem of foeItems ?? []) {
-		const actor = await IronswornActor.create(
+		const actor = await getDocumentClass('Actor').create(
 			{
 				name: foeItem.name ?? 'wups',
 				img: foeItem.img,

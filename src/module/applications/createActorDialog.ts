@@ -1,6 +1,6 @@
 import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import { sample } from 'lodash-es'
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 import { IronswornSettings } from '../helpers/settings'
 import { OracleTable } from '../roll-table/oracle-table'
 
@@ -153,7 +153,9 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		if (sheetClass) {
 			data.flags = { core: { sheetClass } }
 		}
-		await IronswornActor.create(data, { renderSheet: true })
+		await getDocumentClass('Actor')?.create(data, {
+			renderSheet: true
+		})
 		await this.close()
 	}
 

@@ -158,53 +158,6 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 			}
 		}
 
-		const debilities = [
-			'corrupted',
-			'cursed',
-			'encumbered',
-			'maimed',
-			'shaken',
-			'tormented',
-			'unprepared',
-			'wounded',
-			'permanentlyharmed',
-			'traumatized',
-			'doomed',
-			'indebted',
-			'battered',
-			'custom1',
-			'custom2'
-		] as const
-		for (const debility of debilities) {
-			const conditionType = gameIsStarforged ? `impact` : `debility`
-			const newValue = get(data.system?.debility, debility)
-
-			if (newValue !== undefined) {
-				const oldValue = actor.system.debility[debility]
-				if (oldValue === newValue) continue
-				const i18nPath = `IRONSWORN.${conditionType.toUpperCase()}`
-				const i18nDebility = `<b class='term ${conditionType}'>${
-					debility.startsWith('custom')
-						? get(actor.system.debility, `${debility}name`)
-						: game.i18n.localize(`${i18nPath}.${debility.capitalize()}`)
-				}</b>`
-
-				const params = gameIsStarforged
-					? { impact: i18nDebility }
-					: { debility: i18nDebility }
-
-				if (newValue)
-					return game.i18n.format(
-						`IRONSWORN.ChatAlert.Marked${conditionType.capitalize()}`,
-						params
-					)
-				return game.i18n.format(
-					`IRONSWORN.ChatAlert.Cleared${conditionType.capitalize()}`,
-					params
-				)
-			}
-		}
-
 		return undefined
 	},
 
@@ -219,27 +172,6 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 				stat: i18nStat,
 				val: newValue
 			})
-		}
-
-		return undefined
-	},
-
-	starship: (actor, data) => {
-		const impacts = ['cursed', 'battered'] as const
-		for (const impact of impacts) {
-			const newValue = get(data.system?.debility, impact)
-			if (newValue !== undefined) {
-				const oldValue = actor.system.debility[impact]
-				if (oldValue === newValue) continue
-				const i18nImpact = game.i18n.localize(
-					`IRONSWORN.IMPACT.${impact.capitalize()}`
-				)
-				const params = { impact: `<b class'term impact'>${i18nImpact}</b>` }
-				// TODO: use "impact" if this is an SF character
-				if (newValue)
-					return game.i18n.format('IRONSWORN.ChatAlert.MarkedImpact', params)
-				return game.i18n.format('IRONSWORN.ChatAlert.ClearedImpact', params)
-			}
 		}
 
 		return undefined
@@ -355,7 +287,7 @@ const ITEM_TYPE_HANDLERS: ItemTypeHandlers = {
 			)
 			if (selectedOption == null) return
 			return game.i18n.format('IRONSWORN.ChatAlert.MarkedOption', {
-				name: selectedOption.name
+				name: selectedOption?.name
 			})
 		}
 
@@ -392,9 +324,9 @@ const ITEM_TYPE_HANDLERS: ItemTypeHandlers = {
 	}
 }
 
-async function sendToChat(speaker: IronswornActor, msg: string) {
+export async function sendToChat(speaker: IronswornActor, msg: string) {
 	const whisperToCurrentUser =
-		speaker.getFlag('foundry-ironsworn', 'muteBroadcast') ?? (false as boolean)
+		speaker.getFlag('foundry-ironsworn', 'muteBroadcast') ?? false
 	const whisper = whisperToCurrentUser ? compact([game.user?.id]) : undefined
 
 	const messageData: ChatMessageDataConstructorData = {

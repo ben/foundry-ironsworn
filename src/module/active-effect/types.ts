@@ -10,6 +10,7 @@ import type {
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/effectDurationData'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { ConfiguredDocumentClass } from '../../types/helperTypes'
+import type { ImpactFlags } from './config'
 
 export type ImpactCategoryStarforged = 'conditions' | 'banes' | 'burdens'
 export type DebilityCategoryClassic =
@@ -17,6 +18,8 @@ export type DebilityCategoryClassic =
 	| 'lastingEffects'
 	| 'burdens'
 	| 'vehicle'
+
+export type ImpactOptions = StatusEffectV11 & ImpactFlags
 
 declare global {
 	export interface DurationSummary {

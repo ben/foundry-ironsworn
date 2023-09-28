@@ -105,8 +105,13 @@
 		"Clock": "Clock",
 		"Segments": "Segments",
 		"Impacts": "Impacts",
+		"HUD": {
+			"MarkImpacts": "Mark Impacts",
+			"MarkDebilities": "Mark Debilities"
+		},
 		"IMPACT": {
-			"Custom": "Custom impact",
+			"NoRecoverHint": "You can't recover {resource} because you are {status}.",
+			"Custom": "Custom Impact",
 			"CATEGORY": {
 				"Misfortunes": "Misfortunes",
 				"LastingEffects": "Lasting effects",
@@ -116,7 +121,7 @@
 			"Wounded": "wounded",
 			"Shaken": "shaken",
 			"Unprepared": "unprepared",
-			"Permanentlyharmed": "permanently harmed",
+			"PermanentlyHarmed": "permanently harmed",
 			"Traumatized": "traumatized",
 			"Tormented": "tormented",
 			"Doomed": "doomed",
@@ -126,7 +131,7 @@
 		},
 		"Debilities": "Debilities",
 		"DEBILITY": {
-			"Custom": "Custom debility",
+			"Custom": "Custom Debility",
 			"CATEGORY": {
 				"Conditions": "Conditions",
 				"Banes": "Banes",
@@ -143,8 +148,8 @@
 		},
 		"Conditions": "Conditions",
 		"Condition": "Condition",
-		"ConditionMarkedOnOne": "{condition} is marked on {name}",
-		"ConditionMarkedOnMany": "{condition} is marked on:",
+		"ImpactMarkedOnOne": "{condition} is marked on {name}",
+		"ImpactMarkedOnMany": "{condition} is marked on:",
 		"Reroll": "Reroll",
 		"Connections": "Connections",
 		"Connection": "Connection",
@@ -255,8 +260,6 @@
 			"MarkedXP": "Marked {amt} XP",
 			"UnmarkedXP": "Unmarked {amt} XP",
 			"AdjustedStat": "{amt} {stat} (now {val})",
-			"MarkedCondition": "Marked the {condition} condition",
-			"ClearedCondition": "Cleared the {condition} condition",
 			"MarkedImpact": "Marked the {impact} impact",
 			"ClearedImpact": "Cleared the {impact} impact",
 			"MarkedDebility": "Marked the {debility} debility",
@@ -300,6 +303,12 @@
 				"Name": "Character Tools",
 				"Hint": "Which set of moves and oracles will appear when opening a character sheet.",
 				"Sheet": "Match sheet"
+			},
+			"Impacts": {
+				"Name": "Rules: Debilities and Impacts",
+				"Hint": "The default set of conditions provided on sheets and tokens. Individual sheets may override this.",
+				"Classic": "Debilities (Ironsworn Rulebook, p. 36)",
+				"Starforged": "Impacts (Starforged, p. 50)"
 			},
 			"SharedSupply": {
 				"Name": "Shared Supply Tracker",

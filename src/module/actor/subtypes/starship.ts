@@ -1,33 +1,29 @@
-import { ImpactField } from '../../fields/ImpactField'
-import type { IronswornActor } from '../actor'
 import type { DataSchema } from '../../fields/utils'
+import type { IronswornActor } from '../actor'
+import type { IronActorModel } from './common'
 
-export class StarshipModel extends foundry.abstract.TypeDataModel<
-	StarshipDataSourceData,
-	StarshipDataSourceData,
-	IronswornActor<'starship'>
-> {
-	static _enableV10Validation = true
+export class StarshipModel
+	extends foundry.abstract.TypeDataModel<
+		StarshipDataSourceData,
+		StarshipDataSourceData,
+		IronswornActor<'starship'>
+	>
+	implements IronActorModel
+{
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		return (
+			statusEffect.flags?.['foundry-ironsworn']?.type === 'impact' &&
+			statusEffect.flags?.['foundry-ironsworn']?.category === 'vehicle'
+		)
+	}
 
 	static override defineSchema(): DataSchema<StarshipDataSourceData> {
-		return {
-			debility: new foundry.data.fields.SchemaField<
-				StarshipDataSourceData['debility']
-			>({
-				battered: new ImpactField(),
-				cursed: new ImpactField()
-			})
-		}
+		return {}
 	}
 }
 export interface StarshipModel extends StarshipDataSourceData {}
 
-interface StarshipDataSourceData {
-	debility: {
-		battered: boolean
-		cursed: boolean
-	}
-}
+interface StarshipDataSourceData {}
 export interface StarshipDataSource {
 	type: 'starship'
 	/**

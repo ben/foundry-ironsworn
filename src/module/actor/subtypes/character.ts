@@ -1,18 +1,30 @@
-import { StatField } from '../../fields/StatField'
-import { ImpactField } from '../../fields/ImpactField'
-import type { IronswornActor } from '../actor'
-import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type {
 	ConditionMeterSource,
 	MomentumSource
 } from '../../fields/MeterField'
 import { ConditionMeterField, MomentumField } from '../../fields/MeterField'
+import { ProgressTicksField } from '../../fields/ProgressTicksField'
+import { StatField } from '../../fields/StatField'
+import type { IronswornActor } from '../actor'
+import type { IronActorModel } from './common'
 
-export class CharacterModel extends foundry.abstract.TypeDataModel<
-	CharacterDataSourceData,
-	CharacterDataSourceData,
-	IronswornActor<'character'>
-> {
+export class CharacterModel
+	extends foundry.abstract.TypeDataModel<
+		CharacterDataSourceData,
+		CharacterDataSourceData,
+		IronswornActor<'character'>
+	>
+	implements IronActorModel
+{
+	isValidImpact(statusEffect: StatusEffectV11): boolean {
+		// vehicle impact - skip
+		// TODO: remove this when asset-provided impacts are implemented
+		// if (statusEffect.flags?.['foundry-ironsworn'].category === 'vehicle')
+		// 	return false
+
+		return statusEffect.flags?.['foundry-ironsworn']?.type === 'impact'
+	}
+
 	constructor(
 		data: CharacterDataSourceData,
 		options: foundry.data.fields.DataField.Options<
@@ -21,43 +33,22 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 		> & { parent: IronswornActor<'character'> }
 	) {
 		super(data, options)
+		this.resetMomentum = this.resetMomentum.bind(this)
 		this.burnMomentum = this.burnMomentum.bind(this)
 	}
 
-	static _enableV10Validation = true
+	get canBurnMomentum() {
+		return this.momentum.value >= MomentumField.BURN_MIN
+	}
+
+	async resetMomentum() {
+		return await this.parent.update({
+			'system.momentum.value': this.parent.system.momentum.resetValue
+		})
+	}
 
 	async burnMomentum(this: CharacterModel) {
-		if (this.canBurnMomentum) {
-			await this.parent.update({
-				system: { 'momentum.value': this.parent.system.momentumReset }
-			})
-		}
-	}
-
-	get canBurnMomentum() {
-		return this.parent.system.momentum.value > this.parent.system.momentumReset
-	}
-
-	get #impactCount() {
-		return Object.values(this.debility as any).filter((value) => value === true)
-			.length
-	}
-
-	// FIXME: These won't be required when impacts are represented as ActiveEffects
-	get momentumReset() {
-		return Math.clamped(
-			this.momentum.resetValue - this.#impactCount,
-			MomentumField.RESET_MIN,
-			this.momentum.max
-		)
-	}
-
-	get momentumMax() {
-		return Math.clamped(
-			this.momentum.max - this.#impactCount,
-			MomentumField.MIN,
-			MomentumField.MAX
-		)
+		if (this.canBurnMomentum) await this.resetMomentum()
 	}
 
 	static override defineSchema() {
@@ -74,7 +65,6 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 			shadow: new StatField({ label: 'IRONSWORN.Shadow' }),
 			wits: new StatField({ label: 'IRONSWORN.Wits' }),
 
-			// TODO: add a localized `hint` property, and have the vue sheet automatically pull these in as tooltips
 			health: new ConditionMeterField({ label: 'IRONSWORN.Health' }),
 			spirit: new ConditionMeterField({ label: 'IRONSWORN.Spirit' }),
 			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' }),
@@ -86,27 +76,6 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 				required: true,
 				min: 0,
 				initial: 0
-			}),
-
-			debility: new fields.SchemaField<CharacterDataSourceData['debility']>({
-				corrupted: new ImpactField(),
-				cursed: new ImpactField(),
-				encumbered: new ImpactField(),
-				maimed: new ImpactField(),
-				shaken: new ImpactField(),
-				tormented: new ImpactField(),
-				unprepared: new ImpactField(),
-				wounded: new ImpactField(),
-				permanentlyharmed: new ImpactField(),
-				traumatized: new ImpactField(),
-				doomed: new ImpactField(),
-				indebted: new ImpactField(),
-				battered: new ImpactField(),
-
-				custom1: new ImpactField(),
-				custom1name: new fields.StringField({}),
-				custom2: new ImpactField(),
-				custom2name: new fields.StringField({})
 			}),
 
 			legacies: new fields.SchemaField<CharacterDataSourceData['legacies']>({
@@ -158,26 +127,6 @@ export interface CharacterDataSourceData {
 		bondsXpSpent: number
 		discoveries: number
 		discoveriesXpSpent: number
-	}
-
-	debility: {
-		corrupted: boolean
-		cursed: boolean
-		encumbered: boolean
-		maimed: boolean
-		shaken: boolean
-		tormented: boolean
-		unprepared: boolean
-		wounded: boolean
-		permanentlyharmed: boolean
-		traumatized: boolean
-		doomed: boolean
-		indebted: boolean
-		battered: boolean
-		custom1: boolean
-		custom1name: string
-		custom2: boolean
-		custom2name: string
 	}
 }
 

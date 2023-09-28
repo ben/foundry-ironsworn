@@ -21,37 +21,37 @@
 
 		<section class="flexrow nogrow" :class="$style.impacts">
 			<ImpactCheckbox
-				type="impact"
-				name="battered"
-				:global-hint="true"
-				:class="$style.impact" />
-			<ImpactCheckbox
-				type="impact"
-				name="cursed"
-				:global-hint="true"
+				v-for="impact in $actor?.validImpacts"
+				:key="impact.id"
+				:data="impact"
 				:class="$style.impact" />
 		</section>
 	</SheetBasic>
 </template>
 
 <script setup lang="ts">
-import { provide, computed } from 'vue'
+import { provide, computed, inject } from 'vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
-import ImpactCheckbox from 'component:impact/impact-checkbox.vue'
 import SheetBasic from './sheet-basic.vue'
-import { ActorKey } from './provisions.js'
+import { $ActorKey, ActorKey } from './provisions.js'
 import TabSet from './components/tabs/tab-set.vue'
 import TabList from './components/tabs/tab-list.vue'
 import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import PlayerAssets from './components/asset/player-assets.vue'
+import ImpactCheckbox from './components/impact/impact-checkbox.vue'
+import type { IronswornActor } from '../actor/actor'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'starship'> }
 }>()
 
-provide(ActorKey, computed(() => props.data.actor) as any)
+provide(
+	ActorKey,
+	computed(() => props.data.actor)
+)
+const $actor = inject($ActorKey) as IronswornActor<'starship'>
 </script>
 
 <style lang="scss" module>

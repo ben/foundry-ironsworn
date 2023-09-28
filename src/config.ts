@@ -20,11 +20,12 @@ import {
 	registerOracleTree
 } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
+import { IronActiveEffect } from './module/active-effect/active-effect'
 
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
 	highlightOracle: string // DF ID
-	globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
+	globalImpactChanged: { id: string; enabled: boolean } // info about condition that changed
 	dragStart: string // type of item
 	dragEnd: string // type of item
 }
@@ -33,6 +34,7 @@ export type IronswornEmitter = Emitter<EmitterEvents>
 export interface IronswornConfig {
 	actorClass: typeof IronswornActor
 	OracleTable: typeof OracleTable
+	IronActiveEffect: typeof IronActiveEffect
 
 	showdown: showdown.Converter
 
@@ -67,6 +69,7 @@ export interface IronswornConfig {
 export const IRONSWORN: IronswornConfig = {
 	actorClass: IronswornActor,
 	OracleTable,
+	IronActiveEffect,
 
 	// TODO: if we wanted to implement enrichMarkdown as a showdown plugin, we could use our own instance instead.
 	get showdown() {

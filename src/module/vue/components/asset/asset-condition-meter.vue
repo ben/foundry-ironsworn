@@ -1,14 +1,11 @@
 <template>
 	<article :class="{ [$style.wrapper]: true, [$style.readonly]: readonly }">
-		<ConditionMeter
+		<ConditionMeterSlider
 			v-if="asset.system.track.enabled"
 			slider-style="horizontal"
 			:class="$style.meter"
 			document-type="Item"
 			attr="track"
-			:max="asset.system.track.max"
-			:min="asset.system.track.min"
-			:stat-label="asset.system.track.name"
 			label-position="left"
 			:read-only="readonly" />
 		<div v-if="asset.system.conditions?.length > 0" :class="$style.conditions">
@@ -31,8 +28,8 @@
 import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { ItemKey, $ItemKey, ActorKey, $ActorKey } from '../../provisions'
-import ConditionMeter from 'component:resource-meter/condition-meter.vue'
-import { IronswornItem } from '../../../item/item'
+import ConditionMeterSlider from 'component:resource-meter/condition-meter.vue'
+import type { IronswornItem } from '../../../item/item'
 
 const asset = inject(ItemKey) as Ref<ItemSource<'asset'>>
 const $asset = inject($ItemKey) as IronswornItem<'asset'>
@@ -48,8 +45,8 @@ async function toggleCondition(idx: number) {
 	conditions[idx].ticked = !conditions[idx].ticked
 	await $asset?.update({ system: { conditions } })
 
-	CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
-		name: conditions[idx].name.toLowerCase(),
+	CONFIG.IRONSWORN.emitter.emit('globalImpactChanged', {
+		id: conditions[idx].name.toLowerCase(),
 		enabled: conditions[idx].ticked
 	})
 }

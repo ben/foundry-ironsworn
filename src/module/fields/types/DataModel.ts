@@ -7,9 +7,8 @@ import type {
 } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/packages.mjs'
 import type { DataSchema } from '../utils'
 
+type AnyDocument = foundry.abstract.Document<any, any, any>
 declare global {
-	export type AnyDocument = Document<any, any, any>
-
 	namespace foundry {
 		namespace abstract {
 			/**

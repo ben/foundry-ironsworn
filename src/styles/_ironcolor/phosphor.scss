@@ -25,10 +25,18 @@
 	--ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
 	// CLICKABLE TEXT: HOVER EFFECT
-	--ironsworn-filter-highlight: drop-shadow(0 0 3px var(--ironsworn-color-cool))
+	--ironsworn-filter-highlight-cool: drop-shadow(
+			0 0 3px var(--ironsworn-color-cool)
+		)
 		drop-shadow(0 0 3px var(--ironsworn-color-cool-50));
-	--ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool),
+	--ironsworn-box-shadow-highlight-cool: 0 0 3px var(--ironsworn-color-cool),
 		0 0 3px var(--ironsworn-color-cool);
+	--ironsworn-filter-highlight-warm: drop-shadow(
+			0 0 3px var(--ironsworn-color-warm)
+		)
+		drop-shadow(0 0 3px var(--ironsworn-color-warm-50));
+	--ironsworn-box-shadow-highlight-warm: 0 0 3px var(--ironsworn-color-warm),
+		0 0 3px var(--ironsworn-color-warm);
 
 	// now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
 	@include fvtt.colors;

@@ -2,13 +2,19 @@ import type { ConditionMeterSource } from '../../fields/MeterField'
 import { ConditionMeterField } from '../../fields/MeterField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornActor } from '../actor'
+import type { IronActorModel } from './common'
 
-export class SharedModel extends foundry.abstract.TypeDataModel<
-	SharedDataSourceData,
-	SharedDataSourceData,
-	IronswornActor<'shared'>
-> {
-	static _enableV10Validation = true
+export class SharedModel
+	extends foundry.abstract.TypeDataModel<
+		SharedDataSourceData,
+		SharedDataSourceData,
+		IronswornActor<'shared'>
+	>
+	implements IronActorModel
+{
+	isValidImpact(status: StatusEffectV11) {
+		return false
+	}
 
 	static override defineSchema(): DataSchema<SharedDataSourceData> {
 		return {
