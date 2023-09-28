@@ -31,6 +31,8 @@ import {
 } from './data'
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
+import type { FolderDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
+import { MoveCategoryColor } from '../features/custommoves'
 
 export function cleanDollars(obj): any {
 	if (isArray(obj)) {
@@ -93,7 +95,15 @@ export async function importFromDataforged() {
 
 		// Delete all the contents
 		const idsToDelete = pack.index.map((x) => x._id)
-		await Item.deleteDocuments(idsToDelete, { pack: key })
+		await getDocumentClass(pack.metadata.type).deleteDocuments(idsToDelete, {
+			pack: key
+		})
+		// @ts-expect-error outdated typing
+		if (pack.folders.size > 0)
+			// @ts-expect-error outdated typing
+			await Folder.deleteDocuments(Array.from(pack.folders.keys()), {
+				pack: key
+			})
 	}
 
 	await Promise.all([
@@ -103,7 +113,7 @@ export async function importFromDataforged() {
 		processSFOracles(),
 		processISMoves(),
 		processISOracles(),
-		// processISTruths(), // Re-enable when DF includes them
+		processISTruths(), // Re-enable when DF includes them
 		processSFTruths(),
 		processSFEncounters().then(async () => {
 			await processSFFoes()
@@ -120,6 +130,23 @@ export async function importFromDataforged() {
  * MOVES
  */
 
+function getMoveFolderData(
+	moveCategory: IMoveCategory
+): FolderDataConstructorData {
+	return {
+		name: `${moveCategory.Name} Moves`,
+		type: 'Item',
+		_id: hashLookup(moveCategory.$id),
+		// workaround for incorrect move colors in DFv1
+		color: MoveCategoryColor[moveCategory.Name],
+		description: moveCategory.Description,
+		sort:
+			(moveCategory.Source.Page ?? 0) +
+			(moveCategory.Source.Title.includes('Delve') ? 1000 : 0),
+		flags: { dfid: moveCategory.$id }
+	}
+}
+
 function movesForCategories(
 	categories: IMoveCategory[]
 ): Array<ItemDataConstructorData & Record<string, unknown>> {
@@ -127,6 +154,7 @@ function movesForCategories(
 		ItemDataConstructorData & Record<string, unknown>
 	>
 	for (const category of categories) {
+		const folder = hashLookup(category.$id)
 		for (const move of category.Moves) {
 			renderLinksInMove(move)
 			const cleanMove = cleanDollars(move)
@@ -137,7 +165,9 @@ function movesForCategories(
 				type: 'sfmove',
 				name: move.Name,
 				img: 'icons/dice/d10black.svg',
-				system: cleanMove
+				system: cleanMove,
+				sort: move.Source.Page,
+				folder
 			})
 		}
 	}
@@ -145,16 +175,26 @@ function movesForCategories(
 }
 
 async function processISMoves() {
+	const pack = 'foundry-ironsworn.ironswornmoves'
+	await Folder.createDocuments(
+		ISMoveCategories.map((moveCategory) => getMoveFolderData(moveCategory)),
+		{ pack, keepId: true }
+	)
 	const movesToCreate = movesForCategories(ISMoveCategories)
 	await Item.createDocuments(movesToCreate, {
-		pack: 'foundry-ironsworn.ironswornmoves',
+		pack,
 		keepId: true
 	})
 }
 async function processSFMoves() {
+	const pack = 'foundry-ironsworn.starforgedmoves'
+	await Folder.createDocuments(
+		SFMoveCategories.map((moveCategory) => getMoveFolderData(moveCategory)),
+		{ pack, keepId: true }
+	)
 	const movesToCreate = movesForCategories(SFMoveCategories)
 	await Item.createDocuments(movesToCreate, {
-		pack: 'foundry-ironsworn.starforgedmoves',
+		pack,
 		keepId: true
 	})
 }
@@ -163,11 +203,24 @@ async function processSFMoves() {
  * ASSSETS
  */
 
+function getAssetFolderData(assetType: IAssetType): FolderDataConstructorData {
+	return {
+		name: assetType.Name,
+		color: assetType.Display.Color,
+		description: assetType.Description,
+		type: 'Item',
+		_id: hashLookup(assetType.$id),
+		sort: assetType.Source.Page,
+		flags: { dfid: assetType.$id }
+	}
+}
+
 function assetsForTypes(types: IAssetType[]) {
 	const assetsToCreate = [] as Array<
 		ItemDataConstructorData & Record<string, unknown>
 	>
 	for (const assetType of types) {
+		const folder = hashLookup(assetType.$id)
 		for (const asset of assetType.Assets) {
 			// Inputs map to fields and exclusive options
 			const fields = [] as Array<{ name: string; value: string }>
@@ -220,6 +273,7 @@ function assetsForTypes(types: IAssetType[]) {
 			assetsToCreate.push({
 				type: 'asset',
 				_id: hashLookup(asset.$id),
+				folder,
 				name: asset.Name,
 				system: data
 			})
@@ -229,17 +283,28 @@ function assetsForTypes(types: IAssetType[]) {
 }
 
 async function processSFAssets() {
+	const pack = 'foundry-ironsworn.starforgedassets'
+	const folders = await Folder.createDocuments(
+		SFAssetTypes.map((assetType) => getAssetFolderData(assetType)),
+		{ pack, keepId: true }
+	)
+	console.log(folders)
 	const assetsToCreate = assetsForTypes(SFAssetTypes)
 	await Item.createDocuments(assetsToCreate, {
-		pack: 'foundry-ironsworn.starforgedassets',
+		pack,
 		keepId: true
 	})
 }
 
 async function processISAssets() {
+	const pack = 'foundry-ironsworn.ironswornassets'
+	await Folder.createDocuments(
+		ISAssetTypes.map((assetType) => getAssetFolderData(assetType)),
+		{ pack, keepId: true }
+	)
 	const assetsToCreate = assetsForTypes(ISAssetTypes)
 	await Item.createDocuments(assetsToCreate, {
-		pack: 'foundry-ironsworn.ironswornassets',
+		pack,
 		keepId: true
 	})
 }
@@ -247,46 +312,100 @@ async function processISAssets() {
 /**
  * ORACLES
  */
+
+function getOracleFolderData(
+	oracleBranch: IOracleCategory | IOracle,
+	parent?: string
+): FolderDataConstructorData {
+	if ('Oracles' in oracleBranch)
+		return {
+			name: oracleBranch.Name,
+			_id: hashLookup(oracleBranch.$id),
+			type: 'RollTable',
+			description: oracleBranch.Description,
+			sort:
+				(oracleBranch.Source.Page ?? 0) +
+				(oracleBranch.Source.Title.includes('Delve') ? 1000 : 0),
+			flags: { dfid: oracleBranch.$id },
+			parent
+		}
+	console.log(oracleBranch)
+	throw new Error("Data isn't an oracle tree branch")
+}
+
 async function processOracle(
 	oracle: IOracle,
-	output: RollTableDataConstructorData[]
+	output: {
+		RollTable: RollTableDataConstructorData[]
+		Folder: FolderDataConstructorData[]
+	},
+	folder: string
 ) {
 	// Oracles JSON is a tree we wish to iterate through depth first adding
 	// parents prior to their children, and children in order
 	if (oracle.Table != null)
-		output.push(OracleTable.getConstructorData(oracle as any))
+		output.RollTable.push({
+			...OracleTable.getConstructorData(oracle as any),
+			folder,
+			sort:
+				(oracle.Source.Page ?? 0) +
+				(oracle.Source.Title.includes('Delve') ? 1000 : 0)
+		})
 
-	for (const child of oracle.Oracles ?? []) await processOracle(child, output)
+	if ('Oracles' in oracle)
+		output.Folder.push(getOracleFolderData(oracle, folder))
+
+	for (const child of oracle.Oracles ?? [])
+		await processOracle(child, output, hashLookup(oracle.$id))
 }
 async function processOracleCategory(
 	cat: IOracleCategory,
-	output: RollTableDataConstructorData[]
+	output: {
+		RollTable: RollTableDataConstructorData[]
+		Folder: FolderDataConstructorData[]
+	},
+	/** The Foundry ID of the parent folder, if any. */
+	parent?: string
 ) {
-	for (const oracle of cat.Oracles ?? []) await processOracle(oracle, output)
+	const folderData = getOracleFolderData(cat, parent)
+	output.Folder.push(folderData)
+	for (const oracle of cat.Oracles ?? [])
+		await processOracle(oracle, output, folderData._id as string)
 	for (const child of cat.Categories ?? [])
-		await processOracleCategory(child, output)
+		await processOracleCategory(child, output, folderData._id as string)
 }
 
 async function processSFOracles() {
-	const oraclesToCreate: RollTableDataConstructorData[] = []
+	const toCreate: {
+		RollTable: RollTableDataConstructorData[]
+		Folder: FolderDataConstructorData[]
+	} = { RollTable: [], Folder: [] }
+	const pack = 'foundry-ironsworn.starforgedoracles'
 
 	for (const category of SFOracleCategories) {
-		await processOracleCategory(category, oraclesToCreate)
+		await processOracleCategory(category, toCreate)
 	}
-	await OracleTable.createDocuments(oraclesToCreate, {
-		pack: 'foundry-ironsworn.starforgedoracles',
+	await Folder.createDocuments(toCreate.Folder, { pack, keepId: true })
+	await OracleTable.createDocuments(toCreate.RollTable, {
+		pack,
 		keepId: true
 	})
 }
 
 async function processISOracles() {
-	const oraclesToCreate: RollTableDataConstructorData[] = []
+	const toCreate: {
+		RollTable: RollTableDataConstructorData[]
+		Folder: FolderDataConstructorData[]
+	} = { RollTable: [], Folder: [] }
+
+	const pack = 'foundry-ironsworn.ironswornoracles'
 
 	for (const category of ISOracleCategories) {
-		await processOracleCategory(category, oraclesToCreate)
+		await processOracleCategory(category, toCreate)
 	}
-	await OracleTable.createDocuments(oraclesToCreate, {
-		pack: 'foundry-ironsworn.ironswornoracles',
+	await Folder.createDocuments(toCreate.Folder, { pack, keepId: true })
+	await OracleTable.createDocuments(toCreate.RollTable, {
+		pack,
 		keepId: true
 	})
 }
