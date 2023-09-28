@@ -10,6 +10,10 @@
 - Impacts/debilities that prevent recovery of resources (e.g. wounded, shaken, unprepared) now 'lock' the condition meter in question (with a tooltip that identifies the culprit)
 - Make player condition meters and momentum available as bar displays on actor tokens
 
+## 1.22.4
+
+- Fix a bug with "highest-of" stat selection, as with _Endure Stress_ ([#880](https://github.com/ben/foundry-ironsworn/pull/880))
+
 ## 1.22.3
 
 - Reinstated the template.json to fix installation errors

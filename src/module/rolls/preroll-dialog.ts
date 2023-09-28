@@ -124,7 +124,7 @@ function chooseStatToRoll(
 	if (mode === 'Highest' || mode === 'Lowest') {
 		const statMap = {}
 		for (const x of normalizedStats) {
-			statMap[x] = actor.system[x]
+			statMap[x] = actor.system[x].value ?? actor.system[x]
 		}
 		const fn = mode === 'Highest' ? maxBy : minBy
 		stat = fn(Object.keys(statMap), (x) => statMap[x]) ?? stats[0]
