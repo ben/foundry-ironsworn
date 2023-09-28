@@ -163,7 +163,7 @@ function movesForCategories(
 			movesToCreate.push({
 				_id: hashLookup(cleanMove.dfid),
 				type: 'sfmove',
-				name: move.Name,
+				name: move.Name + (move.$id.endsWith('_alt') ? ' (alt)' : ''),
 				img: 'icons/dice/d10black.svg',
 				system: cleanMove,
 				sort: move.Source.Page,
@@ -347,6 +347,7 @@ async function processOracle(
 		output.RollTable.push({
 			...OracleTable.getConstructorData(oracle as any),
 			folder,
+			name: oracle.Name + (oracle.$id.endsWith('_alt') ? ' (alt)' : ''),
 			sort:
 				(oracle.Source.Page ?? 0) +
 				(oracle.Source.Title.includes('Delve') ? 1000 : 0)
