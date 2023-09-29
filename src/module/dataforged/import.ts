@@ -111,7 +111,7 @@ export async function importFromDataforged() {
 		processSFOracles(),
 		processISMoves(),
 		processISOracles(),
-		processISTruths(), // Re-enable when DF includes them
+		// processISTruths(), // Re-enable when DF includes them
 		processSFTruths(),
 		processSFEncounters().then(async () => {
 			await processSFFoes()
