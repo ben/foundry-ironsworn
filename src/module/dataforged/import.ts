@@ -143,7 +143,7 @@ function getMoveFolderData(
 		sort:
 			(moveCategory.Source.Page ?? 0) +
 			(moveCategory.Source.Title.includes('Delve') ? 1000 : 0),
-		flags: { dfid: moveCategory.$id }
+		flags: { 'foundry-ironsworn': { dfid: moveCategory.$id } }
 	}
 }
 
@@ -211,7 +211,7 @@ function getAssetFolderData(assetType: IAssetType): FolderDataConstructorData {
 		type: 'Item',
 		_id: hashLookup(assetType.$id),
 		sort: assetType.Source.Page,
-		flags: { dfid: assetType.$id }
+		flags: { 'foundry-ironsworn': { dfid: assetType.$id } }
 	}
 }
 
@@ -326,7 +326,7 @@ function getOracleFolderData(
 			sort:
 				(oracleBranch.Source.Page ?? 0) +
 				(oracleBranch.Source.Title.includes('Delve') ? 1000 : 0),
-			flags: { dfid: oracleBranch.$id },
+			flags: { 'foundry-ironsworn': { dfid: oracleBranch.$id } },
 			parent
 		}
 	console.log(oracleBranch)

@@ -4,3 +4,22 @@
 2023/09/28-15:00:31.095272 7f1924ca76c0 Level-0 table #9: started
 2023/09/28-15:00:31.114628 7f1924ca76c0 Level-0 table #9: 1598323 bytes OK
 2023/09/28-15:00:31.115739 7f1924ca76c0 Delete type=0 #7
+2023/09/28-17:57:16.852218 7f1924ca76c0 Level-0 table #11: started
+2023/09/28-17:57:16.854910 7f1924ca76c0 Level-0 table #11: 384806 bytes OK
+2023/09/28-17:57:16.855839 7f1924ca76c0 Delete type=0 #8
+2023/09/28-17:57:16.867765 7f1924ca76c0 Manual compaction at level-0 from '!actors!1rvJXZaEnoV4P541' @ 72057594037927935 : 1 .. '!actors.items!xZjFcKcgGJqhvlKp.9BXtjRvOl10CmL46' @ 0 : 0; will stop at '!actors.items!zePcDjyWeKGMc9Xl.OV6J9UxufwOOqbHp' @ 4769 : 1
+2023/09/28-17:57:16.867768 7f1924ca76c0 Compacting 1@0 + 1@1 files
+2023/09/28-17:57:16.871455 7f1924ca76c0 Generated table #12@0: 2024 keys, 165722 bytes
+2023/09/28-17:57:16.871461 7f1924ca76c0 Compacted 1@0 + 1@1 files => 165722 bytes
+2023/09/28-17:57:16.872221 7f1924ca76c0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/09/28-17:57:16.872335 7f1924ca76c0 Delete type=2 #9
+2023/09/28-17:57:16.872480 7f1924ca76c0 Delete type=2 #11
+2023/09/28-17:57:16.878476 7f1924ca76c0 Manual compaction at level-0 from '!actors.items!zePcDjyWeKGMc9Xl.OV6J9UxufwOOqbHp' @ 4769 : 1 .. '!actors.items!xZjFcKcgGJqhvlKp.9BXtjRvOl10CmL46' @ 0 : 0; will stop at (end)
+2023/09/28-17:57:16.887634 7f1924ca76c0 Manual compaction at level-1 from '!actors!1rvJXZaEnoV4P541' @ 72057594037927935 : 1 .. '!actors.items!xZjFcKcgGJqhvlKp.9BXtjRvOl10CmL46' @ 0 : 0; will stop at '!actors.items!yrLYPG6rDbGyEHur.GpF9nFffJoahmCdA' @ 219 : 0
+2023/09/28-17:57:16.887637 7f1924ca76c0 Compacting 1@1 + 1@2 files
+2023/09/28-17:57:16.889107 7f1924ca76c0 Generated table #13@1: 110 keys, 95248 bytes
+2023/09/28-17:57:16.889112 7f1924ca76c0 Compacted 1@1 + 1@2 files => 95248 bytes
+2023/09/28-17:57:16.890003 7f1924ca76c0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/09/28-17:57:16.890027 7f1924ca76c0 Delete type=2 #5
+2023/09/28-17:57:16.890069 7f1924ca76c0 Delete type=2 #12
+2023/09/28-17:57:16.908493 7f1924ca76c0 Manual compaction at level-1 from '!actors.items!yrLYPG6rDbGyEHur.GpF9nFffJoahmCdA' @ 219 : 0 .. '!actors.items!xZjFcKcgGJqhvlKp.9BXtjRvOl10CmL46' @ 0 : 0; will stop at (end)

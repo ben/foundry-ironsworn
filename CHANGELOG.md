@@ -2,8 +2,8 @@
 
 ## Next Release
 
-- Add compendium folders for oracles, moves, assets
-  - these don't affect our custom oracle/move/asset tree displays yet, but this changes lays some groundwork for it
+- Add compendium folders for oracles, moves, and assets
+  - these don't affect our custom oracle/move/asset tree displays yet, but this change lays some groundwork for it
 
 ## 1.22.4
 
