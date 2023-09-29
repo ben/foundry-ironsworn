@@ -282,11 +282,10 @@ function assetsForTypes(types: IAssetType[]) {
 
 async function processSFAssets() {
 	const pack = 'foundry-ironsworn.starforgedassets'
-	const folders = await Folder.createDocuments(
+	await Folder.createDocuments(
 		SFAssetTypes.map((assetType) => getAssetFolderData(assetType)),
 		{ pack, keepId: true }
 	)
-	console.log(folders)
 	const assetsToCreate = assetsForTypes(SFAssetTypes)
 	await Item.createDocuments(assetsToCreate, {
 		pack,
