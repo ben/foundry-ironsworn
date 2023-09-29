@@ -59,7 +59,7 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
 }
 
 // TODO dataforged has a key for move colours...., but they appear to have changed significantly since the last time i updated them! they'll be fixed for 2.0, but until then, here's a workaround.
-enum MoveCategoryColor {
+export enum MoveCategoryColor {
 	Adventure = '#206087',
 	Combat = '#818992',
 	Connection = '#4A5791',
