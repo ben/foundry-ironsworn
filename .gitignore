@@ -11,3 +11,9 @@ node_modules/
 # Generated files
 .DS_Store
 dist
+
+# Uneeded LevelDB files. "*.ldb", "MANIFEST-*", and "CURRENT" are required for FVTT to correctly read the database.
+system/packs/**/*.log
+system/packs/**/LOG
+system/packs/**/LOG.old
+system/packs/**/LOCK
