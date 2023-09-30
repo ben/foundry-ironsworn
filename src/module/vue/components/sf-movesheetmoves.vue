@@ -27,30 +27,26 @@
 			class="item-list scrollable flexcol"
 			:class="$style.list">
 			<!-- Flat search results -->
-			<li
-				v-for="(move, resultIndex) of searchResults"
-				:key="move.moveItem().id ?? `move${resultIndex}`"
-				class="nogrow">
+			<li v-for="move of searchResults" :key="move.uuid" class="nogrow">
 				<SfMoverow
 					ref="allMoves"
-					:move="move"
-					:thematic-color="move.color"
+					:get-move="() => move"
+					:thematic-color="move.folder?.color"
 					:class="$style.filteredResult" />
 			</li>
 		</ul>
 
 		<ul v-else class="item-list scrollable flexcol" :class="$style.list">
 			<!-- Categorized moves if not searching -->
-			<li
-				v-for="(category, catIndex) in state.categories"
-				:key="catIndex"
-				class="nogrow">
+			<li v-for="folder in moveFolders" :key="folder.uuid" class="nogrow">
 				<SfMoveCategoryRows
 					ref="allCategories"
 					class="nogrow"
 					:class="$style.catList"
-					:category="category"
-					:data-tourid="`move-category-${category.dataforgedCategory?.$id}`" />
+					:get-folder="() => folder"
+					:data-tourid="`move-category-${
+						folder.flags?.['foundry-ironsworn']?.dfid ?? folder.uuid
+					}`" />
 			</li>
 		</ul>
 	</article>
@@ -58,32 +54,53 @@
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
-import type { MoveCategory } from '../../features/custommoves'
-import {
-	createIronswornMoveTree,
-	createStarforgedMoveTree
-} from '../../features/custommoves'
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
 import IronBtn from './buttons/iron-btn.vue'
+import type { IronswornItem } from '../../item/item'
+import type { IronFolder } from '../../folder/iron-folder'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)
 
 const state = reactive({
-	searchQuery: '',
-	categories: [] as MoveCategory[]
+	searchQuery: ''
 })
 
-let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
-let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
+const allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
+const allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
 
-const tempCategories =
+const packID =
 	props.toolset === 'ironsworn'
-		? await createIronswornMoveTree()
-		: await createStarforgedMoveTree()
+		? 'foundry-ironsworn.ironswornmoves'
+		: 'foundry-ironsworn.starforgedmoves'
 
-state.categories = tempCategories
+const canonicalPack = game.packs.get(packID)
+
+if (canonicalPack == null)
+	throw new Error(`Couldn't find moves pack: ${packID}`)
+
+// TODO: figure out a sensible way to store which moves/categories are open/closed
+
+const customMoveFolderName = game.i18n.localize('IRONSWORN.MOVES.Custom')
+const customMoveFolder = game.items?.directory?.folders.find(
+	(folder) => folder.name === customMoveFolderName
+) as IronFolder<IronswornItem> | undefined
+const customMoves = (customMoveFolder?.contents?.filter(
+	(item) => item.type === 'sfmove'
+) ?? []) as IronswornItem<'sfmove'>[]
+
+const moveFolders = computed(() => {
+	const folders = Array.from(
+		// @ts-expect-error FIXME outdated typing
+		canonicalPack?.folders as Collection<IronFolder<IronswornItem>>
+	).sort((a, b) => a.sort - b.sort)
+
+	if (customMoveFolder != null && customMoves.length > 0)
+		folders.push(customMoveFolder)
+
+	return folders
+})
 
 const checkedSearchQuery = computed(() => {
 	try {
@@ -95,26 +112,18 @@ const checkedSearchQuery = computed(() => {
 })
 
 const flatMoves = computed(() =>
-	state.categories.flatMap((category) =>
-		category.moves.map((mv) => ({ ...mv, color: category.color }))
-	)
+	(canonicalPack.contents as IronswornItem<'sfmove'>[]).concat(customMoves)
 )
 
 const searchResults = computed(() => {
 	if (!checkedSearchQuery.value) return null
 
 	const re = new RegExp(checkedSearchQuery.value, 'i')
-	return flatMoves.value.filter((x) => re.test(x.displayName))
+	return flatMoves.value.filter((x) => re.test(x.name as string))
 })
 
 function clearSearch() {
 	state.searchQuery = ''
-}
-
-function collapseMoves() {
-	for (const cat of allCategories.value ?? []) {
-		cat.collapseMoves()
-	}
 }
 
 function collapseMoveCategories() {

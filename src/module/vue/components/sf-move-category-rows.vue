@@ -38,10 +38,11 @@ import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash-es'
 import type { FolderDataSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
 import type { IronswornItem } from '../../item/item'
+import type { IronFolder } from '../../folder/iron-folder'
 
 const props = withDefaults(
 	defineProps<{
-		getFolder: () => Folder & { type: 'Item' }
+		getFolder: () => IronFolder<IronswornItem>
 		/**
 		 * Duration of the move highlight effect, in milliseconds.
 		 * @default 2000
@@ -77,14 +78,8 @@ const moveItems = computed(
 	() =>
 		new Map(
 			$folder.value.contents
-				?.filter((item) => (item as IronswornItem).type === 'sfmove')
-				.map(
-					(item) =>
-						[(item as IronswornItem)?.id, item] as [
-							string,
-							IronswornItem<'sfmove'>
-						]
-				)
+				?.filter((item) => item.type === 'sfmove')
+				.map((item) => [item?.id, item] as [string, IronswornItem<'sfmove'>])
 		)
 )
 

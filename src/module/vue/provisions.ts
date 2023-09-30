@@ -6,6 +6,7 @@ import type { Emitter, EventType } from 'mitt'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
 import type { SourceData } from '../fields/utils'
 import type { FolderDataSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
+import type { IronFolder } from '../folder/iron-folder'
 
 // Provided by the Vue plugin
 export const $EnrichHtmlKey = Symbol('$enrichHtml') as InjectionKey<
@@ -41,5 +42,5 @@ export const PageKey = Symbol('page') as InjectionKey<
 	Ref<SourceData<IronswornJournalPage>>
 >
 
-export const $FolderKey = Symbol('$folder') as InjectionKey<Folder>
+export const $FolderKey = Symbol('$folder') as InjectionKey<IronFolder>
 export const FolderKey = Symbol('folder') as InjectionKey<Ref<FolderDataSource>>
