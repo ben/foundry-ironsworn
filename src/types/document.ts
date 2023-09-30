@@ -12,6 +12,20 @@ declare global {
 		export namespace abstract {
 			export namespace Document {
 				/**
+				 * Get a World-level Document of this type by its id.
+				 * @param documentId         The Document ID
+				 * @param options Additional options which customize the request
+				 * @returns The retrieved Document, or null
+				 */
+				export function get<
+					TDocument extends Document<any, any, any> = Document<any, any, any>
+				>(
+					this: ConstructorOf<TDocument>,
+					documentId: string,
+					options?: { pack?: string }
+				): TDocument | null
+
+				/**
 				 * A reusable helper for adding migration shims.
 				 * @protected
 				 * @ignore

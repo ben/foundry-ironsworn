@@ -23,6 +23,7 @@ declare global {
 			> {}
 		}
 	}
+
 	// fixes numerous missing properties caused by LoFD types having inheritance chains inconsistent with FVTT's source code
 	export interface Folder
 		extends Omit<

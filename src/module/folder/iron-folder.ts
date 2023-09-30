@@ -1,20 +1,24 @@
 import type { CONST } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/module.mjs'
-import { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { ConfiguredDocumentClass } from '../../types/helperTypes'
+import type { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
+
+type FolderDocumentClass =
+	ConfiguredDocumentClassForName<CONST.FOLDER_DOCUMENT_TYPES>
+type FolderDocument = InstanceType<FolderDocumentClass>
 
 /** Extends FVTT's Folder document with system-specific functionality. */
 export class IronFolder<
-	DocType extends CONST.FOLDER_DOCUMENT_TYPES = CONST.FOLDER_DOCUMENT_TYPES
+	DocType extends FolderDocument = FolderDocument
 > extends Folder {}
 
-export interface IronFolder<
-	DocType extends CONST.FOLDER_DOCUMENT_TYPES = CONST.FOLDER_DOCUMENT_TYPES
-> extends Folder {
-	type: DocType
+export interface IronFolder<DocType extends FolderDocument = FolderDocument>
+	extends Folder {
+	type: DocType['documentName']
 	folder: this | null
 	children: this[]
+	get contents(): Array<
+		InstanceType<ConfiguredDocumentClassForName<this['type']>> & DocType
+	>
 	get ancestors(): this[]
-
 	getSubfolders(recursive?: boolean): this[]
 	getParentFolders(): this[]
 }
