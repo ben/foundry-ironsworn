@@ -44,6 +44,7 @@ import type {
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
 import ItemConfig from './module/item/config'
+import { IronFolder } from './module/folder/iron-folder'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -79,6 +80,8 @@ Hooks.once('init', async () => {
 	mergeObject(CONFIG.Item, ItemConfig)
 
 	// Define custom Entity classes
+
+	CONFIG.Folder.documentClass = IronFolder
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
