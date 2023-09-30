@@ -4,23 +4,23 @@
 		class="list-block"
 		:class="$style.wrapper"
 		:toggle-button-class="$style.toggleBtn"
-		:toggle-tooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
+		:toggle-tooltip="$enrichMarkdown(folder.description)"
 		:toggle-wrapper-is="`h${headingLevel}`"
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-section-class="`${$style.toggleSection} list-block-header`"
-		:base-id="`move_category_${snakeCase(category.displayName)}`"
-		:toggle-label="category.displayName"
+		:base-id="`move_category_${snakeCase($folder.uuid)}`"
+		:toggle-label="folder.name"
 		:toggle-text-class="$style.toggleText">
 		<template #default>
 			<ul class="flexcol" :class="$style.list">
 				<li
-					v-for="(move, i) of category.moves"
-					:key="i"
+					v-for="[id, move] of moveItems.entries()"
+					:key="id"
 					class="list-block-item nogrow"
 					:class="$style.listItem">
 					<SfMoverow
 						ref="$children"
-						:move="move"
+						:get-move="() => move"
 						:heading-level="headingLevel + 1"
 						:class="$style.moveRow"
 						thematic-color="transparent"
@@ -33,14 +33,15 @@
 
 <script setup lang="ts">
 import { computed, nextTick, ref } from 'vue'
-import type { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash-es'
+import type { FolderDataSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
+import type { IronswornItem } from '../../item/item'
 
 const props = withDefaults(
 	defineProps<{
-		category: MoveCategory
+		getFolder: () => Folder & { type: 'Item' }
 		/**
 		 * Duration of the move highlight effect, in milliseconds.
 		 * @default 2000
@@ -62,7 +63,12 @@ const props = withDefaults(
 	{ headingLevel: 3, highlightDuration: 2000 }
 )
 
-let $children = ref<InstanceType<typeof SfMoverow>[]>([])
+const $children = ref<InstanceType<typeof SfMoverow>[]>([])
+
+const $folder = computed(() => props.getFolder())
+const folder = computed(
+	() => props.getFolder().toObject() as FolderDataSource & { type: 'Item' }
+)
 
 /**
  * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
@@ -70,11 +76,19 @@ let $children = ref<InstanceType<typeof SfMoverow>[]>([])
 const moveItems = computed(
 	() =>
 		new Map(
-			props.category.moves.map((move) => [move.moveItem().id ?? '', move])
+			$folder.value.contents
+				?.filter((item) => (item as IronswornItem).type === 'sfmove')
+				.map(
+					(item) =>
+						[(item as IronswornItem)?.id, item] as [
+							string,
+							IronswornItem<'sfmove'>
+						]
+				)
 		)
 )
 
-let $collapsible = ref<typeof Collapsible>()
+const $collapsible = ref<typeof Collapsible>()
 
 function collapseMoves() {
 	for (const move of $children.value ?? []) {
@@ -127,7 +141,7 @@ defineExpose({
 
 .wrapper {
 	--ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-	--ironsworn-color-thematic: v-bind('category?.color');
+	--ironsworn-color-thematic: v-bind('$folder.color');
 	border-radius: var(--ironsworn-border-radius-lg);
 	border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
 	border-left-width: 10px;
