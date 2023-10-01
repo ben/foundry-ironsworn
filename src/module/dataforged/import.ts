@@ -98,10 +98,13 @@ export async function importFromDataforged() {
 		})
 		// @ts-expect-error outdated typing
 		if (pack.folders.size > 0)
-			// @ts-expect-error outdated typing
-			await Folder.deleteDocuments(Array.from(pack.folders.keys()), {
-				pack: key
-			})
+			await getDocumentClass('Folder').deleteDocuments(
+				// @ts-expect-error outdated typing
+				Array.from(pack.folders.keys()),
+				{
+					pack: key
+				}
+			)
 	}
 
 	await Promise.all([
@@ -174,7 +177,7 @@ function movesForCategories(
 
 async function processISMoves() {
 	const pack = 'foundry-ironsworn.ironswornmoves'
-	await Folder.createDocuments(
+	await getDocumentClass('Folder').createDocuments(
 		ISMoveCategories.map((moveCategory) => getMoveFolderData(moveCategory)),
 		{ pack, keepId: true }
 	)
@@ -186,7 +189,7 @@ async function processISMoves() {
 }
 async function processSFMoves() {
 	const pack = 'foundry-ironsworn.starforgedmoves'
-	await Folder.createDocuments(
+	await getDocumentClass('Folder').createDocuments(
 		SFMoveCategories.map((moveCategory) => getMoveFolderData(moveCategory)),
 		{ pack, keepId: true }
 	)
@@ -282,7 +285,7 @@ function assetsForTypes(types: IAssetType[]) {
 
 async function processSFAssets() {
 	const pack = 'foundry-ironsworn.starforgedassets'
-	await Folder.createDocuments(
+	await getDocumentClass('Folder').createDocuments(
 		SFAssetTypes.map((assetType) => getAssetFolderData(assetType)),
 		{ pack, keepId: true }
 	)
@@ -295,7 +298,7 @@ async function processSFAssets() {
 
 async function processISAssets() {
 	const pack = 'foundry-ironsworn.ironswornassets'
-	await Folder.createDocuments(
+	await getDocumentClass('Folder').createDocuments(
 		ISAssetTypes.map((assetType) => getAssetFolderData(assetType)),
 		{ pack, keepId: true }
 	)
@@ -383,7 +386,10 @@ async function processSFOracles() {
 	for (const category of SFOracleCategories) {
 		await processOracleCategory(category, toCreate)
 	}
-	await Folder.createDocuments(toCreate.Folder, { pack, keepId: true })
+	await getDocumentClass('Folder').createDocuments(toCreate.Folder, {
+		pack,
+		keepId: true
+	})
 	await OracleTable.createDocuments(toCreate.RollTable, {
 		pack,
 		keepId: true
@@ -401,7 +407,10 @@ async function processISOracles() {
 	for (const category of ISOracleCategories) {
 		await processOracleCategory(category, toCreate)
 	}
-	await Folder.createDocuments(toCreate.Folder, { pack, keepId: true })
+	await getDocumentClass('Folder').createDocuments(toCreate.Folder, {
+		pack,
+		keepId: true
+	})
 	await OracleTable.createDocuments(toCreate.RollTable, {
 		pack,
 		keepId: true
