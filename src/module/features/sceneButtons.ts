@@ -27,7 +27,7 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
 			})
 			continue
 		}
-		parentFolder = await Folder.create({
+		parentFolder = await getDocumentClass('Folder').create({
 			type: 'Actor',
 			name,
 			parent: parentFolder?.id
