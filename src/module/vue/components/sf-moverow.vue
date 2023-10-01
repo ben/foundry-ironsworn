@@ -69,7 +69,6 @@
 
 <script setup lang="ts">
 import { computed, provide, reactive, ref } from 'vue'
-import type { Move } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
@@ -133,7 +132,7 @@ const preventOracle = computed(() => {
 })
 
 const toggleTooltip = computed(() =>
-	enrichMarkdown($item.value.system.Trigger?.Text)
+	enrichMarkdown(item.value.system.Trigger?.Text)
 )
 
 Promise.all(item.value.system.Oracles.map(OracleTable.getDFOracleByDfId)).then(

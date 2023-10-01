@@ -18,9 +18,8 @@
 
 <script setup lang="ts">
 import { inject } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
-import type { Move } from '../../../features/custommoves.js'
-import { IronswornItem } from '../../../item/item'
+import type { IronswornActor } from '../../../actor/actor'
+import type { IronswornItem } from '../../../item/item'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'

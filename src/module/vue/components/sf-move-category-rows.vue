@@ -14,8 +14,8 @@
 		<template #default>
 			<ul class="flexcol" :class="$style.list">
 				<li
-					v-for="[id, move] of moveItems.entries()"
-					:key="id"
+					v-for="move in state.moves"
+					:key="move.uuid"
 					class="list-block-item nogrow"
 					:class="$style.listItem">
 					<SfMoverow
@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, ref } from 'vue'
+import { computed, inject, nextTick, reactive, ref } from 'vue'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash-es'
@@ -70,24 +70,39 @@ const $folder = computed(() => props.getFolder())
 const folder = computed(
 	() => props.getFolder().toObject() as FolderDataSource & { type: 'Item' }
 )
+const thematicColor = $folder.value.color ?? 'black'
 
-/**
- * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
- */
-const moveItems = computed(
-	() =>
-		new Map(
-			$folder.value.contents
-				?.filter((item) => item.type === 'sfmove')
-				.map((item) => [item?.id, item] as [string, IronswornItem<'sfmove'>])
-		)
-)
-
+const state = reactive({
+	moves: [] as IronswornItem<'sfmove'>[]
+})
 const $collapsible = ref<typeof Collapsible>()
 
+defineExpose({
+	expandAndHighlightMove,
+	collapseMoves,
+	getMoves: () => state.moves,
+	$children,
+	$collapsible
+})
+
+const packId = props.getFolder().pack
+
+if (typeof packId === 'string') {
+	const pack = game.packs.get(packId)
+	if (pack == null) throw new Error(`Couldn't find pack ${packId}`)
+	state.moves = (await pack.getDocuments({
+		folder: folder.value._id
+	})) as IronswornItem<'sfmove'>[]
+} else
+	state.moves = game.items?.filter(
+		(item) => item.folder?.id === folder.value._id
+	) as IronswornItem<'sfmove'>[]
+
+state.moves = state.moves.sort((a, b) => a.sort - b.sort)
+
 function collapseMoves() {
-	for (const move of $children.value ?? []) {
-		move.$collapsible?.collapse()
+	for (const moveRow of $children.value ?? []) {
+		moveRow.$collapsible?.collapse()
 	}
 }
 
@@ -97,13 +112,14 @@ async function expandAndHighlightMove(targetMoveUuid: string) {
 		await nextTick()
 	}
 	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
-	const move = $children.value.find((child) => child.moveId === documentId)
-	highlightMove(move?.$collapsible?.$element as HTMLElement)
-	if (move?.$collapsible?.isExpanded === false) {
-		await move?.$collapsible?.expand()
+	const moveRow = $children.value.find((child) => child.moveId === documentId)
+
+	highlightMove(moveRow?.$collapsible?.$element as HTMLElement)
+	if (moveRow?.$collapsible?.isExpanded === false) {
+		await moveRow?.$collapsible?.expand()
 		// when the expand animation finishes, afterMoveExpand will focus the element
 	} else {
-		move?.$collapsible?.$element.focus()
+		moveRow?.$collapsible?.$element.focus()
 	}
 }
 
@@ -121,14 +137,6 @@ function afterMoveExpand(
 ) {
 	collapsibleElement?.focus()
 }
-
-defineExpose({
-	expandAndHighlightMove,
-	collapseMoves,
-	moveItems: moveItems.value,
-	$children,
-	$collapsible
-})
 </script>
 <style lang="scss" module>
 @use 'mixin:fx.scss';
@@ -136,7 +144,7 @@ defineExpose({
 
 .wrapper {
 	--ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-	--ironsworn-color-thematic: v-bind('$folder.color');
+	--ironsworn-color-thematic: v-bind('thematicColor');
 	border-radius: var(--ironsworn-border-radius-lg);
 	border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
 	border-left-width: 10px;

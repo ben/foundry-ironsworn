@@ -67,8 +67,7 @@ import type { Ref } from 'vue'
 import { computed, inject, reactive } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
 import { hashLookup } from '../../../dataforged'
-import type { Move } from '../../../features/custommoves'
-import { createIronswornMoveTree } from '../../../features/custommoves'
+import type { IronFolder } from '../../../folder/iron-folder'
 import type { IronswornItem } from '../../../item/item'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
@@ -95,7 +94,7 @@ const pack = game.packs.get('foundry-ironsworn.ironswornmoves')
 if (pack == null) throw new Error("Couldn't find delve move compendium!")
 // @ts-expect-error FIXME outdated typing
 const folder = pack.folders.get(hashLookup('Ironsworn/Moves/Delve')) as
-	| Folder
+	| IronFolder<IronswornItem>
 	| undefined
 if (folder == null) throw new Error("Couldn't find delve move folder!")
 

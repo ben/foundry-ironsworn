@@ -29,8 +29,8 @@
 			<!-- Flat search results -->
 			<li v-for="move of searchResults" :key="move.uuid" class="nogrow">
 				<SfMoverow
-					ref="allMoves"
-					:get-move="() => move"
+					ref="moveRows"
+					:getMove="() => move"
 					:thematic-color="move.folder?.color"
 					:class="$style.filteredResult" />
 			</li>
@@ -38,9 +38,9 @@
 
 		<ul v-else class="item-list scrollable flexcol" :class="$style.list">
 			<!-- Categorized moves if not searching -->
-			<li v-for="folder in moveFolders" :key="folder.uuid" class="nogrow">
+			<li v-for="folder in state.folders" :key="folder.uuid" class="nogrow">
 				<SfMoveCategoryRows
-					ref="allCategories"
+					ref="categoryChildren"
 					class="nogrow"
 					:class="$style.catList"
 					:get-folder="() => folder"
@@ -64,11 +64,13 @@ const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)
 
 const state = reactive({
-	searchQuery: ''
+	searchQuery: '',
+	moves: new Collection<IronswornItem<'sfmove'>>(),
+	folders: [] as IronFolder<IronswornItem>[]
 })
 
-const allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
-const allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
+const categoryChildren = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
+const moveRows = ref<InstanceType<typeof SfMoverow>[]>([])
 
 const packID =
 	props.toolset === 'ironsworn'
@@ -86,21 +88,19 @@ const customMoveFolderName = game.i18n.localize('IRONSWORN.MOVES.Custom')
 const customMoveFolder = game.items?.directory?.folders.find(
 	(folder) => folder.name === customMoveFolderName
 ) as IronFolder<IronswornItem> | undefined
-const customMoves = (customMoveFolder?.contents?.filter(
-	(item) => item.type === 'sfmove'
-) ?? []) as IronswornItem<'sfmove'>[]
+const customMoves = Array.from(
+	customMoveFolder?.contents?.filter((item) => item.type === 'sfmove') ?? []
+) as IronswornItem<'sfmove'>[]
 
-const moveFolders = computed(() => {
-	const folders = Array.from(
-		// @ts-expect-error FIXME outdated typing
-		canonicalPack?.folders as Collection<IronFolder<IronswornItem>>
-	).sort((a, b) => a.sort - b.sort)
+state.folders = Array.from(
+	// @ts-expect-error FIXME outdated typing
+	canonicalPack?.folders as Collection<IronFolder<IronswornItem>>
+).sort((a, b) => a.sort - b.sort)
 
-	if (customMoveFolder != null && customMoves.length > 0)
-		folders.push(customMoveFolder)
-
-	return folders
-})
+if (customMoveFolder != null && customMoves.length > 0) {
+	state.folders.push(customMoveFolder)
+	for (const move of customMoves) state.moves.set(move.id as string, move)
+}
 
 const checkedSearchQuery = computed(() => {
 	try {
@@ -111,15 +111,18 @@ const checkedSearchQuery = computed(() => {
 	}
 })
 
-const flatMoves = computed(() =>
-	(canonicalPack.contents as IronswornItem<'sfmove'>[]).concat(customMoves)
-)
+const fetchedMoves = (await canonicalPack.getDocuments({
+	type: 'sfmove'
+})) as IronswornItem<'sfmove'>[]
+
+for (const move of fetchedMoves.concat(customMoves))
+	state.moves.set(move.id as string, move)
 
 const searchResults = computed(() => {
 	if (!checkedSearchQuery.value) return null
 
 	const re = new RegExp(checkedSearchQuery.value, 'i')
-	return flatMoves.value.filter((x) => re.test(x.name as string))
+	return state.moves.filter((x) => re.test(x.name as string))
 })
 
 function clearSearch() {
@@ -127,7 +130,7 @@ function clearSearch() {
 }
 
 function collapseMoveCategories() {
-	for (const moveCategory of allCategories.value ?? []) {
+	for (const moveCategory of categoryChildren.value ?? []) {
 		moveCategory.$collapsible?.collapse()
 	}
 }
@@ -136,12 +139,11 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 	clearSearch()
 	await nextTick()
 	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
-	const categoryWithMove = allCategories.value.find((moveCategory) =>
-		moveCategory.moveItems.has(documentId ?? '')
+	const categoryWithMove = categoryChildren.value.find((moveCategory) =>
+		moveCategory.getMoves().some((move) => move.id === documentId)
 	)
-	if (categoryWithMove) {
-		categoryWithMove.expandAndHighlightMove(targetMoveUuid)
-	}
+
+	if (categoryWithMove) categoryWithMove.expandAndHighlightMove(targetMoveUuid)
 })
 </script>
 
