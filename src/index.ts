@@ -79,9 +79,8 @@ Hooks.once('init', async () => {
 	mergeObject(CONFIG.Actor, ActorConfig)
 	mergeObject(CONFIG.Item, ItemConfig)
 
+	CONFIG.Item.compendiumIndexFields.push('system.dfid')
 	// Define custom Entity classes
-
-	CONFIG.Folder.documentClass = IronFolder
 
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
