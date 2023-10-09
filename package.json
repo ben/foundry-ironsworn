@@ -51,7 +51,7 @@
 		"postcss-less": "^6.0.0",
 		"postcss-preset-env": "^9.1.4",
 		"prettier": "^2.8.8",
-		"prettier-config-standard": "^5.0.0",
+		"prettier-config-standard": "^7.0.0",
 		"sass": "^1.68.0",
 		"sha.js": "^2.4.11",
 		"stylelint": "^15.8.0",
