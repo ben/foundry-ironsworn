@@ -31,7 +31,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.60.0",
 		"@typescript-eslint/parser": "^5.60.1",
 		"@typescript/analyze-trace": "^0.10.0",
-		"@vitejs/plugin-vue": "^4.2.3",
+		"@vitejs/plugin-vue": "^4.4.0",
 		"buffer": "^6.0.3",
 		"chroma-js": "^2.4.2",
 		"cssnano": "^6.0.1",
