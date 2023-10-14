@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.6
+
 - Display all oracle tables in the preview area ([#894](https://github.com/ben/foundry-ironsworn/pull/894))
 
 ## 1.22.5
