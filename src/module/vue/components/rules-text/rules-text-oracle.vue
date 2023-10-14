@@ -1,7 +1,7 @@
 <template>
 	<RulesText class="rules-text-oracle" :source="source" type="slot">
 		<template #default>
-			<h4 v-if="props.title">{{ props.title }}</h4>
+			<h4>{{ props.title }}</h4>
 			<OracleTable
 				:table-description="tableDescription"
 				:table-rows="tableRows"

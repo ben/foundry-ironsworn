@@ -24,6 +24,7 @@
 			</h4>
 			<CollapseTransition>
 				<div v-if="state.descriptionExpanded">
+					<h4 v-if="state.singleDescription" v-html="state.singleDescription" />
 					<RulesTextOracle
 						v-for="table in state.tables"
 						:key="table.id"
@@ -88,14 +89,14 @@ import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
 import type { OracleTable } from '../../roll-table/oracle-table'
 import type { LegacyTableRow } from '../../roll-table/roll-table-types'
+import { enrichHtml } from '../vue-plugin'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 
 const state = reactive({
 	manuallyExpanded: props.node.forceExpanded ?? false,
 	descriptionExpanded: false,
-	tableRows: [] as Array<LegacyTableRow>,
-	tableDescription: '',
+	singleDescription: undefined as string | undefined,
 	tables: [] as Array<{
 		id: string
 		title: string
@@ -125,10 +126,21 @@ async function toggleDescription() {
 						text: row.text,
 						selected: false
 					})),
-					description: (tableData as any).description ?? ''
+					description: tableData.description
 				}
 			})
 		)
+
+		// If all descriptions match, collapse them into one
+		if (
+			state.tables.every((t) => t.description === state.tables[0].description)
+		) {
+			state.singleDescription = enrichHtml(state.tables[0].description)
+			for (const t of state.tables) {
+				t.description = ''
+			}
+		}
+
 		await nextTick()
 	}
 	state.descriptionExpanded = !state.descriptionExpanded
