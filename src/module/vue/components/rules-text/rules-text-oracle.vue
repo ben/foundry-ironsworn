@@ -1,9 +1,11 @@
 <template>
 	<RulesText class="rules-text-oracle" :source="source" type="slot">
 		<template #default>
+			<h4 v-if="props.title">{{ props.title }}</h4>
 			<OracleTable
 				:table-description="tableDescription"
-				:table-rows="tableRows" />
+				:table-rows="tableRows"
+			/>
 		</template>
 		<template #before-main>
 			<slot name="before-main"></slot>
@@ -17,6 +19,14 @@
 	</RulesText>
 </template>
 
+<style lang="less" scoped>
+h4 {
+	text-transform: uppercase;
+	margin-top: 0.5rem;
+	font-weight: bold;
+}
+</style>
+
 <script setup lang="ts">
 import RulesText from './rules-text.vue'
 import OracleTable from './oracle-table.vue'
@@ -24,6 +34,7 @@ import type { ISource } from 'dataforged'
 import type { LegacyTableRow } from '../../../roll-table/roll-table-types'
 
 const props = defineProps<{
+	title?: string
 	tableRows: LegacyTableRow[]
 	tableDescription: string
 	source?: ISource
