@@ -58,7 +58,7 @@
 		"stylelint-config-concentric-order": "^5.1.0",
 		"stylelint-config-css-modules": "^4.3.0",
 		"stylelint-config-recommended-vue": "^1.4.0",
-		"stylelint-config-standard": "^33.0.0",
+		"stylelint-config-standard": "^34.0.0",
 		"stylelint-config-standard-scss": "^11.0.0",
 		"stylelint-config-standard-vue": "^1.0.0",
 		"typescript": "<4.9.0",
