@@ -1,0 +1,35 @@
+{
+  "_id": "1bf8f6f16f4d0079",
+  "type": "progress",
+  "name": "Howlcat Pack",
+  "img": "icons/creatures/mammals/cat-hunched-glowing-red.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Sleek, feline creatures</p>\n    <p class=\"nogrow\">Eyeless visage</p>\n    <p class=\"nogrow\">Flared ears</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Hunt and feed</p>\n    <p class=\"nogrow\">Protect the pack</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Keep to the shadows</p>\n    <p class=\"nogrow\">Stalk prey using echolocation</p>\n    <p class=\"nogrow\">Leap, bite, and claw</p>\n    <p class=\"nogrow\">Drag to the ground</p>\n  </div>\n</div>\n\n<p>Though deadly on its own, the howlcat usually hunts in a pack of three or four of its kind. Prowling through the jungle, a pack of howlcats can surround and overwhelm their prey with lethal prowess, coordinating their attacks via shrill calls.</p>\n\n<blockquote>Quest Starter: <p>A long-abandoned settlement, now reclaimed by the jungle, holds something of value or importance. But there is no clear landing site near the settlement, and the surrounding lands are home to a pack of fearsome howlcats. What is it you seek in that forsaken place, and how will you avoid becoming a howlcat's next meal?</p></blockquote>",
+    "rank": 3,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021144,
+    "modifiedTime": 1695949021144,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!1bf8f6f16f4d0079"
+}

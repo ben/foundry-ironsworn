@@ -1,0 +1,23 @@
+{
+  "name": "Creatures",
+  "_id": "5b1e2f2fead08924",
+  "type": "RollTable",
+  "description": "Roll for a basic form, and flesh out the creature’s appearance using this Creature First Look table. Then, roll on the Encountered Behavior table to envision this creature’s motivation and frame how the encounter begins.",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Creatures"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021157,
+    "modifiedTime": 1695949021157,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!5b1e2f2fead08924"
+}

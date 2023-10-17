@@ -1,0 +1,312 @@
+{
+  "_id": "85e11dcd94c71ef2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Vital/Biomes",
+      "category": "Starforged/Oracles/Planets/Vital"
+    }
+  },
+  "name": "Biomes",
+  "description": "<p>To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Caves",
+      "_id": "ea8c42b75dbb21ed",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.ea8c42b75dbb21ed"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Cold forest",
+      "_id": "c7f0c3b4456a06e1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.c7f0c3b4456a06e1"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Fungal",
+      "_id": "4c96234c1de49eb7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.4c96234c1de49eb7"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Glacial or snow",
+      "_id": "2f75d8ed228f9569",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.2f75d8ed228f9569"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Grassland",
+      "_id": "7e345630b0caa7f7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.7e345630b0caa7f7"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Islands",
+      "_id": "1ba8a8c6cd93667b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.1ba8a8c6cd93667b"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Jungle",
+      "_id": "2d3a6f220e086744",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.2d3a6f220e086744"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Mountainous",
+      "_id": "636eebfd3a0ae87e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.636eebfd3a0ae87e"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Ocean",
+      "_id": "8465109d0bb6627b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.8465109d0bb6627b"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Rocky desert",
+      "_id": "157d7c2be1e6f74a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.157d7c2be1e6f74a"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Sandy desert",
+      "_id": "676a2bbebe360b88",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.676a2bbebe360b88"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Savanna",
+      "_id": "8b85d34535192aad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.8b85d34535192aad"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Shallow seas",
+      "_id": "d8af4b73ff4bff5a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.d8af4b73ff4bff5a"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Shrubland",
+      "_id": "ad057cc14bd0e834",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.ad057cc14bd0e834"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Temperate rainforest",
+      "_id": "102aa2c5eec5fddc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.102aa2c5eec5fddc"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Temperate forest",
+      "_id": "e9dd95fc8218726a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.e9dd95fc8218726a"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Tundra",
+      "_id": "3012d48d62b62cb0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.3012d48d62b62cb0"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Volcanic",
+      "_id": "6c7f085c50daf8d7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.6c7f085c50daf8d7"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Waterways",
+      "_id": "866a4fdf97f1c10d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.866a4fdf97f1c10d"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wetland",
+      "_id": "2713f35877f0633e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!85e11dcd94c71ef2.2713f35877f0633e"
+    }
+  ],
+  "folder": "93ecb6acb6a3ea17",
+  "sort": 318,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!85e11dcd94c71ef2"
+}

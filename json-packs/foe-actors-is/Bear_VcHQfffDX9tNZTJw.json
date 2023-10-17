@@ -1,0 +1,116 @@
+{
+  "_id": "VcHQfffDX9tNZTJw",
+  "name": "Bear",
+  "type": "foe",
+  "img": "icons/creatures/abilities/bear-roar-bite-brown-green.webp",
+  "data": {},
+  "token": {
+    "name": "Bear",
+    "img": "icons/creatures/abilities/bear-roar-bite-brown-green.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "Cl2yt9qI338QOWXh",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!VcHQfffDX9tNZTJw.Cl2yt9qI338QOWXh"
+    },
+    {
+      "_id": "3ySuUnpwbZdEX6RL",
+      "name": "Bear",
+      "type": "progress",
+      "img": "icons/creatures/abilities/bear-roar-bite-brown-green.webp",
+      "data": {
+        "description": "\n\n<h2>Bear</h2>\n\n<p>Most bears are not aggressive. They avoid Ironlanders and are unlikely to attack unless they see you as a threat.</p>\n<p>There are exceptions. The silver bears of the Veiled Mountains, which sometimes range as far south as the Tempest Hills, are territorial, powerful, and aggressive. Likewise, the ash bear, encountered in woodlands through the Ironlands, is known for its ferocity and cunning. If either catch the scent of you on the wind, they are likely to hunt you down and attack.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Fearsome teeth and claws</p>\n    <p class=\"nogrow\">Thick hide</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Find food</p>\n    <p class=\"nogrow\">Defend cubs</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Roar</p>\n    <p class=\"nogrow\">Pin down</p>\n    <p class=\"nogrow\">Maul with savage force</p>\n  </div>\n</div>\n\n<em><p>A group of hunters felled a large ash bear with several arrows. It tumbled into a river and was swept away. Unfortunately, the bear they thought dead is now stalking the group as they make their way back home.</p></em>\n\n\n<h2>Animal</h2>\n<p>Animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the Old World.</p>\n<p>Most wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, <em>Resupply</em> (page 63) can represent hunting for deer or small game.</p>\n<p>A few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.</p>\n",
+        "rank": 3,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!VcHQfffDX9tNZTJw.3ySuUnpwbZdEX6RL"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!VcHQfffDX9tNZTJw"
+}

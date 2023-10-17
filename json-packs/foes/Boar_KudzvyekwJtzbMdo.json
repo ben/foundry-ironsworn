@@ -1,0 +1,20 @@
+{
+  "name": "Boar",
+  "type": "progress",
+  "img": "icons/commodities/treasure/figurine-boar.webp",
+  "data": {
+    "description": "\n\n<h2>Boar</h2>\n\n<p>In the Old World, wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Wiry coats</p>\n    <p class=\"nogrow\">Long tusks</p>\n    <p class=\"nogrow\">Vicious</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Forage</p>\n    <p class=\"nogrow\">Protect territory</p>\n    <p class=\"nogrow\">Defend sows</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Charge and gore</p>\n    <p class=\"nogrow\">Circle and attack again</p>\n  </div>\n</div>\n\n<em><p>A boar hunt ends in tragedy when an Ironlander is gored and grievously wounded. How do you know this person? What terrible truth do they reveal as they lay dying?</p></em>\n\n\n<h2>Animal</h2>\n<p>Animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the Old World.</p>\n<p>Most wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, <em>Resupply</em> (page 63) can represent hunting for deer or small game.</p>\n<p>A few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.</p>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "KudzvyekwJtzbMdo",
+  "_key": "!items!KudzvyekwJtzbMdo"
+}

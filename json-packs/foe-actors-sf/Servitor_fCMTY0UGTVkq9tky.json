@@ -1,0 +1,126 @@
+{
+  "name": "Servitor",
+  "img": "icons/creatures/magical/construct-stone-earth-gray.webp",
+  "type": "foe",
+  "_id": "fCMTY0UGTVkq9tky",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Servitor",
+    "displayName": 0,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Servitor",
+      "type": "progress",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Purpose-built helper machines</p>\n    <p class=\"nogrow\">Clicking, whirring innards</p>\n    <p class=\"nogrow\">Flickering optic sensors</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Attend and protect humans</p>\n    <p class=\"nogrow\">Obey core programming and duties</p>\n    <p class=\"nogrow\">Protect self from harm</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Absorb damage with armor plating</p>\n    <p class=\"nogrow\">Leverage inhuman strength</p>\n    <p class=\"nogrow\">Calculate odds of success</p>\n  </div>\n</div>\n\n<p>The inhospitable environments and dangerous sites of the Forge sometimes prove too volatile for even the most dogged spacers—and that’s where servitors come in.</p>\n<p>Servitors come in a variety of shapes and sizes, often built to serve a specific duty—everything from loading cargo to surveying systems to boarding enemy ships. These bots sometimes possess lifelike qualities, like speech synthesizers or face-plates made to mimic expressions, to better endear them to humans. Others are given frightful or intimidating features, to better keep those humans in line.</p>\n<p>Rarely, a servitor will live to outgrow its programming, and begin the process of gaining sentience to forge its own path. These awoken bots are feared or misunderstood by many, but can sometimes find a home for themselves on starship crews or on fringe settlements where they earn the trust and friendship of their peers.</p>\n\n<blockquote>Quest Starter: <p>An awakened bot, recently struck out on their own, is looking for work on a starship venturing out into the Expanse. They say they are in search of a relic of the past—something that might shed some light on their own creation. What is it they seek, and why do you vow to help them?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.cebf36805797cf9a]{Enforcer}</li>\n</ul>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "_id": "uSzeEA3Fft6ZTU36",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022771,
+        "modifiedTime": 1695949022771,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!actors.items!fCMTY0UGTVkq9tky.uSzeEA3Fft6ZTU36"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022766,
+    "modifiedTime": 1695949022771,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!actors!fCMTY0UGTVkq9tky"
+}

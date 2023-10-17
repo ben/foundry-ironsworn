@@ -1,0 +1,732 @@
+{
+  "_id": "1bc0d594892867ed",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Legacy",
+      "category": "Starforged/Oracles/Factions"
+    }
+  },
+  "name": "Legacy",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Ancient",
+      "_id": "f8c5130268715d8d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.f8c5130268715d8d"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Ashen",
+      "_id": "2aedba998521dec5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.2aedba998521dec5"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Awakened",
+      "_id": "7d4fb5d8b257cd5f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.7d4fb5d8b257cd5f"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Azure",
+      "_id": "e63149ba3b59edc9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.e63149ba3b59edc9"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Blessed",
+      "_id": "57def2984fd71335",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.57def2984fd71335"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Bloody",
+      "_id": "a96a421741ace6c9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.a96a421741ace6c9"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Broken",
+      "_id": "3b7f6a55f4bac883",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.3b7f6a55f4bac883"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Ceaseless",
+      "_id": "325638ad1e28f2db",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.325638ad1e28f2db"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Crimson",
+      "_id": "a2550738c1aabaa1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.a2550738c1aabaa1"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Cursed",
+      "_id": "162007d3e0894e4b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.162007d3e0894e4b"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Dawning",
+      "_id": "352a426305f6aca4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.352a426305f6aca4"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Dissident",
+      "_id": "7c5421068044e50b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.7c5421068044e50b"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Ebon",
+      "_id": "8c0cef60f1acae04",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.8c0cef60f1acae04"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Elder",
+      "_id": "8cb7908eb9449db0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.8cb7908eb9449db0"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Enduring",
+      "_id": "a421dd24dad1d2db",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.a421dd24dad1d2db"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Enlightened",
+      "_id": "091540d423d040a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.091540d423d040a3"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Exalted",
+      "_id": "15929aed0b25ad84",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.15929aed0b25ad84"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Fallen",
+      "_id": "69a7099a3eef26be",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.69a7099a3eef26be"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Fated",
+      "_id": "86c8d0124c24430d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.86c8d0124c24430d"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "First",
+      "_id": "5c1de205d9af778d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.5c1de205d9af778d"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Forgotten",
+      "_id": "2eb0310e70f9f1b0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.2eb0310e70f9f1b0"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Forsaken",
+      "_id": "3c3d4283f2bf229e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.3c3d4283f2bf229e"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Gloaming",
+      "_id": "5b40386f26a9310a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.5b40386f26a9310a"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Golden",
+      "_id": "8d5be6275c00b1df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.8d5be6275c00b1df"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Hidden",
+      "_id": "a51d3c0492c43852",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.a51d3c0492c43852"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Infernal",
+      "_id": "80a7f6db3ab7734d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.80a7f6db3ab7734d"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Infinite",
+      "_id": "5dbee21dc14832e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.5dbee21dc14832e5"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Iron",
+      "_id": "9510308c55559ac6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.9510308c55559ac6"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Kindred",
+      "_id": "1c1cb1e5df89308e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.1c1cb1e5df89308e"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Obsidian",
+      "_id": "e6ec7509db55b887",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.e6ec7509db55b887"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Radiant",
+      "_id": "7d605312822f9c6c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.7d605312822f9c6c"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Risen",
+      "_id": "1dfa513281c2043c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.1dfa513281c2043c"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Sacred",
+      "_id": "22d9d1df0ca42ac6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.22d9d1df0ca42ac6"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Sapphire",
+      "_id": "41a75a04ea984c18",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.41a75a04ea984c18"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Scarlet",
+      "_id": "459423f9ef6a8a9b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.459423f9ef6a8a9b"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Serene",
+      "_id": "850ad7971616c8ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.850ad7971616c8ac"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Shattered",
+      "_id": "68c3eba90e0c7a6e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.68c3eba90e0c7a6e"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Shining",
+      "_id": "56a7a31719e2ca64",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.56a7a31719e2ca64"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Silent",
+      "_id": "75945e90253941ed",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.75945e90253941ed"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Silver",
+      "_id": "bf8426743430b375",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.bf8426743430b375"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Sovereign",
+      "_id": "c25e7a10259ae32f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.c25e7a10259ae32f"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Stellar",
+      "_id": "9fa7cc9728199f62",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.9fa7cc9728199f62"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Sundered",
+      "_id": "6dba161259a1b62d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.6dba161259a1b62d"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Supreme",
+      "_id": "d0c75253d981917f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.d0c75253d981917f"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Undying",
+      "_id": "c4773056eaf42212",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.c4773056eaf42212"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Unified",
+      "_id": "e17abc953413f701",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.e17abc953413f701"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "United",
+      "_id": "261e7eeb7a2d3130",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.261e7eeb7a2d3130"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Universal",
+      "_id": "8fe465fba3520ced",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.8fe465fba3520ced"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Veiled",
+      "_id": "579ff5fac2ddb796",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.579ff5fac2ddb796"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Wandering",
+      "_id": "4aec4d401b5a5cfc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1bc0d594892867ed.4aec4d401b5a5cfc"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!1bc0d594892867ed"
+}

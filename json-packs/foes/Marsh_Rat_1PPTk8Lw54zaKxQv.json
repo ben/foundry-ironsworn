@@ -1,0 +1,20 @@
+{
+  "name": "Marsh Rat",
+  "type": "progress",
+  "img": "icons/creatures/mammals/rodent-rat-diseaed-gray.webp",
+  "data": {
+    "description": "\n\n<h2>Marsh Rat</h2>\n\n<p>The marsh rat is a rodent of unusual size. They are all-too-common in the Flooded Lands or in wetlands within the Hinterlands and Deep Wilds.</p>\n<p>They will eat almost anything, including carrion and waste. Our grain stores and pantries are an easy target for a hungry pack, who will dig tunnels or chew through walls to get at the food. They will also try to make a meal out of living prey—deer, cattle, or even an unlucky Ironlander. It is said that a swarm of marsh rats can kill a horse and reduce it to bone in a matter of hours.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Beady eyes</p>\n    <p class=\"nogrow\">Long tails</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Eat everything</p>\n    <p class=\"nogrow\">Breed</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Swarm and bite</p>\n  </div>\n</div>\n\n<em><p>Marsh rats raided the stores of an isolated settlement. How will you ensure the Ironlanders have enough food to survive the coming winter?</p></em>\n\n\n<h2>Animal</h2>\n<p>Animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the Old World.</p>\n<p>Most wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, <em>Resupply</em> (page 63) can represent hunting for deer or small game.</p>\n<p>A few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.</p>\n",
+    "rank": 1,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "1PPTk8Lw54zaKxQv",
+  "_key": "!items!1PPTk8Lw54zaKxQv"
+}

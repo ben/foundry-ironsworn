@@ -1,0 +1,89 @@
+{
+  "_id": "c2c2f31f564caa06",
+  "type": "sfmove",
+  "name": "Hearten",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Recover/Hearten",
+    "Category": "Starforged/Moves/Recover",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you socialize, share intimacy, or find a moment of peace**, roll +heart.\n\nOn a **strong hit**, you find companionship or comfort and your spirit is strengthened. If you are shaken, clear the impact and take +1 spirit. Otherwise, take +2 spirit. If you make this move as you @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn}, take +1 more.\n\nOn a **weak hit**, as above, but this indulgence is fleeting. Envision an interruption, complication, or inner conflict. Then, @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1).\n\nOn a **miss**, you take no comfort and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you socialize, share intimacy, or find a moment of peace...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You find companionship or comfort and your spirit is strengthened. If you are shaken, clear the impact and take +1 spirit. Otherwise, take +2 spirit. If you make this move as you @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn}, take +1 more.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You find companionship or comfort and your spirit is strengthened. If you are shaken, clear the impact and take +1 spirit. Otherwise, take +2 spirit. If you make this move as you @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn}, take +1 more.\n\nHowever, this indulgence is fleeting. Envision an interruption, complication, or inner conflict. Then, @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1).",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You take no comfort and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 211
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#179F0E",
+      "Images": []
+    }
+  },
+  "sort": 211,
+  "folder": "5ba869fa7c31abdd",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!c2c2f31f564caa06"
+}

@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "b40fdb80c31d46c5",
+  "folder": "7f1c05806875930c",
+  "name": "Oathbreaker",
+  "system": {
+    "requirement": "<p>Once you @Compendium[foundry-ironsworn.starforgedmoves.449c1e260c941a40]{Forsake Your Vow}…</p>",
+    "category": "Deed",
+    "color": "#40834f",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>This asset counts as an impact. One time only, when you @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} (extreme or greater) to redeem yourself, give that vow a special mark. When you @Compendium[foundry-ironsworn.starforgedmoves.0d7f13818c1c19ed]{Reach a Milestone} on the marked vow, take +2 momentum. If you @Compendium[foundry-ironsworn.starforgedmoves.449c1e260c941a40]{Forsake Your Vow} on the quest, discard this asset and retain the impact.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.9f538fabf8998c5b]{Compel} by reaffirming your commitment to your marked vow, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.985a5415860a99e9]{Fulfill Your Vow} on the marked quest and score a hit, you find redemption and automatically gain this ability at no cost. You may then improve one of your stats by +1 and discard this asset. Once the asset is discarded, you may not take it again.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!b40fdb80c31d46c5"
+}

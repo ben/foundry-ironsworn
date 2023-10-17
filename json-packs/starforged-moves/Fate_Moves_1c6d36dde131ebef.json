@@ -1,0 +1,24 @@
+{
+  "name": "Fate Moves",
+  "type": "Item",
+  "_id": "1c6d36dde131ebef",
+  "color": "#8F477B",
+  "description": "In solo and co-op play, the **fate moves** mediate the result of other moves or serve as inspirational prompts for your story. When you face the uncertain outcome of a move, want to know what happens next, or have a question about people, places, and events, these moves help reveal the answer.",
+  "sort": 228,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Fate"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021087,
+    "modifiedTime": 1695949021087,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!1c6d36dde131ebef"
+}

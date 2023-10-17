@@ -1,0 +1,20 @@
+{
+  "name": "Wolf",
+  "type": "progress",
+  "img": "icons/creatures/abilities/wolf-howl-moon-purple.webp",
+  "data": {
+    "description": "\n\n<h2>Wolf</h2>\n\n<p>The Ironlands are home to several breeds of wolves. Most are not aggressive and stay clear of settlements and travelers. Despite that, attacks against Ironlanders are not unknown. A harsh winter and insufficient prey can drive a pack to hunt livestock or even an unwary Ironlander. As night falls we hear their howls, and hope they are well fed.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Keen senses</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Fight rivals</p>\n    <p class=\"nogrow\">Mark territory</p>\n    <p class=\"nogrow\">Run with the pack</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Stalk</p>\n    <p class=\"nogrow\">Pack rush</p>\n    <p class=\"nogrow\">Drag to the ground</p>\n  </div>\n</div>\n\n<em><p>You find the grisly remains of a pack of wolves. All are dead, even the cubs. What caused this? Why is it a harbinger of a greater danger?</p></em>\n\n\n<h2>Animal</h2>\n<p>Animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the Old World.</p>\n<p>Most wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, <em>Resupply</em> (page 63) can represent hunting for deer or small game.</p>\n<p>A few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.</p>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "OHcpJ0GxZekZ1A7u",
+  "_key": "!items!OHcpJ0GxZekZ1A7u"
+}

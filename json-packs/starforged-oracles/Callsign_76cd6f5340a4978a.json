@@ -1,0 +1,1432 @@
+{
+  "_id": "76cd6f5340a4978a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Characters/Name/Callsign",
+      "category": "Starforged/Oracles/Characters"
+    }
+  },
+  "name": "Callsign",
+  "description": "<p>Spacers are often known only by their callsigns, with their “dirtside names” reserved for family and close friends.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Albatross",
+      "_id": "41de91be8d3451c8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.41de91be8d3451c8"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Angler",
+      "_id": "7be19a1150278ffb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.7be19a1150278ffb"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Anvil",
+      "_id": "e092982c7123067c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.e092982c7123067c"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Badger",
+      "_id": "d479e35dd9a7ad27",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.d479e35dd9a7ad27"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Bandit",
+      "_id": "b83fe588280296d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.b83fe588280296d1"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Bash",
+      "_id": "7986723fffe4b207",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.7986723fffe4b207"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Basilisk",
+      "_id": "9aa89b53c3df8adc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9aa89b53c3df8adc"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Bingo",
+      "_id": "c6fd565e42d622ea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.c6fd565e42d622ea"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Blackbird",
+      "_id": "41b0857d9314f734",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.41b0857d9314f734"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Blade",
+      "_id": "9be37d78e5bff48d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9be37d78e5bff48d"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Bloodshot",
+      "_id": "75f741f659d18e1e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.75f741f659d18e1e"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Bluewing",
+      "_id": "1117cbafc0c28df5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.1117cbafc0c28df5"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Bonfire",
+      "_id": "1692b797744a6e04",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.1692b797744a6e04"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Book",
+      "_id": "86a4b0438b81eb8e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.86a4b0438b81eb8e"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Breaker",
+      "_id": "759338831f8b08ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.759338831f8b08ae"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Brick",
+      "_id": "7f40eda702121803",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.7f40eda702121803"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Buzz",
+      "_id": "500cd7b4bcab6890",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.500cd7b4bcab6890"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Buzzard",
+      "_id": "094e3cf95144f523",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.094e3cf95144f523"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Centurion",
+      "_id": "8fb0cc6b8d6874cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.8fb0cc6b8d6874cf"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Chimera",
+      "_id": "cc4f5bc23ecfd027",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.cc4f5bc23ecfd027"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Circuit",
+      "_id": "7510735b7d042efa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.7510735b7d042efa"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Clank",
+      "_id": "dcc757c61f4da891",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.dcc757c61f4da891"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Cleric",
+      "_id": "e90a917a55ea2de9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.e90a917a55ea2de9"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Crash",
+      "_id": "452339cc8192bc0a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.452339cc8192bc0a"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Cutter",
+      "_id": "9f502d00e29a3abe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9f502d00e29a3abe"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Cutthroat",
+      "_id": "e80cda7ddeccee8a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.e80cda7ddeccee8a"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Cypher",
+      "_id": "3921892c95444b76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.3921892c95444b76"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Dagger",
+      "_id": "8f79c3f4e3b97e77",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.8f79c3f4e3b97e77"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Dancer",
+      "_id": "4139d1dbc86e0c3e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.4139d1dbc86e0c3e"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Dash",
+      "_id": "0d400636970e68f1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.0d400636970e68f1"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Deadeye",
+      "_id": "5d457b90747ed88e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.5d457b90747ed88e"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Deuce",
+      "_id": "d0d3279bd3b967c2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.d0d3279bd3b967c2"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Failsafe",
+      "_id": "9d69abd7879ce84c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9d69abd7879ce84c"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Farseer",
+      "_id": "9eb9defafe91577d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9eb9defafe91577d"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Fidget",
+      "_id": "cdf81e6334627dcd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.cdf81e6334627dcd"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Firestarter",
+      "_id": "6fddd9c95461415b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.6fddd9c95461415b"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Fixer",
+      "_id": "184e36c598d8532b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.184e36c598d8532b"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Flatline",
+      "_id": "9167b585432c059b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9167b585432c059b"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Ghost",
+      "_id": "f0ab2e1db88b4de6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.f0ab2e1db88b4de6"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Grudge",
+      "_id": "d8142d69de04aeef",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.d8142d69de04aeef"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Gutshot",
+      "_id": "c4c82bfde52e4d77",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.c4c82bfde52e4d77"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Harrow",
+      "_id": "1447f9c8e4c70bb0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.1447f9c8e4c70bb0"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Havoc",
+      "_id": "223a124b7e64422c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.223a124b7e64422c"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Hellhound",
+      "_id": "a12249660189a5b5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.a12249660189a5b5"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Hellion",
+      "_id": "9017f0b0d8b3513c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9017f0b0d8b3513c"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Hex",
+      "_id": "67ceef62a324f021",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.67ceef62a324f021"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Hush",
+      "_id": "708bedd941d70265",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.708bedd941d70265"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Ironclad",
+      "_id": "8d6bba27841e95ef",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.8d6bba27841e95ef"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Jackal",
+      "_id": "b36bd7c744a94102",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.b36bd7c744a94102"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Jackpot",
+      "_id": "1d5a652759a001cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.1d5a652759a001cd"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Jester",
+      "_id": "b5d7a47997139295",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.b5d7a47997139295"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Link",
+      "_id": "2efde396eb4a31ab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.2efde396eb4a31ab"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Longshot",
+      "_id": "547c9c792f89e291",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.547c9c792f89e291"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Mainframe",
+      "_id": "b5e7083c449d3988",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.b5e7083c449d3988"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Mantis",
+      "_id": "96db34c8de7a2dde",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.96db34c8de7a2dde"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Mimic",
+      "_id": "034c6860f373bd2c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.034c6860f373bd2c"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Mole",
+      "_id": "d9cdbacd8853f190",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.d9cdbacd8853f190"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Monarch",
+      "_id": "ddfc788a80df9f6d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.ddfc788a80df9f6d"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Mongoose",
+      "_id": "2f8e44bc639c9fc4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.2f8e44bc639c9fc4"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Nails",
+      "_id": "fb8e2413852076af",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.fb8e2413852076af"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Ogre",
+      "_id": "634528a63a5fd405",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.634528a63a5fd405"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Omega",
+      "_id": "f4f5cf3ee0c206ca",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.f4f5cf3ee0c206ca"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Overload",
+      "_id": "94b5e374fdc88f09",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.94b5e374fdc88f09"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Packrat",
+      "_id": "a0ff1da8d297c342",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.a0ff1da8d297c342"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Paladin",
+      "_id": "9109e8b9dea5d209",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9109e8b9dea5d209"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Phantom",
+      "_id": "828f047ffbb6f9df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.828f047ffbb6f9df"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Phoenix",
+      "_id": "57131876f9eafc4f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.57131876f9eafc4f"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Pyro",
+      "_id": "dee870d7357bdf7e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.dee870d7357bdf7e"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Quickdraw",
+      "_id": "2ae2cd328763cd43",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.2ae2cd328763cd43"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Razor",
+      "_id": "3d1a0dc9de2b946d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.3d1a0dc9de2b946d"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Rogue",
+      "_id": "dc2ce72679d21c1f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.dc2ce72679d21c1f"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Rook",
+      "_id": "917dfcf574ae4c25",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.917dfcf574ae4c25"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Rover",
+      "_id": "d29a89f3b4840725",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.d29a89f3b4840725"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Scout",
+      "_id": "eb1f560edb9a5a0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.eb1f560edb9a5a0f"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Shadow",
+      "_id": "4d8e506d9d43b337",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.4d8e506d9d43b337"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Shark",
+      "_id": "2580c2245010b34c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.2580c2245010b34c"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Shutdown",
+      "_id": "479e1fc96b902cb2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.479e1fc96b902cb2"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Slack",
+      "_id": "453a1ca429db71cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.453a1ca429db71cd"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Slash",
+      "_id": "c7c57850743b3f21",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.c7c57850743b3f21"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Snipe",
+      "_id": "987d9ecc6bc28c16",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.987d9ecc6bc28c16"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Spider",
+      "_id": "97375af44a6b3ede",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.97375af44a6b3ede"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Splinter",
+      "_id": "eac4e1778d643e8a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.eac4e1778d643e8a"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Static",
+      "_id": "3ee4c94f2566bb57",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.3ee4c94f2566bb57"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Stinger",
+      "_id": "175de887788cdfd8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.175de887788cdfd8"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Straggler",
+      "_id": "fdc6ea2898373943",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.fdc6ea2898373943"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Swindle",
+      "_id": "2fc2d2050eaca55c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.2fc2d2050eaca55c"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Tinker",
+      "_id": "103010944102e720",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.103010944102e720"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Touchdown",
+      "_id": "ca50a524dc48bcb2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.ca50a524dc48bcb2"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Tycoon",
+      "_id": "4c32755ab2e03891",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.4c32755ab2e03891"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Vagabond",
+      "_id": "0da508b3bec556ea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.0da508b3bec556ea"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Valkyrie",
+      "_id": "1bd85db6070fa805",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.1bd85db6070fa805"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Vanguard",
+      "_id": "130954abebd97dd2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.130954abebd97dd2"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Vertigo",
+      "_id": "d6376e9ff775706e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.d6376e9ff775706e"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Warden",
+      "_id": "1ca0c5faa029411e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.1ca0c5faa029411e"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Watchdog",
+      "_id": "9ed671e84e9f9f98",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.9ed671e84e9f9f98"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Wayfinder",
+      "_id": "4dad601c6e4fac25",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.4dad601c6e4fac25"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Whisper",
+      "_id": "ef5544f9daa52479",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.ef5544f9daa52479"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Wraith",
+      "_id": "a28234fb6850a5af",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.a28234fb6850a5af"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Wrongway",
+      "_id": "b315733217a9db0c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.b315733217a9db0c"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Zephyr",
+      "_id": "d4aae140cbcfb4b7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!76cd6f5340a4978a.d4aae140cbcfb4b7"
+    }
+  ],
+  "folder": "8ebd29f45973010e",
+  "sort": 333,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!76cd6f5340a4978a"
+}

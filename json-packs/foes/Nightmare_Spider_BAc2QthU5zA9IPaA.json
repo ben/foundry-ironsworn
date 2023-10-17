@@ -1,0 +1,20 @@
+{
+  "name": "Nightmare Spider",
+  "type": "progress",
+  "img": "icons/creatures/invertebrates/spider-mandibles-brown.webp",
+  "data": {
+    "description": "\n\n<h2>Nightmare Spider</h2>\n\n<p>Nightmare spiders are monstrous creatures which dwell in caves, ruins, thick woods, and other dark places. They have narrow, translucent bodies, three pairs of black eyes, and long, slender legs. They typically feed on bats and rodents, but are opportunistic hunters and attack anything straying into their path or stumbling into their webbing. Their lairs are often strung with large silk egg sacs.</p>\n<p>For smaller animals, the toxic bite of the nightmare spider causes paralysis. For a typical Ironlander, it dulls the senses and induces vivid hallucinations. It is these frightening, dreamlike visions which earn the creature its name.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Pale, semitransparent body</p>\n    <p class=\"nogrow\">Long, skinny legs</p>\n    <p class=\"nogrow\">Fangs, dripping with venom</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Lurk in darkness</p>\n    <p class=\"nogrow\">Feed</p>\n    <p class=\"nogrow\">Lay eggs</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Spin webs</p>\n    <p class=\"nogrow\">Drop on prey</p>\n    <p class=\"nogrow\">Pierce with venomous fangs</p>\n  </div>\n</div>\n\n<em><p>Within a <strong>Wild Tanglewood</strong>, mystics live in cooperation with the spiders, supplying them with live prey. They’ve abducted someone you care about and will use them as food for these foul creatures. What is the aim of these mystics?</p></em>\n\n<em><p>Nightmare spider toxin is harvested for a specific rite or practice. What is it?</p></em>\n\n<h2>Animal</h2>\n<p>Animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the Old World.</p>\n<p>Most wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, <em>Resupply</em> (page 63) can represent hunting for deer or small game.</p>\n<p>A few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.</p>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "BAc2QthU5zA9IPaA",
+  "_key": "!items!BAc2QthU5zA9IPaA"
+}

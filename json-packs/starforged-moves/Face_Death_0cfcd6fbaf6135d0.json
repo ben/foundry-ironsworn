@@ -1,0 +1,89 @@
+{
+  "_id": "0cfcd6fbaf6135d0",
+  "type": "sfmove",
+  "name": "Face Death",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Threshold/Face_Death",
+    "Category": "Starforged/Moves/Threshold",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you encounter a situation where death is an immediate and unavoidable outcome**, you are dead. **When you are instead brought to the brink of death with a chance for recovery or redemption**, roll +heart.\n\nOn a **strong hit**, you are cast back into the mortal world.\n\nOn a **weak hit**, choose one.\n\n  * You die, but not before making a noble sacrifice. Envision your final moments.\n  * There is more to be done. Envision what is revealed or asked of you at death's door, and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to complete an extreme quest. You return to the mortal world and must mark **doomed**. When you complete the deathbound quest, clear the impact.\n\nOn a **miss**, you are dead.",
+    "Trigger": {
+      "Text": "When you are brought to the brink of death with a chance for recovery or redemption...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You are cast back into the mortal world.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Choose one.\n\n  * You die, but not before making a noble sacrifice. Envision your final moments.\n  * There is more to be done. Envision what is revealed or asked of you at death's door, and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to complete an extreme quest. You return to the mortal world and must mark **doomed**. When you complete the deathbound quest, clear the impact.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You are dead.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 217
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#676767",
+      "Images": []
+    }
+  },
+  "sort": 217,
+  "folder": "7314206e9d9c4212",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!0cfcd6fbaf6135d0"
+}

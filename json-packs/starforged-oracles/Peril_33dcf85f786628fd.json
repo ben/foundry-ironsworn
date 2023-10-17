@@ -1,0 +1,200 @@
+{
+  "_id": "33dcf85f786628fd",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Chaotic/Peril",
+      "category": "Starforged/Oracles/Location_Themes/Chaotic"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Use this table to help envision a complication or hazard.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        9
+      ],
+      "text": "Chaos makes its mark upon you",
+      "_id": "d10d81fd8b216402",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.d10d81fd8b216402"
+    },
+    {
+      "range": [
+        10,
+        18
+      ],
+      "text": "Chaos spreads or intensifies",
+      "_id": "727c49ec6b2a2acc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.727c49ec6b2a2acc"
+    },
+    {
+      "range": [
+        19,
+        27
+      ],
+      "text": "Chaos tempts or lures you",
+      "_id": "72fbefed09e1b9b6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.72fbefed09e1b9b6"
+    },
+    {
+      "range": [
+        28,
+        36
+      ],
+      "text": "Chaotic energies block the path or assail you",
+      "_id": "3a461f9186ffab49",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.3a461f9186ffab49"
+    },
+    {
+      "range": [
+        37,
+        45
+      ],
+      "text": "Disorienting changes in time or location",
+      "_id": "7993b33b8c033a14",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.7993b33b8c033a14"
+    },
+    {
+      "range": [
+        46,
+        54
+      ],
+      "text": "Dreadful scene of those who fell prey to chaos",
+      "_id": "3b1e881a7370fe4e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.3b1e881a7370fe4e"
+    },
+    {
+      "range": [
+        55,
+        63
+      ],
+      "text": "Equipment is made unstable or dangerous",
+      "_id": "dd902c208eee3ddd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.dd902c208eee3ddd"
+    },
+    {
+      "range": [
+        64,
+        72
+      ],
+      "text": "Foes harness or wield chaos",
+      "_id": "d346ac728cb841a1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.d346ac728cb841a1"
+    },
+    {
+      "range": [
+        73,
+        81
+      ],
+      "text": "Hazardous environmental changes",
+      "_id": "4d2c3b20bf8b37c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.4d2c3b20bf8b37c0"
+    },
+    {
+      "range": [
+        82,
+        90
+      ],
+      "text": "Lifeforms made hostile by chaos",
+      "_id": "29f3c13b4c271137",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.29f3c13b4c271137"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "ea30641950de1d67",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.ea30641950de1d67"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "db265a65a9fc7f15",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33dcf85f786628fd.db265a65a9fc7f15"
+    }
+  ],
+  "folder": "2c017ba0d0ff0e12",
+  "sort": 372,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!33dcf85f786628fd"
+}

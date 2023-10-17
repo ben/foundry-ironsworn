@@ -1,0 +1,23 @@
+{
+  "name": "Site Nature",
+  "_id": "62509c23920c5583",
+  "type": "RollTable",
+  "description": "Randomly select a theme and domain for a perilous location.",
+  "sort": 1212,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Nature"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021121,
+    "modifiedTime": 1695949021121,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!62509c23920c5583"
+}

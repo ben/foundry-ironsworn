@@ -1,0 +1,88 @@
+{
+  "_id": "fa351368a88131e2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Endure_Stress",
+      "category": "Ironsworn/Oracles/Moves"
+    }
+  },
+  "name": "Endure Stress",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "You are overwhelmed. @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation}.",
+      "_id": "28e2da3a0a151b81",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fa351368a88131e2.28e2da3a0a151b81"
+    },
+    {
+      "range": [
+        11,
+        25
+      ],
+      "text": "You give up. @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow} (if possible, one relevant to your current crisis).",
+      "_id": "3c23102ef0bd85d4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fa351368a88131e2.3c23102ef0bd85d4"
+    },
+    {
+      "range": [
+        26,
+        50
+      ],
+      "text": "You give in to a fear or compulsion, and act against your better instincts.",
+      "_id": "05dfb3b5f5074980",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fa351368a88131e2.05dfb3b5f5074980"
+    },
+    {
+      "range": [
+        51,
+        100
+      ],
+      "text": "You persevere.",
+      "_id": "bd54f9d585bff9cb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fa351368a88131e2.bd54f9d585bff9cb"
+    }
+  ],
+  "folder": "06986fcc791b64bc",
+  "sort": 93,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!fa351368a88131e2"
+}

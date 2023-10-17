@@ -1,0 +1,97 @@
+{
+  "_id": "723192c97fec4fe2",
+  "type": "sfmove",
+  "name": "Clash",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Combat/Clash",
+    "Category": "Starforged/Moves/Combat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you are in a bad spot and fight back against a foe at close quarters**, roll +iron; **when you exchange fire at a distance**, roll +edge.\n\nOn a **strong hit**, mark progress twice. You overwhelm your foe and are in control.\n\nOn a **weak hit**, mark progress, but you are dealt a counterblow or setback. You stay in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.\n\nOn a **miss**, your foe dominates this exchange. You stay in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you are in a bad spot and fight back against a foe at close quarters, or when you exchange fire at a distance...",
+      "Options": [
+        {
+          "Text": "Fight back against a foe at close quarters",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Exchange fire at a distance",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Mark progress twice. You overwhelm your foe and are in control.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Mark progress, but you are dealt a counterblow or setback. You stay in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Your foe dominates this exchange. You stay in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 193
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#D68F00",
+      "Images": []
+    }
+  },
+  "sort": 193,
+  "folder": "0833ccc5eb06cf7e",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!723192c97fec4fe2"
+}

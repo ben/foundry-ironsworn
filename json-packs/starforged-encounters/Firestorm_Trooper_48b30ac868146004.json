@@ -1,0 +1,35 @@
+{
+  "_id": "48b30ac868146004",
+  "type": "progress",
+  "name": "Firestorm Trooper",
+  "img": "icons/equipment/head/helm-barbute-white.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Raiders with scarred flesh and polished armor</p>\n    <p class=\"nogrow\">Powered exosuits and distinctive helms</p>\n    <p class=\"nogrow\">Roaring jetpacks and fluttering banners</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Conquer the Forge</p>\n    <p class=\"nogrow\">Reap the resources owed them</p>\n    <p class=\"nogrow\">Venerate their leaders, creed, or gods</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Strike sudden and swift</p>\n    <p class=\"nogrow\">Attack flanks and weak points from above</p>\n    <p class=\"nogrow\">Cull the weak, recruit the strong</p>\n  </div>\n</div>\n\n<p>The Forge is largely wild, uncharted territory, but armored firestorm troopers seek to plunder the whole of it in the name of their clans, their creed, or their inscrutable gods.</p>\n<p>Striking with the speed and strength of a hurricane, they raid worlds and stations for resources and conscripts, leaving settlements in ruins. So deadly and effective are their tactics, that it’s often said if these zealots could only stop warring amongst themselves, their banners would fly across the breadth of the Forge.</p>\n\n<blockquote>Quest Starter: <p>Despite conflicting creeds, several firestorm clans unite beneath the banner of Torren the Purifier to invade the Terminus. Their next target is a world at the nexus of trade lanes. What is this planet, and why is it important to you?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.84dcebb1d762fa57]{Firestorm Raiding Team}</li>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.5a9ccb8c6bd80de3]{Firestorm Dropship}</li>\n</ul>",
+    "rank": 3,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021144,
+    "modifiedTime": 1695949021144,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!48b30ac868146004"
+}

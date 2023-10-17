@@ -1,0 +1,382 @@
+{
+  "_id": "56631a7625d6d574",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Name/Other/Giants",
+      "category": "Ironsworn/Oracles/Name"
+    }
+  },
+  "name": "Giants",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Chony",
+      "_id": "d1865b22d7ca8e8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.d1865b22d7ca8e8f"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Banda",
+      "_id": "841c8f1f8e1756cb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.841c8f1f8e1756cb"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Jochu",
+      "_id": "eb748a12d0637ded",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.eb748a12d0637ded"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Kira",
+      "_id": "c0c8d3fd4ded44a4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.c0c8d3fd4ded44a4"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Khatir",
+      "_id": "8997c954176db555",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.8997c954176db555"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Chaidu",
+      "_id": "823f16ed97ff1c4c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.823f16ed97ff1c4c"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Atan",
+      "_id": "37a36a29c996801c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.37a36a29c996801c"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Buandu",
+      "_id": "d69322ecc4707191",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.d69322ecc4707191"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Javyn",
+      "_id": "7d558e49f9f60085",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.7d558e49f9f60085"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Khashin",
+      "_id": "4e60581634e01631",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.4e60581634e01631"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Bayara",
+      "_id": "9c3e97061b56ef86",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.9c3e97061b56ef86"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Temura",
+      "_id": "63cf383621fe9589",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.63cf383621fe9589"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Kidha",
+      "_id": "d4ea846daeec0522",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.d4ea846daeec0522"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Kathos",
+      "_id": "80ce8e092f866bf2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.80ce8e092f866bf2"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Tanua",
+      "_id": "4e9e31fdc6609378",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.4e9e31fdc6609378"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Bashtu",
+      "_id": "d36b9df7531331da",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.d36b9df7531331da"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Jaran",
+      "_id": "2180279c3e4be9ba",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.2180279c3e4be9ba"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Othos",
+      "_id": "6ba2d5c17bc95bac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.6ba2d5c17bc95bac"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Khutan",
+      "_id": "d3ae9d4fd75328f7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.d3ae9d4fd75328f7"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Otaan",
+      "_id": "ab3177c2378f57ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.ab3177c2378f57ec"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Martu",
+      "_id": "ac0aeb33368d5fe1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.ac0aeb33368d5fe1"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Baku",
+      "_id": "65b3df65ccc6ee42",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.65b3df65ccc6ee42"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Tuban",
+      "_id": "501ec6cae5c5b7e6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.501ec6cae5c5b7e6"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Qudan",
+      "_id": "437baae7909ff168",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.437baae7909ff168"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Denua",
+      "_id": "dbe39786810e7b13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!56631a7625d6d574.dbe39786810e7b13"
+    }
+  ],
+  "folder": "7c9db0bc5d87be12",
+  "sort": 187,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!56631a7625d6d574"
+}

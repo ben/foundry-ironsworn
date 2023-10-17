@@ -1,0 +1,97 @@
+{
+  "_id": "ae5994ceb3cba098",
+  "type": "sfmove",
+  "name": "Strike",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Combat/Strike",
+    "Category": "Starforged/Moves/Combat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you are in control and assault a foe at close quarters**, roll +iron; **when you attack at a distance**, roll +edge.\n\nOn a **strong hit**, mark progress twice. You dominate your foe and stay in control.\n\nOn a **weak hit**, mark progress twice, but you expose yourself to danger. You are in a bad spot.\n\nOn a **miss**, the fight turns against you. You are in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you are in control and assault a foe at close quarters, or when you attack at a distance...",
+      "Options": [
+        {
+          "Text": "Assault a foe at close quarters",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Attack at a distance",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Mark progress twice. You dominate your foe and stay in control.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Mark progress twice, but you expose yourself to danger. You are in a bad spot.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "The fight turns against you. You are in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 192
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#D68F00",
+      "Images": []
+    }
+  },
+  "sort": 192,
+  "folder": "0833ccc5eb06cf7e",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!ae5994ceb3cba098"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Character",
+  "_id": "aa60f0d1adbed892",
+  "type": "RollTable",
+  "sort": 182,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Character"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021121,
+    "modifiedTime": 1695949021121,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!aa60f0d1adbed892"
+}

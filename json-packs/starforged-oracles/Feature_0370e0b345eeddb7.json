@@ -1,0 +1,242 @@
+{
+  "_id": "0370e0b345eeddb7",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ice/Feature",
+      "category": "Starforged/Oracles/Planets/Ice"
+    }
+  },
+  "name": "Feature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Abyssal ice fissures",
+      "_id": "a48b077fd2f2b2cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.a48b077fd2f2b2cf"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Blinding snow storms",
+      "_id": "a40fdcff61c0dd87",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.a40fdcff61c0dd87"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Clusters of ice spikes",
+      "_id": "b4052ad61d490cdb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.b4052ad61d490cdb"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Colossal ice caves",
+      "_id": "1a5dfccd48038bf2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.1a5dfccd48038bf2"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Glistening ice spires",
+      "_id": "4c990c3d9e602b2c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.4c990c3d9e602b2c"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Massive snow drifts",
+      "_id": "c279aa3cee9b437b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.c279aa3cee9b437b"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Preserved carcasses",
+      "_id": "beae58a7dc74a42a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.beae58a7dc74a42a"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Rocky islands amid icy wastes",
+      "_id": "e6b196d88ed87242",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.e6b196d88ed87242"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Shattered plains of pack ice",
+      "_id": "330b8608fe519679",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.330b8608fe519679"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Steaming hot springs",
+      "_id": "6a584fd9c4c663b8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.6a584fd9c4c663b8"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Subsurface liquid oceans",
+      "_id": "ada29158c635e946",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.ada29158c635e946"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Vibrant auroras",
+      "_id": "c07da91439862d38",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.c07da91439862d38"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Wind-carved ice formations",
+      "_id": "cafcd3da700a0084",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.cafcd3da700a0084"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "71f3ce2a5673fb93",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.71f3ce2a5673fb93"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (planetside)</a>",
+      "_id": "5eb369da808c5d99",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0370e0b345eeddb7.5eb369da808c5d99"
+    }
+  ],
+  "folder": "402fa1e3f9e7707c",
+  "sort": 311,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!0370e0b345eeddb7"
+}

@@ -1,0 +1,172 @@
+{
+  "_id": "ba74c724ad994958",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Environmental_Calamity",
+      "category": "Ironsworn/Oracles/Threat"
+    }
+  },
+  "name": "Environmental Calamity",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Devastate a place",
+      "_id": "fd147e569122c034",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.fd147e569122c034"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Block a path",
+      "_id": "2028ae4eecd6e490",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.2028ae4eecd6e490"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Threaten a community with imminent destruction",
+      "_id": "e84a92cc353a6227",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.e84a92cc353a6227"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Manifest unexpected effects",
+      "_id": "85dc75d758a00399",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.85dc75d758a00399"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Expand in scope or intensity",
+      "_id": "0c4198918f2632d5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.0c4198918f2632d5"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Allow someone to take advantage",
+      "_id": "45b78027a83ff8ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.45b78027a83ff8ac"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Deprive of resources",
+      "_id": "ce6ec62a638a04cb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.ce6ec62a638a04cb"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Isolate an important person or community",
+      "_id": "f9db66e844a74a1e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.f9db66e844a74a1e"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Force refugees into hostile lands",
+      "_id": "cb6af3293a7c61a0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.cb6af3293a7c61a0"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Disrupt natural ecosystems",
+      "_id": "924a75b851fdb33a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba74c724ad994958.924a75b851fdb33a"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 1221,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!ba74c724ad994958"
+}

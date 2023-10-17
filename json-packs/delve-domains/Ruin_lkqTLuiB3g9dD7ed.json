@@ -1,0 +1,252 @@
+{
+  "_id": "lkqTLuiB3g9dD7ed",
+  "type": "delve-domain",
+  "name": "Ruin",
+  "img": "icons/environment/wilderness/wall-ruins.webp",
+  "system": {
+    "summary": "The crumbling legacy of a dead civilization.",
+    "description": "These decaying edifices, skeletal and shadowed, mark the remains of once-great communities and civilizations. Some of these sites have been newly adapted by Ironlanders as shelter, temple, or citadel. Others are home only to dangerous creatures and dark forces.\n\nNewly discovered ruins tempt bold explorers with the promise of powerful legacies and forgotten secrets. But most see these places as a portent of our inescapable, grim fate in these lands. Someday, another people may delve into the ruins of what we leave behind.",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Crumbling corridors and chambers",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Collapsed architecture",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Rubble-choked hall",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Courtyard",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Archive or library",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Broken statuary or fading murals",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Preserved vault",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Temple to forgotten gods",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Mausoleum",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Ancient mechanism or trap",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Collapsing wall or ceiling",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Blocked or broken passage",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Unstable floor above a new danger",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Ancient secrets best left buried",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "lkqTLuiB3g9dD7ed"
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "wQPE4gQwm9evnYyd": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.13",
+    "coreVersion": "10.291",
+    "createdTime": 1674027048032,
+    "modifiedTime": 1674027048032,
+    "lastModifiedBy": "wQPE4gQwm9evnYyd"
+  },
+  "_key": "!items!lkqTLuiB3g9dD7ed"
+}

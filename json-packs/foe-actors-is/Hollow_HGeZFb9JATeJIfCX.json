@@ -1,0 +1,116 @@
+{
+  "_id": "HGeZFb9JATeJIfCX",
+  "name": "Hollow",
+  "type": "foe",
+  "img": "icons/consumables/plants/grass-leaves-green.webp",
+  "data": {},
+  "token": {
+    "name": "Hollow",
+    "img": "icons/consumables/plants/grass-leaves-green.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "6krEpDsiMTqDwDdy",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!HGeZFb9JATeJIfCX.6krEpDsiMTqDwDdy"
+    },
+    {
+      "_id": "dWixvqBxq35DiEet",
+      "name": "Hollow",
+      "type": "progress",
+      "img": "icons/consumables/plants/grass-leaves-green.webp",
+      "data": {
+        "description": "\n\n<h2>Hollow</h2>\n\n<p>It is said that elves who die an unjust death or have cause to seek retribution can rise as a hollow. Their form is a rippling mass of dead leaves, plants, soil, carrion, and insects. They move with a nightmarish, shambling gait. Their face is the wooden mask they wore in life. Their voice is the rattle of the wind through dry leaves.</p>\n<p>As with haunts, they can be temporarily defeated but cannot be killed by physical means. They are a relentless force. They will not stop until they enact their vengeance.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Vaguely humanoid shape formed of earth, plant and vermin</p>\n    <p class=\"nogrow\">Empty black eyes behind an elven mask</p>\n    <p class=\"nogrow\">Smells of wet soil and dead things</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">See justice done</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Bash with savage strength</p>\n    <p class=\"nogrow\">Draw in a whirlwind of materials to reform and enlarge</p>\n    <p class=\"nogrow\">Envelop and suffocate</p>\n  </div>\n</div>\n\n<em><p>A hollow terrorizes an Ironlander village. What does it seek? What will you do to stop it?</p></em>\n\n<em><p>How do elven communities view a risen hollow? Are they seen as spirits of righteous vengeance or as dangerous aberrations?</p></em>\n\n<h2>Horror</h2>\n<p>Horrors are supernatural entities. In the Old World, they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.</p>\n<p>Many horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.</p>\n",
+        "rank": 4,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!HGeZFb9JATeJIfCX.dWixvqBxq35DiEet"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!HGeZFb9JATeJIfCX"
+}

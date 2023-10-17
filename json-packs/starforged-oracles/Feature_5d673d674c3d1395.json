@@ -1,0 +1,214 @@
+{
+  "_id": "5d673d674c3d1395",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Infested/Feature",
+      "category": "Starforged/Oracles/Location_Themes/Infested"
+    }
+  },
+  "name": "Feature",
+  "description": "<p>Use this table to reveal a new aspect of the location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Corpse of an unfortunate victim",
+      "_id": "1f9444e0e1fb688c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.1f9444e0e1fb688c"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Eggs, cocoons, or nest",
+      "_id": "480964f448797c79",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.480964f448797c79"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Environment corrupted by the infestation",
+      "_id": "66115a21dd40962f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.66115a21dd40962f"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Evidence of a lurking creature",
+      "_id": "b58b9595742e4795",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.b58b9595742e4795"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Evidence of an ill-fated victim",
+      "_id": "e05ec5535e503e5d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.e05ec5535e503e5d"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Hoarded food",
+      "_id": "0a1cfa019bdf3f1c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.0a1cfa019bdf3f1c"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Indistinct movement or sounds",
+      "_id": "df2630e850ae00eb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.df2630e850ae00eb"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Lair of lesser creatures",
+      "_id": "3085692370d12d83",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.3085692370d12d83"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Ravaged supplies or equipment",
+      "_id": "6627efb5a9d5cd94",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.6627efb5a9d5cd94"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Remains of a creature or remnants of a previous form",
+      "_id": "9beb10697d7924ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.9beb10697d7924ad"
+    },
+    {
+      "range": [
+        81,
+        88
+      ],
+      "text": "Territorial markings",
+      "_id": "11b3c41e869ce5f1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.11b3c41e869ce5f1"
+    },
+    {
+      "range": [
+        89,
+        96
+      ],
+      "text": "Trail or evidence of a creature's passage",
+      "_id": "a9a7427f9744524e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.a9a7427f9744524e"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "a48eb7c68baa989f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5d673d674c3d1395.a48eb7c68baa989f"
+    }
+  ],
+  "folder": "4289e90998719500",
+  "sort": 375,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!5d673d674c3d1395"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "066246ea4ea35d4c",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Sea_Cave",
+      "category": "Ironsworn/Oracles/Site_Name"
+    }
+  },
+  "name": "Sea Cave",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        16
+      ],
+      "text": "Caves",
+      "_id": "4b1275da863f1083",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!066246ea4ea35d4c.4b1275da863f1083"
+    },
+    {
+      "range": [
+        17,
+        32
+      ],
+      "text": "Channel",
+      "_id": "a7c4bd810754db17",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!066246ea4ea35d4c.a7c4bd810754db17"
+    },
+    {
+      "range": [
+        33,
+        49
+      ],
+      "text": "Cove",
+      "_id": "efc886bac5d83a8e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!066246ea4ea35d4c.efc886bac5d83a8e"
+    },
+    {
+      "range": [
+        50,
+        66
+      ],
+      "text": "Hollow",
+      "_id": "b2e97a3894d49909",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!066246ea4ea35d4c.b2e97a3894d49909"
+    },
+    {
+      "range": [
+        67,
+        83
+      ],
+      "text": "Pools",
+      "_id": "a291bd3c3804ef5e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!066246ea4ea35d4c.a291bd3c3804ef5e"
+    },
+    {
+      "range": [
+        84,
+        100
+      ],
+      "text": "Gouge",
+      "_id": "b4370ca1a3b527b4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!066246ea4ea35d4c.b4370ca1a3b527b4"
+    }
+  ],
+  "folder": "b635c76e4b694c12",
+  "sort": 1211,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!066246ea4ea35d4c"
+}

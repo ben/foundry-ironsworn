@@ -1,0 +1,74 @@
+{
+  "_id": "68efb47a93ee8925",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Location",
+      "category": "Starforged/Oracles/Settlements"
+    }
+  },
+  "name": "Location",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "Planetside",
+      "_id": "248c55fb0f824c15",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!68efb47a93ee8925.248c55fb0f824c15"
+    },
+    {
+      "range": [
+        41,
+        75
+      ],
+      "text": "Orbital",
+      "_id": "11b853081371cb20",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!68efb47a93ee8925.11b853081371cb20"
+    },
+    {
+      "range": [
+        76,
+        100
+      ],
+      "text": "Deep Space",
+      "_id": "5caab53411b2239c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!68efb47a93ee8925.5caab53411b2239c"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 322,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!68efb47a93ee8925"
+}

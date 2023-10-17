@@ -1,0 +1,102 @@
+{
+  "_id": "d505bfd2e5b2eabb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Community/Opportunity",
+      "category": "Starforged/Oracles/Derelicts/Community"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Culturally significant object or artifact",
+      "_id": "7249826c2b504e8d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d505bfd2e5b2eabb.7249826c2b504e8d"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Salvageable goods or resources",
+      "_id": "6ef9cb5ed6f472b0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d505bfd2e5b2eabb.6ef9cb5ed6f472b0"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Secure area offers a moment of peace",
+      "_id": "7a64bcab372d61d5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d505bfd2e5b2eabb.7a64bcab372d61d5"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Terminal with access to site details",
+      "_id": "09c8c397cbf9f6d8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d505bfd2e5b2eabb.09c8c397cbf9f6d8"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Valuable item",
+      "_id": "c9afd3d26c52144c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d505bfd2e5b2eabb.c9afd3d26c52144c"
+    }
+  ],
+  "folder": "106a2830d69bfa64",
+  "sort": 353,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!d505bfd2e5b2eabb"
+}

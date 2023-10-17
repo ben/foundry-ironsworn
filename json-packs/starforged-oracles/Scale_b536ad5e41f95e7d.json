@@ -1,0 +1,102 @@
+{
+  "_id": "b536ad5e41f95e7d",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Scale",
+      "category": "Starforged/Oracles/Vaults"
+    }
+  },
+  "name": "Scale",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "Minor, confined site",
+      "_id": "8c6648cdd615dc8a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b536ad5e41f95e7d.8c6648cdd615dc8a"
+    },
+    {
+      "range": [
+        31,
+        65
+      ],
+      "text": "Typical site of limited scope",
+      "_id": "e6438200a5863d5b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b536ad5e41f95e7d.e6438200a5863d5b"
+    },
+    {
+      "range": [
+        66,
+        90
+      ],
+      "text": "Large, elaborate site",
+      "_id": "c5b4c4a66e28118b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b536ad5e41f95e7d.c5b4c4a66e28118b"
+    },
+    {
+      "range": [
+        91,
+        99
+      ],
+      "text": "Vast site of unfathomable complexity",
+      "_id": "6c09e4d19ec93730",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b536ad5e41f95e7d.6c09e4d19ec93730"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "World-spanning site or megastructure",
+      "_id": "4f00f403524986a7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b536ad5e41f95e7d.4f00f403524986a7"
+    }
+  ],
+  "folder": "2c4fe25ee600037f",
+  "sort": 360,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!b536ad5e41f95e7d"
+}

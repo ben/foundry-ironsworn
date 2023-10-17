@@ -1,0 +1,214 @@
+{
+  "_id": "f2bba7a759c5871a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Space/Stellar_Object",
+      "category": "Starforged/Oracles/Space"
+    }
+  },
+  "name": "Stellar Object",
+  "description": "<p>Use the Stellar Object oracle to learn more about the primary star at a location. This is mostly to help you visualize your surroundings, but the strange or hazardous nature of some rare stars can incite new adventures.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Smoldering red star",
+      "_id": "7c3d548b9987db5f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.7c3d548b9987db5f"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Glowing orange star",
+      "_id": "6c6d95850f36478a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.6c6d95850f36478a"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "Burning yellow star",
+      "_id": "818ab422a5a73916",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.818ab422a5a73916"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Blazing blue star",
+      "_id": "2dc0207c4308fd3d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.2dc0207c4308fd3d"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Young star incubating in a molecular cloud",
+      "_id": "d460d396d3673935",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.d460d396d3673935"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "White dwarf shining with spectral light",
+      "_id": "fb5338e819f38121",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.fb5338e819f38121"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Corrupted star radiating with unnatural light",
+      "_id": "6dc79f9b72ac3744",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.6dc79f9b72ac3744"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Neutron star surrounded by intense magnetic fields",
+      "_id": "e225746acd216407",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.e225746acd216407"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Two stars in close orbit connected by fiery tendrils of energy",
+      "_id": "d6624b8fa9fe0f03",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.d6624b8fa9fe0f03"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Black hole allows nothing to escape—not even light",
+      "_id": "b65898571620f765",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.b65898571620f765"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "Hypergiant star generating turbulent solar winds",
+      "_id": "434c6eedf9adbd78",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.434c6eedf9adbd78"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Artificial star constructed by a long-dead civilization",
+      "_id": "00e9cf903e6fd4f9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.00e9cf903e6fd4f9"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Unstable star showing signs of impending supernova",
+      "_id": "94e6c615ba1fde64",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f2bba7a759c5871a.94e6c615ba1fde64"
+    }
+  ],
+  "folder": "a17a6892a4e03f3f",
+  "sort": 303,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!f2bba7a759c5871a"
+}

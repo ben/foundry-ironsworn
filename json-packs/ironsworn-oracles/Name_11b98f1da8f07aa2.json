@@ -1,0 +1,130 @@
+{
+  "_id": "11b98f1da8f07aa2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Name",
+      "category": "Ironsworn/Oracles/Settlement"
+    }
+  },
+  "name": "Name",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "\"**A feature of the landscape.** Envision what it is. What makes it unusual or distinctive?\",",
+      "_id": "fcb508a99e55bb27",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!11b98f1da8f07aa2.fcb508a99e55bb27"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "**A manmade edifice.** What is it? Why is it important to this settlement’s history?,",
+      "_id": "6e75f8684ea5083c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!11b98f1da8f07aa2.6e75f8684ea5083c"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "**A creature.** Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?",
+      "_id": "c7c3cc827b8edf3d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!11b98f1da8f07aa2.c7c3cc827b8edf3d"
+    },
+    {
+      "range": [
+        46,
+        60
+      ],
+      "text": "**A historical event.** What happened here? What place or practice commemorates this event?",
+      "_id": "e0adf70108007206",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!11b98f1da8f07aa2.e0adf70108007206"
+    },
+    {
+      "range": [
+        61,
+        75
+      ],
+      "text": "**A word in an Old World language.** What culture is represented by this word? What does it translate to?",
+      "_id": "6b7342c92979943c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!11b98f1da8f07aa2.6b7342c92979943c"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "**A season or environmental aspect.** What influence does the weather have on this settlement?",
+      "_id": "65d08ef248540b77",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!11b98f1da8f07aa2.65d08ef248540b77"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Something Else...",
+      "_id": "19d5a309b802d72d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!11b98f1da8f07aa2.19d5a309b802d72d"
+    }
+  ],
+  "folder": "1a0cbf46c7e7fb26",
+  "sort": 178,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!11b98f1da8f07aa2"
+}

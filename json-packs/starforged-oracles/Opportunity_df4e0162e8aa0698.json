@@ -1,0 +1,102 @@
+{
+  "_id": "df4e0162e8aa0698",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Fortified/Opportunity",
+      "category": "Starforged/Oracles/Location_Themes/Fortified"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Insight into the plans or methods of the enemy force",
+      "_id": "217edf0335265f4a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4e0162e8aa0698.217edf0335265f4a"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Opening to get the drop on an enemy",
+      "_id": "3d912cbca43b7875",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4e0162e8aa0698.3d912cbca43b7875"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Opening to outmaneuver or escape enemies",
+      "_id": "6f8ccdeb8740aaf9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4e0162e8aa0698.6f8ccdeb8740aaf9"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Potential collaborator or informant reveals themselves",
+      "_id": "16137950e11fab86",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4e0162e8aa0698.16137950e11fab86"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Access to useful equipment or weapons",
+      "_id": "36006d0eedde8996",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4e0162e8aa0698.36006d0eedde8996"
+    }
+  ],
+  "folder": "b004bd768a2a6c15",
+  "sort": 373,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!df4e0162e8aa0698"
+}

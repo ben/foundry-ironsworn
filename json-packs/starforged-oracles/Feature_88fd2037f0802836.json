@@ -1,0 +1,242 @@
+{
+  "_id": "88fd2037f0802836",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Desert/Feature",
+      "category": "Starforged/Oracles/Planets/Desert"
+    }
+  },
+  "name": "Feature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Cavernous sinkholes",
+      "_id": "9be3137ab1f3df36",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.9be3137ab1f3df36"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Engulfing sandstorms",
+      "_id": "be228054523026e8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.be228054523026e8"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Fleeting rainstorms and flash floods",
+      "_id": "82f1385b59b5ee6a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.82f1385b59b5ee6a"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Flooded grottos",
+      "_id": "e9950189b5eec867",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.e9950189b5eec867"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Petrified forest",
+      "_id": "9ccd2477e4dd3f55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.9ccd2477e4dd3f55"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Rampaging whirlwinds",
+      "_id": "7419273bb0c2f3a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.7419273bb0c2f3a3"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Scorched glass plains",
+      "_id": "253cbeae3213df70",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.253cbeae3213df70"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Severe temperature fluctuations",
+      "_id": "203abb7489470054",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.203abb7489470054"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Sunbaked bones of titanic creatures",
+      "_id": "ca6927d250cb0a00",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.ca6927d250cb0a00"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Timeworn cliffside caves",
+      "_id": "1c11afb94f2717e1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.1c11afb94f2717e1"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Towering rock formations",
+      "_id": "93ca81a1296acebe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.93ca81a1296acebe"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Violent electrical storms",
+      "_id": "c487a71f717d0d50",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.c487a71f717d0d50"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Windborne metallic sand",
+      "_id": "dfd8ba84c67e0ad0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.dfd8ba84c67e0ad0"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "bdc2d0b41505bbee",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.bdc2d0b41505bbee"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (planetside)</a>",
+      "_id": "23669b3e037aadf5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88fd2037f0802836.23669b3e037aadf5"
+    }
+  ],
+  "folder": "ba1bbe7871538aad",
+  "sort": 308,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!88fd2037f0802836"
+}

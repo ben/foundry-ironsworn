@@ -1,0 +1,252 @@
+{
+  "_id": "ONZWFYrqxgFIzppP",
+  "type": "delve-theme",
+  "name": "Fortified",
+  "img": "icons/environment/settlement/watchtower-cliff.webp",
+  "system": {
+    "summary": "Foes defend this place against intruders.",
+    "description": "A fortified site is held and defended by an enemy force. It might be an enemy camp, an outpost, a fortress, or a closely-guarded territory.\n\nInfiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to your objective.",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Camp or quarters",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Guarded location",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Storage or repository",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Work or training area",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Command center or leadership",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Denizen patrols the area",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Denizen on guard",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Denizen ready to sound the alarm",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Denizen sets an ambush",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Denizen lures you into a trap",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Denizens converge on this area",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "Pets or underlings",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Unexpected alliance revealed",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "Nefarious plans revealed",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Unexpected leader revealed",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "Trap",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Alarm trigger",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "ONZWFYrqxgFIzppP"
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "wQPE4gQwm9evnYyd": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.13",
+    "coreVersion": "10.291",
+    "createdTime": 1674027047964,
+    "modifiedTime": 1674027047964,
+    "lastModifiedBy": "wQPE4gQwm9evnYyd"
+  },
+  "_key": "!items!ONZWFYrqxgFIzppP"
+}

@@ -1,0 +1,103 @@
+{
+  "_id": "be95ca063ded2b19",
+  "type": "sfmove",
+  "name": "Compel",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Relationship/Compel",
+    "Category": "Ironsworn/Moves/Relationship",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you attempt to persuade someone to do something**, envision your approach and roll. If you...\n\n  * Charm, pacify, barter, or convince: Roll +heart (add +1 if you share a bond).\n  * Threaten or incite: Roll +iron.\n  * Lie or swindle: Roll +shadow.\n\nOn a **strong hit**, they’ll do what you want or share what they know. Take +1 momentum. If you use this exchange to @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information}, make that move now and add +1.\n\nOn a **weak hit**, as above, but they ask something of you in return. Envision what they want (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a **miss**, they refuse or make a demand which costs you greatly. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you attempt to persuade someone to do something...",
+      "Options": [
+        {
+          "Text": "Charm, pacify, barter, or convince",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "Threaten or incite",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Lie or swindle",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "They’ll do what you want or share what they know. Take +1 momentum. If you use this exchange to @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information}, make that move now and add +1.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "They’ll do what you want or share what they know... but they ask something of you in return. Envision what they want (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nTake +1 momentum. If you use this exchange to @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information}, make that move now and add +1.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "They refuse or make a demand which costs you greatly. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 69
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 69,
+  "folder": "31fc8e728c391c80",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!be95ca063ded2b19"
+}

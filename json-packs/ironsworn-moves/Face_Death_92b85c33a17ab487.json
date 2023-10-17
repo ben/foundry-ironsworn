@@ -1,0 +1,87 @@
+{
+  "_id": "92b85c33a17ab487",
+  "type": "sfmove",
+  "name": "Face Death",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Suffer/Face_Death",
+    "Category": "Ironsworn/Moves/Suffer",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you are brought to the brink of death**, and glimpse the world beyond, roll +heart.\n\nOn a **strong hit**, death rejects you. You are cast back into the mortal world.\n\nOn a **weak hit**, choose one.\n\n  * You die, but not before making a noble sacrifice. Envision your final moments.\n  * Death desires something of you in exchange for your life. Envision what it wants (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} (formidable or extreme) to complete that quest. If you fail to score a hit when you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}, or refuse the quest, you are dead. Otherwise, you return to the mortal world and are now cursed. You may only clear the cursed debility by completing the quest.\n\nOn a **miss**, you are dead.",
+    "Trigger": {
+      "Text": "When you are brought to the brink of death, and glimpse the world beyond...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Death rejects you. You are cast back into the mortal world.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Choose one.\n\n  * You die, but not before making a noble sacrifice. Envision your final moments.\n  * Death desires something of you in exchange for your life. Envision what it wants (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} (formidable or extreme) to complete that quest. If you fail to score a hit when you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}, or refuse the quest, you are dead. Otherwise, you return to the mortal world and are now cursed. You may only clear the cursed debility by completing the quest.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You are dead.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 93
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 93,
+  "folder": "a6b19a943ff830d6",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!92b85c33a17ab487"
+}

@@ -1,0 +1,88 @@
+{
+  "_id": "5c0e2dc25a949b14",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Rocky/Atmosphere",
+      "category": "Starforged/Oracles/Planets/Rocky"
+    }
+  },
+  "name": "Atmosphere",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        65
+      ],
+      "text": "None/thin",
+      "_id": "b6f1e0278c4caa69",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c0e2dc25a949b14.b6f1e0278c4caa69"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Toxic",
+      "_id": "c47f98b0270c09bc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c0e2dc25a949b14.c47f98b0270c09bc"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Corrosive",
+      "_id": "9cf7d7d5083ce6cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c0e2dc25a949b14.9cf7d7d5083ce6cf"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Marginal",
+      "_id": "8cde8aa545a6715c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c0e2dc25a949b14.8cde8aa545a6715c"
+    }
+  ],
+  "folder": "bed6f29dbba73147",
+  "sort": 315,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!5c0e2dc25a949b14"
+}

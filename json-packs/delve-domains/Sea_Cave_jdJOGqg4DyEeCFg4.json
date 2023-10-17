@@ -1,0 +1,252 @@
+{
+  "_id": "jdJOGqg4DyEeCFg4",
+  "type": "delve-domain",
+  "name": "Sea Cave",
+  "img": "icons/environment/wilderness/cave-entrance-island.webp",
+  "system": {
+    "summary": "Stone passages carved by ocean waves.",
+    "description": "Carved by ocean waves and unyielding currents, the sea caves pockmarking the coasts plunge deep into the land’s dark heart. Deadly creatures or determined foes often lair within, but it is the water that is your ever-present enemy. The chill and damp seep into your bones. The tides and upland flooding can bring a torrent of water with little warning. You plunge desperately through submerged passages, praying that an opening will provide a pocket of air.\n\nThis is a realm of water and stone, cold and darkness. You are not welcome here.",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Watery tunnels",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Eroded chamber",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Flooded chamber",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Vast chamber",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Dry passages",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Freshwater inlet",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Rocky island",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Waterborne debris",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Shipwreck or boat",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen strikes without warning",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Denizen lurks below",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Flooding",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Rushing current",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Claustrophobic squeeze",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "jdJOGqg4DyEeCFg4"
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "wQPE4gQwm9evnYyd": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.13",
+    "coreVersion": "10.291",
+    "createdTime": 1674027048032,
+    "modifiedTime": 1674027048032,
+    "lastModifiedBy": "wQPE4gQwm9evnYyd"
+  },
+  "_key": "!items!jdJOGqg4DyEeCFg4"
+}

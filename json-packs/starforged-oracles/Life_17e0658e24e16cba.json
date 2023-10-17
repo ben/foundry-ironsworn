@@ -1,0 +1,116 @@
+{
+  "_id": "17e0658e24e16cba",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ice/Life",
+      "category": "Starforged/Oracles/Planets/Ice"
+    }
+  },
+  "name": "Life",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "None",
+      "_id": "01ad79831cf90e40",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!17e0658e24e16cba.01ad79831cf90e40"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Extinct",
+      "_id": "e36299051d2dcf25",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!17e0658e24e16cba.e36299051d2dcf25"
+    },
+    {
+      "range": [
+        41,
+        70
+      ],
+      "text": "Scarce",
+      "_id": "90a359383544ef3b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!17e0658e24e16cba.90a359383544ef3b"
+    },
+    {
+      "range": [
+        71,
+        90
+      ],
+      "text": "Diverse",
+      "_id": "7c60e42f493a84a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!17e0658e24e16cba.7c60e42f493a84a8"
+    },
+    {
+      "range": [
+        91,
+        97
+      ],
+      "text": "Bountiful",
+      "_id": "31aeda756e392df4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!17e0658e24e16cba.31aeda756e392df4"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Overrun",
+      "_id": "24f89537dcd687a2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!17e0658e24e16cba.24f89537dcd687a2"
+    }
+  ],
+  "folder": "402fa1e3f9e7707c",
+  "sort": 311,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!17e0658e24e16cba"
+}

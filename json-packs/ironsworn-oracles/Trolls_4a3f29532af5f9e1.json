@@ -1,0 +1,382 @@
+{
+  "_id": "4a3f29532af5f9e1",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Name/Other/Trolls",
+      "category": "Ironsworn/Oracles/Name"
+    }
+  },
+  "name": "Trolls",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Rattle",
+      "_id": "e08909ad827623bf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.e08909ad827623bf"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Scratch",
+      "_id": "72512b1d2ec51028",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.72512b1d2ec51028"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Wallow",
+      "_id": "dd9293796fa328b8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.dd9293796fa328b8"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Groak",
+      "_id": "590102a0c8a9a256",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.590102a0c8a9a256"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Gimble",
+      "_id": "52d41b6f85ff9370",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.52d41b6f85ff9370"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Scar",
+      "_id": "d7291bbb7d70599c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.d7291bbb7d70599c"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Cratch",
+      "_id": "5b8ddfec11bcfafa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.5b8ddfec11bcfafa"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Creech",
+      "_id": "e71ff766690263f6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.e71ff766690263f6"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Shush",
+      "_id": "5674018f6deaa7b1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.5674018f6deaa7b1"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Glush",
+      "_id": "d1df7d9cd963486c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.d1df7d9cd963486c"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Slar",
+      "_id": "43a18e1e12b2adde",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.43a18e1e12b2adde"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Gnash",
+      "_id": "a04e719c48269374",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.a04e719c48269374"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Stoad",
+      "_id": "3ac7e098d3b0c1f6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.3ac7e098d3b0c1f6"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Grig",
+      "_id": "1d30ca9818b18cac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.1d30ca9818b18cac"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Bleat",
+      "_id": "c6f7583b997838e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.c6f7583b997838e5"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Chortle",
+      "_id": "2240ecb9a8cf555e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.2240ecb9a8cf555e"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Cluck",
+      "_id": "51c19ca612320f2f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.51c19ca612320f2f"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Slith",
+      "_id": "d5601f56a684c069",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.d5601f56a684c069"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Mongo",
+      "_id": "8baf2d499d7cb1bc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.8baf2d499d7cb1bc"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Creak",
+      "_id": "dd8d3085dc901780",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.dd8d3085dc901780"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Burble",
+      "_id": "3f5dc29358df2e41",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.3f5dc29358df2e41"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Vrusk",
+      "_id": "91c0093745225f29",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.91c0093745225f29"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Snuffle",
+      "_id": "e2fdcffefc744fdc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.e2fdcffefc744fdc"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Leech",
+      "_id": "7380af504f15f067",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.7380af504f15f067"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Herk",
+      "_id": "e234f82a243ae61c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4a3f29532af5f9e1.e234f82a243ae61c"
+    }
+  ],
+  "folder": "7c9db0bc5d87be12",
+  "sort": 187,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!4a3f29532af5f9e1"
+}

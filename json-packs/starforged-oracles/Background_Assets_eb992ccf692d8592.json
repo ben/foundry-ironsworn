@@ -1,0 +1,312 @@
+{
+  "_id": "eb992ccf692d8592",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation/Background_Assets",
+      "category": "Starforged/Oracles/Character_Creation"
+    }
+  },
+  "name": "Background Assets",
+  "description": "<p>If you want some direction for your starting paths, roll or pick from the table below and take the two paths associated with your selected background.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Battlefield Medic (HEALER; VETERAN)",
+      "_id": "7a9ce91fdedd34c5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.7a9ce91fdedd34c5"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Delegate (BANNERSWORN; DIPLOMAT)",
+      "_id": "40dc4bf2cf87afc6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.40dc4bf2cf87afc6"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Exobiologist (LORE HUNTER; NATURALIST)",
+      "_id": "083c235e29328fb2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.083c235e29328fb2"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Far Trader (NAVIGATOR; TRADER)",
+      "_id": "603dbc0d5d61caa1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.603dbc0d5d61caa1"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Fugitive Hunter (ARMORED; BOUNTY HUNTER)",
+      "_id": "8eed3bba5aa2993f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.8eed3bba5aa2993f"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Hacker (INFILTRATOR; TECH)",
+      "_id": "c7d57053f1b9edec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.c7d57053f1b9edec"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Hotshot Pilot (ACE; NAVIGATOR)",
+      "_id": "cef7f24c4746b1cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.cef7f24c4746b1cd"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Interstellar Scout (EXPLORER; VOIDBORN)",
+      "_id": "c3ab957c7b65946f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.c3ab957c7b65946f"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Monster Hunter (GUNNER; SLAYER)",
+      "_id": "f0627600f678401e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.f0627600f678401e"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Occultist (OUTCAST; SHADE)",
+      "_id": "a3153613e7d94481",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.a3153613e7d94481"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Operative (INFILTRATOR; BLADEMASTER)",
+      "_id": "45ba90d6e80cc2d2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.45ba90d6e80cc2d2"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Outlaw (FUGITIVE; GUNSLINGER)",
+      "_id": "3b8f7a27cc89c6ea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.3b8f7a27cc89c6ea"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Private Investigator (BRAWLER; SLEUTH)",
+      "_id": "4e819859f76f4e60",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.4e819859f76f4e60"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Prophet (DEVOTANT; SEER)",
+      "_id": "fec2c808088c9f30",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.fec2c808088c9f30"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Psionicist (KINETIC; VESTIGE)",
+      "_id": "b01594402258b8aa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.b01594402258b8aa"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Smuggler (COURIER; SCOUNDREL)",
+      "_id": "5565337847d35976",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.5565337847d35976"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Spiritualist (HAUNTED; EMPATH)",
+      "_id": "29deb27d98f7ad19",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.29deb27d98f7ad19"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Starship Engineer (GEARHEAD; TECH)",
+      "_id": "e2bca754f549b63a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.e2bca754f549b63a"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Supersoldier (AUGMENTED; MERCENARY)",
+      "_id": "e4accd18e31ceda5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.e4accd18e31ceda5"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Tomb Raider (SCAVENGER; SCOUNDREL)",
+      "_id": "3699d4024f3381d7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb992ccf692d8592.3699d4024f3381d7"
+    }
+  ],
+  "folder": "b582a7b95b531a60",
+  "sort": 105,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!eb992ccf692d8592"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Varou",
+  "type": "progress",
+  "img": "icons/creatures/mammals/wolf-shadow-black.webp",
+  "data": {
+    "description": "\n\n<h2>Varou</h2>\n\n<p>The varou are humanoid beings who dwell within the Deep Wilds and in the woods of the Hinterlands. They have fierce, wolf-like features and are broad-shouldered and a head taller than the average Ironlander. Their long hair is ornately groomed and decorated with beads and other trinkets.</p>\n<p>The varou value territory above all things. They often war amongst themselves and against the elves to gain or defend holdings. They mark their claims by carving clan symbols into trees. Only the foolish ignore the warning of these border signs. Several of our settlements—built too close to varou territory—are now abandoned ruins bearing the mark of a victorious varou clan.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Yellow eyes shining in the moonlight</p>\n    <p class=\"nogrow\">Pointed ears and snout-like faces</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Take their land</p>\n    <p class=\"nogrow\">Defend my kin</p>\n    <p class=\"nogrow\">Keep the bloodcall at bay</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Strike at night</p>\n    <p class=\"nogrow\">Leap into combat</p>\n    <p class=\"nogrow\">Let loose the bloodcall</p>\n  </div>\n</div>\n\n<em><p>A varou clan has carved their mark into the trees surrounding an Ironlander community, claiming it as their territory. An attack is surely imminent. What will you do to prevent it?</p></em>\n\n<em><p>A young varou receives their keth—a curved dagger—before undergoing a rite of passage. What must they do to take their place among the adults of the clan?</p></em>\n\n<h2>Firstborn</h2>\n<p>The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory.</p>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "r9a21AKzkLEcSJzm",
+  "_key": "!items!r9a21AKzkLEcSJzm"
+}

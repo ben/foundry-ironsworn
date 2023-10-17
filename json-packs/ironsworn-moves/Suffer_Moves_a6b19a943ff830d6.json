@@ -1,0 +1,24 @@
+{
+  "name": "Suffer Moves",
+  "type": "Item",
+  "_id": "a6b19a943ff830d6",
+  "color": "#883529",
+  "description": "These moves are made as a result of a perilous event or bad outcome on other moves. They represent what happens to you, and how you hold up against the trauma.",
+  "sort": 90,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Suffer"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021086,
+    "modifiedTime": 1695949021086,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!a6b19a943ff830d6"
+}

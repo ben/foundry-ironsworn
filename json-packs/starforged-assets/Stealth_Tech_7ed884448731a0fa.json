@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "7ed884448731a0fa",
+  "folder": "a7279f7392f32ff4",
+  "name": "Stealth Tech",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your vehicle is rigged for silent running. When you make a move against a specific foe or threat to avoid detection, add +1. If you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} by ambushing an unaware foe, add +1 and mark progress on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you travel stealthily as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition} (+shadow), you may reroll your action die.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you are poised to @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} from hiding, you may roll +shadow. If you do, choose one (before rolling).</p>\n<ul>\n<li>Strike true: Reroll any dice.</li>\n<li>Strike hard: Mark progress on a hit.</li>\n</ul>\n<p>On a strong hit with a match, you also remain totally undetected; take +2 momentum and add +1 on your next @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!7ed884448731a0fa"
+}

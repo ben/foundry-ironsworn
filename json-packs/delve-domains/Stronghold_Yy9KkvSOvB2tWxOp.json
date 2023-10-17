@@ -1,0 +1,252 @@
+{
+  "_id": "Yy9KkvSOvB2tWxOp",
+  "type": "delve-domain",
+  "name": "Stronghold",
+  "img": "icons/environment/settlement/castle.webp",
+  "system": {
+    "summary": "A fortress secured against trespassers.",
+    "description": "These sites weather storms and sieges alike. Their walls stand firm against the forces of this dark land. They are fortified against attack and rife with guards, traps, and other defenses. For those who dwell within, strongholds provide the comfort of wood and stone, axe and bow. For those who seek to breach the walls, they can be as unyielding and unforgiving as the most stalwart ironbound shield.",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Connecting passageways",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Barracks or common quarters",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Large hall",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Workshop or library",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Command center or leadership",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Ladder or stairwell",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Storage",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Kitchen or larder",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Courtyard",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Blocked or guarded path",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Caught in the open",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Chokepoint",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Trap",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Alarm trigger",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "Yy9KkvSOvB2tWxOp"
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "wQPE4gQwm9evnYyd": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.13",
+    "coreVersion": "10.291",
+    "createdTime": 1674027048032,
+    "modifiedTime": 1674027048032,
+    "lastModifiedBy": "wQPE4gQwm9evnYyd"
+  },
+  "_key": "!items!Yy9KkvSOvB2tWxOp"
+}

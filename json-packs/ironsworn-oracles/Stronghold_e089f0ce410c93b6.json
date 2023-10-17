@@ -1,0 +1,172 @@
+{
+  "_id": "e089f0ce410c93b6",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Stronghold",
+      "category": "Ironsworn/Oracles/Site_Name"
+    }
+  },
+  "name": "Stronghold",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Bastion",
+      "_id": "9ad1015c8e065f4b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.9ad1015c8e065f4b"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Citadel",
+      "_id": "1823b27db586c123",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.1823b27db586c123"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Fortress",
+      "_id": "2d2cc2ea663510a6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.2d2cc2ea663510a6"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Garrison",
+      "_id": "d83515d2dc796b34",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.d83515d2dc796b34"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Haven",
+      "_id": "eae30e2b9273c23e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.eae30e2b9273c23e"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Keep",
+      "_id": "915d4ea2ed0b481a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.915d4ea2ed0b481a"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Outpost",
+      "_id": "d5804bc5a92c1b2f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.d5804bc5a92c1b2f"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Refuge",
+      "_id": "e5d9c662ab5f2075",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.e5d9c662ab5f2075"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sanctuary",
+      "_id": "998cbc95e0bba738",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.998cbc95e0bba738"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Watch",
+      "_id": "984a07d7675932c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e089f0ce410c93b6.984a07d7675932c6"
+    }
+  ],
+  "folder": "b635c76e4b694c12",
+  "sort": 1211,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e089f0ce410c93b6"
+}

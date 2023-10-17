@@ -1,0 +1,200 @@
+{
+  "_id": "33e96704d391b4c7",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Living/Feature",
+      "category": "Starforged/Oracles/Derelicts/Living"
+    }
+  },
+  "name": "Feature",
+  "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Abandoned pet",
+      "_id": "dc74cfbb7e7211b5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.dc74cfbb7e7211b5"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Audible music",
+      "_id": "4a2c1dee69d1c477",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.4a2c1dee69d1c477"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Cherished personal item",
+      "_id": "a59d79f6c1158c1b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.a59d79f6c1158c1b"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Failed barricade",
+      "_id": "df57a74343225cd9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.df57a74343225cd9"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Half-eaten food",
+      "_id": "55ccf2f3b738e8cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.55ccf2f3b738e8cd"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Messages from loved ones",
+      "_id": "63799a99fa38f87f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.63799a99fa38f87f"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Ransacked belongings",
+      "_id": "fa262da78e8bc5fb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.fa262da78e8bc5fb"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Remains of the dead",
+      "_id": "44ae4af878ec1ca4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.44ae4af878ec1ca4"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Scuttling vermin",
+      "_id": "b9e7e52c20ef4282",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.b9e7e52c20ef4282"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Shrine or altar",
+      "_id": "98967ef428dd6491",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.98967ef428dd6491"
+    },
+    {
+      "range": [
+        81,
+        88
+      ],
+      "text": "Unusual art",
+      "_id": "bf7dcd7d47a79948",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.bf7dcd7d47a79948"
+    },
+    {
+      "range": [
+        89,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "a9485a8dbf18e2ea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33e96704d391b4c7.a9485a8dbf18e2ea"
+    }
+  ],
+  "folder": "026e85bc4b8047b8",
+  "sort": 355,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!33e96704d391b4c7"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Circle of Stones",
+  "type": "progress",
+  "img": "icons/environment/wilderness/arch-stone.webp",
+  "data": {
+    "description": "\n\n<h2>Circle of Stones</h2>\n\n<p>The ancient standing stones, crafted long before we settled here, preserve the memories and secrets of the Ironlands.</p>\n<p>Because the stones are often hidden within dense thickets, buried in snow, or obscured by veils of mist, a traveler may find themselves unexpectedly breaking the boundary of a circle. The stones hunger for new knowledge, and our memories are fodder for their insatiable appetites. What they take is sometimes gone forever.</p>\n<p>Some Ironlanders enter a circle willingly. Perhaps they hope to abandon a painful memory to the stones, discarding that piece of themselves like slag hammered from wrought iron. Then, there are those who wish to forsake the world and live with their memories. For them, an unreal life within the circle is better than the cruel reality outside of it.</p>\n<p>Those in need of information may choose to risk a negotiation within a circle. Knowledge for knowledge is the customary trade, but the stones are cunning and may demand a more horrible price.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Ancient stones, etched with mysterious symbols</p>\n    <p class=\"nogrow\">Whispers of old magic</p>\n    <p class=\"nogrow\">Visions of hoarded memories</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Preserve age-old secrets</p>\n    <p class=\"nogrow\">Seek new knowledge</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Trap the unwary, and lure the desperate</p>\n    <p class=\"nogrow\">Extract painful memories</p>\n    <p class=\"nogrow\">Grant knowledge, for a price</p>\n  </div>\n</div>\n\n<em><p>A clan of Ironlanders protect and worship a circle of stones found in a Hallowed Tanglewood. What forbidden secrets do these stones offer? How does the price for these secrets threaten you or your kin?</p></em>\n\n<em><p>The stones covet a particular type of memory above all others. What is it, and what do they offer in exchange?</p></em>\n\n<h2>Anomaly</h2>\n<p>Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.</p>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "PzEulsg6PU12IFwV",
+  "_key": "!items!PzEulsg6PU12IFwV"
+}

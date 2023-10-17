@@ -1,0 +1,74 @@
+{
+  "_id": "ad0097a5058cd9c1",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Tainted/Settlements/Expanse",
+      "category": "Starforged/Oracles/Planets/Tainted"
+    }
+  },
+  "name": "Expanse",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        95
+      ],
+      "text": "None",
+      "_id": "9a265e3911d12222",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ad0097a5058cd9c1.9a265e3911d12222"
+    },
+    {
+      "range": [
+        96,
+        98
+      ],
+      "text": "Orbital settlement",
+      "_id": "655e4d924ca33e7b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ad0097a5058cd9c1.655e4d924ca33e7b"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Planetside settlement",
+      "_id": "658ff864490ec9ce",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ad0097a5058cd9c1.658ff864490ec9ce"
+    }
+  ],
+  "folder": "564383da6917aec5",
+  "sort": 317,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!ad0097a5058cd9c1"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "GMMcxy0pYNk6MS8Y",
+  "name": "Frostbound",
+  "type": "foe",
+  "img": "icons/creatures/magical/spirit-undead-ghost-blue.webp",
+  "data": {},
+  "token": {
+    "name": "Frostbound",
+    "img": "icons/creatures/magical/spirit-undead-ghost-blue.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "dt7dcS9yH00Stut0",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!GMMcxy0pYNk6MS8Y.dt7dcS9yH00Stut0"
+    },
+    {
+      "_id": "ZNr2aZ06iYG5bXM2",
+      "name": "Frostbound",
+      "type": "progress",
+      "img": "icons/creatures/magical/spirit-undead-ghost-blue.webp",
+      "data": {
+        "description": "\n\n<h2>Frostbound</h2>\n\n<p>Some who fall prey to the long winters or the wild storms of the northern regions are given a horrible new life as the frostbound. These animated corpses are cursed to forever seek out the warmth their death took from them.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Mummified, desiccated flesh</p>\n    <p class=\"nogrow\">Frozen blue eyes</p>\n    <p class=\"nogrow\">A sorrowful, hollow scream</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Absorb the warmth of the living</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Sense heat</p>\n    <p class=\"nogrow\">Life-draining grasp</p>\n  </div>\n</div>\n\n<em><p>A group of frostbound lurk along a mountain trail. This path is the only safe route to the lowlands from a mining village.</p></em>\n\n<em><p>Can creatures other than Ironlanders become frostbound? If so, undeath gives them uncanny strength. Make them one rank higher than their living form.</p></em>\n\n<h2>Horror</h2>\n<p>Horrors are supernatural entities. In the Old World, they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.</p>\n<p>Many horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.</p>\n",
+        "rank": 3,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!GMMcxy0pYNk6MS8Y.ZNr2aZ06iYG5bXM2"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!GMMcxy0pYNk6MS8Y"
+}

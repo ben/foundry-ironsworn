@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "0bdeecae41e18172",
+  "folder": "6ed9a3c5cdb045aa",
+  "name": "Revenant",
+  "system": {
+    "requirement": "<p>Once you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death} and return to the world of the living…</p>",
+    "category": "Path",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you are at 0 health, and @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} or @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}, add +1. If you then burn momentum to improve your result, envision what bond or vow binds you to this world, and take +2 momentum after you reset.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move to investigate, oppose, or interact with a horror, spirit, or other undead being, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you bring death to your foe to @Compendium[foundry-ironsworn.ironswornmoves.aac3783710ad7499]{End the Fight}, you may burn momentum to cancel one (not both) of the challenge dice if your momentum is greater than the value of that die. If you do, @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (2 stress).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!0bdeecae41e18172"
+}

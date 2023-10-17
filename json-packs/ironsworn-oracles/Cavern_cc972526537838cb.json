@@ -1,0 +1,172 @@
+{
+  "_id": "cc972526537838cb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Cavern",
+      "category": "Ironsworn/Oracles/Site_Name"
+    }
+  },
+  "name": "Cavern",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Abyss",
+      "_id": "f8cb339f8b348df3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.f8cb339f8b348df3"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Caverns",
+      "_id": "cdbc27253e086e9b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.cdbc27253e086e9b"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Caves",
+      "_id": "c0cc07f37ab6b6a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.c0cc07f37ab6b6a3"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Chasm",
+      "_id": "72830eba47b47428",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.72830eba47b47428"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Depths",
+      "_id": "b460a44e89abf4c4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.b460a44e89abf4c4"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Hollow",
+      "_id": "b219cce14e09ac8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.b219cce14e09ac8f"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Lair",
+      "_id": "09795a38d214d3a5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.09795a38d214d3a5"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Rift",
+      "_id": "a8796f714914281c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.a8796f714914281c"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Tunnels",
+      "_id": "ec099705abb5cdbc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.ec099705abb5cdbc"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Warren",
+      "_id": "3672ce246215c3af",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cc972526537838cb.3672ce246215c3af"
+    }
+  ],
+  "folder": "b635c76e4b694c12",
+  "sort": 1210,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!cc972526537838cb"
+}

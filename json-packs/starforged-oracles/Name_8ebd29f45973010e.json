@@ -1,0 +1,23 @@
+{
+  "name": "Name",
+  "_id": "8ebd29f45973010e",
+  "type": "RollTable",
+  "description": "Given and family names are presented as a pair, so you may roll once for both or twice to mix-and-match. You can also try reversing given and family names, or use either independently as a standalone name. If you’d like to give a character a callsign, which are the monikers used by spacers, you may roll separately or take the one provided for your rolled name.",
+  "sort": 333,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Characters/Name"
+    }
+  },
+  "folder": "dfc71f2bbd43cfc1",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!8ebd29f45973010e"
+}

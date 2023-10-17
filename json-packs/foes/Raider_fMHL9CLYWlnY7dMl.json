@@ -1,0 +1,20 @@
+{
+  "name": "Raider",
+  "type": "progress",
+  "img": "icons/sundries/flags/banner-flag-pirate.webp",
+  "data": {
+    "description": "\n\n<h2>Raider</h2>\n\n<p>Raiders survive by seizing what they need from others. Our grain. Our meat. Our animals. Our iron. They’ll take it all, and leave us facing the long winter with nothing to sustain us but prayers to indifferent gods.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Geared for war</p>\n    <p class=\"nogrow\">Battle fervor</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">What is theirs will be ours</p>\n    <p class=\"nogrow\">Stand with my kin</p>\n    <p class=\"nogrow\">Die a glorious death</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Intimidate</p>\n    <p class=\"nogrow\">Shield Wall</p>\n    <p class=\"nogrow\">Burn it Down</p>\n  </div>\n</div>\n\n<em><p>You were raised as a raider, born to battle, but long ago left that life. Troubled by your past, you vow to wipe this powerful clan from the Ironlands. How can you defeat them? What will happen when you must face your former shield-kin?</p></em>\n\n<em><p>A large raider clan is known and feared throughout the Ironlands. What is it called? Who leads it?</p></em>\n\n<h2>Ironlander</h2>\n<p>Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.</p>\n<p>This section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can <em>Ask the Oracle</em>, or follow these guidelines:</p>\n<ul>\n<li><p>A common citizen or brute is <strong>troublesome</strong>.</p>\n</li>\n<li><p>A trained warrior is <strong>dangerous</strong>.</p>\n</li>\n<li><p>A powerful or veteran warrior is <strong>formidable</strong>.</p>\n</li>\n</ul>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "fMHL9CLYWlnY7dMl",
+  "_key": "!items!fMHL9CLYWlnY7dMl"
+}

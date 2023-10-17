@@ -1,0 +1,172 @@
+{
+  "_id": "8f73d5f6212e6cfd",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Name/Something_Else",
+      "category": "Ironsworn/Oracles/Settlement"
+    }
+  },
+  "name": "Something Else",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "A trade good (Ironhome)",
+      "_id": "bb451af1d8a709dd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.bb451af1d8a709dd"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "An Old World city (New Arkesh)",
+      "_id": "a0a796733ffaee8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.a0a796733ffaee8f"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "A founder or famous settler (Kei's Hall)",
+      "_id": "78ffc7c29335044a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.78ffc7c29335044a"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "A god (Elisora)",
+      "_id": "7ef5bae1f3aae0be",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.7ef5bae1f3aae0be"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "A historical item (Blackhelm)",
+      "_id": "683ba0e9b1268fda",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.683ba0e9b1268fda"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "A firstborn race (Elfbrook)",
+      "_id": "7f7667bee92b36b2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.7f7667bee92b36b2"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "An elvish word or name (Nessana)",
+      "_id": "0f268efb0cc4782e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.0f268efb0cc4782e"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "A mythic belief or event (Ghostwalk)",
+      "_id": "4ed28c3e078d7ea7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.4ed28c3e078d7ea7"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "A positive term (Hope)",
+      "_id": "47e606bf992ec622",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.47e606bf992ec622"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "A negative term (Forsaken)",
+      "_id": "fda6fe3e8c222838",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8f73d5f6212e6cfd.fda6fe3e8c222838"
+    }
+  ],
+  "folder": "11b98f1da8f07aa2",
+  "sort": 178,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!8f73d5f6212e6cfd"
+}

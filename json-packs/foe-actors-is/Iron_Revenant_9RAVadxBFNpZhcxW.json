@@ -1,0 +1,116 @@
+{
+  "_id": "9RAVadxBFNpZhcxW",
+  "name": "Iron Revenant",
+  "type": "foe",
+  "img": "icons/creatures/magical/construct-golem-stone-blue.webp",
+  "data": {},
+  "token": {
+    "name": "Iron Revenant",
+    "img": "icons/creatures/magical/construct-golem-stone-blue.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "mOpLfgdnJphT8wAe",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!9RAVadxBFNpZhcxW.mOpLfgdnJphT8wAe"
+    },
+    {
+      "_id": "z49mO7kwNBLV0r5O",
+      "name": "Iron Revenant",
+      "type": "progress",
+      "img": "icons/creatures/magical/construct-golem-stone-blue.webp",
+      "data": {
+        "description": "\n\n<h2>Iron Revenant</h2>\n\n<p>Some vows are held so fiercely that they survive even after death. An iron revenant is an incorporeal force of furious resolve, the unfinished vow of an Ironsworn given horrible form as a construct of metal.</p>\n<p>Attacks may slow them down or temporarily break apart their armored form, but they have no flesh to pierce and cannot be killed. An iron revenant will not stop until their vow is fulfilled.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Empty, patchwork shell of armor and other hunks of metal</p>\n    <p class=\"nogrow\">Wielding iron weapons</p>\n    <p class=\"nogrow\">A low, reverberating voice</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Fulfill the vow</p>\n    <p class=\"nogrow\">Destroy any who stand in their way</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Steadfast attacks</p>\n    <p class=\"nogrow\">Pull in iron with an unyielding, magnetic force</p>\n  </div>\n</div>\n\n<em><p>Someone you knew has taken form as an iron revenant. Who is it? What is their vow?</p></em>\n\n\n<h2>Horror</h2>\n<p>Horrors are supernatural entities. In the Old World, they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.</p>\n<p>Many horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.</p>\n",
+        "rank": 4,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!9RAVadxBFNpZhcxW.z49mO7kwNBLV0r5O"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!9RAVadxBFNpZhcxW"
+}

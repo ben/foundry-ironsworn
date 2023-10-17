@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "4692e18baff8bd18",
+  "folder": "1f02d646adff7374",
+  "name": "Navigator",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ed490d43a2533506]{Set a Course}, choose one.</p>\n<ul>\n<li>Follow the fastest path: Take +2 momentum on a strong hit.</li>\n<li>Follow the safest path: Add +1</li>\n</ul>\n<p>On a strong hit with a match, you charted a new path during the journey; mark 1 tick on your discoveries legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} by charting the way forward, @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} to find a path around a hazard, or @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} about a location by studying your charts, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per expedition, when you or an ally @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition} and score a weak hit or miss, you may ignore that result, plot an alternate path, and make it an automatic strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!4692e18baff8bd18"
+}

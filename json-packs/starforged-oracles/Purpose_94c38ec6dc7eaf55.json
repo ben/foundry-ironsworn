@@ -1,0 +1,438 @@
+{
+  "_id": "94c38ec6dc7eaf55",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Sanctum/Purpose",
+      "category": "Starforged/Oracles/Vaults/Sanctum"
+    }
+  },
+  "name": "Purpose",
+  "description": "<p>Because precursor vaults are alien and enigmatic, understanding their ultimate purpose requires investigation and exploration. Use this table to reveal the vault’s original function or role at an appropriate point in your survey. This can come as an outcome of completing an expedition, or when your story naturally leads you to a revelation of the site’s nature.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Capture or control of other beings",
+      "_id": "f77e83e27685c2cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.f77e83e27685c2cd"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Command or communication relay",
+      "_id": "73a3f0d0a5b48e0b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.73a3f0d0a5b48e0b"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Commemoration of an event",
+      "_id": "3988c4cc908e875a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.3988c4cc908e875a"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Conduit to mystical powers",
+      "_id": "0c7ef6b2f03465be",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.0c7ef6b2f03465be"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Conservation of living specimens",
+      "_id": "37c354a7f2229a55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.37c354a7f2229a55"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Containment of a powerful being",
+      "_id": "d59bcbfab0e0bb48",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.d59bcbfab0e0bb48"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Containment of dangerous creatures",
+      "_id": "329ad895b43bccb7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.329ad895b43bccb7"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Containment of weapons",
+      "_id": "fc8980b6986d2d02",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.fc8980b6986d2d02"
+    },
+    {
+      "range": [
+        28,
+        31
+      ],
+      "text": "Control of a destructive weapon",
+      "_id": "134285c92c5650b8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.134285c92c5650b8"
+    },
+    {
+      "range": [
+        32,
+        34
+      ],
+      "text": "Generation of defenses or barriers",
+      "_id": "6bead54b7bd52cff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.6bead54b7bd52cff"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Generation or transformation of energy",
+      "_id": "c579c6bb70143c78",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.c579c6bb70143c78"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "Harvesting of resources",
+      "_id": "b8a85fcfa400c3c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.b8a85fcfa400c3c0"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "Interment of the dead",
+      "_id": "74aee40eb3a603bd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.74aee40eb3a603bd"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Manipulation of spacetime",
+      "_id": "2593c068baaf5659",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.2593c068baaf5659"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Manufacturing of lifeforms",
+      "_id": "a0bf3ee30666b0e7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.a0bf3ee30666b0e7"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "Manufacturing of machines or devices",
+      "_id": "dbcc83a92519a9fd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.dbcc83a92519a9fd"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Passage to another location",
+      "_id": "020c0b5aad02fbb3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.020c0b5aad02fbb3"
+    },
+    {
+      "range": [
+        57,
+        59
+      ],
+      "text": "Preservation of an ancient intelligence",
+      "_id": "982ef0afc2aa164c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.982ef0afc2aa164c"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "Preservation of maps or navigational data",
+      "_id": "bde26e8cc7b164f8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.bde26e8cc7b164f8"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Protection of a sacred artifact",
+      "_id": "cbcd6d3214ba81c7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.cbcd6d3214ba81c7"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Researching science or technology",
+      "_id": "2736214bd1b5d0b0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.2736214bd1b5d0b0"
+    },
+    {
+      "range": [
+        70,
+        73
+      ],
+      "text": "Safekeeping of cultural records or memories",
+      "_id": "b25779874f6cdb3b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.b25779874f6cdb3b"
+    },
+    {
+      "range": [
+        74,
+        77
+      ],
+      "text": "Shelter for inhabitants",
+      "_id": "a279d908f10a8686",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.a279d908f10a8686"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Stockpiling of resources",
+      "_id": "ed057748025fc0a7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.ed057748025fc0a7"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Surveying or monitoring of a location",
+      "_id": "a6d97962f62ba68a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.a6d97962f62ba68a"
+    },
+    {
+      "range": [
+        84,
+        87
+      ],
+      "text": "Transformation of terrain or environments",
+      "_id": "1d3c732fa7fdde45",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.1d3c732fa7fdde45"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Worship of a god or being",
+      "_id": "547f2b559a4204d3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.547f2b559a4204d3"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "322f84b83ae84c75",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.322f84b83ae84c75"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "7d0756d24c3860ed",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!94c38ec6dc7eaf55.7d0756d24c3860ed"
+    }
+  ],
+  "folder": "c80cfc9efec8dc33",
+  "sort": 365,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!94c38ec6dc7eaf55"
+}

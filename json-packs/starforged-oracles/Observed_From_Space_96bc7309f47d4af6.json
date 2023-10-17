@@ -1,0 +1,172 @@
+{
+  "_id": "96bc7309f47d4af6",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Shattered/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Shattered"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Demolished space fleet",
+      "_id": "8319f72c2ecb7675",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.8319f72c2ecb7675"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Preserved planetary fragment",
+      "_id": "ad4e53f090ecc050",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.ad4e53f090ecc050"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Dense ring system",
+      "_id": "2702ba32b4fbbf2a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.2702ba32b4fbbf2a"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Swirling debris field",
+      "_id": "7380e58229de4b7f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.7380e58229de4b7f"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Fiery planetary core",
+      "_id": "0ea1d2a9d8bd69fd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.0ea1d2a9d8bd69fd"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Unbroken moon",
+      "_id": "65d4685cccf4f123",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.65d4685cccf4f123"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Geomagnetic storms",
+      "_id": "32d802c9a02966c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.32d802c9a02966c0"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Intense solar radiation",
+      "_id": "aa9cffcf153c1f9b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.aa9cffcf153c1f9b"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "ee4a4f39a138f336",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.ee4a4f39a138f336"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "f7c899ab6eebb155",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!96bc7309f47d4af6.f7c899ab6eebb155"
+    }
+  ],
+  "folder": "656eb2b3e3476a48",
+  "sort": 316,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!96bc7309f47d4af6"
+}

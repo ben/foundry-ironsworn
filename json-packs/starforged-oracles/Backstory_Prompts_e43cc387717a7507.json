@@ -1,0 +1,242 @@
+{
+  "_id": "e43cc387717a7507",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation/Backstory_Prompts",
+      "category": "Starforged/Oracles/Character_Creation"
+    }
+  },
+  "name": "Backstory Prompts",
+  "description": "<p>For some backstory inspiration, roll or pick from the table below. Then, take a moment to elaborate on the suggestion. Or just leave it a bit vague and mysterious for now; you can flesh it out in play.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "You abandoned your kin after learning a troubling truth",
+      "_id": "dec9d68160b8e291",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.dec9d68160b8e291"
+    },
+    {
+      "range": [
+        8,
+        13
+      ],
+      "text": "You are guided by a vision or prophecy",
+      "_id": "b21f9888af52874e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.b21f9888af52874e"
+    },
+    {
+      "range": [
+        14,
+        20
+      ],
+      "text": "You are haunted by past actions or failures",
+      "_id": "cbe46ab7ae8361a1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.cbe46ab7ae8361a1"
+    },
+    {
+      "range": [
+        21,
+        27
+      ],
+      "text": "You are running from a criminal past",
+      "_id": "93cea0c4ea7da6ef",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.93cea0c4ea7da6ef"
+    },
+    {
+      "range": [
+        28,
+        34
+      ],
+      "text": "You are the sole survivor of an attack or calamity",
+      "_id": "bdb2ce7a177baefb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.bdb2ce7a177baefb"
+    },
+    {
+      "range": [
+        35,
+        40
+      ],
+      "text": "You escaped an abusive or unjust situation",
+      "_id": "2610fe8846c78c0a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.2610fe8846c78c0a"
+    },
+    {
+      "range": [
+        41,
+        46
+      ],
+      "text": "You have no memory of your former life",
+      "_id": "a65f7ffb2a45362e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.a65f7ffb2a45362e"
+    },
+    {
+      "range": [
+        47,
+        53
+      ],
+      "text": "You rejected a duty or destiny",
+      "_id": "49f7e760c3003df4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.49f7e760c3003df4"
+    },
+    {
+      "range": [
+        54,
+        60
+      ],
+      "text": "You were banished from your former home",
+      "_id": "8a03239e504ea75b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.8a03239e504ea75b"
+    },
+    {
+      "range": [
+        61,
+        67
+      ],
+      "text": "You were denied a birthright",
+      "_id": "912e59554a282b0d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.912e59554a282b0d"
+    },
+    {
+      "range": [
+        68,
+        74
+      ],
+      "text": "You were on your own for as long as you can remember",
+      "_id": "5c34daebeeab247f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.5c34daebeeab247f"
+    },
+    {
+      "range": [
+        75,
+        81
+      ],
+      "text": "You were sent away on a prolonged mission",
+      "_id": "82ea2f0755be2dac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.82ea2f0755be2dac"
+    },
+    {
+      "range": [
+        82,
+        87
+      ],
+      "text": "You were taken or lured away by someone",
+      "_id": "6da3e2ef68c09427",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.6da3e2ef68c09427"
+    },
+    {
+      "range": [
+        88,
+        94
+      ],
+      "text": "Your ambitions outgrew your humble origins",
+      "_id": "4572e6e2f589ffcc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.4572e6e2f589ffcc"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Your wanderlust carried you far away",
+      "_id": "f983a52409ef0d4f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e43cc387717a7507.f983a52409ef0d4f"
+    }
+  ],
+  "folder": "b582a7b95b531a60",
+  "sort": 106,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e43cc387717a7507"
+}

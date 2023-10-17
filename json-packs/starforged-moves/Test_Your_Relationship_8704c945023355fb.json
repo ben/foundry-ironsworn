@@ -1,0 +1,89 @@
+{
+  "_id": "8704c945023355fb",
+  "type": "sfmove",
+  "name": "Test Your Relationship",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Connection/Test_Your_Relationship",
+    "Category": "Starforged/Moves/Connection",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When your relationship with a connection is tested through conflict, betrayal, or circumstance**, roll +heart. If you share a bond, add +1.\n\nOn a **strong hit**, @Compendium[foundry-ironsworn.starforgedmoves.141aec8b92efd14b]{Develop Your Relationship}.\n\nOn a **weak hit**, @Compendium[foundry-ironsworn.starforgedmoves.141aec8b92efd14b]{Develop Your Relationship}, but also envision a demand or complication as a fallout of this test.\n\nOn a **miss**, or if you have no interest in maintaining this relationship, choose one.\n\n  * Lose the connection: Envision how this impacts you and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.\n  * Prove your loyalty: Envision what you offer or what they demand, and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} (formidable or greater) to see it done. Until you complete the quest, take no benefit for the connection. If you refuse or fail the quest, the connection is permanently undone.",
+    "Trigger": {
+      "Text": "When your relationship with a connection is tested through conflict, betrayal, or circumstance...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "@Compendium[foundry-ironsworn.starforgedmoves.141aec8b92efd14b]{Develop Your Relationship}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "@Compendium[foundry-ironsworn.starforgedmoves.141aec8b92efd14b]{Develop Your Relationship}, but\nalso envision a demand or complication as a fallout of this test.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Choose one.\n\n  * Lose the connection: Envision how this impacts you and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.\n  * Prove your loyalty: Envision what you offer or what they demand, and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} (formidable or greater) to see it done. Until you complete the quest, take no benefit for the connection. If you refuse or fail the quest, the connection is permanently undone.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 165
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#4053C9",
+      "Images": []
+    }
+  },
+  "sort": 165,
+  "folder": "4f3a8bdfb4421e2b",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!8704c945023355fb"
+}

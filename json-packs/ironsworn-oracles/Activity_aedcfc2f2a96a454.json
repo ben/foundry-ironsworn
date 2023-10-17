@@ -1,0 +1,732 @@
+{
+  "_id": "aedcfc2f2a96a454",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Character/Activity",
+      "category": "Ironsworn/Oracles/Character"
+    }
+  },
+  "name": "Activity",
+  "description": "<p>To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the Focus oracle or Theme oracle.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Guarding",
+      "_id": "6ee3a85ec8f211b6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.6ee3a85ec8f211b6"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Preserving",
+      "_id": "5a8cfc0b730da726",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.5a8cfc0b730da726"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Constructing",
+      "_id": "9d635430402e5a72",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.9d635430402e5a72"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Mending",
+      "_id": "e7f9c3181a0723e9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.e7f9c3181a0723e9"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Assisting",
+      "_id": "3a9c20ddbf403515",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.3a9c20ddbf403515"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Securing",
+      "_id": "9b60f338886d8ba7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.9b60f338886d8ba7"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Learning",
+      "_id": "4e79391a8e6c6afe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.4e79391a8e6c6afe"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Sneaking",
+      "_id": "56b94d07a2818620",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.56b94d07a2818620"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Fleeing",
+      "_id": "c91aaa361c9d0cc7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.c91aaa361c9d0cc7"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Sacrificing",
+      "_id": "a58b111c97df3325",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.a58b111c97df3325"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Creating",
+      "_id": "8ec4b26a9a2259d9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.8ec4b26a9a2259d9"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Luring",
+      "_id": "5d058bebd1d95c48",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.5d058bebd1d95c48"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Hunting",
+      "_id": "5d0cf3fb28055ee2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.5d0cf3fb28055ee2"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Seizing",
+      "_id": "4c588c18a2016db6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.4c588c18a2016db6"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Bargaining",
+      "_id": "76552b3525896ae5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.76552b3525896ae5"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Mimicking",
+      "_id": "bc630bcffd9a6458",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.bc630bcffd9a6458"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Tricking",
+      "_id": "b79e831453b86e83",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.b79e831453b86e83"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Tracking",
+      "_id": "3d14230f704fb40b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.3d14230f704fb40b"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Escorting",
+      "_id": "429419ac98731612",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.429419ac98731612"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Hiding",
+      "_id": "9d920f778ba9097e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.9d920f778ba9097e"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Raiding",
+      "_id": "b56528524ff5c030",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.b56528524ff5c030"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Socializing",
+      "_id": "2da1d3081ff0b0d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.2da1d3081ff0b0d1"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Exploring",
+      "_id": "7928b1842fe696fa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.7928b1842fe696fa"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Journeying",
+      "_id": "a327d54b8d0686fe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.a327d54b8d0686fe"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Supporting",
+      "_id": "7449cebfcb5ea953",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.7449cebfcb5ea953"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Avoiding",
+      "_id": "85e26e0cfc3a628b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.85e26e0cfc3a628b"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Disabling",
+      "_id": "0f0e451e45debfb7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.0f0e451e45debfb7"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Leading",
+      "_id": "af7dfad489d32f33",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.af7dfad489d32f33"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Assaulting",
+      "_id": "682a7c18ac468af3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.682a7c18ac468af3"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Ensnaring",
+      "_id": "3df3154a18f01c2d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.3df3154a18f01c2d"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Defending",
+      "_id": "4359d0f83b963464",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.4359d0f83b963464"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Recovering",
+      "_id": "5b5083036ae044c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.5b5083036ae044c0"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Patrolling",
+      "_id": "26f69c82aa8e01fb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.26f69c82aa8e01fb"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Resting",
+      "_id": "06a717ff725e828b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.06a717ff725e828b"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Distracting",
+      "_id": "9a12c6c631f642e8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.9a12c6c631f642e8"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Leaving",
+      "_id": "d13c8a463492dafc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.d13c8a463492dafc"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Fighting",
+      "_id": "164e21363a015973",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.164e21363a015973"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Ambushing",
+      "_id": "229c251c6e21ab6a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.229c251c6e21ab6a"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Controlling",
+      "_id": "350e0bf438dc2734",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.350e0bf438dc2734"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Observing",
+      "_id": "39fdda5b322fcc51",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.39fdda5b322fcc51"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Gathering",
+      "_id": "629bc46a1f51869e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.629bc46a1f51869e"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Suffering",
+      "_id": "3c915aefd82a50db",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.3c915aefd82a50db"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Threatening",
+      "_id": "d4b24b00f6d8d692",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.d4b24b00f6d8d692"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Searching",
+      "_id": "00694f6c57c64600",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.00694f6c57c64600"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Destroying",
+      "_id": "fdab9b2dbde1b303",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.fdab9b2dbde1b303"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Restoring",
+      "_id": "89a79c4d5d800835",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.89a79c4d5d800835"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Consuming",
+      "_id": "267246e01d2fa968",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.267246e01d2fa968"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Removing",
+      "_id": "7bd5ba1c865782d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.7bd5ba1c865782d1"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Inspecting",
+      "_id": "ae014aa65f474653",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.ae014aa65f474653"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Summoning",
+      "_id": "63663be8811b96bb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aedcfc2f2a96a454.63663be8811b96bb"
+    }
+  ],
+  "folder": "aa60f0d1adbed892",
+  "sort": 1213,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!aedcfc2f2a96a454"
+}

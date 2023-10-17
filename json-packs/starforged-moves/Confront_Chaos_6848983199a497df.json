@@ -1,0 +1,82 @@
+{
+  "_id": "6848983199a497df",
+  "type": "sfmove",
+  "name": "Confront Chaos",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Exploration/Confront_Chaos",
+    "Category": "Starforged/Moves/Exploration",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When your exploration of a waypoint uncovers something dreadful**, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.\n\nFor each result, when you first confront that aspect within the scope of the encounter, you and your allies may mark one tick on your discoveries legacy track.\n\nRoll   | Result\n-------|---------------------------------------------\n1-4    | Baneful weapon of mass destruction\n5-9    | Cataclysmic environmental effects\n10-12  | Dead given unnatural life\n13-17  | Destructive lifeform of monstrous proportion\n18-20  | Dread hallucinations or illusions\n21-24  | Harbingers of an imminent invasion\n25-27  | Horde of insatiable hunger or fury\n28-32  | Horrific lifeforms of inscrutable purpose\n33-36  | Impostors in human form\n37-41  | Machines made enemy\n42-45  | Malignant contagion or parasite\n46-50  | Messenger or signal with a dire warning\n51-53  | Passage to a grim alternate reality\n54-58  | People corrupted by chaos\n59-63  | Powerful distortions of time or space\n64-68  | Signs of an impending catastrophe\n69-72  | Site of a baffling disappearance\n73-77  | Site of a horrible disaster\n78-82  | Site of terrible carnage\n83-87  | Technology nullified or made unstable\n88-92  | Technology warped for dark purpose\n93-96  | Vault of dread technology or power\n97-100 | Worshipers of great and malevolent powers",
+    "Trigger": {
+      "Text": "When your exploration of a waypoint uncovers something dreadful...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [
+      "Starforged/Oracles/Moves/Confront_Chaos"
+    ],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 177
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#7438B8",
+      "Images": []
+    }
+  },
+  "sort": 177,
+  "folder": "f57c06b3db7f1676",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!6848983199a497df"
+}

@@ -1,0 +1,242 @@
+{
+  "_id": "9eca6bc0a308c58f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave/Feature",
+      "category": "Starforged/Oracles/Planets/Grave"
+    }
+  },
+  "name": "Feature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Acid pools",
+      "_id": "fd11a56b6424f8a2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.fd11a56b6424f8a2"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Ash dunes",
+      "_id": "76bf298970a02c67",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.76bf298970a02c67"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Corrosive rains",
+      "_id": "91857764c24eb061",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.91857764c24eb061"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Dead forests",
+      "_id": "5e8e5975b96f8f71",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.5e8e5975b96f8f71"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Fetid mudflats",
+      "_id": "4fe50ddd498ffb0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.4fe50ddd498ffb0f"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Mass graves",
+      "_id": "9ecf852550f426c1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.9ecf852550f426c1"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Moldering bones",
+      "_id": "4c6e39d03a02ab17",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.4c6e39d03a02ab17"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Noxious fog",
+      "_id": "28469e6d22f8f8f7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.28469e6d22f8f8f7"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Radioactive hotspots",
+      "_id": "4be1b72559c20695",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.4be1b72559c20695"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Ravaged cities",
+      "_id": "d369d162d5411783",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.d369d162d5411783"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Scarred battlefields",
+      "_id": "a14c75e65d27fcc9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.a14c75e65d27fcc9"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Ship graveyards",
+      "_id": "ed70cf4deec48994",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.ed70cf4deec48994"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Whispers of the dead",
+      "_id": "17d70976a8880557",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.17d70976a8880557"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "2a13539122ccf56f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.2a13539122ccf56f"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (planetside)</a>",
+      "_id": "f12e779ea2547594",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9eca6bc0a308c58f.f12e779ea2547594"
+    }
+  ],
+  "folder": "caa4a9957ef73507",
+  "sort": 310,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!9eca6bc0a308c58f"
+}

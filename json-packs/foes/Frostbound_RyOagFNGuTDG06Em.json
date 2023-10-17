@@ -1,0 +1,20 @@
+{
+  "name": "Frostbound",
+  "type": "progress",
+  "img": "icons/creatures/magical/spirit-undead-ghost-blue.webp",
+  "data": {
+    "description": "\n\n<h2>Frostbound</h2>\n\n<p>Some who fall prey to the long winters or the wild storms of the northern regions are given a horrible new life as the frostbound. These animated corpses are cursed to forever seek out the warmth their death took from them.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Mummified, desiccated flesh</p>\n    <p class=\"nogrow\">Frozen blue eyes</p>\n    <p class=\"nogrow\">A sorrowful, hollow scream</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Absorb the warmth of the living</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Sense heat</p>\n    <p class=\"nogrow\">Life-draining grasp</p>\n  </div>\n</div>\n\n<em><p>A group of frostbound lurk along a mountain trail. This path is the only safe route to the lowlands from a mining village.</p></em>\n\n<em><p>Can creatures other than Ironlanders become frostbound? If so, undeath gives them uncanny strength. Make them one rank higher than their living form.</p></em>\n\n<h2>Horror</h2>\n<p>Horrors are supernatural entities. In the Old World, they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.</p>\n<p>Many horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.</p>\n",
+    "rank": 3,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "RyOagFNGuTDG06Em",
+  "_key": "!items!RyOagFNGuTDG06Em"
+}

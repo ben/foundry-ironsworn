@@ -1,0 +1,144 @@
+{
+  "_id": "ed0c490af441b4e3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Nature/Theme",
+      "category": "Ironsworn/Oracles/Site_Nature"
+    }
+  },
+  "name": "Theme",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Ancient",
+      "_id": "15522641869fd4bd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed0c490af441b4e3.15522641869fd4bd"
+    },
+    {
+      "range": [
+        12,
+        23
+      ],
+      "text": "Corrupted",
+      "_id": "4a715ff6fcdbb922",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed0c490af441b4e3.4a715ff6fcdbb922"
+    },
+    {
+      "range": [
+        24,
+        35
+      ],
+      "text": "Fortified",
+      "_id": "208d5fb23e4bf69b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed0c490af441b4e3.208d5fb23e4bf69b"
+    },
+    {
+      "range": [
+        36,
+        48
+      ],
+      "text": "Hallowed",
+      "_id": "edd9aea45f7afd5d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed0c490af441b4e3.edd9aea45f7afd5d"
+    },
+    {
+      "range": [
+        49,
+        61
+      ],
+      "text": "Haunted",
+      "_id": "a076f71acaa81480",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed0c490af441b4e3.a076f71acaa81480"
+    },
+    {
+      "range": [
+        62,
+        74
+      ],
+      "text": "Infested",
+      "_id": "c7ffaaba3126d2df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed0c490af441b4e3.c7ffaaba3126d2df"
+    },
+    {
+      "range": [
+        75,
+        87
+      ],
+      "text": "Ravaged",
+      "_id": "ad65679314a07d71",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed0c490af441b4e3.ad65679314a07d71"
+    },
+    {
+      "range": [
+        88,
+        100
+      ],
+      "text": "Wild",
+      "_id": "34f02779b69d7b25",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed0c490af441b4e3.34f02779b69d7b25"
+    }
+  ],
+  "folder": "62509c23920c5583",
+  "sort": 1212,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!ed0c490af441b4e3"
+}

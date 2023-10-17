@@ -1,0 +1,200 @@
+{
+  "_id": "0e66b89545db4cc9",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Research/Area",
+      "category": "Starforged/Oracles/Derelicts/Research"
+    }
+  },
+  "name": "Area",
+  "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Clean room",
+      "_id": "5a7d88a963fefe4d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.5a7d88a963fefe4d"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Cold storage",
+      "_id": "158f293d4f4fee89",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.158f293d4f4fee89"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Creature or animal pens",
+      "_id": "cac0acbb27e52d60",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.cac0acbb27e52d60"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Decontamination room",
+      "_id": "2c75f4b5a7da1aa5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.2c75f4b5a7da1aa5"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Hazardous material storage",
+      "_id": "45fc682d78aacccb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.45fc682d78aacccb"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Hydroponics or agriculture",
+      "_id": "177396fde844178e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.177396fde844178e"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Isolation or containment",
+      "_id": "3cdf943f3865cf9a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.3cdf943f3865cf9a"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Lab",
+      "_id": "c70b2b4c2b7ebc4f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.c70b2b4c2b7ebc4f"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Library or records",
+      "_id": "358dd6946307be3e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.358dd6946307be3e"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Secure vault",
+      "_id": "bd77896db1d78901",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.bd77896db1d78901"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "New zone",
+      "_id": "e76d607a36c8e5f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.e76d607a36c8e5f3"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
+      "_id": "38a5bfd39c90ef97",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0e66b89545db4cc9.38a5bfd39c90ef97"
+    }
+  ],
+  "folder": "9987a5b1c316f884",
+  "sort": 359,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!0e66b89545db4cc9"
+}

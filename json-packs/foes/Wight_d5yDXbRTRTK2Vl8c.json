@@ -1,0 +1,20 @@
+{
+  "name": "Wight",
+  "type": "progress",
+  "img": "icons/creatures/magical/humanoid-silhouette-green.webp",
+  "data": {
+    "description": "\n\n<h2>Wight</h2>\n\n<p>Wights are beings who carry out their sworn charge—to protect a place, object or person—even beyond death. They retain their reasoning and intelligence, but are driven obsessively by this singular purpose.</p>\n<p>A wight’s steadfast will can delay their inevitable physical decay for decades, but they are marked by death nonetheless. They have the pallor of a freshly entombed corpse, with sallow skin stretched thin over bones. They often hide their corrupted features behind iron burial masks.</p>\n<p>Some wights wield the armor and weapons they favored in life, and are relentless, unyielding fighters. Others master dark rituals, empowered by the knowledge of what lies beyond our mortal realm.</p>\n<p>A wight who forsakes their vow will continue their tortured existence as a bonewalker, fated to lurk forever at the precipice of death.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Pallid skin and clouded eyes</p>\n    <p class=\"nogrow\">Ragged, unhealed wounds</p>\n    <p class=\"nogrow\">Iron burial mask</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Stand in defense</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Skulk in darkness</p>\n    <p class=\"nogrow\">Resolute assault</p>\n    <p class=\"nogrow\">Exploit knowledge and powers from beyond death</p>\n  </div>\n</div>\n\n<em><p>A wight is in search of the person it is sworn to protect, now held in a <strong>Fortified Stronghold</strong>. Who does it seek? Why were they taken? Will you stand against the wight, or help them?</p></em>\n\n\n<h2>Horror</h2>\n<p>Horrors are supernatural entities. In the Old World, they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.</p>\n<p>Many horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.</p>\n",
+    "rank": 3,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "d5yDXbRTRTK2Vl8c",
+  "_key": "!items!d5yDXbRTRTK2Vl8c"
+}

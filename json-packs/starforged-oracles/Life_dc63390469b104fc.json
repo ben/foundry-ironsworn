@@ -1,0 +1,88 @@
+{
+  "_id": "dc63390469b104fc",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave/Life",
+      "category": "Starforged/Oracles/Planets/Grave"
+    }
+  },
+  "name": "Life",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "None",
+      "_id": "45b616a5d265ab10",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc63390469b104fc.45b616a5d265ab10"
+    },
+    {
+      "range": [
+        26,
+        75
+      ],
+      "text": "Extinct",
+      "_id": "85e94ae9d875018b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc63390469b104fc.85e94ae9d875018b"
+    },
+    {
+      "range": [
+        76,
+        95
+      ],
+      "text": "Scarce",
+      "_id": "aa05c999244251ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc63390469b104fc.aa05c999244251ac"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Diverse",
+      "_id": "ba85c1b1eb8db6dd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc63390469b104fc.ba85c1b1eb8db6dd"
+    }
+  ],
+  "folder": "caa4a9957ef73507",
+  "sort": 310,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!dc63390469b104fc"
+}

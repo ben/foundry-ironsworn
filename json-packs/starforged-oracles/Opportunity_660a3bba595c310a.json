@@ -1,0 +1,102 @@
+{
+  "_id": "660a3bba595c310a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Haunted/Opportunity",
+      "category": "Starforged/Oracles/Location_Themes/Haunted"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Encounter with a benign spirit or being",
+      "_id": "f2e8cd280c8f2e08",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!660a3bba595c310a.f2e8cd280c8f2e08"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Helpful vision of past events",
+      "_id": "404aa3e8d088d38a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!660a3bba595c310a.404aa3e8d088d38a"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Message or clue offers insight into the nature of this haunting",
+      "_id": "f448fb12aa8406b0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!660a3bba595c310a.f448fb12aa8406b0"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Secret area or path is revealed",
+      "_id": "5334331f424dfd71",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!660a3bba595c310a.5334331f424dfd71"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Useful or interesting artifact or device",
+      "_id": "c25bca7a7f52988c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!660a3bba595c310a.c25bca7a7f52988c"
+    }
+  ],
+  "folder": "7b6a3ac881ac8211",
+  "sort": 374,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!660a3bba595c310a"
+}

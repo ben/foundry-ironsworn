@@ -1,0 +1,130 @@
+{
+  "_id": "38e9b606df06c3fd",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Zones/Settlement",
+      "category": "Starforged/Oracles/Derelicts"
+    }
+  },
+  "name": "Settlement",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Community\"><i class=\"fa fa-caret-right\"></i> Community</a>",
+      "_id": "8f5144f7f0e07818",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!38e9b606df06c3fd.8f5144f7f0e07818"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Engineering\"><i class=\"fa fa-caret-right\"></i> Engineering</a>",
+      "_id": "3ef62008ea3e3ef3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!38e9b606df06c3fd.3ef62008ea3e3ef3"
+    },
+    {
+      "range": [
+        31,
+        50
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Living\"><i class=\"fa fa-caret-right\"></i> Living</a>",
+      "_id": "2e7bbacff75ea271",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!38e9b606df06c3fd.2e7bbacff75ea271"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Medical\"><i class=\"fa fa-caret-right\"></i> Medical</a>",
+      "_id": "800e1cb728317870",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!38e9b606df06c3fd.800e1cb728317870"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Operations\"><i class=\"fa fa-caret-right\"></i> Operations</a>",
+      "_id": "a1aa81b4e3991637",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!38e9b606df06c3fd.a1aa81b4e3991637"
+    },
+    {
+      "range": [
+        71,
+        90
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Production\"><i class=\"fa fa-caret-right\"></i> Production</a>",
+      "_id": "25945641c5a0cf14",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!38e9b606df06c3fd.25945641c5a0cf14"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Research\"><i class=\"fa fa-caret-right\"></i> Research</a>",
+      "_id": "d5b1228419c81566",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!38e9b606df06c3fd.d5b1228419c81566"
+    }
+  ],
+  "folder": "fd281eb30bcd3e2e",
+  "sort": 351,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!38e9b606df06c3fd"
+}

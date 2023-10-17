@@ -1,0 +1,102 @@
+{
+  "_id": "058fd93e957c6804",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Population/Expanse",
+      "category": "Starforged/Oracles/Settlements"
+    }
+  },
+  "name": "Expanse",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Few",
+      "_id": "45a398f2d9e89048",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!058fd93e957c6804.45a398f2d9e89048"
+    },
+    {
+      "range": [
+        21,
+        50
+      ],
+      "text": "Dozens",
+      "_id": "c084419390a33f9a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!058fd93e957c6804.c084419390a33f9a"
+    },
+    {
+      "range": [
+        51,
+        80
+      ],
+      "text": "Hundreds",
+      "_id": "cf83ef430bd28670",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!058fd93e957c6804.cf83ef430bd28670"
+    },
+    {
+      "range": [
+        81,
+        95
+      ],
+      "text": "Thousands",
+      "_id": "15bc841109a1eab9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!058fd93e957c6804.15bc841109a1eab9"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Tens of thousands",
+      "_id": "fda4227b6d1d717e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!058fd93e957c6804.fda4227b6d1d717e"
+    }
+  ],
+  "folder": "e1aa8a2704d1412a",
+  "sort": 322,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!058fd93e957c6804"
+}

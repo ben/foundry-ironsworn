@@ -1,0 +1,312 @@
+{
+  "_id": "bbcb8dc755aee22f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Moves/Pay_the_Price",
+      "category": "Starforged/Oracles/Moves"
+    }
+  },
+  "name": "Pay the Price",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "A trusted individual or community acts against you",
+      "_id": "8fd4a5a94ac29ac4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.8fd4a5a94ac29ac4"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "An individual or community you care about is exposed to danger",
+      "_id": "166f20ecc4b2c730",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.166f20ecc4b2c730"
+    },
+    {
+      "range": [
+        5,
+        7
+      ],
+      "text": "You encounter signs of a looming threat",
+      "_id": "bb7629983bb737be",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.bb7629983bb737be"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "You create an opportunity for an enemy",
+      "_id": "0b6a78da2cf5a615",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.0b6a78da2cf5a615"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "You face a tough choice",
+      "_id": "f2a1b654df8003d6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.f2a1b654df8003d6"
+    },
+    {
+      "range": [
+        15,
+        18
+      ],
+      "text": "You face the consequences of an earlier choice",
+      "_id": "ec66478d56bcfbfe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.ec66478d56bcfbfe"
+    },
+    {
+      "range": [
+        19,
+        22
+      ],
+      "text": "A surprising development complicates your quest",
+      "_id": "546ef98e84272a9e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.546ef98e84272a9e"
+    },
+    {
+      "range": [
+        23,
+        26
+      ],
+      "text": "You are separated from something or someone",
+      "_id": "d7f63759673abfd6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.d7f63759673abfd6"
+    },
+    {
+      "range": [
+        27,
+        32
+      ],
+      "text": "Your action causes collateral damage or has an unintended effect",
+      "_id": "4760e94f2a134e4e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.4760e94f2a134e4e"
+    },
+    {
+      "range": [
+        33,
+        38
+      ],
+      "text": "Something of value is lost or destroyed",
+      "_id": "9e72b4647ac312f7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.9e72b4647ac312f7"
+    },
+    {
+      "range": [
+        39,
+        44
+      ],
+      "text": "The environment or terrain introduces a new hazard",
+      "_id": "8b63cde1ca1ac1ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.8b63cde1ca1ac1ec"
+    },
+    {
+      "range": [
+        45,
+        50
+      ],
+      "text": "A new enemy is revealed",
+      "_id": "9846c6e3e6ab8c70",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.9846c6e3e6ab8c70"
+    },
+    {
+      "range": [
+        51,
+        56
+      ],
+      "text": "A friend, companion, or ally is in harm’s way (or you are, if alone)",
+      "_id": "c426ee470e00c0a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.c426ee470e00c0a3"
+    },
+    {
+      "range": [
+        57,
+        62
+      ],
+      "text": "Your equipment or vehicle malfunctions",
+      "_id": "4546fc06bb99f671",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.4546fc06bb99f671"
+    },
+    {
+      "range": [
+        63,
+        68
+      ],
+      "text": "Your vehicle suffers damage",
+      "_id": "d1b89973ec4ebd3f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.d1b89973ec4ebd3f"
+    },
+    {
+      "range": [
+        69,
+        74
+      ],
+      "text": "You waste resources",
+      "_id": "e707393c7bdda4a5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.e707393c7bdda4a5"
+    },
+    {
+      "range": [
+        75,
+        81
+      ],
+      "text": "You are harmed",
+      "_id": "0cc5d8977439c5c2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.0cc5d8977439c5c2"
+    },
+    {
+      "range": [
+        82,
+        88
+      ],
+      "text": "You are stressed",
+      "_id": "2095927a42b5116e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.2095927a42b5116e"
+    },
+    {
+      "range": [
+        89,
+        95
+      ],
+      "text": "You are delayed or put at a disadvantage",
+      "_id": "c415cc56a6324112",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.c415cc56a6324112"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "59e28d7c8f52b28b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bbcb8dc755aee22f.59e28d7c8f52b28b"
+    }
+  ],
+  "folder": "adcc4cbc5484a254",
+  "sort": 232,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!bbcb8dc755aee22f"
+}

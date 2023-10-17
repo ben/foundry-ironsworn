@@ -1,0 +1,354 @@
+{
+  "_id": "dae4ba09f93a3869",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Moves/Make_a_Discovery",
+      "category": "Starforged/Oracles/Moves"
+    }
+  },
+  "name": "Make a Discovery",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Advanced technology waiting to be harnessed or salvaged",
+      "_id": "e6c979eca2ab1b80",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.e6c979eca2ab1b80"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Ancient archive or message",
+      "_id": "c1f5aa439271eac6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.c1f5aa439271eac6"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Artificial consciousness evolved to a higher state",
+      "_id": "75c20805f583f2f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.75c20805f583f2f0"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Clues to a crucial resource or uncharted domain",
+      "_id": "1a0f35af03431dd1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.1a0f35af03431dd1"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Envoy from another time or reality",
+      "_id": "3a6eecdacf68de50",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.3a6eecdacf68de50"
+    },
+    {
+      "range": [
+        15,
+        22
+      ],
+      "text": "Extraordinary natural phenomenon",
+      "_id": "618c5f063ae74387",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.618c5f063ae74387"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "First contact with intelligent life",
+      "_id": "a71aa58c89cdbe4c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.a71aa58c89cdbe4c"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Gateway to another time or alternate reality",
+      "_id": "7182ff25a3d2461e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.7182ff25a3d2461e"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Key to unlocking a language or method of communication",
+      "_id": "4b7e4318c22bae7f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.4b7e4318c22bae7f"
+    },
+    {
+      "range": [
+        29,
+        34
+      ],
+      "text": "Lost or hidden people",
+      "_id": "3019f817b25b7d76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.3019f817b25b7d76"
+    },
+    {
+      "range": [
+        35,
+        42
+      ],
+      "text": "Majestic or unusual lifeforms",
+      "_id": "953e8896a2fc2bc0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.953e8896a2fc2bc0"
+    },
+    {
+      "range": [
+        43,
+        46
+      ],
+      "text": "Marvel of ancient engineering",
+      "_id": "046bd30f7b7a2eaa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.046bd30f7b7a2eaa"
+    },
+    {
+      "range": [
+        47,
+        50
+      ],
+      "text": "Miraculously preserved artifact or specimen",
+      "_id": "55c0c1dd0076fef9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.55c0c1dd0076fef9"
+    },
+    {
+      "range": [
+        51,
+        56
+      ],
+      "text": "Monumental architecture or artistry of an ancient civilization",
+      "_id": "5044133655e2e96f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.5044133655e2e96f"
+    },
+    {
+      "range": [
+        57,
+        62
+      ],
+      "text": "Mysterious device or artifact of potential value",
+      "_id": "dee98e58d2674a0b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.dee98e58d2674a0b"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "New understanding of an enduring mystery",
+      "_id": "ac3a219fc1d9e7e3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.ac3a219fc1d9e7e3"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Pathway or means of travel to a distant location",
+      "_id": "ac9cc5dfec7e82ca",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.ac9cc5dfec7e82ca"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Person or lifeform with phenomenal abilities",
+      "_id": "f2a8003ffe264393",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.f2a8003ffe264393"
+    },
+    {
+      "range": [
+        71,
+        78
+      ],
+      "text": "Place of awe-inspiring beauty",
+      "_id": "c19aac5be96fa1e8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.c19aac5be96fa1e8"
+    },
+    {
+      "range": [
+        79,
+        86
+      ],
+      "text": "Rare and valuable resource",
+      "_id": "e3ce1258a01613d4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.e3ce1258a01613d4"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Safeguarded or idyllic location",
+      "_id": "6c4bf79bc4f5aa95",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.6c4bf79bc4f5aa95"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Visions or prophesies of the future",
+      "_id": "7ccdb29f6aeec1f5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.7ccdb29f6aeec1f5"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "bc7a15fd42603cec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dae4ba09f93a3869.bc7a15fd42603cec"
+    }
+  ],
+  "folder": "adcc4cbc5484a254",
+  "sort": 176,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!dae4ba09f93a3869"
+}

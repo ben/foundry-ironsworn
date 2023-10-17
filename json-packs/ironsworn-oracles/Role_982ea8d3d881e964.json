@@ -1,0 +1,452 @@
+{
+  "_id": "982ea8d3d881e964",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Character/Role",
+      "category": "Ironsworn/Oracles/Character"
+    }
+  },
+  "name": "Role",
+  "description": "<p>Use this oracle to define the background for a character, or to generate a random encounter.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Criminal",
+      "_id": "67008bee68fa2474",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.67008bee68fa2474"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Healer",
+      "_id": "9dd632eaae8dbf4f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.9dd632eaae8dbf4f"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Bandit",
+      "_id": "64fcc805e14f1080",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.64fcc805e14f1080"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Guide",
+      "_id": "40d6f06439611f1d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.40d6f06439611f1d"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Performer",
+      "_id": "94ae4d3320eb802a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.94ae4d3320eb802a"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Miner",
+      "_id": "2bd49ea870b4a7d2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.2bd49ea870b4a7d2"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Mercenary",
+      "_id": "67f57877634f777e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.67f57877634f777e"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Outcast",
+      "_id": "770bac31d04db964",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.770bac31d04db964"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Vagrant",
+      "_id": "7cf6e5ba9bccaca6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.7cf6e5ba9bccaca6"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Forester",
+      "_id": "496b4371f10220f1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.496b4371f10220f1"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Traveler",
+      "_id": "728ded1a15d71a0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.728ded1a15d71a0f"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Mystic",
+      "_id": "f008b991f97e8939",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.f008b991f97e8939"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Priest",
+      "_id": "a00f1c86ed8ff195",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.a00f1c86ed8ff195"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Sailor",
+      "_id": "eed7a564a9cffd4a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.eed7a564a9cffd4a"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Pilgrim",
+      "_id": "20fa6474f6b311ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.20fa6474f6b311ff"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Thief",
+      "_id": "e0e031fc64d583b5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.e0e031fc64d583b5"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Adventurer",
+      "_id": "ecefb5c5a5800f81",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.ecefb5c5a5800f81"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Forager",
+      "_id": "5acb36c819afb062",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.5acb36c819afb062"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Leader",
+      "_id": "10a68fb1d643b759",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.10a68fb1d643b759"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Guard",
+      "_id": "85a559070e47055d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.85a559070e47055d"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Artisan",
+      "_id": "06bd53bb2484fcea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.06bd53bb2484fcea"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Scout",
+      "_id": "adb944ee33903c16",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.adb944ee33903c16"
+    },
+    {
+      "range": [
+        67,
+        70
+      ],
+      "text": "Herder",
+      "_id": "76506c635b96b749",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.76506c635b96b749"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Fisher",
+      "_id": "f6486de398817b68",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.f6486de398817b68"
+    },
+    {
+      "range": [
+        75,
+        79
+      ],
+      "text": "Warrior",
+      "_id": "1e1d7485f9da9bc0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.1e1d7485f9da9bc0"
+    },
+    {
+      "range": [
+        80,
+        84
+      ],
+      "text": "Hunter",
+      "_id": "c7502771e729b238",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.c7502771e729b238"
+    },
+    {
+      "range": [
+        85,
+        89
+      ],
+      "text": "Raider",
+      "_id": "dc99bbbd397042db",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.dc99bbbd397042db"
+    },
+    {
+      "range": [
+        90,
+        94
+      ],
+      "text": "Trader",
+      "_id": "ec024b7028a172c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.ec024b7028a172c6"
+    },
+    {
+      "range": [
+        95,
+        99
+      ],
+      "text": "Farmer",
+      "_id": "5631c7853d3be5e1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.5631c7853d3be5e1"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Unusual role",
+      "_id": "28d64238cf5021ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!982ea8d3d881e964.28d64238cf5021ff"
+    }
+  ],
+  "folder": "aa60f0d1adbed892",
+  "sort": 182,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!982ea8d3d881e964"
+}

@@ -1,0 +1,424 @@
+{
+  "_id": "7c48ac6e6d1ff769",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Relationships",
+      "category": "Starforged/Oracles/Factions"
+    }
+  },
+  "name": "Relationships",
+  "description": "<p>Factions add scale and narrative opportunities to your setting. But keep it manageable. Don’t overload your campaign with factions. Instead, focus on your interactions and entanglements with members of a few interesting factions. Then, when you have a question about the relationship of one faction to another, use this table. The result is the commonly understood connection between those factions. Further investigations or events may reveal a deeper or alternate truth.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Antagonistic towards",
+      "_id": "fa76ff06346723ed",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.fa76ff06346723ed"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Apathetic or unaware of",
+      "_id": "b594260768d97abc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.b594260768d97abc"
+    },
+    {
+      "range": [
+        9,
+        11
+      ],
+      "text": "Betrayed by",
+      "_id": "ffd1e0729d513759",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.ffd1e0729d513759"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Broke faith with",
+      "_id": "8c8d6f4442874a91",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.8c8d6f4442874a91"
+    },
+    {
+      "range": [
+        15,
+        18
+      ],
+      "text": "Distrustful of",
+      "_id": "65e934eeed63c0ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.65e934eeed63c0ec"
+    },
+    {
+      "range": [
+        19,
+        22
+      ],
+      "text": "Does business with",
+      "_id": "14c767fce581f0e3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.14c767fce581f0e3"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Extorted by",
+      "_id": "35df403e450e0dd7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.35df403e450e0dd7"
+    },
+    {
+      "range": [
+        26,
+        29
+      ],
+      "text": "Holds contempt for",
+      "_id": "949b54e3f4f91842",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.949b54e3f4f91842"
+    },
+    {
+      "range": [
+        30,
+        33
+      ],
+      "text": "Holds leverage over",
+      "_id": "7b9c00d2b3fa5f28",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.7b9c00d2b3fa5f28"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "In control of",
+      "_id": "8e2c48a0d4012872",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.8e2c48a0d4012872"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Maneuvering against",
+      "_id": "4ee6bfcdd9919779",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.4ee6bfcdd9919779"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Needs aid from",
+      "_id": "a2aae6fbc241e6d2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.a2aae6fbc241e6d2"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Negotiating with",
+      "_id": "859bbd61355fb8ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.859bbd61355fb8ff"
+    },
+    {
+      "range": [
+        48,
+        51
+      ],
+      "text": "Open alliance with",
+      "_id": "49942d414e415903",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.49942d414e415903"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Owes a debt to",
+      "_id": "389f15642f9cd308",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.389f15642f9cd308"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Shares a rivalry with",
+      "_id": "eb61fa1922df734e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.eb61fa1922df734e"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "Shares power with",
+      "_id": "cb64c06be2575837",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.cb64c06be2575837"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Shows respect for",
+      "_id": "3d06a1dea6fa13ba",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.3d06a1dea6fa13ba"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Splintered from",
+      "_id": "471d5c38855a44a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.471d5c38855a44a9"
+    },
+    {
+      "range": [
+        68,
+        70
+      ],
+      "text": "Subordinate to",
+      "_id": "186fe7c60c3bcc6e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.186fe7c60c3bcc6e"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Supplied with resources by",
+      "_id": "801b4302290bbfef",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.801b4302290bbfef"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Supplies resources to",
+      "_id": "630b730222827227",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.630b730222827227"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Temporary alliance with",
+      "_id": "174d0d53bdae6b52",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.174d0d53bdae6b52"
+    },
+    {
+      "range": [
+        82,
+        85
+      ],
+      "text": "Tolerates",
+      "_id": "60d41015dd12fae3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.60d41015dd12fae3"
+    },
+    {
+      "range": [
+        86,
+        89
+      ],
+      "text": "Trades favors with",
+      "_id": "87fb91547d277531",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.87fb91547d277531"
+    },
+    {
+      "range": [
+        90,
+        92
+      ],
+      "text": "Unjustly accused by",
+      "_id": "17ed9c8ac0722a62",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.17ed9c8ac0722a62"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Warring with",
+      "_id": "8d0b010cb98e577d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.8d0b010cb98e577d"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "2e405c8065406257",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c48ac6e6d1ff769.2e405c8065406257"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 343,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!7c48ac6e6d1ff769"
+}

@@ -1,0 +1,200 @@
+{
+  "_id": "95e3b5f38b793f5b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Haunted/Peril",
+      "category": "Starforged/Oracles/Location_Themes/Haunted"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Use this table to help envision a complication or hazard.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        9
+      ],
+      "text": "Assailed by an angry or vengeful being",
+      "_id": "cd80f2b0000b5f9a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.cd80f2b0000b5f9a"
+    },
+    {
+      "range": [
+        10,
+        18
+      ],
+      "text": "Beguiling illusions tempt you to linger or stay",
+      "_id": "90d7122ed2ff4f68",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.90d7122ed2ff4f68"
+    },
+    {
+      "range": [
+        19,
+        27
+      ],
+      "text": "Besieged by frightening sensations",
+      "_id": "cf7f25e6fa4fd4e8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.cf7f25e6fa4fd4e8"
+    },
+    {
+      "range": [
+        28,
+        36
+      ],
+      "text": "Equipment is plagued by unexplainable malfunctions",
+      "_id": "20dc5e6b5dce09c2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.20dc5e6b5dce09c2"
+    },
+    {
+      "range": [
+        37,
+        45
+      ],
+      "text": "Plunged into disorienting darkness or illusionary surroundings",
+      "_id": "8fa8cb09cd114c8c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.8fa8cb09cd114c8c"
+    },
+    {
+      "range": [
+        46,
+        54
+      ],
+      "text": "Spectral manifestations of your fears",
+      "_id": "d5c7572d17a44047",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.d5c7572d17a44047"
+    },
+    {
+      "range": [
+        55,
+        63
+      ],
+      "text": "Spirits or undead reveal surprising abilities or motivations",
+      "_id": "a6ecbe76ce7c8a59",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.a6ecbe76ce7c8a59"
+    },
+    {
+      "range": [
+        64,
+        72
+      ],
+      "text": "Sudden, shocking reveal of a ghostly manifestation or undead form",
+      "_id": "d8808f95635a4fb0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.d8808f95635a4fb0"
+    },
+    {
+      "range": [
+        73,
+        81
+      ],
+      "text": "Trickery leads you into danger",
+      "_id": "15b5e7b9e560cbe9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.15b5e7b9e560cbe9"
+    },
+    {
+      "range": [
+        82,
+        90
+      ],
+      "text": "Visions reveal a horrifying aspect of this place",
+      "_id": "2ed590a8a1e2b76b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.2ed590a8a1e2b76b"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "06dcc0f05ca7b6a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.06dcc0f05ca7b6a9"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "b8cf5089d6697b53",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!95e3b5f38b793f5b.b8cf5089d6697b53"
+    }
+  ],
+  "folder": "7b6a3ac881ac8211",
+  "sort": 374,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!95e3b5f38b793f5b"
+}

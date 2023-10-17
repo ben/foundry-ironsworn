@@ -1,0 +1,60 @@
+{
+  "_id": "e1928307bb4e0afb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Ask_the_Oracle/Likely",
+      "category": "Ironsworn/Oracles/Moves"
+    }
+  },
+  "name": "Likely",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "No",
+      "_id": "b25db9faf0f910cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e1928307bb4e0afb.b25db9faf0f910cf"
+    },
+    {
+      "range": [
+        26,
+        100
+      ],
+      "text": "Yes",
+      "_id": "9b6ce445da90ae43",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e1928307bb4e0afb.9b6ce445da90ae43"
+    }
+  ],
+  "folder": "e7e8324f007f0cc7",
+  "sort": 107,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e1928307bb4e0afb"
+}

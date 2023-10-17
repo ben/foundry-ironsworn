@@ -1,0 +1,29 @@
+{
+  "name": "Open the asset browser",
+  "type": "script",
+  "author": "a8u59CvdJFmbk4At",
+  "img": "icons/svg/dice-target.svg",
+  "scope": "global",
+  "command": "new CONFIG.IRONSWORN.applications.AssetCompendiumBrowser('starforged').render(true)",
+  "ownership": {
+    "default": 0,
+    "a8u59CvdJFmbk4At": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Macro.U49mETU30fr0iCAG"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.5",
+    "coreVersion": "10.291",
+    "createdTime": 1672238525905,
+    "modifiedTime": 1672239155677,
+    "lastModifiedBy": "a8u59CvdJFmbk4At"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "xvJpniCT0lAIf3Eh",
+  "_key": "!macros!xvJpniCT0lAIf3Eh"
+}

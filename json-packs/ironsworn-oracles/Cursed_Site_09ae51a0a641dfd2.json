@@ -1,0 +1,172 @@
+{
+  "_id": "09ae51a0a641dfd2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Cursed_Site",
+      "category": "Ironsworn/Oracles/Threat"
+    }
+  },
+  "name": "Cursed Site",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Unleash a creature or being",
+      "_id": "596271f37b1d33b5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.596271f37b1d33b5"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Lure the unwary into its depths",
+      "_id": "17050b779f8368e8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.17050b779f8368e8"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Offer promises of power",
+      "_id": "21a569ab5484a515",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.21a569ab5484a515"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Reveal a new aspect of its cursed history",
+      "_id": "cf2e7843f9ee1c0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.cf2e7843f9ee1c0f"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Expand its malignancy to surrounding lands",
+      "_id": "3de5e35d59cb4194",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.3de5e35d59cb4194"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Leave its mark on an inhabitant or visitor",
+      "_id": "fe46731320a231e8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.fe46731320a231e8"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Reveal hidden depths",
+      "_id": "a298265f26759de1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.a298265f26759de1"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Ensnare an important person or object",
+      "_id": "9b1f835fb3d637ba",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.9b1f835fb3d637ba"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Corrupt the environment",
+      "_id": "edbb913eff8f231f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.edbb913eff8f231f"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Transform its nature",
+      "_id": "05c0d560e1d6f2ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!09ae51a0a641dfd2.05c0d560e1d6f2ae"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 1221,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!09ae51a0a641dfd2"
+}

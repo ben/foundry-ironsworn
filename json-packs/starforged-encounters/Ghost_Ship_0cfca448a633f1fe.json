@@ -1,0 +1,35 @@
+{
+  "_id": "0cfca448a633f1fe",
+  "type": "progress",
+  "name": "Ghost Ship",
+  "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Restless spirits</p>\n    <p class=\"nogrow\">Manifest through unsettling disturbances</p>\n    <p class=\"nogrow\">Appear as they did in life</p>\n    <p class=\"nogrow\">Ravages of a violent death</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Haunt the living</p>\n    <p class=\"nogrow\">Find rest</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Lure and isolate with subtle visions or sounds</p>\n    <p class=\"nogrow\">Reveal horrifying visions</p>\n    <p class=\"nogrow\">Unleash chaos</p>\n  </div>\n</div>\n\n<p>These forsaken ships cruise through the depths of the Forge, carried by relentless inertia. They are dark and cold, and might initially seem a lucky find to a scavenger or pirate. But those who dare to trespass within these haunted vessels are not alone, and the tormented inhabitants will soon make themselves known.</p>\n\n<blockquote>Quest Starter: <p>A ghost haunts your starship. What is the nature of this spirit, and what quest must you undertake to put it to rest?</p></blockquote>",
+    "rank": 3,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021144,
+    "modifiedTime": 1695949021144,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!0cfca448a633f1fe"
+}

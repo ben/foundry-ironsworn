@@ -1,0 +1,172 @@
+{
+  "_id": "efc010d3643bed54",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ocean/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Ocean"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Complex reef systems",
+      "_id": "88dceced767f07a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.88dceced767f07a3"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Emerging volcanoes",
+      "_id": "5badd6446c443fd6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.5badd6446c443fd6"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Floating forests",
+      "_id": "9fb800b8af061feb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.9fb800b8af061feb"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Global hurricanes",
+      "_id": "05dc33a68ad26b05",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.05dc33a68ad26b05"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Large moon and strong tides",
+      "_id": "536208085060872d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.536208085060872d"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Scattered islands",
+      "_id": "435f43a7de87c26d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.435f43a7de87c26d"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Semi-frozen oceans",
+      "_id": "d056d2a3dca40958",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.d056d2a3dca40958"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Unusual water color",
+      "_id": "b7dcf455b95a3090",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.b7dcf455b95a3090"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "7f8d39c89b0bb9d8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.7f8d39c89b0bb9d8"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "b7f037ec316e6687",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!efc010d3643bed54.b7f037ec316e6687"
+    }
+  ],
+  "folder": "d053017f6e8f47f0",
+  "sort": 314,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!efc010d3643bed54"
+}

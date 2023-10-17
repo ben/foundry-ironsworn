@@ -1,0 +1,102 @@
+{
+  "_id": "8d5220c3ac5a5199",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Population/Outlands",
+      "category": "Starforged/Oracles/Settlements"
+    }
+  },
+  "name": "Outlands",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Few",
+      "_id": "aa0bec002cd2180e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8d5220c3ac5a5199.aa0bec002cd2180e"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Dozens",
+      "_id": "f509ff6b4ecac640",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8d5220c3ac5a5199.f509ff6b4ecac640"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Hundreds",
+      "_id": "3684a394e77e1544",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8d5220c3ac5a5199.3684a394e77e1544"
+    },
+    {
+      "range": [
+        66,
+        90
+      ],
+      "text": "Thousands",
+      "_id": "c07d7c06c6311fd2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8d5220c3ac5a5199.c07d7c06c6311fd2"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tens of thousands",
+      "_id": "f3b489e03dfda9af",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8d5220c3ac5a5199.f3b489e03dfda9af"
+    }
+  ],
+  "folder": "e1aa8a2704d1412a",
+  "sort": 322,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!8d5220c3ac5a5199"
+}

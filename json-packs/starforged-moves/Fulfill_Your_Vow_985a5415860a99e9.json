@@ -1,0 +1,89 @@
+{
+  "_id": "985a5415860a99e9",
+  "type": "sfmove",
+  "name": "Fulfill Your Vow",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Quest/Fulfill_Your_Vow",
+    "Category": "Starforged/Moves/Quest",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "**When you reach the end of your quest**, roll the challenge dice and compare to your progress.\n\nOn a **strong hit**, your vow is fulfilled. Mark a reward on your quests legacy track per the vow's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this vow also mark the reward.\n\nOn a **weak hit**, as above, but there is more to be done or you realize the truth of your quest. If you @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to set things right, take your full legacy reward. Otherwise, make the reward one rank lower.\n\nOn a **miss**, your vow is undone through an unexpected complication or realization. Envision what happens and choose one.\n\n  * Give up on the quest: @Compendium[foundry-ironsworn.starforgedmoves.449c1e260c941a40]{Forsake Your Vow}.\n  * Recommit to the quest: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow's rank by one (if not already epic).",
+    "Trigger": {
+      "Text": "When you reach the end of your quest...",
+      "Options": [
+        {
+          "Roll type": "Progress roll",
+          "Method": "Any",
+          "Using": [
+            "Vow"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Your vow is fulfilled. Mark a reward on your quests legacy track per the vow's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this vow also mark the reward.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Your vow is fulfilled, but there is more to be done or you realize the truth of your quest. If you @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to set things right, take your full legacy reward per the vow's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Otherwise, make the reward one rank lower. Any allies who shared this vow also mark the reward.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Your vow is undone through an unexpected complication or realization. Envision what happens and choose one.\n\n  * Give up on the quest: @Compendium[foundry-ironsworn.starforgedmoves.449c1e260c941a40]{Forsake Your Vow}.\n  * Recommit to the quest: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow's rank by one (if not already epic).",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 158
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#2F9236",
+      "Images": []
+    }
+  },
+  "sort": 158,
+  "folder": "e49f552c2c59f214",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!985a5415860a99e9"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Module",
+  "color": "#7f5a90",
+  "description": "**Modules** are linked to your STARSHIP and offer additional options and advantages when aboard that vehicle.\n\nThese assets are earned and managed by a single character. They can be shared with allies, but only if it's practical for them to make use of it (not everyone may know how to use a RESEARCH LAB).\n\nWhen you [Withstand Damage](Starforged/Moves/Suffer/Withstand_Damage) and score a miss, you can mark a module as broken to offset further danger for your STARSHIP. Flip the card over to indicate its broken state. A broken module cannot be used until you successfully [Repair](Starforged/Moves/Recover/Repair) it.",
+  "type": "Item",
+  "_id": "a7279f7392f32ff4",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Module"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021084,
+    "modifiedTime": 1695949021084,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!a7279f7392f32ff4"
+}

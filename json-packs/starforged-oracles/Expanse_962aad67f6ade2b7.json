@@ -1,0 +1,326 @@
+{
+  "_id": "962aad67f6ade2b7",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Space/Sighting/Expanse",
+      "category": "Starforged/Oracles/Space"
+    }
+  },
+  "name": "Expanse",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Space/Stellar_Object\"><i class=\"fa fa-caret-right\"></i> Stellar Object</a>",
+      "_id": "2299e1526964d707",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.2299e1526964d707"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets\"><i class=\"fa fa-caret-right\"></i> Planet</a>",
+      "_id": "ad32da1604f36621",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.ad32da1604f36621"
+    },
+    {
+      "range": [
+        36,
+        37
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Settlements\"><i class=\"fa fa-caret-right\"></i> Settlement</a>",
+      "_id": "3ecb782a6a52aaaa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.3ecb782a6a52aaaa"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Starships\"><i class=\"fa fa-caret-right\"></i> Starship</a>",
+      "_id": "0db5db0beb83ba2e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.0db5db0beb83ba2e"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts\"><i class=\"fa fa-caret-right\"></i> Derelict</a>",
+      "_id": "ea9c5004dae6cbeb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.ea9c5004dae6cbeb"
+    },
+    {
+      "range": [
+        42,
+        45
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault</a>",
+      "_id": "1edd50683af652c1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.1edd50683af652c1"
+    },
+    {
+      "range": [
+        46,
+        49
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Creatures\"><i class=\"fa fa-caret-right\"></i> Creature</a>",
+      "_id": "5ebd74bf682d329d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.5ebd74bf682d329d"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "a5fb812f9eca03ee",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.a5fb812f9eca03ee"
+    },
+    {
+      "range": [
+        57,
+        61
+      ],
+      "text": "Debris field: Mineral asteroids",
+      "_id": "93eef42628161a2e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.93eef42628161a2e"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Debris field: Frozen asteroids",
+      "_id": "472d94f327798e51",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.472d94f327798e51"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Debris field: Crystalline asteroids",
+      "_id": "028cc60658a7553e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.028cc60658a7553e"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Debris field: Creature boneyard",
+      "_id": "99d44bd59632b293",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.99d44bd59632b293"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Debris field: Metallic wreckage",
+      "_id": "537087f8a09402c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.537087f8a09402c0"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Large rogue asteroid",
+      "_id": "a3ad24bad9f98e86",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.a3ad24bad9f98e86"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Comet with a tail of ionized gas",
+      "_id": "25de2fdb141ef4ce",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.25de2fdb141ef4ce"
+    },
+    {
+      "range": [
+        75,
+        79
+      ],
+      "text": "Fiery energy storm",
+      "_id": "4cb2b63c18f43cc0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.4cb2b63c18f43cc0"
+    },
+    {
+      "range": [
+        80,
+        81
+      ],
+      "text": "Chaotic meteoroid storm",
+      "_id": "c1de8f7156714e1e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.c1de8f7156714e1e"
+    },
+    {
+      "range": [
+        82,
+        85
+      ],
+      "text": "Turbulent gravitational wave",
+      "_id": "af99e31a0fe1121e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.af99e31a0fe1121e"
+    },
+    {
+      "range": [
+        86,
+        93
+      ],
+      "text": "Dense nebula cloud",
+      "_id": "70d19e3159d14225",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.70d19e3159d14225"
+    },
+    {
+      "range": [
+        94,
+        98
+      ],
+      "text": "Roll twice",
+      "_id": "7fc340e6e84dea37",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.7fc340e6e84dea37"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll three times",
+      "_id": "e84d3ad4784b9a8a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!962aad67f6ade2b7.e84d3ad4784b9a8a"
+    }
+  ],
+  "folder": "cdcf8dc308bee5bf",
+  "sort": 300,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!962aad67f6ade2b7"
+}

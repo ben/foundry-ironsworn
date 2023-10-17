@@ -1,0 +1,326 @@
+{
+  "_id": "5ff0f4816e9338b4",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/First_Look",
+      "category": "Starforged/Oracles/Settlements"
+    }
+  },
+  "name": "First Look",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Beautiful architecture",
+      "_id": "25d62f0bac3fdc01",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.25d62f0bac3fdc01"
+    },
+    {
+      "range": [
+        4,
+        9
+      ],
+      "text": "Built from organic materials",
+      "_id": "4d707076b9b13831",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.4d707076b9b13831"
+    },
+    {
+      "range": [
+        10,
+        15
+      ],
+      "text": "Built from random scrap",
+      "_id": "37cad2dc5d78ce61",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.37cad2dc5d78ce61"
+    },
+    {
+      "range": [
+        16,
+        21
+      ],
+      "text": "Built within repurposed ship",
+      "_id": "249e1c4fc0792c36",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.249e1c4fc0792c36"
+    },
+    {
+      "range": [
+        22,
+        26
+      ],
+      "text": "Built within terrain or asteroid",
+      "_id": "23c5acb258948e63",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.23c5acb258948e63"
+    },
+    {
+      "range": [
+        27,
+        31
+      ],
+      "text": "Defensible location",
+      "_id": "a3699e1c9c4d9839",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.a3699e1c9c4d9839"
+    },
+    {
+      "range": [
+        32,
+        35
+      ],
+      "text": "Elevated or multi-level construction",
+      "_id": "31b5d0bc3ea74296",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.31b5d0bc3ea74296"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Hidden or subsurface location",
+      "_id": "9bfc9c59a45499aa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.9bfc9c59a45499aa"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "High-tech construction",
+      "_id": "6a8ae0e617686934",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.6a8ae0e617686934"
+    },
+    {
+      "range": [
+        44,
+        49
+      ],
+      "text": "Industrial architecture",
+      "_id": "9f1c96aef3736b35",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.9f1c96aef3736b35"
+    },
+    {
+      "range": [
+        50,
+        53
+      ],
+      "text": "Intimidating defenses",
+      "_id": "85c24002c893ce3e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.85c24002c893ce3e"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Moving or transforming",
+      "_id": "4cafe9a69d197b1f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.4cafe9a69d197b1f"
+    },
+    {
+      "range": [
+        57,
+        61
+      ],
+      "text": "Obvious social stratification",
+      "_id": "1a1ac43b13b837a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.1a1ac43b13b837a8"
+    },
+    {
+      "range": [
+        62,
+        66
+      ],
+      "text": "Precarious location",
+      "_id": "fad51c172473501b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.fad51c172473501b"
+    },
+    {
+      "range": [
+        67,
+        72
+      ],
+      "text": "Rustic architecture",
+      "_id": "e769274d002b8ef2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.e769274d002b8ef2"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Significant structural damage",
+      "_id": "8ed0870d2d371fcc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.8ed0870d2d371fcc"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Sprawling or dispersed structures",
+      "_id": "ead0fa05b208c2c1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.ead0fa05b208c2c1"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Temporary or seasonal location",
+      "_id": "f3acc52960e51340",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.f3acc52960e51340"
+    },
+    {
+      "range": [
+        84,
+        87
+      ],
+      "text": "Toxic or polluted habitat",
+      "_id": "fbfba07dbb848b13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.fbfba07dbb848b13"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Within or near <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault</a>",
+      "_id": "94021a99e8711db5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.94021a99e8711db5"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "b202ece9ede48742",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5ff0f4816e9338b4.b202ece9ede48742"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 323,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!5ff0f4816e9338b4"
+}

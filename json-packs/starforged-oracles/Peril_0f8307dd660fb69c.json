@@ -1,0 +1,200 @@
+{
+  "_id": "0f8307dd660fb69c",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Inhabited/Peril",
+      "category": "Starforged/Oracles/Location_Themes/Inhabited"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Use this table to help envision a complication or hazard.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        9
+      ],
+      "text": "Announcement or notification brings harrowing news",
+      "_id": "e99108efa47eb85b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.e99108efa47eb85b"
+    },
+    {
+      "range": [
+        10,
+        18
+      ],
+      "text": "Arrival of a foe or rival",
+      "_id": "5ad10e512920ab6e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.5ad10e512920ab6e"
+    },
+    {
+      "range": [
+        19,
+        27
+      ],
+      "text": "Blockade or security cordon cuts off needed access",
+      "_id": "8efec3fde2bfdc8c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.8efec3fde2bfdc8c"
+    },
+    {
+      "range": [
+        28,
+        36
+      ],
+      "text": "Caught in the crossfire of a dispute",
+      "_id": "bad3c653a88ca8a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.bad3c653a88ca8a8"
+    },
+    {
+      "range": [
+        37,
+        45
+      ],
+      "text": "Disturbing evidence of exploitive conditions",
+      "_id": "f0237299095dec41",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.f0237299095dec41"
+    },
+    {
+      "range": [
+        46,
+        54
+      ],
+      "text": "Lured into danger",
+      "_id": "76f0ed7321e6d056",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.76f0ed7321e6d056"
+    },
+    {
+      "range": [
+        55,
+        63
+      ],
+      "text": "Signs of disease, infestation, or toxic environment",
+      "_id": "381a8df189e15b12",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.381a8df189e15b12"
+    },
+    {
+      "range": [
+        64,
+        72
+      ],
+      "text": "Signs of unrest or rebellion",
+      "_id": "f32f97670e59f4f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.f32f97670e59f4f0"
+    },
+    {
+      "range": [
+        73,
+        81
+      ],
+      "text": "Signs that you are being watched or followed",
+      "_id": "c3ef855dac94c681",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.c3ef855dac94c681"
+    },
+    {
+      "range": [
+        82,
+        90
+      ],
+      "text": "Unwanted attention from authority or enemies",
+      "_id": "f8b9afe6b078e86e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.f8b9afe6b078e86e"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "5423cca69fbe71a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.5423cca69fbe71a9"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "642e17d0f28ef440",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0f8307dd660fb69c.642e17d0f28ef440"
+    }
+  ],
+  "folder": "70f9da433bc19024",
+  "sort": 376,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!0f8307dd660fb69c"
+}

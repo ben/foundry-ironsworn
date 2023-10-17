@@ -1,0 +1,91 @@
+{
+  "_id": "603ca607fe8386f8",
+  "type": "sfmove",
+  "name": "Continue a Legacy",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Legacy/Continue_a_Legacy",
+    "Category": "Starforged/Moves/Legacy",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "**When you retire from your life as Ironsworn, or succumb to death or desolation**, you may create a new character in your established setting. If you do, roll the challenge dice and compare to each of the former character's legacy tracks: quests, bonds, and discoveries (one roll per track).\n\nFor each **strong hit**, choose one from below, or one from the weak hit or miss options.\n\n  * Follow their path: Take one path or companion asset from the former character (at no cost), including any marked abilities.\n  * Share a connection: Take one connection from the former character, including any accrued progress or bond benefits.\n  * Accept an inheritance: Take the former character's command vehicle and one module or support vehicle (at no cost), including any marked abilities.\n\nFor each **weak hit**, choose one from below, or one from the miss options.\n\n  * See it through: Choose one of the former character's unfinished quests, and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} (with an automatic strong hit) to see it done. You may immediately mark up to half their earned progress (round down) on this quest.\n  * Rebuild a connection: Name one of the former character's connections, and envision how time or circumstances have changed them in a dramatic way. When you @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection} with them, take an automatic strong hit and mark two ticks on your bonds legacy track.\n  * Explore familiar ground: Name a location that was meaningful to the former character. When you first visit that place, envision how it has changed or is endangered. Then, mark two ticks on your discoveries legacy track.\n\nFor each **miss**, choose one.\n\n  * Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.\n  * Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.\n  * Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.",
+    "Trigger": {
+      "Text": "When you retire from your life as Ironsworn, or succumb to death or desolation...",
+      "Options": [
+        {
+          "Roll type": "Progress roll",
+          "Method": "All",
+          "Using": [
+            "Quests Legacy",
+            "Bonds Legacy",
+            "Discoveries Legacy"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Choose one:\n\n  * Follow their path: Take one path or companion asset from the former character (at no cost), including any marked abilities.\n  * Share a connection: Take one connection from the former character, including any accrued progress or bond benefits.\n  * Accept an inheritance: Take the former character's command vehicle and one module or support vehicle (at no cost), including any marked abilities.\n\nAlternatively, you may choose a weak hit option:\n\n  * See it through: Choose one of the former character's unfinished quests, and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} (with an automatic strong hit) to see it done. You may immediately mark up to half their earned progress (round down) on this quest.\n  * Rebuild a connection: Name one of the former character's connections, and envision how time or circumstances have changed them in a dramatic way. When you @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection} with them, take an automatic strong hit and mark two ticks on your bonds legacy track.\n  * Explore familiar ground: Name a location that was meaningful to the former character. When you first visit that place, envision how it has changed or is endangered. Then, mark two ticks on your discoveries legacy track.\n\nOr a miss option:\n\n  * Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.\n  * Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.\n  * Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Choose one:\n\n  * See it through: Choose one of the former character's unfinished quests, and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} (with an automatic strong hit) to see it done. You may immediately mark up to half their earned progress (round down) on this quest.\n  * Rebuild a connection: Name one of the former character's connections, and envision how time or circumstances have changed them in a dramatic way. When you @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection} with them, take an automatic strong hit and mark two ticks on your bonds legacy track.\n  * Explore familiar ground: Name a location that was meaningful to the former character. When you first visit that place, envision how it has changed or is endangered. Then, mark two ticks on your discoveries legacy track.\n\nAlternatively, you may choose a miss option:\n\n  * Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.\n  * Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.\n  * Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Choose one:\n\n  * Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.\n  * Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.\n  * Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 226
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#4D5769",
+      "Images": []
+    }
+  },
+  "sort": 226,
+  "folder": "b19db00aa083d13e",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!603ca607fe8386f8"
+}

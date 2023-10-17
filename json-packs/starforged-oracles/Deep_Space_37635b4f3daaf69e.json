@@ -1,0 +1,60 @@
+{
+  "_id": "37635b4f3daaf69e",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Type/Deep_Space",
+      "category": "Starforged/Oracles/Derelicts"
+    }
+  },
+  "name": "Deep Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        75
+      ],
+      "text": "Starship",
+      "_id": "a25e1bb06b81bb99",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!37635b4f3daaf69e.a25e1bb06b81bb99"
+    },
+    {
+      "range": [
+        76,
+        100
+      ],
+      "text": "Settlement",
+      "_id": "16c829fbf2b28d9b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!37635b4f3daaf69e.16c829fbf2b28d9b"
+    }
+  ],
+  "folder": "8b3958b3ed0189b7",
+  "sort": 348,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!37635b4f3daaf69e"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Mission",
+  "_id": "576cfdeddb886db1",
+  "type": "RollTable",
+  "description": "Use the Starship Mission table when prompted by another oracle, or to flesh out the nature of a ship or fleet which has a flexible or uncertain role. You can also roll to generate the focus of a spaceborne quest.",
+  "sort": 328,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Starships/Mission"
+    }
+  },
+  "folder": "eea3419c88a919cd",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!576cfdeddb886db1"
+}

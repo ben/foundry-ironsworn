@@ -1,0 +1,24 @@
+{
+  "name": "Quest Moves",
+  "type": "Item",
+  "_id": "456f0d6c841ff99f",
+  "color": "#805A90",
+  "description": "Making and fulfilling vows is central to your character’s motivations. These oaths drive your story and give you the means to gain experience and acquire new abilities. When you embark upon a quest, manage your progress on a quest, seek to complete a quest, or gain the rewards of a quest, make these moves.",
+  "sort": 98,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Quest"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021086,
+    "modifiedTime": 1695949021086,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!456f0d6c841ff99f"
+}

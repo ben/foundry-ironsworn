@@ -1,0 +1,206 @@
+{
+  "name": "Communities",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Communities",
+      "type": "truth-category"
+    }
+  },
+  "_id": "mh5qubiWdhqVIcqW",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Few survived the journey to the Forge, and we are scattered to the winds in this perilous place.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Communities/1-33",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Few survived the journey to the Forge, and we are scattered to the winds in this perilous place.",
+        "Description": "Our settlements are often small, starved for resources, and on the brink of ruin. Hundreds of far-flung settlements are lost and isolated within the untamed chaos of this galaxy, and we do not know their fate.",
+        "Quest": "A settlement on an icebound planet is found abandoned. There is no sign of an attack. No bodies. Their ships and vehicles sit idle. The people are simply gone. Vanished. What is your connection to this place?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "wU883WxAn8lhqLkN",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022173,
+        "modifiedTime": 1695949022173,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!mh5qubiWdhqVIcqW.wU883WxAn8lhqLkN"
+    },
+    {
+      "type": "truth",
+      "name": "Dangers abound, but there is safety in numbers. Many ships and settlements are united under the banner of one of the Founder Clans.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Communities/34-67",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Dangers abound, but there is safety in numbers. Many ships and settlements are united under the banner of one of the Founder Clans.",
+        "Description": "We have a tentative foothold in this galaxy. Each of the five Founder Clans honor the name and legacy of a leader who guided their people in the chaotic time after the Exodus. Vast reaches of the settled domains are claimed by the clans, and territorial skirmishes are common.",
+        "Quest": "A forsaken people, sworn to no clan, live on an orbital station. A recent illness left many sick or dead. Supplies are urgently needed. Why were these people exiled, and why do you swear to give them aid? Which clan stands against you?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "aPcUH5ijZqUmZSmB",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022178,
+        "modifiedTime": 1695949022178,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!mh5qubiWdhqVIcqW.aPcUH5ijZqUmZSmB"
+    },
+    {
+      "type": "truth",
+      "name": "We have made our mark in this galaxy, but the energy storms we call balefires threaten to undo that progress, leaving our communities isolated and vulnerable.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Communities/68-100",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "We have made our mark in this galaxy, but the energy storms we call balefires threaten to undo that progress, leaving our communities isolated and vulnerable.",
+        "Description": "Starships navigate along bustling trade routes between settlements. We've built burgeoning outposts on the fringes of known sectors, and bold spacers chart new paths into unexplored domains. But this hard-earned success is threatened by the chaotic balefires, intense energy anomalies that cut off trade routes and threaten entire planets.",
+        "Quest": "A balefire threatens a deep-space settlement. Can a rescue fleet be marshaled in time to transport the inhabitants of the station to safety? What foe stands in the way?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "B8shrTL85Bil2ZSy",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022185,
+        "modifiedTime": 1695949022185,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!mh5qubiWdhqVIcqW.B8shrTL85Bil2ZSy"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are skilled at negotiation and resolving disputes between communities, you might be a DIPLOMAT. If you make your mark with creative works, you might be an ARTIST. If you have always lived among the stars, you might be VOIDBORN.",
+        "format": 2,
+        "content": "<p>If you are skilled at negotiation and resolving disputes between communities, you might be a DIPLOMAT. If you make your mark with creative works, you might be an ARTIST. If you have always lived among the stars, you might be VOIDBORN.</p>"
+      },
+      "flags": {
+        "foundry-ironsworn": {
+          "assets": [
+            "Starforged/Assets/Path/Diplomat",
+            "Starforged/Assets/Path/Artist",
+            "Starforged/Assets/Path/Voidborn"
+          ]
+        }
+      },
+      "_id": "vj36gyaUIodpKO1t",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022190,
+        "modifiedTime": 1695949022190,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!mh5qubiWdhqVIcqW.vj36gyaUIodpKO1t"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022169,
+    "modifiedTime": 1695949022190,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!journal!mh5qubiWdhqVIcqW"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Production",
+  "_id": "2fbcd3395fd34f5d",
+  "type": "RollTable",
+  "sort": 358,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Production"
+    }
+  },
+  "folder": "fd19a02fbd5f71e6",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!2fbcd3395fd34f5d"
+}

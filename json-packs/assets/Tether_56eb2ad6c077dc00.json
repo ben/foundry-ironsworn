@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "56eb2ad6c077dc00",
+  "folder": "5c9139c5883395ea",
+  "name": "Tether",
+  "system": {
+    "requirement": "",
+    "category": "Ritual",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you commune with the spirits of a place, roll +heart. If you share a bond with someone there, add +1. On a strong hit, you are tethered. When you @Compendium[foundry-ironsworn.ironswornmoves.ac19f4c7f3fe31be]{Undertake a Journey} to return, you may roll +spirit or +heart (instead of +wits), and take +1 momentum on a hit. When you @Compendium[foundry-ironsworn.ironswornmoves.727eb47e8f031e81]{Reach Your Destination}, take +2 momentum on a strong hit. The tether is lost if you perform this ritual elsewhere, or when you @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation}. On a weak hit, as above, but the spirits reveal a disturbing aspect of the place; @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (2 stress).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>As above, and you may also reroll any dice when you @Compendium[foundry-ironsworn.ironswornmoves.25421995c803340e]{Sojourn} in the tethered place.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!56eb2ad6c077dc00"
+}

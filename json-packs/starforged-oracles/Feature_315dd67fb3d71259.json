@@ -1,0 +1,242 @@
+{
+  "_id": "315dd67fb3d71259",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Jungle/Feature",
+      "category": "Starforged/Oracles/Planets/Jungle"
+    }
+  },
+  "name": "Feature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Bioluminescent flora",
+      "_id": "276f5bfd5ef4948f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.276f5bfd5ef4948f"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Deep river gorges",
+      "_id": "2016ff3ec092008d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.2016ff3ec092008d"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Extensive exposed root systems",
+      "_id": "92b0ed342a7c865a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.92b0ed342a7c865a"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Immense tiered waterfalls",
+      "_id": "199c183bd19ca470",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.199c183bd19ca470"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Languid rivers",
+      "_id": "709e01b4e3aa2e73",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.709e01b4e3aa2e73"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Low-lying fog",
+      "_id": "f7da2ec7320fdc59",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.f7da2ec7320fdc59"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Plunging sinkholes",
+      "_id": "fe08a3e7fcdb5771",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.fe08a3e7fcdb5771"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Scarred clearings",
+      "_id": "06d528d75dbe0de2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.06d528d75dbe0de2"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Sinking quagmires",
+      "_id": "aa20deca3fb3eecb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.aa20deca3fb3eecb"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Surging rivers",
+      "_id": "47b0fdf6c5b4c213",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.47b0fdf6c5b4c213"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Torrential rainstorms",
+      "_id": "8cae3bf1a6f55e7c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.8cae3bf1a6f55e7c"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Violent electrical storms",
+      "_id": "7a60db63600eb66c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.7a60db63600eb66c"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Waterlogged caves",
+      "_id": "b75a005d463ed92f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.b75a005d463ed92f"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "47f55072f6fec939",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.47f55072f6fec939"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (planetside)</a>",
+      "_id": "7dd747dbd5ea8407",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!315dd67fb3d71259.7dd747dbd5ea8407"
+    }
+  ],
+  "folder": "2a431921f3dabd4b",
+  "sort": 313,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!315dd67fb3d71259"
+}

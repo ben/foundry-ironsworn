@@ -1,0 +1,126 @@
+{
+  "name": "Warden",
+  "img": "icons/magic/holy/angel-winged-humanoid-blue.webp",
+  "type": "foe",
+  "_id": "DVlFwL4SfsyadQaa",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Warden",
+    "displayName": 0,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Warden",
+      "type": "progress",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Long-lived humans with powerful physiques</p>\n    <p class=\"nogrow\">Grizzled and stern</p>\n    <p class=\"nogrow\">Tattoos memorialize fallen comrades</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Find their own path, unbound from those who seek to control them</p>\n    <p class=\"nogrow\">Do not succumb to the fury</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Wade into battle</p>\n    <p class=\"nogrow\">Take the hits</p>\n    <p class=\"nogrow\">Seize objectives with overwhelming force</p>\n  </div>\n</div>\n\n<p>The origin of these long-lived humans is a secret lost to time. Whether through precursor tech, alien organisms, or genetic mutation, they were modified with unnatural strength, endurance, and survivability. They can withstand the harshest of environments. Their wounds heal quickly. They are resistant to sickness and disease.</p>\n<p>More than a century ago, the wardens served as elite soldiers, protecting the people of the Forge against the many threats of this galaxy. But as often happens, their purpose was subverted by those who sought to wield them as weapons. Conflicts flared among powerful factions. Wardens faced their comrades on innumerable battlefields. The chaos might have ended us all, had not the wardens rebelled against those who used them as cogs in the machines of war.</p>\n\n<blockquote>Quest Starter: <p>There are rumors of an enclave well beyond the inhabited sectors, a place where wardens can live in peace. An emerging threat against the people of the Forge causes you to seek out the aid of these living relics. What do you offer in return for their help?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.bc364ac233a4ad6e]{Warden Cohort}</li>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.1ce25fd6da52ab4a]{Fury}</li>\n</ul>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "_id": "2UOItxWTDAdFAKhu",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022126,
+        "modifiedTime": 1695949022126,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!actors.items!DVlFwL4SfsyadQaa.2UOItxWTDAdFAKhu"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021962,
+    "modifiedTime": 1695949022126,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!actors!DVlFwL4SfsyadQaa"
+}

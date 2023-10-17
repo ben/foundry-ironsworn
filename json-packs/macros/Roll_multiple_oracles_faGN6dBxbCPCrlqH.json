@@ -1,0 +1,29 @@
+{
+  "name": "Roll multiple oracles",
+  "type": "script",
+  "author": "MAG2L3n9uI0fZjZj",
+  "img": "icons/svg/dice-target.svg",
+  "scope": "global",
+  "command": "// The IDs here are probably what you think they are, but you can find them in the $id fields here\n// https://github.com/rsek/dataforged/blob/main/dist/ironsworn/oracles.json\n// https://github.com/rsek/dataforged/blob/main/dist/starforged/oracles.json\n// Alternatively, you can use the UUID of any table.\n\nawait CONFIG.IRONSWORN.OracleTable.ask(['Starforged/Oracles/Core/Action', 'Starforged/Oracles/Core/Theme'])",
+  "ownership": {
+    "default": 0,
+    "MAG2L3n9uI0fZjZj": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Macro.U49mETU30fr0iCAG"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.21.2",
+    "coreVersion": "10.291",
+    "createdTime": 1672238525905,
+    "modifiedTime": 1680955637180,
+    "lastModifiedBy": "MAG2L3n9uI0fZjZj"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "faGN6dBxbCPCrlqH",
+  "_key": "!macros!faGN6dBxbCPCrlqH"
+}

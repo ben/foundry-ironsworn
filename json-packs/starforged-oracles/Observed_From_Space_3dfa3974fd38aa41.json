@@ -1,0 +1,172 @@
+{
+  "_id": "3dfa3974fd38aa41",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Jungle/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Jungle"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Cloud-breaching trees",
+      "_id": "b5da82f43b042318",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.b5da82f43b042318"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Towering mountains",
+      "_id": "e1dbb3a2420d21c5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.e1dbb3a2420d21c5"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Expansive rivers or wetlands",
+      "_id": "cc3ab64c069f26c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.cc3ab64c069f26c0"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Unbroken canopy",
+      "_id": "8280aa5531ce5024",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.8280aa5531ce5024"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Inland seas",
+      "_id": "874e7c94cf881ef3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.874e7c94cf881ef3"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Unusual vegetation color",
+      "_id": "6c740ca94a692287",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.6c740ca94a692287"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Massive canyons",
+      "_id": "fe2fa3e0013dda7f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.fe2fa3e0013dda7f"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Persistent cloud cover",
+      "_id": "aa9923860793693b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.aa9923860793693b"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "27c69d4ee5aa858a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.27c69d4ee5aa858a"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "1aefdc1019c22225",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3dfa3974fd38aa41.1aefdc1019c22225"
+    }
+  ],
+  "folder": "2a431921f3dabd4b",
+  "sort": 313,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!3dfa3974fd38aa41"
+}

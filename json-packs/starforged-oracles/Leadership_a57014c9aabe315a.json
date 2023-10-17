@@ -1,0 +1,172 @@
+{
+  "_id": "a57014c9aabe315a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Leadership",
+      "category": "Starforged/Oracles/Factions"
+    }
+  },
+  "name": "Leadership",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Anarchist",
+      "_id": "d08a40f3ea8102e0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.d08a40f3ea8102e0"
+    },
+    {
+      "range": [
+        6,
+        15
+      ],
+      "text": "Disputed leadership",
+      "_id": "740575a995cea8a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.740575a995cea8a9"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Authoritarian dictatorship",
+      "_id": "19811db16a4cfec2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.19811db16a4cfec2"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "Oligarchical elite",
+      "_id": "2acb11e62dd28aa8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.2acb11e62dd28aa8"
+    },
+    {
+      "range": [
+        46,
+        60
+      ],
+      "text": "Dynastic lineage",
+      "_id": "c56de78375b56543",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.c56de78375b56543"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Fated or prophesied leader",
+      "_id": "71dfebf063c2afd6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.71dfebf063c2afd6"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Clan chiefs or elders",
+      "_id": "d854b75c41c6fde4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.d854b75c41c6fde4"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Elected representatives",
+      "_id": "878b48a7358445cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.878b48a7358445cd"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Machine intelligence",
+      "_id": "16514618570b174c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.16514618570b174c"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Varied / decentralized",
+      "_id": "0c9fc3fddb70cbfb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a57014c9aabe315a.0c9fc3fddb70cbfb"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 341,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!a57014c9aabe315a"
+}

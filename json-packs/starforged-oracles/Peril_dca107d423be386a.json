@@ -1,0 +1,186 @@
+{
+  "_id": "dca107d423be386a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Community/Peril",
+      "category": "Starforged/Oracles/Derelicts/Community"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Biological infestation",
+      "_id": "bc97f04b4980d995",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.bc97f04b4980d995"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Breached or broken structure",
+      "_id": "c23d23ff258a9e56",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.c23d23ff258a9e56"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Distressing signs of mass violence or death",
+      "_id": "66fee2f22707468c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.66fee2f22707468c"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Flooded environment",
+      "_id": "f41d0d6e2bc4fb70",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.f41d0d6e2bc4fb70"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Foe lurks within concealment",
+      "_id": "3bc7bf638e32b2b3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.3bc7bf638e32b2b3"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Fragile structural integrity",
+      "_id": "3f09f9162d37362d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.3f09f9162d37362d"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Haunting vision of life here before the fall",
+      "_id": "b6b053f682789d8c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.b6b053f682789d8c"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Hazardous environmental change",
+      "_id": "192b8097564028fe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.192b8097564028fe"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Heartbreaking memento of lost lives",
+      "_id": "5bde1e9e46772030",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.5bde1e9e46772030"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "7a4c6bab3d306e49",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.7a4c6bab3d306e49"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "b409203efd6caa21",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dca107d423be386a.b409203efd6caa21"
+    }
+  ],
+  "folder": "106a2830d69bfa64",
+  "sort": 353,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!dca107d423be386a"
+}

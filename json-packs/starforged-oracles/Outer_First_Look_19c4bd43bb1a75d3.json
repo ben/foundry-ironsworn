@@ -1,0 +1,172 @@
+{
+  "_id": "19c4bd43bb1a75d3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Outer_First_Look",
+      "category": "Starforged/Oracles/Derelicts"
+    }
+  },
+  "name": "Outer First Look",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Blocked access",
+      "_id": "38d6a04a5b1492fb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.38d6a04a5b1492fb"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Corpses",
+      "_id": "b453be78dcd385f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.b453be78dcd385f0"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "Hazardous readings",
+      "_id": "acd908208ee07b67",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.acd908208ee07b67"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Mutated structure",
+      "_id": "e49f8c1e2e2e6789",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.e49f8c1e2e2e6789"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Odd orientation",
+      "_id": "7050ada8ecdbe897",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.7050ada8ecdbe897"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Overgrown or entangled",
+      "_id": "1150abc2434e3d98",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.1150abc2434e3d98"
+    },
+    {
+      "range": [
+        66,
+        80
+      ],
+      "text": "Sending a signal or message",
+      "_id": "825935543a7b570d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.825935543a7b570d"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Signs that others are here",
+      "_id": "c0449d41b7db783b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.c0449d41b7db783b"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Stripped exterior",
+      "_id": "bb23fc51b2698ab9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.bb23fc51b2698ab9"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Time or reality distortions",
+      "_id": "f96de39cfb2b2401",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19c4bd43bb1a75d3.f96de39cfb2b2401"
+    }
+  ],
+  "folder": "fd19a02fbd5f71e6",
+  "sort": 349,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!19c4bd43bb1a75d3"
+}

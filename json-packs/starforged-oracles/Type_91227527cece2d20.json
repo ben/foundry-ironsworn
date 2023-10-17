@@ -1,0 +1,340 @@
+{
+  "_id": "91227527cece2d20",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Starships/Type",
+      "category": "Starforged/Oracles/Starships"
+    }
+  },
+  "name": "Type",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Carrier (Launches fighters)",
+      "_id": "382ab6bbfbafc2da",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.382ab6bbfbafc2da"
+    },
+    {
+      "range": [
+        3,
+        6
+      ],
+      "text": "Corvette (Light attack ship)",
+      "_id": "27edde7f9a50060b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.27edde7f9a50060b"
+    },
+    {
+      "range": [
+        7,
+        11
+      ],
+      "text": "Courier (Fast transport)",
+      "_id": "0da4daa3edf86b8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.0da4daa3edf86b8f"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Cruiser (Medium attack ship)",
+      "_id": "fff0f8e1a7445d72",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.fff0f8e1a7445d72"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Dreadnought (Heavy attack ship)",
+      "_id": "1a5f0d3988899ee7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.1a5f0d3988899ee7"
+    },
+    {
+      "range": [
+        17,
+        19
+      ],
+      "text": "Escape pod (Survival craft)",
+      "_id": "fad4f62050687849",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.fad4f62050687849"
+    },
+    {
+      "range": [
+        20,
+        22
+      ],
+      "text": "Foundry (Mobile construction platform)",
+      "_id": "55c947769f3b415a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.55c947769f3b415a"
+    },
+    {
+      "range": [
+        23,
+        27
+      ],
+      "text": "Harvester (Fuel or energy excavator)",
+      "_id": "cacd7964713e65b2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.cacd7964713e65b2"
+    },
+    {
+      "range": [
+        28,
+        33
+      ],
+      "text": "Hauler (Heavy transport)",
+      "_id": "4918bddf61fe74aa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.4918bddf61fe74aa"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Hunter (Stealthy attack ship)",
+      "_id": "04e6ae09e560ca89",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.04e6ae09e560ca89"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Ironhome (Habitat)",
+      "_id": "4c24cc26f803d1bf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.4c24cc26f803d1bf"
+    },
+    {
+      "range": [
+        39,
+        42
+      ],
+      "text": "Mender (Utility or repair)",
+      "_id": "543e8f03937e3266",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.543e8f03937e3266"
+    },
+    {
+      "range": [
+        43,
+        47
+      ],
+      "text": "Outbounder (Remote survey or research)",
+      "_id": "458e73067fc3f614",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.458e73067fc3f614"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Pennant (Command ship)",
+      "_id": "f4bd5bd4f14e3927",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.f4bd5bd4f14e3927"
+    },
+    {
+      "range": [
+        51,
+        56
+      ],
+      "text": "Prospector (Mineral excavator)",
+      "_id": "5959206cb995782e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.5959206cb995782e"
+    },
+    {
+      "range": [
+        57,
+        61
+      ],
+      "text": "Reclaimer (Salvage or rescue)",
+      "_id": "3b371a2b03acc59d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.3b371a2b03acc59d"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Shuttle (Short-range transport)",
+      "_id": "d4f0ce4f0329fcf8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.d4f0ce4f0329fcf8"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Snub fighter (Small attack craft)",
+      "_id": "dcc3949c31cff5ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.dcc3949c31cff5ad"
+    },
+    {
+      "range": [
+        68,
+        82
+      ],
+      "text": "Multipurpose (<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Starships/Mission\"><i class=\"fa fa-caret-right\"></i> Starship Mission</a>)",
+      "_id": "62d1377dfd900596",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.62d1377dfd900596"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Unusual or unknown",
+      "_id": "2dc09c09f35721d6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.2dc09c09f35721d6"
+    },
+    {
+      "range": [
+        85,
+        94
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Starships/Fleet\"><i class=\"fa fa-caret-right\"></i> Fleet</a>",
+      "_id": "c40524f7f1c67879",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.c40524f7f1c67879"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Ships in conflict (roll twice)",
+      "_id": "9deae28c6dec3179",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!91227527cece2d20.9deae28c6dec3179"
+    }
+  ],
+  "folder": "eea3419c88a919cd",
+  "sort": 326,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!91227527cece2d20"
+}

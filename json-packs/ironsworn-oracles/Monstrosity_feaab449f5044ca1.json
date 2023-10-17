@@ -1,0 +1,23 @@
+{
+  "name": "Monstrosity",
+  "_id": "feaab449f5044ca1",
+  "type": "RollTable",
+  "description": "Discover the nature of a nightspawn or other frightful creature within your world.",
+  "sort": 1214,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Monstrosity"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021121,
+    "modifiedTime": 1695949021121,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!feaab449f5044ca1"
+}

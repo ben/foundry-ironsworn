@@ -1,0 +1,22 @@
+{
+  "name": "Settlements",
+  "_id": "4adfe9fc794d193e",
+  "type": "RollTable",
+  "sort": 310,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave/Settlements"
+    }
+  },
+  "folder": "caa4a9957ef73507",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!4adfe9fc794d193e"
+}

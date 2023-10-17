@@ -1,0 +1,89 @@
+{
+  "_id": "0daf0460e4faa6fa",
+  "type": "sfmove",
+  "name": "Finish the Scene",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Scene_Challenge/Finish_the_Scene",
+    "Category": "Starforged/Moves/Scene_Challenge",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "**When the scene challenge tension clock or progress track is filled, or when events lead to the scene’s conclusion**, roll the challenge dice and compare to your progress.\n\nOn a **strong hit**, you achieve your objective unconditionally.\n\nOn a **weak hit**, you succeed, but not without cost. You must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. Make this a minor cost relative to the scope of the scene.\n\nOn a **miss**, you fail or are undermined by a dire and costly turn of events. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When the scene challenge tension clock or progress track is filled, or when events lead to the scene’s conclusion...",
+      "Options": [
+        {
+          "Roll type": "Progress roll",
+          "Method": "Any",
+          "Using": [
+            "Scene Challenge"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You achieve your objective unconditionally.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You succeed, but not without cost. You must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. Make this a minor cost relative to the scope of the scene.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You fail, or are undermined by a dramatic and costly turn of events. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. Make it hurt.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 241
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#3C70A4",
+      "Images": []
+    }
+  },
+  "sort": 241,
+  "folder": "7ac4a2bdc711c6b6",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!0daf0460e4faa6fa"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "5030865f2f1bcb60",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Monstrosity/Size",
+      "category": "Ironsworn/Oracles/Monstrosity"
+    }
+  },
+  "name": "Size",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Tiny (rodent-sized)",
+      "_id": "f769a2795845a13b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5030865f2f1bcb60.f769a2795845a13b"
+    },
+    {
+      "range": [
+        6,
+        30
+      ],
+      "text": "Small (hound-sized)",
+      "_id": "f4ede666c2334717",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5030865f2f1bcb60.f4ede666c2334717"
+    },
+    {
+      "range": [
+        31,
+        65
+      ],
+      "text": "Medium (person-sized)",
+      "_id": "9bc3c87ba87475a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5030865f2f1bcb60.9bc3c87ba87475a3"
+    },
+    {
+      "range": [
+        66,
+        94
+      ],
+      "text": "Large (giant-sized)",
+      "_id": "d2a6a13fb664c71b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5030865f2f1bcb60.d2a6a13fb664c71b"
+    },
+    {
+      "range": [
+        95,
+        99
+      ],
+      "text": "Huge (whale-sized)",
+      "_id": "c3aff52167543ebc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5030865f2f1bcb60.c3aff52167543ebc"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Titanic (incomprehensible)",
+      "_id": "34f01833de9da856",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5030865f2f1bcb60.34f01833de9da856"
+    }
+  ],
+  "folder": "feaab449f5044ca1",
+  "sort": 1214,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!5030865f2f1bcb60"
+}

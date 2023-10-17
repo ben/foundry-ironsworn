@@ -1,0 +1,186 @@
+{
+  "_id": "aaaa354071686ca8",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Living/Peril",
+      "category": "Starforged/Oracles/Derelicts/Living"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Booby trap",
+      "_id": "ceef99cbdf731a4f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.ceef99cbdf731a4f"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Distressing written message",
+      "_id": "095cd755c61101d8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.095cd755c61101d8"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Disturbing evidence of exploitive living conditions",
+      "_id": "4aa5e994296b3706",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.4aa5e994296b3706"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Dreadful scene of death or violence",
+      "_id": "ba90a170015c8a51",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.ba90a170015c8a51"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Lured into danger by signs of life",
+      "_id": "c64f980ebcd7e8a0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.c64f980ebcd7e8a0"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Recorded message reveals a threat or complication",
+      "_id": "083fcf1d084a854c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.083fcf1d084a854c"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Sealed door or hatch blocks access",
+      "_id": "cb731316b8596c5b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.cb731316b8596c5b"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Signs of unwelcome invaders",
+      "_id": "e85a8050c4dc9e02",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.e85a8050c4dc9e02"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Unsettling sound or disturbance",
+      "_id": "f81a448b9af280e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.f81a448b9af280e5"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "fe61f1628d612e57",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.fe61f1628d612e57"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "a490e1ca405a9f07",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!aaaa354071686ca8.a490e1ca405a9f07"
+    }
+  ],
+  "folder": "026e85bc4b8047b8",
+  "sort": 355,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!aaaa354071686ca8"
+}

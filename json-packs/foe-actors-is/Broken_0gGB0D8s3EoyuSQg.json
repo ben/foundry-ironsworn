@@ -1,0 +1,116 @@
+{
+  "_id": "0gGB0D8s3EoyuSQg",
+  "name": "Broken",
+  "type": "foe",
+  "img": "icons/creatures/mammals/humanoid-fox-cat-archer.webp",
+  "data": {},
+  "token": {
+    "name": "Broken",
+    "img": "icons/creatures/mammals/humanoid-fox-cat-archer.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "yjzi4hgxl7RAVKAE",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!0gGB0D8s3EoyuSQg.yjzi4hgxl7RAVKAE"
+    },
+    {
+      "_id": "qiVd26rbzwsU4eae",
+      "name": "Broken",
+      "type": "progress",
+      "img": "icons/creatures/mammals/humanoid-fox-cat-archer.webp",
+      "data": {
+        "description": "\n\n<h2>Broken</h2>\n\n<p>Another people sailed to the Ironlands from the Old World long before our kin settled here. Something happened. Something changed them.</p>\n<p> Whether it was the long struggle in a harsh land, the ravages of war, or the corruption of some dark force, they left their humanity behind and became what we call the broken. Now, they exist only to kill, to destroy.</p>\n<p>We fear the broken for their savagery. But, more than this, we fear them as a dark portent of what we might one day become.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Crazed eyes</p>\n    <p class=\"nogrow\">Painted skin</p>\n    <p class=\"nogrow\">Feral Screams</p>\n    <p class=\"nogrow\">Scavenged clothing and weapons</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Show my power</p>\n    <p class=\"nogrow\">Share my pain</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Spring from hiding</p>\n    <p class=\"nogrow\">Ferocious attacks</p>\n  </div>\n</div>\n\n<em><p>Years ago, an Ironlander child was taken by a broken tribe. Now they are seen living among them. What is your connection to this person? Can they be brought home, or are they forever lost?</p></em>\n\n\n<h2>Ironlander</h2>\n<p>Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.</p>\n<p>This section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can <em>Ask the Oracle</em>, or follow these guidelines:</p>\n<ul>\n<li><p>A common citizen or brute is <strong>troublesome</strong>.</p>\n</li>\n<li><p>A trained warrior is <strong>dangerous</strong>.</p>\n</li>\n<li><p>A powerful or veteran warrior is <strong>formidable</strong>.</p>\n</li>\n</ul>\n",
+        "rank": 1,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!0gGB0D8s3EoyuSQg.qiVd26rbzwsU4eae"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!0gGB0D8s3EoyuSQg"
+}

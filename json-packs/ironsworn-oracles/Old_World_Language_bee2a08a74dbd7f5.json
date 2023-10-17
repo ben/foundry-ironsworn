@@ -1,0 +1,172 @@
+{
+  "_id": "bee2a08a74dbd7f5",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Name/Old_World_Language",
+      "category": "Ironsworn/Oracles/Settlement"
+    }
+  },
+  "name": "Old World Language",
+  "description": "<p><strong>A word in an Old World language.</strong> What culture is represented by this word? What does it translate to?</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Abon",
+      "_id": "9a593a08cef5b535",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.9a593a08cef5b535"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Daveza",
+      "_id": "2fa56cc2dbf0a19f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.2fa56cc2dbf0a19f"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Damula",
+      "_id": "5530f4a77959019b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.5530f4a77959019b"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Essus",
+      "_id": "86f80c1784ba9e71",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.86f80c1784ba9e71"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Sina",
+      "_id": "5dc3186fafd89d78",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.5dc3186fafd89d78"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Kazeera",
+      "_id": "0d02ba6d5048bbed",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.0d02ba6d5048bbed"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Khazu",
+      "_id": "3b3d75b75fa64c06",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.3b3d75b75fa64c06"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Sova",
+      "_id": "2396c0e5d9d4bb13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.2396c0e5d9d4bb13"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Nabuma",
+      "_id": "bc77f27c01a8158b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.bc77f27c01a8158b"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tiza",
+      "_id": "a8ad47c693a2bcf9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bee2a08a74dbd7f5.a8ad47c693a2bcf9"
+    }
+  ],
+  "folder": "11b98f1da8f07aa2",
+  "sort": 178,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!bee2a08a74dbd7f5"
+}

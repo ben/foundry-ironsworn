@@ -1,0 +1,210 @@
+{
+  "name": "Lifeforms",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Lifeforms",
+      "type": "truth-category"
+    }
+  },
+  "_id": "2KEGSudMvEsM82Pr",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "This is a perilous and often inhospitable galaxy, but life finds a way.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Lifeforms/1-33",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "This is a perilous and often inhospitable galaxy, but life finds a way.",
+        "Description": "Life in the Forge is diverse. Planets are often home to a vast array of creatures, and our starships cruise with spaceborne lifeforms riding their wake. Even animals from our homeworld—carried aboard the Exodus ships—have adapted to live with us in the Forge.",
+        "Quest": "On a scorching, barren planet wracked by massive storms, miners delve beneath the sands to gather valuable ore. But dangerous lifeforms live in the cool places beneath the surface, and several encounters have taken a deadly toll on the miners. Work is at a standstill. How are you involved?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "NKVfSurWf1U39uA8",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022536,
+        "modifiedTime": 1695949022536,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!2KEGSudMvEsM82Pr.NKVfSurWf1U39uA8"
+    },
+    {
+      "type": "truth",
+      "name": "Many sites and planets are infested by dreadful forgespawn. These aberrant creatures threaten to overrun other life in the galaxy.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Lifeforms/34-67",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Many sites and planets are infested by dreadful forgespawn. These aberrant creatures threaten to overrun other life in the galaxy.",
+        "Description": "The forgespawn are hostile creatures born of the chaotic energies of this galaxy. Hundreds of abandoned or devastated outposts and derelict ships stand as testament to their dreadful power and cunning.",
+        "Quest": "A faction is said to be experimenting with forgespawn DNA to create a new biological superweapon. Where are these dangerous tests being conducted?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "oJxto1L1XxHLhces",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022543,
+        "modifiedTime": 1695949022543,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!2KEGSudMvEsM82Pr.oJxto1L1XxHLhces"
+    },
+    {
+      "type": "truth",
+      "name": "Life in the Forge was seeded and engineered by the Essentia, ancient entities who enact their inscrutable will in this galaxy.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Lifeforms/68-100",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Life in the Forge was seeded and engineered by the Essentia, ancient entities who enact their inscrutable will in this galaxy.",
+        "Description": "The Essentia are the architects of life within the Forge. These omniscient beings are rarely encountered, and have powers and purpose beyond our comprehension. Some worship them. Others resist or rebel against them. But trying to defy the will of the Essentia is like standing at the shore of an ocean to thwart the tide. They are inevitable.",
+        "Quest": "An eccentric xenologist believes the genomes of life within the Forge don't just show commonalities—they are in fact a coded message from the Essentia. But there are still significant gaps, and the truth may only be revealed with additional samples. What is your stake in this project?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "fZOqF7mX81I80vLg",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022553,
+        "modifiedTime": 1695949022553,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!2KEGSudMvEsM82Pr.fZOqF7mX81I80vLg"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you have an expertise in lifeforms and planetary environments, you might be a NATURALIST. If you are accompanied on your adventures by a native creature, they might be a companion such as a BANSHEE, GLOWCAT, VOIDGLIDER, ROCKHORN, SPRITE, or SYMBIOTE.",
+        "format": 2,
+        "content": "<p>If you have an expertise in lifeforms and planetary environments, you might be a NATURALIST. If you are accompanied on your adventures by a native creature, they might be a companion such as a BANSHEE, GLOWCAT, VOIDGLIDER, ROCKHORN, SPRITE, or SYMBIOTE.</p>"
+      },
+      "flags": {
+        "foundry-ironsworn": {
+          "assets": [
+            "Starforged/Assets/Path/Naturalist",
+            "Starforged/Assets/Companion/Banshee",
+            "Starforged/Assets/Companion/Glowcat",
+            "Starforged/Assets/Companion/Voidglider",
+            "Starforged/Assets/Companion/Rockhorn",
+            "Starforged/Assets/Companion/Sprite",
+            "Starforged/Assets/Companion/Symbiote"
+          ]
+        }
+      },
+      "_id": "S3m82hkNadkukqJi",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022559,
+        "modifiedTime": 1695949022559,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!2KEGSudMvEsM82Pr.S3m82hkNadkukqJi"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022524,
+    "modifiedTime": 1695949022559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!journal!2KEGSudMvEsM82Pr"
+}

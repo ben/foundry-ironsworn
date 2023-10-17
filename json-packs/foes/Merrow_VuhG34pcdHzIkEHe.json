@@ -1,0 +1,20 @@
+{
+  "name": "Merrow",
+  "type": "progress",
+  "img": "icons/creatures/fish/fish-man-eye-green.webp",
+  "data": {
+    "description": "\n\n<h2>Merrow</h2>\n\n<p>These semiaquatic beings dwell within coastal waters, sea caves, and saltwater marshes. They are fierce protectors of their realm, driven by a zealous devotion to their gods. Their eyes are large and glossy black. They have hunched forms and long limbs, and move with deadly grace in watery environments. Their language is a cacophony of clicks, low grunts, and whistles.</p>\n<p>They war against the atanya clans, rarely interact with other firstborn, and are openly hostile to Ironlanders. They emerge from their sunken lairs to swarm over ships or coastal settlements, dragging their victims into the depths. As night falls, the people of seaside villages light their torches, ward their gates, and keep an eye to the waters.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Gray scaled skin</p>\n    <p class=\"nogrow\">Bulbous eyes</p>\n    <p class=\"nogrow\">Webbed claws</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Blood for the deep gods</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Swarm and overwhelm</p>\n    <p class=\"nogrow\">Entangle in nets</p>\n    <p class=\"nogrow\">Drag back to the depths</p>\n  </div>\n</div>\n\n<em><p>Sailors speak in hushed tones of a large merrow, its skin translucent white, wielding a wicked stone blade. It strikes out from a hidden <strong>Fortified Sea Cave</strong> to raid indiscriminately. This merrow and its clan take no prisoners, instead performing bloodletting rituals aboard the ships they attack. What is the origin of this leader? What is the purpose of these violent rituals?</p></em>\n\n<em><p>The merrow worship one god above all others. What form does it take? What does it demand of its supplicants?</p></em>\n\n<h2>Firstborn</h2>\n<p>The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory.</p>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "VuhG34pcdHzIkEHe",
+  "_key": "!items!VuhG34pcdHzIkEHe"
+}

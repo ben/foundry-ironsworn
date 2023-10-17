@@ -1,0 +1,326 @@
+{
+  "_id": "923af7927992abad",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Creatures/Encountered_Behavior",
+      "category": "Starforged/Oracles/Creatures"
+    }
+  },
+  "name": "Encountered Behavior",
+  "description": "<p>Roll once on the Encountered Behavior table to define this creature’s motivation and frame how the encounter begins.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Ambusher",
+      "_id": "e16055b19b71d574",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.e16055b19b71d574"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Apex predator",
+      "_id": "b96f461728573f7b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.b96f461728573f7b"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Builder",
+      "_id": "4494bc4304f933fe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.4494bc4304f933fe"
+    },
+    {
+      "range": [
+        15,
+        19
+      ],
+      "text": "Camouflager",
+      "_id": "7ab7f03e7183b0ea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.7ab7f03e7183b0ea"
+    },
+    {
+      "range": [
+        20,
+        24
+      ],
+      "text": "Forager",
+      "_id": "0921bed117bd35d8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.0921bed117bd35d8"
+    },
+    {
+      "range": [
+        25,
+        29
+      ],
+      "text": "Grazer",
+      "_id": "ea4ae8e3d64ec64d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.ea4ae8e3d64ec64d"
+    },
+    {
+      "range": [
+        30,
+        33
+      ],
+      "text": "Herder",
+      "_id": "63d83cf6df6fe808",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.63d83cf6df6fe808"
+    },
+    {
+      "range": [
+        34,
+        37
+      ],
+      "text": "Hibernator",
+      "_id": "6eff5b86c0b6a78e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.6eff5b86c0b6a78e"
+    },
+    {
+      "range": [
+        38,
+        41
+      ],
+      "text": "Hoarder",
+      "_id": "faafd4901e761045",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.faafd4901e761045"
+    },
+    {
+      "range": [
+        42,
+        46
+      ],
+      "text": "Hunter",
+      "_id": "b0373ece9751351f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.b0373ece9751351f"
+    },
+    {
+      "range": [
+        47,
+        51
+      ],
+      "text": "Lurer",
+      "_id": "f744cab936e0fb98",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.f744cab936e0fb98"
+    },
+    {
+      "range": [
+        52,
+        55
+      ],
+      "text": "Migratory",
+      "_id": "b36c91570bd6f059",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.b36c91570bd6f059"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Mimic",
+      "_id": "64e7e9408b6f93d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.64e7e9408b6f93d1"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Nester",
+      "_id": "77c5ef1aa3922266",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.77c5ef1aa3922266"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Pack hunter",
+      "_id": "dedd2c5cc27cb28c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.dedd2c5cc27cb28c"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Prey",
+      "_id": "f3dd82f17b8f3bb9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.f3dd82f17b8f3bb9"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Protector",
+      "_id": "994f1fe83ce48855",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.994f1fe83ce48855"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Scavenger",
+      "_id": "2a08c5553873aa59",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.2a08c5553873aa59"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Tracker",
+      "_id": "abe61f9d2f7e7928",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.abe61f9d2f7e7928"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Trapper",
+      "_id": "573e9a5f08153073",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.573e9a5f08153073"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "3a5b58d99c296bea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!923af7927992abad.3a5b58d99c296bea"
+    }
+  ],
+  "folder": "5b1e2f2fead08924",
+  "sort": 338,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!923af7927992abad"
+}

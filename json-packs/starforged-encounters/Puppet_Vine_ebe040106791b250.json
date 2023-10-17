@@ -1,0 +1,35 @@
+{
+  "_id": "ebe040106791b250",
+  "type": "progress",
+  "name": "Puppet Vine",
+  "img": "icons/magic/nature/plant-vines-skull-green.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Writhing tendrils sprouting from a desiccated host</p>\n    <p class=\"nogrow\">Barbed thorns dripping with ichor</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Seek out new hosts</p>\n    <p class=\"nogrow\">Grow and consume</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Entangle with thorny vines</p>\n    <p class=\"nogrow\">Implant seeds</p>\n    <p class=\"nogrow\">Seize control of a host&#x27;s body</p>\n  </div>\n</div>\n\n<p>A puppet vine is a parasitic, plant-like entity. It is usually encountered as thorny, fleshy tendrils sprouting from the dessicated corpse of an unwilling host—a creature or careless explorer. That victim, skin shriveled tight against their bones, mouth agape in a silent scream, is made a horrific marionette as the vine takes control of their motor functions to send them shambling about in search of new hosts.</p>\n<p>When the vine encounters a potential victim, it lashes out, entangling them, cutting into their flesh with hollow thorns. It uses those thorns to implant microscopic seeds. After a few hours, the seeds mature and sprout. Unless stopped, the fast-growing tendrils course greedily through the victim's body, consuming the fluids within. Then, the vines burst forth to begin the cycle anew.</p>\n\n<blockquote>Quest Starter: <p>At a remote settlement, a settler is attacked by a puppet vine and infected. The outpost's fast-thinking healer puts the victim in stasis, stopping—for now—the sprouting and spread of the vines. But time is of the essence. They need someone to transport the stasis pod and its unfortunate occupant to a distant facility for treatment, and your ship is the only one currently planetside. What do they offer to gain your help in this risky mission?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.32c14ce244acc7a0]{Flowering Puppet Vine}</li>\n</ul>",
+    "rank": 4,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021144,
+    "modifiedTime": 1695949021144,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!ebe040106791b250"
+}

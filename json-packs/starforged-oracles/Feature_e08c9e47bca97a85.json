@@ -1,0 +1,214 @@
+{
+  "_id": "e08c9e47bca97a85",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Ruined/Feature",
+      "category": "Starforged/Oracles/Location_Themes/Ruined"
+    }
+  },
+  "name": "Feature",
+  "description": "<p>Use this table to reveal a new aspect of the location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Collapsed or broken structures or terrain",
+      "_id": "e3b5c8b6e5aab7b2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.e3b5c8b6e5aab7b2"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Device or artifact with residual power or function",
+      "_id": "a7b2bfaf260c7eb7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.a7b2bfaf260c7eb7"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Focal point or nexus of the destruction",
+      "_id": "0a53dfe289137a3b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.0a53dfe289137a3b"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Graves or corpses",
+      "_id": "b113471330118e68",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.b113471330118e68"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Innermost or hidden spaces laid bare by the destruction",
+      "_id": "a4206bea79b44db8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.a4206bea79b44db8"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Message or recording from before the fall",
+      "_id": "a5fab9830e3a3e87",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.a5fab9830e3a3e87"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Overgrown or entombed spaces",
+      "_id": "079b51e2b12f017a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.079b51e2b12f017a"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Rubble-strewn paths",
+      "_id": "5fef7bcc4c3ae3dd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.5fef7bcc4c3ae3dd"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Sad memento of a lost life",
+      "_id": "3d87245307792723",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.3d87245307792723"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Sights or sounds of structural instability",
+      "_id": "bd278362dc50e293",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.bd278362dc50e293"
+    },
+    {
+      "range": [
+        81,
+        88
+      ],
+      "text": "Signs of looting or scavenging",
+      "_id": "de5fbb4333f06f76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.de5fbb4333f06f76"
+    },
+    {
+      "range": [
+        89,
+        96
+      ],
+      "text": "Survivors or guardians dwell among the ruins",
+      "_id": "5337698f4f75c9cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.5337698f4f75c9cf"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "078446eee997f60d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e08c9e47bca97a85.078446eee997f60d"
+    }
+  ],
+  "folder": "41a0a952f57f45cf",
+  "sort": 378,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e08c9e47bca97a85"
+}

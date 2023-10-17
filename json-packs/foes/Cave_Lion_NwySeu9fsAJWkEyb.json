@@ -1,0 +1,20 @@
+{
+  "name": "Cave Lion",
+  "type": "progress",
+  "img": "icons/creatures/abilities/lion-roar-yellow.webp",
+  "data": {
+    "description": "\n\n<h2>Cave Lion</h2>\n\n<p>Cave lions are sleek, powerful creatures who dwell primarily in the Hinterlands and Tempest Hills. They lair in caverns and other hidden places, emerging to hunt prey such as deer, boar, and rodents. They are typically solitary creatures, but have been seen working together to bring down larger quarry. Even a mammoth is no match for a determined pack of cave lions.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Feline grace</p>\n    <p class=\"nogrow\">Tawny, striped coat</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Hunt</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Stalk prey</p>\n    <p class=\"nogrow\">Leap and bite</p>\n    <p class=\"nogrow\">Intimidating roar</p>\n  </div>\n</div>\n\n<em><p>A large cave lion kills livestock in outlying Ironlander steadings, and attacked a farmer. It hunts well beyond its usual territory, and is said to lair in a <strong>Wild Cavern</strong>. What has driven this beast from its hunting grounds?</p></em>\n\n\n<h2>Animal</h2>\n<p>Animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the Old World.</p>\n<p>Most wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, <em>Resupply</em> (page 63) can represent hunting for deer or small game.</p>\n<p>A few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.</p>\n",
+    "rank": 3,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "NwySeu9fsAJWkEyb",
+  "_key": "!items!NwySeu9fsAJWkEyb"
+}

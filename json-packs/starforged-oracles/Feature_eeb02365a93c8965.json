@@ -1,0 +1,242 @@
+{
+  "_id": "eeb02365a93c8965",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Tainted/Feature",
+      "category": "Starforged/Oracles/Planets/Tainted"
+    }
+  },
+  "name": "Feature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Caustic gas storms",
+      "_id": "a04610749733ed85",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.a04610749733ed85"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Corrosive, low-lying fog",
+      "_id": "75e71b2149c33e75",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.75e71b2149c33e75"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Fungus-encrusted caves",
+      "_id": "f49eb6a6a02cde3e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.f49eb6a6a02cde3e"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Gelatinous ponds",
+      "_id": "ed747f2d779c5f31",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.ed747f2d779c5f31"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Hallucinogenic toxins",
+      "_id": "46b77d072bba4a06",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.46b77d072bba4a06"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Layers of fast-growing lichen",
+      "_id": "fbea3a7c25fe93cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.fbea3a7c25fe93cf"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Moldering bones",
+      "_id": "29643f22ab02e5b2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.29643f22ab02e5b2"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Mutated flora",
+      "_id": "57b39b3e3525af90",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.57b39b3e3525af90"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Poisonous gas vents",
+      "_id": "84c391d8d63d5605",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.84c391d8d63d5605"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Spore clouds",
+      "_id": "5b40e2f73ebc36a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.5b40e2f73ebc36a3"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Terrain marred by fleshy pustules",
+      "_id": "adf4474ec816b11c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.adf4474ec816b11c"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Toxic rain",
+      "_id": "0e32eb09a5b5d1c3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.0e32eb09a5b5d1c3"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Virulent fungal infestations",
+      "_id": "f6bd5b055d691424",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.f6bd5b055d691424"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "53ff50b92040fa3a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.53ff50b92040fa3a"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (planetside)</a>",
+      "_id": "29fc1fbbc7e2a56d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eeb02365a93c8965.29fc1fbbc7e2a56d"
+    }
+  ],
+  "folder": "98454829527950a0",
+  "sort": 317,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!eeb02365a93c8965"
+}

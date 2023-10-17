@@ -1,0 +1,494 @@
+{
+  "_id": "cfac08ca2345cbed",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Rumors",
+      "category": "Starforged/Oracles/Factions"
+    }
+  },
+  "name": "Rumors",
+  "description": "<p>Use this table when you are in a position to investigate a faction by uncovering secrets or fishing for gossip.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Caught in the crossfire of feuding factions",
+      "_id": "02fa67304997e7c5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.02fa67304997e7c5"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Colluding with a criminal enterprise",
+      "_id": "f60c4023470f3378",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.f60c4023470f3378"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Corrupted by a dangerous power",
+      "_id": "7b454b7abedeae76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.7b454b7abedeae76"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Critical resource is in short supply",
+      "_id": "1a46182a89bac161",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.1a46182a89bac161"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Defenses are overextended",
+      "_id": "a67bee1b2034d8a5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.a67bee1b2034d8a5"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Developing revolutionary technology",
+      "_id": "8ecd99f8c4d034d6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.8ecd99f8c4d034d6"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Digital systems are corrupted or infiltrated",
+      "_id": "0f64f0119b4f4b5c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.0f64f0119b4f4b5c"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Heavily in debt",
+      "_id": "ed7a7ddc5a461049",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.ed7a7ddc5a461049"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Hit hard by a recent attack or calamity",
+      "_id": "2906048423b504f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.2906048423b504f0"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Holds a powerful artifact",
+      "_id": "c19ec3cb7f36c6ea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.c19ec3cb7f36c6ea"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Holds incriminating information against a leader or faction",
+      "_id": "14616158e78bbcf2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.14616158e78bbcf2"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Hoarding a valuable commodity",
+      "_id": "1ff6ae8fb552183f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.1ff6ae8fb552183f"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Infiltrated by a rival faction",
+      "_id": "f5097e143c8bde77",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.f5097e143c8bde77"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Knows the location of a fabled treasure or lost technology",
+      "_id": "90ec8a3f199955cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.90ec8a3f199955cf"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Leaders are haunted by a dark prophecy",
+      "_id": "16996e94409b333e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.16996e94409b333e"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Leaders are incompetent",
+      "_id": "c2970bc2199a9e3b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.c2970bc2199a9e3b"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Leaders are puppets of another power or faction",
+      "_id": "e176c7505e213fff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.e176c7505e213fff"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Lesser members of the leadership are plotting a coup",
+      "_id": "b25f5e034310b205",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.b25f5e034310b205"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "New belief or religion is creating a schism among members",
+      "_id": "dcdda701d8e8885c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.dcdda701d8e8885c"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Operations are a false front for their true purpose",
+      "_id": "2423160279b16f4b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.2423160279b16f4b"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Overdependence on a failing or vulnerable technology",
+      "_id": "973127cf8a5da561",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.973127cf8a5da561"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Plagued by infighting and low morale",
+      "_id": "77f92f3c7b0a407f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.77f92f3c7b0a407f"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Plotting to betray an allied faction",
+      "_id": "b6ba0c3d0c3ed828",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.b6ba0c3d0c3ed828"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Preparing a major offensive or operation",
+      "_id": "7dc80e79b3600340",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.7dc80e79b3600340"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Pulling the strings of a leader or faction",
+      "_id": "ef7ae3180003e125",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.ef7ae3180003e125"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Recently acquired an unexpected fortune",
+      "_id": "e0295f575d0ba0fe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.e0295f575d0ba0fe"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Secretly supporting a reviled faction",
+      "_id": "2917008abf4338f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.2917008abf4338f0"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Sheltering an infamous or dangerous fugitive",
+      "_id": "94a28809ba95eaec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.94a28809ba95eaec"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Suffered destructive sabotage from within",
+      "_id": "006160753b1520ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.006160753b1520ae"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Suffering a shortage of key workers or personnel",
+      "_id": "32f3351bd341c6a7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.32f3351bd341c6a7"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "Uprising or revolt is brewing from within",
+      "_id": "bc5deaf9497fc6ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.bc5deaf9497fc6ae"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "Vulnerable to attack or aggression",
+      "_id": "b63f54b1782fe033",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.b63f54b1782fe033"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "e46ba4e8d06fe5f1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!cfac08ca2345cbed.e46ba4e8d06fe5f1"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 347,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!cfac08ca2345cbed"
+}

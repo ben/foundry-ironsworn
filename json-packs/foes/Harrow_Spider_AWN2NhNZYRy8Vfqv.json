@@ -1,0 +1,20 @@
+{
+  "name": "Harrow Spider",
+  "type": "progress",
+  "img": "icons/creatures/invertebrates/spider-web-black.webp",
+  "data": {
+    "description": "\n\n<h2>Harrow Spider</h2>\n\n<p>These gigantic creatures are a menace in woodlands throughout the Ironlands. Despite their size, they move through high branches with unnatural grace, dropping suddenly to grapple their prey and entomb them in webbing.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Massive fangs</p>\n    <p class=\"nogrow\">Long legs and bloated body</p>\n    <p class=\"nogrow\">Eight iridescent black eyes</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Lurk</p>\n    <p class=\"nogrow\">Feed</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Drop atop prey</p>\n    <p class=\"nogrow\">Bite with pincers</p>\n    <p class=\"nogrow\">Trap in webbing</p>\n  </div>\n</div>\n\n<em><p>A brood of harrow spiders attacked a contingent of Ironlanders. The single survivor tells of the horrifying encounter and the monstrous brood mother—a harrow spider larger and stronger than a warhorse. What was this group’s mission? What important item are you sworn to recover from one of the victims?</p></em>\n\n\n<h2>Beast</h2>\n<p>Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the Old World.</p>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "AWN2NhNZYRy8Vfqv",
+  "_key": "!items!AWN2NhNZYRy8Vfqv"
+}

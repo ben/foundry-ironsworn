@@ -1,0 +1,89 @@
+{
+  "_id": "3de42d2d3cb78855",
+  "type": "sfmove",
+  "name": "Sojourn",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Recover/Sojourn",
+    "Category": "Starforged/Moves/Recover",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you spend time recovering within a community**, roll +heart.\n\nOn a **strong hit**, this is a safe refuge. You and your allies may each choose two recover moves: @Compendium[foundry-ironsworn.starforgedmoves.2051538f0c9d5d27]{Heal}, @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten}, @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair}, or @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply}. Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.\n\nOn a **weak hit**, as above, but time is short or resources are strained. You and your allies each make one recover move instead of two, with no more than three moves total among the group.\n\nOn a **miss**, choose one.\n\n  * The community needs your help, or makes a costly demand in exchange for safe harbor. Envision what they ask of you. If you do it, or @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to see it done, resolve this move as a strong hit.\n  * You find no relief, and the situation grows worse. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you spend time recovering within a community...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "This is a safe refuge. You and your allies may each choose two recover moves: @Compendium[foundry-ironsworn.starforgedmoves.2051538f0c9d5d27]{Heal}, @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten}, @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair}, or @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply}. Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "This is a safe refuge, but time is short or resources are strained. You and your allies may each make one recover move (with no more than three moves total among the group): @Compendium[foundry-ironsworn.starforgedmoves.2051538f0c9d5d27]{Heal}, @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten}, @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair}, or @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply}. Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Choose one.\n\n  * The community needs your help, or makes a costly demand in exchange for safe harbor. Envision what they ask of you. If you do it, or @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to see it done, resolve this move as a strong hit.\n  * You find no relief, and the situation grows worse. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 209
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#179F0E",
+      "Images": []
+    }
+  },
+  "sort": 209,
+  "folder": "5ba869fa7c31abdd",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!3de42d2d3cb78855"
+}

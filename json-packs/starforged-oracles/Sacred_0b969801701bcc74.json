@@ -1,0 +1,23 @@
+{
+  "name": "Sacred",
+  "_id": "0b969801701bcc74",
+  "type": "RollTable",
+  "description": "Worshipers glorify strange powers in this place.",
+  "sort": 379,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Sacred"
+    }
+  },
+  "folder": "40c330364b963a81",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!0b969801701bcc74"
+}

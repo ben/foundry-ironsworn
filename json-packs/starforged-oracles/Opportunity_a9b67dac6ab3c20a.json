@@ -1,0 +1,172 @@
+{
+  "_id": "a9b67dac6ab3c20a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Sanctum/Opportunity",
+      "category": "Starforged/Oracles/Vaults/Sanctum"
+    }
+  },
+  "name": "Opportunity",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Access to a secret or protected area",
+      "_id": "b984b8d465340fe3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.b984b8d465340fe3"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Clue points the way to your destination or target",
+      "_id": "1d9b747f1ca5addf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.1d9b747f1ca5addf"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Comforting illusion or vision",
+      "_id": "a6f75334720611eb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.a6f75334720611eb"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Control or terminal adjusts to accept your input",
+      "_id": "6684349f543afba4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.6684349f543afba4"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Deeper insight into the history or nature of this site",
+      "_id": "b7e445c50d9cf641",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.b7e445c50d9cf641"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Device or artifact reveals its purpose",
+      "_id": "36a5d0a875a9f859",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.36a5d0a875a9f859"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Environment adjusts to better suit you",
+      "_id": "087e114bb52e1e6c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.087e114bb52e1e6c"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Foes stand down or give way",
+      "_id": "7db71ca80a61dc13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.7db71ca80a61dc13"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Key offers control of a function or aspect of this site",
+      "_id": "19eeec38b54517ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.19eeec38b54517ff"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Shortcut or less perilous path speeds your way",
+      "_id": "18271898937ea4a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a9b67dac6ab3c20a.18271898937ea4a9"
+    }
+  ],
+  "folder": "c80cfc9efec8dc33",
+  "sort": 369,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!a9b67dac6ab3c20a"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "lDydovvXzCBbAOTG",
+  "name": "Kraken",
+  "type": "foe",
+  "img": "icons/creatures/fish/squid-kraken-orange.webp",
+  "data": {},
+  "token": {
+    "name": "Kraken",
+    "img": "icons/creatures/fish/squid-kraken-orange.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "jV0uI6y5J7mdZOl4",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!lDydovvXzCBbAOTG.jV0uI6y5J7mdZOl4"
+    },
+    {
+      "_id": "5AQrPBGQpz6YG8fv",
+      "name": "Kraken",
+      "type": "progress",
+      "img": "icons/creatures/fish/squid-kraken-orange.webp",
+      "data": {
+        "description": "\n\n<h2>Kraken</h2>\n\n<p>The kraken is a sea beast, as large as the mightiest longship. It is octopoid in form, with eight arms, two longer feeding tentacles, and a beak-like mouth. It emerges from the depths to hunt whales, sharks, and other large sea creatures. It is also prone to attack any Ironlander ships which stray into its waters, plucking the crew off the deck and crushing the vessel as easily as one would snap a piece of kindling.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Gargantuan size</p>\n    <p class=\"nogrow\">Grasping tentacles</p>\n    <p class=\"nogrow\">Beaked maw</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Lurk in unfathomable depths</p>\n    <p class=\"nogrow\">Destroy those who would trespass</p>\n    <p class=\"nogrow\">Inflict terror</p>\n    <p class=\"nogrow\">Shatter ships</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Grapple and crush</p>\n    <p class=\"nogrow\">Attack from every direction</p>\n    <p class=\"nogrow\">Sweep sailors from the deck</p>\n  </div>\n</div>\n\n<em><p>A kraken lurks at the mouth of a fjord. Fisher folk refuse to sail those waters, and trade ships rarely survive the passage. The settlement on the fjord cannot survive without resupply, and overland travel is impossible during this harsh winter. Elders tell of the Dawnrunner, a blessed longship of the original settlers, sealed away in a <strong>Hallowed Sea Cave</strong> with the body of its legendary captain. Only this ship, it is said, can outrun the kraken.</p></em>\n\n<em><p>A clan of seafolk conduct a yearly hunt to kill a kraken. Although they have never succeeded, and untold Ironlanders have died in the quest, the practice persists. What event or change do they believe killing the beast will bring about? What venerated weapon do they wield in this hunt?</p></em>\n\n<h2>Beast</h2>\n<p>Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the Old World.</p>\n",
+        "rank": 5,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!lDydovvXzCBbAOTG.5AQrPBGQpz6YG8fv"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!lDydovvXzCBbAOTG"
+}

@@ -1,0 +1,102 @@
+{
+  "_id": "b2c23660dbcfe5b2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Turning_Point/Challenge_Rank/Foes",
+      "category": "Ironsworn/Oracles/Turning_Point"
+    }
+  },
+  "name": "Foes",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Troublesome (Common enemies)",
+      "_id": "cce19364215dbc49",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b2c23660dbcfe5b2.cce19364215dbc49"
+    },
+    {
+      "range": [
+        21,
+        55
+      ],
+      "text": "Dangerous (Capable fighters and deadly creatures)",
+      "_id": "a14e3b790aef1bf0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b2c23660dbcfe5b2.a14e3b790aef1bf0"
+    },
+    {
+      "range": [
+        56,
+        80
+      ],
+      "text": "Formidable (Exceptional fighters and mighty creatures)",
+      "_id": "b60ad7cecef28584",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b2c23660dbcfe5b2.b60ad7cecef28584"
+    },
+    {
+      "range": [
+        81,
+        93
+      ],
+      "text": "Extreme (Foes of overwhelming skill or power)",
+      "_id": "f0f326a4e350fc81",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b2c23660dbcfe5b2.f0f326a4e350fc81"
+    },
+    {
+      "range": [
+        94,
+        100
+      ],
+      "text": "Epic (Legendary foes of mythic power)",
+      "_id": "6b096e383f3d54e9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b2c23660dbcfe5b2.6b096e383f3d54e9"
+    }
+  ],
+  "folder": "cca4346acb34d271",
+  "sort": 190,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!b2c23660dbcfe5b2"
+}

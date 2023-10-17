@@ -1,0 +1,22 @@
+{
+  "name": "Planets",
+  "_id": "99ee8a161d0857f8",
+  "type": "RollTable",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021157,
+    "modifiedTime": 1695949021157,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!99ee8a161d0857f8"
+}

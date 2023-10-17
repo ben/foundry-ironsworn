@@ -1,0 +1,382 @@
+{
+  "_id": "4135d73dae285c7f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Trap/Component",
+      "category": "Ironsworn/Oracles/Trap"
+    }
+  },
+  "name": "Component",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Pit",
+      "_id": "5edc7026df72f96f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.5edc7026df72f96f"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Water",
+      "_id": "acee33f46315afa7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.acee33f46315afa7"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Fire",
+      "_id": "89ac6c97a7393988",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.89ac6c97a7393988"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Projectile",
+      "_id": "b7a4a38e2e217eb8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.b7a4a38e2e217eb8"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Passage",
+      "_id": "e668b6b91c04ebfc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.e668b6b91c04ebfc"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Fall",
+      "_id": "b8fbd3ad92bfdbf3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.b8fbd3ad92bfdbf3"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Debris",
+      "_id": "5857731a881b0cbe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.5857731a881b0cbe"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Fear",
+      "_id": "9a357e4d67cf993c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.9a357e4d67cf993c"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Alarm",
+      "_id": "1745db50a9cf02b1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.1745db50a9cf02b1"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Trigger",
+      "_id": "a622e232f2423526",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.a622e232f2423526"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Cold",
+      "_id": "1780722a13986dd4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.1780722a13986dd4"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Weapon",
+      "_id": "e10407d700ccf108",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.e10407d700ccf108"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Darkness",
+      "_id": "04c136c0def6d304",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.04c136c0def6d304"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Decay",
+      "_id": "54ec90ff086d2574",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.54ec90ff086d2574"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Path",
+      "_id": "811b8e79bfcc6003",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.811b8e79bfcc6003"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Stone",
+      "_id": "ff6aa844d5b87256",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.ff6aa844d5b87256"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Terrain",
+      "_id": "95deb6ee28708a38",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.95deb6ee28708a38"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Poison",
+      "_id": "55f11664711dbf90",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.55f11664711dbf90"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Barrier",
+      "_id": "0775a4dc4343e4cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.0775a4dc4343e4cf"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Overhead",
+      "_id": "9b70690c796916cb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.9b70690c796916cb"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Magic",
+      "_id": "4e866c462a738325",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.4e866c462a738325"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Toxin",
+      "_id": "81742e3438bd18ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.81742e3438bd18ae"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Earth",
+      "_id": "131c716928dad048",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.131c716928dad048"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Light",
+      "_id": "0a967153e8b0590d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.0a967153e8b0590d"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Denizen",
+      "_id": "a926f41f65583744",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!4135d73dae285c7f.a926f41f65583744"
+    }
+  ],
+  "folder": "7cacf574e6356672",
+  "sort": 1217,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!4135d73dae285c7f"
+}

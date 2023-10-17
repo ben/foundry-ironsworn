@@ -1,0 +1,35 @@
+{
+  "_id": "2301e070adb5c34e",
+  "type": "progress",
+  "name": "Flarewing Shark",
+  "img": "icons/creatures/fish/fish-shark-swimming.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Massive, water-dwelling creatures</p>\n    <p class=\"nogrow\">Sinuous form</p>\n    <p class=\"nogrow\">Bioluminescent lures and markers</p>\n    <p class=\"nogrow\">Corpse-like eyes</p>\n    <p class=\"nogrow\">Rows of multi-pronged teeth</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Lurk in darkness</p>\n    <p class=\"nogrow\">Feed</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Sense motion</p>\n    <p class=\"nogrow\">Lure prey with bioluminescent display</p>\n    <p class=\"nogrow\">Strike with fierce speed and strength</p>\n  </div>\n</div>\n\n<p>The flarewing shark is a highly evolved, monstrously deadly creature. It is typical of the apex predators that lurk in the unfathomable depths of life-bearing ocean worlds.</p>\n<p>Two wing-like appendages fan out from the back of the flarewing's head. Each is studded with sensory nerves to detect the subtlest of movement, and tipped with bioluminescent lures. When the flarewing closes in on its prey, those wings arch forward to attract and enfold the unfortunate victim. Then, the wide jaws and multi-pronged teeth make short work of the meal.</p>\n\n<blockquote>Quest Starter: <p>In the twilight zone of a tidally-locked watery planet, an underwater mining settlement is the target of an ancient flarewing. In the murk of those dark waters, the beast attacks dive teams, carrier subs, dredging equipment—even undersea platforms. Operations are now stalled, cutting off a key source of unprocessed fuel in the sector. Meanwhile, the settlement's leader, grief-stricken by the loss of someone dear to them, vows to destroy the flarewing. What is your relation to this person? Do you support them in their obsession, or is there a way for the settlers to coexist with this creature?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.ac47a42461662e30]{Mega Flarewing}</li>\n</ul>",
+    "rank": 4,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021144,
+    "modifiedTime": 1695949021144,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!2301e070adb5c34e"
+}

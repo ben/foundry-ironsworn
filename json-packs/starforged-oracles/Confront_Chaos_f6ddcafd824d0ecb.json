@@ -1,0 +1,354 @@
+{
+  "_id": "f6ddcafd824d0ecb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Moves/Confront_Chaos",
+      "category": "Starforged/Oracles/Moves"
+    }
+  },
+  "name": "Confront Chaos",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Baneful weapon of mass destruction",
+      "_id": "025b30222d30269f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.025b30222d30269f"
+    },
+    {
+      "range": [
+        5,
+        9
+      ],
+      "text": "Cataclysmic environmental effects",
+      "_id": "eada6cc2da0e9663",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.eada6cc2da0e9663"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Dead given unnatural life",
+      "_id": "48b9a27b0b5560a1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.48b9a27b0b5560a1"
+    },
+    {
+      "range": [
+        13,
+        17
+      ],
+      "text": "Destructive lifeform of monstrous proportion",
+      "_id": "97321687a0cbacd3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.97321687a0cbacd3"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Dread hallucinations or illusions",
+      "_id": "cfc00e652c33b19a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.cfc00e652c33b19a"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Harbingers of an imminent invasion",
+      "_id": "839ead6ae51b5989",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.839ead6ae51b5989"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Horde of insatiable hunger or fury",
+      "_id": "baac4b4088d0ad06",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.baac4b4088d0ad06"
+    },
+    {
+      "range": [
+        28,
+        32
+      ],
+      "text": "Horrific lifeforms of inscrutable purpose",
+      "_id": "57cfb8e6d5a17115",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.57cfb8e6d5a17115"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Impostors in human form",
+      "_id": "ba15199300cd4a95",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.ba15199300cd4a95"
+    },
+    {
+      "range": [
+        37,
+        41
+      ],
+      "text": "Machines made enemy",
+      "_id": "2865ffe7d8379e8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.2865ffe7d8379e8f"
+    },
+    {
+      "range": [
+        42,
+        45
+      ],
+      "text": "Malignant contagion or parasite",
+      "_id": "d2acd472842305d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.d2acd472842305d1"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Messenger or signal with a dire warning",
+      "_id": "dda5c8f81f51d7d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.dda5c8f81f51d7d1"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "Passage to a grim alternate reality",
+      "_id": "2abd3322b863939f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.2abd3322b863939f"
+    },
+    {
+      "range": [
+        54,
+        58
+      ],
+      "text": "People corrupted by chaos",
+      "_id": "ae840405eedc6dfd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.ae840405eedc6dfd"
+    },
+    {
+      "range": [
+        59,
+        63
+      ],
+      "text": "Powerful distortions of time or space",
+      "_id": "275c97103140bc97",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.275c97103140bc97"
+    },
+    {
+      "range": [
+        64,
+        68
+      ],
+      "text": "Signs of an impending catastrophe",
+      "_id": "4e10544463ef0118",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.4e10544463ef0118"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Site of a baffling disappearance",
+      "_id": "949ce00f081f2192",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.949ce00f081f2192"
+    },
+    {
+      "range": [
+        73,
+        77
+      ],
+      "text": "Site of a horrible disaster",
+      "_id": "b1d99e9955f6fa6f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.b1d99e9955f6fa6f"
+    },
+    {
+      "range": [
+        78,
+        82
+      ],
+      "text": "Site of terrible carnage",
+      "_id": "96271e7a230b4dd9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.96271e7a230b4dd9"
+    },
+    {
+      "range": [
+        83,
+        87
+      ],
+      "text": "Technology nullified or made unstable",
+      "_id": "a607f0cd52d6d3f2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.a607f0cd52d6d3f2"
+    },
+    {
+      "range": [
+        88,
+        92
+      ],
+      "text": "Technology warped for dark purpose",
+      "_id": "bc28e63fa6fdca95",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.bc28e63fa6fdca95"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Vault of dread technology or power",
+      "_id": "995401c5daf87542",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.995401c5daf87542"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Worshipers of great and malevolent powers",
+      "_id": "4080b3e811bbf138",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f6ddcafd824d0ecb.4080b3e811bbf138"
+    }
+  ],
+  "folder": "adcc4cbc5484a254",
+  "sort": 177,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!f6ddcafd824d0ecb"
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "9bdb04ec1ceadea2",
+  "type": "progress",
+  "name": "Sky Roost",
+  "img": "icons/magic/nature/root-vine-caduceus-healing.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Floating, living habitats</p>\n    <p class=\"nogrow\">Glowing core</p>\n    <p class=\"nogrow\">Suspended, root-like feelers</p>\n    <p class=\"nogrow\">Bellowing song</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Seek out placid skies</p>\n    <p class=\"nogrow\">Nurture symbiotic lifeforms</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Grasp with tendrils</p>\n    <p class=\"nogrow\">Rally a swarm of creatures in defense</p>\n  </div>\n</div>\n\n<p>Sky roosts are massive creatures that drift in the buoyant upper atmosphere of a Jovian world. Their broad, scalloped mantle unfurls to catch updrafts as sinuous feelers extract water, minerals, and organisms from the dense cloud layers below.</p>\n<p>A roost's wide cap and warm, glowing core shelters a complex ecosystem of other lifeforms. A few of these resident creatures live out their entire lives within the refuge of a single roost; others come and go as they hunt within the Jovian skies or migrate among distant habitats.</p>\n<p>Roosts are enormous and long-lived, but fragile. In a symbiotic trade for shelter, the inhabitants provide protection against large predators and other threats, and their discarded food and waste help fuel the roost's sluggish metabolism.</p>\n<p>As a roost navigates the currents and eddies of the Jovian atmosphere, the expansion and contraction of its internal air bladders is heard as a deep, resounding call. As other roosts respond, the shared, plaintive song reverberates among the clouds.</p>\n\n<blockquote>Quest Starter: <p>Sky roosts are dying. A disease is spreading among them, threatening the delicate ecosystem of their world. What human operations do you suspect lie at the heart of this sickness?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.578dd708f06d7801]{Roost Swarm}</li>\n</ul>",
+    "rank": 3,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021144,
+    "modifiedTime": 1695949021144,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!9bdb04ec1ceadea2"
+}

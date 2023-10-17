@@ -1,0 +1,172 @@
+{
+  "_id": "ed4e3e57470dd927",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Desert/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Desert"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Dry seabeds",
+      "_id": "1a0584c2e4fbd4d6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.1a0584c2e4fbd4d6"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Expansive dune seas",
+      "_id": "2c1a9dde4a396d3e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.2c1a9dde4a396d3e"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Massive canyons",
+      "_id": "86243ca465c2a559",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.86243ca465c2a559"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Perpetual daylight",
+      "_id": "655e67c1ca5ea9d6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.655e67c1ca5ea9d6"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Rugged mountains",
+      "_id": "90187a82ba956354",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.90187a82ba956354"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Sprawling salt flats",
+      "_id": "b5bf86c3db117c86",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.b5bf86c3db117c86"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Vast plateaus",
+      "_id": "fc685e3d57d80a0d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.fc685e3d57d80a0d"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Vibrant terrain colors",
+      "_id": "0f913a3d8487c5cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.0f913a3d8487c5cf"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "e0c15aa92a50cf17",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.e0c15aa92a50cf17"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "a184beda68600343",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ed4e3e57470dd927.a184beda68600343"
+    }
+  ],
+  "folder": "ba1bbe7871538aad",
+  "sort": 308,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!ed4e3e57470dd927"
+}
