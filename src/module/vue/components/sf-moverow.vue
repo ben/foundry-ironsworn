@@ -13,7 +13,7 @@
 		:toggle-button-class="['bordered', $style.toggleBtn, toggleButtonClass]"
 		:toggle-tooltip="toggleTooltip"
 		:toggle-wrapper-class="$style.toggleWrapper"
-		:toggle-label="move?.displayName"
+		:toggle-label="item.name"
 		:data-move-id="item._id"
 		:data-move-uuid="$item.uuid">
 		<template #after-toggle>
@@ -25,10 +25,10 @@
 				<slot name="controls">
 					<slot
 						name="btn-roll-move"
-						v-bind="{ disabled: !canRoll, move, class: $style.btn }">
+						v-bind="{ disabled: !canRoll, getMove, class: $style.btn }">
 						<BtnRollmove
 							:disabled="!canRoll"
-							:move="move"
+							:get-move="getMove"
 							:class="$style.btn" />
 					</slot>
 					<slot
@@ -43,8 +43,8 @@
 							:disabled="preventOracle"
 							:class="$style.btn" />
 					</slot>
-					<slot name="btn-chat" v-bind="{ move, class: $style.btn }">
-						<BtnSendmovetochat :move="move" :class="$style.btn" />
+					<slot name="btn-chat" v-bind="{ getMove, class: $style.btn }">
+						<BtnSendmovetochat :get-move="getMove" :class="$style.btn" />
 					</slot>
 				</slot>
 			</section>
@@ -69,7 +69,6 @@
 
 <script setup lang="ts">
 import { computed, provide, reactive, ref } from 'vue'
-import type { Move } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
@@ -82,12 +81,11 @@ import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
-import { uniq } from 'lodash-es'
 import { OracleTable } from '../../roll-table/oracle-table'
 
 const props = withDefaults(
 	defineProps<{
-		move: Move
+		getMove: () => IronswornItem<'sfmove'>
 		headingLevel?: number
 		toggleSectionClass?: any
 		toggleButtonClass?: any
@@ -114,10 +112,8 @@ const props = withDefaults(
 	}
 )
 
-const $item = computed(() => props.move.moveItem())
-const item = computed(
-	() => props.move.moveItem().toObject() as ItemSource<'sfmove'>
-)
+const $item = computed(() => props.getMove())
+const item = computed(() => props.getMove().toObject() as ItemSource<'sfmove'>)
 
 provide(ItemKey, computed(() => $item.value.toObject()) as any)
 provide($ItemKey, $item.value as any)
@@ -136,16 +132,10 @@ const preventOracle = computed(() => {
 })
 
 const toggleTooltip = computed(() =>
-	enrichMarkdown($item.value.system.Trigger?.Text)
+	enrichMarkdown(item.value.system.Trigger?.Text)
 )
 
-const moveId = computed(() => props.move.moveItem().id)
-
-const oracleIds = uniq([
-	...($item?.value.system.Oracles ?? []),
-	...(props.move.dataforgedMove?.Oracles ?? [])
-])
-Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(
+Promise.all(item.value.system.Oracles.map(OracleTable.getDFOracleByDfId)).then(
 	async (dfOracles) => {
 		const nodes = await Promise.all(dfOracles.map(walkOracle))
 		data.oracles.push(...nodes)
@@ -158,7 +148,7 @@ function moveClick(move: IronswornItem) {
 }
 
 defineExpose({
-	moveId: moveId.value,
+	moveId: item.value._id,
 	$collapsible
 })
 </script>

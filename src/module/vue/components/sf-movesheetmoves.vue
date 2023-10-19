@@ -27,30 +27,26 @@
 			class="item-list scrollable flexcol"
 			:class="$style.list">
 			<!-- Flat search results -->
-			<li
-				v-for="(move, resultIndex) of searchResults"
-				:key="move.moveItem().id ?? `move${resultIndex}`"
-				class="nogrow">
+			<li v-for="move of searchResults" :key="move.uuid" class="nogrow">
 				<SfMoverow
-					ref="allMoves"
-					:move="move"
-					:thematic-color="move.color"
+					ref="moveRows"
+					:getMove="() => move"
+					:thematic-color="move.folder?.color"
 					:class="$style.filteredResult" />
 			</li>
 		</ul>
 
 		<ul v-else class="item-list scrollable flexcol" :class="$style.list">
 			<!-- Categorized moves if not searching -->
-			<li
-				v-for="(category, catIndex) in state.categories"
-				:key="catIndex"
-				class="nogrow">
+			<li v-for="folder in state.folders" :key="folder.uuid" class="nogrow">
 				<SfMoveCategoryRows
-					ref="allCategories"
+					ref="categoryChildren"
 					class="nogrow"
 					:class="$style.catList"
-					:category="category"
-					:data-tourid="`move-category-${category.dataforgedCategory?.$id}`" />
+					:get-folder="() => folder"
+					:data-tourid="`move-category-${
+						folder.flags?.['foundry-ironsworn']?.dfid ?? folder.uuid
+					}`" />
 			</li>
 		</ul>
 	</article>
@@ -58,32 +54,53 @@
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
-import type { MoveCategory } from '../../features/custommoves'
-import {
-	createIronswornMoveTree,
-	createStarforgedMoveTree
-} from '../../features/custommoves'
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
 import IronBtn from './buttons/iron-btn.vue'
+import type { IronswornItem } from '../../item/item'
+import type { IronFolder } from '../../folder/iron-folder'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)
 
 const state = reactive({
 	searchQuery: '',
-	categories: [] as MoveCategory[]
+	moves: new Collection<IronswornItem<'sfmove'>>(),
+	folders: [] as IronFolder<IronswornItem>[]
 })
 
-let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
-let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
+const categoryChildren = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
+const moveRows = ref<InstanceType<typeof SfMoverow>[]>([])
 
-const tempCategories =
+const packID =
 	props.toolset === 'ironsworn'
-		? await createIronswornMoveTree()
-		: await createStarforgedMoveTree()
+		? 'foundry-ironsworn.ironswornmoves'
+		: 'foundry-ironsworn.starforgedmoves'
 
-state.categories = tempCategories
+const canonicalPack = game.packs.get(packID)
+
+if (canonicalPack == null)
+	throw new Error(`Couldn't find moves pack: ${packID}`)
+
+// TODO: figure out a sensible way to store which moves/categories are open/closed
+
+const customMoveFolderName = game.i18n.localize('IRONSWORN.MOVES.Custom')
+const customMoveFolder = game.items?.directory?.folders.find(
+	(folder) => folder.name === customMoveFolderName
+) as IronFolder<IronswornItem> | undefined
+const customMoves = Array.from(
+	customMoveFolder?.contents?.filter((item) => item.type === 'sfmove') ?? []
+) as IronswornItem<'sfmove'>[]
+
+state.folders = Array.from(
+	// @ts-expect-error FIXME outdated typing
+	canonicalPack?.folders as Collection<IronFolder<IronswornItem>>
+).sort((a, b) => a.sort - b.sort)
+
+if (customMoveFolder != null && customMoves.length > 0) {
+	state.folders.push(customMoveFolder)
+	for (const move of customMoves) state.moves.set(move.id as string, move)
+}
 
 const checkedSearchQuery = computed(() => {
 	try {
@@ -94,31 +111,26 @@ const checkedSearchQuery = computed(() => {
 	}
 })
 
-const flatMoves = computed(() =>
-	state.categories.flatMap((category) =>
-		category.moves.map((mv) => ({ ...mv, color: category.color }))
-	)
-)
+const fetchedMoves = (await canonicalPack.getDocuments({
+	type: 'sfmove'
+})) as IronswornItem<'sfmove'>[]
+
+for (const move of fetchedMoves.concat(customMoves))
+	state.moves.set(move.id as string, move)
 
 const searchResults = computed(() => {
 	if (!checkedSearchQuery.value) return null
 
 	const re = new RegExp(checkedSearchQuery.value, 'i')
-	return flatMoves.value.filter((x) => re.test(x.displayName))
+	return state.moves.filter((x) => re.test(x.name as string))
 })
 
 function clearSearch() {
 	state.searchQuery = ''
 }
 
-function collapseMoves() {
-	for (const cat of allCategories.value ?? []) {
-		cat.collapseMoves()
-	}
-}
-
 function collapseMoveCategories() {
-	for (const moveCategory of allCategories.value ?? []) {
+	for (const moveCategory of categoryChildren.value ?? []) {
 		moveCategory.$collapsible?.collapse()
 	}
 }
@@ -127,12 +139,11 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 	clearSearch()
 	await nextTick()
 	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
-	const categoryWithMove = allCategories.value.find((moveCategory) =>
-		moveCategory.moveItems.has(documentId ?? '')
+	const categoryWithMove = categoryChildren.value.find((moveCategory) =>
+		moveCategory.getMoves().some((move) => move.id === documentId)
 	)
-	if (categoryWithMove) {
-		categoryWithMove.expandAndHighlightMove(targetMoveUuid)
-	}
+
+	if (categoryWithMove) categoryWithMove.expandAndHighlightMove(targetMoveUuid)
 })
 </script>
 

@@ -3,25 +3,25 @@
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.discoverASite"
-				:move="moves.discoverASite"
+				:get-move="() => moves.discoverASite"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.delveTheDepths"
-				:move="moves.delveTheDepths"
+				:get-move="() => moves.delveTheDepths"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.findAnOpportunity"
-				:move="moves.findAnOpportunity"
+				:get-move="() => moves.findAnOpportunity"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.revealADanger"
-				:move="moves.revealADanger"
+				:get-move="() => moves.revealADanger"
 				class="nogrow">
 				<template #btn-oracle="{ disabled, ...props }">
 					<BtnOracle
@@ -34,29 +34,29 @@
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.checkYourGear"
-				:move="moves.checkYourGear"
+				:get-move="() => moves.checkYourGear"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.locateObjective"
-				:move="moves.locateObjective"
+				:get-move="() => moves.locateObjective"
 				class="nogrow">
 				<template #btn-roll-move="{ disabled, ...props }">
-					<BtnRollmove v-bind="props" :clickFn="locateObjective" />
+					<BtnRollmove v-bind="props" :click-fn="locateObjective" />
 				</template>
 			</SfMoverow>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.escapeTheDepths"
-				:move="moves.escapeTheDepths"
+				:get-move="() => moves.escapeTheDepths"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.revealADangerAlt"
-				:move="moves.revealADangerAlt"
+				:get-move="() => moves.revealADangerAlt"
 				class="nogrow" />
 		</li>
 	</ul>
@@ -66,8 +66,9 @@
 import type { Ref } from 'vue'
 import { computed, inject, reactive } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
-import type { Move } from '../../../features/custommoves'
-import { createIronswornMoveTree } from '../../../features/custommoves'
+import { hashLookup } from '../../../dataforged'
+import type { IronFolder } from '../../../folder/iron-folder'
+import type { IronswornItem } from '../../../item/item'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 import BtnOracle from '../buttons/btn-oracle.vue'
@@ -89,15 +90,17 @@ const hasThemeAndDomain = computed(() => {
 	return !!(theme.value && domain.value)
 })
 
-// Construct some moves to use with the new pipeline
-const moves = reactive<{ [k: string]: Move }>({})
-Promise.resolve().then(async () => {
-	const moveTree = await createIronswornMoveTree()
-	const delveMoves = moveTree.find(
-		(x) => x.dataforgedCategory?.$id === 'Ironsworn/Moves/Delve'
-	)
-	if (!delveMoves) return
+const pack = game.packs.get('foundry-ironsworn.ironswornmoves')
+if (pack == null) throw new Error("Couldn't find delve move compendium!")
+// @ts-expect-error FIXME outdated typing
+const folder = pack.folders.get(hashLookup('Ironsworn/Moves/Delve')) as
+	| IronFolder<IronswornItem>
+	| undefined
+if (folder == null) throw new Error("Couldn't find delve move folder!")
 
+// Construct some moves to use with the new pipeline
+const moves = reactive<{ [k: string]: IronswornItem<'sfmove'> }>({})
+Promise.resolve().then(async () => {
 	const movesToFetch = {
 		discoverASite: 'Ironsworn/Moves/Delve/Discover_a_Site',
 		delveTheDepths: 'Ironsworn/Moves/Delve/Delve_the_Depths',
@@ -109,10 +112,13 @@ Promise.resolve().then(async () => {
 		revealADangerAlt: 'Ironsworn/Moves/Delve/Reveal_a_Danger_alt'
 	}
 
-	for (const k of Object.keys(movesToFetch)) {
-		moves[k] = delveMoves.moves.find(
-			(x) => x.dataforgedMove?.$id === movesToFetch[k]
-		)!
+	const fetchedMoves = (await pack.getDocuments({
+		_id__in: Object.values(movesToFetch).map((dfid) => hashLookup(dfid))
+	})) as IronswornItem<'sfmove'>[]
+
+	for (const [k, dfid] of Object.entries(movesToFetch)) {
+		const move = fetchedMoves.find((move) => move.system.dfid === dfid)
+		if (move != null) moves[k] = move
 	}
 })
 

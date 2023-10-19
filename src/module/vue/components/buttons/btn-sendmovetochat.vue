@@ -1,7 +1,7 @@
 <template>
 	<IronBtn
 		class="move-chat"
-		:tooltip="$t('IRONSWORN.SendToChat', { move: move.displayName })"
+		:tooltip="$t('IRONSWORN.SendToChat', { move: getMove().name })"
 		icon="fa:comment"
 		v-bind="($props, $attrs)"
 		@click="sendToChat">
@@ -15,11 +15,12 @@
 import { inject } from 'vue'
 import { createSfMoveChatMessage } from '../../../chat/sf-move-chat-message'
 import type { Move } from '../../../features/custommoves'
+import { IronswornItem } from '../../../item/item'
 import { $ItemKey } from '../../provisions.js'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
-	move: Move
+	getMove: () => IronswornItem<'sfmove'>
 }
 
 defineProps<Props>()
