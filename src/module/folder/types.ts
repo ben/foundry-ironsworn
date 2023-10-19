@@ -1,7 +1,6 @@
 import type { FolderData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
 import type { FolderMetadata } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseFolder'
-import { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { ConfiguredDocumentClass } from '../../types/helperTypes'
+import type { ConfiguredDocumentClassForName } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 
 declare global {
 	export interface FlagConfig {

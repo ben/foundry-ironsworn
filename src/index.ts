@@ -82,8 +82,7 @@ Hooks.once('init', async () => {
 	CONFIG.Item.compendiumIndexFields.push('system.dfid')
 	// Define custom Entity classes
 
-	// FIXME blocked by https://github.com/foundryvtt/foundryvtt/issues/10034
-	// CONFIG.Folder.documentClass = IronFolder
+	CONFIG.Folder.documentClass = IronFolder
 	CONFIG.JournalEntry.documentClass = IronswornJournalEntry
 	CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
