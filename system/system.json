@@ -8,8 +8,8 @@
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
   "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.22.4/ironsworn.zip",
   "compatibility": {
-    "minimum": 11,
-    "verified": 11
+    "minimum": "11.313",
+    "verified": "11.313"
   },
   "authors": [
     {
