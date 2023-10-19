@@ -4,7 +4,8 @@
 		class="flexcol nogrow movesheet-row"
 		:class="{ hidden: node?.forceHidden, highlighted: state.highlighted }"
 		data-tooltip-direction="LEFT"
-		:data-tourid="`oracle-${node.dataforgedNode?.$id}`">
+		:data-tourid="`oracle-${node.dataforgedNode?.$id}`"
+	>
 		<!-- TODO: split this into two components, yo -->
 		<!-- Leaf node -->
 		<div v-if="isLeaf">
@@ -18,17 +19,24 @@
 					nogrow
 					class="show-oracle-info"
 					icon="fa:eye"
-					@click="toggleDescription()" />
+					@click="toggleDescription()"
+				/>
 			</h4>
 			<CollapseTransition>
-				<RulesTextOracle
-					v-if="state.descriptionExpanded"
-					:class="$style.content"
-					:table-rows="state.tableRows"
-					:table-description="state.tableDescription"
-					:source="node.dataforgedNode?.Source"
-					@moveclick="moveclick"
-					@oracleclick="oracleclick" />
+				<div v-if="state.descriptionExpanded">
+					<h4 v-if="state.singleDescription" v-html="state.singleDescription" />
+					<RulesTextOracle
+						v-for="table in state.tables"
+						:key="table.id"
+						:class="$style.content"
+						:title="state.tables.length > 1 ? table.title : undefined"
+						:table-rows="table.rows"
+						:table-description="table.description"
+						:source="node.dataforgedNode?.Source"
+						@moveclick="moveclick"
+						@oracleclick="oracleclick"
+					/>
+				</div>
 			</CollapseTransition>
 		</div>
 
@@ -43,7 +51,8 @@
 							name="caret-right"
 							:rotate="
 								state.manuallyExpanded ? FontAwesome.Rotate['90deg'] : undefined
-							" />
+							"
+						/>
 					</template>
 				</IronBtn>
 			</h4>
@@ -52,13 +61,15 @@
 				<div
 					v-show="state.manuallyExpanded"
 					class="flexcol"
-					:class="$style.indent">
+					:class="$style.indent"
+				>
 					<oracle-tree-node
 						v-for="child in node?.children"
 						:key="child.displayName"
 						ref="children"
 						:node="child"
-						@oracleclick="oracleclick" />
+						@oracleclick="oracleclick"
+					/>
 				</div>
 			</CollapseTransition>
 		</div>
@@ -78,14 +89,20 @@ import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
 import type { OracleTable } from '../../roll-table/oracle-table'
 import type { LegacyTableRow } from '../../roll-table/roll-table-types'
+import { enrichHtml } from '../vue-plugin'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 
 const state = reactive({
 	manuallyExpanded: props.node.forceExpanded ?? false,
 	descriptionExpanded: false,
-	tableRows: [] as Array<LegacyTableRow>,
-	tableDescription: '',
+	singleDescription: undefined as string | undefined,
+	tables: [] as Array<{
+		id: string
+		title: string
+		rows: Array<LegacyTableRow>
+		description: string
+	}>,
 	highlighted: false
 })
 
@@ -96,15 +113,34 @@ const isLeaf = computed(() => {
 })
 
 async function toggleDescription() {
-	if (!state.tableDescription) {
-		const table = (await fromUuid(props.node.tables[0])) as OracleTable
-		state.tableRows = table.results.map((row: any) => ({
-			low: row.range[0],
-			high: row.range[1],
-			text: row.text,
-			selected: false
-		}))
-		state.tableDescription = (table as any).description ?? ''
+	if (state.tables.length === 0) {
+		state.tables = await Promise.all(
+			props.node.tables.map(async (tableUuid) => {
+				const tableData = (await fromUuid(tableUuid)) as OracleTable
+				return {
+					id: tableUuid,
+					title: tableData.name ?? '',
+					rows: tableData.results.map((row: any) => ({
+						low: row.range[0],
+						high: row.range[1],
+						text: row.text,
+						selected: false
+					})),
+					description: tableData.description
+				}
+			})
+		)
+
+		// If all descriptions match, collapse them into one
+		if (
+			state.tables.every((t) => t.description === state.tables[0].description)
+		) {
+			state.singleDescription = enrichHtml(state.tables[0].description)
+			for (const t of state.tables) {
+				t.description = ''
+			}
+		}
+
 		await nextTick()
 	}
 	state.descriptionExpanded = !state.descriptionExpanded

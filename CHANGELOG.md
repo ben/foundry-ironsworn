@@ -2,6 +2,12 @@
 
 ## Next Release
 
+## 1.22.6
+
+- Display all oracle tables in the preview area ([#894](https://github.com/ben/foundry-ironsworn/pull/894))
+
+## 1.22.5
+
 - Add compendium folders for oracles, moves, and assets
   - these don't affect our custom oracle/move/asset tree displays yet, but this change lays some groundwork for it
 
