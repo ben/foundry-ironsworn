@@ -12,7 +12,7 @@ export function registerIconHooks() {
 			const popOutBody = (node.getRootNode() as HTMLElement)
 				.firstElementChild as HTMLBodyElement
 
-			// Just moving the node won't work -- the main window still needs it. So we clone the SVG element and append it instead.
+			// Just moving the node with element.append() won't work -- the main window still needs to use the sprite map. So, we clone the SVG element and append it instead.
 			const popOutSprites = CONFIG.IRONSWORN.sprites.cloneNode(true)
 
 			popOutBody.appendChild(popOutSprites)
