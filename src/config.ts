@@ -50,6 +50,11 @@ export interface IronswornConfig {
 		IronswornRollMessage: typeof IronswornRollMessage
 	}
 
+	/** The HTML element ID of the SVG sprite sheet. */
+	spriteSheetId: string
+	/** The SVG sprite sheet element. */
+	sprites: SVGElement
+
 	importFromDatasworn: typeof importFromDatasworn
 
 	Dataforged: typeof starforged
@@ -83,6 +88,16 @@ export const IRONSWORN: IronswornConfig = {
 		IronswornRoll,
 		IronswornPrerollDialog,
 		IronswornRollMessage
+	},
+
+	get spriteSheetId() {
+		return 'ironsworn-sprites'
+	},
+
+	get sprites() {
+		return document.getElementById(
+			IRONSWORN.spriteSheetId
+		) as unknown as SVGElement
 	},
 
 	importFromDatasworn,

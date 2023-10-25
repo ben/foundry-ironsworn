@@ -44,6 +44,7 @@ import type {
 } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import ActorConfig from './module/actor/config'
 import ItemConfig from './module/item/config'
+import { registerIconHooks } from './module/icon/module-compat'
 
 declare global {
 	interface LenientGlobalVariableTypes {
@@ -216,6 +217,7 @@ Hooks.once('init', async () => {
 Hooks.once('ready', async () => {
 	registerDragAndDropHooks()
 	registerChatAlertHooks()
+	registerIconHooks()
 
 	await registerDefaultOracleTrees()
 
