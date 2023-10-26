@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix PopOut! module windows missing custom icons ([#670]https://github.com/ben/foundry-ironsworn/issues/670)
+
 ## 1.22.6
 
 - Display all oracle tables in the preview area ([#894](https://github.com/ben/foundry-ironsworn/pull/894))
