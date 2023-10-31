@@ -13,7 +13,11 @@
 		data-move='{{move.Name}}'
 	>
 		<div class='move-outcome'>
-			{{{stripTables (enrichMarkdown move.data.data.Text)}}}
+			{{#if move.system.Oracles?.length}}
+				{{{stripTables (enrichMarkdown move.system.Text)}}}
+			{{else}}
+				{{{enrichMarkdown move.system.Text}}}
+			{{/if}}
 		</div>
 	</div>
 
