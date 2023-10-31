@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a bug where the _Repair_ move was having its table removed ([#910](https://github.com/ben/foundry-ironsworn/pull/910))
+
 ## 1.22.7
 
 - Fix PopOut! module windows missing custom icons ([#670]https://github.com/ben/foundry-ironsworn/issues/670)
