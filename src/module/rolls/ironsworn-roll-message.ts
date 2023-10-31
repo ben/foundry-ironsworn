@@ -261,13 +261,17 @@ export class IronswornRollMessage {
 		if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
 			moveOutcome = moveOutcome['With a Match']
 		if (moveOutcome) {
-			// Render the markdown here so we can strip the tables.
-			// We include oracle buttons in the chat message, no need to
-			// also spam the table contents.
-			ret.moveOutcome = enrichMarkdown(moveOutcome.Text).replace(
-				/<table>[\s\S]*<\/table>/gm,
-				''
-			)
+			// Get the rendered markdown here. If there are oracles, we strip
+			// out the tables, because there will be a button in the chat message.
+			// If no oracles, that table is probably important to the move
+			// (i.e. SF's "Repair" move), so we leave it in.
+			ret.moveOutcome = enrichMarkdown(moveOutcome.Text)
+			if (moveSystem.Oracles?.length > 0) {
+				ret.moveOutcome = ret.moveOutcome.replace(
+					/<table>[\s\S]*<\/table>/gm,
+					''
+				)
+			}
 		}
 		return ret
 	}
