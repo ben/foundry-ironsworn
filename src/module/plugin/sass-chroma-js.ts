@@ -4,7 +4,7 @@ import Chroma from 'chroma-js'
 import { last, maxBy, minBy } from 'lodash-es'
 
 import type { LegacySyncFunction as SassSyncFunction } from 'sass'
-import Sass from 'sass'
+import * as Sass from 'sass'
 import type { SassLegacyValue } from './sass-assert'
 import {
 	assertColor,
