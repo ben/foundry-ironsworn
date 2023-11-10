@@ -5,7 +5,8 @@
 			type="radio"
 			class="nogrow"
 			:name="radioGroup"
-			@change="emitValue" />
+			@change="emitValue"
+		/>
 		<div class="flexcol">
 			<p>
 				<strong>{{ page.name }}</strong>
@@ -17,13 +18,15 @@
 				<label
 					v-for="(entry, i) in page.subtable.results"
 					:key="`subtableRow${i}`"
-					class="flexrow nogrow">
+					class="flexrow nogrow"
+				>
 					<input
 						ref="suboptions"
 						type="radio"
 						class="nogrow"
 						:name="pageSystem.dfid"
-						@change="subtableSelect(entry)" />
+						@change="subtableSelect(entry)"
+					/>
 					<p v-html="entry.text" />
 				</label>
 
