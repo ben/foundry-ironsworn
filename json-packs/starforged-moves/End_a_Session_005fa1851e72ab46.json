@@ -1,0 +1,80 @@
+{
+  "_id": "005fa1851e72ab46",
+  "type": "sfmove",
+  "name": "End a Session",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Session/End_a_Session",
+    "Category": "Starforged/Moves/Session",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you end a significant session or chapter of play**, reflect on the events of the game and identify any missed opportunities to mark progress.\n\n  * If you strengthened your ties to a connection, @Compendium[foundry-ironsworn.starforgedmoves.141aec8b92efd14b]{Develop Your Relationship}.\n  * If you moved forward on a quest, @Compendium[foundry-ironsworn.starforgedmoves.0d7f13818c1c19ed]{Reach a Milestone}.\n\nIf there is a quest, connection, or other situation you would like to give focus in your next session, make note of it and take +1 momentum.",
+    "Trigger": {
+      "Text": "When you end a significant session or chapter of play...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 145
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#00B3C8",
+      "Images": []
+    }
+  },
+  "sort": 145,
+  "folder": "cb00661cf10b4177",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!005fa1851e72ab46"
+}

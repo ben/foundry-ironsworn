@@ -1,0 +1,88 @@
+{
+  "_id": "98cf03d0bdf9af1b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Tainted/Atmosphere",
+      "category": "Starforged/Oracles/Planets/Tainted"
+    }
+  },
+  "name": "Atmosphere",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        65
+      ],
+      "text": "Toxic",
+      "_id": "e4eaf672148c6d85",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!98cf03d0bdf9af1b.e4eaf672148c6d85"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Corrosive",
+      "_id": "8fea1ec69414d52a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!98cf03d0bdf9af1b.8fea1ec69414d52a"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Marginal",
+      "_id": "3c7888c2c198c5f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!98cf03d0bdf9af1b.3c7888c2c198c5f3"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Breathable",
+      "_id": "2a036638103ec8af",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!98cf03d0bdf9af1b.2a036638103ec8af"
+    }
+  ],
+  "folder": "98454829527950a0",
+  "sort": 317,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!98cf03d0bdf9af1b"
+}

@@ -1,0 +1,78 @@
+{
+  "_id": "70c5da168f35295c",
+  "type": "sfmove",
+  "name": "Wield a Rarity",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Rarity/Wield_a_Rarity",
+    "Category": "Ironsworn/Moves/Rarity",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you make a move aided by an augmented asset**, roll your rarity die in place of your action die.\n\nOn **any result** with 6 showing on the rarity die, the power of the rarity manifests in a dramatic and obvious way. You score an automatic **strong hit** and take +1 momentum.\n\nOn a **hit** with 5 showing on the rarity die, the power of the rarity manifests in a subtle way. Take +1 momentum.\n\nOn a **miss** with 1 showing on the rarity die, the rarity’s power fails or works against you.",
+    "Trigger": {
+      "Text": "When you make a move aided by an augmented asset...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 176
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 176,
+  "folder": "13b3bceae0364b80",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!70c5da168f35295c"
+}

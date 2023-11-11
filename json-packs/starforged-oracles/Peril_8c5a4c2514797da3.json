@@ -1,0 +1,200 @@
+{
+  "_id": "8c5a4c2514797da3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Mechanical/Peril",
+      "category": "Starforged/Oracles/Location_Themes/Mechanical"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Use this table to help envision a complication or hazard.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        9
+      ],
+      "text": "Alarm or warning is triggered",
+      "_id": "05dfd02706565de0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.05dfd02706565de0"
+    },
+    {
+      "range": [
+        10,
+        18
+      ],
+      "text": "Automated weapon or trap is activated",
+      "_id": "b5ae33d41103350e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.b5ae33d41103350e"
+    },
+    {
+      "range": [
+        19,
+        27
+      ],
+      "text": "Environment made unsuitable for life",
+      "_id": "b60ccaccff343e09",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.b60ccaccff343e09"
+    },
+    {
+      "range": [
+        28,
+        36
+      ],
+      "text": "Hostile machines on patrol",
+      "_id": "8e226751da1073ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.8e226751da1073ad"
+    },
+    {
+      "range": [
+        37,
+        45
+      ],
+      "text": "Machines transform to reveal new capabilities",
+      "_id": "c847b6c593ebe7c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.c847b6c593ebe7c6"
+    },
+    {
+      "range": [
+        46,
+        54
+      ],
+      "text": "Machines with corrupted or hacked programming",
+      "_id": "bdf7dda34a7b126b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.bdf7dda34a7b126b"
+    },
+    {
+      "range": [
+        55,
+        63
+      ],
+      "text": "Malfunctioning machines or technology",
+      "_id": "82e83e4d8571e598",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.82e83e4d8571e598"
+    },
+    {
+      "range": [
+        64,
+        72
+      ],
+      "text": "Moving machinery creates a danger or obstacle",
+      "_id": "b471ecf68c96c465",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.b471ecf68c96c465"
+    },
+    {
+      "range": [
+        73,
+        81
+      ],
+      "text": "Under surveillance by a central machine intelligence",
+      "_id": "e59be480d506ffd7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.e59be480d506ffd7"
+    },
+    {
+      "range": [
+        82,
+        90
+      ],
+      "text": "Volatile technology",
+      "_id": "09350d786010db39",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.09350d786010db39"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "1148112ce1ba6753",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.1148112ce1ba6753"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "3b6192a25d0e128f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8c5a4c2514797da3.3b6192a25d0e128f"
+    }
+  ],
+  "folder": "573c3e802c340f34",
+  "sort": 377,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!8c5a4c2514797da3"
+}

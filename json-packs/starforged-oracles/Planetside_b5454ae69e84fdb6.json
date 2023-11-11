@@ -1,0 +1,60 @@
+{
+  "_id": "b5454ae69e84fdb6",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Type/Planetside",
+      "category": "Starforged/Oracles/Derelicts"
+    }
+  },
+  "name": "Planetside",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "Starship",
+      "_id": "ca8db13d33a0cfc1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b5454ae69e84fdb6.ca8db13d33a0cfc1"
+    },
+    {
+      "range": [
+        26,
+        100
+      ],
+      "text": "Settlement",
+      "_id": "6adaef077e773052",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b5454ae69e84fdb6.6adaef077e773052"
+    }
+  ],
+  "folder": "8b3958b3ed0189b7",
+  "sort": 348,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!b5454ae69e84fdb6"
+}

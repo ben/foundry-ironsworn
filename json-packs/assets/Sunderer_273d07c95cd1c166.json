@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "273d07c95cd1c166",
+  "folder": "18b30f608501bf56",
+  "name": "Sunderer",
+  "system": {
+    "requirement": "<p>If you wield an axe…</p>",
+    "category": "Combat Talent",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} in close quarters, you may suffer -1 momentum and inflict +1 harm on a hit (decide before rolling).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you have your axe in hand, and use the promise of violence to @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} or @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage}, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a tribute to a fallen foe (formidable or greater) by carving a rune in the haft of your axe, roll +heart. On a strong hit, inflict +1d6 harm (one time only) when you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash}. On a weak hit, as above, but this death weighs on you; @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (2 stress).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!273d07c95cd1c166"
+}

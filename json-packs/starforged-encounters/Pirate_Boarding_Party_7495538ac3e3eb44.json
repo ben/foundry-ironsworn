@@ -1,0 +1,35 @@
+{
+  "_id": "7495538ac3e3eb44",
+  "type": "progress",
+  "name": "Pirate Boarding Party",
+  "img": "icons/skills/trades/profession-sailing-pirate.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Cunning ship-hunters with repurposed weapons, armor, and vehicles</p>\n    <p class=\"nogrow\">Body piercings as tokens of victories</p>\n    <p class=\"nogrow\">Scars and mutations</p>\n    <p class=\"nogrow\">Cobbled-together starships</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Survive by whatever means necessary</p>\n    <p class=\"nogrow\">Climb the ranks and prove self in combat</p>\n    <p class=\"nogrow\">Build a mighty fleet</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Prowl passages and anchorages for easy prey</p>\n    <p class=\"nogrow\">Deploy gravity harpoons to grapple targets</p>\n    <p class=\"nogrow\">Board to seize cargo and commandeer vessels</p>\n  </div>\n</div>\n\n<p>After reeling in a disabled ship, drift pirates breach the hull and swarm the corridors. They target critical systems and compartments to seize the ship and its cargo for their flotilla.</p>\n\n<blockquote>Quest Starter: <p>A drift pirate captain seizes an experimental new e-drive, and uses it to stalk ships with deadly efficiency. Who created this new drive, and what are they willing to pay to get it back?</p></blockquote>",
+    "rank": 3,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021144,
+    "modifiedTime": 1695949021144,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!7495538ac3e3eb44"
+}

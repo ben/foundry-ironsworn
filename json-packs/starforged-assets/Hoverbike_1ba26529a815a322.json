@@ -1,0 +1,73 @@
+{
+  "type": "asset",
+  "_id": "1ba26529a815a322",
+  "folder": "68a69193cd4b7eaa",
+  "name": "Hoverbike",
+  "system": {
+    "requirement": "",
+    "category": "Support Vehicle",
+    "color": "#495790",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your unarmed hoverbike provides speedy planetside ground transport, and is equipped to carry up to two people and their gear. When you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition} (+edge), take +1 momentum on a hit. On a strong hit with a match, you also surge ahead or find a new path; mark progress.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you fire the bike's afterburner and make a move to perform a risky maneuver, you may add +integrity and take +2 momentum on a strong hit. If you do, count a weak hit as a miss.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move while maneuvering your bike and burn momentum to improve your result, roll your action die. On a 5 or 6, do not reset momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Integrity",
+      "current": 0,
+      "max": 3,
+      "value": 3,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Battered",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!1ba26529a815a322"
+}

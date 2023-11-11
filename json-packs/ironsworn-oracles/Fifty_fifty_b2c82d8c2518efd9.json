@@ -1,0 +1,60 @@
+{
+  "_id": "b2c82d8c2518efd9",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Ask_the_Oracle/Fifty-fifty",
+      "category": "Ironsworn/Oracles/Moves"
+    }
+  },
+  "name": "Fifty-fifty",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        50
+      ],
+      "text": "No",
+      "_id": "7171c93972756072",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b2c82d8c2518efd9.7171c93972756072"
+    },
+    {
+      "range": [
+        51,
+        100
+      ],
+      "text": "Yes",
+      "_id": "440af2ea152cef0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b2c82d8c2518efd9.440af2ea152cef0f"
+    }
+  ],
+  "folder": "e7e8324f007f0cc7",
+  "sort": 107,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!b2c82d8c2518efd9"
+}

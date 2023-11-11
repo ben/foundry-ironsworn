@@ -1,0 +1,172 @@
+{
+  "_id": "a3327b88a5bd074f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Category",
+      "category": "Ironsworn/Oracles/Threat"
+    }
+  },
+  "name": "Category",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Burgeoning Conflict",
+      "_id": "b4e02452f8d2b88e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.b4e02452f8d2b88e"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Cursed Site",
+      "_id": "1f3988acd0fca544",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.1f3988acd0fca544"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Environmental Calamity",
+      "_id": "5698616f46b94ede",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.5698616f46b94ede"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Malignant Plague",
+      "_id": "c92d922f2dd55f41",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.c92d922f2dd55f41"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Rampaging Creature",
+      "_id": "67e8b1d50283ceaa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.67e8b1d50283ceaa"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Ravaging Horde",
+      "_id": "f86af9bb62809aae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.f86af9bb62809aae"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Scheming Leader",
+      "_id": "bc08c3723e6debf6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.bc08c3723e6debf6"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Power-Hungry Mystic",
+      "_id": "a73fa92fcfe9f1b6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.a73fa92fcfe9f1b6"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Zealous Cult",
+      "_id": "8624be4b0951d0eb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.8624be4b0951d0eb"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "7ecf0d9a890fad10",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a3327b88a5bd074f.7ecf0d9a890fad10"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 1220,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!a3327b88a5bd074f"
+}

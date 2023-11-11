@@ -1,0 +1,78 @@
+{
+  "_id": "f968f5e0a837a83a",
+  "type": "sfmove",
+  "name": "Forsake Your Vow",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Quest/Forsake_Your_Vow",
+    "Category": "Ironsworn/Moves/Quest",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you renounce your quest, betray your promise, or the goal is lost to you**, clear the vow and @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}. You suffer -spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.",
+    "Trigger": {
+      "Text": "When you renounce your quest, betray your promise, or the goal is lost to you...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 102
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 102,
+  "folder": "456f0d6c841ff99f",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!f968f5e0a837a83a"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Misc",
+  "_id": "ffb24a823c4adb09",
+  "type": "RollTable",
+  "sort": 380,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Misc"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021157,
+    "modifiedTime": 1695949021157,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!ffb24a823c4adb09"
+}

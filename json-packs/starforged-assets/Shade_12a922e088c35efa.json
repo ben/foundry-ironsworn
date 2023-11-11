@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "12a922e088c35efa",
+  "folder": "1f02d646adff7374",
+  "name": "Shade",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Drawing on esoteric energies, you may instantly cloak your form in the shadowy veil of the void. When you are veiled and make a move to ambush, hide, or sneak, you may preset your action die to 5. In darkness, make it 6. On a miss, in addition to any other cost, you are revealed and can’t veil yourself again until the current situation is resolved.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you expand your veil to immerse your surroundings in darkness, roll +shadow. On a strong hit, the darkness extends to all adjacent spaces. On a weak hit, only your immediate surroundings are made dark. On a miss, you fail and draw unwanted attention.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you intentionally drop your veil to reveal yourself for dramatic or surprising effect, foregoing its further use in this situation, take +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!12a922e088c35efa"
+}

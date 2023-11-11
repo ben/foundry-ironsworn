@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "d0f668219593b7a5",
+  "folder": "1f02d646adff7374",
+  "name": "Artist",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you make a move to craft an artistic work, present an artistic gift or performance, or leave your artistic mark on an item or location, you may reroll your action die if its value is less than your spirit. On a strong hit, take +1 momentum or +1 spirit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} or @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} by studying the aesthetics of a being or culture, add +2.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you create or perform a significant artistic work as a public memorial or tribute, roll +the stat which best represents the work’s nature. On a strong hit, the work will stand the test of time; mark 2 ticks on your bonds legacy track. On a weak hit, its impact is short-lived; mark 1 tick instead of 2. On a miss, the work is ignored, misunderstood, or co-opted, and you must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!d0f668219593b7a5"
+}

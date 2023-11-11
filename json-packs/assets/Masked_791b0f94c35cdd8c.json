@@ -1,0 +1,80 @@
+{
+  "type": "asset",
+  "_id": "791b0f94c35cdd8c",
+  "folder": "6ed9a3c5cdb045aa",
+  "name": "Masked",
+  "system": {
+    "requirement": "<p>Once you mark a bond with elves, and are gifted a mask of precious elderwood…</p>",
+    "category": "Path",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>Choose your mask’s material.</p>\n<ul>\n<li>Thunderwood: Edge / Health</li>\n<li>Bloodwood: Iron / Health</li>\n<li>Ghostwood: Shadow / Spirit</li>\n<li>Whisperwood: Wits / Spirit</li>\n</ul>\n<p>When you wear the mask and make a move which uses its stat, add +1. If you roll a 1 on your action die, suffer -1 to the associated track (in addition to any other outcome of the move).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>As above, and you may instead add +2 and suffer -2 (decide before rolling).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death} or @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation} while wearing the mask, you may roll +its stat (instead of +heart).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [
+      {
+        "name": "Thunderwood",
+        "selected": false
+      },
+      {
+        "name": "Bloodwood",
+        "selected": false
+      },
+      {
+        "name": "Ghostwood",
+        "selected": false
+      },
+      {
+        "name": "Whisperwood",
+        "selected": false
+      }
+    ],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!791b0f94c35cdd8c"
+}

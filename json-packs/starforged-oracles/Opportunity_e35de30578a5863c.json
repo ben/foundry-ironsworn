@@ -1,0 +1,102 @@
+{
+  "_id": "e35de30578a5863c",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Inhabited/Opportunity",
+      "category": "Starforged/Oracles/Location_Themes/Inhabited"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Intriguing offer from an unexpected source",
+      "_id": "76cc55fac71848ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e35de30578a5863c.76cc55fac71848ac"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Lively festival or gathering place provides a chance to socialize",
+      "_id": "05fd1a07e14d784f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e35de30578a5863c.05fd1a07e14d784f"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Local gossip proves interesting or helpful",
+      "_id": "7827f40911055c55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e35de30578a5863c.7827f40911055c55"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Needed item, resource, or buyer is available",
+      "_id": "e16e90fa33034691",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e35de30578a5863c.e16e90fa33034691"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Old friend or connection resurfaces",
+      "_id": "88acce7cf533821b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e35de30578a5863c.88acce7cf533821b"
+    }
+  ],
+  "folder": "70f9da433bc19024",
+  "sort": 376,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e35de30578a5863c"
+}

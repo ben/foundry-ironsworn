@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "81f991193d03427b",
+  "folder": "5c9139c5883395ea",
+  "name": "Shadow-Walk",
+  "system": {
+    "requirement": "",
+    "category": "Ritual",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you cloak yourself with the gossamer veil of the shadow realms, roll +shadow. On a strong hit, take +1 momentum. Then, reroll any dice (one time only) when you make a move by ambushing, hiding, or sneaking. On a weak hit, as above, but the shadows try to lead you astray. You must first @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} to find your way.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>As above, and you may also travel along the hidden paths of the shadow realms to @Compendium[foundry-ironsworn.ironswornmoves.ac19f4c7f3fe31be]{Undertake a Journey} using +shadow (instead of +wits). If you do, @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (1 stress) and mark progress twice on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!81f991193d03427b"
+}

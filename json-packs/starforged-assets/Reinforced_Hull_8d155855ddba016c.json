@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "8d155855ddba016c",
+  "folder": "a7279f7392f32ff4",
+  "name": "Reinforced Hull",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your vehicle is clad in iron. When you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage}, add +1. On a strong hit, take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Your reinforced hull is given a fierce and distinctive color or design. When you arrive at a place where your reputation is a factor, take +1 momentum. When you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} against a foe who knows your reputation, take +momentum equal to your vehicle’s integrity on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.d9208f9b7d827aec]{React Under Fire} by letting your reinforced hull take the hit, add +1 and take +1 momentum on a hit. On a strong hit with a match, take another +1 momentum as you surge through the chaos and put yourself in perfect position. On a miss, @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price} by marking this module as broken.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!8d155855ddba016c"
+}

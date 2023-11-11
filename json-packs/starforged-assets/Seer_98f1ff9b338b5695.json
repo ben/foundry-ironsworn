@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "98f1ff9b338b5695",
+  "folder": "1f02d646adff7374",
+  "name": "Seer",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you envision experiencing a prophetic dream, you may @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} for details using an interpretive oracle such as Action/Theme or Descriptor/Focus. If you record the answer, and later face a situation which gives truth to the vision, take an automatic strong hit (one time only) when making a move to act on your foresight. Then, clear the prophecy. Only one prophecy can be active at a time.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you focus or meditate to @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} about a place, being, or situation (in person or remotely), roll +spirit and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you or an ally roll a match as you @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn} in a community or @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition} within a site, you may envision gaining sudden and unbidden insight about the location. If you do, take +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!98f1ff9b338b5695"
+}

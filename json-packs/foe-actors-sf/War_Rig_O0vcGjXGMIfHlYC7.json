@@ -1,0 +1,126 @@
+{
+  "name": "War Rig",
+  "img": "icons/equipment/head/hat-belted-simple.webp",
+  "type": "foe",
+  "_id": "O0vcGjXGMIfHlYC7",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "War Rig",
+    "displayName": 0,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "War Rig",
+      "type": "progress",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Raiders with cobbled-together weapons and armor</p>\n    <p class=\"nogrow\">Ramshackle vehicles</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Stand together with clan-mates</p>\n    <p class=\"nogrow\">Seize what can be spared</p>\n    <p class=\"nogrow\">Waste nothing</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Target isolated planetside settlements</p>\n    <p class=\"nogrow\">Suppress resistance with a show of force; if that fails, bring overwhelming power to bear</p>\n    <p class=\"nogrow\">If things go wrong, get the hell out</p>\n  </div>\n</div>\n\n<p>At the onset of a raid, a scrap bandit clan's war rig is deployed by a heavy transport ship beyond a settlement's defenses. These mobile fortresses vary in form and function—some use hover tech, others thunder across the landscape on wheels or treads, a few trudge along on articulated metal legs. All are heavily armored, bristling with weapons, and fiercely defended by the bandits. The mere sight of the rig as it approaches is often enough for a settlement to surrender and agree to any demand.</p>\n\n<blockquote>Quest Starter: <p>In a far-flung sector, a titanic creature threatens a key planetside settlement. The only possible defense against this beast is the mighty war rig belonging to a clan of scrap bandits. But can you convince the bandits to risk their rig to protect the settlers? If so, what will they demand in return?</p></blockquote>",
+        "rank": 4,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "_id": "o0wN1SDcbjryB3rc",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022192,
+        "modifiedTime": 1695949022192,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!actors.items!O0vcGjXGMIfHlYC7.o0wN1SDcbjryB3rc"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022188,
+    "modifiedTime": 1695949022192,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!actors!O0vcGjXGMIfHlYC7"
+}

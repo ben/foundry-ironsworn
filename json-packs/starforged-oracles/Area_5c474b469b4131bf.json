@@ -1,0 +1,200 @@
+{
+  "_id": "5c474b469b4131bf",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Production/Area",
+      "category": "Starforged/Oracles/Derelicts/Production"
+    }
+  },
+  "name": "Area",
+  "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Airlock or staging area",
+      "_id": "16ecef3e40e987f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.16ecef3e40e987f3"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Assembly or processing",
+      "_id": "6bf2edb4d4246169",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.6bf2edb4d4246169"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Cargo bay",
+      "_id": "8a88047960c4b342",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.8a88047960c4b342"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Equipment storage",
+      "_id": "b68c54edd8b0a4c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.b68c54edd8b0a4c6"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Exosuit bay",
+      "_id": "d65bdb7fd8cb07c7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.d65bdb7fd8cb07c7"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Harvesting or mining platform",
+      "_id": "cacee53836690b1e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.cacee53836690b1e"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Monitoring or control room",
+      "_id": "68f22062a6f2e0f1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.68f22062a6f2e0f1"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Processed goods storage",
+      "_id": "f49a126aa3097ce6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.f49a126aa3097ce6"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Raw materials storage",
+      "_id": "3b7c8671cab984c4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.3b7c8671cab984c4"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Scrapyard",
+      "_id": "759819042703b958",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.759819042703b958"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "New zone",
+      "_id": "1c7972d1fd2b50da",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.1c7972d1fd2b50da"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
+      "_id": "756234ca80cdf057",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5c474b469b4131bf.756234ca80cdf057"
+    }
+  ],
+  "folder": "2fbcd3395fd34f5d",
+  "sort": 358,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!5c474b469b4131bf"
+}

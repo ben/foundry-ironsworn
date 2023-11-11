@@ -1,0 +1,121 @@
+{
+  "_id": "3f5a834fa3fea5d1",
+  "type": "sfmove",
+  "name": "Gain Ground",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Combat/Gain_Ground",
+    "Category": "Starforged/Moves/Combat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you are in control and take action in a fight to reinforce your position or move toward an objective**, envision your approach and roll. If you are...\n\n  * In pursuit, fleeing, or maneuvering: Roll +edge\n  * Charging boldly into action, coming to the aid of others, negotiating, or commanding: Roll +heart\n  * Gaining leverage with force, powering through, or making a threat: Roll +iron\n  * Hiding, preparing an ambush, or misdirecting: Roll +shadow\n  * Coordinating a plan, studying a situation, or cleverly gaining leverage: Roll +wits\n\nOn a **hit**, you stay in control. On a **strong hit**, choose two. On a **weak hit**, choose one.\n\n  * Mark progress\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)\n\nOn a **miss**, your foe gains the upper hand, the fight moves to a new location, or you encounter a new peril. You are in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you are in control and take action in a fight to reinforce your position or move toward an objective...",
+      "Options": [
+        {
+          "Text": "In pursuit, fleeing, or maneuvering",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        },
+        {
+          "Text": "By charging boldly into action, coming to the aid of others, negotiating, or commanding",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "Gaining leverage with force, powering through, or making a threat",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Hiding, preparing an ambush, or misdirecting",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Coordinating a plan, studying a situation, or cleverly gaining leverage",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You stay in control. Choose two.\n\n  * Mark progress\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You stay in control. Choose one.\n\n  * Mark progress\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Your foe gains the upper hand, the fight moves to a new location, or you encounter a new peril. You are in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 190
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#D68F00",
+      "Images": []
+    }
+  },
+  "sort": 190,
+  "folder": "0833ccc5eb06cf7e",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!3f5a834fa3fea5d1"
+}

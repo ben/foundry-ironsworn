@@ -1,0 +1,382 @@
+{
+  "_id": "8e411eea4cd10430",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Quick_Name/Suffix",
+      "category": "Ironsworn/Oracles/Settlement"
+    }
+  },
+  "name": "Suffix",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "moor",
+      "_id": "103f906c00e92c5c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.103f906c00e92c5c"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "ford",
+      "_id": "a2c2b8be905877fa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.a2c2b8be905877fa"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "crag",
+      "_id": "627a394008ba0bde",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.627a394008ba0bde"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "watch",
+      "_id": "46ec9f5dd77bdd32",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.46ec9f5dd77bdd32"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "hope",
+      "_id": "5003ee3c6a75e4e6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.5003ee3c6a75e4e6"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "wood",
+      "_id": "3d9b75998c4dd9cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.3d9b75998c4dd9cd"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "ridge",
+      "_id": "27ee44d74783a02d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.27ee44d74783a02d"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "stone",
+      "_id": "6708fb64d03ca7e9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.6708fb64d03ca7e9"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "haven",
+      "_id": "3bb5b110c753fb65",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.3bb5b110c753fb65"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "fall(s)",
+      "_id": "1d8a272d2dfd60f5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.1d8a272d2dfd60f5"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "river",
+      "_id": "631b9cc9c75f6bb5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.631b9cc9c75f6bb5"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "field",
+      "_id": "3c1606d5feb9d387",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.3c1606d5feb9d387"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "hill",
+      "_id": "d28ea3bc15626907",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.d28ea3bc15626907"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "bridge",
+      "_id": "ae4d2603922ef859",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.ae4d2603922ef859"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "mark",
+      "_id": "ca2b72432f0a51f6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.ca2b72432f0a51f6"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "cairn",
+      "_id": "8f71f801c5bedfd0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.8f71f801c5bedfd0"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "land",
+      "_id": "5dde8cbbae487a65",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.5dde8cbbae487a65"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "hall",
+      "_id": "dda5d9611d12bf8c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.dda5d9611d12bf8c"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "mount",
+      "_id": "4143d78794dfa175",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.4143d78794dfa175"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "rock",
+      "_id": "6e0d4276ea10c3c3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.6e0d4276ea10c3c3"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "brook",
+      "_id": "f56b7116946b0116",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.f56b7116946b0116"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "barrow",
+      "_id": "1dad25a83be6edc3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.1dad25a83be6edc3"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "stead",
+      "_id": "f11f66d200316b33",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.f11f66d200316b33"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "home",
+      "_id": "121a55ba0aa4a9c3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.121a55ba0aa4a9c3"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "wick",
+      "_id": "1b50a5e503047175",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e411eea4cd10430.1b50a5e503047175"
+    }
+  ],
+  "folder": "32aa235a6ba13f03",
+  "sort": 180,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!8e411eea4cd10430"
+}

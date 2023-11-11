@@ -1,0 +1,172 @@
+{
+  "_id": "b6761b93d9f1fc4d",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Tainted/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Tainted"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Expansive fungal plains",
+      "_id": "cfb15f316714a5a7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.cfb15f316714a5a7"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Stagnant cloud cover",
+      "_id": "a5e41d2f3c69680c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.a5e41d2f3c69680c"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Fungal forests",
+      "_id": "42c7b1ca37396684",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.42c7b1ca37396684"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Thick, murky atmosphere",
+      "_id": "7f5ab2d19a4f6f84",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.7f5ab2d19a4f6f84"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Scabrous, infected terrain",
+      "_id": "466e96a993e5644a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.466e96a993e5644a"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Toxic seas",
+      "_id": "91e40d5c1cc37175",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.91e40d5c1cc37175"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Sky-breaching fungus",
+      "_id": "960b3b4825942e12",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.960b3b4825942e12"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Sludge-filled river networks",
+      "_id": "fa8b0df580deedb2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.fa8b0df580deedb2"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "f0447de757769b4f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.f0447de757769b4f"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "6b4d061a66e36913",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b6761b93d9f1fc4d.6b4d061a66e36913"
+    }
+  ],
+  "folder": "98454829527950a0",
+  "sort": 317,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!b6761b93d9f1fc4d"
+}

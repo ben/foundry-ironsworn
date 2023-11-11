@@ -1,0 +1,200 @@
+{
+  "_id": "bd5fc9d42567e5ba",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Engineering/Feature",
+      "category": "Starforged/Oracles/Derelicts/Engineering"
+    }
+  },
+  "name": "Feature",
+  "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Cluttered workbench",
+      "_id": "4bf1b23ad37eaf47",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.4bf1b23ad37eaf47"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Control terminal",
+      "_id": "99047f5b5b4b0b5d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.99047f5b5b4b0b5d"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Crane or lift",
+      "_id": "d9b1b65cd4fc1828",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.d9b1b65cd4fc1828"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Disassembled equipment",
+      "_id": "e19acecc6ab2c106",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.e19acecc6ab2c106"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Flickering status monitors",
+      "_id": "e351761acec76edf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.e351761acec76edf"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Jury-rigged equipment",
+      "_id": "56efa8e044267f13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.56efa8e044267f13"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Multilevel layout",
+      "_id": "7205132f34edb3aa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.7205132f34edb3aa"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Pipes and valves",
+      "_id": "b6e7100f98f571d5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.b6e7100f98f571d5"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Sharp ozone smell",
+      "_id": "bc6d8c6167e11d47",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.bc6d8c6167e11d47"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Unfinished project",
+      "_id": "73e4b54bd74516fb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.73e4b54bd74516fb"
+    },
+    {
+      "range": [
+        81,
+        88
+      ],
+      "text": "Utility bots",
+      "_id": "cd2410afd741fcaa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.cd2410afd741fcaa"
+    },
+    {
+      "range": [
+        89,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "bee849977e2f19ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bd5fc9d42567e5ba.bee849977e2f19ae"
+    }
+  ],
+  "folder": "9851eb5306cbb8fc",
+  "sort": 354,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!bd5fc9d42567e5ba"
+}

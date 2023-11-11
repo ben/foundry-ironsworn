@@ -1,0 +1,186 @@
+{
+  "_id": "bc9629fcef972cbe",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Operations/Peril",
+      "category": "Starforged/Oracles/Derelicts/Operations"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Automated defenses target you",
+      "_id": "db82742458dac0d8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.db82742458dac0d8"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Broken equipment limits control",
+      "_id": "3edc27985785d131",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.3edc27985785d131"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Coded message or puzzling security device",
+      "_id": "03a0ab0dc98edd18",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.03a0ab0dc98edd18"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Discouraging evidence of failed plans or defenses",
+      "_id": "37e28936ae7af0ab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.37e28936ae7af0ab"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Displays reveal a new threat elsewhere in this site",
+      "_id": "73bd64117b171cf8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.73bd64117b171cf8"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Failing power",
+      "_id": "ce97425dd83736df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.ce97425dd83736df"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Hostile AI",
+      "_id": "038bf75895f2c581",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.038bf75895f2c581"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Sealed blast doors block access",
+      "_id": "b2c5942cd5bc000c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.b2c5942cd5bc000c"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sensors indicate the arrival of an external threat",
+      "_id": "31975c40c276f91e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.31975c40c276f91e"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "6fb320afa088fc24",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.6fb320afa088fc24"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "46e61d0766feb365",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bc9629fcef972cbe.46e61d0766feb365"
+    }
+  ],
+  "folder": "44fbf1f6c622b0b2",
+  "sort": 357,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!bc9629fcef972cbe"
+}

@@ -1,0 +1,303 @@
+{
+  "name": "Cataclysm",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Cataclysm",
+      "type": "truth-category"
+    }
+  },
+  "_id": "I7P4bhbDb8ZytK7p",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "The Sun Plague extinguished the stars in our home galaxy.",
+      "system": {
+        "Subtable": [
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/1-33/Subtable/1-25",
+            "Floor": 1,
+            "Ceiling": 25,
+            "Result": "Temporal distortions from a supermassive black hole"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/1-33/Subtable/26-50",
+            "Floor": 26,
+            "Ceiling": 50,
+            "Result": "Sudden dark matter decay"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/1-33/Subtable/51-75",
+            "Floor": 51,
+            "Ceiling": 75,
+            "Result": "Superweapon run amok"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/1-33/Subtable/76-100",
+            "Floor": 76,
+            "Ceiling": 100,
+            "Result": "Scientific experiment gone awry"
+          }
+        ],
+        "dfid": "Starforged/Setting_Truths/Cataclysm/1-33",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "The Sun Plague extinguished the stars in our home galaxy.",
+        "Description": "The anomaly traveled at incredible speeds, many times faster than light itself, and snuffed out the stars around us before we realized it was coming. Few of us survived as we made our way to this new galaxy. Here in the Forge, the stars are still aflame. We cling to their warmth like weary travelers huddled around a fire.\n\nWe suspect the Sun Plague was caused by:",
+        "Quest": "The galaxy your people left behind is a cold, lightless grave. But a solitary star still glows, a beacon in a vast darkness. How did this star survive the plague? Why do you vow to find the means to travel across the immeasurable gulf to this distant light?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "yj52ukzkGsnubX93",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949021217,
+        "modifiedTime": 1695949021217,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!I7P4bhbDb8ZytK7p.yj52ukzkGsnubX93"
+    },
+    {
+      "type": "truth",
+      "name": "Interdimensional entities invaded our reality.",
+      "system": {
+        "Subtable": [
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/34-67/Subtable/1-15",
+            "Floor": 1,
+            "Ceiling": 15,
+            "Result": "Corrupting biological scourges"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/34-67/Subtable/16-30",
+            "Floor": 16,
+            "Ceiling": 30,
+            "Result": "Swarming, animalistic creatures"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/34-67/Subtable/31-44",
+            "Floor": 31,
+            "Ceiling": 44,
+            "Result": "Monstrous humanoids"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/34-67/Subtable/45-58",
+            "Floor": 45,
+            "Ceiling": 58,
+            "Result": "Spirits of alluring, divine form"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/34-67/Subtable/59-72",
+            "Floor": 59,
+            "Ceiling": 72,
+            "Result": "Beings of chaotic energy"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/34-67/Subtable/73-86",
+            "Floor": 73,
+            "Ceiling": 86,
+            "Result": "Titanic creatures of horrific power"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/34-67/Subtable/87-100",
+            "Floor": 87,
+            "Ceiling": 100,
+            "Result": "World-eating abominations of unimaginable scale"
+          }
+        ],
+        "dfid": "Starforged/Setting_Truths/Cataclysm/34-67",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Interdimensional entities invaded our reality.",
+        "Description": "Without warning, these implacable and enigmatic beings ravaged our homeworlds. We could not stand against them. With the last of our defenses destroyed, our hope gone, we cast our fate to the Forge. Here, we can hide. Survive.\n\nThese entities took the form of:",
+        "Quest": "Here in the Forge, a rogue faction holds an artifact of these interdimensional entities. What is the nature of this relic? What power or dark fate does the faction intend to unleash?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "zfwSduJazOQHRmz0",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949021878,
+        "modifiedTime": 1695949021878,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!I7P4bhbDb8ZytK7p.zfwSduJazOQHRmz0"
+    },
+    {
+      "type": "truth",
+      "name": "We escaped the ravages of a catastrophic war.",
+      "system": {
+        "Subtable": [
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/68-100/Subtable/1-20",
+            "Floor": 1,
+            "Ceiling": 20,
+            "Result": "Artificial intelligence"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/68-100/Subtable/21-40",
+            "Floor": 21,
+            "Ceiling": 40,
+            "Result": "Religious zealots"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/68-100/Subtable/41-60",
+            "Floor": 41,
+            "Ceiling": 60,
+            "Result": "Genetically engineered soldiers"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/68-100/Subtable/61-80",
+            "Floor": 61,
+            "Ceiling": 80,
+            "Result": "Self-replicating nanomachines"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Cataclysm/68-100/Subtable/81-100",
+            "Floor": 81,
+            "Ceiling": 100,
+            "Result": "A tyrannical faction or leader"
+          }
+        ],
+        "dfid": "Starforged/Setting_Truths/Cataclysm/68-100",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "We escaped the ravages of a catastrophic war.",
+        "Description": "Over millennia, we consumed resources and shattered lives as we fueled the engines of industry, expansion, and war. In the end, a powerful foe took advantage of our rivalries in a violent bid for power. Fleeing the devastation, we assembled our fleets and traveled to the Forge. A new home. A fresh start.\n\nIn this final war, we were set upon by:",
+        "Quest": "A delegation of your dreaded foe arrives in the Forge. They claim to represent a rebel force seeking sanctuary. In return, they offer vital information. What news do they carry?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "MhyCCmaxNOS2ddfk",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949021964,
+        "modifiedTime": 1695949021964,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!I7P4bhbDb8ZytK7p.MhyCCmaxNOS2ddfk"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "Do you possess a keepsake or artifact of pre-cataclysm society? What is it? Why is it important to you? If you are all that remains of a people or culture, you might be a VESTIGE.",
+        "format": 2,
+        "content": "<p>Do you possess a keepsake or artifact of pre-cataclysm society? What is it? Why is it important to you? If you are all that remains of a people or culture, you might be a VESTIGE.</p>"
+      },
+      "flags": {
+        "foundry-ironsworn": {
+          "assets": [
+            "Starforged/Assets/Path/Vestige"
+          ]
+        }
+      },
+      "_id": "rgGFX5jFHyTbXqRe",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022127,
+        "modifiedTime": 1695949022127,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!I7P4bhbDb8ZytK7p.rgGFX5jFHyTbXqRe"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021081,
+    "modifiedTime": 1695949022127,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!journal!I7P4bhbDb8ZytK7p"
+}

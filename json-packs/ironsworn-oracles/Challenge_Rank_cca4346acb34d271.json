@@ -1,0 +1,23 @@
+{
+  "name": "Challenge Rank",
+  "_id": "cca4346acb34d271",
+  "type": "RollTable",
+  "description": "Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.",
+  "sort": 190,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Turning_Point/Challenge_Rank"
+    }
+  },
+  "folder": "b4c697d8bd353315",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!cca4346acb34d271"
+}

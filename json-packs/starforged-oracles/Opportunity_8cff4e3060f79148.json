@@ -1,0 +1,102 @@
+{
+  "_id": "8cff4e3060f79148",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Production/Opportunity",
+      "category": "Starforged/Oracles/Derelicts/Production"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Helpful vehicle or transport",
+      "_id": "5df10043110249f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8cff4e3060f79148.5df10043110249f0"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Rare or valuable resource",
+      "_id": "62a5dec394eae6ab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8cff4e3060f79148.62a5dec394eae6ab"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Salvageable materials",
+      "_id": "dce59b101074b053",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8cff4e3060f79148.dce59b101074b053"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Useful equipment",
+      "_id": "4e584b664298ea7a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8cff4e3060f79148.4e584b664298ea7a"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Valuable cargo",
+      "_id": "af45ab3be1033af0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8cff4e3060f79148.af45ab3be1033af0"
+    }
+  ],
+  "folder": "2fbcd3395fd34f5d",
+  "sort": 358,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!8cff4e3060f79148"
+}

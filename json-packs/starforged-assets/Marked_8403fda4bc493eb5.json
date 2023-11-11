@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "8403fda4bc493eb5",
+  "folder": "7f1c05806875930c",
+  "name": "Marked",
+  "system": {
+    "requirement": "<p>Once you fill 5 boxes on your quests legacy track…</p>",
+    "category": "Deed",
+    "color": "#40834f",
+    "fields": [
+      {
+        "name": "Identifier",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Envision the title, sigil, uniform, or tattoo you bear in recognition of your achievements. When you @Compendium[foundry-ironsworn.starforgedmoves.9f538fabf8998c5b]{Compel} or @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection} among those who would know your reputation, add +1. On a strong hit with a match, your notoriety grows; mark 2 ticks on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you risk your reputation to overcome a miss, reroll any dice. If you score a miss again, fill one segment of a six-segment clock to represent the stain on your reputation. When the clock is filled, discard this asset.</p>",
+        "hasClock": true,
+        "clockMax": 6,
+        "clockTicks": 0
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per fight, when you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} through intimidation or command, reroll any dice and mark progress on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!8403fda4bc493eb5"
+}

@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "70aef39e95ed202f",
+  "folder": "a7279f7392f32ff4",
+  "name": "Overseer",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your AI module keeps watch over the vehicle's systems and sensor data. When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by talking through a situation with the overseer, you may roll +integrity. If you do, take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} and roll on the miss table, the overseer will do what it can to help. Roll twice on the table and choose either result.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>The overseer can pilot the vehicle independently. When you @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} by handing over control to the AI in an emergency, or to summon the vehicle remotely within a hazardous situation, you may roll +integrity. If you do, take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!70aef39e95ed202f"
+}

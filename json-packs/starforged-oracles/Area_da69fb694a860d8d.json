@@ -1,0 +1,200 @@
+{
+  "_id": "da69fb694a860d8d",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Community/Area",
+      "category": "Starforged/Oracles/Derelicts/Community"
+    }
+  },
+  "name": "Area",
+  "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Bar or club",
+      "_id": "4affe19bb7e7b1b9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.4affe19bb7e7b1b9"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Classroom or education",
+      "_id": "d2a556a91c726755",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.d2a556a91c726755"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Concourse or hub",
+      "_id": "a8993501717187c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.a8993501717187c0"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Entertainment",
+      "_id": "6ab4602489821e02",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.6ab4602489821e02"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Gym or fitness",
+      "_id": "31b3d8f9c9b6df14",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.31b3d8f9c9b6df14"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Market or trade",
+      "_id": "76e13ff73e59503b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.76e13ff73e59503b"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Park or garden",
+      "_id": "01ba6e8a0067fc14",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.01ba6e8a0067fc14"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Promenade or overlook",
+      "_id": "a6485ff02b564f88",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.a6485ff02b564f88"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Restaurant or dining",
+      "_id": "837499a3ee23ed84",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.837499a3ee23ed84"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Temple or chapel",
+      "_id": "e2dd07affa6da936",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.e2dd07affa6da936"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "New zone",
+      "_id": "d1473b18c35e7e07",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.d1473b18c35e7e07"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
+      "_id": "e8e4c203bb2486cc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!da69fb694a860d8d.e8e4c203bb2486cc"
+    }
+  ],
+  "folder": "106a2830d69bfa64",
+  "sort": 353,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!da69fb694a860d8d"
+}

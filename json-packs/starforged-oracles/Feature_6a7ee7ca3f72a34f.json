@@ -1,0 +1,242 @@
+{
+  "_id": "6a7ee7ca3f72a34f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Jovian/Feature",
+      "category": "Starforged/Oracles/Planets/Jovian"
+    }
+  },
+  "name": "Feature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Clouds of metal particles",
+      "_id": "14faeab5f939544e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.14faeab5f939544e"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Crystalline rains",
+      "_id": "09854a7e6487273f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.09854a7e6487273f"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Floating glaciers",
+      "_id": "63faa853c38783a0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.63faa853c38783a0"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Floating islands",
+      "_id": "8e7e6e864ca072d0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.8e7e6e864ca072d0"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Layer of suspended liquid",
+      "_id": "e94c0f74e8773f04",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.e94c0f74e8773f04"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Pockets of explosive gases",
+      "_id": "266fc8ff210040fe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.266fc8ff210040fe"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Powerful vortexes",
+      "_id": "96304331174b6449",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.96304331174b6449"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Radiation fields",
+      "_id": "1baeae7f904cd575",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.1baeae7f904cd575"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Storm-swept rocky debris",
+      "_id": "bc381eac92d9a8f5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.bc381eac92d9a8f5"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Torrential rain",
+      "_id": "9dc51bee53573f76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.9dc51bee53573f76"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Towering thunderheads",
+      "_id": "cc065cca7a3c8d75",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.cc065cca7a3c8d75"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Violent turbulence",
+      "_id": "22efd9cb84f05947",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.22efd9cb84f05947"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Zones of localized atmosphere",
+      "_id": "bf1a2c8719119c97",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.bf1a2c8719119c97"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "3c10ff42ab5f3a4f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.3c10ff42ab5f3a4f"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (planetside)</a>",
+      "_id": "2bba67e019944319",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!6a7ee7ca3f72a34f.2bba67e019944319"
+    }
+  ],
+  "folder": "22e197c635fbf259",
+  "sort": 312,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!6a7ee7ca3f72a34f"
+}

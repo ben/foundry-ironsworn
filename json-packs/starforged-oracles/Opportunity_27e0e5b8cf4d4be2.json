@@ -1,0 +1,382 @@
+{
+  "_id": "27e0e5b8cf4d4be2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Space/Opportunity",
+      "category": "Starforged/Oracles/Space"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Choose or roll on this table when you want inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Advance warning of an environmental threat",
+      "_id": "e4bbeb739cfc0e08",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.e4bbeb739cfc0e08"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Automated signal offers a helpful message or warning",
+      "_id": "b84481051a79e0cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.b84481051a79e0cd"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Cache of cargo or supplies",
+      "_id": "1177d3fea9fab25f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.1177d3fea9fab25f"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Chance for fellowship or a moment of inner peace",
+      "_id": "c932ca2732e05944",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.c932ca2732e05944"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Clear path through otherwise perilous space",
+      "_id": "817289b339748b67",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.817289b339748b67"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Clue offers insight into a current quest or mystery",
+      "_id": "afc59fc7bfda0be9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.afc59fc7bfda0be9"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Clue to a lifeform's nature or vulnerabilities",
+      "_id": "90afd9a5fa2e3399",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.90afd9a5fa2e3399"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Derelict ripe for the picking",
+      "_id": "209801b98f41f3ef",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.209801b98f41f3ef"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Foe inadvertently reveals themselves or tips their hand",
+      "_id": "0bbf3dfb94cdbf4d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.0bbf3dfb94cdbf4d"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Friendly interaction with a benign lifeform",
+      "_id": "e82b5c015039ef93",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.e82b5c015039ef93"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Friendly settlement in range",
+      "_id": "a96584e05b6f066d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.a96584e05b6f066d"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Friendly spacers at work here",
+      "_id": "4fa2db996d28a2f2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.4fa2db996d28a2f2"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Friendly starship crosses your path",
+      "_id": "869f4125f33b9157",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.869f4125f33b9157"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Helpful or encouraging message from an acquaintance",
+      "_id": "9dbfe52f88cfbc76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.9dbfe52f88cfbc76"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Impressive vista offers comfort or inspiration",
+      "_id": "515393e9e860cc60",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.515393e9e860cc60"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Interesting site offers opportunities for exploration",
+      "_id": "0fbd54f78efff562",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.0fbd54f78efff562"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Mineral or energy resource detected",
+      "_id": "87cf23e1dc9c4481",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.87cf23e1dc9c4481"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Navigational or environmental hazard is left behind",
+      "_id": "7dd4a6729b3b87bc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.7dd4a6729b3b87bc"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Opening to escape or avoid foes",
+      "_id": "103d80d250af6a2c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.103d80d250af6a2c"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Plea for help from a potential benefactor",
+      "_id": "c1596044ee00db0e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.c1596044ee00db0e"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Probe or beacon with useful data",
+      "_id": "0b3af1cb5049b4c3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.0b3af1cb5049b4c3"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Refuge offers a place to hide, plan, or recover",
+      "_id": "48c644e2945a5f84",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.48c644e2945a5f84"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Sensors pinpoint a lurking foe",
+      "_id": "34b727797f8d67d0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.34b727797f8d67d0"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Sensors reveal helpful or interesting environmental data",
+      "_id": "30f42d222a757bbe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.30f42d222a757bbe"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Vehicle or equipment performs beyond expectations",
+      "_id": "7db455b5bfbd71fa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!27e0e5b8cf4d4be2.7db455b5bfbd71fa"
+    }
+  ],
+  "folder": "a17a6892a4e03f3f",
+  "sort": 305,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!27e0e5b8cf4d4be2"
+}

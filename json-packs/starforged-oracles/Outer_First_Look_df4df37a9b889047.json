@@ -1,0 +1,452 @@
+{
+  "_id": "df4df37a9b889047",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Outer_First_Look",
+      "category": "Starforged/Oracles/Vaults"
+    }
+  },
+  "name": "Outer First Look",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Corrupting its environment",
+      "_id": "117059d2dc2fbf5c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.117059d2dc2fbf5c"
+    },
+    {
+      "range": [
+        4,
+        7
+      ],
+      "text": "Automated defenses",
+      "_id": "e538f3e7e02278f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.e538f3e7e02278f3"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "Breached exterior",
+      "_id": "8affcd1592c697b7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.8affcd1592c697b7"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Broken or fragmented",
+      "_id": "36890beb41d31ab8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.36890beb41d31ab8"
+    },
+    {
+      "range": [
+        15,
+        17
+      ],
+      "text": "Camouflaged or hidden",
+      "_id": "b42ba86df661e853",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.b42ba86df661e853"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Cavernous opening",
+      "_id": "9f09013e5ef57ac0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.9f09013e5ef57ac0"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Dispersed structures",
+      "_id": "5538fc1c00ecb539",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.5538fc1c00ecb539"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "Dreadful premonitions",
+      "_id": "f8316dc20c23b2ab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.f8316dc20c23b2ab"
+    },
+    {
+      "range": [
+        27,
+        30
+      ],
+      "text": "Electromagnetic field",
+      "_id": "f1bbff3f17e2dbcd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.f1bbff3f17e2dbcd"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Embedded within terrain",
+      "_id": "c2fb6960088316b1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.c2fb6960088316b1"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Encased in an energy field",
+      "_id": "556cd4588103056f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.556cd4588103056f"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Energy core or conduit",
+      "_id": "b3358b329ef97673",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.b3358b329ef97673"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "Fractal patterns",
+      "_id": "8e0bc0010097718e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.8e0bc0010097718e"
+    },
+    {
+      "range": [
+        44,
+        47
+      ],
+      "text": "Glyphs or symbols",
+      "_id": "6752b7f25102b560",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.6752b7f25102b560"
+    },
+    {
+      "range": [
+        48,
+        51
+      ],
+      "text": "Hazardous readings",
+      "_id": "472a725d2ed3b246",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.472a725d2ed3b246"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Levitating or in motion",
+      "_id": "9dedb5a89ab990b1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.9dedb5a89ab990b1"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Lighted or illuminated",
+      "_id": "ff2965275223bf2c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.ff2965275223bf2c"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "No obvious point of entry",
+      "_id": "418556ab646a3fda",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.418556ab646a3fda"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Overgrown or entangled",
+      "_id": "f04839baa27c13c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.f04839baa27c13c6"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Perfectly preserved",
+      "_id": "39cc2f81c1d0e280",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.39cc2f81c1d0e280"
+    },
+    {
+      "range": [
+        68,
+        70
+      ],
+      "text": "Phasing in and out of reality",
+      "_id": "dc28b23e36607b11",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.dc28b23e36607b11"
+    },
+    {
+      "range": [
+        71,
+        73
+      ],
+      "text": "Physical barrier",
+      "_id": "dbbb3bc98ce5c176",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.dbbb3bc98ce5c176"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Pitted or scarred",
+      "_id": "20b922ccb884edd1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.20b922ccb884edd1"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Scaled for outsized beings",
+      "_id": "174fa7c552330429",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.174fa7c552330429"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "Shrouded in mist or haze",
+      "_id": "440d39bd7c779c3c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.440d39bd7c779c3c"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Signs of invaders",
+      "_id": "5e24832759180f69",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.5e24832759180f69"
+    },
+    {
+      "range": [
+        86,
+        89
+      ],
+      "text": "Sound or signal",
+      "_id": "cf67d55a91052a08",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.cf67d55a91052a08"
+    },
+    {
+      "range": [
+        90,
+        92
+      ],
+      "text": "Strong gravity well",
+      "_id": "4c9a5ddf9790282d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.4c9a5ddf9790282d"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Surrounded by destruction",
+      "_id": "e225c903f887e1d0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.e225c903f887e1d0"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "dccfba343ea6e273",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!df4df37a9b889047.dccfba343ea6e273"
+    }
+  ],
+  "folder": "2c4fe25ee600037f",
+  "sort": 361,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!df4df37a9b889047"
+}

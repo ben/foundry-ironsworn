@@ -1,0 +1,87 @@
+{
+  "_id": "1f978f9faa43d5c6",
+  "type": "sfmove",
+  "name": "Face Desolation",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Suffer/Face_Desolation",
+    "Category": "Ironsworn/Moves/Suffer",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you are brought to the brink of desolation**, roll +heart.\n\nOn a **strong hit**, you resist and press on.\n\nOn a **weak hit**, choose one.\n\n  * Your spirit or sanity breaks, but not before you make a noble sacrifice. Envision your final moments.\n  * You see a vision of a dreaded event coming to pass. Envision that dark future (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} (formidable or extreme) to prevent it. If you fail to score a hit when you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}, or refuse the quest, you are lost. Otherwise, you return to your senses and are now tormented. You may only clear the tormented debility by completing the quest.\n\nOn a **miss**, you succumb to despair or horror and are lost.",
+    "Trigger": {
+      "Text": "When you are brought to the brink of desolation...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You resist and press on.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Choose one.\n\n  * Your spirit or sanity breaks, but not before you make a noble sacrifice. Envision your final moments.\n  * You see a vision of a dreaded event coming to pass. Envision that dark future (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} (formidable or extreme) to prevent it. If you fail to score a hit when you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}, or refuse the quest, you are lost. Otherwise, you return to your senses and are now tormented. You may only clear the tormented debility by completing the quest.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You succumb to despair or horror and are lost.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 96
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 96,
+  "folder": "a6b19a943ff830d6",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!1f978f9faa43d5c6"
+}

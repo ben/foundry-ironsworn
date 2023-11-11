@@ -1,0 +1,211 @@
+{
+  "name": "War",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/War",
+      "type": "truth-category"
+    }
+  },
+  "_id": "BpdMmry0o9jpqSrk",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Here in the Forge, resources are too precious to support organized fighting forces or advanced weaponry.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/War/1-33",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Here in the Forge, resources are too precious to support organized fighting forces or advanced weaponry.",
+        "Description": "Weapons are simple and cheap. Starships are often cobbled together from salvage. Most communities rely on ragtag bands of poorly equipped conscripts or volunteers to defend their holdings, and raiders prowl the Forge in search of easy prey.",
+        "Quest": "On a remote jungle world, settlers harvest a rare medicinal plant. Once a year, raiders come to claim a sizable portion of the crop. This year, the harvest was meager and they cannot bear the cost. With the raiders due to arrive in a matter of days, what will you do to protect the people of this outpost?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "U9zY3NH5wDUtl3vO",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022484,
+        "modifiedTime": 1695949022484,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!BpdMmry0o9jpqSrk.U9zY3NH5wDUtl3vO"
+    },
+    {
+      "type": "truth",
+      "name": "Professional soldiers defend or expand the holdings of those who are able to pay. The rest of us are on our own.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/War/34-67",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Professional soldiers defend or expand the holdings of those who are able to pay. The rest of us are on our own.",
+        "Description": "Mercenary guilds wield power in the Forge. Some are scrappy outfits of no more than a dozen soldiers. Others are sector-spanning enterprises deploying legions of skilled fighting forces and fleets of powerful starships. Most hold no loyalty except to the highest bidder.",
+        "Quest": "A detachment of mercenaries was sent to put down a rebellion on a mining settlement. Instead of following their orders, the soldiers now stand with the miners. What forced this sudden reversal? What will you do to aid these renegades as the full force of their former cohorts are arrayed against them?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "xRBiYZ2zdduVyWou",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022490,
+        "modifiedTime": 1695949022490,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!BpdMmry0o9jpqSrk.xRBiYZ2zdduVyWou"
+    },
+    {
+      "type": "truth",
+      "name": "War never ends. Talented weaponsmiths and shipwrights craft deadly, high-tech tools of destruction. Dominant factions wield mighty fleets and battle-hardened troops.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/War/68-100",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "War never ends. Talented weaponsmiths and shipwrights craft deadly, high-tech tools of destruction. Dominant factions wield mighty fleets and battle-hardened troops.",
+        "Description": "Those in power have access to weapons of horrific destructive potential. Skirmishes and wars flare across the settled domains, and most are pawns or casualties in these destructive campaigns.",
+        "Quest": "A weaponsmith created an experimental ship-mounted weapon, the Null Cannon, able to fracture the very bonds of reality. Now, they hope to undo their work before the cannon is brought to bear. What caused this change of heart? How are you involved?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "uqoShXo7yF1f24xY",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022496,
+        "modifiedTime": 1695949022496,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!BpdMmry0o9jpqSrk.uqoShXo7yF1f24xY"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "Have you fought in any wars? If you are an experienced soldier, you might be a VETERAN. If you swear vows as a soldier of fortune, you might be a MERCENARY. If you favor a particular weapon or tactic, you might follow a path such as ARCHER, BLADEMASTER, DEMOLITIONIST, GUNNER, GUNSLINGER, or SNIPER.",
+        "format": 2,
+        "content": "<p>Have you fought in any wars? If you are an experienced soldier, you might be a VETERAN. If you swear vows as a soldier of fortune, you might be a MERCENARY. If you favor a particular weapon or tactic, you might follow a path such as ARCHER, BLADEMASTER, DEMOLITIONIST, GUNNER, GUNSLINGER, or SNIPER.</p>"
+      },
+      "flags": {
+        "foundry-ironsworn": {
+          "assets": [
+            "Starforged/Assets/Path/Veteran",
+            "Starforged/Assets/Path/Mercenary",
+            "Starforged/Assets/Path/Archer",
+            "Starforged/Assets/Path/Blademaster",
+            "Starforged/Assets/Path/Demolitionist",
+            "Starforged/Assets/Path/Gunner",
+            "Starforged/Assets/Path/Gunslinger",
+            "Starforged/Assets/Path/Sniper"
+          ]
+        }
+      },
+      "_id": "vyh7J8ZOXqFgNBsL",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022502,
+        "modifiedTime": 1695949022502,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!BpdMmry0o9jpqSrk.vyh7J8ZOXqFgNBsL"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022477,
+    "modifiedTime": 1695949022502,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!journal!BpdMmry0o9jpqSrk"
+}

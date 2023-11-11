@@ -1,0 +1,116 @@
+{
+  "_id": "cp1pOsg1KZelWsC3",
+  "name": "Deep Rat",
+  "type": "foe",
+  "img": "icons/creatures/mammals/rodent-rat-green.webp",
+  "data": {},
+  "token": {
+    "name": "Deep Rat",
+    "img": "icons/creatures/mammals/rodent-rat-green.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "XlxoIkUo8GW5u4Ln",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!cp1pOsg1KZelWsC3.XlxoIkUo8GW5u4Ln"
+    },
+    {
+      "_id": "1Z40GX7svE2CfO8w",
+      "name": "Deep Rat",
+      "type": "progress",
+      "img": "icons/creatures/mammals/rodent-rat-green.webp",
+      "data": {
+        "description": "\n\n<h2>Deep Rat</h2>\n\n<p>These foul, oversized rats have squat bodies and stubby tails. They are essentially blind, but navigate through smell and touch.</p>\n<p>Deep rats are constantly collecting food and will eat anything even vaguely edible. They often dwell in caves or subterranean structures, digging compulsively to expand their lair. In those places, they serve as fodder for greater creatures.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Tiny, blind eyes</p>\n    <p class=\"nogrow\">Wrinkled, hairless skin</p>\n    <p class=\"nogrow\">Clawed feet</p>\n    <p class=\"nogrow\">Jutting incisors</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Dig</p>\n    <p class=\"nogrow\">Feed</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Undermine paths</p>\n    <p class=\"nogrow\">Swarm and bite</p>\n  </div>\n</div>\n\n<em><p>A fallen hero must be laid to rest with their kinfolk, but deep rats have invaded the settlement’s tomb. Within the dark depths of this <strong>Infested Barrow</strong> is the massive brood mother, a formidable creature that will fight savagely to protect the horde.</p></em>\n\n<em><p>During the longest night of winter, deep rats swarm the surface world. They are drawn inexorably to a specific place. What is it?</p></em>\n\n<h2>Animal</h2>\n<p>Animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the Old World.</p>\n<p>Most wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, <em>Resupply</em> (page 63) can represent hunting for deer or small game.</p>\n<p>A few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.</p>\n",
+        "rank": 1,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!cp1pOsg1KZelWsC3.1Z40GX7svE2CfO8w"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!cp1pOsg1KZelWsC3"
+}

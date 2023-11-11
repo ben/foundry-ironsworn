@@ -1,0 +1,87 @@
+{
+  "_id": "30046577bc83f2f0",
+  "type": "sfmove",
+  "name": "Make Camp",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Adventure/Make_Camp",
+    "Category": "Ironsworn/Moves/Adventure",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you rest and recover for several hours in the wild**, roll +supply.\n\nOn a **strong hit**, you and your allies may each choose two. On a **weak hit**, choose one.\n\n  * Recuperate: Take +1 health for you and any companions.\n  * Partake: Suffer -1 supply and take +1 health for you and any companions.\n  * Relax: Take +1 spirit.\n  * Focus: Take +1 momentum.\n  * Prepare: When you break camp, add +1 if you Undertake a Journey.\n\nOn a **miss**, you take no comfort. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you rest and recover for several hours in the wild...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Supply"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You and your allies may each choose two.\n\n  * Recuperate: Take +1 health for you and any companions.\n  * Partake: Suffer -1 supply and take +1 health for you and any companions.\n  * Relax: Take +1 spirit.\n  * Focus: Take +1 momentum.\n  * Prepare: When you break camp, add +1 if you Undertake a Journey.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You and your allies may each choose one.\n\n  * Recuperate: Take +1 health for you and any companions.\n  * Partake: Suffer -1 supply and take +1 health for you and any companions.\n  * Relax: Take +1 spirit.\n  * Focus: Take +1 momentum.\n  * Prepare: When you break camp, add +1 if you Undertake a Journey.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You take no comfort. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 64
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 64,
+  "folder": "30f9b4039e23c0c9",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!30046577bc83f2f0"
+}

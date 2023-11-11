@@ -1,0 +1,24 @@
+{
+  "name": "Fate Moves",
+  "type": "Item",
+  "_id": "511701086cd9d70b",
+  "color": "#8F477B",
+  "description": "In solo and co-op play, the fate moves mediate the result of other moves or serve as inspirational prompts for your story. When you face the outcome of a move, want to know what happens next, or have a question about people, places and events external to your character, the fate moves help you discover an answer.\n\nIn guided mode, your GM represents the whims of fate. They can reference these moves as they like, but they can also decide the outcome or direct the question back to you.\n\nThere are three key aspects of using the fate moves:\n  * **Instinct:** If an answer to a question or the result of a situation is obvious, interesting and dramatic, make it happen.\n  * **Randomness:** You can roll on random tables to generate a result or answer a question.\n  * **Inspiration:** You can use creative prompts, such as those included in the oracles chapter (page 165) to guide your story.",
+  "sort": 98,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Fate"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021086,
+    "modifiedTime": 1695949021086,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!511701086cd9d70b"
+}

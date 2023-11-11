@@ -1,0 +1,200 @@
+{
+  "_id": "0bb029da1d85fa2a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Operations/Area",
+      "category": "Starforged/Oracles/Derelicts/Operations"
+    }
+  },
+  "name": "Area",
+  "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Admin or command offices",
+      "_id": "3957701b3ab48900",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.3957701b3ab48900"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Armory",
+      "_id": "bf07145e64a5da6b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.bf07145e64a5da6b"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Bridge or command center",
+      "_id": "144e5c066f8198ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.144e5c066f8198ae"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Brig or cells",
+      "_id": "67cfb2ae82b1a232",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.67cfb2ae82b1a232"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Comms center",
+      "_id": "4c3ea82547be3cfc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.4c3ea82547be3cfc"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Computer core",
+      "_id": "415541139718a49e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.415541139718a49e"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Conference or briefing room",
+      "_id": "1a0ed6c0793276ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.1a0ed6c0793276ff"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Landing bay or hangar",
+      "_id": "603bb30422501383",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.603bb30422501383"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Lounge",
+      "_id": "71b4341773e97624",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.71b4341773e97624"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Security",
+      "_id": "52a67a30c69466d5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.52a67a30c69466d5"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "New zone",
+      "_id": "a4c59c9dd4e12ff0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.a4c59c9dd4e12ff0"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
+      "_id": "bdf0882c21338edb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bb029da1d85fa2a.bdf0882c21338edb"
+    }
+  ],
+  "folder": "44fbf1f6c622b0b2",
+  "sort": 357,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!0bb029da1d85fa2a"
+}

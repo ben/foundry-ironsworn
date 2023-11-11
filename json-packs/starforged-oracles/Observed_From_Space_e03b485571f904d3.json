@@ -1,0 +1,172 @@
+{
+  "_id": "e03b485571f904d3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Rocky/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Rocky"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Barren plains",
+      "_id": "77cf7f37d694e5fd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.77cf7f37d694e5fd"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Constant asteroid strikes",
+      "_id": "457f0431c8889dc2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.457f0431c8889dc2"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Dense ring system",
+      "_id": "da4d5d5d6e7333ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.da4d5d5d6e7333ec"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Jagged mountains",
+      "_id": "c55249f0eb49ef05",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.c55249f0eb49ef05"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Massive impact crater",
+      "_id": "3d89eeae713c7e71",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.3d89eeae713c7e71"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Misshapen form (low gravity)",
+      "_id": "7d467bc33eb799e6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.7d467bc33eb799e6"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Perpetual night",
+      "_id": "79fe742958fe4345",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.79fe742958fe4345"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Towering plateaus",
+      "_id": "b41a543f8d50c761",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.b41a543f8d50c761"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "42de5782109a1b01",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.42de5782109a1b01"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "7af241e343a5b684",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e03b485571f904d3.7af241e343a5b684"
+    }
+  ],
+  "folder": "bed6f29dbba73147",
+  "sort": 315,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e03b485571f904d3"
+}

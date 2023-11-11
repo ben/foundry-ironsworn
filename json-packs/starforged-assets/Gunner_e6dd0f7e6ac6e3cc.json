@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "e6dd0f7e6ac6e3cc",
+  "folder": "1f02d646adff7374",
+  "name": "Gunner",
+  "system": {
+    "requirement": "<p>If you wield a heavy ranged personal weapon…</p>",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike}, choose one (before rolling).</p>\n<ul>\n<li>Pin them down: Add +1 and take +1 momentum on a hit.</li>\n<li>Make them hurt: Mark progress on a hit.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3129f4caa4754caf]{Take Decisive Action} by emptying your gun (decide before rolling), you may @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-1) and reroll one challenge die. If the fight continues or you are caught up another fight, @Compendium[foundry-ironsworn.starforgedmoves.8d9830fb825057b0]{Check Your Gear} to see if you have more ammo on-hand.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Give your favorite gun a name. When you @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash} with it, add +1. When you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} or @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress} while wielding it, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!e6dd0f7e6ac6e3cc"
+}

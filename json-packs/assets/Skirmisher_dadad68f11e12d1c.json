@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "dadad68f11e12d1c",
+  "folder": "18b30f608501bf56",
+  "name": "Skirmisher",
+  "system": {
+    "requirement": "<p>If you wield a spear…</p>",
+    "category": "Combat Talent",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} by holding a foe at bay using your spear’s reach, roll +iron or +edge. If you score a hit, you may…</p>\n<ul>\n<li>Iron: @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} (if you have initiative) or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} now, and add +1.</li>\n<li>Edge: Take +1 momentum.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} in close combat, you may attempt to drive your spear home (decide before rolling). If you do, add +1 and inflict +2 harm on a hit. If you score a hit and the fight continues, @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} +iron to recover your spear.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} by bracing your spear against a charging foe, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!dadad68f11e12d1c"
+}

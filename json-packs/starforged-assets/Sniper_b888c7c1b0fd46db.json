@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "b888c7c1b0fd46db",
+  "folder": "1f02d646adff7374",
+  "name": "Sniper",
+  "system": {
+    "requirement": "<p>If you wield a rifle…</p>",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you target a minor foe from a distance (outside of a fight), roll +wits. On a strong hit, they are out of action. If other foes remain and you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} against them, mark progress. On a weak hit, as above, but you sacrifice time or position; @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1). On a miss, you draw attention or face a reprisal; @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} from a distance with time enough to line up your shot, you may roll +wits. If you do, mark progress on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} by studying a distant situation through your rifle scope, or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by taking careful aim, you may sacrifice time for greater certainty. If you do (decide before rolling), @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1, -2, or -3) and add that amount. Then, take +1 momentum on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!b888c7c1b0fd46db"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Basilisk",
+  "type": "progress",
+  "img": "icons/creatures/reptiles/snake-poised-white.webp",
+  "data": {
+    "description": "\n\n<h2>Basilisk</h2>\n\n<p>Basilisks dwell in the Flooded Lands, lurking in the murky waters of the swamps or within marshy thickets. There, they wait patiently for prey. They regularly feed on marsh rats or deer, but will eagerly make a meal out of a passing Ironlander.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Giant snake</p>\n    <p class=\"nogrow\">Dull yellow-brown skin</p>\n    <p class=\"nogrow\">Vibrant yellow eyes</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Devour</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Lay in wait</p>\n    <p class=\"nogrow\">Mesmerizing gaze</p>\n    <p class=\"nogrow\">Sudden bite</p>\n    <p class=\"nogrow\">Crush</p>\n  </div>\n</div>\n\n<em><p>The adventurer set out to slay a basilisk, only to become its next meal. Because the serpent digests its prey slowly, the remains of the adventurer are still undoubtedly within the beast—along with the heirloom sword he wielded. What is your relationship to this person? Why is recovering the sword so important to you?</p></em>\n\n<em><p>Some piece of a basilisk anatomy is prized by the Ironlanders. What is it? How is it used?</p></em>\n\n<h2>Beast</h2>\n<p>Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the Old World.</p>\n",
+    "rank": 4,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "g7QOgq0NTlwCv2Ms",
+  "_key": "!items!g7QOgq0NTlwCv2Ms"
+}

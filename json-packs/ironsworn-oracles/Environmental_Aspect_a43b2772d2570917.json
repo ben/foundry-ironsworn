@@ -1,0 +1,172 @@
+{
+  "_id": "a43b2772d2570917",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Name/Environmental_Aspect",
+      "category": "Ironsworn/Oracles/Settlement"
+    }
+  },
+  "name": "Environmental Aspect",
+  "description": "<p><strong>A season or environmental aspect.</strong> What influence does the weather have on this settlement?</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Winterhome",
+      "_id": "f3b5ffb15e894c11",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.f3b5ffb15e894c11"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Windhaven",
+      "_id": "2816142aa9b34be3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.2816142aa9b34be3"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Stormrest",
+      "_id": "ea9dd7d324f39d0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.ea9dd7d324f39d0f"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Bleakfrost",
+      "_id": "893582980a626ab2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.893582980a626ab2"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Springtide",
+      "_id": "4bc6aecc895d0d5f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.4bc6aecc895d0d5f"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Duskmoor",
+      "_id": "4e98e910ad3a66b4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.4e98e910ad3a66b4"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Frostcrag",
+      "_id": "92dfec5438aca0a2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.92dfec5438aca0a2"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Springbrook",
+      "_id": "988d4f737b765ea6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.988d4f737b765ea6"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Icebreak",
+      "_id": "80d85f614a6ba9d7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.80d85f614a6ba9d7"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Summersong",
+      "_id": "e10dec94ef05279b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a43b2772d2570917.e10dec94ef05279b"
+    }
+  ],
+  "folder": "11b98f1da8f07aa2",
+  "sort": 178,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!a43b2772d2570917"
+}

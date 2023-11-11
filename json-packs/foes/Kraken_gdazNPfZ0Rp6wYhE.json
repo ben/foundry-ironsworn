@@ -1,0 +1,20 @@
+{
+  "name": "Kraken",
+  "type": "progress",
+  "img": "icons/creatures/fish/squid-kraken-orange.webp",
+  "data": {
+    "description": "\n\n<h2>Kraken</h2>\n\n<p>The kraken is a sea beast, as large as the mightiest longship. It is octopoid in form, with eight arms, two longer feeding tentacles, and a beak-like mouth. It emerges from the depths to hunt whales, sharks, and other large sea creatures. It is also prone to attack any Ironlander ships which stray into its waters, plucking the crew off the deck and crushing the vessel as easily as one would snap a piece of kindling.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Gargantuan size</p>\n    <p class=\"nogrow\">Grasping tentacles</p>\n    <p class=\"nogrow\">Beaked maw</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Lurk in unfathomable depths</p>\n    <p class=\"nogrow\">Destroy those who would trespass</p>\n    <p class=\"nogrow\">Inflict terror</p>\n    <p class=\"nogrow\">Shatter ships</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Grapple and crush</p>\n    <p class=\"nogrow\">Attack from every direction</p>\n    <p class=\"nogrow\">Sweep sailors from the deck</p>\n  </div>\n</div>\n\n<em><p>A kraken lurks at the mouth of a fjord. Fisher folk refuse to sail those waters, and trade ships rarely survive the passage. The settlement on the fjord cannot survive without resupply, and overland travel is impossible during this harsh winter. Elders tell of the Dawnrunner, a blessed longship of the original settlers, sealed away in a <strong>Hallowed Sea Cave</strong> with the body of its legendary captain. Only this ship, it is said, can outrun the kraken.</p></em>\n\n<em><p>A clan of seafolk conduct a yearly hunt to kill a kraken. Although they have never succeeded, and untold Ironlanders have died in the quest, the practice persists. What event or change do they believe killing the beast will bring about? What venerated weapon do they wield in this hunt?</p></em>\n\n<h2>Beast</h2>\n<p>Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the Old World.</p>\n",
+    "rank": 5,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "gdazNPfZ0Rp6wYhE",
+  "_key": "!items!gdazNPfZ0Rp6wYhE"
+}

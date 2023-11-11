@@ -1,0 +1,23 @@
+{
+  "name": "Desert",
+  "_id": "ba1bbe7871538aad",
+  "type": "RollTable",
+  "description": "A pitiless planet of searing heat, blowing sand, and sunbaked rock.",
+  "sort": 308,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Desert"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!ba1bbe7871538aad"
+}

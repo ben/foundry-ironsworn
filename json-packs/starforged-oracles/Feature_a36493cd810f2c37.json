@@ -1,0 +1,242 @@
+{
+  "_id": "a36493cd810f2c37",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ocean/Feature",
+      "category": "Starforged/Oracles/Planets/Ocean"
+    }
+  },
+  "name": "Feature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Abyssal trenches",
+      "_id": "b85f362b76e82855",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.b85f362b76e82855"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Living islands",
+      "_id": "9aa0a8c1b996cc42",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.9aa0a8c1b996cc42"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Luminescent seas",
+      "_id": "a006804cb32b62fa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.a006804cb32b62fa"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Roaming icebergs",
+      "_id": "60cb6c1725e673e3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.60cb6c1725e673e3"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Shallow-water plains",
+      "_id": "dc16b90ee2de9f1f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.dc16b90ee2de9f1f"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Subsurface volcanoes",
+      "_id": "f5c397540c8afb74",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.f5c397540c8afb74"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Titanic waves",
+      "_id": "7540eb706e4d3d60",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.7540eb706e4d3d60"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Undersea air pockets",
+      "_id": "d165840fa22d6fee",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.d165840fa22d6fee"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Undersea caves",
+      "_id": "cfe60417dea22de7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.cfe60417dea22de7"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Undersea forests",
+      "_id": "e532fcba888cb6cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.e532fcba888cb6cf"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Unrelenting rainfall",
+      "_id": "209063deeeceeaba",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.209063deeeceeaba"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Violent currents",
+      "_id": "68f81e4204aa5b45",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.68f81e4204aa5b45"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Windborne waterspouts",
+      "_id": "e7477d2443d6835a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.e7477d2443d6835a"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "bc08abc03a3ce9f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.bc08abc03a3ce9f0"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (planetside)</a>",
+      "_id": "a95895d7aeedbb16",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a36493cd810f2c37.a95895d7aeedbb16"
+    }
+  ],
+  "folder": "d053017f6e8f47f0",
+  "sort": 314,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!a36493cd810f2c37"
+}

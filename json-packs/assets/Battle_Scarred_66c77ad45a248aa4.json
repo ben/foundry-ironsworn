@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "66c77ad45a248aa4",
+  "folder": "6ed9a3c5cdb045aa",
+  "name": "Battle-Scarred",
+  "system": {
+    "requirement": "<p>Once you become maimed…</p>",
+    "category": "Path",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>You focus your energies: Reduce your edge or iron by 1 and add +2 to wits or heart, or +1 to each (to a maximum of +4).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You overcome your limitations: Reduce your maximum health by 1. Maimed no longer counts as a debility, and does not reduce your maximum momentum or reset value. When you @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} +heart, take +1 momentum on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You have stared down death before: When you are at 0 health and @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}, you may roll +wits or +heart (instead of +health or +iron). If you do, take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!66c77ad45a248aa4"
+}

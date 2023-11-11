@@ -1,0 +1,186 @@
+{
+  "_id": "33d70af5643882f0",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Initial_Contact",
+      "category": "Starforged/Oracles/Settlements"
+    }
+  },
+  "name": "Initial Contact",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Welcoming",
+      "_id": "43c7a2ec81fe64a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.43c7a2ec81fe64a9"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Neutral / automated",
+      "_id": "30835ee1db725603",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.30835ee1db725603"
+    },
+    {
+      "range": [
+        31,
+        50
+      ],
+      "text": "Wary",
+      "_id": "45a43de45d964ddf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.45a43de45d964ddf"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Uncooperative",
+      "_id": "5db75201dcc45a9f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.5db75201dcc45a9f"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Hostile",
+      "_id": "4843df25f92cbf69",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.4843df25f92cbf69"
+    },
+    {
+      "range": [
+        71,
+        83
+      ],
+      "text": "Asking for help",
+      "_id": "dd270b4540c496d4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.dd270b4540c496d4"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "In battle",
+      "_id": "bdfb82193b57d516",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.bdfb82193b57d516"
+    },
+    {
+      "range": [
+        87,
+        89
+      ],
+      "text": "Captured",
+      "_id": "6cbed3174812027a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.6cbed3174812027a"
+    },
+    {
+      "range": [
+        90,
+        92
+      ],
+      "text": "Unresponsive",
+      "_id": "45c35890fee21d93",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.45c35890fee21d93"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Destroyed",
+      "_id": "e9d64a0d88296f9e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.e9d64a0d88296f9e"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts\"><i class=\"fa fa-caret-right\"></i> Derelict</a>",
+      "_id": "5cddf30ce593b598",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d70af5643882f0.5cddf30ce593b598"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 323,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!33d70af5643882f0"
+}

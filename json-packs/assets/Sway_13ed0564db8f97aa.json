@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "13ed0564db8f97aa",
+  "folder": "5c9139c5883395ea",
+  "name": "Sway",
+  "system": {
+    "requirement": "",
+    "category": "Ritual",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you speak a person’s name three times to the wind, roll +wits. On a strong hit, the wind whispers of this person’s need. Envision what you hear (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). If you use this information or fulfill this need when you @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} them, you may reroll any dice (one time only). On a weak hit, as above, but this person’s need creates a troubling dilemma or complication; @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (1 stress).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>As above, and if you score a strong hit when you @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel}, you may also reroll any dice (one time only) when you @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information} from this person.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!13ed0564db8f97aa"
+}

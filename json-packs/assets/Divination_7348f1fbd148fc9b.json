@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "7348f1fbd148fc9b",
+  "folder": "5c9139c5883395ea",
+  "name": "Divination",
+  "system": {
+    "requirement": "",
+    "category": "Ritual",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you take a drop of blood from a willing subject (not yourself) and cast the rune-carved stones, roll +heart. On a strong hit, you may read the runes to gain insight about the subject and people close to them, including information you and the subject have no knowledge of. If you use the reading to @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information}, @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel}, or @Compendium[foundry-ironsworn.ironswornmoves.b643d9ea53ff8d98]{Forge a Bond}, add +1. On a weak hit, as above, but the runes reveal their secrets only with extra time and focus; suffer -2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>As above, and your divination can also reveal information about the subject’s future.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!7348f1fbd148fc9b"
+}

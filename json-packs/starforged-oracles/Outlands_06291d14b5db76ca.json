@@ -1,0 +1,102 @@
+{
+  "_id": "06291d14b5db76ca",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ice/Settlements/Outlands",
+      "category": "Starforged/Oracles/Planets/Ice"
+    }
+  },
+  "name": "Outlands",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        75
+      ],
+      "text": "None",
+      "_id": "691dfe6c338ed88e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!06291d14b5db76ca.691dfe6c338ed88e"
+    },
+    {
+      "range": [
+        76,
+        83
+      ],
+      "text": "Orbital settlement",
+      "_id": "a94298fb787fe34c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!06291d14b5db76ca.a94298fb787fe34c"
+    },
+    {
+      "range": [
+        84,
+        95
+      ],
+      "text": "Planetside settlement",
+      "_id": "a50f08b36f60b609",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!06291d14b5db76ca.a50f08b36f60b609"
+    },
+    {
+      "range": [
+        96,
+        98
+      ],
+      "text": "Multiple settlements",
+      "_id": "8479cb87409c6c5d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!06291d14b5db76ca.8479cb87409c6c5d"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Settlements in conflict",
+      "_id": "6d9c3a76066bf3c5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!06291d14b5db76ca.6d9c3a76066bf3c5"
+    }
+  ],
+  "folder": "af540e4e4b0e10f6",
+  "sort": 311,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!06291d14b5db76ca"
+}

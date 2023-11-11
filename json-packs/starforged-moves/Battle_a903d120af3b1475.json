@@ -1,0 +1,121 @@
+{
+  "_id": "a903d120af3b1475",
+  "type": "sfmove",
+  "name": "Battle",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Combat/Battle",
+    "Category": "Starforged/Moves/Combat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you fight a battle and it happens in a blur**, envision your objective and roll. If you primarily...\n\n  * Fight at range, or using your speed and the environment to your advantage: Roll +edge.\n  * Fight depending on your courage, leadership, or companions: Roll +heart.\n  * Fight in close to overpower your foe: Roll +iron.\n  * Fight using trickery to befuddle your foe: Roll +shadow.\n  * Fight using careful tactics to outsmart your foe: Roll +wits.\n\nOn a **strong hit**, you achieve your objective unconditionally. You and any allies who joined the battle may take +2 momentum.\n\nOn a **weak hit**, you achieve your objective, but not without cost. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.\n\nOn a **miss**, you are defeated or the objective is lost. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you fight a battle and it happens in a blur...",
+      "Options": [
+        {
+          "Text": "At range, or using your speed and the environment to your advantage",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        },
+        {
+          "Text": "Depending on your courage, leadership, or companions",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "In close to overpower your foe",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Using trickery to befuddle your foe",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Using careful tactics to outsmart your foe",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You achieve your objective unconditionally. You and any allies who joined the battle may take +2 momentum.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You achieve your objective, but not without cost. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You are defeated or the objective is lost. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 197
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#D68F00",
+      "Images": []
+    }
+  },
+  "sort": 197,
+  "folder": "0833ccc5eb06cf7e",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!a903d120af3b1475"
+}

@@ -1,0 +1,252 @@
+{
+  "_id": "HjxXUr5xrV1mobAO",
+  "type": "delve-domain",
+  "name": "Mine",
+  "img": "icons/environment/settlement/mine-cart-rocks-red.webp",
+  "system": {
+    "summary": "Tunnels dug greedily and deep.",
+    "description": "Within the earth, riches await the bold. Some mines are shallow pits worked by pick and shovel. Others are offshoots of existing caverns which pierce deep into hills and mountains. A few are the remains of vast underground complexes built by forgotten cultures.\n\nThe iron and other metals claimed from these sites feed our furnaces. From those fires, we craft tools, armor, weapons, and other precious goods. Our hunger for these resources is never satiated, and we often dig into places best left undisturbed.",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Cramped tunnels",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Mine works",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Excavated chamber",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Mineshaft",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Collapsed tunnel",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Cluttered storage",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Housing or common areas",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Flooded chamber",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Unearthed secret",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Cave-in",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Flooding",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Unstable platforms or architecture",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Hazardous gas pocket",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Weakened terrain",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "HjxXUr5xrV1mobAO"
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "wQPE4gQwm9evnYyd": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.13",
+    "coreVersion": "10.291",
+    "createdTime": 1674027048032,
+    "modifiedTime": 1674027048032,
+    "lastModifiedBy": "wQPE4gQwm9evnYyd"
+  },
+  "_key": "!items!HjxXUr5xrV1mobAO"
+}

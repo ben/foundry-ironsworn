@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "62c8297fab069013",
+  "folder": "1f02d646adff7374",
+  "name": "Explorer",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint}, take +1 momentum on a hit. When you @Compendium[foundry-ironsworn.starforgedmoves.edac426b7c23f060]{Finish an Expedition} and score a hit, mark 1 extra tick on your discoveries legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you come across a wondrous sight or phenomenon, such as an extraordinary planet, majestic creature, or dazzling stellar object, choose one:</p>\n<ul>\n<li>Find inspiration: Take +1 momentum</li>\n<li>Soak it all in: @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten}; add +1, and take +1 momentum on a hit.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} by studying a newfound place from a safe position, add +1 and take +1 momentum on a hit. On a strong hit with a match, take another +1 momentum and envision an unusual aspect of the site.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!62c8297fab069013"
+}

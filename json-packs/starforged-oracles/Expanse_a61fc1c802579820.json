@@ -1,0 +1,74 @@
+{
+  "_id": "a61fc1c802579820",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Shattered/Settlements/Expanse",
+      "category": "Starforged/Oracles/Planets/Shattered"
+    }
+  },
+  "name": "Expanse",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        95
+      ],
+      "text": "None",
+      "_id": "04703389afa40b8d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a61fc1c802579820.04703389afa40b8d"
+    },
+    {
+      "range": [
+        96,
+        99
+      ],
+      "text": "Orbital settlement",
+      "_id": "9c99973a9ce4d342",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a61fc1c802579820.9c99973a9ce4d342"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Planetside settlement",
+      "_id": "040eb4cd23a207e2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a61fc1c802579820.040eb4cd23a207e2"
+    }
+  ],
+  "folder": "a853dd7c20363ff3",
+  "sort": 316,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!a61fc1c802579820"
+}

@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "4fafc93fdd8873ce",
+  "folder": "1f02d646adff7374",
+  "name": "Healer",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you give medical care to @Compendium[foundry-ironsworn.starforgedmoves.2051538f0c9d5d27]{Heal} yourself or another character, add +1. If you are treating someone other than yourself, take +1 spirit or +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} by studying medical evidence or biological remains, add +1 and take +1 momentum on a hit. On a strong hit with a match, you also reveal an unexpected medical anomaly; mark 1 tick on your discoveries legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once every day or so, when you are in a safe place with plenty of time on your hands, you may @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-1) and provide basic medical care for yourself, companions, or allies without risk. If you do, roll only your action die. On a 1-4, automatically give +1 health to everyone whose health is greater than 0. On a 5-6, make it +2.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!4fafc93fdd8873ce"
+}

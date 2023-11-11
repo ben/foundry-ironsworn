@@ -1,0 +1,20 @@
+{
+  "name": "Troll",
+  "type": "progress",
+  "img": "icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp",
+  "data": {
+    "description": "\n\n<h2>Troll</h2>\n\n<p>Trolls mostly live in the Flooded Land, but it’s not unusual to encounter one in the Hinterlands or even in the southern reaches of the Havens. They are solitary creatures, wary of contact with Ironlanders but likely to attack if scared or provoked.</p>\n<p>They move with their back hunched, often skulking on all four gangly limbs. When they stand straight they are much taller than humans—nearly as tall as a giant. Their skin is a sickly pale gray, but they can camouflage themselves by changing it to match their environment.</p>\n<p>Trolls collect objects of all sorts, and particularly value Ironlander trinkets. They are tormented by the fear of others stealing their hoard, and are constantly seeking out new, better hiding places. The items are mostly junk to anyone but a troll, but occasionally an object of real value finds its way into the dregs.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Long limbs</p>\n    <p class=\"nogrow\">Sunken, beady eyes</p>\n    <p class=\"nogrow\">Translucent skin camouflaged to the environment</p>\n    <p class=\"nogrow\">Keen sense of smell</p>\n    <p class=\"nogrow\">Speaks in gibberish</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Find pretty things</p>\n    <p class=\"nogrow\">Keep it secret</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Be sneaky</p>\n    <p class=\"nogrow\">Bite and claw</p>\n    <p class=\"nogrow\">Run and hide</p>\n  </div>\n</div>\n\n<em><p>The villagers tolerate the troll who lives nearby because its presence serves to dissuade a greater threat. They even donate items for its hoard, and put up with its occasional thievery. But now, the troll is missing. What is the looming threat the troll helped avert?</p></em>\n\n\n<h2>Firstborn</h2>\n<p>The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory.</p>\n",
+    "rank": 3,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "dX3t3gqu3XHooiqY",
+  "_key": "!items!dX3t3gqu3XHooiqY"
+}

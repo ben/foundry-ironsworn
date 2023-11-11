@@ -1,0 +1,172 @@
+{
+  "_id": "89a97ffc256f81b0",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Pass",
+      "category": "Ironsworn/Oracles/Site_Name"
+    }
+  },
+  "name": "Pass",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Cliffs",
+      "_id": "b7097bff92ba9705",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.b7097bff92ba9705"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Crag",
+      "_id": "37efbafe723a268c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.37efbafe723a268c"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Cut",
+      "_id": "c71887870bf82054",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.c71887870bf82054"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Gap",
+      "_id": "83d087e58fbd8957",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.83d087e58fbd8957"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Gorge",
+      "_id": "d38130eef1641e46",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.d38130eef1641e46"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Heights",
+      "_id": "71d58d8575a2def2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.71d58d8575a2def2"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Highlands",
+      "_id": "4577172ae7c53bb7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.4577172ae7c53bb7"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Pass",
+      "_id": "c3a1a1bb2761fe60",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.c3a1a1bb2761fe60"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Reach",
+      "_id": "ada15fe9a2c5f97a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.ada15fe9a2c5f97a"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Ridge",
+      "_id": "fee4f981582f5241",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!89a97ffc256f81b0.fee4f981582f5241"
+    }
+  ],
+  "folder": "b635c76e4b694c12",
+  "sort": 1210,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!89a97ffc256f81b0"
+}

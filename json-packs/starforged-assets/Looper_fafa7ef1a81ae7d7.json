@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "fafa7ef1a81ae7d7",
+  "folder": "1f02d646adff7374",
+  "name": "Looper",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you score a miss on a suffer move (not @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress}), you may loop back a second or two. If you do, @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2), reroll any dice, and take +1 momentum on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you create a link to the current point in time, note the value of condition meters for you and your allies. You can retain only one active link. If you later loop back to this moment, roll +the gap in time: +4 if minutes, +3 if hours, or +2 if days. You may not burn momentum on this roll. On a strong hit, return to the linked point, retain any progress, and set condition meters (except for spirit) to their original values. On a weak hit, as above, but @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress} (-2). On a miss, as with a strong hit, but you find the timeline corrupted; @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a reroll granted by any asset ability on an action roll, also add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!fafa7ef1a81ae7d7"
+}

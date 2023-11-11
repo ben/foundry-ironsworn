@@ -1,0 +1,172 @@
+{
+  "_id": "d18bba3ea62a8639",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Rampaging_Creature",
+      "category": "Ironsworn/Oracles/Threat"
+    }
+  },
+  "name": "Rampaging Creature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Reveal a new aspect of its nature or abilities",
+      "_id": "70879ca2c67660ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.70879ca2c67660ac"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Expand its territory",
+      "_id": "eacb6a2c37ef8ff2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.eacb6a2c37ef8ff2"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Make a sudden and brutal attack",
+      "_id": "490de674d992161d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.490de674d992161d"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Control or influence lesser creatures",
+      "_id": "7143fc9c5a138b3e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.7143fc9c5a138b3e"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Create confusion or strife",
+      "_id": "d8177b4b5834fd1b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.d8177b4b5834fd1b"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Leave foreboding signs",
+      "_id": "47588f89714c0353",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.47588f89714c0353"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Lure the unwary",
+      "_id": "d011a8e4b3c058c9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.d011a8e4b3c058c9"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Imperil an event",
+      "_id": "cfaac0958c7762ab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.cfaac0958c7762ab"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Assert control over a location",
+      "_id": "afde67e6b71639cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.afde67e6b71639cd"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Threaten resources",
+      "_id": "929db3aecc5f379c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d18bba3ea62a8639.929db3aecc5f379c"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 1222,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!d18bba3ea62a8639"
+}

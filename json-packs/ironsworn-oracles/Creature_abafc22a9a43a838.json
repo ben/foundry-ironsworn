@@ -1,0 +1,172 @@
+{
+  "_id": "abafc22a9a43a838",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Name/Creature",
+      "category": "Ironsworn/Oracles/Settlement"
+    }
+  },
+  "name": "Creature",
+  "description": "<p><strong>A creature.</strong> Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Ravencliff",
+      "_id": "8d437d950f46d6ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.8d437d950f46d6ec"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Bearmark",
+      "_id": "c11567d4270fe694",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.c11567d4270fe694"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Wolfcrag",
+      "_id": "82df19f7dfef47c1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.82df19f7dfef47c1"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Eaglespire",
+      "_id": "97928291a67db65d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.97928291a67db65d"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Wyvern's Rest",
+      "_id": "7f451dc218876c09",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.7f451dc218876c09"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Boarwood",
+      "_id": "e0f2eed15b42689d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.e0f2eed15b42689d"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Foxhollow",
+      "_id": "82a284373433c98f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.82a284373433c98f"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Elderwatch",
+      "_id": "beea4c447555ed4c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.beea4c447555ed4c"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Elkfield",
+      "_id": "a5776501d67115db",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.a5776501d67115db"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Dragonshadow",
+      "_id": "d976d133e4edcfff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!abafc22a9a43a838.d976d133e4edcfff"
+    }
+  ],
+  "folder": "11b98f1da8f07aa2",
+  "sort": 178,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!abafc22a9a43a838"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "N6Pay3etyzD7NyyH",
+  "name": "Zealot",
+  "type": "foe",
+  "img": "icons/environment/people/cleric-grey.webp",
+  "data": {},
+  "token": {
+    "name": "Zealot",
+    "img": "icons/environment/people/cleric-grey.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "w58Y6xrFamMU50UK",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!N6Pay3etyzD7NyyH.w58Y6xrFamMU50UK"
+    },
+    {
+      "_id": "gmMM4P28qM7O0qXR",
+      "name": "Zealot",
+      "type": "progress",
+      "img": "icons/environment/people/cleric-grey.webp",
+      "data": {
+        "description": "\n\n<h2>Zealot</h2>\n\n<p>Zealots are those we have lost to their faith. Friends and loved ones are discarded or forgotten. Communities are left behind. Possessions are discarded or turned over to the needs of the sect. They live for one purpose, and all other vows are forsaken. This single-minded devotion changes them, sometimes irrevocably.</p>\n<p>Some zealots worship ancient, forgotten gods, and seek to return them to their former horrible glory. Others serve new religious movements, caught up in promises of a better life. Some worship mortal leaders as if they were gods—perhaps even believing them to be the avatar of divinity.</p>\n<p>This sense of belonging, of purpose, can be a powerful lure in this perilous land.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Sickly pallor</p>\n    <p class=\"nogrow\">Distant eyes</p>\n    <p class=\"nogrow\">Marks of their faith</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Serve the faith</p>\n    <p class=\"nogrow\">Bring others into the fold</p>\n    <p class=\"nogrow\">Destroy those who oppose them</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Entice with trickery or false promises</p>\n    <p class=\"nogrow\">Use the powers of the faith</p>\n    <p class=\"nogrow\">Stand together to overcome nonbelievers</p>\n  </div>\n</div>\n\n<em><p>You have lost someone to an emerging sect which seeks to unleash a forgotten power or entity. They dwell within a <strong>Hallowed Underkeep</strong>. What is the nature of their belief? Will you attempt to save this person from their faith, or see them destroyed along with it?</p></em>\n\n\n<h2>Ironlander</h2>\n<p>Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.</p>\n<p>This section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can <em>Ask the Oracle</em>, or follow these guidelines:</p>\n<ul>\n<li><p>A common citizen or brute is <strong>troublesome</strong>.</p>\n</li>\n<li><p>A trained warrior is <strong>dangerous</strong>.</p>\n</li>\n<li><p>A powerful or veteran warrior is <strong>formidable</strong>.</p>\n</li>\n</ul>\n",
+        "rank": 1,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!N6Pay3etyzD7NyyH.gmMM4P28qM7O0qXR"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!N6Pay3etyzD7NyyH"
+}

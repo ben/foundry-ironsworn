@@ -1,0 +1,105 @@
+{
+  "_id": "3ff03b51f620ab26",
+  "type": "sfmove",
+  "name": "Undertake an Expedition",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Exploration/Undertake_an_Expedition",
+    "Category": "Starforged/Moves/Exploration",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you trailblaze a route through perilous space, journey over hazardous terrain, or survey a mysterious site**, give the expedition a name and rank. Then, for each segment of the expedition, envision your approach. If you...\n\n  * Move at speed: Roll +edge\n  * Keep under the radar: Roll +shadow\n  * Stay vigilant: Roll +wits\n\nOn a **strong hit**, you reach a waypoint. Envision the location and mark progress per the rank of the expedition.\n\nOn a **weak hit**, as above, but this progress costs you. Choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a peril at the waypoint: Envision what you encounter.\n\nOn a **miss**, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you trailblaze a route through perilous space, journey over hazardous terrain, or survey a mysterious site...",
+      "Options": [
+        {
+          "Text": "Move at speed",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        },
+        {
+          "Text": "Keep under the radar",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Stay vigilant",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You reach a waypoint. Envision the location and mark progress per the rank of the expedition.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You reach a waypoint, but this progress costs you. Envision the location and mark progress per the rank of the expedition, but choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a peril at the waypoint: Envision what you encounter.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 169
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#7438B8",
+      "Images": []
+    }
+  },
+  "sort": 169,
+  "folder": "f57c06b3db7f1676",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!3ff03b51f620ab26"
+}

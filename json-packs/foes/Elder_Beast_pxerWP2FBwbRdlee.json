@@ -1,0 +1,20 @@
+{
+  "name": "Elder Beast",
+  "type": "progress",
+  "img": "icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp",
+  "data": {
+    "description": "\n\n<h2>Elder Beast</h2>\n\n<p>Elder beasts—wolves, bears and boars—are huge, monstrous versions of their common kin. They are primarily solitary creatures, though elder wolves have been known to lead a pack of common wolves. They are not aggressive, but are protective of their lands and the creatures within it. Some say they are avatars of the old gods and as long-lived as the oldest trees.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Twice the size of their common kin, or more</p>\n    <p class=\"nogrow\">Red eyes</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Dominate</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Intimidating display</p>\n    <p class=\"nogrow\">Overwhelming attack</p>\n  </div>\n</div>\n\n<em><p>An elder wolf, white as snow, appears to you in a dream. When you wake, the memory of its piercing gaze lingers. Is the vision a dark portent or a promise? Why are you compelled to seek this beast out?</p></em>\n\n<em><p>What people of the Ironlands revere and protect the elder beasts? What group hunts them and why?</p></em>\n\n<h2>Beast</h2>\n<p>Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the Old World.</p>\n",
+    "rank": 4,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "pxerWP2FBwbRdlee",
+  "_key": "!items!pxerWP2FBwbRdlee"
+}

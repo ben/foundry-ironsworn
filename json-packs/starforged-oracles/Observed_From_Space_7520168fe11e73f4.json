@@ -1,0 +1,172 @@
+{
+  "_id": "7520168fe11e73f4",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Grave"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Broken moon",
+      "_id": "57031ac7d1555d86",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.57031ac7d1555d86"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Perpetual overcast",
+      "_id": "8bb769caf123f476",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.8bb769caf123f476"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Cratered surface",
+      "_id": "e511ac545e5691dc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.e511ac545e5691dc"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Sky-breaching ruins",
+      "_id": "abdd3bc36eb7e7cf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.abdd3bc36eb7e7cf"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Dry seabeds",
+      "_id": "a478ef81752f6571",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.a478ef81752f6571"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Vast wastelands",
+      "_id": "d656063abd55a54d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.d656063abd55a54d"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Irradiated atmosphere",
+      "_id": "3b07371a80bf53b3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.3b07371a80bf53b3"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Orbiting ship graveyard",
+      "_id": "529477b8920ebe1f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.529477b8920ebe1f"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "2d828493b8f8f525",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.2d828493b8f8f525"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "bad9444a0ce6475f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7520168fe11e73f4.bad9444a0ce6475f"
+    }
+  ],
+  "folder": "caa4a9957ef73507",
+  "sort": 310,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!7520168fe11e73f4"
+}

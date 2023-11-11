@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "6f2206d5ae2b734b",
+  "folder": "7f1c05806875930c",
+  "name": "Vanguard",
+  "system": {
+    "requirement": "<p>Once you fill 6 boxes on your discoveries legacy track…</p>",
+    "category": "Deed",
+    "color": "#40834f",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you seek a safe location in a remote environment, make a progress roll against your discoveries legacy track. On a strong hit, you establish a haven; add +2 whenever you make a recovery move at that location. On a weak hit, as above, but add +1 when making a recovery move. On a miss, you are drawn into a bad situation and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. If you establish a haven but score a miss on a recovery move, that location is no longer safe.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move +wits and score a strong hit with a match, your hard-won experience lends insight; take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress}, you may roll +wits. If you do, take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!6f2206d5ae2b734b"
+}

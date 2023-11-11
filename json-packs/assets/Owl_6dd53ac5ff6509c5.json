@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "6dd53ac5ff6509c5",
+  "folder": "43828d28bfed3e0a",
+  "name": "Owl",
+  "system": {
+    "requirement": "<p>Your owl soars through the darkness.</p>",
+    "category": "Companion",
+    "color": null,
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>If you @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} at night by sending your owl to hunt, take +2 momentum on a hit. When you @Compendium[foundry-ironsworn.ironswornmoves.ed343c963b08f301]{Enter the Fray} +wits against an ambush in darkness, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you leverage your owl’s secret knowledge to perform a ritual, add +1 or take +1 momentum on a hit (decide before rolling).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}, take your owl’s health as +momentum before you roll.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "current": 0,
+      "max": 3,
+      "value": 3,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!6dd53ac5ff6509c5"
+}

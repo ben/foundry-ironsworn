@@ -1,0 +1,326 @@
+{
+  "_id": "264db30938b39f46",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Interior/Peril",
+      "category": "Starforged/Oracles/Vaults/Interior"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Use this table to help envision a complication within a vault, such as when you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and are prompted to envision a peril.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Broken path",
+      "_id": "40c0150148430efd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.40c0150148430efd"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Change in atmosphere or environment",
+      "_id": "4dc346902b8d4437",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.4dc346902b8d4437"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Corrosive environment",
+      "_id": "36d942812a7e88a5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.36d942812a7e88a5"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Dire warning left by other explorers",
+      "_id": "35691b511dc3e51a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.35691b511dc3e51a"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Foes close in",
+      "_id": "e40007293bb9de67",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.e40007293bb9de67"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Fragile structural integrity",
+      "_id": "47a8620cf9d83c03",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.47a8620cf9d83c03"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Hazardous path designed for traversal by other beings",
+      "_id": "9a9a5333d37dd31b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.9a9a5333d37dd31b"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Important gear malfunctions",
+      "_id": "6816924a6f1c11f9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.6816924a6f1c11f9"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Isolation or fear presses in",
+      "_id": "daf5c3dae8a9da8b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.daf5c3dae8a9da8b"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Mechanical trap",
+      "_id": "12ae94fd4516c45f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.12ae94fd4516c45f"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Mist or darkness conceals dangers",
+      "_id": "31eda8b2c8c9bd7d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.31eda8b2c8c9bd7d"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Puzzling mystery blocks the way",
+      "_id": "554fd0141cd870e0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.554fd0141cd870e0"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Radioactive hot spot",
+      "_id": "71bf81ff33bac337",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.71bf81ff33bac337"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Rivals seek what lay within",
+      "_id": "e1b211fcc78461c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.e1b211fcc78461c6"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Signs of a contagion",
+      "_id": "8643a5c97a29d24c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.8643a5c97a29d24c"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Signs of a lurking foe",
+      "_id": "457fe85e255106c4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.457fe85e255106c4"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Tempting location or object holds hidden dangers",
+      "_id": "873263bde367e012",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.873263bde367e012"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Toxic atmosphere",
+      "_id": "09b3ce386f563616",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.09b3ce386f563616"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Unnerving sound or sensation",
+      "_id": "3c2cd816f7443cab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.3c2cd816f7443cab"
+    },
+    {
+      "range": [
+        96,
+        99
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "6b7d89b6a1ab4cbb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.6b7d89b6a1ab4cbb"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "c54189d925e754ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!264db30938b39f46.c54189d925e754ec"
+    }
+  ],
+  "folder": "b4d058fedc071ce9",
+  "sort": 367,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!264db30938b39f46"
+}

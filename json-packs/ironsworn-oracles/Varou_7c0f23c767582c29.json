@@ -1,0 +1,382 @@
+{
+  "_id": "7c0f23c767582c29",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Name/Other/Varou",
+      "category": "Ironsworn/Oracles/Name"
+    }
+  },
+  "name": "Varou",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Vata",
+      "_id": "f922bdab5b8bff54",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.f922bdab5b8bff54"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Zora",
+      "_id": "6be55e21b67c40f9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.6be55e21b67c40f9"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Jasna",
+      "_id": "5011471405babe8b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.5011471405babe8b"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Charna",
+      "_id": "f0b55a5976d2f44a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.f0b55a5976d2f44a"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Tana",
+      "_id": "a94ca428b7064498",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.a94ca428b7064498"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Soveen",
+      "_id": "38867bb014870b7a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.38867bb014870b7a"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Radka",
+      "_id": "3a713c5c8ed47bda",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.3a713c5c8ed47bda"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Zlata",
+      "_id": "0c291d4d64e86e7e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.0c291d4d64e86e7e"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Leesla",
+      "_id": "d16e49351e3ad790",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.d16e49351e3ad790"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Byna",
+      "_id": "4f31fc8c446160a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.4f31fc8c446160a9"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Meeka",
+      "_id": "5f8e35265215f7ee",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.5f8e35265215f7ee"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Iskra",
+      "_id": "1036267b7b31b766",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.1036267b7b31b766"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Jarek",
+      "_id": "1aba1a8bfe5b4e61",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.1aba1a8bfe5b4e61"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Darva",
+      "_id": "1d4e33d9d36080e6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.1d4e33d9d36080e6"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Neda",
+      "_id": "f635fea193bb863e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.f635fea193bb863e"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Keha",
+      "_id": "f1be7007498ad353",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.f1be7007498ad353"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Zhivka",
+      "_id": "cfd6dd3a1c36c6b3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.cfd6dd3a1c36c6b3"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Kvata",
+      "_id": "a20e2e2c7cb99fb1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.a20e2e2c7cb99fb1"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Staysa",
+      "_id": "46cd3fc0d43f1f10",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.46cd3fc0d43f1f10"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Evka",
+      "_id": "1a4a7d0a39f330cc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.1a4a7d0a39f330cc"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Vuksha",
+      "_id": "4967e564c826a678",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.4967e564c826a678"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Muko",
+      "_id": "2769b6d3f579bc9b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.2769b6d3f579bc9b"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Dreko",
+      "_id": "0281f0c2a3233032",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.0281f0c2a3233032"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Aleko",
+      "_id": "fbb63f8f5008fa30",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.fbb63f8f5008fa30"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Vojan",
+      "_id": "e3d6cbe067b2560a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7c0f23c767582c29.e3d6cbe067b2560a"
+    }
+  ],
+  "folder": "7c9db0bc5d87be12",
+  "sort": 187,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!7c0f23c767582c29"
+}

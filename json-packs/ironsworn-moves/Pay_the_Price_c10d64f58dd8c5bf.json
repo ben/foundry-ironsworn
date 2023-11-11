@@ -1,0 +1,80 @@
+{
+  "_id": "c10d64f58dd8c5bf",
+  "type": "sfmove",
+  "name": "Pay the Price",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Fate/Pay_the_Price",
+    "Category": "Ironsworn/Moves/Fate",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you suffer the outcome of a move**, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and @Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\nRoll  | Result\n------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n1-2   | Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure) and make it happen.\n3-5   | A person or community you trusted loses faith in you, or acts against you.\n6-9   | A person or community you care about is exposed to danger.\n10-16 | You are separated from something or someone.\n17-23 | Your action has an unintended effect.\n24-32 | Something of value is lost or destroyed.\n33-41 | The current situation worsens.\n42-50 | A new danger or foe is revealed.\n51-59 | It causes a delay or puts you at a disadvantage.\n60-68 | It is harmful.\n69-76 | It is stressful.\n77-85 | A surprising development complicates your quest.\n86-90 | It wastes resources.\n91-94 | It forces you to act against your best intentions.\n95-98 | A friend, companion, or ally is put in harm’s way (or you are, if alone).\n99-00 | Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
+    "Trigger": {
+      "Text": "When you suffer the outcome of a move...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [
+      "Ironsworn/Oracles/Moves/Pay_the_Price"
+    ],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 105
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 105,
+  "folder": "511701086cd9d70b",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!c10d64f58dd8c5bf"
+}

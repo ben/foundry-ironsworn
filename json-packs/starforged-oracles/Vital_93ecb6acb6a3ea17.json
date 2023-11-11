@@ -1,0 +1,23 @@
+{
+  "name": "Vital",
+  "_id": "93ecb6acb6a3ea17",
+  "type": "RollTable",
+  "description": "This diverse, life-bearing planet might provide some small measure of hope.",
+  "sort": 318,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Vital"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!93ecb6acb6a3ea17"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "UNMCqFpRbgjpVldC",
+  "name": "Iron-Wracked Beast",
+  "type": "foe",
+  "img": "icons/environment/wilderness/statue-hound-horned.webp",
+  "data": {},
+  "token": {
+    "name": "Iron-Wracked Beast",
+    "img": "icons/environment/wilderness/statue-hound-horned.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "5jjYwVXqFWREEOpM",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!UNMCqFpRbgjpVldC.5jjYwVXqFWREEOpM"
+    },
+    {
+      "_id": "GpHPshtZYS9Jb3zw",
+      "name": "Iron-Wracked Beast",
+      "type": "progress",
+      "img": "icons/environment/wilderness/statue-hound-horned.webp",
+      "data": {
+        "description": "\n\n<h2>Iron-Wracked Beast</h2>\n\n<p>We don’t know the origin of the Iron Blight, nor do we know its cure. It inflicts creatures of the wilds and transforms their flesh slowly to iron. These pitiful but powerful beasts are scarred by patches of metal flesh within ragged, weeping wounds. The iron is like a parasite, devouring the host as it torments them with unstoppable pain and insatiable hunger. Their howls echo with animalistic agony and the clangor of hammer against anvil.</p>\n<p>In time, the Blight takes too much, and the beast dies while it is still more flesh than iron. We pray a creature never survives beyond that stage. What would it become?</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Flesh corrupted by iron</p>\n    <p class=\"nogrow\">Pained howl</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Feed the insatiable hunger</p>\n    <p class=\"nogrow\">Destroy those who wield iron</p>\n    <p class=\"nogrow\">Find a release from pain</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Attack with brutal rage</p>\n    <p class=\"nogrow\">Bite and devour</p>\n  </div>\n</div>\n\n<em><p>Your animal companion is stricken with the Iron Blight. The disease is in its early stages, but time is your enemy. Locals say the origin of the blight lies within a <strong>Corrupted Tanglewood</strong>. What will you do to stop the relentless progression of the iron corruption?</p></em>\n\n<em><p>A sect of zealots believe the Iron Blight is a divine manifestation. What god do they worship? What purpose do they believe the disease fulfills, and how to they intend to hasten the will of their god?</p></em>\n\n<h2>Beast</h2>\n<p>Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the Old World.</p>\n",
+        "rank": 3,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!UNMCqFpRbgjpVldC.GpHPshtZYS9Jb3zw"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!UNMCqFpRbgjpVldC"
+}

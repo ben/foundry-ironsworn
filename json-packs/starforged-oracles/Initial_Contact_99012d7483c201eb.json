@@ -1,0 +1,200 @@
+{
+  "_id": "99012d7483c201eb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Starships/Initial_Contact",
+      "category": "Starforged/Oracles/Starships"
+    }
+  },
+  "name": "Initial Contact",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Familiar",
+      "_id": "b4ee47fd36201094",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.b4ee47fd36201094"
+    },
+    {
+      "range": [
+        4,
+        15
+      ],
+      "text": "Friendly",
+      "_id": "bd1a788bf5686905",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.bd1a788bf5686905"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Neutral / automated",
+      "_id": "65341cf3c671789d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.65341cf3c671789d"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Wary",
+      "_id": "a6265ce2f582ce12",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.a6265ce2f582ce12"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Dismissive",
+      "_id": "d93347a97dc71745",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.d93347a97dc71745"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Uncooperative",
+      "_id": "3d98cba790de114a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.3d98cba790de114a"
+    },
+    {
+      "range": [
+        51,
+        65
+      ],
+      "text": "Hostile",
+      "_id": "535b9c2ab8250846",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.535b9c2ab8250846"
+    },
+    {
+      "range": [
+        66,
+        80
+      ],
+      "text": "Asking for help",
+      "_id": "4c18bfeb88b2fb18",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.4c18bfeb88b2fb18"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "In battle",
+      "_id": "6638c4f508f4f113",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.6638c4f508f4f113"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Unresponsive",
+      "_id": "fd20fb0f4b5ea393",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.fd20fb0f4b5ea393"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Destroyed",
+      "_id": "136d787ae7937527",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.136d787ae7937527"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts\"><i class=\"fa fa-caret-right\"></i> Derelict</a>",
+      "_id": "40d7ed1b48b3b94f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!99012d7483c201eb.40d7ed1b48b3b94f"
+    }
+  ],
+  "folder": "eea3419c88a919cd",
+  "sort": 327,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!99012d7483c201eb"
+}

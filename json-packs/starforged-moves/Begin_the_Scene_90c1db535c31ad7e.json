@@ -1,0 +1,80 @@
+{
+  "_id": "90c1db535c31ad7e",
+  "type": "sfmove",
+  "name": "Begin the Scene",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Scene_Challenge/Begin_the_Scene",
+    "Category": "Starforged/Moves/Scene_Challenge",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you face an extended or complex challenge**, name your objective and choose a rank as appropriate to the situation.\n\n  * You have a clear advantage: Troublesome\n  * You are ready to act: Dangerous\n  * You are unprepared or outmatched: Formidable\n\nThen, activate a 4-segment tension clock and @Compendium[foundry-ironsworn.starforgedmoves.7bbacec9ac8d8d09]{Face Danger} or @Compendium[foundry-ironsworn.starforgedmoves.03595d7546a1353f]{Secure an Advantage} to take action.",
+    "Trigger": {
+      "Text": "When you face an extended or complex challenge...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 239
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#3C70A4",
+      "Images": []
+    }
+  },
+  "sort": 239,
+  "folder": "7ac4a2bdc711c6b6",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!90c1db535c31ad7e"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "BukvMja2G4zWPhe6",
+  "name": "Maelstrom",
+  "type": "foe",
+  "img": "icons/magic/water/vortex-water-whirlpool.webp",
+  "data": {},
+  "token": {
+    "name": "Maelstrom",
+    "img": "icons/magic/water/vortex-water-whirlpool.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "rJDeAUqREFIrrbYf",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!BukvMja2G4zWPhe6.rJDeAUqREFIrrbYf"
+    },
+    {
+      "_id": "pAd7PvowU6bQvALV",
+      "name": "Maelstrom",
+      "type": "progress",
+      "img": "icons/magic/water/vortex-water-whirlpool.webp",
+      "data": {
+        "description": "\n\n<h2>Maelstrom</h2>\n\n<p>In coastal waters and cavern pools, these swirling vortexes of frigid water drag the unwary into their depths, stealing the breath from their lungs.</p>\n<p>Maelstroms often manifest in places of great loss and tragedy, on the sites of shipwrecks or the watery graves of drowned travelers. The debris swept into the maelstrom’s heart batter armor and flesh. The voices of the maelstrom’s victims, ripped from their chests with their dying breaths, cry out from the turbulent water.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Whirling vortex of water</p>\n    <p class=\"nogrow\">Fierce currents</p>\n    <p class=\"nogrow\">Ghostly screams</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Engulf victims</p>\n    <p class=\"nogrow\">Amass the voices of the lost</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Seize with raging, swirling waters</p>\n    <p class=\"nogrow\">Stun with numbing cold</p>\n    <p class=\"nogrow\">Batter with debris</p>\n    <p class=\"nogrow\">Drag into abyssal darkness</p>\n  </div>\n</div>\n\n<em><p>Within a waterway cutting through a <strong>Ravaged Icereach</strong>, a great maelstrom drew a longship and its crew into the depths. Despite an exhaustive search, no survivors—or even bodies—are found. They are simply gone. Why are you compelled to discover the fate of these victims?</p></em>\n\n<em><p>Some believe that you must cast a particular thing of value into a maelstrom in trade for your life. What is it?</p></em>\n\n<h2>Anomaly</h2>\n<p>Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.</p>\n",
+        "rank": 2,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!BukvMja2G4zWPhe6.pAd7PvowU6bQvALV"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!BukvMja2G4zWPhe6"
+}

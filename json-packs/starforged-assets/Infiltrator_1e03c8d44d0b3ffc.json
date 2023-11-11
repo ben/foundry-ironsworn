@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "1e03c8d44d0b3ffc",
+  "folder": "1f02d646adff7374",
+  "name": "Infiltrator",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you make a move to break into a secure site, infiltrate a protected area, or hack or manipulate a secure system, add +1 and take +1 momentum on a hit. On a strong hit with a match, access is easier than expected; take another +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} or @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} to establish a false identity, add +1. On a hit, you may add +1 when using that identity to deceive or influence others. If you score a miss with a match when using that identity, your deception is completely and dramatically undone.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.8d9830fb825057b0]{Check Your Gear} for a device with a specific function to aid in infiltration, espionage, or sabotage, add +1. On a hit, reroll any dice the first time you make a move aided by the device.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!1e03c8d44d0b3ffc"
+}

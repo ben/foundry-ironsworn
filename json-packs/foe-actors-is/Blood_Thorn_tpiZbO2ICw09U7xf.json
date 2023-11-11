@@ -1,0 +1,116 @@
+{
+  "_id": "tpiZbO2ICw09U7xf",
+  "name": "Blood Thorn",
+  "type": "foe",
+  "img": "icons/consumables/plants/thorned-stem-vine-green.webp",
+  "data": {},
+  "token": {
+    "name": "Blood Thorn",
+    "img": "icons/consumables/plants/thorned-stem-vine-green.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "XAAYO2vuP0oYSSx0",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!tpiZbO2ICw09U7xf.XAAYO2vuP0oYSSx0"
+    },
+    {
+      "_id": "y5HegcExCzZUFWUP",
+      "name": "Blood Thorn",
+      "type": "progress",
+      "img": "icons/consumables/plants/thorned-stem-vine-green.webp",
+      "data": {
+        "description": "\n\n<h2>Blood Thorn</h2>\n\n<p>A blood thorn is a malignant, carnivorous plant. It seizes its victims with long, creeping tendrils. Then, it leeches their life through hollow thorns, eventually bleeding them dry.</p>\n<p>Blood thorns appear in woodland areas throughout the Ironlands. They are especially common in the Deep Wilds, where they often encircle elf villages. Some suspect they are cultivated by the elves, or share a symbiotic relationship with them.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Thorn-tipped branches</p>\n    <p class=\"nogrow\">Scattered bones, stripped clean</p>\n    <p class=\"nogrow\">Large central pod</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Consume blood</p>\n    <p class=\"nogrow\">Proliferate</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Lie in wait</p>\n    <p class=\"nogrow\">Grasp, entangle, and feed</p>\n  </div>\n</div>\n\n<em><p>Ironlanders attempted to found a settlement at the heart of a <strong>Wild Tanglewood</strong> a decade ago. That place is now abandoned and infested by blood thorns. Why did the settlers try to create a home in such an untamed place? What object or information do you seek there?</p></em>\n\n<em><p>Each spring, a vibrant red flower sprouts from blood thorn branches. This blossom is coveted as an ingredient for alchemical elixirs. What effect does it provide?</p></em>\n\n<h2>Anomaly</h2>\n<p>Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.</p>\n",
+        "rank": 2,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!tpiZbO2ICw09U7xf.y5HegcExCzZUFWUP"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!tpiZbO2ICw09U7xf"
+}

@@ -1,0 +1,89 @@
+{
+  "_id": "141aec8b92efd14b",
+  "type": "sfmove",
+  "name": "Develop Your Relationship",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Connection/Develop_Your_Relationship",
+    "Category": "Starforged/Moves/Connection",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you reinforce your relationship with a connection** by doing any of the following...\n\n  * swearing a vow to undertake a perilous quest in their service\n  * completing a quest to their benefit\n  * leveraging their help in desperate circumstances\n  * giving them something of worth\n  * sharing a profound moment\n  * standing with them against hardship\n  * overcoming a test of your relationship\n\n...you may mark progress per the rank of the connection.\n\nIf you already share a bond with the connection, do not mark progress. Instead, roll +their rank to learn the impact on your legacy: troublesome=+1; dangerous=+2; formidable=+3; extreme=+4; epic=+5. On a **strong hit**, mark 2 ticks on your bonds legacy track. On a **strong hit with a match**, you may also envision how recent events bolstered your connection’s standing and raise their rank by one (if not already epic). On a **weak hit**, take +2 momentum. On a **miss**, take no lasting benefit.",
+    "Trigger": {
+      "Text": "When you reinforce your relationship with a connection...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Starforged/Moves/Connection/Develop_Your_Relationship/Trigger/Options/1/Custom_stat"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Mark 2 ticks on your bonds legacy track.",
+        "With a Match": {
+          "Text": "Mark 2 ticks on your bonds legacy track. You may also envision how recent events bolstered your connection’s standing and raise their rank by one (if not already epic).",
+          "Reroll": {
+            "Text": ""
+          }
+        },
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "Take +2 momentum.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Take no lasting benefit.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 164
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#4053C9",
+      "Images": []
+    }
+  },
+  "sort": 164,
+  "folder": "4f3a8bdfb4421e2b",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!141aec8b92efd14b"
+}

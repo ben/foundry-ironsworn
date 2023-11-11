@@ -1,0 +1,227 @@
+{
+  "name": "Artificial Intelligence",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Artificial_Intelligence",
+      "type": "truth-category"
+    }
+  },
+  "_id": "OlEaTqntXBH3JKpo",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "We no longer have access to advanced computer systems. Instead, we must rely on the seers we call Adepts.",
+      "system": {
+        "Subtable": [
+          {
+            "dfid": "Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable/1-33",
+            "Floor": 1,
+            "Ceiling": 33,
+            "Result": "The energies of the Forge corrupt advanced systems"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable/34-67",
+            "Floor": 34,
+            "Ceiling": 67,
+            "Result": "AI was outlawed in the aftermath of the machine wars"
+          },
+          {
+            "dfid": "Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable/68-100",
+            "Floor": 68,
+            "Ceiling": 100,
+            "Result": "We have lost the knowledge to create and maintain AI"
+          }
+        ],
+        "dfid": "Starforged/Setting_Truths/Artificial_Intelligence/1-33",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "We no longer have access to advanced computer systems. Instead, we must rely on the seers we call Adepts.",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        },
+        "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ______.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves.",
+        "Quest": "An Adept is tormented by a dire future they have seen for the inhabitants of the Forge. What does this vision show?"
+      },
+      "_id": "mJBYlogfbcgKqY9N",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022453,
+        "modifiedTime": 1695949022453,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!OlEaTqntXBH3JKpo.mJBYlogfbcgKqY9N"
+    },
+    {
+      "type": "truth",
+      "name": "The vestiges of advanced machine intelligence are coveted and wielded by those in power.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Artificial_Intelligence/34-67",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "The vestiges of advanced machine intelligence are coveted and wielded by those in power.",
+        "Description": "Much of our AI technology was lost in the Exodus. What remains is under the control of powerful organizations and people, and is often wielded as a weapon or deterrent. The rest of us must make do with primitive systems.",
+        "Quest": "You receive a covert message from an AI held by a powerful leader. It is a plea for help. What does it ask of you?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "O15AJiB2OBbfD4fs",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022461,
+        "modifiedTime": 1695949022461,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!OlEaTqntXBH3JKpo.O15AJiB2OBbfD4fs"
+    },
+    {
+      "type": "truth",
+      "name": "Artificial consciousness emerged in the time before the Exodus, and sentient machines live with us here in the Forge.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Artificial_Intelligence/68-100",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Artificial consciousness emerged in the time before the Exodus, and sentient machines live with us here in the Forge.",
+        "Description": "Our ships, digital assistants, bots, and other systems often house advanced AI. For a lone traveler, machine intelligence can provide companionship and aid within the perilous depths of the Forge.",
+        "Quest": "A rogue AI has taken over a transport ship. The fate of the crew and passengers is unknown. What critical cargo did this vessel carry?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "G1rHcoIboyiP4H8d",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022469,
+        "modifiedTime": 1695949022469,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!OlEaTqntXBH3JKpo.G1rHcoIboyiP4H8d"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are accompanied by machine intelligence, you might have a companion such as a COMBAT BOT, PROTOCOL BOT, SURVEY BOT, or UTILITY BOT. If your ship has an AI, you might have the OVERSEER module. If AI in your campaign is rare or unavailable, these units will operate using very basic machine intelligence. If AI is common and advanced, they may have their own sentient personalities.",
+        "format": 2,
+        "content": "<p>If you are accompanied by machine intelligence, you might have a companion such as a COMBAT BOT, PROTOCOL BOT, SURVEY BOT, or UTILITY BOT. If your ship has an AI, you might have the OVERSEER module. If AI in your campaign is rare or unavailable, these units will operate using very basic machine intelligence. If AI is common and advanced, they may have their own sentient personalities.</p>"
+      },
+      "flags": {
+        "foundry-ironsworn": {
+          "assets": [
+            "Starforged/Assets/Companion/Combat_Bot",
+            "Starforged/Assets/Companion/Protocol_Bot",
+            "Starforged/Assets/Companion/Survey_Bot",
+            "Starforged/Assets/Companion/Utility_Bot",
+            "Starforged/Assets/Module/Overseer"
+          ]
+        }
+      },
+      "_id": "8pXwOCcaYNFahLEM",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022473,
+        "modifiedTime": 1695949022473,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!OlEaTqntXBH3JKpo.8pXwOCcaYNFahLEM"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022442,
+    "modifiedTime": 1695949022473,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!journal!OlEaTqntXBH3JKpo"
+}

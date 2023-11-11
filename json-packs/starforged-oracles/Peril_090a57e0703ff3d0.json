@@ -1,0 +1,200 @@
+{
+  "_id": "090a57e0703ff3d0",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Fortified/Peril",
+      "category": "Starforged/Oracles/Location_Themes/Fortified"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Use this table to help envision a complication or hazard.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        9
+      ],
+      "text": "Alarm is triggered",
+      "_id": "e8a291ea5ac14b79",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.e8a291ea5ac14b79"
+    },
+    {
+      "range": [
+        10,
+        18
+      ],
+      "text": "Automated security or weapons target you",
+      "_id": "8921b4a21e65aab8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.8921b4a21e65aab8"
+    },
+    {
+      "range": [
+        19,
+        27
+      ],
+      "text": "Checkpoint or path with restricted access",
+      "_id": "5f31a7d712742542",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.5f31a7d712742542"
+    },
+    {
+      "range": [
+        28,
+        36
+      ],
+      "text": "Enemies converge on this area",
+      "_id": "64bac7cd2d5d4955",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.64bac7cd2d5d4955"
+    },
+    {
+      "range": [
+        37,
+        45
+      ],
+      "text": "Enemies reveal new capabilities or technology",
+      "_id": "4d5426b4ff71a07e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.4d5426b4ff71a07e"
+    },
+    {
+      "range": [
+        46,
+        54
+      ],
+      "text": "Enemies trick you or lure you into a trap",
+      "_id": "59c677996e839202",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.59c677996e839202"
+    },
+    {
+      "range": [
+        55,
+        63
+      ],
+      "text": "Powerful enemy appears",
+      "_id": "bf9247df6293cb31",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.bf9247df6293cb31"
+    },
+    {
+      "range": [
+        64,
+        72
+      ],
+      "text": "Problematic alliance or affiliation is revealed",
+      "_id": "becedc2493c2d7c5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.becedc2493c2d7c5"
+    },
+    {
+      "range": [
+        73,
+        81
+      ],
+      "text": "Revealed schemes of an enemy leader create new urgency",
+      "_id": "34cb13ab8807b25a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.34cb13ab8807b25a"
+    },
+    {
+      "range": [
+        82,
+        90
+      ],
+      "text": "Your plan is undone by an unexpected complication",
+      "_id": "4c5060f82a6196e3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.4c5060f82a6196e3"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "30551aee71d2733f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.30551aee71d2733f"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "986e17c2cb0eb7b4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!090a57e0703ff3d0.986e17c2cb0eb7b4"
+    }
+  ],
+  "folder": "b004bd768a2a6c15",
+  "sort": 373,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!090a57e0703ff3d0"
+}

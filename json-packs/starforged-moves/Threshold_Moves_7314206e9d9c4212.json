@@ -1,0 +1,24 @@
+{
+  "name": "Threshold Moves",
+  "type": "Item",
+  "_id": "7314206e9d9c4212",
+  "color": "#1D1D1B",
+  "description": "Despite your best efforts to overcome the perils of the Forge, calamitous events may bring you to the precipice of life and death, redemption and desolation, perseverance and destruction.\n\nIn these moments you face your greatest tests. What will become of you when all seems lost? Will you see your character undone, or find yourself on a path of renewed purpose? Make these **threshold moves** to find out.",
+  "sort": 216,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Threshold"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021087,
+    "modifiedTime": 1695949021087,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!7314206e9d9c4212"
+}

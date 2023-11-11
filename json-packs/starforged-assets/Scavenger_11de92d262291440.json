@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "11de92d262291440",
+  "folder": "1f02d646adff7374",
+  "name": "Scavenger",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} or @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply} by scavenging a wreck, ruin, or abandoned site, add +1 and take +1 momentum on a hit. On a strong hit with a match, you also find something of unique value, significance, or function; envision the nature of this discovery, take +2 momentum, and mark 2 ticks on your discoveries legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} to cobble together an ad hoc tool, device, or weapon, envision what you intend to create. On a hit, you may add +1 when making a move aided by the item. If you roll a 1 on your action die while using the item, it is permanently broken, lost, or depleted.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.8d9830fb825057b0]{Check Your Gear}, roll +wits or +supply (whichever is highest) and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!11de92d262291440"
+}

@@ -1,0 +1,200 @@
+{
+  "_id": "381b2ecee513362f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Nature/Domain",
+      "category": "Ironsworn/Oracles/Site_Nature"
+    }
+  },
+  "name": "Domain",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        6
+      ],
+      "text": "Barrow",
+      "_id": "933fa032087fc49b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.933fa032087fc49b"
+    },
+    {
+      "range": [
+        7,
+        18
+      ],
+      "text": "Cavern",
+      "_id": "a578b793f71e3a08",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.a578b793f71e3a08"
+    },
+    {
+      "range": [
+        19,
+        28
+      ],
+      "text": "Frozen Cavern",
+      "_id": "b159d45cc3050c81",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.b159d45cc3050c81"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Icereach",
+      "_id": "28e99cacf9be1a26",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.28e99cacf9be1a26"
+    },
+    {
+      "range": [
+        33,
+        38
+      ],
+      "text": "Mine",
+      "_id": "d1b81782e0b9419c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.d1b81782e0b9419c"
+    },
+    {
+      "range": [
+        39,
+        48
+      ],
+      "text": "Pass",
+      "_id": "0329026bd0a640bc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.0329026bd0a640bc"
+    },
+    {
+      "range": [
+        49,
+        58
+      ],
+      "text": "Ruin",
+      "_id": "52de1a44a3f079eb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.52de1a44a3f079eb"
+    },
+    {
+      "range": [
+        59,
+        68
+      ],
+      "text": "Sea Cave",
+      "_id": "6c34b31df613fed0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.6c34b31df613fed0"
+    },
+    {
+      "range": [
+        69,
+        78
+      ],
+      "text": "Shadowfen",
+      "_id": "f403b883dd99c922",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.f403b883dd99c922"
+    },
+    {
+      "range": [
+        79,
+        83
+      ],
+      "text": "Stronghold",
+      "_id": "9464b5a473e3bedd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.9464b5a473e3bedd"
+    },
+    {
+      "range": [
+        84,
+        95
+      ],
+      "text": "Tanglewood",
+      "_id": "b6904a764886dda2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.b6904a764886dda2"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Underkeep",
+      "_id": "717c2f42cc1dd5a7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!381b2ecee513362f.717c2f42cc1dd5a7"
+    }
+  ],
+  "folder": "62509c23920c5583",
+  "sort": 1212,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!381b2ecee513362f"
+}

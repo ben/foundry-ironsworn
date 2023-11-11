@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "761b4d38bb1148d0",
+  "folder": "1f02d646adff7374",
+  "name": "Weapon Master",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You are a walking armory, with a weapon for every occasion. When you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} in personal combat, add +1 and take +1 momentum on a hit. Once per fight, when you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by switching weapons or changing tactics, take an automatic strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} using a personal weapon which has limited ammo or a single-use mode, add +1 and mark progress on a hit. Then, @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-1). If you score a strong hit on this attack and immediately @Compendium[foundry-ironsworn.starforgedmoves.3129f4caa4754caf]{Take Decisive Action}, you may retain the value of one challenge die from your @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} action instead of rolling that die.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} by suiting up and gathering your gear for a perilous encounter or mission, you may roll +supply. If you do, take +2 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!761b4d38bb1148d0"
+}

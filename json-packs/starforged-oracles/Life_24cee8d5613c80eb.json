@@ -1,0 +1,88 @@
+{
+  "_id": "24cee8d5613c80eb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Vital/Life",
+      "category": "Starforged/Oracles/Planets/Vital"
+    }
+  },
+  "name": "Life",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Scarce",
+      "_id": "d644fb7b9c8a51b7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!24cee8d5613c80eb.d644fb7b9c8a51b7"
+    },
+    {
+      "range": [
+        11,
+        45
+      ],
+      "text": "Diverse",
+      "_id": "91899bcbf5005465",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!24cee8d5613c80eb.91899bcbf5005465"
+    },
+    {
+      "range": [
+        46,
+        85
+      ],
+      "text": "Bountiful",
+      "_id": "68adabae38286aeb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!24cee8d5613c80eb.68adabae38286aeb"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Overrun",
+      "_id": "caf41fe77bd0ca1b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!24cee8d5613c80eb.caf41fe77bd0ca1b"
+    }
+  ],
+  "folder": "93ecb6acb6a3ea17",
+  "sort": 318,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!24cee8d5613c80eb"
+}

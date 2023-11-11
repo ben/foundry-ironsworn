@@ -1,0 +1,746 @@
+{
+  "_id": "c54c388540f5fda7",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Place/Location",
+      "category": "Ironsworn/Oracles/Place"
+    }
+  },
+  "name": "Location",
+  "description": "<p>Use this oracle when traveling to generate a point-of-interest or to answer a question about a place where someone or something can be found.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Hideout",
+      "_id": "98d9955568b5e269",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.98d9955568b5e269"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Ruin",
+      "_id": "a238f82f993a873d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.a238f82f993a873d"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Mine",
+      "_id": "7c79ad331dbb8fed",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.7c79ad331dbb8fed"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Waste",
+      "_id": "e31a8c574125d14f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.e31a8c574125d14f"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Mystical Site",
+      "_id": "28b7a2d13e33f40b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.28b7a2d13e33f40b"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Path",
+      "_id": "e18dfa7cf31cb772",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.e18dfa7cf31cb772"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Outpost",
+      "_id": "6b7a31084e71de51",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.6b7a31084e71de51"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Wall",
+      "_id": "799137c6d0f9e380",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.799137c6d0f9e380"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Battlefield",
+      "_id": "1d497f17c26c11e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.1d497f17c26c11e5"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Hovel",
+      "_id": "5d5705804eb0773d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.5d5705804eb0773d"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Spring",
+      "_id": "c0fc5a94efa09de6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.c0fc5a94efa09de6"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Lair",
+      "_id": "eac0b73e4c7512ef",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.eac0b73e4c7512ef"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Fort",
+      "_id": "16ae727bd6398499",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.16ae727bd6398499"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Bridge",
+      "_id": "ff63d7f8ae4d81a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.ff63d7f8ae4d81a8"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Camp",
+      "_id": "c1308d210b56e817",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.c1308d210b56e817"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Cairn/Grave",
+      "_id": "57146912174703fe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.57146912174703fe"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Caravan",
+      "_id": "162615b37373be3b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.162615b37373be3b"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Waterfall",
+      "_id": "c38376954ba053d3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.c38376954ba053d3"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Cave",
+      "_id": "c47dad2c91797060",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.c47dad2c91797060"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Swamp",
+      "_id": "bf5b2bb9903052de",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.bf5b2bb9903052de"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Fen",
+      "_id": "7280f1846f026355",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.7280f1846f026355"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Ravine",
+      "_id": "0b186b6471f3bea3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.0b186b6471f3bea3"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Road",
+      "_id": "ec3017bd181ba7d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.ec3017bd181ba7d1"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Tree",
+      "_id": "8feed9cb0186b41a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.8feed9cb0186b41a"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Pond",
+      "_id": "c097f2267af0216f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.c097f2267af0216f"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Fields",
+      "_id": "c94a643c267043cc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.c94a643c267043cc"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Marsh",
+      "_id": "ee54f1ea45f3e0f9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.ee54f1ea45f3e0f9"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Steading",
+      "_id": "7f4dfedd2e32ef0c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.7f4dfedd2e32ef0c"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Rapids",
+      "_id": "f3fda84f822e2538",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.f3fda84f822e2538"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Pass",
+      "_id": "90f34a84adfb2e1f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.90f34a84adfb2e1f"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Trail",
+      "_id": "5972816e76c09e13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.5972816e76c09e13"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Glade",
+      "_id": "83d36c35b42b96f1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.83d36c35b42b96f1"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Plain",
+      "_id": "55841c0d74d9dea0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.55841c0d74d9dea0"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Ridge",
+      "_id": "ae33ff6bb12daed9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.ae33ff6bb12daed9"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Cliff",
+      "_id": "b65e4198648d5651",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.b65e4198648d5651"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Grove",
+      "_id": "728ac5c49196f574",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.728ac5c49196f574"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Village",
+      "_id": "9c21305edcad86ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.9c21305edcad86ff"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Moor",
+      "_id": "9f259aa00630034a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.9f259aa00630034a"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Thicket",
+      "_id": "a16b1f3fb22b1a0c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.a16b1f3fb22b1a0c"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "River Ford",
+      "_id": "ae4408843f8c686e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.ae4408843f8c686e"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Valley",
+      "_id": "893589cb3b795fc1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.893589cb3b795fc1"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Bay/Fjord",
+      "_id": "7d5e106e93c4c263",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.7d5e106e93c4c263"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Foothills",
+      "_id": "a1646c7a51f4d54c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.a1646c7a51f4d54c"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Lake",
+      "_id": "519881cbbb7e3762",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.519881cbbb7e3762"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "River",
+      "_id": "8e0209e8c6d0e3e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.8e0209e8c6d0e3e5"
+    },
+    {
+      "range": [
+        76,
+        79
+      ],
+      "text": "Forest",
+      "_id": "61089ea4cadbea75",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.61089ea4cadbea75"
+    },
+    {
+      "range": [
+        80,
+        83
+      ],
+      "text": "Coast",
+      "_id": "773bdd2f1550e426",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.773bdd2f1550e426"
+    },
+    {
+      "range": [
+        84,
+        88
+      ],
+      "text": "Hill",
+      "_id": "25dd4e1c5d4fbf87",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.25dd4e1c5d4fbf87"
+    },
+    {
+      "range": [
+        89,
+        93
+      ],
+      "text": "Mountain",
+      "_id": "92429e6d05c0213b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.92429e6d05c0213b"
+    },
+    {
+      "range": [
+        94,
+        99
+      ],
+      "text": "Woods",
+      "_id": "9de67cbf5bdb1b68",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.9de67cbf5bdb1b68"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Anomaly",
+      "_id": "9219aa80725baff9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c54c388540f5fda7.9219aa80725baff9"
+    }
+  ],
+  "folder": "e234710dfe2315ae",
+  "sort": 176,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!c54c388540f5fda7"
+}

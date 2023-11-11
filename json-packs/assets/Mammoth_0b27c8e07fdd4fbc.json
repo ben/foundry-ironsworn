@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "0b27c8e07fdd4fbc",
+  "folder": "43828d28bfed3e0a",
+  "name": "Mammoth",
+  "system": {
+    "requirement": "<p>Your mammoth walks a resolute path.</p>",
+    "category": "Companion",
+    "color": null,
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>When your mammoth travels with you as you @Compendium[foundry-ironsworn.ironswornmoves.ac19f4c7f3fe31be]{Undertake a Journey}, you may add +2 but suffer -1 momentum (decide before rolling).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move which requires you to roll +supply, you may instead roll +your mammoth’s health.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} by riding your mammoth against a pack of foes, add +1 and inflict +1 harm on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!0b27c8e07fdd4fbc"
+}

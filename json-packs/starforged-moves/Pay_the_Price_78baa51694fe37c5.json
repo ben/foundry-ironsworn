@@ -1,0 +1,82 @@
+{
+  "_id": "78baa51694fe37c5",
+  "type": "sfmove",
+  "name": "Pay the Price",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Fate/Pay_the_Price",
+    "Category": "Starforged/Moves/Fate",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you suffer the outcome of an action**, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.\n  * Roll on the table below. If the result doesn’t fit the situation, roll again.\n\nRoll   | Result\n-------|---------------------------------------------------------------------\n1-2    | A trusted individual or community acts against you\n3-4    | An individual or community you care about is exposed to danger\n5-7    | You encounter signs of a looming threat\n8-10   | You create an opportunity for an enemy\n11-14  | You face a tough choice\n15-18  | You face the consequences of an earlier choice\n19-22  | A surprising development complicates your quest\n23-26  | You are separated from something or someone\n27-32  | Your action causes collateral damage or has an unintended effect\n33-38  | Something of value is lost or destroyed\n39-44  | The environment or terrain introduces a new hazard\n45-50  | A new enemy is revealed\n51-56  | A friend, companion, or ally is in harm's way (or you are, if alone)\n57-62  | Your equipment or vehicle malfunctions\n63-68  | Your vehicle suffers damage\n69-74  | You waste resources\n75-81  | You are harmed\n82-88  | You are stressed\n89-95  | You are delayed or put at a disadvantage\n96-100 | Roll twice",
+    "Trigger": {
+      "Text": "When you suffer the outcome of an action...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [
+      "Starforged/Oracles/Moves/Pay_the_Price"
+    ],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 232
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#6B52EC",
+      "Images": []
+    }
+  },
+  "sort": 232,
+  "folder": "1c6d36dde131ebef",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!78baa51694fe37c5"
+}

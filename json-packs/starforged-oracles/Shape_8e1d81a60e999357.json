@@ -1,0 +1,256 @@
+{
+  "_id": "8e1d81a60e999357",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Shape",
+      "category": "Starforged/Oracles/Vaults"
+    }
+  },
+  "name": "Shape",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Practical or functional",
+      "_id": "6423daaef7abaea9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.6423daaef7abaea9"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Geometric (complex shape)",
+      "_id": "877b247f94c26aa0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.877b247f94c26aa0"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Geometric (cube)",
+      "_id": "3a39a2eaac6e84e3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.3a39a2eaac6e84e3"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Geometric (obelisk)",
+      "_id": "5c2f146ba1b889b1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.5c2f146ba1b889b1"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Geometric (pyramid)",
+      "_id": "e91c9204988587c5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.e91c9204988587c5"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Geometric (ring or torus)",
+      "_id": "244d2029afdcde8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.244d2029afdcde8f"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Geometric (sphere)",
+      "_id": "b0b906808a38549d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.b0b906808a38549d"
+    },
+    {
+      "range": [
+        46,
+        55
+      ],
+      "text": "Organic or curved",
+      "_id": "f0bfebdd5fe3616f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.f0bfebdd5fe3616f"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Platform or disc",
+      "_id": "a4a30c5a6241b444",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.a4a30c5a6241b444"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Spires or towers",
+      "_id": "51c8af9d92ecf4b3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.51c8af9d92ecf4b3"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Domed",
+      "_id": "b0f472ceda873184",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.b0f472ceda873184"
+    },
+    {
+      "range": [
+        69,
+        73
+      ],
+      "text": "Spiky",
+      "_id": "dd250bce0127e41d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.dd250bce0127e41d"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Sculptural or effigy",
+      "_id": "fb664a339cc02fde",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.fb664a339cc02fde"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Amorphous",
+      "_id": "98505987a8aa04b6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.98505987a8aa04b6"
+    },
+    {
+      "range": [
+        80,
+        85
+      ],
+      "text": "Transforming",
+      "_id": "205f5f9e80a1944d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.205f5f9e80a1944d"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "88bdb0c97998b28d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!8e1d81a60e999357.88bdb0c97998b28d"
+    }
+  ],
+  "folder": "2c4fe25ee600037f",
+  "sort": 361,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!8e1d81a60e999357"
+}

@@ -1,0 +1,89 @@
+{
+  "_id": "d34cdf2408cd22b6",
+  "type": "sfmove",
+  "name": "Companion Takes a Hit",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Suffer/Companion_Takes_a_Hit",
+    "Category": "Starforged/Moves/Suffer",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When your companion faces physical hardship**, they suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your companion's health is 0, @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} equal to any remaining harm.\n\nThen, if their health is 0 or you choose to test their resilience, roll +your companion's health.\n\nOn a **strong hit**, your companion rallies. Give them +1 health.\n\nOn a **weak hit**, if your companion's health is not 0, you may @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1) and give them +1 health. Otherwise, they press on.\n\nOn a **miss**, it's worse than you thought. They suffer an additional -1 health or you @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2). If your companion's health is 0, they are out of action until given aid. If their health is 0 and you rolled a miss with a match on this move, they are dead or destroyed; discard the asset.",
+    "Trigger": {
+      "Text": "When your companion faces physical hardship...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Companion Health"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Your companion rallies. Give them +1 health.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "If your companion's health is not 0, you may @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1) and give them +1 health. Otherwise, they press on.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "It's worse than you thought. They suffer an additional -1 health or you @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2). If your companion's health is 0, they are out of action until given aid.",
+        "With a Match": {
+          "Text": "It's worse than you thought. They suffer an additional -1 health or you @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2). If your companion's health is 0, they are dead or destroyed; discard the asset.",
+          "Reroll": {
+            "Text": ""
+          }
+        },
+        "Reroll": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 204
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#C50000",
+      "Images": []
+    }
+  },
+  "sort": 204,
+  "folder": "aa394f7b4fefb91e",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!d34cdf2408cd22b6"
+}

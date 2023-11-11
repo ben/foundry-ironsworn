@@ -1,0 +1,172 @@
+{
+  "_id": "88ca6ad4d5965c0b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Vital/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Vital"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Complex ring system",
+      "_id": "bc7f67653af2677c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.bc7f67653af2677c"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Numerous small moons",
+      "_id": "ef38c2fe10df41f5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.ef38c2fe10df41f5"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Dramatic seasonal variation",
+      "_id": "9288e694df8cffe7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.9288e694df8cffe7"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Unusual day or night cycle",
+      "_id": "38318382629117df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.38318382629117df"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "High gravity",
+      "_id": "ce4ee2a3e19cbec2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.ce4ee2a3e19cbec2"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Vibrantly colored landscapes",
+      "_id": "a258894ef3636340",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.a258894ef3636340"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Large moon",
+      "_id": "370a3fa624845dd6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.370a3fa624845dd6"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Narrow livable band",
+      "_id": "664681eda872792f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.664681eda872792f"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "b8f485c94bc8c28a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.b8f485c94bc8c28a"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "506d8825991cdd9e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!88ca6ad4d5965c0b.506d8825991cdd9e"
+    }
+  ],
+  "folder": "93ecb6acb6a3ea17",
+  "sort": 318,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!88ca6ad4d5965c0b"
+}

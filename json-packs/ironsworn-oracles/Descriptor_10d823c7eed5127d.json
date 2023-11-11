@@ -1,0 +1,1432 @@
+{
+  "_id": "10d823c7eed5127d",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Character/Descriptor",
+      "category": "Ironsworn/Oracles/Character"
+    }
+  },
+  "name": "Descriptor",
+  "description": "<p>Use this oracle to help flesh out a character’s personality or physical characteristics. Roll more than once to add additional detail.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Stoic",
+      "_id": "4bded30dbb7bafe8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.4bded30dbb7bafe8"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Attractive",
+      "_id": "f0b99670bb1dc80b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.f0b99670bb1dc80b"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Passive",
+      "_id": "5db07ab98a1926ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.5db07ab98a1926ff"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Aloof",
+      "_id": "b81336c9433cd857",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.b81336c9433cd857"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Affectionate",
+      "_id": "dbc6dccb22d43c8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.dbc6dccb22d43c8f"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Generous",
+      "_id": "3578d2ad67e3cad8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.3578d2ad67e3cad8"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Smug",
+      "_id": "1af43adbbbed99b0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.1af43adbbbed99b0"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Armed",
+      "_id": "39b9d519f9d36649",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.39b9d519f9d36649"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Clever",
+      "_id": "af32e5a68b3b66ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.af32e5a68b3b66ec"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Brave",
+      "_id": "a2d7d50b8ffe5d08",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.a2d7d50b8ffe5d08"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Ugly",
+      "_id": "f93e602524f1c426",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.f93e602524f1c426"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Sociable",
+      "_id": "9b34842f589109a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.9b34842f589109a9"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Doomed",
+      "_id": "174901597c8f163a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.174901597c8f163a"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Connected",
+      "_id": "a7ae0fcebad31e95",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.a7ae0fcebad31e95"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Bold",
+      "_id": "1f9fb8630fe87e8b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.1f9fb8630fe87e8b"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Jealous",
+      "_id": "d72de3faf7ee4f9d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.d72de3faf7ee4f9d"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Angry",
+      "_id": "9683ce16e9356753",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.9683ce16e9356753"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Active",
+      "_id": "f7d20e44fb9e7e55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.f7d20e44fb9e7e55"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Suspicious",
+      "_id": "f5d1988d5a7c6d8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.f5d1988d5a7c6d8f"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Hostile",
+      "_id": "dcf016648f40c8c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.dcf016648f40c8c6"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Hardhearted",
+      "_id": "b30510c2b03ec82e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.b30510c2b03ec82e"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Successful",
+      "_id": "a2420bee183c26e4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.a2420bee183c26e4"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Talented",
+      "_id": "e3213c6a1b9f9dbc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.e3213c6a1b9f9dbc"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Experienced",
+      "_id": "5c0d460b5196ddcf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.5c0d460b5196ddcf"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Deceitful",
+      "_id": "e9f5737068beaa67",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.e9f5737068beaa67"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Ambitious",
+      "_id": "7c748c7b3262f844",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.7c748c7b3262f844"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Aggressive",
+      "_id": "3a9663bbd22be9ee",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.3a9663bbd22be9ee"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Conceited",
+      "_id": "e6efe598ae6e9fcf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.e6efe598ae6e9fcf"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Proud",
+      "_id": "fd1f6adc47f55d83",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.fd1f6adc47f55d83"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Stern",
+      "_id": "a4ef84b8d9153c37",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.a4ef84b8d9153c37"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Dependent",
+      "_id": "046be05a8b820073",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.046be05a8b820073"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Wary",
+      "_id": "ccc7b97cee993c6c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.ccc7b97cee993c6c"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Strong",
+      "_id": "225a81cbe84a55a0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.225a81cbe84a55a0"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Insightful",
+      "_id": "2f4e82bec61b83c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.2f4e82bec61b83c6"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Dangerous",
+      "_id": "4747b1d64af8a25a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.4747b1d64af8a25a"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Quirky",
+      "_id": "87ec29e0f5bf548e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.87ec29e0f5bf548e"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Cheery",
+      "_id": "4e32e35ca9628632",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.4e32e35ca9628632"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Disfigured",
+      "_id": "9bcc5f34d670c408",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.9bcc5f34d670c408"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Intolerant",
+      "_id": "1973db66b6da9192",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.1973db66b6da9192"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Skilled",
+      "_id": "12811a369b97599b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.12811a369b97599b"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Stingy",
+      "_id": "18d47dae6af5b405",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.18d47dae6af5b405"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Timid",
+      "_id": "a4f3fc63f120c4ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.a4f3fc63f120c4ec"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Insensitive",
+      "_id": "b8f4e6fe34c59793",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.b8f4e6fe34c59793"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Wild",
+      "_id": "46bcd9614a3fc25a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.46bcd9614a3fc25a"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Bitter",
+      "_id": "906dcca06ef8d7a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.906dcca06ef8d7a9"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Cunning",
+      "_id": "5c2e112bc55f0d4e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.5c2e112bc55f0d4e"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Remorseful",
+      "_id": "8a5aec4e3c23991c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.8a5aec4e3c23991c"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Kind",
+      "_id": "7ec7ef15acff7229",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.7ec7ef15acff7229"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Charming",
+      "_id": "c4589bcd0ff08caa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.c4589bcd0ff08caa"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Oblivious",
+      "_id": "3af601df127dec51",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.3af601df127dec51"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Critical",
+      "_id": "5cf0d3ef99234079",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.5cf0d3ef99234079"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Cautious",
+      "_id": "0d74752532010320",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.0d74752532010320"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Resourceful",
+      "_id": "42129545622aa05a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.42129545622aa05a"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Weary",
+      "_id": "1e847cf5a1edf73b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.1e847cf5a1edf73b"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Wounded",
+      "_id": "e86e4da26706a798",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.e86e4da26706a798"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Anxious",
+      "_id": "fe33730b0d0558b0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.fe33730b0d0558b0"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Powerful",
+      "_id": "78eee725ae3c3f38",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.78eee725ae3c3f38"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Athletic",
+      "_id": "ea7e47cca5a6e994",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.ea7e47cca5a6e994"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Driven",
+      "_id": "3017edde68441017",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.3017edde68441017"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Cruel",
+      "_id": "c5955ae41638a85c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.c5955ae41638a85c"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Quiet",
+      "_id": "648fea72502dd009",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.648fea72502dd009"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Honest",
+      "_id": "10c8af836c24d284",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.10c8af836c24d284"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Infamous",
+      "_id": "6009d2cdef6600f1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.6009d2cdef6600f1"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Dying",
+      "_id": "bd9ff40b444bf36a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.bd9ff40b444bf36a"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Reclusive",
+      "_id": "2d2ecece820f6221",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.2d2ecece820f6221"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Artistic",
+      "_id": "2824a9da90b176e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.2824a9da90b176e5"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Disabled",
+      "_id": "c82f4c7aa85e8b15",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.c82f4c7aa85e8b15"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Confused",
+      "_id": "37e21d42e518c320",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.37e21d42e518c320"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Manipulative",
+      "_id": "e454f91b8c15ccd8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.e454f91b8c15ccd8"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Relaxed",
+      "_id": "5b3768a4067c4a0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.5b3768a4067c4a0f"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Stealthy",
+      "_id": "981d61c6cbeb05ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.981d61c6cbeb05ad"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Confident",
+      "_id": "09ae8136cfcab4e2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.09ae8136cfcab4e2"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Weak",
+      "_id": "7b12e607693fb07f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.7b12e607693fb07f"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Friendly",
+      "_id": "4edb7e59f50d8325",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.4edb7e59f50d8325"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Wise",
+      "_id": "4c66ffba6bdd0184",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.4c66ffba6bdd0184"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Influential",
+      "_id": "6a6d880be7aa109a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.6a6d880be7aa109a"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Young",
+      "_id": "8b3e121b5b444374",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.8b3e121b5b444374"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Adventurous",
+      "_id": "e207c68e454c6f08",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.e207c68e454c6f08"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Oppressed",
+      "_id": "116ca8af8831b1ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.116ca8af8831b1ff"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Vengeful",
+      "_id": "8e3f839121060bfa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.8e3f839121060bfa"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Cooperative",
+      "_id": "97d8025fd7bdbbe8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.97d8025fd7bdbbe8"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Armored",
+      "_id": "9f859be45e202704",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.9f859be45e202704"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Apathetic",
+      "_id": "34ef06fa3d612a37",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.34ef06fa3d612a37"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Determined",
+      "_id": "a9d0571fff5f702f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.a9d0571fff5f702f"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Loyal",
+      "_id": "db6aa899cbb8ae0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.db6aa899cbb8ae0f"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Sick",
+      "_id": "57572691c5f76b3f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.57572691c5f76b3f"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Religious",
+      "_id": "93eea1babb06abc0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.93eea1babb06abc0"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Selfish",
+      "_id": "6b7bfc3276200f0d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.6b7bfc3276200f0d"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Old",
+      "_id": "f900e526bcb4bf53",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.f900e526bcb4bf53"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Fervent",
+      "_id": "228b887e45718163",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.228b887e45718163"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Violent",
+      "_id": "908fe9d8135ea2ce",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.908fe9d8135ea2ce"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Agreeable",
+      "_id": "a864088fa7928fae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.a864088fa7928fae"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Hot-tempered",
+      "_id": "620d302e2767eb5b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.620d302e2767eb5b"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Stubborn",
+      "_id": "3b47743803df43fe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.3b47743803df43fe"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Incompetent",
+      "_id": "31364cf77ffe8cc3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.31364cf77ffe8cc3"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Greedy",
+      "_id": "dfef5668daa32b7b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.dfef5668daa32b7b"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Cowardly",
+      "_id": "3dde8c731a03c532",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.3dde8c731a03c532"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Obsessed",
+      "_id": "16d8c2153a723575",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.16d8c2153a723575"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Careless",
+      "_id": "2b612a5b0cf3f805",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.2b612a5b0cf3f805"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Ironsworn",
+      "_id": "d5fed170090d1b27",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!10d823c7eed5127d.d5fed170090d1b27"
+    }
+  ],
+  "folder": "aa60f0d1adbed892",
+  "sort": 183,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!10d823c7eed5127d"
+}

@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "0b42a1e32bdb10c9",
+  "folder": "1f02d646adff7374",
+  "name": "Gunslinger",
+  "system": {
+    "requirement": "<p>If you wield a pistol…</p>",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} by facing off against your foe (+heart), or by preparing to act without tipping them off (+shadow), add +1 and take +1 momentum on a hit. On a strong hit with a match, you may immediately take a shot (without making a move) and mark progress twice.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} or @Compendium[foundry-ironsworn.starforgedmoves.d9208f9b7d827aec]{React Under Fire} by moving into cover, add +1. On a strong hit, this cover gives you leverage; add +1 when you make a move to attack or defend at range. If you then score a miss, the cover is lost or compromised.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.9f538fabf8998c5b]{Compel} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} with the threat of violence by holding someone at gunpoint, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!0b42a1e32bdb10c9"
+}

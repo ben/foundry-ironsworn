@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "3e3e29a3ea71a80e",
+  "folder": "7f1c05806875930c",
+  "name": "Homesteader",
+  "system": {
+    "requirement": "<p>Once you fill 4 boxes on your bonds legacy track…</p>",
+    "category": "Deed",
+    "color": "#40834f",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You have chosen or established a community as your home. When you @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} (formidable or greater) in service to your home, reroll any dice. On a hit, mark 1 tick on your bonds legacy track. When you @Compendium[foundry-ironsworn.starforgedmoves.985a5415860a99e9]{Fulfill Your Vow} and score a hit, also mark 2 ticks on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn} in your home, choose one.</p>\n<ul>\n<li>Don't linger: Take an automatic weak hit</li>\n<li>Stay a bit: Add +1 and take +1 momentum on a hit</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ed490d43a2533506]{Set a Course} for home, you may reroll your action die if its value is less than your spirit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!3e3e29a3ea71a80e"
+}

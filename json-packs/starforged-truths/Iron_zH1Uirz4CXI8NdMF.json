@@ -1,0 +1,204 @@
+{
+  "name": "Iron",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Iron",
+      "type": "truth-category"
+    }
+  },
+  "_id": "zH1Uirz4CXI8NdMF",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Iron vows are sworn upon the remnants of ships that carried our people to the Forge.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Iron/1-33",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Iron vows are sworn upon the remnants of ships that carried our people to the Forge.",
+        "Description": "Many of our outposts were built from the iron bones of the Exodus ships. Fragments of the ships were also given to survivors as a remembrance, and passed from one generation to the next. Today, the Ironsworn swear vows upon the shards to honor the sacrifice of their forebears, the essence of the places left behind, and the souls of those great ships.",
+        "Quest": "The iron shard you carry is a small piece of the outer hull of an Exodus ship. The navigational chart inscribed on its surface only reveals itself when exposed to the light of a specific star. Where is the map purported to lead, and why are you sworn to follow it? Who seeks to claim the map for themselves?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "ge2MgNt9eNdFkO1n",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022204,
+        "modifiedTime": 1695949022204,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!zH1Uirz4CXI8NdMF.ge2MgNt9eNdFkO1n"
+    },
+    {
+      "type": "truth",
+      "name": "Iron vows are sworn upon totems crafted from the enigmatic metal we call black iron.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Iron/34-67",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Iron vows are sworn upon totems crafted from the enigmatic metal we call black iron.",
+        "Description": "Black iron was first forged by a long-dead civilization. Some say it is a living metal, attuned to the hidden depths of the universe. Remnants of this prized resource are found within ancient sites throughout the Forge. It is resistant to damage and corrosion, but can be molded using superheated plasma at specialized facilities. The Ironsworn carry weapons, armor, or tokens crafted from black iron, and swear vows upon it.",
+        "Quest": "A black iron token of special significance has been stolen. What power or authority is bound to this object? Who has taken it?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "XwL4aMDO4rJkxrSW",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022222,
+        "modifiedTime": 1695949022222,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!zH1Uirz4CXI8NdMF.XwL4aMDO4rJkxrSW"
+    },
+    {
+      "type": "truth",
+      "name": "The Ironsworn bind their honor to iron blades.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Iron/68-100",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "The Ironsworn bind their honor to iron blades.",
+        "Description": "Aboard a starship, where stray gunfire can destroy fragile equipment or pierce hulls, the brutal practicality of a sword makes for a useful weapon. A few also favor the silent efficiency of a blade for infiltration or espionage. Most importantly, when the Ironsworn swear a vow upon a sword, they bind their commitment to the metal. If they forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced.",
+        "Quest": "You vow to forge a new sword from the iron of an important object or artifact. What is it, and why is it meaningful to you? Who protects it?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "bDX4bjawblTd0wbh",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022236,
+        "modifiedTime": 1695949022236,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!zH1Uirz4CXI8NdMF.bDX4bjawblTd0wbh"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "What do you swear vows upon? Why is this object meaningful to you? If swearing iron vows to a leader or organization are a key aspect of your character, you might be BANNERSWORN.",
+        "format": 2,
+        "content": "<p>What do you swear vows upon? Why is this object meaningful to you? If swearing iron vows to a leader or organization are a key aspect of your character, you might be BANNERSWORN.</p>"
+      },
+      "flags": {
+        "foundry-ironsworn": {
+          "assets": [
+            "Starforged/Assets/Path/Bannersworn"
+          ]
+        }
+      },
+      "_id": "NAOK6FwKfZXdBZRh",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022242,
+        "modifiedTime": 1695949022242,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!zH1Uirz4CXI8NdMF.NAOK6FwKfZXdBZRh"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022194,
+    "modifiedTime": 1695949022242,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!journal!zH1Uirz4CXI8NdMF"
+}

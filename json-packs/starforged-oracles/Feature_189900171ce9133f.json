@@ -1,0 +1,242 @@
+{
+  "_id": "189900171ce9133f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Rocky/Feature",
+      "category": "Starforged/Oracles/Planets/Rocky"
+    }
+  },
+  "name": "Feature",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Crystalline formations",
+      "_id": "35578cdc80cc1e3b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.35578cdc80cc1e3b"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Crystalline caves",
+      "_id": "9bede52cf58412ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.9bede52cf58412ae"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Exposed mineral deposits",
+      "_id": "2d763e152fe75123",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.2d763e152fe75123"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Geometric terrain features",
+      "_id": "8027690c17e13637",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.8027690c17e13637"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Geothermal vents",
+      "_id": "62ad9fd2b07d90eb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.62ad9fd2b07d90eb"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Glassy impact craters",
+      "_id": "e5342ea00b694f37",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.e5342ea00b694f37"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Massive dust dunes",
+      "_id": "ed66f5f36d96a5ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.ed66f5f36d96a5ac"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Powerful magnetic fields",
+      "_id": "2e20384020141f65",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.2e20384020141f65"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Rubble-strewn lava fields",
+      "_id": "7507b4442d75148b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.7507b4442d75148b"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Steam-heated caves",
+      "_id": "478117e377aebb02",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.478117e377aebb02"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Subsurface magma flows",
+      "_id": "1a33303eb7627e8c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.1a33303eb7627e8c"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Swirling low-lying gases",
+      "_id": "24cd5d8a47a83c4f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.24cd5d8a47a83c4f"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Towering rocky spires",
+      "_id": "54bdd0938d309ea6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.54bdd0938d309ea6"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "49f4001852289358",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.49f4001852289358"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (planetside)</a>",
+      "_id": "37fc53cb72ea5f96",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!189900171ce9133f.37fc53cb72ea5f96"
+    }
+  ],
+  "folder": "bed6f29dbba73147",
+  "sort": 315,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!189900171ce9133f"
+}

@@ -1,0 +1,172 @@
+{
+  "_id": "fc741bbc131b5a0b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Jovian/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Jovian"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Complex ring system",
+      "_id": "6a59431ccb7215e7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.6a59431ccb7215e7"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Intense gravity well",
+      "_id": "165a7a587214e398",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.165a7a587214e398"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Numerous moons",
+      "_id": "f2dd76477e83a16d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.f2dd76477e83a16d"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Perpetual superstorm",
+      "_id": "c015cc5c584c8cdc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.c015cc5c584c8cdc"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Powerful magnetic field",
+      "_id": "6745b562b3076762",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.6745b562b3076762"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "Severe electrical storms",
+      "_id": "9a60393e44316284",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.9a60393e44316284"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Superheated atmosphere",
+      "_id": "f2249c9ebfd873d6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.f2249c9ebfd873d6"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Unusual atmospheric colors",
+      "_id": "bc9fb2c0ad463969",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.bc9fb2c0ad463969"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "080aad169931eb81",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.080aad169931eb81"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "f61eeee446978fb0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fc741bbc131b5a0b.f61eeee446978fb0"
+    }
+  ],
+  "folder": "22e197c635fbf259",
+  "sort": 312,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!fc741bbc131b5a0b"
+}

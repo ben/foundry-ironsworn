@@ -1,0 +1,186 @@
+{
+  "_id": "dc5d9617bec6283a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Production/Peril",
+      "category": "Starforged/Oracles/Derelicts/Production"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Claustrophobic spaces",
+      "_id": "8d57c5831befcb01",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.8d57c5831befcb01"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Dangerous machinery",
+      "_id": "add5b7f3913e39ba",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.add5b7f3913e39ba"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Disturbing evidence of exploited labor",
+      "_id": "c0ac6a3379b135e8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.c0ac6a3379b135e8"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Extreme temperatures",
+      "_id": "be0844a73615ff16",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.be0844a73615ff16"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Hazardous materials",
+      "_id": "4f5ba66325aef163",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.4f5ba66325aef163"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Impending industrial disaster",
+      "_id": "f065cee3f77d1648",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.f065cee3f77d1648"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Malfunctioning automation",
+      "_id": "38ef5f86d9dca606",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.38ef5f86d9dca606"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Rivals seek to secure these resources",
+      "_id": "064518a5ebb401d7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.064518a5ebb401d7"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Signs of an unearthed or manufactured threat",
+      "_id": "ff902b8ce3f4cdf4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.ff902b8ce3f4cdf4"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "9273693c87b53e6a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.9273693c87b53e6a"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "bc6bc20fb52af07d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!dc5d9617bec6283a.bc6bc20fb52af07d"
+    }
+  ],
+  "folder": "2fbcd3395fd34f5d",
+  "sort": 358,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!dc5d9617bec6283a"
+}

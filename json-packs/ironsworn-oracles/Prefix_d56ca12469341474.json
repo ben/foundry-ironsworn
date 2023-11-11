@@ -1,0 +1,382 @@
+{
+  "_id": "d56ca12469341474",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Quick_Name/Prefix",
+      "category": "Ironsworn/Oracles/Settlement"
+    }
+  },
+  "name": "Prefix",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Bleak",
+      "_id": "e40d1ab04b1de9fa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.e40d1ab04b1de9fa"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Green",
+      "_id": "4142f3e40347270d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.4142f3e40347270d"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Wolf",
+      "_id": "ff810418d987d0e4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.ff810418d987d0e4"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Raven",
+      "_id": "3110b8131eb369df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.3110b8131eb369df"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Gray",
+      "_id": "c8b7818e5cb01675",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.c8b7818e5cb01675"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Red",
+      "_id": "9576556d924b15e7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.9576556d924b15e7"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Axe",
+      "_id": "09a8893797ffff30",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.09a8893797ffff30"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Great",
+      "_id": "98a691fd53d34020",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.98a691fd53d34020"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Wood",
+      "_id": "1fd505cb854c9595",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.1fd505cb854c9595"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Low",
+      "_id": "0cc875f75754354b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.0cc875f75754354b"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "White",
+      "_id": "577561576c3c727e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.577561576c3c727e"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Storm",
+      "_id": "df1826a77bd4c27c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.df1826a77bd4c27c"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Black",
+      "_id": "44a9308c32555e4a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.44a9308c32555e4a"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Mourn",
+      "_id": "b7d58682197e5124",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.b7d58682197e5124"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "New",
+      "_id": "1eef0904fad037cd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.1eef0904fad037cd"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Stone",
+      "_id": "dcf20764a0efd12e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.dcf20764a0efd12e"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Grim",
+      "_id": "e37e210342e400b4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.e37e210342e400b4"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Lost",
+      "_id": "d274e561243e68ab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.d274e561243e68ab"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "High",
+      "_id": "7124376863948cbe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.7124376863948cbe"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Rock",
+      "_id": "45ca8ed0c3e85f2d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.45ca8ed0c3e85f2d"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Shield",
+      "_id": "ef032cec76c9d6bc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.ef032cec76c9d6bc"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Sword",
+      "_id": "476cd537d76c53d5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.476cd537d76c53d5"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Frost",
+      "_id": "4d345a7f656c221a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.4d345a7f656c221a"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Thorn",
+      "_id": "6c6684021d162df1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.6c6684021d162df1"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Long",
+      "_id": "462c46f848da1820",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d56ca12469341474.462c46f848da1820"
+    }
+  ],
+  "folder": "32aa235a6ba13f03",
+  "sort": 180,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!d56ca12469341474"
+}

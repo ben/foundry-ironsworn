@@ -1,0 +1,284 @@
+{
+  "_id": "5dee17188d87278c",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Creatures/Basic_Form/Land",
+      "category": "Starforged/Oracles/Creatures"
+    }
+  },
+  "name": "Land",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Amoeba / pseudopods",
+      "_id": "cc2291c36bc2da6e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.cc2291c36bc2da6e"
+    },
+    {
+      "range": [
+        3,
+        5
+      ],
+      "text": "Amorphous / elemental",
+      "_id": "0791f5f4da5110f9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.0791f5f4da5110f9"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Avian / winged",
+      "_id": "4d286ca59684497b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.4d286ca59684497b"
+    },
+    {
+      "range": [
+        11,
+        25
+      ],
+      "text": "Beast / mammal",
+      "_id": "7317c45dece2855d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.7317c45dece2855d"
+    },
+    {
+      "range": [
+        26,
+        32
+      ],
+      "text": "Crustacean / shelled",
+      "_id": "3ee8f123ffe95dc1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.3ee8f123ffe95dc1"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Fish / torpedo-shaped",
+      "_id": "7a598f8365634bd1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.7a598f8365634bd1"
+    },
+    {
+      "range": [
+        35,
+        39
+      ],
+      "text": "Humanoid / bipedal",
+      "_id": "3187fb28c4878430",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.3187fb28c4878430"
+    },
+    {
+      "range": [
+        40,
+        49
+      ],
+      "text": "Insectoid / exoskeletal",
+      "_id": "e04250ed3d5ab3c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.e04250ed3d5ab3c6"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Jellyfish / gasbag",
+      "_id": "0f173511a007d647",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.0f173511a007d647"
+    },
+    {
+      "range": [
+        52,
+        58
+      ],
+      "text": "Lizard / reptilian",
+      "_id": "9f2545c4f559c6f4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.9f2545c4f559c6f4"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Octopoid / tentacled",
+      "_id": "426adb379b1c91b3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.426adb379b1c91b3"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Plant / fungus",
+      "_id": "7360be938afd1f13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.7360be938afd1f13"
+    },
+    {
+      "range": [
+        66,
+        67
+      ],
+      "text": "Ray / flat-bodied",
+      "_id": "bf491b918988f353",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.bf491b918988f353"
+    },
+    {
+      "range": [
+        68,
+        74
+      ],
+      "text": "Snake / eel",
+      "_id": "62122918e586f5e0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.62122918e586f5e0"
+    },
+    {
+      "range": [
+        75,
+        81
+      ],
+      "text": "Spider / web-weaver",
+      "_id": "030c62bb2d0f332b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.030c62bb2d0f332b"
+    },
+    {
+      "range": [
+        82,
+        83
+      ],
+      "text": "Starfish / symmetrical",
+      "_id": "dbb32cb7608bf898",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.dbb32cb7608bf898"
+    },
+    {
+      "range": [
+        84,
+        90
+      ],
+      "text": "Worm / slug / larva",
+      "_id": "d635fd882339791e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.d635fd882339791e"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_id": "844227f00ee7b75f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!5dee17188d87278c.844227f00ee7b75f"
+    }
+  ],
+  "folder": "3c4c763fbc099c60",
+  "sort": 337,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!5dee17188d87278c"
+}

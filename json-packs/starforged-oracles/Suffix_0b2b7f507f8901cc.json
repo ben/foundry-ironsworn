@@ -1,0 +1,732 @@
+{
+  "_id": "0b2b7f507f8901cc",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Space/Sector_Name/Suffix",
+      "category": "Starforged/Oracles/Space"
+    }
+  },
+  "name": "Suffix",
+  "description": "<p>To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Abyss",
+      "_id": "532cbb3601f5f18f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.532cbb3601f5f18f"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Anvil",
+      "_id": "2c50a689057e7427",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.2c50a689057e7427"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Arch",
+      "_id": "81b1cc9ad9777101",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.81b1cc9ad9777101"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Breach",
+      "_id": "be61271708b1f27d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.be61271708b1f27d"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Chain",
+      "_id": "7dd9e0785be1d217",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.7dd9e0785be1d217"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Channel",
+      "_id": "cc7b55269f065557",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.cc7b55269f065557"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Chasm",
+      "_id": "66da07cb0d11589b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.66da07cb0d11589b"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Circlet",
+      "_id": "c36cf14716331da4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.c36cf14716331da4"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Cluster",
+      "_id": "dd412d9e087663d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.dd412d9e087663d1"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Crossing",
+      "_id": "95b476ecda28d33a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.95b476ecda28d33a"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Crown",
+      "_id": "ed2e2bc819fe93f6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.ed2e2bc819fe93f6"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Currents",
+      "_id": "07e806cd1db789f2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.07e806cd1db789f2"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Deep",
+      "_id": "dbec6caade5dcaa5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.dbec6caade5dcaa5"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Desolation",
+      "_id": "1d706ff9f6773af0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.1d706ff9f6773af0"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Drift",
+      "_id": "862dc95fe796ad94",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.862dc95fe796ad94"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Flow",
+      "_id": "8c40f4813154278d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.8c40f4813154278d"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Flux",
+      "_id": "051466e067fa0597",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.051466e067fa0597"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Gap",
+      "_id": "18a0806fb6ae629f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.18a0806fb6ae629f"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Gate",
+      "_id": "64045f1e54f7c1df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.64045f1e54f7c1df"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Gyre",
+      "_id": "4e84a55bcae705b3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.4e84a55bcae705b3"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Heart",
+      "_id": "b496375d748a7e18",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.b496375d748a7e18"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Helix",
+      "_id": "492bb7b77befabfb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.492bb7b77befabfb"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Juncture",
+      "_id": "391902a982a6d65b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.391902a982a6d65b"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Limits",
+      "_id": "afc5f4d01cd13e81",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.afc5f4d01cd13e81"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Locus",
+      "_id": "66e49e3b635e628f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.66e49e3b635e628f"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Maelstrom",
+      "_id": "f9120cde718f6174",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.f9120cde718f6174"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Margin",
+      "_id": "d6c8792d869e4c21",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.d6c8792d869e4c21"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Maw",
+      "_id": "c1fc45420cba0341",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.c1fc45420cba0341"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Maze",
+      "_id": "0387b9b8e904184b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.0387b9b8e904184b"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Nexus",
+      "_id": "a46d4b11fd5f960b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.a46d4b11fd5f960b"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Oasis",
+      "_id": "c4da0c9be2c6cde9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.c4da0c9be2c6cde9"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Pass",
+      "_id": "d41cef231991f6b5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.d41cef231991f6b5"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Pit",
+      "_id": "9d50aaf8a2a93e76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.9d50aaf8a2a93e76"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Pyre",
+      "_id": "0005892e74f89b34",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.0005892e74f89b34"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Reach",
+      "_id": "8bf35acb1a428d25",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.8bf35acb1a428d25"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Rest",
+      "_id": "dcf74e3586b8f55d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.dcf74e3586b8f55d"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Rift",
+      "_id": "2215c0cd79dde0e0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.2215c0cd79dde0e0"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Sanctum",
+      "_id": "7473824e9584a441",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.7473824e9584a441"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Shallows",
+      "_id": "719ec043df0afff1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.719ec043df0afff1"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Shoal",
+      "_id": "48fde0f8da5458ee",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.48fde0f8da5458ee"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Spine",
+      "_id": "c27ef83235cf8554",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.c27ef83235cf8554"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Straits",
+      "_id": "4a1b7a23b19961a5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.4a1b7a23b19961a5"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Threshold",
+      "_id": "22bab5a267bd9525",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.22bab5a267bd9525"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Tide",
+      "_id": "11e99677055915c4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.11e99677055915c4"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Verge",
+      "_id": "2090bb045c598313",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.2090bb045c598313"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Vertex",
+      "_id": "a78f1c55a54c0c2e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.a78f1c55a54c0c2e"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Vigil",
+      "_id": "2e02eb67d2f7dad9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.2e02eb67d2f7dad9"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Void",
+      "_id": "704038a035209868",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.704038a035209868"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Web",
+      "_id": "e49753b9784ffa34",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.e49753b9784ffa34"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Zenith",
+      "_id": "04deea1bd775c5c5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0b2b7f507f8901cc.04deea1bd775c5c5"
+    }
+  ],
+  "folder": "158580c8f9018e58",
+  "sort": 302,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!0b2b7f507f8901cc"
+}

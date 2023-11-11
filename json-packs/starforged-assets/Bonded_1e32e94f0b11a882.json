@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "1e32e94f0b11a882",
+  "folder": "7f1c05806875930c",
+  "name": "Bonded",
+  "system": {
+    "requirement": "<p>One time only, once you @Compendium[foundry-ironsworn.starforgedmoves.287bb4c2b53ea847]{Forge a Bond} with a special individual…</p>",
+    "category": "Deed",
+    "color": "#40834f",
+    "fields": [
+      {
+        "name": "Bond-mate",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>This person is your bond-mate. When you @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn} at their home, @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten} in their presence, or @Compendium[foundry-ironsworn.starforgedmoves.8704c945023355fb]{Test Your Relationship} or @Compendium[foundry-ironsworn.starforgedmoves.141aec8b92efd14b]{Develop Your Relationship} with them, reroll any dice. On a strong hit, take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ed490d43a2533506]{Set a Course} back to your bond-mate's location, add +heart. On a strong hit with a match, envision a special reunion and mark two ticks on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move in a crucial moment and score a miss, you may cling to thoughts of your bond-mate for support. If you do, reroll any dice. On another miss, in addition to the outcome of the move, you must mark shaken or traumatized. If both debilities are already marked, @Compendium[foundry-ironsworn.starforgedmoves.ff17e67a59539df4]{Face Desolation}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!1e32e94f0b11a882"
+}

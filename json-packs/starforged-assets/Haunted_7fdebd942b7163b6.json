@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "7fdebd942b7163b6",
+  "folder": "1f02d646adff7374",
+  "name": "Haunted",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You are haunted by the spirit of someone whose death you caused or mourn (or both). When you make a move to call upon their insight, add +1. On a weak hit, also @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress} (-1). On a strong hit with a match, mark 1 tick on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death} guided by the spirit, add +1. On a strong hit, envision what you learn from them or about them, and mark 2 ticks on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>One time only, when you @Compendium[foundry-ironsworn.starforgedmoves.985a5415860a99e9]{Fulfill Your Vow} (extreme or greater) in service to the spirit, take this ability at no cost and choose one.</p>\n<ul>\n<li>Let them go: Mark 2 ticks on your bonds legacy track for each marked ability, and discard this asset.</li>\n<li>Bolster your link: When you use a HAUNTED asset ability, take +1 momentum on a hit.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!7fdebd942b7163b6"
+}

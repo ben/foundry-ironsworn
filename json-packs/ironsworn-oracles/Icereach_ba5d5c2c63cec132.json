@@ -1,0 +1,116 @@
+{
+  "_id": "ba5d5c2c63cec132",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Icereach",
+      "category": "Ironsworn/Oracles/Site_Name"
+    }
+  },
+  "name": "Icereach",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        16
+      ],
+      "text": "Icemark",
+      "_id": "847d36dbc7910d39",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba5d5c2c63cec132.847d36dbc7910d39"
+    },
+    {
+      "range": [
+        17,
+        32
+      ],
+      "text": "Wintertide",
+      "_id": "5f78bc8947ab2892",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba5d5c2c63cec132.5f78bc8947ab2892"
+    },
+    {
+      "range": [
+        33,
+        49
+      ],
+      "text": "Reach",
+      "_id": "eac183fcae0a48f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba5d5c2c63cec132.eac183fcae0a48f0"
+    },
+    {
+      "range": [
+        50,
+        66
+      ],
+      "text": "Waste",
+      "_id": "1ce92a22a6db3737",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba5d5c2c63cec132.1ce92a22a6db3737"
+    },
+    {
+      "range": [
+        67,
+        83
+      ],
+      "text": "Expanse",
+      "_id": "eeb7a4dd6bdca359",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba5d5c2c63cec132.eeb7a4dd6bdca359"
+    },
+    {
+      "range": [
+        84,
+        100
+      ],
+      "text": "Barrens",
+      "_id": "6f8bbf213429d2fb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!ba5d5c2c63cec132.6f8bbf213429d2fb"
+    }
+  ],
+  "folder": "b635c76e4b694c12",
+  "sort": 1210,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!ba5d5c2c63cec132"
+}

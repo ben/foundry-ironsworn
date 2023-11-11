@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "477ea0401fa056c3",
+  "folder": "18b30f608501bf56",
+  "name": "Brawler",
+  "system": {
+    "requirement": "<p>If you are unarmed or fighting with a non-deadly weapon…</p>",
+    "category": "Combat Talent",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} +iron by engaging in close_quarters brawling (such as punching, tripping, or grappling), add +1. If you score a hit, you may also inflict 1 harm.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you use an unarmed attack or simple weapon to @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} with deadly intent, add +2 and inflict 2 harm on a hit (instead of 1). On a weak hit or miss, suffer -1 momentum (in addition to any other outcome of the move).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} against a brawling attack, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!477ea0401fa056c3"
+}

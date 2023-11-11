@@ -1,0 +1,80 @@
+{
+  "_id": "06f78b87b9532437",
+  "type": "sfmove",
+  "name": "Reveal a Danger",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Delve/Reveal_a_Danger",
+    "Category": "Ironsworn/Moves/Delve",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you encounter a risky situation within a site**, envision the danger or roll on the following table.\n\nRoll  | Result\n------|-----------------------------------------------------------------------------------------------\n1-30  | Check the theme card.\n31-45 | Check the domain card.\n46-57 | You encounter a hostile denizen.\n58-68 | You face an environmental or architectural hazard.\n69-76 | A discovery undermines or complicates your quest.\n77-79 | You confront a harrowing situation or sensation.\n80-82 | You face the consequences of an earlier choice or approach.\n83-85 | Your way is blocked or trapped.\n86-88 | A resource is diminished, broken, or lost.\n89-91 | You face a perplexing mystery or tough choice.\n92-94 | You lose your way or are delayed.\n95-00 | Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
+    "Trigger": {
+      "Text": "When you encounter a risky situation within a site...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [
+      "Ironsworn/Oracles/Moves/Reveal_a_Danger"
+    ],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 34
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 34,
+  "folder": "e9e254f7a3fc7100",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!06f78b87b9532437"
+}

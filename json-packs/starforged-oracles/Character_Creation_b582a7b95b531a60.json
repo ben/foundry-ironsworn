@@ -1,0 +1,22 @@
+{
+  "name": "Character Creation",
+  "_id": "b582a7b95b531a60",
+  "type": "RollTable",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021157,
+    "modifiedTime": 1695949021157,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!b582a7b95b531a60"
+}

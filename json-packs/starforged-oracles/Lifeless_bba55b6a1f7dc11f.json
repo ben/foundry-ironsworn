@@ -1,0 +1,312 @@
+{
+  "_id": "bba55b6a1f7dc11f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Opportunity/Lifeless",
+      "category": "Starforged/Oracles/Planets"
+    }
+  },
+  "name": "Lifeless",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Encounter reveals unexpected benign lifeforms",
+      "_id": "80edf3ba85ed3dab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.80edf3ba85ed3dab"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Abandoned camp or vehicle",
+      "_id": "6f3044f10f333d69",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.6f3044f10f333d69"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Advance warning of an environmental threat",
+      "_id": "0c4032fa99c3329c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.0c4032fa99c3329c"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Clear path through otherwise perilous terrain",
+      "_id": "89c6ad92c5da5bb5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.89c6ad92c5da5bb5"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Clue offers insight into a current quest or mystery",
+      "_id": "4cbeb86edf5c67e1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.4cbeb86edf5c67e1"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Clue to the history or nature of this place",
+      "_id": "8133973077c54afd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.8133973077c54afd"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Evidence that others have passed this way",
+      "_id": "30b49c50369948bb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.30b49c50369948bb"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Foe reveals themselves or tips their hand",
+      "_id": "dba57691c51b3c49",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.dba57691c51b3c49"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Fortuitous change in the weather or atmosphere",
+      "_id": "35d2b1e6a1f961d4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.35d2b1e6a1f961d4"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Friendly traveler crosses your path",
+      "_id": "e2915771eeb6c988",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.e2915771eeb6c988"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Helpful resource is in ample supply",
+      "_id": "d0a9861c3c5d6d59",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.d0a9861c3c5d6d59"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Impressive vista offers comfort or inspiration",
+      "_id": "0b83fc6d3f0a53f6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.0b83fc6d3f0a53f6"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Interesting artifact or device",
+      "_id": "38a25e207eed56c2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.38a25e207eed56c2"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Interesting site offers opportunities for exploration",
+      "_id": "155e8b9a43435f44",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.155e8b9a43435f44"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Moment of fellowship or inner peace",
+      "_id": "8c5dcad09054f874",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.8c5dcad09054f874"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Opening to distract, escape, or avoid foes",
+      "_id": "9724df044b219062",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.9724df044b219062"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Opening to get the drop on a foe",
+      "_id": "8878912d312a140b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.8878912d312a140b"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Plea for help from a potential benefactor",
+      "_id": "3e8f7fee45fcf0ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.3e8f7fee45fcf0ff"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Refuge offers a place to hide, plan, or recover",
+      "_id": "3be0b06a47df3a18",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.3be0b06a47df3a18"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Vantage point reveals the lay of the land",
+      "_id": "3db3f27801aec18a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bba55b6a1f7dc11f.3db3f27801aec18a"
+    }
+  ],
+  "folder": "06b044a72e05ed6e",
+  "sort": 321,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!bba55b6a1f7dc11f"
+}

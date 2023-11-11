@@ -1,0 +1,200 @@
+{
+  "_id": "1f2db6732d59f909",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Production/Feature",
+      "category": "Starforged/Oracles/Derelicts/Production"
+    }
+  },
+  "name": "Feature",
+  "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Cargo lifts",
+      "_id": "32a972fb091337b7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.32a972fb091337b7"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Control panels",
+      "_id": "31a01dcf1855453b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.31a01dcf1855453b"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Disassembled machinery",
+      "_id": "81b343599750e8c9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.81b343599750e8c9"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Elevated walkways",
+      "_id": "671e3a2196cc8085",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.671e3a2196cc8085"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Environment suits",
+      "_id": "709b5163a6f070f4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.709b5163a6f070f4"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Ill-fated workers",
+      "_id": "60e585429deb40b1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.60e585429deb40b1"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Immense machinery",
+      "_id": "a8b0e6fb788ad6fc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.a8b0e6fb788ad6fc"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Sealed or locked containers",
+      "_id": "29f86ac7d526d94c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.29f86ac7d526d94c"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Tools",
+      "_id": "b06817cccdec3d81",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.b06817cccdec3d81"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Vats of chemicals or gas",
+      "_id": "d15316ec8a66afdf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.d15316ec8a66afdf"
+    },
+    {
+      "range": [
+        81,
+        88
+      ],
+      "text": "Written manifest",
+      "_id": "72d31ad1f0e93886",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.72d31ad1f0e93886"
+    },
+    {
+      "range": [
+        89,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "b6478417c3f7680d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!1f2db6732d59f909.b6478417c3f7680d"
+    }
+  ],
+  "folder": "2fbcd3395fd34f5d",
+  "sort": 358,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!1f2db6732d59f909"
+}

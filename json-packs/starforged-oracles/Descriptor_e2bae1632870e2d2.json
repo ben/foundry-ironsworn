@@ -1,0 +1,1432 @@
+{
+  "_id": "e2bae1632870e2d2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Core/Descriptor",
+      "category": "Starforged/Oracles/Core"
+    }
+  },
+  "name": "Descriptor",
+  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} to help define the nature of a location, discovery, or encounter, roll for a Descriptor and a Focus for an adjective/noun prompt.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Abandoned",
+      "_id": "4ca2bf8b06491c00",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.4ca2bf8b06491c00"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Abundant",
+      "_id": "f1615a0b5dbe8cb2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.f1615a0b5dbe8cb2"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Active",
+      "_id": "f935b952b8183b2a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.f935b952b8183b2a"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Advanced",
+      "_id": "9912bef718627d2e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.9912bef718627d2e"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Alien",
+      "_id": "457ec4cc9f66427b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.457ec4cc9f66427b"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Ancient",
+      "_id": "d9c36f7fb79f1d71",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d9c36f7fb79f1d71"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Archaic",
+      "_id": "6e78f8b457740061",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.6e78f8b457740061"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Automated",
+      "_id": "2190382284082bb5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.2190382284082bb5"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Barren",
+      "_id": "e5d3bfacaaed0cff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.e5d3bfacaaed0cff"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Biological",
+      "_id": "ea76b667076b847e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.ea76b667076b847e"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Blighted",
+      "_id": "d512119329939dd6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d512119329939dd6"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Blocked",
+      "_id": "4bed0799d8fa49bf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.4bed0799d8fa49bf"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Breached",
+      "_id": "8c811f5028f945a7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.8c811f5028f945a7"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Broken",
+      "_id": "0730f690ec88c659",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.0730f690ec88c659"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Captured",
+      "_id": "9dc4031aa1c686d7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.9dc4031aa1c686d7"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Chaotic",
+      "_id": "0ce7462798afebc3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.0ce7462798afebc3"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Civilized",
+      "_id": "93a8fe8a015e097c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.93a8fe8a015e097c"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Collapsed",
+      "_id": "e366b19568e70411",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.e366b19568e70411"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Colossal",
+      "_id": "bc6cffa1bf403075",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.bc6cffa1bf403075"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Confined",
+      "_id": "0c645d99361f1d17",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.0c645d99361f1d17"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Conspicuous",
+      "_id": "96637263a51ffe9b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.96637263a51ffe9b"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Constructed",
+      "_id": "f8cddd09f45b3b99",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.f8cddd09f45b3b99"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Contested",
+      "_id": "bf45c23ca9beea45",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.bf45c23ca9beea45"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Corrupted",
+      "_id": "55ca33ab1124b82e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.55ca33ab1124b82e"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Created",
+      "_id": "a9ca7f660638560b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.a9ca7f660638560b"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Damaged",
+      "_id": "61267b793b82e592",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.61267b793b82e592"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Dead",
+      "_id": "9ec0a68fe8f0abfb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.9ec0a68fe8f0abfb"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Deadly",
+      "_id": "6afcb2299f322cf0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.6afcb2299f322cf0"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Decaying",
+      "_id": "69a5f963084761bd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.69a5f963084761bd"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Defended",
+      "_id": "bcd70a0d780d2d35",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.bcd70a0d780d2d35"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Depleted",
+      "_id": "af7b726298a2cd03",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.af7b726298a2cd03"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Desolate",
+      "_id": "fd0669e724a094b2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.fd0669e724a094b2"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Destroyed",
+      "_id": "d2eff278f0418499",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d2eff278f0418499"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Diverse",
+      "_id": "c239806e3b0752e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.c239806e3b0752e5"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Empty",
+      "_id": "b83fa8033d87f2eb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.b83fa8033d87f2eb"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Engulfed",
+      "_id": "980398b90bebfb80",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.980398b90bebfb80"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Ensnaring",
+      "_id": "691dc1acc727eaa0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.691dc1acc727eaa0"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Expansive",
+      "_id": "9975ec8fb0178c6f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.9975ec8fb0178c6f"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Exposed",
+      "_id": "d379da92b3b72682",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d379da92b3b72682"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Fiery",
+      "_id": "5ebd500aa9b83b30",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.5ebd500aa9b83b30"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Foreboding",
+      "_id": "908f7a083f49af19",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.908f7a083f49af19"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Forgotten",
+      "_id": "91586bcf25a73394",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.91586bcf25a73394"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Forsaken",
+      "_id": "6a45038d683df28f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.6a45038d683df28f"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Fortified",
+      "_id": "d994a97198940c08",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d994a97198940c08"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Foul",
+      "_id": "eb7514ed92638514",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.eb7514ed92638514"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Fragile",
+      "_id": "84688fd0ae731684",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.84688fd0ae731684"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Frozen",
+      "_id": "f029bd584061f38c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.f029bd584061f38c"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Functional",
+      "_id": "acb9fd1e817bc4e0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.acb9fd1e817bc4e0"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Grim",
+      "_id": "23eef18271f488b6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.23eef18271f488b6"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Guarded",
+      "_id": "009fd58e45bc0821",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.009fd58e45bc0821"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Haunted",
+      "_id": "dc39d5533db5153a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.dc39d5533db5153a"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Hidden",
+      "_id": "07243913ac36bb5e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.07243913ac36bb5e"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Hoarded",
+      "_id": "1e16d5a81820d189",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.1e16d5a81820d189"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Hostile",
+      "_id": "dc67cb6af00ce5c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.dc67cb6af00ce5c6"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Immersed",
+      "_id": "3dd40a93213d8a33",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.3dd40a93213d8a33"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Inaccessible",
+      "_id": "1b8d990b2e17ee55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.1b8d990b2e17ee55"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Infested",
+      "_id": "cd906e3531e73aea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.cd906e3531e73aea"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Inhabited",
+      "_id": "88c0946852be6753",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.88c0946852be6753"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Isolated",
+      "_id": "df259199af977bda",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.df259199af977bda"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Living",
+      "_id": "97f6551646eb432a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.97f6551646eb432a"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Lost",
+      "_id": "88b6c9f2cba7df47",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.88b6c9f2cba7df47"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Lush",
+      "_id": "f9ad9f1f7b94c8c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.f9ad9f1f7b94c8c6"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Makeshift",
+      "_id": "920ff93130295df0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.920ff93130295df0"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Mechanical",
+      "_id": "19b3697a3c6fbb67",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.19b3697a3c6fbb67"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Misleading",
+      "_id": "31271e43a909b44a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.31271e43a909b44a"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Moving",
+      "_id": "d1062e0f74d4a796",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d1062e0f74d4a796"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Mysterious",
+      "_id": "d51e2f6f06e8ef1d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d51e2f6f06e8ef1d"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Natural",
+      "_id": "4a07feda8b63820b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.4a07feda8b63820b"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "New",
+      "_id": "eba60d55a2b43faf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.eba60d55a2b43faf"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Obscured",
+      "_id": "91d31c98bfc7c2ee",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.91d31c98bfc7c2ee"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Open",
+      "_id": "1c9ee2d8d77e4739",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.1c9ee2d8d77e4739"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Peaceful",
+      "_id": "e4c30cb995f0d87b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.e4c30cb995f0d87b"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Perilous",
+      "_id": "8dc8d134f42646ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.8dc8d134f42646ad"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Pillaged",
+      "_id": "4a83226e27233286",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.4a83226e27233286"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Powerful",
+      "_id": "d41b4109c10d5ac0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d41b4109c10d5ac0"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Preserved",
+      "_id": "c00d185e7ce5347e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.c00d185e7ce5347e"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Prominent",
+      "_id": "f896ca23f1e3c143",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.f896ca23f1e3c143"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Protected",
+      "_id": "8a6ad6824f95783c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.8a6ad6824f95783c"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Radiant",
+      "_id": "f54f5f7e56aedf56",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.f54f5f7e56aedf56"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Rare",
+      "_id": "cd99833eef5873cc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.cd99833eef5873cc"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Remote",
+      "_id": "f1534c56c2be9a2c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.f1534c56c2be9a2c"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Rich",
+      "_id": "d9bd318a771ab39b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.d9bd318a771ab39b"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Ruined",
+      "_id": "1a6edf4e200f4405",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.1a6edf4e200f4405"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Sacred",
+      "_id": "905dc8e53d2b088b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.905dc8e53d2b088b"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Safe",
+      "_id": "e38a437c774a1f0b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.e38a437c774a1f0b"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Sealed",
+      "_id": "b91a1b89cdc11dd4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.b91a1b89cdc11dd4"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Secret",
+      "_id": "6aeaa8a9670baa6f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.6aeaa8a9670baa6f"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Settled",
+      "_id": "306999f71562a297",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.306999f71562a297"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Shrouded",
+      "_id": "4991a9ac5119294f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.4991a9ac5119294f"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Stolen",
+      "_id": "e90bd0f415bcbe96",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.e90bd0f415bcbe96"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Strange",
+      "_id": "54d09d5cd5e81587",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.54d09d5cd5e81587"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Subsurface",
+      "_id": "8111231ac1015feb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.8111231ac1015feb"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Toxic",
+      "_id": "213f637abbb663ce",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.213f637abbb663ce"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Trapped",
+      "_id": "ba32836df507c89b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.ba32836df507c89b"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Undiscovered",
+      "_id": "fca3b36067c6531c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.fca3b36067c6531c"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Unnatural",
+      "_id": "911f0e0a0d06c3d5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.911f0e0a0d06c3d5"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Unstable",
+      "_id": "fa0b27fd3823dbb5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.fa0b27fd3823dbb5"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Untamed",
+      "_id": "2144f5c60e8e15bf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.2144f5c60e8e15bf"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Valuable",
+      "_id": "09e1037156833389",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.09e1037156833389"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Violent",
+      "_id": "cfe98f96cef226c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e2bae1632870e2d2.cfe98f96cef226c0"
+    }
+  ],
+  "folder": "312c7e84afc43125",
+  "sort": 298,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e2bae1632870e2d2"
+}

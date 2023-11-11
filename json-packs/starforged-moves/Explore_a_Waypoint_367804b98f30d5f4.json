@@ -1,0 +1,89 @@
+{
+  "_id": "367804b98f30d5f4",
+  "type": "sfmove",
+  "name": "Explore a Waypoint",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Exploration/Explore_a_Waypoint",
+    "Category": "Starforged/Moves/Exploration",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you divert from an expedition to examine a notable location**, roll +wits.\n\nOn a **strong hit**, choose one. On a **strong hit with a match**, you may instead @Compendium[foundry-ironsworn.starforgedmoves.75d5b0762ebab856]{Make a Discovery}.\n\n  * Find an opportunity: Envision a favorable insight, situation, resource, or encounter. Then, take +2 momentum.\n  * Gain progress: Mark progress on your expedition, per its rank.\n\nOn a **weak hit**, you uncover something interesting, but it is bound up in a peril or reveals an ominous aspect of this place. Envision what you encounter. Then, take +1 momentum.\n\nOn a **miss**, you encounter an immediate hardship or threat, and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. On a **miss with a match**, you may instead @Compendium[foundry-ironsworn.starforgedmoves.6848983199a497df]{Confront Chaos}.",
+    "Trigger": {
+      "Text": "When you divert from an expedition to examine a notable location...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Choose one.\n\n  * Find an opportunity: Envision a favorable insight, situation, resource, or encounter. Then, take +2 momentum.\n  * Gain progress: Mark progress on your expedition, per its rank.",
+        "With a Match": {
+          "Text": "You encounter something wondrous! Choose one.\n\n  * @Compendium[foundry-ironsworn.starforgedmoves.75d5b0762ebab856]{Make a Discovery}.\n  * Find an opportunity: Envision a favorable insight, situation, resource, or encounter. Then, take +2 momentum.\n  * Gain progress: Mark progress on your expedition, per its rank.",
+          "Reroll": {
+            "Text": ""
+          }
+        },
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "You uncover something interesting, but it is bound up in a peril or reveals an ominous aspect of this place. Envision what you encounter. Then, take +1 momentum.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You encounter an immediate hardship or threat, and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "With a Match": {
+          "Text": "You encounter something dreadful! @Compendium[foundry-ironsworn.starforgedmoves.6848983199a497df]{Confront Chaos} or else @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+          "Reroll": {
+            "Text": ""
+          }
+        },
+        "Reroll": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 174
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#7438B8",
+      "Images": []
+    }
+  },
+  "sort": 174,
+  "folder": "f57c06b3db7f1676",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!367804b98f30d5f4"
+}

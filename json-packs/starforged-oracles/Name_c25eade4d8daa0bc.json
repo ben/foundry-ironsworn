@@ -1,0 +1,1432 @@
+{
+  "_id": "c25eade4d8daa0bc",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Name",
+      "category": "Starforged/Oracles/Settlements"
+    }
+  },
+  "name": "Name",
+  "description": "<p>Choose a name appropriate to the nature of the settlement, or roll for a random result. You can let the name stand alone, or pair it with one of the following tags: Base, Citadel, Depot, Fortress, Hold, Landing, Outpost, Port, Station, Terminal.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Aegis",
+      "_id": "fa5ed5df0b86d5e7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.fa5ed5df0b86d5e7"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Altair",
+      "_id": "3253ba141b89a1d0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.3253ba141b89a1d0"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Altura",
+      "_id": "6e54a9c879cba717",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.6e54a9c879cba717"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Amity",
+      "_id": "b0cc3acb6030d84a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.b0cc3acb6030d84a"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Apex",
+      "_id": "8b1afb37bce05391",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.8b1afb37bce05391"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Apogee",
+      "_id": "df9f12c963895769",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.df9f12c963895769"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Argosy",
+      "_id": "31085963dc917655",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.31085963dc917655"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Astra",
+      "_id": "67019445f6819bb2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.67019445f6819bb2"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Aurora",
+      "_id": "87a6e8e08dfe1e43",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.87a6e8e08dfe1e43"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Beacon",
+      "_id": "d1f83a89aa029684",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.d1f83a89aa029684"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Brink",
+      "_id": "a67b479aa53729c3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.a67b479aa53729c3"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Bulwark",
+      "_id": "c5a792dbb492311f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.c5a792dbb492311f"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Burnell",
+      "_id": "9dc7b09d1eea8fde",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.9dc7b09d1eea8fde"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Burrow",
+      "_id": "d251f65a81fa1f87",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.d251f65a81fa1f87"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Concord",
+      "_id": "e011ba58fddbc733",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e011ba58fddbc733"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Crux",
+      "_id": "af74c82da9e5764f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.af74c82da9e5764f"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Deadrock",
+      "_id": "bd6526ddc4c8e4d4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.bd6526ddc4c8e4d4"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Deception",
+      "_id": "e6a60e68717c01bb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e6a60e68717c01bb"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Elysium",
+      "_id": "5da7f6a3b207d55f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.5da7f6a3b207d55f"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Enigma",
+      "_id": "e0e83229ef00c3f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e0e83229ef00c3f3"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Erebus",
+      "_id": "002c609b47618c13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.002c609b47618c13"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Eris",
+      "_id": "7c672e0a3c921ea7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.7c672e0a3c921ea7"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Evenfall",
+      "_id": "c7a40eacbdf2a074",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.c7a40eacbdf2a074"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Eventide",
+      "_id": "a917893f651cc6d5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.a917893f651cc6d5"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Farpoint",
+      "_id": "b0a1eaece6a70c52",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.b0a1eaece6a70c52"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Felicity",
+      "_id": "7f0b83f4fe20a10c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.7f0b83f4fe20a10c"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Florin",
+      "_id": "2235dad86ed2f07d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.2235dad86ed2f07d"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Forlorn",
+      "_id": "fcb35bff6e2e251b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.fcb35bff6e2e251b"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Forsaken",
+      "_id": "2e68cace93ee67da",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.2e68cace93ee67da"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Freya",
+      "_id": "af9a586e10ebfc25",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.af9a586e10ebfc25"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Glimmer",
+      "_id": "3d76028aee2a169d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.3d76028aee2a169d"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Gloam",
+      "_id": "2b106bdd2bf13f57",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.2b106bdd2bf13f57"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Hearth",
+      "_id": "8424893321a15fa2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.8424893321a15fa2"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Helia",
+      "_id": "686fd320a8ce3134",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.686fd320a8ce3134"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Hypatia",
+      "_id": "62c3585573f29368",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.62c3585573f29368"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Hyperion",
+      "_id": "938d06d0614baba4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.938d06d0614baba4"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Janus",
+      "_id": "a2818bd6674abeb4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.a2818bd6674abeb4"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Karma",
+      "_id": "a96ba41c76020bd9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.a96ba41c76020bd9"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Kepler",
+      "_id": "318061c866bff9ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.318061c866bff9ec"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Koshiba",
+      "_id": "8064c53b7ca116c9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.8064c53b7ca116c9"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Lagrange",
+      "_id": "764158d204cd31b1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.764158d204cd31b1"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Larissa",
+      "_id": "f22689a788d5e901",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.f22689a788d5e901"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Lasthope",
+      "_id": "a87dfaeed02c7e6b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.a87dfaeed02c7e6b"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Lastport",
+      "_id": "72bbb8987fe41cf0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.72bbb8987fe41cf0"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Legacy",
+      "_id": "e5acda4ef23265ba",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e5acda4ef23265ba"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Lodestar",
+      "_id": "3c499005c4dc0b5b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.3c499005c4dc0b5b"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Luminus",
+      "_id": "f8879ba7a22d4292",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.f8879ba7a22d4292"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Lyra",
+      "_id": "1504f492f25da859",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.1504f492f25da859"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Marrow",
+      "_id": "ebc4a2efa2e64227",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.ebc4a2efa2e64227"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Meridian",
+      "_id": "4ebba39fb0ed4554",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.4ebba39fb0ed4554"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Moirai",
+      "_id": "acecd2a804ec615b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.acecd2a804ec615b"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Mudd",
+      "_id": "cbf1ed6e6b40610a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.cbf1ed6e6b40610a"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Neoma",
+      "_id": "7dec26ad8aabf4ef",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.7dec26ad8aabf4ef"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Nerio",
+      "_id": "7e310017312fdc6c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.7e310017312fdc6c"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Nova",
+      "_id": "381d9d1861980d48",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.381d9d1861980d48"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Nyx",
+      "_id": "2fa05abfa91cabd7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.2fa05abfa91cabd7"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Osseus",
+      "_id": "321913a6ff7bd0a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.321913a6ff7bd0a9"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Paradox",
+      "_id": "70bb57a62a9be06d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.70bb57a62a9be06d"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Paragon",
+      "_id": "ea71ed4ff1acb50a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.ea71ed4ff1acb50a"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Paxton",
+      "_id": "fee8a18e64a61b95",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.fee8a18e64a61b95"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Perchance",
+      "_id": "e92346370a819e0c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e92346370a819e0c"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Pinnacle",
+      "_id": "bfa01a6c08c65082",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.bfa01a6c08c65082"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Polaris",
+      "_id": "93c8b236367eaaaf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.93c8b236367eaaaf"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Portent",
+      "_id": "a62771b6a25c47a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.a62771b6a25c47a8"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Prism",
+      "_id": "66144acff4ff36b8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.66144acff4ff36b8"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Providence",
+      "_id": "32b1abe9e9d2f5f5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.32b1abe9e9d2f5f5"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Purgatory",
+      "_id": "88bb78abc00e79fd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.88bb78abc00e79fd"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Rampart",
+      "_id": "0a61edc83c49afd3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.0a61edc83c49afd3"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Ramshackle",
+      "_id": "07e4db59e1cba34b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.07e4db59e1cba34b"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Redemption",
+      "_id": "edea99a7eacb8bd4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.edea99a7eacb8bd4"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Redhaven",
+      "_id": "2fb192abfca19c6c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.2fb192abfca19c6c"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Relic",
+      "_id": "6d431c542e87ad61",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.6d431c542e87ad61"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Reprise",
+      "_id": "9713bf7f8100884a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.9713bf7f8100884a"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Reverie",
+      "_id": "872d068b0ccd70c1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.872d068b0ccd70c1"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Rhiannon",
+      "_id": "771f4ec175f96bf8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.771f4ec175f96bf8"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Rockhome",
+      "_id": "84976e90a4a214bb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.84976e90a4a214bb"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Rust",
+      "_id": "f3d971a6e22ac313",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.f3d971a6e22ac313"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Sagan",
+      "_id": "1fed0a90b05066d9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.1fed0a90b05066d9"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Sanctity",
+      "_id": "4fe2f80ee7366213",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.4fe2f80ee7366213"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Selena",
+      "_id": "48f13c7bd1df7f6a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.48f13c7bd1df7f6a"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Sepulcher",
+      "_id": "54547df7f9da085c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.54547df7f9da085c"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Sigil",
+      "_id": "e0fb130ef2f7e249",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e0fb130ef2f7e249"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Silvana",
+      "_id": "e696a2bd3fbf0d76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e696a2bd3fbf0d76"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Sirius",
+      "_id": "e53c1e0b14ae827c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e53c1e0b14ae827c"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Sisyphus",
+      "_id": "e2839d16201d911d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.e2839d16201d911d"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Solitude",
+      "_id": "5ce538f97e7e41e3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.5ce538f97e7e41e3"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Spire",
+      "_id": "06cbc9c7fe0a15e6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.06cbc9c7fe0a15e6"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Starfall",
+      "_id": "b3ec972d842b253f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.b3ec972d842b253f"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Summit",
+      "_id": "cbf1b7b57c913b7a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.cbf1b7b57c913b7a"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Tranquility",
+      "_id": "ea14db110196c5a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.ea14db110196c5a9"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Tyson",
+      "_id": "cc85ceed0ea25a4a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.cc85ceed0ea25a4a"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Unity",
+      "_id": "ba23004aab32f76d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.ba23004aab32f76d"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Utopia",
+      "_id": "91071a0a5c81bcf9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.91071a0a5c81bcf9"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Vega",
+      "_id": "eead03cd18d40e1c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.eead03cd18d40e1c"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Vesper",
+      "_id": "67591c718edc2825",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.67591c718edc2825"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Wayward",
+      "_id": "834d64bc38944e4e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.834d64bc38944e4e"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Welkin",
+      "_id": "db8a50327a37965d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.db8a50327a37965d"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Wellspring",
+      "_id": "99f9cb821b369514",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.99f9cb821b369514"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Weyland",
+      "_id": "48cf6a8a6e05c4ab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.48cf6a8a6e05c4ab"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Wreck",
+      "_id": "53197b516fe591f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c25eade4d8daa0bc.53197b516fe591f0"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 325,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!c25eade4d8daa0bc"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Giant",
+  "type": "progress",
+  "img": "icons/creatures/magical/humanoid-giant-forest-blue.webp",
+  "data": {
+    "description": "\n\n<h2>Giant</h2>\n\n<p>Giants dwell in the Tempest Hills and Veiled Mountains. They live a nomadic life alone or in small family units, herding oxen, mountain goats, and sheep. In their own language they are called the jokul.</p>\n<p>Many Ironlanders misinterpret their quiet nature for dullness, but giants are keenly intelligent and observant. They have a great respect for life, even for our kind, and will use trickery and negotiation to avoid a fight. When they are left without other options, an enraged giant is a devastating, relentless force.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Dark hair and ruddy skin</p>\n    <p class=\"nogrow\">Twice the size of a tall man, or more</p>\n    <p class=\"nogrow\">Wearing layers of wool, hide and furs</p>\n    <p class=\"nogrow\">Stoic and observant</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Survive the winter</p>\n    <p class=\"nogrow\">Protect the herd</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Fight as a last resport</p>\n    <p class=\"nogrow\">Sweeping strike</p>\n    <p class=\"nogrow\">Make them flee</p>\n  </div>\n</div>\n\n<em><p>A pair of giants are raiding human settlements, stealing supplies and livestock. With winter coming, the survival of those settlements is threatened. What is driving the giants down from the hills?</p></em>\n\n<em><p>Every fifth spring, the giant clans meet for a gathering. There, the memory-keepers sing of a great giant hero, revered by all. Who is this hero?</p></em>\n\n<h2>Firstborn</h2>\n<p>The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory.</p>\n",
+    "rank": 4,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "76ebHb5WxyuJHgwM",
+  "_key": "!items!76ebHb5WxyuJHgwM"
+}

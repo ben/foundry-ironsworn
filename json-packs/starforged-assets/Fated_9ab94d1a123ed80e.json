@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "9ab94d1a123ed80e",
+  "folder": "1f02d646adff7374",
+  "name": "Fated",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you fill a box on your background vow progress track, also mark 1 tick on your quests legacy track. When you @Compendium[foundry-ironsworn.starforgedmoves.985a5415860a99e9]{Fulfill Your Vow} on the background vow, your fate is at hand; take an automatic strong hit and envision the final sacrifice that brings your story to an end.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death} or @Compendium[foundry-ironsworn.starforgedmoves.ff17e67a59539df4]{Face Desolation} while your background vow is unfulfilled, it is not yet your time. Instead of rolling, you may take an automatic strong hit. If you do, this asset counts as an impact (and you no longer have this protection) until you next @Compendium[foundry-ironsworn.starforgedmoves.0d7f13818c1c19ed]{Reach a Milestone} on the background vow.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make any progress move directly related to your background vow, and roll a 10 on either challenge die, you may reroll that die. On a strong hit, take +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!9ab94d1a123ed80e"
+}

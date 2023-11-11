@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "3bd3cddf27041c08",
+  "folder": "1f02d646adff7374",
+  "name": "Armored",
+  "system": {
+    "requirement": "<p>If you wear your finely crafted set of personal armor…</p>",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger}, @Compendium[foundry-ironsworn.starforgedmoves.d9208f9b7d827aec]{React Under Fire}, or @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash} against physical attacks or impact, you may put trust in your armor’s strength. If you do, preset your action die to 4. On a strong hit with a match, take +2 momentum as you build confidence, make an impression on your foes, or improve your position.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You add an important new piece to your set of armor, or upgrade its materials. As above, but preset your action die to 5 instead of 4.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you must @Compendium[foundry-ironsworn.starforgedmoves.905205c073b09eac]{Endure Harm}, you may instead let your armor take the hit. If you do, roll your action die. On a 4 or greater, ignore the harm. On a 1-3, ignore the harm but your armor is now broken; you must @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} and spend 5 repair points to bring it back to working condition.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!3bd3cddf27041c08"
+}

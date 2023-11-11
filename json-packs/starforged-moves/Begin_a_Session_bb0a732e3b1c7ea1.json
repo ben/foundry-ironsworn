@@ -1,0 +1,82 @@
+{
+  "_id": "bb0a732e3b1c7ea1",
+  "type": "sfmove",
+  "name": "Begin a Session",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Session/Begin_a_Session",
+    "Category": "Starforged/Moves/Session",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you begin a significant session or chapter of play**, do all of the following.\n\n  * Identify or adjust flagged content and @Compendium[foundry-ironsworn.starforgedmoves.6f3333f430a21db6]{Set a Flag}.\n  * Review or recap what happened last session.\n  * Set the scene by envisioning your character’s current situation and intent.\n\nIn addition, you may spotlight a new danger, opportunity, or insight. This can include a scene hidden from your character’s perspective. If you do, envision a brief vignette (you may roll or choose on the table below for inspiration). Then, all players take +1 momentum as you return to play from the viewpoint of your characters.\n\nRoll   | Result\n-------|-----------------------------------------------------------------------\n1-10   | Flashback reveals an aspect of your background or nature\n11-20  | Flashback reveals an aspect of another character, place, or faction\n21-30  | Influential character or faction is introduced or given new detail\n31-40  | Seemingly unrelated situations are shown to be connected\n41-50  | External factors create new danger, urgency, or importance for a quest\n51-60  | Important character is put in danger or suffers a misadventure\n61-70  | Key location is made unsafe or becomes mired in conflict\n71-80  | Unexpected return of an enemy or threat\n81-90  | Peril lies ahead or lurks just out of view\n91-100 | Unforeseen aid is on the way or within reach",
+    "Trigger": {
+      "Text": "When you begin a significant session or chapter of play...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [
+      "Starforged/Oracles/Moves/Begin_a_Session"
+    ],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 141
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#00B3C8",
+      "Images": []
+    }
+  },
+  "sort": 141,
+  "folder": "cb00661cf10b4177",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!bb0a732e3b1c7ea1"
+}

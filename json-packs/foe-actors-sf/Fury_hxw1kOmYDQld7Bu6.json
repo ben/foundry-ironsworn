@@ -1,0 +1,126 @@
+{
+  "name": "Fury",
+  "img": "icons/magic/holy/angel-winged-humanoid-blue.webp",
+  "type": "foe",
+  "_id": "hxw1kOmYDQld7Bu6",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Fury",
+    "displayName": 0,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Fury",
+      "type": "progress",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Long-lived humans with powerful physiques</p>\n    <p class=\"nogrow\">Grizzled and stern</p>\n    <p class=\"nogrow\">Tattoos memorialize fallen comrades</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Find their own path, unbound from those who seek to control them</p>\n    <p class=\"nogrow\">Do not succumb to the fury</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Wade into battle</p>\n    <p class=\"nogrow\">Take the hits</p>\n    <p class=\"nogrow\">Seize objectives with overwhelming force</p>\n  </div>\n</div>\n\n<p>The modifications that gave rise to the wardens can result in rare mutations that ravage their mind and body, stripping away their humanity. Wardens call these monstrous lost souls the furies, and are haunted by the possibility they may someday become one of them.</p>\n\n<blockquote>Quest Starter: <p>There are rumors of an enclave well beyond the inhabited sectors, a place where wardens can live in peace. An emerging threat against the people of the Forge causes you to seek out the aid of these living relics. What do you offer in return for their help?</p></blockquote>",
+        "rank": 5,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "_id": "Jwa3RMUcQOkovpbw",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022253,
+        "modifiedTime": 1695949022253,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!actors.items!hxw1kOmYDQld7Bu6.Jwa3RMUcQOkovpbw"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022244,
+    "modifiedTime": 1695949022253,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!actors!hxw1kOmYDQld7Bu6"
+}

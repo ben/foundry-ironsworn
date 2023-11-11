@@ -1,0 +1,23 @@
+{
+  "name": "Sanctum",
+  "_id": "c80cfc9efec8dc33",
+  "type": "RollTable",
+  "description": "As you delve deeper into a vault, the corruption and strangeness of the place takes hold. Use the Sanctum Feature table to represent the aberrant nature of a vault’s depths.",
+  "sort": 360,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Sanctum"
+    }
+  },
+  "folder": "2c4fe25ee600037f",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!c80cfc9efec8dc33"
+}

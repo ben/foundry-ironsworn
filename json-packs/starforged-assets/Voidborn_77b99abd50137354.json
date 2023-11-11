@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "77b99abd50137354",
+  "folder": "1f02d646adff7374",
+  "name": "Voidborn",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You are most suited to life in the limitless void. When you are in space (or a spacebound vehicle or station), increase your momentum reset by 1. When you enter a planetside or high gravity environment, @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn} or @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection} within a spacebound community, add +1. If you @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten} there and score a strong hit, take +1 spirit or +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move to perform an agile physical maneuver (such as leaping or evading) in a low gravity environment, add +1 and take +1 momentum on a hit. On a strong hit with a match, you build speed or put yourself in perfect position; take another +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!77b99abd50137354"
+}

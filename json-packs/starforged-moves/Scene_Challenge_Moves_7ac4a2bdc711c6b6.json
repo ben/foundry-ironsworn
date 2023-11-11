@@ -1,0 +1,24 @@
+{
+  "name": "Scene Challenge Moves",
+  "type": "Item",
+  "_id": "7ac4a2bdc711c6b6",
+  "color": "#206087",
+  "description": "A **scene challenge** is an optional structured approach for resolving an extended non-combat scene against a threat or other characters, particularly when a time limit or looming danger adds extra urgency.\n\nExamples of a scene challenge include disarming a timed explosive, hacking a system while evading digital countermeasures, participating in a formal debate before a council, or competing in a hoverbike race.",
+  "sort": 239,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Scene_Challenge"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021087,
+    "modifiedTime": 1695949021087,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!7ac4a2bdc711c6b6"
+}

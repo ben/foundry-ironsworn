@@ -1,0 +1,22 @@
+{
+  "name": "Place",
+  "_id": "e234710dfe2315ae",
+  "type": "RollTable",
+  "sort": 176,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Place"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021121,
+    "modifiedTime": 1695949021121,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!e234710dfe2315ae"
+}

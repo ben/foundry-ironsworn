@@ -1,0 +1,130 @@
+{
+  "_id": "0bf2b182752fd55b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Format",
+      "category": "Ironsworn/Oracles/Site_Name"
+    }
+  },
+  "name": "Format",
+  "description": "<p>To generate a name for a site, first roll on the Format table above. Then, fill in the blanks by using the Description (page 207), Detail (page 208), Namesake (page 209), and Place (page 210) oracles.</p>\n<p>If the form of a particular word doesn’t work, try making it plural instead of singular, or vice-versa.</p>\n<p>If you already know the theme and domain, you can pick from the tables instead of rolling. If not, you can use these oracles to help define those aspects of the site. Use the Place oracle to roll for a domain, and let the Description and Detail oracles inform your selection of a theme.</p>\n<p>The site’s name might be known in your world, or it could just be an evocative label you use to understand its history and nature.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "[Description] [Place]",
+      "_id": "31e455957695674b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bf2b182752fd55b.31e455957695674b"
+    },
+    {
+      "range": [
+        26,
+        50
+      ],
+      "text": "[Place] of [Detail]",
+      "_id": "3097c4f7c3c3c748",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bf2b182752fd55b.3097c4f7c3c3c748"
+    },
+    {
+      "range": [
+        51,
+        70
+      ],
+      "text": "[Place] of [Description] [Detail]",
+      "_id": "b0bee5970884c46b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bf2b182752fd55b.b0bee5970884c46b"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "[Place] of [Namesake's] [Detail]",
+      "_id": "af4a011cae16e691",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bf2b182752fd55b.af4a011cae16e691"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "[Namesake's] [Place]",
+      "_id": "9c6b823b1e8eeab6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bf2b182752fd55b.9c6b823b1e8eeab6"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "[Description] [Place] of [Namesake]",
+      "_id": "2b541e2f3c79a618",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bf2b182752fd55b.2b541e2f3c79a618"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "[Place] of [Namesake]",
+      "_id": "b09c0c7cc7ecc3ee",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0bf2b182752fd55b.b09c0c7cc7ecc3ee"
+    }
+  ],
+  "folder": "f6b92bad160107de",
+  "sort": 1206,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!0bf2b182752fd55b"
+}

@@ -1,0 +1,200 @@
+{
+  "_id": "19cd9d362a9aeef1",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Living/Area",
+      "category": "Starforged/Oracles/Derelicts/Living"
+    }
+  },
+  "name": "Area",
+  "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Food storage",
+      "_id": "47bebbd0abd53baf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.47bebbd0abd53baf"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Galley or kitchen",
+      "_id": "cdd47649c28ae38d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.cdd47649c28ae38d"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Laundry",
+      "_id": "b79229f7be028c89",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.b79229f7be028c89"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Locker room or storage",
+      "_id": "47ed1d7d337b4ad0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.47ed1d7d337b4ad0"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Mess hall or dining",
+      "_id": "eb7044a5718e875a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.eb7044a5718e875a"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Observation lounge",
+      "_id": "aa5526b1dde84f90",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.aa5526b1dde84f90"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Quarters (communal)",
+      "_id": "303ef72979a6d3ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.303ef72979a6d3ad"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Quarters (individual)",
+      "_id": "92c8ef5644002579",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.92c8ef5644002579"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Restroom or showers",
+      "_id": "d0ec7c0eae5fa5df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.d0ec7c0eae5fa5df"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Sleeping pods",
+      "_id": "f10ae1426105f1d6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.f10ae1426105f1d6"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "New zone",
+      "_id": "387cc3ed3ddd6fda",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.387cc3ed3ddd6fda"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
+      "_id": "200b3c4360442022",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!19cd9d362a9aeef1.200b3c4360442022"
+    }
+  ],
+  "folder": "026e85bc4b8047b8",
+  "sort": 355,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!19cd9d362a9aeef1"
+}

@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "e5ff13d9dfb1688b",
+  "folder": "43828d28bfed3e0a",
+  "name": "Raven",
+  "system": {
+    "requirement": "<p>Your raven heeds your call.</p>",
+    "category": "Companion",
+    "color": null,
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} or @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} +shadow using your raven to perform trickery (such as creating a distraction or stealing a small object) add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}, add +2 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When your raven carries messages for you, you may @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage}, @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information}, or @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} from a distance.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "current": 0,
+      "max": 2,
+      "value": 2,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!e5ff13d9dfb1688b"
+}

@@ -1,0 +1,200 @@
+{
+  "_id": "43c81102609e309d",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Medical/Area",
+      "category": "Starforged/Oracles/Derelicts/Medical"
+    }
+  },
+  "name": "Area",
+  "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Crematorium",
+      "_id": "e4849fcc48d1db9a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.e4849fcc48d1db9a"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Emergency or triage",
+      "_id": "be3ef72c94cb67b2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.be3ef72c94cb67b2"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Isolation or containment",
+      "_id": "29636d3efc91c436",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.29636d3efc91c436"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Medical lab",
+      "_id": "9fa3a6e70a9b3b0c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.9fa3a6e70a9b3b0c"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Medical offices",
+      "_id": "5264b0450fba1b6a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.5264b0450fba1b6a"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Morgue",
+      "_id": "dbe45b10ef6154ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.dbe45b10ef6154ac"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Operating room",
+      "_id": "35fa355dc580a617",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.35fa355dc580a617"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Pharmacy or drug locker",
+      "_id": "6ed56addbaeec648",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.6ed56addbaeec648"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Prosthetics workshop",
+      "_id": "d0961fc9335a7764",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.d0961fc9335a7764"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Ward or clinic",
+      "_id": "5cd20654e36aabc6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.5cd20654e36aabc6"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "New zone",
+      "_id": "0f6ef4a624eea17c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.0f6ef4a624eea17c"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
+      "_id": "eaa7bf360843f428",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!43c81102609e309d.eaa7bf360843f428"
+    }
+  ],
+  "folder": "1a41c444d69ea97d",
+  "sort": 356,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!43c81102609e309d"
+}

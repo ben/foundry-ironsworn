@@ -1,0 +1,74 @@
+{
+  "_id": "3b83c11a94c70b87",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Vital/Atmosphere",
+      "category": "Starforged/Oracles/Planets/Vital"
+    }
+  },
+  "name": "Atmosphere",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Marginal",
+      "_id": "57982f75c625aeeb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3b83c11a94c70b87.57982f75c625aeeb"
+    },
+    {
+      "range": [
+        21,
+        50
+      ],
+      "text": "Breathable",
+      "_id": "18015f92a7d69ea3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3b83c11a94c70b87.18015f92a7d69ea3"
+    },
+    {
+      "range": [
+        51,
+        100
+      ],
+      "text": "Ideal",
+      "_id": "b45a7f18ac8be70e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3b83c11a94c70b87.b45a7f18ac8be70e"
+    }
+  ],
+  "folder": "93ecb6acb6a3ea17",
+  "sort": 318,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!3b83c11a94c70b87"
+}

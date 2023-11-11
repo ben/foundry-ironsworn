@@ -1,0 +1,102 @@
+{
+  "_id": "d6d9b70dc52f751a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Furnace/Settlements/Terminus",
+      "category": "Starforged/Oracles/Planets/Furnace"
+    }
+  },
+  "name": "Terminus",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        60
+      ],
+      "text": "None",
+      "_id": "39292e35c0c0c752",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d6d9b70dc52f751a.39292e35c0c0c752"
+    },
+    {
+      "range": [
+        61,
+        75
+      ],
+      "text": "Orbital settlement",
+      "_id": "112b9371ba242924",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d6d9b70dc52f751a.112b9371ba242924"
+    },
+    {
+      "range": [
+        76,
+        87
+      ],
+      "text": "Planetside settlement",
+      "_id": "82b247a6ddf968a7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d6d9b70dc52f751a.82b247a6ddf968a7"
+    },
+    {
+      "range": [
+        88,
+        96
+      ],
+      "text": "Multiple settlements",
+      "_id": "35dc4af48357be83",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d6d9b70dc52f751a.35dc4af48357be83"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Settlements in conflict",
+      "_id": "4d04b55510142b16",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d6d9b70dc52f751a.4d04b55510142b16"
+    }
+  ],
+  "folder": "63ed8b1845e91c2a",
+  "sort": 309,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!d6d9b70dc52f751a"
+}

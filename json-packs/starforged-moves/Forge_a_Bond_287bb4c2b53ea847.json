@@ -1,0 +1,89 @@
+{
+  "_id": "287bb4c2b53ea847",
+  "type": "sfmove",
+  "name": "Forge a Bond",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Connection/Forge_a_Bond",
+    "Category": "Starforged/Moves/Connection",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "**When your relationship with a connection is ready to evolve**, roll the challenge dice and compare to your progress.\n\nOn a **strong hit**, you now share a bond. Mark a reward on your bonds legacy track per the connection's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who share this connection also mark the reward. Then, choose one.\n\n  * Bolster their influence: When they aid you on a move closely associated with their role, add +2 instead of +1.\n  * Expand their influence: Give them a second role. When they aid you on a move closely associated with either role, add +1 and take +1 momentum on a hit.\n\nOn a **weak hit**, as above, but they ask something more of you first. To gain the bond and the legacy reward, envision the nature of the request, and do it (or @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to see it done).\n\nOn a **miss**, they reveal a motivation or background that puts you at odds. If you recommit to this relationship, roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the connection's rank by one (if not already epic).",
+    "Trigger": {
+      "Text": "When your relationship with a connection is ready to evolve...",
+      "Options": [
+        {
+          "Roll type": "Progress roll",
+          "Method": "Any",
+          "Using": [
+            "Connection"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You now share a bond. Mark a reward on your bonds legacy track per the connection's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who share this connection also mark the reward. Then, choose one.\n\n  * Bolster their influence: When they aid you on a move closely associated with their role, add +2 instead of +1.\n  * Expand their influence: Give them a second role. When they aid you on a move closely associated with either role, add +1 and take +1 momentum on a hit.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "They ask something more of you first. To gain the bond and the legacy reward, envision the nature of the request, and do it (or @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to see it done).\n\nIf you do, you now share a bond. Mark a reward on your bonds legacy track per the connection's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who share this connection also mark the reward. Then, choose one.\n\n  * Bolster their influence: When they aid you on a move closely associated with their role, add +2 instead of +1.\n  * Expand their influence: Give them a second role. When they aid you on a move closely associated with either role, add +1 and take +1 momentum on a hit.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "They reveal a motivation or background that puts you at odds. If you recommit to this relationship, roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the connection's rank by one (if not already epic).",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 166
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#4053C9",
+      "Images": []
+    }
+  },
+  "sort": 166,
+  "folder": "4f3a8bdfb4421e2b",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!287bb4c2b53ea847"
+}

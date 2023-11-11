@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "0f0755a88b6dae09",
+  "folder": "5c9139c5883395ea",
+  "name": "Invoke",
+  "system": {
+    "requirement": "",
+    "category": "Ritual",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you consume the mystical essence of your surroundings, roll +wits. On a strong hit, add the value of your action die to your essence track (max 6). You may then @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} or @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} +essence to create minor mystical effects or illusions. If you do, suffer -1 essence and take +1 momentum on a hit. On a weak hit, as above, but capturing these energies is harrowing; @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (2 stress).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You may @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} +essence (and suffer -1 essence) through a show of power.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you perform this ritual, add +1 and take +1 essence on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Essence",
+      "current": 0,
+      "max": 6,
+      "value": 0,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!0f0755a88b6dae09"
+}

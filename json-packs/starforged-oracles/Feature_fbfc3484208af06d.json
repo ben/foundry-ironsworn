@@ -1,0 +1,214 @@
+{
+  "_id": "fbfc3484208af06d",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Sacred/Feature",
+      "category": "Starforged/Oracles/Location_Themes/Sacred"
+    }
+  },
+  "name": "Feature",
+  "description": "<p>Use this table to reveal a new aspect of the location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Adherents performing worship or enacting rituals",
+      "_id": "03f1a205850c9d5b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.03f1a205850c9d5b"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Altar or temple",
+      "_id": "b1c4c7c3b7aa0bcf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.b1c4c7c3b7aa0bcf"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Dwellings for the faithful",
+      "_id": "b7c7850c2c63ee8c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.b7c7850c2c63ee8c"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Enigmatic symbols",
+      "_id": "5c6da9f30564871b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.5c6da9f30564871b"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Graves or remains of glorified disciples",
+      "_id": "3ead8902a4a743ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.3ead8902a4a743ff"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Holy text or archives",
+      "_id": "c72ac2c8b54f44f5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.c72ac2c8b54f44f5"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Offerings or atonements",
+      "_id": "e8dcce2b792dcb14",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.e8dcce2b792dcb14"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Pilgrims arriving to pay homage",
+      "_id": "272b0a811dabe680",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.272b0a811dabe680"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Protected reliquary of an artifact or token",
+      "_id": "c4d32cf2acba7886",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.c4d32cf2acba7886"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Religious art or idols",
+      "_id": "017a01cbd653823b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.017a01cbd653823b"
+    },
+    {
+      "range": [
+        81,
+        88
+      ],
+      "text": "Subtle manifestations of mystical power or visions",
+      "_id": "9553fb5c74577c8e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.9553fb5c74577c8e"
+    },
+    {
+      "range": [
+        89,
+        96
+      ],
+      "text": "Tokens or motifs representing the faith's domain",
+      "_id": "89f44220596fa70a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.89f44220596fa70a"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "0736d5676b03a26e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!fbfc3484208af06d.0736d5676b03a26e"
+    }
+  ],
+  "folder": "0b969801701bcc74",
+  "sort": 379,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!fbfc3484208af06d"
+}

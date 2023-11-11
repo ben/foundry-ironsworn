@@ -1,0 +1,88 @@
+{
+  "_id": "5042c9574d4faf61",
+  "type": "sfmove",
+  "name": "Companion Endure Harm",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Suffer/Companion_Endure_Harm",
+    "Category": "Ironsworn/Moves/Suffer",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **your companion faces physical damage**, they suffer -health equal to the amount of harm inflicted. If your companion’s health is 0, exchange any leftover -health for -momentum. Then, roll +heart or +your companion’s health, whichever is higher.\n\nOn a **strong hit**, your companion rallies. Give them +1 health.\n\nOn a **weak hit**, your companion is battered. If their health is 0, they cannot assist you until they gain at least +1 health.\n\nOn a **miss**, also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two. If you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it.",
+    "Trigger": {
+      "Text": "When your companion faces physical damage...",
+      "Options": [
+        {
+          "Roll type": "Action roll",
+          "Method": "Highest",
+          "Using": [
+            "Heart",
+            "Companion Health"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Your companion rallies. Give them +1 health.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Your companion is battered. If their health is 0, they cannot assist you until they gain at least +1 health.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two.\n\nIf you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 94
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 94,
+  "folder": "a6b19a943ff830d6",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!5042c9574d4faf61"
+}

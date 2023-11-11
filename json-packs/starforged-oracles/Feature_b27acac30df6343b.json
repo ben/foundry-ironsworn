@@ -1,0 +1,214 @@
+{
+  "_id": "b27acac30df6343b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Fortified/Feature",
+      "category": "Starforged/Oracles/Location_Themes/Fortified"
+    }
+  },
+  "name": "Feature",
+  "description": "<p>Use this table to reveal a new aspect of the location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Captives or prisoners",
+      "_id": "687b273b58674e45",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.687b273b58674e45"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Control area or terminal",
+      "_id": "4831bbeb700e8d20",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.4831bbeb700e8d20"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Empty or inactive area",
+      "_id": "560a243a04fea203",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.560a243a04fea203"
+    },
+    {
+      "range": [
+        25,
+        32
+      ],
+      "text": "Enemy forces assembled for an event",
+      "_id": "167fd14c37a1eb4e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.167fd14c37a1eb4e"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Enemy forces off-duty or at leisure",
+      "_id": "75528f5ab56ee0ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.75528f5ab56ee0ff"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Enemy forces on guard",
+      "_id": "e661144154726e79",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.e661144154726e79"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Enemy forces on patrol",
+      "_id": "13928988ef8e174c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.13928988ef8e174c"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Enemy forces transporting supplies or equipment",
+      "_id": "b5007bd24d1ee2fb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.b5007bd24d1ee2fb"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Enemy leader makes an inspection",
+      "_id": "c7d0bd58c26212d5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.c7d0bd58c26212d5"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Prototype technology or equipment",
+      "_id": "b6c3e1d3d234f861",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.b6c3e1d3d234f861"
+    },
+    {
+      "range": [
+        81,
+        88
+      ],
+      "text": "Robotic assistant or watchful AI",
+      "_id": "b5b70d18b82bd97a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.b5b70d18b82bd97a"
+    },
+    {
+      "range": [
+        89,
+        96
+      ],
+      "text": "Support personnel at work",
+      "_id": "3d86a766b1160384",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.3d86a766b1160384"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "76a93c45e5b3fcea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b27acac30df6343b.76a93c45e5b3fcea"
+    }
+  ],
+  "folder": "b004bd768a2a6c15",
+  "sort": 373,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!b27acac30df6343b"
+}

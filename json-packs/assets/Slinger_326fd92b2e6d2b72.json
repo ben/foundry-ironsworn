@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "326fd92b2e6d2b72",
+  "folder": "18b30f608501bf56",
+  "name": "Slinger",
+  "system": {
+    "requirement": "<p>If you wield a sling…</p>",
+    "category": "Combat Talent",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When launched from a sling, a simple stone inflicts deadly harm (2 harm). When you @Compendium[foundry-ironsworn.ironswornmoves.ed343c963b08f301]{Enter the Fray} by barraging your foe with sling-bullets, inflict harm on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} by launching stones at an advancing foe, you may choose one (before rolling).</p>\n<ul>\n<li>Hold them back: Retain initiative on a weak hit, but inflict only 1 harm.</li>\n<li>Hit them hard: Inflict +1 harm on a hit, but suffer -1 momentum.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} by preparing stones of a special quality or material, add +1. Then, take +1 momentum or +1 supply on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!326fd92b2e6d2b72"
+}

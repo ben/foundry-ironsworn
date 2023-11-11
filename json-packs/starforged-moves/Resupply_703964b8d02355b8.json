@@ -1,0 +1,113 @@
+{
+  "_id": "703964b8d02355b8",
+  "type": "sfmove",
+  "name": "Resupply",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Recover/Resupply",
+    "Category": "Starforged/Moves/Recover",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you attempt to bolster your readiness**, envision the opportunity and your approach. If you...\n\n  * Barter or make an appeal: Roll +heart\n  * Threaten or seize: Roll +iron\n  * Steal or swindle: Roll +shadow\n  * Scavenge or craft: Roll +wits\n\nOn a **strong hit**, choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.\n\nOn a **weak hit**, as above, but you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.\n\nOn a **miss**, you encounter an unexpected peril. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you attempt to bolster your readiness...",
+      "Options": [
+        {
+          "Text": "Barter or make an appeal",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "Threaten or seize",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Steal or swindle",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Scavenge or craft",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You must first deal with a cost, complication, or demand. Envision the nature of this obstacle.\n\nThen choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You encounter an unexpected peril. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 212
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#179F0E",
+      "Images": []
+    }
+  },
+  "sort": 212,
+  "folder": "5ba869fa7c31abdd",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!703964b8d02355b8"
+}

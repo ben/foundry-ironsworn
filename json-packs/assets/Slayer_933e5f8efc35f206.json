@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "933e5f8efc35f206",
+  "folder": "6ed9a3c5cdb045aa",
+  "name": "Slayer",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information} by tracking a beast or horror, or when you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} by readying yourself for a fight against them, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} to slay a beast or horror, you may reroll any dice. When you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} and mark experience, take +1 experience.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you slay a beast or horror (at least formidable), you may take a trophy and choose one.</p>\n<ul>\n<li>Power a ritual: When you or an ally make a ritual move, reroll any dice (one time only).</li>\n<li>Prove your worth: When you @Compendium[foundry-ironsworn.ironswornmoves.25421995c803340e]{Sojourn}, reroll any dice (one time only).</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!933e5f8efc35f206"
+}

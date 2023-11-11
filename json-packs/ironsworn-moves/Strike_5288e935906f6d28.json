@@ -1,0 +1,95 @@
+{
+  "_id": "5288e935906f6d28",
+  "type": "sfmove",
+  "name": "Strike",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Combat/Strike",
+    "Category": "Ironsworn/Moves/Combat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you have initiative and attack in close quarters**, roll +iron. When **you have initiative and attack at range**, roll +edge.\n\nOn a **strong hit**, inflict +1 harm. You retain initiative.\n\nOn a **weak hit**, inflict your harm and lose initiative.\n\nOn a **miss**, your attack fails and you must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
+    "Trigger": {
+      "Text": "When you have initiative and attack...",
+      "Options": [
+        {
+          "Text": "In close quarters",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "At range",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Inflict +1 harm. You retain initiative.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Inflict your harm and lose initiative.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Your attack fails and you must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 78
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 78,
+  "folder": "19defd673fdc3970",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!5288e935906f6d28"
+}

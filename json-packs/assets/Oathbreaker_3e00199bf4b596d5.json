@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "3e00199bf4b596d5",
+  "folder": "6ed9a3c5cdb045aa",
+  "name": "Oathbreaker",
+  "system": {
+    "requirement": "<p>Once you @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow}…</p>",
+    "category": "Path",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>This asset counts as a debility. One time only, when you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} to redeem yourself (extreme or greater), give that vow a special mark. When you @Compendium[foundry-ironsworn.ironswornmoves.c3696751a921323b]{Reach a Milestone} on the marked vow, take +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} or @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} by reaffirming your commitment to your marked vow, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} on your marked quest and score a hit, you find redemption and automatically activate this ability at no cost. You may then improve one of your stats by +1 and discard this asset.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!3e00199bf4b596d5"
+}

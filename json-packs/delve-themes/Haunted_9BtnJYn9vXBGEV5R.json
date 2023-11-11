@@ -1,0 +1,252 @@
+{
+  "_id": "9BtnJYn9vXBGEV5R",
+  "type": "delve-theme",
+  "name": "Haunted",
+  "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
+  "system": {
+    "summary": "Restless spirits are bound to this place.",
+    "description": "Within a haunted site, dread, sadness, and fear are palpable. Disturbing sounds and visions lure the unwary and terrorize the vulnerable. Gird your will when you enter this place, for you walk at the boundary of life and death.\n\nSome lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. But all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing but hate for the living and a hunger for warmth which will never be sated.",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Tomb or burial site",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Blood was spilled here",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Unnatural mists or darkness",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Messages from beyond the grave",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Apparitions of a person or event",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Denizen haunts this area",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Unsettling sounds or foreboding signs",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Denizen attacks without warning",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Denizen makes a costly demand",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Denizen seizes your body or mind",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Denizen taunts or lures you",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "A disturbing truth is revealed",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Frightening visions",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "The environment is used against you",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Trickery leads you astray",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "True nature of this place is revealed",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Sudden, shocking manifestation",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "9BtnJYn9vXBGEV5R"
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "wQPE4gQwm9evnYyd": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.13",
+    "coreVersion": "10.291",
+    "createdTime": 1674027047964,
+    "modifiedTime": 1674027047964,
+    "lastModifiedBy": "wQPE4gQwm9evnYyd"
+  },
+  "_key": "!items!9BtnJYn9vXBGEV5R"
+}

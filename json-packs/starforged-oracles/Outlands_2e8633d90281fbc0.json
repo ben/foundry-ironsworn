@@ -1,0 +1,74 @@
+{
+  "_id": "2e8633d90281fbc0",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave/Settlements/Outlands",
+      "category": "Starforged/Oracles/Planets/Grave"
+    }
+  },
+  "name": "Outlands",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        90
+      ],
+      "text": "None",
+      "_id": "3cf12b1ee75ba6f7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2e8633d90281fbc0.3cf12b1ee75ba6f7"
+    },
+    {
+      "range": [
+        91,
+        97
+      ],
+      "text": "Orbital settlement",
+      "_id": "f4aa343b955a54db",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2e8633d90281fbc0.f4aa343b955a54db"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Planetside settlement",
+      "_id": "5be3632b8d29f528",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2e8633d90281fbc0.5be3632b8d29f528"
+    }
+  ],
+  "folder": "4adfe9fc794d193e",
+  "sort": 310,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!2e8633d90281fbc0"
+}

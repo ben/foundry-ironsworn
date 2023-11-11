@@ -1,0 +1,20 @@
+{
+  "name": "Haunt",
+  "type": "progress",
+  "img": "icons/magic/death/undead-ghost-strike-white.webp",
+  "data": {
+    "description": "\n\n<h2>Haunt</h2>\n\n<p>Haunts are restless spirits bound to this world by a traumatic or unjust death. They may be tied to a location, an object, or even a person.</p>\n<p>A haunt who manifests as a physical being can be dispelled by overcoming them in a fight, but only temporarily. They will only be at peace when their death is avenged or resolved. Some say a haunt can be banished, but these rituals are a lost art.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Subtle, unsettling manifestation</p>\n    <p class=\"nogrow\">Appear as they did in life</p>\n    <p class=\"nogrow\">Lay bare the ravages of death</p>\n    <p class=\"nogrow\">Stench of the grave</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Torment the living</p>\n    <p class=\"nogrow\">Find rest</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Vanish and reappear</p>\n    <p class=\"nogrow\">Horrifying visage</p>\n    <p class=\"nogrow\">Unleash chaos</p>\n  </div>\n</div>\n\n<em><p>You are plagued by a haunt. Who is it? What do they want of you?</p></em>\n\n<em><p>When someone dies a violent death, or at the hand of another, they are often laid to rest using a specific, ceremonial rite. This, it is believed, prevents them from returning as a haunt. What is this ritual? What rare material is required?</p></em>\n\n<h2>Horror</h2>\n<p>Horrors are supernatural entities. In the Old World, they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.</p>\n<p>Many horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.</p>\n",
+    "rank": 2,
+    "current": 0
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "9RWgFxH2ViAFPZTF": 3
+  },
+  "flags": {},
+  "_id": "Vq1JYe679GowAi2x",
+  "_key": "!items!Vq1JYe679GowAi2x"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Open oracle window",
+  "type": "script",
+  "scope": "global",
+  "author": "a8u59CvdJFmbk4At",
+  "img": "icons/svg/dice-target.svg",
+  "command": "new CONFIG.IRONSWORN.applications.OracleWindow().render(true)",
+  "ownership": {
+    "default": 0,
+    "60xesi9FkUr4sLjB": 3,
+    "a8u59CvdJFmbk4At": 3
+  },
+  "flags": {
+    "core": {
+      "sourceId": "Macro.ZlYNCfVfxTL5ydSi"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.5",
+    "coreVersion": "10.291",
+    "createdTime": 1672063109731,
+    "modifiedTime": 1672238498054,
+    "lastModifiedBy": "a8u59CvdJFmbk4At"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "hpt5pd92VXeCYNDU",
+  "_key": "!macros!hpt5pd92VXeCYNDU"
+}

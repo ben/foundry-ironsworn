@@ -1,0 +1,1432 @@
+{
+  "_id": "33d49a9b715a1c15",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Name/Ironlander/A",
+      "category": "Ironsworn/Oracles/Name"
+    }
+  },
+  "name": "A",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Solana",
+      "_id": "e6b1e17aa810ecc9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.e6b1e17aa810ecc9"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Keelan",
+      "_id": "77832b4bca1935da",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.77832b4bca1935da"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Cadigan",
+      "_id": "dc4f2d959b4ce630",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.dc4f2d959b4ce630"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Sola",
+      "_id": "1d75de76e6c34109",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.1d75de76e6c34109"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Kodroth",
+      "_id": "b675f71b3592f72c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.b675f71b3592f72c"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Kione",
+      "_id": "55c4ce05cc146c92",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.55c4ce05cc146c92"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Katja",
+      "_id": "4c142b81c24a7d3f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.4c142b81c24a7d3f"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Tio",
+      "_id": "7d719a26e81bff80",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.7d719a26e81bff80"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Artiga",
+      "_id": "d2c979c7418f2d3d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.d2c979c7418f2d3d"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Eos",
+      "_id": "ce27a6be1613fd3f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.ce27a6be1613fd3f"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Bastien",
+      "_id": "77cff90507d4457e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.77cff90507d4457e"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Elli",
+      "_id": "42a8d56d660214c9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.42a8d56d660214c9"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Maura",
+      "_id": "8849c88c14519fe9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.8849c88c14519fe9"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Haleema",
+      "_id": "46eba20ed51581a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.46eba20ed51581a8"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Abella",
+      "_id": "c2cbd7ab7ca82227",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.c2cbd7ab7ca82227"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Morter",
+      "_id": "21e507d6f60d88f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.21e507d6f60d88f0"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Wulan",
+      "_id": "97dc824301651c0d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.97dc824301651c0d"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Mai",
+      "_id": "c0c3a92839298fde",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.c0c3a92839298fde"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Farina",
+      "_id": "f8096107cfd220f1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.f8096107cfd220f1"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Pearce",
+      "_id": "a255f3528fd1de98",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.a255f3528fd1de98"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Wynne",
+      "_id": "2558d1f460cb307f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.2558d1f460cb307f"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Haf",
+      "_id": "7d988a43a1b1cfbf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.7d988a43a1b1cfbf"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Aeddon",
+      "_id": "ccc53cf3070c0dfd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.ccc53cf3070c0dfd"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Khinara",
+      "_id": "5d56b6530d6ec0da",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.5d56b6530d6ec0da"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Milla",
+      "_id": "e33ac1df921d0b8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.e33ac1df921d0b8f"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Nakata",
+      "_id": "e50567b4cd6c880d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.e50567b4cd6c880d"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Kynan",
+      "_id": "f20f4db99bdc6187",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.f20f4db99bdc6187"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Kiah",
+      "_id": "775eb519179b073c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.775eb519179b073c"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Jaggar",
+      "_id": "17f5d63ed86f1b7e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.17f5d63ed86f1b7e"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Beca",
+      "_id": "c3d5cb0e2cd66e96",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.c3d5cb0e2cd66e96"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Ikram",
+      "_id": "94b4499ea54d0e9b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.94b4499ea54d0e9b"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Melia",
+      "_id": "fdcbf20a064d8122",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.fdcbf20a064d8122"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Sidan",
+      "_id": "f49bbcb999230b6a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.f49bbcb999230b6a"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Deshi",
+      "_id": "025b35c798b17d2f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.025b35c798b17d2f"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Tessa",
+      "_id": "934f520321fb6b24",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.934f520321fb6b24"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Sibila",
+      "_id": "9566d04aca38678e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.9566d04aca38678e"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Morien",
+      "_id": "d3244592b5a7047b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.d3244592b5a7047b"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Mona",
+      "_id": "9669bd089e68d3d0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.9669bd089e68d3d0"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Padma",
+      "_id": "57f0f136d7bef132",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.57f0f136d7bef132"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Avella",
+      "_id": "29eba07a1ff3f505",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.29eba07a1ff3f505"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Naila",
+      "_id": "3ec090200af1469d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.3ec090200af1469d"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Lio",
+      "_id": "555aceba30a754c9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.555aceba30a754c9"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Cera",
+      "_id": "90946c1f5397ec56",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.90946c1f5397ec56"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Ithela",
+      "_id": "061886cc9d8fa993",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.061886cc9d8fa993"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Zhan",
+      "_id": "fc68764fb2e16a55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.fc68764fb2e16a55"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Kaivan",
+      "_id": "43434d05c947c4fa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.43434d05c947c4fa"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Valeri",
+      "_id": "32cbf432fda62ec0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.32cbf432fda62ec0"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Hirsham",
+      "_id": "6522997928fad3ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.6522997928fad3ff"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Pemba",
+      "_id": "1fafc3002967f463",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.1fafc3002967f463"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Edda",
+      "_id": "9d03ab1c1adea205",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.9d03ab1c1adea205"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Lestara",
+      "_id": "d1b7de5078e547c2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.d1b7de5078e547c2"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Lago",
+      "_id": "2203f3e4dd88f013",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.2203f3e4dd88f013"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Elstan",
+      "_id": "01919203a7aeb27b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.01919203a7aeb27b"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Saskia",
+      "_id": "5a8209f73a824d2a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.5a8209f73a824d2a"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Kabeera",
+      "_id": "49fc21c24adeec55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.49fc21c24adeec55"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Caldas",
+      "_id": "7c175fa697c58293",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.7c175fa697c58293"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Nisus",
+      "_id": "9d1d3f5e8574f219",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.9d1d3f5e8574f219"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Serene",
+      "_id": "ab54b422c5de6bde",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.ab54b422c5de6bde"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Chenda",
+      "_id": "3d625213145463be",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.3d625213145463be"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Themon",
+      "_id": "17896f64f2c65f50",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.17896f64f2c65f50"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Erin",
+      "_id": "9c7515b02704dc34",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.9c7515b02704dc34"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Alban",
+      "_id": "0064b28730d45e4c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.0064b28730d45e4c"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Parcell",
+      "_id": "1127c26259a95a97",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.1127c26259a95a97"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Jelma",
+      "_id": "ba6a2d2cba900e76",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.ba6a2d2cba900e76"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Willa",
+      "_id": "ea9387279a675664",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.ea9387279a675664"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Nadira",
+      "_id": "b6a4e15388be4ff4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.b6a4e15388be4ff4"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Gwen",
+      "_id": "87a5c95592e783f9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.87a5c95592e783f9"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Amara",
+      "_id": "d8047637e6f4e609",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.d8047637e6f4e609"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Masias",
+      "_id": "d5c8058328144e93",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.d5c8058328144e93"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Kanno",
+      "_id": "e45dca0be977226a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.e45dca0be977226a"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Razeena",
+      "_id": "b8a7ca82a80b24e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.b8a7ca82a80b24e5"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Mira",
+      "_id": "0e86e3e73cf0c579",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.0e86e3e73cf0c579"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Perella",
+      "_id": "84d1d8deba1e242a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.84d1d8deba1e242a"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Myrick",
+      "_id": "3c554d3ff5fafd0f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.3c554d3ff5fafd0f"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Qamar",
+      "_id": "1f6584a20078fa3d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.1f6584a20078fa3d"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Kormak",
+      "_id": "e2a5948e7e915b3f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.e2a5948e7e915b3f"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Zura",
+      "_id": "c7c4564e61c21bb8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.c7c4564e61c21bb8"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Zanita",
+      "_id": "075d1b2228d51d1a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.075d1b2228d51d1a"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Brynn",
+      "_id": "a70c551180948377",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.a70c551180948377"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Tegan",
+      "_id": "a0d72d3069c941e3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.a0d72d3069c941e3"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Pendry",
+      "_id": "ec29a377f4d389ce",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.ec29a377f4d389ce"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Quinn",
+      "_id": "02aab91ee77a6c72",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.02aab91ee77a6c72"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Fanir",
+      "_id": "031722b6dff335df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.031722b6dff335df"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Glain",
+      "_id": "89f159829fd80552",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.89f159829fd80552"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Emelyn",
+      "_id": "4ff4924c7614b34b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.4ff4924c7614b34b"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Kendi",
+      "_id": "261282b0293158a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.261282b0293158a8"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Althus",
+      "_id": "6e323cb66991fe0c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.6e323cb66991fe0c"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Leela",
+      "_id": "a0e7585b39eeb0ca",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.a0e7585b39eeb0ca"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Ishana",
+      "_id": "3881522bc7ebcb95",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.3881522bc7ebcb95"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Flint",
+      "_id": "7eeb02a2d7f73291",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.7eeb02a2d7f73291"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Delkash",
+      "_id": "9be17e796cb17ae9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.9be17e796cb17ae9"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Nia",
+      "_id": "88ac531c6bb5cab7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.88ac531c6bb5cab7"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Nan",
+      "_id": "31cd8a2efa801e0c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.31cd8a2efa801e0c"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Keeara",
+      "_id": "45e85699590a1b55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.45e85699590a1b55"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Katania",
+      "_id": "4973bcf9e354c5a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.4973bcf9e354c5a9"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Morell",
+      "_id": "20a7ac75ba465395",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.20a7ac75ba465395"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Temir",
+      "_id": "1db6d5ff691741a2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.1db6d5ff691741a2"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Bas",
+      "_id": "f60247fea96e5605",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.f60247fea96e5605"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Sabine",
+      "_id": "fd0b44bf8ee78721",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.fd0b44bf8ee78721"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Tallus",
+      "_id": "84e8aa6e8260d4bc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!33d49a9b715a1c15.84e8aa6e8260d4bc"
+    }
+  ],
+  "folder": "b0fddae6a7491958",
+  "sort": 184,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!33d49a9b715a1c15"
+}

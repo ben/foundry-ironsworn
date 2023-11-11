@@ -1,0 +1,72 @@
+{
+  "type": "asset",
+  "_id": "2d3070fbde3039ac",
+  "folder": "18b30f608501bf56",
+  "name": "Ironclad",
+  "system": {
+    "requirement": "<p>If you wear armor…</p>",
+    "category": "Combat Talent",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you equip or adjust your armor, choose one.</p>\n<ul>\n<li>Lightly armored: When you @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} in a fight, add +1 and take +1 momentum on a hit.</li>\n<li>Geared for war: Mark encumbered. When you @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} in a fight, add +2 and take +1 momentum on a hit.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} while you are geared for war, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} in a situation where strength of arms is a factor, add +2.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [
+      {
+        "name": "Lightly armored",
+        "selected": false
+      },
+      {
+        "name": "Geared for war",
+        "selected": false
+      }
+    ],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!2d3070fbde3039ac"
+}

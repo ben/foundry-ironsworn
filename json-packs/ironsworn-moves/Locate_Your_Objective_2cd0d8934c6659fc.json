@@ -1,0 +1,87 @@
+{
+  "_id": "2cd0d8934c6659fc",
+  "type": "sfmove",
+  "name": "Locate Your Objective",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Delve/Locate_Your_Objective",
+    "Category": "Ironsworn/Moves/Delve",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "When **your exploration of a site comes to an end**, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, you locate your objective and the situation favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.\n\nOn a **weak hit**, you locate your objective but face an unforeseen hazard or complication. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a **miss**, your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic).",
+    "Trigger": {
+      "Text": "When your exploration of a site comes to an end...",
+      "Options": [
+        {
+          "Roll type": "Progress roll",
+          "Method": "Any",
+          "Using": [
+            "Delve"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You locate your objective and the situation favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You locate your objective but face an unforeseen hazard or complication. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic).",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 40
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 40,
+  "folder": "e9e254f7a3fc7100",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!2cd0d8934c6659fc"
+}

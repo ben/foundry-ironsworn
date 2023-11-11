@@ -1,0 +1,172 @@
+{
+  "_id": "b86c508fef6c1a16",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Burgeoning_Conflict",
+      "category": "Ironsworn/Oracles/Threat"
+    }
+  },
+  "name": "Burgeoning Conflict",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Allow warmongers to gain influence",
+      "_id": "44047257c7a46c10",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.44047257c7a46c10"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Break a treaty",
+      "_id": "9808f33a8ed7e723",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.9808f33a8ed7e723"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Force a hasty decision",
+      "_id": "53a619eaa8787b52",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.53a619eaa8787b52"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Deepen suspicions",
+      "_id": "596ac88bdbbcf344",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.596ac88bdbbcf344"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Trigger a confrontation",
+      "_id": "028d3fca193b80c6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.028d3fca193b80c6"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Subvert a potential accord",
+      "_id": "5f2f07deb484ddcb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.5f2f07deb484ddcb"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Isolate the antagonists",
+      "_id": "7b5917c51222bddf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.7b5917c51222bddf"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Draw new battle lines",
+      "_id": "cc734a578beef517",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.cc734a578beef517"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Reveal an unexpected aspect of the dispute",
+      "_id": "cd351fd08dd9c70c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.cd351fd08dd9c70c"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Introduce a new person or faction to complicate the situation",
+      "_id": "5233076f9ca63a79",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!b86c508fef6c1a16.5233076f9ca63a79"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 1221,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!b86c508fef6c1a16"
+}

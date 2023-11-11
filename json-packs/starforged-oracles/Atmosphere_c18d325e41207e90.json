@@ -1,0 +1,102 @@
+{
+  "_id": "c18d325e41207e90",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave/Atmosphere",
+      "category": "Starforged/Oracles/Planets/Grave"
+    }
+  },
+  "name": "Atmosphere",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "None/thin",
+      "_id": "66e6cdb2798e3aca",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c18d325e41207e90.66e6cdb2798e3aca"
+    },
+    {
+      "range": [
+        11,
+        45
+      ],
+      "text": "Toxic",
+      "_id": "60b2e1d15cb3b8ce",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c18d325e41207e90.60b2e1d15cb3b8ce"
+    },
+    {
+      "range": [
+        46,
+        70
+      ],
+      "text": "Corrosive",
+      "_id": "a37c254a1e02ed94",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c18d325e41207e90.a37c254a1e02ed94"
+    },
+    {
+      "range": [
+        71,
+        90
+      ],
+      "text": "Marginal",
+      "_id": "1254d567aa7cccf7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c18d325e41207e90.1254d567aa7cccf7"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Breathable",
+      "_id": "8ec19469753fde91",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c18d325e41207e90.8ec19469753fde91"
+    }
+  ],
+  "folder": "caa4a9957ef73507",
+  "sort": 310,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!c18d325e41207e90"
+}

@@ -1,0 +1,494 @@
+{
+  "_id": "eb909255e1df463b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Projects",
+      "category": "Starforged/Oracles/Settlements"
+    }
+  },
+  "name": "Projects",
+  "description": "<p>Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Agriculture",
+      "_id": "5ce06d24e4fa45dd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.5ce06d24e4fa45dd"
+    },
+    {
+      "range": [
+        6,
+        7
+      ],
+      "text": "Archeology",
+      "_id": "be5d0df4de52e673",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.be5d0df4de52e673"
+    },
+    {
+      "range": [
+        8,
+        9
+      ],
+      "text": "Automation",
+      "_id": "700f071edf105d8b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.700f071edf105d8b"
+    },
+    {
+      "range": [
+        10,
+        11
+      ],
+      "text": "Black market",
+      "_id": "84abd663d7146cd7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.84abd663d7146cd7"
+    },
+    {
+      "range": [
+        12,
+        13
+      ],
+      "text": "Command",
+      "_id": "6b897ae33c19c5bd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.6b897ae33c19c5bd"
+    },
+    {
+      "range": [
+        14,
+        17
+      ],
+      "text": "Defense",
+      "_id": "6ae37d8439d4314c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.6ae37d8439d4314c"
+    },
+    {
+      "range": [
+        18,
+        22
+      ],
+      "text": "Energy",
+      "_id": "2f324e6cde989e36",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.2f324e6cde989e36"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Engineering",
+      "_id": "b7bef6742b1cf896",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.b7bef6742b1cf896"
+    },
+    {
+      "range": [
+        26,
+        27
+      ],
+      "text": "Entertainment",
+      "_id": "bdfdeebb8d158d96",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.bdfdeebb8d158d96"
+    },
+    {
+      "range": [
+        28,
+        29
+      ],
+      "text": "Environmentalism",
+      "_id": "61f4e98d1c33ac01",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.61f4e98d1c33ac01"
+    },
+    {
+      "range": [
+        30,
+        31
+      ],
+      "text": "Evacuation",
+      "_id": "2b0c2c270402339f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.2b0c2c270402339f"
+    },
+    {
+      "range": [
+        32,
+        33
+      ],
+      "text": "Expansion",
+      "_id": "df359d4b34f53371",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.df359d4b34f53371"
+    },
+    {
+      "range": [
+        34,
+        37
+      ],
+      "text": "Exploration",
+      "_id": "71e85e55dbe48327",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.71e85e55dbe48327"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Festival",
+      "_id": "192fcdf19eeaff55",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.192fcdf19eeaff55"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "History",
+      "_id": "b088c1ab2a2ad03a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.b088c1ab2a2ad03a"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Hunting",
+      "_id": "92a486977c820c5c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.92a486977c820c5c"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Manufacturing",
+      "_id": "53d2dd85aeb3158b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.53d2dd85aeb3158b"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "Medical",
+      "_id": "0251e73dd8b26434",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.0251e73dd8b26434"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Migration",
+      "_id": "4348e3bfe60e2b8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.4348e3bfe60e2b8f"
+    },
+    {
+      "range": [
+        52,
+        57
+      ],
+      "text": "Mining",
+      "_id": "f7bfe71601508557",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.f7bfe71601508557"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Pacifism",
+      "_id": "24138ee8b256fe71",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.24138ee8b256fe71"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "Raiding",
+      "_id": "e5f2f37a986ea720",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.e5f2f37a986ea720"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Research",
+      "_id": "c3b067ccd4f4437c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.c3b067ccd4f4437c"
+    },
+    {
+      "range": [
+        66,
+        69
+      ],
+      "text": "Salvage",
+      "_id": "d321fb08922a1a84",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.d321fb08922a1a84"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Secrecy",
+      "_id": "6c1ec949479fa706",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.6c1ec949479fa706"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Shipbuilding",
+      "_id": "2afb18af0e4ce905",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.2afb18af0e4ce905"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Spirituality",
+      "_id": "bffbe5089d2d7977",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.bffbe5089d2d7977"
+    },
+    {
+      "range": [
+        79,
+        84
+      ],
+      "text": "Subsistence",
+      "_id": "6de06e7e70816c1f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.6de06e7e70816c1f"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Surveillance",
+      "_id": "fdae209d6f0b223a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.fdae209d6f0b223a"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Terraforming",
+      "_id": "f0301fc8c05144fa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.f0301fc8c05144fa"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Trade",
+      "_id": "fceb79aa3638afc2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.fceb79aa3638afc2"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Warfare",
+      "_id": "bece3662f06836ed",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.bece3662f06836ed"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
+      "_id": "9743d9a28c7eba79",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!eb909255e1df463b.9743d9a28c7eba79"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 324,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!eb909255e1df463b"
+}

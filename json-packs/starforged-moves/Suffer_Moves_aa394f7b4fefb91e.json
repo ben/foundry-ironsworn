@@ -1,0 +1,24 @@
+{
+  "name": "Suffer Moves",
+  "type": "Item",
+  "_id": "aa394f7b4fefb91e",
+  "color": "#883529",
+  "description": "When you bear the brunt of a failed action or make a concession, the suffer moves help resolve the cost. These moves are typically made when you must [Pay the Price](Starforged/Moves/Fate/Pay_the_Price) and face a hardship that directly impacts your well-being and readiness, or as prompted by a move or asset.",
+  "sort": 198,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Suffer"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021087,
+    "modifiedTime": 1695949021087,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!aa394f7b4fefb91e"
+}

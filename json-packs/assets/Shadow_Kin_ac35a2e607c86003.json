@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "ac35a2e607c86003",
+  "folder": "6ed9a3c5cdb045aa",
+  "name": "Shadow-Kin",
+  "system": {
+    "requirement": "<p>Once you become corrupted…</p>",
+    "category": "Path",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>You harden your heart: Reduce your heart stat by 1 and add up to +2 to shadow (to a maximum of +4).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You are attuned to the realms of shadow: When you perform a ritual, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You know the sly ways of death: When you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}, you may roll +shadow (instead of +heart). On a weak hit, if you choose to undertake a deathbound quest, you may roll +shadow (instead of +heart) and reroll any dice as you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}. When you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} on that quest and and mark experience, take +2 experience.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!ac35a2e607c86003"
+}

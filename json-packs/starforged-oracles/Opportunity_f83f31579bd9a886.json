@@ -1,0 +1,102 @@
+{
+  "_id": "f83f31579bd9a886",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Ruined/Opportunity",
+      "category": "Starforged/Oracles/Location_Themes/Ruined"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Access to an untouched or preserved area",
+      "_id": "5ed912e3db3bcc44",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f83f31579bd9a886.5ed912e3db3bcc44"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Insight into what brought this place to ruin",
+      "_id": "26087331ba3dde9e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f83f31579bd9a886.26087331ba3dde9e"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Interesting or useful device or artifact",
+      "_id": "1d4e340d2b9d321f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f83f31579bd9a886.1d4e340d2b9d321f"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Salvageable equipment or resources",
+      "_id": "5ba461464249c946",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f83f31579bd9a886.5ba461464249c946"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Shortcut or passage through the destruction",
+      "_id": "a0e861ce8ad40977",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f83f31579bd9a886.a0e861ce8ad40977"
+    }
+  ],
+  "folder": "41a0a952f57f45cf",
+  "sort": 378,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!f83f31579bd9a886"
+}

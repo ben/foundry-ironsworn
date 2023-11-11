@@ -1,0 +1,72 @@
+{
+  "type": "asset",
+  "_id": "4c75d631a38fd3b8",
+  "folder": "1f02d646adff7374",
+  "name": "Augmented",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [
+      {
+        "name": "One",
+        "value": ""
+      },
+      {
+        "name": "Two",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You are equipped with an advanced prosthetic, implant, or mechanical enhancement. When you make a move directly aided by the augment, envision how it gives you exceptional capabilities and add +1. On a strong hit with a match, your augment exceeds expectations; take +2 momentum. On a miss with a match, the augment is broken; you must @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} and spend 3 repair points to bring it back to working condition.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You are equipped with a second augment. It functions as above, but the benefits of the two augments do not stack.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you must @Compendium[foundry-ironsworn.starforgedmoves.905205c073b09eac]{Endure Harm} or @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death}, you may instead mark an augment as broken. @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} it as detailed above.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!4c75d631a38fd3b8"
+}

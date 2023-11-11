@@ -1,0 +1,172 @@
+{
+  "_id": "2619383e6b3044a5",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Name/Manmade_Edifice",
+      "category": "Ironsworn/Oracles/Settlement"
+    }
+  },
+  "name": "Manmade Edifice",
+  "description": "<p><strong>A manmade edifice.</strong> What is it? Why is it important to this settlement’s history?,</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Whitebridge",
+      "_id": "c036ab0d77bf3037",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.c036ab0d77bf3037"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Lonefort",
+      "_id": "2399ddb040b722ec",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.2399ddb040b722ec"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Highcairn",
+      "_id": "85ea876229bbd0ea",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.85ea876229bbd0ea"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Redhall",
+      "_id": "cca97107bb3029db",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.cca97107bb3029db"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Darkwell",
+      "_id": "ecb6a60ffcc91ecb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.ecb6a60ffcc91ecb"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Timberwall",
+      "_id": "eb0edc384ab2dadf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.eb0edc384ab2dadf"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Stonetower",
+      "_id": "a3583f68b81c5b39",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.a3583f68b81c5b39"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Thornhall",
+      "_id": "b9cb29a13c1f38d6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.b9cb29a13c1f38d6"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Cinderhome",
+      "_id": "51f2a90135ca96ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.51f2a90135ca96ad"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Fallowfield",
+      "_id": "f5ebe00d0641e1aa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2619383e6b3044a5.f5ebe00d0641e1aa"
+    }
+  ],
+  "folder": "11b98f1da8f07aa2",
+  "sort": 178,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!2619383e6b3044a5"
+}

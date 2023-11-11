@@ -1,0 +1,186 @@
+{
+  "_id": "affbef437e01ef10",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Class",
+      "category": "Starforged/Oracles/Planets"
+    }
+  },
+  "name": "Class",
+  "description": "<p>This oracle provides a simple method of generating a planetary class. If this is enough information, stop there and envision the world as appropriate to its type. For a bit more detail, make a roll on the Descriptor oracle and envision how that aspect defines the nature of the planet or a specific planetside location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Desert\"><i class=\"fa fa-caret-right\"></i> Desert World</a>",
+      "_id": "924f089f21f72dcb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.924f089f21f72dcb"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Furnace\"><i class=\"fa fa-caret-right\"></i> Furnace World</a>",
+      "_id": "515c119caaa0380d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.515c119caaa0380d"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Grave\"><i class=\"fa fa-caret-right\"></i> Grave World</a>",
+      "_id": "aa8b0421bdc6be88",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.aa8b0421bdc6be88"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Ice\"><i class=\"fa fa-caret-right\"></i> Ice World</a>",
+      "_id": "74fe052861f95b35",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.74fe052861f95b35"
+    },
+    {
+      "range": [
+        51,
+        65
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Jovian\"><i class=\"fa fa-caret-right\"></i> Jovian World</a>",
+      "_id": "a9dd6a60e0c78e5d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.a9dd6a60e0c78e5d"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Jungle\"><i class=\"fa fa-caret-right\"></i> Jungle World</a>",
+      "_id": "5cc8ff186ad48aa1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.5cc8ff186ad48aa1"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Ocean\"><i class=\"fa fa-caret-right\"></i> Ocean World</a>",
+      "_id": "33fa54e41a630d27",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.33fa54e41a630d27"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Rocky\"><i class=\"fa fa-caret-right\"></i> Rocky World</a>",
+      "_id": "2dbfd3d091df3745",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.2dbfd3d091df3745"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Shattered\"><i class=\"fa fa-caret-right\"></i> Shattered World</a>",
+      "_id": "9f351fbd0dd99321",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.9f351fbd0dd99321"
+    },
+    {
+      "range": [
+        93,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Tainted\"><i class=\"fa fa-caret-right\"></i> Tainted World</a>",
+      "_id": "892bb05eecb06132",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.892bb05eecb06132"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Planets/Vital\"><i class=\"fa fa-caret-right\"></i> Vital World</a>",
+      "_id": "12e3b0323daee79f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!affbef437e01ef10.12e3b0323daee79f"
+    }
+  ],
+  "folder": "99ee8a161d0857f8",
+  "sort": 306,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!affbef437e01ef10"
+}

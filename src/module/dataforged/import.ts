@@ -72,8 +72,7 @@ const PACKS = [
 	'foundry-ironsworn.foeactorssf',
 	'foundry-ironsworn.ironswornassets',
 	'foundry-ironsworn.ironswornoracles',
-	'foundry-ironsworn.ironswornmoves',
-	'foundry-ironsworn.ironsworntruths'
+	'foundry-ironsworn.ironswornmoves'
 ] as const
 
 /**

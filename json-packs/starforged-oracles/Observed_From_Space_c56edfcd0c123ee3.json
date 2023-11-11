@@ -1,0 +1,172 @@
+{
+  "_id": "c56edfcd0c123ee3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ice/Observed_From_Space",
+      "category": "Starforged/Oracles/Planets/Ice"
+    }
+  },
+  "name": "Observed From Space",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Feeble sunlight",
+      "_id": "717bb353d1674038",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.717bb353d1674038"
+    },
+    {
+      "range": [
+        12,
+        22
+      ],
+      "text": "Supersized ice volcano",
+      "_id": "0c1ac36307f5bec3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.0c1ac36307f5bec3"
+    },
+    {
+      "range": [
+        23,
+        33
+      ],
+      "text": "Frozen oceans",
+      "_id": "c19b6593e6f12cd7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.c19b6593e6f12cd7"
+    },
+    {
+      "range": [
+        34,
+        44
+      ],
+      "text": "Vibrantly colored ice",
+      "_id": "49cbdb4bc853d3fa",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.49cbdb4bc853d3fa"
+    },
+    {
+      "range": [
+        45,
+        55
+      ],
+      "text": "Rocky glacial islands",
+      "_id": "4ce51322a1430e93",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.4ce51322a1430e93"
+    },
+    {
+      "range": [
+        56,
+        66
+      ],
+      "text": "World-spanning ice canyon",
+      "_id": "d97c8160d71e2a10",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.d97c8160d71e2a10"
+    },
+    {
+      "range": [
+        67,
+        77
+      ],
+      "text": "Snowbound mountains",
+      "_id": "fb8bded18bc9d528",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.fb8bded18bc9d528"
+    },
+    {
+      "range": [
+        78,
+        88
+      ],
+      "text": "Sky-breaching geysers",
+      "_id": "e3873a837d303cc9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.e3873a837d303cc9"
+    },
+    {
+      "range": [
+        89,
+        98
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "d16b80aa6dcdccbc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.d16b80aa6dcdccbc"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
+      "_id": "cc6569622801895e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!c56edfcd0c123ee3.cc6569622801895e"
+    }
+  ],
+  "folder": "402fa1e3f9e7707c",
+  "sort": 311,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!c56edfcd0c123ee3"
+}

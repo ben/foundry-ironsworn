@@ -1,0 +1,116 @@
+{
+  "_id": "d5899cd21e39de34",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Mine",
+      "category": "Ironsworn/Oracles/Site_Name"
+    }
+  },
+  "name": "Mine",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        16
+      ],
+      "text": "Lode",
+      "_id": "e554bc6eb6206f62",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d5899cd21e39de34.e554bc6eb6206f62"
+    },
+    {
+      "range": [
+        17,
+        32
+      ],
+      "text": "Dig",
+      "_id": "9ba00fa4d32e8522",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d5899cd21e39de34.9ba00fa4d32e8522"
+    },
+    {
+      "range": [
+        33,
+        49
+      ],
+      "text": "Forge",
+      "_id": "a6194b6671ced587",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d5899cd21e39de34.a6194b6671ced587"
+    },
+    {
+      "range": [
+        50,
+        66
+      ],
+      "text": "Mine",
+      "_id": "b03c229751963a21",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d5899cd21e39de34.b03c229751963a21"
+    },
+    {
+      "range": [
+        67,
+        83
+      ],
+      "text": "Tunnels",
+      "_id": "2d9a4f2d2d595756",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d5899cd21e39de34.2d9a4f2d2d595756"
+    },
+    {
+      "range": [
+        84,
+        100
+      ],
+      "text": "Cut",
+      "_id": "7e9505d0fdb5121e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d5899cd21e39de34.7e9505d0fdb5121e"
+    }
+  ],
+  "folder": "b635c76e4b694c12",
+  "sort": 1210,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!d5899cd21e39de34"
+}

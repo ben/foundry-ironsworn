@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "5b517486f8722fdb",
+  "folder": "1f02d646adff7374",
+  "name": "Veteran",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you are in a fight, increase your momentum reset by 1. Then, if you burn momentum to improve your result, add +1 on your next move.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection}, add +1. If you roll a match, you have a history.</p>\n<ul>\n<li>On a strong hit with a match, you once fought beside them, and they owe you a favor. Mark 1 tick on your bonds legacy track, and @Compendium[foundry-ironsworn.starforgedmoves.141aec8b92efd14b]{Develop Your Relationship} now.</li>\n<li>On a miss with a match, you once fought against them, and they hold a grudge.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by recounting or recalling a hard-won lesson from your battlefield experiences, envision the memory and add +1. On a hit, take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!5b517486f8722fdb"
+}

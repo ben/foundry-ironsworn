@@ -1,0 +1,130 @@
+{
+  "_id": "2c3224921966f200",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Authority",
+      "category": "Starforged/Oracles/Settlements"
+    }
+  },
+  "name": "Authority",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "None / lawless",
+      "_id": "561ac8687d71e67b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2c3224921966f200.561ac8687d71e67b"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Ineffectual",
+      "_id": "88559214c199c1bd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2c3224921966f200.88559214c199c1bd"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "Tolerant",
+      "_id": "316cec37884ad6a2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2c3224921966f200.316cec37884ad6a2"
+    },
+    {
+      "range": [
+        46,
+        55
+      ],
+      "text": "Fair",
+      "_id": "b2b91d8912d11a2e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2c3224921966f200.b2b91d8912d11a2e"
+    },
+    {
+      "range": [
+        56,
+        70
+      ],
+      "text": "Unyielding",
+      "_id": "d34a79c93187df99",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2c3224921966f200.d34a79c93187df99"
+    },
+    {
+      "range": [
+        71,
+        85
+      ],
+      "text": "Corrupt",
+      "_id": "f6fef61f77b2f3a9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2c3224921966f200.f6fef61f77b2f3a9"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Oppressive",
+      "_id": "1d92f3edc974a7a7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!2c3224921966f200.1d92f3edc974a7a7"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 323,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!2c3224921966f200"
+}

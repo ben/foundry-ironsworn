@@ -1,0 +1,23 @@
+{
+  "name": "Feature",
+  "_id": "d47d8d81af367061",
+  "type": "RollTable",
+  "description": "Use the Aspect and Focus oracles to answer questions or provide inspiration for a location or event within a site.",
+  "sort": 1204,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Feature"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021121,
+    "modifiedTime": 1695949021121,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!folders!d47d8d81af367061"
+}

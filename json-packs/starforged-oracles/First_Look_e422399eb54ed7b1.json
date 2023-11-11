@@ -1,0 +1,578 @@
+{
+  "_id": "e422399eb54ed7b1",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Characters/First_Look",
+      "category": "Starforged/Oracles/Characters"
+    }
+  },
+  "name": "First Look",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Accented",
+      "_id": "092979344b2e9d27",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.092979344b2e9d27"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Accompanied",
+      "_id": "d1badfd4aea5469a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.d1badfd4aea5469a"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Adorned",
+      "_id": "330bbd346c80f2a1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.330bbd346c80f2a1"
+    },
+    {
+      "range": [
+        9,
+        11
+      ],
+      "text": "Aged",
+      "_id": "53c46a764dd42ced",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.53c46a764dd42ced"
+    },
+    {
+      "range": [
+        12,
+        13
+      ],
+      "text": "Alluring",
+      "_id": "959058a298b82c0a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.959058a298b82c0a"
+    },
+    {
+      "range": [
+        14,
+        15
+      ],
+      "text": "Armed",
+      "_id": "89a92f2818ec9f8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.89a92f2818ec9f8f"
+    },
+    {
+      "range": [
+        16,
+        17
+      ],
+      "text": "Armored",
+      "_id": "9e601cf2238fb77f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.9e601cf2238fb77f"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Athletic",
+      "_id": "e44f89af421112f5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.e44f89af421112f5"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Attractive",
+      "_id": "ae9c5433c54c652f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.ae9c5433c54c652f"
+    },
+    {
+      "range": [
+        24,
+        25
+      ],
+      "text": "Augmented",
+      "_id": "5110d1dc60bd87fc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.5110d1dc60bd87fc"
+    },
+    {
+      "range": [
+        26,
+        27
+      ],
+      "text": "Concealed",
+      "_id": "573e70c23926ecad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.573e70c23926ecad"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Distracted",
+      "_id": "ca0818b2cd6fd76a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.ca0818b2cd6fd76a"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Eccentric",
+      "_id": "3566cdfa2a0d711c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.3566cdfa2a0d711c"
+    },
+    {
+      "range": [
+        34,
+        35
+      ],
+      "text": "Energetic",
+      "_id": "0c6d8cd38bc9f212",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.0c6d8cd38bc9f212"
+    },
+    {
+      "range": [
+        36,
+        37
+      ],
+      "text": "Flashy",
+      "_id": "d5341bd3905abc6f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.d5341bd3905abc6f"
+    },
+    {
+      "range": [
+        38,
+        40
+      ],
+      "text": "Graceful",
+      "_id": "47530d3e468ff50b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.47530d3e468ff50b"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "Grim",
+      "_id": "d1877845ee6a8ba7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.d1877845ee6a8ba7"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Haggard",
+      "_id": "0327f4e7563fa608",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.0327f4e7563fa608"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "Ill-equipped",
+      "_id": "6422c0b234c89b4a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.6422c0b234c89b4a"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "Imposing",
+      "_id": "792783d616787bb1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.792783d616787bb1"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Large",
+      "_id": "c3061c44804d0fc4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.c3061c44804d0fc4"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Mutated",
+      "_id": "e4dfc527d7ffad91",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.e4dfc527d7ffad91"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Plain",
+      "_id": "0dfbb3e7f100f3ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.0dfbb3e7f100f3ac"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Poised",
+      "_id": "e88ad6edce771f0b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.e88ad6edce771f0b"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Scarred",
+      "_id": "2c033bb006be824c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.2c033bb006be824c"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Scruffy",
+      "_id": "d2c62549537d41ca",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.d2c62549537d41ca"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "Shifty",
+      "_id": "5dbd516af3b69f87",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.5dbd516af3b69f87"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Sickly",
+      "_id": "b6e1a0c5cc1b9836",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.b6e1a0c5cc1b9836"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Slight",
+      "_id": "807f0087864b5d1a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.807f0087864b5d1a"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Swaggering",
+      "_id": "9ed6b2da1c086b2a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.9ed6b2da1c086b2a"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Tattooed",
+      "_id": "38b7f82bb8e5cae7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.38b7f82bb8e5cae7"
+    },
+    {
+      "range": [
+        82,
+        83
+      ],
+      "text": "Threatened",
+      "_id": "cbfa04bc19e390bf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.cbfa04bc19e390bf"
+    },
+    {
+      "range": [
+        84,
+        85
+      ],
+      "text": "Uncanny",
+      "_id": "09383cd668595422",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.09383cd668595422"
+    },
+    {
+      "range": [
+        86,
+        87
+      ],
+      "text": "Visibly disabled",
+      "_id": "4b5c3f9a1b3c3375",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.4b5c3f9a1b3c3375"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Weathered",
+      "_id": "ffd00b124aa607c0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.ffd00b124aa607c0"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Well-equipped",
+      "_id": "a7dcbf55fba37640",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.a7dcbf55fba37640"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Wiry",
+      "_id": "6e5133ab0c25f268",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.6e5133ab0c25f268"
+    },
+    {
+      "range": [
+        96,
+        97
+      ],
+      "text": "Wounded",
+      "_id": "8825382eac9c2c08",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.8825382eac9c2c08"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Youthful",
+      "_id": "956d8f0beea4c8ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e422399eb54ed7b1.956d8f0beea4c8ad"
+    }
+  ],
+  "folder": "dfc71f2bbd43cfc1",
+  "sort": 330,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e422399eb54ed7b1"
+}

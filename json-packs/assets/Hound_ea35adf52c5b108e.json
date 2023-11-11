@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "ea35adf52c5b108e",
+  "folder": "43828d28bfed3e0a",
+  "name": "Hound",
+  "system": {
+    "requirement": "<p>Your hound is your steadfast companion.</p>",
+    "category": "Companion",
+    "color": null,
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information} using your hound’s keen senses to track your quarry or investigate a scene, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} alongside your hound and score a hit, inflict +1 harm or take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} in the company of your hound, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "current": 0,
+      "max": 4,
+      "value": 4,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!ea35adf52c5b108e"
+}

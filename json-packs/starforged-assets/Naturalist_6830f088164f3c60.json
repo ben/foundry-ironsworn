@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "6830f088164f3c60",
+  "folder": "1f02d646adff7374",
+  "name": "Naturalist",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} using your knowledge of lifeforms or planetside ecosystems, add +1 and take +1 momentum on a hit. On a strong hit with a match, you also confirm an obscure theory or reveal a surprising aspect of the encounter; mark 1 tick on your discoveries legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move by taking a risky action to pacify, avoid, or outwit a creature (decide before rolling), you may reroll any dice, but must @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You are skilled at planetside survival. When you @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply} to scavenge resources in a life-bearing natural environment, take +1 supply on a hit. When you @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} against an environmental threat, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!6830f088164f3c60"
+}

@@ -1,0 +1,88 @@
+{
+  "_id": "9e9c1587cf1c98e1",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Name_Template",
+      "category": "Starforged/Oracles/Factions"
+    }
+  },
+  "name": "Name Template",
+  "description": "<p>To generate a faction name, first roll or choose the name template. Then, follow the structure of the template to build the name from individual tables. If you’ve already set the faction type, picking from the tables (instead of rolling) will likely provide a more appropriate result. For example, “Silver Jackals” is a fitting name for a criminal organization. The “Empire of the Undying Suns” is a less apt name for that gang—unless their leader is prone to delusions of grandeur. In short, choosing a name will give you more control. Rolling might give you a result that doesn’t square with known aspects, but those contradictions may prove inspiring.</p>\n<p>An alternative approach to generating a faction from scratch is to start with a random name. Then, consider what the name evokes and choose an appropriate faction type instead of rolling on those tables. For example, “Bloody Ravens” might suggest a mercenary guild, while the “Republic of the Radiant Servants” brings to mind a dominion built upon a religion, or one that idolizes a prophesied leader. If a result doesn’t inspire anything interesting, roll again or pick.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Legacy\"><i class=\"fa fa-caret-right\"></i> Legacy</a> <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Affiliation\"><i class=\"fa fa-caret-right\"></i> ⏵Affiliation</a>",
+      "_id": "2a50c87de7ef3c2e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9e9c1587cf1c98e1.2a50c87de7ef3c2e"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Legacy\"><i class=\"fa fa-caret-right\"></i> Legacy</a> <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Identity\"><i class=\"fa fa-caret-right\"></i> ⏵Identity</a>",
+      "_id": "9711f8e081f9fa64",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9e9c1587cf1c98e1.9711f8e081f9fa64"
+    },
+    {
+      "range": [
+        56,
+        70
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Identity\"><i class=\"fa fa-caret-right\"></i> Identity</a> *of the* <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Legacy\"><i class=\"fa fa-caret-right\"></i> ⏵Legacy</a> <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Affiliation\"><i class=\"fa fa-caret-right\"></i> ⏵Affiliation</a>",
+      "_id": "95e82b3daacdb36a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9e9c1587cf1c98e1.95e82b3daacdb36a"
+    },
+    {
+      "range": [
+        71,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Affiliation\"><i class=\"fa fa-caret-right\"></i> Affiliation</a> *of the* <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Legacy\"><i class=\"fa fa-caret-right\"></i> ⏵Legacy</a> <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Factions/Identity\"><i class=\"fa fa-caret-right\"></i> ⏵Identity</a>",
+      "_id": "ee3eaa0c926249ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!9e9c1587cf1c98e1.ee3eaa0c926249ad"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 344,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!9e9c1587cf1c98e1"
+}

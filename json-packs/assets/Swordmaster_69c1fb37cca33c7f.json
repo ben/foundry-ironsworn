@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "69c1fb37cca33c7f",
+  "folder": "18b30f608501bf56",
+  "name": "Swordmaster",
+  "system": {
+    "requirement": "<p>If you wield a sword…</p>",
+    "category": "Combat Talent",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} and burn momentum to improve your result, inflict +2 harm. If the fight continues, add +1 on your next move.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} and score a strong hit, add +1 if you immediately follow with a @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} by kneeling and grasping your sword’s blade, add +1 and take +1 momentum on a hit. If you let the edge draw blood from your hands, @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} (1 harm) in exchange for an additional +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!69c1fb37cca33c7f"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "JZxXBtK3RGusHeuG",
+  "name": "Glimmer",
+  "type": "foe",
+  "img": "icons/magic/nature/elemental-plant-humanoid.webp",
+  "data": {},
+  "token": {
+    "name": "Glimmer",
+    "img": "icons/magic/nature/elemental-plant-humanoid.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "WHifkRyX2ZsI9Zmm",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!JZxXBtK3RGusHeuG.WHifkRyX2ZsI9Zmm"
+    },
+    {
+      "_id": "R8hqr6wM5Wws41Ul",
+      "name": "Glimmer",
+      "type": "progress",
+      "img": "icons/magic/nature/elemental-plant-humanoid.webp",
+      "data": {
+        "description": "\n\n<h2>Glimmer</h2>\n\n<p>The glimmer are beings of mysterious origin and intent. They are most often encountered as particles of light which coalesce into a luminous humanoid or animal form.</p>\n<p>They are drawn to those who need guidance. For wayward travelers and seekers of hidden things, a glimmer will make a silent offer of passage. Relief from the dangers of the Ironlands or a quick journey to a distant destination is a tempting invitation, but not without its own price.</p>\n<p>The path the glimmer reveals is not wholly of our world. It can descend into the past, or climb into the future. It can wend its way across other lands and through strange realities. These trails are navigated not just by the glimmer, but by ancient, baneful things beyond comprehension.</p>\n<p>If you accept a glimmer’s guidance, steel yourself for the journey. Envision the places and people that give you hope, and you may find yourself among them. But do not be distracted. The temptations and terrors along the way can lead all but the most resolute astray. To be lost along a glimmer’s path is to remain lost—perhaps forever.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Dancing lights given vague form</p>\n    <p class=\"nogrow\">Silent beckoning</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Illuminate the darkness</p>\n    <p class=\"nogrow\">Provide escort along secret paths</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Appear to the lost and desperate</p>\n    <p class=\"nogrow\">Show the way</p>\n    <p class=\"nogrow\">Lead astray</p>\n  </div>\n</div>\n\n<em><p>Someone you love entered a <strong>Corrupted Shadowfen</strong> in search of a glimmer’s aid. They did not return. What did they seek? Can you walk the glimmer’s path and bring them back home?</p></em>\n\n<em><p>If you seek the guidance of a glimmer, you can try summoning one through a specific rite. What must you do? What cost must be paid?</p></em>\n\n<h2>Anomaly</h2>\n<p>Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.</p>\n",
+        "rank": 2,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!JZxXBtK3RGusHeuG.R8hqr6wM5Wws41Ul"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!JZxXBtK3RGusHeuG"
+}

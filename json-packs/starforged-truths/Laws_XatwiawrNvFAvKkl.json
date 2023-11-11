@@ -1,0 +1,208 @@
+{
+  "name": "Laws",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Laws",
+      "type": "truth-category"
+    }
+  },
+  "_id": "XatwiawrNvFAvKkl",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Much of the settled domains are a lawless frontier. Criminal factions and corrupt leaders often hold sway.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Laws/1-33",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Much of the settled domains are a lawless frontier. Criminal factions and corrupt leaders often hold sway.",
+        "Description": "Powers rise and fall in the Forge, so any authority is fleeting. In the end, we must fend for ourselves. A few communities are bastions of successful autonomy, but many are corrupted or preyed upon by petty despots, criminals, and raiders.",
+        "Quest": "In the upper atmosphere of a gas giant, transport vehicles carry valuable and volatile fuel from the processing plant to a heavily guarded storage depot. The notorious leader of a criminal organization needs this fuel, and gives you the schedule for the transports. What leverage does this person hold over you? How will you undertake this heist?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "RYNDGK0waOq3ogn8",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022256,
+        "modifiedTime": 1695949022256,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!XatwiawrNvFAvKkl.RYNDGK0waOq3ogn8"
+    },
+    {
+      "type": "truth",
+      "name": "Laws and governance vary across settled domains, but bounty hunters are given wide latitude to pursue their contracts. Their authority is almost universally recognized, and supersedes local laws.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Laws/34-67",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Laws and governance vary across settled domains, but bounty hunters are given wide latitude to pursue their contracts. Their authority is almost universally recognized, and supersedes local laws.",
+        "Description": "Through tradition and influence, bounty hunter guilds are given free rein to track and capture fugitives in most settled places. Only the foolish stand between a determined bounty hunter and their target.",
+        "Quest": "A famed bounty hunter needs your help tracking down their quarry. What is your relationship to the fugitive? Do you swear to aid the hunter, or the target?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "AKGVljAKjQ20Tytf",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022261,
+        "modifiedTime": 1695949022261,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!XatwiawrNvFAvKkl.AKGVljAKjQ20Tytf"
+    },
+    {
+      "type": "truth",
+      "name": "Our communities are bound under the terms of the Covenant, a charter established after the Exodus. The organization called the Keepers is sworn to uphold those laws.",
+      "system": {
+        "Subtable": [],
+        "dfid": "Starforged/Setting_Truths/Laws/68-100",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Our communities are bound under the terms of the Covenant, a charter established after the Exodus. The organization called the Keepers is sworn to uphold those laws.",
+        "Description": "Most settlements are still governed under the Covenant and yield to the authority of the Keepers. But a few view the Covenant as a dogmatic, impractical, and unjust relic of our past; in those places, the Keepers find no welcome.",
+        "Quest": "A Keeper abuses their authority to take control of a settlement, and rules with an iron fist. What do they seek to gain there?",
+        "Roll template": {
+          "Description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ${{Starforged/Setting_Truths/Artificial_Intelligence/1-33/Subtable}}.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves."
+        }
+      },
+      "_id": "IOTZhaYGCKTE4UsW",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022269,
+        "modifiedTime": 1695949022269,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!XatwiawrNvFAvKkl.IOTZhaYGCKTE4UsW"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you chase down outlaws, you might be a BOUNTY HUNTER. If you are skilled at getting in and out of protected places and systems, you might be an INFILTRATOR. If you are on the run from a power or authority, you might be a FUGITIVE. If you an expert investigator, you might be a SLEUTH. If you have connections within the criminal underworld, you might be a SCOUNDREL.",
+        "format": 2,
+        "content": "<p>If you chase down outlaws, you might be a BOUNTY HUNTER. If you are skilled at getting in and out of protected places and systems, you might be an INFILTRATOR. If you are on the run from a power or authority, you might be a FUGITIVE. If you an expert investigator, you might be a SLEUTH. If you have connections within the criminal underworld, you might be a SCOUNDREL.</p>"
+      },
+      "flags": {
+        "foundry-ironsworn": {
+          "assets": [
+            "Starforged/Assets/Path/Bounty_Hunter",
+            "Starforged/Assets/Path/Infiltrator",
+            "Starforged/Assets/Path/Fugitive",
+            "Starforged/Assets/Path/Sleuth",
+            "Starforged/Assets/Path/Scoundrel"
+          ]
+        }
+      },
+      "_id": "yxLrFDmg1NQOn0pN",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "sort": 0,
+      "ownership": {
+        "default": -1,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022275,
+        "modifiedTime": 1695949022275,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!journal.pages!XatwiawrNvFAvKkl.yxLrFDmg1NQOn0pN"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022250,
+    "modifiedTime": 1695949022275,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!journal!XatwiawrNvFAvKkl"
+}

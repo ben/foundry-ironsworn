@@ -1,0 +1,74 @@
+{
+  "_id": "bdbf63d8edaef61f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Desert/Settlements/Expanse",
+      "category": "Starforged/Oracles/Planets/Desert"
+    }
+  },
+  "name": "Expanse",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        90
+      ],
+      "text": "None",
+      "_id": "29ce41403ac79c34",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bdbf63d8edaef61f.29ce41403ac79c34"
+    },
+    {
+      "range": [
+        91,
+        96
+      ],
+      "text": "Orbital settlement",
+      "_id": "fad67eee0d16599b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bdbf63d8edaef61f.fad67eee0d16599b"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Planetside settlement",
+      "_id": "06ef138ff01b81e4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!bdbf63d8edaef61f.06ef138ff01b81e4"
+    }
+  ],
+  "folder": "2f700e3e6f50bf89",
+  "sort": 308,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!bdbf63d8edaef61f"
+}

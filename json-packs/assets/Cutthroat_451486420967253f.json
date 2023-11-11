@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "451486420967253f",
+  "folder": "18b30f608501bf56",
+  "name": "Cutthroat",
+  "system": {
+    "requirement": "<p>If you wield a dagger or knife…</p>",
+    "category": "Combat Talent",
+    "color": null,
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you are in position to @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} at an unsuspecting foe, choose one (before rolling).</p>\n<ul>\n<li>Add +2 and take +1 momentum on a hit.</li>\n<li>Inflict +2 harm on a hit.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} someone at the point of your blade, or when you rely on your blade to @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger}, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per fight, when you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} +shadow by performing a feint or misdirection, reroll any dice and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!451486420967253f"
+}

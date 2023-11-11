@@ -1,0 +1,102 @@
+{
+  "_id": "e588fbdc090fa1a3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes/Infested/Opportunity",
+      "category": "Starforged/Oracles/Location_Themes/Infested"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Clue to the nature or vulnerabilities of these creatures",
+      "_id": "8c726e8181f63cce",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e588fbdc090fa1a3.8c726e8181f63cce"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Creatures turn on each other",
+      "_id": "caa2886f02649295",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e588fbdc090fa1a3.caa2886f02649295"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Early warning of an attack or ambush",
+      "_id": "20562bbc6e31192d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e588fbdc090fa1a3.20562bbc6e31192d"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "External event provides a helpful distraction",
+      "_id": "04d7558b57f5add4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e588fbdc090fa1a3.04d7558b57f5add4"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Helpful resource or equipment",
+      "_id": "37e6401e3e2f845f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!e588fbdc090fa1a3.37e6401e3e2f845f"
+    }
+  ],
+  "folder": "4289e90998719500",
+  "sort": 375,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!e588fbdc090fa1a3"
+}

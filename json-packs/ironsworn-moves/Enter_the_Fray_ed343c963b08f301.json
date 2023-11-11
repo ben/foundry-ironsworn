@@ -1,0 +1,103 @@
+{
+  "_id": "ed343c963b08f301",
+  "type": "sfmove",
+  "name": "Enter the Fray",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Ironsworn/Moves/Combat/Enter_the_Fray",
+    "Category": "Ironsworn/Moves/Combat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When **you enter into combat**, set the rank of each of your foes.\n\n  * Troublesome foe: 3 progress per harm; inflicts 1 harm.\n  * Dangerous foe: 2 progress per harm; inflicts 2 harm.\n  * Formidable foe: 1 progress per harm; inflicts 3 harm.\n  * Extreme foe: 2 ticks per harm; inflicts 4 harm.\n  * Epic foe: 1 tick per harm; inflicts 5 harm.\n\nThen, roll to determine who is in control. If you are...\n\n  * Facing off against your foe: Roll +heart.\n  * Moving into position against an unaware foe, or striking without warning: Roll +shadow.\n  * Ambushed: Roll +wits.\n\nOn a **strong hit**, take +2 momentum. You have initiative.\n\nOn a **weak hit**, choose one.\n\n  * Bolster your position: Take +2 momentum.\n  * Prepare to act: Take initiative.\n\nOn a **miss**, combat begins with you at a disadvantage. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
+    "Trigger": {
+      "Text": "When you enter into combat...",
+      "Options": [
+        {
+          "Text": "Facing off against your foe",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "Moving into position against an unaware foe, or striking without warning",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Ambushed",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "Take +2 momentum. You have initiative.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "Choose one.\n\n  * Bolster your position: Take +2 momentum.\n  * Prepare to act: Take initiative.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "Combat begins with you at a disadvantage. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Page": 78
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 78,
+  "folder": "19defd673fdc3970",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021269,
+    "modifiedTime": 1695949021269,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!ed343c963b08f301"
+}

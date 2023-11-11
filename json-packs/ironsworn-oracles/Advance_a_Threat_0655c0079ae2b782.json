@@ -1,0 +1,74 @@
+{
+  "_id": "0655c0079ae2b782",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Advance_a_Threat",
+      "category": "Ironsworn/Oracles/Moves"
+    }
+  },
+  "name": "Advance a Threat",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, @Compendium[foundry-ironsworn.ironswornmoves.c3696751a921323b]{Reach a Milestone}. Otherwise, mark menace.",
+      "_id": "a5994c88f3232851",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0655c0079ae2b782.a5994c88f3232851"
+    },
+    {
+      "range": [
+        31,
+        70
+      ],
+      "text": "The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.",
+      "_id": "0d9b8009c530e462",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0655c0079ae2b782.0d9b8009c530e462"
+    },
+    {
+      "range": [
+        71,
+        100
+      ],
+      "text": "The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.",
+      "_id": "eea317e45c2e137f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!0655c0079ae2b782.eea317e45c2e137f"
+    }
+  ],
+  "folder": "06986fcc791b64bc",
+  "sort": 1155,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!0655c0079ae2b782"
+}

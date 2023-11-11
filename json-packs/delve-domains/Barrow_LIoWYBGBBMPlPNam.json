@@ -1,0 +1,252 @@
+{
+  "_id": "LIoWYBGBBMPlPNam",
+  "type": "delve-domain",
+  "name": "Barrow",
+  "img": "icons/environment/wilderness/cave-entrance-dwarven-hill.webp",
+  "system": {
+    "summary": "The dead are enshrined here.",
+    "description": "In this cruel land, there is no shortage of dead to be put to rest. Some barrows are simple crypts for a family or steading. Others are more elaborate or extensive, plunging well into the depths of the earth. A few inconspicuous mounds, their rock and earth worn by time, mark an entryway into impossibly labyrinthine tombs built by long-forgotten people.\n\nEven the most ancient of these sites still echo with the memory and power of lives once lived, battles once fought, loves gained or lost, and vows unfulfilled.",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Burial chambers",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Maze of narrow passages",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Shrine",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Stately vault",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Offerings to the dead",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Statuary or tapestries",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Remains of a grave robber",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Mass grave",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Exhumed corpses",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-feature",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen guards this area",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Trap",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Death makes its presence known",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Crumbling architecture",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Grave goods with hidden dangers",
+        "flags": {
+          "foundry-ironsworn": {
+            "type": "delve-site-danger",
+            "sourceId": "LIoWYBGBBMPlPNam"
+          }
+        }
+      }
+    ]
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "wQPE4gQwm9evnYyd": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.20.13",
+    "coreVersion": "10.291",
+    "createdTime": 1674027048032,
+    "modifiedTime": 1674027048032,
+    "lastModifiedBy": "wQPE4gQwm9evnYyd"
+  },
+  "_key": "!items!LIoWYBGBBMPlPNam"
+}

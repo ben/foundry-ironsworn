@@ -1,0 +1,97 @@
+{
+  "_id": "eece9a67d1961f70",
+  "type": "sfmove",
+  "name": "Repair",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Recover/Repair",
+    "Category": "Starforged/Moves/Recover",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "**When you make repairs to your vehicles, modules, mechanical companions, or other devices**, envision the situation and roll. If you...\n\n  * Make your own repairs, or direct a companion to make repairs: Roll +wits\n  * Obtain repairs from someone (not an ally): Roll +supply\n\nOn a **hit**, you gain repair points as appropriate to the situation, per the table below. Additionally, you may @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} and exchange each -1 of supply for 1 extra repair point (up to 3 points).\n\nSituation     | Strong Hit | Weak Hit\n--------------|------------|---------\nAt a facility | 5 points   | 3 points\nIn the field  | 3 points   | 1 points\nUnder fire    | 2 points   | 0 points\n\nSpend repair points as follows. Unused points are discarded.\n\n  * Clear the battered impact on a vehicle: 2 points\n  * Fix one broken module: 2 points\n  * Take +1 integrity on a vehicle: 1 point\n  * Take +1 health for a mechanical companion: 1 point\n  * Repair any other device: 3 points\n  * Repair any other device, but with a complication or malfunction: 2 points\n\nOn a **miss**, the repairs are not made and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you make repairs to your vehicles, modules, mechanical companions, or other devices...",
+      "Options": [
+        {
+          "Text": "Make your own repairs, or direct a companion to make repairs",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        },
+        {
+          "Text": "Obtain repairs from someone (not an ally)",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Supply"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You gain repair points as appropriate to the situation, per the table below.\n\nSituation     | Strong Hit\n--------------|-----------\nAt a facility | 5 points\nIn the field  | 3 points\nUnder fire    | 2 points\n\nAdditionally, you may @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} and exchange each -1 of supply for 1 extra repair point (up to 3 points).\n\nSpend repair points as follows. Unused points are discarded.\n\n  * Clear the battered impact on a vehicle: 2 points\n  * Fix one broken module: 2 points\n  * Take +1 integrity on a vehicle: 1 point\n  * Take +1 health for a mechanical companion: 1 point\n  * Repair any other device: 3 points\n  * Repair any other device, but with a complication or malfunction: 2 points",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You gain repair points as appropriate to the situation, per the table below.\n\nSituation     | Weak Hit\n--------------|---------\nAt a facility | 3 points\nIn the field  | 1 points\nUnder fire    | 0 points\n\nAdditionally, you may @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} and exchange each -1 of supply for 1 extra repair point (up to 3 points).\n\nSpend repair points as follows. Unused points are discarded.\n\n  * Clear the battered impact on a vehicle: 2 points\n  * Fix one broken module: 2 points\n  * Take +1 integrity on a vehicle: 1 point\n  * Take +1 health for a mechanical companion: 1 point\n  * Repair any other device: 3 points\n  * Repair any other device, but with a complication or malfunction: 2 points",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "The repairs are not made and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 214
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#179F0E",
+      "Images": []
+    }
+  },
+  "sort": 214,
+  "folder": "5ba869fa7c31abdd",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!eece9a67d1961f70"
+}

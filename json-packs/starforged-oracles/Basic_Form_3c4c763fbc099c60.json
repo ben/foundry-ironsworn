@@ -1,0 +1,23 @@
+{
+  "name": "Basic Form",
+  "_id": "3c4c763fbc099c60",
+  "type": "RollTable",
+  "description": "Roll for a basic form, and flesh out the creature’s appearance using the First Look table.",
+  "sort": 337,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Creatures/Basic_Form"
+    }
+  },
+  "folder": "5b1e2f2fead08924",
+  "sorting": "a",
+  "_stats": {
+    "systemId": null,
+    "systemVersion": null,
+    "coreVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!3c4c763fbc099c60"
+}

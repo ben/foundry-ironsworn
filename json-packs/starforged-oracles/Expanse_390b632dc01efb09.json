@@ -1,0 +1,74 @@
+{
+  "_id": "390b632dc01efb09",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave/Settlements/Expanse",
+      "category": "Starforged/Oracles/Planets/Grave"
+    }
+  },
+  "name": "Expanse",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        95
+      ],
+      "text": "None",
+      "_id": "7c316b0bbecba701",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!390b632dc01efb09.7c316b0bbecba701"
+    },
+    {
+      "range": [
+        96,
+        98
+      ],
+      "text": "Orbital settlement",
+      "_id": "696cf73e0f6b98bd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!390b632dc01efb09.696cf73e0f6b98bd"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Planetside settlement",
+      "_id": "7ab3380f94af19f4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!390b632dc01efb09.7ab3380f94af19f4"
+    }
+  ],
+  "folder": "4adfe9fc794d193e",
+  "sort": 310,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!390b632dc01efb09"
+}

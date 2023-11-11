@@ -1,0 +1,102 @@
+{
+  "_id": "08527c8cf3635799",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Creatures/Environment",
+      "category": "Starforged/Oracles/Creatures"
+    }
+  },
+  "name": "Environment",
+  "description": "<p>Choose the closest match for your location. Or roll to identify the primary habitat of a creature.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Space",
+      "_id": "60de98eeba6e95c3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!08527c8cf3635799.60de98eeba6e95c3"
+    },
+    {
+      "range": [
+        6,
+        15
+      ],
+      "text": "Interior",
+      "_id": "6b23a0623d455c49",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!08527c8cf3635799.6b23a0623d455c49"
+    },
+    {
+      "range": [
+        16,
+        55
+      ],
+      "text": "Land",
+      "_id": "a36a85db3f96bc8d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!08527c8cf3635799.a36a85db3f96bc8d"
+    },
+    {
+      "range": [
+        56,
+        80
+      ],
+      "text": "Liquid",
+      "_id": "250a7fb57d134683",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!08527c8cf3635799.250a7fb57d134683"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Air",
+      "_id": "e6c5b1153dd061c3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!08527c8cf3635799.e6c5b1153dd061c3"
+    }
+  ],
+  "folder": "5b1e2f2fead08924",
+  "sort": 336,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!08527c8cf3635799"
+}

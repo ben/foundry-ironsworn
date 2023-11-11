@@ -1,0 +1,1432 @@
+{
+  "_id": "3c1a7f81062a8a8a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Action_and_Theme/Theme",
+      "category": "Ironsworn/Oracles/Action_and_Theme"
+    }
+  },
+  "name": "Theme",
+  "description": "<p>As with the Action oracle, this is an interpretative table which you can use to answer questions or generate new situations. Combined, the Action and Theme tables provide creative prompts suitable for most situations and questions. In fact, with some creative interpretations, it’s entirely possible to play with only these two tables.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Risk",
+      "_id": "c5772b8f5bbd4478",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.c5772b8f5bbd4478"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Ability",
+      "_id": "0ad2f781e6622d0a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.0ad2f781e6622d0a"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Price",
+      "_id": "5e11b3e720cbe8e2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.5e11b3e720cbe8e2"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Ally",
+      "_id": "e27a84445161586a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.e27a84445161586a"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Battle",
+      "_id": "438ed043df000a2e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.438ed043df000a2e"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Safety",
+      "_id": "6dbaeec1df79626a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.6dbaeec1df79626a"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Survival",
+      "_id": "6d800684c7156205",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.6d800684c7156205"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Weapon",
+      "_id": "76728d6fe0b1ec7a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.76728d6fe0b1ec7a"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Wound",
+      "_id": "71b62c4131108740",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.71b62c4131108740"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Shelter",
+      "_id": "c4f731cc658a7e22",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.c4f731cc658a7e22"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Leader",
+      "_id": "026ada5a53838173",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.026ada5a53838173"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Fear",
+      "_id": "8b5ed6c21b9f443b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.8b5ed6c21b9f443b"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Time",
+      "_id": "feb349243f60fc58",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.feb349243f60fc58"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Duty",
+      "_id": "739bf79cebf5fe4b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.739bf79cebf5fe4b"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Secret",
+      "_id": "f8799e711b1891be",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.f8799e711b1891be"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Innocence",
+      "_id": "465a03657fef7605",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.465a03657fef7605"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Renown",
+      "_id": "ab54aa81b7f6ded7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.ab54aa81b7f6ded7"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Direction",
+      "_id": "d4f6a18d8f1add04",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.d4f6a18d8f1add04"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Death",
+      "_id": "377767a8896a1a34",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.377767a8896a1a34"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Honor",
+      "_id": "a9cd6d002a18e4fe",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.a9cd6d002a18e4fe"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Labor",
+      "_id": "36051367e97c734a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.36051367e97c734a"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Solution",
+      "_id": "ea7ae2945f281e38",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.ea7ae2945f281e38"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Tool",
+      "_id": "99e181546548cd78",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.99e181546548cd78"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Balance",
+      "_id": "d72ead7c4e4aad7f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.d72ead7c4e4aad7f"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Love",
+      "_id": "36c3d3f7414c927a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.36c3d3f7414c927a"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Barrier",
+      "_id": "46281da991a96741",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.46281da991a96741"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Creation",
+      "_id": "cf1e8e575ef4597f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.cf1e8e575ef4597f"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Decay",
+      "_id": "41f82552fe10d6fb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.41f82552fe10d6fb"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Trade",
+      "_id": "e4b3075dbdeab1bf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.e4b3075dbdeab1bf"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Bond",
+      "_id": "283b373091d7e53f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.283b373091d7e53f"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Hope",
+      "_id": "3bb55926883eb4a6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.3bb55926883eb4a6"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Superstition",
+      "_id": "cb204b6ce66c8438",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.cb204b6ce66c8438"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Peace",
+      "_id": "93887e1e81f8b5a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.93887e1e81f8b5a8"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Deception",
+      "_id": "e632d553ed6c64e8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.e632d553ed6c64e8"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "History",
+      "_id": "c8b1c57a96064b5a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.c8b1c57a96064b5a"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "World",
+      "_id": "fadfe5e3dc0c6cac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.fadfe5e3dc0c6cac"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Vow",
+      "_id": "0f308310ae8c6bb2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.0f308310ae8c6bb2"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Protection",
+      "_id": "0fcedb9ecd9b7220",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.0fcedb9ecd9b7220"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Nature",
+      "_id": "7433bb293007eaf0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.7433bb293007eaf0"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Opinion",
+      "_id": "bf67f2166d21081f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.bf67f2166d21081f"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Burden",
+      "_id": "2f905959f6efa25c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.2f905959f6efa25c"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Vengeance",
+      "_id": "1eb35698f9a0656d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.1eb35698f9a0656d"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Opportunity",
+      "_id": "18e6ba4a72522e1f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.18e6ba4a72522e1f"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Faction",
+      "_id": "691bd0155882a0a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.691bd0155882a0a3"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Danger",
+      "_id": "41de10c7fbfeeec1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.41de10c7fbfeeec1"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Corruption",
+      "_id": "86cd882cb80180b6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.86cd882cb80180b6"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Freedom",
+      "_id": "9b3b738a1968c5ff",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.9b3b738a1968c5ff"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Debt",
+      "_id": "bbe8656b03818d95",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.bbe8656b03818d95"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Hate",
+      "_id": "edc8ecc374b5f684",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.edc8ecc374b5f684"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Possession",
+      "_id": "a551a42a894bb919",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.a551a42a894bb919"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Stranger",
+      "_id": "502018b732855267",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.502018b732855267"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Passage",
+      "_id": "0a05779e675af7f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.0a05779e675af7f3"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Land",
+      "_id": "46f9641738d2f70c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.46f9641738d2f70c"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Creature",
+      "_id": "4d774952bb74cab9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.4d774952bb74cab9"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Disease",
+      "_id": "2e1b6f3ea6adfc07",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.2e1b6f3ea6adfc07"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Advantage",
+      "_id": "88ccd2b8ee03706f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.88ccd2b8ee03706f"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Blood",
+      "_id": "d36e1f4c7d64906e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.d36e1f4c7d64906e"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Language",
+      "_id": "414de8ffddf1c788",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.414de8ffddf1c788"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Rumor",
+      "_id": "c6327e64c6f8790c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.c6327e64c6f8790c"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Weakness",
+      "_id": "5192dd010f6cfcc5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.5192dd010f6cfcc5"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Greed",
+      "_id": "d46856e43d7e351d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.d46856e43d7e351d"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Family",
+      "_id": "8e53b59a91374cae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.8e53b59a91374cae"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Resource",
+      "_id": "d846c94f089076e4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.d846c94f089076e4"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Structure",
+      "_id": "42afb8112145b56b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.42afb8112145b56b"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Dream",
+      "_id": "93fac0e11f9f7019",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.93fac0e11f9f7019"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Community",
+      "_id": "8be2e3e19315d559",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.8be2e3e19315d559"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "War",
+      "_id": "a1183807054d10b0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.a1183807054d10b0"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Portent",
+      "_id": "48950f6384f48767",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.48950f6384f48767"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Prize",
+      "_id": "6392284056f6b117",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.6392284056f6b117"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Destiny",
+      "_id": "612aa70bd5b9c144",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.612aa70bd5b9c144"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Momentum",
+      "_id": "975e9f2faf74b8fc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.975e9f2faf74b8fc"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Power",
+      "_id": "8291930a974be5f8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.8291930a974be5f8"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Memory",
+      "_id": "eb36ca2a089a2aab",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.eb36ca2a089a2aab"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Ruin",
+      "_id": "e705bbf241e2c18c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.e705bbf241e2c18c"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Mysticism",
+      "_id": "ad2d84014157c70e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.ad2d84014157c70e"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Rival",
+      "_id": "a9f8614f69fbfb2b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.a9f8614f69fbfb2b"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Problem",
+      "_id": "704a07b4c10c0bd8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.704a07b4c10c0bd8"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Idea",
+      "_id": "d39065b47a55a6b8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.d39065b47a55a6b8"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Revenge",
+      "_id": "5659c14c99d2dd13",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.5659c14c99d2dd13"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Health",
+      "_id": "861347793de9ff42",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.861347793de9ff42"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Fellowship",
+      "_id": "96964e23f9b1f78d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.96964e23f9b1f78d"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Enemy",
+      "_id": "225a5ad0d9be8f54",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.225a5ad0d9be8f54"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Religion",
+      "_id": "b96c5646813686ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.b96c5646813686ae"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Spirit",
+      "_id": "67a87442a7594679",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.67a87442a7594679"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Fame",
+      "_id": "9d11710d853dcb91",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.9d11710d853dcb91"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Desolation",
+      "_id": "48114a8a54317558",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.48114a8a54317558"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Strength",
+      "_id": "2162020df8a5e1f7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.2162020df8a5e1f7"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Knowledge",
+      "_id": "66935868cb935b8f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.66935868cb935b8f"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Truth",
+      "_id": "cdcd5686da664f4b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.cdcd5686da664f4b"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Quest",
+      "_id": "f17422294709e8a5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.f17422294709e8a5"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Pride",
+      "_id": "806eb2c39c9878bd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.806eb2c39c9878bd"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Loss",
+      "_id": "aaa25e87215d1d1d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.aaa25e87215d1d1d"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Law",
+      "_id": "b6eedb9ed293723f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.b6eedb9ed293723f"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Path",
+      "_id": "4396b647671e248a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.4396b647671e248a"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Warning",
+      "_id": "aa38c4b2c3695715",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.aa38c4b2c3695715"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Relationship",
+      "_id": "f878e0b68a6489ca",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.f878e0b68a6489ca"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Wealth",
+      "_id": "d006deea62991807",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.d006deea62991807"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Home",
+      "_id": "f2aebc687026b7f0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.f2aebc687026b7f0"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Strategy",
+      "_id": "9a60768c73cd19a5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.9a60768c73cd19a5"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Supply",
+      "_id": "c8d2cfb4a5bd3f78",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!3c1a7f81062a8a8a.c8d2cfb4a5bd3f78"
+    }
+  ],
+  "folder": "a06b333b78c61e6e",
+  "sort": 175,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!3c1a7f81062a8a8a"
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "c7574157362e852f",
+  "type": "progress",
+  "name": "Scrap Bandit",
+  "img": "icons/equipment/head/hat-belted-simple.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Raiders with cobbled-together weapons and armor</p>\n    <p class=\"nogrow\">Ramshackle vehicles</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Stand together with clan-mates</p>\n    <p class=\"nogrow\">Seize what can be spared</p>\n    <p class=\"nogrow\">Waste nothing</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Target isolated planetside settlements</p>\n    <p class=\"nogrow\">Suppress resistance with a show of force; if that fails, bring overwhelming power to bear</p>\n    <p class=\"nogrow\">If things go wrong, get the hell out</p>\n  </div>\n</div>\n\n<p>Scrap bandits roam the fringes of settled sectors, preying on planetside outposts. They survive by seizing provisions, resources, and equipment from those places. Because these raiders tend to revisit fruitful settlements, they do what they can to avoid razing them to the ground or leaving the settlers with less than they need to survive. “Never let a field go fallow,” is a common scrap bandit expression.</p>\n\n<blockquote>Quest Starter: <p>In a far-flung sector, a titanic creature threatens a key planetside settlement. The only possible defense against this beast is the mighty war rig belonging to a clan of scrap bandits. But can you convince the bandits to risk their rig to protect the settlers? If so, what will they demand in return?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.74e3287b53595504]{Hover Prowlers}</li>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.12b0da35556dc0f7]{War Rig}</li>\n</ul>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021144,
+    "modifiedTime": 1695949021144,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!c7574157362e852f"
+}

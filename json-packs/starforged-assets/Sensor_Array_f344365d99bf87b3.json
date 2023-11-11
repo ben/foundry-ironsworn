@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "f344365d99bf87b3",
+  "folder": "a7279f7392f32ff4",
+  "name": "Sensor Array",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your advanced sensors scan the paths ahead to help spot dangers. When you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition} (+wits), you may reroll one challenge die.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} by scanning your vehicle's surroundings or analyzing a nearby object, choose one and take +1 momentum on a hit.</p>\n<ul>\n<li>Manual scan: Add +1</li>\n<li>Automated scan: Instead of rolling the action die, make it the value of your vehicle's integrity</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} against an ambush, or @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} to detect a hidden threat, you may roll +integrity. If you do, reroll any dice and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!f344365d99bf87b3"
+}

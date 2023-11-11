@@ -1,0 +1,102 @@
+{
+  "_id": "a5cd037587882c35",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Delve_the_Depths/Wits",
+      "category": "Ironsworn/Oracles/Moves"
+    }
+  },
+  "name": "Wits",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "Mark progress and @Compendium[foundry-ironsworn.ironswornmoves.06f78b87b9532437]{Reveal a Danger}.",
+      "_id": "81a4010e13bd5303",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a5cd037587882c35.81a4010e13bd5303"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "Mark progress.",
+      "_id": "52fa192a735af10b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a5cd037587882c35.52fa192a735af10b"
+    },
+    {
+      "range": [
+        56,
+        80
+      ],
+      "text": "Choose one: Mark progress or @Compendium[foundry-ironsworn.ironswornmoves.4da87fd54eaa1b89]{Find an Opportunity}.",
+      "_id": "fe5aa091bc414772",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a5cd037587882c35.fe5aa091bc414772"
+    },
+    {
+      "range": [
+        81,
+        99
+      ],
+      "text": "Take both: Mark progress and @Compendium[foundry-ironsworn.ironswornmoves.4da87fd54eaa1b89]{Find an Opportunity}.",
+      "_id": "37f416ae19bed5b0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a5cd037587882c35.37f416ae19bed5b0"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Mark progress twice and @Compendium[foundry-ironsworn.ironswornmoves.06f78b87b9532437]{Reveal a Danger}.",
+      "_id": "e2dbf86ac91ab3a5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!a5cd037587882c35.e2dbf86ac91ab3a5"
+    }
+  ],
+  "folder": "3605702de63e5d0b",
+  "sort": 1021,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!a5cd037587882c35"
+}

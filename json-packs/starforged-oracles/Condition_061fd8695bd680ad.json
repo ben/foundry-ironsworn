@@ -1,0 +1,116 @@
+{
+  "_id": "061fd8695bd680ad",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Condition",
+      "category": "Starforged/Oracles/Derelicts"
+    }
+  },
+  "name": "Condition",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Functional",
+      "_id": "fe1da5bbd3b2a9fc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!061fd8695bd680ad.fe1da5bbd3b2a9fc"
+    },
+    {
+      "range": [
+        11,
+        30
+      ],
+      "text": "Limited power",
+      "_id": "d999afa98f30daeb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!061fd8695bd680ad.d999afa98f30daeb"
+    },
+    {
+      "range": [
+        31,
+        60
+      ],
+      "text": "Cold and dark",
+      "_id": "56973cac3485e84c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!061fd8695bd680ad.56973cac3485e84c"
+    },
+    {
+      "range": [
+        61,
+        90
+      ],
+      "text": "Damaged or breached",
+      "_id": "3c4633a4067e2371",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!061fd8695bd680ad.3c4633a4067e2371"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "Heavily damaged",
+      "_id": "c4ba1b8398cca83b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!061fd8695bd680ad.c4ba1b8398cca83b"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Impending destruction",
+      "_id": "74105e815aef0cf1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!061fd8695bd680ad.74105e815aef0cf1"
+    }
+  ],
+  "folder": "fd19a02fbd5f71e6",
+  "sort": 348,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!061fd8695bd680ad"
+}

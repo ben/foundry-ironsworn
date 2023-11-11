@@ -1,0 +1,68 @@
+{
+  "type": "asset",
+  "_id": "0d35e94d513f0a64",
+  "folder": "43828d28bfed3e0a",
+  "name": "Young Wyvern",
+  "system": {
+    "requirement": "<p>Your wyvern won’t devour you. For now.</p>",
+    "category": "Companion",
+    "color": null,
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.ac19f4c7f3fe31be]{Undertake a Journey} and score a hit, you may suffer -1 supply in exchange for +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make the @Compendium[foundry-ironsworn.ironswornmoves.5042c9574d4faf61]{Companion Endure Harm} move for your wyvern, add +2 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} by commanding your wyvern to attack, roll +heart. Your wyvern inflicts 3 harm on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021198,
+    "modifiedTime": 1695949021198,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!0d35e94d513f0a64"
+}

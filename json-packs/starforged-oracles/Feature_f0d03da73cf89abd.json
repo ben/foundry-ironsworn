@@ -1,0 +1,312 @@
+{
+  "_id": "f0d03da73cf89abd",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Access/Feature",
+      "category": "Starforged/Oracles/Derelicts/Access"
+    }
+  },
+  "name": "Feature",
+  "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Abandoned gear",
+      "_id": "32a554715064bf30",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.32a554715064bf30"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Blood trail",
+      "_id": "721e945a57e0b4c8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.721e945a57e0b4c8"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Breached door or hatch",
+      "_id": "22dad1ca479b958b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.22dad1ca479b958b"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Control or terminal station",
+      "_id": "29d21415f6d94d6b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.29d21415f6d94d6b"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Corpse",
+      "_id": "5b2e6f81c2ca09bd",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.5b2e6f81c2ca09bd"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Dismantled equipment",
+      "_id": "40d13deb57c1d238",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.40d13deb57c1d238"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Flashing strobes",
+      "_id": "18110474962ab8ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.18110474962ab8ad"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Leaking pipes",
+      "_id": "ed2a070afb720fbc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.ed2a070afb720fbc"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Makeshift barricade",
+      "_id": "d33ed8b594d1b9f8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.d33ed8b594d1b9f8"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Opened or missing panels",
+      "_id": "168ea408bd0a6f87",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.168ea408bd0a6f87"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Organic growths",
+      "_id": "950b2f63b35f2a3a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.950b2f63b35f2a3a"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Ruined bot",
+      "_id": "3506b7804400a33e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.3506b7804400a33e"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Scrawled warning",
+      "_id": "6b4e29b1df7571ae",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.6b4e29b1df7571ae"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Sealed breach",
+      "_id": "579c896001941228",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.579c896001941228"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Sounds of movement",
+      "_id": "13039d6e25e833bf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.13039d6e25e833bf"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Steam or smoke",
+      "_id": "3d4909e42f60d1bb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.3d4909e42f60d1bb"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Wandering bot",
+      "_id": "2c045faa07cc67d2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.2c045faa07cc67d2"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Windows or viewports",
+      "_id": "8dbe6780cbd82e6b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.8dbe6780cbd82e6b"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Wrecked passage or debris",
+      "_id": "30feb43c05fb6d23",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.30feb43c05fb6d23"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
+      "_id": "e7b8516bee2811ac",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!f0d03da73cf89abd.e7b8516bee2811ac"
+    }
+  ],
+  "folder": "5a9ded9c6cdc7583",
+  "sort": 352,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!f0d03da73cf89abd"
+}

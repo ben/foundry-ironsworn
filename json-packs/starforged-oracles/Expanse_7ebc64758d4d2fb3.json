@@ -1,0 +1,74 @@
+{
+  "_id": "7ebc64758d4d2fb3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Furnace/Settlements/Expanse",
+      "category": "Starforged/Oracles/Planets/Furnace"
+    }
+  },
+  "name": "Expanse",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        95
+      ],
+      "text": "None",
+      "_id": "9d4330aa0d92ca0b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7ebc64758d4d2fb3.9d4330aa0d92ca0b"
+    },
+    {
+      "range": [
+        96,
+        98
+      ],
+      "text": "Orbital settlement",
+      "_id": "42b3299de96d7ce0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7ebc64758d4d2fb3.42b3299de96d7ce0"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Planetside settlement",
+      "_id": "731d30cf6bd89e57",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7ebc64758d4d2fb3.731d30cf6bd89e57"
+    }
+  ],
+  "folder": "63ed8b1845e91c2a",
+  "sort": 309,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!7ebc64758d4d2fb3"
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Scourge Ship",
+  "img": "icons/creatures/slimes/slime-movement-pseudopods-blue.webp",
+  "type": "foe",
+  "_id": "NuIuagAbFKVXINPg",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Scourge Ship",
+    "displayName": 0,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Scourge Ship",
+      "type": "progress",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Machines fused with biological corruption</p>\n    <p class=\"nogrow\">Creeping ooze, scintillating with energy</p>\n    <p class=\"nogrow\">Writhing, grasping pseudopods</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Infect and control machines and computer systems</p>\n    <p class=\"nogrow\">Expand and multiply</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Use pseudopods to lash out and grapple</p>\n    <p class=\"nogrow\">Unleash infected machines</p>\n    <p class=\"nogrow\">Overwhelm and engulf</p>\n  </div>\n</div>\n\n<p>These corrupted vessels, their crews long-dead, their hulls wracked by creeping slime and grasping pseudopods, prowl the depths of the Forge in search of new ships and stations to infect. Inside, the gelatinous mass of the technoplasm slithers through darkened corridors. Tendrils of the ooze bore into bulkheads and machinery like marbleized fat through a chunk of meat.</p>\n\n<blockquote>Quest Starter: <p>An outcast cult believes technoplasm is the ultimate synthesis of machine and flesh. They are plotting to unleash it upon populated space. What decisive first strike have they set in motion, and how do you learn of their scheme?</p></blockquote>",
+        "rank": 4,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "_id": "DboZJJu98xlgEp4j",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022644,
+        "modifiedTime": 1695949022644,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!actors.items!NuIuagAbFKVXINPg.DboZJJu98xlgEp4j"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022640,
+    "modifiedTime": 1695949022644,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!actors!NuIuagAbFKVXINPg"
+}

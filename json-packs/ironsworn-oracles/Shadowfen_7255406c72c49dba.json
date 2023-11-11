@@ -1,0 +1,172 @@
+{
+  "_id": "7255406c72c49dba",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Shadowfen",
+      "category": "Ironsworn/Oracles/Site_Name"
+    }
+  },
+  "name": "Shadowfen",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Bog",
+      "_id": "6241fa808a0b4673",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.6241fa808a0b4673"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Fen",
+      "_id": "161794d28d46a791",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.161794d28d46a791"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Lowland",
+      "_id": "390392ee11fd5159",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.390392ee11fd5159"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Marsh",
+      "_id": "e9937ffe6e4e610b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.e9937ffe6e4e610b"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Mire",
+      "_id": "7d6cb5d6fe06965f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.7d6cb5d6fe06965f"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Morass",
+      "_id": "f36894ff49ee3fc5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.f36894ff49ee3fc5"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Quagmire",
+      "_id": "84a3629bd6370fd0",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.84a3629bd6370fd0"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Floodlands",
+      "_id": "b348fb76f3e7886c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.b348fb76f3e7886c"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Slough",
+      "_id": "0c0457b574d19f7e",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.0c0457b574d19f7e"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wetlands",
+      "_id": "62e2235ab8082b5b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!7255406c72c49dba.62e2235ab8082b5b"
+    }
+  ],
+  "folder": "b635c76e4b694c12",
+  "sort": 1211,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!7255406c72c49dba"
+}

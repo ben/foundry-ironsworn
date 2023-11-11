@@ -1,0 +1,89 @@
+{
+  "_id": "a44ecb0d77487549",
+  "type": "sfmove",
+  "name": "Overcome Destruction",
+  "img": "icons/dice/d10black.svg",
+  "system": {
+    "dfid": "Starforged/Moves/Threshold/Overcome_Destruction",
+    "Category": "Starforged/Moves/Threshold",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "**When your command vehicle is destroyed or irrevocably lost**, you must discard the asset, along with any modules and docked support vehicles.\n\nIf you survive, you may use your connections to replace some of what was lost. To learn the cost, roll the challenge dice and compare to the progress on your bonds legacy track.\n\nOn a **strong hit**, you may call in a favor. This comes without conditions.\n\nOn a **weak hit**, you owe someone. You must mark **indebted** and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to complete an extreme quest in their service. When you complete the duty-bound quest, clear the impact.\n\nOn a **miss**, as with the weak hit result, but this quest is against your nature, forces you to @Compendium[foundry-ironsworn.starforgedmoves.449c1e260c941a40]{Forsake Your Vow} on another quest, or is in the service of an enemy.\n\nIf you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience). Spend this experience only on a new command vehicle, modules, and support vehicles.",
+    "Trigger": {
+      "Text": "When your command vehicle is destroyed or irrevocably lost...",
+      "Options": [
+        {
+          "Roll type": "Progress roll",
+          "Method": "Any",
+          "Using": [
+            "Bonds"
+          ],
+          "Text": ""
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "You may call in a favor. This comes without conditions.\n\nIf you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience). Spend this experience only on a new command vehicle, modules, and support vehicles.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      },
+      "Weak Hit": {
+        "Text": "You owe someone. You must mark **indebted** and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to complete an extreme quest in their service. When you complete the duty-bound quest, clear the impact.\n\nIf you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience). Spend this experience only on a new command vehicle, modules, and support vehicles.",
+        "Reroll": {
+          "Text": ""
+        }
+      },
+      "Miss": {
+        "Text": "You owe someone. You must mark **indebted** and @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} to complete an extreme quest in their service. This quest is against your nature, forces you to @Compendium[foundry-ironsworn.starforgedmoves.449c1e260c941a40]{Forsake Your Vow} on another quest, or is in the service of an enemy.\n\nWhen you complete the duty-bound quest, clear the impact.\n\nIf you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience). Spend this experience only on a new command vehicle, modules, and support vehicles.",
+        "Reroll": {
+          "Text": ""
+        },
+        "With a Match": {
+          "Text": "",
+          "Reroll": {
+            "Text": ""
+          }
+        }
+      }
+    },
+    "Oracles": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "050622",
+      "Page": 220
+    },
+    "Suggestions": {},
+    "Display": {
+      "Color": "#676767",
+      "Images": []
+    }
+  },
+  "sort": 220,
+  "folder": "7314206e9d9c4212",
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021291,
+    "modifiedTime": 1695949021291,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!a44ecb0d77487549"
+}

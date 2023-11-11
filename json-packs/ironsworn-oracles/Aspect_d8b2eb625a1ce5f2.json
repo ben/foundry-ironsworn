@@ -1,0 +1,732 @@
+{
+  "_id": "d8b2eb625a1ce5f2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Feature/Aspect",
+      "category": "Ironsworn/Oracles/Feature"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Blocked",
+      "_id": "a781d98f37e8c84f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.a781d98f37e8c84f"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Crafted",
+      "_id": "6f01763ac9e9bd99",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.6f01763ac9e9bd99"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Ancient",
+      "_id": "bc1ec8eb89f0e039",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.bc1ec8eb89f0e039"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Sunken",
+      "_id": "039fa8bc0508f305",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.039fa8bc0508f305"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Trapped",
+      "_id": "7743b44c834449f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.7743b44c834449f3"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Secret",
+      "_id": "de24710874669873",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.de24710874669873"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Toxic",
+      "_id": "e314e7f9bee2d0df",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.e314e7f9bee2d0df"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Ruined",
+      "_id": "2882646b5a8cb440",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.2882646b5a8cb440"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Defended",
+      "_id": "a9581fbcde02d7e4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.a9581fbcde02d7e4"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Decaying",
+      "_id": "9f61ef8656a31263",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.9f61ef8656a31263"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Marked",
+      "_id": "c5d9c479b4aef466",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.c5d9c479b4aef466"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Guarded",
+      "_id": "e310b28b35595a26",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.e310b28b35595a26"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Inaccessible",
+      "_id": "32f6ab174e2753ca",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.32f6ab174e2753ca"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Foreboding",
+      "_id": "9597891ef2505fb7",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.9597891ef2505fb7"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Veiled",
+      "_id": "f66c4a91c545cb74",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.f66c4a91c545cb74"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Deep",
+      "_id": "656589edbda986bc",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.656589edbda986bc"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Depleted",
+      "_id": "a9357d8bb71185d8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.a9357d8bb71185d8"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Foul",
+      "_id": "bab15ccf0d2388bf",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.bab15ccf0d2388bf"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Elevated",
+      "_id": "e5ce786043c9c0ce",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.e5ce786043c9c0ce"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Moving",
+      "_id": "5f8e9ba9cecbe2c4",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.5f8e9ba9cecbe2c4"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Unnatural",
+      "_id": "7d0c0913e83bf5f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.7d0c0913e83bf5f3"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Active",
+      "_id": "d9f229f268cf8008",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.d9f229f268cf8008"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Confined",
+      "_id": "5f2ed042233f3784",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.5f2ed042233f3784"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Fortified",
+      "_id": "23c02f9766733eb2",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.23c02f9766733eb2"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Collapsed",
+      "_id": "c842a009520ad630",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.c842a009520ad630"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Isolated",
+      "_id": "a99d53f702110e3a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.a99d53f702110e3a"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Destroyed",
+      "_id": "0a51eafccbf4d6a3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.0a51eafccbf4d6a3"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Open",
+      "_id": "5eaaa301796a2bb8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.5eaaa301796a2bb8"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Sacred",
+      "_id": "3cd3a52a920e64c9",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.3cd3a52a920e64c9"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Flooded",
+      "_id": "5d74492aa311c468",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.5d74492aa311c468"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Complex",
+      "_id": "57ab25be6227a53c",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.57ab25be6227a53c"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Abundant",
+      "_id": "4e7aaaa08e27d56a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.4e7aaaa08e27d56a"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Hidden",
+      "_id": "9319771c053833e5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.9319771c053833e5"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Expansive",
+      "_id": "a21681ad96ab8c83",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.a21681ad96ab8c83"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Mysterious",
+      "_id": "8cad78ce09fc02e1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.8cad78ce09fc02e1"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Unstable",
+      "_id": "1e0f3c0575dd9280",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.1e0f3c0575dd9280"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Fragile",
+      "_id": "78ac2ba48e0f71ca",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.78ac2ba48e0f71ca"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Broken",
+      "_id": "eca1c1e9376f243d",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.eca1c1e9376f243d"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Ensnaring",
+      "_id": "3b7f4eab9a4143d1",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.3b7f4eab9a4143d1"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Pillaged",
+      "_id": "b79a2f24c72e13e6",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.b79a2f24c72e13e6"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Sealed",
+      "_id": "4f95dbd029868253",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.4f95dbd029868253"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Makeshift",
+      "_id": "17215665dd301373",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.17215665dd301373"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Treacherous",
+      "_id": "d56efc0ea0f2db1b",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.d56efc0ea0f2db1b"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Natural",
+      "_id": "90606d78e4fa79c5",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.90606d78e4fa79c5"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Dead",
+      "_id": "630160cf75ad756f",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.630160cf75ad756f"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Unusual",
+      "_id": "65236222fc5947d3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.65236222fc5947d3"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Abandoned",
+      "_id": "62a00025978596a8",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.62a00025978596a8"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Deadly",
+      "_id": "be93af615f9a92ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.be93af615f9a92ad"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Forgotten",
+      "_id": "fa969ccc8ad3911a",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.fa969ccc8ad3911a"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Mystical",
+      "_id": "4c0316b915b4b7ad",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!d8b2eb625a1ce5f2.4c0316b915b4b7ad"
+    }
+  ],
+  "folder": "d47d8d81af367061",
+  "sort": 1204,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021364,
+    "modifiedTime": 1695949021364,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!d8b2eb625a1ce5f2"
+}

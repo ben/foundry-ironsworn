@@ -1,0 +1,74 @@
+{
+  "_id": "49874676539b4373",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ice/Settlements/Expanse",
+      "category": "Starforged/Oracles/Planets/Ice"
+    }
+  },
+  "name": "Expanse",
+  "description": "",
+  "formula": "d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        90
+      ],
+      "text": "None",
+      "_id": "78ee9c11ce0105eb",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!49874676539b4373.78ee9c11ce0105eb"
+    },
+    {
+      "range": [
+        91,
+        96
+      ],
+      "text": "Orbital settlement",
+      "_id": "6ce6f409544a9dde",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!49874676539b4373.6ce6f409544a9dde"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Planetside settlement",
+      "_id": "3adcecedafca12f3",
+      "type": 0,
+      "documentId": null,
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "_key": "!tables.results!49874676539b4373.3adcecedafca12f3"
+    }
+  ],
+  "folder": "af540e4e4b0e10f6",
+  "sort": 311,
+  "img": "icons/dice/d10black.svg",
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021559,
+    "modifiedTime": 1695949021559,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!tables!49874676539b4373"
+}

@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "c2476ae763dbd952",
+  "folder": "7f1c05806875930c",
+  "name": "Revenant",
+  "system": {
+    "requirement": "<p>Once you @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death}…</p>",
+    "category": "Deed",
+    "color": "#40834f",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you are at 0 health, and @Compendium[foundry-ironsworn.starforgedmoves.905205c073b09eac]{Endure Harm} or @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death}, add +1. You may then reroll your action die if its value is less than your spirit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3129f4caa4754caf]{Take Decisive Action} by bringing death to a foe, you may burn momentum to zero out one (not both) of the challenge dice if your momentum is greater than the value of that die. If you do, @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress} (-2).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} by studying a place where death left its mark, you may roll +heart. If you do, take +1 momentum on a hit. On a strong hit with a match, you experience a detailed vision or insightful revelation of what occurred here; take +1 momentum more.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!c2476ae763dbd952"
+}

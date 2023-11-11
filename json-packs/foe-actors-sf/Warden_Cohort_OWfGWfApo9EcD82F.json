@@ -1,0 +1,126 @@
+{
+  "name": "Warden Cohort",
+  "img": "icons/magic/holy/angel-winged-humanoid-blue.webp",
+  "type": "foe",
+  "_id": "OWfGWfApo9EcD82F",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Warden Cohort",
+    "displayName": 0,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Warden Cohort",
+      "type": "progress",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Long-lived humans with powerful physiques</p>\n    <p class=\"nogrow\">Grizzled and stern</p>\n    <p class=\"nogrow\">Tattoos memorialize fallen comrades</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Find their own path, unbound from those who seek to control them</p>\n    <p class=\"nogrow\">Do not succumb to the fury</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Wade into battle</p>\n    <p class=\"nogrow\">Take the hits</p>\n    <p class=\"nogrow\">Seize objectives with overwhelming force</p>\n  </div>\n</div>\n\n<p>Many of the surviving wardens left the battlefield behind, but some now serve as guns-for-hire, banding together to form small mercenary companies. Five wardens are as effective as fifty soldiers.</p>\n\n<blockquote>Quest Starter: <p>There are rumors of an enclave well beyond the inhabited sectors, a place where wardens can live in peace. An emerging threat against the people of the Forge causes you to seek out the aid of these living relics. What do you offer in return for their help?</p></blockquote>",
+        "rank": 4,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "_id": "UAvi4pizg1RWYTDj",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oPggPZM6rWjfN0q2": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "foundry-ironsworn",
+        "systemVersion": "1.22.4",
+        "coreVersion": "11.309",
+        "createdTime": 1695949022821,
+        "modifiedTime": 1695949022821,
+        "lastModifiedBy": "oPggPZM6rWjfN0q2"
+      },
+      "_key": "!actors.items!OWfGWfApo9EcD82F.UAvi4pizg1RWYTDj"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949022803,
+    "modifiedTime": 1695949022821,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!actors!OWfGWfApo9EcD82F"
+}

@@ -1,0 +1,116 @@
+{
+  "_id": "drKrBp3g3cOxg0KU",
+  "name": "Tempest",
+  "type": "foe",
+  "img": "icons/magic/lightning/bolts-salvo-clouds-sky.webp",
+  "data": {},
+  "token": {
+    "name": "Tempest",
+    "img": "icons/magic/lightning/bolts-salvo-clouds-sky.webp",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "scale": 1,
+    "mirrorX": false,
+    "mirrorY": false,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "vision": false,
+    "dimSight": 0,
+    "brightSight": 0,
+    "sightAngle": 0,
+    "light": {
+      "alpha": 0.5,
+      "angle": 0,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "gradual": true,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "power"
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "_id": "4eBWsHIktlOKCRYa",
+      "name": "bonds",
+      "type": "bondset",
+      "img": "icons/svg/item-bag.svg",
+      "data": {
+        "bonds": [
+          {
+            "name": "A community",
+            "notes": ""
+          }
+        ]
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!drKrBp3g3cOxg0KU.4eBWsHIktlOKCRYa"
+    },
+    {
+      "_id": "BWu8bbmlTS4oNyJO",
+      "name": "Tempest",
+      "type": "progress",
+      "img": "icons/magic/lightning/bolts-salvo-clouds-sky.webp",
+      "data": {
+        "description": "\n\n<h2>Tempest</h2>\n\n<p>A tempest is a fierce, unnatural storm. It can appear in any season or in any weather, but is larger and more powerful in the depths of winter. It is drawn to the warmth of living beings, and seeks to douse that life as one would snuff out a candle.</p>\n<p>A tempest’s true nature is a mystery. Is it intelligent, or just a force of nature? Those who survive an encounter sometimes report hearing hushed voices and seeing strange forms within the whirlwind. Some few tell tales of the eye of the storm, where the colds and wind abate, and where relief from certain death is offered—for a price.</p>\n\n<div class=\"boxgroup flexrow boxrow\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Biting winds</p>\n    <p class=\"nogrow\">Stinging ice</p>\n    <p class=\"nogrow\">Ghostly voices and shadowy forms</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Seek warmth, and snuff it out</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Envelop in a wintry cyclone</p>\n    <p class=\"nogrow\">Batter with icy shards and ferocious winds</p>\n    <p class=\"nogrow\">Grant release, at great cost</p>\n  </div>\n</div>\n\n<em><p>In the Havens, a massive, swirling tempest has appeared. It is expanding with grim purpose. A settlement was destroyed, and others are threatened. At the heart of the storm lies an <strong>Ancient Ruin</strong>. What force powers this tempest? Can it be stopped, or will it someday cover all the Ironlands in its cold wrath?</p></em>\n\n<em><p>Are there Ironlanders in your world who can foretell or influence }the weather? If so, what are they called? What signs do they look for as a portent of a coming tempest?</p></em>\n\n<h2>Anomaly</h2>\n<p>Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.</p>\n",
+        "rank": 2,
+        "current": 0,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 6
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "permission": {
+        "default": 0,
+        "UxRPXT7DZJSEuDW6": 3
+      },
+      "flags": {},
+      "_key": "!actors.items!drKrBp3g3cOxg0KU.BWu8bbmlTS4oNyJO"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0,
+    "UxRPXT7DZJSEuDW6": 3
+  },
+  "flags": {},
+  "_key": "!actors!drKrBp3g3cOxg0KU"
+}

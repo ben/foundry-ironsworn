@@ -1,0 +1,63 @@
+{
+  "type": "asset",
+  "_id": "085d80b933598615",
+  "folder": "1f02d646adff7374",
+  "name": "Outcast",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten} in isolation, you may attempt to find solace in fond memories or a hopeful wish. If you do (decide before rolling), reroll any dice but count a strong hit as a weak hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} and your supply is reduced to 0, roll +wits. On a strong hit, you manage to scrape by and take +1 supply. On a weak hit, you may @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1) in exchange for +1 supply. On a miss, your supply remains at 0 and you @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you or an ally @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn} and score a strong hit with a match, you may envision encountering someone who knows or understands you. If you @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection} with them, take an automatic strong hit and mark 2 ticks on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "oPggPZM6rWjfN0q2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "foundry-ironsworn",
+    "systemVersion": "1.22.4",
+    "coreVersion": "11.309",
+    "createdTime": 1695949021246,
+    "modifiedTime": 1695949021246,
+    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  },
+  "_key": "!items!085d80b933598615"
+}
