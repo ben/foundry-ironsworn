@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+env:
+  NODE_OPTIONS: '--max-old-space-size=8192'
+
 jobs:
   test:
     runs-on: ubuntu-latest
