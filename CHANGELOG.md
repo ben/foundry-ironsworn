@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a UI warning when randomizing Starforged truths ([#915]https://github.com/ben/foundry-ironsworn/pull/915)
+
 ## 1.22.8
 
 - Fix a bug where the _Repair_ move was having its table removed ([#910](https://github.com/ben/foundry-ironsworn/pull/910))
