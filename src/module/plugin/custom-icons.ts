@@ -2,7 +2,7 @@ import { readdirSync } from 'fs'
 import path from 'path'
 
 import type { LegacySyncFunction as SassSyncFunction } from 'sass'
-import Sass from 'sass'
+import * as Sass from 'sass'
 import { assertString } from './sass-assert'
 import { map2SassMap } from './sass-convert'
 

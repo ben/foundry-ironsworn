@@ -1,5 +1,5 @@
 import Chroma from 'chroma-js'
-import Sass from 'sass'
+import * as Sass from 'sass'
 
 /**
  * Converts a {@link Sass.types.List} to a standard {@link Array}.

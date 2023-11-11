@@ -1,6 +1,6 @@
 import type { InterpolationMode } from 'chroma-js'
 import type chroma from 'chroma-js'
-import Sass from 'sass'
+import * as Sass from 'sass'
 
 // Hack because the sass types package appears to be incorrect.
 export type SassLegacyValue<T extends Sass.LegacyValue> = T & {
