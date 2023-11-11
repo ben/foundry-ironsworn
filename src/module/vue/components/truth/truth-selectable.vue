@@ -80,7 +80,10 @@ const suboptions = ref<HTMLElement[]>([])
 async function selectAndRandomize() {
 	topRadio.value?.click()
 
-	if ((props.page.subtable?.length ?? 0) > 0) {
+	if (
+		props.page.subtable &&
+		((props.page.subtable?.results as any)?.length ?? 0) > 0
+	) {
 		const { roll } = await props.page.subtable.draw()
 
 		if (!roll || !roll.total) return
