@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.9
+
 - Fix a UI warning when randomizing Starforged truths ([#915]https://github.com/ben/foundry-ironsworn/pull/915)
 - Fix some visual issues in the compact sheet ([#923](https://github.com/ben/foundry-ironsworn/pull/923))
 
