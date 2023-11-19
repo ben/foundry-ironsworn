@@ -5,7 +5,8 @@
 			[$style.wrapper]: true,
 			[$style.interactive]: !isMomentum,
 			'isiconbg-d10-tilt': !isMomentum
-		}">
+		}"
+	>
 		<h4 :data-tooltip="tooltip" @click="click">{{ i18nStat }}</h4>
 		<h4 :data-tooltip="tooltip" @click="click">{{ value }}</h4>
 		<div class="flexrow clickable" style="flex: 1; justify-content: center">
@@ -14,7 +15,8 @@
 				v-if="isMomentum"
 				icon="fa:fire"
 				:data-tooltip="burnMomentumTooltip"
-				@click="$actor?.system.burnMomentum()" />
+				@click="$actor?.system.burnMomentum()"
+			/>
 			<IronBtn icon="fa:plus" @click="increment(1)" />
 		</div>
 	</div>
@@ -44,7 +46,7 @@ const tooltip = computed(() =>
 
 const actor = inject(ActorKey) as unknown as Ref<ActorSource<'character'>>
 const actorSystem = computed(() => (actor?.value as any)?.system)
-const value = computed(() => actorSystem?.value?.[props.propKey])
+const value = computed(() => actorSystem?.value?.[props.propKey].value)
 const $actor = inject($ActorKey) as IronswornActor<'character'>
 
 function increment(delta: number) {
