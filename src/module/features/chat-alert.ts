@@ -5,6 +5,7 @@ import type { IronswornActor } from '../actor/actor'
 import { ChallengeRank } from '../fields/ChallengeRank'
 import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
+import { capitalize } from 'vue'
 
 type ActorTypeHandler<T extends DocumentSubTypes<'Actor'> = any> = (
 	actor: IronswornActor<T>,
@@ -22,6 +23,15 @@ type ItemTypeHandler<T extends DocumentSubTypes<'Item'> = any> = (
 
 type ItemTypeHandlers = {
 	[Subtype in DocumentSubTypes<'Item'>]?: ItemTypeHandler<Subtype>
+}
+
+function translateImpactOrDebility(name: string): string {
+	const i18nKey = `IRONSWORN.IMPACT.${capitalize(name)}`
+	let translated = game.i18n.localize(i18nKey)
+	if (translated === i18nKey) {
+		translated = game.i18n.localize(`IRONSWORN.DEBILITY.${capitalize(name)}`)
+	}
+	return translated
 }
 
 export function registerChatAlertHooks() {
@@ -182,11 +192,10 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 			if (newValue !== undefined) {
 				const oldValue = actor.system.debility[debility]
 				if (oldValue === newValue) continue
-				const i18nPath = `IRONSWORN.${conditionType.toUpperCase()}`
 				const i18nDebility = `<b class='term ${conditionType}'>${
 					debility.startsWith('custom')
 						? get(actor.system.debility, `${debility}name`)
-						: game.i18n.localize(`${i18nPath}.${debility.capitalize()}`)
+						: translateImpactOrDebility(debility)
 				}</b>`
 
 				const params = gameIsStarforged
@@ -231,9 +240,7 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 			if (newValue !== undefined) {
 				const oldValue = actor.system.debility[impact]
 				if (oldValue === newValue) continue
-				const i18nImpact = game.i18n.localize(
-					`IRONSWORN.IMPACT.${impact.capitalize()}`
-				)
+				const i18nImpact = translateImpactOrDebility(impact)
 				const params = { impact: `<b class'term impact'>${i18nImpact}</b>` }
 				// TODO: use "impact" if this is an SF character
 				if (newValue)
