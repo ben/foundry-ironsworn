@@ -89,7 +89,6 @@ function click() {
 
 		&::before {
 			opacity: 1;
-			background-color: var(--ironsworn-color-fg);
 		}
 	}
 }
