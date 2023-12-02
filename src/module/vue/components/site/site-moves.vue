@@ -27,6 +27,7 @@
 					<BtnOracle
 						v-bind="props"
 						:disabled="disabled || !hasThemeAndDomain"
+						:override-click="true"
 						@click="revealADanger" />
 				</template>
 			</SfMoverow>

@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix: the site's "reveal a danger" oracle roll wasn't using values from the theme and domain ([#927](https://github.com/ben/foundry-ironsworn/pull/927))
+
 ## 1.22.9
 
 - Fix a UI warning when randomizing Starforged truths ([#915]https://github.com/ben/foundry-ironsworn/pull/915)
