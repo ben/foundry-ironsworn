@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.10
+
 - Fix: the site's "reveal a danger" oracle roll wasn't using values from the theme and domain ([#927](https://github.com/ben/foundry-ironsworn/pull/927))
 
 ## 1.22.9
