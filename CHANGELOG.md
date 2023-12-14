@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.11
+
 - Fix a bug with saving the notes tab on the starship sheet ([#932](https://github.com/ben/foundry-ironsworn/pull/932))
 
 ## 1.22.10
