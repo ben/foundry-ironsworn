@@ -9,8 +9,9 @@ export class StarshipModel extends foundry.abstract.TypeDataModel<
 > {
 	static _enableV10Validation = true
 
-	static override defineSchema(): DataSchema<StarshipDataSourceData> {
+	static override defineSchema (): DataSchema<StarshipDataSourceData> {
 		return {
+			notes: new foundry.data.fields.HTMLField(),
 			debility: new foundry.data.fields.SchemaField<
 				StarshipDataSourceData['debility']
 			>({
@@ -23,6 +24,7 @@ export class StarshipModel extends foundry.abstract.TypeDataModel<
 export interface StarshipModel extends StarshipDataSourceData {}
 
 interface StarshipDataSourceData {
+	notes: string
 	debility: {
 		battered: boolean
 		cursed: boolean
