@@ -49,7 +49,7 @@ function oracleClick(dfid: string) {
 	CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
 }
 
-const $emit = defineEmits<{ (e: 'save') }>()
+const $emit = defineEmits<{ save: [] }>()
 
 onUnmounted(() => $emit('save'))
 

@@ -60,7 +60,7 @@ function subtableSelect(entry: OracleTableResult) {
 }
 
 const $emit = defineEmits<{
-	(e: 'change', title: string, text: string)
+	change: [string, string] // title, text
 }>()
 function emitValue() {
 	let text = `${pageSystem.Description} ${state.suboption ?? ''}\n\n_${

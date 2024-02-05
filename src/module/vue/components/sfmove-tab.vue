@@ -29,7 +29,7 @@ const props = defineProps<{
 	currentProperty: string
 }>()
 
-defineEmits<{ (e: 'click', property: string) }>()
+defineEmits<{ click: [string] }>()
 </script>
 
 <style lang="scss" scoped>

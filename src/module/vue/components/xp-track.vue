@@ -43,7 +43,7 @@ const computedBoxes = computed(() => {
 	return ret
 })
 
-const $emit = defineEmits<{ (e: 'click', value: number): void }>()
+const $emit = defineEmits<{ click: [number] }>()
 function click(i) {
 	if (i === 0 && props.marked === 1) {
 		i = -1

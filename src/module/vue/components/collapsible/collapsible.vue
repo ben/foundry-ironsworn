@@ -180,10 +180,10 @@ const currentDuration = computed(() =>
 )
 
 const $emit = defineEmits<{
-	beforeExpand: ExpandEvent
-	afterExpand: ExpandEvent
-	beforeCollapse: CollapseEvent
-	afterCollapse: CollapseEvent
+	beforeExpand: [ExpandEvent]
+	afterExpand: [ExpandEvent]
+	beforeCollapse: [CollapseEvent]
+	afterCollapse: [CollapseEvent]
 }>()
 
 function toggle() {

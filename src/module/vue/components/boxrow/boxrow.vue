@@ -28,7 +28,7 @@ const items = computed(() => {
 	return ret
 })
 
-const $emit = defineEmits<{ (e: 'click', value: number): void }>()
+const $emit = defineEmits<{ click: [number] }>()
 function click(i) {
 	$emit('click', i)
 }

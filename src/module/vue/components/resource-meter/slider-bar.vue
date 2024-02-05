@@ -88,7 +88,7 @@ const props = withDefaults(
 )
 
 const $emit = defineEmits<{
-	(e: 'change', value: number): void
+	change: [number]
 }>()
 
 const sliderSegments = computed(() => rangeRight(props.min, props.max + 1))
