@@ -20,7 +20,7 @@ import type IronBtn from '../buttons/iron-btn.vue'
 import { TransitionGroup } from 'vue'
 
 interface Props
-	extends Omit<
+	extends /* @vue-ignore */ Omit<
 		PropsOf<typeof IronBtn>,
 		'text' | 'icon' | 'vertical' | 'justify'
 	> {

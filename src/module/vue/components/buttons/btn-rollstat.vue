@@ -25,7 +25,8 @@ import { pickInjectedDocument } from '../../composable/pickInjectedDocument'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
+interface Props
+	extends /* @vue-ignore */ Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	documentType: DocumentType
 	/**
 	 * The key of the stat value within `system`

@@ -17,7 +17,7 @@ import type { IronswornItem } from '../../../item/item'
 import { $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends PropsOf<typeof IronBtn> {
+interface Props extends /* @vue-ignore */ PropsOf<typeof IronBtn> {
 	item: ItemSource<'progress'>
 }
 

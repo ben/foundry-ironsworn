@@ -36,7 +36,7 @@ import {
 	TabStateKey
 } from './tab-helpers.js'
 
-interface Props extends PropsOf<typeof IronBtn> {
+interface Props extends /* @vue-ignore */ PropsOf<typeof IronBtn> {
 	/**
 	 * The tab's key must match the key of a {@link TabPanel}.
 	 */
