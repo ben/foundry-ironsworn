@@ -76,7 +76,6 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 						}
 					}
 				})
-				this.vueApp.config.unwrapInjectedRef = true
 				this.vueApp.use(IronswornVuePlugin)
 				this.setupVueApp(this.vueApp)
 			} else {
