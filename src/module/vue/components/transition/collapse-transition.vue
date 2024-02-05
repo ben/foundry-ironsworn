@@ -99,9 +99,9 @@ function beforeAppear(el: HTMLElement) {
 	$emit('before-appear', el)
 }
 
-function appear(el: HTMLElement) {
+function appear(el: HTMLElement, callback: () => void) {
 	// Emit the event to the parent
-	$emit('appear', el)
+	$emit('appear', el, callback)
 }
 
 function afterAppear(el: HTMLElement) {

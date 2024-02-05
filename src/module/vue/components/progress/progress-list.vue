@@ -58,7 +58,7 @@ const editMode = computed(() => {
 	return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })
 
-let highlightCompletedTimer: NodeJS.Timer | undefined
+let highlightCompletedTimer: NodeJS.Timeout | undefined
 
 function progressCompleted() {
 	data.highlightCompleted = true

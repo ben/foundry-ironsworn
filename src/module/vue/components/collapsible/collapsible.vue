@@ -76,7 +76,7 @@ import { computed, ref } from 'vue'
 import type { ExpandEvent, CollapseEvent } from './collapsible-helpers'
 import IronBtn from '../buttons/iron-btn.vue'
 import { FontAwesome } from '../icon/icon-common'
-import type { TransformProperty } from 'csstype'
+import type { Property } from 'csstype'
 import FontIcon from '../icon/font-icon.vue'
 
 const props = withDefaults(
@@ -198,7 +198,7 @@ function collapse() {
 	state.expanded = false
 }
 
-const transform = computed<TransformProperty>(() => {
+const transform = computed<Property.Transform>(() => {
 	if (props.disableToggleAnimation || !props.icon) {
 		return 'none'
 	}

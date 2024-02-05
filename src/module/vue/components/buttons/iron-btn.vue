@@ -54,7 +54,7 @@ const props = withDefaults(
 		/**
 		 * A simple way to specify an icon with default settings. For something weirder, you can override it with the "icon" slot.
 		 */
-		icon?: IconId | null
+		icon?: string | null // IconId | null <- this produces a compiler error because of complexity
 		tooltip?: string
 		hoverBg?: boolean
 		disabled?: boolean
