@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Behind the scenes: upgraded Vue and build system ([#949](https://github.com/ben/foundry-ironsworn/pull/949))
+
 ## 1.22.11
 
 - Fix a bug with saving the notes tab on the starship sheet ([#932](https://github.com/ben/foundry-ironsworn/pull/932))
