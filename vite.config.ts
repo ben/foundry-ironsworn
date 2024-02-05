@@ -1,6 +1,6 @@
 import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import Inspector from 'vite-plugin-vue-inspector'
+// import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import sassChroma from './src/module/plugin/sass-chroma-js'
@@ -9,7 +9,7 @@ import presetEnv from 'postcss-preset-env'
 import { kebabCase } from 'lodash-es'
 import cssnano from 'cssnano'
 import sassIcons, { ICON_DIRS } from './src/module/plugin/custom-icons'
-import VueTypeImports from '@rah-emil/vite-plugin-vue-type-imports'
+// import VueTypeImports from '@rah-emil/vite-plugin-vue-type-imports'
 
 const PORT = 30000
 
@@ -23,8 +23,8 @@ const config: UserConfig = {
 	root: './',
 	plugins: [
 		vue(),
-		VueTypeImports(),
-		Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
+		// VueTypeImports(),
+		// Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
 		createSvgIconsPlugin({
 			customDomId: 'ironsworn-sprites',
 			iconDirs: [

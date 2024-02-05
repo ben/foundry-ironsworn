@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import IronBtn from './iron-btn.vue'
 
-interface Props extends PropsOf<typeof IronBtn> {
+interface Props extends /* @vue-ignore */ PropsOf<typeof IronBtn> {
 	compendium: string
 }
 

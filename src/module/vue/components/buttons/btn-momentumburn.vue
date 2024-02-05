@@ -17,7 +17,8 @@ import { $ActorKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 import type { IronswornActor } from '../../../actor/actor'
 
-interface Props extends Omit<PropsOf<typeof IronBtn>, 'tooltip'> {}
+interface Props
+	extends /* @vue-ignore */ Omit<PropsOf<typeof IronBtn>, 'tooltip'> {}
 defineProps<Props>()
 
 const $actor = inject($ActorKey) as IronswornActor<'character'>

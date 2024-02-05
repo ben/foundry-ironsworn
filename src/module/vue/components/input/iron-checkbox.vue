@@ -84,12 +84,12 @@ const $emit = defineEmits<{
 	 * Fires when the checkbox is activated.
 	 * @param checked The new value of the checkbox. Note that this component doesn't maintain state -- so the prop isn't updated automatically.
 	 */
-	(name: 'input', checked: boolean): void
+	input: [boolean]
 	/**
 	 * Fires when the checkbox is activated.
 	 * @param checked The new value of the checkbox. Note that this component doesn't maintain state -- so the prop isn't updated automatically.
 	 */
-	(name: 'change', checked: boolean): void
+	change: [boolean]
 }>()
 
 function toggle() {

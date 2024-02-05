@@ -80,18 +80,18 @@ const transition = computed(() => {
 })
 
 const $emit = defineEmits<{
-	(e: 'before-appear', el: HTMLElement): void
-	(e: 'appear', el: HTMLElement): void
-	(e: 'after-appear', el: HTMLElement): void
-	(e: 'appear-cancelled', el: HTMLElement): void
-	(e: 'before-enter', el: HTMLElement): void
-	(e: 'enter', el: HTMLElement, callback: () => void): void
-	(e: 'after-enter', el: HTMLElement): void
-	(e: 'enter-cancelled', el: HTMLElement): void
-	(e: 'before-leave', el: HTMLElement): void
-	(e: 'leave', el: HTMLElement, callback: () => void): void
-	(e: 'after-leave', el: HTMLElement): void
-	(e: 'leave-cancelled', el: HTMLElement): void
+	'before-appear': [HTMLElement]
+	appear: [HTMLElement, () => void]
+	'after-appear': [HTMLElement]
+	'appear-cancelled': [HTMLElement]
+	'before-enter': [HTMLElement]
+	enter: [HTMLElement, () => void]
+	'after-enter': [HTMLElement]
+	'enter-cancelled': [HTMLElement]
+	'before-leave': [HTMLElement]
+	leave: [HTMLElement, () => void]
+	'after-leave': [HTMLElement]
+	'leave-cancelled': [HTMLElement]
 }>()
 
 function beforeAppear(el: HTMLElement) {
@@ -99,9 +99,9 @@ function beforeAppear(el: HTMLElement) {
 	$emit('before-appear', el)
 }
 
-function appear(el: HTMLElement) {
+function appear(el: HTMLElement, callback: () => void) {
 	// Emit the event to the parent
-	$emit('appear', el)
+	$emit('appear', el, callback)
 }
 
 function afterAppear(el: HTMLElement) {

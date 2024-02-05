@@ -1,8 +1,4 @@
-import type {
-	BorderRadiusProperty,
-	MaskProperty,
-	PaddingProperty
-} from 'csstype'
+import type { Property } from 'csstype'
 import type { FontAwesomeIconProps } from '../vue/components/icon/icon-common'
 import { FontAwesome } from '../vue/components/icon/icon-common'
 
@@ -131,7 +127,7 @@ interface Pip {
 }
 
 interface ChallengeRankPips extends Pip {
-	padding: PaddingProperty<any>
+	padding: Property.Padding<any>
 }
 
 interface Image {
@@ -145,6 +141,6 @@ interface Checkbox extends Pip {
 }
 
 interface Box {
-	mask?: MaskProperty<any>
-	borderRadius?: BorderRadiusProperty<any>
+	mask?: Property.Mask<any>
+	borderRadius?: Property.BorderRadius<any>
 }

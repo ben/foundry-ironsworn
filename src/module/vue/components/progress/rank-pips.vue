@@ -86,7 +86,7 @@ function getState(rank: ChallengeRank.Value): PipState {
 }
 
 const $emit = defineEmits<{
-	(event: 'change', newRank: ChallengeRank.Value): void
+	change: [ChallengeRank.Value]
 }>()
 
 function setRank(rank: number) {

@@ -166,7 +166,7 @@ const titleId = computed(() => `title_${baseId.value}`)
 const deco = computed(() => IronswornSettings.deco.asset.header)
 
 const $emit = defineEmits<{
-	(name: 'toggleExpand', isExpanded: boolean): void
+	toggleExpand: [boolean]
 }>()
 
 // TODO: have it pass a toggle function instead?

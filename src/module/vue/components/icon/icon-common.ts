@@ -1,19 +1,4 @@
-import type {
-	BorderColorProperty,
-	BorderRadiusProperty,
-	BorderStyleProperty,
-	BorderWidthProperty,
-	Color,
-	ColorProperty,
-	DisplayProperty,
-	FillProperty,
-	OpacityProperty,
-	PaddingProperty,
-	RotateProperty,
-	ScaleProperty,
-	StandardLonghandPropertiesHyphen,
-	StrokeWidthProperty
-} from 'csstype'
+import type { Property, StandardLonghandPropertiesHyphen } from 'csstype'
 
 import type ironswornIconNames from 'virtual:svg-icons-names'
 
@@ -59,13 +44,13 @@ export interface IconPropsCommon {
 	/**
 	 * The icon's color.
 	 */
-	color?: FillProperty | ColorProperty
+	color?: Property.Fill | Property.Color
 	/**
 	 * The icon's stroke.
 	 */
 	stroke?: {
-		width: StrokeWidthProperty<any> | string
-		color: ColorProperty
+		width: Property.StrokeWidth<any> | string
+		color: Property.Color
 	}
 	/**
 	 * The height and width of the icon.
@@ -83,7 +68,7 @@ export interface IronIconProps extends IconPropsCommon {
 	 * The color to use for the SVG fill property.
 	 * @default 'currentColor'
 	 */
-	color?: FillProperty
+	color?: Property.Fill
 	/**
 	 * The prefix of the sprite map. You probably don't need to change this.
 	 * @default 'ironsworn'
@@ -92,8 +77,8 @@ export interface IronIconProps extends IconPropsCommon {
 	size?: string
 	disabled?: boolean
 	stroke?: {
-		width: StrokeWidthProperty<any>
-		color: ColorProperty
+		width: Property.StrokeWidth<any>
+		color: Property.Color
 	}
 }
 
@@ -220,11 +205,11 @@ export namespace FontAwesome {
 		/**
 		 * Set display of an icon 	Any valid CSS display value
 		 */
-		'fa-display': DisplayProperty
+		'fa-display': Property.Display
 		/**
 		 * Set color of an inverted icon 	Any valid CSS color value
 		 */
-		'fa-inverse': Color
+		'fa-inverse': Property.Color
 	}
 	export enum Animation {
 		/**
@@ -314,24 +299,24 @@ export namespace FontAwesome {
 			 * Set the max value an fa-beat icon will scale
 			 * Any valid CSS number value
 			 */
-			'--fa-beat-scale': ScaleProperty
+			'--fa-beat-scale': Property.Scale
 			/**
 			 * Set lowest opacity value an fa-fade icon will fade to
 			 * @min 0
 			 * @max 1.0
 			 */
-			'--fa-fade-opacity': OpacityProperty
+			'--fa-fade-opacity': Property.Opacity
 			/**
 			 * Set lowest opacity value an fa-beat-fade icon will fade to and from
 			 * @min 0
 			 * @max 1.0
 			 */
-			'--fa-beat-fade-opacity': OpacityProperty
+			'--fa-beat-fade-opacity': Property.Opacity
 			/**
 			 * Set max value that an icon will scale
 			 * Set the max value an fa-beat-fade icon will scale
 			 */
-			'--fa-beat-fade-scale': ScaleProperty
+			'--fa-beat-fade-scale': Property.Scale
 			/**
 			 * Set an fa-flip icon's x-coordinate of the vector denoting the axis of rotation
 			 * @min 0
@@ -354,7 +339,7 @@ export namespace FontAwesome {
 			 * Set an fa-flip icon's rotation angle. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.
 			 * Any valid CSS angle value
 			 */
-			'--fa-flip-angle': RotateProperty
+			'--fa-flip-angle': Property.Rotate
 		}
 	}
 	// eslint-disable-next-line @typescript-eslint/no-namespace
@@ -363,27 +348,26 @@ export namespace FontAwesome {
 			/**
 			 * Set border color
 			 */
-			'--fa-border-color': BorderColorProperty
 
 			/**
 			 * Set padding around icon
 			 */
-			'--fa-border-padding': PaddingProperty<any>
+			'--fa-border-padding': Property.Padding<any>
 
 			/**
 			 * Set border radius
 			 */
-			'--fa-border-radius': BorderRadiusProperty<any>
+			'--fa-border-radiusProperty.': Property.BorderRadius<any>
 
 			/**
 			 * Set border style
 			 */
-			'--fa-border-style': BorderStyleProperty
+			'--fa-border-styleProperty.': Property.BorderStyle
 
 			/**
 			 * Set border width
 			 */
-			'--fa-border-width': BorderWidthProperty<any>
+			'--fa-border-width': Property.BorderWidth<any>
 		}
 	}
 	export enum Size {

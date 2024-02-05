@@ -20,18 +20,18 @@ import type IronBtn from '../buttons/iron-btn.vue'
 import { TransitionGroup } from 'vue'
 
 interface Props
-	extends Omit<
+	extends /* @vue-ignore */ Omit<
 		PropsOf<typeof IronBtn>,
 		'text' | 'icon' | 'vertical' | 'justify'
 	> {
 	/**
 	 * A list of unique names for the switch's states.
 	 */
-	states: Iterable<string>
+	states: string[]
 	/**
 	 * The currently active state.
 	 */
-	current: this['states'] extends Iterable<infer U> ? U : never
+	current: string
 	/**
 	 * @default 'fade'
 	 */

@@ -36,7 +36,7 @@ function select() {
 }
 
 const $emit = defineEmits<{
-	(e: 'change', html: string)
+	change: [string]
 }>()
 function emitHtml() {
 	$emit('change', state.html)
