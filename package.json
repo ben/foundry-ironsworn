@@ -51,7 +51,7 @@
 		"postcss": "^8.4.31",
 		"postcss-html": "^1.6.0",
 		"postcss-less": "^6.0.0",
-		"postcss-preset-env": "^9.1.4",
+		"postcss-preset-env": "^9.3.0",
 		"prettier": "^2.8.8",
 		"prettier-config-standard": "^7.0.0",
 		"sass": "^1.68.0",
