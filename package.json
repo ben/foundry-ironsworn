@@ -18,7 +18,7 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
-		"@foundryvtt/foundryvtt-cli": "^1.0.2",
+		"@foundryvtt/foundryvtt-cli": "^1.0",
 		"@league-of-foundry-developers/foundry-vtt-types": "github:rsek/foundry-vtt-types#v10-journal",
 		"@mavrin/stylelint-declaration-use-css-custom-properties": "^3.0.1",
 		"@tinymce/tinymce-vue": "^5.1.1",
