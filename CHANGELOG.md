@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.12
+
 - Add a setting to default the "advanced" rolling options to expanded ([#960](https://github.com/ben/foundry-ironsworn/pull/960))
 - Behind the scenes: upgraded Vue and build system ([#949](https://github.com/ben/foundry-ironsworn/pull/949))
 
