@@ -57,14 +57,14 @@
     {{#if action}}
     <fieldset class='form-group'>
       <label>{{localize 'IRONSWORN.RollDialog.PresetActionDie'}}</label>
-      <input type='number' step='1' name='presetActionDieValue' />
+      <input type='number' step='1' name='presetActionDieValue' {{#if advancedOptionsOpen}}autofocus{{/if}} />
     </fieldset>
     {{/if}}
 
     <fieldset class='form-group'>
       <label>{{localize 'IRONSWORN.RollDialog.PresetChallengeDice'}}</label>
       <div class="flexrow" style="gap: var(--ironsworn-spacer-md)">
-        <input type='number' step='1' name='presetChallengeDie1Value' />
+        <input type='number' step='1' name='presetChallengeDie1Value' {{#if advancedOptionsOpen}}autofocus{{/if}} />
         <input type='number' step='1' name='presetChallengeDie2Value' />
       </div>
     </fieldset>
