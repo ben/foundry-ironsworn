@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Extend the new setting into a "manual rolling mode" ([#961](https://github.com/ben/foundry-ironsworn/pull/961))
+
 ## 1.22.12
 
 - Add a setting to default the "advanced" rolling options to expanded ([#960](https://github.com/ben/foundry-ironsworn/pull/960))
