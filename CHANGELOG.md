@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.22.13
+
 - Extend the new setting into a "manual rolling mode" ([#961](https://github.com/ben/foundry-ironsworn/pull/961))
 
 ## 1.22.12
