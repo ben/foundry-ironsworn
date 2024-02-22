@@ -34,6 +34,8 @@ declare global {
 
 			'foundry-ironsworn.shared-supply': boolean
 
+			'foundry-ironsworn.advanced-rolling-default-open': boolean
+
 			// Internal only
 			'foundry-ironsworn.first-run-tips-shown': boolean
 			'foundry-ironsworn.data-version': number
@@ -171,6 +173,20 @@ export class IronswornSettings {
 			default: true,
 			onChange: reload
 		})
+
+		// Default the "advanced" part of the pre-roll dialog to open.
+		game.settings.register(
+			'foundry-ironsworn',
+			'advanced-rolling-default-open',
+			{
+				name: 'IRONSWORN.Settings.AdvancedRollingOpen.Name',
+				hint: 'IRONSWORN.Settings.AdvancedRollingOpen.Hint',
+				scope: 'world',
+				config: true,
+				type: Boolean,
+				default: false
+			}
+		)
 
 		game.settings.register('foundry-ironsworn', 'data-version', {
 			scope: 'world',
