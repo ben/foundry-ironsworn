@@ -306,8 +306,8 @@
 				"Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
 			},
 			"AdvancedRollingOpen": {
-				"Name": "Advanced Rolling Options Default",
-				"Hint": "If on, the \"advanced\" section of the roll dialog will default to open."
+				"Name": "Manual Rolling Mode",
+				"Hint": "If on, the \"advanced\" section of the roll dialog will default to open, and focus will be set to the first die-roll entry box."
 			},
 			"LogChanges": {
 				"Name": "Log Character Updates",
