@@ -25,6 +25,7 @@ import type { ConditionMeterSource } from '../fields/MeterField'
 import { ConditionMeterField } from '../fields/MeterField'
 import type { AssetConditionMeter } from '../item/subtypes/asset'
 import { AssetConditionMeterField } from '../item/subtypes/asset'
+import { IronswornSettings } from '../helpers/settings'
 
 interface showForMoveOpts {
 	actor?: IronswornActor
@@ -485,9 +486,16 @@ export class IronswornPrerollDialog extends Dialog<
 		const graphic = await renderRollGraphic({
 			preRollOptions: data.prerollOptions
 		})
+		const advancedOptionsOpen = IronswornSettings.get(
+			'advanced-rolling-default-open'
+		)
 		const template =
 			'systems/foundry-ironsworn/templates/rolls/preroll-dialog.hbs'
-		return await renderTemplate(template, { ...data, graphic })
+		return await renderTemplate(template, {
+			...data,
+			graphic,
+			advancedOptionsOpen
+		})
 	}
 
 	activateListeners(html: JQuery<HTMLElement>): void {
