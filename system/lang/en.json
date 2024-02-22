@@ -305,6 +305,10 @@
 				"Name": "Shared Supply Tracker",
 				"Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
 			},
+			"AdvancedRollingOpen": {
+				"Name": "Advanced Rolling Options Default",
+				"Hint": "If on, the \"advanced\" section of the roll dialog will default to open."
+			},
 			"LogChanges": {
 				"Name": "Log Character Updates",
 				"Hint": "If on, changes to character stats will be logged to the chat."
