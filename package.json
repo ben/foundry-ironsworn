@@ -47,7 +47,7 @@
 		"mitt": "^3.0.0",
 		"node-fetch": "^3.3.2",
 		"patch-package": "^8.0.0",
-		"postcss": "^8.4.31",
+		"postcss": "^8.4.35",
 		"postcss-html": "^1.6.0",
 		"postcss-less": "^6.0.0",
 		"postcss-preset-env": "^9.5.0",
