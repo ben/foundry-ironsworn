@@ -32,7 +32,7 @@
 		"@typescript-eslint/eslint-plugin": "^6",
 		"@typescript-eslint/parser": "^6",
 		"@typescript/analyze-trace": "^0.10.1",
-		"@vitejs/plugin-vue": "^5.0.3",
+		"@vitejs/plugin-vue": "^5.0.4",
 		"buffer": "^6.0.3",
 		"chroma-js": "^2.4.2",
 		"cssnano": "^6.0.1",
