@@ -22,7 +22,7 @@
 		"@league-of-foundry-developers/foundry-vtt-types": "github:rsek/foundry-vtt-types#v10-journal",
 		"@mavrin/stylelint-declaration-use-css-custom-properties": "^3.0.1",
 		"@tinymce/tinymce-vue": "^5.1.1",
-		"@types/chroma-js": "^2.4.0",
+		"@types/chroma-js": "^2.4.4",
 		"@types/eslint": "^8.44.6",
 		"@types/fs-extra": "^11.0.4",
 		"@types/lodash-es": "^4.17.12",
