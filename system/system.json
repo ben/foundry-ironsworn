@@ -90,6 +90,7 @@
   "packFolders": [
     {
       "name": "Ironsworn Core Rulebook",
+      "color": "#444444",
       "packs": [
         "ironswornfoes",
         "foeactorsis",
@@ -102,6 +103,7 @@
     },
     {
       "name": "Ironsworn: Delve",
+      "color": "#444444",
       "packs": [
         "ironsworndelvethemes",
         "ironsworndelvedomains"
@@ -109,6 +111,7 @@
     },
     {
       "name": "Starforged Core Rulebook",
+      "color": "#444444",
       "packs": [
         "foeactorssf",
         "starforgedencounters",
