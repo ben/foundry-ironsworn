@@ -6,7 +6,7 @@ import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class IronswornCharacterSheetV2 extends VueActorSheet {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			width: 700,
 			height: 800,
 			left: 50,

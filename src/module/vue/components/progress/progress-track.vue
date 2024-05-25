@@ -15,14 +15,16 @@
 		:aria-valuemin="ProgressModel.TICKS_MIN"
 		:aria-valuemax="ProgressModel.TICKS_MAX"
 		:aria-valuetext="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
-		:data-tooltip="$t('IRONSWORN.PROGRESS.Current', { score, ticks })">
+		:data-tooltip="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
+	>
 		<ProgressTrackBox
 			v-for="(boxTicks, i) in boxes"
 			:key="`progress-box-${i + 1}`"
 			tabindex="-1"
 			role="presentational"
 			:ticks="boxTicks ?? ProgressModel.TICKS_MIN"
-			:is-overflow-box="legacyOverflow" />
+			:is-overflow-box="legacyOverflow"
+		/>
 	</article>
 </template>
 
@@ -50,7 +52,7 @@ const props = defineProps<{
 }>()
 
 const score = computed(() =>
-	Math.clamped(
+	Math.clamp(
 		Math.floor(props.ticks / ProgressModel.TICKS_PER_BOX),
 		ProgressModel.SCORE_MIN,
 		ProgressModel.SCORE_MAX

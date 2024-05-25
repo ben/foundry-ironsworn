@@ -20,7 +20,7 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 			formula: '1d100',
 			results: this.denizens.map(
 				(row) =>
-					mergeObject(
+					foundry.utils.mergeObject(
 						row,
 						{
 							flags: {
@@ -80,7 +80,7 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 			results: [
 				...dangerRows.map(
 					(row) =>
-						mergeObject(
+						foundry.utils.mergeObject(
 							row.toObject(),
 							{
 								flags: {

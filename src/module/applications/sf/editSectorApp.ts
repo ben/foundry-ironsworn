@@ -7,7 +7,7 @@ export class EditSectorDialog extends VueAppMixin(Application) {
 	}
 
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.localize('IRONSWORN.SCENE.TypeSector'),
 			id: 'edit-sector-dialog',
 			resizable: true,

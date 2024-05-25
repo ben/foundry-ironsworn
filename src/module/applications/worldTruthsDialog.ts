@@ -7,7 +7,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 	}
 
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.localize('IRONSWORN.YourWorldTruths'),
 			template: 'systems/foundry-ironsworn/templates/truths.hbs',
 			id: 'world-truths-dialog',
@@ -43,7 +43,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 			)
 		}
 
-		return await mergeObject(super.getData(), {
+		return await foundry.utils.mergeObject(super.getData(), {
 			truths
 		})
 	}

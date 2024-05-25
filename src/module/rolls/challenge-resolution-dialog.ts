@@ -35,7 +35,7 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
 	}
 
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: 'IRONSWORN.ResolveChallenge',
 			width: 300,
 			height: 280,

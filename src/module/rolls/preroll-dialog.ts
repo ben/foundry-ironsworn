@@ -227,7 +227,7 @@ export class IronswornPrerollDialog extends Dialog<
 	}
 
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ['ironsworn', 'dialog'],
 			width: 500
 		})

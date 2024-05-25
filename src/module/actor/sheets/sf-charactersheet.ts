@@ -6,7 +6,7 @@ import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class StarforgedCharacterSheet extends VueActorSheet {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			width: 630,
 			height: 820,
 			left: 50,

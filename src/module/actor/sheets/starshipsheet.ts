@@ -3,7 +3,7 @@ import { VueActorSheet } from '../../vue/vueactorsheet'
 
 export class StarshipSheet extends VueActorSheet {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			width: 500,
 			height: 500,
 			rootComponent: starshipSheetVue

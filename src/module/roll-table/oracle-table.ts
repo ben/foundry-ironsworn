@@ -206,10 +206,14 @@ export class OracleTable extends RollTable {
 		if (!Array.isArray(tableData)) {
 			logger.info(`Building ${tableData.$id}`)
 			return await OracleTable.create(
-				mergeObject(clonedOptions, OracleTable.getConstructorData(tableData), {
-					overwrite: false,
-					inplace: false
-				}) as RollTableDataConstructorData,
+				foundry.utils.mergeObject(
+					clonedOptions,
+					OracleTable.getConstructorData(tableData),
+					{
+						overwrite: false,
+						inplace: false
+					}
+				) as RollTableDataConstructorData,
 				context
 			)
 		}
@@ -217,7 +221,7 @@ export class OracleTable extends RollTable {
 		return await OracleTable.createDocuments(
 			tableData.map(
 				(table) =>
-					mergeObject(
+					foundry.utils.mergeObject(
 						deepClone(clonedOptions),
 						OracleTable.getConstructorData(table),
 						{
@@ -244,7 +248,7 @@ export class OracleTable extends RollTable {
 				// @ts-expect-error exists in v10
 				async: true
 			}),
-			result: mergeObject(result.toObject(false), {
+			result: foundry.utils.mergeObject(result.toObject(false), {
 				text: result.getChatText(),
 				icon: result.icon,
 				displayRows: result.displayRows.map((row) => row?.toObject())

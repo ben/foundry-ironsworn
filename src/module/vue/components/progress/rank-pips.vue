@@ -24,7 +24,8 @@
 		@keydown.2="setRank(2)"
 		@keydown.3="setRank(3)"
 		@keydown.4="setRank(4)"
-		@keydown.5="setRank(5)">
+		@keydown.5="setRank(5)"
+	>
 		<button
 			v-for="rank in ChallengeRank.RANK"
 			:key="rank"
@@ -39,17 +40,20 @@
 			@focus.prevent
 			@mouseover="hovered = rank"
 			@mouseleave="hovered = 0"
-			@click="setRank(rank)">
+			@click="setRank(rank)"
+		>
 			<FontIcon
 				v-bind="IronswornSettings.deco.challengeRank.checked"
 				role="presentational"
 				:fw="false"
-				:class="[$style.checked, $style.icon]" />
+				:class="[$style.checked, $style.icon]"
+			/>
 			<FontIcon
 				v-bind="IronswornSettings.deco.challengeRank.unchecked"
 				role="presentational"
 				:fw="false"
-				:class="[$style.unchecked, $style.icon]" />
+				:class="[$style.unchecked, $style.icon]"
+			/>
 		</button>
 	</article>
 </template>
@@ -93,7 +97,7 @@ function setRank(rank: number) {
 	if (props.readonly) return
 	$emit(
 		'change',
-		Math.clamped(
+		Math.clamp(
 			rank,
 			ChallengeRank.MIN,
 			ChallengeRank.MAX

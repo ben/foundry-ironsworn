@@ -3,7 +3,7 @@ import { VueActorSheet } from '../../vue/vueactorsheet'
 
 export class IronswornSharedSheetV2 extends VueActorSheet {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			width: 350,
 			height: 700,
 			rootComponent: sharedSheetVue

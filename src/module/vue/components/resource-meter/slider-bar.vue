@@ -27,7 +27,8 @@
 		@keydown.6="setSliderValue(6, $event)"
 		@keydown.7="setSliderValue(7, $event)"
 		@keydown.8="setSliderValue(8, $event)"
-		@keydown.9="setSliderValue(9, $event)">
+		@keydown.9="setSliderValue(9, $event)"
+	>
 		<button
 			v-for="segment in sliderSegments"
 			:key="segment"
@@ -38,7 +39,8 @@
 			:aria-selected="segment === value"
 			:aria-disabled="!inRange(segment, props.min, currentMax + 1)"
 			@click.capture="setSliderValue(segment, $event)"
-			@focus.prevent>
+			@focus.prevent
+		>
 			<span tabindex="-1" class="slider-segment-text">
 				{{ segmentLabel(segment) }}
 			</span>
@@ -102,7 +104,7 @@ function setSliderValue(newValue: number, event: Event) {
 		return
 	}
 	event.preventDefault()
-	$emit('change', Math.clamped(newValue, props.min, currentMax.value))
+	$emit('change', Math.clamp(newValue, props.min, currentMax.value))
 }
 
 /**

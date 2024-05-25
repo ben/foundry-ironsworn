@@ -5,7 +5,8 @@
 			[$style.decorated]: !!deco,
 			[$style.undecorated]: !deco
 		}"
-		:aria-labelledby="titleId">
+		:aria-labelledby="titleId"
+	>
 		<slot name="deco">
 			<svg
 				v-if="deco"
@@ -14,7 +15,8 @@
 				role="presentational"
 				aria-hidden="true"
 				:width="deco.width"
-				:height="deco.height">
+				:height="deco.height"
+			>
 				<use :href="deco.href" />
 			</svg>
 		</slot>
@@ -30,7 +32,8 @@
 						:aria-controls="bodyId"
 						:class="$style.expandToggle"
 						class="clickable text flexrow"
-						@click="toggleExpand">
+						@click="toggleExpand"
+					>
 						<h4 :class="$style.title">
 							{{ asset.name }}
 						</h4>
@@ -60,19 +63,22 @@
 				:id="bodyId"
 				:class="$style.body"
 				class="flexcol"
-				:aria-expanded="expanded">
+				:aria-expanded="expanded"
+			>
 				<!-- FIELDS -->
 				<section
 					v-if="asset.system.fields?.length"
 					:class="$style.fields"
-					class="flexcol nogrow">
+					class="flexcol nogrow"
+				>
 					<AssetField
 						v-for="(field, i) in asset.system.fields"
 						:key="i"
 						:field="field"
 						:update-fn="(delta) => updateField(i, delta)"
 						class="nogrow"
-						:readonly="readonlyFields" />
+						:readonly="readonlyFields"
+					/>
 				</section>
 
 				<!-- DESCRIPTION -->
@@ -81,7 +87,8 @@
 					element="div"
 					class="nogrow"
 					:class="$style.requirement"
-					v-html="$enrichHtml(asset.system.description)" />
+					v-html="$enrichHtml(asset.system.description)"
+				/>
 
 				<!-- REQUIREMENT -->
 				<WithRolllisteners
@@ -89,13 +96,15 @@
 					element="div"
 					class="nogrow"
 					:class="$style.requirement"
-					v-html="$enrichMarkdown(asset.system.requirement)" />
+					v-html="$enrichMarkdown(asset.system.requirement)"
+				/>
 
 				<!-- ABILITIES -->
 				<ul class="flexcol nogrow" :class="$style.abilities">
 					<template
 						v-for="(ability, i) in asset.system.abilities"
-						:key="`ability${i}`">
+						:key="`ability${i}`"
+					>
 						<li v-if="hideDisabledAbilities ? ability.enabled : true">
 							<AssetAbility
 								:class="$style.ability"
@@ -103,14 +112,16 @@
 								:update-fn="(delta) => updateAbility(i, delta)"
 								:toggle="toggleAbilities"
 								:readonly-clock="readonlyClocks"
-								class="flexrow" />
+								class="flexrow"
+							/>
 						</li>
 					</template>
 				</ul>
 
 				<AssetToggle
 					v-if="asset.system.exclusiveOptions.length > 0"
-					class="flexrow nogrow" />
+					class="flexrow nogrow"
+				/>
 
 				<AssetConditionMeter v-if="asset.system.track" class="flexrow nogrow" />
 			</section>
@@ -180,14 +191,20 @@ async function updateAbility(index: number, delta: Partial<AssetAbilityType>) {
 	const abilities = Object.values(
 		asset.value.system.abilities
 	) as AssetAbilityType[]
-	abilities[index] = mergeObject(abilities[index], delta) as AssetAbilityType
+	abilities[index] = foundry.utils.mergeObject(
+		abilities[index],
+		delta
+	) as AssetAbilityType
 	return $asset?.update({ system: { abilities } })
 }
 
 async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	if (!$asset?.actor) return
 	const fields = Object.values(asset.value.system.fields) as AssetFieldType[]
-	fields[index] = mergeObject(fields[index], delta) as AssetFieldType
+	fields[index] = foundry.utils.mergeObject(
+		fields[index],
+		delta
+	) as AssetFieldType
 	return $asset?.update({ system: { fields } })
 }
 </script>

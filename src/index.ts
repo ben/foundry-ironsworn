@@ -76,8 +76,8 @@ Hooks.once('init', async () => {
 
 	CONFIG.IRONSWORN = IRONSWORN
 
-	mergeObject(CONFIG.Actor, ActorConfig)
-	mergeObject(CONFIG.Item, ItemConfig)
+	foundry.utils.mergeObject(CONFIG.Actor, ActorConfig)
+	foundry.utils.mergeObject(CONFIG.Item, ItemConfig)
 
 	// Define custom Entity classes
 
@@ -191,14 +191,14 @@ Hooks.once('init', async () => {
 		}
 	)
 
-	CONFIG.JournalEntryPage.typeLabels = mergeObject(
+	CONFIG.JournalEntryPage.typeLabels = foundry.utils.mergeObject(
 		CONFIG.JournalEntryPage.typeLabels,
 		{
 			truth: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
 			progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack'
 		}
 	)
-	CONFIG.JournalEntryPage.typeIcons = mergeObject(
+	CONFIG.JournalEntryPage.typeIcons = foundry.utils.mergeObject(
 		CONFIG.JournalEntryPage.typeIcons,
 		{
 			truth: 'fa-solid fa-books',

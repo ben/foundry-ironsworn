@@ -24,7 +24,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 		localEmitter: LocalEmitter = Mitt<LocalEmitterEvents>()
 
 		static get defaultOptions(): VueApplicationOptions {
-			return mergeObject(
+			return foundry.utils.mergeObject(
 				// @ts-expect-error TS complains about super not having defaultOptions here, but Application does have it -- just on the class, not the constructor.
 				super.defaultOptions as ApplicaionOptions,
 				{

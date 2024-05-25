@@ -18,7 +18,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	}
 
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.format('DOCUMENT.Create', {
 				type: game.i18n.localize('DOCUMENT.Actor')
 			}),
