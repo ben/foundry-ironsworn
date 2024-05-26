@@ -1,4 +1,6 @@
 import type {
+	IMove,
+	IMoveTrigger,
 	PlayerConditionMeter,
 	ProgressTypeIronsworn,
 	RollableStat,
@@ -37,7 +39,7 @@ export function localeCapitalize(str: string) {
 	return str[0].toLocaleUpperCase(locale) + str.slice(1)
 }
 
-function rollableOptions(trigger: SFMoveTrigger) {
+function rollableOptions(trigger: SFMoveTrigger | IMoveTrigger) {
 	if (trigger.Options == null) return []
 
 	const actionOptions = trigger.Options.filter(
@@ -63,6 +65,12 @@ function rollableOptions(trigger: SFMoveTrigger) {
 export function moveHasRollableOptions(move: IronswornItem<'sfmove'>) {
 	if (!move.assert('sfmove')) return false
 	const options = rollableOptions(move.system.Trigger)
+	return options.length > 0
+}
+
+export function dfMoveHasRollableOptions(move: IMove): boolean {
+	if (move.Trigger == null) return false
+	const options = rollableOptions(move.Trigger)
 	return options.length > 0
 }
 

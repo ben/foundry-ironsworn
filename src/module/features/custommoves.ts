@@ -1,6 +1,10 @@
 import type { IMove, IMoveCategory } from 'dataforged'
 import { ISMoveCategories, SFMoveCategories } from '../dataforged/data'
 import type { IronswornItem } from '../item/item'
+import {
+	dfMoveHasRollableOptions,
+	moveHasRollableOptions
+} from '../rolls/preroll-dialog'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface MoveCategory {
@@ -159,6 +163,8 @@ export interface IndexedMoveCategory {
 export interface IndexedMove {
 	name: string
 	uuid: string
+	isRollable: boolean
+	hasDefaultOracle: boolean
 	dfid?: string
 	dataforgedMove?: IMove
 }
@@ -219,7 +225,9 @@ async function indexedCustomMoveCategory(): Promise<
 		if (moveItem.documentName !== 'Item' || !moveItem.assert('sfmove')) continue
 		category.moves.push({
 			name: moveItem.name ?? '(move)',
-			uuid: moveItem.uuid
+			uuid: moveItem.uuid,
+			isRollable: moveHasRollableOptions(moveItem),
+			hasDefaultOracle: moveItem.system.Oracles?.length === 1
 		})
 	}
 
@@ -243,6 +251,8 @@ function indexedMoveListForCategory(
 			newCategory.moves.push({
 				dfid: move.$id,
 				uuid: moveItem.uuid,
+				isRollable: dfMoveHasRollableOptions(move),
+				hasDefaultOracle: move.Oracles?.length === 1,
 				dataforgedMove: move,
 				name: moveItem.name
 			})
