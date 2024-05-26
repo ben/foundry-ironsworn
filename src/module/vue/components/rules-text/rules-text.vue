@@ -4,7 +4,15 @@
 		<section v-if="props.type === 'slot'" class="rules-text-main">
 			<slot name="default"></slot>
 		</section>
-		<section v-else class="rules-text-main" v-html="enrichedText" />
+		<EnrichedHtml
+			v-else
+			element="section"
+			class="rules-text-main"
+			:source="props.content ?? ''"
+			:markdown="props.type === 'markdown'"
+			:stripTables="true"
+		/>
+		<!-- <section v-else class="rules-text-main" v-html="enrichedText" /> -->
 		<slot name="after-main"></slot>
 		<footer v-if="props.source" class="rules-text-footer">
 			<RulesSourceInfo :source="props.source" />
