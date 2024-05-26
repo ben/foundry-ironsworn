@@ -17,8 +17,6 @@ export interface Move {
 	dataforgedMove?: IMove
 }
 
-// For some reason, rollupJs mangles this
-
 async function createMoveTree(
 	compendiumName: string,
 	categories: IMoveCategory[]
@@ -144,4 +142,132 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
 			moves: customMoves
 		})
 	}
+}
+
+/**
+ * A version of this logic that works with compendium indexes instead of the actual items,
+ * which should save on memory usage and speed up load times.
+ */
+
+export interface IndexedMoveCategory {
+	color: string | null
+	displayName: string
+	moves: IndexedMove[]
+	dataforgedCategory?: IMoveCategory
+}
+
+export interface IndexedMove {
+	name: string
+	uuid: string
+	dfid?: string
+	dataforgedMove?: IMove
+}
+
+async function createMoveIndexTree(
+	compendiumName: string,
+	categories: IMoveCategory[]
+): Promise<IndexedMoveCategory[]> {
+	const pack = game.packs.get(compendiumName)
+	if (pack == null) {
+		ui.notifications?.error(`Couldn't find pack ${compendiumName}`)
+		throw new Error(`Couldn't find pack ${compendiumName}`)
+	}
+
+	const index = await pack.getIndex({
+		fields: [
+			'system.dfid',
+			'system.Category',
+			'system.Trigger',
+			'system.Oracles'
+		]
+	})
+
+	const ret = [] as IndexedMoveCategory[]
+	for (const category of categories) {
+		ret.push(indexedMoveListForCategory(category, index))
+	}
+
+	// Add custom moves from folder
+	const customMoveCategory = await indexedCustomMoveCategory()
+	if (customMoveCategory !== undefined) {
+		ret.push(customMoveCategory)
+	}
+
+	// TODO: call registered move-hooks so modules can modify the tree
+
+	return ret
+}
+
+async function indexedCustomMoveCategory(): Promise<
+	IndexedMoveCategory | undefined
+> {
+	const name = game.i18n.localize('IRONSWORN.MOVES.Custom')
+	const folder = (game.items?.directory as any)?.folders.find(
+		(x) => x.name === name
+	) as Folder | undefined
+	if ((folder?.contents ?? []).length === 0) return undefined
+
+	// @ts-expect-error Exists only in FVTT v10 API
+	const color = (folder.color ?? null) as string | null
+	const category: IndexedMoveCategory = {
+		color,
+		displayName: name,
+		moves: []
+	}
+
+	for (const moveItem of folder.contents) {
+		if (moveItem.documentName !== 'Item' || !moveItem.assert('sfmove')) continue
+		category.moves.push({
+			name: moveItem.name ?? '(move)',
+			uuid: moveItem.uuid
+		})
+	}
+
+	return category.moves.length > 0 ? category : undefined
+}
+
+function indexedMoveListForCategory(
+	category: IMoveCategory,
+	index: IndexTypeForMetadata<CompendiumCollection.Metadata>
+): IndexedMoveCategory {
+	const newCategory: IndexedMoveCategory = {
+		color: MoveCategoryColor[category.Name] ?? null,
+		displayName: game.i18n.localize(`IRONSWORN.MOVES.${category.Name}`),
+		dataforgedCategory: category,
+		moves: [] as IndexedMove[]
+	}
+
+	for (const move of category.Moves) {
+		const moveItem = index.find((x) => x.system.dfid === move.$id)
+		if (moveItem != null) {
+			newCategory.moves.push({
+				dfid: move.$id,
+				uuid: moveItem.uuid,
+				dataforgedMove: move,
+				name: moveItem.name
+			})
+		} else {
+			console.warn(`Couldn't find item for move ${move.$id}`)
+		}
+	}
+
+	return newCategory
+}
+
+export async function createIndexedIronswornMoveTree(): Promise<
+	IndexedMoveCategory[]
+> {
+	return await createMoveIndexTree(
+		'foundry-ironsworn.ironswornmoves',
+		ISMoveCategories
+	)
+}
+
+export async function createIndexedStarforgedMoveTree(): Promise<
+	IndexedMoveCategory[]
+> {
+	return await createMoveIndexTree(
+		'foundry-ironsworn.starforgedmoves',
+		SFMoveCategories
+	)
 }
