@@ -1,14 +1,43 @@
 <template>
-	<p @click="expanded = !expanded">
-		{{ move.name }}
-	</p>
-	<CollapseTransition>
-		<Suspense v-if="expanded">
-			<template #default>
-				<SfIndexedMoveContents :move="move" />
-			</template>
-		</Suspense>
-	</CollapseTransition>
+	<article>
+		<header class="flexrow">
+			<h3 :class="[$style.toggleWrapper, 'toggle-wrapper']">
+				<IronBtn
+					:class="$style.toggle"
+					tooltip="TODO: 'enrichMarkdown(category.dataforgedCategory?.Description)'"
+					data-tooltip-direction="LEFT"
+					:text="move.name"
+					@click="expanded = !expanded"
+				>
+				</IronBtn>
+			</h3>
+			<section
+				:class="$style.controls"
+				class="nogrow"
+				data-tooltip-direction="UP"
+				data-tourid="move-buttons"
+			>
+				<BtnRollIndexedMove
+					:disabled="!move.isRollable"
+					:move="move"
+					:class="$style.btn"
+				/>
+				<BtnOracle
+					:node="{}"
+					:disabled="!move.hasDefaultOracle"
+					:class="$style.btn"
+				/>
+				<BtnSendIndexedmoveToChat :move="move" :class="$style.btn" />
+			</section>
+		</header>
+		<CollapseTransition>
+			<Suspense v-if="expanded">
+				<template #default>
+					<SfIndexedMoveContents :move="move" />
+				</template>
+			</Suspense>
+		</CollapseTransition>
+	</article>
 </template>
 
 <script setup lang="ts">
@@ -19,6 +48,11 @@ import { IronswornItem } from '../../item/item'
 import Collapsible from './collapsible/collapsible.vue'
 import SfIndexedMoveContents from './sf-indexed-move-contents.vue'
 import CollapseTransition from './transition/collapse-transition.vue'
+import IronBtn from './buttons/iron-btn.vue'
+import BtnRollIndexedMove from './buttons/btn-roll-indexedmove.vue'
+import BtnOracle from './buttons/btn-oracle.vue'
+import BtnSendIndexedmoveToChat from './buttons/btn-send-indexedmove-to-chat.vue'
+import FontIcon from './icon/font-icon.vue'
 
 const props = withDefaults(
 	defineProps<{
@@ -51,3 +85,92 @@ const props = withDefaults(
 
 const expanded = ref(false)
 </script>
+
+<style lang="scss" module>
+@use 'mixin:clickable.scss';
+
+.wrapper {
+	--ironsworn-line-height: (--ironsworn-line-height-md);
+
+	position: relative;
+	padding: 0 var(--ironsworn-spacer-md);
+	transition: var(--ironsworn-transition);
+
+	&[aria-expanded='true'] {
+		padding-top: var(--ironsworn-spacer-md);
+		padding-bottom: var(--ironsworn-spacer-md);
+	}
+}
+
+.summary {
+	padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
+		var(--ironsworn-spacer-md);
+}
+
+.btn {
+	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
+	@include clickable.text;
+
+	align-self: center;
+	font-size: var(--font-size-20);
+	aspect-ratio: 1 !important;
+}
+
+.toggleBtn {
+	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
+
+	@include clickable.text;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: none;
+	padding: 0;
+	padding-left: var(--ironsworn-spacer-sm);
+	height: 100%;
+	text-align: left;
+	font-size: var(--font-size-16);
+
+	&:hover {
+		box-shadow: none;
+	}
+}
+
+.contentWrapper {
+}
+
+.controls {
+	display: flex;
+	flex-flow: row;
+	background: none;
+}
+
+.toggleSection {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: var(--ironsworn-spacer-md);
+}
+
+.toggleWrapper {
+	transition: var(--ironsworn-transition);
+	line-height: 1.5;
+}
+
+.oracle {
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
+	padding: 0;
+
+	h4 {
+		font-size: var(--font-size-16);
+
+		button.icon-button {
+			height: inherit;
+		}
+	}
+}
+</style>
