@@ -1,7 +1,7 @@
 <template>
-	<h1 @click="toggle">
-		{{ move.name }} <code>({{ move.dfid ?? '(custom)' }})</code>
-	</h1>
+	<p @click="toggle">
+		{{ move.name }}
+	</p>
 	<CollapseTransition>
 		<Suspense v-if="expanded">
 			<template #default>
