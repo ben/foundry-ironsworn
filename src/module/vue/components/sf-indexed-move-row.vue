@@ -1,16 +1,16 @@
 <template>
-	<article>
+	<article class="">
 		<header class="flexrow">
-			<h3 :class="[$style.toggleWrapper, 'toggle-wrapper']">
+			<h4 :class="[$style.toggleWrapper, 'toggle-wrapper']">
 				<IronBtn
-					:class="$style.toggle"
-					tooltip="TODO: 'enrichMarkdown(category.dataforgedCategory?.Description)'"
+					:class="$style.toggleBtn"
+					:tooltip="tooltipText"
 					data-tooltip-direction="LEFT"
 					:text="move.name"
 					@click="expanded = !expanded"
 				>
 				</IronBtn>
-			</h3>
+			</h4>
 			<section
 				:class="$style.controls"
 				class="nogrow"
@@ -23,8 +23,8 @@
 					:class="$style.btn"
 				/>
 				<BtnOracle
-					:node="{}"
-					:disabled="!move.hasDefaultOracle"
+					:node="move.defaultOracleNode"
+					:disabled="move.defaultOracleNode == null"
 					:class="$style.btn"
 				/>
 				<BtnSendIndexedmoveToChat :move="move" :class="$style.btn" />
@@ -43,7 +43,6 @@
 <script setup lang="ts">
 import { ref, Suspense } from 'vue'
 import type { IndexedMove } from '../../features/custommoves'
-import { IronswornItem } from '../../item/item'
 
 import Collapsible from './collapsible/collapsible.vue'
 import SfIndexedMoveContents from './sf-indexed-move-contents.vue'
@@ -52,7 +51,7 @@ import IronBtn from './buttons/iron-btn.vue'
 import BtnRollIndexedMove from './buttons/btn-roll-indexedmove.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import BtnSendIndexedmoveToChat from './buttons/btn-send-indexedmove-to-chat.vue'
-import FontIcon from './icon/font-icon.vue'
+import { enrichMarkdown } from '../vue-plugin'
 
 const props = withDefaults(
 	defineProps<{
@@ -84,6 +83,14 @@ const props = withDefaults(
 )
 
 const expanded = ref(false)
+
+// Process tooltip async
+const tooltipText = ref(props.move.triggerText)
+if (props.move.triggerText) {
+	;(async () => {
+		tooltipText.value = await enrichMarkdown(props.move.triggerText)
+	})()
+}
 </script>
 
 <style lang="scss" module>
@@ -132,6 +139,7 @@ const expanded = ref(false)
 	height: 100%;
 	text-align: left;
 	font-size: var(--font-size-16);
+	text-transform: uppercase;
 
 	&:hover {
 		box-shadow: none;
@@ -156,6 +164,8 @@ const expanded = ref(false)
 .toggleWrapper {
 	transition: var(--ironsworn-transition);
 	line-height: 1.5;
+	margin: 0;
+	padding: 0;
 }
 
 .oracle {

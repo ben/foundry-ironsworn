@@ -5,6 +5,11 @@ import {
 	dfMoveHasRollableOptions,
 	moveHasRollableOptions
 } from '../rolls/preroll-dialog'
+import {
+	findPathToNodeByDfId,
+	getOracleTreeWithCustomOracles,
+	IOracleTreeNode
+} from './customoracles'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface MoveCategory {
@@ -164,14 +169,16 @@ export interface IndexedMove {
 	name: string
 	uuid: string
 	isRollable: boolean
-	hasDefaultOracle: boolean
+	defaultOracleNode?: IOracleTreeNode
+	triggerText?: string
 	dfid?: string
 	dataforgedMove?: IMove
 }
 
 async function createMoveIndexTree(
 	compendiumName: string,
-	categories: IMoveCategory[]
+	categories: IMoveCategory[],
+	oracleTree: IOracleTreeNode
 ): Promise<IndexedMoveCategory[]> {
 	const pack = game.packs.get(compendiumName)
 	if (pack == null) {
@@ -190,11 +197,11 @@ async function createMoveIndexTree(
 
 	const ret = [] as IndexedMoveCategory[]
 	for (const category of categories) {
-		ret.push(indexedMoveListForCategory(category, index))
+		ret.push(indexedMoveListForCategory(category, index, oracleTree))
 	}
 
 	// Add custom moves from folder
-	const customMoveCategory = await indexedCustomMoveCategory()
+	const customMoveCategory = await indexedCustomMoveCategory(oracleTree)
 	if (customMoveCategory !== undefined) {
 		ret.push(customMoveCategory)
 	}
@@ -204,9 +211,24 @@ async function createMoveIndexTree(
 	return ret
 }
 
-async function indexedCustomMoveCategory(): Promise<
-	IndexedMoveCategory | undefined
-> {
+function defaultOracleNodeForMove(
+	moveItem: IronswornItem<'sfmove'>,
+	oracleTree: IOracleTreeNode
+): IOracleTreeNode | undefined {
+	if (moveItem.system.Oracles?.length !== 1) return undefined
+
+	const oracleDfid = moveItem.system.Oracles[0]
+	const oraclesInPath = findPathToNodeByDfId(oracleTree, oracleDfid)
+	if (oraclesInPath.length > 0) {
+		return oraclesInPath[oraclesInPath.length - 1]
+	}
+
+	return undefined
+}
+
+async function indexedCustomMoveCategory(
+	oracleTree: IOracleTreeNode
+): Promise<IndexedMoveCategory | undefined> {
 	const name = game.i18n.localize('IRONSWORN.MOVES.Custom')
 	const folder = (game.items?.directory as any)?.folders.find(
 		(x) => x.name === name
@@ -227,7 +249,8 @@ async function indexedCustomMoveCategory(): Promise<
 			name: moveItem.name ?? '(move)',
 			uuid: moveItem.uuid,
 			isRollable: moveHasRollableOptions(moveItem),
-			hasDefaultOracle: moveItem.system.Oracles?.length === 1
+			defaultOracleNode: defaultOracleNodeForMove(moveItem, oracleTree),
+			triggerText: moveItem.system.Trigger?.Text
 		})
 	}
 
@@ -236,7 +259,8 @@ async function indexedCustomMoveCategory(): Promise<
 
 function indexedMoveListForCategory(
 	category: IMoveCategory,
-	index: IndexTypeForMetadata<CompendiumCollection.Metadata>
+	index: IndexTypeForMetadata<CompendiumCollection.Metadata>,
+	oracleTree: IOracleTreeNode
 ): IndexedMoveCategory {
 	const newCategory: IndexedMoveCategory = {
 		color: MoveCategoryColor[category.Name] ?? null,
@@ -245,19 +269,20 @@ function indexedMoveListForCategory(
 		moves: [] as IndexedMove[]
 	}
 
-	for (const move of category.Moves) {
-		const moveItem = index.find((x) => x.system.dfid === move.$id)
+	for (const dfMove of category.Moves) {
+		const moveItem = index.find((x) => x.system.dfid === dfMove.$id)
 		if (moveItem != null) {
 			newCategory.moves.push({
-				dfid: move.$id,
+				dfid: dfMove.$id,
 				uuid: moveItem.uuid,
-				isRollable: dfMoveHasRollableOptions(move),
-				hasDefaultOracle: move.Oracles?.length === 1,
-				dataforgedMove: move,
+				isRollable: dfMoveHasRollableOptions(dfMove),
+				defaultOracleNode: defaultOracleNodeForMove(moveItem, oracleTree),
+				triggerText: moveItem.system.Trigger?.Text,
+				dataforgedMove: dfMove,
 				name: moveItem.name
 			})
 		} else {
-			console.warn(`Couldn't find item for move ${move.$id}`)
+			console.warn(`Couldn't find item for move ${dfMove.$id}`)
 		}
 	}
 
@@ -267,17 +292,21 @@ function indexedMoveListForCategory(
 export async function createIndexedIronswornMoveTree(): Promise<
 	IndexedMoveCategory[]
 > {
+	const oracleTree = await getOracleTreeWithCustomOracles('ironsworn')
 	return await createMoveIndexTree(
 		'foundry-ironsworn.ironswornmoves',
-		ISMoveCategories
+		ISMoveCategories,
+		oracleTree
 	)
 }
 
 export async function createIndexedStarforgedMoveTree(): Promise<
 	IndexedMoveCategory[]
 > {
+	const oracleTree = await getOracleTreeWithCustomOracles('starforged')
 	return await createMoveIndexTree(
 		'foundry-ironsworn.starforgedmoves',
-		SFMoveCategories
+		SFMoveCategories,
+		oracleTree
 	)
 }
