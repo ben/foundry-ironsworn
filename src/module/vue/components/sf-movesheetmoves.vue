@@ -26,24 +26,23 @@
 		</nav>
 
 		<!-- Flat search results -->
-		<!-- <ul
+		<ul
 			v-if="state.searchQuery"
 			class="item-list scrollable flexcol"
-			:class="$style.list">
-			<li
-				v-for="(move, resultIndex) of searchResults"
-				:key="move.moveItem().id ?? `move${resultIndex}`"
-				class="nogrow">
-				<SfMoverow
+			:class="$style.list"
+		>
+			<li v-for="move of searchResults" :key="move.uuid" class="nogrow">
+				<IndexedMoveRow
 					ref="allMoves"
 					:move="move"
 					:thematic-color="move.color"
-					:class="$style.filteredResult" />
+					:class="$style.filteredResult"
+				/>
 			</li>
-		</ul> -->
+		</ul>
 
 		<!-- Categorized moves if not searching -->
-		<ul class="item-list scrollable flexcol" :class="$style.list">
+		<ul v-else class="item-list scrollable flexcol" :class="$style.list">
 			<li
 				v-for="(category, catIndex) in state.categories"
 				:key="catIndex"
@@ -109,7 +108,7 @@ const searchResults = computed(() => {
 	if (!checkedSearchQuery.value) return null
 
 	const re = new RegExp(checkedSearchQuery.value, 'i')
-	return flatMoves.value.filter((x) => re.test(x.displayName))
+	return flatMoves.value.filter((x) => re.test(x.name))
 })
 
 function clearSearch() {

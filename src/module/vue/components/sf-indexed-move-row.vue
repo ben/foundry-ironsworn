@@ -1,5 +1,5 @@
 <template>
-	<p @click="toggle">
+	<p @click="expanded = !expanded">
 		{{ move.name }}
 	</p>
 	<CollapseTransition>
@@ -50,8 +50,4 @@ const props = withDefaults(
 )
 
 const expanded = ref(false)
-
-function toggle() {
-	expanded.value = !expanded.value
-}
 </script>
