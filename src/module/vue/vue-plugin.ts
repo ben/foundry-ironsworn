@@ -15,8 +15,8 @@ declare module '@vue/runtime-core' {
 	}
 }
 
-export function enrichHtml(text) {
-	const rendered = TextEditor.enrichHTML(text, { async: false } as any)
+export async function enrichHtml(text) {
+	const rendered = await TextEditor.enrichHTML(text, { async: true })
 	return rendered.replace(
 		/\(\(rollplus (.*?)\)\)/g,
 		(_, stat) => `
@@ -28,12 +28,12 @@ export function enrichHtml(text) {
 	)
 }
 
-export function enrichMarkdown(md?: string): string {
+export async function enrichMarkdown(md?: string): string {
 	if (md == null) return ''
 
 	const html = CONFIG.IRONSWORN.showdown.makeHtml(md)
 
-	return enrichHtml(html)
+	return await enrichHtml(html)
 }
 
 export const IronswornVuePlugin: Plugin = {

@@ -32,9 +32,7 @@
 		</header>
 		<CollapseTransition>
 			<Suspense v-if="expanded">
-				<template #default>
-					<SfIndexedMoveContents :move="move" />
-				</template>
+				<SfIndexedMoveContents :move="move" />
 			</Suspense>
 		</CollapseTransition>
 	</article>
