@@ -7,26 +7,29 @@
 				:placeholder="
 					$t('SIDEBAR.Search', { types: $t('IRONSWORN.ITEMS.TypeMove') })
 				"
-				@keydown.enter.prevent />
+				@keydown.enter.prevent
+			/>
 			<IronBtn
 				icon="fa:xmark-circle"
 				class="nogrow"
 				:class="$style.btn"
 				style="padding: 6px"
-				@click="clearSearch()" />
+				@click="clearSearch()"
+			/>
 			<IronBtn
 				icon="fa:down-left-and-up-right-to-center"
 				class="nogrow"
 				:class="$style.btn"
 				style="padding: 6px"
-				@click="collapseMoveCategories()" />
+				@click="collapseMoveCategories()"
+			/>
 		</nav>
 
-		<ul
+		<!-- Flat search results -->
+		<!-- <ul
 			v-if="state.searchQuery"
 			class="item-list scrollable flexcol"
 			:class="$style.list">
-			<!-- Flat search results -->
 			<li
 				v-for="(move, resultIndex) of searchResults"
 				:key="move.moveItem().id ?? `move${resultIndex}`"
@@ -37,20 +40,22 @@
 					:thematic-color="move.color"
 					:class="$style.filteredResult" />
 			</li>
-		</ul>
+		</ul> -->
 
-		<ul v-else class="item-list scrollable flexcol" :class="$style.list">
-			<!-- Categorized moves if not searching -->
+		<!-- Categorized moves if not searching -->
+		<ul class="item-list scrollable flexcol" :class="$style.list">
 			<li
 				v-for="(category, catIndex) in state.categories"
 				:key="catIndex"
-				class="nogrow">
-				<SfMoveCategoryRows
+				class="nogrow"
+			>
+				<MoveCategoryIndex
 					ref="allCategories"
 					class="nogrow"
 					:class="$style.catList"
 					:category="category"
-					:data-tourid="`move-category-${category.dataforgedCategory?.$id}`" />
+					:data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
+				/>
 			</li>
 		</ul>
 	</article>
@@ -58,13 +63,13 @@
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
-import type { MoveCategory } from '../../features/custommoves'
+import type { IndexedMoveCategory } from '../../features/custommoves'
 import {
-	createIronswornMoveTree,
-	createStarforgedMoveTree
+	createIndexedIronswornMoveTree,
+	createIndexedStarforgedMoveTree
 } from '../../features/custommoves'
-import SfMoveCategoryRows from './sf-move-category-rows.vue'
-import SfMoverow from './sf-moverow.vue'
+import MoveCategoryIndex from './sf-move-category-index.vue'
+import IndexedMoveRow from './sf-indexed-move-row.vue'
 import IronBtn from './buttons/iron-btn.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
@@ -72,16 +77,16 @@ provide('toolset', props.toolset)
 
 const state = reactive({
 	searchQuery: '',
-	categories: [] as MoveCategory[]
+	categories: [] as IndexedMoveCategory[]
 })
 
-let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
-let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
+let allCategories = ref<InstanceType<typeof MoveCategoryIndex>[]>([])
+let allMoves = ref<InstanceType<typeof IndexedMoveRow>[]>([])
 
 const tempCategories =
 	props.toolset === 'ironsworn'
-		? await createIronswornMoveTree()
-		: await createStarforgedMoveTree()
+		? await createIndexedIronswornMoveTree()
+		: await createIndexedStarforgedMoveTree()
 
 state.categories = tempCategories
 
