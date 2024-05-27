@@ -4,7 +4,7 @@
 		class="list-block"
 		:class="$style.wrapper"
 		:toggle-button-class="$style.toggleBtn"
-		:toggle-tooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
+		:toggle-tooltip="categoryTooltip"
 		:toggle-wrapper-is="`h${headingLevel}`"
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-section-class="`${$style.toggleSection} list-block-header`"
@@ -35,7 +35,9 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import type { IndexedMoveCategory } from '../../features/custommoves.js'
+import { enrichMarkdown } from '../vue-plugin'
 import { snakeCase } from 'lodash-es'
 
 import Collapsible from './collapsible/collapsible.vue'
@@ -60,6 +62,15 @@ const props = withDefaults(
 	}>(),
 	{ headingLevel: 3, highlightDuration: 2000 }
 )
+
+const categoryTooltip = ref(props.category.dataforgedCategory?.Description)
+if (props.category.dataforgedCategory?.Description) {
+	;(async () => {
+		categoryTooltip.value = await enrichMarkdown(
+			props.category.dataforgedCategory?.Description
+		)
+	})()
+}
 </script>
 
 <style lang="scss" module>
