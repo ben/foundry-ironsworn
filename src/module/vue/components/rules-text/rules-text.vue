@@ -4,15 +4,7 @@
 		<section v-if="props.type === 'slot'" class="rules-text-main">
 			<slot name="default"></slot>
 		</section>
-		<EnrichedHtml
-			v-else
-			element="section"
-			class="rules-text-main"
-			:source="props.content ?? ''"
-			:markdown="props.type === 'markdown'"
-			:stripTables="true"
-		/>
-		<!-- <section v-else class="rules-text-main" v-html="enrichedText" /> -->
+		<section v-else class="rules-text-main" v-html="content" />
 		<slot name="after-main"></slot>
 		<footer v-if="props.source" class="rules-text-footer">
 			<RulesSourceInfo :source="props.source" />
@@ -21,7 +13,6 @@
 	</WithRolllisteners>
 </template>
 <script setup lang="ts">
-import { computed } from 'vue'
 import { IronswornHandlebarsHelpers } from '../../../helpers/handlebars.js'
 import { enrichMarkdown, enrichHtml } from '../../vue-plugin.js'
 import RulesSourceInfo from './rules-source-info.vue'
@@ -50,18 +41,15 @@ const props = defineProps<{
 	 */
 	stripTables?: boolean
 }>()
-
-const enrichedText = computed(() => {
-	if (props.type === 'markdown') {
-		const html = enrichMarkdown(props.content as string)
-		if (props.stripTables) return IronswornHandlebarsHelpers.stripTables(html)
-		return html
-	}
-	if (props.type === 'html') {
-		return IronswornHandlebarsHelpers.stripTables(enrichHtml(props.content))
-	}
-	return ''
-})
+let content = props.content
+if (props.type === 'markdown') {
+	content = await enrichMarkdown(content)
+} else {
+	content = await enrichHtml(content)
+}
+if (props.stripTables) {
+	content = IronswornHandlebarsHelpers.stripTables(content)
+}
 </script>
 
 <style lang="scss">
