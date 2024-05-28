@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import { watch, ref } from 'vue'
 import { IronswornItem } from '../../item/item'
 import { enrichHtml } from '../vue-plugin.js'
 
@@ -27,7 +28,14 @@ const props = defineProps<{
 }>()
 defineEmits(['editclick'])
 
-const renderedContent = await enrichHtml(props.text)
+const renderedContent = ref<string>(props.text)
+watch(
+	() => props.text,
+	async () => {
+		renderedContent.value = await enrichHtml(props.text)
+	},
+	{ immediate: true }
+)
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {

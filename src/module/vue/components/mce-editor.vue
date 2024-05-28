@@ -36,14 +36,6 @@ const props = withDefaults(
 
 const data = reactive({ editing: props.editing ?? false })
 
-// Outbound link clicks: broadcast events
-function moveClick(move: IronswornItem) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
-}
-function oracleClick(dfid: string) {
-	CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
-}
-
 const $emit = defineEmits<{ save: [] }>()
 
 onUnmounted(() => $emit('save'))
