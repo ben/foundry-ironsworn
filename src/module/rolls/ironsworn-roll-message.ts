@@ -257,7 +257,7 @@ export class IronswornRollMessage {
 
 		const key = DfRollOutcome[theOutcome]
 		const moveSystem = move.system
-		let moveOutcome = moveSystem.Outcomes?.[key] as IOutcomeInfo
+		let moveOutcome = moveSystem.Outcomes?.[key] as IOutcomeInfo | undefined
 		if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
 			moveOutcome = moveOutcome['With a Match']
 		if (moveOutcome) {
@@ -265,7 +265,7 @@ export class IronswornRollMessage {
 			// out the tables, because there will be a button in the chat message.
 			// If no oracles, that table is probably important to the move
 			// (i.e. SF's "Repair" move), so we leave it in.
-			ret.moveOutcome = enrichMarkdown(moveOutcome.Text)
+			ret.moveOutcome = await enrichMarkdown(moveOutcome.Text)
 			if (moveSystem.Oracles?.length > 0) {
 				ret.moveOutcome = ret.moveOutcome.replace(
 					/<table>[\s\S]*<\/table>/gm,
