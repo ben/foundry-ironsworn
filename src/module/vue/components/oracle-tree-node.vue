@@ -23,20 +23,9 @@
 				/>
 			</h4>
 			<CollapseTransition>
-				<div v-if="state.descriptionExpanded">
-					<h4 v-if="state.singleDescription" v-html="state.singleDescription" />
-					<RulesTextOracle
-						v-for="table in state.tables"
-						:key="table.id"
-						:class="$style.content"
-						:title="state.tables.length > 1 ? table.title : undefined"
-						:table-rows="table.rows"
-						:table-description="table.description"
-						:source="node.dataforgedNode?.Source"
-						@moveclick="moveclick"
-						@oracleclick="oracleclick"
-					/>
-				</div>
+				<Suspense v-if="state.descriptionExpanded">
+					<OracleExpandedDescription :node="node" />
+				</Suspense>
 			</CollapseTransition>
 		</div>
 
@@ -79,17 +68,18 @@
 <script setup lang="ts">
 import { computed, nextTick, reactive, ref } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
+import type { IronswornItem } from '../../item/item'
+import type { OracleTable } from '../../roll-table/oracle-table'
+import type { LegacyTableRow } from '../../roll-table/roll-table-types'
+import { enrichHtml } from '../vue-plugin'
+
 import { FontAwesome } from './icon/icon-common'
 import BtnOracle from './buttons/btn-oracle.vue'
-import type { IronswornItem } from '../../item/item'
-import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 import CollapseTransition from './transition/collapse-transition.vue'
 import IronBtn from './buttons/iron-btn.vue'
 import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
-import type { OracleTable } from '../../roll-table/oracle-table'
-import type { LegacyTableRow } from '../../roll-table/roll-table-types'
-import { enrichHtml } from '../vue-plugin'
+import OracleExpandedDescription from './oracle-expanded-description.vue'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 
@@ -147,15 +137,6 @@ async function toggleDescription() {
 }
 function toggleManually() {
 	state.manuallyExpanded = !state.manuallyExpanded
-}
-
-// Click on a move link: broadcast event
-function moveclick(item: IronswornItem) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
-
-function oracleclick(dfid) {
-	CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
 }
 
 const children = ref([] as any[])
