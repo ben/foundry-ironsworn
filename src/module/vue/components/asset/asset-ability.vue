@@ -6,35 +6,40 @@
 		:icon-switch-class="$style.bullet"
 		:content-hover-fx="false"
 		:transition="IronswornSettings.deco.asset.ability.transition"
-		@change="toggleAbility">
+		@change="toggleAbility"
+	>
 		<template #checked="scope">
 			<FontIcon
 				v-bind="{
 					...scope,
 					...IronswornSettings.deco.asset.ability.checked
-				}" />
+				}"
+			/>
 		</template>
 		<template #unchecked="scope">
 			<FontIcon
 				v-bind="{
 					...scope,
 					...IronswornSettings.deco.asset.ability.unchecked
-				}" />
+				}"
+			/>
 		</template>
 		<template #default>
-			<WithRolllisteners
+			<RenderedText
 				element="div"
 				:class="$style.rulesText"
 				class="flexcol"
 				@moveclick="moveclick"
-				v-html="$enrichHtml(ability.description)" />
+				:content="ability.description"
+			/>
 			<Clock
 				v-if="ability.hasClock"
 				:class="$style.clock"
 				:wedges="ability.clockMax"
 				:ticked="ability.clockTicks"
 				:readonly="readonlyClock ?? !canUpdate"
-				@click="updateClock($event)" />
+				@click="updateClock($event)"
+			/>
 		</template>
 	</IronCheckbox>
 </template>
@@ -46,7 +51,7 @@ import type { AssetAbility } from '../../../item/subtypes/asset'
 import Clock from '../clock.vue'
 import FontIcon from '../icon/font-icon.vue'
 import IronCheckbox from '../input/iron-checkbox.vue'
-import WithRolllisteners from '../with-rolllisteners.vue'
+import RenderedText from 'component:rendered-text.vue'
 
 const props = defineProps<{
 	/**

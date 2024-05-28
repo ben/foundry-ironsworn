@@ -58,73 +58,79 @@
 		</header>
 
 		<CollapseTransition>
-			<section
-				v-if="expanded ?? !isCollapsible"
-				:id="bodyId"
-				:class="$style.body"
-				class="flexcol"
-				:aria-expanded="expanded"
-			>
-				<!-- FIELDS -->
+			<Suspense>
 				<section
-					v-if="asset.system.fields?.length"
-					:class="$style.fields"
-					class="flexcol nogrow"
+					v-if="expanded ?? !isCollapsible"
+					:id="bodyId"
+					:class="$style.body"
+					class="flexcol"
+					:aria-expanded="expanded"
 				>
-					<AssetField
-						v-for="(field, i) in asset.system.fields"
-						:key="i"
-						:field="field"
-						:update-fn="(delta) => updateField(i, delta)"
+					<!-- FIELDS -->
+					<section
+						v-if="asset.system.fields?.length"
+						:class="$style.fields"
+						class="flexcol nogrow"
+					>
+						<AssetField
+							v-for="(field, i) in asset.system.fields"
+							:key="i"
+							:field="field"
+							:update-fn="(delta) => updateField(i, delta)"
+							class="nogrow"
+							:readonly="readonlyFields"
+						/>
+					</section>
+
+					<!-- DESCRIPTION -->
+					<RenderedText
+						v-if="asset.system.description"
+						element="div"
 						class="nogrow"
-						:readonly="readonlyFields"
+						:class="$style.requirement"
+						:content="asset.system.description"
+					/>
+
+					<!-- REQUIREMENT -->
+					<RenderedText
+						v-if="asset.system.requirement"
+						element="div"
+						class="nogrow"
+						:class="$style.requirement"
+						:markdown="true"
+						:content="asset.system.requirement"
+					/>
+
+					<!-- ABILITIES -->
+					<ul class="flexcol nogrow" :class="$style.abilities">
+						<template
+							v-for="(ability, i) in asset.system.abilities"
+							:key="`ability${i}`"
+						>
+							<li v-if="hideDisabledAbilities ? ability.enabled : true">
+								<AssetAbility
+									:class="$style.ability"
+									:ability="ability"
+									:update-fn="(delta) => updateAbility(i, delta)"
+									:toggle="toggleAbilities"
+									:readonly-clock="readonlyClocks"
+									class="flexrow"
+								/>
+							</li>
+						</template>
+					</ul>
+
+					<AssetToggle
+						v-if="asset.system.exclusiveOptions.length > 0"
+						class="flexrow nogrow"
+					/>
+
+					<AssetConditionMeter
+						v-if="asset.system.track"
+						class="flexrow nogrow"
 					/>
 				</section>
-
-				<!-- DESCRIPTION -->
-				<WithRolllisteners
-					v-if="asset.system.description"
-					element="div"
-					class="nogrow"
-					:class="$style.requirement"
-					v-html="$enrichHtml(asset.system.description)"
-				/>
-
-				<!-- REQUIREMENT -->
-				<WithRolllisteners
-					v-if="asset.system.requirement"
-					element="div"
-					class="nogrow"
-					:class="$style.requirement"
-					v-html="$enrichMarkdown(asset.system.requirement)"
-				/>
-
-				<!-- ABILITIES -->
-				<ul class="flexcol nogrow" :class="$style.abilities">
-					<template
-						v-for="(ability, i) in asset.system.abilities"
-						:key="`ability${i}`"
-					>
-						<li v-if="hideDisabledAbilities ? ability.enabled : true">
-							<AssetAbility
-								:class="$style.ability"
-								:ability="ability"
-								:update-fn="(delta) => updateAbility(i, delta)"
-								:toggle="toggleAbilities"
-								:readonly-clock="readonlyClocks"
-								class="flexrow"
-							/>
-						</li>
-					</template>
-				</ul>
-
-				<AssetToggle
-					v-if="asset.system.exclusiveOptions.length > 0"
-					class="flexrow nogrow"
-				/>
-
-				<AssetConditionMeter v-if="asset.system.track" class="flexrow nogrow" />
-			</section>
+			</Suspense>
 		</CollapseTransition>
 	</article>
 </template>
@@ -134,7 +140,7 @@ import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { ItemKey, $ItemKey } from '../../provisions'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
-import WithRolllisteners from 'component:with-rolllisteners.vue'
+import RenderedText from 'component:rendered-text.vue'
 import AssetConditionMeter from 'component:asset/asset-condition-meter.vue'
 import AssetToggle from 'component:asset/asset-toggle.vue'
 import type {
