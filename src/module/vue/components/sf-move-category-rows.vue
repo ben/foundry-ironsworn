@@ -4,27 +4,30 @@
 		class="list-block"
 		:class="$style.wrapper"
 		:toggle-button-class="$style.toggleBtn"
-		:toggle-tooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
+		:toggle-tooltip="categoryTooltip"
 		:toggle-wrapper-is="`h${headingLevel}`"
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-section-class="`${$style.toggleSection} list-block-header`"
 		:base-id="`move_category_${snakeCase(category.displayName)}`"
 		:toggle-label="category.displayName"
-		:toggle-text-class="$style.toggleText">
+		:toggle-text-class="$style.toggleText"
+	>
 		<template #default>
 			<ul class="flexcol" :class="$style.list">
 				<li
 					v-for="(move, i) of category.moves"
 					:key="i"
 					class="list-block-item nogrow"
-					:class="$style.listItem">
+					:class="$style.listItem"
+				>
 					<SfMoverow
 						ref="$children"
 						:move="move"
 						:heading-level="headingLevel + 1"
 						:class="$style.moveRow"
 						thematic-color="transparent"
-						@afterExpand="afterMoveExpand" />
+						@afterExpand="afterMoveExpand"
+					/>
 				</li>
 			</ul>
 		</template>
@@ -37,6 +40,7 @@ import type { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash-es'
+import { enrichMarkdown } from '../vue-plugin'
 
 const props = withDefaults(
 	defineProps<{
@@ -63,6 +67,11 @@ const props = withDefaults(
 )
 
 let $children = ref<InstanceType<typeof SfMoverow>[]>([])
+
+const categoryTooltip = ref(props.category.dataforgedCategory?.Description)
+;(async () => {
+	categoryTooltip.value = await enrichMarkdown(categoryTooltip.value)
+})()
 
 /**
  * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.

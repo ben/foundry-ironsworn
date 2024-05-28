@@ -15,21 +15,25 @@
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-label="move?.displayName"
 		:data-move-id="item._id"
-		:data-move-uuid="$item.uuid">
+		:data-move-uuid="$item.uuid"
+	>
 		<template #after-toggle>
 			<section
 				:class="$style.controls"
 				class="nogrow"
 				data-tooltip-direction="UP"
-				data-tourid="move-buttons">
+				data-tourid="move-buttons"
+			>
 				<slot name="controls">
 					<slot
 						name="btn-roll-move"
-						v-bind="{ disabled: !canRoll, move, class: $style.btn }">
+						v-bind="{ disabled: !canRoll, move, class: $style.btn }"
+					>
 						<BtnRollmove
 							:disabled="!canRoll"
 							:move="move"
-							:class="$style.btn" />
+							:class="$style.btn"
+						/>
 					</slot>
 					<slot
 						name="btn-oracle"
@@ -37,11 +41,13 @@
 							node: data.oracles[0] ?? {},
 							disabled: preventOracle,
 							class: $style.btn
-						}">
+						}"
+					>
 						<BtnOracle
 							:node="data.oracles[0] ?? {}"
 							:disabled="preventOracle"
-							:class="$style.btn" />
+							:class="$style.btn"
+						/>
 					</slot>
 					<slot name="btn-chat" v-bind="{ move, class: $style.btn }">
 						<BtnSendmovetochat :move="move" :class="$style.btn" />
@@ -54,13 +60,15 @@
 				:data="item"
 				:is-progress-move="$item.system.isProgressMove"
 				:class="$style.summary"
-				@moveclick="moveClick">
+				@moveclick="moveClick"
+			>
 				<template #after-footer>
 					<OracleTreeNode
 						v-for="node of data.oracles"
 						:key="node.displayName"
 						:class="$style.oracle"
-						:node="node" />
+						:node="node"
+					/>
 				</template>
 			</RulesTextMove>
 		</template>
@@ -135,9 +143,10 @@ const preventOracle = computed(() => {
 	return data.oracles.length !== 1
 })
 
-const toggleTooltip = computed(() =>
-	enrichMarkdown($item.value.system.Trigger?.Text)
-)
+const toggleTooltip = ref($item.value.system.Trigger?.Text)
+;(async function () {
+	toggleTooltip.value = await enrichMarkdown(toggleTooltip.value)
+})()
 
 const moveId = computed(() => props.move.moveItem().id)
 
