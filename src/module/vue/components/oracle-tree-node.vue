@@ -57,7 +57,6 @@
 						:key="child.displayName"
 						ref="children"
 						:node="child"
-						@oracleclick="oracleclick"
 					/>
 				</div>
 			</CollapseTransition>
@@ -68,7 +67,6 @@
 <script setup lang="ts">
 import { computed, nextTick, reactive, ref } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import type { IronswornItem } from '../../item/item'
 import type { OracleTable } from '../../roll-table/oracle-table'
 import type { LegacyTableRow } from '../../roll-table/roll-table-types'
 import { enrichHtml } from '../vue-plugin'
@@ -86,13 +84,6 @@ const props = defineProps<{ node: IOracleTreeNode }>()
 const state = reactive({
 	manuallyExpanded: props.node.forceExpanded ?? false,
 	descriptionExpanded: false,
-	singleDescription: undefined as string | undefined,
-	tables: [] as Array<{
-		id: string
-		title: string
-		rows: Array<LegacyTableRow>
-		description: string
-	}>,
 	highlighted: false
 })
 
@@ -103,36 +94,6 @@ const isLeaf = computed(() => {
 })
 
 async function toggleDescription() {
-	if (state.tables.length === 0) {
-		state.tables = await Promise.all(
-			props.node.tables.map(async (tableUuid) => {
-				const tableData = (await fromUuid(tableUuid)) as OracleTable
-				return {
-					id: tableUuid,
-					title: tableData.name ?? '',
-					rows: tableData.results.map((row: any) => ({
-						low: row.range[0],
-						high: row.range[1],
-						text: row.text,
-						selected: false
-					})),
-					description: tableData.description
-				}
-			})
-		)
-
-		// If all descriptions match, collapse them into one
-		if (
-			state.tables.every((t) => t.description === state.tables[0].description)
-		) {
-			state.singleDescription = enrichHtml(state.tables[0].description)
-			for (const t of state.tables) {
-				t.description = ''
-			}
-		}
-
-		await nextTick()
-	}
 	state.descriptionExpanded = !state.descriptionExpanded
 }
 function toggleManually() {
