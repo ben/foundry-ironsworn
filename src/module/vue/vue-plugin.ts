@@ -10,8 +10,8 @@ declare module '@vue/runtime-core' {
 		 */
 		$t: (stringId: string, data?: Record<string, unknown>) => string
 		$concat: (...args: any[]) => string
-		$enrichMarkdown: (string) => string
-		$enrichHtml: (string) => string
+		$enrichMarkdown: (string) => Promise<string>
+		$enrichHtml: (string) => Promise<string>
 	}
 }
 
@@ -28,7 +28,7 @@ export async function enrichHtml(text) {
 	)
 }
 
-export async function enrichMarkdown(md?: string): string {
+export async function enrichMarkdown(md?: string): Promise<string> {
 	if (md == null) return ''
 
 	const html = CONFIG.IRONSWORN.showdown.makeHtml(md)
