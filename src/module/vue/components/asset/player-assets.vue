@@ -4,14 +4,16 @@
 		drop-type="asset"
 		class="flexcol"
 		:aria-label="$t('IRONSWORN.ITEMS.TypeAsset')"
-		:class="$style.wrapper">
+		:class="$style.wrapper"
+	>
 		<slot name="start"></slot>
 
 		<CollapseTransition
 			tag="ul"
 			class="flexcol item-list"
 			group
-			:class="$style.list">
+			:class="$style.list"
+		>
 			<li v-for="(asset, i) in assets" :key="asset._id" class="flexrow nogrow">
 				<slot name="orderButtons">
 					<OrderButtons
@@ -19,7 +21,8 @@
 						:i="i"
 						:length="assets.length"
 						@sortUp="assetSortUp"
-						@sortDown="assetSortDown" />
+						@sortDown="assetSortDown"
+					/>
 				</slot>
 				<AssetCompact :asset="asset" :class="$style.asset" />
 			</li>
@@ -30,7 +33,8 @@
 				icon="fa:book-atlas"
 				block
 				:text="$t('IRONSWORN.ITEMS.TypeAsset')"
-				@click="assetBrowser" />
+				@click="assetBrowser"
+			/>
 		</section>
 		<slot name="end"></slot>
 	</DropTarget>
@@ -61,7 +65,7 @@ const editMode = computed(() => {
 
 async function applySort(oldI, newI, sortBefore, collection) {
 	const sorted = collection.sort(
-		(a, b) => (a.data.sort || 0) - (b.data.sort || 0)
+		(a, b) => (a.system.sort || 0) - (b.system.sort || 0)
 	)
 	const updates = SortingHelpers.performIntegerSort(sorted[oldI], {
 		target: sorted[newI],
