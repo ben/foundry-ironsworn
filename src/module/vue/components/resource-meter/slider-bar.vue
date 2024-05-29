@@ -104,7 +104,7 @@ function setSliderValue(newValue: number, event: Event) {
 		return
 	}
 	event.preventDefault()
-	$emit('change', Math.clamp(newValue, props.min, currentMax.value))
+	$emit('change', Math.clamped(newValue, props.min, currentMax.value))
 }
 
 /**

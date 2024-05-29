@@ -52,7 +52,7 @@ const props = defineProps<{
 }>()
 
 const score = computed(() =>
-	Math.clamp(
+	Math.clamped(
 		Math.floor(props.ticks / ProgressModel.TICKS_PER_BOX),
 		ProgressModel.SCORE_MIN,
 		ProgressModel.SCORE_MAX

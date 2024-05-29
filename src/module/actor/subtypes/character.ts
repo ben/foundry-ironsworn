@@ -45,7 +45,7 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 
 	// FIXME: These won't be required when impacts are represented as ActiveEffects
 	get momentumReset() {
-		return Math.clamp(
+		return Math.clamped(
 			this.momentum.resetValue - this.#impactCount,
 			MomentumField.RESET_MIN,
 			this.momentum.max
@@ -53,7 +53,7 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 	}
 
 	get momentumMax() {
-		return Math.clamp(
+		return Math.clamped(
 			this.momentum.max - this.#impactCount,
 			MomentumField.MIN,
 			MomentumField.MAX
