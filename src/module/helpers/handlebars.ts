@@ -194,8 +194,8 @@ export class IronswornHandlebarsHelpers {
 		})
 	}
 
-	static enrichHtml(text: string) {
-		const rendered = TextEditor.enrichHTML(text, { async: false } as any)
+	static async enrichHtml(text: string) {
+		const rendered = await TextEditor.enrichHTML(text, { async: true } as any)
 		return rendered.replace(
 			/\(\(rollplus (.*?)\)\)/g,
 			(_, stat) => `
@@ -207,10 +207,10 @@ export class IronswornHandlebarsHelpers {
 		)
 	}
 
-	static enrichMarkdown(md?: string) {
+	static async enrichMarkdown(md?: string) {
 		if (md == null) return ''
 		const html = CONFIG.IRONSWORN.showdown.makeHtml(md)
-		return IronswornHandlebarsHelpers.enrichHtml(html)
+		return await IronswornHandlebarsHelpers.enrichHtml(html)
 	}
 
 	static stripTables(html: string) {

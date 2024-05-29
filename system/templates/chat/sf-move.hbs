@@ -14,9 +14,9 @@
 	>
 		<div class='move-outcome'>
 			{{#if move.system.Oracles?.length}}
-				{{{stripTables (enrichMarkdown move.system.Text)}}}
+				{{{stripTables renderedText}}}
 			{{else}}
-				{{{enrichMarkdown move.system.Text}}}
+				{{{renderedText}}}
 			{{/if}}
 		</div>
 	</div>

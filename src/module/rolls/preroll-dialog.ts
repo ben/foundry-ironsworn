@@ -26,6 +26,7 @@ import { ConditionMeterField } from '../fields/MeterField'
 import type { AssetConditionMeter } from '../item/subtypes/asset'
 import { AssetConditionMeterField } from '../item/subtypes/asset'
 import { IronswornSettings } from '../helpers/settings'
+import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 
 interface showForMoveOpts {
 	actor?: IronswornActor
@@ -486,6 +487,11 @@ export class IronswornPrerollDialog extends Dialog<
 		const graphic = await renderRollGraphic({
 			preRollOptions: data.prerollOptions
 		})
+		let renderedTriggerText = data.move?.system?.Trigger?.Text
+		if (renderedTriggerText)
+			renderedTriggerText = await IronswornHandlebarsHelpers.enrichMarkdown(
+				renderedTriggerText
+			)
 		const advancedOptionsOpen = IronswornSettings.get(
 			'advanced-rolling-default-open'
 		)
@@ -493,6 +499,7 @@ export class IronswornPrerollDialog extends Dialog<
 			'systems/foundry-ironsworn/templates/rolls/preroll-dialog.hbs'
 		return await renderTemplate(template, {
 			...data,
+			renderedTriggerText,
 			graphic,
 			advancedOptionsOpen
 		})

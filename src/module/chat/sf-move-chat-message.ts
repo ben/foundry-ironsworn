@@ -2,6 +2,7 @@ import { compact } from 'lodash-es'
 import { getDFMoveByDfId } from '../dataforged'
 import type { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
+import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 
 export async function createSfMoveChatMessage(move: IronswornItem<'sfmove'>) {
 	const { dfid, Oracles } = move.system
@@ -11,7 +12,11 @@ export async function createSfMoveChatMessage(move: IronswornItem<'sfmove'>) {
 		await Promise.all(dfids.map(OracleTable.getByDfId))
 	)
 
-	const params = { move, nextOracles }
+	const renderedText = await IronswornHandlebarsHelpers.enrichMarkdown(
+		move.system.Text
+	)
+
+	const params = { move, nextOracles, renderedText }
 	const content = await renderTemplate(
 		'systems/foundry-ironsworn/templates/chat/sf-move.hbs',
 		params
