@@ -2,7 +2,7 @@ import type { TableResultDataConstructorData } from '@league-of-foundry-develope
 import { ChallengeRank } from '../../fields/ChallengeRank'
 import { ProgressTicksField } from '../../fields/ProgressTicksField'
 import type { TableResultStub } from '../../fields/TableResultField'
-import { TableResultField } from '../../fields/TableResultField'
+import { V11TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
 import { OracleTable } from '../../roll-table/oracle-table'
 import type { IronswornActor } from '../actor'
@@ -118,7 +118,7 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 			objective: new fields.HTMLField(),
 			description: new fields.HTMLField(),
 			notes: new fields.HTMLField(),
-			denizens: new fields.ArrayField(new TableResultField(), {
+			denizens: new fields.ArrayField(new V11TableResultField(), {
 				initial: [
 					{
 						range: [1, 27],

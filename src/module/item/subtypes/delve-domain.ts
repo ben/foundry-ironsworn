@@ -1,4 +1,4 @@
-import { TableResultField } from '../../fields/TableResultField'
+import { V11TableResultField } from '../../fields/TableResultField'
 import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 import type { DelveSiteDanger, DelveSiteFeature } from './common'
@@ -38,10 +38,10 @@ export class DelveDomainModel extends foundry.abstract.TypeDataModel<
 		return {
 			summary: new fields.HTMLField(),
 			description: new fields.HTMLField(),
-			features: new fields.ArrayField(new TableResultField() as any, {
+			features: new fields.ArrayField(new V11TableResultField() as any, {
 				initial: this.features as DelveSiteFeature[]
 			}),
-			dangers: new fields.ArrayField(new TableResultField() as any, {
+			dangers: new fields.ArrayField(new V11TableResultField() as any, {
 				initial: this.dangers as DelveSiteDanger[]
 			})
 		}

@@ -7,15 +7,16 @@ export type TableResultStub = Omit<
 >
 
 /** A field containing TableResult constructor data, used to generic dynamic RollTables like those used for delve site denizens, features, and dangers. */
-export class TableResultField extends foundry.data.fields
+// Now a legacy type because Foundry v12 changed the types
+export class V11TableResultField extends foundry.data.fields
 	.SchemaField<TableResultStub> {
 	constructor(options?: Partial<TableResultField.Options>) {
 		const fields = foundry.data.fields
 		// based on BaseTableResult#defineSchema
 		super({
 			type: new fields.NumberField({
-				choices: Object.values(CONST.TABLE_RESULT_TYPES) as any,
-				initial: CONST.TABLE_RESULT_TYPES.TEXT,
+				choices: [0, 1, 2],
+				initial: 0,
 				validationError: 'must be a value in CONST.TABLE_RESULT_TYPES'
 			}),
 			text: new fields.HTMLField({ required: false }),
@@ -46,7 +47,7 @@ export class TableResultField extends foundry.data.fields
 		return fieldData
 	}
 }
-export interface TableResultField
+export interface V11TableResultField
 	extends foundry.data.fields.SchemaField<TableResultStub> {}
 export namespace TableResultField {
 	export interface Options
