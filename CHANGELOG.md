@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Compatibility with Foundry v12 ([#983](https://github.com/ben/foundry-ironsworn/pull/983))
+
 ## 1.22.13
 
 - Extend the new setting into a "manual rolling mode" ([#961](https://github.com/ben/foundry-ironsworn/pull/961))
