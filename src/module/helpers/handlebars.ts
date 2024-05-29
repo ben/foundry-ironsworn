@@ -151,10 +151,6 @@ export class IronswornHandlebarsHelpers {
 			return ret
 		})
 
-		Handlebars.registerHelper('enrichHtml', this.enrichHtml)
-
-		Handlebars.registerHelper('enrichMarkdown', this.enrichMarkdown)
-
 		Handlebars.registerHelper('stripTables', this.stripTables)
 
 		Handlebars.registerHelper('rangeEach', function (context, _options) {
