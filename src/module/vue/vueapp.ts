@@ -118,7 +118,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 				)
 			}
 
-			if (this instanceof FormApplication) {
+			if (this instanceof FormApplication && this.object.apps) {
 				this.object.apps[this.appId] = this
 			}
 
