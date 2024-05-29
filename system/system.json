@@ -9,7 +9,7 @@
   "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.22.13/ironsworn.zip",
   "compatibility": {
     "minimum": 11,
-    "verified": 11
+    "verified": 12
   },
   "authors": [
     {
