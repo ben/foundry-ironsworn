@@ -1,5 +1,6 @@
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornJournalEntry } from '../journal/journal-entry'
+import { IronswornJournalPage } from '../journal/journal-entry-page'
 
 export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 	constructor() {
@@ -76,10 +77,17 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 			sections.push(`<h2>${category}</h2> ${description}`)
 		}
 
+		const title = game.i18n.localize('IRONSWORN.YourWorldTruths')
 		const journal = await IronswornJournalEntry.create({
-			name: game.i18n.localize('IRONSWORN.YourWorldTruths'),
-			content: sections.join('\n')
+			name: title
 		})
+		await IronswornJournalPage.create(
+			{
+				name: title,
+				text: { content: sections.join('\n') }
+			},
+			{ parent: journal }
+		)
 		journal?.sheet?.render(true)
 		this.close()
 	}

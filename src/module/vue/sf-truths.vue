@@ -6,19 +6,22 @@
 				:key="i"
 				nogrow
 				:text="truth.je().name ?? '???'"
-				@click="scrollToCategory(i)" />
+				@click="scrollToCategory(i)"
+			/>
 
 			<hr class="nogrow" />
 			<IronBtn
 				nogrow
 				icon="ironsworn:d10-tilt"
 				:text="$t('IRONSWORN.RandomizeAll')"
-				@click="randomizeAll" />
+				@click="randomizeAll"
+			/>
 			<IronBtn
 				nogrow
 				:text="$t('IRONSWORN.SaveYourTruths')"
 				icon="fa:feather"
-				@click="saveTruths" />
+				@click="saveTruths"
+			/>
 		</nav>
 		<section class="flexcol">
 			<aside class="flexrow nowrap">
@@ -29,7 +32,8 @@
 				v-for="truth in data.truths"
 				ref="categoryComponents"
 				:key="(truth.je()._id as string)"
-				:je="truth.je" />
+				:je="truth.je"
+			/>
 		</section>
 	</div>
 </template>
@@ -41,6 +45,7 @@ import { $LocalEmitterKey } from './provisions'
 import IronBtn from './components/buttons/iron-btn.vue'
 import TruthCategory from './components/truth/truth-category.vue'
 import { IronswornJournalEntry } from '../journal/journal-entry'
+import { IronswornJournalPage } from '../journal/journal-entry-page'
 
 const props = defineProps<{
 	data: {
@@ -60,9 +65,10 @@ function scrollToCategory(i: number) {
 const $localEmitter = inject($LocalEmitterKey)
 async function saveTruths() {
 	// Fetch values from the category components
-	const values = categoryComponents.value
-		.map((x) => x.selectedValue())
-		.filter((x) => x.valid)
+	const allValues = await Promise.all(
+		categoryComponents.value.map((x) => x.selectedValue())
+	)
+	const values = allValues.filter((x) => x.valid)
 
 	const content = values
 		.map(
@@ -73,10 +79,18 @@ async function saveTruths() {
 		)
 		.join('\n\n')
 
+	const title = game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth')
 	const journal = await IronswornJournalEntry.create({
-		name: game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth'),
-		content
+		name: title
 	})
+	await IronswornJournalPage.create(
+		{
+			name: title,
+			text: { content }
+		},
+		{ parent: journal }
+	)
+
 	journal?.sheet?.render(true)
 	$localEmitter?.emit('closeApp')
 }

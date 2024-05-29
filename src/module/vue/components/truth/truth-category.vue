@@ -11,18 +11,21 @@
 			ref="selectables"
 			:page="page"
 			:radio-group="dfid"
-			@change="valueChange" />
+			@change="valueChange"
+		/>
 
 		<CustomTruth
 			ref="customTruth"
 			:radio-group="dfid"
-			@change="customValueChange" />
+			@change="customValueChange"
+		/>
 
 		<div
 			v-for="(page, i) in nonTruthPages"
 			:key="`nonTruthPage${i}`"
 			class="nogrow"
-			v-html="page.text.content" />
+			v-html="page.text.content"
+		/>
 	</div>
 </template>
 
@@ -64,12 +67,12 @@ function customValueChange(html: string) {
 	state.html = html
 }
 
-function selectedValue() {
+async function selectedValue() {
 	let html = state.html
 	if (!html) {
 		html = `
-      ${enrichMarkdown(`**${state.title}**`)}
-      ${enrichMarkdown(state.text)}
+      ${await enrichMarkdown(`**${state.title}**`)}
+      ${await enrichMarkdown(state.text)}
     `
 	}
 	html += nonTruthPages?.map((x) => x.text.content).join('\n\n')
