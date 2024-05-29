@@ -5,12 +5,14 @@
 				v-for="(option, i) in item.system.exclusiveOptions"
 				:key="`item${i}`"
 				class="form-group nogrow"
-				style="gap: var(--ironsworn-spacer-md)">
+				style="gap: var(--ironsworn-spacer-md)"
+			>
 				<input
 					v-model="option.name"
 					type="text"
 					:placeholder="$t('IRONSWORN.Label')"
-					@blur="save" />
+					@blur="save"
+				/>
 				<IronBtn icon="fa:trash" @click="deleteOption(i)" />
 			</div>
 		</CollapseTransition>
@@ -18,7 +20,8 @@
 			icon="fa:plus"
 			block
 			:text="$t('IRONSWORN.Option')"
-			@click="addOption" />
+			@click="addOption"
+		/>
 	</div>
 </template>
 
@@ -33,13 +36,13 @@ const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)
 
 function save() {
-	const { exclusiveOptions } = item.value?.data
+	const { exclusiveOptions } = item.value?.system
 	$item?.update({ system: { exclusiveOptions } })
 }
 
 function deleteOption(idx) {
 	const exclusiveOptions = Object.values(
-		item.value?.data.exclusiveOptions
+		item.value?.system.exclusiveOptions
 	) as any[]
 	const needNewSelection = exclusiveOptions[idx].selected
 	exclusiveOptions.splice(idx, 1)
@@ -51,7 +54,7 @@ function deleteOption(idx) {
 
 async function addOption() {
 	const exclusiveOptions = Object.values(
-		item.value?.data.exclusiveOptions
+		item.value?.system.exclusiveOptions
 	) as any[]
 	exclusiveOptions.push({
 		name: '',
