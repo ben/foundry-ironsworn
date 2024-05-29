@@ -681,6 +681,7 @@ function nameChange() {
 
 async function updateAllTokens(data) {
 	// Prototype token
+	// @ts-expect-error - missing field in types
 	await $actor?.prototypeToken?.update(data)
 
 	// All tokens in the scene
