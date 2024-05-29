@@ -5,7 +5,8 @@
 				<!-- Region -->
 				<label
 					class="flexrow"
-					style="flex-basis: 150px; gap: var(--ironsworn-spacer-xl)">
+					style="flex-basis: 150px; gap: var(--ironsworn-spacer-xl)"
+				>
 					<span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
 					<select v-model="region" @change="regionChanged">
 						<option value="terminus">
@@ -23,7 +24,8 @@
 				<!-- Subtype -->
 				<label
 					class="flexrow"
-					style="flex-basis: 200px; gap: var(--ironsworn-spacer-xl)">
+					style="flex-basis: 200px; gap: var(--ironsworn-spacer-xl)"
+				>
 					{{ $t('IRONSWORN.LocationType') }}
 					<select v-model="data.actor.system.subtype" @change="subtypeChanged">
 						<option value="planet">Planet</option>
@@ -38,7 +40,8 @@
 			<!-- Klass -->
 			<label
 				class="flexrow nogrow"
-				style="position: relative; gap: var(--ironsworn-spacer-xl)">
+				style="position: relative; gap: var(--ironsworn-spacer-xl)"
+			>
 				<!-- TODO: i18n and subtype text -->
 				<span class="select-label">{{ subtypeSelectText }}:</span>
 				<select
@@ -46,11 +49,13 @@
 					:class="{
 						highlighted: state.firstLookHighlight && firstLookWillRandomizeKlass
 					}"
-					@change="klassChanged">
+					@change="klassChanged"
+				>
 					<option
 						v-for="opt in klassOptions"
 						:key="opt.value"
-						:value="opt.value">
+						:value="opt.value"
+					>
 						{{ opt.label }}
 					</option>
 				</select>
@@ -67,7 +72,8 @@
 						line-height: 30px;
 					"
 					:tooltip="randomKlassTooltip"
-					@click="randomizeKlass" />
+					@click="randomizeKlass"
+				/>
 			</label>
 		</template>
 		<template #header>
@@ -77,7 +83,8 @@
 				:name-class="{
 					highlighted: state.firstLookHighlight && firstLookWillRandomizeName
 				}"
-				@change="nameChange">
+				@change="nameChange"
+			>
 				<IronBtn
 					v-if="canRandomizeName"
 					class="btn-randomize-name"
@@ -85,7 +92,8 @@
 					nogrow
 					:tooltip="$t('IRONSWORN.RandomName')"
 					icon="ironsworn:d10-tilt"
-					@click="randomizeName" />
+					@click="randomizeName"
+				/>
 			</SheetHeaderBasic>
 		</template>
 
@@ -98,7 +106,8 @@
 						:text="$t('IRONSWORN.RollForDetails')"
 						@click="rollFirstLook"
 						@mouseenter="state.firstLookHighlight = true"
-						@mouseleave="state.firstLookHighlight = false" />
+						@mouseleave="state.firstLookHighlight = false"
+					/>
 				</div>
 			</div>
 			<div v-for="(row, i) of oracles" :key="`row${i}`" class="flexrow boxrow">
@@ -116,7 +125,8 @@
 								: undefined
 						"
 						icon="ironsworn:d10-tilt"
-						@click="rollOracle(oracle)">
+						@click="rollOracle(oracle)"
+					>
 						<template #text>
 							{{ oracle.title }}
 							<span v-if="oracle.qty" class="oracle-quantity"
@@ -130,7 +140,8 @@
 		<section class="flexcol">
 			<MceEditor
 				v-model="data.actor.system.description"
-				@save="saveDescription" />
+				@save="saveDescription"
+			/>
 		</section>
 	</SheetBasic>
 </template>
@@ -558,14 +569,24 @@ async function saveSubtype(subtype) {
 		derelict: 2,
 		vault: 2
 	}[subtype]
-	await updateAllTokens({ img, scale })
+	await updateAllTokens({
+		img, // v11
+		'texture.src': img, // v12
+
+		scale, // v11
+		'texture.scaleX': scale, // v12
+		'texture.scaleY': scale // v12
+	})
 }
 async function saveKlass(klass) {
 	const { subtype } = props.data.actor.system
 	const img = randomImage(subtype, klass)
 
 	await $actor?.update({ img: img || undefined, system: { klass } })
-	await updateAllTokens({ img })
+	await updateAllTokens({
+		img, // v11
+		'texture.src': img // v12
+	})
 }
 
 async function drawAndReturnResult(
@@ -660,13 +681,13 @@ function nameChange() {
 
 async function updateAllTokens(data) {
 	// Prototype token
-	await $actor?.data.token.update(data)
+	await $actor?.prototypeToken?.update(data)
 
 	// All tokens in the scene
 	const activeTokens = $actor?.getActiveTokens()
 	const updates =
 		activeTokens?.map((at) => ({
-			_id: at.data._id,
+			_id: at.id,
 			...data
 		})) ?? []
 	await canvas?.scene?.updateEmbeddedDocuments('Token', updates)
