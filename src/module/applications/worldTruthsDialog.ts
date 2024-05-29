@@ -84,6 +84,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 		await IronswornJournalPage.create(
 			{
 				name: title,
+				// @ts-expect-error - let Foundry choose the default format, because it's a number in v11 and a string in v12
 				text: { content: sections.join('\n') }
 			},
 			{ parent: journal }
