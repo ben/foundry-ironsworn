@@ -72,7 +72,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		const drawResult = await table?.draw({ displayChat: false })
 
 		this._createWithFolder(
-			drawResult?.results[0]?.system.text ||
+			drawResult?.results[0]?.text ||
 				game.i18n.localize(CONFIG.Actor.typeLabels.character),
 			'character',
 			ev.currentTarget.dataset.img || undefined
