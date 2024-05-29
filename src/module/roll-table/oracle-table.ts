@@ -329,6 +329,7 @@ export class OracleTable extends RollTable {
 						? CONST.CHAT_MESSAGE_TYPES.ROLL
 						: CONST.CHAT_MESSAGE_TYPES.OTHER,
 				roll,
+				rolls: [roll],
 				sound: roll != null ? CONFIG.sounds.dice : null,
 				flags
 			},
