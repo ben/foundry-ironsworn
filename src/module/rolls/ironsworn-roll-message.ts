@@ -201,7 +201,8 @@ export class IronswornRollMessage {
 				speaker,
 				content,
 				type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-				roll: this.roll.roll
+				roll: this.roll.roll,
+				rolls: [this.roll.roll]
 			}
 
 			const cls = CONFIG.ChatMessage.documentClass
