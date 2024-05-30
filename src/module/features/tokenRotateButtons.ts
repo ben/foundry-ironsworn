@@ -4,6 +4,7 @@ function rotateTokenBy(ev: JQuery.ClickEvent, tokenData: any, angle: number) {
 	ev.preventDefault()
 	const token = canvas?.scene?.tokens.get(tokenData._id)
 	if (token == null) return
+	// @ts-expect-error
 	const rotation = token.rotation + angle
 	void canvas?.scene?.updateEmbeddedDocuments('Token', [
 		{ _id: token.id, rotation }
