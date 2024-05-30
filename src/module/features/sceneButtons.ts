@@ -40,7 +40,7 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
 function editSector() {
 	const sceneId = game.user?.viewedScene
 	if (sceneId) {
-		new EditSectorDialog(sceneId).render(true)
+		void new EditSectorDialog(sceneId).render(true)
 	}
 }
 
@@ -87,8 +87,8 @@ async function newLocation(subtype: string, i18nKey: string, scale = 1) {
 	const loc = await IronswornActor.create({
 		type: 'location',
 		name,
-		data: { subtype },
-		token: {
+		system: { subtype },
+		prototypeToken: {
 			displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
 			disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
 			actorLink: true,
