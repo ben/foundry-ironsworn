@@ -56,7 +56,7 @@ async function dropToken(location: IronswornActor) {
 	const [x, y] = [(cx - t.tx) / scale.x, (cy - t.ty) / scale.y]
 
 	// Snap to viewport
-	const td = await location.getTokenData({ x, y })
+	const td = await location.getTokenDocument({ x, y })
 	const hw = canvas.grid.w / 2
 	const hh = canvas.grid.h / 2
 	const pos = canvas.grid.getSnappedPosition(
