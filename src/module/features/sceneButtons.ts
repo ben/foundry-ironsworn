@@ -30,7 +30,7 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
 		parentFolder = await Folder.create({
 			type: 'Actor',
 			name,
-			parent: parentFolder?.id
+			folder: parentFolder?.id
 		})
 		directory = (parentFolder as any).children
 	}
@@ -92,7 +92,9 @@ async function newLocation(subtype: string, i18nKey: string, scale = 1) {
 			displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
 			disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
 			actorLink: true,
-			scale
+			scale, // v11
+			'texture.scaleX': scale, // v12
+			'texture.scaleY': scale // v12
 		},
 		folder: parentFolder?.id
 	})
