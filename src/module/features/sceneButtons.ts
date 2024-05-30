@@ -56,6 +56,7 @@ async function dropToken(location: IronswornActor) {
 	const [x, y] = [(cx - t.tx) / scale.x, (cy - t.ty) / scale.y]
 
 	// Snap to viewport
+	// @ts-expect-error - missing type for v11-v12 method
 	const td = await location.getTokenDocument({ x, y })
 	const hw = canvas.grid.w / 2
 	const hh = canvas.grid.h / 2
