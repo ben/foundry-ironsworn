@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.23.0
+
 - Compatibility with Foundry v12 ([#983](https://github.com/ben/foundry-ironsworn/pull/983))
 
 ## 1.22.13
