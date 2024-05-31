@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.23.1
+
 - Fix a v12 bug with the layer controls
 
 ## 1.23.0
