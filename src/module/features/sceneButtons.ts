@@ -236,21 +236,16 @@ export function activateSceneButtonListeners() {
 	})
 }
 
-// In v9 we can inherit directly from CanvasLayer and it's fine
-// In v10 we have to use InteractionLayer
-
-let baseKlass: any = CanvasLayer
 // @ts-expect-error
-if (typeof InteractionLayer !== 'undefined') {
-	// @ts-expect-error
-	baseKlass = InteractionLayer
-}
-
-class IronswornCanvasLayer extends baseKlass {
+class IronswornCanvasLayer extends InteractionLayer {
 	static get layerOptions() {
 		return foundry.utils.mergeObject(super.layerOptions, {
 			zIndex: 180,
 			name: 'ironsworn'
 		})
+	}
+
+	get placeables() {
+		return []
 	}
 }

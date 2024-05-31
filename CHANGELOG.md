@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a v12 bug with the layer controls
+
 ## 1.23.0
 
 - Compatibility with Foundry v12 ([#983](https://github.com/ben/foundry-ironsworn/pull/983))
