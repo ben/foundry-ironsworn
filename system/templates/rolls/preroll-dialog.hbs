@@ -1,7 +1,7 @@
 <form class='preroll-dialog{{#if action}} action-roll-dialog{{else}} progress-roll-dialog{{/if}}'>
   {{#if move}}
   <section class='roll-trigger-text'>
-    {{{enrichMarkdown move.system.Trigger.Text}}}
+    {{{renderedTriggerText}}}
   </section>
   {{#if (gt move.system.Trigger.Options.length 1)}}
   <ul class='trigger-options'>

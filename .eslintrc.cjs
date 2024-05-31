@@ -33,6 +33,7 @@ module.exports = {
 			'warn',
 			{ prefer: 'type-imports' }
 		],
+		'@typescript-eslint/strict-boolean-expressions': 'off',
 
 		// LoFD uses them, which means our augments do too (for both namespaces and extending static methods)
 		'@typescript-eslint/no-namespace': 'off',

@@ -4,21 +4,16 @@
 			v-bind="$attrs"
 			:model-value="modelValue"
 			:init="mceConfig"
-			@blur="$emit('save')" />
+			@blur="$emit('save')"
+		/>
 	</div>
-	<div v-else class="editor flexcol">
-		<with-rolllisteners
-			v-if="interceptClicks"
-			element="div"
-			class="editor-content"
-			@moveclick="moveClick"
-			@oracleclick="oracleClick"
-			v-html="$enrichHtml(modelValue)" />
-		<div v-else class="editor-content" v-html="$enrichHtml(modelValue)"></div>
-		<a class="editor-edit">
-			<i class="fas fa-edit" @click="data.editing = true"></i>
-		</a>
-	</div>
+	<Suspense v-else>
+		<mce-editor-rendered-content
+			:text="modelValue"
+			:interceptClicks="interceptClicks"
+			@editclick="data.editing = true"
+		/>
+	</Suspense>
 </template>
 
 <script setup lang="ts">
@@ -26,7 +21,7 @@ import type { RawEditorOptions } from 'tinymce'
 import { onUnmounted, reactive } from 'vue'
 import type { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
-import WithRolllisteners from './with-rolllisteners.vue'
+import MceEditorRenderedContent from './mce-editor-rendered-content.vue'
 
 const props = withDefaults(
 	defineProps<{
@@ -40,14 +35,6 @@ const props = withDefaults(
 )
 
 const data = reactive({ editing: props.editing ?? false })
-
-// Outbound link clicks: broadcast events
-function moveClick(move: IronswornItem) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
-}
-function oracleClick(dfid: string) {
-	CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
-}
 
 const $emit = defineEmits<{ save: [] }>()
 

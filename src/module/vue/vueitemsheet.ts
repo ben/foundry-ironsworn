@@ -4,7 +4,7 @@ import { VueAppMixin } from './vueapp.js'
 
 export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ['ironsworn', 'item'],
 			width: 520,
 			height: 480

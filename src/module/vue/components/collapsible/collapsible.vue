@@ -7,14 +7,17 @@
 		:aria-expanded="state.expanded"
 		:tabindex="-1"
 		:aria-orientation="orientation"
-		:aria-disabled="disabled">
+		:aria-disabled="disabled"
+	>
 		<component
 			:is="toggleSectionIs"
-			:class="[toggleSectionClass, $style.toggleSection]">
+			:class="[toggleSectionClass, $style.toggleSection]"
+		>
 			<slot name="before-toggle"></slot>
 			<component
 				:is="toggleWrapperIs"
-				:class="[toggleWrapperClass, $style.toggleWrapper, 'toggle-wrapper']">
+				:class="[toggleWrapperClass, $style.toggleWrapper, 'toggle-wrapper']"
+			>
 				<IronBtn
 					:id="controlId"
 					ref="$toggle"
@@ -24,14 +27,16 @@
 					:tooltip="toggleTooltip"
 					data-tooltip-direction="LEFT"
 					:text="toggleLabel"
-					@click="toggle()">
+					@click="toggle()"
+				>
 					<template #icon>
 						<slot name="toggleIcon">
 							<FontIcon
 								v-if="icon"
 								:name="icon"
 								:class="$style.toggleBtn"
-								:size="FontAwesome.Size['xs']" />
+								:size="FontAwesome.Size['xs']"
+							/>
 						</slot>
 					</template>
 				</IronBtn>
@@ -54,17 +59,20 @@
 			"
 			@after-leave="
 				$emit('after-collapse', $event, $collapseTransition, $element)
-			">
-			<component
-				:is="contentWrapperIs"
-				v-if="state.expanded"
-				:id="contentId"
-				ref="$contentWrapper"
-				role="region"
-				:aria-labelledby="controlId"
-				:class="[contentWrapperClass, $style.content]">
-				<slot name="default"></slot>
-			</component>
+			"
+		>
+			<Suspense v-if="state.expanded">
+				<component
+					:is="contentWrapperIs"
+					:id="contentId"
+					ref="$contentWrapper"
+					role="region"
+					:aria-labelledby="controlId"
+					:class="[contentWrapperClass, $style.content]"
+				>
+					<slot name="default"></slot>
+				</component>
+			</Suspense>
 		</CollapseTransition>
 	</component>
 </template>
@@ -180,10 +188,10 @@ const currentDuration = computed(() =>
 )
 
 const $emit = defineEmits<{
-	beforeExpand: [ExpandEvent]
-	afterExpand: [ExpandEvent]
-	beforeCollapse: [CollapseEvent]
-	afterCollapse: [CollapseEvent]
+	'before-expand': [ExpandEvent]
+	'after-expand': [ExpandEvent]
+	'before-collapse': [CollapseEvent]
+	'after-collapse': [CollapseEvent]
 }>()
 
 function toggle() {

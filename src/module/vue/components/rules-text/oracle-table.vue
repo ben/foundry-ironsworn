@@ -2,7 +2,8 @@
 	<table class="oracle-table">
 		<caption
 			v-if="!noCaption && tableDescription"
-			v-html="enrichMarkdown(tableDescription ?? '')" />
+			v-html="renderedDescription"
+		/>
 		<thead>
 			<tr>
 				<th scope="col" class="oracle-table-column-roll-range">
@@ -18,7 +19,8 @@
 				<td class="oracle-table-column-roll-range">{{ rangeString(row) }}</td>
 				<td
 					class="oracle-table-column-result-text"
-					v-html="$enrichHtml(row.text)"></td>
+					v-html="renderedRowTexts[i]"
+				></td>
 			</tr>
 		</tbody>
 	</table>
@@ -26,13 +28,18 @@
 
 <script setup lang="ts">
 import type { LegacyTableRow } from '../../../roll-table/roll-table-types'
-import { enrichMarkdown } from '../../vue-plugin.js'
+import { enrichHtml, enrichMarkdown } from '../../vue-plugin.js'
 
 const props = defineProps<{
 	tableRows: LegacyTableRow[]
 	tableDescription: string
 	noCaption?: boolean
 }>()
+
+const renderedDescription = await enrichMarkdown(props.tableDescription ?? '')
+const renderedRowTexts = await Promise.all(
+	props.tableRows.map((row) => enrichHtml(row.text))
+)
 
 function rangeString({ low, high }: LegacyTableRow) {
 	if (low === high) {

@@ -30,7 +30,7 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
 		parentFolder = await Folder.create({
 			type: 'Actor',
 			name,
-			parent: parentFolder?.id
+			folder: parentFolder?.id
 		})
 		directory = (parentFolder as any).children
 	}
@@ -40,7 +40,7 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
 function editSector() {
 	const sceneId = game.user?.viewedScene
 	if (sceneId) {
-		new EditSectorDialog(sceneId).render(true)
+		void new EditSectorDialog(sceneId).render(true)
 	}
 }
 
@@ -56,7 +56,8 @@ async function dropToken(location: IronswornActor) {
 	const [x, y] = [(cx - t.tx) / scale.x, (cy - t.ty) / scale.y]
 
 	// Snap to viewport
-	const td = await location.getTokenData({ x, y })
+	// @ts-expect-error - missing type for v11-v12 method
+	const td = await location.getTokenDocument({ x, y })
 	const hw = canvas.grid.w / 2
 	const hh = canvas.grid.h / 2
 	const pos = canvas.grid.getSnappedPosition(
@@ -86,12 +87,14 @@ async function newLocation(subtype: string, i18nKey: string, scale = 1) {
 	const loc = await IronswornActor.create({
 		type: 'location',
 		name,
-		data: { subtype },
-		token: {
+		system: { subtype },
+		prototypeToken: {
 			displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
 			disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
 			actorLink: true,
-			scale
+			scale, // v11
+			'texture.scaleX': scale, // v12
+			'texture.scaleY': scale // v12
 		},
 		folder: parentFolder?.id
 	})

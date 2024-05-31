@@ -4,15 +4,18 @@ function rotateTokenBy(ev: JQuery.ClickEvent, tokenData: any, angle: number) {
 	ev.preventDefault()
 	const token = canvas?.scene?.tokens.get(tokenData._id)
 	if (token == null) return
-	const rotation = token.data.rotation + angle
-	canvas?.scene?.updateEmbeddedDocuments('Token', [{ _id: token.id, rotation }])
+	// @ts-expect-error
+	const rotation = token.rotation + angle
+	void canvas?.scene?.updateEmbeddedDocuments('Token', [
+		{ _id: token.id, rotation }
+	])
 }
 
 function HUDCallback(_hud, html, token) {
 	const leftButton = document.createElement('div')
 	leftButton.classList.add('control-icon')
 	leftButton.innerHTML = '<i class="fas fa-undo" />'
-	leftButton.title = game.i18n.localize('IRONSWORN.RotateCCW')
+	leftButton.dataset.tooltip = game.i18n.localize('IRONSWORN.RotateCCW')
 	$(leftButton).on('click', (ev) => {
 		rotateTokenBy(ev, token, -60)
 	})
@@ -20,7 +23,7 @@ function HUDCallback(_hud, html, token) {
 	const rightButton = document.createElement('div')
 	rightButton.classList.add('control-icon')
 	rightButton.innerHTML = '<i class="fas fa-redo" />'
-	rightButton.title = game.i18n.localize('IRONSWORN.RotateCW')
+	rightButton.dataset.tooltip = game.i18n.localize('IRONSWORN.RotateCW')
 	$(rightButton).on('click', (ev) => {
 		rotateTokenBy(ev, token, 60)
 	})

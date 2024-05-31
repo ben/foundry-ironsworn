@@ -5,7 +5,7 @@ import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class CompactPCSheet extends VueActorSheet {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			width: 560,
 			height: 210,
 			resizable: true,

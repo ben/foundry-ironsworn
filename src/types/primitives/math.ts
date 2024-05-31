@@ -9,6 +9,7 @@ declare global {
 		 * @return       The clamped number
 		 */
 		clamped(num: number, min: number, max: number): number
+		clamp(num: number, min: number, max: number): number
 
 		/**
 		 * Linear interpolation function

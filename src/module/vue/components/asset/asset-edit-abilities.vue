@@ -4,26 +4,30 @@
 			<div
 				v-for="(ability, i) in item?.system.abilities"
 				:key="`ability${i}`"
-				class="flexcol nogrow">
+				class="flexcol nogrow"
+			>
 				<textarea
 					v-model="ability.description"
 					rows="5"
 					style="min-height: 90px"
-					@blur="save"></textarea>
+					@blur="save"
+				></textarea>
 				<div class="flexrow">
 					<div class="form-group">
 						<label class="flexrow">
 							<input
 								type="checkbox"
 								:checked="ability.hasClock"
-								@change="enableClock(i)" />
+								@change="enableClock(i)"
+							/>
 							{{ $t('IRONSWORN.Clock') }}
 						</label>
 						<select
 							v-model="ability.clockMax"
 							class="nogrow"
 							style="margin: 0.5rem 0"
-							@change="clockMaxChange(i)">
+							@change="clockMaxChange(i)"
+						>
 							<option value="4">4 segments</option>
 							<option value="6">6 segments</option>
 							<option value="8">8 segments</option>
@@ -37,7 +41,8 @@
 							block
 							nogrow
 							:class="{ disabled: item!.system.abilities.length < 2 }"
-							@click="deleteAbility(i)" />
+							@click="deleteAbility(i)"
+						/>
 					</div>
 				</div>
 
@@ -48,7 +53,8 @@
 			icon="fa:plus"
 			block
 			:text="$t('IRONSWORN.Ability')"
-			@click="addAbility" />
+			@click="addAbility"
+		/>
 	</div>
 </template>
 
@@ -104,13 +110,13 @@ function clockMaxChange(idx: number) {
 }
 
 function setClock(abilityIdx: number, clockTicks: number) {
-	const abilities = Object.values(item!.value?.data.abilities) as any[]
+	const abilities = Object.values(item!.value?.system.abilities) as any[]
 	abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
 	$item?.update({ system: { abilities } })
 }
 
 function save() {
-	const abilities = Object.values(item!.value?.data.abilities) as any[]
+	const abilities = Object.values(item!.value?.system.abilities) as any[]
 	$item?.update({ system: { abilities } })
 }
 </script>

@@ -12,7 +12,7 @@
 				<strong>{{ page.name }}</strong>
 			</p>
 
-			<div v-html="$enrichMarkdown(pageSystem.Description)" />
+			<RenderedText element="div" :markdown="true" :content="pageSystem.Description" />
 
 			<section v-if="page.subtable">
 				<label
@@ -33,17 +33,17 @@
 				<!-- TODO: custom input -->
 			</section>
 
-			<div class="quest" v-html="$enrichMarkdown(pageSystem.Quest)" />
+			<RenderedText class="quest" element="div" :markdown="true" :content="pageSystem.Quest" />
 		</div>
 	</label>
 </template>
 
 <script setup lang="ts">
-import type { ISettingTruthOptionSubtableRow } from 'dataforged'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
 import type { TruthOptionDataPropertiesData } from '../../../journal/journal-entry-page-types'
 import { OracleTableResult } from '../../../roll-table/oracle-table-result'
+import RenderedText from 'component:rendered-text.vue'
 
 const props = defineProps<{
 	page: IronswornJournalPage<'truth'>

@@ -13,7 +13,7 @@ export function normalizeTableRows(
 	key: string,
 	type: string
 ): TableResultDataConstructorData[] {
-	const oldRows = getProperty(document, key) as LegacyTableRow[]
+	const oldRows = foundry.utils.getProperty(document, key) as LegacyTableRow[]
 	if (!Array.isArray(oldRows)) {
 		console.log(
 			`Unable to migrate because this document lacks a "${key}" key `,

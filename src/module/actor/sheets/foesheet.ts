@@ -3,7 +3,7 @@ import { VueActorSheet } from '../../vue/vueactorsheet'
 
 export class FoeSheet extends VueActorSheet {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			width: 450,
 			height: 500,
 			rootComponent: foeSheetVue

@@ -6,14 +6,6 @@ import type { Emitter, EventType } from 'mitt'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
 import { SourceData } from '../fields/utils'
 
-// Provided by the Vue plugin
-export const $EnrichHtmlKey = Symbol('$enrichHtml') as InjectionKey<
-	typeof enrichHtml
->
-export const $EnrichMarkdownKey = Symbol('$enrichMarkdown') as InjectionKey<
-	typeof enrichMarkdown
->
-
 // Provided by the render helper
 export interface LocalEmitterEvents extends Record<EventType, unknown> {
 	closeApp: void

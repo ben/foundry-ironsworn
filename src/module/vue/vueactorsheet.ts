@@ -5,7 +5,7 @@ import { VueAppMixin } from './vueapp.js'
 
 export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ['ironsworn', 'actor']
 		})
 	}

@@ -5,7 +5,8 @@
 			[$style.decorated]: !!deco,
 			[$style.undecorated]: !deco
 		}"
-		:aria-labelledby="titleId">
+		:aria-labelledby="titleId"
+	>
 		<slot name="deco">
 			<svg
 				v-if="deco"
@@ -14,7 +15,8 @@
 				role="presentational"
 				aria-hidden="true"
 				:width="deco.width"
-				:height="deco.height">
+				:height="deco.height"
+			>
 				<use :href="deco.href" />
 			</svg>
 		</slot>
@@ -30,7 +32,8 @@
 						:aria-controls="bodyId"
 						:class="$style.expandToggle"
 						class="clickable text flexrow"
-						@click="toggleExpand">
+						@click="toggleExpand"
+					>
 						<h4 :class="$style.title">
 							{{ asset.name }}
 						</h4>
@@ -55,65 +58,79 @@
 		</header>
 
 		<CollapseTransition>
-			<section
-				v-if="expanded ?? !isCollapsible"
-				:id="bodyId"
-				:class="$style.body"
-				class="flexcol"
-				:aria-expanded="expanded">
-				<!-- FIELDS -->
+			<Suspense>
 				<section
-					v-if="asset.system.fields?.length"
-					:class="$style.fields"
-					class="flexcol nogrow">
-					<AssetField
-						v-for="(field, i) in asset.system.fields"
-						:key="i"
-						:field="field"
-						:update-fn="(delta) => updateField(i, delta)"
+					v-if="expanded ?? !isCollapsible"
+					:id="bodyId"
+					:class="$style.body"
+					class="flexcol"
+					:aria-expanded="expanded"
+				>
+					<!-- FIELDS -->
+					<section
+						v-if="asset.system.fields?.length"
+						:class="$style.fields"
+						class="flexcol nogrow"
+					>
+						<AssetField
+							v-for="(field, i) in asset.system.fields"
+							:key="i"
+							:field="field"
+							:update-fn="(delta) => updateField(i, delta)"
+							class="nogrow"
+							:readonly="readonlyFields"
+						/>
+					</section>
+
+					<!-- DESCRIPTION -->
+					<RenderedText
+						v-if="asset.system.description"
+						element="div"
 						class="nogrow"
-						:readonly="readonlyFields" />
+						:class="$style.requirement"
+						:content="asset.system.description"
+					/>
+
+					<!-- REQUIREMENT -->
+					<RenderedText
+						v-if="asset.system.requirement"
+						element="div"
+						class="nogrow"
+						:class="$style.requirement"
+						:markdown="true"
+						:content="asset.system.requirement"
+					/>
+
+					<!-- ABILITIES -->
+					<ul class="flexcol nogrow" :class="$style.abilities">
+						<template
+							v-for="(ability, i) in asset.system.abilities"
+							:key="`ability${i}`"
+						>
+							<li v-if="hideDisabledAbilities ? ability.enabled : true">
+								<AssetAbility
+									:class="$style.ability"
+									:ability="ability"
+									:update-fn="(delta) => updateAbility(i, delta)"
+									:toggle="toggleAbilities"
+									:readonly-clock="readonlyClocks"
+									class="flexrow"
+								/>
+							</li>
+						</template>
+					</ul>
+
+					<AssetToggle
+						v-if="asset.system.exclusiveOptions.length > 0"
+						class="flexrow nogrow"
+					/>
+
+					<AssetConditionMeter
+						v-if="asset.system.track"
+						class="flexrow nogrow"
+					/>
 				</section>
-
-				<!-- DESCRIPTION -->
-				<WithRolllisteners
-					v-if="asset.system.description"
-					element="div"
-					class="nogrow"
-					:class="$style.requirement"
-					v-html="$enrichHtml(asset.system.description)" />
-
-				<!-- REQUIREMENT -->
-				<WithRolllisteners
-					v-if="asset.system.requirement"
-					element="div"
-					class="nogrow"
-					:class="$style.requirement"
-					v-html="$enrichMarkdown(asset.system.requirement)" />
-
-				<!-- ABILITIES -->
-				<ul class="flexcol nogrow" :class="$style.abilities">
-					<template
-						v-for="(ability, i) in asset.system.abilities"
-						:key="`ability${i}`">
-						<li v-if="hideDisabledAbilities ? ability.enabled : true">
-							<AssetAbility
-								:class="$style.ability"
-								:ability="ability"
-								:update-fn="(delta) => updateAbility(i, delta)"
-								:toggle="toggleAbilities"
-								:readonly-clock="readonlyClocks"
-								class="flexrow" />
-						</li>
-					</template>
-				</ul>
-
-				<AssetToggle
-					v-if="asset.system.exclusiveOptions.length > 0"
-					class="flexrow nogrow" />
-
-				<AssetConditionMeter v-if="asset.system.track" class="flexrow nogrow" />
-			</section>
+			</Suspense>
 		</CollapseTransition>
 	</article>
 </template>
@@ -123,7 +140,7 @@ import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { ItemKey, $ItemKey } from '../../provisions'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
-import WithRolllisteners from 'component:with-rolllisteners.vue'
+import RenderedText from 'component:rendered-text.vue'
 import AssetConditionMeter from 'component:asset/asset-condition-meter.vue'
 import AssetToggle from 'component:asset/asset-toggle.vue'
 import type {
@@ -180,14 +197,20 @@ async function updateAbility(index: number, delta: Partial<AssetAbilityType>) {
 	const abilities = Object.values(
 		asset.value.system.abilities
 	) as AssetAbilityType[]
-	abilities[index] = mergeObject(abilities[index], delta) as AssetAbilityType
+	abilities[index] = foundry.utils.mergeObject(
+		abilities[index],
+		delta
+	) as AssetAbilityType
 	return $asset?.update({ system: { abilities } })
 }
 
 async function updateField(index: number, delta: Partial<AssetFieldType>) {
 	if (!$asset?.actor) return
 	const fields = Object.values(asset.value.system.fields) as AssetFieldType[]
-	fields[index] = mergeObject(fields[index], delta) as AssetFieldType
+	fields[index] = foundry.utils.mergeObject(
+		fields[index],
+		delta
+	) as AssetFieldType
 	return $asset?.update({ system: { fields } })
 }
 </script>

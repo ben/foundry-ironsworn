@@ -3,10 +3,12 @@
 		is="div"
 		drop-type="progress"
 		class="box flexrow ironsworn__denizen__drop"
-		:data-idx="idx">
+		:data-idx="idx"
+	>
 		<label
 			class="nogrow"
-			style="flex-basis: 4em; line-height: 26px; white-space: nowrap">
+			style="flex-basis: 4em; line-height: 26px; white-space: nowrap"
+		>
 			<span v-if="denizen.range[0] === denizen.range[1]">{{
 				denizen.range[0]
 			}}</span>
@@ -20,8 +22,16 @@
 			:class="{ highlight: data.focused }"
 			:value="denizen.text"
 			:placeholder="frequencyLabel"
-			@input="input" />
-		<div v-else style="line-height: 26px" v-html="$enrichHtml(denizen.text)" />
+			@input="input"
+		/>
+
+		<Suspense v-else>
+			<RenderedText
+				element="div"
+				style="line-height: 26px"
+				:content="denizen.text"
+			/>
+		</Suspense>
 	</DropTarget>
 </template>
 
@@ -32,6 +42,7 @@ import type { IronswornActor } from '../../../actor/actor'
 import type { SourceData } from '../../../fields/utils'
 import DropTarget from '../../drop-target.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
+import RenderedText from 'component:rendered-text.vue'
 
 const props = defineProps<{ idx: number }>()
 const data = reactive({ focused: false })
@@ -73,7 +84,11 @@ const frequencyLabel = computed(() =>
 function input(ev: Event) {
 	const target = ev.currentTarget as HTMLInputElement
 	const newDenizens = foundry.utils.deepClone(actor.value.system.denizens)
-	setProperty(newDenizens, `${props.idx}.text`, target.value ?? '')
+	foundry.utils.setProperty(
+		newDenizens,
+		`${props.idx}.text`,
+		target.value ?? ''
+	)
 	$actor?.update({
 		[`system.denizens`]: newDenizens
 	})

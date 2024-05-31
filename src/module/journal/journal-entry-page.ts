@@ -31,9 +31,13 @@ export class IronswornJournalPage<
 		] as JournalEntryPageDataSource
 		if (defaults != null) {
 			const alreadySet = data.system
-			const newSourceData = mergeObject(defaults, alreadySet ?? {}, {
-				recursive: true
-			})
+			const newSourceData = foundry.utils.mergeObject(
+				defaults,
+				alreadySet ?? {},
+				{
+					recursive: true
+				}
+			)
 			// @ts-expect-error
 			this.updateSource({ system: newSourceData })
 		}

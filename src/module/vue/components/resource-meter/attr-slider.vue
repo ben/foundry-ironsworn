@@ -3,11 +3,13 @@
 		class="attr-slider"
 		:class="{ [`label-${labelPosition}`]: true }"
 		:aria-labelledby="`${baseId}-label`"
-		:aria-orientation="sliderStyle !== 'compact' ? sliderStyle : undefined">
+		:aria-orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
+	>
 		<section
 			v-if="labelPosition != 'none'"
 			:id="`${baseId}-label`"
-			class="attr-slider-label nogrow">
+			class="attr-slider-label nogrow"
+		>
 			<slot name="label">
 				<!-- button or static label goes here -->
 				<!-- the tabindex for this item should be -1 -->
@@ -23,7 +25,8 @@
 			:value="value"
 			:segment-class="segmentClass"
 			:read-only="readOnly"
-			@change="onChange">
+			@change="onChange"
+		>
 		</SliderBar>
 	</article>
 </template>
@@ -111,7 +114,8 @@ const targetKey = computed(() =>
 )
 
 const value = computed(
-	() => getProperty(document?.value as any, targetKey.value) as number
+	() =>
+		foundry.utils.getProperty(document?.value as any, targetKey.value) as number
 )
 
 async function onChange(newValue: number) {

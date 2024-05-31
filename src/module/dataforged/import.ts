@@ -31,6 +31,7 @@ import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
 import type { FolderDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/folderData'
 import { MoveCategoryColor } from '../features/custommoves'
+import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 
 export function cleanDollars(obj): any {
 	if (isArray(obj)) {
@@ -412,10 +413,14 @@ async function processSFEncounters() {
 		ItemDataConstructorData & Record<string, unknown>
 	>
 	for (const encounter of starforged.Encounters) {
+		const renderedDescription = await IronswornHandlebarsHelpers.enrichMarkdown(
+			encounter.Description
+		)
 		const description = await renderTemplate(
 			'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
 			{
 				...encounter,
+				Description: renderedDescription,
 				variantLinks: encounter.Variants.map((x) =>
 					renderLinksInStr(`[${x.Name}](${x.$id})`)
 				)

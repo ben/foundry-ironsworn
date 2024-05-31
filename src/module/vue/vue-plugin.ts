@@ -1,6 +1,5 @@
 import type { Plugin } from 'vue'
 import { formatRollPlusStat } from '../rolls/ironsworn-roll-message.js'
-import { $EnrichHtmlKey, $EnrichMarkdownKey } from './provisions'
 
 declare module '@vue/runtime-core' {
 	interface ComponentCustomProperties {
@@ -10,13 +9,11 @@ declare module '@vue/runtime-core' {
 		 */
 		$t: (stringId: string, data?: Record<string, unknown>) => string
 		$concat: (...args: any[]) => string
-		$enrichMarkdown: (string) => string
-		$enrichHtml: (string) => string
 	}
 }
 
-export function enrichHtml(text) {
-	const rendered = TextEditor.enrichHTML(text, { async: false } as any)
+export async function enrichHtml(text) {
+	const rendered = await TextEditor.enrichHTML(text, { async: true } as any)
 	return rendered.replace(
 		/\(\(rollplus (.*?)\)\)/g,
 		(_, stat) => `
@@ -28,12 +25,12 @@ export function enrichHtml(text) {
 	)
 }
 
-export function enrichMarkdown(md?: string): string {
+export async function enrichMarkdown(md?: string): Promise<string> {
 	if (md == null) return ''
 
 	const html = CONFIG.IRONSWORN.showdown.makeHtml(md)
 
-	return enrichHtml(html)
+	return await enrichHtml(html)
 }
 
 export const IronswornVuePlugin: Plugin = {
@@ -46,11 +43,6 @@ export const IronswornVuePlugin: Plugin = {
 				? game.i18n.format(stringId, data)
 				: game.i18n.localize(stringId)
 		app.config.globalProperties.$concat = (...args) => args.join('')
-		app.config.globalProperties.$enrichHtml = enrichHtml
-		app.provide($EnrichHtmlKey, enrichHtml)
-
-		app.config.globalProperties.$enrichMarkdown = enrichMarkdown
-		app.provide($EnrichMarkdownKey, enrichMarkdown)
 
 		Object.defineProperty(app.config.globalProperties, '$item', {
 			get: function () {

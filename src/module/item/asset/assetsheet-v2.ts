@@ -3,7 +3,7 @@ import { VueItemSheet } from '../../vue/vueitemsheet'
 
 export class AssetSheetV2 extends VueItemSheet {
 	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
+		return foundry.utils.mergeObject(super.defaultOptions, {
 			width: 450,
 			rootComponent: assetSheetVue
 		}) as any
