@@ -132,6 +132,7 @@ function theOracleWindow() {
 
 export function activateSceneButtonListeners() {
 	CONFIG.Canvas.layers.ironsworn = {
+		// @ts-expect-error
 		layerClass: IronswornCanvasLayer,
 		group: 'primary'
 	}
