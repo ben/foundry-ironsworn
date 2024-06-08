@@ -147,7 +147,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 			name,
 			img,
 			type,
-			token: { actorLink: true },
+			prototypeToken: { actorLink: true },
 			folder: this.options.folder || undefined
 		}
 		if (sheetClass) {

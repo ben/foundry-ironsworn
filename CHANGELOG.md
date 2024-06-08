@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- v12: new PCs' tokens are now linked to their actor when created
+
 ## 1.23.1
 
 - Fix a v12 bug with the layer controls
