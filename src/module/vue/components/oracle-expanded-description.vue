@@ -9,8 +9,6 @@
 			:table-rows="table.rows"
 			:table-description="table.description"
 			:source="node.dataforgedNode?.Source"
-			@moveclick="moveclick"
-			@oracleclick="oracleclick"
 		/>
 	</div>
 </template>
@@ -47,15 +45,6 @@ if (tables.every((t) => t.description === tables[0].description)) {
 	for (const t of tables) {
 		t.description = ''
 	}
-}
-
-// Click on a move link: broadcast event
-function moveclick(item: IronswornItem) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
-
-function oracleclick(dfid) {
-	CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
 }
 
 const spacerSize = '18px'

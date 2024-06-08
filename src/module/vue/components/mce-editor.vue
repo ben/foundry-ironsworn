@@ -10,7 +10,6 @@
 	<Suspense v-else>
 		<mce-editor-rendered-content
 			:text="modelValue"
-			:interceptClicks="interceptClicks"
 			@editclick="data.editing = true"
 		/>
 	</Suspense>
@@ -23,16 +22,10 @@ import type { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import MceEditorRenderedContent from './mce-editor-rendered-content.vue'
 
-const props = withDefaults(
-	defineProps<{
-		modelValue: string
-		interceptClicks?: boolean
-		editing?: boolean
-	}>(),
-	{
-		interceptClicks: true
-	}
-)
+const props = defineProps<{
+	modelValue: string
+	editing?: boolean
+}>()
 
 const data = reactive({ editing: props.editing ?? false })
 

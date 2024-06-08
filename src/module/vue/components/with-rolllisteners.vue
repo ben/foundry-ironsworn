@@ -31,9 +31,6 @@ onMounted(() => {
 	$(el.value).on('click', '.entity-link', click)
 })
 
-const $emit = defineEmits(['moveclick', 'oracleclick'])
-const $attrs = useAttrs()
-
 async function click(ev: JQuery.ClickEvent) {
 	ev.preventDefault()
 	ev.stopPropagation()
@@ -42,8 +39,8 @@ async function click(ev: JQuery.ClickEvent) {
 	if (uuid) {
 		const gameItem = (await fromUuid(uuid)) as IronswornItem | IronswornActor
 		if (gameItem?.type === 'sfmove') {
-			$emit('moveclick', gameItem)
-			return !!$attrs['onMoveclick']
+			CONFIG.IRONSWORN.emitter.emit('highlightMove', gameItem.uuid)
+			return true
 		}
 
 		// @ts-expect-error
@@ -53,8 +50,8 @@ async function click(ev: JQuery.ClickEvent) {
 	if (dfid) {
 		// TODO: allow for custom oracles
 		// Probably an oracle category click
-		$emit('oracleclick', dfid)
-		return !!$attrs['onOracleclick']
+		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
+		return true
 	}
 }
 </script>

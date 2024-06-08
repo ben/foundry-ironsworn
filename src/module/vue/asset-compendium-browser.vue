@@ -25,7 +25,6 @@
 							v-if="category.description"
 							element="div"
 							class="category-description"
-							@moveclick="moveClick"
 							:content="category.description"
 							:markdown="true"
 						/>
@@ -45,7 +44,6 @@
 
 <script setup lang="ts">
 import { provide, reactive } from 'vue'
-import WithRolllisteners from 'component:with-rolllisteners.vue'
 import AssetBrowserCard from 'component:asset/asset-browser-card.vue'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 import {
@@ -64,10 +62,6 @@ const categories = await (props.data.toolset === 'ironsworn'
 	: createStarforgedAssetTree())
 
 const data = reactive({ categories })
-
-function moveClick(item) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
 </script>
 
 <style lang="scss" scoped>

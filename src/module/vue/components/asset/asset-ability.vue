@@ -29,7 +29,6 @@
 				element="div"
 				:class="$style.rulesText"
 				class="flexcol"
-				@moveclick="moveclick"
 				:content="ability.description"
 			/>
 			<Clock
@@ -73,10 +72,6 @@ const props = defineProps<{
 
 // if there's no provided update function, assume it's a statically rendered ability; the clock and the checkbox can't be manipulated
 const canUpdate = computed(() => !!props.updateFn)
-
-function moveclick(item) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
 
 function updateClock(newValue: number) {
 	if (typeof newValue === 'number') {

@@ -60,7 +60,6 @@
 				:data="item"
 				:is-progress-move="$item.system.isProgressMove"
 				:class="$style.summary"
-				@moveclick="moveClick"
 			>
 				<template #after-footer>
 					<OracleTreeNode
@@ -160,11 +159,6 @@ Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(
 		data.oracles.push(...nodes)
 	}
 )
-
-// Outbound link clicks: broadcast events
-function moveClick(move: IronswornItem) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
-}
 
 defineExpose({
 	moveId: moveId.value,
