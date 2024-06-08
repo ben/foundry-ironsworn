@@ -3,6 +3,7 @@
 ## Next Release
 
 - v12: new PCs' tokens are now linked to their actor when created
+- Move links in oracle descriptions now work properly
 
 ## 1.23.1
 

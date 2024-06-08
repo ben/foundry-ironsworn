@@ -1,6 +1,10 @@
 <template>
 	<div>
-		<h4 v-if="unifiedDescription" v-html="unifiedDescription" />
+		<RenderedText
+			v-if="unifiedDescription"
+			:content="unifiedDescription"
+			element="h4"
+		/>
 		<RulesTextOracle
 			v-for="table in tables"
 			:key="table.id"
@@ -18,6 +22,7 @@ import { IOracleTreeNode } from '../../features/customoracles'
 import { IronswornItem } from '../../item/item'
 import type { OracleTable } from '../../roll-table/oracle-table'
 import { enrichHtml } from '../vue-plugin'
+import RenderedText from './rendered-text.vue'
 import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
