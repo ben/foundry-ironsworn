@@ -206,11 +206,12 @@ export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfid: string) {
 	return ret
 }
 
-type OracleCategory = 'ironsworn' | 'starforged'
+type OracleCategory = 'ironsworn' | 'starforged' | 'sunderedisles'
 
 const ORACLES: Record<OracleCategory, IOracleTreeNode> = {
 	ironsworn: emptyNode(),
-	starforged: emptyNode()
+	starforged: emptyNode(),
+	sunderedisles: emptyNode()
 }
 
 export function registerOracleTreeInternal(
@@ -228,6 +229,8 @@ export async function registerDefaultOracleTrees() {
 
 	const starforgedOracles = await createStarforgedOracleTree()
 	registerOracleTreeInternal('starforged', starforgedOracles)
+
+	// TODO: Sundered Isles oracles
 
 	defaultTreesInitialized = true
 	Hooks.call('ironswornOracleTreesReady')

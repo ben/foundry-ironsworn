@@ -230,15 +230,21 @@ export class IronswornSettings {
 		return game.settings.get('foundry-ironsworn', key)
 	}
 
-	static get starforgedToolsEnabled(): boolean {
-		if (this.get('toolbox') === 'ironsworn') return false
-		if (this.get('toolbox') === 'starforged') return true
-
-		// Set to "match sheet, so check the sheet"
-		const sheetClasses = game.settings.get('core', 'sheetClasses') as any
-		return (
-			sheetClasses.Actor?.character === 'ironsworn.StarforgedCharacterSheet'
-		)
+	static get defaultToolbox(): 'ironsworn' | 'starforged' | 'sunderedisles' {
+		const setting = this.get('toolbox')
+		if (setting === 'sheet') {
+			const sheetClasses = game.settings.get('core', 'sheetClasses')
+			const defaultCharacterSheet = sheetClasses.Actor?.character
+			// TODO: match the SI sheet class name
+			if (defaultCharacterSheet === 'ironsworn.SunderedIslesCharacterSheet') {
+				return 'sunderedisles'
+			}
+			if (defaultCharacterSheet === 'ironsworn.IronswornCharacterSheetV2') {
+				return 'ironsworn'
+			}
+			return 'starforged'
+		}
+		return setting
 	}
 
 	/**

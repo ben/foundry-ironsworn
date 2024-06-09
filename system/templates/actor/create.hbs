@@ -15,28 +15,29 @@
 <form class='{{cssClass}} flexcol' autocomplete='off'>
   <div class="flexcol">
     <div class="flexrow boxrow">
-      {{#if sfenabled}}
-      {{>createBox type="sfcharacter" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{else}}
+      {{#if ironswornToolbox}}
       {{>createBox type="character" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{/if}}
-
       {{>createBox type="shared" labelkey="IRONSWORN.ACTOR.TypeShared" img="icons/environment/settlement/wagon-black.webp"}}
-
-      {{#if sfenabled}}
-      {{>createBox type="sfship" labelkey="IRONSWORN.ACTOR.TypeStarship" img="icons/environment/settlement/wizard-castle.webp"}}
-      {{>createBox type="sflocation" labelkey="IRONSWORN.ACTOR.TypeLocation"
-      img="systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp"}}
-      {{else}}
-      {{>createBox type="site" labelkey="IRONSWORN.ACTOR.TypeDelveSite"
-      img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
+      {{>createBox type="site" labelkey="IRONSWORN.ACTOR.TypeDelveSite" img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
+      {{>createBox type="foe" labelkey="IRONSWORN.ACTOR.TypeFoe" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
       {{/if}}
 
+      {{#if starforgedToolbox}}
+      {{>createBox type="sfcharacter" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
+      {{>createBox type="shared" labelkey="IRONSWORN.ACTOR.TypeShared" img="icons/environment/settlement/wagon-black.webp"}}
+      {{>createBox type="sfship" labelkey="IRONSWORN.ACTOR.TypeStarship" img="icons/environment/settlement/wizard-castle.webp"}}
+      {{>createBox type="sflocation" labelkey="IRONSWORN.ACTOR.TypeLocation" img="systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp"}}
       {{>createBox type="foe" labelkey="IRONSWORN.ACTOR.TypeFoe" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
+      {{/if}}
+
+      {{#if sunderedIslesToolbox}}
+      <p>Sundered Isles coming soon...</p>
+      {{/if}}
+
     </div>
   </div>
 
-  {{#if sfenabled}}
+  {{#if starforgedToolbox}}
   {{/if}}
   </div>
 </form>

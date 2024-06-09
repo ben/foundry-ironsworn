@@ -8,7 +8,10 @@ import { MoveSheetTour } from '../../features/tours/move-sheet-tour'
 export class SFCharacterMoveSheet extends VueAppMixin(Application) {
 	constructor(
 		protected actor: IronswornActor,
-		protected toolset: 'ironsworn' | 'starforged' = 'starforged',
+		protected toolset:
+			| 'ironsworn'
+			| 'starforged'
+			| 'sunderedisles' = 'starforged',
 		options?: Partial<ApplicationOptions>
 	) {
 		super(options)
@@ -66,14 +69,16 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
 }
 
 // When changing actor sheets, make sure we don't get a stale move sheet
-Hooks.on('preUpdateActor', (actor: IronswornActor, data: any) => {
+Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any) => {
 	if (actor.type === 'character' && data.flags?.core?.sheetClass) {
+		await actor.moveSheet?.close()
 		actor.moveSheet = undefined
 	}
 })
-Hooks.on('preUpdateSetting', (setting: Setting, data: any) => {
+Hooks.on('preUpdateSetting', async (setting: Setting, data: any) => {
 	if (setting.key === 'core.sheetClasses') {
 		for (const actor of game.actors ?? []) {
+			await actor.moveSheet?.close()
 			actor.moveSheet = undefined
 		}
 	}

@@ -32,10 +32,8 @@ export class CompactPCSheet extends VueActorSheet {
 
 		this.actor.moveSheet ||= new SFCharacterMoveSheet(
 			this.actor,
-			IronswornSettings.get('toolbox') === 'starforged'
-				? 'starforged'
-				: 'ironsworn'
+			this.actor.toolset
 		)
-		this.actor.moveSheet.render(true, { focus: true })
+		void this.actor.moveSheet.render(true, { focus: true })
 	}
 }
