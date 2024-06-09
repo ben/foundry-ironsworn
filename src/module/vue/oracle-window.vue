@@ -1,14 +1,14 @@
 <template>
 	<div class="flexcol">
-		<TabSet
-			id="oracleset"
-			:tab-keys="['ironsworn', 'starforged', 'sunderedisles']"
-			:default-key="defaultTab"
-		>
+		<TabSet id="oracleset" :tab-keys="tabKeys" :default-key="defaultTab">
 			<TabList>
 				<Tab tab-key="ironsworn" text="Ironsworn" />
 				<Tab tab-key="starforged" text="Starforged" />
-				<Tab tab-key="sunderedisles" text="Sundered Isles" />
+				<Tab
+					v-if="enableSunderedIsles"
+					tab-key="sunderedisles"
+					text="Sundered Isles"
+				/>
 			</TabList>
 			<TabPanels>
 				<TabPanel tab-key="ironsworn" class="flexcol">
@@ -21,7 +21,11 @@
 						<SfMovesheetoracles toolset="starforged" />
 					</Suspense>
 				</TabPanel>
-				<TabPanel tab-key="sunderedisles" class="flexcol">
+				<TabPanel
+					v-if="enableSunderedIsles"
+					tab-key="sunderedisles"
+					class="flexcol"
+				>
 					<h4>Coming soon…</h4>
 				</TabPanel>
 			</TabPanels>
@@ -39,4 +43,7 @@ import TabSet from './components/tabs/tab-set.vue'
 import Tab from './components/tabs/tab.vue'
 
 const defaultTab = IronswornSettings.defaultToolbox
+const enableSunderedIsles = IronswornSettings.get('sundered-isles-beta')
+const tabKeys = ['ironsworn', 'starforged']
+if (enableSunderedIsles) tabKeys.push('sunderedisles')
 </script>
