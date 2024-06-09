@@ -2,6 +2,7 @@
 	"IRONSWORN": {
 		"Ironsworn": "Ironsworn",
 		"Starforged": "Starforged",
+		"SunderedIsles": "Sundered Isles",
 		"YourWorldTruths": "Your World: Truths",
 		"TruthsAreOptional": "Creating truths is an optional step. You can always come back to this later in the settings.",
 		"TruthQuestStarter": "Quest Starter:",
@@ -288,7 +289,8 @@
 				"Name": "Appearance: Theme",
 				"Hint": "Sets the game theme, which affects the appearance of some UI elements and the default font. Requires a reload.",
 				"Ironsworn": "Ironsworn Classic",
-				"Starforged": "Starforged"
+				"Starforged": "Starforged",
+				"SunderedIsles": "Sundered Isles (Beta)"
 			},
 			"ColorScheme": {
 				"Name": "Appearance: Color scheme",
@@ -332,13 +334,9 @@
 				"Name": "Starforged Truths",
 				"Hint": "Open the dialog to generate your Starforged setting truths."
 			},
-			"SFBeta": {
-				"Name": "Show Starforged beta content",
-				"Hint": "Enables in-progress Starforged features."
-			},
-			"DataforgedIronswornMoves": {
-				"Name": "(Beta) New Ironsworn move-sheet UI",
-				"Hint": "If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization."
+			"SunderedIslesBeta": {
+				"Name": "(Beta) Sundered Isles",
+				"Hint": "Enables in-progress Sundered Isles features."
 			},
 			"ProgressMarkAnimation": {
 				"Name": "Enable progress mark animation",

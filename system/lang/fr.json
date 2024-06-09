@@ -312,14 +312,6 @@
 				"Name": "Vérités de Starforged",
 				"Hint": "Ouvrir la boite de dialogue pour générer les Vérités du monde de Starforged."
 			},
-			"SFBeta": {
-				"Name": "Montrer le contenu de la bêta de Starforged",
-				"Hint": "Active les fonctionnalités Starforged en cours de développement."
-			},
-			"DataforgedIronswornMoves": {
-				"Name": "(Beta) Nouvelle interface pour la feuille d'actions d'Ironsworn",
-				"Hint": "Si activé, utilise l'interface utilisateur de style Starforged pour la feuille d'action/oracle Ironsworn, et permet des entrées et des accroches définies par l'utilisateur pour la personnalisation."
-			},
 			"ProgressMarkAnimation": {
 				"Name": "Activer l'animation de la marque de progression",
 				"Hint": "Activez l'animation de la marque de progression. Notez que l'animation ne verrouille pas le bouton de la marque, ce changement est donc purement cosmétique."

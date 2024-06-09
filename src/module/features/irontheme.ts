@@ -70,6 +70,23 @@ export const THEMES: Record<string, Theme> = {
 				...hexPip
 			}
 		}
+	},
+	sunderedisles: {
+		labelKey: 'IRONSWORN.Settings.Theme.SunderedIsles',
+		decoration: {
+			tabs: { transition: 'slide' },
+			asset: {
+				ability: {
+					transition: 'slide',
+					...circlePip
+				}
+			},
+			impact: radioCheck,
+			challengeRank: {
+				padding: '1px',
+				...circlePip
+			}
+		}
 	}
 } as const
 
