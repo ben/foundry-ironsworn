@@ -121,6 +121,13 @@
         "starforgedoracles",
         "starforgedtruths"
       ]
+    },
+    {
+      "name": "Sundered Isles Rulebook",
+      "color": "#444444",
+      "packs": [
+        "sundered-isles-charts"
+      ]
     }
   ],
   "packs": [
@@ -192,6 +199,13 @@
       "label": "Starforged Scenes",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-sectors",
+      "type": "Scene"
+    },
+    {
+      "name": "sundered-isles-charts",
+      "label": "Sundered Isles Charts",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-charts",
       "type": "Scene"
     },
     {

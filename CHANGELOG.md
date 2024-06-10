@@ -4,6 +4,7 @@
 
 - v12: new PCs' tokens are now linked to their actor when created
 - Move links in oracle descriptions now work properly
+- Add Sundered Isles scenes with artwork by AugustBebel on Discord ([#993](https://github.com/ben/foundry-ironsworn/pull/993))
 
 ## 1.23.1
 

@@ -41,4 +41,6 @@ Hand-drawn map scene courtesy of [McSekcer](https://www.reddit.com/user/McSekcer
 
 Starforged scenes courtesy of [Unsplash](https://unsplash.com), and used under their [license](https://unsplash.com/license).
 
+Ocean scenes courtesy of [@AuguestBebel](https://github.com/AugustBebel) (https://github.com/ben/foundry-ironsworn/pull/993).
+
 Extra location icons courtesy of [Eric Rains and Kirin](https://github.com/ben/foundry-ironsworn/pull/485).
