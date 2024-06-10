@@ -124,6 +124,7 @@
     },
     {
       "name": "Sundered Isles Rulebook",
+      "color": "#444444",
       "packs": [
         "sundered-isles-charts"
       ]
