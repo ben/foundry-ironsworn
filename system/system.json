@@ -121,6 +121,12 @@
         "starforgedoracles",
         "starforgedtruths"
       ]
+    },
+    {
+      "name": "Sundered Isles Rulebook",
+      "packs": [
+        "sundered-isles-charts"
+      ]
     }
   ],
   "packs": [
@@ -192,6 +198,13 @@
       "label": "Starforged Scenes",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-sectors",
+      "type": "Scene"
+    },
+    {
+      "name": "sundered-isles-charts",
+      "label": "Sundered Isles Charts",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-charts",
       "type": "Scene"
     },
     {
