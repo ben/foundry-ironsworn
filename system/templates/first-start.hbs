@@ -13,7 +13,11 @@
 
 	<div class='boxgroup'>
 		<div class='flexrow boxrow'>
-			<div class='box flexcol clickable block' id='select-ironsworn'>
+			<div
+				class='box flexcol clickable block'
+				id='select-ironsworn'
+				style='padding: 5px'
+			>
 				<img
 					src='systems/foundry-ironsworn/assets/icons/logo-ironsworn-md.svg'
 					alt='Ironsworn sheet'
@@ -22,7 +26,11 @@
 					{{localize 'IRONSWORN.Ironsworn'}}
 				</p>
 			</div>
-			<div class='box flexcol clickable block' id='select-starforged'>
+			<div
+				class='box flexcol clickable block'
+				id='select-starforged'
+				style='padding: 5px'
+			>
 				<img
 					src='systems/foundry-ironsworn/assets/icons/logo-starforged-md.svg'
 					alt='Starforged sheet'
@@ -31,6 +39,22 @@
 					{{localize 'IRONSWORN.Starforged'}}
 				</p>
 			</div>
+
+			{{#if sunderedislesBeta}}
+				<div
+					class='box flexcol clickable block'
+					id='select-sunderedisles'
+					style='padding: 5px'
+				>
+					<img
+						src='systems/foundry-ironsworn/assets/icons/logo-sunderedisles-md.svg'
+						alt='Sundered Isles sheet'
+					/>
+					<p>
+						{{localize 'IRONSWORN.SunderedIsles'}}
+					</p>
+				</div>
+			{{/if}}
 		</div>
 	</div>
 
