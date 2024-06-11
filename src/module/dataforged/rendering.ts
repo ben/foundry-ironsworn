@@ -8,7 +8,7 @@ const COMPENDIUM_KEY_MAP = {
 	'Starforged/Moves': 'starforgedmoves',
 	'Starforged/Oracles': 'starforgedoracles',
 	'Starforged/Encounters': 'starforgedencounters'
-	// TODO: add Sundered Isles
+	// TODO: Sundered Isles
 }
 const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
 const DESCRIPTOR_FOCUS_RE = /\[Descriptor \+ Focus\]\(.*?\)/

@@ -235,7 +235,7 @@ export class IronswornSettings {
 		if (setting === 'sheet') {
 			const sheetClasses = game.settings.get('core', 'sheetClasses')
 			const defaultCharacterSheet = sheetClasses.Actor?.character
-			// TODO: match the SI sheet class name
+			// TODO: sundered isles
 			if (defaultCharacterSheet === 'ironsworn.SunderedIslesCharacterSheet') {
 				return 'sunderedisles'
 			}

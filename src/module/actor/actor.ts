@@ -62,7 +62,7 @@ export class IronswornActor<
 				return 'starforged'
 			if (this.sheet?.constructor.name === 'IronswornCharacterSheetV2')
 				return 'ironsworn'
-			// TODO: check for the 'sundered isles' sheet
+			// TODO: sundered isles
 		}
 
 		// Fall back to the global default
