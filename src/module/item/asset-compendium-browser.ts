@@ -3,7 +3,7 @@ import { VueAppMixin } from '../vue/vueapp.js'
 
 export class AssetCompendiumBrowser extends VueAppMixin(Application) {
 	constructor(
-		protected toolset: 'starforged' | 'ironsworn',
+		protected toolset: 'starforged' | 'ironsworn' | 'sunderedisles',
 		options?: Partial<ApplicationOptions>
 	) {
 		super(options)

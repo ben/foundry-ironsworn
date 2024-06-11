@@ -54,10 +54,8 @@ export class StarforgedCharacterSheet extends VueActorSheet {
 	_openMoveSheet(_e?: JQuery.ClickEvent) {
 		this.actor.moveSheet ||= new SFCharacterMoveSheet(
 			this.actor,
-			IronswornSettings.get('toolbox') === 'ironsworn'
-				? 'ironsworn'
-				: 'starforged'
+			this.actor.toolset
 		)
-		this.actor.moveSheet.render(true, { focus: true })
+		void this.actor.moveSheet.render(true, { focus: true })
 	}
 }

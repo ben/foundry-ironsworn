@@ -6,16 +6,17 @@
 			:compact-progress="compactProgress"
 			:excluded-subtypes="excludedSubtypes"
 			:progress-stars="progressStars"
-			:show-completed="'no-completed'" />
+			:show-completed="'no-completed'"
+		/>
 		<ProgressControls class="nogrow" :foe-compendium="foeCompendium" />
 		<CompletedProgressList
 			class="nogrow"
-			:collapsible-props="{ toggleWrapperIs: 'h3' }" />
+			:collapsible-props="{ toggleWrapperIs: 'h3' }"
+		/>
 	</article>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import ProgressControls from 'component:progress/progress-controls.vue'
 import { IronswornSettings } from '../../../helpers/settings'
 import ProgressList from 'component:progress/progress-list.vue'
@@ -35,9 +36,9 @@ defineProps<{
 	compactProgress?: boolean
 }>()
 
-const foeCompendium = computed(() => {
-	return IronswornSettings.starforgedToolsEnabled
-		? 'starforgedencounters'
-		: 'ironswornfoes'
-})
+const foeCompendium = {
+	ironsworn: 'ironswornfoes',
+	starforged: 'starforgedencounters'
+	// TODO: sunderedisles: 'sunderedislesencounters'
+}[IronswornSettings.defaultToolbox]
 </script>

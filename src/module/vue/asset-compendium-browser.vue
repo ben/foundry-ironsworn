@@ -53,13 +53,17 @@ import {
 import IronBtn from 'component:buttons/iron-btn.vue'
 import RenderedText from 'component:rendered-text.vue'
 
-const props = defineProps<{ data: { toolset: 'starforged' | 'ironsworn' } }>()
+const props = defineProps<{
+	data: { toolset: 'starforged' | 'ironsworn' | 'sunderedisles' }
+}>()
 
 provide('toolset', props.data.toolset)
 
 const categories = await (props.data.toolset === 'ironsworn'
 	? createIronswornAssetTree()
-	: createStarforgedAssetTree())
+	: props.data.toolset === 'starforged'
+	? createStarforgedAssetTree()
+	: []) // TODO: sundered isles
 
 const data = reactive({ categories })
 </script>

@@ -7,19 +7,22 @@
 				:placeholder="
 					$t('SIDEBAR.Search', { types: $t('IRONSWORN.ROLLTABLES.TypeOracle') })
 				"
-				@keydown.enter.prevent />
+				@keydown.enter.prevent
+			/>
 			<IronBtn
 				icon="fa:xmark-circle"
 				class="nogrow"
 				:class="$style.btn"
 				style="padding: 6px"
-				@click="clearSearch" />
+				@click="clearSearch"
+			/>
 			<IronBtn
 				icon="fa:down-left-and-up-right-to-center"
 				class="nogrow"
 				:class="$style.btn"
 				style="padding: 6px"
-				@click="collapseAll" />
+				@click="collapseAll"
+			/>
 		</div>
 
 		<div class="item-list scrollable flexcol" :class="$style.list">
@@ -27,7 +30,8 @@
 				v-for="node in treeRoot.children"
 				:key="node.displayName"
 				ref="oracles"
-				:node="node" />
+				:node="node"
+			/>
 		</div>
 	</div>
 </template>
@@ -40,7 +44,9 @@ import { OracleTable } from '../../roll-table/oracle-table'
 import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 
-const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
+const props = defineProps<{
+	toolset: 'ironsworn' | 'starforged' | 'sunderedisles'
+}>()
 provide('toolset', props.toolset)
 
 const tempTreeRoot = await getOracleTreeWithCustomOracles(props.toolset)

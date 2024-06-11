@@ -87,8 +87,7 @@ let theAssetBrowser: AssetCompendiumBrowser | undefined
 function assetBrowser() {
 	if (!theAssetBrowser) {
 		theAssetBrowser = new AssetCompendiumBrowser(
-			$actor?.toolset ??
-				(IronswornSettings.starforgedToolsEnabled ? 'starforged' : 'ironsworn')
+			$actor?.toolset ?? IronswornSettings.defaultToolbox
 		)
 	}
 	theAssetBrowser.render(true, { focus: true })

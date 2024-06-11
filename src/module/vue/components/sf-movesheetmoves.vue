@@ -7,35 +7,41 @@
 				:placeholder="
 					$t('SIDEBAR.Search', { types: $t('IRONSWORN.ITEMS.TypeMove') })
 				"
-				@keydown.enter.prevent />
+				@keydown.enter.prevent
+			/>
 			<IronBtn
 				icon="fa:xmark-circle"
 				class="nogrow"
 				:class="$style.btn"
 				style="padding: 6px"
-				@click="clearSearch()" />
+				@click="clearSearch()"
+			/>
 			<IronBtn
 				icon="fa:down-left-and-up-right-to-center"
 				class="nogrow"
 				:class="$style.btn"
 				style="padding: 6px"
-				@click="collapseMoveCategories()" />
+				@click="collapseMoveCategories()"
+			/>
 		</nav>
 
 		<ul
 			v-if="state.searchQuery"
 			class="item-list scrollable flexcol"
-			:class="$style.list">
+			:class="$style.list"
+		>
 			<!-- Flat search results -->
 			<li
 				v-for="(move, resultIndex) of searchResults"
 				:key="move.moveItem().id ?? `move${resultIndex}`"
-				class="nogrow">
+				class="nogrow"
+			>
 				<SfMoverow
 					ref="allMoves"
 					:move="move"
 					:thematic-color="move.color"
-					:class="$style.filteredResult" />
+					:class="$style.filteredResult"
+				/>
 			</li>
 		</ul>
 
@@ -44,13 +50,15 @@
 			<li
 				v-for="(category, catIndex) in state.categories"
 				:key="catIndex"
-				class="nogrow">
+				class="nogrow"
+			>
 				<SfMoveCategoryRows
 					ref="allCategories"
 					class="nogrow"
 					:class="$style.catList"
 					:category="category"
-					:data-tourid="`move-category-${category.dataforgedCategory?.$id}`" />
+					:data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
+				/>
 			</li>
 		</ul>
 	</article>
@@ -67,7 +75,9 @@ import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
 import IronBtn from './buttons/iron-btn.vue'
 
-const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
+const props = defineProps<{
+	toolset: 'ironsworn' | 'starforged' | 'sunderedisles'
+}>()
 provide('toolset', props.toolset)
 
 const state = reactive({
@@ -78,12 +88,12 @@ const state = reactive({
 let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
 let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
 
-const tempCategories =
+state.categories =
 	props.toolset === 'ironsworn'
 		? await createIronswornMoveTree()
-		: await createStarforgedMoveTree()
-
-state.categories = tempCategories
+		: props.toolset === 'starforged'
+		? await createStarforgedMoveTree()
+		: [] // TODO: Sundered Isles move tree
 
 const checkedSearchQuery = computed(() => {
 	try {
@@ -109,12 +119,6 @@ const searchResults = computed(() => {
 
 function clearSearch() {
 	state.searchQuery = ''
-}
-
-function collapseMoves() {
-	for (const cat of allCategories.value ?? []) {
-		cat.collapseMoves()
-	}
 }
 
 function collapseMoveCategories() {

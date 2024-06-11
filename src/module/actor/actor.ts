@@ -1,6 +1,7 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
 import type { DocumentSubTypes } from '../../types/helperTypes'
 import { CreateActorDialog } from '../applications/createActorDialog'
+import { IronswornSettings } from '../helpers/settings'
 import { typedDeleteDialog } from '../helpers/util'
 import type { IronswornItem } from '../item/item'
 import type { ActorDataProperties } from './config'
@@ -53,26 +54,19 @@ export class IronswornActor<
 		return undefined
 	}
 
-	get toolset(): 'ironsworn' | 'starforged' {
-		// We can't use IronswornSettings helpers here, it breaks the import orders
-		// First check if the toolbox is set to one or the other
-		const toolbox = game.settings.get('foundry-ironsworn', 'toolbox') as string
-		if (toolbox === 'ironsworn') return 'ironsworn'
-		if (toolbox === 'starforged') return 'starforged'
-
-		// Set to "match sheet", so check for a specific setting on this actor
-		if (this.type === 'character') {
-			return this.sheet?.constructor.name === 'StarforgedCharacterSheet'
-				? 'starforged'
-				: 'ironsworn'
+	get toolset(): 'ironsworn' | 'starforged' | 'sunderedisles' {
+		// If set to "match sheet", check for this character's sheet
+		const toolbox = IronswornSettings.get('toolbox')
+		if (toolbox == 'sheet' && this.type === 'character') {
+			if (this.sheet?.constructor.name === 'StarforgedCharacterSheet')
+				return 'starforged'
+			if (this.sheet?.constructor.name === 'IronswornCharacterSheetV2')
+				return 'ironsworn'
+			// TODO: check for the 'sundered isles' sheet
 		}
 
-		// Nope, now check the default character sheet class
-		const sheetClasses = game.settings.get('core', 'sheetClasses') as any
-		return sheetClasses.Actor?.character ===
-			'ironsworn.StarforgedCharacterSheet'
-			? 'starforged'
-			: 'ironsworn'
+		// Fall back to the global default
+		return IronswornSettings.defaultToolbox
 	}
 
 	override async deleteDialog(options?: Partial<DialogOptions>) {

@@ -4,7 +4,8 @@
 		ref="$tabSet"
 		:class="$style.tabSet"
 		:tab-keys="['moves', 'oracles']"
-		data-tourid="sheet">
+		data-tourid="sheet"
+	>
 		<TabList>
 			<Tab tab-key="moves" :text="$t('IRONSWORN.ITEMS.TypeMove')">
 				<template #icon>
@@ -23,7 +24,8 @@
 					<SfMovesheetmoves
 						ref="movesTab"
 						:class="$style.panelContent"
-						:toolset="data.toolset" />
+						:toolset="data.toolset"
+					/>
 				</Suspense>
 			</TabPanel>
 			<TabPanel tab-key="oracles" class="flexcol">
@@ -31,7 +33,8 @@
 					<SfMovesheetoracles
 						ref="oraclesTab"
 						:class="$style.panelContent"
-						:toolset="data.toolset" />
+						:toolset="data.toolset"
+					/>
 				</Suspense>
 			</TabPanel>
 		</TabPanels>
@@ -54,7 +57,7 @@ import type { CharacterDataProperties } from '../actor/subtypes/character'
 const props = defineProps<{
 	data: {
 		actor: CharacterDataProperties
-		toolset: 'ironsworn' | 'starforged'
+		toolset: 'ironsworn' | 'starforged' | 'sunderedisles'
 	}
 }>()
 

@@ -23,7 +23,11 @@ declare global {
 	namespace ClientSettings {
 		/** Settings added here will be automatically typed throughout the game system. */
 		interface Values {
-			'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
+			'foundry-ironsworn.toolbox':
+				| 'ironsworn'
+				| 'starforged'
+				| 'sunderedisles'
+				| 'sheet'
 
 			'foundry-ironsworn.theme': keyof typeof IronTheme.THEMES
 			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor'
@@ -35,6 +39,8 @@ declare global {
 			'foundry-ironsworn.shared-supply': boolean
 
 			'foundry-ironsworn.advanced-rolling-default-open': boolean
+
+			'foundry-ironsworn.sundered-isles-beta': boolean
 
 			// Internal only
 			'foundry-ironsworn.first-run-tips-shown': boolean
@@ -69,6 +75,31 @@ export class IronswornSettings {
 	}
 
 	static registerSettings() {
+		game.settings.registerMenu('foundry-ironsworn', 'first-start-dialog', {
+			name: 'IRONSWORN.Settings.ConfigurationDialog.Name',
+			label: 'IRONSWORN.Settings.ConfigurationDialog.Label',
+			icon: 'fas fa-cog',
+			hint: 'IRONSWORN.Settings.ConfigurationDialog.Hint',
+			type: FirstStartDialog,
+			restricted: true
+		})
+		game.settings.registerMenu('foundry-ironsworn', 'is-truths-dialog', {
+			name: 'IRONSWORN.Settings.ISTruthsDialog.Name',
+			label: 'IRONSWORN.Settings.ISTruthsDialog.Label',
+			icon: 'fas fa-feather',
+			hint: 'IRONSWORN.Settings.ISTruthsDialog.Hint',
+			type: WorldTruthsDialog,
+			restricted: true
+		})
+		game.settings.registerMenu('foundry-ironsworn', 'sf-truths-dialog', {
+			name: 'IRONSWORN.Settings.SFTruthsDialog.Name',
+			label: 'IRONSWORN.Settings.SFTruthsDialog.Label',
+			icon: 'fas fa-feather',
+			hint: 'IRONSWORN.Settings.SFTruthsDialog.Hint',
+			type: SFSettingTruthsDialogVue,
+			restricted: true
+		})
+
 		// Toolbox/ruleset. this goes at the top because it's a "showstopper" if folks need it but can't find it.
 		game.settings.register('foundry-ironsworn', 'toolbox', {
 			name: 'IRONSWORN.Settings.Tools.Name',
@@ -79,7 +110,8 @@ export class IronswornSettings {
 			choices: {
 				sheet: 'IRONSWORN.Settings.Tools.Sheet',
 				ironsworn: 'IRONSWORN.Ironsworn',
-				starforged: 'IRONSWORN.Starforged'
+				starforged: 'IRONSWORN.Starforged',
+				sunderedisles: 'IRONSWORN.SunderedIsles'
 			},
 			default: 'sheet',
 			// eslint-disable-next-line @typescript-eslint/no-misused-promises
@@ -138,30 +170,6 @@ export class IronswornSettings {
 			type: Boolean,
 			default: true
 		})
-		game.settings.registerMenu('foundry-ironsworn', 'first-start-dialog', {
-			name: 'IRONSWORN.Settings.ConfigurationDialog.Name',
-			label: 'IRONSWORN.Settings.ConfigurationDialog.Label',
-			icon: 'fas fa-cog',
-			hint: 'IRONSWORN.Settings.ConfigurationDialog.Hint',
-			type: FirstStartDialog,
-			restricted: true
-		})
-		game.settings.registerMenu('foundry-ironsworn', 'is-truths-dialog', {
-			name: 'IRONSWORN.Settings.ISTruthsDialog.Name',
-			label: 'IRONSWORN.Settings.ISTruthsDialog.Label',
-			icon: 'fas fa-feather',
-			hint: 'IRONSWORN.Settings.ISTruthsDialog.Hint',
-			type: WorldTruthsDialog,
-			restricted: true
-		})
-		game.settings.registerMenu('foundry-ironsworn', 'sf-truths-dialog', {
-			name: 'IRONSWORN.Settings.SFTruthsDialog.Name',
-			label: 'IRONSWORN.Settings.SFTruthsDialog.Label',
-			icon: 'fas fa-feather',
-			hint: 'IRONSWORN.Settings.SFTruthsDialog.Hint',
-			type: SFSettingTruthsDialogVue,
-			restricted: true
-		})
 
 		// Changing the supply rule represents a divergence from the ruleset; as 'advanced' behavior it can tolerate living at the end of the list.
 		game.settings.register('foundry-ironsworn', 'shared-supply', {
@@ -188,6 +196,15 @@ export class IronswornSettings {
 			}
 		)
 
+		game.settings.register('foundry-ironsworn', 'sundered-isles-beta', {
+			name: 'IRONSWORN.Settings.SunderedIslesBeta.Name',
+			hint: 'IRONSWORN.Settings.SunderedIslesBeta.Hint',
+			scope: 'world',
+			config: true,
+			type: Boolean,
+			default: false
+		})
+
 		game.settings.register('foundry-ironsworn', 'data-version', {
 			scope: 'world',
 			config: false,
@@ -213,15 +230,21 @@ export class IronswornSettings {
 		return game.settings.get('foundry-ironsworn', key)
 	}
 
-	static get starforgedToolsEnabled(): boolean {
-		if (this.get('toolbox') === 'ironsworn') return false
-		if (this.get('toolbox') === 'starforged') return true
-
-		// Set to "match sheet, so check the sheet"
-		const sheetClasses = game.settings.get('core', 'sheetClasses') as any
-		return (
-			sheetClasses.Actor?.character === 'ironsworn.StarforgedCharacterSheet'
-		)
+	static get defaultToolbox(): 'ironsworn' | 'starforged' | 'sunderedisles' {
+		const setting = this.get('toolbox')
+		if (setting === 'sheet') {
+			const sheetClasses = game.settings.get('core', 'sheetClasses')
+			const defaultCharacterSheet = sheetClasses.Actor?.character
+			// TODO: match the SI sheet class name
+			if (defaultCharacterSheet === 'ironsworn.SunderedIslesCharacterSheet') {
+				return 'sunderedisles'
+			}
+			if (defaultCharacterSheet === 'ironsworn.IronswornCharacterSheetV2') {
+				return 'ironsworn'
+			}
+			return 'starforged'
+		}
+		return setting
 	}
 
 	/**

@@ -148,7 +148,8 @@ export function activateSceneButtonListeners() {
 		}
 		controls[0].tools.push(oracleButton)
 
-		if (IronswornSettings.starforgedToolsEnabled) {
+		// TODO: sundered isles
+		if (IronswornSettings.defaultToolbox === 'starforged') {
 			const sfControl: SceneControl = {
 				name: 'Starforged',
 				title: game.i18n.localize('IRONSWORN.StarforgedTools'),

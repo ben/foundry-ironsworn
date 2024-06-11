@@ -291,14 +291,6 @@
 				"Name": "Okno konfiguracji",
 				"Hint": "Wybierz pomiędzy elementami UI Ironsworn a Starforged"
 			},
-			"SFBeta": {
-				"Name": "Pokaż zawartość Starforged-beta",
-				"Hint": "Włacza funkcję Starforged, będące w trakcie realizacji."
-			},
-			"DataforgedIronswornMoves": {
-				"Name": "(Beta) New Ironsworn move-sheet UI",
-				"Hint": "If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization."
-			},
 			"ProgressMarkAnimation": {
 				"Name": "Włącz animację toru postępu",
 				"Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."
