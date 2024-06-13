@@ -30,7 +30,7 @@ declare global {
 				| 'sheet'
 
 			'foundry-ironsworn.theme': keyof typeof IronTheme.THEMES
-			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor'
+			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor' | 'oceanic'
 			'foundry-ironsworn.progress-mark-animation': boolean
 
 			'foundry-ironsworn.log-changes': boolean
@@ -137,7 +137,8 @@ export class IronswornSettings {
 			type: String,
 			choices: {
 				zinc: 'IRONSWORN.Settings.ColorScheme.Zinc',
-				phosphor: 'IRONSWORN.Settings.ColorScheme.Phosphor'
+				phosphor: 'IRONSWORN.Settings.ColorScheme.Phosphor',
+				oceanic: 'IRONSWORN.Settings.ColorScheme.Oceanic'
 			},
 			default: 'zinc',
 			onChange: IronColor.updateColorScheme

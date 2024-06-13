@@ -1,0 +1,32 @@
+/* stylelint-disable order/order */
+// Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
+
+// @use 'sass:meta';
+@use 'mixin:color.scss';
+// @use 'mixin:fvtt.scss';
+
+.ironcolor__oceanic {
+	@include color.palettize(
+		// FIXME: migrate to OKLCH once this issue is resolved and VSC provides color previews: https://github.com/microsoft/vscode-css-languageservice/issues/305
+		$fg-color: hsl(0deg, 0%, 0%),
+		$bg-color: hsl(0deg, 0%, 100%),
+		$warm-color: hsl(41deg 77% 57%),
+		$cool-color: hsl(194, 25%, 50%),
+		$prefix: 'ironsworn-color'
+	);
+
+	@include color.lightTheme('ironsworn-color');
+	@include color.sharpBorder('ironsworn-color');
+	@include color.interactiveInvert(
+		'ironsworn-color-clickable-block',
+		'ironsworn-color'
+	);
+
+	--ironsworn-color-text-stroke: transparent;
+
+	// CLICKABLE TEXT: HOVER FILTER EFFECT
+	--ironsworn-filter-highlight: drop-shadow(
+		0 0 3px var(--ironsworn-color-cool)
+	);
+	--ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool);
+}
