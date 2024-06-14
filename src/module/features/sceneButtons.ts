@@ -252,7 +252,7 @@ function sunderedIslesControl(
 	if (game.user?.isGM) {
 		control.tools.push({
 			name: 'edit',
-			icon: 'isicon-region-sf', // TODO: sundered isles
+			icon: 'isicon-region-sf', // TODO: sundered isles icon
 			title: game.i18n.format('DOCUMENT.Update', {
 				type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
 			}),
@@ -290,3 +290,14 @@ class IronswornCanvasLayer extends InteractionLayer {
 		return []
 	}
 }
+
+Hooks.on('getSceneNavigationContext', (_html, contextOptions) => {
+	contextOptions.push({
+		name: game.i18n.format('DOCUMENT.Update', {
+			type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
+		}),
+		icon: '<i class="fa isicon-region-sf" style="display: inline-block;"></i>', // TODO: sundered isles icon
+		condition: game.user?.isGM,
+		callback: editSector
+	})
+})
