@@ -234,7 +234,10 @@
 		"REGION": {
 			"Terminus": "Terminus",
 			"Outlands": "Outlands",
-			"Expanse": "Expanse"
+			"Expanse": "Expanse",
+			"Myriads": "Myriads",
+			"Margins": "Margins",
+			"Reaches": "Reaches"
 		},
 		"RotateCCW": "Rotate counter-clockwise",
 		"RotateCW": "Rotate clockwise",
@@ -674,7 +677,8 @@
 			"TypeOracle": "Oracles"
 		},
 		"SCENE": {
-			"TypeSector": "Sector"
+			"TypeSector": "Sector",
+			"TypeChart": "Chart"
 		},
 		"SCENES": {
 			"TypeSector": "Sectors"
