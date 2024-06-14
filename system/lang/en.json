@@ -229,6 +229,7 @@
 		"Fifth": "fifth",
 		"StarforgedTools": "Starforged Tools",
 		"IronswornTools": "Ironsworn Tools",
+		"SunderedIslesTools": "Sundered Isles Tools",
 		"Region": "Region",
 		"RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
 		"REGION": {
