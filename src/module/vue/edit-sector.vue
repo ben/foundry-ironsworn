@@ -5,36 +5,30 @@
 			<i class="fa fa-circle-question" data-tooltip="IRONSWORN.RegionTip"></i>
 		</h4>
 		<label class="nogrow">
-			<input v-model="data.region" type="radio" value="terminus" />
+			<input v-model="region" type="radio" value="terminus" />
 			{{ $t('IRONSWORN.REGION.Terminus') }}
 		</label>
 		<label class="nogrow">
-			<input v-model="data.region" type="radio" value="outlands" />
+			<input v-model="region" type="radio" value="outlands" />
 			{{ $t('IRONSWORN.REGION.Outlands') }}
 		</label>
 		<label class="nogrow">
-			<input v-model="data.region" type="radio" value="expanse" />
+			<input v-model="region" type="radio" value="expanse" />
 			{{ $t('IRONSWORN.REGION.Expanse') }}
 		</label>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, watch } from 'vue'
+import { watch, ref } from 'vue'
 
 const props = defineProps<{ data: { sceneId: string } }>()
 
-function foundryScene() {
-	const scene = game.scenes?.get(props.data.sceneId)
-	console.log(scene)
-	return scene
-}
-const scene = computed(() => foundryScene()?.toObject() as any)
+const scene = game.scenes?.get(props.data.sceneId)
+const region = ref<string>(scene?.flags['foundry-ironsworn']?.['region'])
 
-const data = reactive({
-	region: scene.value?.flags['foundry-ironsworn']?.['region']
-})
-watch(data, ({ region }) => {
-	foundryScene()?.setFlag('foundry-ironsworn', 'region', region)
+// Send updates to Foundry
+watch(region, (newValue) => {
+	scene?.setFlag('foundry-ironsworn', 'region', newValue)
 })
 </script>
