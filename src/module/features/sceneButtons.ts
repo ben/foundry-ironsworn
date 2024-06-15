@@ -37,10 +37,10 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
 	return parentFolder
 }
 
-function editSector() {
+async function editSector() {
 	const sceneId = game.user?.viewedScene
 	if (sceneId) {
-		void new EditSectorDialog(sceneId).render(true)
+		await new EditSectorDialog(sceneId).render(true, { focus: true })
 	}
 }
 
@@ -148,94 +148,133 @@ export function activateSceneButtonListeners() {
 		}
 		controls[0].tools.push(oracleButton)
 
-		// TODO: sundered isles
-		if (IronswornSettings.defaultToolbox === 'starforged') {
-			const sfControl: SceneControl = {
-				name: 'Starforged',
-				title: game.i18n.localize('IRONSWORN.StarforgedTools'),
-				icon: 'isicon-logo-starforged-dk',
-				layer: 'ironsworn',
-				visible: true,
-				activeTool: 'select',
-				tools: [oracleButton]
-			}
+		const control =
+			IronswornSettings.defaultToolbox === 'starforged'
+				? starforgedControl(oracleButton)
+				: IronswornSettings.defaultToolbox === 'sunderedisles'
+				? sunderedIslesControl(oracleButton)
+				: ironswornControl(oracleButton)
 
-			if (game.user?.isGM) {
-				sfControl.tools.push(
-					{
-						name: 'edit',
-						icon: 'isicon-region-sf',
-						title: game.i18n.format('DOCUMENT.Update', {
-							type: game.i18n.localize('IRONSWORN.SCENE.TypeSector')
-						}),
-						onClick: editSector
-					},
-					// { // TODO: maybe reenable this when we have a good way of doing it
-					//   name: 'sector',
-					//   icon: 'isicon-sector',
-					//   title: game.i18n.format('DOCUMENT.Create',{type: ('IRONSWORN.SCENE.TypeSector')}),
-					//   onClick: warn,
-					// },
-					{
-						name: 'star',
-						icon: 'isicon-stellar-object',
-						title: game.i18n.format('DOCUMENT.Create', {
-							type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeStar')
-						}),
-						onClick: newStar
-					},
-					{
-						name: 'planet',
-						icon: 'isicon-world',
-						title: game.i18n.format('DOCUMENT.Create', {
-							type: game.i18n.localize('IRONSWORN.ACTOR.SubtypePlanet')
-						}),
-						onClick: newPlanet
-					},
-					{
-						name: 'settlement',
-						icon: 'isicon-settlement-sf',
-						title: game.i18n.format('DOCUMENT.Create', {
-							type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeSettlement')
-						}),
-						onClick: newSettlement
-					},
-					{
-						name: 'derelict',
-						icon: 'isicon-derelict',
-						title: game.i18n.format('DOCUMENT.Create', {
-							type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeDerelict')
-						}),
-						onClick: newDerelict
-					},
-					{
-						name: 'vault',
-						icon: 'isicon-precursor-vault',
-						title: game.i18n.format('DOCUMENT.Create', {
-							type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeVault')
-						}),
-						onClick: newVault
-					}
-				)
-			}
-
-			controls.push(sfControl)
-		} else {
-			const isControl: SceneControl = {
-				name: 'Ironsworn',
-				title: game.i18n.localize('IRONSWORN.IronswornTools'),
-				icon: 'isicon-logo-ironsworn-dk',
-				layer: 'ironsworn',
-				visible: true,
-				activeTool: 'select',
-				tools: [oracleButton]
-			}
-
-			controls.push(isControl)
-		}
+		if (control) controls.push(control)
 
 		return controls
 	})
+}
+
+function starforgedControl(
+	oracleButton: SceneControlToolNoToggle
+): SceneControl {
+	const sfControl: SceneControl = {
+		name: 'Starforged',
+		title: game.i18n.localize('IRONSWORN.StarforgedTools'),
+		icon: 'isicon-logo-starforged-dk',
+		layer: 'ironsworn',
+		visible: true,
+		activeTool: 'select',
+		tools: [oracleButton]
+	}
+
+	if (game.user?.isGM) {
+		sfControl.tools.push(
+			{
+				name: 'edit',
+				icon: 'isicon-region-sf',
+				title: game.i18n.format('DOCUMENT.Update', {
+					type: game.i18n.localize('IRONSWORN.SCENE.TypeSector')
+				}),
+				onClick: editSector
+			},
+			// { // TODO: maybe reenable this when we have a good way of doing it
+			//   name: 'sector',
+			//   icon: 'isicon-sector',
+			//   title: game.i18n.format('DOCUMENT.Create',{type: ('IRONSWORN.SCENE.TypeSector')}),
+			//   onClick: warn,
+			// },
+			{
+				name: 'star',
+				icon: 'isicon-stellar-object',
+				title: game.i18n.format('DOCUMENT.Create', {
+					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeStar')
+				}),
+				onClick: newStar
+			},
+			{
+				name: 'planet',
+				icon: 'isicon-world',
+				title: game.i18n.format('DOCUMENT.Create', {
+					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypePlanet')
+				}),
+				onClick: newPlanet
+			},
+			{
+				name: 'settlement',
+				icon: 'isicon-settlement-sf',
+				title: game.i18n.format('DOCUMENT.Create', {
+					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeSettlement')
+				}),
+				onClick: newSettlement
+			},
+			{
+				name: 'derelict',
+				icon: 'isicon-derelict',
+				title: game.i18n.format('DOCUMENT.Create', {
+					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeDerelict')
+				}),
+				onClick: newDerelict
+			},
+			{
+				name: 'vault',
+				icon: 'isicon-precursor-vault',
+				title: game.i18n.format('DOCUMENT.Create', {
+					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeVault')
+				}),
+				onClick: newVault
+			}
+		)
+	}
+
+	return sfControl
+}
+
+function sunderedIslesControl(
+	oracleButton: SceneControlToolNoToggle
+): SceneControl {
+	const control: SceneControl = {
+		name: 'Starforged',
+		title: game.i18n.localize('IRONSWORN.SunderedIslesTools'),
+		icon: 'isicon-logo-starforged-dk',
+		layer: 'ironsworn',
+		visible: true,
+		activeTool: 'select',
+		tools: [oracleButton]
+	}
+
+	if (game.user?.isGM) {
+		control.tools.push({
+			name: 'edit',
+			icon: 'isicon-region-sf', // TODO: sundered isles icon
+			title: game.i18n.format('DOCUMENT.Update', {
+				type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
+			}),
+			onClick: editSector
+		})
+	}
+
+	return control
+}
+
+function ironswornControl(
+	oracleButton: SceneControlToolNoToggle
+): SceneControl {
+	return {
+		name: 'Ironsworn',
+		title: game.i18n.localize('IRONSWORN.IronswornTools'),
+		icon: 'isicon-logo-ironsworn-dk',
+		layer: 'ironsworn',
+		visible: true,
+		activeTool: 'select',
+		tools: [oracleButton]
+	}
 }
 
 // @ts-expect-error
@@ -251,3 +290,14 @@ class IronswornCanvasLayer extends InteractionLayer {
 		return []
 	}
 }
+
+Hooks.on('getSceneNavigationContext', (_html, contextOptions) => {
+	contextOptions.push({
+		name: game.i18n.format('DOCUMENT.Update', {
+			type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
+		}),
+		icon: '<i class="fa isicon-region-sf" style="display: inline-block;"></i>', // TODO: sundered isles icon
+		condition: game.user?.isGM,
+		callback: editSector
+	})
+})

@@ -4,37 +4,33 @@
 			{{ $t('IRONSWORN.Region') }}
 			<i class="fa fa-circle-question" data-tooltip="IRONSWORN.RegionTip"></i>
 		</h4>
-		<label class="nogrow">
-			<input v-model="data.region" type="radio" value="terminus" />
-			{{ $t('IRONSWORN.REGION.Terminus') }}
-		</label>
-		<label class="nogrow">
-			<input v-model="data.region" type="radio" value="outlands" />
-			{{ $t('IRONSWORN.REGION.Outlands') }}
-		</label>
-		<label class="nogrow">
-			<input v-model="data.region" type="radio" value="expanse" />
-			{{ $t('IRONSWORN.REGION.Expanse') }}
+		<label class="nogrow" v-for="option in options">
+			<input v-model="region" type="radio" :value="option.toLowerCase()" />
+			{{ $t(`IRONSWORN.REGION.${option}`) }}
 		</label>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, watch } from 'vue'
+import { watch, ref } from 'vue'
+import { IronswornSettings } from '../helpers/settings'
 
 const props = defineProps<{ data: { sceneId: string } }>()
 
-function foundryScene() {
-	const scene = game.scenes?.get(props.data.sceneId)
-	console.log(scene)
-	return scene
-}
-const scene = computed(() => foundryScene()?.toObject() as any)
+const defaultToolbox = IronswornSettings.defaultToolbox
+const options: string[] =
+	defaultToolbox === 'starforged'
+		? ['Terminus', 'Outlands', 'Expanse']
+		: defaultToolbox === 'sunderedisles'
+		? ['Myriads', 'Margins', 'Reaches']
+		: []
 
-const data = reactive({
-	region: scene.value?.flags['foundry-ironsworn']?.['region']
-})
-watch(data, ({ region }) => {
-	foundryScene()?.setFlag('foundry-ironsworn', 'region', region)
+const scene = game.scenes?.get(props.data.sceneId)
+// @ts-expect-error scene.flags isn't in the types
+const region = ref<string>(scene?.flags['foundry-ironsworn']?.['region'])
+
+// Send updates to Foundry
+watch(region, (newValue) => {
+	scene?.setFlag('foundry-ironsworn', 'region', newValue)
 })
 </script>

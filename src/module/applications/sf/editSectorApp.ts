@@ -1,3 +1,4 @@
+import { IronswornSettings } from '../../helpers/settings'
 import editSectorVue from '../../vue/edit-sector.vue'
 import { VueAppMixin } from '../../vue/vueapp.js'
 
@@ -7,8 +8,13 @@ export class EditSectorDialog extends VueAppMixin(Application) {
 	}
 
 	static get defaultOptions() {
+		const defaultToolbox = IronswornSettings.defaultToolbox
+		const titleKey =
+			defaultToolbox === 'starforged'
+				? 'IRONSWORN.SCENE.TypeSector'
+				: 'IRONSWORN.SCENE.TypeChart'
 		return foundry.utils.mergeObject(super.defaultOptions, {
-			title: game.i18n.localize('IRONSWORN.SCENE.TypeSector'),
+			title: game.i18n.localize(titleKey),
 			id: 'edit-sector-dialog',
 			resizable: true,
 			left: 115,

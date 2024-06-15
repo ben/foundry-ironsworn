@@ -229,12 +229,16 @@
 		"Fifth": "fifth",
 		"StarforgedTools": "Starforged Tools",
 		"IronswornTools": "Ironsworn Tools",
+		"SunderedIslesTools": "Sundered Isles Tools",
 		"Region": "Region",
 		"RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
 		"REGION": {
 			"Terminus": "Terminus",
 			"Outlands": "Outlands",
-			"Expanse": "Expanse"
+			"Expanse": "Expanse",
+			"Myriads": "Myriads",
+			"Margins": "Margins",
+			"Reaches": "Reaches"
 		},
 		"RotateCCW": "Rotate counter-clockwise",
 		"RotateCW": "Rotate clockwise",
@@ -674,7 +678,8 @@
 			"TypeOracle": "Oracles"
 		},
 		"SCENE": {
-			"TypeSector": "Sector"
+			"TypeSector": "Sector",
+			"TypeChart": "Chart"
 		},
 		"SCENES": {
 			"TypeSector": "Sectors"
