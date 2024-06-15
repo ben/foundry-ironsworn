@@ -26,6 +26,7 @@ const options: string[] =
 		: []
 
 const scene = game.scenes?.get(props.data.sceneId)
+// @ts-expect-error scene.flags isn't in the types
 const region = ref<string>(scene?.flags['foundry-ironsworn']?.['region'])
 
 // Send updates to Foundry
