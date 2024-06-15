@@ -13,7 +13,8 @@ export class SharedModel extends foundry.abstract.TypeDataModel<
 	static override defineSchema(): DataSchema<SharedDataSourceData> {
 		return {
 			biography: new foundry.data.fields.HTMLField(),
-			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' })
+			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' }),
+			hold: new ConditionMeterField({ label: 'IRONSWORN.Hold' })
 		}
 	}
 }
@@ -22,6 +23,7 @@ export interface SharedModel extends SharedDataSourceData {}
 interface SharedDataSourceData {
 	biography: string
 	supply: ConditionMeterSource
+	hold: ConditionMeterSource
 }
 
 export interface SharedDataSource {

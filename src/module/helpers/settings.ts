@@ -203,8 +203,20 @@ export class IronswornSettings {
 			scope: 'world',
 			config: true,
 			type: Boolean,
-			default: false
+			default: false,
+			onChange: reload
 		})
+
+		if (this.get('sundered-isles-beta')) {
+			game.settings.register('foundry-ironsworn', 'character-hold', {
+				name: 'IRONSWORN.Settings.CharacterHold.Name',
+				hint: 'IRONSWORN.Settings.CharacterHold.Hint',
+				scope: 'world',
+				config: true,
+				type: Boolean,
+				default: false
+			})
+		}
 
 		game.settings.register('foundry-ironsworn', 'data-version', {
 			scope: 'world',

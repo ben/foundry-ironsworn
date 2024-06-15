@@ -1,15 +1,16 @@
 <template>
 	<div class="condition-meters flexcol">
 		<ConditionMeterSlider
-			v-for="resource in ['Health', 'Spirit', 'Supply']"
+			v-for="resource in resources"
 			:key="resource.toLowerCase()"
 			slider-style="vertical"
 			class="nogrow"
 			document-type="Actor"
-			:global="resource === 'Supply' && IronswornSettings.get('shared-supply')"
+			:global="resourceIsShared(resource)"
 			:attr="resource.toLowerCase()"
 			:stat-label="$t(`IRONSWORN.${resource}`)"
-			:label-position="props.labelPosition" />
+			:label-position="props.labelPosition"
+		/>
 	</div>
 </template>
 
@@ -20,7 +21,18 @@ import { IronswornSettings } from '../../../helpers/settings.js'
 const props = defineProps<{
 	labelPosition: 'left' | 'right'
 }>()
+
+const resources = ['Health', 'Spirit', 'Supply']
+if (IronswornSettings.get('character-hold')) {
+	resources.push('Hold')
+}
+
+const supplyIsShared = IronswornSettings.get('shared-supply')
+function resourceIsShared(rsrc: string): boolean {
+	return supplyIsShared && ['Supply', 'Hold'].includes(rsrc)
+}
 </script>
+
 <style lang="scss">
 .condition-meters {
 	--ironsworn-meter-spacing: 6px;

@@ -152,7 +152,8 @@ const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 			'momentum',
 			'health',
 			'spirit',
-			'supply'
+			'supply',
+			'hold'
 		] as const) {
 			const newValue = get(data.system, resource)?.value
 			if (newValue !== undefined) {

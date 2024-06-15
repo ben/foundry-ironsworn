@@ -90,6 +90,7 @@
 		"Health": "health",
 		"Spirit": "spirit",
 		"Supply": "supply",
+		"Hold": "hold",
 		"Edge": "edge",
 		"Heart": "heart",
 		"Iron": "iron",
@@ -342,6 +343,10 @@
 			"SunderedIslesBeta": {
 				"Name": "(Beta) Sundered Isles",
 				"Hint": "Enables in-progress Sundered Isles features."
+			},
+			"CharacterHold": {
+				"Name": "'Hold' Stat",
+				"Hint": "Show the 'Hold' tracker for characters and shared sheets."
 			},
 			"ProgressMarkAnimation": {
 				"Name": "Enable progress mark animation",

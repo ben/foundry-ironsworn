@@ -1,25 +1,38 @@
 <template>
-	<SheetBasic :document="data.actor" class="shared-sheet" body-class="flexcol">
-		<section class="sheet-area nogrow">
+	<SheetBasic :document="data.actor" class="shared-sheet" body-class="flexrow">
+		<section class="flexcol">
+			<section v-if="hasBonds" class="sheet-area nogrow">
+				<bonds :compact-progress="true" />
+			</section>
+
+			<active-completed-progresses />
+
+			<section class="sheet-area flexcol">
+				<h4 class="nogrow">{{ $t('Notes') }}</h4>
+				<mce-editor v-model="data.actor.system.biography" @save="saveNotes" />
+			</section>
+		</section>
+		<section class="condition-meters nogrow flexcol">
 			<ConditionMeter
-				slider-style="horizontal"
+				slider-style="vertical"
+				class="nogrow"
 				attr="supply"
 				:stat-label="$t('IRONSWORN.Supply')"
 				:max="data.actor.system.supply.max"
 				:min="data.actor.system.supply.min"
 				document-type="Actor"
-				:global="IronswornSettings.get('shared-supply')" />
-		</section>
-
-		<section v-if="hasBonds" class="sheet-area nogrow">
-			<bonds :compact-progress="true" />
-		</section>
-
-		<active-completed-progresses />
-
-		<section class="sheet-area flexcol">
-			<h4 class="nogrow">{{ $t('Notes') }}</h4>
-			<mce-editor v-model="data.actor.system.biography" @save="saveNotes" />
+				:global="IronswornSettings.get('shared-supply')"
+			/>
+			<ConditionMeter
+				v-if="IronswornSettings.get('character-hold')"
+				slider-style="vertical"
+				attr="hold"
+				:stat-label="$t('IRONSWORN.Hold')"
+				:max="data.actor.system.hold.max"
+				:min="data.actor.system.hold.min"
+				document-type="Actor"
+				:global="IronswornSettings.get('shared-supply')"
+			/>
 		</section>
 	</SheetBasic>
 </template>
@@ -70,5 +83,21 @@ textarea.notes {
 	min-height: 150px;
 	resize: none;
 	font-family: var(--font-primary);
+}
+
+.condition-meters {
+	--ironsworn-meter-spacing: 6px;
+
+	gap: var(--ironsworn-meter-spacing);
+
+	.condition-meter {
+		&:not(:first-child) {
+			padding-top: var(--ironsworn-meter-spacing);
+		}
+	}
+
+	button {
+		height: max-content;
+	}
 }
 </style>

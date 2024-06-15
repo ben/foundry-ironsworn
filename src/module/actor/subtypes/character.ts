@@ -78,6 +78,7 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 			health: new ConditionMeterField({ label: 'IRONSWORN.Health' }),
 			spirit: new ConditionMeterField({ label: 'IRONSWORN.Spirit' }),
 			supply: new ConditionMeterField({ label: 'IRONSWORN.Supply' }),
+			hold: new ConditionMeterField({ label: 'IRONSWORN.Hold' }),
 
 			momentum: new MomentumField(),
 
@@ -148,6 +149,7 @@ export interface CharacterDataSourceData {
 	health: ConditionMeterSource
 	spirit: ConditionMeterSource
 	supply: ConditionMeterSource
+	hold: ConditionMeterSource
 	momentum: MomentumSource
 
 	xp: number
