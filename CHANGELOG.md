@@ -3,6 +3,7 @@
 ## Next Release
 
 - Update the SF "sector" dialog to include SI region terms, and make it available via scene-nav right-click ([#996](https://github.com/ben/foundry-ironsworn/pull/996))
+- Add the beginnings of an "Oceanic" color theme ([#997](https://github.com/ben/foundry-ironsworn/pull/997))
 
 ## 1.23.2
 
