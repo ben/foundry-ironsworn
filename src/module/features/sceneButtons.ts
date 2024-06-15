@@ -242,7 +242,7 @@ function sunderedIslesControl(
 	const control: SceneControl = {
 		name: 'Starforged',
 		title: game.i18n.localize('IRONSWORN.SunderedIslesTools'),
-		icon: 'isicon-logo-starforged-dk',
+		icon: 'isicon-logo-sunderedisles-dk',
 		layer: 'ironsworn',
 		visible: true,
 		activeTool: 'select',
@@ -252,7 +252,7 @@ function sunderedIslesControl(
 	if (game.user?.isGM) {
 		control.tools.push({
 			name: 'edit',
-			icon: 'isicon-region-sf', // TODO: sundered isles icon
+			icon: 'isicon-region-si',
 			title: game.i18n.format('DOCUMENT.Update', {
 				type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
 			}),
@@ -296,7 +296,7 @@ Hooks.on('getSceneNavigationContext', (_html, contextOptions) => {
 		name: game.i18n.format('DOCUMENT.Update', {
 			type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
 		}),
-		icon: '<i class="fa isicon-region-sf" style="display: inline-block;"></i>', // TODO: sundered isles icon
+		icon: '<i class="fa isicon-region-si" style="display: inline-block;"></i>',
 		condition: game.user?.isGM,
 		callback: editSector
 	})
