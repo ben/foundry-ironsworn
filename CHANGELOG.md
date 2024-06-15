@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Update the SF "sector" dialog to include SI region terms, and make it available via scene-nav right-click ([#996](https://github.com/ben/foundry-ironsworn/pull/996))
+
 ## 1.23.2
 
 - v12: new PCs' tokens are now linked to their actor when created
