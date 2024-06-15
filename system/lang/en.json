@@ -300,7 +300,8 @@
 				"Name": "Appearance: Color scheme",
 				"Hint": "Each user can set their own color scheme.",
 				"Zinc": "Zinc",
-				"Phosphor": "Phosphor"
+				"Phosphor": "Phosphor",
+				"Oceanic": "Oceanic"
 			},
 			"Tools": {
 				"Name": "Character Tools",

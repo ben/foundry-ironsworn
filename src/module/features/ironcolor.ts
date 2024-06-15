@@ -4,6 +4,7 @@ import '../../styles/styles.less'
 import '../../styles/_irontheme.scss'
 import '../../styles/_ironcolor/zinc.scss'
 import '../../styles/_ironcolor/phosphor.scss'
+import '../../styles/_ironcolor/oceanic.scss'
 
 export const PREFIX = 'ironcolor__'
 const tinyMceCssPath =
