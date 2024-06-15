@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Add a "hold" resource to PC and shared sheets ([#998](https://github.com/ben/foundry-ironsworn/pull/998))
 - Update the SF "sector" dialog to include SI region terms, and make it available via scene-nav right-click ([#996](https://github.com/ben/foundry-ironsworn/pull/996))
 - Add the beginnings of an "Oceanic" color theme ([#997](https://github.com/ben/foundry-ironsworn/pull/997))
 
