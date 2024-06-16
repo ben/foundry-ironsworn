@@ -46,6 +46,8 @@ import ActorConfig from './module/actor/config'
 import ItemConfig from './module/item/config'
 import { registerIconHooks } from './module/icon/module-compat'
 
+import './module/features/dice' // register dice hooks
+
 declare global {
 	interface LenientGlobalVariableTypes {
 		game: never // the type doesn't matter
