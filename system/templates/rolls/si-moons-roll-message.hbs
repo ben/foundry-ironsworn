@@ -1,4 +1,31 @@
-<article class='ironsworn ironsworn-roll flexcol'>
-	<h4>Cinder: {{cinder.total}}</h4>
-	<h4>Wraith: {{wraith.total}}</h4>
+<article class='ironsworn ironsworn-roll'>
+	<section class='dice-result dice-tooltip dice-roll ironsworn-roll flexcol'>
+
+		<div class='flexrow'>
+			<article class='roll-graphic dice-formula action-roll-formula'>
+				<strong>Cinder:</strong>
+				<span
+					class='roll die isiconbg-d10-blank d10 cinder'
+					data-tooltip='Cinder'
+				>
+					{{cinder.total}}
+				</span>
+				<span class='moon-emoji cinder'>{{cinderEmoji}}</span>
+			</article>
+		</div>
+
+		<div class='flexrow'>
+			<article class='roll-graphic dice-formula action-roll-formula'>
+				<strong>Wraith:</strong>
+				<span
+					class='roll die isiconbg-d10-blank d10 wraith'
+					data-tooltip='Wraith'
+				>
+					{{wraith.total}}
+				</span>
+				<span class='moon-emoji wraith'>{{wraithEmoji}}</span>
+			</article>
+		</div>
+
+	</section>
 </article>
