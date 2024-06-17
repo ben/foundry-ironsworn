@@ -6,6 +6,7 @@
 - Update the SF "sector" dialog to include SI region terms, and make it available via scene-nav right-click ([#996](https://github.com/ben/foundry-ironsworn/pull/996))
 - Add the beginnings of an "Oceanic" color theme ([#997](https://github.com/ben/foundry-ironsworn/pull/997))
 - Add a new `ds` dice term for the cursed die ([#1000](https://github.com/ben/foundry-ironsworn/pull/1000))
+- Add a scene button to roll Cinder and Wraith ([#1001](https://github.com/ben/foundry-ironsworn/pull/1001))
 
 ## 1.23.2
 
