@@ -5,7 +5,8 @@
 		:style="style"
 		:height="size"
 		:width="size"
-		@click="click" />
+		@click="click"
+	/>
 </template>
 
 <script setup lang="ts">
@@ -27,6 +28,12 @@ const style = computed(() => ({
 const $actor = inject($ActorKey, undefined)
 const $item = inject($ItemKey, undefined)
 function click() {
+	// Trigger tokenizer if this is an actor portrait
+	const tokenizer = game.modules.get('vtta-tokenizer') as any
+	if (tokenizer && !$item && $actor) {
+		return tokenizer.api.tokenizeDoc($actor)
+	}
+
 	const current = props.document.img
 	const fp = new FilePicker({
 		type: 'image',

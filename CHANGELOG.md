@@ -7,6 +7,7 @@
 - Add the beginnings of an "Oceanic" color theme ([#997](https://github.com/ben/foundry-ironsworn/pull/997))
 - Add a new `ds` dice term for the cursed die ([#1000](https://github.com/ben/foundry-ironsworn/pull/1000))
 - Add a scene button to roll Cinder and Wraith ([#1001](https://github.com/ben/foundry-ironsworn/pull/1001))
+- Trigger Tokenizer for actors if it's installed
 
 ## 1.23.2
 
