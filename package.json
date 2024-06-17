@@ -53,7 +53,7 @@
 		"postcss-preset-env": "^9.5.4",
 		"prettier": "^2.8.8",
 		"prettier-config-standard": "^7.0.0",
-		"sass": "^1.68.0",
+		"sass": "^1.77.5",
 		"sha.js": "^2.4.11",
 		"stylelint": "^15.11.0",
 		"stylelint-config-concentric-order": "^5.2.0",
