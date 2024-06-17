@@ -27,6 +27,8 @@
 		"On_a_miss": "On a miss",
 		"MarkProgress": "Mark Progress",
 		"ProgressMove": "Progress Move",
+		"Cinder": "Cinder",
+		"Wraith": "Wraith",
 		"PROGRESS": {
 			"Current": "{score} progress ({ticks} ticks)",
 			"Ticks": "{ticks} ticks",
