@@ -27,6 +27,7 @@ export async function createSiMoonsChatMessage(cinder: Roll, wraith: Roll) {
 	await ChatMessage.create({
 		speaker: ChatMessage.getSpeaker(),
 		content,
+		type: CONST.CHAT_MESSAGE_TYPES.ROLL,
 		rolls: [cinder, wraith]
 	})
 }
