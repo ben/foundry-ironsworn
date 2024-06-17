@@ -1,15 +1,15 @@
 const MOON_EMOJI = [
-	'',
-	'🌑',
-	'🌒',
-	'🌒',
-	'🌒',
-	'🌓',
-	'🌓',
-	'🌔',
-	'🌔',
-	'🌔',
-	'🌕'
+	'', // 0, not used for die results
+	'🌑', // 1 new
+	'🌒', // 2
+	'🌒', // 3
+	'🌒', // 4
+	'🌓', // 5
+	'🌓', // 6
+	'🌔', // 7
+	'🌔', // 8
+	'🌔', // 9
+	'🌕' // 10 full
 ]
 
 export async function createSiMoonsChatMessage(cinder: Roll, wraith: Roll) {

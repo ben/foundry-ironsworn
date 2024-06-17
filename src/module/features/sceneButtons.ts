@@ -48,7 +48,7 @@ async function editSector() {
 async function rollMoons() {
 	// Roll the dice
 	const r = new Roll('{d10[Cinder],d10[Wraith]}')
-	await r.roll({ async: true })
+	await r.roll()
 	const [cinder, wraith] = (r.terms[0] as PoolTerm).rolls
 	await createSiMoonsChatMessage(cinder, wraith)
 }
