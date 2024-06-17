@@ -1,6 +1,7 @@
 import { IronswornActor } from '../actor/actor'
 import { OracleWindow } from '../applications/oracle-window'
 import { EditSectorDialog } from '../applications/sf/editSectorApp'
+import { createSiMoonsChatMessage } from '../chat/si-moons-chat-message'
 import { IronswornSettings } from '../helpers/settings'
 
 function warn() {
@@ -42,6 +43,14 @@ async function editSector() {
 	if (sceneId) {
 		await new EditSectorDialog(sceneId).render(true, { focus: true })
 	}
+}
+
+async function rollMoons() {
+	// Roll the dice
+	const r = new Roll('{d10[Cinder],d10[Wraith]}')
+	await r.roll({ async: true })
+	const [cinder, wraith] = (r.terms[0] as PoolTerm).rolls
+	await createSiMoonsChatMessage(cinder, wraith)
 }
 
 async function dropToken(location: IronswornActor) {
@@ -246,7 +255,15 @@ function sunderedIslesControl(
 		layer: 'ironsworn',
 		visible: true,
 		activeTool: 'select',
-		tools: [oracleButton]
+		tools: [
+			oracleButton,
+			{
+				name: 'moons',
+				icon: 'fas fa-moon',
+				title: 'Roll the Moons',
+				onClick: rollMoons
+			}
+		]
 	}
 
 	if (game.user?.isGM) {
