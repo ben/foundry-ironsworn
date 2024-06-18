@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Don't let the beta setting break the world
+
 ## 1.23.3
 
 - Add a "hold" resource to PC and shared sheets ([#998](https://github.com/ben/foundry-ironsworn/pull/998))

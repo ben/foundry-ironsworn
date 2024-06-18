@@ -7,10 +7,6 @@ import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 import * as IronColor from '../features/ironcolor'
 import * as IronTheme from '../features/irontheme'
 
-function reload() {
-	window.location.reload()
-}
-
 async function closeAllMoveSheets() {
 	for (const actor of game.actors?.contents ?? []) {
 		await actor.moveSheet?.close()
@@ -41,6 +37,7 @@ declare global {
 			'foundry-ironsworn.advanced-rolling-default-open': boolean
 
 			'foundry-ironsworn.sundered-isles-beta': boolean
+			'foundry-ironsworn.character-hold': boolean
 
 			// Internal only
 			'foundry-ironsworn.first-run-tips-shown': boolean
@@ -127,7 +124,7 @@ export class IronswornSettings {
 			type: String,
 			choices: mapValues(IronTheme.THEMES, (v) => v.labelKey),
 			default: 'ironsworn',
-			onChange: reload
+			requiresReload: true
 		})
 		game.settings.register('foundry-ironsworn', 'color-scheme', {
 			name: 'IRONSWORN.Settings.ColorScheme.Name',
@@ -151,7 +148,7 @@ export class IronswornSettings {
 			type: Boolean,
 			default: true,
 			config: true,
-			onChange: reload
+			requiresReload: true
 		})
 
 		// Log verbosity and missed prompts come next.
@@ -180,7 +177,7 @@ export class IronswornSettings {
 			config: true,
 			type: Boolean,
 			default: true,
-			onChange: reload
+			requiresReload: true
 		})
 
 		// Default the "advanced" part of the pre-roll dialog to open.
@@ -204,19 +201,17 @@ export class IronswornSettings {
 			config: true,
 			type: Boolean,
 			default: false,
-			onChange: reload
+			requiresReload: true
 		})
 
-		if (this.get('sundered-isles-beta')) {
-			game.settings.register('foundry-ironsworn', 'character-hold', {
-				name: 'IRONSWORN.Settings.CharacterHold.Name',
-				hint: 'IRONSWORN.Settings.CharacterHold.Hint',
-				scope: 'world',
-				config: true,
-				type: Boolean,
-				default: false
-			})
-		}
+		game.settings.register('foundry-ironsworn', 'character-hold', {
+			name: 'IRONSWORN.Settings.CharacterHold.Name',
+			hint: 'IRONSWORN.Settings.CharacterHold.Hint',
+			scope: 'world',
+			config: true,
+			type: Boolean,
+			default: false
+		})
 
 		game.settings.register('foundry-ironsworn', 'data-version', {
 			scope: 'world',

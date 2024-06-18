@@ -343,12 +343,12 @@
 				"Hint": "Open the dialog to generate your Starforged setting truths."
 			},
 			"SunderedIslesBeta": {
-				"Name": "(Beta) Sundered Isles",
-				"Hint": "Enables in-progress Sundered Isles features."
+				"Name": "Sundered Isles (beta)",
+				"Hint": "Enables in-progress Sundered Isles features. This currently means you'll have an empty move/oracle window for characters, so you probably don't want it."
 			},
 			"CharacterHold": {
 				"Name": "'Hold' Stat",
-				"Hint": "Show the 'Hold' tracker for characters and shared sheets."
+				"Hint": "Show the 'Hold' tracker for Starforged characters and shared sheets."
 			},
 			"ProgressMarkAnimation": {
 				"Name": "Enable progress mark animation",
