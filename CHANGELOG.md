@@ -3,6 +3,7 @@
 ## Next Release
 
 - Don't let the beta setting break the world
+- Don't show tokenizer if shift key is held
 
 ## 1.23.3
 
