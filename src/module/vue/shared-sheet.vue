@@ -86,6 +86,8 @@ textarea.notes {
 }
 
 .condition-meters {
+	border-left: 1px solid;
+	margin-left: var(--ironsworn-spacer-md);
 	--ironsworn-meter-spacing: 6px;
 
 	gap: var(--ironsworn-meter-spacing);
