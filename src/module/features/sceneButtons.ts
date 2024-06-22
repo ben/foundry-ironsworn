@@ -3,6 +3,7 @@ import { OracleWindow } from '../applications/oracle-window'
 import { EditSectorDialog } from '../applications/sf/editSectorApp'
 import { createSiMoonsChatMessage } from '../chat/si-moons-chat-message'
 import { IronswornSettings } from '../helpers/settings'
+import { cinderAndWraithifyRoll } from './dice'
 
 function warn() {
 	ui.notifications?.warn('Soon™')
@@ -48,6 +49,7 @@ async function editSector() {
 async function rollMoons() {
 	// Roll the dice
 	const r = new Roll('{d10[Cinder],d10[Wraith]}')
+	cinderAndWraithifyRoll(r)
 	await r.roll()
 	const [cinder, wraith] = (r.terms[0] as PoolTerm).rolls
 	await createSiMoonsChatMessage(cinder, wraith)
