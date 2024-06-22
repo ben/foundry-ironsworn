@@ -222,6 +222,7 @@ export class IronswornRoll {
 
 		// Roll 'em
 		this.roll = new Roll(`{${diceTerms.join(', ')}}`)
+		this.cinderAndWraithifyRoll()
 		await this.roll.roll({ async: true })
 
 		// Pull out raw results
@@ -450,5 +451,31 @@ export class IronswornRoll {
 	clone(): IronswornRoll {
 		const json = this.serialize()
 		return IronswornRoll.fromJson(cloneDeep(json))
+	}
+
+	private cinderAndWraithifyRoll() {
+		if (!game.settings.get('foundry-ironsworn', 'dsn-cinder-wraith')) {
+			return
+		}
+
+		const challengeDice = this.roll?.dice.filter((x) => x.faces === 10) ?? []
+		if (challengeDice.length !== 2) {
+			return
+		}
+
+		const cd0options = challengeDice[0].options as any
+		cd0options.appearance = {
+			colorset: 'custom',
+			background: 'red',
+			outline: 'red',
+			edge: 'red'
+		}
+		const cd1options = challengeDice[1].options as any
+		cd1options.appearance = {
+			colorset: 'custom',
+			background: 'blue',
+			outline: 'blue',
+			edge: 'blue'
+		}
 	}
 }
