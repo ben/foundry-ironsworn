@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Optionally colorize challenge dice as Cinder and Wraith ([#1002](https://github.com/ben/foundry-ironsworn/pull/1002))
+
 ## 1.23.4
 
 - Don't let the beta setting break the world
