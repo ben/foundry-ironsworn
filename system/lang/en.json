@@ -350,6 +350,10 @@
 				"Name": "'Hold' Stat",
 				"Hint": "Show the 'Hold' tracker for Starforged characters and shared sheets."
 			},
+			"RollCinderAndWraith": {
+				"Name": "Cinder and Wraith",
+				"Hint": "Roll challenge dice as Cinder and Wraith. This will override your Dice-So-Nice color theme for challenge-die rolls, and include which die represents which moon in the tooltips."
+			},
 			"ProgressMarkAnimation": {
 				"Name": "Enable progress mark animation",
 				"Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."

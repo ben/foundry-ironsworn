@@ -38,6 +38,7 @@ declare global {
 
 			'foundry-ironsworn.sundered-isles-beta': boolean
 			'foundry-ironsworn.character-hold': boolean
+			'foundry-ironsworn.dsn-cinder-wraith': boolean
 
 			// Internal only
 			'foundry-ironsworn.first-run-tips-shown': boolean
@@ -207,6 +208,15 @@ export class IronswornSettings {
 		game.settings.register('foundry-ironsworn', 'character-hold', {
 			name: 'IRONSWORN.Settings.CharacterHold.Name',
 			hint: 'IRONSWORN.Settings.CharacterHold.Hint',
+			scope: 'world',
+			config: true,
+			type: Boolean,
+			default: false
+		})
+
+		game.settings.register('foundry-ironsworn', 'dsn-cinder-wraith', {
+			name: 'IRONSWORN.Settings.RollCinderAndWraith.Name',
+			hint: 'IRONSWORN.Settings.RollCinderAndWraith.Hint',
 			scope: 'world',
 			config: true,
 			type: Boolean,
