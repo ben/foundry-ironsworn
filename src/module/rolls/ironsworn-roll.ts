@@ -8,6 +8,7 @@
 import { cloneDeep, compact, pick, range, sum } from 'lodash-es'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { cinderAndWraithifyRoll } from '../features/dice'
+import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
 import { computeRollOutcome } from './ironsworn-roll-message'
 
@@ -342,8 +343,8 @@ export class IronswornRoll {
 	get challengeDice(): Array<SourcedValue<number | undefined>> {
 		if (this.rawChallengeDiceValues !== undefined) {
 			// challenge dice have been rolled, report them
-			return this.rawChallengeDiceValues.map((x) => ({
-				source: 'd10',
+			return this.rawChallengeDiceValues.map((x, i) => ({
+				source: maybeCinderAndWraithSource(i + 1, 'd10'),
 				value: x
 			}))
 		}
@@ -398,8 +399,9 @@ export class IronswornRoll {
 					| SourcedValue
 					| undefined
 				const die = this.rawChallengeDiceValues![i]
+				const source = maybeCinderAndWraithSource(i + 1, 'd10')
 				return {
-					source: preset?.source ?? 'd10',
+					source: preset?.source ?? source,
 					value: preset?.value ?? die
 				}
 			}) as [SourcedValue, SourcedValue]
@@ -453,4 +455,20 @@ export class IronswornRoll {
 		const json = this.serialize()
 		return IronswornRoll.fromJson(cloneDeep(json))
 	}
+}
+
+function maybeCinderAndWraithSource(
+	challengeDieNumber: number,
+	originalSource: string
+): string {
+	if (!IronswornSettings.get('dsn-cinder-wraith')) {
+		return originalSource
+	}
+
+	if (challengeDieNumber === 1) {
+		return game.i18n.localize('IRONSWORN.Cinder')
+	} else if (challengeDieNumber === 2) {
+		return game.i18n.localize('IRONSWORN.Wraith')
+	}
+	return originalSource
 }
