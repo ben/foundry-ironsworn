@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Allow changing of portrait art even when Tokenizer is installed but disabled
 - Optionally colorize challenge dice as Cinder and Wraith ([#1002](https://github.com/ben/foundry-ironsworn/pull/1002))
 
 ## 1.23.4

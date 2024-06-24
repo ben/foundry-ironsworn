@@ -31,7 +31,7 @@ function click(event: MouseEvent) {
 	// Trigger tokenizer if this is an actor portrait
 	const tokenizer = game.modules.get('vtta-tokenizer') as any
 	// TODO: test for 'shift' key
-	if (tokenizer && !event.shiftKey && !$item && $actor) {
+	if (tokenizer?.active && !event.shiftKey && !$item && $actor) {
 		return tokenizer.api.tokenizeDoc($actor)
 	}
 
