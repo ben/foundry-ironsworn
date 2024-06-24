@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.23.6
+
 - Fix DSN cinder/wraith dice coloring in Foundry v11
 
 ## 1.23.5
