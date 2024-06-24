@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix DSN cinder/wraith dice coloring in Foundry v11
+
 ## 1.23.5
 
 - Allow changing of portrait art even when Tokenizer is installed but disabled

@@ -224,8 +224,8 @@ export class IronswornRoll {
 
 		// Roll 'em
 		this.roll = new Roll(`{${diceTerms.join(', ')}}`)
-		cinderAndWraithifyRoll(this.roll)
 		await this.roll.roll({ async: true })
+		cinderAndWraithifyRoll(this.roll)
 
 		// Pull out raw results
 		const pool = this.roll.terms[0] as PoolTerm
