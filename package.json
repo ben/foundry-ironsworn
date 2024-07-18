@@ -18,6 +18,10 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
+		"@datasworn/ironsworn-classic": "^0.0.10",
+		"@datasworn/ironsworn-classic-delve": "^0.0.10",
+		"@datasworn/starforged": "^0.1.0-0",
+		"@datasworn/sundered-isles": "^0.1.0-0",
 		"@foundryvtt/foundryvtt-cli": "^1.0",
 		"@league-of-foundry-developers/foundry-vtt-types": "github:rsek/foundry-vtt-types#v10-journal",
 		"@mavrin/stylelint-declaration-use-css-custom-properties": "^3.0.1",
