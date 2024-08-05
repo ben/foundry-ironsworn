@@ -29,7 +29,7 @@
 		"@types/marked": "^5.0.0",
 		"@types/node": "^20.11.16",
 		"@types/prettier": "^2.7.3",
-		"@typescript-eslint/eslint-plugin": "^6",
+		"@typescript-eslint/eslint-plugin": "^8",
 		"@typescript-eslint/parser": "^6",
 		"@typescript/analyze-trace": "^0.10.1",
 		"@vitejs/plugin-vue": "^5.0.4",
