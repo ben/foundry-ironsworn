@@ -4,8 +4,8 @@
 	"description": "CSS compiler for the Ironsworn system",
 	"type": "module",
 	"scripts": {
-		"build": "vite build",
-		"build:production": "vite build",
+		"build": "vite build && script/build-packs",
+		"build:production": "vite build && script/build-packs",
 		"start": "vite",
 		"bump": "node script/bump-version.js",
 		"bump:patch": "node script/bump-version.js patch",

@@ -2,6 +2,9 @@
 
 ## Next Release
 
+- Behind the scenes
+  - Build compendiums from source, which makes management of this data a lot easier ([#1006](https://github.com/ben/foundry-ironsworn/pull/1006))
+
 ## 1.23.6
 
 - Fix DSN cinder/wraith dice coloring in Foundry v11
