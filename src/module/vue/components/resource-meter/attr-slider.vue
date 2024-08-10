@@ -121,7 +121,6 @@ const value = computed(
 async function onChange(newValue: number) {
 	const data = { [targetKey.value]: newValue }
 
-	console.log('updating with data', data)
 	// redundant with the below if it's global, but fires anyway so that a single message appears in the chatlog.
 	await $document?.update(data)
 	if (props.global) {
