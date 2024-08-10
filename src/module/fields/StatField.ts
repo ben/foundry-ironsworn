@@ -4,8 +4,8 @@ export class StatField extends foundry.data.fields.NumberField {
 			label,
 			integer: true,
 			required: true,
-			min: 0,
-			max: 4,
+			min: -5,
+			max: 10,
 			initial: 1
 		})
 	}

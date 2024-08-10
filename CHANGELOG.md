@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Allow edge/heart/etc. attributes to range from -5 to +10 ([#1007](https://github.com/ben/foundry-ironsworn/pull/1007))
 - Behind the scenes
   - Build compendiums from source, which makes management of this data a lot easier ([#1006](https://github.com/ben/foundry-ironsworn/pull/1006))
 
