@@ -18,6 +18,7 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
+		"@datasworn/core": "^0.0.10",
 		"@datasworn/ironsworn-classic": "^0.0.10",
 		"@datasworn/ironsworn-classic-delve": "^0.0.10",
 		"@datasworn/starforged": "^0.1.0-0",
