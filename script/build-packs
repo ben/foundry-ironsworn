@@ -3,5 +3,5 @@
 for src in json-packs/*/; do
 	pack=${src%*/} # remove the trailing "/"
 	pack=${pack##*/} # get everything after the final "/"
-	fvtt package --id foundry-ironsworn --type System pack ${pack} -c --json --in "${src}" --out "dist/packs/${pack}"
+	fvtt package --id foundry-ironsworn --type System pack ${pack} -c --json --in "${src}" --out "dist/packs"
 done
