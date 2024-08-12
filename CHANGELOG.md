@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.23.7
+
 - Fix Cinder and Wraith dice with dice-so-nice 5 ([#1009](https://github.com/ben/foundry-ironsworn/pull/1009))
 - Allow edge/heart/etc. attributes to range from -5 to +10 ([#1007](https://github.com/ben/foundry-ironsworn/pull/1007))
 - Behind the scenes
