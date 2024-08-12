@@ -42,7 +42,6 @@ export function cinderAndWraithifyRoll(roll: Roll) {
 
 	const cd0options = challengeDice[0].options as any
 	cd0options.appearance = {
-		colorset: 'custom',
 		labelColor: (game.dice3d as any).exports?.Utils?.contrastOf(cinderColor),
 		background: cinderColor,
 		outline: cinderColor,
@@ -51,7 +50,6 @@ export function cinderAndWraithifyRoll(roll: Roll) {
 	const cd1options = challengeDice[1].options as any
 	cd1options.appearance = {
 		labelColor: (game.dice3d as any).exports?.Utils?.contrastOf(wraithColor),
-		colorset: 'custom',
 		background: wraithColor,
 		outline: wraithColor,
 		edge: wraithColor
