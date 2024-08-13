@@ -78,5 +78,8 @@
 	},
 	"browserslist": [
 		"defaults"
-	]
+	],
+	"devDependencies": {
+		"showdown": "^2.1.0"
+	}
 }
