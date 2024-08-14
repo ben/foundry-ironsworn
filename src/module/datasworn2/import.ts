@@ -1,11 +1,15 @@
 import type { ClockField } from '@datasworn/core/dist/DataswornSource'
 import LegacyIdMap from '@datasworn/core/json/legacy_id_map.json' assert { type: 'json' }
-import { IdParser } from '.'
+import { IdParser, DataswornTree } from '.'
 import shajs from 'sha.js'
 import { capitalize, startCase, titleCase } from 'lodash-es'
 import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
 import Showdown from 'showdown'
+
+// A script to import Datasworn 2 data into compendia JSON files.
+// Run this like so:
+//   npx tsx src/module/datasworn2/import.ts
 
 const markdownRenderer = new Showdown.Converter()
 
@@ -18,22 +22,27 @@ function hash(str: string): string {
 const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
 const COMPENDIUM_KEY_MAP = {
 	asset: {
-		ironsworn: 'ironswornassets',
+		classic: 'ironswornassets',
 		starforged: 'starforgedassets',
 		sundered_isles: 'sunderedislesassetss'
 	},
+	move_category: {
+		classic: 'ironswornmoves',
+		starforged: 'starforgedmoves',
+		sundered_isles: 'sunderedislesmoves'
+	},
 	move: {
-		ironsworn: 'ironswornmoves',
+		classic: 'ironswornmoves',
 		starforged: 'starforgedmoves',
 		sundered_isles: 'sunderedislesmoves'
 	},
 	oracle_collection: {
-		ironsworn: 'ironswornoracles',
+		classic: 'ironswornoracles',
 		starforged: 'starforgedoracles',
 		sundered_isles: 'sunderedislesmoves'
 	},
 	oracle_rollable: {
-		ironsworn: 'ironswornoracles',
+		classic: 'ironswornoracles',
 		starforged: 'starforgedoracles',
 		sundered_isles: 'sunderedislesmoves'
 	},
@@ -84,107 +93,138 @@ function titleCase(str: string): string {
 	)
 }
 
+async function writeJsonFile(packName: string, json: any) {
+	const fileName = json.name.replace(/\W/g, '_')
+	await writeFile(
+		`json-packs/${packName}/${fileName}_${json._id}.json`,
+		JSON.stringify(json, null, 2)
+	)
+}
+
 // ASSETS
 for (const collection of collections) {
+	console.log(collection)
+	const legacyCollection = collection === 'classic' ? 'ironsworn' : collection
 	const packName = {
 		classic: 'assets',
 		starforged: 'starforged-assets',
 		sundered_isles: 'sundered-isles-assets'
 	}[collection]
+	if (!packName) continue
+	if (!existsSync(`json-packs/${packName}`)) {
+		await mkdir(`json-packs/${packName}`)
+	}
 
-	const assets = IdParser.getMatches(
-		`asset:${collection}/*/*`,
-		IdParser.datasworn
-	)
-	console.log(collection, assets.size)
-
-	for (const asset of assets.values()) {
-		if (asset === undefined) continue
-		console.log('  ', asset._id)
-
-		// Generate a hash, use the legacy ID if it exists to preserve the old ID
-		const assetId = LegacyIdMap[asset._id] || asset._id
-		const fid = hash(assetId)
-
-		// Generate a folder hash
-		const legacyFolderId = `${capitalize(collection)}/Assets/${startCase(
-			asset.category
-		).replace(' ', '_')}`
-		const folderId = hash(legacyFolderId)
-
-		const json: any = {
-			type: 'asset',
-			_id: fid,
-			folder: folderId,
-			name: asset.name,
-			system: {
-				requirement: renderText(asset.requirement ?? ''),
-				category: asset.category,
-				color: asset.color,
-				fields: [],
-				abilities: asset.abilities.map((a) => {
-					const clock = a.controls?.clock as ClockField | undefined
-					return {
-						enabled: a.enabled,
-						description: renderText(a.text),
-						hasClock: !!clock,
-						clockTicks: 0,
-						clockMax: clock?.max ?? 4
-					}
-				}),
-				track: {
-					enabled: false
-				},
-				exclusiveOptions: [],
-				conditions: [],
-				description: ''
+	const assetCategories = DataswornTree.get(collection)?.assets
+	for (const cat of Object.values(assetCategories ?? {})) {
+		const name = cat.name.replace(' Assets', '')
+		console.log(` ${name}/`)
+		const legacyFolderId: string =
+			LegacyIdMap[cat._id] ??
+			`${capitalize(legacyCollection)}/Assets/${startCase(name).replace(
+				/\W/g,
+				'_'
+			)}`
+		const json = {
+			name,
+			color: cat.color,
+			description: renderLinksInStr(cat.description ?? ''),
+			type: 'Item',
+			_id: hash(legacyFolderId),
+			sort:
+				(cat._source.page ?? 0) +
+				(cat._source.title.includes('Delve') ? 1000 : 0),
+			flags: {
+				'foundry-ironsworn': {
+					dfid: legacyFolderId,
+					dsid: cat._id
+				}
 			},
-			img: 'icons/svg/item-bag.svg',
-			effects: [],
-			sort: 0,
-			flags: {},
-			_key: `!items!${fid}`
+			folder: null,
+			sorting: 'a',
+			_key: `!folders!${hash(legacyFolderId)}`
 		}
-		// Fields
-		for (const option of Object.values(asset.options)) {
-			if (option.field_type === 'text') {
-				json.system.fields.push({
-					name: titleCase(option.label),
-					value: option.value ?? ''
-				})
+		await writeJsonFile(packName, json)
+
+		for (const asset of Object.values(cat.contents)) {
+			console.log('  ', asset._id)
+
+			// Generate a hash, use the legacy ID if it exists to preserve the old ID
+			const assetId = LegacyIdMap[asset._id] || asset._id
+			const fid = hash(assetId)
+
+			const json: any = {
+				type: 'asset',
+				_id: fid,
+				folder: hash(legacyFolderId),
+				name: asset.name,
+				system: {
+					requirement: renderText(asset.requirement ?? ''),
+					category: asset.category,
+					color: asset.color,
+					fields: [],
+					abilities: asset.abilities.map((a) => {
+						const clock = a.controls?.clock as ClockField | undefined
+						return {
+							enabled: a.enabled,
+							description: renderText(a.text),
+							hasClock: !!clock,
+							clockTicks: 0,
+							clockMax: clock?.max ?? 4
+						}
+					}),
+					track: {
+						enabled: false,
+						name: 'Health',
+						current: 0,
+						max: 5,
+						value: 5,
+						min: 0
+					},
+					exclusiveOptions: [],
+					conditions: [],
+					description: ''
+				},
+				img: 'icons/svg/item-bag.svg',
+				effects: [],
+				sort: 0,
+				flags: {},
+				_key: `!items!${fid}`
 			}
-		}
-		// Track
-		for (const control of Object.values(asset.controls ?? {})) {
-			// console.log(control)
-			if (control.field_type === 'condition_meter') {
-				// Add a track
-				json.system.track = {
-					enabled: true,
-					name: titleCase(control.label),
-					max: control.max ?? 0,
-					value: control.value ?? 0,
-					min: control.min ?? 0
+			// Fields
+			for (const option of Object.values(asset.options)) {
+				if (option.field_type === 'text') {
+					json.system.fields.push({
+						name: titleCase(option.label),
+						value: option.value ?? ''
+					})
 				}
-				for (const subcontrol of Object.values(control.controls ?? {})) {
-					if (['checkbox', 'card_flip'].includes(subcontrol.field_type)) {
-						// A condition!
-						json.system.conditions.push({
-							name: titleCase(subcontrol.label),
-							ticked: subcontrol.value
-						})
+			}
+			// Track
+			for (const control of Object.values(asset.controls ?? {})) {
+				// console.log(control)
+				if (control.field_type === 'condition_meter') {
+					// Add a track
+					json.system.track = {
+						enabled: true,
+						name: titleCase(control.label),
+						max: control.max ?? 0,
+						value: control.value ?? 0,
+						min: control.min ?? 0
+					}
+					for (const subcontrol of Object.values(control.controls ?? {})) {
+						if (['checkbox', 'card_flip'].includes(subcontrol.field_type)) {
+							// A condition!
+							json.system.conditions.push({
+								name: titleCase(subcontrol.label),
+								ticked: subcontrol.value
+							})
+						}
 					}
 				}
 			}
-		}
 
-		const fileName = json.name.replace(/\W/g, '_')
-		if (!existsSync(`json-packs/${packName}`)) {
-			await mkdir(`json-packs/${packName}`)
+			await writeJsonFile(packName, json)
 		}
-		await writeFile(
-			`json-packs/${packName}/${fileName}_${fid}.json`,
-			JSON.stringify(json, null, 2)
-		)
 	}
 }
