@@ -1,7 +1,8 @@
 import type { ClockField } from '@datasworn/core/dist/DataswornSource'
+import LegacyIdMap from '@datasworn/core/json/legacy_id_map.json' assert { type: 'json' }
 import { IdParser } from '.'
 import shajs from 'sha.js'
-import { capitalize } from 'lodash-es'
+import { capitalize, startCase, titleCase } from 'lodash-es'
 import { writeFile } from 'fs/promises'
 import Showdown from 'showdown'
 
@@ -31,7 +32,7 @@ const COMPENDIUM_KEY_MAP = {
 		starforged: 'starforgedencounters'
 	}
 }
-export function renderLinksInStr(text: string): string {
+function renderLinksInStr(text: string): string {
 	return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
 		if (!url.startsWith('datasworn:')) return match
 		url = url.substring('datasworn:'.length)
@@ -39,13 +40,38 @@ export function renderLinksInStr(text: string): string {
 		const compendiumKey =
 			COMPENDIUM_KEY_MAP[parsed.primaryTypeId][parsed.rulesPackageId]
 		if (!compendiumKey) return match
-		if (idIsOracleLink(url)) {
+		if (parsed.primaryTypeId === 'oracle_collection') {
 			return `<a class="entity-link oracle-category-link" data-dfid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
 		}
-		return `@Compendium[foundry-ironsworn.${compendiumKey}.${hash(
-			url
-		)}]{${text}}`
+		const urlHash = hash(LegacyIdMap[url] || url)
+		return `@Compendium[foundry-ironsworn.${compendiumKey}.${urlHash}]{${text}}`
 	})
+}
+
+function renderText(text: string): string {
+	return markdownRenderer.makeHtml(renderLinksInStr(text))
+}
+
+function titleCase(str: string): string {
+	const skipWords = [
+		'a',
+		'an',
+		'the',
+		'and',
+		'but',
+		'or',
+		'for',
+		'nor',
+		'on',
+		'at',
+		'to',
+		'from',
+		'by',
+		'with'
+	]
+	return str.replace(/\w+/g, (word) =>
+		skipWords.includes(word) ? word : word[0].toUpperCase() + word.substring(1)
+	)
 }
 
 // ASSETS
@@ -60,23 +86,29 @@ for (const collection of collections) {
 		`asset:${collection}/*/*`,
 		IdParser.datasworn
 	)
-	const keys = Array.from(assets.keys())
-	console.log(collection, keys.length)
-	for (const k of assets.keys()) {
-		// TODO: compute the legacy key somehow, if it exists
-		// That way we can preserve the existing IDs by hashing the old key
-		const asset = assets.get(k)
-		if (asset === undefined) continue
+	console.log(collection, assets.size)
 
-		const fid = hash(asset._id as string)
-		console.log(asset?._id, fid)
+	for (const asset of assets.values()) {
+		if (asset === undefined) continue
+		console.log('  ', asset._id)
+
+		// Generate a hash, use the legacy ID if it exists to preserve the old ID
+		const assetId = LegacyIdMap[asset._id] || asset._id
+		const fid = hash(assetId)
+
+		// Generate a folder hash
+		const legacyFolderId = `${capitalize(collection)}/Assets/${startCase(
+			asset.category
+		).replace(' ', '_')}`
+		const folderId = hash(legacyFolderId)
+
 		const json: any = {
 			type: 'asset',
 			_id: fid,
-			folder: '9b891b1ca6ac0bad',
+			folder: folderId,
 			name: asset.name,
 			system: {
-				requirement: asset.requirement ?? '',
+				requirement: renderText(asset.requirement ?? ''),
 				category: asset.category,
 				color: asset.color,
 				fields: [],
@@ -84,7 +116,7 @@ for (const collection of collections) {
 					const clock = a.controls?.clock as ClockField | undefined
 					return {
 						enabled: a.enabled,
-						description: markdownRenderer.makeHtml(a.text), // TODO: convert links
+						description: renderText(a.text),
 						hasClock: !!clock,
 						clockTicks: 0,
 						clockMax: clock?.max ?? 4
@@ -103,13 +135,23 @@ for (const collection of collections) {
 			flags: {},
 			_key: `!items!${fid}`
 		}
+		// Fields
+		for (const option of Object.values(asset.options)) {
+			if (option.field_type === 'text') {
+				json.system.fields.push({
+					name: titleCase(option.label),
+					value: option.value ?? ''
+				})
+			}
+		}
+		// Track
 		for (const control of Object.values(asset.controls ?? {})) {
 			// console.log(control)
 			if (control.field_type === 'condition_meter') {
 				// Add a track
 				json.system.track = {
 					enabled: true,
-					name: capitalize(control.label),
+					name: titleCase(control.label),
 					max: control.max ?? 0,
 					value: control.value ?? 0,
 					min: control.min ?? 0
@@ -118,7 +160,7 @@ for (const collection of collections) {
 					if (['checkbox', 'card_flip'].includes(subcontrol.field_type)) {
 						// A condition!
 						json.system.conditions.push({
-							name: capitalize(subcontrol.label),
+							name: titleCase(subcontrol.label),
 							ticked: subcontrol.value
 						})
 					}
@@ -131,6 +173,5 @@ for (const collection of collections) {
 			`json-packs/${packName}/${fileName}_${fid}.json`,
 			JSON.stringify(json, null, 2)
 		)
-		process.exit()
 	}
 }
