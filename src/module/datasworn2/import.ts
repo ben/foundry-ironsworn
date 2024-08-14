@@ -3,16 +3,13 @@ import LegacyIdMap from '@datasworn/core/json/legacy_id_map.json' assert { type:
 import { IdParser } from '.'
 import shajs from 'sha.js'
 import { capitalize, startCase, titleCase } from 'lodash-es'
-import { writeFile } from 'fs/promises'
+import { writeFile, mkdir } from 'fs/promises'
+import { existsSync } from 'fs'
 import Showdown from 'showdown'
 
 const markdownRenderer = new Showdown.Converter()
 
-const collections = [
-	// 'classic',
-	'starforged'
-	// 'sundered_isles'
-]
+const collections = ['classic', 'starforged', 'sundered_isles']
 
 function hash(str: string): string {
 	return shajs('sha256').update(str).digest('hex').substring(48)
@@ -20,16 +17,29 @@ function hash(str: string): string {
 
 const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
 const COMPENDIUM_KEY_MAP = {
+	asset: {
+		ironsworn: 'ironswornassets',
+		starforged: 'starforgedassets',
+		sundered_isles: 'sunderedislesassetss'
+	},
 	move: {
 		ironsworn: 'ironswornmoves',
-		starforged: 'starforgedmoves'
+		starforged: 'starforgedmoves',
+		sundered_isles: 'sunderedislesmoves'
 	},
 	oracle_collection: {
 		ironsworn: 'ironswornoracles',
-		starforged: 'starforgedoracles'
+		starforged: 'starforgedoracles',
+		sundered_isles: 'sunderedislesmoves'
+	},
+	oracle_rollable: {
+		ironsworn: 'ironswornoracles',
+		starforged: 'starforgedoracles',
+		sundered_isles: 'sunderedislesmoves'
 	},
 	npc: {
-		starforged: 'starforgedencounters'
+		starforged: 'starforgedencounters',
+		sundered_isles: 'sunderedislesmoves'
 	}
 }
 function renderLinksInStr(text: string): string {
@@ -168,7 +178,10 @@ for (const collection of collections) {
 			}
 		}
 
-		const fileName = json.name.replace(/\s/g, '_')
+		const fileName = json.name.replace(/\W/g, '_')
+		if (!existsSync(`json-packs/${packName}`)) {
+			await mkdir(`json-packs/${packName}`)
+		}
 		await writeFile(
 			`json-packs/${packName}/${fileName}_${fid}.json`,
 			JSON.stringify(json, null, 2)
