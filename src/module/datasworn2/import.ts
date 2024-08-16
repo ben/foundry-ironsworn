@@ -195,8 +195,8 @@ for (const collection of collections) {
 		for (const asset of Object.values(cat.contents)) {
 			console.log('  ', asset._id)
 
-			const legacyAssetId = LegacyIdMap[asset._id] || asset._id
-			const fid = hash(legacyAssetId)
+			const legacyAssetId = LegacyIdMap[asset._id]
+			const fid = hash(legacyAssetId ?? asset._id)
 
 			const json: any = {
 				type: 'asset',
