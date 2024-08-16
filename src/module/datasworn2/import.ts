@@ -136,8 +136,7 @@ async function writeFolderJson(
 	packName: string,
 	cat: AssetCollection | MoveCategory
 ) {
-	const name = cat.name.replace(/ (Assets|Moves)/, '')
-	console.log(` ${name}/`)
+	console.log(` ${cat.name}/`)
 
 	if (!cat._id) {
 		console.log('!!! No ID for category', cat)
@@ -147,7 +146,7 @@ async function writeFolderJson(
 	const folderHash = hash(legacyFolderId ?? cat._id)
 
 	const json = {
-		name,
+		name: cat.name,
 		color: cat.color,
 		description: renderLinksInStr(cat.description ?? ''),
 		type: 'Item',
