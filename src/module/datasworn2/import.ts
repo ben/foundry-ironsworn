@@ -2,7 +2,7 @@ import type { ClockField } from '@datasworn/core/dist/DataswornSource'
 import LegacyIdMap from '@datasworn/core/json/legacy_id_map.json' assert { type: 'json' }
 import { IdParser, DataswornTree } from '.'
 import shajs from 'sha.js'
-import { capitalize, startCase, titleCase } from 'lodash-es'
+import { capitalize, startCase } from 'lodash-es'
 import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
 import Showdown from 'showdown'
