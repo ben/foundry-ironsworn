@@ -126,7 +126,8 @@
       "name": "Sundered Isles Rulebook",
       "color": "#444444",
       "packs": [
-        "sundered-isles-charts"
+        "sundered-isles-charts",
+        "sundered-isles-assets"
       ]
     }
   ],
@@ -202,13 +203,6 @@
       "type": "Scene"
     },
     {
-      "name": "sundered-isles-charts",
-      "label": "Sundered Isles Charts",
-      "system": "foundry-ironsworn",
-      "path": "packs/sundered-isles-charts",
-      "type": "Scene"
-    },
-    {
       "name": "starforgedassets",
       "label": "Starforged Assets",
       "system": "foundry-ironsworn",
@@ -249,6 +243,20 @@
       "system": "foundry-ironsworn",
       "path": "packs/macros",
       "type": "Macro"
+    },
+    {
+      "name": "sundered-isles-charts",
+      "label": "Sundered Isles Charts",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-charts",
+      "type": "Scene"
+    },
+    {
+      "name": "sunderedislesassets",
+      "label": "Sundered Isles Assets",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-assets",
+      "type": "Item"
     }
   ],
   "languages": [

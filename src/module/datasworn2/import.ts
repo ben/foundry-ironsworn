@@ -38,7 +38,7 @@ const COMPENDIUM_KEY_MAP = {
 	asset: {
 		classic: 'ironswornassets',
 		starforged: 'starforgedassets',
-		sundered_isles: 'sunderedislesassetss'
+		sundered_isles: 'sunderedislesassets'
 	},
 	move_category: {
 		classic: 'ironswornmoves',
