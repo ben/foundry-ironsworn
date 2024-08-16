@@ -1,4 +1,8 @@
-import type { ClockField } from '@datasworn/core/dist/DataswornSource'
+import type {
+	AssetCollection,
+	MoveCategory,
+	ClockField
+} from '@datasworn/core/dist/DataswornSource'
 import LegacyIdMap from '@datasworn/core/json/legacy_id_map.json' assert { type: 'json' }
 import { IdParser, DataswornTree } from '.'
 import shajs from 'sha.js'
@@ -27,7 +31,7 @@ LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.likely'] =
 
 const markdownRenderer = new Showdown.Converter()
 
-const collections = ['classic', 'starforged', 'sundered_isles']
+const collections = ['classic', 'classic_delve', 'starforged', 'sundered_isles']
 
 function hash(str: string): string {
 	return shajs('sha256').update(str).digest('hex').substring(48)
@@ -129,7 +133,43 @@ async function writeJsonFile(packName: string, json: any) {
 	)
 }
 
-// ASSETS
+async function writeFolderJson(
+	packName: string,
+	cat: AssetCollection | MoveCategory
+) {
+	const name = cat.name.replace(/ (Assets|Moves)/, '')
+	console.log(` ${name}/`)
+
+	if (!cat._id) {
+		console.log('!!! No ID for category', cat)
+		return
+	}
+	const legacyFolderId = LegacyIdMap[cat._id]
+	const folderHash = hash(legacyFolderId ?? cat._id)
+
+	const json = {
+		name,
+		color: cat.color,
+		description: renderLinksInStr(cat.description ?? ''),
+		type: 'Item',
+		_id: folderHash,
+		sort:
+			(cat._source.page ?? 0) +
+			(cat._source.title.includes('Delve') ? 1000 : 0),
+		flags: {
+			'foundry-ironsworn': {
+				dfid: legacyFolderId,
+				dsid: cat._id
+			}
+		},
+		folder: null,
+		sorting: 'a',
+		_key: `!folders!${folderHash}`
+	}
+	await writeJsonFile(packName, json)
+}
+
+console.log('\n\n--- ASSETS ---')
 for (const collection of collections) {
 	console.log(collection)
 	const legacyCollection = collection === 'classic' ? 'ironsworn' : collection
@@ -146,34 +186,11 @@ for (const collection of collections) {
 	const assetCategories = DataswornTree.get(collection)?.assets
 	for (const cat of Object.values(assetCategories ?? {})) {
 		// Folder for category
-		const name = cat.name.replace(' Assets', '')
-		console.log(` ${name}/`)
-		const legacyFolderId: string =
-			LegacyIdMap[cat._id] ??
-			`${capitalize(legacyCollection)}/Assets/${startCase(name).replace(
-				/\W/g,
-				'_'
-			)}`
-		const json = {
-			name,
-			color: cat.color,
-			description: renderLinksInStr(cat.description ?? ''),
-			type: 'Item',
-			_id: hash(legacyFolderId),
-			sort:
-				(cat._source.page ?? 0) +
-				(cat._source.title.includes('Delve') ? 1000 : 0),
-			flags: {
-				'foundry-ironsworn': {
-					dfid: legacyFolderId,
-					dsid: cat._id
-				}
-			},
-			folder: null,
-			sorting: 'a',
-			_key: `!folders!${hash(legacyFolderId)}`
+		await writeFolderJson(packName, cat)
+		const legacyFolderId = LegacyIdMap[cat._id] ?? cat._id
+		if (!legacyFolderId && !cat._id.includes('sundered_isles')) {
+			console.log('!!! No legacy ID for', cat._id)
 		}
-		await writeJsonFile(packName, json)
 
 		// Category assets
 		for (const asset of Object.values(cat.contents)) {
