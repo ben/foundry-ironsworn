@@ -6,7 +6,6 @@ import type {
 import LegacyIdMap from '@datasworn/core/json/legacy_id_map.json' assert { type: 'json' }
 import { IdParser, DataswornTree } from '.'
 import shajs from 'sha.js'
-import { capitalize, startCase } from 'lodash-es'
 import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
 import Showdown from 'showdown'
@@ -31,7 +30,7 @@ LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.likely'] =
 
 const markdownRenderer = new Showdown.Converter()
 
-const collections = ['classic', 'classic_delve', 'starforged', 'sundered_isles']
+const collections = ['classic', 'delve', 'starforged', 'sundered_isles']
 
 function hash(str: string): string {
 	return shajs('sha256').update(str).digest('hex').substring(48)
