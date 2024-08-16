@@ -12,10 +12,14 @@ LegacyIdMap['asset:starforged/module/engine_upgrade'] =
 	'Starforged/Assets/Module/Engine_Upgrade'
 LegacyIdMap['asset:starforged/module/internal_refit'] =
 	'Starforged/Assets/Module/Internal_Refit'
-
-// TODO: open questions
-// - Loyalist: link to aid-your-ally move changed SHA?
-// - Ward: link to ask-the-oracle move changed SHA?
+LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.likely'] =
+	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Likely'
+LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.almost_certain'] =
+	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Almost_Certain'
+LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.fifty_fifty'] =
+	'Starforged/Oracles/Moves/Ask_the_Oracle/Fifty-fifty'
+LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.likely'] =
+	'Starforged/Oracles/Moves/Ask_the_Oracle/Likely'
 
 // A script to import Datasworn 2 data into compendia JSON files.
 // Run this like so:
@@ -67,15 +71,25 @@ function renderLinksInStr(text: string): string {
 		if (!url.startsWith('datasworn:')) return match
 		url = url.substring('datasworn:'.length)
 		const parsed = IdParser.parse(url)
-		// TODO: datasworn:move.oracle_rollable:classic/fate/ask_the_oracle.likely
-		// Should link to the oracles compendium
-		const compendiumKey =
-			COMPENDIUM_KEY_MAP[parsed.primaryTypeId][parsed.rulesPackageId]
+
+		// Fixup: embedded oracle tables will be imported as full RollTables
+		// So here we redirect links to move-oracles to full oracles
+		const typeId =
+			parsed.typeIds.join('/') === 'move/oracle_rollable'
+				? 'oracle_rollable'
+				: parsed.primaryTypeId
+		const compendiumKey = COMPENDIUM_KEY_MAP[typeId][parsed.rulesPackageId]
 		if (!compendiumKey) return match
-		if (parsed.primaryTypeId === 'oracle_collection') {
-			return `<a class="entity-link oracle-category-link" data-dfid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
+
+		const legacyId = LegacyIdMap[url]
+		if (!legacyId && !/sundered_isles/.test(url)) {
+			console.log('!!! No legacy ID for', url)
 		}
-		const urlHash = hash(LegacyIdMap[url] || url)
+
+		if (parsed.primaryTypeId === 'oracle_collection') {
+			return `<a class="entity-link oracle-category-link" data-dfid="${legacyId}" data-dsid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
+		}
+		const urlHash = hash(legacyId || url)
 		return `@Compendium[foundry-ironsworn.${compendiumKey}.${urlHash}]{${text}}`
 	})
 }
