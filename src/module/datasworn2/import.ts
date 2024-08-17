@@ -1,9 +1,10 @@
 import type {
 	AssetCollection,
 	MoveCategory,
-	ClockField
-} from '@datasworn/core/dist/DataswornSource'
-import LegacyIdMap from '@datasworn/core/json/legacy_id_map.json' assert { type: 'json' }
+	ClockField,
+	OracleTablesCollection,
+	OracleCollection
+} from '@datasworn/core/dist/Datasworn'
 import { IdParser, DataswornTree } from '.'
 import shajs from 'sha.js'
 import { writeFile, mkdir } from 'fs/promises'
@@ -11,79 +12,21 @@ import { existsSync } from 'fs'
 import Showdown from 'showdown'
 import { capitalize, compact, flatten } from 'lodash-es'
 
-// TODO: SF pay the price has these suggestions
-// +      "oracle_rollable:*/**/peril",
-// +      "oracle_rollable:*/**/peril/**"
-
-// TODO: submit legacy id map fixes to rsek
-LegacyIdMap['asset:starforged/module/engine_upgrade'] =
-	'Starforged/Assets/Module/Engine_Upgrade'
-LegacyIdMap['asset:starforged/module/internal_refit'] =
-	'Starforged/Assets/Module/Internal_Refit'
-
-LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.almost_certain'] =
-	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Almost_Certain'
-LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.likely'] =
-	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Likely'
-LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.fifty_fifty'] =
-	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Fifty-fifty'
-LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.unlikely'] =
-	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Unlikely'
-LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.small_chance'] =
-	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Small_Chance'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/fate/ask_the_oracle.almost_certain'
-] = 'Starforged/Oracles/Moves/Ask_the_Oracle/Almost_Certain'
-LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.likely'] =
-	'Starforged/Oracles/Moves/Ask_the_Oracle/Likely'
-LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.fifty_fifty'] =
-	'Starforged/Oracles/Moves/Ask_the_Oracle/Fifty-fifty'
-LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.unlikely'] =
-	'Starforged/Oracles/Moves/Ask_the_Oracle/Unlikely'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/fate/ask_the_oracle.small_chance'
-] = 'Starforged/Oracles/Moves/Ask_the_Oracle/Small_Chance'
-LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.likely'] =
-	'Starforged/Oracles/Moves/Ask_the_Oracle/Likely'
-
-LegacyIdMap['move.oracle_rollable:classic/suffer/endure_stress.endure_stress'] =
-	'Ironsworn/Oracles/Moves/Endure_Stress'
-LegacyIdMap['move.oracle_rollable:classic/suffer/endure_harm.endure_harm'] =
-	'Ironsworn/Oracles/Moves/Endure_Harm'
-LegacyIdMap['move.oracle_rollable:classic/fate/pay_the_price.pay_the_price'] =
-	'Ironsworn/Oracles/Moves/Pay_the_Price'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/session/begin_a_session.begin_a_session'
-] = 'Starforged/Oracles/Moves/Begin_a_Session'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/exploration/confront_chaos.confront_chaos'
-] = 'Starforged/Oracles/Moves/Confront_Chaos'
-LegacyIdMap['move.oracle_rollable:starforged/suffer/endure_harm.endure_harm'] =
-	'Starforged/Oracles/Moves/Endure_Harm'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/suffer/endure_stress.endure_stress'
-] = 'Starforged/Oracles/Moves/Endure_Stress'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/exploration/make_a_discovery.make_a_discovery'
-] = 'Starforged/Oracles/Moves/Make_a_Discovery'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price'
-] = 'Starforged/Oracles/Moves/Pay_the_Price'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action'
-] = 'Starforged/Oracles/Moves/Take_Decisive_Action'
-LegacyIdMap[
-	'move.oracle_rollable:starforged/suffer/withstand_damage.withstand_damage'
-] = 'Starforged/Oracles/Moves/Withstand_Damage'
-
-LegacyIdMap['oracle_rollable:starforged/misc/story_clue'] =
-	'Starforged/Oracles/Misc/Story_Clue'
-LegacyIdMap['oracle_rollable:starforged/misc/story_complication'] =
-	'Starforged/Oracles/Misc/Story_Complication'
-
-LegacyIdMap['move_category:classic/quest'] = 'Ironsworn/Moves/Quest'
-LegacyIdMap['move_category:classic/fate'] = 'Ironsworn/Moves/Fate'
-LegacyIdMap['move_category:classic/suffer'] = 'Ironsworn/Moves/Suffer'
+// Import a local copy of the legacy ID maps
+const LegacyToDataswornIds: { [k: string]: string } = {
+	...require('./legacy_ids/dataforged/classic/assets.json'),
+	...require('./legacy_ids/dataforged/classic/moves.json'),
+	...require('./legacy_ids/dataforged/classic/npcs.json'),
+	...require('./legacy_ids/dataforged/classic/oracles.json'),
+	...require('./legacy_ids/dataforged/starforged/assets.json'),
+	...require('./legacy_ids/dataforged/starforged/moves.json'),
+	...require('./legacy_ids/dataforged/starforged/oracles.json'),
+	...require('./legacy_ids/dataforged/starforged/npcs.json'),
+	...require('./legacy_ids/dataforged/starforged/truths.json')
+}
+const DataswornToLegacyIds = Object.fromEntries(
+	Object.entries(LegacyToDataswornIds).map(([k, v]) => [v, k])
+)
 
 const ISMoveCategoryColors = {
 	'Adventure Moves': '#206087',
@@ -141,17 +84,25 @@ const COMPENDIUM_KEY_MAP = {
 	},
 	oracle_collection: {
 		classic: 'ironswornoracles',
+		delve: 'delveoracles',
 		starforged: 'starforgedoracles',
 		sundered_isles: 'sunderedislesmoves'
 	},
 	oracle_rollable: {
 		classic: 'ironswornoracles',
+		delve: 'delveoracles',
 		starforged: 'starforgedoracles',
 		sundered_isles: 'sunderedislesmoves'
 	},
 	npc: {
 		starforged: 'starforgedencounters',
 		sundered_isles: 'sunderedislesmoves'
+	},
+	delve_site_theme: {
+		delve: 'delve-themes'
+	},
+	delve_site_domain: {
+		delve: 'delve-domains'
 	}
 }
 function renderLinksInStr(text: string): string {
@@ -166,10 +117,16 @@ function renderLinksInStr(text: string): string {
 			parsed.typeIds.join('/') === 'move/oracle_rollable'
 				? 'oracle_rollable'
 				: parsed.primaryTypeId
-		const compendiumKey = COMPENDIUM_KEY_MAP[typeId][parsed.rulesPackageId]
-		if (!compendiumKey) return match
+		const compendiumKey = COMPENDIUM_KEY_MAP[typeId]?.[parsed.rulesPackageId]
+		if (!compendiumKey) {
+			console.log(
+				`!!! No compendium key for ${match} (${typeId} / ${parsed.rulesPackageId})`,
+				match
+			)
+			return match
+		}
 
-		const legacyId = LegacyIdMap[url]
+		const legacyId = DataswornToLegacyIds[url]
 		if (!legacyId && !/sundered_isles/.test(url)) {
 			console.log('!!! No legacy ID for', url)
 		}
@@ -217,17 +174,19 @@ async function writeJsonFile(packName: string, json: any) {
 	)
 }
 
+// Returns the foundry ID of the folder
 async function writeFolderJson(
 	packName: string,
-	cat: AssetCollection | MoveCategory
-) {
+	cat: AssetCollection | MoveCategory | OracleCollection,
+	parentFolderId?: string
+): Promise<string> {
 	console.log(` ${cat.name}/`)
 
 	if (!cat._id) {
 		console.log('!!! No ID for category', cat)
 		return
 	}
-	const legacyFolderId = LegacyIdMap[cat._id]
+	const legacyFolderId = DataswornToLegacyIds[cat._id]
 	const folderHash = hash(legacyFolderId ?? cat._id)
 
 	const json = {
@@ -245,11 +204,12 @@ async function writeFolderJson(
 				dsid: cat._id
 			}
 		},
-		folder: null,
+		folder: parentFolderId ?? null,
 		sorting: 'a',
 		_key: `!folders!${folderHash}`
 	}
 	await writeJsonFile(packName, json)
+	return json._id
 }
 
 console.log('\n\n--- ASSETS ---')
@@ -270,7 +230,7 @@ for (const collection of collections) {
 	for (const cat of Object.values(assetCategories ?? {})) {
 		// Folder for category
 		await writeFolderJson(packName, cat)
-		const legacyFolderId = LegacyIdMap[cat._id] ?? cat._id
+		const legacyFolderId = DataswornToLegacyIds[cat._id] ?? cat._id
 		if (!legacyFolderId && !cat._id.includes('sundered_isles')) {
 			console.log('!!! No legacy ID for', cat._id)
 		}
@@ -279,7 +239,7 @@ for (const collection of collections) {
 		for (const asset of Object.values(cat.contents)) {
 			console.log('  ', asset._id)
 
-			const legacyAssetId = LegacyIdMap[asset._id]
+			const legacyAssetId = DataswornToLegacyIds[asset._id]
 			if (!legacyAssetId && !asset._id.includes('sundered_isles')) {
 				console.log('!!! No legacy ID for', asset._id)
 			}
@@ -405,7 +365,7 @@ for (const collection of collections) {
 	for (const cat of Object.values(moveCategories ?? {})) {
 		// Folder for category
 		await writeFolderJson(packName, cat)
-		const legacyFolderId = LegacyIdMap[cat._id] ?? cat._id
+		const legacyFolderId = DataswornToLegacyIds[cat._id] ?? cat._id
 		if (!legacyFolderId && !cat._id.includes('sundered_isles')) {
 			console.log('!!! No legacy ID for', cat._id)
 		}
@@ -413,7 +373,7 @@ for (const collection of collections) {
 		for (const move of Object.values(cat.contents)) {
 			console.log('  ', move._id)
 
-			const legacyMoveId = LegacyIdMap[move._id]
+			const legacyMoveId = DataswornToLegacyIds[move._id]
 			if (!legacyMoveId && !move._id.includes('sundered_isles')) {
 				console.log('!!! No legacy ID for', move._id)
 			}
@@ -438,7 +398,7 @@ for (const collection of collections) {
 			)
 			const legacyOracleIds = compact(
 				dsOracleIds.map((o) => {
-					const legacyId = LegacyIdMap[o]
+					const legacyId = DataswornToLegacyIds[o]
 					if (!legacyId) {
 						console.log('!!! No legacy ID for', o)
 					}
