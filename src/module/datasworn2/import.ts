@@ -432,8 +432,8 @@ for (const collection of collections) {
 			const dsOracleIds = flatten(
 				oracleIdPatterns.map((o) => {
 					const parsed = IdParser.parse(o)
-					const matches = IdParser.getMatches(parsed, DataswornTree)
-					return Array.from(matches.values()).map((m) => m._id)
+					const matches = IdParser.getMatches(parsed as any, DataswornTree)
+					return Array.from(matches.values()).map((m: any) => m._id)
 				})
 			)
 			const legacyOracleIds = compact(
