@@ -9,7 +9,7 @@ import shajs from 'sha.js'
 import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
 import Showdown from 'showdown'
-import { capitalize } from 'lodash-es'
+import { capitalize, compact, flatten } from 'lodash-es'
 
 // TODO: SF pay the price has these suggestions
 // +      "oracle_rollable:*/**/peril",
@@ -61,7 +61,7 @@ LegacyIdMap[
 LegacyIdMap['move.oracle_rollable:starforged/suffer/endure_harm.endure_harm'] =
 	'Starforged/Oracles/Moves/Endure_Harm'
 LegacyIdMap[
-	'move.oracle_rollable:starforged/suffer/endure_harm.endure_stress'
+	'move.oracle_rollable:starforged/suffer/endure_stress.endure_stress'
 ] = 'Starforged/Oracles/Moves/Endure_Stress'
 LegacyIdMap[
 	'move.oracle_rollable:starforged/exploration/make_a_discovery.make_a_discovery'
@@ -424,6 +424,28 @@ for (const collection of collections) {
 			const stripTableEmbeds = (txt: string): string =>
 				txt.replace(/{{table>.*?}}/, '').trim()
 
+			// Process oracle IDs
+			const oracleIdPatterns = [
+				...Object.values(move.oracles ?? {}).map((o) => o._id),
+				...Object.values(move.suggestions ?? {})
+			]
+			const dsOracleIds = flatten(
+				oracleIdPatterns.map((o) => {
+					const parsed = IdParser.parse(o)
+					const matches = IdParser.getMatches(parsed, DataswornTree)
+					return Array.from(matches.values()).map((m) => m._id)
+				})
+			)
+			const legacyOracleIds = compact(
+				dsOracleIds.map((o) => {
+					const legacyId = LegacyIdMap[o]
+					if (!legacyId) {
+						console.log('!!! No legacy ID for', o)
+					}
+					return legacyId
+				})
+			)
+
 			const json: any = {
 				_id: fid,
 				type: 'sfmove',
@@ -498,10 +520,8 @@ for (const collection of collections) {
 							}
 						}
 					},
-					Oracles: [
-						...Object.values(move.oracles ?? {}).map((o) => o._id),
-						...Object.values(move.suggestions ?? {})
-					].map((o) => LegacyIdMap[o] ?? o),
+					Oracles: legacyOracleIds,
+					dsOracleIds,
 					Source: {
 						Title: move._source.title,
 						Authors: move._source.authors.map((x) => x.name),

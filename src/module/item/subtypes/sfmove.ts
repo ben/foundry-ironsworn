@@ -102,6 +102,7 @@ export class SFMoveModel extends foundry.abstract.TypeDataModel<
 			Display: new DisplayField(),
 			Text: new fields.HTMLField(),
 			Oracles: new fields.ArrayField(new DataforgedIDField()),
+			dsOracleIds: new fields.ArrayField(new fields.StringField()),
 			Trigger: new SFMoveTriggerField(),
 			Outcomes: new fields.SchemaField(
 				{
