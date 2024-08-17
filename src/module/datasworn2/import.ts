@@ -13,7 +13,7 @@ import Showdown from 'showdown'
 import { capitalize, compact, flatten } from 'lodash-es'
 
 // Import a local copy of the legacy ID maps
-const LegacyToDataswornIds: { [k: string]: string } = {
+const LegacyToDataswornIds: Record<string, string> = {
 	...require('./legacy_ids/dataforged/classic/assets.json'),
 	...require('./legacy_ids/dataforged/classic/moves.json'),
 	...require('./legacy_ids/dataforged/classic/npcs.json'),
@@ -24,7 +24,7 @@ const LegacyToDataswornIds: { [k: string]: string } = {
 	...require('./legacy_ids/dataforged/starforged/npcs.json'),
 	...require('./legacy_ids/dataforged/starforged/truths.json')
 }
-const DataswornToLegacyIds = Object.fromEntries(
+const DataswornToLegacyIds: Record<string, string> = Object.fromEntries(
 	Object.entries(LegacyToDataswornIds).map(([k, v]) => [v, k])
 )
 
@@ -180,8 +180,6 @@ async function writeFolderJson(
 	cat: AssetCollection | MoveCategory | OracleCollection,
 	parentFolderId?: string
 ): Promise<string> {
-	console.log(` ${cat.name}/`)
-
 	if (!cat._id) {
 		console.log('!!! No ID for category', cat)
 		return
@@ -193,11 +191,9 @@ async function writeFolderJson(
 		name: cat.name,
 		color: cat.color ?? ISMoveCategoryColors[cat.name],
 		description: renderLinksInStr(cat.description ?? cat.summary ?? ''),
-		type: 'Item',
+		type: cat.type === 'oracle_collection' ? 'RollTable' : 'Item',
 		_id: folderHash,
-		sort:
-			(cat._source.page ?? 0) +
-			(cat._source.title.includes('Delve') ? 1000 : 0),
+		sort: cat._source.page ?? 0,
 		flags: {
 			'foundry-ironsworn': {
 				dfid: legacyFolderId,
@@ -215,7 +211,6 @@ async function writeFolderJson(
 console.log('\n\n--- ASSETS ---')
 for (const collection of collections) {
 	console.log(collection)
-	const legacyCollection = collection === 'classic' ? 'ironsworn' : collection
 	const packName = {
 		classic: 'assets',
 		starforged: 'starforged-assets',
@@ -319,7 +314,6 @@ for (const collection of collections) {
 			}
 			// Track
 			for (const control of Object.values(asset.controls ?? {})) {
-				// console.log(control)
 				if (control.field_type === 'condition_meter') {
 					// Add a track
 					json.system.track = {
@@ -349,7 +343,6 @@ for (const collection of collections) {
 console.log('\n\n--- MOVES ---')
 for (const collection of collections) {
 	console.log(collection)
-	const legacyCollection = collection === 'classic' ? 'ironsworn' : collection
 	const packName = {
 		classic: 'ironsworn-moves',
 		delve: 'delve-moves',
@@ -506,4 +499,46 @@ for (const collection of collections) {
 			await writeJsonFile(packName, json)
 		}
 	}
+}
+
+console.log('\n\n--- ORACLES ---')
+for (const collection of collections) {
+	console.log(collection)
+
+	const packName = {
+		classic: 'ironsworn-oracles',
+		delve: 'delve-oracles',
+		starforged: 'starforged-oracles',
+		sundered_isles: 'sundered-isles-oracles'
+	}[collection]
+	if (!packName) continue
+	if (!existsSync(`json-packs/${packName}`)) {
+		await mkdir(`json-packs/${packName}`)
+	}
+
+	const walkCollections = async (
+		collections: Record<string, OracleCollection> | undefined,
+		depth = 1,
+		parentFolder?: string
+	) => {
+		for (const collection of Object.values(collections ?? {})) {
+			console.log('  '.repeat(depth), `${parentFolder ?? ''}/${collection._id}`)
+
+			// Create a folder
+			const folderId = await writeFolderJson(packName, collection, parentFolder)
+
+			for (const oracle of Object.values(collection.contents)) {
+				// TODO: write the json for an oracle
+				console.log(
+					'  '.repeat(depth + 1),
+					`${parentFolder}/oracle`,
+					oracle._id
+				)
+			}
+			const pc = collection as OracleTablesCollection
+			await walkCollections(pc.collections, depth + 1, folderId)
+		}
+	}
+
+	await walkCollections(DataswornTree.get(collection)?.oracles)
 }
