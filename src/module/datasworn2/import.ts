@@ -280,6 +280,9 @@ for (const collection of collections) {
 			console.log('  ', asset._id)
 
 			const legacyAssetId = LegacyIdMap[asset._id]
+			if (!legacyAssetId && !asset._id.includes('sundered_isles')) {
+				console.log('!!! No legacy ID for', asset._id)
+			}
 			const fid = hash(legacyAssetId ?? asset._id)
 
 			const json: any = {
@@ -411,6 +414,9 @@ for (const collection of collections) {
 			console.log('  ', move._id)
 
 			const legacyMoveId = LegacyIdMap[move._id]
+			if (!legacyMoveId && !move._id.includes('sundered_isles')) {
+				console.log('!!! No legacy ID for', move._id)
+			}
 			const fid = hash(legacyMoveId ?? move._id)
 
 			// Trim out embedded tables
