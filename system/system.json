@@ -105,6 +105,7 @@
       "name": "Ironsworn: Delve",
       "color": "#444444",
       "packs": [
+        "ironsworndelvemoves",
         "ironsworndelvethemes",
         "ironsworndelvedomains"
       ]
@@ -127,7 +128,8 @@
       "color": "#444444",
       "packs": [
         "sundered-isles-charts",
-        "sunderedislesassets"
+        "sunderedislesassets",
+        "sunderedislesmoves"
       ]
     }
   ],
@@ -165,6 +167,13 @@
       "label": "Ironsworn Assets",
       "system": "foundry-ironsworn",
       "path": "packs/assets",
+      "type": "Item"
+    },
+    {
+      "name": "ironsworndelvemoves",
+      "label": "Ironsworn Delve Moves",
+      "system": "foundry-ironsworn",
+      "path": "packs/delve-moves",
       "type": "Item"
     },
     {
@@ -256,6 +265,13 @@
       "label": "Sundered Isles Assets",
       "system": "foundry-ironsworn",
       "path": "packs/sundered-isles-assets",
+      "type": "Item"
+    }
+    {
+      "name": "sunderedislesmoves",
+      "label": "Sundered Isles Moves",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-moves",
       "type": "Item"
     }
   ],
