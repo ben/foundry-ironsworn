@@ -9,26 +9,111 @@ import shajs from 'sha.js'
 import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
 import Showdown from 'showdown'
+import { capitalize } from 'lodash-es'
 
-// TODO: legacy id map fixes
+// TODO: SF pay the price has these suggestions
+// +      "oracle_rollable:*/**/peril",
+// +      "oracle_rollable:*/**/peril/**"
+
+// TODO: submit legacy id map fixes to rsek
 LegacyIdMap['asset:starforged/module/engine_upgrade'] =
 	'Starforged/Assets/Module/Engine_Upgrade'
 LegacyIdMap['asset:starforged/module/internal_refit'] =
 	'Starforged/Assets/Module/Internal_Refit'
-LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.likely'] =
-	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Likely'
+
 LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.almost_certain'] =
 	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Almost_Certain'
+LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.likely'] =
+	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Likely'
+LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.fifty_fifty'] =
+	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Fifty-fifty'
+LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.unlikely'] =
+	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Unlikely'
+LegacyIdMap['move.oracle_rollable:classic/fate/ask_the_oracle.small_chance'] =
+	'Ironsworn/Oracles/Moves/Ask_the_Oracle/Small_Chance'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/fate/ask_the_oracle.almost_certain'
+] = 'Starforged/Oracles/Moves/Ask_the_Oracle/Almost_Certain'
+LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.likely'] =
+	'Starforged/Oracles/Moves/Ask_the_Oracle/Likely'
 LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.fifty_fifty'] =
 	'Starforged/Oracles/Moves/Ask_the_Oracle/Fifty-fifty'
+LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.unlikely'] =
+	'Starforged/Oracles/Moves/Ask_the_Oracle/Unlikely'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/fate/ask_the_oracle.small_chance'
+] = 'Starforged/Oracles/Moves/Ask_the_Oracle/Small_Chance'
 LegacyIdMap['move.oracle_rollable:starforged/fate/ask_the_oracle.likely'] =
 	'Starforged/Oracles/Moves/Ask_the_Oracle/Likely'
 
+LegacyIdMap['move.oracle_rollable:classic/suffer/endure_stress.endure_stress'] =
+	'Ironsworn/Oracles/Moves/Endure_Stress'
+LegacyIdMap['move.oracle_rollable:classic/suffer/endure_harm.endure_harm'] =
+	'Ironsworn/Oracles/Moves/Endure_Harm'
+LegacyIdMap['move.oracle_rollable:classic/fate/pay_the_price.pay_the_price'] =
+	'Ironsworn/Oracles/Moves/Pay_the_Price'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/session/begin_a_session.begin_a_session'
+] = 'Starforged/Oracles/Moves/Begin_a_Session'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/exploration/confront_chaos.confront_chaos'
+] = 'Starforged/Oracles/Moves/Confront_Chaos'
+LegacyIdMap['move.oracle_rollable:starforged/suffer/endure_harm.endure_harm'] =
+	'Starforged/Oracles/Moves/Endure_Harm'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/suffer/endure_harm.endure_stress'
+] = 'Starforged/Oracles/Moves/Endure_Stress'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/exploration/make_a_discovery.make_a_discovery'
+] = 'Starforged/Oracles/Moves/Make_a_Discovery'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price'
+] = 'Starforged/Oracles/Moves/Pay_the_Price'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action'
+] = 'Starforged/Oracles/Moves/Take_Decisive_Action'
+LegacyIdMap[
+	'move.oracle_rollable:starforged/suffer/withstand_damage.withstand_damage'
+] = 'Starforged/Oracles/Moves/Withstand_Damage'
+
+LegacyIdMap['oracle_rollable:starforged/misc/story_clue'] =
+	'Starforged/Oracles/Misc/Story_Clue'
+LegacyIdMap['oracle_rollable:starforged/misc/story_complication'] =
+	'Starforged/Oracles/Misc/Story_Complication'
+
+LegacyIdMap['move_category:classic/quest'] = 'Ironsworn/Moves/Quest'
+LegacyIdMap['move_category:classic/fate'] = 'Ironsworn/Moves/Fate'
+LegacyIdMap['move_category:classic/suffer'] = 'Ironsworn/Moves/Suffer'
+
+const ISMoveCategoryColors = {
+	'Adventure Moves': '#206087',
+	'Combat Moves': '#818992',
+	'Connection Moves': '#4A5791',
+	// non-canonical (ironsworn); uses color from 'Exploration'
+	'Delve Moves': '#427FAA',
+	'Exploration Moves': '#427FAA',
+	// non-canonical (ironsworn); uses color from 'Legacy'.
+	'Failure Moves': '#4F5A69',
+	'Fate Moves': '#8F477B',
+	'Legacy Moves': '#4F5A69',
+	'Quest Moves': '#805A90',
+	// non-canonical (ironsworn); uses color from 'Recover'
+	'Rarity Moves': '#488B44',
+	'Recover Moves': '#488B44',
+	// non-canonical (ironsworn); uses color from 'Connection'
+	'Relationship Moves': '#4A5791',
+	'Scene Challenge': '#206087',
+	'Session Moves': '#3F8C8A',
+	'Suffer Moves': '#883529',
+	// non-canonical (ironsworn); uses color from 'Session'
+	'Threat Moves': '#3F8C8A',
+	'Threshold Moves': '#1D1D1B'
+}
 // A script to import Datasworn 2 data into compendia JSON files.
 // Run this like so:
 //   npx tsx src/module/datasworn2/import.ts
 
-const markdownRenderer = new Showdown.Converter()
+const markdownRenderer = new Showdown.Converter({ tables: true })
 
 const collections = ['classic', 'delve', 'starforged', 'sundered_isles']
 
@@ -147,8 +232,8 @@ async function writeFolderJson(
 
 	const json = {
 		name: cat.name,
-		color: cat.color,
-		description: renderLinksInStr(cat.description ?? ''),
+		color: cat.color ?? ISMoveCategoryColors[cat.name],
+		description: renderLinksInStr(cat.description ?? cat.summary ?? ''),
 		type: 'Item',
 		_id: folderHash,
 		sort:
@@ -291,6 +376,145 @@ for (const collection of collections) {
 						}
 					}
 				}
+			}
+
+			await writeJsonFile(packName, json)
+		}
+	}
+}
+
+console.log('\n\n--- MOVES ---')
+for (const collection of collections) {
+	console.log(collection)
+	const legacyCollection = collection === 'classic' ? 'ironsworn' : collection
+	const packName = {
+		classic: 'ironsworn-moves',
+		delve: 'delve-moves',
+		starforged: 'starforged-moves',
+		sundered_isles: 'sundered-isles-moves'
+	}[collection]
+	if (!packName) continue
+	if (!existsSync(`json-packs/${packName}`)) {
+		await mkdir(`json-packs/${packName}`)
+	}
+
+	const moveCategories = DataswornTree.get(collection)?.moves
+	for (const cat of Object.values(moveCategories)) {
+		// Folder for category
+		await writeFolderJson(packName, cat)
+		const legacyFolderId = LegacyIdMap[cat._id] ?? cat._id
+		if (!legacyFolderId && !cat._id.includes('sundered_isles')) {
+			console.log('!!! No legacy ID for', cat._id)
+		}
+
+		for (const move of Object.values(cat.contents)) {
+			console.log('  ', move._id)
+
+			const legacyMoveId = LegacyIdMap[move._id]
+			const fid = hash(legacyMoveId ?? move._id)
+
+			// Trim out embedded tables
+			// TODO: insert a link instead?
+			const stripTableEmbeds = (txt: string): string =>
+				txt.replace(/{{table>.*?}}/, '').trim()
+
+			const json: any = {
+				_id: fid,
+				type: 'sfmove',
+				name: move.name,
+				img: 'icons/dice/d10black.svg',
+				folder: hash(legacyFolderId),
+				system: {
+					dfid: legacyMoveId ?? move._id,
+					Category: legacyFolderId ?? cat._id,
+					'Progress Move': ['special_track', 'progress_roll'].includes(
+						move.roll_type
+					),
+					'Variant of': '',
+					Text: renderLinksInStr(stripTableEmbeds(move.text)),
+					Trigger: {
+						Text: renderLinksInStr(move.trigger.text),
+						Options: move.trigger.conditions.map((c) => ({
+							Text: c.text ?? '',
+							'Roll type':
+								['player_choice', 'highest', 'lowest'].includes(c.method) &&
+								c.roll_options.length === 1 &&
+								c.roll_options[0].using !== 'bonds_legacy'
+									? 'Action roll'
+									: 'Progress roll',
+							Method: {
+								player_choice: 'Any',
+								highest: 'Highest',
+								lowest: 'Lowest',
+								progress_roll: 'Any',
+								all: 'All'
+							}[c.method],
+							Using: c.roll_options.map((r) => {
+								if (r.using === 'asset_control') {
+									if (r.assets?.[0]?.includes('companion')) {
+										return 'Companion Health'
+									}
+									if (r.control === 'integrity') {
+										return 'Vehicle Integrity'
+									}
+								}
+
+								if (r.using === 'condition_meter') {
+									return capitalize(r.condition_meter)
+								}
+								if (r.stat) {
+									return capitalize(r.stat)
+								}
+								return titleCase(r.using.replace('_', ' '))
+							})
+						}))
+					},
+					Outcomes: {
+						'Strong Hit': {
+							Text: renderLinksInStr(
+								stripTableEmbeds(move.outcomes?.strong_hit.text ?? '')
+							),
+							'With a Match': {
+								Text: ''
+							}
+						},
+						'Weak Hit': {
+							Text: renderLinksInStr(
+								stripTableEmbeds(move.outcomes?.weak_hit.text ?? '')
+							)
+						},
+						Miss: {
+							Text: renderLinksInStr(
+								stripTableEmbeds(move.outcomes?.miss.text ?? '')
+							),
+							'With a Match': {
+								Text: ''
+							}
+						}
+					},
+					Oracles: [
+						...Object.values(move.oracles ?? {}).map((o) => o._id),
+						...Object.values(move.suggestions ?? {})
+					].map((o) => LegacyIdMap[o] ?? o),
+					Source: {
+						Title: move._source.title,
+						Authors: move._source.authors.map((x) => x.name),
+						Date: move._source.date,
+						Page: move._source.page
+					},
+					Suggestions: {},
+					Display: {
+						Images: []
+					}
+				},
+				sort: move._source.page ?? 0,
+				flags: {
+					'foundry-ironsworn': {
+						dfid: legacyMoveId,
+						dsid: move._id
+					}
+				},
+				_key: `!items!${fid}`
 			}
 
 			await writeJsonFile(packName, json)
