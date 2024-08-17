@@ -399,7 +399,7 @@ for (const collection of collections) {
 	}
 
 	const moveCategories = DataswornTree.get(collection)?.moves
-	for (const cat of Object.values(moveCategories)) {
+	for (const cat of Object.values(moveCategories ?? {})) {
 		// Folder for category
 		await writeFolderJson(packName, cat)
 		const legacyFolderId = LegacyIdMap[cat._id] ?? cat._id
