@@ -29,7 +29,11 @@ const DataswornToLegacyIds: Record<string, string> = Object.fromEntries(
 )
 const lookupLegacyId = (dsid: string): string => {
 	const legacyId = DataswornToLegacyIds[dsid]
-	if (!legacyId && !dsid.includes('sundered_isles')) {
+	if (
+		!legacyId &&
+		!dsid.includes('sundered_isles') &&
+		!dsid.includes('oracle_rollable.row:')
+	) {
 		console.log('!!! No legacy ID for', dsid)
 	}
 	return legacyId ?? dsid
@@ -523,7 +527,7 @@ for (const collection of collections) {
 					_id: fid,
 					flags: {
 						'foundry-ironsworn': {
-							dfid: legacyOracleId,
+							dfid: DataswornToLegacyIds[oracle._id],
 							category: legacyFolderId,
 							dsid: oracle._id
 						}
@@ -534,14 +538,16 @@ for (const collection of collections) {
 					replacement: true,
 					displayRoll: true,
 					results: compact(
-						oracle.rows.map(
-							(row) =>
-								row.roll && {
-									range: [row.roll.min, row.roll.max],
-									text: row.text,
-									_id: hash(DataswornToLegacyIds[row._id] ?? row._id)
-								}
-						)
+						oracle.rows.map((row) => {
+							if (!row.roll) return undefined
+							const rowId = hash(lookupLegacyId(row._id))
+							return {
+								range: [row.roll.min, row.roll.max],
+								text: row.text,
+								_key: `!tables.results!${fid}.${rowId}`,
+								_id: rowId
+							}
+						})
 					),
 					folder: folderId,
 					sort: oracle._source?.page ?? 0,
