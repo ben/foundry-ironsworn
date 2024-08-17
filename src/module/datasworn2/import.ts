@@ -135,7 +135,7 @@ const COMPENDIUM_KEY_MAP = {
 	},
 	move: {
 		classic: 'ironswornmoves',
-		delve: 'ironswornmoves',
+		delve: 'ironsworndelvemoves',
 		starforged: 'starforgedmoves',
 		sundered_isles: 'sunderedislesmoves'
 	},
