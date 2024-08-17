@@ -27,6 +27,13 @@ const LegacyToDataswornIds: Record<string, string> = {
 const DataswornToLegacyIds: Record<string, string> = Object.fromEntries(
 	Object.entries(LegacyToDataswornIds).map(([k, v]) => [v, k])
 )
+const lookupLegacyId = (dsid: string): string => {
+	const legacyId = DataswornToLegacyIds[dsid]
+	if (!legacyId && !dsid.includes('sundered_isles')) {
+		console.log('!!! No legacy ID for', dsid)
+	}
+	return legacyId ?? dsid
+}
 
 const ISMoveCategoryColors = {
 	'Adventure Moves': '#206087',
@@ -126,10 +133,7 @@ function renderLinksInStr(text: string): string {
 			return match
 		}
 
-		const legacyId = DataswornToLegacyIds[url]
-		if (!legacyId && !/sundered_isles/.test(url)) {
-			console.log('!!! No legacy ID for', url)
-		}
+		const legacyId = lookupLegacyId(url)
 
 		if (parsed.primaryTypeId === 'oracle_collection') {
 			return `<a class="entity-link oracle-category-link" data-dfid="${legacyId}" data-dsid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
@@ -225,25 +229,19 @@ for (const collection of collections) {
 	for (const cat of Object.values(assetCategories ?? {})) {
 		// Folder for category
 		await writeFolderJson(packName, cat)
-		const legacyFolderId = DataswornToLegacyIds[cat._id] ?? cat._id
-		if (!legacyFolderId && !cat._id.includes('sundered_isles')) {
-			console.log('!!! No legacy ID for', cat._id)
-		}
+		const legacyFolderId = lookupLegacyId(cat._id)
 
 		// Category assets
 		for (const asset of Object.values(cat.contents)) {
 			console.log('  ', asset._id)
 
-			const legacyAssetId = DataswornToLegacyIds[asset._id]
-			if (!legacyAssetId && !asset._id.includes('sundered_isles')) {
-				console.log('!!! No legacy ID for', asset._id)
-			}
+			const legacyAssetId = lookupLegacyId(asset._id)
 			const fid = hash(legacyAssetId ?? asset._id)
 
 			const json: any = {
 				type: 'asset',
 				_id: fid,
-				folder: hash(legacyFolderId),
+				folder: legacyFolderId && hash(legacyFolderId),
 				name: asset.name,
 				system: {
 					requirement: renderText(asset.requirement ?? ''),
@@ -358,18 +356,12 @@ for (const collection of collections) {
 	for (const cat of Object.values(moveCategories ?? {})) {
 		// Folder for category
 		await writeFolderJson(packName, cat)
-		const legacyFolderId = DataswornToLegacyIds[cat._id] ?? cat._id
-		if (!legacyFolderId && !cat._id.includes('sundered_isles')) {
-			console.log('!!! No legacy ID for', cat._id)
-		}
+		const legacyFolderId = lookupLegacyId(cat._id)
 
 		for (const move of Object.values(cat.contents)) {
 			console.log('  ', move._id)
 
-			const legacyMoveId = DataswornToLegacyIds[move._id]
-			if (!legacyMoveId && !move._id.includes('sundered_isles')) {
-				console.log('!!! No legacy ID for', move._id)
-			}
+			const legacyMoveId = lookupLegacyId(move._id)
 			const fid = hash(legacyMoveId ?? move._id)
 
 			// Trim out embedded tables
@@ -389,15 +381,7 @@ for (const collection of collections) {
 					return Array.from(matches.values()).map((m: any) => m._id)
 				})
 			)
-			const legacyOracleIds = compact(
-				dsOracleIds.map((o) => {
-					const legacyId = DataswornToLegacyIds[o]
-					if (!legacyId) {
-						console.log('!!! No legacy ID for', o)
-					}
-					return legacyId
-				})
-			)
+			const legacyOracleIds = compact(dsOracleIds.map((o) => lookupLegacyId(o)))
 
 			const json: any = {
 				_id: fid,
@@ -522,18 +506,50 @@ for (const collection of collections) {
 		parentFolder?: string
 	) => {
 		for (const collection of Object.values(collections ?? {})) {
-			console.log('  '.repeat(depth), `${parentFolder ?? ''}/${collection._id}`)
+			console.log('  '.repeat(depth), collection._id)
+			const legacyFolderId = lookupLegacyId(collection._id)
 
 			// Create a folder
 			const folderId = await writeFolderJson(packName, collection, parentFolder)
 
 			for (const oracle of Object.values(collection.contents)) {
-				// TODO: write the json for an oracle
-				console.log(
-					'  '.repeat(depth + 1),
-					`${parentFolder}/oracle`,
-					oracle._id
-				)
+				// Write the json for an oracle
+				console.log('  '.repeat(depth + 1), oracle._id)
+
+				const legacyOracleId = lookupLegacyId(oracle._id)
+				const fid = hash(legacyOracleId ?? oracle._id)
+
+				const json = {
+					_id: fid,
+					flags: {
+						'foundry-ironsworn': {
+							dfid: legacyOracleId,
+							category: legacyFolderId,
+							dsid: oracle._id
+						}
+					},
+					name: oracle.name,
+					description: renderText(oracle.summary ?? ''),
+					formula: oracle.dice,
+					replacement: true,
+					displayRoll: true,
+					results: compact(
+						oracle.rows.map(
+							(row) =>
+								row.roll && {
+									range: [row.roll.min, row.roll.max],
+									text: row.text,
+									_id: hash(DataswornToLegacyIds[row._id] ?? row._id)
+								}
+						)
+					),
+					folder: folderId,
+					sort: oracle._source?.page ?? 0,
+					img: 'icons/dice/d10black.svg',
+					_key: `!tables!${fid}`
+				}
+
+				await writeJsonFile(packName, json)
 			}
 			const pc = collection as OracleTablesCollection
 			await walkCollections(pc.collections, depth + 1, folderId)
