@@ -266,7 +266,7 @@
       "system": "foundry-ironsworn",
       "path": "packs/sundered-isles-assets",
       "type": "Item"
-    }
+    },
     {
       "name": "sunderedislesmoves",
       "label": "Sundered Isles Moves",
