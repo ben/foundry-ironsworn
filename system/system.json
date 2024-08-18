@@ -106,6 +106,7 @@
       "color": "#444444",
       "packs": [
         "ironsworndelvemoves",
+        "ironsworndelveoracles",
         "ironsworndelvethemes",
         "ironsworndelvedomains"
       ]
@@ -129,7 +130,8 @@
       "packs": [
         "sundered-isles-charts",
         "sunderedislesassets",
-        "sunderedislesmoves"
+        "sunderedislesmoves",
+        "sunderedislesoracles"
       ]
     }
   ],
@@ -175,6 +177,13 @@
       "system": "foundry-ironsworn",
       "path": "packs/delve-moves",
       "type": "Item"
+    },
+    {
+      "name": "ironsworndelveoracles",
+      "label": "Ironsworn Delve Oracles",
+      "system": "foundry-ironsworn",
+      "path": "packs/delve-oracles",
+      "type": "RollTable"
     },
     {
       "name": "ironsworndelvethemes",
@@ -273,6 +282,13 @@
       "system": "foundry-ironsworn",
       "path": "packs/sundered-isles-moves",
       "type": "Item"
+    },
+    {
+      "name": "sunderedislesoracles",
+      "label": "Sundered Isles Oracles",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-oracles",
+      "type": "RollTable"
     }
   ],
   "languages": [

@@ -190,7 +190,7 @@ async function writeFolderJson(
 ): Promise<string> {
 	if (!cat._id) {
 		console.log('!!! No ID for category', cat)
-		return
+		return ''
 	}
 	const legacyFolderId = DataswornToLegacyIds[cat._id]
 	const folderHash = hash(legacyFolderId ?? cat._id)
