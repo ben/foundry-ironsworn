@@ -14,15 +14,15 @@ import { capitalize, compact, flatten } from 'lodash-es'
 
 // Import a local copy of the legacy ID maps
 const LegacyToDataswornIds: Record<string, string> = {
-	...require('./legacy_ids/dataforged/classic/assets.json'),
-	...require('./legacy_ids/dataforged/classic/moves.json'),
-	...require('./legacy_ids/dataforged/classic/npcs.json'),
-	...require('./legacy_ids/dataforged/classic/oracles.json'),
-	...require('./legacy_ids/dataforged/starforged/assets.json'),
-	...require('./legacy_ids/dataforged/starforged/moves.json'),
-	...require('./legacy_ids/dataforged/starforged/oracles.json'),
-	...require('./legacy_ids/dataforged/starforged/npcs.json'),
-	...require('./legacy_ids/dataforged/starforged/truths.json')
+	...require('../../../../datasworn/src/legacy_ids/dataforged/classic/assets.json'),
+	...require('../../../../datasworn/src/legacy_ids/dataforged/classic/moves.json'),
+	...require('../../../../datasworn/src/legacy_ids/dataforged/classic/npcs.json'),
+	...require('../../../../datasworn/src/legacy_ids/dataforged/classic/oracles.json'),
+	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/assets.json'),
+	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/moves.json'),
+	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/oracles.json'),
+	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/npcs.json'),
+	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/truths.json')
 }
 const DataswornToLegacyIds: Record<string, string> = Object.fromEntries(
 	Object.entries(LegacyToDataswornIds).map(([k, v]) => [v, k])
