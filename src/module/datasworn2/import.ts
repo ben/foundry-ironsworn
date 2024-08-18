@@ -3,42 +3,24 @@ import type {
 	MoveCategory,
 	ClockField,
 	OracleTablesCollection,
-	OracleCollection
+	OracleCollection,
+	NpcCollection,
+	Npc
 } from '@datasworn/core/dist/Datasworn'
 import { IdParser, DataswornTree } from '.'
-import shajs from 'sha.js'
 import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
-import Showdown from 'showdown'
-import { capitalize, compact, flatten } from 'lodash-es'
-
-// Import a local copy of the legacy ID maps
-const LegacyToDataswornIds: Record<string, string> = {
-	...require('../../../../datasworn/src/legacy_ids/dataforged/classic/assets.json'),
-	...require('../../../../datasworn/src/legacy_ids/dataforged/classic/moves.json'),
-	...require('../../../../datasworn/src/legacy_ids/dataforged/classic/npcs.json'),
-	...require('../../../../datasworn/src/legacy_ids/dataforged/classic/oracles.json'),
-	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/assets.json'),
-	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/moves.json'),
-	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/oracles.json'),
-	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/npcs.json'),
-	...require('../../../../datasworn/src/legacy_ids/dataforged/starforged/truths.json')
-}
-const DataswornToLegacyIds: Record<string, string> = Object.fromEntries(
-	Object.entries(LegacyToDataswornIds).map(([k, v]) => [v, k])
-)
-const lookupLegacyId = (dsid: string): string => {
-	const legacyId = DataswornToLegacyIds[dsid]
-	if (
-		!legacyId &&
-		!dsid.includes('sundered_isles') &&
-		!dsid.includes('oracle_rollable.row:') &&
-		!dsid.includes('truth:classic')
-	) {
-		console.log('!!! No legacy ID for', dsid)
-	}
-	return legacyId ?? dsid
-}
+import { capitalize, cloneDeep, compact, flatten } from 'lodash-es'
+import { ICON_MAP } from './images'
+import { renderText, titleCase, renderLinksInStr } from './rendering'
+import {
+	hash,
+	DataswornToLegacyIds,
+	lookupLegacyId,
+	LegacyToDataswornIds
+} from './ids'
+import { renderNpcDescription } from './foe-description'
+import { writeJson } from 'fs-extra'
 
 const ISMoveCategoryColors = {
 	'Adventure Moves': '#206087',
@@ -68,119 +50,7 @@ const ISMoveCategoryColors = {
 // Run this like so:
 //   npx tsx src/module/datasworn2/import.ts
 
-const markdownRenderer = new Showdown.Converter({ tables: true })
-
 const collections = ['classic', 'delve', 'starforged', 'sundered_isles']
-
-function hash(str: string): string {
-	return shajs('sha256').update(str).digest('hex').substring(48)
-}
-
-const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
-const COMPENDIUM_KEY_MAP = {
-	asset: {
-		classic: 'ironswornassets',
-		starforged: 'starforgedassets',
-		sundered_isles: 'sunderedislesassets'
-	},
-	move_category: {
-		classic: 'ironswornmoves',
-		starforged: 'starforgedmoves',
-		sundered_isles: 'sunderedislesmoves'
-	},
-	move: {
-		classic: 'ironswornmoves',
-		delve: 'ironsworndelvemoves',
-		starforged: 'starforgedmoves',
-		sundered_isles: 'sunderedislesmoves'
-	},
-	oracle_collection: {
-		classic: 'ironswornoracles',
-		delve: 'delveoracles',
-		starforged: 'starforgedoracles',
-		sundered_isles: 'sunderedislesmoves'
-	},
-	oracle_rollable: {
-		classic: 'ironswornoracles',
-		delve: 'delveoracles',
-		starforged: 'starforgedoracles',
-		sundered_isles: 'sunderedislesmoves'
-	},
-	npc: {
-		starforged: 'starforgedencounters',
-		sundered_isles: 'sunderedislesmoves'
-	},
-	delve_site_theme: {
-		delve: 'delve-themes'
-	},
-	delve_site_domain: {
-		delve: 'delve-domains'
-	}
-}
-function renderLinksInStr(str: string): string {
-	return str.replace(MARKDOWN_LINK_RE, (match, text, url) => {
-		if (!url.startsWith('datasworn:')) return match
-		url = url.substring('datasworn:'.length)
-		const parsed = IdParser.parse(url)
-
-		// Strip links to NPC collections, Foundry has no support for them
-		if (['npc', 'npc_collection'].includes(parsed.primaryTypeId)) {
-			return text
-		}
-
-		// TODO: render move/oracle links as data-dfid anchors so they'll navigate properly
-
-		// Fixup: embedded oracle tables will be imported as full RollTables
-		// So here we redirect links to move-oracles to full oracles
-		const typeId =
-			parsed.typeIds.join('/') === 'move/oracle_rollable'
-				? 'oracle_rollable'
-				: parsed.primaryTypeId
-		const compendiumKey = COMPENDIUM_KEY_MAP[typeId]?.[parsed.rulesPackageId]
-		if (!compendiumKey) {
-			console.log(
-				`!!! No compendium key for ${match} (${typeId} / ${parsed.rulesPackageId})`,
-				match
-			)
-			return match
-		}
-
-		const legacyId = lookupLegacyId(url)
-
-		if (parsed.primaryTypeId === 'oracle_collection') {
-			return `<a class="entity-link oracle-category-link" data-dfid="${legacyId}" data-dsid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
-		}
-		const urlHash = hash(legacyId || url)
-		return `@Compendium[foundry-ironsworn.${compendiumKey}.${urlHash}]{${text}}`
-	})
-}
-
-function renderText(text: string): string {
-	return markdownRenderer.makeHtml(renderLinksInStr(text))
-}
-
-function titleCase(str: string): string {
-	const skipWords = [
-		'a',
-		'an',
-		'the',
-		'and',
-		'but',
-		'or',
-		'of',
-		'for',
-		'nor',
-		'on',
-		'at',
-		'to',
-		'from',
-		'by',
-		'with'
-	]
-	return str.replace(/[^\s/]+/g, (word) =>
-		skipWords.includes(word) ? word : word[0].toUpperCase() + word.substring(1)
-	)
-}
 
 async function writeJsonFile(packName: string, json: any) {
 	const fileName = json.name.replace(/\W/g, '_')
@@ -193,7 +63,7 @@ async function writeJsonFile(packName: string, json: any) {
 // Returns the foundry ID of the folder
 async function writeFolderJson(
 	packName: string,
-	cat: AssetCollection | MoveCategory | OracleCollection,
+	cat: AssetCollection | MoveCategory | OracleCollection | NpcCollection,
 	parentFolderId?: string
 ): Promise<string> {
 	if (!cat._id) {
@@ -574,16 +444,6 @@ for (const collection of collections) {
 }
 
 console.log('\n\n--- THEMES ---')
-const THEME_IMAGES = {
-	Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
-	Corrupted: 'icons/magic/unholy/beam-impact-purple.webp',
-	Fortified: 'icons/environment/settlement/watchtower-cliff.webp',
-	Hallowed: 'icons/magic/holy/angel-wings-gray.webp',
-	Haunted: 'icons/creatures/magical/spirit-undead-horned-blue.webp',
-	Infested: 'icons/creatures/eyes/icy-cluster-blue.webp',
-	Ravaged: 'icons/environment/settlement/building-rubble.webp',
-	Wild: 'icons/magic/nature/root-vines-grow-brown.webp'
-}
 const delve = DataswornTree.get('delve')
 for (const theme of Object.values(delve?.site_themes ?? {})) {
 	console.log(theme._id)
@@ -597,10 +457,10 @@ for (const theme of Object.values(delve?.site_themes ?? {})) {
 		_id: fid,
 		type: 'delve-theme',
 		name: theme.name,
-		img: THEME_IMAGES[theme.name],
+		img: ICON_MAP.classic.theme[theme.name],
 		system: {
 			summary: (theme as any).summary,
-			description: renderLinksInStr((theme as any).description),
+			description: renderLinksInStr((theme as any).description ?? ''),
 			features: compact(
 				theme.features.map(
 					(f) =>
@@ -634,20 +494,6 @@ for (const theme of Object.values(delve?.site_themes ?? {})) {
 }
 
 console.log('\n\n--- DOMAINS ---')
-const DOMAIN_IMAGES = {
-	Barrow: 'icons/environment/wilderness/cave-entrance-dwarven-hill.webp',
-	Cavern: 'icons/environment/wilderness/cave-entrance-mountain-blue.webp',
-	'Frozen cavern': 'icons/magic/water/water-iceberg-bubbles.webp',
-	Icereach: 'icons/magic/water/barrier-ice-crystal-wall-jagged-blue.webp',
-	Mine: 'icons/environment/settlement/mine-cart-rocks-red.webp',
-	Pass: 'icons/environment/wilderness/cave-entrance-rocky.webp',
-	Ruin: 'icons/environment/wilderness/wall-ruins.webp',
-	'Sea cave': 'icons/environment/wilderness/cave-entrance-island.webp',
-	Shadowfen: 'icons/environment/wilderness/cave-entrance.webp',
-	Stronghold: 'icons/environment/settlement/castle.webp',
-	Tanglewood: 'icons/environment/wilderness/terrain-forest-gray.webp',
-	Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp'
-}
 for (const domain of Object.values(delve?.site_domains ?? {})) {
 	console.log(domain._id)
 	if (!existsSync('json-packs/delve-domains')) {
@@ -660,10 +506,10 @@ for (const domain of Object.values(delve?.site_domains ?? {})) {
 		_id: fid,
 		type: 'delve-domain',
 		name: domain.name,
-		img: DOMAIN_IMAGES[domain.name],
+		img: ICON_MAP.classic.domain[domain.name],
 		system: {
 			summary: (domain as any).summary,
-			description: renderLinksInStr((domain as any).description),
+			description: renderLinksInStr((domain as any).description ?? ''),
 			features: compact(
 				domain.features.map(
 					(f) =>
@@ -788,5 +634,127 @@ for (const collection of collections) {
 		}
 
 		await writeJsonFile(packName, json)
+	}
+}
+
+console.log('\n\n--- NPCS ---')
+for (const collection of collections) {
+	console.log(collection)
+	const itemPackName = {
+		classic: 'foes',
+		starforged: 'starforged-encounters',
+		sundered_isles: 'sundered-isles-encounters'
+	}[collection]
+	if (!itemPackName) continue
+	if (!existsSync(`json-packs/${itemPackName}`)) {
+		await mkdir(`json-packs/${itemPackName}`)
+	}
+
+	const actorPackName = {
+		classic: 'foe-actors-is',
+		starforged: 'foe-actors-sf',
+		sundered_isles: 'foe-actors-si'
+	}[collection]
+	if (!actorPackName) continue
+	if (!existsSync(`json-packs/${actorPackName}`)) {
+		await mkdir(`json-packs/${actorPackName}`)
+	}
+
+	for (const npcCategory of Object.values(
+		DataswornTree.get(collection)?.npcs ?? {}
+	)) {
+		console.log('  ', npcCategory._id)
+		const itemFolderId = await writeFolderJson(itemPackName, npcCategory)
+		const actorFolderId = await writeFolderJson(actorPackName, npcCategory)
+
+		for (const npc of Object.values(npcCategory.contents)) {
+			console.log('    ', npc._id)
+
+			const itemJsonForNpc = (theNpc: Npc) => {
+				const legacyNpcId = lookupLegacyId(theNpc._id)
+				const fid = hash(legacyNpcId ?? theNpc._id)
+
+				return {
+					_id: fid,
+					type: 'progress',
+					name: theNpc.name,
+					img: ICON_MAP[collection].foe?.[theNpc.name],
+					system: {
+						description: renderNpcDescription(theNpc),
+						rank: theNpc.rank,
+						current: 0,
+						completed: false,
+						subtype: 'progress',
+						starred: false,
+						hasTrack: true,
+						hasClock: false,
+						clockTicks: 0,
+						clockMax: 4
+					},
+					effects: [],
+					folder: itemFolderId,
+					sort: 0,
+					flags: {
+						'foundry-ironsworn': {
+							dfid: LegacyToDataswornIds[theNpc._id],
+							dsid: theNpc._id
+						}
+					},
+					_key: `!items!${fid}`
+				}
+			}
+
+			const actorJsonForNpc = (theNpc: Npc) => {
+				const actorId = hash(theNpc._id + 'actor')
+
+				const progressItem = itemJsonForNpc(theNpc)
+				progressItem._id = hash(progressItem._id + 'actoritem')
+				progressItem._key = `!actors.items!${actorId}.${progressItem._id}`
+
+				return {
+					name: theNpc.name,
+					img: progressItem.img,
+					type: 'foe',
+					_id: actorId,
+					system: {
+						dfid: ''
+					},
+					prototypeToken: {
+						name: theNpc.name,
+						texture: {
+							src: progressItem.img
+						}
+					},
+					folder: actorFolderId,
+					items: [progressItem],
+					effects: [],
+					sort: 0,
+					flags: {
+						'foundry-ironsworn': {
+							dfid: LegacyToDataswornIds[theNpc._id],
+							dsid: theNpc._id
+						}
+					},
+					_key: `!actors!${actorId}`
+				}
+			}
+
+			await writeJsonFile(itemPackName, itemJsonForNpc(npc))
+			await writeJsonFile(actorPackName, actorJsonForNpc(npc))
+
+			for (const variant of Object.values(npc.variants)) {
+				console.log('      ', variant._id)
+				const variantNpc = {
+					...npc,
+					_id: variant._id,
+					name: variant.name,
+					variants: {},
+					rank: variant.rank,
+					description: variant.description
+				}
+				await writeJsonFile(itemPackName, itemJsonForNpc(variantNpc))
+				await writeJsonFile(actorPackName, actorJsonForNpc(variantNpc))
+			}
+		}
 	}
 }
