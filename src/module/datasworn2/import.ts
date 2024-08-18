@@ -32,7 +32,8 @@ const lookupLegacyId = (dsid: string): string => {
 	if (
 		!legacyId &&
 		!dsid.includes('sundered_isles') &&
-		!dsid.includes('oracle_rollable.row:')
+		!dsid.includes('oracle_rollable.row:') &&
+		!dsid.includes('truth:classic')
 	) {
 		console.log('!!! No legacy ID for', dsid)
 	}
@@ -693,4 +694,99 @@ for (const domain of Object.values(delve?.site_domains ?? {})) {
 	}
 
 	await writeJsonFile('delve-domains', json)
+}
+
+console.log('\n\n--- TRUTHS ---')
+for (const collection of collections) {
+	console.log(collection)
+	const packName = {
+		classic: 'ironsworn-truths',
+		starforged: 'starforged-truths',
+		sundered_isles: 'sundered-isles-truths'
+	}[collection]
+	if (!packName) continue
+	if (!existsSync(`json-packs/${packName}`)) {
+		await mkdir(`json-packs/${packName}`)
+	}
+
+	const truthCategories = DataswornTree.get(collection)?.truths ?? {}
+	for (const cat of Object.values(truthCategories)) {
+		console.log('  ', cat._id)
+
+		const catFid = hash(lookupLegacyId(cat._id))
+
+		const commonPageContent = {
+			title: {
+				show: true,
+				level: 1
+			},
+			src: null,
+			sort: 0
+		}
+
+		const json = {
+			name: cat.name,
+			flags: {
+				'foundry-ironsworn': {
+					dfid: lookupLegacyId(cat._id),
+					dsid: cat._id
+				}
+			},
+			_id: catFid,
+			pages: compact([
+				...cat.options.map((o) => {
+					const oFid = hash(o._id)
+					const firstOracle = Object.values(o.oracles ?? {})[0]
+					// Trim out embedded tables
+					// TODO: insert a link instead?
+					const stripTableEmbeds = (txt: string): string =>
+						txt.replace(/{{table>.*?}}/, '(roll below)').trim()
+					return {
+						type: 'truth',
+						name: o.summary ?? '',
+						system: {
+							Subtable: firstOracle?.rows?.map((row) => ({
+								dfid: LegacyToDataswornIds[row._id],
+								Floor: row.roll.min,
+								Ceiling: row.roll.max,
+								Result: renderLinksInStr(row.text)
+							})),
+							dfid: LegacyToDataswornIds[o._id],
+							dsid: o._id,
+							Floor: o.roll.min,
+							Ceiling: o.roll.max,
+							Result: renderLinksInStr(o.summary ?? ''),
+							Description: renderLinksInStr(
+								stripTableEmbeds(o.description ?? '')
+							),
+							Quest: renderLinksInStr(o.quest_starter),
+							'Roll template': {
+								Description: o.description
+							}
+						},
+						_id: oFid,
+						...commonPageContent,
+						_key: `!journal.pages!${catFid}.${oFid}`
+					}
+				}),
+				cat.your_character && {
+					name: 'Character Inspiration',
+					type: 'text',
+					text: {
+						markdown: renderLinksInStr(cat.your_character),
+						format: 2,
+						content: renderText(cat.your_character)
+					},
+					_id: hash(cat._id + 'your_character'),
+					...commonPageContent,
+					_key: `!journal.pages!${catFid}.${hash(cat._id + 'your_character')}`
+				}
+			]),
+			folder: null,
+			sort: cat._source.page ?? 0,
+			_key: `!journal!${catFid}`
+		}
+
+		await writeJsonFile(packName, json)
+	}
 }

@@ -98,7 +98,8 @@
         "ironswornmoves",
         "ironswornassets",
         "ironswornfoes",
-        "ironswornscenes"
+        "ironswornscenes",
+        "ironsworntruths"
       ]
     },
     {
@@ -131,7 +132,8 @@
         "sundered-isles-charts",
         "sunderedislesassets",
         "sunderedislesmoves",
-        "sunderedislesoracles"
+        "sunderedislesoracles",
+        "sunderedislestruths"
       ]
     }
   ],
@@ -214,6 +216,13 @@
       "type": "Scene"
     },
     {
+      "name": "ironsworntruths",
+      "label": "Ironsworn Setting Truths",
+      "system": "foundry-ironsworn",
+      "path": "packs/ironsworn-truths",
+      "type": "JournalEntry"
+    },
+    {
       "name": "starforged-sectors",
       "label": "Starforged Scenes",
       "system": "foundry-ironsworn",
@@ -289,6 +298,13 @@
       "system": "foundry-ironsworn",
       "path": "packs/sundered-isles-oracles",
       "type": "RollTable"
+    },
+    {
+      "name": "sunderedislestruths",
+      "label": "Sundered Isles Setting Truths",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-truths",
+      "type": "JournalEntry"
     }
   ],
   "languages": [
