@@ -54,9 +54,6 @@ const COMPENDIUM_KEY_MAP = {
 
 export function renderLinksInStr(str: string): string {
 	return str.replace(MARKDOWN_LINK_RE, (match, text, url) => {
-		if (text === 'Worldbreaker brood') {
-			console.log({ match, text, url })
-		}
 		if (!url.startsWith('datasworn:')) return match
 		url = url.substring('datasworn:'.length)
 		const parsed = IdParser.parse(url)
