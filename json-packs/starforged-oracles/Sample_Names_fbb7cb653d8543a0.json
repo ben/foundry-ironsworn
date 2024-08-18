@@ -1,0 +1,200 @@
+{
+  "_id": "fbb7cb653d8543a0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Jovian",
+      "dsid": "oracle_rollable:starforged/planet/jovian/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Aether",
+      "_key": "!tables.results!fbb7cb653d8543a0.2a20ee88f8f463eb",
+      "_id": "2a20ee88f8f463eb"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Arrokoth",
+      "_key": "!tables.results!fbb7cb653d8543a0.295fa9af072224d9",
+      "_id": "295fa9af072224d9"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Esen",
+      "_key": "!tables.results!fbb7cb653d8543a0.cb20048a4423a967",
+      "_id": "cb20048a4423a967"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Hanish",
+      "_key": "!tables.results!fbb7cb653d8543a0.6bfe54e61048af5e",
+      "_id": "6bfe54e61048af5e"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Magnus",
+      "_key": "!tables.results!fbb7cb653d8543a0.3b51b298a4c21d60",
+      "_id": "3b51b298a4c21d60"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Magonia",
+      "_key": "!tables.results!fbb7cb653d8543a0.7a2584cb90291f94",
+      "_id": "7a2584cb90291f94"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Mistral",
+      "_key": "!tables.results!fbb7cb653d8543a0.ac973ae7600f5370",
+      "_id": "ac973ae7600f5370"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Nephele",
+      "_key": "!tables.results!fbb7cb653d8543a0.ff6c7911e7ee8d56",
+      "_id": "ff6c7911e7ee8d56"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Nimbus",
+      "_key": "!tables.results!fbb7cb653d8543a0.bffbde628268ddae",
+      "_id": "bffbde628268ddae"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Nuada",
+      "_key": "!tables.results!fbb7cb653d8543a0.d9df9a5d44765d90",
+      "_id": "d9df9a5d44765d90"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Nubium",
+      "_key": "!tables.results!fbb7cb653d8543a0.3bd6a17dee3a2060",
+      "_id": "3bd6a17dee3a2060"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Serein",
+      "_key": "!tables.results!fbb7cb653d8543a0.6e349b9d5c8b05b1",
+      "_id": "6e349b9d5c8b05b1"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Stratus",
+      "_key": "!tables.results!fbb7cb653d8543a0.ed722d084404a741",
+      "_id": "ed722d084404a741"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Taranis",
+      "_key": "!tables.results!fbb7cb653d8543a0.dd6911aaa246d567",
+      "_id": "dd6911aaa246d567"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Tempest",
+      "_key": "!tables.results!fbb7cb653d8543a0.e1d0ab989444e1fd",
+      "_id": "e1d0ab989444e1fd"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Tenzin",
+      "_key": "!tables.results!fbb7cb653d8543a0.87db697ea04425a5",
+      "_id": "87db697ea04425a5"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Tyr",
+      "_key": "!tables.results!fbb7cb653d8543a0.34e9674f11d92944",
+      "_id": "34e9674f11d92944"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Veil",
+      "_key": "!tables.results!fbb7cb653d8543a0.95fd9ab57ebbccd3",
+      "_id": "95fd9ab57ebbccd3"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Velum",
+      "_key": "!tables.results!fbb7cb653d8543a0.ae0826ebee3f2957",
+      "_id": "ae0826ebee3f2957"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Zephyr",
+      "_key": "!tables.results!fbb7cb653d8543a0.30c96a88f329efee",
+      "_id": "30c96a88f329efee"
+    }
+  ],
+  "folder": "22e197c635fbf259",
+  "sort": 312,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fbb7cb653d8543a0"
+}

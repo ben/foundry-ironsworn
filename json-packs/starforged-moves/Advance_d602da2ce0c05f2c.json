@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Advance",
   "img": "icons/dice/d10black.svg",
+  "folder": "b19db00aa083d13e",
   "system": {
     "dfid": "Starforged/Moves/Legacy/Advance",
     "Category": "Starforged/Moves/Legacy",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you develop your abilities, improve your resources, gain a reward, or boost your influence**, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset. Choose from the following categories as appropriate to your focus and opportunities.\n\n  * Module: Upgrade your command vehicle\n  * Support Vehicle: Acquire or improve a secondary vehicle\n  * Path: Bolster your personal capabilities or follow a new calling\n  * Companion: Gain or improve a trusted helper\n  * Deed: Learn from your experiences or build a legacy",
+    "Text": "__When you develop your abilities, improve your resources, gain a reward, or boost your influence__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset. Choose from the following categories as appropriate to your focus and opportunities.\n\n  * Module: Upgrade your command vehicle\n  * Support Vehicle: Acquire or improve a secondary vehicle\n  * Path: Bolster your personal capabilities or follow a new calling\n  * Companion: Gain or improve a trusted helper\n  * Deed: Learn from your experiences or build a legacy",
     "Trigger": {
       "Text": "When you develop your abilities, improve your resources, gain a reward, or boost your influence...",
       "Options": []
@@ -16,65 +17,41 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 225
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#4D5769",
       "Images": []
     }
   },
   "sort": 225,
-  "folder": "b19db00aa083d13e",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Legacy/Advance",
+      "dsid": "move:starforged/legacy/advance"
+    }
   },
   "_key": "!items!d602da2ce0c05f2c"
 }

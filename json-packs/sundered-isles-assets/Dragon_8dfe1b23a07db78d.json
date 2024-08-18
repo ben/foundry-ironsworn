@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "8dfe1b23a07db78d",
+  "folder": "841fa5bb80d55fd9",
+  "name": "Dragon",
+  "system": {
+    "requirement": "",
+    "category": "Companion",
+    "color": "#3d8b8a",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your dragon companion wards off trouble. When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} by letting it roam, roll +its health. You must @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-1) about once a day to satiate its fierce appetite; otherwise, make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} (-2) move.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>The dragon accepts you as a rider. It flies under your direction, and assails your foes using tooth, tail, claw, and fiery breath. When you make a move from the saddle to lead an expedition or leverage the dragon as a weapon, you may roll +its health. If you then roll a 1 or 2 on your action die, the dragon must bear the brunt of any cost or counterattack.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} move, take +1 momentum on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Out of Action",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/companion/dragon",
+      "dsid": "asset:sundered_isles/companion/dragon"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!8dfe1b23a07db78d"
+}

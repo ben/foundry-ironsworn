@@ -1,0 +1,245 @@
+{
+  "_id": "64eb41ed921c52a7",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/seafaring",
+      "dsid": "oracle_rollable:sundered_isles/seafaring/opportunity"
+    }
+  },
+  "name": "Seafaring Opportunity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Cache of cargo or supplies",
+      "_key": "!tables.results!64eb41ed921c52a7.f3d6931c52ae6fa6",
+      "_id": "f3d6931c52ae6fa6"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Chance for a moment of inner peace",
+      "_key": "!tables.results!64eb41ed921c52a7.485e58450107e578",
+      "_id": "485e58450107e578"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Clear passage through otherwise perilous seas",
+      "_key": "!tables.results!64eb41ed921c52a7.9f757cc3abb11f74",
+      "_id": "9f757cc3abb11f74"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Clue offers insight into a current quest or mystery",
+      "_key": "!tables.results!64eb41ed921c52a7.37830c15b9080f30",
+      "_id": "37830c15b9080f30"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Clue to a foe's nature or vulnerabilities",
+      "_key": "!tables.results!64eb41ed921c52a7.0f630d3b793bd94d",
+      "_id": "0f630d3b793bd94d"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Creatures show the way or offer inspiration",
+      "_key": "!tables.results!64eb41ed921c52a7.d02d4f2f6d284267",
+      "_id": "d02d4f2f6d284267"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Crewmember offers insight or proposes a clever plan",
+      "_key": "!tables.results!64eb41ed921c52a7.c1d92976ba723559",
+      "_id": "c1d92976ba723559"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Crewmember reveals a helpful skill or background",
+      "_key": "!tables.results!64eb41ed921c52a7.ed9c2eda555dd548",
+      "_id": "ed9c2eda555dd548"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Crewmembers support or validate your leadership",
+      "_key": "!tables.results!64eb41ed921c52a7.82aff5dd389200a2",
+      "_id": "82aff5dd389200a2"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Foe inadvertently reveals themselves or tips their hand",
+      "_key": "!tables.results!64eb41ed921c52a7.1556f87a7b388494",
+      "_id": "1556f87a7b388494"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Fortuitous wind or current speeds your way",
+      "_key": "!tables.results!64eb41ed921c52a7.03b93540a99dcaa6",
+      "_id": "03b93540a99dcaa6"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Friendly community in sight",
+      "_key": "!tables.results!64eb41ed921c52a7.55504ed7004f4081",
+      "_id": "55504ed7004f4081"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Friendly ship crosses your path",
+      "_key": "!tables.results!64eb41ed921c52a7.c249cea0d9726bc2",
+      "_id": "c249cea0d9726bc2"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Good omens offer encouragement",
+      "_key": "!tables.results!64eb41ed921c52a7.41a85b8f0483019c",
+      "_id": "41a85b8f0483019c"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Ideal weather takes hold",
+      "_key": "!tables.results!64eb41ed921c52a7.8444c4f654ec8dc0",
+      "_id": "8444c4f654ec8dc0"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Impressive vista offers comfort or inspiration",
+      "_key": "!tables.results!64eb41ed921c52a7.af724e399fd0496c",
+      "_id": "af724e399fd0496c"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Lookout pinpoints a lurking foe",
+      "_key": "!tables.results!64eb41ed921c52a7.cb1a26ceb56888f9",
+      "_id": "cb1a26ceb56888f9"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Message or map with useful information",
+      "_key": "!tables.results!64eb41ed921c52a7.921bec7d2be20b09",
+      "_id": "921bec7d2be20b09"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Occasion for celebration or remembrance with the crew",
+      "_key": "!tables.results!64eb41ed921c52a7.18f67c8eaf90614b",
+      "_id": "18f67c8eaf90614b"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Opening to escape or avoid foes",
+      "_key": "!tables.results!64eb41ed921c52a7.f6611060f0b86841",
+      "_id": "f6611060f0b86841"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Plea for help from a potential benefactor",
+      "_key": "!tables.results!64eb41ed921c52a7.618f2844e7ffb785",
+      "_id": "618f2844e7ffb785"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Refuge offers a place to hide, plan, or recover",
+      "_key": "!tables.results!64eb41ed921c52a7.71dbbca593ff3ff4",
+      "_id": "71dbbca593ff3ff4"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Ship and crew perform beyond expectations",
+      "_key": "!tables.results!64eb41ed921c52a7.92aa5522cf816b07",
+      "_id": "92aa5522cf816b07"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Shipwreck or derelict ripe for the picking",
+      "_key": "!tables.results!64eb41ed921c52a7.46be6a81c276730b",
+      "_id": "46be6a81c276730b"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Source of fresh provisions",
+      "_key": "!tables.results!64eb41ed921c52a7.8545cdde178fee9b",
+      "_id": "8545cdde178fee9b"
+    }
+  ],
+  "folder": "8d239f77c6ee1f9d",
+  "sort": 129,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!64eb41ed921c52a7"
+}

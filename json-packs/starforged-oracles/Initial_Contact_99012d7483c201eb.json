@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Starships/Initial_Contact",
-      "category": "Starforged/Oracles/Starships"
+      "category": "Starforged/Oracles/Starships",
+      "dsid": "oracle_rollable:starforged/starship/initial_contact"
     }
   },
   "name": "Initial Contact",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Familiar",
-      "_id": "b4ee47fd36201094",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.b4ee47fd36201094"
+      "_key": "!tables.results!99012d7483c201eb.353f3f4eed635ee7",
+      "_id": "353f3f4eed635ee7"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         15
       ],
       "text": "Friendly",
-      "_id": "bd1a788bf5686905",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.bd1a788bf5686905"
+      "_key": "!tables.results!99012d7483c201eb.27a787c907692a5e",
+      "_id": "27a787c907692a5e"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         25
       ],
       "text": "Neutral / automated",
-      "_id": "65341cf3c671789d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.65341cf3c671789d"
+      "_key": "!tables.results!99012d7483c201eb.635afd0cea7537ef",
+      "_id": "635afd0cea7537ef"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         35
       ],
       "text": "Wary",
-      "_id": "a6265ce2f582ce12",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.a6265ce2f582ce12"
+      "_key": "!tables.results!99012d7483c201eb.c8cf65e66d32e927",
+      "_id": "c8cf65e66d32e927"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Dismissive",
-      "_id": "d93347a97dc71745",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.d93347a97dc71745"
+      "_key": "!tables.results!99012d7483c201eb.c47ebface466e667",
+      "_id": "c47ebface466e667"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         50
       ],
       "text": "Uncooperative",
-      "_id": "3d98cba790de114a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.3d98cba790de114a"
+      "_key": "!tables.results!99012d7483c201eb.2d2a28a5f63cefb0",
+      "_id": "2d2a28a5f63cefb0"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         65
       ],
       "text": "Hostile",
-      "_id": "535b9c2ab8250846",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.535b9c2ab8250846"
+      "_key": "!tables.results!99012d7483c201eb.805c0966ba4f358f",
+      "_id": "805c0966ba4f358f"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Asking for help",
-      "_id": "4c18bfeb88b2fb18",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.4c18bfeb88b2fb18"
+      "_key": "!tables.results!99012d7483c201eb.07655a642cfab23f",
+      "_id": "07655a642cfab23f"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         85
       ],
       "text": "In battle",
-      "_id": "6638c4f508f4f113",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.6638c4f508f4f113"
+      "_key": "!tables.results!99012d7483c201eb.42697470f0d7a415",
+      "_id": "42697470f0d7a415"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         90
       ],
       "text": "Unresponsive",
-      "_id": "fd20fb0f4b5ea393",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.fd20fb0f4b5ea393"
+      "_key": "!tables.results!99012d7483c201eb.40188d5e15738ea2",
+      "_id": "40188d5e15738ea2"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         95
       ],
       "text": "Destroyed",
-      "_id": "136d787ae7937527",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.136d787ae7937527"
+      "_key": "!tables.results!99012d7483c201eb.4bd80b8cf6e63d10",
+      "_id": "4bd80b8cf6e63d10"
     },
     {
       "range": [
         96,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts\"><i class=\"fa fa-caret-right\"></i> Derelict</a>",
-      "_id": "40d7ed1b48b3b94f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!99012d7483c201eb.40d7ed1b48b3b94f"
+      "text": "[Derelict](datasworn:oracle_collection:starforged/derelict)",
+      "_key": "!tables.results!99012d7483c201eb.c17107c54a2d3e3f",
+      "_id": "c17107c54a2d3e3f"
     }
   ],
   "folder": "eea3419c88a919cd",
   "sort": 327,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!99012d7483c201eb"
 }

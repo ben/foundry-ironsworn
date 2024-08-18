@@ -1,0 +1,110 @@
+{
+  "_id": "6c64d89e6348bb0c",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/war",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/war/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Arrows",
+      "_key": "!tables.results!6c64d89e6348bb0c.caf069eddf23917b",
+      "_id": "caf069eddf23917b"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Blades",
+      "_key": "!tables.results!6c64d89e6348bb0c.c0b8e92735c902b9",
+      "_id": "c0b8e92735c902b9"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Defenders",
+      "_key": "!tables.results!6c64d89e6348bb0c.ddb9442873f8b762",
+      "_id": "ddb9442873f8b762"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Fighters",
+      "_key": "!tables.results!6c64d89e6348bb0c.345ce8063fba47f4",
+      "_id": "345ce8063fba47f4"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Gauntlets",
+      "_key": "!tables.results!6c64d89e6348bb0c.9a549302bf44ac07",
+      "_id": "9a549302bf44ac07"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Hounds",
+      "_key": "!tables.results!6c64d89e6348bb0c.de629cf18fdb70f4",
+      "_id": "de629cf18fdb70f4"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Knights",
+      "_key": "!tables.results!6c64d89e6348bb0c.cb2318fc02752046",
+      "_id": "cb2318fc02752046"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Talons",
+      "_key": "!tables.results!6c64d89e6348bb0c.4938c04464f09228",
+      "_id": "4938c04464f09228"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Vanguards",
+      "_key": "!tables.results!6c64d89e6348bb0c.645debb8dd075c0b",
+      "_id": "645debb8dd075c0b"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wolves",
+      "_key": "!tables.results!6c64d89e6348bb0c.78e34fe98268f15c",
+      "_id": "78e34fe98268f15c"
+    }
+  ],
+  "folder": "af3135e348ad4ace",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6c64d89e6348bb0c"
+}

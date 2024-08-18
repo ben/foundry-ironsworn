@@ -1,0 +1,191 @@
+{
+  "_id": "5025c54e1158894d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship/mission",
+      "dsid": "oracle_rollable:sundered_isles/ship/mission/large"
+    }
+  },
+  "name": "Large",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Blockade a location",
+      "_key": "!tables.results!5025c54e1158894d.6f68870fbf16257e",
+      "_id": "6f68870fbf16257e"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Break a blockade",
+      "_key": "!tables.results!5025c54e1158894d.b94568458e2f9c73",
+      "_id": "b94568458e2f9c73"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Attack a Location",
+      "_key": "!tables.results!5025c54e1158894d.a3fed79398f89c57",
+      "_id": "a3fed79398f89c57"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Evacuate a location",
+      "_key": "!tables.results!5025c54e1158894d.5ce619e99bd04dfb",
+      "_id": "5ce619e99bd04dfb"
+    },
+    {
+      "range": [
+        9,
+        14
+      ],
+      "text": "Transport people",
+      "_key": "!tables.results!5025c54e1158894d.4eea52ce84616d2a",
+      "_id": "4eea52ce84616d2a"
+    },
+    {
+      "range": [
+        15,
+        22
+      ],
+      "text": "Transport cargo",
+      "_key": "!tables.results!5025c54e1158894d.070f4b4a558aa880",
+      "_id": "070f4b4a558aa880"
+    },
+    {
+      "range": [
+        23,
+        30
+      ],
+      "text": "Conduct trade",
+      "_key": "!tables.results!5025c54e1158894d.79cb1d0cf854a04c",
+      "_id": "79cb1d0cf854a04c"
+    },
+    {
+      "range": [
+        31,
+        36
+      ],
+      "text": "Hunt creatures",
+      "_key": "!tables.results!5025c54e1158894d.0760f631c3eb6398",
+      "_id": "0760f631c3eb6398"
+    },
+    {
+      "range": [
+        37,
+        42
+      ],
+      "text": "Patrol an area",
+      "_key": "!tables.results!5025c54e1158894d.f4e501ba287d72a3",
+      "_id": "f4e501ba287d72a3"
+    },
+    {
+      "range": [
+        43,
+        48
+      ],
+      "text": "Explore or travel to an area",
+      "_key": "!tables.results!5025c54e1158894d.325e2bc431aef7c4",
+      "_id": "325e2bc431aef7c4"
+    },
+    {
+      "range": [
+        49,
+        58
+      ],
+      "text": "Engage an enemy",
+      "_key": "!tables.results!5025c54e1158894d.5a3fe0555b7f24fb",
+      "_id": "5a3fe0555b7f24fb"
+    },
+    {
+      "range": [
+        59,
+        70
+      ],
+      "text": "Conduct piracy",
+      "_key": "!tables.results!5025c54e1158894d.5c725a5de9eb4fee",
+      "_id": "5c725a5de9eb4fee"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Conduct diplomacy",
+      "_key": "!tables.results!5025c54e1158894d.459fe8a23c879b2f",
+      "_id": "459fe8a23c879b2f"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Conduct espionage",
+      "_key": "!tables.results!5025c54e1158894d.296d51242bf9a99b",
+      "_id": "296d51242bf9a99b"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Conduct research",
+      "_key": "!tables.results!5025c54e1158894d.cbb56e6ef95db12c",
+      "_id": "cbb56e6ef95db12c"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Deliver item or message",
+      "_key": "!tables.results!5025c54e1158894d.d6f9b10dfed302c8",
+      "_id": "d6f9b10dfed302c8"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Smuggle contraband",
+      "_key": "!tables.results!5025c54e1158894d.77f2acc960371161",
+      "_id": "77f2acc960371161"
+    },
+    {
+      "range": [
+        85,
+        94
+      ],
+      "text": "[Action](datasworn:oracle_rollable:sundered_isles/core/action) + [Theme](datasworn:oracle_rollable:sundered_isles/core/theme)",
+      "_key": "!tables.results!5025c54e1158894d.21be4815499d0ac2",
+      "_id": "21be4815499d0ac2"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!5025c54e1158894d.d9b7d02763704a11",
+      "_id": "d9b7d02763704a11"
+    }
+  ],
+  "folder": "e20f7476c2916a1b",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5025c54e1158894d"
+}

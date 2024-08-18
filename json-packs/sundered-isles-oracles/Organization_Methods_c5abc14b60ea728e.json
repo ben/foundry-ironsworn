@@ -1,0 +1,290 @@
+{
+  "_id": "c5abc14b60ea728e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/organization",
+      "dsid": "oracle_rollable:sundered_isles/faction/organization/methods"
+    }
+  },
+  "name": "Organization Methods",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Evaluates recruits with elaborate tests",
+      "_key": "!tables.results!c5abc14b60ea728e.d4062f29ca54e8bb",
+      "_id": "d4062f29ca54e8bb"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Governed by a shadowy court or council",
+      "_key": "!tables.results!c5abc14b60ea728e.b3b7e30e31c51295",
+      "_id": "b3b7e30e31c51295"
+    },
+    {
+      "range": [
+        9,
+        11
+      ],
+      "text": "Guided by a distinguished leader",
+      "_key": "!tables.results!c5abc14b60ea728e.566d38c53e016a8a",
+      "_id": "566d38c53e016a8a"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Holds challenges to test skills",
+      "_key": "!tables.results!c5abc14b60ea728e.5544146067d769a3",
+      "_id": "5544146067d769a3"
+    },
+    {
+      "range": [
+        15,
+        18
+      ],
+      "text": "Holds regular gatherings or assemblies",
+      "_key": "!tables.results!c5abc14b60ea728e.06ce55abb9b20ec2",
+      "_id": "06ce55abb9b20ec2"
+    },
+    {
+      "range": [
+        19,
+        22
+      ],
+      "text": "Honors fallen members with ceremonies",
+      "_key": "!tables.results!c5abc14b60ea728e.f98c4ee0adc65b1a",
+      "_id": "f98c4ee0adc65b1a"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Idolizes a long-dead founder",
+      "_key": "!tables.results!c5abc14b60ea728e.bc07ca23ad2af399",
+      "_id": "bc07ca23ad2af399"
+    },
+    {
+      "range": [
+        26,
+        28
+      ],
+      "text": "Imposes rigorous admittance standards",
+      "_key": "!tables.results!c5abc14b60ea728e.e31b87e832b1f7da",
+      "_id": "e31b87e832b1f7da"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Maintains a central archive",
+      "_key": "!tables.results!c5abc14b60ea728e.99d4b73c9304f48f",
+      "_id": "99d4b73c9304f48f"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "Maintains a strict hierarchy by seniority",
+      "_key": "!tables.results!c5abc14b60ea728e.7c03c3c8d6a48e54",
+      "_id": "7c03c3c8d6a48e54"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "Maintains neutrality in a notable conflict",
+      "_key": "!tables.results!c5abc14b60ea728e.1beb4eb3f179121b",
+      "_id": "1beb4eb3f179121b"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "Members adopt body ornamentations",
+      "_key": "!tables.results!c5abc14b60ea728e.33e2f36b0d4e4f75",
+      "_id": "33e2f36b0d4e4f75"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "Members adopt disguises or personas",
+      "_key": "!tables.results!c5abc14b60ea728e.bd56fac3bb2acada",
+      "_id": "bd56fac3bb2acada"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Members bear an organization symbol",
+      "_key": "!tables.results!c5abc14b60ea728e.f01fddc03d4909ce",
+      "_id": "f01fddc03d4909ce"
+    },
+    {
+      "range": [
+        48,
+        51
+      ],
+      "text": "Members share a unique language",
+      "_key": "!tables.results!c5abc14b60ea728e.9e59ea6882875221",
+      "_id": "9e59ea6882875221"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Members use a secret greeting",
+      "_key": "!tables.results!c5abc14b60ea728e.864db9ecfea216a1",
+      "_id": "864db9ecfea216a1"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Operates a system of apprenticeship",
+      "_key": "!tables.results!c5abc14b60ea728e.4a07173383a3445a",
+      "_id": "4a07173383a3445a"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Operates as independent cells",
+      "_key": "!tables.results!c5abc14b60ea728e.b3d9f45f7fbd987d",
+      "_id": "b3d9f45f7fbd987d"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Operates custom ships",
+      "_key": "!tables.results!c5abc14b60ea728e.04acf70ebd35a2d8",
+      "_id": "04acf70ebd35a2d8"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Operates under strict codes or laws",
+      "_key": "!tables.results!c5abc14b60ea728e.41694b83ce362537",
+      "_id": "41694b83ce362537"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "Recruits members far-and-wide",
+      "_key": "!tables.results!c5abc14b60ea728e.e03150ab9b9148e5",
+      "_id": "e03150ab9b9148e5"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "Relies on divination or prophecy",
+      "_key": "!tables.results!c5abc14b60ea728e.5847f1780f75bf4a",
+      "_id": "5847f1780f75bf4a"
+    },
+    {
+      "range": [
+        75,
+        77
+      ],
+      "text": "Relies on mysticism or superstition",
+      "_key": "!tables.results!c5abc14b60ea728e.3e62b9dc130f5715",
+      "_id": "3e62b9dc130f5715"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Relies on trained creatures",
+      "_key": "!tables.results!c5abc14b60ea728e.3662c4107d8823ab",
+      "_id": "3662c4107d8823ab"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Splintered from another organization",
+      "_key": "!tables.results!c5abc14b60ea728e.ae303cecd3774eb3",
+      "_id": "ae303cecd3774eb3"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Traces its history to an ancient founding",
+      "_key": "!tables.results!c5abc14b60ea728e.bfa97935f0479d6d",
+      "_id": "bfa97935f0479d6d"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Trades in a unique currency or asset",
+      "_key": "!tables.results!c5abc14b60ea728e.3007f738ee5bbee4",
+      "_id": "3007f738ee5bbee4"
+    },
+    {
+      "range": [
+        91,
+        94
+      ],
+      "text": "Uses a system of coded messages",
+      "_key": "!tables.results!c5abc14b60ea728e.8e2054d6c0f424c8",
+      "_id": "8e2054d6c0f424c8"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "Uses specialized equipment or weapons",
+      "_key": "!tables.results!c5abc14b60ea728e.27d0a64b32cd8e89",
+      "_id": "27d0a64b32cd8e89"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Worships a god or faith",
+      "_key": "!tables.results!c5abc14b60ea728e.a0ca7cc6be05240d",
+      "_id": "a0ca7cc6be05240d"
+    }
+  ],
+  "folder": "31fcdfd6836b4273",
+  "sort": 180,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!c5abc14b60ea728e"
+}

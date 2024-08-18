@@ -1,0 +1,920 @@
+{
+  "_id": "1ee2d9f3f3344aa4",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland",
+      "dsid": "oracle_rollable:sundered_isles/overland/details"
+    }
+  },
+  "name": "Overland Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "A tree trunk bears a crudely carved message",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.8ca369991d8b9572",
+      "_id": "8ca369991d8b9572"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "You reach a vantage point, and catch sight of a beckoning sea",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.0d241014609e5822",
+      "_id": "0d241014609e5822"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Fossilized bones, the ribs of some ancient beast, arch over your path",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.f97e22303e4638b7",
+      "_id": "f97e22303e4638b7"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A freshwater spring sits within a rocky nook",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.fa0325bf7cb4b373",
+      "_id": "fa0325bf7cb4b373"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Gunfire and the clash of steel signal the presence of a nearby battle",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.9f43d9cbe41819d4",
+      "_id": "9f43d9cbe41819d4"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "A solitary shelter or homestead stands amid the wildness",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.f06f4859c18f965e",
+      "_id": "f06f4859c18f965e"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "A ransacked camp sits empty",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.92ac98ae115e5854",
+      "_id": "92ac98ae115e5854"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "A stone arch marks the entrance of a burial mound",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.30f0914bd4e976ff",
+      "_id": "30f0914bd4e976ff"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "You cross paths with a lone traveler who is leading a heavily-burdened pack animal",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.eb5307b676037b1a",
+      "_id": "eb5307b676037b1a"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Rodents of unusual size appear",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.d35b5de5519da42e",
+      "_id": "d35b5de5519da42e"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "An empty chest, its lock smashed and lid opened, sits in a recently-dug hole",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.77808ca60250e7fb",
+      "_id": "77808ca60250e7fb"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "You hear the faint sound of distant music or singing",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.1f25fa6334a508cc",
+      "_id": "1f25fa6334a508cc"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "The landscape bears the scars of a destructive fire",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.ee82fdf82d592ec9",
+      "_id": "ee82fdf82d592ec9"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "A procession of haggard refugees crosses your path",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.b30b97cd671b05a9",
+      "_id": "b30b97cd671b05a9"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Wildlife gathers around a watering hole",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.cc8b4c27885d4598",
+      "_id": "cc8b4c27885d4598"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Darkness beckons from within a deep cave",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.d8da3455d30aa178",
+      "_id": "d8da3455d30aa178"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "A chasm divides the landscape",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.f41c03b2fa7ff4c6",
+      "_id": "f41c03b2fa7ff4c6"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "An enormous pile of scat marks the presence of a large creature",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.136533a5695394b2",
+      "_id": "136533a5695394b2"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "An animal is caught in a trap",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.dfb975fbcc2895f4",
+      "_id": "dfb975fbcc2895f4"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "A ramshackle wooden barricade blocks your path",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.ae6c4cf3a489db46",
+      "_id": "ae6c4cf3a489db46"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "A cache of abandoned supplies is tucked under a nearby tree or overhang",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.e4cfc93bdfbfb7fc",
+      "_id": "e4cfc93bdfbfb7fc"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Lights glimmer in the distance",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.9d14a31fc3f0f26b",
+      "_id": "9d14a31fc3f0f26b"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "A swaying rope bridge spans a gap in the terrain",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.a2f0518398a87178",
+      "_id": "a2f0518398a87178"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Something stirs in nearby water, disturbing the placid surface",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.bc9588b48affe307",
+      "_id": "bc9588b48affe307"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "A trail of blood leads off the path",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.792b635f385bb25b",
+      "_id": "792b635f385bb25b"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "A little ways off the path, a large animal keeps pace with you",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.921b01720e87b930",
+      "_id": "921b01720e87b930"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Figures move across a distant ridge",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.a82b0859632b9351",
+      "_id": "a82b0859632b9351"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "An ancient mechanism grinds to life",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.6ef5427be5497040",
+      "_id": "6ef5427be5497040"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Large insect mounds blot the landscape",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.81002a864f77c795",
+      "_id": "81002a864f77c795"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "You encounter a wounded or sick stranger",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.acfc96426246e78a",
+      "_id": "acfc96426246e78a"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Dirt is mounded atop a freshly dug hole",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.80c96f53b52f68c2",
+      "_id": "80c96f53b52f68c2"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Carrion animals pick at the remains of a dead creature",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.47cae49f5400fb96",
+      "_id": "47cae49f5400fb96"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "You come upon the scene of a recent battle with a single, gravely-wounded survivor",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.a7722d895a089f60",
+      "_id": "a7722d895a089f60"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "A weathered flag is staked into the ground of a burial site",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.7b4ce9e72da704e9",
+      "_id": "7b4ce9e72da704e9"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Recently-dug holes pockmark the ground",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.37683e1f6af951b9",
+      "_id": "37683e1f6af951b9"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "A recent landslide, collapse, or rockfall scars the landscape",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.88c2db75a813df51",
+      "_id": "88c2db75a813df51"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "An X is carved into the terrain",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.82f53e0b95ebcf0c",
+      "_id": "82f53e0b95ebcf0c"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "A corroded ship's bell hangs from a wooden post",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.4dd8a08621328ef1",
+      "_id": "4dd8a08621328ef1"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "A thin column of smoke rises in the distance",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.eb97090524722161",
+      "_id": "eb97090524722161"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "A skeleton lies half-buried or tangled in the terrain",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.5ac250c3e7d01e66",
+      "_id": "5ac250c3e7d01e66"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "The clank of equipment and shouts of command signals an approaching armed patrol",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.8abded67ca8e4029",
+      "_id": "8abded67ca8e4029"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "The scorched path of a large meteorite is carved into the terrain",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.bd6cb134addf4c79",
+      "_id": "bd6cb134addf4c79"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "In the distance, circling carrion birds mark the site of a kill",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.6d1a51847132dc8c",
+      "_id": "6d1a51847132dc8c"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Drag marks and blood mar the ground",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.77db5ea671c99bf5",
+      "_id": "77db5ea671c99bf5"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Insects swarm protectively from their nest",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.2679b79ccaf440d1",
+      "_id": "2679b79ccaf440d1"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "A sign warns away trespassers",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.90c1b0602cfc04f6",
+      "_id": "90c1b0602cfc04f6"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Broken bones lay within an unearthed grave",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.af325ba71d01eff4",
+      "_id": "af325ba71d01eff4"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "The air smells of smoke, and ash drifts on the wind",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.81c946f6f060da9e",
+      "_id": "81c946f6f060da9e"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "The landscape takes on an unusual color",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.35fad92bc789e79b",
+      "_id": "35fad92bc789e79b"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "The path bears remnants of an old stone road",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.389ba56752aae0b5",
+      "_id": "389ba56752aae0b5"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "A distant volcano erupts, sending up plumes of smoke and ash",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.c5029bb3f9e39827",
+      "_id": "c5029bb3f9e39827"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "An animal is cornered by a larger predator",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.75bfe8a87a37490b",
+      "_id": "75bfe8a87a37490b"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "The air is suddenly filled with flying arrows from unseen assailants",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.34c5be2ab78dc4af",
+      "_id": "34c5be2ab78dc4af"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "An abandoned cart or wagon lies broken, its contents spilled across the ground",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.66720907b8b18279",
+      "_id": "66720907b8b18279"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "A crude map is scrawled on a rock",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.27a9437aec029b04",
+      "_id": "27a9437aec029b04"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "An intricate pattern of carved stones is laid into the ground",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.271c8df8165c2d49",
+      "_id": "271c8df8165c2d49"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "A rocky cairn and planted sword mark a lonely gravesite",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.911ee9ab911bb3c0",
+      "_id": "911ee9ab911bb3c0"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Partially buried weapons, armor, and bones mark the site of a long-ago battle",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.67f8c8c1117f210d",
+      "_id": "67f8c8c1117f210d"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "You catch sight of a glimmer of metal within the undergrowth",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.49a8e6f94966540d",
+      "_id": "49a8e6f94966540d"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "A flag bearing a familiar symbol hangs from a tall wooden pole",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.268211b25bb6b354",
+      "_id": "268211b25bb6b354"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "The ground bears the tracks or markings of a large animal",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.730e4fe88b44f9d2",
+      "_id": "730e4fe88b44f9d2"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "A skeletal corpse wears the decaying remains of an elaborate uniform",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.267e6fe080de26ab",
+      "_id": "267e6fe080de26ab"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Carefully stacked stones mark a gravesite",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.a50e2277063288ae",
+      "_id": "a50e2277063288ae"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Flocks of birds nest here; they squawk and chatter noisily",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.d8ebd33ff3459ca4",
+      "_id": "d8ebd33ff3459ca4"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Ash surrounds a long-cold funeral pyre",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.498d1d12474c57fe",
+      "_id": "498d1d12474c57fe"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "An enormous red lizard basks lazily on a rocky ledge",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.0c4bd991db055119",
+      "_id": "0c4bd991db055119"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "A herd of wildlife cuts across your path",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.39beb63a61dd24ca",
+      "_id": "39beb63a61dd24ca"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "You encounter a panicked stranger who is fleeing a pursuer",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.1a00c9e5f0ab44c7",
+      "_id": "1a00c9e5f0ab44c7"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "A flash of reflected sunlight gleams from glass or metal in the distance",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.48df64b3c791e0e6",
+      "_id": "48df64b3c791e0e6"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "In the distance, a colossal tree dominates the landscape",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.e0772e89ed399dec",
+      "_id": "e0772e89ed399dec"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "A tripwire is strung across your path",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.3f6011f7febde943",
+      "_id": "3f6011f7febde943"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "A set of roughly-chiseled headstones stand like broken teeth",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.db9a66ec27efa6ac",
+      "_id": "db9a66ec27efa6ac"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "An abandoned camp sits quiet",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.a60666f49bf8f7ca",
+      "_id": "a60666f49bf8f7ca"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "An abandoned campfire still smolders",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.0082dd606165a10e",
+      "_id": "0082dd606165a10e"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Crushed and broken vegetation marks the path of a large creature",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.56134a3fa693be9c",
+      "_id": "56134a3fa693be9c"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "The smell of cooking and the sound of conversation indicates a nearby camp",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.d63b58f6d7ed7d51",
+      "_id": "d63b58f6d7ed7d51"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Ruins rise above the distant terrain",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.087f769a1cd00ea1",
+      "_id": "087f769a1cd00ea1"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Swarms of colorful butterflies surround you",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.3504b38c91acb6e8",
+      "_id": "3504b38c91acb6e8"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "A large deer appears, watching you with an impassive but intelligent gaze",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.91579fbfe2e57e38",
+      "_id": "91579fbfe2e57e38"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Flies swirl around a partially-devoured animal carcass",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.6a857a7aa9ea9181",
+      "_id": "6a857a7aa9ea9181"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "A vast field of animal bones litter the ground",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.9dbf1e9424743a98",
+      "_id": "9dbf1e9424743a98"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "A solitary statue stands tall over the terrain",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.c0f52606272bb6b4",
+      "_id": "c0f52606272bb6b4"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Great plumes of smoke and fire rise in the distance",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.4f6bc8ffc9961717",
+      "_id": "4f6bc8ffc9961717"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "A long-dead corpse lies at the bottom of a pit",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.97b28d6d884e1e7f",
+      "_id": "97b28d6d884e1e7f"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Crystal-clear water glimmers within a sinkhole",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.7c98fd0d006fefd7",
+      "_id": "7c98fd0d006fefd7"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "A series of rope bridges connect trees or high terrain",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.3e0aae364faffa15",
+      "_id": "3e0aae364faffa15"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Two formidable animals engage in battle",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.35042b203ac2796f",
+      "_id": "35042b203ac2796f"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "An infant animal, abandoned or lost, mewls for its mother",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.920a8ad84f58f225",
+      "_id": "920a8ad84f58f225"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "The ground trembles with the movement of a large creature or herd of animals",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.6ece7cd567cdbdea",
+      "_id": "6ece7cd567cdbdea"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "A statue lies broken and scattered across your path",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.7e13f3fe148adca4",
+      "_id": "7e13f3fe148adca4"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Ornamental windchimes, clacking melodically, hang from tree branches",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.08ca301d24619bd9",
+      "_id": "08ca301d24619bd9"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "A worksite lies dormant, its equipment and supplies abandoned",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.b65a61255052cb2c",
+      "_id": "b65a61255052cb2c"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "You hear a crack of gunfire, and a musket shot buzzes past",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.50b85145e344cb5d",
+      "_id": "50b85145e344cb5d"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Someone calls out for help",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.198bc86b4497d0b0",
+      "_id": "198bc86b4497d0b0"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "A settlement sits upon a distant hill",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.ffb77c9ae98f0e06",
+      "_id": "ffb77c9ae98f0e06"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Ladders or ropes lead to higher terrain",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.53ea7f8f4cd4b3da",
+      "_id": "53ea7f8f4cd4b3da"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Footprints mark the path of a recent traveler",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.32b94194236e378d",
+      "_id": "32b94194236e378d"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "A noisy parrot squawks, whistles, and sings, as if putting on a performance",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.b70a00c837a6af8a",
+      "_id": "b70a00c837a6af8a"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Carved stones mark an old boundary line",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.5c566b17af633d69",
+      "_id": "5c566b17af633d69"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "This area is adorned with colorful banners",
+      "_key": "!tables.results!1ee2d9f3f3344aa4.c1f9887e1cdd5142",
+      "_id": "c1f9887e1cdd5142"
+    }
+  ],
+  "folder": "0b3f32f3ee7a1a74",
+  "sort": 156,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1ee2d9f3f3344aa4"
+}

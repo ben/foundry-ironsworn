@@ -1,0 +1,70 @@
+{
+  "_id": "a03a648bb3a06d93",
+  "type": "sfmove",
+  "name": "Withstand Damage",
+  "img": "icons/dice/d10black.svg",
+  "folder": "c6ebd804a75ccc4d",
+  "system": {
+    "dfid": "move:sundered_isles/suffer/withstand_damage",
+    "Category": "move_category:sundered_isles/suffer",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When your vehicle faces a damaging situation or environment__, suffer -1 integrity for minor damage, -2 for serious damage, or -3 for major damage. If your integrity is 0, @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} equal to any remaining damage.\n\nThen, if your integrity is 0 or you choose to resist the damage, roll +integrity.\n\nOn a __strong hit__, choose one.\n\n  * Bypass: If your vehicle is not battered, take +1 integrity\n  * Ride it out: Take +1 momentum\n\nOn a __weak hit__, if your vehicle is not battered, you may @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1) in exchange for +1 integrity. Otherwise, carry on.\n\nOn a __miss__, it's worse than you thought. Suffer an additional -1 integrity or @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2). If your integrity is 0, also suffer a cost according to the vehicle type.\n\n  * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed or sunk, @Compendium[foundry-ironsworn.starforgedmoves.a44ecb0d77487549]{Overcome Destruction}.\n  * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed or sunk, discard the asset.\n  * __Incidental vehicle:__ Roll on the table below.",
+    "Trigger": {
+      "Text": "When your vehicle faces a damaging situation or environment...",
+      "Options": [
+        {
+          "Text": "",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Vehicle Integrity"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, choose one.\n\n  * Bypass: If your vehicle is not battered, take +1 integrity\n  * Ride it out: Take +1 momentum",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, if your vehicle is not battered, you may @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1) in exchange for +1 integrity. Otherwise, carry on."
+      },
+      "Miss": {
+        "Text": "On a __miss__, it's worse than you thought. Suffer an additional -1 integrity or @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2). If your integrity is 0, also suffer a cost according to the vehicle type.\n\n  * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed or sunk, @Compendium[foundry-ironsworn.starforgedmoves.a44ecb0d77487549]{Overcome Destruction}.\n  * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed or sunk, discard the asset.\n  * __Incidental vehicle:__ Roll on the table below.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [
+      "move.oracle_rollable:sundered_isles/suffer/withstand_damage.withstand_damage"
+    ],
+    "dsOracleIds": [
+      "move.oracle_rollable:sundered_isles/suffer/withstand_damage.withstand_damage"
+    ],
+    "Source": {
+      "Title": "Sundered Isles",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2024-07-01",
+      "Page": 247
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 247,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:sundered_isles/suffer/withstand_damage",
+      "dsid": "move:sundered_isles/suffer/withstand_damage"
+    }
+  },
+  "_key": "!items!a03a648bb3a06d93"
+}

@@ -1,0 +1,156 @@
+{
+  "_id": "9eca6bc0a308c58f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave/Feature",
+      "category": "Starforged/Oracles/Planets/Grave",
+      "dsid": "oracle_rollable:starforged/planet/grave/feature"
+    }
+  },
+  "name": "Planetside Feature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Acid pools",
+      "_key": "!tables.results!9eca6bc0a308c58f.db0046ab3c26886a",
+      "_id": "db0046ab3c26886a"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Ash dunes",
+      "_key": "!tables.results!9eca6bc0a308c58f.2cd9c31cbfc24bd3",
+      "_id": "2cd9c31cbfc24bd3"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Corrosive rains",
+      "_key": "!tables.results!9eca6bc0a308c58f.17b3d190e084b97d",
+      "_id": "17b3d190e084b97d"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Dead forests",
+      "_key": "!tables.results!9eca6bc0a308c58f.7a88a661bd6c8888",
+      "_id": "7a88a661bd6c8888"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Fetid mudflats",
+      "_key": "!tables.results!9eca6bc0a308c58f.1d52c23863c79382",
+      "_id": "1d52c23863c79382"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Mass graves",
+      "_key": "!tables.results!9eca6bc0a308c58f.e7ecb103b3e56ac3",
+      "_id": "e7ecb103b3e56ac3"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Moldering bones",
+      "_key": "!tables.results!9eca6bc0a308c58f.2e5bd332eb057aab",
+      "_id": "2e5bd332eb057aab"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Noxious fog",
+      "_key": "!tables.results!9eca6bc0a308c58f.4aba507bf6d40b0d",
+      "_id": "4aba507bf6d40b0d"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Radioactive hotspots",
+      "_key": "!tables.results!9eca6bc0a308c58f.80daef5a8e9a2306",
+      "_id": "80daef5a8e9a2306"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Ravaged cities",
+      "_key": "!tables.results!9eca6bc0a308c58f.0c6335f9731d9d57",
+      "_id": "0c6335f9731d9d57"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Scarred battlefields",
+      "_key": "!tables.results!9eca6bc0a308c58f.b6df79c6ae2ff2a6",
+      "_id": "b6df79c6ae2ff2a6"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Ship graveyards",
+      "_key": "!tables.results!9eca6bc0a308c58f.c8f053d0e969cae4",
+      "_id": "c8f053d0e969cae4"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Whispers of the dead",
+      "_key": "!tables.results!9eca6bc0a308c58f.c24227813fa73a76",
+      "_id": "c24227813fa73a76"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!9eca6bc0a308c58f.a2bdb66f66508cb2",
+      "_id": "a2bdb66f66508cb2"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (planetside)",
+      "_key": "!tables.results!9eca6bc0a308c58f.043f63fa499a1b21",
+      "_id": "043f63fa499a1b21"
+    }
+  ],
+  "folder": "caa4a9957ef73507",
+  "sort": 310,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9eca6bc0a308c58f"
+}

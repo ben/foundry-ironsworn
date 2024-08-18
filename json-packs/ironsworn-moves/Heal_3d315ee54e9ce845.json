@@ -3,26 +3,27 @@
   "type": "sfmove",
   "name": "Heal",
   "img": "icons/dice/d10black.svg",
+  "folder": "30f9b4039e23c0c9",
   "system": {
     "dfid": "Ironsworn/Moves/Adventure/Heal",
     "Category": "Ironsworn/Moves/Adventure",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you treat an injury or ailment**, roll +wits. If you are mending your own wounds, roll +wits or +iron, whichever is lower.\n\nOn a **strong hit**, your care is helpful. If you (or the ally under your care) have the wounded condition, you may clear it. Then, take or give up to +2 health.\n\nOn a **weak hit**, as above, but you must suffer -1 supply or -1 momentum (your choice).\n\nOn a **miss**, your aid is ineffective. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Text": "When __you treat an injury or ailment__, roll +wits. If you are mending your own wounds, roll +wits or +iron, whichever is lower.\n\nOn a __strong hit__, your care is helpful. If you (or the ally under your care) have the wounded condition, you may clear it. Then, take or give up to +2 health.\n\nOn a __weak hit__, as above, but you must suffer -1 supply or -1 momentum (your choice).\n\nOn a __miss__, your aid is ineffective. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
     "Trigger": {
       "Text": "When you treat an injury or ailment...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Wits"
-          ],
-          "Text": ""
+          ]
         },
         {
           "Text": "Mend your own wounds",
-          "Roll type": "Action roll",
+          "Roll type": "Progress roll",
           "Method": "Lowest",
           "Using": [
             "Iron",
@@ -33,42 +34,29 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Your care is helpful. If you (or the ally under your care) have the wounded condition, you may clear it. Then, take or give up to +2 health.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, your care is helpful. If you (or the ally under your care) have the wounded condition, you may clear it. Then, take or give up to +2 health.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Your care is helpful, but you must suffer -1 supply or -1 momentum (your choice). If you (or the ally under your care) have the wounded condition, you may clear it. Then, take or give up to +2 health. However",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, your care is helpful, but you must suffer -1 supply or -1 momentum (your choice). If you (or the ally under your care) have the wounded condition, you may clear it. Then, take or give up to +2 health."
       },
       "Miss": {
-        "Text": "Your aid is ineffective. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, your aid is ineffective. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 63
     },
     "Suggestions": {},
@@ -77,20 +65,11 @@
     }
   },
   "sort": 63,
-  "folder": "30f9b4039e23c0c9",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Adventure/Heal",
+      "dsid": "move:classic/adventure/heal"
+    }
   },
   "_key": "!items!3d315ee54e9ce845"
 }

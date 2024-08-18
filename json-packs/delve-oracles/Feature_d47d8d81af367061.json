@@ -1,0 +1,16 @@
+{
+  "name": "Feature",
+  "description": "Use the @Compendium[foundry-ironsworn.delveoracles.d8b2eb625a1ce5f2]{Aspect} and @Compendium[foundry-ironsworn.delveoracles.563b63487cbe2d70]{Focus} oracles to generate the details of a location or event within a site, or to answer questions about the site’s nature or history.\n\nThe basic function of these oracles is similar to the @Compendium[foundry-ironsworn.ironswornoracles.cb521e4b4d1c2d15]{Action} and @Compendium[foundry-ironsworn.ironswornoracles.3c1a7f81062a8a8a]{Theme} oracles in Ironsworn Core. They are abstract word prompts you can interpret as appropriate to the current situation and setting. For example, you are traveling through a @Compendium[foundry-ironsworn.delve-themes.3a633d3ce6079711]{Wild} @Compendium[foundry-ironsworn.delve-domains.1983ca8d062e44e1]{Tanglewood} and roll “Something unusual or unexpected” on the domain feature table. You then @Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} what you discover using the @Compendium[foundry-ironsworn.delveoracles.d8b2eb625a1ce5f2]{Aspect} and @Compendium[foundry-ironsworn.delveoracles.563b63487cbe2d70]{Focus} tables. The oracle responds, “Depleted Environment.” Interpreting this answer, you envision coming upon an expanse of cleared forest. All that remains of this once thick woodland is rotted stumps. What happened here? Perhaps the answer lies ahead...",
+  "type": "RollTable",
+  "_id": "d47d8d81af367061",
+  "sort": 204,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Feature",
+      "dsid": "oracle_collection:delve/feature"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!d47d8d81af367061"
+}

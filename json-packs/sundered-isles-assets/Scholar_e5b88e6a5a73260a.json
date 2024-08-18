@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "e5b88e6a5a73260a",
+  "folder": "e5df7144ec089f12",
+  "name": "Scholar",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [
+      {
+        "name": "Field",
+        "value": ""
+      },
+      {
+        "name": "Field",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Choose a field of study to represent your scholarly expertise. When you @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} by conducting extended research within your field of study, or when you @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten} through the comfort of dedicated learning, add +1 and take +1 momentum on a hit. On a match, you piece together an enlightening or harrowing theory; envision the nature of this revelation and mark 1 tick on your discoveries legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} through cursory observation of a situation that falls within your field of study, or when you @Compendium[foundry-ironsworn.starforgedmoves.9f538fabf8998c5b]{Compel} using your expertise to speak truth or logic, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You apply yourself to another discipline. Choose a second field of study.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/scholar",
+      "dsid": "asset:sundered_isles/path/scholar"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!e5b88e6a5a73260a"
+}

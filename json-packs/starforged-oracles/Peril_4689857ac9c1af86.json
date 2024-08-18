@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Infested/Peril",
-      "category": "Starforged/Oracles/Location_Themes/Infested"
+      "category": "Starforged/Oracles/Location_Themes/Infested",
+      "dsid": "oracle_rollable:starforged/location_theme/infested/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Use this table to help envision a complication or hazard.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         9
       ],
       "text": "Creatures attack without warning",
-      "_id": "16cf9620b5e4ae58",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.16cf9620b5e4ae58"
+      "_key": "!tables.results!4689857ac9c1af86.5e8ddfcb10f7a9a9",
+      "_id": "5e8ddfcb10f7a9a9"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         18
       ],
       "text": "Creatures guided or controlled by a greater threat",
-      "_id": "f82ae5461b18e8cc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.f82ae5461b18e8cc"
+      "_key": "!tables.results!4689857ac9c1af86.5d3a9e9b599d00e0",
+      "_id": "5d3a9e9b599d00e0"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         27
       ],
       "text": "Creatures reveal new aspects or abilities",
-      "_id": "faa72727f9016412",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.faa72727f9016412"
+      "_key": "!tables.results!4689857ac9c1af86.b642d0b6166af588",
+      "_id": "b642d0b6166af588"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         36
       ],
       "text": "Creatures reveal surprising cleverness",
-      "_id": "b3e1ec1d6abec6f7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.b3e1ec1d6abec6f7"
+      "_key": "!tables.results!4689857ac9c1af86.d1cdadf1f3d1aeda",
+      "_id": "d1cdadf1f3d1aeda"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         45
       ],
       "text": "Creatures take or destroy something important",
-      "_id": "f2d57aebe167f33b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.f2d57aebe167f33b"
+      "_key": "!tables.results!4689857ac9c1af86.62b7892a8575d246",
+      "_id": "62b7892a8575d246"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         54
       ],
       "text": "Discovery of a live but threatened victim",
-      "_id": "9a0de9e4c1a9f06f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.9a0de9e4c1a9f06f"
+      "_key": "!tables.results!4689857ac9c1af86.ee88f3900e7582ce",
+      "_id": "ee88f3900e7582ce"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         63
       ],
       "text": "Hazardous architecture or terrain",
-      "_id": "31ffa005de4c1348",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.31ffa005de4c1348"
+      "_key": "!tables.results!4689857ac9c1af86.6883ce8dadbabdb9",
+      "_id": "6883ce8dadbabdb9"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         72
       ],
       "text": "Lured or driven into a trap or dead-end",
-      "_id": "1b4712eb3c4ba82d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.1b4712eb3c4ba82d"
+      "_key": "!tables.results!4689857ac9c1af86.cbcc288c50e4fbb5",
+      "_id": "cbcc288c50e4fbb5"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         81
       ],
       "text": "Powerful or dominant creature reveals itself",
-      "_id": "eedce5f94406d10b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.eedce5f94406d10b"
+      "_key": "!tables.results!4689857ac9c1af86.0f35e08a4869c481",
+      "_id": "0f35e08a4869c481"
     },
     {
       "range": [
@@ -144,27 +100,17 @@
         90
       ],
       "text": "Toxic or sickening environment",
-      "_id": "aa545cdc06129fd7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.aa545cdc06129fd7"
+      "_key": "!tables.results!4689857ac9c1af86.e5c5ec06d8ad172a",
+      "_id": "e5c5ec06d8ad172a"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "6586844d634ec5a2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.6586844d634ec5a2"
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!4689857ac9c1af86.aadf731aac31d34b",
+      "_id": "aadf731aac31d34b"
     },
     {
       "range": [
@@ -172,29 +118,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "6355ac3dff9a2a21",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4689857ac9c1af86.6355ac3dff9a2a21"
+      "_key": "!tables.results!4689857ac9c1af86.280c2c50b3b04b38",
+      "_id": "280c2c50b3b04b38"
     }
   ],
   "folder": "4289e90998719500",
   "sort": 375,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!4689857ac9c1af86"
 }

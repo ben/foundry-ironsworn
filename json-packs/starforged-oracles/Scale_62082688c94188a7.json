@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Creatures/Scale",
-      "category": "Starforged/Oracles/Creatures"
+      "category": "Starforged/Oracles/Creatures",
+      "dsid": "oracle_rollable:starforged/creature/scale"
     }
   },
   "name": "Scale",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Minuscule (bug-sized)",
-      "_id": "cd6d4ed2946def86",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!62082688c94188a7.cd6d4ed2946def86"
+      "_key": "!tables.results!62082688c94188a7.3670f781414ca57a",
+      "_id": "3670f781414ca57a"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         10
       ],
       "text": "Tiny (rodent-sized)",
-      "_id": "65aa8e34bc4184b8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!62082688c94188a7.65aa8e34bc4184b8"
+      "_key": "!tables.results!62082688c94188a7.80442655980c6945",
+      "_id": "80442655980c6945"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         25
       ],
       "text": "Small (dog-sized)",
-      "_id": "02d030a4980c468c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!62082688c94188a7.02d030a4980c468c"
+      "_key": "!tables.results!62082688c94188a7.8b9f16d609e5eb41",
+      "_id": "8b9f16d609e5eb41"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         60
       ],
       "text": "Medium (person-sized)",
-      "_id": "66a55364a07444bc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!62082688c94188a7.66a55364a07444bc"
+      "_key": "!tables.results!62082688c94188a7.956d26a0fe9259e8",
+      "_id": "956d26a0fe9259e8"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         90
       ],
       "text": "Large (vehicle-sized)",
-      "_id": "c20f7a6f3bcaf462",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!62082688c94188a7.c20f7a6f3bcaf462"
+      "_key": "!tables.results!62082688c94188a7.e1f7cb13dfb3eb7c",
+      "_id": "e1f7cb13dfb3eb7c"
     },
     {
       "range": [
@@ -88,43 +64,21 @@
         99
       ],
       "text": "Huge (whale-sized)",
-      "_id": "4abf778c065fc4d0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!62082688c94188a7.4abf778c065fc4d0"
+      "_key": "!tables.results!62082688c94188a7.1ef52452c3db9e40",
+      "_id": "1ef52452c3db9e40"
     },
     {
       "range": [
         100,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Creatures/Ultra-scale\"><i class=\"fa fa-caret-right\"></i> Ultra-scale</a>",
-      "_id": "0c8d6866939293ae",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!62082688c94188a7.0c8d6866939293ae"
+      "text": "[Ultra-scale](datasworn:oracle_rollable:starforged/creature/ultra_scale)",
+      "_key": "!tables.results!62082688c94188a7.e6dbd19a81ef4fc0",
+      "_id": "e6dbd19a81ef4fc0"
     }
   ],
   "folder": "5b1e2f2fead08924",
   "sort": 336,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!62082688c94188a7"
 }

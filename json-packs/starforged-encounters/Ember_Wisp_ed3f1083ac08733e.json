@@ -1,10 +1,10 @@
 {
   "_id": "ed3f1083ac08733e",
   "type": "progress",
-  "name": "Ember Wisp",
+  "name": "Ember wisp",
   "img": "icons/magic/light/orbs-smoke-pink.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Ethereal, spaceborne creatures</p>\n    <p class=\"nogrow\">Fiery, pulsing glow</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Ride the drifts</p>\n    <p class=\"nogrow\">Move together in dizzying patterns of light</p>\n    <p class=\"nogrow\">Seek out sources of energy</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Surround and envelop</p>\n    <p class=\"nogrow\">Absorb energy</p>\n  </div>\n</div>\n\n<p>For some spacers, sighting these strange, spectral creatures on a spaceborne journey is a portent of a change in fortune. A few even profess to divine meaning from their elaborate, luminous dance, as people of old would interpret omens by studying the flight of birds. Others refer to the wisps as corpse lights, believing they are the spirits of ancient beings cursed to linger forever within the cold void between stars.</p>\n<p>Less superstitious spacers swear on various methods of “shooing” wisps away—everything from cycling the engines to cutting power entirely for a minute or so and allowing the creatures to move on.</p>\n\n<blockquote>Quest Starter: <p>Along a remote passage, a swarm of ember wisps left a cargo ship stranded and without power. What crucial and time-sensitive cargo does this ship carry? Who races against you to secure it?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.996af9a31a49c0f0]{Wisp Congregation}</li>\n</ul>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Ethereal, spaceborne creatures</p>\n<p class=\"nogrow\">Fiery, pulsing glow</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Ride the drifts</p>\n<p class=\"nogrow\">Move together in dizzying patterns of light</p>\n<p class=\"nogrow\">Seek out sources of energy</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Surround and envelop</p>\n<p class=\"nogrow\">Absorb energy</p>\n</div>\n</div>\n\n<p>For some spacers, sighting these strange, spectral creatures on a spaceborne journey is a portent of a change in fortune. A few even profess to divine meaning from their elaborate, luminous dance, as people of old would interpret omens by studying the flight of birds. Others refer to the wisps as corpse lights, believing they are the spirits of ancient beings cursed to linger forever within the cold void between stars.</p>\n<p>Less superstitious spacers swear on various methods of “shooing” wisps away—everything from cycling the engines to cutting power entirely for a minute or so and allowing the creatures to move on.</p>\n\n<blockquote>Quest Starter: <p>Along a remote passage, a swarm of ember wisps left a cargo ship stranded and without power. What crucial and time-sensitive cargo does this ship carry? Who races against you to secure it?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.996af9a31a49c0f0]{Wisp congregation}</li>\n</ul>",
     "rank": 1,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/ember_wisp"
+    }
   },
   "_key": "!items!ed3f1083ac08733e"
 }

@@ -1,0 +1,56 @@
+{
+  "_id": "4f7dcda6a4c1453a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure",
+      "dsid": "oracle_rollable:sundered_isles/treasure/repository"
+    }
+  },
+  "name": "Treasure Repository",
+  "description": "<p>Choose the scale of the treasure’s repository—small, medium, large, or vast—as appropriate to situation and location. See the examples in the table below. If unsure, roll for the answer. The result helps set the potential Value of the treasure.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "Small",
+      "_key": "!tables.results!4f7dcda6a4c1453a.598d5441e27496b7",
+      "_id": "598d5441e27496b7"
+    },
+    {
+      "range": [
+        26,
+        70
+      ],
+      "text": "Medium",
+      "_key": "!tables.results!4f7dcda6a4c1453a.d639d6ac609e5064",
+      "_id": "d639d6ac609e5064"
+    },
+    {
+      "range": [
+        71,
+        95
+      ],
+      "text": "Large",
+      "_key": "!tables.results!4f7dcda6a4c1453a.688162d93755ba82",
+      "_id": "688162d93755ba82"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Vast",
+      "_key": "!tables.results!4f7dcda6a4c1453a.e85e17398c8e59f6",
+      "_id": "e85e17398c8e59f6"
+    }
+  ],
+  "folder": "4b1f1e3c1b624444",
+  "sort": 221,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4f7dcda6a4c1453a"
+}

@@ -1,0 +1,200 @@
+{
+  "_id": "1e3463e94c54d419",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/region_landmarks",
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/swamp"
+    }
+  },
+  "name": "Swamp",
+  "description": "<p>Flooded forest with thick vegetation</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Abandoned boat or raft",
+      "_key": "!tables.results!1e3463e94c54d419.3f65b8decf366834",
+      "_id": "3f65b8decf366834"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Ancient tree with sprawling root system",
+      "_key": "!tables.results!1e3463e94c54d419.1db9c9b57bbd8064",
+      "_id": "1db9c9b57bbd8064"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Barricade of rotting logs",
+      "_key": "!tables.results!1e3463e94c54d419.4fbfd7d657662414",
+      "_id": "4fbfd7d657662414"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Crumbling, moss-covered monument",
+      "_key": "!tables.results!1e3463e94c54d419.23b7b230d8634998",
+      "_id": "23b7b230d8634998"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Dank cave hung with curtains of moss",
+      "_key": "!tables.results!1e3463e94c54d419.5040f7c2f2c0e857",
+      "_id": "5040f7c2f2c0e857"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Decaying, half-sunk homestead",
+      "_key": "!tables.results!1e3463e94c54d419.3dbf65f527de825a",
+      "_id": "3dbf65f527de825a"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Dense canopy of intertwined branches",
+      "_key": "!tables.results!1e3463e94c54d419.298d0224cbaa9e7b",
+      "_id": "298d0224cbaa9e7b"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Insects swarm above stagnant water",
+      "_key": "!tables.results!1e3463e94c54d419.99b200926a0fd7fb",
+      "_id": "99b200926a0fd7fb"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Large sandy island topped by trees",
+      "_key": "!tables.results!1e3463e94c54d419.c690df2cbcedba53",
+      "_id": "c690df2cbcedba53"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Murky waterway through misty woods",
+      "_key": "!tables.results!1e3463e94c54d419.f0bca43fccaa4f6e",
+      "_id": "f0bca43fccaa4f6e"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Pond filled with fragrant, floating flowers",
+      "_key": "!tables.results!1e3463e94c54d419.394eee9f3fa9c2b6",
+      "_id": "394eee9f3fa9c2b6"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Ramshackle bridges connect dry land",
+      "_key": "!tables.results!1e3463e94c54d419.ca3edbbd3b002c7f",
+      "_id": "ca3edbbd3b002c7f"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Rocky hillock",
+      "_key": "!tables.results!1e3463e94c54d419.7369f6ea665bc996",
+      "_id": "7369f6ea665bc996"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Slow-moving, muddy channel",
+      "_key": "!tables.results!1e3463e94c54d419.710b3aabefe00832",
+      "_id": "710b3aabefe00832"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Solitary hut on stilts",
+      "_key": "!tables.results!1e3463e94c54d419.18d5c4a547ac9863",
+      "_id": "18d5c4a547ac9863"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Stirrings of a large creature",
+      "_key": "!tables.results!1e3463e94c54d419.f10dcb0d63b7e8b8",
+      "_id": "f10dcb0d63b7e8b8"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Tangled thicket of tree roots and shrubs",
+      "_key": "!tables.results!1e3463e94c54d419.9e862e327674f378",
+      "_id": "9e862e327674f378"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Thick vegetation in mucky soil",
+      "_key": "!tables.results!1e3463e94c54d419.799546eca827dab3",
+      "_id": "799546eca827dab3"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Watery maze of towering tree trunks",
+      "_key": "!tables.results!1e3463e94c54d419.1bc9cceb53a18acf",
+      "_id": "1bc9cceb53a18acf"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wrecked ship or boat",
+      "_key": "!tables.results!1e3463e94c54d419.e399476372595dfd",
+      "_id": "e399476372595dfd"
+    }
+  ],
+  "folder": "a74b251068596264",
+  "sort": 153,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1e3463e94c54d419"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Research/Peril",
-      "category": "Starforged/Oracles/Derelicts/Research"
+      "category": "Starforged/Oracles/Derelicts/Research",
+      "dsid": "oracle_rollable:starforged/derelict/research/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Automated containment protocols are activated",
-      "_id": "ee05b855ebf2b8ac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.ee05b855ebf2b8ac"
+      "_key": "!tables.results!b643fbd885826f05.2c98079fb15b2d4c",
+      "_id": "2c98079fb15b2d4c"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Biological infestation",
-      "_id": "e7d4b53146633f2a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.e7d4b53146633f2a"
+      "_key": "!tables.results!b643fbd885826f05.348f5ba03ae542a8",
+      "_id": "348f5ba03ae542a8"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Dangerous specimen",
-      "_id": "269c0535e4ff3b91",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.269c0535e4ff3b91"
+      "_key": "!tables.results!b643fbd885826f05.c24021453c8726ca",
+      "_id": "c24021453c8726ca"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Disturbing outcome of a failed experiment",
-      "_id": "f584981c817ba290",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.f584981c817ba290"
+      "_key": "!tables.results!b643fbd885826f05.f06c0a2b1c616d98",
+      "_id": "f06c0a2b1c616d98"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Evidence of sinister experiments",
-      "_id": "608e2e3fe0099b81",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.608e2e3fe0099b81"
+      "_key": "!tables.results!b643fbd885826f05.df02f28638083b9a",
+      "_id": "df02f28638083b9a"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Fragile vault holds a dire threat",
-      "_id": "59999b53d4d06384",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.59999b53d4d06384"
+      "_key": "!tables.results!b643fbd885826f05.4a52d0bafe501ea4",
+      "_id": "4a52d0bafe501ea4"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Signs of broken containment",
-      "_id": "37a1252d8ecca80b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.37a1252d8ecca80b"
+      "_key": "!tables.results!b643fbd885826f05.423fccd23dd5d98f",
+      "_id": "423fccd23dd5d98f"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Toxic environment",
-      "_id": "2f86018f5ead0593",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.2f86018f5ead0593"
+      "_key": "!tables.results!b643fbd885826f05.fea458df22c1d51a",
+      "_id": "fea458df22c1d51a"
     },
     {
       "range": [
@@ -130,27 +91,17 @@
         90
       ],
       "text": "Unstable technology",
-      "_id": "f2720c9b98abfd47",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.f2720c9b98abfd47"
+      "_key": "!tables.results!b643fbd885826f05.049f0b2e2001d0f4",
+      "_id": "049f0b2e2001d0f4"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "4f37a9a1832cdf89",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.4f37a9a1832cdf89"
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!b643fbd885826f05.d246034194fb3ad4",
+      "_id": "d246034194fb3ad4"
     },
     {
       "range": [
@@ -158,29 +109,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "0451057d32e74c04",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b643fbd885826f05.0451057d32e74c04"
+      "_key": "!tables.results!b643fbd885826f05.cdf5b04eb6b24780",
+      "_id": "cdf5b04eb6b24780"
     }
   ],
   "folder": "9987a5b1c316f884",
   "sort": 359,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!b643fbd885826f05"
 }

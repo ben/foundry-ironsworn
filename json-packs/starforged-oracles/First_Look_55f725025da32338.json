@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Starships/First_Look",
-      "category": "Starforged/Oracles/Starships"
+      "category": "Starforged/Oracles/Starships",
+      "dsid": "oracle_rollable:starforged/starship/first_look"
     }
   },
   "name": "First Look",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "Abnormal sensor readings",
-      "_id": "f6027542d0a5c84c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.f6027542d0a5c84c"
+      "_key": "!tables.results!55f725025da32338.bb96f63eb1dcc0fc",
+      "_id": "bb96f63eb1dcc0fc"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         8
       ],
       "text": "Brightly painted",
-      "_id": "82e9e1cbf902cab4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.82e9e1cbf902cab4"
+      "_key": "!tables.results!55f725025da32338.7cef635a4275bc56",
+      "_id": "7cef635a4275bc56"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         13
       ],
       "text": "Bristling with weapons",
-      "_id": "9de11da6b3a16ee9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.9de11da6b3a16ee9"
+      "_key": "!tables.results!55f725025da32338.988381c7fa475c88",
+      "_id": "988381c7fa475c88"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         18
       ],
       "text": "Dark or stealthy",
-      "_id": "53332d0c70566a8f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.53332d0c70566a8f"
+      "_key": "!tables.results!55f725025da32338.b8439eec9f1a0909",
+      "_id": "b8439eec9f1a0909"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         23
       ],
       "text": "Heavy armor",
-      "_id": "7da11e20a92b3812",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.7da11e20a92b3812"
+      "_key": "!tables.results!55f725025da32338.a4cc75569bf4f68a",
+      "_id": "a4cc75569bf4f68a"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         28
       ],
       "text": "Immobile",
-      "_id": "c0836c7660a36613",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.c0836c7660a36613"
+      "_key": "!tables.results!55f725025da32338.341c10c918a018b3",
+      "_id": "341c10c918a018b3"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         33
       ],
       "text": "Intimidating profile",
-      "_id": "b2f1fdfd5f604e69",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.b2f1fdfd5f604e69"
+      "_key": "!tables.results!55f725025da32338.cdabe61fcff37429",
+      "_id": "cdabe61fcff37429"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         37
       ],
       "text": "Large sensor arrays",
-      "_id": "9700d767df2b17c6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.9700d767df2b17c6"
+      "_key": "!tables.results!55f725025da32338.67c7285c55c184e4",
+      "_id": "67c7285c55c184e4"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         41
       ],
       "text": "Leaking radiation",
-      "_id": "49ee859651268236",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.49ee859651268236"
+      "_key": "!tables.results!55f725025da32338.b65b55bb320c3cec",
+      "_id": "b65b55bb320c3cec"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         45
       ],
       "text": "Low-profile or disguised",
-      "_id": "4b6f2e7ef9990acc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.4b6f2e7ef9990acc"
+      "_key": "!tables.results!55f725025da32338.86c21f04ec74acb4",
+      "_id": "86c21f04ec74acb4"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         49
       ],
       "text": "Modern or advanced design",
-      "_id": "01ac84473b839db9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.01ac84473b839db9"
+      "_key": "!tables.results!55f725025da32338.947201cb77d0d6da",
+      "_id": "947201cb77d0d6da"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         54
       ],
       "text": "Obsolete design",
-      "_id": "2b17e89ddb63cdff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.2b17e89ddb63cdff"
+      "_key": "!tables.results!55f725025da32338.e0ab9afcac3ea1ca",
+      "_id": "e0ab9afcac3ea1ca"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         59
       ],
       "text": "Obvious damage",
-      "_id": "4a2ef2094a1b949f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.4a2ef2094a1b949f"
+      "_key": "!tables.results!55f725025da32338.cdea1d8b69d06e05",
+      "_id": "cdea1d8b69d06e05"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         63
       ],
       "text": "Biological components",
-      "_id": "482209ac45360d75",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.482209ac45360d75"
+      "_key": "!tables.results!55f725025da32338.325a1e9b49156c9b",
+      "_id": "325a1e9b49156c9b"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         67
       ],
       "text": "Ornate markings",
-      "_id": "b310852164fdecdf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.b310852164fdecdf"
+      "_key": "!tables.results!55f725025da32338.245974725cc24ea2",
+      "_id": "245974725cc24ea2"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         71
       ],
       "text": "Oversized engines",
-      "_id": "531ec359abc08610",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.531ec359abc08610"
+      "_key": "!tables.results!55f725025da32338.ca66acd782697da0",
+      "_id": "ca66acd782697da0"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         75
       ],
       "text": "Prominent guild emblem",
-      "_id": "c9b1126538ac38ca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.c9b1126538ac38ca"
+      "_key": "!tables.results!55f725025da32338.04baae8f40dd97dc",
+      "_id": "04baae8f40dd97dc"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         80
       ],
       "text": "Refitted or repurposed hull",
-      "_id": "b509b426e23f4c6d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.b509b426e23f4c6d"
+      "_key": "!tables.results!55f725025da32338.091fe000d1522d20",
+      "_id": "091fe000d1522d20"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         85
       ],
       "text": "Scarred hull",
-      "_id": "93868001c98e1702",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.93868001c98e1702"
+      "_key": "!tables.results!55f725025da32338.62cd75cd7bcb0169",
+      "_id": "62cd75cd7bcb0169"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         90
       ],
       "text": "Built from scrap",
-      "_id": "c60ac300d1b514be",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.c60ac300d1b514be"
+      "_key": "!tables.results!55f725025da32338.a76dfbe08bca54b2",
+      "_id": "a76dfbe08bca54b2"
     },
     {
       "range": [
@@ -298,43 +199,21 @@
         94
       ],
       "text": "Towing or linked",
-      "_id": "e2664644259d28dc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.e2664644259d28dc"
+      "_key": "!tables.results!55f725025da32338.011b265e3b6d8934",
+      "_id": "011b265e3b6d8934"
     },
     {
       "range": [
         95,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "574bc9fb10b5bd0c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f725025da32338.574bc9fb10b5bd0c"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!55f725025da32338.e42f638deceeb378",
+      "_id": "e42f638deceeb378"
     }
   ],
   "folder": "eea3419c88a919cd",
   "sort": 327,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!55f725025da32338"
 }

@@ -1,0 +1,596 @@
+{
+  "_id": "19b1c62d7f0845c5",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/society",
+      "dsid": "oracle_rollable:sundered_isles/faction/society/touchstones"
+    }
+  },
+  "name": "Society Touchstones",
+  "description": "<p>These touchstones represent common aspects of a society—not universal truths. Individual people and communities can contradict these assumptions with their own touchstones. If you encounter a far-flung community that is part of a known society, you can recheck this table for unique characteristics.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Affinity for celestial objects and motifs",
+      "_key": "!tables.results!19b1c62d7f0845c5.3c41c3be4669ca73",
+      "_id": "3c41c3be4669ca73"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Affinity for nature and related motifs",
+      "_key": "!tables.results!19b1c62d7f0845c5.b67e2e3ee4115a24",
+      "_id": "b67e2e3ee4115a24"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Affinity for the sea and related motifs",
+      "_key": "!tables.results!19b1c62d7f0845c5.71d3a723b091b151",
+      "_id": "71d3a723b091b151"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Affinity for fire and related motifs",
+      "_key": "!tables.results!19b1c62d7f0845c5.14b65bb455fc4251",
+      "_id": "14b65bb455fc4251"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Banishes the disloyal",
+      "_key": "!tables.results!19b1c62d7f0845c5.d7ed8523cf335bde",
+      "_id": "d7ed8523cf335bde"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Forsakes ships and the sea",
+      "_key": "!tables.results!19b1c62d7f0845c5.a492e0efc1d01e09",
+      "_id": "a492e0efc1d01e09"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Idealizes grace and swiftness",
+      "_key": "!tables.results!19b1c62d7f0845c5.aaf4ebc82302c0f4",
+      "_id": "aaf4ebc82302c0f4"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Idealizes strength and power",
+      "_key": "!tables.results!19b1c62d7f0845c5.6248bac65c9647da",
+      "_id": "6248bac65c9647da"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Idealizes subterfuge and cunning",
+      "_key": "!tables.results!19b1c62d7f0845c5.601a20acdfc4bdc9",
+      "_id": "601a20acdfc4bdc9"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Lives mostly at sea",
+      "_key": "!tables.results!19b1c62d7f0845c5.5c99154f52c1deed",
+      "_id": "5c99154f52c1deed"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Practices communal living",
+      "_key": "!tables.results!19b1c62d7f0845c5.77229e4d1d88fadd",
+      "_id": "77229e4d1d88fadd"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Practices mysticism or magic",
+      "_key": "!tables.results!19b1c62d7f0845c5.62807c1f3c888f45",
+      "_id": "62807c1f3c888f45"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Practices unusual death rites",
+      "_key": "!tables.results!19b1c62d7f0845c5.5ac71553cf1848be",
+      "_id": "5ac71553cf1848be"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Resolves disputes through formal duels",
+      "_key": "!tables.results!19b1c62d7f0845c5.2f56fd8662bc31ec",
+      "_id": "2f56fd8662bc31ec"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Studies the stars and moons for portents",
+      "_key": "!tables.results!19b1c62d7f0845c5.700b03413ee3c147",
+      "_id": "700b03413ee3c147"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Suspicious of outsiders",
+      "_key": "!tables.results!19b1c62d7f0845c5.0e3bdb2697decdbc",
+      "_id": "0e3bdb2697decdbc"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Trains an order of elite warriors",
+      "_key": "!tables.results!19b1c62d7f0845c5.f04dd27ba932cf7e",
+      "_id": "f04dd27ba932cf7e"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Values artistic expression",
+      "_key": "!tables.results!19b1c62d7f0845c5.34628a63037263a9",
+      "_id": "34628a63037263a9"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Values conquest and battle prowess",
+      "_key": "!tables.results!19b1c62d7f0845c5.245854562ceb433a",
+      "_id": "245854562ceb433a"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Values courtesy and hospitality",
+      "_key": "!tables.results!19b1c62d7f0845c5.68302db9088fb43a",
+      "_id": "68302db9088fb43a"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Values crafts and workmanship",
+      "_key": "!tables.results!19b1c62d7f0845c5.0b4ed5d7e1aedb8f",
+      "_id": "0b4ed5d7e1aedb8f"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Values diplomacy and negotiation",
+      "_key": "!tables.results!19b1c62d7f0845c5.57987a537fa9e68c",
+      "_id": "57987a537fa9e68c"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Values farming and agriculture",
+      "_key": "!tables.results!19b1c62d7f0845c5.2765da4f42d1631a",
+      "_id": "2765da4f42d1631a"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Values medicine and healing",
+      "_key": "!tables.results!19b1c62d7f0845c5.f77cd75e58a8d81c",
+      "_id": "f77cd75e58a8d81c"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Values science and knowledge",
+      "_key": "!tables.results!19b1c62d7f0845c5.337f27fcd128e9c3",
+      "_id": "337f27fcd128e9c3"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Values stewardship of nature",
+      "_key": "!tables.results!19b1c62d7f0845c5.b7b0d4f5ab6c4021",
+      "_id": "b7b0d4f5ab6c4021"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Values trade and commerce",
+      "_key": "!tables.results!19b1c62d7f0845c5.7a75b7295b4343e9",
+      "_id": "7a75b7295b4343e9"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Values voyage and discovery",
+      "_key": "!tables.results!19b1c62d7f0845c5.ff742d110705954e",
+      "_id": "ff742d110705954e"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Bonds with a certain type of creature",
+      "_key": "!tables.results!19b1c62d7f0845c5.829f7587021b5ed3",
+      "_id": "829f7587021b5ed3"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Builds elaborate monuments",
+      "_key": "!tables.results!19b1c62d7f0845c5.054164e877764fb0",
+      "_id": "054164e877764fb0"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Carefully preserves histories and maps",
+      "_key": "!tables.results!19b1c62d7f0845c5.78e28bd252492b5d",
+      "_id": "78e28bd252492b5d"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Conducts piracy or raids",
+      "_key": "!tables.results!19b1c62d7f0845c5.ad6eeb60409ceff4",
+      "_id": "ad6eeb60409ceff4"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Conducts rites of adulthood or ascension",
+      "_key": "!tables.results!19b1c62d7f0845c5.4749bf04d488548a",
+      "_id": "4749bf04d488548a"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Distrustful of mysticism or magic",
+      "_key": "!tables.results!19b1c62d7f0845c5.24d9d74a0357fd1f",
+      "_id": "24d9d74a0357fd1f"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Embarks on pilgrimages",
+      "_key": "!tables.results!19b1c62d7f0845c5.69eabca1eba9b546",
+      "_id": "69eabca1eba9b546"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Favors a signature weapon",
+      "_key": "!tables.results!19b1c62d7f0845c5.0214b40673fc2b91",
+      "_id": "0214b40673fc2b91"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Favors audacious and distinctive styles",
+      "_key": "!tables.results!19b1c62d7f0845c5.f78f7f896f23a07b",
+      "_id": "f78f7f896f23a07b"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Favors austere and practical styles",
+      "_key": "!tables.results!19b1c62d7f0845c5.c74bae7a358cf433",
+      "_id": "c74bae7a358cf433"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Favors body modifications or tattoos",
+      "_key": "!tables.results!19b1c62d7f0845c5.d037111eeb78dd29",
+      "_id": "d037111eeb78dd29"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Favors isolationism and privacy",
+      "_key": "!tables.results!19b1c62d7f0845c5.acb0eae9eb3f1572",
+      "_id": "acb0eae9eb3f1572"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Favors jewelry and adornments",
+      "_key": "!tables.results!19b1c62d7f0845c5.62b72463fb49c252",
+      "_id": "62b72463fb49c252"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Follows a code of pacifism",
+      "_key": "!tables.results!19b1c62d7f0845c5.fd9843fb01374a3d",
+      "_id": "fd9843fb01374a3d"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Follows a nomadic lifestyle",
+      "_key": "!tables.results!19b1c62d7f0845c5.63916ac59b10c0cb",
+      "_id": "63916ac59b10c0cb"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Follows elaborate rules of courtship",
+      "_key": "!tables.results!19b1c62d7f0845c5.f74038438db03f83",
+      "_id": "f74038438db03f83"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Guided by a strict code of honor",
+      "_key": "!tables.results!19b1c62d7f0845c5.5987038cce12cb06",
+      "_id": "5987038cce12cb06"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Guided by superstition or prophecy",
+      "_key": "!tables.results!19b1c62d7f0845c5.49b266c0cd396092",
+      "_id": "49b266c0cd396092"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Holds communal hunts",
+      "_key": "!tables.results!19b1c62d7f0845c5.ec18479a6b75e61c",
+      "_id": "ec18479a6b75e61c"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Holds seasonal festivals",
+      "_key": "!tables.results!19b1c62d7f0845c5.e01b1fca8538a05f",
+      "_id": "e01b1fca8538a05f"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Holds tournaments of skill or prowess",
+      "_key": "!tables.results!19b1c62d7f0845c5.beadda899a05939e",
+      "_id": "beadda899a05939e"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Idolizes a martyred leader",
+      "_key": "!tables.results!19b1c62d7f0845c5.81e21e1e7fccbe2b",
+      "_id": "81e21e1e7fccbe2b"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Lives within familial clans",
+      "_key": "!tables.results!19b1c62d7f0845c5.a5068067b1ca4112",
+      "_id": "a5068067b1ca4112"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Maintains a strict caste system",
+      "_key": "!tables.results!19b1c62d7f0845c5.0a036a0241e56f6b",
+      "_id": "0a036a0241e56f6b"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Perpetuates blood feuds",
+      "_key": "!tables.results!19b1c62d7f0845c5.d0449ffbd6f3a9bd",
+      "_id": "d0449ffbd6f3a9bd"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Practices a renowned trade or craft",
+      "_key": "!tables.results!19b1c62d7f0845c5.a9b1abf2de063376",
+      "_id": "a9b1abf2de063376"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Practices meditation",
+      "_key": "!tables.results!19b1c62d7f0845c5.6e81c7743c1508f1",
+      "_id": "6e81c7743c1508f1"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Practices storytelling and oral histories",
+      "_key": "!tables.results!19b1c62d7f0845c5.5ffb6188559a5238",
+      "_id": "5ffb6188559a5238"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Practices unique forms of dance or music",
+      "_key": "!tables.results!19b1c62d7f0845c5.a41459652e48d840",
+      "_id": "a41459652e48d840"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Rallies communal defenses or militias",
+      "_key": "!tables.results!19b1c62d7f0845c5.361100983ea8e1fc",
+      "_id": "361100983ea8e1fc"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Reveres ancestors",
+      "_key": "!tables.results!19b1c62d7f0845c5.1d9c99d1870b3f24",
+      "_id": "1d9c99d1870b3f24"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Reveres nature and natural forces",
+      "_key": "!tables.results!19b1c62d7f0845c5.6f6ef2fdfdca40e5",
+      "_id": "6f6ef2fdfdca40e5"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Sails in a distinctive type of vessel",
+      "_key": "!tables.results!19b1c62d7f0845c5.b4a259302e1d9580",
+      "_id": "b4a259302e1d9580"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Seeks wisdom from oracles or seers",
+      "_key": "!tables.results!19b1c62d7f0845c5.1f0dec724cb63475",
+      "_id": "1f0dec724cb63475"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Shuns modern technology or weaponry",
+      "_key": "!tables.results!19b1c62d7f0845c5.6680a7fb3da5d6e9",
+      "_id": "6680a7fb3da5d6e9"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Speaks an ancient language",
+      "_key": "!tables.results!19b1c62d7f0845c5.1d291bf2d49650af",
+      "_id": "1d291bf2d49650af"
+    }
+  ],
+  "folder": "cef833f6783b86c0",
+  "sort": 179,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!19b1c62d7f0845c5"
+}

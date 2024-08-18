@@ -1,0 +1,65 @@
+{
+  "_id": "909cfb4526f720ac",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/scavenger"
+    }
+  },
+  "name": "Scavenger",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Beachcomber",
+      "_key": "!tables.results!909cfb4526f720ac.5c005e7d65b56326",
+      "_id": "5c005e7d65b56326"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Grave Robber",
+      "_key": "!tables.results!909cfb4526f720ac.088223e641e57bf6",
+      "_id": "088223e641e57bf6"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Relic hunter",
+      "_key": "!tables.results!909cfb4526f720ac.b692c731bdf8973f",
+      "_id": "b692c731bdf8973f"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Shipbreaker",
+      "_key": "!tables.results!909cfb4526f720ac.b04ea582030dae92",
+      "_id": "b04ea582030dae92"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Wreck diver",
+      "_key": "!tables.results!909cfb4526f720ac.999f2c2e521e57cd",
+      "_id": "999f2c2e521e57cd"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 189,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!909cfb4526f720ac"
+}

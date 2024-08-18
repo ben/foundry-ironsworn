@@ -1,0 +1,15 @@
+{
+  "name": "Settlement Size",
+  "description": "",
+  "type": "RollTable",
+  "_id": "39cb632324e87124",
+  "sort": 164,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/settlement/size"
+    }
+  },
+  "folder": "394153020f5e7a87",
+  "sorting": "a",
+  "_key": "!folders!39cb632324e87124"
+}

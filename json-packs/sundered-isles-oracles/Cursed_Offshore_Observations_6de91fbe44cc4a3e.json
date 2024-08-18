@@ -1,0 +1,380 @@
+{
+  "_id": "6de91fbe44cc4a3e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island",
+      "dsid": "oracle_rollable:sundered_isles/island/offshore_observations_cursed"
+    }
+  },
+  "name": "Cursed Offshore Observations",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Alluring illusion",
+      "_key": "!tables.results!6de91fbe44cc4a3e.a21a5c0317d363b8",
+      "_id": "a21a5c0317d363b8"
+    },
+    {
+      "range": [
+        4,
+        5
+      ],
+      "text": "Bloody coastal waters",
+      "_key": "!tables.results!6de91fbe44cc4a3e.1de8cc790e7aba17",
+      "_id": "1de8cc790e7aba17"
+    },
+    {
+      "range": [
+        6,
+        7
+      ],
+      "text": "Bone reef",
+      "_key": "!tables.results!6de91fbe44cc4a3e.cdfc22c5d4113257",
+      "_id": "cdfc22c5d4113257"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "Bone-covered beach",
+      "_key": "!tables.results!6de91fbe44cc4a3e.ae669387ff4477ab",
+      "_id": "ae669387ff4477ab"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Bound in snow or ice",
+      "_key": "!tables.results!6de91fbe44cc4a3e.96d3f74c70106d00",
+      "_id": "96d3f74c70106d00"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Dead sea life",
+      "_key": "!tables.results!6de91fbe44cc4a3e.44efc660cb211ea4",
+      "_id": "44efc660cb211ea4"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Devoid of wildlife",
+      "_key": "!tables.results!6de91fbe44cc4a3e.17ca924820cdaf41",
+      "_id": "17ca924820cdaf41"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Eerie singing or chants",
+      "_key": "!tables.results!6de91fbe44cc4a3e.b6af1cfd23352aae",
+      "_id": "b6af1cfd23352aae"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Glimpses of ghostly forms",
+      "_key": "!tables.results!6de91fbe44cc4a3e.58ef8a115f43fd66",
+      "_id": "58ef8a115f43fd66"
+    },
+    {
+      "range": [
+        22,
+        23
+      ],
+      "text": "Heaped tangle of wrecked ships",
+      "_key": "!tables.results!6de91fbe44cc4a3e.797a08f244de0a29",
+      "_id": "797a08f244de0a29"
+    },
+    {
+      "range": [
+        24,
+        25
+      ],
+      "text": "Hordes of fleeing birds",
+      "_key": "!tables.results!6de91fbe44cc4a3e.7610b52d37959e1c",
+      "_id": "7610b52d37959e1c"
+    },
+    {
+      "range": [
+        26,
+        28
+      ],
+      "text": "Monstrous beast stalks the shore",
+      "_key": "!tables.results!6de91fbe44cc4a3e.a5524a318887dd2e",
+      "_id": "a5524a318887dd2e"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Nightmarish or unearthly wildlife",
+      "_key": "!tables.results!6de91fbe44cc4a3e.9420c785f61610df",
+      "_id": "9420c785f61610df"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Ominous, beastly howls",
+      "_key": "!tables.results!6de91fbe44cc4a3e.a1d9035ac6fe6804",
+      "_id": "a1d9035ac6fe6804"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Oversized plants or wildlife",
+      "_key": "!tables.results!6de91fbe44cc4a3e.256ce1a5d36752df",
+      "_id": "256ce1a5d36752df"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "Phantom ship at anchor",
+      "_key": "!tables.results!6de91fbe44cc4a3e.7201fe2b5b3bce45",
+      "_id": "7201fe2b5b3bce45"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Phantom whispers",
+      "_key": "!tables.results!6de91fbe44cc4a3e.fb9b89296470ca8c",
+      "_id": "fb9b89296470ca8c"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Plants or creatures from out of time",
+      "_key": "!tables.results!6de91fbe44cc4a3e.74980e691b7ffd81",
+      "_id": "74980e691b7ffd81"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Resounding, titanic footfalls",
+      "_key": "!tables.results!6de91fbe44cc4a3e.8c8f5568ac10e151",
+      "_id": "8c8f5568ac10e151"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Rotting vegetation",
+      "_key": "!tables.results!6de91fbe44cc4a3e.5f1e3f791c00c7bb",
+      "_id": "5f1e3f791c00c7bb"
+    },
+    {
+      "range": [
+        46,
+        47
+      ],
+      "text": "Shifting or changing terrain",
+      "_key": "!tables.results!6de91fbe44cc4a3e.7c0adfacbbc31579",
+      "_id": "7c0adfacbbc31579"
+    },
+    {
+      "range": [
+        48,
+        52
+      ],
+      "text": "Ship graveyard",
+      "_key": "!tables.results!6de91fbe44cc4a3e.a4376400997399f6",
+      "_id": "a4376400997399f6"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Sinister warnings carved in rocks",
+      "_key": "!tables.results!6de91fbe44cc4a3e.7b20f1329c398062",
+      "_id": "7b20f1329c398062"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Skeletal corpses chained to rocks",
+      "_key": "!tables.results!6de91fbe44cc4a3e.75dd173a581d7f0c",
+      "_id": "75dd173a581d7f0c"
+    },
+    {
+      "range": [
+        58,
+        61
+      ],
+      "text": "Skull-shaped terrain feature",
+      "_key": "!tables.results!6de91fbe44cc4a3e.84cd4d8edca6d41b",
+      "_id": "84cd4d8edca6d41b"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Spectral lights",
+      "_key": "!tables.results!6de91fbe44cc4a3e.bb60c9a22c9bbee6",
+      "_id": "bb60c9a22c9bbee6"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Stagnant, foul-smelling coastal waters",
+      "_key": "!tables.results!6de91fbe44cc4a3e.c9aebc50aeb4eb92",
+      "_id": "c9aebc50aeb4eb92"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Stench of death",
+      "_key": "!tables.results!6de91fbe44cc4a3e.9dcc713487984403",
+      "_id": "9dcc713487984403"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Surrounded by arcane barrier",
+      "_key": "!tables.results!6de91fbe44cc4a3e.cbbdc446b3e86ff2",
+      "_id": "cbbdc446b3e86ff2"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Terrain or vegetation draped with webs",
+      "_key": "!tables.results!6de91fbe44cc4a3e.df8fb68e4ebb43f4",
+      "_id": "df8fb68e4ebb43f4"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Titanic skeleton",
+      "_key": "!tables.results!6de91fbe44cc4a3e.970563ab22abc8ba",
+      "_id": "970563ab22abc8ba"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Undead wildlife",
+      "_key": "!tables.results!6de91fbe44cc4a3e.e8021dc8c7ccc070",
+      "_id": "e8021dc8c7ccc070"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Unmoving fog",
+      "_key": "!tables.results!6de91fbe44cc4a3e.031b976d52062369",
+      "_id": "031b976d52062369"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Unnatural darkness",
+      "_key": "!tables.results!6de91fbe44cc4a3e.369083c2c297fa60",
+      "_id": "369083c2c297fa60"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Unnaturally aggressive wildlife",
+      "_key": "!tables.results!6de91fbe44cc4a3e.ac51e2ac1619a83a",
+      "_id": "ac51e2ac1619a83a"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "Unnerving sense of being watched",
+      "_key": "!tables.results!6de91fbe44cc4a3e.a889f92a0fbd43a6",
+      "_id": "a889f92a0fbd43a6"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "Unsettling quiet",
+      "_key": "!tables.results!6de91fbe44cc4a3e.941557ededb55364",
+      "_id": "941557ededb55364"
+    },
+    {
+      "range": [
+        92,
+        93
+      ],
+      "text": "Uprooted or broken vegetation",
+      "_key": "!tables.results!6de91fbe44cc4a3e.d4a573f8fdc993b7",
+      "_id": "d4a573f8fdc993b7"
+    },
+    {
+      "range": [
+        94,
+        95
+      ],
+      "text": "Washed-up corpses",
+      "_key": "!tables.results!6de91fbe44cc4a3e.60ee0f33d667cd48",
+      "_id": "60ee0f33d667cd48"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "[Cursed Weather](datasworn:oracle_rollable:sundered_isles/weather/cursed)",
+      "_key": "!tables.results!6de91fbe44cc4a3e.a054e66a0d8933b0",
+      "_id": "a054e66a0d8933b0"
+    }
+  ],
+  "folder": "775da3a96cc7c668",
+  "sort": 146,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6de91fbe44cc4a3e"
+}

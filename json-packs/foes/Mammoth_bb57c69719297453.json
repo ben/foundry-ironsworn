@@ -1,0 +1,27 @@
+{
+  "_id": "bb57c69719297453",
+  "type": "progress",
+  "name": "Mammoth",
+  "img": "icons/commodities/leather/fur-white.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Woolly fur</p>\n<p class=\"nogrow\">Large head and curved tusks</p>\n<p class=\"nogrow\">Prehensile trunk</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Migrate to fertile ground</p>\n<p class=\"nogrow\">Forage for food</p>\n<p class=\"nogrow\">Protect the young of the herd</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Form a protective circle</p>\n<p class=\"nogrow\">Charge</p>\n<p class=\"nogrow\">Trample</p>\n<p class=\"nogrow\">Gore</p>\n</div>\n</div>\n\n<p>These beasts resemble the elephants of the @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}’s southern realms, but are larger and covered in a coat of thick fur. They travel in herds among the Tempest Hills, migrating south with the winter and north with the spring. They are not aggressive creatures, but are fearless and will fight to the death to protect their young.</p>\n<p>A herd of mammoths is an amazing and humbling sight, but smart Ironlanders keep their distance and stay upwind.</p>\n\n<blockquote>Quest Starter: <p>A mammoth calf wanders alone into an Ironlander settlement. Why do you swear to reunite it with its herd?</p></blockquote>",
+    "rank": 4,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "b8ab7ea53c4096c5",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/beasts/mammoth"
+    }
+  },
+  "_key": "!items!bb57c69719297453"
+}

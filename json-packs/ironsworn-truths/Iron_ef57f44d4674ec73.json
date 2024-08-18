@@ -1,0 +1,84 @@
+{
+  "name": "Iron",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:classic/iron",
+      "dsid": "truth:classic/iron"
+    }
+  },
+  "_id": "ef57f44d4674ec73",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/iron.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "",
+        "Description": "The imposing hills and mountains of the Ironlands are rich in iron ore. Most prized of all is the star-forged black iron.",
+        "Quest": "The caravan, bound for the distant southlands, left the mining settlement last season but never arrived at its destination. It carried a bounty of black iron. Why is finding this lost caravan so important to you?",
+        "Roll template": {
+          "Description": "The imposing hills and mountains of the Ironlands are rich in iron ore. Most prized of all is the star-forged black iron."
+        }
+      },
+      "_id": "a3b0d5b5a267e75b",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!ef57f44d4674ec73.a3b0d5b5a267e75b"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/iron.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "",
+        "Description": "The weather is bleak. Rain and wind sweep in from the ocean. The winters are long and bitter. One of the first settlers complained, \"Only those made of iron dare live in this foul place\" – and thus our land was named.",
+        "Quest": "The harvest fell short. The unrelenting snows left the village isolated. The food is running out. What will you do to see these people through this harsh season?",
+        "Roll template": {
+          "Description": "The weather is bleak. Rain and wind sweep in from the ocean. The winters are long and bitter. One of the first settlers complained, \"Only those made of iron dare live in this foul place\" – and thus our land was named."
+        }
+      },
+      "_id": "83b1f18f09af34b7",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!ef57f44d4674ec73.83b1f18f09af34b7"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/iron.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "",
+        "Description": "Inscrutable metal pillars are found throughout the land. They are iron gray, and smooth as river stone. No one knows their purpose. Some say they are as old as the world. Some, such as the Iron Priests, worship them and swear vows upon them. Most make the warding sign and hurry along their way when they happen across one. The pillars do not tarnish, and even the sharpest blade cannot mark them.",
+        "Quest": "Your dreams are haunted by visions of a pillar which stands in an unfamiliar landscape. What do you see? Why are you sworn to seek it out?",
+        "Roll template": {
+          "Description": "Inscrutable metal pillars are found throughout the land. They are iron gray, and smooth as river stone. No one knows their purpose. Some say they are as old as the world. Some, such as the Iron Priests, worship them and swear vows upon them. Most make the warding sign and hurry along their way when they happen across one. The pillars do not tarnish, and even the sharpest blade cannot mark them."
+        }
+      },
+      "_id": "3a3e6d052d4600b7",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!ef57f44d4674ec73.3a3e6d052d4600b7"
+    }
+  ],
+  "folder": null,
+  "sort": 124,
+  "_key": "!journal!ef57f44d4674ec73"
+}

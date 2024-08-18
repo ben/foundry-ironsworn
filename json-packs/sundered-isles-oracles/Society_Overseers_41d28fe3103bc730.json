@@ -1,0 +1,146 @@
+{
+  "_id": "41d28fe3103bc730",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/society",
+      "dsid": "oracle_rollable:sundered_isles/faction/society/overseers"
+    }
+  },
+  "name": "Society Overseers",
+  "description": "<p>Use this table to reveal the most influential or powerful leaders within a society.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Appointed local leaders",
+      "_key": "!tables.results!41d28fe3103bc730.fbc97318c9e4e6c5",
+      "_id": "fbc97318c9e4e6c5"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Artisans or trade guilds",
+      "_key": "!tables.results!41d28fe3103bc730.6dadc9ae98618c95",
+      "_id": "6dadc9ae98618c95"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Delegates gathered at convocations",
+      "_key": "!tables.results!41d28fe3103bc730.e2fed74ca6811536",
+      "_id": "e2fed74ca6811536"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Elder councils",
+      "_key": "!tables.results!41d28fe3103bc730.f1b68daa4f17bf6b",
+      "_id": "f1b68daa4f17bf6b"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Hereditary rulers",
+      "_key": "!tables.results!41d28fe3103bc730.61dcbde1b220b732",
+      "_id": "61dcbde1b220b732"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Mystics or seers",
+      "_key": "!tables.results!41d28fe3103bc730.a0951caa01f798c3",
+      "_id": "a0951caa01f798c3"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Prophesied or fated rulers",
+      "_key": "!tables.results!41d28fe3103bc730.9a6291aeca455d50",
+      "_id": "9a6291aeca455d50"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Religious orders",
+      "_key": "!tables.results!41d28fe3103bc730.64fdf137a9ea32b5",
+      "_id": "64fdf137a9ea32b5"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Scholars or sages",
+      "_key": "!tables.results!41d28fe3103bc730.39025d66bae99bb2",
+      "_id": "39025d66bae99bb2"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Shadowy cabals",
+      "_key": "!tables.results!41d28fe3103bc730.6f8cecb5578a0bf5",
+      "_id": "6f8cecb5578a0bf5"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Warlords or champions",
+      "_key": "!tables.results!41d28fe3103bc730.67e97af1962a6ccd",
+      "_id": "67e97af1962a6ccd"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Single absolute authority",
+      "_key": "!tables.results!41d28fe3103bc730.4f02927f4399f4ff",
+      "_id": "4f02927f4399f4ff"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Operatives of another faction",
+      "_key": "!tables.results!41d28fe3103bc730.41b88e8bd953473f",
+      "_id": "41b88e8bd953473f"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Varied or informal leadership",
+      "_key": "!tables.results!41d28fe3103bc730.b1ffb14c9f149b1d",
+      "_id": "b1ffb14c9f149b1d"
+    }
+  ],
+  "folder": "cef833f6783b86c0",
+  "sort": 178,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!41d28fe3103bc730"
+}

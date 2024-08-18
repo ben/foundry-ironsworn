@@ -1,0 +1,110 @@
+{
+  "_id": "ae801ec5ea85c785",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/inland_cave",
+      "dsid": "oracle_rollable:sundered_isles/cave/inland_cave/opportunity"
+    }
+  },
+  "name": "Inland Cave Opportunity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Advance warning of a danger",
+      "_key": "!tables.results!ae801ec5ea85c785.78f4d16e2e31255b",
+      "_id": "78f4d16e2e31255b"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Breathtaking natural feature",
+      "_key": "!tables.results!ae801ec5ea85c785.cddfecc842bdc894",
+      "_id": "cddfecc842bdc894"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Clue points the way forward",
+      "_key": "!tables.results!ae801ec5ea85c785.6d2d971a69dcc499",
+      "_id": "6d2d971a69dcc499"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Friendly denizen or explorer",
+      "_key": "!tables.results!ae801ec5ea85c785.55419026c581e39b",
+      "_id": "55419026c581e39b"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Helpful shortcut or detour",
+      "_key": "!tables.results!ae801ec5ea85c785.90b2fa5741a05f05",
+      "_id": "90b2fa5741a05f05"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Rare resource",
+      "_key": "!tables.results!ae801ec5ea85c785.d66db41e1dda5c81",
+      "_id": "d66db41e1dda5c81"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Safe refuge",
+      "_key": "!tables.results!ae801ec5ea85c785.4d11cc97674f23b9",
+      "_id": "4d11cc97674f23b9"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Useful equipment or supplies",
+      "_key": "!tables.results!ae801ec5ea85c785.0c75847f62055943",
+      "_id": "0c75847f62055943"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "[Treasure](datasworn:oracle_rollable:sundered_isles/treasure/value/small) (small repository)",
+      "_key": "!tables.results!ae801ec5ea85c785.bd469d95b94a904b",
+      "_id": "bd469d95b94a904b"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "[Treasure](datasworn:oracle_rollable:sundered_isles/treasure/value/medium) (medium repository)",
+      "_key": "!tables.results!ae801ec5ea85c785.79f58c134bceca09",
+      "_id": "79f58c134bceca09"
+    }
+  ],
+  "folder": "ccafff1bc096e52d",
+  "sort": 211,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ae801ec5ea85c785"
+}

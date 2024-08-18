@@ -1,0 +1,155 @@
+{
+  "_id": "7b940531658d1f5f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/getting_underway/create_your_character",
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/create_your_character/your_backstory_cursed"
+    }
+  },
+  "name": "Your Cursed Backstory",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Banished because of uncanny nature or abilities",
+      "_key": "!tables.results!7b940531658d1f5f.192f9e948fad2312",
+      "_id": "192f9e948fad2312"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Bearing a relic of dreadful power",
+      "_key": "!tables.results!7b940531658d1f5f.b7afcfe15308c7ec",
+      "_id": "b7afcfe15308c7ec"
+    },
+    {
+      "range": [
+        15,
+        20
+      ],
+      "text": "Desperate to unlock the secrets of forbidden magic",
+      "_key": "!tables.results!7b940531658d1f5f.4d6ee775b2fa8d77",
+      "_id": "4d6ee775b2fa8d77"
+    },
+    {
+      "range": [
+        21,
+        26
+      ],
+      "text": "Forged and made animate by forbidden technologies",
+      "_key": "!tables.results!7b940531658d1f5f.52d953a2d116c575",
+      "_id": "52d953a2d116c575"
+    },
+    {
+      "range": [
+        27,
+        33
+      ],
+      "text": "Grievously wounded and given new life by forbidden magic or technology",
+      "_key": "!tables.results!7b940531658d1f5f.59d4878a82d487be",
+      "_id": "59d4878a82d487be"
+    },
+    {
+      "range": [
+        34,
+        40
+      ],
+      "text": "Haunted by the spirit of someone you failed or wronged",
+      "_key": "!tables.results!7b940531658d1f5f.34aac903c325e2f1",
+      "_id": "34aac903c325e2f1"
+    },
+    {
+      "range": [
+        41,
+        47
+      ],
+      "text": "Home destroyed by a monstrous beast",
+      "_key": "!tables.results!7b940531658d1f5f.cec14b326a66ef94",
+      "_id": "cec14b326a66ef94"
+    },
+    {
+      "range": [
+        48,
+        54
+      ],
+      "text": "Home destroyed by undead or inhuman foes",
+      "_key": "!tables.results!7b940531658d1f5f.e458174c8265f63a",
+      "_id": "e458174c8265f63a"
+    },
+    {
+      "range": [
+        55,
+        61
+      ],
+      "text": "Inherited a dreadful curse",
+      "_key": "!tables.results!7b940531658d1f5f.718ee47d63f54678",
+      "_id": "718ee47d63f54678"
+    },
+    {
+      "range": [
+        62,
+        67
+      ],
+      "text": "Killed an albatross; plagued by foul luck ever since",
+      "_key": "!tables.results!7b940531658d1f5f.6abb0d44ab197195",
+      "_id": "6abb0d44ab197195"
+    },
+    {
+      "range": [
+        68,
+        73
+      ],
+      "text": "Sole survivor of a string of unlikely disasters",
+      "_key": "!tables.results!7b940531658d1f5f.19eb13d5e3ccaba3",
+      "_id": "19eb13d5e3ccaba3"
+    },
+    {
+      "range": [
+        74,
+        80
+      ],
+      "text": "Suffered a vision of a horrible fate",
+      "_key": "!tables.results!7b940531658d1f5f.56e75df711d7484e",
+      "_id": "56e75df711d7484e"
+    },
+    {
+      "range": [
+        81,
+        87
+      ],
+      "text": "Survived an attack at sea by a cursed ship",
+      "_key": "!tables.results!7b940531658d1f5f.a2a0ba51558fc995",
+      "_id": "a2a0ba51558fc995"
+    },
+    {
+      "range": [
+        88,
+        94
+      ],
+      "text": "Survived an attack at sea by a monstrous sea beast",
+      "_key": "!tables.results!7b940531658d1f5f.3521d60e55b7abbf",
+      "_id": "3521d60e55b7abbf"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Targeted or hunted by a dreadful being",
+      "_key": "!tables.results!7b940531658d1f5f.42530638efaa34e7",
+      "_id": "42530638efaa34e7"
+    }
+  ],
+  "folder": "31ad60f0d091dc44",
+  "sort": 93,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7b940531658d1f5f"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Ice/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Ice"
+      "category": "Starforged/Oracles/Planets/Ice",
+      "dsid": "oracle_rollable:starforged/planet/ice/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Feeble sunlight",
-      "_id": "717bb353d1674038",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.717bb353d1674038"
+      "_key": "!tables.results!c56edfcd0c123ee3.1bc5e3da6a5c14e5",
+      "_id": "1bc5e3da6a5c14e5"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Supersized ice volcano",
-      "_id": "0c1ac36307f5bec3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.0c1ac36307f5bec3"
+      "_key": "!tables.results!c56edfcd0c123ee3.8820de78951ea68c",
+      "_id": "8820de78951ea68c"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Frozen oceans",
-      "_id": "c19b6593e6f12cd7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.c19b6593e6f12cd7"
+      "_key": "!tables.results!c56edfcd0c123ee3.6c9cae55b007ceef",
+      "_id": "6c9cae55b007ceef"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Vibrantly colored ice",
-      "_id": "49cbdb4bc853d3fa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.49cbdb4bc853d3fa"
+      "_key": "!tables.results!c56edfcd0c123ee3.2d036c5acb44c195",
+      "_id": "2d036c5acb44c195"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Rocky glacial islands",
-      "_id": "4ce51322a1430e93",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.4ce51322a1430e93"
+      "_key": "!tables.results!c56edfcd0c123ee3.8cf71b2195886dcf",
+      "_id": "8cf71b2195886dcf"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "World-spanning ice canyon",
-      "_id": "d97c8160d71e2a10",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.d97c8160d71e2a10"
+      "_key": "!tables.results!c56edfcd0c123ee3.c5411f014e9f97d8",
+      "_id": "c5411f014e9f97d8"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Snowbound mountains",
-      "_id": "fb8bded18bc9d528",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.fb8bded18bc9d528"
+      "_key": "!tables.results!c56edfcd0c123ee3.30f957d2c1ff1e3a",
+      "_id": "30f957d2c1ff1e3a"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Sky-breaching geysers",
-      "_id": "e3873a837d303cc9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.e3873a837d303cc9"
+      "_key": "!tables.results!c56edfcd0c123ee3.fe8c3f65007e092a",
+      "_id": "fe8c3f65007e092a"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "d16b80aa6dcdccbc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.d16b80aa6dcdccbc"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!c56edfcd0c123ee3.888f6227e3f42e01",
+      "_id": "888f6227e3f42e01"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "cc6569622801895e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c56edfcd0c123ee3.cc6569622801895e"
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (orbital)",
+      "_key": "!tables.results!c56edfcd0c123ee3.4e40b70cc21ed7e3",
+      "_id": "4e40b70cc21ed7e3"
     }
   ],
   "folder": "402fa1e3f9e7707c",
   "sort": 311,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!c56edfcd0c123ee3"
 }

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Community/Feature",
-      "category": "Starforged/Oracles/Derelicts/Community"
+      "category": "Starforged/Oracles/Derelicts/Community",
+      "dsid": "oracle_rollable:starforged/derelict/community/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Ad-hoc memorials",
-      "_id": "ffbed7dd93529abe",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.ffbed7dd93529abe"
+      "_key": "!tables.results!577ad8977e5fd707.aef13dedf514a044",
+      "_id": "aef13dedf514a044"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Art depicting historic event",
-      "_id": "0941ae839bd1a2d2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.0941ae839bd1a2d2"
+      "_key": "!tables.results!577ad8977e5fd707.92a2011dfbe257f2",
+      "_id": "92a2011dfbe257f2"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Artificial environment",
-      "_id": "af7b67b059799998",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.af7b67b059799998"
+      "_key": "!tables.results!577ad8977e5fd707.c7d814349c3ae95b",
+      "_id": "c7d814349c3ae95b"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Automated announcements",
-      "_id": "1345ac392ec41843",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.1345ac392ec41843"
+      "_key": "!tables.results!577ad8977e5fd707.6fa6f7d35239c287",
+      "_id": "6fa6f7d35239c287"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Barricaded area",
-      "_id": "8d13200985a670ed",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.8d13200985a670ed"
+      "_key": "!tables.results!577ad8977e5fd707.d1f88bb406acb2c2",
+      "_id": "d1f88bb406acb2c2"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Gaming devices or interfaces",
-      "_id": "a52c3749d74b0d37",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.a52c3749d74b0d37"
+      "_key": "!tables.results!577ad8977e5fd707.13453ac296444f1a",
+      "_id": "13453ac296444f1a"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Graffiti or vandalization",
-      "_id": "250faa349c25991f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.250faa349c25991f"
+      "_key": "!tables.results!577ad8977e5fd707.a408f8d74d4cb235",
+      "_id": "a408f8d74d4cb235"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Guard post or surveillance",
-      "_id": "ebbb0a00316b1504",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.ebbb0a00316b1504"
+      "_key": "!tables.results!577ad8977e5fd707.b3ec6fc6be59d9ad",
+      "_id": "b3ec6fc6be59d9ad"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Mass grave or corpses",
-      "_id": "25b09875cc02be04",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.25b09875cc02be04"
+      "_key": "!tables.results!577ad8977e5fd707.09ae5baa436625d8",
+      "_id": "09ae5baa436625d8"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Panoramic viewport",
-      "_id": "18ae122befcda82f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.18ae122befcda82f"
+      "_key": "!tables.results!577ad8977e5fd707.07e322c6d78ecace",
+      "_id": "07e322c6d78ecace"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         88
       ],
       "text": "Rubble or debris",
-      "_id": "caa1e0a0fee6a443",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.caa1e0a0fee6a443"
+      "_key": "!tables.results!577ad8977e5fd707.0d6434ef52cfece4",
+      "_id": "0d6434ef52cfece4"
     },
     {
       "range": [
         89,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "150e4f6cc76e6f01",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!577ad8977e5fd707.150e4f6cc76e6f01"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!577ad8977e5fd707.f02a2145bd9dc45f",
+      "_id": "f02a2145bd9dc45f"
     }
   ],
   "folder": "106a2830d69bfa64",
   "sort": 353,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!577ad8977e5fd707"
 }

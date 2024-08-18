@@ -1,0 +1,56 @@
+{
+  "_id": "35a4000c5160a8c7",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/location"
+    }
+  },
+  "name": "Ruin Location",
+  "description": "<p>When learning about a distant ruin, use this table to reveal its location. If you come upon a ruin in your travels, pick a location as appropriate to your surroundings.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Sea",
+      "_key": "!tables.results!35a4000c5160a8c7.0c101e5262b15406",
+      "_id": "0c101e5262b15406"
+    },
+    {
+      "range": [
+        21,
+        60
+      ],
+      "text": "Shore",
+      "_key": "!tables.results!35a4000c5160a8c7.5e79b3a8109d47dd",
+      "_id": "5e79b3a8109d47dd"
+    },
+    {
+      "range": [
+        61,
+        90
+      ],
+      "text": "Inland",
+      "_key": "!tables.results!35a4000c5160a8c7.5d5f028fda3e5629",
+      "_id": "5d5f028fda3e5629"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Buried",
+      "_key": "!tables.results!35a4000c5160a8c7.44dab1fcf8076313",
+      "_id": "44dab1fcf8076313"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 212,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!35a4000c5160a8c7"
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "80d1213b2e1a8888",
+  "type": "progress",
+  "name": "Varou",
+  "img": "icons/creatures/mammals/wolf-shadow-black.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Yellow eyes shining in the moonlight</p>\n<p class=\"nogrow\">Pointed ears and snout-like faces</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Take their land</p>\n<p class=\"nogrow\">Defend my kin</p>\n<p class=\"nogrow\">Keep the bloodcall at bay</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Strike at night</p>\n<p class=\"nogrow\">Leap into combat</p>\n<p class=\"nogrow\">Let loose the bloodcall</p>\n</div>\n</div>\n\n<p>The varou are humanoid beings who dwell within the Deep Wilds and in the woods of the Hinterlands. They have fierce, wolf-like features and are broad-shouldered and a head taller than the average Ironlander. Their long hair is ornately groomed and decorated with beads and other trinkets.</p>\n<p>The varou value territory above all things. They often war amongst themselves and against the @Compendium[foundry-ironsworn.ironswornfoes.7e016842d2a4543f]{elves} to gain or defend holdings. They mark their claims by carving clan symbols into trees. Only the foolish ignore the warning of these border signs. Several of our settlements—built too close to varou territory—are now abandoned ruins bearing the mark of a victorious varou clan.</p>\n\n<blockquote>Quest Starter: <p>A varou clan has carved their mark into the trees surrounding an Ironlander community, claiming it as their territory. An attack is surely imminent. What will you do to prevent it?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "d4239e681a659e2d",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/firstborn/varou"
+    }
+  },
+  "_key": "!items!80d1213b2e1a8888"
+}

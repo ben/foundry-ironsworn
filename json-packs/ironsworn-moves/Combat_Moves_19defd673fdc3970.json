@@ -1,24 +1,17 @@
 {
   "name": "Combat Moves",
-  "type": "Item",
-  "_id": "19defd673fdc3970",
   "color": "#818992",
   "description": "When there are no other options, when the sword slips free of its sheath, when the arrow is nocked, when the shield is brought to bear, make these moves.",
+  "type": "Item",
+  "_id": "19defd673fdc3970",
   "sort": 78,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Ironsworn/Moves/Combat"
+      "dfid": "Ironsworn/Moves/Combat",
+      "dsid": "move_category:classic/combat"
     }
   },
   "folder": null,
   "sorting": "a",
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021086,
-    "modifiedTime": 1695949021086,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!folders!19defd673fdc3970"
 }

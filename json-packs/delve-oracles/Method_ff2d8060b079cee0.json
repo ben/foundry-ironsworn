@@ -1,0 +1,471 @@
+{
+  "_id": "ff2d8060b079cee0",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Combat_Event/Method",
+      "category": "Ironsworn/Oracles/Combat_Event",
+      "dsid": "oracle_rollable:delve/combat_event/method"
+    }
+  },
+  "name": "Method",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Defy",
+      "_key": "!tables.results!ff2d8060b079cee0.6b33d0e852fd4f08",
+      "_id": "6b33d0e852fd4f08"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Break",
+      "_key": "!tables.results!ff2d8060b079cee0.29720e889d75f8a2",
+      "_id": "29720e889d75f8a2"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Trick",
+      "_key": "!tables.results!ff2d8060b079cee0.49fc89b8d7d4ef8e",
+      "_id": "49fc89b8d7d4ef8e"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Evade",
+      "_key": "!tables.results!ff2d8060b079cee0.485f9565dcf8037e",
+      "_id": "485f9565dcf8037e"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Protect",
+      "_key": "!tables.results!ff2d8060b079cee0.30e44983ac6be557",
+      "_id": "30e44983ac6be557"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Overwhelm",
+      "_key": "!tables.results!ff2d8060b079cee0.b4030e09e9aaca72",
+      "_id": "b4030e09e9aaca72"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Persevere",
+      "_key": "!tables.results!ff2d8060b079cee0.6cbc17038466343f",
+      "_id": "6cbc17038466343f"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Assist",
+      "_key": "!tables.results!ff2d8060b079cee0.cc5d0d25c009a41f",
+      "_id": "cc5d0d25c009a41f"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Await",
+      "_key": "!tables.results!ff2d8060b079cee0.020920dd0fffbc2f",
+      "_id": "020920dd0fffbc2f"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Abort",
+      "_key": "!tables.results!ff2d8060b079cee0.4d6cfca34f4292ca",
+      "_id": "4d6cfca34f4292ca"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Block",
+      "_key": "!tables.results!ff2d8060b079cee0.7b86527d08623952",
+      "_id": "7b86527d08623952"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Collide",
+      "_key": "!tables.results!ff2d8060b079cee0.34c442d68a79078a",
+      "_id": "34c442d68a79078a"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Focus",
+      "_key": "!tables.results!ff2d8060b079cee0.e26849fb0e91eaeb",
+      "_id": "e26849fb0e91eaeb"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Advance",
+      "_key": "!tables.results!ff2d8060b079cee0.c7bb9ba60d11191e",
+      "_id": "c7bb9ba60d11191e"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Breach",
+      "_key": "!tables.results!ff2d8060b079cee0.a10c171345115dcf",
+      "_id": "a10c171345115dcf"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Endure",
+      "_key": "!tables.results!ff2d8060b079cee0.78d38f10117e0dfc",
+      "_id": "78d38f10117e0dfc"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Assault",
+      "_key": "!tables.results!ff2d8060b079cee0.6d7d2e438a6e36fd",
+      "_id": "6d7d2e438a6e36fd"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Charge",
+      "_key": "!tables.results!ff2d8060b079cee0.dd48447595b8bf4f",
+      "_id": "dd48447595b8bf4f"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Escalate",
+      "_key": "!tables.results!ff2d8060b079cee0.5764028fe71ccd75",
+      "_id": "5764028fe71ccd75"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Sunder",
+      "_key": "!tables.results!ff2d8060b079cee0.a9a7d03c2edf71c5",
+      "_id": "a9a7d03c2edf71c5"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Shatter",
+      "_key": "!tables.results!ff2d8060b079cee0.8839e914bc0b9cc7",
+      "_id": "8839e914bc0b9cc7"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Aim",
+      "_key": "!tables.results!ff2d8060b079cee0.e267eb99ab188c70",
+      "_id": "e267eb99ab188c70"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Stagger",
+      "_key": "!tables.results!ff2d8060b079cee0.4d52fc201864adee",
+      "_id": "4d52fc201864adee"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Counter",
+      "_key": "!tables.results!ff2d8060b079cee0.f4038e451c65cac7",
+      "_id": "f4038e451c65cac7"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Seize",
+      "_key": "!tables.results!ff2d8060b079cee0.7b6d7661d434db7a",
+      "_id": "7b6d7661d434db7a"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Impact",
+      "_key": "!tables.results!ff2d8060b079cee0.149ab0c4d8b87f8b",
+      "_id": "149ab0c4d8b87f8b"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Entangle",
+      "_key": "!tables.results!ff2d8060b079cee0.4cc0e7220c96574f",
+      "_id": "4cc0e7220c96574f"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Hold",
+      "_key": "!tables.results!ff2d8060b079cee0.dc98d90bc6a25d33",
+      "_id": "dc98d90bc6a25d33"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Deflect",
+      "_key": "!tables.results!ff2d8060b079cee0.05a46a8e6a71828a",
+      "_id": "05a46a8e6a71828a"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Drop",
+      "_key": "!tables.results!ff2d8060b079cee0.58dacfebab328b58",
+      "_id": "58dacfebab328b58"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Lose",
+      "_key": "!tables.results!ff2d8060b079cee0.dc56173aaa684792",
+      "_id": "dc56173aaa684792"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Sweep",
+      "_key": "!tables.results!ff2d8060b079cee0.caad269baf1bc804",
+      "_id": "caad269baf1bc804"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Secure",
+      "_key": "!tables.results!ff2d8060b079cee0.09f2f23ead73e2bb",
+      "_id": "09f2f23ead73e2bb"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Cover",
+      "_key": "!tables.results!ff2d8060b079cee0.eb2d25cbd2282566",
+      "_id": "eb2d25cbd2282566"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Withdraw",
+      "_key": "!tables.results!ff2d8060b079cee0.bd084d7bbe056c7c",
+      "_id": "bd084d7bbe056c7c"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Clash",
+      "_key": "!tables.results!ff2d8060b079cee0.1d52db1bb0fc8fb4",
+      "_id": "1d52db1bb0fc8fb4"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Amplify",
+      "_key": "!tables.results!ff2d8060b079cee0.2628ea47413196fc",
+      "_id": "2628ea47413196fc"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Batter",
+      "_key": "!tables.results!ff2d8060b079cee0.e8d5d0142424fd6b",
+      "_id": "e8d5d0142424fd6b"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Feint",
+      "_key": "!tables.results!ff2d8060b079cee0.98fb8a9118a9c8f2",
+      "_id": "98fb8a9118a9c8f2"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Shove",
+      "_key": "!tables.results!ff2d8060b079cee0.c66fc68c62dbb6ac",
+      "_id": "c66fc68c62dbb6ac"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Embed",
+      "_key": "!tables.results!ff2d8060b079cee0.457a68627371f9b7",
+      "_id": "457a68627371f9b7"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Affect",
+      "_key": "!tables.results!ff2d8060b079cee0.f7ea5c5f2df0e6f6",
+      "_id": "f7ea5c5f2df0e6f6"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Probe",
+      "_key": "!tables.results!ff2d8060b079cee0.cd60234a4016a453",
+      "_id": "cd60234a4016a453"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Force",
+      "_key": "!tables.results!ff2d8060b079cee0.58a8286d98844f93",
+      "_id": "58a8286d98844f93"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Intensify",
+      "_key": "!tables.results!ff2d8060b079cee0.78c2fb26c39df45c",
+      "_id": "78c2fb26c39df45c"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Distract",
+      "_key": "!tables.results!ff2d8060b079cee0.c5c716d0f3d54db7",
+      "_id": "c5c716d0f3d54db7"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Challenge",
+      "_key": "!tables.results!ff2d8060b079cee0.510bf8dbc0062892",
+      "_id": "510bf8dbc0062892"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Brawl",
+      "_key": "!tables.results!ff2d8060b079cee0.e56e1c9feee53065",
+      "_id": "e56e1c9feee53065"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Coordinate",
+      "_key": "!tables.results!ff2d8060b079cee0.f494fc24b1aad432",
+      "_id": "f494fc24b1aad432"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Overrun",
+      "_key": "!tables.results!ff2d8060b079cee0.7900e23bde5bb1d2",
+      "_id": "7900e23bde5bb1d2"
+    }
+  ],
+  "folder": "be65c6dd40adde91",
+  "sort": 218,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ff2d8060b079cee0"
+}

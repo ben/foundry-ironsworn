@@ -1,0 +1,398 @@
+{
+  "_id": "d292ed147d36f2f4",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/getting_underway/create_your_character",
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/create_your_character/your_persona"
+    }
+  },
+  "name": "Your Persona",
+  "description": "<p>Your two starting path assets help define your character’s core abilities, skills, and experience. If you need inspiration, use the table below as a pick-list for a persona and a pair of recommended assets. Or roll for it and let the Fates decide.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Apothecary",
+      "_key": "!tables.results!d292ed147d36f2f4.a1a9e110d161da71",
+      "_id": "a1a9e110d161da71"
+    },
+    {
+      "range": [
+        4,
+        5
+      ],
+      "text": "Apprentice",
+      "_key": "!tables.results!d292ed147d36f2f4.bb7b39c2a1a49ee8",
+      "_id": "bb7b39c2a1a49ee8"
+    },
+    {
+      "range": [
+        6,
+        7
+      ],
+      "text": "Assassin",
+      "_key": "!tables.results!d292ed147d36f2f4.aae39e2e6c92940b",
+      "_id": "aae39e2e6c92940b"
+    },
+    {
+      "range": [
+        8,
+        9
+      ],
+      "text": "Beast Hunter",
+      "_key": "!tables.results!d292ed147d36f2f4.b4a160a9cc22a927",
+      "_id": "b4a160a9cc22a927"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Blockade Runner",
+      "_key": "!tables.results!d292ed147d36f2f4.8b81ab18ab36d719",
+      "_id": "8b81ab18ab36d719"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Brigand",
+      "_key": "!tables.results!d292ed147d36f2f4.650e0581f2fb9012",
+      "_id": "650e0581f2fb9012"
+    },
+    {
+      "range": [
+        16,
+        17
+      ],
+      "text": "Buccaneer",
+      "_key": "!tables.results!d292ed147d36f2f4.2b2c7cbf01ef3f9b",
+      "_id": "2b2c7cbf01ef3f9b"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Bulwark",
+      "_key": "!tables.results!d292ed147d36f2f4.cdbf14bd7299ec5f",
+      "_id": "cdbf14bd7299ec5f"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Castaway",
+      "_key": "!tables.results!d292ed147d36f2f4.9fe0bd27cf8a1574",
+      "_id": "9fe0bd27cf8a1574"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "Charlatan",
+      "_key": "!tables.results!d292ed147d36f2f4.917d6e5d4d84e28b",
+      "_id": "917d6e5d4d84e28b"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Cloak and Dagger",
+      "_key": "!tables.results!d292ed147d36f2f4.0a5734a9bbf5bee3",
+      "_id": "0a5734a9bbf5bee3"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Cultist",
+      "_key": "!tables.results!d292ed147d36f2f4.99a96bc7ae6fffb3",
+      "_id": "99a96bc7ae6fffb3"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Deathbound",
+      "_key": "!tables.results!d292ed147d36f2f4.e085b464cb85c9c8",
+      "_id": "e085b464cb85c9c8"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Deep One",
+      "_key": "!tables.results!d292ed147d36f2f4.7ceb6cb2b9050ceb",
+      "_id": "7ceb6cb2b9050ceb"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "Elementalist",
+      "_key": "!tables.results!d292ed147d36f2f4.089973763d13214e",
+      "_id": "089973763d13214e"
+    },
+    {
+      "range": [
+        38,
+        40
+      ],
+      "text": "Emissary",
+      "_key": "!tables.results!d292ed147d36f2f4.a8adbaef656798f7",
+      "_id": "a8adbaef656798f7"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Gallant",
+      "_key": "!tables.results!d292ed147d36f2f4.36c201a6f15c640a",
+      "_id": "36c201a6f15c640a"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Guild Mage",
+      "_key": "!tables.results!d292ed147d36f2f4.f785ce74c5a0e801",
+      "_id": "f785ce74c5a0e801"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Gunner",
+      "_key": "!tables.results!d292ed147d36f2f4.e7dc3efb5f040a4f",
+      "_id": "e7dc3efb5f040a4f"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Hired Gun",
+      "_key": "!tables.results!d292ed147d36f2f4.0a5d37d9f6458eef",
+      "_id": "0a5d37d9f6458eef"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Ironclad",
+      "_key": "!tables.results!d292ed147d36f2f4.0bac87e9f06efbbe",
+      "_id": "0bac87e9f06efbbe"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Jury-Rig",
+      "_key": "!tables.results!d292ed147d36f2f4.b3b30a95776cdb22",
+      "_id": "b3b30a95776cdb22"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Lycanthrope",
+      "_key": "!tables.results!d292ed147d36f2f4.67a455cf9886cbc1",
+      "_id": "67a455cf9886cbc1"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Monster Hunter",
+      "_key": "!tables.results!d292ed147d36f2f4.51bad82ca33b60a0",
+      "_id": "51bad82ca33b60a0"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Naturalist",
+      "_key": "!tables.results!d292ed147d36f2f4.02152be1b4638f07",
+      "_id": "02152be1b4638f07"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Pilgrim",
+      "_key": "!tables.results!d292ed147d36f2f4.ef60867f0973bf16",
+      "_id": "ef60867f0973bf16"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Piper",
+      "_key": "!tables.results!d292ed147d36f2f4.d388510931579850",
+      "_id": "d388510931579850"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Renegade",
+      "_key": "!tables.results!d292ed147d36f2f4.98be53bcf3051453",
+      "_id": "98be53bcf3051453"
+    },
+    {
+      "range": [
+        68,
+        70
+      ],
+      "text": "Saboteur",
+      "_key": "!tables.results!d292ed147d36f2f4.d29a06de93a6272c",
+      "_id": "d29a06de93a6272c"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Sea Witch",
+      "_key": "!tables.results!d292ed147d36f2f4.ded18e7a205dd339",
+      "_id": "ded18e7a205dd339"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Shadow Assassin",
+      "_key": "!tables.results!d292ed147d36f2f4.a7b29465f43a9668",
+      "_id": "a7b29465f43a9668"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Shipbreaker",
+      "_key": "!tables.results!d292ed147d36f2f4.70ea3f6cefe175f4",
+      "_id": "70ea3f6cefe175f4"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Siren",
+      "_key": "!tables.results!d292ed147d36f2f4.93e4485ba108b39e",
+      "_id": "93e4485ba108b39e"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Skipper",
+      "_key": "!tables.results!d292ed147d36f2f4.5ff3bb297a0c44ff",
+      "_id": "5ff3bb297a0c44ff"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Smuggler",
+      "_key": "!tables.results!d292ed147d36f2f4.b863d3d806523a60",
+      "_id": "b863d3d806523a60"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "Sole Survivor",
+      "_key": "!tables.results!d292ed147d36f2f4.03e4c3cce1816f52",
+      "_id": "03e4c3cce1816f52"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Spiritualist",
+      "_key": "!tables.results!d292ed147d36f2f4.34cdf618d693c07c",
+      "_id": "34cdf618d693c07c"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "Stowaway",
+      "_key": "!tables.results!d292ed147d36f2f4.bcf71141c3914227",
+      "_id": "bcf71141c3914227"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "Surgeon",
+      "_key": "!tables.results!d292ed147d36f2f4.436900f8839233a7",
+      "_id": "436900f8839233a7"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Tinker",
+      "_key": "!tables.results!d292ed147d36f2f4.858d1cbb33f4d2da",
+      "_id": "858d1cbb33f4d2da"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Vanguard",
+      "_key": "!tables.results!d292ed147d36f2f4.1ca1d845661f100d",
+      "_id": "1ca1d845661f100d"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "War Machine",
+      "_key": "!tables.results!d292ed147d36f2f4.25c55c97d8d8168c",
+      "_id": "25c55c97d8d8168c"
+    }
+  ],
+  "folder": "31ad60f0d091dc44",
+  "sort": 94,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d292ed147d36f2f4"
+}

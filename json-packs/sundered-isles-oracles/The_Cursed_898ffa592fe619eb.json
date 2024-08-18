@@ -1,0 +1,15 @@
+{
+  "name": "The Cursed",
+  "description": "For cursed factions that function as an organization, use the @Compendium[foundry-ironsworn.sunderedislesmoves.c5abc14b60ea728e]{Organization Methods} or @Compendium[foundry-ironsworn.sunderedislesmoves.d94642748c2feb36]{Organization Secrets} tables for additional details. To reveal a current goal for a cursed faction or its leaders, use the @Compendium[foundry-ironsworn.sunderedislesmoves.56d013f94b60fbb9]{Cursed Character Goals} table. You can also give a cursed faction one or more @Compendium[foundry-ironsworn.sunderedislesmoves.0c4ea61819a3090b]{Cursed Aspects}.",
+  "type": "RollTable",
+  "_id": "898ffa592fe619eb",
+  "sort": 182,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/cursed"
+    }
+  },
+  "folder": "332fe732886451c6",
+  "sorting": "a",
+  "_key": "!folders!898ffa592fe619eb"
+}

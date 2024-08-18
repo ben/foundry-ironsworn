@@ -1,0 +1,65 @@
+{
+  "_id": "883e102ea0f43a4c",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/magnitude",
+      "dsid": "oracle_rollable:sundered_isles/misc/magnitude/complexity"
+    }
+  },
+  "name": "Complexity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Simple",
+      "_key": "!tables.results!883e102ea0f43a4c.e207f24a3fdcdd62",
+      "_id": "e207f24a3fdcdd62"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Basic",
+      "_key": "!tables.results!883e102ea0f43a4c.50b120f299a3473b",
+      "_id": "50b120f299a3473b"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Manageable",
+      "_key": "!tables.results!883e102ea0f43a4c.2ab9adacb1d787ce",
+      "_id": "2ab9adacb1d787ce"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Complicated",
+      "_key": "!tables.results!883e102ea0f43a4c.250b72e711ade49a",
+      "_id": "250b72e711ade49a"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Bewildering",
+      "_key": "!tables.results!883e102ea0f43a4c.8e38d57d53f346ce",
+      "_id": "8e38d57d53f346ce"
+    }
+  ],
+  "folder": "a547d2b78f39268a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!883e102ea0f43a4c"
+}

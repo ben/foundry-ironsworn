@@ -1,0 +1,111 @@
+{
+  "_id": "7255406c72c49dba",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Shadowfen",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/shadowfen"
+    }
+  },
+  "name": "Shadowfen",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Bog",
+      "_key": "!tables.results!7255406c72c49dba.0a8517af327b8e1c",
+      "_id": "0a8517af327b8e1c"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Fen",
+      "_key": "!tables.results!7255406c72c49dba.b52d58b2a3f45274",
+      "_id": "b52d58b2a3f45274"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Lowland",
+      "_key": "!tables.results!7255406c72c49dba.96ce363f0c454161",
+      "_id": "96ce363f0c454161"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Marsh",
+      "_key": "!tables.results!7255406c72c49dba.145e14c8ca1befd9",
+      "_id": "145e14c8ca1befd9"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Mire",
+      "_key": "!tables.results!7255406c72c49dba.5e7acad5e6c97484",
+      "_id": "5e7acad5e6c97484"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Morass",
+      "_key": "!tables.results!7255406c72c49dba.9b5508290cece8da",
+      "_id": "9b5508290cece8da"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Quagmire",
+      "_key": "!tables.results!7255406c72c49dba.14ba5b35df45a3fe",
+      "_id": "14ba5b35df45a3fe"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Floodlands",
+      "_key": "!tables.results!7255406c72c49dba.6abf02a236a92695",
+      "_id": "6abf02a236a92695"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Slough",
+      "_key": "!tables.results!7255406c72c49dba.471f18f42834771c",
+      "_id": "471f18f42834771c"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wetlands",
+      "_key": "!tables.results!7255406c72c49dba.071845ed4b556e56",
+      "_id": "071845ed4b556e56"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 211,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7255406c72c49dba"
+}

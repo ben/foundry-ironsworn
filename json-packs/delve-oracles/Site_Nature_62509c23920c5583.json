@@ -1,0 +1,16 @@
+{
+  "name": "Site Nature",
+  "description": "Use these oracles to generate a random theme and domain for a site. Alternatively, you can print out the theme and domain cards and draw a random result. Or use the <a class=\"entity-link oracle-category-link\" data-dfid=\"Ironsworn/Oracles/Site_Name\" data-dsid=\"oracle_collection:delve/site_name\"><i class=\"fa fa-caret-right\"></i> Site Name oracles</a> to inspire the selection of a theme and domain.",
+  "type": "RollTable",
+  "_id": "62509c23920c5583",
+  "sort": 212,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Nature",
+      "dsid": "oracle_collection:delve/site_nature"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!62509c23920c5583"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Sacred/Peril",
-      "category": "Starforged/Oracles/Location_Themes/Sacred"
+      "category": "Starforged/Oracles/Location_Themes/Sacred",
+      "dsid": "oracle_rollable:starforged/location_theme/sacred/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Use this table to help envision a complication or hazard.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         9
       ],
       "text": "An aspect of the faith beguiles you or lures you into danger",
-      "_id": "aa242f0a7a941b93",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.aa242f0a7a941b93"
+      "_key": "!tables.results!6e5de5add738b39a.6d5c3b56f334d3c5",
+      "_id": "6d5c3b56f334d3c5"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         18
       ],
       "text": "Dreadful aspects or powers of the faith are revealed",
-      "_id": "1c0f808e13856fe5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.1c0f808e13856fe5"
+      "_key": "!tables.results!6e5de5add738b39a.69ae71a4dad38c2e",
+      "_id": "69ae71a4dad38c2e"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         27
       ],
       "text": "Embodiment of a god or power is given corrupted form or purpose",
-      "_id": "9c112a9eff3fa475",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.9c112a9eff3fa475"
+      "_key": "!tables.results!6e5de5add738b39a.6fe9e559fe3f6bb7",
+      "_id": "6fe9e559fe3f6bb7"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         36
       ],
       "text": "Guardians seek martyrdom in defense of this place",
-      "_id": "90b82524fb5aadf5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.90b82524fb5aadf5"
+      "_key": "!tables.results!6e5de5add738b39a.7c85935ebc1ad8b7",
+      "_id": "7c85935ebc1ad8b7"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         45
       ],
       "text": "Leaders corrupt or exploit their followers to oppose you",
-      "_id": "c258f7ba3bfddf11",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.c258f7ba3bfddf11"
+      "_key": "!tables.results!6e5de5add738b39a.57437117972e1f2a",
+      "_id": "57437117972e1f2a"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         54
       ],
       "text": "Prophecies portend a dire threat",
-      "_id": "c9bb220d1ebe423e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.c9bb220d1ebe423e"
+      "_key": "!tables.results!6e5de5add738b39a.b59e737e8e0aa963",
+      "_id": "b59e737e8e0aa963"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         63
       ],
       "text": "Protective ward or enigmatic puzzle blocks the way",
-      "_id": "78cf15e219ba8cde",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.78cf15e219ba8cde"
+      "_key": "!tables.results!6e5de5add738b39a.3591d8f26df77f6d",
+      "_id": "3591d8f26df77f6d"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         72
       ],
       "text": "Religious artifact evokes unnerving power",
-      "_id": "5cb9d22ad12eadca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.5cb9d22ad12eadca"
+      "_key": "!tables.results!6e5de5add738b39a.5d18fd4145af1dd6",
+      "_id": "5d18fd4145af1dd6"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         81
       ],
       "text": "Unnatural corruption or decay fouls the environment",
-      "_id": "9a25be5b21ed01a8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.9a25be5b21ed01a8"
+      "_key": "!tables.results!6e5de5add738b39a.d63f1967ecddc0d8",
+      "_id": "d63f1967ecddc0d8"
     },
     {
       "range": [
@@ -144,27 +100,17 @@
         90
       ],
       "text": "Zealots enact a ceremony to unlock forbidden powers",
-      "_id": "fef769abbb796a37",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.fef769abbb796a37"
+      "_key": "!tables.results!6e5de5add738b39a.3635f7fd453ed995",
+      "_id": "3635f7fd453ed995"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "c907711aea4a3e41",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.c907711aea4a3e41"
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!6e5de5add738b39a.2c42ac8a47db8eae",
+      "_id": "2c42ac8a47db8eae"
     },
     {
       "range": [
@@ -172,29 +118,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "c81ee157077b9471",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6e5de5add738b39a.c81ee157077b9471"
+      "_key": "!tables.results!6e5de5add738b39a.84448d2bf69d290b",
+      "_id": "84448d2bf69d290b"
     }
   ],
   "folder": "0b969801701bcc74",
   "sort": 379,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!6e5de5add738b39a"
 }

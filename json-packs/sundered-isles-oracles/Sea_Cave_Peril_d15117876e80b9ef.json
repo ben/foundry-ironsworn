@@ -1,0 +1,218 @@
+{
+  "_id": "d15117876e80b9ef",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/sea",
+      "dsid": "oracle_rollable:sundered_isles/cave/sea/peril"
+    }
+  },
+  "name": "Sea Cave Peril",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "[Lurking Threat](datasworn:oracle_rollable:sundered_isles/cave/lurking_threat)",
+      "_key": "!tables.results!d15117876e80b9ef.5020eb475aaa0730",
+      "_id": "5020eb475aaa0730"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Aggressive creature",
+      "_key": "!tables.results!d15117876e80b9ef.deccd11327234b51",
+      "_id": "deccd11327234b51"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Bewildering paths",
+      "_key": "!tables.results!d15117876e80b9ef.cfd381795f776872",
+      "_id": "cfd381795f776872"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Blocked or barricaded path",
+      "_key": "!tables.results!d15117876e80b9ef.14b23d13b37be15c",
+      "_id": "14b23d13b37be15c"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "Confounding puzzle",
+      "_key": "!tables.results!d15117876e80b9ef.ac5fb8105ce2fea5",
+      "_id": "ac5fb8105ce2fea5"
+    },
+    {
+      "range": [
+        36,
+        39
+      ],
+      "text": "Difficult squeeze through flooded area",
+      "_key": "!tables.results!d15117876e80b9ef.8a7c19b009041214",
+      "_id": "8a7c19b009041214"
+    },
+    {
+      "range": [
+        40,
+        43
+      ],
+      "text": "Equipment or boat suffers damage",
+      "_key": "!tables.results!d15117876e80b9ef.4373acff89d34576",
+      "_id": "4373acff89d34576"
+    },
+    {
+      "range": [
+        44,
+        47
+      ],
+      "text": "Falling rocks",
+      "_key": "!tables.results!d15117876e80b9ef.6ee9e806265c088a",
+      "_id": "6ee9e806265c088a"
+    },
+    {
+      "range": [
+        48,
+        51
+      ],
+      "text": "Fierce current",
+      "_key": "!tables.results!d15117876e80b9ef.424e0d6c5cde2343",
+      "_id": "424e0d6c5cde2343"
+    },
+    {
+      "range": [
+        52,
+        55
+      ],
+      "text": "Grueling conditions",
+      "_key": "!tables.results!d15117876e80b9ef.01093a60bd157a55",
+      "_id": "01093a60bd157a55"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Hindered visibility",
+      "_key": "!tables.results!d15117876e80b9ef.0cbd83458f04870e",
+      "_id": "0cbd83458f04870e"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Lengthy submerged passage",
+      "_key": "!tables.results!d15117876e80b9ef.bd43b6944566ebef",
+      "_id": "bd43b6944566ebef"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Lost gear or supplies",
+      "_key": "!tables.results!d15117876e80b9ef.26fbc5a11492b627",
+      "_id": "26fbc5a11492b627"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Party member causes trouble",
+      "_key": "!tables.results!d15117876e80b9ef.0595a2a3ceb7372e",
+      "_id": "0595a2a3ceb7372e"
+    },
+    {
+      "range": [
+        70,
+        73
+      ],
+      "text": "Quickly rising waters",
+      "_key": "!tables.results!d15117876e80b9ef.9c56cc48221f8dc7",
+      "_id": "9c56cc48221f8dc7"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Swarming creatures",
+      "_key": "!tables.results!d15117876e80b9ef.3a419ee4ba8de3bb",
+      "_id": "3a419ee4ba8de3bb"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Toxic or corrosive environment",
+      "_key": "!tables.results!d15117876e80b9ef.b6736f60cc23b7fc",
+      "_id": "b6736f60cc23b7fc"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "Trap or alarm",
+      "_key": "!tables.results!d15117876e80b9ef.f5113b91320d072c",
+      "_id": "f5113b91320d072c"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Unfriendly explorers",
+      "_key": "!tables.results!d15117876e80b9ef.cd28348941fbf96b",
+      "_id": "cd28348941fbf96b"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "Venomous creature",
+      "_key": "!tables.results!d15117876e80b9ef.19bfc54aa08aa438",
+      "_id": "19bfc54aa08aa438"
+    },
+    {
+      "range": [
+        89,
+        94
+      ],
+      "text": "[Action](datasworn:oracle_rollable:sundered_isles/core/action) + [Theme](datasworn:oracle_rollable:sundered_isles/core/theme)",
+      "_key": "!tables.results!d15117876e80b9ef.9dd9e1d7d3437387",
+      "_id": "9dd9e1d7d3437387"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!d15117876e80b9ef.8ad4763941468742",
+      "_id": "8ad4763941468742"
+    }
+  ],
+  "folder": "80ed534e9e0f713e",
+  "sort": 209,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d15117876e80b9ef"
+}

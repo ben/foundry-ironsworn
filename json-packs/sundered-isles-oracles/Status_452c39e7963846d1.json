@@ -1,0 +1,101 @@
+{
+  "_id": "452c39e7963846d1",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship/position",
+      "dsid": "oracle_rollable:sundered_isles/ship/position/status"
+    }
+  },
+  "name": "Status",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "In Battle",
+      "_key": "!tables.results!452c39e7963846d1.84a8964ac1083e37",
+      "_id": "84a8964ac1083e37"
+    },
+    {
+      "range": [
+        11,
+        25
+      ],
+      "text": "Anchored",
+      "_key": "!tables.results!452c39e7963846d1.b20c2594bdba88d7",
+      "_id": "b20c2594bdba88d7"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Getting underway",
+      "_key": "!tables.results!452c39e7963846d1.b71adf2288100e54",
+      "_id": "b71adf2288100e54"
+    },
+    {
+      "range": [
+        36,
+        60
+      ],
+      "text": "Underway (approaching)",
+      "_key": "!tables.results!452c39e7963846d1.92091ade54aed2ab",
+      "_id": "92091ade54aed2ab"
+    },
+    {
+      "range": [
+        61,
+        75
+      ],
+      "text": "Underway (outbound)",
+      "_key": "!tables.results!452c39e7963846d1.fbd4b20023372474",
+      "_id": "fbd4b20023372474"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "Underway (parallel)",
+      "_key": "!tables.results!452c39e7963846d1.38ebcc87468b4854",
+      "_id": "38ebcc87468b4854"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "In distress",
+      "_key": "!tables.results!452c39e7963846d1.5a7bb35e3229d64c",
+      "_id": "5a7bb35e3229d64c"
+    },
+    {
+      "range": [
+        96,
+        98
+      ],
+      "text": "Adrift",
+      "_key": "!tables.results!452c39e7963846d1.5f5fc97e8b769581",
+      "_id": "5f5fc97e8b769581"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Run aground",
+      "_key": "!tables.results!452c39e7963846d1.a3570ed0233faeee",
+      "_id": "a3570ed0233faeee"
+    }
+  ],
+  "folder": "f63b641af96099ce",
+  "sort": 134,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!452c39e7963846d1"
+}

@@ -1,0 +1,137 @@
+{
+  "_id": "26f21b2c8340b415",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/aesthetics"
+    }
+  },
+  "name": "Settlement Aesthetics",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Ancient",
+      "_key": "!tables.results!26f21b2c8340b415.2d903fc7d8cc689e",
+      "_id": "2d903fc7d8cc689e"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Dismal",
+      "_key": "!tables.results!26f21b2c8340b415.f9fe47f2f2cfdcba",
+      "_id": "f9fe47f2f2cfdcba"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Earthen",
+      "_key": "!tables.results!26f21b2c8340b415.d9a342a2d85024ac",
+      "_id": "d9a342a2d85024ac"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Foreboding",
+      "_key": "!tables.results!26f21b2c8340b415.e4304818631d8ade",
+      "_id": "e4304818631d8ade"
+    },
+    {
+      "range": [
+        36,
+        45
+      ],
+      "text": "Fortified",
+      "_key": "!tables.results!26f21b2c8340b415.045458ad23f7701a",
+      "_id": "045458ad23f7701a"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Garish",
+      "_key": "!tables.results!26f21b2c8340b415.374dea64e92eefa2",
+      "_id": "374dea64e92eefa2"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Grand",
+      "_key": "!tables.results!26f21b2c8340b415.3f7771baf8c92d02",
+      "_id": "3f7771baf8c92d02"
+    },
+    {
+      "range": [
+        56,
+        65
+      ],
+      "text": "Idyllic",
+      "_key": "!tables.results!26f21b2c8340b415.c99e8099258720ab",
+      "_id": "c99e8099258720ab"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Industrial",
+      "_key": "!tables.results!26f21b2c8340b415.e1556e56b9919fb1",
+      "_id": "e1556e56b9919fb1"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Makeshift",
+      "_key": "!tables.results!26f21b2c8340b415.90a7fbe6c1537686",
+      "_id": "90a7fbe6c1537686"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "Modest",
+      "_key": "!tables.results!26f21b2c8340b415.992b5294bc0fe8de",
+      "_id": "992b5294bc0fe8de"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Ramshackle",
+      "_key": "!tables.results!26f21b2c8340b415.b9afc0eccae00783",
+      "_id": "b9afc0eccae00783"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wondrous",
+      "_key": "!tables.results!26f21b2c8340b415.a11eb372793c9d75",
+      "_id": "a11eb372793c9d75"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 165,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!26f21b2c8340b415"
+}

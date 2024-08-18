@@ -1,0 +1,16 @@
+{
+  "name": "Settlement Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "5f78c3140a6e8eaf",
+  "sort": 322,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements",
+      "dsid": "oracle_collection:starforged/settlement"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!5f78c3140a6e8eaf"
+}

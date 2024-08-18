@@ -1,0 +1,101 @@
+{
+  "name": "Navigation",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/navigation",
+      "dsid": "truth:sundered_isles/navigation"
+    }
+  },
+  "_id": "01e8bb2c10d92bab",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "We are scattered to the winds, but our connections persist.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/navigation.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "We are scattered to the winds, but our connections persist.",
+        "Description": "The people of the isles are often isolated. Trade and communication must overcome distance and the fickle nature of the surrounding waterways. Known passages are undone by tumultuous weather, capricious seas, or unforeseen conflicts. In spite of those challenges, skilled voyagers and their indomitable vessels are a tether that binds the people and places of remote seas into a greater community.",
+        "Quest": "The port city of Stormrest is a perennial center of community and trade within the isles. But this city is now cut-off by an invading or occupying force. Who threatens this longstanding refuge?",
+        "Roll template": {
+          "Description": "The people of the isles are often isolated. Trade and communication must overcome distance and the fickle nature of the surrounding waterways. Known passages are undone by tumultuous weather, capricious seas, or unforeseen conflicts. In spite of those challenges, skilled voyagers and their indomitable vessels are a tether that binds the people and places of remote seas into a greater community."
+        }
+      },
+      "_id": "aec8c46fda718b5c",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!01e8bb2c10d92bab.aec8c46fda718b5c"
+    },
+    {
+      "type": "truth",
+      "name": "We rely on the ancient traditions and knowledge of the Starmarked to navigate these perilous seas.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/navigation.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "We rely on the ancient traditions and knowledge of the Starmarked to navigate these perilous seas.",
+        "Description": "The Starmarked have an uncanny sense of wind and tide, and bear the history of their travels as beautiful and intricate tattoos—etched in phosphorescent ink. Some of the places and passages pioneered by the Starmarked are now common knowledge, inscribed in charts and traveled widely. Others are coveted secrets, or lost to time and strife. The skills of the Starmarked make them highly valued as ship navigators, and some seek to exploit them to their own ends.",
+        "Quest": "In recent years, many Starmarked have not returned from expeditions into a remote area of the isles. Is there someone—or something—that does not want to be found?",
+        "Roll template": {
+          "Description": "The Starmarked have an uncanny sense of wind and tide, and bear the history of their travels as beautiful and intricate tattoos—etched in phosphorescent ink. Some of the places and passages pioneered by the Starmarked are now common knowledge, inscribed in charts and traveled widely. Others are coveted secrets, or lost to time and strife. The skills of the Starmarked make them highly valued as ship navigators, and some seek to exploit them to their own ends."
+        }
+      },
+      "_id": "dce6e7f5e6b1624e",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!01e8bb2c10d92bab.dce6e7f5e6b1624e"
+    },
+    {
+      "type": "truth",
+      "name": "Bleakmists are a curse upon the isles, confounding navigation and severing connections between communities.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/navigation.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Bleakmists are a curse upon the isles, confounding navigation and severing connections between communities.",
+        "Description": "Bleakmists are a damnable, seabound fog. Mariners tell of inexplicable sensations within the cursed waters of the mists—whispered voices, the ghostly clanging of ship bells, half-seen phantom shapes. Some bleakmists never dissipate, forming an enduring barrier that only the most foolhardy attempt to navigate. In other places, mists gather with little warning. Once you enter a bleakmist, it’s hard to predict where—or if—you’ll emerge.",
+        "Quest": "Someone will pay well for passage through an everlasting bleakmist. What do they seek on the other side?",
+        "Roll template": {
+          "Description": "Bleakmists are a damnable, seabound fog. Mariners tell of inexplicable sensations within the cursed waters of the mists—whispered voices, the ghostly clanging of ship bells, half-seen phantom shapes. Some bleakmists never dissipate, forming an enduring barrier that only the most foolhardy attempt to navigate. In other places, mists gather with little warning. Once you enter a bleakmist, it’s hard to predict where—or if—you’ll emerge."
+        }
+      },
+      "_id": "11e40beb271a37e3",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!01e8bb2c10d92bab.11e40beb271a37e3"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are skilled at finding your way among the isles, you might be a @Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}. If you trailblaze inland paths, you might be an @Compendium[foundry-ironsworn.sunderedislesassets.bee5ddc7feb36f37]{Overlander}. If you carry precious items on your expeditions, you might be a @Compendium[foundry-ironsworn.starforgedassets.87222132d6c0379b]{Courier}. If you wield mystical powers over the wind to see a ship safely on its way, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.d4e67aa3e3c3fdb1]{Windbinder}.",
+        "format": 2,
+        "content": "<p>If you are skilled at finding your way among the isles, you might be a @Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}. If you trailblaze inland paths, you might be an @Compendium[foundry-ironsworn.sunderedislesassets.bee5ddc7feb36f37]{Overlander}. If you carry precious items on your expeditions, you might be a @Compendium[foundry-ironsworn.starforgedassets.87222132d6c0379b]{Courier}. If you wield mystical powers over the wind to see a ship safely on its way, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.d4e67aa3e3c3fdb1]{Windbinder}.</p>"
+      },
+      "_id": "e99032e59f63db35",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!01e8bb2c10d92bab.e99032e59f63db35"
+    }
+  ],
+  "folder": null,
+  "sort": 81,
+  "_key": "!journal!01e8bb2c10d92bab"
+}

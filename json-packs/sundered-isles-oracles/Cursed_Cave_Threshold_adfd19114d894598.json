@@ -1,0 +1,146 @@
+{
+  "_id": "adfd19114d894598",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave",
+      "dsid": "oracle_rollable:sundered_isles/cave/threshold_cursed"
+    }
+  },
+  "name": "Cursed Cave Threshold",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Bloody trail leading inside",
+      "_key": "!tables.results!adfd19114d894598.5394ba71a9494d94",
+      "_id": "5394ba71a9494d94"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Carved with eldritch symbols",
+      "_key": "!tables.results!adfd19114d894598.6df98df34046a3e5",
+      "_id": "6df98df34046a3e5"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Glimpses of a spectral form",
+      "_key": "!tables.results!adfd19114d894598.3dd65cd006dfe74a",
+      "_id": "3dd65cd006dfe74a"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Guarded by a monstrous creature",
+      "_key": "!tables.results!adfd19114d894598.ea106bb347a8169e",
+      "_id": "ea106bb347a8169e"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Hung with webs or mucus",
+      "_key": "!tables.results!adfd19114d894598.5a99af2c86f927f3",
+      "_id": "5a99af2c86f927f3"
+    },
+    {
+      "range": [
+        36,
+        43
+      ],
+      "text": "Littered with bones",
+      "_key": "!tables.results!adfd19114d894598.199278deb180bae3",
+      "_id": "199278deb180bae3"
+    },
+    {
+      "range": [
+        44,
+        50
+      ],
+      "text": "Marked with a foreboding warning",
+      "_key": "!tables.results!adfd19114d894598.aab9451b127aacc7",
+      "_id": "aab9451b127aacc7"
+    },
+    {
+      "range": [
+        51,
+        57
+      ],
+      "text": "Monstrous howls or roars from within",
+      "_key": "!tables.results!adfd19114d894598.06e49a900b9b0171",
+      "_id": "06e49a900b9b0171"
+    },
+    {
+      "range": [
+        58,
+        64
+      ],
+      "text": "Shrouded in unnatural fog",
+      "_key": "!tables.results!adfd19114d894598.7490f0e5c133f72e",
+      "_id": "7490f0e5c133f72e"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Skull-shaped edifice",
+      "_key": "!tables.results!adfd19114d894598.6aca7405375e9c6d",
+      "_id": "6aca7405375e9c6d"
+    },
+    {
+      "range": [
+        73,
+        79
+      ],
+      "text": "Stench of death",
+      "_key": "!tables.results!adfd19114d894598.6cde85b40d837111",
+      "_id": "6cde85b40d837111"
+    },
+    {
+      "range": [
+        80,
+        86
+      ],
+      "text": "Surrounded by blighted terrain",
+      "_key": "!tables.results!adfd19114d894598.f22eec04704ef6f5",
+      "_id": "f22eec04704ef6f5"
+    },
+    {
+      "range": [
+        87,
+        93
+      ],
+      "text": "Unnerving sense of being watched",
+      "_key": "!tables.results!adfd19114d894598.1ed8200d30216ea3",
+      "_id": "1ed8200d30216ea3"
+    },
+    {
+      "range": [
+        94,
+        100
+      ],
+      "text": "Unnerving stillness or quiet",
+      "_key": "!tables.results!adfd19114d894598.be5627c88c444eff",
+      "_id": "be5627c88c444eff"
+    }
+  ],
+  "folder": "6e4db0d120c971eb",
+  "sort": 205,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!adfd19114d894598"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Deed Assets",
+  "color": "#40834f",
+  "description": "",
+  "type": "Item",
+  "_id": "b6079e67f68d37cf",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "asset_collection:sundered_isles/deed"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!b6079e67f68d37cf"
+}

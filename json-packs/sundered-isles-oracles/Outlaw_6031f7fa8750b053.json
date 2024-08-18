@@ -1,0 +1,110 @@
+{
+  "_id": "6031f7fa8750b053",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/outlaw"
+    }
+  },
+  "name": "Outlaw",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Burglar / Thief",
+      "_key": "!tables.results!6031f7fa8750b053.488452ffc1401b5c",
+      "_id": "488452ffc1401b5c"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Charlatan",
+      "_key": "!tables.results!6031f7fa8750b053.1b41cd957709c4d3",
+      "_id": "1b41cd957709c4d3"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Crime boss",
+      "_key": "!tables.results!6031f7fa8750b053.ce5ec6a165aabb7a",
+      "_id": "ce5ec6a165aabb7a"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Forger",
+      "_key": "!tables.results!6031f7fa8750b053.dee9de73be0c07ef",
+      "_id": "dee9de73be0c07ef"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Gambler",
+      "_key": "!tables.results!6031f7fa8750b053.73b8c013ba48bc0a",
+      "_id": "73b8c013ba48bc0a"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Insurgent",
+      "_key": "!tables.results!6031f7fa8750b053.f046fb01701160ed",
+      "_id": "f046fb01701160ed"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Pirate",
+      "_key": "!tables.results!6031f7fa8750b053.a95c6951eec0f17a",
+      "_id": "a95c6951eec0f17a"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Raider",
+      "_key": "!tables.results!6031f7fa8750b053.63fb07b84e71ec1d",
+      "_id": "63fb07b84e71ec1d"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Ruffian",
+      "_key": "!tables.results!6031f7fa8750b053.72773352d6dcc6b9",
+      "_id": "72773352d6dcc6b9"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Smuggler",
+      "_key": "!tables.results!6031f7fa8750b053.9ef012b45a69b418",
+      "_id": "9ef012b45a69b418"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 189,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6031f7fa8750b053"
+}

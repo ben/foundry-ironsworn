@@ -1,0 +1,362 @@
+{
+  "_id": "af4ff510c746793e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/details"
+    }
+  },
+  "name": "Ship Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Animal mascot",
+      "_key": "!tables.results!af4ff510c746793e.231637df327745dd",
+      "_id": "231637df327745dd"
+    },
+    {
+      "range": [
+        4,
+        5
+      ],
+      "text": "Archive of books and charts",
+      "_key": "!tables.results!af4ff510c746793e.d8ba5ed2307400ea",
+      "_id": "d8ba5ed2307400ea"
+    },
+    {
+      "range": [
+        6,
+        8
+      ],
+      "text": "Bloodstained deck",
+      "_key": "!tables.results!af4ff510c746793e.b3a9188817c79a64",
+      "_id": "b3a9188817c79a64"
+    },
+    {
+      "range": [
+        9,
+        11
+      ],
+      "text": "Booby-trapped",
+      "_key": "!tables.results!af4ff510c746793e.4dab2b7e72ed111b",
+      "_id": "4dab2b7e72ed111b"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Carrying passengers",
+      "_key": "!tables.results!af4ff510c746793e.dde6e5becf125edd",
+      "_id": "dde6e5becf125edd"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Deck-clearing swivel cannons",
+      "_key": "!tables.results!af4ff510c746793e.076c476a77650661",
+      "_id": "076c476a77650661"
+    },
+    {
+      "range": [
+        17,
+        19
+      ],
+      "text": "Empty cargo hold",
+      "_key": "!tables.results!af4ff510c746793e.0dc6554f0655ffb5",
+      "_id": "0dc6554f0655ffb5"
+    },
+    {
+      "range": [
+        20,
+        21
+      ],
+      "text": "Extravagant furnishings and fittings",
+      "_key": "!tables.results!af4ff510c746793e.9da0096277be2aa6",
+      "_id": "9da0096277be2aa6"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Famed mariner serving aboard",
+      "_key": "!tables.results!af4ff510c746793e.e234064c65a229b7",
+      "_id": "e234064c65a229b7"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Fanatically loyal crew",
+      "_key": "!tables.results!af4ff510c746793e.09449f82827a7130",
+      "_id": "09449f82827a7130"
+    },
+    {
+      "range": [
+        27,
+        29
+      ],
+      "text": "Full cargo hold",
+      "_key": "!tables.results!af4ff510c746793e.8d2998fd9eb748ab",
+      "_id": "8d2998fd9eb748ab"
+    },
+    {
+      "range": [
+        30,
+        32
+      ],
+      "text": "Hidden cargo",
+      "_key": "!tables.results!af4ff510c746793e.67a62eaf5b9c69a5",
+      "_id": "67a62eaf5b9c69a5"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Hidden reinforcements",
+      "_key": "!tables.results!af4ff510c746793e.d0ccaed4f3ee8318",
+      "_id": "d0ccaed4f3ee8318"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Hidden stowaway",
+      "_key": "!tables.results!af4ff510c746793e.7e333ae33d945044",
+      "_id": "7e333ae33d945044"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Hidden workings or capabilities",
+      "_key": "!tables.results!af4ff510c746793e.e018480fee65b069",
+      "_id": "e018480fee65b069"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Holding prisoners",
+      "_key": "!tables.results!af4ff510c746793e.63ef4279f470671a",
+      "_id": "63ef4279f470671a"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Hung with charms and talismans",
+      "_key": "!tables.results!af4ff510c746793e.5a6c51bf4df757a6",
+      "_id": "5a6c51bf4df757a6"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Immaculately maintained",
+      "_key": "!tables.results!af4ff510c746793e.dd011d9e2f7b9871",
+      "_id": "dd011d9e2f7b9871"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "In general disrepair",
+      "_key": "!tables.results!af4ff510c746793e.19ca4f8b7f57135f",
+      "_id": "19ca4f8b7f57135f"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Infamous or famous captain",
+      "_key": "!tables.results!af4ff510c746793e.d616b80b8b0d15d2",
+      "_id": "d616b80b8b0d15d2"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Locked or barred compartments",
+      "_key": "!tables.results!af4ff510c746793e.bd7a4ae138f58cc0",
+      "_id": "bd7a4ae138f58cc0"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Low on provisions",
+      "_key": "!tables.results!af4ff510c746793e.4231b589f2ea2f9c",
+      "_id": "4231b589f2ea2f9c"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Mutinous crew",
+      "_key": "!tables.results!af4ff510c746793e.3d202242c6768810",
+      "_id": "3d202242c6768810"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Operating as a diversion",
+      "_key": "!tables.results!af4ff510c746793e.f011dd7e2994b646",
+      "_id": "f011dd7e2994b646"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Operating under a false identity",
+      "_key": "!tables.results!af4ff510c746793e.5c36186ad6c58fac",
+      "_id": "5c36186ad6c58fac"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Overcrowded sickbay",
+      "_key": "!tables.results!af4ff510c746793e.d1e995dc59fb9a40",
+      "_id": "d1e995dc59fb9a40"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Palatial captain's cabin",
+      "_key": "!tables.results!af4ff510c746793e.6548f54941415994",
+      "_id": "6548f54941415994"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Plentiful provisions",
+      "_key": "!tables.results!af4ff510c746793e.2ad6bfb00b9a028c",
+      "_id": "2ad6bfb00b9a028c"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Stolen or captured ship",
+      "_key": "!tables.results!af4ff510c746793e.ba2178957b0bac11",
+      "_id": "ba2178957b0bac11"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Strife among the crew",
+      "_key": "!tables.results!af4ff510c746793e.afb18406e7f91f35",
+      "_id": "afb18406e7f91f35"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Undermanned",
+      "_key": "!tables.results!af4ff510c746793e.97331ec55c81ffa9",
+      "_id": "97331ec55c81ffa9"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Unexpected reveal of an acquaintance",
+      "_key": "!tables.results!af4ff510c746793e.409772e7ab1b18fc",
+      "_id": "409772e7ab1b18fc"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Venerable ship with a long history",
+      "_key": "!tables.results!af4ff510c746793e.f36ebb634b076a87",
+      "_id": "f36ebb634b076a87"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Well-stocked armory",
+      "_key": "!tables.results!af4ff510c746793e.31999ccc670fed4e",
+      "_id": "31999ccc670fed4e"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Without a commander",
+      "_key": "!tables.results!af4ff510c746793e.7d3f4178c1138c7e",
+      "_id": "7d3f4178c1138c7e"
+    },
+    {
+      "range": [
+        88,
+        91
+      ],
+      "text": "Unexpected [Ship Mission](datasworn:oracle_collection:sundered_isles/ship/mission)",
+      "_key": "!tables.results!af4ff510c746793e.59085e5e507fd1a1",
+      "_id": "59085e5e507fd1a1"
+    },
+    {
+      "range": [
+        92,
+        95
+      ],
+      "text": "[Ship Damage](datasworn:oracle_rollable:sundered_isles/misc/ship_damage)",
+      "_key": "!tables.results!af4ff510c746793e.ba3bf8c04b128136",
+      "_id": "ba3bf8c04b128136"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!af4ff510c746793e.69f905de1b0b7a0a",
+      "_id": "69f905de1b0b7a0a"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 138,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!af4ff510c746793e"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Shattered World",
+  "description": "A planet sundered by cataclysmic destruction.",
+  "type": "RollTable",
+  "_id": "656eb2b3e3476a48",
+  "sort": 316,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Shattered",
+      "dsid": "oracle_collection:starforged/planet/shattered"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!656eb2b3e3476a48"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Creature Oracles",
+  "description": "Roll for a <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Creatures/Basic_Form\" data-dsid=\"oracle_collection:starforged/creature/basic_form\"><i class=\"fa fa-caret-right\"></i> basic form</a>, and flesh out the creature’s appearance using this @Compendium[foundry-ironsworn.starforgedoracles.807a6b963f72d7e5]{Creature First Look} table. Then, roll on the @Compendium[foundry-ironsworn.starforgedoracles.923af7927992abad]{Encountered Behavior} table to envision this creature’s motivation and frame how the encounter begins.",
+  "type": "RollTable",
+  "_id": "5b1e2f2fead08924",
+  "sort": 336,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Creatures",
+      "dsid": "oracle_collection:starforged/creature"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!5b1e2f2fead08924"
+}

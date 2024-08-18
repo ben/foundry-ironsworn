@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Reach a Milestone",
   "img": "icons/dice/d10black.svg",
+  "folder": "456f0d6c841ff99f",
   "system": {
     "dfid": "Ironsworn/Moves/Quest/Reach_a_Milestone",
     "Category": "Ironsworn/Moves/Quest",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item**, you may mark progress.\n\n  * Troublesome quest: Mark 3 progress.\n  * Dangerous quest: Mark 2 progress.\n  * Formidable quest: Mark 1 progress.\n  * Extreme quest: Mark 2 ticks.\n  * Epic quest: Mark 1 tick.",
+    "Text": "When __you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item__, you may mark progress.\n\n  * Troublesome quest: Mark 3 progress.\n  * Dangerous quest: Mark 2 progress.\n  * Formidable quest: Mark 1 progress.\n  * Extreme quest: Mark 2 ticks.\n  * Epic quest: Mark 1 tick.",
     "Trigger": {
       "Text": "When you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item...",
       "Options": []
@@ -16,41 +17,28 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 100
     },
     "Suggestions": {},
@@ -59,20 +47,11 @@
     }
   },
   "sort": 100,
-  "folder": "456f0d6c841ff99f",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Quest/Reach_a_Milestone",
+      "dsid": "move:classic/quest/reach_a_milestone"
+    }
   },
   "_key": "!items!c3696751a921323b"
 }

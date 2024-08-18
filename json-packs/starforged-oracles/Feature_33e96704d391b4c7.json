@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Living/Feature",
-      "category": "Starforged/Oracles/Derelicts/Living"
+      "category": "Starforged/Oracles/Derelicts/Living",
+      "dsid": "oracle_rollable:starforged/derelict/living/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Abandoned pet",
-      "_id": "dc74cfbb7e7211b5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.dc74cfbb7e7211b5"
+      "_key": "!tables.results!33e96704d391b4c7.74a9a215993118c0",
+      "_id": "74a9a215993118c0"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Audible music",
-      "_id": "4a2c1dee69d1c477",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.4a2c1dee69d1c477"
+      "_key": "!tables.results!33e96704d391b4c7.ed36e767c5a19369",
+      "_id": "ed36e767c5a19369"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Cherished personal item",
-      "_id": "a59d79f6c1158c1b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.a59d79f6c1158c1b"
+      "_key": "!tables.results!33e96704d391b4c7.9b17d05a6976e059",
+      "_id": "9b17d05a6976e059"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Failed barricade",
-      "_id": "df57a74343225cd9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.df57a74343225cd9"
+      "_key": "!tables.results!33e96704d391b4c7.179df34483628082",
+      "_id": "179df34483628082"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Half-eaten food",
-      "_id": "55ccf2f3b738e8cd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.55ccf2f3b738e8cd"
+      "_key": "!tables.results!33e96704d391b4c7.433cece443588ba9",
+      "_id": "433cece443588ba9"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Messages from loved ones",
-      "_id": "63799a99fa38f87f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.63799a99fa38f87f"
+      "_key": "!tables.results!33e96704d391b4c7.19d09fede9f0c3bd",
+      "_id": "19d09fede9f0c3bd"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Ransacked belongings",
-      "_id": "fa262da78e8bc5fb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.fa262da78e8bc5fb"
+      "_key": "!tables.results!33e96704d391b4c7.c54dd9e9d01628a9",
+      "_id": "c54dd9e9d01628a9"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Remains of the dead",
-      "_id": "44ae4af878ec1ca4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.44ae4af878ec1ca4"
+      "_key": "!tables.results!33e96704d391b4c7.19170638edce43b5",
+      "_id": "19170638edce43b5"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Scuttling vermin",
-      "_id": "b9e7e52c20ef4282",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.b9e7e52c20ef4282"
+      "_key": "!tables.results!33e96704d391b4c7.1227ce9ae1afa8d6",
+      "_id": "1227ce9ae1afa8d6"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Shrine or altar",
-      "_id": "98967ef428dd6491",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.98967ef428dd6491"
+      "_key": "!tables.results!33e96704d391b4c7.ce7c4c829f0d26cb",
+      "_id": "ce7c4c829f0d26cb"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         88
       ],
       "text": "Unusual art",
-      "_id": "bf7dcd7d47a79948",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.bf7dcd7d47a79948"
+      "_key": "!tables.results!33e96704d391b4c7.71477dde87d81d28",
+      "_id": "71477dde87d81d28"
     },
     {
       "range": [
         89,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "a9485a8dbf18e2ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33e96704d391b4c7.a9485a8dbf18e2ea"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!33e96704d391b4c7.011593e2d666c48a",
+      "_id": "011593e2d666c48a"
     }
   ],
   "folder": "026e85bc4b8047b8",
   "sort": 355,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!33e96704d391b4c7"
 }

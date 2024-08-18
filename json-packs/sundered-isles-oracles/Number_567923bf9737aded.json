@@ -1,0 +1,65 @@
+{
+  "_id": "567923bf9737aded",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/magnitude",
+      "dsid": "oracle_rollable:sundered_isles/misc/magnitude/number"
+    }
+  },
+  "name": "Number",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "None / one",
+      "_key": "!tables.results!567923bf9737aded.9cb7109d0f428f13",
+      "_id": "9cb7109d0f428f13"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Few",
+      "_key": "!tables.results!567923bf9737aded.b1b9cd10f9e81b8c",
+      "_id": "b1b9cd10f9e81b8c"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Several",
+      "_key": "!tables.results!567923bf9737aded.cbce83253e6eb6f3",
+      "_id": "cbce83253e6eb6f3"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Many",
+      "_key": "!tables.results!567923bf9737aded.b81dbe6bf43bff5d",
+      "_id": "b81dbe6bf43bff5d"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Countless",
+      "_key": "!tables.results!567923bf9737aded.4b0863a069171651",
+      "_id": "4b0863a069171651"
+    }
+  ],
+  "folder": "a547d2b78f39268a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!567923bf9737aded"
+}

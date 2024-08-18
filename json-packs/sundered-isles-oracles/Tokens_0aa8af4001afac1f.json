@@ -1,0 +1,920 @@
+{
+  "_id": "0aa8af4001afac1f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure",
+      "dsid": "oracle_rollable:sundered_isles/treasure/tokens"
+    }
+  },
+  "name": "Tokens",
+  "description": "<p>A token is an item of personal significance—such as a memento, heirloom, or individual treasure. Use this table when prompted by the @Compendium[foundry-ironsworn.sunderedislesmoves.baaff21d3f6897ac]{Precious Items} table, or to add detail to a character. A token might have intrinsic value, but is often a thing of worth only to its owner. Not all treasures are silver and gold.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Ancestral ring with a missing gemstone",
+      "_key": "!tables.results!0aa8af4001afac1f.f3209ab4f669a9c2",
+      "_id": "f3209ab4f669a9c2"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Ancient codex with cryptic secrets",
+      "_key": "!tables.results!0aa8af4001afac1f.71adfd33244a0feb",
+      "_id": "71adfd33244a0feb"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Ancient gold coin hung on a chain",
+      "_key": "!tables.results!0aa8af4001afac1f.248e4e9a4139331a",
+      "_id": "248e4e9a4139331a"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Animal figurine carved from amber",
+      "_key": "!tables.results!0aa8af4001afac1f.cf1d464d0cff02b2",
+      "_id": "cf1d464d0cff02b2"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Antique brass sextant",
+      "_key": "!tables.results!0aa8af4001afac1f.bdb3117193b64eac",
+      "_id": "bdb3117193b64eac"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Beautiful dress wrapped in silk paper",
+      "_key": "!tables.results!0aa8af4001afac1f.fb87ed6090c8e20f",
+      "_id": "fb87ed6090c8e20f"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Bloodstained map of an unknown island",
+      "_key": "!tables.results!0aa8af4001afac1f.a42be656ffa8fe45",
+      "_id": "a42be656ffa8fe45"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Book of scripture with ragged pages",
+      "_key": "!tables.results!0aa8af4001afac1f.25649ae335fcee6f",
+      "_id": "25649ae335fcee6f"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Bottle of very old wine",
+      "_key": "!tables.results!0aa8af4001afac1f.37ad4dc3e75d1abe",
+      "_id": "37ad4dc3e75d1abe"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Brass strongbox filled with bloodied rings",
+      "_key": "!tables.results!0aa8af4001afac1f.13422b63a689c35f",
+      "_id": "13422b63a689c35f"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Broken manacles",
+      "_key": "!tables.results!0aa8af4001afac1f.de517801b365d5c4",
+      "_id": "de517801b365d5c4"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Cameo portrait of a feminine figure",
+      "_key": "!tables.results!0aa8af4001afac1f.df5cf5b8abe16bcd",
+      "_id": "df5cf5b8abe16bcd"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Carefully folded flag",
+      "_key": "!tables.results!0aa8af4001afac1f.e12f97ae7783ac7f",
+      "_id": "e12f97ae7783ac7f"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Carved driftwood totem of a sea god",
+      "_key": "!tables.results!0aa8af4001afac1f.cdd1ab0043fecd67",
+      "_id": "cdd1ab0043fecd67"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Ceremonial wooden mask",
+      "_key": "!tables.results!0aa8af4001afac1f.a2aef2dd3c46a530",
+      "_id": "a2aef2dd3c46a530"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Clay jars filled with alchemical agents",
+      "_key": "!tables.results!0aa8af4001afac1f.7201a471832f17cb",
+      "_id": "7201a471832f17cb"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Cleaved fragment of a ship's figurehead",
+      "_key": "!tables.results!0aa8af4001afac1f.2c89b25a8ac6551f",
+      "_id": "2c89b25a8ac6551f"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Coral and pearl bracelet",
+      "_key": "!tables.results!0aa8af4001afac1f.cd1fc7ab11bfa0d6",
+      "_id": "cd1fc7ab11bfa0d6"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Crystalline flute",
+      "_key": "!tables.results!0aa8af4001afac1f.09ed14512049e49b",
+      "_id": "09ed14512049e49b"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Deck of marked playing cards",
+      "_key": "!tables.results!0aa8af4001afac1f.26604fe7eef86c6c",
+      "_id": "26604fe7eef86c6c"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Elaborate clockwork puzzle box",
+      "_key": "!tables.results!0aa8af4001afac1f.3edef2f1ac3222a9",
+      "_id": "3edef2f1ac3222a9"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Embroidered silk handkerchief",
+      "_key": "!tables.results!0aa8af4001afac1f.faec1989dd04f449",
+      "_id": "faec1989dd04f449"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Exquisite sword in a velvet-lined case",
+      "_key": "!tables.results!0aa8af4001afac1f.61ccc900f97dbe4c",
+      "_id": "61ccc900f97dbe4c"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Finely-crafted compass in a leather case",
+      "_key": "!tables.results!0aa8af4001afac1f.8696a5d682412a08",
+      "_id": "8696a5d682412a08"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Flask of aged rum",
+      "_key": "!tables.results!0aa8af4001afac1f.e5f7b44cbb2cb851",
+      "_id": "e5f7b44cbb2cb851"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Folded note with scrawled coordinates",
+      "_key": "!tables.results!0aa8af4001afac1f.ed45a8f857b86a44",
+      "_id": "ed45a8f857b86a44"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Forgery kit",
+      "_key": "!tables.results!0aa8af4001afac1f.6034897f29ad3bd9",
+      "_id": "6034897f29ad3bd9"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Gilded cage with a clockwork bird",
+      "_key": "!tables.results!0aa8af4001afac1f.a5496cf1d4e22b67",
+      "_id": "a5496cf1d4e22b67"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Gold key",
+      "_key": "!tables.results!0aa8af4001afac1f.bac7acd26525c52d",
+      "_id": "bac7acd26525c52d"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Gold locket with a lock of hair",
+      "_key": "!tables.results!0aa8af4001afac1f.55b18f5dfa65b854",
+      "_id": "55b18f5dfa65b854"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Gold reliquary filled with ash",
+      "_key": "!tables.results!0aa8af4001afac1f.cf95e88ffb320552",
+      "_id": "cf95e88ffb320552"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Gold ring hung on an iron chain",
+      "_key": "!tables.results!0aa8af4001afac1f.5c7942ccb3dd7f1d",
+      "_id": "5c7942ccb3dd7f1d"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Hand-drawn celestial chart",
+      "_key": "!tables.results!0aa8af4001afac1f.de4d22d49646c2d1",
+      "_id": "de4d22d49646c2d1"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Handwritten sheet music",
+      "_key": "!tables.results!0aa8af4001afac1f.46c4feccda004b6f",
+      "_id": "46c4feccda004b6f"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Intricate brass and silver astrolabe",
+      "_key": "!tables.results!0aa8af4001afac1f.4967f5c9079f58ff",
+      "_id": "4967f5c9079f58ff"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Iron medallion with a compass rose motif",
+      "_key": "!tables.results!0aa8af4001afac1f.b00748e7d503770c",
+      "_id": "b00748e7d503770c"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Ivory smoking pipe",
+      "_key": "!tables.results!0aa8af4001afac1f.9787eac65cac81c0",
+      "_id": "9787eac65cac81c0"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Jade mortar and pestle",
+      "_key": "!tables.results!0aa8af4001afac1f.5657c4758261e450",
+      "_id": "5657c4758261e450"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Jar of dirt",
+      "_key": "!tables.results!0aa8af4001afac1f.f984d9364dbb2090",
+      "_id": "f984d9364dbb2090"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Jeweled chalice",
+      "_key": "!tables.results!0aa8af4001afac1f.dfc2d7d67e4b3d07",
+      "_id": "dfc2d7d67e4b3d07"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Jeweled hair comb",
+      "_key": "!tables.results!0aa8af4001afac1f.b2275d4cf83b1f91",
+      "_id": "b2275d4cf83b1f91"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Journal filled with notes and sketches",
+      "_key": "!tables.results!0aa8af4001afac1f.02655a20adafe6ed",
+      "_id": "02655a20adafe6ed"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Large, flawless diamond",
+      "_key": "!tables.results!0aa8af4001afac1f.604212731019dbd0",
+      "_id": "604212731019dbd0"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Leather-wrapped forge hammer",
+      "_key": "!tables.results!0aa8af4001afac1f.0fa4a9c3fbf6a5a3",
+      "_id": "0fa4a9c3fbf6a5a3"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Leatherbound codebook",
+      "_key": "!tables.results!0aa8af4001afac1f.d46ce09f3de966b0",
+      "_id": "d46ce09f3de966b0"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Letter of marque signed with blood",
+      "_key": "!tables.results!0aa8af4001afac1f.60e2a6c709325bcf",
+      "_id": "60e2a6c709325bcf"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Letter of pardon",
+      "_key": "!tables.results!0aa8af4001afac1f.66a8ca0400fa9774",
+      "_id": "66a8ca0400fa9774"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Letter opener stained with dried blood",
+      "_key": "!tables.results!0aa8af4001afac1f.df072d0c2e2dbb12",
+      "_id": "df072d0c2e2dbb12"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Locket with a faded portrait",
+      "_key": "!tables.results!0aa8af4001afac1f.c771e4fef140b4e5",
+      "_id": "c771e4fef140b4e5"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Message in a bottle",
+      "_key": "!tables.results!0aa8af4001afac1f.f33afc0e9ae32786",
+      "_id": "f33afc0e9ae32786"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Military medal hung on a silk ribbon",
+      "_key": "!tables.results!0aa8af4001afac1f.d80f97579243dba0",
+      "_id": "d80f97579243dba0"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Music box",
+      "_key": "!tables.results!0aa8af4001afac1f.7df7885c9bc2c6d8",
+      "_id": "7df7885c9bc2c6d8"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Old chart with hand-drawn corrections",
+      "_key": "!tables.results!0aa8af4001afac1f.d3285726aa5c6018",
+      "_id": "d3285726aa5c6018"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "One-half of a sundered crown",
+      "_key": "!tables.results!0aa8af4001afac1f.4f143da624694af4",
+      "_id": "4f143da624694af4"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "One-half of a treasure map",
+      "_key": "!tables.results!0aa8af4001afac1f.d3b4841174ead233",
+      "_id": "d3b4841174ead233"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "One-half of an ancient medallion",
+      "_key": "!tables.results!0aa8af4001afac1f.b92d28be88625898",
+      "_id": "b92d28be88625898"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Ornate hilt with a broken blade",
+      "_key": "!tables.results!0aa8af4001afac1f.43fd7fca76872174",
+      "_id": "43fd7fca76872174"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Ornate jeweled strongbox",
+      "_key": "!tables.results!0aa8af4001afac1f.cb5e3a6e035d8c59",
+      "_id": "cb5e3a6e035d8c59"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Oversized pearl",
+      "_key": "!tables.results!0aa8af4001afac1f.8561e0237df0a11e",
+      "_id": "8561e0237df0a11e"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Padlocked book",
+      "_key": "!tables.results!0aa8af4001afac1f.0b9e7d81166b74ef",
+      "_id": "0b9e7d81166b74ef"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Painted portrait of a heroic figure",
+      "_key": "!tables.results!0aa8af4001afac1f.a431513069d2d4d4",
+      "_id": "a431513069d2d4d4"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Pair of bone-carved dice",
+      "_key": "!tables.results!0aa8af4001afac1f.cb7022bb65de4ccc",
+      "_id": "cb7022bb65de4ccc"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Perfumed letter",
+      "_key": "!tables.results!0aa8af4001afac1f.8c86360b40b04fa7",
+      "_id": "8c86360b40b04fa7"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Platinum circlet set with a large ruby",
+      "_key": "!tables.results!0aa8af4001afac1f.8645ebbc410b1be0",
+      "_id": "8645ebbc410b1be0"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Pocket spyglass of wood and bronze",
+      "_key": "!tables.results!0aa8af4001afac1f.6bffae437bcdabb1",
+      "_id": "6bffae437bcdabb1"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Pocket watch with a personal engraving",
+      "_key": "!tables.results!0aa8af4001afac1f.3dfd31087b420166",
+      "_id": "3dfd31087b420166"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Pouch of silver musket balls",
+      "_key": "!tables.results!0aa8af4001afac1f.a98c0642f432e6b8",
+      "_id": "a98c0642f432e6b8"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Pouch with eight pieces of a silver coin",
+      "_key": "!tables.results!0aa8af4001afac1f.8b84783d1b0580b2",
+      "_id": "8b84783d1b0580b2"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Rare flowers pressed in a journal",
+      "_key": "!tables.results!0aa8af4001afac1f.827f4bd5cc15705e",
+      "_id": "827f4bd5cc15705e"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Rough-hewn stone key",
+      "_key": "!tables.results!0aa8af4001afac1f.48fc0ed2f2b67fde",
+      "_id": "48fc0ed2f2b67fde"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Sailor's journal filled with sea shanties",
+      "_key": "!tables.results!0aa8af4001afac1f.a6eec068ce6bf279",
+      "_id": "a6eec068ce6bf279"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Scrimshaw carving of a sea monster",
+      "_key": "!tables.results!0aa8af4001afac1f.8d1eb424167e54d5",
+      "_id": "8d1eb424167e54d5"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Sealed envelope with a black spot",
+      "_key": "!tables.results!0aa8af4001afac1f.9cf666f7954857dd",
+      "_id": "9cf666f7954857dd"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Set of crystal and obsidian chess pieces",
+      "_key": "!tables.results!0aa8af4001afac1f.36ff2db193082904",
+      "_id": "36ff2db193082904"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Set of metal lockpicks",
+      "_key": "!tables.results!0aa8af4001afac1f.f344e87652c0f190",
+      "_id": "f344e87652c0f190"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Set of onyx divination stones",
+      "_key": "!tables.results!0aa8af4001afac1f.e4b874d24ecf7679",
+      "_id": "e4b874d24ecf7679"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Shard of an iron meteorite",
+      "_key": "!tables.results!0aa8af4001afac1f.cf1e5ace3efb9f2e",
+      "_id": "cf1e5ace3efb9f2e"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Sheaf of wanted posters",
+      "_key": "!tables.results!0aa8af4001afac1f.e97dc50f258c81c8",
+      "_id": "e97dc50f258c81c8"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Ship in a bottle",
+      "_key": "!tables.results!0aa8af4001afac1f.765062bb1ca3eda3",
+      "_id": "765062bb1ca3eda3"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Ship's bell dented by musket shot",
+      "_key": "!tables.results!0aa8af4001afac1f.40c7cab46e611b58",
+      "_id": "40c7cab46e611b58"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Ship's drum with a shark skin drumhead",
+      "_key": "!tables.results!0aa8af4001afac1f.02927c4d15185a10",
+      "_id": "02927c4d15185a10"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Silver harmonica",
+      "_key": "!tables.results!0aa8af4001afac1f.853be08aff0c25a1",
+      "_id": "853be08aff0c25a1"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Single entry torn from a ship's log",
+      "_key": "!tables.results!0aa8af4001afac1f.16a058c263613f6b",
+      "_id": "16a058c263613f6b"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Single musket ball in a gold snuffbox",
+      "_key": "!tables.results!0aa8af4001afac1f.62d8e688cd5b8918",
+      "_id": "62d8e688cd5b8918"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Skeleton key",
+      "_key": "!tables.results!0aa8af4001afac1f.74d84ae792d310f2",
+      "_id": "74d84ae792d310f2"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Skull carved with an intricate map",
+      "_key": "!tables.results!0aa8af4001afac1f.bdcd32d1efcb4806",
+      "_id": "bdcd32d1efcb4806"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Skull of a rare or extinct creature",
+      "_key": "!tables.results!0aa8af4001afac1f.12cd4b975f7d92fb",
+      "_id": "12cd4b975f7d92fb"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Small clay urn filled with gold teeth",
+      "_key": "!tables.results!0aa8af4001afac1f.906d755f5078d070",
+      "_id": "906d755f5078d070"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Stoppered flask containing dark liquid",
+      "_key": "!tables.results!0aa8af4001afac1f.01ba7fc38b5e62a8",
+      "_id": "01ba7fc38b5e62a8"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Strip of cloth torn from a black flag",
+      "_key": "!tables.results!0aa8af4001afac1f.2c468bb2b794b5cb",
+      "_id": "2c468bb2b794b5cb"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Tea leaves in an embellished wood box",
+      "_key": "!tables.results!0aa8af4001afac1f.e9462ef8ba74a4df",
+      "_id": "e9462ef8ba74a4df"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Timeworn bronze sundial",
+      "_key": "!tables.results!0aa8af4001afac1f.1052726dd2e3124e",
+      "_id": "1052726dd2e3124e"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Unadorned iron box with a complex lock",
+      "_key": "!tables.results!0aa8af4001afac1f.5d5df6268109cb68",
+      "_id": "5d5df6268109cb68"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Velvet pouch filled with shark teeth",
+      "_key": "!tables.results!0aa8af4001afac1f.a88a053e03f2ed6a",
+      "_id": "a88a053e03f2ed6a"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Vial of cloudy seawater",
+      "_key": "!tables.results!0aa8af4001afac1f.d05ebfc5b3fa6d8c",
+      "_id": "d05ebfc5b3fa6d8c"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Vial of coagulated blood",
+      "_key": "!tables.results!0aa8af4001afac1f.2f38ffde367ab635",
+      "_id": "2f38ffde367ab635"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Water-stained love letter",
+      "_key": "!tables.results!0aa8af4001afac1f.84028f51260bdd13",
+      "_id": "84028f51260bdd13"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Wax seal ring with a royal crest",
+      "_key": "!tables.results!0aa8af4001afac1f.66aa81764d786bc6",
+      "_id": "66aa81764d786bc6"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Weathered nameplate of a long-lost ship",
+      "_key": "!tables.results!0aa8af4001afac1f.31837d8c8aa73407",
+      "_id": "31837d8c8aa73407"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Well-stocked surgeon's bag",
+      "_key": "!tables.results!0aa8af4001afac1f.fdcf6efd781251a2",
+      "_id": "fdcf6efd781251a2"
+    }
+  ],
+  "folder": "4b1f1e3c1b624444",
+  "sort": 223,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0aa8af4001afac1f"
+}

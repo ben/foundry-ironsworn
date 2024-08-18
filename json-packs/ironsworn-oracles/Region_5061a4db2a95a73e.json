@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Place/Region",
-      "category": "Ironsworn/Oracles/Place"
+      "category": "Ironsworn/Oracles/Place",
+      "dsid": "oracle_rollable:classic/place/region"
     }
   },
   "name": "Region",
   "description": "<p>Use this oracle when you want to randomly select a region with the Ironlands.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -17,126 +18,81 @@
         1,
         12
       ],
-      "text": "Barrier Islands",
-      "_id": "e5a650e4c250f504",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.e5a650e4c250f504"
+      "text": "[Barrier Islands](datasworn:atlas_entry:classic/ironlands/barrier_islands)",
+      "_key": "!tables.results!5061a4db2a95a73e.a2bf07b4e1aca461",
+      "_id": "a2bf07b4e1aca461"
     },
     {
       "range": [
         13,
         24
       ],
-      "text": "Ragged Coast",
-      "_id": "a189abec99667b5b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.a189abec99667b5b"
+      "text": "[Ragged Coast](datasworn:atlas_entry:classic/ironlands/ragged_coast)",
+      "_key": "!tables.results!5061a4db2a95a73e.8daa1cac3ccb90a7",
+      "_id": "8daa1cac3ccb90a7"
     },
     {
       "range": [
         25,
         34
       ],
-      "text": "Deep Wilds",
-      "_id": "ab0e2295150b74fc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.ab0e2295150b74fc"
+      "text": "[Deep Wilds](datasworn:atlas_entry:classic/ironlands/deep_wilds)",
+      "_key": "!tables.results!5061a4db2a95a73e.0d6979d8167b38c8",
+      "_id": "0d6979d8167b38c8"
     },
     {
       "range": [
         35,
         46
       ],
-      "text": "Flooded Lands",
-      "_id": "6928a1be5a12aa79",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.6928a1be5a12aa79"
+      "text": "[Flooded Lands](datasworn:atlas_entry:classic/ironlands/flooded_lands)",
+      "_key": "!tables.results!5061a4db2a95a73e.e29ff4144dc31705",
+      "_id": "e29ff4144dc31705"
     },
     {
       "range": [
         47,
         60
       ],
-      "text": "Havens",
-      "_id": "447bc4a8b2f23e65",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.447bc4a8b2f23e65"
+      "text": "[Havens](datasworn:atlas_entry:classic/ironlands/havens)",
+      "_key": "!tables.results!5061a4db2a95a73e.aa8472bdba8b6a8d",
+      "_id": "aa8472bdba8b6a8d"
     },
     {
       "range": [
         61,
         72
       ],
-      "text": "Hinterlands",
-      "_id": "8bf888e4f7c01677",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.8bf888e4f7c01677"
+      "text": "[Hinterlands](datasworn:atlas_entry:classic/ironlands/hinterlands)",
+      "_key": "!tables.results!5061a4db2a95a73e.5ed1b5bc13721292",
+      "_id": "5ed1b5bc13721292"
     },
     {
       "range": [
         73,
         84
       ],
-      "text": "Tempest Hills",
-      "_id": "9c0250b699c97d65",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.9c0250b699c97d65"
+      "text": "[Tempest Hills](datasworn:atlas_entry:classic/ironlands/tempest_hills)",
+      "_key": "!tables.results!5061a4db2a95a73e.bbb300570f2d0f23",
+      "_id": "bbb300570f2d0f23"
     },
     {
       "range": [
         85,
         94
       ],
-      "text": "Veiled Mountains",
-      "_id": "9cc37c2003f7f2c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.9cc37c2003f7f2c5"
+      "text": "[Veiled Mountains](datasworn:atlas_entry:classic/ironlands/veiled_mountains)",
+      "_key": "!tables.results!5061a4db2a95a73e.12db49b1c6a46a49",
+      "_id": "12db49b1c6a46a49"
     },
     {
       "range": [
         95,
         99
       ],
-      "text": "Shattered Wastes",
-      "_id": "7fd2465c90bcb07c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.7fd2465c90bcb07c"
+      "text": "[Shattered Wastes](datasworn:atlas_entry:classic/ironlands/shattered_wastes)",
+      "_key": "!tables.results!5061a4db2a95a73e.d1c7a9072eca874b",
+      "_id": "d1c7a9072eca874b"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "Elsewhere",
-      "_id": "1c39a48928cc593c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5061a4db2a95a73e.1c39a48928cc593c"
+      "_key": "!tables.results!5061a4db2a95a73e.e35ba6ab93a0e4ea",
+      "_id": "e35ba6ab93a0e4ea"
     }
   ],
   "folder": "e234710dfe2315ae",
   "sort": 176,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!5061a4db2a95a73e"
 }

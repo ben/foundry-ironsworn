@@ -1,0 +1,920 @@
+{
+  "_id": "109883b4bcba1339",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/core",
+      "dsid": "oracle_rollable:sundered_isles/core/action"
+    }
+  },
+  "name": "Action",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Abandon",
+      "_key": "!tables.results!109883b4bcba1339.8c864469cb2159bd",
+      "_id": "8c864469cb2159bd"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Acquire",
+      "_key": "!tables.results!109883b4bcba1339.bec3bf48f9f88f02",
+      "_id": "bec3bf48f9f88f02"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Advance",
+      "_key": "!tables.results!109883b4bcba1339.cc405c7e1e4db884",
+      "_id": "cc405c7e1e4db884"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Affect",
+      "_key": "!tables.results!109883b4bcba1339.abc55e7e2c501b3f",
+      "_id": "abc55e7e2c501b3f"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Aid",
+      "_key": "!tables.results!109883b4bcba1339.c4d677193eaebd13",
+      "_id": "c4d677193eaebd13"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Arrive",
+      "_key": "!tables.results!109883b4bcba1339.2da5189ce7618c41",
+      "_id": "2da5189ce7618c41"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Assault",
+      "_key": "!tables.results!109883b4bcba1339.c070f67b20a8be60",
+      "_id": "c070f67b20a8be60"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Attack",
+      "_key": "!tables.results!109883b4bcba1339.afc1b9892c1203ab",
+      "_id": "afc1b9892c1203ab"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Avenge",
+      "_key": "!tables.results!109883b4bcba1339.9a1ce4b84e2b9e93",
+      "_id": "9a1ce4b84e2b9e93"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Avoid",
+      "_key": "!tables.results!109883b4bcba1339.332b00c758c4e6bd",
+      "_id": "332b00c758c4e6bd"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Await",
+      "_key": "!tables.results!109883b4bcba1339.c69948e6f66bc900",
+      "_id": "c69948e6f66bc900"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Begin",
+      "_key": "!tables.results!109883b4bcba1339.b8a3119f2fb32352",
+      "_id": "b8a3119f2fb32352"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Betray",
+      "_key": "!tables.results!109883b4bcba1339.edf98b95cfc4df87",
+      "_id": "edf98b95cfc4df87"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Blockade",
+      "_key": "!tables.results!109883b4bcba1339.704ffd334732ba71",
+      "_id": "704ffd334732ba71"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Bolster",
+      "_key": "!tables.results!109883b4bcba1339.d422b4a2a7b5a292",
+      "_id": "d422b4a2a7b5a292"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Breach",
+      "_key": "!tables.results!109883b4bcba1339.be181ba818628596",
+      "_id": "be181ba818628596"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Break",
+      "_key": "!tables.results!109883b4bcba1339.e8934f4a4af18c47",
+      "_id": "e8934f4a4af18c47"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Capture",
+      "_key": "!tables.results!109883b4bcba1339.6e75edc8913d7424",
+      "_id": "6e75edc8913d7424"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Challenge",
+      "_key": "!tables.results!109883b4bcba1339.83c62c2a813deb60",
+      "_id": "83c62c2a813deb60"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Change",
+      "_key": "!tables.results!109883b4bcba1339.46ba6c9e72fd825c",
+      "_id": "46ba6c9e72fd825c"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Charge",
+      "_key": "!tables.results!109883b4bcba1339.261da9c634e66c56",
+      "_id": "261da9c634e66c56"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Clash",
+      "_key": "!tables.results!109883b4bcba1339.b92dc83729cef21a",
+      "_id": "b92dc83729cef21a"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Command",
+      "_key": "!tables.results!109883b4bcba1339.866eb03bab17a38f",
+      "_id": "866eb03bab17a38f"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Communicate",
+      "_key": "!tables.results!109883b4bcba1339.f21fe7a9681b033c",
+      "_id": "f21fe7a9681b033c"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Construct",
+      "_key": "!tables.results!109883b4bcba1339.efa0a6dd2e963466",
+      "_id": "efa0a6dd2e963466"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Control",
+      "_key": "!tables.results!109883b4bcba1339.1949c5b3fe2ca125",
+      "_id": "1949c5b3fe2ca125"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Coordinate",
+      "_key": "!tables.results!109883b4bcba1339.72c91ff73cd66b61",
+      "_id": "72c91ff73cd66b61"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Create",
+      "_key": "!tables.results!109883b4bcba1339.ec0bd9a622552516",
+      "_id": "ec0bd9a622552516"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Debate",
+      "_key": "!tables.results!109883b4bcba1339.f5c7bdbb72b88fe3",
+      "_id": "f5c7bdbb72b88fe3"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Defeat",
+      "_key": "!tables.results!109883b4bcba1339.4017ef8c24989bdb",
+      "_id": "4017ef8c24989bdb"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Defend",
+      "_key": "!tables.results!109883b4bcba1339.ba9389489278652b",
+      "_id": "ba9389489278652b"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Deflect",
+      "_key": "!tables.results!109883b4bcba1339.2f7c70cb01f2efb2",
+      "_id": "2f7c70cb01f2efb2"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Defy",
+      "_key": "!tables.results!109883b4bcba1339.89d161fcbd1ad11d",
+      "_id": "89d161fcbd1ad11d"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Deliver",
+      "_key": "!tables.results!109883b4bcba1339.7981ffbd708f27c1",
+      "_id": "7981ffbd708f27c1"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Demand",
+      "_key": "!tables.results!109883b4bcba1339.e348d7882966d841",
+      "_id": "e348d7882966d841"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Depart",
+      "_key": "!tables.results!109883b4bcba1339.7895cf85a6b4dbe2",
+      "_id": "7895cf85a6b4dbe2"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Destroy",
+      "_key": "!tables.results!109883b4bcba1339.887b33b58d071125",
+      "_id": "887b33b58d071125"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Distract",
+      "_key": "!tables.results!109883b4bcba1339.05cf7738c38a1ba4",
+      "_id": "05cf7738c38a1ba4"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Eliminate",
+      "_key": "!tables.results!109883b4bcba1339.7c92370f18d40e7a",
+      "_id": "7c92370f18d40e7a"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Endure",
+      "_key": "!tables.results!109883b4bcba1339.0f5a36b2862e55f2",
+      "_id": "0f5a36b2862e55f2"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Escalate",
+      "_key": "!tables.results!109883b4bcba1339.7e5429065ffb72ae",
+      "_id": "7e5429065ffb72ae"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Escort",
+      "_key": "!tables.results!109883b4bcba1339.afde3536004ebbab",
+      "_id": "afde3536004ebbab"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Evade",
+      "_key": "!tables.results!109883b4bcba1339.b1681630576510be",
+      "_id": "b1681630576510be"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Explore",
+      "_key": "!tables.results!109883b4bcba1339.b2aaf7b7ccf368da",
+      "_id": "b2aaf7b7ccf368da"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Falter",
+      "_key": "!tables.results!109883b4bcba1339.7c72da54edb025ce",
+      "_id": "7c72da54edb025ce"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Find",
+      "_key": "!tables.results!109883b4bcba1339.20478e063744eda9",
+      "_id": "20478e063744eda9"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Finish",
+      "_key": "!tables.results!109883b4bcba1339.8c32e5f51f8c5255",
+      "_id": "8c32e5f51f8c5255"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Focus",
+      "_key": "!tables.results!109883b4bcba1339.034f673b4822c2e8",
+      "_id": "034f673b4822c2e8"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Follow",
+      "_key": "!tables.results!109883b4bcba1339.7975121d6c072e30",
+      "_id": "7975121d6c072e30"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Fortify",
+      "_key": "!tables.results!109883b4bcba1339.5ea6d44ec340680c",
+      "_id": "5ea6d44ec340680c"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Gather",
+      "_key": "!tables.results!109883b4bcba1339.f7ff98aec83cf55a",
+      "_id": "f7ff98aec83cf55a"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Guard",
+      "_key": "!tables.results!109883b4bcba1339.73628b9efa378fd7",
+      "_id": "73628b9efa378fd7"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Hide",
+      "_key": "!tables.results!109883b4bcba1339.d215ebc288d47f6c",
+      "_id": "d215ebc288d47f6c"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Hold",
+      "_key": "!tables.results!109883b4bcba1339.4b4874107fa05d7f",
+      "_id": "4b4874107fa05d7f"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Hunt",
+      "_key": "!tables.results!109883b4bcba1339.985c098f3c5f5eb8",
+      "_id": "985c098f3c5f5eb8"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Initiate",
+      "_key": "!tables.results!109883b4bcba1339.6bd0f7d90e58b579",
+      "_id": "6bd0f7d90e58b579"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Inspect",
+      "_key": "!tables.results!109883b4bcba1339.83a8df0b6870e2bc",
+      "_id": "83a8df0b6870e2bc"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Investigate",
+      "_key": "!tables.results!109883b4bcba1339.80e7a7200aead826",
+      "_id": "80e7a7200aead826"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Journey",
+      "_key": "!tables.results!109883b4bcba1339.62c55f695ac4dda3",
+      "_id": "62c55f695ac4dda3"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Learn",
+      "_key": "!tables.results!109883b4bcba1339.448f06921267ba87",
+      "_id": "448f06921267ba87"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Leave",
+      "_key": "!tables.results!109883b4bcba1339.65f5e9b94b39c54c",
+      "_id": "65f5e9b94b39c54c"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Locate",
+      "_key": "!tables.results!109883b4bcba1339.ed33355d2afaf969",
+      "_id": "ed33355d2afaf969"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Lose",
+      "_key": "!tables.results!109883b4bcba1339.11b7960788da5042",
+      "_id": "11b7960788da5042"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Manipulate",
+      "_key": "!tables.results!109883b4bcba1339.8da91aec755c1bbe",
+      "_id": "8da91aec755c1bbe"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Mourn",
+      "_key": "!tables.results!109883b4bcba1339.300298e5eba683fc",
+      "_id": "300298e5eba683fc"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Move",
+      "_key": "!tables.results!109883b4bcba1339.6b4a780ac2b70c96",
+      "_id": "6b4a780ac2b70c96"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Oppose",
+      "_key": "!tables.results!109883b4bcba1339.c2437afa5628cff9",
+      "_id": "c2437afa5628cff9"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Overwhelm",
+      "_key": "!tables.results!109883b4bcba1339.520d5e9338157c7f",
+      "_id": "520d5e9338157c7f"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Persevere",
+      "_key": "!tables.results!109883b4bcba1339.d4ab30c404f42619",
+      "_id": "d4ab30c404f42619"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Preserve",
+      "_key": "!tables.results!109883b4bcba1339.c4f1ed8fb19d8bc0",
+      "_id": "c4f1ed8fb19d8bc0"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Protect",
+      "_key": "!tables.results!109883b4bcba1339.ca73e2d13849a56f",
+      "_id": "ca73e2d13849a56f"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Raid",
+      "_key": "!tables.results!109883b4bcba1339.4d8ee4b5e2706411",
+      "_id": "4d8ee4b5e2706411"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Reduce",
+      "_key": "!tables.results!109883b4bcba1339.ab618e07c8e44319",
+      "_id": "ab618e07c8e44319"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Refuse",
+      "_key": "!tables.results!109883b4bcba1339.f88fcb577c49bf55",
+      "_id": "f88fcb577c49bf55"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Reject",
+      "_key": "!tables.results!109883b4bcba1339.5844283c4b732cc4",
+      "_id": "5844283c4b732cc4"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Release",
+      "_key": "!tables.results!109883b4bcba1339.c51322ce3394c494",
+      "_id": "c51322ce3394c494"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Remove",
+      "_key": "!tables.results!109883b4bcba1339.c117e81df8f81f2d",
+      "_id": "c117e81df8f81f2d"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Resist",
+      "_key": "!tables.results!109883b4bcba1339.6d66ec6b5610a90d",
+      "_id": "6d66ec6b5610a90d"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Restore",
+      "_key": "!tables.results!109883b4bcba1339.9c94aaa943c2a4be",
+      "_id": "9c94aaa943c2a4be"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Reveal",
+      "_key": "!tables.results!109883b4bcba1339.73f95172d987aeff",
+      "_id": "73f95172d987aeff"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Risk",
+      "_key": "!tables.results!109883b4bcba1339.f4843d850eed7ee3",
+      "_id": "f4843d850eed7ee3"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Scheme",
+      "_key": "!tables.results!109883b4bcba1339.608d64eeef63c96f",
+      "_id": "608d64eeef63c96f"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Search",
+      "_key": "!tables.results!109883b4bcba1339.ee75ea1c19b35aec",
+      "_id": "ee75ea1c19b35aec"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Secure",
+      "_key": "!tables.results!109883b4bcba1339.d5b6f03338fd0701",
+      "_id": "d5b6f03338fd0701"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Seize",
+      "_key": "!tables.results!109883b4bcba1339.86dc8a73e8a22cfa",
+      "_id": "86dc8a73e8a22cfa"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Serve",
+      "_key": "!tables.results!109883b4bcba1339.ccef713433a0600b",
+      "_id": "ccef713433a0600b"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Share",
+      "_key": "!tables.results!109883b4bcba1339.8b1389ff30614683",
+      "_id": "8b1389ff30614683"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Strengthen",
+      "_key": "!tables.results!109883b4bcba1339.cf386b6358f3b11b",
+      "_id": "cf386b6358f3b11b"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Study",
+      "_key": "!tables.results!109883b4bcba1339.423d72034240de47",
+      "_id": "423d72034240de47"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Summon",
+      "_key": "!tables.results!109883b4bcba1339.d673b29865175b5e",
+      "_id": "d673b29865175b5e"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Support",
+      "_key": "!tables.results!109883b4bcba1339.bdd51b37ab4cc7e1",
+      "_id": "bdd51b37ab4cc7e1"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Suppress",
+      "_key": "!tables.results!109883b4bcba1339.d28a93c2ef2c1e91",
+      "_id": "d28a93c2ef2c1e91"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Surrender",
+      "_key": "!tables.results!109883b4bcba1339.7d930d723dc215f5",
+      "_id": "7d930d723dc215f5"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Swear",
+      "_key": "!tables.results!109883b4bcba1339.71d971abdd7ed7d1",
+      "_id": "71d971abdd7ed7d1"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Threaten",
+      "_key": "!tables.results!109883b4bcba1339.e7cefff842020ce2",
+      "_id": "e7cefff842020ce2"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Transform",
+      "_key": "!tables.results!109883b4bcba1339.7685a02affbf5526",
+      "_id": "7685a02affbf5526"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Uncover",
+      "_key": "!tables.results!109883b4bcba1339.483b3864dda9ef18",
+      "_id": "483b3864dda9ef18"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Uphold",
+      "_key": "!tables.results!109883b4bcba1339.12d4468d0e0ed995",
+      "_id": "12d4468d0e0ed995"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Weaken",
+      "_key": "!tables.results!109883b4bcba1339.c12da6d8af876c6d",
+      "_id": "c12da6d8af876c6d"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Withdraw",
+      "_key": "!tables.results!109883b4bcba1339.15a2ff18813d2080",
+      "_id": "15a2ff18813d2080"
+    }
+  ],
+  "folder": "ece178d45aa72b0a",
+  "sort": 116,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!109883b4bcba1339"
+}

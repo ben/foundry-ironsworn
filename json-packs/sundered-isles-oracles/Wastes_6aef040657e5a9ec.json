@@ -1,0 +1,200 @@
+{
+  "_id": "6aef040657e5a9ec",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/region_landmarks",
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/wastes"
+    }
+  },
+  "name": "Wastes",
+  "description": "<p>Arid, rocky terrain</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Abandoned mineshaft",
+      "_key": "!tables.results!6aef040657e5a9ec.b256ade421f4fc45",
+      "_id": "b256ade421f4fc45"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Animal tracks in the sand",
+      "_key": "!tables.results!6aef040657e5a9ec.2b3ead43172c48dc",
+      "_id": "2b3ead43172c48dc"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Carrion birds roosting in a dead tree",
+      "_key": "!tables.results!6aef040657e5a9ec.7a737b3e7b75bb77",
+      "_id": "7a737b3e7b75bb77"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Dried riverbed",
+      "_key": "!tables.results!6aef040657e5a9ec.147cfee743420d8b",
+      "_id": "147cfee743420d8b"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Expanse of shifting, loose sand",
+      "_key": "!tables.results!6aef040657e5a9ec.924ecc6c800fd459",
+      "_id": "924ecc6c800fd459"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Fossilized tracks of an ancient beast",
+      "_key": "!tables.results!6aef040657e5a9ec.2b51be20e3c575bd",
+      "_id": "2b51be20e3c575bd"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Freshwater spring oasis",
+      "_key": "!tables.results!6aef040657e5a9ec.27012e47f649fe7a",
+      "_id": "27012e47f649fe7a"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Half-buried statue",
+      "_key": "!tables.results!6aef040657e5a9ec.f8efcaa288d9f4e2",
+      "_id": "f8efcaa288d9f4e2"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Maze of wind-carved spires",
+      "_key": "!tables.results!6aef040657e5a9ec.db518c448aca5590",
+      "_id": "db518c448aca5590"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Narrow trail through steep-sided ravine",
+      "_key": "!tables.results!6aef040657e5a9ec.645f6271cf7fcf85",
+      "_id": "645f6271cf7fcf85"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Natural stone bridge spans a canyon",
+      "_key": "!tables.results!6aef040657e5a9ec.862b0ea4ed3a3ef1",
+      "_id": "862b0ea4ed3a3ef1"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Parched lakebed",
+      "_key": "!tables.results!6aef040657e5a9ec.14afe5d6c13230a4",
+      "_id": "14afe5d6c13230a4"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Petrified forest",
+      "_key": "!tables.results!6aef040657e5a9ec.dca99963be407cbe",
+      "_id": "dca99963be407cbe"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Plain of rocky rubble",
+      "_key": "!tables.results!6aef040657e5a9ec.2892f81b23cc3e26",
+      "_id": "2892f81b23cc3e26"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Rainbow-hued rock formations",
+      "_key": "!tables.results!6aef040657e5a9ec.93c269da2357ba90",
+      "_id": "93c269da2357ba90"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Rock walls with ancient petroglyphs",
+      "_key": "!tables.results!6aef040657e5a9ec.aeefe2fe840c971d",
+      "_id": "aeefe2fe840c971d"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Shadowy cave",
+      "_key": "!tables.results!6aef040657e5a9ec.566cb8c20f0824c4",
+      "_id": "566cb8c20f0824c4"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Sprawling bones of a leviathan",
+      "_key": "!tables.results!6aef040657e5a9ec.207eaaf4bd7c2d21",
+      "_id": "207eaaf4bd7c2d21"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Sun-bleached skeletal remains",
+      "_key": "!tables.results!6aef040657e5a9ec.96f38fe21e2452c4",
+      "_id": "96f38fe21e2452c4"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Towering stone arches",
+      "_key": "!tables.results!6aef040657e5a9ec.60f9af4413c4ebdc",
+      "_id": "60f9af4413c4ebdc"
+    }
+  ],
+  "folder": "a74b251068596264",
+  "sort": 154,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6aef040657e5a9ec"
+}

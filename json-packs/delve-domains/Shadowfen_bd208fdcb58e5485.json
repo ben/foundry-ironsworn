@@ -1,0 +1,141 @@
+{
+  "_id": "bd208fdcb58e5485",
+  "type": "delve-domain",
+  "name": "Shadowfen",
+  "img": "icons/environment/wilderness/cave-entrance.webp",
+  "system": {
+    "summary": "A primeval marsh, cloaked in mist.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Narrow path through a fetid bog"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Stagnant waterway"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Flooded thicket"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Island of dry land"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Submerged discovery"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Preserved corpses"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Overgrown structure"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Tall reeds"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Camp or outpost"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen hunts"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Deep water blocks the path"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Toxic environment"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Concealing or disorienting mist"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Hidden quagmire"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 92,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/shadowfen"
+    }
+  },
+  "_key": "!items!bd208fdcb58e5485"
+}

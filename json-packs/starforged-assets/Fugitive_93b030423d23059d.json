@@ -13,8 +13,8 @@
         "enabled": true,
         "description": "<p>You are hunted by a power or authority. When you make a move, you may improve the result to a strong hit. If you do, fill one segment of a four-segment clock to represent hunters closing in. When the clock is filled, a notable foe or force has tracked you down. If you overcome them or escape, reset the clock and mark 1 tick on your quests legacy track.</p>",
         "hasClock": true,
-        "clockMax": 4,
-        "clockTicks": 0
+        "clockTicks": 0,
+        "clockMax": 4
       },
       {
         "enabled": false,
@@ -47,17 +47,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Path/Fugitive",
+      "dsid": "asset:starforged/path/fugitive"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021246,
-    "modifiedTime": 1695949021246,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!93b030423d23059d"
 }

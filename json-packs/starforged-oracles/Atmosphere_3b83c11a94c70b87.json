@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Vital/Atmosphere",
-      "category": "Starforged/Oracles/Planets/Vital"
+      "category": "Starforged/Oracles/Planets/Vital",
+      "dsid": "oracle_rollable:starforged/planet/vital/atmosphere"
     }
   },
   "name": "Atmosphere",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Marginal",
-      "_id": "57982f75c625aeeb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3b83c11a94c70b87.57982f75c625aeeb"
+      "_key": "!tables.results!3b83c11a94c70b87.e0810bdfcfede5fd",
+      "_id": "e0810bdfcfede5fd"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         50
       ],
       "text": "Breathable",
-      "_id": "18015f92a7d69ea3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3b83c11a94c70b87.18015f92a7d69ea3"
+      "_key": "!tables.results!3b83c11a94c70b87.6aa35796dece01a1",
+      "_id": "6aa35796dece01a1"
     },
     {
       "range": [
@@ -46,29 +37,12 @@
         100
       ],
       "text": "Ideal",
-      "_id": "b45a7f18ac8be70e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3b83c11a94c70b87.b45a7f18ac8be70e"
+      "_key": "!tables.results!3b83c11a94c70b87.8c9b89ceea7f1a18",
+      "_id": "8c9b89ceea7f1a18"
     }
   ],
   "folder": "93ecb6acb6a3ea17",
   "sort": 318,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!3b83c11a94c70b87"
 }

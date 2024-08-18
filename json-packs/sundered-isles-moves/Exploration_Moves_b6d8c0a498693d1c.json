@@ -1,0 +1,16 @@
+{
+  "name": "Exploration Moves",
+  "color": "#427FAA",
+  "description": "",
+  "type": "Item",
+  "_id": "b6d8c0a498693d1c",
+  "sort": 242,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "move_category:sundered_isles/exploration"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!b6d8c0a498693d1c"
+}

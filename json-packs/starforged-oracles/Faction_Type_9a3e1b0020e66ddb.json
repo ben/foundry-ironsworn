@@ -1,0 +1,48 @@
+{
+  "_id": "9a3e1b0020e66ddb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Type",
+      "category": "Starforged/Oracles/Factions",
+      "dsid": "oracle_rollable:starforged/faction/type"
+    }
+  },
+  "name": "Faction Type",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "[Dominion](datasworn:oracle_rollable:starforged/faction/dominion)",
+      "_key": "!tables.results!9a3e1b0020e66ddb.63bfe95914abc1ae",
+      "_id": "63bfe95914abc1ae"
+    },
+    {
+      "range": [
+        41,
+        70
+      ],
+      "text": "[Guild](datasworn:oracle_rollable:starforged/faction/guild)",
+      "_key": "!tables.results!9a3e1b0020e66ddb.87384b8b90a7c44c",
+      "_id": "87384b8b90a7c44c"
+    },
+    {
+      "range": [
+        71,
+        100
+      ],
+      "text": "[Fringe Group](datasworn:oracle_rollable:starforged/faction/fringe_group)",
+      "_key": "!tables.results!9a3e1b0020e66ddb.ff40a33f485ffff6",
+      "_id": "ff40a33f485ffff6"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 340,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9a3e1b0020e66ddb"
+}

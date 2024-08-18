@@ -1,0 +1,66 @@
+{
+  "_id": "d05ecfe8c467bdc5",
+  "type": "sfmove",
+  "name": "Learn From Your Failures",
+  "img": "icons/dice/d10black.svg",
+  "folder": "cc14d0c54f0c2869",
+  "system": {
+    "dfid": "Ironsworn/Moves/Failure/Learn_From_Your_Failures",
+    "Category": "Ironsworn/Moves/Failure",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "When __you spend time reflecting on your hardships and missteps__, and your failure track is +6 or greater, roll your challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a __strong hit__, you commit to making a dramatic change. Take 3 experience and clear all progress. Then, choose one.\n\n  * Adjust your approach: Discard a single asset, and take 2 experience for each marked ability.\n  * Make an oath: @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}, and reroll any dice.\n  * Ready your next steps: Take +3 momentum.\n\nOn a __weak hit__, you learn from your mistakes. Take 2 experience and clear all progress.\n\nOn a __miss__, you’ve learned the wrong lessons. Take 1 experience and clear all progress. Then, envision how you set off on an ill-fated path.",
+    "Trigger": {
+      "Text": "When you spend time reflecting on your hardships and missteps...",
+      "Options": [
+        {
+          "Text": "",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Failure Track"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you commit to making a dramatic change. Take 3 experience and clear all progress. Then, choose one.\n\n  * Adjust your approach: Discard a single asset, and take 2 experience for each marked ability.\n  * Make an oath: @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}, and reroll any dice.\n  * Ready your next steps: Take +3 momentum.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you learn from your mistakes. Take 2 experience and clear all progress."
+      },
+      "Miss": {
+        "Text": "On a __miss__, you’ve learned the wrong lessons. Take 1 experience and clear all progress. Then, envision how you set off on an ill-fated path.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 59
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 59,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Failure/Learn_From_Your_Failures",
+      "dsid": "move:delve/failure/learn_from_your_failures"
+    }
+  },
+  "_key": "!items!d05ecfe8c467bdc5"
+}

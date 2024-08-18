@@ -1,0 +1,111 @@
+{
+  "_id": "0991e8cda7323b44",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Ravaging_Horde",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/ravaging_horde"
+    }
+  },
+  "name": "Ravaging Horde",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Overrun defenses",
+      "_key": "!tables.results!0991e8cda7323b44.93ffdb4390c2e349",
+      "_id": "93ffdb4390c2e349"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Gather resources",
+      "_key": "!tables.results!0991e8cda7323b44.bf6159ddd28813b6",
+      "_id": "bf6159ddd28813b6"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Attack a location",
+      "_key": "!tables.results!0991e8cda7323b44.4f85c9529d8e8d53",
+      "_id": "4f85c9529d8e8d53"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Expand forces",
+      "_key": "!tables.results!0991e8cda7323b44.3d1de51b2321f8e9",
+      "_id": "3d1de51b2321f8e9"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Appoint or reveal a leader",
+      "_key": "!tables.results!0991e8cda7323b44.987c6994ac5737b6",
+      "_id": "987c6994ac5737b6"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Send forth a champion",
+      "_key": "!tables.results!0991e8cda7323b44.f70a5c79656d7337",
+      "_id": "f70a5c79656d7337"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Create a diversion",
+      "_key": "!tables.results!0991e8cda7323b44.fcfb300a718ad192",
+      "_id": "fcfb300a718ad192"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Undermine an opposing force from within",
+      "_key": "!tables.results!0991e8cda7323b44.dc8b726db6ca3174",
+      "_id": "dc8b726db6ca3174"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Cut off supplies or reinforcements",
+      "_key": "!tables.results!0991e8cda7323b44.17f8b6cab50bc977",
+      "_id": "17f8b6cab50bc977"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Employ a new weapon",
+      "_key": "!tables.results!0991e8cda7323b44.98d6d319ff57f437",
+      "_id": "98d6d319ff57f437"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 222,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0991e8cda7323b44"
+}

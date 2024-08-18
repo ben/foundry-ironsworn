@@ -1,0 +1,111 @@
+{
+  "_id": "dbc05d092afe9b2e",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Power-Hungry_Mystic",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/power_hungry_mystic"
+    }
+  },
+  "name": "Power-Hungry Mystic",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Gain hidden knowledge",
+      "_key": "!tables.results!dbc05d092afe9b2e.6fe3361dd5485875",
+      "_id": "6fe3361dd5485875"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Assault an enemy with magic",
+      "_key": "!tables.results!dbc05d092afe9b2e.5947054477ccb7dd",
+      "_id": "5947054477ccb7dd"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Despoil a place through magic",
+      "_key": "!tables.results!dbc05d092afe9b2e.f202cab0e27886ee",
+      "_id": "f202cab0e27886ee"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Forge a bond with ancient forces",
+      "_key": "!tables.results!dbc05d092afe9b2e.96f1382f490bf0dd",
+      "_id": "96f1382f490bf0dd"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Create magical wards or protections",
+      "_key": "!tables.results!dbc05d092afe9b2e.e1ea160729c4cb73",
+      "_id": "e1ea160729c4cb73"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Obtain a powerful artifact",
+      "_key": "!tables.results!dbc05d092afe9b2e.4239bd9ad7756878",
+      "_id": "4239bd9ad7756878"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Tempt with power or secrets",
+      "_key": "!tables.results!dbc05d092afe9b2e.272e003d73584b2a",
+      "_id": "272e003d73584b2a"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Recruit a follower or ally",
+      "_key": "!tables.results!dbc05d092afe9b2e.14727a25ec463d1d",
+      "_id": "14727a25ec463d1d"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sacrifice something in exchange for greater power",
+      "_key": "!tables.results!dbc05d092afe9b2e.ddd68c6fb4877be8",
+      "_id": "ddd68c6fb4877be8"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Use magic to trick or deceive",
+      "_key": "!tables.results!dbc05d092afe9b2e.602b1582c036b9ad",
+      "_id": "602b1582c036b9ad"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 223,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!dbc05d092afe9b2e"
+}

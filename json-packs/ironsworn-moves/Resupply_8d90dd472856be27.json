@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "Resupply",
   "img": "icons/dice/d10black.svg",
+  "folder": "30f9b4039e23c0c9",
   "system": {
     "dfid": "Ironsworn/Moves/Adventure/Resupply",
     "Category": "Ironsworn/Moves/Adventure",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you hunt, forage, or scavenge**, roll +wits.\n\nOn a **strong hit**, you bolster your resources. Take +2 supply.\n\nOn a **weak hit**, take up to +2 supply, but suffer -1 momentum for each.\n\nOn a **miss**, you find nothing helpful. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Text": "When __you hunt, forage, or scavenge__, roll +wits.\n\nOn a __strong hit__, you bolster your resources. Take +2 supply.\n\nOn a __weak hit__, take up to +2 supply, but suffer -1 momentum for each.\n\nOn a __miss__, you find nothing helpful. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
     "Trigger": {
       "Text": "When you hunt, forage, or scavenge...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Wits"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You bolster your resources. Take +2 supply.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you bolster your resources. Take +2 supply.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Take up to +2 supply, but suffer -1 momentum for each.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, take up to +2 supply, but suffer -1 momentum for each."
       },
       "Miss": {
-        "Text": "You find nothing helpful. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you find nothing helpful. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 63
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 63,
-  "folder": "30f9b4039e23c0c9",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Adventure/Resupply",
+      "dsid": "move:classic/adventure/resupply"
+    }
   },
   "_key": "!items!8d90dd472856be27"
 }

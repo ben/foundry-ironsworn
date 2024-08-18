@@ -1,0 +1,47 @@
+{
+  "_id": "04397febabcb908b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/nearby_islands",
+      "dsid": "oracle_rollable:sundered_isles/island/nearby_islands/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        60
+      ],
+      "text": "Isolated",
+      "_key": "!tables.results!04397febabcb908b.674447ce79037d62",
+      "_id": "674447ce79037d62"
+    },
+    {
+      "range": [
+        61,
+        85
+      ],
+      "text": "Island pair",
+      "_key": "!tables.results!04397febabcb908b.17b6a2f685642f55",
+      "_id": "17b6a2f685642f55"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Island group",
+      "_key": "!tables.results!04397febabcb908b.6504c6b202c4f257",
+      "_id": "6504c6b202c4f257"
+    }
+  ],
+  "folder": "4ee166f5068a14b6",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!04397febabcb908b"
+}

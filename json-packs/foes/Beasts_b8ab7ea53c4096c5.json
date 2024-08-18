@@ -1,0 +1,16 @@
+{
+  "name": "Beasts",
+  "description": "Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}.",
+  "type": "Item",
+  "_id": "b8ab7ea53c4096c5",
+  "sort": 151,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Encounters/Beast",
+      "dsid": "npc_collection:classic/beasts"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!b8ab7ea53c4096c5"
+}

@@ -1,0 +1,57 @@
+{
+  "_id": "70c5da168f35295c",
+  "type": "sfmove",
+  "name": "Wield a Rarity",
+  "img": "icons/dice/d10black.svg",
+  "folder": "13b3bceae0364b80",
+  "system": {
+    "dfid": "Ironsworn/Moves/Rarity/Wield_a_Rarity",
+    "Category": "Ironsworn/Moves/Rarity",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you make a move aided by an augmented asset__, roll your rarity die in place of your action die.\n\nOn __any result__ with 6 showing on the rarity die, the power of the rarity manifests in a dramatic and obvious way. You score an automatic __strong hit__ and take +1 momentum.\n\nOn a __hit__ with 5 showing on the rarity die, the power of the rarity manifests in a subtle way. Take +1 momentum.\n\nOn a __miss__ with 1 showing on the rarity die, the rarity’s power fails or works against you.",
+    "Trigger": {
+      "Text": "When you make a move aided by an augmented asset...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": ""
+      },
+      "Miss": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 176
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 176,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Rarity/Wield_a_Rarity",
+      "dsid": "move:delve/rarity/wield_a_rarity"
+    }
+  },
+  "_key": "!items!70c5da168f35295c"
+}

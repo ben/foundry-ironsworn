@@ -1,0 +1,101 @@
+{
+  "name": "Modern Era",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/modern_era",
+      "dsid": "truth:sundered_isles/modern_era"
+    }
+  },
+  "_id": "bb9d67ae9d8f2978",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "It is an age of sail.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/modern_era.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "It is an age of sail.",
+        "Description": "Sailing ships navigate the farthest reaches and weather the fiercest storms. Their cannons unleash devastating barrages against rivals or raiders, and their crews wield muskets and blades to defend their decks. Some commanders plot a course through hazardous waters with chart and sextant, while others rely on a deeper understanding of sea and sky. But above all else, we trust in the loyalty of our shipmates and the strength of our vows.",
+        "Quest": "A famed shipwright, nearing the end of their life, seeks to build their magnum opus—a ship of uncompromising beauty and strength. What rare material do they require, and where is it found?",
+        "Roll template": {
+          "Description": "Sailing ships navigate the farthest reaches and weather the fiercest storms. Their cannons unleash devastating barrages against rivals or raiders, and their crews wield muskets and blades to defend their decks. Some commanders plot a course through hazardous waters with chart and sextant, while others rely on a deeper understanding of sea and sky. But above all else, we trust in the loyalty of our shipmates and the strength of our vows."
+        }
+      },
+      "_id": "908ea07a867ebb4b",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!bb9d67ae9d8f2978.908ea07a867ebb4b"
+    },
+    {
+      "type": "truth",
+      "name": "It is an age of industry.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/modern_era.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "It is an age of industry.",
+        "Description": "The winds of change are upon us. Some of these innovations inspire awe— flying machines that sail among the clouds, metal diving bells that plumb the greatest depths, and mechanical limbs of intricate design to replace what was lost. But industry is also an insatiable fire. Mines, smelters, and factories reshape our lands to feed those flames. Titanic ships seek dominance of the isles. Is it only a matter of time before our steadfast wooden ships and the simple ways of our communities are relics of a bygone age?",
+        "Quest": "An iron submersible stalks seagoing passages. Why do you seek vengeance against this vessel’s commander?",
+        "Roll template": {
+          "Description": "The winds of change are upon us. Some of these innovations inspire awe— flying machines that sail among the clouds, metal diving bells that plumb the greatest depths, and mechanical limbs of intricate design to replace what was lost. But industry is also an insatiable fire. Mines, smelters, and factories reshape our lands to feed those flames. Titanic ships seek dominance of the isles. Is it only a matter of time before our steadfast wooden ships and the simple ways of our communities are relics of a bygone age?"
+        }
+      },
+      "_id": "65d2d9d070df81b5",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!bb9d67ae9d8f2978.65d2d9d070df81b5"
+    },
+    {
+      "type": "truth",
+      "name": "It is an age of wonders.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/modern_era.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "It is an age of wonders.",
+        "Description": "Some have wielded ancient secrets and extraordinary science to power vessels, weapons, and other machines. Their ships are fitted with energized sails that augment the powers of wind and storm. Their cannons unleash volleys of infernal energies. A few commanders even count iron automatons, given life by improbable technologies, among their crew. Resisting these wonders is like casting a stone against a thunderstorm, and many see this new age as a portent of our doom.",
+        "Quest": "An enemy faction is building a colossal machine of fantastic destructive potential. What is the nature of this machine, and why are you sworn to see it destroyed?",
+        "Roll template": {
+          "Description": "Some have wielded ancient secrets and extraordinary science to power vessels, weapons, and other machines. Their ships are fitted with energized sails that augment the powers of wind and storm. Their cannons unleash volleys of infernal energies. A few commanders even count iron automatons, given life by improbable technologies, among their crew. Resisting these wonders is like casting a stone against a thunderstorm, and many see this new age as a portent of our doom."
+        }
+      },
+      "_id": "ab47899e61a82206",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!bb9d67ae9d8f2978.ab47899e61a82206"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you hew to the traditions of shipbuilding and repair, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.4314d57a351c8f63]{Shipwright}. If you understand the intricacies of machines, you might be a @Compendium[foundry-ironsworn.starforgedassets.2d9f63e491a880c8]{Gearhead}. If you are fitted with a mechanical enhancement, you might be @Compendium[foundry-ironsworn.starforgedassets.4c75d631a38fd3b8]{Augmented}. If you are forged by ancient secrets or newfound technologies, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.025095e4809853dd]{Construct}.",
+        "format": 2,
+        "content": "<p>If you hew to the traditions of shipbuilding and repair, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.4314d57a351c8f63]{Shipwright}. If you understand the intricacies of machines, you might be a @Compendium[foundry-ironsworn.starforgedassets.2d9f63e491a880c8]{Gearhead}. If you are fitted with a mechanical enhancement, you might be @Compendium[foundry-ironsworn.starforgedassets.4c75d631a38fd3b8]{Augmented}. If you are forged by ancient secrets or newfound technologies, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.025095e4809853dd]{Construct}.</p>"
+      },
+      "_id": "f599926f0bc48099",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!bb9d67ae9d8f2978.f599926f0bc48099"
+    }
+  ],
+  "folder": null,
+  "sort": 79,
+  "_key": "!journal!bb9d67ae9d8f2978"
+}

@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Ask the Oracle",
   "img": "icons/dice/d10black.svg",
+  "folder": "1c6d36dde131ebef",
   "system": {
     "dfid": "Starforged/Moves/Fate/Ask_the_Oracle",
     "Category": "Starforged/Moves/Fate",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events**, you may...\n\n  * Draw a conclusion: Decide the answer based on the most interesting and obvious result.\n  * Spark an idea: Use an oracle table or other random prompt.\n  * Ask a yes/no question: Decide the odds of a yes, and roll on the table below to check the answer.\n  * Pick two: Envision two options. Rate one as likely, and roll on the table below to see if it is true. If not, it is the other.\n\nOdds           | The answer is yes if you roll...\n---------------|---------------------------------\nSmall Chance   | 10 or less\nUnlikely       | 25 or less\n50/50          | 50 or less\nLikely         | 75 or less\nAlmost Certain | 90 or less\n\nOn a match, envision an extreme result or twist.",
+    "Text": "__When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events__, you may...\n\n  * Draw a conclusion: Decide the answer based on the most interesting and obvious result.\n  * Spark an idea: Use an oracle table or other random prompt.\n  * Ask a yes/no question: Decide the odds of a yes, and roll on the table below to check the answer.\n  * Pick two: Envision two options. Rate one as likely, and roll on the table below to see if it is true. If not, it is the other.\n\nOdds           | The answer is yes if you roll...\n---------------|---------------------------------\nSmall Chance   | 10 or less\nUnlikely       | 25 or less\n50/50          | 50 or less\nLikely         | 75 or less\nAlmost Certain | 90 or less\n\nOn a match, envision an extreme result or twist.",
     "Trigger": {
       "Text": "When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events...",
       "Options": []
@@ -16,71 +17,53 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [
-      "Starforged/Oracles/Moves/Ask_the_Oracle/Small_Chance",
-      "Starforged/Oracles/Moves/Ask_the_Oracle/Unlikely",
-      "Starforged/Oracles/Moves/Ask_the_Oracle/Fifty-fifty",
+      "Starforged/Oracles/Moves/Ask_the_Oracle/Almost_Certain",
       "Starforged/Oracles/Moves/Ask_the_Oracle/Likely",
-      "Starforged/Oracles/Moves/Ask_the_Oracle/Almost_Certain"
+      "Starforged/Oracles/Moves/Ask_the_Oracle/Fifty-fifty",
+      "Starforged/Oracles/Moves/Ask_the_Oracle/Unlikely",
+      "Starforged/Oracles/Moves/Ask_the_Oracle/Small_Chance"
+    ],
+    "dsOracleIds": [
+      "move.oracle_rollable:starforged/fate/ask_the_oracle.almost_certain",
+      "move.oracle_rollable:starforged/fate/ask_the_oracle.likely",
+      "move.oracle_rollable:starforged/fate/ask_the_oracle.fifty_fifty",
+      "move.oracle_rollable:starforged/fate/ask_the_oracle.unlikely",
+      "move.oracle_rollable:starforged/fate/ask_the_oracle.small_chance"
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 229
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#6B52EC",
       "Images": []
     }
   },
   "sort": 229,
-  "folder": "1c6d36dde131ebef",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Fate/Ask_the_Oracle",
+      "dsid": "move:starforged/fate/ask_the_oracle"
+    }
   },
   "_key": "!items!bd6278f18bbd6739"
 }

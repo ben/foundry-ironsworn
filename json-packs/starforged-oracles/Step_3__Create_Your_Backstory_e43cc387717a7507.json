@@ -1,0 +1,156 @@
+{
+  "_id": "e43cc387717a7507",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation/Backstory_Prompts",
+      "category": "oracle_collection:starforged/launching_your_campaign/character",
+      "dsid": "oracle_rollable:starforged/launching_your_campaign/character/backstory"
+    }
+  },
+  "name": "Step 3: Create Your Backstory",
+  "description": "<p>For some backstory inspiration, roll or pick from the table below. Then, take a moment to elaborate on the suggestion. Or just leave it a bit vague and mysterious for now; you can flesh it out in play.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "You abandoned your kin after learning a troubling truth",
+      "_key": "!tables.results!e43cc387717a7507.78e74031428afa0d",
+      "_id": "78e74031428afa0d"
+    },
+    {
+      "range": [
+        8,
+        13
+      ],
+      "text": "You are guided by a vision or prophecy",
+      "_key": "!tables.results!e43cc387717a7507.ca072186318e9244",
+      "_id": "ca072186318e9244"
+    },
+    {
+      "range": [
+        14,
+        20
+      ],
+      "text": "You are haunted by past actions or failures",
+      "_key": "!tables.results!e43cc387717a7507.bec53605853468e9",
+      "_id": "bec53605853468e9"
+    },
+    {
+      "range": [
+        21,
+        27
+      ],
+      "text": "You are running from a criminal past",
+      "_key": "!tables.results!e43cc387717a7507.f98ec2ff78caa707",
+      "_id": "f98ec2ff78caa707"
+    },
+    {
+      "range": [
+        28,
+        34
+      ],
+      "text": "You are the sole survivor of an attack or calamity",
+      "_key": "!tables.results!e43cc387717a7507.a4c57cb6f428a02c",
+      "_id": "a4c57cb6f428a02c"
+    },
+    {
+      "range": [
+        35,
+        40
+      ],
+      "text": "You escaped an abusive or unjust situation",
+      "_key": "!tables.results!e43cc387717a7507.309f1d5a84449b8a",
+      "_id": "309f1d5a84449b8a"
+    },
+    {
+      "range": [
+        41,
+        46
+      ],
+      "text": "You have no memory of your former life",
+      "_key": "!tables.results!e43cc387717a7507.841137e155f1d9df",
+      "_id": "841137e155f1d9df"
+    },
+    {
+      "range": [
+        47,
+        53
+      ],
+      "text": "You rejected a duty or destiny",
+      "_key": "!tables.results!e43cc387717a7507.2cba5b0edb88ad8a",
+      "_id": "2cba5b0edb88ad8a"
+    },
+    {
+      "range": [
+        54,
+        60
+      ],
+      "text": "You were banished from your former home",
+      "_key": "!tables.results!e43cc387717a7507.924d59fc94ad6d20",
+      "_id": "924d59fc94ad6d20"
+    },
+    {
+      "range": [
+        61,
+        67
+      ],
+      "text": "You were denied a birthright",
+      "_key": "!tables.results!e43cc387717a7507.c9d6d9554afd50e8",
+      "_id": "c9d6d9554afd50e8"
+    },
+    {
+      "range": [
+        68,
+        74
+      ],
+      "text": "You were on your own for as long as you can remember",
+      "_key": "!tables.results!e43cc387717a7507.94510a4c85ca2479",
+      "_id": "94510a4c85ca2479"
+    },
+    {
+      "range": [
+        75,
+        81
+      ],
+      "text": "You were sent away on a prolonged mission",
+      "_key": "!tables.results!e43cc387717a7507.7ce986c5a30e814d",
+      "_id": "7ce986c5a30e814d"
+    },
+    {
+      "range": [
+        82,
+        87
+      ],
+      "text": "You were taken or lured away by someone",
+      "_key": "!tables.results!e43cc387717a7507.5d513b2aeeb05e79",
+      "_id": "5d513b2aeeb05e79"
+    },
+    {
+      "range": [
+        88,
+        94
+      ],
+      "text": "Your ambitions outgrew your humble origins",
+      "_key": "!tables.results!e43cc387717a7507.4e1197e4cb7283ca",
+      "_id": "4e1197e4cb7283ca"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Your wanderlust carried you far away",
+      "_key": "!tables.results!e43cc387717a7507.8eec0afe183ff9e8",
+      "_id": "8eec0afe183ff9e8"
+    }
+  ],
+  "folder": "e7741583e9cc5dd1",
+  "sort": 106,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e43cc387717a7507"
+}

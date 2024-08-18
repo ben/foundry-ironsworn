@@ -1,0 +1,111 @@
+{
+  "_id": "d18bba3ea62a8639",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Rampaging_Creature",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/rampaging_creature"
+    }
+  },
+  "name": "Rampaging Creature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Reveal a new aspect of its nature or abilities",
+      "_key": "!tables.results!d18bba3ea62a8639.8bce98bf52ab1abe",
+      "_id": "8bce98bf52ab1abe"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Expand its territory",
+      "_key": "!tables.results!d18bba3ea62a8639.78d5cae430ea2ed2",
+      "_id": "78d5cae430ea2ed2"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Make a sudden and brutal attack",
+      "_key": "!tables.results!d18bba3ea62a8639.736c223a90c89a8e",
+      "_id": "736c223a90c89a8e"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Control or influence lesser creatures",
+      "_key": "!tables.results!d18bba3ea62a8639.b13ac9fd827975b2",
+      "_id": "b13ac9fd827975b2"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Create confusion or strife",
+      "_key": "!tables.results!d18bba3ea62a8639.5fcdfb383b4c8ce6",
+      "_id": "5fcdfb383b4c8ce6"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Leave foreboding signs",
+      "_key": "!tables.results!d18bba3ea62a8639.c0325a380992e5e1",
+      "_id": "c0325a380992e5e1"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Lure the unwary",
+      "_key": "!tables.results!d18bba3ea62a8639.cca2b8f5701be52a",
+      "_id": "cca2b8f5701be52a"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Imperil an event",
+      "_key": "!tables.results!d18bba3ea62a8639.112597cf87bf2603",
+      "_id": "112597cf87bf2603"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Assert control over a location",
+      "_key": "!tables.results!d18bba3ea62a8639.6a3de08025d638d0",
+      "_id": "6a3de08025d638d0"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Threaten resources",
+      "_key": "!tables.results!d18bba3ea62a8639.9043cc9b273e6bd4",
+      "_id": "9043cc9b273e6bd4"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 222,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d18bba3ea62a8639"
+}

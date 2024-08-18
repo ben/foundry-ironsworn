@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Secure an Advantage",
   "img": "icons/dice/d10black.svg",
+  "folder": "e5b957751be9d2e6",
   "system": {
     "dfid": "Starforged/Moves/Adventure/Secure_an_Advantage",
     "Category": "Starforged/Moves/Adventure",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you assess a situation, make preparations, or attempt to gain leverage**, envision your action and roll. If you act...\n\n  * With speed, mobility, or agility: Roll +edge\n  * With resolve, command, or sociability: Roll +heart\n  * With strength, endurance, aggression: Roll +iron\n  * With deception, stealth, or trickery: Roll +shadow\n  * With expertise, focus, or observation: Roll +wits\n\nOn a **hit**, you succeed. On a **strong hit**, take both. On a **weak hit**, choose one.\n\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)\n\nOn a **miss**, you fail or your assumptions betray you. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Text": "__When you assess a situation, make preparations, or attempt to gain leverage__, envision your action and roll. If you act...\n\n  * With speed, mobility, or agility: Roll +edge\n  * With resolve, command, or sociability: Roll +heart\n  * With strength, endurance, aggression: Roll +iron\n  * With deception, stealth, or trickery: Roll +shadow\n  * With expertise, focus, or observation: Roll +wits\n\nOn a __hit__, you succeed. On a __strong hit__, take both. On a __weak hit__, choose one.\n\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)\n\nOn a __miss__, you fail or your assumptions betray you. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
     "Trigger": {
       "Text": "When you assess a situation, make preparations, or attempt to gain leverage...",
       "Options": [
@@ -56,66 +57,42 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You succeed. Take +2 momentum. Add +1 on your next move (not a progress move).",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you succeed. Take +2 momentum. Add +1 on your next move (not a progress move).",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You succeed. Choose one.\n\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you succeed. Choose one.\n\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)"
       },
       "Miss": {
-        "Text": "You fail or your assumptions betray you. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you fail or your assumptions betray you. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 148
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#3C70A4",
       "Images": []
     }
   },
   "sort": 148,
-  "folder": "e5b957751be9d2e6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Adventure/Secure_an_Advantage",
+      "dsid": "move:starforged/adventure/secure_an_advantage"
+    }
   },
   "_key": "!items!a2d7793b23c17489"
 }

@@ -1,0 +1,15 @@
+{
+  "name": "Sea Cave Details",
+  "description": "",
+  "type": "RollTable",
+  "_id": "80ed534e9e0f713e",
+  "sort": 208,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/cave/sea"
+    }
+  },
+  "folder": "6e4db0d120c971eb",
+  "sorting": "a",
+  "_key": "!folders!80ed534e9e0f713e"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Settlement/Name/Landscape_Feature",
-      "category": "Ironsworn/Oracles/Settlement"
+      "category": "oracle_collection:classic/settlement/name",
+      "dsid": "oracle_rollable:classic/settlement/name/landscape_feature"
     }
   },
   "name": "Landscape Feature",
-  "description": "<p>\"<strong>A feature of the landscape.</strong> Envision what it is. What makes it unusual or distinctive?\",</p>",
-  "formula": "d100",
+  "description": "<p><strong>A feature of the landscape.</strong> Envision what it is. What makes it unusual or distinctive?</p>",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Highmount",
-      "_id": "184f1671894b0e42",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.184f1671894b0e42"
+      "_key": "!tables.results!618b6e11562b78d6.58e89ae985a4d1c4",
+      "_id": "58e89ae985a4d1c4"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Brackwater",
-      "_id": "206a9bbcb75df57a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.206a9bbcb75df57a"
+      "_key": "!tables.results!618b6e11562b78d6.8e6440a91f883603",
+      "_id": "8e6440a91f883603"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Frostwood",
-      "_id": "a0fbfc9fac71dc46",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.a0fbfc9fac71dc46"
+      "_key": "!tables.results!618b6e11562b78d6.a5be6622d1e7718d",
+      "_id": "a5be6622d1e7718d"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Redcrest",
-      "_id": "1e9065a06838fad6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.1e9065a06838fad6"
+      "_key": "!tables.results!618b6e11562b78d6.c5355df0418ad71d",
+      "_id": "c5355df0418ad71d"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Grimtree",
-      "_id": "72dde7cbff40d013",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.72dde7cbff40d013"
+      "_key": "!tables.results!618b6e11562b78d6.55418f96373aaf92",
+      "_id": "55418f96373aaf92"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Stoneford",
-      "_id": "5ba3004f29dcae00",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.5ba3004f29dcae00"
+      "_key": "!tables.results!618b6e11562b78d6.d4633d990f4381cd",
+      "_id": "d4633d990f4381cd"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Deepwater",
-      "_id": "4b286030f3496a5b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.4b286030f3496a5b"
+      "_key": "!tables.results!618b6e11562b78d6.a3489a2fea25017d",
+      "_id": "a3489a2fea25017d"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Whitefall",
-      "_id": "a46e26da919b3937",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.a46e26da919b3937"
+      "_key": "!tables.results!618b6e11562b78d6.e44b17a9e8d7ca96",
+      "_id": "e44b17a9e8d7ca96"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         90
       ],
       "text": "Graycliff",
-      "_id": "9220f1b2757c7668",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.9220f1b2757c7668"
+      "_key": "!tables.results!618b6e11562b78d6.56247fd9e405097a",
+      "_id": "56247fd9e405097a"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "Three Rivers",
-      "_id": "7440c3456b6c1bcf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!618b6e11562b78d6.7440c3456b6c1bcf"
+      "_key": "!tables.results!618b6e11562b78d6.b88b4001186a8246",
+      "_id": "b88b4001186a8246"
     }
   ],
-  "folder": "11b98f1da8f07aa2",
+  "folder": "b62c276059f4423c",
   "sort": 178,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!618b6e11562b78d6"
 }

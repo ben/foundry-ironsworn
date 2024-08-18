@@ -1,0 +1,84 @@
+{
+  "name": "Beasts",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:classic/beasts",
+      "dsid": "truth:classic/beasts"
+    }
+  },
+  "_id": "113bd4e292aa3795",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/beasts.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "",
+        "Description": "The beasts of old are nothing but legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, but they are obviously delusional. No such things exist.",
+        "Quest": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?",
+        "Roll template": {
+          "Description": "The beasts of old are nothing but legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, but they are obviously delusional. No such things exist."
+        }
+      },
+      "_id": "fbf755a5af590e46",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!113bd4e292aa3795.fbf755a5af590e46"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/beasts.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "",
+        "Description": "Monstrous beasts stalk the wild areas of the Ironlands.",
+        "Quest": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?",
+        "Roll template": {
+          "Description": "Monstrous beasts stalk the wild areas of the Ironlands."
+        }
+      },
+      "_id": "4aedd081d262b3d6",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!113bd4e292aa3795.4aedd081d262b3d6"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/beasts.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "",
+        "Description": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, but range into the settled lands to hunt. There, they often prey on cattle, but attacks on travelers, caravans, or even settlements are not uncommon.",
+        "Quest": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?",
+        "Roll template": {
+          "Description": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, but range into the settled lands to hunt. There, they often prey on cattle, but attacks on travelers, caravans, or even settlements are not uncommon."
+        }
+      },
+      "_id": "3ec51ba7bc66e72f",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!113bd4e292aa3795.3ec51ba7bc66e72f"
+    }
+  ],
+  "folder": null,
+  "sort": 128,
+  "_key": "!journal!113bd4e292aa3795"
+}

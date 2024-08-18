@@ -1,0 +1,281 @@
+{
+  "_id": "decd6dd6cd42144b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc",
+      "dsid": "oracle_rollable:sundered_isles/misc/story_complication"
+    }
+  },
+  "name": "Story Complication",
+  "description": "<p>This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the @Compendium[foundry-ironsworn.starforgedoracles.bbcb8dc755aee22f]{Pay the Price} table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Crucial resource or equipment fails",
+      "_key": "!tables.results!decd6dd6cd42144b.b5807b64fcb91184",
+      "_id": "b5807b64fcb91184"
+    },
+    {
+      "range": [
+        5,
+        7
+      ],
+      "text": "Crucial resource or equipment is sabotaged",
+      "_key": "!tables.results!decd6dd6cd42144b.1590b96f1498ed43",
+      "_id": "1590b96f1498ed43"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "Debt or promise comes due",
+      "_key": "!tables.results!decd6dd6cd42144b.eb5cc63f37423e26",
+      "_id": "eb5cc63f37423e26"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Enemy reveals unexpected powers, abilities, or influence",
+      "_key": "!tables.results!decd6dd6cd42144b.e7c50faaebae9a82",
+      "_id": "e7c50faaebae9a82"
+    },
+    {
+      "range": [
+        15,
+        17
+      ],
+      "text": "Enemy reveals their true agenda or nature",
+      "_key": "!tables.results!decd6dd6cd42144b.224c7904c3a2d1c4",
+      "_id": "224c7904c3a2d1c4"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Enemy unexpectedly benefits from your actions",
+      "_key": "!tables.results!decd6dd6cd42144b.ebdb55a2ada4b141",
+      "_id": "ebdb55a2ada4b141"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Key location is made inaccessible",
+      "_key": "!tables.results!decd6dd6cd42144b.0fc7c4b6600daae7",
+      "_id": "0fc7c4b6600daae7"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "Key location is threatened or made unsafe",
+      "_key": "!tables.results!decd6dd6cd42144b.00cf9909141ea83e",
+      "_id": "00cf9909141ea83e"
+    },
+    {
+      "range": [
+        27,
+        29
+      ],
+      "text": "Natural disaster is imminent",
+      "_key": "!tables.results!decd6dd6cd42144b.92d5d710e8952aba",
+      "_id": "92d5d710e8952aba"
+    },
+    {
+      "range": [
+        30,
+        33
+      ],
+      "text": "Needed item or resource is unavailable",
+      "_key": "!tables.results!decd6dd6cd42144b.c6fae7bb170ccaf8",
+      "_id": "c6fae7bb170ccaf8"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Object of a quest is not what you assumed",
+      "_key": "!tables.results!decd6dd6cd42144b.54c416b549e9d5c9",
+      "_id": "54c416b549e9d5c9"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Old enemy resurfaces",
+      "_key": "!tables.results!decd6dd6cd42144b.1708497b07e92d37",
+      "_id": "1708497b07e92d37"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Simultaneous problems force a hard choice",
+      "_key": "!tables.results!decd6dd6cd42144b.384d246f1ea89b07",
+      "_id": "384d246f1ea89b07"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Someone important betrays your trust",
+      "_key": "!tables.results!decd6dd6cd42144b.2c18462e42077638",
+      "_id": "2c18462e42077638"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Someone important is threatened or endangered",
+      "_key": "!tables.results!decd6dd6cd42144b.b5b1e30fb26d1736",
+      "_id": "b5b1e30fb26d1736"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Someone important reveals their problematic secret or history",
+      "_key": "!tables.results!decd6dd6cd42144b.b54e4ce885565344",
+      "_id": "b54e4ce885565344"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Something important goes missing",
+      "_key": "!tables.results!decd6dd6cd42144b.6c1d6edbd55253bf",
+      "_id": "6c1d6edbd55253bf"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Resource, equipment, or device is shown to have unexpected effects",
+      "_key": "!tables.results!decd6dd6cd42144b.fbfc45423a6255c8",
+      "_id": "fbfc45423a6255c8"
+    },
+    {
+      "range": [
+        58,
+        61
+      ],
+      "text": "Time pressure suddenly increases",
+      "_key": "!tables.results!decd6dd6cd42144b.5cbdb893285d8c12",
+      "_id": "5cbdb893285d8c12"
+    },
+    {
+      "range": [
+        62,
+        65
+      ],
+      "text": "Trap is sprung",
+      "_key": "!tables.results!decd6dd6cd42144b.b280db87a84f9eb1",
+      "_id": "b280db87a84f9eb1"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "True agenda of a connection or patron is revealed",
+      "_key": "!tables.results!decd6dd6cd42144b.1b049c55c09a25bc",
+      "_id": "1b049c55c09a25bc"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Trusted information is shown to be false",
+      "_key": "!tables.results!decd6dd6cd42144b.9e6834046df8a08e",
+      "_id": "9e6834046df8a08e"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Two seemingly unrelated problems are shown to be connected",
+      "_key": "!tables.results!decd6dd6cd42144b.0648c58f26982e0e",
+      "_id": "0648c58f26982e0e"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Undermined by self-doubt or vulnerabilities",
+      "_key": "!tables.results!decd6dd6cd42144b.690eb17e18800097",
+      "_id": "690eb17e18800097"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Unexpected enemies appear",
+      "_key": "!tables.results!decd6dd6cd42144b.4ef72f64bed4aad5",
+      "_id": "4ef72f64bed4aad5"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Urgent message distracts you from your quest",
+      "_key": "!tables.results!decd6dd6cd42144b.cc20bfb6243b37eb",
+      "_id": "cc20bfb6243b37eb"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "You are tracked or followed",
+      "_key": "!tables.results!decd6dd6cd42144b.9864c2db1f549cc4",
+      "_id": "9864c2db1f549cc4"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "You were diverted from the true crisis",
+      "_key": "!tables.results!decd6dd6cd42144b.ed41647655a72f29",
+      "_id": "ed41647655a72f29"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!decd6dd6cd42144b.2725c346c9b393fd",
+      "_id": "2725c346c9b393fd"
+    }
+  ],
+  "folder": "4712a591169fe5d6",
+  "sort": 230,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!decd6dd6cd42144b"
+}

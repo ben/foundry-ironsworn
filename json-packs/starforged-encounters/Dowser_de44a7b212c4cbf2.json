@@ -4,7 +4,7 @@
   "name": "Dowser",
   "img": "icons/creatures/mammals/elk-moose-marked-green.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Affable, horse-sized creatures</p>\n    <p class=\"nogrow\">Stout, furry form</p>\n    <p class=\"nogrow\">Wide, expressive eyes</p>\n    <p class=\"nogrow\">Elongated snout</p>\n    <p class=\"nogrow\">Rock-breaking claws</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Find water</p>\n    <p class=\"nogrow\">Meet new friends</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Dig and hide</p>\n    <p class=\"nogrow\">When desperate, rake with claws</p>\n  </div>\n</div>\n\n<p>Waterwitchers are good-natured creatures, and form a close bond with their human handlers. Those folk, the dowsers, rove among remote settlements, peddling their water-finding services to desperate settlers.</p>\n\n<blockquote>Quest Starter: <p>A dowser has gone missing in the vast wastes of a newly-settled desert world, leaving behind their distraught waterwitcher. You are sworn to find the wayward dowser, and must serve as an unlikely keeper for their furry companion. What is your relationship to the dowser?</p></blockquote>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Affable, horse-sized creatures</p>\n<p class=\"nogrow\">Stout, furry form</p>\n<p class=\"nogrow\">Wide, expressive eyes</p>\n<p class=\"nogrow\">Elongated snout</p>\n<p class=\"nogrow\">Rock-breaking claws</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Find water</p>\n<p class=\"nogrow\">Meet new friends</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Dig and hide</p>\n<p class=\"nogrow\">When desperate, rake with claws</p>\n</div>\n</div>\n\n<p>Waterwitchers are good-natured creatures, and form a close bond with their human handlers. Those folk, the dowsers, rove among remote settlements, peddling their water-finding services to desperate settlers.</p>\n\n<blockquote>Quest Starter: <p>A dowser has gone missing in the vast wastes of a newly-settled desert world, leaving behind their distraught waterwitcher. You are sworn to find the wayward dowser, and must serve as an unlikely keeper for their furry companion. What is your relationship to the dowser?</p></blockquote>",
     "rank": 2,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/water_witcher.dowser"
+    }
   },
   "_key": "!items!de44a7b212c4cbf2"
 }

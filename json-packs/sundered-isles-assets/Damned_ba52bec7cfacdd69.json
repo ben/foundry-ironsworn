@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "ba52bec7cfacdd69",
+  "folder": "b6079e67f68d37cf",
+  "name": "Damned",
+  "system": {
+    "requirement": "<p>Once you mark tormented or doomed…</p>",
+    "category": "Deed",
+    "color": "#40834f",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You are cursed and remade by your encounter with death or desolation. Discard two or more assets connected to your former nature, and take up to three assets to represent your damned existence. Give the new assets a special mark. When you @Compendium[foundry-ironsworn.starforgedmoves.d602da2ce0c05f2c]{Advance} and upgrade a damned asset, spend 1 experience (instead of 2).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Choose a community where you are accepted despite (or because of) your cursed nature. When you @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn} there, reroll any dice.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When your curse is broken through the fulfillment of a vow or other event, activate this ability at no cost. Discard this asset and any of your damned assets, exchanging them one-for-one for new assets with an equal number of marked abilities. You may then improve one of your stats by +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/deed/damned",
+      "dsid": "asset:sundered_isles/deed/damned"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!ba52bec7cfacdd69"
+}

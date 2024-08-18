@@ -1,0 +1,110 @@
+{
+  "_id": "3e07af2891acbea8",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/mystery"
+    }
+  },
+  "name": "Ruin Mystery",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Calamitous downfall",
+      "_key": "!tables.results!3e07af2891acbea8.7e8535851f53822d",
+      "_id": "7e8535851f53822d"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Cultural legacy",
+      "_key": "!tables.results!3e07af2891acbea8.fc167ac2b7c9054f",
+      "_id": "fc167ac2b7c9054f"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Enemy schemes",
+      "_key": "!tables.results!3e07af2891acbea8.81589f526619284f",
+      "_id": "81589f526619284f"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Enigmatic waymarker",
+      "_key": "!tables.results!3e07af2891acbea8.3a0357ebfc1b82e7",
+      "_id": "3a0357ebfc1b82e7"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Fabled relic",
+      "_key": "!tables.results!3e07af2891acbea8.1e2902849ff37355",
+      "_id": "1e2902849ff37355"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Heroes' rest",
+      "_key": "!tables.results!3e07af2891acbea8.8965008d92e62619",
+      "_id": "8965008d92e62619"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Lost people",
+      "_key": "!tables.results!3e07af2891acbea8.a135fe04354c382e",
+      "_id": "a135fe04354c382e"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Personal heritage",
+      "_key": "!tables.results!3e07af2891acbea8.0fbfe9e49880ffb5",
+      "_id": "0fbfe9e49880ffb5"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Unfulfilled promise",
+      "_key": "!tables.results!3e07af2891acbea8.50574823968daf1d",
+      "_id": "50574823968daf1d"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Unusual purpose",
+      "_key": "!tables.results!3e07af2891acbea8.3d4b2fbe09f0e329",
+      "_id": "3d4b2fbe09f0e329"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 216,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!3e07af2891acbea8"
+}

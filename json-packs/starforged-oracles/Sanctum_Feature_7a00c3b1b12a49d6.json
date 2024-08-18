@@ -1,0 +1,336 @@
+{
+  "_id": "7a00c3b1b12a49d6",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Sanctum/Feature",
+      "category": "Starforged/Oracles/Vaults/Sanctum",
+      "dsid": "oracle_rollable:starforged/precursor_vault/sanctum/feature"
+    }
+  },
+  "name": "Sanctum Feature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Abyssal pit or chasm",
+      "_key": "!tables.results!7a00c3b1b12a49d6.ac6ff70c23a3c7dc",
+      "_id": "ac6ff70c23a3c7dc"
+    },
+    {
+      "range": [
+        3,
+        5
+      ],
+      "text": "Altered gravity",
+      "_key": "!tables.results!7a00c3b1b12a49d6.b0dcee4ec1aea2f5",
+      "_id": "b0dcee4ec1aea2f5"
+    },
+    {
+      "range": [
+        6,
+        7
+      ],
+      "text": "Area filled with strange liquid",
+      "_key": "!tables.results!7a00c3b1b12a49d6.21cdeadd34521a4d",
+      "_id": "21cdeadd34521a4d"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "Area humming with aberrant energy",
+      "_key": "!tables.results!7a00c3b1b12a49d6.3abd6fc8d335a451",
+      "_id": "3abd6fc8d335a451"
+    },
+    {
+      "range": [
+        11,
+        13
+      ],
+      "text": "Blasted or wrecked area",
+      "_key": "!tables.results!7a00c3b1b12a49d6.eb755ff0dcc3bdba",
+      "_id": "eb755ff0dcc3bdba"
+    },
+    {
+      "range": [
+        14,
+        16
+      ],
+      "text": "Central chamber of immense proportions or grandeur",
+      "_key": "!tables.results!7a00c3b1b12a49d6.9a00bf693fabbb4d",
+      "_id": "9a00bf693fabbb4d"
+    },
+    {
+      "range": [
+        17,
+        19
+      ],
+      "text": "Colossal machine",
+      "_key": "!tables.results!7a00c3b1b12a49d6.b44bd2c8e8d2d04b",
+      "_id": "b44bd2c8e8d2d04b"
+    },
+    {
+      "range": [
+        20,
+        21
+      ],
+      "text": "Corrupted plant life",
+      "_key": "!tables.results!7a00c3b1b12a49d6.59e68d6149fd8294",
+      "_id": "59e68d6149fd8294"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Enigmatic mechanisms come to life",
+      "_key": "!tables.results!7a00c3b1b12a49d6.636d191ae267098b",
+      "_id": "636d191ae267098b"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Haze of spores or nanomachines",
+      "_key": "!tables.results!7a00c3b1b12a49d6.d8af55dd932b69b7",
+      "_id": "d8af55dd932b69b7"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Incomprehensible architecture or geometry",
+      "_key": "!tables.results!7a00c3b1b12a49d6.ed3a09b2e6efe245",
+      "_id": "ed3a09b2e6efe245"
+    },
+    {
+      "range": [
+        29,
+        31
+      ],
+      "text": "Incongruent space contradicts the nature of this site",
+      "_key": "!tables.results!7a00c3b1b12a49d6.c6183310d1005989",
+      "_id": "c6183310d1005989"
+    },
+    {
+      "range": [
+        32,
+        34
+      ],
+      "text": "Inscrutable object emits sound and energy",
+      "_key": "!tables.results!7a00c3b1b12a49d6.cd281da111371bfd",
+      "_id": "cd281da111371bfd"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "Machinery fused with organic growths",
+      "_key": "!tables.results!7a00c3b1b12a49d6.02c5052eace434fa",
+      "_id": "02c5052eace434fa"
+    },
+    {
+      "range": [
+        38,
+        40
+      ],
+      "text": "Moving chamber or passage",
+      "_key": "!tables.results!7a00c3b1b12a49d6.e33505e54f5533ab",
+      "_id": "e33505e54f5533ab"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "Mutated remains of the dead",
+      "_key": "!tables.results!7a00c3b1b12a49d6.b0d5b867b3917256",
+      "_id": "b0d5b867b3917256"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Nest of invasive creatures",
+      "_key": "!tables.results!7a00c3b1b12a49d6.faf94a83ca7a286d",
+      "_id": "faf94a83ca7a286d"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "Pockets or layers of altered atmosphere",
+      "_key": "!tables.results!7a00c3b1b12a49d6.a936ef0ed01bc827",
+      "_id": "a936ef0ed01bc827"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Pods or chambers with preserved corpses",
+      "_key": "!tables.results!7a00c3b1b12a49d6.3ffb97b7bab4bcd3",
+      "_id": "3ffb97b7bab4bcd3"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Pools of strange liquid",
+      "_key": "!tables.results!7a00c3b1b12a49d6.bfc74a3f761c9a2c",
+      "_id": "bfc74a3f761c9a2c"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Pulsating surfaces",
+      "_key": "!tables.results!7a00c3b1b12a49d6.ef2d84e78805e7e7",
+      "_id": "ef2d84e78805e7e7"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Rampant biological infestation",
+      "_key": "!tables.results!7a00c3b1b12a49d6.c7f08e209b44c10e",
+      "_id": "c7f08e209b44c10e"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Repository of biological specimens",
+      "_key": "!tables.results!7a00c3b1b12a49d6.7127816393de4332",
+      "_id": "7127816393de4332"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Sealed chamber",
+      "_key": "!tables.results!7a00c3b1b12a49d6.98d17d39ddbffb6c",
+      "_id": "98d17d39ddbffb6c"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Sealed containers of inscrutable purpose",
+      "_key": "!tables.results!7a00c3b1b12a49d6.464eaefa9bada48b",
+      "_id": "464eaefa9bada48b"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Simulated or illusionary environment",
+      "_key": "!tables.results!7a00c3b1b12a49d6.0c05edb25fa08cde",
+      "_id": "0c05edb25fa08cde"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Surfaces covered in slime or fungus",
+      "_key": "!tables.results!7a00c3b1b12a49d6.fed40e718e7ffd45",
+      "_id": "fed40e718e7ffd45"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Temporal distortions",
+      "_key": "!tables.results!7a00c3b1b12a49d6.bba764ee1400ad95",
+      "_id": "bba764ee1400ad95"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Transforming spaces",
+      "_key": "!tables.results!7a00c3b1b12a49d6.4c789f56393bd728",
+      "_id": "4c789f56393bd728"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "Visions of this place in another time",
+      "_key": "!tables.results!7a00c3b1b12a49d6.39c8d36e97c0f6ea",
+      "_id": "39c8d36e97c0f6ea"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Visions or reflections of another reality",
+      "_key": "!tables.results!7a00c3b1b12a49d6.e8d4e2903bcc6337",
+      "_id": "e8d4e2903bcc6337"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "Warped or misshapen spaces",
+      "_key": "!tables.results!7a00c3b1b12a49d6.cfe4bd11190b5ccf",
+      "_id": "cfe4bd11190b5ccf"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Whispering voices speak to you",
+      "_key": "!tables.results!7a00c3b1b12a49d6.98183d2a32f1bd42",
+      "_id": "98183d2a32f1bd42"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!7a00c3b1b12a49d6.3b5327fcd7c45af3",
+      "_id": "3b5327fcd7c45af3"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!7a00c3b1b12a49d6.eaaee4399c122a94",
+      "_id": "eaaee4399c122a94"
+    }
+  ],
+  "folder": "c80cfc9efec8dc33",
+  "sort": 368,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7a00c3b1b12a49d6"
+}

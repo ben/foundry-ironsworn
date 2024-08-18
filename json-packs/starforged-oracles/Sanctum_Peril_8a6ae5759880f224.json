@@ -1,0 +1,210 @@
+{
+  "_id": "8a6ae5759880f224",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Sanctum/Peril",
+      "category": "Starforged/Oracles/Vaults/Sanctum",
+      "dsid": "oracle_rollable:starforged/precursor_vault/sanctum/peril"
+    }
+  },
+  "name": "Sanctum Peril",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Camouflaged or transforming foe reveals itself",
+      "_key": "!tables.results!8a6ae5759880f224.b2b3b51f2c0e1a52",
+      "_id": "b2b3b51f2c0e1a52"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Confounding distortions of the timestream",
+      "_key": "!tables.results!8a6ae5759880f224.44219240756d5871",
+      "_id": "44219240756d5871"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Destructive environmental disturbance",
+      "_key": "!tables.results!8a6ae5759880f224.d4ffbdadbff8dc0a",
+      "_id": "d4ffbdadbff8dc0a"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Horrifying fate for a previous intruder",
+      "_key": "!tables.results!8a6ae5759880f224.902e94dc8112d72f",
+      "_id": "902e94dc8112d72f"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Important equipment rendered useless",
+      "_key": "!tables.results!8a6ae5759880f224.84b62adf47a3f562",
+      "_id": "84b62adf47a3f562"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Led astray or lured into danger by a manifestation or illusion",
+      "_key": "!tables.results!8a6ae5759880f224.a5656cbf92f004a5",
+      "_id": "a5656cbf92f004a5"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Lost the way or separated from others",
+      "_key": "!tables.results!8a6ae5759880f224.40218b848cdf2741",
+      "_id": "40218b848cdf2741"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Manifestations prey upon your weaknesses or worries",
+      "_key": "!tables.results!8a6ae5759880f224.684fb1c245b75e2d",
+      "_id": "684fb1c245b75e2d"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Other intruders have been corrupted or mutated by this place",
+      "_key": "!tables.results!8a6ae5759880f224.078bdac19506a352",
+      "_id": "078bdac19506a352"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Paranoia or suspicion takes hold",
+      "_key": "!tables.results!8a6ae5759880f224.c9373d6b266a179a",
+      "_id": "c9373d6b266a179a"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Path behind you is sealed",
+      "_key": "!tables.results!8a6ae5759880f224.d437becd2815c701",
+      "_id": "d437becd2815c701"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Powerful foe strikes without warning",
+      "_key": "!tables.results!8a6ae5759880f224.54a5be011f96b032",
+      "_id": "54a5be011f96b032"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Restless dead awaken",
+      "_key": "!tables.results!8a6ae5759880f224.62e3336881ad892c",
+      "_id": "62e3336881ad892c"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Scene of hideous violence or death",
+      "_key": "!tables.results!8a6ae5759880f224.e15a457aebb75403",
+      "_id": "e15a457aebb75403"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Snared in an unnatural trap",
+      "_key": "!tables.results!8a6ae5759880f224.2e71aedc97e47e35",
+      "_id": "2e71aedc97e47e35"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Spawning or swarming foes surround you",
+      "_key": "!tables.results!8a6ae5759880f224.11f2a82c44eb2443",
+      "_id": "11f2a82c44eb2443"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Sudden structural collapse or failure",
+      "_key": "!tables.results!8a6ae5759880f224.a4cc0cc97f0bf1af",
+      "_id": "a4cc0cc97f0bf1af"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Temptations to linger or remain in this site",
+      "_key": "!tables.results!8a6ae5759880f224.bce745912f56717b",
+      "_id": "bce745912f56717b"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "You are marked by physical corruption or mutation",
+      "_key": "!tables.results!8a6ae5759880f224.0bc05ed59825e62f",
+      "_id": "0bc05ed59825e62f"
+    },
+    {
+      "range": [
+        96,
+        99
+      ],
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!8a6ae5759880f224.b735e1fe366e8fa3",
+      "_id": "b735e1fe366e8fa3"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!8a6ae5759880f224.f013f09f9ffecc26",
+      "_id": "f013f09f9ffecc26"
+    }
+  ],
+  "folder": "c80cfc9efec8dc33",
+  "sort": 369,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8a6ae5759880f224"
+}

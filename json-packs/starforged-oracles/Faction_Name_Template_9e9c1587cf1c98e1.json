@@ -1,0 +1,57 @@
+{
+  "_id": "9e9c1587cf1c98e1",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Name_Template",
+      "category": "oracle_collection:starforged/faction/name",
+      "dsid": "oracle_rollable:starforged/faction/name/template"
+    }
+  },
+  "name": "Faction Name Template",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "[Legacy](datasworn:oracle_rollable:starforged/faction/name/legacy) [Affiliation](datasworn:oracle_rollable:starforged/faction/name/affiliation)",
+      "_key": "!tables.results!9e9c1587cf1c98e1.04370530c7409e5c",
+      "_id": "04370530c7409e5c"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "[Legacy](datasworn:oracle_rollable:starforged/faction/name/legacy) [Identity](datasworn:oracle_rollable:starforged/faction/name/identity)",
+      "_key": "!tables.results!9e9c1587cf1c98e1.8340e4615871adc2",
+      "_id": "8340e4615871adc2"
+    },
+    {
+      "range": [
+        56,
+        70
+      ],
+      "text": "[Identity](datasworn:oracle_rollable:starforged/faction/name/identity) *of the* [Legacy](datasworn:oracle_rollable:starforged/faction/name/legacy) [Affiliation](datasworn:oracle_rollable:starforged/faction/name/affiliation)",
+      "_key": "!tables.results!9e9c1587cf1c98e1.f35a1fddee5d3d04",
+      "_id": "f35a1fddee5d3d04"
+    },
+    {
+      "range": [
+        71,
+        100
+      ],
+      "text": "[Affiliation](datasworn:oracle_rollable:starforged/faction/name/affiliation) *of the* [Legacy](datasworn:oracle_rollable:starforged/faction/name/legacy) [Identity](datasworn:oracle_rollable:starforged/faction/name/identity)",
+      "_key": "!tables.results!9e9c1587cf1c98e1.3516c74df00c0c94",
+      "_id": "3516c74df00c0c94"
+    }
+  ],
+  "folder": "2ee92ba1fb40f90b",
+  "sort": 344,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9e9c1587cf1c98e1"
+}

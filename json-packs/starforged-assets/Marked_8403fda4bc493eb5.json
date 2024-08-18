@@ -25,8 +25,8 @@
         "enabled": false,
         "description": "<p>When you risk your reputation to overcome a miss, reroll any dice. If you score a miss again, fill one segment of a six-segment clock to represent the stain on your reputation. When the clock is filled, discard this asset.</p>",
         "hasClock": true,
-        "clockMax": 6,
-        "clockTicks": 0
+        "clockTicks": 0,
+        "clockMax": 6
       },
       {
         "enabled": false,
@@ -52,17 +52,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Deed/Marked",
+      "dsid": "asset:starforged/deed/marked"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021246,
-    "modifiedTime": 1695949021246,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!8403fda4bc493eb5"
 }

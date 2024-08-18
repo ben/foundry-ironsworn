@@ -1,22 +1,16 @@
 {
   "name": "Settlements",
-  "_id": "2f700e3e6f50bf89",
+  "description": "",
   "type": "RollTable",
+  "_id": "2f700e3e6f50bf89",
   "sort": 308,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Planets/Desert/Settlements"
+      "dfid": "Starforged/Oracles/Planets/Desert/Settlements",
+      "dsid": "oracle_collection:starforged/planet/desert/settlements"
     }
   },
   "folder": "ba1bbe7871538aad",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!2f700e3e6f50bf89"
 }

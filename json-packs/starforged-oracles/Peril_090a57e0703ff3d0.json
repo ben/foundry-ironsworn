@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Fortified/Peril",
-      "category": "Starforged/Oracles/Location_Themes/Fortified"
+      "category": "Starforged/Oracles/Location_Themes/Fortified",
+      "dsid": "oracle_rollable:starforged/location_theme/fortified/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Use this table to help envision a complication or hazard.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         9
       ],
       "text": "Alarm is triggered",
-      "_id": "e8a291ea5ac14b79",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.e8a291ea5ac14b79"
+      "_key": "!tables.results!090a57e0703ff3d0.795c14a8932fcd0e",
+      "_id": "795c14a8932fcd0e"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         18
       ],
       "text": "Automated security or weapons target you",
-      "_id": "8921b4a21e65aab8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.8921b4a21e65aab8"
+      "_key": "!tables.results!090a57e0703ff3d0.a41449004e8a31c1",
+      "_id": "a41449004e8a31c1"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         27
       ],
       "text": "Checkpoint or path with restricted access",
-      "_id": "5f31a7d712742542",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.5f31a7d712742542"
+      "_key": "!tables.results!090a57e0703ff3d0.7b195e2f65d6a394",
+      "_id": "7b195e2f65d6a394"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         36
       ],
       "text": "Enemies converge on this area",
-      "_id": "64bac7cd2d5d4955",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.64bac7cd2d5d4955"
+      "_key": "!tables.results!090a57e0703ff3d0.1e2ba4e8bc3a127c",
+      "_id": "1e2ba4e8bc3a127c"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         45
       ],
       "text": "Enemies reveal new capabilities or technology",
-      "_id": "4d5426b4ff71a07e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.4d5426b4ff71a07e"
+      "_key": "!tables.results!090a57e0703ff3d0.746c4e347e205626",
+      "_id": "746c4e347e205626"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         54
       ],
       "text": "Enemies trick you or lure you into a trap",
-      "_id": "59c677996e839202",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.59c677996e839202"
+      "_key": "!tables.results!090a57e0703ff3d0.8d5e8f6d36713add",
+      "_id": "8d5e8f6d36713add"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         63
       ],
       "text": "Powerful enemy appears",
-      "_id": "bf9247df6293cb31",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.bf9247df6293cb31"
+      "_key": "!tables.results!090a57e0703ff3d0.c9a53be23cd84685",
+      "_id": "c9a53be23cd84685"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         72
       ],
       "text": "Problematic alliance or affiliation is revealed",
-      "_id": "becedc2493c2d7c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.becedc2493c2d7c5"
+      "_key": "!tables.results!090a57e0703ff3d0.b3b53f89a65a45cc",
+      "_id": "b3b53f89a65a45cc"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         81
       ],
       "text": "Revealed schemes of an enemy leader create new urgency",
-      "_id": "34cb13ab8807b25a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.34cb13ab8807b25a"
+      "_key": "!tables.results!090a57e0703ff3d0.d7a3ecea91e10d9b",
+      "_id": "d7a3ecea91e10d9b"
     },
     {
       "range": [
@@ -144,27 +100,17 @@
         90
       ],
       "text": "Your plan is undone by an unexpected complication",
-      "_id": "4c5060f82a6196e3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.4c5060f82a6196e3"
+      "_key": "!tables.results!090a57e0703ff3d0.1ef8feeda7fd714c",
+      "_id": "1ef8feeda7fd714c"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "30551aee71d2733f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.30551aee71d2733f"
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!090a57e0703ff3d0.5324c27b5a4ecdb2",
+      "_id": "5324c27b5a4ecdb2"
     },
     {
       "range": [
@@ -172,29 +118,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "986e17c2cb0eb7b4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!090a57e0703ff3d0.986e17c2cb0eb7b4"
+      "_key": "!tables.results!090a57e0703ff3d0.9d71f7f5a48c22e7",
+      "_id": "9d71f7f5a48c22e7"
     }
   ],
   "folder": "b004bd768a2a6c15",
   "sort": 373,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!090a57e0703ff3d0"
 }

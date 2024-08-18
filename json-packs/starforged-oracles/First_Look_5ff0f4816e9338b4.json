@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Settlements/First_Look",
-      "category": "Starforged/Oracles/Settlements"
+      "category": "Starforged/Oracles/Settlements",
+      "dsid": "oracle_rollable:starforged/settlement/first_look"
     }
   },
   "name": "First Look",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Beautiful architecture",
-      "_id": "25d62f0bac3fdc01",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.25d62f0bac3fdc01"
+      "_key": "!tables.results!5ff0f4816e9338b4.5992183b9702b0db",
+      "_id": "5992183b9702b0db"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         9
       ],
       "text": "Built from organic materials",
-      "_id": "4d707076b9b13831",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.4d707076b9b13831"
+      "_key": "!tables.results!5ff0f4816e9338b4.7186ba7fa8754822",
+      "_id": "7186ba7fa8754822"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         15
       ],
       "text": "Built from random scrap",
-      "_id": "37cad2dc5d78ce61",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.37cad2dc5d78ce61"
+      "_key": "!tables.results!5ff0f4816e9338b4.709e5dba38bf861d",
+      "_id": "709e5dba38bf861d"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         21
       ],
       "text": "Built within repurposed ship",
-      "_id": "249e1c4fc0792c36",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.249e1c4fc0792c36"
+      "_key": "!tables.results!5ff0f4816e9338b4.6145216db24e2ede",
+      "_id": "6145216db24e2ede"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         26
       ],
       "text": "Built within terrain or asteroid",
-      "_id": "23c5acb258948e63",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.23c5acb258948e63"
+      "_key": "!tables.results!5ff0f4816e9338b4.b180cc1d6c8997bf",
+      "_id": "b180cc1d6c8997bf"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         31
       ],
       "text": "Defensible location",
-      "_id": "a3699e1c9c4d9839",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.a3699e1c9c4d9839"
+      "_key": "!tables.results!5ff0f4816e9338b4.cec69e4eda4b312f",
+      "_id": "cec69e4eda4b312f"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         35
       ],
       "text": "Elevated or multi-level construction",
-      "_id": "31b5d0bc3ea74296",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.31b5d0bc3ea74296"
+      "_key": "!tables.results!5ff0f4816e9338b4.579cf4843a0e90a2",
+      "_id": "579cf4843a0e90a2"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         40
       ],
       "text": "Hidden or subsurface location",
-      "_id": "9bfc9c59a45499aa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.9bfc9c59a45499aa"
+      "_key": "!tables.results!5ff0f4816e9338b4.0c160dba73c2b10b",
+      "_id": "0c160dba73c2b10b"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         43
       ],
       "text": "High-tech construction",
-      "_id": "6a8ae0e617686934",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.6a8ae0e617686934"
+      "_key": "!tables.results!5ff0f4816e9338b4.3c779dadc6539f04",
+      "_id": "3c779dadc6539f04"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         49
       ],
       "text": "Industrial architecture",
-      "_id": "9f1c96aef3736b35",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.9f1c96aef3736b35"
+      "_key": "!tables.results!5ff0f4816e9338b4.3e2bebf60b8b5932",
+      "_id": "3e2bebf60b8b5932"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         53
       ],
       "text": "Intimidating defenses",
-      "_id": "85c24002c893ce3e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.85c24002c893ce3e"
+      "_key": "!tables.results!5ff0f4816e9338b4.809a0ac40aef0942",
+      "_id": "809a0ac40aef0942"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         56
       ],
       "text": "Moving or transforming",
-      "_id": "4cafe9a69d197b1f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.4cafe9a69d197b1f"
+      "_key": "!tables.results!5ff0f4816e9338b4.dadcac93c2c44985",
+      "_id": "dadcac93c2c44985"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         61
       ],
       "text": "Obvious social stratification",
-      "_id": "1a1ac43b13b837a8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.1a1ac43b13b837a8"
+      "_key": "!tables.results!5ff0f4816e9338b4.930fdc1b062902e9",
+      "_id": "930fdc1b062902e9"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         66
       ],
       "text": "Precarious location",
-      "_id": "fad51c172473501b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.fad51c172473501b"
+      "_key": "!tables.results!5ff0f4816e9338b4.0ede1bbb8b856707",
+      "_id": "0ede1bbb8b856707"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         72
       ],
       "text": "Rustic architecture",
-      "_id": "e769274d002b8ef2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.e769274d002b8ef2"
+      "_key": "!tables.results!5ff0f4816e9338b4.fac9037bbf735abe",
+      "_id": "fac9037bbf735abe"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         76
       ],
       "text": "Significant structural damage",
-      "_id": "8ed0870d2d371fcc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.8ed0870d2d371fcc"
+      "_key": "!tables.results!5ff0f4816e9338b4.6c3bb6f61f967265",
+      "_id": "6c3bb6f61f967265"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         80
       ],
       "text": "Sprawling or dispersed structures",
-      "_id": "ead0fa05b208c2c1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.ead0fa05b208c2c1"
+      "_key": "!tables.results!5ff0f4816e9338b4.b73a6985ec268582",
+      "_id": "b73a6985ec268582"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         83
       ],
       "text": "Temporary or seasonal location",
-      "_id": "f3acc52960e51340",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.f3acc52960e51340"
+      "_key": "!tables.results!5ff0f4816e9338b4.5feb86ae322ecf8f",
+      "_id": "5feb86ae322ecf8f"
     },
     {
       "range": [
@@ -270,57 +181,30 @@
         87
       ],
       "text": "Toxic or polluted habitat",
-      "_id": "fbfba07dbb848b13",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.fbfba07dbb848b13"
+      "_key": "!tables.results!5ff0f4816e9338b4.3b9325028a2d9385",
+      "_id": "3b9325028a2d9385"
     },
     {
       "range": [
         88,
         90
       ],
-      "text": "Within or near <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault</a>",
-      "_id": "94021a99e8711db5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.94021a99e8711db5"
+      "text": "Within or near [Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault)",
+      "_key": "!tables.results!5ff0f4816e9338b4.9acd4eff78cb6637",
+      "_id": "9acd4eff78cb6637"
     },
     {
       "range": [
         91,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "b202ece9ede48742",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5ff0f4816e9338b4.b202ece9ede48742"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!5ff0f4816e9338b4.0677ed3cb8f0bffb",
+      "_id": "0677ed3cb8f0bffb"
     }
   ],
   "folder": "5f78c3140a6e8eaf",
   "sort": 323,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!5ff0f4816e9338b4"
 }

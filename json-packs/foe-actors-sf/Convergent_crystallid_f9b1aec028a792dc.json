@@ -1,0 +1,53 @@
+{
+  "name": "Convergent crystallid",
+  "img": "icons/magic/water/ice-crystal-white.webp",
+  "type": "foe",
+  "_id": "f9b1aec028a792dc",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Convergent crystallid",
+    "texture": {
+      "src": "icons/magic/water/ice-crystal-white.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "46dabf9de31972cb",
+      "type": "progress",
+      "name": "Convergent crystallid",
+      "img": "icons/magic/water/ice-crystal-white.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Translucent, gem-like creatures</p>\n<p class=\"nogrow\">Shifting form</p>\n<p class=\"nogrow\">Spiky appendages</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Gather and consume minerals</p>\n<p class=\"nogrow\">Protect the nest</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Camouflage within its environment</p>\n<p class=\"nogrow\">Reshape to bolster defense and attacks</p>\n<p class=\"nogrow\">Lash out with keen-edged limbs</p>\n</div>\n</div>\n\n<p>Crystallids are not social creatures. They greedily compete for resources to stock their hoard, and fight savagely among themselves. But when facing a powerful threat, they merge into a communal being. This monstrous form bristles with crystalline spikes and assaults its foes with a multitude of segmented limbs.</p>\n\n<blockquote>Quest Starter: <p>A prospector returns from a planetside expedition with tales of an immense crystallid hoard of uncountable riches. But this treasure is guarded by the largest, most aggressive crystallid they've ever encountered, and they barely escaped with their life. They seek your help in securing the nest in exchange for a share of the profits. What drives you to accept this perilous bargain?</p></blockquote>",
+        "rank": 4,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc.variant:starforged/sample_npcs/crystallid.convergent_crystallid"
+        }
+      },
+      "_key": "!actors.items!f9b1aec028a792dc.46dabf9de31972cb"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/crystallid.convergent_crystallid"
+    }
+  },
+  "_key": "!actors!f9b1aec028a792dc"
+}

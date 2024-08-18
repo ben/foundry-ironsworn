@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "Swear an Iron Vow",
   "img": "icons/dice/d10black.svg",
+  "folder": "456f0d6c841ff99f",
   "system": {
     "dfid": "Ironsworn/Moves/Quest/Swear_an_Iron_Vow",
     "Category": "Ironsworn/Moves/Quest",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you swear upon iron to complete a quest**, write your vow and give the quest a rank. Then, roll +heart. If you make this vow to a person or community with whom you share a bond, add +1.\n\nOn a **strong hit**, you are emboldened and it is clear what you must do next (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Take +2 momentum.\n\nOn a **weak hit**, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.\n\nOn a **miss**, you face a significant obstacle before you can begin your quest. Envision what stands in your way (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow}.",
+    "Text": "When __you swear upon iron to complete a quest__, write your vow and give the quest a rank. Then, roll +heart. If you make this vow to a person or community with whom you share a bond, add +1.\n\nOn a __strong hit__, you are emboldened and it is clear what you must do next (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Take +2 momentum.\n\nOn a __weak hit__, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.\n\nOn a __miss__, you face a significant obstacle before you can begin your quest. Envision what stands in your way (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow}.",
     "Trigger": {
       "Text": "When you swear upon iron to complete a quest...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Heart"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You are emboldened and it is clear what you must do next (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Take +2 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you are emboldened and it is clear what you must do next (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Take +2 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward."
       },
       "Miss": {
-        "Text": "You face a significant obstacle before you can begin your quest. Envision what stands in your way (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you face a significant obstacle before you can begin your quest. Envision what stands in your way (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 98
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 98,
-  "folder": "456f0d6c841ff99f",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Quest/Swear_an_Iron_Vow",
+      "dsid": "move:classic/quest/swear_an_iron_vow"
+    }
   },
   "_key": "!items!010e27aa4376d4df"
 }

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Ruined/Peril",
-      "category": "Starforged/Oracles/Location_Themes/Ruined"
+      "category": "Starforged/Oracles/Location_Themes/Ruined",
+      "dsid": "oracle_rollable:starforged/location_theme/ruined/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Use this table to help envision a complication or hazard.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         9
       ],
       "text": "Dreadful atmosphere of loss and destruction weighs upon you",
-      "_id": "b04b99cabf4c065c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.b04b99cabf4c065c"
+      "_key": "!tables.results!faf11f1da483dd37.9fcbffe37eb25c83",
+      "_id": "9fcbffe37eb25c83"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         18
       ],
       "text": "Evidence of a horrible fate for others who passed this way",
-      "_id": "46fb60f0efafa53e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.46fb60f0efafa53e"
+      "_key": "!tables.results!faf11f1da483dd37.ed21de2486e94fca",
+      "_id": "ed21de2486e94fca"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         27
       ],
       "text": "Hazardous atmosphere or environment",
-      "_id": "7476aaa06ea2323f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.7476aaa06ea2323f"
+      "_key": "!tables.results!faf11f1da483dd37.adf4cd3f22eed964",
+      "_id": "adf4cd3f22eed964"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         36
       ],
       "text": "Hostile creature has staked out their territory",
-      "_id": "7f569852312e6fd6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.7f569852312e6fd6"
+      "_key": "!tables.results!faf11f1da483dd37.c22422a902d09169",
+      "_id": "c22422a902d09169"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         45
       ],
       "text": "Imminent collapse or destruction",
-      "_id": "9aa22da5b07060c3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.9aa22da5b07060c3"
+      "_key": "!tables.results!faf11f1da483dd37.cbab156bd4dd3efd",
+      "_id": "cbab156bd4dd3efd"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         54
       ],
       "text": "Lured into a trap or targeted by automated defenses",
-      "_id": "1bcbe1e2bd55d1a1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.1bcbe1e2bd55d1a1"
+      "_key": "!tables.results!faf11f1da483dd37.ff040cf51b79a213",
+      "_id": "ff040cf51b79a213"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         63
       ],
       "text": "Source of the destruction persists or returns anew",
-      "_id": "67bbb36a191ec0e9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.67bbb36a191ec0e9"
+      "_key": "!tables.results!faf11f1da483dd37.332aa1e83a95ea75",
+      "_id": "332aa1e83a95ea75"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         72
       ],
       "text": "Unearthed secrets best left buried",
-      "_id": "e4f0b663a0cd2dea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.e4f0b663a0cd2dea"
+      "_key": "!tables.results!faf11f1da483dd37.2303b15d3daa22c3",
+      "_id": "2303b15d3daa22c3"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         81
       ],
       "text": "Unstable or broken path",
-      "_id": "7a1336b7477d574a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.7a1336b7477d574a"
+      "_key": "!tables.results!faf11f1da483dd37.496906073a74b865",
+      "_id": "496906073a74b865"
     },
     {
       "range": [
@@ -144,27 +100,17 @@
         90
       ],
       "text": "Volatile device or artifact",
-      "_id": "7f64d45567655bdf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.7f64d45567655bdf"
+      "_key": "!tables.results!faf11f1da483dd37.e1d0dd29ebe29a7e",
+      "_id": "e1d0dd29ebe29a7e"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "5b19027ab21b54ee",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.5b19027ab21b54ee"
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!faf11f1da483dd37.d626d55e553df5c5",
+      "_id": "d626d55e553df5c5"
     },
     {
       "range": [
@@ -172,29 +118,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "fb0cfec0bca71bbb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!faf11f1da483dd37.fb0cfec0bca71bbb"
+      "_key": "!tables.results!faf11f1da483dd37.e81c711bc7f7c4ee",
+      "_id": "e81c711bc7f7c4ee"
     }
   ],
   "folder": "41a0a952f57f45cf",
   "sort": 378,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!faf11f1da483dd37"
 }

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Medical/Feature",
-      "category": "Starforged/Oracles/Derelicts/Medical"
+      "category": "Starforged/Oracles/Derelicts/Medical",
+      "dsid": "oracle_rollable:starforged/derelict/medical/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Autopsied corpse",
-      "_id": "1b56c5c508b65c64",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.1b56c5c508b65c64"
+      "_key": "!tables.results!353b9201da6f1e8a.d58323ec32e837d6",
+      "_id": "d58323ec32e837d6"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Biological specimens",
-      "_id": "db32e6a5f6cf4fce",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.db32e6a5f6cf4fce"
+      "_key": "!tables.results!353b9201da6f1e8a.bd450740e3e70cea",
+      "_id": "bd450740e3e70cea"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Blood spatter or pools",
-      "_id": "d9fdbb2183b0e732",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.d9fdbb2183b0e732"
+      "_key": "!tables.results!353b9201da6f1e8a.5c01e57b5b429c24",
+      "_id": "5c01e57b5b429c24"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Bloody medical supplies",
-      "_id": "2f9578a3e594b232",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.2f9578a3e594b232"
+      "_key": "!tables.results!353b9201da6f1e8a.0f8c8f40b5daa323",
+      "_id": "0f8c8f40b5daa323"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Broken prosthetics",
-      "_id": "4ef0ea8fb2dabe52",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.4ef0ea8fb2dabe52"
+      "_key": "!tables.results!353b9201da6f1e8a.7e17abd9e32c51ce",
+      "_id": "7e17abd9e32c51ce"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Corpse of a healer",
-      "_id": "acee6241af524927",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.acee6241af524927"
+      "_key": "!tables.results!353b9201da6f1e8a.00b605a28f0ec7dd",
+      "_id": "00b605a28f0ec7dd"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Dissected specimen",
-      "_id": "d55b77df27406ff5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.d55b77df27406ff5"
+      "_key": "!tables.results!353b9201da6f1e8a.1bd606310621fc02",
+      "_id": "1bd606310621fc02"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Improvised overflow beds",
-      "_id": "5304e9e8959f6622",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.5304e9e8959f6622"
+      "_key": "!tables.results!353b9201da6f1e8a.5e744b6c1c636afa",
+      "_id": "5e744b6c1c636afa"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Medical monitors",
-      "_id": "165aac1137bb17d0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.165aac1137bb17d0"
+      "_key": "!tables.results!353b9201da6f1e8a.de08cc587b7ec4d5",
+      "_id": "de08cc587b7ec4d5"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Medical records or scans",
-      "_id": "eb053cd3508c0e86",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.eb053cd3508c0e86"
+      "_key": "!tables.results!353b9201da6f1e8a.f8ecbca4668000a1",
+      "_id": "f8ecbca4668000a1"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         88
       ],
       "text": "Stacks of body bags",
-      "_id": "ee3c6608a0f03f54",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.ee3c6608a0f03f54"
+      "_key": "!tables.results!353b9201da6f1e8a.510c6ba759a93a18",
+      "_id": "510c6ba759a93a18"
     },
     {
       "range": [
         89,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "2e1484561ce2067b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!353b9201da6f1e8a.2e1484561ce2067b"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!353b9201da6f1e8a.b678b4fe10c09952",
+      "_id": "b678b4fe10c09952"
     }
   ],
   "folder": "1a41c444d69ea97d",
   "sort": 356,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!353b9201da6f1e8a"
 }

@@ -1,0 +1,164 @@
+{
+  "_id": "5532cf3601b41146",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/details_cursed"
+    }
+  },
+  "name": "Cursed Character Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Bewitched",
+      "_key": "!tables.results!5532cf3601b41146.4fb557c6b65fcf1a",
+      "_id": "4fb557c6b65fcf1a"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Deep-dwelling",
+      "_key": "!tables.results!5532cf3601b41146.b43318cd59afc5bd",
+      "_id": "b43318cd59afc5bd"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Doomed",
+      "_key": "!tables.results!5532cf3601b41146.897abe69bc931b2c",
+      "_id": "897abe69bc931b2c"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Drowned",
+      "_key": "!tables.results!5532cf3601b41146.54d6c9db0a6d195b",
+      "_id": "54d6c9db0a6d195b"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Eldritch",
+      "_key": "!tables.results!5532cf3601b41146.1a7d85c6d5aadec6",
+      "_id": "1a7d85c6d5aadec6"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Haunted",
+      "_key": "!tables.results!5532cf3601b41146.028645c545c650e2",
+      "_id": "028645c545c650e2"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Illusory",
+      "_key": "!tables.results!5532cf3601b41146.4dc4272ee6a2f4f5",
+      "_id": "4dc4272ee6a2f4f5"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Inhuman",
+      "_key": "!tables.results!5532cf3601b41146.b60dbd1601cfba40",
+      "_id": "b60dbd1601cfba40"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Jinxed",
+      "_key": "!tables.results!5532cf3601b41146.c14f22664e184da9",
+      "_id": "c14f22664e184da9"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Lycanthropic",
+      "_key": "!tables.results!5532cf3601b41146.9df9e13573acb154",
+      "_id": "9df9e13573acb154"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Possessed",
+      "_key": "!tables.results!5532cf3601b41146.fb9730615e037296",
+      "_id": "fb9730615e037296"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Resurrected",
+      "_key": "!tables.results!5532cf3601b41146.6e4594307979a161",
+      "_id": "6e4594307979a161"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Sorcerous",
+      "_key": "!tables.results!5532cf3601b41146.9eba93b5e34d4e44",
+      "_id": "9eba93b5e34d4e44"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Tormented",
+      "_key": "!tables.results!5532cf3601b41146.a00a28763473ba1f",
+      "_id": "a00a28763473ba1f"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Undying",
+      "_key": "!tables.results!5532cf3601b41146.1f997a68f2791a5f",
+      "_id": "1f997a68f2791a5f"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Vampiric",
+      "_key": "!tables.results!5532cf3601b41146.7947374d6c28c281",
+      "_id": "7947374d6c28c281"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 192,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5532cf3601b41146"
+}

@@ -1,0 +1,200 @@
+{
+  "_id": "0aea1078fd7f3f1e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Rocky",
+      "dsid": "oracle_rollable:starforged/planet/rocky/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Aphelion",
+      "_key": "!tables.results!0aea1078fd7f3f1e.d8970f6359a51a82",
+      "_id": "d8970f6359a51a82"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Artemis",
+      "_key": "!tables.results!0aea1078fd7f3f1e.b2f20061a894e59d",
+      "_id": "b2f20061a894e59d"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Capella",
+      "_key": "!tables.results!0aea1078fd7f3f1e.379cc5607698b0d9",
+      "_id": "379cc5607698b0d9"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Cobalt",
+      "_key": "!tables.results!0aea1078fd7f3f1e.fa5ef8cea01e5081",
+      "_id": "fa5ef8cea01e5081"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Crag",
+      "_key": "!tables.results!0aea1078fd7f3f1e.2509705d9745b8bc",
+      "_id": "2509705d9745b8bc"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Dusk",
+      "_key": "!tables.results!0aea1078fd7f3f1e.f99f7465da11e622",
+      "_id": "f99f7465da11e622"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Eos",
+      "_key": "!tables.results!0aea1078fd7f3f1e.f6e3bbc2e33c7645",
+      "_id": "f6e3bbc2e33c7645"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Hecate",
+      "_key": "!tables.results!0aea1078fd7f3f1e.aff460f6b805021a",
+      "_id": "aff460f6b805021a"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Imbrium",
+      "_key": "!tables.results!0aea1078fd7f3f1e.8c1f296c06802a06",
+      "_id": "8c1f296c06802a06"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Latona",
+      "_key": "!tables.results!0aea1078fd7f3f1e.02a4832549ce6eda",
+      "_id": "02a4832549ce6eda"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Losna",
+      "_key": "!tables.results!0aea1078fd7f3f1e.8eb2391f4dd33b8a",
+      "_id": "8eb2391f4dd33b8a"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Orpheus",
+      "_key": "!tables.results!0aea1078fd7f3f1e.1d851b5bdc1d31f7",
+      "_id": "1d851b5bdc1d31f7"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Ory",
+      "_key": "!tables.results!0aea1078fd7f3f1e.042eb69c81e16147",
+      "_id": "042eb69c81e16147"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Quietus",
+      "_key": "!tables.results!0aea1078fd7f3f1e.ab4c5ce6c14a67a4",
+      "_id": "ab4c5ce6c14a67a4"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Selene",
+      "_key": "!tables.results!0aea1078fd7f3f1e.a0f58c8b08cdda9f",
+      "_id": "a0f58c8b08cdda9f"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Silas",
+      "_key": "!tables.results!0aea1078fd7f3f1e.ef829fb91d5d88f0",
+      "_id": "ef829fb91d5d88f0"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Silex",
+      "_key": "!tables.results!0aea1078fd7f3f1e.70ff1eebfd6dca61",
+      "_id": "70ff1eebfd6dca61"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Slate",
+      "_key": "!tables.results!0aea1078fd7f3f1e.b06b7e372b97bbb4",
+      "_id": "b06b7e372b97bbb4"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Themis",
+      "_key": "!tables.results!0aea1078fd7f3f1e.5358483153900ade",
+      "_id": "5358483153900ade"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Umbra",
+      "_key": "!tables.results!0aea1078fd7f3f1e.61ae41d25061455d",
+      "_id": "61ae41d25061455d"
+    }
+  ],
+  "folder": "bed6f29dbba73147",
+  "sort": 315,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0aea1078fd7f3f1e"
+}

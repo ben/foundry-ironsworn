@@ -1,0 +1,101 @@
+{
+  "name": "Exodus",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Exodus",
+      "dsid": "truth:starforged/exodus"
+    }
+  },
+  "_id": "cf49114047bf259b",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "When the Exodus fleet set off on a ponderous journey to a new home outside our galaxy, they marked the Forge as their destination. Countless generations lived out their lives aboard those titanic ships during the millennia-long passage.",
+      "system": {
+        "dsid": "truth.option:starforged/exodus.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "When the Exodus fleet set off on a ponderous journey to a new home outside our galaxy, they marked the Forge as their destination. Countless generations lived out their lives aboard those titanic ships during the millennia-long passage.",
+        "Description": "The refugees built a rich legacy of culture and tradition during the Exodus. Some even remained in the ships after their arrival in the Forge, unwilling or unable to leave their familiar confines. Those vessels, the Ironhomes, still sail the depths of this galaxy.",
+        "Quest": "Your dreams are plagued by visions of a lost and crippled Exodus ship. What do you see? Why does it call to you?",
+        "Roll template": {
+          "Description": "The refugees built a rich legacy of culture and tradition during the Exodus. Some even remained in the ships after their arrival in the Forge, unwilling or unable to leave their familiar confines. Those vessels, the Ironhomes, still sail the depths of this galaxy."
+        }
+      },
+      "_id": "cffe09332883aa34",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!cf49114047bf259b.cffe09332883aa34"
+    },
+    {
+      "type": "truth",
+      "name": "A ragtag fleet of ships—propelled at tremendous speeds by experimental FTL drives—carried our ancestors to the Forge. But the technology that powered the ships is said to be the source of the Sundering, a fracturing of reality that plagues us here today.",
+      "system": {
+        "dsid": "truth.option:starforged/exodus.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "A ragtag fleet of ships—propelled at tremendous speeds by experimental FTL drives—carried our ancestors to the Forge. But the technology that powered the ships is said to be the source of the Sundering, a fracturing of reality that plagues us here today.",
+        "Description": "The experimental drives used by the Exodus fleet are forbidden, but the damage is done. The Sundering spreads across our reality like cracks on the surface of an icy pond. Those fissures unleash even more perilous realities upon our own. Did we flee one cataclysm, only to inadvertently create another?",
+        "Quest": "A malfunctioning drive sent one of the refugee ships through space and time. Centuries later, they have finally arrived. For them, only weeks have passed. Why are these people mistrusted? Do you aid or oppose them?",
+        "Roll template": {
+          "Description": "The experimental drives used by the Exodus fleet are forbidden, but the damage is done. The Sundering spreads across our reality like cracks on the surface of an icy pond. Those fissures unleash even more perilous realities upon our own. Did we flee one cataclysm, only to inadvertently create another?"
+        }
+      },
+      "_id": "99031e293cf1303e",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!cf49114047bf259b.99031e293cf1303e"
+    },
+    {
+      "type": "truth",
+      "name": "Mysterious alien gates provided instantaneous one-way passage to the Forge.",
+      "system": {
+        "dsid": "truth.option:starforged/exodus.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Mysterious alien gates provided instantaneous one-way passage to the Forge.",
+        "Description": "In the midst of the cataclysm, our ancestors found a strange metal pillar on our homeworld's moon. A map on the surface of this alien relic detailed the deep-space locations of the Iron Gates—massive devices that powered artificial wormholes. With no other options, the Exodus ships fled through the gates and emerged here in the Forge.",
+        "Quest": "An explorer brings news. They've located an active gate in the depths of the Forge. Why do you swear to travel there? Which power or foe seeks to take control of the gate?",
+        "Roll template": {
+          "Description": "In the midst of the cataclysm, our ancestors found a strange metal pillar on our homeworld's moon. A map on the surface of this alien relic detailed the deep-space locations of the Iron Gates—massive devices that powered artificial wormholes. With no other options, the Exodus ships fled through the gates and emerged here in the Forge."
+        }
+      },
+      "_id": "8df252ad44dabf6a",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!cf49114047bf259b.8df252ad44dabf6a"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "Does your family or cultural history offer any stories of the Exodus? How does this legacy impact you today? If you are dedicated to expanding the reach of your people within the Forge, you might be an @Compendium[foundry-ironsworn.starforgedassets.62c8297fab069013]{Explorer}. If you are exiled or reviled, you might be an @Compendium[foundry-ironsworn.starforgedassets.085d80b933598615]{Outcast}.",
+        "format": 2,
+        "content": "<p>Does your family or cultural history offer any stories of the Exodus? How does this legacy impact you today? If you are dedicated to expanding the reach of your people within the Forge, you might be an @Compendium[foundry-ironsworn.starforgedassets.62c8297fab069013]{Explorer}. If you are exiled or reviled, you might be an @Compendium[foundry-ironsworn.starforgedassets.085d80b933598615]{Outcast}.</p>"
+      },
+      "_id": "897db0e405783c1b",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!cf49114047bf259b.897db0e405783c1b"
+    }
+  ],
+  "folder": null,
+  "sort": 86,
+  "_key": "!journal!cf49114047bf259b"
+}

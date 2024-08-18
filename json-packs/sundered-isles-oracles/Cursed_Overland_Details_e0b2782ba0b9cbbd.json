@@ -1,0 +1,920 @@
+{
+  "_id": "e0b2782ba0b9cbbd",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland",
+      "dsid": "oracle_rollable:sundered_isles/overland/details_cursed"
+    }
+  },
+  "name": "Cursed Overland Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Your breath escapes in wisps of fog as an uncanny chill takes hold",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.861e2a8d38e8d215",
+      "_id": "861e2a8d38e8d215"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A chaotic whirlwind scours the terrain",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.ad3cbd565c8e0f60",
+      "_id": "ad3cbd565c8e0f60"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Insects boil from blisters of oozing, corrupted terrain",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.0e098d69ada59753",
+      "_id": "0e098d69ada59753"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "The apparition of someone you knew delivers a warning before fading away",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.ecc7916629317715",
+      "_id": "ecc7916629317715"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The earth trembles as one beast battles another",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.127b9f6656fab288",
+      "_id": "127b9f6656fab288"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "A skull watches over the path—as you approach, it speaks",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.31b8264329e53d91",
+      "_id": "31b8264329e53d91"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Unnatural darkness envelops your surroundings",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.ed79583f76b06ef0",
+      "_id": "ed79583f76b06ef0"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "In the distance, a great skull-shaped edifice rises above the terrain",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.7d63afd6f9ad015f",
+      "_id": "7d63afd6f9ad015f"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "A member of the party, muttering dreamily as if in a trance, leaves the path",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.f0eeb4341d62f552",
+      "_id": "f0eeb4341d62f552"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "An unending storm plagues the land ahead",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.e7e2a2ea32eaad37",
+      "_id": "e7e2a2ea32eaad37"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Gigantic insect husks litter the ground",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.ec2cabdd77fcfd7b",
+      "_id": "ec2cabdd77fcfd7b"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "An ancient stone statue comes to life",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.57a9492369d60ac9",
+      "_id": "57a9492369d60ac9"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "A standing stone is carved in the likeness of a horrific creature",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.3bf1d7f45ffc98fa",
+      "_id": "3bf1d7f45ffc98fa"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Nearby water ripples with the approach of something massive",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.426d3191093cd098",
+      "_id": "426d3191093cd098"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "You come upon a recently-killed traveler; their last words are written in blood",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.7b73b6af0bad97ac",
+      "_id": "7b73b6af0bad97ac"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "A crudely-fashioned effigy bears the likeness of someone you know",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.c8ee0ea65afc7542",
+      "_id": "c8ee0ea65afc7542"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "A torrent of seawater crashes into view, bearing a barnacle-encrusted ship",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.b2adf3a337015e75",
+      "_id": "b2adf3a337015e75"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Cocooned corpses hang from tree branches",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.6dcd14411906d293",
+      "_id": "6dcd14411906d293"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "An unearthly shriek pierces the air",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.75f3c3f2c432b352",
+      "_id": "75f3c3f2c432b352"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Ghostly figures stand in the path ahead, waiting",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.80236527daffda11",
+      "_id": "80236527daffda11"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Oversized insects swarm from a gigantic nest",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.9d72c7cd4cc25fcb",
+      "_id": "9d72c7cd4cc25fcb"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "The bones of dead beasts litter the ground",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.865fe71bb291d99f",
+      "_id": "865fe71bb291d99f"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Freshly-gnawed bones litter a shadowy pit",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.4eedf1c8e289f8e0",
+      "_id": "4eedf1c8e289f8e0"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "A procession of silent spirits crosses your path",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.256b5acf2f05e286",
+      "_id": "256b5acf2f05e286"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "A monstrous flying beast circles overhead",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.a8827307fa84a0a3",
+      "_id": "a8827307fa84a0a3"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Fractured terrain floats in mid-air",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.3bd4ae635ea0a2f1",
+      "_id": "3bd4ae635ea0a2f1"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Something rumbles deep in the earth beneath you",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.b6e40852af0aee44",
+      "_id": "b6e40852af0aee44"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Blood and bodies are strewn across a campsite",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.4dd3b6e974606860",
+      "_id": "4dd3b6e974606860"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "A rotting chest flies open, spilling forth a horrific creature",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.2dae136e14d9d9ea",
+      "_id": "2dae136e14d9d9ea"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "A heavy iron door, etched with eldritch symbols, stands at the entrance of a cave mouth",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.ee0ea64f452220a2",
+      "_id": "ee0ea64f452220a2"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "An eclipse overtakes the sun, stealing away the day",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.83d8fabaf122239f",
+      "_id": "83d8fabaf122239f"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "A skeletal figure lurches from the shadows, eye sockets ablaze",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.50621641389a61bb",
+      "_id": "50621641389a61bb"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Dozens of fish flop and struggle for breath on dry ground",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.2accf0d3958385d9",
+      "_id": "2accf0d3958385d9"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "A black iron pillar floats above the ground, humming softly",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.bf9e7e68db60692d",
+      "_id": "bf9e7e68db60692d"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Dozens of carrion birds settle into the trees around you, waiting expectantly",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.d9679ebee6b86d60",
+      "_id": "d9679ebee6b86d60"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Thick strands of webbing stretch across the terrain",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.ae29a55d14a87d16",
+      "_id": "ae29a55d14a87d16"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "A single step takes you into a new landscape or environment",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.2e9244ab156a1557",
+      "_id": "2e9244ab156a1557"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Briny water rises from the ground, quickly engulfing this area",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.860615b7c75675de",
+      "_id": "860615b7c75675de"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "You are overcome with a sense of Déjà vu; you have walked this path before",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.2ceb996e39b63c7b",
+      "_id": "2ceb996e39b63c7b"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Eerie howls echo from the depths of a cave",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.e6a6519a6540e682",
+      "_id": "e6a6519a6540e682"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "The wind carries the smell of rot",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.6e08080e232ffd58",
+      "_id": "6e08080e232ffd58"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Coins emblazoned with skulls gleam from the bottom of a nearby pool",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.e32237152db8dd7a",
+      "_id": "e32237152db8dd7a"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Vegetation wilts and decays before your eyes",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.fadb33068c0e3c9f",
+      "_id": "fadb33068c0e3c9f"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Hordes of panicked birds and animals burst onto the scene, fleeing an unseen threat",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.99ff2a85e29a9918",
+      "_id": "99ff2a85e29a9918"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "A pile of bones, each inscribed with elaborate sigils, is carefully arranged",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.b2a3848e712c615f",
+      "_id": "b2a3848e712c615f"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Footprints with no visible source spontaneously appear",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.b9c9c78fdc80221c",
+      "_id": "b9c9c78fdc80221c"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "A toppled statue speaks a foreboding message",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.bf647ae593a426cf",
+      "_id": "bf647ae593a426cf"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "A trail of blood leads to a solitary cabin",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.57987a6a0c1e1ab9",
+      "_id": "57987a6a0c1e1ab9"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "An enormous beast lies dead, a grisly bite mark on its flank",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.233ec93223e3d61f",
+      "_id": "233ec93223e3d61f"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "You come upon an animal carcass; something moves within its bloated gut",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.4078e29555a4a954",
+      "_id": "4078e29555a4a954"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "This area is bound in unnatural cold and ice",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.abbe6ac0d522df98",
+      "_id": "abbe6ac0d522df98"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Jagged, glassy rock reflects an unseen truth",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.7a679c58a82c8f53",
+      "_id": "7a679c58a82c8f53"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Strange energies glimmer within a stone arch",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.6108924c16ab0df5",
+      "_id": "6108924c16ab0df5"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Time passes, but you and others in your party have no memory of it",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.543ae62b9139b2ad",
+      "_id": "543ae62b9139b2ad"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "The terrain here is a confounding labyrinth",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.d2b33a92ba57ab3f",
+      "_id": "d2b33a92ba57ab3f"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "At the edges of your vision, shadows lurk",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.fb5b734fbc7cceb0",
+      "_id": "fb5b734fbc7cceb0"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "A party member is stricken with a hideous sickness",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.6b9470451832940e",
+      "_id": "6b9470451832940e"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "A sinister effigy of a human figure, crafted from dead wood, towers above the landscape",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.fceb01569e948d59",
+      "_id": "fceb01569e948d59"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "A sorrowful song, seemingly without a source, echoes across the landscape",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.3d15c95fa7443c69",
+      "_id": "3d15c95fa7443c69"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "The ground shakes with the movement of a titanic beast",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.e0a65c231facc20f",
+      "_id": "e0a65c231facc20f"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "You hear sinister chants—a portent of a nearby ritual in progress",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.8d663427d41ff6f5",
+      "_id": "8d663427d41ff6f5"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "A stone slab bears the remains of a horrific ritual",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.4c69b80ec31e6a29",
+      "_id": "4c69b80ec31e6a29"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "An unmoving fog clings to the terrain ahead",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.434871bab2a3dfe6",
+      "_id": "434871bab2a3dfe6"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "A massive, molted snakeskin is draped over a tree branch",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.2da8e7b7a1b877d5",
+      "_id": "2da8e7b7a1b877d5"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Thick webs form a shroud over an earthen pit",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.936bdbb265033615",
+      "_id": "936bdbb265033615"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "A sword is planted blade-down into the ribcage of a whispering skeletal corpse",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.94d7c52bbbd32148",
+      "_id": "94d7c52bbbd32148"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Virulent fungal growths engulf the landscape",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.34d36703d6acd0cd",
+      "_id": "34d36703d6acd0cd"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Pale hands reach out of a dark body of water",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.bd413fe25bf63115",
+      "_id": "bd413fe25bf63115"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "A blood-red waterway carves a path through the terrain",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.c950cadfa775e8cf",
+      "_id": "c950cadfa775e8cf"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "A spectral figure appears, pointing insistently at a distant landmark",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.9d1f3626e26297c5",
+      "_id": "9d1f3626e26297c5"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "The path leads through a churning green fog",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.54edecb5bf847e5c",
+      "_id": "54edecb5bf847e5c"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Clattering skulls hang like ornaments from a dead tree",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.a56452e29506b3ef",
+      "_id": "a56452e29506b3ef"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "An unsettling quiet descends over this area",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.f2221e322aa0faef",
+      "_id": "f2221e322aa0faef"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Corrupted or mutated creatures appear",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.c9aeac6fc6910e4a",
+      "_id": "c9aeac6fc6910e4a"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Horrific visions or dreams plague the party members",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.c73f1c84d8b4f757",
+      "_id": "c73f1c84d8b4f757"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "You glimpse a ship sailing among the clouds",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.64068b695b36aee7",
+      "_id": "64068b695b36aee7"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Countless dead animals litter the ground",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.340adae46bbd364f",
+      "_id": "340adae46bbd364f"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "A creature with uncanny camouflage makes itself visible",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.2a22ef34a11d446d",
+      "_id": "2a22ef34a11d446d"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Visions or apparitions reveal this land in another time",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.d1c92a8c53972f39",
+      "_id": "d1c92a8c53972f39"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Carrion birds circle just overhead, keeping pace as you travel",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.3fab265a4032b406",
+      "_id": "3fab265a4032b406"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "An undead beast, its form corrupted by wounds and rot, stalks this area",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.5eb6b23c61dd10d7",
+      "_id": "5eb6b23c61dd10d7"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "A grim, cloaked figure appears; it raises a skeletal hand to point at a distant landmark",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.e9ef9e189bec27e2",
+      "_id": "e9ef9e189bec27e2"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Carnivorous plants consume a corpse",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.d40cd33d52266a44",
+      "_id": "d40cd33d52266a44"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "A circle of cracked, lifeless ground surrounds an enigmatic stone pillar",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.b0bd1dd4608de108",
+      "_id": "b0bd1dd4608de108"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "This place is home to creatures and plants from out of time",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.4401bd20723761a8",
+      "_id": "4401bd20723761a8"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Hundreds—maybe thousands—of cracked and broken skulls litter the ground",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.e7a52d9a0040a6ae",
+      "_id": "e7a52d9a0040a6ae"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Skeletal corpses claw their way out of the ground",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.b6a2acffd09e80e9",
+      "_id": "b6a2acffd09e80e9"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Phantom voices carry on the wind, whispering a dreadful premonition",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.302540a48d1bd816",
+      "_id": "302540a48d1bd816"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Hundreds of stacked skulls form a tall cairn",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.d1f154d8e60c7158",
+      "_id": "d1f154d8e60c7158"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "A shipwreck sits precariously on high ground",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.52ac5644387d1956",
+      "_id": "52ac5644387d1956"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "You stumble upon a nest of massive eggs—within one of them, something stirs",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.e01777d9221c97e1",
+      "_id": "e01777d9221c97e1"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Blood drips from an overhang or branch",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.2203c0fa6f11af3e",
+      "_id": "2203c0fa6f11af3e"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "A gigantic weapon is half-buried in the terrain",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.b2097e09c8c376a9",
+      "_id": "b2097e09c8c376a9"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Vines or branches come to life, creeping and grasping",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.ca9f0e3a9498a833",
+      "_id": "ca9f0e3a9498a833"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Carried provisions suddenly turn foul",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.8634f12c21876865",
+      "_id": "8634f12c21876865"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "An illusionary path beckons",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.e62ca342af8fe4d9",
+      "_id": "e62ca342af8fe4d9"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "A swarm of enormous bats emerge from a dark cave",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.39824128cbc3e579",
+      "_id": "39824128cbc3e579"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Furrowed ground and broken trees mark the path of a monstrous beast",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.eec7d627756df865",
+      "_id": "eec7d627756df865"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "A lone traveler babbles incoherently about some nameless terror",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.56e7696cfeb29e62",
+      "_id": "56e7696cfeb29e62"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "That’s the third time today you’ve passed that tree—you’re sure of it",
+      "_key": "!tables.results!e0b2782ba0b9cbbd.91b22bba5e6bc66d",
+      "_id": "91b22bba5e6bc66d"
+    }
+  ],
+  "folder": "0b3f32f3ee7a1a74",
+  "sort": 159,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e0b2782ba0b9cbbd"
+}

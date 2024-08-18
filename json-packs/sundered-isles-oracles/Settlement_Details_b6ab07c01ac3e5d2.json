@@ -1,0 +1,884 @@
+{
+  "_id": "b6ab07c01ac3e5d2",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/details"
+    }
+  },
+  "name": "Settlement Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "A valuable nearby resource is uncovered, and the race is on to claim or control it",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.dfe46c9da3a81e20",
+      "_id": "dfe46c9da3a81e20"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A soothsayer warns of a calamitous event in the settlement's future",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.c0ccf4f30321c638",
+      "_id": "c0ccf4f30321c638"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Someone you know goes missing during your stay",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.5a5aff39a7450130",
+      "_id": "5a5aff39a7450130"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Pirates or bandits plague an important trade route",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.130a7f41b9f6574c",
+      "_id": "130a7f41b9f6574c"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Wanted posters, bearing sketches of the same face, are plastered on every corner",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.ecaee4a660fa029c",
+      "_id": "ecaee4a660fa029c"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Rooftop roosts house messenger birds",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.18297fc6382b7fc9",
+      "_id": "18297fc6382b7fc9"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "The settlement produces a unique and valuable good or service",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.94d53a2790537d59",
+      "_id": "94d53a2790537d59"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "A tradeship or caravan, loaded with goods from the isles and beyond, is due to arrive",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.12b39b7d15161f73",
+      "_id": "12b39b7d15161f73"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "An important resource or asset was sabotaged by an unknown culprit",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.eb76b62dcdf14a55",
+      "_id": "eb76b62dcdf14a55"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "A notable member of the community is gravely ill",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.8a4f01547e516308",
+      "_id": "8a4f01547e516308"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "A conflict between two prominent groups or families has boiled over",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.534e814c2af05120",
+      "_id": "534e814c2af05120"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "The locals favor a sneakily robust brew or spirit",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.e11bcd0d523b1aee",
+      "_id": "e11bcd0d523b1aee"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "A bladesmith crafts swords of unequal quality",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.30bf910ef1129a93",
+      "_id": "30bf910ef1129a93"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "A crucial expedition or mission is long overdue",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.6c0cfccb55642585",
+      "_id": "6c0cfccb55642585"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Locals speak of ill winds and a coming storm",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.e8caf5ea1939e9cb",
+      "_id": "e8caf5ea1939e9cb"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Mysterious fires plague the settlement",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.143fe9e6b4ab9ba8",
+      "_id": "143fe9e6b4ab9ba8"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Another people once lived in this place, but abandoned it for reasons unknown",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.2539c403137d1d3b",
+      "_id": "2539c403137d1d3b"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "A group of fisher folk or hunters recently returned with an unusual catch",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.eb438d0f6352c89f",
+      "_id": "eb438d0f6352c89f"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Faded bloodstains mar the stones of a central square",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.7fa328c4c28165e9",
+      "_id": "7fa328c4c28165e9"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "A section of the settlement is collapsing into an expanding sinkhole",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.fae6174920e081d4",
+      "_id": "fae6174920e081d4"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "An underworld figure wields influence from the shadows",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.9a2fc1030b942856",
+      "_id": "9a2fc1030b942856"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "An important delegation is due to arrive",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a879254aeb7d2e8a",
+      "_id": "a879254aeb7d2e8a"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "The community has domesticated an unusual type of creature",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.e30bb19aea4bf17a",
+      "_id": "e30bb19aea4bf17a"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Among a certain class of citizens, the slightest insult leads to a duel",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.c297b5ef79c21952",
+      "_id": "c297b5ef79c21952"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "A notorious criminal is captured and awaiting punishment",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.7c6b911ec28627e4",
+      "_id": "7c6b911ec28627e4"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Nearby lands or waters have fallen barren",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.c451a295310f92dc",
+      "_id": "c451a295310f92dc"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Solemn funeral processions often snake their way through the streets",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a1ec42b7b191958f",
+      "_id": "a1ec42b7b191958f"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "A mysterious traveler was found gravely injured outside the settlement",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.40a8541a36f12b59",
+      "_id": "40a8541a36f12b59"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "A powerful outside faction seeks control of a resource or industry",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.b6de545119225779",
+      "_id": "b6de545119225779"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "A high-stakes gambling hall operates out of a hidden backroom",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a5a62373b6985961",
+      "_id": "a5a62373b6985961"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Motifs of a specific creature adorn the architecture",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.de75fbae1e941b95",
+      "_id": "de75fbae1e941b95"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "A building or location within the settlement is off-limits to outsiders",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.03ac7ff96a320295",
+      "_id": "03ac7ff96a320295"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "A fearsome creature or beast lairs nearby",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.de98fb1c8ff16aa5",
+      "_id": "de98fb1c8ff16aa5"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "A mysterious ship or caravan, here on a layover, is heavily guarded",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.1c9dc19a906f9ec5",
+      "_id": "1c9dc19a906f9ec5"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Workers are in revolt and an industry stalls",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.0bf76668417ff6c3",
+      "_id": "0bf76668417ff6c3"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Elaborate murals detail a key moment in the settlement's history",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.e7175f05a65f8c42",
+      "_id": "e7175f05a65f8c42"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "A masked vigilante has taken matters into their own hands",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.7f082b334b31f5a9",
+      "_id": "7f082b334b31f5a9"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "This place is prone to natural disasters",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.1c7b343465cdc3ea",
+      "_id": "1c7b343465cdc3ea"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "The residents are divided into rigid castes",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.630c62a23f56b1e2",
+      "_id": "630c62a23f56b1e2"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Local wildlife, given free reign by the residents, is a constant nuisance",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.98d67fea5ffceebc",
+      "_id": "98d67fea5ffceebc"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "The residents observe a daily ritual or remembrance",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.2fd53fbc4491eb30",
+      "_id": "2fd53fbc4491eb30"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "A rival faction seized nearby territory or resources",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.390ecefa981f569d",
+      "_id": "390ecefa981f569d"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "A vital expedition needs an escort",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a0587cdb98270839",
+      "_id": "a0587cdb98270839"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "An ancient and inscrutable monument stands in the center of this settlement",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a2fee1a97df81f6f",
+      "_id": "a2fee1a97df81f6f"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "A resident recently fled or escaped in the wake of a crime",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.d8d94ea99de0975f",
+      "_id": "d8d94ea99de0975f"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "A shadowy local fence can obtain nearly anything—for a price",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.cab6ae276caa3f9f",
+      "_id": "cab6ae276caa3f9f"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "The residents are anxious over a string of recent disappearances",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.ece714680d1e059d",
+      "_id": "ece714680d1e059d"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "This place offers a vibrant array of cultures and influences",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.04d2aca88ea7d75d",
+      "_id": "04d2aca88ea7d75d"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Leadership is in the midst of a power struggle",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.f7c6e83936fd597f",
+      "_id": "f7c6e83936fd597f"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "A local official is corrupt, but no one dares stand against them",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.92a89b43004b1112",
+      "_id": "92a89b43004b1112"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Provisions are ruined or in short supply",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.4dcadaefb15cf296",
+      "_id": "4dcadaefb15cf296"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "A nest of insurgents, conspiring against a powerful faction, operate or hide here",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.b02dacebdd6567cd",
+      "_id": "b02dacebdd6567cd"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "An artificer crafts elaborate prosthetic devices",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.bf22e6ea83156068",
+      "_id": "bf22e6ea83156068"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "A series of unexplained thefts baffle authorities",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.b6d24150d5374467",
+      "_id": "b6d24150d5374467"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Connections with a vital trading partner are severed",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.7ef23f350ef30433",
+      "_id": "7ef23f350ef30433"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "A notable member of the community is missing",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.63fc1145f81baf47",
+      "_id": "63fc1145f81baf47"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "The settlement is built above a complex network of caves or catacombs",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a8149cf94324f6a0",
+      "_id": "a8149cf94324f6a0"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "The leadership is incompetent or incapacitated",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a3c21dfed417ae47",
+      "_id": "a3c21dfed417ae47"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Refugees or outcasts from another community are seeking sanctuary",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.d7e8a801797a07b3",
+      "_id": "d7e8a801797a07b3"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "An exclusive social event is upcoming",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.41cf47c214805bff",
+      "_id": "41cf47c214805bff"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "An elaborate memorial marks the site of a historic tragedy or disaster",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.5666aeb824e983f9",
+      "_id": "5666aeb824e983f9"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Travelers or scouts report a military force is on the move nearby",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.288f41b736e8dc77",
+      "_id": "288f41b736e8dc77"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "A plague of vermin infests this place",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.333ff91f1484f125",
+      "_id": "333ff91f1484f125"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "A tattoo artist is famed for the quality of their designs and vibrancy of their inks",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.68b81088809a168d",
+      "_id": "68b81088809a168d"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Many residents are in debt to a ruthless loan shark",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.52759a676049df1d",
+      "_id": "52759a676049df1d"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "A prominent statue is vandalized and broken, its subject forsaken by the residents",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.16e3a8fcf8e6fa45",
+      "_id": "16e3a8fcf8e6fa45"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Preparations are underway for a major festival",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.33581226bb33a785",
+      "_id": "33581226bb33a785"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Buildings are defaced with a cryptic glyph",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.8b07152c4cf3ede9",
+      "_id": "8b07152c4cf3ede9"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "A troupe of visiting entertainers perform each night",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.ec4eeb25cb89124b",
+      "_id": "ec4eeb25cb89124b"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "A section of the settlement is sealed off or quarantined",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.10a1d2718d8c1bbc",
+      "_id": "10a1d2718d8c1bbc"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "A group of residents is shunned by others",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.68051b7741bff98f",
+      "_id": "68051b7741bff98f"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "A traveling alchemist promises miracle cures",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.360fece403a122cc",
+      "_id": "360fece403a122cc"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Artistic depictions of a venerated figure appear throughout the settlement",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.9b94b8d94cb01853",
+      "_id": "9b94b8d94cb01853"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "A new religious order is gaining an ardent following",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.f158fc76fab9861d",
+      "_id": "f158fc76fab9861d"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "A portion of the settlement lies abandoned",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.959f461b418e02ea",
+      "_id": "959f461b418e02ea"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Rumors swirl around the identity of a mysterious new visitor",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.3fa0289319a68fa4",
+      "_id": "3fa0289319a68fa4"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "This residents hold a long-standing grudge against a nearby community",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a1618916bff53d34",
+      "_id": "a1618916bff53d34"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "An archive of books and charts, collected from all corners of the isles, is kept here",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.bc32c87f83332da0",
+      "_id": "bc32c87f83332da0"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "A treasure is said to be hidden or buried nearby, but has never been found",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.baebbbc9a3bac2a3",
+      "_id": "baebbbc9a3bac2a3"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "A hallowed cultural or religious relic is missing",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.6d7856b78aa42f7f",
+      "_id": "6d7856b78aa42f7f"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "A cohort of dangerous-looking ruffians has arrived, their purpose unknown",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.773a3356dc34657d",
+      "_id": "773a3356dc34657d"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "A bounty hunter is hot on the trail of their target",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.7c206689004fd191",
+      "_id": "7c206689004fd191"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "A curio merchant sells strange and exclusive wares",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.b5d79c0c28d59f40",
+      "_id": "b5d79c0c28d59f40"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "This community owes a mounting debt to another settlement or faction",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.c1ce4ee58bd4be1c",
+      "_id": "c1ce4ee58bd4be1c"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "The smell of rich food and spices leads to a secluded market",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.9f7998657df9a182",
+      "_id": "9f7998657df9a182"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "An insurgency plots against the settlement's leadership or occupiers",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.3441a951bd7b73fa",
+      "_id": "3441a951bd7b73fa"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "A mysterious sickness spreads",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.7907dd58a45c0f6b",
+      "_id": "7907dd58a45c0f6b"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "An impromptu memorial marks the site of a recent tragedy",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.3eb270d0b574a5d4",
+      "_id": "3eb270d0b574a5d4"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "A months-old crime goes unpunished, and the locals have no hope of justice",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.39740dea38855edb",
+      "_id": "39740dea38855edb"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "A resident desperately seeks escort or passage out of this place",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.cbe7a5f45136ff5b",
+      "_id": "cbe7a5f45136ff5b"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "A tournament is underway",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a8094094feb3fff4",
+      "_id": "a8094094feb3fff4"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "An abandoned site marks the remains of a failed industry",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.a64344e951949c37",
+      "_id": "a64344e951949c37"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "A location or resource is said to have curative properties",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.5717c1a829f06c71",
+      "_id": "5717c1a829f06c71"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "The leaders are puppets for a greater power",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.8a12702adafcd185",
+      "_id": "8a12702adafcd185"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "[Action](datasworn:oracle_rollable:sundered_isles/core/action) + [Theme](datasworn:oracle_rollable:sundered_isles/core/theme)",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.e81132dcec68e68b",
+      "_id": "e81132dcec68e68b"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!b6ab07c01ac3e5d2.9827067f6bb997c8",
+      "_id": "9827067f6bb997c8"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 170,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b6ab07c01ac3e5d2"
+}

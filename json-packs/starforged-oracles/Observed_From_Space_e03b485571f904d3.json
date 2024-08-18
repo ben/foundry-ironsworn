@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Rocky/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Rocky"
+      "category": "Starforged/Oracles/Planets/Rocky",
+      "dsid": "oracle_rollable:starforged/planet/rocky/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Barren plains",
-      "_id": "77cf7f37d694e5fd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.77cf7f37d694e5fd"
+      "_key": "!tables.results!e03b485571f904d3.df1e68f9540e7b79",
+      "_id": "df1e68f9540e7b79"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Constant asteroid strikes",
-      "_id": "457f0431c8889dc2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.457f0431c8889dc2"
+      "_key": "!tables.results!e03b485571f904d3.5fb96543b85d9150",
+      "_id": "5fb96543b85d9150"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Dense ring system",
-      "_id": "da4d5d5d6e7333ec",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.da4d5d5d6e7333ec"
+      "_key": "!tables.results!e03b485571f904d3.a2d19f38e4002636",
+      "_id": "a2d19f38e4002636"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Jagged mountains",
-      "_id": "c55249f0eb49ef05",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.c55249f0eb49ef05"
+      "_key": "!tables.results!e03b485571f904d3.f5636378d0664ed4",
+      "_id": "f5636378d0664ed4"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Massive impact crater",
-      "_id": "3d89eeae713c7e71",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.3d89eeae713c7e71"
+      "_key": "!tables.results!e03b485571f904d3.af01aabb98993c1c",
+      "_id": "af01aabb98993c1c"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Misshapen form (low gravity)",
-      "_id": "7d467bc33eb799e6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.7d467bc33eb799e6"
+      "_key": "!tables.results!e03b485571f904d3.a1f00b8310d2eec4",
+      "_id": "a1f00b8310d2eec4"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Perpetual night",
-      "_id": "79fe742958fe4345",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.79fe742958fe4345"
+      "_key": "!tables.results!e03b485571f904d3.f28e2cd84a65edd4",
+      "_id": "f28e2cd84a65edd4"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Towering plateaus",
-      "_id": "b41a543f8d50c761",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.b41a543f8d50c761"
+      "_key": "!tables.results!e03b485571f904d3.c43a3952e0956f16",
+      "_id": "c43a3952e0956f16"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "42de5782109a1b01",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.42de5782109a1b01"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!e03b485571f904d3.f6edf8685e2bb669",
+      "_id": "f6edf8685e2bb669"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "7af241e343a5b684",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e03b485571f904d3.7af241e343a5b684"
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (orbital)",
+      "_key": "!tables.results!e03b485571f904d3.d02615aced4fea9f",
+      "_id": "d02615aced4fea9f"
     }
   ],
   "folder": "bed6f29dbba73147",
   "sort": 315,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!e03b485571f904d3"
 }

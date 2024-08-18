@@ -1,0 +1,398 @@
+{
+  "_id": "014a1448e279b9bd",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island",
+      "dsid": "oracle_rollable:sundered_isles/island/offshore_observations"
+    }
+  },
+  "name": "Offshore Observations",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Active lava flow",
+      "_key": "!tables.results!014a1448e279b9bd.8e22f3040c9004f5",
+      "_id": "8e22f3040c9004f5"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Beached sea beast",
+      "_key": "!tables.results!014a1448e279b9bd.42a1edac02eebb6f",
+      "_id": "42a1edac02eebb6f"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Bobbing cargo just offshore",
+      "_key": "!tables.results!014a1448e279b9bd.57fffef34dbebd92",
+      "_id": "57fffef34dbebd92"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Buoy with a message or warning",
+      "_key": "!tables.results!014a1448e279b9bd.06fb939f15106ef3",
+      "_id": "06fb939f15106ef3"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Burning landscape",
+      "_key": "!tables.results!014a1448e279b9bd.42dc22bd5dab5062",
+      "_id": "42dc22bd5dab5062"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Cooling lava flow",
+      "_key": "!tables.results!014a1448e279b9bd.fe6d5ba10b770c2c",
+      "_id": "fe6d5ba10b770c2c"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Crystal-clear coastal waters",
+      "_key": "!tables.results!014a1448e279b9bd.72ca68910a239143",
+      "_id": "72ca68910a239143"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Dead reef system",
+      "_key": "!tables.results!014a1448e279b9bd.68ae3b046f9c34ec",
+      "_id": "68ae3b046f9c34ec"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Distress signal",
+      "_key": "!tables.results!014a1448e279b9bd.b0e879cf404b4332",
+      "_id": "b0e879cf404b4332"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Diverse wildlife",
+      "_key": "!tables.results!014a1448e279b9bd.97468c6e84e42839",
+      "_id": "97468c6e84e42839"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Dolphins frolic in offshore waters",
+      "_key": "!tables.results!014a1448e279b9bd.3b3c6a91b1ed9bcc",
+      "_id": "3b3c6a91b1ed9bcc"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Enormous sea cave",
+      "_key": "!tables.results!014a1448e279b9bd.1369dcf7daa76123",
+      "_id": "1369dcf7daa76123"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Flocks of migrating birds",
+      "_key": "!tables.results!014a1448e279b9bd.6e44329fc3ffee61",
+      "_id": "6e44329fc3ffee61"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Fragrant scents",
+      "_key": "!tables.results!014a1448e279b9bd.52d6df3c6bf410a6",
+      "_id": "52d6df3c6bf410a6"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Geysering blowholes",
+      "_key": "!tables.results!014a1448e279b9bd.6d6bc09ca12af4b3",
+      "_id": "6d6bc09ca12af4b3"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Gleam of a spyglass",
+      "_key": "!tables.results!014a1448e279b9bd.0a85a6b0be7a686d",
+      "_id": "0a85a6b0be7a686d"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Landed or anchored boats",
+      "_key": "!tables.results!014a1448e279b9bd.fbc2222fb077ef23",
+      "_id": "fbc2222fb077ef23"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Linked to an islet by a land bridge",
+      "_key": "!tables.results!014a1448e279b9bd.49992da2b1a49262",
+      "_id": "49992da2b1a49262"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Majestic seaside waterfall",
+      "_key": "!tables.results!014a1448e279b9bd.cc1218a500400de8",
+      "_id": "cc1218a500400de8"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Obscuring mist",
+      "_key": "!tables.results!014a1448e279b9bd.6674fe8d277df0e9",
+      "_id": "6674fe8d277df0e9"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Old, crumbling dock",
+      "_key": "!tables.results!014a1448e279b9bd.65ca1610c89c16ba",
+      "_id": "65ca1610c89c16ba"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Powerful shorebreaking waves",
+      "_key": "!tables.results!014a1448e279b9bd.1861e6441e199f82",
+      "_id": "1861e6441e199f82"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Ringed by a maze of rocky shoals",
+      "_key": "!tables.results!014a1448e279b9bd.63aa41435b739854",
+      "_id": "63aa41435b739854"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Scars of recent storm damage",
+      "_key": "!tables.results!014a1448e279b9bd.720c1855f5434e24",
+      "_id": "720c1855f5434e24"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Sharks prowl coastal waters",
+      "_key": "!tables.results!014a1448e279b9bd.e6a4f3dbab325f04",
+      "_id": "e6a4f3dbab325f04"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Signs of a recent battle",
+      "_key": "!tables.results!014a1448e279b9bd.94572ac210fc1b58",
+      "_id": "94572ac210fc1b58"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Sounds of distant gunfire",
+      "_key": "!tables.results!014a1448e279b9bd.8ec55ec9bfc28577",
+      "_id": "8ec55ec9bfc28577"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Sounds of far-off music",
+      "_key": "!tables.results!014a1448e279b9bd.d29219eea4b1def3",
+      "_id": "d29219eea4b1def3"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Stirrings of a large sea creature",
+      "_key": "!tables.results!014a1448e279b9bd.ce2895d8706a65c5",
+      "_id": "ce2895d8706a65c5"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Strong coastal currents",
+      "_key": "!tables.results!014a1448e279b9bd.9c8c6169e10332e1",
+      "_id": "9c8c6169e10332e1"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Sunken wrecks form an artificial reef",
+      "_key": "!tables.results!014a1448e279b9bd.0d0207a8aafb3c53",
+      "_id": "0d0207a8aafb3c53"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Thick kelp forests under the surface",
+      "_key": "!tables.results!014a1448e279b9bd.cb3044b0ebfc1e70",
+      "_id": "cb3044b0ebfc1e70"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Towering natural rock arch",
+      "_key": "!tables.results!014a1448e279b9bd.228e3a120bff4c14",
+      "_id": "228e3a120bff4c14"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Unusual color beaches or terrain",
+      "_key": "!tables.results!014a1448e279b9bd.1d03a01d6344f1ce",
+      "_id": "1d03a01d6344f1ce"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Vibrant offshore coral",
+      "_key": "!tables.results!014a1448e279b9bd.1b180e99e737390b",
+      "_id": "1b180e99e737390b"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Walled shoreline",
+      "_key": "!tables.results!014a1448e279b9bd.493d275fca4be497",
+      "_id": "493d275fca4be497"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Waters clogged with debris",
+      "_key": "!tables.results!014a1448e279b9bd.1244cf0969c50e43",
+      "_id": "1244cf0969c50e43"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Whales congregate in coastal waters",
+      "_key": "!tables.results!014a1448e279b9bd.a8e5d5f0929dd19c",
+      "_id": "a8e5d5f0929dd19c"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "[Ship](datasworn:oracle_collection:sundered_isles/ship) (at anchor)",
+      "_key": "!tables.results!014a1448e279b9bd.a650d9247130fcb0",
+      "_id": "a650d9247130fcb0"
+    },
+    {
+      "range": [
+        81,
+        86
+      ],
+      "text": "[Shipwreck](datasworn:oracle_collection:sundered_isles/shipwreck)",
+      "_key": "!tables.results!014a1448e279b9bd.ed1f16b8dff31e62",
+      "_id": "ed1f16b8dff31e62"
+    },
+    {
+      "range": [
+        87,
+        90
+      ],
+      "text": "[Ruin](datasworn:oracle_collection:sundered_isles/ruin)",
+      "_key": "!tables.results!014a1448e279b9bd.091c47787ac8f31b",
+      "_id": "091c47787ac8f31b"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!014a1448e279b9bd.c07980a6ef5c645c",
+      "_id": "c07980a6ef5c645c"
+    }
+  ],
+  "folder": "775da3a96cc7c668",
+  "sort": 145,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!014a1448e279b9bd"
+}

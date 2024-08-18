@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Grave/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Grave"
+      "category": "Starforged/Oracles/Planets/Grave",
+      "dsid": "oracle_rollable:starforged/planet/grave/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Broken moon",
-      "_id": "57031ac7d1555d86",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.57031ac7d1555d86"
+      "_key": "!tables.results!7520168fe11e73f4.3eedd4e8d8fa1e80",
+      "_id": "3eedd4e8d8fa1e80"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Perpetual overcast",
-      "_id": "8bb769caf123f476",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.8bb769caf123f476"
+      "_key": "!tables.results!7520168fe11e73f4.60a4f6305066f249",
+      "_id": "60a4f6305066f249"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Cratered surface",
-      "_id": "e511ac545e5691dc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.e511ac545e5691dc"
+      "_key": "!tables.results!7520168fe11e73f4.c3e17ad519dc8d1c",
+      "_id": "c3e17ad519dc8d1c"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Sky-breaching ruins",
-      "_id": "abdd3bc36eb7e7cf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.abdd3bc36eb7e7cf"
+      "_key": "!tables.results!7520168fe11e73f4.14a7701cdd6832c0",
+      "_id": "14a7701cdd6832c0"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Dry seabeds",
-      "_id": "a478ef81752f6571",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.a478ef81752f6571"
+      "_key": "!tables.results!7520168fe11e73f4.612d8afba3628fee",
+      "_id": "612d8afba3628fee"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Vast wastelands",
-      "_id": "d656063abd55a54d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.d656063abd55a54d"
+      "_key": "!tables.results!7520168fe11e73f4.ab8a0f3a70bf54bb",
+      "_id": "ab8a0f3a70bf54bb"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Irradiated atmosphere",
-      "_id": "3b07371a80bf53b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.3b07371a80bf53b3"
+      "_key": "!tables.results!7520168fe11e73f4.436d939d47578937",
+      "_id": "436d939d47578937"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Orbiting ship graveyard",
-      "_id": "529477b8920ebe1f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.529477b8920ebe1f"
+      "_key": "!tables.results!7520168fe11e73f4.6e570446e5576272",
+      "_id": "6e570446e5576272"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "2d828493b8f8f525",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.2d828493b8f8f525"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!7520168fe11e73f4.7fa5ab324e74c3c6",
+      "_id": "7fa5ab324e74c3c6"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "bad9444a0ce6475f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7520168fe11e73f4.bad9444a0ce6475f"
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (orbital)",
+      "_key": "!tables.results!7520168fe11e73f4.8a08f651272ffbc5",
+      "_id": "8a08f651272ffbc5"
     }
   ],
   "folder": "caa4a9957ef73507",
   "sort": 310,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!7520168fe11e73f4"
 }

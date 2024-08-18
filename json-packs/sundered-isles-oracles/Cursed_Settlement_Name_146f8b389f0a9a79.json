@@ -1,0 +1,452 @@
+{
+  "_id": "146f8b389f0a9a79",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/name_cursed"
+    }
+  },
+  "name": "Cursed Settlement Name",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Barrowcrest",
+      "_key": "!tables.results!146f8b389f0a9a79.6029ea094c4c4838",
+      "_id": "6029ea094c4c4838"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Bedlam",
+      "_key": "!tables.results!146f8b389f0a9a79.28a3361af63e3030",
+      "_id": "28a3361af63e3030"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Blackwood",
+      "_key": "!tables.results!146f8b389f0a9a79.72b5e81739e33a5a",
+      "_id": "72b5e81739e33a5a"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Bleakspire",
+      "_key": "!tables.results!146f8b389f0a9a79.76f50538fdc05b11",
+      "_id": "76f50538fdc05b11"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Bloodmarsh",
+      "_key": "!tables.results!146f8b389f0a9a79.38219e85ffe46c64",
+      "_id": "38219e85ffe46c64"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Boneridge",
+      "_key": "!tables.results!146f8b389f0a9a79.8eec823e284a1c99",
+      "_id": "8eec823e284a1c99"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Bramble",
+      "_key": "!tables.results!146f8b389f0a9a79.58f9e23242fe682f",
+      "_id": "58f9e23242fe682f"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Brink",
+      "_key": "!tables.results!146f8b389f0a9a79.36b899fea8a6d0b2",
+      "_id": "36b899fea8a6d0b2"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Burrow",
+      "_key": "!tables.results!146f8b389f0a9a79.a3963aa4136d3b57",
+      "_id": "a3963aa4136d3b57"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Calamity",
+      "_key": "!tables.results!146f8b389f0a9a79.d6075e2c2b14ab71",
+      "_id": "d6075e2c2b14ab71"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Darkfall",
+      "_key": "!tables.results!146f8b389f0a9a79.af4bec1eb97af55a",
+      "_id": "af4bec1eb97af55a"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Darkwater",
+      "_key": "!tables.results!146f8b389f0a9a79.ad14eeda465fd54c",
+      "_id": "ad14eeda465fd54c"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Deadrock",
+      "_key": "!tables.results!146f8b389f0a9a79.8c734380cad75f76",
+      "_id": "8c734380cad75f76"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Deception",
+      "_key": "!tables.results!146f8b389f0a9a79.7154d021becd7bb4",
+      "_id": "7154d021becd7bb4"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Desolation",
+      "_key": "!tables.results!146f8b389f0a9a79.cb89c3bc5b1e2328",
+      "_id": "cb89c3bc5b1e2328"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Dreck",
+      "_key": "!tables.results!146f8b389f0a9a79.5fe753842db92ccc",
+      "_id": "5fe753842db92ccc"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "Duskwatch",
+      "_key": "!tables.results!146f8b389f0a9a79.a0703ebf72b891cb",
+      "_id": "a0703ebf72b891cb"
+    },
+    {
+      "range": [
+        36,
+        37
+      ],
+      "text": "Fool's Rest",
+      "_key": "!tables.results!146f8b389f0a9a79.067bc3c342286082",
+      "_id": "067bc3c342286082"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Foulwater",
+      "_key": "!tables.results!146f8b389f0a9a79.691cb57217196e4c",
+      "_id": "691cb57217196e4c"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Gallows",
+      "_key": "!tables.results!146f8b389f0a9a79.5748fc10cf62fc15",
+      "_id": "5748fc10cf62fc15"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Ghostlight",
+      "_key": "!tables.results!146f8b389f0a9a79.2b5063fdc1640233",
+      "_id": "2b5063fdc1640233"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Gloomwood",
+      "_key": "!tables.results!146f8b389f0a9a79.0bf2aa290e0e36f6",
+      "_id": "0bf2aa290e0e36f6"
+    },
+    {
+      "range": [
+        46,
+        47
+      ],
+      "text": "Gravehome",
+      "_key": "!tables.results!146f8b389f0a9a79.0b5b202dac50de24",
+      "_id": "0b5b202dac50de24"
+    },
+    {
+      "range": [
+        48,
+        49
+      ],
+      "text": "Grimstone",
+      "_key": "!tables.results!146f8b389f0a9a79.144129d75d2bce9a",
+      "_id": "144129d75d2bce9a"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Grimtree",
+      "_key": "!tables.results!146f8b389f0a9a79.ca65284ecbff167c",
+      "_id": "ca65284ecbff167c"
+    },
+    {
+      "range": [
+        52,
+        53
+      ],
+      "text": "Lament",
+      "_key": "!tables.results!146f8b389f0a9a79.2d6a4615082242ee",
+      "_id": "2d6a4615082242ee"
+    },
+    {
+      "range": [
+        54,
+        55
+      ],
+      "text": "Losthope",
+      "_key": "!tables.results!146f8b389f0a9a79.87e1ad6f0439ef85",
+      "_id": "87e1ad6f0439ef85"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Misfortune",
+      "_key": "!tables.results!146f8b389f0a9a79.007e3ce28f42668f",
+      "_id": "007e3ce28f42668f"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Mournhaunt",
+      "_key": "!tables.results!146f8b389f0a9a79.5cc79d8fbdba3020",
+      "_id": "5cc79d8fbdba3020"
+    },
+    {
+      "range": [
+        60,
+        61
+      ],
+      "text": "Nightfall",
+      "_key": "!tables.results!146f8b389f0a9a79.6a450ed92925b853",
+      "_id": "6a450ed92925b853"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Portent",
+      "_key": "!tables.results!146f8b389f0a9a79.8e6686dc886927e7",
+      "_id": "8e6686dc886927e7"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Quagmire",
+      "_key": "!tables.results!146f8b389f0a9a79.e9baf4bd334275d9",
+      "_id": "e9baf4bd334275d9"
+    },
+    {
+      "range": [
+        66,
+        67
+      ],
+      "text": "Rat's Nest",
+      "_key": "!tables.results!146f8b389f0a9a79.681e32e0c8ebac5e",
+      "_id": "681e32e0c8ebac5e"
+    },
+    {
+      "range": [
+        68,
+        69
+      ],
+      "text": "Rotwood",
+      "_key": "!tables.results!146f8b389f0a9a79.ab5c2f4366c5298a",
+      "_id": "ab5c2f4366c5298a"
+    },
+    {
+      "range": [
+        70,
+        71
+      ],
+      "text": "Rubble",
+      "_key": "!tables.results!146f8b389f0a9a79.ebbef52e49627a7d",
+      "_id": "ebbef52e49627a7d"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Ruckus",
+      "_key": "!tables.results!146f8b389f0a9a79.bbc7ce4737d8238f",
+      "_id": "bbc7ce4737d8238f"
+    },
+    {
+      "range": [
+        74,
+        75
+      ],
+      "text": "Sepulcher",
+      "_key": "!tables.results!146f8b389f0a9a79.131c4e94077caa6f",
+      "_id": "131c4e94077caa6f"
+    },
+    {
+      "range": [
+        76,
+        77
+      ],
+      "text": "Shadowreach",
+      "_key": "!tables.results!146f8b389f0a9a79.b616cb6097652ab3",
+      "_id": "b616cb6097652ab3"
+    },
+    {
+      "range": [
+        78,
+        79
+      ],
+      "text": "Shadowvale",
+      "_key": "!tables.results!146f8b389f0a9a79.9210114436a8b410",
+      "_id": "9210114436a8b410"
+    },
+    {
+      "range": [
+        80,
+        81
+      ],
+      "text": "Shambles",
+      "_key": "!tables.results!146f8b389f0a9a79.0a9699e42ef92eb9",
+      "_id": "0a9699e42ef92eb9"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Skullcrag",
+      "_key": "!tables.results!146f8b389f0a9a79.9477fb79fe10f2f5",
+      "_id": "9477fb79fe10f2f5"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Stillgrave",
+      "_key": "!tables.results!146f8b389f0a9a79.204dd0a783d85748",
+      "_id": "204dd0a783d85748"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Stormwreck",
+      "_key": "!tables.results!146f8b389f0a9a79.a86defec8b0a956a",
+      "_id": "a86defec8b0a956a"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Swillwater",
+      "_key": "!tables.results!146f8b389f0a9a79.aedddc8d81317315",
+      "_id": "aedddc8d81317315"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Tinderbox",
+      "_key": "!tables.results!146f8b389f0a9a79.c991c60956189dfd",
+      "_id": "c991c60956189dfd"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Vigil",
+      "_key": "!tables.results!146f8b389f0a9a79.97841b753ccaa37a",
+      "_id": "97841b753ccaa37a"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Widow's Watch",
+      "_key": "!tables.results!146f8b389f0a9a79.3d5df770615942fb",
+      "_id": "3d5df770615942fb"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Wrack",
+      "_key": "!tables.results!146f8b389f0a9a79.ed6e77df75d63fd1",
+      "_id": "ed6e77df75d63fd1"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 175,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!146f8b389f0a9a79"
+}

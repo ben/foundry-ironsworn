@@ -1,0 +1,110 @@
+{
+  "_id": "e7bfa8b849f818c6",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/secrecy",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/secrecy/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Cloaks",
+      "_key": "!tables.results!e7bfa8b849f818c6.5952626d7608f14a",
+      "_id": "5952626d7608f14a"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Daggers",
+      "_key": "!tables.results!e7bfa8b849f818c6.6f0b7fcdb160d4be",
+      "_id": "6f0b7fcdb160d4be"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Eyes",
+      "_key": "!tables.results!e7bfa8b849f818c6.a4a48157d9448a7e",
+      "_id": "a4a48157d9448a7e"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Masks",
+      "_key": "!tables.results!e7bfa8b849f818c6.1fc2f2df76f9b876",
+      "_id": "1fc2f2df76f9b876"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Phantoms",
+      "_key": "!tables.results!e7bfa8b849f818c6.cf4e4dc5c87bc40b",
+      "_id": "cf4e4dc5c87bc40b"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Ravens",
+      "_key": "!tables.results!e7bfa8b849f818c6.381895a9fb3f6550",
+      "_id": "381895a9fb3f6550"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Serpents",
+      "_key": "!tables.results!e7bfa8b849f818c6.54da0a76287d1389",
+      "_id": "54da0a76287d1389"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Shadows",
+      "_key": "!tables.results!e7bfa8b849f818c6.08b73ce0fbb2f240",
+      "_id": "08b73ce0fbb2f240"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Specters",
+      "_key": "!tables.results!e7bfa8b849f818c6.2bacb0ca992eeb6e",
+      "_id": "2bacb0ca992eeb6e"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Spiders",
+      "_key": "!tables.results!e7bfa8b849f818c6.e9e540ea8ef4b9b5",
+      "_id": "e9e540ea8ef4b9b5"
+    }
+  ],
+  "folder": "34c50249287e2862",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e7bfa8b849f818c6"
+}

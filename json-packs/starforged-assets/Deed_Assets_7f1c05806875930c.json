@@ -1,0 +1,17 @@
+{
+  "name": "Deed Assets",
+  "color": "#40834f",
+  "description": "__Deeds__ represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character.",
+  "type": "Item",
+  "_id": "7f1c05806875930c",
+  "sort": 57,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Deed",
+      "dsid": "asset_collection:starforged/deed"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!7f1c05806875930c"
+}

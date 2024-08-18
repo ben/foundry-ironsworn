@@ -1,0 +1,101 @@
+{
+  "name": "War",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/War",
+      "dsid": "truth:starforged/war"
+    }
+  },
+  "_id": "6d161b570439dd4f",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Here in the Forge, resources are too precious to support organized fighting forces or advanced weaponry.",
+      "system": {
+        "dsid": "truth.option:starforged/war.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Here in the Forge, resources are too precious to support organized fighting forces or advanced weaponry.",
+        "Description": "Weapons are simple and cheap. Starships are often cobbled together from salvage. Most communities rely on ragtag bands of poorly equipped conscripts or volunteers to defend their holdings, and raiders prowl the Forge in search of easy prey.",
+        "Quest": "On a remote jungle world, settlers harvest a rare medicinal plant. Once a year, raiders come to claim a sizable portion of the crop. This year, the harvest was meager and they cannot bear the cost. With the raiders due to arrive in a matter of days, what will you do to protect the people of this outpost?",
+        "Roll template": {
+          "Description": "Weapons are simple and cheap. Starships are often cobbled together from salvage. Most communities rely on ragtag bands of poorly equipped conscripts or volunteers to defend their holdings, and raiders prowl the Forge in search of easy prey."
+        }
+      },
+      "_id": "15cb7b9fa6be3bb5",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!6d161b570439dd4f.15cb7b9fa6be3bb5"
+    },
+    {
+      "type": "truth",
+      "name": "Professional soldiers defend or expand the holdings of those who are able to pay. The rest of us are on our own.",
+      "system": {
+        "dsid": "truth.option:starforged/war.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Professional soldiers defend or expand the holdings of those who are able to pay. The rest of us are on our own.",
+        "Description": "Mercenary guilds wield power in the Forge. Some are scrappy outfits of no more than a dozen soldiers. Others are sector-spanning enterprises deploying legions of skilled fighting forces and fleets of powerful starships. Most hold no loyalty except to the highest bidder.",
+        "Quest": "A detachment of mercenaries was sent to put down a rebellion on a mining settlement. Instead of following their orders, the soldiers now stand with the miners. What forced this sudden reversal? What will you do to aid these renegades as the full force of their former cohorts are arrayed against them?",
+        "Roll template": {
+          "Description": "Mercenary guilds wield power in the Forge. Some are scrappy outfits of no more than a dozen soldiers. Others are sector-spanning enterprises deploying legions of skilled fighting forces and fleets of powerful starships. Most hold no loyalty except to the highest bidder."
+        }
+      },
+      "_id": "2b43cd1b1ea62092",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!6d161b570439dd4f.2b43cd1b1ea62092"
+    },
+    {
+      "type": "truth",
+      "name": "War never ends. Talented weaponsmiths and shipwrights craft deadly, high-tech tools of destruction. Dominant factions wield mighty fleets and battle-hardened troops.",
+      "system": {
+        "dsid": "truth.option:starforged/war.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "War never ends. Talented weaponsmiths and shipwrights craft deadly, high-tech tools of destruction. Dominant factions wield mighty fleets and battle-hardened troops.",
+        "Description": "Those in power have access to weapons of horrific destructive potential. Skirmishes and wars flare across the settled domains, and most are pawns or casualties in these destructive campaigns.",
+        "Quest": "A weaponsmith created an experimental ship-mounted weapon, the Null Cannon, able to fracture the very bonds of reality. Now, they hope to undo their work before the cannon is brought to bear. What caused this change of heart? How are you involved?",
+        "Roll template": {
+          "Description": "Those in power have access to weapons of horrific destructive potential. Skirmishes and wars flare across the settled domains, and most are pawns or casualties in these destructive campaigns."
+        }
+      },
+      "_id": "336b7760c773de33",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!6d161b570439dd4f.336b7760c773de33"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "Have you fought in any wars? If you are an experienced soldier, you might be a @Compendium[foundry-ironsworn.starforgedassets.5b517486f8722fdb]{Veteran}. If you swear vows as a soldier of fortune, you might be a @Compendium[foundry-ironsworn.starforgedassets.9530a642ebdca5a5]{Mercenary}. If you favor a particular weapon or tactic, you might follow a path such as @Compendium[foundry-ironsworn.starforgedassets.bbff76cd9b9fb67f]{Archer}, @Compendium[foundry-ironsworn.starforgedassets.82cb2564aae5bf0f]{Blademaster}, @Compendium[foundry-ironsworn.starforgedassets.69c86f19e7cbcf43]{Demolitionist}, @Compendium[foundry-ironsworn.starforgedassets.e6dd0f7e6ac6e3cc]{Gunner}, @Compendium[foundry-ironsworn.starforgedassets.0b42a1e32bdb10c9]{Gunslinger}, or @Compendium[foundry-ironsworn.starforgedassets.b888c7c1b0fd46db]{Sniper}.",
+        "format": 2,
+        "content": "<p>Have you fought in any wars? If you are an experienced soldier, you might be a @Compendium[foundry-ironsworn.starforgedassets.5b517486f8722fdb]{Veteran}. If you swear vows as a soldier of fortune, you might be a @Compendium[foundry-ironsworn.starforgedassets.9530a642ebdca5a5]{Mercenary}. If you favor a particular weapon or tactic, you might follow a path such as @Compendium[foundry-ironsworn.starforgedassets.bbff76cd9b9fb67f]{Archer}, @Compendium[foundry-ironsworn.starforgedassets.82cb2564aae5bf0f]{Blademaster}, @Compendium[foundry-ironsworn.starforgedassets.69c86f19e7cbcf43]{Demolitionist}, @Compendium[foundry-ironsworn.starforgedassets.e6dd0f7e6ac6e3cc]{Gunner}, @Compendium[foundry-ironsworn.starforgedassets.0b42a1e32bdb10c9]{Gunslinger}, or @Compendium[foundry-ironsworn.starforgedassets.b888c7c1b0fd46db]{Sniper}.</p>"
+      },
+      "_id": "aac363cc3b0b024b",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!6d161b570439dd4f.aac363cc3b0b024b"
+    }
+  ],
+  "folder": null,
+  "sort": 95,
+  "_key": "!journal!6d161b570439dd4f"
+}

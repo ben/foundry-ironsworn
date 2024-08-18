@@ -1,0 +1,344 @@
+{
+  "_id": "7f3820c3edc3d9e1",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/name/moniker_cursed",
+      "dsid": "oracle_rollable:sundered_isles/character/name/moniker_cursed/dreadful_persona"
+    }
+  },
+  "name": "Dreadful Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Banshee",
+      "_key": "!tables.results!7f3820c3edc3d9e1.d176fbd2935ac82b",
+      "_id": "d176fbd2935ac82b"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Barracuda",
+      "_key": "!tables.results!7f3820c3edc3d9e1.2f2e0c1846f96e81",
+      "_id": "2f2e0c1846f96e81"
+    },
+    {
+      "range": [
+        5,
+        7
+      ],
+      "text": "Blackheart",
+      "_key": "!tables.results!7f3820c3edc3d9e1.509705783b6204c9",
+      "_id": "509705783b6204c9"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "Blackmask",
+      "_key": "!tables.results!7f3820c3edc3d9e1.9d495c580a7bcc2e",
+      "_id": "9d495c580a7bcc2e"
+    },
+    {
+      "range": [
+        11,
+        13
+      ],
+      "text": "Blacksail",
+      "_key": "!tables.results!7f3820c3edc3d9e1.4dae6f2ce72b42b4",
+      "_id": "4dae6f2ce72b42b4"
+    },
+    {
+      "range": [
+        14,
+        16
+      ],
+      "text": "Bloodbeard",
+      "_key": "!tables.results!7f3820c3edc3d9e1.2957ec11adfddbf1",
+      "_id": "2957ec11adfddbf1"
+    },
+    {
+      "range": [
+        17,
+        19
+      ],
+      "text": "Bloodblade",
+      "_key": "!tables.results!7f3820c3edc3d9e1.a5a8ddd4c2f17ece",
+      "_id": "a5a8ddd4c2f17ece"
+    },
+    {
+      "range": [
+        20,
+        22
+      ],
+      "text": "Bloodskull",
+      "_key": "!tables.results!7f3820c3edc3d9e1.77b4c8d07ec8c0b9",
+      "_id": "77b4c8d07ec8c0b9"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Bloodtide",
+      "_key": "!tables.results!7f3820c3edc3d9e1.f3258d8b8feb74cc",
+      "_id": "f3258d8b8feb74cc"
+    },
+    {
+      "range": [
+        26,
+        28
+      ],
+      "text": "Bloody-hand",
+      "_key": "!tables.results!7f3820c3edc3d9e1.5faff996ba152580",
+      "_id": "5faff996ba152580"
+    },
+    {
+      "range": [
+        29,
+        31
+      ],
+      "text": "Boneblade",
+      "_key": "!tables.results!7f3820c3edc3d9e1.a4d6d52c32a4e584",
+      "_id": "a4d6d52c32a4e584"
+    },
+    {
+      "range": [
+        32,
+        34
+      ],
+      "text": "Bonerender",
+      "_key": "!tables.results!7f3820c3edc3d9e1.664c8930f573b75f",
+      "_id": "664c8930f573b75f"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Carrion Eater",
+      "_key": "!tables.results!7f3820c3edc3d9e1.f050c382c09301d1",
+      "_id": "f050c382c09301d1"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Chimera",
+      "_key": "!tables.results!7f3820c3edc3d9e1.dc9c50b6a3ca66fc",
+      "_id": "dc9c50b6a3ca66fc"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Corpsehand",
+      "_key": "!tables.results!7f3820c3edc3d9e1.0439e9febbc38818",
+      "_id": "0439e9febbc38818"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "Darktide",
+      "_key": "!tables.results!7f3820c3edc3d9e1.4c5745e954ac483b",
+      "_id": "4c5745e954ac483b"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Deathmask",
+      "_key": "!tables.results!7f3820c3edc3d9e1.ac7942c2b4bded7c",
+      "_id": "ac7942c2b4bded7c"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Dreadskull",
+      "_key": "!tables.results!7f3820c3edc3d9e1.ae74fbee3c5f3ab0",
+      "_id": "ae74fbee3c5f3ab0"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Fleshcarver",
+      "_key": "!tables.results!7f3820c3edc3d9e1.27e6a0f609999dd9",
+      "_id": "27e6a0f609999dd9"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Gloamheart",
+      "_key": "!tables.results!7f3820c3edc3d9e1.3970e06d0e5cd7f8",
+      "_id": "3970e06d0e5cd7f8"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Hellhound",
+      "_key": "!tables.results!7f3820c3edc3d9e1.433b8b59c6d72612",
+      "_id": "433b8b59c6d72612"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Hellion",
+      "_key": "!tables.results!7f3820c3edc3d9e1.8b46ac296d231dfe",
+      "_id": "8b46ac296d231dfe"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Jackal",
+      "_key": "!tables.results!7f3820c3edc3d9e1.3b2c328d98346c60",
+      "_id": "3b2c328d98346c60"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Keelhaul",
+      "_key": "!tables.results!7f3820c3edc3d9e1.51422e391c2d086e",
+      "_id": "51422e391c2d086e"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Pyre",
+      "_key": "!tables.results!7f3820c3edc3d9e1.63053bfb2119f6e1",
+      "_id": "63053bfb2119f6e1"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "Reaver",
+      "_key": "!tables.results!7f3820c3edc3d9e1.fa088bdfce99f364",
+      "_id": "fa088bdfce99f364"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "Redpalm",
+      "_key": "!tables.results!7f3820c3edc3d9e1.200a7f3b999a8cea",
+      "_id": "200a7f3b999a8cea"
+    },
+    {
+      "range": [
+        75,
+        77
+      ],
+      "text": "Redskull",
+      "_key": "!tables.results!7f3820c3edc3d9e1.89a822c7a9f5fc9a",
+      "_id": "89a822c7a9f5fc9a"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Seafang",
+      "_key": "!tables.results!7f3820c3edc3d9e1.38cad26828b9a1bc",
+      "_id": "38cad26828b9a1bc"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Skullcrusher",
+      "_key": "!tables.results!7f3820c3edc3d9e1.0d5fa2ebfffa786c",
+      "_id": "0d5fa2ebfffa786c"
+    },
+    {
+      "range": [
+        84,
+        85
+      ],
+      "text": "Soulless",
+      "_key": "!tables.results!7f3820c3edc3d9e1.3a17d8c8f4b49a46",
+      "_id": "3a17d8c8f4b49a46"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "Specter",
+      "_key": "!tables.results!7f3820c3edc3d9e1.7bad92a6b37c11ed",
+      "_id": "7bad92a6b37c11ed"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "Spider",
+      "_key": "!tables.results!7f3820c3edc3d9e1.39ea97a157c7c5a1",
+      "_id": "39ea97a157c7c5a1"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "Spinebreaker",
+      "_key": "!tables.results!7f3820c3edc3d9e1.fba95626c12f6c71",
+      "_id": "fba95626c12f6c71"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "Stoneheart",
+      "_key": "!tables.results!7f3820c3edc3d9e1.f73305ac34f514df",
+      "_id": "f73305ac34f514df"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Vulture",
+      "_key": "!tables.results!7f3820c3edc3d9e1.b9dfab66b968bfd2",
+      "_id": "b9dfab66b968bfd2"
+    }
+  ],
+  "folder": "5c43d16b683d442f",
+  "sort": 197,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7f3820c3edc3d9e1"
+}

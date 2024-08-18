@@ -1,0 +1,110 @@
+{
+  "_id": "a2ef369341ea41d8",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/curses",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/curses/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Bones",
+      "_key": "!tables.results!a2ef369341ea41d8.677420b26c850954",
+      "_id": "677420b26c850954"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Jackals",
+      "_key": "!tables.results!a2ef369341ea41d8.2f2db026e8668ddc",
+      "_id": "2f2db026e8668ddc"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Revenants",
+      "_key": "!tables.results!a2ef369341ea41d8.db2e2fac634f35cc",
+      "_id": "db2e2fac634f35cc"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Shades",
+      "_key": "!tables.results!a2ef369341ea41d8.77f2ec7ec4136899",
+      "_id": "77f2ec7ec4136899"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Skulls",
+      "_key": "!tables.results!a2ef369341ea41d8.2a075ae1ec665767",
+      "_id": "2a075ae1ec665767"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Slayers",
+      "_key": "!tables.results!a2ef369341ea41d8.ecb33aece4a917e8",
+      "_id": "ecb33aece4a917e8"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Souls",
+      "_key": "!tables.results!a2ef369341ea41d8.127a57610d9697a6",
+      "_id": "127a57610d9697a6"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Swarm",
+      "_key": "!tables.results!a2ef369341ea41d8.7aabe22e7af950fa",
+      "_id": "7aabe22e7af950fa"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Wraiths",
+      "_key": "!tables.results!a2ef369341ea41d8.5d37812cc7ff607d",
+      "_id": "5d37812cc7ff607d"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wretches",
+      "_key": "!tables.results!a2ef369341ea41d8.ec6e64b91f6f09ff",
+      "_id": "ec6e64b91f6f09ff"
+    }
+  ],
+  "folder": "a944608d2b6f8895",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a2ef369341ea41d8"
+}

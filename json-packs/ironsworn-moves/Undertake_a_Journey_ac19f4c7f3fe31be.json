@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "Undertake a Journey",
   "img": "icons/dice/d10black.svg",
+  "folder": "30f9b4039e23c0c9",
   "system": {
     "dfid": "Ironsworn/Moves/Adventure/Undertake_a_Journey",
     "Category": "Ironsworn/Moves/Adventure",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you travel across hazardous or unfamiliar lands**, set the rank of your journey.\n\n  * Troublesome journey: 3 progress per waypoint.\n  * Dangerous journey: 2 progress per waypoint.\n  * Formidable journey: 1 progress per waypoint.\n  * Extreme journey: 2 ticks per waypoint.\n  * Epic journey: 1 tick per waypoint.\n\nThen, for each segment of your journey, roll +wits. If you are setting off from a community with which you share a bond, add +1 to your initial roll.\n\nOn a **strong hit**, you reach a waypoint. If the waypoint is unknown to you, envision it (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Then, choose one.\n\n  * You make good use of your resources: Mark progress.\n  * You move at speed: Mark progress and take +1 momentum, but suffer -1 supply.\n\nOn a **weak hit**, you reach a waypoint and mark progress, but suffer -1 supply.\n\nOn a **miss**, you are waylaid by a perilous event. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Text": "When __you travel across hazardous or unfamiliar lands__, set the rank of your journey.\n\n  * Troublesome journey: 3 progress per waypoint.\n  * Dangerous journey: 2 progress per waypoint.\n  * Formidable journey: 1 progress per waypoint.\n  * Extreme journey: 2 ticks per waypoint.\n  * Epic journey: 1 tick per waypoint.\n\nThen, for each segment of your journey, roll +wits. If you are setting off from a community with which you share a bond, add +1 to your initial roll.\n\nOn a __strong hit__, you reach a waypoint. If the waypoint is unknown to you, envision it (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Then, choose one.\n\n  * You make good use of your resources: Mark progress.\n  * You move at speed: Mark progress and take +1 momentum, but suffer -1 supply.\n\nOn a __weak hit__, you reach a waypoint and mark progress, but suffer -1 supply.\n\nOn a __miss__, you are waylaid by a perilous event. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
     "Trigger": {
       "Text": "When you travel across hazardous or unfamiliar lands...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Wits"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You reach a waypoint. If the waypoint is unknown to you, envision it (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Then, choose one.\n\n  * You make good use of your resources: Mark progress.\n  * You move at speed: Mark progress and take +1 momentum, but suffer -1 supply.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you reach a waypoint. If the waypoint is unknown to you, envision it (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Then, choose one.\n\n  * You make good use of your resources: Mark progress.\n  * You move at speed: Mark progress and take +1 momentum, but suffer -1 supply.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You reach a waypoint and mark progress, but suffer -1 supply.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you reach a waypoint and mark progress, but suffer -1 supply."
       },
       "Miss": {
-        "Text": "You are waylaid by a perilous event. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you are waylaid by a perilous event. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 65
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 65,
-  "folder": "30f9b4039e23c0c9",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Adventure/Undertake_a_Journey",
+      "dsid": "move:classic/adventure/undertake_a_journey"
+    }
   },
   "_key": "!items!ac19f4c7f3fe31be"
 }

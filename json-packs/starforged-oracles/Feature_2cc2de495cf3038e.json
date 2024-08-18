@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Inhabited/Feature",
-      "category": "Starforged/Oracles/Location_Themes/Inhabited"
+      "category": "Starforged/Oracles/Location_Themes/Inhabited",
+      "dsid": "oracle_rollable:starforged/location_theme/inhabited/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Use this table to reveal a new aspect of the location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Conspicuous patrols or surveillance",
-      "_id": "ff16f69f7a292311",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.ff16f69f7a292311"
+      "_key": "!tables.results!2cc2de495cf3038e.d35bdc65e46124f4",
+      "_id": "d35bdc65e46124f4"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Crews at work",
-      "_id": "ccbadeb1a8947f39",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.ccbadeb1a8947f39"
+      "_key": "!tables.results!2cc2de495cf3038e.a797f4c1d185b931",
+      "_id": "a797f4c1d185b931"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Display or monument honors a notable cultural event",
-      "_id": "1f94e52d384e8449",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.1f94e52d384e8449"
+      "_key": "!tables.results!2cc2de495cf3038e.0b60d3409f71906f",
+      "_id": "0b60d3409f71906f"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Emergency teams responding to an incident or crisis",
-      "_id": "718b22f781a0a57e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.718b22f781a0a57e"
+      "_key": "!tables.results!2cc2de495cf3038e.de11bbf9a7d9853c",
+      "_id": "de11bbf9a7d9853c"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Families gathering or children playing",
-      "_id": "ebd9091393d02ae3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.ebd9091393d02ae3"
+      "_key": "!tables.results!2cc2de495cf3038e.3e9866d11fdd9e32",
+      "_id": "3e9866d11fdd9e32"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Festival, celebration, or observance",
-      "_id": "3b9f9b53a9de1e83",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.3b9f9b53a9de1e83"
+      "_key": "!tables.results!2cc2de495cf3038e.cdc91839bbb35e80",
+      "_id": "cdc91839bbb35e80"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Fight breaks out",
-      "_id": "12d7320fe283ec63",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.12d7320fe283ec63"
+      "_key": "!tables.results!2cc2de495cf3038e.531f134553cb5c4a",
+      "_id": "531f134553cb5c4a"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Notable figure stands out from the crowd",
-      "_id": "e0e3a66a4115bcad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.e0e3a66a4115bcad"
+      "_key": "!tables.results!2cc2de495cf3038e.517560209dc44ab0",
+      "_id": "517560209dc44ab0"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Protest or strike",
-      "_id": "9973c28cde0879d5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.9973c28cde0879d5"
+      "_key": "!tables.results!2cc2de495cf3038e.498ab402592e8767",
+      "_id": "498ab402592e8767"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Unrepaired damage",
-      "_id": "2298641a8d342852",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.2298641a8d342852"
+      "_key": "!tables.results!2cc2de495cf3038e.fd85c0f5638915af",
+      "_id": "fd85c0f5638915af"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         88
       ],
       "text": "Unusually empty or quiet area",
-      "_id": "2fd81d9aadd717a2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.2fd81d9aadd717a2"
+      "_key": "!tables.results!2cc2de495cf3038e.56b53ae85476298d",
+      "_id": "56b53ae85476298d"
     },
     {
       "range": [
@@ -172,43 +118,21 @@
         96
       ],
       "text": "Vendor or merchant hawking their wares",
-      "_id": "a86106a66cb09800",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.a86106a66cb09800"
+      "_key": "!tables.results!2cc2de495cf3038e.3fb8b50d85286b55",
+      "_id": "3fb8b50d85286b55"
     },
     {
       "range": [
         97,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "3dd5d71c0e200bc9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2cc2de495cf3038e.3dd5d71c0e200bc9"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!2cc2de495cf3038e.25618c9cff330ef2",
+      "_id": "25618c9cff330ef2"
     }
   ],
   "folder": "70f9da433bc19024",
   "sort": 376,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!2cc2de495cf3038e"
 }

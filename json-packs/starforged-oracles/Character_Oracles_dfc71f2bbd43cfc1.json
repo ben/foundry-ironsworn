@@ -1,0 +1,16 @@
+{
+  "name": "Character Oracles",
+  "description": "Don’t try to build a fully formed understanding character when you first encounter them; instead, focus on what your character learns or perceives as a first impression using oracles such as @Compendium[foundry-ironsworn.starforgedoracles.e422399eb54ed7b1]{First Look} and @Compendium[foundry-ironsworn.starforgedoracles.9ad07730b122052d]{Initial Disposition}. Then envision or generate additional details over time.",
+  "type": "RollTable",
+  "_id": "dfc71f2bbd43cfc1",
+  "sort": 330,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Characters",
+      "dsid": "oracle_collection:starforged/character"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!dfc71f2bbd43cfc1"
+}

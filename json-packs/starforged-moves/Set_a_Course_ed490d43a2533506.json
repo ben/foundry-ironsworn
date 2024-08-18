@@ -3,87 +3,64 @@
   "type": "sfmove",
   "name": "Set a Course",
   "img": "icons/dice/d10black.svg",
+  "folder": "f57c06b3db7f1676",
   "system": {
     "dfid": "Starforged/Moves/Exploration/Set_a_Course",
     "Category": "Starforged/Moves/Exploration",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site**, roll +supply.\n\nOn a **strong hit**, you reach your destination and the situation there favors you. Take +1 momentum.\n\nOn a **weak hit**, you arrive, but face a cost or complication. Choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a complication at the destination: Envision what you encounter.\n\nOn a **miss**, you are waylaid by a significant threat, and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. If you overcome this obstacle, you may push on safely to your destination.",
+    "Text": "__When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site__, roll +supply.\n\nOn a __strong hit__, you reach your destination and the situation there favors you. Take +1 momentum.\n\nOn a __weak hit__, you arrive, but face a cost or complication. Choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a complication at the destination: Envision what you encounter.\n\nOn a __miss__, you are waylaid by a significant threat, and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. If you overcome this obstacle, you may push on safely to your destination.",
     "Trigger": {
       "Text": "When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Supply"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You reach your destination and the situation there favors you. Take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you reach your destination and the situation there favors you. Take +1 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You arrive, but face a cost or complication. Choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a complication at the destination: Envision what you encounter.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you arrive, but face a cost or complication. Choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a complication at the destination: Envision what you encounter."
       },
       "Miss": {
-        "Text": "You are waylaid by a significant threat, and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. If you overcome this obstacle, you may push on safely to your destination.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you are waylaid by a significant threat, and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. If you overcome this obstacle, you may push on safely to your destination.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 180
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#7438B8",
       "Images": []
     }
   },
   "sort": 180,
-  "folder": "f57c06b3db7f1676",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Exploration/Set_a_Course",
+      "dsid": "move:starforged/exploration/set_a_course"
+    }
   },
   "_key": "!items!ed490d43a2533506"
 }

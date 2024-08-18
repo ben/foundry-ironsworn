@@ -1,0 +1,16 @@
+{
+  "name": "Combat Talent Assets",
+  "description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform @Compendium[foundry-ironsworn.ironswornmoves.19defd673fdc3970]{combat moves}. A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a @Compendium[foundry-ironsworn.ironswornassets.5e86f277a23f1113]{Shield-Bearer} and don’t have a shield at the ready, you can’t use the asset’s abilities.",
+  "type": "Item",
+  "_id": "18b30f608501bf56",
+  "sort": 40,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Assets/Combat_Talent",
+      "dsid": "asset_collection:classic/combat_talent"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!18b30f608501bf56"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Planet Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "99ee8a161d0857f8",
+  "sort": 306,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets",
+      "dsid": "oracle_collection:starforged/planet"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!99ee8a161d0857f8"
+}

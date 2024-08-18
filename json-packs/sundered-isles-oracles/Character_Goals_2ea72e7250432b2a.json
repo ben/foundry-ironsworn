@@ -1,0 +1,452 @@
+{
+  "_id": "2ea72e7250432b2a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/goals"
+    }
+  },
+  "name": "Character Goals",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Acquire knowledge or learning",
+      "_key": "!tables.results!2ea72e7250432b2a.77e6779ac85711a4",
+      "_id": "77e6779ac85711a4"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Acquire territory or dominion",
+      "_key": "!tables.results!2ea72e7250432b2a.0a04e0099c66522c",
+      "_id": "0a04e0099c66522c"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Amass wealth",
+      "_key": "!tables.results!2ea72e7250432b2a.9c65e975744297ff",
+      "_id": "9c65e975744297ff"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Avenge a betrayal",
+      "_key": "!tables.results!2ea72e7250432b2a.a712678e7b011c93",
+      "_id": "a712678e7b011c93"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Avenge a death",
+      "_key": "!tables.results!2ea72e7250432b2a.8cd3653fae500b59",
+      "_id": "8cd3653fae500b59"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Claim a lost or stolen treasure",
+      "_key": "!tables.results!2ea72e7250432b2a.4adce6ac906d7325",
+      "_id": "4adce6ac906d7325"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Claim a ship or command",
+      "_key": "!tables.results!2ea72e7250432b2a.4f877bedff81e34a",
+      "_id": "4f877bedff81e34a"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Collect a debt",
+      "_key": "!tables.results!2ea72e7250432b2a.aae69f885ee56914",
+      "_id": "aae69f885ee56914"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Complete a work of artistry or craft",
+      "_key": "!tables.results!2ea72e7250432b2a.c9ffcb96e612a8fe",
+      "_id": "c9ffcb96e612a8fe"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Conceal a true identity",
+      "_key": "!tables.results!2ea72e7250432b2a.96392ef31e52b739",
+      "_id": "96392ef31e52b739"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Cure a sickness",
+      "_key": "!tables.results!2ea72e7250432b2a.879160dfbb6ec8b8",
+      "_id": "879160dfbb6ec8b8"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Defeat a rival",
+      "_key": "!tables.results!2ea72e7250432b2a.b70e6e85c955355d",
+      "_id": "b70e6e85c955355d"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Defeat or undermine a faction",
+      "_key": "!tables.results!2ea72e7250432b2a.fb23d77c026c3a02",
+      "_id": "fb23d77c026c3a02"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Dismantle an unjust power",
+      "_key": "!tables.results!2ea72e7250432b2a.d126c5128ddcfb16",
+      "_id": "d126c5128ddcfb16"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Escape a captor or oppressor",
+      "_key": "!tables.results!2ea72e7250432b2a.cd7ef4f5f6c9cb42",
+      "_id": "cd7ef4f5f6c9cb42"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Escape or prevent a looming calamity",
+      "_key": "!tables.results!2ea72e7250432b2a.6e3e60222be77678",
+      "_id": "6e3e60222be77678"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Explore far and wide",
+      "_key": "!tables.results!2ea72e7250432b2a.7180fe029411ce3a",
+      "_id": "7180fe029411ce3a"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Find a lost or hidden treasure",
+      "_key": "!tables.results!2ea72e7250432b2a.4dfb9b182f730bbc",
+      "_id": "4dfb9b182f730bbc"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Find or build a home",
+      "_key": "!tables.results!2ea72e7250432b2a.4591ef381ee3ebea",
+      "_id": "4591ef381ee3ebea"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Find or rescue a person",
+      "_key": "!tables.results!2ea72e7250432b2a.208bb0fecbf69c6c",
+      "_id": "208bb0fecbf69c6c"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Follow the tenets of a faith",
+      "_key": "!tables.results!2ea72e7250432b2a.724e7cac768b3fc8",
+      "_id": "724e7cac768b3fc8"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Forge an alliance",
+      "_key": "!tables.results!2ea72e7250432b2a.0424bc34e6576371",
+      "_id": "0424bc34e6576371"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Gain glory or fame",
+      "_key": "!tables.results!2ea72e7250432b2a.6a4b20622080037a",
+      "_id": "6a4b20622080037a"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Gain power within a faction",
+      "_key": "!tables.results!2ea72e7250432b2a.e7bd2db3ba15a86e",
+      "_id": "e7bd2db3ba15a86e"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Incite conflict between factions",
+      "_key": "!tables.results!2ea72e7250432b2a.c18b2385acb0f052",
+      "_id": "c18b2385acb0f052"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Infiltrate a faction",
+      "_key": "!tables.results!2ea72e7250432b2a.9e02ab2cc8f63687",
+      "_id": "9e02ab2cc8f63687"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Master a skill or trade",
+      "_key": "!tables.results!2ea72e7250432b2a.798a6a0027370c86",
+      "_id": "798a6a0027370c86"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Preserve the legacy of a forebear",
+      "_key": "!tables.results!2ea72e7250432b2a.7d918a9e4864569c",
+      "_id": "7d918a9e4864569c"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Prevent conflict between factions",
+      "_key": "!tables.results!2ea72e7250432b2a.150f5182fee878c2",
+      "_id": "150f5182fee878c2"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Protect a secret",
+      "_key": "!tables.results!2ea72e7250432b2a.9b8d92322de70f94",
+      "_id": "9b8d92322de70f94"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Protect a threatened location",
+      "_key": "!tables.results!2ea72e7250432b2a.a14c2cb48388ac63",
+      "_id": "a14c2cb48388ac63"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Protect or support a family or community",
+      "_key": "!tables.results!2ea72e7250432b2a.33faf82e31aed6d0",
+      "_id": "33faf82e31aed6d0"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Protect or support a person",
+      "_key": "!tables.results!2ea72e7250432b2a.3bf89be49a4af763",
+      "_id": "3bf89be49a4af763"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Recover a stolen object",
+      "_key": "!tables.results!2ea72e7250432b2a.e25cdc9776cb20c7",
+      "_id": "e25cdc9776cb20c7"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Refute a falsehood",
+      "_key": "!tables.results!2ea72e7250432b2a.e81f53db41582170",
+      "_id": "e81f53db41582170"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Repay a debt",
+      "_key": "!tables.results!2ea72e7250432b2a.5a330b913954ddc8",
+      "_id": "5a330b913954ddc8"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Resist laws or authority",
+      "_key": "!tables.results!2ea72e7250432b2a.a6ab09ffb852717a",
+      "_id": "a6ab09ffb852717a"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Search out the truth of a legend",
+      "_key": "!tables.results!2ea72e7250432b2a.e3244fb2b3598055",
+      "_id": "e3244fb2b3598055"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Seek redemption for past wrongs",
+      "_key": "!tables.results!2ea72e7250432b2a.d44267cbc7625b50",
+      "_id": "d44267cbc7625b50"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Seek the favor of a person",
+      "_key": "!tables.results!2ea72e7250432b2a.a3911c7a5b536045",
+      "_id": "a3911c7a5b536045"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Serve the will of a leader",
+      "_key": "!tables.results!2ea72e7250432b2a.99702968bf183f6d",
+      "_id": "99702968bf183f6d"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Settle a dispute or rivalry",
+      "_key": "!tables.results!2ea72e7250432b2a.fb5ab5a431ca2b9b",
+      "_id": "fb5ab5a431ca2b9b"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Slay a creature",
+      "_key": "!tables.results!2ea72e7250432b2a.9611c8d22a964fb3",
+      "_id": "9611c8d22a964fb3"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Solve a mysterious murder",
+      "_key": "!tables.results!2ea72e7250432b2a.97fc99fbc61b85de",
+      "_id": "97fc99fbc61b85de"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Steal a valuable object",
+      "_key": "!tables.results!2ea72e7250432b2a.5c9c91097cfeb419",
+      "_id": "5c9c91097cfeb419"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Travel to a location",
+      "_key": "!tables.results!2ea72e7250432b2a.51f62b9cd6a176c2",
+      "_id": "51f62b9cd6a176c2"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Uphold or enforce laws",
+      "_key": "!tables.results!2ea72e7250432b2a.df4d3823e8d021af",
+      "_id": "df4d3823e8d021af"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "[Action](datasworn:oracle_rollable:sundered_isles/core/action) + [Theme](datasworn:oracle_rollable:sundered_isles/core/theme)",
+      "_key": "!tables.results!2ea72e7250432b2a.66abfe9383f0e5be",
+      "_id": "66abfe9383f0e5be"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 193,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!2ea72e7250432b2a"
+}

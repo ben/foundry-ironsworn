@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Furnace/Atmosphere",
-      "category": "Starforged/Oracles/Planets/Furnace"
+      "category": "Starforged/Oracles/Planets/Furnace",
+      "dsid": "oracle_rollable:starforged/planet/furnace/atmosphere"
     }
   },
   "name": "Atmosphere",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -17,14 +18,9 @@
         1,
         10
       ],
-      "text": "None/thin",
-      "_id": "bafa1ddf11a2c46b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b7b9ee078847e834.bafa1ddf11a2c46b"
+      "text": "None / thin",
+      "_key": "!tables.results!b7b9ee078847e834.9ff566de9688430b",
+      "_id": "9ff566de9688430b"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         50
       ],
       "text": "Toxic",
-      "_id": "56fac60a16ffbb33",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b7b9ee078847e834.56fac60a16ffbb33"
+      "_key": "!tables.results!b7b9ee078847e834.ce17b5fbada0ef04",
+      "_id": "ce17b5fbada0ef04"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         65
       ],
       "text": "Corrosive",
-      "_id": "65b021cfd1b78ef3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b7b9ee078847e834.65b021cfd1b78ef3"
+      "_key": "!tables.results!b7b9ee078847e834.b7928944571afb61",
+      "_id": "b7928944571afb61"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         90
       ],
       "text": "Marginal",
-      "_id": "64b5648f50445f1e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b7b9ee078847e834.64b5648f50445f1e"
+      "_key": "!tables.results!b7b9ee078847e834.1f5b812863fd62ad",
+      "_id": "1f5b812863fd62ad"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Breathable",
-      "_id": "24fd460eddc475b1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b7b9ee078847e834.24fd460eddc475b1"
+      "_key": "!tables.results!b7b9ee078847e834.7d6f6f1fd0b3dbcc",
+      "_id": "7d6f6f1fd0b3dbcc"
     }
   ],
   "folder": "91ce34721ba5cce8",
   "sort": 309,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!b7b9ee078847e834"
 }

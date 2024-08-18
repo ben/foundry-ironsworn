@@ -1,10 +1,10 @@
 {
   "_id": "e878900cfbd469a2",
   "type": "progress",
-  "name": "Chiton Queen",
+  "name": "Chiton queen",
   "img": "icons/creatures/invertebrates/spider-large-white-green.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Arachnid monsters with blade-like limbs</p>\n    <p class=\"nogrow\">Plated exoskeleton</p>\n    <p class=\"nogrow\">Dripping mucus</p>\n    <p class=\"nogrow\">Ripping, tearing maw</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Build and expand the nest</p>\n    <p class=\"nogrow\">Feed and protect the queen</p>\n    <p class=\"nogrow\">Snuff out intelligent life</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Attack with lightning reflexes</p>\n    <p class=\"nogrow\">Impale with bladed limbs</p>\n    <p class=\"nogrow\">Drag victims back to the nest</p>\n  </div>\n</div>\n\n<p>The chiton queen is a massive creature with segmented pincers, an armored carapace, and a bulging, egg-carrying abdomen. From the depths of the nest, it commands its drones telepathically. This psychic communication is so powerful it can even breach human consciousness—troubling dreams and waking hallucinations might be the harbinger of a chiton invasion.</p>\n\n<blockquote>Quest Starter: <p>At a remote facility, researchers are studying a newly-discovered chiton queen larva. The immature queen is held in frozen stasis, but something might have gone wrong. The return of a transport ship ferrying supplies to the researchers is weeks overdue. What is your connection to the facility or to the faction overseeing it?</p></blockquote>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Arachnid monsters with blade-like limbs</p>\n<p class=\"nogrow\">Plated exoskeleton</p>\n<p class=\"nogrow\">Dripping mucus</p>\n<p class=\"nogrow\">Ripping, tearing maw</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Build and expand the nest</p>\n<p class=\"nogrow\">Feed and protect the queen</p>\n<p class=\"nogrow\">Snuff out intelligent life</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Attack with lightning reflexes</p>\n<p class=\"nogrow\">Impale with bladed limbs</p>\n<p class=\"nogrow\">Drag victims back to the nest</p>\n</div>\n</div>\n\n<p>The chiton queen is a massive creature with segmented pincers, an armored carapace, and a bulging, egg-carrying abdomen. From the depths of the nest, it commands its drones telepathically. This psychic communication is so powerful it can even breach human consciousness—troubling dreams and waking hallucinations might be the harbinger of a chiton invasion.</p>\n\n<blockquote>Quest Starter: <p>At a remote facility, researchers are studying a newly-discovered chiton queen larva. The immature queen is held in frozen stasis, but something might have gone wrong. The return of a transport ship ferrying supplies to the researchers is weeks overdue. What is your connection to the facility or to the faction overseeing it?</p></blockquote>",
     "rank": 4,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/chiton.chiton_queen"
+    }
   },
   "_key": "!items!e878900cfbd469a2"
 }

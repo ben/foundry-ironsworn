@@ -1,0 +1,155 @@
+{
+  "_id": "d3016c0852310962",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship/mission",
+      "dsid": "oracle_rollable:sundered_isles/ship/mission/medium"
+    }
+  },
+  "name": "Medium",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Transport people",
+      "_key": "!tables.results!d3016c0852310962.9b08ca52a4b1ba24",
+      "_id": "9b08ca52a4b1ba24"
+    },
+    {
+      "range": [
+        5,
+        10
+      ],
+      "text": "Transport cargo",
+      "_key": "!tables.results!d3016c0852310962.a8fa635b0ef6463e",
+      "_id": "a8fa635b0ef6463e"
+    },
+    {
+      "range": [
+        11,
+        18
+      ],
+      "text": "Conduct trade",
+      "_key": "!tables.results!d3016c0852310962.91d2dc9fc0f22fb6",
+      "_id": "91d2dc9fc0f22fb6"
+    },
+    {
+      "range": [
+        19,
+        24
+      ],
+      "text": "Hunt creatures",
+      "_key": "!tables.results!d3016c0852310962.fa4a9b28004b6762",
+      "_id": "fa4a9b28004b6762"
+    },
+    {
+      "range": [
+        25,
+        30
+      ],
+      "text": "Patrol an area",
+      "_key": "!tables.results!d3016c0852310962.de32a844f100d9a4",
+      "_id": "de32a844f100d9a4"
+    },
+    {
+      "range": [
+        31,
+        38
+      ],
+      "text": "Explore or travel to an area",
+      "_key": "!tables.results!d3016c0852310962.8923c991ae68f4e6",
+      "_id": "8923c991ae68f4e6"
+    },
+    {
+      "range": [
+        39,
+        46
+      ],
+      "text": "Engage an enemy",
+      "_key": "!tables.results!d3016c0852310962.f3294f1d074222f7",
+      "_id": "f3294f1d074222f7"
+    },
+    {
+      "range": [
+        47,
+        60
+      ],
+      "text": "Conduct piracy",
+      "_key": "!tables.results!d3016c0852310962.b98fb7ed635ed2af",
+      "_id": "b98fb7ed635ed2af"
+    },
+    {
+      "range": [
+        61,
+        66
+      ],
+      "text": "Conduct diplomacy",
+      "_key": "!tables.results!d3016c0852310962.b132808d40533b4d",
+      "_id": "b132808d40533b4d"
+    },
+    {
+      "range": [
+        67,
+        72
+      ],
+      "text": "Conduct espionage",
+      "_key": "!tables.results!d3016c0852310962.382807b9753c38db",
+      "_id": "382807b9753c38db"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Conduct research",
+      "_key": "!tables.results!d3016c0852310962.17f807b5eb38e964",
+      "_id": "17f807b5eb38e964"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Deliver item or message",
+      "_key": "!tables.results!d3016c0852310962.8f9f616287e5671f",
+      "_id": "8f9f616287e5671f"
+    },
+    {
+      "range": [
+        79,
+        84
+      ],
+      "text": "Smuggle contraband",
+      "_key": "!tables.results!d3016c0852310962.55e577303158b6b2",
+      "_id": "55e577303158b6b2"
+    },
+    {
+      "range": [
+        85,
+        94
+      ],
+      "text": "[Action](datasworn:oracle_rollable:sundered_isles/core/action) + [Theme](datasworn:oracle_rollable:sundered_isles/core/theme)",
+      "_key": "!tables.results!d3016c0852310962.9b3a51cc0a5f0a14",
+      "_id": "9b3a51cc0a5f0a14"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!d3016c0852310962.568f375ebc3c516d",
+      "_id": "568f375ebc3c516d"
+    }
+  ],
+  "folder": "e20f7476c2916a1b",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d3016c0852310962"
+}

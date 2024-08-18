@@ -1,0 +1,74 @@
+{
+  "_id": "7d14247641e10793",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck/orientation/position",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/orientation/position/sea_cave"
+    }
+  },
+  "name": "Sea Cave",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Sunk and fully submerged",
+      "_key": "!tables.results!7d14247641e10793.79b74d46c896d56d",
+      "_id": "79b74d46c896d56d"
+    },
+    {
+      "range": [
+        11,
+        25
+      ],
+      "text": "Adrift on the surface",
+      "_key": "!tables.results!7d14247641e10793.3690a61f8df04b73",
+      "_id": "3690a61f8df04b73"
+    },
+    {
+      "range": [
+        26,
+        40
+      ],
+      "text": "Anchored in position on the surface",
+      "_key": "!tables.results!7d14247641e10793.4674b222962f0033",
+      "_id": "4674b222962f0033"
+    },
+    {
+      "range": [
+        41,
+        70
+      ],
+      "text": "Awash / partially submerged",
+      "_key": "!tables.results!7d14247641e10793.f274401349758462",
+      "_id": "f274401349758462"
+    },
+    {
+      "range": [
+        71,
+        90
+      ],
+      "text": "Stranded on dry ground or rocks",
+      "_key": "!tables.results!7d14247641e10793.6490cf5e4af914f5",
+      "_id": "6490cf5e4af914f5"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Perched on improbably high ground",
+      "_key": "!tables.results!7d14247641e10793.2ad350a5eb0dec46",
+      "_id": "2ad350a5eb0dec46"
+    }
+  ],
+  "folder": "eb56848e40226443",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7d14247641e10793"
+}

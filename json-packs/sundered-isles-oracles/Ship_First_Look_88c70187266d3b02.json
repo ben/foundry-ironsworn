@@ -1,0 +1,380 @@
+{
+  "_id": "88c70187266d3b02",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/first_look"
+    }
+  },
+  "name": "Ship First Look",
+  "description": "<p>Once you are close enough to observe notable features of the ship, check this table.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Accompanied by creatures",
+      "_key": "!tables.results!88c70187266d3b02.be092b94c1eddbed",
+      "_id": "be092b94c1eddbed"
+    },
+    {
+      "range": [
+        3,
+        5
+      ],
+      "text": "Adorned with colorful pennants",
+      "_key": "!tables.results!88c70187266d3b02.82bb24904eee56b5",
+      "_id": "82bb24904eee56b5"
+    },
+    {
+      "range": [
+        6,
+        7
+      ],
+      "text": "Armed with archaic weapons",
+      "_key": "!tables.results!88c70187266d3b02.66ebf9c35c12fdf3",
+      "_id": "66ebf9c35c12fdf3"
+    },
+    {
+      "range": [
+        8,
+        9
+      ],
+      "text": "Armed with mechanized weapons",
+      "_key": "!tables.results!88c70187266d3b02.be98e1ef71d24f2c",
+      "_id": "be98e1ef71d24f2c"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Armored prow or ram",
+      "_key": "!tables.results!88c70187266d3b02.bcd9a702eb77a235",
+      "_id": "bcd9a702eb77a235"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Battle-scarred hull",
+      "_key": "!tables.results!88c70187266d3b02.666ddc20fe767902",
+      "_id": "666ddc20fe767902"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Black hull and sails",
+      "_key": "!tables.results!88c70187266d3b02.13d8630f09deb948",
+      "_id": "13d8630f09deb948"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Blood-red sails",
+      "_key": "!tables.results!88c70187266d3b02.19c970b64cd77fa6",
+      "_id": "19c970b64cd77fa6"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Boarding prow or ramp",
+      "_key": "!tables.results!88c70187266d3b02.602df575d2fde979",
+      "_id": "602df575d2fde979"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Constructed of unusual wood",
+      "_key": "!tables.results!88c70187266d3b02.8e06596efddc1574",
+      "_id": "8e06596efddc1574"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Displaying trophies of defeated foes",
+      "_key": "!tables.results!88c70187266d3b02.74fc3aca390b0627",
+      "_id": "74fc3aca390b0627"
+    },
+    {
+      "range": [
+        29,
+        31
+      ],
+      "text": "Famous or infamous vessel",
+      "_key": "!tables.results!88c70187266d3b02.bc6d221c98a5ce7c",
+      "_id": "bc6d221c98a5ce7c"
+    },
+    {
+      "range": [
+        32,
+        33
+      ],
+      "text": "Fitted with outriggers",
+      "_key": "!tables.results!88c70187266d3b02.d9639879d1f7b88f",
+      "_id": "d9639879d1f7b88f"
+    },
+    {
+      "range": [
+        34,
+        35
+      ],
+      "text": "Gilded adornments",
+      "_key": "!tables.results!88c70187266d3b02.9274a2badddc5d22",
+      "_id": "9274a2badddc5d22"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "Grandiose or imposing figurehead",
+      "_key": "!tables.results!88c70187266d3b02.c14d7c03c48c184f",
+      "_id": "c14d7c03c48c184f"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "Heavily laden and deep draft",
+      "_key": "!tables.results!88c70187266d3b02.e997f3fefef379a1",
+      "_id": "e997f3fefef379a1"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "Hidden gunports",
+      "_key": "!tables.results!88c70187266d3b02.99c1b41e14501e1a",
+      "_id": "99c1b41e14501e1a"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Hung with lanterns",
+      "_key": "!tables.results!88c70187266d3b02.8c60f78a892fa7a7",
+      "_id": "8c60f78a892fa7a7"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Imposing gun decks and cannons",
+      "_key": "!tables.results!88c70187266d3b02.e84298d7c4225d94",
+      "_id": "e84298d7c4225d94"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Ironclad hull",
+      "_key": "!tables.results!88c70187266d3b02.48a622da4d991aeb",
+      "_id": "48a622da4d991aeb"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "Large chase guns fore and aft",
+      "_key": "!tables.results!88c70187266d3b02.16f7a941da5847ff",
+      "_id": "16f7a941da5847ff"
+    },
+    {
+      "range": [
+        54,
+        55
+      ],
+      "text": "Large harpoon cannon",
+      "_key": "!tables.results!88c70187266d3b02.2ab10d9ac4e2fe96",
+      "_id": "2ab10d9ac4e2fe96"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Low-profile or shallow draft",
+      "_key": "!tables.results!88c70187266d3b02.132d9da17147c2aa",
+      "_id": "132d9da17147c2aa"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Mechanized propulsion",
+      "_key": "!tables.results!88c70187266d3b02.b7e6cdedc695f9d5",
+      "_id": "b7e6cdedc695f9d5"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Numerous launch boats",
+      "_key": "!tables.results!88c70187266d3b02.64842876f95a7e18",
+      "_id": "64842876f95a7e18"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Ornately carved hull",
+      "_key": "!tables.results!88c70187266d3b02.5b3c021ae3306fb1",
+      "_id": "5b3c021ae3306fb1"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Overcrowded deck",
+      "_key": "!tables.results!88c70187266d3b02.1be9eaa3aae57506",
+      "_id": "1be9eaa3aae57506"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Oversized sails",
+      "_key": "!tables.results!88c70187266d3b02.88e528e3f3d9e04e",
+      "_id": "88e528e3f3d9e04e"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "Painted with garish colors",
+      "_key": "!tables.results!88c70187266d3b02.dc54cb5ef028e0c2",
+      "_id": "dc54cb5ef028e0c2"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Propelled or aided by oars",
+      "_key": "!tables.results!88c70187266d3b02.f49125940c7ccca4",
+      "_id": "f49125940c7ccca4"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Ramshackle construction or repairs",
+      "_key": "!tables.results!88c70187266d3b02.3ba0accdd8f30eca",
+      "_id": "3ba0accdd8f30eca"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Ravaged by fire",
+      "_key": "!tables.results!88c70187266d3b02.c48882f3e127d19d",
+      "_id": "c48882f3e127d19d"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Sails emblazoned with insignias",
+      "_key": "!tables.results!88c70187266d3b02.71cb12f0ed0e2f1a",
+      "_id": "71cb12f0ed0e2f1a"
+    },
+    {
+      "range": [
+        82,
+        83
+      ],
+      "text": "Snipers atop raised platforms",
+      "_key": "!tables.results!88c70187266d3b02.34ec3b9fc9e80dca",
+      "_id": "34ec3b9fc9e80dca"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "Torn sails and broken rigging",
+      "_key": "!tables.results!88c70187266d3b02.e69c67aa313f33de",
+      "_id": "e69c67aa313f33de"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Towing another ship",
+      "_key": "!tables.results!88c70187266d3b02.8ed270a82532fc66",
+      "_id": "8ed270a82532fc66"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Trailing smoke",
+      "_key": "!tables.results!88c70187266d3b02.a99075870ff0f0c4",
+      "_id": "a99075870ff0f0c4"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "Twin-hulled (catamaran)",
+      "_key": "!tables.results!88c70187266d3b02.8be2ab91b09515cb",
+      "_id": "8be2ab91b09515cb"
+    },
+    {
+      "range": [
+        94,
+        95
+      ],
+      "text": "Undergunned or unarmed",
+      "_key": "!tables.results!88c70187266d3b02.545b50b75e317efc",
+      "_id": "545b50b75e317efc"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!88c70187266d3b02.2b2d110acb1f4433",
+      "_id": "2b2d110acb1f4433"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 134,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!88c70187266d3b02"
+}

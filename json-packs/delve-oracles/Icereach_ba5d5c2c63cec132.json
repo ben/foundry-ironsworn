@@ -1,0 +1,75 @@
+{
+  "_id": "ba5d5c2c63cec132",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Icereach",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/icereach"
+    }
+  },
+  "name": "Icereach",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        16
+      ],
+      "text": "Icemark",
+      "_key": "!tables.results!ba5d5c2c63cec132.f998f82d0a15b232",
+      "_id": "f998f82d0a15b232"
+    },
+    {
+      "range": [
+        17,
+        32
+      ],
+      "text": "Wintertide",
+      "_key": "!tables.results!ba5d5c2c63cec132.4c6c2a39f9832f45",
+      "_id": "4c6c2a39f9832f45"
+    },
+    {
+      "range": [
+        33,
+        49
+      ],
+      "text": "Reach",
+      "_key": "!tables.results!ba5d5c2c63cec132.59c5e89040a3dd7e",
+      "_id": "59c5e89040a3dd7e"
+    },
+    {
+      "range": [
+        50,
+        66
+      ],
+      "text": "Waste",
+      "_key": "!tables.results!ba5d5c2c63cec132.784a92b77f38b1f5",
+      "_id": "784a92b77f38b1f5"
+    },
+    {
+      "range": [
+        67,
+        83
+      ],
+      "text": "Expanse",
+      "_key": "!tables.results!ba5d5c2c63cec132.800ee90021988a88",
+      "_id": "800ee90021988a88"
+    },
+    {
+      "range": [
+        84,
+        100
+      ],
+      "text": "Barrens",
+      "_key": "!tables.results!ba5d5c2c63cec132.5ea10d654d09a486",
+      "_id": "5ea10d654d09a486"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 210,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ba5d5c2c63cec132"
+}

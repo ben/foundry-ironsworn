@@ -1,0 +1,416 @@
+{
+  "_id": "199267df3d4bcfd8",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/first_look"
+    }
+  },
+  "name": "Settlement First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Adorned with colorful banners",
+      "_key": "!tables.results!199267df3d4bcfd8.ae9be8f7bd36a440",
+      "_id": "ae9be8f7bd36a440"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Among sprawling trees",
+      "_key": "!tables.results!199267df3d4bcfd8.f7aab8e82c726843",
+      "_id": "f7aab8e82c726843"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Armed with archaic weapons",
+      "_key": "!tables.results!199267df3d4bcfd8.d1beb5b482a64ca0",
+      "_id": "d1beb5b482a64ca0"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Bisected by a wide waterway or ravine",
+      "_key": "!tables.results!199267df3d4bcfd8.11eb471bcd0f6710",
+      "_id": "11eb471bcd0f6710"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Blockaded or under siege",
+      "_key": "!tables.results!199267df3d4bcfd8.a59116d21e28a954",
+      "_id": "a59116d21e28a954"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Built on high ground",
+      "_key": "!tables.results!199267df3d4bcfd8.b78c6509214ea7a8",
+      "_id": "b78c6509214ea7a8"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Built over water",
+      "_key": "!tables.results!199267df3d4bcfd8.f00ffa61980df25c",
+      "_id": "f00ffa61980df25c"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Busy or overcrowded",
+      "_key": "!tables.results!199267df3d4bcfd8.b0cf43412abd0961",
+      "_id": "b0cf43412abd0961"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Chorus of ringing bells",
+      "_key": "!tables.results!199267df3d4bcfd8.827ca8cc65ca0340",
+      "_id": "827ca8cc65ca0340"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Colossal statue or monolith",
+      "_key": "!tables.results!199267df3d4bcfd8.749c4027ac0ffc5a",
+      "_id": "749c4027ac0ffc5a"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Concentric layout",
+      "_key": "!tables.results!199267df3d4bcfd8.93329142a44910ee",
+      "_id": "93329142a44910ee"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Connected by lofty bridges",
+      "_key": "!tables.results!199267df3d4bcfd8.4abb4019efb278c4",
+      "_id": "4abb4019efb278c4"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Conspicuous guardposts and patrols",
+      "_key": "!tables.results!199267df3d4bcfd8.e2345c2d3c9d8eb1",
+      "_id": "e2345c2d3c9d8eb1"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Decorated for a festival or celebration",
+      "_key": "!tables.results!199267df3d4bcfd8.bbc094e9713b5512",
+      "_id": "bbc094e9713b5512"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Defended by an imposing stronghold",
+      "_key": "!tables.results!199267df3d4bcfd8.a02a34c29dd806fa",
+      "_id": "a02a34c29dd806fa"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Displaying trophies of defeated foes",
+      "_key": "!tables.results!199267df3d4bcfd8.364aa20de4179942",
+      "_id": "364aa20de4179942"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Elevated structures and walkways",
+      "_key": "!tables.results!199267df3d4bcfd8.216e2016af805f29",
+      "_id": "216e2016af805f29"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Encampment of pilgrims or refugees",
+      "_key": "!tables.results!199267df3d4bcfd8.38ad5eacc25a8583",
+      "_id": "38ad5eacc25a8583"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Entrance via a colossal gate or archway",
+      "_key": "!tables.results!199267df3d4bcfd8.6ab6c5d813282fbd",
+      "_id": "6ab6c5d813282fbd"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Expanding with new construction",
+      "_key": "!tables.results!199267df3d4bcfd8.aa53426bd9b809dd",
+      "_id": "aa53426bd9b809dd"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Filled with song and music",
+      "_key": "!tables.results!199267df3d4bcfd8.edb35652065a0ee2",
+      "_id": "edb35652065a0ee2"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Garden-like setting",
+      "_key": "!tables.results!199267df3d4bcfd8.8a74a6c8ea9fae4c",
+      "_id": "8a74a6c8ea9fae4c"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Hastily improvised defenses",
+      "_key": "!tables.results!199267df3d4bcfd8.f09a5ae6d92ebade",
+      "_id": "f09a5ae6d92ebade"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Lanterns hung from every surface",
+      "_key": "!tables.results!199267df3d4bcfd8.1c55e7f7499ee284",
+      "_id": "1c55e7f7499ee284"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Major new project under construction",
+      "_key": "!tables.results!199267df3d4bcfd8.2da5f62f5f7ae26a",
+      "_id": "2da5f62f5f7ae26a"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Maze of canals",
+      "_key": "!tables.results!199267df3d4bcfd8.b1dc1d323f913293",
+      "_id": "b1dc1d323f913293"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Multi-level layout",
+      "_key": "!tables.results!199267df3d4bcfd8.a41545543f58fd99",
+      "_id": "a41545543f58fd99"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Numerous comings and goings",
+      "_key": "!tables.results!199267df3d4bcfd8.7b79745e3178a1fd",
+      "_id": "7b79745e3178a1fd"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Obvious signs of unrest",
+      "_key": "!tables.results!199267df3d4bcfd8.68a14df38060ead9",
+      "_id": "68a14df38060ead9"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Partially destroyed by fire",
+      "_key": "!tables.results!199267df3d4bcfd8.bef6c084321dc05b",
+      "_id": "bef6c084321dc05b"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Prominent tower or lighthouse",
+      "_key": "!tables.results!199267df3d4bcfd8.4e168b6730167f88",
+      "_id": "4e168b6730167f88"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Protected by stout walls",
+      "_key": "!tables.results!199267df3d4bcfd8.65af5f5249f0ba06",
+      "_id": "65af5f5249f0ba06"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Quiet or sparsely populated",
+      "_key": "!tables.results!199267df3d4bcfd8.5bef84699a5aa981",
+      "_id": "5bef84699a5aa981"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Scars of numerous attacks",
+      "_key": "!tables.results!199267df3d4bcfd8.8e16fde19c99dc41",
+      "_id": "8e16fde19c99dc41"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Sections or districts divided by barriers",
+      "_key": "!tables.results!199267df3d4bcfd8.4a019bf6c0eadd75",
+      "_id": "4a019bf6c0eadd75"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Shadowed by large terrain feature",
+      "_key": "!tables.results!199267df3d4bcfd8.7109774fee5ba271",
+      "_id": "7109774fee5ba271"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Signs of an occupying force",
+      "_key": "!tables.results!199267df3d4bcfd8.296f17d503bfd0ea",
+      "_id": "296f17d503bfd0ea"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Suffered severe storm damage",
+      "_key": "!tables.results!199267df3d4bcfd8.5a8aca3b257e3e5d",
+      "_id": "5a8aca3b257e3e5d"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Surrounded by rugged or dense terrain",
+      "_key": "!tables.results!199267df3d4bcfd8.5f9b94260bf53b94",
+      "_id": "5f9b94260bf53b94"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Under attack",
+      "_key": "!tables.results!199267df3d4bcfd8.a240970bfea734df",
+      "_id": "a240970bfea734df"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Veiled with a haze of mist or smoke",
+      "_key": "!tables.results!199267df3d4bcfd8.4086ea8517c166f3",
+      "_id": "4086ea8517c166f3"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Visited by large fleet or caravan",
+      "_key": "!tables.results!199267df3d4bcfd8.34453af5dcc83bbc",
+      "_id": "34453af5dcc83bbc"
+    },
+    {
+      "range": [
+        85,
+        90
+      ],
+      "text": "Built among a [Ruin](datasworn:oracle_collection:sundered_isles/ruin)",
+      "_key": "!tables.results!199267df3d4bcfd8.2d80a48016a02850",
+      "_id": "2d80a48016a02850"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!199267df3d4bcfd8.4a34b6ab0a22da36",
+      "_id": "4a34b6ab0a22da36"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 166,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!199267df3d4bcfd8"
+}

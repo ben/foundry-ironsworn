@@ -1,0 +1,141 @@
+{
+  "_id": "cf94fb4e6e77ed17",
+  "type": "delve-theme",
+  "name": "Corrupted",
+  "img": "icons/magic/unholy/beam-impact-purple.webp",
+  "system": {
+    "summary": "This place is tainted by dark magic.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Mystic focus or conduit"
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Strange environmental disturbances"
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Mystic runes or markings"
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Blight or decay"
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Evidence of a foul ritual"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Denizen spawned from dark magic"
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Denizen controls dark magic"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Denizen corrupted by dark magic"
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Corruption marks you"
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Innocents held in thrall"
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Revelations of a terrible truth"
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "Mystic trap or trigger"
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Mystic barrier or ward"
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "Illusions lead you astray"
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Dark ritual in progress"
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "Lingering effects of a dark ritual"
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Dread harbingers of a greater magic"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 84,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_theme:delve/corrupted"
+    }
+  },
+  "_key": "!items!cf94fb4e6e77ed17"
+}

@@ -1,0 +1,156 @@
+{
+  "_id": "1fdde544c04e021a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Shattered/Feature",
+      "category": "Starforged/Oracles/Planets/Shattered",
+      "dsid": "oracle_rollable:starforged/planet/shattered/feature"
+    }
+  },
+  "name": "Planetside Feature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Broken cities",
+      "_key": "!tables.results!1fdde544c04e021a.511115a36ea7c033",
+      "_id": "511115a36ea7c033"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Colliding fragments",
+      "_key": "!tables.results!1fdde544c04e021a.2d58aaad08fed7de",
+      "_id": "2d58aaad08fed7de"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Energy storms",
+      "_key": "!tables.results!1fdde544c04e021a.5e7f47d4f00904c3",
+      "_id": "5e7f47d4f00904c3"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Exposed caverns",
+      "_key": "!tables.results!1fdde544c04e021a.3ec4acd16af97f1c",
+      "_id": "3ec4acd16af97f1c"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Fluctuating gravity",
+      "_key": "!tables.results!1fdde544c04e021a.46521a86eb1281a2",
+      "_id": "46521a86eb1281a2"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Magnetic disturbances",
+      "_key": "!tables.results!1fdde544c04e021a.48b693d6fc53d386",
+      "_id": "48b693d6fc53d386"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Molten fissures",
+      "_key": "!tables.results!1fdde544c04e021a.df92e8d56d14f9fa",
+      "_id": "df92e8d56d14f9fa"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Phantom visions of the past",
+      "_key": "!tables.results!1fdde544c04e021a.a96f707695cb4dc9",
+      "_id": "a96f707695cb4dc9"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Pocket atmosphere",
+      "_key": "!tables.results!1fdde544c04e021a.4b7782d567101764",
+      "_id": "4b7782d567101764"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Residual energy storms",
+      "_key": "!tables.results!1fdde544c04e021a.d754ce2db9504c70",
+      "_id": "d754ce2db9504c70"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Swirling corrosive gases",
+      "_key": "!tables.results!1fdde544c04e021a.f97e05f86ebc2f54",
+      "_id": "f97e05f86ebc2f54"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Unstable and fracturing terrain",
+      "_key": "!tables.results!1fdde544c04e021a.2fcffcff278b6e5d",
+      "_id": "2fcffcff278b6e5d"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Venting magma",
+      "_key": "!tables.results!1fdde544c04e021a.b8c8fb10e57fd995",
+      "_id": "b8c8fb10e57fd995"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!1fdde544c04e021a.9be1d3367354a18d",
+      "_id": "9be1d3367354a18d"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (planetside)",
+      "_key": "!tables.results!1fdde544c04e021a.43927df359ca1f16",
+      "_id": "43927df359ca1f16"
+    }
+  ],
+  "folder": "656eb2b3e3476a48",
+  "sort": 316,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1fdde544c04e021a"
+}

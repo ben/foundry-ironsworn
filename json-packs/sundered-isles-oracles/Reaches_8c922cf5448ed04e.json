@@ -1,0 +1,74 @@
+{
+  "_id": "8c922cf5448ed04e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/landscape/vitality",
+      "dsid": "oracle_rollable:sundered_isles/island/landscape/vitality/reaches"
+    }
+  },
+  "name": "Reaches",
+  "description": "<p>Remote Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Devastated",
+      "_key": "!tables.results!8c922cf5448ed04e.06af563046d27614",
+      "_id": "06af563046d27614"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Dying",
+      "_key": "!tables.results!8c922cf5448ed04e.95a45661a24a7c4e",
+      "_id": "95a45661a24a7c4e"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Desolate",
+      "_key": "!tables.results!8c922cf5448ed04e.7a82d938cd8a0ac4",
+      "_id": "7a82d938cd8a0ac4"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Sparse",
+      "_key": "!tables.results!8c922cf5448ed04e.a0629ddc94986039",
+      "_id": "a0629ddc94986039"
+    },
+    {
+      "range": [
+        26,
+        75
+      ],
+      "text": "Lush",
+      "_key": "!tables.results!8c922cf5448ed04e.2a71cd661a7c2894",
+      "_id": "2a71cd661a7c2894"
+    },
+    {
+      "range": [
+        76,
+        100
+      ],
+      "text": "Primeval",
+      "_key": "!tables.results!8c922cf5448ed04e.57cdbf1bb36c2298",
+      "_id": "57cdbf1bb36c2298"
+    }
+  ],
+  "folder": "b1d0254d0c20b72e",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8c922cf5448ed04e"
+}

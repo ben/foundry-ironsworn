@@ -1,0 +1,38 @@
+{
+  "_id": "e8606999a2d5fd2b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/weather/conditions",
+      "dsid": "oracle_rollable:sundered_isles/weather/conditions/reaches"
+    }
+  },
+  "name": "Reaches",
+  "description": "<p>Remote Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        50
+      ],
+      "text": "Fair Weather",
+      "_key": "!tables.results!e8606999a2d5fd2b.bd11f96b2d94bac6",
+      "_id": "bd11f96b2d94bac6"
+    },
+    {
+      "range": [
+        51,
+        100
+      ],
+      "text": "[Foul Weather](datasworn:oracle_rollable:sundered_isles/weather/foul)",
+      "_key": "!tables.results!e8606999a2d5fd2b.471939c552bb89b3",
+      "_id": "471939c552bb89b3"
+    }
+  ],
+  "folder": "3dbefba73b5b7e5e",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e8606999a2d5fd2b"
+}

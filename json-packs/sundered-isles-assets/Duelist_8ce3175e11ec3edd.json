@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "8ce3175e11ec3edd",
+  "folder": "e5df7144ec089f12",
+  "name": "Duelist",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} or @Compendium[foundry-ironsworn.starforgedmoves.a903d120af3b1475]{Battle} against a single worthy foe, reroll any challenge dice. If you set a new objective in a fight by challenging a worthy foe, take +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} in personal combat using superficial attacks to probe your opponent’s defenses, or by drawing them off guard with verbal repartee, take +1 momentum on a hit. On a strong hit, also add +1 if you immediately @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you roll a miss with a match in a situation where your reputation is known, you may suffer the cost by envisioning a notable rival who challenges you to a duel. If you defeat them, mark 2 ticks on your quests legacy track. If you decline, mark 1 tick on your bonds legacy track but envision the fallout of this refusal.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/duelist",
+      "dsid": "asset:sundered_isles/path/duelist"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!8ce3175e11ec3edd"
+}

@@ -1,0 +1,110 @@
+{
+  "_id": "57eba10baea7c70a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure",
+      "dsid": "oracle_rollable:sundered_isles/treasure/location_cursed"
+    }
+  },
+  "name": "Cursed Treasure Location",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Banished to the realm of the dead",
+      "_key": "!tables.results!57eba10baea7c70a.b755cff752e8558e",
+      "_id": "b755cff752e8558e"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Consumed by a monstrous beast",
+      "_key": "!tables.results!57eba10baea7c70a.406818636ab0c5fe",
+      "_id": "406818636ab0c5fe"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Entombed in a crypt or graveyard",
+      "_key": "!tables.results!57eba10baea7c70a.522ea21a39d674f0",
+      "_id": "522ea21a39d674f0"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Held aboard a cursed ship",
+      "_key": "!tables.results!57eba10baea7c70a.0a3afe0932086ac3",
+      "_id": "0a3afe0932086ac3"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Locked in a mechanized vault",
+      "_key": "!tables.results!57eba10baea7c70a.2e48364813161bdb",
+      "_id": "2e48364813161bdb"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "Lost in the heart of a trackless jungle",
+      "_key": "!tables.results!57eba10baea7c70a.a0157b4a86cdfa00",
+      "_id": "a0157b4a86cdfa00"
+    },
+    {
+      "range": [
+        51,
+        65
+      ],
+      "text": "Mired in a forsaken swamp",
+      "_key": "!tables.results!57eba10baea7c70a.c7c5a6d580620428",
+      "_id": "c7c5a6d580620428"
+    },
+    {
+      "range": [
+        66,
+        80
+      ],
+      "text": "Safeguarded in a monstrous beast's lair",
+      "_key": "!tables.results!57eba10baea7c70a.212d86a8309d0fa4",
+      "_id": "212d86a8309d0fa4"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sealed in the bowels of a raging volcano",
+      "_key": "!tables.results!57eba10baea7c70a.1f7b7f442d2e32ea",
+      "_id": "1f7b7f442d2e32ea"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Sunk to the depths of an abyssal trench",
+      "_key": "!tables.results!57eba10baea7c70a.7249e9f970bf3d17",
+      "_id": "7249e9f970bf3d17"
+    }
+  ],
+  "folder": "4b1f1e3c1b624444",
+  "sort": 220,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!57eba10baea7c70a"
+}

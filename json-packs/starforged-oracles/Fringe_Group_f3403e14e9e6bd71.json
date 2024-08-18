@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Factions/Fringe_Group",
-      "category": "Starforged/Oracles/Factions"
+      "category": "Starforged/Oracles/Factions",
+      "dsid": "oracle_rollable:starforged/faction/fringe_group"
     }
   },
   "name": "Fringe Group",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         5
       ],
       "text": "Cultists",
-      "_id": "0641091a10374c70",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.0641091a10374c70"
+      "_key": "!tables.results!f3403e14e9e6bd71.78565179c5b8dbc4",
+      "_id": "78565179c5b8dbc4"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         15
       ],
       "text": "Exiles",
-      "_id": "cfbff9e606f1305f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.cfbff9e606f1305f"
+      "_key": "!tables.results!f3403e14e9e6bd71.ca38cd1e782e4ebf",
+      "_id": "ca38cd1e782e4ebf"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         25
       ],
       "text": "Gangsters",
-      "_id": "a2c3b880415232ca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.a2c3b880415232ca"
+      "_key": "!tables.results!f3403e14e9e6bd71.0111ac267e348350",
+      "_id": "0111ac267e348350"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         35
       ],
       "text": "Hackers",
-      "_id": "cc4edd9e777876c3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.cc4edd9e777876c3"
+      "_key": "!tables.results!f3403e14e9e6bd71.8a00e64834affcd7",
+      "_id": "8a00e64834affcd7"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Monster hunters",
-      "_id": "2aa02129f4704eac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.2aa02129f4704eac"
+      "_key": "!tables.results!f3403e14e9e6bd71.7aa3ccc5fa3b070a",
+      "_id": "7aa3ccc5fa3b070a"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         50
       ],
       "text": "Pirates",
-      "_id": "3bb260c859bf2f1c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.3bb260c859bf2f1c"
+      "_key": "!tables.results!f3403e14e9e6bd71.4863b2a25b478ae2",
+      "_id": "4863b2a25b478ae2"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         60
       ],
       "text": "Raiders",
-      "_id": "bc0b221de5a8ef11",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.bc0b221de5a8ef11"
+      "_key": "!tables.results!f3403e14e9e6bd71.f4261987708fbd90",
+      "_id": "f4261987708fbd90"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         70
       ],
       "text": "Rebels",
-      "_id": "c7881924ee7a24b1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.c7881924ee7a24b1"
+      "_key": "!tables.results!f3403e14e9e6bd71.4419ad2d84cd4beb",
+      "_id": "4419ad2d84cd4beb"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         75
       ],
       "text": "Rogue AI",
-      "_id": "b1046dc3cc907fc8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.b1046dc3cc907fc8"
+      "_key": "!tables.results!f3403e14e9e6bd71.1412a9b0cc738233",
+      "_id": "1412a9b0cc738233"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         85
       ],
       "text": "Scavengers",
-      "_id": "00486b17ff760c8e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.00486b17ff760c8e"
+      "_key": "!tables.results!f3403e14e9e6bd71.8b889be7785f29c5",
+      "_id": "8b889be7785f29c5"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         95
       ],
       "text": "Smugglers",
-      "_id": "ff9c8c8aba4c82b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.ff9c8c8aba4c82b3"
+      "_key": "!tables.results!f3403e14e9e6bd71.f70db29d9c9b2cf9",
+      "_id": "f70db29d9c9b2cf9"
     },
     {
       "range": [
@@ -172,29 +118,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "5290322746ceb902",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f3403e14e9e6bd71.5290322746ceb902"
+      "_key": "!tables.results!f3403e14e9e6bd71.273c1e8c0a1519f0",
+      "_id": "273c1e8c0a1519f0"
     }
   ],
   "folder": "b6fe3d35ff56995d",
   "sort": 341,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!f3403e14e9e6bd71"
 }

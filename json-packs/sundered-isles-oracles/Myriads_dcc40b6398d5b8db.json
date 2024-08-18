@@ -1,0 +1,92 @@
+{
+  "_id": "dcc40b6398d5b8db",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/waypoints",
+      "dsid": "oracle_rollable:sundered_isles/overland/waypoints/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "**Feature of the landscape**\n[Region Landmark](datasworn:oracle_collection:sundered_isles/overland/region_landmarks)",
+      "_key": "!tables.results!dcc40b6398d5b8db.ab871543392b1c70",
+      "_id": "ab871543392b1c70"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "**Changing landscape**\n[Overland Region](datasworn:oracle_rollable:sundered_isles/overland/region)",
+      "_key": "!tables.results!dcc40b6398d5b8db.818a8ce5a3665659",
+      "_id": "818a8ce5a3665659"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "**Changing weather**\n[Weather](datasworn:oracle_collection:sundered_isles/weather)",
+      "_key": "!tables.results!dcc40b6398d5b8db.61e024abf516df65",
+      "_id": "61e024abf516df65"
+    },
+    {
+      "range": [
+        36,
+        55
+      ],
+      "text": "**Instance (choose one)**\n\n  * [Overland Details](datasworn:oracle_rollable:sundered_isles/overland/details)\n  * [Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!dcc40b6398d5b8db.10eceba48108c385",
+      "_id": "10eceba48108c385"
+    },
+    {
+      "range": [
+        56,
+        70
+      ],
+      "text": "**Inland community**\n[Settlement](datasworn:oracle_collection:sundered_isles/settlement)",
+      "_key": "!tables.results!dcc40b6398d5b8db.7783e34fb5d2b281",
+      "_id": "7783e34fb5d2b281"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "**Relic of the past**\n[Ruin](datasworn:oracle_collection:sundered_isles/ruin)",
+      "_key": "!tables.results!dcc40b6398d5b8db.bcd7a9e2ea11ebb1",
+      "_id": "bcd7a9e2ea11ebb1"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "**Character focus**\n[Interlude Scene](datasworn:oracle_rollable:sundered_isles/misc/interlude_scene)",
+      "_key": "!tables.results!dcc40b6398d5b8db.46626b8b212c0344",
+      "_id": "46626b8b212c0344"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!dcc40b6398d5b8db.e3d62edaca3b740b",
+      "_id": "e3d62edaca3b740b"
+    }
+  ],
+  "folder": "5f98ae68ea50413f",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!dcc40b6398d5b8db"
+}

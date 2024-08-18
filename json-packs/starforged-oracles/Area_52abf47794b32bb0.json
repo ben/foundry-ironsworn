@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Engineering/Area",
-      "category": "Starforged/Oracles/Derelicts/Engineering"
+      "category": "Starforged/Oracles/Derelicts/Engineering",
+      "dsid": "oracle_rollable:starforged/derelict/engineering/area"
     }
   },
   "name": "Area",
   "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Control room",
-      "_id": "652c9e91a33ffc11",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.652c9e91a33ffc11"
+      "_key": "!tables.results!52abf47794b32bb0.7135bdbd43e68fea",
+      "_id": "7135bdbd43e68fea"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Engine room or power core",
-      "_id": "03bc2bfa35cf75c4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.03bc2bfa35cf75c4"
+      "_key": "!tables.results!52abf47794b32bb0.0519e69f6ebcbbc6",
+      "_id": "0519e69f6ebcbbc6"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Engineering offices",
-      "_id": "367105051021ec2f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.367105051021ec2f"
+      "_key": "!tables.results!52abf47794b32bb0.e5c0b17b35d91faf",
+      "_id": "e5c0b17b35d91faf"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Equipment storage",
-      "_id": "41a27419714118e6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.41a27419714118e6"
+      "_key": "!tables.results!52abf47794b32bb0.55bb57f780406ec1",
+      "_id": "55bb57f780406ec1"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Fuel or coolant tanks",
-      "_id": "02c4e606fde3e0d7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.02c4e606fde3e0d7"
+      "_key": "!tables.results!52abf47794b32bb0.97853c5c373dce8c",
+      "_id": "97853c5c373dce8c"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Life support",
-      "_id": "1d7d23f351f48d5e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.1d7d23f351f48d5e"
+      "_key": "!tables.results!52abf47794b32bb0.1ef2ba713c0b4154",
+      "_id": "1ef2ba713c0b4154"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Maintenance tube",
-      "_id": "e318cc25e1e12392",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.e318cc25e1e12392"
+      "_key": "!tables.results!52abf47794b32bb0.0de0da342f3b9e95",
+      "_id": "0de0da342f3b9e95"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Vehicle bay or garage",
-      "_id": "9c127b75619e7f60",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.9c127b75619e7f60"
+      "_key": "!tables.results!52abf47794b32bb0.f25ee1f9162abb29",
+      "_id": "f25ee1f9162abb29"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Water processing",
-      "_id": "42d7688e8de23b90",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.42d7688e8de23b90"
+      "_key": "!tables.results!52abf47794b32bb0.ce999ebd6bb9c503",
+      "_id": "ce999ebd6bb9c503"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Workshop",
-      "_id": "75bfb84481a28c50",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.75bfb84481a28c50"
+      "_key": "!tables.results!52abf47794b32bb0.ba801873da077807",
+      "_id": "ba801873da077807"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         85
       ],
       "text": "New zone",
-      "_id": "c0acb56f51d71648",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.c0acb56f51d71648"
+      "_key": "!tables.results!52abf47794b32bb0.c2b2b50ecc99eb79",
+      "_id": "c2b2b50ecc99eb79"
     },
     {
       "range": [
         86,
         100
       ],
-      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
-      "_id": "4b54d6ea46feae25",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52abf47794b32bb0.4b54d6ea46feae25"
+      "text": "New zone via [Access](datasworn:oracle_collection:starforged/derelict/access)",
+      "_key": "!tables.results!52abf47794b32bb0.82acf64e024238a2",
+      "_id": "82acf64e024238a2"
     }
   ],
   "folder": "9851eb5306cbb8fc",
   "sort": 354,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!52abf47794b32bb0"
 }

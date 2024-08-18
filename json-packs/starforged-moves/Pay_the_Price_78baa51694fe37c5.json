@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Pay the Price",
   "img": "icons/dice/d10black.svg",
+  "folder": "1c6d36dde131ebef",
   "system": {
     "dfid": "Starforged/Moves/Fate/Pay_the_Price",
     "Category": "Starforged/Moves/Fate",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you suffer the outcome of an action**, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.\n  * Roll on the table below. If the result doesn’t fit the situation, roll again.\n\nRoll   | Result\n-------|---------------------------------------------------------------------\n1-2    | A trusted individual or community acts against you\n3-4    | An individual or community you care about is exposed to danger\n5-7    | You encounter signs of a looming threat\n8-10   | You create an opportunity for an enemy\n11-14  | You face a tough choice\n15-18  | You face the consequences of an earlier choice\n19-22  | A surprising development complicates your quest\n23-26  | You are separated from something or someone\n27-32  | Your action causes collateral damage or has an unintended effect\n33-38  | Something of value is lost or destroyed\n39-44  | The environment or terrain introduces a new hazard\n45-50  | A new enemy is revealed\n51-56  | A friend, companion, or ally is in harm's way (or you are, if alone)\n57-62  | Your equipment or vehicle malfunctions\n63-68  | Your vehicle suffers damage\n69-74  | You waste resources\n75-81  | You are harmed\n82-88  | You are stressed\n89-95  | You are delayed or put at a disadvantage\n96-100 | Roll twice",
+    "Text": "__When you suffer the outcome of an action__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.\n  * Roll on the table below. If the result doesn’t fit the situation, roll again.",
     "Trigger": {
       "Text": "When you suffer the outcome of an action...",
       "Options": []
@@ -16,67 +17,101 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [
-      "Starforged/Oracles/Moves/Pay_the_Price"
+      "Starforged/Oracles/Moves/Pay_the_Price",
+      "Starforged/Oracles/Misc/Story_Complication",
+      "Starforged/Oracles/Derelicts/Access/Peril",
+      "Starforged/Oracles/Derelicts/Community/Peril",
+      "Starforged/Oracles/Derelicts/Engineering/Peril",
+      "Starforged/Oracles/Derelicts/Living/Peril",
+      "Starforged/Oracles/Derelicts/Medical/Peril",
+      "Starforged/Oracles/Derelicts/Operations/Peril",
+      "Starforged/Oracles/Derelicts/Production/Peril",
+      "Starforged/Oracles/Derelicts/Research/Peril",
+      "Starforged/Oracles/Location_Themes/Chaotic/Peril",
+      "Starforged/Oracles/Location_Themes/Fortified/Peril",
+      "Starforged/Oracles/Location_Themes/Haunted/Peril",
+      "Starforged/Oracles/Location_Themes/Infested/Peril",
+      "Starforged/Oracles/Location_Themes/Inhabited/Peril",
+      "Starforged/Oracles/Location_Themes/Mechanical/Peril",
+      "Starforged/Oracles/Location_Themes/Ruined/Peril",
+      "Starforged/Oracles/Location_Themes/Sacred/Peril",
+      "Starforged/Oracles/Vaults/Interior/Peril",
+      "Starforged/Oracles/Vaults/Sanctum/Peril",
+      "Starforged/Oracles/Space/Peril",
+      "oracle_rollable:sundered_isles/cave/sea/peril",
+      "oracle_rollable:sundered_isles/cave/inland_cave/peril",
+      "oracle_rollable:sundered_isles/overland/peril",
+      "oracle_rollable:sundered_isles/ruin/peril",
+      "oracle_rollable:sundered_isles/seafaring/peril",
+      "oracle_rollable:sundered_isles/shipwreck/peril",
+      "Starforged/Oracles/Planets/Peril/Lifebearing",
+      "Starforged/Oracles/Planets/Peril/Lifeless"
+    ],
+    "dsOracleIds": [
+      "move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price",
+      "oracle_rollable:starforged/misc/story_complication",
+      "oracle_rollable:starforged/derelict/access/peril",
+      "oracle_rollable:starforged/derelict/community/peril",
+      "oracle_rollable:starforged/derelict/engineering/peril",
+      "oracle_rollable:starforged/derelict/living/peril",
+      "oracle_rollable:starforged/derelict/medical/peril",
+      "oracle_rollable:starforged/derelict/operations/peril",
+      "oracle_rollable:starforged/derelict/production/peril",
+      "oracle_rollable:starforged/derelict/research/peril",
+      "oracle_rollable:starforged/location_theme/chaotic/peril",
+      "oracle_rollable:starforged/location_theme/fortified/peril",
+      "oracle_rollable:starforged/location_theme/haunted/peril",
+      "oracle_rollable:starforged/location_theme/infested/peril",
+      "oracle_rollable:starforged/location_theme/inhabited/peril",
+      "oracle_rollable:starforged/location_theme/mechanical/peril",
+      "oracle_rollable:starforged/location_theme/ruined/peril",
+      "oracle_rollable:starforged/location_theme/sacred/peril",
+      "oracle_rollable:starforged/precursor_vault/interior/peril",
+      "oracle_rollable:starforged/precursor_vault/sanctum/peril",
+      "oracle_rollable:starforged/space/peril",
+      "oracle_rollable:sundered_isles/cave/sea/peril",
+      "oracle_rollable:sundered_isles/cave/inland_cave/peril",
+      "oracle_rollable:sundered_isles/overland/peril",
+      "oracle_rollable:sundered_isles/ruin/peril",
+      "oracle_rollable:sundered_isles/seafaring/peril",
+      "oracle_rollable:sundered_isles/shipwreck/peril",
+      "oracle_rollable:starforged/planet/peril/lifebearing",
+      "oracle_rollable:starforged/planet/peril/lifeless"
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 232
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#6B52EC",
       "Images": []
     }
   },
   "sort": 232,
-  "folder": "1c6d36dde131ebef",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Fate/Pay_the_Price",
+      "dsid": "move:starforged/fate/pay_the_price"
+    }
   },
   "_key": "!items!78baa51694fe37c5"
 }

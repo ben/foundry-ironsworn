@@ -1,0 +1,101 @@
+{
+  "name": "Beasts",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/beasts",
+      "dsid": "truth:sundered_isles/beasts"
+    }
+  },
+  "_id": "fa521f0486481280",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Beasts are lost to myth, but the tales persist.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/beasts.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Beasts are lost to myth, but the tales persist.",
+        "Description": "For most, monstrous beasts are the stuff of fables. But a few who journey across trackless isles and unknown seas claim otherwise. Some even bear the scars of those alleged encounters.",
+        "Quest": "In the highland jungles of a remote island, a settlement is plagued by attacks from an unknown creature. Five dead in these last few months, and fear and suspicion is rampant. What is your connection to this place?",
+        "Roll template": {
+          "Description": "For most, monstrous beasts are the stuff of fables. But a few who journey across trackless isles and unknown seas claim otherwise. Some even bear the scars of those alleged encounters."
+        }
+      },
+      "_id": "e6f780bd5ea54797",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!fa521f0486481280.e6f780bd5ea54797"
+    },
+    {
+      "type": "truth",
+      "name": "Beasts lurk in watery depths and within the reaches of remote islands.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/beasts.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Beasts lurk in watery depths and within the reaches of remote islands.",
+        "Description": "All manner of creatures dwell among the isles—including rare and incredible beasts of legend. Among them are colossal great whales and elder rays, larger than our greatest ship, and blade-winged sea dragons. Some foolish souls hunt these creatures for riches or sport. Others revere and protect them. A few are beast-bonded, forming an enduring friendship with their beast-kin.",
+        "Quest": "The captain of a powerful ship lost something dear to them when battling a beast, and has sworn vengeance against the creature. What is the nature of this beast? Do you aid the captain in their ill-fated quest, or stand against them to protect the creature?",
+        "Roll template": {
+          "Description": "All manner of creatures dwell among the isles—including rare and incredible beasts of legend. Among them are colossal great whales and elder rays, larger than our greatest ship, and blade-winged sea dragons. Some foolish souls hunt these creatures for riches or sport. Others revere and protect them. A few are beast-bonded, forming an enduring friendship with their beast-kin."
+        }
+      },
+      "_id": "1a9ea9d1973bc7a3",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!fa521f0486481280.1a9ea9d1973bc7a3"
+    },
+    {
+      "type": "truth",
+      "name": "Here, there be monsters.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/beasts.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Here, there be monsters.",
+        "Description": "We are trespassers in a cursed realm of beasts. Monstrous lizards stalk the inland wilds. Flying reptiles with wings the size of topsails dwell in cliffside nests. Giant sharks and serpents cruise the coastal waters in search of prey. The much-feared Kraken, larger than the greatest warship, lurks in fathomless depths. And some ancient beasts are too monstrous, too horrible, for even our worst imaginings.",
+        "Quest": "Tales tell of the means of forming a bond with the mightiest of the world’s beasts, the Kraken. Many have undertaken this quest, but none have succeeded. What must you accomplish to gain an accord with the Kraken, and why would you face this trial?",
+        "Roll template": {
+          "Description": "We are trespassers in a cursed realm of beasts. Monstrous lizards stalk the inland wilds. Flying reptiles with wings the size of topsails dwell in cliffside nests. Giant sharks and serpents cruise the coastal waters in search of prey. The much-feared Kraken, larger than the greatest warship, lurks in fathomless depths. And some ancient beasts are too monstrous, too horrible, for even our worst imaginings."
+        }
+      },
+      "_id": "f3f38572770bcde6",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!fa521f0486481280.f3f38572770bcde6"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are skilled at battling beasts, you might be a @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer} or @Compendium[foundry-ironsworn.sunderedislesassets.c26627a81dd578bd]{Harpooner}. If you are bound to a beast, you might ride a @Compendium[foundry-ironsworn.sunderedislesassets.8dfe1b23a07db78d]{Dragon} or summon @Compendium[foundry-ironsworn.sunderedislesassets.c1041f50a55a35bc]{The Kraken}. If you transform into a beastly form, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.c139fc91f359a129]{Shapechanger}.",
+        "format": 2,
+        "content": "<p>If you are skilled at battling beasts, you might be a @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer} or @Compendium[foundry-ironsworn.sunderedislesassets.c26627a81dd578bd]{Harpooner}. If you are bound to a beast, you might ride a @Compendium[foundry-ironsworn.sunderedislesassets.8dfe1b23a07db78d]{Dragon} or summon @Compendium[foundry-ironsworn.sunderedislesassets.c1041f50a55a35bc]{The Kraken}. If you transform into a beastly form, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.c139fc91f359a129]{Shapechanger}.</p>"
+      },
+      "_id": "9c1aae643c4b156e",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!fa521f0486481280.9c1aae643c4b156e"
+    }
+  ],
+  "folder": null,
+  "sort": 86,
+  "_key": "!journal!fa521f0486481280"
+}

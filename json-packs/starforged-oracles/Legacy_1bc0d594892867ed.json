@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Factions/Legacy",
-      "category": "Starforged/Oracles/Factions"
+      "category": "oracle_collection:starforged/faction/name",
+      "dsid": "oracle_rollable:starforged/faction/name/legacy"
     }
   },
   "name": "Legacy",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         2
       ],
       "text": "Ancient",
-      "_id": "f8c5130268715d8d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.f8c5130268715d8d"
+      "_key": "!tables.results!1bc0d594892867ed.deee1ebc756d4691",
+      "_id": "deee1ebc756d4691"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         4
       ],
       "text": "Ashen",
-      "_id": "2aedba998521dec5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.2aedba998521dec5"
+      "_key": "!tables.results!1bc0d594892867ed.1267a15b7f1d0cb3",
+      "_id": "1267a15b7f1d0cb3"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         6
       ],
       "text": "Awakened",
-      "_id": "7d4fb5d8b257cd5f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.7d4fb5d8b257cd5f"
+      "_key": "!tables.results!1bc0d594892867ed.2c56d54d937eeda3",
+      "_id": "2c56d54d937eeda3"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         8
       ],
       "text": "Azure",
-      "_id": "e63149ba3b59edc9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.e63149ba3b59edc9"
+      "_key": "!tables.results!1bc0d594892867ed.c3f6877f39f423f4",
+      "_id": "c3f6877f39f423f4"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         10
       ],
       "text": "Blessed",
-      "_id": "57def2984fd71335",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.57def2984fd71335"
+      "_key": "!tables.results!1bc0d594892867ed.be319fb2030d6e84",
+      "_id": "be319fb2030d6e84"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         12
       ],
       "text": "Bloody",
-      "_id": "a96a421741ace6c9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.a96a421741ace6c9"
+      "_key": "!tables.results!1bc0d594892867ed.cc6b4f10241ef3ba",
+      "_id": "cc6b4f10241ef3ba"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         14
       ],
       "text": "Broken",
-      "_id": "3b7f6a55f4bac883",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.3b7f6a55f4bac883"
+      "_key": "!tables.results!1bc0d594892867ed.3326669a6cf6ff3a",
+      "_id": "3326669a6cf6ff3a"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         16
       ],
       "text": "Ceaseless",
-      "_id": "325638ad1e28f2db",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.325638ad1e28f2db"
+      "_key": "!tables.results!1bc0d594892867ed.60acd7980c447f95",
+      "_id": "60acd7980c447f95"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         18
       ],
       "text": "Crimson",
-      "_id": "a2550738c1aabaa1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.a2550738c1aabaa1"
+      "_key": "!tables.results!1bc0d594892867ed.422832730460aa57",
+      "_id": "422832730460aa57"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         20
       ],
       "text": "Cursed",
-      "_id": "162007d3e0894e4b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.162007d3e0894e4b"
+      "_key": "!tables.results!1bc0d594892867ed.e70c1c07ad3a8ecb",
+      "_id": "e70c1c07ad3a8ecb"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         22
       ],
       "text": "Dawning",
-      "_id": "352a426305f6aca4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.352a426305f6aca4"
+      "_key": "!tables.results!1bc0d594892867ed.9c330c6df282b464",
+      "_id": "9c330c6df282b464"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         24
       ],
       "text": "Dissident",
-      "_id": "7c5421068044e50b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.7c5421068044e50b"
+      "_key": "!tables.results!1bc0d594892867ed.f219d97315278d8c",
+      "_id": "f219d97315278d8c"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         26
       ],
       "text": "Ebon",
-      "_id": "8c0cef60f1acae04",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.8c0cef60f1acae04"
+      "_key": "!tables.results!1bc0d594892867ed.b8bd1c710988c051",
+      "_id": "b8bd1c710988c051"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         28
       ],
       "text": "Elder",
-      "_id": "8cb7908eb9449db0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.8cb7908eb9449db0"
+      "_key": "!tables.results!1bc0d594892867ed.695ba5d089a3f62d",
+      "_id": "695ba5d089a3f62d"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         30
       ],
       "text": "Enduring",
-      "_id": "a421dd24dad1d2db",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.a421dd24dad1d2db"
+      "_key": "!tables.results!1bc0d594892867ed.3e3a548a9bcfa632",
+      "_id": "3e3a548a9bcfa632"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         32
       ],
       "text": "Enlightened",
-      "_id": "091540d423d040a3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.091540d423d040a3"
+      "_key": "!tables.results!1bc0d594892867ed.3de7fc4cec7ac0a2",
+      "_id": "3de7fc4cec7ac0a2"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         34
       ],
       "text": "Exalted",
-      "_id": "15929aed0b25ad84",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.15929aed0b25ad84"
+      "_key": "!tables.results!1bc0d594892867ed.58d70aec3e241863",
+      "_id": "58d70aec3e241863"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         36
       ],
       "text": "Fallen",
-      "_id": "69a7099a3eef26be",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.69a7099a3eef26be"
+      "_key": "!tables.results!1bc0d594892867ed.dc59d87212d8e7df",
+      "_id": "dc59d87212d8e7df"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         38
       ],
       "text": "Fated",
-      "_id": "86c8d0124c24430d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.86c8d0124c24430d"
+      "_key": "!tables.results!1bc0d594892867ed.16ae7c24e14fe053",
+      "_id": "16ae7c24e14fe053"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         40
       ],
       "text": "First",
-      "_id": "5c1de205d9af778d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.5c1de205d9af778d"
+      "_key": "!tables.results!1bc0d594892867ed.3f772b34fba1d58c",
+      "_id": "3f772b34fba1d58c"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         42
       ],
       "text": "Forgotten",
-      "_id": "2eb0310e70f9f1b0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.2eb0310e70f9f1b0"
+      "_key": "!tables.results!1bc0d594892867ed.7ff954330566f25f",
+      "_id": "7ff954330566f25f"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         44
       ],
       "text": "Forsaken",
-      "_id": "3c3d4283f2bf229e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.3c3d4283f2bf229e"
+      "_key": "!tables.results!1bc0d594892867ed.c9bc68dcc6ba730d",
+      "_id": "c9bc68dcc6ba730d"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         46
       ],
       "text": "Gloaming",
-      "_id": "5b40386f26a9310a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.5b40386f26a9310a"
+      "_key": "!tables.results!1bc0d594892867ed.973152b3b943bd40",
+      "_id": "973152b3b943bd40"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         48
       ],
       "text": "Golden",
-      "_id": "8d5be6275c00b1df",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.8d5be6275c00b1df"
+      "_key": "!tables.results!1bc0d594892867ed.489ef96d34110ca1",
+      "_id": "489ef96d34110ca1"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         50
       ],
       "text": "Hidden",
-      "_id": "a51d3c0492c43852",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.a51d3c0492c43852"
+      "_key": "!tables.results!1bc0d594892867ed.2329feb87d69c815",
+      "_id": "2329feb87d69c815"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         52
       ],
       "text": "Infernal",
-      "_id": "80a7f6db3ab7734d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.80a7f6db3ab7734d"
+      "_key": "!tables.results!1bc0d594892867ed.0ef58f5e395aa87c",
+      "_id": "0ef58f5e395aa87c"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         54
       ],
       "text": "Infinite",
-      "_id": "5dbee21dc14832e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.5dbee21dc14832e5"
+      "_key": "!tables.results!1bc0d594892867ed.b23e1d61b858e927",
+      "_id": "b23e1d61b858e927"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         56
       ],
       "text": "Iron",
-      "_id": "9510308c55559ac6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.9510308c55559ac6"
+      "_key": "!tables.results!1bc0d594892867ed.a1b70a34f37a03f7",
+      "_id": "a1b70a34f37a03f7"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         58
       ],
       "text": "Kindred",
-      "_id": "1c1cb1e5df89308e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.1c1cb1e5df89308e"
+      "_key": "!tables.results!1bc0d594892867ed.5b6fff20252cc571",
+      "_id": "5b6fff20252cc571"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         60
       ],
       "text": "Obsidian",
-      "_id": "e6ec7509db55b887",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.e6ec7509db55b887"
+      "_key": "!tables.results!1bc0d594892867ed.a63264ee8bbe6e29",
+      "_id": "a63264ee8bbe6e29"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         62
       ],
       "text": "Radiant",
-      "_id": "7d605312822f9c6c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.7d605312822f9c6c"
+      "_key": "!tables.results!1bc0d594892867ed.3e4782fd856ca363",
+      "_id": "3e4782fd856ca363"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         64
       ],
       "text": "Risen",
-      "_id": "1dfa513281c2043c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.1dfa513281c2043c"
+      "_key": "!tables.results!1bc0d594892867ed.3b9088c5d78a78f4",
+      "_id": "3b9088c5d78a78f4"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         66
       ],
       "text": "Sacred",
-      "_id": "22d9d1df0ca42ac6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.22d9d1df0ca42ac6"
+      "_key": "!tables.results!1bc0d594892867ed.bf0abd9e41033f10",
+      "_id": "bf0abd9e41033f10"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         68
       ],
       "text": "Sapphire",
-      "_id": "41a75a04ea984c18",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.41a75a04ea984c18"
+      "_key": "!tables.results!1bc0d594892867ed.078f230788481f18",
+      "_id": "078f230788481f18"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         70
       ],
       "text": "Scarlet",
-      "_id": "459423f9ef6a8a9b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.459423f9ef6a8a9b"
+      "_key": "!tables.results!1bc0d594892867ed.c3e3f7da5a743443",
+      "_id": "c3e3f7da5a743443"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         72
       ],
       "text": "Serene",
-      "_id": "850ad7971616c8ac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.850ad7971616c8ac"
+      "_key": "!tables.results!1bc0d594892867ed.54a6597bca127b50",
+      "_id": "54a6597bca127b50"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         74
       ],
       "text": "Shattered",
-      "_id": "68c3eba90e0c7a6e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.68c3eba90e0c7a6e"
+      "_key": "!tables.results!1bc0d594892867ed.c7b3de19b9b557ee",
+      "_id": "c7b3de19b9b557ee"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         76
       ],
       "text": "Shining",
-      "_id": "56a7a31719e2ca64",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.56a7a31719e2ca64"
+      "_key": "!tables.results!1bc0d594892867ed.3c654219a50630f5",
+      "_id": "3c654219a50630f5"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         78
       ],
       "text": "Silent",
-      "_id": "75945e90253941ed",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.75945e90253941ed"
+      "_key": "!tables.results!1bc0d594892867ed.bfc9c94a39663673",
+      "_id": "bfc9c94a39663673"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         80
       ],
       "text": "Silver",
-      "_id": "bf8426743430b375",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.bf8426743430b375"
+      "_key": "!tables.results!1bc0d594892867ed.a5fd40d912285cb3",
+      "_id": "a5fd40d912285cb3"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         82
       ],
       "text": "Sovereign",
-      "_id": "c25e7a10259ae32f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.c25e7a10259ae32f"
+      "_key": "!tables.results!1bc0d594892867ed.52e0df93cdbbeef9",
+      "_id": "52e0df93cdbbeef9"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         84
       ],
       "text": "Stellar",
-      "_id": "9fa7cc9728199f62",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.9fa7cc9728199f62"
+      "_key": "!tables.results!1bc0d594892867ed.35e847cbe6ff137a",
+      "_id": "35e847cbe6ff137a"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         86
       ],
       "text": "Sundered",
-      "_id": "6dba161259a1b62d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.6dba161259a1b62d"
+      "_key": "!tables.results!1bc0d594892867ed.0e23bf5d07369d21",
+      "_id": "0e23bf5d07369d21"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         88
       ],
       "text": "Supreme",
-      "_id": "d0c75253d981917f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.d0c75253d981917f"
+      "_key": "!tables.results!1bc0d594892867ed.019f73e6958cdc2b",
+      "_id": "019f73e6958cdc2b"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         90
       ],
       "text": "Undying",
-      "_id": "c4773056eaf42212",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.c4773056eaf42212"
+      "_key": "!tables.results!1bc0d594892867ed.9faff411a3958d1b",
+      "_id": "9faff411a3958d1b"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         92
       ],
       "text": "Unified",
-      "_id": "e17abc953413f701",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.e17abc953413f701"
+      "_key": "!tables.results!1bc0d594892867ed.6e2e6e9840b9729b",
+      "_id": "6e2e6e9840b9729b"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         94
       ],
       "text": "United",
-      "_id": "261e7eeb7a2d3130",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.261e7eeb7a2d3130"
+      "_key": "!tables.results!1bc0d594892867ed.cab4dc810ae8e536",
+      "_id": "cab4dc810ae8e536"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         96
       ],
       "text": "Universal",
-      "_id": "8fe465fba3520ced",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.8fe465fba3520ced"
+      "_key": "!tables.results!1bc0d594892867ed.9b03d25a30945ed2",
+      "_id": "9b03d25a30945ed2"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         98
       ],
       "text": "Veiled",
-      "_id": "579ff5fac2ddb796",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.579ff5fac2ddb796"
+      "_key": "!tables.results!1bc0d594892867ed.b4e874651ca07c72",
+      "_id": "b4e874651ca07c72"
     },
     {
       "range": [
@@ -704,29 +460,12 @@
         100
       ],
       "text": "Wandering",
-      "_id": "4aec4d401b5a5cfc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1bc0d594892867ed.4aec4d401b5a5cfc"
+      "_key": "!tables.results!1bc0d594892867ed.dbce30c705ca58aa",
+      "_id": "dbce30c705ca58aa"
     }
   ],
-  "folder": "b6fe3d35ff56995d",
-  "sort": 0,
+  "folder": "2ee92ba1fb40f90b",
+  "sort": 344,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!1bc0d594892867ed"
 }

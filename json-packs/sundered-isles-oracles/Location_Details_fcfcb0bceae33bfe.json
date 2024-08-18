@@ -1,0 +1,272 @@
+{
+  "_id": "fcfcb0bceae33bfe",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/getting_underway/chart_your_course",
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/chart_your_course/details"
+    }
+  },
+  "name": "Location Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Abyssal sinkhole",
+      "_key": "!tables.results!fcfcb0bceae33bfe.b581c16c077d23da",
+      "_id": "b581c16c077d23da"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Active volcano",
+      "_key": "!tables.results!fcfcb0bceae33bfe.82eb32647553e51d",
+      "_id": "82eb32647553e51d"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Ancient ruins",
+      "_key": "!tables.results!fcfcb0bceae33bfe.4b6d74cd763aff62",
+      "_id": "4b6d74cd763aff62"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Colossal monument",
+      "_key": "!tables.results!fcfcb0bceae33bfe.ae020c1dcf7f1110",
+      "_id": "ae020c1dcf7f1110"
+    },
+    {
+      "range": [
+        16,
+        19
+      ],
+      "text": "Crucial trade route",
+      "_key": "!tables.results!fcfcb0bceae33bfe.0a76b44b3ceceb7b",
+      "_id": "0a76b44b3ceceb7b"
+    },
+    {
+      "range": [
+        20,
+        23
+      ],
+      "text": "Deserted settlement",
+      "_key": "!tables.results!fcfcb0bceae33bfe.17808c59ac43d460",
+      "_id": "17808c59ac43d460"
+    },
+    {
+      "range": [
+        24,
+        27
+      ],
+      "text": "Expansive cave",
+      "_key": "!tables.results!fcfcb0bceae33bfe.121c0fec0f4dd18c",
+      "_id": "121c0fec0f4dd18c"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Floating tradepost",
+      "_key": "!tables.results!fcfcb0bceae33bfe.6f5b94ce7481abe1",
+      "_id": "6f5b94ce7481abe1"
+    },
+    {
+      "range": [
+        31,
+        34
+      ],
+      "text": "Hull-breaching rocks",
+      "_key": "!tables.results!fcfcb0bceae33bfe.bfe0d474647e3aad",
+      "_id": "bfe0d474647e3aad"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Kelp-clogged waters",
+      "_key": "!tables.results!fcfcb0bceae33bfe.cd78b035d5f1bd59",
+      "_id": "cd78b035d5f1bd59"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "Meteorite scar",
+      "_key": "!tables.results!fcfcb0bceae33bfe.042fcecfc8eaae43",
+      "_id": "042fcecfc8eaae43"
+    },
+    {
+      "range": [
+        42,
+        45
+      ],
+      "text": "Military encampment",
+      "_key": "!tables.results!fcfcb0bceae33bfe.b38f2fd79f6d6566",
+      "_id": "b38f2fd79f6d6566"
+    },
+    {
+      "range": [
+        46,
+        49
+      ],
+      "text": "Military fort",
+      "_key": "!tables.results!fcfcb0bceae33bfe.37780929c7d30fbd",
+      "_id": "37780929c7d30fbd"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "Mining operation",
+      "_key": "!tables.results!fcfcb0bceae33bfe.fbb48bd07ab2cccc",
+      "_id": "fbb48bd07ab2cccc"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Mist-shrouded peak",
+      "_key": "!tables.results!fcfcb0bceae33bfe.28e13eff02efb003",
+      "_id": "28e13eff02efb003"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Navigation beacon",
+      "_key": "!tables.results!fcfcb0bceae33bfe.4aa33d79934f9427",
+      "_id": "4aa33d79934f9427"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "Ongoing naval blockade",
+      "_key": "!tables.results!fcfcb0bceae33bfe.0c1dc7be24b39ee0",
+      "_id": "0c1dc7be24b39ee0"
+    },
+    {
+      "range": [
+        62,
+        65
+      ],
+      "text": "Palatial manor",
+      "_key": "!tables.results!fcfcb0bceae33bfe.da397b72aa40db37",
+      "_id": "da397b72aa40db37"
+    },
+    {
+      "range": [
+        66,
+        69
+      ],
+      "text": "Pirate conclave",
+      "_key": "!tables.results!fcfcb0bceae33bfe.90dda5326a503f50",
+      "_id": "90dda5326a503f50"
+    },
+    {
+      "range": [
+        70,
+        73
+      ],
+      "text": "Recently wrecked ship",
+      "_key": "!tables.results!fcfcb0bceae33bfe.56e0acb64eabd028",
+      "_id": "56e0acb64eabd028"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Refugee encampment",
+      "_key": "!tables.results!fcfcb0bceae33bfe.3def68c06383b003",
+      "_id": "3def68c06383b003"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Religious commune",
+      "_key": "!tables.results!fcfcb0bceae33bfe.ce662747c08993e1",
+      "_id": "ce662747c08993e1"
+    },
+    {
+      "range": [
+        80,
+        83
+      ],
+      "text": "Sentinel tree",
+      "_key": "!tables.results!fcfcb0bceae33bfe.d554bd99b6f2c965",
+      "_id": "d554bd99b6f2c965"
+    },
+    {
+      "range": [
+        84,
+        87
+      ],
+      "text": "Sheltered anchorage",
+      "_key": "!tables.results!fcfcb0bceae33bfe.0c073de88e985bcf",
+      "_id": "0c073de88e985bcf"
+    },
+    {
+      "range": [
+        88,
+        91
+      ],
+      "text": "Warship patrols",
+      "_key": "!tables.results!fcfcb0bceae33bfe.6862507dc037d26b",
+      "_id": "6862507dc037d26b"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "Whale graveyard",
+      "_key": "!tables.results!fcfcb0bceae33bfe.690e6c31141c41ef",
+      "_id": "690e6c31141c41ef"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "Whaling grounds",
+      "_key": "!tables.results!fcfcb0bceae33bfe.b36c58ab42f0de4f",
+      "_id": "b36c58ab42f0de4f"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Wide, navigable river",
+      "_key": "!tables.results!fcfcb0bceae33bfe.49a18a862d05804d",
+      "_id": "49a18a862d05804d"
+    }
+  ],
+  "folder": "687f57b27054d024",
+  "sort": 104,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fcfcb0bceae33bfe"
+}

@@ -1,0 +1,326 @@
+{
+  "_id": "7a7b8d82302bcd36",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/first_look"
+    }
+  },
+  "name": "Shipwreck First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Archaic construction",
+      "_key": "!tables.results!7a7b8d82302bcd36.a2c444158b9ce99e",
+      "_id": "a2c444158b9ce99e"
+    },
+    {
+      "range": [
+        3,
+        6
+      ],
+      "text": "Blackened by fire",
+      "_key": "!tables.results!7a7b8d82302bcd36.6be24ba6c9df96b0",
+      "_id": "6be24ba6c9df96b0"
+    },
+    {
+      "range": [
+        7,
+        10
+      ],
+      "text": "Blocked or difficult access",
+      "_key": "!tables.results!7a7b8d82302bcd36.2795bdf56cfcb7d1",
+      "_id": "2795bdf56cfcb7d1"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Capsized or upside-down",
+      "_key": "!tables.results!7a7b8d82302bcd36.1056f3cc29a24234",
+      "_id": "1056f3cc29a24234"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Claimed by a territorial creature",
+      "_key": "!tables.results!7a7b8d82302bcd36.773fb5a05f717983",
+      "_id": "773fb5a05f717983"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Crawling with insects or sea life",
+      "_key": "!tables.results!7a7b8d82302bcd36.8b024368c11d399b",
+      "_id": "8b024368c11d399b"
+    },
+    {
+      "range": [
+        19,
+        22
+      ],
+      "text": "Creaking ominously",
+      "_key": "!tables.results!7a7b8d82302bcd36.37ed30664c30e350",
+      "_id": "37ed30664c30e350"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Deck fouled with debris",
+      "_key": "!tables.results!7a7b8d82302bcd36.2fe5ab35b58d1ca6",
+      "_id": "2fe5ab35b58d1ca6"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Encrusted with barnacles or fungi",
+      "_key": "!tables.results!7a7b8d82302bcd36.38bcec062dab63a2",
+      "_id": "38bcec062dab63a2"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Famous or infamous vessel",
+      "_key": "!tables.results!7a7b8d82302bcd36.9dc2cedac50c8946",
+      "_id": "9dc2cedac50c8946"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Finely-crafted figurehead, still intact",
+      "_key": "!tables.results!7a7b8d82302bcd36.d4c30425e2c1cbdd",
+      "_id": "d4c30425e2c1cbdd"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Fitted with powerful weapons",
+      "_key": "!tables.results!7a7b8d82302bcd36.3522a7260336f18f",
+      "_id": "3522a7260336f18f"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Flag of an unexpected faction",
+      "_key": "!tables.results!7a7b8d82302bcd36.31c42916772ab020",
+      "_id": "31c42916772ab020"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Gaping hull breach",
+      "_key": "!tables.results!7a7b8d82302bcd36.97b1e9c28e1ff992",
+      "_id": "97b1e9c28e1ff992"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Illuminated by luminescent organisms",
+      "_key": "!tables.results!7a7b8d82302bcd36.7360a734454e89c6",
+      "_id": "7360a734454e89c6"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Ironclad construction",
+      "_key": "!tables.results!7a7b8d82302bcd36.61d208510b989cd9",
+      "_id": "61d208510b989cd9"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Message scrawled on hull",
+      "_key": "!tables.results!7a7b8d82302bcd36.3d2050b20bf6a31e",
+      "_id": "3d2050b20bf6a31e"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Missing launch boats",
+      "_key": "!tables.results!7a7b8d82302bcd36.ee9e5eedc13acc8d",
+      "_id": "ee9e5eedc13acc8d"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Nearby ship or encampment",
+      "_key": "!tables.results!7a7b8d82302bcd36.638a0cdfe5f0963d",
+      "_id": "638a0cdfe5f0963d"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Nesting or roosting creatures",
+      "_key": "!tables.results!7a7b8d82302bcd36.4da6ae702c37285e",
+      "_id": "4da6ae702c37285e"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Once-grand adornments and fittings",
+      "_key": "!tables.results!7a7b8d82302bcd36.ba3679e7505dd760",
+      "_id": "ba3679e7505dd760"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Overgrown with plants or sea life",
+      "_key": "!tables.results!7a7b8d82302bcd36.a62cf7cde175caa3",
+      "_id": "a62cf7cde175caa3"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Partially buried or embedded",
+      "_key": "!tables.results!7a7b8d82302bcd36.7c695d0f624c5caf",
+      "_id": "7c695d0f624c5caf"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Scarred by battle",
+      "_key": "!tables.results!7a7b8d82302bcd36.c06da5c051141aef",
+      "_id": "c06da5c051141aef"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Scattered remains of the dead",
+      "_key": "!tables.results!7a7b8d82302bcd36.c53de291937e53d0",
+      "_id": "c53de291937e53d0"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Shrouded beneath tattered sailcloth",
+      "_key": "!tables.results!7a7b8d82302bcd36.9c93899fda7d6b9b",
+      "_id": "9c93899fda7d6b9b"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Signs of a survivor or squatter",
+      "_key": "!tables.results!7a7b8d82302bcd36.2115f485363b7029",
+      "_id": "2115f485363b7029"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Steeply inclined or listing decks",
+      "_key": "!tables.results!7a7b8d82302bcd36.de6379351675f6b5",
+      "_id": "de6379351675f6b5"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Stripped by scavengers",
+      "_key": "!tables.results!7a7b8d82302bcd36.1af2f64559dceba6",
+      "_id": "1af2f64559dceba6"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Under construction or repair",
+      "_key": "!tables.results!7a7b8d82302bcd36.056be7de136e403a",
+      "_id": "056be7de136e403a"
+    },
+    {
+      "range": [
+        83,
+        86
+      ],
+      "text": "Unstable or sinking",
+      "_key": "!tables.results!7a7b8d82302bcd36.8905e3378ead3cc9",
+      "_id": "8905e3378ead3cc9"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Unusual or unknown type of ship",
+      "_key": "!tables.results!7a7b8d82302bcd36.fcdda9bbde2d76e3",
+      "_id": "fcdda9bbde2d76e3"
+    },
+    {
+      "range": [
+        89,
+        94
+      ],
+      "text": "Scattered [Cargo](datasworn:oracle_rollable:sundered_isles/ship/cargo)",
+      "_key": "!tables.results!7a7b8d82302bcd36.d674354d352910d3",
+      "_id": "d674354d352910d3"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!7a7b8d82302bcd36.c741bccfe16987d0",
+      "_id": "c741bccfe16987d0"
+    }
+  ],
+  "folder": "d4fcc34036960bb6",
+  "sort": 200,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7a7b8d82302bcd36"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Faction Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "b6fe3d35ff56995d",
+  "sort": 340,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions",
+      "dsid": "oracle_collection:starforged/faction"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!b6fe3d35ff56995d"
+}

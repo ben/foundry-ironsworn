@@ -1,0 +1,290 @@
+{
+  "_id": "f82091b5b2126138",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/first_look_cursed"
+    }
+  },
+  "name": "Cursed Settlement First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Armed with sorcerous weapons",
+      "_key": "!tables.results!f82091b5b2126138.8ed1e068462c5829",
+      "_id": "8ed1e068462c5829"
+    },
+    {
+      "range": [
+        3,
+        6
+      ],
+      "text": "Assailed by a monstrous beast",
+      "_key": "!tables.results!f82091b5b2126138.3a7c92ecd85688ee",
+      "_id": "3a7c92ecd85688ee"
+    },
+    {
+      "range": [
+        7,
+        10
+      ],
+      "text": "Beset by swarms of monstrous creatures",
+      "_key": "!tables.results!f82091b5b2126138.dd55db87965e08db",
+      "_id": "dd55db87965e08db"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Besieged or invaded by a cursed faction",
+      "_key": "!tables.results!f82091b5b2126138.244472b31b859bec",
+      "_id": "244472b31b859bec"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Built among titanic bones",
+      "_key": "!tables.results!f82091b5b2126138.15b04e66c25aec17",
+      "_id": "15b04e66c25aec17"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Cloaked by a grim darkness",
+      "_key": "!tables.results!f82091b5b2126138.0c09ccaf4b81b02d",
+      "_id": "0c09ccaf4b81b02d"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Corpses displayed as a warning",
+      "_key": "!tables.results!f82091b5b2126138.649deed3fc983473",
+      "_id": "649deed3fc983473"
+    },
+    {
+      "range": [
+        23,
+        26
+      ],
+      "text": "Cowering or reclusive inhabitants",
+      "_key": "!tables.results!f82091b5b2126138.ee93cd358ef0ff1c",
+      "_id": "ee93cd358ef0ff1c"
+    },
+    {
+      "range": [
+        27,
+        30
+      ],
+      "text": "Dreadful phantom whispers",
+      "_key": "!tables.results!f82091b5b2126138.fd08494084791aa7",
+      "_id": "fd08494084791aa7"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Encrusted with barnacles or fungi",
+      "_key": "!tables.results!f82091b5b2126138.c78fb11ef35f13ab",
+      "_id": "c78fb11ef35f13ab"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Exodus of fleeing inhabitants",
+      "_key": "!tables.results!f82091b5b2126138.20853e9838d5bdab",
+      "_id": "20853e9838d5bdab"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Festooned with bones and skulls",
+      "_key": "!tables.results!f82091b5b2126138.e746a325fed56ef9",
+      "_id": "e746a325fed56ef9"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Fetid, foul-colored water",
+      "_key": "!tables.results!f82091b5b2126138.139cadcd7925bf51",
+      "_id": "139cadcd7925bf51"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Giant burning pyre",
+      "_key": "!tables.results!f82091b5b2126138.4311c7925c9f03e2",
+      "_id": "4311c7925c9f03e2"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Glimpses of monstrous shadows",
+      "_key": "!tables.results!f82091b5b2126138.21efc9d2f1d95667",
+      "_id": "21efc9d2f1d95667"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Hordes of circling carrion birds",
+      "_key": "!tables.results!f82091b5b2126138.4e601ad8e24a5518",
+      "_id": "4e601ad8e24a5518"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Hung with thick strands of webbing",
+      "_key": "!tables.results!f82091b5b2126138.f644ee2ae3878fc8",
+      "_id": "f644ee2ae3878fc8"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Infernal machineworks and acrid smoke",
+      "_key": "!tables.results!f82091b5b2126138.c83c4359b74cfa8c",
+      "_id": "c83c4359b74cfa8c"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Ominous central structure",
+      "_key": "!tables.results!f82091b5b2126138.76f63338411bef56",
+      "_id": "76f63338411bef56"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Overpowering stench of decay",
+      "_key": "!tables.results!f82091b5b2126138.b7c97171790dc403",
+      "_id": "b7c97171790dc403"
+    },
+    {
+      "range": [
+        67,
+        70
+      ],
+      "text": "Overtaken by malignant plants",
+      "_key": "!tables.results!f82091b5b2126138.df72d57c237fa009",
+      "_id": "df72d57c237fa009"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Shrouded by a clinging, persistent fog",
+      "_key": "!tables.results!f82091b5b2126138.2cfbef133ccee2f5",
+      "_id": "2cfbef133ccee2f5"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Sinister songs or chants",
+      "_key": "!tables.results!f82091b5b2126138.28e2cb620329e8b3",
+      "_id": "28e2cb620329e8b3"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Sinking into the earth or sea",
+      "_key": "!tables.results!f82091b5b2126138.52a7767ee6473c17",
+      "_id": "52a7767ee6473c17"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Spectral structures of shifting form",
+      "_key": "!tables.results!f82091b5b2126138.88463ef35c76bf42",
+      "_id": "88463ef35c76bf42"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Suffused with eerie light",
+      "_key": "!tables.results!f82091b5b2126138.fec1174528fb97c4",
+      "_id": "fec1174528fb97c4"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Surrounded by blighted terrain",
+      "_key": "!tables.results!f82091b5b2126138.2bc11564c7d941da",
+      "_id": "2bc11564c7d941da"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Swarms of roosting bats",
+      "_key": "!tables.results!f82091b5b2126138.eb83c8d5f832e86c",
+      "_id": "eb83c8d5f832e86c"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Unsettling angles and labyrinthine paths",
+      "_key": "!tables.results!f82091b5b2126138.3e651f8ae482232f",
+      "_id": "3e651f8ae482232f"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "[Cursed Weather](datasworn:oracle_rollable:sundered_isles/weather/cursed)",
+      "_key": "!tables.results!f82091b5b2126138.b20a312aeb412af6",
+      "_id": "b20a312aeb412af6"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 167,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f82091b5b2126138"
+}

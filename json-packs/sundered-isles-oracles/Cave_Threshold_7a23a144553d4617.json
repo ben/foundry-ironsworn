@@ -1,0 +1,164 @@
+{
+  "_id": "7a23a144553d4617",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave",
+      "dsid": "oracle_rollable:sundered_isles/cave/threshold"
+    }
+  },
+  "name": "Cave Threshold",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        6
+      ],
+      "text": "Archway of carved stone",
+      "_key": "!tables.results!7a23a144553d4617.bb149c246a7fd207",
+      "_id": "bb149c246a7fd207"
+    },
+    {
+      "range": [
+        7,
+        12
+      ],
+      "text": "Barricaded or blocked",
+      "_key": "!tables.results!7a23a144553d4617.174ef165e4af2c52",
+      "_id": "174ef165e4af2c52"
+    },
+    {
+      "range": [
+        13,
+        19
+      ],
+      "text": "Behind a waterfall",
+      "_key": "!tables.results!7a23a144553d4617.fd06d5ea229f4fce",
+      "_id": "fd06d5ea229f4fce"
+    },
+    {
+      "range": [
+        20,
+        25
+      ],
+      "text": "Flanked by statues or monuments",
+      "_key": "!tables.results!7a23a144553d4617.26482a8720fc5205",
+      "_id": "26482a8720fc5205"
+    },
+    {
+      "range": [
+        26,
+        31
+      ],
+      "text": "Fronted by carved stairs",
+      "_key": "!tables.results!7a23a144553d4617.d296966ba675988c",
+      "_id": "d296966ba675988c"
+    },
+    {
+      "range": [
+        32,
+        38
+      ],
+      "text": "Immense entrance",
+      "_key": "!tables.results!7a23a144553d4617.cf408130d4af5e83",
+      "_id": "cf408130d4af5e83"
+    },
+    {
+      "range": [
+        39,
+        44
+      ],
+      "text": "Marked with a message or warning",
+      "_key": "!tables.results!7a23a144553d4617.9eefbcb0747acd3d",
+      "_id": "9eefbcb0747acd3d"
+    },
+    {
+      "range": [
+        45,
+        50
+      ],
+      "text": "Nearby camp, ship, or landed boat",
+      "_key": "!tables.results!7a23a144553d4617.85f56f71e23c9378",
+      "_id": "85f56f71e23c9378"
+    },
+    {
+      "range": [
+        51,
+        56
+      ],
+      "text": "Overgrown with plants",
+      "_key": "!tables.results!7a23a144553d4617.09bafd2a264f7e0e",
+      "_id": "09bafd2a264f7e0e"
+    },
+    {
+      "range": [
+        57,
+        62
+      ],
+      "text": "Perched high on a cliff face",
+      "_key": "!tables.results!7a23a144553d4617.0ee5a51aa1d0c7c9",
+      "_id": "0ee5a51aa1d0c7c9"
+    },
+    {
+      "range": [
+        63,
+        68
+      ],
+      "text": "Sealed with a door or gate",
+      "_key": "!tables.results!7a23a144553d4617.2723105669e47bed",
+      "_id": "2723105669e47bed"
+    },
+    {
+      "range": [
+        69,
+        75
+      ],
+      "text": "Swarming with bats",
+      "_key": "!tables.results!7a23a144553d4617.286f867d4593be31",
+      "_id": "286f867d4593be31"
+    },
+    {
+      "range": [
+        76,
+        81
+      ],
+      "text": "Tight squeeze",
+      "_key": "!tables.results!7a23a144553d4617.e24872abe0f750f1",
+      "_id": "e24872abe0f750f1"
+    },
+    {
+      "range": [
+        82,
+        88
+      ],
+      "text": "Vertical shaft",
+      "_key": "!tables.results!7a23a144553d4617.75be07badc973cd1",
+      "_id": "75be07badc973cd1"
+    },
+    {
+      "range": [
+        89,
+        94
+      ],
+      "text": "Well-used path",
+      "_key": "!tables.results!7a23a144553d4617.e1c7e80db67f7c2c",
+      "_id": "e1c7e80db67f7c2c"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!7a23a144553d4617.b014d0f1aa08c3d4",
+      "_id": "b014d0f1aa08c3d4"
+    }
+  ],
+  "folder": "6e4db0d120c971eb",
+  "sort": 205,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7a23a144553d4617"
+}

@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "c7bad9c0e3cf29fb",
+  "folder": "38d5b35b5764ca19",
+  "name": "Map Room",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} by studying or preparing your maps before setting off on an expedition, reroll any dice. On a hit, you may also reroll any dice for the first leg of the journey as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you assemble others in the map room to formulate a plan or speculate on a mysterious aspect of the world, you and any participating allies take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten} by working on or studying your maps in isolation, roll +wits instead of +heart. On a hit, take +1 spirit or +1 momentum. On a match, you uncover a previously unnoticed aspect of the world or make a dreadful realization; envision what you find, and mark 2 ticks on your discoveries legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/module/map_room",
+      "dsid": "asset:sundered_isles/module/map_room"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!c7bad9c0e3cf29fb"
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "5395161489362126",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/scale",
+      "dsid": "oracle_rollable:sundered_isles/cave/scale/sea"
+    }
+  },
+  "name": "Sea Cave",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "Troublesome",
+      "_key": "!tables.results!5395161489362126.e664e835b9a381d7",
+      "_id": "e664e835b9a381d7"
+    },
+    {
+      "range": [
+        31,
+        70
+      ],
+      "text": "Dangerous",
+      "_key": "!tables.results!5395161489362126.77be8db11916fdbb",
+      "_id": "77be8db11916fdbb"
+    },
+    {
+      "range": [
+        71,
+        85
+      ],
+      "text": "Formidable",
+      "_key": "!tables.results!5395161489362126.bd726fea081a4c85",
+      "_id": "bd726fea081a4c85"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Extreme",
+      "_key": "!tables.results!5395161489362126.1cf7a0ad0b17dc7e",
+      "_id": "1cf7a0ad0b17dc7e"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Epic",
+      "_key": "!tables.results!5395161489362126.b1fead2c1f88aa1a",
+      "_id": "b1fead2c1f88aa1a"
+    }
+  ],
+  "folder": "53b08f0e8b3bdcb7",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5395161489362126"
+}

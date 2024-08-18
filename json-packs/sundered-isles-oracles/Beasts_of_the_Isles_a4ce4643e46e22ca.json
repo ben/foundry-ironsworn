@@ -1,0 +1,15 @@
+{
+  "name": "Beasts of the Isles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "a4ce4643e46e22ca",
+  "sort": 56,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/adventures/beasts"
+    }
+  },
+  "folder": "981e4f0c1f65d569",
+  "sorting": "a",
+  "_key": "!folders!a4ce4643e46e22ca"
+}

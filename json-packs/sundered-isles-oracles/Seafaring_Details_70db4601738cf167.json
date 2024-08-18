@@ -1,0 +1,920 @@
+{
+  "_id": "70db4601738cf167",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/seafaring",
+      "dsid": "oracle_rollable:sundered_isles/seafaring/details"
+    }
+  },
+  "name": "Seafaring Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "A plume of smoke rises on the horizon",
+      "_key": "!tables.results!70db4601738cf167.8a5cea116d6d5cab",
+      "_id": "8a5cea116d6d5cab"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A floating market bustles with activity",
+      "_key": "!tables.results!70db4601738cf167.ca01af13eae35b86",
+      "_id": "ca01af13eae35b86"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "An albatross alights on the yardarm; it surveys the ship dispassionately",
+      "_key": "!tables.results!70db4601738cf167.42a866ad67ca0870",
+      "_id": "42a866ad67ca0870"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A large plank of driftwood bears a carved message",
+      "_key": "!tables.results!70db4601738cf167.c2acfa146a483169",
+      "_id": "c2acfa146a483169"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Buoys mark hazardous waters",
+      "_key": "!tables.results!70db4601738cf167.a6aeceabd89fbd23",
+      "_id": "a6aeceabd89fbd23"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Whale hunters, sailing a sleek-hulled ship, chase their quarry",
+      "_key": "!tables.results!70db4601738cf167.397d38b1cdbc8ee0",
+      "_id": "397d38b1cdbc8ee0"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Sea caves pocket the steep flanks of a rocky islet",
+      "_key": "!tables.results!70db4601738cf167.7e5a666e6ea2c88c",
+      "_id": "7e5a666e6ea2c88c"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "A rogue wave rises on the horizon",
+      "_key": "!tables.results!70db4601738cf167.85e6a1e9ba8d5aa5",
+      "_id": "85e6a1e9ba8d5aa5"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Dagger-like rocks rise out of the sea",
+      "_key": "!tables.results!70db4601738cf167.a471ead421882734",
+      "_id": "a471ead421882734"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Flags of unknown heraldry fly from a partially collapsed fort",
+      "_key": "!tables.results!70db4601738cf167.5a85ba50872aa134",
+      "_id": "5a85ba50872aa134"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "A massive storm wall gathers in the distance, lightning flashing",
+      "_key": "!tables.results!70db4601738cf167.2cef8d6f6e8cdf39",
+      "_id": "2cef8d6f6e8cdf39"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Waves surge against an exposed reef",
+      "_key": "!tables.results!70db4601738cf167.fd049a6100df073f",
+      "_id": "fd049a6100df073f"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "A gull lands on the deck, a rolled slip of paper tied to its leg",
+      "_key": "!tables.results!70db4601738cf167.309c06ca13b81ad3",
+      "_id": "309c06ca13b81ad3"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "A ship flounders on high seas, listing dangerously to one side",
+      "_key": "!tables.results!70db4601738cf167.2ca4d0b17f197e67",
+      "_id": "2ca4d0b17f197e67"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Rusted anchors, hung like trophies from a rocky mount, clatter in the wind",
+      "_key": "!tables.results!70db4601738cf167.0cec07afabc809af",
+      "_id": "0cec07afabc809af"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Labyrinthine mangroves sprawl along the shore of a tiny islet",
+      "_key": "!tables.results!70db4601738cf167.04495057143768b5",
+      "_id": "04495057143768b5"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Survivors aboard a meager raft desperately flag you down",
+      "_key": "!tables.results!70db4601738cf167.dfb4eabafb224648",
+      "_id": "dfb4eabafb224648"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Clusters of jagged rocks lurk just below the ocean waves",
+      "_key": "!tables.results!70db4601738cf167.88c30d775a905254",
+      "_id": "88c30d775a905254"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "A crew struggles to refloat their ship, which is run aground on a sandbank",
+      "_key": "!tables.results!70db4601738cf167.202018a7bd6dab3d",
+      "_id": "202018a7bd6dab3d"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Stone ruins lie just beneath the surface",
+      "_key": "!tables.results!70db4601738cf167.fae5ae1487c77111",
+      "_id": "fae5ae1487c77111"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Waves pummel a shipwreck that lies split in two upon the rocks",
+      "_key": "!tables.results!70db4601738cf167.7ce61d7e3a62e8e7",
+      "_id": "7ce61d7e3a62e8e7"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "A battered, drifting flag bears a familiar emblem",
+      "_key": "!tables.results!70db4601738cf167.25705528b88ae8c7",
+      "_id": "25705528b88ae8c7"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "The air smells of smoke, and ash drifts on the wind",
+      "_key": "!tables.results!70db4601738cf167.9c2d68cdabbe5d66",
+      "_id": "9c2d68cdabbe5d66"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "A battered, oarless longboat floats on the open sea",
+      "_key": "!tables.results!70db4601738cf167.ae93565136764783",
+      "_id": "ae93565136764783"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "A planted flag and a lonely cairn stand atop a tiny rocky islet",
+      "_key": "!tables.results!70db4601738cf167.b9994dd9e3afd846",
+      "_id": "b9994dd9e3afd846"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Something massive brushes against the hull before diving out of sight",
+      "_key": "!tables.results!70db4601738cf167.1f9c07a37b38d827",
+      "_id": "1f9c07a37b38d827"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "The sound of distant cannon fire echoes across the sea",
+      "_key": "!tables.results!70db4601738cf167.615124fa5a93875e",
+      "_id": "615124fa5a93875e"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Water churns as a large school of fish flees a predator",
+      "_key": "!tables.results!70db4601738cf167.c5d9cb2201543dd5",
+      "_id": "c5d9cb2201543dd5"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Lashed-together shipwrecks, anchored to the sea floor, form a ramshackle floating home",
+      "_key": "!tables.results!70db4601738cf167.9daa8be515bfc4c8",
+      "_id": "9daa8be515bfc4c8"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "A massive school of rays forms a roving shadow just below the surface",
+      "_key": "!tables.results!70db4601738cf167.c4d37adf94641f1f",
+      "_id": "c4d37adf94641f1f"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Large sharks circle the ship",
+      "_key": "!tables.results!70db4601738cf167.7355d2ecb71d1332",
+      "_id": "7355d2ecb71d1332"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Whales crest the surface, misting the air with saltwater spray",
+      "_key": "!tables.results!70db4601738cf167.0444f1d7f85b619d",
+      "_id": "0444f1d7f85b619d"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Dolphins spin and jump at the bow",
+      "_key": "!tables.results!70db4601738cf167.83845ab96217e2cd",
+      "_id": "83845ab96217e2cd"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "A giant whale, its back pierced by a wicked-looking harpoon, breaks the surface",
+      "_key": "!tables.results!70db4601738cf167.86a119a4032b1736",
+      "_id": "86a119a4032b1736"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "A half-sunk rowboat, burdened with chests and barrels, bobs on the sea",
+      "_key": "!tables.results!70db4601738cf167.2530b98f9041acc6",
+      "_id": "2530b98f9041acc6"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "A vast volcano dome, belching smoke and steam, sits just above the waves",
+      "_key": "!tables.results!70db4601738cf167.2418e6eebb08c3d7",
+      "_id": "2418e6eebb08c3d7"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "A massive stone statue, cracked and worn by age, stands atop an eroded rock",
+      "_key": "!tables.results!70db4601738cf167.d12510ed461fe6e4",
+      "_id": "d12510ed461fe6e4"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "A broken spire stands atop a lonely rock",
+      "_key": "!tables.results!70db4601738cf167.fe666ea721277e00",
+      "_id": "fe666ea721277e00"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "A solitary mariner watches you from the deck of their single-masted boat",
+      "_key": "!tables.results!70db4601738cf167.164c71253d09447d",
+      "_id": "164c71253d09447d"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Rocks and seabed muck, laid bare by a low tide, surround a narrow waterway",
+      "_key": "!tables.results!70db4601738cf167.229d01646d55ad06",
+      "_id": "229d01646d55ad06"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "A brief, passing squall batters the ship with wind and rain",
+      "_key": "!tables.results!70db4601738cf167.a19d97bd99f17541",
+      "_id": "a19d97bd99f17541"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "A multitude of jellyfish glimmer like pale lanterns",
+      "_key": "!tables.results!70db4601738cf167.d75edb054dacda57",
+      "_id": "d75edb054dacda57"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "A long line of boats, laden with cargo and passengers, make their way across the sea",
+      "_key": "!tables.results!70db4601738cf167.c7b11bccfd5257ab",
+      "_id": "c7b11bccfd5257ab"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "A small settlement stands on an isolated islet",
+      "_key": "!tables.results!70db4601738cf167.d90a3c11c5417996",
+      "_id": "d90a3c11c5417996"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "A large waterspout dances across the waves",
+      "_key": "!tables.results!70db4601738cf167.b81500507482fef4",
+      "_id": "b81500507482fef4"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "A rocky mount shelters a deepwater harbor",
+      "_key": "!tables.results!70db4601738cf167.c4cd768fec0add9c",
+      "_id": "c4cd768fec0add9c"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "A graveyard of sun-bleached whale bones lies atop scattered shoals",
+      "_key": "!tables.results!70db4601738cf167.9e580040533ca6d7",
+      "_id": "9e580040533ca6d7"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "A crumbling stone bridge spans the gap between two rocky islets",
+      "_key": "!tables.results!70db4601738cf167.255e0a17f26c4859",
+      "_id": "255e0a17f26c4859"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Abundant sea life is visible in these crystal-clear shallows",
+      "_key": "!tables.results!70db4601738cf167.385fe6a84864069d",
+      "_id": "385fe6a84864069d"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "A formation of sleek coastal boats race swiftly across the waves",
+      "_key": "!tables.results!70db4601738cf167.dc61a02426a0cddf",
+      "_id": "dc61a02426a0cddf"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "A ship riddled with damage drifts past, seemingly uncrewed",
+      "_key": "!tables.results!70db4601738cf167.ab891b9accc2d9ae",
+      "_id": "ab891b9accc2d9ae"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "A ship struggles at the edge of an expanding whirlpool",
+      "_key": "!tables.results!70db4601738cf167.599f5996fa212d72",
+      "_id": "599f5996fa212d72"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Shattered debris drifts past",
+      "_key": "!tables.results!70db4601738cf167.e12ecf6a9a30b0a1",
+      "_id": "e12ecf6a9a30b0a1"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "A stranded mariner waves from a tiny islet",
+      "_key": "!tables.results!70db4601738cf167.cd510fe54c379684",
+      "_id": "cd510fe54c379684"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "A storm of falling stars streaks through the sky",
+      "_key": "!tables.results!70db4601738cf167.69975b7a01d53a1c",
+      "_id": "69975b7a01d53a1c"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "A ship lies at anchor; its crew busily repairs torn sails and broken spars",
+      "_key": "!tables.results!70db4601738cf167.6403ba824a1f0047",
+      "_id": "6403ba824a1f0047"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "A lone survivor clings to a floating crate",
+      "_key": "!tables.results!70db4601738cf167.dac3b72c03e99227",
+      "_id": "dac3b72c03e99227"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Sea turtles swim in a lazy circle over a deep blue marine sinkhole",
+      "_key": "!tables.results!70db4601738cf167.524672fc33972817",
+      "_id": "524672fc33972817"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "A long line of sails dot the horizon",
+      "_key": "!tables.results!70db4601738cf167.5aeaa10d54f83492",
+      "_id": "5aeaa10d54f83492"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "A heavy chain is strung between rocks just below the waterline",
+      "_key": "!tables.results!70db4601738cf167.f37a7d3dba56ea0d",
+      "_id": "f37a7d3dba56ea0d"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Sinking ships and struggling survivors mark the scene of a recent battle",
+      "_key": "!tables.results!70db4601738cf167.c15b2e6f84b14a20",
+      "_id": "c15b2e6f84b14a20"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "A ravaged ship, burnt nearly to the waterline, floats aimlessly",
+      "_key": "!tables.results!70db4601738cf167.c254f673107e78ff",
+      "_id": "c254f673107e78ff"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "A powerful current sweeps through a passage bounded by rocky shoals",
+      "_key": "!tables.results!70db4601738cf167.a117d6bc5391a620",
+      "_id": "a117d6bc5391a620"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Wind-beaten trees cling precariously to a rocky mount",
+      "_key": "!tables.results!70db4601738cf167.f74370c3035a7f0f",
+      "_id": "f74370c3035a7f0f"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Submerged heat vents send up roiling water and plumes of steam",
+      "_key": "!tables.results!70db4601738cf167.de398b1728b24569",
+      "_id": "de398b1728b24569"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "A sudden gust pulls the sails and rigging taught, an omen of changing weather",
+      "_key": "!tables.results!70db4601738cf167.1bac0c4102f5d86f",
+      "_id": "1bac0c4102f5d86f"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Boats gather in a circle as their passengers toss flowers into the sea",
+      "_key": "!tables.results!70db4601738cf167.5e15d26a7cdc9466",
+      "_id": "5e15d26a7cdc9466"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "A glass bottle bobs on the waves; it holds a rolled slip of paper",
+      "_key": "!tables.results!70db4601738cf167.08aa130d4af68d3a",
+      "_id": "08aa130d4af68d3a"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Whales congregate amid deep waters",
+      "_key": "!tables.results!70db4601738cf167.3ffcbc26624f2568",
+      "_id": "3ffcbc26624f2568"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "A vibrantly-painted merchant vessel sends up a flag of welcome",
+      "_key": "!tables.results!70db4601738cf167.6cbcd5226c2f2f5d",
+      "_id": "6cbcd5226c2f2f5d"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "A flurry of cannon fire flashes within a fog bank",
+      "_key": "!tables.results!70db4601738cf167.6a7958e5a28b9cab",
+      "_id": "6a7958e5a28b9cab"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Sandbars are scattered across shallow waters",
+      "_key": "!tables.results!70db4601738cf167.ff5f4956d42ef1e9",
+      "_id": "ff5f4956d42ef1e9"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Fruit trees cling to a grassy islet",
+      "_key": "!tables.results!70db4601738cf167.49f4e3f1634f64a2",
+      "_id": "49f4e3f1634f64a2"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "A tangle of sea plants, muck, and debris spin slowly in a wide gyre",
+      "_key": "!tables.results!70db4601738cf167.7efee87b87b12329",
+      "_id": "7efee87b87b12329"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "A massive fog bank stretches the length of the horizon",
+      "_key": "!tables.results!70db4601738cf167.38dc9d3d86aad429",
+      "_id": "38dc9d3d86aad429"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "A small fleet of fishing boats head for deeper waters",
+      "_key": "!tables.results!70db4601738cf167.ed1fd94b63e8bfc2",
+      "_id": "ed1fd94b63e8bfc2"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Sunken metal catches the light within clear waters",
+      "_key": "!tables.results!70db4601738cf167.25c59c5a0741ef1f",
+      "_id": "25c59c5a0741ef1f"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Large lizards scamper along the narrow shore of a rocky islet",
+      "_key": "!tables.results!70db4601738cf167.ebe3db85c14a26b9",
+      "_id": "ebe3db85c14a26b9"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Two ships sit side-by-side at anchor; crews move cargo from one to the other",
+      "_key": "!tables.results!70db4601738cf167.c7399f4650f94547",
+      "_id": "c7399f4650f94547"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Flagged buoys mark a faction's claimed territory",
+      "_key": "!tables.results!70db4601738cf167.3f866e849da00baf",
+      "_id": "3f866e849da00baf"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "A dark cave sits high above the waterline on a rocky pillar",
+      "_key": "!tables.results!70db4601738cf167.01dae68a018bd4f4",
+      "_id": "01dae68a018bd4f4"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Thickly-packed seaweed carpets the water",
+      "_key": "!tables.results!70db4601738cf167.d68f86983f49c710",
+      "_id": "d68f86983f49c710"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Ships exchange cannon fire in the distance; acrid smoke drifts for leagues",
+      "_key": "!tables.results!70db4601738cf167.89dd20df86e52258",
+      "_id": "89dd20df86e52258"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Coral reefs lie in shallow, crystalline waters",
+      "_key": "!tables.results!70db4601738cf167.e44b0f8fdeaa80ed",
+      "_id": "e44b0f8fdeaa80ed"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Swarms of sharks feed on a dead whale carcass",
+      "_key": "!tables.results!70db4601738cf167.4a66485722cc8224",
+      "_id": "4a66485722cc8224"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "A small grove of palm trees and a simple hut stand atop a sandy islet",
+      "_key": "!tables.results!70db4601738cf167.571b4ac43a004a4d",
+      "_id": "571b4ac43a004a4d"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Hordes of seabirds nest among a long row of guano-spattered sea stacks",
+      "_key": "!tables.results!70db4601738cf167.26eea88da71cc84d",
+      "_id": "26eea88da71cc84d"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Manatees graze among a field of tall sea grass in shallow waters",
+      "_key": "!tables.results!70db4601738cf167.577b2d05502f91a8",
+      "_id": "577b2d05502f91a8"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "On a moonless, cloudy night, deep darkness falls over the sea",
+      "_key": "!tables.results!70db4601738cf167.c59c9f832170a683",
+      "_id": "c59c9f832170a683"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "The crew of a fishing boat struggles with a mighty catch",
+      "_key": "!tables.results!70db4601738cf167.07193d08112e1252",
+      "_id": "07193d08112e1252"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Survivors wave from the deck of a sinking ship",
+      "_key": "!tables.results!70db4601738cf167.09da72b0908439a2",
+      "_id": "09da72b0908439a2"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "A flash of reflected sunlight gleams from glass or metal in the distance",
+      "_key": "!tables.results!70db4601738cf167.e2c6e4c06c9fcf45",
+      "_id": "e2c6e4c06c9fcf45"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Shrubs and colorful flowers carpet a rocky islet",
+      "_key": "!tables.results!70db4601738cf167.3a67189da2187db4",
+      "_id": "3a67189da2187db4"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "A lone chest bobs in the waves",
+      "_key": "!tables.results!70db4601738cf167.a0d8b6808d955bcf",
+      "_id": "a0d8b6808d955bcf"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Seals rest on the exposed keel of a capsized ship, barking as you come near",
+      "_key": "!tables.results!70db4601738cf167.b8ab099aa3de0b27",
+      "_id": "b8ab099aa3de0b27"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Whale song, tinged with sadness, echoes across the sea",
+      "_key": "!tables.results!70db4601738cf167.8a7315a5998457fd",
+      "_id": "8a7315a5998457fd"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "An imposing fort dominates the terrain of a rocky islet",
+      "_key": "!tables.results!70db4601738cf167.1beec2dc9b7b0c87",
+      "_id": "1beec2dc9b7b0c87"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "A heap of flotsam and jetsam grinds against the shore of a rocky islet",
+      "_key": "!tables.results!70db4601738cf167.6b3fd7717fefb730",
+      "_id": "6b3fd7717fefb730"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "A distant signal or beacon flares to life",
+      "_key": "!tables.results!70db4601738cf167.7f3170af8e092b23",
+      "_id": "7f3170af8e092b23"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Smoke rises from among a grove of palms on a sandy islet",
+      "_key": "!tables.results!70db4601738cf167.87208a40f49ce246",
+      "_id": "87208a40f49ce246"
+    }
+  ],
+  "folder": "8d239f77c6ee1f9d",
+  "sort": 122,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!70db4601738cf167"
+}

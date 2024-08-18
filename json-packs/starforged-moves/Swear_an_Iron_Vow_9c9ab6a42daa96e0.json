@@ -3,87 +3,64 @@
   "type": "sfmove",
   "name": "Swear an Iron Vow",
   "img": "icons/dice/d10black.svg",
+  "folder": "e49f552c2c59f214",
   "system": {
     "dfid": "Starforged/Moves/Quest/Swear_an_Iron_Vow",
     "Category": "Starforged/Moves/Quest",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you swear upon iron to complete a quest**, write your vow and give it a rank. Then, roll +heart. If you swear this vow to a connection, add +1; if you share a bond, add +2.\n\nOn a **strong hit**, you are emboldened and it is clear what you must do next. Take +2 momentum.\n\nOn a **weak hit**, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.\n\nOn a **miss**, you must overcome a significant obstacle before you begin your quest. Envision what stands in your way.",
+    "Text": "__When you swear upon iron to complete a quest__, write your vow and give it a rank. Then, roll +heart. If you swear this vow to a connection, add +1; if you share a bond, add +2.\n\nOn a __strong hit__, you are emboldened and it is clear what you must do next. Take +2 momentum.\n\nOn a __weak hit__, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.\n\nOn a __miss__, you must overcome a significant obstacle before you begin your quest. Envision what stands in your way.",
     "Trigger": {
       "Text": "When you swear upon iron to complete a quest...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Heart"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You are emboldened and it is clear what you must do next. Take +2 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you are emboldened and it is clear what you must do next. Take +2 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward."
       },
       "Miss": {
-        "Text": "You must overcome a significant obstacle before you begin your quest. Envision what stands in your way.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you must overcome a significant obstacle before you begin your quest. Envision what stands in your way.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 156
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#2F9236",
       "Images": []
     }
   },
   "sort": 156,
-  "folder": "e49f552c2c59f214",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Quest/Swear_an_Iron_Vow",
+      "dsid": "move:starforged/quest/swear_an_iron_vow"
+    }
   },
   "_key": "!items!9c9ab6a42daa96e0"
 }

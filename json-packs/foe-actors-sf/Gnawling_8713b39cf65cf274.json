@@ -1,0 +1,53 @@
+{
+  "name": "Gnawling",
+  "img": "icons/creatures/mammals/rodent-rat-green.webp",
+  "type": "foe",
+  "_id": "8713b39cf65cf274",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Gnawling",
+    "texture": {
+      "src": "icons/creatures/mammals/rodent-rat-green.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "785f869b3ee2de2e",
+      "type": "progress",
+      "name": "Gnawling",
+      "img": "icons/creatures/mammals/rodent-rat-green.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Furry, rodent-like creatures</p>\n<p class=\"nogrow\">Long, jutting fangs</p>\n<p class=\"nogrow\">Spider-like limbs</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Consume and proliferate</p>\n<p class=\"nogrow\">Avoid detection</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Swarm larger foes</p>\n<p class=\"nogrow\">Disable ship systems</p>\n</div>\n</div>\n\n<p>The bane of all spacers, the cable-chewing vermin known as gnawlings are a common pest aboard starships throughout the Forge. Adept at navigating in low or zero gravity with their long, multi-jointed limbs, these creatures emerge from cargo holds and engineering bays to gather and consume food. It’s said a gnawling could digest an eidolon drive, and there’s some truth to that adage—their digestive systems barely differentiate between organic and inorganic material.</p>\n<p>Though not a grave threat individually, if left to their own devices, gnawlings are capable of quickly overrunning even large vessels. More than a few horror stories exist of scavengers cracking the airlock seal on a derelict only to find it crawling with thousands of these vile, chittering things.</p>\n<p>Glowcats are a common gnawling deterrent, employed aboard cargo ships to keep the vermin at bay.</p>\n\n<blockquote>Quest Starter: <p>An orbital settlement is overrun by gnawlings and abandoned. What precious thing still lies within? Why are you sworn to retrieve it from this infested place?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.4837b444ef54880f]{Gnawling brood mother}</li>\n</ul>",
+        "rank": 1,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:starforged/sample_npcs/gnawling"
+        }
+      },
+      "_key": "!actors.items!8713b39cf65cf274.785f869b3ee2de2e"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/gnawling"
+    }
+  },
+  "_key": "!actors!8713b39cf65cf274"
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Religion",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:classic/religion",
+      "dsid": "truth:classic/religion"
+    }
+  },
+  "_id": "def462eb06b79aac",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/religion.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "",
+        "Description": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, but most believe the gods long ago abandoned us.",
+        "Quest": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?",
+        "Roll template": {
+          "Description": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, but most believe the gods long ago abandoned us."
+        }
+      },
+      "_id": "04a7f33866157c59",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!def462eb06b79aac.04a7f33866157c59"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/religion.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "",
+        "Description": "The people honor old gods and new. In this harsh land, a prayer is a simple but powerful comfort.",
+        "Quest": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this journey? Who seeks to stop them and why?",
+        "Roll template": {
+          "Description": "The people honor old gods and new. In this harsh land, a prayer is a simple but powerful comfort."
+        }
+      },
+      "_id": "7e1b4a9acec9477f",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!def462eb06b79aac.7e1b4a9acec9477f"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/religion.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "",
+        "Description": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
+        "Quest": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?",
+        "Roll template": {
+          "Description": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities."
+        }
+      },
+      "_id": "5e5beec9e7903d20",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!def462eb06b79aac.5e5beec9e7903d20"
+    }
+  ],
+  "folder": null,
+  "sort": 127,
+  "_key": "!journal!def462eb06b79aac"
+}

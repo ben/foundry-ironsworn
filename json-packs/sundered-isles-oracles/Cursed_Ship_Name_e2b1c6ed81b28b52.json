@@ -1,0 +1,911 @@
+{
+  "_id": "e2b1c6ed81b28b52",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/name_cursed"
+    }
+  },
+  "name": "Cursed Ship Name",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Acheron",
+      "_key": "!tables.results!e2b1c6ed81b28b52.001005ae24080516",
+      "_id": "001005ae24080516"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Apparition",
+      "_key": "!tables.results!e2b1c6ed81b28b52.436fd27aeb869f14",
+      "_id": "436fd27aeb869f14"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Balefire",
+      "_key": "!tables.results!e2b1c6ed81b28b52.0e08eca7f3b8b8f4",
+      "_id": "0e08eca7f3b8b8f4"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Banshee's Cry",
+      "_key": "!tables.results!e2b1c6ed81b28b52.86ac093ee4ace0f5",
+      "_id": "86ac093ee4ace0f5"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Basilisk",
+      "_key": "!tables.results!e2b1c6ed81b28b52.91f0b8df7a912367",
+      "_id": "91f0b8df7a912367"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Bitter End",
+      "_key": "!tables.results!e2b1c6ed81b28b52.2e9a08c9a9ee08ef",
+      "_id": "2e9a08c9a9ee08ef"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Black Fang",
+      "_key": "!tables.results!e2b1c6ed81b28b52.10d5e08167472f0e",
+      "_id": "10d5e08167472f0e"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Blackstar",
+      "_key": "!tables.results!e2b1c6ed81b28b52.af63bedbbb0b2917",
+      "_id": "af63bedbbb0b2917"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Blood Oath",
+      "_key": "!tables.results!e2b1c6ed81b28b52.f20797bc677b840a",
+      "_id": "f20797bc677b840a"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Bloodhawk",
+      "_key": "!tables.results!e2b1c6ed81b28b52.8aa9682ceb315e24",
+      "_id": "8aa9682ceb315e24"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Bloodwake",
+      "_key": "!tables.results!e2b1c6ed81b28b52.65d163baa6bca0a4",
+      "_id": "65d163baa6bca0a4"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Bloody Bargain",
+      "_key": "!tables.results!e2b1c6ed81b28b52.5a6a6d5e48cfcea0",
+      "_id": "5a6a6d5e48cfcea0"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Bloody Marrow",
+      "_key": "!tables.results!e2b1c6ed81b28b52.9ea57188e6ecbb5e",
+      "_id": "9ea57188e6ecbb5e"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Bloody Vengeance",
+      "_key": "!tables.results!e2b1c6ed81b28b52.7e071cfdedaec1a9",
+      "_id": "7e071cfdedaec1a9"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Broken Blade",
+      "_key": "!tables.results!e2b1c6ed81b28b52.2dbf751708ee9ad9",
+      "_id": "2dbf751708ee9ad9"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Call of the Abyss",
+      "_key": "!tables.results!e2b1c6ed81b28b52.deb935722707d832",
+      "_id": "deb935722707d832"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Carnage",
+      "_key": "!tables.results!e2b1c6ed81b28b52.36838892b74af9ce",
+      "_id": "36838892b74af9ce"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Carrion Feast",
+      "_key": "!tables.results!e2b1c6ed81b28b52.0072c0940ffd3617",
+      "_id": "0072c0940ffd3617"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Coup de Grace",
+      "_key": "!tables.results!e2b1c6ed81b28b52.4729c0e3e3113a63",
+      "_id": "4729c0e3e3113a63"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Crimson Cutlass",
+      "_key": "!tables.results!e2b1c6ed81b28b52.339bea13374d1535",
+      "_id": "339bea13374d1535"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Crucible",
+      "_key": "!tables.results!e2b1c6ed81b28b52.edbf1859e9ad840a",
+      "_id": "edbf1859e9ad840a"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Cry Havoc",
+      "_key": "!tables.results!e2b1c6ed81b28b52.03018ecd1d961af3",
+      "_id": "03018ecd1d961af3"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Cyclops",
+      "_key": "!tables.results!e2b1c6ed81b28b52.f4e449b6415c1508",
+      "_id": "f4e449b6415c1508"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Dark Fate",
+      "_key": "!tables.results!e2b1c6ed81b28b52.08e06fa292e8ffbf",
+      "_id": "08e06fa292e8ffbf"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Dead Reckoning",
+      "_key": "!tables.results!e2b1c6ed81b28b52.4797521beb608296",
+      "_id": "4797521beb608296"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Death's Hand",
+      "_key": "!tables.results!e2b1c6ed81b28b52.0a0943cd090e0894",
+      "_id": "0a0943cd090e0894"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Deathwind",
+      "_key": "!tables.results!e2b1c6ed81b28b52.a74609e9ea93fcda",
+      "_id": "a74609e9ea93fcda"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Desolation",
+      "_key": "!tables.results!e2b1c6ed81b28b52.4dbccd410cd31ccd",
+      "_id": "4dbccd410cd31ccd"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Doomsayer",
+      "_key": "!tables.results!e2b1c6ed81b28b52.ee18b1c6c8f174de",
+      "_id": "ee18b1c6c8f174de"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Doomstorm",
+      "_key": "!tables.results!e2b1c6ed81b28b52.bf568ddf1a5ebdbd",
+      "_id": "bf568ddf1a5ebdbd"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Dragon's Bite",
+      "_key": "!tables.results!e2b1c6ed81b28b52.8e4133a3b8492d96",
+      "_id": "8e4133a3b8492d96"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Dragon's Breath",
+      "_key": "!tables.results!e2b1c6ed81b28b52.31155d84eb28c057",
+      "_id": "31155d84eb28c057"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Drowned Prince",
+      "_key": "!tables.results!e2b1c6ed81b28b52.c0bc172bb5c3aa3d",
+      "_id": "c0bc172bb5c3aa3d"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Ebon Tide",
+      "_key": "!tables.results!e2b1c6ed81b28b52.9cf79ffc0c012611",
+      "_id": "9cf79ffc0c012611"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Eidolon",
+      "_key": "!tables.results!e2b1c6ed81b28b52.665dec67f37e9cff",
+      "_id": "665dec67f37e9cff"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Enchantress",
+      "_key": "!tables.results!e2b1c6ed81b28b52.afc380835168d627",
+      "_id": "afc380835168d627"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Eventide",
+      "_key": "!tables.results!e2b1c6ed81b28b52.c928e1677c152ccb",
+      "_id": "c928e1677c152ccb"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Executioner",
+      "_key": "!tables.results!e2b1c6ed81b28b52.8daaec470574438a",
+      "_id": "8daaec470574438a"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "False Hope",
+      "_key": "!tables.results!e2b1c6ed81b28b52.10b9f68994ff6109",
+      "_id": "10b9f68994ff6109"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Forge's Fury",
+      "_key": "!tables.results!e2b1c6ed81b28b52.ffbc4bb421fa20b3",
+      "_id": "ffbc4bb421fa20b3"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Forsworn",
+      "_key": "!tables.results!e2b1c6ed81b28b52.907a97ab13471335",
+      "_id": "907a97ab13471335"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Foul Luck",
+      "_key": "!tables.results!e2b1c6ed81b28b52.40acd91f9622261d",
+      "_id": "40acd91f9622261d"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Frostwind",
+      "_key": "!tables.results!e2b1c6ed81b28b52.c3d2085279adf820",
+      "_id": "c3d2085279adf820"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Ghostwind",
+      "_key": "!tables.results!e2b1c6ed81b28b52.6c14671a7f926e50",
+      "_id": "6c14671a7f926e50"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Gloamtide",
+      "_key": "!tables.results!e2b1c6ed81b28b52.2e4474f7425e8aac",
+      "_id": "2e4474f7425e8aac"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Grim Fate",
+      "_key": "!tables.results!e2b1c6ed81b28b52.0d0c67d486aaa898",
+      "_id": "0d0c67d486aaa898"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Harrowheart",
+      "_key": "!tables.results!e2b1c6ed81b28b52.1292161b8b5c4a44",
+      "_id": "1292161b8b5c4a44"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Headless Jack",
+      "_key": "!tables.results!e2b1c6ed81b28b52.941c0c4a5113a06a",
+      "_id": "941c0c4a5113a06a"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Hell's Heart",
+      "_key": "!tables.results!e2b1c6ed81b28b52.29e5aff62c8c986b",
+      "_id": "29e5aff62c8c986b"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Hellbound",
+      "_key": "!tables.results!e2b1c6ed81b28b52.fb48019a507aaf37",
+      "_id": "fb48019a507aaf37"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Herald of Doom",
+      "_key": "!tables.results!e2b1c6ed81b28b52.eaec90db2449f030",
+      "_id": "eaec90db2449f030"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Hydra",
+      "_key": "!tables.results!e2b1c6ed81b28b52.1d4818e89a0198c2",
+      "_id": "1d4818e89a0198c2"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Imp",
+      "_key": "!tables.results!e2b1c6ed81b28b52.d9807a78e60281a1",
+      "_id": "d9807a78e60281a1"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Iron Talon",
+      "_key": "!tables.results!e2b1c6ed81b28b52.7756761a6b1a4ae5",
+      "_id": "7756761a6b1a4ae5"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Kiss of Death",
+      "_key": "!tables.results!e2b1c6ed81b28b52.8fabb461e80f5a5b",
+      "_id": "8fabb461e80f5a5b"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Kraken's Bane",
+      "_key": "!tables.results!e2b1c6ed81b28b52.c861e6ab0999a4b7",
+      "_id": "c861e6ab0999a4b7"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Last Breath",
+      "_key": "!tables.results!e2b1c6ed81b28b52.6758df3a187bf2c1",
+      "_id": "6758df3a187bf2c1"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Leviathan's Rage",
+      "_key": "!tables.results!e2b1c6ed81b28b52.bb18c9afde0b7d73",
+      "_id": "bb18c9afde0b7d73"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Lidless Eye",
+      "_key": "!tables.results!e2b1c6ed81b28b52.dfd873dbff7dfeca",
+      "_id": "dfd873dbff7dfeca"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Marauder",
+      "_key": "!tables.results!e2b1c6ed81b28b52.a15a47beed7878d8",
+      "_id": "a15a47beed7878d8"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Medusa's Gaze",
+      "_key": "!tables.results!e2b1c6ed81b28b52.389c8e1550de5a08",
+      "_id": "389c8e1550de5a08"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Misery",
+      "_key": "!tables.results!e2b1c6ed81b28b52.4f4c0cf624deedae",
+      "_id": "4f4c0cf624deedae"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Nemesis",
+      "_key": "!tables.results!e2b1c6ed81b28b52.2460e59b40c51df7",
+      "_id": "2460e59b40c51df7"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Nightfall",
+      "_key": "!tables.results!e2b1c6ed81b28b52.043fa39045372595",
+      "_id": "043fa39045372595"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Nightmare",
+      "_key": "!tables.results!e2b1c6ed81b28b52.83299ed125e4bfca",
+      "_id": "83299ed125e4bfca"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Oathbreaker",
+      "_key": "!tables.results!e2b1c6ed81b28b52.c285834e9da149bb",
+      "_id": "c285834e9da149bb"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Obsidian Dagger",
+      "_key": "!tables.results!e2b1c6ed81b28b52.6fc74912e5502ec7",
+      "_id": "6fc74912e5502ec7"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Phantasm",
+      "_key": "!tables.results!e2b1c6ed81b28b52.3b2cb9f4524bd27c",
+      "_id": "3b2cb9f4524bd27c"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Phoenix Fire",
+      "_key": "!tables.results!e2b1c6ed81b28b52.ba913f607b7cfc0c",
+      "_id": "ba913f607b7cfc0c"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Pierced Heart",
+      "_key": "!tables.results!e2b1c6ed81b28b52.95bdbaa218fc4c35",
+      "_id": "95bdbaa218fc4c35"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Plague Tide",
+      "_key": "!tables.results!e2b1c6ed81b28b52.96e7f2d17ba23738",
+      "_id": "96e7f2d17ba23738"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Premonition",
+      "_key": "!tables.results!e2b1c6ed81b28b52.840bbb4632e693ac",
+      "_id": "840bbb4632e693ac"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Quietus",
+      "_key": "!tables.results!e2b1c6ed81b28b52.19fb557f6b06a399",
+      "_id": "19fb557f6b06a399"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Rack and Ruin",
+      "_key": "!tables.results!e2b1c6ed81b28b52.c0cd3b09c684026d",
+      "_id": "c0cd3b09c684026d"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Ravager",
+      "_key": "!tables.results!e2b1c6ed81b28b52.1e946625cf020082",
+      "_id": "1e946625cf020082"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Relentless",
+      "_key": "!tables.results!e2b1c6ed81b28b52.54de6c4d9fc22429",
+      "_id": "54de6c4d9fc22429"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Retaliation",
+      "_key": "!tables.results!e2b1c6ed81b28b52.156aad720624dd8d",
+      "_id": "156aad720624dd8d"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Retribution",
+      "_key": "!tables.results!e2b1c6ed81b28b52.5d89867cfe32f885",
+      "_id": "5d89867cfe32f885"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Revenant",
+      "_key": "!tables.results!e2b1c6ed81b28b52.c5d5d5e462ddd2ec",
+      "_id": "c5d5d5e462ddd2ec"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Scorched Sea",
+      "_key": "!tables.results!e2b1c6ed81b28b52.e8e889ba2f415db3",
+      "_id": "e8e889ba2f415db3"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Scorpion",
+      "_key": "!tables.results!e2b1c6ed81b28b52.f21666adb3d99506",
+      "_id": "f21666adb3d99506"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Scourge Tide",
+      "_key": "!tables.results!e2b1c6ed81b28b52.3daa8d95ccea170a",
+      "_id": "3daa8d95ccea170a"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Screaming Skull",
+      "_key": "!tables.results!e2b1c6ed81b28b52.2e77979e98e78e40",
+      "_id": "2e77979e98e78e40"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Sea Cleaver",
+      "_key": "!tables.results!e2b1c6ed81b28b52.d442ccc4942531a1",
+      "_id": "d442ccc4942531a1"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Sea Wolf",
+      "_key": "!tables.results!e2b1c6ed81b28b52.d98949c20e44efbc",
+      "_id": "d98949c20e44efbc"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Sepulcher",
+      "_key": "!tables.results!e2b1c6ed81b28b52.d5f44a5fe124c592",
+      "_id": "d5f44a5fe124c592"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Serpent's Bite",
+      "_key": "!tables.results!e2b1c6ed81b28b52.2289cf6331e834fe",
+      "_id": "2289cf6331e834fe"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Siren's Song",
+      "_key": "!tables.results!e2b1c6ed81b28b52.f1ae68c3164fd9ba",
+      "_id": "f1ae68c3164fd9ba"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Slayer's Sigil",
+      "_key": "!tables.results!e2b1c6ed81b28b52.24da51ad99f6fc55",
+      "_id": "24da51ad99f6fc55"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Soul Reaver",
+      "_key": "!tables.results!e2b1c6ed81b28b52.5b6fda6c47d5aaef",
+      "_id": "5b6fda6c47d5aaef"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Stormbringer",
+      "_key": "!tables.results!e2b1c6ed81b28b52.c29775caaeda02d7",
+      "_id": "c29775caaeda02d7"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Tormentor",
+      "_key": "!tables.results!e2b1c6ed81b28b52.fa8168eb1debb240",
+      "_id": "fa8168eb1debb240"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Umbra",
+      "_key": "!tables.results!e2b1c6ed81b28b52.d9e412595700b9ff",
+      "_id": "d9e412595700b9ff"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Venom",
+      "_key": "!tables.results!e2b1c6ed81b28b52.55cbd3b4870d8a73",
+      "_id": "55cbd3b4870d8a73"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Wailing Keen",
+      "_key": "!tables.results!e2b1c6ed81b28b52.9022c0601a102c84",
+      "_id": "9022c0601a102c84"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Wicked Squall",
+      "_key": "!tables.results!e2b1c6ed81b28b52.e8c5ec12e4584103",
+      "_id": "e8c5ec12e4584103"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Witchfire",
+      "_key": "!tables.results!e2b1c6ed81b28b52.f4ab9d1913c1ccd9",
+      "_id": "f4ab9d1913c1ccd9"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Wraith's Gaze",
+      "_key": "!tables.results!e2b1c6ed81b28b52.3687346e74a1ab3d",
+      "_id": "3687346e74a1ab3d"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Forsaken Vow",
+      "_key": "!tables.results!e2b1c6ed81b28b52.ea627e1b80c50492",
+      "_id": "ea627e1b80c50492"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 141,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e2b1c6ed81b28b52"
+}

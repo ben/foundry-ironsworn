@@ -1,0 +1,65 @@
+{
+  "_id": "3d599ea89fc60a3a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/magnitude",
+      "dsid": "oracle_rollable:sundered_isles/misc/magnitude/rank"
+    }
+  },
+  "name": "Rank",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Troublesome",
+      "_key": "!tables.results!3d599ea89fc60a3a.c19f6daf42dcc386",
+      "_id": "c19f6daf42dcc386"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Dangerous",
+      "_key": "!tables.results!3d599ea89fc60a3a.36bfb58268dcc38b",
+      "_id": "36bfb58268dcc38b"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Formidable",
+      "_key": "!tables.results!3d599ea89fc60a3a.5b4d94b3419d12f2",
+      "_id": "5b4d94b3419d12f2"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Extreme",
+      "_key": "!tables.results!3d599ea89fc60a3a.16ef546a64af98bf",
+      "_id": "16ef546a64af98bf"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Epic",
+      "_key": "!tables.results!3d599ea89fc60a3a.9f742725d7185a16",
+      "_id": "9f742725d7185a16"
+    }
+  ],
+  "folder": "a547d2b78f39268a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!3d599ea89fc60a3a"
+}

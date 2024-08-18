@@ -1,0 +1,27 @@
+{
+  "_id": "8163c42999ebc667",
+  "type": "progress",
+  "name": "Warrior",
+  "img": "icons/skills/melee/hand-grip-sword-red.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Battle-hardened</p>\n<p class=\"nogrow\">Scarred</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">The thrill of the fight</p>\n<p class=\"nogrow\">Protect those in my charge</p>\n<p class=\"nogrow\">Survive another day</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Maneuver for advantage</p>\n<p class=\"nogrow\">Find an opening</p>\n</div>\n</div>\n\n<p>Some Ironlanders, through strength of arms, set themselves apart from the common rabble. They are trained to fight, or simply born to it. For them, a sword, spear or axe is as natural a tool as any hammer or spade.</p>\n\n<blockquote>Quest Starter: <p>A legendary warrior, now well past their prime, swears to face a daunting foe in one final battle. What help do they ask of you and why? Who is their enemy?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "026fc49d26877a2e",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/ironlanders/warrior"
+    }
+  },
+  "_key": "!items!8163c42999ebc667"
+}

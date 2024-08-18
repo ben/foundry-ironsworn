@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Starships/Mission/Outlands",
-      "category": "Starforged/Oracles/Starships"
+      "category": "Starforged/Oracles/Starships/Mission",
+      "dsid": "oracle_rollable:starforged/starship/mission/outlands"
     }
   },
   "name": "Outlands",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         2
       ],
       "text": "Blockade a location",
-      "_id": "ac9e57bafef65cf6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.ac9e57bafef65cf6"
+      "_key": "!tables.results!f1495105a27943af.f45ed9f6597cebac",
+      "_id": "f45ed9f6597cebac"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         4
       ],
       "text": "Break a blockade",
-      "_id": "1866f2a34e7c566f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.1866f2a34e7c566f"
+      "_key": "!tables.results!f1495105a27943af.06be154dac924dd3",
+      "_id": "06be154dac924dd3"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         7
       ],
       "text": "Collect a resource",
-      "_id": "983943c37b842ba7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.983943c37b842ba7"
+      "_key": "!tables.results!f1495105a27943af.12254d38fb5546f0",
+      "_id": "12254d38fb5546f0"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         9
       ],
       "text": "Command others",
-      "_id": "0e374a3d8e2e0fb3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.0e374a3d8e2e0fb3"
+      "_key": "!tables.results!f1495105a27943af.236e38973a61c88f",
+      "_id": "236e38973a61c88f"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         11
       ],
       "text": "Conduct diplomacy",
-      "_id": "472e7e503f751044",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.472e7e503f751044"
+      "_key": "!tables.results!f1495105a27943af.5cd8a8a893c8a637",
+      "_id": "5cd8a8a893c8a637"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         13
       ],
       "text": "Conduct espionage",
-      "_id": "a58e79e4258ec14c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.a58e79e4258ec14c"
+      "_key": "!tables.results!f1495105a27943af.7dad8af986019ed5",
+      "_id": "7dad8af986019ed5"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         16
       ],
       "text": "Conduct piracy",
-      "_id": "85ac356ccee63ea6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.85ac356ccee63ea6"
+      "_key": "!tables.results!f1495105a27943af.247028b90bbe825e",
+      "_id": "247028b90bbe825e"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         20
       ],
       "text": "Conduct research",
-      "_id": "39c80572fe2674ec",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.39c80572fe2674ec"
+      "_key": "!tables.results!f1495105a27943af.2404a9ece2d7a546",
+      "_id": "2404a9ece2d7a546"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         24
       ],
       "text": "Defend against an attack",
-      "_id": "4c5f23ef43f56f86",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.4c5f23ef43f56f86"
+      "_key": "!tables.results!f1495105a27943af.4559a4cc9c7a7d87",
+      "_id": "4559a4cc9c7a7d87"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         28
       ],
       "text": "Deliver messages or data",
-      "_id": "f3ef281532d59bb6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.f3ef281532d59bb6"
+      "_key": "!tables.results!f1495105a27943af.d1797a92defb93ab",
+      "_id": "d1797a92defb93ab"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         32
       ],
       "text": "Establish a settlement",
-      "_id": "c96fca3e90993c2c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.c96fca3e90993c2c"
+      "_key": "!tables.results!f1495105a27943af.c38d4cdfb1f8f49e",
+      "_id": "c38d4cdfb1f8f49e"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         36
       ],
       "text": "Evacuate a location",
-      "_id": "36060a9c10434086",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.36060a9c10434086"
+      "_key": "!tables.results!f1495105a27943af.2517f61ce3cadc97",
+      "_id": "2517f61ce3cadc97"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         40
       ],
       "text": "Explore a region",
-      "_id": "fd83d679bb90da9d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.fd83d679bb90da9d"
+      "_key": "!tables.results!f1495105a27943af.f687b7aa8c876ad0",
+      "_id": "f687b7aa8c876ad0"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         42
       ],
       "text": "Hold prisoners",
-      "_id": "e902e1956f9bd768",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.e902e1956f9bd768"
+      "_key": "!tables.results!f1495105a27943af.09b25232c453b1c9",
+      "_id": "09b25232c453b1c9"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         45
       ],
       "text": "Hunt down another ship",
-      "_id": "d021a6ed5424029b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.d021a6ed5424029b"
+      "_key": "!tables.results!f1495105a27943af.88d649738d7e3fe0",
+      "_id": "88d649738d7e3fe0"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         48
       ],
       "text": "Launch an attack",
-      "_id": "2d29b1acfdf3584e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.2d29b1acfdf3584e"
+      "_key": "!tables.results!f1495105a27943af.fe3e737716567b80",
+      "_id": "fe3e737716567b80"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         50
       ],
       "text": "Patrol an area",
-      "_id": "bbd5a49f41ab881a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.bbd5a49f41ab881a"
+      "_key": "!tables.results!f1495105a27943af.973bc2b6516dd4e5",
+      "_id": "973bc2b6516dd4e5"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         53
       ],
       "text": "Provide medical aid",
-      "_id": "ceb120207b12201c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.ceb120207b12201c"
+      "_key": "!tables.results!f1495105a27943af.94d43e082c4e32ad",
+      "_id": "94d43e082c4e32ad"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         56
       ],
       "text": "Provide repairs",
-      "_id": "f122ae5707f30c22",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.f122ae5707f30c22"
+      "_key": "!tables.results!f1495105a27943af.c7f00d24c9b63fff",
+      "_id": "c7f00d24c9b63fff"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         59
       ],
       "text": "Provide shelter",
-      "_id": "6e10e7d66f866854",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.6e10e7d66f866854"
+      "_key": "!tables.results!f1495105a27943af.f4cd1fed0c995afc",
+      "_id": "f4cd1fed0c995afc"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         61
       ],
       "text": "Quarantine a danger",
-      "_id": "5c95b5028451eb0d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.5c95b5028451eb0d"
+      "_key": "!tables.results!f1495105a27943af.d6f2a9de12c6d0a2",
+      "_id": "d6f2a9de12c6d0a2"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         64
       ],
       "text": "Raid a settlement",
-      "_id": "7b1d650a4173f221",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.7b1d650a4173f221"
+      "_key": "!tables.results!f1495105a27943af.334138ae5a78810a",
+      "_id": "334138ae5a78810a"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         68
       ],
       "text": "Resupply a settlement",
-      "_id": "e610d1d6c4dbcf31",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.e610d1d6c4dbcf31"
+      "_key": "!tables.results!f1495105a27943af.1a7e790ca4c3518c",
+      "_id": "1a7e790ca4c3518c"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         71
       ],
       "text": "Retrieve salvage",
-      "_id": "e89fd09a2b1d2e98",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.e89fd09a2b1d2e98"
+      "_key": "!tables.results!f1495105a27943af.0cfa156fefcd5359",
+      "_id": "0cfa156fefcd5359"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         73
       ],
       "text": "Search and rescue",
-      "_id": "354699520351558c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.354699520351558c"
+      "_key": "!tables.results!f1495105a27943af.1e052ebdd1d32162",
+      "_id": "1e052ebdd1d32162"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         75
       ],
       "text": "Smuggle cargo",
-      "_id": "8cdc788760dd388b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.8cdc788760dd388b"
+      "_key": "!tables.results!f1495105a27943af.cc1a2a4087e47bcf",
+      "_id": "cc1a2a4087e47bcf"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         78
       ],
       "text": "Survey a site",
-      "_id": "98cac2bbbe31c460",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.98cac2bbbe31c460"
+      "_key": "!tables.results!f1495105a27943af.5f6d28ad735e8cdc",
+      "_id": "5f6d28ad735e8cdc"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         80
       ],
       "text": "Test a technology",
-      "_id": "b89be148bbe35259",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.b89be148bbe35259"
+      "_key": "!tables.results!f1495105a27943af.909196c280ffcdaf",
+      "_id": "909196c280ffcdaf"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         83
       ],
       "text": "Transport cargo",
-      "_id": "33b1fd3539823c0f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.33b1fd3539823c0f"
+      "_key": "!tables.results!f1495105a27943af.837aae23b84067c0",
+      "_id": "837aae23b84067c0"
     },
     {
       "range": [
@@ -424,27 +280,17 @@
         85
       ],
       "text": "Transport passengers",
-      "_id": "203ab5d6983b023e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.203ab5d6983b023e"
+      "_key": "!tables.results!f1495105a27943af.cb9ae5aedc42bedd",
+      "_id": "cb9ae5aedc42bedd"
     },
     {
       "range": [
         86,
         90
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "657251371effb042",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.657251371effb042"
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!f1495105a27943af.d1287b0376abe24f",
+      "_id": "d1287b0376abe24f"
     },
     {
       "range": [
@@ -452,29 +298,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "9adf6467f78c3f3d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f1495105a27943af.9adf6467f78c3f3d"
+      "_key": "!tables.results!f1495105a27943af.d773fff54953e0be",
+      "_id": "d773fff54953e0be"
     }
   ],
   "folder": "576cfdeddb886db1",
-  "sort": 328,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!f1495105a27943af"
 }

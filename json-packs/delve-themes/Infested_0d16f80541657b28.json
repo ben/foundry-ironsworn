@@ -1,0 +1,141 @@
+{
+  "_id": "0d16f80541657b28",
+  "type": "delve-theme",
+  "name": "Infested",
+  "img": "icons/creatures/eyes/icy-cluster-blue.webp",
+  "system": {
+    "summary": "Foul creatures dwell here.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Inhabited nest"
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Abandoned nest"
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Ravaged terrain or architecture"
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Remains or carrion"
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Hoarded food"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Denizens swarm and attack"
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Toxic or sickening environment"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Denizen stalks you"
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Denizen takes or destroys something"
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Denizen reveals surprising cleverness"
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Denizen guided by a greater threat"
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "Denizen blocks the path"
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Denizen funnels you down a new path"
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "Denizen undermines the path"
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Denizen lays in wait"
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "Trap or snare"
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Victim’s horrible fate is revealed"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 86,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_theme:delve/infested"
+    }
+  },
+  "_key": "!items!0d16f80541657b28"
+}

@@ -1,0 +1,92 @@
+{
+  "_id": "f8b3e9af40a2090a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/opportunity"
+    }
+  },
+  "name": "Shipwreck Opportunity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "Useful provisions or salvage",
+      "_key": "!tables.results!f8b3e9af40a2090a.12d40764cf343933",
+      "_id": "12d40764cf343933"
+    },
+    {
+      "range": [
+        26,
+        40
+      ],
+      "text": "Intriguing map or chart",
+      "_key": "!tables.results!f8b3e9af40a2090a.b776cb121d80304a",
+      "_id": "b776cb121d80304a"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "Ship's log with valuable information",
+      "_key": "!tables.results!f8b3e9af40a2090a.153edba11f654852",
+      "_id": "153edba11f654852"
+    },
+    {
+      "range": [
+        56,
+        65
+      ],
+      "text": "Explorer or survivor with a tale to tell",
+      "_key": "!tables.results!f8b3e9af40a2090a.136999b969de55df",
+      "_id": "136999b969de55df"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Intact [Cargo](datasworn:oracle_rollable:sundered_isles/ship/cargo)",
+      "_key": "!tables.results!f8b3e9af40a2090a.ec3a95c807fe8cb8",
+      "_id": "ec3a95c807fe8cb8"
+    },
+    {
+      "range": [
+        86,
+        96
+      ],
+      "text": "[Treasure](datasworn:oracle_rollable:sundered_isles/treasure/value/small) (small repository)",
+      "_key": "!tables.results!f8b3e9af40a2090a.b7835bcbcb6a87f9",
+      "_id": "b7835bcbcb6a87f9"
+    },
+    {
+      "range": [
+        97,
+        99
+      ],
+      "text": "[Treasure](datasworn:oracle_rollable:sundered_isles/treasure/value/medium) (medium repository)",
+      "_key": "!tables.results!f8b3e9af40a2090a.a8ee2a8697b4009f",
+      "_id": "a8ee2a8697b4009f"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "[Treasure](datasworn:oracle_rollable:sundered_isles/treasure/value/large) (large repository)",
+      "_key": "!tables.results!f8b3e9af40a2090a.0f1218a3a7103943",
+      "_id": "0f1218a3a7103943"
+    }
+  ],
+  "folder": "d4fcc34036960bb6",
+  "sort": 203,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f8b3e9af40a2090a"
+}

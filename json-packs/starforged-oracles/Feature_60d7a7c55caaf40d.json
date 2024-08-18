@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Research/Feature",
-      "category": "Starforged/Oracles/Derelicts/Research"
+      "category": "Starforged/Oracles/Derelicts/Research",
+      "dsid": "oracle_rollable:starforged/derelict/research/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Aquarium or tank",
-      "_id": "1589005b01168901",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.1589005b01168901"
+      "_key": "!tables.results!60d7a7c55caaf40d.e61ddf86a6ae5604",
+      "_id": "e61ddf86a6ae5604"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Biological specimens",
-      "_id": "e4f222cf9a394a34",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.e4f222cf9a394a34"
+      "_key": "!tables.results!60d7a7c55caaf40d.a3e8c99c5b5381b5",
+      "_id": "a3e8c99c5b5381b5"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Bones or fossils",
-      "_id": "3bfca58e23c8842c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.3bfca58e23c8842c"
+      "_key": "!tables.results!60d7a7c55caaf40d.f6030712213ed00e",
+      "_id": "f6030712213ed00e"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Broken equipment",
-      "_id": "9998905343776ed4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.9998905343776ed4"
+      "_key": "!tables.results!60d7a7c55caaf40d.6411fc55ad48dd93",
+      "_id": "6411fc55ad48dd93"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Cryptic research notes",
-      "_id": "9ea66ecfae90fdee",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.9ea66ecfae90fdee"
+      "_key": "!tables.results!60d7a7c55caaf40d.3c316e210e2d0e96",
+      "_id": "3c316e210e2d0e96"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Hastily destroyed data",
-      "_id": "82647f6f0a0dcf15",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.82647f6f0a0dcf15"
+      "_key": "!tables.results!60d7a7c55caaf40d.858b8dac22d23355",
+      "_id": "858b8dac22d23355"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Hazmat suits",
-      "_id": "3b2144b96dfed5e4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.3b2144b96dfed5e4"
+      "_key": "!tables.results!60d7a7c55caaf40d.fe7fb53bd36f7b61",
+      "_id": "fe7fb53bd36f7b61"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Inscrutable artifact",
-      "_id": "685b03f743faad8d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.685b03f743faad8d"
+      "_key": "!tables.results!60d7a7c55caaf40d.fa60642a175c851a",
+      "_id": "fa60642a175c851a"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Invasive plant growth",
-      "_id": "a8b21a8632839869",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.a8b21a8632839869"
+      "_key": "!tables.results!60d7a7c55caaf40d.6f3558f6780af428",
+      "_id": "6f3558f6780af428"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Recorded research log",
-      "_id": "d5300e1a40879236",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.d5300e1a40879236"
+      "_key": "!tables.results!60d7a7c55caaf40d.646a6fdf0481ceca",
+      "_id": "646a6fdf0481ceca"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         88
       ],
       "text": "Spilled chemicals",
-      "_id": "e8657ad915dbd50d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.e8657ad915dbd50d"
+      "_key": "!tables.results!60d7a7c55caaf40d.29dde84a0179fcb0",
+      "_id": "29dde84a0179fcb0"
     },
     {
       "range": [
         89,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "a9a78d505cfd074c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!60d7a7c55caaf40d.a9a78d505cfd074c"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!60d7a7c55caaf40d.7a229a97302bd785",
+      "_id": "7a229a97302bd785"
     }
   ],
   "folder": "9987a5b1c316f884",
   "sort": 359,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!60d7a7c55caaf40d"
 }

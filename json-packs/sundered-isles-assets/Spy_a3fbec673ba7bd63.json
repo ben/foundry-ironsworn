@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "a3fbec673ba7bd63",
+  "folder": "e5df7144ec089f12",
+  "name": "Spy",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you infiltrate a location or event, increase your momentum reset by 1 for the duration of the mission.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} or @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} to adopt a disguise or establish a false identity, add +1. On a hit, add +1 when using that identity to deceive or influence others. If you score a miss with a match when using a false identity, your deception is completely and dramatically undone.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you lie to @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection}, you may reroll one challenge die. If you @Compendium[foundry-ironsworn.starforgedmoves.287bb4c2b53ea847]{Forge a Bond} in a relationship built on lies, choose one.</p>\n<ul>\n<li>Maintain the deception: You may reroll one challenge die.</li>\n<li>Reveal the truth: On a strong hit, make the legacy reward one rank higher (1 extra box if already epic).</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/spy",
+      "dsid": "asset:sundered_isles/path/spy"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!a3fbec673ba7bd63"
+}

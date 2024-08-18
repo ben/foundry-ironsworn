@@ -1,0 +1,65 @@
+{
+  "_id": "322ea49d0943a685",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/devotant"
+    }
+  },
+  "name": "Devotant",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Clergy",
+      "_key": "!tables.results!322ea49d0943a685.5cde27aeef74e8ed",
+      "_id": "5cde27aeef74e8ed"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Cultist",
+      "_key": "!tables.results!322ea49d0943a685.7a71f5b67bcda1dc",
+      "_id": "7a71f5b67bcda1dc"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Inquisitor",
+      "_key": "!tables.results!322ea49d0943a685.d72a07078058243a",
+      "_id": "d72a07078058243a"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Monk",
+      "_key": "!tables.results!322ea49d0943a685.71ac07420dc726af",
+      "_id": "71ac07420dc726af"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Pilgrim",
+      "_key": "!tables.results!322ea49d0943a685.c75f1fc422959d53",
+      "_id": "c75f1fc422959d53"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!322ea49d0943a685"
+}

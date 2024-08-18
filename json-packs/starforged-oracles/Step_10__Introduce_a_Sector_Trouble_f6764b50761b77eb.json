@@ -1,0 +1,201 @@
+{
+  "_id": "f6764b50761b77eb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation/Sector_Trouble",
+      "category": "oracle_collection:starforged/launching_your_campaign/starting_sector",
+      "dsid": "oracle_rollable:starforged/launching_your_campaign/starting_sector/trouble"
+    }
+  },
+  "name": "Step 10: Introduce a Sector Trouble",
+  "description": "<p>You’ve heard rumors of a sector-wide peril, conflict, or mystery. You may come up with a trouble appropriate to your setting and character, roll on the @Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} and @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme} oracles for inspiration, or pick or roll on the table below. Envision how this trouble might manifest, and make note of it on your sector worksheet or journal.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Blockade prevents trade with other sectors",
+      "_key": "!tables.results!f6764b50761b77eb.b93692285397ebee",
+      "_id": "b93692285397ebee"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Bounty hunters search for an infamous fugitive",
+      "_key": "!tables.results!f6764b50761b77eb.2a9f9f17a031099a",
+      "_id": "2a9f9f17a031099a"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Chaotic breaches in spacetime spread like wildfire",
+      "_key": "!tables.results!f6764b50761b77eb.5d1a8790430e251e",
+      "_id": "5d1a8790430e251e"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Criminal faction corrupts local authorities",
+      "_key": "!tables.results!f6764b50761b77eb.3313498dd72c652b",
+      "_id": "3313498dd72c652b"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Devastating superweapon has fallen into the wrong hands",
+      "_key": "!tables.results!f6764b50761b77eb.23190374f70bf1ce",
+      "_id": "23190374f70bf1ce"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Energy storms are rampant",
+      "_key": "!tables.results!f6764b50761b77eb.feeabc828fb75b5b",
+      "_id": "feeabc828fb75b5b"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Magnetic disturbances disrupt communication",
+      "_key": "!tables.results!f6764b50761b77eb.aeb80189b2316c15",
+      "_id": "aeb80189b2316c15"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Newly found resource lures greedy fortune hunters to the sector",
+      "_key": "!tables.results!f6764b50761b77eb.b4dbdd01bec57670",
+      "_id": "b4dbdd01bec57670"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Notorious pirate clan preys on starships",
+      "_key": "!tables.results!f6764b50761b77eb.c67c2f5761b43168",
+      "_id": "c67c2f5761b43168"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Parasitic lifeforms spread like a plague",
+      "_key": "!tables.results!f6764b50761b77eb.673b4612335b40df",
+      "_id": "673b4612335b40df"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Precursor sites throughout the sector emit strange signals",
+      "_key": "!tables.results!f6764b50761b77eb.dc437dd1ed352c86",
+      "_id": "dc437dd1ed352c86"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Prophecies foretell an imminent awakening of a dreadful power",
+      "_key": "!tables.results!f6764b50761b77eb.88f452d3adcb7384",
+      "_id": "88f452d3adcb7384"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Raider clan emerges as a dominant threat under a new leader",
+      "_key": "!tables.results!f6764b50761b77eb.b34e6ed6ae75bbf1",
+      "_id": "b34e6ed6ae75bbf1"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Religious zealots overrun the sector",
+      "_key": "!tables.results!f6764b50761b77eb.5e1e596d20650fe7",
+      "_id": "5e1e596d20650fe7"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Rogue AI infiltrates systems throughout the sector",
+      "_key": "!tables.results!f6764b50761b77eb.9a34e8ac5f384a04",
+      "_id": "9a34e8ac5f384a04"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Settlements or factions are on the brink of war",
+      "_key": "!tables.results!f6764b50761b77eb.29005fe4531405f3",
+      "_id": "29005fe4531405f3"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Ships regularly go missing",
+      "_key": "!tables.results!f6764b50761b77eb.98fb5116988dc462",
+      "_id": "98fb5116988dc462"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Sickness spreads among ships and settlements",
+      "_key": "!tables.results!f6764b50761b77eb.225ce1313a577581",
+      "_id": "225ce1313a577581"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Supernova is imminent",
+      "_key": "!tables.results!f6764b50761b77eb.5f15807f50a3b613",
+      "_id": "5f15807f50a3b613"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Titanic spaceborne lifeform stalks the spaceways",
+      "_key": "!tables.results!f6764b50761b77eb.d080fa95e2017fd9",
+      "_id": "d080fa95e2017fd9"
+    }
+  ],
+  "folder": "4ccc51b0c6aa4fcc",
+  "sort": 126,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f6764b50761b77eb"
+}

@@ -1,22 +1,16 @@
 {
   "name": "Living",
-  "_id": "026e85bc4b8047b8",
+  "description": "",
   "type": "RollTable",
+  "_id": "026e85bc4b8047b8",
   "sort": 355,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Derelicts/Living"
+      "dfid": "Starforged/Oracles/Derelicts/Living",
+      "dsid": "oracle_collection:starforged/derelict/living"
     }
   },
   "folder": "fd19a02fbd5f71e6",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!026e85bc4b8047b8"
 }

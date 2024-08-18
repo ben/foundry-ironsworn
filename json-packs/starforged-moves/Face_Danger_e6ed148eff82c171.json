@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Face Danger",
   "img": "icons/dice/d10black.svg",
+  "folder": "e5b957751be9d2e6",
   "system": {
     "dfid": "Starforged/Moves/Adventure/Face_Danger",
     "Category": "Starforged/Moves/Adventure",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you attempt something risky or react to an imminent threat**, envision your action and roll. If you act...\n\n  * With speed, mobility, or agility: Roll +edge\n  * With resolve, command, or sociability: Roll +heart\n  * With strength, endurance, or aggression: Roll +iron\n  * With deception, stealth, or trickery: Roll +shadow\n  * With expertise, focus, or observation: Roll +wits\n\nOn a **strong hit**, you are successful. Take +1 momentum.\n\nOn a **weak hit**, you succeed, but not without a cost. Make a suffer move (-1).\n\nOn a **miss**, you fail, or a momentary success is undermined by a dire turn of events. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Text": "__When you attempt something risky or react to an imminent threat__, envision your action and roll. If you act...\n\n  * With speed, mobility, or agility: Roll +edge\n  * With resolve, command, or sociability: Roll +heart\n  * With strength, endurance, or aggression: Roll +iron\n  * With deception, stealth, or trickery: Roll +shadow\n  * With expertise, focus, or observation: Roll +wits\n\nOn a __strong hit__, you are successful. Take +1 momentum.\n\nOn a __weak hit__, you succeed, but not without a cost. Make a suffer move (-1).\n\nOn a __miss__, you fail, or a momentary success is undermined by a dire turn of events. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
     "Trigger": {
       "Text": "When you attempt something risky or react to an imminent threat...",
       "Options": [
@@ -56,66 +57,42 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You are successful. Take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you are successful. Take +1 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You succeed, but not without a cost. Make a suffer move (-1).",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you succeed, but not without a cost. Make a suffer move (-1)."
       },
       "Miss": {
-        "Text": "You fail, or a momentary success is undermined by a dire turn of events. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you fail, or a momentary success is undermined by a dire turn of events. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 147
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#3C70A4",
       "Images": []
     }
   },
   "sort": 147,
-  "folder": "e5b957751be9d2e6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Adventure/Face_Danger",
+      "dsid": "move:starforged/adventure/face_danger"
+    }
   },
   "_key": "!items!e6ed148eff82c171"
 }

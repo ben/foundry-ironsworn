@@ -1,0 +1,56 @@
+{
+  "_id": "7ad99dda86234f75",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/name/moniker_cursed",
+      "dsid": "oracle_rollable:sundered_isles/character/name/moniker_cursed/category"
+    }
+  },
+  "name": "Moniker Category",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "[Dreadful Persona](datasworn:oracle_rollable:sundered_isles/character/name/moniker_cursed/dreadful_persona)",
+      "_key": "!tables.results!7ad99dda86234f75.8ed01d2f458ce179",
+      "_id": "8ed01d2f458ce179"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "[Eldritch Powers](datasworn:oracle_rollable:sundered_isles/character/name/moniker_cursed/eldritch_powers)",
+      "_key": "!tables.results!7ad99dda86234f75.b007391f85596d7f",
+      "_id": "b007391f85596d7f"
+    },
+    {
+      "range": [
+        61,
+        90
+      ],
+      "text": "[Ill-Fated Nature](datasworn:oracle_rollable:sundered_isles/character/name/moniker_cursed/ill_fated_nature)",
+      "_key": "!tables.results!7ad99dda86234f75.c48bbe9dbafea6df",
+      "_id": "c48bbe9dbafea6df"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "[Mechanical Form](datasworn:oracle_rollable:sundered_isles/character/name/moniker_cursed/mechanical_form)",
+      "_key": "!tables.results!7ad99dda86234f75.1de9349ead923664",
+      "_id": "1de9349ead923664"
+    }
+  ],
+  "folder": "5c43d16b683d442f",
+  "sort": 197,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7ad99dda86234f75"
+}

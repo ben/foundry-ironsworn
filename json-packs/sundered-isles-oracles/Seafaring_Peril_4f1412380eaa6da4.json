@@ -1,0 +1,326 @@
+{
+  "_id": "4f1412380eaa6da4",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/seafaring",
+      "dsid": "oracle_rollable:sundered_isles/seafaring/peril"
+    }
+  },
+  "name": "Seafaring Peril",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Boarders strike without warning",
+      "_key": "!tables.results!4f1412380eaa6da4.24ccfca16de7bb75",
+      "_id": "24ccfca16de7bb75"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Crewmember goes missing",
+      "_key": "!tables.results!4f1412380eaa6da4.7e05da4a47aca938",
+      "_id": "7e05da4a47aca938"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Crewmember is found dead",
+      "_key": "!tables.results!4f1412380eaa6da4.7e8fce7465dae8bf",
+      "_id": "7e8fce7465dae8bf"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Crewmember is injured",
+      "_key": "!tables.results!4f1412380eaa6da4.a8f96893ab63d94b",
+      "_id": "a8f96893ab63d94b"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Crewmembers argue or brawl",
+      "_key": "!tables.results!4f1412380eaa6da4.12fcac879bef3420",
+      "_id": "12fcac879bef3420"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Crewmembers challenge your decisions or command",
+      "_key": "!tables.results!4f1412380eaa6da4.0d37d04e0e44e999",
+      "_id": "0d37d04e0e44e999"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Crewmembers grow bored or restless",
+      "_key": "!tables.results!4f1412380eaa6da4.9eabd20f01b65b36",
+      "_id": "9eabd20f01b65b36"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Crewmembers grow suspicious of each other",
+      "_key": "!tables.results!4f1412380eaa6da4.5ed19bcc6a11f241",
+      "_id": "5ed19bcc6a11f241"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Dangerous current or whirlpool takes hold",
+      "_key": "!tables.results!4f1412380eaa6da4.bb535b03ddac7802",
+      "_id": "bb535b03ddac7802"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Enemies form a blockade",
+      "_key": "!tables.results!4f1412380eaa6da4.f084d4d690cd648e",
+      "_id": "f084d4d690cd648e"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Enemy ship is sighted",
+      "_key": "!tables.results!4f1412380eaa6da4.715fb16305410dd2",
+      "_id": "715fb16305410dd2"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Hostile beast attacks",
+      "_key": "!tables.results!4f1412380eaa6da4.b481661efbe18665",
+      "_id": "b481661efbe18665"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Hull is fouled or leaking",
+      "_key": "!tables.results!4f1412380eaa6da4.1ec0bd1d165621fe",
+      "_id": "1ec0bd1d165621fe"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Ill omens cause anxiety",
+      "_key": "!tables.results!4f1412380eaa6da4.d5436abef581d310",
+      "_id": "d5436abef581d310"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Imperiled ship signals for help",
+      "_key": "!tables.results!4f1412380eaa6da4.a326ec30cc3971da",
+      "_id": "a326ec30cc3971da"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Isolation or fear presses in",
+      "_key": "!tables.results!4f1412380eaa6da4.8e50a2a029398a9d",
+      "_id": "8e50a2a029398a9d"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Mysterious wreckage portends a new threat",
+      "_key": "!tables.results!4f1412380eaa6da4.7a00e743ae9c0851",
+      "_id": "7a00e743ae9c0851"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Provisions are spoiled or corrupted",
+      "_key": "!tables.results!4f1412380eaa6da4.95c200aca5dda4aa",
+      "_id": "95c200aca5dda4aa"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Rigging or equipment is damaged or broken",
+      "_key": "!tables.results!4f1412380eaa6da4.fef0e56aa2ef35a1",
+      "_id": "fef0e56aa2ef35a1"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Rogue wave strikes",
+      "_key": "!tables.results!4f1412380eaa6da4.b1c1135fcbd2056e",
+      "_id": "b1c1135fcbd2056e"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Sabotage is revealed",
+      "_key": "!tables.results!4f1412380eaa6da4.1c4d312fd5452cd7",
+      "_id": "1c4d312fd5452cd7"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Shallow waters or obstructions imperil navigation",
+      "_key": "!tables.results!4f1412380eaa6da4.5a3b8811374554ab",
+      "_id": "5a3b8811374554ab"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Shipboard fire breaks out",
+      "_key": "!tables.results!4f1412380eaa6da4.2e0a9911727f57ba",
+      "_id": "2e0a9911727f57ba"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Sickness threatens the health of the crew",
+      "_key": "!tables.results!4f1412380eaa6da4.868e514f8efec79b",
+      "_id": "868e514f8efec79b"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Storm looms",
+      "_key": "!tables.results!4f1412380eaa6da4.bab10990918668f7",
+      "_id": "bab10990918668f7"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Stowaway is revealed",
+      "_key": "!tables.results!4f1412380eaa6da4.b6f21130ef29ccb6",
+      "_id": "b6f21130ef29ccb6"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "True nature of a cargo, crewmember, or passenger is revealed",
+      "_key": "!tables.results!4f1412380eaa6da4.fbcb4aa0247ca531",
+      "_id": "fbcb4aa0247ca531"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Valuable cargo or provisions go missing",
+      "_key": "!tables.results!4f1412380eaa6da4.390d2b585e9ec760",
+      "_id": "390d2b585e9ec760"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Vermin infest spaces below decks",
+      "_key": "!tables.results!4f1412380eaa6da4.ff68fb6463ef1857",
+      "_id": "ff68fb6463ef1857"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Wind recedes, and the sails fall slack",
+      "_key": "!tables.results!4f1412380eaa6da4.313bd8ac1bb06e54",
+      "_id": "313bd8ac1bb06e54"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "You are lost or off course",
+      "_key": "!tables.results!4f1412380eaa6da4.19e2de762d4ee780",
+      "_id": "19e2de762d4ee780"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "[Foul Weather](datasworn:oracle_rollable:sundered_isles/weather/foul)",
+      "_key": "!tables.results!4f1412380eaa6da4.3f3ecc847145162b",
+      "_id": "3f3ecc847145162b"
+    },
+    {
+      "range": [
+        97,
+        99
+      ],
+      "text": "[Action](datasworn:oracle_rollable:sundered_isles/core/action) + [Theme](datasworn:oracle_rollable:sundered_isles/core/theme)",
+      "_key": "!tables.results!4f1412380eaa6da4.4473a567a9b1b72d",
+      "_id": "4473a567a9b1b72d"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!4f1412380eaa6da4.3d420bcd482ea069",
+      "_id": "3d420bcd482ea069"
+    }
+  ],
+  "folder": "8d239f77c6ee1f9d",
+  "sort": 128,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4f1412380eaa6da4"
+}

@@ -1,0 +1,110 @@
+{
+  "_id": "b1d76a3b562db7c1",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/sea",
+      "dsid": "oracle_rollable:sundered_isles/cave/sea/heart"
+    }
+  },
+  "name": "Sea Cave Heart",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Elaborate trap or puzzle",
+      "_key": "!tables.results!b1d76a3b562db7c1.4ec87d8a64d020ca",
+      "_id": "4ec87d8a64d020ca"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Lair of a beast",
+      "_key": "!tables.results!b1d76a3b562db7c1.77f9a1c285c50eb7",
+      "_id": "77f9a1c285c50eb7"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Sacred or fabled artifact",
+      "_key": "!tables.results!b1d76a3b562db7c1.5f65a63d0738d846",
+      "_id": "5f65a63d0738d846"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Secret hideout or refuge",
+      "_key": "!tables.results!b1d76a3b562db7c1.b1f980bd050c6208",
+      "_id": "b1f980bd050c6208"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Wondrous natural environment",
+      "_key": "!tables.results!b1d76a3b562db7c1.7ad21dcdd7bbe19e",
+      "_id": "7ad21dcdd7bbe19e"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "[Ruin](datasworn:oracle_collection:sundered_isles/ruin)",
+      "_key": "!tables.results!b1d76a3b562db7c1.0295e0ea34653e79",
+      "_id": "0295e0ea34653e79"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "[Ship](datasworn:oracle_collection:sundered_isles/ship)",
+      "_key": "!tables.results!b1d76a3b562db7c1.e0f8128e025d6281",
+      "_id": "e0f8128e025d6281"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "[Shipwreck](datasworn:oracle_collection:sundered_isles/shipwreck)",
+      "_key": "!tables.results!b1d76a3b562db7c1.c0bd0df7e93a0c77",
+      "_id": "c0bd0df7e93a0c77"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "[Treasure](datasworn:oracle_rollable:sundered_isles/treasure/value/large) (large repository)",
+      "_key": "!tables.results!b1d76a3b562db7c1.a33ce5c6b7e8e843",
+      "_id": "a33ce5c6b7e8e843"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "[Treasure](datasworn:oracle_rollable:sundered_isles/treasure/value/vast) (vast repository)",
+      "_key": "!tables.results!b1d76a3b562db7c1.cd0c970e877dc965",
+      "_id": "cd0c970e877dc965"
+    }
+  ],
+  "folder": "80ed534e9e0f713e",
+  "sort": 209,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b1d76a3b562db7c1"
+}

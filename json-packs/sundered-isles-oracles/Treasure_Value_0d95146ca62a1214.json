@@ -1,0 +1,15 @@
+{
+  "name": "Treasure Value",
+  "description": "",
+  "type": "RollTable",
+  "_id": "0d95146ca62a1214",
+  "sort": 221,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/treasure/value"
+    }
+  },
+  "folder": "4b1f1e3c1b624444",
+  "sorting": "a",
+  "_key": "!folders!0d95146ca62a1214"
+}

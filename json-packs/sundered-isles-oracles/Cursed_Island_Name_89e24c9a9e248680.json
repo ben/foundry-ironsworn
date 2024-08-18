@@ -1,0 +1,452 @@
+{
+  "_id": "89e24c9a9e248680",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island",
+      "dsid": "oracle_rollable:sundered_isles/island/name_cursed"
+    }
+  },
+  "name": "Cursed Island Name",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Ash",
+      "_key": "!tables.results!89e24c9a9e248680.4e758ce5f903fe42",
+      "_id": "4e758ce5f903fe42"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Bane",
+      "_key": "!tables.results!89e24c9a9e248680.eaff5149d782b6e3",
+      "_id": "eaff5149d782b6e3"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Banshee",
+      "_key": "!tables.results!89e24c9a9e248680.e0b7e505e3149b0f",
+      "_id": "e0b7e505e3149b0f"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Barrow",
+      "_key": "!tables.results!89e24c9a9e248680.2834c5029e6e55bd",
+      "_id": "2834c5029e6e55bd"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Blight",
+      "_key": "!tables.results!89e24c9a9e248680.3ff581df9255af06",
+      "_id": "3ff581df9255af06"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Bloody",
+      "_key": "!tables.results!89e24c9a9e248680.f51759ccf1ccbb1d",
+      "_id": "f51759ccf1ccbb1d"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Bog",
+      "_key": "!tables.results!89e24c9a9e248680.cfb2f5563daf50d5",
+      "_id": "cfb2f5563daf50d5"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Bone",
+      "_key": "!tables.results!89e24c9a9e248680.fa53a1d37c905f5e",
+      "_id": "fa53a1d37c905f5e"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Broken",
+      "_key": "!tables.results!89e24c9a9e248680.d324bf141b95bafa",
+      "_id": "d324bf141b95bafa"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Carrion",
+      "_key": "!tables.results!89e24c9a9e248680.b76cc1b956eb8586",
+      "_id": "b76cc1b956eb8586"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Castaway",
+      "_key": "!tables.results!89e24c9a9e248680.2a116bac023b0af3",
+      "_id": "2a116bac023b0af3"
+    },
+    {
+      "range": [
+        24,
+        25
+      ],
+      "text": "Charnel",
+      "_key": "!tables.results!89e24c9a9e248680.68d024842e2c09b5",
+      "_id": "68d024842e2c09b5"
+    },
+    {
+      "range": [
+        26,
+        27
+      ],
+      "text": "Cutthroat",
+      "_key": "!tables.results!89e24c9a9e248680.00c565712284a4c7",
+      "_id": "00c565712284a4c7"
+    },
+    {
+      "range": [
+        28,
+        29
+      ],
+      "text": "Deadwood",
+      "_key": "!tables.results!89e24c9a9e248680.610e3c054b044bfe",
+      "_id": "610e3c054b044bfe"
+    },
+    {
+      "range": [
+        30,
+        31
+      ],
+      "text": "Drowned",
+      "_key": "!tables.results!89e24c9a9e248680.9682c578a78ff200",
+      "_id": "9682c578a78ff200"
+    },
+    {
+      "range": [
+        32,
+        33
+      ],
+      "text": "Eidolon",
+      "_key": "!tables.results!89e24c9a9e248680.db5be1090a045da4",
+      "_id": "db5be1090a045da4"
+    },
+    {
+      "range": [
+        34,
+        35
+      ],
+      "text": "Forsaken",
+      "_key": "!tables.results!89e24c9a9e248680.c2b3316edb70343d",
+      "_id": "c2b3316edb70343d"
+    },
+    {
+      "range": [
+        36,
+        37
+      ],
+      "text": "Frost",
+      "_key": "!tables.results!89e24c9a9e248680.5539efd94763cbb2",
+      "_id": "5539efd94763cbb2"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Ghast",
+      "_key": "!tables.results!89e24c9a9e248680.6b4eee1435498917",
+      "_id": "6b4eee1435498917"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Grave",
+      "_key": "!tables.results!89e24c9a9e248680.f3be1b3c8a383041",
+      "_id": "f3be1b3c8a383041"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Harrow",
+      "_key": "!tables.results!89e24c9a9e248680.848ecba0c234684f",
+      "_id": "848ecba0c234684f"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Lacuna",
+      "_key": "!tables.results!89e24c9a9e248680.433078367157d6b8",
+      "_id": "433078367157d6b8"
+    },
+    {
+      "range": [
+        46,
+        47
+      ],
+      "text": "Leech",
+      "_key": "!tables.results!89e24c9a9e248680.b07ea311c041c9dd",
+      "_id": "b07ea311c041c9dd"
+    },
+    {
+      "range": [
+        48,
+        49
+      ],
+      "text": "Lost",
+      "_key": "!tables.results!89e24c9a9e248680.67ae694fa2cfdb7d",
+      "_id": "67ae694fa2cfdb7d"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "Marauder",
+      "_key": "!tables.results!89e24c9a9e248680.b77fde070f430266",
+      "_id": "b77fde070f430266"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Marrow",
+      "_key": "!tables.results!89e24c9a9e248680.eeb16dea1b9ed164",
+      "_id": "eeb16dea1b9ed164"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Muck",
+      "_key": "!tables.results!89e24c9a9e248680.140ecb1e7e959230",
+      "_id": "140ecb1e7e959230"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Oblivion",
+      "_key": "!tables.results!89e24c9a9e248680.a58065707b5af3b1",
+      "_id": "a58065707b5af3b1"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Phantom",
+      "_key": "!tables.results!89e24c9a9e248680.c61ab511ce546e1f",
+      "_id": "c61ab511ce546e1f"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Portent",
+      "_key": "!tables.results!89e24c9a9e248680.eef398e654543f64",
+      "_id": "eef398e654543f64"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Rot",
+      "_key": "!tables.results!89e24c9a9e248680.3092c877d27977b2",
+      "_id": "3092c877d27977b2"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Scar",
+      "_key": "!tables.results!89e24c9a9e248680.a77ecee0210052a6",
+      "_id": "a77ecee0210052a6"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Scorch",
+      "_key": "!tables.results!89e24c9a9e248680.28fad48347312d16",
+      "_id": "28fad48347312d16"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Scorn",
+      "_key": "!tables.results!89e24c9a9e248680.c88cb9e332c2080e",
+      "_id": "c88cb9e332c2080e"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Scourge",
+      "_key": "!tables.results!89e24c9a9e248680.f835bb9dc4bfc44e",
+      "_id": "f835bb9dc4bfc44e"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Shadow",
+      "_key": "!tables.results!89e24c9a9e248680.66f8c1aab6e9e5f3",
+      "_id": "66f8c1aab6e9e5f3"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Shattered",
+      "_key": "!tables.results!89e24c9a9e248680.c65c6e97fa2e156a",
+      "_id": "c65c6e97fa2e156a"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Shipwreck",
+      "_key": "!tables.results!89e24c9a9e248680.85075fe25f1f0999",
+      "_id": "85075fe25f1f0999"
+    },
+    {
+      "range": [
+        80,
+        81
+      ],
+      "text": "Shroud",
+      "_key": "!tables.results!89e24c9a9e248680.482f362bc5d80e01",
+      "_id": "482f362bc5d80e01"
+    },
+    {
+      "range": [
+        82,
+        83
+      ],
+      "text": "Sinking",
+      "_key": "!tables.results!89e24c9a9e248680.f13c53cb1d98beed",
+      "_id": "f13c53cb1d98beed"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "Skull",
+      "_key": "!tables.results!89e24c9a9e248680.454bc798f94ccef5",
+      "_id": "454bc798f94ccef5"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Sorrow",
+      "_key": "!tables.results!89e24c9a9e248680.18420ad2c5dce9a5",
+      "_id": "18420ad2c5dce9a5"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Specter",
+      "_key": "!tables.results!89e24c9a9e248680.2f26ae06f3475c18",
+      "_id": "2f26ae06f3475c18"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Tempest",
+      "_key": "!tables.results!89e24c9a9e248680.25352d23d7962846",
+      "_id": "25352d23d7962846"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Thorn",
+      "_key": "!tables.results!89e24c9a9e248680.2e52fe3ba174c2e7",
+      "_id": "2e52fe3ba174c2e7"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Torment",
+      "_key": "!tables.results!89e24c9a9e248680.1388129965b627b0",
+      "_id": "1388129965b627b0"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Wither",
+      "_key": "!tables.results!89e24c9a9e248680.e963fad9453b21bb",
+      "_id": "e963fad9453b21bb"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Wraith",
+      "_key": "!tables.results!89e24c9a9e248680.b1903bc36f03e9a5",
+      "_id": "b1903bc36f03e9a5"
+    }
+  ],
+  "folder": "775da3a96cc7c668",
+  "sort": 147,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!89e24c9a9e248680"
+}

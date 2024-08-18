@@ -1,0 +1,66 @@
+{
+  "_id": "b2c23660dbcfe5b2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Turning_Point/Challenge_Rank/Foes",
+      "category": "Ironsworn/Oracles/Turning_Point",
+      "dsid": "oracle_rollable:classic/turning_point/challenge_rank"
+    }
+  },
+  "name": "Challenge Rank",
+  "description": "<p>Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Troublesome",
+      "_key": "!tables.results!b2c23660dbcfe5b2.a41b34f3743b203c",
+      "_id": "a41b34f3743b203c"
+    },
+    {
+      "range": [
+        21,
+        55
+      ],
+      "text": "Dangerous",
+      "_key": "!tables.results!b2c23660dbcfe5b2.1a24590aed446e8c",
+      "_id": "1a24590aed446e8c"
+    },
+    {
+      "range": [
+        56,
+        80
+      ],
+      "text": "Formidable",
+      "_key": "!tables.results!b2c23660dbcfe5b2.e9956bc8e219f9c0",
+      "_id": "e9956bc8e219f9c0"
+    },
+    {
+      "range": [
+        81,
+        93
+      ],
+      "text": "Extreme",
+      "_key": "!tables.results!b2c23660dbcfe5b2.b5491641986a82fa",
+      "_id": "b5491641986a82fa"
+    },
+    {
+      "range": [
+        94,
+        100
+      ],
+      "text": "Epic",
+      "_key": "!tables.results!b2c23660dbcfe5b2.17fde9154f46e133",
+      "_id": "17fde9154f46e133"
+    }
+  ],
+  "folder": "b4c697d8bd353315",
+  "sort": 190,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b2c23660dbcfe5b2"
+}

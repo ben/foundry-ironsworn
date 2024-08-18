@@ -1,0 +1,110 @@
+{
+  "_id": "37b15f106cc89ca8",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/craft",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/craft/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Adamantine",
+      "_key": "!tables.results!37b15f106cc89ca8.56ebef3a9c27d3e4",
+      "_id": "56ebef3a9c27d3e4"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Brass",
+      "_key": "!tables.results!37b15f106cc89ca8.0119d3cbaf90ece7",
+      "_id": "0119d3cbaf90ece7"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Copper",
+      "_key": "!tables.results!37b15f106cc89ca8.c43ef80cd5a6b94b",
+      "_id": "c43ef80cd5a6b94b"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Anchored",
+      "_key": "!tables.results!37b15f106cc89ca8.417b41179c846159",
+      "_id": "417b41179c846159"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Ember",
+      "_key": "!tables.results!37b15f106cc89ca8.893922ec5b1d9f6a",
+      "_id": "893922ec5b1d9f6a"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Forgeborn",
+      "_key": "!tables.results!37b15f106cc89ca8.d8f39a09345c72b8",
+      "_id": "d8f39a09345c72b8"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Iron",
+      "_key": "!tables.results!37b15f106cc89ca8.9f62c62382edc818",
+      "_id": "9f62c62382edc818"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Ironwrought",
+      "_key": "!tables.results!37b15f106cc89ca8.37b502e0e1c3c67f",
+      "_id": "37b502e0e1c3c67f"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Quicksilver",
+      "_key": "!tables.results!37b15f106cc89ca8.863c70cc59f46b2a",
+      "_id": "863c70cc59f46b2a"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tempered",
+      "_key": "!tables.results!37b15f106cc89ca8.aab2cd09f25b28eb",
+      "_id": "aab2cd09f25b28eb"
+    }
+  ],
+  "folder": "2a7faa3f0fb6d084",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!37b15f106cc89ca8"
+}

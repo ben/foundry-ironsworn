@@ -1,0 +1,470 @@
+{
+  "_id": "cddac40a99f7a12c",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/trademark_accessories"
+    }
+  },
+  "name": "Trademark Accessories",
+  "description": "<p>This table includes conspicuous gear, adornment, and clothing. Use it to help envision the look of a notable character, particularly one who is a seafarer or adventurer. To arm them with a favorite weapon, check @Compendium[foundry-ironsworn.sunderedislesmoves.ba4ca6bab80e77d3]{Trademark Weapons}.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Animal claw necklace",
+      "_key": "!tables.results!cddac40a99f7a12c.90050d155b5cc962",
+      "_id": "90050d155b5cc962"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Array of colorful sashes",
+      "_key": "!tables.results!cddac40a99f7a12c.0e0f96066f658620",
+      "_id": "0e0f96066f658620"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Baldric with a buckle of a monstrous face",
+      "_key": "!tables.results!cddac40a99f7a12c.6e7bb7eac04cbcac",
+      "_id": "6e7bb7eac04cbcac"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Bandoleer stocked with vials and flasks",
+      "_key": "!tables.results!cddac40a99f7a12c.73ac7bd64b948cf9",
+      "_id": "73ac7bd64b948cf9"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Battle-scarred breastplate",
+      "_key": "!tables.results!cddac40a99f7a12c.21aa2bcc5784afb0",
+      "_id": "21aa2bcc5784afb0"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Bloodied tunic",
+      "_key": "!tables.results!cddac40a99f7a12c.5d972706576651d5",
+      "_id": "5d972706576651d5"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Braids strung with colorful beads",
+      "_key": "!tables.results!cddac40a99f7a12c.e665630bee73f16a",
+      "_id": "e665630bee73f16a"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Buckled corset",
+      "_key": "!tables.results!cddac40a99f7a12c.89ec67c93400f97a",
+      "_id": "89ec67c93400f97a"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Collection of keys hung from an iron ring",
+      "_key": "!tables.results!cddac40a99f7a12c.b529ef2a7d161f05",
+      "_id": "b529ef2a7d161f05"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Colorful skirt or kilt",
+      "_key": "!tables.results!cddac40a99f7a12c.a4c20005786ac633",
+      "_id": "a4c20005786ac633"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Cracked spectacles or goggles",
+      "_key": "!tables.results!cddac40a99f7a12c.533dbcaa75a2c2b6",
+      "_id": "533dbcaa75a2c2b6"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Dark hooded cloak",
+      "_key": "!tables.results!cddac40a99f7a12c.4545300452f831ee",
+      "_id": "4545300452f831ee"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Dramatic cape",
+      "_key": "!tables.results!cddac40a99f7a12c.0a1650a92cf01a10",
+      "_id": "0a1650a92cf01a10"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Ear pendant with a glimmering gem",
+      "_key": "!tables.results!cddac40a99f7a12c.eb47c85b2779b3c3",
+      "_id": "eb47c85b2779b3c3"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Elaborate masquerade mask",
+      "_key": "!tables.results!cddac40a99f7a12c.f901c14a4e81999a",
+      "_id": "f901c14a4e81999a"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Enormous shark tooth pendant",
+      "_key": "!tables.results!cddac40a99f7a12c.dea688bc6117cb76",
+      "_id": "dea688bc6117cb76"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Face-concealing veil or bandanna",
+      "_key": "!tables.results!cddac40a99f7a12c.0c6f77446207dbc4",
+      "_id": "0c6f77446207dbc4"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "False eye carved from a gemstone",
+      "_key": "!tables.results!cddac40a99f7a12c.dfb948d06123c5e4",
+      "_id": "dfb948d06123c5e4"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Fancy wig",
+      "_key": "!tables.results!cddac40a99f7a12c.f457765d0b59dc41",
+      "_id": "f457765d0b59dc41"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Flamboyant feathered hat",
+      "_key": "!tables.results!cddac40a99f7a12c.376d54605b168dd4",
+      "_id": "376d54605b168dd4"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Frayed straw hat",
+      "_key": "!tables.results!cddac40a99f7a12c.125518c5f71b9793",
+      "_id": "125518c5f71b9793"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Grand signet ring",
+      "_key": "!tables.results!cddac40a99f7a12c.e6fed6285d20cd67",
+      "_id": "e6fed6285d20cd67"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Heirloom fiddle with brass gilding",
+      "_key": "!tables.results!cddac40a99f7a12c.b934212a6e0c6394",
+      "_id": "b934212a6e0c6394"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Hook hand",
+      "_key": "!tables.results!cddac40a99f7a12c.0a273ebe8747a364",
+      "_id": "0a273ebe8747a364"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Immaculate frilled shirt",
+      "_key": "!tables.results!cddac40a99f7a12c.871152be2bd77ba4",
+      "_id": "871152be2bd77ba4"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Inscrutable iron mask",
+      "_key": "!tables.results!cddac40a99f7a12c.0c8394bfadc32521",
+      "_id": "0c8394bfadc32521"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Intricate mechanical prosthetic",
+      "_key": "!tables.results!cddac40a99f7a12c.1738cec030185347",
+      "_id": "1738cec030185347"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Jewel-encrusted pendant",
+      "_key": "!tables.results!cddac40a99f7a12c.51d3299242171a90",
+      "_id": "51d3299242171a90"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Jeweled eye patch",
+      "_key": "!tables.results!cddac40a99f7a12c.b1d0eff4c95fe794",
+      "_id": "b1d0eff4c95fe794"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Knee-high leather boots",
+      "_key": "!tables.results!cddac40a99f7a12c.d02592efe593b6b0",
+      "_id": "d02592efe593b6b0"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Large tattoo of a legendary beast",
+      "_key": "!tables.results!cddac40a99f7a12c.6ff291f900339ba2",
+      "_id": "6ff291f900339ba2"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Leather long coat",
+      "_key": "!tables.results!cddac40a99f7a12c.3ebe9c53f7efc4ae",
+      "_id": "3ebe9c53f7efc4ae"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Length of coiled rope",
+      "_key": "!tables.results!cddac40a99f7a12c.9f25ffae0c5e171a",
+      "_id": "9f25ffae0c5e171a"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Loyal animal companion",
+      "_key": "!tables.results!cddac40a99f7a12c.7bacad0ae353ce1e",
+      "_id": "7bacad0ae353ce1e"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Metal teeth",
+      "_key": "!tables.results!cddac40a99f7a12c.aab49acd054e18ce",
+      "_id": "aab49acd054e18ce"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Old wounds patched with metal",
+      "_key": "!tables.results!cddac40a99f7a12c.12a93825d9186dd0",
+      "_id": "12a93825d9186dd0"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Ornately carved wooden pegleg",
+      "_key": "!tables.results!cddac40a99f7a12c.200f8abfab88787f",
+      "_id": "200f8abfab88787f"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Ostentatious cane",
+      "_key": "!tables.results!cddac40a99f7a12c.3d0fda24fd6758c9",
+      "_id": "3d0fda24fd6758c9"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Out of tune squeeze box",
+      "_key": "!tables.results!cddac40a99f7a12c.afb5630059137c0a",
+      "_id": "afb5630059137c0a"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Oversized spyglass",
+      "_key": "!tables.results!cddac40a99f7a12c.45bf2cbbec83cfff",
+      "_id": "45bf2cbbec83cfff"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Rakish, wide-brimmed hat",
+      "_key": "!tables.results!cddac40a99f7a12c.d3a79e120d5a6796",
+      "_id": "d3a79e120d5a6796"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Rows of military medals",
+      "_key": "!tables.results!cddac40a99f7a12c.581d815ad3d0bc68",
+      "_id": "581d815ad3d0bc68"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Satchel of tools",
+      "_key": "!tables.results!cddac40a99f7a12c.f80027049c116406",
+      "_id": "f80027049c116406"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Sharkhide cuirass",
+      "_key": "!tables.results!cddac40a99f7a12c.baf3df5dfdef3e6b",
+      "_id": "baf3df5dfdef3e6b"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Shoulder-slung map case",
+      "_key": "!tables.results!cddac40a99f7a12c.bed7b819240343b8",
+      "_id": "bed7b819240343b8"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Skull-like mask",
+      "_key": "!tables.results!cddac40a99f7a12c.28cb9b80a87ac436",
+      "_id": "28cb9b80a87ac436"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Tailcoat with gold trim and epaulets",
+      "_key": "!tables.results!cddac40a99f7a12c.e5059803f1c1e9d8",
+      "_id": "e5059803f1c1e9d8"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Tricorn hat with holes from near misses",
+      "_key": "!tables.results!cddac40a99f7a12c.4692d17f974c6a16",
+      "_id": "4692d17f974c6a16"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Wooden religious medallion",
+      "_key": "!tables.results!cddac40a99f7a12c.1a9cbfc7d1f991a1",
+      "_id": "1a9cbfc7d1f991a1"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!cddac40a99f7a12c.56661c36956ec878",
+      "_id": "56661c36956ec878"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 190,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cddac40a99f7a12c"
+}

@@ -1,0 +1,236 @@
+{
+  "_id": "4b5e2bf3ecff69c0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/region_landmarks",
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/cursed"
+    }
+  },
+  "name": "Cursed Landmark",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Colossal bones",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.ad8ed7f2ad943c3e",
+      "_id": "ad8ed7f2ad943c3e"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Copse of diseased trees",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.d44a13d33fe4efbc",
+      "_id": "d44a13d33fe4efbc"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Destructive trail of a monstrous beast",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.576e843ce0346982",
+      "_id": "576e843ce0346982"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Eldritch monument",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.101e5aa2973a4d96",
+      "_id": "101e5aa2973a4d96"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Exhumed or upturned graves",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.e618298dc910329a",
+      "_id": "e618298dc910329a"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Field of crude grave markers",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.d0fc62b9f7716b67",
+      "_id": "d0fc62b9f7716b67"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Forlorn remains of a violent battle",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.294054402417bab9",
+      "_id": "294054402417bab9"
+    },
+    {
+      "range": [
+        28,
+        32
+      ],
+      "text": "Foul nest or lair of a monstrous beast",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.98c004fa792c0e7d",
+      "_id": "98c004fa792c0e7d"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "Gravity-defying terrain or water",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.8cbe2eaf076d2027",
+      "_id": "8cbe2eaf076d2027"
+    },
+    {
+      "range": [
+        36,
+        43
+      ],
+      "text": "Imposing, skull-shaped outcrop",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.1668667dc218fdce",
+      "_id": "1668667dc218fdce"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Inscrutable iron pillars",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.7dda95ebec777f99",
+      "_id": "7dda95ebec777f99"
+    },
+    {
+      "range": [
+        47,
+        51
+      ],
+      "text": "Large cairn built of skulls and bones",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.5c01ec7df22b8b27",
+      "_id": "5c01ec7df22b8b27"
+    },
+    {
+      "range": [
+        52,
+        56
+      ],
+      "text": "Large pile of bones and offal",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.68af8df44457be5e",
+      "_id": "68af8df44457be5e"
+    },
+    {
+      "range": [
+        57,
+        61
+      ],
+      "text": "Lifeless settlement",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.9a4dde67ee32f3f9",
+      "_id": "9a4dde67ee32f3f9"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Noxious, sludge-filled waterway or pool",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.efabb95499d5b521",
+      "_id": "efabb95499d5b521"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Oversized insect mound",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.545a9acb6df159ff",
+      "_id": "545a9acb6df159ff"
+    },
+    {
+      "range": [
+        68,
+        72
+      ],
+      "text": "Rotting corpse of a monstrous beast",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.55d72d67aab34e1c",
+      "_id": "55d72d67aab34e1c"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Silent, abandoned settlement",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.fea61f8a4f96e67c",
+      "_id": "fea61f8a4f96e67c"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Smoking meteorite scar",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.22bb2f9ea96f7b1e",
+      "_id": "22bb2f9ea96f7b1e"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Stinking, sulfurous pit",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.7316c82a1742120a",
+      "_id": "7316c82a1742120a"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Titanic machine",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.ccf1d9bdd6140b62",
+      "_id": "ccf1d9bdd6140b62"
+    },
+    {
+      "range": [
+        85,
+        89
+      ],
+      "text": "Foreboding [Cave](datasworn:oracle_collection:sundered_isles/cave)",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.fa6d60bea80eadac",
+      "_id": "fa6d60bea80eadac"
+    },
+    {
+      "range": [
+        90,
+        94
+      ],
+      "text": "Grounded [Shipwreck](datasworn:oracle_collection:sundered_isles/shipwreck)",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.85b7fad796ff9f1b",
+      "_id": "85b7fad796ff9f1b"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!4b5e2bf3ecff69c0.0376ea06c20e39bf",
+      "_id": "0376ea06c20e39bf"
+    }
+  ],
+  "folder": "a74b251068596264",
+  "sort": 155,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4b5e2bf3ecff69c0"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Tainted World",
+  "description": "A foul planet wracked by a poisonous climate and virulent growths.",
+  "type": "RollTable",
+  "_id": "98454829527950a0",
+  "sort": 317,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Tainted",
+      "dsid": "oracle_collection:starforged/planet/tainted"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!98454829527950a0"
+}

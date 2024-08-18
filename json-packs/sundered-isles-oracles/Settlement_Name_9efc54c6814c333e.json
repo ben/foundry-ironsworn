@@ -1,0 +1,920 @@
+{
+  "_id": "9efc54c6814c333e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/name"
+    }
+  },
+  "name": "Settlement Name",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Alerius",
+      "_key": "!tables.results!9efc54c6814c333e.9a57952ad01268b1",
+      "_id": "9a57952ad01268b1"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Altura",
+      "_key": "!tables.results!9efc54c6814c333e.ed7e8144b9c1af61",
+      "_id": "ed7e8144b9c1af61"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Ankarta",
+      "_key": "!tables.results!9efc54c6814c333e.410a695cc9ee3394",
+      "_id": "410a695cc9ee3394"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Argosy",
+      "_key": "!tables.results!9efc54c6814c333e.1371d09a2f0e4ff2",
+      "_id": "1371d09a2f0e4ff2"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Arika",
+      "_key": "!tables.results!9efc54c6814c333e.144c3af852c90a21",
+      "_id": "144c3af852c90a21"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Azurith",
+      "_key": "!tables.results!9efc54c6814c333e.e3b4dbce0feac91b",
+      "_id": "e3b4dbce0feac91b"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Beacon",
+      "_key": "!tables.results!9efc54c6814c333e.b5824beaee4ab3bf",
+      "_id": "b5824beaee4ab3bf"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Belaru",
+      "_key": "!tables.results!9efc54c6814c333e.aa19c878f9473d3f",
+      "_id": "aa19c878f9473d3f"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Bladestone",
+      "_key": "!tables.results!9efc54c6814c333e.6276b0d71fb5292f",
+      "_id": "6276b0d71fb5292f"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Brightwater",
+      "_key": "!tables.results!9efc54c6814c333e.9f79a946a837d2ad",
+      "_id": "9f79a946a837d2ad"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Bulwark",
+      "_key": "!tables.results!9efc54c6814c333e.f102f908717411bb",
+      "_id": "f102f908717411bb"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Caldera",
+      "_key": "!tables.results!9efc54c6814c333e.f8d4c6993604788b",
+      "_id": "f8d4c6993604788b"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Crown Falls",
+      "_key": "!tables.results!9efc54c6814c333e.fe45b7037a3f0237",
+      "_id": "fe45b7037a3f0237"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Danua",
+      "_key": "!tables.results!9efc54c6814c333e.0a2c1d73742abbf2",
+      "_id": "0a2c1d73742abbf2"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Darkwell",
+      "_key": "!tables.results!9efc54c6814c333e.aad80c10905092a1",
+      "_id": "aad80c10905092a1"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Deepwater",
+      "_key": "!tables.results!9efc54c6814c333e.5a71f4709d1db944",
+      "_id": "5a71f4709d1db944"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Dragonspine",
+      "_key": "!tables.results!9efc54c6814c333e.e59262b062738e50",
+      "_id": "e59262b062738e50"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Eagle's Perch",
+      "_key": "!tables.results!9efc54c6814c333e.97d40111f57f0a19",
+      "_id": "97d40111f57f0a19"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Eladus",
+      "_key": "!tables.results!9efc54c6814c333e.10df805dd2baf3f0",
+      "_id": "10df805dd2baf3f0"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Elago",
+      "_key": "!tables.results!9efc54c6814c333e.38e8598daaa23d20",
+      "_id": "38e8598daaa23d20"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Emberlyn",
+      "_key": "!tables.results!9efc54c6814c333e.895ce44381f5543b",
+      "_id": "895ce44381f5543b"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Emberwind",
+      "_key": "!tables.results!9efc54c6814c333e.a0a64fabf8e71864",
+      "_id": "a0a64fabf8e71864"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Emmerby",
+      "_key": "!tables.results!9efc54c6814c333e.5d644ac69d3236f1",
+      "_id": "5d644ac69d3236f1"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Endira's Rest",
+      "_key": "!tables.results!9efc54c6814c333e.307c01f1f562ff26",
+      "_id": "307c01f1f562ff26"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Fortune",
+      "_key": "!tables.results!9efc54c6814c333e.3b0905346e0b311e",
+      "_id": "3b0905346e0b311e"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Galoon",
+      "_key": "!tables.results!9efc54c6814c333e.dc715bf772de6146",
+      "_id": "dc715bf772de6146"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Goldcrest",
+      "_key": "!tables.results!9efc54c6814c333e.ce800428ccf194f4",
+      "_id": "ce800428ccf194f4"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Gullpoint",
+      "_key": "!tables.results!9efc54c6814c333e.fd0ebe869a79b867",
+      "_id": "fd0ebe869a79b867"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Hawknest",
+      "_key": "!tables.results!9efc54c6814c333e.434a7d14ea322fbe",
+      "_id": "434a7d14ea322fbe"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Highcairn",
+      "_key": "!tables.results!9efc54c6814c333e.6b0b20d9fa362f8b",
+      "_id": "6b0b20d9fa362f8b"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Highcliff",
+      "_key": "!tables.results!9efc54c6814c333e.f474c969907e5b73",
+      "_id": "f474c969907e5b73"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Hightower",
+      "_key": "!tables.results!9efc54c6814c333e.76a0a045b48fdf0a",
+      "_id": "76a0a045b48fdf0a"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Indari",
+      "_key": "!tables.results!9efc54c6814c333e.2fd38d69518d58e9",
+      "_id": "2fd38d69518d58e9"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Ironhold",
+      "_key": "!tables.results!9efc54c6814c333e.a4d92e57fa159776",
+      "_id": "a4d92e57fa159776"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Islan",
+      "_key": "!tables.results!9efc54c6814c333e.df95531d840ea5f5",
+      "_id": "df95531d840ea5f5"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Jade Hollow",
+      "_key": "!tables.results!9efc54c6814c333e.0bbe9ef07e08feba",
+      "_id": "0bbe9ef07e08feba"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Kerebos",
+      "_key": "!tables.results!9efc54c6814c333e.a66584dad2cd5fa8",
+      "_id": "a66584dad2cd5fa8"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Kharna",
+      "_key": "!tables.results!9efc54c6814c333e.77da226accf7aaae",
+      "_id": "77da226accf7aaae"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Kirita",
+      "_key": "!tables.results!9efc54c6814c333e.484a85871320549f",
+      "_id": "484a85871320549f"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Kitan",
+      "_key": "!tables.results!9efc54c6814c333e.735d83f86fe4e370",
+      "_id": "735d83f86fe4e370"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Korova",
+      "_key": "!tables.results!9efc54c6814c333e.13bf36def9c68788",
+      "_id": "13bf36def9c68788"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Kotana",
+      "_key": "!tables.results!9efc54c6814c333e.64865dcc35f2c74b",
+      "_id": "64865dcc35f2c74b"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Kuinan",
+      "_key": "!tables.results!9efc54c6814c333e.427f236ef95d28be",
+      "_id": "427f236ef95d28be"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Lonefort",
+      "_key": "!tables.results!9efc54c6814c333e.a8ba7cfe54215145",
+      "_id": "a8ba7cfe54215145"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Lumina",
+      "_key": "!tables.results!9efc54c6814c333e.1992dbe184a3f40e",
+      "_id": "1992dbe184a3f40e"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Malau",
+      "_key": "!tables.results!9efc54c6814c333e.d97fa1b8d80e7d93",
+      "_id": "d97fa1b8d80e7d93"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Marivo",
+      "_key": "!tables.results!9efc54c6814c333e.7d63141b077d8516",
+      "_id": "7d63141b077d8516"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Mistfall",
+      "_key": "!tables.results!9efc54c6814c333e.f1c0943115646df1",
+      "_id": "f1c0943115646df1"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Mohana",
+      "_key": "!tables.results!9efc54c6814c333e.ad2a7efc400288a6",
+      "_id": "ad2a7efc400288a6"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Moonshadow",
+      "_key": "!tables.results!9efc54c6814c333e.5774c01ddd1081ac",
+      "_id": "5774c01ddd1081ac"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Moonstone",
+      "_key": "!tables.results!9efc54c6814c333e.30e023ae8e442ce3",
+      "_id": "30e023ae8e442ce3"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Morgan",
+      "_key": "!tables.results!9efc54c6814c333e.088b9c8c1c7573aa",
+      "_id": "088b9c8c1c7573aa"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Nairene",
+      "_key": "!tables.results!9efc54c6814c333e.331e720473d88e21",
+      "_id": "331e720473d88e21"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Nanua",
+      "_key": "!tables.results!9efc54c6814c333e.f58e766d83c7f9b8",
+      "_id": "f58e766d83c7f9b8"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Neoma",
+      "_key": "!tables.results!9efc54c6814c333e.9849424e858350f9",
+      "_id": "9849424e858350f9"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Nerio",
+      "_key": "!tables.results!9efc54c6814c333e.1bcf440e56bb548e",
+      "_id": "1bcf440e56bb548e"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Northbridge",
+      "_key": "!tables.results!9efc54c6814c333e.34776c5cee552511",
+      "_id": "34776c5cee552511"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Okholm",
+      "_key": "!tables.results!9efc54c6814c333e.a6665733956a53be",
+      "_id": "a6665733956a53be"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Palatia",
+      "_key": "!tables.results!9efc54c6814c333e.6771f4e803f571a1",
+      "_id": "6771f4e803f571a1"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Ramoa",
+      "_key": "!tables.results!9efc54c6814c333e.15f463496638094a",
+      "_id": "15f463496638094a"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Ravan",
+      "_key": "!tables.results!9efc54c6814c333e.c587ee9cfe4076ea",
+      "_id": "c587ee9cfe4076ea"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Ravenholm",
+      "_key": "!tables.results!9efc54c6814c333e.22dbbc160f5bb2af",
+      "_id": "22dbbc160f5bb2af"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Redgate",
+      "_key": "!tables.results!9efc54c6814c333e.1b40360982292d47",
+      "_id": "1b40360982292d47"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Riftcrag",
+      "_key": "!tables.results!9efc54c6814c333e.5c970be369130b16",
+      "_id": "5c970be369130b16"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Saltmarsh",
+      "_key": "!tables.results!9efc54c6814c333e.4ff60847213f1f1a",
+      "_id": "4ff60847213f1f1a"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Samara",
+      "_key": "!tables.results!9efc54c6814c333e.d98f549a06c2cee8",
+      "_id": "d98f549a06c2cee8"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Sartha",
+      "_key": "!tables.results!9efc54c6814c333e.bc8a1cf05d93c0d2",
+      "_id": "bc8a1cf05d93c0d2"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Seaward",
+      "_key": "!tables.results!9efc54c6814c333e.f95ae9d4c44321f6",
+      "_id": "f95ae9d4c44321f6"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Serene",
+      "_key": "!tables.results!9efc54c6814c333e.16957493c6eef75b",
+      "_id": "16957493c6eef75b"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Shadowbrook",
+      "_key": "!tables.results!9efc54c6814c333e.4b9563a8f4418ab4",
+      "_id": "4b9563a8f4418ab4"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Silvercliff",
+      "_key": "!tables.results!9efc54c6814c333e.bbdbf2b3934ddbd0",
+      "_id": "bbdbf2b3934ddbd0"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Silvermist",
+      "_key": "!tables.results!9efc54c6814c333e.f6f3070903b770b8",
+      "_id": "f6f3070903b770b8"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Skeld",
+      "_key": "!tables.results!9efc54c6814c333e.a203a39d332224ff",
+      "_id": "a203a39d332224ff"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Sova",
+      "_key": "!tables.results!9efc54c6814c333e.c53d0d079e335193",
+      "_id": "c53d0d079e335193"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Starfall",
+      "_key": "!tables.results!9efc54c6814c333e.59f9b0e96a7397fe",
+      "_id": "59f9b0e96a7397fe"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Stonesong",
+      "_key": "!tables.results!9efc54c6814c333e.fdb995615c3d3431",
+      "_id": "fdb995615c3d3431"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Stonewood",
+      "_key": "!tables.results!9efc54c6814c333e.ce3416648afbe765",
+      "_id": "ce3416648afbe765"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Stormcrest",
+      "_key": "!tables.results!9efc54c6814c333e.6028a977c3977796",
+      "_id": "6028a977c3977796"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Stormwatch",
+      "_key": "!tables.results!9efc54c6814c333e.dccf7b946c5ebd60",
+      "_id": "dccf7b946c5ebd60"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Suluva",
+      "_key": "!tables.results!9efc54c6814c333e.47dcb3fe73bf30f6",
+      "_id": "47dcb3fe73bf30f6"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Swiftwater",
+      "_key": "!tables.results!9efc54c6814c333e.b81769f9852f3d76",
+      "_id": "b81769f9852f3d76"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Swordbreak",
+      "_key": "!tables.results!9efc54c6814c333e.611939551e3de970",
+      "_id": "611939551e3de970"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Tadena",
+      "_key": "!tables.results!9efc54c6814c333e.7283a19dbe18b1b8",
+      "_id": "7283a19dbe18b1b8"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Tahine",
+      "_key": "!tables.results!9efc54c6814c333e.2bcf127c67582ca4",
+      "_id": "2bcf127c67582ca4"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Tataran",
+      "_key": "!tables.results!9efc54c6814c333e.c613a503258aa3ae",
+      "_id": "c613a503258aa3ae"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Teika",
+      "_key": "!tables.results!9efc54c6814c333e.184b6daf4692c0cc",
+      "_id": "184b6daf4692c0cc"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Tidecrest",
+      "_key": "!tables.results!9efc54c6814c333e.8d2ae714e03289f7",
+      "_id": "8d2ae714e03289f7"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Turia",
+      "_key": "!tables.results!9efc54c6814c333e.ce5dbecdc944e3d0",
+      "_id": "ce5dbecdc944e3d0"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Two Rivers",
+      "_key": "!tables.results!9efc54c6814c333e.d8e3ce6797030e42",
+      "_id": "d8e3ce6797030e42"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Ulan",
+      "_key": "!tables.results!9efc54c6814c333e.ca04944c816ca7dc",
+      "_id": "ca04944c816ca7dc"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Valanu",
+      "_key": "!tables.results!9efc54c6814c333e.332e3e3f2ec5043a",
+      "_id": "332e3e3f2ec5043a"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Vanuca",
+      "_key": "!tables.results!9efc54c6814c333e.79a22ba3cdfd74cd",
+      "_id": "79a22ba3cdfd74cd"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Vaya",
+      "_key": "!tables.results!9efc54c6814c333e.aa4d598ca8fc4ef9",
+      "_id": "aa4d598ca8fc4ef9"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Wellspring",
+      "_key": "!tables.results!9efc54c6814c333e.eb28a0ba0636497c",
+      "_id": "eb28a0ba0636497c"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Westwind",
+      "_key": "!tables.results!9efc54c6814c333e.95e0b645126f08a7",
+      "_id": "95e0b645126f08a7"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Whitebridge",
+      "_key": "!tables.results!9efc54c6814c333e.c7a237f89e92ca48",
+      "_id": "c7a237f89e92ca48"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Windhaven",
+      "_key": "!tables.results!9efc54c6814c333e.e1979fe6071cab8a",
+      "_id": "e1979fe6071cab8a"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Windward",
+      "_key": "!tables.results!9efc54c6814c333e.f58ad9bdef2749e5",
+      "_id": "f58ad9bdef2749e5"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Yersk",
+      "_key": "!tables.results!9efc54c6814c333e.f955cd90906976ed",
+      "_id": "f955cd90906976ed"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Zhale",
+      "_key": "!tables.results!9efc54c6814c333e.0d3c4f52877a8ee2",
+      "_id": "0d3c4f52877a8ee2"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 175,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9efc54c6814c333e"
+}

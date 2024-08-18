@@ -1,0 +1,101 @@
+{
+  "name": "Horrors",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/horrors",
+      "dsid": "truth:sundered_isles/horrors"
+    }
+  },
+  "_id": "5dc6ab9661d09d6d",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Put enough grog in a sailor, and they’ll tell you stories of doomed ships and ghostly visitations. It’s nonsense.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/horrors.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Put enough grog in a sailor, and they’ll tell you stories of doomed ships and ghostly visitations. It’s nonsense.",
+        "Description": "There’s enough to fear amid the isles without worrying about fanciful tales of ghosts and ghouls. Nonetheless, sailors are a superstitious folk. On dark nights, when a dead calm falls over the sea, they keep a wary eye for ships that sail heedless of the wind.",
+        "Quest": "Years ago, a ship bearing a stolen treasure was sunk in a fierce storm. But mariners report seeing this vessel sailing under the light of the Wraith moon, its sails tattered, its weather decks empty. It is a cursed ship, folks say, doomed to carry its ill-gotten treasure for all eternity. Why do you intend to prove or disprove this tale?",
+        "Roll template": {
+          "Description": "There’s enough to fear amid the isles without worrying about fanciful tales of ghosts and ghouls. Nonetheless, sailors are a superstitious folk. On dark nights, when a dead calm falls over the sea, they keep a wary eye for ships that sail heedless of the wind."
+        }
+      },
+      "_id": "a334ae7647bd4398",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!5dc6ab9661d09d6d.a334ae7647bd4398"
+    },
+    {
+      "type": "truth",
+      "name": "The veil between life and death is as fragile as gossamer.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/horrors.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "The veil between life and death is as fragile as gossamer.",
+        "Description": "In the darkest reaches of the isles, ghost ships stalk the seas, undead guardians protect ancient tombs, and drowned sailors emerge from the depths in search of absolution or vengeance. Others may scoff at these tales, but we know the truth—death waits for us all, but is not always an end.",
+        "Quest": "Your ship is haunted by its former captain. At night, they are sometimes seen on the quarterdeck, staring grimly at the distant horizon. What unfulfilled vow torments this restless spirit? Why do you swear to see it done?",
+        "Roll template": {
+          "Description": "In the darkest reaches of the isles, ghost ships stalk the seas, undead guardians protect ancient tombs, and drowned sailors emerge from the depths in search of absolution or vengeance. Others may scoff at these tales, but we know the truth—death waits for us all, but is not always an end."
+        }
+      },
+      "_id": "5a3cca71c124f316",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!5dc6ab9661d09d6d.5a3cca71c124f316"
+    },
+    {
+      "type": "truth",
+      "name": "The damned and the dead are a plague upon the isles.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/horrors.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "The damned and the dead are a plague upon the isles.",
+        "Description": "We live in accursed times. The drowned and the buried do not rest. Tortured spirits hunt for retribution. Uncounted islands are blighted by dark forces. Cities and villages lie abandoned and forsaken, lost to a malevolent tide. We keep watch, craft wards, and offer prayers to keep the horrors at bay, but it is no use. They are coming.",
+        "Quest": "For generations, an infamous ghost fleet has haunted these seas, sending countless mariners to their doom. Why do you now seek to form an alliance with the cursed commander of this fleet?",
+        "Roll template": {
+          "Description": "We live in accursed times. The drowned and the buried do not rest. Tortured spirits hunt for retribution. Uncounted islands are blighted by dark forces. Cities and villages lie abandoned and forsaken, lost to a malevolent tide. We keep watch, craft wards, and offer prayers to keep the horrors at bay, but it is no use. They are coming."
+        }
+      },
+      "_id": "7e6152185e4379a3",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!5dc6ab9661d09d6d.7e6152185e4379a3"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are plagued by a ghost, you might be @Compendium[foundry-ironsworn.starforgedassets.7fdebd942b7163b6]{Haunted}. If you dedicate yourself to battling undead or monstrous forces, you might be a @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer}. If you have unnatural powers over death, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.df94d23a05e3330d]{Necromancer}.",
+        "format": 2,
+        "content": "<p>If you are plagued by a ghost, you might be @Compendium[foundry-ironsworn.starforgedassets.7fdebd942b7163b6]{Haunted}. If you dedicate yourself to battling undead or monstrous forces, you might be a @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer}. If you have unnatural powers over death, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.df94d23a05e3330d]{Necromancer}.</p>"
+      },
+      "_id": "328a59eeae5f2b5c",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!5dc6ab9661d09d6d.328a59eeae5f2b5c"
+    }
+  ],
+  "folder": null,
+  "sort": 87,
+  "_key": "!journal!5dc6ab9661d09d6d"
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Horrors",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:classic/horrors",
+      "dsid": "truth:classic/horrors"
+    }
+  },
+  "_id": "cfbb4fd0430f5048",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/horrors.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "",
+        "Description": "Nothing but stories to frighten children.",
+        "Quest": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, but there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?",
+        "Roll template": {
+          "Description": "Nothing but stories to frighten children."
+        }
+      },
+      "_id": "28f8642761fd0409",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!cfbb4fd0430f5048.28f8642761fd0409"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/horrors.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "",
+        "Description": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, when all is wreathed in darkness, only fools venture beyond their homes.",
+        "Quest": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?",
+        "Roll template": {
+          "Description": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, when all is wreathed in darkness, only fools venture beyond their homes."
+        }
+      },
+      "_id": "3046d95046de6e7c",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!cfbb4fd0430f5048.3046d95046de6e7c"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/horrors.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "",
+        "Description": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
+        "Quest": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?",
+        "Roll template": {
+          "Description": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming."
+        }
+      },
+      "_id": "1f78e1eede12f9bf",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!cfbb4fd0430f5048.1f78e1eede12f9bf"
+    }
+  ],
+  "folder": null,
+  "sort": 129,
+  "_key": "!journal!cfbb4fd0430f5048"
+}

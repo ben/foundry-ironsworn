@@ -1,0 +1,182 @@
+{
+  "_id": "477c18a2acefbaea",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/roles"
+    }
+  },
+  "name": "Character Roles",
+  "description": "<p>Envision a character’s background or occupation using the broad categories below. For more detail, check the related subtable.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "[Academic](datasworn:oracle_rollable:sundered_isles/character/role_details/academic)",
+      "_key": "!tables.results!477c18a2acefbaea.8d64a35fc47a017c",
+      "_id": "8d64a35fc47a017c"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "[Agent](datasworn:oracle_rollable:sundered_isles/character/role_details/agent)",
+      "_key": "!tables.results!477c18a2acefbaea.64404f33c4be26cb",
+      "_id": "64404f33c4be26cb"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "[Caregiver](datasworn:oracle_rollable:sundered_isles/character/role_details/caregiver)",
+      "_key": "!tables.results!477c18a2acefbaea.4fd6b9c4c4dc4f36",
+      "_id": "4fd6b9c4c4dc4f36"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "[Combatant](datasworn:oracle_rollable:sundered_isles/character/role_details/combatant)",
+      "_key": "!tables.results!477c18a2acefbaea.7f736bcc3c01f46c",
+      "_id": "7f736bcc3c01f46c"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "[Devotant](datasworn:oracle_rollable:sundered_isles/character/role_details/devotant)",
+      "_key": "!tables.results!477c18a2acefbaea.4e72d0b1328c5953",
+      "_id": "4e72d0b1328c5953"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "[Laborer](datasworn:oracle_rollable:sundered_isles/character/role_details/laborer)",
+      "_key": "!tables.results!477c18a2acefbaea.33a65d80443b1ef1",
+      "_id": "33a65d80443b1ef1"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "[Merchant](datasworn:oracle_rollable:sundered_isles/character/role_details/merchant)",
+      "_key": "!tables.results!477c18a2acefbaea.6d3521478195312d",
+      "_id": "6d3521478195312d"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "[Mystic](datasworn:oracle_rollable:sundered_isles/character/role_details/mystic)",
+      "_key": "!tables.results!477c18a2acefbaea.276ed04222b7df9d",
+      "_id": "276ed04222b7df9d"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "[Outcast](datasworn:oracle_rollable:sundered_isles/character/role_details/outcast)",
+      "_key": "!tables.results!477c18a2acefbaea.6e1e6549dc60d9c2",
+      "_id": "6e1e6549dc60d9c2"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "[Outlander](datasworn:oracle_rollable:sundered_isles/character/role_details/outlander)",
+      "_key": "!tables.results!477c18a2acefbaea.093c58b5eaf07bfd",
+      "_id": "093c58b5eaf07bfd"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "[Outlaw](datasworn:oracle_rollable:sundered_isles/character/role_details/outlaw)",
+      "_key": "!tables.results!477c18a2acefbaea.ded67b720d51813e",
+      "_id": "ded67b720d51813e"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "[Performer](datasworn:oracle_rollable:sundered_isles/character/role_details/performer)",
+      "_key": "!tables.results!477c18a2acefbaea.0a654ea87b5deedf",
+      "_id": "0a654ea87b5deedf"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "[Sailor](datasworn:oracle_rollable:sundered_isles/character/role_details/sailor)",
+      "_key": "!tables.results!477c18a2acefbaea.19c83af552673827",
+      "_id": "19c83af552673827"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "[Scavenger](datasworn:oracle_rollable:sundered_isles/character/role_details/scavenger)",
+      "_key": "!tables.results!477c18a2acefbaea.d4b674958dcdf92b",
+      "_id": "d4b674958dcdf92b"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "[Statesperson](datasworn:oracle_rollable:sundered_isles/character/role_details/statesperson)",
+      "_key": "!tables.results!477c18a2acefbaea.b47f9f6c56713eaf",
+      "_id": "b47f9f6c56713eaf"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "[Tradesperson](datasworn:oracle_rollable:sundered_isles/character/role_details/tradesperson)",
+      "_key": "!tables.results!477c18a2acefbaea.815b6f7616438f12",
+      "_id": "815b6f7616438f12"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "[Action](datasworn:oracle_rollable:sundered_isles/core/action) + [Theme](datasworn:oracle_rollable:sundered_isles/core/theme)",
+      "_key": "!tables.results!477c18a2acefbaea.cbf05080dc5bba04",
+      "_id": "cbf05080dc5bba04"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!477c18a2acefbaea.2c5e555c04bc97f1",
+      "_id": "2c5e555c04bc97f1"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 187,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!477c18a2acefbaea"
+}

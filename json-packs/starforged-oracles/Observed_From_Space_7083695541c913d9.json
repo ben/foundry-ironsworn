@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Furnace/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Furnace"
+      "category": "Starforged/Oracles/Planets/Furnace",
+      "dsid": "oracle_rollable:starforged/planet/furnace/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Fiery world-spanning chasms",
-      "_id": "5b5c83e2b266584b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.5b5c83e2b266584b"
+      "_key": "!tables.results!7083695541c913d9.636989551d6d9991",
+      "_id": "636989551d6d9991"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Glowing rivers of lava",
-      "_id": "b25b53ab231259ad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.b25b53ab231259ad"
+      "_key": "!tables.results!7083695541c913d9.c6271791c37adf69",
+      "_id": "c6271791c37adf69"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Lightning-wracked ash clouds",
-      "_id": "8b5a8a64f7f77ade",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.8b5a8a64f7f77ade"
+      "_key": "!tables.results!7083695541c913d9.c8a24f8fddc4e72c",
+      "_id": "c8a24f8fddc4e72c"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Magma seas",
-      "_id": "02058ece8f72ce7b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.02058ece8f72ce7b"
+      "_key": "!tables.results!7083695541c913d9.5789307d8e60d12d",
+      "_id": "5789307d8e60d12d"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Massive supervolcano",
-      "_id": "acfbb7900a79217b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.acfbb7900a79217b"
+      "_key": "!tables.results!7083695541c913d9.5bb1ea0adb13f8e9",
+      "_id": "5bb1ea0adb13f8e9"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Once verdant terrain",
-      "_id": "c99b9873e726ef47",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.c99b9873e726ef47"
+      "_key": "!tables.results!7083695541c913d9.9b083cd21fffae64",
+      "_id": "9b083cd21fffae64"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Towering mountain ranges",
-      "_id": "1d2d0603a22fbc65",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.1d2d0603a22fbc65"
+      "_key": "!tables.results!7083695541c913d9.b87eeedb0d3f0218",
+      "_id": "b87eeedb0d3f0218"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "World-spanning fissures",
-      "_id": "a48d10e367f0b250",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.a48d10e367f0b250"
+      "_key": "!tables.results!7083695541c913d9.b4563ef647cc6c7b",
+      "_id": "b4563ef647cc6c7b"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "fefb91fe767ec977",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.fefb91fe767ec977"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!7083695541c913d9.ea9eec7d543e78da",
+      "_id": "ea9eec7d543e78da"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "677d6dfd9c471756",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!7083695541c913d9.677d6dfd9c471756"
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (orbital)",
+      "_key": "!tables.results!7083695541c913d9.608ca64369ff6997",
+      "_id": "608ca64369ff6997"
     }
   ],
   "folder": "91ce34721ba5cce8",
   "sort": 309,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!7083695541c913d9"
 }

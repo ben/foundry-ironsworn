@@ -1,10 +1,10 @@
 {
   "_id": "578dd708f06d7801",
   "type": "progress",
-  "name": "Roost Swarm",
+  "name": "Roost swarm",
   "img": "icons/magic/nature/root-vine-caduceus-healing.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Floating, living habitats</p>\n    <p class=\"nogrow\">Glowing core</p>\n    <p class=\"nogrow\">Suspended, root-like feelers</p>\n    <p class=\"nogrow\">Bellowing song</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Seek out placid skies</p>\n    <p class=\"nogrow\">Nurture symbiotic lifeforms</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Grasp with tendrils</p>\n    <p class=\"nogrow\">Rally a swarm of creatures in defense</p>\n  </div>\n</div>\n\n<p>When a roost is threatened, the symbiotic lifeforms it shelters mobilize to protect their home. The compulsion to defend the roost is so strong that the swarm's instinct for self preservation is suppressed. They attack in a fierce cyclone of wing, teeth, and claw.</p>\n\n<blockquote>Quest Starter: <p>Sky roosts are dying. A disease is spreading among them, threatening the delicate ecosystem of their world. What human operations do you suspect lie at the heart of this sickness?</p></blockquote>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Floating, living habitats</p>\n<p class=\"nogrow\">Glowing core</p>\n<p class=\"nogrow\">Suspended, root-like feelers</p>\n<p class=\"nogrow\">Bellowing song</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Seek out placid skies</p>\n<p class=\"nogrow\">Nurture symbiotic lifeforms</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Grasp with tendrils</p>\n<p class=\"nogrow\">Rally a swarm of creatures in defense</p>\n</div>\n</div>\n\n<p>When a roost is threatened, the symbiotic lifeforms it shelters mobilize to protect their home. The compulsion to defend the roost is so strong that the swarm's instinct for self preservation is suppressed. They attack in a fierce cyclone of wing, teeth, and claw.</p>\n\n<blockquote>Quest Starter: <p>Sky roosts are dying. A disease is spreading among them, threatening the delicate ecosystem of their world. What human operations do you suspect lie at the heart of this sickness?</p></blockquote>",
     "rank": 4,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/sky_roost.roost_swarm"
+    }
   },
   "_key": "!items!578dd708f06d7801"
 }

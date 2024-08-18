@@ -1,0 +1,47 @@
+{
+  "_id": "a1360d7363f5c919",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship/controlling_faction",
+      "dsid": "oracle_rollable:sundered_isles/ship/controlling_faction/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        60
+      ],
+      "text": "Known faction",
+      "_key": "!tables.results!a1360d7363f5c919.3ce9526a96c9abce",
+      "_id": "3ce9526a96c9abce"
+    },
+    {
+      "range": [
+        61,
+        75
+      ],
+      "text": "Unknown faction",
+      "_key": "!tables.results!a1360d7363f5c919.12099313bcb124e3",
+      "_id": "12099313bcb124e3"
+    },
+    {
+      "range": [
+        76,
+        100
+      ],
+      "text": "Independent",
+      "_key": "!tables.results!a1360d7363f5c919.700d4135c0ae8639",
+      "_id": "700d4135c0ae8639"
+    }
+  ],
+  "folder": "039c1449300a350b",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a1360d7363f5c919"
+}

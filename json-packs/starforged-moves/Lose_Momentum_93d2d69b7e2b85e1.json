@@ -3,78 +3,55 @@
   "type": "sfmove",
   "name": "Lose Momentum",
   "img": "icons/dice/d10black.svg",
+  "folder": "aa394f7b4fefb91e",
   "system": {
     "dfid": "Starforged/Moves/Suffer/Lose_Momentum",
     "Category": "Starforged/Moves/Suffer",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you are delayed or disadvantaged**, suffer -1 momentum for a minor setback, -2 for a serious setback, or -3 for a major setback.\n\nWhen your momentum is at its minimum (-6) and you must suffer -momentum, choose one.\n\n  * Envision how the price is paid and apply the cost to a different suffer move.\n  * Envision how this undermines your progress on a vow, expedition, connection, or combat. Then, clear 1 unit of progress on that track per its rank: troublesome=3 boxes; dangerous=2 boxes; formidable=1 box; extreme=2 ticks; epic=1 tick.",
+    "Text": "__When you are delayed or disadvantaged__, suffer -1 momentum for a minor setback, -2 for a serious setback, or -3 for a major setback.\n\nWhen your momentum is at its minimum (-6) and you must suffer -momentum, choose one.\n\n  * Envision how the price is paid and apply the cost to a different suffer move.\n  * Envision how this undermines your progress on a vow, expedition, connection, or combat. Then, clear 1 unit of progress on that track per its rank: troublesome=3 boxes; dangerous=2 boxes; formidable=1 box; extreme=2 ticks; epic=1 tick.",
     "Trigger": {
-      "Text": "When you are delayed or disadvantaged",
+      "Text": "When you are delayed or disadvantaged...",
       "Options": []
     },
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 199
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#C50000",
       "Images": []
     }
   },
   "sort": 199,
-  "folder": "aa394f7b4fefb91e",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Suffer/Lose_Momentum",
+      "dsid": "move:starforged/suffer/lose_momentum"
+    }
   },
   "_key": "!items!93d2d69b7e2b85e1"
 }

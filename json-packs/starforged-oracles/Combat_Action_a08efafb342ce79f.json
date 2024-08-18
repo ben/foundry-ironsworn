@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Misc/Combat_Action",
-      "category": "Starforged/Oracles/Misc"
+      "category": "Starforged/Oracles/Misc",
+      "dsid": "oracle_rollable:starforged/misc/combat_action"
     }
   },
   "name": "Combat Action",
   "description": "<p>Use this oracle to help inspire an action for a foe in a fight. When you’re not sure what an enemy does next, particularly when they have you in a bad spot, roll on this table and interpret the result as appropriate to the nature of the enemy and your objective.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Block a path or cut off an objective",
-      "_id": "c4d0c29bc791de3a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.c4d0c29bc791de3a"
+      "_key": "!tables.results!a08efafb342ce79f.4584c2309ee59be4",
+      "_id": "4584c2309ee59be4"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         6
       ],
       "text": "Cause reckless damage",
-      "_id": "f4fca3a3252509d2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.f4fca3a3252509d2"
+      "_key": "!tables.results!a08efafb342ce79f.663d87636a2a7cbc",
+      "_id": "663d87636a2a7cbc"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         9
       ],
       "text": "Change weapons or tactics",
-      "_id": "917cca36a71471ee",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.917cca36a71471ee"
+      "_key": "!tables.results!a08efafb342ce79f.5463c06d803ecede",
+      "_id": "5463c06d803ecede"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         12
       ],
       "text": "Compel a surrender or concession",
-      "_id": "32d8cb79749088d2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.32d8cb79749088d2"
+      "_key": "!tables.results!a08efafb342ce79f.f54dea71a0369a47",
+      "_id": "f54dea71a0369a47"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         15
       ],
       "text": "Coordinate with allies",
-      "_id": "c5cf8f9a1f4df7ba",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.c5cf8f9a1f4df7ba"
+      "_key": "!tables.results!a08efafb342ce79f.09c737fe2e75126b",
+      "_id": "09c737fe2e75126b"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         18
       ],
       "text": "Corner, trap, or entangle",
-      "_id": "85556f51a532ade5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.85556f51a532ade5"
+      "_key": "!tables.results!a08efafb342ce79f.05ee43c134c3f65c",
+      "_id": "05ee43c134c3f65c"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         21
       ],
       "text": "Counter or reflect an attack",
-      "_id": "25cc3ea94f92df83",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.25cc3ea94f92df83"
+      "_key": "!tables.results!a08efafb342ce79f.4b0c4c0c11ec5bc0",
+      "_id": "4b0c4c0c11ec5bc0"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         24
       ],
       "text": "Create a distraction",
-      "_id": "af14e3d460b982cf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.af14e3d460b982cf"
+      "_key": "!tables.results!a08efafb342ce79f.4cb2ea0d6b2a149f",
+      "_id": "4cb2ea0d6b2a149f"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         27
       ],
       "text": "Destroy something or render it useless",
-      "_id": "19faa133bbbac3e8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.19faa133bbbac3e8"
+      "_key": "!tables.results!a08efafb342ce79f.062885882e989e08",
+      "_id": "062885882e989e08"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         30
       ],
       "text": "Fall back or stand off",
-      "_id": "a76846e9ef03750c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.a76846e9ef03750c"
+      "_key": "!tables.results!a08efafb342ce79f.20c69ecc69cfd544",
+      "_id": "20c69ecc69cfd544"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         33
       ],
       "text": "Hide or sneak",
-      "_id": "ad2870a526eaa531",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.ad2870a526eaa531"
+      "_key": "!tables.results!a08efafb342ce79f.58d644706e14dc17",
+      "_id": "58d644706e14dc17"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         36
       ],
       "text": "Intimidate, taunt, or frighten",
-      "_id": "e7414087dd4d11b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.e7414087dd4d11b3"
+      "_key": "!tables.results!a08efafb342ce79f.015a1f4ddcf2fe40",
+      "_id": "015a1f4ddcf2fe40"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         39
       ],
       "text": "Leverage the advantage of a weapon or ability",
-      "_id": "88c0ba6ca14a3df4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.88c0ba6ca14a3df4"
+      "_key": "!tables.results!a08efafb342ce79f.81634e1d7ec38246",
+      "_id": "81634e1d7ec38246"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         42
       ],
       "text": "Leverage the terrain or surroundings",
-      "_id": "373552f2bc54d3ac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.373552f2bc54d3ac"
+      "_key": "!tables.results!a08efafb342ce79f.d2bc69044da6751e",
+      "_id": "d2bc69044da6751e"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         45
       ],
       "text": "Lure into a vulnerable position",
-      "_id": "491bf552c3b3818d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.491bf552c3b3818d"
+      "_key": "!tables.results!a08efafb342ce79f.fd6f5994afb1c296",
+      "_id": "fd6f5994afb1c296"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         48
       ],
       "text": "Make a cautious or probing attack",
-      "_id": "e6080701a0730e40",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.e6080701a0730e40"
+      "_key": "!tables.results!a08efafb342ce79f.a7bda251c71bb669",
+      "_id": "a7bda251c71bb669"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         51
       ],
       "text": "Make a ferocious or powerful attack",
-      "_id": "4f2e709f06203721",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.4f2e709f06203721"
+      "_key": "!tables.results!a08efafb342ce79f.d40e643bb83dc5d0",
+      "_id": "d40e643bb83dc5d0"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         54
       ],
       "text": "Make a precise or careful attack",
-      "_id": "708b0b3e720db3e7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.708b0b3e720db3e7"
+      "_key": "!tables.results!a08efafb342ce79f.7a43aaa89e6a3887",
+      "_id": "7a43aaa89e6a3887"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         57
       ],
       "text": "Make a sacrificial attack",
-      "_id": "77b54162973696fd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.77b54162973696fd"
+      "_key": "!tables.results!a08efafb342ce79f.5d8c401d2150034f",
+      "_id": "5d8c401d2150034f"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         60
       ],
       "text": "Make an indirect attack",
-      "_id": "233baa57dd64614a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.233baa57dd64614a"
+      "_key": "!tables.results!a08efafb342ce79f.641515e0a7563bf5",
+      "_id": "641515e0a7563bf5"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         63
       ],
       "text": "Move in close or grapple",
-      "_id": "58a0d68b7feb3ca5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.58a0d68b7feb3ca5"
+      "_key": "!tables.results!a08efafb342ce79f.c2e8d127f06bcadf",
+      "_id": "c2e8d127f06bcadf"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         66
       ],
       "text": "Nullify a system, device, or weapon",
-      "_id": "c82cd6658a2fbdfd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.c82cd6658a2fbdfd"
+      "_key": "!tables.results!a08efafb342ce79f.4fa618d8634372c9",
+      "_id": "4fa618d8634372c9"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         69
       ],
       "text": "Overrun a position",
-      "_id": "4ea58aa2edbad04f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.4ea58aa2edbad04f"
+      "_key": "!tables.results!a08efafb342ce79f.64e102202f0e88ed",
+      "_id": "64e102202f0e88ed"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         72
       ],
       "text": "Perform a feint or trick",
-      "_id": "aa6467fa6e2b6a13",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.aa6467fa6e2b6a13"
+      "_key": "!tables.results!a08efafb342ce79f.bca0243845684859",
+      "_id": "bca0243845684859"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         75
       ],
       "text": "Press an advantage",
-      "_id": "c26edd26b6ad2f49",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.c26edd26b6ad2f49"
+      "_key": "!tables.results!a08efafb342ce79f.6f80875b3e3dbfe7",
+      "_id": "6f80875b3e3dbfe7"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         78
       ],
       "text": "Provoke a careless response",
-      "_id": "fe1435e1c81b9aa0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.fe1435e1c81b9aa0"
+      "_key": "!tables.results!a08efafb342ce79f.5122d6d491da5082",
+      "_id": "5122d6d491da5082"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         81
       ],
       "text": "Ready a decisive action",
-      "_id": "1e9df04370da18b2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.1e9df04370da18b2"
+      "_key": "!tables.results!a08efafb342ce79f.463871b66eb6bdcf",
+      "_id": "463871b66eb6bdcf"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         84
       ],
       "text": "Shift the fight to a new area",
-      "_id": "af07faa412a574f2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.af07faa412a574f2"
+      "_key": "!tables.results!a08efafb342ce79f.58104d955f59741d",
+      "_id": "58104d955f59741d"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         87
       ],
       "text": "Summon aid or reinforcements",
-      "_id": "1ef793d98e342013",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.1ef793d98e342013"
+      "_key": "!tables.results!a08efafb342ce79f.ed24ce48a3ad38f9",
+      "_id": "ed24ce48a3ad38f9"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         90
       ],
       "text": "Take cover or bolster defenses",
-      "_id": "5a6b8ed25b0c02ae",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.5a6b8ed25b0c02ae"
+      "_key": "!tables.results!a08efafb342ce79f.da31e673e4527cee",
+      "_id": "da31e673e4527cee"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         93
       ],
       "text": "Use an unexpected weapon or ability",
-      "_id": "a4a50f6983c55ed0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.a4a50f6983c55ed0"
+      "_key": "!tables.results!a08efafb342ce79f.829b86a9d48477c4",
+      "_id": "829b86a9d48477c4"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         96
       ],
       "text": "Weaken defenses",
-      "_id": "e8093f41022d6716",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.e8093f41022d6716"
+      "_key": "!tables.results!a08efafb342ce79f.9ae1c7c7cc5139d5",
+      "_id": "9ae1c7c7cc5139d5"
     },
     {
       "range": [
@@ -466,29 +307,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "3d273aea21e14246",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a08efafb342ce79f.3d273aea21e14246"
+      "_key": "!tables.results!a08efafb342ce79f.d9ed64c0989d7d8f",
+      "_id": "d9ed64c0989d7d8f"
     }
   ],
   "folder": "ffb24a823c4adb09",
   "sort": 383,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!a08efafb342ce79f"
 }

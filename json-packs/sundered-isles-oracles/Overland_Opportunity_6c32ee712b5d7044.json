@@ -1,0 +1,245 @@
+{
+  "_id": "6c32ee712b5d7044",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland",
+      "dsid": "oracle_rollable:sundered_isles/overland/opportunity"
+    }
+  },
+  "name": "Overland Opportunity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Advance warning of an ambush or lurking foe",
+      "_key": "!tables.results!6c32ee712b5d7044.9c95f809f7a53ef8",
+      "_id": "9c95f809f7a53ef8"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Cache of supplies",
+      "_key": "!tables.results!6c32ee712b5d7044.e7a14941c3c3952e",
+      "_id": "e7a14941c3c3952e"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Clear path through otherwise difficult terrain",
+      "_key": "!tables.results!6c32ee712b5d7044.7e239b4bdce20a4e",
+      "_id": "7e239b4bdce20a4e"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Clue offers insight into a current quest or mystery",
+      "_key": "!tables.results!6c32ee712b5d7044.b3f4a86d78f43b2a",
+      "_id": "b3f4a86d78f43b2a"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Clue to a foe's nature or vulnerabilities",
+      "_key": "!tables.results!6c32ee712b5d7044.1d55fc376143093e",
+      "_id": "1d55fc376143093e"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Clue to the history or nature of this land",
+      "_key": "!tables.results!6c32ee712b5d7044.564925533bd4140c",
+      "_id": "564925533bd4140c"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Creatures show the way or offer inspiration",
+      "_key": "!tables.results!6c32ee712b5d7044.b11a512e8baae133",
+      "_id": "b11a512e8baae133"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Evidence that others have passed this way",
+      "_key": "!tables.results!6c32ee712b5d7044.7c4c4fab62117758",
+      "_id": "7c4c4fab62117758"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Foe inadvertently reveals themselves or tips their hand",
+      "_key": "!tables.results!6c32ee712b5d7044.90d14bb24077074c",
+      "_id": "90d14bb24077074c"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Friendly community in sight",
+      "_key": "!tables.results!6c32ee712b5d7044.ac629c610271a3dd",
+      "_id": "ac629c610271a3dd"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Helpful traveler crosses your path",
+      "_key": "!tables.results!6c32ee712b5d7044.2450e1f3d9f5b8e1",
+      "_id": "2450e1f3d9f5b8e1"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Ideal weather takes hold",
+      "_key": "!tables.results!6c32ee712b5d7044.6d0c0768c553a02f",
+      "_id": "6d0c0768c553a02f"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Impressive vista offers comfort or inspiration",
+      "_key": "!tables.results!6c32ee712b5d7044.0d236d7ad80fee24",
+      "_id": "0d236d7ad80fee24"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Moment of fellowship or inner peace",
+      "_key": "!tables.results!6c32ee712b5d7044.2f1c09a01edb4f02",
+      "_id": "2f1c09a01edb4f02"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Opening to distract, escape, or avoid foes",
+      "_key": "!tables.results!6c32ee712b5d7044.e095e54c37f76e55",
+      "_id": "e095e54c37f76e55"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Opening to get the drop on a foe",
+      "_key": "!tables.results!6c32ee712b5d7044.01595541e775a6eb",
+      "_id": "01595541e775a6eb"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Path transitions into favorable terrain",
+      "_key": "!tables.results!6c32ee712b5d7044.bc5de1cec54730fa",
+      "_id": "bc5de1cec54730fa"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Plants or herbs with helpful qualities",
+      "_key": "!tables.results!6c32ee712b5d7044.91db6a6e03a9b23f",
+      "_id": "91db6a6e03a9b23f"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Plea for help from a potential benefactor",
+      "_key": "!tables.results!6c32ee712b5d7044.1565b92b0201ff37",
+      "_id": "1565b92b0201ff37"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Plentiful hunting or foraging opportunities",
+      "_key": "!tables.results!6c32ee712b5d7044.3d1bb843ee123c44",
+      "_id": "3d1bb843ee123c44"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Refuge offers a place to hide, plan, or recover",
+      "_key": "!tables.results!6c32ee712b5d7044.473210bf4399d662",
+      "_id": "473210bf4399d662"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Signpost or marker provides guidance",
+      "_key": "!tables.results!6c32ee712b5d7044.0d7ecca7e401f07b",
+      "_id": "0d7ecca7e401f07b"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Source of fresh water",
+      "_key": "!tables.results!6c32ee712b5d7044.8e7121717274e4c5",
+      "_id": "8e7121717274e4c5"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Unusual location offers opportunities for exploration",
+      "_key": "!tables.results!6c32ee712b5d7044.0e0603fdd754e850",
+      "_id": "0e0603fdd754e850"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Vantage point reveals the lay of the land",
+      "_key": "!tables.results!6c32ee712b5d7044.4e5af9a7b8d1e312",
+      "_id": "4e5af9a7b8d1e312"
+    }
+  ],
+  "folder": "0b3f32f3ee7a1a74",
+  "sort": 163,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6c32ee712b5d7044"
+}

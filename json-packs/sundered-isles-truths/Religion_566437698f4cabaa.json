@@ -1,0 +1,101 @@
+{
+  "name": "Religion",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/religion",
+      "dsid": "truth:sundered_isles/religion"
+    }
+  },
+  "_id": "566437698f4cabaa",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Our faith is as diverse as the people.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/religion.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Our faith is as diverse as the people.",
+        "Description": "Many have no religion, or offer an occasional prayer out of habit. Others pay homage to the gods of our ancestors as a way of connecting to their roots. Some idolize the natural order of the world, and see the divine in the ebb and flow of the tides or the whirling dance of the stars. Then there are those who see this diversity as imperfection, who seek only to bend the world to their righteous will.",
+        "Quest": "A pilgrim seeks passage to remote and dangerous waters. What holy place do they seek?",
+        "Roll template": {
+          "Description": "Many have no religion, or offer an occasional prayer out of habit. Others pay homage to the gods of our ancestors as a way of connecting to their roots. Some idolize the natural order of the world, and see the divine in the ebb and flow of the tides or the whirling dance of the stars. Then there are those who see this diversity as imperfection, who seek only to bend the world to their righteous will."
+        }
+      },
+      "_id": "10d6f1f67371cddb",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!566437698f4cabaa.10d6f1f67371cddb"
+    },
+    {
+      "type": "truth",
+      "name": "The gods enact their will through manifestations and miracles.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/religion.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "The gods enact their will through manifestations and miracles.",
+        "Description": "We chronicle the visitations of the gods in our histories, and decipher their enigmatic purpose through sacred rites. In times of crisis, their earthly avatars have guided us through the upheaval. For many, faith in these gods offers meaning and fulfillment. For others, belief is a cudgel used by tyrannical leaders to divide or control us. For this reason, some people and cultures disavow the gods to follow a different path.",
+        "Quest": "You bear the mark of a god. The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?",
+        "Roll template": {
+          "Description": "We chronicle the visitations of the gods in our histories, and decipher their enigmatic purpose through sacred rites. In times of crisis, their earthly avatars have guided us through the upheaval. For many, faith in these gods offers meaning and fulfillment. For others, belief is a cudgel used by tyrannical leaders to divide or control us. For this reason, some people and cultures disavow the gods to follow a different path."
+        }
+      },
+      "_id": "6cba89b70b800bf2",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!566437698f4cabaa.6cba89b70b800bf2"
+    },
+    {
+      "type": "truth",
+      "name": "The gods are dead.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/religion.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "The gods are dead.",
+        "Description": "In a time before memory, the gods of the isles warred with each other. These seas were their battleground, and they ushered in an age of destruction that plunged all the lands into fire and darkness. In their death throes, they left behind areas of tainted seas and forsaken landscapes—a cursed corruption that lingers even today. The hubris of these fallen gods is a reminder of the empty promise of faith.",
+        "Quest": "A cult seeks to take control of a site reputed to hold an artifact of the fallen gods. What holy object do they seek? Why are you sworn to stop them?",
+        "Roll template": {
+          "Description": "In a time before memory, the gods of the isles warred with each other. These seas were their battleground, and they ushered in an age of destruction that plunged all the lands into fire and darkness. In their death throes, they left behind areas of tainted seas and forsaken landscapes—a cursed corruption that lingers even today. The hubris of these fallen gods is a reminder of the empty promise of faith."
+        }
+      },
+      "_id": "ee6d1fc01a110c73",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!566437698f4cabaa.ee6d1fc01a110c73"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are an ardent follower of a religion or creed, you might be a @Compendium[foundry-ironsworn.starforgedassets.14c1e6ecd4680fee]{Devotant}. If you follow a prophesied path, you might be @Compendium[foundry-ironsworn.starforgedassets.9ab94d1a123ed80e]{Fated}. If you are cursed by the gods with foul luck, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.f841c7e14913086a]{Jinx}.",
+        "format": 2,
+        "content": "<p>If you are an ardent follower of a religion or creed, you might be a @Compendium[foundry-ironsworn.starforgedassets.14c1e6ecd4680fee]{Devotant}. If you follow a prophesied path, you might be @Compendium[foundry-ironsworn.starforgedassets.9ab94d1a123ed80e]{Fated}. If you are cursed by the gods with foul luck, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.f841c7e14913086a]{Jinx}.</p>"
+      },
+      "_id": "1070b26ba5fed99f",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!566437698f4cabaa.1070b26ba5fed99f"
+    }
+  ],
+  "folder": null,
+  "sort": 84,
+  "_key": "!journal!566437698f4cabaa"
+}

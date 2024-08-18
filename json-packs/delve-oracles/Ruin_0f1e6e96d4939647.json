@@ -1,0 +1,111 @@
+{
+  "_id": "0f1e6e96d4939647",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Ruin",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/ruin"
+    }
+  },
+  "name": "Ruin",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Citadel",
+      "_key": "!tables.results!0f1e6e96d4939647.9c1054972305dc94",
+      "_id": "9c1054972305dc94"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Enclave",
+      "_key": "!tables.results!0f1e6e96d4939647.05a1e7a40f7c77eb",
+      "_id": "05a1e7a40f7c77eb"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Fortress",
+      "_key": "!tables.results!0f1e6e96d4939647.01603375206fa0ee",
+      "_id": "01603375206fa0ee"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Hall",
+      "_key": "!tables.results!0f1e6e96d4939647.ea96016ebefb7005",
+      "_id": "ea96016ebefb7005"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Keep",
+      "_key": "!tables.results!0f1e6e96d4939647.999ccfe11db87b2a",
+      "_id": "999ccfe11db87b2a"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Sanctuary",
+      "_key": "!tables.results!0f1e6e96d4939647.b5880f105b4b5a02",
+      "_id": "b5880f105b4b5a02"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Sanctum",
+      "_key": "!tables.results!0f1e6e96d4939647.3cb3ebbd124d9fe8",
+      "_id": "3cb3ebbd124d9fe8"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Spire",
+      "_key": "!tables.results!0f1e6e96d4939647.54bdf3c1c0006af1",
+      "_id": "54bdf3c1c0006af1"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Temple",
+      "_key": "!tables.results!0f1e6e96d4939647.4b9997d9e72ac7db",
+      "_id": "4b9997d9e72ac7db"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tower",
+      "_key": "!tables.results!0f1e6e96d4939647.a100f9b0dee5ec55",
+      "_id": "a100f9b0dee5ec55"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 211,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0f1e6e96d4939647"
+}

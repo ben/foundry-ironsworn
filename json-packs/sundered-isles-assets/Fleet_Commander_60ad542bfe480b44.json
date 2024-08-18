@@ -1,0 +1,66 @@
+{
+  "type": "asset",
+  "_id": "60ad542bfe480b44",
+  "folder": "b6079e67f68d37cf",
+  "name": "Fleet Commander",
+  "system": {
+    "requirement": "<p>Once you fill 16 legacy track boxes and take command of a mighty fleet…</p>",
+    "category": "Deed",
+    "color": "#40834f",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your fleet has a starting and max power of 4. When you make a move as a fleetwide action to get in position, avoid a hazard, or fight, roll +power. If your fleet bears the cost of a move, suffer -1 power. At 0 power, mark the fleet as wrecked. To refit the fleet, @Compendium[foundry-ironsworn.starforgedmoves.3de42d2d3cb78855]{Sojourn} and forgo an automatic strong hit on a recover move to take +2 power; if the fleet is wrecked, first spend 2 experience to clear that status.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Take +2 power and set your max power to 5.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, you may reroll your action die if its value is less than your fleet’s power.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Power",
+      "max": 4,
+      "value": 4,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Wrecked",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Deed/Fleet_Commander",
+      "dsid": "asset:sundered_isles/deed/fleet_commander"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!60ad542bfe480b44"
+}

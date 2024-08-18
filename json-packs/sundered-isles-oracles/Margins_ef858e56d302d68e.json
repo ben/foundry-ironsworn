@@ -1,0 +1,83 @@
+{
+  "_id": "ef858e56d302d68e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/seafaring/waypoints/known_waters",
+      "dsid": "oracle_rollable:sundered_isles/seafaring/waypoints/known_waters/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "**Sails, ho!**\n[Ship](datasworn:oracle_collection:sundered_isles/ship)",
+      "_key": "!tables.results!ef858e56d302d68e.5714681c3a4d87e1",
+      "_id": "5714681c3a4d87e1"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "**Changing weather**\n[Weather](datasworn:oracle_collection:sundered_isles/weather)",
+      "_key": "!tables.results!ef858e56d302d68e.3a3d21f108314432",
+      "_id": "3a3d21f108314432"
+    },
+    {
+      "range": [
+        31,
+        50
+      ],
+      "text": "**Instance (choose one)**\n\n  * [Seafaring Details](datasworn:oracle_rollable:sundered_isles/seafaring/details)\n  * [Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!ef858e56d302d68e.300826eabe3917be",
+      "_id": "300826eabe3917be"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "**Lost souls**\n[Shipwreck](datasworn:oracle_collection:sundered_isles/shipwreck)",
+      "_key": "!tables.results!ef858e56d302d68e.aa9e87a2275305f8",
+      "_id": "aa9e87a2275305f8"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "**Relic of the past**\n[Ruin](datasworn:oracle_collection:sundered_isles/ruin)",
+      "_key": "!tables.results!ef858e56d302d68e.4fca4a18783f4c52",
+      "_id": "4fca4a18783f4c52"
+    },
+    {
+      "range": [
+        71,
+        85
+      ],
+      "text": "**Character focus**\n[Interlude Scene](datasworn:oracle_rollable:sundered_isles/misc/interlude_scene)",
+      "_key": "!tables.results!ef858e56d302d68e.443b7f55cb65a3ad",
+      "_id": "443b7f55cb65a3ad"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!ef858e56d302d68e.26811402ac5fda84",
+      "_id": "26811402ac5fda84"
+    }
+  ],
+  "folder": "864a47190064f649",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ef858e56d302d68e"
+}

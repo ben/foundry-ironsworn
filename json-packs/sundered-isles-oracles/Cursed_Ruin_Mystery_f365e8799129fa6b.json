@@ -1,0 +1,110 @@
+{
+  "_id": "f365e8799129fa6b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/mystery_cursed"
+    }
+  },
+  "name": "Cursed Ruin Mystery",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Corrupted religion",
+      "_key": "!tables.results!f365e8799129fa6b.2c628906572176e7",
+      "_id": "2c628906572176e7"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Cursed artifact",
+      "_key": "!tables.results!f365e8799129fa6b.8c84e1e41d0339cb",
+      "_id": "8c84e1e41d0339cb"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Eternal defenders",
+      "_key": "!tables.results!f365e8799129fa6b.e4e15c945c4d007e",
+      "_id": "e4e15c945c4d007e"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Grim portent",
+      "_key": "!tables.results!f365e8799129fa6b.7b8a4a626e698c54",
+      "_id": "7b8a4a626e698c54"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Imprisoned entity",
+      "_key": "!tables.results!f365e8799129fa6b.d6d99292699d39f0",
+      "_id": "d6d99292699d39f0"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Infernal machines",
+      "_key": "!tables.results!f365e8799129fa6b.ae4f534d3069249f",
+      "_id": "ae4f534d3069249f"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Lingering curse",
+      "_key": "!tables.results!f365e8799129fa6b.c1c195bd703a41d5",
+      "_id": "c1c195bd703a41d5"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Mystic gateway",
+      "_key": "!tables.results!f365e8799129fa6b.8e1806bfc633d5d6",
+      "_id": "8e1806bfc633d5d6"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sorcerous nexus",
+      "_key": "!tables.results!f365e8799129fa6b.be64a3d4aa677122",
+      "_id": "be64a3d4aa677122"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tormented undead",
+      "_key": "!tables.results!f365e8799129fa6b.3e26dae32c6ade57",
+      "_id": "3e26dae32c6ade57"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 216,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f365e8799129fa6b"
+}

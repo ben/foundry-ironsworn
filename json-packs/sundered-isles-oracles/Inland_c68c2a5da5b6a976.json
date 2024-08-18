@@ -1,0 +1,38 @@
+{
+  "_id": "c68c2a5da5b6a976",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck/orientation/position",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/orientation/position/inland"
+    }
+  },
+  "name": "Inland",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        80
+      ],
+      "text": "Stranded on dry ground or rocks",
+      "_key": "!tables.results!c68c2a5da5b6a976.a1230d450c0f5fa9",
+      "_id": "a1230d450c0f5fa9"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Perched on improbably high ground",
+      "_key": "!tables.results!c68c2a5da5b6a976.61c00a89fec24c7d",
+      "_id": "61c00a89fec24c7d"
+    }
+  ],
+  "folder": "eb56848e40226443",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!c68c2a5da5b6a976"
+}

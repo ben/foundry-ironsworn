@@ -1,0 +1,128 @@
+{
+  "_id": "93286483fc9f9a1d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/identity_society"
+    }
+  },
+  "name": "Faction Name: Society Identity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Alliance",
+      "_key": "!tables.results!93286483fc9f9a1d.8d8d8498049ec236",
+      "_id": "8d8d8498049ec236"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Brethren",
+      "_key": "!tables.results!93286483fc9f9a1d.de99fc3684570d7f",
+      "_id": "de99fc3684570d7f"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Circle",
+      "_key": "!tables.results!93286483fc9f9a1d.575d04b84968275a",
+      "_id": "575d04b84968275a"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "Clan",
+      "_key": "!tables.results!93286483fc9f9a1d.c1a90ad4d2105b5d",
+      "_id": "c1a90ad4d2105b5d"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Coalition",
+      "_key": "!tables.results!93286483fc9f9a1d.6ea1d5d6b66f4afa",
+      "_id": "6ea1d5d6b66f4afa"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Fellowship",
+      "_key": "!tables.results!93286483fc9f9a1d.cf066c429f774ee7",
+      "_id": "cf066c429f774ee7"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "House",
+      "_key": "!tables.results!93286483fc9f9a1d.5da79f84daff3472",
+      "_id": "5da79f84daff3472"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Kinship",
+      "_key": "!tables.results!93286483fc9f9a1d.e32c71f02581ef34",
+      "_id": "e32c71f02581ef34"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Pact",
+      "_key": "!tables.results!93286483fc9f9a1d.57b2fc0bc86d0627",
+      "_id": "57b2fc0bc86d0627"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Sept",
+      "_key": "!tables.results!93286483fc9f9a1d.c16c86604c7479c3",
+      "_id": "c16c86604c7479c3"
+    },
+    {
+      "range": [
+        81,
+        95
+      ],
+      "text": "Tribe",
+      "_key": "!tables.results!93286483fc9f9a1d.faf73611bc57c21a",
+      "_id": "faf73611bc57c21a"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Unity",
+      "_key": "!tables.results!93286483fc9f9a1d.6f878b1044783f5b",
+      "_id": "6f878b1044783f5b"
+    }
+  ],
+  "folder": "4c033d15ef6dc29f",
+  "sort": 183,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!93286483fc9f9a1d"
+}

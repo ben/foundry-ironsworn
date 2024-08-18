@@ -1,0 +1,101 @@
+{
+  "name": "Piracy",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/piracy",
+      "dsid": "truth:sundered_isles/piracy"
+    }
+  },
+  "_id": "b15a72ca0e378023",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Pirates are merciless raiders.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/piracy.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Pirates are merciless raiders.",
+        "Description": "Pirates give no quarter to seagoing targets and raze settlements on a whim. Their loyalty is only to crew and captain, but even that bond is fragile. Ritualized duels to decide the captaincy or settle disputes are common, and a long-lived marauder is a rare thing. If you come upon a gray-haired pirate, be wary; they have outwitted sailors better than you a thousand times over.",
+        "Quest": "You possess one-third of a coded map said to lead to a fabled pirate treasure. What infamous pirates hold the other pieces? Will you form an uneasy alliance to collect and divide the treasure, or take the other pieces of the map by force?",
+        "Roll template": {
+          "Description": "Pirates give no quarter to seagoing targets and raze settlements on a whim. Their loyalty is only to crew and captain, but even that bond is fragile. Ritualized duels to decide the captaincy or settle disputes are common, and a long-lived marauder is a rare thing. If you come upon a gray-haired pirate, be wary; they have outwitted sailors better than you a thousand times over."
+        }
+      },
+      "_id": "2430321aec332fe2",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!b15a72ca0e378023.2430321aec332fe2"
+    },
+    {
+      "type": "truth",
+      "name": "Pirates are fiercely independent, but bound by a shared code.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/piracy.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Pirates are fiercely independent, but bound by a shared code.",
+        "Description": "A pirate crew is a power unto itself, a diverse band of fugitives, outcasts, and rebels who serve under a ship’s charter and have a say in the operation of the vessel. Pirates do not attack indiscriminately, and give quarter to those who ask for it. They are nevertheless vilified as barbarous murderers by trade guilds, imperial governors, and other powers in the isles. In some ways, this reputation serves them; fear is more powerful than the mightiest cannons or the sharpest swords.",
+        "Quest": "A former pirate, given a pardon and a letter of marque, has sent countless pirates to their doom. Who is this turncoat, and why do you plot to see their reign of the seas ended?",
+        "Roll template": {
+          "Description": "A pirate crew is a power unto itself, a diverse band of fugitives, outcasts, and rebels who serve under a ship’s charter and have a say in the operation of the vessel. Pirates do not attack indiscriminately, and give quarter to those who ask for it. They are nevertheless vilified as barbarous murderers by trade guilds, imperial governors, and other powers in the isles. In some ways, this reputation serves them; fear is more powerful than the mightiest cannons or the sharpest swords."
+        }
+      },
+      "_id": "279e0e1d1349477c",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!b15a72ca0e378023.279e0e1d1349477c"
+    },
+    {
+      "type": "truth",
+      "name": "A burgeoning pirate nation wields great influence.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/piracy.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "A burgeoning pirate nation wields great influence.",
+        "Description": "The marauder clans sail under the command of the Dread Court, a conclave of eight veteran pirates whose shrewd tactics positioned this nation of cutthroats as a rising power. Once each year, the pirate fleets gather at a port called Flotsam—an artificial island built from the husks of captured and ruined ships—to pay homage to the Court and make plans.",
+        "Quest": "There are schisms within the Dread Court. An assassination has tipped the latest gathering into chaos and threatens the future of this burgeoning power. Will you work to restore the alliance, or use the mayhem to your own advantage?",
+        "Roll template": {
+          "Description": "The marauder clans sail under the command of the Dread Court, a conclave of eight veteran pirates whose shrewd tactics positioned this nation of cutthroats as a rising power. Once each year, the pirate fleets gather at a port called Flotsam—an artificial island built from the husks of captured and ruined ships—to pay homage to the Court and make plans."
+        }
+      },
+      "_id": "f004b1d8aaaaf276",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!b15a72ca0e378023.f004b1d8aaaaf276"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you hunt marauding pirates, you might be a @Compendium[foundry-ironsworn.starforgedassets.9e8a91f52b96c95b]{Bounty Hunter}. If you serve among a band of pirates, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.64cc9fd2fe517619]{Cutthroat}. If you are a young greenhorn or stowaway among a pirate crew, you might be an @Compendium[foundry-ironsworn.sunderedislesassets.54ffc0e2d8e514b4]{Urchin}. If you stand in command of a pirate ship, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.3989ffe5d08261bc]{Pirate Captain}.",
+        "format": 2,
+        "content": "<p>If you hunt marauding pirates, you might be a @Compendium[foundry-ironsworn.starforgedassets.9e8a91f52b96c95b]{Bounty Hunter}. If you serve among a band of pirates, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.64cc9fd2fe517619]{Cutthroat}. If you are a young greenhorn or stowaway among a pirate crew, you might be an @Compendium[foundry-ironsworn.sunderedislesassets.54ffc0e2d8e514b4]{Urchin}. If you stand in command of a pirate ship, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.3989ffe5d08261bc]{Pirate Captain}.</p>"
+      },
+      "_id": "7eb469ad816a4dbc",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!b15a72ca0e378023.7eb469ad816a4dbc"
+    }
+  ],
+  "folder": null,
+  "sort": 83,
+  "_key": "!journal!b15a72ca0e378023"
+}

@@ -1,0 +1,93 @@
+{
+  "_id": "ed0c490af441b4e3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Nature/Theme",
+      "category": "Ironsworn/Oracles/Site_Nature",
+      "dsid": "oracle_rollable:delve/site_nature/theme"
+    }
+  },
+  "name": "Theme",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "[Ancient](datasworn:delve_site_theme:delve/ancient)",
+      "_key": "!tables.results!ed0c490af441b4e3.00b7bd423c330540",
+      "_id": "00b7bd423c330540"
+    },
+    {
+      "range": [
+        12,
+        23
+      ],
+      "text": "[Corrupted](datasworn:delve_site_theme:delve/corrupted)",
+      "_key": "!tables.results!ed0c490af441b4e3.d7e9667c32387a70",
+      "_id": "d7e9667c32387a70"
+    },
+    {
+      "range": [
+        24,
+        35
+      ],
+      "text": "[Fortified](datasworn:delve_site_theme:delve/fortified)",
+      "_key": "!tables.results!ed0c490af441b4e3.6b42dec713d78b68",
+      "_id": "6b42dec713d78b68"
+    },
+    {
+      "range": [
+        36,
+        48
+      ],
+      "text": "[Hallowed](datasworn:delve_site_theme:delve/hallowed)",
+      "_key": "!tables.results!ed0c490af441b4e3.7aca2d024c12b69c",
+      "_id": "7aca2d024c12b69c"
+    },
+    {
+      "range": [
+        49,
+        61
+      ],
+      "text": "[Haunted](datasworn:delve_site_theme:delve/haunted)",
+      "_key": "!tables.results!ed0c490af441b4e3.f04878fa88fd4d15",
+      "_id": "f04878fa88fd4d15"
+    },
+    {
+      "range": [
+        62,
+        74
+      ],
+      "text": "[Infested](datasworn:delve_site_theme:delve/infested)",
+      "_key": "!tables.results!ed0c490af441b4e3.3d721e0d7969f5dc",
+      "_id": "3d721e0d7969f5dc"
+    },
+    {
+      "range": [
+        75,
+        87
+      ],
+      "text": "[Ravaged](datasworn:delve_site_theme:delve/ravaged)",
+      "_key": "!tables.results!ed0c490af441b4e3.5ea17a05b5b0b111",
+      "_id": "5ea17a05b5b0b111"
+    },
+    {
+      "range": [
+        88,
+        100
+      ],
+      "text": "[Wild](datasworn:delve_site_theme:delve/wild)",
+      "_key": "!tables.results!ed0c490af441b4e3.d76c2f7720920fc7",
+      "_id": "d76c2f7720920fc7"
+    }
+  ],
+  "folder": "62509c23920c5583",
+  "sort": 212,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ed0c490af441b4e3"
+}

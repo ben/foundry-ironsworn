@@ -1,0 +1,16 @@
+{
+  "name": "Derelict Zones",
+  "description": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
+  "type": "RollTable",
+  "_id": "fd281eb30bcd3e2e",
+  "sort": 351,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts/Zones",
+      "dsid": "oracle_collection:starforged/derelict/zone"
+    }
+  },
+  "folder": "fd19a02fbd5f71e6",
+  "sorting": "a",
+  "_key": "!folders!fd281eb30bcd3e2e"
+}

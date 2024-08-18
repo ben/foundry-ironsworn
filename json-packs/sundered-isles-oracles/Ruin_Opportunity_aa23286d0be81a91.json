@@ -1,0 +1,200 @@
+{
+  "_id": "aa23286d0be81a91",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/opportunity"
+    }
+  },
+  "name": "Ruin Opportunity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Access to an untouched area",
+      "_key": "!tables.results!aa23286d0be81a91.1681c2c35cdddb86",
+      "_id": "1681c2c35cdddb86"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Advance warning of a danger",
+      "_key": "!tables.results!aa23286d0be81a91.ace817a55d218233",
+      "_id": "ace817a55d218233"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Awe-inspiring architecture",
+      "_key": "!tables.results!aa23286d0be81a91.4b3ff30ac28bafdd",
+      "_id": "4b3ff30ac28bafdd"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Clue reveals a new aspect of this place",
+      "_key": "!tables.results!aa23286d0be81a91.4bf78dcd14c635a7",
+      "_id": "4bf78dcd14c635a7"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Cooperative fellow explorer",
+      "_key": "!tables.results!aa23286d0be81a91.46dd9c8c90170e30",
+      "_id": "46dd9c8c90170e30"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Culturally significant object or artwork",
+      "_key": "!tables.results!aa23286d0be81a91.f818d22266322cf5",
+      "_id": "f818d22266322cf5"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Evidence that others passed this way",
+      "_key": "!tables.results!aa23286d0be81a91.12d37b1a16daa7d7",
+      "_id": "12d37b1a16daa7d7"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Friendly inhabitant",
+      "_key": "!tables.results!aa23286d0be81a91.60e4b5063ee85c12",
+      "_id": "60e4b5063ee85c12"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Heartwarming glimpse of past lives",
+      "_key": "!tables.results!aa23286d0be81a91.1e6cbff2f48e6af5",
+      "_id": "1e6cbff2f48e6af5"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Helpful archive of past events",
+      "_key": "!tables.results!aa23286d0be81a91.60bdeb4e83e67ef1",
+      "_id": "60bdeb4e83e67ef1"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Key to access a hidden or sealed area",
+      "_key": "!tables.results!aa23286d0be81a91.c38c6ac061b8a372",
+      "_id": "c38c6ac061b8a372"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Key to understand a cipher or language",
+      "_key": "!tables.results!aa23286d0be81a91.7c9363e99baa0ec7",
+      "_id": "7c9363e99baa0ec7"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Map or markers point the way",
+      "_key": "!tables.results!aa23286d0be81a91.7aa1c3b9b0ff9f9a",
+      "_id": "7aa1c3b9b0ff9f9a"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Moment of fellowship or inner peace",
+      "_key": "!tables.results!aa23286d0be81a91.0749c6c6fdd38bca",
+      "_id": "0749c6c6fdd38bca"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Secure area offers a moment of peace",
+      "_key": "!tables.results!aa23286d0be81a91.e5b451ec5c05004b",
+      "_id": "e5b451ec5c05004b"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Shortcut or detour along a safe path",
+      "_key": "!tables.results!aa23286d0be81a91.63e278644e57478b",
+      "_id": "63e278644e57478b"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Source of fresh water",
+      "_key": "!tables.results!aa23286d0be81a91.7115e5b376a7dbde",
+      "_id": "7115e5b376a7dbde"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Useful gear left by another explorer",
+      "_key": "!tables.results!aa23286d0be81a91.c7e11803d6fb0159",
+      "_id": "c7e11803d6fb0159"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Useful or interesting artifact or device",
+      "_key": "!tables.results!aa23286d0be81a91.62381590376f6998",
+      "_id": "62381590376f6998"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "[Treasure](datasworn:oracle_collection:sundered_isles/treasure)",
+      "_key": "!tables.results!aa23286d0be81a91.463de4ffab35c78e",
+      "_id": "463de4ffab35c78e"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 219,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!aa23286d0be81a91"
+}

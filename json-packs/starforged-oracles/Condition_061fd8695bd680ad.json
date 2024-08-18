@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Condition",
-      "category": "Starforged/Oracles/Derelicts"
+      "category": "Starforged/Oracles/Derelicts",
+      "dsid": "oracle_rollable:starforged/derelict/condition"
     }
   },
   "name": "Condition",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Functional",
-      "_id": "fe1da5bbd3b2a9fc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!061fd8695bd680ad.fe1da5bbd3b2a9fc"
+      "_key": "!tables.results!061fd8695bd680ad.de5f0d2758aac746",
+      "_id": "de5f0d2758aac746"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         30
       ],
       "text": "Limited power",
-      "_id": "d999afa98f30daeb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!061fd8695bd680ad.d999afa98f30daeb"
+      "_key": "!tables.results!061fd8695bd680ad.3af9cfe969b179b2",
+      "_id": "3af9cfe969b179b2"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Cold and dark",
-      "_id": "56973cac3485e84c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!061fd8695bd680ad.56973cac3485e84c"
+      "_key": "!tables.results!061fd8695bd680ad.d9920e3b1c020c84",
+      "_id": "d9920e3b1c020c84"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         90
       ],
       "text": "Damaged or breached",
-      "_id": "3c4633a4067e2371",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!061fd8695bd680ad.3c4633a4067e2371"
+      "_key": "!tables.results!061fd8695bd680ad.ea2fb3859b655e8e",
+      "_id": "ea2fb3859b655e8e"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         98
       ],
       "text": "Heavily damaged",
-      "_id": "c4ba1b8398cca83b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!061fd8695bd680ad.c4ba1b8398cca83b"
+      "_key": "!tables.results!061fd8695bd680ad.6c5dba07b9d6cdee",
+      "_id": "6c5dba07b9d6cdee"
     },
     {
       "range": [
@@ -88,29 +64,12 @@
         100
       ],
       "text": "Impending destruction",
-      "_id": "74105e815aef0cf1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!061fd8695bd680ad.74105e815aef0cf1"
+      "_key": "!tables.results!061fd8695bd680ad.b77d29276ac568e6",
+      "_id": "b77d29276ac568e6"
     }
   ],
   "folder": "fd19a02fbd5f71e6",
   "sort": 348,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!061fd8695bd680ad"
 }

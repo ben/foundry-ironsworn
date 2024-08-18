@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Desert/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Desert"
+      "category": "Starforged/Oracles/Planets/Desert",
+      "dsid": "oracle_rollable:starforged/planet/desert/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Dry seabeds",
-      "_id": "1a0584c2e4fbd4d6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.1a0584c2e4fbd4d6"
+      "_key": "!tables.results!ed4e3e57470dd927.cd2068f0853ab236",
+      "_id": "cd2068f0853ab236"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Expansive dune seas",
-      "_id": "2c1a9dde4a396d3e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.2c1a9dde4a396d3e"
+      "_key": "!tables.results!ed4e3e57470dd927.d0dcdd856b71520a",
+      "_id": "d0dcdd856b71520a"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Massive canyons",
-      "_id": "86243ca465c2a559",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.86243ca465c2a559"
+      "_key": "!tables.results!ed4e3e57470dd927.058d6f7e98252564",
+      "_id": "058d6f7e98252564"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Perpetual daylight",
-      "_id": "655e67c1ca5ea9d6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.655e67c1ca5ea9d6"
+      "_key": "!tables.results!ed4e3e57470dd927.f1f05bf607b25096",
+      "_id": "f1f05bf607b25096"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Rugged mountains",
-      "_id": "90187a82ba956354",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.90187a82ba956354"
+      "_key": "!tables.results!ed4e3e57470dd927.0c5072c81778ff20",
+      "_id": "0c5072c81778ff20"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Sprawling salt flats",
-      "_id": "b5bf86c3db117c86",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.b5bf86c3db117c86"
+      "_key": "!tables.results!ed4e3e57470dd927.d8d79615eefae989",
+      "_id": "d8d79615eefae989"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Vast plateaus",
-      "_id": "fc685e3d57d80a0d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.fc685e3d57d80a0d"
+      "_key": "!tables.results!ed4e3e57470dd927.c26e902d71e36646",
+      "_id": "c26e902d71e36646"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Vibrant terrain colors",
-      "_id": "0f913a3d8487c5cf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.0f913a3d8487c5cf"
+      "_key": "!tables.results!ed4e3e57470dd927.3ce378aac4d88b2c",
+      "_id": "3ce378aac4d88b2c"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "e0c15aa92a50cf17",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.e0c15aa92a50cf17"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!ed4e3e57470dd927.9fe951527d12ae18",
+      "_id": "9fe951527d12ae18"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "a184beda68600343",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ed4e3e57470dd927.a184beda68600343"
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (orbital)",
+      "_key": "!tables.results!ed4e3e57470dd927.8b0618852bcc6656",
+      "_id": "8b0618852bcc6656"
     }
   ],
   "folder": "ba1bbe7871538aad",
   "sort": 308,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!ed4e3e57470dd927"
 }

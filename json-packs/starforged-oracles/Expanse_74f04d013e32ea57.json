@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Ocean/Settlements/Expanse",
-      "category": "Starforged/Oracles/Planets/Ocean"
+      "category": "Starforged/Oracles/Planets/Ocean/Settlements",
+      "dsid": "oracle_rollable:starforged/planet/ocean/settlements/expanse"
     }
   },
   "name": "Expanse",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         85
       ],
       "text": "None",
-      "_id": "9eb50a48811566b0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!74f04d013e32ea57.9eb50a48811566b0"
+      "_key": "!tables.results!74f04d013e32ea57.311d6cd0f0100b17",
+      "_id": "311d6cd0f0100b17"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         90
       ],
       "text": "Orbital settlement",
-      "_id": "3c1527aa573377f6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!74f04d013e32ea57.3c1527aa573377f6"
+      "_key": "!tables.results!74f04d013e32ea57.f1efb1f4792d5b2f",
+      "_id": "f1efb1f4792d5b2f"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         97
       ],
       "text": "Planetside settlement",
-      "_id": "586d4b4efe535fcc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!74f04d013e32ea57.586d4b4efe535fcc"
+      "_key": "!tables.results!74f04d013e32ea57.cc8a471015900d79",
+      "_id": "cc8a471015900d79"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         99
       ],
       "text": "Multiple settlements",
-      "_id": "a6243a61c147328b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!74f04d013e32ea57.a6243a61c147328b"
+      "_key": "!tables.results!74f04d013e32ea57.0b0f8f62836d63ae",
+      "_id": "0b0f8f62836d63ae"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Settlements in conflict",
-      "_id": "90602a049631c923",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!74f04d013e32ea57.90602a049631c923"
+      "_key": "!tables.results!74f04d013e32ea57.8e50c5b12f55a7a4",
+      "_id": "8e50c5b12f55a7a4"
     }
   ],
   "folder": "2383c084a372a335",
-  "sort": 314,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!74f04d013e32ea57"
 }

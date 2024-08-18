@@ -1,0 +1,471 @@
+{
+  "_id": "807a6b963f72d7e5",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Creatures/First_Look",
+      "category": "Starforged/Oracles/Creatures",
+      "dsid": "oracle_rollable:starforged/creature/first_look"
+    }
+  },
+  "name": "Creature First Look",
+  "description": "<p>Roll for a basic form, and flesh out the creature’s appearance using the First Look table.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Antennae or sensory organs",
+      "_key": "!tables.results!807a6b963f72d7e5.b5ce4c63d8fed456",
+      "_id": "b5ce4c63d8fed456"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Armored",
+      "_key": "!tables.results!807a6b963f72d7e5.2c53ec8bc8dfccfc",
+      "_id": "2c53ec8bc8dfccfc"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Beautiful",
+      "_key": "!tables.results!807a6b963f72d7e5.b797d307e6debc29",
+      "_id": "b797d307e6debc29"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Biotech",
+      "_key": "!tables.results!807a6b963f72d7e5.208ec2b8ccb73305",
+      "_id": "208ec2b8ccb73305"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Bony or gaunt",
+      "_key": "!tables.results!807a6b963f72d7e5.d7f2734949bafb04",
+      "_id": "d7f2734949bafb04"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Brutish or muscled",
+      "_key": "!tables.results!807a6b963f72d7e5.7cf25de4f98c7071",
+      "_id": "7cf25de4f98c7071"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Camouflaged",
+      "_key": "!tables.results!807a6b963f72d7e5.c4caccbf0711420e",
+      "_id": "c4caccbf0711420e"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Claws or talons",
+      "_key": "!tables.results!807a6b963f72d7e5.117785261ed3aa06",
+      "_id": "117785261ed3aa06"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Compound eyes",
+      "_key": "!tables.results!807a6b963f72d7e5.ea914fd2ad26f538",
+      "_id": "ea914fd2ad26f538"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Comprised of many creatures",
+      "_key": "!tables.results!807a6b963f72d7e5.8d212286d331e4f6",
+      "_id": "8d212286d331e4f6"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Corrupted",
+      "_key": "!tables.results!807a6b963f72d7e5.f9f71233eef665a2",
+      "_id": "f9f71233eef665a2"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Crystalline",
+      "_key": "!tables.results!807a6b963f72d7e5.786766d1ff9cdba6",
+      "_id": "786766d1ff9cdba6"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Dead or undead",
+      "_key": "!tables.results!807a6b963f72d7e5.07cc907def223173",
+      "_id": "07cc907def223173"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Distinctive markings",
+      "_key": "!tables.results!807a6b963f72d7e5.39d10e0b8c90cd15",
+      "_id": "39d10e0b8c90cd15"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Distinctive smell",
+      "_key": "!tables.results!807a6b963f72d7e5.adfb5cb83cee7472",
+      "_id": "adfb5cb83cee7472"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Distinctive sound",
+      "_key": "!tables.results!807a6b963f72d7e5.e65aebfc3d0d44ed",
+      "_id": "e65aebfc3d0d44ed"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Dripping mucus",
+      "_key": "!tables.results!807a6b963f72d7e5.d66da871c7022b76",
+      "_id": "d66da871c7022b76"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Elongated Neck",
+      "_key": "!tables.results!807a6b963f72d7e5.2c6d0c1dd6d32ae8",
+      "_id": "2c6d0c1dd6d32ae8"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Energy emissions",
+      "_key": "!tables.results!807a6b963f72d7e5.3d530cef6e04d0d5",
+      "_id": "3d530cef6e04d0d5"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Extra limbs",
+      "_key": "!tables.results!807a6b963f72d7e5.d21f1e0c897ea648",
+      "_id": "d21f1e0c897ea648"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Faceless or inexpressive",
+      "_key": "!tables.results!807a6b963f72d7e5.0a05244784fa7934",
+      "_id": "0a05244784fa7934"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Fangs or rows of teeth",
+      "_key": "!tables.results!807a6b963f72d7e5.1c8d5ffdba1ba754",
+      "_id": "1c8d5ffdba1ba754"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Feathered",
+      "_key": "!tables.results!807a6b963f72d7e5.75b8b3c6adad7a52",
+      "_id": "75b8b3c6adad7a52"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Fungal growth",
+      "_key": "!tables.results!807a6b963f72d7e5.b3fa8cc67922f187",
+      "_id": "b3fa8cc67922f187"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Fur, hair, or filaments",
+      "_key": "!tables.results!807a6b963f72d7e5.51826cfe869df053",
+      "_id": "51826cfe869df053"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Graceful",
+      "_key": "!tables.results!807a6b963f72d7e5.b42fbbdb27a925a0",
+      "_id": "b42fbbdb27a925a0"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Hideous",
+      "_key": "!tables.results!807a6b963f72d7e5.9d4a28be1ce674f3",
+      "_id": "9d4a28be1ce674f3"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Hooded or crested",
+      "_key": "!tables.results!807a6b963f72d7e5.b51f22b81599e473",
+      "_id": "b51f22b81599e473"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Immobile or trapped",
+      "_key": "!tables.results!807a6b963f72d7e5.aa2eca7fbc1ea7d2",
+      "_id": "aa2eca7fbc1ea7d2"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Injured or scarred",
+      "_key": "!tables.results!807a6b963f72d7e5.349277ffbe5d3c6e",
+      "_id": "349277ffbe5d3c6e"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Iridescent",
+      "_key": "!tables.results!807a6b963f72d7e5.b434942fce86db20",
+      "_id": "b434942fce86db20"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Long-limbed",
+      "_key": "!tables.results!807a6b963f72d7e5.cd492946507e0237",
+      "_id": "cd492946507e0237"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Luminescent",
+      "_key": "!tables.results!807a6b963f72d7e5.0275a32c3e162c2a",
+      "_id": "0275a32c3e162c2a"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Mandibles or pincers",
+      "_key": "!tables.results!807a6b963f72d7e5.67a0a402295c8ba8",
+      "_id": "67a0a402295c8ba8"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Many-eyed",
+      "_key": "!tables.results!807a6b963f72d7e5.14b97d00d740102a",
+      "_id": "14b97d00d740102a"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Mineral or metallic",
+      "_key": "!tables.results!807a6b963f72d7e5.368715e9da7664f0",
+      "_id": "368715e9da7664f0"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Multi-jointed",
+      "_key": "!tables.results!807a6b963f72d7e5.d9937242016fd7ef",
+      "_id": "d9937242016fd7ef"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Multi-segmented body",
+      "_key": "!tables.results!807a6b963f72d7e5.e27c375eacc7267b",
+      "_id": "e27c375eacc7267b"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Ornamented or colorful",
+      "_key": "!tables.results!807a6b963f72d7e5.5f3d6d9a0f6196dc",
+      "_id": "5f3d6d9a0f6196dc"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Oversized mouth",
+      "_key": "!tables.results!807a6b963f72d7e5.9b68d92d767b5ea8",
+      "_id": "9b68d92d767b5ea8"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Prominent tail",
+      "_key": "!tables.results!807a6b963f72d7e5.ae17aec951f16e1f",
+      "_id": "ae17aec951f16e1f"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Prominent wings or fins",
+      "_key": "!tables.results!807a6b963f72d7e5.91d7053f42b0c512",
+      "_id": "91d7053f42b0c512"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Ridges or plates",
+      "_key": "!tables.results!807a6b963f72d7e5.7bc516d00f37da57",
+      "_id": "7bc516d00f37da57"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Scaled",
+      "_key": "!tables.results!807a6b963f72d7e5.d5275f92f7d702dc",
+      "_id": "d5275f92f7d702dc"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Single eye or oversized eyes",
+      "_key": "!tables.results!807a6b963f72d7e5.4b23349bcc3e68ea",
+      "_id": "4b23349bcc3e68ea"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Spikes or spines",
+      "_key": "!tables.results!807a6b963f72d7e5.2e720abd450de031",
+      "_id": "2e720abd450de031"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Stinger or barbs",
+      "_key": "!tables.results!807a6b963f72d7e5.e07efb41b2d1c0e9",
+      "_id": "e07efb41b2d1c0e9"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Tentacles or tendrils",
+      "_key": "!tables.results!807a6b963f72d7e5.d3a6acdf06bff7b7",
+      "_id": "d3a6acdf06bff7b7"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Translucent",
+      "_key": "!tables.results!807a6b963f72d7e5.108b3afe5d82229f",
+      "_id": "108b3afe5d82229f"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Visible symbiote",
+      "_key": "!tables.results!807a6b963f72d7e5.a2960e38c3d1796c",
+      "_id": "a2960e38c3d1796c"
+    }
+  ],
+  "folder": "5b1e2f2fead08924",
+  "sort": 338,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!807a6b963f72d7e5"
+}

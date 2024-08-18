@@ -1,0 +1,128 @@
+{
+  "_id": "5cff709d01b2cdb5",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/disposition"
+    }
+  },
+  "name": "Character Disposition",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Helpful",
+      "_key": "!tables.results!5cff709d01b2cdb5.bf8087883b2791ef",
+      "_id": "bf8087883b2791ef"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Friendly",
+      "_key": "!tables.results!5cff709d01b2cdb5.bd6d8a534700384c",
+      "_id": "bd6d8a534700384c"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Persuadable",
+      "_key": "!tables.results!5cff709d01b2cdb5.888ffa880c448eb0",
+      "_id": "888ffa880c448eb0"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Curious",
+      "_key": "!tables.results!5cff709d01b2cdb5.fdf470a086cbbe94",
+      "_id": "fdf470a086cbbe94"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "Indifferent",
+      "_key": "!tables.results!5cff709d01b2cdb5.58a09fb0bac420ce",
+      "_id": "58a09fb0bac420ce"
+    },
+    {
+      "range": [
+        46,
+        55
+      ],
+      "text": "Suspicious",
+      "_key": "!tables.results!5cff709d01b2cdb5.f0f703364f8694ee",
+      "_id": "f0f703364f8694ee"
+    },
+    {
+      "range": [
+        56,
+        65
+      ],
+      "text": "Wanting",
+      "_key": "!tables.results!5cff709d01b2cdb5.2a07671e290a8f73",
+      "_id": "2a07671e290a8f73"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Desperate",
+      "_key": "!tables.results!5cff709d01b2cdb5.1da1039bfb135b34",
+      "_id": "1da1039bfb135b34"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Demanding",
+      "_key": "!tables.results!5cff709d01b2cdb5.c159650f428f0c05",
+      "_id": "c159650f428f0c05"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Unfriendly",
+      "_key": "!tables.results!5cff709d01b2cdb5.eff386ff0651bd76",
+      "_id": "eff386ff0651bd76"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Threatening",
+      "_key": "!tables.results!5cff709d01b2cdb5.238f56a000813b91",
+      "_id": "238f56a000813b91"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Hostile",
+      "_key": "!tables.results!5cff709d01b2cdb5.51490465e82cd349",
+      "_id": "51490465e82cd349"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 187,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5cff709d01b2cdb5"
+}

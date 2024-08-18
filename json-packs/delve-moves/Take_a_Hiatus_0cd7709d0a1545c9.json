@@ -1,0 +1,57 @@
+{
+  "_id": "0cd7709d0a1545c9",
+  "type": "sfmove",
+  "name": "Take a Hiatus",
+  "img": "icons/dice/d10black.svg",
+  "folder": "559fcae96a68d6ad",
+  "system": {
+    "dfid": "Ironsworn/Moves/Threat/Take_a_Hiatus",
+    "Category": "Ironsworn/Moves/Threat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you spend an extended time recovering in a safe place while a threat is active__, do any of the following.\n\n  * Clear any marked conditions.\n  * Set your health, spirit, supply, and companion health to their maximum values.\n  * Set your momentum to its reset value.\n\nThen, for each active threat, @Compendium[foundry-ironsworn.ironsworndelvemoves.03754df8933ca564]{Advance a Threat}.",
+    "Trigger": {
+      "Text": "When you spend an extended time recovering in a safe place while a threat is active...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": ""
+      },
+      "Miss": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 158
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 158,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Threat/Take_a_Hiatus",
+      "dsid": "move:delve/threat/take_a_hiatus"
+    }
+  },
+  "_key": "!items!0cd7709d0a1545c9"
+}

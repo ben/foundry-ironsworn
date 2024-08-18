@@ -4,7 +4,7 @@
   "name": "Howlcat",
   "img": "icons/creatures/mammals/cat-hunched-glowing-red.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Sleek, feline creatures</p>\n    <p class=\"nogrow\">Eyeless visage</p>\n    <p class=\"nogrow\">Flared ears</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Hunt and feed</p>\n    <p class=\"nogrow\">Protect the pack</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Keep to the shadows</p>\n    <p class=\"nogrow\">Stalk prey using echolocation</p>\n    <p class=\"nogrow\">Leap, bite, and claw</p>\n    <p class=\"nogrow\">Drag to the ground</p>\n  </div>\n</div>\n\n<p>The howlcat dwells in the shadows below the canopy of a verdant jungle world. It has a lean, powerful form, is armed with curving claws and fangs, and moves unseen through the half-light of the jungle thanks to its sleek, blue-gray fur.</p>\n<p>Unnervingly, the howlcat’s heavy skull possesses no eyes. Instead, it is crowned by large ears and a glossy bioacoustic organ. Through its distinct, chilling call, it uses echolocation to perceive its surroundings and stalk its prey with uncanny precision.</p>\n<p>If you find yourself hunted by a howlcat, beware the moment when its calls fall silent; it is about to strike.</p>\n\n<blockquote>Quest Starter: <p>A long-abandoned settlement, now reclaimed by the jungle, holds something of value or importance. But there is no clear landing site near the settlement, and the surrounding lands are home to a pack of fearsome howlcats. What is it you seek in that forsaken place, and how will you avoid becoming a howlcat's next meal?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.1bf8f6f16f4d0079]{Howlcat Pack}</li>\n</ul>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Sleek, feline creatures</p>\n<p class=\"nogrow\">Eyeless visage</p>\n<p class=\"nogrow\">Flared ears</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Hunt and feed</p>\n<p class=\"nogrow\">Protect the pack</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Keep to the shadows</p>\n<p class=\"nogrow\">Stalk prey using echolocation</p>\n<p class=\"nogrow\">Leap, bite, and claw</p>\n<p class=\"nogrow\">Drag to the ground</p>\n</div>\n</div>\n\n<p>The howlcat dwells in the shadows below the canopy of a verdant jungle world. It has a lean, powerful form, is armed with curving claws and fangs, and moves unseen through the half-light of the jungle thanks to its sleek, blue-gray fur.</p>\n<p>Unnervingly, the howlcat’s heavy skull possesses no eyes. Instead, it is crowned by large ears and a glossy bioacoustic organ. Through its distinct, chilling call, it uses echolocation to perceive its surroundings and stalk its prey with uncanny precision.</p>\n<p>If you find yourself hunted by a howlcat, beware the moment when its calls fall silent; it is about to strike.</p>\n\n<blockquote>Quest Starter: <p>A long-abandoned settlement, now reclaimed by the jungle, holds something of value or importance. But there is no clear landing site near the settlement, and the surrounding lands are home to a pack of fearsome howlcats. What is it you seek in that forsaken place, and how will you avoid becoming a howlcat's next meal?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.1bf8f6f16f4d0079]{Howlcat pack}</li>\n</ul>",
     "rank": 2,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/howlcat"
+    }
   },
   "_key": "!items!9d5b0456376439c9"
 }

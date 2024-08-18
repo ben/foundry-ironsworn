@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Theme_Type",
-      "category": "Starforged/Oracles/Location_Themes"
+      "category": "Starforged/Oracles/Location_Themes",
+      "dsid": "oracle_rollable:starforged/location_theme/type"
     }
   },
   "name": "Theme Type",
   "description": "<p>Choose a theme that supports what you know of that location’s nature. For a random theme, roll on the table above.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -17,128 +18,76 @@
         1,
         15
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Location_Themes/Chaotic\"><i class=\"fa fa-caret-right\"></i> Chaotic</a> (Reality is corrupted or warped in this place.)",
-      "_id": "05906aa191813109",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!66d9a8128885e14e.05906aa191813109"
+      "text": "[Chaotic](datasworn:oracle_collection:starforged/location_theme/chaotic)",
+      "_key": "!tables.results!66d9a8128885e14e.65d82a4e40f876b2",
+      "_id": "65d82a4e40f876b2"
     },
     {
       "range": [
         16,
         25
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Location_Themes/Fortified\"><i class=\"fa fa-caret-right\"></i> Fortified</a> (Enemies defend this place against intruders.)",
-      "_id": "38dfd0aec58b8800",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!66d9a8128885e14e.38dfd0aec58b8800"
+      "text": "[Fortified](datasworn:oracle_collection:starforged/location_theme/fortified)",
+      "_key": "!tables.results!66d9a8128885e14e.adc273cc6cebdcf5",
+      "_id": "adc273cc6cebdcf5"
     },
     {
       "range": [
         26,
         35
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Location_Themes/Haunted\"><i class=\"fa fa-caret-right\"></i> Haunted</a> (Restless spirits are bound to this place.)",
-      "_id": "4637cb0968743d4a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!66d9a8128885e14e.4637cb0968743d4a"
+      "text": "[Haunted](datasworn:oracle_collection:starforged/location_theme/haunted)",
+      "_key": "!tables.results!66d9a8128885e14e.1032754f48ff2c8f",
+      "_id": "1032754f48ff2c8f"
     },
     {
       "range": [
         36,
         50
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Location_Themes/Infested\"><i class=\"fa fa-caret-right\"></i> Infested</a> (Foul creatures have overrun this place.)",
-      "_id": "962c5a10a841c345",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!66d9a8128885e14e.962c5a10a841c345"
+      "text": "[Infested](datasworn:oracle_collection:starforged/location_theme/infested)",
+      "_key": "!tables.results!66d9a8128885e14e.dbed96ff07629d32",
+      "_id": "dbed96ff07629d32"
     },
     {
       "range": [
         51,
         60
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Location_Themes/Inhabited\"><i class=\"fa fa-caret-right\"></i> Inhabited</a> (People have built a community in this place.)",
-      "_id": "77069660d666f58d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!66d9a8128885e14e.77069660d666f58d"
+      "text": "[Inhabited](datasworn:oracle_collection:starforged/location_theme/inhabited)",
+      "_key": "!tables.results!66d9a8128885e14e.e2eb1d986b6a1970",
+      "_id": "e2eb1d986b6a1970"
     },
     {
       "range": [
         61,
         75
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Location_Themes/Mechanical\"><i class=\"fa fa-caret-right\"></i> Mechanical</a> (Machines and technology hold sway in this place.)",
-      "_id": "4ca593bb86461728",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!66d9a8128885e14e.4ca593bb86461728"
+      "text": "[Mechanical](datasworn:oracle_collection:starforged/location_theme/mechanical)",
+      "_key": "!tables.results!66d9a8128885e14e.8d90bc2c3b078dd8",
+      "_id": "8d90bc2c3b078dd8"
     },
     {
       "range": [
         76,
         90
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Location_Themes/Ruined\"><i class=\"fa fa-caret-right\"></i> Ruined</a> (Time, disaster, or war have ravaged this place.)",
-      "_id": "f8e040c45f55351f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!66d9a8128885e14e.f8e040c45f55351f"
+      "text": "[Ruined](datasworn:oracle_collection:starforged/location_theme/ruined)",
+      "_key": "!tables.results!66d9a8128885e14e.976dd4e819aad1af",
+      "_id": "976dd4e819aad1af"
     },
     {
       "range": [
         91,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Location_Themes/Sacred\"><i class=\"fa fa-caret-right\"></i> Sacred</a> (Worshipers glorify strange powers in this place.)",
-      "_id": "993008fe1a4c22e4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!66d9a8128885e14e.993008fe1a4c22e4"
+      "text": "[Sacred](datasworn:oracle_collection:starforged/location_theme/sacred)",
+      "_key": "!tables.results!66d9a8128885e14e.61db78c5874e678e",
+      "_id": "61db78c5874e678e"
     }
   ],
   "folder": "40c330364b963a81",
   "sort": 370,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!66d9a8128885e14e"
 }

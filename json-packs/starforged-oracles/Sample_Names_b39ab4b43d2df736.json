@@ -1,0 +1,200 @@
+{
+  "_id": "b39ab4b43d2df736",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Grave",
+      "dsid": "oracle_rollable:starforged/planet/grave/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Anubis",
+      "_key": "!tables.results!b39ab4b43d2df736.7f28126d28a277a9",
+      "_id": "7f28126d28a277a9"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Banshee",
+      "_key": "!tables.results!b39ab4b43d2df736.0e27269431174d3a",
+      "_id": "0e27269431174d3a"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Barrow",
+      "_key": "!tables.results!b39ab4b43d2df736.4efb375bd4be9454",
+      "_id": "4efb375bd4be9454"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Cairn",
+      "_key": "!tables.results!b39ab4b43d2df736.4ffdff4b7e4da55b",
+      "_id": "4ffdff4b7e4da55b"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Cerberus",
+      "_key": "!tables.results!b39ab4b43d2df736.c3be3553040156dc",
+      "_id": "c3be3553040156dc"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Charon",
+      "_key": "!tables.results!b39ab4b43d2df736.4e0a9a8812a96579",
+      "_id": "4e0a9a8812a96579"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Elysia",
+      "_key": "!tables.results!b39ab4b43d2df736.5a6b6aca8c7d2e27",
+      "_id": "5a6b6aca8c7d2e27"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Keen",
+      "_key": "!tables.results!b39ab4b43d2df736.8dc478b3267980a2",
+      "_id": "8dc478b3267980a2"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Kur",
+      "_key": "!tables.results!b39ab4b43d2df736.ce281aabfe15d874",
+      "_id": "ce281aabfe15d874"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Lament",
+      "_key": "!tables.results!b39ab4b43d2df736.ac559bd54dda6e39",
+      "_id": "ac559bd54dda6e39"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Mantus",
+      "_key": "!tables.results!b39ab4b43d2df736.411fb18705bcabd0",
+      "_id": "411fb18705bcabd0"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Morrigan",
+      "_key": "!tables.results!b39ab4b43d2df736.764bf2e1c27278a1",
+      "_id": "764bf2e1c27278a1"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Mourn",
+      "_key": "!tables.results!b39ab4b43d2df736.f6b8955a16ca6c38",
+      "_id": "f6b8955a16ca6c38"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Necropolis",
+      "_key": "!tables.results!b39ab4b43d2df736.82a9273fb55f3753",
+      "_id": "82a9273fb55f3753"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Orcus",
+      "_key": "!tables.results!b39ab4b43d2df736.643be6e7d6eca3d9",
+      "_id": "643be6e7d6eca3d9"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Osiris",
+      "_key": "!tables.results!b39ab4b43d2df736.43b997cc77ded2ec",
+      "_id": "43b997cc77ded2ec"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Requiem",
+      "_key": "!tables.results!b39ab4b43d2df736.c7a223040169d6b9",
+      "_id": "c7a223040169d6b9"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Stygia",
+      "_key": "!tables.results!b39ab4b43d2df736.5c346648b5825908",
+      "_id": "5c346648b5825908"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Tartarus",
+      "_key": "!tables.results!b39ab4b43d2df736.8733822271df9f21",
+      "_id": "8733822271df9f21"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Thrace",
+      "_key": "!tables.results!b39ab4b43d2df736.8d97a8c26f17e9ff",
+      "_id": "8d97a8c26f17e9ff"
+    }
+  ],
+  "folder": "caa4a9957ef73507",
+  "sort": 310,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b39ab4b43d2df736"
+}

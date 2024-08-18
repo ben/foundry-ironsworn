@@ -1,0 +1,53 @@
+{
+  "name": "Elder worm",
+  "img": "icons/creatures/abilities/mouth-teeth-rows-white.webp",
+  "type": "foe",
+  "_id": "496e40844430c183",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Elder worm",
+    "texture": {
+      "src": "icons/creatures/abilities/mouth-teeth-rows-white.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "3ce4c905fa048242",
+      "type": "progress",
+      "name": "Elder worm",
+      "img": "icons/creatures/abilities/mouth-teeth-rows-white.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Titanic worm-like creatures</p>\n<p class=\"nogrow\">Gaping maw with rotating, earth-grinding teeth</p>\n<p class=\"nogrow\">Thunderous cry</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Lurk within carved depths</p>\n<p class=\"nogrow\">Shape the landscape</p>\n<p class=\"nogrow\">Endlessly pursue prey</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Detect prey through vibrations</p>\n<p class=\"nogrow\">Shatter stone and steel</p>\n</div>\n</div>\n\n<p>Elder worms, those centuries or even millennia old, are the largest and most formidable of the worldbreakers, and yet the least aggressive. They follow inscrutable whims, live in harmony with surrounding flora and fauna, and only hunt when absolutely necessary.</p>\n\n<blockquote>Quest Starter: <p>On a lush world at the edge of the Terminus, a titanic worldbreaker worm holds sway. One faction seeks to destroy the worm so that the riches of this place can be harvested. Another swears to protect it. On which side do you fall?</p></blockquote>",
+        "rank": 5,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc.variant:starforged/sample_npcs/worldbreaker.elder_worm"
+        }
+      },
+      "_key": "!actors.items!496e40844430c183.3ce4c905fa048242"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/worldbreaker.elder_worm"
+    }
+  },
+  "_key": "!actors!496e40844430c183"
+}

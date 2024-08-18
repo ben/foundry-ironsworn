@@ -1,0 +1,83 @@
+{
+  "_id": "67605afea51ca274",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/size"
+    }
+  },
+  "name": "Ship Size",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "Small",
+      "_key": "!tables.results!67605afea51ca274.7b8cfd87b2751ce3",
+      "_id": "7b8cfd87b2751ce3"
+    },
+    {
+      "range": [
+        31,
+        60
+      ],
+      "text": "Medium",
+      "_key": "!tables.results!67605afea51ca274.2baaee05b2be6a58",
+      "_id": "2baaee05b2be6a58"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Large",
+      "_key": "!tables.results!67605afea51ca274.bd940d31d2e1de92",
+      "_id": "bd940d31d2e1de92"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Colossal",
+      "_key": "!tables.results!67605afea51ca274.cad4762f39390725",
+      "_id": "cad4762f39390725"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Flotilla",
+      "_key": "!tables.results!67605afea51ca274.adc7b9f78cf056b1",
+      "_id": "adc7b9f78cf056b1"
+    },
+    {
+      "range": [
+        96,
+        99
+      ],
+      "text": "Fleet",
+      "_key": "!tables.results!67605afea51ca274.aca31226fb327e1d",
+      "_id": "aca31226fb327e1d"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Armada",
+      "_key": "!tables.results!67605afea51ca274.3f510b3e7501776a",
+      "_id": "3f510b3e7501776a"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 132,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!67605afea51ca274"
+}

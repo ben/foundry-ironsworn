@@ -1,0 +1,632 @@
+{
+  "_id": "34d1e8677416fda0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/inland_cave",
+      "dsid": "oracle_rollable:sundered_isles/cave/inland_cave/feature"
+    }
+  },
+  "name": "Inland Cave Features",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Abandoned camp",
+      "_key": "!tables.results!34d1e8677416fda0.ddb586a2251fa442",
+      "_id": "ddb586a2251fa442"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Abandoned mineworks",
+      "_key": "!tables.results!34d1e8677416fda0.4cf5db917418d0ef",
+      "_id": "4cf5db917418d0ef"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Ancient carvings or statues",
+      "_key": "!tables.results!34d1e8677416fda0.13430347f2c79827",
+      "_id": "13430347f2c79827"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Ancient cave paintings",
+      "_key": "!tables.results!34d1e8677416fda0.4eecdb9df922452d",
+      "_id": "4eecdb9df922452d"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Blind rodents",
+      "_key": "!tables.results!34d1e8677416fda0.5e91ba8b23dc38fb",
+      "_id": "5e91ba8b23dc38fb"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Cairn-marked grave",
+      "_key": "!tables.results!34d1e8677416fda0.43856f70248e8b94",
+      "_id": "43856f70248e8b94"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Carpet of crushed bone",
+      "_key": "!tables.results!34d1e8677416fda0.56326732dc3893d0",
+      "_id": "56326732dc3893d0"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Chiseled stairway",
+      "_key": "!tables.results!34d1e8677416fda0.422e7c749383125f",
+      "_id": "422e7c749383125f"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Churning magma pools",
+      "_key": "!tables.results!34d1e8677416fda0.4deda1860c777779",
+      "_id": "4deda1860c777779"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Clouds of ash or dust",
+      "_key": "!tables.results!34d1e8677416fda0.ac591031da212a29",
+      "_id": "ac591031da212a29"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Constructed bridge",
+      "_key": "!tables.results!34d1e8677416fda0.5cada7dbe554919c",
+      "_id": "5cada7dbe554919c"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Crystalline formations",
+      "_key": "!tables.results!34d1e8677416fda0.67f6b197c968f2e9",
+      "_id": "67f6b197c968f2e9"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Dangling ladder or rope",
+      "_key": "!tables.results!34d1e8677416fda0.dc874dd43204da9f",
+      "_id": "dc874dd43204da9f"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Excavated chamber",
+      "_key": "!tables.results!34d1e8677416fda0.116dbfc27cdd4a68",
+      "_id": "116dbfc27cdd4a68"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Excavated tunnel",
+      "_key": "!tables.results!34d1e8677416fda0.99d9939396cdb2a0",
+      "_id": "99d9939396cdb2a0"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Fossilized bones",
+      "_key": "!tables.results!34d1e8677416fda0.a460f3a9ed243d59",
+      "_id": "a460f3a9ed243d59"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Fungi forest",
+      "_key": "!tables.results!34d1e8677416fda0.bbe59a60fb8fe1d1",
+      "_id": "bbe59a60fb8fe1d1"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Glassy lava tube",
+      "_key": "!tables.results!34d1e8677416fda0.e46305873b09aea6",
+      "_id": "e46305873b09aea6"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Humid, dripping environment",
+      "_key": "!tables.results!34d1e8677416fda0.61329b607ba1c446",
+      "_id": "61329b607ba1c446"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Magma lake",
+      "_key": "!tables.results!34d1e8677416fda0.5fd977696d037709",
+      "_id": "5fd977696d037709"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Magma river",
+      "_key": "!tables.results!34d1e8677416fda0.783dc49e43c0c12b",
+      "_id": "783dc49e43c0c12b"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Maze of intersecting passages",
+      "_key": "!tables.results!34d1e8677416fda0.1444497334405867",
+      "_id": "1444497334405867"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Message carved or scrawled on stone",
+      "_key": "!tables.results!34d1e8677416fda0.0cdb5d00e50c983b",
+      "_id": "0cdb5d00e50c983b"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Multilevel cavern",
+      "_key": "!tables.results!34d1e8677416fda0.1bea447e0f568767",
+      "_id": "1bea447e0f568767"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Mummified corpse",
+      "_key": "!tables.results!34d1e8677416fda0.602536eac7086b30",
+      "_id": "602536eac7086b30"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Narrow ledge over a chasm",
+      "_key": "!tables.results!34d1e8677416fda0.e214b4b03030d10f",
+      "_id": "e214b4b03030d10f"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Natural bridge",
+      "_key": "!tables.results!34d1e8677416fda0.5621666293229be4",
+      "_id": "5621666293229be4"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Perfectly geometric columns",
+      "_key": "!tables.results!34d1e8677416fda0.931f29707c3a734a",
+      "_id": "931f29707c3a734a"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Pile of bones and offal",
+      "_key": "!tables.results!34d1e8677416fda0.049255510beb9b40",
+      "_id": "049255510beb9b40"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Rush of hot air",
+      "_key": "!tables.results!34d1e8677416fda0.dbfd8b1f0cc884ac",
+      "_id": "dbfd8b1f0cc884ac"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Smoking fissures",
+      "_key": "!tables.results!34d1e8677416fda0.58ab58e58fcc2f6b",
+      "_id": "58ab58e58fcc2f6b"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Sound of heavy movement",
+      "_key": "!tables.results!34d1e8677416fda0.50eba9b7bff7b6b0",
+      "_id": "50eba9b7bff7b6b0"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Sound of voices",
+      "_key": "!tables.results!34d1e8677416fda0.f8ef2861e9158970",
+      "_id": "f8ef2861e9158970"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Surfaces covered in flourishing fungi",
+      "_key": "!tables.results!34d1e8677416fda0.d166bef2706ef4c8",
+      "_id": "d166bef2706ef4c8"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Surfaces honeycombed with holes",
+      "_key": "!tables.results!34d1e8677416fda0.de9bf3f1472a1323",
+      "_id": "de9bf3f1472a1323"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Tracks through dust or muck",
+      "_key": "!tables.results!34d1e8677416fda0.b7652995f17de434",
+      "_id": "b7652995f17de434"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Trail of scattered coins",
+      "_key": "!tables.results!34d1e8677416fda0.215ddf83a2fbcca9",
+      "_id": "215ddf83a2fbcca9"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Underground lake with isolated island",
+      "_key": "!tables.results!34d1e8677416fda0.40dc296e8d19148f",
+      "_id": "40dc296e8d19148f"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Veins of ore",
+      "_key": "!tables.results!34d1e8677416fda0.a3733bce9b053013",
+      "_id": "a3733bce9b053013"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Bat colony",
+      "_key": "!tables.results!34d1e8677416fda0.90e3bee456ed570f",
+      "_id": "90e3bee456ed570f"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Boiling mud pits",
+      "_key": "!tables.results!34d1e8677416fda0.1ea87aa31d58bc84",
+      "_id": "1ea87aa31d58bc84"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Carpet of lichen",
+      "_key": "!tables.results!34d1e8677416fda0.2148768bac7b5178",
+      "_id": "2148768bac7b5178"
+    },
+    {
+      "range": [
+        46,
+        47
+      ],
+      "text": "Clinging webs",
+      "_key": "!tables.results!34d1e8677416fda0.aa80539d1604e512",
+      "_id": "aa80539d1604e512"
+    },
+    {
+      "range": [
+        48,
+        49
+      ],
+      "text": "Collapsed rubble",
+      "_key": "!tables.results!34d1e8677416fda0.368dcbd5399a68a9",
+      "_id": "368dcbd5399a68a9"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Crawling-height tunnel",
+      "_key": "!tables.results!34d1e8677416fda0.c630694645f741b9",
+      "_id": "c630694645f741b9"
+    },
+    {
+      "range": [
+        52,
+        53
+      ],
+      "text": "Curtains of dangling roots or vines",
+      "_key": "!tables.results!34d1e8677416fda0.1131398cdca518cb",
+      "_id": "1131398cdca518cb"
+    },
+    {
+      "range": [
+        54,
+        55
+      ],
+      "text": "Domed cavern",
+      "_key": "!tables.results!34d1e8677416fda0.0430e2c316844071",
+      "_id": "0430e2c316844071"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Earth-shaking tremor",
+      "_key": "!tables.results!34d1e8677416fda0.f938c716f9707211",
+      "_id": "f938c716f9707211"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Elaborate stone formations",
+      "_key": "!tables.results!34d1e8677416fda0.186649a5d177f23e",
+      "_id": "186649a5d177f23e"
+    },
+    {
+      "range": [
+        60,
+        61
+      ],
+      "text": "Flooded shaft or sinkhole",
+      "_key": "!tables.results!34d1e8677416fda0.03a1e15d275b9a4a",
+      "_id": "03a1e15d275b9a4a"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Flooded tunnel",
+      "_key": "!tables.results!34d1e8677416fda0.7b47be3704c40fa0",
+      "_id": "7b47be3704c40fa0"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Labyrinth of stone formations",
+      "_key": "!tables.results!34d1e8677416fda0.a0d3329966cfa641",
+      "_id": "a0d3329966cfa641"
+    },
+    {
+      "range": [
+        66,
+        67
+      ],
+      "text": "Luminescent fungi",
+      "_key": "!tables.results!34d1e8677416fda0.90c87e534e2a395e",
+      "_id": "90c87e534e2a395e"
+    },
+    {
+      "range": [
+        68,
+        69
+      ],
+      "text": "Massive, cathedral-like cavern",
+      "_key": "!tables.results!34d1e8677416fda0.7a1e3e746d649095",
+      "_id": "7a1e3e746d649095"
+    },
+    {
+      "range": [
+        70,
+        71
+      ],
+      "text": "Moldering corpse",
+      "_key": "!tables.results!34d1e8677416fda0.3fc546d8b0d17c65",
+      "_id": "3fc546d8b0d17c65"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Plunging shaft leading downwards",
+      "_key": "!tables.results!34d1e8677416fda0.13e24e91732066ef",
+      "_id": "13e24e91732066ef"
+    },
+    {
+      "range": [
+        74,
+        75
+      ],
+      "text": "Shafts of natural light",
+      "_key": "!tables.results!34d1e8677416fda0.81bacf0996ce46a4",
+      "_id": "81bacf0996ce46a4"
+    },
+    {
+      "range": [
+        76,
+        77
+      ],
+      "text": "Skeletal corpse",
+      "_key": "!tables.results!34d1e8677416fda0.b377e3d3e4b00ac0",
+      "_id": "b377e3d3e4b00ac0"
+    },
+    {
+      "range": [
+        78,
+        79
+      ],
+      "text": "Steaming hot springs",
+      "_key": "!tables.results!34d1e8677416fda0.f98c0192c149f9f4",
+      "_id": "f98c0192c149f9f4"
+    },
+    {
+      "range": [
+        80,
+        81
+      ],
+      "text": "Steep escarpment",
+      "_key": "!tables.results!34d1e8677416fda0.b433b3f223b77b40",
+      "_id": "b433b3f223b77b40"
+    },
+    {
+      "range": [
+        82,
+        83
+      ],
+      "text": "Thundering waterfall",
+      "_key": "!tables.results!34d1e8677416fda0.015cedb2b2aa1270",
+      "_id": "015cedb2b2aa1270"
+    },
+    {
+      "range": [
+        84,
+        85
+      ],
+      "text": "Tight squeeze",
+      "_key": "!tables.results!34d1e8677416fda0.1ac851cf22771004",
+      "_id": "1ac851cf22771004"
+    },
+    {
+      "range": [
+        86,
+        87
+      ],
+      "text": "Trail or splashes of blood",
+      "_key": "!tables.results!34d1e8677416fda0.4d85f1501c4187af",
+      "_id": "4d85f1501c4187af"
+    },
+    {
+      "range": [
+        88,
+        89
+      ],
+      "text": "Underground lake",
+      "_key": "!tables.results!34d1e8677416fda0.35080601c24755ad",
+      "_id": "35080601c24755ad"
+    },
+    {
+      "range": [
+        90,
+        91
+      ],
+      "text": "Underground river",
+      "_key": "!tables.results!34d1e8677416fda0.41f481224edfd0f1",
+      "_id": "41f481224edfd0f1"
+    },
+    {
+      "range": [
+        92,
+        93
+      ],
+      "text": "Vertical chimney leading upward",
+      "_key": "!tables.results!34d1e8677416fda0.ba30926b0a72a52e",
+      "_id": "ba30926b0a72a52e"
+    },
+    {
+      "range": [
+        94,
+        95
+      ],
+      "text": "Corpse clutching a [Token](datasworn:oracle_rollable:sundered_isles/treasure/tokens)",
+      "_key": "!tables.results!34d1e8677416fda0.50e9e6575dae8ee5",
+      "_id": "50e9e6575dae8ee5"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:sundered_isles/core/descriptor) + [Focus](datasworn:oracle_rollable:sundered_isles/core/focus)",
+      "_key": "!tables.results!34d1e8677416fda0.3fe7765bd656b306",
+      "_id": "3fe7765bd656b306"
+    }
+  ],
+  "folder": "ccafff1bc096e52d",
+  "sort": 210,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!34d1e8677416fda0"
+}

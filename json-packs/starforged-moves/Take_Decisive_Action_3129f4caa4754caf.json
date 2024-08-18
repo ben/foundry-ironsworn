@@ -3,89 +3,68 @@
   "type": "sfmove",
   "name": "Take Decisive Action",
   "img": "icons/dice/d10black.svg",
+  "folder": "0833ccc5eb06cf7e",
   "system": {
     "dfid": "Starforged/Moves/Combat/Take_Decisive_Action",
     "Category": "Starforged/Moves/Combat",
     "Progress Move": true,
     "Variant of": "",
-    "Text": "**When you seize an objective in a fight**, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.\n\nIf you are in control, check the result as normal. If you are in a bad spot, count a strong hit without a match as a weak hit, and a weak hit as a miss.\n\nOn a **strong hit**, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.\n\nOn a **weak hit**, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.\n\nRoll   | Result\n-------|--------\n1-40   | It’s worse than you thought: Make a suffer move (-2)\n41-52  | Victory is short-lived: A new peril or foe appears\n53-64  | You face collateral damage: Something is lost, damaged, or broken\n65-76  | Others pay the price: Someone else suffers the cost\n77-88  | Others won’t forget: You are marked for vengeance\n89-100 | It gets complicated: The true nature of a foe or objective is revealed\n\nOn a **miss**, you are defeated or your objective is lost. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Text": "__When you seize an objective in a fight__, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.\n\nIf you are in control, check the result as normal. If you are in a bad spot, count a strong hit without a match as a weak hit, and a weak hit as a miss.\n\nOn a __strong hit__, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.\n\nOn a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.\n\n\n\nOn a __miss__, you are defeated or your objective is lost. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
     "Trigger": {
       "Text": "When you seize an objective in a fight...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Progress roll",
           "Method": "Any",
           "Using": [
-            "Combat"
-          ],
-          "Text": ""
+            "Progress Track"
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.\n\nRoll   | Result\n-------|--------\n1-40   | It’s worse than you thought: Make a suffer move (-2)\n41-52  | Victory is short-lived: A new peril or foe appears\n53-64  | You face collateral damage: Something is lost, damaged, or broken\n65-76  | Others pay the price: Someone else suffers the cost\n77-88  | Others won’t forget: You are marked for vengeance\n89-100 | It gets complicated: The true nature of a foe or objective is revealed",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot."
       },
       "Miss": {
-        "Text": "You are defeated or your objective is lost. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you are defeated or your objective is lost. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [
       "Starforged/Oracles/Moves/Take_Decisive_Action"
     ],
+    "dsOracleIds": [
+      "move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action"
+    ],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 194
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#D68F00",
       "Images": []
     }
   },
   "sort": 194,
-  "folder": "0833ccc5eb06cf7e",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Combat/Take_Decisive_Action",
+      "dsid": "move:starforged/combat/take_decisive_action"
+    }
   },
   "_key": "!items!3129f4caa4754caf"
 }

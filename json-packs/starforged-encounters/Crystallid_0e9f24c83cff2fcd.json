@@ -4,7 +4,7 @@
   "name": "Crystallid",
   "img": "icons/magic/water/ice-crystal-white.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Translucent, gem-like creatures</p>\n    <p class=\"nogrow\">Shifting form</p>\n    <p class=\"nogrow\">Spiky appendages</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Gather and consume minerals</p>\n    <p class=\"nogrow\">Protect the nest</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Camouflage within its environment</p>\n    <p class=\"nogrow\">Reshape to bolster defense and attacks</p>\n    <p class=\"nogrow\">Lash out with keen-edged limbs</p>\n  </div>\n</div>\n\n<p>Crystallids are beautiful but dangerous crystalline lifeforms that take a variety of sizes and shapes. Some are small and insect-like, skittering across the surface of rugged worlds or within cavernous depths. Others are much larger than a human, with a vaguely bestial form. A few can even sprout multifaceted wings to take to the air. Their lustrous coloration changes to mimic their environment, and they often appear as simply a part of the landscape until an unwitting explorer happens across them.</p>\n<p>Crystallids are mineral hoarders. Their hidden burrows hold a cache of precious stones and valuable ores. For this reason, explorers and prospectors often attempt to track crystallids back to their nest. “The bigger the crystallid, the better the haul,” is a common saying among those audacious fortune hunters. But that potential motherlode is not taken without risk—crystallids are fierce protectors of their hoard.</p>\n\n<blockquote>Quest Starter: <p>A prospector returns from a planetside expedition with tales of an immense crystallid hoard of uncountable riches. But this treasure is guarded by the largest, most aggressive crystallid they've ever encountered, and they barely escaped with their life. They seek your help in securing the nest in exchange for a share of the profits. What drives you to accept this perilous bargain?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.0f7e8871cf3e2303]{Convergent Crystallid}</li>\n</ul>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Translucent, gem-like creatures</p>\n<p class=\"nogrow\">Shifting form</p>\n<p class=\"nogrow\">Spiky appendages</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Gather and consume minerals</p>\n<p class=\"nogrow\">Protect the nest</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Camouflage within its environment</p>\n<p class=\"nogrow\">Reshape to bolster defense and attacks</p>\n<p class=\"nogrow\">Lash out with keen-edged limbs</p>\n</div>\n</div>\n\n<p>Crystallids are beautiful but dangerous crystalline lifeforms that take a variety of sizes and shapes. Some are small and insect-like, skittering across the surface of rugged worlds or within cavernous depths. Others are much larger than a human, with a vaguely bestial form. A few can even sprout multifaceted wings to take to the air. Their lustrous coloration changes to mimic their environment, and they often appear as simply a part of the landscape until an unwitting explorer happens across them.</p>\n<p>Crystallids are mineral hoarders. Their hidden burrows hold a cache of precious stones and valuable ores. For this reason, explorers and prospectors often attempt to track crystallids back to their nest. “The bigger the crystallid, the better the haul,” is a common saying among those audacious fortune hunters. But that potential motherlode is not taken without risk—crystallids are fierce protectors of their hoard.</p>\n\n<blockquote>Quest Starter: <p>A prospector returns from a planetside expedition with tales of an immense crystallid hoard of uncountable riches. But this treasure is guarded by the largest, most aggressive crystallid they've ever encountered, and they barely escaped with their life. They seek your help in securing the nest in exchange for a share of the profits. What drives you to accept this perilous bargain?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.0f7e8871cf3e2303]{Convergent crystallid}</li>\n</ul>",
     "rank": 2,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/crystallid"
+    }
   },
   "_key": "!items!0e9f24c83cff2fcd"
 }

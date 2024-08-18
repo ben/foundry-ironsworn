@@ -1,0 +1,381 @@
+{
+  "_id": "a707e132902305f0",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Characters/Goal",
+      "category": "Starforged/Oracles/Characters",
+      "dsid": "oracle_rollable:starforged/character/goal"
+    }
+  },
+  "name": "Character Goal",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Avenge a wrong",
+      "_key": "!tables.results!a707e132902305f0.a8b839691a04593e",
+      "_id": "a8b839691a04593e"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Build a home",
+      "_key": "!tables.results!a707e132902305f0.237b41fc2f6ace00",
+      "_id": "237b41fc2f6ace00"
+    },
+    {
+      "range": [
+        5,
+        7
+      ],
+      "text": "Build a relationship",
+      "_key": "!tables.results!a707e132902305f0.9d08ad8cde2801c7",
+      "_id": "9d08ad8cde2801c7"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "Claim a resource",
+      "_key": "!tables.results!a707e132902305f0.86cd7e73d33a4ebc",
+      "_id": "86cd7e73d33a4ebc"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Collect a debt",
+      "_key": "!tables.results!a707e132902305f0.e1e6c204b75cb2aa",
+      "_id": "e1e6c204b75cb2aa"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Craft an object",
+      "_key": "!tables.results!a707e132902305f0.2cefc038548da4f2",
+      "_id": "2cefc038548da4f2"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Cure an ill",
+      "_key": "!tables.results!a707e132902305f0.4a5503b021388d14",
+      "_id": "4a5503b021388d14"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Defeat a rival",
+      "_key": "!tables.results!a707e132902305f0.19b9e3ea4d3ccaff",
+      "_id": "19b9e3ea4d3ccaff"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Defend a person",
+      "_key": "!tables.results!a707e132902305f0.84b74baec7008894",
+      "_id": "84b74baec7008894"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Defend a place",
+      "_key": "!tables.results!a707e132902305f0.552f839215b38fed",
+      "_id": "552f839215b38fed"
+    },
+    {
+      "range": [
+        24,
+        25
+      ],
+      "text": "Discover a truth",
+      "_key": "!tables.results!a707e132902305f0.b0db42b8290c06c5",
+      "_id": "b0db42b8290c06c5"
+    },
+    {
+      "range": [
+        26,
+        27
+      ],
+      "text": "End a conflict",
+      "_key": "!tables.results!a707e132902305f0.ded79ecb05aba477",
+      "_id": "ded79ecb05aba477"
+    },
+    {
+      "range": [
+        28,
+        29
+      ],
+      "text": "Escape a captor",
+      "_key": "!tables.results!a707e132902305f0.7a4f5e9dd8b32317",
+      "_id": "7a4f5e9dd8b32317"
+    },
+    {
+      "range": [
+        30,
+        31
+      ],
+      "text": "Fight injustice",
+      "_key": "!tables.results!a707e132902305f0.5d481c9a72418e0c",
+      "_id": "5d481c9a72418e0c"
+    },
+    {
+      "range": [
+        32,
+        33
+      ],
+      "text": "Find a person",
+      "_key": "!tables.results!a707e132902305f0.20f248be597b5390",
+      "_id": "20f248be597b5390"
+    },
+    {
+      "range": [
+        34,
+        35
+      ],
+      "text": "Forge an alliance",
+      "_key": "!tables.results!a707e132902305f0.0cb0ed72a3e73fbb",
+      "_id": "0cb0ed72a3e73fbb"
+    },
+    {
+      "range": [
+        36,
+        37
+      ],
+      "text": "Gain knowledge",
+      "_key": "!tables.results!a707e132902305f0.2a7a1e1c3ade91c8",
+      "_id": "2a7a1e1c3ade91c8"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Gain riches",
+      "_key": "!tables.results!a707e132902305f0.50657b9b7c26bd56",
+      "_id": "50657b9b7c26bd56"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Maintain order",
+      "_key": "!tables.results!a707e132902305f0.5f50436e4ec2c382",
+      "_id": "5f50436e4ec2c382"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Make an agreement",
+      "_key": "!tables.results!a707e132902305f0.aac8cfc47f604357",
+      "_id": "aac8cfc47f604357"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Obtain an object",
+      "_key": "!tables.results!a707e132902305f0.6f5b59ba2068f7cc",
+      "_id": "6f5b59ba2068f7cc"
+    },
+    {
+      "range": [
+        46,
+        47
+      ],
+      "text": "Pay a debt",
+      "_key": "!tables.results!a707e132902305f0.440b98ba9ca89e7b",
+      "_id": "440b98ba9ca89e7b"
+    },
+    {
+      "range": [
+        48,
+        49
+      ],
+      "text": "Protect a lifeform",
+      "_key": "!tables.results!a707e132902305f0.895cc473c0cc1bb8",
+      "_id": "895cc473c0cc1bb8"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Protect a secret",
+      "_key": "!tables.results!a707e132902305f0.84cfc7d8c97006d2",
+      "_id": "84cfc7d8c97006d2"
+    },
+    {
+      "range": [
+        52,
+        53
+      ],
+      "text": "Prove worthiness",
+      "_key": "!tables.results!a707e132902305f0.2fd7711aa1884a7d",
+      "_id": "2fd7711aa1884a7d"
+    },
+    {
+      "range": [
+        54,
+        55
+      ],
+      "text": "Rebel against power",
+      "_key": "!tables.results!a707e132902305f0.16caf031f7b003d9",
+      "_id": "16caf031f7b003d9"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Refute a falsehood",
+      "_key": "!tables.results!a707e132902305f0.655733b255d2a844",
+      "_id": "655733b255d2a844"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Repair a technology",
+      "_key": "!tables.results!a707e132902305f0.b19fcac9afefa587",
+      "_id": "b19fcac9afefa587"
+    },
+    {
+      "range": [
+        60,
+        61
+      ],
+      "text": "Resolve a dispute",
+      "_key": "!tables.results!a707e132902305f0.296fef1dec8f4caf",
+      "_id": "296fef1dec8f4caf"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Restore a relationship",
+      "_key": "!tables.results!a707e132902305f0.875055a6cb6d72e6",
+      "_id": "875055a6cb6d72e6"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Sabotage a technology",
+      "_key": "!tables.results!a707e132902305f0.e95ecd3d01cdbae6",
+      "_id": "e95ecd3d01cdbae6"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Secure a resource",
+      "_key": "!tables.results!a707e132902305f0.ff09d97760340811",
+      "_id": "ff09d97760340811"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Seek redemption",
+      "_key": "!tables.results!a707e132902305f0.9c034a587fcf1ac1",
+      "_id": "9c034a587fcf1ac1"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Seize power",
+      "_key": "!tables.results!a707e132902305f0.658eb53504f7b32e",
+      "_id": "658eb53504f7b32e"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Solve a mystery",
+      "_key": "!tables.results!a707e132902305f0.5c07e2cbca70a656",
+      "_id": "5c07e2cbca70a656"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Spread faith",
+      "_key": "!tables.results!a707e132902305f0.04c300e8efcdbf11",
+      "_id": "04c300e8efcdbf11"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Travel to a place",
+      "_key": "!tables.results!a707e132902305f0.dd39ccf26ab9d2c3",
+      "_id": "dd39ccf26ab9d2c3"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Undermine a relationship",
+      "_key": "!tables.results!a707e132902305f0.8da6943e9d0729a9",
+      "_id": "8da6943e9d0729a9"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!a707e132902305f0.3e8c8b631f3ea668",
+      "_id": "3e8c8b631f3ea668"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!a707e132902305f0.c5eb3ac6077db257",
+      "_id": "c5eb3ac6077db257"
+    }
+  ],
+  "folder": "dfc71f2bbd43cfc1",
+  "sort": 331,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a707e132902305f0"
+}

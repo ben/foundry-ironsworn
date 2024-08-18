@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Tainted/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Tainted"
+      "category": "Starforged/Oracles/Planets/Tainted",
+      "dsid": "oracle_rollable:starforged/planet/tainted/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Expansive fungal plains",
-      "_id": "cfb15f316714a5a7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.cfb15f316714a5a7"
+      "_key": "!tables.results!b6761b93d9f1fc4d.98a633ff0791fd37",
+      "_id": "98a633ff0791fd37"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Stagnant cloud cover",
-      "_id": "a5e41d2f3c69680c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.a5e41d2f3c69680c"
+      "_key": "!tables.results!b6761b93d9f1fc4d.45f907871aded1b8",
+      "_id": "45f907871aded1b8"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Fungal forests",
-      "_id": "42c7b1ca37396684",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.42c7b1ca37396684"
+      "_key": "!tables.results!b6761b93d9f1fc4d.4deceadb65d5625e",
+      "_id": "4deceadb65d5625e"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Thick, murky atmosphere",
-      "_id": "7f5ab2d19a4f6f84",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.7f5ab2d19a4f6f84"
+      "_key": "!tables.results!b6761b93d9f1fc4d.568e0d76e7d2d9e2",
+      "_id": "568e0d76e7d2d9e2"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Scabrous, infected terrain",
-      "_id": "466e96a993e5644a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.466e96a993e5644a"
+      "_key": "!tables.results!b6761b93d9f1fc4d.b08fbf752737b0cd",
+      "_id": "b08fbf752737b0cd"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Toxic seas",
-      "_id": "91e40d5c1cc37175",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.91e40d5c1cc37175"
+      "_key": "!tables.results!b6761b93d9f1fc4d.e51fdb3913278014",
+      "_id": "e51fdb3913278014"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Sky-breaching fungus",
-      "_id": "960b3b4825942e12",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.960b3b4825942e12"
+      "_key": "!tables.results!b6761b93d9f1fc4d.a3833352a8fb9309",
+      "_id": "a3833352a8fb9309"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Sludge-filled river networks",
-      "_id": "fa8b0df580deedb2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.fa8b0df580deedb2"
+      "_key": "!tables.results!b6761b93d9f1fc4d.24ff48ce21890159",
+      "_id": "24ff48ce21890159"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "f0447de757769b4f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.f0447de757769b4f"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!b6761b93d9f1fc4d.c87673d45706e12a",
+      "_id": "c87673d45706e12a"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "6b4d061a66e36913",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6761b93d9f1fc4d.6b4d061a66e36913"
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (orbital)",
+      "_key": "!tables.results!b6761b93d9f1fc4d.a4cdd0b07154d1e5",
+      "_id": "a4cdd0b07154d1e5"
     }
   ],
   "folder": "98454829527950a0",
   "sort": 317,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!b6761b93d9f1fc4d"
 }

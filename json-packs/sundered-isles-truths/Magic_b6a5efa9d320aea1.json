@@ -1,0 +1,101 @@
+{
+  "name": "Magic",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/magic",
+      "dsid": "truth:sundered_isles/magic"
+    }
+  },
+  "_id": "b6a5efa9d320aea1",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Magic does not exist.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/magic.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Magic does not exist.",
+        "Description": "Some find comfort in the old ways. Mariners heed a thousand superstitions to help ensure a safe voyage. A few perform elaborate rituals to gain the favor of the wind or cast runes to divine one's future. But true magic—if it ever existed—is lost to us now.",
+        "Quest": "Someone close to you is accused of casting a curse upon a settlement. Will you defend this person and uncover the true cause of the settlement’s troubles?",
+        "Roll template": {
+          "Description": "Some find comfort in the old ways. Mariners heed a thousand superstitions to help ensure a safe voyage. A few perform elaborate rituals to gain the favor of the wind or cast runes to divine one's future. But true magic—if it ever existed—is lost to us now."
+        }
+      },
+      "_id": "a7ff365f5d9da4ff",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!b6a5efa9d320aea1.a7ff365f5d9da4ff"
+    },
+    {
+      "type": "truth",
+      "name": "Magic is rare and mysterious.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/magic.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Magic is rare and mysterious.",
+        "Description": "The isles lie at the nexus of the new and the old, science and superstition, the known and the inexplicable. This collision of realities is a powerful but chaotic force, and rare folk can manipulate these unstable realities to cast spells and perform rites. In some cultures, mystics are respected; in others, they are feared or even outcast.",
+        "Quest": "A powerful but outcast sorcerer lives alone on a faraway island. Why do you have urgent need of their abilities? What enemy or rival is on the hunt for this person?",
+        "Roll template": {
+          "Description": "The isles lie at the nexus of the new and the old, science and superstition, the known and the inexplicable. This collision of realities is a powerful but chaotic force, and rare folk can manipulate these unstable realities to cast spells and perform rites. In some cultures, mystics are respected; in others, they are feared or even outcast."
+        }
+      },
+      "_id": "65084c3b33382617",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!b6a5efa9d320aea1.65084c3b33382617"
+    },
+    {
+      "type": "truth",
+      "name": "Magic is an ever-present, elemental force.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/magic.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Magic is an ever-present, elemental force.",
+        "Description": "Magic is as constant as the winds and tides. Talented mystics exploit these energies to shape natural forces, divine the past and the future, and cast boons and curses. A few can even breathe unnatural life into the dead. Many mystics join guilds or serve under mentors to hone their craft, while others make do with raw, untrained talent. In spite of their uncanny nature, mystics are often hired as aides for powerful leaders, or to help guide ships on perilous voyages. But as the winds and tides are fickle, so is magic, and some fall prey to the dark curse of these forces.",
+        "Quest": "Someone you love is corrupted by cursed powers, and is set on a destructive course of vengeance. What caused their fall? Do you seek to save them or defeat them?",
+        "Roll template": {
+          "Description": "Magic is as constant as the winds and tides. Talented mystics exploit these energies to shape natural forces, divine the past and the future, and cast boons and curses. A few can even breathe unnatural life into the dead. Many mystics join guilds or serve under mentors to hone their craft, while others make do with raw, untrained talent. In spite of their uncanny nature, mystics are often hired as aides for powerful leaders, or to help guide ships on perilous voyages. But as the winds and tides are fickle, so is magic, and some fall prey to the dark curse of these forces."
+        }
+      },
+      "_id": "569a906e399ac038",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!b6a5efa9d320aea1.569a906e399ac038"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you posses supernatural powers, you might be an @Compendium[foundry-ironsworn.starforgedassets.db0df04af3ca4cc4]{Empath}, @Compendium[foundry-ironsworn.starforgedassets.fd7a1b4ec8ae5771]{Kinetic}, @Compendium[foundry-ironsworn.sunderedislesassets.df94d23a05e3330d]{Necromancer}, @Compendium[foundry-ironsworn.starforgedassets.98f1ff9b338b5695]{Seer}, @Compendium[foundry-ironsworn.starforgedassets.12a922e088c35efa]{Shade}, @Compendium[foundry-ironsworn.sunderedislesassets.a304a030a931cdd7]{Sorcerer}, or @Compendium[foundry-ironsworn.sunderedislesassets.d4e67aa3e3c3fdb1]{Windbinder}. If your unnatural abilities have made you a pariah, you might be an @Compendium[foundry-ironsworn.starforgedassets.085d80b933598615]{Outcast}.",
+        "format": 2,
+        "content": "<p>If you posses supernatural powers, you might be an @Compendium[foundry-ironsworn.starforgedassets.db0df04af3ca4cc4]{Empath}, @Compendium[foundry-ironsworn.starforgedassets.fd7a1b4ec8ae5771]{Kinetic}, @Compendium[foundry-ironsworn.sunderedislesassets.df94d23a05e3330d]{Necromancer}, @Compendium[foundry-ironsworn.starforgedassets.98f1ff9b338b5695]{Seer}, @Compendium[foundry-ironsworn.starforgedassets.12a922e088c35efa]{Shade}, @Compendium[foundry-ironsworn.sunderedislesassets.a304a030a931cdd7]{Sorcerer}, or @Compendium[foundry-ironsworn.sunderedislesassets.d4e67aa3e3c3fdb1]{Windbinder}. If your unnatural abilities have made you a pariah, you might be an @Compendium[foundry-ironsworn.starforgedassets.085d80b933598615]{Outcast}.</p>"
+      },
+      "_id": "fa123c2f634982dc",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!b6a5efa9d320aea1.fa123c2f634982dc"
+    }
+  ],
+  "folder": null,
+  "sort": 85,
+  "_key": "!journal!b6a5efa9d320aea1"
+}

@@ -1,0 +1,110 @@
+{
+  "_id": "5de0373154d7ce38",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/adventures/factions",
+      "dsid": "oracle_rollable:sundered_isles/adventures/factions/societies"
+    }
+  },
+  "name": "Societies",
+  "description": "<p>People who share traditions and a way of life.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Akiya",
+      "_key": "!tables.results!5de0373154d7ce38.f2ef490ff9470ec3",
+      "_id": "f2ef490ff9470ec3"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Arsu / Azizos",
+      "_key": "!tables.results!5de0373154d7ce38.62169a9ece3f28f5",
+      "_id": "62169a9ece3f28f5"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Kai",
+      "_key": "!tables.results!5de0373154d7ce38.6f3b219c66dcaa92",
+      "_id": "6f3b219c66dcaa92"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Khazeera",
+      "_key": "!tables.results!5de0373154d7ce38.32cf20eaa9268bf3",
+      "_id": "32cf20eaa9268bf3"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Morien",
+      "_key": "!tables.results!5de0373154d7ce38.625c2dca8c173547",
+      "_id": "625c2dca8c173547"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Otani",
+      "_key": "!tables.results!5de0373154d7ce38.dad9a60e5b0acfc4",
+      "_id": "dad9a60e5b0acfc4"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Sularia",
+      "_key": "!tables.results!5de0373154d7ce38.972561b83cff9cb7",
+      "_id": "972561b83cff9cb7"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Talan",
+      "_key": "!tables.results!5de0373154d7ce38.533ca98da1bdb9ef",
+      "_id": "533ca98da1bdb9ef"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Thalassa",
+      "_key": "!tables.results!5de0373154d7ce38.11b357f8afe81b36",
+      "_id": "11b357f8afe81b36"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Uktanu",
+      "_key": "!tables.results!5de0373154d7ce38.43ae1fd6bb12f520",
+      "_id": "43ae1fd6bb12f520"
+    }
+  ],
+  "folder": "870705f12043ead0",
+  "sort": 52,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5de0373154d7ce38"
+}

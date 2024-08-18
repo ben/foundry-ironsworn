@@ -1,0 +1,326 @@
+{
+  "_id": "d646b44c29a1b570",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/peril"
+    }
+  },
+  "name": "Ruin Peril",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Confounding puzzle",
+      "_key": "!tables.results!d646b44c29a1b570.3a8d6ce39dc584bf",
+      "_id": "3a8d6ce39dc584bf"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Crumbling terrain underfoot",
+      "_key": "!tables.results!d646b44c29a1b570.31e4671b5db5f63e",
+      "_id": "31e4671b5db5f63e"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Dire warning left by other explorers",
+      "_key": "!tables.results!d646b44c29a1b570.caee8c3fd3922f7b",
+      "_id": "caee8c3fd3922f7b"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Distressing written message",
+      "_key": "!tables.results!d646b44c29a1b570.55227e9a3c36c387",
+      "_id": "55227e9a3c36c387"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Disturbing evidence of a dark history",
+      "_key": "!tables.results!d646b44c29a1b570.5f5ee7561db51cdb",
+      "_id": "5f5ee7561db51cdb"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Disturbing remains or evidence of death",
+      "_key": "!tables.results!d646b44c29a1b570.29167d3ab8400482",
+      "_id": "29167d3ab8400482"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Dreadful scenes weigh upon you",
+      "_key": "!tables.results!d646b44c29a1b570.ba4843966585b023",
+      "_id": "ba4843966585b023"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Elaborate mechanical trap",
+      "_key": "!tables.results!d646b44c29a1b570.ac2c8b4ca6c12c64",
+      "_id": "ac2c8b4ca6c12c64"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Enemies set an ambush",
+      "_key": "!tables.results!d646b44c29a1b570.7f1425203fbe4498",
+      "_id": "7f1425203fbe4498"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Flooded or blocked space",
+      "_key": "!tables.results!d646b44c29a1b570.d91c136fc46b77df",
+      "_id": "d91c136fc46b77df"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Gap or chasm stands in the way",
+      "_key": "!tables.results!d646b44c29a1b570.8a50fef69f71e11c",
+      "_id": "8a50fef69f71e11c"
+    },
+    {
+      "range": [
+        31,
+        34
+      ],
+      "text": "Glimpses of a lurking or trailing foe",
+      "_key": "!tables.results!d646b44c29a1b570.d8ecc2e5a1b254c3",
+      "_id": "d8ecc2e5a1b254c3"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Guardians defend against intruders",
+      "_key": "!tables.results!d646b44c29a1b570.921a934b37b38df7",
+      "_id": "921a934b37b38df7"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Hazardous or toxic environment",
+      "_key": "!tables.results!d646b44c29a1b570.4eae32f91bf2113a",
+      "_id": "4eae32f91bf2113a"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Heartbreaking memento of lost lives",
+      "_key": "!tables.results!d646b44c29a1b570.67e24e632c41b723",
+      "_id": "67e24e632c41b723"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Imminent catastrophic collapse",
+      "_key": "!tables.results!d646b44c29a1b570.5bf83ed11c315073",
+      "_id": "5bf83ed11c315073"
+    },
+    {
+      "range": [
+        47,
+        50
+      ],
+      "text": "Improvised booby trap",
+      "_key": "!tables.results!d646b44c29a1b570.1ce6ae6a167a8a10",
+      "_id": "1ce6ae6a167a8a10"
+    },
+    {
+      "range": [
+        51,
+        54
+      ],
+      "text": "Lair of an aggressive creature",
+      "_key": "!tables.results!d646b44c29a1b570.36d10d3741c15857",
+      "_id": "36d10d3741c15857"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Locked or sealed path",
+      "_key": "!tables.results!d646b44c29a1b570.19f749e770f96651",
+      "_id": "19f749e770f96651"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Lost gear or supplies",
+      "_key": "!tables.results!d646b44c29a1b570.66ca0c4f051b071e",
+      "_id": "66ca0c4f051b071e"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Poor visibility conceals dangers",
+      "_key": "!tables.results!d646b44c29a1b570.40d3e3d5484c7daa",
+      "_id": "40d3e3d5484c7daa"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Noise alerts others to your presence",
+      "_key": "!tables.results!d646b44c29a1b570.e236541543f728ae",
+      "_id": "e236541543f728ae"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Ominous sounds of approaching danger",
+      "_key": "!tables.results!d646b44c29a1b570.c4aaac0c06e676d0",
+      "_id": "c4aaac0c06e676d0"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Party member stumbles into harm's wa",
+      "_key": "!tables.results!d646b44c29a1b570.e1460075486133d1",
+      "_id": "e1460075486133d1"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Precipitous climb or descent",
+      "_key": "!tables.results!d646b44c29a1b570.0af516637c54d9fc",
+      "_id": "0af516637c54d9fc"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Rivals seek what lay within",
+      "_key": "!tables.results!d646b44c29a1b570.ec5e13c407f5ebeb",
+      "_id": "ec5e13c407f5ebeb"
+    },
+    {
+      "range": [
+        79,
+        82
+      ],
+      "text": "Sense of being watched",
+      "_key": "!tables.results!d646b44c29a1b570.db8bace8cd8c8bfb",
+      "_id": "db8bace8cd8c8bfb"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Signs of infestation or disease",
+      "_key": "!tables.results!d646b44c29a1b570.b57c7ef75e0d5219",
+      "_id": "b57c7ef75e0d5219"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Swarming creatures or insects",
+      "_key": "!tables.results!d646b44c29a1b570.4f8ccd63a42d22b9",
+      "_id": "4f8ccd63a42d22b9"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Tempting relic hides a danger",
+      "_key": "!tables.results!d646b44c29a1b570.894244a23272e515",
+      "_id": "894244a23272e515"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Volatile device or artifact",
+      "_key": "!tables.results!d646b44c29a1b570.b2bf823dbe23fb98",
+      "_id": "b2bf823dbe23fb98"
+    },
+    {
+      "range": [
+        91,
+        94
+      ],
+      "text": "Writing or symbols defy understanding",
+      "_key": "!tables.results!d646b44c29a1b570.2db4c001bd32fac9",
+      "_id": "2db4c001bd32fac9"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "[Action](datasworn:oracle_rollable:sundered_isles/core/action) + [Theme](datasworn:oracle_rollable:sundered_isles/core/theme)",
+      "_key": "!tables.results!d646b44c29a1b570.a03ca7f725e7af4c",
+      "_id": "a03ca7f725e7af4c"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!d646b44c29a1b570.a1e8a2da211c2bf9",
+      "_id": "a1e8a2da211c2bf9"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 219,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d646b44c29a1b570"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Create Your Character",
+  "description": "",
+  "type": "RollTable",
+  "_id": "e7741583e9cc5dd1",
+  "sort": 100,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:starforged/launching_your_campaign/character"
+    }
+  },
+  "folder": "b582a7b95b531a60",
+  "sorting": "a",
+  "_key": "!folders!e7741583e9cc5dd1"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Turning_Point/Mystic_Backlash",
-      "category": "Ironsworn/Oracles/Turning_Point"
+      "category": "Ironsworn/Oracles/Turning_Point",
+      "dsid": "oracle_rollable:classic/turning_point/mystic_backlash"
     }
   },
   "name": "Mystic Backlash",
   "description": "<p>Those who deal in magic may find themselves at the mercy of chaos. This oracle can supplement, or replace, the @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price} table when resolving the outcome of a failed ritual or other negative interaction with mystical forces. Use this oracle in dramatic moments, or to introduce an unexpected outcome triggered by a match.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "Your ritual has the opposite affect.",
-      "_id": "31b3b7e6916a412a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.31b3b7e6916a412a"
+      "_key": "!tables.results!800b70d26ca31f93.adeb317fe2e6e12e",
+      "_id": "adeb317fe2e6e12e"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         8
       ],
       "text": "You are sapped of strength.",
-      "_id": "48e44f34b552b20b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.48e44f34b552b20b"
+      "_key": "!tables.results!800b70d26ca31f93.6356e0de32d608d9",
+      "_id": "6356e0de32d608d9"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         12
       ],
       "text": "Your friend, ally, or companion is adversely affected.",
-      "_id": "d25a425f5e1a16c2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.d25a425f5e1a16c2"
+      "_key": "!tables.results!800b70d26ca31f93.ee10d3e591f45afb",
+      "_id": "ee10d3e591f45afb"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         16
       ],
       "text": "You destroy an important object.",
-      "_id": "55df599c07eaece9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.55df599c07eaece9"
+      "_key": "!tables.results!800b70d26ca31f93.996dd40c58b962d4",
+      "_id": "996dd40c58b962d4"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         20
       ],
       "text": "You inadvertently summon a horror.",
-      "_id": "323c94f7b2b1ceea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.323c94f7b2b1ceea"
+      "_key": "!tables.results!800b70d26ca31f93.99f2e718068120d5",
+      "_id": "99f2e718068120d5"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         24
       ],
       "text": "You collapse, and drift into a troubled sleep.",
-      "_id": "d16733b32835e7e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.d16733b32835e7e5"
+      "_key": "!tables.results!800b70d26ca31f93.a51e82b3b0c7ef6b",
+      "_id": "a51e82b3b0c7ef6b"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         28
       ],
       "text": "You undergo a physical torment which leaves its mark upon you.",
-      "_id": "1e8577c129302759",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.1e8577c129302759"
+      "_key": "!tables.results!800b70d26ca31f93.81146571993f2365",
+      "_id": "81146571993f2365"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         32
       ],
       "text": "You hear ghostly voices whispering of dark portents.",
-      "_id": "c98f3c1a8af57361",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.c98f3c1a8af57361"
+      "_key": "!tables.results!800b70d26ca31f93.de588226d6c2c029",
+      "_id": "de588226d6c2c029"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         36
       ],
       "text": "You are lost in shadow, and find yourself in another place without memory of how you got there.",
-      "_id": "40b8b5c17e084d2b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.40b8b5c17e084d2b"
+      "_key": "!tables.results!800b70d26ca31f93.174913c1ba4cfe0b",
+      "_id": "174913c1ba4cfe0b"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         40
       ],
       "text": "You alert someone or something to your presence.",
-      "_id": "1beaa2c2ecfd9232",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.1beaa2c2ecfd9232"
+      "_key": "!tables.results!800b70d26ca31f93.3f0ba94c9142a175",
+      "_id": "3f0ba94c9142a175"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         44
       ],
       "text": "You are not yourself, and act against a friend, ally, or companion.",
-      "_id": "42f146b47cc8120a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.42f146b47cc8120a"
+      "_key": "!tables.results!800b70d26ca31f93.8ea5bea21481f715",
+      "_id": "8ea5bea21481f715"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         48
       ],
       "text": "You affect or damage your surroundings, causing a disturbance or potential harm.",
-      "_id": "2ea32bfcd30c0fad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.2ea32bfcd30c0fad"
+      "_key": "!tables.results!800b70d26ca31f93.396ddf8fcf4b0f51",
+      "_id": "396ddf8fcf4b0f51"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         52
       ],
       "text": "You waste resources.",
-      "_id": "1bc4d4f0bad5fcc4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.1bc4d4f0bad5fcc4"
+      "_key": "!tables.results!800b70d26ca31f93.d7c9da5f34e09a48",
+      "_id": "d7c9da5f34e09a48"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         56
       ],
       "text": "You suffer the loss of a sense for several hours.",
-      "_id": "3a52872f775c4343",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.3a52872f775c4343"
+      "_key": "!tables.results!800b70d26ca31f93.7b72d95667d7888c",
+      "_id": "7b72d95667d7888c"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         60
       ],
       "text": "You lose your connection to magic for a day or so, and cannot perform rituals.",
-      "_id": "d2a91d7afb8e19de",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.d2a91d7afb8e19de"
+      "_key": "!tables.results!800b70d26ca31f93.60e2a1aeb08c9eb6",
+      "_id": "60e2a1aeb08c9eb6"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         64
       ],
       "text": "Your ritual affects the target in an unexpected and problematic way.",
-      "_id": "6d61a16d6780c24c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.6d61a16d6780c24c"
+      "_key": "!tables.results!800b70d26ca31f93.28072a4bb96b8b74",
+      "_id": "28072a4bb96b8b74"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         68
       ],
       "text": "Your ritual reveals a surprising and troubling truth.",
-      "_id": "441235f9c21655e1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.441235f9c21655e1"
+      "_key": "!tables.results!800b70d26ca31f93.c91b886e4aa5c906",
+      "_id": "c91b886e4aa5c906"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         72
       ],
       "text": "You are tempted by dark powers.",
-      "_id": "7abb1c8fd3fa9692",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.7abb1c8fd3fa9692"
+      "_key": "!tables.results!800b70d26ca31f93.8f93574c1b621a3f",
+      "_id": "8f93574c1b621a3f"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         76
       ],
       "text": "You see a troubling vision of your future.",
-      "_id": "253ff81a21da747d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.253ff81a21da747d"
+      "_key": "!tables.results!800b70d26ca31f93.e3cec3da4cb03a4f",
+      "_id": "e3cec3da4cb03a4f"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         80
       ],
       "text": "You can't perform this ritual again until you acquire an important component.",
-      "_id": "a88d2736e35235e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.a88d2736e35235e5"
+      "_key": "!tables.results!800b70d26ca31f93.61518ccc4bb58354",
+      "_id": "61518ccc4bb58354"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         84
       ],
       "text": "You develop a strange fear or compulsion.",
-      "_id": "9be0525e04bff846",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.9be0525e04bff846"
+      "_key": "!tables.results!800b70d26ca31f93.5f42616bf7f89bc7",
+      "_id": "5f42616bf7f89bc7"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         88
       ],
       "text": "Your ritual causes creatures to exhibit strange or aggressive behavior.",
-      "_id": "a5d83d2dd83950ef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.a5d83d2dd83950ef"
+      "_key": "!tables.results!800b70d26ca31f93.d842f0e1c3187fb4",
+      "_id": "d842f0e1c3187fb4"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         92
       ],
       "text": "You are tormented by an apparition from your past.",
-      "_id": "ede2b19aa9a4473c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.ede2b19aa9a4473c"
+      "_key": "!tables.results!800b70d26ca31f93.9ee1cccd0cab126c",
+      "_id": "9ee1cccd0cab126c"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         96
       ],
       "text": "You are wracked with sudden sickness.",
-      "_id": "b565b66cedca13d9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.b565b66cedca13d9"
+      "_key": "!tables.results!800b70d26ca31f93.c7bc1a340b72281c",
+      "_id": "c7bc1a340b72281c"
     },
     {
       "range": [
@@ -354,29 +235,12 @@
         100
       ],
       "text": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-      "_id": "caf380b54c634b97",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!800b70d26ca31f93.caf380b54c634b97"
+      "_key": "!tables.results!800b70d26ca31f93.aa953366315f30ec",
+      "_id": "aa953366315f30ec"
     }
   ],
   "folder": "b4c697d8bd353315",
   "sort": 189,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!800b70d26ca31f93"
 }

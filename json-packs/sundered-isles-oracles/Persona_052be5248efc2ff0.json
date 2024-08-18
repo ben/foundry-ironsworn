@@ -1,0 +1,110 @@
+{
+  "_id": "052be5248efc2ff0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/loyalty",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/loyalty/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Allies",
+      "_key": "!tables.results!052be5248efc2ff0.ed09d356245c1090",
+      "_id": "ed09d356245c1090"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Bulwarks",
+      "_key": "!tables.results!052be5248efc2ff0.e526c3df043c62a1",
+      "_id": "e526c3df043c62a1"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Caretakers",
+      "_key": "!tables.results!052be5248efc2ff0.c983fbb28f3cb8ed",
+      "_id": "c983fbb28f3cb8ed"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Guardians",
+      "_key": "!tables.results!052be5248efc2ff0.ab0c106027305baa",
+      "_id": "ab0c106027305baa"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Loyalists",
+      "_key": "!tables.results!052be5248efc2ff0.bbf06bf48b24d84b",
+      "_id": "bbf06bf48b24d84b"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Sentinels",
+      "_key": "!tables.results!052be5248efc2ff0.e2c43a2db7303841",
+      "_id": "e2c43a2db7303841"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Sentries",
+      "_key": "!tables.results!052be5248efc2ff0.38220afc6cb5a2e0",
+      "_id": "38220afc6cb5a2e0"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Shields",
+      "_key": "!tables.results!052be5248efc2ff0.0335b5fffab6223d",
+      "_id": "0335b5fffab6223d"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Wardens",
+      "_key": "!tables.results!052be5248efc2ff0.854a3cbade066498",
+      "_id": "854a3cbade066498"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Watchers",
+      "_key": "!tables.results!052be5248efc2ff0.4a4f7cdf45d6faf3",
+      "_id": "4a4f7cdf45d6faf3"
+    }
+  ],
+  "folder": "0f5a1b951ea99e85",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!052be5248efc2ff0"
+}

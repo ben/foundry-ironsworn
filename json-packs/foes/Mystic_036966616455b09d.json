@@ -1,0 +1,27 @@
+{
+  "_id": "036966616455b09d",
+  "type": "progress",
+  "name": "Mystic",
+  "img": "icons/environment/people/cleric-orange.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Knowing eyes</p>\n<p class=\"nogrow\">Tattooed skin</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Respect the old ways</p>\n<p class=\"nogrow\">Seek the paths of power</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Foresee the intent of my enemies</p>\n<p class=\"nogrow\">Prepare rituals</p>\n<p class=\"nogrow\">Use trickery</p>\n</div>\n</div>\n\n<p>Some say you can tell a mystic by looking them in the eye. They walk in two worlds, and their eyes shimmer with that dark reflection of realms beyond our own. We call it the sight. Some hold that darkness in check. Others are consumed by it.</p>\n\n<blockquote>Quest Starter: <p>A mystic returns to their home after a years-long journey. They are changed. What new power or knowledge do now they wield? What do they seek to do with it? Why do you oppose them?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "026fc49d26877a2e",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/ironlanders/mystic"
+    }
+  },
+  "_key": "!items!036966616455b09d"
+}

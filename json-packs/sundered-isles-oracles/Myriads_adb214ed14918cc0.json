@@ -1,0 +1,74 @@
+{
+  "_id": "adb214ed14918cc0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/landscape/vitality",
+      "dsid": "oracle_rollable:sundered_isles/island/landscape/vitality/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Devastated",
+      "_key": "!tables.results!adb214ed14918cc0.3a92c1c9074beddf",
+      "_id": "3a92c1c9074beddf"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Dying",
+      "_key": "!tables.results!adb214ed14918cc0.ac02509b0ba94df2",
+      "_id": "ac02509b0ba94df2"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Desolate",
+      "_key": "!tables.results!adb214ed14918cc0.eb3c05423489c2c2",
+      "_id": "eb3c05423489c2c2"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Sparse",
+      "_key": "!tables.results!adb214ed14918cc0.26a6b31bdeb8721b",
+      "_id": "26a6b31bdeb8721b"
+    },
+    {
+      "range": [
+        51,
+        90
+      ],
+      "text": "Lush",
+      "_key": "!tables.results!adb214ed14918cc0.e2188de020974553",
+      "_id": "e2188de020974553"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Primeval",
+      "_key": "!tables.results!adb214ed14918cc0.ab914b64a152066e",
+      "_id": "ab914b64a152066e"
+    }
+  ],
+  "folder": "b1d0254d0c20b72e",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!adb214ed14918cc0"
+}

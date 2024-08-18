@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Starships/Fleet",
-      "category": "Starforged/Oracles/Starships"
+      "category": "Starforged/Oracles/Starships",
+      "dsid": "oracle_rollable:starforged/starship/fleet"
     }
   },
   "name": "Fleet",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Battle fleet",
-      "_id": "45c5b9007e24968d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!170fccaeba83c346.45c5b9007e24968d"
+      "_key": "!tables.results!170fccaeba83c346.b5d1a8de38483749",
+      "_id": "b5d1a8de38483749"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         25
       ],
       "text": "Pirate wing",
-      "_id": "eb8ba1f3c7a551b9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!170fccaeba83c346.eb8ba1f3c7a551b9"
+      "_key": "!tables.results!170fccaeba83c346.1c94f1192c0dae65",
+      "_id": "1c94f1192c0dae65"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         35
       ],
       "text": "Raider horde",
-      "_id": "6c2cef9ad33c0336",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!170fccaeba83c346.6c2cef9ad33c0336"
+      "_key": "!tables.results!170fccaeba83c346.1271008f2013dc47",
+      "_id": "1271008f2013dc47"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         50
       ],
       "text": "Salvager hive",
-      "_id": "a2accf69586558ff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!170fccaeba83c346.a2accf69586558ff"
+      "_key": "!tables.results!170fccaeba83c346.0ceef2cc89115fe6",
+      "_id": "0ceef2cc89115fe6"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         60
       ],
       "text": "Settler caravan",
-      "_id": "63561881ee0aedd3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!170fccaeba83c346.63561881ee0aedd3"
+      "_key": "!tables.results!170fccaeba83c346.8dbec456725c62d9",
+      "_id": "8dbec456725c62d9"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         70
       ],
       "text": "Trade caravan",
-      "_id": "df52673b7834c292",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!170fccaeba83c346.df52673b7834c292"
+      "_key": "!tables.results!170fccaeba83c346.cb090b04be41e10a",
+      "_id": "cb090b04be41e10a"
     },
     {
       "range": [
@@ -102,43 +73,21 @@
         90
       ],
       "text": "Transport and escorts",
-      "_id": "23764975152fab18",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!170fccaeba83c346.23764975152fab18"
+      "_key": "!tables.results!170fccaeba83c346.b2d6e827325f352f",
+      "_id": "b2d6e827325f352f"
     },
     {
       "range": [
         91,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Starships/Mission\"><i class=\"fa fa-caret-right\"></i> Starship Mission</a>",
-      "_id": "bdc6a1d4df616d64",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!170fccaeba83c346.bdc6a1d4df616d64"
+      "text": "[Starship Mission](datasworn:oracle_collection:starforged/starship/mission)",
+      "_key": "!tables.results!170fccaeba83c346.3a3e1d400c48bbe2",
+      "_id": "3a3e1d400c48bbe2"
     }
   ],
   "folder": "eea3419c88a919cd",
   "sort": 326,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!170fccaeba83c346"
 }

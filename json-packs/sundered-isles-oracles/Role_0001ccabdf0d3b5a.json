@@ -1,0 +1,146 @@
+{
+  "_id": "0001ccabdf0d3b5a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/cursed",
+      "dsid": "oracle_rollable:sundered_isles/faction/cursed/role"
+    }
+  },
+  "name": "Role",
+  "description": "<p>Cursed factions include people and beings of a strange, supernatural, or dreadful nature, as well as factions dedicated to opposing those entities. Use the table below to reveal the role of a cursed faction.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Artificers",
+      "_key": "!tables.results!0001ccabdf0d3b5a.9cc6ac98ce7b1ea7",
+      "_id": "9cc6ac98ce7b1ea7"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Beast hunters",
+      "_key": "!tables.results!0001ccabdf0d3b5a.6309818a4ebb3bc3",
+      "_id": "6309818a4ebb3bc3"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Constructs",
+      "_key": "!tables.results!0001ccabdf0d3b5a.9ae9e5ff9341ed64",
+      "_id": "9ae9e5ff9341ed64"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Cultists",
+      "_key": "!tables.results!0001ccabdf0d3b5a.dcba49934fc8b0ae",
+      "_id": "dcba49934fc8b0ae"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Deep-dwellers",
+      "_key": "!tables.results!0001ccabdf0d3b5a.176af4204d303e24",
+      "_id": "176af4204d303e24"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Ghost hunters or occultists",
+      "_key": "!tables.results!0001ccabdf0d3b5a.7bd712e036c5d965",
+      "_id": "7bd712e036c5d965"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Lycanthropes or shape changers",
+      "_key": "!tables.results!0001ccabdf0d3b5a.ac8c2331acb9bf44",
+      "_id": "ac8c2331acb9bf44"
+    },
+    {
+      "range": [
+        46,
+        55
+      ],
+      "text": "Monster hunters",
+      "_key": "!tables.results!0001ccabdf0d3b5a.0748049d7024f29e",
+      "_id": "0748049d7024f29e"
+    },
+    {
+      "range": [
+        56,
+        65
+      ],
+      "text": "Necromancers",
+      "_key": "!tables.results!0001ccabdf0d3b5a.322934d47dcb5cac",
+      "_id": "322934d47dcb5cac"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Sorcerers or witches",
+      "_key": "!tables.results!0001ccabdf0d3b5a.73d325497ff6ac94",
+      "_id": "73d325497ff6ac94"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Undead or undying",
+      "_key": "!tables.results!0001ccabdf0d3b5a.0cfb277e512c8bea",
+      "_id": "0cfb277e512c8bea"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Vampires",
+      "_key": "!tables.results!0001ccabdf0d3b5a.61ff332d1b314b66",
+      "_id": "61ff332d1b314b66"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Witch hunters",
+      "_key": "!tables.results!0001ccabdf0d3b5a.27d1b6873277251d",
+      "_id": "27d1b6873277251d"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice; combine those results as a single faction or set them against each other as opposing factions",
+      "_key": "!tables.results!0001ccabdf0d3b5a.73eceed488243626",
+      "_id": "73eceed488243626"
+    }
+  ],
+  "folder": "898ffa592fe619eb",
+  "sort": 182,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0001ccabdf0d3b5a"
+}

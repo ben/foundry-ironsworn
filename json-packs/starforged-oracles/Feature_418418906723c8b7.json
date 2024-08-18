@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Mechanical/Feature",
-      "category": "Starforged/Oracles/Location_Themes/Mechanical"
+      "category": "Starforged/Oracles/Location_Themes/Mechanical",
+      "dsid": "oracle_rollable:starforged/location_theme/mechanical/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Use this table to reveal a new aspect of the location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Control station or terminal",
-      "_id": "9dce34461391e0ee",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.9dce34461391e0ee"
+      "_key": "!tables.results!418418906723c8b7.ebbabb6f57edcedf",
+      "_id": "ebbabb6f57edcedf"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Device or technology with a mysterious function",
-      "_id": "de5bd8e96fbd9eff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.de5bd8e96fbd9eff"
+      "_key": "!tables.results!418418906723c8b7.6ce31cee73bb6171",
+      "_id": "6ce31cee73bb6171"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Disassembled machinery or parts",
-      "_id": "f5dd5b876698beb2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.f5dd5b876698beb2"
+      "_key": "!tables.results!418418906723c8b7.c1fc1ac2011127ab",
+      "_id": "c1fc1ac2011127ab"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Heavy machinery at work",
-      "_id": "a97cbd0c92d1228a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.a97cbd0c92d1228a"
+      "_key": "!tables.results!418418906723c8b7.aa023dde1749417b",
+      "_id": "aa023dde1749417b"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Machine fabrication or repair",
-      "_id": "308ef46bde6e9ff6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.308ef46bde6e9ff6"
+      "_key": "!tables.results!418418906723c8b7.a419c02c72061f5b",
+      "_id": "a419c02c72061f5b"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Machines emulating or fusing with biological life",
-      "_id": "2f989c6f2d7371db",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.2f989c6f2d7371db"
+      "_key": "!tables.results!418418906723c8b7.0fe92e8cf70f759c",
+      "_id": "0fe92e8cf70f759c"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Machines in stasis or powered down",
-      "_id": "b5379af08f9ae57a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.b5379af08f9ae57a"
+      "_key": "!tables.results!418418906723c8b7.df16b2d5614ed034",
+      "_id": "df16b2d5614ed034"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Machines single-mindedly executing a function or program",
-      "_id": "5e190e7e75e926a6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.5e190e7e75e926a6"
+      "_key": "!tables.results!418418906723c8b7.5d7fc70f27f77353",
+      "_id": "5d7fc70f27f77353"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Major project under construction",
-      "_id": "1ce078896e58007b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.1ce078896e58007b"
+      "_key": "!tables.results!418418906723c8b7.a34d6b0bdb802346",
+      "_id": "a34d6b0bdb802346"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Mechanical environment in motion or transforming",
-      "_id": "4ba4bac840eceb05",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.4ba4bac840eceb05"
+      "_key": "!tables.results!418418906723c8b7.c74498e13bb99b98",
+      "_id": "c74498e13bb99b98"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         88
       ],
       "text": "Mechanical wreckage or destruction",
-      "_id": "cddadd5c786ec769",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.cddadd5c786ec769"
+      "_key": "!tables.results!418418906723c8b7.39d27a36c8a19c91",
+      "_id": "39d27a36c8a19c91"
     },
     {
       "range": [
@@ -172,43 +118,21 @@
         96
       ],
       "text": "Power source for the machines",
-      "_id": "158f19735371e000",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.158f19735371e000"
+      "_key": "!tables.results!418418906723c8b7.0458d9279a5a5f83",
+      "_id": "0458d9279a5a5f83"
     },
     {
       "range": [
         97,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "131f3c6a9c1b0dbc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!418418906723c8b7.131f3c6a9c1b0dbc"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!418418906723c8b7.a47d3f31ee38ea17",
+      "_id": "a47d3f31ee38ea17"
     }
   ],
   "folder": "573c3e802c340f34",
   "sort": 377,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!418418906723c8b7"
 }

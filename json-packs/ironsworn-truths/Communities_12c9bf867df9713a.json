@@ -1,0 +1,84 @@
+{
+  "name": "Communities",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:classic/communities",
+      "dsid": "truth:classic/communities"
+    }
+  },
+  "_id": "12c9bf867df9713a",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/communities.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "",
+        "Description": "We are few in number in this accursed land. Most rarely have contact with anyone outside our own small steading or village, and strangers are viewed with deep suspicion.",
+        "Quest": "In the dead of winter, a desperate man arrives at a snowbound steading. He is wounded, hungry, and nearly frozen to death. His family has been taken. By whom? Will you brave the merciless winter to save them?",
+        "Roll template": {
+          "Description": "We are few in number in this accursed land. Most rarely have contact with anyone outside our own small steading or village, and strangers are viewed with deep suspicion."
+        }
+      },
+      "_id": "4bbda7d33f632376",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!12c9bf867df9713a.4bbda7d33f632376"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/communities.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "",
+        "Description": "We live in communities called circles. These are settlements ranging in size from a steading with a few families to a village of several hundred. Some circles belong to nomadic folk. Some powerful circles might include a cluster of settlements. We trade (and sometimes feud) with other circles.",
+        "Quest": "A decades-long feud between two circles has flared into open conflict. What is the cause of this dispute? Do you join in the fight, or swear to put a stop to it?",
+        "Roll template": {
+          "Description": "We live in communities called circles. These are settlements ranging in size from a steading with a few families to a village of several hundred. Some circles belong to nomadic folk. Some powerful circles might include a cluster of settlements. We trade (and sometimes feud) with other circles."
+        }
+      },
+      "_id": "90423e46a6c85a26",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!12c9bf867df9713a.90423e46a6c85a26"
+    },
+    {
+      "type": "truth",
+      "name": "",
+      "system": {
+        "dsid": "truth.option:classic/communities.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "",
+        "Description": "We have forged the Ironlands into a home. Villages within the Havens are connected by well-trod roads. Trade caravans travel between settlements in the Havens and those in outlying regions. Even so, much of this land is untamed.",
+        "Quest": "Caravans are forced to pay for passage along a trade road. This payment, one-quarter of the goods carried, leaves several communities without sufficient winter stores. Who is making these demands? How will you set things right?",
+        "Roll template": {
+          "Description": "We have forged the Ironlands into a home. Villages within the Havens are connected by well-trod roads. Trade caravans travel between settlements in the Havens and those in outlying regions. Even so, much of this land is untamed."
+        }
+      },
+      "_id": "9d2815a70a4a5e78",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!12c9bf867df9713a.9d2815a70a4a5e78"
+    }
+  ],
+  "folder": null,
+  "sort": 125,
+  "_key": "!journal!12c9bf867df9713a"
+}

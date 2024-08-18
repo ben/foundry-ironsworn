@@ -1,0 +1,200 @@
+{
+  "_id": "97cb6c2795650ab6",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/getting_underway/take_command",
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/take_command/ship_history"
+    }
+  },
+  "name": "Ship History",
+  "description": "<p>If you have a command, envision how you claimed or earned the vessel. For inspiration, use the table below. If you sail under the command of a non-player character, you can use this table to give their ship a backstory.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Acquired in a duel of honor",
+      "_key": "!tables.results!97cb6c2795650ab6.5fd88864199112cc",
+      "_id": "5fd88864199112cc"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Awarded by a vote of the crew, after the former captain died an untimely death",
+      "_key": "!tables.results!97cb6c2795650ab6.2621fe4ae7cadc18",
+      "_id": "2621fe4ae7cadc18"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Bestowed by an eccentric shipwright",
+      "_key": "!tables.results!97cb6c2795650ab6.ce2dd233ac1d21bd",
+      "_id": "ce2dd233ac1d21bd"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Built or refitted by a community, and granted to its captain as their emissary",
+      "_key": "!tables.results!97cb6c2795650ab6.e91680f17b81344a",
+      "_id": "e91680f17b81344a"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Captured in battle, and awarded by the former captain",
+      "_key": "!tables.results!97cb6c2795650ab6.8c2f871bb76de7af",
+      "_id": "8c2f871bb76de7af"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Earned in exchange for a perilous undertaking or heroic deed",
+      "_key": "!tables.results!97cb6c2795650ab6.4efcab94e9a84177",
+      "_id": "4efcab94e9a84177"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Entrusted by a faction, and commanded in their service",
+      "_key": "!tables.results!97cb6c2795650ab6.f8d23343ddd5a37a",
+      "_id": "f8d23343ddd5a37a"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Found as a wreck, and refitted to make it seaworthy",
+      "_key": "!tables.results!97cb6c2795650ab6.95648c233bebb7ef",
+      "_id": "95648c233bebb7ef"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Gifted by an anonymous benefactor",
+      "_key": "!tables.results!97cb6c2795650ab6.43967440691ecaba",
+      "_id": "43967440691ecaba"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Inherited from a dead or missing relative or mentor",
+      "_key": "!tables.results!97cb6c2795650ab6.a4e6b2753d367ffa",
+      "_id": "a4e6b2753d367ffa"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Leased under exorbitant terms",
+      "_key": "!tables.results!97cb6c2795650ab6.bc23af2bb86b1bc8",
+      "_id": "bc23af2bb86b1bc8"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Obtained in trade for a precious object",
+      "_key": "!tables.results!97cb6c2795650ab6.0a88d834460e307c",
+      "_id": "0a88d834460e307c"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Obtained through a false identity or counterfeit documents",
+      "_key": "!tables.results!97cb6c2795650ab6.e3015c45895fafc8",
+      "_id": "e3015c45895fafc8"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "On grant from an underworld figure in exchange for completing unscrupulous missions",
+      "_key": "!tables.results!97cb6c2795650ab6.4bdea64253e307d1",
+      "_id": "4bdea64253e307d1"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Once a timeworn, unwanted ship, painstakingly refitted to its new role",
+      "_key": "!tables.results!97cb6c2795650ab6.a5ac3cfccba74759",
+      "_id": "a5ac3cfccba74759"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Purchased at a suspiciously cheap price",
+      "_key": "!tables.results!97cb6c2795650ab6.73c34a306676feba",
+      "_id": "73c34a306676feba"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Seized in a mutiny against its former captain",
+      "_key": "!tables.results!97cb6c2795650ab6.7e2b1e5cc64d23f2",
+      "_id": "7e2b1e5cc64d23f2"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Stolen from under the nose of a powerful faction",
+      "_key": "!tables.results!97cb6c2795650ab6.84826baa4f3a8b40",
+      "_id": "84826baa4f3a8b40"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Taken while fleeing an attack or disaster",
+      "_key": "!tables.results!97cb6c2795650ab6.64dc695ac7ebef2c",
+      "_id": "64dc695ac7ebef2c"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Won in a high-stakes bet",
+      "_key": "!tables.results!97cb6c2795650ab6.0f15247b426b7246",
+      "_id": "0f15247b426b7246"
+    }
+  ],
+  "folder": "73ab87baaf2ebf11",
+  "sort": 97,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!97cb6c2795650ab6"
+}

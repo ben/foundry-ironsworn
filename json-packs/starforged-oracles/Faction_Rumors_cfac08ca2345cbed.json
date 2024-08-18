@@ -1,0 +1,318 @@
+{
+  "_id": "cfac08ca2345cbed",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Rumors",
+      "category": "Starforged/Oracles/Factions",
+      "dsid": "oracle_rollable:starforged/faction/rumors"
+    }
+  },
+  "name": "Faction Rumors",
+  "description": "<p>Use this table when you are in a position to investigate a faction by uncovering secrets or fishing for gossip.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Caught in the crossfire of feuding factions",
+      "_key": "!tables.results!cfac08ca2345cbed.b1abee57b0392d31",
+      "_id": "b1abee57b0392d31"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Colluding with a criminal enterprise",
+      "_key": "!tables.results!cfac08ca2345cbed.f27ae662eb2f1b4c",
+      "_id": "f27ae662eb2f1b4c"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Corrupted by a dangerous power",
+      "_key": "!tables.results!cfac08ca2345cbed.15573666131f73cf",
+      "_id": "15573666131f73cf"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Critical resource is in short supply",
+      "_key": "!tables.results!cfac08ca2345cbed.3ef6d055301248d3",
+      "_id": "3ef6d055301248d3"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Defenses are overextended",
+      "_key": "!tables.results!cfac08ca2345cbed.d3e69f8fb52c94c0",
+      "_id": "d3e69f8fb52c94c0"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Developing revolutionary technology",
+      "_key": "!tables.results!cfac08ca2345cbed.aab1c3832fa9a54d",
+      "_id": "aab1c3832fa9a54d"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Digital systems are corrupted or infiltrated",
+      "_key": "!tables.results!cfac08ca2345cbed.08fe6b723786dbc7",
+      "_id": "08fe6b723786dbc7"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Heavily in debt",
+      "_key": "!tables.results!cfac08ca2345cbed.aba89672093dabd6",
+      "_id": "aba89672093dabd6"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Hit hard by a recent attack or calamity",
+      "_key": "!tables.results!cfac08ca2345cbed.d781311aa3eda515",
+      "_id": "d781311aa3eda515"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Holds a powerful artifact",
+      "_key": "!tables.results!cfac08ca2345cbed.30e33b0b8cd8c46b",
+      "_id": "30e33b0b8cd8c46b"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Holds incriminating information against a leader or faction",
+      "_key": "!tables.results!cfac08ca2345cbed.01457e18563b66bd",
+      "_id": "01457e18563b66bd"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Hoarding a valuable commodity",
+      "_key": "!tables.results!cfac08ca2345cbed.ae556c0f0a3642bf",
+      "_id": "ae556c0f0a3642bf"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Infiltrated by a rival faction",
+      "_key": "!tables.results!cfac08ca2345cbed.96575c8344ae5f1f",
+      "_id": "96575c8344ae5f1f"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Knows the location of a fabled treasure or lost technology",
+      "_key": "!tables.results!cfac08ca2345cbed.fa0c9f8e68878d75",
+      "_id": "fa0c9f8e68878d75"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Leaders are haunted by a dark prophecy",
+      "_key": "!tables.results!cfac08ca2345cbed.f08c4a9eeec65e7f",
+      "_id": "f08c4a9eeec65e7f"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Leaders are incompetent",
+      "_key": "!tables.results!cfac08ca2345cbed.b4f615efeda93572",
+      "_id": "b4f615efeda93572"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Leaders are puppets of another power or faction",
+      "_key": "!tables.results!cfac08ca2345cbed.51422d16f25e42a1",
+      "_id": "51422d16f25e42a1"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Lesser members of the leadership are plotting a coup",
+      "_key": "!tables.results!cfac08ca2345cbed.513d81ffd840f9aa",
+      "_id": "513d81ffd840f9aa"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "New belief or religion is creating a schism among members",
+      "_key": "!tables.results!cfac08ca2345cbed.c5e617a1cc8e8693",
+      "_id": "c5e617a1cc8e8693"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Operations are a false front for their true purpose",
+      "_key": "!tables.results!cfac08ca2345cbed.620d72fc07ed4345",
+      "_id": "620d72fc07ed4345"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Overdependence on a failing or vulnerable technology",
+      "_key": "!tables.results!cfac08ca2345cbed.723a4752ff5c2eee",
+      "_id": "723a4752ff5c2eee"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Plagued by infighting and low morale",
+      "_key": "!tables.results!cfac08ca2345cbed.c0fd0ed5f0d19fd7",
+      "_id": "c0fd0ed5f0d19fd7"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Plotting to betray an allied faction",
+      "_key": "!tables.results!cfac08ca2345cbed.d02a0990a3c9dc73",
+      "_id": "d02a0990a3c9dc73"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Preparing a major offensive or operation",
+      "_key": "!tables.results!cfac08ca2345cbed.7786b7d9ebb4eb6b",
+      "_id": "7786b7d9ebb4eb6b"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Pulling the strings of a leader or faction",
+      "_key": "!tables.results!cfac08ca2345cbed.19c04d43136a7b96",
+      "_id": "19c04d43136a7b96"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Recently acquired an unexpected fortune",
+      "_key": "!tables.results!cfac08ca2345cbed.399ed5efa24a6d5c",
+      "_id": "399ed5efa24a6d5c"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Secretly supporting a reviled faction",
+      "_key": "!tables.results!cfac08ca2345cbed.b528312285309087",
+      "_id": "b528312285309087"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Sheltering an infamous or dangerous fugitive",
+      "_key": "!tables.results!cfac08ca2345cbed.08625a9733696b12",
+      "_id": "08625a9733696b12"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Suffered destructive sabotage from within",
+      "_key": "!tables.results!cfac08ca2345cbed.be446657220f0498",
+      "_id": "be446657220f0498"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Suffering a shortage of key workers or personnel",
+      "_key": "!tables.results!cfac08ca2345cbed.b8aceb96d767fe4e",
+      "_id": "b8aceb96d767fe4e"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "Uprising or revolt is brewing from within",
+      "_key": "!tables.results!cfac08ca2345cbed.ebb91c83469b7108",
+      "_id": "ebb91c83469b7108"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "Vulnerable to attack or aggression",
+      "_key": "!tables.results!cfac08ca2345cbed.8c96bf3424c3f780",
+      "_id": "8c96bf3424c3f780"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!cfac08ca2345cbed.2aeb4ce9c8f88f4f",
+      "_id": "2aeb4ce9c8f88f4f"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 347,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cfac08ca2345cbed"
+}

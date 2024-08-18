@@ -1,0 +1,15 @@
+{
+  "name": "Ship Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "70efe2cd74f8479f",
+  "sort": 132,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/ship"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!70efe2cd74f8479f"
+}

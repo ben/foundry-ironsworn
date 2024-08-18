@@ -1,0 +1,47 @@
+{
+  "_id": "716d4031e5978464",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/nearby_islands",
+      "dsid": "oracle_rollable:sundered_isles/island/nearby_islands/reaches"
+    }
+  },
+  "name": "Reaches",
+  "description": "<p>Remote Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        70
+      ],
+      "text": "Isolated",
+      "_key": "!tables.results!716d4031e5978464.569916b30cfcf9a2",
+      "_id": "569916b30cfcf9a2"
+    },
+    {
+      "range": [
+        71,
+        90
+      ],
+      "text": "Island pair",
+      "_key": "!tables.results!716d4031e5978464.442041495d8f2210",
+      "_id": "442041495d8f2210"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Island group",
+      "_key": "!tables.results!716d4031e5978464.528b0f3c794b5c4f",
+      "_id": "528b0f3c794b5c4f"
+    }
+  ],
+  "folder": "4ee166f5068a14b6",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!716d4031e5978464"
+}

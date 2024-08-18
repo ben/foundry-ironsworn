@@ -1,0 +1,27 @@
+{
+  "_id": "19d8004169b5a662",
+  "type": "progress",
+  "name": "Hunter",
+  "img": "icons/environment/people/archer.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Wearing hides and furs to ward away the cold</p>\n<p class=\"nogrow\">Steely gaze</p>\n<p class=\"nogrow\">At home in the woodlands</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">A clean kill</p>\n<p class=\"nogrow\">Survive the hunt</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Set traps</p>\n<p class=\"nogrow\">Keep to the shadows</p>\n<p class=\"nogrow\">Deadly shot</p>\n</div>\n</div>\n\n<p>Hunters face brutal weather, difficult terrain, dangerous animals, and worse. Many never return from their hunts. Others return, but are forever changed.</p>\n\n<blockquote>Quest Starter: <p>A hunter returns to her village, panic-stricken and pleading for help. The rest of her party is still out there. What happened to them?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "026fc49d26877a2e",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/ironlanders/hunter"
+    }
+  },
+  "_key": "!items!19d8004169b5a662"
+}

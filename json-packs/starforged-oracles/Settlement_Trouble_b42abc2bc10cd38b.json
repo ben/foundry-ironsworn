@@ -1,0 +1,327 @@
+{
+  "_id": "b42abc2bc10cd38b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Trouble",
+      "category": "Starforged/Oracles/Settlements",
+      "dsid": "oracle_rollable:starforged/settlement/trouble"
+    }
+  },
+  "name": "Settlement Trouble",
+  "description": "<p>Check the Settlement Trouble table when it’s appropriate for your character to know or uncover these details. The Settlement Trouble table provides a broad description of the site’s most dramatic current issue.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Battle for leadership",
+      "_key": "!tables.results!b42abc2bc10cd38b.8ebc230a659f5698",
+      "_id": "8ebc230a659f5698"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Betrayal from within",
+      "_key": "!tables.results!b42abc2bc10cd38b.fb915dd2b1faf93c",
+      "_id": "fb915dd2b1faf93c"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Caught in the crossfire",
+      "_key": "!tables.results!b42abc2bc10cd38b.ff08a9529b98332d",
+      "_id": "ff08a9529b98332d"
+    },
+    {
+      "range": [
+        9,
+        11
+      ],
+      "text": "Changing environment",
+      "_key": "!tables.results!b42abc2bc10cd38b.58b4bece9b1c415a",
+      "_id": "58b4bece9b1c415a"
+    },
+    {
+      "range": [
+        12,
+        13
+      ],
+      "text": "Clash of cultures",
+      "_key": "!tables.results!b42abc2bc10cd38b.2006c791df9ae1e3",
+      "_id": "2006c791df9ae1e3"
+    },
+    {
+      "range": [
+        14,
+        17
+      ],
+      "text": "Dangerous discovery",
+      "_key": "!tables.results!b42abc2bc10cd38b.4d2cfb1e92f88c57",
+      "_id": "4d2cfb1e92f88c57"
+    },
+    {
+      "range": [
+        18,
+        21
+      ],
+      "text": "Depleted supplies",
+      "_key": "!tables.results!b42abc2bc10cd38b.15e39c2154ed7c29",
+      "_id": "15e39c2154ed7c29"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Deprived of a resource",
+      "_key": "!tables.results!b42abc2bc10cd38b.e4ecdb2eeb1812d4",
+      "_id": "e4ecdb2eeb1812d4"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Failing technology",
+      "_key": "!tables.results!b42abc2bc10cd38b.8c8670b92f85c014",
+      "_id": "8c8670b92f85c014"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Feuding factions",
+      "_key": "!tables.results!b42abc2bc10cd38b.2412c1f315753305",
+      "_id": "2412c1f315753305"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Ghostly visitations",
+      "_key": "!tables.results!b42abc2bc10cd38b.ddb1bab9729e497c",
+      "_id": "ddb1bab9729e497c"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Hazardous environment",
+      "_key": "!tables.results!b42abc2bc10cd38b.18cc24de9a1a590e",
+      "_id": "18cc24de9a1a590e"
+    },
+    {
+      "range": [
+        39,
+        42
+      ],
+      "text": "Hostile lifeforms",
+      "_key": "!tables.results!b42abc2bc10cd38b.3aa83d11b0b0cbe7",
+      "_id": "3aa83d11b0b0cbe7"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Impassable route",
+      "_key": "!tables.results!b42abc2bc10cd38b.fe91790656944004",
+      "_id": "fe91790656944004"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Impending attack",
+      "_key": "!tables.results!b42abc2bc10cd38b.c5c1c73ff905b914",
+      "_id": "c5c1c73ff905b914"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Impending natural disaster",
+      "_key": "!tables.results!b42abc2bc10cd38b.b93d09c8ca9cdbe5",
+      "_id": "b93d09c8ca9cdbe5"
+    },
+    {
+      "range": [
+        52,
+        53
+      ],
+      "text": "Invasive organisms",
+      "_key": "!tables.results!b42abc2bc10cd38b.4d9d97498a697311",
+      "_id": "4d9d97498a697311"
+    },
+    {
+      "range": [
+        54,
+        55
+      ],
+      "text": "Mounting debt",
+      "_key": "!tables.results!b42abc2bc10cd38b.197be16dcf12f201",
+      "_id": "197be16dcf12f201"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Mysterious deaths",
+      "_key": "!tables.results!b42abc2bc10cd38b.d29047a8d25b0200",
+      "_id": "d29047a8d25b0200"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Overdue delivery",
+      "_key": "!tables.results!b42abc2bc10cd38b.22eed892ff3cea00",
+      "_id": "22eed892ff3cea00"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Plagued by sickness",
+      "_key": "!tables.results!b42abc2bc10cd38b.93cd4614b1f70f41",
+      "_id": "93cd4614b1f70f41"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Preyed upon by raiders",
+      "_key": "!tables.results!b42abc2bc10cd38b.87022182c87547d3",
+      "_id": "87022182c87547d3"
+    },
+    {
+      "range": [
+        66,
+        67
+      ],
+      "text": "Revolt against leadership",
+      "_key": "!tables.results!b42abc2bc10cd38b.8ea589bf83e4bc9c",
+      "_id": "8ea589bf83e4bc9c"
+    },
+    {
+      "range": [
+        68,
+        69
+      ],
+      "text": "Sabotaged technology",
+      "_key": "!tables.results!b42abc2bc10cd38b.e9ce508588783801",
+      "_id": "e9ce508588783801"
+    },
+    {
+      "range": [
+        70,
+        71
+      ],
+      "text": "Shunned by others",
+      "_key": "!tables.results!b42abc2bc10cd38b.bf0de7e0c459631e",
+      "_id": "bf0de7e0c459631e"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "Social strife",
+      "_key": "!tables.results!b42abc2bc10cd38b.92c7990404dfd03e",
+      "_id": "92c7990404dfd03e"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Someone is ill or injured",
+      "_key": "!tables.results!b42abc2bc10cd38b.327eea37862e4336",
+      "_id": "327eea37862e4336"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Someone is missing",
+      "_key": "!tables.results!b42abc2bc10cd38b.2d391765242b5f4b",
+      "_id": "2d391765242b5f4b"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Stolen technology or object",
+      "_key": "!tables.results!b42abc2bc10cd38b.2f5542f9430a84a4",
+      "_id": "2f5542f9430a84a4"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Strange phenomenon",
+      "_key": "!tables.results!b42abc2bc10cd38b.6845ba40fa630c9e",
+      "_id": "6845ba40fa630c9e"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "Toxic waste or pollution",
+      "_key": "!tables.results!b42abc2bc10cd38b.984129c3dccaf127",
+      "_id": "984129c3dccaf127"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Volatile energy source",
+      "_key": "!tables.results!b42abc2bc10cd38b.19ef6cd2f4d711d6",
+      "_id": "19ef6cd2f4d711d6"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Vulnerable lifeforms",
+      "_key": "!tables.results!b42abc2bc10cd38b.3634ea064748caf7",
+      "_id": "3634ea064748caf7"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!b42abc2bc10cd38b.2a0822dcfe2614e9",
+      "_id": "2a0822dcfe2614e9"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 324,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b42abc2bc10cd38b"
+}

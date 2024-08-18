@@ -3,80 +3,59 @@
   "type": "sfmove",
   "name": "Make a Discovery",
   "img": "icons/dice/d10black.svg",
+  "folder": "f57c06b3db7f1676",
   "system": {
     "dfid": "Starforged/Moves/Exploration/Make_a_Discovery",
     "Category": "Starforged/Moves/Exploration",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When your exploration of a waypoint uncovers something wondrous**, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.\n\nRoll   | Result\n-------|---------------------------------------------------------------\n1-4    | Advanced technology waiting to be harnessed or salvaged\n5-8    | Ancient archive or message\n9-10   | Artificial consciousness evolved to a higher state\n11-12  | Clues to a crucial resource or uncharted domain\n13-14  | Envoy from another time or reality\n15-22  | Extraordinary natural phenomenon\n23-24  | First contact with intelligent life\n25-26  | Gateway to another time or alternate reality\n27-28  | Key to unlocking a language or method of communication\n29-34  | Lost or hidden people\n35-42  | Majestic or unusual lifeforms\n43-46  | Marvel of ancient engineering\n47-50  | Miraculously preserved artifact or specimen\n51-56  | Monumental architecture or artistry of an ancient civilization\n57-62  | Mysterious device or artifact of potential value\n63-66  | New understanding of an enduring mystery\n67-68  | Pathway or means of travel to a distant location\n69-70  | Person or lifeform with phenomenal abilities\n71-78  | Place of awe-inspiring beauty\n79-86  | Rare and valuable resource\n87-88  | Safeguarded or idyllic location\n89-90  | Visions or prophesies of the future\n91-100 | Roll twice",
+    "Text": "__When your exploration of a waypoint uncovers something wondrous__, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.",
     "Trigger": {
-      "Text": "When your exploration of a waypoint uncovers something wondrous",
+      "Text": "When your exploration of a waypoint uncovers something wondrous...",
       "Options": []
     },
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [
       "Starforged/Oracles/Moves/Make_a_Discovery"
     ],
+    "dsOracleIds": [
+      "move.oracle_rollable:starforged/exploration/make_a_discovery.make_a_discovery"
+    ],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 176
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#7438B8",
       "Images": []
     }
   },
   "sort": 176,
-  "folder": "f57c06b3db7f1676",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Exploration/Make_a_Discovery",
+      "dsid": "move:starforged/exploration/make_a_discovery"
+    }
   },
   "_key": "!items!75d5b0762ebab856"
 }

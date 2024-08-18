@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Medical/Area",
-      "category": "Starforged/Oracles/Derelicts/Medical"
+      "category": "Starforged/Oracles/Derelicts/Medical",
+      "dsid": "oracle_rollable:starforged/derelict/medical/area"
     }
   },
   "name": "Area",
   "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Crematorium",
-      "_id": "e4849fcc48d1db9a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.e4849fcc48d1db9a"
+      "_key": "!tables.results!43c81102609e309d.f3319f73ab7dabaf",
+      "_id": "f3319f73ab7dabaf"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Emergency or triage",
-      "_id": "be3ef72c94cb67b2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.be3ef72c94cb67b2"
+      "_key": "!tables.results!43c81102609e309d.3c2953e2687d59f9",
+      "_id": "3c2953e2687d59f9"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Isolation or containment",
-      "_id": "29636d3efc91c436",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.29636d3efc91c436"
+      "_key": "!tables.results!43c81102609e309d.f1a9216b006dd40c",
+      "_id": "f1a9216b006dd40c"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Medical lab",
-      "_id": "9fa3a6e70a9b3b0c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.9fa3a6e70a9b3b0c"
+      "_key": "!tables.results!43c81102609e309d.9930b5458bc57f7f",
+      "_id": "9930b5458bc57f7f"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Medical offices",
-      "_id": "5264b0450fba1b6a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.5264b0450fba1b6a"
+      "_key": "!tables.results!43c81102609e309d.5aeb4c797f04854e",
+      "_id": "5aeb4c797f04854e"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Morgue",
-      "_id": "dbe45b10ef6154ac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.dbe45b10ef6154ac"
+      "_key": "!tables.results!43c81102609e309d.f95d545ef7840d86",
+      "_id": "f95d545ef7840d86"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Operating room",
-      "_id": "35fa355dc580a617",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.35fa355dc580a617"
+      "_key": "!tables.results!43c81102609e309d.82caeb7acd6a2ae2",
+      "_id": "82caeb7acd6a2ae2"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Pharmacy or drug locker",
-      "_id": "6ed56addbaeec648",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.6ed56addbaeec648"
+      "_key": "!tables.results!43c81102609e309d.903fa9dfdaf39a89",
+      "_id": "903fa9dfdaf39a89"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Prosthetics workshop",
-      "_id": "d0961fc9335a7764",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.d0961fc9335a7764"
+      "_key": "!tables.results!43c81102609e309d.37ae260ea4ce29fc",
+      "_id": "37ae260ea4ce29fc"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Ward or clinic",
-      "_id": "5cd20654e36aabc6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.5cd20654e36aabc6"
+      "_key": "!tables.results!43c81102609e309d.975b250d0e0d0d5e",
+      "_id": "975b250d0e0d0d5e"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         85
       ],
       "text": "New zone",
-      "_id": "0f6ef4a624eea17c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.0f6ef4a624eea17c"
+      "_key": "!tables.results!43c81102609e309d.4a6c6c0f51f09655",
+      "_id": "4a6c6c0f51f09655"
     },
     {
       "range": [
         86,
         100
       ],
-      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
-      "_id": "eaa7bf360843f428",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!43c81102609e309d.eaa7bf360843f428"
+      "text": "New zone via [Access](datasworn:oracle_collection:starforged/derelict/access)",
+      "_key": "!tables.results!43c81102609e309d.6b0cd18b87fbdf06",
+      "_id": "6b0cd18b87fbdf06"
     }
   ],
   "folder": "1a41c444d69ea97d",
   "sort": 356,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!43c81102609e309d"
 }

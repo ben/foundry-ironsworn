@@ -1,0 +1,141 @@
+{
+  "_id": "40439d5f28e56495",
+  "type": "delve-domain",
+  "name": "Sea cave",
+  "img": "icons/environment/wilderness/cave-entrance-island.webp",
+  "system": {
+    "summary": "Stone passages carved by ocean waves.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Watery tunnels"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Eroded chamber"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Flooded chamber"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Vast chamber"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Dry passages"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Freshwater inlet"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Rocky island"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Waterborne debris"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Shipwreck or boat"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen strikes without warning"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Denizen lurks below"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Flooding"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Rushing current"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Claustrophobic squeeze"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 91,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/sea_cave"
+    }
+  },
+  "_key": "!items!40439d5f28e56495"
+}

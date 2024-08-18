@@ -1,0 +1,129 @@
+{
+  "_id": "b635c76e4b694c12",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place",
+      "category": "Ironsworn/Oracles/Site_Name",
+      "dsid": "oracle_rollable:delve/site_name/place"
+    }
+  },
+  "name": "Place",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        6
+      ],
+      "text": "[Barrow](datasworn:delve_site_domain:delve/barrow)",
+      "_key": "!tables.results!b635c76e4b694c12.621b992c4f3ed854",
+      "_id": "621b992c4f3ed854"
+    },
+    {
+      "range": [
+        7,
+        18
+      ],
+      "text": "[Cavern](datasworn:delve_site_domain:delve/cavern)",
+      "_key": "!tables.results!b635c76e4b694c12.a4044f3f6fcb7647",
+      "_id": "a4044f3f6fcb7647"
+    },
+    {
+      "range": [
+        19,
+        28
+      ],
+      "text": "[Frozen Cavern](datasworn:delve_site_domain:delve/frozen_cavern)",
+      "_key": "!tables.results!b635c76e4b694c12.1d4baaa98fecebab",
+      "_id": "1d4baaa98fecebab"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "[Icereach](datasworn:delve_site_domain:delve/icereach)",
+      "_key": "!tables.results!b635c76e4b694c12.995f0a66e14276d4",
+      "_id": "995f0a66e14276d4"
+    },
+    {
+      "range": [
+        33,
+        38
+      ],
+      "text": "[Mine](datasworn:delve_site_domain:delve/mine)",
+      "_key": "!tables.results!b635c76e4b694c12.0d59adefccb67da0",
+      "_id": "0d59adefccb67da0"
+    },
+    {
+      "range": [
+        39,
+        48
+      ],
+      "text": "[Pass](datasworn:delve_site_domain:delve/pass)",
+      "_key": "!tables.results!b635c76e4b694c12.c1d0bbaa83e70385",
+      "_id": "c1d0bbaa83e70385"
+    },
+    {
+      "range": [
+        49,
+        58
+      ],
+      "text": "[Ruin](datasworn:delve_site_domain:delve/ruin)",
+      "_key": "!tables.results!b635c76e4b694c12.251458e05bff96d2",
+      "_id": "251458e05bff96d2"
+    },
+    {
+      "range": [
+        59,
+        68
+      ],
+      "text": "[Sea Cave](datasworn:delve_site_domain:delve/sea_cave)",
+      "_key": "!tables.results!b635c76e4b694c12.810141a234d5ad53",
+      "_id": "810141a234d5ad53"
+    },
+    {
+      "range": [
+        69,
+        78
+      ],
+      "text": "[Shadowfen](datasworn:delve_site_domain:delve/shadowfen)",
+      "_key": "!tables.results!b635c76e4b694c12.0be41ebb41bb1574",
+      "_id": "0be41ebb41bb1574"
+    },
+    {
+      "range": [
+        79,
+        83
+      ],
+      "text": "[Stronghold](datasworn:delve_site_domain:delve/stronghold)",
+      "_key": "!tables.results!b635c76e4b694c12.99e1e1d8d604e59d",
+      "_id": "99e1e1d8d604e59d"
+    },
+    {
+      "range": [
+        84,
+        95
+      ],
+      "text": "[Tanglewood](datasworn:delve_site_domain:delve/tanglewood)",
+      "_key": "!tables.results!b635c76e4b694c12.7fe3f5e5077b11ce",
+      "_id": "7fe3f5e5077b11ce"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "[Underkeep](datasworn:delve_site_domain:delve/underkeep)",
+      "_key": "!tables.results!b635c76e4b694c12.d584d93279f4accc",
+      "_id": "d584d93279f4accc"
+    }
+  ],
+  "folder": "f6b92bad160107de",
+  "sort": 210,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b635c76e4b694c12"
+}

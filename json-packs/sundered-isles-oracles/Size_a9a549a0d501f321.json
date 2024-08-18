@@ -1,0 +1,56 @@
+{
+  "_id": "a9a549a0d501f321",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/landscape",
+      "dsid": "oracle_rollable:sundered_isles/island/landscape/size"
+    }
+  },
+  "name": "Size",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "Small",
+      "_key": "!tables.results!a9a549a0d501f321.bc00309536e492b7",
+      "_id": "bc00309536e492b7"
+    },
+    {
+      "range": [
+        31,
+        70
+      ],
+      "text": "Medium",
+      "_key": "!tables.results!a9a549a0d501f321.a91339a974db8656",
+      "_id": "a91339a974db8656"
+    },
+    {
+      "range": [
+        71,
+        90
+      ],
+      "text": "Large",
+      "_key": "!tables.results!a9a549a0d501f321.e0a0fca79763c8fc",
+      "_id": "e0a0fca79763c8fc"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Vast",
+      "_key": "!tables.results!a9a549a0d501f321.5a7ba01b7f0bf5a9",
+      "_id": "5a7ba01b7f0bf5a9"
+    }
+  ],
+  "folder": "df50a17b971357ff",
+  "sort": 142,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a9a549a0d501f321"
+}

@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Turn the Tide",
   "img": "icons/dice/d10black.svg",
+  "folder": "19defd673fdc3970",
   "system": {
     "dfid": "Ironsworn/Moves/Combat/Turn_the_Tide",
     "Category": "Ironsworn/Moves/Combat",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "Once per fight, when you **risk it all**, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Text": "Once per fight, when you __risk it all__, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
     "Trigger": {
       "Text": "Once per fight, when you risk it all...",
       "Options": []
@@ -16,41 +17,28 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 81
     },
     "Suggestions": {},
@@ -59,20 +47,11 @@
     }
   },
   "sort": 81,
-  "folder": "19defd673fdc3970",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Combat/Turn_the_Tide",
+      "dsid": "move:classic/combat/turn_the_tide"
+    }
   },
   "_key": "!items!12e23cfe23534a8f"
 }

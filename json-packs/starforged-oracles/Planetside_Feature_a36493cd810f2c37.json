@@ -1,0 +1,156 @@
+{
+  "_id": "a36493cd810f2c37",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ocean/Feature",
+      "category": "Starforged/Oracles/Planets/Ocean",
+      "dsid": "oracle_rollable:starforged/planet/ocean/feature"
+    }
+  },
+  "name": "Planetside Feature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Abyssal trenches",
+      "_key": "!tables.results!a36493cd810f2c37.c2769521b2827205",
+      "_id": "c2769521b2827205"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Living islands",
+      "_key": "!tables.results!a36493cd810f2c37.7e884ae18365370c",
+      "_id": "7e884ae18365370c"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Luminescent seas",
+      "_key": "!tables.results!a36493cd810f2c37.1b37844473910650",
+      "_id": "1b37844473910650"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Roaming icebergs",
+      "_key": "!tables.results!a36493cd810f2c37.087ded3a1b61e6ae",
+      "_id": "087ded3a1b61e6ae"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Shallow-water plains",
+      "_key": "!tables.results!a36493cd810f2c37.d31cd517da88072d",
+      "_id": "d31cd517da88072d"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Subsurface volcanoes",
+      "_key": "!tables.results!a36493cd810f2c37.f481d441fe461ce4",
+      "_id": "f481d441fe461ce4"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Titanic waves",
+      "_key": "!tables.results!a36493cd810f2c37.1fce5f6348fd7aaf",
+      "_id": "1fce5f6348fd7aaf"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Undersea air pockets",
+      "_key": "!tables.results!a36493cd810f2c37.73c4ee1c2eee4b04",
+      "_id": "73c4ee1c2eee4b04"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Undersea caves",
+      "_key": "!tables.results!a36493cd810f2c37.c36ba06e1e758291",
+      "_id": "c36ba06e1e758291"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Undersea forests",
+      "_key": "!tables.results!a36493cd810f2c37.2edf11878a1b68ab",
+      "_id": "2edf11878a1b68ab"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Unrelenting rainfall",
+      "_key": "!tables.results!a36493cd810f2c37.c7bec9d3a2929399",
+      "_id": "c7bec9d3a2929399"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Violent currents",
+      "_key": "!tables.results!a36493cd810f2c37.be01e2e8f05b3629",
+      "_id": "be01e2e8f05b3629"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Windborne waterspouts",
+      "_key": "!tables.results!a36493cd810f2c37.2fa57a6d156e8aa4",
+      "_id": "2fa57a6d156e8aa4"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!a36493cd810f2c37.a42a5f7d5f7b7888",
+      "_id": "a42a5f7d5f7b7888"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "[Precursor Vault](datasworn:oracle_collection:starforged/precursor_vault) (planetside)",
+      "_key": "!tables.results!a36493cd810f2c37.72e40927cfda7b72",
+      "_id": "72e40927cfda7b72"
+    }
+  ],
+  "folder": "d053017f6e8f47f0",
+  "sort": 314,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a36493cd810f2c37"
+}

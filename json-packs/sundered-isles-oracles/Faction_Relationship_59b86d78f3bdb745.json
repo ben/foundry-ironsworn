@@ -1,0 +1,272 @@
+{
+  "_id": "59b86d78f3bdb745",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction",
+      "dsid": "oracle_rollable:sundered_isles/faction/relationship"
+    }
+  },
+  "name": "Faction Relationship",
+  "description": "<p>When you have a question about the relationship of one faction to another—or how an individual relates to a faction—use this table. The result is the commonly understood connection, but might not tell the whole story.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Allied with",
+      "_key": "!tables.results!59b86d78f3bdb745.bb96e8af2a20ec2c",
+      "_id": "bb96e8af2a20ec2c"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Antagonistic towards",
+      "_key": "!tables.results!59b86d78f3bdb745.afe2744e67ea0ff4",
+      "_id": "afe2744e67ea0ff4"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Apathetic or unaware of",
+      "_key": "!tables.results!59b86d78f3bdb745.f11e73666bb1cbf9",
+      "_id": "f11e73666bb1cbf9"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Broke faith with",
+      "_key": "!tables.results!59b86d78f3bdb745.808712b4b7c74bfd",
+      "_id": "808712b4b7c74bfd"
+    },
+    {
+      "range": [
+        16,
+        19
+      ],
+      "text": "Distrustful of",
+      "_key": "!tables.results!59b86d78f3bdb745.94bda7615e5f05a4",
+      "_id": "94bda7615e5f05a4"
+    },
+    {
+      "range": [
+        20,
+        23
+      ],
+      "text": "Does business with",
+      "_key": "!tables.results!59b86d78f3bdb745.3812559405bb0009",
+      "_id": "3812559405bb0009"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "Extorted by",
+      "_key": "!tables.results!59b86d78f3bdb745.2c258980a7c33756",
+      "_id": "2c258980a7c33756"
+    },
+    {
+      "range": [
+        27,
+        30
+      ],
+      "text": "Holds contempt for",
+      "_key": "!tables.results!59b86d78f3bdb745.2079841b2fa90815",
+      "_id": "2079841b2fa90815"
+    },
+    {
+      "range": [
+        31,
+        34
+      ],
+      "text": "Holds leverage over",
+      "_key": "!tables.results!59b86d78f3bdb745.42b57bd754680873",
+      "_id": "42b57bd754680873"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "In control of",
+      "_key": "!tables.results!59b86d78f3bdb745.bdb48f00eb11e6b7",
+      "_id": "bdb48f00eb11e6b7"
+    },
+    {
+      "range": [
+        38,
+        41
+      ],
+      "text": "Maneuvering against",
+      "_key": "!tables.results!59b86d78f3bdb745.b67559c147b45859",
+      "_id": "b67559c147b45859"
+    },
+    {
+      "range": [
+        42,
+        45
+      ],
+      "text": "Needs aid from",
+      "_key": "!tables.results!59b86d78f3bdb745.d37bd4700e771eb1",
+      "_id": "d37bd4700e771eb1"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Negotiating with",
+      "_key": "!tables.results!59b86d78f3bdb745.c9ca99588510330a",
+      "_id": "c9ca99588510330a"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Owes a debt to",
+      "_key": "!tables.results!59b86d78f3bdb745.1444e9d91d1c2533",
+      "_id": "1444e9d91d1c2533"
+    },
+    {
+      "range": [
+        52,
+        55
+      ],
+      "text": "Shares a rivalry with",
+      "_key": "!tables.results!59b86d78f3bdb745.24ad1088408b29d6",
+      "_id": "24ad1088408b29d6"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Shares information with",
+      "_key": "!tables.results!59b86d78f3bdb745.979474de0396838f",
+      "_id": "979474de0396838f"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "Shares power with",
+      "_key": "!tables.results!59b86d78f3bdb745.fe9d857234a99b05",
+      "_id": "fe9d857234a99b05"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Shows grudging respect for",
+      "_key": "!tables.results!59b86d78f3bdb745.f10280afa7dd3d94",
+      "_id": "f10280afa7dd3d94"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Splintered from",
+      "_key": "!tables.results!59b86d78f3bdb745.2985a58f154fa34e",
+      "_id": "2985a58f154fa34e"
+    },
+    {
+      "range": [
+        68,
+        70
+      ],
+      "text": "Subordinate to",
+      "_key": "!tables.results!59b86d78f3bdb745.cd42e659c8d1dded",
+      "_id": "cd42e659c8d1dded"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Supplied with resources by",
+      "_key": "!tables.results!59b86d78f3bdb745.714c60102d79c37e",
+      "_id": "714c60102d79c37e"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Supplies resources to",
+      "_key": "!tables.results!59b86d78f3bdb745.84a333e7dcde8409",
+      "_id": "84a333e7dcde8409"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Suspicious of",
+      "_key": "!tables.results!59b86d78f3bdb745.0ede274d84437cbe",
+      "_id": "0ede274d84437cbe"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Temporary alliance with",
+      "_key": "!tables.results!59b86d78f3bdb745.29f3eda538ab5449",
+      "_id": "29f3eda538ab5449"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Tolerates",
+      "_key": "!tables.results!59b86d78f3bdb745.e920d8e179b0b0ab",
+      "_id": "e920d8e179b0b0ab"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Trades favors with",
+      "_key": "!tables.results!59b86d78f3bdb745.d61f008ad8b813ba",
+      "_id": "d61f008ad8b813ba"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Warring with",
+      "_key": "!tables.results!59b86d78f3bdb745.dd80264a73bd76af",
+      "_id": "dd80264a73bd76af"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!59b86d78f3bdb745.c837add5a8e1e03b",
+      "_id": "c837add5a8e1e03b"
+    }
+  ],
+  "folder": "332fe732886451c6",
+  "sort": 177,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!59b86d78f3bdb745"
+}

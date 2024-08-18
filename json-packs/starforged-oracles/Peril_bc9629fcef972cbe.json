@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Operations/Peril",
-      "category": "Starforged/Oracles/Derelicts/Operations"
+      "category": "Starforged/Oracles/Derelicts/Operations",
+      "dsid": "oracle_rollable:starforged/derelict/operations/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Automated defenses target you",
-      "_id": "db82742458dac0d8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.db82742458dac0d8"
+      "_key": "!tables.results!bc9629fcef972cbe.226d44603789fe1c",
+      "_id": "226d44603789fe1c"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Broken equipment limits control",
-      "_id": "3edc27985785d131",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.3edc27985785d131"
+      "_key": "!tables.results!bc9629fcef972cbe.61c88f6f11800db0",
+      "_id": "61c88f6f11800db0"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Coded message or puzzling security device",
-      "_id": "03a0ab0dc98edd18",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.03a0ab0dc98edd18"
+      "_key": "!tables.results!bc9629fcef972cbe.d64602ebaec13ad2",
+      "_id": "d64602ebaec13ad2"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Discouraging evidence of failed plans or defenses",
-      "_id": "37e28936ae7af0ab",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.37e28936ae7af0ab"
+      "_key": "!tables.results!bc9629fcef972cbe.1bcdd3b5b85f87aa",
+      "_id": "1bcdd3b5b85f87aa"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Displays reveal a new threat elsewhere in this site",
-      "_id": "73bd64117b171cf8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.73bd64117b171cf8"
+      "_key": "!tables.results!bc9629fcef972cbe.d2b6efb7922ae235",
+      "_id": "d2b6efb7922ae235"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Failing power",
-      "_id": "ce97425dd83736df",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.ce97425dd83736df"
+      "_key": "!tables.results!bc9629fcef972cbe.65fc256e805cb682",
+      "_id": "65fc256e805cb682"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Hostile AI",
-      "_id": "038bf75895f2c581",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.038bf75895f2c581"
+      "_key": "!tables.results!bc9629fcef972cbe.835f73663dcdce3d",
+      "_id": "835f73663dcdce3d"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Sealed blast doors block access",
-      "_id": "b2c5942cd5bc000c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.b2c5942cd5bc000c"
+      "_key": "!tables.results!bc9629fcef972cbe.d88a0eb53b2a2382",
+      "_id": "d88a0eb53b2a2382"
     },
     {
       "range": [
@@ -130,27 +91,17 @@
         90
       ],
       "text": "Sensors indicate the arrival of an external threat",
-      "_id": "31975c40c276f91e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.31975c40c276f91e"
+      "_key": "!tables.results!bc9629fcef972cbe.8b0d99fc233a86ad",
+      "_id": "8b0d99fc233a86ad"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "6fb320afa088fc24",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.6fb320afa088fc24"
+      "text": "[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)",
+      "_key": "!tables.results!bc9629fcef972cbe.707de10e3eddd0d0",
+      "_id": "707de10e3eddd0d0"
     },
     {
       "range": [
@@ -158,29 +109,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "46e61d0766feb365",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bc9629fcef972cbe.46e61d0766feb365"
+      "_key": "!tables.results!bc9629fcef972cbe.69fed86ea9e484f8",
+      "_id": "69fed86ea9e484f8"
     }
   ],
   "folder": "44fbf1f6c622b0b2",
   "sort": 357,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!bc9629fcef972cbe"
 }

@@ -1,0 +1,471 @@
+{
+  "_id": "b9f9a0434c89daac",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Creatures/Revealed_Aspect",
+      "category": "Starforged/Oracles/Creatures",
+      "dsid": "oracle_rollable:starforged/creature/revealed_aspect"
+    }
+  },
+  "name": "Revealed Creature Aspect",
+  "description": "<p>Roll on this table as you interact with the creature to introduce new features or behaviors.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Alternative environment",
+      "_key": "!tables.results!b9f9a0434c89daac.936932b46227dfb2",
+      "_id": "936932b46227dfb2"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Alternative movement",
+      "_key": "!tables.results!b9f9a0434c89daac.7f85fac76c7a7efe",
+      "_id": "7f85fac76c7a7efe"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Alternative senses",
+      "_key": "!tables.results!b9f9a0434c89daac.106813bcd4e04cde",
+      "_id": "106813bcd4e04cde"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Burrower",
+      "_key": "!tables.results!b9f9a0434c89daac.7e391401757046ba",
+      "_id": "7e391401757046ba"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Chameleon",
+      "_key": "!tables.results!b9f9a0434c89daac.5872cfaafe68eeba",
+      "_id": "5872cfaafe68eeba"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Clever",
+      "_key": "!tables.results!b9f9a0434c89daac.a901b800247679f8",
+      "_id": "a901b800247679f8"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Consumes energy",
+      "_key": "!tables.results!b9f9a0434c89daac.b7065d6ead3d1c45",
+      "_id": "b7065d6ead3d1c45"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Consumes inorganic matter",
+      "_key": "!tables.results!b9f9a0434c89daac.5fa8470731bd89f4",
+      "_id": "5fa8470731bd89f4"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Controlled or puppeteered",
+      "_key": "!tables.results!b9f9a0434c89daac.7efd4a037fc6b2b7",
+      "_id": "7efd4a037fc6b2b7"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Controls lesser creatures",
+      "_key": "!tables.results!b9f9a0434c89daac.3f10ce8e73b49ae5",
+      "_id": "3f10ce8e73b49ae5"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Corrosive excretion",
+      "_key": "!tables.results!b9f9a0434c89daac.0d2ce87b895b0c18",
+      "_id": "0d2ce87b895b0c18"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Crusher or constrictor",
+      "_key": "!tables.results!b9f9a0434c89daac.4d53ea568406d3bc",
+      "_id": "4d53ea568406d3bc"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Egg sac or carried offspring",
+      "_key": "!tables.results!b9f9a0434c89daac.544c67a60bd5f28a",
+      "_id": "544c67a60bd5f28a"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Electric shock",
+      "_key": "!tables.results!b9f9a0434c89daac.e614e8637f819d33",
+      "_id": "e614e8637f819d33"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Electromagnetic pulse",
+      "_key": "!tables.results!b9f9a0434c89daac.ee5438f3f1aa2bfe",
+      "_id": "ee5438f3f1aa2bfe"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Energy breath",
+      "_key": "!tables.results!b9f9a0434c89daac.7f4a58e1f252e033",
+      "_id": "7f4a58e1f252e033"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Energy manipulation",
+      "_key": "!tables.results!b9f9a0434c89daac.8405d0e4dc4baf23",
+      "_id": "8405d0e4dc4baf23"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Engineered biology",
+      "_key": "!tables.results!b9f9a0434c89daac.0a3e906fd2a504c6",
+      "_id": "0a3e906fd2a504c6"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Enhanced senses",
+      "_key": "!tables.results!b9f9a0434c89daac.19f69f481bd3b8ec",
+      "_id": "19f69f481bd3b8ec"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Enhanced strength",
+      "_key": "!tables.results!b9f9a0434c89daac.523ad931f5143ead",
+      "_id": "523ad931f5143ead"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Entangling secretion",
+      "_key": "!tables.results!b9f9a0434c89daac.8db1b0c10c89103a",
+      "_id": "8db1b0c10c89103a"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Extradimensional",
+      "_key": "!tables.results!b9f9a0434c89daac.32b5e63cf9c61e20",
+      "_id": "32b5e63cf9c61e20"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Hallucinogen secretion",
+      "_key": "!tables.results!b9f9a0434c89daac.e11d68ada07fb78d",
+      "_id": "e11d68ada07fb78d"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Hidden symbiote",
+      "_key": "!tables.results!b9f9a0434c89daac.7f8926342db9dd8b",
+      "_id": "7f8926342db9dd8b"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Hive mind",
+      "_key": "!tables.results!b9f9a0434c89daac.1ce4fc2338818ae9",
+      "_id": "1ce4fc2338818ae9"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Illusionary",
+      "_key": "!tables.results!b9f9a0434c89daac.7127da2fabc95f60",
+      "_id": "7127da2fabc95f60"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Infectious",
+      "_key": "!tables.results!b9f9a0434c89daac.ee729af92670a16a",
+      "_id": "ee729af92670a16a"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Infested with parasites",
+      "_key": "!tables.results!b9f9a0434c89daac.cdc3db3fb612fc8b",
+      "_id": "cdc3db3fb612fc8b"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Intimidating threat display",
+      "_key": "!tables.results!b9f9a0434c89daac.10e5d4386baaa454",
+      "_id": "10e5d4386baaa454"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Limited sense",
+      "_key": "!tables.results!b9f9a0434c89daac.b8a27aac3bfad70b",
+      "_id": "b8a27aac3bfad70b"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Magnetic",
+      "_key": "!tables.results!b9f9a0434c89daac.67de13138efc9d63",
+      "_id": "67de13138efc9d63"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Mental influence or control",
+      "_key": "!tables.results!b9f9a0434c89daac.a8a27c4369e2cd37",
+      "_id": "a8a27c4369e2cd37"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Metamorphic",
+      "_key": "!tables.results!b9f9a0434c89daac.75d23a9f8f46a32e",
+      "_id": "75d23a9f8f46a32e"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Noxious cloud or spores",
+      "_key": "!tables.results!b9f9a0434c89daac.7f8eda08bbcf3ffb",
+      "_id": "7f8eda08bbcf3ffb"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Paralytic toxin",
+      "_key": "!tables.results!b9f9a0434c89daac.95fbcf5c67210bdc",
+      "_id": "95fbcf5c67210bdc"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Parasitic",
+      "_key": "!tables.results!b9f9a0434c89daac.6c264d37ac0ffdc6",
+      "_id": "6c264d37ac0ffdc6"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Pheromones",
+      "_key": "!tables.results!b9f9a0434c89daac.648279f9d663c7f3",
+      "_id": "648279f9d663c7f3"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Poisonous",
+      "_key": "!tables.results!b9f9a0434c89daac.f27bbeed2a614e97",
+      "_id": "f27bbeed2a614e97"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Powerful bite",
+      "_key": "!tables.results!b9f9a0434c89daac.bde7b4e16a4fdfcc",
+      "_id": "bde7b4e16a4fdfcc"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Proboscis or inner jaw",
+      "_key": "!tables.results!b9f9a0434c89daac.9a7162051348fd32",
+      "_id": "9a7162051348fd32"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Projectile attack",
+      "_key": "!tables.results!b9f9a0434c89daac.d112e335d12a7e69",
+      "_id": "d112e335d12a7e69"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Radioactive",
+      "_key": "!tables.results!b9f9a0434c89daac.5d03c3f26da9157f",
+      "_id": "5d03c3f26da9157f"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Regeneration",
+      "_key": "!tables.results!b9f9a0434c89daac.e662cb65309401ba",
+      "_id": "e662cb65309401ba"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Replication",
+      "_key": "!tables.results!b9f9a0434c89daac.ceaf9f8d383302a8",
+      "_id": "ceaf9f8d383302a8"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Sacrificial defense",
+      "_key": "!tables.results!b9f9a0434c89daac.978498fc6b9a34de",
+      "_id": "978498fc6b9a34de"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Shapechanger",
+      "_key": "!tables.results!b9f9a0434c89daac.5d4f024a719db21e",
+      "_id": "5d4f024a719db21e"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Telekinetic",
+      "_key": "!tables.results!b9f9a0434c89daac.005eb6c3ac16aa4d",
+      "_id": "005eb6c3ac16aa4d"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Teleportation",
+      "_key": "!tables.results!b9f9a0434c89daac.2ff62253f92edb65",
+      "_id": "2ff62253f92edb65"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Territorial",
+      "_key": "!tables.results!b9f9a0434c89daac.2232f7e97b57886b",
+      "_id": "2232f7e97b57886b"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Toxic spew",
+      "_key": "!tables.results!b9f9a0434c89daac.0f32a47c22c32fd1",
+      "_id": "0f32a47c22c32fd1"
+    }
+  ],
+  "folder": "5b1e2f2fead08924",
+  "sort": 339,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b9f9a0434c89daac"
+}

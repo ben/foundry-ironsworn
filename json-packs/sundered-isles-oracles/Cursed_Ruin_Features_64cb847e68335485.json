@@ -1,0 +1,470 @@
+{
+  "_id": "64cb847e68335485",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/feature_cursed"
+    }
+  },
+  "name": "Cursed Ruin Features",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Animate statues or machines",
+      "_key": "!tables.results!64cb847e68335485.10a0bfc64a7bb9a1",
+      "_id": "10a0bfc64a7bb9a1"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Arcane light or energies",
+      "_key": "!tables.results!64cb847e68335485.eb16121a7bd0a396",
+      "_id": "eb16121a7bd0a396"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Arcane trigger or trap",
+      "_key": "!tables.results!64cb847e68335485.d7d9b2694f614664",
+      "_id": "d7d9b2694f614664"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Artifact evokes unnerving power",
+      "_key": "!tables.results!64cb847e68335485.e3bf52adb0547f68",
+      "_id": "e3bf52adb0547f68"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Artwork depicting disturbing scenes",
+      "_key": "!tables.results!64cb847e68335485.03083cb0c2974540",
+      "_id": "03083cb0c2974540"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Bewitching illusion",
+      "_key": "!tables.results!64cb847e68335485.431a69987fab9f24",
+      "_id": "431a69987fab9f24"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Bloodstained shrine or altar",
+      "_key": "!tables.results!64cb847e68335485.7a1af0afe21c91c2",
+      "_id": "7a1af0afe21c91c2"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Colossal machinery",
+      "_key": "!tables.results!64cb847e68335485.d0c72a18a529bcf4",
+      "_id": "d0c72a18a529bcf4"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Corpses come to life",
+      "_key": "!tables.results!64cb847e68335485.6d4140f538e300c5",
+      "_id": "6d4140f538e300c5"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Corpses frozen in terror",
+      "_key": "!tables.results!64cb847e68335485.a92504701d68c31d",
+      "_id": "a92504701d68c31d"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Creeping, entangling plant life",
+      "_key": "!tables.results!64cb847e68335485.efcee4120143734e",
+      "_id": "efcee4120143734e"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Distorted flow of time",
+      "_key": "!tables.results!64cb847e68335485.af8705b15c4deb99",
+      "_id": "af8705b15c4deb99"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Doors slam shut on their own",
+      "_key": "!tables.results!64cb847e68335485.f4af6be482de5ea5",
+      "_id": "f4af6be482de5ea5"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Dreadful whispering",
+      "_key": "!tables.results!64cb847e68335485.f3d627092a811dbf",
+      "_id": "f3d627092a811dbf"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Eerie echoes",
+      "_key": "!tables.results!64cb847e68335485.39b9a9436e775998",
+      "_id": "39b9a9436e775998"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Eldritch symbols",
+      "_key": "!tables.results!64cb847e68335485.12db35bd2f730467",
+      "_id": "12db35bd2f730467"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Faces and figures move within the walls",
+      "_key": "!tables.results!64cb847e68335485.b4a63a28ea467f38",
+      "_id": "b4a63a28ea467f38"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Familiar voices call out from the dark",
+      "_key": "!tables.results!64cb847e68335485.78550553d83a08f3",
+      "_id": "78550553d83a08f3"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Grasping, creeping shadows",
+      "_key": "!tables.results!64cb847e68335485.b6ad8dd106e6cc63",
+      "_id": "b6ad8dd106e6cc63"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Gusts of phantom wind",
+      "_key": "!tables.results!64cb847e68335485.549d83b81d66560a",
+      "_id": "549d83b81d66560a"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Haunting cries or weeping",
+      "_key": "!tables.results!64cb847e68335485.a9411f337455935a",
+      "_id": "a9411f337455935a"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Haunting dreams or hallucinations",
+      "_key": "!tables.results!64cb847e68335485.a53a5baea748e072",
+      "_id": "a53a5baea748e072"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Haunting music",
+      "_key": "!tables.results!64cb847e68335485.50ae534cd1f91ea0",
+      "_id": "50ae534cd1f91ea0"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Impenetrable darkness",
+      "_key": "!tables.results!64cb847e68335485.fbcfa701ad3bfc10",
+      "_id": "fbcfa701ad3bfc10"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Lair of a monstrous creature",
+      "_key": "!tables.results!64cb847e68335485.56590bbb6d7843f1",
+      "_id": "56590bbb6d7843f1"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Message or symbols written in blood",
+      "_key": "!tables.results!64cb847e68335485.bcbfeeec27bfb83f",
+      "_id": "bcbfeeec27bfb83f"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Monstrous swarm of creatures",
+      "_key": "!tables.results!64cb847e68335485.531e82ec0d3a7a0c",
+      "_id": "531e82ec0d3a7a0c"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Monstrous tracks",
+      "_key": "!tables.results!64cb847e68335485.db7d40cff8b64015",
+      "_id": "db7d40cff8b64015"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Moving or changing architecture",
+      "_key": "!tables.results!64cb847e68335485.42369f4d101413da",
+      "_id": "42369f4d101413da"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Objects move of their own accord",
+      "_key": "!tables.results!64cb847e68335485.086282432aa8097e",
+      "_id": "086282432aa8097e"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Ominous chanting",
+      "_key": "!tables.results!64cb847e68335485.7d0acadb09b7bab1",
+      "_id": "7d0acadb09b7bab1"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Passages seem to stretch and distort",
+      "_key": "!tables.results!64cb847e68335485.8a1a2387ca2e1d1d",
+      "_id": "8a1a2387ca2e1d1d"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Path that endlessly repeats",
+      "_key": "!tables.results!64cb847e68335485.fd7abe0850135912",
+      "_id": "fd7abe0850135912"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Phantom voices or laughter",
+      "_key": "!tables.results!64cb847e68335485.85be7f369d94eea2",
+      "_id": "85be7f369d94eea2"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Piles of broken skulls and bones",
+      "_key": "!tables.results!64cb847e68335485.988b2ad1dd9b809f",
+      "_id": "988b2ad1dd9b809f"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Reflections reveal unseen aspects",
+      "_key": "!tables.results!64cb847e68335485.679a436155ac2214",
+      "_id": "679a436155ac2214"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Remains of a monstrous beast",
+      "_key": "!tables.results!64cb847e68335485.dda815dce235f608",
+      "_id": "dda815dce235f608"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Rotting stench",
+      "_key": "!tables.results!64cb847e68335485.afdce796c93a530d",
+      "_id": "afdce796c93a530d"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Spectral reenactments of past events",
+      "_key": "!tables.results!64cb847e68335485.a3f5914092deec7d",
+      "_id": "a3f5914092deec7d"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Strangely preserved feature or area",
+      "_key": "!tables.results!64cb847e68335485.78352d5c9ff658ae",
+      "_id": "78352d5c9ff658ae"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Sudden ghostly manifestation",
+      "_key": "!tables.results!64cb847e68335485.605a0777e5032552",
+      "_id": "605a0777e5032552"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Transforming murals or paintings",
+      "_key": "!tables.results!64cb847e68335485.d76a3dd89bfe0540",
+      "_id": "d76a3dd89bfe0540"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Twisted or grotesque statues",
+      "_key": "!tables.results!64cb847e68335485.fa3ff56a7ae9ceb7",
+      "_id": "fa3ff56a7ae9ceb7"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Unexplainable path of destruction",
+      "_key": "!tables.results!64cb847e68335485.5ff2598b15ff3711",
+      "_id": "5ff2598b15ff3711"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Unnatural cold",
+      "_key": "!tables.results!64cb847e68335485.a9043bca7820c392",
+      "_id": "a9043bca7820c392"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Unnatural corruption or decay",
+      "_key": "!tables.results!64cb847e68335485.ceb339fa008cc1a0",
+      "_id": "ceb339fa008cc1a0"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Unnatural mists or darkness",
+      "_key": "!tables.results!64cb847e68335485.fbff1bcd8b5e9761",
+      "_id": "fbff1bcd8b5e9761"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Unnaturally aggressive creatures",
+      "_key": "!tables.results!64cb847e68335485.55e0ebc390a9ac5c",
+      "_id": "55e0ebc390a9ac5c"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Unnaturally thick webbing",
+      "_key": "!tables.results!64cb847e68335485.ac98abb97cc80cb6",
+      "_id": "ac98abb97cc80cb6"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Unnerving sensation of being watched",
+      "_key": "!tables.results!64cb847e68335485.47aec54852c85c3a",
+      "_id": "47aec54852c85c3a"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 218,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!64cb847e68335485"
+}

@@ -1,0 +1,75 @@
+{
+  "_id": "d5899cd21e39de34",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Mine",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/mine"
+    }
+  },
+  "name": "Mine",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        16
+      ],
+      "text": "Lode",
+      "_key": "!tables.results!d5899cd21e39de34.69fd1880858e64e5",
+      "_id": "69fd1880858e64e5"
+    },
+    {
+      "range": [
+        17,
+        32
+      ],
+      "text": "Dig",
+      "_key": "!tables.results!d5899cd21e39de34.f0615e68fea05704",
+      "_id": "f0615e68fea05704"
+    },
+    {
+      "range": [
+        33,
+        49
+      ],
+      "text": "Forge",
+      "_key": "!tables.results!d5899cd21e39de34.5a84652e1379307c",
+      "_id": "5a84652e1379307c"
+    },
+    {
+      "range": [
+        50,
+        66
+      ],
+      "text": "Mine",
+      "_key": "!tables.results!d5899cd21e39de34.6cf5645bd2dd4aed",
+      "_id": "6cf5645bd2dd4aed"
+    },
+    {
+      "range": [
+        67,
+        83
+      ],
+      "text": "Tunnels",
+      "_key": "!tables.results!d5899cd21e39de34.5331d78cf8a250ad",
+      "_id": "5331d78cf8a250ad"
+    },
+    {
+      "range": [
+        84,
+        100
+      ],
+      "text": "Cut",
+      "_key": "!tables.results!d5899cd21e39de34.12a7c3ade884da8c",
+      "_id": "12a7c3ade884da8c"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 210,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d5899cd21e39de34"
+}

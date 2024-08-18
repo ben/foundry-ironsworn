@@ -1,10 +1,10 @@
 {
   "_id": "3b7f5b9364d3fc25",
   "type": "progress",
-  "name": "Water Witcher",
+  "name": "Water witcher",
   "img": "icons/creatures/mammals/elk-moose-marked-green.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Affable, horse-sized creatures</p>\n    <p class=\"nogrow\">Stout, furry form</p>\n    <p class=\"nogrow\">Wide, expressive eyes</p>\n    <p class=\"nogrow\">Elongated snout</p>\n    <p class=\"nogrow\">Rock-breaking claws</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Find water</p>\n    <p class=\"nogrow\">Meet new friends</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Dig and hide</p>\n    <p class=\"nogrow\">When desperate, rake with claws</p>\n  </div>\n</div>\n\n<p>Water is life. On rugged planets in fringe sectors, the technology to locate fresh water or process contaminated water is not always available or reliable. Many struggling settlements resort to a low-tech solution—a dowser and their waterwitcher companion.</p>\n<p>Waterwitchers are stout, furred creatures with fierce-looking retractable claws on their forelegs. On their homeworld, which was lost a decade ago in a stellar calamity, they used those claws to dig through the arid, rocky ground, and had an unerring knack for finding hidden water sources. Some of the human settlers who fled the doomed planet adopted waterwitchers as companions, and now travel the Forge with their furry friends in tow.</p>\n<p>Waterwitchers were a precious part of their ecosystem, and were not preyed upon by other creatures. This made them gentle and trusting to a fault. They often greet potential new friends with enthusiastic sniffing and contented purring. For their dowser companions, it's an unrelenting effort to keep them out of trouble.</p>\n\n<blockquote>Quest Starter: <p>A dowser has gone missing in the vast wastes of a newly-settled desert world, leaving behind their distraught waterwitcher. You are sworn to find the wayward dowser, and must serve as an unlikely keeper for their furry companion. What is your relationship to the dowser?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.de44a7b212c4cbf2]{Dowser}</li>\n</ul>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Affable, horse-sized creatures</p>\n<p class=\"nogrow\">Stout, furry form</p>\n<p class=\"nogrow\">Wide, expressive eyes</p>\n<p class=\"nogrow\">Elongated snout</p>\n<p class=\"nogrow\">Rock-breaking claws</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Find water</p>\n<p class=\"nogrow\">Meet new friends</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Dig and hide</p>\n<p class=\"nogrow\">When desperate, rake with claws</p>\n</div>\n</div>\n\n<p>Water is life. On rugged planets in fringe sectors, the technology to locate fresh water or process contaminated water is not always available or reliable. Many struggling settlements resort to a low-tech solution—a dowser and their waterwitcher companion.</p>\n<p>Waterwitchers are stout, furred creatures with fierce-looking retractable claws on their forelegs. On their homeworld, which was lost a decade ago in a stellar calamity, they used those claws to dig through the arid, rocky ground, and had an unerring knack for finding hidden water sources. Some of the human settlers who fled the doomed planet adopted waterwitchers as companions, and now travel the Forge with their furry friends in tow.</p>\n<p>Waterwitchers were a precious part of their ecosystem, and were not preyed upon by other creatures. This made them gentle and trusting to a fault. They often greet potential new friends with enthusiastic sniffing and contented purring. For their dowser companions, it's an unrelenting effort to keep them out of trouble.</p>\n\n<blockquote>Quest Starter: <p>A dowser has gone missing in the vast wastes of a newly-settled desert world, leaving behind their distraught waterwitcher. You are sworn to find the wayward dowser, and must serve as an unlikely keeper for their furry companion. What is your relationship to the dowser?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.de44a7b212c4cbf2]{Dowser}</li>\n</ul>",
     "rank": 3,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/water_witcher"
+    }
   },
   "_key": "!items!3b7f5b9364d3fc25"
 }

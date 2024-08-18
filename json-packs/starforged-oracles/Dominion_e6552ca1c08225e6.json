@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Factions/Dominion",
-      "category": "Starforged/Oracles/Factions"
+      "category": "Starforged/Oracles/Factions",
+      "dsid": "oracle_rollable:starforged/faction/dominion"
     }
   },
   "name": "Dominion",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         5
       ],
       "text": "Agriculture",
-      "_id": "6833f01b1649962a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.6833f01b1649962a"
+      "_key": "!tables.results!e6552ca1c08225e6.2e2876db67e8d6c7",
+      "_id": "2e2876db67e8d6c7"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         9
       ],
       "text": "Artistry",
-      "_id": "bd3cf16e43c5a660",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.bd3cf16e43c5a660"
+      "_key": "!tables.results!e6552ca1c08225e6.49aa0ae680e9ae07",
+      "_id": "49aa0ae680e9ae07"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         14
       ],
       "text": "Commerce",
-      "_id": "e6ed954008d4e193",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.e6ed954008d4e193"
+      "_key": "!tables.results!e6552ca1c08225e6.8fcee174808f305d",
+      "_id": "8fcee174808f305d"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         18
       ],
       "text": "Conquest",
-      "_id": "3483d45c3e88c2d2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.3483d45c3e88c2d2"
+      "_key": "!tables.results!e6552ca1c08225e6.16f1a8da3a05b74f",
+      "_id": "16f1a8da3a05b74f"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         22
       ],
       "text": "Construction",
-      "_id": "f2c9399186c12a3c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.f2c9399186c12a3c"
+      "_key": "!tables.results!e6552ca1c08225e6.327b9aefd8f37552",
+      "_id": "327b9aefd8f37552"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         26
       ],
       "text": "Diplomacy",
-      "_id": "1ebb9bbe05eddf6e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.1ebb9bbe05eddf6e"
+      "_key": "!tables.results!e6552ca1c08225e6.512f107d372ab864",
+      "_id": "512f107d372ab864"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         30
       ],
       "text": "Education",
-      "_id": "69565457f76a9fe0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.69565457f76a9fe0"
+      "_key": "!tables.results!e6552ca1c08225e6.83082fbddb257682",
+      "_id": "83082fbddb257682"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         34
       ],
       "text": "Environmentalism",
-      "_id": "1fb9079f7402eb3e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.1fb9079f7402eb3e"
+      "_key": "!tables.results!e6552ca1c08225e6.9662acadda827018",
+      "_id": "9662acadda827018"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         38
       ],
       "text": "Exploration",
-      "_id": "4d6d59d7ddc1f26f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.4d6d59d7ddc1f26f"
+      "_key": "!tables.results!e6552ca1c08225e6.0a92ab361dd7b1d8",
+      "_id": "0a92ab361dd7b1d8"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         42
       ],
       "text": "Faith",
-      "_id": "517d8618ccb18d05",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.517d8618ccb18d05"
+      "_key": "!tables.results!e6552ca1c08225e6.1e25fd1d46cf7b66",
+      "_id": "1e25fd1d46cf7b66"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         46
       ],
       "text": "History",
-      "_id": "2b696b98769c9fd6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.2b696b98769c9fd6"
+      "_key": "!tables.results!e6552ca1c08225e6.f0fd6e382d501b5f",
+      "_id": "f0fd6e382d501b5f"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         50
       ],
       "text": "Honor",
-      "_id": "c68f6de0aaa9b2e4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.c68f6de0aaa9b2e4"
+      "_key": "!tables.results!e6552ca1c08225e6.7e770d7954eba7cd",
+      "_id": "7e770d7954eba7cd"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         55
       ],
       "text": "Industry",
-      "_id": "94ea5ea24fedfbef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.94ea5ea24fedfbef"
+      "_key": "!tables.results!e6552ca1c08225e6.e80b425d490cdca8",
+      "_id": "e80b425d490cdca8"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         59
       ],
       "text": "Isolationism",
-      "_id": "f0f6df6df7f8a08a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.f0f6df6df7f8a08a"
+      "_key": "!tables.results!e6552ca1c08225e6.89c324943a80a88a",
+      "_id": "89c324943a80a88a"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         63
       ],
       "text": "Law",
-      "_id": "8610b930ea4cb1b1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.8610b930ea4cb1b1"
+      "_key": "!tables.results!e6552ca1c08225e6.841437b3c19f0b22",
+      "_id": "841437b3c19f0b22"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         67
       ],
       "text": "Mysticism",
-      "_id": "26b7f87479c6090b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.26b7f87479c6090b"
+      "_key": "!tables.results!e6552ca1c08225e6.ab79341f3bba5acd",
+      "_id": "ab79341f3bba5acd"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         71
       ],
       "text": "Pacifism",
-      "_id": "503913fc0f87ac55",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.503913fc0f87ac55"
+      "_key": "!tables.results!e6552ca1c08225e6.91b0b438097511c2",
+      "_id": "91b0b438097511c2"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         75
       ],
       "text": "Prophecy",
-      "_id": "8c88898eee16a288",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.8c88898eee16a288"
+      "_key": "!tables.results!e6552ca1c08225e6.71bc55285ca6e23a",
+      "_id": "71bc55285ca6e23a"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         79
       ],
       "text": "Science",
-      "_id": "39d3f00271710c78",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.39d3f00271710c78"
+      "_key": "!tables.results!e6552ca1c08225e6.c179f0ea73495fc4",
+      "_id": "c179f0ea73495fc4"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         83
       ],
       "text": "Secrecy",
-      "_id": "42556287196b9f9d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.42556287196b9f9d"
+      "_key": "!tables.results!e6552ca1c08225e6.aaede72c140cbe27",
+      "_id": "aaede72c140cbe27"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         87
       ],
       "text": "Technology",
-      "_id": "3748f77500143b83",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.3748f77500143b83"
+      "_key": "!tables.results!e6552ca1c08225e6.5bea99e91dd16af6",
+      "_id": "5bea99e91dd16af6"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         91
       ],
       "text": "Treachery",
-      "_id": "d60cc5d9f59bb78d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.d60cc5d9f59bb78d"
+      "_key": "!tables.results!e6552ca1c08225e6.b6de584c3f215d13",
+      "_id": "b6de584c3f215d13"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         96
       ],
       "text": "Warfare",
-      "_id": "2ad69212135bbad8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.2ad69212135bbad8"
+      "_key": "!tables.results!e6552ca1c08225e6.627fdeb3fe44590e",
+      "_id": "627fdeb3fe44590e"
     },
     {
       "range": [
@@ -340,29 +226,12 @@
         100
       ],
       "text": "Wealth",
-      "_id": "99ccd7d48767ec80",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e6552ca1c08225e6.99ccd7d48767ec80"
+      "_key": "!tables.results!e6552ca1c08225e6.d742aa5f7b44c179",
+      "_id": "d742aa5f7b44c179"
     }
   ],
   "folder": "b6fe3d35ff56995d",
   "sort": 341,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!e6552ca1c08225e6"
 }

@@ -1,0 +1,79 @@
+{
+  "type": "asset",
+  "_id": "625d55c0534e49cd",
+  "folder": "cd91c514d92b4792",
+  "name": "Flagship",
+  "system": {
+    "requirement": "",
+    "category": "Command Vehicle",
+    "color": "#9aa3ad",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your seagoing flagship is armed with cannons, transports crew, cargo, and passengers, and can equip support vehicle and module assets. In addition, it has up to 5 hold that acts as supply for you and your allies when taking action or suffering a cost related to shipwide gear and provisions.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.edac426b7c23f060]{Finish an Expedition} (dangerous or greater) on a seagoing journey and score a hit, this expedition strengthened your ties to your ship and crew. You and your allies may mark 1 tick on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You fly a distinctive flag. Envision its design. Once per situation, when you hoist the colors in a dramatic moment, you and your allies take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Supply (hold)",
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Battered",
+        "ticked": false
+      },
+      {
+        "name": "Cursed",
+        "ticked": false
+      },
+      {
+        "name": "Unequipped (hold)",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/command_vehicle/flagship",
+      "dsid": "asset:sundered_isles/command_vehicle/flagship"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!625d55c0534e49cd"
+}

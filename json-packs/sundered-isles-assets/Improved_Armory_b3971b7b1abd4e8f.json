@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "b3971b7b1abd4e8f",
+  "folder": "38d5b35b5764ca19",
+  "name": "Improved Armory",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} by rallying your crew to repel boarders or board an enemy ship, you may roll +supply; if you do, take +1 momentum on a hit. On a strong hit with a match, you are poised to overwhelm your foes; take +1 momentum more. In addition, any allies joining the effort may take the outcome and benefits of your move without rolling to @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply} by scavenging weapons or ammo from your foes after a fight, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you are out of options and set the fuse to self-destruct your command vehicle, activate this ability at no cost. If you do, envision how the sacrifice allows you to escape or overcome your foes amid the chaos. Then, mark 1 box on your quests legacy track and @Compendium[foundry-ironsworn.starforgedmoves.a44ecb0d77487549]{Overcome Destruction}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/module/improved_armory",
+      "dsid": "asset:sundered_isles/module/improved_armory"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!b3971b7b1abd4e8f"
+}

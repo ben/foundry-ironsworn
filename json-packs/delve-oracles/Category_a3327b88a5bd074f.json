@@ -1,0 +1,111 @@
+{
+  "_id": "a3327b88a5bd074f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Category",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/category"
+    }
+  },
+  "name": "Category",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "[Burgeoning Conflict](datasworn:oracle_rollable:delve/threat/burgeoning_conflict)",
+      "_key": "!tables.results!a3327b88a5bd074f.fc5aa2895b8628d3",
+      "_id": "fc5aa2895b8628d3"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "[Cursed Site](datasworn:oracle_rollable:delve/threat/cursed_site)",
+      "_key": "!tables.results!a3327b88a5bd074f.4e8519b809e4c3a9",
+      "_id": "4e8519b809e4c3a9"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "[Environmental Calamity](datasworn:oracle_rollable:delve/threat/environmental_calamity)",
+      "_key": "!tables.results!a3327b88a5bd074f.f93cbda7e805eb8b",
+      "_id": "f93cbda7e805eb8b"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "[Malignant Plague](datasworn:oracle_rollable:delve/threat/malignant_plague)",
+      "_key": "!tables.results!a3327b88a5bd074f.56776e164217febc",
+      "_id": "56776e164217febc"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "[Rampaging Creature](datasworn:oracle_rollable:delve/threat/rampaging_creature)",
+      "_key": "!tables.results!a3327b88a5bd074f.a75dd38e11aaf56c",
+      "_id": "a75dd38e11aaf56c"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "[Ravaging Horde](datasworn:oracle_rollable:delve/threat/ravaging_horde)",
+      "_key": "!tables.results!a3327b88a5bd074f.5fc9a11868689b84",
+      "_id": "5fc9a11868689b84"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "[Scheming Leader](datasworn:oracle_rollable:delve/threat/scheming_leader)",
+      "_key": "!tables.results!a3327b88a5bd074f.36af426f87f2bd81",
+      "_id": "36af426f87f2bd81"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "[Power-Hungry Mystic](datasworn:oracle_rollable:delve/threat/power_hungry_mystic)",
+      "_key": "!tables.results!a3327b88a5bd074f.c71c8c8233956cea",
+      "_id": "c71c8c8233956cea"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "[Zealous Cult](datasworn:oracle_rollable:delve/threat/zealous_cult)",
+      "_key": "!tables.results!a3327b88a5bd074f.b0fdb51cb5839b80",
+      "_id": "b0fdb51cb5839b80"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!a3327b88a5bd074f.b3abc7f6766cd0db",
+      "_id": "b3abc7f6766cd0db"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 220,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a3327b88a5bd074f"
+}

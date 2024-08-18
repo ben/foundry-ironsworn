@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Misc/Story_Clue",
-      "category": "Starforged/Oracles/Misc"
+      "category": "Starforged/Oracles/Misc",
+      "dsid": "oracle_rollable:starforged/misc/story_clue"
     }
   },
   "name": "Story Clue",
   "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Affirms a previously understood fact or clue",
-      "_id": "a2b860c549f2dd79",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.a2b860c549f2dd79"
+      "_key": "!tables.results!f94c10d3ab26c259.3c207c1c2e1545b2",
+      "_id": "3c207c1c2e1545b2"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         6
       ],
       "text": "Connects to a known rumor or scandal",
-      "_id": "313d45eb57608539",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.313d45eb57608539"
+      "_key": "!tables.results!f94c10d3ab26c259.493bb5ab1a919fe0",
+      "_id": "493bb5ab1a919fe0"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         9
       ],
       "text": "Connects to a previously unrelated mystery or quest",
-      "_id": "3563e600ea5e7eba",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.3563e600ea5e7eba"
+      "_key": "!tables.results!f94c10d3ab26c259.36238050c2e35ec8",
+      "_id": "36238050c2e35ec8"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         12
       ],
       "text": "Connects to your own expertise or interests",
-      "_id": "a7afe8e8af11377d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.a7afe8e8af11377d"
+      "_key": "!tables.results!f94c10d3ab26c259.e827519d8503c345",
+      "_id": "e827519d8503c345"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         15
       ],
       "text": "Contradicts a previously understood fact or clue",
-      "_id": "dcd1717b7141794a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.dcd1717b7141794a"
+      "_key": "!tables.results!f94c10d3ab26c259.e87e3ebf3a67ca18",
+      "_id": "e87e3ebf3a67ca18"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         18
       ],
       "text": "Evokes a personal memory",
-      "_id": "74d881b50836fd02",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.74d881b50836fd02"
+      "_key": "!tables.results!f94c10d3ab26c259.aaff37514044a4dc",
+      "_id": "aaff37514044a4dc"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         21
       ],
       "text": "Evokes a remarkable anomaly or phenomenon",
-      "_id": "d808c87233b4ec1e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.d808c87233b4ec1e"
+      "_key": "!tables.results!f94c10d3ab26c259.69955978737eb8ba",
+      "_id": "69955978737eb8ba"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         24
       ],
       "text": "Evokes a vision or prophecy",
-      "_id": "d0f8431242bd5a43",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.d0f8431242bd5a43"
+      "_key": "!tables.results!f94c10d3ab26c259.1ae93f63dd552a77",
+      "_id": "1ae93f63dd552a77"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         27
       ],
       "text": "Involves a cultural touchstone",
-      "_id": "1f2b08548ae77f17",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.1f2b08548ae77f17"
+      "_key": "!tables.results!f94c10d3ab26c259.3d427cb55e62b87e",
+      "_id": "3d427cb55e62b87e"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         30
       ],
       "text": "Involves a hidden or mysterious faction",
-      "_id": "e78eaf3fb41657b4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.e78eaf3fb41657b4"
+      "_key": "!tables.results!f94c10d3ab26c259.13ceaa86715e1729",
+      "_id": "13ceaa86715e1729"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         33
       ],
       "text": "Involves a hidden or mysterious person",
-      "_id": "3acc1570cdd369a9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.3acc1570cdd369a9"
+      "_key": "!tables.results!f94c10d3ab26c259.6c4b5491912c434b",
+      "_id": "6c4b5491912c434b"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         36
       ],
       "text": "Involves a key or means of access",
-      "_id": "649e463f524c2ebb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.649e463f524c2ebb"
+      "_key": "!tables.results!f94c10d3ab26c259.1f9ba08a796f6caf",
+      "_id": "1f9ba08a796f6caf"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         39
       ],
       "text": "Involves a machine or technology",
-      "_id": "226aad6c0b37bc92",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.226aad6c0b37bc92"
+      "_key": "!tables.results!f94c10d3ab26c259.f9b870c07fb8ca42",
+      "_id": "f9b870c07fb8ca42"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         42
       ],
       "text": "Involves a non-human being or creature",
-      "_id": "ba3e8e788913190c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.ba3e8e788913190c"
+      "_key": "!tables.results!f94c10d3ab26c259.c02da57485c6f71f",
+      "_id": "c02da57485c6f71f"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         45
       ],
       "text": "Involves a notable faction",
-      "_id": "17486d1e91961df1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.17486d1e91961df1"
+      "_key": "!tables.results!f94c10d3ab26c259.5c6505769192fb02",
+      "_id": "5c6505769192fb02"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         48
       ],
       "text": "Involves a notable person",
-      "_id": "0279671fec0bffea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.0279671fec0bffea"
+      "_key": "!tables.results!f94c10d3ab26c259.58ad58f83360e8ea",
+      "_id": "58ad58f83360e8ea"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         51
       ],
       "text": "Involves a person or faction from your background",
-      "_id": "66006923313d4721",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.66006923313d4721"
+      "_key": "!tables.results!f94c10d3ab26c259.6b0a2c846ecff3cb",
+      "_id": "6b0a2c846ecff3cb"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         54
       ],
       "text": "Involves a personal item",
-      "_id": "414cee7a196cbf26",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.414cee7a196cbf26"
+      "_key": "!tables.results!f94c10d3ab26c259.de2f39a2af35b544",
+      "_id": "de2f39a2af35b544"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         57
       ],
       "text": "Involves an enemy or rival",
-      "_id": "4024caed221a90f9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.4024caed221a90f9"
+      "_key": "!tables.results!f94c10d3ab26c259.6752a4db08e491d3",
+      "_id": "6752a4db08e491d3"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         60
       ],
       "text": "Involves an organism or biological evidence",
-      "_id": "26c6cf7a05929fb4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.26c6cf7a05929fb4"
+      "_key": "!tables.results!f94c10d3ab26c259.aca44f713c3ee552",
+      "_id": "aca44f713c3ee552"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         63
       ],
       "text": "Involves an unusual ability or power",
-      "_id": "2ecdd1681e98e87f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.2ecdd1681e98e87f"
+      "_key": "!tables.results!f94c10d3ab26c259.415c16958ad19e7e",
+      "_id": "415c16958ad19e7e"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         66
       ],
       "text": "Involves someone you trust",
-      "_id": "2c0dcd176a0d68b7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.2c0dcd176a0d68b7"
+      "_key": "!tables.results!f94c10d3ab26c259.d54456f2fffa7097",
+      "_id": "d54456f2fffa7097"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         69
       ],
       "text": "Involves something rare, expensive, or precious",
-      "_id": "4d151a5dc6d0f891",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.4d151a5dc6d0f891"
+      "_key": "!tables.results!f94c10d3ab26c259.5dc327031059076f",
+      "_id": "5dc327031059076f"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         72
       ],
       "text": "Leads to a distant or unfamiliar place",
-      "_id": "78a8f614ceb69c14",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.78a8f614ceb69c14"
+      "_key": "!tables.results!f94c10d3ab26c259.418bce66269b66b0",
+      "_id": "418bce66269b66b0"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         75
       ],
       "text": "Leads to a hidden or forgotten place",
-      "_id": "353f45af87fbb063",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.353f45af87fbb063"
+      "_key": "!tables.results!f94c10d3ab26c259.41c7077dcb55e9c5",
+      "_id": "41c7077dcb55e9c5"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         78
       ],
       "text": "Leads to a nearby or familiar place",
-      "_id": "da5d8e498c58a613",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.da5d8e498c58a613"
+      "_key": "!tables.results!f94c10d3ab26c259.c4fcfd1c7bd52d96",
+      "_id": "c4fcfd1c7bd52d96"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         81
       ],
       "text": "Leads to a notable or central place",
-      "_id": "f6cd49a80bee0c4e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.f6cd49a80bee0c4e"
+      "_key": "!tables.results!f94c10d3ab26c259.1a5ef45b9ea3d2be",
+      "_id": "1a5ef45b9ea3d2be"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         84
       ],
       "text": "Suggests a history of similar incidents",
-      "_id": "c5070217db41a715",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.c5070217db41a715"
+      "_key": "!tables.results!f94c10d3ab26c259.f479414c10907f2e",
+      "_id": "f479414c10907f2e"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         87
       ],
       "text": "Suggests a looming event or deadline",
-      "_id": "f64675176eb6e9e6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.f64675176eb6e9e6"
+      "_key": "!tables.results!f94c10d3ab26c259.71cbdecb1f12856e",
+      "_id": "71cbdecb1f12856e"
     },
     {
       "range": [
@@ -424,43 +280,21 @@
         90
       ],
       "text": "Suggests an imposter or forgery",
-      "_id": "80cf2e82f501384b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.80cf2e82f501384b"
+      "_key": "!tables.results!f94c10d3ab26c259.435738f148ba31a6",
+      "_id": "435738f148ba31a6"
     },
     {
       "range": [
         91,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "f5790654c90cd3d0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f94c10d3ab26c259.f5790654c90cd3d0"
+      "text": "[Descriptor](datasworn:oracle_rollable:starforged/core/descriptor) + [Focus](datasworn:oracle_rollable:starforged/core/focus)",
+      "_key": "!tables.results!f94c10d3ab26c259.ac9b50e62092b176",
+      "_id": "ac9b50e62092b176"
     }
   ],
   "folder": "ffb24a823c4adb09",
   "sort": 381,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!f94c10d3ab26c259"
 }
