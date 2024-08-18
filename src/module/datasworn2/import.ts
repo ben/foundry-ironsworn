@@ -116,11 +116,18 @@ const COMPENDIUM_KEY_MAP = {
 		delve: 'delve-domains'
 	}
 }
-function renderLinksInStr(text: string): string {
-	return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
+function renderLinksInStr(str: string): string {
+	return str.replace(MARKDOWN_LINK_RE, (match, text, url) => {
 		if (!url.startsWith('datasworn:')) return match
 		url = url.substring('datasworn:'.length)
 		const parsed = IdParser.parse(url)
+
+		// Strip links to NPC collections, Foundry has no support for them
+		if (['npc', 'npc_collection'].includes(parsed.primaryTypeId)) {
+			return text
+		}
+
+		// TODO: render move/oracle links as data-dfid anchors so they'll navigate properly
 
 		// Fixup: embedded oracle tables will be imported as full RollTables
 		// So here we redirect links to move-oracles to full oracles
@@ -563,4 +570,127 @@ for (const collection of collections) {
 	}
 
 	await walkCollections(DataswornTree.get(collection)?.oracles)
+}
+
+console.log('\n\n--- THEMES ---')
+const THEME_IMAGES = {
+	Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
+	Corrupted: 'icons/magic/unholy/beam-impact-purple.webp',
+	Fortified: 'icons/environment/settlement/watchtower-cliff.webp',
+	Hallowed: 'icons/magic/holy/angel-wings-gray.webp',
+	Haunted: 'icons/creatures/magical/spirit-undead-horned-blue.webp',
+	Infested: 'icons/creatures/eyes/icy-cluster-blue.webp',
+	Ravaged: 'icons/environment/settlement/building-rubble.webp',
+	Wild: 'icons/magic/nature/root-vines-grow-brown.webp'
+}
+const delve = DataswornTree.get('delve')
+for (const theme of Object.values(delve?.site_themes ?? {})) {
+	console.log(theme._id)
+	if (!existsSync('json-packs/delve-themes')) {
+		await mkdir('json-packs/delve-themes')
+	}
+
+	const fid = hash(theme._id)
+
+	const json = {
+		_id: fid,
+		type: 'delve-theme',
+		name: theme.name,
+		img: THEME_IMAGES[theme.name],
+		system: {
+			summary: (theme as any).summary,
+			description: renderLinksInStr((theme as any).description),
+			features: compact(
+				theme.features.map(
+					(f) =>
+						f.roll && {
+							range: [f.roll?.min, f.roll?.max],
+							text: f.text
+						}
+				)
+			),
+			dangers: compact(
+				theme.dangers.map(
+					(d) =>
+						d.roll && {
+							range: [d.roll?.min, d.roll?.max],
+							text: d.text
+						}
+				)
+			)
+		},
+		folder: null,
+		sort: theme._source.page ?? 0,
+		flags: {
+			'foundry-ironsworn': {
+				dsid: theme._id
+			}
+		},
+		_key: `!items!${fid}`
+	}
+
+	await writeJsonFile('delve-themes', json)
+}
+
+console.log('\n\n--- DOMAINS ---')
+const DOMAIN_IMAGES = {
+	Barrow: 'icons/environment/wilderness/cave-entrance-dwarven-hill.webp',
+	Cavern: 'icons/environment/wilderness/cave-entrance-mountain-blue.webp',
+	'Frozen cavern': 'icons/magic/water/water-iceberg-bubbles.webp',
+	Icereach: 'icons/magic/water/barrier-ice-crystal-wall-jagged-blue.webp',
+	Mine: 'icons/environment/settlement/mine-cart-rocks-red.webp',
+	Pass: 'icons/environment/wilderness/cave-entrance-rocky.webp',
+	Ruin: 'icons/environment/wilderness/wall-ruins.webp',
+	'Sea cave': 'icons/environment/wilderness/cave-entrance-island.webp',
+	Shadowfen: 'icons/environment/wilderness/cave-entrance.webp',
+	Stronghold: 'icons/environment/settlement/castle.webp',
+	Tanglewood: 'icons/environment/wilderness/terrain-forest-gray.webp',
+	Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp'
+}
+for (const domain of Object.values(delve?.site_domains ?? {})) {
+	console.log(domain._id)
+	if (!existsSync('json-packs/delve-domains')) {
+		await mkdir('json-packs/delve-domains')
+	}
+
+	const fid = hash(domain._id)
+
+	const json = {
+		_id: fid,
+		type: 'delve-domain',
+		name: domain.name,
+		img: DOMAIN_IMAGES[domain.name],
+		system: {
+			summary: (domain as any).summary,
+			description: renderLinksInStr((domain as any).description),
+			features: compact(
+				domain.features.map(
+					(f) =>
+						f.roll && {
+							range: [f.roll?.min, f.roll?.max],
+							text: f.text
+						}
+				)
+			),
+			dangers: compact(
+				domain.dangers.map(
+					(d) =>
+						d.roll && {
+							range: [d.roll?.min, d.roll?.max],
+							text: d.text
+						}
+				)
+			)
+		},
+		folder: null,
+		sort: domain._source.page ?? 0,
+		flags: {
+			'foundry-ironsworn': {
+				dsid: domain._id
+			}
+		},
+		_key: `!items!${fid}`
+	}
+
+	await writeJsonFile('delve-domains', json)
 }
