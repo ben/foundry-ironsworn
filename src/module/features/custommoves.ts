@@ -20,13 +20,19 @@ export interface Move {
 // For some reason, rollupJs mangles this
 
 async function createMoveTree(
-	compendiumName: string,
-	categories: IMoveCategory[]
+	categories: IMoveCategory[],
+	...compendiumNames: string[]
 ): Promise<MoveCategory[]> {
 	const ret = [] as MoveCategory[]
 
 	// Make sure compendium is loaded
-	const compendiumMoves = await cachedDocumentsForPack(compendiumName)
+	const compendiumMoves: PackContents = []
+	for (const compName of compendiumNames) {
+		const compendium = await cachedDocumentsForPack(compName)
+		if (compendium != null) {
+			compendiumMoves.push(...compendium)
+		}
+	}
 
 	// Construct the base tree
 	for (const category of categories) {
@@ -46,15 +52,16 @@ async function createMoveTree(
 
 export async function createIronswornMoveTree(): Promise<MoveCategory[]> {
 	return await createMoveTree(
+		ISMoveCategories,
 		'foundry-ironsworn.ironswornmoves',
-		ISMoveCategories
+		'foundry-ironsworn.ironsworndelvemoves'
 	)
 }
 
 export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
 	return await createMoveTree(
-		'foundry-ironsworn.starforgedmoves',
-		SFMoveCategories
+		SFMoveCategories,
+		'foundry-ironsworn.starforgedmoves'
 	)
 }
 

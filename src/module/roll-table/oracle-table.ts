@@ -5,6 +5,7 @@ import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
+// import { IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
 	getOracleTreeWithCustomOracles
@@ -78,14 +79,24 @@ export class OracleTable extends RollTable {
 		const isd = await cachedDocumentsForPack(
 			'foundry-ironsworn.ironswornoracles'
 		)
+		const delved = await cachedDocumentsForPack(
+			'foundry-ironsworn.ironsworndelveoracles'
+		)
 		const sfd = await cachedDocumentsForPack(
 			'foundry-ironsworn.starforgedoracles'
 		)
 		const matcher = (x: { id: string }) => x.id === hashLookup(dfid)
-		return (isd?.find(matcher) ?? sfd?.find(matcher)) as
-			| StoredDocument<OracleTable>
-			| undefined
+		return (isd?.find(matcher) ??
+			sfd?.find(matcher) ??
+			delved?.find(matcher)) as StoredDocument<OracleTable> | undefined
 	}
+
+	// static async getByDsId(
+	// 	dsid: string
+	// ): Promise<StoredDocument<OracleTable> | undefined> {
+	// 	const id = IdParser.get(dsid)
+	// 	console.log(id)
+	// }
 
 	/**
 	 * "Ask the Oracle": Retrieve one or more oracle tables and immediately rolls on them.
