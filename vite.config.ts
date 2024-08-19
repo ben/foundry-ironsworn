@@ -36,6 +36,7 @@ const config: UserConfig = {
 		})
 	],
 	resolve: {
+		preserveSymlinks: true,
 		alias: [
 			{
 				find: /^style:(.*)/,
