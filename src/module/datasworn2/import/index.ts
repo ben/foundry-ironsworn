@@ -1,6 +1,6 @@
 // A script to import Datasworn 2 data into compendia JSON files.
 // Run this like so:
-//   npx tsx src/module/datasworn2/import/index.ts
+//   bun src/module/datasworn2/import/index.ts
 
 import type {
 	AssetCollection,
