@@ -57,7 +57,7 @@
 */
 
 import type { Npc } from '@datasworn/core/dist/Datasworn'
-import { lookupLegacyId } from './ids'
+import { lookupLegacyId } from '../ids'
 import { renderLinksInStr, renderText } from './rendering'
 
 export function renderNpcDescription(npc: Npc): string {

@@ -1,3 +1,7 @@
+// A script to import Datasworn 2 data into compendia JSON files.
+// Run this like so:
+//   npx tsx src/module/datasworn2/import/index.ts
+
 import type {
 	AssetCollection,
 	MoveCategory,
@@ -7,10 +11,10 @@ import type {
 	NpcCollection,
 	Npc
 } from '@datasworn/core/dist/Datasworn'
-import { IdParser, DataswornTree } from '.'
+import { IdParser, DataswornTree } from '..'
 import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
-import { capitalize, cloneDeep, compact, flatten } from 'lodash-es'
+import { capitalize, compact, flatten } from 'lodash-es'
 import { ICON_MAP } from './images'
 import { renderText, titleCase, renderLinksInStr } from './rendering'
 import {
@@ -18,9 +22,8 @@ import {
 	DataswornToLegacyIds,
 	lookupLegacyId,
 	LegacyToDataswornIds
-} from './ids'
+} from '../ids'
 import { renderNpcDescription } from './foe-description'
-import { writeJson } from 'fs-extra'
 
 const ISMoveCategoryColors = {
 	'Adventure Moves': '#206087',
@@ -46,9 +49,6 @@ const ISMoveCategoryColors = {
 	'Threat Moves': '#3F8C8A',
 	'Threshold Moves': '#1D1D1B'
 }
-// A script to import Datasworn 2 data into compendia JSON files.
-// Run this like so:
-//   npx tsx src/module/datasworn2/import.ts
 
 const collections = ['classic', 'delve', 'starforged', 'sundered_isles']
 

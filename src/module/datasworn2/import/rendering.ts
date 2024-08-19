@@ -1,6 +1,6 @@
 import Showdown from 'showdown'
-import { IdParser } from '.'
-import { hash, lookupLegacyId } from './ids'
+import { IdParser } from '..'
+import { hash, lookupLegacyId } from '../ids'
 
 export const markdownRenderer = new Showdown.Converter({ tables: true })
 
