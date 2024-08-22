@@ -292,16 +292,10 @@ export class IronswornSettings {
 			} as any)
 		}
 	}
-}
 
-Hooks.once('ready', async () => {
-	await maybeMigrateToolbox()
-})
-
-async function maybeMigrateToolbox() {
-	const enableOnlyRulesets = async (
+	static async enableOnlyRulesets(
 		...enabled: Array<'classic' | 'delve' | 'starforged' | 'sundered-isles'>
-	) => {
+	) {
 		for (const ruleset of RULESETS) {
 			await game.settings.set(
 				'foundry-ironsworn',
@@ -310,7 +304,13 @@ async function maybeMigrateToolbox() {
 			)
 		}
 	}
+}
 
+Hooks.once('ready', async () => {
+	await maybeMigrateToolbox()
+})
+
+async function maybeMigrateToolbox() {
 	let toolboxSetting = IronswornSettings.get('toolbox')
 	if (toolboxSetting === 'migrated') return
 
@@ -321,15 +321,18 @@ async function maybeMigrateToolbox() {
 
 	switch (toolboxSetting) {
 		case 'ironsworn':
-			await enableOnlyRulesets('classic', 'delve')
+			await IronswornSettings.enableOnlyRulesets('classic', 'delve')
 			break
 
 		case 'starforged':
-			await enableOnlyRulesets('starforged')
+			await IronswornSettings.enableOnlyRulesets('starforged')
 			break
 
 		case 'sunderedisles':
-			await enableOnlyRulesets('starforged', 'sundered-isles')
+			await IronswornSettings.enableOnlyRulesets('starforged', 'sundered-isles')
 			break
 	}
+
+	// Only do this once
+	await game.settings.set('foundry-ironsworn', 'toolbox', 'migrated')
 }
