@@ -7,13 +7,6 @@ import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 import * as IronColor from '../features/ironcolor'
 import * as IronTheme from '../features/irontheme'
 
-async function closeAllMoveSheets() {
-	for (const actor of game.actors?.contents ?? []) {
-		await actor.moveSheet?.close()
-		actor.moveSheet = undefined
-	}
-}
-
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
 	namespace ClientSettings {
@@ -24,6 +17,12 @@ declare global {
 				| 'starforged'
 				| 'sunderedisles'
 				| 'sheet'
+				| 'migrated'
+
+			'foundry-ironsworn.ruleset-classic': boolean
+			'foundry-ironsworn.ruleset-delve': boolean
+			'foundry-ironsworn.ruleset-starforged': boolean
+			'foundry-ironsworn.ruleset-sundered-isles': boolean
 
 			'foundry-ironsworn.theme': keyof typeof IronTheme.THEMES
 			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor' | 'oceanic'
@@ -99,22 +98,30 @@ export class IronswornSettings {
 		})
 
 		// Toolbox/ruleset. this goes at the top because it's a "showstopper" if folks need it but can't find it.
+		// Legacy toolbox selection. This has been converted to individual rulesets below
 		game.settings.register('foundry-ironsworn', 'toolbox', {
-			name: 'IRONSWORN.Settings.Tools.Name',
-			hint: 'IRONSWORN.Settings.Tools.Hint',
 			scope: 'world',
-			config: true,
+			config: false,
 			type: String,
 			choices: {
 				sheet: 'IRONSWORN.Settings.Tools.Sheet',
 				ironsworn: 'IRONSWORN.Ironsworn',
 				starforged: 'IRONSWORN.Starforged',
-				sunderedisles: 'IRONSWORN.SunderedIsles'
+				sunderedisles: 'IRONSWORN.SunderedIsles',
+				migrated: 'MIGRATED'
 			},
-			default: 'sheet',
-			// eslint-disable-next-line @typescript-eslint/no-misused-promises
-			onChange: closeAllMoveSheets
+			default: 'migrated'
 		})
+
+		// Ruleset selection, one for each supported ruleset
+		for (const key of ['classic', 'delve', 'starforged', 'sundered-isles']) {
+			game.settings.register('foundry-ironsworn', `ruleset-${key}`, {
+				scope: 'world',
+				config: false,
+				type: Boolean,
+				default: key === 'classic'
+			})
+		}
 
 		// Appearance settings. They're impactful and not especially esoteric/technical, so they come next.
 		game.settings.register('foundry-ironsworn', 'theme', {
@@ -284,3 +291,43 @@ export class IronswornSettings {
 		}
 	}
 }
+
+async function enableOnlyRulesets(
+	...enabled: ('classic' | 'delve' | 'starforged' | 'sundered-isles')[]
+) {
+	for (const ruleset of ['classic', 'delve', 'starforged', 'sundered-isles']) {
+		await game.settings.set(
+			'foundry-ironsworn',
+			`ruleset-${ruleset}`,
+			enabled.includes(ruleset)
+		)
+	}
+}
+
+async function maybeMigrateToolbox() {
+	let toolboxSetting = IronswornSettings.get('toolbox')
+	if (toolboxSetting === 'migrated') return
+
+	if (toolboxSetting === 'sheet') {
+		// Process this as the sheet setting
+		toolboxSetting = IronswornSettings.defaultToolbox
+	}
+
+	switch (toolboxSetting) {
+		case 'ironsworn':
+			await enableOnlyRulesets('classic', 'delve')
+			break
+
+		case 'starforged':
+			await enableOnlyRulesets('starforged')
+			break
+
+		case 'sunderedisles':
+			await enableOnlyRulesets('starforged', 'sundered-isles')
+			break
+	}
+}
+
+Hooks.once('ready', async () => {
+	await maybeMigrateToolbox()
+})
