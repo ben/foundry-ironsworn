@@ -1,6 +1,7 @@
 {
 	"IRONSWORN": {
 		"Ironsworn": "Ironsworn",
+		"IronswornClassic": "Ironsworn Classic",
 		"Starforged": "Starforged",
 		"SunderedIsles": "Sundered Isles",
 		"RULESETS": {
@@ -369,6 +370,10 @@
 		"First Start": {
 			"Welcome": "Welcome",
 			"Intro": "Please choose which system you'll be primarily using. This sets sheet and move/oracle defaults; more detailed options are available in the settings.",
+			"SheetTitle": "Character Sheet",
+			"SheetHint": "Choose the default sheet to use for characters.",
+			"RulesetsTitle": "Rulesets",
+			"RulesetsHint": "Choose which books' content should be active in this world.",
 			"SettingTruths": "Setting Truths",
 			"SettingTruth": "Setting Truth"
 		},
