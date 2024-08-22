@@ -15,7 +15,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			resizable: false,
 			classes: ['ironsworn', 'sheet', 'first-start'],
 			width: 650,
-			height: 360
+			height: 560
 		} as FormApplicationOptions)
 	}
 
@@ -37,8 +37,16 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 	}
 
 	async getData(_options?: unknown) {
+		const rulesets = {}
+		for (const r of ['classic', 'delve', 'starforged', 'sundered-isles']) {
+			rulesets[r] = {
+				name: game.i18n.localize(`IRONSWORN.RULESETS.${r}`),
+				enabled: IronswornSettings.get(`ruleset-${r}`)
+			}
+		}
 		return {
 			...(await super.getData()),
+			rulesets: rulesets,
 			sunderedislesBeta: IronswornSettings.get('sundered-isles-beta')
 		}
 	}
