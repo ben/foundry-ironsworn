@@ -3,6 +3,13 @@
 		"Ironsworn": "Ironsworn",
 		"Starforged": "Starforged",
 		"SunderedIsles": "Sundered Isles",
+		"RULESETS": {
+			"Rulesets": "Rulesets",
+			"classic": "Ironsworn Classic",
+			"delve": "Ironsworn: Delve",
+			"starforged": "Starforged",
+			"sundered-isles": "Sundered Isles"
+		},
 		"YourWorldTruths": "Your World: Truths",
 		"TruthsAreOptional": "Creating truths is an optional step. You can always come back to this later in the settings.",
 		"TruthQuestStarter": "Quest Starter:",

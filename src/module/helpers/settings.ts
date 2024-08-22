@@ -7,6 +7,8 @@ import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 import * as IronColor from '../features/ironcolor'
 import * as IronTheme from '../features/irontheme'
 
+const RULESETS = ['classic', 'delve', 'starforged', 'sundered-isles']
+
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
 	namespace ClientSettings {
@@ -114,7 +116,7 @@ export class IronswornSettings {
 		})
 
 		// Ruleset selection, one for each supported ruleset
-		for (const key of ['classic', 'delve', 'starforged', 'sundered-isles']) {
+		for (const key of RULESETS) {
 			game.settings.register('foundry-ironsworn', `ruleset-${key}`, {
 				scope: 'world',
 				config: false,
@@ -273,7 +275,7 @@ export class IronswornSettings {
 	}
 
 	/**
-	 * Upddate all actors of the provided types with a single data object.
+	 * Update all actors of the provided types with a single data object.
 	 * @param data The data to pass to each actor's `update()` method.
 	 * @param actorTypes The subtypes of actor to apply the change to.
 	 */
@@ -292,19 +294,23 @@ export class IronswornSettings {
 	}
 }
 
-async function enableOnlyRulesets(
-	...enabled: ('classic' | 'delve' | 'starforged' | 'sundered-isles')[]
-) {
-	for (const ruleset of ['classic', 'delve', 'starforged', 'sundered-isles']) {
-		await game.settings.set(
-			'foundry-ironsworn',
-			`ruleset-${ruleset}`,
-			enabled.includes(ruleset)
-		)
-	}
-}
+Hooks.once('ready', async () => {
+	await maybeMigrateToolbox()
+})
 
 async function maybeMigrateToolbox() {
+	const enableOnlyRulesets = async (
+		...enabled: Array<'classic' | 'delve' | 'starforged' | 'sundered-isles'>
+	) => {
+		for (const ruleset of RULESETS) {
+			await game.settings.set(
+				'foundry-ironsworn',
+				`ruleset-${ruleset}`,
+				enabled.includes(ruleset)
+			)
+		}
+	}
+
 	let toolboxSetting = IronswornSettings.get('toolbox')
 	if (toolboxSetting === 'migrated') return
 
@@ -327,7 +333,3 @@ async function maybeMigrateToolbox() {
 			break
 	}
 }
-
-Hooks.once('ready', async () => {
-	await maybeMigrateToolbox()
-})
