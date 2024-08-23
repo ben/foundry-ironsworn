@@ -1,6 +1,5 @@
 import { IronswornSettings, RULESETS } from '../helpers/settings'
 import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
-import { WorldTruthsDialog } from './worldTruthsDialog'
 
 export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 	constructor() {
@@ -47,9 +46,9 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
 			if (IronswornSettings.get('show-first-start-dialog')) {
 				if (defaultSheet === 'StarforgedCharacterSheet') {
-					void new SFSettingTruthsDialogVue().render(true)
+					void new SFSettingTruthsDialogVue('starforged').render(true)
 				} else {
-					void new WorldTruthsDialog().render(true)
+					void new SFSettingTruthsDialogVue('classic').render(true)
 				}
 			}
 			await IronswornSettings.set('show-first-start-dialog', false)

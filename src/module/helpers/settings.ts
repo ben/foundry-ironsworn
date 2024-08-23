@@ -3,7 +3,6 @@ import { kebabCase, mapValues } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
-import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 import * as IronColor from '../features/ironcolor'
 import * as IronTheme from '../features/irontheme'
 
@@ -82,14 +81,7 @@ export class IronswornSettings {
 			type: FirstStartDialog,
 			restricted: true
 		})
-		game.settings.registerMenu('foundry-ironsworn', 'is-truths-dialog', {
-			name: 'IRONSWORN.Settings.ISTruthsDialog.Name',
-			label: 'IRONSWORN.Settings.ISTruthsDialog.Label',
-			icon: 'fas fa-feather',
-			hint: 'IRONSWORN.Settings.ISTruthsDialog.Hint',
-			type: WorldTruthsDialog,
-			restricted: true
-		})
+		// TODO: this is broken, set up three buttons for each ruleset
 		game.settings.registerMenu('foundry-ironsworn', 'sf-truths-dialog', {
 			name: 'IRONSWORN.Settings.SFTruthsDialog.Name',
 			label: 'IRONSWORN.Settings.SFTruthsDialog.Label',
