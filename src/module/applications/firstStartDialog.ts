@@ -39,9 +39,9 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			await game.settings.set('core', 'sheetClasses', setting)
 
 			// Update rulesets
-			const checkedRulesets: string[] = $.map(
+			const checkedRulesets: any[] = $.map(
 				html.find('input.ruleset:checked'),
-				(x) => x.value ?? ''
+				(x: any) => x.value ?? ''
 			)
 			await IronswornSettings.enableOnlyRulesets(...checkedRulesets)
 

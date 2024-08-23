@@ -17,7 +17,7 @@ declare global {
 			'foundry-ironsworn.toolbox':
 				| 'ironsworn'
 				| 'starforged'
-				| 'sundered_isles'
+				| 'sunderedisles'
 				| 'sheet'
 				| 'migrated'
 

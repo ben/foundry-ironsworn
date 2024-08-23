@@ -151,5 +151,7 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
 	margin: 0.5rem 0.25rem;
 	font-size: 1.1rem;
 	text-transform: uppercase;
+	border-width: 2px 0;
+	border-style: solid;
 }
 </style>
