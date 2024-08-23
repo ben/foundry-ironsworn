@@ -1,11 +1,16 @@
-import type { Starforged } from 'dataforged'
-import { starforged } from 'dataforged'
+import { DataswornTree } from '../datasworn2'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import sfTruthsVue from '../vue/sf-truths.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 
+const DS_TRUTH_COMPENDIUM_KEYS = {
+	classic: 'foundry-ironsworn.ironsworntruths',
+	starforged: 'foundry-ironsworn.starforgedtruths',
+	sundered_isles: 'foundry-ironsworn.sunderedislestruths'
+}
+
 export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
-	constructor() {
+	constructor(protected truthset: 'classic' | 'starforged' | 'sundered_isles') {
 		super({})
 	}
 
@@ -33,26 +38,26 @@ export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
 	getData(
 		options?: Partial<FormApplicationOptions> | undefined
 	): MaybePromise<object>
-	async getData(options?: unknown) {
-		const pack = game.packs.get('foundry-ironsworn.starforgedtruths')
+	async getData(_options?: unknown) {
+		const pack = game.packs.get(DS_TRUTH_COMPENDIUM_KEYS[this.truthset])
 		const documents = (await pack?.getDocuments()) as IronswornJournalEntry[]
 		if (!documents) throw new Error("can't load truth JEs")
 
-		// Avoid rollupjs's over-aggressive tree shaking
-		const dfTruths = ((starforged as any).default as Starforged)[
-			'Setting Truths'
-		]
-		const truths = dfTruths.map((df) => ({
-			df,
+		// Get the order from DS
+		const dsTruths = DataswornTree.get(this.truthset)?.truths
+		if (!dsTruths) throw new Error("can't find DS truths")
+
+		const truths = Object.values(dsTruths).map((ds) => ({
+			ds,
 			je: documents.find(
-				(x) => x.getFlag('foundry-ironsworn', 'dfid') === df.$id
+				(x) => x.getFlag('foundry-ironsworn', 'dsid') === ds._id
 			)
 		}))
 
 		return {
 			...(await super.getData()),
-			truths: truths.map(({ df, je }) => ({
-				df,
+			truths: truths.map(({ ds, je }) => ({
+				ds,
 				je: () => je // Prevent vue from wrapping this in Reactive
 			}))
 		}
