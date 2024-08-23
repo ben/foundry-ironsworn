@@ -26,33 +26,31 @@
 		</div>
 
 		<div class="item-list scrollable flexcol" :class="$style.list">
-			<OracleTreeNode
-				v-for="node in treeRoot.children"
-				:key="node.displayName"
-				ref="oracles"
-				:node="node"
-			/>
+			<section v-for="section in sections">
+				<h4>{{ section.displayName }}</h4>
+				<OracleTreeNode
+					v-for="node in section.children"
+					:key="node.displayName"
+					ref="oracles"
+					:node="node"
+				/>
+			</section>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { nextTick, provide, reactive, ref, watch } from 'vue'
+import { nextTick, reactive, ref, watch } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import { getOracleTreeWithCustomOracles } from '../../features/customoracles'
+import { getCustomizedOracleTrees } from '../../features/customoracles'
 import { OracleTable } from '../../roll-table/oracle-table'
 import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 
-const props = defineProps<{
-	toolset: 'ironsworn' | 'starforged' | 'sunderedisles'
-}>()
-provide('toolset', props.toolset)
+const trees = await getCustomizedOracleTrees()
+const sections = trees.map((t) => reactive<IOracleTreeNode>(t))
 
-const tempTreeRoot = await getOracleTreeWithCustomOracles(props.toolset)
-
-const treeRoot = reactive<IOracleTreeNode>(tempTreeRoot)
-type ReactiveNode = typeof treeRoot
+type ReactiveNode = (typeof sections)[0]
 
 const search = reactive({ q: '' })
 watch(search, ({ q }) => {

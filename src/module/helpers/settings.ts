@@ -293,6 +293,18 @@ export class IronswornSettings {
 		}
 	}
 
+	static get enabledRulesets(): Array<
+		'classic' | 'delve' | 'starforged' | 'sundered-isles'
+	> {
+		const ret: string[] = []
+		for (const ruleset of RULESETS) {
+			if (IronswornSettings.get(`ruleset-${ruleset}`)) {
+				ret.push(ruleset)
+			}
+		}
+		return ret
+	}
+
 	static async enableOnlyRulesets(
 		...enabled: Array<'classic' | 'delve' | 'starforged' | 'sundered-isles'>
 	) {
