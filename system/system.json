@@ -106,6 +106,8 @@
       "name": "Ironsworn: Delve",
       "color": "#444444",
       "packs": [
+        "ironsworndelvefoes",
+        "foeactorsdelve",
         "ironsworndelvemoves",
         "ironsworndelveoracles",
         "ironsworndelvethemes",
@@ -143,6 +145,13 @@
       "label": "Ironsworn Foe Actors",
       "system": "foundry-ironsworn",
       "path": "packs/foe-actors-is",
+      "type": "Actor"
+    },
+    {
+      "name": "foeactorsdelve",
+      "label": "Delve Foe Actors",
+      "system": "foundry-ironsworn",
+      "path": "packs/foe-actors-delve",
       "type": "Actor"
     },
     {
@@ -206,6 +215,13 @@
       "label": "Ironsworn Foes",
       "system": "foundry-ironsworn",
       "path": "packs/foes",
+      "type": "Item"
+    },
+    {
+      "name": "ironsworndelvefoes",
+      "label": "Delve Foes",
+      "system": "foundry-ironsworn",
+      "path": "packs/delve-foes",
       "type": "Item"
     },
     {

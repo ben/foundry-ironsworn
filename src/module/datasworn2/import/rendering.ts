@@ -38,6 +38,7 @@ const COMPENDIUM_KEY_MAP = {
 	},
 	npc: {
 		classic: 'ironswornfoes',
+		delve: 'delvefoes',
 		starforged: 'starforgedencounters',
 		sundered_isles: 'sunderedislesnpcs'
 	},

@@ -643,6 +643,7 @@ for (const collection of collections) {
 	console.log(collection)
 	const itemPackName = {
 		classic: 'foes',
+		delve: 'delve-foes',
 		starforged: 'starforged-encounters',
 		sundered_isles: 'sundered-isles-encounters'
 	}[collection]
@@ -653,6 +654,7 @@ for (const collection of collections) {
 
 	const actorPackName = {
 		classic: 'foe-actors-is',
+		delve: 'foe-actors-delve',
 		starforged: 'foe-actors-sf',
 		sundered_isles: 'foe-actors-si'
 	}[collection]
