@@ -1,4 +1,4 @@
-import { IronswornSettings } from '../helpers/settings'
+import { IronswornSettings, RULESETS } from '../helpers/settings'
 import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
 import { WorldTruthsDialog } from './worldTruthsDialog'
 
@@ -8,6 +8,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 	}
 
 	static get defaultOptions(): FormApplicationOptions {
+		// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.localize('IRONSWORN.First Start.Welcome'),
 			template: 'systems/foundry-ironsworn/templates/first-start.hbs',
@@ -15,7 +16,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			resizable: false,
 			classes: ['ironsworn', 'sheet', 'first-start'],
 			width: 650,
-			height: 360
+			height: 560
 		} as FormApplicationOptions)
 	}
 
@@ -25,75 +26,63 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
 	activateListeners(html: JQuery) {
 		super.activateListeners(html)
-		html.find('#select-ironsworn').on('click', async (ev) => {
-			await this._selectIronsworn.call(this, ev)
-		})
-		html.find('#select-starforged').on('click', async (ev) => {
-			await this._selectStarforged.call(this, ev)
-		})
-		html.find('#select-sunderedisles').on('click', async (ev) => {
-			await this._selectSunderedIsles.call(this, ev)
+		// eslint-disable-next-line @typescript-eslint/no-misused-promises
+		html.find('button.ironsworn__save').on('click', async (ev) => {
+			console.log(html)
+
+			// Update default character sheet
+			const defaultSheet = html.find('input[name=sheet]:checked').val()
+			const setting = game.settings.get('core', 'sheetClasses')
+			foundry.utils.mergeObject(setting, {
+				'Actor.character': `ironsworn.${defaultSheet}`
+			})
+			await game.settings.set('core', 'sheetClasses', setting)
+
+			// Update rulesets
+			const checkedRulesets: any[] = $.map(
+				html.find('input.ruleset:checked'),
+				(x: any) => x.value ?? ''
+			)
+			await IronswornSettings.enableOnlyRulesets(...checkedRulesets)
+
+			if (IronswornSettings.get('show-first-start-dialog')) {
+				if (defaultSheet === 'StarforgedCharacterSheet') {
+					void new SFSettingTruthsDialogVue().render(true)
+				} else {
+					void new WorldTruthsDialog().render(true)
+				}
+			}
+			await IronswornSettings.set('show-first-start-dialog', false)
 		})
 	}
 
 	async getData(_options?: unknown) {
+		const rulesets = {}
+		for (const r of RULESETS) {
+			rulesets[r] = {
+				id: r,
+				name: game.i18n.localize(`IRONSWORN.RULESETS.${r}`),
+				enabled: IronswornSettings.get(`ruleset-${r}`)
+			}
+		}
 		return {
 			...(await super.getData()),
-			sunderedislesBeta: IronswornSettings.get('sundered-isles-beta')
+			rulesets: rulesets,
+			sheetIsIronsworn: this.currentDefaultSheet === 'ironsworn',
+			sheetIsStarforged: this.currentDefaultSheet === 'starforged'
 		}
 	}
 
-	async _selectIronsworn(ev) {
-		ev.preventDefault()
-
-		// Character sheet
+	get currentDefaultSheet(): 'ironsworn' | 'starforged' {
 		const setting = game.settings.get('core', 'sheetClasses')
-		foundry.utils.mergeObject(setting, {
-			'Actor.character': 'ironsworn.IronswornCharacterSheetV2'
-		})
-		await game.settings.set('core', 'sheetClasses', setting)
-
-		// Truths
-		new WorldTruthsDialog().render(true)
-		game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
-		this.close()
-	}
-
-	async _selectStarforged(ev) {
-		ev.preventDefault()
-
-		// Character sheet
-		const setting = game.settings.get('core', 'sheetClasses')
-		foundry.utils.mergeObject(setting, {
-			'Actor.character': 'ironsworn.StarforgedCharacterSheet'
-		})
-		await game.settings.set('core', 'sheetClasses', setting)
-
-		// Truths
-		new SFSettingTruthsDialogVue().render(true)
-		game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
-		this.close()
-	}
-
-	async _selectSunderedIsles(ev) {
-		ev.preventDefault()
-
-		// Use the Starforged character sheet
-		const setting = game.settings.get('core', 'sheetClasses')
-		foundry.utils.mergeObject(setting, {
-			'Actor.character': 'ironsworn.StarforgedCharacterSheet'
-		})
-		await game.settings.set('core', 'sheetClasses', setting)
-
-		// TODO: Sundered Isles Truths
-		// new SFSettingTruthsDialogVue().render(true)
-		// game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
-
-		this.close()
+		if (setting.Actor?.character === 'ironsworn.StarforgedCharacterSheet') {
+			return 'starforged'
+		}
+		return 'ironsworn'
 	}
 
 	static async maybeShow() {
-		if (!IronswornSettings.get('prompt-world-truths')) {
+		if (!IronswornSettings.get('show-first-start-dialog')) {
 			return
 		}
 

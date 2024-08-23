@@ -30,11 +30,7 @@
 			</TabPanel>
 			<TabPanel tab-key="oracles" class="flexcol">
 				<Suspense>
-					<SfMovesheetoracles
-						ref="oraclesTab"
-						:class="$style.panelContent"
-						:toolset="data.toolset"
-					/>
+					<SfMovesheetoracles ref="oraclesTab" :class="$style.panelContent" />
 				</Suspense>
 			</TabPanel>
 		</TabPanels>

@@ -26,33 +26,34 @@
 		</div>
 
 		<div class="item-list scrollable flexcol" :class="$style.list">
-			<OracleTreeNode
-				v-for="node in treeRoot.children"
-				:key="node.displayName"
-				ref="oracles"
-				:node="node"
-			/>
+			<section v-for="section in sections" style="flex: 0">
+				<h4 v-if="showHeadings" :class="$style.h4">
+					{{ section.displayName }}
+				</h4>
+				<OracleTreeNode
+					v-for="node in section.children"
+					:key="node.displayName"
+					ref="oracles"
+					:node="node"
+				/>
+			</section>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { nextTick, provide, reactive, ref, watch } from 'vue'
+import { nextTick, reactive, ref, watch } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import { getOracleTreeWithCustomOracles } from '../../features/customoracles'
+import { getCustomizedOracleTrees } from '../../features/customoracles'
 import { OracleTable } from '../../roll-table/oracle-table'
 import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 
-const props = defineProps<{
-	toolset: 'ironsworn' | 'starforged' | 'sunderedisles'
-}>()
-provide('toolset', props.toolset)
+const trees = await getCustomizedOracleTrees()
+const sections = trees.map((t) => reactive<IOracleTreeNode>(t))
+const showHeadings = sections.length > 1
 
-const tempTreeRoot = await getOracleTreeWithCustomOracles(props.toolset)
-
-const treeRoot = reactive<IOracleTreeNode>(tempTreeRoot)
-type ReactiveNode = typeof treeRoot
+type ReactiveNode = (typeof sections)[0]
 
 const search = reactive({ q: '' })
 watch(search, ({ q }) => {
@@ -67,10 +68,8 @@ watch(search, ({ q }) => {
 		// Force expanded on all parent nodes leading to a match
 		const searchWalk = (node: ReactiveNode, parentMatch: boolean): boolean => {
 			// Match against current name (i18n) but also aliases in Dataforged
-			let thisMatch = re.test(node.displayName)
-			for (const alias of node.dataforgedNode?.Aliases ?? []) {
-				thisMatch ||= re.test(alias)
-			}
+			let thisMatch =
+				re.test(node.displayName) || re.test(node.dataswornNode?.canonical_name)
 
 			// Check for descendant matches
 			let childMatch = false
@@ -86,14 +85,18 @@ watch(search, ({ q }) => {
 			// Pass match up to ancestors
 			return thisMatch || childMatch
 		}
-		searchWalk(treeRoot, false)
+		for (const section of sections) {
+			searchWalk(section, false)
+		}
 	} else {
 		// Walk the tree setting all force flags to false
 		function resetflags(node) {
 			node.forceExpanded = node.forceHidden = false
 			for (const child of node.children) resetflags(child)
 		}
-		resetflags(treeRoot)
+		for (const section of sections) {
+			resetflags(section)
+		}
 	}
 })
 function clearSearch() {
@@ -142,5 +145,13 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
 
 .list {
 	padding: 0 var(--ironsworn-spacer-lg);
+}
+
+.h4 {
+	margin: 0.5rem 0.25rem;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	border-width: 2px 0;
+	border-style: solid;
 }
 </style>

@@ -17,6 +17,13 @@ import type { IronswornJournalPage } from '../journal/journal-entry-page'
 import { OracleTableResult } from './oracle-table-result'
 import type { ComputedTableType } from './roll-table-types'
 
+export const DS_ORACLE_COMPENDIUM_KEYS: Record<string, string> = {
+	classic: 'foundry-ironsworn.ironswornoracles',
+	delve: 'foundry-ironsworn.ironsworndelveoracles',
+	starforged: 'foundry-ironsworn.starforgedoracles',
+	sundered_isles: 'foundry-ironsworn.sunderedislesoracles'
+}
+
 /** Extends FVTT's default RollTable with functionality specific to this system. */
 export class OracleTable extends RollTable {
 	// missing from the LoFD types package
@@ -91,11 +98,29 @@ export class OracleTable extends RollTable {
 			delved?.find(matcher)) as StoredDocument<OracleTable> | undefined
 	}
 
-	static async getByDsId(
-		dsid: string
-	): Promise<StoredDocument<OracleTable> | undefined> {
+	static async getIndexEntryByDsId(dsid: string) {
+		const parsed = IdParser.parse(dsid)
+		const packId = DS_ORACLE_COMPENDIUM_KEYS[parsed.rulesPackageId]
+		const pack = game.packs.get(packId)
+		const index = await pack?.getIndex({ fields: ['flags'] })
+		return index?.find((entry) => {
+			return entry.flags?.['foundry-ironsworn']?.dsid === dsid
+		})
+	}
+
+	static async getByDsId(dsid: string) {
+		const parsed = IdParser.parse(dsid)
+		const packId = DS_ORACLE_COMPENDIUM_KEYS[parsed.rulesPackageId]
+		const pack = game.packs.get(packId)
+		if (!pack) return
+
 		const id = IdParser.get(dsid)
-		console.log(id)
+		const index = await pack?.getIndex({ fields: ['flags'] })
+		for (const entry of index.contents) {
+			if (entry.flags?.['foundry-ironsworn']?.dsid === dsid) {
+				return pack.getDocument(entry._id)
+			}
+		}
 	}
 
 	/**
@@ -112,6 +137,10 @@ export class OracleTable extends RollTable {
 		for await (const id of ids) {
 			let tbl: OracleTable | undefined
 			switch (true) {
+				case /^oracle_rollable:/i.test(id):
+					// A Datasworn 2 ID
+					tbl = await OracleTable.getByDsId(id)
+					break
 				case /^(ironsworn|starforged)\/oracles/i.test(id):
 					// A Dataforged ID
 					tbl = await OracleTable.getByDfId(id)

@@ -7,12 +7,7 @@ import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 import * as IronColor from '../features/ironcolor'
 import * as IronTheme from '../features/irontheme'
 
-async function closeAllMoveSheets() {
-	for (const actor of game.actors?.contents ?? []) {
-		await actor.moveSheet?.close()
-		actor.moveSheet = undefined
-	}
-}
+export const RULESETS = ['classic', 'delve', 'starforged', 'sundered_isles']
 
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
@@ -24,13 +19,19 @@ declare global {
 				| 'starforged'
 				| 'sunderedisles'
 				| 'sheet'
+				| 'migrated'
+
+			'foundry-ironsworn.ruleset-classic': boolean
+			'foundry-ironsworn.ruleset-delve': boolean
+			'foundry-ironsworn.ruleset-starforged': boolean
+			'foundry-ironsworn.ruleset-sundered_isles': boolean
 
 			'foundry-ironsworn.theme': keyof typeof IronTheme.THEMES
 			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor' | 'oceanic'
 			'foundry-ironsworn.progress-mark-animation': boolean
 
 			'foundry-ironsworn.log-changes': boolean
-			'foundry-ironsworn.prompt-world-truths': boolean
+			'foundry-ironsworn.show-first-start-dialog': boolean
 
 			'foundry-ironsworn.shared-supply': boolean
 
@@ -99,22 +100,30 @@ export class IronswornSettings {
 		})
 
 		// Toolbox/ruleset. this goes at the top because it's a "showstopper" if folks need it but can't find it.
+		// Legacy toolbox selection. This has been converted to individual rulesets below
 		game.settings.register('foundry-ironsworn', 'toolbox', {
-			name: 'IRONSWORN.Settings.Tools.Name',
-			hint: 'IRONSWORN.Settings.Tools.Hint',
 			scope: 'world',
-			config: true,
+			config: false,
 			type: String,
 			choices: {
 				sheet: 'IRONSWORN.Settings.Tools.Sheet',
 				ironsworn: 'IRONSWORN.Ironsworn',
 				starforged: 'IRONSWORN.Starforged',
-				sunderedisles: 'IRONSWORN.SunderedIsles'
+				sunderedisles: 'IRONSWORN.SunderedIsles',
+				migrated: 'MIGRATED'
 			},
-			default: 'sheet',
-			// eslint-disable-next-line @typescript-eslint/no-misused-promises
-			onChange: closeAllMoveSheets
+			default: 'migrated'
 		})
+
+		// Ruleset selection, one for each supported ruleset
+		for (const key of RULESETS) {
+			game.settings.register('foundry-ironsworn', `ruleset-${key}`, {
+				scope: 'world',
+				config: false,
+				type: Boolean,
+				default: key === 'classic'
+			})
+		}
 
 		// Appearance settings. They're impactful and not especially esoteric/technical, so they come next.
 		game.settings.register('foundry-ironsworn', 'theme', {
@@ -161,7 +170,7 @@ export class IronswornSettings {
 			type: Boolean,
 			default: true
 		})
-		game.settings.register('foundry-ironsworn', 'prompt-world-truths', {
+		game.settings.register('foundry-ironsworn', 'show-first-start-dialog', {
 			name: 'IRONSWORN.Settings.PromptTruths.Name',
 			hint: 'IRONSWORN.Settings.PromptTruths.Hint',
 			scope: 'world',
@@ -248,6 +257,13 @@ export class IronswornSettings {
 		return game.settings.get('foundry-ironsworn', key)
 	}
 
+	static async set<K extends string>(
+		key: K,
+		value: ClientSettings.Values[`foundry-ironsworn.${K}`]
+	) {
+		return await game.settings.set('foundry-ironsworn', key, value)
+	}
+
 	static get defaultToolbox(): 'ironsworn' | 'starforged' | 'sunderedisles' {
 		const setting = this.get('toolbox')
 		if (setting === 'sheet') {
@@ -266,7 +282,7 @@ export class IronswornSettings {
 	}
 
 	/**
-	 * Upddate all actors of the provided types with a single data object.
+	 * Update all actors of the provided types with a single data object.
 	 * @param data The data to pass to each actor's `update()` method.
 	 * @param actorTypes The subtypes of actor to apply the change to.
 	 */
@@ -283,4 +299,59 @@ export class IronswornSettings {
 			} as any)
 		}
 	}
+
+	static get enabledRulesets(): Array<
+		'classic' | 'delve' | 'starforged' | 'sundered_isles'
+	> {
+		const ret: string[] = []
+		for (const ruleset of RULESETS) {
+			if (IronswornSettings.get(`ruleset-${ruleset}`)) {
+				ret.push(ruleset)
+			}
+		}
+		return ret
+	}
+
+	static async enableOnlyRulesets(
+		...enabled: Array<'classic' | 'delve' | 'starforged' | 'sundered_isles'>
+	) {
+		for (const ruleset of RULESETS) {
+			await game.settings.set(
+				'foundry-ironsworn',
+				`ruleset-${ruleset}`,
+				enabled.includes(ruleset)
+			)
+		}
+	}
+}
+
+Hooks.once('ready', async () => {
+	await maybeMigrateToolbox()
+})
+
+async function maybeMigrateToolbox() {
+	let toolboxSetting = IronswornSettings.get('toolbox')
+	if (toolboxSetting === 'migrated') return
+
+	if (toolboxSetting === 'sheet') {
+		// Process this as the sheet setting
+		toolboxSetting = IronswornSettings.defaultToolbox
+	}
+
+	switch (toolboxSetting) {
+		case 'ironsworn':
+			await IronswornSettings.enableOnlyRulesets('classic', 'delve')
+			break
+
+		case 'starforged':
+			await IronswornSettings.enableOnlyRulesets('starforged')
+			break
+
+		case 'sunderedisles':
+			await IronswornSettings.enableOnlyRulesets('starforged', 'sundered_isles')
+			break
+	}
+
+	// Only do this once
+	await game.settings.set('foundry-ironsworn', 'toolbox', 'migrated')
 }
