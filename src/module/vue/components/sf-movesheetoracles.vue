@@ -26,8 +26,8 @@
 		</div>
 
 		<div class="item-list scrollable flexcol" :class="$style.list">
-			<section v-for="section in sections">
-				<h4>{{ section.displayName }}</h4>
+			<section v-for="section in sections" style="flex: 0">
+				<h4 :class="$style.h4">{{ section.displayName }}</h4>
 				<OracleTreeNode
 					v-for="node in section.children"
 					:key="node.displayName"
@@ -65,10 +65,8 @@ watch(search, ({ q }) => {
 		// Force expanded on all parent nodes leading to a match
 		const searchWalk = (node: ReactiveNode, parentMatch: boolean): boolean => {
 			// Match against current name (i18n) but also aliases in Dataforged
-			let thisMatch = re.test(node.displayName)
-			for (const alias of node.dataforgedNode?.Aliases ?? []) {
-				thisMatch ||= re.test(alias)
-			}
+			let thisMatch =
+				re.test(node.displayName) || re.test(node.dataswornNode?.canonical_name)
 
 			// Check for descendant matches
 			let childMatch = false
@@ -84,14 +82,18 @@ watch(search, ({ q }) => {
 			// Pass match up to ancestors
 			return thisMatch || childMatch
 		}
-		searchWalk(treeRoot, false)
+		for (const section of sections) {
+			searchWalk(section, false)
+		}
 	} else {
 		// Walk the tree setting all force flags to false
 		function resetflags(node) {
 			node.forceExpanded = node.forceHidden = false
 			for (const child of node.children) resetflags(child)
 		}
-		resetflags(treeRoot)
+		for (const section of sections) {
+			resetflags(section)
+		}
 	}
 })
 function clearSearch() {
@@ -140,5 +142,11 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
 
 .list {
 	padding: 0 var(--ironsworn-spacer-lg);
+}
+
+.h4 {
+	margin: 0.5rem 0.25rem;
+	font-size: 1.1rem;
+	text-transform: uppercase;
 }
 </style>
