@@ -364,6 +364,8 @@
 			"SheetHint": "Choose the default sheet to use for characters.",
 			"RulesetsTitle": "Rulesets",
 			"RulesetsHint": "Choose which books' content should be active in this world.",
+			"TruthsTitle": "Truths",
+			"TruthsHint": "Launch a dialog to generate setting truths.",
 			"SettingTruths": "Setting Truths",
 			"SettingTruth": "Setting Truth"
 		},

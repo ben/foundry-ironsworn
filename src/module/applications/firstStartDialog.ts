@@ -15,7 +15,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			resizable: false,
 			classes: ['ironsworn', 'sheet', 'first-start'],
 			width: 650,
-			height: 560
+			height: 685
 		} as FormApplicationOptions)
 	}
 
