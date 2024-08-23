@@ -44,6 +44,13 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			)
 			await IronswornSettings.enableOnlyRulesets(...checkedRulesets)
 
+			// Launch truths dialog
+			const truthsFlavor = html.find('input[name=truths]:checked').val()
+			console.log({ truthsFlavor })
+			if (truthsFlavor) {
+				void new SFSettingTruthsDialogVue(truthsFlavor).render(true)
+			}
+
 			if (IronswornSettings.get('show-first-start-dialog')) {
 				if (defaultSheet === 'StarforgedCharacterSheet') {
 					void new SFSettingTruthsDialogVue('starforged').render(true)
