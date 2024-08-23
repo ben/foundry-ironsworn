@@ -54,6 +54,7 @@ export class IronswornActor<
 		return undefined
 	}
 
+	// TODO: retire this altogether
 	get toolset(): 'ironsworn' | 'starforged' | 'sunderedisles' {
 		// If set to "match sheet", check for this character's sheet
 		const toolbox = IronswornSettings.get('toolbox')
