@@ -81,15 +81,6 @@ export class IronswornSettings {
 			type: FirstStartDialog,
 			restricted: true
 		})
-		// TODO: this is broken, set up three buttons for each ruleset
-		game.settings.registerMenu('foundry-ironsworn', 'sf-truths-dialog', {
-			name: 'IRONSWORN.Settings.SFTruthsDialog.Name',
-			label: 'IRONSWORN.Settings.SFTruthsDialog.Label',
-			icon: 'fas fa-feather',
-			hint: 'IRONSWORN.Settings.SFTruthsDialog.Hint',
-			type: SFSettingTruthsDialogVue,
-			restricted: true
-		})
 
 		// Toolbox/ruleset. this goes at the top because it's a "showstopper" if folks need it but can't find it.
 		// Legacy toolbox selection. This has been converted to individual rulesets below

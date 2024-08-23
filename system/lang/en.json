@@ -338,17 +338,7 @@
 			"ConfigurationDialog": {
 				"Label": "Configuration Dialog",
 				"Name": "Configuration Dialog",
-				"Hint": "Choose between Ironsworn and Starforged UI elements."
-			},
-			"ISTruthsDialog": {
-				"Label": "Ironsworn Truths",
-				"Name": "Ironsworn Truths",
-				"Hint": "Open the dialog to generate your Ironsworn setting truths."
-			},
-			"SFTruthsDialog": {
-				"Label": "Starforged Truths",
-				"Name": "Starforged Truths",
-				"Hint": "Open the dialog to generate your Starforged setting truths."
+				"Hint": "Choose between Ironsworn and Starforged UI elements, and generate setting truths."
 			},
 			"SunderedIslesBeta": {
 				"Name": "Sundered Isles (beta)",
