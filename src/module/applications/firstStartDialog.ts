@@ -1,4 +1,4 @@
-import { IronswornSettings } from '../helpers/settings'
+import { IronswornSettings, RULESETS } from '../helpers/settings'
 import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
 import { WorldTruthsDialog } from './worldTruthsDialog'
 
@@ -50,7 +50,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
 	async getData(_options?: unknown) {
 		const rulesets = {}
-		for (const r of ['classic', 'delve', 'starforged', 'sundered-isles']) {
+		for (const r of RULESETS) {
 			rulesets[r] = {
 				id: r,
 				name: game.i18n.localize(`IRONSWORN.RULESETS.${r}`),

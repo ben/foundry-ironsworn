@@ -7,7 +7,7 @@ import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 import * as IronColor from '../features/ironcolor'
 import * as IronTheme from '../features/irontheme'
 
-const RULESETS = ['classic', 'delve', 'starforged', 'sundered-isles']
+export const RULESETS = ['classic', 'delve', 'starforged', 'sundered_isles']
 
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
@@ -17,14 +17,14 @@ declare global {
 			'foundry-ironsworn.toolbox':
 				| 'ironsworn'
 				| 'starforged'
-				| 'sundered-isles'
+				| 'sundered_isles'
 				| 'sheet'
 				| 'migrated'
 
 			'foundry-ironsworn.ruleset-classic': boolean
 			'foundry-ironsworn.ruleset-delve': boolean
 			'foundry-ironsworn.ruleset-starforged': boolean
-			'foundry-ironsworn.ruleset-sundered-isles': boolean
+			'foundry-ironsworn.ruleset-sundered_isles': boolean
 
 			'foundry-ironsworn.theme': keyof typeof IronTheme.THEMES
 			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor' | 'oceanic'
@@ -294,20 +294,19 @@ export class IronswornSettings {
 	}
 
 	static get enabledRulesets(): Array<
-		'classic' | 'delve' | 'starforged' | 'sundered-isles'
+		'classic' | 'delve' | 'starforged' | 'sundered_isles'
 	> {
 		const ret: string[] = []
 		for (const ruleset of RULESETS) {
 			if (IronswornSettings.get(`ruleset-${ruleset}`)) {
-				// "sundered-isles" -> "sundered_isles" for datasworn
-				ret.push(ruleset.replace('-', '_'))
+				ret.push(ruleset)
 			}
 		}
 		return ret
 	}
 
 	static async enableOnlyRulesets(
-		...enabled: Array<'classic' | 'delve' | 'starforged' | 'sundered-isles'>
+		...enabled: Array<'classic' | 'delve' | 'starforged' | 'sundered_isles'>
 	) {
 		for (const ruleset of RULESETS) {
 			await game.settings.set(
@@ -342,7 +341,7 @@ async function maybeMigrateToolbox() {
 			break
 
 		case 'sunderedisles':
-			await IronswornSettings.enableOnlyRulesets('starforged', 'sundered-isles')
+			await IronswornSettings.enableOnlyRulesets('starforged', 'sundered_isles')
 			break
 	}
 

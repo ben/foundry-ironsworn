@@ -146,7 +146,7 @@ export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfid: string) {
 	return ret
 }
 
-type OracleCategory = 'classic' | 'delve' | 'starforged' | 'sundered-isles'
+type OracleCategory = 'classic' | 'delve' | 'starforged' | 'sundered_isles'
 
 const ORACLES: Record<string, IOracleTreeNode> = {}
 
