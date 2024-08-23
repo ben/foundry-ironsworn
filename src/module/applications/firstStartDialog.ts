@@ -1,3 +1,4 @@
+import { registerDefaultOracleTrees } from '../features/customoracles'
 import { IronswornSettings, RULESETS } from '../helpers/settings'
 import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
 
@@ -47,6 +48,9 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 				'character-hold',
 				checkedRulesets.includes('sundered_isles')
 			)
+
+			// Update the live content
+			void registerDefaultOracleTrees()
 
 			// Launch truths dialog
 			const truthsFlavor = html.find('input[name=truths]:checked').val()
