@@ -42,6 +42,12 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			)
 			await IronswornSettings.enableOnlyRulesets(...checkedRulesets)
 
+			// If you chose SI, probably you want 'hold' enabled
+			await IronswornSettings.set(
+				'character-hold',
+				checkedRulesets.includes('sundered_isles')
+			)
+
 			// Launch truths dialog
 			const truthsFlavor = html.find('input[name=truths]:checked').val()
 			if (truthsFlavor) {
