@@ -21,7 +21,8 @@ export const lookupLegacyId = (dsid: string): string => {
 		!legacyId &&
 		!dsid.includes('sundered_isles') &&
 		!dsid.includes('oracle_rollable.row:') &&
-		!dsid.includes('truth:classic')
+		!dsid.includes('truth:classic') &&
+		!dsid.startsWith('delve_site')
 	) {
 		console.log('!!! No legacy ID for', dsid)
 	}
