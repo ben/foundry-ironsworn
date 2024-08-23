@@ -2,6 +2,11 @@
 
 ## Next Release
 
+This is a major update that includes Sundered Isles content, but also brings along a host of changes:
+
+- Selection of content happens in the first-start dialog, which will show the first time you open your world after this update.
+- For module/macro authors: registration of custom oracle content has a name change: `'ironsworn'` has changed to `'classic'`, and there's a new `'sundered_isles'` tree.
+
 ## 1.23.7
 
 - Fix Cinder and Wraith dice with dice-so-nice 5 ([#1009](https://github.com/ben/foundry-ironsworn/pull/1009))
