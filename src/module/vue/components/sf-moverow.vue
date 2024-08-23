@@ -149,6 +149,7 @@ const toggleTooltip = ref($item.value.system.Trigger?.Text)
 
 const moveId = computed(() => props.move.moveItem().id)
 
+// TODO: switch this to use datasworn data
 const oracleIds = uniq([
 	...($item?.value.system.Oracles ?? []),
 	...(props.move.dataforgedMove?.Oracles ?? [])

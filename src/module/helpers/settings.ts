@@ -31,7 +31,7 @@ declare global {
 			'foundry-ironsworn.progress-mark-animation': boolean
 
 			'foundry-ironsworn.log-changes': boolean
-			'foundry-ironsworn.prompt-world-truths': boolean
+			'foundry-ironsworn.show-first-start-dialog': boolean
 
 			'foundry-ironsworn.shared-supply': boolean
 
@@ -170,7 +170,7 @@ export class IronswornSettings {
 			type: Boolean,
 			default: true
 		})
-		game.settings.register('foundry-ironsworn', 'prompt-world-truths', {
+		game.settings.register('foundry-ironsworn', 'show-first-start-dialog', {
 			name: 'IRONSWORN.Settings.PromptTruths.Name',
 			hint: 'IRONSWORN.Settings.PromptTruths.Hint',
 			scope: 'world',
@@ -255,6 +255,13 @@ export class IronswornSettings {
 		key: K
 	): ClientSettings.Values[`foundry-ironsworn.${K}`] {
 		return game.settings.get('foundry-ironsworn', key)
+	}
+
+	static async set<K extends string>(
+		key: K,
+		value: ClientSettings.Values[`foundry-ironsworn.${K}`]
+	) {
+		return await game.settings.set('foundry-ironsworn', key, value)
 	}
 
 	static get defaultToolbox(): 'ironsworn' | 'starforged' | 'sunderedisles' {

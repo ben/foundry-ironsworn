@@ -44,7 +44,15 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 				(x) => x.value ?? ''
 			)
 			await IronswornSettings.enableOnlyRulesets(...checkedRulesets)
-			return false
+
+			if (IronswornSettings.get('show-first-start-dialog')) {
+				if (defaultSheet === 'StarforgedCharacterSheet') {
+					void new SFSettingTruthsDialogVue().render(true)
+				} else {
+					void new WorldTruthsDialog().render(true)
+				}
+			}
+			await IronswornSettings.set('show-first-start-dialog', false)
 		})
 	}
 
@@ -74,7 +82,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 	}
 
 	static async maybeShow() {
-		if (!IronswornSettings.get('prompt-world-truths')) {
+		if (!IronswornSettings.get('show-first-start-dialog')) {
 			return
 		}
 

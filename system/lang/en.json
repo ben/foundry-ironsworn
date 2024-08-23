@@ -333,7 +333,7 @@
 			},
 			"PromptTruths": {
 				"Name": "Configuration Dialog on Start",
-				"Hint": "Open the above dialog on the next reload."
+				"Hint": "Open the configuration dialog on the next reload."
 			},
 			"ConfigurationDialog": {
 				"Label": "Configuration Dialog",
