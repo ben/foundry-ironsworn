@@ -6,7 +6,7 @@ import type { OracleTable } from '../roll-table/oracle-table'
 
 const ONE_MINUTE_IN_MS = 60 * 1000
 
-type PackContents = Array<
+export type PackContents = Array<
 	StoredDocument<
 		| Scene
 		| IronswornActor

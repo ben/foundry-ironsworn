@@ -589,7 +589,7 @@ for (const collection of collections) {
 						txt.replace(/{{table>.*?}}/, '(roll below)').trim()
 					return {
 						type: 'truth',
-						name: o.summary ?? '',
+						name: o.summary ?? o._id,
 						system: {
 							Subtable: firstOracle?.rows?.map((row) => ({
 								dfid: LegacyToDataswornIds[row._id],
@@ -605,6 +605,7 @@ for (const collection of collections) {
 							Description: renderLinksInStr(
 								stripTableEmbeds(o.description ?? '')
 							),
+							Summary: renderLinksInStr(o.summary ?? ''),
 							Quest: renderLinksInStr(o.quest_starter),
 							'Roll template': {
 								Description: o.description

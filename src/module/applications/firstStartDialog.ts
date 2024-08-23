@@ -1,6 +1,6 @@
+import { registerDefaultOracleTrees } from '../features/customoracles'
 import { IronswornSettings, RULESETS } from '../helpers/settings'
 import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
-import { WorldTruthsDialog } from './worldTruthsDialog'
 
 export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 	constructor() {
@@ -16,7 +16,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			resizable: false,
 			classes: ['ironsworn', 'sheet', 'first-start'],
 			width: 650,
-			height: 560
+			height: 685
 		} as FormApplicationOptions)
 	}
 
@@ -28,8 +28,6 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 		super.activateListeners(html)
 		// eslint-disable-next-line @typescript-eslint/no-misused-promises
 		html.find('button.ironsworn__save').on('click', async (ev) => {
-			console.log(html)
-
 			// Update default character sheet
 			const defaultSheet = html.find('input[name=sheet]:checked').val()
 			const setting = game.settings.get('core', 'sheetClasses')
@@ -45,11 +43,27 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			)
 			await IronswornSettings.enableOnlyRulesets(...checkedRulesets)
 
+			// If you chose SI, probably you want 'hold' enabled
+			await IronswornSettings.set(
+				'character-hold',
+				checkedRulesets.includes('sundered_isles')
+			)
+
+			// Update the live content
+			void registerDefaultOracleTrees()
+
+			// Launch truths dialog
+			const truthsFlavor = html.find('input[name=truths]:checked').val()
+			if (truthsFlavor) {
+				// @ts-expect-error coercing this string to a DataswornRulesetKey
+				void new SFSettingTruthsDialogVue(truthsFlavor).render(true)
+			}
+
 			if (IronswornSettings.get('show-first-start-dialog')) {
 				if (defaultSheet === 'StarforgedCharacterSheet') {
-					void new SFSettingTruthsDialogVue().render(true)
+					void new SFSettingTruthsDialogVue('starforged').render(true)
 				} else {
-					void new WorldTruthsDialog().render(true)
+					void new SFSettingTruthsDialogVue('classic').render(true)
 				}
 			}
 			await IronswornSettings.set('show-first-start-dialog', false)

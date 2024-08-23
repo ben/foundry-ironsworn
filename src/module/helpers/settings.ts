@@ -3,11 +3,20 @@ import { kebabCase, mapValues } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
-import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 import * as IronColor from '../features/ironcolor'
 import * as IronTheme from '../features/irontheme'
 
-export const RULESETS = ['classic', 'delve', 'starforged', 'sundered_isles']
+export type DataswornRulesetKey =
+	| 'classic'
+	| 'delve'
+	| 'starforged'
+	| 'sundered_isles'
+export const RULESETS: DataswornRulesetKey[] = [
+	'classic',
+	'delve',
+	'starforged',
+	'sundered_isles'
+]
 
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
@@ -80,22 +89,6 @@ export class IronswornSettings {
 			icon: 'fas fa-cog',
 			hint: 'IRONSWORN.Settings.ConfigurationDialog.Hint',
 			type: FirstStartDialog,
-			restricted: true
-		})
-		game.settings.registerMenu('foundry-ironsworn', 'is-truths-dialog', {
-			name: 'IRONSWORN.Settings.ISTruthsDialog.Name',
-			label: 'IRONSWORN.Settings.ISTruthsDialog.Label',
-			icon: 'fas fa-feather',
-			hint: 'IRONSWORN.Settings.ISTruthsDialog.Hint',
-			type: WorldTruthsDialog,
-			restricted: true
-		})
-		game.settings.registerMenu('foundry-ironsworn', 'sf-truths-dialog', {
-			name: 'IRONSWORN.Settings.SFTruthsDialog.Name',
-			label: 'IRONSWORN.Settings.SFTruthsDialog.Label',
-			icon: 'fas fa-feather',
-			hint: 'IRONSWORN.Settings.SFTruthsDialog.Hint',
-			type: SFSettingTruthsDialogVue,
 			restricted: true
 		})
 
@@ -266,6 +259,7 @@ export class IronswornSettings {
 
 	static get defaultToolbox(): 'ironsworn' | 'starforged' | 'sunderedisles' {
 		const setting = this.get('toolbox')
+		if (setting === 'migrated') return 'ironsworn'
 		if (setting === 'sheet') {
 			const sheetClasses = game.settings.get('core', 'sheetClasses')
 			const defaultCharacterSheet = sheetClasses.Actor?.character
@@ -300,10 +294,8 @@ export class IronswornSettings {
 		}
 	}
 
-	static get enabledRulesets(): Array<
-		'classic' | 'delve' | 'starforged' | 'sundered_isles'
-	> {
-		const ret: string[] = []
+	static get enabledRulesets(): DataswornRulesetKey[] {
+		const ret: DataswornRulesetKey[] = []
 		for (const ruleset of RULESETS) {
 			if (IronswornSettings.get(`ruleset-${ruleset}`)) {
 				ret.push(ruleset)
@@ -312,9 +304,7 @@ export class IronswornSettings {
 		return ret
 	}
 
-	static async enableOnlyRulesets(
-		...enabled: Array<'classic' | 'delve' | 'starforged' | 'sundered_isles'>
-	) {
+	static async enableOnlyRulesets(...enabled: DataswornRulesetKey[]) {
 		for (const ruleset of RULESETS) {
 			await game.settings.set(
 				'foundry-ironsworn',

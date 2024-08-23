@@ -8,7 +8,9 @@ import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
 import { IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
-	getOracleTreeWithCustomOracles
+	getCustomizedOracleTrees,
+	getOracleTreeWithCustomOracles,
+	IOracleTreeNode
 } from '../features/customoracles'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
@@ -104,23 +106,29 @@ export class OracleTable extends RollTable {
 		const pack = game.packs.get(packId)
 		const index = await pack?.getIndex({ fields: ['flags'] })
 		return index?.find((entry) => {
+			// @ts-expect-error flags are untyped
 			return entry.flags?.['foundry-ironsworn']?.dsid === dsid
 		})
 	}
 
-	static async getByDsId(dsid: string) {
+	static async getByDsId(
+		dsid: string
+	): Promise<StoredDocument<OracleTable> | undefined> {
 		const parsed = IdParser.parse(dsid)
 		const packId = DS_ORACLE_COMPENDIUM_KEYS[parsed.rulesPackageId]
 		const pack = game.packs.get(packId)
 		if (!pack) return
 
-		const id = IdParser.get(dsid)
 		const index = await pack?.getIndex({ fields: ['flags'] })
 		for (const entry of index.contents) {
+			// @ts-expect-error flags are untyped
 			if (entry.flags?.['foundry-ironsworn']?.dsid === dsid) {
-				return pack.getDocument(entry._id)
+				return pack.getDocument(entry._id) as any as
+					| StoredDocument<OracleTable>
+					| undefined
 			}
 		}
+		return undefined
 	}
 
 	/**
@@ -177,16 +185,15 @@ export class OracleTable extends RollTable {
 	/**
 	 * @returns a string representing the path this table in the Ironsworn oracle tree (not including this table) */
 	async getDfPath() {
-		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
-		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
-
-		const pathElements =
-			findPathToNodeByTableUuid(starforgedRoot, this.uuid) ??
-			findPathToNodeByTableUuid(ironswornRoot, this.uuid)
+		const trees = await getCustomizedOracleTrees()
+		let pathElements: IOracleTreeNode[] | undefined
+		for (const tree of trees) {
+			pathElements = findPathToNodeByTableUuid(tree, this.uuid)
+			if (pathElements?.length > 0) break
+		}
+		if (pathElements === undefined || pathElements?.length < 1) return ''
 
 		const pathNames = pathElements.map((x) => x.displayName)
-		// root node (0) has no display name
-		pathNames.shift()
 		// last node is *this* node
 		pathNames.pop()
 

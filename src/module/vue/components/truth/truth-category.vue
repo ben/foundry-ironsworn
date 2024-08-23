@@ -20,11 +20,12 @@
 			@change="customValueChange"
 		/>
 
-		<div
+		<RenderedText
 			v-for="(page, i) in nonTruthPages"
 			:key="`nonTruthPage${i}`"
 			class="nogrow"
-			v-html="page.text.content"
+			element="div"
+			:content="page.text.content"
 		/>
 	</div>
 </template>
@@ -37,6 +38,7 @@ import { enrichMarkdown } from '../../vue-plugin'
 import IronBtn from '../buttons/iron-btn.vue'
 import CustomTruth from './custom-truth.vue'
 import TruthSelectable from './truth-selectable.vue'
+import RenderedText from 'component:rendered-text.vue'
 
 const props = defineProps<{
 	je: () => IronswornJournalEntry

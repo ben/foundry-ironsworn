@@ -2,7 +2,7 @@ import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { starforged, ironsworn } from 'dataforged'
+import { starforged } from 'dataforged'
 import type { Emitter, EventType } from 'mitt'
 import Mitt from 'mitt'
 import {
@@ -13,7 +13,6 @@ import {
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTruthsDialog'
-import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { OracleWindow } from './module/applications/oracle-window'
 import {
 	getOracleTree,
@@ -39,7 +38,6 @@ export interface IronswornConfig {
 	applications: {
 		// Dialogs
 		FirstStartDialog: typeof FirstStartDialog
-		ISSettingTruthsDialog: typeof WorldTruthsDialog
 		SFSettingTruthsDialog: typeof SFSettingTruthsDialogVue
 		AssetCompendiumBrowser: typeof AssetCompendiumBrowser
 		OracleWindow: typeof OracleWindow
@@ -75,7 +73,6 @@ export const IRONSWORN: IronswornConfig = {
 
 	applications: {
 		FirstStartDialog,
-		ISSettingTruthsDialog: WorldTruthsDialog,
 		SFSettingTruthsDialog: SFSettingTruthsDialogVue,
 		AssetCompendiumBrowser,
 		OracleWindow,

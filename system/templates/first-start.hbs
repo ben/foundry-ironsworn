@@ -10,6 +10,7 @@
 	.first-start-content h2 {
 		border: none;
 		margin-top: 1rem;
+		margin-bottom: 0;
 	}
 
 	.first-start-content h3 {
@@ -39,7 +40,8 @@
 	<div class='boxgroup'>
 		<div class='flexrow boxrow'>
 			<div class='box flexcol' style='padding: 5px'>
-				<label class='flexcol' style='width: 100%;'>
+				<label class='flexcol' style='width: 100%;'
+							data-tooltip="{{localize 'IRONSWORN.First Start.IronswornSheetTooltip'}}">
 					<img src='systems/foundry-ironsworn/assets/welcome/ironsworn-sheet.jpg'
 							 alt='Ironsworn-style sheet' />
 					<p>
@@ -50,7 +52,8 @@
 				</label>
 			</div>
 			<div class='box flexcol' style='padding: 5px'>
-				<label class='flexcol' style='width: 100%;'>
+				<label class='flexcol' style='width: 100%;'
+							data-tooltip="{{localize 'IRONSWORN.First Start.StarforgedSheetTooltip'}}">
 					<img src='systems/foundry-ironsworn/assets/welcome/starforged-sheet.jpg'
 							 alt='Starforged-style sheet' />
 					<p>
@@ -89,6 +92,41 @@
 			</div>
 		</div>
 	</div>
+
+	<div class='flexcol'>
+		<h2>{{localize 'IRONSWORN.First Start.TruthsTitle'}}</h2>
+		<p>{{localize 'IRONSWORN.First Start.TruthsHint'}}</p>
+	</div>
+
+	<div class='boxgroup'>
+		<div class='flexrow boxrow'>
+			<div class='box flexcol'>
+				<label class='flexcol' style='width: 100%;'>
+					<p>
+						<input type='radio' name='truths' value='classic' />
+						{{localize 'IRONSWORN.Ironsworn'}}
+					</p>
+				</label>
+			</div>
+			<div class='box flexcol'>
+				<label class='flexcol' style='width: 100%;'>
+					<p>
+						<input type='radio' name='truths' value='starforged' />
+						{{localize 'IRONSWORN.Starforged'}}
+					</p>
+				</label>
+			</div>
+			<div class='box flexcol'>
+				<label class='flexcol' style='width: 100%;'>
+					<p>
+						<input type='radio' name='truths' value='sundered_isles' />
+						{{localize 'IRONSWORN.SunderedIsles'}}
+					</p>
+				</label>
+			</div>
+		</div>
+	</div>
+
 
 	<div class='flexcol' style='margin-top: 1em;'>
 		<button class='ironsworn__save' style='flex: 1; justify-content: center; width: 100%'>

@@ -7,7 +7,7 @@ import type {
 import type { IOracle, IOracleCategory } from 'dataforged'
 import { cloneDeep, compact } from 'lodash-es'
 import { DataswornTree } from '../datasworn2'
-import { IronswornSettings } from '../helpers/settings'
+import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import {
 	DS_ORACLE_COMPENDIUM_KEYS,
 	OracleTable
@@ -146,12 +146,10 @@ export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfid: string) {
 	return ret
 }
 
-type OracleCategory = 'classic' | 'delve' | 'starforged' | 'sundered_isles'
-
 const ORACLES: Record<string, IOracleTreeNode> = {}
 
 export function registerOracleTreeInternal(
-	category: OracleCategory,
+	category: DataswornRulesetKey,
 	rootNode: IOracleTreeNode
 ) {
 	ORACLES[category] = rootNode
@@ -203,7 +201,8 @@ async function generateTreeFromDsData(
 	ruleset: RulesetId
 ): Promise<IOracleTreeNode> {
 	const pack = game.packs.get(DS_ORACLE_COMPENDIUM_KEYS[ruleset])
-	const index = await pack.getIndex({ fields: ['flags'] })
+	const index = await pack?.getIndex({ fields: ['flags'] })
+	if (!index) return emptyNode()
 
 	const rp = DataswornTree.get(ruleset)
 	return {
@@ -227,7 +226,7 @@ export async function registerDefaultOracleTrees() {
 
 // Available in browser
 export function registerOracleTree(
-	category: OracleCategory,
+	category: DataswornRulesetKey,
 	rootNode: IOracleTreeNode
 ) {
 	// Check if internal registrations have been done
@@ -242,12 +241,12 @@ export function registerOracleTree(
 	registerOracleTreeInternal(category, rootNode)
 }
 
-export function getOracleTree(category: OracleCategory): IOracleTreeNode {
+export function getOracleTree(category: DataswornRulesetKey): IOracleTreeNode {
 	return cloneDeep(ORACLES[category])
 }
 
 export async function getOracleTreeWithCustomOracles(
-	category: OracleCategory
+	category: DataswornRulesetKey
 ): Promise<IOracleTreeNode> {
 	const rootNode = getOracleTree(category)
 
