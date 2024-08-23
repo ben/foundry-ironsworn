@@ -177,16 +177,15 @@ export class OracleTable extends RollTable {
 	/**
 	 * @returns a string representing the path this table in the Ironsworn oracle tree (not including this table) */
 	async getDfPath() {
-		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
-		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
-
-		const pathElements =
-			findPathToNodeByTableUuid(starforgedRoot, this.uuid) ??
-			findPathToNodeByTableUuid(ironswornRoot, this.uuid)
+		const trees = await getCustomizedOracleTrees()
+		let pathElements: IOracleTreeNode[] | undefined
+		for (const tree of trees) {
+			pathElements = findPathToNodeByTableUuid(tree, this.uuid)
+			if (pathElements?.length > 0) break
+		}
+		if (pathElements?.length < 1) return ''
 
 		const pathNames = pathElements.map((x) => x.displayName)
-		// root node (0) has no display name
-		pathNames.shift()
 		// last node is *this* node
 		pathNames.pop()
 
