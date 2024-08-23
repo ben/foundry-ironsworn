@@ -5,6 +5,8 @@ import { hash, lookupLegacyId } from '../ids'
 export const markdownRenderer = new Showdown.Converter({ tables: true })
 
 const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
+
+// These are Foundry keys for these, not the paths to the JSON files
 const COMPENDIUM_KEY_MAP = {
 	asset: {
 		classic: 'ironswornassets',
@@ -40,10 +42,10 @@ const COMPENDIUM_KEY_MAP = {
 		sundered_isles: 'sunderedislesnpcs'
 	},
 	delve_site_theme: {
-		delve: 'delve-themes'
+		delve: 'ironsworndelvethemes'
 	},
 	delve_site_domain: {
-		delve: 'delve-domains'
+		delve: 'ironsworndelvedomains'
 	},
 	truth: {
 		classic: 'ironsworntruths',
@@ -53,7 +55,7 @@ const COMPENDIUM_KEY_MAP = {
 }
 
 export function renderLinksInStr(str: string): string {
-	return str.replace(MARKDOWN_LINK_RE, (match, text, url) => {
+	return str.replace(MARKDOWN_LINK_RE, (match, text: string, url: string) => {
 		if (!url.startsWith('datasworn:')) return match
 		url = url.substring('datasworn:'.length)
 		const parsed = IdParser.parse(url)
@@ -85,7 +87,7 @@ export function renderLinksInStr(str: string): string {
 		if (parsed.primaryTypeId === 'oracle_collection') {
 			return `<a class="entity-link oracle-category-link" data-dfid="${legacyId}" data-dsid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
 		}
-		const urlHash = hash(legacyId || url)
+		const urlHash = hash(legacyId)
 		return `@Compendium[foundry-ironsworn.${compendiumKey}.${urlHash}]{${text}}`
 	})
 }
