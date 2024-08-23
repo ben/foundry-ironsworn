@@ -17,7 +17,7 @@ declare global {
 			'foundry-ironsworn.toolbox':
 				| 'ironsworn'
 				| 'starforged'
-				| 'sunderedisles'
+				| 'sundered-isles'
 				| 'sheet'
 				| 'migrated'
 
@@ -299,7 +299,8 @@ export class IronswornSettings {
 		const ret: string[] = []
 		for (const ruleset of RULESETS) {
 			if (IronswornSettings.get(`ruleset-${ruleset}`)) {
-				ret.push(ruleset)
+				// "sundered-isles" -> "sundered_isles" for datasworn
+				ret.push(ruleset.replace('-', '_'))
 			}
 		}
 		return ret
