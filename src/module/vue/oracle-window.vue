@@ -1,35 +1,8 @@
 <template>
 	<div class="flexcol">
-		<TabSet id="oracleset" :tab-keys="tabKeys" :default-key="defaultTab">
-			<TabList>
-				<Tab tab-key="ironsworn" text="Ironsworn" />
-				<Tab tab-key="starforged" text="Starforged" />
-				<Tab
-					v-if="enableSunderedIsles"
-					tab-key="sunderedisles"
-					text="Sundered Isles"
-				/>
-			</TabList>
-			<TabPanels>
-				<TabPanel tab-key="ironsworn" class="flexcol">
-					<Suspense>
-						<SfMovesheetoracles toolset="ironsworn" />
-					</Suspense>
-				</TabPanel>
-				<TabPanel tab-key="starforged" class="flexcol">
-					<Suspense>
-						<SfMovesheetoracles toolset="starforged" />
-					</Suspense>
-				</TabPanel>
-				<TabPanel
-					v-if="enableSunderedIsles"
-					tab-key="sunderedisles"
-					class="flexcol"
-				>
-					<h4>Coming soon…</h4>
-				</TabPanel>
-			</TabPanels>
-		</TabSet>
+		<Suspense>
+			<SfMovesheetoracles />
+		</Suspense>
 	</div>
 </template>
 
