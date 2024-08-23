@@ -1,5 +1,5 @@
 <template>
-	<div v-if="data.editing" class="editor flexcol">
+	<div v-if="data.editing" class="editor flexcol" v-bind="$attrs">
 		<Editor
 			v-bind="$attrs"
 			:model-value="modelValue"
@@ -9,6 +9,7 @@
 	</div>
 	<Suspense v-else>
 		<mce-editor-rendered-content
+			v-bind="$attrs"
 			:text="modelValue"
 			@editclick="data.editing = true"
 		/>
@@ -18,7 +19,6 @@
 <script setup lang="ts">
 import type { RawEditorOptions } from 'tinymce'
 import { onUnmounted, reactive } from 'vue'
-import type { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import MceEditorRenderedContent from './mce-editor-rendered-content.vue'
 
