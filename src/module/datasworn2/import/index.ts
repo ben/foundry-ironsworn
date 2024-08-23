@@ -421,7 +421,7 @@ for (const collection of collections) {
 							const rowId = hash(lookupLegacyId(row._id))
 							return {
 								range: [row.roll.min, row.roll.max],
-								text: renderLinksInStr(row.text),
+								text: renderText(row.text),
 								_key: `!tables.results!${fid}.${rowId}`,
 								_id: rowId
 							}
