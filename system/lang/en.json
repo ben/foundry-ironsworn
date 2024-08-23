@@ -362,6 +362,8 @@
 			"Intro": "Please choose which system you'll be primarily using. This sets sheet and move/oracle defaults; more detailed options are available in the settings.",
 			"SheetTitle": "Character Sheet",
 			"SheetHint": "Choose the default sheet to use for characters.",
+			"IronswornSheetTooltip": "Compact layout with minimal tabs, designed for Ironsworn Classic and Delve. Includes a Bonds track, but no legacy tracks.",
+			"StarforgedSheetTooltip": "Tabbed layout, designed for Starforged and Sundered Isles. Includes legacy and connections tracks.",
 			"RulesetsTitle": "Rulesets",
 			"RulesetsHint": "Choose which books' content should be active in this world.",
 			"TruthsTitle": "Truths",
