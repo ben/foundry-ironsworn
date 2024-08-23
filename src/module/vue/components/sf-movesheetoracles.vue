@@ -27,7 +27,9 @@
 
 		<div class="item-list scrollable flexcol" :class="$style.list">
 			<section v-for="section in sections" style="flex: 0">
-				<h4 :class="$style.h4">{{ section.displayName }}</h4>
+				<h4 v-if="showHeadings" :class="$style.h4">
+					{{ section.displayName }}
+				</h4>
 				<OracleTreeNode
 					v-for="node in section.children"
 					:key="node.displayName"
@@ -49,6 +51,7 @@ import OracleTreeNode from './oracle-tree-node.vue'
 
 const trees = await getCustomizedOracleTrees()
 const sections = trees.map((t) => reactive<IOracleTreeNode>(t))
+const showHeadings = sections.length > 1
 
 type ReactiveNode = (typeof sections)[0]
 
