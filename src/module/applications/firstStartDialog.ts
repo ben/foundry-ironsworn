@@ -27,8 +27,6 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 		super.activateListeners(html)
 		// eslint-disable-next-line @typescript-eslint/no-misused-promises
 		html.find('button.ironsworn__save').on('click', async (ev) => {
-			console.log(html)
-
 			// Update default character sheet
 			const defaultSheet = html.find('input[name=sheet]:checked').val()
 			const setting = game.settings.get('core', 'sheetClasses')
@@ -46,7 +44,6 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
 			// Launch truths dialog
 			const truthsFlavor = html.find('input[name=truths]:checked').val()
-			console.log({ truthsFlavor })
 			if (truthsFlavor) {
 				void new SFSettingTruthsDialogVue(truthsFlavor).render(true)
 			}
