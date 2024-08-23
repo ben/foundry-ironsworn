@@ -8,7 +8,9 @@ import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
 import { IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
-	getOracleTreeWithCustomOracles
+	getCustomizedOracleTrees,
+	getOracleTreeWithCustomOracles,
+	IOracleTreeNode
 } from '../features/customoracles'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
@@ -104,23 +106,29 @@ export class OracleTable extends RollTable {
 		const pack = game.packs.get(packId)
 		const index = await pack?.getIndex({ fields: ['flags'] })
 		return index?.find((entry) => {
+			// @ts-expect-error flags are untyped
 			return entry.flags?.['foundry-ironsworn']?.dsid === dsid
 		})
 	}
 
-	static async getByDsId(dsid: string) {
+	static async getByDsId(
+		dsid: string
+	): Promise<StoredDocument<OracleTable> | undefined> {
 		const parsed = IdParser.parse(dsid)
 		const packId = DS_ORACLE_COMPENDIUM_KEYS[parsed.rulesPackageId]
 		const pack = game.packs.get(packId)
 		if (!pack) return
 
-		const id = IdParser.get(dsid)
 		const index = await pack?.getIndex({ fields: ['flags'] })
 		for (const entry of index.contents) {
+			// @ts-expect-error flags are untyped
 			if (entry.flags?.['foundry-ironsworn']?.dsid === dsid) {
-				return pack.getDocument(entry._id)
+				return pack.getDocument(entry._id) as any as
+					| StoredDocument<OracleTable>
+					| undefined
 			}
 		}
+		return undefined
 	}
 
 	/**
@@ -183,7 +191,7 @@ export class OracleTable extends RollTable {
 			pathElements = findPathToNodeByTableUuid(tree, this.uuid)
 			if (pathElements?.length > 0) break
 		}
-		if (pathElements?.length < 1) return ''
+		if (pathElements === undefined || pathElements?.length < 1) return ''
 
 		const pathNames = pathElements.map((x) => x.displayName)
 		// last node is *this* node

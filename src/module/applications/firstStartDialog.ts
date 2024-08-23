@@ -55,6 +55,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			// Launch truths dialog
 			const truthsFlavor = html.find('input[name=truths]:checked').val()
 			if (truthsFlavor) {
+				// @ts-expect-error coercing this string to a DataswornRulesetKey
 				void new SFSettingTruthsDialogVue(truthsFlavor).render(true)
 			}
 

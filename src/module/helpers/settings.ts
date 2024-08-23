@@ -6,7 +6,17 @@ import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDial
 import * as IronColor from '../features/ironcolor'
 import * as IronTheme from '../features/irontheme'
 
-export const RULESETS = ['classic', 'delve', 'starforged', 'sundered_isles']
+export type DataswornRulesetKey =
+	| 'classic'
+	| 'delve'
+	| 'starforged'
+	| 'sundered_isles'
+export const RULESETS: DataswornRulesetKey[] = [
+	'classic',
+	'delve',
+	'starforged',
+	'sundered_isles'
+]
 
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
@@ -249,6 +259,7 @@ export class IronswornSettings {
 
 	static get defaultToolbox(): 'ironsworn' | 'starforged' | 'sunderedisles' {
 		const setting = this.get('toolbox')
+		if (setting === 'migrated') return 'ironsworn'
 		if (setting === 'sheet') {
 			const sheetClasses = game.settings.get('core', 'sheetClasses')
 			const defaultCharacterSheet = sheetClasses.Actor?.character
@@ -283,10 +294,8 @@ export class IronswornSettings {
 		}
 	}
 
-	static get enabledRulesets(): Array<
-		'classic' | 'delve' | 'starforged' | 'sundered_isles'
-	> {
-		const ret: string[] = []
+	static get enabledRulesets(): DataswornRulesetKey[] {
+		const ret: DataswornRulesetKey[] = []
 		for (const ruleset of RULESETS) {
 			if (IronswornSettings.get(`ruleset-${ruleset}`)) {
 				ret.push(ruleset)
@@ -295,9 +304,7 @@ export class IronswornSettings {
 		return ret
 	}
 
-	static async enableOnlyRulesets(
-		...enabled: Array<'classic' | 'delve' | 'starforged' | 'sundered_isles'>
-	) {
+	static async enableOnlyRulesets(...enabled: DataswornRulesetKey[]) {
 		for (const ruleset of RULESETS) {
 			await game.settings.set(
 				'foundry-ironsworn',

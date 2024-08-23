@@ -1,4 +1,5 @@
 import { DataswornTree } from '../datasworn2'
+import { DataswornRulesetKey } from '../helpers/settings'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import sfTruthsVue from '../vue/sf-truths.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
@@ -10,7 +11,7 @@ const DS_TRUTH_COMPENDIUM_KEYS = {
 }
 
 export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
-	constructor(protected truthset: 'classic' | 'starforged' | 'sundered_isles') {
+	constructor(protected truthset: DataswornRulesetKey) {
 		super({})
 	}
 
