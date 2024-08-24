@@ -6,6 +6,7 @@ import type { DataSchema } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
 import type { ProgressBase } from '../config'
+import { IronswornSettings } from '../../helpers/settings'
 
 export class ProgressModel extends foundry.abstract.TypeDataModel<
 	ProgressDataSourceData,
@@ -50,11 +51,10 @@ export class ProgressModel extends foundry.abstract.TypeDataModel<
 	async fulfill() {
 		let moveDfId: string | undefined
 		if (this.subtype === 'vow') {
-			const toolset = this.parent.actor?.toolset ?? 'starforged'
-			moveDfId =
-				toolset === 'starforged'
-					? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
-					: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+			// TODO: convert to DS ID
+			moveDfId = IronswornSettings.enabledRulesets.includes('starforged')
+				? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+				: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
 		}
 
 		return await IronswornPrerollDialog.showForProgress(

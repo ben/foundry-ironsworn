@@ -11,7 +11,8 @@
 							:id="`${data.actor._id}_rank`"
 							:current="data.actor.system.rank"
 							class="nogrow"
-							@change="(rank) => $actor.update({ system: { rank } })" />
+							@change="(rank) => $actor.update({ system: { rank } })"
+						/>
 						<label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
 							ChallengeRank.localizeValue(data.actor.system.rank)
 						}}</label>
@@ -20,14 +21,16 @@
 							block
 							nogrow
 							icon="fa:trash"
-							@click="$actor.update({ system: { current: 0 } })" />
+							@click="$actor.update({ system: { current: 0 } })"
+						/>
 						<IronBtn block nogrow icon="fa:caret-right" @click="markProgress" />
 					</div>
 					<!-- PROGRESS -->
 					<ProgressTrack
 						class="nogrow"
 						:ticks="data.actor.system.current"
-						:rank="data.actor.system.rank" />
+						:rank="data.actor.system.rank"
+					/>
 				</article>
 				<!-- THEME/DOMAIN -->
 				<div class="boxgroup flexcol nogrow">
@@ -37,7 +40,8 @@
 							:item="theme"
 							item-type="delve-theme"
 							compendium-key="ironsworndelvethemes"
-							title-key="IRONSWORN.ITEM.TypeDelveTheme" />
+							title-key="IRONSWORN.ITEM.TypeDelveTheme"
+						/>
 					</div>
 					<div class="flexrow boxrow nogrow">
 						<SiteDroparea
@@ -45,7 +49,8 @@
 							:item="domain"
 							item-type="delve-domain"
 							compendium-key="ironsworndelvedomains"
-							title-key="IRONSWORN.ITEM.TypeDelveDomain" />
+							title-key="IRONSWORN.ITEM.TypeDelveDomain"
+						/>
 					</div>
 				</div>
 				<!-- DENIZENS -->
@@ -56,7 +61,8 @@
 							nogrow
 							style="padding: var(--ironsworn-spacer-xs)"
 							icon="ironsworn:d10-tilt"
-							@click="randomDenizen" />
+							@click="randomDenizen"
+						/>
 						<BtnCompendium compendium="ironswornfoes" nogrow />
 					</h2>
 					<div class="boxgroup nogrow">
@@ -102,11 +108,13 @@
 					:class="{ [$style.featureBtn]: true }"
 					icon="ironsworn:d10-tilt"
 					:text="$t('IRONSWORN.DELVESITE.Feature')"
-					@click="$actor?.system.features?.draw()" />
+					@click="$actor?.system.features?.draw()"
+				/>
 			</div>
 			<MceEditor
 				v-model="data.actor.system.description"
-				@save="saveDescription" />
+				@save="saveDescription"
+			/>
 		</div>
 	</div>
 </template>
@@ -135,7 +143,6 @@ provide(
 	ActorKey,
 	computed(() => props.data.actor)
 )
-provide('toolset', 'ironsworn')
 
 const $actor = inject($ActorKey) as IronswornActor<'site'>
 

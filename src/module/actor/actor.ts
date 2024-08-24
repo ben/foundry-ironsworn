@@ -54,22 +54,6 @@ export class IronswornActor<
 		return undefined
 	}
 
-	// TODO: retire this altogether
-	get toolset(): 'ironsworn' | 'starforged' | 'sunderedisles' {
-		// If set to "match sheet", check for this character's sheet
-		const toolbox = IronswornSettings.get('toolbox')
-		if (toolbox == 'sheet' && this.type === 'character') {
-			if (this.sheet?.constructor.name === 'StarforgedCharacterSheet')
-				return 'starforged'
-			if (this.sheet?.constructor.name === 'IronswornCharacterSheetV2')
-				return 'ironsworn'
-			// TODO: sundered isles
-		}
-
-		// Fall back to the global default
-		return IronswornSettings.defaultToolbox
-	}
-
 	override async deleteDialog(options?: Partial<DialogOptions>) {
 		return await typedDeleteDialog(this, options)
 	}
