@@ -4,31 +4,36 @@
 			<SfMoverow
 				v-if="moves.discoverASite"
 				:move="moves.discoverASite"
-				class="nogrow" />
+				class="nogrow"
+			/>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.delveTheDepths"
 				:move="moves.delveTheDepths"
-				class="nogrow" />
+				class="nogrow"
+			/>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.findAnOpportunity"
 				:move="moves.findAnOpportunity"
-				class="nogrow" />
+				class="nogrow"
+			/>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.revealADanger"
 				:move="moves.revealADanger"
-				class="nogrow">
+				class="nogrow"
+			>
 				<template #btn-oracle="{ disabled, ...props }">
 					<BtnOracle
 						v-bind="props"
 						:disabled="disabled || !hasThemeAndDomain"
 						:override-click="true"
-						@click="revealADanger" />
+						@click="revealADanger"
+					/>
 				</template>
 			</SfMoverow>
 		</li>
@@ -36,13 +41,15 @@
 			<SfMoverow
 				v-if="moves.checkYourGear"
 				:move="moves.checkYourGear"
-				class="nogrow" />
+				class="nogrow"
+			/>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.locateObjective"
 				:move="moves.locateObjective"
-				class="nogrow">
+				class="nogrow"
+			>
 				<template #btn-roll-move="{ disabled, ...props }">
 					<BtnRollmove v-bind="props" :clickFn="locateObjective" />
 				</template>
@@ -52,13 +59,15 @@
 			<SfMoverow
 				v-if="moves.escapeTheDepths"
 				:move="moves.escapeTheDepths"
-				class="nogrow" />
+				class="nogrow"
+			/>
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
 				v-if="moves.revealADangerAlt"
 				:move="moves.revealADangerAlt"
-				class="nogrow" />
+				class="nogrow"
+			/>
 		</li>
 	</ul>
 </template>
@@ -67,8 +76,8 @@
 import type { Ref } from 'vue'
 import { computed, inject, reactive } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
-import type { Move } from '../../../features/custommoves'
-import { createIronswornMoveTree } from '../../../features/custommoves'
+import type { DisplayMove } from '../../../features/custommoves'
+import { createMoveTreeForRuleset } from '../../../features/custommoves'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 import BtnOracle from '../buttons/btn-oracle.vue'
@@ -86,37 +95,30 @@ const domain = computed(() => {
 	return site?.value?.items.find((x) => x.type === 'delve-domain')
 })
 
+// Construct some moves to use with the new pipeline
+const moves = reactive<{ [k: string]: DisplayMove }>({})
+const ruleset = await createMoveTreeForRuleset('delve')
+const delveMoves = await ruleset.categories.find(
+	(x) => x.ds?._id === 'move_category:delve/delve'
+)
+const moveDsIds = {
+	discoverASite: 'move:delve/delve/discover_a_site',
+	delveTheDepths: 'move:delve/delve/delve_the_depths',
+	findAnOpportunity: 'move:delve/delve/find_an_opportunity',
+	revealADanger: 'move:delve/delve/reveal_a_danger',
+	checkYourGear: 'move:delve/delve/check_your_gear',
+	escapeTheDepths: 'move:delve/delve/escape_the_depths',
+	locateObjective: 'move:delve/delve/locate_your_objective',
+	revealADangerAlt: 'move:delve/delve/reveal_a_danger_alt'
+}
+for (const [k, dsid] of Object.entries(moveDsIds)) {
+	const dm = delveMoves?.moves.find((x) => x.ds?._id === dsid)
+	moves[k] = dm!
+}
+
 const hasThemeAndDomain = computed(() => {
 	return !!(theme.value && domain.value)
 })
-
-// Construct some moves to use with the new pipeline
-const moves = reactive<{ [k: string]: Move }>({})
-Promise.resolve().then(async () => {
-	const moveTree = await createIronswornMoveTree()
-	const delveMoves = moveTree.find(
-		(x) => x.dataforgedCategory?.$id === 'Ironsworn/Moves/Delve'
-	)
-	if (!delveMoves) return
-
-	const movesToFetch = {
-		discoverASite: 'Ironsworn/Moves/Delve/Discover_a_Site',
-		delveTheDepths: 'Ironsworn/Moves/Delve/Delve_the_Depths',
-		findAnOpportunity: 'Ironsworn/Moves/Delve/Find_an_Opportunity',
-		revealADanger: 'Ironsworn/Moves/Delve/Reveal_a_Danger',
-		checkYourGear: 'Ironsworn/Moves/Delve/Check_Your_Gear',
-		escapeTheDepths: 'Ironsworn/Moves/Delve/Escape_the_Depths',
-		locateObjective: 'Ironsworn/Moves/Delve/Locate_Your_Objective',
-		revealADangerAlt: 'Ironsworn/Moves/Delve/Reveal_a_Danger_alt'
-	}
-
-	for (const k of Object.keys(movesToFetch)) {
-		moves[k] = delveMoves.moves.find(
-			(x) => x.dataforgedMove?.$id === movesToFetch[k]
-		)!
-	}
-})
-
 async function revealADanger() {
 	return (await $site?.system.getDangers())?.draw()
 }

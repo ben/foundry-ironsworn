@@ -9,7 +9,9 @@ import type {
 	OracleTablesCollection,
 	OracleCollection,
 	NpcCollection,
-	Npc
+	Npc,
+	OracleRollableTable,
+	EmbeddedOracleRollable
 } from '@datasworn/core/dist/Datasworn'
 import { IdParser, DataswornTree } from '..'
 import { writeFile, mkdir } from 'fs/promises'
@@ -368,6 +370,56 @@ for (const collection of collections) {
 }
 
 console.log('\n\n--- ORACLES ---')
+const processOracle = async (
+	oracle: OracleRollableTable | EmbeddedOracleRollable,
+	packName: string,
+	legacyFolderId: string,
+	foundryFolderId: string | undefined,
+	depth: number
+) => {
+	// Write the json for an oracle
+	console.log('  '.repeat(depth + 1), oracle._id)
+
+	const legacyOracleId = lookupLegacyId(oracle._id)
+	const fid = hash(legacyOracleId ?? oracle._id)
+
+	const json = {
+		_id: fid,
+		flags: {
+			'foundry-ironsworn': {
+				dfid: DataswornToLegacyIds[oracle._id],
+				category: legacyFolderId,
+				dsid: oracle._id
+			}
+		},
+		name: oracle.name,
+		// @ts-expect-error
+		description: renderText(oracle.summary ?? ''),
+		formula: oracle.dice,
+		replacement: true,
+		displayRoll: true,
+		results: compact(
+			oracle.rows.map((row) => {
+				if (!row.roll) return undefined
+				const rowId = hash(lookupLegacyId(row._id))
+				return {
+					range: [row.roll.min, row.roll.max],
+					text: renderText(row.text),
+					_key: `!tables.results!${fid}.${rowId}`,
+					_id: rowId
+				}
+			})
+		),
+		folder: foundryFolderId,
+		// @ts-expect-error
+		sort: oracle._source?.page ?? 0,
+		img: 'icons/dice/d10black.svg',
+		_key: `!tables!${fid}`
+	}
+
+	await writeJsonFile(packName, json)
+}
+
 for (const collection of collections) {
 	console.log(collection)
 
@@ -382,6 +434,7 @@ for (const collection of collections) {
 		await mkdir(`json-packs/${packName}`)
 	}
 
+	// Walk the oracle collections
 	const walkCollections = async (
 		collections: Record<string, OracleCollection> | undefined,
 		depth = 1,
@@ -395,52 +448,36 @@ for (const collection of collections) {
 			const folderId = await writeFolderJson(packName, collection, parentFolder)
 
 			for (const oracle of Object.values(collection.contents)) {
-				// Write the json for an oracle
-				console.log('  '.repeat(depth + 1), oracle._id)
-
-				const legacyOracleId = lookupLegacyId(oracle._id)
-				const fid = hash(legacyOracleId ?? oracle._id)
-
-				const json = {
-					_id: fid,
-					flags: {
-						'foundry-ironsworn': {
-							dfid: DataswornToLegacyIds[oracle._id],
-							category: legacyFolderId,
-							dsid: oracle._id
-						}
-					},
-					name: oracle.name,
-					description: renderText(oracle.summary ?? ''),
-					formula: oracle.dice,
-					replacement: true,
-					displayRoll: true,
-					results: compact(
-						oracle.rows.map((row) => {
-							if (!row.roll) return undefined
-							const rowId = hash(lookupLegacyId(row._id))
-							return {
-								range: [row.roll.min, row.roll.max],
-								text: renderText(row.text),
-								_key: `!tables.results!${fid}.${rowId}`,
-								_id: rowId
-							}
-						})
-					),
-					folder: folderId,
-					sort: oracle._source?.page ?? 0,
-					img: 'icons/dice/d10black.svg',
-					_key: `!tables!${fid}`
-				}
-
-				await writeJsonFile(packName, json)
+				await processOracle(oracle, packName, legacyFolderId, folderId, depth)
 			}
+
 			const pc = collection as OracleTablesCollection
 			await walkCollections(pc.collections, depth + 1, folderId)
 		}
 	}
 
 	await walkCollections(DataswornTree.get(collection)?.oracles)
+
+	// Walk the moves for embedded oracles
+	const folderHash = hash(`${collection}-moves`)
+	await writeJsonFile(packName, {
+		name: 'Move Oracles',
+		type: 'RollTable',
+		_id: folderHash,
+		sort: 9999,
+		sorting: 'a',
+		_key: `!folders!${folderHash}`
+	})
+	for (const moveCat of Object.values(
+		DataswornTree.get(collection)?.moves ?? {}
+	)) {
+		const legacyFolderId = lookupLegacyId(moveCat._id)
+		for (const move of Object.values(moveCat.contents)) {
+			for (const oracle of Object.values(move.oracles ?? {})) {
+				await processOracle(oracle, packName, legacyFolderId, folderHash, 0)
+			}
+		}
+	}
 }
 
 console.log('\n\n--- THEMES ---')

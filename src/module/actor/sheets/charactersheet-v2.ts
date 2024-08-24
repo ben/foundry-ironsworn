@@ -51,13 +51,9 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
 	}
 
 	_openMoveSheet(_e?: JQuery.ClickEvent) {
-		this.actor.moveSheet ||= new SFCharacterMoveSheet(
-			this.actor,
-			this.actor.toolset,
-			{
-				left: 755
-			}
-		)
+		this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor, {
+			left: 755
+		})
 		void this.actor.moveSheet.render(true, { focus: true })
 	}
 }

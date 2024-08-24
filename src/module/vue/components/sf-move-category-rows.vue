@@ -2,6 +2,7 @@
 	<Collapsible
 		ref="$collapsible"
 		class="list-block"
+		:expanded="props.expanded"
 		:class="$style.wrapper"
 		:toggle-button-class="$style.toggleBtn"
 		:toggle-tooltip="categoryTooltip"
@@ -15,8 +16,8 @@
 		<template #default>
 			<ul class="flexcol" :class="$style.list">
 				<li
-					v-for="(move, i) of category.moves"
-					:key="i"
+					v-for="move of category.moves"
+					:key="move.uuid"
 					class="list-block-item nogrow"
 					:class="$style.listItem"
 				>
@@ -36,7 +37,7 @@
 
 <script setup lang="ts">
 import { computed, nextTick, ref } from 'vue'
-import type { MoveCategory } from '../../features/custommoves.js'
+import type { DisplayMoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash-es'
@@ -44,7 +45,8 @@ import { enrichMarkdown } from '../vue-plugin'
 
 const props = withDefaults(
 	defineProps<{
-		category: MoveCategory
+		category: DisplayMoveCategory
+		expanded?: boolean
 		/**
 		 * Duration of the move highlight effect, in milliseconds.
 		 * @default 2000
@@ -68,7 +70,7 @@ const props = withDefaults(
 
 let $children = ref<InstanceType<typeof SfMoverow>[]>([])
 
-const categoryTooltip = ref(props.category.dataforgedCategory?.Description)
+const categoryTooltip = ref(props.category.ds?.description)
 ;(async () => {
 	categoryTooltip.value = await enrichMarkdown(categoryTooltip.value)
 })()
@@ -77,10 +79,7 @@ const categoryTooltip = ref(props.category.dataforgedCategory?.Description)
  * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
  */
 const moveItems = computed(
-	() =>
-		new Map(
-			props.category.moves.map((move) => [move.moveItem().id ?? '', move])
-		)
+	() => new Map(props.category.moves.map((move) => [move.uuid, move]))
 )
 
 let $collapsible = ref<typeof Collapsible>()
@@ -96,8 +95,7 @@ async function expandAndHighlightMove(targetMoveUuid: string) {
 		$collapsible.value.expand()
 		await nextTick()
 	}
-	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
-	const move = $children.value.find((child) => child.moveId === documentId)
+	const move = $children.value.find((child) => child.moveId === targetMoveUuid)
 	highlightMove(move?.$collapsible?.$element as HTMLElement)
 	if (move?.$collapsible?.isExpanded === false) {
 		await move?.$collapsible?.expand()

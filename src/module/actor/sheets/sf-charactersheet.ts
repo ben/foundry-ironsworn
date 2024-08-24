@@ -52,10 +52,7 @@ export class StarforgedCharacterSheet extends VueActorSheet {
 	}
 
 	_openMoveSheet(_e?: JQuery.ClickEvent) {
-		this.actor.moveSheet ||= new SFCharacterMoveSheet(
-			this.actor,
-			this.actor.toolset
-		)
+		this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
 		void this.actor.moveSheet.render(true, { focus: true })
 	}
 }

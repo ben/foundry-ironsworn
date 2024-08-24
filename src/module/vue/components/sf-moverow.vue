@@ -38,13 +38,13 @@
 					<slot
 						name="btn-oracle"
 						v-bind="{
-							node: data.oracles[0] ?? {},
+							node: oracleNodes[0] ?? {},
 							disabled: preventOracle,
 							class: $style.btn
 						}"
 					>
 						<BtnOracle
-							:node="data.oracles[0] ?? {}"
+							:node="oracleNodes[0] ?? {}"
 							:disabled="preventOracle"
 							:class="$style.btn"
 						/>
@@ -63,7 +63,7 @@
 			>
 				<template #after-footer>
 					<OracleTreeNode
-						v-for="node of data.oracles"
+						v-for="node of oracleNodes"
 						:key="node.displayName"
 						:class="$style.oracle"
 						:node="node"
@@ -76,7 +76,7 @@
 
 <script setup lang="ts">
 import { computed, provide, reactive, ref } from 'vue'
-import type { Move } from '../../features/custommoves'
+import type { DisplayMove } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
@@ -94,7 +94,7 @@ import { OracleTable } from '../../roll-table/oracle-table'
 
 const props = withDefaults(
 	defineProps<{
-		move: Move
+		move: DisplayMove
 		headingLevel?: number
 		toggleSectionClass?: any
 		toggleButtonClass?: any
@@ -121,48 +121,43 @@ const props = withDefaults(
 	}
 )
 
-const $item = computed(() => props.move.moveItem())
-const item = computed(
-	() => props.move.moveItem().toObject() as ItemSource<'sfmove'>
-)
+const $item = (await fromUuid(props.move.uuid)) as IronswornItem<'sfmove'>
+const item = ref($item.toObject())
 
-provide(ItemKey, computed(() => $item.value.toObject()) as any)
-provide($ItemKey, $item.value as any)
-
-const data = reactive({
-	oracles: [] as IOracleTreeNode[]
-})
+provide(ItemKey, item as any)
+provide($ItemKey, $item)
 
 const $collapsible = ref<typeof Collapsible>()
 
+const oracleDsIds = uniq([
+	...($item?.system?.dsOracleIds ?? []),
+	...Object.values(props.move.ds?.oracles ?? {}).map((x) => x._id)
+])
+const oracleNodes: IOracleTreeNode[] = await Promise.all(
+	oracleDsIds.map(async (oid) => {
+		const t = await OracleTable.getByDsId(oid)
+		return {
+			displayName: t?.name ?? '(missing)',
+			tables: [t.uuid],
+			children: []
+		}
+	})
+)
+
 const canRoll = computed(() => {
-	return moveHasRollableOptions($item.value)
+	return moveHasRollableOptions($item)
 })
 const preventOracle = computed(() => {
-	return data.oracles.length !== 1
+	return oracleNodes.length !== 1
 })
 
-const toggleTooltip = ref($item.value.system.Trigger?.Text)
+const toggleTooltip = ref($item.system.Trigger?.Text)
 ;(async function () {
 	toggleTooltip.value = await enrichMarkdown(toggleTooltip.value)
 })()
 
-const moveId = computed(() => props.move.moveItem().id)
-
-// TODO: switch this to use datasworn data
-const oracleIds = uniq([
-	...($item?.value.system.Oracles ?? []),
-	...(props.move.dataforgedMove?.Oracles ?? [])
-])
-Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(
-	async (dfOracles) => {
-		const nodes = await Promise.all(dfOracles.map(walkOracle))
-		data.oracles.push(...nodes)
-	}
-)
-
 defineExpose({
-	moveId: moveId.value,
+	moveId: props.move.uuid,
 	$collapsible
 })
 </script>

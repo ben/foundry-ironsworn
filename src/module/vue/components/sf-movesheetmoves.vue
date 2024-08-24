@@ -2,7 +2,7 @@
 	<article class="flexcol" :class="$style.wrapper">
 		<nav class="flexrow nogrow" :class="$style.nav">
 			<input
-				v-model="state.searchQuery"
+				v-model="searchQuery"
 				type="search"
 				:placeholder="
 					$t('SIDEBAR.Search', { types: $t('IRONSWORN.ITEMS.TypeMove') })
@@ -25,100 +25,87 @@
 			/>
 		</nav>
 
-		<ul
-			v-if="state.searchQuery"
-			class="item-list scrollable flexcol"
-			:class="$style.list"
+		<section
+			v-for="ruleset in filteredMoveTree"
+			:key="ruleset.displayName"
+			class="nogrow"
 		>
-			<!-- Flat search results -->
-			<li
-				v-for="(move, resultIndex) of searchResults"
-				:key="move.moveItem().id ?? `move${resultIndex}`"
-				class="nogrow"
-			>
-				<SfMoverow
-					ref="allMoves"
-					:move="move"
-					:thematic-color="move.color"
-					:class="$style.filteredResult"
-				/>
-			</li>
-		</ul>
-
-		<ul v-else class="item-list scrollable flexcol" :class="$style.list">
-			<!-- Categorized moves if not searching -->
-			<li
-				v-for="(category, catIndex) in state.categories"
-				:key="catIndex"
-				class="nogrow"
-			>
-				<SfMoveCategoryRows
-					ref="allCategories"
+			<h2 v-if="showHeaders" :class="$style.rulesetname">
+				{{ ruleset.displayName }}
+			</h2>
+			<ul class="item-list scrollable flexcol" :class="$style.list">
+				<li
+					v-for="(category, catIndex) in ruleset.categories"
+					:key="catIndex"
 					class="nogrow"
-					:class="$style.catList"
-					:category="category"
-					:data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
-				/>
-			</li>
-		</ul>
+				>
+					<SfMoveCategoryRows
+						ref="allCategories"
+						class="nogrow"
+						:expanded="!!searchQuery"
+						:class="$style.catList"
+						:category="category"
+						:data-tourid="`move-category-${category.ds?._id}`"
+					/>
+				</li>
+			</ul>
+		</section>
 	</article>
 </template>
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
-import type { MoveCategory } from '../../features/custommoves'
-import {
-	createIronswornMoveTree,
-	createStarforgedMoveTree
-} from '../../features/custommoves'
+import type { DisplayMoveCategory } from '../../features/custommoves'
+import { createMergedMoveTree } from '../../features/custommoves'
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
 import IronBtn from './buttons/iron-btn.vue'
 
-const props = defineProps<{
-	toolset: 'ironsworn' | 'starforged' | 'sunderedisles'
-}>()
-provide('toolset', props.toolset)
-
 const state = reactive({
 	searchQuery: '',
-	categories: [] as MoveCategory[]
+	categories: [] as DisplayMoveCategory[]
 })
+
+const moveTree = await createMergedMoveTree()
+
+const showHeaders = moveTree.length > 1
 
 let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
 let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
 
-state.categories =
-	props.toolset === 'ironsworn'
-		? await createIronswornMoveTree()
-		: props.toolset === 'starforged'
-		? await createStarforgedMoveTree()
-		: [] // TODO: Sundered Isles move tree
-
+const searchQuery = ref('')
 const checkedSearchQuery = computed(() => {
 	try {
-		new RegExp(state.searchQuery)
-		return state.searchQuery
+		new RegExp(searchQuery.value)
+		return searchQuery.value
 	} catch (error) {
 		return ''
 	}
 })
 
-const flatMoves = computed(() =>
-	state.categories.flatMap((category) =>
-		category.moves.map((mv) => ({ ...mv, color: category.color }))
-	)
-)
-
-const searchResults = computed(() => {
-	if (!checkedSearchQuery.value) return null
+const filteredMoveTree = computed(() => {
+	if (searchQuery.value === '') return moveTree
 
 	const re = new RegExp(checkedSearchQuery.value, 'i')
-	return flatMoves.value.filter((x) => re.test(x.displayName))
+	return moveTree
+		.map((ruleset) => {
+			return {
+				...ruleset,
+				categories: ruleset.categories
+					.map((cat) => {
+						return {
+							...cat,
+							moves: cat.moves.filter((mv) => re.test(mv.displayName))
+						}
+					})
+					.filter((cat) => cat.moves.length > 0)
+			}
+		})
+		.filter((ruleset) => ruleset.categories.length > 0)
 })
 
 function clearSearch() {
-	state.searchQuery = ''
+	searchQuery.value = ''
 }
 
 function collapseMoveCategories() {
@@ -130,9 +117,8 @@ function collapseMoveCategories() {
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 	clearSearch()
 	await nextTick()
-	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
 	const categoryWithMove = allCategories.value.find((moveCategory) =>
-		moveCategory.moveItems.has(documentId ?? '')
+		moveCategory.moveItems.has(targetMoveUuid ?? '')
 	)
 	if (categoryWithMove) {
 		categoryWithMove.expandAndHighlightMove(targetMoveUuid)
@@ -159,6 +145,11 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 
 .wrapper {
 	gap: var(--ironsworn-spacer-lg);
+}
+
+.rulesetname {
+	text-transform: uppercase;
+	margin: 0.5rem 5px;
 }
 
 .list {

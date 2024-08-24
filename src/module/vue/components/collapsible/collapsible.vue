@@ -4,7 +4,7 @@
 		:id="wrapperId"
 		ref="$element"
 		:class="$style.wrapper"
-		:aria-expanded="state.expanded"
+		:aria-expanded="expanded"
 		:tabindex="-1"
 		:aria-orientation="orientation"
 		:aria-disabled="disabled"
@@ -61,7 +61,7 @@
 				$emit('after-collapse', $event, $collapseTransition, $element)
 			"
 		>
-			<Suspense v-if="state.expanded">
+			<Suspense v-if="expanded">
 				<component
 					:is="contentWrapperIs"
 					:id="contentId"
@@ -168,12 +168,13 @@ let $collapseTransition = ref<typeof CollapseTransition>()
 let $contentWrapper = ref<HTMLElement>()
 
 const state = reactive<{
-	expanded: boolean
 	duration: number
 }>({
-	expanded: props.expanded,
 	duration: props.duration
 })
+
+const manuallyExpanded = ref(false)
+const expanded = computed(() => props.expanded || manuallyExpanded.value)
 
 const wrapperId = computed(() => props.baseId)
 const controlId = computed(() => `${props.baseId}_control`)
@@ -195,15 +196,15 @@ const $emit = defineEmits<{
 }>()
 
 function toggle() {
-	state.expanded = !state.expanded
+	manuallyExpanded.value = !manuallyExpanded.value
 }
 
 function expand() {
-	state.expanded = true
+	manuallyExpanded.value = true
 }
 
 function collapse() {
-	state.expanded = false
+	manuallyExpanded.value = false
 }
 
 const transform = computed<Property.Transform>(() => {
@@ -223,7 +224,7 @@ defineExpose({
 	 * Whether the collapsible is expanded.
 	 */
 	get isExpanded() {
-		return state.expanded
+		return expanded
 	},
 	/**
 	 * The current duration of the animation, in ms.

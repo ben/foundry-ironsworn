@@ -30,10 +30,7 @@ export class CompactPCSheet extends VueActorSheet {
 	_openMoveSheet(e?: JQuery.ClickEvent) {
 		e?.preventDefault()
 
-		this.actor.moveSheet ||= new SFCharacterMoveSheet(
-			this.actor,
-			this.actor.toolset
-		)
+		this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
 		void this.actor.moveSheet.render(true, { focus: true })
 	}
 }

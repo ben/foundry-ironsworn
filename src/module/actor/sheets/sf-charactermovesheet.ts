@@ -8,10 +8,6 @@ import { MoveSheetTour } from '../../features/tours/move-sheet-tour'
 export class SFCharacterMoveSheet extends VueAppMixin(Application) {
 	constructor(
 		protected actor: IronswornActor,
-		protected toolset:
-			| 'ironsworn'
-			| 'starforged'
-			| 'sunderedisles' = 'starforged',
 		options?: Partial<ApplicationOptions>
 	) {
 		super(options)
@@ -22,7 +18,6 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
 	): MaybePromise<object> {
 		return {
 			...super.getData(options),
-			toolset: this.toolset,
 			actor: this.actor.toObject()
 		}
 	}

@@ -195,6 +195,7 @@ export interface SFMoveDataSourceData
 		'Weak Hit': SFMoveOutcome
 		Miss: SFMoveOutcomeMatchable
 	}
+	dsOracleIds: string[]
 }
 
 export interface SFMoveTrigger extends Pick<IMoveTrigger, 'Text'> {
