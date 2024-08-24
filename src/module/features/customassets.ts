@@ -102,7 +102,7 @@ async function customAssetFolderContents(): Promise<
 	const customAssets = [] as DisplayAsset[]
 	for (const item of folder.contents) {
 		if (item.documentName !== 'Item' || item.type !== 'asset') continue
-		customAssets.push({ assetFetcher: () => item })
+		customAssets.push({ assetFetcher: async () => item })
 	}
 
 	return {
