@@ -1,19 +1,36 @@
+import { DataswornTree } from '../datasworn2'
 import type { IMove, IMoveCategory } from 'dataforged'
 import { ISMoveCategories, SFMoveCategories } from '../dataforged/data'
+import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
 import { cachedDocumentsForPack, PackContents } from './pack-cache'
+import type { Move, MoveCategory } from '@datasworn/core/dist/Datasworn'
+
+export const DS_MOVE_COMPENDIUM_KEYS: Record<string, string> = {
+	classic: 'foundry-ironsworn.ironswornmoves',
+	delve: 'foundry-ironsworn.ironsworndelvemoves',
+	starforged: 'foundry-ironsworn.starforgedmoves',
+	sundered_isles: 'foundry-ironsworn.sunderedislesmoves'
+}
+
+export interface DisplayMoveRuleset {
+	displayName: string
+	categories: DisplayMoveCategory[]
+}
 
 export interface DisplayMoveCategory {
 	color: string | null
 	displayName: string
 	moves: DisplayMove[]
+	ds?: MoveCategory
 	dataforgedCategory?: IMoveCategory
 }
 
 export interface DisplayMove {
 	color: string | null
 	displayName: string
-	moveItem: () => IronswornItem<'sfmove'>
+	uuid: string
+	ds?: Move
 	dataforgedMove?: IMove
 }
 
@@ -67,30 +84,68 @@ export async function createStarforgedMoveTree(): Promise<
 	)
 }
 
+const INDEXES: Record<string, any> = {}
+
+export async function createMergedMoveTree(): Promise<DisplayMoveRuleset[]> {
+	// Pre-load compendium indexes
+	for (const rsName of IronswornSettings.enabledRulesets) {
+		const compendiumKey = DS_MOVE_COMPENDIUM_KEYS[rsName]
+		const pack = game.packs.get(compendiumKey)
+		INDEXES[compendiumKey] ||= await pack?.getIndex({ fields: ['flags'] })
+	}
+
+	return await Promise.all(
+		IronswornSettings.enabledRulesets.map(async (rsKey) => {
+			const rs = DataswornTree.get(rsKey)
+			const index = INDEXES[DS_MOVE_COMPENDIUM_KEYS[rsKey]]
+			const categories = Object.values(rs?.moves ?? {})
+			return {
+				displayName: game.i18n.localize(`IRONSWORN.RULESETS.${rsKey}`),
+				categories: categories.map((cat) => ({
+					color: cat.color ?? MoveCategoryColor[cat.name] ?? null,
+					displayName: game.i18n.localize(`IRONSWORN.MOVES.${cat.name}`),
+					ds: cat,
+					moves: Object.values(cat.contents).map((move) => {
+						const indexEntry = index.contents.find(
+							(x) => x.flags['foundry-ironsworn']?.dsid === move._id
+						)
+						return {
+							color: move.color ?? null,
+							displayName: move.name,
+							uuid: indexEntry.uuid, // TODO: move.uuid
+							ds: move
+						}
+					})
+				}))
+			}
+		})
+	)
+}
+
 // TODO dataforged has a key for move colours...., but they appear to have changed significantly since the last time i updated them! they'll be fixed for 2.0, but until then, here's a workaround.
 export enum MoveCategoryColor {
-	Adventure = '#206087',
-	Combat = '#818992',
-	Connection = '#4A5791',
+	'Adventure Moves' = '#206087',
+	'Combat Moves' = '#818992',
+	'Connection Moves' = '#4A5791',
 	// non-canonical (ironsworn); uses color from 'Exploration'
-	Delve = '#427FAA',
-	Exploration = '#427FAA',
+	'Delve Moves' = '#427FAA',
+	'Exploration Moves' = '#427FAA',
 	// non-canonical (ironsworn); uses color from 'Legacy'.
-	Failure = '#4F5A69',
-	Fate = '#8F477B',
-	Legacy = '#4F5A69',
-	Quest = '#805A90',
+	'Failure Moves' = '#4F5A69',
+	'Fate Moves' = '#8F477B',
+	'Legacy Moves' = '#4F5A69',
+	'Quest Moves' = '#805A90',
 	// non-canonical (ironsworn); uses color from 'Recover'
-	Rarity = '#488B44',
-	Recover = '#488B44',
+	'Rarity Moves' = '#488B44',
+	'Recover Moves' = '#488B44',
 	// non-canonical (ironsworn); uses color from 'Connection'
-	Relationship = '#4A5791',
+	'Relationship Moves' = '#4A5791',
 	'Scene Challenge' = '#206087',
-	Session = '#3F8C8A',
-	Suffer = '#883529',
+	'Session Moves' = '#3F8C8A',
+	'Suffer Moves' = '#883529',
 	// non-canonical (ironsworn); uses color from 'Session'
-	Threat = '#3F8C8A',
-	Threshold = '#1D1D1B'
+	'Threat Moves' = '#3F8C8A',
+	'Threshold Moves' = '#1D1D1B'
 }
 
 function walkCategory(
@@ -116,7 +171,7 @@ function walkCategory(
 					// 'alternate version' gets too long for a single line in many cases, so it gets trimmed
 					// move.Display.Title.replace(/alternate version/i, 'alt') ??
 					moveItem.name as string,
-				moveItem: () => moveItem
+				uuid: moveItem.uuid
 			})
 		} else {
 			console.warn(`Couldn't find item for move ${move.$id}`)
@@ -142,7 +197,7 @@ async function augmentWithFolderContents(categories: DisplayMoveCategory[]) {
 		customMoves.push({
 			color,
 			displayName: moveItem.name ?? '(move)',
-			moveItem: () => moveItem
+			uuid: moveItem.uuid
 		})
 	}
 
