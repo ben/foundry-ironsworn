@@ -49,16 +49,25 @@ function assetFetcher(dsid: string): () => Promise<IronswornItem> {
 export async function createMergedAssetTree(): Promise<DisplayRuleset[]> {
 	let ret: DisplayRuleset[] = compact(
 		await Promise.all(
-			IronswornSettings.enabledRulesets.map(async (rsName) => {
-				const rs = DataswornTree.get(rsName)
+			IronswornSettings.enabledRulesets.map(async (rsKey) => {
+				const rs = DataswornTree.get(rsKey)
 				if (!rs) return undefined
+
+				const rsTitle = rsKey.titleCase()
+				const i18n = (categoryName: string, subKey: string) => {
+					const capCat = categoryName.titleCase()
+					return game.i18n.localize(
+						`IRONSWORN.Asset Categories.${rsTitle}.${capCat}.${subKey}`
+					)
+				}
+
 				return {
-					title: rs.title,
+					title: game.i18n.localize(`IRONSWORN.RULESETS.${rsKey}`),
 					categories: Object.values(rs.assets).map((cat) => {
 						return {
 							ds: cat,
-							title: cat.name, // TODO: i18n
-							description: cat.description ?? '', // TODO: i18n, maybe use compendium folder description
+							title: i18n(cat.name, 'Title'),
+							description: i18n(cat.name, 'Description'),
 							expanded: false,
 							assets: Object.values(cat.contents).map((asset) => ({
 								ds: asset,
