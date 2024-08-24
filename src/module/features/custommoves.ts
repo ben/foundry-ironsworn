@@ -1,7 +1,7 @@
 import { DataswornTree } from '../datasworn2'
 import type { IMove, IMoveCategory } from 'dataforged'
 import { ISMoveCategories, SFMoveCategories } from '../dataforged/data'
-import { IronswornSettings } from '../helpers/settings'
+import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
 import { cachedDocumentsForPack, PackContents } from './pack-cache'
 import type { Move, MoveCategory } from '@datasworn/core/dist/Datasworn'
@@ -85,40 +85,47 @@ export async function createStarforgedMoveTree(): Promise<
 }
 
 const INDEXES: Record<string, any> = {}
+async function ensureIndex(rsKey: DataswornRulesetKey) {
+	const compendiumKey = DS_MOVE_COMPENDIUM_KEYS[rsKey]
+	if (INDEXES[compendiumKey] == null) {
+		const pack = game.packs.get(compendiumKey)
+		INDEXES[compendiumKey] = await pack?.getIndex({ fields: ['flags'] })
+	}
+}
+
+export async function createMoveTreeForRuleset(
+	rsKey: DataswornRulesetKey
+): Promise<DisplayMoveRuleset> {
+	await ensureIndex(rsKey)
+	const rs = DataswornTree.get(rsKey)
+	const index = INDEXES[DS_MOVE_COMPENDIUM_KEYS[rsKey]]
+	const categories = Object.values(rs?.moves ?? {})
+	return {
+		displayName: game.i18n.localize(`IRONSWORN.RULESETS.${rsKey}`),
+		categories: categories.map((cat) => ({
+			color: cat.color ?? MoveCategoryColor[cat.name] ?? null,
+			displayName: game.i18n.localize(`IRONSWORN.MOVES.${cat.name}`),
+			ds: cat,
+			moves: Object.values(cat.contents).map((move) => {
+				const indexEntry = index.contents.find(
+					(x) => x.flags['foundry-ironsworn']?.dsid === move._id
+				)
+				return {
+					color: move.color ?? null,
+					displayName: move.name,
+					uuid: indexEntry.uuid, // TODO: move.uuid
+					ds: move
+				}
+			})
+		}))
+	}
+}
 
 export async function createMergedMoveTree(): Promise<DisplayMoveRuleset[]> {
 	// Pre-load compendium indexes
-	for (const rsName of IronswornSettings.enabledRulesets) {
-		const compendiumKey = DS_MOVE_COMPENDIUM_KEYS[rsName]
-		const pack = game.packs.get(compendiumKey)
-		INDEXES[compendiumKey] ||= await pack?.getIndex({ fields: ['flags'] })
-	}
-
+	await Promise.all(IronswornSettings.enabledRulesets.map(ensureIndex))
 	return await Promise.all(
-		IronswornSettings.enabledRulesets.map(async (rsKey) => {
-			const rs = DataswornTree.get(rsKey)
-			const index = INDEXES[DS_MOVE_COMPENDIUM_KEYS[rsKey]]
-			const categories = Object.values(rs?.moves ?? {})
-			return {
-				displayName: game.i18n.localize(`IRONSWORN.RULESETS.${rsKey}`),
-				categories: categories.map((cat) => ({
-					color: cat.color ?? MoveCategoryColor[cat.name] ?? null,
-					displayName: game.i18n.localize(`IRONSWORN.MOVES.${cat.name}`),
-					ds: cat,
-					moves: Object.values(cat.contents).map((move) => {
-						const indexEntry = index.contents.find(
-							(x) => x.flags['foundry-ironsworn']?.dsid === move._id
-						)
-						return {
-							color: move.color ?? null,
-							displayName: move.name,
-							uuid: indexEntry.uuid, // TODO: move.uuid
-							ds: move
-						}
-					})
-				}))
-			}
-		})
+		IronswornSettings.enabledRulesets.map(createMoveTreeForRuleset)
 	)
 }
 
