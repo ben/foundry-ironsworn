@@ -89,7 +89,7 @@ import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
-import { uniq } from 'lodash-es'
+import { compact, uniq } from 'lodash-es'
 import { OracleTable } from '../../roll-table/oracle-table'
 
 const props = withDefaults(
@@ -138,7 +138,7 @@ const oracleNodes: IOracleTreeNode[] = await Promise.all(
 		const t = await OracleTable.getByDsId(oid)
 		return {
 			displayName: t?.name ?? '(missing)',
-			tables: [t.uuid],
+			tables: compact([t?.uuid]),
 			children: []
 		}
 	})
