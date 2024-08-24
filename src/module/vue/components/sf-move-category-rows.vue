@@ -70,7 +70,7 @@ const props = withDefaults(
 
 let $children = ref<InstanceType<typeof SfMoverow>[]>([])
 
-const categoryTooltip = ref(props.category.dataforgedCategory?.Description)
+const categoryTooltip = ref(props.category.ds?.description)
 ;(async () => {
 	categoryTooltip.value = await enrichMarkdown(categoryTooltip.value)
 })()

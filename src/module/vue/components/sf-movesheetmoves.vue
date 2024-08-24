@@ -45,7 +45,7 @@
 						:expanded="!!searchQuery"
 						:class="$style.catList"
 						:category="category"
-						:data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
+						:data-tourid="`move-category-${category.ds?._id}`"
 					/>
 				</li>
 			</ul>
