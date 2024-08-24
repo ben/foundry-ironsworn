@@ -38,13 +38,13 @@
 					<slot
 						name="btn-oracle"
 						v-bind="{
-							node: data.oracles[0] ?? {},
+							node: oracleNodes[0] ?? {},
 							disabled: preventOracle,
 							class: $style.btn
 						}"
 					>
 						<BtnOracle
-							:node="data.oracles[0] ?? {}"
+							:node="oracleNodes[0] ?? {}"
 							:disabled="preventOracle"
 							:class="$style.btn"
 						/>
@@ -63,7 +63,7 @@
 			>
 				<template #after-footer>
 					<OracleTreeNode
-						v-for="node of data.oracles"
+						v-for="node of oracleNodes"
 						:key="node.displayName"
 						:class="$style.oracle"
 						:node="node"
@@ -121,42 +121,40 @@ const props = withDefaults(
 	}
 )
 
-// TODO: (this component is now async)
 const $item = (await fromUuid(props.move.uuid)) as IronswornItem<'sfmove'>
 const item = ref($item.toObject())
 
 provide(ItemKey, item as any)
 provide($ItemKey, $item)
 
-const data = reactive({
-	oracles: [] as IOracleTreeNode[]
-})
-
 const $collapsible = ref<typeof Collapsible>()
+
+const oracleDsIds = uniq([
+	...($item?.system?.dsOracleIds ?? []),
+	...Object.values(props.move.ds?.oracles ?? {}).map((x) => x._id)
+])
+const oracleNodes: IOracleTreeNode[] = await Promise.all(
+	oracleDsIds.map(async (oid) => {
+		const t = await OracleTable.getByDsId(oid)
+		return {
+			displayName: t?.name ?? '(missing)',
+			tables: [t.uuid],
+			children: []
+		}
+	})
+)
 
 const canRoll = computed(() => {
 	return moveHasRollableOptions($item)
 })
 const preventOracle = computed(() => {
-	return data.oracles.length !== 1
+	return oracleNodes.length !== 1
 })
 
 const toggleTooltip = ref($item.system.Trigger?.Text)
 ;(async function () {
 	toggleTooltip.value = await enrichMarkdown(toggleTooltip.value)
 })()
-
-// TODO: switch this to use datasworn data
-const oracleIds = uniq([
-	...($item?.system?.Oracles ?? []),
-	...(props.move.dataforgedMove?.Oracles ?? [])
-])
-Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(
-	async (dfOracles) => {
-		const nodes = await Promise.all(dfOracles.map(walkOracle))
-		data.oracles.push(...nodes)
-	}
-)
 
 defineExpose({
 	moveId: props.move.uuid,
