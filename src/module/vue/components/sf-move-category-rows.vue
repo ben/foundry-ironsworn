@@ -16,8 +16,8 @@
 		<template #default>
 			<ul class="flexcol" :class="$style.list">
 				<li
-					v-for="(move, i) of category.moves"
-					:key="i"
+					v-for="move of category.moves"
+					:key="move.uuid"
 					class="list-block-item nogrow"
 					:class="$style.listItem"
 				>
