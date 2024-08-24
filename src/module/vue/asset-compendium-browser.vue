@@ -37,8 +37,8 @@
 
 							<AssetBrowserCard
 								v-for="(asset, i) in category.assets"
-								:key="asset.foundryItem()?.id ?? i"
-								:asset="asset.foundryItem"
+								:key="asset.ds?._id ?? i"
+								:assetFetcher="asset.assetFetcher"
 								class="nogrow movesheet-row"
 							/>
 						</section>

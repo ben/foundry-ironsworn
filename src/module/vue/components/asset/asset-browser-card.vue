@@ -1,31 +1,32 @@
 <template>
 	<AssetCard
-		:asset="asset().toObject"
+		:asset="resolvedAsset"
 		:class="$style.wrapper"
 		:expanded="state.expanded"
 		class="document"
 		draggable="true"
-		:data-pack="asset().pack"
-		:data-id="asset().id"
-		:data-document-id="asset().id"
+		:data-pack="resolvedAsset.pack"
+		:data-id="resolvedAsset.id"
+		:data-document-id="resolvedAsset.id"
 		:readonly-fields="true"
 		:readonly-clocks="true"
 		:toggle-abilities="false"
 		:hide-disabled-abilities="false"
 		@dragstart="dragStart"
 		@dragend="dragEnd"
-		@toggle-expand="state.expanded = !state.expanded">
+		@toggle-expand="state.expanded = !state.expanded"
+	>
 		<template #headerStart>
 			<FontIcon
 				name="grip"
 				class="nogrow block draggable item"
-				:class="$style.dragHandle" />
+				:class="$style.dragHandle"
+			/>
 		</template>
 	</AssetCard>
 </template>
 
 <script setup lang="ts">
-import type { IAsset } from 'dataforged'
 import { computed, provide, reactive } from 'vue'
 import type { IronswornItem } from '../../../item/item'
 import { $ItemKey, ItemKey } from '../../provisions.js'
@@ -33,13 +34,15 @@ import FontIcon from 'component:icon/font-icon.vue'
 import AssetCard from 'component:asset/asset-card.vue'
 
 const props = defineProps<{
-	asset: () => IronswornItem
+	assetFetcher: () => Promise<IronswornItem>
 }>()
 
-provide($ItemKey, props.asset())
+const resolvedAsset = await props.assetFetcher()
+
+provide($ItemKey, resolvedAsset)
 provide(
 	ItemKey,
-	computed(() => props.asset().toObject() as any)
+	computed(() => resolvedAsset.toObject() as any)
 )
 
 const state = reactive({
