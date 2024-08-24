@@ -1,19 +1,30 @@
+import type { Asset, AssetCollection } from '@datasworn/core/dist/Datasworn'
 import type { IAsset, IAssetType } from 'dataforged'
+import { compact } from 'lodash-es'
 import { renderLinksInStr, hashLookup } from '../dataforged'
 import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
+import { DataswornTree } from '../datasworn2'
+import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
 
 export interface DisplayAsset {
 	df?: IAsset
+	ds?: Asset
 	foundryItem: () => IronswornItem
 }
 
 export interface DisplayCategory {
 	df?: IAssetType
+	ds?: AssetCollection
 	title: string
 	description?: string
 	expanded: boolean
 	assets: DisplayAsset[]
+}
+
+export interface DisplayRuleset {
+	title: string
+	categories: DisplayCategory[]
 }
 
 export async function createIronswornAssetTree(): Promise<DisplayCategory[]> {
@@ -31,13 +42,43 @@ export async function createStarforgedAssetTree(): Promise<DisplayCategory[]> {
 	)
 }
 
+export async function createMergedAssetTree(): Promise<DisplayRuleset[]> {
+	const ret: DisplayRuleset[] = compact(
+		await Promise.all(
+			IronswornSettings.enabledRulesets.map(async (rsName) => {
+				const rs = DataswornTree.get(rsName)
+				if (!rs) return undefined
+				return {
+					title: rs.title,
+					categories: []
+				}
+			})
+		)
+	)
+
+	// Add custom assets from well-known folder
+	const customAssets = await customAssetFolderContents()
+	if (customAssets)
+		ret.push({
+			title: game.i18n.localize('IRONSWORN.Asset Categories.Custom'),
+			categories: [customAssets]
+		})
+
+	// fire the hook and allow extensions to modify the list
+	for (const rs of ret) {
+		Hooks.call('ironswornAssets', rs)
+	}
+
+	return ret
+}
+
 async function createAssetTree(
 	compendiumName: string,
 	i18nkeyslug: string,
 	assetTypes: IAssetType[]
 ): Promise<DisplayCategory[]> {
 	// Load from compendium
-	const ret = await compendiumMoves(compendiumName, i18nkeyslug, assetTypes)
+	const ret = await compendiumAssets(compendiumName, i18nkeyslug, assetTypes)
 
 	// Add custom omves from well-known folder
 	await augmentWithFolderContents(ret)
@@ -48,7 +89,7 @@ async function createAssetTree(
 	return ret
 }
 
-async function compendiumMoves(
+async function compendiumAssets(
 	compendiumName: string,
 	i18nkeyslug: string,
 	assetTypes: IAssetType[]
@@ -108,4 +149,26 @@ async function augmentWithFolderContents(categories: DisplayCategory[]) {
 		expanded: false,
 		assets: customAssets
 	})
+}
+
+async function customAssetFolderContents(): Promise<
+	DisplayCategory | undefined
+> {
+	const name = game.i18n.localize('IRONSWORN.Asset Categories.Custom')
+	const folder = (game.items?.directory as any)?.folders.find(
+		(x) => x.name === name
+	) as Folder | undefined
+	if (folder == null || folder.contents.length == 0) return
+
+	const customAssets = [] as DisplayAsset[]
+	for (const item of folder.contents) {
+		if (item.documentName !== 'Item' || item.type !== 'asset') continue
+		customAssets.push({ foundryItem: () => item })
+	}
+
+	return {
+		title: name,
+		expanded: false,
+		assets: customAssets
+	}
 }
