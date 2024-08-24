@@ -1,5 +1,4 @@
 import type { Asset, AssetCollection } from '@datasworn/core/dist/Datasworn'
-import type { IAsset, IAssetType } from 'dataforged'
 import { compact } from 'lodash-es'
 import { DataswornTree, IdParser } from '../datasworn2'
 import { IronswornSettings } from '../helpers/settings'
@@ -12,13 +11,11 @@ export const DS_ASSET_COMPENDIUM_KEYS: Record<string, string> = {
 }
 
 export interface DisplayAsset {
-	df?: IAsset
 	ds?: Asset
 	assetFetcher: () => Promise<IronswornItem>
 }
 
 export interface DisplayCategory {
-	df?: IAssetType
 	ds?: AssetCollection
 	title: string
 	description?: string
