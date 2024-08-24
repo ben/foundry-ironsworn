@@ -2,7 +2,7 @@
 	<article class="flexcol" :class="$style.wrapper">
 		<nav class="flexrow nogrow" :class="$style.nav">
 			<input
-				v-model="state.searchQuery"
+				v-model="searchQuery"
 				type="search"
 				:placeholder="
 					$t('SIDEBAR.Search', { types: $t('IRONSWORN.ITEMS.TypeMove') })
@@ -25,31 +25,8 @@
 			/>
 		</nav>
 
-		<!--  TODO: filtered rulesets with search results  -->
-		<ul
-			v-if="state.searchQuery"
-			class="item-list scrollable flexcol"
-			:class="$style.list"
-		>
-			<!-- Flat search results -->
-			<li
-				v-for="(move, resultIndex) of searchResults"
-				:key="move.uuid ?? `move${resultIndex}`"
-				class="nogrow"
-			>
-				<SfMoverow
-					ref="allMoves"
-					:move="move"
-					:thematic-color="move.color"
-					:class="$style.filteredResult"
-				/>
-			</li>
-		</ul>
-
-		<!-- Rulesets/categories/moves if not searching -->
 		<section
-			v-else
-			v-for="ruleset in moveTree"
+			v-for="ruleset in filteredMoveTree"
 			:key="ruleset.displayName"
 			class="nogrow"
 		>
@@ -65,6 +42,7 @@
 					<SfMoveCategoryRows
 						ref="allCategories"
 						class="nogrow"
+						:expanded="!!searchQuery"
 						:class="$style.catList"
 						:category="category"
 						:data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
@@ -105,22 +83,29 @@ const checkedSearchQuery = computed(() => {
 	}
 })
 
-// TODO: rework search
-const flatMoves = computed(() =>
-	state.categories.flatMap((category) =>
-		category.moves.map((mv) => ({ ...mv, color: category.color }))
-	)
-)
-
-const searchResults = computed(() => {
-	if (!checkedSearchQuery.value) return null
+const filteredMoveTree = computed(() => {
+	if (searchQuery.value === '') return moveTree
 
 	const re = new RegExp(checkedSearchQuery.value, 'i')
-	return flatMoves.value.filter((x) => re.test(x.displayName))
+	return moveTree
+		.map((ruleset) => {
+			return {
+				...ruleset,
+				categories: ruleset.categories
+					.map((cat) => {
+						return {
+							...cat,
+							moves: cat.moves.filter((mv) => re.test(mv.displayName))
+						}
+					})
+					.filter((cat) => cat.moves.length > 0)
+			}
+		})
+		.filter((ruleset) => ruleset.categories.length > 0)
 })
 
 function clearSearch() {
-	state.searchQuery = ''
+	searchQuery.value = ''
 }
 
 function collapseMoveCategories() {

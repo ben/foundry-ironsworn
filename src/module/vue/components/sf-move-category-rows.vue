@@ -2,6 +2,7 @@
 	<Collapsible
 		ref="$collapsible"
 		class="list-block"
+		:expanded="props.expanded"
 		:class="$style.wrapper"
 		:toggle-button-class="$style.toggleBtn"
 		:toggle-tooltip="categoryTooltip"
@@ -45,6 +46,7 @@ import { enrichMarkdown } from '../vue-plugin'
 const props = withDefaults(
 	defineProps<{
 		category: DisplayMoveCategory
+		expanded?: boolean
 		/**
 		 * Duration of the move highlight effect, in milliseconds.
 		 * @default 2000
