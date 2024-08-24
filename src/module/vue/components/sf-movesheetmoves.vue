@@ -66,7 +66,7 @@
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
-import type { MoveCategory } from '../../features/custommoves'
+import type { DisplayMoveCategory } from '../../features/custommoves'
 import {
 	createIronswornMoveTree,
 	createStarforgedMoveTree
@@ -82,7 +82,7 @@ provide('toolset', props.toolset)
 
 const state = reactive({
 	searchQuery: '',
-	categories: [] as MoveCategory[]
+	categories: [] as DisplayMoveCategory[]
 })
 
 let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])

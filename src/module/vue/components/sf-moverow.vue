@@ -76,7 +76,7 @@
 
 <script setup lang="ts">
 import { computed, provide, reactive, ref } from 'vue'
-import type { Move } from '../../features/custommoves'
+import type { DisplayMove } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
@@ -94,7 +94,7 @@ import { OracleTable } from '../../roll-table/oracle-table'
 
 const props = withDefaults(
 	defineProps<{
-		move: Move
+		move: DisplayMove
 		headingLevel?: number
 		toggleSectionClass?: any
 		toggleButtonClass?: any

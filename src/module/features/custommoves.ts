@@ -3,27 +3,25 @@ import { ISMoveCategories, SFMoveCategories } from '../dataforged/data'
 import type { IronswornItem } from '../item/item'
 import { cachedDocumentsForPack, PackContents } from './pack-cache'
 
-export interface MoveCategory {
+export interface DisplayMoveCategory {
 	color: string | null
 	displayName: string
-	moves: Move[]
+	moves: DisplayMove[]
 	dataforgedCategory?: IMoveCategory
 }
 
-export interface Move {
+export interface DisplayMove {
 	color: string | null
 	displayName: string
 	moveItem: () => IronswornItem<'sfmove'>
 	dataforgedMove?: IMove
 }
 
-// For some reason, rollupJs mangles this
-
 async function createMoveTree(
 	categories: IMoveCategory[],
 	...compendiumNames: string[]
-): Promise<MoveCategory[]> {
-	const ret = [] as MoveCategory[]
+): Promise<DisplayMoveCategory[]> {
+	const ret = [] as DisplayMoveCategory[]
 
 	// Make sure compendium is loaded
 	const compendiumMoves: PackContents = []
@@ -50,7 +48,9 @@ async function createMoveTree(
 	return ret
 }
 
-export async function createIronswornMoveTree(): Promise<MoveCategory[]> {
+export async function createIronswornMoveTree(): Promise<
+	DisplayMoveCategory[]
+> {
 	return await createMoveTree(
 		ISMoveCategories,
 		'foundry-ironsworn.ironswornmoves',
@@ -58,7 +58,9 @@ export async function createIronswornMoveTree(): Promise<MoveCategory[]> {
 	)
 }
 
-export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
+export async function createStarforgedMoveTree(): Promise<
+	DisplayMoveCategory[]
+> {
 	return await createMoveTree(
 		SFMoveCategories,
 		'foundry-ironsworn.starforgedmoves'
@@ -94,13 +96,13 @@ export enum MoveCategoryColor {
 function walkCategory(
 	category: IMoveCategory,
 	compendiumMoves: Array<IronswornItem<'sfmove'>>
-): MoveCategory {
-	const newCategory: MoveCategory = {
+): DisplayMoveCategory {
+	const newCategory: DisplayMoveCategory = {
 		// FIXME: revert to pulling directly from DF when it's fixed in 2.0
 		color: MoveCategoryColor[category.Name] ?? null,
 		displayName: game.i18n.localize(`IRONSWORN.MOVES.${category.Name}`),
 		dataforgedCategory: category,
-		moves: [] as Move[]
+		moves: [] as DisplayMove[]
 	}
 
 	for (const move of category.Moves) {
@@ -124,7 +126,7 @@ function walkCategory(
 	return newCategory
 }
 
-async function augmentWithFolderContents(categories: MoveCategory[]) {
+async function augmentWithFolderContents(categories: DisplayMoveCategory[]) {
 	const name = game.i18n.localize('IRONSWORN.MOVES.Custom')
 	const folder = (game.items?.directory as any)?.folders.find(
 		(x) => x.name === name
@@ -134,7 +136,7 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
 	// @ts-expect-error Exists only in FVTT v10 API
 	const color = (folder.color ?? null) as string | null
 
-	const customMoves = [] as Move[]
+	const customMoves = [] as DisplayMove[]
 	for (const moveItem of folder.contents) {
 		if (moveItem.documentName !== 'Item' || !moveItem.assert('sfmove')) continue
 		customMoves.push({
