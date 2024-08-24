@@ -57,6 +57,9 @@ import { createMergedAssetTree } from '../features/customassets'
 import IronBtn from 'component:buttons/iron-btn.vue'
 import RenderedText from 'component:rendered-text.vue'
 
+// Not used, but this prevents a Vue warning
+defineProps<{ data: any }>()
+
 const rulesets = ref(await createMergedAssetTree())
 </script>
 
