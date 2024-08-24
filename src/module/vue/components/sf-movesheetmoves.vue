@@ -47,8 +47,15 @@
 		</ul>
 
 		<!-- Rulesets/categories/moves if not searching -->
-		<section v-else v-for="ruleset in moveTree" :key="ruleset.displayName">
-			<h2 :class="$style.rulesetname">{{ ruleset.displayName }}</h2>
+		<section
+			v-else
+			v-for="ruleset in moveTree"
+			:key="ruleset.displayName"
+			class="nogrow"
+		>
+			<h2 v-if="showHeaders" :class="$style.rulesetname">
+				{{ ruleset.displayName }}
+			</h2>
 			<ul class="item-list scrollable flexcol" :class="$style.list">
 				<li
 					v-for="(category, catIndex) in ruleset.categories"
@@ -82,6 +89,8 @@ const state = reactive({
 })
 
 const moveTree = await createMergedMoveTree()
+
+const showHeaders = moveTree.length > 1
 
 let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
 let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
