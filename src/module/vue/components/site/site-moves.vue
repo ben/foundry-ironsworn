@@ -77,7 +77,7 @@ import type { Ref } from 'vue'
 import { computed, inject, reactive } from 'vue'
 import type { IronswornActor } from '../../../actor/actor'
 import type { DisplayMove } from '../../../features/custommoves'
-import { createIronswornMoveTree } from '../../../features/custommoves'
+import { createMoveTreeForRuleset } from '../../../features/custommoves'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 import BtnOracle from '../buttons/btn-oracle.vue'
@@ -95,37 +95,31 @@ const domain = computed(() => {
 	return site?.value?.items.find((x) => x.type === 'delve-domain')
 })
 
+// Construct some moves to use with the new pipeline
+const moves = reactive<{ [k: string]: DisplayMove }>({})
+const ruleset = await createMoveTreeForRuleset('delve')
+const delveMoves = await ruleset.categories.find(
+	(x) => x.ds?._id === 'move_category:delve/delve'
+)
+const moveDsIds = {
+	discoverASite: 'move:delve/delve/discover_a_site',
+	delveTheDepths: 'move:delve/delve/delve_the_depths',
+	findAnOpportunity: 'move:delve/delve/find_an_opportunity',
+	revealADanger: 'move:delve/delve/reveal_a_danger',
+	checkYourGear: 'move:delve/delve/check_your_gear',
+	escapeTheDepths: 'move:delve/delve/escape_the_depths',
+	locateObjective: 'move:delve/delve/locate_your_objective',
+	revealADangerAlt: 'move:delve/delve/reveal_a_danger_alt'
+}
+for (const [k, dsid] of Object.entries(moveDsIds)) {
+	const dm = delveMoves?.moves.find((x) => x.ds?._id === dsid)
+	console.log({ k, dsid, dm })
+	moves[k] = dm
+}
+
 const hasThemeAndDomain = computed(() => {
 	return !!(theme.value && domain.value)
 })
-
-// Construct some moves to use with the new pipeline
-const moves = reactive<{ [k: string]: DisplayMove }>({})
-Promise.resolve().then(async () => {
-	const moveTree = await createIronswornMoveTree()
-	const delveMoves = moveTree.find(
-		(x) => x.dataforgedCategory?.$id === 'Ironsworn/Moves/Delve'
-	)
-	if (!delveMoves) return
-
-	const movesToFetch = {
-		discoverASite: 'Ironsworn/Moves/Delve/Discover_a_Site',
-		delveTheDepths: 'Ironsworn/Moves/Delve/Delve_the_Depths',
-		findAnOpportunity: 'Ironsworn/Moves/Delve/Find_an_Opportunity',
-		revealADanger: 'Ironsworn/Moves/Delve/Reveal_a_Danger',
-		checkYourGear: 'Ironsworn/Moves/Delve/Check_Your_Gear',
-		escapeTheDepths: 'Ironsworn/Moves/Delve/Escape_the_Depths',
-		locateObjective: 'Ironsworn/Moves/Delve/Locate_Your_Objective',
-		revealADangerAlt: 'Ironsworn/Moves/Delve/Reveal_a_Danger_alt'
-	}
-
-	for (const k of Object.keys(movesToFetch)) {
-		moves[k] = delveMoves.moves.find(
-			(x) => x.dataforgedMove?.$id === movesToFetch[k]
-		)!
-	}
-})
-
 async function revealADanger() {
 	return (await $site?.system.getDangers())?.draw()
 }

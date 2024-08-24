@@ -94,7 +94,9 @@
 				</article>
 			</div>
 			<div class="scrollable flexcol" :class="$style.rightCol">
-				<SiteMoves class="nogrow" />
+				<Suspense>
+					<SiteMoves class="nogrow" />
+				</Suspense>
 			</div>
 		</div>
 		<div class="flexcol">
@@ -230,8 +232,8 @@ function saveDescription() {
 }
 
 .rightCol {
-	flex-basis: 12em;
-	max-height: 411px;
+	flex-basis: 14em;
+	max-height: 440px;
 }
 
 .leftCol {
