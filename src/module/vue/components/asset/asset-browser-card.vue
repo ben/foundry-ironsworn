@@ -1,13 +1,10 @@
 <template>
 	<AssetCard
-		:asset="resolvedAsset"
 		:class="$style.wrapper"
 		:expanded="state.expanded"
 		class="document"
 		draggable="true"
-		:data-pack="resolvedAsset.pack"
-		:data-id="resolvedAsset.id"
-		:data-document-id="resolvedAsset.id"
+		:data-uuid="resolvedAsset.uuid"
 		:readonly-fields="true"
 		:readonly-clocks="true"
 		:toggle-abilities="false"
@@ -54,15 +51,15 @@ function dragStart(ev) {
 		'text/plain',
 		JSON.stringify({
 			type: 'AssetBrowserData',
-			uuid: props.asset().uuid
+			uuid: resolvedAsset.uuid
 		})
 	)
 
-	CONFIG.IRONSWORN.emitter.emit('dragStart', props.asset().type)
+	CONFIG.IRONSWORN.emitter.emit('dragStart', resolvedAsset.type)
 }
 
 function dragEnd() {
-	CONFIG.IRONSWORN.emitter.emit('dragEnd', props.asset().type)
+	CONFIG.IRONSWORN.emitter.emit('dragEnd', resolvedAsset.type)
 }
 </script>
 

@@ -50,26 +50,14 @@
 </template>
 
 <script setup lang="ts">
-import { provide, reactive, ref } from 'vue'
+import { ref } from 'vue'
 import AssetBrowserCard from 'component:asset/asset-browser-card.vue'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
-import {
-	createIronswornAssetTree,
-	createMergedAssetTree
-} from '../features/customassets'
+import { createMergedAssetTree } from '../features/customassets'
 import IronBtn from 'component:buttons/iron-btn.vue'
 import RenderedText from 'component:rendered-text.vue'
 
-const props = defineProps<{
-	data: { toolset: 'starforged' | 'ironsworn' | 'sunderedisles' }
-}>()
-
-provide('toolset', props.data.toolset)
-
-const categories = await createIronswornAssetTree() // TODO: sundered isles
 const rulesets = ref(await createMergedAssetTree())
-
-const data = reactive({ categories })
 </script>
 
 <style lang="scss" scoped>
