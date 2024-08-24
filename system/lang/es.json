@@ -540,46 +540,46 @@
 		},
 		"Asset Categories": {
 			"Custom": "Recursos Personalizados",
-			"Ironsworn": {
-				"Companion": {
+			"Classic": {
+				"Companion Assets": {
 					"Title": "Compañero",
 					"Description": "Los compañeros son tus PNJ ayudantes. Al adquirir un compañero dale un nombre y visualiza su apariencia y personalidad. Si no tiene una habilidad inicial elige una. Mejorar un compañero proporciona habilidades adicionales.\n\nLos compañeros usan un registro de salud y pueden sufrir daño como resultado de tus movimientos. Cuando tu compañero recibe daño usa el movimiento [Tu compañero sufre daño](Ironsworn/Moves/Suffer/Companion_Endure_Harm) (página 94) para determinar el resultado. Ver página 43 para más información."
 				},
-				"Path": {
+				"Path Assets": {
 					"Title": "Senda",
 					"Description": "Las **Sendas** son tu trasfondo, intereses, entrenamiento, habilidades, poderes y equipo clave. Te proporcionan ventajas mecánicas y narrativas, pero también reflejan quien eres y cómo interactúas con el mundo. Por ejemplo, un **Ritualista** se verá diferente a un **Veterano**. Elegir estas dos sendas puede reflejar la evolución de tu personaje o un trasfondo interesante."
 				},
-				"Combat Talent": {
+				"Combat Talent Assets": {
 					"Title": "Talento de combate",
 					"Description": "Se asume que los personajes de *Ironsworn* son luchadores habilidosos. Incluso sin un talento de combate puedes blandir armas y realizar movimientos de combate (página 78). Un talento de combate refleja un área particular de pericia y te proporciona opciones y bonos adicionales.\n\nLos recursos de talentos de combate típicamente requieren que blandas un arma específica, como indica en el texto del recurso. Por ejemplo, si tienes **Maestría con el escudo** y no tienes un escudo preparado no puedes usar las habilidades del recurso."
 				},
-				"Ritual": {
+				"Ritual Assets": {
 					"Title": "Ritual",
 					"Description": "La magia en *Ironsworn* se realiza a través de rituales que ayudan a tus acciones o actúan como movimientos únicos. Como todos los recursos los rituales pueden ser seleccionados al ganar experiencia y mejorados con el paso del tiempo para hacerlos más flexibles o poderosos.\n\nTodos los rituales usan un movimiento como su habilidad marcada por defecto. Debes hacer este movimiento y la tirada asociada para activar el efecto. Cualquier habilidad secundaria que ganes mejorando el recurso es dependiente de realizar el ritual tal y como se describe en la habilidad por defecto."
 				}
 			},
 			"Starforged": {
-				"Command Vehicle": {
+				"Command Vehicle Assets": {
 					"Title": "Vehículo de mando",
 					"Description": "El **vehículo de mando** es tu nave interestelar. Es un recurso por defecto para tu personaje, obtenido al empezar la campaña. Si estás jugando con otros es un recurso compartido; cada uno de vosotros podéis usar las habilidades de la NAVE ESTELAR mientras estéis a bordo.\n\nEl vehículo de mando tiene un contador de integridad y empieza a 5 de integridad. Cuando tu NAVE ESTELAR recibe un impacto haz el movimiento @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Resistir el daño} para ver qué pasa."
 				},
-				"Module": {
+				"Module Assets": {
 					"Title": "Módulo",
 					"Description": "Los **módulos** están unidos a tu NAVE ESTELAR y ofrecen opciones y ventajas adicionales mientras estás en el vehículo.\n\nEstos recursos pueden ser obtenidos y gestionados por un único personaje. Pueden ser compartidos con aliados, pero solo si es práctico que hagan uso de ellos (no todo el mundo sabe como usar un LABORATORIO DE INVESTIGACIÓN).\n\nAl @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Resistir el daño} y obtener un fallo puedes marcar un módulo como roto para desviar daño de tu NAVE ESTELAR. Voltea la carta para indicar que está roto. Un módulo roto no puede ser usado hasta @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Reparar} el módulo."
 				},
-				"Support Vehicle": {
+				"Support Vehicle Assets": {
 					"Title": "Vehículo de soporte",
 					"Description": "Los **vehículos de soporte** complementan tus vehículos de mando en operaciones a corta distancia o en la superfície planeataria. Si estás jugando con otros uno de vosotros puede actuar como el piloto o dueño de un vehículo de soporte, pero cualquiera a bordo puede usar sus habilidades según la situación.\n\nLos vehículos de soporte tienen registros de integridad, igual que los vehículos de mando. El máximo de integridad varía según el tipo de vehículo. Cuando un vehículo de soporte se enfrenta a una situación o ambiente dañino debes @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Resistir el daño} para ver cómo le va."
 				},
-				"Path": {
+				"Path Assets": {
 					"Title": "Senda",
 					"Description": "Las **Sendas** son tu trasfondo, intereses, entrenamiento, habilidades, poderes y equipo clave. Te proporcionan ventajas mecánicas y narrativas, pero también reflejan quien eres y cómo interactúas con el mundo. Cuando crees tu personaje en el próximo capítulo elegirás al menos dos sendas para empezar.\n\nAlgunas sendas representan tu habilidad con una arma predilecta o un equipo concreto. Si ves un requisito en la parte superior de la carta de recurso, como por ejemplo “Si llevas un arma de filo…” el recurso solo puede usarse al realizar una acción con dicho objeto."
 				},
-				"Companion": {
+				"Companion Assets": {
 					"Title": "Compañero",
 					"Description": "Los **Compañeros** son PNJ ayudantes. Al ganar un compañero dales un nombre y visualiza su aspecto y personalidad.\n\nLos compañeros usan un registro de salud y pueden sufrir daño si un resultado los pone en peligro. Cuando tu compañero recibe daño usa el movimiento @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Tu compañero sufre daño}. Cuando su salud llega a 0 corren el riesgo de morir o ser destruidos."
 				},
-				"Deed": {
+				"Deed Assets": {
 					"Title": "Hazaña",
 					"Description": "Las **Hazañas** representan un logro notable en tu historia y cómo esos eventos cambian tu personaje.\n\nLas hazañas tienen un requisito en la parte superior de la carta del tipo “Al \\[...\\].” No puedes gastar experiencia para adquirir una hazaña hasta cumplir el requisito y no puedes elegir una hazaña al crear el personaje."
 				}

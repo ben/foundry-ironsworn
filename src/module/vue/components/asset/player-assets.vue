@@ -86,9 +86,7 @@ function assetSortDown(i) {
 let theAssetBrowser: AssetCompendiumBrowser | undefined
 function assetBrowser() {
 	if (!theAssetBrowser) {
-		theAssetBrowser = new AssetCompendiumBrowser(
-			$actor?.toolset ?? IronswornSettings.defaultToolbox
-		)
+		theAssetBrowser = new AssetCompendiumBrowser()
 	}
 	theAssetBrowser.render(true, { focus: true })
 }
