@@ -77,10 +77,7 @@ const categoryTooltip = ref(props.category.dataforgedCategory?.Description)
  * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
  */
 const moveItems = computed(
-	() =>
-		new Map(
-			props.category.moves.map((move) => [move.moveItem().id ?? '', move])
-		)
+	() => new Map(props.category.moves.map((move) => [move.uuid, move]))
 )
 
 let $collapsible = ref<typeof Collapsible>()
@@ -96,8 +93,7 @@ async function expandAndHighlightMove(targetMoveUuid: string) {
 		$collapsible.value.expand()
 		await nextTick()
 	}
-	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
-	const move = $children.value.find((child) => child.moveId === documentId)
+	const move = $children.value.find((child) => child.moveId === targetMoveUuid)
 	highlightMove(move?.$collapsible?.$element as HTMLElement)
 	if (move?.$collapsible?.isExpanded === false) {
 		await move?.$collapsible?.expand()

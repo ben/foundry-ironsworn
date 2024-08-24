@@ -25,6 +25,7 @@
 			/>
 		</nav>
 
+		<!--  TODO: filtered rulesets with search results  -->
 		<ul
 			v-if="state.searchQuery"
 			class="item-list scrollable flexcol"
@@ -33,7 +34,7 @@
 			<!-- Flat search results -->
 			<li
 				v-for="(move, resultIndex) of searchResults"
-				:key="move.moveItem().id ?? `move${resultIndex}`"
+				:key="move.uuid ?? `move${resultIndex}`"
 				class="nogrow"
 			>
 				<SfMoverow
@@ -45,65 +46,57 @@
 			</li>
 		</ul>
 
-		<ul v-else class="item-list scrollable flexcol" :class="$style.list">
-			<!-- Categorized moves if not searching -->
-			<li
-				v-for="(category, catIndex) in state.categories"
-				:key="catIndex"
-				class="nogrow"
-			>
-				<SfMoveCategoryRows
-					ref="allCategories"
+		<!-- Rulesets/categories/moves if not searching -->
+		<section v-else v-for="ruleset in moveTree" :key="ruleset.displayName">
+			<h2>{{ ruleset.displayName }}</h2>
+			<ul class="item-list scrollable flexcol" :class="$style.list">
+				<li
+					v-for="(category, catIndex) in ruleset.categories"
+					:key="catIndex"
 					class="nogrow"
-					:class="$style.catList"
-					:category="category"
-					:data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
-				/>
-			</li>
-		</ul>
+				>
+					<SfMoveCategoryRows
+						ref="allCategories"
+						class="nogrow"
+						:class="$style.catList"
+						:category="category"
+						:data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
+					/>
+				</li>
+			</ul>
+		</section>
 	</article>
 </template>
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
 import type { DisplayMoveCategory } from '../../features/custommoves'
-import {
-	createIronswornMoveTree,
-	createStarforgedMoveTree
-} from '../../features/custommoves'
+import { createMergedMoveTree } from '../../features/custommoves'
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
 import IronBtn from './buttons/iron-btn.vue'
-
-const props = defineProps<{
-	toolset: 'ironsworn' | 'starforged' | 'sunderedisles'
-}>()
-provide('toolset', props.toolset)
 
 const state = reactive({
 	searchQuery: '',
 	categories: [] as DisplayMoveCategory[]
 })
 
+const moveTree = await createMergedMoveTree()
+
 let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
 let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
 
-state.categories =
-	props.toolset === 'ironsworn'
-		? await createIronswornMoveTree()
-		: props.toolset === 'starforged'
-		? await createStarforgedMoveTree()
-		: [] // TODO: Sundered Isles move tree
-
+const searchQuery = ref('')
 const checkedSearchQuery = computed(() => {
 	try {
-		new RegExp(state.searchQuery)
-		return state.searchQuery
+		new RegExp(searchQuery.value)
+		return searchQuery.value
 	} catch (error) {
 		return ''
 	}
 })
 
+// TODO: rework search
 const flatMoves = computed(() =>
 	state.categories.flatMap((category) =>
 		category.moves.map((mv) => ({ ...mv, color: category.color }))
@@ -130,9 +123,8 @@ function collapseMoveCategories() {
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 	clearSearch()
 	await nextTick()
-	const { documentId } = CONFIG.IRONSWORN.parseUuid(targetMoveUuid)
 	const categoryWithMove = allCategories.value.find((moveCategory) =>
-		moveCategory.moveItems.has(documentId ?? '')
+		moveCategory.moveItems.has(targetMoveUuid ?? '')
 	)
 	if (categoryWithMove) {
 		categoryWithMove.expandAndHighlightMove(targetMoveUuid)

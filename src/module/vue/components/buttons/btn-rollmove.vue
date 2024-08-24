@@ -20,6 +20,7 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 import { IronswornActor } from '../../../actor/actor'
+import { IronswornItem } from '../../../item/item'
 import type { DisplayMove } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
@@ -40,7 +41,8 @@ const props = withDefaults(defineProps<Props>(), {
 				move?.dataforgedMove.$id,
 				{ actor }
 			)
-		IronswornPrerollDialog.showForMove(move.moveItem(), { actor })
+		const moveItem = (await fromUuid(move.uuid)) as IronswornItem<'sfmove'>
+		IronswornPrerollDialog.showForMove(moveItem, { actor })
 	}
 })
 </script>

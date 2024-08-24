@@ -121,13 +121,12 @@ const props = withDefaults(
 	}
 )
 
-const $item = computed(() => props.move.moveItem())
-const item = computed(
-	() => props.move.moveItem().toObject() as ItemSource<'sfmove'>
-)
+// TODO: (this component is now async)
+const $item = (await fromUuid(props.move.uuid)) as IronswornItem<'sfmove'>
+const item = ref($item.toObject())
 
-provide(ItemKey, computed(() => $item.value.toObject()) as any)
-provide($ItemKey, $item.value as any)
+provide(ItemKey, item as any)
+provide($ItemKey, $item)
 
 const data = reactive({
 	oracles: [] as IOracleTreeNode[]
@@ -136,22 +135,20 @@ const data = reactive({
 const $collapsible = ref<typeof Collapsible>()
 
 const canRoll = computed(() => {
-	return moveHasRollableOptions($item.value)
+	return moveHasRollableOptions($item)
 })
 const preventOracle = computed(() => {
 	return data.oracles.length !== 1
 })
 
-const toggleTooltip = ref($item.value.system.Trigger?.Text)
+const toggleTooltip = ref($item.system.Trigger?.Text)
 ;(async function () {
 	toggleTooltip.value = await enrichMarkdown(toggleTooltip.value)
 })()
 
-const moveId = computed(() => props.move.moveItem().id)
-
 // TODO: switch this to use datasworn data
 const oracleIds = uniq([
-	...($item?.value.system.Oracles ?? []),
+	...($item?.system?.Oracles ?? []),
 	...(props.move.dataforgedMove?.Oracles ?? [])
 ])
 Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(
@@ -162,7 +159,7 @@ Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(
 )
 
 defineExpose({
-	moveId: moveId.value,
+	moveId: props.move.uuid,
 	$collapsible
 })
 </script>
