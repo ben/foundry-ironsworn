@@ -393,6 +393,7 @@ const processOracle = async (
 			}
 		},
 		name: oracle.name,
+		// @ts-expect-error
 		description: renderText(oracle.summary ?? ''),
 		formula: oracle.dice,
 		replacement: true,
@@ -410,6 +411,7 @@ const processOracle = async (
 			})
 		),
 		folder: foundryFolderId,
+		// @ts-expect-error
 		sort: oracle._source?.page ?? 0,
 		img: 'icons/dice/d10black.svg',
 		_key: `!tables!${fid}`
@@ -455,6 +457,27 @@ for (const collection of collections) {
 	}
 
 	await walkCollections(DataswornTree.get(collection)?.oracles)
+
+	// Walk the moves for embedded oracles
+	const folderHash = hash(`${collection}-moves`)
+	await writeJsonFile(packName, {
+		name: 'Move Oracles',
+		type: 'RollTable',
+		_id: folderHash,
+		sort: 9999,
+		sorting: 'a',
+		_key: `!folders!${folderHash}`
+	})
+	for (const moveCat of Object.values(
+		DataswornTree.get(collection)?.moves ?? {}
+	)) {
+		const legacyFolderId = lookupLegacyId(moveCat._id)
+		for (const move of Object.values(moveCat.contents)) {
+			for (const oracle of Object.values(move.oracles ?? {})) {
+				await processOracle(oracle, packName, legacyFolderId, folderHash, 0)
+			}
+		}
+	}
 }
 
 console.log('\n\n--- THEMES ---')

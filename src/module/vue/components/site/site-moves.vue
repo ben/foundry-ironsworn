@@ -113,8 +113,7 @@ const moveDsIds = {
 }
 for (const [k, dsid] of Object.entries(moveDsIds)) {
 	const dm = delveMoves?.moves.find((x) => x.ds?._id === dsid)
-	console.log({ k, dsid, dm })
-	moves[k] = dm
+	moves[k] = dm!
 }
 
 const hasThemeAndDomain = computed(() => {
