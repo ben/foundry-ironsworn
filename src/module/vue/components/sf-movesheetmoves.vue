@@ -48,7 +48,7 @@
 
 		<!-- Rulesets/categories/moves if not searching -->
 		<section v-else v-for="ruleset in moveTree" :key="ruleset.displayName">
-			<h2>{{ ruleset.displayName }}</h2>
+			<h2 :class="$style.rulesetname">{{ ruleset.displayName }}</h2>
 			<ul class="item-list scrollable flexcol" :class="$style.list">
 				<li
 					v-for="(category, catIndex) in ruleset.categories"
@@ -151,6 +151,11 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 
 .wrapper {
 	gap: var(--ironsworn-spacer-lg);
+}
+
+.rulesetname {
+	text-transform: uppercase;
+	margin: 0.5rem 5px;
 }
 
 .list {
