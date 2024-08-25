@@ -53,6 +53,7 @@ const props = withDefaults(
 		 * @default 2000
 		 */
 		headingLevel?: number
+		highlightDuration?: number
 		collapsible?: Omit<
 			PropsOf<typeof Collapsible>,
 			| 'toggleButtonClass'

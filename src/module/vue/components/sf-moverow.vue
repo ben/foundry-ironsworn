@@ -14,7 +14,7 @@
 		:toggle-tooltip="toggleTooltip"
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-label="move?.displayName"
-		:data-highlight="dataHighlight"
+		:data-highlighted="dataHighlight"
 		:data-move-id="item._id"
 		:data-move-uuid="$item.uuid"
 	>
