@@ -1,59 +1,11 @@
 import Showdown from 'showdown'
 import { IdParser } from '..'
+import { COMPENDIUM_KEY_MAP } from '../finding'
 import { hash, lookupLegacyId } from './ids'
 
 export const markdownRenderer = new Showdown.Converter({ tables: true })
 
 const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
-
-// These are Foundry keys for these, not the paths to the JSON files
-const COMPENDIUM_KEY_MAP = {
-	asset: {
-		classic: 'ironswornassets',
-		starforged: 'starforgedassets',
-		sundered_isles: 'sunderedislesassets'
-	},
-	move_category: {
-		classic: 'ironswornmoves',
-		starforged: 'starforgedmoves',
-		sundered_isles: 'sunderedislesmoves'
-	},
-	move: {
-		classic: 'ironswornmoves',
-		delve: 'ironsworndelvemoves',
-		starforged: 'starforgedmoves',
-		sundered_isles: 'sunderedislesmoves'
-	},
-	oracle_collection: {
-		classic: 'ironswornoracles',
-		delve: 'delveoracles',
-		starforged: 'starforgedoracles',
-		sundered_isles: 'sunderedislesmoves'
-	},
-	oracle_rollable: {
-		classic: 'ironswornoracles',
-		delve: 'delveoracles',
-		starforged: 'starforgedoracles',
-		sundered_isles: 'sunderedislesoracles'
-	},
-	npc: {
-		classic: 'ironswornfoes',
-		delve: 'delvefoes',
-		starforged: 'starforgedencounters',
-		sundered_isles: 'sunderedislesnpcs'
-	},
-	delve_site_theme: {
-		delve: 'ironsworndelvethemes'
-	},
-	delve_site_domain: {
-		delve: 'ironsworndelvedomains'
-	},
-	truth: {
-		classic: 'ironsworntruths',
-		starforged: 'starforgedtruths',
-		sundered_isles: 'sunderedislestruths'
-	}
-}
 
 export function renderLinksInStr(str: string): string {
 	return str.replace(MARKDOWN_LINK_RE, (match, text: string, url: string) => {
@@ -92,7 +44,7 @@ export function renderLinksInStr(str: string): string {
 </a>`
 		}
 		const urlHash = hash(legacyId)
-		return `@Compendium[foundry-ironsworn.${compendiumKey}.${urlHash}]{${text}}`
+		return `@Compendium[${compendiumKey}.${urlHash}]{${text}}`
 	})
 }
 
