@@ -16,16 +16,17 @@
 		<template #default>
 			<ul class="flexcol" :class="$style.list">
 				<li
-					v-for="move of category.moves"
-					:key="move.uuid"
+					v-for="dm of category.moves"
+					:key="dm.uuid"
 					class="list-block-item nogrow"
 					:class="$style.listItem"
 				>
 					<SfMoverow
 						ref="$children"
-						:move="move"
+						:move="dm"
 						:heading-level="headingLevel + 1"
 						:class="$style.moveRow"
+						:highlighted="highlightUuid === dm.uuid"
 						thematic-color="transparent"
 						@afterExpand="afterMoveExpand"
 					/>
@@ -36,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, ref } from 'vue'
+import { computed, ref } from 'vue'
 import type { DisplayMoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
@@ -51,8 +52,8 @@ const props = withDefaults(
 		 * Duration of the move highlight effect, in milliseconds.
 		 * @default 2000
 		 */
-		highlightDuration?: number
 		headingLevel?: number
+		highlightDuration?: number
 		collapsible?: Omit<
 			PropsOf<typeof Collapsible>,
 			| 'toggleButtonClass'
@@ -68,21 +69,16 @@ const props = withDefaults(
 	{ headingLevel: 3, highlightDuration: 2000 }
 )
 
-let $children = ref<InstanceType<typeof SfMoverow>[]>([])
+const $children = ref<InstanceType<typeof SfMoverow>[]>([])
 
-const categoryTooltip = ref(props.category.ds?.description)
-;(async () => {
-	categoryTooltip.value = await enrichMarkdown(categoryTooltip.value)
-})()
-
-/**
- * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
- */
-const moveItems = computed(
-	() => new Map(props.category.moves.map((move) => [move.uuid, move]))
+const categoryTooltip = ref()
+enrichMarkdown(props.category.ds?.description).then(
+	(x) => (categoryTooltip.value = x)
 )
 
-let $collapsible = ref<typeof Collapsible>()
+const moveUuids = computed(() => props.category.moves.map((move) => move.uuid))
+
+const $collapsible = ref<typeof Collapsible>()
 
 function collapseMoves() {
 	for (const move of $children.value ?? []) {
@@ -90,26 +86,15 @@ function collapseMoves() {
 	}
 }
 
+const highlightUuid = ref<string | undefined>(undefined)
 async function expandAndHighlightMove(targetMoveUuid: string) {
 	if ($collapsible.value?.isExpanded === false) {
 		$collapsible.value.expand()
-		await nextTick()
+		await new Promise((r) => setTimeout(r, 100))
 	}
-	const move = $children.value.find((child) => child.moveId === targetMoveUuid)
-	highlightMove(move?.$collapsible?.$element as HTMLElement)
-	if (move?.$collapsible?.isExpanded === false) {
-		await move?.$collapsible?.expand()
-		// when the expand animation finishes, afterMoveExpand will focus the element
-	} else {
-		move?.$collapsible?.$element.focus()
-	}
-}
-
-function highlightMove(element: HTMLElement) {
-	element.dataset.highlighted = 'true'
-	setTimeout(() => {
-		element.dataset.highlighted = 'false'
-	}, props.highlightDuration)
+	highlightUuid.value = targetMoveUuid
+	await new Promise((r) => setTimeout(r, 100))
+	highlightUuid.value = undefined
 }
 
 function afterMoveExpand(
@@ -123,7 +108,7 @@ function afterMoveExpand(
 defineExpose({
 	expandAndHighlightMove,
 	collapseMoves,
-	moveItems: moveItems.value,
+	moveUuids,
 	$children,
 	$collapsible
 })

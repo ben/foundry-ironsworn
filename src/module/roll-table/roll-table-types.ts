@@ -47,6 +47,8 @@ declare global {
 				subtitle?: string | null | undefined
 				/** The Dataforged ID associated with this oracle. */
 				dfid?: string
+				/** The Datasworn 2 ID associated with this oracle. */
+				dsid?: string
 				/** The category associated with the Dataforged oracle. */
 				category?: string
 			}

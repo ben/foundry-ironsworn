@@ -92,21 +92,26 @@ export class IronswornChatCard {
 	async _moveNavigate(ev: JQuery.ClickEvent) {
 		const { uuid } = ev.currentTarget.dataset
 
-		const item = (await fromUuid(uuid)) as IronswornItem
-		if (item?.type !== 'sfmove') {
-			console.log('falling through')
-			return // (TextEditor as any)._onClickContentLink(ev)
+		const item = (await fromUuid(uuid)) as any
+		if (item.type === 'sfmove') {
+			ev.preventDefault()
+			ev.stopPropagation()
+			CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 		}
-
-		ev.preventDefault()
-		ev.stopPropagation()
-		CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
+		if (item instanceof OracleTable) {
+			ev.preventDefault()
+			ev.stopImmediatePropagation()
+			CONFIG.IRONSWORN.emitter.emit(
+				'highlightOracle',
+				item.flags?.['foundry-ironsworn']?.dsid ?? ''
+			)
+		}
 	}
 
 	async _oracleNavigate(ev: JQuery.ClickEvent) {
 		ev.preventDefault()
-		const { dfid } = ev.target.dataset
-		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
+		const { dsid } = ev.target.dataset
+		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dsid)
 	}
 
 	async _burnMomentum(ev: JQuery.ClickEvent) {

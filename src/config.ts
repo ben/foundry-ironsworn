@@ -22,7 +22,7 @@ import { OracleTable } from './module/roll-table/oracle-table'
 
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
-	highlightOracle: string // DF ID
+	highlightOracle: string // Datasworn 2 ID
 	globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
 	dragStart: string // type of item
 	dragEnd: string // type of item

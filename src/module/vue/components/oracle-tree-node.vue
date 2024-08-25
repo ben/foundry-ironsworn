@@ -57,6 +57,7 @@
 						:key="child.displayName"
 						ref="children"
 						:node="child"
+						@navigated="state.manuallyExpanded = true"
 					/>
 				</div>
 			</CollapseTransition>
@@ -65,11 +66,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import type { OracleTable } from '../../roll-table/oracle-table'
-import type { LegacyTableRow } from '../../roll-table/roll-table-types'
-import { enrichHtml } from '../vue-plugin'
 
 import { FontAwesome } from './icon/icon-common'
 import BtnOracle from './buttons/btn-oracle.vue'
@@ -114,8 +112,9 @@ function expand() {
 }
 
 const $el = ref<HTMLElement>()
-CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
-	if (props.node.dataforgedNode?.$id === dfid) {
+CONFIG.IRONSWORN.emitter.on('highlightOracle', (dsid) => {
+	if (props.node.dataswornNode?._id === dsid) {
+		state.manuallyExpanded = true
 		state.highlighted = true
 		$el.value?.scrollIntoView({
 			behavior: 'smooth',
@@ -124,13 +123,24 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
 		setTimeout(() => {
 			state.highlighted = false
 		}, 2000)
+
+		// If this is a leaf, make sure the parent is expanded
+		if (isLeaf.value) {
+			$emit('navigated')
+		}
 	}
 })
 
 defineExpose({
 	dfid: () => props.node.dataforgedNode?.$id,
+	dsid: () => props.node.dataswornNode?._id,
+	dsIdentifier: () => props.node.dsIdentifier,
 	expand,
 	collapse
+})
+
+const $emit = defineEmits({
+	navigated: null
 })
 </script>
 

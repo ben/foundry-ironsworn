@@ -7,7 +7,19 @@ This is a major update that includes Sundered Isles content, but also brings alo
 - Selection of content happens in the first-start dialog, which will show the first time you open your world after this update. The checkboxes you select will affect everything in the world, so you can give every character access to both Delve and Sundered Isles moves and oracles.
 - For module/macro authors:
   - Registration of custom oracle content has a name change: `'ironsworn'` has changed to `'classic'`, and there's a new `'sundered_isles'` tree.
-  - Custom moves that include links to oracles will now use Datasworn IDs to identify them, and that list is now called `dsOracleIds` (the old one was called `Oracles`). See [these files](https://github.com/rsek/datasworn/tree/v0.1.0/src/legacy_ids/dataforged) if you need to make a change.
+  - Embedded links to oracle categories are changing format. See below for the before-and-after, and see [these files](https://github.com/rsek/datasworn/tree/v0.1.0/src/legacy_ids/dataforged) if you need to make a change.
+
+```html
+<!-- Oracle-category link changes: -->
+<!-- BEFORE: Dataforged-style ID -->
+<a class="entity-link oracle-category-link" data-dfid="Starforged/Oracles/Location_Themes/Chaotic">
+  <i class="fa fa-caret-right"></i> Chaotic
+</a>
+<!-- AFTER: Datasworn 2 ID -->
+<a class="entity-link oracle-category-link" data-dsid="oracle_collection:starforged/location_theme/chaotic">
+  <i class="fa fa-caret-right"></i> Chaotic
+</a>
+```
 
 ## 1.23.7
 

@@ -1,7 +1,7 @@
 <template>
 	<Collapsible
-		v-bind="$props.collapsible"
 		ref="$collapsible"
+		:collapsible="collapsible"
 		class="movesheet-row"
 		:class="$style.wrapper"
 		data-tooltip-direction="LEFT"
@@ -14,6 +14,7 @@
 		:toggle-tooltip="toggleTooltip"
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-label="move?.displayName"
+		:data-highlighted="dataHighlight"
 		:data-move-id="item._id"
 		:data-move-uuid="$item.uuid"
 	>
@@ -75,10 +76,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, reactive, ref } from 'vue'
+import { computed, onMounted, provide, ref, watch } from 'vue'
 import type { DisplayMove } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
 import BtnRollmove from './buttons/btn-rollmove.vue'
@@ -112,12 +112,16 @@ const props = withDefaults(
 			| 'toggleWrapperClass'
 			| 'toggleLabel'
 		>
+		highlighted?: boolean
+		highlightDuration?: number
 	}>(),
 	{
 		headingLevel: 4,
 		toggleSectionClass: '',
 		toggleButtonClass: '',
-		oracleDisabled: null
+		oracleDisabled: null,
+		highlighted: false,
+		highlightDuration: 2000
 	}
 )
 
@@ -152,14 +156,39 @@ const preventOracle = computed(() => {
 })
 
 const toggleTooltip = ref($item.system.Trigger?.Text)
-;(async function () {
-	toggleTooltip.value = await enrichMarkdown(toggleTooltip.value)
-})()
+enrichMarkdown(toggleTooltip.value).then((x) => (toggleTooltip.value = x))
 
-defineExpose({
-	moveId: props.move.uuid,
-	$collapsible
+const dataHighlight = ref(false)
+async function flashHighlight() {
+	// Expand the collapsible if it's not already expanded
+	if ($collapsible.value?.isExpanded === false) {
+		await $collapsible.value?.expand()
+		await new Promise((r) => setTimeout(r, 100))
+	}
+
+	// Flash that highlight and bring into focus
+	dataHighlight.value = true
+	await new Promise((r) => setTimeout(r, 100))
+	await $collapsible.value?.$element.focus()
+
+	// Turn off the highlight after a lil while
+	await new Promise((r) => setTimeout(r, props.highlightDuration))
+	dataHighlight.value = false
+}
+
+// Flash the highlight if the prop is set on mount
+onMounted(() => {
+	if (props.highlighted) flashHighlight()
 })
+// Flash the highlight if the prop is updated after mount
+watch(
+	() => props.highlighted,
+	(newVal) => {
+		if (newVal) flashHighlight()
+	}
+)
+
+defineExpose({ $collapsible })
 </script>
 
 <style lang="scss" module>

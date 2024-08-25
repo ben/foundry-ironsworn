@@ -34,7 +34,7 @@ const COMPENDIUM_KEY_MAP = {
 		classic: 'ironswornoracles',
 		delve: 'delveoracles',
 		starforged: 'starforgedoracles',
-		sundered_isles: 'sunderedislesmoves'
+		sundered_isles: 'sunderedislesoracles'
 	},
 	npc: {
 		classic: 'ironswornfoes',
@@ -86,7 +86,10 @@ export function renderLinksInStr(str: string): string {
 		const legacyId = lookupLegacyId(url)
 
 		if (parsed.primaryTypeId === 'oracle_collection') {
-			return `<a class="entity-link oracle-category-link" data-dfid="${legacyId}" data-dsid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
+			return `
+<a class="entity-link oracle-category-link" data-dsid="${url}">
+	<i class="fa fa-caret-right"></i> ${text}
+</a>`
 		}
 		const urlHash = hash(legacyId)
 		return `@Compendium[foundry-ironsworn.${compendiumKey}.${urlHash}]{${text}}`
