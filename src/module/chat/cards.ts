@@ -103,14 +103,17 @@ export class IronswornChatCard {
 			console.log('oracle table', item)
 			ev.preventDefault()
 			ev.stopPropagation()
-			CONFIG.IRONSWORN.emitter.emit('highlightOracle', item.uuid)
+			CONFIG.IRONSWORN.emitter.emit(
+				'highlightOracle',
+				item.flags?.['foundry-ironsworn']?.dsid ?? ''
+			)
 		}
 	}
 
 	async _oracleNavigate(ev: JQuery.ClickEvent) {
 		ev.preventDefault()
-		const { dfid } = ev.target.dataset
-		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
+		const { dsid } = ev.target.dataset
+		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dsid)
 	}
 
 	async _burnMomentum(ev: JQuery.ClickEvent) {

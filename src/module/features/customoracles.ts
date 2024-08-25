@@ -6,7 +6,7 @@ import type {
 } from '@datasworn/core/dist/Datasworn'
 import type { IOracle, IOracleCategory } from 'dataforged'
 import { cloneDeep, compact } from 'lodash-es'
-import { DataswornTree } from '../datasworn2'
+import { DataswornTree, IdParser } from '../datasworn2'
 import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import {
 	DS_ORACLE_COMPENDIUM_KEYS,
@@ -16,6 +16,7 @@ import {
 export interface IOracleTreeNode {
 	dataforgedNode?: IOracle | IOracleCategory
 	dataswornNode?: OracleCollection | OracleRollableTable
+	dsIdentifier?: string // the last part of the dsid
 	tables: string[] // UUIDs
 	displayName: string
 	children: IOracleTreeNode[]
@@ -29,7 +30,7 @@ const emptyNode: () => IOracleTreeNode = () => ({
 	children: []
 })
 
-// TODO: only used for sf-moverow now, clean that up
+// TODO: only used for findOracleWithIntermediateNodes now, clean that up
 export async function walkOracle(
 	oracle?: IOracle | IOracleCategory
 ): Promise<IOracleTreeNode> {
@@ -162,10 +163,13 @@ function walkOracleTable(
 	index: any
 ): IOracleTreeNode {
 	const tableIndexEntry = index.contents.find(
-		(x) => x.flags?.['foundry-ironsworn']?.['dsid'] === node._id
+		(x) => x.flags?.['foundry-ironsworn']?.dsid === node._id
 	)
+	const rpid = IdParser.parse(node._id)
+	const dsIdentifier = rpid.primaryPathKeys[rpid.primaryPathKeys.length - 1]
 	return {
 		dataswornNode: node,
+		dsIdentifier,
 		displayName: tableIndexEntry?.name ?? node.name,
 		tables: compact([tableIndexEntry?.uuid]),
 		children: []
@@ -182,15 +186,12 @@ function walkDsOracleCollection(
 		),
 		...Object.values(node?.contents ?? {}).map((x) => walkOracleTable(x, index))
 	]
-	if (
-		game.i18n
-			.localize(`IRONSWORN.OracleCategories.${node.name}`)
-			.startsWith('IRONSWORN')
-	) {
-		console.log('!!!', node.name)
-	}
+	const rpid = IdParser.parse(node._id)
+	const dsIdentifier = rpid.primaryPathKeys[rpid.primaryPathKeys.length - 1]
+
 	return {
 		dataswornNode: node,
+		dsIdentifier,
 		displayName: game.i18n.localize(`IRONSWORN.OracleCategories.${node.name}`),
 		tables: [],
 		children
@@ -205,8 +206,10 @@ async function generateTreeFromDsData(
 	if (!index) return emptyNode()
 
 	const rp = DataswornTree.get(ruleset)
+	if (!rp) return emptyNode()
 	return {
 		displayName: game.i18n.localize(`IRONSWORN.RULESETS.${ruleset}`),
+		dsIdentifier: ruleset,
 		tables: [],
 		children: Object.values(rp?.oracles ?? {}).map((o) =>
 			walkDsOracleCollection(o, index)

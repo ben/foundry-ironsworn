@@ -35,7 +35,7 @@ async function click(ev: JQuery.ClickEvent) {
 	ev.preventDefault()
 	ev.stopPropagation()
 
-	const { uuid, dfid } = ev.currentTarget.dataset
+	let { uuid, dfid, dsid } = ev.currentTarget.dataset
 	if (uuid) {
 		const gameItem = (await fromUuid(uuid)) as IronswornItem | IronswornActor
 		if (gameItem?.type === 'sfmove') {
@@ -47,10 +47,15 @@ async function click(ev: JQuery.ClickEvent) {
 		return gameItem?._onClickDocumentLink?.(ev)
 	}
 
-	if (dfid) {
+	// if (dfid && !dsid) {
+	// 	// Try to convert to a Datasworn ID
+	// 	dsid = LegacyToDataswornIds[dfid]
+	// }
+
+	if (dsid) {
 		// TODO: allow for custom oracles
 		// Probably an oracle category click
-		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
+		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dsid)
 		return true
 	}
 }

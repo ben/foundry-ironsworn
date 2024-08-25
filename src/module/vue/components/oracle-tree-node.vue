@@ -114,8 +114,9 @@ function expand() {
 }
 
 const $el = ref<HTMLElement>()
-CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
-	if (props.node.dataforgedNode?.$id === dfid) {
+CONFIG.IRONSWORN.emitter.on('highlightOracle', (dsid) => {
+	if (props.node.dataswornNode?._id === dsid) {
+		state.manuallyExpanded = true
 		state.highlighted = true
 		$el.value?.scrollIntoView({
 			behavior: 'smooth',
@@ -129,6 +130,8 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
 
 defineExpose({
 	dfid: () => props.node.dataforgedNode?.$id,
+	dsid: () => props.node.dataswornNode?._id,
+	dsIdentifier: () => props.node.dsIdentifier,
 	expand,
 	collapse
 })

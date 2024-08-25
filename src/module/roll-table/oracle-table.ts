@@ -44,6 +44,7 @@ export class OracleTable extends RollTable {
 		return nodes[nodes.length - 1]
 	}
 
+	// DEPRECATED, replace this with a Datsworn2 version
 	static findOracleWithIntermediateNodes(
 		dfid: string
 	): Array<IOracle | IOracleCategory> {

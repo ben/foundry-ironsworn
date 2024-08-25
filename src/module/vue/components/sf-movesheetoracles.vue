@@ -45,9 +45,9 @@
 import { nextTick, reactive, ref, watch } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
 import { getCustomizedOracleTrees } from '../../features/customoracles'
-import { OracleTable } from '../../roll-table/oracle-table'
 import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
+import { IdParser } from '../../datasworn2'
 
 const trees = await getCustomizedOracleTrees()
 const sections = trees.map((t) => reactive<IOracleTreeNode>(t))
@@ -111,11 +111,11 @@ function collapseAll() {
 	}
 }
 
-CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
+CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dsid) => {
 	clearSearch()
 
-	// Find the path in the data tree
-	const dfOraclePath = OracleTable.findOracleWithIntermediateNodes(dfid)
+	const parsed = IdParser.parse(dsid)
+	const identifiers = parsed.primaryPathKeys
 
 	// Wait for children to be present
 	while (!oracles.value) {
@@ -123,10 +123,14 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
 	}
 
 	// Walk the component tree, expanding as we go
+	const treeIdentifier = identifiers.shift()
+	const tree = trees.find((x) => x.dsIdentifier === treeIdentifier)
+	if (!tree) return
 	let children = oracles.value
-	for (const dataNode of dfOraclePath) {
-		const child = children?.find((x: any) => x.dfid() === dataNode.$id)
+	for (const identifier of identifiers) {
+		const child = children?.find((x: any) => x.dsIdentifier() === identifier)
 		if (!child) break
+
 		child.expand()
 		await nextTick()
 		children = child.$refs.children as any
