@@ -57,6 +57,7 @@
 						:key="child.displayName"
 						ref="children"
 						:node="child"
+						@navigated="childNavigated"
 					/>
 				</div>
 			</CollapseTransition>
@@ -65,11 +66,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import type { OracleTable } from '../../roll-table/oracle-table'
-import type { LegacyTableRow } from '../../roll-table/roll-table-types'
-import { enrichHtml } from '../vue-plugin'
 
 import { FontAwesome } from './icon/icon-common'
 import BtnOracle from './buttons/btn-oracle.vue'
@@ -125,8 +123,17 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', (dsid) => {
 		setTimeout(() => {
 			state.highlighted = false
 		}, 2000)
+
+		// If this is a leaf, make sure the parent is expanded
+		if (isLeaf.value) {
+			$emit('navigated')
+		}
 	}
 })
+
+function childNavigated() {
+	state.manuallyExpanded = true
+}
 
 defineExpose({
 	dfid: () => props.node.dataforgedNode?.$id,
@@ -134,6 +141,10 @@ defineExpose({
 	dsIdentifier: () => props.node.dsIdentifier,
 	expand,
 	collapse
+})
+
+const $emit = defineEmits({
+	navigated: null
 })
 </script>
 
