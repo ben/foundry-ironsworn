@@ -49,3 +49,22 @@ export const COMPENDIUM_KEY_MAP: Record<string, Record<string, string>> = {
 		sundered_isles: 'foundry-ironsworn.sunderedislestruths'
 	}
 }
+
+export async function getFoundryMoveByDsId(
+	dsid: string
+): Promise<IronswornItem<'sfmove'> | undefined> {
+	const parsed = IdParser.parse(dsid)
+	if (parsed.primaryTypeId !== 'move') throw new Error('Not a move ID: ' + dsid)
+
+	const compendiumKey = COMPENDIUM_KEY_MAP.move[parsed.rulesPackageId]
+	if (!compendiumKey) return undefined
+
+	const pack = game.packs.get(compendiumKey)
+	const index = await pack?.getIndex({ fields: ['flags'] })
+	const indexEntry = index?.contents?.find(
+		(x) => x.flags?.['foundry-ironsworn']?.dsid === dsid
+	)
+	if (!indexEntry) return undefined
+
+	return (await pack?.getDocument(indexEntry._id)) as IronswornItem<'sfmove'>
+}
