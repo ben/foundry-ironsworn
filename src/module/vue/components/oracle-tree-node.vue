@@ -57,7 +57,7 @@
 						:key="child.displayName"
 						ref="children"
 						:node="child"
-						@navigated="childNavigated"
+						@navigated="state.manuallyExpanded = true"
 					/>
 				</div>
 			</CollapseTransition>
@@ -130,10 +130,6 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', (dsid) => {
 		}
 	}
 })
-
-function childNavigated() {
-	state.manuallyExpanded = true
-}
 
 defineExpose({
 	dfid: () => props.node.dataforgedNode?.$id,

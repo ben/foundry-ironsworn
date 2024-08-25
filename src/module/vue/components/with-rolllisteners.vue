@@ -47,12 +47,11 @@ async function click(ev: JQuery.ClickEvent) {
 		if (gameItem instanceof OracleTable) {
 			CONFIG.IRONSWORN.emitter.emit(
 				'highlightOracle',
-				gameItem.flags['foundry-ironsworn']?.dsid
+				gameItem.flags['foundry-ironsworn']?.dsid ?? ''
 			)
 			return true
 		}
 
-		// @ts-expect-error
 		return gameItem?._onClickDocumentLink?.(ev)
 	}
 
