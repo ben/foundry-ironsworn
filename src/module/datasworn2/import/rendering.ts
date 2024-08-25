@@ -87,9 +87,9 @@ export function renderLinksInStr(str: string): string {
 
 		if (parsed.primaryTypeId === 'oracle_collection') {
 			return `
-				<a class="entity-link oracle-category-link" data-dsid="${url}">
-					<i class="fa fa-caret-right"></i> ${text}
-				</a>`
+<a class="entity-link oracle-category-link" data-dsid="${url}">
+	<i class="fa fa-caret-right"></i> ${text}
+</a>`
 		}
 		const urlHash = hash(legacyId)
 		return `@Compendium[foundry-ironsworn.${compendiumKey}.${urlHash}]{${text}}`
