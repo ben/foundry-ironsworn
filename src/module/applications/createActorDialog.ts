@@ -33,9 +33,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
 	getData(_options?: Application.RenderOptions): any {
 		return {
-			ironswornToolbox: IronswornSettings.defaultToolbox === 'ironsworn',
-			starforgedToolbox: IronswornSettings.defaultToolbox === 'starforged',
-			sunderedIslesToolbox: IronswornSettings.defaultToolbox === 'sunderedisles'
+			ironswornToolbox: true, // IronswornSettings.defaultToolbox === 'ironsworn',
+			starforgedToolbox: true // IronswornSettings.defaultToolbox === 'starforged',
 		}
 	}
 
