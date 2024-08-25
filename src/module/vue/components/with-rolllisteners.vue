@@ -5,11 +5,12 @@
 </template>
 
 <script setup lang="ts">
-import { inject, onMounted, ref, useAttrs } from 'vue'
+import { inject, onMounted, ref } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
 import { attachInlineRollListeners } from '../../features/rollplus'
 import type { IronswornItem } from '../../item/item'
 import { $ActorKey } from '../provisions'
+import { OracleTable } from '../../roll-table/oracle-table'
 
 const props = defineProps<{ element: string }>()
 
@@ -37,9 +38,17 @@ async function click(ev: JQuery.ClickEvent) {
 
 	let { uuid, dfid, dsid } = ev.currentTarget.dataset
 	if (uuid) {
-		const gameItem = (await fromUuid(uuid)) as IronswornItem | IronswornActor
+		const gameItem = (await fromUuid(uuid)) as any
 		if (gameItem?.type === 'sfmove') {
 			CONFIG.IRONSWORN.emitter.emit('highlightMove', gameItem.uuid)
+			return true
+		}
+
+		if (gameItem instanceof OracleTable) {
+			CONFIG.IRONSWORN.emitter.emit(
+				'highlightOracle',
+				gameItem.flags['foundry-ironsworn']?.dsid
+			)
 			return true
 		}
 
@@ -56,6 +65,7 @@ async function click(ev: JQuery.ClickEvent) {
 		// TODO: allow for custom oracles
 		// Probably an oracle category click
 		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dsid)
+		ev.stopImmediatePropagation()
 		return true
 	}
 }

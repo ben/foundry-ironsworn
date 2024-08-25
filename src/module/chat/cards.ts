@@ -93,16 +93,14 @@ export class IronswornChatCard {
 		const { uuid } = ev.currentTarget.dataset
 
 		const item = (await fromUuid(uuid)) as any
-		console.log({ item })
 		if (item.type === 'sfmove') {
 			ev.preventDefault()
 			ev.stopPropagation()
 			CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 		}
 		if (item instanceof OracleTable) {
-			console.log('oracle table', item)
 			ev.preventDefault()
-			ev.stopPropagation()
+			ev.stopImmediatePropagation()
 			CONFIG.IRONSWORN.emitter.emit(
 				'highlightOracle',
 				item.flags?.['foundry-ironsworn']?.dsid ?? ''
