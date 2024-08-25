@@ -68,19 +68,19 @@ const props = withDefaults(
 	{ headingLevel: 3, highlightDuration: 2000 }
 )
 
-let $children = ref<InstanceType<typeof SfMoverow>[]>([])
+const $children = ref<InstanceType<typeof SfMoverow>[]>([])
 
-const categoryTooltip = ref(props.category.ds?.description)
-;(async () => {
-	categoryTooltip.value = await enrichMarkdown(categoryTooltip.value)
-})()
+const categoryTooltip = ref()
+enrichMarkdown(props.category.ds?.description).then(
+	(x) => (categoryTooltip.value = x)
+)
 
 /**
  * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
  */
 const moveUuids = computed(() => props.category.moves.map((move) => move.uuid))
 
-let $collapsible = ref<typeof Collapsible>()
+const $collapsible = ref<typeof Collapsible>()
 
 function collapseMoves() {
 	for (const move of $children.value ?? []) {

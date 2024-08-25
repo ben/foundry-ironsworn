@@ -75,10 +75,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, reactive, ref } from 'vue'
+import { computed, provide, ref } from 'vue'
 import type { DisplayMove } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
 import BtnRollmove from './buttons/btn-rollmove.vue'
@@ -152,9 +151,7 @@ const preventOracle = computed(() => {
 })
 
 const toggleTooltip = ref($item.system.Trigger?.Text)
-;(async function () {
-	toggleTooltip.value = await enrichMarkdown(toggleTooltip.value)
-})()
+enrichMarkdown(toggleTooltip.value).then((x) => (toggleTooltip.value = x))
 
 defineExpose({
 	moveId: props.move.uuid,
