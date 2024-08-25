@@ -1,4 +1,5 @@
 import { getFoundryMoveByDfId } from '../../dataforged'
+import { getFoundryMoveByDsId } from '../../datasworn2/finding'
 import type { DataSchema } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'
@@ -11,14 +12,9 @@ export class BondsetModel extends foundry.abstract.TypeDataModel<
 	static _enableV10Validation = true
 
 	async writeEpilogue() {
-		const move = await getFoundryMoveByDfId(
-			'Ironsworn/Moves/Relationship/Write_Your_Epilogue'
-		)
-		if (move == null) throw new Error('Problem loading write-epilogue move')
-
 		const progress = Math.floor(this.bonds.length / 4)
 		void IronswornPrerollDialog.showForOfficialMove(
-			'Ironsworn/Moves/Relationship/Write_Your_Epilogue',
+			'move:classic/relationship/write_your_epilogue',
 			{
 				actor: this.parent.actor ?? undefined,
 				progress: {

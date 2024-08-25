@@ -49,19 +49,18 @@ export class ProgressModel extends foundry.abstract.TypeDataModel<
 	}
 
 	async fulfill() {
-		let moveDfId: string | undefined
+		let moveDsId: string | undefined
 		if (this.subtype === 'vow') {
-			// TODO: convert to DS ID
-			moveDfId = IronswornSettings.enabledRulesets.includes('starforged')
-				? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
-				: 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+			moveDsId = IronswornSettings.enabledRulesets.includes('starforged')
+				? 'move:starforged/quest/fulfill_your_vow'
+				: 'move:classic/quest/fulfill_your_vow'
 		}
 
 		return await IronswornPrerollDialog.showForProgress(
 			this.parent.name ?? '(progress)',
 			this.score,
 			this.parent.actor ?? undefined,
-			moveDfId
+			moveDsId
 		)
 	}
 
