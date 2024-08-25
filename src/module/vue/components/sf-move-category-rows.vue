@@ -78,9 +78,7 @@ const categoryTooltip = ref(props.category.ds?.description)
 /**
  * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
  */
-const moveItems = computed(
-	() => new Map(props.category.moves.map((move) => [move.uuid, move]))
-)
+const moveUuids = computed(() => props.category.moves.map((move) => move.uuid))
 
 let $collapsible = ref<typeof Collapsible>()
 
@@ -123,7 +121,7 @@ function afterMoveExpand(
 defineExpose({
 	expandAndHighlightMove,
 	collapseMoves,
-	moveItems: moveItems.value,
+	moveUuids: moveUuids.value,
 	$children,
 	$collapsible
 })

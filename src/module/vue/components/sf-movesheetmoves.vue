@@ -118,7 +118,7 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 	clearSearch()
 	await nextTick()
 	const categoryWithMove = allCategories.value.find((moveCategory) =>
-		moveCategory.moveItems.has(targetMoveUuid ?? '')
+		moveCategory.moveUuids.includes(targetMoveUuid ?? '')
 	)
 	if (categoryWithMove) {
 		categoryWithMove.expandAndHighlightMove(targetMoveUuid)
