@@ -120,9 +120,7 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 	const categoryWithMove = allCategories.value.find((moveCategory) =>
 		moveCategory.moveUuids.includes(targetMoveUuid ?? '')
 	)
-	if (categoryWithMove) {
-		categoryWithMove.expandAndHighlightMove(targetMoveUuid)
-	}
+	categoryWithMove?.expandAndHighlightMove(targetMoveUuid)
 })
 </script>
 
