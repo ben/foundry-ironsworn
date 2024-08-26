@@ -1,39 +1,28 @@
-{{#*inline "createBox"}}
+{{#*inline "hBox"}}
 <div
-  {{#if id}}id="{{id}}"{{/if}}
-  class="flexrow box clickable block ironsworn__{{type}}__create"
+  class="flexrow box clickable block ironsworn__{{kind}}__create"
   style="align-items: center; padding: 1rem;"
   data-img="{{img}}"
 >
-  <div class="flexcol" style="align-items: center;">
-    <img src="{{img}}" width="75" height="75" alt="">
-    <h4 style="margin: 0.1rem 0;">{{localize labelkey}}</h4>
-  </div>
+  <img class="nogrow" src="{{img}}" width="50" height="50" alt="">
+  <h4 style="margin: 0.5rem;">{{localize labelkey}}</h4>
 </div>
 {{/inline}}
 
+{{log this}}
 <form class='{{cssClass}} flexcol' autocomplete='off'>
   <div class="flexcol">
-    <div class="flexrow boxrow">
-      {{#if ironswornToolbox}}
-      {{>createBox type="character" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{>createBox type="shared" labelkey="IRONSWORN.ACTOR.TypeShared" img="icons/environment/settlement/wagon-black.webp"}}
-      {{>createBox type="site" labelkey="IRONSWORN.ACTOR.TypeDelveSite" img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
-      {{>createBox type="foe" labelkey="IRONSWORN.ACTOR.TypeFoe" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
+    <div class="flexcol">
+    {{#each buttonSections}}
+      {{#if ../showSectionHeaders}}
+        <h2>{{localize (concat 'IRONSWORN.RULESETS.' ruleset)}}</h2>
       {{/if}}
 
-      {{#if starforgedToolbox}}
-      {{>createBox type="sfcharacter" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{>createBox type="shared" labelkey="IRONSWORN.ACTOR.TypeShared" img="icons/environment/settlement/wagon-black.webp"}}
-      {{>createBox type="sfship" labelkey="IRONSWORN.ACTOR.TypeStarship" img="icons/environment/settlement/wizard-castle.webp"}}
-      {{>createBox type="sflocation" labelkey="IRONSWORN.ACTOR.TypeLocation" img="systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp"}}
-      {{>createBox type="foe" labelkey="IRONSWORN.ACTOR.TypeFoe" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
-      {{/if}}
-
-      {{#if sunderedIslesToolbox}}
-      <p>Sundered Isles coming soon. If you want to see something here, choose a different setting for "Character Tools".</p>
-      {{/if}}
-
+      {{#each buttons}}
+        {{>hBox type=type labelkey=labelKey img=img}}
+      {{/each}}
+    {{/each}}
+    </div>
     </div>
   </div>
 </form>

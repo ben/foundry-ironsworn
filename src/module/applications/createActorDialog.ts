@@ -1,12 +1,82 @@
 import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
-import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
-import { IronswornSettings } from '../helpers/settings'
+import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import { OracleTable } from '../roll-table/oracle-table'
 
 interface CreateActorDialogOptions extends FormApplicationOptions {
 	folder: string
 }
+
+interface DialogButtonSet {
+	ruleset: DataswornRulesetKey
+	buttons: DialogButton[]
+}
+
+interface DialogButton {
+	kind: string
+	labelKey: string
+	img: string
+}
+
+const DIALOG_BUTTONS: DialogButtonSet[] = [
+	{
+		ruleset: 'classic',
+		buttons: [
+			{
+				kind: 'character',
+				labelKey: 'IRONSWORN.ACTOR.TypeCharacter',
+				img: 'icons/creatures/eyes/human-single-blue.webp'
+			},
+			{
+				kind: 'shared',
+				labelKey: 'IRONSWORN.ACTOR.TypeShared',
+				img: 'icons/environment/settlement/wagon-black.webp'
+			},
+			{
+				kind: 'site',
+				labelKey: 'IRONSWORN.ACTOR.TypeDelveSite',
+				img: 'icons/environment/wilderness/cave-entrance-vulcano.webp'
+			},
+			{
+				kind: 'foe',
+				labelKey: 'IRONSWORN.ACTOR.TypeFoe',
+				img: 'icons/creatures/eyes/lizard-single-slit-pink.webp'
+			}
+		]
+	},
+	{ ruleset: 'delve', buttons: [] },
+	{
+		ruleset: 'starforged',
+		buttons: [
+			{
+				kind: 'sfcharacter',
+				labelKey: 'IRONSWORN.ACTOR.TypeCharacter',
+				img: 'icons/creatures/eyes/human-single-blue.webp'
+			},
+			{
+				kind: 'shared',
+				labelKey: 'IRONSWORN.ACTOR.TypeShared',
+				img: 'icons/environment/settlement/wagon-black.webp'
+			},
+			{
+				kind: 'sfship',
+				labelKey: 'IRONSWORN.ACTOR.TypeStarship',
+				img: 'icons/environment/settlement/wizard-castle.webp'
+			},
+			{
+				kind: 'sflocation',
+				labelKey: 'IRONSWORN.ACTOR.TypeLocation',
+				img: 'systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp'
+			},
+			{
+				kind: 'foe',
+				labelKey: 'IRONSWORN.ACTOR.TypeFoe',
+				img: 'icons/creatures/eyes/lizard-single-slit-pink.webp'
+			}
+		]
+	},
+	{ ruleset: 'sundered_isles', buttons: [] }
+]
 
 export class CreateActorDialog extends FormApplication<CreateActorDialogOptions> {
 	constructor() {
@@ -17,7 +87,24 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		// No update necessary.
 	}
 
+	static get sectionsForEnabledContent() {
+		return DIALOG_BUTTONS.filter(
+			(x) =>
+				IronswornSettings.enabledRulesets.includes(x.ruleset) &&
+				x.buttons.length > 0
+		)
+	}
+
 	static get defaultOptions() {
+		const buttonCount = this.sectionsForEnabledContent.reduce(
+			(sum, { buttons }) => sum + buttons.length,
+			0
+		)
+		const height =
+			33 + // Title bar
+			83 * buttonCount + // Button height
+			(buttonCount > 1 ? 40 * buttonCount : 0) // Space for headers
+		// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.format('DOCUMENT.Create', {
 				type: game.i18n.localize('DOCUMENT.Actor')
@@ -26,15 +113,18 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 			id: 'new-actor-dialog',
 			resizable: false,
 			classes: ['ironsworn', 'sheet', 'new-actor'],
-			width: 650,
-			height: 200
+			width: 350,
+			height,
+			left: window.innerWidth - 675,
+			top: 40
 		} as FormApplicationOptions)
 	}
 
 	getData(_options?: Application.RenderOptions): any {
+		const sections = CreateActorDialog.sectionsForEnabledContent
 		return {
-			ironswornToolbox: true, // IronswornSettings.defaultToolbox === 'ironsworn',
-			starforgedToolbox: true // IronswornSettings.defaultToolbox === 'starforged',
+			buttonSections: sections,
+			showSectionHeaders: sections.length > 1
 		}
 	}
 
