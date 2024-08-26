@@ -1,14 +1,8 @@
-import { DataswornTree } from '../datasworn2'
+import { COMPENDIUM_KEY_MAP, DataswornTree } from '../datasworn2'
 import { DataswornRulesetKey } from '../helpers/settings'
 import { IronswornJournalEntry } from '../journal/journal-entry'
 import sfTruthsVue from '../vue/sf-truths.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
-
-const DS_TRUTH_COMPENDIUM_KEYS = {
-	classic: 'foundry-ironsworn.ironsworntruths',
-	starforged: 'foundry-ironsworn.starforgedtruths',
-	sundered_isles: 'foundry-ironsworn.sunderedislestruths'
-}
 
 export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
 	constructor(protected truthset: DataswornRulesetKey) {
@@ -40,7 +34,7 @@ export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
 		options?: Partial<FormApplicationOptions> | undefined
 	): MaybePromise<object>
 	async getData(_options?: unknown) {
-		const pack = game.packs.get(DS_TRUTH_COMPENDIUM_KEYS[this.truthset])
+		const pack = game.packs.get(COMPENDIUM_KEY_MAP.truth[this.truthset])
 		const documents = (await pack?.getDocuments()) as IronswornJournalEntry[]
 		if (!documents) throw new Error("can't load truth JEs")
 

@@ -5,11 +5,10 @@ import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
-import { IdParser } from '../datasworn2'
+import { COMPENDIUM_KEY_MAP, IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
 	getCustomizedOracleTrees,
-	getOracleTreeWithCustomOracles,
 	IOracleTreeNode
 } from '../features/customoracles'
 import { cachedDocumentsForPack } from '../features/pack-cache'
@@ -18,13 +17,6 @@ import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
 import { OracleTableResult } from './oracle-table-result'
 import type { ComputedTableType } from './roll-table-types'
-
-export const DS_ORACLE_COMPENDIUM_KEYS: Record<string, string> = {
-	classic: 'foundry-ironsworn.ironswornoracles',
-	delve: 'foundry-ironsworn.ironsworndelveoracles',
-	starforged: 'foundry-ironsworn.starforgedoracles',
-	sundered_isles: 'foundry-ironsworn.sunderedislesoracles'
-}
 
 /** Extends FVTT's default RollTable with functionality specific to this system. */
 export class OracleTable extends RollTable {
@@ -103,7 +95,7 @@ export class OracleTable extends RollTable {
 
 	static async getIndexEntryByDsId(dsid: string) {
 		const parsed = IdParser.parse(dsid)
-		const packId = DS_ORACLE_COMPENDIUM_KEYS[parsed.rulesPackageId]
+		const packId = COMPENDIUM_KEY_MAP.oracle_rollable[parsed.rulesPackageId]
 		const pack = game.packs.get(packId)
 		const index = await pack?.getIndex({ fields: ['flags'] })
 		return index?.find((entry) => {
@@ -116,7 +108,7 @@ export class OracleTable extends RollTable {
 		dsid: string
 	): Promise<StoredDocument<OracleTable> | undefined> {
 		const parsed = IdParser.parse(dsid)
-		const packId = DS_ORACLE_COMPENDIUM_KEYS[parsed.rulesPackageId]
+		const packId = COMPENDIUM_KEY_MAP.oracle_rollable[parsed.rulesPackageId]
 		const pack = game.packs.get(packId)
 		if (!pack) return
 
