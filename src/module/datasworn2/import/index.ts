@@ -18,7 +18,12 @@ import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
 import { capitalize, compact, flatten } from 'lodash-es'
 import { ICON_MAP } from './images'
-import { renderText, titleCase, renderLinksInStr } from './rendering'
+import {
+	renderText,
+	titleCase,
+	renderLinksInStr,
+	renderFragment
+} from './rendering'
 import {
 	hash,
 	DataswornToLegacyIds,
@@ -403,7 +408,7 @@ const processOracle = async (
 				const rowId = hash(lookupLegacyId(row._id))
 				return {
 					range: [row.roll.min, row.roll.max],
-					text: renderText(row.text),
+					text: renderFragment(row.text),
 					_key: `!tables.results!${fid}.${rowId}`,
 					_id: rowId
 				}

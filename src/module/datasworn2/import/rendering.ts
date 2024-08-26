@@ -3,7 +3,20 @@ import { IdParser } from '..'
 import { COMPENDIUM_KEY_MAP } from '../finding'
 import { hash, lookupLegacyId } from './ids'
 
+Showdown.extension('unwrap-paragraph-tags', function () {
+	return [
+		{
+			type: 'output',
+			regex: /^<p>(.*)<\/p>$/gim,
+			replace: '$1'
+		}
+	]
+})
 export const markdownRenderer = new Showdown.Converter({ tables: true })
+export const markdownInlineRenderer = new Showdown.Converter({
+	tables: true,
+	extensions: ['unwrap-paragraph-tags']
+})
 
 const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
 
@@ -48,6 +61,10 @@ export function renderLinksInStr(str: string): string {
 
 export function renderText(text: string): string {
 	return markdownRenderer.makeHtml(renderLinksInStr(text))
+}
+
+export function renderFragment(md: string): string {
+	return markdownInlineRenderer.makeHtml(renderLinksInStr(md))
 }
 
 export function titleCase(str: string): string {
