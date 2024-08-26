@@ -1,14 +1,8 @@
 import type { Asset, AssetCollection } from '@datasworn/core/dist/Datasworn'
 import { compact } from 'lodash-es'
-import { DataswornTree, IdParser } from '../datasworn2'
+import { COMPENDIUM_KEY_MAP, DataswornTree, IdParser } from '../datasworn2'
 import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
-
-export const DS_ASSET_COMPENDIUM_KEYS: Record<string, string> = {
-	classic: 'foundry-ironsworn.ironswornassets',
-	starforged: 'foundry-ironsworn.starforgedassets',
-	sundered_isles: 'foundry-ironsworn.sunderedislesassets'
-}
 
 export interface DisplayAsset {
 	ds?: Asset
@@ -26,13 +20,14 @@ export interface DisplayCategory {
 export interface DisplayRuleset {
 	title: string
 	categories: DisplayCategory[]
+	index?: ReturnType<(typeof CompendiumCollection.prototype)['getIndex']>
 }
 
 const INDEXES: Record<string, any> = {}
 
 function assetFetcher(dsid: string): () => Promise<IronswornItem> {
 	const parsed = IdParser.parse(dsid)
-	const compendiumKey = DS_ASSET_COMPENDIUM_KEYS[parsed.rulesPackageId]
+	const compendiumKey = COMPENDIUM_KEY_MAP.asset[parsed.rulesPackageId]
 	const pack = game.packs.get(compendiumKey)
 	return async () => {
 		INDEXES[compendiumKey] ||= await pack?.getIndex({ fields: ['flags'] })
@@ -58,8 +53,12 @@ export async function createMergedAssetTree(): Promise<DisplayRuleset[]> {
 					)
 				}
 
+				const pack = game.packs.get(COMPENDIUM_KEY_MAP.asset[rsKey])
+				const index = await pack?.getIndex({ fields: ['flags'] })
+
 				return {
 					title: game.i18n.localize(`IRONSWORN.RULESETS.${rsKey}`),
+					index,
 					categories: Object.values(rs.assets).map((cat) => {
 						return {
 							ds: cat,
