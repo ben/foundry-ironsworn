@@ -64,6 +64,14 @@ const rulesets = ref(await createMergedAssetTree())
 </script>
 
 <style lang="scss" scoped>
+h1 {
+	margin: 0;
+	border: none;
+	height: min-content;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+
 h2 {
 	margin: 0;
 	border: none;
