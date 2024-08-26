@@ -113,7 +113,7 @@
 			<div v-for="(row, i) of oracles" :key="`row${i}`" class="flexrow boxrow">
 				<div v-for="(oracle, x) of row" :key="`oracle${x}`" class="box flexrow">
 					<IronBtn
-						:key="oracle.dfid"
+						:key="oracle.dsid"
 						block
 						:disabled="oracle.requiresKlass && klassIsNotValid"
 						:class="{
@@ -148,15 +148,15 @@
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { camelCase, flatten, sample } from 'lodash-es'
+import { flatten, sample } from 'lodash-es'
 import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
+import { OracleTable } from '../roll-table/oracle-table'
+import { DataswornTree } from '../datasworn2'
 
 import MceEditor from './components/mce-editor.vue'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
-import { OracleTable } from '../roll-table/oracle-table'
-import type { LocationDataProperties } from '../actor/subtypes/location'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'location'> }
@@ -278,7 +278,7 @@ const klassOptions = computed((): { value: string; label: string }[] => {
 
 interface OracleSpec {
 	title: string
-	dfid: string
+	dsid: string
 	qty?: string
 	fl?: boolean
 	requiresKlass?: boolean
@@ -286,9 +286,6 @@ interface OracleSpec {
 const oracles = computed((): OracleSpec[][] => {
 	const { subtype, klass } = props.data.actor.system
 	const kc = klass
-		?.split(' ')
-		.map((x) => x.capitalize())
-		.join(' ')
 	const rc = state.region.capitalize()
 	switch (subtype) {
 		case 'planet':
@@ -296,14 +293,14 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Atmosphere',
-						dfid: `Starforged/Oracles/Planets/${kc}/Atmosphere`,
+						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/atmosphere`,
 						fl: true,
 						requiresKlass: true
 					},
 					{
 						title: 'Observed from space',
 						qty: '1-2',
-						dfid: `Starforged/Oracles/Planets/${kc}/Observed_From_Space`,
+						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/observed_from_space`,
 						fl: true,
 						requiresKlass: true
 					}
@@ -311,40 +308,40 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Settlements',
-						dfid: `Starforged/Oracles/Planets/${kc}/Settlements/${rc}`,
+						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/settlements/${rc.toLowerCase()}`,
 						fl: true,
 						requiresKlass: true
 					},
 					{
 						title: 'Life',
-						dfid: `Starforged/Oracles/Planets/${kc}/Life`,
+						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/life`,
 						requiresKlass: true
 					},
 					{
 						title: 'Planetside feature',
 						qty: '1-2',
-						dfid: `Starforged/Oracles/Planets/${kc}/Feature`,
+						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/feature`,
 						requiresKlass: true
 					}
 				],
 				[
 					{
 						title: 'Peril (life)',
-						dfid: `Starforged/Oracles/Planets/Peril/Lifebearing`
+						dsid: `oracle_rollable:starforged/planet/peril/lifebearing`
 					},
 					{
 						title: 'Opportunity (life)',
-						dfid: `Starforged/Oracles/Planets/Opportunity/Lifebearing`
+						dsid: `oracle_rollable:starforged/planet/opportunity/lifebearing`
 					}
 				],
 				[
 					{
 						title: 'Peril (lifeless)',
-						dfid: `Starforged/Oracles/Planets/Peril/Lifeless`
+						dsid: `oracle_rollable:starforged/planet/peril/lifeless`
 					},
 					{
 						title: 'Opportunity (lifeless)',
-						dfid: `Starforged/Oracles/Planets/Opportunity/Lifeless`
+						dsid: `oracle_rollable:starforged/planet/opportunity/lifeless`
 					}
 				]
 			]
@@ -354,12 +351,12 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Population',
-						dfid: `Starforged/Oracles/Settlements/Population/${rc}`,
+						dsid: `oracle_rollable:starforged/settlement/population/${rc.toLowerCase()}`,
 						fl: true
 					},
 					{
 						title: 'First look',
-						dfid: 'Starforged/Oracles/Settlements/First_Look',
+						dsid: 'oracle_rollable:starforged/settlement/first_look',
 						qty: '1-2',
 						fl: true
 					}
@@ -367,21 +364,21 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Initial contact',
-						dfid: 'Starforged/Oracles/Settlements/Initial_Contact'
+						dsid: 'oracle_rollable:starforged/settlement/initial_contact'
 					},
 					{
 						title: 'Authority',
-						dfid: 'Starforged/Oracles/Settlements/Authority'
+						dsid: 'oracle_rollable:starforged/settlement/authority'
 					}
 				],
 				[
 					{
 						title: 'Settlement projects',
-						dfid: 'Starforged/Oracles/Settlements/Projects'
+						dsid: 'oracle_rollable:starforged/settlement/projects'
 					},
 					{
 						title: 'Settlement trouble',
-						dfid: 'Starforged/Oracles/Settlements/Trouble'
+						dsid: 'oracle_rollable:starforged/settlement/trouble'
 					}
 				]
 			]
@@ -394,25 +391,25 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Type',
-						dfid: `Starforged/Oracles/Derelicts/Type/${kc}`,
+						dsid: `oracle_rollable:starforged/derelict/type/${kc?.toLowerCase()}`,
 						fl: true,
 						requiresKlass: true
 					},
 					{
 						title: 'Condition',
-						dfid: `Starforged/Oracles/Derelicts/Condition`,
+						dsid: `oracle_rollable:starforged/derelict/condition`,
 						fl: true
 					}
 				],
 				[
 					{
 						title: 'Outer first look',
-						dfid: `Starforged/Oracles/Derelicts/Outer_First_Look`,
+						dsid: `oracle_rollable:starforged/derelict/outer_first_look`,
 						fl: true
 					},
 					{
 						title: 'Inner first look',
-						dfid: `Starforged/Oracles/Derelicts/Inner_First_Look`
+						dsid: `oracle_rollable:starforged/derelict/inner_first_look`
 					}
 				]
 			]
@@ -422,66 +419,66 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Scale',
-						dfid: `Starforged/Oracles/Vaults/Scale`,
+						dsid: `oracle_rollable:starforged/precursor_vault/scale`,
 						fl: true
 					},
 					{
 						title: 'Form',
-						dfid: `Starforged/Oracles/Vaults/Form`,
+						dsid: `oracle_rollable:starforged/precursor_vault/form`,
 						fl: true
 					},
 					{
 						title: 'Shape',
-						dfid: `Starforged/Oracles/Vaults/Shape`,
+						dsid: `oracle_rollable:starforged/precursor_vault/shape`,
 						fl: true
 					}
 				],
 				[
 					{
 						title: 'Material',
-						dfid: `Starforged/Oracles/Vaults/Material`,
+						dsid: `oracle_rollable:starforged/precursor_vault/material`,
 						fl: true
 					},
 					{
 						title: 'Outer first look',
-						dfid: `Starforged/Oracles/Vaults/Outer_First_Look`,
+						dsid: `oracle_rollable:starforged/precursor_vault/outer_first_look`,
 						fl: true
 					}
 				],
 				[
 					{
 						title: 'Interior first look',
-						dfid: `Starforged/Oracles/Vaults/Interior/First_Look`
+						dsid: `oracle_rollable:starforged/precursor_vault/interior/first_look`
 					},
 					{
 						title: 'Interior feature',
-						dfid: `Starforged/Oracles/Vaults/Interior/Feature`
+						dsid: `oracle_rollable:starforged/precursor_vault/interior/feature`
 					},
 					{
 						title: 'Interior peril',
-						dfid: `Starforged/Oracles/Vaults/Interior/Peril`
+						dsid: `oracle_rollable:starforged/precursor_vault/interior/peril`
 					},
 					{
 						title: 'Interior opportunity',
-						dfid: `Starforged/Oracles/Vaults/Interior/Opportunity`
+						dsid: `oracle_rollable:starforged/precursor_vault/interior/opportunity`
 					}
 				],
 				[
 					{
 						title: 'Sanctum purpose',
-						dfid: `Starforged/Oracles/Vaults/Sanctum/Purpose`
+						dsid: `oracle_rollable:starforged/precursor_vault/sanctum/purpose`
 					},
 					{
 						title: 'Sanctum feature',
-						dfid: `Starforged/Oracles/Vaults/Sanctum/Feature`
+						dsid: `oracle_rollable:starforged/precursor_vault/sanctum/feature`
 					},
 					{
 						title: 'Sanctum peril',
-						dfid: `Starforged/Oracles/Vaults/Sanctum/Peril`
+						dsid: `oracle_rollable:starforged/precursor_vault/sanctum/peril`
 					},
 					{
 						title: 'Sanctum opportunity',
-						dfid: `Starforged/Oracles/Vaults/Sanctum/Opportunity`
+						dsid: `oracle_rollable:starforged/precursor_vault/sanctum/opportunity`
 					}
 				]
 			]
@@ -499,11 +496,10 @@ const canRandomizeName = computed(() => {
 	const { subtype, klass } = props.data.actor.system
 
 	if (subtype === 'planet') {
-		const kc = (klass ?? '').capitalize()
-		const json = OracleTable.getDFOracleByDfId(
-			`Starforged/Oracles/Planets/${kc}`
-		)
-		if (json) return true
+		const kc = klass ?? ''
+		const dskey = `oracle_rollable:starforged/planet/${kc}/name`
+		const obj = DataswornTree.get(dskey)
+		if (obj) return true
 	} else if (subtype === 'settlement') {
 		return true
 	}
@@ -606,13 +602,13 @@ async function randomizeName() {
 	let name
 	if (subtype === 'planet') {
 		const kc = (klass ?? '').capitalize()
-		const json = await OracleTable.getDFOracleByDfId(
-			`Starforged/Oracles/Planets/${kc}`
+		const table = await OracleTable.getByDsId(
+			`oracle_rollable:starforged/planet/${kc}/name`
 		)
-		name = sample(json?.['Sample Names'] ?? [])
+		name = await drawAndReturnResult(table)
 	} else if (subtype === 'settlement') {
-		const table = await OracleTable.getByDfId(
-			'Starforged/Oracles/Settlements/Name'
+		const table = await OracleTable.getByDsId(
+			'oracle_rollable:starforged/settlement/name'
 		)
 		name = await drawAndReturnResult(table)
 	}
@@ -626,18 +622,18 @@ async function randomizeName() {
 async function randomizeKlass() {
 	let tableKey
 	if (props.data.actor.system.subtype === 'planet') {
-		tableKey = 'Starforged/Oracles/Planets/Class'
+		tableKey = 'oracle_rollable:starforged/planet/class'
 	} else if (props.data.actor.system.subtype === 'settlement') {
-		tableKey = 'Starforged/Oracles/Settlements/Location'
+		tableKey = 'oracle_rollable:starforged/settlement/location'
 	} else if (props.data.actor.system.subtype === 'star') {
-		tableKey = 'Starforged/Oracles/Space/Stellar_Object'
+		tableKey = 'oracle_rollable:starforged/space/stellar_object'
 	} else if (props.data.actor.system.subtype === 'derelict') {
-		tableKey = 'Starforged/Oracles/Derelicts/Location'
+		tableKey = 'oracle_rollable:starforged/derelict/location'
 	} else if (props.data.actor.system.subtype === 'vault') {
-		tableKey = 'Starforged/Oracles/Vaults/Location'
+		tableKey = 'oracle_rollable:starforged/precursor_vault/location'
 	}
 
-	const table = await OracleTable.getByDfId(tableKey)
+	const table = await OracleTable.getByDsId(tableKey)
 	const rawText = await drawAndReturnResult(table)
 	if (!rawText) return
 
@@ -658,10 +654,14 @@ async function rollFirstLook() {
 	}
 }
 
-async function rollOracle(oracle) {
-	const table = await OracleTable.getByDfId(oracle.dfid)
+async function rollOracle(oracle: OracleSpec) {
+	const table = await OracleTable.getByDsId(oracle.dsid)
+	console.log(table)
 	const drawText = await drawAndReturnResult(table)
-	if (!drawText) return
+	if (!drawText) {
+		console.log('!!!', oracle)
+		return
+	}
 
 	// Append to description
 	const parts = [
