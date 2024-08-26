@@ -6,7 +6,12 @@ import type {
 } from '@datasworn/core/dist/Datasworn'
 import type { IOracle, IOracleCategory } from 'dataforged'
 import { cloneDeep, compact } from 'lodash-es'
-import { COMPENDIUM_KEY_MAP, DataswornTree, IdParser } from '../datasworn2'
+import {
+	COMPENDIUM_KEY_MAP,
+	DataswornTree,
+	getPackAndIndexForCompendiumKey,
+	IdParser
+} from '../datasworn2'
 import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import { OracleTable } from '../roll-table/oracle-table'
 
@@ -198,8 +203,10 @@ function walkDsOracleCollection(
 async function generateTreeFromDsData(
 	ruleset: RulesetId
 ): Promise<IOracleTreeNode> {
-	const pack = game.packs.get(COMPENDIUM_KEY_MAP.oracle_rollable[ruleset])
-	const index = await pack?.getIndex({ fields: ['flags'] })
+	const { index } = await getPackAndIndexForCompendiumKey(
+		ruleset,
+		'oracle_rollable'
+	)
 	if (!index) return emptyNode()
 
 	const rp = DataswornTree.get(ruleset)

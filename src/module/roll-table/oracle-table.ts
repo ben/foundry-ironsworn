@@ -5,7 +5,11 @@ import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
-import { COMPENDIUM_KEY_MAP, IdParser } from '../datasworn2'
+import {
+	COMPENDIUM_KEY_MAP,
+	getPackAndIndexForCompendiumKey,
+	IdParser
+} from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
 	getCustomizedOracleTrees,
@@ -95,9 +99,10 @@ export class OracleTable extends RollTable {
 
 	static async getIndexEntryByDsId(dsid: string) {
 		const parsed = IdParser.parse(dsid)
-		const packId = COMPENDIUM_KEY_MAP.oracle_rollable[parsed.rulesPackageId]
-		const pack = game.packs.get(packId)
-		const index = await pack?.getIndex({ fields: ['flags'] })
+		const { index } = await getPackAndIndexForCompendiumKey(
+			parsed.rulesPackageId,
+			'oracle_rollable'
+		)
 		return index?.find((entry) => {
 			// @ts-expect-error flags are untyped
 			return entry.flags?.['foundry-ironsworn']?.dsid === dsid
@@ -108,11 +113,11 @@ export class OracleTable extends RollTable {
 		dsid: string
 	): Promise<StoredDocument<OracleTable> | undefined> {
 		const parsed = IdParser.parse(dsid)
-		const packId = COMPENDIUM_KEY_MAP.oracle_rollable[parsed.rulesPackageId]
-		const pack = game.packs.get(packId)
-		if (!pack) return
-
-		const index = await pack?.getIndex({ fields: ['flags'] })
+		const { pack, index } = await getPackAndIndexForCompendiumKey(
+			parsed.rulesPackageId,
+			'oracle_rollable'
+		)
+		if (!index || !pack) return
 		for (const entry of index.contents) {
 			// @ts-expect-error flags are untyped
 			if (entry.flags?.['foundry-ironsworn']?.dsid === dsid) {

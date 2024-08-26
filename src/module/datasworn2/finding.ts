@@ -1,4 +1,5 @@
 import { IdParser } from '.'
+import { DataswornRulesetKey } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
 
 // The first keys are the primary type ids, the second keys are the rules package ids
@@ -50,6 +51,22 @@ export const COMPENDIUM_KEY_MAP = {
 	}
 }
 
+interface PackAndIndex {
+	pack?: CompendiumCollection<CompendiumCollection.Metadata>
+	index?: Awaited<
+		ReturnType<(typeof CompendiumCollection.prototype)['getIndex']>
+	>
+}
+
+export async function getPackAndIndexForCompendiumKey(
+	ruleset: string,
+	type: keyof typeof COMPENDIUM_KEY_MAP
+): Promise<PackAndIndex> {
+	const pack = game.packs.get(COMPENDIUM_KEY_MAP[type][ruleset])
+	const index = await pack?.getIndex({ fields: ['flags'] })
+	return { pack, index }
+}
+
 export async function getFoundryMoveByDsId(
 	dsid: string
 ): Promise<IronswornItem<'sfmove'> | undefined> {
@@ -59,8 +76,10 @@ export async function getFoundryMoveByDsId(
 	const compendiumKey = COMPENDIUM_KEY_MAP.move[parsed.rulesPackageId]
 	if (!compendiumKey) return undefined
 
-	const pack = game.packs.get(compendiumKey)
-	const index = await pack?.getIndex({ fields: ['flags'] })
+	const { pack, index } = await getPackAndIndexForCompendiumKey(
+		parsed.rulesPackageId,
+		'move'
+	)
 	const indexEntry = index?.contents?.find(
 		(x: any) => x.flags?.['foundry-ironsworn']?.dsid === dsid
 	)

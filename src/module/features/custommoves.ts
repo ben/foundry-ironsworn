@@ -1,4 +1,8 @@
-import { COMPENDIUM_KEY_MAP, DataswornTree } from '../datasworn2'
+import {
+	COMPENDIUM_KEY_MAP,
+	DataswornTree,
+	getPackAndIndexForCompendiumKey
+} from '../datasworn2'
 import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import type { Move, MoveCategory } from '@datasworn/core/dist/Datasworn'
 
@@ -25,8 +29,8 @@ const INDEXES: Record<string, any> = {}
 async function ensureIndex(rsKey: DataswornRulesetKey) {
 	const compendiumKey = COMPENDIUM_KEY_MAP.move[rsKey]
 	if (INDEXES[compendiumKey] == null) {
-		const pack = game.packs.get(compendiumKey)
-		INDEXES[compendiumKey] = await pack?.getIndex({ fields: ['flags'] })
+		const { index } = await getPackAndIndexForCompendiumKey(rsKey, 'move')
+		INDEXES[compendiumKey] = index
 	}
 }
 
