@@ -1,7 +1,6 @@
 {{#*inline "hBox"}}
 <div
-  class="flexrow box clickable block ironsworn__{{kind}}__create"
-  style="align-items: center; padding: 1rem;"
+  class="flexrow nogrow box clickable block create-actor-button ironsworn__{{kind}}__create"
   data-img="{{img}}"
 >
   <img class="nogrow" src="{{img}}" width="50" height="50" alt="">
@@ -9,13 +8,14 @@
 </div>
 {{/inline}}
 
-{{log this}}
 <form class='{{cssClass}} flexcol' autocomplete='off'>
   <div class="flexcol">
     <div class="flexcol">
     {{#each buttonSections}}
       {{#if ../showSectionHeaders}}
-        <h2>{{localize (concat 'IRONSWORN.RULESETS.' ruleset)}}</h2>
+        <h2 class="nogrow create-actor-header">
+          {{localize (concat 'IRONSWORN.RULESETS.' ruleset)}}
+        </h2>
       {{/if}}
 
       {{#each buttons}}
@@ -26,3 +26,16 @@
     </div>
   </div>
 </form>
+
+<style>
+  .create-actor-button {
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .create-actor-header {
+    margin: 0;
+    padding: 0.5rem 0 0 0;
+    text-transform: uppercase;
+  }
+</style>

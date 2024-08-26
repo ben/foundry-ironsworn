@@ -96,14 +96,15 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	}
 
 	static get defaultOptions() {
-		const buttonCount = this.sectionsForEnabledContent.reduce(
+		const sections = this.sectionsForEnabledContent
+		const buttonCount = sections.reduce(
 			(sum, { buttons }) => sum + buttons.length,
 			0
 		)
 		const height =
-			33 + // Title bar
-			83 * buttonCount + // Button height
-			(buttonCount > 1 ? 40 * buttonCount : 0) // Space for headers
+			40 + // Title bar
+			66 * buttonCount + // Button height
+			(sections.length > 1 ? 34 * sections.length : 0) // Space for headers
 		// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.format('DOCUMENT.Create', {
