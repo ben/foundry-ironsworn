@@ -148,11 +148,11 @@
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { flatten, sample } from 'lodash-es'
+import { flatten } from 'lodash-es'
 import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 import { OracleTable } from '../roll-table/oracle-table'
-import { DataswornTree } from '../datasworn2'
+import { IdParser } from '../datasworn2'
 
 import MceEditor from './components/mce-editor.vue'
 import SheetBasic from './sheet-basic.vue'
@@ -286,21 +286,21 @@ interface OracleSpec {
 const oracles = computed((): OracleSpec[][] => {
 	const { subtype, klass } = props.data.actor.system
 	const kc = klass
-	const rc = state.region.capitalize()
+	const rc = state.region
 	switch (subtype) {
 		case 'planet':
 			return [
 				[
 					{
 						title: 'Atmosphere',
-						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/atmosphere`,
+						dsid: `oracle_rollable:starforged/planet/${kc}/atmosphere`,
 						fl: true,
 						requiresKlass: true
 					},
 					{
 						title: 'Observed from space',
 						qty: '1-2',
-						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/observed_from_space`,
+						dsid: `oracle_rollable:starforged/planet/${kc}/observed_from_space`,
 						fl: true,
 						requiresKlass: true
 					}
@@ -308,19 +308,19 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Settlements',
-						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/settlements/${rc.toLowerCase()}`,
+						dsid: `oracle_rollable:starforged/planet/${kc}/settlements/${rc}`,
 						fl: true,
 						requiresKlass: true
 					},
 					{
 						title: 'Life',
-						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/life`,
+						dsid: `oracle_rollable:starforged/planet/${kc}/life`,
 						requiresKlass: true
 					},
 					{
 						title: 'Planetside feature',
 						qty: '1-2',
-						dsid: `oracle_rollable:starforged/planet/${kc?.toLowerCase()}/feature`,
+						dsid: `oracle_rollable:starforged/planet/${kc}/feature`,
 						requiresKlass: true
 					}
 				],
@@ -351,7 +351,7 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Population',
-						dsid: `oracle_rollable:starforged/settlement/population/${rc.toLowerCase()}`,
+						dsid: `oracle_rollable:starforged/settlement/population/${rc}`,
 						fl: true
 					},
 					{
@@ -391,7 +391,7 @@ const oracles = computed((): OracleSpec[][] => {
 				[
 					{
 						title: 'Type',
-						dsid: `oracle_rollable:starforged/derelict/type/${kc?.toLowerCase()}`,
+						dsid: `oracle_rollable:starforged/derelict/type/${kc}`,
 						fl: true,
 						requiresKlass: true
 					},
@@ -498,7 +498,7 @@ const canRandomizeName = computed(() => {
 	if (subtype === 'planet') {
 		const kc = klass ?? ''
 		const dskey = `oracle_rollable:starforged/planet/${kc}/name`
-		const obj = DataswornTree.get(dskey)
+		const obj = IdParser.get(dskey)
 		if (obj) return true
 	} else if (subtype === 'settlement') {
 		return true
@@ -601,7 +601,7 @@ async function randomizeName() {
 	const { subtype, klass } = props.data.actor.system
 	let name
 	if (subtype === 'planet') {
-		const kc = (klass ?? '').capitalize()
+		const kc = klass ?? ''
 		const table = await OracleTable.getByDsId(
 			`oracle_rollable:starforged/planet/${kc}/name`
 		)
@@ -656,10 +656,8 @@ async function rollFirstLook() {
 
 async function rollOracle(oracle: OracleSpec) {
 	const table = await OracleTable.getByDsId(oracle.dsid)
-	console.log(table)
 	const drawText = await drawAndReturnResult(table)
 	if (!drawText) {
-		console.log('!!!', oracle)
 		return
 	}
 
