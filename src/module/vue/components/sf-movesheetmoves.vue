@@ -25,31 +25,33 @@
 			/>
 		</nav>
 
-		<section
-			v-for="ruleset in filteredMoveTree"
-			:key="ruleset.displayName"
-			class="nogrow"
-		>
-			<h2 v-if="showHeaders" :class="$style.rulesetname">
-				{{ ruleset.displayName }}
-			</h2>
-			<ul class="item-list scrollable flexcol" :class="$style.list">
-				<li
-					v-for="(category, catIndex) in ruleset.categories"
-					:key="catIndex"
-					class="nogrow"
-				>
-					<SfMoveCategoryRows
-						ref="allCategories"
+		<div class="item-list scrollable flexcol">
+			<section
+				v-for="ruleset in filteredMoveTree"
+				:key="ruleset.displayName"
+				class="nogrow"
+			>
+				<h2 v-if="showHeaders" :class="$style.rulesetname">
+					{{ ruleset.displayName }}
+				</h2>
+				<ul class="item-list scrollable flexcol" :class="$style.list">
+					<li
+						v-for="(category, catIndex) in ruleset.categories"
+						:key="catIndex"
 						class="nogrow"
-						:expanded="!!searchQuery"
-						:class="$style.catList"
-						:category="category"
-						:data-tourid="`move-category-${category.ds?._id}`"
-					/>
-				</li>
-			</ul>
-		</section>
+					>
+						<SfMoveCategoryRows
+							ref="allCategories"
+							class="nogrow"
+							:expanded="!!searchQuery"
+							:class="$style.catList"
+							:category="category"
+							:data-tourid="`move-category-${category.ds?._id}`"
+						/>
+					</li>
+				</ul>
+			</section>
+		</div>
 	</article>
 </template>
 
