@@ -68,8 +68,9 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		ev.preventDefault()
 
 		// Roll an Ironlander name
-		const tables = await this._ironlanderNameTables()
-		const table = sample(tables)
+		const table = await OracleTable.getByDsId(
+			'oracle_rollable:classic/name/ironlander'
+		)
 		const drawResult = await table?.draw({ displayChat: false })
 
 		this._createWithFolder(
@@ -158,22 +159,11 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		await this.close()
 	}
 
-	async _ironlanderNameTables(): Promise<OracleTable[] | undefined> {
-		const tableA = (await OracleTable.getByDfId(
-			'Ironsworn/Oracles/Name/Ironlander/A'
-		)) as any
-		const tableB = (await OracleTable.getByDfId(
-			'Ironsworn/Oracles/Name/Ironlander/B'
-		)) as any
-		if (tableA && tableB) return [tableA, tableB]
-		return undefined
-	}
-
 	async _randomStarforgedName(): Promise<string | undefined> {
 		const [givenName, familyName] = await OracleTable.ask(
 			[
-				'Starforged/Oracles/Characters/Name/Given_Name',
-				'Starforged/Oracles/Characters/Name/Family_Name'
+				'oracle_rollable:starforged/character/name/given_name',
+				'oracle_rollable:starforged/character/name/family_name'
 			],
 			{ displayChat: false }
 		)
