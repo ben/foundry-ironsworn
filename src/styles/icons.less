@@ -186,6 +186,12 @@ i {
 	&[class^='isicon-'],
 	&[class*=' isicon-'] {
 		display: flex;
+		&.inline {
+			display: inline-block;
+			&::before {
+				display: inline-block;
+			}
+		}
 		align-items: center;
 		align-self: center;
 		justify-content: center;

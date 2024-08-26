@@ -17,18 +17,17 @@ export class IronswornChatCard {
 
 	async attachMoveOracleContextMenu(html: JQuery) {
 		// Set up context-menu bindings
-		const moveLinks = html.find('a[draggable]')
+		const moveLinks = html.find('a.content-link')
 		const maybeTablePromises = moveLinks.map(async (_i, el) => {
-			const { pack, id } = el.dataset
-			if (pack == null || id == null) return []
+			const { uuid } = el.dataset
+			if (!uuid) return []
 
-			const fPack = game.packs.get(pack)
-			const fItem = fPack?.get(id) as IronswornItem<'sfmove'>
+			const fItem = (await fromUuid(uuid)) as IronswornItem<'sfmove'>
 			if (fItem?.type !== 'sfmove') return []
 
 			const system = fItem.system
-			const oracleIds = system.Oracles ?? []
-			return await Promise.all(oracleIds.map(OracleTable.getByDfId))
+			const oracleIds = system.dsOracleIds ?? []
+			return await Promise.all(oracleIds.map((x) => OracleTable.getByDsId(x)))
 		})
 		const tables = compact(flatten(await Promise.all(maybeTablePromises)))
 		if (tables.length === 0) return
@@ -39,7 +38,7 @@ export class IronswornChatCard {
 			`.message-content`,
 			tables.map((t) => ({
 				name: t.name ?? '',
-				icon: '<i class="isicon-oracle"></i>',
+				icon: '<i class="isicon-oracle inline"></i>',
 				callback: async () => await t.draw()
 			}))
 		)
