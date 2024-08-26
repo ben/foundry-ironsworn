@@ -5,17 +5,12 @@ import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
-import {
-	COMPENDIUM_KEY_MAP,
-	getPackAndIndexForCompendiumKey,
-	IdParser
-} from '../datasworn2'
+import { getPackAndIndexForCompendiumKey, IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
 	getCustomizedOracleTrees,
 	IOracleTreeNode
 } from '../features/customoracles'
-import { cachedDocumentsForPack } from '../features/pack-cache'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
@@ -82,19 +77,30 @@ export class OracleTable extends RollTable {
 	static async getByDfId(
 		dfid: string
 	): Promise<StoredDocument<OracleTable> | undefined> {
-		const isd = await cachedDocumentsForPack(
-			'foundry-ironsworn.ironswornoracles'
+		const isComp = await getPackAndIndexForCompendiumKey(
+			'classic',
+			'oracle_rollable'
 		)
-		const delved = await cachedDocumentsForPack(
-			'foundry-ironsworn.ironsworndelveoracles'
+		const dvComp = await getPackAndIndexForCompendiumKey(
+			'delve',
+			'oracle_rollable'
 		)
-		const sfd = await cachedDocumentsForPack(
-			'foundry-ironsworn.starforgedoracles'
+		const sfComp = await getPackAndIndexForCompendiumKey(
+			'starforged',
+			'oracle_rollable'
 		)
-		const matcher = (x: { id: string }) => x.id === hashLookup(dfid)
-		return (isd?.find(matcher) ??
-			sfd?.find(matcher) ??
-			delved?.find(matcher)) as StoredDocument<OracleTable> | undefined
+		const allIndexEntries = [
+			...(isComp.index?.contents ?? []),
+			...(dvComp.index?.contents ?? []),
+			...(sfComp.index?.contents ?? [])
+		]
+		console.log(allIndexEntries)
+		const indexItem = allIndexEntries.find(
+			(x) => x.flags?.['foundry-ironsworn']?.dfid === dfid
+		)
+		return (await fromUuid(indexItem?.uuid ?? '')) as
+			| StoredDocument<OracleTable>
+			| undefined
 	}
 
 	static async getIndexEntryByDsId(dsid: string) {
