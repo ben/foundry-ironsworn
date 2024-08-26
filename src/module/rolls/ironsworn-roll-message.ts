@@ -267,7 +267,7 @@ export class IronswornRollMessage {
 			// If no oracles, that table is probably important to the move
 			// (i.e. SF's "Repair" move), so we leave it in.
 			ret.moveOutcome = await enrichMarkdown(moveOutcome.Text)
-			if (moveSystem.Oracles?.length > 0) {
+			if (moveSystem.dsOracleIds?.length > 0) {
 				ret.moveOutcome = ret.moveOutcome.replace(
 					/<table>[\s\S]*<\/table>/gm,
 					''
@@ -324,9 +324,9 @@ export class IronswornRollMessage {
 		if (move?.type !== 'sfmove') return {}
 
 		const system = move.system
-		const dfids = system.Oracles ?? []
+		const dsids = system.dsOracleIds ?? []
 		const nextOracles = compact(
-			await Promise.all(dfids.map(OracleTable.getByDfId))
+			await Promise.all(dsids.map((x) => OracleTable.getByDsId(x)))
 		)
 		return { nextOracles }
 	}

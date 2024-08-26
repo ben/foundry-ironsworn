@@ -4,7 +4,8 @@
 		:source="data.system.Source"
 		:content="data.system.Text"
 		:strip-tables="hasOracles"
-		type="markdown">
+		type="markdown"
+	>
 		<template #before-main>
 			<slot name="before-main">
 				<i v-if="isProgressMove" :class="$style.progressMoveLabel">{{
@@ -29,7 +30,9 @@ const props = defineProps<{
 	data: ItemSource<'sfmove'>
 	isProgressMove: boolean
 }>()
-const hasOracles = computed(() => (props.data.system.Oracles?.length ?? 0) > 0)
+const hasOracles = computed(
+	() => (props.data.system.dsOracleIds?.length ?? 0) > 0
+)
 </script>
 
 <style lang="scss" module>

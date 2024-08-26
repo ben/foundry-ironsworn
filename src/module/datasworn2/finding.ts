@@ -2,7 +2,7 @@ import { IdParser } from '.'
 import { IronswornItem } from '../item/item'
 
 // The first keys are the primary type ids, the second keys are the rules package ids
-export const COMPENDIUM_KEY_MAP: Record<string, Record<string, string>> = {
+export const COMPENDIUM_KEY_MAP = {
 	asset: {
 		classic: 'foundry-ironsworn.ironswornassets',
 		starforged: 'foundry-ironsworn.starforgedassets',
