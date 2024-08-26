@@ -1,14 +1,6 @@
-import type {
-	PlayerConditionMeter,
-	ProgressTypeIronsworn,
-	RollableStat,
-	RollMethod,
-	RollType,
-	Stat
-} from 'dataforged'
+import type { ProgressTypeIronsworn, RollMethod, RollType } from 'dataforged'
 import { cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
-import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
 import type {
 	PreRollOptions,
@@ -27,6 +19,7 @@ import type { AssetConditionMeter } from '../item/subtypes/asset'
 import { AssetConditionMeterField } from '../item/subtypes/asset'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
+import { getFoundryMoveByDsId } from '../datasworn2'
 
 interface showForMoveOpts {
 	actor?: IronswornActor
@@ -279,14 +272,14 @@ export class IronswornPrerollDialog extends Dialog<
 		name: string,
 		value: number,
 		actor?: IronswornActor<any>,
-		moveDfId?: string
+		moveDsId?: string
 	) {
 		const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')
 		let title = `${rollText}: ${name}`
 
 		let move: IronswornItem<'sfmove'> | undefined
-		if (moveDfId != null) {
-			move = await getFoundryMoveByDfId(moveDfId)
+		if (moveDsId != null) {
+			move = await getFoundryMoveByDsId(moveDsId)
 			if (move?.name != null) {
 				title = `${move.name}: ${name}`
 			}
@@ -299,7 +292,7 @@ export class IronswornPrerollDialog extends Dialog<
 			},
 
 			actorId: actor?.id ?? undefined,
-			moveDfId
+			moveDsId
 		}
 
 		const content = await this.renderContent({ prerollOptions, move })
@@ -322,15 +315,15 @@ export class IronswornPrerollDialog extends Dialog<
 		}).render(true)
 	}
 
-	static async showForOfficialMove(moveDfId: string, opts?: showForMoveOpts) {
-		const moveItem = await getFoundryMoveByDfId(moveDfId)
+	static async showForOfficialMove(moveDsId: string, opts?: showForMoveOpts) {
+		const moveItem = await getFoundryMoveByDsId(moveDsId)
 		if (moveItem == null) {
-			throw new Error(`Couldn't find item for move '${moveDfId}'`)
+			throw new Error(`Couldn't find item for move '${moveDsId}'`)
 		}
 
 		return await this.showForMoveItem(
 			moveItem,
-			{ moveDfId, progress: opts?.progress },
+			{ moveDsId, progress: opts?.progress },
 			opts
 		)
 	}

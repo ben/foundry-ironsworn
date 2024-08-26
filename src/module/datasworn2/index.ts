@@ -19,3 +19,5 @@ export const DataswornTree = new DSCore.DataswornTree(...rulesPackages)
 const IdParser = DSCore.IdParser
 IdParser.datasworn = DataswornTree
 export { IdParser }
+
+export * from './finding'

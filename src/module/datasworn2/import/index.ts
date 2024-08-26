@@ -24,7 +24,7 @@ import {
 	DataswornToLegacyIds,
 	lookupLegacyId,
 	LegacyToDataswornIds
-} from '../ids'
+} from './ids'
 import { renderNpcDescription } from './foe-description'
 
 const ISMoveCategoryColors = {

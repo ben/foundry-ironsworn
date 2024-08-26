@@ -1,6 +1,5 @@
 import type {
 	IMove,
-	IMoveReroll,
 	IMoveTrigger,
 	IMoveTriggerOptionAction,
 	IMoveTriggerOptionProgress,
@@ -10,7 +9,6 @@ import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { Display } from '../../fields/DisplayField'
 import { DisplayField } from '../../fields/DisplayField'
 import { SourceField } from '../../fields/SourceField'
-import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 
 export class SFMoveModel extends foundry.abstract.TypeDataModel<
