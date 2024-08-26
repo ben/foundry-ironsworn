@@ -25,7 +25,7 @@
 			/>
 		</nav>
 
-		<div class="item-list scrollable flexcol" :class="$style.list">
+		<div class="item-list scrollable" :class="$style.list">
 			<section
 				v-for="ruleset in filteredMoveTree"
 				:key="ruleset.displayName"
@@ -34,7 +34,7 @@
 				<h2 v-if="showHeaders" :class="$style.rulesetname">
 					{{ ruleset.displayName }}
 				</h2>
-				<ul class="item-list scrollable flexcol" :class="$style.list">
+				<ul class="item-list" :class="$style.list">
 					<li
 						v-for="(category, catIndex) in ruleset.categories"
 						:key="catIndex"
