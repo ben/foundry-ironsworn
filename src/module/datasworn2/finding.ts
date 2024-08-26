@@ -62,7 +62,7 @@ export async function getFoundryMoveByDsId(
 	const pack = game.packs.get(compendiumKey)
 	const index = await pack?.getIndex({ fields: ['flags'] })
 	const indexEntry = index?.contents?.find(
-		(x) => x.flags?.['foundry-ironsworn']?.dsid === dsid
+		(x: any) => x.flags?.['foundry-ironsworn']?.dsid === dsid
 	)
 	if (!indexEntry) return undefined
 

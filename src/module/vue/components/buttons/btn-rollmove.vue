@@ -36,7 +36,7 @@ const $actor = inject($ActorKey, undefined)
 const props = withDefaults(defineProps<Props>(), {
 	clickFn: async (actor: IronswornActor | undefined, move: DisplayMove) => {
 		if (!move) throw new Error('No move?')
-		if (move.dataforgedMove)
+		if (move.ds)
 			return IronswornPrerollDialog.showForOfficialMove(move?.ds?._id, {
 				actor
 			})

@@ -1,7 +1,6 @@
 import type { ProgressTypeIronsworn, RollMethod, RollType } from 'dataforged'
 import { cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
-import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
 import type {
 	PreRollOptions,
@@ -20,7 +19,7 @@ import type { AssetConditionMeter } from '../item/subtypes/asset'
 import { AssetConditionMeterField } from '../item/subtypes/asset'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
-import { getFoundryMoveByDsId } from '../datasworn2/finding'
+import { getFoundryMoveByDsId } from '../datasworn2'
 
 interface showForMoveOpts {
 	actor?: IronswornActor

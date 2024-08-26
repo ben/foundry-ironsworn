@@ -1,5 +1,3 @@
-import { getFoundryMoveByDfId } from '../../dataforged'
-import { getFoundryMoveByDsId } from '../../datasworn2/finding'
 import type { DataSchema } from '../../fields/utils'
 import { IronswornPrerollDialog } from '../../rolls'
 import type { IronswornItem } from '../item'

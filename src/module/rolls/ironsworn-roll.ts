@@ -6,8 +6,7 @@
 // - Rerolls update chat message
 
 import { cloneDeep, compact, pick, range, sum } from 'lodash-es'
-import { getFoundryMoveByDfId } from '../dataforged'
-import { getFoundryMoveByDsId } from '../datasworn2/finding'
+import { getFoundryMoveByDsId } from '../datasworn2'
 import { cinderAndWraithifyRoll } from '../features/dice'
 import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
