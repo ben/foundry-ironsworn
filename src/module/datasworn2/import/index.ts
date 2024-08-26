@@ -254,10 +254,9 @@ for (const collection of collections) {
 				txt.replace(/{{table>.*?}}/, '').trim()
 
 			// Process oracle IDs
-			const oracleIdPatterns = [
-				...Object.values(move.oracles ?? {}).map((o) => o._id),
-				...Object.values(move.suggestions ?? {})
-			]
+			const oracleIdPatterns = Object.values(move.oracles ?? {}).map(
+				(o) => o._id
+			)
 			const dsOracleIds = flatten(
 				oracleIdPatterns.map((o) => {
 					const parsed = IdParser.parse(o)
