@@ -11,6 +11,7 @@ import {
 	getCustomizedOracleTrees,
 	IOracleTreeNode
 } from '../features/customoracles'
+import { DataswornRulesetKey } from '../helpers/settings'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
@@ -106,11 +107,10 @@ export class OracleTable extends RollTable {
 	static async getIndexEntryByDsId(dsid: string) {
 		const parsed = IdParser.parse(dsid)
 		const { index } = await getPackAndIndexForCompendiumKey(
-			parsed.rulesPackageId,
+			parsed.rulesPackageId as DataswornRulesetKey,
 			'oracle_rollable'
 		)
 		return index?.find((entry) => {
-			// @ts-expect-error flags are untyped
 			return entry.flags?.['foundry-ironsworn']?.dsid === dsid
 		})
 	}
@@ -120,12 +120,11 @@ export class OracleTable extends RollTable {
 	): Promise<StoredDocument<OracleTable> | undefined> {
 		const parsed = IdParser.parse(dsid)
 		const { pack, index } = await getPackAndIndexForCompendiumKey(
-			parsed.rulesPackageId,
+			parsed.rulesPackageId as DataswornRulesetKey,
 			'oracle_rollable'
 		)
 		if (!index || !pack) return
 		for (const entry of index.contents) {
-			// @ts-expect-error flags are untyped
 			if (entry.flags?.['foundry-ironsworn']?.dsid === dsid) {
 				return pack.getDocument(entry._id) as any as
 					| StoredDocument<OracleTable>

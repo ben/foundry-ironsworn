@@ -3,6 +3,7 @@ import { compact } from 'lodash-es'
 import {
 	COMPENDIUM_KEY_MAP,
 	DataswornTree,
+	FoundryIndex,
 	getPackAndIndexForCompendiumKey,
 	IdParser
 } from '../datasworn2'
@@ -25,10 +26,10 @@ export interface DisplayCategory {
 export interface DisplayRuleset {
 	title: string
 	categories: DisplayCategory[]
-	index?: ReturnType<(typeof CompendiumCollection.prototype)['getIndex']>
+	index?: FoundryIndex
 }
 
-const INDEXES: Record<string, any> = {}
+const INDEXES: Record<string, FoundryIndex | undefined> = {}
 
 function assetFetcher(dsid: string): () => Promise<IronswornItem> {
 	const parsed = IdParser.parse(dsid)

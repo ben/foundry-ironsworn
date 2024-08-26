@@ -204,7 +204,7 @@ async function generateTreeFromDsData(
 	ruleset: RulesetId
 ): Promise<IOracleTreeNode> {
 	const { index } = await getPackAndIndexForCompendiumKey(
-		ruleset,
+		ruleset as DataswornRulesetKey,
 		'oracle_rollable'
 	)
 	if (!index) return emptyNode()

@@ -51,15 +51,17 @@ export const COMPENDIUM_KEY_MAP = {
 	}
 }
 
+export type FoundryIndex = Awaited<
+	ReturnType<(typeof CompendiumCollection.prototype)['getIndex']>
+>
+
 interface PackAndIndex {
 	pack?: CompendiumCollection<CompendiumCollection.Metadata>
-	index?: Awaited<
-		ReturnType<(typeof CompendiumCollection.prototype)['getIndex']>
-	>
+	index?: FoundryIndex
 }
 
 export async function getPackAndIndexForCompendiumKey(
-	ruleset: string,
+	ruleset: DataswornRulesetKey,
 	type: keyof typeof COMPENDIUM_KEY_MAP
 ): Promise<PackAndIndex> {
 	const pack = game.packs.get(COMPENDIUM_KEY_MAP[type][ruleset])
@@ -77,7 +79,7 @@ export async function getFoundryMoveByDsId(
 	if (!compendiumKey) return undefined
 
 	const { pack, index } = await getPackAndIndexForCompendiumKey(
-		parsed.rulesPackageId,
+		parsed.rulesPackageId as DataswornRulesetKey,
 		'move'
 	)
 	const indexEntry = index?.contents?.find(
