@@ -18,8 +18,6 @@ export function renderLinksInStr(str: string): string {
 			return text
 		}
 
-		// TODO: render move/oracle links as data-dfid anchors so they'll navigate properly
-
 		// Fixup: embedded oracle tables will be imported as full RollTables
 		// So here we redirect links to move-oracles to full oracles
 		const typeId =

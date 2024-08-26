@@ -4,7 +4,7 @@
 		class="flexcol nogrow movesheet-row"
 		:class="{ hidden: node?.forceHidden, highlighted: state.highlighted }"
 		data-tooltip-direction="LEFT"
-		:data-tourid="`oracle-${node.dataforgedNode?.$id}`"
+		:data-tourid="`oracle-${node.dataswornNode?._id}`"
 	>
 		<!-- TODO: split this into two components, yo -->
 		<!-- Leaf node -->
