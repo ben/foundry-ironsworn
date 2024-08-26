@@ -25,7 +25,7 @@
 			/>
 		</nav>
 
-		<div class="item-list scrollable flexcol">
+		<div class="item-list scrollable flexcol" :class="$style.list">
 			<section
 				v-for="ruleset in filteredMoveTree"
 				:key="ruleset.displayName"
