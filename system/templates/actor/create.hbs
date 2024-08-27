@@ -14,17 +14,42 @@
     {{#if both}}
     <div class="nogrow boxgroup" style="margin-bottom: 1rem;">
       <div class="flexrow boxrow nogrow">
-        <div class="box" style="padding: 0.25rem; align-items: center; gap: 0.5rem;">
+        <div class="flexrow box" style="align-items: center; gap: 0.5rem;">
           <img class="nogrow" src="icons/creatures/eyes/human-single-blue.webp" width="50" height="50" alt="">
           <h2 style="margin: 0;">Character</h2>
         </div>
       </div>
       <div class="flexrow boxrow nogrow">
-        <div class="flexcol box ironsworn__character__create">
-          <h3 class="clickable block" style="border: none; margin: 0; padding: 0.5rem;">Ironsworn</h3>
+        <div class="flexcol box ironsworn__character__create" data-img="icons/creatures/eyes/human-single-blue.webp">
+          <h3 class="clickable block" style="border: none; margin: 0; padding: 0.5rem;">
+            Ironsworn
+          </h3>
         </div>
-        <div class="flexcol box ironsworn__sfcharacter__create">
-          <h3 class="clickable block" style="border: none; margin: 0; padding: 0.5rem;">Starforged</h3>
+        <div class="flexcol box ironsworn__sfcharacter__create" data-img="icons/creatures/eyes/human-single-blue.webp">
+          <h3 class="clickable block" style="border: none; margin: 0; padding: 0.5rem;">
+            Starforged
+          </h3>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class="boxgroup nogrow" style="margin-bottom: 1rem;">
+      <div class="boxrow nogrow flexcol">
+        <div class="flexcol box">
+          <div
+            class="flexrow clickable block no-border
+            {{#if classic}}ironsworn__character__create
+            {{else}}ironsworn__sfcharacter__create
+            {{/if}}"
+            style="align-items: center;"
+            data-img="icons/creatures/eyes/human-single-blue.webp"
+          >
+            <img class="nogrow" src="icons/creatures/eyes/human-single-blue.webp" width="50" height="50" alt="">
+
+            <h3 style="border: none; margin: 0; padding: 0.5rem;">
+              Character
+            </h3>
+          </div>
         </div>
       </div>
     </div>
@@ -50,6 +75,10 @@
   .create-actor-row {
     align-items: center;
     padding: 0.5rem;
+  }
+
+  .new-actor .no-border {
+    border-width: 0;
   }
 
   .create-actor-header {
