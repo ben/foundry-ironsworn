@@ -6,7 +6,7 @@ import {
 } from '../datasworn2'
 import { IronswornSettings } from '../helpers/settings'
 
-interface DisplayFoe {
+export interface DisplayFoe {
 	displayName: string
 	uuid: string
 	img: string

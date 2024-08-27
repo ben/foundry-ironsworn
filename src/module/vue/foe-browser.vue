@@ -35,12 +35,12 @@
 								:markdown="true"
 							/>
 
-							<ul>
-								<li v-for="foe in category.foes" :key="foe.uuid">
-									{{ foe.displayName }}
-								</li>
-							</ul>
-							<!-- TODO: FoeBrowserCard and FoeBrowserCardContents -->
+							<FoeBrowserRow
+								v-for="foe in category.foes"
+								:key="foe.uuid"
+								:foe="foe"
+								:index="ruleset.index"
+							/>
 						</section>
 					</div>
 				</Suspense>
@@ -51,12 +51,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { IronswornSettings } from '../helpers/settings'
 import { createFoeTree } from '../features/customfoes'
 
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 import IronBtn from 'component:buttons/iron-btn.vue'
 import RenderedText from 'component:rendered-text.vue'
+import FoeBrowserRow from 'component:foe-browser/foe-browser-row.vue'
 
 // Not used, but this prevents a Vue warning
 defineProps<{ data: any }>()
