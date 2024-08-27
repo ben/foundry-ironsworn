@@ -4,6 +4,10 @@
 			[$style.article]: true,
 			[$style.variant]: foe.isVariant
 		}"
+		draggable="true"
+		:data-uuid="foe.uuid"
+		@dragstart="dragStart"
+		@dragend="dragEnd"
 	>
 		<header :class="$style.header">
 			<button
@@ -52,9 +56,25 @@ import FontIcon from 'component:icon/font-icon.vue'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 import FoeBrowserContent from 'component:foe-browser/foe-browser-content.vue'
 
-defineProps<{ foe: DisplayFoe }>()
+const props = defineProps<{ foe: DisplayFoe }>()
 
 const expanded = ref(false)
+
+function dragStart(ev) {
+	ev.dataTransfer.setData(
+		'text/plain',
+		JSON.stringify({
+			type: 'FoeBrowserData',
+			uuid: props.foe.uuid
+		})
+	)
+
+	CONFIG.IRONSWORN.emitter.emit('dragStart', 'progress')
+}
+
+function dragEnd() {
+	CONFIG.IRONSWORN.emitter.emit('dragEnd', 'progress')
+}
 </script>
 
 <style lang="scss" module>

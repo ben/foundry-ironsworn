@@ -50,7 +50,7 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 	protected async _onDrop(event: DragEvent) {
 		const data = (TextEditor as any).getDragEventData(event)
 
-		if (data.type === 'AssetBrowserData') {
+		if (['AssetBrowserData', 'FoeBrowserData'].includes(data.type)) {
 			const document = (await fromUuid(data.uuid)) as
 				| StoredDocument<IronswornItem>
 				| undefined
