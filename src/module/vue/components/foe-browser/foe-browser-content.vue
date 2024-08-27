@@ -1,5 +1,5 @@
 <template>
-	<RenderedText element="div" :content="obj.system.description" />
+	<RenderedText element="div" :content="obj?.system?.description" />
 </template>
 
 <script setup lang="ts">
@@ -15,3 +15,5 @@ const props = defineProps<{
 const foundryItem = (await fromUuid(props.foe.uuid)) as IronswornItem<'foe'>
 const obj = foundryItem?.toObject() ?? {}
 </script>
+
+<style lang="scss" module></style>

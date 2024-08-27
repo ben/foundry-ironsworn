@@ -23,7 +23,6 @@ interface DisplayFoeCategory {
 
 interface DisplayFoeRuleset {
 	displayName: string
-	index?: FoundryIndex
 	categories: DisplayFoeCategory[]
 }
 
@@ -35,7 +34,6 @@ export async function createFoeTree(): Promise<DisplayFoeRuleset[]> {
 
 			return {
 				displayName: game.i18n.localize(`IRONSWORN.RULESETS.${rskey}`),
-				index,
 				categories: Object.values(rs?.npcs ?? {}).map((cat) => ({
 					displayName: game.i18n.localize(
 						`IRONSWORN.NpcCategories.${cat.name}.Name`
