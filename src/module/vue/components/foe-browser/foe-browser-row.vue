@@ -30,7 +30,10 @@
 					:alt="foe.displayName"
 					class="nogrow"
 				/>
-				<h4>{{ foe.displayName }}</h4>
+				<h4 class="flexrow">
+					<RankPips :readonly="true" :current="foe.rank" />
+					{{ foe.displayName }}
+				</h4>
 				<span :class="$style.nature">
 					{{ foe.nature }}
 				</span>
@@ -51,10 +54,10 @@
 import { defineProps, ref } from 'vue'
 import type { DisplayFoe } from '../../../features/customfoes'
 
-import LoadingSpinner from 'component:loading-spinner.vue'
 import FontIcon from 'component:icon/font-icon.vue'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 import FoeBrowserContent from 'component:foe-browser/foe-browser-content.vue'
+import RankPips from 'component:progress/rank-pips.vue'
 
 const props = defineProps<{ foe: DisplayFoe }>()
 
@@ -128,6 +131,9 @@ function dragEnd() {
 		flex-grow: 1;
 		text-align: left;
 		white-space: nowrap;
+		gap: 0.5rem;
+		flex-wrap: nowrap;
+		overflow: hidden;
 	}
 }
 

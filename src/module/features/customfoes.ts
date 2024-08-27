@@ -9,6 +9,7 @@ import { IronswornSettings } from '../helpers/settings'
 
 export interface DisplayFoe {
 	displayName: string
+	rank: number
 	uuid: string
 	img: string
 	isVariant: boolean
@@ -40,6 +41,7 @@ function displayFoesForNpc(index: FoundryIndex, npc: Npc): DisplayFoe[] {
 			displayName: indexEntry.name,
 			uuid: indexEntry?.uuid ?? '',
 			img: indexEntry?.img ?? '',
+			rank: npc.rank,
 			isVariant: false,
 			nature: game.i18n.localize(`IRONSWORN.NpcNatures.${npc.nature}`),
 			ds: npc
@@ -55,6 +57,7 @@ function displayFoesForNpc(index: FoundryIndex, npc: Npc): DisplayFoe[] {
 			displayName: indexEntry?.name ?? variant.name,
 			uuid: indexEntry?.uuid ?? '',
 			img: indexEntry?.img ?? '',
+			rank: variant.rank,
 			isVariant: true,
 			nature: game.i18n.localize(`IRONSWORN.NpcNatures.${variant.nature}`),
 			ds: npc
