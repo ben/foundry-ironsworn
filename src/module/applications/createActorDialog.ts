@@ -123,9 +123,17 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
 	getData(_options?: Application.RenderOptions): any {
 		const sections = CreateActorDialog.sectionsForEnabledContent
+		const rulesets = IronswornSettings.enabledRulesets
+		const classic = rulesets.includes('classic')
+		const starforged = rulesets.includes('starforged')
 		return {
 			buttonSections: sections,
-			showSectionHeaders: sections.length > 1
+			showSectionHeaders: sections.length > 1,
+			classic,
+			starforged,
+			classicOnly: classic && !starforged,
+			starforgedOnly: starforged && !classic,
+			both: classic && starforged
 		}
 	}
 
