@@ -1,9 +1,6 @@
 <template>
 	<article
-		:class="{
-			[$style.article]: true,
-			[$style.variant]: foe.isVariant
-		}"
+		:class="$style.article"
 		draggable="true"
 		:data-uuid="foe.uuid"
 		@dragstart="dragStart"
@@ -21,6 +18,11 @@
 					class="nogrow block draggable item"
 					:class="$style.dragHandle"
 				/>
+				<FontIcon
+					v-if="foe.isVariant"
+					name="angles-right"
+					class="nogrow block"
+				/>
 				<img
 					:src="foe.img"
 					width="32"
@@ -34,14 +36,9 @@
 
 		<CollapseTransition>
 			<Suspense>
-				<section v-if="expanded" :class="$style.content">
+				<section :class="$style.content" v-if="expanded">
 					<FoeBrowserContent :foe="foe" />
 				</section>
-				<template #fallback>
-					<div class="flexrow" style="height: 200px">
-						<LoadingSpinner />
-					</div>
-				</template>
 			</Suspense>
 		</CollapseTransition>
 	</article>
@@ -94,10 +91,6 @@ function dragEnd() {
 	grid-auto-rows: 1fr;
 	transition: var(--ironsworn-transition);
 	overflow: hidden;
-}
-
-.variant {
-	margin-left: 1rem;
 }
 
 .expandToggle {
