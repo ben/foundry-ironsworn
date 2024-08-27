@@ -11,6 +11,7 @@ export class FoeBrowser extends VueAppMixin(Application) {
 			title: game.i18n.localize('IRONSWORN.Foes'),
 			width: 450,
 			height: 600,
+			left: 25,
 			resizable: true,
 			rootComponent: FoeBrowserVue
 		}) as any
