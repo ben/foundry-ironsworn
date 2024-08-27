@@ -6,7 +6,7 @@ import {
 import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import type { Move, MoveCategory } from '@datasworn/core/dist/Datasworn'
 
-export interface DisplayMoveRuleset {
+interface DisplayMoveRuleset {
 	displayName: string
 	categories: DisplayMoveCategory[]
 }

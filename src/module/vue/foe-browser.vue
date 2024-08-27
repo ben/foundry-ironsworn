@@ -1,19 +1,19 @@
 <template>
 	<section
 		v-for="ruleset in rulesets"
-		:key="ruleset.title"
+		:key="ruleset.displayName"
 		class="nogrow asset-ruleset"
 	>
-		<h1>{{ $t(`IRONSWORN.RULESETS.${ruleset}`) }}</h1>
+		<h1>{{ ruleset.displayName }}</h1>
 		<section
 			v-for="category in ruleset.categories"
-			:key="category.title"
+			:key="category.displayName"
 			class="nogrow foe-category"
 		>
 			<h2 class="flexrow">
 				<IronBtn
-					:aria-controls="category.title"
-					:text="category.title"
+					:aria-controls="category.displayName"
+					:text="category.displayName"
 					:icon="category.expanded ? 'fa:caret-down' : 'fa:caret-right'"
 					@click="category.expanded = !category.expanded"
 				/>
@@ -35,6 +35,11 @@
 								:markdown="true"
 							/>
 
+							<ul>
+								<li v-for="foe in category.foes" :key="foe.uuid">
+									{{ foe.displayName }}
+								</li>
+							</ul>
 							<!-- TODO: FoeBrowserCard and FoeBrowserCardContents -->
 						</section>
 					</div>
@@ -46,15 +51,18 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import CollapseTransition from 'component:transition/collapse-transition.vue'
 import { IronswornSettings } from '../helpers/settings'
+import { createFoeTree } from '../features/customfoes'
+
+import CollapseTransition from 'component:transition/collapse-transition.vue'
 import IronBtn from 'component:buttons/iron-btn.vue'
 import RenderedText from 'component:rendered-text.vue'
 
 // Not used, but this prevents a Vue warning
 defineProps<{ data: any }>()
 
-const rulesets = IronswornSettings.enabledRulesets
+const rawRulesets = await createFoeTree()
+const rulesets = ref(rawRulesets.filter((x) => x.categories.length > 0))
 </script>
 
 <style lang="scss" scoped>

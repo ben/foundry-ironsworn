@@ -10,12 +10,12 @@ import {
 import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
 
-export interface DisplayAsset {
+interface DisplayAsset {
 	ds?: Asset
 	assetFetcher: () => Promise<IronswornItem>
 }
 
-export interface DisplayCategory {
+interface DisplayAssetCategory {
 	ds?: AssetCollection
 	title: string
 	description?: string
@@ -23,9 +23,9 @@ export interface DisplayCategory {
 	assets: DisplayAsset[]
 }
 
-export interface DisplayRuleset {
+interface DisplayAsssetRuleset {
 	title: string
-	categories: DisplayCategory[]
+	categories: DisplayAssetCategory[]
 	index?: FoundryIndex
 }
 
@@ -44,8 +44,8 @@ function assetFetcher(dsid: string): () => Promise<IronswornItem> {
 	}
 }
 
-export async function createMergedAssetTree(): Promise<DisplayRuleset[]> {
-	let ret: DisplayRuleset[] = compact(
+export async function createMergedAssetTree(): Promise<DisplayAsssetRuleset[]> {
+	let ret: DisplayAsssetRuleset[] = compact(
 		await Promise.all(
 			IronswornSettings.enabledRulesets.map(async (rsKey) => {
 				const rs = DataswornTree.get(rsKey)
@@ -101,7 +101,7 @@ export async function createMergedAssetTree(): Promise<DisplayRuleset[]> {
 }
 
 async function customAssetFolderContents(): Promise<
-	DisplayCategory | undefined
+	DisplayAssetCategory | undefined
 > {
 	const name = game.i18n.localize('IRONSWORN.Asset Categories.Custom')
 	const folder = (game.items?.directory as any)?.folders.find(
