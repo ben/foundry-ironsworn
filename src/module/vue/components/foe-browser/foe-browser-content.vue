@@ -1,5 +1,9 @@
 <template>
-	<RenderedText element="div" :content="obj?.system?.description" />
+	<RenderedText
+		:class="$style.text"
+		element="div"
+		:content="obj?.system?.description"
+	/>
 </template>
 
 <script setup lang="ts">
@@ -16,4 +20,8 @@ const foundryItem = (await fromUuid(props.foe.uuid)) as IronswornItem<'foe'>
 const obj = foundryItem?.toObject() ?? {}
 </script>
 
-<style lang="scss" module></style>
+<style lang="scss" module>
+.text {
+	margin: var(--ironsworn-spacer-lg);
+}
+</style>

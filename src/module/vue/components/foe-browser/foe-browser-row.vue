@@ -25,11 +25,11 @@
 
 		<CollapseTransition>
 			<Suspense>
-				<section :class="$style.content">
-					<FoeBrowserContent v-if="expanded" :foe="foe" />
+				<section v-if="expanded" :class="$style.content">
+					<FoeBrowserContent :foe="foe" />
 				</section>
 				<template #fallback>
-					<div class="flexrow">
+					<div class="flexrow" style="height: 200px">
 						<LoadingSpinner />
 					</div>
 				</template>
@@ -54,12 +54,6 @@ const expanded = ref(false)
 
 <style lang="scss" module>
 .article {
-	--ironsworn-foe-header-row: 1;
-	--ironsworn-foe-body-row: 2;
-	--ironsworn-foe-header-column: 1;
-
-	--ironsworn-foe-body-column: 1;
-
 	grid-template-columns: 1fr;
 	margin: var(--ironsworn-spacer-xl) 0;
 	// padding: var(--ironsworn-spacer-md);
@@ -92,7 +86,7 @@ const expanded = ref(false)
 	flex-direction: row;
 	flex-wrap: nowrap;
 	grid-row: 1;
-	grid-column: var(--ironsworn-foe-header-column);
+	grid-column: 1;
 	gap: var(--ironsworn-spacer-lg);
 	align-items: center;
 	min-height: 28px;
@@ -117,10 +111,9 @@ const expanded = ref(false)
 
 .content {
 	grid-row: 2;
-	grid-column: var(--ironsworn-asset-body-column);
+	grid-column: 1;
 	gap: var(--ironsworn-spacer-lg);
 	transition: var(--ironsworn-transition);
-	padding: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
 	overflow: hidden;
 }
 </style>
