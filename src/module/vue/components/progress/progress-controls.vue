@@ -5,27 +5,32 @@
 			block
 			icon="fa:plus"
 			:text="$t('IRONSWORN.ITEM.SubtypeVow')"
-			@click="addProgressItem('vow')" />
+			@click="addProgressItem('vow')"
+		/>
 		<IronBtn
 			:class="$style.btn"
 			block
 			icon="fa:plus"
 			:text="$t('IRONSWORN.ITEM.SubtypeProgress')"
-			@click="addProgressItem('progress')" />
-		<btn-compendium
+			@click="addProgressItem('progress')"
+		/>
+		<IronBtn
 			:class="$style.btn"
 			block
-			:compendium="props.foeCompendium ?? 'ironswornfoes'"
-			:text="$t('IRONSWORN.Foes')" />
+			icon="fa:book-atlas"
+			:text="$t('IRONSWORN.Foes')"
+			@click="openFoeBrowser"
+		/>
 	</div>
 </template>
 <script setup lang="ts">
 import { inject } from 'vue'
 import { $ActorKey } from '../../provisions'
-import IronBtn from 'component:buttons/iron-btn.vue'
-import BtnCompendium from 'component:buttons/btn-compendium.vue'
+import { FoeBrowser } from '../../../item/foe-browser'
 
-const props = defineProps<{ foeCompendium?: string }>()
+import IronBtn from 'component:buttons/iron-btn.vue'
+
+defineProps<{ foeCompendium?: string }>()
 
 const $actor = inject($ActorKey)
 
@@ -38,6 +43,10 @@ async function addProgressItem(subtype) {
 	}
 	const item = await Item.create(itemData as any, { parent: $actor })
 	item?.sheet?.render(true)
+}
+
+function openFoeBrowser() {
+	new FoeBrowser().render(true)
 }
 </script>
 

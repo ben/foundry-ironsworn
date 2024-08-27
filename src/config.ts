@@ -19,6 +19,7 @@ import {
 	registerOracleTree
 } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
+import { FoeBrowser } from './module/item/foe-browser'
 
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
@@ -40,6 +41,7 @@ export interface IronswornConfig {
 		FirstStartDialog: typeof FirstStartDialog
 		SFSettingTruthsDialog: typeof SFSettingTruthsDialogVue
 		AssetCompendiumBrowser: typeof AssetCompendiumBrowser
+		FoeBrowser: typeof FoeBrowser
 		OracleWindow: typeof OracleWindow
 
 		// Rolling
@@ -75,6 +77,7 @@ export const IRONSWORN: IronswornConfig = {
 		FirstStartDialog,
 		SFSettingTruthsDialog: SFSettingTruthsDialogVue,
 		AssetCompendiumBrowser,
+		FoeBrowser,
 		OracleWindow,
 
 		IronswornRoll,
