@@ -31,6 +31,9 @@
 					class="nogrow"
 				/>
 				<h4>{{ foe.displayName }}</h4>
+				<span :class="$style.nature">
+					{{ foe.nature }}
+				</span>
 			</button>
 		</header>
 
@@ -122,13 +125,24 @@ function dragEnd() {
 		letter-spacing: var(--ironsworn-letter-spacing-sm);
 		font-size: var(--font-size-14);
 		font-weight: bold;
-		flex-grow: 0;
+		flex-grow: 1;
+		text-align: left;
 		white-space: nowrap;
 	}
 }
 
 .dragHandle {
 	margin-left: var(--ironsworn-spacer-sm);
+}
+
+.nature {
+	flex-grow: 0;
+	transition: inherit;
+	text-align: left;
+	line-height: 1;
+	color: var(--ironsworn-color-thematic);
+	font-style: italic;
+	color: var(--ironsworn-color-fg-muted);
 }
 
 .content {

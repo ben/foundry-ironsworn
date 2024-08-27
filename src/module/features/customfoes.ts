@@ -12,6 +12,7 @@ export interface DisplayFoe {
 	uuid: string
 	img: string
 	isVariant: boolean
+	nature?: string
 	ds?: Npc
 }
 
@@ -40,6 +41,7 @@ function displayFoesForNpc(index: FoundryIndex, npc: Npc): DisplayFoe[] {
 			uuid: indexEntry?.uuid ?? '',
 			img: indexEntry?.img ?? '',
 			isVariant: false,
+			nature: npc.nature,
 			ds: npc
 		}
 	]
@@ -54,6 +56,7 @@ function displayFoesForNpc(index: FoundryIndex, npc: Npc): DisplayFoe[] {
 			uuid: indexEntry?.uuid ?? '',
 			img: indexEntry?.img ?? '',
 			isVariant: true,
+			nature: variant.nature,
 			ds: npc
 		})
 	}
