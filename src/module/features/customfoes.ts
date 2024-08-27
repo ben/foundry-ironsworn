@@ -9,14 +9,16 @@ import { IronswornSettings } from '../helpers/settings'
 interface DisplayFoe {
 	displayName: string
 	uuid: string
+	img: string
 	ds?: Npc
 }
 
 interface DisplayFoeCategory {
 	displayName: string
+	description: string
 	foes: DisplayFoe[]
 	ds?: NpcCollection
-	expanded: boolean
+	expanded?: boolean
 }
 
 interface DisplayFoeRuleset {
@@ -35,8 +37,12 @@ export async function createFoeTree(): Promise<DisplayFoeRuleset[]> {
 				displayName: game.i18n.localize(`IRONSWORN.RULESETS.${rskey}`),
 				index,
 				categories: Object.values(rs?.npcs ?? {}).map((cat) => ({
-					displayName: cat.name, // TODO: game.i18n.localize(`IRONSWORN.FOES.${cat.name}`)
-					expanded: false,
+					displayName: game.i18n.localize(
+						`IRONSWORN.NpcCategories.${cat.name}.Name`
+					),
+					description: game.i18n.localize(
+						`IRONSWORN.NpcCategories.${cat.name}.Description`
+					),
 					foes: Object.values(cat.contents).map((foe) => {
 						const indexEntry = index?.contents?.find(
 							(x) => x.flags['foundry-ironsworn']?.dsid === foe._id
@@ -44,6 +50,7 @@ export async function createFoeTree(): Promise<DisplayFoeRuleset[]> {
 						return {
 							displayName: foe.name,
 							uuid: indexEntry?.uuid ?? '',
+							img: indexEntry?.img ?? '',
 							ds: foe
 						}
 					})

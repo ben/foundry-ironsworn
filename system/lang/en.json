@@ -815,6 +815,36 @@
 				}
 			}
 		},
+		"NpcCategories": {
+			"Ironlanders": {
+				"Name": "Ironlanders",
+				"Description": "Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.\n\nThis section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can @Compendium[foundry-ironsworn.ironswornoracles.b2c23660dbcfe5b2]{Ask the Oracle}, or follow these guidelines:\n\n  * A common citizen or brute is __troublesome__.\n  * A trained warrior is __dangerous__.\n  * A powerful or veteran warrior is __formidable__."
+			},
+			"Firstborn": {
+				"Name": "Firstborn",
+				"Description": "The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory."
+			},
+			"Animals": {
+				"Name": "Animals",
+				"Description": "Animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}.\n\nMost wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} can represent hunting for deer or small game.\n\nA few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here."
+			},
+			"Beasts": {
+				"Name": "Beasts",
+				"Description": "Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}."
+			},
+			"Horrors": {
+				"Name": "Horrors",
+				"Description": "Horrors are supernatural entities. In the @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}, they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.\n\nMany horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death."
+			},
+			"Anomalies": {
+				"Name": "Anomalies",
+				"Description": "Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose."
+			},
+			"Sample NPCs": {
+				"Name": "Sample NPCs",
+				"Description": ""
+			}
+		},
 		"ROLLTABLE": {
 			"TypeOracle": "Oracle"
 		},
