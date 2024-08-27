@@ -1,4 +1,5 @@
 import { Npc, NpcCollection } from '@datasworn/core/dist/Datasworn'
+import { compact, flatten } from 'lodash-es'
 import {
 	DataswornTree,
 	FoundryIndex,
@@ -10,6 +11,7 @@ export interface DisplayFoe {
 	displayName: string
 	uuid: string
 	img: string
+	isVariant: boolean
 	ds?: Npc
 }
 
@@ -26,34 +28,69 @@ interface DisplayFoeRuleset {
 	categories: DisplayFoeCategory[]
 }
 
-export async function createFoeTree(): Promise<DisplayFoeRuleset[]> {
-	return await Promise.all(
-		IronswornSettings.enabledRulesets.map(async (rskey) => {
-			const { index } = await getPackAndIndexForCompendiumKey(rskey, 'npc')
-			const rs = DataswornTree.get(rskey)
+function displayFoesForNpc(index: FoundryIndex, npc: Npc): DisplayFoe[] {
+	const indexEntry = index.contents.find(
+		(x) => x.flags['foundry-ironsworn']?.dsid === npc._id
+	)
+	if (!indexEntry) return []
 
-			return {
-				displayName: game.i18n.localize(`IRONSWORN.RULESETS.${rskey}`),
-				categories: Object.values(rs?.npcs ?? {}).map((cat) => ({
-					displayName: game.i18n.localize(
-						`IRONSWORN.NpcCategories.${cat.name}.Name`
-					),
-					description: game.i18n.localize(
-						`IRONSWORN.NpcCategories.${cat.name}.Description`
-					),
-					foes: Object.values(cat.contents).map((foe) => {
-						const indexEntry = index?.contents?.find(
-							(x) => x.flags['foundry-ironsworn']?.dsid === foe._id
-						)
-						return {
-							displayName: foe.name,
-							uuid: indexEntry?.uuid ?? '',
-							img: indexEntry?.img ?? '',
-							ds: foe
-						}
-					})
-				}))
-			}
+	const ret = [
+		{
+			displayName: indexEntry.name,
+			uuid: indexEntry?.uuid ?? '',
+			img: indexEntry?.img ?? '',
+			isVariant: false,
+			ds: npc
+		}
+	]
+
+	for (const variant of Object.values(npc.variants)) {
+		const indexEntry = index.contents.find(
+			(x) => x.flags['foundry-ironsworn']?.dsid === variant._id
+		)
+
+		ret.push({
+			displayName: indexEntry?.name ?? variant.name,
+			uuid: indexEntry?.uuid ?? '',
+			img: indexEntry?.img ?? '',
+			isVariant: true,
+			ds: npc
 		})
+	}
+
+	return ret
+}
+
+export async function createFoeTree(): Promise<DisplayFoeRuleset[]> {
+	return compact(
+		await Promise.all(
+			IronswornSettings.enabledRulesets.map(async (rskey) => {
+				const rs = DataswornTree.get(rskey)
+				if (!rs) throw new Error('No ruleset for ' + rskey)
+
+				const { index } = await getPackAndIndexForCompendiumKey(rskey, 'npc')
+				if (!index) {
+					console.log(`No index for ${rskey}, skipping`)
+					return undefined
+				}
+
+				return {
+					displayName: game.i18n.localize(`IRONSWORN.RULESETS.${rskey}`),
+					categories: Object.values(rs?.npcs ?? {}).map((cat) => ({
+						displayName: game.i18n.localize(
+							`IRONSWORN.NpcCategories.${cat.name}.Name`
+						),
+						description: game.i18n.localize(
+							`IRONSWORN.NpcCategories.${cat.name}.Description`
+						),
+						foes: flatten(
+							Object.values(cat.contents).map((n) =>
+								displayFoesForNpc(index, n)
+							)
+						)
+					}))
+				}
+			})
+		)
 	)
 }

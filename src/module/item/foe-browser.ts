@@ -9,7 +9,7 @@ export class FoeBrowser extends VueAppMixin(Application) {
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.localize('IRONSWORN.Foes'),
-			width: 400,
+			width: 450,
 			height: 600,
 			resizable: true,
 			rootComponent: FoeBrowserVue

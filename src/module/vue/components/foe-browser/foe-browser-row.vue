@@ -1,5 +1,10 @@
 <template>
-	<article :class="$style.article">
+	<article
+		:class="{
+			[$style.article]: true,
+			[$style.variant]: foe.isVariant
+		}"
+	>
 		<header :class="$style.header">
 			<button
 				type="button"
@@ -69,6 +74,10 @@ const expanded = ref(false)
 	grid-auto-rows: 1fr;
 	transition: var(--ironsworn-transition);
 	overflow: hidden;
+}
+
+.variant {
+	margin-left: 1rem;
 }
 
 .expandToggle {
