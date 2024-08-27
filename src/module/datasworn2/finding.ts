@@ -34,7 +34,7 @@ export const COMPENDIUM_KEY_MAP = {
 	},
 	npc: {
 		classic: 'foundry-ironsworn.ironswornfoes',
-		delve: 'foundry-ironsworn.delvefoes',
+		delve: 'foundry-ironsworn.ironsworndelvefoes',
 		starforged: 'foundry-ironsworn.starforgedencounters',
 		sundered_isles: 'foundry-ironsworn.sunderedislesnpcs'
 	},
