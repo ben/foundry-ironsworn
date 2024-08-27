@@ -41,7 +41,7 @@ function displayFoesForNpc(index: FoundryIndex, npc: Npc): DisplayFoe[] {
 			uuid: indexEntry?.uuid ?? '',
 			img: indexEntry?.img ?? '',
 			isVariant: false,
-			nature: npc.nature,
+			nature: game.i18n.localize(`IRONSWORN.NpcNatures.${npc.nature}`),
 			ds: npc
 		}
 	]
@@ -56,7 +56,7 @@ function displayFoesForNpc(index: FoundryIndex, npc: Npc): DisplayFoe[] {
 			uuid: indexEntry?.uuid ?? '',
 			img: indexEntry?.img ?? '',
 			isVariant: true,
-			nature: variant.nature,
+			nature: game.i18n.localize(`IRONSWORN.NpcNatures.${variant.nature}`),
 			ds: npc
 		})
 	}

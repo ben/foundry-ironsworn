@@ -845,6 +845,19 @@
 				"Description": ""
 			}
 		},
+		"NpcNatures": {
+			"Ironlander": "Ironlander",
+			"Firstborn": "Firstborn",
+			"Animal": "Animal",
+			"Beast": "Beast",
+			"Horror": "Horror",
+			"Anomaly": "Anomaly",
+			"Monster": "Monster",
+			"Machine": "Machine",
+			"Human": "Human",
+			"Creature": "Creature",
+			"Vehicle": "Vehicle"
+		},
 		"ROLLTABLE": {
 			"TypeOracle": "Oracle"
 		},
