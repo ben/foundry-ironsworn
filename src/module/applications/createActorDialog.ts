@@ -7,75 +7,47 @@ interface CreateActorDialogOptions extends FormApplicationOptions {
 	folder: string
 }
 
-interface DialogButtonSet {
-	ruleset: DataswornRulesetKey
-	buttons: DialogButton[]
-}
-
 interface DialogButton {
 	kind: string
 	labelKey: string
 	img: string
+	ironsworn?: boolean
+	starforged?: boolean
 }
 
-const DIALOG_BUTTONS: DialogButtonSet[] = [
+const DIALOG_BUTTONS: DialogButton[] = [
 	{
-		ruleset: 'classic',
-		buttons: [
-			{
-				kind: 'character',
-				labelKey: 'IRONSWORN.ACTOR.TypeCharacter',
-				img: 'icons/creatures/eyes/human-single-blue.webp'
-			},
-			{
-				kind: 'shared',
-				labelKey: 'IRONSWORN.ACTOR.TypeShared',
-				img: 'icons/environment/settlement/wagon-black.webp'
-			},
-			{
-				kind: 'site',
-				labelKey: 'IRONSWORN.ACTOR.TypeDelveSite',
-				img: 'icons/environment/wilderness/cave-entrance-vulcano.webp'
-			},
-			{
-				kind: 'foe',
-				labelKey: 'IRONSWORN.ACTOR.TypeFoe',
-				img: 'icons/creatures/eyes/lizard-single-slit-pink.webp'
-			}
-		]
+		kind: 'shared',
+		labelKey: 'IRONSWORN.ACTOR.TypeShared',
+		img: 'icons/environment/settlement/wagon-black.webp',
+		ironsworn: true,
+		starforged: true
 	},
-	{ ruleset: 'delve', buttons: [] },
 	{
-		ruleset: 'starforged',
-		buttons: [
-			{
-				kind: 'sfcharacter',
-				labelKey: 'IRONSWORN.ACTOR.TypeCharacter',
-				img: 'icons/creatures/eyes/human-single-blue.webp'
-			},
-			{
-				kind: 'shared',
-				labelKey: 'IRONSWORN.ACTOR.TypeShared',
-				img: 'icons/environment/settlement/wagon-black.webp'
-			},
-			{
-				kind: 'sfship',
-				labelKey: 'IRONSWORN.ACTOR.TypeStarship',
-				img: 'icons/environment/settlement/wizard-castle.webp'
-			},
-			{
-				kind: 'sflocation',
-				labelKey: 'IRONSWORN.ACTOR.TypeLocation',
-				img: 'systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp'
-			},
-			{
-				kind: 'foe',
-				labelKey: 'IRONSWORN.ACTOR.TypeFoe',
-				img: 'icons/creatures/eyes/lizard-single-slit-pink.webp'
-			}
-		]
+		kind: 'site',
+		labelKey: 'IRONSWORN.ACTOR.TypeDelveSite',
+		img: 'icons/environment/wilderness/cave-entrance-vulcano.webp',
+		ironsworn: true
 	},
-	{ ruleset: 'sundered_isles', buttons: [] }
+	{
+		kind: 'foe',
+		labelKey: 'IRONSWORN.ACTOR.TypeFoe',
+		img: 'icons/creatures/eyes/lizard-single-slit-pink.webp',
+		ironsworn: true,
+		starforged: true
+	},
+	{
+		kind: 'sfship',
+		labelKey: 'IRONSWORN.ACTOR.TypeStarship',
+		img: 'icons/environment/settlement/wizard-castle.webp',
+		starforged: true
+	},
+	{
+		kind: 'sflocation',
+		labelKey: 'IRONSWORN.ACTOR.TypeLocation',
+		img: 'systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp',
+		starforged: true
+	}
 ]
 
 export class CreateActorDialog extends FormApplication<CreateActorDialogOptions> {
@@ -87,24 +59,25 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		// No update necessary.
 	}
 
-	static get sectionsForEnabledContent() {
+	static get buttonsForEnabledContent() {
 		return DIALOG_BUTTONS.filter(
 			(x) =>
-				IronswornSettings.enabledRulesets.includes(x.ruleset) &&
-				x.buttons.length > 0
+				(x.ironsworn &&
+					IronswornSettings.enabledRulesets.includes('classic')) ||
+				(x.starforged &&
+					IronswornSettings.enabledRulesets.includes('starforged'))
 		)
 	}
 
 	static get defaultOptions() {
-		const sections = this.sectionsForEnabledContent
-		const buttonCount = sections.reduce(
-			(sum, { buttons }) => sum + buttons.length,
-			0
-		)
+		const buttons = this.buttonsForEnabledContent
+		const rulesets = IronswornSettings.enabledRulesets
+		const bothKinds =
+			rulesets.includes('classic') && rulesets.includes('starforged')
 		const height =
-			40 + // Title bar
-			66 * buttonCount + // Button height
-			(sections.length > 1 ? 34 * sections.length : 0) // Space for headers
+			45 + // Title bar
+			50 * (buttons.length + 1) + // Button height
+			(bothKinds ? 55 : 0) // Space for bigger box if both kinds are enabled
 		// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.format('DOCUMENT.Create', {
@@ -122,17 +95,14 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	}
 
 	getData(_options?: Application.RenderOptions): any {
-		const sections = CreateActorDialog.sectionsForEnabledContent
 		const rulesets = IronswornSettings.enabledRulesets
 		const classic = rulesets.includes('classic')
 		const starforged = rulesets.includes('starforged')
+
 		return {
-			buttonSections: sections,
-			showSectionHeaders: sections.length > 1,
+			buttons: CreateActorDialog.buttonsForEnabledContent,
 			classic,
 			starforged,
-			classicOnly: classic && !starforged,
-			starforgedOnly: starforged && !classic,
 			both: classic && starforged
 		}
 	}
