@@ -100,7 +100,7 @@ function customFolderOracleCategory(): [IOracleTreeNode, number] {
 	}
 
 	walkFolder(ret, rootFolder)
-	return [ret, count]
+	return [ret.children[0], count]
 }
 
 export function findPathToNodeByTableUuid(
