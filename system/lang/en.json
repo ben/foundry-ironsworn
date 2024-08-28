@@ -341,10 +341,6 @@
 				"Name": "Configuration Dialog",
 				"Hint": "Choose between Ironsworn and Starforged UI elements, and generate setting truths."
 			},
-			"SunderedIslesBeta": {
-				"Name": "Sundered Isles (beta)",
-				"Hint": "Enables in-progress Sundered Isles features. This currently means you'll have an empty move/oracle window for characters, so you probably don't want it."
-			},
 			"CharacterHold": {
 				"Name": "'Hold' Stat",
 				"Hint": "Show the 'Hold' tracker for Starforged characters and shared sheets."

@@ -46,7 +46,6 @@ declare global {
 
 			'foundry-ironsworn.advanced-rolling-default-open': boolean
 
-			'foundry-ironsworn.sundered-isles-beta': boolean
 			'foundry-ironsworn.character-hold': boolean
 			'foundry-ironsworn.dsn-cinder-wraith': boolean
 
@@ -196,16 +195,6 @@ export class IronswornSettings {
 				default: false
 			}
 		)
-
-		game.settings.register('foundry-ironsworn', 'sundered-isles-beta', {
-			name: 'IRONSWORN.Settings.SunderedIslesBeta.Name',
-			hint: 'IRONSWORN.Settings.SunderedIslesBeta.Hint',
-			scope: 'world',
-			config: true,
-			type: Boolean,
-			default: false,
-			requiresReload: true
-		})
 
 		game.settings.register('foundry-ironsworn', 'character-hold', {
 			name: 'IRONSWORN.Settings.CharacterHold.Name',
