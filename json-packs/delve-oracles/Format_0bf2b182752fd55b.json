@@ -18,7 +18,7 @@
         1,
         25
       ],
-      "text": "@Compendium[foundry-ironsworn.delveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.delveoracles.b635c76e4b694c12]{Place}",
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place}",
       "_key": "!tables.results!0bf2b182752fd55b.6bb29853338b4683",
       "_id": "6bb29853338b4683"
     },
@@ -27,7 +27,7 @@
         26,
         50
       ],
-      "text": "@Compendium[foundry-ironsworn.delveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.delveoracles.4d68a549300d665e]{Detail}",
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.4d68a549300d665e]{Detail}",
       "_key": "!tables.results!0bf2b182752fd55b.50f3a12bdfcbb46b",
       "_id": "50f3a12bdfcbb46b"
     },
@@ -36,7 +36,7 @@
         51,
         70
       ],
-      "text": "@Compendium[foundry-ironsworn.delveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.delveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.delveoracles.4d68a549300d665e]{Detail}",
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.ironsworndelveoracles.4d68a549300d665e]{Detail}",
       "_key": "!tables.results!0bf2b182752fd55b.9def2978a919dfef",
       "_id": "9def2978a919dfef"
     },
@@ -45,7 +45,7 @@
         71,
         80
       ],
-      "text": "@Compendium[foundry-ironsworn.delveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.delveoracles.1e606b274010aaa6]{Namesake's} @Compendium[foundry-ironsworn.delveoracles.4d68a549300d665e]{Detail}",
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.1e606b274010aaa6]{Namesake's} @Compendium[foundry-ironsworn.ironsworndelveoracles.4d68a549300d665e]{Detail}",
       "_key": "!tables.results!0bf2b182752fd55b.ec96f2885cc8a776",
       "_id": "ec96f2885cc8a776"
     },
@@ -54,7 +54,7 @@
         81,
         85
       ],
-      "text": "@Compendium[foundry-ironsworn.delveoracles.1e606b274010aaa6]{Namesake's} @Compendium[foundry-ironsworn.delveoracles.b635c76e4b694c12]{Place}",
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.1e606b274010aaa6]{Namesake's} @Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place}",
       "_key": "!tables.results!0bf2b182752fd55b.fd9b885273ab33e4",
       "_id": "fd9b885273ab33e4"
     },
@@ -63,7 +63,7 @@
         86,
         95
       ],
-      "text": "@Compendium[foundry-ironsworn.delveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.delveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.delveoracles.1e606b274010aaa6]{Namesake}",
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.1e606b274010aaa6]{Namesake}",
       "_key": "!tables.results!0bf2b182752fd55b.09df08b5dfbf7abb",
       "_id": "09df08b5dfbf7abb"
     },
@@ -72,7 +72,7 @@
         96,
         100
       ],
-      "text": "@Compendium[foundry-ironsworn.delveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.delveoracles.1e606b274010aaa6]{Namesake}",
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.1e606b274010aaa6]{Namesake}",
       "_key": "!tables.results!0bf2b182752fd55b.3a46191c97303ee9",
       "_id": "3a46191c97303ee9"
     }

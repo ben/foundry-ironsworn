@@ -8,7 +8,7 @@
     }
   },
   "name": "Activity",
-  "description": "<p>To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the @Compendium[foundry-ironsworn.delveoracles.563b63487cbe2d70]{Focus} oracle or @Compendium[foundry-ironsworn.ironswornoracles.3c1a7f81062a8a8a]{Theme} oracle.</p>",
+  "description": "<p>To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the @Compendium[foundry-ironsworn.ironsworndelveoracles.563b63487cbe2d70]{Focus} oracle or @Compendium[foundry-ironsworn.ironswornoracles.3c1a7f81062a8a8a]{Theme} oracle.</p>",
   "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
