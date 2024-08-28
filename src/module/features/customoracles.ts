@@ -32,54 +32,6 @@ const emptyNode: () => IOracleTreeNode = () => ({
 	children: []
 })
 
-// TODO: only used for findOracleWithIntermediateNodes now, clean that up
-export async function walkOracle(
-	oracle?: IOracle | IOracleCategory
-): Promise<IOracleTreeNode> {
-	if (oracle == null) return emptyNode()
-
-	const table = await OracleTable.getByDfId(oracle.$id)
-
-	const node: IOracleTreeNode = {
-		...emptyNode(),
-		dataforgedNode: oracle,
-		tables: compact([table?.uuid]),
-		displayName:
-			table?.name ??
-			game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`)
-	}
-
-	// Child oracles
-	for (const childOracle of oracle.Oracles ?? []) {
-		node.children.push(await walkOracle(childOracle))
-	}
-
-	// Subtables on results
-	for (const entry of oracle.Table ?? []) {
-		const name = entry.Result
-		if (entry.Subtable != null) {
-			const subtable = await OracleTable.getByDfId(`${oracle.$id}/${name}`)
-			if (subtable != null) {
-				node.children.push({
-					...emptyNode(),
-					displayName: name,
-					tables: [subtable.uuid]
-				})
-			}
-		}
-	}
-
-	// Promote children of nodes that have a table
-	for (const child of node.children) {
-		if (child.tables.length > 0) {
-			node.children = [...node.children, ...child.children]
-			child.children = []
-		}
-	}
-
-	return node
-}
-
 async function augmentWithFolderContents(node: IOracleTreeNode) {
 	const name = game.i18n.localize('IRONSWORN.OracleCategories.Custom')
 	const rootFolder = game.tables?.directory?.folders.find(

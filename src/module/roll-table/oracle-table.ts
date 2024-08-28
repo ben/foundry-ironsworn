@@ -1,10 +1,9 @@
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { IOracle, IOracleCategory, IRow } from 'dataforged'
+import type { IOracle, IRow } from 'dataforged'
 import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import { hashLookup, renderLinksInStr } from '../dataforged'
-import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
 import { getPackAndIndexForCompendiumKey, IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
@@ -28,52 +27,6 @@ export class OracleTable extends RollTable {
 	/** The custom template used for rendering oracle results */
 	static resultTemplate =
 		'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
-
-	static getDFOracleByDfId(
-		dfid: string
-	): IOracle | IOracleCategory | undefined {
-		const nodes = OracleTable.findOracleWithIntermediateNodes(dfid)
-		return nodes[nodes.length - 1]
-	}
-
-	// DEPRECATED, replace this with a Datsworn2 version
-	static findOracleWithIntermediateNodes(
-		dfid: string
-	): Array<IOracle | IOracleCategory> {
-		const ret: Array<IOracle | IOracleCategory> = []
-
-		function walkCategory(cat: IOracleCategory): boolean {
-			ret.push(cat)
-
-			if (cat.$id === dfid) return true
-			for (const oracle of cat.Oracles ?? []) {
-				if (walkOracle(oracle)) return true
-			}
-			for (const childCat of cat.Categories ?? []) {
-				if (walkCategory(childCat)) return true
-			}
-
-			ret.pop()
-			return false
-		}
-
-		function walkOracle(oracle: IOracle): boolean {
-			ret.push(oracle)
-
-			if (oracle.$id === dfid) return true
-			for (const childOracle of oracle.Oracles ?? []) {
-				if (walkOracle(childOracle)) return true
-			}
-
-			ret.pop()
-			return false
-		}
-
-		for (const cat of [...SFOracleCategories, ...ISOracleCategories]) {
-			walkCategory(cat)
-		}
-		return ret
-	}
 
 	static async getByDfId(
 		dfid: string

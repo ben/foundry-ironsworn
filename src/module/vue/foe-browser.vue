@@ -23,7 +23,7 @@
 				<Suspense>
 					<div v-if="category.expanded">
 						<section
-							:id="category.title"
+							:id="category.ds?._id ?? category.displayName"
 							class="foe-category-contents"
 							:aria-expanded="category.expanded"
 						>
@@ -39,7 +39,6 @@
 								v-for="foe in category.foes"
 								:key="foe.uuid"
 								:foe="foe"
-								:index="ruleset.index"
 							/>
 						</section>
 					</div>
