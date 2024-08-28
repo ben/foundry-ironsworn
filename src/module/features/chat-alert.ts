@@ -113,8 +113,7 @@ export function registerChatAlertHooks() {
 
 const ACTOR_TYPE_HANDLERS: ActorTypeHandlers = {
 	character: (actor, data) => {
-		// TODO: Sundered Isles
-		const gameIsStarforged = IronswornSettings.defaultToolbox !== 'ironsworn'
+		const gameIsStarforged = IronswornSettings.enabledRulesets.includes('starforged')
 
 		// Ironsworn XP
 		if (data.system?.xp !== undefined) {

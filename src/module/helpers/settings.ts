@@ -257,24 +257,6 @@ export class IronswornSettings {
 		return await game.settings.set('foundry-ironsworn', key, value)
 	}
 
-	static get defaultToolbox(): 'ironsworn' | 'starforged' | 'sunderedisles' {
-		const setting = this.get('toolbox')
-		if (setting === 'migrated') return 'ironsworn'
-		if (setting === 'sheet') {
-			const sheetClasses = game.settings.get('core', 'sheetClasses')
-			const defaultCharacterSheet = sheetClasses.Actor?.character
-			// TODO: sundered isles
-			if (defaultCharacterSheet === 'ironsworn.SunderedIslesCharacterSheet') {
-				return 'sunderedisles'
-			}
-			if (defaultCharacterSheet === 'ironsworn.IronswornCharacterSheetV2') {
-				return 'ironsworn'
-			}
-			return 'starforged'
-		}
-		return setting
-	}
-
 	/**
 	 * Update all actors of the provided types with a single data object.
 	 * @param data The data to pass to each actor's `update()` method.
@@ -325,7 +307,12 @@ async function maybeMigrateToolbox() {
 
 	if (toolboxSetting === 'sheet') {
 		// Process this as the sheet setting
-		toolboxSetting = IronswornSettings.defaultToolbox
+		const sheetClasses = game.settings.get('core', 'sheetClasses')
+		const defaultCharacterSheet = sheetClasses.Actor?.character
+		if (defaultCharacterSheet === 'ironsworn.IronswornCharacterSheetV2') {
+			toolboxSetting = 'ironsworn'
+		}
+		toolboxSetting = 'starforged'
 	}
 
 	switch (toolboxSetting) {

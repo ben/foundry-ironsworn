@@ -8,11 +8,10 @@ export class EditSectorDialog extends VueAppMixin(Application) {
 	}
 
 	static get defaultOptions() {
-		const defaultToolbox = IronswornSettings.defaultToolbox
-		const titleKey =
-			defaultToolbox === 'starforged'
-				? 'IRONSWORN.SCENE.TypeSector'
-				: 'IRONSWORN.SCENE.TypeChart'
+		let titleKey = 'IRONSWORN.SCENE.TypeSector'
+		if (IronswornSettings.enabledRulesets.includes('sundered_isles')) {
+			titleKey = 'IRONSWORN.SCENE.TypeChart'
+		}
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.localize(titleKey),
 			id: 'edit-sector-dialog',

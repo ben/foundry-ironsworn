@@ -30,8 +30,6 @@ import { FoeBrowser } from '../../../item/foe-browser'
 
 import IronBtn from 'component:buttons/iron-btn.vue'
 
-defineProps<{ foeCompendium?: string }>()
-
 const $actor = inject($ActorKey)
 
 async function addProgressItem(subtype) {
