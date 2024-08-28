@@ -8,7 +8,11 @@ This is a major update that includes Sundered Isles content, but also brings alo
 
 - Selection of content happens in the first-start dialog, which will show the first time you open your world after this update. The checkboxes you select will affect everything in the world, so you can give every character access to both Delve and Sundered Isles moves and oracles.
 - For module/macro authors:
-  - Registration of custom oracle content has a name change: `'ironsworn'` has changed to `'classic'`, and there's a new `'sundered_isles'` tree.
+  - Registration of custom oracle/move content has a few changes:
+    - The `'ironsworn'` tree is now called `'classic'`
+    - Delve content is now under the `'delve'` tree
+    - There's a new `'sundered_isles'` tree
+    - Category names have changed, e.g. the `'Adventure'` move category is now called `'Adventure Moves'`
   - The string you pass to `CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForOfficialMove` is now a Datasworn ID. Dataforged IDs will no longer work.
   - Embedded links to oracle categories are changing format. See below for the before-and-after, and see [these files](https://github.com/rsek/datasworn/tree/v0.1.0/src/legacy_ids/dataforged) if you need to make a change.
 
