@@ -22,13 +22,13 @@ export const COMPENDIUM_KEY_MAP = {
 	},
 	oracle_collection: {
 		classic: 'foundry-ironsworn.ironswornoracles',
-		delve: 'foundry-ironsworn.delveoracles',
+		delve: 'foundry-ironsworn.ironsworndelveoracles',
 		starforged: 'foundry-ironsworn.starforgedoracles',
 		sundered_isles: 'foundry-ironsworn.sunderedislesmoves'
 	},
 	oracle_rollable: {
 		classic: 'foundry-ironsworn.ironswornoracles',
-		delve: 'foundry-ironsworn.delveoracles',
+		delve: 'foundry-ironsworn.ironsworndelveoracles',
 		starforged: 'foundry-ironsworn.starforgedoracles',
 		sundered_isles: 'foundry-ironsworn.sunderedislesoracles'
 	},
