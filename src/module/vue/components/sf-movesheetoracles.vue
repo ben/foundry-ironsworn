@@ -50,7 +50,9 @@ import OracleTreeNode from './oracle-tree-node.vue'
 import { IdParser } from '../../datasworn2'
 
 const trees = await getCustomizedOracleTrees()
-const sections = trees.map((t) => reactive<IOracleTreeNode>(t))
+const sections = trees
+	.filter((t) => t.children.length > 0)
+	.map((t) => reactive<IOracleTreeNode>(t))
 const showHeadings = sections.length > 1
 
 type ReactiveNode = (typeof sections)[0]
