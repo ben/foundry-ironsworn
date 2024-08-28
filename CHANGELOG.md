@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.24.0
+
 This is a major update that includes Sundered Isles content, but also brings along a host of changes:
 
 - Selection of content happens in the first-start dialog, which will show the first time you open your world after this update. The checkboxes you select will affect everything in the world, so you can give every character access to both Delve and Sundered Isles moves and oracles.
