@@ -31,7 +31,9 @@
 					class="nogrow"
 				/>
 				<h4 class="flexrow">
-					<RankPips :readonly="true" :current="foe.rank" />
+					<span class="nogrow" :data-tooltip="i18nRank">
+						<RankPips :readonly="true" :current="foe.rank"
+					/></span>
 					{{ foe.displayName }}
 				</h4>
 				<span :class="$style.nature">
@@ -53,6 +55,7 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue'
 import type { DisplayFoe } from '../../../features/customfoes'
+import { ChallengeRank } from '../../../fields/ChallengeRank'
 
 import FontIcon from 'component:icon/font-icon.vue'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
@@ -60,7 +63,7 @@ import FoeBrowserContent from 'component:foe-browser/foe-browser-content.vue'
 import RankPips from 'component:progress/rank-pips.vue'
 
 const props = defineProps<{ foe: DisplayFoe }>()
-
+const i18nRank = ChallengeRank.localizeValue(props.foe.rank as any)
 const expanded = ref(false)
 
 function dragStart(ev) {
