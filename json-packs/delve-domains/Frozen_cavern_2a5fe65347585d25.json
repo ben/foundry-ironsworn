@@ -1,0 +1,141 @@
+{
+  "_id": "2a5fe65347585d25",
+  "type": "delve-domain",
+  "name": "Frozen cavern",
+  "img": "icons/magic/water/water-iceberg-bubbles.webp",
+  "system": {
+    "summary": "A place of deep caves and enduring cold.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Maze of icy tunnels"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Glistening cave"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Vast chamber"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Frigid waterway"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Icy pools"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Magnificent ice formations"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Frozen waterfall"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Deep crevasses"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Discovery locked in the ice"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen lairs here"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Fracturing ice"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Crumbling chasm"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Bitter chill"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Disorienting reflections"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 89,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/frozen_cavern"
+    }
+  },
+  "_key": "!items!2a5fe65347585d25"
+}

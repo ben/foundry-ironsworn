@@ -1,0 +1,110 @@
+{
+  "_id": "fc8a48ea6e90f399",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/identity",
+      "dsid": "oracle_rollable:sundered_isles/settlement/identity/disposition"
+    }
+  },
+  "name": "Settlement Disposition",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Hostile",
+      "_key": "!tables.results!fc8a48ea6e90f399.acecc2a87089081f",
+      "_id": "acecc2a87089081f"
+    },
+    {
+      "range": [
+        6,
+        15
+      ],
+      "text": "Threatening",
+      "_key": "!tables.results!fc8a48ea6e90f399.858ffdc1749b8689",
+      "_id": "858ffdc1749b8689"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Demanding",
+      "_key": "!tables.results!fc8a48ea6e90f399.936ce566eba0fdda",
+      "_id": "936ce566eba0fdda"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Unwelcoming",
+      "_key": "!tables.results!fc8a48ea6e90f399.38656b3c9471a996",
+      "_id": "38656b3c9471a996"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "Wary",
+      "_key": "!tables.results!fc8a48ea6e90f399.0ad8206efd1a15f9",
+      "_id": "0ad8206efd1a15f9"
+    },
+    {
+      "range": [
+        51,
+        65
+      ],
+      "text": "Indifferent",
+      "_key": "!tables.results!fc8a48ea6e90f399.c8b3db04bd29f97f",
+      "_id": "c8b3db04bd29f97f"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "In need",
+      "_key": "!tables.results!fc8a48ea6e90f399.93e1f990c6dbdba9",
+      "_id": "93e1f990c6dbdba9"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "Welcoming",
+      "_key": "!tables.results!fc8a48ea6e90f399.a4610a5f94f42397",
+      "_id": "a4610a5f94f42397"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Friendly",
+      "_key": "!tables.results!fc8a48ea6e90f399.d837379060cf3d42",
+      "_id": "d837379060cf3d42"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Helpful",
+      "_key": "!tables.results!fc8a48ea6e90f399.1fb78a78c2548671",
+      "_id": "1fb78a78c2548671"
+    }
+  ],
+  "folder": "a3c01179678b5698",
+  "sort": 167,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fc8a48ea6e90f399"
+}

@@ -1,0 +1,110 @@
+{
+  "_id": "274c6fe1f94f241d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/affluence",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/affluence/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Brokers",
+      "_key": "!tables.results!274c6fe1f94f241d.2e6c642e6819bfd0",
+      "_id": "2e6c642e6819bfd0"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Crowns",
+      "_key": "!tables.results!274c6fe1f94f241d.7e2c520117cf0ca6",
+      "_id": "7e2c520117cf0ca6"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Lords",
+      "_key": "!tables.results!274c6fe1f94f241d.a661562dbcf5f9ec",
+      "_id": "a661562dbcf5f9ec"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Merchants",
+      "_key": "!tables.results!274c6fe1f94f241d.ed872da1a212b56e",
+      "_id": "ed872da1a212b56e"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Monarchs",
+      "_key": "!tables.results!274c6fe1f94f241d.7d7a38738f7408bc",
+      "_id": "7d7a38738f7408bc"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Mongers",
+      "_key": "!tables.results!274c6fe1f94f241d.5218dacd548b6c40",
+      "_id": "5218dacd548b6c40"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Patrons",
+      "_key": "!tables.results!274c6fe1f94f241d.44aabab9c9e18161",
+      "_id": "44aabab9c9e18161"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Princes",
+      "_key": "!tables.results!274c6fe1f94f241d.1f8291c3715a7d43",
+      "_id": "1f8291c3715a7d43"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Scions",
+      "_key": "!tables.results!274c6fe1f94f241d.396230a5e4a80c70",
+      "_id": "396230a5e4a80c70"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Regents",
+      "_key": "!tables.results!274c6fe1f94f241d.8f1eae2f1cfded68",
+      "_id": "8f1eae2f1cfded68"
+    }
+  ],
+  "folder": "dec9a2ab35a9f55a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!274c6fe1f94f241d"
+}

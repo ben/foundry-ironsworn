@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Medical/Opportunity",
-      "category": "Starforged/Oracles/Derelicts/Medical"
+      "category": "Starforged/Oracles/Derelicts/Medical",
+      "dsid": "oracle_rollable:starforged/derelict/medical/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Cache of medicine",
-      "_id": "31303e405cf4f042",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f85175b4108e97.31303e405cf4f042"
+      "_key": "!tables.results!55f85175b4108e97.26eb0c5ded4bc27d",
+      "_id": "26eb0c5ded4bc27d"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Clues to a medical mystery",
-      "_id": "31d4f35dd77eb0e1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f85175b4108e97.31d4f35dd77eb0e1"
+      "_key": "!tables.results!55f85175b4108e97.c7a5d75efaa1f145",
+      "_id": "c7a5d75efaa1f145"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Helpful medical bot",
-      "_id": "dc58edd23cd2012b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f85175b4108e97.dc58edd23cd2012b"
+      "_key": "!tables.results!55f85175b4108e97.5cfcd01c6651911e",
+      "_id": "5cfcd01c6651911e"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Unusual or rare specimen",
-      "_id": "f3aa83a2630fdfdf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f85175b4108e97.f3aa83a2630fdfdf"
+      "_key": "!tables.results!55f85175b4108e97.0dc89115bc98ae6c",
+      "_id": "0dc89115bc98ae6c"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Useful medical equipment",
-      "_id": "a879858d2a8e1ed3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!55f85175b4108e97.a879858d2a8e1ed3"
+      "_key": "!tables.results!55f85175b4108e97.a9af8dacfa4df604",
+      "_id": "a9af8dacfa4df604"
     }
   ],
   "folder": "1a41c444d69ea97d",
   "sort": 356,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!55f85175b4108e97"
 }

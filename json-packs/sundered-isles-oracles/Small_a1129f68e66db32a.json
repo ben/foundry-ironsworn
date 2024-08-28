@@ -1,0 +1,38 @@
+{
+  "_id": "a1129f68e66db32a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure/value",
+      "dsid": "oracle_rollable:sundered_isles/treasure/value/small"
+    }
+  },
+  "name": "Small",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        80
+      ],
+      "text": "Trifle",
+      "_key": "!tables.results!a1129f68e66db32a.504c11c41c608461",
+      "_id": "504c11c41c608461"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Stash",
+      "_key": "!tables.results!a1129f68e66db32a.7964bd68183f4a22",
+      "_id": "7964bd68183f4a22"
+    }
+  ],
+  "folder": "0d95146ca62a1214",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a1129f68e66db32a"
+}

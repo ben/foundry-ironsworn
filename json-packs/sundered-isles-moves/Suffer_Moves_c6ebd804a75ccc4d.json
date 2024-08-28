@@ -1,0 +1,16 @@
+{
+  "name": "Suffer Moves",
+  "color": "#883529",
+  "description": "",
+  "type": "Item",
+  "_id": "c6ebd804a75ccc4d",
+  "sort": 246,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "move_category:sundered_isles/suffer"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!c6ebd804a75ccc4d"
+}

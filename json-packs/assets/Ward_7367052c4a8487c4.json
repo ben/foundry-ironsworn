@@ -11,14 +11,14 @@
     "abilities": [
       {
         "enabled": true,
-        "description": "<p>When you walk a wide circle, sprinkling the ground with salt, roll +wits. On a strong hit, choose two. On a weak hit, choose one.</p>\n<ul>\n<li>When a foe first crosses the boundary, take +1 momentum.</li>\n<li>When you first inflict harm against a foe within the boundary, inflict +1 harm.</li>\n<li>Your ward is ‘likely’ (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle}) to trap a foe within the boundary.</li>\n</ul>",
+        "description": "<p>When you walk a wide circle, sprinkling the ground with salt, roll +wits. On a strong hit, choose two. On a weak hit, choose one.</p>\n<ul>\n<li>When a foe first crosses the boundary, take +1 momentum.</li>\n<li>When you first inflict harm against a foe within the boundary, inflict +1 harm.</li>\n<li>Your ward is ‘likely’ (@Compendium[foundry-ironsworn.ironswornoracles.e1928307bb4e0afb]{Ask the Oracle}) to trap a foe within the boundary.</li>\n</ul>",
         "hasClock": false,
         "clockTicks": 0,
         "clockMax": 4
       },
       {
         "enabled": false,
-        "description": "<p>As above, and improve the effect of your ward (+2 momentum, +2 harm, and ‘almost certain’).</p>",
+        "description": "<p>As above, and improve the effect of your ward (+2 momentum, +2 harm, and @Compendium[foundry-ironsworn.ironswornoracles.f8ddf2d8098dc74e]{‘almost certain’}).</p>",
         "hasClock": false,
         "clockTicks": 0,
         "clockMax": 4
@@ -47,17 +47,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Assets/Ritual/Ward",
+      "dsid": "asset:classic/ritual/ward"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021198,
-    "modifiedTime": 1695949021198,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!7367052c4a8487c4"
 }

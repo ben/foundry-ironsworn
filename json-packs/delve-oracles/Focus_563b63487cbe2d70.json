@@ -1,0 +1,471 @@
+{
+  "_id": "563b63487cbe2d70",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Feature/Focus",
+      "category": "Ironsworn/Oracles/Feature",
+      "dsid": "oracle_rollable:delve/feature/focus"
+    }
+  },
+  "name": "Focus",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Attack",
+      "_key": "!tables.results!563b63487cbe2d70.10e2133a8135febb",
+      "_id": "10e2133a8135febb"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Threshold",
+      "_key": "!tables.results!563b63487cbe2d70.43bb4712f1243092",
+      "_id": "43bb4712f1243092"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Boundary",
+      "_key": "!tables.results!563b63487cbe2d70.71010e372db7c8e0",
+      "_id": "71010e372db7c8e0"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Alarm",
+      "_key": "!tables.results!563b63487cbe2d70.4bb683561339872e",
+      "_id": "4bb683561339872e"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Exit",
+      "_key": "!tables.results!563b63487cbe2d70.718ff7e4d5fee802",
+      "_id": "718ff7e4d5fee802"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Passage",
+      "_key": "!tables.results!563b63487cbe2d70.fb459937e09cc173",
+      "_id": "fb459937e09cc173"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Crossing",
+      "_key": "!tables.results!563b63487cbe2d70.987878497bdfe36a",
+      "_id": "987878497bdfe36a"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Trigger",
+      "_key": "!tables.results!563b63487cbe2d70.e0aa149699ab074a",
+      "_id": "e0aa149699ab074a"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Trap",
+      "_key": "!tables.results!563b63487cbe2d70.6d6360ce37d380eb",
+      "_id": "6d6360ce37d380eb"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Hideaway",
+      "_key": "!tables.results!563b63487cbe2d70.990529104b9545f5",
+      "_id": "990529104b9545f5"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Nature",
+      "_key": "!tables.results!563b63487cbe2d70.f5895c844159b707",
+      "_id": "f5895c844159b707"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Sign",
+      "_key": "!tables.results!563b63487cbe2d70.4d11ad6a43579001",
+      "_id": "4d11ad6a43579001"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Refuge",
+      "_key": "!tables.results!563b63487cbe2d70.73858275319f8db1",
+      "_id": "73858275319f8db1"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Valuables",
+      "_key": "!tables.results!563b63487cbe2d70.a3fcbfb6aa3a0a7e",
+      "_id": "a3fcbfb6aa3a0a7e"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Breach",
+      "_key": "!tables.results!563b63487cbe2d70.4690c8fed7856152",
+      "_id": "4690c8fed7856152"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Route",
+      "_key": "!tables.results!563b63487cbe2d70.eab2829744adf15e",
+      "_id": "eab2829744adf15e"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Location",
+      "_key": "!tables.results!563b63487cbe2d70.4eb93763127b9b32",
+      "_id": "4eb93763127b9b32"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Trail",
+      "_key": "!tables.results!563b63487cbe2d70.6d02b73968b796af",
+      "_id": "6d02b73968b796af"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Supply",
+      "_key": "!tables.results!563b63487cbe2d70.52f050b6d4b4b26c",
+      "_id": "52f050b6d4b4b26c"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "History",
+      "_key": "!tables.results!563b63487cbe2d70.4cd13a8cf9ccc509",
+      "_id": "4cd13a8cf9ccc509"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Prisoner",
+      "_key": "!tables.results!563b63487cbe2d70.39cc4be7b4242c64",
+      "_id": "39cc4be7b4242c64"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Habitation",
+      "_key": "!tables.results!563b63487cbe2d70.9a115c96c2f139f5",
+      "_id": "9a115c96c2f139f5"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Debris",
+      "_key": "!tables.results!563b63487cbe2d70.dd1f55a82241c8a6",
+      "_id": "dd1f55a82241c8a6"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Creature",
+      "_key": "!tables.results!563b63487cbe2d70.106bbfee88ce0d95",
+      "_id": "106bbfee88ce0d95"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Lair",
+      "_key": "!tables.results!563b63487cbe2d70.b77f71c347bf0917",
+      "_id": "b77f71c347bf0917"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Person",
+      "_key": "!tables.results!563b63487cbe2d70.c1ab47d5009d6920",
+      "_id": "c1ab47d5009d6920"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Enclosure",
+      "_key": "!tables.results!563b63487cbe2d70.648a24a35454890c",
+      "_id": "648a24a35454890c"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Remains",
+      "_key": "!tables.results!563b63487cbe2d70.b01b1e04a71da164",
+      "_id": "b01b1e04a71da164"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Water",
+      "_key": "!tables.results!563b63487cbe2d70.cb8209aaed0dfdab",
+      "_id": "cb8209aaed0dfdab"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Message",
+      "_key": "!tables.results!563b63487cbe2d70.fc61258f649ddfe6",
+      "_id": "fc61258f649ddfe6"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Darkness",
+      "_key": "!tables.results!563b63487cbe2d70.083f1e1d53dae385",
+      "_id": "083f1e1d53dae385"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Opening",
+      "_key": "!tables.results!563b63487cbe2d70.fc658e0387ec9e8b",
+      "_id": "fc658e0387ec9e8b"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Weapon",
+      "_key": "!tables.results!563b63487cbe2d70.03d17b3e6b6f3958",
+      "_id": "03d17b3e6b6f3958"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Entry",
+      "_key": "!tables.results!563b63487cbe2d70.0f117b516e8c9e37",
+      "_id": "0f117b516e8c9e37"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Illumination",
+      "_key": "!tables.results!563b63487cbe2d70.cfc6b8b63c47ad3a",
+      "_id": "cfc6b8b63c47ad3a"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Obstacle",
+      "_key": "!tables.results!563b63487cbe2d70.89bbe030d3b23c6e",
+      "_id": "89bbe030d3b23c6e"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Craft",
+      "_key": "!tables.results!563b63487cbe2d70.b5b39d3d8e0a80f0",
+      "_id": "b5b39d3d8e0a80f0"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Container",
+      "_key": "!tables.results!563b63487cbe2d70.04cc016e844443c3",
+      "_id": "04cc016e844443c3"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Information",
+      "_key": "!tables.results!563b63487cbe2d70.e59dc4b9556f2fc6",
+      "_id": "e59dc4b9556f2fc6"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Grave",
+      "_key": "!tables.results!563b63487cbe2d70.ab0a39ae6ca4c6ea",
+      "_id": "ab0a39ae6ca4c6ea"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Equipment",
+      "_key": "!tables.results!563b63487cbe2d70.6df81330fc7a42c7",
+      "_id": "6df81330fc7a42c7"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Shelter",
+      "_key": "!tables.results!563b63487cbe2d70.ef3b46782301fb13",
+      "_id": "ef3b46782301fb13"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Denizen",
+      "_key": "!tables.results!563b63487cbe2d70.52a80b9eb9d3383a",
+      "_id": "52a80b9eb9d3383a"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Environment",
+      "_key": "!tables.results!563b63487cbe2d70.d239cb8fb35a03f8",
+      "_id": "d239cb8fb35a03f8"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Material",
+      "_key": "!tables.results!563b63487cbe2d70.b81a400382932a70",
+      "_id": "b81a400382932a70"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Resource",
+      "_key": "!tables.results!563b63487cbe2d70.502d3bb2a816f0c0",
+      "_id": "502d3bb2a816f0c0"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Corruption",
+      "_key": "!tables.results!563b63487cbe2d70.b2db086fed5010cf",
+      "_id": "b2db086fed5010cf"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Death",
+      "_key": "!tables.results!563b63487cbe2d70.34e3b513f1c68f87",
+      "_id": "34e3b513f1c68f87"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Function",
+      "_key": "!tables.results!563b63487cbe2d70.551aee61537ffaf4",
+      "_id": "551aee61537ffaf4"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Power",
+      "_key": "!tables.results!563b63487cbe2d70.6e29a96982aae603",
+      "_id": "6e29a96982aae603"
+    }
+  ],
+  "folder": "d47d8d81af367061",
+  "sort": 205,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!563b63487cbe2d70"
+}

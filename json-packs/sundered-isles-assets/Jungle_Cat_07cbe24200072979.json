@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "07cbe24200072979",
+  "folder": "841fa5bb80d55fd9",
+  "name": "Jungle Cat",
+  "system": {
+    "requirement": "",
+    "category": "Companion",
+    "color": "#3d8b8a",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your jungle cat companion leaps into the fight at your side. When you @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} aided by the cat, or if you make a move to intimidate your foes, add +1. If you @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash}, take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>The jungle cat leads the way on treacherous overland journeys. When you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition} through wilderness, add +1. On a strong hit with a match, the cat guides you to an otherwise unseen opportunity; envision what you find and take +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress} in the company of the jungle cat, or if you @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten} in their company, add +1. On a strong hit with a match, you find inspiration or solace; take +momentum equal to their health.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "max": 4,
+      "value": 4,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Out of Action",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/companion/jungle_cat",
+      "dsid": "asset:sundered_isles/companion/jungle_cat"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!07cbe24200072979"
+}

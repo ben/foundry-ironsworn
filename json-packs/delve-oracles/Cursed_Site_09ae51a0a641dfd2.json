@@ -1,0 +1,111 @@
+{
+  "_id": "09ae51a0a641dfd2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Cursed_Site",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/cursed_site"
+    }
+  },
+  "name": "Cursed Site",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Unleash a creature or being",
+      "_key": "!tables.results!09ae51a0a641dfd2.784ed377af5b66a0",
+      "_id": "784ed377af5b66a0"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Lure the unwary into its depths",
+      "_key": "!tables.results!09ae51a0a641dfd2.1de03d63a03f6062",
+      "_id": "1de03d63a03f6062"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Offer promises of power",
+      "_key": "!tables.results!09ae51a0a641dfd2.f2ac539cac78b6bc",
+      "_id": "f2ac539cac78b6bc"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Reveal a new aspect of its cursed history",
+      "_key": "!tables.results!09ae51a0a641dfd2.c7cc5a1debcf152f",
+      "_id": "c7cc5a1debcf152f"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Expand its malignancy to surrounding lands",
+      "_key": "!tables.results!09ae51a0a641dfd2.3db6a61d89dfa1d1",
+      "_id": "3db6a61d89dfa1d1"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Leave its mark on an inhabitant or visitor",
+      "_key": "!tables.results!09ae51a0a641dfd2.be00f2c178826b01",
+      "_id": "be00f2c178826b01"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Reveal hidden depths",
+      "_key": "!tables.results!09ae51a0a641dfd2.9ef7adfd64c4e138",
+      "_id": "9ef7adfd64c4e138"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Ensnare an important person or object",
+      "_key": "!tables.results!09ae51a0a641dfd2.2fcfefda7d472e04",
+      "_id": "2fcfefda7d472e04"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Corrupt the environment",
+      "_key": "!tables.results!09ae51a0a641dfd2.790c5803bebdf37e",
+      "_id": "790c5803bebdf37e"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Transform its nature",
+      "_key": "!tables.results!09ae51a0a641dfd2.f2b57bc059686498",
+      "_id": "f2b57bc059686498"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 221,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!09ae51a0a641dfd2"
+}

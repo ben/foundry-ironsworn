@@ -39,7 +39,6 @@
     "track": {
       "enabled": true,
       "name": "Integrity",
-      "current": 0,
       "max": 6,
       "value": 6,
       "min": 0
@@ -57,17 +56,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Support_Vehicle/Exosuit",
+      "dsid": "asset:starforged/support_vehicle/exosuit"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021246,
-    "modifiedTime": 1695949021246,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!8fc08c6791a3caa0"
 }

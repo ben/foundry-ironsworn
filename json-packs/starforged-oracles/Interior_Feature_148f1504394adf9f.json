@@ -1,0 +1,336 @@
+{
+  "_id": "148f1504394adf9f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Interior/Feature",
+      "category": "Starforged/Oracles/Vaults/Interior",
+      "dsid": "oracle_rollable:starforged/precursor_vault/interior/feature"
+    }
+  },
+  "name": "Interior Feature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Ascending or descending path",
+      "_key": "!tables.results!148f1504394adf9f.426cf7860a52c35d",
+      "_id": "426cf7860a52c35d"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Biological growths",
+      "_key": "!tables.results!148f1504394adf9f.a02eb24439f1c374",
+      "_id": "a02eb24439f1c374"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Blood trail",
+      "_key": "!tables.results!148f1504394adf9f.52e56f5cad0da8ae",
+      "_id": "52e56f5cad0da8ae"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Breached or ruptured area",
+      "_key": "!tables.results!148f1504394adf9f.62a0d563be9b0a3d",
+      "_id": "62a0d563be9b0a3d"
+    },
+    {
+      "range": [
+        11,
+        13
+      ],
+      "text": "Broken or inactive machinery",
+      "_key": "!tables.results!148f1504394adf9f.22568e4b7d8f7b80",
+      "_id": "22568e4b7d8f7b80"
+    },
+    {
+      "range": [
+        14,
+        15
+      ],
+      "text": "Clinging mist",
+      "_key": "!tables.results!148f1504394adf9f.aa603ebd00ce339d",
+      "_id": "aa603ebd00ce339d"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Damage or debris",
+      "_key": "!tables.results!148f1504394adf9f.47e14f895eb77d6b",
+      "_id": "47e14f895eb77d6b"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Echoing noises",
+      "_key": "!tables.results!148f1504394adf9f.2595e23fd25e30d8",
+      "_id": "2595e23fd25e30d8"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Elevated path over chasm or shaft",
+      "_key": "!tables.results!148f1504394adf9f.22d08a3e4ba7daa2",
+      "_id": "22d08a3e4ba7daa2"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Energy discharges",
+      "_key": "!tables.results!148f1504394adf9f.f0cc33857a736aa0",
+      "_id": "f0cc33857a736aa0"
+    },
+    {
+      "range": [
+        26,
+        28
+      ],
+      "text": "Enigmatic controls or terminal",
+      "_key": "!tables.results!148f1504394adf9f.c3d183400c6b8a46",
+      "_id": "c3d183400c6b8a46"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Garden or invasive plant life",
+      "_key": "!tables.results!148f1504394adf9f.ccee14fc2dd134f6",
+      "_id": "ccee14fc2dd134f6"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Inscrutable object lies dark and silent",
+      "_key": "!tables.results!148f1504394adf9f.acfab564bcc964f6",
+      "_id": "acfab564bcc964f6"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "Intersection or hub",
+      "_key": "!tables.results!148f1504394adf9f.0444a8f3742807fa",
+      "_id": "0444a8f3742807fa"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "Intricate symbols or pictographs",
+      "_key": "!tables.results!148f1504394adf9f.f82a5888ea08ebe2",
+      "_id": "f82a5888ea08ebe2"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "Looted or dismantled technology",
+      "_key": "!tables.results!148f1504394adf9f.5b20ee97627cd6b7",
+      "_id": "5b20ee97627cd6b7"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "Looted or empty containers",
+      "_key": "!tables.results!148f1504394adf9f.f54d204d2059c9e2",
+      "_id": "f54d204d2059c9e2"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Mazelike passages",
+      "_key": "!tables.results!148f1504394adf9f.2af2ebb3cc83a9d8",
+      "_id": "2af2ebb3cc83a9d8"
+    },
+    {
+      "range": [
+        48,
+        49
+      ],
+      "text": "Moving platform or lift",
+      "_key": "!tables.results!148f1504394adf9f.ea0f65dde1bb7fea",
+      "_id": "ea0f65dde1bb7fea"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "Mummified or decayed corpses",
+      "_key": "!tables.results!148f1504394adf9f.793cadf00b61e406",
+      "_id": "793cadf00b61e406"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Narrowing or widening path",
+      "_key": "!tables.results!148f1504394adf9f.15a2ecfd06e0bcc5",
+      "_id": "15a2ecfd06e0bcc5"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Pooled liquid",
+      "_key": "!tables.results!148f1504394adf9f.aac6c476ca85ff62",
+      "_id": "aac6c476ca85ff62"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "Remains of intruders",
+      "_key": "!tables.results!148f1504394adf9f.6f2cbac1c4fa4681",
+      "_id": "6f2cbac1c4fa4681"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Scattered bones",
+      "_key": "!tables.results!148f1504394adf9f.cd4787ef017a86ed",
+      "_id": "cd4787ef017a86ed"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Scrawled markings",
+      "_key": "!tables.results!148f1504394adf9f.225733b5a5c12087",
+      "_id": "225733b5a5c12087"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Signs of an attack or battle",
+      "_key": "!tables.results!148f1504394adf9f.0a7ba923252beeeb",
+      "_id": "0a7ba923252beeeb"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "Signs of invasive creatures",
+      "_key": "!tables.results!148f1504394adf9f.ab4bb39fbd7530ec",
+      "_id": "ab4bb39fbd7530ec"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Surfaces honeycombed with openings",
+      "_key": "!tables.results!148f1504394adf9f.5c11f5539904021e",
+      "_id": "5c11f5539904021e"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Unintelligible recorded message",
+      "_key": "!tables.results!148f1504394adf9f.37857ffb3422ed67",
+      "_id": "37857ffb3422ed67"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Unintelligible whispers",
+      "_key": "!tables.results!148f1504394adf9f.c513675d0ee47fd6",
+      "_id": "c513675d0ee47fd6"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "Vaulted chamber",
+      "_key": "!tables.results!148f1504394adf9f.afeb37f9fc5c49ab",
+      "_id": "afeb37f9fc5c49ab"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Vertical shaft",
+      "_key": "!tables.results!148f1504394adf9f.dd1e74b200d2f673",
+      "_id": "dd1e74b200d2f673"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "<p>Transition into the \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault/sanctum\">\n    <i class=\"fa fa-caret-right\"></i> Sanctum\n</a></p>",
+      "_key": "!tables.results!148f1504394adf9f.a1b012e440d97fde",
+      "_id": "a1b012e440d97fde"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!148f1504394adf9f.196e48561dc345a2",
+      "_id": "196e48561dc345a2"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!148f1504394adf9f.d2b689273adb2960",
+      "_id": "d2b689273adb2960"
+    }
+  ],
+  "folder": "b4d058fedc071ce9",
+  "sort": 366,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!148f1504394adf9f"
+}

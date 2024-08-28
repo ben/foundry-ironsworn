@@ -1,0 +1,92 @@
+{
+  "_id": "8aad29217d56dd51",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/condition"
+    }
+  },
+  "name": "Ruin Condition",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Devastated",
+      "_key": "!tables.results!8aad29217d56dd51.cf7a9e1eee730553",
+      "_id": "cf7a9e1eee730553"
+    },
+    {
+      "range": [
+        11,
+        25
+      ],
+      "text": "Unrecognizable",
+      "_key": "!tables.results!8aad29217d56dd51.3df4064adfdd4a18",
+      "_id": "3df4064adfdd4a18"
+    },
+    {
+      "range": [
+        26,
+        40
+      ],
+      "text": "Collapsed",
+      "_key": "!tables.results!8aad29217d56dd51.9d748773e08387ec",
+      "_id": "9d748773e08387ec"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Unstable",
+      "_key": "!tables.results!8aad29217d56dd51.31cde1196fe34617",
+      "_id": "31cde1196fe34617"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Timeworn",
+      "_key": "!tables.results!8aad29217d56dd51.eab885546649791d",
+      "_id": "eab885546649791d"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Whole",
+      "_key": "!tables.results!8aad29217d56dd51.2b36658d6bfb96c2",
+      "_id": "2b36658d6bfb96c2"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Well-preserved",
+      "_key": "!tables.results!8aad29217d56dd51.0f6ba90fa13ecec0",
+      "_id": "0f6ba90fa13ecec0"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Rebuilding",
+      "_key": "!tables.results!8aad29217d56dd51.d6af10f1a73121d0",
+      "_id": "d6af10f1a73121d0"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 213,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8aad29217d56dd51"
+}

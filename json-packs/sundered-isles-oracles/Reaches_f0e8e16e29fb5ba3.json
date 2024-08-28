@@ -1,0 +1,47 @@
+{
+  "_id": "f0e8e16e29fb5ba3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship/controlling_faction",
+      "dsid": "oracle_rollable:sundered_isles/ship/controlling_faction/reaches"
+    }
+  },
+  "name": "Reaches",
+  "description": "<p>Remote Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "Known faction",
+      "_key": "!tables.results!f0e8e16e29fb5ba3.721031f2c907c8f3",
+      "_id": "721031f2c907c8f3"
+    },
+    {
+      "range": [
+        26,
+        60
+      ],
+      "text": "Unknown faction",
+      "_key": "!tables.results!f0e8e16e29fb5ba3.4897984cfb86b23e",
+      "_id": "4897984cfb86b23e"
+    },
+    {
+      "range": [
+        61,
+        100
+      ],
+      "text": "Independent",
+      "_key": "!tables.results!f0e8e16e29fb5ba3.7c589b07304cccba",
+      "_id": "7c589b07304cccba"
+    }
+  ],
+  "folder": "039c1449300a350b",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f0e8e16e29fb5ba3"
+}

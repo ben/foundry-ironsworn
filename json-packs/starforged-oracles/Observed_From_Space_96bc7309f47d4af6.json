@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Shattered/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Shattered"
+      "category": "Starforged/Oracles/Planets/Shattered",
+      "dsid": "oracle_rollable:starforged/planet/shattered/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Demolished space fleet",
-      "_id": "8319f72c2ecb7675",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.8319f72c2ecb7675"
+      "_key": "!tables.results!96bc7309f47d4af6.aac8b3cc5b7e9bbd",
+      "_id": "aac8b3cc5b7e9bbd"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Preserved planetary fragment",
-      "_id": "ad4e53f090ecc050",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.ad4e53f090ecc050"
+      "_key": "!tables.results!96bc7309f47d4af6.15c385c7fd42f931",
+      "_id": "15c385c7fd42f931"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Dense ring system",
-      "_id": "2702ba32b4fbbf2a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.2702ba32b4fbbf2a"
+      "_key": "!tables.results!96bc7309f47d4af6.262d2645964dbe24",
+      "_id": "262d2645964dbe24"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Swirling debris field",
-      "_id": "7380e58229de4b7f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.7380e58229de4b7f"
+      "_key": "!tables.results!96bc7309f47d4af6.223131c2caea6022",
+      "_id": "223131c2caea6022"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Fiery planetary core",
-      "_id": "0ea1d2a9d8bd69fd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.0ea1d2a9d8bd69fd"
+      "_key": "!tables.results!96bc7309f47d4af6.c366ef996f23b61b",
+      "_id": "c366ef996f23b61b"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Unbroken moon",
-      "_id": "65d4685cccf4f123",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.65d4685cccf4f123"
+      "_key": "!tables.results!96bc7309f47d4af6.fdd413b57a01704c",
+      "_id": "fdd413b57a01704c"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Geomagnetic storms",
-      "_id": "32d802c9a02966c0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.32d802c9a02966c0"
+      "_key": "!tables.results!96bc7309f47d4af6.0016e73524506d18",
+      "_id": "0016e73524506d18"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Intense solar radiation",
-      "_id": "aa9cffcf153c1f9b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.aa9cffcf153c1f9b"
+      "_key": "!tables.results!96bc7309f47d4af6.140a939852fbda21",
+      "_id": "140a939852fbda21"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "ee4a4f39a138f336",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.ee4a4f39a138f336"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!96bc7309f47d4af6.3f4734c24254bfb5",
+      "_id": "3f4734c24254bfb5"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "f7c899ab6eebb155",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!96bc7309f47d4af6.f7c899ab6eebb155"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault\">\n    <i class=\"fa fa-caret-right\"></i> Precursor Vault\n</a> (orbital)</p>",
+      "_key": "!tables.results!96bc7309f47d4af6.dcd83cead7514fed",
+      "_id": "dcd83cead7514fed"
     }
   ],
   "folder": "656eb2b3e3476a48",
   "sort": 316,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!96bc7309f47d4af6"
 }

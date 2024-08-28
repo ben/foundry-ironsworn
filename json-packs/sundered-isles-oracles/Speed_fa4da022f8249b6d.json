@@ -1,0 +1,65 @@
+{
+  "_id": "fa4da022f8249b6d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/magnitude",
+      "dsid": "oracle_rollable:sundered_isles/misc/magnitude/speed"
+    }
+  },
+  "name": "Speed",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Immobile",
+      "_key": "!tables.results!fa4da022f8249b6d.59fab46d54a718ea",
+      "_id": "59fab46d54a718ea"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Slow",
+      "_key": "!tables.results!fa4da022f8249b6d.c2c5e07fed537f7c",
+      "_id": "c2c5e07fed537f7c"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Medium",
+      "_key": "!tables.results!fa4da022f8249b6d.e1e0c0e8c842ad8c",
+      "_id": "e1e0c0e8c842ad8c"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Fast",
+      "_key": "!tables.results!fa4da022f8249b6d.d6b3aaef0c26abc8",
+      "_id": "d6b3aaef0c26abc8"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Very fast",
+      "_key": "!tables.results!fa4da022f8249b6d.1b23f8420f4c44d9",
+      "_id": "1b23f8420f4c44d9"
+    }
+  ],
+  "folder": "a547d2b78f39268a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fa4da022f8249b6d"
+}

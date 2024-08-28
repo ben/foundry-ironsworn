@@ -1,0 +1,15 @@
+{
+  "name": "Beasts",
+  "description": "",
+  "type": "Item",
+  "_id": "e31350d7e40b7d78",
+  "sort": 121,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc_collection:delve/beasts"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!e31350d7e40b7d78"
+}

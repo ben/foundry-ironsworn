@@ -1,0 +1,362 @@
+{
+  "_id": "ba4ca6bab80e77d3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/trademark_weapons"
+    }
+  },
+  "name": "Trademark Weapons",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Barbed gaff hook",
+      "_key": "!tables.results!ba4ca6bab80e77d3.a9b554d832520802",
+      "_id": "a9b554d832520802"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Battle-worn boarding axe",
+      "_key": "!tables.results!ba4ca6bab80e77d3.cf5c430a2330b7dc",
+      "_id": "cf5c430a2330b7dc"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Bloodied belaying pin",
+      "_key": "!tables.results!ba4ca6bab80e77d3.3ea41f620d93aff8",
+      "_id": "3ea41f620d93aff8"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Brace of pearl-handled pistols",
+      "_key": "!tables.results!ba4ca6bab80e77d3.5d2cd9b528ce6881",
+      "_id": "5d2cd9b528ce6881"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Brace of throwing knives",
+      "_key": "!tables.results!ba4ca6bab80e77d3.16fcc99ded53123f",
+      "_id": "16fcc99ded53123f"
+    },
+    {
+      "range": [
+        16,
+        17
+      ],
+      "text": "Brass knuckle dusters",
+      "_key": "!tables.results!ba4ca6bab80e77d3.1d8b0d905a4a0a38",
+      "_id": "1d8b0d905a4a0a38"
+    },
+    {
+      "range": [
+        18,
+        19
+      ],
+      "text": "Broad-bladed machete",
+      "_key": "!tables.results!ba4ca6bab80e77d3.afcacc53f224d263",
+      "_id": "afcacc53f224d263"
+    },
+    {
+      "range": [
+        20,
+        22
+      ],
+      "text": "Cannon ball flail",
+      "_key": "!tables.results!ba4ca6bab80e77d3.d8306514f9e35bd9",
+      "_id": "d8306514f9e35bd9"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Cavalry saber",
+      "_key": "!tables.results!ba4ca6bab80e77d3.524e7950fef5c557",
+      "_id": "524e7950fef5c557"
+    },
+    {
+      "range": [
+        26,
+        27
+      ],
+      "text": "Collapsible boarding pike",
+      "_key": "!tables.results!ba4ca6bab80e77d3.fcb1a3310eee198f",
+      "_id": "fcb1a3310eee198f"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Double-barreled pistol",
+      "_key": "!tables.results!ba4ca6bab80e77d3.8813680c59dc2d14",
+      "_id": "8813680c59dc2d14"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Fancy rapier with silver-etched hilt",
+      "_key": "!tables.results!ba4ca6bab80e77d3.10c8dd9535c8b42f",
+      "_id": "10c8dd9535c8b42f"
+    },
+    {
+      "range": [
+        34,
+        35
+      ],
+      "text": "Gilded heirloom crossbow",
+      "_key": "!tables.results!ba4ca6bab80e77d3.1071e52b5a2fc188",
+      "_id": "1071e52b5a2fc188"
+    },
+    {
+      "range": [
+        36,
+        37
+      ],
+      "text": "Grappling hook and frayed rope",
+      "_key": "!tables.results!ba4ca6bab80e77d3.6ed8057060e77dd7",
+      "_id": "6ed8057060e77dd7"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Handheld swivel cannon",
+      "_key": "!tables.results!ba4ca6bab80e77d3.23640f20593700a3",
+      "_id": "23640f20593700a3"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Harpoon notched with victory marks",
+      "_key": "!tables.results!ba4ca6bab80e77d3.e0c9eecf65967135",
+      "_id": "e0c9eecf65967135"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Hunting knife with antler handle",
+      "_key": "!tables.results!ba4ca6bab80e77d3.ff6b75bcdd91f2d2",
+      "_id": "ff6b75bcdd91f2d2"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Iron-shod staff",
+      "_key": "!tables.results!ba4ca6bab80e77d3.d40364406f562e67",
+      "_id": "d40364406f562e67"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Large bore blunderbuss",
+      "_key": "!tables.results!ba4ca6bab80e77d3.360d38f79c2c2a5b",
+      "_id": "360d38f79c2c2a5b"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Leather whip",
+      "_key": "!tables.results!ba4ca6bab80e77d3.99a9cf568ca88870",
+      "_id": "99a9cf568ca88870"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Military cutlass",
+      "_key": "!tables.results!ba4ca6bab80e77d3.1864da504cf88529",
+      "_id": "1864da504cf88529"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Musket with keen-edged bayonet",
+      "_key": "!tables.results!ba4ca6bab80e77d3.e75e4632b252c692",
+      "_id": "e75e4632b252c692"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "Pair of hooked swords",
+      "_key": "!tables.results!ba4ca6bab80e77d3.3ca5ae03fa5e1b7a",
+      "_id": "3ca5ae03fa5e1b7a"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Pair of matching hatchets",
+      "_key": "!tables.results!ba4ca6bab80e77d3.742951fd9e832bc4",
+      "_id": "742951fd9e832bc4"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Paired rapier and dirk",
+      "_key": "!tables.results!ba4ca6bab80e77d3.4b6abfdf89498b2f",
+      "_id": "4b6abfdf89498b2f"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Poisoned dagger with obsidian handle",
+      "_key": "!tables.results!ba4ca6bab80e77d3.577ff040b6f6053c",
+      "_id": "577ff040b6f6053c"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Rusted iron chain",
+      "_key": "!tables.results!ba4ca6bab80e77d3.b9288c9c8ac25ba9",
+      "_id": "b9288c9c8ac25ba9"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Scrimshaw handle dirk",
+      "_key": "!tables.results!ba4ca6bab80e77d3.4d6f803fffc547d9",
+      "_id": "4d6f803fffc547d9"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Serrated, blade-breaking sword",
+      "_key": "!tables.results!ba4ca6bab80e77d3.44bcce7ada3de7c6",
+      "_id": "44bcce7ada3de7c6"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Shark tooth club",
+      "_key": "!tables.results!ba4ca6bab80e77d3.7e8bca17b3f32997",
+      "_id": "7e8bca17b3f32997"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Shipwright's hammer",
+      "_key": "!tables.results!ba4ca6bab80e77d3.90db6f52cbc9c09a",
+      "_id": "90db6f52cbc9c09a"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Shrapnel-filled iron grenades",
+      "_key": "!tables.results!ba4ca6bab80e77d3.93304c5d2a31b255",
+      "_id": "93304c5d2a31b255"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Spring-loaded gauntlet blade",
+      "_key": "!tables.results!ba4ca6bab80e77d3.7c564f6adc22bb74",
+      "_id": "7c564f6adc22bb74"
+    },
+    {
+      "range": [
+        87,
+        89
+      ],
+      "text": "Sword cane",
+      "_key": "!tables.results!ba4ca6bab80e77d3.90a29692c0573348",
+      "_id": "90a29692c0573348"
+    },
+    {
+      "range": [
+        90,
+        92
+      ],
+      "text": "Toxic stinkpot grenades",
+      "_key": "!tables.results!ba4ca6bab80e77d3.f2270332a8014008",
+      "_id": "f2270332a8014008"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Whale bone club",
+      "_key": "!tables.results!ba4ca6bab80e77d3.6a7917a24c536cae",
+      "_id": "6a7917a24c536cae"
+    },
+    {
+      "range": [
+        96,
+        97
+      ],
+      "text": "Wooden bow",
+      "_key": "!tables.results!ba4ca6bab80e77d3.a89b002c1571b84f",
+      "_id": "a89b002c1571b84f"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!ba4ca6bab80e77d3.fa25bc5838466abf",
+      "_id": "fa25bc5838466abf"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 191,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ba4ca6bab80e77d3"
+}

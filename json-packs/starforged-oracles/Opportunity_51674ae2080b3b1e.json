@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Chaotic/Opportunity",
-      "category": "Starforged/Oracles/Location_Themes/Chaotic"
+      "category": "Starforged/Oracles/Location_Themes/Chaotic",
+      "dsid": "oracle_rollable:starforged/location_theme/chaotic/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Chaos ebbs or withdraws for a time",
-      "_id": "fae10194b9fc0db1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!51674ae2080b3b1e.fae10194b9fc0db1"
+      "_key": "!tables.results!51674ae2080b3b1e.3f030f299dd48179",
+      "_id": "3f030f299dd48179"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Chaos empowers you with strange but useful abilities",
-      "_id": "68f0280997a4e28d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!51674ae2080b3b1e.68f0280997a4e28d"
+      "_key": "!tables.results!51674ae2080b3b1e.f25da13415a22b25",
+      "_id": "f25da13415a22b25"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Chaos manifests as comforting or inspiring visions",
-      "_id": "5c4812970128f5c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!51674ae2080b3b1e.5c4812970128f5c5"
+      "_key": "!tables.results!51674ae2080b3b1e.a8995dbf88ff971d",
+      "_id": "a8995dbf88ff971d"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Chaotic changes hamper your foes",
-      "_id": "f1f0e3f05378287c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!51674ae2080b3b1e.f1f0e3f05378287c"
+      "_key": "!tables.results!51674ae2080b3b1e.c72e007ad7f869e2",
+      "_id": "c72e007ad7f869e2"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Insight into the source or nature of the chaos",
-      "_id": "b5522db56607fcf7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!51674ae2080b3b1e.b5522db56607fcf7"
+      "_key": "!tables.results!51674ae2080b3b1e.4107e23b5c22a503",
+      "_id": "4107e23b5c22a503"
     }
   ],
   "folder": "2c017ba0d0ff0e12",
   "sort": 372,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!51674ae2080b3b1e"
 }

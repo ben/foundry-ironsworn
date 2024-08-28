@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "3267980c4a28e3b4",
+  "folder": "e5df7144ec089f12",
+  "name": "Scattershot",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your scattergun is loaded with a single shot, which you may use to @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} or @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash} against a large target, a group of massed foes, or a close quarters enemy. When you do, reroll any dice. To use the scattergun more than once in the same fight, you must first score a hit as you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} (+edge), forgoing one of the choices awarded by that move to instead reload and ready your next shot.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move by firing your scattergun to damage or destroy an inanimate object, or to create a distraction, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3129f4caa4754caf]{Take Decisive Action} with a devastating shot or by demanding surrender at the point of a readied scattergun, you may reroll one challenge die.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/scattershot",
+      "dsid": "asset:sundered_isles/path/scattershot"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!3267980c4a28e3b4"
+}

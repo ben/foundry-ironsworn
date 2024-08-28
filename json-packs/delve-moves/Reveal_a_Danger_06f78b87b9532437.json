@@ -1,0 +1,61 @@
+{
+  "_id": "06f78b87b9532437",
+  "type": "sfmove",
+  "name": "Reveal a Danger",
+  "img": "icons/dice/d10black.svg",
+  "folder": "e9e254f7a3fc7100",
+  "system": {
+    "dfid": "Ironsworn/Moves/Delve/Reveal_a_Danger",
+    "Category": "Ironsworn/Moves/Delve",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.",
+    "Trigger": {
+      "Text": "When you encounter a risky situation within a site...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": ""
+      },
+      "Miss": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [
+      "Ironsworn/Oracles/Moves/Reveal_a_Danger"
+    ],
+    "dsOracleIds": [
+      "move.oracle_rollable:delve/delve/reveal_a_danger.reveal_a_danger"
+    ],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 34
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 34,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Delve/Reveal_a_Danger",
+      "dsid": "move:delve/delve/reveal_a_danger"
+    }
+  },
+  "_key": "!items!06f78b87b9532437"
+}

@@ -1,0 +1,111 @@
+{
+  "_id": "a57014c9aabe315a",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Leadership",
+      "category": "Starforged/Oracles/Factions",
+      "dsid": "oracle_rollable:starforged/faction/dominion_leadership"
+    }
+  },
+  "name": "Dominion: Leadership",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Anarchist",
+      "_key": "!tables.results!a57014c9aabe315a.75a5114ffc2db879",
+      "_id": "75a5114ffc2db879"
+    },
+    {
+      "range": [
+        6,
+        15
+      ],
+      "text": "Disputed leadership",
+      "_key": "!tables.results!a57014c9aabe315a.967b51a96e0cc695",
+      "_id": "967b51a96e0cc695"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Authoritarian dictatorship",
+      "_key": "!tables.results!a57014c9aabe315a.6a8b8baeaca190c6",
+      "_id": "6a8b8baeaca190c6"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "Oligarchical elite",
+      "_key": "!tables.results!a57014c9aabe315a.f97455916a1725e8",
+      "_id": "f97455916a1725e8"
+    },
+    {
+      "range": [
+        46,
+        60
+      ],
+      "text": "Dynastic lineage",
+      "_key": "!tables.results!a57014c9aabe315a.cbcf5ad10fcac076",
+      "_id": "cbcf5ad10fcac076"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Fated or prophesied leader",
+      "_key": "!tables.results!a57014c9aabe315a.8d7739f51ba9ee20",
+      "_id": "8d7739f51ba9ee20"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Clan chiefs or elders",
+      "_key": "!tables.results!a57014c9aabe315a.024b3cd28d2db644",
+      "_id": "024b3cd28d2db644"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Elected representatives",
+      "_key": "!tables.results!a57014c9aabe315a.c0dc6bad2b82a1ec",
+      "_id": "c0dc6bad2b82a1ec"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Machine intelligence",
+      "_key": "!tables.results!a57014c9aabe315a.79fb636d209d52c3",
+      "_id": "79fb636d209d52c3"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Varied / decentralized",
+      "_key": "!tables.results!a57014c9aabe315a.fc3744a741344613",
+      "_id": "fc3744a741344613"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 341,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a57014c9aabe315a"
+}

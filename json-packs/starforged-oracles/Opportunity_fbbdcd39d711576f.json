@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Research/Opportunity",
-      "category": "Starforged/Oracles/Derelicts/Research"
+      "category": "Starforged/Oracles/Derelicts/Research",
+      "dsid": "oracle_rollable:starforged/derelict/research/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Helpful research data",
-      "_id": "86805526a2de8cf6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fbbdcd39d711576f.86805526a2de8cf6"
+      "_key": "!tables.results!fbbdcd39d711576f.8178187b3428f93c",
+      "_id": "8178187b3428f93c"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Records of a notable discovery",
-      "_id": "1fc45b0f174b2609",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fbbdcd39d711576f.1fc45b0f174b2609"
+      "_key": "!tables.results!fbbdcd39d711576f.673eaa3edc56beea",
+      "_id": "673eaa3edc56beea"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Specialized research tools",
-      "_id": "bd25387eb47520b0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fbbdcd39d711576f.bd25387eb47520b0"
+      "_key": "!tables.results!fbbdcd39d711576f.24acaff6fe43a3a5",
+      "_id": "24acaff6fe43a3a5"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Unique prototype",
-      "_id": "75a3537876b63d0b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fbbdcd39d711576f.75a3537876b63d0b"
+      "_key": "!tables.results!fbbdcd39d711576f.0d81c4e670bab2da",
+      "_id": "0d81c4e670bab2da"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Useful navigational data",
-      "_id": "52f424cea98b2ad8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fbbdcd39d711576f.52f424cea98b2ad8"
+      "_key": "!tables.results!fbbdcd39d711576f.3cc06386c35cabfc",
+      "_id": "3cc06386c35cabfc"
     }
   ],
   "folder": "9987a5b1c316f884",
   "sort": 359,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!fbbdcd39d711576f"
 }

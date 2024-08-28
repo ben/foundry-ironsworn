@@ -1,0 +1,110 @@
+{
+  "_id": "28cdeac9723ede86",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/discovery",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/discovery/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Ancient",
+      "_key": "!tables.results!28cdeac9723ede86.238fe5536c65b9ba",
+      "_id": "238fe5536c65b9ba"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Awakened",
+      "_key": "!tables.results!28cdeac9723ede86.afcd7aefc5e76282",
+      "_id": "afcd7aefc5e76282"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Azure",
+      "_key": "!tables.results!28cdeac9723ede86.635062247139fbbb",
+      "_id": "635062247139fbbb"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Elder",
+      "_key": "!tables.results!28cdeac9723ede86.0d6e533feb077f5f",
+      "_id": "0d6e533feb077f5f"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Emblazoned",
+      "_key": "!tables.results!28cdeac9723ede86.a763440227834254",
+      "_id": "a763440227834254"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Enlightened",
+      "_key": "!tables.results!28cdeac9723ede86.e562322130c6c9b3",
+      "_id": "e562322130c6c9b3"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "First",
+      "_key": "!tables.results!28cdeac9723ede86.b0dbec464e4a2485",
+      "_id": "b0dbec464e4a2485"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Roaming",
+      "_key": "!tables.results!28cdeac9723ede86.1150023af3ce8c51",
+      "_id": "1150023af3ce8c51"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Starmarked",
+      "_key": "!tables.results!28cdeac9723ede86.63710113932ef89a",
+      "_id": "63710113932ef89a"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wandering",
+      "_key": "!tables.results!28cdeac9723ede86.7b84c24462aee3d3",
+      "_id": "7b84c24462aee3d3"
+    }
+  ],
+  "folder": "4a7f5d2071294639",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!28cdeac9723ede86"
+}

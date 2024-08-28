@@ -1,0 +1,164 @@
+{
+  "_id": "6653429d8eec04d8",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/adventures/beasts",
+      "dsid": "oracle_rollable:sundered_isles/adventures/beasts/sea"
+    }
+  },
+  "name": "Beasts of the Sea",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Predatory Shark",
+      "_key": "!tables.results!6653429d8eec04d8.ab3b1eb16ae19575",
+      "_id": "ab3b1eb16ae19575"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "Great Whale",
+      "_key": "!tables.results!6653429d8eec04d8.6794148c56ff376f",
+      "_id": "6794148c56ff376f"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Leviathan",
+      "_key": "!tables.results!6653429d8eec04d8.69ce6e649cd29e2f",
+      "_id": "69ce6e649cd29e2f"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Rothulk",
+      "_key": "!tables.results!6653429d8eec04d8.042dddda31567328",
+      "_id": "042dddda31567328"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Giant Squid",
+      "_key": "!tables.results!6653429d8eec04d8.f83eeb886d6edaac",
+      "_id": "f83eeb886d6edaac"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "The Kraken",
+      "_key": "!tables.results!6653429d8eec04d8.d3e3e04f6fe05f54",
+      "_id": "d3e3e04f6fe05f54"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Sea Dragon",
+      "_key": "!tables.results!6653429d8eec04d8.5ce79fe7789290d9",
+      "_id": "5ce79fe7789290d9"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Elder Ray",
+      "_key": "!tables.results!6653429d8eec04d8.73a16a1b4f25800b",
+      "_id": "73a16a1b4f25800b"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Whipneck",
+      "_key": "!tables.results!6653429d8eec04d8.4308307ff72dfa1c",
+      "_id": "4308307ff72dfa1c"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Eel Swarm",
+      "_key": "!tables.results!6653429d8eec04d8.77a3bcf8b15155be",
+      "_id": "77a3bcf8b15155be"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Sea Serpent",
+      "_key": "!tables.results!6653429d8eec04d8.93838769dbdad0b5",
+      "_id": "93838769dbdad0b5"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Reefstrider",
+      "_key": "!tables.results!6653429d8eec04d8.4dc00ebda155e044",
+      "_id": "4dc00ebda155e044"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Starlume",
+      "_key": "!tables.results!6653429d8eec04d8.5984cf53b0ffca55",
+      "_id": "5984cf53b0ffca55"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Vortex Forge",
+      "_key": "!tables.results!6653429d8eec04d8.ac02eeefc0522b65",
+      "_id": "ac02eeefc0522b65"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Herald",
+      "_key": "!tables.results!6653429d8eec04d8.1b89532e467eaa10",
+      "_id": "1b89532e467eaa10"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Abomination",
+      "_key": "!tables.results!6653429d8eec04d8.3193a9a6de49db81",
+      "_id": "3193a9a6de49db81"
+    }
+  ],
+  "folder": "a4ce4643e46e22ca",
+  "sort": 58,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6653429d8eec04d8"
+}

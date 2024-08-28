@@ -1,22 +1,16 @@
 {
   "name": "Settlements",
-  "_id": "abd583c659906198",
+  "description": "",
   "type": "RollTable",
+  "_id": "abd583c659906198",
   "sort": 313,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Planets/Jungle/Settlements"
+      "dfid": "Starforged/Oracles/Planets/Jungle/Settlements",
+      "dsid": "oracle_collection:starforged/planet/jungle/settlements"
     }
   },
   "folder": "2a431921f3dabd4b",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!abd583c659906198"
 }

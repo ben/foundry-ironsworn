@@ -1,0 +1,15 @@
+{
+  "name": "Inland Cave Details",
+  "description": "",
+  "type": "RollTable",
+  "_id": "ccafff1bc096e52d",
+  "sort": 210,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/cave/inland_cave"
+    }
+  },
+  "folder": "6e4db0d120c971eb",
+  "sorting": "a",
+  "_key": "!folders!ccafff1bc096e52d"
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "c65b0b790e7575e9",
+  "type": "progress",
+  "name": "Bonehorde",
+  "img": "icons/skills/trades/academics-study-archaeology-bones.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">The bones of many corpses, held together by a dark will</p>\n<p class=\"nogrow\">Scurries with a hollow clatter</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Destroy and kill</p>\n<p class=\"nogrow\">Gather new bones</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Alter shape</p>\n<p class=\"nogrow\">Strike with skeletal appendages</p>\n<p class=\"nogrow\">Damage terrain or architecture</p>\n<p class=\"nogrow\">Envelop and crush</p>\n</div>\n</div>\n\n<p>A bonehorde is a mass of moldering skeletal remains given unnatural life. They are spawned in old battlefields or tombs, but often range beyond those places to seek out new victims. At the heart of a horde, surrounded by layers of clattering bones, are the remains of the spiteful being who gives the horror its cruel intelligence.</p>\n<p>Its form varies. In tight spaces, a bonehorde may appear as an amorphous mound or as a spider-like entity with long, skittering limbs. In the open, it can crudely mimic the shape of an animal or person. The bones constantly shift—snapping like dry twigs—to accommodate its environment, propel its movement, and lash out against its victims.</p>\n\n<blockquote>Quest Starter: <p>For months, someone has been stealing remains from local graves and barrows. Now, a bonehorde emerges from a @Compendium[foundry-ironsworn.ironsworndelvethemes.064f6b24c7aace9a]{Haunted} @Compendium[foundry-ironsworn.ironsworndelvedomains.1983ca8d062e44e1]{Tanglewood} to attack nearby communities and travelers. Who commands this foul aberration, and for what purpose?</p></blockquote>",
+    "rank": 4,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "dc29320f4e7ca59c",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/horrors/bonehorde"
+    }
+  },
+  "_key": "!items!c65b0b790e7575e9"
+}

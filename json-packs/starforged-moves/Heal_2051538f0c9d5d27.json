@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Heal",
   "img": "icons/dice/d10black.svg",
+  "folder": "5ba869fa7c31abdd",
   "system": {
     "dfid": "Starforged/Moves/Recover/Heal",
     "Category": "Starforged/Moves/Recover",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you receive medical care or provide treatment**, envision the situation and roll. If you...\n\n  * Receive treatment from someone (not an ally): Roll +iron\n  * Mend your own wounds: Roll +iron or +wits, whichever is lower\n  * Obtain treatment for a companion: Roll +heart\n  * Provide care: Roll +wits\n\nOn a **strong hit**, the care is helpful. If you (or the ally under your care) are wounded, clear the impact and take or give +2 health. Otherwise, take or give +3 health.\n\nOn a **weak hit**, as above, but the recovery costs extra time or resources. Choose one: @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2) or @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-2).\n\nOn a **miss**, the aid is ineffective and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Text": "__When you receive medical care or provide treatment__, envision the situation and roll. If you...\n\n  * Receive treatment from someone (not an ally): Roll +iron\n  * Mend your own wounds: Roll +iron or +wits, whichever is lower\n  * Obtain treatment for a companion: Roll +heart\n  * Provide care: Roll +wits\n\nOn a __strong hit__, the care is helpful. If you (or the ally under your care) are wounded, clear the impact and take or give +2 health. Otherwise, take or give +3 health.\n\nOn a __weak hit__, as above, but the recovery costs extra time or resources. Choose one: @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2) or @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-2).\n\nOn a __miss__, the aid is ineffective and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
     "Trigger": {
       "Text": "When you receive medical care or provide treatment...",
       "Options": [
@@ -22,7 +23,7 @@
         },
         {
           "Text": "Mend your own wounds",
-          "Roll type": "Action roll",
+          "Roll type": "Progress roll",
           "Method": "Lowest",
           "Using": [
             "Iron",
@@ -49,66 +50,42 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "The care is helpful. If you (or the ally under your care) are wounded, clear the impact and take or give +2 health. Otherwise, take or give +3 health.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, the care is helpful. If you (or the ally under your care) are wounded, clear the impact and take or give +2 health. Otherwise, take or give +3 health.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "The care is helpful. If you (or the ally under your care) are wounded, clear the impact and take or give +2 health. Otherwise, take or give +3 health.\n\nHowever, the recovery costs extra time or resources. Choose one: @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2) or @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-2).",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, the care is helpful. If you (or the ally under your care) are wounded, clear the impact and take or give +2 health. Otherwise, take or give +3 health.\n\nHowever, the recovery costs extra time or resources. Choose one: @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2) or @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-2)."
       },
       "Miss": {
-        "Text": "The aid is ineffective and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, the aid is ineffective and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 210
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#179F0E",
       "Images": []
     }
   },
   "sort": 210,
-  "folder": "5ba869fa7c31abdd",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Recover/Heal",
+      "dsid": "move:starforged/recover/heal"
+    }
   },
   "_key": "!items!2051538f0c9d5d27"
 }

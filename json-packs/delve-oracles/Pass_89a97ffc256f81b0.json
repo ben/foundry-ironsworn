@@ -1,0 +1,111 @@
+{
+  "_id": "89a97ffc256f81b0",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Pass",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/pass"
+    }
+  },
+  "name": "Pass",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Cliffs",
+      "_key": "!tables.results!89a97ffc256f81b0.1a2bd12af028fb47",
+      "_id": "1a2bd12af028fb47"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Crag",
+      "_key": "!tables.results!89a97ffc256f81b0.d37d28819b4949b6",
+      "_id": "d37d28819b4949b6"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Cut",
+      "_key": "!tables.results!89a97ffc256f81b0.ae5e38811a0f0d1f",
+      "_id": "ae5e38811a0f0d1f"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Gap",
+      "_key": "!tables.results!89a97ffc256f81b0.744750a883c864d8",
+      "_id": "744750a883c864d8"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Gorge",
+      "_key": "!tables.results!89a97ffc256f81b0.4f844ab81484f3cf",
+      "_id": "4f844ab81484f3cf"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Heights",
+      "_key": "!tables.results!89a97ffc256f81b0.59b350c5d2ff1418",
+      "_id": "59b350c5d2ff1418"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Highlands",
+      "_key": "!tables.results!89a97ffc256f81b0.df46b2cbdbe95e76",
+      "_id": "df46b2cbdbe95e76"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Pass",
+      "_key": "!tables.results!89a97ffc256f81b0.093eaee52772688a",
+      "_id": "093eaee52772688a"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Reach",
+      "_key": "!tables.results!89a97ffc256f81b0.feea81e8ee69c322",
+      "_id": "feea81e8ee69c322"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Ridge",
+      "_key": "!tables.results!89a97ffc256f81b0.1c91accc51be9731",
+      "_id": "1c91accc51be9731"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 210,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!89a97ffc256f81b0"
+}

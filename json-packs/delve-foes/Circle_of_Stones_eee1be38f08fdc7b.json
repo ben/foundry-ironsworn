@@ -1,0 +1,27 @@
+{
+  "_id": "eee1be38f08fdc7b",
+  "type": "progress",
+  "name": "Circle of Stones",
+  "img": "icons/environment/wilderness/arch-stone.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Ancient stones, etched with mysterious symbols</p>\n<p class=\"nogrow\">Whispers of old magic</p>\n<p class=\"nogrow\">Visions of hoarded memories</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Preserve age-old secrets</p>\n<p class=\"nogrow\">Seek new knowledge</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Trap the unwary, and lure the desperate</p>\n<p class=\"nogrow\">Extract painful memories</p>\n<p class=\"nogrow\">Grant knowledge, for a price</p>\n</div>\n</div>\n\n<p>The ancient standing stones, crafted long before we settled here, preserve the memories and secrets of the Ironlands.</p>\n<p>Because the stones are often hidden within dense thickets, buried in snow, or obscured by veils of mist, a traveler may find themselves unexpectedly breaking the boundary of a circle. The stones hunger for new knowledge, and our memories are fodder for their insatiable appetites. What they take is sometimes gone forever.</p>\n<p>Some Ironlanders enter a circle willingly. Perhaps they hope to abandon a painful memory to the stones, discarding that piece of themselves like slag hammered from wrought iron. Then, there are those who wish to forsake the world and live with their memories. For them, an unreal life within the circle is better than the cruel reality outside of it.</p>\n<p>Those in need of information may choose to risk a negotiation within a circle. Knowledge for knowledge is the customary trade, but the stones are cunning and may demand a more horrible price.</p>\n\n<blockquote>Quest Starter: <p>A clan of Ironlanders protect and worship a circle of stones found in a @Compendium[foundry-ironsworn.ironsworndelvethemes.8555753de47119a1]{Hallowed} @Compendium[foundry-ironsworn.ironsworndelvedomains.1983ca8d062e44e1]{Tanglewood}. What forbidden secrets do these stones offer? How does the price for these secrets threaten you or your kin?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "3476ad01228adddc",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/anomalies/circle_of_stones"
+    }
+  },
+  "_key": "!items!eee1be38f08fdc7b"
+}

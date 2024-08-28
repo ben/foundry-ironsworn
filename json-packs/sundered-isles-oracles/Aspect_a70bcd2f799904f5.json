@@ -1,0 +1,110 @@
+{
+  "_id": "a70bcd2f799904f5",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/mysticism",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/mysticism/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Astral",
+      "_key": "!tables.results!a70bcd2f799904f5.8af8ec818d2e2d1a",
+      "_id": "8af8ec818d2e2d1a"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Crystal",
+      "_key": "!tables.results!a70bcd2f799904f5.0e4a1d16034e13bd",
+      "_id": "0e4a1d16034e13bd"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Gleaming",
+      "_key": "!tables.results!a70bcd2f799904f5.39c02ee71e1caa04",
+      "_id": "39c02ee71e1caa04"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Moonbound",
+      "_key": "!tables.results!a70bcd2f799904f5.df3ba18d4a593f98",
+      "_id": "df3ba18d4a593f98"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Murmuring",
+      "_key": "!tables.results!a70bcd2f799904f5.d891e7e424baff8d",
+      "_id": "d891e7e424baff8d"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Obsidian",
+      "_key": "!tables.results!a70bcd2f799904f5.00206f006568b92d",
+      "_id": "00206f006568b92d"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Orbis",
+      "_key": "!tables.results!a70bcd2f799904f5.c70de3a2ebd0dccf",
+      "_id": "c70de3a2ebd0dccf"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Runemarked",
+      "_key": "!tables.results!a70bcd2f799904f5.74fab6ea78ec3ddc",
+      "_id": "74fab6ea78ec3ddc"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Shadow",
+      "_key": "!tables.results!a70bcd2f799904f5.02e49083b5d02e3b",
+      "_id": "02e49083b5d02e3b"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Spellbound",
+      "_key": "!tables.results!a70bcd2f799904f5.e6a61041a02594a0",
+      "_id": "e6a61041a02594a0"
+    }
+  ],
+  "folder": "c5b37bda9ab33708",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a70bcd2f799904f5"
+}

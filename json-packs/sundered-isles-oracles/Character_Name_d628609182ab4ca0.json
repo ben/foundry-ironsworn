@@ -1,0 +1,15 @@
+{
+  "name": "Character Name",
+  "description": "This table provides pairs of given and family names. When choosing or rolling for a character name, select a pair or mix and match from among the options in a row. Given and family names can often be reversed, or used independently as stand-alone names.\n\nThis table also includes monikers, one to each row. Not all characters have monikers, but sailors are often given a nickname by their shipmates, or adopt one of their own. Monikers can be used as a stand-alone name (for example, “Redbeard” or “Stormcrow”) or paired with a given name or family name (“Crimson Jack” or “Hardtack Hobbs”). Roll or select an appropriate moniker as you like.",
+  "type": "RollTable",
+  "_id": "d628609182ab4ca0",
+  "sort": 194,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/character/name"
+    }
+  },
+  "folder": "2e89566166acdaea",
+  "sorting": "a",
+  "_key": "!folders!d628609182ab4ca0"
+}

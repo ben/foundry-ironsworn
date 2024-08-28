@@ -1,0 +1,111 @@
+{
+  "_id": "ba74c724ad994958",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Environmental_Calamity",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/environmental_calamity"
+    }
+  },
+  "name": "Environmental Calamity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Devastate a place",
+      "_key": "!tables.results!ba74c724ad994958.df677bb8080386a1",
+      "_id": "df677bb8080386a1"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Block a path",
+      "_key": "!tables.results!ba74c724ad994958.a4d0bc105e26fa1f",
+      "_id": "a4d0bc105e26fa1f"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Threaten a community with imminent destruction",
+      "_key": "!tables.results!ba74c724ad994958.62376d430023d1eb",
+      "_id": "62376d430023d1eb"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Manifest unexpected effects",
+      "_key": "!tables.results!ba74c724ad994958.4f011f31de0dd643",
+      "_id": "4f011f31de0dd643"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Expand in scope or intensity",
+      "_key": "!tables.results!ba74c724ad994958.62a98e0c358f4d9a",
+      "_id": "62a98e0c358f4d9a"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Allow someone to take advantage",
+      "_key": "!tables.results!ba74c724ad994958.a14e7116571e94cc",
+      "_id": "a14e7116571e94cc"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Deprive of resources",
+      "_key": "!tables.results!ba74c724ad994958.95c34fe46ec7bf32",
+      "_id": "95c34fe46ec7bf32"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Isolate an important person or community",
+      "_key": "!tables.results!ba74c724ad994958.91ca69ea7be3a901",
+      "_id": "91ca69ea7be3a901"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Force refugees into hostile lands",
+      "_key": "!tables.results!ba74c724ad994958.8cebf7983bb83d13",
+      "_id": "8cebf7983bb83d13"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Disrupt natural ecosystems",
+      "_key": "!tables.results!ba74c724ad994958.dce49bd5e2bc9a35",
+      "_id": "dce49bd5e2bc9a35"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 221,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ba74c724ad994958"
+}

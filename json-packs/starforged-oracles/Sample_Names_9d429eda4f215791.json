@@ -1,0 +1,200 @@
+{
+  "_id": "9d429eda4f215791",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Vital",
+      "dsid": "oracle_rollable:starforged/planet/vital/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Chiron",
+      "_key": "!tables.results!9d429eda4f215791.e07f9170d7bd4511",
+      "_id": "e07f9170d7bd4511"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Demeter",
+      "_key": "!tables.results!9d429eda4f215791.f703b17d9940a234",
+      "_id": "f703b17d9940a234"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Erebos",
+      "_key": "!tables.results!9d429eda4f215791.7ba00941db15ee54",
+      "_id": "7ba00941db15ee54"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Erembour",
+      "_key": "!tables.results!9d429eda4f215791.b0f6ca20883a5374",
+      "_id": "b0f6ca20883a5374"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Feronia",
+      "_key": "!tables.results!9d429eda4f215791.01eb15a7ffeebbe0",
+      "_id": "01eb15a7ffeebbe0"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Fortuna",
+      "_key": "!tables.results!9d429eda4f215791.f2d74daa8dd4d114",
+      "_id": "f2d74daa8dd4d114"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Gaia",
+      "_key": "!tables.results!9d429eda4f215791.513fcb84186296de",
+      "_id": "513fcb84186296de"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Harbinger",
+      "_key": "!tables.results!9d429eda4f215791.7bd1feaa56b99ae8",
+      "_id": "7bd1feaa56b99ae8"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Haven",
+      "_key": "!tables.results!9d429eda4f215791.f621ca5519f6ed76",
+      "_id": "f621ca5519f6ed76"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Hope",
+      "_key": "!tables.results!9d429eda4f215791.78476e2600e48791",
+      "_id": "78476e2600e48791"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Morpheus",
+      "_key": "!tables.results!9d429eda4f215791.6a4c70d819206daa",
+      "_id": "6a4c70d819206daa"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Nemus",
+      "_key": "!tables.results!9d429eda4f215791.449aff490bc487a6",
+      "_id": "449aff490bc487a6"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Sapphire",
+      "_key": "!tables.results!9d429eda4f215791.a4295ca090c74258",
+      "_id": "a4295ca090c74258"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Serenity",
+      "_key": "!tables.results!9d429eda4f215791.0a754f7468565a88",
+      "_id": "0a754f7468565a88"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Sif",
+      "_key": "!tables.results!9d429eda4f215791.943a7c87a75bf807",
+      "_id": "943a7c87a75bf807"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Silva",
+      "_key": "!tables.results!9d429eda4f215791.3ffc8c4b373de2aa",
+      "_id": "3ffc8c4b373de2aa"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Sirona",
+      "_key": "!tables.results!9d429eda4f215791.a9fc5a9cefeddd70",
+      "_id": "a9fc5a9cefeddd70"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Solstice",
+      "_key": "!tables.results!9d429eda4f215791.60cc7f845ef5403b",
+      "_id": "60cc7f845ef5403b"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Vale",
+      "_key": "!tables.results!9d429eda4f215791.2f831d400fe5cebc",
+      "_id": "2f831d400fe5cebc"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Valinor",
+      "_key": "!tables.results!9d429eda4f215791.78e7718ce784d070",
+      "_id": "78e7718ce784d070"
+    }
+  ],
+  "folder": "93ecb6acb6a3ea17",
+  "sort": 318,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9d429eda4f215791"
+}

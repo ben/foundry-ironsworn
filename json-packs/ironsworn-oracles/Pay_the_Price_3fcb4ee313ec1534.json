@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Moves/Pay_the_Price",
-      "category": "Ironsworn/Oracles/Moves"
+      "category": "Ironsworn/Moves/Fate",
+      "dsid": "move.oracle_rollable:classic/fate/pay_the_price.pay_the_price"
     }
   },
   "name": "Pay the Price",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         2
       ],
       "text": "Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure) and make it happen.",
-      "_id": "9a8b7b8211e65f90",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.9a8b7b8211e65f90"
+      "_key": "!tables.results!3fcb4ee313ec1534.302d4af2007729e3",
+      "_id": "302d4af2007729e3"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         5
       ],
       "text": "A person or community you trusted loses faith in you, or acts against you.",
-      "_id": "53234bde505e8373",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.53234bde505e8373"
+      "_key": "!tables.results!3fcb4ee313ec1534.3ddfe8fe7959fdd1",
+      "_id": "3ddfe8fe7959fdd1"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         9
       ],
       "text": "A person or community you care about is exposed to danger.",
-      "_id": "ee283030722a69ba",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.ee283030722a69ba"
+      "_key": "!tables.results!3fcb4ee313ec1534.8d942ff03823f231",
+      "_id": "8d942ff03823f231"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         16
       ],
       "text": "You are separated from something or someone.",
-      "_id": "6606737d476ab8c0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.6606737d476ab8c0"
+      "_key": "!tables.results!3fcb4ee313ec1534.376d90f7ae5b7c0c",
+      "_id": "376d90f7ae5b7c0c"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         23
       ],
       "text": "Your action has an unintended effect.",
-      "_id": "ca6cd6a6edebcc48",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.ca6cd6a6edebcc48"
+      "_key": "!tables.results!3fcb4ee313ec1534.9c070f5c934543b6",
+      "_id": "9c070f5c934543b6"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         32
       ],
       "text": "Something of value is lost or destroyed.",
-      "_id": "2597cfc9da1032b0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.2597cfc9da1032b0"
+      "_key": "!tables.results!3fcb4ee313ec1534.d156be17ae46bc8d",
+      "_id": "d156be17ae46bc8d"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         41
       ],
       "text": "The current situation worsens.",
-      "_id": "cd36a5590ace3bad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.cd36a5590ace3bad"
+      "_key": "!tables.results!3fcb4ee313ec1534.d1a9ed4b40b35e3b",
+      "_id": "d1a9ed4b40b35e3b"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         50
       ],
       "text": "A new danger or foe is revealed.",
-      "_id": "b5b14d71ce2a617d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.b5b14d71ce2a617d"
+      "_key": "!tables.results!3fcb4ee313ec1534.9376b417e9790ab6",
+      "_id": "9376b417e9790ab6"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         59
       ],
       "text": "It causes a delay or puts you at a disadvantage.",
-      "_id": "e75d9620e89a9610",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.e75d9620e89a9610"
+      "_key": "!tables.results!3fcb4ee313ec1534.bb929e89d63c2643",
+      "_id": "bb929e89d63c2643"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         68
       ],
       "text": "It is harmful.",
-      "_id": "aac4e3837e42908b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.aac4e3837e42908b"
+      "_key": "!tables.results!3fcb4ee313ec1534.e0170cd32a9c5eb9",
+      "_id": "e0170cd32a9c5eb9"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         76
       ],
       "text": "It is stressful.",
-      "_id": "94333a033119fd4f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.94333a033119fd4f"
+      "_key": "!tables.results!3fcb4ee313ec1534.5d882a4d2eddd1d7",
+      "_id": "5d882a4d2eddd1d7"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         85
       ],
       "text": "A surprising development complicates your quest.",
-      "_id": "94cf7802edadad85",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.94cf7802edadad85"
+      "_key": "!tables.results!3fcb4ee313ec1534.9fd5b58c5e075b5c",
+      "_id": "9fd5b58c5e075b5c"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         90
       ],
       "text": "It wastes resources.",
-      "_id": "8b474f74bc185d2e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.8b474f74bc185d2e"
+      "_key": "!tables.results!3fcb4ee313ec1534.7461867bcffe784e",
+      "_id": "7461867bcffe784e"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         94
       ],
       "text": "It forces you to act against your best intentions.",
-      "_id": "2ead48754fb215f2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.2ead48754fb215f2"
+      "_key": "!tables.results!3fcb4ee313ec1534.1d3de3d71e790acf",
+      "_id": "1d3de3d71e790acf"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         98
       ],
       "text": "A friend, companion, or ally is put in harm’s way (or you are, if alone).",
-      "_id": "2e394cc63a0fca7e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.2e394cc63a0fca7e"
+      "_key": "!tables.results!3fcb4ee313ec1534.61e259cf4ac0cc86",
+      "_id": "61e259cf4ac0cc86"
     },
     {
       "range": [
@@ -228,29 +154,12 @@
         100
       ],
       "text": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-      "_id": "3fe918d16f36f947",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3fcb4ee313ec1534.3fe918d16f36f947"
+      "_key": "!tables.results!3fcb4ee313ec1534.a8e034a2aa702aec",
+      "_id": "a8e034a2aa702aec"
     }
   ],
-  "folder": "06986fcc791b64bc",
-  "sort": 105,
+  "folder": "88ca8e80b03ed3dd",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!3fcb4ee313ec1534"
 }

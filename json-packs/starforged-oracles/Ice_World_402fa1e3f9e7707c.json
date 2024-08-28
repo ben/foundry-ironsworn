@@ -1,0 +1,16 @@
+{
+  "name": "Ice World",
+  "description": "A rugged, frozen world—locked in an unending winter.",
+  "type": "RollTable",
+  "_id": "402fa1e3f9e7707c",
+  "sort": 311,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ice",
+      "dsid": "oracle_collection:starforged/planet/ice"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!402fa1e3f9e7707c"
+}

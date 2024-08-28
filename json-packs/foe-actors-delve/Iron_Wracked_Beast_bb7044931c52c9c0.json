@@ -1,0 +1,53 @@
+{
+  "name": "Iron-Wracked Beast",
+  "img": "icons/environment/wilderness/statue-hound-horned.webp",
+  "type": "foe",
+  "_id": "bb7044931c52c9c0",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Iron-Wracked Beast",
+    "texture": {
+      "src": "icons/environment/wilderness/statue-hound-horned.webp"
+    }
+  },
+  "folder": "e31350d7e40b7d78",
+  "items": [
+    {
+      "_id": "1205959ad3318ea7",
+      "type": "progress",
+      "name": "Iron-Wracked Beast",
+      "img": "icons/environment/wilderness/statue-hound-horned.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Flesh corrupted by iron</p>\n<p class=\"nogrow\">Pained howl</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Feed the insatiable hunger</p>\n<p class=\"nogrow\">Destroy those who wield iron</p>\n<p class=\"nogrow\">Find a release from pain</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Attack with brutal rage</p>\n<p class=\"nogrow\">Bite and devour</p>\n</div>\n</div>\n\n<p>We don’t know the origin of the Iron Blight, nor do we know its cure. It inflicts creatures of the wilds and transforms their flesh slowly to iron. These pitiful but powerful beasts are scarred by patches of metal flesh within ragged, weeping wounds. The iron is like a parasite, devouring the host as it torments them with unstoppable pain and insatiable hunger. Their howls echo with animalistic agony and the clangor of hammer against anvil.</p>\n<p>In time, the Blight takes too much, and the beast dies while it is still more flesh than iron. We pray a creature never survives beyond that stage. What would it become?</p>\n\n<blockquote>Quest Starter: <p>Your animal companion is stricken with the Iron Blight. The disease is in its early stages, but time is your enemy. Locals say the origin of the blight lies within a @Compendium[foundry-ironsworn.ironsworndelvethemes.cf94fb4e6e77ed17]{Corrupted} @Compendium[foundry-ironsworn.ironsworndelvedomains.1983ca8d062e44e1]{Tanglewood}. What will you do to stop the relentless progression of the iron corruption?</p></blockquote>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "e31350d7e40b7d78",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/beasts/iron_wracked_beast"
+        }
+      },
+      "_key": "!actors.items!bb7044931c52c9c0.1205959ad3318ea7"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/beasts/iron_wracked_beast"
+    }
+  },
+  "_key": "!actors!bb7044931c52c9c0"
+}

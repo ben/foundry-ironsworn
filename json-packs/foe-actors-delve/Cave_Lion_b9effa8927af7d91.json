@@ -1,0 +1,53 @@
+{
+  "name": "Cave Lion",
+  "img": "icons/creatures/abilities/lion-roar-yellow.webp",
+  "type": "foe",
+  "_id": "b9effa8927af7d91",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Cave Lion",
+    "texture": {
+      "src": "icons/creatures/abilities/lion-roar-yellow.webp"
+    }
+  },
+  "folder": "75f040afa6c45636",
+  "items": [
+    {
+      "_id": "425db0909f8031b4",
+      "type": "progress",
+      "name": "Cave Lion",
+      "img": "icons/creatures/abilities/lion-roar-yellow.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Feline grace</p>\n<p class=\"nogrow\">Tawny, striped coat</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Hunt</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Stalk prey</p>\n<p class=\"nogrow\">Leap and bite</p>\n<p class=\"nogrow\">Intimidating roar</p>\n</div>\n</div>\n\n<p>Cave lions are sleek, powerful creatures who dwell primarily in the Hinterlands and Tempest Hills. They lair in caverns and other hidden places, emerging to hunt prey such as deer, boar, and rodents. They are typically solitary creatures, but have been seen working together to bring down larger quarry. Even a @Compendium[foundry-ironsworn.ironswornfoes.bb57c69719297453]{mammoth} is no match for a determined pack of cave lions.</p>\n\n<blockquote>Quest Starter: <p>A large cave lion kills livestock in outlying Ironlander steadings, and attacked a farmer. It hunts well beyond its usual territory, and is said to lair in a @Compendium[foundry-ironsworn.ironsworndelvethemes.3a633d3ce6079711]{Wild} @Compendium[foundry-ironsworn.ironsworndelvedomains.e74b04d7cb172f8d]{Cavern}. What has driven this beast from its hunting grounds?</p></blockquote>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "75f040afa6c45636",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/animals/cave_lion"
+        }
+      },
+      "_key": "!actors.items!b9effa8927af7d91.425db0909f8031b4"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/animals/cave_lion"
+    }
+  },
+  "_key": "!actors!b9effa8927af7d91"
+}

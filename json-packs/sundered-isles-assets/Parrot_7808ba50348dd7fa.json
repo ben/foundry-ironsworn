@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "7808ba50348dd7fa",
+  "folder": "841fa5bb80d55fd9",
+  "name": "Parrot",
+  "system": {
+    "requirement": "",
+    "category": "Companion",
+    "color": "#3d8b8a",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your parrot companion offers random wisdom. When you seek inspiration, context, or direction, use your oracle dice to choose a table (1–25: @Compendium[foundry-ironsworn.sunderedislesoracles.109883b4bcba1339]{Action}, 26–50: @Compendium[foundry-ironsworn.sunderedislesoracles.ce3644703a52b2bd]{Theme}, 51–75: @Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor}, 76–100: @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}). Then, roll to learn what your parrot says. If you connect this prompt to your current situation for new insight, take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per fight, when you score a miss, you may envision how the parrot appears on the scene to cause a timely distraction. If you do, make it a strong hit instead.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>The parrot squawks a warning when danger is near. When you @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} to detect a threat, or if you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} against an ambush, add +its health.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "max": 2,
+      "value": 2,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Out of Action",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/companion/parrot",
+      "dsid": "asset:sundered_isles/companion/parrot"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!7808ba50348dd7fa"
+}

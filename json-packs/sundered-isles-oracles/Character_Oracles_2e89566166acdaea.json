@@ -1,0 +1,15 @@
+{
+  "name": "Character Oracles",
+  "description": "When encountering a character, focus on what you learn or perceive as a first impression using tables such as @Compendium[foundry-ironsworn.sunderedislesoracles.fde52f9b5a457652]{Character First Look} and @Compendium[foundry-ironsworn.sunderedislesoracles.5cff709d01b2cdb5]{Character Disposition}. Then envision or generate additional details over time.",
+  "type": "RollTable",
+  "_id": "2e89566166acdaea",
+  "sort": 186,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/character"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!2e89566166acdaea"
+}

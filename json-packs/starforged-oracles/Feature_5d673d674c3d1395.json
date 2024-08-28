@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Infested/Feature",
-      "category": "Starforged/Oracles/Location_Themes/Infested"
+      "category": "Starforged/Oracles/Location_Themes/Infested",
+      "dsid": "oracle_rollable:starforged/location_theme/infested/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Use this table to reveal a new aspect of the location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Corpse of an unfortunate victim",
-      "_id": "1f9444e0e1fb688c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.1f9444e0e1fb688c"
+      "_key": "!tables.results!5d673d674c3d1395.68ae8658e6e908b3",
+      "_id": "68ae8658e6e908b3"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Eggs, cocoons, or nest",
-      "_id": "480964f448797c79",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.480964f448797c79"
+      "_key": "!tables.results!5d673d674c3d1395.35bb1e8be1a45526",
+      "_id": "35bb1e8be1a45526"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Environment corrupted by the infestation",
-      "_id": "66115a21dd40962f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.66115a21dd40962f"
+      "_key": "!tables.results!5d673d674c3d1395.c5651036cdd2dc44",
+      "_id": "c5651036cdd2dc44"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Evidence of a lurking creature",
-      "_id": "b58b9595742e4795",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.b58b9595742e4795"
+      "_key": "!tables.results!5d673d674c3d1395.cc66da5b923f26cb",
+      "_id": "cc66da5b923f26cb"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Evidence of an ill-fated victim",
-      "_id": "e05ec5535e503e5d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.e05ec5535e503e5d"
+      "_key": "!tables.results!5d673d674c3d1395.ccc7c7de0e3701ea",
+      "_id": "ccc7c7de0e3701ea"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Hoarded food",
-      "_id": "0a1cfa019bdf3f1c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.0a1cfa019bdf3f1c"
+      "_key": "!tables.results!5d673d674c3d1395.eaec2963602a250e",
+      "_id": "eaec2963602a250e"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Indistinct movement or sounds",
-      "_id": "df2630e850ae00eb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.df2630e850ae00eb"
+      "_key": "!tables.results!5d673d674c3d1395.357796fbe48a3a07",
+      "_id": "357796fbe48a3a07"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Lair of lesser creatures",
-      "_id": "3085692370d12d83",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.3085692370d12d83"
+      "_key": "!tables.results!5d673d674c3d1395.600b37a5b957ac18",
+      "_id": "600b37a5b957ac18"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Ravaged supplies or equipment",
-      "_id": "6627efb5a9d5cd94",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.6627efb5a9d5cd94"
+      "_key": "!tables.results!5d673d674c3d1395.22b8a05eda28da2e",
+      "_id": "22b8a05eda28da2e"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Remains of a creature or remnants of a previous form",
-      "_id": "9beb10697d7924ad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.9beb10697d7924ad"
+      "_key": "!tables.results!5d673d674c3d1395.7eb56a25674925bb",
+      "_id": "7eb56a25674925bb"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         88
       ],
       "text": "Territorial markings",
-      "_id": "11b3c41e869ce5f1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.11b3c41e869ce5f1"
+      "_key": "!tables.results!5d673d674c3d1395.5487c35ae72e4c33",
+      "_id": "5487c35ae72e4c33"
     },
     {
       "range": [
@@ -172,43 +118,21 @@
         96
       ],
       "text": "Trail or evidence of a creature's passage",
-      "_id": "a9a7427f9744524e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.a9a7427f9744524e"
+      "_key": "!tables.results!5d673d674c3d1395.0a7c3c65e672100e",
+      "_id": "0a7c3c65e672100e"
     },
     {
       "range": [
         97,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "a48eb7c68baa989f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5d673d674c3d1395.a48eb7c68baa989f"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!5d673d674c3d1395.7653e58b39205640",
+      "_id": "7653e58b39205640"
     }
   ],
   "folder": "4289e90998719500",
   "sort": 375,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!5d673d674c3d1395"
 }

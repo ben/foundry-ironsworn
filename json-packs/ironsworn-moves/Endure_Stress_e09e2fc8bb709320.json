@@ -3,66 +3,56 @@
   "type": "sfmove",
   "name": "Endure Stress",
   "img": "icons/dice/d10black.svg",
+  "folder": "a6b19a943ff830d6",
   "system": {
     "dfid": "Ironsworn/Moves/Suffer/Endure_Stress",
     "Category": "Ironsworn/Moves/Suffer",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you face mental shock or despair**, suffer -spirit equal to your foe’s rank or as appropriate to the situation. If your spirit is 0, suffer -momentum equal to any remaining -spirit. Then, roll +spirit or +heart, whichever is higher.\n\nOn a **strong hit**, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum\n\nOn a **weak hit**, you press on.\n\nOn a **miss**, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\nRoll  | Result\n------|------------------------------------------------------------------------------------\n1-10  | You are overwhelmed.  @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation}.\n11-25 | You give up. @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow} (if possible, one relevant to your current crisis).\n26-50 | You give in to a fear or compulsion, and act against your better instincts.\n51-00 | You persevere.",
+    "Text": "When __you face mental shock or despair__, suffer -spirit equal to your foe’s rank or as appropriate to the situation. If your spirit is 0, suffer -momentum equal to any remaining -spirit. Then, roll +spirit or +heart, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.",
     "Trigger": {
       "Text": "When you face mental shock or despair...",
       "Options": [
         {
-          "Roll type": "Action roll",
+          "Text": "",
+          "Roll type": "Progress roll",
           "Method": "Highest",
           "Using": [
             "Heart",
             "Spirit"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You press on.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you press on."
       },
       "Miss": {
-        "Text": "Also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\nRoll  | Result\n------|------------------------------------------------------------------------------------\n1-10  | You are overwhelmed.  @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation}.\n11-25 | You give up. @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow} (if possible, one relevant to your current crisis).\n26-50 | You give in to a fear or compulsion, and act against your better instincts.\n51-00 | You persevere.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [
       "Ironsworn/Oracles/Moves/Endure_Stress"
     ],
+    "dsOracleIds": [
+      "move.oracle_rollable:classic/suffer/endure_stress.endure_stress"
+    ],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 95
     },
     "Suggestions": {},
@@ -71,20 +61,11 @@
     }
   },
   "sort": 95,
-  "folder": "a6b19a943ff830d6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Suffer/Endure_Stress",
+      "dsid": "move:classic/suffer/endure_stress"
+    }
   },
   "_key": "!items!e09e2fc8bb709320"
 }

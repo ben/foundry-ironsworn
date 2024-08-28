@@ -1,0 +1,65 @@
+{
+  "_id": "2d8d8ee793553fea",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/magnitude",
+      "dsid": "oracle_rollable:sundered_isles/misc/magnitude/value"
+    }
+  },
+  "name": "Value",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Worthless",
+      "_key": "!tables.results!2d8d8ee793553fea.f90b2e85ca952b69",
+      "_id": "f90b2e85ca952b69"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Cheap",
+      "_key": "!tables.results!2d8d8ee793553fea.6f97be2ae63ec1c0",
+      "_id": "6f97be2ae63ec1c0"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Common",
+      "_key": "!tables.results!2d8d8ee793553fea.3bf0eab29b0f89f0",
+      "_id": "3bf0eab29b0f89f0"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Valuable",
+      "_key": "!tables.results!2d8d8ee793553fea.682a22a2704036d6",
+      "_id": "682a22a2704036d6"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Priceless",
+      "_key": "!tables.results!2d8d8ee793553fea.035ea4a007953b92",
+      "_id": "035ea4a007953b92"
+    }
+  ],
+  "folder": "a547d2b78f39268a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!2d8d8ee793553fea"
+}

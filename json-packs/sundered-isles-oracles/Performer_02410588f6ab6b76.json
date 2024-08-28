@@ -1,0 +1,65 @@
+{
+  "_id": "02410588f6ab6b76",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/performer"
+    }
+  },
+  "name": "Performer",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Acrobat",
+      "_key": "!tables.results!02410588f6ab6b76.c624d13e90358d67",
+      "_id": "c624d13e90358d67"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Actor",
+      "_key": "!tables.results!02410588f6ab6b76.43d3206a69d80792",
+      "_id": "43d3206a69d80792"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Dancer",
+      "_key": "!tables.results!02410588f6ab6b76.f2186ec0aee6db7c",
+      "_id": "f2186ec0aee6db7c"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Musician",
+      "_key": "!tables.results!02410588f6ab6b76.4ce9502e227ef154",
+      "_id": "4ce9502e227ef154"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Singer",
+      "_key": "!tables.results!02410588f6ab6b76.378d2a2c0eb06d88",
+      "_id": "378d2a2c0eb06d88"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 189,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!02410588f6ab6b76"
+}

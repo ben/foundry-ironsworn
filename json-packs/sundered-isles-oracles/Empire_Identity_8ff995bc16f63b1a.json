@@ -1,0 +1,308 @@
+{
+  "_id": "8ff995bc16f63b1a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/identity_empire"
+    }
+  },
+  "name": "Empire Identity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Alliance",
+      "_key": "!tables.results!8ff995bc16f63b1a.892257bb11eb3094",
+      "_id": "892257bb11eb3094"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Ascendancy",
+      "_key": "!tables.results!8ff995bc16f63b1a.228d8cb1ab439361",
+      "_id": "228d8cb1ab439361"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Coalition",
+      "_key": "!tables.results!8ff995bc16f63b1a.b715ec913d3ad341",
+      "_id": "b715ec913d3ad341"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Collective",
+      "_key": "!tables.results!8ff995bc16f63b1a.93da69ffe786beea",
+      "_id": "93da69ffe786beea"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Commonwealth",
+      "_key": "!tables.results!8ff995bc16f63b1a.645007aae1589ea8",
+      "_id": "645007aae1589ea8"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Company",
+      "_key": "!tables.results!8ff995bc16f63b1a.b26a6d1b723d2d8a",
+      "_id": "b26a6d1b723d2d8a"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Concord",
+      "_key": "!tables.results!8ff995bc16f63b1a.3a238c36369eb165",
+      "_id": "3a238c36369eb165"
+    },
+    {
+      "range": [
+        19,
+        22
+      ],
+      "text": "Confederation",
+      "_key": "!tables.results!8ff995bc16f63b1a.6150ffe8a3a749cc",
+      "_id": "6150ffe8a3a749cc"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Consortium",
+      "_key": "!tables.results!8ff995bc16f63b1a.1aeb9665205555f7",
+      "_id": "1aeb9665205555f7"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Crown",
+      "_key": "!tables.results!8ff995bc16f63b1a.0561909c05c0436d",
+      "_id": "0561909c05c0436d"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Directorate",
+      "_key": "!tables.results!8ff995bc16f63b1a.8d70005eb0ff8580",
+      "_id": "8d70005eb0ff8580"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Dominion",
+      "_key": "!tables.results!8ff995bc16f63b1a.e6403ffc89a8eb78",
+      "_id": "e6403ffc89a8eb78"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Duchy",
+      "_key": "!tables.results!8ff995bc16f63b1a.7f1c4d55519b6ed4",
+      "_id": "7f1c4d55519b6ed4"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Dynasty",
+      "_key": "!tables.results!8ff995bc16f63b1a.b25356c1a56e631d",
+      "_id": "b25356c1a56e631d"
+    },
+    {
+      "range": [
+        39,
+        44
+      ],
+      "text": "Empire",
+      "_key": "!tables.results!8ff995bc16f63b1a.c3907632c225bd93",
+      "_id": "c3907632c225bd93"
+    },
+    {
+      "range": [
+        45,
+        50
+      ],
+      "text": "Federation",
+      "_key": "!tables.results!8ff995bc16f63b1a.5599dee1a74bb65a",
+      "_id": "5599dee1a74bb65a"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Hand",
+      "_key": "!tables.results!8ff995bc16f63b1a.0caea3c3eaf67a42",
+      "_id": "0caea3c3eaf67a42"
+    },
+    {
+      "range": [
+        53,
+        58
+      ],
+      "text": "Imperium",
+      "_key": "!tables.results!8ff995bc16f63b1a.e8a7cf53ec31fff4",
+      "_id": "e8a7cf53ec31fff4"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Kingdom",
+      "_key": "!tables.results!8ff995bc16f63b1a.8788e05451308972",
+      "_id": "8788e05451308972"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "League",
+      "_key": "!tables.results!8ff995bc16f63b1a.93f261ebc4154261",
+      "_id": "93f261ebc4154261"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Lordship",
+      "_key": "!tables.results!8ff995bc16f63b1a.9643463a7a3a41f1",
+      "_id": "9643463a7a3a41f1"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Principality",
+      "_key": "!tables.results!8ff995bc16f63b1a.8ab3becdf0bdfa39",
+      "_id": "8ab3becdf0bdfa39"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Realm",
+      "_key": "!tables.results!8ff995bc16f63b1a.d8f52f6edec71c48",
+      "_id": "d8f52f6edec71c48"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Regency",
+      "_key": "!tables.results!8ff995bc16f63b1a.c2e6ff141302de45",
+      "_id": "c2e6ff141302de45"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Republic",
+      "_key": "!tables.results!8ff995bc16f63b1a.5a37d7bf559af2b8",
+      "_id": "5a37d7bf559af2b8"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Sovereignty",
+      "_key": "!tables.results!8ff995bc16f63b1a.6ac620730298ff65",
+      "_id": "6ac620730298ff65"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "States",
+      "_key": "!tables.results!8ff995bc16f63b1a.f0986ecedc1f499b",
+      "_id": "f0986ecedc1f499b"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Supremacy",
+      "_key": "!tables.results!8ff995bc16f63b1a.521d5c5746e25528",
+      "_id": "521d5c5746e25528"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Syndicate",
+      "_key": "!tables.results!8ff995bc16f63b1a.b16019938ad4ba79",
+      "_id": "b16019938ad4ba79"
+    },
+    {
+      "range": [
+        87,
+        92
+      ],
+      "text": "Trade Company",
+      "_key": "!tables.results!8ff995bc16f63b1a.432fceec974d72f4",
+      "_id": "432fceec974d72f4"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Triumvirate",
+      "_key": "!tables.results!8ff995bc16f63b1a.86c7e757ca4ae749",
+      "_id": "86c7e757ca4ae749"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Union",
+      "_key": "!tables.results!8ff995bc16f63b1a.85290ab898d43dab",
+      "_id": "85290ab898d43dab"
+    }
+  ],
+  "folder": "4c033d15ef6dc29f",
+  "sort": 183,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8ff995bc16f63b1a"
+}

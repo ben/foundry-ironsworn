@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Settlement/Name/Old_World_Language",
-      "category": "Ironsworn/Oracles/Settlement"
+      "category": "oracle_collection:classic/settlement/name",
+      "dsid": "oracle_rollable:classic/settlement/name/old_world_language"
     }
   },
   "name": "Old World Language",
   "description": "<p><strong>A word in an Old World language.</strong> What culture is represented by this word? What does it translate to?</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Abon",
-      "_id": "9a593a08cef5b535",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.9a593a08cef5b535"
+      "_key": "!tables.results!bee2a08a74dbd7f5.cd00df1c70457bb3",
+      "_id": "cd00df1c70457bb3"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Daveza",
-      "_id": "2fa56cc2dbf0a19f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.2fa56cc2dbf0a19f"
+      "_key": "!tables.results!bee2a08a74dbd7f5.21f84fcdb3e6e169",
+      "_id": "21f84fcdb3e6e169"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Damula",
-      "_id": "5530f4a77959019b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.5530f4a77959019b"
+      "_key": "!tables.results!bee2a08a74dbd7f5.d8765d27a760ab60",
+      "_id": "d8765d27a760ab60"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Essus",
-      "_id": "86f80c1784ba9e71",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.86f80c1784ba9e71"
+      "_key": "!tables.results!bee2a08a74dbd7f5.bf3b1fa495622888",
+      "_id": "bf3b1fa495622888"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Sina",
-      "_id": "5dc3186fafd89d78",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.5dc3186fafd89d78"
+      "_key": "!tables.results!bee2a08a74dbd7f5.878605d14bf37c50",
+      "_id": "878605d14bf37c50"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Kazeera",
-      "_id": "0d02ba6d5048bbed",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.0d02ba6d5048bbed"
+      "_key": "!tables.results!bee2a08a74dbd7f5.f046c984b77ac897",
+      "_id": "f046c984b77ac897"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Khazu",
-      "_id": "3b3d75b75fa64c06",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.3b3d75b75fa64c06"
+      "_key": "!tables.results!bee2a08a74dbd7f5.d5b0f19009826886",
+      "_id": "d5b0f19009826886"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Sova",
-      "_id": "2396c0e5d9d4bb13",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.2396c0e5d9d4bb13"
+      "_key": "!tables.results!bee2a08a74dbd7f5.fab0a67680e3726c",
+      "_id": "fab0a67680e3726c"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         90
       ],
       "text": "Nabuma",
-      "_id": "bc77f27c01a8158b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.bc77f27c01a8158b"
+      "_key": "!tables.results!bee2a08a74dbd7f5.29f69cab9a0eb373",
+      "_id": "29f69cab9a0eb373"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "Tiza",
-      "_id": "a8ad47c693a2bcf9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bee2a08a74dbd7f5.a8ad47c693a2bcf9"
+      "_key": "!tables.results!bee2a08a74dbd7f5.bf0d219eb3e472df",
+      "_id": "bf0d219eb3e472df"
     }
   ],
-  "folder": "11b98f1da8f07aa2",
+  "folder": "b62c276059f4423c",
   "sort": 178,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!bee2a08a74dbd7f5"
 }

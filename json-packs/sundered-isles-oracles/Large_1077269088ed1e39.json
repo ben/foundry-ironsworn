@@ -1,0 +1,47 @@
+{
+  "_id": "1077269088ed1e39",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure/value",
+      "dsid": "oracle_rollable:sundered_isles/treasure/value/large"
+    }
+  },
+  "name": "Large",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "Trifle",
+      "_key": "!tables.results!1077269088ed1e39.8c728cbb12fc30bc",
+      "_id": "8c728cbb12fc30bc"
+    },
+    {
+      "range": [
+        31,
+        98
+      ],
+      "text": "Stash",
+      "_key": "!tables.results!1077269088ed1e39.3cbdbe9bd53f3a0d",
+      "_id": "3cbdbe9bd53f3a0d"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Trove",
+      "_key": "!tables.results!1077269088ed1e39.04b16b4678d9c03a",
+      "_id": "04b16b4678d9c03a"
+    }
+  ],
+  "folder": "0d95146ca62a1214",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1077269088ed1e39"
+}

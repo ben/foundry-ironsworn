@@ -1,0 +1,27 @@
+{
+  "_id": "9b63a301766b0734",
+  "type": "progress",
+  "name": "Atanya",
+  "img": "icons/magic/air/wind-weather-sailing-ship.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Stout forms</p>\n<p class=\"nogrow\">Iridescent skin and dark hair</p>\n<p class=\"nogrow\">Clothed in hides and furs</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Hunt and fish</p>\n<p class=\"nogrow\">Respect the sea</p>\n<p class=\"nogrow\">Seek out new lands</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Strike with spears</p>\n<p class=\"nogrow\">Fight as one, and embody the power of the mighty sea</p>\n</div>\n</div>\n\n<p>These people of the sea dwell among the Barrier Islands, along the Ragged Coast, and amid the frozen landscapes of the far north. Some live in isolated villages clinging to rugged shores, or as nomads among the icereaches. Others spend their lives aboard finely-crafted vessels called drift-homes. These ships find safe anchorage during the cruelest depths of winter, and return to the sea in calmer months.</p>\n<p>The atanya are a diverse people, but most are well-suited to a life amid the northern climes. They are strong, hardy, and long-lived. Their height and stout forms give them an imposing physical presence, but they are generally good-natured. They have an unnatural sense of the coming weather and an innate understanding of the sea. Some say they once lived in the depths of the ocean, but were cursed by a forsaken god and banished to the world above.</p>\n\n<blockquote>Quest Starter: <p>A generation ago, one of your kin was rescued at sea by an atanya ship. By their tradition, this incurred a life debt—which went unpaid by your long-dead relative and now passes to you. They ask you to delve into the flooded bowels of a  @Compendium[foundry-ironsworn.ironsworndelvethemes.d267fd935459da97]{Ravaged} @Compendium[foundry-ironsworn.ironsworndelvedomains.40439d5f28e56495]{Sea Cave} to recover a precious item. What is it they seek?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "8f12286764fe5a63",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/firstborn/atanya"
+    }
+  },
+  "_key": "!items!9b63a301766b0734"
+}

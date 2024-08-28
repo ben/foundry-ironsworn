@@ -1,0 +1,15 @@
+{
+  "name": "Sample NPCs",
+  "description": "",
+  "type": "Item",
+  "_id": "9a33d248aee84d89",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc_collection:starforged/sample_npcs"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!9a33d248aee84d89"
+}

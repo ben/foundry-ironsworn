@@ -1,0 +1,38 @@
+{
+  "_id": "f9b705898afa7d50",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/weather/conditions",
+      "dsid": "oracle_rollable:sundered_isles/weather/conditions/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        60
+      ],
+      "text": "Fair Weather",
+      "_key": "!tables.results!f9b705898afa7d50.d10668c0d6cedd6b",
+      "_id": "d10668c0d6cedd6b"
+    },
+    {
+      "range": [
+        61,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.cec9db2f0aaf8cfe]{Foul Weather}",
+      "_key": "!tables.results!f9b705898afa7d50.9f6fc5c0780bfe48",
+      "_id": "9f6fc5c0780bfe48"
+    }
+  ],
+  "folder": "3dbefba73b5b7e5e",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f9b705898afa7d50"
+}

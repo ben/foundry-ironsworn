@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "Reach Your Destination",
   "img": "icons/dice/d10black.svg",
+  "folder": "30f9b4039e23c0c9",
   "system": {
     "dfid": "Ironsworn/Moves/Adventure/Reach_Your_Destination",
     "Category": "Ironsworn/Moves/Adventure",
     "Progress Move": true,
     "Variant of": "",
-    "Text": "When **your journey comes to an end**, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, the situation at your destination favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.\n\nOn a **weak hit**, you arrive but face an unforeseen hazard or complication. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a **miss**, you have gone hopelessly astray, your objective is lost to you, or you were misled about your destination. If your journey continues, clear all but one filled progress, and raise the journey’s rank by one (if not already epic).",
+    "Text": "When __your journey comes to an end__, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a __strong hit__, the situation at your destination favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.\n\nOn a __weak hit__, you arrive but face an unforeseen hazard or complication. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a __miss__, you have gone hopelessly astray, your objective is lost to you, or you were misled about your destination. If your journey continues, clear all but one filled progress, and raise the journey’s rank by one (if not already epic).",
     "Trigger": {
       "Text": "When your journey comes to an end...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Progress roll",
           "Method": "Any",
           "Using": [
-            "Journey"
-          ],
-          "Text": ""
+            "Progress Track"
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, the situation at your destination favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you arrive but face an unforeseen hazard or complication. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure)."
       },
       "Miss": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you have gone hopelessly astray, your objective is lost to you, or you were misled about your destination. If your journey continues, clear all but one filled progress, and raise the journey’s rank by one (if not already epic).",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 68
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 68,
-  "folder": "30f9b4039e23c0c9",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Adventure/Reach_Your_Destination",
+      "dsid": "move:classic/adventure/reach_your_destination"
+    }
   },
   "_key": "!items!727eb47e8f031e81"
 }

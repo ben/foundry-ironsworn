@@ -1,0 +1,15 @@
+{
+  "name": "Faith",
+  "description": "",
+  "type": "RollTable",
+  "_id": "22ec474f52af959e",
+  "sort": 184,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/name/themes/faith"
+    }
+  },
+  "folder": "1aa3b728667629f3",
+  "sorting": "a",
+  "_key": "!folders!22ec474f52af959e"
+}

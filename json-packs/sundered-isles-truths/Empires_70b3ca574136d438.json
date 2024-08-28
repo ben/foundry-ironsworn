@@ -1,0 +1,104 @@
+{
+  "name": "Empires",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/empires",
+      "dsid": "truth:sundered_isles/empires"
+    }
+  },
+  "_id": "70b3ca574136d438",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "The Sundered Isles are free from imperial control—for now.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/empires.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "The Sundered Isles are free from imperial control—for now.",
+        "Description": "The empires have only a minor presence; their outposts are isolated and pose little threat. But there are resources and riches to be exploited, and freedom is a fragile thing. Even now, imperial agents are said to be among us, working in the shadows, planting the seeds of conquest.",
+        "Summary": "The Sundered Isles are free from imperial control—for now.",
+        "Quest": "A conflict between two nations is raging. Some suggest the war was sparked by imperial agents, working behind the scenes to destabilize the region and open a path for colonization. Can you convince the leaders of these powers to abandon their fighting and focus on the true threat?",
+        "Roll template": {
+          "Description": "The empires have only a minor presence; their outposts are isolated and pose little threat. But there are resources and riches to be exploited, and freedom is a fragile thing. Even now, imperial agents are said to be among us, working in the shadows, planting the seeds of conquest."
+        }
+      },
+      "_id": "60e3786f8baeeb85",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!70b3ca574136d438.60e3786f8baeeb85"
+    },
+    {
+      "type": "truth",
+      "name": "Imperial forces vie for dominion over the Sundered Isles.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/empires.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Imperial forces vie for dominion over the Sundered Isles.",
+        "Description": "Imperial colonization and exploitation is a creeping tide that threatens to engulf the isles. Colonial governors oversee ever-expanding settlements, while powerful trade companies control key trade routes and resources. Imperial agents conduct missions of subterfuge and assassination. Treaties between the empires are forged and broken on a whim, and mariners can never be certain of what flag will fly over a port from one day to the next.",
+        "Summary": "Imperial forces vie for dominion over the Sundered Isles.",
+        "Quest": "Envoys and aristocrats gather for a gala at a governor’s manor house, where a priceless object will be on display as a demonstration of the governor’s power and wealth. If a clever thief were to abscond with that item, it would undermine the governor and foment suspicion among the attendees. What is this object?",
+        "Roll template": {
+          "Description": "Imperial colonization and exploitation is a creeping tide that threatens to engulf the isles. Colonial governors oversee ever-expanding settlements, while powerful trade companies control key trade routes and resources. Imperial agents conduct missions of subterfuge and assassination. Treaties between the empires are forged and broken on a whim, and mariners can never be certain of what flag will fly over a port from one day to the next."
+        }
+      },
+      "_id": "2851bb16a5a335b8",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!70b3ca574136d438.2851bb16a5a335b8"
+    },
+    {
+      "type": "truth",
+      "name": "In the wake of a tumultuous war, a powerful empire prevailed. This supreme power holds the fate of the Sundered Isles in an iron grasp.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/empires.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "In the wake of a tumultuous war, a powerful empire prevailed. This supreme power holds the fate of the Sundered Isles in an iron grasp.",
+        "Description": "A time before the empire is a fading memory. Today, their armies and fleets control large swaths of territory in the isles, and their expeditionary forces use coercion and warfare to expand their dominion ever further. Other nations are little more than vassals, their puppet governments loyal to the empire. But there are whispers that the empire has grown complacent. Is this the day the once-freeborn people of the isles relight the fires of revolution and reclaim their legacy?",
+        "Summary": "In the wake of a tumultuous war, a powerful empire prevailed. This supreme power holds the fate of the Sundered Isles in an iron grasp.",
+        "Quest": "A valuable prisoner is held in an imperial fortress. Who is this person, and why are they the best hope for rebellion?",
+        "Roll template": {
+          "Description": "A time before the empire is a fading memory. Today, their armies and fleets control large swaths of territory in the isles, and their expeditionary forces use coercion and warfare to expand their dominion ever further. Other nations are little more than vassals, their puppet governments loyal to the empire. But there are whispers that the empire has grown complacent. Is this the day the once-freeborn people of the isles relight the fires of revolution and reclaim their legacy?"
+        }
+      },
+      "_id": "43ebd3fe0a28aa72",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!70b3ca574136d438.43ebd3fe0a28aa72"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you resolve disputes and secure anti-imperial alliances, you might be a @Compendium[foundry-ironsworn.starforgedassets.bcc219b0ebfb5c68]{Diplomat}. If you battle empires with blades and daring, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.68d3a763f99b8b77]{Swashbuckler}. If you work in the shadows, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.a3fbec673ba7bd63]{Spy}. If you navigate court intrigues, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.43b05d08b7b0d77a]{Socialite}. If you are on the run from imperial forces, you might be a @Compendium[foundry-ironsworn.starforgedassets.93b030423d23059d]{Fugitive}.",
+        "format": 2,
+        "content": "<p>If you resolve disputes and secure anti-imperial alliances, you might be a @Compendium[foundry-ironsworn.starforgedassets.bcc219b0ebfb5c68]{Diplomat}. If you battle empires with blades and daring, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.68d3a763f99b8b77]{Swashbuckler}. If you work in the shadows, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.a3fbec673ba7bd63]{Spy}. If you navigate court intrigues, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.43b05d08b7b0d77a]{Socialite}. If you are on the run from imperial forces, you might be a @Compendium[foundry-ironsworn.starforgedassets.93b030423d23059d]{Fugitive}.</p>"
+      },
+      "_id": "f0fe75370fc27b0f",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!70b3ca574136d438.f0fe75370fc27b0f"
+    }
+  ],
+  "folder": null,
+  "sort": 82,
+  "_key": "!journal!70b3ca574136d438"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Factions/Affiliation",
-      "category": "Starforged/Oracles/Factions"
+      "category": "oracle_collection:starforged/faction/name",
+      "dsid": "oracle_rollable:starforged/faction/name/affiliation"
     }
   },
   "name": "Affiliation",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "Accord",
-      "_id": "f25141636ee8ade2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.f25141636ee8ade2"
+      "_key": "!tables.results!b6808ae6711d2c7b.f20957b0ce99d2ba",
+      "_id": "f20957b0ce99d2ba"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         8
       ],
       "text": "Alliance",
-      "_id": "aec86db71fc46b0a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.aec86db71fc46b0a"
+      "_key": "!tables.results!b6808ae6711d2c7b.dde8fc1a56dc15ff",
+      "_id": "dde8fc1a56dc15ff"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         12
       ],
       "text": "Ascendancy",
-      "_id": "971b55586b4c2c32",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.971b55586b4c2c32"
+      "_key": "!tables.results!b6808ae6711d2c7b.11d55e0116578709",
+      "_id": "11d55e0116578709"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         16
       ],
       "text": "Circle",
-      "_id": "359b89609748cd28",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.359b89609748cd28"
+      "_key": "!tables.results!b6808ae6711d2c7b.a8dc299d5cfa8847",
+      "_id": "a8dc299d5cfa8847"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         20
       ],
       "text": "Coalition",
-      "_id": "84de35bf78fa56e0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.84de35bf78fa56e0"
+      "_key": "!tables.results!b6808ae6711d2c7b.e06ef7e34ed9c48e",
+      "_id": "e06ef7e34ed9c48e"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         24
       ],
       "text": "Collective",
-      "_id": "2755c597f22d1ed8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.2755c597f22d1ed8"
+      "_key": "!tables.results!b6808ae6711d2c7b.e9d45042226d33fa",
+      "_id": "e9d45042226d33fa"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         28
       ],
       "text": "Commonwealth",
-      "_id": "31c48b24bf977541",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.31c48b24bf977541"
+      "_key": "!tables.results!b6808ae6711d2c7b.202708ff0025f97c",
+      "_id": "202708ff0025f97c"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         32
       ],
       "text": "Confederation",
-      "_id": "170375ec3da4fe50",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.170375ec3da4fe50"
+      "_key": "!tables.results!b6808ae6711d2c7b.791f3becb9093a6a",
+      "_id": "791f3becb9093a6a"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         36
       ],
       "text": "Consortium",
-      "_id": "47c41836c61abc58",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.47c41836c61abc58"
+      "_key": "!tables.results!b6808ae6711d2c7b.03dbbd76f7873c8b",
+      "_id": "03dbbd76f7873c8b"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         40
       ],
       "text": "Council",
-      "_id": "e2133f829ce0f7ac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.e2133f829ce0f7ac"
+      "_key": "!tables.results!b6808ae6711d2c7b.4600ef8c23ff3b1d",
+      "_id": "4600ef8c23ff3b1d"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         44
       ],
       "text": "Court",
-      "_id": "1c1c9e0a19aa2772",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.1c1c9e0a19aa2772"
+      "_key": "!tables.results!b6808ae6711d2c7b.40139bc27fab75de",
+      "_id": "40139bc27fab75de"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         48
       ],
       "text": "Covenant",
-      "_id": "30e0aa6e891d26ac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.30e0aa6e891d26ac"
+      "_key": "!tables.results!b6808ae6711d2c7b.e0229322bff14743",
+      "_id": "e0229322bff14743"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         52
       ],
       "text": "Dominion",
-      "_id": "64ac07ef70be576c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.64ac07ef70be576c"
+      "_key": "!tables.results!b6808ae6711d2c7b.549e00ae035fe961",
+      "_id": "549e00ae035fe961"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         56
       ],
       "text": "Empire",
-      "_id": "76dbcad526c567ad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.76dbcad526c567ad"
+      "_key": "!tables.results!b6808ae6711d2c7b.dd51307fdc35afcc",
+      "_id": "dd51307fdc35afcc"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         60
       ],
       "text": "Federation",
-      "_id": "27e8b7d30f5f3e6a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.27e8b7d30f5f3e6a"
+      "_key": "!tables.results!b6808ae6711d2c7b.24df1d3cd655cd23",
+      "_id": "24df1d3cd655cd23"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         64
       ],
       "text": "Imperium",
-      "_id": "fbc2fa6c106f545e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.fbc2fa6c106f545e"
+      "_key": "!tables.results!b6808ae6711d2c7b.e7a9d4c2ee0025c6",
+      "_id": "e7a9d4c2ee0025c6"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         68
       ],
       "text": "League",
-      "_id": "4abac3792d6483f1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.4abac3792d6483f1"
+      "_key": "!tables.results!b6808ae6711d2c7b.fe833f4824f4a4ac",
+      "_id": "fe833f4824f4a4ac"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         72
       ],
       "text": "Legion",
-      "_id": "541d5ffe1b2371b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.541d5ffe1b2371b3"
+      "_key": "!tables.results!b6808ae6711d2c7b.5fb8ca6731f5840e",
+      "_id": "5fb8ca6731f5840e"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         76
       ],
       "text": "Order",
-      "_id": "8777ca2e76e50ae9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.8777ca2e76e50ae9"
+      "_key": "!tables.results!b6808ae6711d2c7b.53b273c03a89b794",
+      "_id": "53b273c03a89b794"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         80
       ],
       "text": "Pact",
-      "_id": "a2b0995a0d2187ec",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.a2b0995a0d2187ec"
+      "_key": "!tables.results!b6808ae6711d2c7b.ed676c1215bd94a9",
+      "_id": "ed676c1215bd94a9"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         84
       ],
       "text": "Regiment",
-      "_id": "61a3d4588d12ff1f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.61a3d4588d12ff1f"
+      "_key": "!tables.results!b6808ae6711d2c7b.c751cf2c7696bc87",
+      "_id": "c751cf2c7696bc87"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         88
       ],
       "text": "Republic",
-      "_id": "85c91c5ebf4ee115",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.85c91c5ebf4ee115"
+      "_key": "!tables.results!b6808ae6711d2c7b.368516c7dd01096c",
+      "_id": "368516c7dd01096c"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         92
       ],
       "text": "Sphere",
-      "_id": "66b36fb9c86bcf0c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.66b36fb9c86bcf0c"
+      "_key": "!tables.results!b6808ae6711d2c7b.8f3d612a18ae2fc9",
+      "_id": "8f3d612a18ae2fc9"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         96
       ],
       "text": "Syndicate",
-      "_id": "d45ab3f8da570f9f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.d45ab3f8da570f9f"
+      "_key": "!tables.results!b6808ae6711d2c7b.6861360fead561a5",
+      "_id": "6861360fead561a5"
     },
     {
       "range": [
@@ -354,29 +235,12 @@
         100
       ],
       "text": "Union",
-      "_id": "84dcd5fd82c6d62b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b6808ae6711d2c7b.84dcd5fd82c6d62b"
+      "_key": "!tables.results!b6808ae6711d2c7b.c2723369026c4011",
+      "_id": "c2723369026c4011"
     }
   ],
-  "folder": "b6fe3d35ff56995d",
+  "folder": "2ee92ba1fb40f90b",
   "sort": 345,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!b6808ae6711d2c7b"
 }

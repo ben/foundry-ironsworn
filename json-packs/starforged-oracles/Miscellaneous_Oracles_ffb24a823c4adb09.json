@@ -1,0 +1,16 @@
+{
+  "name": "Miscellaneous Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "ffb24a823c4adb09",
+  "sort": 380,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Misc",
+      "dsid": "oracle_collection:starforged/misc"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!ffb24a823c4adb09"
+}

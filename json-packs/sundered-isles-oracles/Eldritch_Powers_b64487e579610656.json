@@ -1,0 +1,236 @@
+{
+  "_id": "b64487e579610656",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/name/moniker_cursed",
+      "dsid": "oracle_rollable:sundered_isles/character/name/moniker_cursed/eldritch_powers"
+    }
+  },
+  "name": "Eldritch Powers",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Acolyte",
+      "_key": "!tables.results!b64487e579610656.99902129e4e7b3fc",
+      "_id": "99902129e4e7b3fc"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Beastblood",
+      "_key": "!tables.results!b64487e579610656.f1ec4272d1adf45d",
+      "_id": "f1ec4272d1adf45d"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Bonebinder",
+      "_key": "!tables.results!b64487e579610656.c8704fec9fae23c6",
+      "_id": "c8704fec9fae23c6"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Darkshroud",
+      "_key": "!tables.results!b64487e579610656.a13cbc7f4150ab56",
+      "_id": "a13cbc7f4150ab56"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Deathtouch",
+      "_key": "!tables.results!b64487e579610656.a32aae130e37f165",
+      "_id": "a32aae130e37f165"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Enchanter",
+      "_key": "!tables.results!b64487e579610656.94e6df3f8d7d2434",
+      "_id": "94e6df3f8d7d2434"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Gravebreaker",
+      "_key": "!tables.results!b64487e579610656.2f6d1444b38366c0",
+      "_id": "2f6d1444b38366c0"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Harvester",
+      "_key": "!tables.results!b64487e579610656.0680cb1b0ebec7ba",
+      "_id": "0680cb1b0ebec7ba"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Herald",
+      "_key": "!tables.results!b64487e579610656.480c12b1b4f7ef64",
+      "_id": "480c12b1b4f7ef64"
+    },
+    {
+      "range": [
+        37,
+        41
+      ],
+      "text": "Hex",
+      "_key": "!tables.results!b64487e579610656.7cac9f6bf6bb60db",
+      "_id": "7cac9f6bf6bb60db"
+    },
+    {
+      "range": [
+        42,
+        45
+      ],
+      "text": "Hullcrusher",
+      "_key": "!tables.results!b64487e579610656.3018cfc873350b92",
+      "_id": "3018cfc873350b92"
+    },
+    {
+      "range": [
+        46,
+        49
+      ],
+      "text": "Moonborn",
+      "_key": "!tables.results!b64487e579610656.f4516d4d5bcc3d77",
+      "_id": "f4516d4d5bcc3d77"
+    },
+    {
+      "range": [
+        50,
+        53
+      ],
+      "text": "Oracle",
+      "_key": "!tables.results!b64487e579610656.73d0747d4b9a25d5",
+      "_id": "73d0747d4b9a25d5"
+    },
+    {
+      "range": [
+        54,
+        57
+      ],
+      "text": "Prophet",
+      "_key": "!tables.results!b64487e579610656.89614c8bededc581",
+      "_id": "89614c8bededc581"
+    },
+    {
+      "range": [
+        58,
+        62
+      ],
+      "text": "Seawitch",
+      "_key": "!tables.results!b64487e579610656.fb9584cea17aa001",
+      "_id": "fb9584cea17aa001"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Shadow",
+      "_key": "!tables.results!b64487e579610656.a6151544dc149a13",
+      "_id": "a6151544dc149a13"
+    },
+    {
+      "range": [
+        67,
+        70
+      ],
+      "text": "Siren",
+      "_key": "!tables.results!b64487e579610656.1f35793bdaee2dfc",
+      "_id": "1f35793bdaee2dfc"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Soothsayer",
+      "_key": "!tables.results!b64487e579610656.290a4de27095ee2e",
+      "_id": "290a4de27095ee2e"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Soulbinder",
+      "_key": "!tables.results!b64487e579610656.5efdfa4e42521a6f",
+      "_id": "5efdfa4e42521a6f"
+    },
+    {
+      "range": [
+        79,
+        83
+      ],
+      "text": "Tempest",
+      "_key": "!tables.results!b64487e579610656.60abeeb2d9e02910",
+      "_id": "60abeeb2d9e02910"
+    },
+    {
+      "range": [
+        84,
+        87
+      ],
+      "text": "Tome",
+      "_key": "!tables.results!b64487e579610656.5b45bc548c5a97cb",
+      "_id": "5b45bc548c5a97cb"
+    },
+    {
+      "range": [
+        88,
+        91
+      ],
+      "text": "Valkyrie",
+      "_key": "!tables.results!b64487e579610656.ee769202cc010f23",
+      "_id": "ee769202cc010f23"
+    },
+    {
+      "range": [
+        92,
+        96
+      ],
+      "text": "Warlock",
+      "_key": "!tables.results!b64487e579610656.7551cd22b48d4bc5",
+      "_id": "7551cd22b48d4bc5"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Windcaller",
+      "_key": "!tables.results!b64487e579610656.eb40d612cc76d2b8",
+      "_id": "eb40d612cc76d2b8"
+    }
+  ],
+  "folder": "5c43d16b683d442f",
+  "sort": 197,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b64487e579610656"
+}

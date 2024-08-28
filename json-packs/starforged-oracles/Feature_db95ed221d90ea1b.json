@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Chaotic/Feature",
-      "category": "Starforged/Oracles/Location_Themes/Chaotic"
+      "category": "Starforged/Oracles/Location_Themes/Chaotic",
+      "dsid": "oracle_rollable:starforged/location_theme/chaotic/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Use this table to reveal a new aspect of the location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Alterations in the flow of time",
-      "_id": "7821039e3c6cc2b0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.7821039e3c6cc2b0"
+      "_key": "!tables.results!db95ed221d90ea1b.bd751375bc9c8569",
+      "_id": "bd751375bc9c8569"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Chaotic portal, focus, or conduit",
-      "_id": "b591af4e3006a058",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.b591af4e3006a058"
+      "_key": "!tables.results!db95ed221d90ea1b.63e6b0a89ffd813a",
+      "_id": "63e6b0a89ffd813a"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Corrupted or warped architecture or terrain",
-      "_id": "cb6b962bde32776a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.cb6b962bde32776a"
+      "_key": "!tables.results!db95ed221d90ea1b.87b707de3e404568",
+      "_id": "87b707de3e404568"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Corrupted or warped environment or ecosystem",
-      "_id": "9333710dfac6061f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.9333710dfac6061f"
+      "_key": "!tables.results!db95ed221d90ea1b.a328f5bc4244b26a",
+      "_id": "a328f5bc4244b26a"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Corrupted or warped technology",
-      "_id": "b68953415493f9bd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.b68953415493f9bd"
+      "_key": "!tables.results!db95ed221d90ea1b.f8a5082e4f6f11e3",
+      "_id": "f8a5082e4f6f11e3"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Cryptic device harnesses or powers chaos",
-      "_id": "1261a8344e83bc66",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.1261a8344e83bc66"
+      "_key": "!tables.results!db95ed221d90ea1b.fde0c6d179777048",
+      "_id": "fde0c6d179777048"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Distortions of gravity or other natural forces",
-      "_id": "338cd3a14ef463be",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.338cd3a14ef463be"
+      "_key": "!tables.results!db95ed221d90ea1b.3544aef827b2fdb9",
+      "_id": "3544aef827b2fdb9"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Energy field or barrier",
-      "_id": "7957f022d30ffe89",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.7957f022d30ffe89"
+      "_key": "!tables.results!db95ed221d90ea1b.4460b682f5afd46c",
+      "_id": "4460b682f5afd46c"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Glimpses of alternate realities",
-      "_id": "a2af8b46ec42d04d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.a2af8b46ec42d04d"
+      "_key": "!tables.results!db95ed221d90ea1b.5070097f8ce2fd6d",
+      "_id": "5070097f8ce2fd6d"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Lifeforms mutated or altered by chaos",
-      "_id": "d3938d62dafc7802",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.d3938d62dafc7802"
+      "_key": "!tables.results!db95ed221d90ea1b.71e973700a74d295",
+      "_id": "71e973700a74d295"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         88
       ],
       "text": "Lifeforms spawned from chaos",
-      "_id": "6e8c9785a18af72f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.6e8c9785a18af72f"
+      "_key": "!tables.results!db95ed221d90ea1b.4dbae1a3b2e8440e",
+      "_id": "4dbae1a3b2e8440e"
     },
     {
       "range": [
@@ -172,43 +118,21 @@
         96
       ],
       "text": "Visions of your past or future",
-      "_id": "92a7e34b61127db7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.92a7e34b61127db7"
+      "_key": "!tables.results!db95ed221d90ea1b.772a68cbe388d74e",
+      "_id": "772a68cbe388d74e"
     },
     {
       "range": [
         97,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "0ab5be8fb9738f23",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!db95ed221d90ea1b.0ab5be8fb9738f23"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!db95ed221d90ea1b.5a3efaf54e104e0e",
+      "_id": "5a3efaf54e104e0e"
     }
   ],
   "folder": "2c017ba0d0ff0e12",
   "sort": 372,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!db95ed221d90ea1b"
 }

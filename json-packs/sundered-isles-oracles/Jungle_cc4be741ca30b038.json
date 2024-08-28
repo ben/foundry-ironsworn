@@ -1,0 +1,200 @@
+{
+  "_id": "cc4be741ca30b038",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/region_landmarks",
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/jungle"
+    }
+  },
+  "name": "Jungle",
+  "description": "<p>Dense tropical rainforest</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Ancient tree with a vast canopy",
+      "_key": "!tables.results!cc4be741ca30b038.62f8a703b08ecd3f",
+      "_id": "62f8a703b08ecd3f"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Branches crowded with colorful birds",
+      "_key": "!tables.results!cc4be741ca30b038.096c71779a9b3b5b",
+      "_id": "096c71779a9b3b5b"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Carved, moss-covered stones",
+      "_key": "!tables.results!cc4be741ca30b038.57bde943c418c4bb",
+      "_id": "57bde943c418c4bb"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Cave mouth hung with dripping vines",
+      "_key": "!tables.results!cc4be741ca30b038.5d7e78935a6a5a18",
+      "_id": "5d7e78935a6a5a18"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Curtains of hanging vines",
+      "_key": "!tables.results!cc4be741ca30b038.a5a66d08245f4b83",
+      "_id": "a5a66d08245f4b83"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Fallen tree spans a ravine",
+      "_key": "!tables.results!cc4be741ca30b038.0f826964c1a2c45e",
+      "_id": "0f826964c1a2c45e"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Fragrant fruit trees abuzz with insects",
+      "_key": "!tables.results!cc4be741ca30b038.21d21ea18381bad4",
+      "_id": "21d21ea18381bad4"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Glade filled with vibrant butterflies",
+      "_key": "!tables.results!cc4be741ca30b038.e9ce67bc049c0bb9",
+      "_id": "e9ce67bc049c0bb9"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Majestic falls spill into a rocky gorge",
+      "_key": "!tables.results!cc4be741ca30b038.2ae00ea37c33db4d",
+      "_id": "2ae00ea37c33db4d"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Narrow path twists through undergrowth",
+      "_key": "!tables.results!cc4be741ca30b038.a1bf0fae587a69e2",
+      "_id": "a1bf0fae587a69e2"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "River cascading over smooth rocks",
+      "_key": "!tables.results!cc4be741ca30b038.88c9d12c618dd1bf",
+      "_id": "88c9d12c618dd1bf"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Rocky spires cloaked in greenery",
+      "_key": "!tables.results!cc4be741ca30b038.1aab88e9ed90f605",
+      "_id": "1aab88e9ed90f605"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Rope bridge spans a river gorge",
+      "_key": "!tables.results!cc4be741ca30b038.5d598ddf0d39c396",
+      "_id": "5d598ddf0d39c396"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Rope bridges connect towering trees",
+      "_key": "!tables.results!cc4be741ca30b038.85940e1798e4b6ce",
+      "_id": "85940e1798e4b6ce"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Serene pool below a terraced waterfall",
+      "_key": "!tables.results!cc4be741ca30b038.d5f00c0a46a54c75",
+      "_id": "d5f00c0a46a54c75"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Tangled thicket of thorny plants",
+      "_key": "!tables.results!cc4be741ca30b038.0bfd966a3e6508af",
+      "_id": "0bfd966a3e6508af"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Unbroken canopy casts deep shade",
+      "_key": "!tables.results!cc4be741ca30b038.a6ed7e2c29726439",
+      "_id": "a6ed7e2c29726439"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Water-filled sinkhole",
+      "_key": "!tables.results!cc4be741ca30b038.ca41e04355754d00",
+      "_id": "ca41e04355754d00"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Whispering bamboo grove",
+      "_key": "!tables.results!cc4be741ca30b038.26831902022f4959",
+      "_id": "26831902022f4959"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wide, slow-moving river",
+      "_key": "!tables.results!cc4be741ca30b038.deca891d7872ef28",
+      "_id": "deca891d7872ef28"
+    }
+  ],
+  "folder": "a74b251068596264",
+  "sort": 150,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cc4be741ca30b038"
+}

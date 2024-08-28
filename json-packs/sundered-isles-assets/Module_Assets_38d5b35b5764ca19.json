@@ -1,0 +1,16 @@
+{
+  "name": "Module Assets",
+  "color": "#7f5a90",
+  "description": "",
+  "type": "Item",
+  "_id": "38d5b35b5764ca19",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "asset_collection:sundered_isles/module"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!38d5b35b5764ca19"
+}

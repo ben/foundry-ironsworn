@@ -1,0 +1,74 @@
+{
+  "_id": "07e487be5cfc0597",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/landscape/vitality",
+      "dsid": "oracle_rollable:sundered_isles/island/landscape/vitality/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Devastated",
+      "_key": "!tables.results!07e487be5cfc0597.4f036301cbd24d90",
+      "_id": "4f036301cbd24d90"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Dying",
+      "_key": "!tables.results!07e487be5cfc0597.66706b97e57b758a",
+      "_id": "66706b97e57b758a"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Desolate",
+      "_key": "!tables.results!07e487be5cfc0597.b94ac8263d4845f7",
+      "_id": "b94ac8263d4845f7"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Sparse",
+      "_key": "!tables.results!07e487be5cfc0597.f8a121b8b646ba05",
+      "_id": "f8a121b8b646ba05"
+    },
+    {
+      "range": [
+        36,
+        85
+      ],
+      "text": "Lush",
+      "_key": "!tables.results!07e487be5cfc0597.b955cd87a087c78b",
+      "_id": "b955cd87a087c78b"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Primeval",
+      "_key": "!tables.results!07e487be5cfc0597.f35c2a9cf6c71f89",
+      "_id": "f35c2a9cf6c71f89"
+    }
+  ],
+  "folder": "b1d0254d0c20b72e",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!07e487be5cfc0597"
+}

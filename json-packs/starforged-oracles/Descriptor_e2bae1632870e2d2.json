@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Core/Descriptor",
-      "category": "Starforged/Oracles/Core"
+      "category": "Starforged/Oracles/Core",
+      "dsid": "oracle_rollable:starforged/core/descriptor"
     }
   },
   "name": "Descriptor",
-  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} to help define the nature of a location, discovery, or encounter, roll for a Descriptor and a Focus for an adjective/noun prompt.</p>",
-  "formula": "d100",
+  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} to help define the nature of a location, discovery, or encounter, roll for a @Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} and a @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus} for an adjective/noun prompt.</p>",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         1
       ],
       "text": "Abandoned",
-      "_id": "4ca2bf8b06491c00",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.4ca2bf8b06491c00"
+      "_key": "!tables.results!e2bae1632870e2d2.120b39be80624017",
+      "_id": "120b39be80624017"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         2
       ],
       "text": "Abundant",
-      "_id": "f1615a0b5dbe8cb2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.f1615a0b5dbe8cb2"
+      "_key": "!tables.results!e2bae1632870e2d2.86278b797e4964eb",
+      "_id": "86278b797e4964eb"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         3
       ],
       "text": "Active",
-      "_id": "f935b952b8183b2a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.f935b952b8183b2a"
+      "_key": "!tables.results!e2bae1632870e2d2.ec0c4b1749b89de1",
+      "_id": "ec0c4b1749b89de1"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         4
       ],
       "text": "Advanced",
-      "_id": "9912bef718627d2e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.9912bef718627d2e"
+      "_key": "!tables.results!e2bae1632870e2d2.c17cdb11f58a7277",
+      "_id": "c17cdb11f58a7277"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         5
       ],
       "text": "Alien",
-      "_id": "457ec4cc9f66427b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.457ec4cc9f66427b"
+      "_key": "!tables.results!e2bae1632870e2d2.eed5fbe9df65c20a",
+      "_id": "eed5fbe9df65c20a"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         6
       ],
       "text": "Ancient",
-      "_id": "d9c36f7fb79f1d71",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d9c36f7fb79f1d71"
+      "_key": "!tables.results!e2bae1632870e2d2.5ea2182c499bce92",
+      "_id": "5ea2182c499bce92"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         7
       ],
       "text": "Archaic",
-      "_id": "6e78f8b457740061",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.6e78f8b457740061"
+      "_key": "!tables.results!e2bae1632870e2d2.e719ca802c86385c",
+      "_id": "e719ca802c86385c"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         8
       ],
       "text": "Automated",
-      "_id": "2190382284082bb5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.2190382284082bb5"
+      "_key": "!tables.results!e2bae1632870e2d2.3e48922cccdcb2f1",
+      "_id": "3e48922cccdcb2f1"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         9
       ],
       "text": "Barren",
-      "_id": "e5d3bfacaaed0cff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.e5d3bfacaaed0cff"
+      "_key": "!tables.results!e2bae1632870e2d2.71214926268dc311",
+      "_id": "71214926268dc311"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         10
       ],
       "text": "Biological",
-      "_id": "ea76b667076b847e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.ea76b667076b847e"
+      "_key": "!tables.results!e2bae1632870e2d2.b18f71e83da740f3",
+      "_id": "b18f71e83da740f3"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         11
       ],
       "text": "Blighted",
-      "_id": "d512119329939dd6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d512119329939dd6"
+      "_key": "!tables.results!e2bae1632870e2d2.d8b34dcc3cfaa27f",
+      "_id": "d8b34dcc3cfaa27f"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         12
       ],
       "text": "Blocked",
-      "_id": "4bed0799d8fa49bf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.4bed0799d8fa49bf"
+      "_key": "!tables.results!e2bae1632870e2d2.52f10aa1b5652e1d",
+      "_id": "52f10aa1b5652e1d"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         13
       ],
       "text": "Breached",
-      "_id": "8c811f5028f945a7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.8c811f5028f945a7"
+      "_key": "!tables.results!e2bae1632870e2d2.c8a87a75c44a084a",
+      "_id": "c8a87a75c44a084a"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         14
       ],
       "text": "Broken",
-      "_id": "0730f690ec88c659",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.0730f690ec88c659"
+      "_key": "!tables.results!e2bae1632870e2d2.6696a6ec196e1dc0",
+      "_id": "6696a6ec196e1dc0"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         15
       ],
       "text": "Captured",
-      "_id": "9dc4031aa1c686d7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.9dc4031aa1c686d7"
+      "_key": "!tables.results!e2bae1632870e2d2.10f2c97634ba8c50",
+      "_id": "10f2c97634ba8c50"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         16
       ],
       "text": "Chaotic",
-      "_id": "0ce7462798afebc3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.0ce7462798afebc3"
+      "_key": "!tables.results!e2bae1632870e2d2.7f26329daf678153",
+      "_id": "7f26329daf678153"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         17
       ],
       "text": "Civilized",
-      "_id": "93a8fe8a015e097c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.93a8fe8a015e097c"
+      "_key": "!tables.results!e2bae1632870e2d2.493c1a31e7af0bbb",
+      "_id": "493c1a31e7af0bbb"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         18
       ],
       "text": "Collapsed",
-      "_id": "e366b19568e70411",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.e366b19568e70411"
+      "_key": "!tables.results!e2bae1632870e2d2.344da8d3fc5386a9",
+      "_id": "344da8d3fc5386a9"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         19
       ],
       "text": "Colossal",
-      "_id": "bc6cffa1bf403075",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.bc6cffa1bf403075"
+      "_key": "!tables.results!e2bae1632870e2d2.80638654cbfd9d40",
+      "_id": "80638654cbfd9d40"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         20
       ],
       "text": "Confined",
-      "_id": "0c645d99361f1d17",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.0c645d99361f1d17"
+      "_key": "!tables.results!e2bae1632870e2d2.4b1aaf5fb6a0de54",
+      "_id": "4b1aaf5fb6a0de54"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         21
       ],
       "text": "Conspicuous",
-      "_id": "96637263a51ffe9b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.96637263a51ffe9b"
+      "_key": "!tables.results!e2bae1632870e2d2.0863648c9449a48c",
+      "_id": "0863648c9449a48c"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         22
       ],
       "text": "Constructed",
-      "_id": "f8cddd09f45b3b99",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.f8cddd09f45b3b99"
+      "_key": "!tables.results!e2bae1632870e2d2.dc8aedbfef0805a1",
+      "_id": "dc8aedbfef0805a1"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         23
       ],
       "text": "Contested",
-      "_id": "bf45c23ca9beea45",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.bf45c23ca9beea45"
+      "_key": "!tables.results!e2bae1632870e2d2.f9d9d6c55a621e6d",
+      "_id": "f9d9d6c55a621e6d"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         24
       ],
       "text": "Corrupted",
-      "_id": "55ca33ab1124b82e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.55ca33ab1124b82e"
+      "_key": "!tables.results!e2bae1632870e2d2.00c26ef9fce0af03",
+      "_id": "00c26ef9fce0af03"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         25
       ],
       "text": "Created",
-      "_id": "a9ca7f660638560b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.a9ca7f660638560b"
+      "_key": "!tables.results!e2bae1632870e2d2.68fdc8e11bf85983",
+      "_id": "68fdc8e11bf85983"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         26
       ],
       "text": "Damaged",
-      "_id": "61267b793b82e592",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.61267b793b82e592"
+      "_key": "!tables.results!e2bae1632870e2d2.4916207a42c21a6f",
+      "_id": "4916207a42c21a6f"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         27
       ],
       "text": "Dead",
-      "_id": "9ec0a68fe8f0abfb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.9ec0a68fe8f0abfb"
+      "_key": "!tables.results!e2bae1632870e2d2.36e8e182c70bd26f",
+      "_id": "36e8e182c70bd26f"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         28
       ],
       "text": "Deadly",
-      "_id": "6afcb2299f322cf0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.6afcb2299f322cf0"
+      "_key": "!tables.results!e2bae1632870e2d2.ff03df10ac939495",
+      "_id": "ff03df10ac939495"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         29
       ],
       "text": "Decaying",
-      "_id": "69a5f963084761bd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.69a5f963084761bd"
+      "_key": "!tables.results!e2bae1632870e2d2.60d26a4556acd13f",
+      "_id": "60d26a4556acd13f"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         30
       ],
       "text": "Defended",
-      "_id": "bcd70a0d780d2d35",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.bcd70a0d780d2d35"
+      "_key": "!tables.results!e2bae1632870e2d2.9b820708a4bdabcf",
+      "_id": "9b820708a4bdabcf"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         31
       ],
       "text": "Depleted",
-      "_id": "af7b726298a2cd03",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.af7b726298a2cd03"
+      "_key": "!tables.results!e2bae1632870e2d2.f34aae37f428d01b",
+      "_id": "f34aae37f428d01b"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         32
       ],
       "text": "Desolate",
-      "_id": "fd0669e724a094b2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.fd0669e724a094b2"
+      "_key": "!tables.results!e2bae1632870e2d2.a8d3868a63618fab",
+      "_id": "a8d3868a63618fab"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         33
       ],
       "text": "Destroyed",
-      "_id": "d2eff278f0418499",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d2eff278f0418499"
+      "_key": "!tables.results!e2bae1632870e2d2.7a87f39b49eb3b22",
+      "_id": "7a87f39b49eb3b22"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         34
       ],
       "text": "Diverse",
-      "_id": "c239806e3b0752e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.c239806e3b0752e5"
+      "_key": "!tables.results!e2bae1632870e2d2.66af62221caf6aaa",
+      "_id": "66af62221caf6aaa"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         35
       ],
       "text": "Empty",
-      "_id": "b83fa8033d87f2eb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.b83fa8033d87f2eb"
+      "_key": "!tables.results!e2bae1632870e2d2.aa11d9205c5f4ece",
+      "_id": "aa11d9205c5f4ece"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         36
       ],
       "text": "Engulfed",
-      "_id": "980398b90bebfb80",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.980398b90bebfb80"
+      "_key": "!tables.results!e2bae1632870e2d2.690c327c936a781f",
+      "_id": "690c327c936a781f"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         37
       ],
       "text": "Ensnaring",
-      "_id": "691dc1acc727eaa0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.691dc1acc727eaa0"
+      "_key": "!tables.results!e2bae1632870e2d2.e937854e6cc49239",
+      "_id": "e937854e6cc49239"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         38
       ],
       "text": "Expansive",
-      "_id": "9975ec8fb0178c6f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.9975ec8fb0178c6f"
+      "_key": "!tables.results!e2bae1632870e2d2.655d169e0ea11fcb",
+      "_id": "655d169e0ea11fcb"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         39
       ],
       "text": "Exposed",
-      "_id": "d379da92b3b72682",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d379da92b3b72682"
+      "_key": "!tables.results!e2bae1632870e2d2.74e2be7c8ffead35",
+      "_id": "74e2be7c8ffead35"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         40
       ],
       "text": "Fiery",
-      "_id": "5ebd500aa9b83b30",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.5ebd500aa9b83b30"
+      "_key": "!tables.results!e2bae1632870e2d2.a6a96fb65140777f",
+      "_id": "a6a96fb65140777f"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         41
       ],
       "text": "Foreboding",
-      "_id": "908f7a083f49af19",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.908f7a083f49af19"
+      "_key": "!tables.results!e2bae1632870e2d2.70cd8fadc9a6b20f",
+      "_id": "70cd8fadc9a6b20f"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         42
       ],
       "text": "Forgotten",
-      "_id": "91586bcf25a73394",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.91586bcf25a73394"
+      "_key": "!tables.results!e2bae1632870e2d2.df90744037a24023",
+      "_id": "df90744037a24023"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         43
       ],
       "text": "Forsaken",
-      "_id": "6a45038d683df28f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.6a45038d683df28f"
+      "_key": "!tables.results!e2bae1632870e2d2.0d6a2e5a5367bf5e",
+      "_id": "0d6a2e5a5367bf5e"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         44
       ],
       "text": "Fortified",
-      "_id": "d994a97198940c08",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d994a97198940c08"
+      "_key": "!tables.results!e2bae1632870e2d2.a3f4e17a55967cfd",
+      "_id": "a3f4e17a55967cfd"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         45
       ],
       "text": "Foul",
-      "_id": "eb7514ed92638514",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.eb7514ed92638514"
+      "_key": "!tables.results!e2bae1632870e2d2.8936245a56aea172",
+      "_id": "8936245a56aea172"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         46
       ],
       "text": "Fragile",
-      "_id": "84688fd0ae731684",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.84688fd0ae731684"
+      "_key": "!tables.results!e2bae1632870e2d2.c9b45baeff08e904",
+      "_id": "c9b45baeff08e904"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         47
       ],
       "text": "Frozen",
-      "_id": "f029bd584061f38c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.f029bd584061f38c"
+      "_key": "!tables.results!e2bae1632870e2d2.4397aa7b2960cbe2",
+      "_id": "4397aa7b2960cbe2"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         48
       ],
       "text": "Functional",
-      "_id": "acb9fd1e817bc4e0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.acb9fd1e817bc4e0"
+      "_key": "!tables.results!e2bae1632870e2d2.54c7f2302ff7a02d",
+      "_id": "54c7f2302ff7a02d"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         49
       ],
       "text": "Grim",
-      "_id": "23eef18271f488b6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.23eef18271f488b6"
+      "_key": "!tables.results!e2bae1632870e2d2.2e163225f80727c7",
+      "_id": "2e163225f80727c7"
     },
     {
       "range": [
@@ -704,13 +460,8 @@
         50
       ],
       "text": "Guarded",
-      "_id": "009fd58e45bc0821",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.009fd58e45bc0821"
+      "_key": "!tables.results!e2bae1632870e2d2.32f96f935956fcb4",
+      "_id": "32f96f935956fcb4"
     },
     {
       "range": [
@@ -718,13 +469,8 @@
         51
       ],
       "text": "Haunted",
-      "_id": "dc39d5533db5153a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.dc39d5533db5153a"
+      "_key": "!tables.results!e2bae1632870e2d2.463998ed28ba49c6",
+      "_id": "463998ed28ba49c6"
     },
     {
       "range": [
@@ -732,13 +478,8 @@
         52
       ],
       "text": "Hidden",
-      "_id": "07243913ac36bb5e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.07243913ac36bb5e"
+      "_key": "!tables.results!e2bae1632870e2d2.e202c7c457a8473e",
+      "_id": "e202c7c457a8473e"
     },
     {
       "range": [
@@ -746,13 +487,8 @@
         53
       ],
       "text": "Hoarded",
-      "_id": "1e16d5a81820d189",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.1e16d5a81820d189"
+      "_key": "!tables.results!e2bae1632870e2d2.ebf1356901842301",
+      "_id": "ebf1356901842301"
     },
     {
       "range": [
@@ -760,13 +496,8 @@
         54
       ],
       "text": "Hostile",
-      "_id": "dc67cb6af00ce5c6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.dc67cb6af00ce5c6"
+      "_key": "!tables.results!e2bae1632870e2d2.1fa32bc87c1cfddd",
+      "_id": "1fa32bc87c1cfddd"
     },
     {
       "range": [
@@ -774,13 +505,8 @@
         55
       ],
       "text": "Immersed",
-      "_id": "3dd40a93213d8a33",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.3dd40a93213d8a33"
+      "_key": "!tables.results!e2bae1632870e2d2.249f92863a30b807",
+      "_id": "249f92863a30b807"
     },
     {
       "range": [
@@ -788,13 +514,8 @@
         56
       ],
       "text": "Inaccessible",
-      "_id": "1b8d990b2e17ee55",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.1b8d990b2e17ee55"
+      "_key": "!tables.results!e2bae1632870e2d2.5a63fc50fdb10522",
+      "_id": "5a63fc50fdb10522"
     },
     {
       "range": [
@@ -802,13 +523,8 @@
         57
       ],
       "text": "Infested",
-      "_id": "cd906e3531e73aea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.cd906e3531e73aea"
+      "_key": "!tables.results!e2bae1632870e2d2.181b61c50d52fae5",
+      "_id": "181b61c50d52fae5"
     },
     {
       "range": [
@@ -816,13 +532,8 @@
         58
       ],
       "text": "Inhabited",
-      "_id": "88c0946852be6753",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.88c0946852be6753"
+      "_key": "!tables.results!e2bae1632870e2d2.723a0cfb954081f0",
+      "_id": "723a0cfb954081f0"
     },
     {
       "range": [
@@ -830,13 +541,8 @@
         59
       ],
       "text": "Isolated",
-      "_id": "df259199af977bda",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.df259199af977bda"
+      "_key": "!tables.results!e2bae1632870e2d2.185e9d8d93b5fecc",
+      "_id": "185e9d8d93b5fecc"
     },
     {
       "range": [
@@ -844,13 +550,8 @@
         60
       ],
       "text": "Living",
-      "_id": "97f6551646eb432a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.97f6551646eb432a"
+      "_key": "!tables.results!e2bae1632870e2d2.8bcedad6557316ce",
+      "_id": "8bcedad6557316ce"
     },
     {
       "range": [
@@ -858,13 +559,8 @@
         61
       ],
       "text": "Lost",
-      "_id": "88b6c9f2cba7df47",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.88b6c9f2cba7df47"
+      "_key": "!tables.results!e2bae1632870e2d2.59c871a9465079d2",
+      "_id": "59c871a9465079d2"
     },
     {
       "range": [
@@ -872,13 +568,8 @@
         62
       ],
       "text": "Lush",
-      "_id": "f9ad9f1f7b94c8c6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.f9ad9f1f7b94c8c6"
+      "_key": "!tables.results!e2bae1632870e2d2.ece7fcceb9658fbc",
+      "_id": "ece7fcceb9658fbc"
     },
     {
       "range": [
@@ -886,13 +577,8 @@
         63
       ],
       "text": "Makeshift",
-      "_id": "920ff93130295df0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.920ff93130295df0"
+      "_key": "!tables.results!e2bae1632870e2d2.8abc04b7e64ad43b",
+      "_id": "8abc04b7e64ad43b"
     },
     {
       "range": [
@@ -900,13 +586,8 @@
         64
       ],
       "text": "Mechanical",
-      "_id": "19b3697a3c6fbb67",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.19b3697a3c6fbb67"
+      "_key": "!tables.results!e2bae1632870e2d2.66dbe1d3ee8a7e46",
+      "_id": "66dbe1d3ee8a7e46"
     },
     {
       "range": [
@@ -914,13 +595,8 @@
         65
       ],
       "text": "Misleading",
-      "_id": "31271e43a909b44a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.31271e43a909b44a"
+      "_key": "!tables.results!e2bae1632870e2d2.74e74605b1fa7079",
+      "_id": "74e74605b1fa7079"
     },
     {
       "range": [
@@ -928,13 +604,8 @@
         66
       ],
       "text": "Moving",
-      "_id": "d1062e0f74d4a796",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d1062e0f74d4a796"
+      "_key": "!tables.results!e2bae1632870e2d2.9e4e84881bf70e50",
+      "_id": "9e4e84881bf70e50"
     },
     {
       "range": [
@@ -942,13 +613,8 @@
         67
       ],
       "text": "Mysterious",
-      "_id": "d51e2f6f06e8ef1d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d51e2f6f06e8ef1d"
+      "_key": "!tables.results!e2bae1632870e2d2.e5ca0e8d64d0cbd3",
+      "_id": "e5ca0e8d64d0cbd3"
     },
     {
       "range": [
@@ -956,13 +622,8 @@
         68
       ],
       "text": "Natural",
-      "_id": "4a07feda8b63820b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.4a07feda8b63820b"
+      "_key": "!tables.results!e2bae1632870e2d2.f3bbd52a937175ab",
+      "_id": "f3bbd52a937175ab"
     },
     {
       "range": [
@@ -970,13 +631,8 @@
         69
       ],
       "text": "New",
-      "_id": "eba60d55a2b43faf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.eba60d55a2b43faf"
+      "_key": "!tables.results!e2bae1632870e2d2.3a27feaa5a46edbe",
+      "_id": "3a27feaa5a46edbe"
     },
     {
       "range": [
@@ -984,13 +640,8 @@
         70
       ],
       "text": "Obscured",
-      "_id": "91d31c98bfc7c2ee",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.91d31c98bfc7c2ee"
+      "_key": "!tables.results!e2bae1632870e2d2.630baa0521664ae7",
+      "_id": "630baa0521664ae7"
     },
     {
       "range": [
@@ -998,13 +649,8 @@
         71
       ],
       "text": "Open",
-      "_id": "1c9ee2d8d77e4739",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.1c9ee2d8d77e4739"
+      "_key": "!tables.results!e2bae1632870e2d2.31768760709b3e09",
+      "_id": "31768760709b3e09"
     },
     {
       "range": [
@@ -1012,13 +658,8 @@
         72
       ],
       "text": "Peaceful",
-      "_id": "e4c30cb995f0d87b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.e4c30cb995f0d87b"
+      "_key": "!tables.results!e2bae1632870e2d2.77faf0ed2a9393b1",
+      "_id": "77faf0ed2a9393b1"
     },
     {
       "range": [
@@ -1026,13 +667,8 @@
         73
       ],
       "text": "Perilous",
-      "_id": "8dc8d134f42646ad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.8dc8d134f42646ad"
+      "_key": "!tables.results!e2bae1632870e2d2.d5451a7ff3d8d176",
+      "_id": "d5451a7ff3d8d176"
     },
     {
       "range": [
@@ -1040,13 +676,8 @@
         74
       ],
       "text": "Pillaged",
-      "_id": "4a83226e27233286",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.4a83226e27233286"
+      "_key": "!tables.results!e2bae1632870e2d2.b9c7b8f45c3b50ee",
+      "_id": "b9c7b8f45c3b50ee"
     },
     {
       "range": [
@@ -1054,13 +685,8 @@
         75
       ],
       "text": "Powerful",
-      "_id": "d41b4109c10d5ac0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d41b4109c10d5ac0"
+      "_key": "!tables.results!e2bae1632870e2d2.b50c2ca124bf8531",
+      "_id": "b50c2ca124bf8531"
     },
     {
       "range": [
@@ -1068,13 +694,8 @@
         76
       ],
       "text": "Preserved",
-      "_id": "c00d185e7ce5347e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.c00d185e7ce5347e"
+      "_key": "!tables.results!e2bae1632870e2d2.32a36bfe6646901d",
+      "_id": "32a36bfe6646901d"
     },
     {
       "range": [
@@ -1082,13 +703,8 @@
         77
       ],
       "text": "Prominent",
-      "_id": "f896ca23f1e3c143",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.f896ca23f1e3c143"
+      "_key": "!tables.results!e2bae1632870e2d2.12955ef348e3d4ac",
+      "_id": "12955ef348e3d4ac"
     },
     {
       "range": [
@@ -1096,13 +712,8 @@
         78
       ],
       "text": "Protected",
-      "_id": "8a6ad6824f95783c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.8a6ad6824f95783c"
+      "_key": "!tables.results!e2bae1632870e2d2.7614199321f506dc",
+      "_id": "7614199321f506dc"
     },
     {
       "range": [
@@ -1110,13 +721,8 @@
         79
       ],
       "text": "Radiant",
-      "_id": "f54f5f7e56aedf56",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.f54f5f7e56aedf56"
+      "_key": "!tables.results!e2bae1632870e2d2.ea7c3921056e2d08",
+      "_id": "ea7c3921056e2d08"
     },
     {
       "range": [
@@ -1124,13 +730,8 @@
         80
       ],
       "text": "Rare",
-      "_id": "cd99833eef5873cc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.cd99833eef5873cc"
+      "_key": "!tables.results!e2bae1632870e2d2.f242214aa70e1f9e",
+      "_id": "f242214aa70e1f9e"
     },
     {
       "range": [
@@ -1138,13 +739,8 @@
         81
       ],
       "text": "Remote",
-      "_id": "f1534c56c2be9a2c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.f1534c56c2be9a2c"
+      "_key": "!tables.results!e2bae1632870e2d2.6755de32b5efd38b",
+      "_id": "6755de32b5efd38b"
     },
     {
       "range": [
@@ -1152,13 +748,8 @@
         82
       ],
       "text": "Rich",
-      "_id": "d9bd318a771ab39b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.d9bd318a771ab39b"
+      "_key": "!tables.results!e2bae1632870e2d2.a17ea2301f6230e5",
+      "_id": "a17ea2301f6230e5"
     },
     {
       "range": [
@@ -1166,13 +757,8 @@
         83
       ],
       "text": "Ruined",
-      "_id": "1a6edf4e200f4405",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.1a6edf4e200f4405"
+      "_key": "!tables.results!e2bae1632870e2d2.a5bec346099c09fc",
+      "_id": "a5bec346099c09fc"
     },
     {
       "range": [
@@ -1180,13 +766,8 @@
         84
       ],
       "text": "Sacred",
-      "_id": "905dc8e53d2b088b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.905dc8e53d2b088b"
+      "_key": "!tables.results!e2bae1632870e2d2.06dda9b83c8280e6",
+      "_id": "06dda9b83c8280e6"
     },
     {
       "range": [
@@ -1194,13 +775,8 @@
         85
       ],
       "text": "Safe",
-      "_id": "e38a437c774a1f0b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.e38a437c774a1f0b"
+      "_key": "!tables.results!e2bae1632870e2d2.07084a4e2125ea8c",
+      "_id": "07084a4e2125ea8c"
     },
     {
       "range": [
@@ -1208,13 +784,8 @@
         86
       ],
       "text": "Sealed",
-      "_id": "b91a1b89cdc11dd4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.b91a1b89cdc11dd4"
+      "_key": "!tables.results!e2bae1632870e2d2.3352a0dde56cc214",
+      "_id": "3352a0dde56cc214"
     },
     {
       "range": [
@@ -1222,13 +793,8 @@
         87
       ],
       "text": "Secret",
-      "_id": "6aeaa8a9670baa6f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.6aeaa8a9670baa6f"
+      "_key": "!tables.results!e2bae1632870e2d2.4ee6df1188efea95",
+      "_id": "4ee6df1188efea95"
     },
     {
       "range": [
@@ -1236,13 +802,8 @@
         88
       ],
       "text": "Settled",
-      "_id": "306999f71562a297",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.306999f71562a297"
+      "_key": "!tables.results!e2bae1632870e2d2.1ffe5e5647cd97aa",
+      "_id": "1ffe5e5647cd97aa"
     },
     {
       "range": [
@@ -1250,13 +811,8 @@
         89
       ],
       "text": "Shrouded",
-      "_id": "4991a9ac5119294f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.4991a9ac5119294f"
+      "_key": "!tables.results!e2bae1632870e2d2.265812f1a20051c0",
+      "_id": "265812f1a20051c0"
     },
     {
       "range": [
@@ -1264,13 +820,8 @@
         90
       ],
       "text": "Stolen",
-      "_id": "e90bd0f415bcbe96",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.e90bd0f415bcbe96"
+      "_key": "!tables.results!e2bae1632870e2d2.383b81857135e254",
+      "_id": "383b81857135e254"
     },
     {
       "range": [
@@ -1278,13 +829,8 @@
         91
       ],
       "text": "Strange",
-      "_id": "54d09d5cd5e81587",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.54d09d5cd5e81587"
+      "_key": "!tables.results!e2bae1632870e2d2.9dc4e79785797d96",
+      "_id": "9dc4e79785797d96"
     },
     {
       "range": [
@@ -1292,13 +838,8 @@
         92
       ],
       "text": "Subsurface",
-      "_id": "8111231ac1015feb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.8111231ac1015feb"
+      "_key": "!tables.results!e2bae1632870e2d2.ae4be679b04249d9",
+      "_id": "ae4be679b04249d9"
     },
     {
       "range": [
@@ -1306,13 +847,8 @@
         93
       ],
       "text": "Toxic",
-      "_id": "213f637abbb663ce",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.213f637abbb663ce"
+      "_key": "!tables.results!e2bae1632870e2d2.299d625b8be09874",
+      "_id": "299d625b8be09874"
     },
     {
       "range": [
@@ -1320,13 +856,8 @@
         94
       ],
       "text": "Trapped",
-      "_id": "ba32836df507c89b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.ba32836df507c89b"
+      "_key": "!tables.results!e2bae1632870e2d2.e94f7b20a72f33d4",
+      "_id": "e94f7b20a72f33d4"
     },
     {
       "range": [
@@ -1334,13 +865,8 @@
         95
       ],
       "text": "Undiscovered",
-      "_id": "fca3b36067c6531c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.fca3b36067c6531c"
+      "_key": "!tables.results!e2bae1632870e2d2.5ec07d94b843e7e0",
+      "_id": "5ec07d94b843e7e0"
     },
     {
       "range": [
@@ -1348,13 +874,8 @@
         96
       ],
       "text": "Unnatural",
-      "_id": "911f0e0a0d06c3d5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.911f0e0a0d06c3d5"
+      "_key": "!tables.results!e2bae1632870e2d2.5fb7f4418a9e6e56",
+      "_id": "5fb7f4418a9e6e56"
     },
     {
       "range": [
@@ -1362,13 +883,8 @@
         97
       ],
       "text": "Unstable",
-      "_id": "fa0b27fd3823dbb5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.fa0b27fd3823dbb5"
+      "_key": "!tables.results!e2bae1632870e2d2.9034fc593ad80a0a",
+      "_id": "9034fc593ad80a0a"
     },
     {
       "range": [
@@ -1376,13 +892,8 @@
         98
       ],
       "text": "Untamed",
-      "_id": "2144f5c60e8e15bf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.2144f5c60e8e15bf"
+      "_key": "!tables.results!e2bae1632870e2d2.185045d1c841f994",
+      "_id": "185045d1c841f994"
     },
     {
       "range": [
@@ -1390,13 +901,8 @@
         99
       ],
       "text": "Valuable",
-      "_id": "09e1037156833389",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.09e1037156833389"
+      "_key": "!tables.results!e2bae1632870e2d2.9b8d2dd6978f31bd",
+      "_id": "9b8d2dd6978f31bd"
     },
     {
       "range": [
@@ -1404,29 +910,12 @@
         100
       ],
       "text": "Violent",
-      "_id": "cfe98f96cef226c0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e2bae1632870e2d2.cfe98f96cef226c0"
+      "_key": "!tables.results!e2bae1632870e2d2.66f8aaaf458cfbe8",
+      "_id": "66f8aaaf458cfbe8"
     }
   ],
   "folder": "312c7e84afc43125",
   "sort": 298,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!e2bae1632870e2d2"
 }

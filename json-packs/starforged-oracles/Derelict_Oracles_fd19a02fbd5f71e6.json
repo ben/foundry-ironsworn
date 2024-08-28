@@ -1,0 +1,16 @@
+{
+  "name": "Derelict Oracles",
+  "description": "Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/starship\">\n\t<i class=\"fa fa-caret-right\"></i> Starship\n</a> or \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/settlement\">\n\t<i class=\"fa fa-caret-right\"></i> Settlement\n</a> oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.",
+  "type": "RollTable",
+  "_id": "fd19a02fbd5f71e6",
+  "sort": 348,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Derelicts",
+      "dsid": "oracle_collection:starforged/derelict"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!fd19a02fbd5f71e6"
+}

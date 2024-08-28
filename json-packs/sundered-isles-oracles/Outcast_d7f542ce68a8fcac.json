@@ -1,0 +1,110 @@
+{
+  "_id": "d7f542ce68a8fcac",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/outcast"
+    }
+  },
+  "name": "Outcast",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Apostate",
+      "_key": "!tables.results!d7f542ce68a8fcac.63066904e2251774",
+      "_id": "63066904e2251774"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Castaway",
+      "_key": "!tables.results!d7f542ce68a8fcac.a2b1e2a2730595c1",
+      "_id": "a2b1e2a2730595c1"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Deserter / Mutineer",
+      "_key": "!tables.results!d7f542ce68a8fcac.92ce15fcf199c3ed",
+      "_id": "92ce15fcf199c3ed"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Exile",
+      "_key": "!tables.results!d7f542ce68a8fcac.b05fc2fe32e1276e",
+      "_id": "b05fc2fe32e1276e"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Fugitive",
+      "_key": "!tables.results!d7f542ce68a8fcac.1a6a9fe90953de7e",
+      "_id": "1a6a9fe90953de7e"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Hermit",
+      "_key": "!tables.results!d7f542ce68a8fcac.53555e80563d7c3f",
+      "_id": "53555e80563d7c3f"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Orphan",
+      "_key": "!tables.results!d7f542ce68a8fcac.cae82b88773b76c6",
+      "_id": "cae82b88773b76c6"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Refugee",
+      "_key": "!tables.results!d7f542ce68a8fcac.730e821d06dff6d3",
+      "_id": "730e821d06dff6d3"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Urchin",
+      "_key": "!tables.results!d7f542ce68a8fcac.72cbb0f14451226b",
+      "_id": "72cbb0f14451226b"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Vagabond",
+      "_key": "!tables.results!d7f542ce68a8fcac.1afe54195126daf0",
+      "_id": "1afe54195126daf0"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d7f542ce68a8fcac"
+}

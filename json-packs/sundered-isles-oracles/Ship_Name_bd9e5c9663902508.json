@@ -1,0 +1,911 @@
+{
+  "_id": "bd9e5c9663902508",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/name"
+    }
+  },
+  "name": "Ship Name",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Aegis",
+      "_key": "!tables.results!bd9e5c9663902508.8cfd2828cc7fe6b6",
+      "_id": "8cfd2828cc7fe6b6"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Akiya",
+      "_key": "!tables.results!bd9e5c9663902508.93cda993740186a3",
+      "_id": "93cda993740186a3"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Albatross",
+      "_key": "!tables.results!bd9e5c9663902508.40b0c8cb305aa1a6",
+      "_id": "40b0c8cb305aa1a6"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Alliance",
+      "_key": "!tables.results!bd9e5c9663902508.5a98731d0fb9d13e",
+      "_id": "5a98731d0fb9d13e"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Ascendancy",
+      "_key": "!tables.results!bd9e5c9663902508.94a34f550166cd3e",
+      "_id": "94a34f550166cd3e"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Black Iron",
+      "_key": "!tables.results!bd9e5c9663902508.ee2ca80b61b1ee67",
+      "_id": "ee2ca80b61b1ee67"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Bounds Runner",
+      "_key": "!tables.results!bd9e5c9663902508.bca90e0da8fac50b",
+      "_id": "bca90e0da8fac50b"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Broken Compass",
+      "_key": "!tables.results!bd9e5c9663902508.e07c29ba8bc96f69",
+      "_id": "e07c29ba8bc96f69"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Celestial",
+      "_key": "!tables.results!bd9e5c9663902508.f86045a33e817e30",
+      "_id": "f86045a33e817e30"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Cinder’s Light",
+      "_key": "!tables.results!bd9e5c9663902508.9e4f4407f40429ca",
+      "_id": "9e4f4407f40429ca"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Clarion Call",
+      "_key": "!tables.results!bd9e5c9663902508.09c32df8889d13ab",
+      "_id": "09c32df8889d13ab"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Covenant",
+      "_key": "!tables.results!bd9e5c9663902508.41bd3d706f78e4f1",
+      "_id": "41bd3d706f78e4f1"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Crested Dawn",
+      "_key": "!tables.results!bd9e5c9663902508.151b2294e83c76d1",
+      "_id": "151b2294e83c76d1"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Dauntless",
+      "_key": "!tables.results!bd9e5c9663902508.fcba2195c0638892",
+      "_id": "fcba2195c0638892"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Dawn's Herald",
+      "_key": "!tables.results!bd9e5c9663902508.f4e6a722590b6de0",
+      "_id": "f4e6a722590b6de0"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Defiance",
+      "_key": "!tables.results!bd9e5c9663902508.fcfe3b77a4128e22",
+      "_id": "fcfe3b77a4128e22"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Demeter",
+      "_key": "!tables.results!bd9e5c9663902508.fe04661a90d99892",
+      "_id": "fe04661a90d99892"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Dreamweaver",
+      "_key": "!tables.results!bd9e5c9663902508.8eba7f05c4ccd00e",
+      "_id": "8eba7f05c4ccd00e"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Eclipse",
+      "_key": "!tables.results!bd9e5c9663902508.11ea7100bf3971f1",
+      "_id": "11ea7100bf3971f1"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Elizabeth Dane",
+      "_key": "!tables.results!bd9e5c9663902508.3f25ac4c07496f41",
+      "_id": "3f25ac4c07496f41"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Emelyn",
+      "_key": "!tables.results!bd9e5c9663902508.faaad940cd6268a1",
+      "_id": "faaad940cd6268a1"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Endurance",
+      "_key": "!tables.results!bd9e5c9663902508.34e0634b96a7e962",
+      "_id": "34e0634b96a7e962"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Enigma",
+      "_key": "!tables.results!bd9e5c9663902508.0217ffce0e3952d6",
+      "_id": "0217ffce0e3952d6"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Erasmus",
+      "_key": "!tables.results!bd9e5c9663902508.f5b65591e8cac76c",
+      "_id": "f5b65591e8cac76c"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Erisia",
+      "_key": "!tables.results!bd9e5c9663902508.523904e298662d15",
+      "_id": "523904e298662d15"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Eye of the Storm",
+      "_key": "!tables.results!bd9e5c9663902508.a901d0e0af896ad7",
+      "_id": "a901d0e0af896ad7"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Farina's Folly",
+      "_key": "!tables.results!bd9e5c9663902508.5fbd03b23ef33b1e",
+      "_id": "5fbd03b23ef33b1e"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Farthest Horizon",
+      "_key": "!tables.results!bd9e5c9663902508.dcf6ca6c5f67fbc1",
+      "_id": "dcf6ca6c5f67fbc1"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Fire Opal",
+      "_key": "!tables.results!bd9e5c9663902508.8ce8172edb5d848d",
+      "_id": "8ce8172edb5d848d"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Following Seas",
+      "_key": "!tables.results!bd9e5c9663902508.e85c778e94ddc004",
+      "_id": "e85c778e94ddc004"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Forerunner",
+      "_key": "!tables.results!bd9e5c9663902508.0565f6df5d99678a",
+      "_id": "0565f6df5d99678a"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Fortune's Favor",
+      "_key": "!tables.results!bd9e5c9663902508.19856fd49b9b30e9",
+      "_id": "19856fd49b9b30e9"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Fortune's Fool",
+      "_key": "!tables.results!bd9e5c9663902508.432242146a29d5d7",
+      "_id": "432242146a29d5d7"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Gambit",
+      "_key": "!tables.results!bd9e5c9663902508.e22395d1b16816b8",
+      "_id": "e22395d1b16816b8"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Gilded Sea",
+      "_key": "!tables.results!bd9e5c9663902508.ac4828920b5d2704",
+      "_id": "ac4828920b5d2704"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Gray Eagle",
+      "_key": "!tables.results!bd9e5c9663902508.c2092b144141f3f5",
+      "_id": "c2092b144141f3f5"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Guiding Star",
+      "_key": "!tables.results!bd9e5c9663902508.9a20c6c52af5005a",
+      "_id": "9a20c6c52af5005a"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Honorbound",
+      "_key": "!tables.results!bd9e5c9663902508.66b53ff28136f1e2",
+      "_id": "66b53ff28136f1e2"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Implacable",
+      "_key": "!tables.results!bd9e5c9663902508.9120b382d2befb38",
+      "_id": "9120b382d2befb38"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Implicit",
+      "_key": "!tables.results!bd9e5c9663902508.c77a255b5016082f",
+      "_id": "c77a255b5016082f"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Indomitable",
+      "_key": "!tables.results!bd9e5c9663902508.43e95dd3e73bd4f5",
+      "_id": "43e95dd3e73bd4f5"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Intrepid",
+      "_key": "!tables.results!bd9e5c9663902508.a1051c1b07e7c4c9",
+      "_id": "a1051c1b07e7c4c9"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Iron Aegis",
+      "_key": "!tables.results!bd9e5c9663902508.0bfd507e672e0aa2",
+      "_id": "0bfd507e672e0aa2"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Ithela",
+      "_key": "!tables.results!bd9e5c9663902508.6d96677e3aa50a22",
+      "_id": "6d96677e3aa50a22"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Jade Empress",
+      "_key": "!tables.results!bd9e5c9663902508.eb5d9980b4a07d2a",
+      "_id": "eb5d9980b4a07d2a"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Jadina's Vow",
+      "_key": "!tables.results!bd9e5c9663902508.f652b50e93f75e0c",
+      "_id": "f652b50e93f75e0c"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Kalida",
+      "_key": "!tables.results!bd9e5c9663902508.2ccebef7f9f4bc29",
+      "_id": "2ccebef7f9f4bc29"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Last Chance",
+      "_key": "!tables.results!bd9e5c9663902508.d0b273cf7976d933",
+      "_id": "d0b273cf7976d933"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Legacy",
+      "_key": "!tables.results!bd9e5c9663902508.6d1bfbf2dff22bef",
+      "_id": "6d1bfbf2dff22bef"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Lodestar",
+      "_key": "!tables.results!bd9e5c9663902508.195ffc3f0e179b70",
+      "_id": "195ffc3f0e179b70"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Makari",
+      "_key": "!tables.results!bd9e5c9663902508.698f335d7fb6be90",
+      "_id": "698f335d7fb6be90"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Mistress of the Isles",
+      "_key": "!tables.results!bd9e5c9663902508.478f77e40efec9d0",
+      "_id": "478f77e40efec9d0"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Moonless Eve",
+      "_key": "!tables.results!bd9e5c9663902508.6b3d7be23671c757",
+      "_id": "6b3d7be23671c757"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Moonrise",
+      "_key": "!tables.results!bd9e5c9663902508.764661eca6c2da14",
+      "_id": "764661eca6c2da14"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Moonshadow",
+      "_key": "!tables.results!bd9e5c9663902508.d608179b77f79c46",
+      "_id": "d608179b77f79c46"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Morgan's Promise",
+      "_key": "!tables.results!bd9e5c9663902508.81b53b243b9f3a8e",
+      "_id": "81b53b243b9f3a8e"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Morraine",
+      "_key": "!tables.results!bd9e5c9663902508.7feae6139785235a",
+      "_id": "7feae6139785235a"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Opportunity",
+      "_key": "!tables.results!bd9e5c9663902508.335573878af2b870",
+      "_id": "335573878af2b870"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Oracle",
+      "_key": "!tables.results!bd9e5c9663902508.88293db30fd59e39",
+      "_id": "88293db30fd59e39"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Perilous Venture",
+      "_key": "!tables.results!bd9e5c9663902508.4570793e5e655a02",
+      "_id": "4570793e5e655a02"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Profit Margin",
+      "_key": "!tables.results!bd9e5c9663902508.d2d1f3059812700b",
+      "_id": "d2d1f3059812700b"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Prosperity",
+      "_key": "!tables.results!bd9e5c9663902508.9c8076bde1e56cdc",
+      "_id": "9c8076bde1e56cdc"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Razeena",
+      "_key": "!tables.results!bd9e5c9663902508.f98a4035bc241c25",
+      "_id": "f98a4035bc241c25"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Red Diamond",
+      "_key": "!tables.results!bd9e5c9663902508.099d828dbabb58db",
+      "_id": "099d828dbabb58db"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Redemption",
+      "_key": "!tables.results!bd9e5c9663902508.25c78f50d95a6450",
+      "_id": "25c78f50d95a6450"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Reef Scraper",
+      "_key": "!tables.results!bd9e5c9663902508.6856a3cbedbf0ece",
+      "_id": "6856a3cbedbf0ece"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Reforged Blade",
+      "_key": "!tables.results!bd9e5c9663902508.c83cce38f3be398a",
+      "_id": "c83cce38f3be398a"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Rhaskar",
+      "_key": "!tables.results!bd9e5c9663902508.ca8c4867329125d8",
+      "_id": "ca8c4867329125d8"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Sadia",
+      "_key": "!tables.results!bd9e5c9663902508.17fc6962141e0cb9",
+      "_id": "17fc6962141e0cb9"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Sea Hawk",
+      "_key": "!tables.results!bd9e5c9663902508.a40498851de46a19",
+      "_id": "a40498851de46a19"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Sidura's Hope",
+      "_key": "!tables.results!bd9e5c9663902508.43c458e2a6475981",
+      "_id": "43c458e2a6475981"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Silver Arrow",
+      "_key": "!tables.results!bd9e5c9663902508.ab9ef852f9fa8420",
+      "_id": "ab9ef852f9fa8420"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Silver Shark",
+      "_key": "!tables.results!bd9e5c9663902508.6ec294b91c4efed7",
+      "_id": "6ec294b91c4efed7"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Stardancer",
+      "_key": "!tables.results!bd9e5c9663902508.7bd0b7b785d1b630",
+      "_id": "7bd0b7b785d1b630"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Stardust",
+      "_key": "!tables.results!bd9e5c9663902508.ae243b845648874f",
+      "_id": "ae243b845648874f"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Starfall",
+      "_key": "!tables.results!bd9e5c9663902508.919d597d04bf7be6",
+      "_id": "919d597d04bf7be6"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Starlume",
+      "_key": "!tables.results!bd9e5c9663902508.576b4b758ad2fbb0",
+      "_id": "576b4b758ad2fbb0"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Steadfast",
+      "_key": "!tables.results!bd9e5c9663902508.de451f45a977ec47",
+      "_id": "de451f45a977ec47"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Stormbreaker",
+      "_key": "!tables.results!bd9e5c9663902508.c8b2895e9476dfa4",
+      "_id": "c8b2895e9476dfa4"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Stormchaser",
+      "_key": "!tables.results!bd9e5c9663902508.e8286f6a79354dec",
+      "_id": "e8286f6a79354dec"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Stormwatch",
+      "_key": "!tables.results!bd9e5c9663902508.f883e36b456bf322",
+      "_id": "f883e36b456bf322"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Supremacy",
+      "_key": "!tables.results!bd9e5c9663902508.5b4dc9226d2586e9",
+      "_id": "5b4dc9226d2586e9"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Swiftsure",
+      "_key": "!tables.results!bd9e5c9663902508.57f7ae4a99c0f7f4",
+      "_id": "57f7ae4a99c0f7f4"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Thrice Sunk",
+      "_key": "!tables.results!bd9e5c9663902508.8e272c4daced12f3",
+      "_id": "8e272c4daced12f3"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Tide Chaser",
+      "_key": "!tables.results!bd9e5c9663902508.898fa87469c34172",
+      "_id": "898fa87469c34172"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Trident",
+      "_key": "!tables.results!bd9e5c9663902508.f327373a2a38dd84",
+      "_id": "f327373a2a38dd84"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Twin Fates",
+      "_key": "!tables.results!bd9e5c9663902508.02a428f0339f5b9e",
+      "_id": "02a428f0339f5b9e"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Unsheathed Blade",
+      "_key": "!tables.results!bd9e5c9663902508.32cb73572efe0c02",
+      "_id": "32cb73572efe0c02"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Valiant",
+      "_key": "!tables.results!bd9e5c9663902508.31d6ea826368de22",
+      "_id": "31d6ea826368de22"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Vanguard",
+      "_key": "!tables.results!bd9e5c9663902508.77cd9036179e8562",
+      "_id": "77cd9036179e8562"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Victory",
+      "_key": "!tables.results!bd9e5c9663902508.1133e0625facf4c4",
+      "_id": "1133e0625facf4c4"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Vigilant",
+      "_key": "!tables.results!bd9e5c9663902508.c47d1baad4c9cdcf",
+      "_id": "c47d1baad4c9cdcf"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Waveswept",
+      "_key": "!tables.results!bd9e5c9663902508.9f4f8f236fa90e7d",
+      "_id": "9f4f8f236fa90e7d"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Whispering Fate",
+      "_key": "!tables.results!bd9e5c9663902508.7c66687381aa8dc8",
+      "_id": "7c66687381aa8dc8"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "White Gull",
+      "_key": "!tables.results!bd9e5c9663902508.aaa2095b79b9bc0f",
+      "_id": "aaa2095b79b9bc0f"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Windward Lady",
+      "_key": "!tables.results!bd9e5c9663902508.061c6ce9a68f12be",
+      "_id": "061c6ce9a68f12be"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Zakaria",
+      "_key": "!tables.results!bd9e5c9663902508.40b4a593a47f766e",
+      "_id": "40b4a593a47f766e"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Zephyr",
+      "_key": "!tables.results!bd9e5c9663902508.6420902613fa2a0d",
+      "_id": "6420902613fa2a0d"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Unbroken Vow",
+      "_key": "!tables.results!bd9e5c9663902508.8842d7893a99b5b1",
+      "_id": "8842d7893a99b5b1"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 140,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!bd9e5c9663902508"
+}

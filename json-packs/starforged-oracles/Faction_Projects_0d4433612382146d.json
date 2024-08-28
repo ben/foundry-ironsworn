@@ -1,0 +1,318 @@
+{
+  "_id": "0d4433612382146d",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Projects",
+      "category": "Starforged/Oracles/Factions",
+      "dsid": "oracle_rollable:starforged/faction/projects"
+    }
+  },
+  "name": "Faction Projects",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Broaden scope of the faction to include a new focus",
+      "_key": "!tables.results!0d4433612382146d.665d51fcf19cbfac",
+      "_id": "665d51fcf19cbfac"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Build or secure a powerful device",
+      "_key": "!tables.results!0d4433612382146d.17d36d53eee3b93f",
+      "_id": "17d36d53eee3b93f"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Consolidate control of a valuable commodity",
+      "_key": "!tables.results!0d4433612382146d.20f0bb5a35dab5b8",
+      "_id": "20f0bb5a35dab5b8"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Destroy or defeat a rival",
+      "_key": "!tables.results!0d4433612382146d.302756593cbe251c",
+      "_id": "302756593cbe251c"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Disrupt the operations of a rival",
+      "_key": "!tables.results!0d4433612382146d.9e9d83907b8b192f",
+      "_id": "9e9d83907b8b192f"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Escape the control of another faction or power",
+      "_key": "!tables.results!0d4433612382146d.8187c61552263cdf",
+      "_id": "8187c61552263cdf"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Establish a monument or memorial",
+      "_key": "!tables.results!0d4433612382146d.33b92eab6621da82",
+      "_id": "33b92eab6621da82"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Establish a safe refuge or headquarters",
+      "_key": "!tables.results!0d4433612382146d.b1ca3dab269d636c",
+      "_id": "b1ca3dab269d636c"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Expand operations to a new location or sector",
+      "_key": "!tables.results!0d4433612382146d.95d3f4b8e378c063",
+      "_id": "95d3f4b8e378c063"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Form an alliance",
+      "_key": "!tables.results!0d4433612382146d.db4bf5083d96266a",
+      "_id": "db4bf5083d96266a"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Fulfill a prophecy",
+      "_key": "!tables.results!0d4433612382146d.ed644108e87ca308",
+      "_id": "ed644108e87ca308"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Give aid to a faction",
+      "_key": "!tables.results!0d4433612382146d.de8ff71fa09c3eeb",
+      "_id": "de8ff71fa09c3eeb"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Harness unnatural or forbidden power",
+      "_key": "!tables.results!0d4433612382146d.edbeb286888d89f4",
+      "_id": "edbeb286888d89f4"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Hunt down a rogue asset",
+      "_key": "!tables.results!0d4433612382146d.3736e77d9e82bf6e",
+      "_id": "3736e77d9e82bf6e"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Incite conflict among rivals",
+      "_key": "!tables.results!0d4433612382146d.c3c96ce4f50cd9a2",
+      "_id": "c3c96ce4f50cd9a2"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Negotiate an agreement",
+      "_key": "!tables.results!0d4433612382146d.4c3b6b8cd2f0322b",
+      "_id": "4c3b6b8cd2f0322b"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Obtain a needed commodity",
+      "_key": "!tables.results!0d4433612382146d.7ada4cc8adc7e57b",
+      "_id": "7ada4cc8adc7e57b"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Obtain an important cultural artifact",
+      "_key": "!tables.results!0d4433612382146d.7145803c6dc9a089",
+      "_id": "7145803c6dc9a089"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Obtain crucial data or information",
+      "_key": "!tables.results!0d4433612382146d.5542654c515a6d18",
+      "_id": "5542654c515a6d18"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Obtain incriminating information about a rival",
+      "_key": "!tables.results!0d4433612382146d.e94e40ffe2d8b585",
+      "_id": "e94e40ffe2d8b585"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Prevent a prophecy",
+      "_key": "!tables.results!0d4433612382146d.98973e86a535a42d",
+      "_id": "98973e86a535a42d"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Put down an internal revolt or rebellion",
+      "_key": "!tables.results!0d4433612382146d.60901592cae71dd2",
+      "_id": "60901592cae71dd2"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Repay a debt",
+      "_key": "!tables.results!0d4433612382146d.0a78807c39e53c79",
+      "_id": "0a78807c39e53c79"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Rescue or recover a group or asset",
+      "_key": "!tables.results!0d4433612382146d.eec8ded133388fcf",
+      "_id": "eec8ded133388fcf"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Research an innovation",
+      "_key": "!tables.results!0d4433612382146d.7672fac8ad4f0a47",
+      "_id": "7672fac8ad4f0a47"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Resolve a conflict with another faction",
+      "_key": "!tables.results!0d4433612382146d.eb5b9e03a5a65ce0",
+      "_id": "eb5b9e03a5a65ce0"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Reunite splintered elements of the faction",
+      "_key": "!tables.results!0d4433612382146d.96b7d3a7eeb926ac",
+      "_id": "96b7d3a7eeb926ac"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Seize a powerful artifact or valuable treasure",
+      "_key": "!tables.results!0d4433612382146d.a63d9b0a82438e31",
+      "_id": "a63d9b0a82438e31"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Seize rival territory or operations",
+      "_key": "!tables.results!0d4433612382146d.353575e8784cb3f8",
+      "_id": "353575e8784cb3f8"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Subsume another faction",
+      "_key": "!tables.results!0d4433612382146d.11fbd5b848f86c1f",
+      "_id": "11fbd5b848f86c1f"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "Transport a valued asset",
+      "_key": "!tables.results!0d4433612382146d.cbecbb1451f5ca6a",
+      "_id": "cbecbb1451f5ca6a"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "Usurp leadership within a rival faction",
+      "_key": "!tables.results!0d4433612382146d.3014430b51fd6ea9",
+      "_id": "3014430b51fd6ea9"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!0d4433612382146d.dcc3f42b12bf404a",
+      "_id": "dcc3f42b12bf404a"
+    }
+  ],
+  "folder": "b6fe3d35ff56995d",
+  "sort": 342,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0d4433612382146d"
+}

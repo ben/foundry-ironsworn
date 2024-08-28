@@ -1,0 +1,27 @@
+{
+  "_id": "defe1d3a8a11b380",
+  "type": "progress",
+  "name": "Common Folk",
+  "img": "icons/tools/hand/shovel-spade-steel-blue-brown.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Diverse looks</p>\n<p class=\"nogrow\">Weary and worried</p>\n<p class=\"nogrow\">Suspicious of strangers</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Prepare for winter</p>\n<p class=\"nogrow\">Protect my family</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Desperate defense</p>\n<p class=\"nogrow\">Stand together</p>\n</div>\n</div>\n\n<p>Most of us in the Ironlands are common folk. We are farmers, laborers, crafters, sailors, and traders. When trouble comes, we know which way the pointy end goes and we stand together to protect our homes and kin.</p>\n\n<blockquote>Quest Starter: <p>Two prominent families are at odds. What is the source of the conflict? What is your relationship to them? What danger threatens to destroy their community if they can’t put aside their petty squabble?</p></blockquote>",
+    "rank": 1,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "026fc49d26877a2e",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/ironlanders/common_folk"
+    }
+  },
+  "_key": "!items!defe1d3a8a11b380"
+}

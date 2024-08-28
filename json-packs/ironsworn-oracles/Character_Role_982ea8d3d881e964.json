@@ -1,0 +1,291 @@
+{
+  "_id": "982ea8d3d881e964",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Character/Role",
+      "category": "Ironsworn/Oracles/Character",
+      "dsid": "oracle_rollable:classic/character/role"
+    }
+  },
+  "name": "Character Role",
+  "description": "<p>Use this oracle to define the background for a character, or to generate a random encounter.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Criminal",
+      "_key": "!tables.results!982ea8d3d881e964.551b3a6e0ed8d62f",
+      "_id": "551b3a6e0ed8d62f"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Healer",
+      "_key": "!tables.results!982ea8d3d881e964.c6eae3af289cd939",
+      "_id": "c6eae3af289cd939"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Bandit",
+      "_key": "!tables.results!982ea8d3d881e964.4e2df777dc3a37f1",
+      "_id": "4e2df777dc3a37f1"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Guide",
+      "_key": "!tables.results!982ea8d3d881e964.a344c0d530d3acf9",
+      "_id": "a344c0d530d3acf9"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Performer",
+      "_key": "!tables.results!982ea8d3d881e964.081aa2ddb9875842",
+      "_id": "081aa2ddb9875842"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Miner",
+      "_key": "!tables.results!982ea8d3d881e964.06fb1b8407c2fde7",
+      "_id": "06fb1b8407c2fde7"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Mercenary",
+      "_key": "!tables.results!982ea8d3d881e964.8fbbe1799f8958d9",
+      "_id": "8fbbe1799f8958d9"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Outcast",
+      "_key": "!tables.results!982ea8d3d881e964.ea81cbf1200c8274",
+      "_id": "ea81cbf1200c8274"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Vagrant",
+      "_key": "!tables.results!982ea8d3d881e964.95c6ed80d1b1ddbb",
+      "_id": "95c6ed80d1b1ddbb"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Forester",
+      "_key": "!tables.results!982ea8d3d881e964.23ca1548a17a6081",
+      "_id": "23ca1548a17a6081"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Traveler",
+      "_key": "!tables.results!982ea8d3d881e964.0904ea47d27df8f1",
+      "_id": "0904ea47d27df8f1"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Mystic",
+      "_key": "!tables.results!982ea8d3d881e964.bc8a00629fba2490",
+      "_id": "bc8a00629fba2490"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Priest",
+      "_key": "!tables.results!982ea8d3d881e964.448e705cb87a6a48",
+      "_id": "448e705cb87a6a48"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Sailor",
+      "_key": "!tables.results!982ea8d3d881e964.154c67333d406b2e",
+      "_id": "154c67333d406b2e"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Pilgrim",
+      "_key": "!tables.results!982ea8d3d881e964.c7d3b213fb364641",
+      "_id": "c7d3b213fb364641"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Thief",
+      "_key": "!tables.results!982ea8d3d881e964.c0935f024eec4a0c",
+      "_id": "c0935f024eec4a0c"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Adventurer",
+      "_key": "!tables.results!982ea8d3d881e964.3763487ff5b2f386",
+      "_id": "3763487ff5b2f386"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Forager",
+      "_key": "!tables.results!982ea8d3d881e964.f2f282cd6ddb4163",
+      "_id": "f2f282cd6ddb4163"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Leader",
+      "_key": "!tables.results!982ea8d3d881e964.10e96037ca9522c8",
+      "_id": "10e96037ca9522c8"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Guard",
+      "_key": "!tables.results!982ea8d3d881e964.61cdae044b9910dd",
+      "_id": "61cdae044b9910dd"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Artisan",
+      "_key": "!tables.results!982ea8d3d881e964.825fa3f1cd1709a5",
+      "_id": "825fa3f1cd1709a5"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Scout",
+      "_key": "!tables.results!982ea8d3d881e964.89cff38624ecf6cd",
+      "_id": "89cff38624ecf6cd"
+    },
+    {
+      "range": [
+        67,
+        70
+      ],
+      "text": "Herder",
+      "_key": "!tables.results!982ea8d3d881e964.8870be86a9a757fd",
+      "_id": "8870be86a9a757fd"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Fisher",
+      "_key": "!tables.results!982ea8d3d881e964.5b21c5086d1a800d",
+      "_id": "5b21c5086d1a800d"
+    },
+    {
+      "range": [
+        75,
+        79
+      ],
+      "text": "Warrior",
+      "_key": "!tables.results!982ea8d3d881e964.4381fa902d362255",
+      "_id": "4381fa902d362255"
+    },
+    {
+      "range": [
+        80,
+        84
+      ],
+      "text": "Hunter",
+      "_key": "!tables.results!982ea8d3d881e964.83398b482a555170",
+      "_id": "83398b482a555170"
+    },
+    {
+      "range": [
+        85,
+        89
+      ],
+      "text": "Raider",
+      "_key": "!tables.results!982ea8d3d881e964.7dff55f0f479135e",
+      "_id": "7dff55f0f479135e"
+    },
+    {
+      "range": [
+        90,
+        94
+      ],
+      "text": "Trader",
+      "_key": "!tables.results!982ea8d3d881e964.71f74148337c72ac",
+      "_id": "71f74148337c72ac"
+    },
+    {
+      "range": [
+        95,
+        99
+      ],
+      "text": "Farmer",
+      "_key": "!tables.results!982ea8d3d881e964.d572b57c3b9666d2",
+      "_id": "d572b57c3b9666d2"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Unusual role",
+      "_key": "!tables.results!982ea8d3d881e964.c21c48df2e2906e8",
+      "_id": "c21c48df2e2906e8"
+    }
+  ],
+  "folder": "aa60f0d1adbed892",
+  "sort": 182,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!982ea8d3d881e964"
+}

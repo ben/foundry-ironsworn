@@ -1,0 +1,141 @@
+{
+  "_id": "3a633d3ce6079711",
+  "type": "delve-theme",
+  "name": "Wild",
+  "img": "icons/magic/nature/root-vines-grow-brown.webp",
+  "system": {
+    "summary": "Nature prevails in this place.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Denizen’s lair"
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Territorial markings"
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Impressive flora or fauna"
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Hunting ground or watering hole"
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Remains or carrion"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Denizen hunts"
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Denizen strikes without warning"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Denizen leverages the environment"
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Denizen wields unexpected abilities"
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Denizen guided by a greater threat"
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Denizen protects something"
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "Hazardous terrain"
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Weather or environmental threat"
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "Benign aspect becomes a threat"
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Overzealous hunter"
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "Disturbing evidence of a victim’s fate"
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Ill-fated victim in danger"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 87,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_theme:delve/wild"
+    }
+  },
+  "_key": "!items!3a633d3ce6079711"
+}

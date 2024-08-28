@@ -1,0 +1,246 @@
+{
+  "_id": "963b7bb06c332342",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Trap/Event",
+      "category": "Ironsworn/Oracles/Trap",
+      "dsid": "oracle_rollable:delve/trap/event"
+    }
+  },
+  "name": "Event",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Block",
+      "_key": "!tables.results!963b7bb06c332342.2e53de12b6b4295a",
+      "_id": "2e53de12b6b4295a"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Create",
+      "_key": "!tables.results!963b7bb06c332342.79a82019e5e8635d",
+      "_id": "79a82019e5e8635d"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Break",
+      "_key": "!tables.results!963b7bb06c332342.705b55fe0a36c3de",
+      "_id": "705b55fe0a36c3de"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Puncture",
+      "_key": "!tables.results!963b7bb06c332342.f40b4d1cae45e0d3",
+      "_id": "f40b4d1cae45e0d3"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Entangle",
+      "_key": "!tables.results!963b7bb06c332342.176243fa25fc89af",
+      "_id": "176243fa25fc89af"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Enclose",
+      "_key": "!tables.results!963b7bb06c332342.64064b212168f238",
+      "_id": "64064b212168f238"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Ambush",
+      "_key": "!tables.results!963b7bb06c332342.4e3c00b3f49221a1",
+      "_id": "4e3c00b3f49221a1"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Snare",
+      "_key": "!tables.results!963b7bb06c332342.54144d6a49793eef",
+      "_id": "54144d6a49793eef"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Change",
+      "_key": "!tables.results!963b7bb06c332342.3797cd646c3c460f",
+      "_id": "3797cd646c3c460f"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Imitate",
+      "_key": "!tables.results!963b7bb06c332342.cebb2cc43556c755",
+      "_id": "cebb2cc43556c755"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Crush",
+      "_key": "!tables.results!963b7bb06c332342.3ec0b64426580ea6",
+      "_id": "3ec0b64426580ea6"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Drop",
+      "_key": "!tables.results!963b7bb06c332342.578d9752f5ed0c68",
+      "_id": "578d9752f5ed0c68"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Conceal",
+      "_key": "!tables.results!963b7bb06c332342.8d05a430df1eef55",
+      "_id": "8d05a430df1eef55"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Lure",
+      "_key": "!tables.results!963b7bb06c332342.580c42f65e88cbe7",
+      "_id": "580c42f65e88cbe7"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Release",
+      "_key": "!tables.results!963b7bb06c332342.77c8f289c94a9f72",
+      "_id": "77c8f289c94a9f72"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Obscure",
+      "_key": "!tables.results!963b7bb06c332342.fc4b865f7d9851aa",
+      "_id": "fc4b865f7d9851aa"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Cut",
+      "_key": "!tables.results!963b7bb06c332342.266d5a15f8606b2d",
+      "_id": "266d5a15f8606b2d"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Smother",
+      "_key": "!tables.results!963b7bb06c332342.5a073ef04abe45c0",
+      "_id": "5a073ef04abe45c0"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Collapse",
+      "_key": "!tables.results!963b7bb06c332342.6cd7761ffaa1dc7e",
+      "_id": "6cd7761ffaa1dc7e"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Summon",
+      "_key": "!tables.results!963b7bb06c332342.4033f28e86b83b98",
+      "_id": "4033f28e86b83b98"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Move",
+      "_key": "!tables.results!963b7bb06c332342.611b42515b88e57a",
+      "_id": "611b42515b88e57a"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Surprise",
+      "_key": "!tables.results!963b7bb06c332342.10eed72fb9b9ebad",
+      "_id": "10eed72fb9b9ebad"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Divert",
+      "_key": "!tables.results!963b7bb06c332342.fd995b0a0d9e0dbe",
+      "_id": "fd995b0a0d9e0dbe"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Attack",
+      "_key": "!tables.results!963b7bb06c332342.af17e0ebe688eb03",
+      "_id": "af17e0ebe688eb03"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Trigger",
+      "_key": "!tables.results!963b7bb06c332342.120d854c9e135d9e",
+      "_id": "120d854c9e135d9e"
+    }
+  ],
+  "folder": "7cacf574e6356672",
+  "sort": 217,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!963b7bb06c332342"
+}

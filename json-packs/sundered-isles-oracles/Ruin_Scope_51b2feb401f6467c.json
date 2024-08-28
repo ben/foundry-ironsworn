@@ -1,0 +1,92 @@
+{
+  "_id": "51b2feb401f6467c",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/scope"
+    }
+  },
+  "name": "Ruin Scope",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Unimpressive structure",
+      "_key": "!tables.results!51b2feb401f6467c.ce59e6d0bbe799b6",
+      "_id": "ce59e6d0bbe799b6"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Few minor structures",
+      "_key": "!tables.results!51b2feb401f6467c.2a6a2df0d43ce155",
+      "_id": "2a6a2df0d43ce155"
+    },
+    {
+      "range": [
+        11,
+        25
+      ],
+      "text": "Typical structure",
+      "_key": "!tables.results!51b2feb401f6467c.e7007d8e3f8fb670",
+      "_id": "e7007d8e3f8fb670"
+    },
+    {
+      "range": [
+        26,
+        40
+      ],
+      "text": "Several scattered structures",
+      "_key": "!tables.results!51b2feb401f6467c.2ec352f938763dba",
+      "_id": "2ec352f938763dba"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Large, imposing structure",
+      "_key": "!tables.results!51b2feb401f6467c.29884f34258c0b92",
+      "_id": "29884f34258c0b92"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Sizable sprawl of structures",
+      "_key": "!tables.results!51b2feb401f6467c.c2fd74f6c52e82e2",
+      "_id": "c2fd74f6c52e82e2"
+    },
+    {
+      "range": [
+        81,
+        95
+      ],
+      "text": "Colossal structure",
+      "_key": "!tables.results!51b2feb401f6467c.09e94d13ded7cdc6",
+      "_id": "09e94d13ded7cdc6"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Vast sprawl of structures",
+      "_key": "!tables.results!51b2feb401f6467c.1fc78c8e1db61a8b",
+      "_id": "1fc78c8e1db61a8b"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 213,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!51b2feb401f6467c"
+}

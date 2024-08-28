@@ -1,0 +1,47 @@
+{
+  "_id": "b4383db857ca3b34",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction",
+      "dsid": "oracle_rollable:sundered_isles/faction/type"
+    }
+  },
+  "name": "Faction Type",
+  "description": "<p>On a cursed result, choose one: Make the faction one of @Compendium[foundry-ironsworn.sunderedislesoracles.0001ccabdf0d3b5a]{The Cursed}, or keep the result and give the faction @Compendium[foundry-ironsworn.sunderedislesoracles.0c4ea61819a3090b]{Cursed Aspects}.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        50
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/society\">\n    <i class=\"fa fa-caret-right\"></i> Society\n</a></p>",
+      "_key": "!tables.results!b4383db857ca3b34.2c6b850ef55c3deb",
+      "_id": "2c6b850ef55c3deb"
+    },
+    {
+      "range": [
+        51,
+        80
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/organization\">\n    <i class=\"fa fa-caret-right\"></i> Organization\n</a></p>",
+      "_key": "!tables.results!b4383db857ca3b34.607975cf0b9b8907",
+      "_id": "607975cf0b9b8907"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/empire\">\n    <i class=\"fa fa-caret-right\"></i> Empire\n</a></p>",
+      "_key": "!tables.results!b4383db857ca3b34.9f471cf313a06954",
+      "_id": "9f471cf313a06954"
+    }
+  ],
+  "folder": "332fe732886451c6",
+  "sort": 176,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b4383db857ca3b34"
+}

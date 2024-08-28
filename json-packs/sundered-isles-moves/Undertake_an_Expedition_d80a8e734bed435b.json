@@ -1,0 +1,82 @@
+{
+  "_id": "d80a8e734bed435b",
+  "type": "sfmove",
+  "name": "Undertake an Expedition",
+  "img": "icons/dice/d10black.svg",
+  "folder": "b6d8c0a498693d1c",
+  "system": {
+    "dfid": "move:sundered_isles/exploration/undertake_an_expedition",
+    "Category": "move_category:sundered_isles/exploration",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When you sail an unfamiliar route through perilous seas, find the way across hazardous terrain, or explore a mysterious site__, give the expedition a name and rank.\n\nThen, for each segment of the expedition, envision your approach. If you...\n\n  * Move at speed: Roll +edge\n  * Keep a low profile: Roll +shadow\n  * Stay vigilant: Roll +wits\n\nOn a __strong hit__, you reach a waypoint. Envision the location and mark progress per the rank of the expedition.\n\nOn a __weak hit__, as above, but this progress costs you. Choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a peril at the waypoint: Envision what you encounter.\n\nOn a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you sail an unfamiliar route through perilous seas, find the way across hazardous terrain, or explore a mysterious site...",
+      "Options": [
+        {
+          "Text": "Move at speed",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        },
+        {
+          "Text": "Keep under the radar",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Stay vigilant",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you reach a waypoint. Envision the location and mark progress per the rank of the expedition.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you reach a waypoint, but this progress costs you. Envision the location and mark progress per the rank of the expedition, but choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a peril at the waypoint: Envision what you encounter."
+      },
+      "Miss": {
+        "Text": "On a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Sundered Isles",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2024-07-01",
+      "Page": 242
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 242,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:sundered_isles/exploration/undertake_an_expedition",
+      "dsid": "move:sundered_isles/exploration/undertake_an_expedition"
+    }
+  },
+  "_key": "!items!d80a8e734bed435b"
+}

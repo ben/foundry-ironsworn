@@ -1,0 +1,471 @@
+{
+  "_id": "8bb90176a16ad6c9",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Description",
+      "category": "Ironsworn/Oracles/Site_Name",
+      "dsid": "oracle_rollable:delve/site_name/description"
+    }
+  },
+  "name": "Description",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Deep",
+      "_key": "!tables.results!8bb90176a16ad6c9.3ebf4f99e40113c2",
+      "_id": "3ebf4f99e40113c2"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Tainted",
+      "_key": "!tables.results!8bb90176a16ad6c9.7673514410ca4cd7",
+      "_id": "7673514410ca4cd7"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Grey",
+      "_key": "!tables.results!8bb90176a16ad6c9.ea2c7cd2d4c643c3",
+      "_id": "ea2c7cd2d4c643c3"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Forgotten",
+      "_key": "!tables.results!8bb90176a16ad6c9.6046516c5a2839a6",
+      "_id": "6046516c5a2839a6"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Flooded",
+      "_key": "!tables.results!8bb90176a16ad6c9.d238b45d42a69cb3",
+      "_id": "d238b45d42a69cb3"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Forbidden",
+      "_key": "!tables.results!8bb90176a16ad6c9.d8bd5b0830317763",
+      "_id": "d8bd5b0830317763"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Barren",
+      "_key": "!tables.results!8bb90176a16ad6c9.68a865ce94820e3e",
+      "_id": "68a865ce94820e3e"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Lost",
+      "_key": "!tables.results!8bb90176a16ad6c9.20ba07e035ad4241",
+      "_id": "20ba07e035ad4241"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Cursed",
+      "_key": "!tables.results!8bb90176a16ad6c9.5753cd209ca9f962",
+      "_id": "5753cd209ca9f962"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Fell",
+      "_key": "!tables.results!8bb90176a16ad6c9.3ea4ce8cedb74906",
+      "_id": "3ea4ce8cedb74906"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Sunken",
+      "_key": "!tables.results!8bb90176a16ad6c9.b4b6e92538322708",
+      "_id": "b4b6e92538322708"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Nightmare",
+      "_key": "!tables.results!8bb90176a16ad6c9.e8c57e4f1c7e99db",
+      "_id": "e8c57e4f1c7e99db"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Infernal",
+      "_key": "!tables.results!8bb90176a16ad6c9.0058a4a28684c984",
+      "_id": "0058a4a28684c984"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Dark",
+      "_key": "!tables.results!8bb90176a16ad6c9.6fb9b2aeddeeaa46",
+      "_id": "6fb9b2aeddeeaa46"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Bloodstained",
+      "_key": "!tables.results!8bb90176a16ad6c9.ad055b9f93fb4783",
+      "_id": "ad055b9f93fb4783"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Haunted",
+      "_key": "!tables.results!8bb90176a16ad6c9.6ad96afb0ef6ac3d",
+      "_id": "6ad96afb0ef6ac3d"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "White",
+      "_key": "!tables.results!8bb90176a16ad6c9.4980c462ec91c2a7",
+      "_id": "4980c462ec91c2a7"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Shrouded",
+      "_key": "!tables.results!8bb90176a16ad6c9.33d8010dc69d8a24",
+      "_id": "33d8010dc69d8a24"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Wasted",
+      "_key": "!tables.results!8bb90176a16ad6c9.94b3a6d4c8513bae",
+      "_id": "94b3a6d4c8513bae"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Grim",
+      "_key": "!tables.results!8bb90176a16ad6c9.87396eaaf1e9f882",
+      "_id": "87396eaaf1e9f882"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Endless",
+      "_key": "!tables.results!8bb90176a16ad6c9.d190e346b45261f6",
+      "_id": "d190e346b45261f6"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Crumbling",
+      "_key": "!tables.results!8bb90176a16ad6c9.0220f9f19a5b5f6d",
+      "_id": "0220f9f19a5b5f6d"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Undying",
+      "_key": "!tables.results!8bb90176a16ad6c9.f4b41bfbd53b99d5",
+      "_id": "f4b41bfbd53b99d5"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Bloodied",
+      "_key": "!tables.results!8bb90176a16ad6c9.34f71cfcff3cbb7f",
+      "_id": "34f71cfcff3cbb7f"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Forsaken",
+      "_key": "!tables.results!8bb90176a16ad6c9.0fc976f5cd093d5f",
+      "_id": "0fc976f5cd093d5f"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Silent",
+      "_key": "!tables.results!8bb90176a16ad6c9.f5b2c03d939b83d1",
+      "_id": "f5b2c03d939b83d1"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Blighted",
+      "_key": "!tables.results!8bb90176a16ad6c9.35f85f5447db437f",
+      "_id": "35f85f5447db437f"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Iron",
+      "_key": "!tables.results!8bb90176a16ad6c9.0572fc893a111e9d",
+      "_id": "0572fc893a111e9d"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Frozen",
+      "_key": "!tables.results!8bb90176a16ad6c9.bb454a7b609f72c1",
+      "_id": "bb454a7b609f72c1"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Abyssal",
+      "_key": "!tables.results!8bb90176a16ad6c9.1143528723513e42",
+      "_id": "1143528723513e42"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Crimson",
+      "_key": "!tables.results!8bb90176a16ad6c9.baa3056b5a721bae",
+      "_id": "baa3056b5a721bae"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Silver",
+      "_key": "!tables.results!8bb90176a16ad6c9.e9b6050fe1ca778c",
+      "_id": "e9b6050fe1ca778c"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Desecrated",
+      "_key": "!tables.results!8bb90176a16ad6c9.3fdb966dd75d9c79",
+      "_id": "3fdb966dd75d9c79"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Ashen",
+      "_key": "!tables.results!8bb90176a16ad6c9.bbbd5ac745524205",
+      "_id": "bbbd5ac745524205"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Elder",
+      "_key": "!tables.results!8bb90176a16ad6c9.66069e45198517ff",
+      "_id": "66069e45198517ff"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Scorched",
+      "_key": "!tables.results!8bb90176a16ad6c9.7b56d86b34da10a3",
+      "_id": "7b56d86b34da10a3"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Unknown",
+      "_key": "!tables.results!8bb90176a16ad6c9.fda46f9d9417f4fd",
+      "_id": "fda46f9d9417f4fd"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Scarred",
+      "_key": "!tables.results!8bb90176a16ad6c9.f247b4e08b84d255",
+      "_id": "f247b4e08b84d255"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Broken",
+      "_key": "!tables.results!8bb90176a16ad6c9.e32add4a5baa0849",
+      "_id": "e32add4a5baa0849"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Chaotic",
+      "_key": "!tables.results!8bb90176a16ad6c9.91576781184cc92b",
+      "_id": "91576781184cc92b"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Black",
+      "_key": "!tables.results!8bb90176a16ad6c9.46946ef194c50bec",
+      "_id": "46946ef194c50bec"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Hidden",
+      "_key": "!tables.results!8bb90176a16ad6c9.77f0671a4d4bd788",
+      "_id": "77f0671a4d4bd788"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Sundered",
+      "_key": "!tables.results!8bb90176a16ad6c9.45309a2fb06d62d1",
+      "_id": "45309a2fb06d62d1"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Shattered",
+      "_key": "!tables.results!8bb90176a16ad6c9.16e1859e97d83c6e",
+      "_id": "16e1859e97d83c6e"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Dreaded",
+      "_key": "!tables.results!8bb90176a16ad6c9.2c37d78d62c9ed39",
+      "_id": "2c37d78d62c9ed39"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Secret",
+      "_key": "!tables.results!8bb90176a16ad6c9.071c32a46d5d9ce9",
+      "_id": "071c32a46d5d9ce9"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "High",
+      "_key": "!tables.results!8bb90176a16ad6c9.1d4d9760f4a39a30",
+      "_id": "1d4d9760f4a39a30"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Sacred",
+      "_key": "!tables.results!8bb90176a16ad6c9.b5176af22bdd3e0d",
+      "_id": "b5176af22bdd3e0d"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Fallen",
+      "_key": "!tables.results!8bb90176a16ad6c9.02f5e74627d1468b",
+      "_id": "02f5e74627d1468b"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Ruined",
+      "_key": "!tables.results!8bb90176a16ad6c9.a4ea39df1179d1f8",
+      "_id": "a4ea39df1179d1f8"
+    }
+  ],
+  "folder": "f6b92bad160107de",
+  "sort": 207,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8bb90176a16ad6c9"
+}

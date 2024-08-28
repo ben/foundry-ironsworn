@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "bdfce3738749baff",
+  "folder": "e5df7144ec089f12",
+  "name": "Pistoleer",
+  "system": {
+    "requirement": "<p>If you wield a brace of pistols…</p>",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} with pistols in hand, or @Compendium[foundry-ironsworn.starforgedmoves.a903d120af3b1475]{Battle} by unleashing a whirlwind of gunfire, add +1. On a hit, take +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} or @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash} with a flurry of shots, you may roll your action die up to three times (or roll three action dice at once), keeping the highest. On a strong hit, mark progress. On a weak hit or miss, after resolving the outcome of the attack, immediately @Compendium[foundry-ironsworn.starforgedmoves.8d9830fb825057b0]{Check Your Gear} to see if you have more pistols and ammo at the ready. If not, this asset is unusable for the remainder of the fight.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you participate in a charged or antagonistic parlay with your pistols on display, take +2 momentum at the start of the interaction.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/pistoleer",
+      "dsid": "asset:sundered_isles/path/pistoleer"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!bdfce3738749baff"
+}

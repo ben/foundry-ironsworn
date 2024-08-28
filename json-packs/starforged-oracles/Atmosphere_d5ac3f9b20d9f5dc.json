@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Jungle/Atmosphere",
-      "category": "Starforged/Oracles/Planets/Jungle"
+      "category": "Starforged/Oracles/Planets/Jungle",
+      "dsid": "oracle_rollable:starforged/planet/jungle/atmosphere"
     }
   },
   "name": "Atmosphere",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         25
       ],
       "text": "Toxic",
-      "_id": "5f8cae8d8bf2e354",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d5ac3f9b20d9f5dc.5f8cae8d8bf2e354"
+      "_key": "!tables.results!d5ac3f9b20d9f5dc.e315c6978fd6b9b0",
+      "_id": "e315c6978fd6b9b0"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         30
       ],
       "text": "Corrosive",
-      "_id": "853a7951ad7b0a61",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d5ac3f9b20d9f5dc.853a7951ad7b0a61"
+      "_key": "!tables.results!d5ac3f9b20d9f5dc.9957294017844666",
+      "_id": "9957294017844666"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Marginal",
-      "_id": "3114032672460d7b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d5ac3f9b20d9f5dc.3114032672460d7b"
+      "_key": "!tables.results!d5ac3f9b20d9f5dc.6ab86499b84c45bc",
+      "_id": "6ab86499b84c45bc"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         90
       ],
       "text": "Breathable",
-      "_id": "e6f133d540a0eb34",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d5ac3f9b20d9f5dc.e6f133d540a0eb34"
+      "_key": "!tables.results!d5ac3f9b20d9f5dc.65b2e73a82361550",
+      "_id": "65b2e73a82361550"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Ideal",
-      "_id": "4a5ed6f5b5f16d1a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d5ac3f9b20d9f5dc.4a5ed6f5b5f16d1a"
+      "_key": "!tables.results!d5ac3f9b20d9f5dc.897430411cb922e1",
+      "_id": "897430411cb922e1"
     }
   ],
   "folder": "2a431921f3dabd4b",
   "sort": 313,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!d5ac3f9b20d9f5dc"
 }

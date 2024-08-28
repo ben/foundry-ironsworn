@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "Draw the Circle",
   "img": "icons/dice/d10black.svg",
+  "folder": "31fc8e728c391c80",
   "system": {
     "dfid": "Ironsworn/Moves/Relationship/Draw_the_Circle",
     "Category": "Ironsworn/Moves/Relationship",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you challenge someone to a formal duel, or accept a challenge**, roll +heart. If you share a bond with this community, add +1.\n\nOn a **strong hit**, take +1 momentum. You may also choose up to two boasts and take +1 momentum for each.\n\nOn a **weak hit**, you may choose one boast in exchange for +1 momentum.\n\n  * Grant first strike: Your foe has initiative.\n  * Bare yourself: Take no benefit of armor or shield; your foe’s harm is +1.\n  * Hold no iron: Take no benefit of weapons; your harm is 1.\n  * Bloody yourself: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} (1 harm).\n  * To the death: One way or another, this fight must end with death.\n\nOn a **miss**, you begin the duel at a disadvantage. Your foe has initiative. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Then, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.",
+    "Text": "When __you challenge someone to a formal duel, or accept a challenge__, roll +heart. If you share a bond with this community, add +1.\n\nOn a __strong hit__, take +1 momentum. You may also choose up to two boasts and take +1 momentum for each.\n\nOn a __weak hit__, you may choose one boast in exchange for +1 momentum.\n\n  * Grant first strike: Your foe has initiative.\n  * Bare yourself: Take no benefit of armor or shield; your foe’s harm is +1.\n  * Hold no iron: Take no benefit of weapons; your harm is 1.\n  * Bloody yourself: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} (1 harm).\n  * To the death: One way or another, this fight must end with death.\n\nOn a __miss__, you begin the duel at a disadvantage. Your foe has initiative. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Then, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.",
     "Trigger": {
       "Text": "When you challenge someone to a formal duel, or accept a challenge...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Heart"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Take +1 momentum. You may also choose up to two boasts and take +1 momentum for each.\n\n  * Grant first strike: Your foe has initiative.\n  * Bare yourself: Take no benefit of armor or shield; your foe’s harm is +1.\n  * Hold no iron: Take no benefit of weapons; your harm is 1.\n  * Bloody yourself: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} (1 harm).\n  * To the death: One way or another, this fight must end with death.\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, take +1 momentum. You may also choose up to two boasts and take +1 momentum for each.\n\n  * Grant first strike: Your foe has initiative.\n  * Bare yourself: Take no benefit of armor or shield; your foe’s harm is +1.\n  * Hold no iron: Take no benefit of weapons; your harm is 1.\n  * Bloody yourself: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} (1 harm).\n  * To the death: One way or another, this fight must end with death.\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You may choose one boast in exchange for +1 momentum.\n\n  * Grant first strike: Your foe has initiative.\n  * Bare yourself: Take no benefit of armor or shield; your foe’s harm is +1.\n  * Hold no iron: Take no benefit of weapons; your harm is 1.\n  * Bloody yourself: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} (1 harm).\n  * To the death: One way or another, this fight must end with death.\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you may choose one boast in exchange for +1 momentum.\n\n  * Grant first strike: Your foe has initiative.\n  * Bare yourself: Take no benefit of armor or shield; your foe’s harm is +1.\n  * Hold no iron: Take no benefit of weapons; your harm is 1.\n  * Bloody yourself: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} (1 harm).\n  * To the death: One way or another, this fight must end with death.\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you."
       },
       "Miss": {
-        "Text": "You begin the duel at a disadvantage. Your foe has initiative. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you begin the duel at a disadvantage. Your foe has initiative. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 73
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 73,
-  "folder": "31fc8e728c391c80",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Relationship/Draw_the_Circle",
+      "dsid": "move:classic/relationship/draw_the_circle"
+    }
   },
   "_key": "!items!c0967ba47f57393b"
 }

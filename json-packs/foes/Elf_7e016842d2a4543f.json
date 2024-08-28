@@ -1,0 +1,27 @@
+{
+  "_id": "7e016842d2a4543f",
+  "type": "progress",
+  "name": "Elf",
+  "img": "icons/creatures/magical/humanoid-horned-rider.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Large, luminous eyes seen through wooden masks</p>\n<p class=\"nogrow\">Gray-green skin the texture of dry leaves</p>\n<p class=\"nogrow\">Sonorous voices</p>\n<p class=\"nogrow\">Wielding bows and spears</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Protect the wilds</p>\n<p class=\"nogrow\">Drive out trespassers, or see them pay</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Strike from shadow</p>\n<p class=\"nogrow\">Force their surrender</p>\n<p class=\"nogrow\">Turn the forest against them</p>\n</div>\n</div>\n\n<p>Elves are strange beings of the forest, seldom seen beyond the ancient woods of the Deep Wilds. They are fiercely protective of their lands and suspicious of humans. Their scouts patrol the borderlands, riding the fearsome mounts we call @Compendium[foundry-ironsworn.ironswornfoes.de6df9ea5bd4ebf8]{gaunts}. Others of their kind watch us from the shadow of the deep woods, spears and bow at the ready. Some say elven mystics can bind the animals and beasts of the forest to aid in the defense of the Wilds.</p>\n<p>A few warn that the elves are biding their time, readying the attack which will drive us from these lands.</p>\n\n<blockquote>Quest Starter: <p>The leader of an Ironlander community seeks an audience with the elves. For what purpose? Why are you compelled to help?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "d4239e681a659e2d",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/firstborn/elf"
+    }
+  },
+  "_key": "!items!7e016842d2a4543f"
+}

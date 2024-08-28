@@ -1,24 +1,17 @@
 {
   "name": "Adventure Moves",
-  "type": "Item",
-  "_id": "30f9b4039e23c0c9",
   "color": "#206087",
   "description": "Adventure moves are used as you travel the Ironlands, investigate situations, and deal with threats.",
+  "type": "Item",
+  "_id": "30f9b4039e23c0c9",
   "sort": 60,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Ironsworn/Moves/Adventure"
+      "dfid": "Ironsworn/Moves/Adventure",
+      "dsid": "move_category:classic/adventure"
     }
   },
   "folder": null,
   "sorting": "a",
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021086,
-    "modifiedTime": 1695949021086,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!folders!30f9b4039e23c0c9"
 }

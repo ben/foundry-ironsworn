@@ -1,0 +1,53 @@
+{
+  "name": "Boar",
+  "img": "icons/commodities/treasure/figurine-boar.webp",
+  "type": "foe",
+  "_id": "4db975bfc941fb9f",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Boar",
+    "texture": {
+      "src": "icons/commodities/treasure/figurine-boar.webp"
+    }
+  },
+  "folder": "80e257c8df770379",
+  "items": [
+    {
+      "_id": "cfac95b9dfbf6720",
+      "type": "progress",
+      "name": "Boar",
+      "img": "icons/commodities/treasure/figurine-boar.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Wiry coats</p>\n<p class=\"nogrow\">Long tusks</p>\n<p class=\"nogrow\">Vicious</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Forage</p>\n<p class=\"nogrow\">Protect territory</p>\n<p class=\"nogrow\">Defend sows</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Charge and gore</p>\n<p class=\"nogrow\">Circle and attack again</p>\n</div>\n</div>\n\n<p>In the @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}, wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.</p>\n\n<blockquote>Quest Starter: <p>A boar hunt ends in tragedy when an Ironlander is gored and grievously\nwounded. How do you know this person? What terrible truth do they\nreveal as they lay dying?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "80e257c8df770379",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:classic/animals/boar"
+        }
+      },
+      "_key": "!actors.items!4db975bfc941fb9f.cfac95b9dfbf6720"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/animals/boar"
+    }
+  },
+  "_key": "!actors!4db975bfc941fb9f"
+}

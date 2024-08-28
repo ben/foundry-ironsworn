@@ -1,0 +1,110 @@
+{
+  "_id": "a793c0cb262c4191",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/loyalty",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/loyalty/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Bannersworn",
+      "_key": "!tables.results!a793c0cb262c4191.022591cfebea91ce",
+      "_id": "022591cfebea91ce"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Bonded",
+      "_key": "!tables.results!a793c0cb262c4191.0842fab90f0e8ae6",
+      "_id": "0842fab90f0e8ae6"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Branded",
+      "_key": "!tables.results!a793c0cb262c4191.3d4d4bb3f1914c56",
+      "_id": "3d4d4bb3f1914c56"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Kindred",
+      "_key": "!tables.results!a793c0cb262c4191.92d8bc92de729123",
+      "_id": "92d8bc92de729123"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Resolute",
+      "_key": "!tables.results!a793c0cb262c4191.5de621519b6fdf2a",
+      "_id": "5de621519b6fdf2a"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Steadfast",
+      "_key": "!tables.results!a793c0cb262c4191.0317991c6966b37c",
+      "_id": "0317991c6966b37c"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Trueheart",
+      "_key": "!tables.results!a793c0cb262c4191.23172c37180a4c05",
+      "_id": "23172c37180a4c05"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Unbroken",
+      "_key": "!tables.results!a793c0cb262c4191.cef73cfabea3e76b",
+      "_id": "cef73cfabea3e76b"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Unified",
+      "_key": "!tables.results!a793c0cb262c4191.cb91330a724bfe48",
+      "_id": "cb91330a724bfe48"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "United",
+      "_key": "!tables.results!a793c0cb262c4191.a0a3c1f2dd4ac2aa",
+      "_id": "a0a3c1f2dd4ac2aa"
+    }
+  ],
+  "folder": "0f5a1b951ea99e85",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a793c0cb262c4191"
+}

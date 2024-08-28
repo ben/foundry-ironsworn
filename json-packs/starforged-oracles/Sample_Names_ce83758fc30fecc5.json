@@ -1,0 +1,200 @@
+{
+  "_id": "ce83758fc30fecc5",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Tainted",
+      "dsid": "oracle_rollable:starforged/planet/tainted/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Achlys",
+      "_key": "!tables.results!ce83758fc30fecc5.257a20640e0962de",
+      "_id": "257a20640e0962de"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Animus",
+      "_key": "!tables.results!ce83758fc30fecc5.f97f62f091aa2a16",
+      "_id": "f97f62f091aa2a16"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Bane",
+      "_key": "!tables.results!ce83758fc30fecc5.faef1337cb341e93",
+      "_id": "faef1337cb341e93"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Blight",
+      "_key": "!tables.results!ce83758fc30fecc5.86a51e6aab8fa17c",
+      "_id": "86a51e6aab8fa17c"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Carrion",
+      "_key": "!tables.results!ce83758fc30fecc5.7c67e0fe21403158",
+      "_id": "7c67e0fe21403158"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Chitin",
+      "_key": "!tables.results!ce83758fc30fecc5.cc702ce4c3ecc075",
+      "_id": "cc702ce4c3ecc075"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Datura",
+      "_key": "!tables.results!ce83758fc30fecc5.9f7776ba80602992",
+      "_id": "9f7776ba80602992"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Dreck",
+      "_key": "!tables.results!ce83758fc30fecc5.d479d5ab8da0ff35",
+      "_id": "d479d5ab8da0ff35"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Erra",
+      "_key": "!tables.results!ce83758fc30fecc5.953e0cbb41ca76e6",
+      "_id": "953e0cbb41ca76e6"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Febris",
+      "_key": "!tables.results!ce83758fc30fecc5.4cf916fca73bebff",
+      "_id": "4cf916fca73bebff"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Malacia",
+      "_key": "!tables.results!ce83758fc30fecc5.c1a6c722fe63f76b",
+      "_id": "c1a6c722fe63f76b"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Miasma",
+      "_key": "!tables.results!ce83758fc30fecc5.d0bbbf38e7923834",
+      "_id": "d0bbbf38e7923834"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Morbus",
+      "_key": "!tables.results!ce83758fc30fecc5.470a1f254c0131fb",
+      "_id": "470a1f254c0131fb"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Pathosis",
+      "_key": "!tables.results!ce83758fc30fecc5.8b05bde27c728ed6",
+      "_id": "8b05bde27c728ed6"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Pestis",
+      "_key": "!tables.results!ce83758fc30fecc5.dccdae5d9091a81b",
+      "_id": "dccdae5d9091a81b"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Scourge",
+      "_key": "!tables.results!ce83758fc30fecc5.ed291f20bede37b1",
+      "_id": "ed291f20bede37b1"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Telium",
+      "_key": "!tables.results!ce83758fc30fecc5.6fd318fc7cb1ab7e",
+      "_id": "6fd318fc7cb1ab7e"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Timoris",
+      "_key": "!tables.results!ce83758fc30fecc5.dfe5e6b0a2397b52",
+      "_id": "dfe5e6b0a2397b52"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Verus",
+      "_key": "!tables.results!ce83758fc30fecc5.7d6a8d0dbc6af731",
+      "_id": "7d6a8d0dbc6af731"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Xanthous",
+      "_key": "!tables.results!ce83758fc30fecc5.830907adfab3bd2d",
+      "_id": "830907adfab3bd2d"
+    }
+  ],
+  "folder": "98454829527950a0",
+  "sort": 317,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ce83758fc30fecc5"
+}

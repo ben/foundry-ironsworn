@@ -4,7 +4,7 @@
   "name": "Chimera",
   "img": "icons/magic/death/undead-skeleton-rags-fire-green.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Shambling corpses given unnatural life</p>\n    <p class=\"nogrow\">Tattered garments and timeworn gear</p>\n    <p class=\"nogrow\">Pallid light within hollow eye sockets</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Protect the site of their demise</p>\n    <p class=\"nogrow\">Stay shrouded in darkness</p>\n    <p class=\"nogrow\">Hunt the living</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Shamble forward unceasingly</p>\n    <p class=\"nogrow\">Ambush enemies from the shadows</p>\n  </div>\n</div>\n\n<p>When many beings perish in the same site, the chaotic forces of the Forge can create a chimera—multiple undead bodies fused into a twisted, massive entity that knows only pain and hunger. When a dozen blood-tinged eyes focus on you, when the gibbering mouths open at once to scream, your only hope is a quick death.</p>\n\n<blockquote>Quest Starter: <p>Hundreds died in an industrial accident within an orbital facility, and are said to now be twice-born as risen. Triggering a reactor meltdown will obliterate this place and put its undead inhabitants to rest. Why are you sworn to see it done?</p></blockquote>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Shambling corpses given unnatural life</p>\n<p class=\"nogrow\">Tattered garments and timeworn gear</p>\n<p class=\"nogrow\">Pallid light within hollow eye sockets</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Protect the site of their demise</p>\n<p class=\"nogrow\">Stay shrouded in darkness</p>\n<p class=\"nogrow\">Hunt the living</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Shamble forward unceasingly</p>\n<p class=\"nogrow\">Ambush enemies from the shadows</p>\n</div>\n</div>\n\n<p>When many beings perish in the same site, the chaotic forces of the Forge can create a chimera—multiple undead bodies fused into a twisted, massive entity that knows only pain and hunger. When a dozen blood-tinged eyes focus on you, when the gibbering mouths open at once to scream, your only hope is a quick death.</p>\n\n<blockquote>Quest Starter: <p>Hundreds died in an industrial accident within an orbital facility, and are said to now be twice-born as risen. Triggering a reactor meltdown will obliterate this place and put its undead inhabitants to rest. Why are you sworn to see it done?</p></blockquote>",
     "rank": 4,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/risen.chimera"
+    }
   },
   "_key": "!items!f22b523e622deb5f"
 }

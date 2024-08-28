@@ -1,0 +1,53 @@
+{
+  "name": "Glimmer",
+  "img": "icons/magic/nature/elemental-plant-humanoid.webp",
+  "type": "foe",
+  "_id": "4cee1025b808f46a",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Glimmer",
+    "texture": {
+      "src": "icons/magic/nature/elemental-plant-humanoid.webp"
+    }
+  },
+  "folder": "3476ad01228adddc",
+  "items": [
+    {
+      "_id": "a6efb9d39901f503",
+      "type": "progress",
+      "name": "Glimmer",
+      "img": "icons/magic/nature/elemental-plant-humanoid.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Dancing lights given vague form</p>\n<p class=\"nogrow\">Silent beckoning</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Illuminate the darkness</p>\n<p class=\"nogrow\">Provide escort along secret paths</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Appear to the lost and desperate</p>\n<p class=\"nogrow\">Show the way</p>\n<p class=\"nogrow\">Lead astray</p>\n</div>\n</div>\n\n<p>The glimmer are beings of mysterious origin and intent. They are most often encountered as particles of light which coalesce into a luminous humanoid or animal form.</p>\n<p>They are drawn to those who need guidance. For wayward travelers and seekers of hidden things, a glimmer will make a silent offer of passage. Relief from the dangers of the Ironlands or a quick journey to a distant destination is a tempting invitation, but not without its own price.</p>\n<p>The path the glimmer reveals is not wholly of our world. It can descend into the past, or climb into the future. It can wend its way across other lands and through strange realities. These trails are navigated not just by the glimmer, but by ancient, baneful things beyond comprehension.</p>\n<p>If you accept a glimmer’s guidance, steel yourself for the journey. Envision the places and people that give you hope, and you may find yourself among them. But do not be distracted. The temptations and terrors along the way can lead all but the most resolute astray. To be lost along a glimmer’s path is to remain lost—perhaps forever.</p>\n\n<blockquote>Quest Starter: <p>Someone you love entered a @Compendium[foundry-ironsworn.ironsworndelvethemes.cf94fb4e6e77ed17]{Corrupted} @Compendium[foundry-ironsworn.ironsworndelvedomains.bd208fdcb58e5485]{Shadowfen} in search of a glimmer’s aid. They did not return. What did they seek? Can you walk the glimmer’s path and bring them back home?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "3476ad01228adddc",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/anomalies/glimmer"
+        }
+      },
+      "_key": "!actors.items!4cee1025b808f46a.a6efb9d39901f503"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/anomalies/glimmer"
+    }
+  },
+  "_key": "!actors!4cee1025b808f46a"
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "6a19e902fb5802b7",
+  "type": "progress",
+  "name": "Sodden",
+  "img": "icons/magic/death/undead-ghost-scream-teal.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Milky eyes</p>\n<p class=\"nogrow\">Mottled flesh</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Drown the living</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Draw victims into the water</p>\n<p class=\"nogrow\">Grab and scratch with jagged claws</p>\n<p class=\"nogrow\">Chilling embrace</p>\n<p class=\"nogrow\">Drag into the depths</p>\n</div>\n</div>\n\n<p>A sodden is the restless spirit of someone who drowned or was put to rest in water. They can appear in seas, rivers, lakes, ponds or marshes. It is said that their loneliness compels them to draw living victims into their watery lairs.</p>\n<p>A sodden is not confined to its resting place. In fact, some believe that surviving an encounter with a sodden will leave you vulnerable around any body of water until the spirit finishes its work.</p>\n\n<blockquote>Quest Starter: <p>Someone you know died and appears to you as a sodden. Who are they? Can anything be done to put them to rest?</p></blockquote>",
+    "rank": 3,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "cf2bf1b1d8deebf9",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/horrors/sodden"
+    }
+  },
+  "_key": "!items!6a19e902fb5802b7"
+}

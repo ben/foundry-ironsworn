@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Settlement/Name/Something_Else",
-      "category": "Ironsworn/Oracles/Settlement"
+      "category": "oracle_collection:classic/settlement/name",
+      "dsid": "oracle_rollable:classic/settlement/name/something_else"
     }
   },
   "name": "Something Else",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "A trade good (Ironhome)",
-      "_id": "bb451af1d8a709dd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.bb451af1d8a709dd"
+      "_key": "!tables.results!8f73d5f6212e6cfd.6ad46c83c7c3861d",
+      "_id": "6ad46c83c7c3861d"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "An Old World city (New Arkesh)",
-      "_id": "a0a796733ffaee8f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.a0a796733ffaee8f"
+      "_key": "!tables.results!8f73d5f6212e6cfd.fdf68cdd4cd9603f",
+      "_id": "fdf68cdd4cd9603f"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "A founder or famous settler (Kei's Hall)",
-      "_id": "78ffc7c29335044a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.78ffc7c29335044a"
+      "_key": "!tables.results!8f73d5f6212e6cfd.94ec010cb507871c",
+      "_id": "94ec010cb507871c"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "A god (Elisora)",
-      "_id": "7ef5bae1f3aae0be",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.7ef5bae1f3aae0be"
+      "_key": "!tables.results!8f73d5f6212e6cfd.2f0f3c8f9ba19c50",
+      "_id": "2f0f3c8f9ba19c50"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "A historical item (Blackhelm)",
-      "_id": "683ba0e9b1268fda",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.683ba0e9b1268fda"
+      "_key": "!tables.results!8f73d5f6212e6cfd.f0a309c9adc4eade",
+      "_id": "f0a309c9adc4eade"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "A firstborn race (Elfbrook)",
-      "_id": "7f7667bee92b36b2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.7f7667bee92b36b2"
+      "_key": "!tables.results!8f73d5f6212e6cfd.f36fd264e13bfc4f",
+      "_id": "f36fd264e13bfc4f"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "An elvish word or name (Nessana)",
-      "_id": "0f268efb0cc4782e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.0f268efb0cc4782e"
+      "_key": "!tables.results!8f73d5f6212e6cfd.a0b4fa7d2afc77f2",
+      "_id": "a0b4fa7d2afc77f2"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "A mythic belief or event (Ghostwalk)",
-      "_id": "4ed28c3e078d7ea7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.4ed28c3e078d7ea7"
+      "_key": "!tables.results!8f73d5f6212e6cfd.51b3a8a6a06a4691",
+      "_id": "51b3a8a6a06a4691"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         90
       ],
       "text": "A positive term (Hope)",
-      "_id": "47e606bf992ec622",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.47e606bf992ec622"
+      "_key": "!tables.results!8f73d5f6212e6cfd.59ed2958157fe22d",
+      "_id": "59ed2958157fe22d"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "A negative term (Forsaken)",
-      "_id": "fda6fe3e8c222838",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8f73d5f6212e6cfd.fda6fe3e8c222838"
+      "_key": "!tables.results!8f73d5f6212e6cfd.a9fd5fdfc2414b47",
+      "_id": "a9fd5fdfc2414b47"
     }
   ],
-  "folder": "11b98f1da8f07aa2",
+  "folder": "b62c276059f4423c",
   "sort": 178,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!8f73d5f6212e6cfd"
 }

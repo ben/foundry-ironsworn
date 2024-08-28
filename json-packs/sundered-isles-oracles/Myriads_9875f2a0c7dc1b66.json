@@ -1,0 +1,65 @@
+{
+  "_id": "9875f2a0c7dc1b66",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/identity/controlling_faction",
+      "dsid": "oracle_rollable:sundered_isles/settlement/identity/controlling_faction/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        60
+      ],
+      "text": "Known faction",
+      "_key": "!tables.results!9875f2a0c7dc1b66.4adf4cca91535a0c",
+      "_id": "4adf4cca91535a0c"
+    },
+    {
+      "range": [
+        61,
+        75
+      ],
+      "text": "Unknown faction",
+      "_key": "!tables.results!9875f2a0c7dc1b66.1f5b4bc8e9753522",
+      "_id": "1f5b4bc8e9753522"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "Independent",
+      "_key": "!tables.results!9875f2a0c7dc1b66.d73274714e64ecc3",
+      "_id": "d73274714e64ecc3"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Factions in cooperation",
+      "_key": "!tables.results!9875f2a0c7dc1b66.7e4cd7814168bef6",
+      "_id": "7e4cd7814168bef6"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Factions in conflict",
+      "_key": "!tables.results!9875f2a0c7dc1b66.c758eebed414222e",
+      "_id": "c758eebed414222e"
+    }
+  ],
+  "folder": "775cc163a0b5b7fd",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9875f2a0c7dc1b66"
+}

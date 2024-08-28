@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Name/Other/Trolls",
-      "category": "Ironsworn/Oracles/Name"
+      "category": "Ironsworn/Oracles/Name/Other",
+      "dsid": "oracle_rollable:classic/name/other/trolls"
     }
   },
   "name": "Trolls",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "Rattle",
-      "_id": "e08909ad827623bf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.e08909ad827623bf"
+      "_key": "!tables.results!4a3f29532af5f9e1.62ec85908c695014",
+      "_id": "62ec85908c695014"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         8
       ],
       "text": "Scratch",
-      "_id": "72512b1d2ec51028",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.72512b1d2ec51028"
+      "_key": "!tables.results!4a3f29532af5f9e1.f3086c5844c18996",
+      "_id": "f3086c5844c18996"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         12
       ],
       "text": "Wallow",
-      "_id": "dd9293796fa328b8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.dd9293796fa328b8"
+      "_key": "!tables.results!4a3f29532af5f9e1.4b368a58dc9f4490",
+      "_id": "4b368a58dc9f4490"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         16
       ],
       "text": "Groak",
-      "_id": "590102a0c8a9a256",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.590102a0c8a9a256"
+      "_key": "!tables.results!4a3f29532af5f9e1.b50a91bae4d93c68",
+      "_id": "b50a91bae4d93c68"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         20
       ],
       "text": "Gimble",
-      "_id": "52d41b6f85ff9370",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.52d41b6f85ff9370"
+      "_key": "!tables.results!4a3f29532af5f9e1.7849f2e525d24bf0",
+      "_id": "7849f2e525d24bf0"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         24
       ],
       "text": "Scar",
-      "_id": "d7291bbb7d70599c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.d7291bbb7d70599c"
+      "_key": "!tables.results!4a3f29532af5f9e1.75885ab6b4ae92c7",
+      "_id": "75885ab6b4ae92c7"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         28
       ],
       "text": "Cratch",
-      "_id": "5b8ddfec11bcfafa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.5b8ddfec11bcfafa"
+      "_key": "!tables.results!4a3f29532af5f9e1.22218414598c6c4e",
+      "_id": "22218414598c6c4e"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         32
       ],
       "text": "Creech",
-      "_id": "e71ff766690263f6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.e71ff766690263f6"
+      "_key": "!tables.results!4a3f29532af5f9e1.fc9e7389b1aff2a4",
+      "_id": "fc9e7389b1aff2a4"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         36
       ],
       "text": "Shush",
-      "_id": "5674018f6deaa7b1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.5674018f6deaa7b1"
+      "_key": "!tables.results!4a3f29532af5f9e1.1b92932d4e47e811",
+      "_id": "1b92932d4e47e811"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         40
       ],
       "text": "Glush",
-      "_id": "d1df7d9cd963486c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.d1df7d9cd963486c"
+      "_key": "!tables.results!4a3f29532af5f9e1.37117aac4acd76cf",
+      "_id": "37117aac4acd76cf"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         44
       ],
       "text": "Slar",
-      "_id": "43a18e1e12b2adde",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.43a18e1e12b2adde"
+      "_key": "!tables.results!4a3f29532af5f9e1.f51817da432901e4",
+      "_id": "f51817da432901e4"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         48
       ],
       "text": "Gnash",
-      "_id": "a04e719c48269374",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.a04e719c48269374"
+      "_key": "!tables.results!4a3f29532af5f9e1.115dae420bc12e0e",
+      "_id": "115dae420bc12e0e"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         52
       ],
       "text": "Stoad",
-      "_id": "3ac7e098d3b0c1f6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.3ac7e098d3b0c1f6"
+      "_key": "!tables.results!4a3f29532af5f9e1.cc79f350e415ce20",
+      "_id": "cc79f350e415ce20"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         56
       ],
       "text": "Grig",
-      "_id": "1d30ca9818b18cac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.1d30ca9818b18cac"
+      "_key": "!tables.results!4a3f29532af5f9e1.1fe387a054cd1fae",
+      "_id": "1fe387a054cd1fae"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         60
       ],
       "text": "Bleat",
-      "_id": "c6f7583b997838e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.c6f7583b997838e5"
+      "_key": "!tables.results!4a3f29532af5f9e1.2049756f5bb4c76c",
+      "_id": "2049756f5bb4c76c"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         64
       ],
       "text": "Chortle",
-      "_id": "2240ecb9a8cf555e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.2240ecb9a8cf555e"
+      "_key": "!tables.results!4a3f29532af5f9e1.ac7e65ffee892439",
+      "_id": "ac7e65ffee892439"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         68
       ],
       "text": "Cluck",
-      "_id": "51c19ca612320f2f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.51c19ca612320f2f"
+      "_key": "!tables.results!4a3f29532af5f9e1.6eeb6b2291dd60bf",
+      "_id": "6eeb6b2291dd60bf"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         72
       ],
       "text": "Slith",
-      "_id": "d5601f56a684c069",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.d5601f56a684c069"
+      "_key": "!tables.results!4a3f29532af5f9e1.5405b86985f82573",
+      "_id": "5405b86985f82573"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         76
       ],
       "text": "Mongo",
-      "_id": "8baf2d499d7cb1bc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.8baf2d499d7cb1bc"
+      "_key": "!tables.results!4a3f29532af5f9e1.da37893ece695e83",
+      "_id": "da37893ece695e83"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         80
       ],
       "text": "Creak",
-      "_id": "dd8d3085dc901780",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.dd8d3085dc901780"
+      "_key": "!tables.results!4a3f29532af5f9e1.850a26182f3c05d3",
+      "_id": "850a26182f3c05d3"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         84
       ],
       "text": "Burble",
-      "_id": "3f5dc29358df2e41",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.3f5dc29358df2e41"
+      "_key": "!tables.results!4a3f29532af5f9e1.70a089b5fc78bac0",
+      "_id": "70a089b5fc78bac0"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         88
       ],
       "text": "Vrusk",
-      "_id": "91c0093745225f29",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.91c0093745225f29"
+      "_key": "!tables.results!4a3f29532af5f9e1.4a92308aa0dd7adb",
+      "_id": "4a92308aa0dd7adb"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         92
       ],
       "text": "Snuffle",
-      "_id": "e2fdcffefc744fdc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.e2fdcffefc744fdc"
+      "_key": "!tables.results!4a3f29532af5f9e1.ce9e980c1dce4c86",
+      "_id": "ce9e980c1dce4c86"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         96
       ],
       "text": "Leech",
-      "_id": "7380af504f15f067",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.7380af504f15f067"
+      "_key": "!tables.results!4a3f29532af5f9e1.f04ee412e426d242",
+      "_id": "f04ee412e426d242"
     },
     {
       "range": [
@@ -354,29 +235,12 @@
         100
       ],
       "text": "Herk",
-      "_id": "e234f82a243ae61c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4a3f29532af5f9e1.e234f82a243ae61c"
+      "_key": "!tables.results!4a3f29532af5f9e1.097b3a037a8d0299",
+      "_id": "097b3a037a8d0299"
     }
   ],
   "folder": "7c9db0bc5d87be12",
-  "sort": 187,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!4a3f29532af5f9e1"
 }

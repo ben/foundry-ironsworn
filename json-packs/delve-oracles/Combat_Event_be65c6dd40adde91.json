@@ -1,0 +1,16 @@
+{
+  "name": "Combat Event",
+  "description": "Use the Combat Event oracles to answer questions about the actions of a foe or enemy force. You can use these oracles instead of—or in addition to—the @Compendium[foundry-ironsworn.ironswornoracles.1fa4912b675a7c96]{Combat Action} oracle.\n\nRoll once each on the @Compendium[foundry-ironsworn.delveoracles.ff2d8060b079cee0]{Method} oracle and the @Compendium[foundry-ironsworn.delveoracles.419b2fc99e694f51]{Target} oracle. Then, interpret the response as appropriate to the current situation and the nature of your foe.\n\nFor example, you are fighting a rhaskar, a bear-like beast. It has initiative, and you want to know what it does next. You @Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle}, rolling @Compendium[foundry-ironsworn.delveoracles.ff2d8060b079cee0]{Method} and @Compendium[foundry-ironsworn.delveoracles.419b2fc99e694f51]{Target}. The oracle responds, “Await Weakness.” You envision the rhaskar circling you, its keen eyes narrowing as it looks for an opening in your defenses. You must @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} to avoid being outmaneuvered.",
+  "type": "RollTable",
+  "_id": "be65c6dd40adde91",
+  "sort": 218,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Combat_Event",
+      "dsid": "oracle_collection:delve/combat_event"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!be65c6dd40adde91"
+}

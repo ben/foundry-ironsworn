@@ -1,0 +1,200 @@
+{
+  "_id": "bc12976c7d6a8d97",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "move_category:sundered_isles/exploration",
+      "dsid": "move.oracle_rollable:sundered_isles/exploration/make_a_discovery.make_a_discovery"
+    }
+  },
+  "name": "Make a Discovery",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Abundant and unusual life",
+      "_key": "!tables.results!bc12976c7d6a8d97.99f0c2c106d9769d",
+      "_id": "99f0c2c106d9769d"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Archive or map with revelatory details",
+      "_key": "!tables.results!bc12976c7d6a8d97.3a9d9c6cab417b03",
+      "_id": "3a9d9c6cab417b03"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Awe-inspiring natural feature",
+      "_key": "!tables.results!bc12976c7d6a8d97.21f8f1c7b034a865",
+      "_id": "21f8f1c7b034a865"
+    },
+    {
+      "range": [
+        16,
+        19
+      ],
+      "text": "Beneficial enchantment or powers",
+      "_key": "!tables.results!bc12976c7d6a8d97.f665570cddbab891",
+      "_id": "f665570cddbab891"
+    },
+    {
+      "range": [
+        20,
+        23
+      ],
+      "text": "Benevolent spirit or apparition",
+      "_key": "!tables.results!bc12976c7d6a8d97.15e199dc0342ddae",
+      "_id": "15e199dc0342ddae"
+    },
+    {
+      "range": [
+        24,
+        28
+      ],
+      "text": "Clues to an enduring mystery",
+      "_key": "!tables.results!bc12976c7d6a8d97.d0313e6f70420ec3",
+      "_id": "d0313e6f70420ec3"
+    },
+    {
+      "range": [
+        29,
+        33
+      ],
+      "text": "Extraordinary natural phenomenon",
+      "_key": "!tables.results!bc12976c7d6a8d97.22e951fc868d9c29",
+      "_id": "22e951fc868d9c29"
+    },
+    {
+      "range": [
+        34,
+        38
+      ],
+      "text": "Majestic or remarkable creature",
+      "_key": "!tables.results!bc12976c7d6a8d97.10877f750a2aff5d",
+      "_id": "10877f750a2aff5d"
+    },
+    {
+      "range": [
+        39,
+        42
+      ],
+      "text": "Manifestation of a myth or legend",
+      "_key": "!tables.results!bc12976c7d6a8d97.f521fa5babf410b3",
+      "_id": "f521fa5babf410b3"
+    },
+    {
+      "range": [
+        43,
+        47
+      ],
+      "text": "Monumental architecture or artistry",
+      "_key": "!tables.results!bc12976c7d6a8d97.ae59d5bc358ea97a",
+      "_id": "ae59d5bc358ea97a"
+    },
+    {
+      "range": [
+        48,
+        52
+      ],
+      "text": "Otherworldly path or passage",
+      "_key": "!tables.results!bc12976c7d6a8d97.419ddee41b8ea6cf",
+      "_id": "419ddee41b8ea6cf"
+    },
+    {
+      "range": [
+        53,
+        57
+      ],
+      "text": "People with phenomenal abilities",
+      "_key": "!tables.results!bc12976c7d6a8d97.56d01ad92c24c7be",
+      "_id": "56d01ad92c24c7be"
+    },
+    {
+      "range": [
+        58,
+        61
+      ],
+      "text": "Prized natural resource",
+      "_key": "!tables.results!bc12976c7d6a8d97.97ea31f0eff8346f",
+      "_id": "97ea31f0eff8346f"
+    },
+    {
+      "range": [
+        62,
+        65
+      ],
+      "text": "Relic of legendary power",
+      "_key": "!tables.results!bc12976c7d6a8d97.402a787c61bd97bd",
+      "_id": "402a787c61bd97bd"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Safeguarded or hidden location",
+      "_key": "!tables.results!bc12976c7d6a8d97.f50ac9ea1a24ae25",
+      "_id": "f50ac9ea1a24ae25"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Sizable treasure",
+      "_key": "!tables.results!bc12976c7d6a8d97.f5e617fe280b3695",
+      "_id": "f5e617fe280b3695"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Unique machine or technology",
+      "_key": "!tables.results!bc12976c7d6a8d97.f7f702e2b9158ba4",
+      "_id": "f7f702e2b9158ba4"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Well-preserved artifact or specimen",
+      "_key": "!tables.results!bc12976c7d6a8d97.b0c1f359e62f6712",
+      "_id": "b0c1f359e62f6712"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Wondrous visions or prophesies",
+      "_key": "!tables.results!bc12976c7d6a8d97.84162f53ed40e8c8",
+      "_id": "84162f53ed40e8c8"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!bc12976c7d6a8d97.44257e9c684fc6d4",
+      "_id": "44257e9c684fc6d4"
+    }
+  ],
+  "folder": "67765e9e34cc95c5",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!bc12976c7d6a8d97"
+}

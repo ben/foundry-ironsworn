@@ -1,0 +1,272 @@
+{
+  "_id": "88d2400f463b9c29",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/getting_underway/create_your_character",
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/create_your_character/your_backstory"
+    }
+  },
+  "name": "Your Backstory",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Abandoned a life of privilege or power",
+      "_key": "!tables.results!88d2400f463b9c29.86aad666b19d2c04",
+      "_id": "86aad666b19d2c04"
+    },
+    {
+      "range": [
+        4,
+        7
+      ],
+      "text": "Betrayed by a close friend, lover, or family member",
+      "_key": "!tables.results!88d2400f463b9c29.3ce784be2ea66781",
+      "_id": "3ce784be2ea66781"
+    },
+    {
+      "range": [
+        8,
+        11
+      ],
+      "text": "Caught up in a forbidden or unlikely romance",
+      "_key": "!tables.results!88d2400f463b9c29.32606482adbd58c5",
+      "_id": "32606482adbd58c5"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Deserted the military",
+      "_key": "!tables.results!88d2400f463b9c29.c6216d3b105d98e0",
+      "_id": "c6216d3b105d98e0"
+    },
+    {
+      "range": [
+        15,
+        18
+      ],
+      "text": "Entrusted with a valuable secret",
+      "_key": "!tables.results!88d2400f463b9c29.ccbb9294d49cc12a",
+      "_id": "ccbb9294d49cc12a"
+    },
+    {
+      "range": [
+        19,
+        22
+      ],
+      "text": "Escaped unjust captivity",
+      "_key": "!tables.results!88d2400f463b9c29.9725c5927488edd4",
+      "_id": "9725c5927488edd4"
+    },
+    {
+      "range": [
+        23,
+        26
+      ],
+      "text": "Fled a cruel upbringing",
+      "_key": "!tables.results!88d2400f463b9c29.23afb9b5ad216ec2",
+      "_id": "23afb9b5ad216ec2"
+    },
+    {
+      "range": [
+        27,
+        30
+      ],
+      "text": "Following in the footsteps of famous or notorious kin",
+      "_key": "!tables.results!88d2400f463b9c29.260a47196dee3394",
+      "_id": "260a47196dee3394"
+    },
+    {
+      "range": [
+        31,
+        34
+      ],
+      "text": "Forcefully exiled from your land or people",
+      "_key": "!tables.results!88d2400f463b9c29.2f06a77993150b64",
+      "_id": "2f06a77993150b64"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "Found adrift with no memory of your former life",
+      "_key": "!tables.results!88d2400f463b9c29.68c6f93b77322d3e",
+      "_id": "68c6f93b77322d3e"
+    },
+    {
+      "range": [
+        38,
+        40
+      ],
+      "text": "Framed for a crime you didn't commit",
+      "_key": "!tables.results!88d2400f463b9c29.5bac89b06ba0e74a",
+      "_id": "5bac89b06ba0e74a"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "Guided by a dream or prophecy",
+      "_key": "!tables.results!88d2400f463b9c29.d3a2fa55609c348f",
+      "_id": "d3a2fa55609c348f"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Home destroyed by disaster or war",
+      "_key": "!tables.results!88d2400f463b9c29.47fe1dc11a3b6490",
+      "_id": "47fe1dc11a3b6490"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "Home occupied by an enemy faction",
+      "_key": "!tables.results!88d2400f463b9c29.b30737bbe1ba8f97",
+      "_id": "b30737bbe1ba8f97"
+    },
+    {
+      "range": [
+        50,
+        53
+      ],
+      "text": "Joined a mutiny, uprising, or rebellion",
+      "_key": "!tables.results!88d2400f463b9c29.129b5f913169e343",
+      "_id": "129b5f913169e343"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Joined a secret society",
+      "_key": "!tables.results!88d2400f463b9c29.434ceafd8c0c3a2b",
+      "_id": "434ceafd8c0c3a2b"
+    },
+    {
+      "range": [
+        57,
+        59
+      ],
+      "text": "Living under a stolen or assumed identity",
+      "_key": "!tables.results!88d2400f463b9c29.f66038b8e73d53dc",
+      "_id": "f66038b8e73d53dc"
+    },
+    {
+      "range": [
+        60,
+        63
+      ],
+      "text": "Loved one gone missing",
+      "_key": "!tables.results!88d2400f463b9c29.823d954bc6443409",
+      "_id": "823d954bc6443409"
+    },
+    {
+      "range": [
+        64,
+        67
+      ],
+      "text": "Marooned by former shipmates",
+      "_key": "!tables.results!88d2400f463b9c29.8a8d5affaf10e0ed",
+      "_id": "8a8d5affaf10e0ed"
+    },
+    {
+      "range": [
+        68,
+        71
+      ],
+      "text": "On the run with a stolen object of great value",
+      "_key": "!tables.results!88d2400f463b9c29.1cf591d9fa66cec5",
+      "_id": "1cf591d9fa66cec5"
+    },
+    {
+      "range": [
+        72,
+        75
+      ],
+      "text": "Raised by or fell in with criminals or pirates",
+      "_key": "!tables.results!88d2400f463b9c29.95c8ef3e8a0ea2de",
+      "_id": "95c8ef3e8a0ea2de"
+    },
+    {
+      "range": [
+        76,
+        79
+      ],
+      "text": "Refugee from a distant land",
+      "_key": "!tables.results!88d2400f463b9c29.0bb843f5eef96102",
+      "_id": "0bb843f5eef96102"
+    },
+    {
+      "range": [
+        80,
+        83
+      ],
+      "text": "Survived a disaster or battle at sea",
+      "_key": "!tables.results!88d2400f463b9c29.8e1f293d68394689",
+      "_id": "8e1f293d68394689"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "Took up a vendetta against a powerful figure or faction",
+      "_key": "!tables.results!88d2400f463b9c29.91b21e0cb6465668",
+      "_id": "91b21e0cb6465668"
+    },
+    {
+      "range": [
+        87,
+        89
+      ],
+      "text": "Trained in a rare or secret craft by a skilled mentor",
+      "_key": "!tables.results!88d2400f463b9c29.e7920e3a71205461",
+      "_id": "e7920e3a71205461"
+    },
+    {
+      "range": [
+        90,
+        93
+      ],
+      "text": "Trying to forget a disastrous love affair",
+      "_key": "!tables.results!88d2400f463b9c29.ef858d126f8fb75f",
+      "_id": "ef858d126f8fb75f"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "Undone by a personal vice",
+      "_key": "!tables.results!88d2400f463b9c29.cf98c814a7f8d6ac",
+      "_id": "cf98c814a7f8d6ac"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Wronged a powerful figure or faction who seeks retribution",
+      "_key": "!tables.results!88d2400f463b9c29.1cc4bbac5008f599",
+      "_id": "1cc4bbac5008f599"
+    }
+  ],
+  "folder": "31ad60f0d091dc44",
+  "sort": 92,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!88d2400f463b9c29"
+}

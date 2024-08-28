@@ -1,0 +1,471 @@
+{
+  "_id": "5a662eeab1fd9840",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Name/Elf",
+      "category": "Ironsworn/Oracles/Name",
+      "dsid": "oracle_rollable:classic/name/elf"
+    }
+  },
+  "name": "Elf Names",
+  "description": "<p>Use this oracle to generate a name for an elf character.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Arsula",
+      "_key": "!tables.results!5a662eeab1fd9840.bf216ac199d2668e",
+      "_id": "bf216ac199d2668e"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Naidita",
+      "_key": "!tables.results!5a662eeab1fd9840.d60f4f6ee6eb65a3",
+      "_id": "d60f4f6ee6eb65a3"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Belesunna",
+      "_key": "!tables.results!5a662eeab1fd9840.09179afbd43e81ec",
+      "_id": "09179afbd43e81ec"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Vidarna",
+      "_key": "!tables.results!5a662eeab1fd9840.3ef0972c560c3628",
+      "_id": "3ef0972c560c3628"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Ninsunu",
+      "_key": "!tables.results!5a662eeab1fd9840.c03bb1f9d7ba3b3d",
+      "_id": "c03bb1f9d7ba3b3d"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Balathu",
+      "_key": "!tables.results!5a662eeab1fd9840.83d8f9925e7a2121",
+      "_id": "83d8f9925e7a2121"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Dorosi",
+      "_key": "!tables.results!5a662eeab1fd9840.d99dac67324e137c",
+      "_id": "d99dac67324e137c"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Gezera",
+      "_key": "!tables.results!5a662eeab1fd9840.975164fbd8d08fc7",
+      "_id": "975164fbd8d08fc7"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Zursan",
+      "_key": "!tables.results!5a662eeab1fd9840.b4db5928c766d73c",
+      "_id": "b4db5928c766d73c"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Seleeku",
+      "_key": "!tables.results!5a662eeab1fd9840.b4479f160a42f4f4",
+      "_id": "b4479f160a42f4f4"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Utamara",
+      "_key": "!tables.results!5a662eeab1fd9840.13f8189f86096d82",
+      "_id": "13f8189f86096d82"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Nebakay",
+      "_key": "!tables.results!5a662eeab1fd9840.04a5a53e5b84ee7f",
+      "_id": "04a5a53e5b84ee7f"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Dismashk",
+      "_key": "!tables.results!5a662eeab1fd9840.bb82efa8b47d3d71",
+      "_id": "bb82efa8b47d3d71"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Mitunu",
+      "_key": "!tables.results!5a662eeab1fd9840.47269607c94f4d0a",
+      "_id": "47269607c94f4d0a"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Atani",
+      "_key": "!tables.results!5a662eeab1fd9840.bf7ceb4f2bb18cf2",
+      "_id": "bf7ceb4f2bb18cf2"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Kinzura",
+      "_key": "!tables.results!5a662eeab1fd9840.0f5b5384a9c8cd77",
+      "_id": "0f5b5384a9c8cd77"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Sumula",
+      "_key": "!tables.results!5a662eeab1fd9840.a897db7a30c43e7a",
+      "_id": "a897db7a30c43e7a"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Ukames",
+      "_key": "!tables.results!5a662eeab1fd9840.8e36a22650a22223",
+      "_id": "8e36a22650a22223"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Ahmeshki",
+      "_key": "!tables.results!5a662eeab1fd9840.45ebb09c0295e984",
+      "_id": "45ebb09c0295e984"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Ilsit",
+      "_key": "!tables.results!5a662eeab1fd9840.18d64966dc98c002",
+      "_id": "18d64966dc98c002"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Mayatanay",
+      "_key": "!tables.results!5a662eeab1fd9840.8134ba0dfbcd35d3",
+      "_id": "8134ba0dfbcd35d3"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Etana",
+      "_key": "!tables.results!5a662eeab1fd9840.2d66ba4f91b51350",
+      "_id": "2d66ba4f91b51350"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Gamanna",
+      "_key": "!tables.results!5a662eeab1fd9840.18e6cc82cd9776f4",
+      "_id": "18e6cc82cd9776f4"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Nessana",
+      "_key": "!tables.results!5a662eeab1fd9840.0bcd6d2b0a4a78ca",
+      "_id": "0bcd6d2b0a4a78ca"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Uralar",
+      "_key": "!tables.results!5a662eeab1fd9840.2e8c5046315874ce",
+      "_id": "2e8c5046315874ce"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Tishetu",
+      "_key": "!tables.results!5a662eeab1fd9840.3ca5910201efc456",
+      "_id": "3ca5910201efc456"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Leucia",
+      "_key": "!tables.results!5a662eeab1fd9840.571cce35faab6528",
+      "_id": "571cce35faab6528"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Sutahe",
+      "_key": "!tables.results!5a662eeab1fd9840.a56c098ec2877504",
+      "_id": "a56c098ec2877504"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Dotani",
+      "_key": "!tables.results!5a662eeab1fd9840.d6bff9c52d22fa9a",
+      "_id": "d6bff9c52d22fa9a"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Uktannu",
+      "_key": "!tables.results!5a662eeab1fd9840.8e61bcb51f78861a",
+      "_id": "8e61bcb51f78861a"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Retenay",
+      "_key": "!tables.results!5a662eeab1fd9840.29b09651b02c50e3",
+      "_id": "29b09651b02c50e3"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Kendalanu",
+      "_key": "!tables.results!5a662eeab1fd9840.1e3638e300cbc6b0",
+      "_id": "1e3638e300cbc6b0"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Tahuta",
+      "_key": "!tables.results!5a662eeab1fd9840.3d46c296438c07c8",
+      "_id": "3d46c296438c07c8"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Mattissa",
+      "_key": "!tables.results!5a662eeab1fd9840.d5c0b4337e019512",
+      "_id": "d5c0b4337e019512"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Anatu",
+      "_key": "!tables.results!5a662eeab1fd9840.4b7f947cdd3ebcdc",
+      "_id": "4b7f947cdd3ebcdc"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Aralu",
+      "_key": "!tables.results!5a662eeab1fd9840.52544cbda7eccbdd",
+      "_id": "52544cbda7eccbdd"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Arakhi",
+      "_key": "!tables.results!5a662eeab1fd9840.962eb16c932df416",
+      "_id": "962eb16c932df416"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Ibrahem",
+      "_key": "!tables.results!5a662eeab1fd9840.f1f363513c0f4c1c",
+      "_id": "f1f363513c0f4c1c"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Sinosu",
+      "_key": "!tables.results!5a662eeab1fd9840.1f6a1a76a0b8517d",
+      "_id": "1f6a1a76a0b8517d"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Jemshida",
+      "_key": "!tables.results!5a662eeab1fd9840.bafceeddd8cd9bd4",
+      "_id": "bafceeddd8cd9bd4"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Visapni",
+      "_key": "!tables.results!5a662eeab1fd9840.1f2405239ce44d0c",
+      "_id": "1f2405239ce44d0c"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Hullata",
+      "_key": "!tables.results!5a662eeab1fd9840.0206579fb464699c",
+      "_id": "0206579fb464699c"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Sidura",
+      "_key": "!tables.results!5a662eeab1fd9840.c2137e114bb99bbe",
+      "_id": "c2137e114bb99bbe"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Kerihu",
+      "_key": "!tables.results!5a662eeab1fd9840.6197bb06697c2640",
+      "_id": "6197bb06697c2640"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Ereshki",
+      "_key": "!tables.results!5a662eeab1fd9840.345167fa6cf6db22",
+      "_id": "345167fa6cf6db22"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Cybela",
+      "_key": "!tables.results!5a662eeab1fd9840.7fc08351b358a19d",
+      "_id": "7fc08351b358a19d"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Anunna",
+      "_key": "!tables.results!5a662eeab1fd9840.dcb5efe87f2211df",
+      "_id": "dcb5efe87f2211df"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Otani",
+      "_key": "!tables.results!5a662eeab1fd9840.5013ea0907fd2e9b",
+      "_id": "5013ea0907fd2e9b"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Ditani",
+      "_key": "!tables.results!5a662eeab1fd9840.84c237182aa41f06",
+      "_id": "84c237182aa41f06"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Faraza",
+      "_key": "!tables.results!5a662eeab1fd9840.c63aa27147be9aa4",
+      "_id": "c63aa27147be9aa4"
+    }
+  ],
+  "folder": "0ea3b5b59a92d1f2",
+  "sort": 186,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5a662eeab1fd9840"
+}

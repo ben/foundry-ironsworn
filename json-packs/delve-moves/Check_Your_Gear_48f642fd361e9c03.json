@@ -1,0 +1,66 @@
+{
+  "_id": "48f642fd361e9c03",
+  "type": "sfmove",
+  "name": "Check Your Gear",
+  "img": "icons/dice/d10black.svg",
+  "folder": "e9e254f7a3fc7100",
+  "system": {
+    "dfid": "Ironsworn/Moves/Delve/Check_Your_Gear",
+    "Category": "Ironsworn/Moves/Delve",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you check to see if you have a specific helpful item__, and you have at least +1 supply, roll +supply.\n\nOn a __strong hit__, you have it. Take +1 momentum.\n\nOn a __weak hit__, you have it, but your resources are diminished. Take +1 momentum and suffer -1 supply.\n\nOn a __miss__, you don’t have it and the situation grows more perilous. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you check to see if you have a specific helpful item, and you have at least +1 supply...",
+      "Options": [
+        {
+          "Text": "",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Supply"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you have it. Take +1 momentum.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you have it, but your resources are diminished. Take +1 momentum and suffer -1 supply."
+      },
+      "Miss": {
+        "Text": "On a __miss__, you don’t have it and the situation grows more perilous. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 38
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 38,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Delve/Check_Your_Gear",
+      "dsid": "move:delve/delve/check_your_gear"
+    }
+  },
+  "_key": "!items!48f642fd361e9c03"
+}

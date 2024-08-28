@@ -1,0 +1,164 @@
+{
+  "_id": "b39568c61afa93c8",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure",
+      "dsid": "oracle_rollable:sundered_isles/treasure/aspects"
+    }
+  },
+  "name": "Treasure Aspects",
+  "description": "<p>Use this table to reveal characteristics of a treasure or its surroundings. Since the results often involve twists and complications, it is best reserved for notable finds and dramatic situations. Also, keep in mind that an aspect might be outside your character’s immediate viewpoint—if so, make note of it as a future trouble or opportunity.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Bears the mark of a notorious figure",
+      "_key": "!tables.results!b39568c61afa93c8.04c97291941d9077",
+      "_id": "04c97291941d9077"
+    },
+    {
+      "range": [
+        9,
+        16
+      ],
+      "text": "Contains a long-lost object or artifact",
+      "_key": "!tables.results!b39568c61afa93c8.afe405b7dd10defa",
+      "_id": "afe405b7dd10defa"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Coveted by a newly-revealed rival",
+      "_key": "!tables.results!b39568c61afa93c8.522daf6fe3f3bf89",
+      "_id": "522daf6fe3f3bf89"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Guarded by a sentry or caretaker",
+      "_key": "!tables.results!b39568c61afa93c8.73580b75760f4d49",
+      "_id": "73580b75760f4d49"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Held in a vulnerable repository",
+      "_key": "!tables.results!b39568c61afa93c8.e4fd41884d681e03",
+      "_id": "e4fd41884d681e03"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Hidden among worthless items",
+      "_key": "!tables.results!b39568c61afa93c8.e2d5300755ffb16e",
+      "_id": "e2d5300755ffb16e"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Holds a clue to a greater treasure",
+      "_key": "!tables.results!b39568c61afa93c8.91f2213fb42ee5cd",
+      "_id": "91f2213fb42ee5cd"
+    },
+    {
+      "range": [
+        41,
+        48
+      ],
+      "text": "Hunted by a foe or faction",
+      "_key": "!tables.results!b39568c61afa93c8.05bfc547602db662",
+      "_id": "05bfc547602db662"
+    },
+    {
+      "range": [
+        49,
+        56
+      ],
+      "text": "Includes counterfeit valuables",
+      "_key": "!tables.results!b39568c61afa93c8.848ba787b4157121",
+      "_id": "848ba787b4157121"
+    },
+    {
+      "range": [
+        57,
+        64
+      ],
+      "text": "Marked with a menacing warning",
+      "_key": "!tables.results!b39568c61afa93c8.fa3fdecf8f0fbda0",
+      "_id": "fa3fdecf8f0fbda0"
+    },
+    {
+      "range": [
+        65,
+        72
+      ],
+      "text": "Once claimed as pillage or spoils",
+      "_key": "!tables.results!b39568c61afa93c8.99e67574fbdf4c83",
+      "_id": "99e67574fbdf4c83"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Planted as a lure for the unwary",
+      "_key": "!tables.results!b39568c61afa93c8.a4e093b086b07e89",
+      "_id": "a4e093b086b07e89"
+    },
+    {
+      "range": [
+        77,
+        84
+      ],
+      "text": "Protected by a clever trap",
+      "_key": "!tables.results!b39568c61afa93c8.4e5417bfa3a17a2c",
+      "_id": "4e5417bfa3a17a2c"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Put out-of-reach by a barrier or obstacle",
+      "_key": "!tables.results!b39568c61afa93c8.cf9b2d6e76283c10",
+      "_id": "cf9b2d6e76283c10"
+    },
+    {
+      "range": [
+        89,
+        96
+      ],
+      "text": "Secured by a complex lock",
+      "_key": "!tables.results!b39568c61afa93c8.1c74a3c9e177a795",
+      "_id": "1c74a3c9e177a795"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Shows signs of pilfering or tampering",
+      "_key": "!tables.results!b39568c61afa93c8.4a93262dfd0fcfdb",
+      "_id": "4a93262dfd0fcfdb"
+    }
+  ],
+  "folder": "4b1f1e3c1b624444",
+  "sort": 222,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b39568c61afa93c8"
+}

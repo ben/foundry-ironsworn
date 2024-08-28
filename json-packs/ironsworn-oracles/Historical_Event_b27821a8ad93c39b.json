@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Settlement/Name/Historical_Event",
-      "category": "Ironsworn/Oracles/Settlement"
+      "category": "oracle_collection:classic/settlement/name",
+      "dsid": "oracle_rollable:classic/settlement/name/historical_event"
     }
   },
   "name": "Historical Event",
   "description": "<p><strong>A historical event.</strong> What happened here? What place or practice commemorates this event?</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Swordbreak",
-      "_id": "3cc444c91ce2bd17",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.3cc444c91ce2bd17"
+      "_key": "!tables.results!b27821a8ad93c39b.be4f067f176969ea",
+      "_id": "be4f067f176969ea"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Fool's Fall",
-      "_id": "a9c76549866fe464",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.a9c76549866fe464"
+      "_key": "!tables.results!b27821a8ad93c39b.bb7b83e5f42827aa",
+      "_id": "bb7b83e5f42827aa"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Firstmeet",
-      "_id": "0dd9dc5dc2e5e192",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.0dd9dc5dc2e5e192"
+      "_key": "!tables.results!b27821a8ad93c39b.f52a30cf26cab6da",
+      "_id": "f52a30cf26cab6da"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Brokenhelm",
-      "_id": "4f749a444a57cad2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.4f749a444a57cad2"
+      "_key": "!tables.results!b27821a8ad93c39b.712ba08008557a4a",
+      "_id": "712ba08008557a4a"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Mournhaunt",
-      "_id": "586736efe8ba5327",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.586736efe8ba5327"
+      "_key": "!tables.results!b27821a8ad93c39b.ca635044a2c942a9",
+      "_id": "ca635044a2c942a9"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Olgar's Stand",
-      "_id": "5affd9af5afb2c30",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.5affd9af5afb2c30"
+      "_key": "!tables.results!b27821a8ad93c39b.0d1278149e819866",
+      "_id": "0d1278149e819866"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Lostwater",
-      "_id": "3faf7a2f2b2c8474",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.3faf7a2f2b2c8474"
+      "_key": "!tables.results!b27821a8ad93c39b.5c18035041c63d96",
+      "_id": "5c18035041c63d96"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Rojirra's Lament",
-      "_id": "3bd67b1d224a0cf5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.3bd67b1d224a0cf5"
+      "_key": "!tables.results!b27821a8ad93c39b.3b278ba158b47026",
+      "_id": "3b278ba158b47026"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         90
       ],
       "text": "Lastmarch",
-      "_id": "6bc44b92905a4c11",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.6bc44b92905a4c11"
+      "_key": "!tables.results!b27821a8ad93c39b.711aadafe4449454",
+      "_id": "711aadafe4449454"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "Rockfall",
-      "_id": "f8c0154594d5b20c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b27821a8ad93c39b.f8c0154594d5b20c"
+      "_key": "!tables.results!b27821a8ad93c39b.05312b836c0bb805",
+      "_id": "05312b836c0bb805"
     }
   ],
-  "folder": "11b98f1da8f07aa2",
+  "folder": "b62c276059f4423c",
   "sort": 178,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!b27821a8ad93c39b"
 }

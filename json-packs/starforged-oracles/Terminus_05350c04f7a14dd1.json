@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Ice/Settlements/Terminus",
-      "category": "Starforged/Oracles/Planets/Ice"
+      "category": "Starforged/Oracles/Planets/Ice/Settlements",
+      "dsid": "oracle_rollable:starforged/planet/ice/settlements/terminus"
     }
   },
   "name": "Terminus",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         50
       ],
       "text": "None",
-      "_id": "8e7835fc08a3d0e9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!05350c04f7a14dd1.8e7835fc08a3d0e9"
+      "_key": "!tables.results!05350c04f7a14dd1.231575e7e284c1f1",
+      "_id": "231575e7e284c1f1"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         60
       ],
       "text": "Orbital settlement",
-      "_id": "c253702747c80514",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!05350c04f7a14dd1.c253702747c80514"
+      "_key": "!tables.results!05350c04f7a14dd1.c16d41b580a8969a",
+      "_id": "c16d41b580a8969a"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         80
       ],
       "text": "Planetside settlement",
-      "_id": "d8a3af901edf22b7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!05350c04f7a14dd1.d8a3af901edf22b7"
+      "_key": "!tables.results!05350c04f7a14dd1.45886f4b1b318470",
+      "_id": "45886f4b1b318470"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         92
       ],
       "text": "Multiple settlements",
-      "_id": "a52dcf5bbd3623b1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!05350c04f7a14dd1.a52dcf5bbd3623b1"
+      "_key": "!tables.results!05350c04f7a14dd1.8fc0b675b2da7093",
+      "_id": "8fc0b675b2da7093"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Settlements in conflict",
-      "_id": "99e74477dc2e53c4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!05350c04f7a14dd1.99e74477dc2e53c4"
+      "_key": "!tables.results!05350c04f7a14dd1.901a2c9f11f4ca5d",
+      "_id": "901a2c9f11f4ca5d"
     }
   ],
   "folder": "af540e4e4b0e10f6",
-  "sort": 311,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!05350c04f7a14dd1"
 }

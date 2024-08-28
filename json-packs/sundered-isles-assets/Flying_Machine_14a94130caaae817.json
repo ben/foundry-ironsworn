@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "14a94130caaae817",
+  "folder": "1d5e24a967aa7e62",
+  "name": "Flying Machine",
+  "system": {
+    "requirement": "",
+    "category": "Support Vehicle",
+    "color": "#495790",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your flying machine can carry you and a passenger on aerial missions. When you make a move to scout or survey from above, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you perform a risky maneuver to overcome an obstacle or danger, you may add +integrity and take +2 momentum on a strong hit. If you do, count a weak hit as a miss.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you scout ahead as you @Compendium[foundry-ironsworn.starforgedmoves.ed490d43a2533506]{Set a Course}, add +1. On a strong hit with a match, you spot a remarkable location or opportunity en route. Mark 1 tick on your discoveries legacy track, envision what you find, and resolve the encounter. Then, continue to your destination.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Integrity",
+      "max": 3,
+      "value": 3,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Battered",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/support_vehicle/flying_machine",
+      "dsid": "asset:sundered_isles/support_vehicle/flying_machine"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!14a94130caaae817"
+}

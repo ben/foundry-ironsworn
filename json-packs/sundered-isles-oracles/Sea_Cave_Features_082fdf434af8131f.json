@@ -1,0 +1,632 @@
+{
+  "_id": "082fdf434af8131f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/sea",
+      "dsid": "oracle_rollable:sundered_isles/cave/sea/feature"
+    }
+  },
+  "name": "Sea Cave Features",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Abandoned boat",
+      "_key": "!tables.results!082fdf434af8131f.30c2db0b8911c8e7",
+      "_id": "30c2db0b8911c8e7"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Abandoned waterside camp",
+      "_key": "!tables.results!082fdf434af8131f.5755398189293030",
+      "_id": "5755398189293030"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Ancient carvings or statues",
+      "_key": "!tables.results!082fdf434af8131f.bd221e7353709add",
+      "_id": "bd221e7353709add"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Bat colony",
+      "_key": "!tables.results!082fdf434af8131f.81e606ff94b0b49a",
+      "_id": "81e606ff94b0b49a"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Boat landing or dock",
+      "_key": "!tables.results!082fdf434af8131f.bbf85a454ccd25f7",
+      "_id": "bbf85a454ccd25f7"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Bobbing bottle with enclosed message",
+      "_key": "!tables.results!082fdf434af8131f.255db155a5ca1987",
+      "_id": "255db155a5ca1987"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Briny pool with dead coral",
+      "_key": "!tables.results!082fdf434af8131f.01d51a3f8f7c8798",
+      "_id": "01d51a3f8f7c8798"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Bubbling vents",
+      "_key": "!tables.results!082fdf434af8131f.578fed1a98cf4b61",
+      "_id": "578fed1a98cf4b61"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Carcass of a washed up sea creature",
+      "_key": "!tables.results!082fdf434af8131f.3871dab887de029b",
+      "_id": "3871dab887de029b"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Carved arch leading onwards",
+      "_key": "!tables.results!082fdf434af8131f.78ae3e2cb5a4a1ff",
+      "_id": "78ae3e2cb5a4a1ff"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Coral garden nurtured by shafts of light",
+      "_key": "!tables.results!082fdf434af8131f.b4dccd8233e5fe48",
+      "_id": "b4dccd8233e5fe48"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Curtains of falling water",
+      "_key": "!tables.results!082fdf434af8131f.ed65287f228f0d9c",
+      "_id": "ed65287f228f0d9c"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Darting schools of pale fish",
+      "_key": "!tables.results!082fdf434af8131f.430fb969204f6cfb",
+      "_id": "430fb969204f6cfb"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Deep, placid pool",
+      "_key": "!tables.results!082fdf434af8131f.6b003230e8ef318a",
+      "_id": "6b003230e8ef318a"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Dry alcove",
+      "_key": "!tables.results!082fdf434af8131f.fe45e91d92351422",
+      "_id": "fe45e91d92351422"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Dry tunnel above the tide",
+      "_key": "!tables.results!082fdf434af8131f.9980411c62717c9a",
+      "_id": "9980411c62717c9a"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Excavated or constructed waterway",
+      "_key": "!tables.results!082fdf434af8131f.e8ff9d2bd04a07a7",
+      "_id": "e8ff9d2bd04a07a7"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Flooded lava tube",
+      "_key": "!tables.results!082fdf434af8131f.c837d9fa905e7312",
+      "_id": "c837d9fa905e7312"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Flooded shaft or sinkhole",
+      "_key": "!tables.results!082fdf434af8131f.f34867eb54954cd0",
+      "_id": "f34867eb54954cd0"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Freshwater inlet",
+      "_key": "!tables.results!082fdf434af8131f.21b5640d5fd244ba",
+      "_id": "21b5640d5fd244ba"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Incessant dripping",
+      "_key": "!tables.results!082fdf434af8131f.0adb9acd55e925e5",
+      "_id": "0adb9acd55e925e5"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Jagged oyster beds",
+      "_key": "!tables.results!082fdf434af8131f.745021e55d217fb7",
+      "_id": "745021e55d217fb7"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Luminescent algae",
+      "_key": "!tables.results!082fdf434af8131f.ceb7f57654ed155d",
+      "_id": "ceb7f57654ed155d"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Luminescent jellyfish",
+      "_key": "!tables.results!082fdf434af8131f.62f0f1a2e8329649",
+      "_id": "62f0f1a2e8329649"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Luminescent water",
+      "_key": "!tables.results!082fdf434af8131f.4fc7f5df2fd3b018",
+      "_id": "4fc7f5df2fd3b018"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Message carved into wet stone",
+      "_key": "!tables.results!082fdf434af8131f.4b6eec54951146a3",
+      "_id": "4b6eec54951146a3"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Morass of rotting seaweed",
+      "_key": "!tables.results!082fdf434af8131f.f0ea4bf334e32445",
+      "_id": "f0ea4bf334e32445"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Mounds of fallen boulders",
+      "_key": "!tables.results!082fdf434af8131f.4d481ced07d2bddc",
+      "_id": "4d481ced07d2bddc"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Muddy waterway",
+      "_key": "!tables.results!082fdf434af8131f.53b0be66f0cbf91f",
+      "_id": "53b0be66f0cbf91f"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Overwhelming briny stench",
+      "_key": "!tables.results!082fdf434af8131f.c3b0ae1e492831a7",
+      "_id": "c3b0ae1e492831a7"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Piles of crushed shells",
+      "_key": "!tables.results!082fdf434af8131f.b8e449e7e52c18c5",
+      "_id": "b8e449e7e52c18c5"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Rock bridge",
+      "_key": "!tables.results!082fdf434af8131f.fbdf8e1483f96dcc",
+      "_id": "fbdf8e1483f96dcc"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Scattered, silt-covered bones",
+      "_key": "!tables.results!082fdf434af8131f.673539ef141d1e44",
+      "_id": "673539ef141d1e44"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Shadowy tentacles in dark water",
+      "_key": "!tables.results!082fdf434af8131f.b25d18c3a01b1777",
+      "_id": "b25d18c3a01b1777"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Sound of rushing water",
+      "_key": "!tables.results!082fdf434af8131f.c2fbe0018e9c8faa",
+      "_id": "c2fbe0018e9c8faa"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Sound of voices",
+      "_key": "!tables.results!082fdf434af8131f.e706592c8b2b1904",
+      "_id": "e706592c8b2b1904"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Steaming hot springs",
+      "_key": "!tables.results!082fdf434af8131f.319533b9742faad7",
+      "_id": "319533b9742faad7"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Triangular fin circling in deep water",
+      "_key": "!tables.results!082fdf434af8131f.124aaeb071471512",
+      "_id": "124aaeb071471512"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Wet tracks at water's edge",
+      "_key": "!tables.results!082fdf434af8131f.7c1e61fabd056f9d",
+      "_id": "7c1e61fabd056f9d"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Branching waterway",
+      "_key": "!tables.results!082fdf434af8131f.dea99d191f6ecccd",
+      "_id": "dea99d191f6ecccd"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Dam of waterborne debris",
+      "_key": "!tables.results!082fdf434af8131f.4eb697073354ad50",
+      "_id": "4eb697073354ad50"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Freshwater falls pouring from above",
+      "_key": "!tables.results!082fdf434af8131f.2ca4e598bc37938f",
+      "_id": "2ca4e598bc37938f"
+    },
+    {
+      "range": [
+        46,
+        47
+      ],
+      "text": "Fully submerged passage",
+      "_key": "!tables.results!082fdf434af8131f.fdf2b5507f9bbe4d",
+      "_id": "fdf2b5507f9bbe4d"
+    },
+    {
+      "range": [
+        48,
+        49
+      ],
+      "text": "Glimmer of metal in the water",
+      "_key": "!tables.results!082fdf434af8131f.f9cec25a60cef709",
+      "_id": "f9cec25a60cef709"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Hordes of scuttling crabs",
+      "_key": "!tables.results!082fdf434af8131f.27f1b600cf3e4c6c",
+      "_id": "27f1b600cf3e4c6c"
+    },
+    {
+      "range": [
+        52,
+        53
+      ],
+      "text": "Idyllic pool with bountiful sea life",
+      "_key": "!tables.results!082fdf434af8131f.3a31b7eef5c4d5a7",
+      "_id": "3a31b7eef5c4d5a7"
+    },
+    {
+      "range": [
+        54,
+        55
+      ],
+      "text": "Intricate lava formations",
+      "_key": "!tables.results!082fdf434af8131f.cbbde0606f1c6105",
+      "_id": "cbbde0606f1c6105"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Low-hanging rock formations",
+      "_key": "!tables.results!082fdf434af8131f.7157471bac51c21e",
+      "_id": "7157471bac51c21e"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Low-lying mist",
+      "_key": "!tables.results!082fdf434af8131f.dc48c5314e283486",
+      "_id": "dc48c5314e283486"
+    },
+    {
+      "range": [
+        60,
+        61
+      ],
+      "text": "Massive, watery cavern",
+      "_key": "!tables.results!082fdf434af8131f.291281e25be90833",
+      "_id": "291281e25be90833"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Perfectly crystalline water",
+      "_key": "!tables.results!082fdf434af8131f.4ead463cabb0015d",
+      "_id": "4ead463cabb0015d"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Plunging series of terraced waterfalls",
+      "_key": "!tables.results!082fdf434af8131f.1e554a2a7d936eb3",
+      "_id": "1e554a2a7d936eb3"
+    },
+    {
+      "range": [
+        66,
+        67
+      ],
+      "text": "Rocky island surrounded by water",
+      "_key": "!tables.results!082fdf434af8131f.d818e3d0ecf278ab",
+      "_id": "d818e3d0ecf278ab"
+    },
+    {
+      "range": [
+        68,
+        69
+      ],
+      "text": "Shafts of natural light",
+      "_key": "!tables.results!082fdf434af8131f.636af0f59bd28d28",
+      "_id": "636af0f59bd28d28"
+    },
+    {
+      "range": [
+        70,
+        71
+      ],
+      "text": "Shallow pools and algae-covered rocks",
+      "_key": "!tables.results!082fdf434af8131f.25808d36f912d3b2",
+      "_id": "25808d36f912d3b2"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Silt-clouded waters",
+      "_key": "!tables.results!082fdf434af8131f.f982c4069c370bfc",
+      "_id": "f982c4069c370bfc"
+    },
+    {
+      "range": [
+        74,
+        75
+      ],
+      "text": "Skeletal corpse",
+      "_key": "!tables.results!082fdf434af8131f.763d306347ba12aa",
+      "_id": "763d306347ba12aa"
+    },
+    {
+      "range": [
+        76,
+        77
+      ],
+      "text": "Sound of watery movement or splashes",
+      "_key": "!tables.results!082fdf434af8131f.5c51cd7240928b73",
+      "_id": "5c51cd7240928b73"
+    },
+    {
+      "range": [
+        78,
+        79
+      ],
+      "text": "Stirrings of a large creature",
+      "_key": "!tables.results!082fdf434af8131f.045fb3ac2aecb7e1",
+      "_id": "045fb3ac2aecb7e1"
+    },
+    {
+      "range": [
+        80,
+        81
+      ],
+      "text": "Surfaces encrusted with sea life",
+      "_key": "!tables.results!082fdf434af8131f.a0dbab991e689252",
+      "_id": "a0dbab991e689252"
+    },
+    {
+      "range": [
+        82,
+        83
+      ],
+      "text": "Surging waterway",
+      "_key": "!tables.results!082fdf434af8131f.fd2b81ee8ebe25b6",
+      "_id": "fd2b81ee8ebe25b6"
+    },
+    {
+      "range": [
+        84,
+        85
+      ],
+      "text": "Swirling whirlpool",
+      "_key": "!tables.results!082fdf434af8131f.5d26a14e28260e47",
+      "_id": "5d26a14e28260e47"
+    },
+    {
+      "range": [
+        86,
+        87
+      ],
+      "text": "Tight squeeze through narrowing tunnel",
+      "_key": "!tables.results!082fdf434af8131f.4a2ebba4ac580ed8",
+      "_id": "4a2ebba4ac580ed8"
+    },
+    {
+      "range": [
+        88,
+        89
+      ],
+      "text": "Waterlogged corpse",
+      "_key": "!tables.results!082fdf434af8131f.61f272413927e059",
+      "_id": "61f272413927e059"
+    },
+    {
+      "range": [
+        90,
+        91
+      ],
+      "text": "Wrecked or sunken boat",
+      "_key": "!tables.results!082fdf434af8131f.588c5a6ac2472c28",
+      "_id": "588c5a6ac2472c28"
+    },
+    {
+      "range": [
+        92,
+        93
+      ],
+      "text": "Corpse clutching a @Compendium[foundry-ironsworn.sunderedislesoracles.0aa8af4001afac1f]{Token}",
+      "_key": "!tables.results!082fdf434af8131f.d630571e04ee4859",
+      "_id": "d630571e04ee4859"
+    },
+    {
+      "range": [
+        94,
+        95
+      ],
+      "text": "<p>Connection to an \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/cave/inland_cave\">\n    <i class=\"fa fa-caret-right\"></i> Inland Cave\n</a></p>",
+      "_key": "!tables.results!082fdf434af8131f.3e0d8276feebcc44",
+      "_id": "3e0d8276feebcc44"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!082fdf434af8131f.1041b3b8d12177b1",
+      "_id": "1041b3b8d12177b1"
+    }
+  ],
+  "folder": "80ed534e9e0f713e",
+  "sort": 208,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!082fdf434af8131f"
+}

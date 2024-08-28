@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Opportunity/Lifebearing",
-      "category": "Starforged/Oracles/Planets"
+      "category": "Starforged/Oracles/Planets/Opportunity",
+      "dsid": "oracle_rollable:starforged/planet/opportunity/lifebearing"
     }
   },
   "name": "Lifebearing",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "Clue to a lifeform's nature or vulnerabilities",
-      "_id": "a38b2ba2a3d3314b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.a38b2ba2a3d3314b"
+      "_key": "!tables.results!e201f187190ad227.36f8babbd5856589",
+      "_id": "36f8babbd5856589"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         8
       ],
       "text": "Friendly interaction with a benign lifeform",
-      "_id": "af6b8e3a0503059c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.af6b8e3a0503059c"
+      "_key": "!tables.results!e201f187190ad227.b3503d753397488f",
+      "_id": "b3503d753397488f"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         12
       ],
       "text": "Hunting or foraging opportunities are plentiful",
-      "_id": "c8179f98097eed6d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.c8179f98097eed6d"
+      "_key": "!tables.results!e201f187190ad227.2e3eef47e259fa00",
+      "_id": "2e3eef47e259fa00"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         16
       ],
       "text": "Interesting or helpful aspect of benign creatures",
-      "_id": "c6e5911f3007fb7c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.c6e5911f3007fb7c"
+      "_key": "!tables.results!e201f187190ad227.200d92d4488edbc9",
+      "_id": "200d92d4488edbc9"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         20
       ],
       "text": "Interesting or helpful aspect of local plant life",
-      "_id": "089a6433682593d6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.089a6433682593d6"
+      "_key": "!tables.results!e201f187190ad227.2b44f05f9882ff86",
+      "_id": "2b44f05f9882ff86"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         24
       ],
       "text": "Encounter reveals unexpected benign lifeforms",
-      "_id": "e35043df0a06763c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.e35043df0a06763c"
+      "_key": "!tables.results!e201f187190ad227.a54e58fdaf8f3b0c",
+      "_id": "a54e58fdaf8f3b0c"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         28
       ],
       "text": "Abandoned camp or vehicle",
-      "_id": "53f566cf9d3e0ba0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.53f566cf9d3e0ba0"
+      "_key": "!tables.results!e201f187190ad227.af854d6b56a4dc81",
+      "_id": "af854d6b56a4dc81"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         32
       ],
       "text": "Advance warning of an environmental threat",
-      "_id": "0c16fe9845d26185",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.0c16fe9845d26185"
+      "_key": "!tables.results!e201f187190ad227.769c155ab427c95f",
+      "_id": "769c155ab427c95f"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         36
       ],
       "text": "Clear path through otherwise perilous terrain",
-      "_id": "a777eddafc227408",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.a777eddafc227408"
+      "_key": "!tables.results!e201f187190ad227.5bc3a1a8a205af16",
+      "_id": "5bc3a1a8a205af16"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         40
       ],
       "text": "Clue offers insight into a current quest or mystery",
-      "_id": "177137e42e3e418b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.177137e42e3e418b"
+      "_key": "!tables.results!e201f187190ad227.4868d73a11644158",
+      "_id": "4868d73a11644158"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         44
       ],
       "text": "Clue to the history or nature of this place",
-      "_id": "6f9112a3bd954c9a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.6f9112a3bd954c9a"
+      "_key": "!tables.results!e201f187190ad227.1f3761df331e8468",
+      "_id": "1f3761df331e8468"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         48
       ],
       "text": "Evidence that others have passed this way",
-      "_id": "077d2d1e6cf92166",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.077d2d1e6cf92166"
+      "_key": "!tables.results!e201f187190ad227.0f92fef8496c058f",
+      "_id": "0f92fef8496c058f"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         52
       ],
       "text": "Foe reveals themselves or tips their hand",
-      "_id": "e649f5834f6491ca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.e649f5834f6491ca"
+      "_key": "!tables.results!e201f187190ad227.18c1d02abba70e2a",
+      "_id": "18c1d02abba70e2a"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         56
       ],
       "text": "Fortuitous change in the weather or atmosphere",
-      "_id": "8e6663e70cf7d750",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.8e6663e70cf7d750"
+      "_key": "!tables.results!e201f187190ad227.92193d9930089894",
+      "_id": "92193d9930089894"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         60
       ],
       "text": "Friendly traveler crosses your path",
-      "_id": "9e32afe62f0c2cfa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.9e32afe62f0c2cfa"
+      "_key": "!tables.results!e201f187190ad227.67ded037580480b4",
+      "_id": "67ded037580480b4"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         64
       ],
       "text": "Helpful resource is in ample supply",
-      "_id": "b5cee18043a3f0bc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.b5cee18043a3f0bc"
+      "_key": "!tables.results!e201f187190ad227.29eeef7a12e050c2",
+      "_id": "29eeef7a12e050c2"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         68
       ],
       "text": "Impressive vista offers comfort or inspiration",
-      "_id": "1f2feec6bf4d185d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.1f2feec6bf4d185d"
+      "_key": "!tables.results!e201f187190ad227.afb2f75ae09731ed",
+      "_id": "afb2f75ae09731ed"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         72
       ],
       "text": "Interesting artifact or device",
-      "_id": "f31c9b3ed5ef50af",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.f31c9b3ed5ef50af"
+      "_key": "!tables.results!e201f187190ad227.1a6c70d61d056b45",
+      "_id": "1a6c70d61d056b45"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         76
       ],
       "text": "Interesting site offers opportunities for exploration",
-      "_id": "d447a1dd655198ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.d447a1dd655198ea"
+      "_key": "!tables.results!e201f187190ad227.bb3f40cdcc75a2bd",
+      "_id": "bb3f40cdcc75a2bd"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         80
       ],
       "text": "Moment of fellowship or inner peace",
-      "_id": "44a846c8109a63c7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.44a846c8109a63c7"
+      "_key": "!tables.results!e201f187190ad227.2757ae37adb30851",
+      "_id": "2757ae37adb30851"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         84
       ],
       "text": "Opening to distract, escape, or avoid foes",
-      "_id": "d6a24ef850ee57d3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.d6a24ef850ee57d3"
+      "_key": "!tables.results!e201f187190ad227.3916097e595fd03a",
+      "_id": "3916097e595fd03a"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         88
       ],
       "text": "Opening to get the drop on a foe",
-      "_id": "70ad567aa788d6e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.70ad567aa788d6e5"
+      "_key": "!tables.results!e201f187190ad227.88cd810332aec434",
+      "_id": "88cd810332aec434"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         92
       ],
       "text": "Plea for help from a potential benefactor",
-      "_id": "a50535199f23e43f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.a50535199f23e43f"
+      "_key": "!tables.results!e201f187190ad227.cc032532430c6ee0",
+      "_id": "cc032532430c6ee0"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         96
       ],
       "text": "Refuge offers a place to hide, plan, or recover",
-      "_id": "f6efb96d1c67be55",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.f6efb96d1c67be55"
+      "_key": "!tables.results!e201f187190ad227.752cdefc8f9b9c72",
+      "_id": "752cdefc8f9b9c72"
     },
     {
       "range": [
@@ -354,29 +235,12 @@
         100
       ],
       "text": "Vantage point reveals the lay of the land",
-      "_id": "9d0dd6d27ff53c9b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e201f187190ad227.9d0dd6d27ff53c9b"
+      "_key": "!tables.results!e201f187190ad227.534d5d0f97171b1a",
+      "_id": "534d5d0f97171b1a"
     }
   ],
   "folder": "06b044a72e05ed6e",
-  "sort": 321,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!e201f187190ad227"
 }

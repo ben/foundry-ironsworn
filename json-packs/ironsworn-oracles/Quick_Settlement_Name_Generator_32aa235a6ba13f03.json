@@ -1,0 +1,16 @@
+{
+  "name": "Quick Settlement Name Generator",
+  "description": "Use this oracle as a simpler alternative for settlement names. Roll once for the prefix, and once for the suffix. If the combination doesn’t quite work, look at adjacent rows or reverse the digits.",
+  "type": "RollTable",
+  "_id": "32aa235a6ba13f03",
+  "sort": 180,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Quick_Name",
+      "dsid": "oracle_collection:classic/settlement/quick_name"
+    }
+  },
+  "folder": "1a0cbf46c7e7fb26",
+  "sorting": "a",
+  "_key": "!folders!32aa235a6ba13f03"
+}

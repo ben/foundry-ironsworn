@@ -1,0 +1,38 @@
+{
+  "_id": "5c79230d7ce4095a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/weather/conditions",
+      "dsid": "oracle_rollable:sundered_isles/weather/conditions/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        70
+      ],
+      "text": "Fair Weather",
+      "_key": "!tables.results!5c79230d7ce4095a.21e21e79bed323e0",
+      "_id": "21e21e79bed323e0"
+    },
+    {
+      "range": [
+        71,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.cec9db2f0aaf8cfe]{Foul Weather}",
+      "_key": "!tables.results!5c79230d7ce4095a.bbec72e6872659a0",
+      "_id": "bbec72e6872659a0"
+    }
+  ],
+  "folder": "3dbefba73b5b7e5e",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5c79230d7ce4095a"
+}

@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "c1041f50a55a35bc",
+  "folder": "841fa5bb80d55fd9",
+  "name": "The Kraken",
+  "system": {
+    "requirement": "<p>While it is your companion, the Kraken cannot be harmed.</p>",
+    "category": "Companion",
+    "color": "#3d8b8a",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you summon the Kraken, fill one segment of a four-segment clock. The Kraken will heed a single command to destroy or overcome any foe or obstacle. If you are in a fight, @Compendium[foundry-ironsworn.starforgedmoves.3129f4caa4754caf]{Take Decisive Action} with an automatic strong hit. When the clock is filled, @Compendium[foundry-ironsworn.starforgedoracles.9f68aab75fcbbba9]{Ask the Oracle} (using the yes/no table) if the Kraken turns against you, making it 50/50. On a yes, discard this asset; the Kraken is now an epic foe. On a no, clear one segment of the clock.</p>",
+        "hasClock": true,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move using a threat to call the Kraken as leverage, add +2.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>One time only, when you @Compendium[foundry-ironsworn.starforgedmoves.985a5415860a99e9]{Fulfill Your Vow} (formidable or greater) in service to the Kraken and score a hit, choose one: clear all clock segments, or discard this asset and mark three boxes on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/companion/kraken",
+      "dsid": "asset:sundered_isles/companion/kraken"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!c1041f50a55a35bc"
+}

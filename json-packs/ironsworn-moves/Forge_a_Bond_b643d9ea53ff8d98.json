@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "Forge a Bond",
   "img": "icons/dice/d10black.svg",
+  "folder": "31fc8e728c391c80",
   "system": {
     "dfid": "Ironsworn/Moves/Relationship/Forge_a_Bond",
     "Category": "Ironsworn/Moves/Relationship",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you spend significant time with a person or community, stand together to face hardships, or make sacrifices for their cause**, you can attempt to create a bond. When you do, roll +heart. If you make this move after you successfully @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} to their benefit, you may reroll any dice.\n\nOn a **strong hit**, make note of the bond, mark a tick on your bond progress track, and choose one.\n\n  * Take +1 spirit.\n  * Take +2 momentum.\n\nOn a **weak hit**, they ask something more of you first. Envision what it is (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), do it (or @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}), and mark the bond. If you refuse or fail, @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.\n\nOn a **miss**, they reject you. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Text": "When __you spend significant time with a person or community, stand together to face hardships, or make sacrifices for their cause__, you can attempt to create a bond. When you do, roll +heart. If you make this move after you successfully @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} to their benefit, you may reroll any dice.\n\nOn a __strong hit__, make note of the bond, mark a tick on your bond progress track, and choose one.\n\n  * Take +1 spirit.\n  * Take +2 momentum.\n\nOn a __weak hit__, they ask something more of you first. Envision what it is (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), do it (or @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}), and mark the bond. If you refuse or fail, @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.\n\nOn a __miss__, they reject you. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
     "Trigger": {
       "Text": "When you spend significant time with a person or community, stand together to face hardships, or make sacrifices for their cause...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Heart"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Make note of the bond, mark a tick on your bond progress track, and choose one.\n\n  * Take +1 spirit.\n  * Take +2 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, make note of the bond, mark a tick on your bond progress track, and choose one.\n\n  * Take +1 spirit.\n  * Take +2 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "They ask something more of you first. Envision what it is (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), do it (or @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}), and mark the bond. If you refuse or fail, @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, they ask something more of you first. Envision what it is (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), do it (or @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}), and mark the bond. If you refuse or fail, @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}."
       },
       "Miss": {
-        "Text": "They reject you. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, they reject you. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 74
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 74,
-  "folder": "31fc8e728c391c80",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Relationship/Forge_a_Bond",
+      "dsid": "move:classic/relationship/forge_a_bond"
+    }
   },
   "_key": "!items!b643d9ea53ff8d98"
 }

@@ -1,0 +1,16 @@
+{
+  "name": "Settlement Oracles",
+  "description": "To give the settlement additional detail, roll on the @Compendium[foundry-ironsworn.ironswornoracles.85c04b5267a460ca]{Location Descriptor} oracle. To spark an idea for an event or feature related to the settlement, roll on the @Compendium[foundry-ironsworn.ironswornoracles.cb521e4b4d1c2d15]{Action} and @Compendium[foundry-ironsworn.ironswornoracles.3c1a7f81062a8a8a]{Theme} oracles.",
+  "type": "RollTable",
+  "_id": "1a0cbf46c7e7fb26",
+  "sort": 178,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement",
+      "dsid": "oracle_collection:classic/settlement"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!1a0cbf46c7e7fb26"
+}

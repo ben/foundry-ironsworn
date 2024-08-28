@@ -1,0 +1,452 @@
+{
+  "_id": "712208723134cf7e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/symbol"
+    }
+  },
+  "name": "Ship Symbol",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Albatross or gull",
+      "_key": "!tables.results!712208723134cf7e.6aab8ab00448a18d",
+      "_id": "6aab8ab00448a18d"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Angelic figure",
+      "_key": "!tables.results!712208723134cf7e.a7c5e53d018ede53",
+      "_id": "a7c5e53d018ede53"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Bear",
+      "_key": "!tables.results!712208723134cf7e.4f2773a4f2e13c15",
+      "_id": "4f2773a4f2e13c15"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Bull",
+      "_key": "!tables.results!712208723134cf7e.c29cf82a46f58bdd",
+      "_id": "c29cf82a46f58bdd"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Celestial object",
+      "_key": "!tables.results!712208723134cf7e.a114dca053a9e30d",
+      "_id": "a114dca053a9e30d"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Crossed weapons",
+      "_key": "!tables.results!712208723134cf7e.45883265025e37c8",
+      "_id": "45883265025e37c8"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Crown or crest",
+      "_key": "!tables.results!712208723134cf7e.a4e649d0043986b4",
+      "_id": "a4e649d0043986b4"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Divine figure",
+      "_key": "!tables.results!712208723134cf7e.886bb1c9cd134e4c",
+      "_id": "886bb1c9cd134e4c"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Dolphin or porpoise",
+      "_key": "!tables.results!712208723134cf7e.d09c248b712c9585",
+      "_id": "d09c248b712c9585"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Dragon",
+      "_key": "!tables.results!712208723134cf7e.fb0e7507ed8d4d8b",
+      "_id": "fb0e7507ed8d4d8b"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Eagle or hawk",
+      "_key": "!tables.results!712208723134cf7e.bf7aeece0b77456c",
+      "_id": "bf7aeece0b77456c"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Fish",
+      "_key": "!tables.results!712208723134cf7e.1587ad4d5fa9f234",
+      "_id": "1587ad4d5fa9f234"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Flames",
+      "_key": "!tables.results!712208723134cf7e.2bc4707c7889710a",
+      "_id": "2bc4707c7889710a"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Gorgon",
+      "_key": "!tables.results!712208723134cf7e.331a44a28391d80c",
+      "_id": "331a44a28391d80c"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Griffin",
+      "_key": "!tables.results!712208723134cf7e.b8de2ed2fa2aea34",
+      "_id": "b8de2ed2fa2aea34"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Holy symbol",
+      "_key": "!tables.results!712208723134cf7e.71e6d24a19f0d6c3",
+      "_id": "71e6d24a19f0d6c3"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Horse",
+      "_key": "!tables.results!712208723134cf7e.075eb6b61eb72b47",
+      "_id": "075eb6b61eb72b47"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Hound",
+      "_key": "!tables.results!712208723134cf7e.37e9e12e2f0fdb23",
+      "_id": "37e9e12e2f0fdb23"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Jungle cat",
+      "_key": "!tables.results!712208723134cf7e.f1530077f3947c2c",
+      "_id": "f1530077f3947c2c"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Lion",
+      "_key": "!tables.results!712208723134cf7e.cd579f7efce81019",
+      "_id": "cd579f7efce81019"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Maiden Figure",
+      "_key": "!tables.results!712208723134cf7e.def09ac8943ec7cf",
+      "_id": "def09ac8943ec7cf"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Martyred figure",
+      "_key": "!tables.results!712208723134cf7e.83cce64601691516",
+      "_id": "83cce64601691516"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Memorialized figure",
+      "_key": "!tables.results!712208723134cf7e.b19c80af30ef0ddf",
+      "_id": "b19c80af30ef0ddf"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Mermaid",
+      "_key": "!tables.results!712208723134cf7e.4e060b3895800be1",
+      "_id": "4e060b3895800be1"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Multi-headed hydra",
+      "_key": "!tables.results!712208723134cf7e.3c04202be74b9cdb",
+      "_id": "3c04202be74b9cdb"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Mystical Figure",
+      "_key": "!tables.results!712208723134cf7e.2ef055b00088a611",
+      "_id": "2ef055b00088a611"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Noble figure",
+      "_key": "!tables.results!712208723134cf7e.99f457376c8d79bf",
+      "_id": "99f457376c8d79bf"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Octopus or squid",
+      "_key": "!tables.results!712208723134cf7e.fc63d38202fbb704",
+      "_id": "fc63d38202fbb704"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Phoenix",
+      "_key": "!tables.results!712208723134cf7e.a94ffcc6af21c215",
+      "_id": "a94ffcc6af21c215"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Ram",
+      "_key": "!tables.results!712208723134cf7e.1f88eac624bb0749",
+      "_id": "1f88eac624bb0749"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Raven or crow",
+      "_key": "!tables.results!712208723134cf7e.96b9ab9dbde9b5d8",
+      "_id": "96b9ab9dbde9b5d8"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Scorpion",
+      "_key": "!tables.results!712208723134cf7e.495f76b0b8afc7dc",
+      "_id": "495f76b0b8afc7dc"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Sea turtle",
+      "_key": "!tables.results!712208723134cf7e.24b598f8adb72809",
+      "_id": "24b598f8adb72809"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Seahorse",
+      "_key": "!tables.results!712208723134cf7e.846d051aa15cd331",
+      "_id": "846d051aa15cd331"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Serpent",
+      "_key": "!tables.results!712208723134cf7e.23673366bf7de4bc",
+      "_id": "23673366bf7de4bc"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Shark",
+      "_key": "!tables.results!712208723134cf7e.d86a96271faf72b3",
+      "_id": "d86a96271faf72b3"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Shield",
+      "_key": "!tables.results!712208723134cf7e.5edddc48c1245d99",
+      "_id": "5edddc48c1245d99"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Skull and bones",
+      "_key": "!tables.results!712208723134cf7e.1ca4dbcdc9b9c73f",
+      "_id": "1ca4dbcdc9b9c73f"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Swan",
+      "_key": "!tables.results!712208723134cf7e.c90865a76bb788b7",
+      "_id": "c90865a76bb788b7"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Tree",
+      "_key": "!tables.results!712208723134cf7e.fee3409dfd9790e3",
+      "_id": "fee3409dfd9790e3"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Unicorn",
+      "_key": "!tables.results!712208723134cf7e.e181d8aedbf6529d",
+      "_id": "e181d8aedbf6529d"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Vulture",
+      "_key": "!tables.results!712208723134cf7e.77b6a088d49d3a30",
+      "_id": "77b6a088d49d3a30"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Warrior Figure",
+      "_key": "!tables.results!712208723134cf7e.92f1edd4ec23d74a",
+      "_id": "92f1edd4ec23d74a"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Waves",
+      "_key": "!tables.results!712208723134cf7e.aeea9240e0e958d9",
+      "_id": "aeea9240e0e958d9"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Whale",
+      "_key": "!tables.results!712208723134cf7e.3a6fc3fcbcb897d8",
+      "_id": "3a6fc3fcbcb897d8"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Winged horse",
+      "_key": "!tables.results!712208723134cf7e.8a3bd7c7c0d9fca4",
+      "_id": "8a3bd7c7c0d9fca4"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Wolf",
+      "_key": "!tables.results!712208723134cf7e.8f814c49969b7151",
+      "_id": "8f814c49969b7151"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!712208723134cf7e.6a971890ef45cc52",
+      "_id": "6a971890ef45cc52"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 136,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!712208723134cf7e"
+}

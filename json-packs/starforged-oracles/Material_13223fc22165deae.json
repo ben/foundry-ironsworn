@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Vaults/Material",
-      "category": "Starforged/Oracles/Vaults"
+      "category": "Starforged/Oracles/Vaults",
+      "dsid": "oracle_rollable:starforged/precursor_vault/material"
     }
   },
   "name": "Material",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         30
       ],
       "text": "Metallic (industrial)",
-      "_id": "30b3b1652a54c26a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.30b3b1652a54c26a"
+      "_key": "!tables.results!13223fc22165deae.ac3bb3b09ed0efd4",
+      "_id": "ac3bb3b09ed0efd4"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         60
       ],
       "text": "Metallic (smooth)",
-      "_id": "ad70b23bd25f7071",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.ad70b23bd25f7071"
+      "_key": "!tables.results!13223fc22165deae.3f6bf5a0dd28be3c",
+      "_id": "3f6bf5a0dd28be3c"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         70
       ],
       "text": "Rocky or stone-like",
-      "_id": "3e42c7179a606990",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.3e42c7179a606990"
+      "_key": "!tables.results!13223fc22165deae.54b6532a1f00af53",
+      "_id": "54b6532a1f00af53"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         74
       ],
       "text": "Crystalline or glass-like",
-      "_id": "686634f3f54962fc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.686634f3f54962fc"
+      "_key": "!tables.results!13223fc22165deae.7a4a04c0e7baea59",
+      "_id": "7a4a04c0e7baea59"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         78
       ],
       "text": "Bone-like",
-      "_id": "7e51cf0d5ee0a229",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.7e51cf0d5ee0a229"
+      "_key": "!tables.results!13223fc22165deae.1d20c02bb0ecd683",
+      "_id": "1d20c02bb0ecd683"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         82
       ],
       "text": "Flesh-like",
-      "_id": "d9bdc3136e35559c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.d9bdc3136e35559c"
+      "_key": "!tables.results!13223fc22165deae.bbfea1be6ae0382e",
+      "_id": "bbfea1be6ae0382e"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         86
       ],
       "text": "Plant-like",
-      "_id": "3abf874933c30a96",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.3abf874933c30a96"
+      "_key": "!tables.results!13223fc22165deae.ca6864b6b14c435c",
+      "_id": "ca6864b6b14c435c"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         88
       ],
       "text": "Energy",
-      "_id": "5e6a11007a0e0644",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.5e6a11007a0e0644"
+      "_key": "!tables.results!13223fc22165deae.58a805f257894d56",
+      "_id": "58a805f257894d56"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         90
       ],
       "text": "Liquid",
-      "_id": "2dd154dc8750db8d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.2dd154dc8750db8d"
+      "_key": "!tables.results!13223fc22165deae.03fc34ba0032e4cf",
+      "_id": "03fc34ba0032e4cf"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "75af024d51da3d2f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!13223fc22165deae.75af024d51da3d2f"
+      "_key": "!tables.results!13223fc22165deae.a97bff7a74247f73",
+      "_id": "a97bff7a74247f73"
     }
   ],
   "folder": "2c4fe25ee600037f",
   "sort": 361,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!13223fc22165deae"
 }

@@ -1,0 +1,156 @@
+{
+  "_id": "bcc68163e523f6c9",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Vital/Feature",
+      "category": "Starforged/Oracles/Planets/Vital",
+      "dsid": "oracle_rollable:starforged/planet/vital/feature"
+    }
+  },
+  "name": "Planetside Feature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Background radiation",
+      "_key": "!tables.results!bcc68163e523f6c9.22b29f46e77782ba",
+      "_id": "22b29f46e77782ba"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Chaotically juxtaposed biomes",
+      "_key": "!tables.results!bcc68163e523f6c9.6ea3e21411cbbc9d",
+      "_id": "6ea3e21411cbbc9d"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Creature boneyards",
+      "_key": "!tables.results!bcc68163e523f6c9.85574bc316be233e",
+      "_id": "85574bc316be233e"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Creature lairs or watering holes",
+      "_key": "!tables.results!bcc68163e523f6c9.1b7b25a971b0175b",
+      "_id": "1b7b25a971b0175b"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Crystalline formations",
+      "_key": "!tables.results!bcc68163e523f6c9.25cd2e9939c9172a",
+      "_id": "25cd2e9939c9172a"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Fierce electrical storms",
+      "_key": "!tables.results!bcc68163e523f6c9.6e891e7838eab3dc",
+      "_id": "6e891e7838eab3dc"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Floating terrain",
+      "_key": "!tables.results!bcc68163e523f6c9.60e0e2d0fe2e5bd7",
+      "_id": "60e0e2d0fe2e5bd7"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Frequent seismic activity",
+      "_key": "!tables.results!bcc68163e523f6c9.77d51a1c324b4e1a",
+      "_id": "77d51a1c324b4e1a"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Magnetic disturbances",
+      "_key": "!tables.results!bcc68163e523f6c9.45ddefad19351ad9",
+      "_id": "45ddefad19351ad9"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Scarred or excavated terrain",
+      "_key": "!tables.results!bcc68163e523f6c9.c62bba0718cf5da5",
+      "_id": "c62bba0718cf5da5"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Signs of an engineered biosphere",
+      "_key": "!tables.results!bcc68163e523f6c9.1829c1e07dfddebe",
+      "_id": "1829c1e07dfddebe"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Sudden weather fluctuations",
+      "_key": "!tables.results!bcc68163e523f6c9.27b29eab6f57e2cb",
+      "_id": "27b29eab6f57e2cb"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Towering geological formations",
+      "_key": "!tables.results!bcc68163e523f6c9.cf1813c6b17f3a10",
+      "_id": "cf1813c6b17f3a10"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!bcc68163e523f6c9.49f6e2cb800d92d4",
+      "_id": "49f6e2cb800d92d4"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault\">\n    <i class=\"fa fa-caret-right\"></i> Precursor Vault\n</a> (planetside)</p>",
+      "_key": "!tables.results!bcc68163e523f6c9.ce0d21f3320f54a9",
+      "_id": "ce0d21f3320f54a9"
+    }
+  ],
+  "folder": "93ecb6acb6a3ea17",
+  "sort": 318,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!bcc68163e523f6c9"
+}

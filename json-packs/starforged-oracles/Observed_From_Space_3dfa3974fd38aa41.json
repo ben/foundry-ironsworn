@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Jungle/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Jungle"
+      "category": "Starforged/Oracles/Planets/Jungle",
+      "dsid": "oracle_rollable:starforged/planet/jungle/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Cloud-breaching trees",
-      "_id": "b5da82f43b042318",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.b5da82f43b042318"
+      "_key": "!tables.results!3dfa3974fd38aa41.259a0a661ff08ee7",
+      "_id": "259a0a661ff08ee7"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Towering mountains",
-      "_id": "e1dbb3a2420d21c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.e1dbb3a2420d21c5"
+      "_key": "!tables.results!3dfa3974fd38aa41.9241a55610a838f0",
+      "_id": "9241a55610a838f0"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Expansive rivers or wetlands",
-      "_id": "cc3ab64c069f26c0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.cc3ab64c069f26c0"
+      "_key": "!tables.results!3dfa3974fd38aa41.570251b250f059a2",
+      "_id": "570251b250f059a2"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Unbroken canopy",
-      "_id": "8280aa5531ce5024",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.8280aa5531ce5024"
+      "_key": "!tables.results!3dfa3974fd38aa41.51de638b78c0a74d",
+      "_id": "51de638b78c0a74d"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Inland seas",
-      "_id": "874e7c94cf881ef3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.874e7c94cf881ef3"
+      "_key": "!tables.results!3dfa3974fd38aa41.f0b6116b7e828df7",
+      "_id": "f0b6116b7e828df7"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Unusual vegetation color",
-      "_id": "6c740ca94a692287",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.6c740ca94a692287"
+      "_key": "!tables.results!3dfa3974fd38aa41.52da829372403149",
+      "_id": "52da829372403149"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Massive canyons",
-      "_id": "fe2fa3e0013dda7f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.fe2fa3e0013dda7f"
+      "_key": "!tables.results!3dfa3974fd38aa41.4979762e6cd44f71",
+      "_id": "4979762e6cd44f71"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Persistent cloud cover",
-      "_id": "aa9923860793693b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.aa9923860793693b"
+      "_key": "!tables.results!3dfa3974fd38aa41.ad8cfda40722326d",
+      "_id": "ad8cfda40722326d"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "27c69d4ee5aa858a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.27c69d4ee5aa858a"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!3dfa3974fd38aa41.c7c852f7de2f534b",
+      "_id": "c7c852f7de2f534b"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "1aefdc1019c22225",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3dfa3974fd38aa41.1aefdc1019c22225"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault\">\n    <i class=\"fa fa-caret-right\"></i> Precursor Vault\n</a> (orbital)</p>",
+      "_key": "!tables.results!3dfa3974fd38aa41.d785d7753e4102ff",
+      "_id": "d785d7753e4102ff"
     }
   ],
   "folder": "2a431921f3dabd4b",
   "sort": 313,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!3dfa3974fd38aa41"
 }

@@ -1,10 +1,10 @@
 {
   "_id": "4837b444ef54880f",
   "type": "progress",
-  "name": "Gnawling Brood Mother",
+  "name": "Gnawling brood mother",
   "img": "icons/creatures/mammals/rodent-rat-green.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Furry, rodent-like creatures</p>\n    <p class=\"nogrow\">Long, jutting fangs</p>\n    <p class=\"nogrow\">Spider-like limbs</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Consume and proliferate</p>\n    <p class=\"nogrow\">Avoid detection</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Swarm larger foes</p>\n    <p class=\"nogrow\">Disable ship systems</p>\n  </div>\n</div>\n\n<p>These mutated creatures often dwell at the heart of a rampant gnawling infestation. They are many times the size of a gnawling, and protect their nest and broodlings with savage cunning.</p>\n\n<blockquote>Quest Starter: <p>An orbital settlement is overrun by gnawlings and abandoned. What precious thing still lies within? Why are you sworn to retrieve it from this infested place?</p></blockquote>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Furry, rodent-like creatures</p>\n<p class=\"nogrow\">Long, jutting fangs</p>\n<p class=\"nogrow\">Spider-like limbs</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Consume and proliferate</p>\n<p class=\"nogrow\">Avoid detection</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Swarm larger foes</p>\n<p class=\"nogrow\">Disable ship systems</p>\n</div>\n</div>\n\n<p>These mutated creatures often dwell at the heart of a rampant gnawling infestation. They are many times the size of a gnawling, and protect their nest and broodlings with savage cunning.</p>\n\n<blockquote>Quest Starter: <p>An orbital settlement is overrun by gnawlings and abandoned. What precious thing still lies within? Why are you sworn to retrieve it from this infested place?</p></blockquote>",
     "rank": 3,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/gnawling.gnawling_brood_mother"
+    }
   },
   "_key": "!items!4837b444ef54880f"
 }

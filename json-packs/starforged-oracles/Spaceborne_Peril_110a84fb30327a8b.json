@@ -1,0 +1,327 @@
+{
+  "_id": "110a84fb30327a8b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Space/Peril",
+      "category": "Starforged/Oracles/Space",
+      "dsid": "oracle_rollable:starforged/space/peril"
+    }
+  },
+  "name": "Spaceborne Peril",
+  "description": "<p>Choose or roll on this table when you want inspiration for a trouble during spaceborne exploration or on an interstellar expedition.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Artificial gravity generator malfunctions",
+      "_key": "!tables.results!110a84fb30327a8b.1bc450d4d277e6fd",
+      "_id": "1bc450d4d277e6fd"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Automated defenses or mines protect this area",
+      "_key": "!tables.results!110a84fb30327a8b.9dfe69f4745e8cc2",
+      "_id": "9dfe69f4745e8cc2"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Compartment catches fire or is breached",
+      "_key": "!tables.results!110a84fb30327a8b.e6dab3bf4968a75b",
+      "_id": "e6dab3bf4968a75b"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Contagion or illness threatens to take hold",
+      "_key": "!tables.results!110a84fb30327a8b.102d77b48bd3bbea",
+      "_id": "102d77b48bd3bbea"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Dust clouds imperil navigation or conceal foes",
+      "_key": "!tables.results!110a84fb30327a8b.a92db3fbf2c17f4d",
+      "_id": "a92db3fbf2c17f4d"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Energy storm looms",
+      "_key": "!tables.results!110a84fb30327a8b.9380932b16b981be",
+      "_id": "9380932b16b981be"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Familiar foe appears or sends an ominous message",
+      "_key": "!tables.results!110a84fb30327a8b.e4e628570a4da601",
+      "_id": "e4e628570a4da601"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Gravity well or vortex takes hold",
+      "_key": "!tables.results!110a84fb30327a8b.86d61fa092fbea70",
+      "_id": "86d61fa092fbea70"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Imperiled ship calls for help",
+      "_key": "!tables.results!110a84fb30327a8b.9f866dbf3dff7aca",
+      "_id": "9f866dbf3dff7aca"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Important device fails or malfunctions",
+      "_key": "!tables.results!110a84fb30327a8b.2ef37ac9c7569896",
+      "_id": "2ef37ac9c7569896"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Infestation is revealed",
+      "_key": "!tables.results!110a84fb30327a8b.834c8d6de9394806",
+      "_id": "834c8d6de9394806"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Intruder or stowaway creates trouble",
+      "_key": "!tables.results!110a84fb30327a8b.90d9eb1b18776892",
+      "_id": "90d9eb1b18776892"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Isolation or fear presses in",
+      "_key": "!tables.results!110a84fb30327a8b.3ae9b0227f9db9d4",
+      "_id": "3ae9b0227f9db9d4"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Life support system malfunctions",
+      "_key": "!tables.results!110a84fb30327a8b.e1fa6729b364c793",
+      "_id": "e1fa6729b364c793"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Meteoroid storm fills the sky",
+      "_key": "!tables.results!110a84fb30327a8b.f3b6837052d35028",
+      "_id": "f3b6837052d35028"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Mysterious wreckage portends a new threat",
+      "_key": "!tables.results!110a84fb30327a8b.53691f5d0d79983d",
+      "_id": "53691f5d0d79983d"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Nearby settlement calls for help",
+      "_key": "!tables.results!110a84fb30327a8b.77a51de52d0edcb1",
+      "_id": "77a51de52d0edcb1"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Old repair or patch fails",
+      "_key": "!tables.results!110a84fb30327a8b.ff62078ef4d89c5b",
+      "_id": "ff62078ef4d89c5b"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Onboard dispute or inner turmoil causes a disruption",
+      "_key": "!tables.results!110a84fb30327a8b.cf715612be8321a5",
+      "_id": "cf715612be8321a5"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Others obstruct your path or form a blockade",
+      "_key": "!tables.results!110a84fb30327a8b.ef5684bf245896d1",
+      "_id": "ef5684bf245896d1"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Phantom signals suggest a lurking foe",
+      "_key": "!tables.results!110a84fb30327a8b.125e021f1aa65f5b",
+      "_id": "125e021f1aa65f5b"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Pirates hunt for prey",
+      "_key": "!tables.results!110a84fb30327a8b.3ec0229a991a1596",
+      "_id": "3ec0229a991a1596"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Power fails",
+      "_key": "!tables.results!110a84fb30327a8b.8e9f52b17fae8caa",
+      "_id": "8e9f52b17fae8caa"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Primary drive or generator malfunctions",
+      "_key": "!tables.results!110a84fb30327a8b.86064d875eb9b8c0",
+      "_id": "86064d875eb9b8c0"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Sabotage is revealed",
+      "_key": "!tables.results!110a84fb30327a8b.0b30641a8db7a928",
+      "_id": "0b30641a8db7a928"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Shockwave or gravity wave approaches",
+      "_key": "!tables.results!110a84fb30327a8b.bb9f48c90a1bb2c5",
+      "_id": "bb9f48c90a1bb2c5"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Someone questions your presence here",
+      "_key": "!tables.results!110a84fb30327a8b.c1fb182617be09f9",
+      "_id": "c1fb182617be09f9"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Stellar anomaly emits hazardous energies",
+      "_key": "!tables.results!110a84fb30327a8b.eb6683378ff807b8",
+      "_id": "eb6683378ff807b8"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Threatening lifeform draws near",
+      "_key": "!tables.results!110a84fb30327a8b.887a48a03e7f5754",
+      "_id": "887a48a03e7f5754"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Troubling visions or apparitions",
+      "_key": "!tables.results!110a84fb30327a8b.a655a85cdd4a5f80",
+      "_id": "a655a85cdd4a5f80"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "True nature of a cargo, occupant, or passenger is revealed",
+      "_key": "!tables.results!110a84fb30327a8b.118878510c27c63b",
+      "_id": "118878510c27c63b"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "Unsettling sounds or disturbances",
+      "_key": "!tables.results!110a84fb30327a8b.6d6c5db1462429cc",
+      "_id": "6d6c5db1462429cc"
+    },
+    {
+      "range": [
+        97,
+        99
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!110a84fb30327a8b.2a35fa2d1357b476",
+      "_id": "2a35fa2d1357b476"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!110a84fb30327a8b.eca677e7460a391b",
+      "_id": "eca677e7460a391b"
+    }
+  ],
+  "folder": "a17a6892a4e03f3f",
+  "sort": 304,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!110a84fb30327a8b"
+}

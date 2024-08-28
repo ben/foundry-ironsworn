@@ -1,0 +1,15 @@
+{
+  "name": "Firstborn",
+  "description": "",
+  "type": "Item",
+  "_id": "8f12286764fe5a63",
+  "sort": 112,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc_collection:delve/firstborn"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!8f12286764fe5a63"
+}

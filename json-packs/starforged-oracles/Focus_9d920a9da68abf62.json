@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Core/Focus",
-      "category": "Starforged/Oracles/Core"
+      "category": "Starforged/Oracles/Core",
+      "dsid": "oracle_rollable:starforged/core/focus"
     }
   },
   "name": "Focus",
-  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} to help define the nature of a location, discovery, or encounter, roll for a Descriptor and a Focus for an adjective/noun prompt.</p>",
-  "formula": "d100",
+  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} to help define the nature of a location, discovery, or encounter, roll for a @Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} and a @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus} for an adjective/noun prompt.</p>",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         1
       ],
       "text": "Alarm",
-      "_id": "e6e72201b1e999ab",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.e6e72201b1e999ab"
+      "_key": "!tables.results!9d920a9da68abf62.4fa4bb428fa452da",
+      "_id": "4fa4bb428fa452da"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         2
       ],
       "text": "Anomaly",
-      "_id": "986f1859ef8a5271",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.986f1859ef8a5271"
+      "_key": "!tables.results!9d920a9da68abf62.f07c4e2646f78ee0",
+      "_id": "f07c4e2646f78ee0"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         3
       ],
       "text": "Apparition",
-      "_id": "e2796952901f3ff9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.e2796952901f3ff9"
+      "_key": "!tables.results!9d920a9da68abf62.d1dd03be094da887",
+      "_id": "d1dd03be094da887"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         4
       ],
       "text": "Archive",
-      "_id": "d3179746850f8b35",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.d3179746850f8b35"
+      "_key": "!tables.results!9d920a9da68abf62.0c9e631e6cadbacc",
+      "_id": "0c9e631e6cadbacc"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         5
       ],
       "text": "Art",
-      "_id": "0c0d1350e283f0e7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.0c0d1350e283f0e7"
+      "_key": "!tables.results!9d920a9da68abf62.8cf4f2d334f5f190",
+      "_id": "8cf4f2d334f5f190"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         6
       ],
       "text": "Artifact",
-      "_id": "29bab3430f1f40a4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.29bab3430f1f40a4"
+      "_key": "!tables.results!9d920a9da68abf62.5cc4204cb807b0b2",
+      "_id": "5cc4204cb807b0b2"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         7
       ],
       "text": "Atmosphere",
-      "_id": "e197757097ed1264",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.e197757097ed1264"
+      "_key": "!tables.results!9d920a9da68abf62.2cff93ea309fbc49",
+      "_id": "2cff93ea309fbc49"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         8
       ],
       "text": "Battleground",
-      "_id": "d57a20c9b50bfefa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.d57a20c9b50bfefa"
+      "_key": "!tables.results!9d920a9da68abf62.e23397fd8f12f6a4",
+      "_id": "e23397fd8f12f6a4"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         9
       ],
       "text": "Beacon",
-      "_id": "2c535db4d094d824",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.2c535db4d094d824"
+      "_key": "!tables.results!9d920a9da68abf62.c8778cf353f0be00",
+      "_id": "c8778cf353f0be00"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         10
       ],
       "text": "Being",
-      "_id": "5aefa0a564ca550a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.5aefa0a564ca550a"
+      "_key": "!tables.results!9d920a9da68abf62.3d14936246fe3835",
+      "_id": "3d14936246fe3835"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         11
       ],
       "text": "Blockade",
-      "_id": "5a1b170c51a8d923",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.5a1b170c51a8d923"
+      "_key": "!tables.results!9d920a9da68abf62.48b1213a2eaf32c8",
+      "_id": "48b1213a2eaf32c8"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         12
       ],
       "text": "Boundary",
-      "_id": "f7df9811de74dd37",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.f7df9811de74dd37"
+      "_key": "!tables.results!9d920a9da68abf62.d5f370a18f4b0161",
+      "_id": "d5f370a18f4b0161"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         13
       ],
       "text": "Cache",
-      "_id": "5c0d674fa16c0546",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.5c0d674fa16c0546"
+      "_key": "!tables.results!9d920a9da68abf62.1ca72f9c24454a21",
+      "_id": "1ca72f9c24454a21"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         14
       ],
       "text": "Cargo",
-      "_id": "9d128327e47306af",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.9d128327e47306af"
+      "_key": "!tables.results!9d920a9da68abf62.6ce83f0e26671924",
+      "_id": "6ce83f0e26671924"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         15
       ],
       "text": "Commodity",
-      "_id": "f902dd3d6dc1d434",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.f902dd3d6dc1d434"
+      "_key": "!tables.results!9d920a9da68abf62.60a7ad5a26a7a124",
+      "_id": "60a7ad5a26a7a124"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         16
       ],
       "text": "Confinement",
-      "_id": "4c7c7c133aa05f4e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.4c7c7c133aa05f4e"
+      "_key": "!tables.results!9d920a9da68abf62.6326984940c64469",
+      "_id": "6326984940c64469"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         17
       ],
       "text": "Connection",
-      "_id": "1cf2a00190370097",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.1cf2a00190370097"
+      "_key": "!tables.results!9d920a9da68abf62.3b4b347236029456",
+      "_id": "3b4b347236029456"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         18
       ],
       "text": "Container",
-      "_id": "8d53d76c967b1009",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.8d53d76c967b1009"
+      "_key": "!tables.results!9d920a9da68abf62.ff863ed1e71ce08e",
+      "_id": "ff863ed1e71ce08e"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         19
       ],
       "text": "Creation",
-      "_id": "8cef8f5181a92ba1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.8cef8f5181a92ba1"
+      "_key": "!tables.results!9d920a9da68abf62.1ba496b682f6957d",
+      "_id": "1ba496b682f6957d"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         20
       ],
       "text": "Creature",
-      "_id": "439543bbfe151c78",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.439543bbfe151c78"
+      "_key": "!tables.results!9d920a9da68abf62.72ba1db403bba88b",
+      "_id": "72ba1db403bba88b"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         21
       ],
       "text": "Crossing",
-      "_id": "3cb0a7ea6ff997e2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.3cb0a7ea6ff997e2"
+      "_key": "!tables.results!9d920a9da68abf62.9d2d80f0106fc644",
+      "_id": "9d2d80f0106fc644"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         22
       ],
       "text": "Data",
-      "_id": "7ae04141ed746b6a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.7ae04141ed746b6a"
+      "_key": "!tables.results!9d920a9da68abf62.f173665b22e27f6f",
+      "_id": "f173665b22e27f6f"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         23
       ],
       "text": "Debris",
-      "_id": "74a6d6db525cdf4f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.74a6d6db525cdf4f"
+      "_key": "!tables.results!9d920a9da68abf62.10f40887d048af3d",
+      "_id": "10f40887d048af3d"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         24
       ],
       "text": "Device",
-      "_id": "a4a29490d6a388b4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.a4a29490d6a388b4"
+      "_key": "!tables.results!9d920a9da68abf62.19882853bf66b680",
+      "_id": "19882853bf66b680"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         25
       ],
       "text": "Dimension",
-      "_id": "3411f0580de41f04",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.3411f0580de41f04"
+      "_key": "!tables.results!9d920a9da68abf62.4094b660a577ab77",
+      "_id": "4094b660a577ab77"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         26
       ],
       "text": "Discovery",
-      "_id": "8b1d24c7a75e113e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.8b1d24c7a75e113e"
+      "_key": "!tables.results!9d920a9da68abf62.5b5fda88ecfb4aeb",
+      "_id": "5b5fda88ecfb4aeb"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         27
       ],
       "text": "Ecosystem",
-      "_id": "e1c93a5773a380ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.e1c93a5773a380ea"
+      "_key": "!tables.results!9d920a9da68abf62.009f2fec2d38d4b5",
+      "_id": "009f2fec2d38d4b5"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         28
       ],
       "text": "Enclosure",
-      "_id": "d46b7d6ab04e8bda",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.d46b7d6ab04e8bda"
+      "_key": "!tables.results!9d920a9da68abf62.b5a924e0ad47b974",
+      "_id": "b5a924e0ad47b974"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         29
       ],
       "text": "Energy",
-      "_id": "b2b100a8d970922c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.b2b100a8d970922c"
+      "_key": "!tables.results!9d920a9da68abf62.f9e25335eefe7860",
+      "_id": "f9e25335eefe7860"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         30
       ],
       "text": "Environment",
-      "_id": "48d00b3c284cd535",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.48d00b3c284cd535"
+      "_key": "!tables.results!9d920a9da68abf62.b7b384afeab3d9b4",
+      "_id": "b7b384afeab3d9b4"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         31
       ],
       "text": "Equipment",
-      "_id": "eca3c9407d0c0bbc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.eca3c9407d0c0bbc"
+      "_key": "!tables.results!9d920a9da68abf62.6a941d1148755336",
+      "_id": "6a941d1148755336"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         32
       ],
       "text": "Experiment",
-      "_id": "2bfc76773897a104",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.2bfc76773897a104"
+      "_key": "!tables.results!9d920a9da68abf62.82fa8f7b765ff5e0",
+      "_id": "82fa8f7b765ff5e0"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         33
       ],
       "text": "Facility",
-      "_id": "d9522b1f863545a8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.d9522b1f863545a8"
+      "_key": "!tables.results!9d920a9da68abf62.cac53043a35da047",
+      "_id": "cac53043a35da047"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         34
       ],
       "text": "Faction",
-      "_id": "22db2cfe38200175",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.22db2cfe38200175"
+      "_key": "!tables.results!9d920a9da68abf62.afb8c8b59ab1e2a7",
+      "_id": "afb8c8b59ab1e2a7"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         35
       ],
       "text": "Fleet",
-      "_id": "b8a6fdcd14b3364b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.b8a6fdcd14b3364b"
+      "_key": "!tables.results!9d920a9da68abf62.934758dc81079d95",
+      "_id": "934758dc81079d95"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         36
       ],
       "text": "Force",
-      "_id": "709978f0aa53ed23",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.709978f0aa53ed23"
+      "_key": "!tables.results!9d920a9da68abf62.2ef18532398d5bda",
+      "_id": "2ef18532398d5bda"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         37
       ],
       "text": "Fortification",
-      "_id": "9cf561ad6ec0034b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.9cf561ad6ec0034b"
+      "_key": "!tables.results!9d920a9da68abf62.bfdb52a6a91e340e",
+      "_id": "bfdb52a6a91e340e"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         38
       ],
       "text": "Gas",
-      "_id": "7f52915835352613",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.7f52915835352613"
+      "_key": "!tables.results!9d920a9da68abf62.53596f99af60a8d9",
+      "_id": "53596f99af60a8d9"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         39
       ],
       "text": "Grave",
-      "_id": "1f1a2a5c1681819a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.1f1a2a5c1681819a"
+      "_key": "!tables.results!9d920a9da68abf62.9cf1b23d31392402",
+      "_id": "9cf1b23d31392402"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         40
       ],
       "text": "Habitat",
-      "_id": "4af2a25965ecbf56",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.4af2a25965ecbf56"
+      "_key": "!tables.results!9d920a9da68abf62.d1783033cd384d12",
+      "_id": "d1783033cd384d12"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         41
       ],
       "text": "Hazard",
-      "_id": "aa34f752d3396de0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.aa34f752d3396de0"
+      "_key": "!tables.results!9d920a9da68abf62.da692d8c4d15994b",
+      "_id": "da692d8c4d15994b"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         42
       ],
       "text": "Hideaway",
-      "_id": "093c6b52b259397a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.093c6b52b259397a"
+      "_key": "!tables.results!9d920a9da68abf62.898f19c0906b3e37",
+      "_id": "898f19c0906b3e37"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         43
       ],
       "text": "Home",
-      "_id": "8d3b71d0f9630791",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.8d3b71d0f9630791"
+      "_key": "!tables.results!9d920a9da68abf62.518b2248c96c92b4",
+      "_id": "518b2248c96c92b4"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         44
       ],
       "text": "Illusion",
-      "_id": "a41146448848b5b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.a41146448848b5b3"
+      "_key": "!tables.results!9d920a9da68abf62.9b014700ca57b948",
+      "_id": "9b014700ca57b948"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         45
       ],
       "text": "Industry",
-      "_id": "3b964c6fb9131fbc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.3b964c6fb9131fbc"
+      "_key": "!tables.results!9d920a9da68abf62.42f25432193e6496",
+      "_id": "42f25432193e6496"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         46
       ],
       "text": "Intelligence",
-      "_id": "1b0acf2617bde61f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.1b0acf2617bde61f"
+      "_key": "!tables.results!9d920a9da68abf62.d23529f29ada656d",
+      "_id": "d23529f29ada656d"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         47
       ],
       "text": "Lair",
-      "_id": "5d4a83aa60ccbd50",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.5d4a83aa60ccbd50"
+      "_key": "!tables.results!9d920a9da68abf62.d460cfc87196c6c0",
+      "_id": "d460cfc87196c6c0"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         48
       ],
       "text": "Lifeform",
-      "_id": "1bf72a6aac1d3681",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.1bf72a6aac1d3681"
+      "_key": "!tables.results!9d920a9da68abf62.3e5463b421cec52d",
+      "_id": "3e5463b421cec52d"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         49
       ],
       "text": "Liquid",
-      "_id": "1f9ced667021dc4c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.1f9ced667021dc4c"
+      "_key": "!tables.results!9d920a9da68abf62.24da6d99e465cecf",
+      "_id": "24da6d99e465cecf"
     },
     {
       "range": [
@@ -704,13 +460,8 @@
         50
       ],
       "text": "Machine",
-      "_id": "86914c28a541e1e8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.86914c28a541e1e8"
+      "_key": "!tables.results!9d920a9da68abf62.c50dcb53519868ec",
+      "_id": "c50dcb53519868ec"
     },
     {
       "range": [
@@ -718,13 +469,8 @@
         51
       ],
       "text": "Material",
-      "_id": "2deaa25b482a3506",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.2deaa25b482a3506"
+      "_key": "!tables.results!9d920a9da68abf62.8314c25d2a48509f",
+      "_id": "8314c25d2a48509f"
     },
     {
       "range": [
@@ -732,13 +478,8 @@
         52
       ],
       "text": "Mechanism",
-      "_id": "f9fe8dfe6e8cdceb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.f9fe8dfe6e8cdceb"
+      "_key": "!tables.results!9d920a9da68abf62.300a469df69425e5",
+      "_id": "300a469df69425e5"
     },
     {
       "range": [
@@ -746,13 +487,8 @@
         53
       ],
       "text": "Message",
-      "_id": "a9db839417d54020",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.a9db839417d54020"
+      "_key": "!tables.results!9d920a9da68abf62.dbb3b93e7c735ba1",
+      "_id": "dbb3b93e7c735ba1"
     },
     {
       "range": [
@@ -760,13 +496,8 @@
         54
       ],
       "text": "Mineral",
-      "_id": "8a64f97ff14c4b01",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.8a64f97ff14c4b01"
+      "_key": "!tables.results!9d920a9da68abf62.1c3ff6b11ae02f96",
+      "_id": "1c3ff6b11ae02f96"
     },
     {
       "range": [
@@ -774,13 +505,8 @@
         55
       ],
       "text": "Monument",
-      "_id": "04d0b3af89dbeb00",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.04d0b3af89dbeb00"
+      "_key": "!tables.results!9d920a9da68abf62.6c703a32879e8dc6",
+      "_id": "6c703a32879e8dc6"
     },
     {
       "range": [
@@ -788,13 +514,8 @@
         56
       ],
       "text": "Obstacle",
-      "_id": "73393b36dc1c62d9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.73393b36dc1c62d9"
+      "_key": "!tables.results!9d920a9da68abf62.281e5decad643118",
+      "_id": "281e5decad643118"
     },
     {
       "range": [
@@ -802,13 +523,8 @@
         57
       ],
       "text": "Organism",
-      "_id": "6f9400a92000ed93",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.6f9400a92000ed93"
+      "_key": "!tables.results!9d920a9da68abf62.08eb1bc29de1e096",
+      "_id": "08eb1bc29de1e096"
     },
     {
       "range": [
@@ -816,13 +532,8 @@
         58
       ],
       "text": "Outbreak",
-      "_id": "4c91595135865ff7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.4c91595135865ff7"
+      "_key": "!tables.results!9d920a9da68abf62.9cf84c4ad6c55553",
+      "_id": "9cf84c4ad6c55553"
     },
     {
       "range": [
@@ -830,13 +541,8 @@
         59
       ],
       "text": "Outpost",
-      "_id": "53acf1d5ac86f9fd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.53acf1d5ac86f9fd"
+      "_key": "!tables.results!9d920a9da68abf62.4128ddc61dc29cd8",
+      "_id": "4128ddc61dc29cd8"
     },
     {
       "range": [
@@ -844,13 +550,8 @@
         60
       ],
       "text": "Path",
-      "_id": "f8310bcf0f62a776",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.f8310bcf0f62a776"
+      "_key": "!tables.results!9d920a9da68abf62.5091e77fd74cfd40",
+      "_id": "5091e77fd74cfd40"
     },
     {
       "range": [
@@ -858,13 +559,8 @@
         61
       ],
       "text": "People",
-      "_id": "2bd248e2aadf72b4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.2bd248e2aadf72b4"
+      "_key": "!tables.results!9d920a9da68abf62.eb87436828748dfa",
+      "_id": "eb87436828748dfa"
     },
     {
       "range": [
@@ -872,13 +568,8 @@
         62
       ],
       "text": "Person",
-      "_id": "25dc68ef5e6bd884",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.25dc68ef5e6bd884"
+      "_key": "!tables.results!9d920a9da68abf62.7c901613be8dd89a",
+      "_id": "7c901613be8dd89a"
     },
     {
       "range": [
@@ -886,13 +577,8 @@
         63
       ],
       "text": "Plant",
-      "_id": "a57bea99096f6bff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.a57bea99096f6bff"
+      "_key": "!tables.results!9d920a9da68abf62.8abef558f9298d11",
+      "_id": "8abef558f9298d11"
     },
     {
       "range": [
@@ -900,13 +586,8 @@
         64
       ],
       "text": "Portal",
-      "_id": "47f2e18029444e12",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.47f2e18029444e12"
+      "_key": "!tables.results!9d920a9da68abf62.d0b108dff59b5209",
+      "_id": "d0b108dff59b5209"
     },
     {
       "range": [
@@ -914,13 +595,8 @@
         65
       ],
       "text": "Reality",
-      "_id": "50d04a07dce322ed",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.50d04a07dce322ed"
+      "_key": "!tables.results!9d920a9da68abf62.fd256a544e0ac5d4",
+      "_id": "fd256a544e0ac5d4"
     },
     {
       "range": [
@@ -928,13 +604,8 @@
         66
       ],
       "text": "Refuge",
-      "_id": "354fff12b74bb623",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.354fff12b74bb623"
+      "_key": "!tables.results!9d920a9da68abf62.7782037bb1239d9a",
+      "_id": "7782037bb1239d9a"
     },
     {
       "range": [
@@ -942,13 +613,8 @@
         67
       ],
       "text": "Relic",
-      "_id": "2a922085bcda1ac1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.2a922085bcda1ac1"
+      "_key": "!tables.results!9d920a9da68abf62.463a43d815dd8adb",
+      "_id": "463a43d815dd8adb"
     },
     {
       "range": [
@@ -956,13 +622,8 @@
         68
       ],
       "text": "Remains",
-      "_id": "c8967cb8f47b951f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.c8967cb8f47b951f"
+      "_key": "!tables.results!9d920a9da68abf62.f61602b9ae0ab4fb",
+      "_id": "f61602b9ae0ab4fb"
     },
     {
       "range": [
@@ -970,13 +631,8 @@
         69
       ],
       "text": "Rendezvous",
-      "_id": "b39d8f06b78ceb26",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.b39d8f06b78ceb26"
+      "_key": "!tables.results!9d920a9da68abf62.3169ca1f58957647",
+      "_id": "3169ca1f58957647"
     },
     {
       "range": [
@@ -984,13 +640,8 @@
         70
       ],
       "text": "Resource",
-      "_id": "6aa3c0697aed0416",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.6aa3c0697aed0416"
+      "_key": "!tables.results!9d920a9da68abf62.731799cc162dfb0b",
+      "_id": "731799cc162dfb0b"
     },
     {
       "range": [
@@ -998,13 +649,8 @@
         71
       ],
       "text": "Route",
-      "_id": "0cad1a3f5ef8122d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.0cad1a3f5ef8122d"
+      "_key": "!tables.results!9d920a9da68abf62.8bc8094232ddc254",
+      "_id": "8bc8094232ddc254"
     },
     {
       "range": [
@@ -1012,13 +658,8 @@
         72
       ],
       "text": "Ruins",
-      "_id": "64dc5d4acc074ec8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.64dc5d4acc074ec8"
+      "_key": "!tables.results!9d920a9da68abf62.2777460dff2aaaea",
+      "_id": "2777460dff2aaaea"
     },
     {
       "range": [
@@ -1026,13 +667,8 @@
         73
       ],
       "text": "Salvage",
-      "_id": "dc7ccfed8f2fb551",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.dc7ccfed8f2fb551"
+      "_key": "!tables.results!9d920a9da68abf62.7a7c0929da731cbb",
+      "_id": "7a7c0929da731cbb"
     },
     {
       "range": [
@@ -1040,13 +676,8 @@
         74
       ],
       "text": "Settlement",
-      "_id": "702327dae703a40b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.702327dae703a40b"
+      "_key": "!tables.results!9d920a9da68abf62.30ad382bb542de51",
+      "_id": "30ad382bb542de51"
     },
     {
       "range": [
@@ -1054,13 +685,8 @@
         75
       ],
       "text": "Shelter",
-      "_id": "07423da9bbadaeef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.07423da9bbadaeef"
+      "_key": "!tables.results!9d920a9da68abf62.5c2d8e29b0934049",
+      "_id": "5c2d8e29b0934049"
     },
     {
       "range": [
@@ -1068,13 +694,8 @@
         76
       ],
       "text": "Ship",
-      "_id": "471cc87ff2b3d553",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.471cc87ff2b3d553"
+      "_key": "!tables.results!9d920a9da68abf62.11992959fb28fc82",
+      "_id": "11992959fb28fc82"
     },
     {
       "range": [
@@ -1082,13 +703,8 @@
         77
       ],
       "text": "Shortcut",
-      "_id": "016384d56b79bdb2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.016384d56b79bdb2"
+      "_key": "!tables.results!9d920a9da68abf62.bc52d7a296ec0364",
+      "_id": "bc52d7a296ec0364"
     },
     {
       "range": [
@@ -1096,13 +712,8 @@
         78
       ],
       "text": "Signal",
-      "_id": "cdfb326371a53c43",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.cdfb326371a53c43"
+      "_key": "!tables.results!9d920a9da68abf62.53057be46d389ac0",
+      "_id": "53057be46d389ac0"
     },
     {
       "range": [
@@ -1110,13 +721,8 @@
         79
       ],
       "text": "Sound",
-      "_id": "f6ee371411bfe755",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.f6ee371411bfe755"
+      "_key": "!tables.results!9d920a9da68abf62.2943f4cd8f66ba68",
+      "_id": "2943f4cd8f66ba68"
     },
     {
       "range": [
@@ -1124,13 +730,8 @@
         80
       ],
       "text": "Storage",
-      "_id": "cb7206be9a941e5c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.cb7206be9a941e5c"
+      "_key": "!tables.results!9d920a9da68abf62.1f36ce03701fe8d8",
+      "_id": "1f36ce03701fe8d8"
     },
     {
       "range": [
@@ -1138,13 +739,8 @@
         81
       ],
       "text": "Storm",
-      "_id": "6a21af6961e774ef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.6a21af6961e774ef"
+      "_key": "!tables.results!9d920a9da68abf62.33aca3905011618c",
+      "_id": "33aca3905011618c"
     },
     {
       "range": [
@@ -1152,13 +748,8 @@
         82
       ],
       "text": "Structure",
-      "_id": "9fe38747f78c541c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.9fe38747f78c541c"
+      "_key": "!tables.results!9d920a9da68abf62.3e8e3f01874fe635",
+      "_id": "3e8e3f01874fe635"
     },
     {
       "range": [
@@ -1166,13 +757,8 @@
         83
       ],
       "text": "Supply",
-      "_id": "8ef58d04b5806526",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.8ef58d04b5806526"
+      "_key": "!tables.results!9d920a9da68abf62.07620d4632952cfc",
+      "_id": "07620d4632952cfc"
     },
     {
       "range": [
@@ -1180,13 +766,8 @@
         84
       ],
       "text": "Symbol",
-      "_id": "37e1364ca3b9438a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.37e1364ca3b9438a"
+      "_key": "!tables.results!9d920a9da68abf62.9897fb33bafe2475",
+      "_id": "9897fb33bafe2475"
     },
     {
       "range": [
@@ -1194,13 +775,8 @@
         85
       ],
       "text": "System",
-      "_id": "e97e104d1c51afff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.e97e104d1c51afff"
+      "_key": "!tables.results!9d920a9da68abf62.3a9e89e9f3d21c95",
+      "_id": "3a9e89e9f3d21c95"
     },
     {
       "range": [
@@ -1208,13 +784,8 @@
         86
       ],
       "text": "Technology",
-      "_id": "f5c208f95a0657c1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.f5c208f95a0657c1"
+      "_key": "!tables.results!9d920a9da68abf62.f6cb9830d71f4537",
+      "_id": "f6cb9830d71f4537"
     },
     {
       "range": [
@@ -1222,13 +793,8 @@
         87
       ],
       "text": "Terrain",
-      "_id": "ce00af5e792e4dcd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.ce00af5e792e4dcd"
+      "_key": "!tables.results!9d920a9da68abf62.d53768a7e0e96b1f",
+      "_id": "d53768a7e0e96b1f"
     },
     {
       "range": [
@@ -1236,13 +802,8 @@
         88
       ],
       "text": "Territory",
-      "_id": "f028fe4896572020",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.f028fe4896572020"
+      "_key": "!tables.results!9d920a9da68abf62.55bd9b77ababfd01",
+      "_id": "55bd9b77ababfd01"
     },
     {
       "range": [
@@ -1250,13 +811,8 @@
         89
       ],
       "text": "Threshold",
-      "_id": "50f943a07ff446e0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.50f943a07ff446e0"
+      "_key": "!tables.results!9d920a9da68abf62.684d84e64f1373de",
+      "_id": "684d84e64f1373de"
     },
     {
       "range": [
@@ -1264,13 +820,8 @@
         90
       ],
       "text": "Time",
-      "_id": "a712ad9a7f967a59",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.a712ad9a7f967a59"
+      "_key": "!tables.results!9d920a9da68abf62.9f9dc213a2ac0965",
+      "_id": "9f9dc213a2ac0965"
     },
     {
       "range": [
@@ -1278,13 +829,8 @@
         91
       ],
       "text": "Transport",
-      "_id": "3719409782f3fc0b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.3719409782f3fc0b"
+      "_key": "!tables.results!9d920a9da68abf62.22a32cd1dd49762c",
+      "_id": "22a32cd1dd49762c"
     },
     {
       "range": [
@@ -1292,13 +838,8 @@
         92
       ],
       "text": "Trap",
-      "_id": "3199f72ade4cfd3e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.3199f72ade4cfd3e"
+      "_key": "!tables.results!9d920a9da68abf62.13c86327d04c2908",
+      "_id": "13c86327d04c2908"
     },
     {
       "range": [
@@ -1306,13 +847,8 @@
         93
       ],
       "text": "Treasure",
-      "_id": "82223820b966b79c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.82223820b966b79c"
+      "_key": "!tables.results!9d920a9da68abf62.473b84b3716051e2",
+      "_id": "473b84b3716051e2"
     },
     {
       "range": [
@@ -1320,13 +856,8 @@
         94
       ],
       "text": "Vault",
-      "_id": "8403b9e14aafb4f1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.8403b9e14aafb4f1"
+      "_key": "!tables.results!9d920a9da68abf62.c41baa49ca1d8396",
+      "_id": "c41baa49ca1d8396"
     },
     {
       "range": [
@@ -1334,13 +865,8 @@
         95
       ],
       "text": "Vehicle",
-      "_id": "37a83af394ddff4f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.37a83af394ddff4f"
+      "_key": "!tables.results!9d920a9da68abf62.b0b1d90b93e4daac",
+      "_id": "b0b1d90b93e4daac"
     },
     {
       "range": [
@@ -1348,13 +874,8 @@
         96
       ],
       "text": "Viewpoint",
-      "_id": "898b5201a254bb2f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.898b5201a254bb2f"
+      "_key": "!tables.results!9d920a9da68abf62.56de10cfb2a44af8",
+      "_id": "56de10cfb2a44af8"
     },
     {
       "range": [
@@ -1362,13 +883,8 @@
         97
       ],
       "text": "Void",
-      "_id": "95ad49ddcb4320e8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.95ad49ddcb4320e8"
+      "_key": "!tables.results!9d920a9da68abf62.a8a80f0bdcd38e28",
+      "_id": "a8a80f0bdcd38e28"
     },
     {
       "range": [
@@ -1376,13 +892,8 @@
         98
       ],
       "text": "Weapon",
-      "_id": "c5c45408737a02a7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.c5c45408737a02a7"
+      "_key": "!tables.results!9d920a9da68abf62.9cf9e3f464d93eb5",
+      "_id": "9cf9e3f464d93eb5"
     },
     {
       "range": [
@@ -1390,13 +901,8 @@
         99
       ],
       "text": "World",
-      "_id": "29e02f778697baca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.29e02f778697baca"
+      "_key": "!tables.results!9d920a9da68abf62.a37e994d8c87fac2",
+      "_id": "a37e994d8c87fac2"
     },
     {
       "range": [
@@ -1404,29 +910,12 @@
         100
       ],
       "text": "Wreckage",
-      "_id": "9bdb74aed59584aa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9d920a9da68abf62.9bdb74aed59584aa"
+      "_key": "!tables.results!9d920a9da68abf62.37a37e5c9479d394",
+      "_id": "37a37e5c9479d394"
     }
   ],
   "folder": "312c7e84afc43125",
   "sort": 299,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!9d920a9da68abf62"
 }

@@ -1,0 +1,326 @@
+{
+  "_id": "0c4ea61819a3090b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/cursed",
+      "dsid": "oracle_rollable:sundered_isles/faction/cursed/aspects"
+    }
+  },
+  "name": "Cursed Aspects",
+  "description": "<p>Use this table to reveal uncanny aspects of a faction or its members.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Adopts multiple identities or forms",
+      "_key": "!tables.results!0c4ea61819a3090b.67e20cabbd6db4f5",
+      "_id": "67e20cabbd6db4f5"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Aided by a monstrous guardian",
+      "_key": "!tables.results!0c4ea61819a3090b.4551bb54032deeea",
+      "_id": "4551bb54032deeea"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Aided by infernal machines",
+      "_key": "!tables.results!0c4ea61819a3090b.eeeb2269d3864396",
+      "_id": "eeeb2269d3864396"
+    },
+    {
+      "range": [
+        9,
+        11
+      ],
+      "text": "Bears a dreadful sigil or mark",
+      "_key": "!tables.results!0c4ea61819a3090b.3ea777487d924de1",
+      "_id": "3ea777487d924de1"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Consumed by dreadful vengeance",
+      "_key": "!tables.results!0c4ea61819a3090b.ac826d2ddf6e7a6c",
+      "_id": "ac826d2ddf6e7a6c"
+    },
+    {
+      "range": [
+        15,
+        17
+      ],
+      "text": "Cursed by a spiteful god or entity",
+      "_key": "!tables.results!0c4ea61819a3090b.c76243b7514257dd",
+      "_id": "c76243b7514257dd"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Cursed by the deeds of their forebears",
+      "_key": "!tables.results!0c4ea61819a3090b.c23df60f22a245d6",
+      "_id": "c23df60f22a245d6"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Disguises their true nature",
+      "_key": "!tables.results!0c4ea61819a3090b.79123376fca9d5c1",
+      "_id": "79123376fca9d5c1"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "Driven by dreadful vengeance",
+      "_key": "!tables.results!0c4ea61819a3090b.215c44ff5aec4da8",
+      "_id": "215c44ff5aec4da8"
+    },
+    {
+      "range": [
+        27,
+        29
+      ],
+      "text": "Empowered or bound by fire",
+      "_key": "!tables.results!0c4ea61819a3090b.c377d6a644079452",
+      "_id": "c377d6a644079452"
+    },
+    {
+      "range": [
+        30,
+        32
+      ],
+      "text": "Empowered or bound by the night",
+      "_key": "!tables.results!0c4ea61819a3090b.98fbe65f6ee82edf",
+      "_id": "98fbe65f6ee82edf"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "Empowered or bound by the sea",
+      "_key": "!tables.results!0c4ea61819a3090b.546cb567ca65e371",
+      "_id": "546cb567ca65e371"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "Empowered or bound by the wilds",
+      "_key": "!tables.results!0c4ea61819a3090b.a0c8590c30f0464b",
+      "_id": "a0c8590c30f0464b"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "Forsaken or banished by others",
+      "_key": "!tables.results!0c4ea61819a3090b.0971ae2f51a37476",
+      "_id": "0971ae2f51a37476"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "Forsakes the sunlight",
+      "_key": "!tables.results!0c4ea61819a3090b.f5762d822fd3ffb5",
+      "_id": "f5762d822fd3ffb5"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Gathers unwilling supplicants or recruits",
+      "_key": "!tables.results!0c4ea61819a3090b.4519f16b5f9ce690",
+      "_id": "4519f16b5f9ce690"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Haunted by unforgiving spirits",
+      "_key": "!tables.results!0c4ea61819a3090b.ff4475eacf859d57",
+      "_id": "ff4475eacf859d57"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "Heralded by eerie weather or effects",
+      "_key": "!tables.results!0c4ea61819a3090b.abf414e03387b6ae",
+      "_id": "abf414e03387b6ae"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Holds a cursed relic or treasure",
+      "_key": "!tables.results!0c4ea61819a3090b.514337f7bf0f23b3",
+      "_id": "514337f7bf0f23b3"
+    },
+    {
+      "range": [
+        57,
+        59
+      ],
+      "text": "Hunted by a dreadful faction or entity",
+      "_key": "!tables.results!0c4ea61819a3090b.3c46c78b1a42d900",
+      "_id": "3c46c78b1a42d900"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "Invokes or summons dreadful creatures",
+      "_key": "!tables.results!0c4ea61819a3090b.3a932f5d5f71069d",
+      "_id": "3a932f5d5f71069d"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Members speak a sinister language",
+      "_key": "!tables.results!0c4ea61819a3090b.ea20205948985fc4",
+      "_id": "ea20205948985fc4"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Operates from a hidden location",
+      "_key": "!tables.results!0c4ea61819a3090b.06f7bcf823b15851",
+      "_id": "06f7bcf823b15851"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "Practices dreadful rituals",
+      "_key": "!tables.results!0c4ea61819a3090b.feb78302f18bff74",
+      "_id": "feb78302f18bff74"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "Sails dreadful ships",
+      "_key": "!tables.results!0c4ea61819a3090b.08511043696112bc",
+      "_id": "08511043696112bc"
+    },
+    {
+      "range": [
+        75,
+        77
+      ],
+      "text": "Stricken with a terrible need",
+      "_key": "!tables.results!0c4ea61819a3090b.17a08fd60a107fbc",
+      "_id": "17a08fd60a107fbc"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Suffers from wasting or decay",
+      "_key": "!tables.results!0c4ea61819a3090b.0d888ac872aaaad1",
+      "_id": "0d888ac872aaaad1"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Supernaturally bound to a place or ship",
+      "_key": "!tables.results!0c4ea61819a3090b.4fedb0d3f874d4c9",
+      "_id": "4fedb0d3f874d4c9"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "True nature revealed in moonlight",
+      "_key": "!tables.results!0c4ea61819a3090b.50bf3e893adccf83",
+      "_id": "50bf3e893adccf83"
+    },
+    {
+      "range": [
+        87,
+        89
+      ],
+      "text": "Wields a weapon of dreadful power",
+      "_key": "!tables.results!0c4ea61819a3090b.42a67e209fb4f683",
+      "_id": "42a67e209fb4f683"
+    },
+    {
+      "range": [
+        90,
+        92
+      ],
+      "text": "Wields an alluring nature",
+      "_key": "!tables.results!0c4ea61819a3090b.7c8be746dcaffb9a",
+      "_id": "7c8be746dcaffb9a"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Wields dreadful magic",
+      "_key": "!tables.results!0c4ea61819a3090b.042b3fc88d683f05",
+      "_id": "042b3fc88d683f05"
+    },
+    {
+      "range": [
+        96,
+        97
+      ],
+      "text": "Wields strange technologies",
+      "_key": "!tables.results!0c4ea61819a3090b.ce027ee585e2fbb4",
+      "_id": "ce027ee585e2fbb4"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Worships a dreadful god or entity",
+      "_key": "!tables.results!0c4ea61819a3090b.07a1d99ef5d1f6a5",
+      "_id": "07a1d99ef5d1f6a5"
+    }
+  ],
+  "folder": "898ffa592fe619eb",
+  "sort": 182,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0c4ea61819a3090b"
+}

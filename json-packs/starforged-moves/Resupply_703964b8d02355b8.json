@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Resupply",
   "img": "icons/dice/d10black.svg",
+  "folder": "5ba869fa7c31abdd",
   "system": {
     "dfid": "Starforged/Moves/Recover/Resupply",
     "Category": "Starforged/Moves/Recover",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you attempt to bolster your readiness**, envision the opportunity and your approach. If you...\n\n  * Barter or make an appeal: Roll +heart\n  * Threaten or seize: Roll +iron\n  * Steal or swindle: Roll +shadow\n  * Scavenge or craft: Roll +wits\n\nOn a **strong hit**, choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.\n\nOn a **weak hit**, as above, but you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.\n\nOn a **miss**, you encounter an unexpected peril. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Text": "__When you attempt to bolster your readiness__, envision the opportunity and your approach. If you...\n\n  * Barter or make an appeal: Roll +heart\n  * Threaten or seize: Roll +iron\n  * Steal or swindle: Roll +shadow\n  * Scavenge or craft: Roll +wits\n\nOn a __strong hit__, choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.\n\nOn a __weak hit__, as above, but you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.\n\nOn a __miss__, you encounter an unexpected peril. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
     "Trigger": {
       "Text": "When you attempt to bolster your readiness...",
       "Options": [
@@ -48,66 +49,42 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You must first deal with a cost, complication, or demand. Envision the nature of this obstacle.\n\nThen choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.\n\nThen choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum."
       },
       "Miss": {
-        "Text": "You encounter an unexpected peril. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you encounter an unexpected peril. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 212
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#179F0E",
       "Images": []
     }
   },
   "sort": 212,
-  "folder": "5ba869fa7c31abdd",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Recover/Resupply",
+      "dsid": "move:starforged/recover/resupply"
+    }
   },
   "_key": "!items!703964b8d02355b8"
 }

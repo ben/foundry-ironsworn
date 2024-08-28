@@ -1,0 +1,27 @@
+{
+  "_id": "7c921d1d37087f2d",
+  "type": "progress",
+  "name": "Giant",
+  "img": "icons/creatures/magical/humanoid-giant-forest-blue.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Dark hair and ruddy skin</p>\n<p class=\"nogrow\">Twice the size of a tall man, or more</p>\n<p class=\"nogrow\">Wearing layers of wool, hide and furs</p>\n<p class=\"nogrow\">Stoic and observant</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Survive the winter</p>\n<p class=\"nogrow\">Protect the herd</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Fight as a last resort</p>\n<p class=\"nogrow\">Sweeping strike</p>\n<p class=\"nogrow\">Make them flee</p>\n</div>\n</div>\n\n<p>Giants dwell in the Tempest Hills and Veiled Mountains. They live a nomadic life alone or in small family units, herding oxen, mountain goats, and sheep. In their own language they are called the Jokul.</p>\n<p>Many Ironlanders misinterpret their quiet nature for dullness, but giants are keenly intelligent and observant. They have a great respect for life, even for our kind, and will use trickery and negotiation to avoid a fight. When they are left without other options, an enraged giant is a devastating, relentless force.</p>\n\n<blockquote>Quest Starter: <p>A pair of giants are raiding human settlements, stealing supplies and livestock. With winter coming, the survival of those settlements is threatened. What is driving the giants down from the hills?</p></blockquote>",
+    "rank": 4,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "d4239e681a659e2d",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/firstborn/giant"
+    }
+  },
+  "_key": "!items!7c921d1d37087f2d"
+}

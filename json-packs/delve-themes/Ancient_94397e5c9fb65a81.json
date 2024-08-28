@@ -1,0 +1,141 @@
+{
+  "_id": "94397e5c9fb65a81",
+  "type": "delve-theme",
+  "name": "Ancient",
+  "img": "icons/environment/wilderness/carved-standing-stone.webp",
+  "system": {
+    "summary": "This place holds the secrets of a bygone age.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Evidence of lost knowledge"
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Inscrutable relics"
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Ancient artistry or craft"
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Preserved corpses or fossils"
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Visions of this place in another time"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Ancient trap"
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Hazardous architecture or terrain"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Blocked or broken path"
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Denizen protects an ancient secret"
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Denizen reveres an ancient power"
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Living relics of a lost age"
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "Ancient evil resurgent"
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Dire warnings of a long-buried danger"
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "Ancient disease or contamination"
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Artifact of terrible meaning or power"
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "Disturbing evidence of ancient wrongs"
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Others seek power or knowledge"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 84,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_theme:delve/ancient"
+    }
+  },
+  "_key": "!items!94397e5c9fb65a81"
+}

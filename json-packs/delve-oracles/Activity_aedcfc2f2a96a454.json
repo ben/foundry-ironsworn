@@ -1,0 +1,471 @@
+{
+  "_id": "aedcfc2f2a96a454",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Character/Activity",
+      "category": "oracle_collection:delve/character",
+      "dsid": "oracle_rollable:delve/character/activity"
+    }
+  },
+  "name": "Activity",
+  "description": "<p>To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the @Compendium[foundry-ironsworn.delveoracles.563b63487cbe2d70]{Focus} oracle or @Compendium[foundry-ironsworn.ironswornoracles.3c1a7f81062a8a8a]{Theme} oracle.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Guarding",
+      "_key": "!tables.results!aedcfc2f2a96a454.76b9f1c9b3d6f526",
+      "_id": "76b9f1c9b3d6f526"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Preserving",
+      "_key": "!tables.results!aedcfc2f2a96a454.cdb669c811539b74",
+      "_id": "cdb669c811539b74"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Constructing",
+      "_key": "!tables.results!aedcfc2f2a96a454.355612681bb095e7",
+      "_id": "355612681bb095e7"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Mending",
+      "_key": "!tables.results!aedcfc2f2a96a454.658e40cc5cdf43ff",
+      "_id": "658e40cc5cdf43ff"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Assisting",
+      "_key": "!tables.results!aedcfc2f2a96a454.073e14f620a6319d",
+      "_id": "073e14f620a6319d"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Securing",
+      "_key": "!tables.results!aedcfc2f2a96a454.2053df7d2218b518",
+      "_id": "2053df7d2218b518"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Learning",
+      "_key": "!tables.results!aedcfc2f2a96a454.241f943c6c05a449",
+      "_id": "241f943c6c05a449"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Sneaking",
+      "_key": "!tables.results!aedcfc2f2a96a454.04d487b31fd7f33b",
+      "_id": "04d487b31fd7f33b"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Fleeing",
+      "_key": "!tables.results!aedcfc2f2a96a454.f2850f6194049db1",
+      "_id": "f2850f6194049db1"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Sacrificing",
+      "_key": "!tables.results!aedcfc2f2a96a454.b12317f243685bc8",
+      "_id": "b12317f243685bc8"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Creating",
+      "_key": "!tables.results!aedcfc2f2a96a454.6cf2b7e7c6d25de3",
+      "_id": "6cf2b7e7c6d25de3"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Luring",
+      "_key": "!tables.results!aedcfc2f2a96a454.2bfd23a2ddc1c476",
+      "_id": "2bfd23a2ddc1c476"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Hunting",
+      "_key": "!tables.results!aedcfc2f2a96a454.e5182afc27fe0405",
+      "_id": "e5182afc27fe0405"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Seizing",
+      "_key": "!tables.results!aedcfc2f2a96a454.8553132bfe0c36f5",
+      "_id": "8553132bfe0c36f5"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Bargaining",
+      "_key": "!tables.results!aedcfc2f2a96a454.a12428a71918542f",
+      "_id": "a12428a71918542f"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Mimicking",
+      "_key": "!tables.results!aedcfc2f2a96a454.6cb63a302af2107a",
+      "_id": "6cb63a302af2107a"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Tricking",
+      "_key": "!tables.results!aedcfc2f2a96a454.1ce47da5b850f892",
+      "_id": "1ce47da5b850f892"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Tracking",
+      "_key": "!tables.results!aedcfc2f2a96a454.6e0831671b7c9ef8",
+      "_id": "6e0831671b7c9ef8"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Escorting",
+      "_key": "!tables.results!aedcfc2f2a96a454.48d7cafe9bcabd28",
+      "_id": "48d7cafe9bcabd28"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Hiding",
+      "_key": "!tables.results!aedcfc2f2a96a454.9b9bbce581161bae",
+      "_id": "9b9bbce581161bae"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Raiding",
+      "_key": "!tables.results!aedcfc2f2a96a454.2fe9343c2bdf9302",
+      "_id": "2fe9343c2bdf9302"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Socializing",
+      "_key": "!tables.results!aedcfc2f2a96a454.7263982423bdc647",
+      "_id": "7263982423bdc647"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Exploring",
+      "_key": "!tables.results!aedcfc2f2a96a454.cebaeff3b8b17286",
+      "_id": "cebaeff3b8b17286"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Journeying",
+      "_key": "!tables.results!aedcfc2f2a96a454.97864f2511eb8e3b",
+      "_id": "97864f2511eb8e3b"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Supporting",
+      "_key": "!tables.results!aedcfc2f2a96a454.dcb11f53b0228464",
+      "_id": "dcb11f53b0228464"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Avoiding",
+      "_key": "!tables.results!aedcfc2f2a96a454.deca4456d19a7bb7",
+      "_id": "deca4456d19a7bb7"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Disabling",
+      "_key": "!tables.results!aedcfc2f2a96a454.73b2b542e2b9c3bb",
+      "_id": "73b2b542e2b9c3bb"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Leading",
+      "_key": "!tables.results!aedcfc2f2a96a454.43bc4c9832187569",
+      "_id": "43bc4c9832187569"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Assaulting",
+      "_key": "!tables.results!aedcfc2f2a96a454.e74df5b0535979c4",
+      "_id": "e74df5b0535979c4"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Ensnaring",
+      "_key": "!tables.results!aedcfc2f2a96a454.2cbfe8c91dcca665",
+      "_id": "2cbfe8c91dcca665"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Defending",
+      "_key": "!tables.results!aedcfc2f2a96a454.e2ad5c64fcde7a42",
+      "_id": "e2ad5c64fcde7a42"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Recovering",
+      "_key": "!tables.results!aedcfc2f2a96a454.439ed4f622e35f8e",
+      "_id": "439ed4f622e35f8e"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Patrolling",
+      "_key": "!tables.results!aedcfc2f2a96a454.bf21214e63361ac6",
+      "_id": "bf21214e63361ac6"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Resting",
+      "_key": "!tables.results!aedcfc2f2a96a454.50b6c3a14308c454",
+      "_id": "50b6c3a14308c454"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Distracting",
+      "_key": "!tables.results!aedcfc2f2a96a454.293c3e38b9b954b1",
+      "_id": "293c3e38b9b954b1"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Leaving",
+      "_key": "!tables.results!aedcfc2f2a96a454.0bacef0d03cca24b",
+      "_id": "0bacef0d03cca24b"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Fighting",
+      "_key": "!tables.results!aedcfc2f2a96a454.705196b5de0343d3",
+      "_id": "705196b5de0343d3"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Ambushing",
+      "_key": "!tables.results!aedcfc2f2a96a454.b519e9be603473b4",
+      "_id": "b519e9be603473b4"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Controlling",
+      "_key": "!tables.results!aedcfc2f2a96a454.21e4ac3388cc2bed",
+      "_id": "21e4ac3388cc2bed"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Observing",
+      "_key": "!tables.results!aedcfc2f2a96a454.7081ab1a2151ea29",
+      "_id": "7081ab1a2151ea29"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Gathering",
+      "_key": "!tables.results!aedcfc2f2a96a454.d0ff99d6e27e0399",
+      "_id": "d0ff99d6e27e0399"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Suffering",
+      "_key": "!tables.results!aedcfc2f2a96a454.20902e1d6cebff00",
+      "_id": "20902e1d6cebff00"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Threatening",
+      "_key": "!tables.results!aedcfc2f2a96a454.f4f8ce9571b7d40e",
+      "_id": "f4f8ce9571b7d40e"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Searching",
+      "_key": "!tables.results!aedcfc2f2a96a454.690240892fb473dd",
+      "_id": "690240892fb473dd"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Destroying",
+      "_key": "!tables.results!aedcfc2f2a96a454.b72c5550a2ab459c",
+      "_id": "b72c5550a2ab459c"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Restoring",
+      "_key": "!tables.results!aedcfc2f2a96a454.41c4d7f7afcde9a7",
+      "_id": "41c4d7f7afcde9a7"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Consuming",
+      "_key": "!tables.results!aedcfc2f2a96a454.727a6f3ff52efd2b",
+      "_id": "727a6f3ff52efd2b"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Removing",
+      "_key": "!tables.results!aedcfc2f2a96a454.5ddcb3e03ec27298",
+      "_id": "5ddcb3e03ec27298"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Inspecting",
+      "_key": "!tables.results!aedcfc2f2a96a454.12828758296cd1bc",
+      "_id": "12828758296cd1bc"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Summoning",
+      "_key": "!tables.results!aedcfc2f2a96a454.12c7868610f40108",
+      "_id": "12c7868610f40108"
+    }
+  ],
+  "folder": "4f03f7b2140944a2",
+  "sort": 213,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!aedcfc2f2a96a454"
+}

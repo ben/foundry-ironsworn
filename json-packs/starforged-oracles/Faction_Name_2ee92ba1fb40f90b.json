@@ -1,0 +1,15 @@
+{
+  "name": "Faction Name",
+  "description": "",
+  "type": "RollTable",
+  "_id": "2ee92ba1fb40f90b",
+  "sort": 344,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:starforged/faction/name"
+    }
+  },
+  "folder": "b6fe3d35ff56995d",
+  "sorting": "a",
+  "_key": "!folders!2ee92ba1fb40f90b"
+}

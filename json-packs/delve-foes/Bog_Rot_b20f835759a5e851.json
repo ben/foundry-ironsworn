@@ -1,0 +1,27 @@
+{
+  "_id": "b20f835759a5e851",
+  "type": "progress",
+  "name": "Bog Rot",
+  "img": "icons/magic/death/hand-dirt-undead-zombie.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Mummified flesh</p>\n<p class=\"nogrow\">Shambling gait</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Rise to seek out the living</p>\n<p class=\"nogrow\">Consign another to death in their place</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Emerge from the muddy earth</p>\n<p class=\"nogrow\">Seize with grasping hands</p>\n<p class=\"nogrow\">Crush with unexpected strength</p>\n<p class=\"nogrow\">Share dreadful secrets</p>\n</div>\n</div>\n\n<p>Long ago, before we arrived on the shores of the Ironlands, other people lived here. Some of those folk dwelled in what we now call the Flooded Lands, and laid their kin to rest in the vast peat bogs of that place.</p>\n<p>A few of those dead do not rest, and rise as bog rots. They are horrible creatures, with preserved flesh stained and withered like old leather. Their eyes are black pits, and their mouths hang open in a perpetual, silent scream.</p>\n<p>It is said a bog rot can only find rest by committing another victim to the mire. A soul for a soul. In those final moments, the creature whispers of ancient secrets and forbidden lore, as if unloading the burden of that dark knowledge. For those few who escape the grasp of a bog rot, these awful truths are sometimes worse than death.</p>\n\n<blockquote>Quest Starter: <p>In a @Compendium[foundry-ironsworn.ironsworndelvethemes.cf94fb4e6e77ed17]{Corrupted} @Compendium[foundry-ironsworn.ironsworndelvedomains.bd208fdcb58e5485]{Shadowfen}, a great battle once took place. Hundreds died amid the morass. Their mummified corpses lie buried in mud and peat, but many do not rest easily. What secret or artifact is said to lie with them? Why are you sworn to seek it out?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "dc29320f4e7ca59c",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/horrors/bog_rot"
+    }
+  },
+  "_key": "!items!b20f835759a5e851"
+}

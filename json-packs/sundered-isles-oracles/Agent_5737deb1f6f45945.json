@@ -1,0 +1,65 @@
+{
+  "_id": "5737deb1f6f45945",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/agent"
+    }
+  },
+  "name": "Agent",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Assassin",
+      "_key": "!tables.results!5737deb1f6f45945.709fb376f8a7b689",
+      "_id": "709fb376f8a7b689"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Bounty Hunter / Pirate hunter",
+      "_key": "!tables.results!5737deb1f6f45945.eb49d23636c5c04c",
+      "_id": "eb49d23636c5c04c"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Courier",
+      "_key": "!tables.results!5737deb1f6f45945.1201ae1bc01b28b2",
+      "_id": "1201ae1bc01b28b2"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Investigator",
+      "_key": "!tables.results!5737deb1f6f45945.8366abbbda61a336",
+      "_id": "8366abbbda61a336"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Spy",
+      "_key": "!tables.results!5737deb1f6f45945.e3a46c2e22672dd2",
+      "_id": "e3a46c2e22672dd2"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5737deb1f6f45945"
+}

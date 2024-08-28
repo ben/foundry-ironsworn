@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "025095e4809853dd",
+  "folder": "e5df7144ec089f12",
+  "name": "Construct",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You are a machine, and do not eat, drink, or breathe. You @Compendium[foundry-ironsworn.starforgedmoves.905205c073b09eac]{Endure Harm} as normal, but restore health only when you @Compendium[foundry-ironsworn.sunderedislesmoves.8a164fecb3029c76]{Repair} (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move to build, repair, or study another mechanical device, or question or convince a mechanical being, you may roll +spirit. On a match, you gain understanding or affinity; mark 1 tick on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Gain one path asset (not @Compendium[foundry-ironsworn.starforgedassets.4c75d631a38fd3b8]{Augmented}) at no extra cost to represent a mechanical fitting or modification. Spend 1 experience to upgrade this asset, or 1 experience to swap for another path asset with an equal number of upgrades. You may suffer the cost of a move by marking the installed asset as broken, and spend 2 repair points to restore its function.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/construct",
+      "dsid": "asset:sundered_isles/path/construct"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!025095e4809853dd"
+}

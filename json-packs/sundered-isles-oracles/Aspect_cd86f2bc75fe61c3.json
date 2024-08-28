@@ -1,0 +1,110 @@
+{
+  "_id": "cd86f2bc75fe61c3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/secrecy",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/secrecy/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Ashen",
+      "_key": "!tables.results!cd86f2bc75fe61c3.9fa4c012038f4313",
+      "_id": "9fa4c012038f4313"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Gossamer",
+      "_key": "!tables.results!cd86f2bc75fe61c3.1fa157097d2ad6c3",
+      "_id": "1fa157097d2ad6c3"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Gray",
+      "_key": "!tables.results!cd86f2bc75fe61c3.359ee34840ef89b5",
+      "_id": "359ee34840ef89b5"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Hidden",
+      "_key": "!tables.results!cd86f2bc75fe61c3.f470c08abca86b47",
+      "_id": "f470c08abca86b47"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Shrouded",
+      "_key": "!tables.results!cd86f2bc75fe61c3.9201308229ae5c3b",
+      "_id": "9201308229ae5c3b"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Silent",
+      "_key": "!tables.results!cd86f2bc75fe61c3.52553c62ed4fc701",
+      "_id": "52553c62ed4fc701"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Umbral",
+      "_key": "!tables.results!cd86f2bc75fe61c3.17c84379968ecc54",
+      "_id": "17c84379968ecc54"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Unseen",
+      "_key": "!tables.results!cd86f2bc75fe61c3.d217d4a43c2619c2",
+      "_id": "d217d4a43c2619c2"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Veiled",
+      "_key": "!tables.results!cd86f2bc75fe61c3.6115379cc7cce2a2",
+      "_id": "6115379cc7cce2a2"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Whispering",
+      "_key": "!tables.results!cd86f2bc75fe61c3.3470fe9dfb35bdb0",
+      "_id": "3470fe9dfb35bdb0"
+    }
+  ],
+  "folder": "34c50249287e2862",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cd86f2bc75fe61c3"
+}

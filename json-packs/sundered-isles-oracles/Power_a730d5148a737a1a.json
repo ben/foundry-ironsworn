@@ -1,0 +1,65 @@
+{
+  "_id": "a730d5148a737a1a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/magnitude",
+      "dsid": "oracle_rollable:sundered_isles/misc/magnitude/power"
+    }
+  },
+  "name": "Power",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Weak",
+      "_key": "!tables.results!a730d5148a737a1a.00dbd405f53e8a6e",
+      "_id": "00dbd405f53e8a6e"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Minor",
+      "_key": "!tables.results!a730d5148a737a1a.0704e43e80845ac7",
+      "_id": "0704e43e80845ac7"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Moderate",
+      "_key": "!tables.results!a730d5148a737a1a.1f159680ed747a37",
+      "_id": "1f159680ed747a37"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Strong",
+      "_key": "!tables.results!a730d5148a737a1a.9c1d99e3c6cd0123",
+      "_id": "9c1d99e3c6cd0123"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Overwhelming",
+      "_key": "!tables.results!a730d5148a737a1a.84e5d2473fedb318",
+      "_id": "84e5d2473fedb318"
+    }
+  ],
+  "folder": "a547d2b78f39268a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a730d5148a737a1a"
+}

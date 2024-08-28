@@ -1,0 +1,15 @@
+{
+  "name": "Rebellion",
+  "description": "",
+  "type": "RollTable",
+  "_id": "37cdb646cd60af90",
+  "sort": 185,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/name/themes/rebellion"
+    }
+  },
+  "folder": "1aa3b728667629f3",
+  "sorting": "a",
+  "_key": "!folders!37cdb646cd60af90"
+}

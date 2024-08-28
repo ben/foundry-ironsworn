@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Characters/Name/Callsign",
-      "category": "Starforged/Oracles/Characters"
+      "category": "Starforged/Oracles/Characters/Name",
+      "dsid": "oracle_rollable:starforged/character/name/callsign"
     }
   },
   "name": "Callsign",
   "description": "<p>Spacers are often known only by their callsigns, with their “dirtside names” reserved for family and close friends.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         1
       ],
       "text": "Albatross",
-      "_id": "41de91be8d3451c8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.41de91be8d3451c8"
+      "_key": "!tables.results!76cd6f5340a4978a.84394e5fb893458e",
+      "_id": "84394e5fb893458e"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         2
       ],
       "text": "Angler",
-      "_id": "7be19a1150278ffb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.7be19a1150278ffb"
+      "_key": "!tables.results!76cd6f5340a4978a.22a52e21361f835c",
+      "_id": "22a52e21361f835c"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         3
       ],
       "text": "Anvil",
-      "_id": "e092982c7123067c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.e092982c7123067c"
+      "_key": "!tables.results!76cd6f5340a4978a.8e74d7bbe3b05a6e",
+      "_id": "8e74d7bbe3b05a6e"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         4
       ],
       "text": "Badger",
-      "_id": "d479e35dd9a7ad27",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.d479e35dd9a7ad27"
+      "_key": "!tables.results!76cd6f5340a4978a.b41d957d663db3d8",
+      "_id": "b41d957d663db3d8"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         5
       ],
       "text": "Bandit",
-      "_id": "b83fe588280296d1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.b83fe588280296d1"
+      "_key": "!tables.results!76cd6f5340a4978a.d9526aa573ac9cb1",
+      "_id": "d9526aa573ac9cb1"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         6
       ],
       "text": "Bash",
-      "_id": "7986723fffe4b207",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.7986723fffe4b207"
+      "_key": "!tables.results!76cd6f5340a4978a.d200389bfe2ad6d4",
+      "_id": "d200389bfe2ad6d4"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         7
       ],
       "text": "Basilisk",
-      "_id": "9aa89b53c3df8adc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9aa89b53c3df8adc"
+      "_key": "!tables.results!76cd6f5340a4978a.3f60d7d98b920cf4",
+      "_id": "3f60d7d98b920cf4"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         8
       ],
       "text": "Bingo",
-      "_id": "c6fd565e42d622ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.c6fd565e42d622ea"
+      "_key": "!tables.results!76cd6f5340a4978a.3ce790efa71c1e6f",
+      "_id": "3ce790efa71c1e6f"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         9
       ],
       "text": "Blackbird",
-      "_id": "41b0857d9314f734",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.41b0857d9314f734"
+      "_key": "!tables.results!76cd6f5340a4978a.bfb5c99ebf1041c8",
+      "_id": "bfb5c99ebf1041c8"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         10
       ],
       "text": "Blade",
-      "_id": "9be37d78e5bff48d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9be37d78e5bff48d"
+      "_key": "!tables.results!76cd6f5340a4978a.245de06c7b3178c9",
+      "_id": "245de06c7b3178c9"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         11
       ],
       "text": "Bloodshot",
-      "_id": "75f741f659d18e1e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.75f741f659d18e1e"
+      "_key": "!tables.results!76cd6f5340a4978a.1e3e8f675c41c6a1",
+      "_id": "1e3e8f675c41c6a1"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         12
       ],
       "text": "Bluewing",
-      "_id": "1117cbafc0c28df5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.1117cbafc0c28df5"
+      "_key": "!tables.results!76cd6f5340a4978a.7d16b97bfdcc0dc4",
+      "_id": "7d16b97bfdcc0dc4"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         13
       ],
       "text": "Bonfire",
-      "_id": "1692b797744a6e04",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.1692b797744a6e04"
+      "_key": "!tables.results!76cd6f5340a4978a.6241d0e97fabad6c",
+      "_id": "6241d0e97fabad6c"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         14
       ],
       "text": "Book",
-      "_id": "86a4b0438b81eb8e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.86a4b0438b81eb8e"
+      "_key": "!tables.results!76cd6f5340a4978a.06db9a7b397aab06",
+      "_id": "06db9a7b397aab06"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         15
       ],
       "text": "Breaker",
-      "_id": "759338831f8b08ae",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.759338831f8b08ae"
+      "_key": "!tables.results!76cd6f5340a4978a.d6a8aa0d2b224aae",
+      "_id": "d6a8aa0d2b224aae"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         16
       ],
       "text": "Brick",
-      "_id": "7f40eda702121803",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.7f40eda702121803"
+      "_key": "!tables.results!76cd6f5340a4978a.b50062ff554ae263",
+      "_id": "b50062ff554ae263"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         17
       ],
       "text": "Buzz",
-      "_id": "500cd7b4bcab6890",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.500cd7b4bcab6890"
+      "_key": "!tables.results!76cd6f5340a4978a.15efe28fe3c5c0c4",
+      "_id": "15efe28fe3c5c0c4"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         18
       ],
       "text": "Buzzard",
-      "_id": "094e3cf95144f523",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.094e3cf95144f523"
+      "_key": "!tables.results!76cd6f5340a4978a.8991bd14f65c52f8",
+      "_id": "8991bd14f65c52f8"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         19
       ],
       "text": "Centurion",
-      "_id": "8fb0cc6b8d6874cf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.8fb0cc6b8d6874cf"
+      "_key": "!tables.results!76cd6f5340a4978a.a42c5e9f52969cfa",
+      "_id": "a42c5e9f52969cfa"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         20
       ],
       "text": "Chimera",
-      "_id": "cc4f5bc23ecfd027",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.cc4f5bc23ecfd027"
+      "_key": "!tables.results!76cd6f5340a4978a.f700cb38e3506901",
+      "_id": "f700cb38e3506901"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         21
       ],
       "text": "Circuit",
-      "_id": "7510735b7d042efa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.7510735b7d042efa"
+      "_key": "!tables.results!76cd6f5340a4978a.34decea28001155a",
+      "_id": "34decea28001155a"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         22
       ],
       "text": "Clank",
-      "_id": "dcc757c61f4da891",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.dcc757c61f4da891"
+      "_key": "!tables.results!76cd6f5340a4978a.dfcac99697facbb2",
+      "_id": "dfcac99697facbb2"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         23
       ],
       "text": "Cleric",
-      "_id": "e90a917a55ea2de9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.e90a917a55ea2de9"
+      "_key": "!tables.results!76cd6f5340a4978a.eb3454505af4053a",
+      "_id": "eb3454505af4053a"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         24
       ],
       "text": "Crash",
-      "_id": "452339cc8192bc0a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.452339cc8192bc0a"
+      "_key": "!tables.results!76cd6f5340a4978a.d882baef35f00431",
+      "_id": "d882baef35f00431"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         25
       ],
       "text": "Cutter",
-      "_id": "9f502d00e29a3abe",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9f502d00e29a3abe"
+      "_key": "!tables.results!76cd6f5340a4978a.49cb95f8ce23110e",
+      "_id": "49cb95f8ce23110e"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         26
       ],
       "text": "Cutthroat",
-      "_id": "e80cda7ddeccee8a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.e80cda7ddeccee8a"
+      "_key": "!tables.results!76cd6f5340a4978a.45895ba0c68ac5b7",
+      "_id": "45895ba0c68ac5b7"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         27
       ],
       "text": "Cypher",
-      "_id": "3921892c95444b76",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.3921892c95444b76"
+      "_key": "!tables.results!76cd6f5340a4978a.c1b85df9446ae783",
+      "_id": "c1b85df9446ae783"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         28
       ],
       "text": "Dagger",
-      "_id": "8f79c3f4e3b97e77",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.8f79c3f4e3b97e77"
+      "_key": "!tables.results!76cd6f5340a4978a.552f964d48af1679",
+      "_id": "552f964d48af1679"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         29
       ],
       "text": "Dancer",
-      "_id": "4139d1dbc86e0c3e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.4139d1dbc86e0c3e"
+      "_key": "!tables.results!76cd6f5340a4978a.db165d4271d23a94",
+      "_id": "db165d4271d23a94"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         30
       ],
       "text": "Dash",
-      "_id": "0d400636970e68f1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.0d400636970e68f1"
+      "_key": "!tables.results!76cd6f5340a4978a.f009c3bef5fe68a8",
+      "_id": "f009c3bef5fe68a8"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         31
       ],
       "text": "Deadeye",
-      "_id": "5d457b90747ed88e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.5d457b90747ed88e"
+      "_key": "!tables.results!76cd6f5340a4978a.325fbb9878632082",
+      "_id": "325fbb9878632082"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         32
       ],
       "text": "Deuce",
-      "_id": "d0d3279bd3b967c2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.d0d3279bd3b967c2"
+      "_key": "!tables.results!76cd6f5340a4978a.c29169d6be074ac3",
+      "_id": "c29169d6be074ac3"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         33
       ],
       "text": "Failsafe",
-      "_id": "9d69abd7879ce84c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9d69abd7879ce84c"
+      "_key": "!tables.results!76cd6f5340a4978a.fa4c9353f19d791e",
+      "_id": "fa4c9353f19d791e"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         34
       ],
       "text": "Farseer",
-      "_id": "9eb9defafe91577d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9eb9defafe91577d"
+      "_key": "!tables.results!76cd6f5340a4978a.12d5bbc8d4670845",
+      "_id": "12d5bbc8d4670845"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         35
       ],
       "text": "Fidget",
-      "_id": "cdf81e6334627dcd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.cdf81e6334627dcd"
+      "_key": "!tables.results!76cd6f5340a4978a.20c59862ba1cebe5",
+      "_id": "20c59862ba1cebe5"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         36
       ],
       "text": "Firestarter",
-      "_id": "6fddd9c95461415b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.6fddd9c95461415b"
+      "_key": "!tables.results!76cd6f5340a4978a.760be6994cde6397",
+      "_id": "760be6994cde6397"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         37
       ],
       "text": "Fixer",
-      "_id": "184e36c598d8532b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.184e36c598d8532b"
+      "_key": "!tables.results!76cd6f5340a4978a.900b32a5595f0de1",
+      "_id": "900b32a5595f0de1"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         38
       ],
       "text": "Flatline",
-      "_id": "9167b585432c059b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9167b585432c059b"
+      "_key": "!tables.results!76cd6f5340a4978a.1561716fc1ebfe5d",
+      "_id": "1561716fc1ebfe5d"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         39
       ],
       "text": "Ghost",
-      "_id": "f0ab2e1db88b4de6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.f0ab2e1db88b4de6"
+      "_key": "!tables.results!76cd6f5340a4978a.8b948348104a2f53",
+      "_id": "8b948348104a2f53"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         40
       ],
       "text": "Grudge",
-      "_id": "d8142d69de04aeef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.d8142d69de04aeef"
+      "_key": "!tables.results!76cd6f5340a4978a.65e6e9dcc2386109",
+      "_id": "65e6e9dcc2386109"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         41
       ],
       "text": "Gutshot",
-      "_id": "c4c82bfde52e4d77",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.c4c82bfde52e4d77"
+      "_key": "!tables.results!76cd6f5340a4978a.7c842a4c803ac33e",
+      "_id": "7c842a4c803ac33e"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         42
       ],
       "text": "Harrow",
-      "_id": "1447f9c8e4c70bb0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.1447f9c8e4c70bb0"
+      "_key": "!tables.results!76cd6f5340a4978a.003f47bc205ca87e",
+      "_id": "003f47bc205ca87e"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         43
       ],
       "text": "Havoc",
-      "_id": "223a124b7e64422c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.223a124b7e64422c"
+      "_key": "!tables.results!76cd6f5340a4978a.88926734d55f5d95",
+      "_id": "88926734d55f5d95"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         44
       ],
       "text": "Hellhound",
-      "_id": "a12249660189a5b5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.a12249660189a5b5"
+      "_key": "!tables.results!76cd6f5340a4978a.d5092751079498e7",
+      "_id": "d5092751079498e7"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         45
       ],
       "text": "Hellion",
-      "_id": "9017f0b0d8b3513c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9017f0b0d8b3513c"
+      "_key": "!tables.results!76cd6f5340a4978a.f0efe79ef4a34601",
+      "_id": "f0efe79ef4a34601"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         46
       ],
       "text": "Hex",
-      "_id": "67ceef62a324f021",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.67ceef62a324f021"
+      "_key": "!tables.results!76cd6f5340a4978a.db98f282f03129b3",
+      "_id": "db98f282f03129b3"
     },
     {
       "range": [
@@ -662,27 +433,17 @@
         47
       ],
       "text": "Hush",
-      "_id": "708bedd941d70265",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.708bedd941d70265"
+      "_key": "!tables.results!76cd6f5340a4978a.61fe0db568c7198d",
+      "_id": "61fe0db568c7198d"
     },
     {
       "range": [
         48,
         48
       ],
-      "text": "Ironclad",
-      "_id": "8d6bba27841e95ef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.8d6bba27841e95ef"
+      "text": "Irodescriptionnclad",
+      "_key": "!tables.results!76cd6f5340a4978a.1aa2f0a670b5a6d5",
+      "_id": "1aa2f0a670b5a6d5"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         49
       ],
       "text": "Jackal",
-      "_id": "b36bd7c744a94102",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.b36bd7c744a94102"
+      "_key": "!tables.results!76cd6f5340a4978a.01354751c97e78b6",
+      "_id": "01354751c97e78b6"
     },
     {
       "range": [
@@ -704,13 +460,8 @@
         50
       ],
       "text": "Jackpot",
-      "_id": "1d5a652759a001cd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.1d5a652759a001cd"
+      "_key": "!tables.results!76cd6f5340a4978a.8da550b0c516c805",
+      "_id": "8da550b0c516c805"
     },
     {
       "range": [
@@ -718,13 +469,8 @@
         51
       ],
       "text": "Jester",
-      "_id": "b5d7a47997139295",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.b5d7a47997139295"
+      "_key": "!tables.results!76cd6f5340a4978a.b67224d03dc78ded",
+      "_id": "b67224d03dc78ded"
     },
     {
       "range": [
@@ -732,13 +478,8 @@
         52
       ],
       "text": "Link",
-      "_id": "2efde396eb4a31ab",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.2efde396eb4a31ab"
+      "_key": "!tables.results!76cd6f5340a4978a.2dc9f0a7f5976192",
+      "_id": "2dc9f0a7f5976192"
     },
     {
       "range": [
@@ -746,13 +487,8 @@
         53
       ],
       "text": "Longshot",
-      "_id": "547c9c792f89e291",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.547c9c792f89e291"
+      "_key": "!tables.results!76cd6f5340a4978a.72ad46111a531c03",
+      "_id": "72ad46111a531c03"
     },
     {
       "range": [
@@ -760,13 +496,8 @@
         54
       ],
       "text": "Mainframe",
-      "_id": "b5e7083c449d3988",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.b5e7083c449d3988"
+      "_key": "!tables.results!76cd6f5340a4978a.5e819d182fd9345c",
+      "_id": "5e819d182fd9345c"
     },
     {
       "range": [
@@ -774,13 +505,8 @@
         55
       ],
       "text": "Mantis",
-      "_id": "96db34c8de7a2dde",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.96db34c8de7a2dde"
+      "_key": "!tables.results!76cd6f5340a4978a.7b31219dd3a259aa",
+      "_id": "7b31219dd3a259aa"
     },
     {
       "range": [
@@ -788,13 +514,8 @@
         56
       ],
       "text": "Mimic",
-      "_id": "034c6860f373bd2c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.034c6860f373bd2c"
+      "_key": "!tables.results!76cd6f5340a4978a.8dbbda8fcc389557",
+      "_id": "8dbbda8fcc389557"
     },
     {
       "range": [
@@ -802,13 +523,8 @@
         57
       ],
       "text": "Mole",
-      "_id": "d9cdbacd8853f190",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.d9cdbacd8853f190"
+      "_key": "!tables.results!76cd6f5340a4978a.64c9caff47e7ed22",
+      "_id": "64c9caff47e7ed22"
     },
     {
       "range": [
@@ -816,13 +532,8 @@
         58
       ],
       "text": "Monarch",
-      "_id": "ddfc788a80df9f6d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.ddfc788a80df9f6d"
+      "_key": "!tables.results!76cd6f5340a4978a.c18cd9720325763a",
+      "_id": "c18cd9720325763a"
     },
     {
       "range": [
@@ -830,13 +541,8 @@
         59
       ],
       "text": "Mongoose",
-      "_id": "2f8e44bc639c9fc4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.2f8e44bc639c9fc4"
+      "_key": "!tables.results!76cd6f5340a4978a.c7b2dd6a62f927f4",
+      "_id": "c7b2dd6a62f927f4"
     },
     {
       "range": [
@@ -844,13 +550,8 @@
         60
       ],
       "text": "Nails",
-      "_id": "fb8e2413852076af",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.fb8e2413852076af"
+      "_key": "!tables.results!76cd6f5340a4978a.bf30d08c050e5877",
+      "_id": "bf30d08c050e5877"
     },
     {
       "range": [
@@ -858,13 +559,8 @@
         61
       ],
       "text": "Ogre",
-      "_id": "634528a63a5fd405",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.634528a63a5fd405"
+      "_key": "!tables.results!76cd6f5340a4978a.998e4254527ccc30",
+      "_id": "998e4254527ccc30"
     },
     {
       "range": [
@@ -872,13 +568,8 @@
         62
       ],
       "text": "Omega",
-      "_id": "f4f5cf3ee0c206ca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.f4f5cf3ee0c206ca"
+      "_key": "!tables.results!76cd6f5340a4978a.49aed93a14c6997c",
+      "_id": "49aed93a14c6997c"
     },
     {
       "range": [
@@ -886,13 +577,8 @@
         63
       ],
       "text": "Overload",
-      "_id": "94b5e374fdc88f09",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.94b5e374fdc88f09"
+      "_key": "!tables.results!76cd6f5340a4978a.f2f13f622698ec16",
+      "_id": "f2f13f622698ec16"
     },
     {
       "range": [
@@ -900,13 +586,8 @@
         64
       ],
       "text": "Packrat",
-      "_id": "a0ff1da8d297c342",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.a0ff1da8d297c342"
+      "_key": "!tables.results!76cd6f5340a4978a.6e9865730d9130d3",
+      "_id": "6e9865730d9130d3"
     },
     {
       "range": [
@@ -914,13 +595,8 @@
         65
       ],
       "text": "Paladin",
-      "_id": "9109e8b9dea5d209",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9109e8b9dea5d209"
+      "_key": "!tables.results!76cd6f5340a4978a.6521fc2e8d1ad6d9",
+      "_id": "6521fc2e8d1ad6d9"
     },
     {
       "range": [
@@ -928,13 +604,8 @@
         66
       ],
       "text": "Phantom",
-      "_id": "828f047ffbb6f9df",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.828f047ffbb6f9df"
+      "_key": "!tables.results!76cd6f5340a4978a.aee2f67e70dd76cf",
+      "_id": "aee2f67e70dd76cf"
     },
     {
       "range": [
@@ -942,13 +613,8 @@
         67
       ],
       "text": "Phoenix",
-      "_id": "57131876f9eafc4f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.57131876f9eafc4f"
+      "_key": "!tables.results!76cd6f5340a4978a.b459689523849873",
+      "_id": "b459689523849873"
     },
     {
       "range": [
@@ -956,13 +622,8 @@
         68
       ],
       "text": "Pyro",
-      "_id": "dee870d7357bdf7e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.dee870d7357bdf7e"
+      "_key": "!tables.results!76cd6f5340a4978a.9197af047ac502e6",
+      "_id": "9197af047ac502e6"
     },
     {
       "range": [
@@ -970,13 +631,8 @@
         69
       ],
       "text": "Quickdraw",
-      "_id": "2ae2cd328763cd43",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.2ae2cd328763cd43"
+      "_key": "!tables.results!76cd6f5340a4978a.f864fa5535683ee5",
+      "_id": "f864fa5535683ee5"
     },
     {
       "range": [
@@ -984,13 +640,8 @@
         70
       ],
       "text": "Razor",
-      "_id": "3d1a0dc9de2b946d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.3d1a0dc9de2b946d"
+      "_key": "!tables.results!76cd6f5340a4978a.bd872ebafbcbea7a",
+      "_id": "bd872ebafbcbea7a"
     },
     {
       "range": [
@@ -998,13 +649,8 @@
         71
       ],
       "text": "Rogue",
-      "_id": "dc2ce72679d21c1f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.dc2ce72679d21c1f"
+      "_key": "!tables.results!76cd6f5340a4978a.65c6cd07e002e617",
+      "_id": "65c6cd07e002e617"
     },
     {
       "range": [
@@ -1012,13 +658,8 @@
         72
       ],
       "text": "Rook",
-      "_id": "917dfcf574ae4c25",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.917dfcf574ae4c25"
+      "_key": "!tables.results!76cd6f5340a4978a.9ce505446fa22e43",
+      "_id": "9ce505446fa22e43"
     },
     {
       "range": [
@@ -1026,13 +667,8 @@
         73
       ],
       "text": "Rover",
-      "_id": "d29a89f3b4840725",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.d29a89f3b4840725"
+      "_key": "!tables.results!76cd6f5340a4978a.7d664dee044f4264",
+      "_id": "7d664dee044f4264"
     },
     {
       "range": [
@@ -1040,13 +676,8 @@
         74
       ],
       "text": "Scout",
-      "_id": "eb1f560edb9a5a0f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.eb1f560edb9a5a0f"
+      "_key": "!tables.results!76cd6f5340a4978a.63ed9e9ff4259be0",
+      "_id": "63ed9e9ff4259be0"
     },
     {
       "range": [
@@ -1054,13 +685,8 @@
         75
       ],
       "text": "Shadow",
-      "_id": "4d8e506d9d43b337",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.4d8e506d9d43b337"
+      "_key": "!tables.results!76cd6f5340a4978a.94ae00094cce0da4",
+      "_id": "94ae00094cce0da4"
     },
     {
       "range": [
@@ -1068,13 +694,8 @@
         76
       ],
       "text": "Shark",
-      "_id": "2580c2245010b34c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.2580c2245010b34c"
+      "_key": "!tables.results!76cd6f5340a4978a.027d1884cbe0ed7b",
+      "_id": "027d1884cbe0ed7b"
     },
     {
       "range": [
@@ -1082,13 +703,8 @@
         77
       ],
       "text": "Shutdown",
-      "_id": "479e1fc96b902cb2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.479e1fc96b902cb2"
+      "_key": "!tables.results!76cd6f5340a4978a.4a42be1360f7cda1",
+      "_id": "4a42be1360f7cda1"
     },
     {
       "range": [
@@ -1096,13 +712,8 @@
         78
       ],
       "text": "Slack",
-      "_id": "453a1ca429db71cd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.453a1ca429db71cd"
+      "_key": "!tables.results!76cd6f5340a4978a.36aa6c0034ccb505",
+      "_id": "36aa6c0034ccb505"
     },
     {
       "range": [
@@ -1110,13 +721,8 @@
         79
       ],
       "text": "Slash",
-      "_id": "c7c57850743b3f21",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.c7c57850743b3f21"
+      "_key": "!tables.results!76cd6f5340a4978a.750c6710f43b3dac",
+      "_id": "750c6710f43b3dac"
     },
     {
       "range": [
@@ -1124,13 +730,8 @@
         80
       ],
       "text": "Snipe",
-      "_id": "987d9ecc6bc28c16",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.987d9ecc6bc28c16"
+      "_key": "!tables.results!76cd6f5340a4978a.42be41bf357b08a5",
+      "_id": "42be41bf357b08a5"
     },
     {
       "range": [
@@ -1138,13 +739,8 @@
         81
       ],
       "text": "Spider",
-      "_id": "97375af44a6b3ede",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.97375af44a6b3ede"
+      "_key": "!tables.results!76cd6f5340a4978a.6a29d3771a744ca4",
+      "_id": "6a29d3771a744ca4"
     },
     {
       "range": [
@@ -1152,13 +748,8 @@
         82
       ],
       "text": "Splinter",
-      "_id": "eac4e1778d643e8a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.eac4e1778d643e8a"
+      "_key": "!tables.results!76cd6f5340a4978a.a33b2f539b77987d",
+      "_id": "a33b2f539b77987d"
     },
     {
       "range": [
@@ -1166,13 +757,8 @@
         83
       ],
       "text": "Static",
-      "_id": "3ee4c94f2566bb57",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.3ee4c94f2566bb57"
+      "_key": "!tables.results!76cd6f5340a4978a.05e3a0cdab47750d",
+      "_id": "05e3a0cdab47750d"
     },
     {
       "range": [
@@ -1180,13 +766,8 @@
         84
       ],
       "text": "Stinger",
-      "_id": "175de887788cdfd8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.175de887788cdfd8"
+      "_key": "!tables.results!76cd6f5340a4978a.c4c59e85fc69b0ab",
+      "_id": "c4c59e85fc69b0ab"
     },
     {
       "range": [
@@ -1194,13 +775,8 @@
         85
       ],
       "text": "Straggler",
-      "_id": "fdc6ea2898373943",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.fdc6ea2898373943"
+      "_key": "!tables.results!76cd6f5340a4978a.7877b8d1ccd86bf0",
+      "_id": "7877b8d1ccd86bf0"
     },
     {
       "range": [
@@ -1208,13 +784,8 @@
         86
       ],
       "text": "Swindle",
-      "_id": "2fc2d2050eaca55c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.2fc2d2050eaca55c"
+      "_key": "!tables.results!76cd6f5340a4978a.15e4f390a401a6db",
+      "_id": "15e4f390a401a6db"
     },
     {
       "range": [
@@ -1222,13 +793,8 @@
         87
       ],
       "text": "Tinker",
-      "_id": "103010944102e720",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.103010944102e720"
+      "_key": "!tables.results!76cd6f5340a4978a.9b4582650f5b2fc8",
+      "_id": "9b4582650f5b2fc8"
     },
     {
       "range": [
@@ -1236,13 +802,8 @@
         88
       ],
       "text": "Touchdown",
-      "_id": "ca50a524dc48bcb2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.ca50a524dc48bcb2"
+      "_key": "!tables.results!76cd6f5340a4978a.fc87881547f08f72",
+      "_id": "fc87881547f08f72"
     },
     {
       "range": [
@@ -1250,13 +811,8 @@
         89
       ],
       "text": "Tycoon",
-      "_id": "4c32755ab2e03891",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.4c32755ab2e03891"
+      "_key": "!tables.results!76cd6f5340a4978a.fdd96c6874d0db8e",
+      "_id": "fdd96c6874d0db8e"
     },
     {
       "range": [
@@ -1264,13 +820,8 @@
         90
       ],
       "text": "Vagabond",
-      "_id": "0da508b3bec556ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.0da508b3bec556ea"
+      "_key": "!tables.results!76cd6f5340a4978a.dc62ff598cf77d62",
+      "_id": "dc62ff598cf77d62"
     },
     {
       "range": [
@@ -1278,13 +829,8 @@
         91
       ],
       "text": "Valkyrie",
-      "_id": "1bd85db6070fa805",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.1bd85db6070fa805"
+      "_key": "!tables.results!76cd6f5340a4978a.866ed8664da36e99",
+      "_id": "866ed8664da36e99"
     },
     {
       "range": [
@@ -1292,13 +838,8 @@
         92
       ],
       "text": "Vanguard",
-      "_id": "130954abebd97dd2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.130954abebd97dd2"
+      "_key": "!tables.results!76cd6f5340a4978a.5cae3f31d310f29e",
+      "_id": "5cae3f31d310f29e"
     },
     {
       "range": [
@@ -1306,13 +847,8 @@
         93
       ],
       "text": "Vertigo",
-      "_id": "d6376e9ff775706e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.d6376e9ff775706e"
+      "_key": "!tables.results!76cd6f5340a4978a.b3d1a470529f7da4",
+      "_id": "b3d1a470529f7da4"
     },
     {
       "range": [
@@ -1320,13 +856,8 @@
         94
       ],
       "text": "Warden",
-      "_id": "1ca0c5faa029411e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.1ca0c5faa029411e"
+      "_key": "!tables.results!76cd6f5340a4978a.398c8d2daeee08e1",
+      "_id": "398c8d2daeee08e1"
     },
     {
       "range": [
@@ -1334,13 +865,8 @@
         95
       ],
       "text": "Watchdog",
-      "_id": "9ed671e84e9f9f98",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.9ed671e84e9f9f98"
+      "_key": "!tables.results!76cd6f5340a4978a.57fe86bbfbfc9cfe",
+      "_id": "57fe86bbfbfc9cfe"
     },
     {
       "range": [
@@ -1348,13 +874,8 @@
         96
       ],
       "text": "Wayfinder",
-      "_id": "4dad601c6e4fac25",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.4dad601c6e4fac25"
+      "_key": "!tables.results!76cd6f5340a4978a.f295bc3c75ac0a40",
+      "_id": "f295bc3c75ac0a40"
     },
     {
       "range": [
@@ -1362,13 +883,8 @@
         97
       ],
       "text": "Whisper",
-      "_id": "ef5544f9daa52479",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.ef5544f9daa52479"
+      "_key": "!tables.results!76cd6f5340a4978a.82bc00767bc790f2",
+      "_id": "82bc00767bc790f2"
     },
     {
       "range": [
@@ -1376,13 +892,8 @@
         98
       ],
       "text": "Wraith",
-      "_id": "a28234fb6850a5af",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.a28234fb6850a5af"
+      "_key": "!tables.results!76cd6f5340a4978a.d277055448187e02",
+      "_id": "d277055448187e02"
     },
     {
       "range": [
@@ -1390,13 +901,8 @@
         99
       ],
       "text": "Wrongway",
-      "_id": "b315733217a9db0c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.b315733217a9db0c"
+      "_key": "!tables.results!76cd6f5340a4978a.f0f41dbcb853fff3",
+      "_id": "f0f41dbcb853fff3"
     },
     {
       "range": [
@@ -1404,29 +910,12 @@
         100
       ],
       "text": "Zephyr",
-      "_id": "d4aae140cbcfb4b7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!76cd6f5340a4978a.d4aae140cbcfb4b7"
+      "_key": "!tables.results!76cd6f5340a4978a.09a91a3aca14646a",
+      "_id": "09a91a3aca14646a"
     }
   ],
   "folder": "8ebd29f45973010e",
-  "sort": 333,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!76cd6f5340a4978a"
 }

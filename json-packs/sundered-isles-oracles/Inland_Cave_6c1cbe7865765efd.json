@@ -1,0 +1,65 @@
+{
+  "_id": "6c1cbe7865765efd",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/scale",
+      "dsid": "oracle_rollable:sundered_isles/cave/scale/inland_cave"
+    }
+  },
+  "name": "Inland Cave",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Troublesome",
+      "_key": "!tables.results!6c1cbe7865765efd.a1b9b32652b02a12",
+      "_id": "a1b9b32652b02a12"
+    },
+    {
+      "range": [
+        21,
+        50
+      ],
+      "text": "Dangerous",
+      "_key": "!tables.results!6c1cbe7865765efd.d7835a76d4248d9d",
+      "_id": "d7835a76d4248d9d"
+    },
+    {
+      "range": [
+        51,
+        75
+      ],
+      "text": "Formidable",
+      "_key": "!tables.results!6c1cbe7865765efd.b487009864467ddb",
+      "_id": "b487009864467ddb"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "Extreme",
+      "_key": "!tables.results!6c1cbe7865765efd.45bdd2e6febde0c5",
+      "_id": "45bdd2e6febde0c5"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Epic",
+      "_key": "!tables.results!6c1cbe7865765efd.42a89be3df84f17e",
+      "_id": "42a89be3df84f17e"
+    }
+  ],
+  "folder": "53b08f0e8b3bdcb7",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6c1cbe7865765efd"
+}

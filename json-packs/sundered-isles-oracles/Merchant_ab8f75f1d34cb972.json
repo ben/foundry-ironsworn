@@ -1,0 +1,65 @@
+{
+  "_id": "ab8f75f1d34cb972",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/merchant"
+    }
+  },
+  "name": "Merchant",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Barkeep",
+      "_key": "!tables.results!ab8f75f1d34cb972.1c964d5f272103f1",
+      "_id": "1c964d5f272103f1"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Fence",
+      "_key": "!tables.results!ab8f75f1d34cb972.91a5afa88b65c0cb",
+      "_id": "91a5afa88b65c0cb"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Moneylender",
+      "_key": "!tables.results!ab8f75f1d34cb972.ba795e86cb27d334",
+      "_id": "ba795e86cb27d334"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Shopkeeper",
+      "_key": "!tables.results!ab8f75f1d34cb972.aec3cd3bd3c46ca5",
+      "_id": "aec3cd3bd3c46ca5"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Traveling merchant",
+      "_key": "!tables.results!ab8f75f1d34cb972.bb0287927b3cba5f",
+      "_id": "bb0287927b3cba5f"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ab8f75f1d34cb972"
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "084f870452cf433a",
+  "type": "progress",
+  "name": "Husk",
+  "img": "icons/magic/earth/strike-body-stone-crumble.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Withered flesh and black eyes</p>\n<p class=\"nogrow\">Clawed fingernails</p>\n<p class=\"nogrow\">Horrifying wail</p>\n<p class=\"nogrow\">Become more powerful</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Make others suffer as they have</p>\n<p class=\"nogrow\">Restore their former self</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Dishearten with a dreadful howl</p>\n<p class=\"nogrow\">Lash out with forbidden magic</p>\n<p class=\"nogrow\">Bind lesser creatures to their will</p>\n<p class=\"nogrow\">Consume the essence of others</p>\n</div>\n</div>\n\n<p>A husk is what remains of an Ironlander whose body, mind, and soul are hollowed out by dark magic. In their unquenchable thirst for power, they use their own essence to power foul rituals. Bit by bit, they give themselves to this ruinous path. They abandon their kin. They forsake their former lives. Their physical form wastes away. Their mind is shattered.</p>\n<p>In time, only the husk is left. They are a needful thing, tormented by the memory of all they have lost, but willing to lose even more in their quest for power.</p>\n<p>A husk may make tempting offers of rituals or rarities, but be wary. Their bargains are always in their own favor. When they turn against you, a husk is a cunning foe. They weave dreadful spells, summon swarms of lesser creatures, and unleash a savagery inflamed by their anguish.</p>\n\n<blockquote>Quest Starter: <p>Someone you are sworn to protect is stricken with a curse and falls into an unending sleep. Slowly, their heartbeat fades. They lie at the threshold between life and death. Your only hope lies with the husk who dwells in a nearby @Compendium[foundry-ironsworn.ironsworndelvethemes.0d16f80541657b28]{Infested} @Compendium[foundry-ironsworn.ironsworndelvedomains.bd208fdcb58e5485]{Shadowfen}. Will they have a cure? What will they demand in return?</p></blockquote>",
+    "rank": 3,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "4af1a4b568623aa9",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/ironlanders/husk"
+    }
+  },
+  "_key": "!items!084f870452cf433a"
+}

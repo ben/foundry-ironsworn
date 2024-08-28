@@ -1,0 +1,110 @@
+{
+  "_id": "e9b34943d6ff4723",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/discovery",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/discovery/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Adepts",
+      "_key": "!tables.results!e9b34943d6ff4723.090a7782765795b6",
+      "_id": "090a7782765795b6"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Archivists",
+      "_key": "!tables.results!e9b34943d6ff4723.7c7b816c5b43a990",
+      "_id": "7c7b816c5b43a990"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Beacons",
+      "_key": "!tables.results!e9b34943d6ff4723.f49df026b97134fc",
+      "_id": "f49df026b97134fc"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Couriers",
+      "_key": "!tables.results!e9b34943d6ff4723.45bcd6847562949c",
+      "_id": "45bcd6847562949c"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Guides",
+      "_key": "!tables.results!e9b34943d6ff4723.0c166aa8ca35fcf5",
+      "_id": "0c166aa8ca35fcf5"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Keepers",
+      "_key": "!tables.results!e9b34943d6ff4723.7292531db54a720d",
+      "_id": "7292531db54a720d"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Outlanders",
+      "_key": "!tables.results!e9b34943d6ff4723.1604646e073c9895",
+      "_id": "1604646e073c9895"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Seekers",
+      "_key": "!tables.results!e9b34943d6ff4723.9e4ff99fe126f016",
+      "_id": "9e4ff99fe126f016"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Venturers",
+      "_key": "!tables.results!e9b34943d6ff4723.e7ac373fad1b13b7",
+      "_id": "e7ac373fad1b13b7"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wayfinders",
+      "_key": "!tables.results!e9b34943d6ff4723.dfc408556038d5ce",
+      "_id": "dfc408556038d5ce"
+    }
+  ],
+  "folder": "4a7f5d2071294639",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e9b34943d6ff4723"
+}

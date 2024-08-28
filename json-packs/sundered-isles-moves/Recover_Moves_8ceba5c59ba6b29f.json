@@ -1,0 +1,16 @@
+{
+  "name": "Recover Moves",
+  "color": "#488B44",
+  "description": "",
+  "type": "Item",
+  "_id": "8ceba5c59ba6b29f",
+  "sort": 248,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "move_category:sundered_isles/recover"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!8ceba5c59ba6b29f"
+}

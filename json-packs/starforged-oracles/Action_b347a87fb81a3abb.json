@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Core/Action",
-      "category": "Starforged/Oracles/Core"
+      "category": "Starforged/Oracles/Core",
+      "dsid": "oracle_rollable:starforged/core/action"
     }
   },
   "name": "Action",
-  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} about a goal, situation, or event, roll for an Action and Theme. Together, these provide an interpretative verb/noun prompt.</p>",
-  "formula": "d100",
+  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} about a goal, situation, or event, roll for an @Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} and @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}. Together, these provide an interpretative verb/noun prompt.</p>",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         1
       ],
       "text": "Abandon",
-      "_id": "daa3fc694aec4c3f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.daa3fc694aec4c3f"
+      "_key": "!tables.results!b347a87fb81a3abb.123d384d80235ea9",
+      "_id": "123d384d80235ea9"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         2
       ],
       "text": "Acquire",
-      "_id": "4621539258a138df",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.4621539258a138df"
+      "_key": "!tables.results!b347a87fb81a3abb.ef7f1b53c5ec8df7",
+      "_id": "ef7f1b53c5ec8df7"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         3
       ],
       "text": "Advance",
-      "_id": "7630b39b7b583bdf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.7630b39b7b583bdf"
+      "_key": "!tables.results!b347a87fb81a3abb.b28026976fec8961",
+      "_id": "b28026976fec8961"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         4
       ],
       "text": "Affect",
-      "_id": "8cd678e8c80569b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.8cd678e8c80569b3"
+      "_key": "!tables.results!b347a87fb81a3abb.e0690f2795ed2fdb",
+      "_id": "e0690f2795ed2fdb"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         5
       ],
       "text": "Aid",
-      "_id": "0e224d5910e19a63",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.0e224d5910e19a63"
+      "_key": "!tables.results!b347a87fb81a3abb.6752eceaacaa28cc",
+      "_id": "6752eceaacaa28cc"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         6
       ],
       "text": "Arrive",
-      "_id": "8dbe60c48c5533ed",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.8dbe60c48c5533ed"
+      "_key": "!tables.results!b347a87fb81a3abb.06c1cc35d1dd4686",
+      "_id": "06c1cc35d1dd4686"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         7
       ],
       "text": "Assault",
-      "_id": "ea050dc04f5143a4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.ea050dc04f5143a4"
+      "_key": "!tables.results!b347a87fb81a3abb.0b9b9b32ffa767d5",
+      "_id": "0b9b9b32ffa767d5"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         8
       ],
       "text": "Attack",
-      "_id": "c613018feb2ecffb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.c613018feb2ecffb"
+      "_key": "!tables.results!b347a87fb81a3abb.df60e8e06754db7a",
+      "_id": "df60e8e06754db7a"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         9
       ],
       "text": "Avenge",
-      "_id": "9abd3bf761f00e9b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.9abd3bf761f00e9b"
+      "_key": "!tables.results!b347a87fb81a3abb.a991eadc4506bdd5",
+      "_id": "a991eadc4506bdd5"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         10
       ],
       "text": "Avoid",
-      "_id": "0fa1232aedd8e5c6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.0fa1232aedd8e5c6"
+      "_key": "!tables.results!b347a87fb81a3abb.a3744502f68b739b",
+      "_id": "a3744502f68b739b"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         11
       ],
       "text": "Await",
-      "_id": "70309b9fcb5fe186",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.70309b9fcb5fe186"
+      "_key": "!tables.results!b347a87fb81a3abb.6d1181cf445f90f2",
+      "_id": "6d1181cf445f90f2"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         12
       ],
       "text": "Begin",
-      "_id": "1816197826745a49",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.1816197826745a49"
+      "_key": "!tables.results!b347a87fb81a3abb.76bc18adcd12710d",
+      "_id": "76bc18adcd12710d"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         13
       ],
       "text": "Betray",
-      "_id": "06aac68d793a0cd5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.06aac68d793a0cd5"
+      "_key": "!tables.results!b347a87fb81a3abb.b4838886fdbf0ddd",
+      "_id": "b4838886fdbf0ddd"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         14
       ],
       "text": "Bolster",
-      "_id": "f28313a5632c2503",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.f28313a5632c2503"
+      "_key": "!tables.results!b347a87fb81a3abb.d64205f620928d7e",
+      "_id": "d64205f620928d7e"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         15
       ],
       "text": "Breach",
-      "_id": "32ccf2dff34c8f40",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.32ccf2dff34c8f40"
+      "_key": "!tables.results!b347a87fb81a3abb.d3a29ee95eef754b",
+      "_id": "d3a29ee95eef754b"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         16
       ],
       "text": "Break",
-      "_id": "bdadca0653466759",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.bdadca0653466759"
+      "_key": "!tables.results!b347a87fb81a3abb.9f3f3a589d52641a",
+      "_id": "9f3f3a589d52641a"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         17
       ],
       "text": "Capture",
-      "_id": "cbc09bc750e9182b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.cbc09bc750e9182b"
+      "_key": "!tables.results!b347a87fb81a3abb.e33b97956989e79b",
+      "_id": "e33b97956989e79b"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         18
       ],
       "text": "Challenge",
-      "_id": "942657f1aa446cd2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.942657f1aa446cd2"
+      "_key": "!tables.results!b347a87fb81a3abb.6c8b6a9129bf0ee7",
+      "_id": "6c8b6a9129bf0ee7"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         19
       ],
       "text": "Change",
-      "_id": "d43cd167c805e7e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.d43cd167c805e7e5"
+      "_key": "!tables.results!b347a87fb81a3abb.e56c12fe8932330d",
+      "_id": "e56c12fe8932330d"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         20
       ],
       "text": "Charge",
-      "_id": "f93a999f9e32f5eb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.f93a999f9e32f5eb"
+      "_key": "!tables.results!b347a87fb81a3abb.32340e1c2d59aa1d",
+      "_id": "32340e1c2d59aa1d"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         21
       ],
       "text": "Clash",
-      "_id": "04cbdac994266d08",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.04cbdac994266d08"
+      "_key": "!tables.results!b347a87fb81a3abb.a06aea2f577961c8",
+      "_id": "a06aea2f577961c8"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         22
       ],
       "text": "Command",
-      "_id": "7c4d0b5505e6b6d5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.7c4d0b5505e6b6d5"
+      "_key": "!tables.results!b347a87fb81a3abb.fad8110adbc68c0c",
+      "_id": "fad8110adbc68c0c"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         23
       ],
       "text": "Communicate",
-      "_id": "6998c4d6480808eb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.6998c4d6480808eb"
+      "_key": "!tables.results!b347a87fb81a3abb.f071910a012bfa68",
+      "_id": "f071910a012bfa68"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         24
       ],
       "text": "Construct",
-      "_id": "5f42414c05529f9e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.5f42414c05529f9e"
+      "_key": "!tables.results!b347a87fb81a3abb.aa21f613f6432c3d",
+      "_id": "aa21f613f6432c3d"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         25
       ],
       "text": "Control",
-      "_id": "8887e316062da630",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.8887e316062da630"
+      "_key": "!tables.results!b347a87fb81a3abb.0796006cc51b2539",
+      "_id": "0796006cc51b2539"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         26
       ],
       "text": "Coordinate",
-      "_id": "2d2d38ed172aec81",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.2d2d38ed172aec81"
+      "_key": "!tables.results!b347a87fb81a3abb.12c680b1be9df392",
+      "_id": "12c680b1be9df392"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         27
       ],
       "text": "Create",
-      "_id": "4bead01ff693ec1d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.4bead01ff693ec1d"
+      "_key": "!tables.results!b347a87fb81a3abb.bb191872b1bfae03",
+      "_id": "bb191872b1bfae03"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         28
       ],
       "text": "Debate",
-      "_id": "5806b9f2393fc273",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.5806b9f2393fc273"
+      "_key": "!tables.results!b347a87fb81a3abb.9c5b35cea4b0dd0f",
+      "_id": "9c5b35cea4b0dd0f"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         29
       ],
       "text": "Defeat",
-      "_id": "b12e9b32945631cf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.b12e9b32945631cf"
+      "_key": "!tables.results!b347a87fb81a3abb.dad92d7ef772e861",
+      "_id": "dad92d7ef772e861"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         30
       ],
       "text": "Defend",
-      "_id": "ce8bb6edfea615e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.ce8bb6edfea615e5"
+      "_key": "!tables.results!b347a87fb81a3abb.2b9ea15a061e8669",
+      "_id": "2b9ea15a061e8669"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         31
       ],
       "text": "Deflect",
-      "_id": "1fd7764ba983ee07",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.1fd7764ba983ee07"
+      "_key": "!tables.results!b347a87fb81a3abb.f56e1002aad4f366",
+      "_id": "f56e1002aad4f366"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         32
       ],
       "text": "Defy",
-      "_id": "042f3282111cc2f1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.042f3282111cc2f1"
+      "_key": "!tables.results!b347a87fb81a3abb.e8651da0fa6f1d74",
+      "_id": "e8651da0fa6f1d74"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         33
       ],
       "text": "Deliver",
-      "_id": "3ae8f7e2a845a641",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.3ae8f7e2a845a641"
+      "_key": "!tables.results!b347a87fb81a3abb.7beebaccbb36ffe6",
+      "_id": "7beebaccbb36ffe6"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         34
       ],
       "text": "Demand",
-      "_id": "b7f7b630c1561646",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.b7f7b630c1561646"
+      "_key": "!tables.results!b347a87fb81a3abb.b42d290376535018",
+      "_id": "b42d290376535018"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         35
       ],
       "text": "Depart",
-      "_id": "bafd54c121e13a80",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.bafd54c121e13a80"
+      "_key": "!tables.results!b347a87fb81a3abb.00defdf7ac870bbb",
+      "_id": "00defdf7ac870bbb"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         36
       ],
       "text": "Destroy",
-      "_id": "b3f47823e79c9943",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.b3f47823e79c9943"
+      "_key": "!tables.results!b347a87fb81a3abb.db17805c11f0f539",
+      "_id": "db17805c11f0f539"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         37
       ],
       "text": "Distract",
-      "_id": "c5d3780781c22e79",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.c5d3780781c22e79"
+      "_key": "!tables.results!b347a87fb81a3abb.9ec7c18b7b7f01ab",
+      "_id": "9ec7c18b7b7f01ab"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         38
       ],
       "text": "Eliminate",
-      "_id": "7ef33b662af4a775",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.7ef33b662af4a775"
+      "_key": "!tables.results!b347a87fb81a3abb.b192c68a980cd653",
+      "_id": "b192c68a980cd653"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         39
       ],
       "text": "Endure",
-      "_id": "c36674df187417dd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.c36674df187417dd"
+      "_key": "!tables.results!b347a87fb81a3abb.c2484112a4529a97",
+      "_id": "c2484112a4529a97"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         40
       ],
       "text": "Escalate",
-      "_id": "e640c562ba7368c6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.e640c562ba7368c6"
+      "_key": "!tables.results!b347a87fb81a3abb.7746827780ccf8fa",
+      "_id": "7746827780ccf8fa"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         41
       ],
       "text": "Escort",
-      "_id": "46d107b50d4684ef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.46d107b50d4684ef"
+      "_key": "!tables.results!b347a87fb81a3abb.e9a7459eb63355ee",
+      "_id": "e9a7459eb63355ee"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         42
       ],
       "text": "Evade",
-      "_id": "185081048c086f9a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.185081048c086f9a"
+      "_key": "!tables.results!b347a87fb81a3abb.a98ebde86312084a",
+      "_id": "a98ebde86312084a"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         43
       ],
       "text": "Explore",
-      "_id": "2a2277d74f102719",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.2a2277d74f102719"
+      "_key": "!tables.results!b347a87fb81a3abb.2068dfd7cf777702",
+      "_id": "2068dfd7cf777702"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         44
       ],
       "text": "Falter",
-      "_id": "188c3c50c9f9e76a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.188c3c50c9f9e76a"
+      "_key": "!tables.results!b347a87fb81a3abb.d44647f61c577c45",
+      "_id": "d44647f61c577c45"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         45
       ],
       "text": "Find",
-      "_id": "ae86f86ce16ea314",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.ae86f86ce16ea314"
+      "_key": "!tables.results!b347a87fb81a3abb.ee62bac338ad893b",
+      "_id": "ee62bac338ad893b"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         46
       ],
       "text": "Finish",
-      "_id": "91a1a7938410772b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.91a1a7938410772b"
+      "_key": "!tables.results!b347a87fb81a3abb.7736f2c5600202c3",
+      "_id": "7736f2c5600202c3"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         47
       ],
       "text": "Focus",
-      "_id": "43a84e037db065e6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.43a84e037db065e6"
+      "_key": "!tables.results!b347a87fb81a3abb.abec924b0bd87005",
+      "_id": "abec924b0bd87005"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         48
       ],
       "text": "Follow",
-      "_id": "431088783026672f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.431088783026672f"
+      "_key": "!tables.results!b347a87fb81a3abb.d83ba8857de2ab9e",
+      "_id": "d83ba8857de2ab9e"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         49
       ],
       "text": "Fortify",
-      "_id": "d2aaf3107566bf62",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.d2aaf3107566bf62"
+      "_key": "!tables.results!b347a87fb81a3abb.82e636c489c47adf",
+      "_id": "82e636c489c47adf"
     },
     {
       "range": [
@@ -704,13 +460,8 @@
         50
       ],
       "text": "Gather",
-      "_id": "705c18ab6ddebea6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.705c18ab6ddebea6"
+      "_key": "!tables.results!b347a87fb81a3abb.2e296e9ad1407cb1",
+      "_id": "2e296e9ad1407cb1"
     },
     {
       "range": [
@@ -718,13 +469,8 @@
         51
       ],
       "text": "Guard",
-      "_id": "028289bc9b1f028d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.028289bc9b1f028d"
+      "_key": "!tables.results!b347a87fb81a3abb.f1fdad98f674cc2d",
+      "_id": "f1fdad98f674cc2d"
     },
     {
       "range": [
@@ -732,13 +478,8 @@
         52
       ],
       "text": "Hide",
-      "_id": "9b342f25a4ea3317",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.9b342f25a4ea3317"
+      "_key": "!tables.results!b347a87fb81a3abb.7557513588592a13",
+      "_id": "7557513588592a13"
     },
     {
       "range": [
@@ -746,13 +487,8 @@
         53
       ],
       "text": "Hold",
-      "_id": "5914d2c40f7f91c1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.5914d2c40f7f91c1"
+      "_key": "!tables.results!b347a87fb81a3abb.18c373f749c17166",
+      "_id": "18c373f749c17166"
     },
     {
       "range": [
@@ -760,13 +496,8 @@
         54
       ],
       "text": "Hunt",
-      "_id": "6445aae07068e132",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.6445aae07068e132"
+      "_key": "!tables.results!b347a87fb81a3abb.b8e9cd42dd2ba272",
+      "_id": "b8e9cd42dd2ba272"
     },
     {
       "range": [
@@ -774,13 +505,8 @@
         55
       ],
       "text": "Impress",
-      "_id": "6aba504a9f482829",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.6aba504a9f482829"
+      "_key": "!tables.results!b347a87fb81a3abb.662cb7aaf55453ce",
+      "_id": "662cb7aaf55453ce"
     },
     {
       "range": [
@@ -788,13 +514,8 @@
         56
       ],
       "text": "Initiate",
-      "_id": "d6fbd8416ea88667",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.d6fbd8416ea88667"
+      "_key": "!tables.results!b347a87fb81a3abb.7d0bbc2b142b5a4e",
+      "_id": "7d0bbc2b142b5a4e"
     },
     {
       "range": [
@@ -802,13 +523,8 @@
         57
       ],
       "text": "Inspect",
-      "_id": "15ab28f7f4bf3871",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.15ab28f7f4bf3871"
+      "_key": "!tables.results!b347a87fb81a3abb.2ec3a008b7f95484",
+      "_id": "2ec3a008b7f95484"
     },
     {
       "range": [
@@ -816,13 +532,8 @@
         58
       ],
       "text": "Investigate",
-      "_id": "f83cbfd17e8f08f6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.f83cbfd17e8f08f6"
+      "_key": "!tables.results!b347a87fb81a3abb.667a99a882ec599c",
+      "_id": "667a99a882ec599c"
     },
     {
       "range": [
@@ -830,13 +541,8 @@
         59
       ],
       "text": "Journey",
-      "_id": "40aabfde0c52167d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.40aabfde0c52167d"
+      "_key": "!tables.results!b347a87fb81a3abb.a381b576b32012a5",
+      "_id": "a381b576b32012a5"
     },
     {
       "range": [
@@ -844,13 +550,8 @@
         60
       ],
       "text": "Learn",
-      "_id": "c947f923b4e5b2c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.c947f923b4e5b2c5"
+      "_key": "!tables.results!b347a87fb81a3abb.3f4332ce3c7e3f89",
+      "_id": "3f4332ce3c7e3f89"
     },
     {
       "range": [
@@ -858,13 +559,8 @@
         61
       ],
       "text": "Leave",
-      "_id": "a965bc7d9ed1af19",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.a965bc7d9ed1af19"
+      "_key": "!tables.results!b347a87fb81a3abb.868a93a5bc30ca7c",
+      "_id": "868a93a5bc30ca7c"
     },
     {
       "range": [
@@ -872,13 +568,8 @@
         62
       ],
       "text": "Locate",
-      "_id": "73703c2879b9b67f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.73703c2879b9b67f"
+      "_key": "!tables.results!b347a87fb81a3abb.8c8be2e17bdb14cc",
+      "_id": "8c8be2e17bdb14cc"
     },
     {
       "range": [
@@ -886,13 +577,8 @@
         63
       ],
       "text": "Lose",
-      "_id": "95bc5d9cfe063f1c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.95bc5d9cfe063f1c"
+      "_key": "!tables.results!b347a87fb81a3abb.1f59b3f30aa21034",
+      "_id": "1f59b3f30aa21034"
     },
     {
       "range": [
@@ -900,13 +586,8 @@
         64
       ],
       "text": "Manipulate",
-      "_id": "79fb76811cbbb1d9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.79fb76811cbbb1d9"
+      "_key": "!tables.results!b347a87fb81a3abb.a3a4cfe1fa90b97a",
+      "_id": "a3a4cfe1fa90b97a"
     },
     {
       "range": [
@@ -914,13 +595,8 @@
         65
       ],
       "text": "Mourn",
-      "_id": "6ff80b3bd36c91b6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.6ff80b3bd36c91b6"
+      "_key": "!tables.results!b347a87fb81a3abb.710781c2d6754bea",
+      "_id": "710781c2d6754bea"
     },
     {
       "range": [
@@ -928,13 +604,8 @@
         66
       ],
       "text": "Move",
-      "_id": "73c2e1f3586bd411",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.73c2e1f3586bd411"
+      "_key": "!tables.results!b347a87fb81a3abb.b9cfe6982e0b5db0",
+      "_id": "b9cfe6982e0b5db0"
     },
     {
       "range": [
@@ -942,13 +613,8 @@
         67
       ],
       "text": "Oppose",
-      "_id": "0eb6e907a186f436",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.0eb6e907a186f436"
+      "_key": "!tables.results!b347a87fb81a3abb.2ca686ebd2b790ee",
+      "_id": "2ca686ebd2b790ee"
     },
     {
       "range": [
@@ -956,13 +622,8 @@
         68
       ],
       "text": "Overwhelm",
-      "_id": "4e9e697f63646a3c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.4e9e697f63646a3c"
+      "_key": "!tables.results!b347a87fb81a3abb.be380d0c97235302",
+      "_id": "be380d0c97235302"
     },
     {
       "range": [
@@ -970,13 +631,8 @@
         69
       ],
       "text": "Persevere",
-      "_id": "77170f13ea5f1a36",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.77170f13ea5f1a36"
+      "_key": "!tables.results!b347a87fb81a3abb.635788a6d05b94eb",
+      "_id": "635788a6d05b94eb"
     },
     {
       "range": [
@@ -984,13 +640,8 @@
         70
       ],
       "text": "Preserve",
-      "_id": "4d5e733a0cfdadd9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.4d5e733a0cfdadd9"
+      "_key": "!tables.results!b347a87fb81a3abb.2f876fcc98d780c2",
+      "_id": "2f876fcc98d780c2"
     },
     {
       "range": [
@@ -998,13 +649,8 @@
         71
       ],
       "text": "Protect",
-      "_id": "5c2d685babe79d77",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.5c2d685babe79d77"
+      "_key": "!tables.results!b347a87fb81a3abb.7e41209c0a4ba950",
+      "_id": "7e41209c0a4ba950"
     },
     {
       "range": [
@@ -1012,13 +658,8 @@
         72
       ],
       "text": "Raid",
-      "_id": "776cd7aa9fcd5eb0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.776cd7aa9fcd5eb0"
+      "_key": "!tables.results!b347a87fb81a3abb.ef0b3909d776f017",
+      "_id": "ef0b3909d776f017"
     },
     {
       "range": [
@@ -1026,13 +667,8 @@
         73
       ],
       "text": "Reduce",
-      "_id": "17ade629f9a02865",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.17ade629f9a02865"
+      "_key": "!tables.results!b347a87fb81a3abb.96c7cf6f6314219a",
+      "_id": "96c7cf6f6314219a"
     },
     {
       "range": [
@@ -1040,13 +676,8 @@
         74
       ],
       "text": "Refuse",
-      "_id": "d759bde97b0b0a10",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.d759bde97b0b0a10"
+      "_key": "!tables.results!b347a87fb81a3abb.e0bc14776056b432",
+      "_id": "e0bc14776056b432"
     },
     {
       "range": [
@@ -1054,13 +685,8 @@
         75
       ],
       "text": "Reject",
-      "_id": "8b61db0e75f9e22c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.8b61db0e75f9e22c"
+      "_key": "!tables.results!b347a87fb81a3abb.9982ca5c7cf53604",
+      "_id": "9982ca5c7cf53604"
     },
     {
       "range": [
@@ -1068,13 +694,8 @@
         76
       ],
       "text": "Release",
-      "_id": "4051a1f15255cc02",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.4051a1f15255cc02"
+      "_key": "!tables.results!b347a87fb81a3abb.e99c4cb903d2dcb1",
+      "_id": "e99c4cb903d2dcb1"
     },
     {
       "range": [
@@ -1082,13 +703,8 @@
         77
       ],
       "text": "Remove",
-      "_id": "dc9aef9b8c64579a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.dc9aef9b8c64579a"
+      "_key": "!tables.results!b347a87fb81a3abb.f2b4deb6ab2e04f4",
+      "_id": "f2b4deb6ab2e04f4"
     },
     {
       "range": [
@@ -1096,13 +712,8 @@
         78
       ],
       "text": "Research",
-      "_id": "fe93bda957c60174",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.fe93bda957c60174"
+      "_key": "!tables.results!b347a87fb81a3abb.b4f2cd0406d80344",
+      "_id": "b4f2cd0406d80344"
     },
     {
       "range": [
@@ -1110,13 +721,8 @@
         79
       ],
       "text": "Resist",
-      "_id": "ecfd3611583b8940",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.ecfd3611583b8940"
+      "_key": "!tables.results!b347a87fb81a3abb.36b6e618c9261780",
+      "_id": "36b6e618c9261780"
     },
     {
       "range": [
@@ -1124,13 +730,8 @@
         80
       ],
       "text": "Restore",
-      "_id": "7334ac01f902be10",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.7334ac01f902be10"
+      "_key": "!tables.results!b347a87fb81a3abb.b11fcd33db3846ec",
+      "_id": "b11fcd33db3846ec"
     },
     {
       "range": [
@@ -1138,13 +739,8 @@
         81
       ],
       "text": "Reveal",
-      "_id": "7f6e34d1b8a7138f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.7f6e34d1b8a7138f"
+      "_key": "!tables.results!b347a87fb81a3abb.fb0a7fdf99561025",
+      "_id": "fb0a7fdf99561025"
     },
     {
       "range": [
@@ -1152,13 +748,8 @@
         82
       ],
       "text": "Risk",
-      "_id": "8e632e74e58d813b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.8e632e74e58d813b"
+      "_key": "!tables.results!b347a87fb81a3abb.0ea62069b74642c9",
+      "_id": "0ea62069b74642c9"
     },
     {
       "range": [
@@ -1166,13 +757,8 @@
         83
       ],
       "text": "Scheme",
-      "_id": "e1bb82609ffce4b5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.e1bb82609ffce4b5"
+      "_key": "!tables.results!b347a87fb81a3abb.e34687beb572376c",
+      "_id": "e34687beb572376c"
     },
     {
       "range": [
@@ -1180,13 +766,8 @@
         84
       ],
       "text": "Search",
-      "_id": "f26d11830e00332f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.f26d11830e00332f"
+      "_key": "!tables.results!b347a87fb81a3abb.ed887658c6773307",
+      "_id": "ed887658c6773307"
     },
     {
       "range": [
@@ -1194,13 +775,8 @@
         85
       ],
       "text": "Secure",
-      "_id": "ab49b13a30c85c8a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.ab49b13a30c85c8a"
+      "_key": "!tables.results!b347a87fb81a3abb.ef0ce7a6a35adb38",
+      "_id": "ef0ce7a6a35adb38"
     },
     {
       "range": [
@@ -1208,13 +784,8 @@
         86
       ],
       "text": "Seize",
-      "_id": "68b7bbb464148d07",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.68b7bbb464148d07"
+      "_key": "!tables.results!b347a87fb81a3abb.9b3841ef89d1453c",
+      "_id": "9b3841ef89d1453c"
     },
     {
       "range": [
@@ -1222,13 +793,8 @@
         87
       ],
       "text": "Serve",
-      "_id": "2710df9480547720",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.2710df9480547720"
+      "_key": "!tables.results!b347a87fb81a3abb.837bd4728ddef9aa",
+      "_id": "837bd4728ddef9aa"
     },
     {
       "range": [
@@ -1236,13 +802,8 @@
         88
       ],
       "text": "Share",
-      "_id": "c6eccbb67111b8c9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.c6eccbb67111b8c9"
+      "_key": "!tables.results!b347a87fb81a3abb.2f47e5e5c1129ba0",
+      "_id": "2f47e5e5c1129ba0"
     },
     {
       "range": [
@@ -1250,13 +811,8 @@
         89
       ],
       "text": "Strengthen",
-      "_id": "54ce3ddaf0e34f35",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.54ce3ddaf0e34f35"
+      "_key": "!tables.results!b347a87fb81a3abb.2793c2c57b7b751c",
+      "_id": "2793c2c57b7b751c"
     },
     {
       "range": [
@@ -1264,13 +820,8 @@
         90
       ],
       "text": "Summon",
-      "_id": "1efa794ccd8eb513",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.1efa794ccd8eb513"
+      "_key": "!tables.results!b347a87fb81a3abb.a2583127db5eb64c",
+      "_id": "a2583127db5eb64c"
     },
     {
       "range": [
@@ -1278,13 +829,8 @@
         91
       ],
       "text": "Support",
-      "_id": "4f9137de66e988b6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.4f9137de66e988b6"
+      "_key": "!tables.results!b347a87fb81a3abb.aa556a03151d2432",
+      "_id": "aa556a03151d2432"
     },
     {
       "range": [
@@ -1292,13 +838,8 @@
         92
       ],
       "text": "Suppress",
-      "_id": "805be30b1eb2a850",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.805be30b1eb2a850"
+      "_key": "!tables.results!b347a87fb81a3abb.2ddf70fcb5305dbf",
+      "_id": "2ddf70fcb5305dbf"
     },
     {
       "range": [
@@ -1306,13 +847,8 @@
         93
       ],
       "text": "Surrender",
-      "_id": "03c65d521bf9c04d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.03c65d521bf9c04d"
+      "_key": "!tables.results!b347a87fb81a3abb.654c06bbcf4d0d88",
+      "_id": "654c06bbcf4d0d88"
     },
     {
       "range": [
@@ -1320,13 +856,8 @@
         94
       ],
       "text": "Swear",
-      "_id": "159253987edffa82",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.159253987edffa82"
+      "_key": "!tables.results!b347a87fb81a3abb.13b683ea487a1274",
+      "_id": "13b683ea487a1274"
     },
     {
       "range": [
@@ -1334,13 +865,8 @@
         95
       ],
       "text": "Threaten",
-      "_id": "596a8f450e95ebcc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.596a8f450e95ebcc"
+      "_key": "!tables.results!b347a87fb81a3abb.75186ac80c364f40",
+      "_id": "75186ac80c364f40"
     },
     {
       "range": [
@@ -1348,13 +874,8 @@
         96
       ],
       "text": "Transform",
-      "_id": "20782d60c3330680",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.20782d60c3330680"
+      "_key": "!tables.results!b347a87fb81a3abb.5a9999e5799c4404",
+      "_id": "5a9999e5799c4404"
     },
     {
       "range": [
@@ -1362,13 +883,8 @@
         97
       ],
       "text": "Uncover",
-      "_id": "c30fc18693ff84a1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.c30fc18693ff84a1"
+      "_key": "!tables.results!b347a87fb81a3abb.018e3d9872f76de9",
+      "_id": "018e3d9872f76de9"
     },
     {
       "range": [
@@ -1376,13 +892,8 @@
         98
       ],
       "text": "Uphold",
-      "_id": "d3123ca816764a18",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.d3123ca816764a18"
+      "_key": "!tables.results!b347a87fb81a3abb.20117d7a95ac94b9",
+      "_id": "20117d7a95ac94b9"
     },
     {
       "range": [
@@ -1390,13 +901,8 @@
         99
       ],
       "text": "Weaken",
-      "_id": "ff2b461c6b559a41",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.ff2b461c6b559a41"
+      "_key": "!tables.results!b347a87fb81a3abb.0cc39192154eaaa3",
+      "_id": "0cc39192154eaaa3"
     },
     {
       "range": [
@@ -1404,29 +910,12 @@
         100
       ],
       "text": "Withdraw",
-      "_id": "f1248a3e85f6f7a4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b347a87fb81a3abb.f1248a3e85f6f7a4"
+      "_key": "!tables.results!b347a87fb81a3abb.9b7bcd10907ee658",
+      "_id": "9b7bcd10907ee658"
     }
   ],
   "folder": "312c7e84afc43125",
   "sort": 296,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!b347a87fb81a3abb"
 }

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Vital/Diversity",
-      "category": "Starforged/Oracles/Planets/Vital"
+      "category": "Starforged/Oracles/Planets/Vital",
+      "dsid": "oracle_rollable:starforged/planet/vital/diversity"
     }
   },
   "name": "Diversity",
   "description": "<p>To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Simple (two biomes)",
-      "_id": "b30b55594927f44f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2ccc456d0af8d199.b30b55594927f44f"
+      "_key": "!tables.results!2ccc456d0af8d199.779399daa5ff8a51",
+      "_id": "779399daa5ff8a51"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         70
       ],
       "text": "Diverse (three biomes)",
-      "_id": "f37ec49c5387aeb4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2ccc456d0af8d199.f37ec49c5387aeb4"
+      "_key": "!tables.results!2ccc456d0af8d199.178789e2d24a1b36",
+      "_id": "178789e2d24a1b36"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         90
       ],
       "text": "Complex (four biomes)",
-      "_id": "d3e03dd226d5bd25",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2ccc456d0af8d199.d3e03dd226d5bd25"
+      "_key": "!tables.results!2ccc456d0af8d199.902908ec4782a102",
+      "_id": "902908ec4782a102"
     },
     {
       "range": [
@@ -60,29 +46,12 @@
         100
       ],
       "text": "Garden world (five or more biomes)",
-      "_id": "df3f76c7408b48e2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2ccc456d0af8d199.df3f76c7408b48e2"
+      "_key": "!tables.results!2ccc456d0af8d199.b70ab4210358437f",
+      "_id": "b70ab4210358437f"
     }
   ],
   "folder": "93ecb6acb6a3ea17",
   "sort": 318,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!2ccc456d0af8d199"
 }

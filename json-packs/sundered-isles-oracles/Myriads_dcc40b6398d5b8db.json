@@ -1,0 +1,92 @@
+{
+  "_id": "dcc40b6398d5b8db",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/waypoints",
+      "dsid": "oracle_rollable:sundered_isles/overland/waypoints/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "<strong>Feature of the landscape</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/overland/region_landmarks\">\n    <i class=\"fa fa-caret-right\"></i> Region Landmark\n</a></p>",
+      "_key": "!tables.results!dcc40b6398d5b8db.ab871543392b1c70",
+      "_id": "ab871543392b1c70"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "<p><strong>Changing landscape</strong>\n@Compendium[foundry-ironsworn.sunderedislesoracles.d492a277bfe267fa]{Overland Region}</p>",
+      "_key": "!tables.results!dcc40b6398d5b8db.818a8ce5a3665659",
+      "_id": "818a8ce5a3665659"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "<strong>Changing weather</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/weather\">\n    <i class=\"fa fa-caret-right\"></i> Weather\n</a></p>",
+      "_key": "!tables.results!dcc40b6398d5b8db.61e024abf516df65",
+      "_id": "61e024abf516df65"
+    },
+    {
+      "range": [
+        36,
+        55
+      ],
+      "text": "<strong>Instance (choose one)</strong>\n<ul>\n<li>@Compendium[foundry-ironsworn.sunderedislesoracles.1ee2d9f3f3344aa4]{Overland Details}</li>\n<li>@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}</li>\n</ul>",
+      "_key": "!tables.results!dcc40b6398d5b8db.10eceba48108c385",
+      "_id": "10eceba48108c385"
+    },
+    {
+      "range": [
+        56,
+        70
+      ],
+      "text": "<strong>Inland community</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/settlement\">\n    <i class=\"fa fa-caret-right\"></i> Settlement\n</a></p>",
+      "_key": "!tables.results!dcc40b6398d5b8db.7783e34fb5d2b281",
+      "_id": "7783e34fb5d2b281"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "<strong>Relic of the past</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/ruin\">\n    <i class=\"fa fa-caret-right\"></i> Ruin\n</a></p>",
+      "_key": "!tables.results!dcc40b6398d5b8db.bcd7a9e2ea11ebb1",
+      "_id": "bcd7a9e2ea11ebb1"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "<p><strong>Character focus</strong>\n@Compendium[foundry-ironsworn.sunderedislesoracles.915f8d4f02c33d8e]{Interlude Scene}</p>",
+      "_key": "!tables.results!dcc40b6398d5b8db.46626b8b212c0344",
+      "_id": "46626b8b212c0344"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!dcc40b6398d5b8db.e3d62edaca3b740b",
+      "_id": "e3d62edaca3b740b"
+    }
+  ],
+  "folder": "5f98ae68ea50413f",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!dcc40b6398d5b8db"
+}

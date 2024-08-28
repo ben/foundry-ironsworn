@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Research/Area",
-      "category": "Starforged/Oracles/Derelicts/Research"
+      "category": "Starforged/Oracles/Derelicts/Research",
+      "dsid": "oracle_rollable:starforged/derelict/research/area"
     }
   },
   "name": "Area",
   "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Clean room",
-      "_id": "5a7d88a963fefe4d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.5a7d88a963fefe4d"
+      "_key": "!tables.results!0e66b89545db4cc9.d61e552806e597fd",
+      "_id": "d61e552806e597fd"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Cold storage",
-      "_id": "158f293d4f4fee89",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.158f293d4f4fee89"
+      "_key": "!tables.results!0e66b89545db4cc9.d3b732fc9803fc7e",
+      "_id": "d3b732fc9803fc7e"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Creature or animal pens",
-      "_id": "cac0acbb27e52d60",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.cac0acbb27e52d60"
+      "_key": "!tables.results!0e66b89545db4cc9.4cde833a3d3ebcb8",
+      "_id": "4cde833a3d3ebcb8"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Decontamination room",
-      "_id": "2c75f4b5a7da1aa5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.2c75f4b5a7da1aa5"
+      "_key": "!tables.results!0e66b89545db4cc9.721a37b423680087",
+      "_id": "721a37b423680087"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Hazardous material storage",
-      "_id": "45fc682d78aacccb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.45fc682d78aacccb"
+      "_key": "!tables.results!0e66b89545db4cc9.c030ba820a2804f0",
+      "_id": "c030ba820a2804f0"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Hydroponics or agriculture",
-      "_id": "177396fde844178e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.177396fde844178e"
+      "_key": "!tables.results!0e66b89545db4cc9.2c5029e3f9b2cb72",
+      "_id": "2c5029e3f9b2cb72"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Isolation or containment",
-      "_id": "3cdf943f3865cf9a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.3cdf943f3865cf9a"
+      "_key": "!tables.results!0e66b89545db4cc9.6315291db138eeaa",
+      "_id": "6315291db138eeaa"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Lab",
-      "_id": "c70b2b4c2b7ebc4f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.c70b2b4c2b7ebc4f"
+      "_key": "!tables.results!0e66b89545db4cc9.8c250fd82b02953c",
+      "_id": "8c250fd82b02953c"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Library or records",
-      "_id": "358dd6946307be3e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.358dd6946307be3e"
+      "_key": "!tables.results!0e66b89545db4cc9.f09c311cdcd859f3",
+      "_id": "f09c311cdcd859f3"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Secure vault",
-      "_id": "bd77896db1d78901",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.bd77896db1d78901"
+      "_key": "!tables.results!0e66b89545db4cc9.4e48f3e0e01b96aa",
+      "_id": "4e48f3e0e01b96aa"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         85
       ],
       "text": "New zone",
-      "_id": "e76d607a36c8e5f3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.e76d607a36c8e5f3"
+      "_key": "!tables.results!0e66b89545db4cc9.2a3fe1cfce4aa1b5",
+      "_id": "2a3fe1cfce4aa1b5"
     },
     {
       "range": [
         86,
         100
       ],
-      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
-      "_id": "38a5bfd39c90ef97",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e66b89545db4cc9.38a5bfd39c90ef97"
+      "text": "<p>New zone via \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/access\">\n    <i class=\"fa fa-caret-right\"></i> Access\n</a></p>",
+      "_key": "!tables.results!0e66b89545db4cc9.1493a3275f475d5c",
+      "_id": "1493a3275f475d5c"
     }
   ],
   "folder": "9987a5b1c316f884",
   "sort": 359,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!0e66b89545db4cc9"
 }

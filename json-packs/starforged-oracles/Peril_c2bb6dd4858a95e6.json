@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Medical/Peril",
-      "category": "Starforged/Oracles/Derelicts/Medical"
+      "category": "Starforged/Oracles/Derelicts/Medical",
+      "dsid": "oracle_rollable:starforged/derelict/medical/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Disgusting sight / smell",
-      "_id": "c75636cc6d28bf38",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.c75636cc6d28bf38"
+      "_key": "!tables.results!c2bb6dd4858a95e6.99a02fdd210292af",
+      "_id": "99a02fdd210292af"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Disturbing evidence of medical misconduct",
-      "_id": "68d1efa0bac5f7ef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.68d1efa0bac5f7ef"
+      "_key": "!tables.results!c2bb6dd4858a95e6.f225c1d10ca5f63a",
+      "_id": "f225c1d10ca5f63a"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Erratic medical bots",
-      "_id": "c78a63e3421562f0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.c78a63e3421562f0"
+      "_key": "!tables.results!c2bb6dd4858a95e6.a47d101f8376d045",
+      "_id": "a47d101f8376d045"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Evidence of a virulent disease",
-      "_id": "39b527d035a35f87",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.39b527d035a35f87"
+      "_key": "!tables.results!c2bb6dd4858a95e6.d591d6eb64a53104",
+      "_id": "d591d6eb64a53104"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Malfunctioning medical equipment",
-      "_id": "122ae946ae2a3ef7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.122ae946ae2a3ef7"
+      "_key": "!tables.results!c2bb6dd4858a95e6.f1196242dc9d251a",
+      "_id": "f1196242dc9d251a"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Repercussions of a medical experiment",
-      "_id": "27f977ade3a4747c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.27f977ade3a4747c"
+      "_key": "!tables.results!c2bb6dd4858a95e6.b673186b8134bb22",
+      "_id": "b673186b8134bb22"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Restless dead",
-      "_id": "18b2b08b22c8248d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.18b2b08b22c8248d"
+      "_key": "!tables.results!c2bb6dd4858a95e6.34e29a4a6ec515f7",
+      "_id": "34e29a4a6ec515f7"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Signs of a horrific death",
-      "_id": "b7bab80fde7bef68",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.b7bab80fde7bef68"
+      "_key": "!tables.results!c2bb6dd4858a95e6.107f1d3dc5c44144",
+      "_id": "107f1d3dc5c44144"
     },
     {
       "range": [
@@ -130,27 +91,17 @@
         90
       ],
       "text": "Signs of broken quarantine",
-      "_id": "95769ae3055357c3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.95769ae3055357c3"
+      "_key": "!tables.results!c2bb6dd4858a95e6.3e155dbcf82e7637",
+      "_id": "3e155dbcf82e7637"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "18708179e66a5f94",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.18708179e66a5f94"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!c2bb6dd4858a95e6.979e303df099ff0d",
+      "_id": "979e303df099ff0d"
     },
     {
       "range": [
@@ -158,29 +109,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "af18deab639b37c3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c2bb6dd4858a95e6.af18deab639b37c3"
+      "_key": "!tables.results!c2bb6dd4858a95e6.3640b8b721ebbf04",
+      "_id": "3640b8b721ebbf04"
     }
   ],
   "folder": "1a41c444d69ea97d",
   "sort": 356,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!c2bb6dd4858a95e6"
 }

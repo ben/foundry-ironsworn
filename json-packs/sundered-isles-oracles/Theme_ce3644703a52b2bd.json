@@ -1,0 +1,920 @@
+{
+  "_id": "ce3644703a52b2bd",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/core",
+      "dsid": "oracle_rollable:sundered_isles/core/theme"
+    }
+  },
+  "name": "Theme",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Ability",
+      "_key": "!tables.results!ce3644703a52b2bd.b8e9e9826d7b249a",
+      "_id": "b8e9e9826d7b249a"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Advantage",
+      "_key": "!tables.results!ce3644703a52b2bd.23be3f656c0d2849",
+      "_id": "23be3f656c0d2849"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Alliance",
+      "_key": "!tables.results!ce3644703a52b2bd.801b8df039cdf924",
+      "_id": "801b8df039cdf924"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Authority",
+      "_key": "!tables.results!ce3644703a52b2bd.9539a673c76bbf8a",
+      "_id": "9539a673c76bbf8a"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Balance",
+      "_key": "!tables.results!ce3644703a52b2bd.835a056d5f479f8f",
+      "_id": "835a056d5f479f8f"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Barrier",
+      "_key": "!tables.results!ce3644703a52b2bd.51d4db8a1b2dfa8e",
+      "_id": "51d4db8a1b2dfa8e"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Belief",
+      "_key": "!tables.results!ce3644703a52b2bd.aacf34d2b0fe6019",
+      "_id": "aacf34d2b0fe6019"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Blood",
+      "_key": "!tables.results!ce3644703a52b2bd.f54cf973fc2df99e",
+      "_id": "f54cf973fc2df99e"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Bond",
+      "_key": "!tables.results!ce3644703a52b2bd.f1df07df3804f60c",
+      "_id": "f1df07df3804f60c"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Bounty",
+      "_key": "!tables.results!ce3644703a52b2bd.6965ab61a7303760",
+      "_id": "6965ab61a7303760"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Burden",
+      "_key": "!tables.results!ce3644703a52b2bd.c1a3f42a1ecebd47",
+      "_id": "c1a3f42a1ecebd47"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Commerce",
+      "_key": "!tables.results!ce3644703a52b2bd.dce61b066168fd78",
+      "_id": "dce61b066168fd78"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Community",
+      "_key": "!tables.results!ce3644703a52b2bd.54935fa90b909238",
+      "_id": "54935fa90b909238"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Corruption",
+      "_key": "!tables.results!ce3644703a52b2bd.51540035c76bf590",
+      "_id": "51540035c76bf590"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Creation",
+      "_key": "!tables.results!ce3644703a52b2bd.8bdbe47569e5c4bb",
+      "_id": "8bdbe47569e5c4bb"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Crime",
+      "_key": "!tables.results!ce3644703a52b2bd.59cb15ee27b62ae6",
+      "_id": "59cb15ee27b62ae6"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Culture",
+      "_key": "!tables.results!ce3644703a52b2bd.d52d440b7e4fd2d5",
+      "_id": "d52d440b7e4fd2d5"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Cure",
+      "_key": "!tables.results!ce3644703a52b2bd.32c1f2845208779b",
+      "_id": "32c1f2845208779b"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Curse",
+      "_key": "!tables.results!ce3644703a52b2bd.009b02ec51544c3b",
+      "_id": "009b02ec51544c3b"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Danger",
+      "_key": "!tables.results!ce3644703a52b2bd.30917200575e716a",
+      "_id": "30917200575e716a"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Death",
+      "_key": "!tables.results!ce3644703a52b2bd.fc14d1b42bdc6df7",
+      "_id": "fc14d1b42bdc6df7"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Debt",
+      "_key": "!tables.results!ce3644703a52b2bd.43aff5e7f1d40793",
+      "_id": "43aff5e7f1d40793"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Decay",
+      "_key": "!tables.results!ce3644703a52b2bd.3f971a4ab13b34d2",
+      "_id": "3f971a4ab13b34d2"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Deception",
+      "_key": "!tables.results!ce3644703a52b2bd.c698fb76117c1483",
+      "_id": "c698fb76117c1483"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Defense",
+      "_key": "!tables.results!ce3644703a52b2bd.12b0fab8f02092dc",
+      "_id": "12b0fab8f02092dc"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Destiny",
+      "_key": "!tables.results!ce3644703a52b2bd.f1b3c99c0b329356",
+      "_id": "f1b3c99c0b329356"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Disaster",
+      "_key": "!tables.results!ce3644703a52b2bd.a5dc855af1d26c64",
+      "_id": "a5dc855af1d26c64"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Discovery",
+      "_key": "!tables.results!ce3644703a52b2bd.22228a8777382d89",
+      "_id": "22228a8777382d89"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Disease",
+      "_key": "!tables.results!ce3644703a52b2bd.78a62f1fab0e0711",
+      "_id": "78a62f1fab0e0711"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Dream",
+      "_key": "!tables.results!ce3644703a52b2bd.a9207467cd9ba9d5",
+      "_id": "a9207467cd9ba9d5"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Duty",
+      "_key": "!tables.results!ce3644703a52b2bd.9459f61c12d8e0da",
+      "_id": "9459f61c12d8e0da"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Enemy",
+      "_key": "!tables.results!ce3644703a52b2bd.eda0061c2db25e3f",
+      "_id": "eda0061c2db25e3f"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Expedition",
+      "_key": "!tables.results!ce3644703a52b2bd.09b419a0f6b798e8",
+      "_id": "09b419a0f6b798e8"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Faction",
+      "_key": "!tables.results!ce3644703a52b2bd.fdafc01467cb171b",
+      "_id": "fdafc01467cb171b"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Fame",
+      "_key": "!tables.results!ce3644703a52b2bd.6b2109a5ccb18260",
+      "_id": "6b2109a5ccb18260"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Family",
+      "_key": "!tables.results!ce3644703a52b2bd.5e1183f6cf0bed2e",
+      "_id": "5e1183f6cf0bed2e"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Fear",
+      "_key": "!tables.results!ce3644703a52b2bd.4a128aba59c00648",
+      "_id": "4a128aba59c00648"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Fellowship",
+      "_key": "!tables.results!ce3644703a52b2bd.984cf230c62dfc8d",
+      "_id": "984cf230c62dfc8d"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Freedom",
+      "_key": "!tables.results!ce3644703a52b2bd.a90dc139b663d0f2",
+      "_id": "a90dc139b663d0f2"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Greed",
+      "_key": "!tables.results!ce3644703a52b2bd.e09b436d4857d977",
+      "_id": "e09b436d4857d977"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Hardship",
+      "_key": "!tables.results!ce3644703a52b2bd.51407a6a7b68056e",
+      "_id": "51407a6a7b68056e"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Hate",
+      "_key": "!tables.results!ce3644703a52b2bd.3b2a6ade3e8b9340",
+      "_id": "3b2a6ade3e8b9340"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Health",
+      "_key": "!tables.results!ce3644703a52b2bd.e8a41cc4c891ac81",
+      "_id": "e8a41cc4c891ac81"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "History",
+      "_key": "!tables.results!ce3644703a52b2bd.fcb98555a54e2bcb",
+      "_id": "fcb98555a54e2bcb"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Home",
+      "_key": "!tables.results!ce3644703a52b2bd.78270c64009cacbc",
+      "_id": "78270c64009cacbc"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Honor",
+      "_key": "!tables.results!ce3644703a52b2bd.ab506254cb030408",
+      "_id": "ab506254cb030408"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Hope",
+      "_key": "!tables.results!ce3644703a52b2bd.a6d544a508fda939",
+      "_id": "a6d544a508fda939"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Industry",
+      "_key": "!tables.results!ce3644703a52b2bd.d801332a2b9d4473",
+      "_id": "d801332a2b9d4473"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Innocence",
+      "_key": "!tables.results!ce3644703a52b2bd.4b1a1c72b8415c3a",
+      "_id": "4b1a1c72b8415c3a"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Knowledge",
+      "_key": "!tables.results!ce3644703a52b2bd.007ab08ce1e2984c",
+      "_id": "007ab08ce1e2984c"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Labor",
+      "_key": "!tables.results!ce3644703a52b2bd.9f758e21df25a493",
+      "_id": "9f758e21df25a493"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Language",
+      "_key": "!tables.results!ce3644703a52b2bd.9d9d5d5bf98908e2",
+      "_id": "9d9d5d5bf98908e2"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Law",
+      "_key": "!tables.results!ce3644703a52b2bd.dcbef7bd51a2e4d9",
+      "_id": "dcbef7bd51a2e4d9"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Leadership",
+      "_key": "!tables.results!ce3644703a52b2bd.4253c1ef7ea2de68",
+      "_id": "4253c1ef7ea2de68"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Legacy",
+      "_key": "!tables.results!ce3644703a52b2bd.6cb31de0d24d1cbc",
+      "_id": "6cb31de0d24d1cbc"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Legend",
+      "_key": "!tables.results!ce3644703a52b2bd.470c59d45f793cc4",
+      "_id": "470c59d45f793cc4"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Life",
+      "_key": "!tables.results!ce3644703a52b2bd.12df2453fbd21bb4",
+      "_id": "12df2453fbd21bb4"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Love",
+      "_key": "!tables.results!ce3644703a52b2bd.633e200b365153a1",
+      "_id": "633e200b365153a1"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Memory",
+      "_key": "!tables.results!ce3644703a52b2bd.af025229c1660688",
+      "_id": "af025229c1660688"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Nature",
+      "_key": "!tables.results!ce3644703a52b2bd.bcb5e98ffffd18a6",
+      "_id": "bcb5e98ffffd18a6"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Navigation",
+      "_key": "!tables.results!ce3644703a52b2bd.2ecd6597418acb92",
+      "_id": "2ecd6597418acb92"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Opportunity",
+      "_key": "!tables.results!ce3644703a52b2bd.a6d347b53f494f7b",
+      "_id": "a6d347b53f494f7b"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Peace",
+      "_key": "!tables.results!ce3644703a52b2bd.623fe0c82443065c",
+      "_id": "623fe0c82443065c"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Possession",
+      "_key": "!tables.results!ce3644703a52b2bd.a6028f3f912cc7fa",
+      "_id": "a6028f3f912cc7fa"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Power",
+      "_key": "!tables.results!ce3644703a52b2bd.21a99b84f5744be8",
+      "_id": "21a99b84f5744be8"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Price",
+      "_key": "!tables.results!ce3644703a52b2bd.30ee32cdae90f0e4",
+      "_id": "30ee32cdae90f0e4"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Pride",
+      "_key": "!tables.results!ce3644703a52b2bd.dc050b44bd561a1b",
+      "_id": "dc050b44bd561a1b"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Prize",
+      "_key": "!tables.results!ce3644703a52b2bd.9c34d79a7537e4c3",
+      "_id": "9c34d79a7537e4c3"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Prophesy",
+      "_key": "!tables.results!ce3644703a52b2bd.73125c4335c432b0",
+      "_id": "73125c4335c432b0"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Protection",
+      "_key": "!tables.results!ce3644703a52b2bd.c5143bde006ede2e",
+      "_id": "c5143bde006ede2e"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Quest",
+      "_key": "!tables.results!ce3644703a52b2bd.95a1da4c1ec74385",
+      "_id": "95a1da4c1ec74385"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Relationship",
+      "_key": "!tables.results!ce3644703a52b2bd.0a2a36338577674a",
+      "_id": "0a2a36338577674a"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Religion",
+      "_key": "!tables.results!ce3644703a52b2bd.f57d75a0ada4a8c2",
+      "_id": "f57d75a0ada4a8c2"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Reputation",
+      "_key": "!tables.results!ce3644703a52b2bd.ff30b9f28e57360a",
+      "_id": "ff30b9f28e57360a"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Resource",
+      "_key": "!tables.results!ce3644703a52b2bd.4eeaa500f78d8e59",
+      "_id": "4eeaa500f78d8e59"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Revenge",
+      "_key": "!tables.results!ce3644703a52b2bd.d4de9bfe8953dc1a",
+      "_id": "d4de9bfe8953dc1a"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Rival",
+      "_key": "!tables.results!ce3644703a52b2bd.d7e58aff31830299",
+      "_id": "d7e58aff31830299"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Rumor",
+      "_key": "!tables.results!ce3644703a52b2bd.bdbc53383770c84e",
+      "_id": "bdbc53383770c84e"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Safety",
+      "_key": "!tables.results!ce3644703a52b2bd.a4043e58e7e5286d",
+      "_id": "a4043e58e7e5286d"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Sanctuary",
+      "_key": "!tables.results!ce3644703a52b2bd.8b92a3c3d604b6e0",
+      "_id": "8b92a3c3d604b6e0"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Secret",
+      "_key": "!tables.results!ce3644703a52b2bd.d83099f91ddb72a6",
+      "_id": "d83099f91ddb72a6"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Solution",
+      "_key": "!tables.results!ce3644703a52b2bd.cbcbbf7bf4fda4bc",
+      "_id": "cbcbbf7bf4fda4bc"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Spirit",
+      "_key": "!tables.results!ce3644703a52b2bd.1af0e1a443dfa917",
+      "_id": "1af0e1a443dfa917"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Stranger",
+      "_key": "!tables.results!ce3644703a52b2bd.0385253f36fb2671",
+      "_id": "0385253f36fb2671"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Strategy",
+      "_key": "!tables.results!ce3644703a52b2bd.3a28085d11b1dc63",
+      "_id": "3a28085d11b1dc63"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Strength",
+      "_key": "!tables.results!ce3644703a52b2bd.3194c30b90c0527d",
+      "_id": "3194c30b90c0527d"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Superstition",
+      "_key": "!tables.results!ce3644703a52b2bd.e9fff631403d0361",
+      "_id": "e9fff631403d0361"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Supply",
+      "_key": "!tables.results!ce3644703a52b2bd.8c749d27444b596e",
+      "_id": "8c749d27444b596e"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Survival",
+      "_key": "!tables.results!ce3644703a52b2bd.d9d786cc93c25f71",
+      "_id": "d9d786cc93c25f71"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Time",
+      "_key": "!tables.results!ce3644703a52b2bd.a7810c2a62581c09",
+      "_id": "a7810c2a62581c09"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Trade",
+      "_key": "!tables.results!ce3644703a52b2bd.c3bf497171a98a47",
+      "_id": "c3bf497171a98a47"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Treaty",
+      "_key": "!tables.results!ce3644703a52b2bd.bcb4bda70fb38f11",
+      "_id": "bcb4bda70fb38f11"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Truth",
+      "_key": "!tables.results!ce3644703a52b2bd.3eab11b0d0cf1560",
+      "_id": "3eab11b0d0cf1560"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Vengeance",
+      "_key": "!tables.results!ce3644703a52b2bd.a5f5b8f86a1b3d67",
+      "_id": "a5f5b8f86a1b3d67"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Vow",
+      "_key": "!tables.results!ce3644703a52b2bd.80d8f852a343edb2",
+      "_id": "80d8f852a343edb2"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "War",
+      "_key": "!tables.results!ce3644703a52b2bd.ad7d9967c13af2e9",
+      "_id": "ad7d9967c13af2e9"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Warning",
+      "_key": "!tables.results!ce3644703a52b2bd.b05d4b3fd1b2dc48",
+      "_id": "b05d4b3fd1b2dc48"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Weakness",
+      "_key": "!tables.results!ce3644703a52b2bd.c5bfddebf83c7abf",
+      "_id": "c5bfddebf83c7abf"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Wealth",
+      "_key": "!tables.results!ce3644703a52b2bd.78a338d4ef5db10b",
+      "_id": "78a338d4ef5db10b"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Weapon",
+      "_key": "!tables.results!ce3644703a52b2bd.d34be62fcc63cc99",
+      "_id": "d34be62fcc63cc99"
+    }
+  ],
+  "folder": "ece178d45aa72b0a",
+  "sort": 117,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ce3644703a52b2bd"
+}

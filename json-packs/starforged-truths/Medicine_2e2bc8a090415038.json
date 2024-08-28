@@ -1,0 +1,104 @@
+{
+  "name": "Medicine",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Medicine",
+      "dsid": "truth:starforged/medicine"
+    }
+  },
+  "_id": "2e2bc8a090415038",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Our advanced medical technologies and expertise was lost during the Exodus.",
+      "system": {
+        "dsid": "truth.option:starforged/medicine.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Our advanced medical technologies and expertise was lost during the Exodus.",
+        "Description": "Healers are rare and ill-equipped. Untold numbers have succumbed to sickness, injury, and disease. Those who survive often bear the scars of a hard and dangerous life in the Forge.",
+        "Summary": "Our advanced medical technologies and expertise was lost during the Exodus.",
+        "Quest": "A respected leader has fallen ill, stricken by a sickness eradicated in the years after the Exodus. A vaccine was once available, but the only remaining samples are held in a research outpost on a remote ocean world, long-ago seized by a dangerous foe. What is your relationship to the sickened leader, and what foe stands in your way?",
+        "Roll template": {
+          "Description": "Healers are rare and ill-equipped. Untold numbers have succumbed to sickness, injury, and disease. Those who survive often bear the scars of a hard and dangerous life in the Forge."
+        }
+      },
+      "_id": "9726cbc7b7b74569",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!2e2bc8a090415038.9726cbc7b7b74569"
+    },
+    {
+      "type": "truth",
+      "name": "To help offset a scarcity of medical supplies and knowledge, the resourceful technicians we call riggers create basic organ and limb replacements.",
+      "system": {
+        "dsid": "truth.option:starforged/medicine.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "To help offset a scarcity of medical supplies and knowledge, the resourceful technicians we call riggers create basic organ and limb replacements.",
+        "Description": "Much was lost in the Exodus, and what remains of our medical technologies and expertise is co-opted by the privileged and powerful. For most, advanced medical care is out of reach. When someone suffers a grievous injury, they'll often turn to a rigger for a makeshift mechanical solution.",
+        "Summary": "To help offset a scarcity of medical supplies and knowledge, the resourceful technicians we call riggers create basic organ and limb replacements.",
+        "Quest": "A rigger is in desperate need of a rare technological artifact to create a life-saving medical device. Their patient is someone important to you, and won't survive more than a few days. What is the nature of this artifact, and what protects it?",
+        "Roll template": {
+          "Description": "Much was lost in the Exodus, and what remains of our medical technologies and expertise is co-opted by the privileged and powerful. For most, advanced medical care is out of reach. When someone suffers a grievous injury, they'll often turn to a rigger for a makeshift mechanical solution."
+        }
+      },
+      "_id": "3a04dd1cc715e8c9",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!2e2bc8a090415038.3a04dd1cc715e8c9"
+    },
+    {
+      "type": "truth",
+      "name": "Orders of sworn healers preserve our medical knowledge and train new generations of caregivers.",
+      "system": {
+        "dsid": "truth.option:starforged/medicine.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Orders of sworn healers preserve our medical knowledge and train new generations of caregivers.",
+        "Description": "Life-saving advanced care is available within larger communities throughout the settled sectors of the Forge. Even remote communities are often served by a novice healer, or can request help from a healer's guild in an emergency.",
+        "Summary": "Orders of sworn healers preserve our medical knowledge and train new generations of caregivers.",
+        "Quest": "A reactor exploded at a remote settlement, killing several and exposing many others to lethal radiation. A team of healers en route to provide aid were captured by raiders. What do the raiders demand for their release?",
+        "Roll template": {
+          "Description": "Life-saving advanced care is available within larger communities throughout the settled sectors of the Forge. Even remote communities are often served by a novice healer, or can request help from a healer's guild in an emergency."
+        }
+      },
+      "_id": "7d6d25879003d34f",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!2e2bc8a090415038.7d6d25879003d34f"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "Do you bear any notable scars or prosthetics? Do you have any medical or physical disabilities? These aspects might influence your look or approach. If you are skilled at providing medical care for yourself or others, you might be a @Compendium[foundry-ironsworn.starforgedassets.4fafc93fdd8873ce]{Healer}. If you are rigged with advanced prosthetics or cyberware, you might be @Compendium[foundry-ironsworn.starforgedassets.4c75d631a38fd3b8]{Augmented}.",
+        "format": 2,
+        "content": "<p>Do you bear any notable scars or prosthetics? Do you have any medical or physical disabilities? These aspects might influence your look or approach. If you are skilled at providing medical care for yourself or others, you might be a @Compendium[foundry-ironsworn.starforgedassets.4fafc93fdd8873ce]{Healer}. If you are rigged with advanced prosthetics or cyberware, you might be @Compendium[foundry-ironsworn.starforgedassets.4c75d631a38fd3b8]{Augmented}.</p>"
+      },
+      "_id": "057491aae01204d9",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!2e2bc8a090415038.057491aae01204d9"
+    }
+  ],
+  "folder": null,
+  "sort": 93,
+  "_key": "!journal!2e2bc8a090415038"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Fortified/Opportunity",
-      "category": "Starforged/Oracles/Location_Themes/Fortified"
+      "category": "Starforged/Oracles/Location_Themes/Fortified",
+      "dsid": "oracle_rollable:starforged/location_theme/fortified/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Insight into the plans or methods of the enemy force",
-      "_id": "217edf0335265f4a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!df4e0162e8aa0698.217edf0335265f4a"
+      "_key": "!tables.results!df4e0162e8aa0698.1412353991da2b64",
+      "_id": "1412353991da2b64"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Opening to get the drop on an enemy",
-      "_id": "3d912cbca43b7875",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!df4e0162e8aa0698.3d912cbca43b7875"
+      "_key": "!tables.results!df4e0162e8aa0698.2fbbaee43fefd25a",
+      "_id": "2fbbaee43fefd25a"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Opening to outmaneuver or escape enemies",
-      "_id": "6f8ccdeb8740aaf9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!df4e0162e8aa0698.6f8ccdeb8740aaf9"
+      "_key": "!tables.results!df4e0162e8aa0698.7554bb68640a54a8",
+      "_id": "7554bb68640a54a8"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Potential collaborator or informant reveals themselves",
-      "_id": "16137950e11fab86",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!df4e0162e8aa0698.16137950e11fab86"
+      "_key": "!tables.results!df4e0162e8aa0698.9fe8ef8c84a01348",
+      "_id": "9fe8ef8c84a01348"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Access to useful equipment or weapons",
-      "_id": "36006d0eedde8996",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!df4e0162e8aa0698.36006d0eedde8996"
+      "_key": "!tables.results!df4e0162e8aa0698.2bfde43a9df8ccaa",
+      "_id": "2bfde43a9df8ccaa"
     }
   ],
   "folder": "b004bd768a2a6c15",
   "sort": 373,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!df4e0162e8aa0698"
 }

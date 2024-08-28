@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "React Under Fire",
   "img": "icons/dice/d10black.svg",
+  "folder": "0833ccc5eb06cf7e",
   "system": {
     "dfid": "Starforged/Moves/Combat/React_Under_Fire",
     "Category": "Starforged/Moves/Combat",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle**, envision your approach and roll. If you are...\n\n  * In pursuit, fleeing, dodging, getting back into position, or taking cover: Roll +edge\n  * Remaining stalwart against fear or temptation: Roll +heart\n  * Blocking or diverting with force, or taking the hit: Roll +iron\n  * Moving into hiding or creating a distraction: Roll +shadow\n  * Changing the plan, finding a way out, or cleverly bypassing an obstacle: Roll +wits\n\nOn a **strong hit**, you succeed and are in control. Take +1 momentum.\n\nOn a **weak hit**, you avoid the worst of the danger or overcome the obstacle, but not without a cost. Make a suffer move (-1). You stay in a bad spot.\n\nOn a **miss**, the situation worsens. You stay in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Text": "__When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle__, envision your approach and roll. If you are...\n\n  * In pursuit, fleeing, dodging, getting back into position, or taking cover: Roll +edge\n  * Remaining stalwart against fear or temptation: Roll +heart\n  * Blocking or diverting with force, or taking the hit: Roll +iron\n  * Moving into hiding or creating a distraction: Roll +shadow\n  * Changing the plan, finding a way out, or cleverly bypassing an obstacle: Roll +wits\n\nOn a __strong hit__, you succeed and are in control. Take +1 momentum.\n\nOn a __weak hit__, you avoid the worst of the danger or overcome the obstacle, but not without a cost. Make a suffer move (-1). You stay in a bad spot.\n\nOn a __miss__, the situation worsens. You stay in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
     "Trigger": {
       "Text": "When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle...",
       "Options": [
@@ -56,66 +57,42 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You succeed and are in control. Take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you succeed and are in control. Take +1 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You avoid the worst of the danger or overcome the obstacle, but not without a cost. Make a suffer move (-1). You stay in a bad spot.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you avoid the worst of the danger or overcome the obstacle, but not without a cost. Make a suffer move (-1). You stay in a bad spot."
       },
       "Miss": {
-        "Text": "The situation worsens. You stay in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, the situation worsens. You stay in a bad spot and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 191
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#D68F00",
       "Images": []
     }
   },
   "sort": 191,
-  "folder": "0833ccc5eb06cf7e",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Combat/React_Under_Fire",
+      "dsid": "move:starforged/combat/react_under_fire"
+    }
   },
   "_key": "!items!d9208f9b7d827aec"
 }

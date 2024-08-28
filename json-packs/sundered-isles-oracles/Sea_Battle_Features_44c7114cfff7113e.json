@@ -1,0 +1,209 @@
+{
+  "_id": "44c7114cfff7113e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc",
+      "dsid": "oracle_rollable:sundered_isles/misc/sea_battle_features"
+    }
+  },
+  "name": "Sea Battle Features",
+  "description": "<p>Use this table to introduce terrain and environment features for a sea battle. This can help enliven the battle with obstacles and opportunities.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Adrift mariners",
+      "_key": "!tables.results!44c7114cfff7113e.a26b3f21eaf9c43c",
+      "_id": "a26b3f21eaf9c43c"
+    },
+    {
+      "range": [
+        3,
+        6
+      ],
+      "text": "Congregating creatures",
+      "_key": "!tables.results!44c7114cfff7113e.6b3dfc735332b518",
+      "_id": "6b3dfc735332b518"
+    },
+    {
+      "range": [
+        7,
+        10
+      ],
+      "text": "Deepening night",
+      "_key": "!tables.results!44c7114cfff7113e.da5cdc4e151f639d",
+      "_id": "da5cdc4e151f639d"
+    },
+    {
+      "range": [
+        11,
+        18
+      ],
+      "text": "Expanse of rocky shoals",
+      "_key": "!tables.results!44c7114cfff7113e.1d1c9d200111095a",
+      "_id": "1d1c9d200111095a"
+    },
+    {
+      "range": [
+        19,
+        24
+      ],
+      "text": "Exposed sandbar",
+      "_key": "!tables.results!44c7114cfff7113e.0c0c2324bab2c07d",
+      "_id": "0c0c2324bab2c07d"
+    },
+    {
+      "range": [
+        25,
+        30
+      ],
+      "text": "Fast-changing tide",
+      "_key": "!tables.results!44c7114cfff7113e.b417b5d78b13b9e0",
+      "_id": "b417b5d78b13b9e0"
+    },
+    {
+      "range": [
+        31,
+        36
+      ],
+      "text": "Floating debris",
+      "_key": "!tables.results!44c7114cfff7113e.c5145fc7296f9aef",
+      "_id": "c5145fc7296f9aef"
+    },
+    {
+      "range": [
+        37,
+        44
+      ],
+      "text": "Fog bank",
+      "_key": "!tables.results!44c7114cfff7113e.9a419f939035e4ba",
+      "_id": "9a419f939035e4ba"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Incoming rogue wave",
+      "_key": "!tables.results!44c7114cfff7113e.c5b94bb3bc650ccb",
+      "_id": "c5b94bb3bc650ccb"
+    },
+    {
+      "range": [
+        47,
+        52
+      ],
+      "text": "Large rocky islet",
+      "_key": "!tables.results!44c7114cfff7113e.18c9dfda3c0593b6",
+      "_id": "18c9dfda3c0593b6"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Large sea creature",
+      "_key": "!tables.results!44c7114cfff7113e.166a6131c31b2c35",
+      "_id": "166a6131c31b2c35"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Row of tall sea stacks",
+      "_key": "!tables.results!44c7114cfff7113e.6e553a81f3d874d6",
+      "_id": "6e553a81f3d874d6"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Ship graveyard",
+      "_key": "!tables.results!44c7114cfff7113e.17fa71f7cdf83e54",
+      "_id": "17fa71f7cdf83e54"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Smoking sea volcano",
+      "_key": "!tables.results!44c7114cfff7113e.c97b0ef118c66cc5",
+      "_id": "c97b0ef118c66cc5"
+    },
+    {
+      "range": [
+        67,
+        72
+      ],
+      "text": "Strong currents",
+      "_key": "!tables.results!44c7114cfff7113e.6279a8d06ef090de",
+      "_id": "6279a8d06ef090de"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Swirling whirlpool",
+      "_key": "!tables.results!44c7114cfff7113e.4aa6d9114bafad28",
+      "_id": "4aa6d9114bafad28"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Thickly-packed seaweed",
+      "_key": "!tables.results!44c7114cfff7113e.24a87f50f485b3cc",
+      "_id": "24a87f50f485b3cc"
+    },
+    {
+      "range": [
+        79,
+        84
+      ],
+      "text": "Tideswept reef",
+      "_key": "!tables.results!44c7114cfff7113e.7cde0f26974a3f4b",
+      "_id": "7cde0f26974a3f4b"
+    },
+    {
+      "range": [
+        85,
+        90
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.cec9db2f0aaf8cfe]{Foul Weather}",
+      "_key": "!tables.results!44c7114cfff7113e.398b2ef696345aa3",
+      "_id": "398b2ef696345aa3"
+    },
+    {
+      "range": [
+        91,
+        96
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/shipwreck\">\n    <i class=\"fa fa-caret-right\"></i> Shipwreck\n</a></p>",
+      "_key": "!tables.results!44c7114cfff7113e.306c0f6b633d2a9b",
+      "_id": "306c0f6b633d2a9b"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/ruin\">\n    <i class=\"fa fa-caret-right\"></i> Ruin\n</a></p>",
+      "_key": "!tables.results!44c7114cfff7113e.f72d8d56ed6bef09",
+      "_id": "f72d8d56ed6bef09"
+    }
+  ],
+  "folder": "4712a591169fe5d6",
+  "sort": 233,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!44c7114cfff7113e"
+}

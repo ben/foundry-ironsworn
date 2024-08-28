@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Enter the Fray",
   "img": "icons/dice/d10black.svg",
+  "folder": "19defd673fdc3970",
   "system": {
     "dfid": "Ironsworn/Moves/Combat/Enter_the_Fray",
     "Category": "Ironsworn/Moves/Combat",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you enter into combat**, set the rank of each of your foes.\n\n  * Troublesome foe: 3 progress per harm; inflicts 1 harm.\n  * Dangerous foe: 2 progress per harm; inflicts 2 harm.\n  * Formidable foe: 1 progress per harm; inflicts 3 harm.\n  * Extreme foe: 2 ticks per harm; inflicts 4 harm.\n  * Epic foe: 1 tick per harm; inflicts 5 harm.\n\nThen, roll to determine who is in control. If you are...\n\n  * Facing off against your foe: Roll +heart.\n  * Moving into position against an unaware foe, or striking without warning: Roll +shadow.\n  * Ambushed: Roll +wits.\n\nOn a **strong hit**, take +2 momentum. You have initiative.\n\nOn a **weak hit**, choose one.\n\n  * Bolster your position: Take +2 momentum.\n  * Prepare to act: Take initiative.\n\nOn a **miss**, combat begins with you at a disadvantage. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
+    "Text": "When __you enter into combat__, set the rank of each of your foes.\n\n  * Troublesome foe: 3 progress per harm; inflicts 1 harm.\n  * Dangerous foe: 2 progress per harm; inflicts 2 harm.\n  * Formidable foe: 1 progress per harm; inflicts 3 harm.\n  * Extreme foe: 2 ticks per harm; inflicts 4 harm.\n  * Epic foe: 1 tick per harm; inflicts 5 harm.\n\nThen, roll to determine who is in control. If you are...\n\n  * Facing off against your foe: Roll +heart.\n  * Moving into position against an unaware foe, or striking without warning: Roll +shadow.\n  * Ambushed: Roll +wits.\n\nOn a __strong hit__, take +2 momentum. You have initiative.\n\nOn a __weak hit__, choose one.\n\n  * Bolster your position: Take +2 momentum.\n  * Prepare to act: Take initiative.\n\nOn a __miss__, combat begins with you at a disadvantage. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
     "Trigger": {
       "Text": "When you enter into combat...",
       "Options": [
@@ -40,42 +41,29 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Take +2 momentum. You have initiative.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, take +2 momentum. You have initiative.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Choose one.\n\n  * Bolster your position: Take +2 momentum.\n  * Prepare to act: Take initiative.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, choose one.\n\n  * Bolster your position: Take +2 momentum.\n  * Prepare to act: Take initiative."
       },
       "Miss": {
-        "Text": "Combat begins with you at a disadvantage. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, combat begins with you at a disadvantage. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 78
     },
     "Suggestions": {},
@@ -84,20 +72,11 @@
     }
   },
   "sort": 78,
-  "folder": "19defd673fdc3970",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Combat/Enter_the_Fray",
+      "dsid": "move:classic/combat/enter_the_fray"
+    }
   },
   "_key": "!items!ed343c963b08f301"
 }

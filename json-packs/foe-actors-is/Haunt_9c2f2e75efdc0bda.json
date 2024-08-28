@@ -1,0 +1,53 @@
+{
+  "name": "Haunt",
+  "img": "icons/magic/death/undead-ghost-strike-white.webp",
+  "type": "foe",
+  "_id": "9c2f2e75efdc0bda",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Haunt",
+    "texture": {
+      "src": "icons/magic/death/undead-ghost-strike-white.webp"
+    }
+  },
+  "folder": "cf2bf1b1d8deebf9",
+  "items": [
+    {
+      "_id": "9ba7cbf6227a1d16",
+      "type": "progress",
+      "name": "Haunt",
+      "img": "icons/magic/death/undead-ghost-strike-white.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Subtle, unsettling manifestation</p>\n<p class=\"nogrow\">Appear as they did in life</p>\n<p class=\"nogrow\">Lay bare the ravages of death</p>\n<p class=\"nogrow\">Stench of the grave</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Torment the living</p>\n<p class=\"nogrow\">Find rest</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Vanish and reappear</p>\n<p class=\"nogrow\">Horrifying visage</p>\n<p class=\"nogrow\">Unleash chaos</p>\n</div>\n</div>\n\n<p>Haunts are restless spirits bound to this world by a traumatic or unjust death. They may be tied to a location, an object, or even a person.</p>\n<p>A haunt who manifests as a physical being can be dispelled by overcoming them in a fight, but only temporarily. They will only be at peace when their death is avenged or resolved. Some say a haunt can be banished, but these rituals are a lost art.</p>\n\n<blockquote>Quest Starter: <p>You are plagued by a haunt. Who is it? What do they want of you?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "cf2bf1b1d8deebf9",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:classic/horrors/haunt"
+        }
+      },
+      "_key": "!actors.items!9c2f2e75efdc0bda.9ba7cbf6227a1d16"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/horrors/haunt"
+    }
+  },
+  "_key": "!actors!9c2f2e75efdc0bda"
+}

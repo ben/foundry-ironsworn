@@ -1,0 +1,15 @@
+{
+  "name": "Treasure Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "4b1f1e3c1b624444",
+  "sort": 220,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/treasure"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!4b1f1e3c1b624444"
+}

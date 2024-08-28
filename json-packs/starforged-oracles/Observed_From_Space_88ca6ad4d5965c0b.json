@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Vital/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Vital"
+      "category": "Starforged/Oracles/Planets/Vital",
+      "dsid": "oracle_rollable:starforged/planet/vital/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Complex ring system",
-      "_id": "bc7f67653af2677c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.bc7f67653af2677c"
+      "_key": "!tables.results!88ca6ad4d5965c0b.366f4614be905194",
+      "_id": "366f4614be905194"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Numerous small moons",
-      "_id": "ef38c2fe10df41f5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.ef38c2fe10df41f5"
+      "_key": "!tables.results!88ca6ad4d5965c0b.0ad504d07a92169d",
+      "_id": "0ad504d07a92169d"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Dramatic seasonal variation",
-      "_id": "9288e694df8cffe7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.9288e694df8cffe7"
+      "_key": "!tables.results!88ca6ad4d5965c0b.c7f7cbfe0fb10f8f",
+      "_id": "c7f7cbfe0fb10f8f"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Unusual day or night cycle",
-      "_id": "38318382629117df",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.38318382629117df"
+      "_key": "!tables.results!88ca6ad4d5965c0b.716be20e862c1ff3",
+      "_id": "716be20e862c1ff3"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "High gravity",
-      "_id": "ce4ee2a3e19cbec2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.ce4ee2a3e19cbec2"
+      "_key": "!tables.results!88ca6ad4d5965c0b.3ded2e1b7747717b",
+      "_id": "3ded2e1b7747717b"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Vibrantly colored landscapes",
-      "_id": "a258894ef3636340",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.a258894ef3636340"
+      "_key": "!tables.results!88ca6ad4d5965c0b.d10a7c0cf2222787",
+      "_id": "d10a7c0cf2222787"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Large moon",
-      "_id": "370a3fa624845dd6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.370a3fa624845dd6"
+      "_key": "!tables.results!88ca6ad4d5965c0b.a2f2a628b6508424",
+      "_id": "a2f2a628b6508424"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Narrow livable band",
-      "_id": "664681eda872792f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.664681eda872792f"
+      "_key": "!tables.results!88ca6ad4d5965c0b.ce74ded692ac7a19",
+      "_id": "ce74ded692ac7a19"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "b8f485c94bc8c28a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.b8f485c94bc8c28a"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!88ca6ad4d5965c0b.cff95ff1850f76d7",
+      "_id": "cff95ff1850f76d7"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "506d8825991cdd9e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!88ca6ad4d5965c0b.506d8825991cdd9e"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault\">\n    <i class=\"fa fa-caret-right\"></i> Precursor Vault\n</a> (orbital)</p>",
+      "_key": "!tables.results!88ca6ad4d5965c0b.1ef828e8015bf1f5",
+      "_id": "1ef828e8015bf1f5"
     }
   ],
   "folder": "93ecb6acb6a3ea17",
   "sort": 318,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!88ca6ad4d5965c0b"
 }

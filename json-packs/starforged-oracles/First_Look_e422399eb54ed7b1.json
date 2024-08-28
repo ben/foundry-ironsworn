@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Characters/First_Look",
-      "category": "Starforged/Oracles/Characters"
+      "category": "Starforged/Oracles/Characters",
+      "dsid": "oracle_rollable:starforged/character/first_look"
     }
   },
   "name": "First Look",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Accented",
-      "_id": "092979344b2e9d27",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.092979344b2e9d27"
+      "_key": "!tables.results!e422399eb54ed7b1.a5fab595de16fb1c",
+      "_id": "a5fab595de16fb1c"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         6
       ],
       "text": "Accompanied",
-      "_id": "d1badfd4aea5469a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.d1badfd4aea5469a"
+      "_key": "!tables.results!e422399eb54ed7b1.e57129506013e0d8",
+      "_id": "e57129506013e0d8"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         8
       ],
       "text": "Adorned",
-      "_id": "330bbd346c80f2a1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.330bbd346c80f2a1"
+      "_key": "!tables.results!e422399eb54ed7b1.f29d733116fea544",
+      "_id": "f29d733116fea544"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         11
       ],
       "text": "Aged",
-      "_id": "53c46a764dd42ced",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.53c46a764dd42ced"
+      "_key": "!tables.results!e422399eb54ed7b1.bdc2ab91a85705a2",
+      "_id": "bdc2ab91a85705a2"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         13
       ],
       "text": "Alluring",
-      "_id": "959058a298b82c0a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.959058a298b82c0a"
+      "_key": "!tables.results!e422399eb54ed7b1.d09925179b8ae67e",
+      "_id": "d09925179b8ae67e"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         15
       ],
       "text": "Armed",
-      "_id": "89a92f2818ec9f8f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.89a92f2818ec9f8f"
+      "_key": "!tables.results!e422399eb54ed7b1.739efd2815fa15ed",
+      "_id": "739efd2815fa15ed"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         17
       ],
       "text": "Armored",
-      "_id": "9e601cf2238fb77f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.9e601cf2238fb77f"
+      "_key": "!tables.results!e422399eb54ed7b1.062d31003f7051cb",
+      "_id": "062d31003f7051cb"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         20
       ],
       "text": "Athletic",
-      "_id": "e44f89af421112f5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.e44f89af421112f5"
+      "_key": "!tables.results!e422399eb54ed7b1.957755c2da125ab1",
+      "_id": "957755c2da125ab1"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         23
       ],
       "text": "Attractive",
-      "_id": "ae9c5433c54c652f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.ae9c5433c54c652f"
+      "_key": "!tables.results!e422399eb54ed7b1.f9038b36d929430b",
+      "_id": "f9038b36d929430b"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         25
       ],
       "text": "Augmented",
-      "_id": "5110d1dc60bd87fc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.5110d1dc60bd87fc"
+      "_key": "!tables.results!e422399eb54ed7b1.7bcee979b8d3999a",
+      "_id": "7bcee979b8d3999a"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         27
       ],
       "text": "Concealed",
-      "_id": "573e70c23926ecad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.573e70c23926ecad"
+      "_key": "!tables.results!e422399eb54ed7b1.442de6dbd2d77a63",
+      "_id": "442de6dbd2d77a63"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         30
       ],
       "text": "Distracted",
-      "_id": "ca0818b2cd6fd76a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.ca0818b2cd6fd76a"
+      "_key": "!tables.results!e422399eb54ed7b1.5dc42a40d23614f0",
+      "_id": "5dc42a40d23614f0"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         33
       ],
       "text": "Eccentric",
-      "_id": "3566cdfa2a0d711c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.3566cdfa2a0d711c"
+      "_key": "!tables.results!e422399eb54ed7b1.c33c27e161f93053",
+      "_id": "c33c27e161f93053"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         35
       ],
       "text": "Energetic",
-      "_id": "0c6d8cd38bc9f212",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.0c6d8cd38bc9f212"
+      "_key": "!tables.results!e422399eb54ed7b1.28c2e3d51a2bd2c8",
+      "_id": "28c2e3d51a2bd2c8"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         37
       ],
       "text": "Flashy",
-      "_id": "d5341bd3905abc6f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.d5341bd3905abc6f"
+      "_key": "!tables.results!e422399eb54ed7b1.2b407c6207d20b57",
+      "_id": "2b407c6207d20b57"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         40
       ],
       "text": "Graceful",
-      "_id": "47530d3e468ff50b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.47530d3e468ff50b"
+      "_key": "!tables.results!e422399eb54ed7b1.2e93b59371d6870c",
+      "_id": "2e93b59371d6870c"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         43
       ],
       "text": "Grim",
-      "_id": "d1877845ee6a8ba7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.d1877845ee6a8ba7"
+      "_key": "!tables.results!e422399eb54ed7b1.ab20a75d360ed691",
+      "_id": "ab20a75d360ed691"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         46
       ],
       "text": "Haggard",
-      "_id": "0327f4e7563fa608",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.0327f4e7563fa608"
+      "_key": "!tables.results!e422399eb54ed7b1.299a5d37da6e2f56",
+      "_id": "299a5d37da6e2f56"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         49
       ],
       "text": "Ill-equipped",
-      "_id": "6422c0b234c89b4a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.6422c0b234c89b4a"
+      "_key": "!tables.results!e422399eb54ed7b1.2ce99d4322067821",
+      "_id": "2ce99d4322067821"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         52
       ],
       "text": "Imposing",
-      "_id": "792783d616787bb1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.792783d616787bb1"
+      "_key": "!tables.results!e422399eb54ed7b1.f321575658de6781",
+      "_id": "f321575658de6781"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         55
       ],
       "text": "Large",
-      "_id": "c3061c44804d0fc4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.c3061c44804d0fc4"
+      "_key": "!tables.results!e422399eb54ed7b1.dee68f0756dcfb1d",
+      "_id": "dee68f0756dcfb1d"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         57
       ],
       "text": "Mutated",
-      "_id": "e4dfc527d7ffad91",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.e4dfc527d7ffad91"
+      "_key": "!tables.results!e422399eb54ed7b1.e9996df78349d2d0",
+      "_id": "e9996df78349d2d0"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         60
       ],
       "text": "Plain",
-      "_id": "0dfbb3e7f100f3ac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.0dfbb3e7f100f3ac"
+      "_key": "!tables.results!e422399eb54ed7b1.32895ee08489063f",
+      "_id": "32895ee08489063f"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         62
       ],
       "text": "Poised",
-      "_id": "e88ad6edce771f0b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.e88ad6edce771f0b"
+      "_key": "!tables.results!e422399eb54ed7b1.b07215b5ca584f0b",
+      "_id": "b07215b5ca584f0b"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         65
       ],
       "text": "Scarred",
-      "_id": "2c033bb006be824c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.2c033bb006be824c"
+      "_key": "!tables.results!e422399eb54ed7b1.547e681c7bc47b96",
+      "_id": "547e681c7bc47b96"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         68
       ],
       "text": "Scruffy",
-      "_id": "d2c62549537d41ca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.d2c62549537d41ca"
+      "_key": "!tables.results!e422399eb54ed7b1.5197025484da0e89",
+      "_id": "5197025484da0e89"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         71
       ],
       "text": "Shifty",
-      "_id": "5dbd516af3b69f87",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.5dbd516af3b69f87"
+      "_key": "!tables.results!e422399eb54ed7b1.b5f051cc4d621337",
+      "_id": "b5f051cc4d621337"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         73
       ],
       "text": "Sickly",
-      "_id": "b6e1a0c5cc1b9836",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.b6e1a0c5cc1b9836"
+      "_key": "!tables.results!e422399eb54ed7b1.6a6a91393ec34ade",
+      "_id": "6a6a91393ec34ade"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         76
       ],
       "text": "Slight",
-      "_id": "807f0087864b5d1a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.807f0087864b5d1a"
+      "_key": "!tables.results!e422399eb54ed7b1.885a2da4719ac68b",
+      "_id": "885a2da4719ac68b"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         78
       ],
       "text": "Swaggering",
-      "_id": "9ed6b2da1c086b2a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.9ed6b2da1c086b2a"
+      "_key": "!tables.results!e422399eb54ed7b1.a1d3b9c702547495",
+      "_id": "a1d3b9c702547495"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         81
       ],
       "text": "Tattooed",
-      "_id": "38b7f82bb8e5cae7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.38b7f82bb8e5cae7"
+      "_key": "!tables.results!e422399eb54ed7b1.efb7a7bdf2f156db",
+      "_id": "efb7a7bdf2f156db"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         83
       ],
       "text": "Threatened",
-      "_id": "cbfa04bc19e390bf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.cbfa04bc19e390bf"
+      "_key": "!tables.results!e422399eb54ed7b1.3388b62c7e667fc2",
+      "_id": "3388b62c7e667fc2"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         85
       ],
       "text": "Uncanny",
-      "_id": "09383cd668595422",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.09383cd668595422"
+      "_key": "!tables.results!e422399eb54ed7b1.f47f886f6365bdac",
+      "_id": "f47f886f6365bdac"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         87
       ],
       "text": "Visibly disabled",
-      "_id": "4b5c3f9a1b3c3375",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.4b5c3f9a1b3c3375"
+      "_key": "!tables.results!e422399eb54ed7b1.568e09a88535343e",
+      "_id": "568e09a88535343e"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         90
       ],
       "text": "Weathered",
-      "_id": "ffd00b124aa607c0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.ffd00b124aa607c0"
+      "_key": "!tables.results!e422399eb54ed7b1.3b502cb63bdea05d",
+      "_id": "3b502cb63bdea05d"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         92
       ],
       "text": "Well-equipped",
-      "_id": "a7dcbf55fba37640",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.a7dcbf55fba37640"
+      "_key": "!tables.results!e422399eb54ed7b1.9560767b76d6b6ec",
+      "_id": "9560767b76d6b6ec"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         95
       ],
       "text": "Wiry",
-      "_id": "6e5133ab0c25f268",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.6e5133ab0c25f268"
+      "_key": "!tables.results!e422399eb54ed7b1.3376fd1c59925c68",
+      "_id": "3376fd1c59925c68"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         97
       ],
       "text": "Wounded",
-      "_id": "8825382eac9c2c08",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.8825382eac9c2c08"
+      "_key": "!tables.results!e422399eb54ed7b1.d1b7d8347261babe",
+      "_id": "d1b7d8347261babe"
     },
     {
       "range": [
@@ -550,29 +361,12 @@
         100
       ],
       "text": "Youthful",
-      "_id": "956d8f0beea4c8ad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e422399eb54ed7b1.956d8f0beea4c8ad"
+      "_key": "!tables.results!e422399eb54ed7b1.58d742a046ce44db",
+      "_id": "58d742a046ce44db"
     }
   ],
   "folder": "dfc71f2bbd43cfc1",
   "sort": 330,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!e422399eb54ed7b1"
 }

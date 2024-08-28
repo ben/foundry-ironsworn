@@ -1,0 +1,200 @@
+{
+  "_id": "9905f8d50bbc5cf7",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure",
+      "dsid": "oracle_rollable:sundered_isles/treasure/aspects_cursed"
+    }
+  },
+  "name": "Cursed Treasure Aspects",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Attracts foul creatures or vermin",
+      "_key": "!tables.results!9905f8d50bbc5cf7.1e1c96d6e2fab823",
+      "_id": "1e1c96d6e2fab823"
+    },
+    {
+      "range": [
+        5,
+        12
+      ],
+      "text": "Awakens the dead",
+      "_key": "!tables.results!9905f8d50bbc5cf7.411918ad480914b5",
+      "_id": "411918ad480914b5"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Blighted by unnatural decay",
+      "_key": "!tables.results!9905f8d50bbc5cf7.db48809cebcfed9f",
+      "_id": "db48809cebcfed9f"
+    },
+    {
+      "range": [
+        17,
+        24
+      ],
+      "text": "Causes foul luck",
+      "_key": "!tables.results!9905f8d50bbc5cf7.5187d8d18fbbab0d",
+      "_id": "5187d8d18fbbab0d"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Haunted by former keepers or victims",
+      "_key": "!tables.results!9905f8d50bbc5cf7.aa91ae8fd7527d9e",
+      "_id": "aa91ae8fd7527d9e"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Illusions conceal its true nature",
+      "_key": "!tables.results!9905f8d50bbc5cf7.2561713edb3350fe",
+      "_id": "2561713edb3350fe"
+    },
+    {
+      "range": [
+        33,
+        40
+      ],
+      "text": "Imbued with a whispering sentience",
+      "_key": "!tables.results!9905f8d50bbc5cf7.a34792e56a94e0d7",
+      "_id": "a34792e56a94e0d7"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Incites a possessive obsession",
+      "_key": "!tables.results!9905f8d50bbc5cf7.a38a12892f9cf1fe",
+      "_id": "a38a12892f9cf1fe"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Inflicts a dreadful transformation",
+      "_key": "!tables.results!9905f8d50bbc5cf7.ac07b6814d5ee366",
+      "_id": "ac07b6814d5ee366"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Inflicts a sickness or wasting",
+      "_key": "!tables.results!9905f8d50bbc5cf7.94be26dad9e03c25",
+      "_id": "94be26dad9e03c25"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Marked with indelible bloodstains",
+      "_key": "!tables.results!9905f8d50bbc5cf7.12d5a7a8c70e4e0b",
+      "_id": "12d5a7a8c70e4e0b"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Marked with sinister glyphs",
+      "_key": "!tables.results!9905f8d50bbc5cf7.6c5581e443e11d0e",
+      "_id": "6c5581e443e11d0e"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Mystically bound to a location",
+      "_key": "!tables.results!9905f8d50bbc5cf7.0e35b87956d755ef",
+      "_id": "0e35b87956d755ef"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Mystically bound to a person",
+      "_key": "!tables.results!9905f8d50bbc5cf7.3c49fdb12fbffb82",
+      "_id": "3c49fdb12fbffb82"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Protected by a monstrous guardian",
+      "_key": "!tables.results!9905f8d50bbc5cf7.ba262e31a574ea96",
+      "_id": "ba262e31a574ea96"
+    },
+    {
+      "range": [
+        73,
+        80
+      ],
+      "text": "Protected by a sorcerous spell",
+      "_key": "!tables.results!9905f8d50bbc5cf7.0c299afb82b18ff4",
+      "_id": "0c299afb82b18ff4"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Provokes dreadful visions or dreams",
+      "_key": "!tables.results!9905f8d50bbc5cf7.c42c40961a43660e",
+      "_id": "c42c40961a43660e"
+    },
+    {
+      "range": [
+        85,
+        92
+      ],
+      "text": "Radiates a foul aura",
+      "_key": "!tables.results!9905f8d50bbc5cf7.c5d3bd2fbc6737da",
+      "_id": "c5d3bd2fbc6737da"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Sought after by a dreadful foe",
+      "_key": "!tables.results!9905f8d50bbc5cf7.7ad4914f41441514",
+      "_id": "7ad4914f41441514"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Summons a powerful being or creature",
+      "_key": "!tables.results!9905f8d50bbc5cf7.7d3c82d22f375ee2",
+      "_id": "7d3c82d22f375ee2"
+    }
+  ],
+  "folder": "4b1f1e3c1b624444",
+  "sort": 222,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9905f8d50bbc5cf7"
+}

@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "7d767f45740b4adf",
+  "folder": "e5df7144ec089f12",
+  "name": "Musketeer",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you make a move to shoot at a specific target from a distance, but score a miss, you set your sights on your quarry. The next time you make a move to shoot at the same target, add +2.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash}, you may attempt to turn the tide of the fight with a difficult but bold shot. If you do, roll an extra challenge die and keep the two highest. A weak hit then counts as a strong hit. On a strong hit with a match, mark progress.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by charging into close quarters with a fixed bayonet, or if you @Compendium[foundry-ironsworn.starforgedmoves.d9208f9b7d827aec]{React Under Fire} by holding foes at bay or parrying close quarter attacks with your rifle, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/musketeer",
+      "dsid": "asset:sundered_isles/path/musketeer"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!7d767f45740b4adf"
+}

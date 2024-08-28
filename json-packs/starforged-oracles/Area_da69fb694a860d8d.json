@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Community/Area",
-      "category": "Starforged/Oracles/Derelicts/Community"
+      "category": "Starforged/Oracles/Derelicts/Community",
+      "dsid": "oracle_rollable:starforged/derelict/community/area"
     }
   },
   "name": "Area",
   "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Bar or club",
-      "_id": "4affe19bb7e7b1b9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.4affe19bb7e7b1b9"
+      "_key": "!tables.results!da69fb694a860d8d.822b188cfe99b756",
+      "_id": "822b188cfe99b756"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Classroom or education",
-      "_id": "d2a556a91c726755",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.d2a556a91c726755"
+      "_key": "!tables.results!da69fb694a860d8d.2040983c33fa51a1",
+      "_id": "2040983c33fa51a1"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Concourse or hub",
-      "_id": "a8993501717187c0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.a8993501717187c0"
+      "_key": "!tables.results!da69fb694a860d8d.1f8edd3bcc0ece12",
+      "_id": "1f8edd3bcc0ece12"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Entertainment",
-      "_id": "6ab4602489821e02",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.6ab4602489821e02"
+      "_key": "!tables.results!da69fb694a860d8d.1c6d189600fbb9e4",
+      "_id": "1c6d189600fbb9e4"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Gym or fitness",
-      "_id": "31b3d8f9c9b6df14",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.31b3d8f9c9b6df14"
+      "_key": "!tables.results!da69fb694a860d8d.8c7190af3ee80daf",
+      "_id": "8c7190af3ee80daf"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Market or trade",
-      "_id": "76e13ff73e59503b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.76e13ff73e59503b"
+      "_key": "!tables.results!da69fb694a860d8d.b21c2360071bdca6",
+      "_id": "b21c2360071bdca6"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Park or garden",
-      "_id": "01ba6e8a0067fc14",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.01ba6e8a0067fc14"
+      "_key": "!tables.results!da69fb694a860d8d.5350760f4a5ea5d1",
+      "_id": "5350760f4a5ea5d1"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Promenade or overlook",
-      "_id": "a6485ff02b564f88",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.a6485ff02b564f88"
+      "_key": "!tables.results!da69fb694a860d8d.d091f12e8b55f7a8",
+      "_id": "d091f12e8b55f7a8"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Restaurant or dining",
-      "_id": "837499a3ee23ed84",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.837499a3ee23ed84"
+      "_key": "!tables.results!da69fb694a860d8d.842f0bc1a7fb02d3",
+      "_id": "842f0bc1a7fb02d3"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Temple or chapel",
-      "_id": "e2dd07affa6da936",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.e2dd07affa6da936"
+      "_key": "!tables.results!da69fb694a860d8d.e0743a3803e06410",
+      "_id": "e0743a3803e06410"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         85
       ],
       "text": "New zone",
-      "_id": "d1473b18c35e7e07",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.d1473b18c35e7e07"
+      "_key": "!tables.results!da69fb694a860d8d.1e58db15c2e47ac4",
+      "_id": "1e58db15c2e47ac4"
     },
     {
       "range": [
         86,
         100
       ],
-      "text": "New zone via <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Access\"><i class=\"fa fa-caret-right\"></i> Access</a>",
-      "_id": "e8e4c203bb2486cc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da69fb694a860d8d.e8e4c203bb2486cc"
+      "text": "<p>New zone via \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/access\">\n    <i class=\"fa fa-caret-right\"></i> Access\n</a></p>",
+      "_key": "!tables.results!da69fb694a860d8d.5fb48a0f24a5373b",
+      "_id": "5fb48a0f24a5373b"
     }
   ],
   "folder": "106a2830d69bfa64",
   "sort": 353,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!da69fb694a860d8d"
 }

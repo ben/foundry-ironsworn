@@ -1,0 +1,141 @@
+{
+  "_id": "b4157fd5116746cc",
+  "type": "delve-domain",
+  "name": "Ruin",
+  "img": "icons/environment/wilderness/wall-ruins.webp",
+  "system": {
+    "summary": "The crumbling legacy of a dead civilization.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Crumbling corridors and chambers"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Collapsed architecture"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Rubble-choked hall"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Courtyard"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Archive or library"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Broken statuary or fading murals"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Preserved vault"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Temple to forgotten gods"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Mausoleum"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Ancient mechanism or trap"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Collapsing wall or ceiling"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Blocked or broken passage"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Unstable floor above a new danger"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Ancient secrets best left buried"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 91,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/ruin"
+    }
+  },
+  "_key": "!items!b4157fd5116746cc"
+}

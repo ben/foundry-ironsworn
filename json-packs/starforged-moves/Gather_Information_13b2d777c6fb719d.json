@@ -3,89 +3,64 @@
   "type": "sfmove",
   "name": "Gather Information",
   "img": "icons/dice/d10black.svg",
+  "folder": "e5b957751be9d2e6",
   "system": {
     "dfid": "Starforged/Moves/Adventure/Gather_Information",
     "Category": "Starforged/Moves/Adventure",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you search for clues, conduct an investigation, analyze evidence, or do research**, roll +wits.\n\nOn a **strong hit**, you discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn. Then, take +2 momentum.\n\nOn a **weak hit**, the information provides new insight, but also complicates your quest. Envision what you discover. Then, take +1 momentum.\n\nOn a **miss**, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Text": "__When you search for clues, conduct an investigation, analyze evidence, or do research__, roll +wits.\n\nOn a __strong hit__, you discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn. Then, take +2 momentum.\n\nOn a __weak hit__, the information provides new insight, but also complicates your quest. Envision what you discover. Then, take +1 momentum.\n\nOn a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
     "Trigger": {
       "Text": "When you search for clues, conduct an investigation, analyze evidence, or do research...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Wits"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn. Then, take +2 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn. Then, take +2 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "The information provides new insight, but also complicates your quest. Envision what you discover. Then, take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, the information provides new insight, but also complicates your quest. Envision what you discover. Then, take +1 momentum."
       },
       "Miss": {
-        "Text": "Your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
-    "Oracles": [
-      "Starforged/Oracles/Misc/Story_Clue"
-    ],
+    "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 149
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#3C70A4",
       "Images": []
     }
   },
   "sort": 149,
-  "folder": "e5b957751be9d2e6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Adventure/Gather_Information",
+      "dsid": "move:starforged/adventure/gather_information"
+    }
   },
   "_key": "!items!13b2d777c6fb719d"
 }

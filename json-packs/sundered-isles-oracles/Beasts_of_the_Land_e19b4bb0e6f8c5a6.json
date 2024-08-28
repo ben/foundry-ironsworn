@@ -1,0 +1,155 @@
+{
+  "_id": "e19b4bb0e6f8c5a6",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/adventures/beasts",
+      "dsid": "oracle_rollable:sundered_isles/adventures/beasts/land"
+    }
+  },
+  "name": "Beasts of the Land",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "Predatory Big Cat",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.1ddcccd97673aae8",
+      "_id": "1ddcccd97673aae8"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Reaper",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.39447ac1fc7df3b8",
+      "_id": "39447ac1fc7df3b8"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Great Ape",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.9d72a866f1be1a1c",
+      "_id": "9d72a866f1be1a1c"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Thundermaw",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.c9b7613321b656c7",
+      "_id": "c9b7613321b656c7"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Primordial",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.701d8efa974ea57d",
+      "_id": "701d8efa974ea57d"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Avithor",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.9e77a30359dc7f55",
+      "_id": "9e77a30359dc7f55"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Verdant Mammoth",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.c54ef9b79a688d55",
+      "_id": "c54ef9b79a688d55"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Serrabrus",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.b55e20f7964eb8ec",
+      "_id": "b55e20f7964eb8ec"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Night Weaver",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.e92a166ef5aad59a",
+      "_id": "e92a166ef5aad59a"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Sylvan Strider",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.3c0491fd2b50f415",
+      "_id": "3c0491fd2b50f415"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Mimic Serpent",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.4b26d19b87ffe0a0",
+      "_id": "4b26d19b87ffe0a0"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Ghost Rat",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.bcff97027fa7fcbd",
+      "_id": "bcff97027fa7fcbd"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Gangle",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.f88700d6e85b7e67",
+      "_id": "f88700d6e85b7e67"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Deep Dragon",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.013a87965eb4245f",
+      "_id": "013a87965eb4245f"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Abomination",
+      "_key": "!tables.results!e19b4bb0e6f8c5a6.3903321a99bcd35e",
+      "_id": "3903321a99bcd35e"
+    }
+  ],
+  "folder": "a4ce4643e46e22ca",
+  "sort": 60,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e19b4bb0e6f8c5a6"
+}

@@ -1,0 +1,236 @@
+{
+  "_id": "baaff21d3f6897ac",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure",
+      "dsid": "oracle_rollable:sundered_isles/treasure/precious_items"
+    }
+  },
+  "name": "Precious Items",
+  "description": "<p>Roll or select a number of items on this table as set by the treasure’s \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/treasure/value\">\n    <i class=\"fa fa-caret-right\"></i> Value\n</a>. Each result represents a quantity of that item, such as a strongbox filled with pearls, barrels of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the @Compendium[foundry-ironsworn.sunderedislesoracles.0aa8af4001afac1f]{Tokens} table.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Cache of coins, gems, and jewels",
+      "_key": "!tables.results!baaff21d3f6897ac.0635c2f03c1fe309",
+      "_id": "0635c2f03c1fe309"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Aged rum",
+      "_key": "!tables.results!baaff21d3f6897ac.d8d256abd27e5385",
+      "_id": "d8d256abd27e5385"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Ancient artifacts",
+      "_key": "!tables.results!baaff21d3f6897ac.4a219b8f0a930da8",
+      "_id": "4a219b8f0a930da8"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Fine art",
+      "_key": "!tables.results!baaff21d3f6897ac.26960efbb5bcc3f1",
+      "_id": "26960efbb5bcc3f1"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Fine wine",
+      "_key": "!tables.results!baaff21d3f6897ac.8fbac89bdcc4be24",
+      "_id": "8fbac89bdcc4be24"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Gilded imperial regalia",
+      "_key": "!tables.results!baaff21d3f6897ac.c6a9f828b3b155b6",
+      "_id": "c6a9f828b3b155b6"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Glittering gemstones",
+      "_key": "!tables.results!baaff21d3f6897ac.13d183be7da70184",
+      "_id": "13d183be7da70184"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Gold coins",
+      "_key": "!tables.results!baaff21d3f6897ac.8bb037a9fa9867d8",
+      "_id": "8bb037a9fa9867d8"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Intricate mechanical devices",
+      "_key": "!tables.results!baaff21d3f6897ac.c2c72ffbc810afc0",
+      "_id": "c2c72ffbc810afc0"
+    },
+    {
+      "range": [
+        47,
+        50
+      ],
+      "text": "Lustrous pearls",
+      "_key": "!tables.results!baaff21d3f6897ac.9b0fcdd95759c5d8",
+      "_id": "9b0fcdd95759c5d8"
+    },
+    {
+      "range": [
+        51,
+        54
+      ],
+      "text": "Masterwork weapons",
+      "_key": "!tables.results!baaff21d3f6897ac.673d9d5727523469",
+      "_id": "673d9d5727523469"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Precious metal ingots",
+      "_key": "!tables.results!baaff21d3f6897ac.c98724f2938349db",
+      "_id": "c98724f2938349db"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Rare books",
+      "_key": "!tables.results!baaff21d3f6897ac.e9dee09a522497f6",
+      "_id": "e9dee09a522497f6"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Rare fossils",
+      "_key": "!tables.results!baaff21d3f6897ac.1ce7f3399d37c23b",
+      "_id": "1ce7f3399d37c23b"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Rare hides or furs",
+      "_key": "!tables.results!baaff21d3f6897ac.abb43eb63bb43338",
+      "_id": "abb43eb63bb43338"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Rare maps",
+      "_key": "!tables.results!baaff21d3f6897ac.92a28f27974d244f",
+      "_id": "92a28f27974d244f"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Rare medicinal herbs or compounds",
+      "_key": "!tables.results!baaff21d3f6897ac.a109fa5d3c773f86",
+      "_id": "a109fa5d3c773f86"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Rare spices",
+      "_key": "!tables.results!baaff21d3f6897ac.7f53e7b8f834af32",
+      "_id": "7f53e7b8f834af32"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Rare toxins or poisons",
+      "_key": "!tables.results!baaff21d3f6897ac.9226d821758e69e6",
+      "_id": "9226d821758e69e6"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Sacred relics",
+      "_key": "!tables.results!baaff21d3f6897ac.9dfd8c6f603865bc",
+      "_id": "9dfd8c6f603865bc"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Secret documents",
+      "_key": "!tables.results!baaff21d3f6897ac.9d2a0fb9095120cd",
+      "_id": "9d2a0fb9095120cd"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Unworked gemstones",
+      "_key": "!tables.results!baaff21d3f6897ac.93905591a2c4f80a",
+      "_id": "93905591a2c4f80a"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!baaff21d3f6897ac.b65969f14fd9872e",
+      "_id": "b65969f14fd9872e"
+    },
+    {
+      "range": [
+        89,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0aa8af4001afac1f]{Token}",
+      "_key": "!tables.results!baaff21d3f6897ac.3ff76ae7e92bde8f",
+      "_id": "3ff76ae7e92bde8f"
+    }
+  ],
+  "folder": "4b1f1e3c1b624444",
+  "sort": 223,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!baaff21d3f6897ac"
+}

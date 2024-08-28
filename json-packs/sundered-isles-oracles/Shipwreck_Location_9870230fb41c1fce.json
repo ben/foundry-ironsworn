@@ -1,0 +1,74 @@
+{
+  "_id": "9870230fb41c1fce",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/location"
+    }
+  },
+  "name": "Shipwreck Location",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "Sea",
+      "_key": "!tables.results!9870230fb41c1fce.20a1ca9088666b5f",
+      "_id": "20a1ca9088666b5f"
+    },
+    {
+      "range": [
+        26,
+        65
+      ],
+      "text": "Shore",
+      "_key": "!tables.results!9870230fb41c1fce.42781f9c4c5d4ff8",
+      "_id": "42781f9c4c5d4ff8"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Sea Cave",
+      "_key": "!tables.results!9870230fb41c1fce.68407e7a19dd3c2f",
+      "_id": "68407e7a19dd3c2f"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "Swamp",
+      "_key": "!tables.results!9870230fb41c1fce.56f3eee559ee8681",
+      "_id": "56f3eee559ee8681"
+    },
+    {
+      "range": [
+        86,
+        98
+      ],
+      "text": "River",
+      "_key": "!tables.results!9870230fb41c1fce.6311800acb1ae5d5",
+      "_id": "6311800acb1ae5d5"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Inland",
+      "_key": "!tables.results!9870230fb41c1fce.642dede90854084b",
+      "_id": "642dede90854084b"
+    }
+  ],
+  "folder": "d4fcc34036960bb6",
+  "sort": 198,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9870230fb41c1fce"
+}

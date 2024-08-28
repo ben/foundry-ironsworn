@@ -1,0 +1,200 @@
+{
+  "_id": "882030be5074ea01",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/peril"
+    }
+  },
+  "name": "Shipwreck Peril",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Booby-trapped passage or container",
+      "_key": "!tables.results!882030be5074ea01.72befef67dca37da",
+      "_id": "72befef67dca37da"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Claustrophobic or unnerving spaces",
+      "_key": "!tables.results!882030be5074ea01.39f0596f572c4f8c",
+      "_id": "39f0596f572c4f8c"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Collapsing overhead structure",
+      "_key": "!tables.results!882030be5074ea01.fed75d2838d1eeeb",
+      "_id": "fed75d2838d1eeeb"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Dangerous or volatile cargo",
+      "_key": "!tables.results!882030be5074ea01.a4b7cc42478db08c",
+      "_id": "a4b7cc42478db08c"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Disorienting murk or smoke",
+      "_key": "!tables.results!882030be5074ea01.61d7760c0920c42b",
+      "_id": "61d7760c0920c42b"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Disturbing scene of death or violence",
+      "_key": "!tables.results!882030be5074ea01.353b7f0bb0961157",
+      "_id": "353b7f0bb0961157"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Entangling debris",
+      "_key": "!tables.results!882030be5074ea01.1c4e5b49503af70b",
+      "_id": "1c4e5b49503af70b"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Flooded or blocked space",
+      "_key": "!tables.results!882030be5074ea01.160404d1d6f29a9d",
+      "_id": "160404d1d6f29a9d"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Foes or rivals arrive at the site",
+      "_key": "!tables.results!882030be5074ea01.3d3093af10507ec2",
+      "_id": "3d3093af10507ec2"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Hostile explorer or survivor",
+      "_key": "!tables.results!882030be5074ea01.7b732c1d96cb0dfe",
+      "_id": "7b732c1d96cb0dfe"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Lair of a territorial creature",
+      "_key": "!tables.results!882030be5074ea01.7c916e9e3a47b87b",
+      "_id": "7c916e9e3a47b87b"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Precarious path through wreckage",
+      "_key": "!tables.results!882030be5074ea01.0b4502f20ea27201",
+      "_id": "0b4502f20ea27201"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Sense of being watched",
+      "_key": "!tables.results!882030be5074ea01.0c7bfc5993e2c81b",
+      "_id": "0c7bfc5993e2c81b"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Signs of infestation or disease",
+      "_key": "!tables.results!882030be5074ea01.e3a4a4d0a560402f",
+      "_id": "e3a4a4d0a560402f"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Sudden shifting of the wreck",
+      "_key": "!tables.results!882030be5074ea01.255122b2b2b77407",
+      "_id": "255122b2b2b77407"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Swarm of aggressive creatures",
+      "_key": "!tables.results!882030be5074ea01.3cccc2a7b5d5287d",
+      "_id": "3cccc2a7b5d5287d"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Tricky passage or descent",
+      "_key": "!tables.results!882030be5074ea01.ba32de289cd1aaf3",
+      "_id": "ba32de289cd1aaf3"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Unstable or rotting deck",
+      "_key": "!tables.results!882030be5074ea01.f603789bdf8eddb2",
+      "_id": "f603789bdf8eddb2"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Worsening weather or environment",
+      "_key": "!tables.results!882030be5074ea01.3cf423219281fe25",
+      "_id": "3cf423219281fe25"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!882030be5074ea01.8d7230c28d82cd88",
+      "_id": "8d7230c28d82cd88"
+    }
+  ],
+  "folder": "d4fcc34036960bb6",
+  "sort": 203,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!882030be5074ea01"
+}

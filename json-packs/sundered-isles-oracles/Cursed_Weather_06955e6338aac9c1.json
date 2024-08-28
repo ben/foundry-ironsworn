@@ -1,0 +1,200 @@
+{
+  "_id": "06955e6338aac9c1",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/weather",
+      "dsid": "oracle_rollable:sundered_isles/weather/cursed"
+    }
+  },
+  "name": "Cursed Weather",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Ash storm",
+      "_key": "!tables.results!06955e6338aac9c1.84e6539d161c2a30",
+      "_id": "84e6539d161c2a30"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Blighting muck",
+      "_key": "!tables.results!06955e6338aac9c1.43064e344ec1855f",
+      "_id": "43064e344ec1855f"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Blood rain",
+      "_key": "!tables.results!06955e6338aac9c1.39598617c03a281e",
+      "_id": "39598617c03a281e"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Cinder rain",
+      "_key": "!tables.results!06955e6338aac9c1.1376910311d6a426",
+      "_id": "1376910311d6a426"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Creeping mist",
+      "_key": "!tables.results!06955e6338aac9c1.38a3078cc13079bd",
+      "_id": "38a3078cc13079bd"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Crimson mist",
+      "_key": "!tables.results!06955e6338aac9c1.6fb3ea648318d191",
+      "_id": "6fb3ea648318d191"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Dead calm",
+      "_key": "!tables.results!06955e6338aac9c1.d2dd99c22baaa550",
+      "_id": "d2dd99c22baaa550"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Fisher's feast",
+      "_key": "!tables.results!06955e6338aac9c1.9f3e53828b5bff78",
+      "_id": "9f3e53828b5bff78"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Forge's fury",
+      "_key": "!tables.results!06955e6338aac9c1.7ee3c1eb85916805",
+      "_id": "7ee3c1eb85916805"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Gloam tide",
+      "_key": "!tables.results!06955e6338aac9c1.bed9c5a429446275",
+      "_id": "bed9c5a429446275"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Ice fall",
+      "_key": "!tables.results!06955e6338aac9c1.33b499479fb3ce98",
+      "_id": "33b499479fb3ce98"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Iron wind",
+      "_key": "!tables.results!06955e6338aac9c1.798120da749d97c9",
+      "_id": "798120da749d97c9"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Knowing mist",
+      "_key": "!tables.results!06955e6338aac9c1.5cf56ebc953c8825",
+      "_id": "5cf56ebc953c8825"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Phantom mist",
+      "_key": "!tables.results!06955e6338aac9c1.10ede9080938a9b0",
+      "_id": "10ede9080938a9b0"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Rot wind",
+      "_key": "!tables.results!06955e6338aac9c1.0986ce8be14e9ebf",
+      "_id": "0986ce8be14e9ebf"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Sand storm",
+      "_key": "!tables.results!06955e6338aac9c1.6c01f8e27f1188e6",
+      "_id": "6c01f8e27f1188e6"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Seeking spouts",
+      "_key": "!tables.results!06955e6338aac9c1.eee5998bb61801dc",
+      "_id": "eee5998bb61801dc"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Tempest",
+      "_key": "!tables.results!06955e6338aac9c1.a2aa0275d9f68dc3",
+      "_id": "a2aa0275d9f68dc3"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Wailing wind",
+      "_key": "!tables.results!06955e6338aac9c1.1336ce4773e58e47",
+      "_id": "1336ce4773e58e47"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Witch fire",
+      "_key": "!tables.results!06955e6338aac9c1.896a8abfd7ae0429",
+      "_id": "896a8abfd7ae0429"
+    }
+  ],
+  "folder": "14b8249cc0931287",
+  "sort": 131,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!06955e6338aac9c1"
+}

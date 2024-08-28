@@ -1,0 +1,200 @@
+{
+  "_id": "d231589442f1e296",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Jungle",
+      "dsid": "oracle_rollable:starforged/planet/jungle/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Acacia",
+      "_key": "!tables.results!d231589442f1e296.89b48da86e6fd09c",
+      "_id": "89b48da86e6fd09c"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Aster",
+      "_key": "!tables.results!d231589442f1e296.8677b90acfe96302",
+      "_id": "8677b90acfe96302"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Beryl",
+      "_key": "!tables.results!d231589442f1e296.5a0856ef32e41fcb",
+      "_id": "5a0856ef32e41fcb"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Celadon",
+      "_key": "!tables.results!d231589442f1e296.640c0301c84efffc",
+      "_id": "640c0301c84efffc"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Ceres",
+      "_key": "!tables.results!d231589442f1e296.61ef87a4162220d1",
+      "_id": "61ef87a4162220d1"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Damu",
+      "_key": "!tables.results!d231589442f1e296.cedef76ba6646504",
+      "_id": "cedef76ba6646504"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Dryad",
+      "_key": "!tables.results!d231589442f1e296.c422de287cf88989",
+      "_id": "c422de287cf88989"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Flora",
+      "_key": "!tables.results!d231589442f1e296.41e5762024a81aa1",
+      "_id": "41e5762024a81aa1"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Iridum",
+      "_key": "!tables.results!d231589442f1e296.7bf30b021af13881",
+      "_id": "7bf30b021af13881"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Iris",
+      "_key": "!tables.results!d231589442f1e296.ec5000f7b91343a7",
+      "_id": "ec5000f7b91343a7"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Kishar",
+      "_key": "!tables.results!d231589442f1e296.068e363e4d3b3123",
+      "_id": "068e363e4d3b3123"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Penumbra",
+      "_key": "!tables.results!d231589442f1e296.f4e5b0de14ae1b2b",
+      "_id": "f4e5b0de14ae1b2b"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Roris",
+      "_key": "!tables.results!d231589442f1e296.fcb2f46789ae181e",
+      "_id": "fcb2f46789ae181e"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Sylva",
+      "_key": "!tables.results!d231589442f1e296.826534d84a59c956",
+      "_id": "826534d84a59c956"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Tangle",
+      "_key": "!tables.results!d231589442f1e296.204b28b05ad3b6ed",
+      "_id": "204b28b05ad3b6ed"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Thorn",
+      "_key": "!tables.results!d231589442f1e296.714d2a53eb8b04f3",
+      "_id": "714d2a53eb8b04f3"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Venom",
+      "_key": "!tables.results!d231589442f1e296.9dd63b6b5efb6735",
+      "_id": "9dd63b6b5efb6735"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Verdure",
+      "_key": "!tables.results!d231589442f1e296.0b8bc2eed860ed62",
+      "_id": "0b8bc2eed860ed62"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Veris",
+      "_key": "!tables.results!d231589442f1e296.41b4195515916d54",
+      "_id": "41b4195515916d54"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Viridian",
+      "_key": "!tables.results!d231589442f1e296.730fa9c6194528c6",
+      "_id": "730fa9c6194528c6"
+    }
+  ],
+  "folder": "2a431921f3dabd4b",
+  "sort": 313,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d231589442f1e296"
+}

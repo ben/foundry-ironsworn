@@ -1,0 +1,17 @@
+{
+  "name": "Threat Moves",
+  "color": "#3F8C8A",
+  "description": "The world does not wait for you. As you undertake journeys to distant locations, explore perilous places, and spend time recovering from your adventures, the forces which oppose you will advance their own agenda. When you suffer setbacks, those forces will take advantage of your failure to gain new ground.\n\n__Threats__ are an optional mechanic for your *Ironsworn* campaign which will make the forces in your world more active and responsive. Your vows will gain new urgency as threats work against you.",
+  "type": "Item",
+  "_id": "559fcae96a68d6ad",
+  "sort": 151,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Threat",
+      "dsid": "move_category:delve/threat"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!559fcae96a68d6ad"
+}

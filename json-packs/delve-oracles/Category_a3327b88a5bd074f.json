@@ -1,0 +1,111 @@
+{
+  "_id": "a3327b88a5bd074f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Category",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/category"
+    }
+  },
+  "name": "Category",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.b86c508fef6c1a16]{Burgeoning Conflict}",
+      "_key": "!tables.results!a3327b88a5bd074f.fc5aa2895b8628d3",
+      "_id": "fc5aa2895b8628d3"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.09ae51a0a641dfd2]{Cursed Site}",
+      "_key": "!tables.results!a3327b88a5bd074f.4e8519b809e4c3a9",
+      "_id": "4e8519b809e4c3a9"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.ba74c724ad994958]{Environmental Calamity}",
+      "_key": "!tables.results!a3327b88a5bd074f.f93cbda7e805eb8b",
+      "_id": "f93cbda7e805eb8b"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.63ebfe1906b4e035]{Malignant Plague}",
+      "_key": "!tables.results!a3327b88a5bd074f.56776e164217febc",
+      "_id": "56776e164217febc"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.d18bba3ea62a8639]{Rampaging Creature}",
+      "_key": "!tables.results!a3327b88a5bd074f.a75dd38e11aaf56c",
+      "_id": "a75dd38e11aaf56c"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.0991e8cda7323b44]{Ravaging Horde}",
+      "_key": "!tables.results!a3327b88a5bd074f.5fc9a11868689b84",
+      "_id": "5fc9a11868689b84"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.b865d2fcd5b974c4]{Scheming Leader}",
+      "_key": "!tables.results!a3327b88a5bd074f.36af426f87f2bd81",
+      "_id": "36af426f87f2bd81"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.dbc05d092afe9b2e]{Power-Hungry Mystic}",
+      "_key": "!tables.results!a3327b88a5bd074f.c71c8c8233956cea",
+      "_id": "c71c8c8233956cea"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "@Compendium[foundry-ironsworn.delveoracles.05316ee13398ee8e]{Zealous Cult}",
+      "_key": "!tables.results!a3327b88a5bd074f.b0fdb51cb5839b80",
+      "_id": "b0fdb51cb5839b80"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!a3327b88a5bd074f.b3abc7f6766cd0db",
+      "_id": "b3abc7f6766cd0db"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 220,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a3327b88a5bd074f"
+}

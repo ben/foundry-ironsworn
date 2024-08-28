@@ -1,0 +1,104 @@
+{
+  "name": "Iron Vows",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/iron_vows",
+      "dsid": "truth:sundered_isles/iron_vows"
+    }
+  },
+  "_id": "8ed8686a0cb37a05",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Some see iron vows as a vestige of a more superstitious age, but the tradition persists.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/iron_vows.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Some see iron vows as a vestige of a more superstitious age, but the tradition persists.",
+        "Description": "Our forebears bound their promises to the strength and permanence of iron. Today, self-avowed Ironsworn respect this tradition by affirming their resolve with a time-honored phrase: “By iron, I vow.” Even those who forgo an iron totem say the words to lend solemnity to a promise, setting themselves on an honorbound course—wherever it may lead.",
+        "Summary": "Some see iron vows as a vestige of a more superstitious age, but the tradition persists.",
+        "Quest": "The Iron Tide, a force of warships whose commanders and crews have taken up the vow of their fallen leader, is bound for local waters. What do they seek, and why do you swear your own vow to prevent it?",
+        "Roll template": {
+          "Description": "Our forebears bound their promises to the strength and permanence of iron. Today, self-avowed Ironsworn respect this tradition by affirming their resolve with a time-honored phrase: “By iron, I vow.” Even those who forgo an iron totem say the words to lend solemnity to a promise, setting themselves on an honorbound course—wherever it may lead."
+        }
+      },
+      "_id": "751bc9dc87b4a467",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!8ed8686a0cb37a05.751bc9dc87b4a467"
+    },
+    {
+      "type": "truth",
+      "name": "The Ironsworn bind their honor to iron blades.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/iron_vows.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "The Ironsworn bind their honor to iron blades.",
+        "Description": "Even in this age of cannon and rifle, a finely-wrought blade—whether sword or dagger, dirk or bayonet—remains a mark of skill and resolve. When the Ironsworn swear a vow upon a blade, we bind our commitment to the metal. If we forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced.",
+        "Summary": "The Ironsworn bind their honor to iron blades.",
+        "Quest": "You carry a broken sword. How was it broken, and what must you do to be worthy of a reforged blade?",
+        "Roll template": {
+          "Description": "Even in this age of cannon and rifle, a finely-wrought blade—whether sword or dagger, dirk or bayonet—remains a mark of skill and resolve. When the Ironsworn swear a vow upon a blade, we bind our commitment to the metal. If we forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced."
+        }
+      },
+      "_id": "287160a6cad38813",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!8ed8686a0cb37a05.287160a6cad38813"
+    },
+    {
+      "type": "truth",
+      "name": "Since the distant time when iron was first hammered into form, seafaring folk of this world carried iron bondstones as sacred keepsakes.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/iron_vows.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Since the distant time when iron was first hammered into form, seafaring folk of this world carried iron bondstones as sacred keepsakes.",
+        "Description": "Each bondstone is unique—a relic of kin and culture—passed from one generation to the next. They are said to connect the soul of its keeper to their homeland or loved ones as if by an invisible thread. Thus, if lost at sea, our spirit may return home rather than remain entombed in the remorseless depths. We swear our vows upon bondstones as promises that follow us to our death—and beyond. But bondstones can also embody the curses of lost lives and forsaken vows, and bearing that weight can make them feel as heavy as a ship’s anchor.",
+        "Summary": "Since the distant time when iron was first hammered into form, seafaring folk of this world carried iron bondstones as sacred keepsakes.",
+        "Quest": "A merciless and powerful raider wears the bondstones of their victims as trophies. One of those totems is rightfully yours. To whom did it previously belong?",
+        "Roll template": {
+          "Description": "Each bondstone is unique—a relic of kin and culture—passed from one generation to the next. They are said to connect the soul of its keeper to their homeland or loved ones as if by an invisible thread. Thus, if lost at sea, our spirit may return home rather than remain entombed in the remorseless depths. We swear our vows upon bondstones as promises that follow us to our death—and beyond. But bondstones can also embody the curses of lost lives and forsaken vows, and bearing that weight can make them feel as heavy as a ship’s anchor."
+        }
+      },
+      "_id": "5dbf6198e9ba4fd6",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!8ed8686a0cb37a05.5dbf6198e9ba4fd6"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are sworn to a cause, you might be @Compendium[foundry-ironsworn.starforgedassets.92c1672053d9fba4]{Bannersworn}. If you carry an honorbound blade, you might be a @Compendium[foundry-ironsworn.starforgedassets.82cb2564aae5bf0f]{Blademaster}. If you fight for personal honor, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.8ce3175e11ec3edd]{Duelist}. If your vows are shared with those in your charge, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.5700a76b914a881e]{Crew Commander}.",
+        "format": 2,
+        "content": "<p>If you are sworn to a cause, you might be @Compendium[foundry-ironsworn.starforgedassets.92c1672053d9fba4]{Bannersworn}. If you carry an honorbound blade, you might be a @Compendium[foundry-ironsworn.starforgedassets.82cb2564aae5bf0f]{Blademaster}. If you fight for personal honor, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.8ce3175e11ec3edd]{Duelist}. If your vows are shared with those in your charge, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.5700a76b914a881e]{Crew Commander}.</p>"
+      },
+      "_id": "afb4d2f1f16a1a92",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!8ed8686a0cb37a05.afb4d2f1f16a1a92"
+    }
+  ],
+  "folder": null,
+  "sort": 80,
+  "_key": "!journal!8ed8686a0cb37a05"
+}

@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Compel",
   "img": "icons/dice/d10black.svg",
+  "folder": "e5b957751be9d2e6",
   "system": {
     "dfid": "Starforged/Moves/Adventure/Compel",
     "Category": "Starforged/Moves/Adventure",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you try to persuade someone or make them an offer**, envision your approach. If you...\n\n  * Charm, pacify, encourage, or barter: Roll +heart\n  * Threaten or incite: Roll +iron\n  * Lie or swindle: Roll +shadow\n\nOn a **strong hit**, they'll do what you want or agree to your conditions. Take +1 momentum.\n\nOn a **weak hit**, as above, but their agreement comes with a demand or complication. Envision their counteroffer.\n\nOn a **miss**, they refuse or make a demand that costs you greatly. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Text": "__When you try to persuade someone or make them an offer__, envision your approach. If you...\n\n  * Charm, pacify, encourage, or barter: Roll +heart\n  * Threaten or incite: Roll +iron\n  * Lie or swindle: Roll +shadow\n\nOn a __strong hit__, they'll do what you want or agree to your conditions. Take +1 momentum.\n\nOn a __weak hit__, as above, but their agreement comes with a demand or complication. Envision their counteroffer.\n\nOn a __miss__, they refuse or make a demand that costs you greatly. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
     "Trigger": {
       "Text": "When you try to persuade someone or make them an offer...",
       "Options": [
@@ -40,66 +41,42 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "They'll do what you want or agree to your conditions. Take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, they'll do what you want or agree to your conditions. Take +1 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "They'll do what you want or agree to your conditions, but their agreement comes with a demand or complication. Envision their counteroffer and take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, they'll do what you want or agree to your conditions, but their agreement comes with a demand or complication. Envision their counteroffer and take +1 momentum."
       },
       "Miss": {
-        "Text": "They refuse or make a demand that costs you greatly. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, they refuse or make a demand that costs you greatly. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 150
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#3C70A4",
       "Images": []
     }
   },
   "sort": 150,
-  "folder": "e5b957751be9d2e6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Adventure/Compel",
+      "dsid": "move:starforged/adventure/compel"
+    }
   },
   "_key": "!items!9f538fabf8998c5b"
 }

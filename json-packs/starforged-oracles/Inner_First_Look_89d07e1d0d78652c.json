@@ -1,0 +1,309 @@
+{
+  "_id": "89d07e1d0d78652c",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Interior/First_Look",
+      "category": "Starforged/Oracles/Vaults/Interior",
+      "dsid": "oracle_rollable:starforged/precursor_vault/interior/first_look"
+    }
+  },
+  "name": "Inner First Look",
+  "description": "<p>Use this table to reveal what you see or encounter when first entering the site. These aspects, combined with the exterior features, will help you envision the nature and condition of the vault and provide context for the rest of your exploration.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Abnormal gravity",
+      "_key": "!tables.results!89d07e1d0d78652c.cf2d918dc3676dc5",
+      "_id": "cf2d918dc3676dc5"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Automated defenses",
+      "_key": "!tables.results!89d07e1d0d78652c.8a17e571d7ea5dcc",
+      "_id": "8a17e571d7ea5dcc"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Biological infestation",
+      "_key": "!tables.results!89d07e1d0d78652c.da630ae1c5a96168",
+      "_id": "da630ae1c5a96168"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Carried tech is disrupted",
+      "_key": "!tables.results!89d07e1d0d78652c.05b7d8bbab9a2bb0",
+      "_id": "05b7d8bbab9a2bb0"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Complex textures or patterns",
+      "_key": "!tables.results!89d07e1d0d78652c.a13953c3d92ea9d8",
+      "_id": "a13953c3d92ea9d8"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Corpses of intruders",
+      "_key": "!tables.results!89d07e1d0d78652c.5fa00cfd143a9c3e",
+      "_id": "5fa00cfd143a9c3e"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Damage and debris",
+      "_key": "!tables.results!89d07e1d0d78652c.7b77af1b722bb453",
+      "_id": "7b77af1b722bb453"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Deteriorating spaces",
+      "_key": "!tables.results!89d07e1d0d78652c.dbff6c4af846b495",
+      "_id": "dbff6c4af846b495"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Dissonant tones or music",
+      "_key": "!tables.results!89d07e1d0d78652c.6316a05092525100",
+      "_id": "6316a05092525100"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Energy surges",
+      "_key": "!tables.results!89d07e1d0d78652c.ca4d65b16efadd43",
+      "_id": "ca4d65b16efadd43"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Environment reacts to your presence",
+      "_key": "!tables.results!89d07e1d0d78652c.75591e6509f646b2",
+      "_id": "75591e6509f646b2"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Evidence of looting or scavenging",
+      "_key": "!tables.results!89d07e1d0d78652c.385fabe0e69311c0",
+      "_id": "385fabe0e69311c0"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Excessive cold",
+      "_key": "!tables.results!89d07e1d0d78652c.75192bfc5d858898",
+      "_id": "75192bfc5d858898"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Excessive heat",
+      "_key": "!tables.results!89d07e1d0d78652c.fa51fa15b70dab9e",
+      "_id": "fa51fa15b70dab9e"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Faint ambient lighting",
+      "_key": "!tables.results!89d07e1d0d78652c.792f90365fc1da8d",
+      "_id": "792f90365fc1da8d"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Impenetrable darkness",
+      "_key": "!tables.results!89d07e1d0d78652c.3f869c45217f922c",
+      "_id": "3f869c45217f922c"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Intense smell",
+      "_key": "!tables.results!89d07e1d0d78652c.9360d61dcca1100b",
+      "_id": "9360d61dcca1100b"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Magnetic surfaces",
+      "_key": "!tables.results!89d07e1d0d78652c.8286d466c945ab4c",
+      "_id": "8286d466c945ab4c"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Material does not match exterior",
+      "_key": "!tables.results!89d07e1d0d78652c.31bb838dc95960a7",
+      "_id": "31bb838dc95960a7"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Ornate markings or symbols",
+      "_key": "!tables.results!89d07e1d0d78652c.154fcb0a6d2b931e",
+      "_id": "154fcb0a6d2b931e"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Reactive lighting responds to your presence",
+      "_key": "!tables.results!89d07e1d0d78652c.aee005d7891c6225",
+      "_id": "aee005d7891c6225"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Scale does not match exterior",
+      "_key": "!tables.results!89d07e1d0d78652c.f4f23c95f1231bd6",
+      "_id": "f4f23c95f1231bd6"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Signs of invasive lifeforms",
+      "_key": "!tables.results!89d07e1d0d78652c.b0a784dedd4c9ade",
+      "_id": "b0a784dedd4c9ade"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Surfaces respond to touch",
+      "_key": "!tables.results!89d07e1d0d78652c.097d6904e4331521",
+      "_id": "097d6904e4331521"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Thick haze or smoke",
+      "_key": "!tables.results!89d07e1d0d78652c.ed7de43e5c69570a",
+      "_id": "ed7de43e5c69570a"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Thick or fluid atmosphere",
+      "_key": "!tables.results!89d07e1d0d78652c.1de5c7916387bbed",
+      "_id": "1de5c7916387bbed"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Thrumming or droning sound",
+      "_key": "!tables.results!89d07e1d0d78652c.40808464e5f807f3",
+      "_id": "40808464e5f807f3"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Toxic atmosphere",
+      "_key": "!tables.results!89d07e1d0d78652c.3c4472348f3af8d4",
+      "_id": "3c4472348f3af8d4"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Toxic residue",
+      "_key": "!tables.results!89d07e1d0d78652c.b2a870dcd1d8a30c",
+      "_id": "b2a870dcd1d8a30c"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Well-preserved",
+      "_key": "!tables.results!89d07e1d0d78652c.450bec4f0fb73c01",
+      "_id": "450bec4f0fb73c01"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "Wet or humid",
+      "_key": "!tables.results!89d07e1d0d78652c.3d5b7390fcde50cd",
+      "_id": "3d5b7390fcde50cd"
+    },
+    {
+      "range": [
+        94,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!89d07e1d0d78652c.9113b080aad22e03",
+      "_id": "9113b080aad22e03"
+    }
+  ],
+  "folder": "b4d058fedc071ce9",
+  "sort": 364,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!89d07e1d0d78652c"
+}

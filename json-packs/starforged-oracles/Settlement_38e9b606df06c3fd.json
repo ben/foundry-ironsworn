@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Zones/Settlement",
-      "category": "Starforged/Oracles/Derelicts"
+      "category": "Starforged/Oracles/Derelicts/Zones",
+      "dsid": "oracle_rollable:starforged/derelict/zone/settlement"
     }
   },
   "name": "Settlement",
-  "description": "",
-  "formula": "d100",
+  "description": "<p>If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.</p>",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -17,114 +18,67 @@
         1,
         20
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Community\"><i class=\"fa fa-caret-right\"></i> Community</a>",
-      "_id": "8f5144f7f0e07818",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!38e9b606df06c3fd.8f5144f7f0e07818"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/community\">\n    <i class=\"fa fa-caret-right\"></i> Community\n</a></p>",
+      "_key": "!tables.results!38e9b606df06c3fd.02a3f41cc3fb1340",
+      "_id": "02a3f41cc3fb1340"
     },
     {
       "range": [
         21,
         30
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Engineering\"><i class=\"fa fa-caret-right\"></i> Engineering</a>",
-      "_id": "3ef62008ea3e3ef3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!38e9b606df06c3fd.3ef62008ea3e3ef3"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/engineering\">\n    <i class=\"fa fa-caret-right\"></i> Engineering\n</a></p>",
+      "_key": "!tables.results!38e9b606df06c3fd.8460e261dfde0bcb",
+      "_id": "8460e261dfde0bcb"
     },
     {
       "range": [
         31,
         50
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Living\"><i class=\"fa fa-caret-right\"></i> Living</a>",
-      "_id": "2e7bbacff75ea271",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!38e9b606df06c3fd.2e7bbacff75ea271"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/living\">\n    <i class=\"fa fa-caret-right\"></i> Living\n</a></p>",
+      "_key": "!tables.results!38e9b606df06c3fd.f0dea0a92989d5fa",
+      "_id": "f0dea0a92989d5fa"
     },
     {
       "range": [
         51,
         60
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Medical\"><i class=\"fa fa-caret-right\"></i> Medical</a>",
-      "_id": "800e1cb728317870",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!38e9b606df06c3fd.800e1cb728317870"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/medical\">\n    <i class=\"fa fa-caret-right\"></i> Medical\n</a></p>",
+      "_key": "!tables.results!38e9b606df06c3fd.cb1a0487caf0bccd",
+      "_id": "cb1a0487caf0bccd"
     },
     {
       "range": [
         61,
         70
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Operations\"><i class=\"fa fa-caret-right\"></i> Operations</a>",
-      "_id": "a1aa81b4e3991637",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!38e9b606df06c3fd.a1aa81b4e3991637"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/operations\">\n    <i class=\"fa fa-caret-right\"></i> Operations\n</a></p>",
+      "_key": "!tables.results!38e9b606df06c3fd.cc355e37d2ede972",
+      "_id": "cc355e37d2ede972"
     },
     {
       "range": [
         71,
         90
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Production\"><i class=\"fa fa-caret-right\"></i> Production</a>",
-      "_id": "25945641c5a0cf14",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!38e9b606df06c3fd.25945641c5a0cf14"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/production\">\n    <i class=\"fa fa-caret-right\"></i> Production\n</a></p>",
+      "_key": "!tables.results!38e9b606df06c3fd.4f269b0821a81624",
+      "_id": "4f269b0821a81624"
     },
     {
       "range": [
         91,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Derelicts/Research\"><i class=\"fa fa-caret-right\"></i> Research</a>",
-      "_id": "d5b1228419c81566",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!38e9b606df06c3fd.d5b1228419c81566"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/research\">\n    <i class=\"fa fa-caret-right\"></i> Research\n</a></p>",
+      "_key": "!tables.results!38e9b606df06c3fd.e164cf734d330bf6",
+      "_id": "e164cf734d330bf6"
     }
   ],
   "folder": "fd281eb30bcd3e2e",
-  "sort": 351,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!38e9b606df06c3fd"
 }

@@ -1,0 +1,16 @@
+{
+  "name": "Monstrosity",
+  "description": "Use the Monstrosity oracle to define the nature of a @Compendium[foundry-ironsworn.ironsworndelvefoes.99379e4ab9a4360f]{Nightspawn}, or to introduce a new type of animal, beast, or horror in your world.\n\nTo create a monstrosity, start by rolling for its @Compendium[foundry-ironsworn.delveoracles.5030865f2f1bcb60]{Size} and @Compendium[foundry-ironsworn.delveoracles.845f91fcab961f20]{Primary Form}. Then, roll up to four times for @Compendium[foundry-ironsworn.delveoracles.4a4c849d215387b9]{Characteristics} and keep up to three of those results. Do the same for @Compendium[foundry-ironsworn.delveoracles.216690f25bc3ecb5]{Abilities}.\n\nGive the monstrosity a rank. Choose one appropriate to its features, or use the @Compendium[foundry-ironsworn.ironswornoracles.b2c23660dbcfe5b2]{Challenge Rank} oracle.\n\nFinally, envision your creation and give it a name. It’s part of your world now.\n\nSome results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and @Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} (using the pick two procedure) to confirm your choice. Or just take both!\n\nYou should weave these abilities into the fiction of your encounter with a monstrosity. Combined with its physical characteristics, they help define the creature’s approach and tactics. Make moves as appropriate to overcome, avoid, or face the consequences of these abilities.\n\nTo learn more about your creation’s nature, you can roll on additional tables. Use the @Compendium[foundry-ironsworn.ironswornoracles.093f68d2fa077bd0]{Character Goal} oracle to give the monstrosity a purpose. Roll on the @Compendium[foundry-ironsworn.delveoracles.f964e29c54322128]{Character Disposition} and @Compendium[foundry-ironsworn.delveoracles.aedcfc2f2a96a454]{Activity} oracles to frame your initial encounter. Another roll or two can give your monstrosity nuance and complexity, making it a deeper part of your story.",
+  "type": "RollTable",
+  "_id": "feaab449f5044ca1",
+  "sort": 214,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Monstrosity",
+      "dsid": "oracle_collection:delve/monstrosity"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!feaab449f5044ca1"
+}

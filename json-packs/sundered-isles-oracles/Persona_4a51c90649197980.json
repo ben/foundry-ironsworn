@@ -1,0 +1,110 @@
+{
+  "_id": "4a51c90649197980",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/rebellion",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/rebellion/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Crows",
+      "_key": "!tables.results!4a51c90649197980.2f1e157d720e84da",
+      "_id": "2f1e157d720e84da"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Gulls",
+      "_key": "!tables.results!4a51c90649197980.071101718a3c7608",
+      "_id": "071101718a3c7608"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Marauders",
+      "_key": "!tables.results!4a51c90649197980.5b2c3f1a3ac55ad3",
+      "_id": "5b2c3f1a3ac55ad3"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Outcasts",
+      "_key": "!tables.results!4a51c90649197980.4e284f44fb6fd191",
+      "_id": "4e284f44fb6fd191"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Pirates",
+      "_key": "!tables.results!4a51c90649197980.cb5daad5b470a250",
+      "_id": "cb5daad5b470a250"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Reavers",
+      "_key": "!tables.results!4a51c90649197980.094705335bf2948f",
+      "_id": "094705335bf2948f"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Drifters",
+      "_key": "!tables.results!4a51c90649197980.49d1803cec2837a3",
+      "_id": "49d1803cec2837a3"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Relics",
+      "_key": "!tables.results!4a51c90649197980.6a710a6c5ca836ec",
+      "_id": "6a710a6c5ca836ec"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Shards",
+      "_key": "!tables.results!4a51c90649197980.9e4068f10ecb8505",
+      "_id": "9e4068f10ecb8505"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tempests",
+      "_key": "!tables.results!4a51c90649197980.24d34b28d87bacb6",
+      "_id": "24d34b28d87bacb6"
+    }
+  ],
+  "folder": "37cdb646cd60af90",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4a51c90649197980"
+}

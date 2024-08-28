@@ -1,0 +1,15 @@
+{
+  "name": "Seafaring Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "8d239f77c6ee1f9d",
+  "sort": 120,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/seafaring"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!8d239f77c6ee1f9d"
+}

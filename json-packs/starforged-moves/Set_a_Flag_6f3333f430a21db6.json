@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Set a Flag",
   "img": "icons/dice/d10black.svg",
+  "folder": "cb00661cf10b4177",
   "system": {
     "dfid": "Starforged/Moves/Session/Set_a_Flag",
     "Category": "Starforged/Moves/Session",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching**, that content is now flagged.\n\nWhen you encounter content flagged as something to approach mindfully, pause to consider or discuss its role in your story. When you come across flagged content that you would rather adjust or omit, @Compendium[foundry-ironsworn.starforgedmoves.aa6aea2e2f5ce064]{Change Your Fate}.",
+    "Text": "__When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching__, that content is now flagged.\n\nWhen you encounter content flagged as something to approach mindfully, pause to consider or discuss its role in your story. When you come across flagged content that you would rather adjust or omit, @Compendium[foundry-ironsworn.starforgedmoves.aa6aea2e2f5ce064]{Change Your Fate}.",
     "Trigger": {
       "Text": "When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching...",
       "Options": []
@@ -16,65 +17,41 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 142
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#00B3C8",
       "Images": []
     }
   },
   "sort": 142,
-  "folder": "cb00661cf10b4177",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Session/Set_a_Flag",
+      "dsid": "move:starforged/session/set_a_flag"
+    }
   },
   "_key": "!items!6f3333f430a21db6"
 }

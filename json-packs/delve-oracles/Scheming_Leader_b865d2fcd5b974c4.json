@@ -1,0 +1,111 @@
+{
+  "_id": "b865d2fcd5b974c4",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Scheming_Leader",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/scheming_leader"
+    }
+  },
+  "name": "Scheming Leader",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Defeat an enemy",
+      "_key": "!tables.results!b865d2fcd5b974c4.07280718a76dabaa",
+      "_id": "07280718a76dabaa"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Form a new alliance",
+      "_key": "!tables.results!b865d2fcd5b974c4.6c5b448f5e99d4d9",
+      "_id": "6c5b448f5e99d4d9"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Usurp or undermine another leader",
+      "_key": "!tables.results!b865d2fcd5b974c4.69578c79500c34a4",
+      "_id": "69578c79500c34a4"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Force the loyalty of a community or important person",
+      "_key": "!tables.results!b865d2fcd5b974c4.63c58ad7149ffaf2",
+      "_id": "63c58ad7149ffaf2"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Enact a new law or tradition",
+      "_key": "!tables.results!b865d2fcd5b974c4.7cef169855243fc8",
+      "_id": "7cef169855243fc8"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Rescind an old law or tradition",
+      "_key": "!tables.results!b865d2fcd5b974c4.3217b50fc5320fb6",
+      "_id": "3217b50fc5320fb6"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Reveal a true intention",
+      "_key": "!tables.results!b865d2fcd5b974c4.ab2341b117eca593",
+      "_id": "ab2341b117eca593"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Unravel an existing alliance",
+      "_key": "!tables.results!b865d2fcd5b974c4.c7f0c52c6bd12220",
+      "_id": "c7f0c52c6bd12220"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Incite conflict",
+      "_key": "!tables.results!b865d2fcd5b974c4.1c11fd76245eb848",
+      "_id": "1c11fd76245eb848"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Use an unexpected capability or asset",
+      "_key": "!tables.results!b865d2fcd5b974c4.6bb6812565f6e365",
+      "_id": "6bb6812565f6e365"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 223,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b865d2fcd5b974c4"
+}

@@ -1,0 +1,920 @@
+{
+  "_id": "fdb62bb4f0021cb0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/seafaring",
+      "dsid": "oracle_rollable:sundered_isles/seafaring/details_cursed"
+    }
+  },
+  "name": "Cursed Seafaring Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "An exodus of panicked birds darken the sky",
+      "_key": "!tables.results!fdb62bb4f0021cb0.8ab1a34be86deace",
+      "_id": "8ab1a34be86deace"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The shadowy silhouette of a flying beast, barely visible in the mist, passes overhead",
+      "_key": "!tables.results!fdb62bb4f0021cb0.12e587cb15948d68",
+      "_id": "12e587cb15948d68"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "A maelstrom shimmers with arcane energies",
+      "_key": "!tables.results!fdb62bb4f0021cb0.818d161ed04dd911",
+      "_id": "818d161ed04dd911"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Iron fittings spontaneously rust and corrode",
+      "_key": "!tables.results!fdb62bb4f0021cb0.37208b212b62cf54",
+      "_id": "37208b212b62cf54"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "A ship is sighted, but disappears if you look directly at it",
+      "_key": "!tables.results!fdb62bb4f0021cb0.4cd03e854a38cc6b",
+      "_id": "4cd03e854a38cc6b"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Pale sea turtles, their shells carved with strange runes, circle the ship",
+      "_key": "!tables.results!fdb62bb4f0021cb0.ed4ec5227079a911",
+      "_id": "ed4ec5227079a911"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Ragged slashes, as if from claws, appear in the sails",
+      "_key": "!tables.results!fdb62bb4f0021cb0.62f1eecc47371230",
+      "_id": "62f1eecc47371230"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "A parrot lands on a spar, squawks a foreboding message, and flies off",
+      "_key": "!tables.results!fdb62bb4f0021cb0.093c3c65a8c0b72e",
+      "_id": "093c3c65a8c0b72e"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Iron cages, each housing a sun-dried corpse, hang from a rocky mount",
+      "_key": "!tables.results!fdb62bb4f0021cb0.49a53cb23bbcdf33",
+      "_id": "49a53cb23bbcdf33"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "A titanic, sinuous skeleton lies atop a rocky shoal",
+      "_key": "!tables.results!fdb62bb4f0021cb0.b0652035b5a4b881",
+      "_id": "b0652035b5a4b881"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "A ship is spotted, identical to your own",
+      "_key": "!tables.results!fdb62bb4f0021cb0.139337f4dbd39f75",
+      "_id": "139337f4dbd39f75"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Elaborate and unsettling symbols mar the stone of a rocky islet",
+      "_key": "!tables.results!fdb62bb4f0021cb0.901fbf93c7a008ff",
+      "_id": "901fbf93c7a008ff"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Strands of kelp rise from the water, creeping and grasping",
+      "_key": "!tables.results!fdb62bb4f0021cb0.38da316ccd93f687",
+      "_id": "38da316ccd93f687"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "An eclipse overtakes the sun, stealing away the day",
+      "_key": "!tables.results!fdb62bb4f0021cb0.228dd209c6610d99",
+      "_id": "228dd209c6610d99"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "The sea suddenly smells of rot",
+      "_key": "!tables.results!fdb62bb4f0021cb0.41f766e1a970a17f",
+      "_id": "41f766e1a970a17f"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Countless dead fish float on the surface",
+      "_key": "!tables.results!fdb62bb4f0021cb0.a22b419a7c7975f2",
+      "_id": "a22b419a7c7975f2"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "A single albatross alights on the yardarm, then falls instantly dead",
+      "_key": "!tables.results!fdb62bb4f0021cb0.b8d264a3682b8036",
+      "_id": "b8d264a3682b8036"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "A perpetual fog bank, as still as a stone wall, lies ahead",
+      "_key": "!tables.results!fdb62bb4f0021cb0.483acfc34d3e1beb",
+      "_id": "483acfc34d3e1beb"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "A dark swarm of large bats circles the ship",
+      "_key": "!tables.results!fdb62bb4f0021cb0.14a6c6ed6cc51e36",
+      "_id": "14a6c6ed6cc51e36"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "A monstrous beast appears, trailing the ship with an inexorable purpose",
+      "_key": "!tables.results!fdb62bb4f0021cb0.d16f722977699376",
+      "_id": "d16f722977699376"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "The ship's bell rings of its own accord",
+      "_key": "!tables.results!fdb62bb4f0021cb0.b74b8adbdd85c90e",
+      "_id": "b74b8adbdd85c90e"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Your ship comes to a sudden and shuddering stop in deep waters",
+      "_key": "!tables.results!fdb62bb4f0021cb0.94506a5b6b83c397",
+      "_id": "94506a5b6b83c397"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "The sea boils, sending up gouts of steam",
+      "_key": "!tables.results!fdb62bb4f0021cb0.8e189ad75ed47dd3",
+      "_id": "8e189ad75ed47dd3"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Tentacles, dripping with slimy brine, curl over the gunwales",
+      "_key": "!tables.results!fdb62bb4f0021cb0.fe633f0ee9f2f305",
+      "_id": "fe633f0ee9f2f305"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "A vast field of algae-covered bones lies scattered in shallow waters",
+      "_key": "!tables.results!fdb62bb4f0021cb0.a7d955d9ba17c49e",
+      "_id": "a7d955d9ba17c49e"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "The bloated corpse of an enormous beast floats past, a grisly bitemark in its flank",
+      "_key": "!tables.results!fdb62bb4f0021cb0.ac1412376c4c6da4",
+      "_id": "ac1412376c4c6da4"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Hundreds of carrion birds settle onto spars and rigging, waiting expectantly",
+      "_key": "!tables.results!fdb62bb4f0021cb0.a481453070aea518",
+      "_id": "a481453070aea518"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "An unblemished iron pillar stands in shallow waters",
+      "_key": "!tables.results!fdb62bb4f0021cb0.3ed8496c1c433d59",
+      "_id": "3ed8496c1c433d59"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Crewmembers are plagued by horrific visions or dreams",
+      "_key": "!tables.results!fdb62bb4f0021cb0.2d19100a9ef6e88b",
+      "_id": "2d19100a9ef6e88b"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "A narrow passage cuts through a churning, green fog",
+      "_key": "!tables.results!fdb62bb4f0021cb0.1192e75c2489774c",
+      "_id": "1192e75c2489774c"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "The sea spills like a waterfall into an unnatural chasm",
+      "_key": "!tables.results!fdb62bb4f0021cb0.c79905e12b1940e8",
+      "_id": "c79905e12b1940e8"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "A vast whirlpool opens ahead of the ship",
+      "_key": "!tables.results!fdb62bb4f0021cb0.62af0a0cde650a4f",
+      "_id": "62af0a0cde650a4f"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Strange shapes move within an approaching fog bank",
+      "_key": "!tables.results!fdb62bb4f0021cb0.0ab3919ca95b0ea7",
+      "_id": "0ab3919ca95b0ea7"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "All at once, the ship's lanterns go dark",
+      "_key": "!tables.results!fdb62bb4f0021cb0.f1a2327464792233",
+      "_id": "f1a2327464792233"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "The roar of a monstrous beast rises from a fog-shrouded islet",
+      "_key": "!tables.results!fdb62bb4f0021cb0.13e704f011897305",
+      "_id": "13e704f011897305"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Countless shipwrecks float in a tangle, drawn together by uncanny forces",
+      "_key": "!tables.results!fdb62bb4f0021cb0.a91bbfd633329014",
+      "_id": "a91bbfd633329014"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "The compass spins wildly",
+      "_key": "!tables.results!fdb62bb4f0021cb0.2cf5ff2e762effa7",
+      "_id": "2cf5ff2e762effa7"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "A tangled net holds the corpse of a ghastly, mutated creature",
+      "_key": "!tables.results!fdb62bb4f0021cb0.c7aff67326b5bcea",
+      "_id": "c7aff67326b5bcea"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "A cloaked figure stands in a boat that moves without oar or sail",
+      "_key": "!tables.results!fdb62bb4f0021cb0.9811e0843efde24a",
+      "_id": "9811e0843efde24a"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "A procession of oarless boats, hung with pale lanterns, hold silent figures",
+      "_key": "!tables.results!fdb62bb4f0021cb0.0cca2f5c17bad4ac",
+      "_id": "0cca2f5c17bad4ac"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "A day passes, but you and the crew have no memory of it",
+      "_key": "!tables.results!fdb62bb4f0021cb0.4aea0e625072dbb8",
+      "_id": "4aea0e625072dbb8"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Hordes of panicked rats emerge from the lower decks",
+      "_key": "!tables.results!fdb62bb4f0021cb0.a1e3645a23ca7369",
+      "_id": "a1e3645a23ca7369"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Bladelike iron shapes, carved with faintly-glowing symbols, jut from the sea",
+      "_key": "!tables.results!fdb62bb4f0021cb0.829dfdb02f0781af",
+      "_id": "829dfdb02f0781af"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "The seawater turns red and smells of blood",
+      "_key": "!tables.results!fdb62bb4f0021cb0.2e53516c763e5c94",
+      "_id": "2e53516c763e5c94"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "The ship's wheel turns of its own accord and then holds fast, setting a new course",
+      "_key": "!tables.results!fdb62bb4f0021cb0.d7a9ef86cdf411a2",
+      "_id": "d7a9ef86cdf411a2"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Carved monoliths, taller than your ship, form a circle large enough to sail through",
+      "_key": "!tables.results!fdb62bb4f0021cb0.13e75775b33bcb6a",
+      "_id": "13e75775b33bcb6a"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "One beast battles another, and the sea churns with blood",
+      "_key": "!tables.results!fdb62bb4f0021cb0.4a8b2f379bd8c807",
+      "_id": "4a8b2f379bd8c807"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "An unknown island, etched in black ink by an unseen hand, appears on the ship's charts",
+      "_key": "!tables.results!fdb62bb4f0021cb0.0c760432fa9423c5",
+      "_id": "0c760432fa9423c5"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Something knocks insistently against the underside of the hull",
+      "_key": "!tables.results!fdb62bb4f0021cb0.c85afa0ad3eca2ed",
+      "_id": "c85afa0ad3eca2ed"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "An island rises from beneath the waves",
+      "_key": "!tables.results!fdb62bb4f0021cb0.f34a5c86c903840e",
+      "_id": "f34a5c86c903840e"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Alluring songs beckon from among the rocks",
+      "_key": "!tables.results!fdb62bb4f0021cb0.f77f35a69308c3ab",
+      "_id": "f77f35a69308c3ab"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "A pale child stands on the shore of an otherwise deserted islet, smiling blankly",
+      "_key": "!tables.results!fdb62bb4f0021cb0.caa18d43e6d23514",
+      "_id": "caa18d43e6d23514"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "A giant mangrove, home to strange birdlike creatures, stands in stagnant waters",
+      "_key": "!tables.results!fdb62bb4f0021cb0.193098f2466cb5aa",
+      "_id": "193098f2466cb5aa"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "An unnatural current sweeps the ship onto a new course",
+      "_key": "!tables.results!fdb62bb4f0021cb0.23f39ae640830032",
+      "_id": "23f39ae640830032"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Hordes of scrabbling bone-white crabs climb the ship's hull",
+      "_key": "!tables.results!fdb62bb4f0021cb0.4691f977964f7d48",
+      "_id": "4691f977964f7d48"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "The shadowy outline of a frozen ship sits within an enormous wandering iceberg",
+      "_key": "!tables.results!fdb62bb4f0021cb0.422b439d65053fa4",
+      "_id": "422b439d65053fa4"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "A tattoo spontaneously appears on your forearm",
+      "_key": "!tables.results!fdb62bb4f0021cb0.854460da2bb86c0e",
+      "_id": "854460da2bb86c0e"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "A burning map, inscribed by an unseen hand, is scorched into the planks of the deck",
+      "_key": "!tables.results!fdb62bb4f0021cb0.f7532c4019e731f4",
+      "_id": "f7532c4019e731f4"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Fields of dead coral lay within foul-smelling waters",
+      "_key": "!tables.results!fdb62bb4f0021cb0.ac7fe5cf45e8ab91",
+      "_id": "ac7fe5cf45e8ab91"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "A tall mound of skulls sits upon a rocky islet",
+      "_key": "!tables.results!fdb62bb4f0021cb0.84ff6bf61e6a08be",
+      "_id": "84ff6bf61e6a08be"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "In the hold, frantic scratching emanates from within an unassuming crate",
+      "_key": "!tables.results!fdb62bb4f0021cb0.cd949a9126dab5df",
+      "_id": "cd949a9126dab5df"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Alluring lights glimmer beyond a gigantic stone archway",
+      "_key": "!tables.results!fdb62bb4f0021cb0.6700089bc93c9a9e",
+      "_id": "6700089bc93c9a9e"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Cockroaches swarm the deck",
+      "_key": "!tables.results!fdb62bb4f0021cb0.bfec5f526c6d6dab",
+      "_id": "bfec5f526c6d6dab"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "The sea ahead is a frozen sheet",
+      "_key": "!tables.results!fdb62bb4f0021cb0.aa3555a173c78c28",
+      "_id": "aa3555a173c78c28"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "A graveyard of dead ships lies trapped within a sargassum sea",
+      "_key": "!tables.results!fdb62bb4f0021cb0.066e768a19b50bd6",
+      "_id": "066e768a19b50bd6"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "A large blood slick covers the water",
+      "_key": "!tables.results!fdb62bb4f0021cb0.06fff1e64becd208",
+      "_id": "06fff1e64becd208"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "A watertight compartment spontaneously floods with seawater",
+      "_key": "!tables.results!fdb62bb4f0021cb0.d4355557a643c0a9",
+      "_id": "d4355557a643c0a9"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "A sorrowful shanty, seemingly without a source, echoes across the waters",
+      "_key": "!tables.results!fdb62bb4f0021cb0.42996be8b8fc9f57",
+      "_id": "42996be8b8fc9f57"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "A massive shape passes beneath your ship, sending it listing to one side",
+      "_key": "!tables.results!fdb62bb4f0021cb0.27d6ad46aade6722",
+      "_id": "27d6ad46aade6722"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Shadowy, vaporous ships cruise along the horizon",
+      "_key": "!tables.results!fdb62bb4f0021cb0.11c56cca4c346e0d",
+      "_id": "11c56cca4c346e0d"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "The tide slips away with unnatural speed, revealing patches of seafloor",
+      "_key": "!tables.results!fdb62bb4f0021cb0.46c47aca2cc908df",
+      "_id": "46c47aca2cc908df"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "A large winged form, cloaked in shadow, perches atop the main mast",
+      "_key": "!tables.results!fdb62bb4f0021cb0.43ecf1d573b30e91",
+      "_id": "43ecf1d573b30e91"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "A coffin, nailed shut and marked with eldritch symbols, bobs on the water",
+      "_key": "!tables.results!fdb62bb4f0021cb0.5bcf2b72278f298a",
+      "_id": "5bcf2b72278f298a"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Waking from a dream, you find yourself clutching a paper marked with a black spot",
+      "_key": "!tables.results!fdb62bb4f0021cb0.009f759f98afa9f6",
+      "_id": "009f759f98afa9f6"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "A ghostly message, written in blood, appears in the captain's logbook",
+      "_key": "!tables.results!fdb62bb4f0021cb0.4e69ee9b498151cb",
+      "_id": "4e69ee9b498151cb"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "A crewmember, moving as if in a trance, climbs over the gunwales and drops into the sea",
+      "_key": "!tables.results!fdb62bb4f0021cb0.bcdbd83e77de4975",
+      "_id": "bcdbd83e77de4975"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Phantom voices carry on the wind, whispering a dreadful premonition",
+      "_key": "!tables.results!fdb62bb4f0021cb0.76b0735e0bf7b504",
+      "_id": "76b0735e0bf7b504"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Skeletal figures, welding corroded blades, clamber over the gunwales",
+      "_key": "!tables.results!fdb62bb4f0021cb0.cf5e1e587a8d721e",
+      "_id": "cf5e1e587a8d721e"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Bizarre jellyfish float through the air",
+      "_key": "!tables.results!fdb62bb4f0021cb0.bdeaa70f62964264",
+      "_id": "bdeaa70f62964264"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "The apparition of someone you knew delivers a warning before fading away",
+      "_key": "!tables.results!fdb62bb4f0021cb0.f9901f5c6c4e5610",
+      "_id": "f9901f5c6c4e5610"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "An enormous pale light rises from the murky depths",
+      "_key": "!tables.results!fdb62bb4f0021cb0.e252e89f222497e8",
+      "_id": "e252e89f222497e8"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "A crewmember is stricken with a hideous sickness",
+      "_key": "!tables.results!fdb62bb4f0021cb0.38b81bafa531d57c",
+      "_id": "38b81bafa531d57c"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Among the ship's stores, fresh water and wine turn to brine",
+      "_key": "!tables.results!fdb62bb4f0021cb0.255b41d44a366fa1",
+      "_id": "255b41d44a366fa1"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Flocks of birds fling themselves carelessly against the hull and sails",
+      "_key": "!tables.results!fdb62bb4f0021cb0.356b077a84c59584",
+      "_id": "356b077a84c59584"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Ghostly figures stand motionless and silent on the shore of a rocky islet",
+      "_key": "!tables.results!fdb62bb4f0021cb0.c4592ac937873a51",
+      "_id": "c4592ac937873a51"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "A wandering iceberg holds a tentacled form within its crystalline core",
+      "_key": "!tables.results!fdb62bb4f0021cb0.217bea820545df73",
+      "_id": "217bea820545df73"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "A leviathan's corpse bobs to the surface, its desiccated skull gaping",
+      "_key": "!tables.results!fdb62bb4f0021cb0.1d80e068c9467ded",
+      "_id": "1d80e068c9467ded"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "A spectral figure stands at the bow, pointing insistently at the horizon",
+      "_key": "!tables.results!fdb62bb4f0021cb0.3374b86c2ef3fe99",
+      "_id": "3374b86c2ef3fe99"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Objects fly through the air as if amid a whirlwind",
+      "_key": "!tables.results!fdb62bb4f0021cb0.f27fda8ba8178a74",
+      "_id": "f27fda8ba8178a74"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Perishable provisions turn to ash",
+      "_key": "!tables.results!fdb62bb4f0021cb0.f95286a7d836687e",
+      "_id": "f95286a7d836687e"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Barnacles foul the hull and deck, growing and spreading with uncanny speed",
+      "_key": "!tables.results!fdb62bb4f0021cb0.ad644e3d76030e9e",
+      "_id": "ad644e3d76030e9e"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "The sea turns dark, and something stirs within",
+      "_key": "!tables.results!fdb62bb4f0021cb0.2dd43c8c3478d2df",
+      "_id": "2dd43c8c3478d2df"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Monstrous eyes glimmer within the shadowy depths of an islet sea cave",
+      "_key": "!tables.results!fdb62bb4f0021cb0.fd769c369f845e19",
+      "_id": "fd769c369f845e19"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Wet footprints and sea muck trace a path on the deck",
+      "_key": "!tables.results!fdb62bb4f0021cb0.58333562a936a748",
+      "_id": "58333562a936a748"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Spectral forms with hollow eyes drift just below the water's surface",
+      "_key": "!tables.results!fdb62bb4f0021cb0.8b95ee95a1909d3f",
+      "_id": "8b95ee95a1909d3f"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "A distant ship floats above the water",
+      "_key": "!tables.results!fdb62bb4f0021cb0.4493c83183d4e1ad",
+      "_id": "4493c83183d4e1ad"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "A lone figure strides across the water with an unnatural gait",
+      "_key": "!tables.results!fdb62bb4f0021cb0.704e0ce9ed7257f8",
+      "_id": "704e0ce9ed7257f8"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "An unmoving fog clings to a rocky islet, shrouding all but the peak of a barren hill",
+      "_key": "!tables.results!fdb62bb4f0021cb0.15cac28a5f5231e2",
+      "_id": "15cac28a5f5231e2"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "The sound of sobbing echoes across mist-shrouded seas",
+      "_key": "!tables.results!fdb62bb4f0021cb0.25e7ebd56786b06c",
+      "_id": "25e7ebd56786b06c"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "The rising sun casts a baleful red glow",
+      "_key": "!tables.results!fdb62bb4f0021cb0.b3b3148056345405",
+      "_id": "b3b3148056345405"
+    }
+  ],
+  "folder": "8d239f77c6ee1f9d",
+  "sort": 125,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fdb62bb4f0021cb0"
+}

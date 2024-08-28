@@ -1,0 +1,110 @@
+{
+  "_id": "5f2338eea3b2c53b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/tradesperson"
+    }
+  },
+  "name": "Tradesperson",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Baker",
+      "_key": "!tables.results!5f2338eea3b2c53b.369b8b49e7a3a539",
+      "_id": "369b8b49e7a3a539"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Brewer / Winemaker",
+      "_key": "!tables.results!5f2338eea3b2c53b.9b54f3217f559752",
+      "_id": "9b54f3217f559752"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Butcher",
+      "_key": "!tables.results!5f2338eea3b2c53b.aea39c89d403ff6f",
+      "_id": "aea39c89d403ff6f"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Mason",
+      "_key": "!tables.results!5f2338eea3b2c53b.dd8b20defc27e961",
+      "_id": "dd8b20defc27e961"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Metal worker",
+      "_key": "!tables.results!5f2338eea3b2c53b.b2e134b562e63219",
+      "_id": "b2e134b562e63219"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Shipwright / boatwright",
+      "_key": "!tables.results!5f2338eea3b2c53b.cc44c80ae5f65848",
+      "_id": "cc44c80ae5f65848"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Tattooist",
+      "_key": "!tables.results!5f2338eea3b2c53b.32d85a276adc03ee",
+      "_id": "32d85a276adc03ee"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Tinker / Engineer",
+      "_key": "!tables.results!5f2338eea3b2c53b.edda7f1ae2258a3d",
+      "_id": "edda7f1ae2258a3d"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Undertaker",
+      "_key": "!tables.results!5f2338eea3b2c53b.07974cf8981f8936",
+      "_id": "07974cf8981f8936"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Woodworker",
+      "_key": "!tables.results!5f2338eea3b2c53b.0922b94038999b9b",
+      "_id": "0922b94038999b9b"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 189,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5f2338eea3b2c53b"
+}

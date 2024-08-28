@@ -1,0 +1,381 @@
+{
+  "_id": "216690f25bc3ecb5",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Monstrosity/Abilities",
+      "category": "Ironsworn/Oracles/Monstrosity",
+      "dsid": "oracle_rollable:delve/monstrosity/abilities"
+    }
+  },
+  "name": "Abilities",
+  "description": "<p>Roll up to four times for Abilities and keep up to three of those results.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Keen senses",
+      "_key": "!tables.results!216690f25bc3ecb5.47e395fb12bcf8c6",
+      "_id": "47e395fb12bcf8c6"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Intimidating vocalization",
+      "_key": "!tables.results!216690f25bc3ecb5.f2ad7c2a371fb050",
+      "_id": "f2ad7c2a371fb050"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Climber",
+      "_key": "!tables.results!216690f25bc3ecb5.77421b85b9502794",
+      "_id": "77421b85b9502794"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Intelligent",
+      "_key": "!tables.results!216690f25bc3ecb5.de2200e55605fcb7",
+      "_id": "de2200e55605fcb7"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Swift",
+      "_key": "!tables.results!216690f25bc3ecb5.effc2f7576c92c06",
+      "_id": "effc2f7576c92c06"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Powerful bite",
+      "_key": "!tables.results!216690f25bc3ecb5.3cf11dadae1ac022",
+      "_id": "3cf11dadae1ac022"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Stealthy / ambusher",
+      "_key": "!tables.results!216690f25bc3ecb5.bfbbba3d6b2f6dc6",
+      "_id": "bfbbba3d6b2f6dc6"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Horrid visage",
+      "_key": "!tables.results!216690f25bc3ecb5.5f5a6916fae8f8a0",
+      "_id": "5f5a6916fae8f8a0"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Strong",
+      "_key": "!tables.results!216690f25bc3ecb5.41747b966c01c135",
+      "_id": "41747b966c01c135"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Camouflaged",
+      "_key": "!tables.results!216690f25bc3ecb5.ea85270d9e701e80",
+      "_id": "ea85270d9e701e80"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "Flier / glider",
+      "_key": "!tables.results!216690f25bc3ecb5.05d862b1702a5b3e",
+      "_id": "05d862b1702a5b3e"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Poisonous",
+      "_key": "!tables.results!216690f25bc3ecb5.5cd7b7a7a68de9bd",
+      "_id": "5cd7b7a7a68de9bd"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "Semiaquatic / swimmer",
+      "_key": "!tables.results!216690f25bc3ecb5.503b7d367df8e6a9",
+      "_id": "503b7d367df8e6a9"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "Grappler / entangler",
+      "_key": "!tables.results!216690f25bc3ecb5.0765fddbbbeb6c91",
+      "_id": "0765fddbbbeb6c91"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Leaper",
+      "_key": "!tables.results!216690f25bc3ecb5.feab4d4b7f0787a2",
+      "_id": "feab4d4b7f0787a2"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Crusher / constrictor",
+      "_key": "!tables.results!216690f25bc3ecb5.a4327b938d9a6b8a",
+      "_id": "a4327b938d9a6b8a"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "Armored",
+      "_key": "!tables.results!216690f25bc3ecb5.d112bbe1ef1fbd88",
+      "_id": "d112bbe1ef1fbd88"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Burrower",
+      "_key": "!tables.results!216690f25bc3ecb5.6ec5deba9654f46c",
+      "_id": "6ec5deba9654f46c"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Noxious smell",
+      "_key": "!tables.results!216690f25bc3ecb5.e75419611ed2bbe6",
+      "_id": "e75419611ed2bbe6"
+    },
+    {
+      "range": [
+        68,
+        69
+      ],
+      "text": "Trap-setter",
+      "_key": "!tables.results!216690f25bc3ecb5.40251fc8ca886f87",
+      "_id": "40251fc8ca886f87"
+    },
+    {
+      "range": [
+        70,
+        71
+      ],
+      "text": "Parasitic",
+      "_key": "!tables.results!216690f25bc3ecb5.9db3d307a8560077",
+      "_id": "9db3d307a8560077"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Vibration sense",
+      "_key": "!tables.results!216690f25bc3ecb5.2e292a5d29153d01",
+      "_id": "2e292a5d29153d01"
+    },
+    {
+      "range": [
+        74,
+        75
+      ],
+      "text": "Breath weapon / toxic spew",
+      "_key": "!tables.results!216690f25bc3ecb5.7477ccb8dfd5b5d8",
+      "_id": "7477ccb8dfd5b5d8"
+    },
+    {
+      "range": [
+        76,
+        77
+      ],
+      "text": "Mimicry",
+      "_key": "!tables.results!216690f25bc3ecb5.8c83c1af7b36c767",
+      "_id": "8c83c1af7b36c767"
+    },
+    {
+      "range": [
+        78,
+        79
+      ],
+      "text": "Shapeshifting",
+      "_key": "!tables.results!216690f25bc3ecb5.132c566772ffaeb9",
+      "_id": "132c566772ffaeb9"
+    },
+    {
+      "range": [
+        80,
+        81
+      ],
+      "text": "Control lesser creatures",
+      "_key": "!tables.results!216690f25bc3ecb5.be2df22de34f94b3",
+      "_id": "be2df22de34f94b3"
+    },
+    {
+      "range": [
+        82,
+        83
+      ],
+      "text": "Echolocation",
+      "_key": "!tables.results!216690f25bc3ecb5.aebaa82faa8f4cda",
+      "_id": "aebaa82faa8f4cda"
+    },
+    {
+      "range": [
+        84,
+        85
+      ],
+      "text": "Electric shock",
+      "_key": "!tables.results!216690f25bc3ecb5.2a51294601397f06",
+      "_id": "2a51294601397f06"
+    },
+    {
+      "range": [
+        86,
+        87
+      ],
+      "text": "Acidic",
+      "_key": "!tables.results!216690f25bc3ecb5.445fc5e45a2de7eb",
+      "_id": "445fc5e45a2de7eb"
+    },
+    {
+      "range": [
+        88,
+        89
+      ],
+      "text": "Symbiotic",
+      "_key": "!tables.results!216690f25bc3ecb5.d45be9664c2064cf",
+      "_id": "d45be9664c2064cf"
+    },
+    {
+      "range": [
+        90,
+        91
+      ],
+      "text": "Shoot projectiles",
+      "_key": "!tables.results!216690f25bc3ecb5.bba8d02083eea5e2",
+      "_id": "bba8d02083eea5e2"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Paralyzing",
+      "_key": "!tables.results!216690f25bc3ecb5.cfa90d1d09955c80",
+      "_id": "cfa90d1d09955c80"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Immune to iron",
+      "_key": "!tables.results!216690f25bc3ecb5.d8f3a9627a9993f9",
+      "_id": "d8f3a9627a9993f9"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Feels no pain",
+      "_key": "!tables.results!216690f25bc3ecb5.995ef39e58b948ab",
+      "_id": "995ef39e58b948ab"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Enact rituals",
+      "_key": "!tables.results!216690f25bc3ecb5.a3bfcb118ac96002",
+      "_id": "a3bfcb118ac96002"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Create illusions",
+      "_key": "!tables.results!216690f25bc3ecb5.7611a06129572bb9",
+      "_id": "7611a06129572bb9"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Mind control / telepathy",
+      "_key": "!tables.results!216690f25bc3ecb5.b72461ed80f83497",
+      "_id": "b72461ed80f83497"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Move between realities",
+      "_key": "!tables.results!216690f25bc3ecb5.4a14f940a6a8e5cb",
+      "_id": "4a14f940a6a8e5cb"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Wield weapons",
+      "_key": "!tables.results!216690f25bc3ecb5.d185ad198f2ec7ef",
+      "_id": "d185ad198f2ec7ef"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Control elements",
+      "_key": "!tables.results!216690f25bc3ecb5.85f1410b88ec4990",
+      "_id": "85f1410b88ec4990"
+    }
+  ],
+  "folder": "feaab449f5044ca1",
+  "sort": 216,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!216690f25bc3ecb5"
+}

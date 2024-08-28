@@ -1,0 +1,380 @@
+{
+  "_id": "7df40b48bb2f5d8d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/identity_organization"
+    }
+  },
+  "name": "Faction Name: Organization Identity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Academy",
+      "_key": "!tables.results!7df40b48bb2f5d8d.facbc0ecfa53f743",
+      "_id": "facbc0ecfa53f743"
+    },
+    {
+      "range": [
+        3,
+        6
+      ],
+      "text": "Alliance",
+      "_key": "!tables.results!7df40b48bb2f5d8d.2566d64b589bc486",
+      "_id": "2566d64b589bc486"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Assembly",
+      "_key": "!tables.results!7df40b48bb2f5d8d.313124f97d6ab793",
+      "_id": "313124f97d6ab793"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Association",
+      "_key": "!tables.results!7df40b48bb2f5d8d.dbfad99a7f6bba09",
+      "_id": "dbfad99a7f6bba09"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Band",
+      "_key": "!tables.results!7df40b48bb2f5d8d.f638824ea41e3424",
+      "_id": "f638824ea41e3424"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Brethren",
+      "_key": "!tables.results!7df40b48bb2f5d8d.697d2caecb236acc",
+      "_id": "697d2caecb236acc"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Brigade",
+      "_key": "!tables.results!7df40b48bb2f5d8d.9a88b51b706610f1",
+      "_id": "9a88b51b706610f1"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Brotherhood",
+      "_key": "!tables.results!7df40b48bb2f5d8d.e49459c7e8eb9685",
+      "_id": "e49459c7e8eb9685"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Cabal",
+      "_key": "!tables.results!7df40b48bb2f5d8d.5f833a6b2cc7c824",
+      "_id": "5f833a6b2cc7c824"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Chamber",
+      "_key": "!tables.results!7df40b48bb2f5d8d.886796a6521db938",
+      "_id": "886796a6521db938"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Charter",
+      "_key": "!tables.results!7df40b48bb2f5d8d.1725722313e22584",
+      "_id": "1725722313e22584"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Circle",
+      "_key": "!tables.results!7df40b48bb2f5d8d.7968a3470738b398",
+      "_id": "7968a3470738b398"
+    },
+    {
+      "range": [
+        27,
+        30
+      ],
+      "text": "Coalition",
+      "_key": "!tables.results!7df40b48bb2f5d8d.3fb8f564e30399e1",
+      "_id": "3fb8f564e30399e1"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Cohort",
+      "_key": "!tables.results!7df40b48bb2f5d8d.3f1e0603d51dd9d8",
+      "_id": "3f1e0603d51dd9d8"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Collective",
+      "_key": "!tables.results!7df40b48bb2f5d8d.33a1bc5a6897f0a7",
+      "_id": "33a1bc5a6897f0a7"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Compact",
+      "_key": "!tables.results!7df40b48bb2f5d8d.900d0730fb3e147a",
+      "_id": "900d0730fb3e147a"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Company",
+      "_key": "!tables.results!7df40b48bb2f5d8d.2e990fe05685164d",
+      "_id": "2e990fe05685164d"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Consort",
+      "_key": "!tables.results!7df40b48bb2f5d8d.b094ff1589015f0c",
+      "_id": "b094ff1589015f0c"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Cooperative",
+      "_key": "!tables.results!7df40b48bb2f5d8d.9f15ffdad1aa2060",
+      "_id": "9f15ffdad1aa2060"
+    },
+    {
+      "range": [
+        43,
+        46
+      ],
+      "text": "Council",
+      "_key": "!tables.results!7df40b48bb2f5d8d.bf9fce49727a7b60",
+      "_id": "bf9fce49727a7b60"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Coven",
+      "_key": "!tables.results!7df40b48bb2f5d8d.f4c0b418fc0ab3c2",
+      "_id": "f4c0b418fc0ab3c2"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Covenant",
+      "_key": "!tables.results!7df40b48bb2f5d8d.dde8756d1d7c09b2",
+      "_id": "dde8756d1d7c09b2"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Creed",
+      "_key": "!tables.results!7df40b48bb2f5d8d.44249f1e76ee300d",
+      "_id": "44249f1e76ee300d"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Crew",
+      "_key": "!tables.results!7df40b48bb2f5d8d.648fb71e0e817c69",
+      "_id": "648fb71e0e817c69"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Enclave",
+      "_key": "!tables.results!7df40b48bb2f5d8d.6dc287998663776a",
+      "_id": "6dc287998663776a"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Expedition",
+      "_key": "!tables.results!7df40b48bb2f5d8d.37270cf52dd28a68",
+      "_id": "37270cf52dd28a68"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Federation",
+      "_key": "!tables.results!7df40b48bb2f5d8d.4894f1e825564b89",
+      "_id": "4894f1e825564b89"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Fellowship",
+      "_key": "!tables.results!7df40b48bb2f5d8d.931f45694abe2479",
+      "_id": "931f45694abe2479"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Fleet",
+      "_key": "!tables.results!7df40b48bb2f5d8d.953c21e8e438c3b2",
+      "_id": "953c21e8e438c3b2"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Foundation",
+      "_key": "!tables.results!7df40b48bb2f5d8d.4a332c5e3e245caf",
+      "_id": "4a332c5e3e245caf"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Guild",
+      "_key": "!tables.results!7df40b48bb2f5d8d.47f6e242e448ddfe",
+      "_id": "47f6e242e448ddfe"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Institute",
+      "_key": "!tables.results!7df40b48bb2f5d8d.ddc247128070dc7e",
+      "_id": "ddc247128070dc7e"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "League",
+      "_key": "!tables.results!7df40b48bb2f5d8d.cb0826be832ea614",
+      "_id": "cb0826be832ea614"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Lodge",
+      "_key": "!tables.results!7df40b48bb2f5d8d.a2f728c4fec016d8",
+      "_id": "a2f728c4fec016d8"
+    },
+    {
+      "range": [
+        87,
+        90
+      ],
+      "text": "Order",
+      "_key": "!tables.results!7df40b48bb2f5d8d.9c78238ceaa3c2f7",
+      "_id": "9c78238ceaa3c2f7"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Partnership",
+      "_key": "!tables.results!7df40b48bb2f5d8d.7025f20d46c39872",
+      "_id": "7025f20d46c39872"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Ring",
+      "_key": "!tables.results!7df40b48bb2f5d8d.f8696d55490bb466",
+      "_id": "f8696d55490bb466"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Sect",
+      "_key": "!tables.results!7df40b48bb2f5d8d.45e362c8559e8f25",
+      "_id": "45e362c8559e8f25"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Sisterhood",
+      "_key": "!tables.results!7df40b48bb2f5d8d.6ad585608bd176a2",
+      "_id": "6ad585608bd176a2"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Union",
+      "_key": "!tables.results!7df40b48bb2f5d8d.bb13ed3268b7f672",
+      "_id": "bb13ed3268b7f672"
+    }
+  ],
+  "folder": "4c033d15ef6dc29f",
+  "sort": 185,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7df40b48bb2f5d8d"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Access/Opportunity",
-      "category": "Starforged/Oracles/Derelicts/Access"
+      "category": "Starforged/Oracles/Derelicts/Access",
+      "dsid": "oracle_rollable:starforged/derelict/access/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Directions, shortcut, or alternate path",
-      "_id": "6c92f326ae552309",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fb75d70c9f85b525.6c92f326ae552309"
+      "_key": "!tables.results!fb75d70c9f85b525.65176931476aa5ba",
+      "_id": "65176931476aa5ba"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Encounter with a friendly survivor, explorer, or denizen",
-      "_id": "8b853a51e51f9d2d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fb75d70c9f85b525.8b853a51e51f9d2d"
+      "_key": "!tables.results!fb75d70c9f85b525.c0dfd280818bf5f0",
+      "_id": "c0dfd280818bf5f0"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Hopeful signs of life",
-      "_id": "1fa7142d4f434d72",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fb75d70c9f85b525.1fa7142d4f434d72"
+      "_key": "!tables.results!fb75d70c9f85b525.533ffd1a9cbf9423",
+      "_id": "533ffd1a9cbf9423"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Opening to outmaneuver or escape a threat or foe",
-      "_id": "d054bb0bbda49e13",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fb75d70c9f85b525.d054bb0bbda49e13"
+      "_key": "!tables.results!fb75d70c9f85b525.18f1272d39b57c93",
+      "_id": "18f1272d39b57c93"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Useful equipment",
-      "_id": "f30ca8a0ea6af336",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fb75d70c9f85b525.f30ca8a0ea6af336"
+      "_key": "!tables.results!fb75d70c9f85b525.598f9f8b1d42e4a4",
+      "_id": "598f9f8b1d42e4a4"
     }
   ],
   "folder": "5a9ded9c6cdc7583",
   "sort": 352,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!fb75d70c9f85b525"
 }

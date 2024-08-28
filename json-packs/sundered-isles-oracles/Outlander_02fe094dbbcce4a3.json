@@ -1,0 +1,65 @@
+{
+  "_id": "02fe094dbbcce4a3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/outlander"
+    }
+  },
+  "name": "Outlander",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Beast Hunter",
+      "_key": "!tables.results!02fe094dbbcce4a3.ce80e4356fda7372",
+      "_id": "ce80e4356fda7372"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Explorer",
+      "_key": "!tables.results!02fe094dbbcce4a3.1d7595d87e7041f3",
+      "_id": "1d7595d87e7041f3"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Fisher / Hunter / Trapper",
+      "_key": "!tables.results!02fe094dbbcce4a3.dca96ff6d30b40bf",
+      "_id": "dca96ff6d30b40bf"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Navigator / Guide",
+      "_key": "!tables.results!02fe094dbbcce4a3.d6893207f9ff714b",
+      "_id": "d6893207f9ff714b"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Scout",
+      "_key": "!tables.results!02fe094dbbcce4a3.33ac41b82352b8f9",
+      "_id": "33ac41b82352b8f9"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 189,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!02fe094dbbcce4a3"
+}

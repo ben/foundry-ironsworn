@@ -1,0 +1,65 @@
+{
+  "_id": "55383bb64887a299",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/laborer"
+    }
+  },
+  "name": "Laborer",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Bricklayer",
+      "_key": "!tables.results!55383bb64887a299.7416b0182e2d3997",
+      "_id": "7416b0182e2d3997"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Farmer",
+      "_key": "!tables.results!55383bb64887a299.72d24df694770477",
+      "_id": "72d24df694770477"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Lumberer",
+      "_key": "!tables.results!55383bb64887a299.76b0ebfdf4ae89db",
+      "_id": "76b0ebfdf4ae89db"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Miner",
+      "_key": "!tables.results!55383bb64887a299.f734ba89d630c579",
+      "_id": "f734ba89d630c579"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Servant",
+      "_key": "!tables.results!55383bb64887a299.e396be7da66a281a",
+      "_id": "e396be7da66a281a"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!55383bb64887a299"
+}

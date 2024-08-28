@@ -1,0 +1,110 @@
+{
+  "_id": "e868f93d97f340a3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/curses",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/curses/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Cursed",
+      "_key": "!tables.results!e868f93d97f340a3.7a22b710ebc4bfe8",
+      "_id": "7a22b710ebc4bfe8"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Bloodless",
+      "_key": "!tables.results!e868f93d97f340a3.ba103ef9d50263aa",
+      "_id": "ba103ef9d50263aa"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Bloody",
+      "_key": "!tables.results!e868f93d97f340a3.6318e7a2455fdabe",
+      "_id": "6318e7a2455fdabe"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Broken",
+      "_key": "!tables.results!e868f93d97f340a3.01617c0dcdf98811",
+      "_id": "01617c0dcdf98811"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Fallen",
+      "_key": "!tables.results!e868f93d97f340a3.146f896590f72e84",
+      "_id": "146f896590f72e84"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Haunted",
+      "_key": "!tables.results!e868f93d97f340a3.a23ad10a623b5ae4",
+      "_id": "a23ad10a623b5ae4"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Infernal",
+      "_key": "!tables.results!e868f93d97f340a3.be11fec0792efdbb",
+      "_id": "be11fec0792efdbb"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Risen",
+      "_key": "!tables.results!e868f93d97f340a3.de09f487fef44565",
+      "_id": "de09f487fef44565"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Shattered",
+      "_key": "!tables.results!e868f93d97f340a3.4e4f6505071f9461",
+      "_id": "4e4f6505071f9461"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Undying",
+      "_key": "!tables.results!e868f93d97f340a3.376e2f8d7d48cb49",
+      "_id": "376e2f8d7d48cb49"
+    }
+  ],
+  "folder": "a944608d2b6f8895",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e868f93d97f340a3"
+}

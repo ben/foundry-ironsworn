@@ -1,0 +1,141 @@
+{
+  "_id": "f76f6088712dcfc6",
+  "type": "delve-domain",
+  "name": "Pass",
+  "img": "icons/environment/wilderness/cave-entrance-rocky.webp",
+  "system": {
+    "summary": "Treacherous paths over high mountains.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Winding mountain path"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Snowfield or glacial rocks"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "River gorge"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Crashing waterfall"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Highland lake"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Forgotten cairn"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Bridge"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Overlook"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Camp or outpost"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen lairs here"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Denizen hunts"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Perilous climb or descent"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Avalanche or rockslide"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Foul weather"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 90,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/pass"
+    }
+  },
+  "_key": "!items!f76f6088712dcfc6"
+}

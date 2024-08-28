@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "2c8ed647bb6455b5",
+  "folder": "38d5b35b5764ca19",
+  "name": "Improved Hold",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply} to gain gear or provisions for your ship’s hold, you and your allies take +1 momentum for each +2 supply gained through this action.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Your ship’s hold is stocked with reserves. When you @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} and your hold supply is reduced to 0, first roll +integrity instead of marking unprepared. On a strong hit, take +1 supply. On a weak hit or miss, mark unprepared.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Your hold is fitted with secret compartments. When the ship undergoes an inspection or search, @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} if the compartments stay hidden, setting the odds as @Compendium[foundry-ironsworn.starforgedoracles.c8932747032413a7]{likely}. If the answer is no, the searchers are suspicious, but you may @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} to distract or direct their attention elsewhere; if you do, reroll any dice.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/module/improved_hold",
+      "dsid": "asset:sundered_isles/module/improved_hold"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!2c8ed647bb6455b5"
+}

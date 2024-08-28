@@ -1,0 +1,200 @@
+{
+  "_id": "5da6735beb25be78",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/name/moniker_cursed",
+      "dsid": "oracle_rollable:sundered_isles/character/name/moniker_cursed/ill_fated_nature"
+    }
+  },
+  "name": "Ill-Fated Nature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Blackspot",
+      "_key": "!tables.results!5da6735beb25be78.271fee4baf8853f5",
+      "_id": "271fee4baf8853f5"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Blight",
+      "_key": "!tables.results!5da6735beb25be78.6480dada4d3d4287",
+      "_id": "6480dada4d3d4287"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Calamity",
+      "_key": "!tables.results!5da6735beb25be78.8674ea9aa7063de6",
+      "_id": "8674ea9aa7063de6"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Fluke",
+      "_key": "!tables.results!5da6735beb25be78.759543df6f1c5bae",
+      "_id": "759543df6f1c5bae"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Graves",
+      "_key": "!tables.results!5da6735beb25be78.31efc20c3d25e7a4",
+      "_id": "31efc20c3d25e7a4"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Grim",
+      "_key": "!tables.results!5da6735beb25be78.b601391357ba198d",
+      "_id": "b601391357ba198d"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Harbinger",
+      "_key": "!tables.results!5da6735beb25be78.b6be8e6c791867e3",
+      "_id": "b6be8e6c791867e3"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Harrow",
+      "_key": "!tables.results!5da6735beb25be78.a25a2c76e979239f",
+      "_id": "a25a2c76e979239f"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Husk",
+      "_key": "!tables.results!5da6735beb25be78.0cc4b48d3390aa5c",
+      "_id": "0cc4b48d3390aa5c"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Jinx",
+      "_key": "!tables.results!5da6735beb25be78.cd604e0b5b837eea",
+      "_id": "cd604e0b5b837eea"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Jonah",
+      "_key": "!tables.results!5da6735beb25be78.d5874e2ccb2660d0",
+      "_id": "d5874e2ccb2660d0"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Leech",
+      "_key": "!tables.results!5da6735beb25be78.10152677e0c4e1cf",
+      "_id": "10152677e0c4e1cf"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Luckless",
+      "_key": "!tables.results!5da6735beb25be78.0aed3caad0166f77",
+      "_id": "0aed3caad0166f77"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Maggot",
+      "_key": "!tables.results!5da6735beb25be78.162fb8f39b92fb97",
+      "_id": "162fb8f39b92fb97"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Pox",
+      "_key": "!tables.results!5da6735beb25be78.4ebc2949ba55f4b3",
+      "_id": "4ebc2949ba55f4b3"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Rot",
+      "_key": "!tables.results!5da6735beb25be78.fc87170ef2a0592c",
+      "_id": "fc87170ef2a0592c"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Scar",
+      "_key": "!tables.results!5da6735beb25be78.4f09e752f19fbd6a",
+      "_id": "4f09e752f19fbd6a"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Scourge",
+      "_key": "!tables.results!5da6735beb25be78.6eb31b7fc9ab6c76",
+      "_id": "6eb31b7fc9ab6c76"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Twice-drowned",
+      "_key": "!tables.results!5da6735beb25be78.53ac11b6fc9f5845",
+      "_id": "53ac11b6fc9f5845"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wither",
+      "_key": "!tables.results!5da6735beb25be78.8c910adca3c1c183",
+      "_id": "8c910adca3c1c183"
+    }
+  ],
+  "folder": "5c43d16b683d442f",
+  "sort": 197,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5da6735beb25be78"
+}

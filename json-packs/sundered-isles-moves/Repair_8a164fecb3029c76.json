@@ -1,0 +1,74 @@
+{
+  "_id": "8a164fecb3029c76",
+  "type": "sfmove",
+  "name": "Repair",
+  "img": "icons/dice/d10black.svg",
+  "folder": "8ceba5c59ba6b29f",
+  "system": {
+    "dfid": "move:sundered_isles/recover/repair",
+    "Category": "move_category:sundered_isles/recover",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When you make repairs to your vehicles, modules, mechanical companions, or other equipment__, envision the situation and roll. If you...\n\n  * Make your own repairs, or direct companions or crewmembers to make repairs: Roll +wits\n  * Obtain repair services at a facility: Roll +heart\n\nOn a __hit__, you gain repair points as appropriate to the situation, per the table below. Additionally, if you make your own repairs, you may @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (hold) and exchange each -1 of supply for 1 extra repair point (up to 3 points).\n\nSituation     | Strong Hit | Weak Hit\n--------------|------------|---------\nAt a facility |\t7 points \t | 5 points\nAt anchor \t  | 4 points \t | 2 points\nUnderway \t    | 3 points \t | 1 points\nUnder fire \t  | 2 points \t | 0 points\n\nSpend repair points as follows. Unused points are discarded.\n\n  * Clear the battered impact on a vehicle: 2 points\n  * Fix one broken module: 2 points\n  * Take +1 integrity on a vehicle: 1 point\n  * Take +1 health for a mechanical companion: 1 point\n  * Repair any other component or device: 3 points\n  * Repair any other equipment or device, but with a complication or malfunction: 2 points\n\nOn a __miss__, the repairs are not made and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you make repairs to your vehicles, modules, mechanical companions, or other equipment...",
+      "Options": [
+        {
+          "Text": "Make your own repairs, or direct companions or crewmembers to make repairs",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        },
+        {
+          "Text": "Obtain repair services at a facility",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you gain repair points as appropriate to the situation, per the table below.\n\nSituation     | Strong Hit | Weak Hit\n--------------|------------|---------\nAt a facility |\t7 points \t | 5 points\nAt anchor \t  | 4 points \t | 2 points\nUnderway \t    | 3 points \t | 1 points\nUnder fire \t  | 2 points \t | 0 points\n\nAdditionally, you may @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} and exchange each -1 of supply for 1 extra repair point (up to 3 points).\n\nSpend repair points as follows. Unused points are discarded.\n\n  * Clear the battered impact on a vehicle: 2 points\n  * Fix one broken module: 2 points\n  * Take +1 integrity on a vehicle: 1 point\n  * Take +1 health for a mechanical companion: 1 point\n  * Repair any other device: 3 points\n  * Repair any other device, but with a complication or malfunction: 2 points",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you gain repair points as appropriate to the situation, per the table below.\n\nSituation     | Strong Hit | Weak Hit\n--------------|------------|---------\nAt a facility |\t7 points \t | 5 points\nAt anchor \t  | 4 points \t | 2 points\nUnderway \t    | 3 points \t | 1 points\nUnder fire \t  | 2 points \t | 0 points\n\nAdditionally, you may @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} and exchange each -1 of supply for 1 extra repair point (up to 3 points).\n\nSpend repair points as follows. Unused points are discarded.\n\n  * Clear the battered impact on a vehicle: 2 points\n  * Fix one broken module: 2 points\n  * Take +1 integrity on a vehicle: 1 point\n  * Take +1 health for a mechanical companion: 1 point\n  * Repair any other device: 3 points\n  * Repair any other device, but with a complication or malfunction: 2 points"
+      },
+      "Miss": {
+        "Text": "On a __miss__, the repairs are not made and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Sundered Isles",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2024-07-01",
+      "Page": 249
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 249,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:sundered_isles/recover/repair",
+      "dsid": "move:sundered_isles/recover/repair"
+    }
+  },
+  "_key": "!items!8a164fecb3029c76"
+}

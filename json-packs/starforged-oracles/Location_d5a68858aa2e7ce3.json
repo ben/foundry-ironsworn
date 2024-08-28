@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Location",
-      "category": "Starforged/Oracles/Derelicts"
+      "category": "Starforged/Oracles/Derelicts",
+      "dsid": "oracle_rollable:starforged/derelict/location"
     }
   },
   "name": "Location",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         40
       ],
       "text": "Planetside",
-      "_id": "fc02ffb6fe0b3cdc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d5a68858aa2e7ce3.fc02ffb6fe0b3cdc"
+      "_key": "!tables.results!d5a68858aa2e7ce3.c339f96c759fb123",
+      "_id": "c339f96c759fb123"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         60
       ],
       "text": "Orbital",
-      "_id": "6edc782af4211619",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d5a68858aa2e7ce3.6edc782af4211619"
+      "_key": "!tables.results!d5a68858aa2e7ce3.ea13b8305348d2e3",
+      "_id": "ea13b8305348d2e3"
     },
     {
       "range": [
@@ -46,29 +37,12 @@
         100
       ],
       "text": "Deep Space",
-      "_id": "6a7bed60ee4f06bc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d5a68858aa2e7ce3.6a7bed60ee4f06bc"
+      "_key": "!tables.results!d5a68858aa2e7ce3.638d24cadfa1197c",
+      "_id": "638d24cadfa1197c"
     }
   ],
   "folder": "fd19a02fbd5f71e6",
   "sort": 348,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!d5a68858aa2e7ce3"
 }

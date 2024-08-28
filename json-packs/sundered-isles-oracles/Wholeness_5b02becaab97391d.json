@@ -1,0 +1,74 @@
+{
+  "_id": "5b02becaab97391d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck/orientation",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/orientation/wholeness"
+    }
+  },
+  "name": "Wholeness",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Broken and missing large sections",
+      "_key": "!tables.results!5b02becaab97391d.d57a746daad4f4a7",
+      "_id": "d57a746daad4f4a7"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Broken and scattered",
+      "_key": "!tables.results!5b02becaab97391d.cf2394a59eb8c730",
+      "_id": "cf2394a59eb8c730"
+    },
+    {
+      "range": [
+        21,
+        45
+      ],
+      "text": "Split in two",
+      "_key": "!tables.results!5b02becaab97391d.260d32d8512fcc76",
+      "_id": "260d32d8512fcc76"
+    },
+    {
+      "range": [
+        46,
+        70
+      ],
+      "text": "Somewhat intact, but fragile",
+      "_key": "!tables.results!5b02becaab97391d.2c6fb65f99ac8c62",
+      "_id": "2c6fb65f99ac8c62"
+    },
+    {
+      "range": [
+        71,
+        90
+      ],
+      "text": "Mostly intact",
+      "_key": "!tables.results!5b02becaab97391d.ca95870983ae47c7",
+      "_id": "ca95870983ae47c7"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wholly intact",
+      "_key": "!tables.results!5b02becaab97391d.e92230457ec060b8",
+      "_id": "e92230457ec060b8"
+    }
+  ],
+  "folder": "6ee763f7ffc1ce84",
+  "sort": 199,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5b02becaab97391d"
+}

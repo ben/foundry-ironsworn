@@ -1,0 +1,53 @@
+{
+  "name": "Colossus",
+  "img": "icons/creatures/magical/construct-iron-stomping-yellow.webp",
+  "type": "foe",
+  "_id": "0d887ecbcd4a0f32",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Colossus",
+    "texture": {
+      "src": "icons/creatures/magical/construct-iron-stomping-yellow.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "6dd07bdf518fb2e0",
+      "type": "progress",
+      "name": "Colossus",
+      "img": "icons/creatures/magical/construct-iron-stomping-yellow.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Ancient, mechanical giants</p>\n<p class=\"nogrow\">Bipedal form</p>\n<p class=\"nogrow\">Etched with cryptic runes</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Slumber</p>\n<p class=\"nogrow\">When awakened, carry out inscrutable purpose</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Ignore puny foes</p>\n<p class=\"nogrow\">Unleash destructive energy attacks</p>\n<p class=\"nogrow\">Transform to reveal new capabilities</p>\n</div>\n</div>\n\n<p>The colossi are titanic humanoid machines created by a long-dead civilization. We do not know their original purpose. Perhaps they were weapons built for conquest in a ancient war, or mighty devices designed to explore new worlds.</p>\n<p>Most colossi are found inactive—frozen in icy wastes, overgrown within verdant jungles, entombed in the depths of fathomless seas. Their armored shell is resistant to time and harsh environments, and they are nearly as imposing and majestic as the day they were forged.</p>\n<p>Rarely, a colossus awakens to carry out its inscrutable purpose. They stride across the landscape of alien worlds, shaking the ground with each massive footfall. These active colossi ignore our attempts at communication and bat away our ineffectual attacks—the technology that powers them is beyond our understanding.</p>\n\n<blockquote>Quest Starter: <p>A faction discovered a heavily damaged but dormant colossus, gaining access for the first time to the internal systems of one of these great machines. The researches believe it can be controlled by a human through a neural connection, and are studying the means of awakening it with this new programming. What purpose do they have for it? Are you sworn to aid them or stop them?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.3801e71c2162a6af]{Devotant of the colossi}</li>\n</ul>",
+        "rank": 5,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:starforged/sample_npcs/colossus"
+        }
+      },
+      "_key": "!actors.items!0d887ecbcd4a0f32.6dd07bdf518fb2e0"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/colossus"
+    }
+  },
+  "_key": "!actors!0d887ecbcd4a0f32"
+}

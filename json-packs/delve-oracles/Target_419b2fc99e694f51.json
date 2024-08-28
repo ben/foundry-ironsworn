@@ -1,0 +1,471 @@
+{
+  "_id": "419b2fc99e694f51",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Combat_Event/Target",
+      "category": "Ironsworn/Oracles/Combat_Event",
+      "dsid": "oracle_rollable:delve/combat_event/target"
+    }
+  },
+  "name": "Target",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Control",
+      "_key": "!tables.results!419b2fc99e694f51.4f57bfb59ca4b718",
+      "_id": "4f57bfb59ca4b718"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Defense",
+      "_key": "!tables.results!419b2fc99e694f51.83f502e0d19a9bc8",
+      "_id": "83f502e0d19a9bc8"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Limbs",
+      "_key": "!tables.results!419b2fc99e694f51.0b037ed7907dbb36",
+      "_id": "0b037ed7907dbb36"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Focus",
+      "_key": "!tables.results!419b2fc99e694f51.1a555bb36e0e0b23",
+      "_id": "1a555bb36e0e0b23"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Advantage",
+      "_key": "!tables.results!419b2fc99e694f51.a8da1c66eab5ac29",
+      "_id": "a8da1c66eab5ac29"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Range",
+      "_key": "!tables.results!419b2fc99e694f51.56cec0d45b82d8b8",
+      "_id": "56cec0d45b82d8b8"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Stress",
+      "_key": "!tables.results!419b2fc99e694f51.a0fa7a6b4b94d0d5",
+      "_id": "a0fa7a6b4b94d0d5"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Sense",
+      "_key": "!tables.results!419b2fc99e694f51.9a8b147900706475",
+      "_id": "9a8b147900706475"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Weakness",
+      "_key": "!tables.results!419b2fc99e694f51.956f438929a13627",
+      "_id": "956f438929a13627"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Opening",
+      "_key": "!tables.results!419b2fc99e694f51.2d392141209be638",
+      "_id": "2d392141209be638"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Fear",
+      "_key": "!tables.results!419b2fc99e694f51.47220e3f0cf288b6",
+      "_id": "47220e3f0cf288b6"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Instinct",
+      "_key": "!tables.results!419b2fc99e694f51.949c47b6e199f838",
+      "_id": "949c47b6e199f838"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Footing",
+      "_key": "!tables.results!419b2fc99e694f51.a3ec53c19a2b49f1",
+      "_id": "a3ec53c19a2b49f1"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Maneuver",
+      "_key": "!tables.results!419b2fc99e694f51.32752abb75b73514",
+      "_id": "32752abb75b73514"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Reach",
+      "_key": "!tables.results!419b2fc99e694f51.811f885dc09e084a",
+      "_id": "811f885dc09e084a"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Harm",
+      "_key": "!tables.results!419b2fc99e694f51.1a9160a7cf986c03",
+      "_id": "1a9160a7cf986c03"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Finesse",
+      "_key": "!tables.results!419b2fc99e694f51.930efad6b8b0f654",
+      "_id": "930efad6b8b0f654"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Weapon",
+      "_key": "!tables.results!419b2fc99e694f51.8604389aa3a35550",
+      "_id": "8604389aa3a35550"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Environment",
+      "_key": "!tables.results!419b2fc99e694f51.3ac85d8cbd965afd",
+      "_id": "3ac85d8cbd965afd"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Technique",
+      "_key": "!tables.results!419b2fc99e694f51.2dd6d990b23ec3a0",
+      "_id": "2dd6d990b23ec3a0"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Surprise",
+      "_key": "!tables.results!419b2fc99e694f51.24f05650edcfa175",
+      "_id": "24f05650edcfa175"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Pride",
+      "_key": "!tables.results!419b2fc99e694f51.ddb17d2260458346",
+      "_id": "ddb17d2260458346"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Wound",
+      "_key": "!tables.results!419b2fc99e694f51.eda014079e0ad6d7",
+      "_id": "eda014079e0ad6d7"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Precision",
+      "_key": "!tables.results!419b2fc99e694f51.d71e09bc219478a8",
+      "_id": "d71e09bc219478a8"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Ally",
+      "_key": "!tables.results!419b2fc99e694f51.20fe2f035e895924",
+      "_id": "20fe2f035e895924"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Ground",
+      "_key": "!tables.results!419b2fc99e694f51.89343f79ae5c433b",
+      "_id": "89343f79ae5c433b"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Courage",
+      "_key": "!tables.results!419b2fc99e694f51.dd42bfa62baafbb6",
+      "_id": "dd42bfa62baafbb6"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Companion",
+      "_key": "!tables.results!419b2fc99e694f51.9ac9d2a387119005",
+      "_id": "9ac9d2a387119005"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Object",
+      "_key": "!tables.results!419b2fc99e694f51.1dd94e6e7c3aa4e1",
+      "_id": "1dd94e6e7c3aa4e1"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Momentum",
+      "_key": "!tables.results!419b2fc99e694f51.178583d9a5de8bce",
+      "_id": "178583d9a5de8bce"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Speed",
+      "_key": "!tables.results!419b2fc99e694f51.4421bcba627286d0",
+      "_id": "4421bcba627286d0"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Strength",
+      "_key": "!tables.results!419b2fc99e694f51.2827d6fba4fd334d",
+      "_id": "2827d6fba4fd334d"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Supply",
+      "_key": "!tables.results!419b2fc99e694f51.6c7811ae498b96b3",
+      "_id": "6c7811ae498b96b3"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Terrain",
+      "_key": "!tables.results!419b2fc99e694f51.6ee0ab1d9de3e919",
+      "_id": "6ee0ab1d9de3e919"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Armor",
+      "_key": "!tables.results!419b2fc99e694f51.106bfc57200ecb07",
+      "_id": "106bfc57200ecb07"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Skill",
+      "_key": "!tables.results!419b2fc99e694f51.6b8e419f245e0522",
+      "_id": "6b8e419f245e0522"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Body",
+      "_key": "!tables.results!419b2fc99e694f51.fbcaca2fda4a4e13",
+      "_id": "fbcaca2fda4a4e13"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Protection",
+      "_key": "!tables.results!419b2fc99e694f51.7615f815c82b6953",
+      "_id": "7615f815c82b6953"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Resolve",
+      "_key": "!tables.results!419b2fc99e694f51.794f7fdf80181f70",
+      "_id": "794f7fdf80181f70"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Ferocity",
+      "_key": "!tables.results!419b2fc99e694f51.6bcb87aed29ba888",
+      "_id": "6bcb87aed29ba888"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Shield",
+      "_key": "!tables.results!419b2fc99e694f51.1c07b887e4054f0d",
+      "_id": "1c07b887e4054f0d"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Ammo",
+      "_key": "!tables.results!419b2fc99e694f51.625f812114788f28",
+      "_id": "625f812114788f28"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Anger",
+      "_key": "!tables.results!419b2fc99e694f51.33e44cee1e01386c",
+      "_id": "33e44cee1e01386c"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Opportunity",
+      "_key": "!tables.results!419b2fc99e694f51.904a4045bbf1c65c",
+      "_id": "904a4045bbf1c65c"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Balance",
+      "_key": "!tables.results!419b2fc99e694f51.79fcd0984de6872d",
+      "_id": "79fcd0984de6872d"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Position",
+      "_key": "!tables.results!419b2fc99e694f51.e20f30d88548e2c0",
+      "_id": "e20f30d88548e2c0"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Barrier",
+      "_key": "!tables.results!419b2fc99e694f51.488d39aa717eb9ce",
+      "_id": "488d39aa717eb9ce"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Strategy",
+      "_key": "!tables.results!419b2fc99e694f51.e27f109a930a8b53",
+      "_id": "e27f109a930a8b53"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Grasp",
+      "_key": "!tables.results!419b2fc99e694f51.26818482812ed6e2",
+      "_id": "26818482812ed6e2"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Power",
+      "_key": "!tables.results!419b2fc99e694f51.478d63286377d40a",
+      "_id": "478d63286377d40a"
+    }
+  ],
+  "folder": "be65c6dd40adde91",
+  "sort": 219,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!419b2fc99e694f51"
+}

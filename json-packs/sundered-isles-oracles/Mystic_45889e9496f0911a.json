@@ -1,0 +1,65 @@
+{
+  "_id": "45889e9496f0911a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/mystic"
+    }
+  },
+  "name": "Mystic",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Alchemist",
+      "_key": "!tables.results!45889e9496f0911a.fd6d9fc79fd45bbe",
+      "_id": "fd6d9fc79fd45bbe"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Elementalist",
+      "_key": "!tables.results!45889e9496f0911a.beefc19cc34a526f",
+      "_id": "beefc19cc34a526f"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Necromancer",
+      "_key": "!tables.results!45889e9496f0911a.3348ad854acbce7b",
+      "_id": "3348ad854acbce7b"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Seer",
+      "_key": "!tables.results!45889e9496f0911a.256ac07bf5a5bb6e",
+      "_id": "256ac07bf5a5bb6e"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Sorcerer / Shaman",
+      "_key": "!tables.results!45889e9496f0911a.a4e7bbfd35c775ae",
+      "_id": "a4e7bbfd35c775ae"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!45889e9496f0911a"
+}

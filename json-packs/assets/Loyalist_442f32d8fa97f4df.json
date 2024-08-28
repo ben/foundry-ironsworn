@@ -11,7 +11,7 @@
     "abilities": [
       {
         "enabled": true,
-        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.9ddde3bd0769fc24]{Aid Your Ally}, add +1 and take +1 momentum on a hit. This is in addition to the benefits taken by your ally.</p>",
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.f762e8f471fe875f]{Aid Your Ally}, add +1 and take +1 momentum on a hit. This is in addition to the benefits taken by your ally.</p>",
         "hasClock": false,
         "clockTicks": 0,
         "clockMax": 4
@@ -47,17 +47,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Assets/Path/Loyalist",
+      "dsid": "asset:classic/path/loyalist"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021198,
-    "modifiedTime": 1695949021198,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!442f32d8fa97f4df"
 }

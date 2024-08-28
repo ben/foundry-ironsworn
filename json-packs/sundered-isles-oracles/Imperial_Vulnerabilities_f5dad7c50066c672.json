@@ -1,0 +1,218 @@
+{
+  "_id": "f5dad7c50066c672",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/empire",
+      "dsid": "oracle_rollable:sundered_isles/faction/empire/vulnerabilities"
+    }
+  },
+  "name": "Imperial Vulnerabilities",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Catastrophic military defeat",
+      "_key": "!tables.results!f5dad7c50066c672.7cd1a4e4d1a3b96c",
+      "_id": "7cd1a4e4d1a3b96c"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Coffers are running low",
+      "_key": "!tables.results!f5dad7c50066c672.d3e5bc7ae0957c8d",
+      "_id": "d3e5bc7ae0957c8d"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Crippling bureaucracy",
+      "_key": "!tables.results!f5dad7c50066c672.527a6acdfeb3a2e8",
+      "_id": "527a6acdfeb3a2e8"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Defection of a key ally",
+      "_key": "!tables.results!f5dad7c50066c672.7ac11889e0599946",
+      "_id": "7ac11889e0599946"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Defiant colony",
+      "_key": "!tables.results!f5dad7c50066c672.143c1c95fcf0cb3f",
+      "_id": "143c1c95fcf0cb3f"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Feckless or distracted leadership",
+      "_key": "!tables.results!f5dad7c50066c672.a0364c191fd76e85",
+      "_id": "a0364c191fd76e85"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Impending succession crisis",
+      "_key": "!tables.results!f5dad7c50066c672.d853f69b1cbdbf29",
+      "_id": "d853f69b1cbdbf29"
+    },
+    {
+      "range": [
+        29,
+        34
+      ],
+      "text": "Infighting and treachery among leaders",
+      "_key": "!tables.results!f5dad7c50066c672.23e0a5e1bba236b2",
+      "_id": "23e0a5e1bba236b2"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Infiltrated by a rival",
+      "_key": "!tables.results!f5dad7c50066c672.46359a77faa2a61d",
+      "_id": "46359a77faa2a61d"
+    },
+    {
+      "range": [
+        39,
+        42
+      ],
+      "text": "Insurgency recruits new members",
+      "_key": "!tables.results!f5dad7c50066c672.fd06f1248d222686",
+      "_id": "fd06f1248d222686"
+    },
+    {
+      "range": [
+        43,
+        46
+      ],
+      "text": "Overconfidence in a tactic or weapon",
+      "_key": "!tables.results!f5dad7c50066c672.2422f7f3c4dfd88e",
+      "_id": "2422f7f3c4dfd88e"
+    },
+    {
+      "range": [
+        47,
+        50
+      ],
+      "text": "Overextended military",
+      "_key": "!tables.results!f5dad7c50066c672.47b02bd416c1da1e",
+      "_id": "47b02bd416c1da1e"
+    },
+    {
+      "range": [
+        51,
+        54
+      ],
+      "text": "Prophecy of their downfall",
+      "_key": "!tables.results!f5dad7c50066c672.75cfb024920e46a9",
+      "_id": "75cfb024920e46a9"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Rampant internal corruption",
+      "_key": "!tables.results!f5dad7c50066c672.0452e1201737c53f",
+      "_id": "0452e1201737c53f"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Religious schism causes dissent",
+      "_key": "!tables.results!f5dad7c50066c672.08af4314071b082c",
+      "_id": "08af4314071b082c"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Rival empire emerges",
+      "_key": "!tables.results!f5dad7c50066c672.f4969b5f23c791bd",
+      "_id": "f4969b5f23c791bd"
+    },
+    {
+      "range": [
+        67,
+        72
+      ],
+      "text": "Sparks of rebellion",
+      "_key": "!tables.results!f5dad7c50066c672.bf7acf78cfb86f07",
+      "_id": "bf7acf78cfb86f07"
+    },
+    {
+      "range": [
+        73,
+        78
+      ],
+      "text": "Vulnerable industry",
+      "_key": "!tables.results!f5dad7c50066c672.84b6a447b8af64e3",
+      "_id": "84b6a447b8af64e3"
+    },
+    {
+      "range": [
+        79,
+        84
+      ],
+      "text": "Vulnerable resource in short supply",
+      "_key": "!tables.results!f5dad7c50066c672.85ae0b61ffb55fce",
+      "_id": "85ae0b61ffb55fce"
+    },
+    {
+      "range": [
+        85,
+        90
+      ],
+      "text": "Vulnerable trade route",
+      "_key": "!tables.results!f5dad7c50066c672.e395aa9ab3e2db3f",
+      "_id": "e395aa9ab3e2db3f"
+    },
+    {
+      "range": [
+        91,
+        96
+      ],
+      "text": "Vulnerable treasure hoard",
+      "_key": "!tables.results!f5dad7c50066c672.38d1c5353c59fbde",
+      "_id": "38d1c5353c59fbde"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Whispers of a potential coup",
+      "_key": "!tables.results!f5dad7c50066c672.8824251b7477d12a",
+      "_id": "8824251b7477d12a"
+    }
+  ],
+  "folder": "5e64db2bcf1b6238",
+  "sort": 181,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f5dad7c50066c672"
+}

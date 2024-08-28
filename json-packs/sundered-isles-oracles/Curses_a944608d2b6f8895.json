@@ -1,0 +1,15 @@
+{
+  "name": "Curses",
+  "description": "",
+  "type": "RollTable",
+  "_id": "a944608d2b6f8895",
+  "sort": 185,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/name/themes/curses"
+    }
+  },
+  "folder": "1aa3b728667629f3",
+  "sorting": "a",
+  "_key": "!folders!a944608d2b6f8895"
+}

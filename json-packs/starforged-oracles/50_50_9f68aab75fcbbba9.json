@@ -1,0 +1,39 @@
+{
+  "_id": "9f68aab75fcbbba9",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Moves/Ask_the_Oracle/Fifty-fifty",
+      "category": "Starforged/Moves/Fate",
+      "dsid": "move.oracle_rollable:starforged/fate/ask_the_oracle.fifty_fifty"
+    }
+  },
+  "name": "50/50",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        50
+      ],
+      "text": "Yes",
+      "_key": "!tables.results!9f68aab75fcbbba9.b9d13261a48e7693",
+      "_id": "b9d13261a48e7693"
+    },
+    {
+      "range": [
+        51,
+        100
+      ],
+      "text": "No",
+      "_key": "!tables.results!9f68aab75fcbbba9.cf368eff3f5a23f3",
+      "_id": "cf368eff3f5a23f3"
+    }
+  ],
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9f68aab75fcbbba9"
+}

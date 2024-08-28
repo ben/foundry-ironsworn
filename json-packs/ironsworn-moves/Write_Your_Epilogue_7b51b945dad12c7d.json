@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "Write Your Epilogue",
   "img": "icons/dice/d10black.svg",
+  "folder": "31fc8e728c391c80",
   "system": {
     "dfid": "Ironsworn/Moves/Relationship/Write_Your_Epilogue",
     "Category": "Ironsworn/Moves/Relationship",
     "Progress Move": true,
     "Variant of": "",
-    "Text": "When **you retire from your life as Ironsworn**, envision two things: What you hope for, and what you fear. Then, roll the challenge dice and compare to your bonds. Momentum is ignored on this roll.\n\nOn a **strong hit**, things come to pass as you hoped.\n\nOn a **weak hit**, your life takes an unexpected turn, but not necessarily for the worse. You find yourself spending your days with someone or in a place you did not foresee. Envision it (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a **miss**, your fears are realized.",
+    "Text": "When __you retire from your life as Ironsworn__, envision two things: What you hope for, and what you fear. Then, roll the challenge dice and compare to your bonds. Momentum is ignored on this roll.\n\nOn a __strong hit__, things come to pass as you hoped.\n\nOn a __weak hit__, your life takes an unexpected turn, but not necessarily for the worse. You find yourself spending your days with someone or in a place you did not foresee. Envision it (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a __miss__, your fears are realized.",
     "Trigger": {
       "Text": "When you retire from your life as Ironsworn...",
       "Options": [
         {
-          "Roll type": "Progress roll",
+          "Text": "",
+          "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
-            "Bonds"
-          ],
-          "Text": ""
+            "Bonds Track"
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Things come to pass as you had hoped.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, things come to pass as you had hoped.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Your life takes an unexpected turn, but not necessarily for the worse. You find yourself spending your days with someone or in a place you did not foresee. Envision it (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, your life takes an unexpected turn, but not necessarily for the worse. You find yourself spending your days with someone or in a place you did not foresee. Envision it (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure)."
       },
       "Miss": {
-        "Text": "Your fears are realized.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, your fears are realized.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 77
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 77,
-  "folder": "31fc8e728c391c80",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Relationship/Write_Your_Epilogue",
+      "dsid": "move:classic/relationship/write_your_epilogue"
+    }
   },
   "_key": "!items!7b51b945dad12c7d"
 }
