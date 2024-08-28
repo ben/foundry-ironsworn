@@ -29,52 +29,6 @@ export class OracleTable extends RollTable {
 	static resultTemplate =
 		'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 
-	static getDFOracleByDfId(
-		dfid: string
-	): IOracle | IOracleCategory | undefined {
-		const nodes = OracleTable.findOracleWithIntermediateNodes(dfid)
-		return nodes[nodes.length - 1]
-	}
-
-	// DEPRECATED, replace this with a Datsworn2 version
-	static findOracleWithIntermediateNodes(
-		dfid: string
-	): Array<IOracle | IOracleCategory> {
-		const ret: Array<IOracle | IOracleCategory> = []
-
-		function walkCategory(cat: IOracleCategory): boolean {
-			ret.push(cat)
-
-			if (cat.$id === dfid) return true
-			for (const oracle of cat.Oracles ?? []) {
-				if (walkOracle(oracle)) return true
-			}
-			for (const childCat of cat.Categories ?? []) {
-				if (walkCategory(childCat)) return true
-			}
-
-			ret.pop()
-			return false
-		}
-
-		function walkOracle(oracle: IOracle): boolean {
-			ret.push(oracle)
-
-			if (oracle.$id === dfid) return true
-			for (const childOracle of oracle.Oracles ?? []) {
-				if (walkOracle(childOracle)) return true
-			}
-
-			ret.pop()
-			return false
-		}
-
-		for (const cat of [...SFOracleCategories, ...ISOracleCategories]) {
-			walkCategory(cat)
-		}
-		return ret
-	}
-
 	static async getByDfId(
 		dfid: string
 	): Promise<StoredDocument<OracleTable> | undefined> {
