@@ -65,6 +65,44 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
 	walkFolder(node, rootFolder)
 }
 
+function customFolderOracleCategory(): [IOracleTreeNode, number] {
+	const name = game.i18n.localize('IRONSWORN.OracleCategories.Custom')
+	const ret = { ...emptyNode(), displayName: name }
+	let count = 0
+
+	const rootFolder = game.tables?.directory?.folders.find(
+		(x) => x.name === name
+	)
+	if (rootFolder == null) return [ret, count]
+
+	function walkFolder(parent: IOracleTreeNode, folder: Folder) {
+		// Add this folder
+		const newNode: IOracleTreeNode = {
+			...emptyNode(),
+			displayName: folder.name ?? '(folder)'
+		}
+		parent.children.push(newNode)
+
+		// Add its folder children
+		for (const sub of folder.getSubfolders()) {
+			walkFolder(newNode, sub)
+		}
+
+		// Add its table children
+		for (const table of folder.contents) {
+			count++
+			newNode.children.push({
+				...emptyNode(),
+				tables: [table.uuid],
+				displayName: table.name ?? '(table)'
+			})
+		}
+	}
+
+	walkFolder(ret, rootFolder)
+	return [ret, count]
+}
+
 export function findPathToNodeByTableUuid(
 	rootNode: IOracleTreeNode,
 	tableUuid: string
@@ -204,32 +242,20 @@ export function getOracleTree(category: DataswornRulesetKey): IOracleTreeNode {
 	return cloneDeep(ORACLES[category])
 }
 
-export async function getOracleTreeWithCustomOracles(
-	category: DataswornRulesetKey
-): Promise<IOracleTreeNode> {
-	const rootNode = getOracleTree(category)
-
-	// Add in custom oracles from a well-known directory
-	await augmentWithFolderContents(rootNode)
-
-	// Fire the hook and allow extensions to modify the tree
-	Hooks.call('ironswornOracles', rootNode)
-
-	return rootNode
-}
-
 export async function getCustomizedOracleTrees(): Promise<IOracleTreeNode[]> {
-	return await Promise.all(
-		Object.keys(ORACLES).map(async (ruleset) => {
-			const tree = ORACLES[ruleset]
+	const [customNode, customOracleCount] = customFolderOracleCategory()
 
-			// Add in custom oracles from a well-known directory
-			await augmentWithFolderContents(tree)
+	return compact(
+		await Promise.all([
+			...Object.keys(ORACLES).map(async (ruleset) => {
+				const tree = ORACLES[ruleset]
 
-			// Fire the hook and allow extensions to modify the tree
-			Hooks.call('ironswornOracles', tree)
+				// Fire the hook and allow extensions to modify the tree
+				Hooks.call('ironswornOracles', tree)
 
-			return tree
-		})
+				return tree
+			}),
+			customOracleCount > 0 ? customNode : null
+		])
 	)
 }
