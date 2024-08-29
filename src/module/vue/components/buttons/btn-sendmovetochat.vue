@@ -13,22 +13,22 @@
 </template>
 
 <script setup lang="ts">
-import { inject } from 'vue'
 import { createSfMoveChatMessage } from '../../../chat/sf-move-chat-message'
 import type { DisplayMove } from '../../../features/custommoves'
-import { $ItemKey } from '../../provisions.js'
 import IronBtn from './iron-btn.vue'
+import { IronswornItem } from '../../../item/item'
 
 interface Props
 	extends /* @vue-ignore */ Omit<PropsOf<typeof IronBtn>, 'tooltip'> {
 	move: DisplayMove
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
-const $item = inject($ItemKey)
-
-function sendToChat(e) {
-	if ($item) createSfMoveChatMessage($item)
+async function sendToChat(e) {
+	const foundryMove = (await fromUuid(
+		props.move.uuid
+	)) as IronswornItem<'sfmove'>
+	if (foundryMove) createSfMoveChatMessage(foundryMove)
 }
 </script>

@@ -58,10 +58,8 @@ function rollableOptions(trigger: SFMoveTrigger) {
 	)
 }
 
-export function moveHasRollableOptions(move: IronswornItem<'sfmove'>) {
-	if (!move.assert('sfmove')) return false
-	const options = rollableOptions(move.system.Trigger)
-	return options.length > 0
+export function moveTriggerIsRollable(trigger?: SFMoveTrigger) : boolean {
+	return !!trigger && rollableOptions(trigger).length > 0
 }
 
 export function getStatData(

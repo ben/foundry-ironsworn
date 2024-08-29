@@ -5,6 +5,7 @@ import {
 } from '../datasworn2'
 import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import type { Move, MoveCategory } from '@datasworn/core/dist/Datasworn'
+import { moveTriggerIsRollable } from '../rolls/preroll-dialog'
 
 interface DisplayMoveRuleset {
 	displayName: string
@@ -22,6 +23,9 @@ export interface DisplayMove {
 	color: string | null
 	displayName: string
 	uuid: string
+	triggerText?: string
+	isRollable: boolean
+	oracles: string[]
 	ds?: Move
 }
 
@@ -29,7 +33,10 @@ const INDEXES: Record<string, any> = {}
 async function ensureIndex(rsKey: DataswornRulesetKey) {
 	const compendiumKey = COMPENDIUM_KEY_MAP.move[rsKey]
 	if (INDEXES[compendiumKey] == null) {
-		const { index } = await getPackAndIndexForCompendiumKey(rsKey, 'move')
+		const { index } = await getPackAndIndexForCompendiumKey(rsKey, 'move', [
+			'system.Trigger',
+			'system.dsOracleIds'
+		])
 		INDEXES[compendiumKey] = index
 	}
 }
@@ -55,6 +62,9 @@ export async function createMoveTreeForRuleset(
 					color: move.color ?? null,
 					displayName: move.name,
 					uuid: indexEntry.uuid, // TODO: move.uuid
+					triggerText: indexEntry.system?.Trigger?.Text,
+					isRollable: moveTriggerIsRollable(indexEntry?.system?.Trigger),
+					oracles: indexEntry.system?.dsOracleIds ?? [],
 					ds: move
 				}
 			})
@@ -68,6 +78,8 @@ export async function createMergedMoveTree(): Promise<DisplayMoveRuleset[]> {
 	return await Promise.all(
 		IronswornSettings.enabledRulesets.map(createMoveTreeForRuleset)
 	)
+
+	// TODO: custom move folder
 }
 
 // TODO dataforged has a key for move colours...., but they appear to have changed significantly since the last time i updated them! they'll be fixed for 2.0, but until then, here's a workaround.

@@ -5,7 +5,7 @@
 		class="movesheet-row"
 		:class="$style.wrapper"
 		data-tooltip-direction="LEFT"
-		:base-id="`move_row_${item._id}`"
+		:base-id="`move_row_${move.uuid}`"
 		:content-wrapper-class="$style.contentWrapper"
 		:toggle-wrapper-is="`h${headingLevel}`"
 		:toggle-section-class="[$style.toggleSection, toggleSectionClass]"
@@ -15,8 +15,7 @@
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-label="move?.displayName"
 		:data-highlighted="dataHighlight"
-		:data-move-id="item._id"
-		:data-move-uuid="$item.uuid"
+		:data-move-uuid="move.uuid"
 	>
 		<template #after-toggle>
 			<section
@@ -28,10 +27,10 @@
 				<slot name="controls">
 					<slot
 						name="btn-roll-move"
-						v-bind="{ disabled: !canRoll, move, class: $style.btn }"
+						v-bind="{ disabled: !move.isRollable, move, class: $style.btn }"
 					>
 						<BtnRollmove
-							:disabled="!canRoll"
+							:disabled="!move.isRollable"
 							:move="move"
 							:class="$style.btn"
 						/>
@@ -57,41 +56,23 @@
 			</section>
 		</template>
 		<template #default>
-			<RulesTextMove
-				:data="item"
-				:is-progress-move="$item.system.isProgressMove"
-				:class="$style.summary"
-			>
-				<template #after-footer>
-					<OracleTreeNode
-						v-for="node of oracleNodes"
-						:key="node.displayName"
-						:class="$style.oracle"
-						:node="node"
-					/>
-				</template>
-			</RulesTextMove>
+			<MoveContent :move="move" />
 		</template>
 	</Collapsible>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, provide, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import type { DisplayMove } from '../../../features/custommoves'
 import type { IOracleTreeNode } from '../../../features/customoracles'
-import type { IronswornItem } from '../../../item/item'
-import { moveHasRollableOptions } from '../../../rolls/preroll-dialog'
-import { ItemKey, $ItemKey } from '../../provisions.js'
-import { enrichMarkdown } from '../../vue-plugin.js'
-import { compact, uniq } from 'lodash-es'
+import { compact } from 'lodash-es'
 import { OracleTable } from '../../../roll-table/oracle-table'
 
 import BtnRollmove from '../buttons/btn-rollmove.vue'
 import BtnSendmovetochat from '../buttons/btn-sendmovetochat.vue'
-import OracleTreeNode from '../oracle-tree-node.vue'
-import RulesTextMove from '../rules-text/rules-text-move.vue'
 import Collapsible from '../collapsible/collapsible.vue'
 import BtnOracle from '../buttons/btn-oracle.vue'
+import MoveContent from './move-content.vue'
 
 const props = withDefaults(
 	defineProps<{
@@ -126,20 +107,10 @@ const props = withDefaults(
 	}
 )
 
-const $item = (await fromUuid(props.move.uuid)) as IronswornItem<'sfmove'>
-const item = ref($item.toObject())
-
-provide(ItemKey, item as any)
-provide($ItemKey, $item)
-
 const $collapsible = ref<typeof Collapsible>()
 
-const oracleDsIds = uniq([
-	...($item?.system?.dsOracleIds ?? []),
-	...Object.values(props.move.ds?.oracles ?? {}).map((x) => x._id)
-])
 const oracleNodes: IOracleTreeNode[] = await Promise.all(
-	oracleDsIds.map(async (oid) => {
+	props.move.oracles.map(async (oid) => {
 		const t = await OracleTable.getByDsId(oid)
 		return {
 			displayName: t?.name ?? '(missing)',
@@ -149,15 +120,11 @@ const oracleNodes: IOracleTreeNode[] = await Promise.all(
 	})
 )
 
-const canRoll = computed(() => {
-	return moveHasRollableOptions($item)
-})
 const preventOracle = computed(() => {
 	return oracleNodes.length !== 1
 })
 
-const toggleTooltip = ref($item.system.Trigger?.Text)
-enrichMarkdown(toggleTooltip.value).then((x) => (toggleTooltip.value = x))
+const toggleTooltip = props.move.triggerText
 
 const dataHighlight = ref(false)
 async function flashHighlight() {
