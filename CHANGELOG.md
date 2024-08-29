@@ -2,7 +2,8 @@
 
 ## Next Release
 
-- Brought back support for the "Custom Moves" folder ([#1023](https://github.com/ben/foundry-ironsworn/pull/1023))
+- Avoided doing a full load of moves when showing the move sheet, resulting in better performance ([#1023](https://github.com/ben/foundry-ironsworn/pull/1023))
+- Brought back support for the "Custom Moves" folder (also [#1023](https://github.com/ben/foundry-ironsworn/pull/1023))
 
 ## 1.24.0
 
