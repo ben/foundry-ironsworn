@@ -101,7 +101,7 @@ function customFolderMoveCategory(): DisplayMoveRuleset | undefined {
 		})
 	}
 	if (category.moves.length === 0) return undefined
-	console.log(category)
+
 	return {
 		displayName: name,
 		categories: [category]
