@@ -1,3 +1,4 @@
+import shajs from 'sha.js'
 import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import type { KeysWithValuesOfType } from 'dataforged'
 
@@ -34,4 +35,14 @@ export async function typedDeleteDialog<
 		yes: document.delete.bind(document) as any,
 		options
 	})) as any
+}
+
+const HASH_CACHE = {} as Record<string, string>
+export function hashLookup(str: string): string {
+	HASH_CACHE[str] ||= hash(str)
+	return HASH_CACHE[str]
+}
+
+export function hash(str: string): string {
+	return shajs('sha256').update(str).digest('hex').substring(48)
 }

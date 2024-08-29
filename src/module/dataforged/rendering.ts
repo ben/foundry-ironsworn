@@ -1,6 +1,6 @@
 import type { IMove } from 'dataforged'
 import { get, set } from 'lodash-es'
-import { hash } from '.'
+import { hash } from '../helpers/util'
 
 const COMPENDIUM_KEY_MAP = {
 	'Ironsworn/Moves': 'ironswornmoves',

@@ -1,7 +1,8 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { IRow } from 'dataforged'
 import { inRange } from 'lodash-es'
-import { hashLookup, renderLinksInStr } from '../dataforged'
+import { renderLinksInStr } from '../dataforged'
+import { hashLookup } from '../helpers/util'
 
 /** Extends FVTT's default TableResult with functionality specific to this system. */
 export class OracleTableResult extends TableResult {

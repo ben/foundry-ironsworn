@@ -3,7 +3,7 @@ import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-
 import type { IOracle, IRow } from 'dataforged'
 import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
-import { hashLookup, renderLinksInStr } from '../dataforged'
+import { renderLinksInStr } from '../dataforged'
 import { getPackAndIndexForCompendiumKey, IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
@@ -11,6 +11,7 @@ import {
 	IOracleTreeNode
 } from '../features/customoracles'
 import { DataswornRulesetKey } from '../helpers/settings'
+import { hashLookup } from '../helpers/util'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
