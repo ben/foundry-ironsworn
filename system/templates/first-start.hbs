@@ -73,7 +73,10 @@
 
 	{{#*inline "rulesetCheckbox"}}
 	<label>
-		<input type='checkbox' class="ruleset" value='{{id}}' {{#if enabled}}checked{{/if}} />
+		<input type='checkbox' class="ruleset" value='{{id}}'
+			{{#if enabled}}checked{{/if}}
+			{{#if requires}}data-requires='{{requires}}'{{/if}}
+		/>
 		{{name}}
 	</label>
 	{{/inline}}

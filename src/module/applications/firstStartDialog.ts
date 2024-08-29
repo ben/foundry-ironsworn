@@ -1,3 +1,5 @@
+import { Expansion } from '@datasworn/core/dist/Datasworn'
+import { DataswornTree } from '../datasworn2'
 import { registerDefaultOracleTrees } from '../features/customoracles'
 import { IronswornSettings, RULESETS } from '../helpers/settings'
 import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
@@ -26,6 +28,23 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
 	activateListeners(html: JQuery) {
 		super.activateListeners(html)
+
+		// Auto-check required rulesets
+		html.find('input.ruleset').on('change', (ev) => {
+			console.log(ev)
+			if (ev.target.checked) {
+				// Clicked on, make sure all required checks are checked as well
+				html
+					.find(`input.ruleset[value="${ev.target.dataset.requires}"]`)
+					.prop('checked', true)
+			} else {
+				// Clicked off, make sure all dependents are unchecked
+				html
+					.find(`input.ruleset[data-requires="${ev.target.value}"]`)
+					.prop('checked', false)
+			}
+		})
+
 		// eslint-disable-next-line @typescript-eslint/no-misused-promises
 		html.find('button.ironsworn__save').on('click', async (ev) => {
 			// Update default character sheet
@@ -66,8 +85,10 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 	async getData(_options?: unknown) {
 		const rulesets = {}
 		for (const r of RULESETS) {
+			const dsRuleset = DataswornTree.get(r) as Expansion // Might be a Ruleset, but we only need this for one field
 			rulesets[r] = {
 				id: r,
+				requires: dsRuleset?.ruleset,
 				name: game.i18n.localize(`IRONSWORN.RULESETS.${r}`),
 				enabled: IronswornSettings.get(`ruleset-${r}`)
 			}
