@@ -1,4 +1,8 @@
-import type { ProgressTypeIronsworn, RollMethod, RollType } from 'dataforged'
+import type {
+	DFProgressTypeIronsworn,
+	DFRollMethod,
+	DFRollType
+} from '../item/types'
 import { cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
@@ -106,7 +110,7 @@ export function getStatData(
 }
 
 function chooseStatToRoll(
-	mode: RollMethod,
+	mode: DFRollMethod,
 	stats: string[],
 	actor: IronswornActor<'character'> | IronswornActor<'starship'>
 ): SourcedValue | undefined {
@@ -365,9 +369,9 @@ export class IronswornPrerollDialog extends Dialog<
 			// Add this so it generates a button, but it won't be passed to
 			// the IronswornRoll object as a stat
 			options.push({
-				'Roll type': 'Progress roll' as RollType,
-				Method: 'Any' as RollMethod,
-				Using: ['Progress' as ProgressTypeIronsworn]
+				'Roll type': 'Progress roll' as DFRollType,
+				Method: 'Any' as DFRollMethod,
+				Using: ['Progress' as DFProgressTypeIronsworn]
 			})
 		}
 
@@ -394,7 +398,7 @@ export class IronswornPrerollDialog extends Dialog<
 			action: true
 		})
 		const buttons = {}
-		const addButton = (i: number, mode: RollMethod, stats: string[]) => {
+		const addButton = (i: number, mode: DFRollMethod, stats: string[]) => {
 			const localizedStats = stats.map((s) =>
 				game.i18n.localize(`IRONSWORN.${s.capitalize()}`)
 			)

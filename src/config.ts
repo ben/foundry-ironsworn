@@ -1,7 +1,5 @@
 import { IronswornActor } from './module/actor/actor'
-import * as dataforgedHelpers from './module/dataforged'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { starforged } from 'dataforged'
 import type { Emitter, EventType } from 'mitt'
 import Mitt from 'mitt'
 import {
@@ -49,9 +47,6 @@ export interface IronswornConfig {
 		IronswornRollMessage: typeof IronswornRollMessage
 	}
 
-	Dataforged: typeof starforged
-	dataforgedHelpers: typeof dataforgedHelpers
-
 	emitter: IronswornEmitter
 
 	registerOracleTree: typeof registerOracleTree
@@ -81,9 +76,6 @@ export const IRONSWORN: IronswornConfig = {
 		IronswornPrerollDialog,
 		IronswornRollMessage
 	},
-
-	Dataforged: starforged,
-	dataforgedHelpers,
 
 	emitter: Mitt<EmitterEvents>(),
 

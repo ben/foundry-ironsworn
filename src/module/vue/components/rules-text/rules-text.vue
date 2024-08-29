@@ -17,7 +17,7 @@ import { IronswornHandlebarsHelpers } from '../../../helpers/handlebars.js'
 import { enrichMarkdown, enrichHtml } from '../../vue-plugin.js'
 import RulesSourceInfo from './rules-source-info.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
-import type { ISource } from 'dataforged'
+import type { SourceInfo } from '@datasworn/core/dist/Datasworn'
 
 const props = defineProps<{
 	/**
@@ -34,7 +34,7 @@ const props = defineProps<{
 	/**
 	 * Dataforged source data to be included in the footer.
 	 */
-	source?: ISource
+	source?: SourceInfo
 	/**
 	 * Whether or not to strip tables from the display. Many times they are redundant,
 	 * but sometimes they are essential.

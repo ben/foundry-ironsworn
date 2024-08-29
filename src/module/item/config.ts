@@ -1,5 +1,4 @@
 import type { ConfiguredData } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { PartialDeep } from 'dataforged'
 import { IronswornItem } from './item'
 import { AssetModel } from './subtypes/asset'
 import { BondsetModel } from './subtypes/bondset'
@@ -25,7 +24,8 @@ import type {
 	ProgressDataSource
 } from './subtypes/progress'
 import type { SFMoveDataProperties, SFMoveDataSource } from './subtypes/sfmove'
-import { ChallengeRank } from '../fields/ChallengeRank'
+import type { ChallengeRank } from '../fields/ChallengeRank'
+import type { DFPartialDeep } from './types'
 
 const dataModels: Partial<
 	Record<
@@ -56,7 +56,7 @@ export interface ItemConfig extends _itemConfig {
 	typeIcons: Record<ItemType, string>
 }
 
-const config: PartialDeep<ItemConfig> = {
+const config: DFPartialDeep<ItemConfig> = {
 	documentClass: IronswornItem,
 	dataModels,
 	typeLabels: {
@@ -114,6 +114,7 @@ declare global {
 	interface FlagConfig {
 		Item: {
 			'foundry-ironsworn'?: {
+				dsid?: string
 				expanded?: boolean
 				muteBroadcast?: boolean
 				'edit-mode'?: boolean

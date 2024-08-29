@@ -30,13 +30,13 @@ h4 {
 <script setup lang="ts">
 import RulesText from './rules-text.vue'
 import OracleTable from './oracle-table.vue'
-import type { ISource } from 'dataforged'
+import type { SourceInfo } from '@datasworn/core/dist/Datasworn'
 import type { LegacyTableRow } from '../../../roll-table/roll-table-types'
 
 const props = defineProps<{
 	title?: string
 	tableRows: LegacyTableRow[]
 	tableDescription: string
-	source?: ISource
+	source?: SourceInfo
 }>()
 </script>

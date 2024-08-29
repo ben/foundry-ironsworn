@@ -1,9 +1,7 @@
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { IOracle, IRow } from 'dataforged'
 import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
-import { hashLookup, renderLinksInStr } from '../dataforged'
 import { getPackAndIndexForCompendiumKey, IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
@@ -11,6 +9,8 @@ import {
 	IOracleTreeNode
 } from '../features/customoracles'
 import { DataswornRulesetKey } from '../helpers/settings'
+import { hashLookup } from '../helpers/util'
+import { DFIOracle, DFIRow } from '../item/types'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
@@ -161,7 +161,7 @@ export class OracleTable extends RollTable {
 		oracle: OracleTable.IOracleLeaf
 	): RollTableDataConstructorData {
 		const description = CONFIG.IRONSWORN.showdown.makeHtml(
-			renderLinksInStr(oracle.Description ?? '')
+			oracle.Description ?? ''
 		)
 		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
 		const data: RollTableDataConstructorData = {
@@ -177,7 +177,7 @@ export class OracleTable extends RollTable {
 			/* folder: // would require using an additional module */
 			results: oracle.Table?.filter((x) => x.Floor !== null).map((tableRow) =>
 				OracleTableResult.getConstructorData(
-					tableRow as IRow & { Floor: number; Ceiling: number }
+					tableRow as DFIRow & { Floor: number; Ceiling: number }
 				)
 			)
 		}
@@ -428,5 +428,5 @@ export class OracleTable extends RollTable {
 }
 
 export namespace OracleTable {
-	export type IOracleLeaf = IOracle & { Table: IRow[] }
+	export type IOracleLeaf = DFIOracle & { Name: string; Table: DFIRow[] }
 }

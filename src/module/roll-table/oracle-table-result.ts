@@ -1,7 +1,7 @@
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import type { IRow } from 'dataforged'
+import type { DFIRow } from '../item/types'
 import { inRange } from 'lodash-es'
-import { hashLookup, renderLinksInStr } from '../dataforged'
+import { hashLookup } from '../helpers/util'
 
 /** Extends FVTT's default TableResult with functionality specific to this system. */
 export class OracleTableResult extends TableResult {
@@ -46,7 +46,7 @@ export class OracleTableResult extends TableResult {
 
 	/** Converts a Dataforged IRow object into OracleTableResult constructor data. */
 	static getConstructorData(
-		tableRow: IRow & { Floor: number; Ceiling: number; dfid?: string }
+		tableRow: DFIRow & { Floor: number; Ceiling: number; dfid?: string }
 	): TableResultDataConstructorData {
 		let text: string
 		if (tableRow.Result && tableRow.Summary) {
@@ -55,7 +55,7 @@ export class OracleTableResult extends TableResult {
 
 		const data: TableResultDataConstructorData = {
 			range: [tableRow.Floor, tableRow.Ceiling],
-			text: tableRow.Result && renderLinksInStr(text)
+			text: tableRow.Result
 		}
 
 		const _id =

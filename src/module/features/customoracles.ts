@@ -4,19 +4,15 @@ import type {
 	OracleTablesCollection,
 	RulesetId
 } from '@datasworn/core/dist/Datasworn'
-import type { IOracle, IOracleCategory } from 'dataforged'
 import { cloneDeep, compact } from 'lodash-es'
 import {
-	COMPENDIUM_KEY_MAP,
 	DataswornTree,
 	getPackAndIndexForCompendiumKey,
 	IdParser
 } from '../datasworn2'
 import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
-import { OracleTable } from '../roll-table/oracle-table'
 
 export interface IOracleTreeNode {
-	dataforgedNode?: IOracle | IOracleCategory
 	dataswornNode?: OracleCollection | OracleRollableTable
 	dsIdentifier?: string // the last part of the dsid
 	tables: string[] // UUIDs
@@ -112,22 +108,6 @@ export function findPathToNodeByTableUuid(
 		ret.push(node)
 		const foundTable = node.tables.find((x) => x === tableUuid)
 		if (foundTable != null) return true
-		for (const child of node.children) {
-			if (walk(child)) return true
-		}
-		ret.pop()
-		return false
-	}
-
-	walk(rootNode)
-	return ret
-}
-
-export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfid: string) {
-	const ret: IOracleTreeNode[] = []
-	function walk(node: IOracleTreeNode) {
-		ret.push(node)
-		if (node.dataforgedNode?.$id === dfid) return true
 		for (const child of node.children) {
 			if (walk(child)) return true
 		}

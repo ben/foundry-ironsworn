@@ -12,14 +12,13 @@
 			:title="tables.length > 1 ? table.title : undefined"
 			:table-rows="table.rows"
 			:table-description="table.description"
-			:source="node.dataforgedNode?.Source"
+			:source="node.dataswornNode?._source"
 		/>
 	</div>
 </template>
 
 <script setup lang="ts">
 import { IOracleTreeNode } from '../../features/customoracles'
-import { IronswornItem } from '../../item/item'
 import type { OracleTable } from '../../roll-table/oracle-table'
 import { enrichHtml } from '../vue-plugin'
 import RenderedText from './rendered-text.vue'

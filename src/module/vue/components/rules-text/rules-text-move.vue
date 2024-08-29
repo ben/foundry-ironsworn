@@ -1,7 +1,7 @@
 <template>
 	<RulesText
 		class="rules-text-move"
-		:source="data.system.Source"
+		:source="ds?._source"
 		:content="data.system.Text"
 		:strip-tables="hasOracles"
 		type="markdown"
@@ -23,8 +23,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Move } from '@datasworn/core/dist/Datasworn'
 import { computed } from 'vue'
 import RulesText from './rules-text.vue'
+import { IdParser } from '../../../datasworn2'
 
 const props = defineProps<{
 	data: ItemSource<'sfmove'>
@@ -33,6 +35,9 @@ const props = defineProps<{
 const hasOracles = computed(
 	() => (props.data.system.dsOracleIds?.length ?? 0) > 0
 )
+
+const dsid = props.data.flags['foundry-ironsworn']?.dsid
+const ds = (dsid && IdParser.get(dsid)) as Move | undefined
 </script>
 
 <style lang="scss" module>

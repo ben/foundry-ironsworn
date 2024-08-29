@@ -41,7 +41,6 @@
 		"buffer": "^6.0.3",
 		"chroma-js": "^2.4.2",
 		"cssnano": "^6.0.1",
-		"dataforged": "^1.5",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-config-standard-with-typescript": "^43",

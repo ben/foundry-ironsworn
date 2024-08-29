@@ -1,6 +1,6 @@
-import type { ISource } from 'dataforged'
+import type { DFISource } from '../item/types'
 
-export class SourceField extends foundry.data.fields.SchemaField<ISource> {
+export class SourceField extends foundry.data.fields.SchemaField<DFISource> {
 	constructor() {
 		const fields = foundry.data.fields
 

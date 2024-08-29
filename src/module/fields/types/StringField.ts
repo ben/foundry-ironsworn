@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import type { RequireKey } from 'dataforged'
-
 declare global {
 	namespace foundry {
 		namespace data {
@@ -159,9 +157,7 @@ declare global {
 					base64: boolean
 					wildcard: boolean
 
-					constructor(
-						options: RequireKey<Partial<FilePathField.Options<T>>, 'categories'>
-					)
+					constructor(options: Partial<FilePathField.Options<T>>)
 				}
 				export interface FilePathField<
 					T extends FilePathField.FileCategory = FilePathField.FileCategory

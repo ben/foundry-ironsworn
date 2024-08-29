@@ -7,7 +7,8 @@
 			style="flex: 0 0 20px; margin: 8px"
 			:name="radiogroup"
 			:value="radiovalue"
-			@change="changed" />
+			@change="changed"
+		/>
 		<div class="flexcol">
 			<label :for="truth?.$id">
 				<p>
@@ -20,7 +21,8 @@
 						<div
 							v-for="suboption in truth?.Subtable"
 							:key="suboption.$id || ''"
-							class="flexrow">
+							class="flexrow"
+						>
 							<input
 								:id="suboption.$id || ''"
 								v-model="data.subOptionDescription"
@@ -29,7 +31,8 @@
 								style="flex: 0 0 20px; margin: 8px"
 								:name="truth?.$id"
 								:value="suboption.Result"
-								@change="changed" />
+								@change="changed"
+							/>
 							<label :for="suboption.$id || ''">
 								<p>{{ suboption.Result }}</p>
 							</label>
@@ -49,13 +52,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineComponent, PropType, reactive } from 'vue'
-import type { ISettingTruthOption } from 'dataforged'
+import { computed, reactive } from 'vue'
+import type { DFISettingTruthOption } from '../../item/types'
 import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{
 	radiogroup: string
-	truth: ISettingTruthOption
+	truth: DFISettingTruthOption
 }>()
 
 const $emit = defineEmits({
