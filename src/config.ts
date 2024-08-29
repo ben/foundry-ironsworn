@@ -1,5 +1,4 @@
 import { IronswornActor } from './module/actor/actor'
-import * as dataforgedHelpers from './module/dataforged'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { starforged } from 'dataforged'
 import type { Emitter, EventType } from 'mitt'
@@ -50,7 +49,6 @@ export interface IronswornConfig {
 	}
 
 	Dataforged: typeof starforged
-	dataforgedHelpers: typeof dataforgedHelpers
 
 	emitter: IronswornEmitter
 
@@ -83,7 +81,6 @@ export const IRONSWORN: IronswornConfig = {
 	},
 
 	Dataforged: starforged,
-	dataforgedHelpers,
 
 	emitter: Mitt<EmitterEvents>(),
 
