@@ -1,12 +1,10 @@
 import type {
-	IMove,
 	IMoveTrigger,
 	IMoveTriggerOptionAction,
 	IMoveTriggerOptionProgress,
 	IOutcomeInfo
 } from 'dataforged'
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
-import { SourceField } from '../../fields/SourceField'
 import type { IronswornItem } from '../item'
 
 export class SFMoveModel extends foundry.abstract.TypeDataModel<
@@ -93,7 +91,6 @@ export class SFMoveModel extends foundry.abstract.TypeDataModel<
 		return {
 			dfid: new DataforgedIDField(),
 			Category: new DataforgedIDField(),
-			Source: new SourceField(),
 			'Progress Move': new fields.BooleanField(),
 			Text: new fields.HTMLField(),
 			Oracles: new fields.ArrayField(new DataforgedIDField()),
@@ -178,11 +175,12 @@ export class SFMoveOutcomeMatchableField extends foundry.data.fields
 }
 export interface SFMoveModel extends SFMoveDataSourceData {}
 
-export interface SFMoveDataSourceData
-	extends Required<
-		Pick<IMove, 'Category' | 'Source' | 'Text' | 'Oracles' | 'Progress Move'>
-	> {
+export interface SFMoveDataSourceData {
 	dfid: string
+	Category: string
+	Text: string
+	Oracles?: string[]
+	'Progress Move'?: boolean
 	Trigger: SFMoveTrigger
 	Outcomes?: {
 		'Strong Hit': SFMoveOutcomeMatchable
@@ -192,7 +190,8 @@ export interface SFMoveDataSourceData
 	dsOracleIds: string[]
 }
 
-export interface SFMoveTrigger extends Pick<IMoveTrigger, 'Text'> {
+export interface SFMoveTrigger {
+	Text: string
 	Options: SFMoveTriggerOption[]
 }
 

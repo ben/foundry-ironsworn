@@ -3,7 +3,6 @@ import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-
 import type { IOracle, IRow } from 'dataforged'
 import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
-import { renderLinksInStr } from '../dataforged'
 import { getPackAndIndexForCompendiumKey, IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
@@ -162,7 +161,7 @@ export class OracleTable extends RollTable {
 		oracle: OracleTable.IOracleLeaf
 	): RollTableDataConstructorData {
 		const description = CONFIG.IRONSWORN.showdown.makeHtml(
-			renderLinksInStr(oracle.Description ?? '')
+			oracle.Description ?? ''
 		)
 		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
 		const data: RollTableDataConstructorData = {

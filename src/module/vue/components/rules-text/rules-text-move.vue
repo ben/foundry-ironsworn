@@ -37,7 +37,7 @@ const hasOracles = computed(
 )
 
 const dsid = props.data.flags['foundry-ironsworn']?.dsid
-const ds: Move | undefined = IdParser.get(dsid)
+const ds = (dsid && IdParser.get(dsid)) as Move | undefined
 </script>
 
 <style lang="scss" module>

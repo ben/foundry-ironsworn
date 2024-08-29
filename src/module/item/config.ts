@@ -114,6 +114,7 @@ declare global {
 	interface FlagConfig {
 		Item: {
 			'foundry-ironsworn'?: {
+				dsid?: string
 				expanded?: boolean
 				muteBroadcast?: boolean
 				'edit-mode'?: boolean

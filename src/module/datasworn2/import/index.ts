@@ -347,12 +347,6 @@ for (const collection of collections) {
 					},
 					Oracles: legacyOracleIds,
 					dsOracleIds,
-					Source: {
-						Title: move._source.title,
-						Authors: move._source.authors.map((x) => x.name),
-						Date: move._source.date,
-						Page: move._source.page
-					},
 					Suggestions: {}
 				},
 				sort: move._source.page ?? 0,
