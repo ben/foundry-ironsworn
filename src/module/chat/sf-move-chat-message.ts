@@ -1,15 +1,13 @@
 import { compact } from 'lodash-es'
-import { getDFMoveByDfId } from '../dataforged'
 import type { IronswornItem } from '../item/item'
 import { OracleTable } from '../roll-table/oracle-table'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 
 export async function createSfMoveChatMessage(move: IronswornItem<'sfmove'>) {
-	const { dfid, Oracles } = move.system
-	const dfMove = await getDFMoveByDfId(dfid)
-	const dfids = Oracles ?? dfMove?.Oracles ?? []
+	const { dsOracleIds } = move.system
+
 	const nextOracles = compact(
-		await Promise.all(dfids.map(OracleTable.getByDfId))
+		await Promise.all(dsOracleIds.map((x) => OracleTable.getByDsId(x)))
 	)
 
 	const renderedText = await IronswornHandlebarsHelpers.enrichMarkdown(

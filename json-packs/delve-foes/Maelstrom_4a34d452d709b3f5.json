@@ -1,0 +1,27 @@
+{
+  "_id": "4a34d452d709b3f5",
+  "type": "progress",
+  "name": "Maelstrom",
+  "img": "icons/magic/water/vortex-water-whirlpool.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Whirling vortex of water</p>\n<p class=\"nogrow\">Fierce currents</p>\n<p class=\"nogrow\">Ghostly screams</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Engulf victims</p>\n<p class=\"nogrow\">Amass the voices of the lost</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Seize with raging, swirling waters</p>\n<p class=\"nogrow\">Stun with numbing cold</p>\n<p class=\"nogrow\">Batter with debris</p>\n<p class=\"nogrow\">Drag into abyssal darkness</p>\n</div>\n</div>\n\n<p>In coastal waters and cavern pools, these swirling vortexes of frigid water drag the unwary into their depths, stealing the breath from their lungs.</p>\n<p>Maelstroms often manifest in places of great loss and tragedy, on the sites of shipwrecks or the watery graves of drowned travelers. The debris swept into the maelstrom’s heart batter armor and flesh. The voices of the maelstrom’s victims, ripped from their chests with their dying breaths, cry out from the turbulent water.</p>\n\n<blockquote>Quest Starter: <p>Within a waterway cutting through a @Compendium[foundry-ironsworn.ironsworndelvethemes.d267fd935459da97]{Ravaged} @Compendium[foundry-ironsworn.ironsworndelvedomains.822447ce58eabb18]{Icereach}, a great maelstrom drew a longship and its crew into the depths. Despite an exhaustive search, no survivors—or even bodies—are found. They are simply gone. Why are you compelled to discover the fate of these victims?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "3476ad01228adddc",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/anomalies/maelstrom"
+    }
+  },
+  "_key": "!items!4a34d452d709b3f5"
+}

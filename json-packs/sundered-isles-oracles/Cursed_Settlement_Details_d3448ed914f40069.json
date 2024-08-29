@@ -1,0 +1,605 @@
+{
+  "_id": "d3448ed914f40069",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/details_cursed"
+    }
+  },
+  "name": "Cursed Settlement Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Gold coins and a pile of bones sit within the murky waters of an old well",
+      "_key": "!tables.results!d3448ed914f40069.02abdaddfdccad04",
+      "_id": "02abdaddfdccad04"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Plaintive cries, ignored by the residents, echo from within a sealed well",
+      "_key": "!tables.results!d3448ed914f40069.15f3e60e2309409f",
+      "_id": "15f3e60e2309409f"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Eerie lights gather outside the settlement on moonless nights",
+      "_key": "!tables.results!d3448ed914f40069.1274e88516e54086",
+      "_id": "1274e88516e54086"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "The stained glass windows of a temple depict unsettling scenes",
+      "_key": "!tables.results!d3448ed914f40069.5934d7ed911b9103",
+      "_id": "5934d7ed911b9103"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "A former garden is now a dark, thorny thicket; residents give it a wide berth",
+      "_key": "!tables.results!d3448ed914f40069.580719cf79f7742f",
+      "_id": "580719cf79f7742f"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Bells ring of their own accord",
+      "_key": "!tables.results!d3448ed914f40069.fb70da11a857ff68",
+      "_id": "fb70da11a857ff68"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "On the anniversary of a tragedy, a spectral procession moves through the streets",
+      "_key": "!tables.results!d3448ed914f40069.e5fc1dcd203e3eb9",
+      "_id": "e5fc1dcd203e3eb9"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Moonlight reveals inscriptions of dark secrets on gravestones",
+      "_key": "!tables.results!d3448ed914f40069.1640a9a95f39274d",
+      "_id": "1640a9a95f39274d"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "A gambling hall deals in soulbound stakes",
+      "_key": "!tables.results!d3448ed914f40069.25bd471eb5342629",
+      "_id": "25bd471eb5342629"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "An artificer crafts diabolical machines",
+      "_key": "!tables.results!d3448ed914f40069.33a941728b600b03",
+      "_id": "33a941728b600b03"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "A spreading sickness causes hideous deformities",
+      "_key": "!tables.results!d3448ed914f40069.b122599ee1b2b05c",
+      "_id": "b122599ee1b2b05c"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Back alleys and shadowy paths often lead to unexpected destinations",
+      "_key": "!tables.results!d3448ed914f40069.455de79743740f97",
+      "_id": "455de79743740f97"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Visitors are welcome here, but rarely leave",
+      "_key": "!tables.results!d3448ed914f40069.78d777e132fe5f3e",
+      "_id": "78d777e132fe5f3e"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Each night, a wretched phantom walks the same route through the settlement",
+      "_key": "!tables.results!d3448ed914f40069.e8eed8d114aa997a",
+      "_id": "e8eed8d114aa997a"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "A tavernkeeper's pet, an old parrot, speaks uncomfortable truths",
+      "_key": "!tables.results!d3448ed914f40069.083df0af6f0c5946",
+      "_id": "083df0af6f0c5946"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "This settlement is curiously without children",
+      "_key": "!tables.results!d3448ed914f40069.bdec5d56eec8c16b",
+      "_id": "bdec5d56eec8c16b"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Candlelight glimmers within a boarded-up building",
+      "_key": "!tables.results!d3448ed914f40069.3c5a5cecff37190c",
+      "_id": "3c5a5cecff37190c"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "A shop displays a menagerie of strange and dangerous creatures",
+      "_key": "!tables.results!d3448ed914f40069.fc060984232d56dc",
+      "_id": "fc060984232d56dc"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Something burrows below, undermining building foundations",
+      "_key": "!tables.results!d3448ed914f40069.011b8527059f170a",
+      "_id": "011b8527059f170a"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "A black hound with eyes of fire is often seen roaming the graveyard",
+      "_key": "!tables.results!d3448ed914f40069.33dec4886cc3a5d5",
+      "_id": "33dec4886cc3a5d5"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "A sorcerer claims the ability to bring the dead back to life—for a costly price",
+      "_key": "!tables.results!d3448ed914f40069.15e3fc80c81540a7",
+      "_id": "15e3fc80c81540a7"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Distant chants and drumming echo within the night",
+      "_key": "!tables.results!d3448ed914f40069.2f7835157cdea7d5",
+      "_id": "2f7835157cdea7d5"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Wind chimes, carved from bones, hang from the eaves",
+      "_key": "!tables.results!d3448ed914f40069.ba6add76bf763911",
+      "_id": "ba6add76bf763911"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Walls are scarred with bestial scratches",
+      "_key": "!tables.results!d3448ed914f40069.b87ef8964b247e99",
+      "_id": "b87ef8964b247e99"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Knocking and scratching is heard from within a sealed crypt or barrow",
+      "_key": "!tables.results!d3448ed914f40069.2a71f2c839dcacfd",
+      "_id": "2a71f2c839dcacfd"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "A tattooist creates works that are said to reveal something of the wearer's fate",
+      "_key": "!tables.results!d3448ed914f40069.1bf130b25fb559b6",
+      "_id": "1bf130b25fb559b6"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "A stubborn patch of blood never comes clean",
+      "_key": "!tables.results!d3448ed914f40069.019221dcabe5e16a",
+      "_id": "019221dcabe5e16a"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Oversized spiders scurry among the rafters",
+      "_key": "!tables.results!d3448ed914f40069.5187067efc15b0a5",
+      "_id": "5187067efc15b0a5"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "A statue weeps bloody tears",
+      "_key": "!tables.results!d3448ed914f40069.53062b35a591d0fd",
+      "_id": "53062b35a591d0fd"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "A reclusive resident is said to have lived here for centuries",
+      "_key": "!tables.results!d3448ed914f40069.7e5198e43698367f",
+      "_id": "7e5198e43698367f"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "A soothsayer wanders the streets, warning of impending doom",
+      "_key": "!tables.results!d3448ed914f40069.803fa696509298ae",
+      "_id": "803fa696509298ae"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "A nighttime market offers an array of wondrous and dreadful rarities",
+      "_key": "!tables.results!d3448ed914f40069.d024bc09ed58a3a3",
+      "_id": "d024bc09ed58a3a3"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "At night, sinister howls echo across the surrounding landscape",
+      "_key": "!tables.results!d3448ed914f40069.a992255db3d7a45f",
+      "_id": "a992255db3d7a45f"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Within a central square, unnatural darkness clings to a twisted tree",
+      "_key": "!tables.results!d3448ed914f40069.7c921e6abae82981",
+      "_id": "7c921e6abae82981"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "A mauled or blood-drained corpse was recently discovered",
+      "_key": "!tables.results!d3448ed914f40069.ee3bcedbbd23d9d0",
+      "_id": "ee3bcedbbd23d9d0"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "A monstrous beast lairs nearby",
+      "_key": "!tables.results!d3448ed914f40069.81e90f4f2e292cf6",
+      "_id": "81e90f4f2e292cf6"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Residents refuse to go into a nearby wood",
+      "_key": "!tables.results!d3448ed914f40069.93392b9ddef6d83f",
+      "_id": "93392b9ddef6d83f"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "This place is infested with unnaturally large rats",
+      "_key": "!tables.results!d3448ed914f40069.cdc53116000c3791",
+      "_id": "cdc53116000c3791"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Phantom, unintelligible whispers drift on the wind",
+      "_key": "!tables.results!d3448ed914f40069.20361eea22d346df",
+      "_id": "20361eea22d346df"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Lanterns and candles struggle to hold a flame",
+      "_key": "!tables.results!d3448ed914f40069.05c16aa8c53916d8",
+      "_id": "05c16aa8c53916d8"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Protective glyphs are carved upon outer walls or boundary stones",
+      "_key": "!tables.results!d3448ed914f40069.77cb54637d0341fb",
+      "_id": "77cb54637d0341fb"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Eldritch symbols are etched into nearly every doorway",
+      "_key": "!tables.results!d3448ed914f40069.d504c7401ed87b37",
+      "_id": "d504c7401ed87b37"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "The water here is foul, but residents drink it willingly",
+      "_key": "!tables.results!d3448ed914f40069.fcbcb4614e8de952",
+      "_id": "fcbcb4614e8de952"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "The residents avoid venturing out into the strange mist that often blankets this place",
+      "_key": "!tables.results!d3448ed914f40069.4417e4258d7562c4",
+      "_id": "4417e4258d7562c4"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "A child's laughter and song rings out from no discernible source",
+      "_key": "!tables.results!d3448ed914f40069.79b697d7d7cc4ca2",
+      "_id": "79b697d7d7cc4ca2"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "An abandoned fort overlooks this place—but none dare enter",
+      "_key": "!tables.results!d3448ed914f40069.3b32887788a6921d",
+      "_id": "3b32887788a6921d"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "An apothecary crafts vile potions and poisons",
+      "_key": "!tables.results!d3448ed914f40069.9bfe2fa9e21def49",
+      "_id": "9bfe2fa9e21def49"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "A forlorn specter stands at the edge of the settlement, awaiting someone's return",
+      "_key": "!tables.results!d3448ed914f40069.d4c3f1e99b29cebd",
+      "_id": "d4c3f1e99b29cebd"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Mysterious disappearances are all too common",
+      "_key": "!tables.results!d3448ed914f40069.aab10b3ee5afda0c",
+      "_id": "aab10b3ee5afda0c"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "An ancient altar is stained with blood",
+      "_key": "!tables.results!d3448ed914f40069.2efdfdd6d701b413",
+      "_id": "2efdfdd6d701b413"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Laughter rings hollow among these people, and smiles never reach their eyes",
+      "_key": "!tables.results!d3448ed914f40069.93d955be718fe24d",
+      "_id": "93d955be718fe24d"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "An unsettling chill pervades the air around an abandoned building",
+      "_key": "!tables.results!d3448ed914f40069.92db229d6aabf30a",
+      "_id": "92db229d6aabf30a"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Plants do not flourish here",
+      "_key": "!tables.results!d3448ed914f40069.114cabb754d1390f",
+      "_id": "114cabb754d1390f"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Building surfaces and paths are slick with a creeping black moss",
+      "_key": "!tables.results!d3448ed914f40069.3dfa777aab52cbc7",
+      "_id": "3dfa777aab52cbc7"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "A mysterious visitor bears a silver blade, marking them as a monster hunter",
+      "_key": "!tables.results!d3448ed914f40069.fe2ae45051c5c7f8",
+      "_id": "fe2ae45051c5c7f8"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Residents whisper of a long-ago injustice, and the curse they bear for that collective sin",
+      "_key": "!tables.results!d3448ed914f40069.bfdc693507b70ec4",
+      "_id": "bfdc693507b70ec4"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Under moonlight, this place changes",
+      "_key": "!tables.results!d3448ed914f40069.96b8164fd57db716",
+      "_id": "96b8164fd57db716"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Residents and visitors share the same disturbing dream",
+      "_key": "!tables.results!d3448ed914f40069.a54feea00aaaebe7",
+      "_id": "a54feea00aaaebe7"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Carrion birds gather among the eaves, waiting",
+      "_key": "!tables.results!d3448ed914f40069.419e582008c171af",
+      "_id": "419e582008c171af"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Ghosts haunt a prominent establishment",
+      "_key": "!tables.results!d3448ed914f40069.f4f130532cb369cf",
+      "_id": "f4f130532cb369cf"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "A religious movement is outwardly benevolent, but residents whisper of secret motives",
+      "_key": "!tables.results!d3448ed914f40069.93c45a9d7516286d",
+      "_id": "93c45a9d7516286d"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Residents sing a hymn or shanty that reveals something of this place's dark history",
+      "_key": "!tables.results!d3448ed914f40069.8c4787e2f88210dd",
+      "_id": "8c4787e2f88210dd"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "The sun doesn't rise as it should with the dawn",
+      "_key": "!tables.results!d3448ed914f40069.03a62fa65ff5650d",
+      "_id": "03a62fa65ff5650d"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Mysterious cloaked figures watch you, then scuttle away when you catch their gaze",
+      "_key": "!tables.results!d3448ed914f40069.db781b1efa177bd9",
+      "_id": "db781b1efa177bd9"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Large cockroaches boil from hidden spaces",
+      "_key": "!tables.results!d3448ed914f40069.93604715cc9db747",
+      "_id": "93604715cc9db747"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 173,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d3448ed914f40069"
+}

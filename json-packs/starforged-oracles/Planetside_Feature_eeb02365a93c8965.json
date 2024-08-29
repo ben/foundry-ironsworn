@@ -1,0 +1,156 @@
+{
+  "_id": "eeb02365a93c8965",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Tainted/Feature",
+      "category": "Starforged/Oracles/Planets/Tainted",
+      "dsid": "oracle_rollable:starforged/planet/tainted/feature"
+    }
+  },
+  "name": "Planetside Feature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Caustic gas storms",
+      "_key": "!tables.results!eeb02365a93c8965.0003c7825633317a",
+      "_id": "0003c7825633317a"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Corrosive, low-lying fog",
+      "_key": "!tables.results!eeb02365a93c8965.ae5b48f4d88d2c1d",
+      "_id": "ae5b48f4d88d2c1d"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Fungus-encrusted caves",
+      "_key": "!tables.results!eeb02365a93c8965.7d34e0f5d0c54b5a",
+      "_id": "7d34e0f5d0c54b5a"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Gelatinous ponds",
+      "_key": "!tables.results!eeb02365a93c8965.bf5d6141a2b2a970",
+      "_id": "bf5d6141a2b2a970"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Hallucinogenic toxins",
+      "_key": "!tables.results!eeb02365a93c8965.6a887663ab7616f7",
+      "_id": "6a887663ab7616f7"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Layers of fast-growing lichen",
+      "_key": "!tables.results!eeb02365a93c8965.b83d9f5e32f26e0d",
+      "_id": "b83d9f5e32f26e0d"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Moldering bones",
+      "_key": "!tables.results!eeb02365a93c8965.995e050c0bec7607",
+      "_id": "995e050c0bec7607"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Mutated flora",
+      "_key": "!tables.results!eeb02365a93c8965.e700c7b07ad86b8f",
+      "_id": "e700c7b07ad86b8f"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Poisonous gas vents",
+      "_key": "!tables.results!eeb02365a93c8965.46c8e34141c1bf74",
+      "_id": "46c8e34141c1bf74"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Spore clouds",
+      "_key": "!tables.results!eeb02365a93c8965.89adb50a3d29240b",
+      "_id": "89adb50a3d29240b"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Terrain marred by fleshy pustules",
+      "_key": "!tables.results!eeb02365a93c8965.6bb1685aad7520fb",
+      "_id": "6bb1685aad7520fb"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Toxic rain",
+      "_key": "!tables.results!eeb02365a93c8965.c9caf21c423f7aa6",
+      "_id": "c9caf21c423f7aa6"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Virulent fungal infestations",
+      "_key": "!tables.results!eeb02365a93c8965.1aeedffa8f17e37d",
+      "_id": "1aeedffa8f17e37d"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!eeb02365a93c8965.3532286a82bc98b5",
+      "_id": "3532286a82bc98b5"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault\">\n    <i class=\"fa fa-caret-right\"></i> Precursor Vault\n</a> (planetside)</p>",
+      "_key": "!tables.results!eeb02365a93c8965.a69ca600bbe5da31",
+      "_id": "a69ca600bbe5da31"
+    }
+  ],
+  "folder": "98454829527950a0",
+  "sort": 317,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!eeb02365a93c8965"
+}

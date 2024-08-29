@@ -1,0 +1,27 @@
+{
+  "_id": "957603f0785e96de",
+  "type": "progress",
+  "name": "Basilisk",
+  "img": "icons/creatures/reptiles/snake-poised-white.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Giant snake</p>\n<p class=\"nogrow\">Dull yellow-brown skin</p>\n<p class=\"nogrow\">Vibrant yellow eyes</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Devour</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Lay in wait</p>\n<p class=\"nogrow\">Mesmerizing gaze</p>\n<p class=\"nogrow\">Sudden bite</p>\n<p class=\"nogrow\">Crush</p>\n</div>\n</div>\n\n<p>Basilisks dwell in the Flooded Lands, lurking in the murky waters of the swamps or within marshy thickets. There, they wait patiently for prey. They regularly feed on marsh rats or deer, but will eagerly make a meal out of a passing Ironlander.</p>\n\n<blockquote>Quest Starter: <p>The adventurer set out to slay a basilisk, only to become its next meal. Because the serpent digests its prey slowly, the remains of the adventurer are still undoubtedly within the beast—along with the heirloom sword he wielded. What is your relationship to this person? Why is recovering the sword so important to you?</p></blockquote>",
+    "rank": 4,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "b8ab7ea53c4096c5",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/beasts/basilisk"
+    }
+  },
+  "_key": "!items!957603f0785e96de"
+}

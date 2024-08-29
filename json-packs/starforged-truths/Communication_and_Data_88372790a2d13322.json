@@ -1,0 +1,104 @@
+{
+  "name": "Communication and Data",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Communication_and_Data",
+      "dsid": "truth:starforged/communication_and_data"
+    }
+  },
+  "_id": "88372790a2d13322",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Much was lost when we came to the Forge. It is a dark age.",
+      "system": {
+        "dsid": "truth.option:starforged/communication_and_data.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Much was lost when we came to the Forge. It is a dark age.",
+        "Description": "The knowledge that remains is a commodity as valuable as the rarest resource. Information is collected, hoarded, and jealously guarded. Ships and outposts endure prolonged periods of isolation, and rumors or disinformation are used to gain advantage or undermine foes.",
+        "Summary": "Much was lost when we came to the Forge. It is a dark age.",
+        "Quest": "An insurgent faction seeks to make knowledge available to all. To that end, they ask your aid in stealing important data from an outpost belonging to a corrupt organization. What information is held there? Why is it also important to you?",
+        "Roll template": {
+          "Description": "The knowledge that remains is a commodity as valuable as the rarest resource. Information is collected, hoarded, and jealously guarded. Ships and outposts endure prolonged periods of isolation, and rumors or disinformation are used to gain advantage or undermine foes."
+        }
+      },
+      "_id": "e1615254c23b9450",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!88372790a2d13322.e1615254c23b9450"
+    },
+    {
+      "type": "truth",
+      "name": "Information is life. We rely on spaceborne couriers to transport messages and data across the vast distances between settlements.",
+      "system": {
+        "dsid": "truth.option:starforged/communication_and_data.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Information is life. We rely on spaceborne couriers to transport messages and data across the vast distances between settlements.",
+        "Description": "Direct communication and transmissions beyond the near-space of a ship or outpost are impossible. Digital archives are available at larger outposts, but the information is not always up-to-date or reliable. Therefore, the most important communications and discoveries are carried by couriers who swear vows to see that data safely to its destination.",
+        "Summary": "Information is life. We rely on spaceborne couriers to transport messages and data across the vast distances between settlements.",
+        "Quest": "You discover a crippled courier ship. The pilot, carrying a critical and time-sensitive message, is dead. Where was the message bound, and why do you swear to see it to its destination?",
+        "Roll template": {
+          "Description": "Direct communication and transmissions beyond the near-space of a ship or outpost are impossible. Digital archives are available at larger outposts, but the information is not always up-to-date or reliable. Therefore, the most important communications and discoveries are carried by couriers who swear vows to see that data safely to its destination."
+        }
+      },
+      "_id": "dadb3bd533593607",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!88372790a2d13322.dadb3bd533593607"
+    },
+    {
+      "type": "truth",
+      "name": "In settled domains, a network of data hubs called the Weave allow near-instantaneous communication and data-sharing between ships and outposts.",
+      "system": {
+        "dsid": "truth.option:starforged/communication_and_data.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "In settled domains, a network of data hubs called the Weave allow near-instantaneous communication and data-sharing between ships and outposts.",
+        "Description": "Because of their importance, Weave hubs are often targets for sabotage, and communication blackouts are not uncommon. Beyond the most populous sectors, travelers and outposts are still commonly isolated and entirely off the grid.",
+        "Summary": "In settled domains, a network of data hubs called the Weave allow near-instantaneous communication and data-sharing between ships and outposts.",
+        "Quest": "After years of isolation, the launch of a new data hub will connect several outposts to the Weave. But a person or faction seeks to stop it. What do they hope to gain by keeping those settlements in the dark? Why are you sworn to stop them?",
+        "Roll template": {
+          "Description": "Because of their importance, Weave hubs are often targets for sabotage, and communication blackouts are not uncommon. Beyond the most populous sectors, travelers and outposts are still commonly isolated and entirely off the grid."
+        }
+      },
+      "_id": "4c7ac09d9b720dda",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!88372790a2d13322.4c7ac09d9b720dda"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are an expert at subverting or manipulating digital information systems, you might be an @Compendium[foundry-ironsworn.starforgedassets.1e03c8d44d0b3ffc]{Infiltrator}. If you keep an archive of navigational charts, you might be a @Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}.",
+        "format": 2,
+        "content": "<p>If you are an expert at subverting or manipulating digital information systems, you might be an @Compendium[foundry-ironsworn.starforgedassets.1e03c8d44d0b3ffc]{Infiltrator}. If you keep an archive of navigational charts, you might be a @Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}.</p>"
+      },
+      "_id": "1e432c5af606c5f9",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!88372790a2d13322.1e432c5af606c5f9"
+    }
+  ],
+  "folder": null,
+  "sort": 92,
+  "_key": "!journal!88372790a2d13322"
+}

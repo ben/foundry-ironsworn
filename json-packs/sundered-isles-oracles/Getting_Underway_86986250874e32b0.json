@@ -1,0 +1,15 @@
+{
+  "name": "Getting Underway",
+  "description": "",
+  "type": "RollTable",
+  "_id": "86986250874e32b0",
+  "sort": 64,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/getting_underway"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!86986250874e32b0"
+}

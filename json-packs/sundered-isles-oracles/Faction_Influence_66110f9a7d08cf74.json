@@ -1,0 +1,83 @@
+{
+  "_id": "66110f9a7d08cf74",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction",
+      "dsid": "oracle_rollable:sundered_isles/faction/influence"
+    }
+  },
+  "name": "Faction Influence",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Forsaken",
+      "_key": "!tables.results!66110f9a7d08cf74.d0bea7e5d68acdb7",
+      "_id": "d0bea7e5d68acdb7"
+    },
+    {
+      "range": [
+        11,
+        30
+      ],
+      "text": "Isolated",
+      "_key": "!tables.results!66110f9a7d08cf74.2cc64bd7d8a2df40",
+      "_id": "2cc64bd7d8a2df40"
+    },
+    {
+      "range": [
+        31,
+        50
+      ],
+      "text": "Localized",
+      "_key": "!tables.results!66110f9a7d08cf74.a67039aa408f1e85",
+      "_id": "a67039aa408f1e85"
+    },
+    {
+      "range": [
+        51,
+        70
+      ],
+      "text": "Established",
+      "_key": "!tables.results!66110f9a7d08cf74.0a9b92c5da7b4950",
+      "_id": "0a9b92c5da7b4950"
+    },
+    {
+      "range": [
+        71,
+        85
+      ],
+      "text": "Notable",
+      "_key": "!tables.results!66110f9a7d08cf74.c17174a34418e9f7",
+      "_id": "c17174a34418e9f7"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Dominant",
+      "_key": "!tables.results!66110f9a7d08cf74.56c6882634a1d448",
+      "_id": "56c6882634a1d448"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Inescapable",
+      "_key": "!tables.results!66110f9a7d08cf74.10d0bd2863f5b6b7",
+      "_id": "10d0bd2863f5b6b7"
+    }
+  ],
+  "folder": "332fe732886451c6",
+  "sort": 176,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!66110f9a7d08cf74"
+}

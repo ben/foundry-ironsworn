@@ -8,11 +8,15 @@
 			@change="emitValue"
 		/>
 		<div class="flexcol">
-			<p>
-				<strong>{{ page.name }}</strong>
+			<p v-if="pageSystem.Summary">
+				<strong>{{ pageSystem.Summary }}</strong>
 			</p>
 
-			<RenderedText element="div" :markdown="true" :content="pageSystem.Description" />
+			<RenderedText
+				element="div"
+				:markdown="true"
+				:content="pageSystem.Description"
+			/>
 
 			<section v-if="page.subtable">
 				<label
@@ -33,7 +37,12 @@
 				<!-- TODO: custom input -->
 			</section>
 
-			<RenderedText class="quest" element="div" :markdown="true" :content="pageSystem.Quest" />
+			<RenderedText
+				class="quest"
+				element="div"
+				:markdown="true"
+				:content="pageSystem.Quest"
+			/>
 		</div>
 	</label>
 </template>

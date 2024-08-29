@@ -1,0 +1,290 @@
+{
+  "_id": "915f8d4f02c33d8e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc",
+      "dsid": "oracle_rollable:sundered_isles/misc/interlude_scene"
+    }
+  },
+  "name": "Interlude Scene",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Chronicle your adventures",
+      "_key": "!tables.results!915f8d4f02c33d8e.85b098b9739d798c",
+      "_id": "85b098b9739d798c"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Commune with nature",
+      "_key": "!tables.results!915f8d4f02c33d8e.6699f10fc0bf4eb9",
+      "_id": "6699f10fc0bf4eb9"
+    },
+    {
+      "range": [
+        9,
+        11
+      ],
+      "text": "Concoct a plan",
+      "_key": "!tables.results!915f8d4f02c33d8e.3b20bb033718954e",
+      "_id": "3b20bb033718954e"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Conduct research",
+      "_key": "!tables.results!915f8d4f02c33d8e.7b9aeb3edb223c9c",
+      "_id": "7b9aeb3edb223c9c"
+    },
+    {
+      "range": [
+        15,
+        17
+      ],
+      "text": "Conduct training",
+      "_key": "!tables.results!915f8d4f02c33d8e.d2735d7f0a652851",
+      "_id": "d2735d7f0a652851"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Confess a secret",
+      "_key": "!tables.results!915f8d4f02c33d8e.613879cddad7bfcd",
+      "_id": "613879cddad7bfcd"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Conjure up the past",
+      "_key": "!tables.results!915f8d4f02c33d8e.651fc6d11048db57",
+      "_id": "651fc6d11048db57"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Create an object or artwork",
+      "_key": "!tables.results!915f8d4f02c33d8e.203c9a5cef2c4a02",
+      "_id": "203c9a5cef2c4a02"
+    },
+    {
+      "range": [
+        28,
+        31
+      ],
+      "text": "Experience a dream or vision",
+      "_key": "!tables.results!915f8d4f02c33d8e.4f4be899ae6dc72d",
+      "_id": "4f4be899ae6dc72d"
+    },
+    {
+      "range": [
+        32,
+        34
+      ],
+      "text": "Fight in a sparring match",
+      "_key": "!tables.results!915f8d4f02c33d8e.975e706c525fca52",
+      "_id": "975e706c525fca52"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "Find peace",
+      "_key": "!tables.results!915f8d4f02c33d8e.bfc37b23430d3c4c",
+      "_id": "bfc37b23430d3c4c"
+    },
+    {
+      "range": [
+        38,
+        40
+      ],
+      "text": "Hear a confession",
+      "_key": "!tables.results!915f8d4f02c33d8e.06565d051b7930cc",
+      "_id": "06565d051b7930cc"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "Indulge a vice",
+      "_key": "!tables.results!915f8d4f02c33d8e.888ee5b85f4a9a79",
+      "_id": "888ee5b85f4a9a79"
+    },
+    {
+      "range": [
+        44,
+        47
+      ],
+      "text": "Join an event",
+      "_key": "!tables.results!915f8d4f02c33d8e.1593cb8643c95e17",
+      "_id": "1593cb8643c95e17"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Lead or join a song",
+      "_key": "!tables.results!915f8d4f02c33d8e.a87c02580fc41df0",
+      "_id": "a87c02580fc41df0"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "Motivate others",
+      "_key": "!tables.results!915f8d4f02c33d8e.f1c69a1617d0c852",
+      "_id": "f1c69a1617d0c852"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Play a game",
+      "_key": "!tables.results!915f8d4f02c33d8e.85df7cb5372ab8d7",
+      "_id": "85df7cb5372ab8d7"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Practice a skill",
+      "_key": "!tables.results!915f8d4f02c33d8e.229b7d1800e7b84b",
+      "_id": "229b7d1800e7b84b"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Ready your gear",
+      "_key": "!tables.results!915f8d4f02c33d8e.1aebd0d532cd2da4",
+      "_id": "1aebd0d532cd2da4"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Record a message",
+      "_key": "!tables.results!915f8d4f02c33d8e.7c22be4ba3862067",
+      "_id": "7c22be4ba3862067"
+    },
+    {
+      "range": [
+        68,
+        70
+      ],
+      "text": "Reinvent your look",
+      "_key": "!tables.results!915f8d4f02c33d8e.68fcea3411dfd245",
+      "_id": "68fcea3411dfd245"
+    },
+    {
+      "range": [
+        71,
+        73
+      ],
+      "text": "Settle a conflict",
+      "_key": "!tables.results!915f8d4f02c33d8e.18f15ecfd2fadd6a",
+      "_id": "18f15ecfd2fadd6a"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Share intimacy",
+      "_key": "!tables.results!915f8d4f02c33d8e.801bdf11a71051d0",
+      "_id": "801bdf11a71051d0"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Share your heritage",
+      "_key": "!tables.results!915f8d4f02c33d8e.4a43427df050226f",
+      "_id": "4a43427df050226f"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "Stay vigilant",
+      "_key": "!tables.results!915f8d4f02c33d8e.0c36f8f51056c93a",
+      "_id": "0c36f8f51056c93a"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Stir up trouble",
+      "_key": "!tables.results!915f8d4f02c33d8e.ff0bf071dc0318f2",
+      "_id": "ff0bf071dc0318f2"
+    },
+    {
+      "range": [
+        86,
+        89
+      ],
+      "text": "Take in the view",
+      "_key": "!tables.results!915f8d4f02c33d8e.982dd645fb7dd937",
+      "_id": "982dd645fb7dd937"
+    },
+    {
+      "range": [
+        90,
+        92
+      ],
+      "text": "Tell a tale",
+      "_key": "!tables.results!915f8d4f02c33d8e.8c3bf25656262645",
+      "_id": "8c3bf25656262645"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Undertake a communal labor",
+      "_key": "!tables.results!915f8d4f02c33d8e.8a204a89364ed07a",
+      "_id": "8a204a89364ed07a"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Undertake a menial task",
+      "_key": "!tables.results!915f8d4f02c33d8e.16f32e4833fffe07",
+      "_id": "16f32e4833fffe07"
+    }
+  ],
+  "folder": "4712a591169fe5d6",
+  "sort": 228,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!915f8d4f02c33d8e"
+}

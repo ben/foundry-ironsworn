@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "End the Fight",
   "img": "icons/dice/d10black.svg",
+  "folder": "19defd673fdc3970",
   "system": {
     "dfid": "Ironsworn/Moves/Combat/End_the_Fight",
     "Category": "Ironsworn/Moves/Combat",
     "Progress Move": true,
     "Variant of": "",
-    "Text": "When **you make a move to take decisive action**, and score a strong hit, you may resolve the outcome of this fight. If you do, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, this foe is no longer in the fight. They are killed, out of action, flee, or surrender as appropriate to the situation and your intent (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a **weak hit**, as above, but you must also choose one.\n\n  * It’s worse than you thought: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}.\n  * You are overcome: @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}.\n  * Your victory is short-lived: A new danger or foe appears, or an existing danger worsens.\n  * You suffer collateral damage: Something of value is lost or broken, or someone important must pay the cost.\n  * You’ll pay for it: An objective falls out of reach.\n  * Others won’t forget: You are marked for vengeance.\n\nOn a **miss**, you have lost this fight. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Text": "When __you make a move to take decisive action__, and score a strong hit, you may resolve the outcome of this fight. If you do, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a __strong hit__, this foe is no longer in the fight. They are killed, out of action, flee, or surrender as appropriate to the situation and your intent (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a __weak hit__, as above, but you must also choose one.\n\n  * It’s worse than you thought: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}.\n  * You are overcome: @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}.\n  * Your victory is short-lived: A new danger or foe appears, or an existing danger worsens.\n  * You suffer collateral damage: Something of value is lost or broken, or someone important must pay the cost.\n  * You’ll pay for it: An objective falls out of reach.\n  * Others won’t forget: You are marked for vengeance.\n\nOn a __miss__, you have lost this fight. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
     "Trigger": {
       "Text": "When you make a move to take decisive action, and score a strong hit...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Progress roll",
           "Method": "Any",
           "Using": [
-            "Combat"
-          ],
-          "Text": ""
+            "Progress Track"
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "This foe is no longer in the fight. They are killed, out of action, flee, or surrender as appropriate to the situation and your intent (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, this foe is no longer in the fight. They are killed, out of action, flee, or surrender as appropriate to the situation and your intent (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "This foe is no longer in the fight... but you must also choose one.\n\n  * It’s worse than you thought: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}.\n  * You are overcome: @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}.\n  * Your victory is short-lived: A new danger or foe appears, or an existing danger worsens.\n  * You suffer collateral damage: Something of value is lost or broken, or someone important must pay the cost.\n  * You’ll pay for it: An objective falls out of reach.\n  * Others won’t forget: You are marked for vengeance.\n\nThe foe is killed, out of action, flees, or surrenders as appropriate to the situation and your intent (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, this foe is no longer in the fight... but you must also choose one.\n\n  * It’s worse than you thought: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}.\n  * You are overcome: @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}.\n  * Your victory is short-lived: A new danger or foe appears, or an existing danger worsens.\n  * You suffer collateral damage: Something of value is lost or broken, or someone important must pay the cost.\n  * You’ll pay for it: An objective falls out of reach.\n  * Others won’t forget: You are marked for vengeance.\n\nThe foe is killed, out of action, flees, or surrenders as appropriate to the situation and your intent (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure)."
       },
       "Miss": {
-        "Text": "You have lost this fight. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you have lost this fight. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 82
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 82,
-  "folder": "19defd673fdc3970",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Combat/End_the_Fight",
+      "dsid": "move:classic/combat/end_the_fight"
+    }
   },
   "_key": "!items!aac3783710ad7499"
 }

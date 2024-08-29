@@ -39,7 +39,6 @@
     "track": {
       "enabled": true,
       "name": "Integrity",
-      "current": 0,
       "max": 5,
       "value": 5,
       "min": 0
@@ -61,17 +60,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Command_Vehicle/Starship",
+      "dsid": "asset:starforged/command_vehicle/starship"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021246,
-    "modifiedTime": 1695949021246,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!21d5a48992b8eb81"
 }

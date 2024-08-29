@@ -3,66 +3,56 @@
   "type": "sfmove",
   "name": "Endure Harm",
   "img": "icons/dice/d10black.svg",
+  "folder": "a6b19a943ff830d6",
   "system": {
     "dfid": "Ironsworn/Moves/Suffer/Endure_Harm",
     "Category": "Ironsworn/Moves/Suffer",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you face physical damage**, suffer -health equal to your foe’s rank or as appropriate to the situation. If your health is 0, suffer -momentum equal to any remaining -health. Then, roll +health or +iron, whichever is higher.\n\nOn a **strong hit**, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum.\n\nOn a **weak hit**, you press on.\n\nOn a **miss**, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\nRoll  | Result\n------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n1-10  | The harm is mortal. @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}.\n11-20 | You are dying. You need to Heal within an hour or two, or @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}.\n21-35 | You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}.\n36-50 | You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move).\n51-00 | You are battered but still standing.",
+    "Text": "When __you face physical damage__, suffer -health equal to your foe’s rank or as appropriate to the situation. If your health is 0, suffer -momentum equal to any remaining -health. Then, roll +health or +iron, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum.\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.",
     "Trigger": {
       "Text": "When you face physical damage...",
       "Options": [
         {
-          "Roll type": "Action roll",
+          "Text": "",
+          "Roll type": "Progress roll",
           "Method": "Highest",
           "Using": [
             "Iron",
             "Health"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You press on.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you press on."
       },
       "Miss": {
-        "Text": "Also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\nRoll  | Result\n------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n1-10  | The harm is mortal. @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}.\n11-20 | You are dying. You need to Heal within an hour or two, or @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}.\n21-35 | You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}.\n36-50 | You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move).\n51-00 | You are battered but still standing.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [
       "Ironsworn/Oracles/Moves/Endure_Harm"
     ],
+    "dsOracleIds": [
+      "move.oracle_rollable:classic/suffer/endure_harm.endure_harm"
+    ],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 91
     },
     "Suggestions": {},
@@ -71,20 +61,11 @@
     }
   },
   "sort": 91,
-  "folder": "a6b19a943ff830d6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Suffer/Endure_Harm",
+      "dsid": "move:classic/suffer/endure_harm"
+    }
   },
   "_key": "!items!fdb51ee928b4fca2"
 }

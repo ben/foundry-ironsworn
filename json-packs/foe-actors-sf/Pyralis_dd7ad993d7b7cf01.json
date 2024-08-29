@@ -1,0 +1,53 @@
+{
+  "name": "Pyralis",
+  "img": "icons/creatures/invertebrates/fly-wasp-mosquito-green.webp",
+  "type": "foe",
+  "_id": "dd7ad993d7b7cf01",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Pyralis",
+    "texture": {
+      "src": "icons/creatures/invertebrates/fly-wasp-mosquito-green.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "a06164f85ab5d182",
+      "type": "progress",
+      "name": "Pyralis",
+      "img": "icons/creatures/invertebrates/fly-wasp-mosquito-green.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Flying creatures with a cinder-colored carapace</p>\n<p class=\"nogrow\">Folding, armored wings</p>\n<p class=\"nogrow\">Seven pairs of grasping legs</p>\n<p class=\"nogrow\">Hooked tail</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Hunt from above</p>\n<p class=\"nogrow\">Mark and defend territory</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Lurk within the cover of ash clouds</p>\n<p class=\"nogrow\">Swoop down to grapple with enfolding legs</p>\n<p class=\"nogrow\">Impale with whip-like tail</p>\n<p class=\"nogrow\">Inject paralyzing toxin</p>\n</div>\n</div>\n\n<p>On scorching worlds of fire and ash, only the most resilient survive. The pyralis is a cunning predator that spends most of its life gliding among boiling ash clouds, using its sensitive, smoke-piercing vision to spot unwary prey.</p>\n<p>This beast's form is an intimidating fusion of insect, crustacean and hawk. Its outer shell and plated wings protect it from heat and flame, but it is pitted and scarred by innumerable collisions with airborne volcanic fragments. Its most fearsome aspect is a segmented tail, which it uses to deliver a powerful, paralyzing toxin to its unfortunate prey.</p>\n<p>They are asexual and solitary creatures, and mark the bounds of their hunting grounds with intricate cairns built from the bones of their victims. If a rival pyralis passes overhead, the sight of that marker is forewarning that they are straying into another's domain.</p>\n\n<blockquote>Quest Starter: <p>A critically damaged spaceship is stranded amid the hellscape of a furnace world. You are sworn to rescue the crew of this ill-fated vessel, but the frequent ash storms prevent vehicular operations—you'll need to make the perilous journey on foot. To make matters worse, the wreck is within the territory of a particularly aggressive and powerful pyralis. How will you survive the journey across its hunting grounds?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.952764555a867430]{Pyralis youngling}</li>\n</ul>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:starforged/sample_npcs/pyralis"
+        }
+      },
+      "_key": "!actors.items!dd7ad993d7b7cf01.a06164f85ab5d182"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/pyralis"
+    }
+  },
+  "_key": "!actors!dd7ad993d7b7cf01"
+}

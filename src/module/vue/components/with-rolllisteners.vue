@@ -5,11 +5,12 @@
 </template>
 
 <script setup lang="ts">
-import { inject, onMounted, ref, useAttrs } from 'vue'
+import { inject, onMounted, ref } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
 import { attachInlineRollListeners } from '../../features/rollplus'
 import type { IronswornItem } from '../../item/item'
 import { $ActorKey } from '../provisions'
+import { OracleTable } from '../../roll-table/oracle-table'
 
 const props = defineProps<{ element: string }>()
 
@@ -35,22 +36,35 @@ async function click(ev: JQuery.ClickEvent) {
 	ev.preventDefault()
 	ev.stopPropagation()
 
-	const { uuid, dfid } = ev.currentTarget.dataset
+	let { uuid, dfid, dsid } = ev.currentTarget.dataset
 	if (uuid) {
-		const gameItem = (await fromUuid(uuid)) as IronswornItem | IronswornActor
+		const gameItem = (await fromUuid(uuid)) as any
 		if (gameItem?.type === 'sfmove') {
 			CONFIG.IRONSWORN.emitter.emit('highlightMove', gameItem.uuid)
 			return true
 		}
 
-		// @ts-expect-error
+		if (gameItem instanceof OracleTable) {
+			CONFIG.IRONSWORN.emitter.emit(
+				'highlightOracle',
+				gameItem.flags['foundry-ironsworn']?.dsid ?? ''
+			)
+			return true
+		}
+
 		return gameItem?._onClickDocumentLink?.(ev)
 	}
 
-	if (dfid) {
+	// if (dfid && !dsid) {
+	// 	// Try to convert to a Datasworn ID
+	// 	dsid = LegacyToDataswornIds[dfid]
+	// }
+
+	if (dsid) {
 		// TODO: allow for custom oracles
 		// Probably an oracle category click
-		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
+		CONFIG.IRONSWORN.emitter.emit('highlightOracle', dsid)
+		ev.stopImmediatePropagation()
 		return true
 	}
 }

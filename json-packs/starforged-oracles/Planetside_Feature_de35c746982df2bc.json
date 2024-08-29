@@ -1,0 +1,156 @@
+{
+  "_id": "de35c746982df2bc",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Furnace/Feature",
+      "category": "Starforged/Oracles/Planets/Furnace",
+      "dsid": "oracle_rollable:starforged/planet/furnace/feature"
+    }
+  },
+  "name": "Planetside Feature",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Blinding ash storms",
+      "_key": "!tables.results!de35c746982df2bc.42229d7cc9c194fe",
+      "_id": "42229d7cc9c194fe"
+    },
+    {
+      "range": [
+        8,
+        14
+      ],
+      "text": "Catastrophic earthquakes",
+      "_key": "!tables.results!de35c746982df2bc.e5b40761410a5523",
+      "_id": "e5b40761410a5523"
+    },
+    {
+      "range": [
+        15,
+        21
+      ],
+      "text": "Colorful geothermal springs",
+      "_key": "!tables.results!de35c746982df2bc.5cf5a426ef2dae84",
+      "_id": "5cf5a426ef2dae84"
+    },
+    {
+      "range": [
+        22,
+        28
+      ],
+      "text": "Intricate volcanic rock formations",
+      "_key": "!tables.results!de35c746982df2bc.16e8bf71a7e8f071",
+      "_id": "16e8bf71a7e8f071"
+    },
+    {
+      "range": [
+        29,
+        35
+      ],
+      "text": "Lava tube tunnel networks",
+      "_key": "!tables.results!de35c746982df2bc.951c01c371eebefd",
+      "_id": "951c01c371eebefd"
+    },
+    {
+      "range": [
+        36,
+        42
+      ],
+      "text": "Masses of scorched bones",
+      "_key": "!tables.results!de35c746982df2bc.6a37e800c2af90ae",
+      "_id": "6a37e800c2af90ae"
+    },
+    {
+      "range": [
+        43,
+        49
+      ],
+      "text": "Plains of volcanic glass",
+      "_key": "!tables.results!de35c746982df2bc.b5352b948482328f",
+      "_id": "b5352b948482328f"
+    },
+    {
+      "range": [
+        50,
+        56
+      ],
+      "text": "Pools of liquid metal",
+      "_key": "!tables.results!de35c746982df2bc.16a2b623a4d67f20",
+      "_id": "16a2b623a4d67f20"
+    },
+    {
+      "range": [
+        57,
+        63
+      ],
+      "text": "Rocky islands adrift on magma",
+      "_key": "!tables.results!de35c746982df2bc.438207569f405e42",
+      "_id": "438207569f405e42"
+    },
+    {
+      "range": [
+        64,
+        70
+      ],
+      "text": "Roiling clouds of superheated gas",
+      "_key": "!tables.results!de35c746982df2bc.1e84d86d1f0f63da",
+      "_id": "1e84d86d1f0f63da"
+    },
+    {
+      "range": [
+        71,
+        77
+      ],
+      "text": "Scalding geysers",
+      "_key": "!tables.results!de35c746982df2bc.1dd32a835ca4b0e9",
+      "_id": "1dd32a835ca4b0e9"
+    },
+    {
+      "range": [
+        78,
+        84
+      ],
+      "text": "Silica or metal storms",
+      "_key": "!tables.results!de35c746982df2bc.3a2d0e6ef60e4f28",
+      "_id": "3a2d0e6ef60e4f28"
+    },
+    {
+      "range": [
+        85,
+        91
+      ],
+      "text": "Steaming mudflats",
+      "_key": "!tables.results!de35c746982df2bc.87436b28c298cc1a",
+      "_id": "87436b28c298cc1a"
+    },
+    {
+      "range": [
+        92,
+        98
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!de35c746982df2bc.14e9f3e559007152",
+      "_id": "14e9f3e559007152"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault\">\n    <i class=\"fa fa-caret-right\"></i> Precursor Vault\n</a> (planetside)</p>",
+      "_key": "!tables.results!de35c746982df2bc.960ee9dd89d7ca34",
+      "_id": "960ee9dd89d7ca34"
+    }
+  ],
+  "folder": "91ce34721ba5cce8",
+  "sort": 309,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!de35c746982df2bc"
+}

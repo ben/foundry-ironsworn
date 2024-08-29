@@ -1,8 +1,7 @@
 import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
-import { importFromDatasworn } from './module/datasworn'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { starforged, ironsworn } from 'dataforged'
+import { starforged } from 'dataforged'
 import type { Emitter, EventType } from 'mitt'
 import Mitt from 'mitt'
 import {
@@ -13,17 +12,17 @@ import {
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTruthsDialog'
-import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { OracleWindow } from './module/applications/oracle-window'
 import {
 	getOracleTree,
 	registerOracleTree
 } from './module/features/customoracles'
 import { OracleTable } from './module/roll-table/oracle-table'
+import { FoeBrowser } from './module/item/foe-browser'
 
 export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
-	highlightOracle: string // DF ID
+	highlightOracle: string // Datasworn 2 ID
 	globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
 	dragStart: string // type of item
 	dragEnd: string // type of item
@@ -39,9 +38,9 @@ export interface IronswornConfig {
 	applications: {
 		// Dialogs
 		FirstStartDialog: typeof FirstStartDialog
-		ISSettingTruthsDialog: typeof WorldTruthsDialog
 		SFSettingTruthsDialog: typeof SFSettingTruthsDialogVue
 		AssetCompendiumBrowser: typeof AssetCompendiumBrowser
+		FoeBrowser: typeof FoeBrowser
 		OracleWindow: typeof OracleWindow
 
 		// Rolling
@@ -49,8 +48,6 @@ export interface IronswornConfig {
 		IronswornPrerollDialog: typeof IronswornPrerollDialog
 		IronswornRollMessage: typeof IronswornRollMessage
 	}
-
-	importFromDatasworn: typeof importFromDatasworn
 
 	Dataforged: typeof starforged
 	dataforgedHelpers: typeof dataforgedHelpers
@@ -75,17 +72,15 @@ export const IRONSWORN: IronswornConfig = {
 
 	applications: {
 		FirstStartDialog,
-		ISSettingTruthsDialog: WorldTruthsDialog,
 		SFSettingTruthsDialog: SFSettingTruthsDialogVue,
 		AssetCompendiumBrowser,
+		FoeBrowser,
 		OracleWindow,
 
 		IronswornRoll,
 		IronswornPrerollDialog,
 		IronswornRollMessage
 	},
-
-	importFromDatasworn,
 
 	Dataforged: starforged,
 	dataforgedHelpers,

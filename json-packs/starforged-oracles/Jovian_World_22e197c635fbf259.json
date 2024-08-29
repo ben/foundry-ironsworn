@@ -1,0 +1,16 @@
+{
+  "name": "Jovian World",
+  "description": "A massive planet with vast layers of dense gases surrounding a rocky core.",
+  "type": "RollTable",
+  "_id": "22e197c635fbf259",
+  "sort": 312,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Jovian",
+      "dsid": "oracle_collection:starforged/planet/jovian"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!22e197c635fbf259"
+}

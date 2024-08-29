@@ -1,23 +1,16 @@
 {
   "name": "Haunted",
-  "_id": "7b6a3ac881ac8211",
-  "type": "RollTable",
   "description": "Restless spirits are bound to this place.",
+  "type": "RollTable",
+  "_id": "7b6a3ac881ac8211",
   "sort": 374,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Location_Themes/Haunted"
+      "dfid": "Starforged/Oracles/Location_Themes/Haunted",
+      "dsid": "oracle_collection:starforged/location_theme/haunted"
     }
   },
   "folder": "40c330364b963a81",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!7b6a3ac881ac8211"
 }

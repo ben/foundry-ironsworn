@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Vaults/Shape",
-      "category": "Starforged/Oracles/Vaults"
+      "category": "Starforged/Oracles/Vaults",
+      "dsid": "oracle_rollable:starforged/precursor_vault/shape"
     }
   },
   "name": "Shape",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         15
       ],
       "text": "Practical or functional",
-      "_id": "6423daaef7abaea9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.6423daaef7abaea9"
+      "_key": "!tables.results!8e1d81a60e999357.a0930e0a9b25b8d5",
+      "_id": "a0930e0a9b25b8d5"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Geometric (complex shape)",
-      "_id": "877b247f94c26aa0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.877b247f94c26aa0"
+      "_key": "!tables.results!8e1d81a60e999357.1c194537c5213d49",
+      "_id": "1c194537c5213d49"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         25
       ],
       "text": "Geometric (cube)",
-      "_id": "3a39a2eaac6e84e3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.3a39a2eaac6e84e3"
+      "_key": "!tables.results!8e1d81a60e999357.2fb863da342fdae0",
+      "_id": "2fb863da342fdae0"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         30
       ],
       "text": "Geometric (obelisk)",
-      "_id": "5c2f146ba1b889b1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.5c2f146ba1b889b1"
+      "_key": "!tables.results!8e1d81a60e999357.78c3220a928228dd",
+      "_id": "78c3220a928228dd"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         35
       ],
       "text": "Geometric (pyramid)",
-      "_id": "e91c9204988587c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.e91c9204988587c5"
+      "_key": "!tables.results!8e1d81a60e999357.b75fe0ffb3f63cbb",
+      "_id": "b75fe0ffb3f63cbb"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         40
       ],
       "text": "Geometric (ring or torus)",
-      "_id": "244d2029afdcde8f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.244d2029afdcde8f"
+      "_key": "!tables.results!8e1d81a60e999357.c2c999b157558af3",
+      "_id": "c2c999b157558af3"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         45
       ],
       "text": "Geometric (sphere)",
-      "_id": "b0b906808a38549d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.b0b906808a38549d"
+      "_key": "!tables.results!8e1d81a60e999357.0c617b8e9b457ad0",
+      "_id": "0c617b8e9b457ad0"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         55
       ],
       "text": "Organic or curved",
-      "_id": "f0bfebdd5fe3616f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.f0bfebdd5fe3616f"
+      "_key": "!tables.results!8e1d81a60e999357.409fe27eb4c88f00",
+      "_id": "409fe27eb4c88f00"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         60
       ],
       "text": "Platform or disc",
-      "_id": "a4a30c5a6241b444",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.a4a30c5a6241b444"
+      "_key": "!tables.results!8e1d81a60e999357.d4ee9f8165651795",
+      "_id": "d4ee9f8165651795"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         65
       ],
       "text": "Spires or towers",
-      "_id": "51c8af9d92ecf4b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.51c8af9d92ecf4b3"
+      "_key": "!tables.results!8e1d81a60e999357.b7a5e9a33b1c89a7",
+      "_id": "b7a5e9a33b1c89a7"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         68
       ],
       "text": "Domed",
-      "_id": "b0f472ceda873184",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.b0f472ceda873184"
+      "_key": "!tables.results!8e1d81a60e999357.40d29fc71a598780",
+      "_id": "40d29fc71a598780"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         73
       ],
       "text": "Spiky",
-      "_id": "dd250bce0127e41d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.dd250bce0127e41d"
+      "_key": "!tables.results!8e1d81a60e999357.e3f7d5a9b07916c6",
+      "_id": "e3f7d5a9b07916c6"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         76
       ],
       "text": "Sculptural or effigy",
-      "_id": "fb664a339cc02fde",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.fb664a339cc02fde"
+      "_key": "!tables.results!8e1d81a60e999357.f6925ec042dc01a9",
+      "_id": "f6925ec042dc01a9"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         79
       ],
       "text": "Amorphous",
-      "_id": "98505987a8aa04b6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.98505987a8aa04b6"
+      "_key": "!tables.results!8e1d81a60e999357.d1a34c054d4a1727",
+      "_id": "d1a34c054d4a1727"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         85
       ],
       "text": "Transforming",
-      "_id": "205f5f9e80a1944d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.205f5f9e80a1944d"
+      "_key": "!tables.results!8e1d81a60e999357.de87a66c262a70aa",
+      "_id": "de87a66c262a70aa"
     },
     {
       "range": [
@@ -228,29 +154,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "88bdb0c97998b28d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e1d81a60e999357.88bdb0c97998b28d"
+      "_key": "!tables.results!8e1d81a60e999357.3e069f1d0d16e542",
+      "_id": "3e069f1d0d16e542"
     }
   ],
   "folder": "2c4fe25ee600037f",
   "sort": 361,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!8e1d81a60e999357"
 }

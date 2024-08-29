@@ -1,0 +1,53 @@
+{
+  "name": "Primordial",
+  "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
+  "type": "foe",
+  "_id": "2142f38901250c3a",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Primordial",
+    "texture": {
+      "src": "icons/creatures/magical/spirit-undead-horned-blue.webp"
+    }
+  },
+  "folder": "d4239e681a659e2d",
+  "items": [
+    {
+      "_id": "2ef461db563219d5",
+      "type": "progress",
+      "name": "Primordial",
+      "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Personification of the natural world</p>\n<p class=\"nogrow\">Turbulent, changing form</p>\n<p class=\"nogrow\">Vaguely human-like or animal-like form</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Embody chaos</p>\n<p class=\"nogrow\">Cling to vestiges of power</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Control the elements</p>\n<p class=\"nogrow\">Destroy with primal rage</p>\n</div>\n</div>\n\n<p>The primordials, said to be the vestigial spirits of long-forgotten gods, are the most ancient of the firstborn. Each embodies some aspect of the natural world, bound in a form which is a crude mimicry of a human or large animal. A river primordial is a mass of rock, gravel, and flowing water. A forest primordial is comprised of wood, earth, rocks, and plants. A mountain primordial is a lumbering being of glacier stone and ice. A fire primordial, depending on its mood, might take form as embers, ash and smoke—or as a raging pyre.</p>\n<p>They range in size from the height of an Ironlander to half-again as tall as a @Compendium[foundry-ironsworn.ironswornfoes.7c921d1d37087f2d]{giant}. Rumors persist of primordials who dwell in the deepest parts of the Wilds, or high in the ranges of the Veiled Mountains, who are as tall as an ancient tree. Beyond, some suggest, in the Shattered Wastes, live primordials who tower into the clouds. Is the sound of distant thunder sometimes the footfalls of mountain-sized primordials who dwell beyond the edges of the known world?</p>\n<p>Primordials are solitary beings and as unpredictable as the natural forces they personify. They might ignore you. They might lurk at a distance, as if observing you. Or, they might attack. They do not speak in any language we can understand. Some suggest they have no intelligence, and are merely a manifestation of the natural world, no different than a winter storm.</p>\n<p>How do you kill an primordial? Most scoff at the idea. You are just as likely to kill the rain or the sea. A mystic might tell you to use a weapon imbued with elemental power. Don’t trust them. If you see a primordial, keep your distance. Better yet, run.</p>\n\n<blockquote>Quest Starter: <p>In the dead of winter, a fire primordial is razing homes and burning a nearby wood. At night, orange flames light the sky. What can be done to stop this destruction?</p></blockquote>",
+        "rank": 4,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "d4239e681a659e2d",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:classic/firstborn/primordial"
+        }
+      },
+      "_key": "!actors.items!2142f38901250c3a.2ef461db563219d5"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/firstborn/primordial"
+    }
+  },
+  "_key": "!actors!2142f38901250c3a"
+}

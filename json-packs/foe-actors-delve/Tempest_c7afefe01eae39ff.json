@@ -1,0 +1,53 @@
+{
+  "name": "Tempest",
+  "img": "icons/magic/lightning/bolts-salvo-clouds-sky.webp",
+  "type": "foe",
+  "_id": "c7afefe01eae39ff",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Tempest",
+    "texture": {
+      "src": "icons/magic/lightning/bolts-salvo-clouds-sky.webp"
+    }
+  },
+  "folder": "3476ad01228adddc",
+  "items": [
+    {
+      "_id": "ab48afd4ccff862d",
+      "type": "progress",
+      "name": "Tempest",
+      "img": "icons/magic/lightning/bolts-salvo-clouds-sky.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Biting winds</p>\n<p class=\"nogrow\">Stinging ice</p>\n<p class=\"nogrow\">Ghostly voices and shadowy forms</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Seek warmth, and snuff it out</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Envelop in a wintry cyclone</p>\n<p class=\"nogrow\">Batter with icy shards and ferocious winds</p>\n<p class=\"nogrow\">Grant release, at great cost</p>\n</div>\n</div>\n\n<p>A tempest is a fierce, unnatural storm. It can appear in any season or in any weather, but is larger and more powerful in the depths of winter. It is drawn to the warmth of living beings, and seeks to douse that life as one would snuff out a candle.</p>\n<p>A tempest’s true nature is a mystery. Is it intelligent, or just a force of nature? Those who survive an encounter sometimes report hearing hushed voices and seeing strange forms within the whirlwind. Some few tell tales of the eye of the storm, where the colds and wind abate, and where relief from certain death is offered—for a price.</p>\n\n<blockquote>Quest Starter: <p>In the Havens, a massive, swirling tempest has appeared. It is expanding with grim purpose. A settlement was destroyed, and others are threatened. At the heart of the storm lies an @Compendium[foundry-ironsworn.ironsworndelvethemes.94397e5c9fb65a81]{Ancient} @Compendium[foundry-ironsworn.ironsworndelvedomains.b4157fd5116746cc]{Ruin}. What force powers this tempest? Can it be stopped, or will it someday cover all the Ironlands in its cold wrath?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "3476ad01228adddc",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/anomalies/tempest"
+        }
+      },
+      "_key": "!actors.items!c7afefe01eae39ff.ab48afd4ccff862d"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/anomalies/tempest"
+    }
+  },
+  "_key": "!actors!c7afefe01eae39ff"
+}

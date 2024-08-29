@@ -1,0 +1,16 @@
+{
+  "name": "Core Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "312c7e84afc43125",
+  "sort": 296,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Core",
+      "dsid": "oracle_collection:starforged/core"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!312c7e84afc43125"
+}

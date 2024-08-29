@@ -1,0 +1,101 @@
+{
+  "_id": "00b6028d93a842be",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave",
+      "dsid": "oracle_rollable:sundered_isles/cave/lurking_threat"
+    }
+  },
+  "name": "Lurking Threat",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Chilling cold",
+      "_key": "!tables.results!00b6028d93a842be.205dd9a669b275ac",
+      "_id": "205dd9a669b275ac"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Devious trap",
+      "_key": "!tables.results!00b6028d93a842be.89ead54c94bd2d9d",
+      "_id": "89ead54c94bd2d9d"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Flash flood",
+      "_key": "!tables.results!00b6028d93a842be.7e1f13fdf48be7c6",
+      "_id": "7e1f13fdf48be7c6"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "Oppressive  confinement",
+      "_key": "!tables.results!00b6028d93a842be.c09e33c41d41b459",
+      "_id": "c09e33c41d41b459"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Restless magma",
+      "_key": "!tables.results!00b6028d93a842be.aea6e42a22015134",
+      "_id": "aea6e42a22015134"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Rising water",
+      "_key": "!tables.results!00b6028d93a842be.e672df8f7eb9f917",
+      "_id": "e672df8f7eb9f917"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Rival explorers",
+      "_key": "!tables.results!00b6028d93a842be.511be5c6b5e9193a",
+      "_id": "511be5c6b5e9193a"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Stalking predator",
+      "_key": "!tables.results!00b6028d93a842be.7f14f2762022f838",
+      "_id": "7f14f2762022f838"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Unstable caves",
+      "_key": "!tables.results!00b6028d93a842be.e4dad3f524b70424",
+      "_id": "e4dad3f524b70424"
+    }
+  ],
+  "folder": "6e4db0d120c971eb",
+  "sort": 207,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!00b6028d93a842be"
+}

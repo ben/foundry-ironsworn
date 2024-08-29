@@ -1,0 +1,921 @@
+{
+  "_id": "c25eade4d8daa0bc",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Name",
+      "category": "Starforged/Oracles/Settlements",
+      "dsid": "oracle_rollable:starforged/settlement/name"
+    }
+  },
+  "name": "Settlement Name",
+  "description": "<p>Choose a name appropriate to the nature of the settlement, or roll for a random result. You can let the name stand alone, or pair it with one of the following tags: Base, Citadel, Depot, Fortress, Hold, Landing, Outpost, Port, Station, Terminal.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Aegis",
+      "_key": "!tables.results!c25eade4d8daa0bc.23c38fea937ccde8",
+      "_id": "23c38fea937ccde8"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Altair",
+      "_key": "!tables.results!c25eade4d8daa0bc.3ed141e92218e09a",
+      "_id": "3ed141e92218e09a"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Altura",
+      "_key": "!tables.results!c25eade4d8daa0bc.c502cdc2d88f1182",
+      "_id": "c502cdc2d88f1182"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Amity",
+      "_key": "!tables.results!c25eade4d8daa0bc.95fee7b458d81d98",
+      "_id": "95fee7b458d81d98"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Apex",
+      "_key": "!tables.results!c25eade4d8daa0bc.83406b05bd0ff82c",
+      "_id": "83406b05bd0ff82c"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Apogee",
+      "_key": "!tables.results!c25eade4d8daa0bc.d7f7c739b731b708",
+      "_id": "d7f7c739b731b708"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Argosy",
+      "_key": "!tables.results!c25eade4d8daa0bc.948f556ce9b78d81",
+      "_id": "948f556ce9b78d81"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Astra",
+      "_key": "!tables.results!c25eade4d8daa0bc.fbfcb2ba06d755f3",
+      "_id": "fbfcb2ba06d755f3"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Aurora",
+      "_key": "!tables.results!c25eade4d8daa0bc.ad0a1d948cf0fa89",
+      "_id": "ad0a1d948cf0fa89"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Beacon",
+      "_key": "!tables.results!c25eade4d8daa0bc.ed0da90269a585d8",
+      "_id": "ed0da90269a585d8"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Brink",
+      "_key": "!tables.results!c25eade4d8daa0bc.abb63d7c421d4ae6",
+      "_id": "abb63d7c421d4ae6"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Bulwark",
+      "_key": "!tables.results!c25eade4d8daa0bc.e8a1d102e5d7f3b3",
+      "_id": "e8a1d102e5d7f3b3"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Burnell",
+      "_key": "!tables.results!c25eade4d8daa0bc.d549eedba6ff5521",
+      "_id": "d549eedba6ff5521"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Burrow",
+      "_key": "!tables.results!c25eade4d8daa0bc.5ad3053512c6eead",
+      "_id": "5ad3053512c6eead"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Concord",
+      "_key": "!tables.results!c25eade4d8daa0bc.45c80e40ecd59649",
+      "_id": "45c80e40ecd59649"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Crux",
+      "_key": "!tables.results!c25eade4d8daa0bc.e26f6cc1bebc8a08",
+      "_id": "e26f6cc1bebc8a08"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Deadrock",
+      "_key": "!tables.results!c25eade4d8daa0bc.1cf378ef801b570e",
+      "_id": "1cf378ef801b570e"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Deception",
+      "_key": "!tables.results!c25eade4d8daa0bc.550e5650b46fab72",
+      "_id": "550e5650b46fab72"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Elysium",
+      "_key": "!tables.results!c25eade4d8daa0bc.6ca369c18509f300",
+      "_id": "6ca369c18509f300"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Enigma",
+      "_key": "!tables.results!c25eade4d8daa0bc.64bdd0d56dd4f85c",
+      "_id": "64bdd0d56dd4f85c"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Erebus",
+      "_key": "!tables.results!c25eade4d8daa0bc.c844e8c3fc70ab24",
+      "_id": "c844e8c3fc70ab24"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Eris",
+      "_key": "!tables.results!c25eade4d8daa0bc.cf0570e03b5e1cf7",
+      "_id": "cf0570e03b5e1cf7"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Evenfall",
+      "_key": "!tables.results!c25eade4d8daa0bc.ac705eb127d99d9b",
+      "_id": "ac705eb127d99d9b"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Eventide",
+      "_key": "!tables.results!c25eade4d8daa0bc.5b530154810ba672",
+      "_id": "5b530154810ba672"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Farpoint",
+      "_key": "!tables.results!c25eade4d8daa0bc.e250369965242588",
+      "_id": "e250369965242588"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Felicity",
+      "_key": "!tables.results!c25eade4d8daa0bc.a7722098cf50d8a4",
+      "_id": "a7722098cf50d8a4"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Florin",
+      "_key": "!tables.results!c25eade4d8daa0bc.177e5674392138e5",
+      "_id": "177e5674392138e5"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Forlorn",
+      "_key": "!tables.results!c25eade4d8daa0bc.786f77758310f4c1",
+      "_id": "786f77758310f4c1"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Forsaken",
+      "_key": "!tables.results!c25eade4d8daa0bc.608291cd9fedabf2",
+      "_id": "608291cd9fedabf2"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Freya",
+      "_key": "!tables.results!c25eade4d8daa0bc.2985f9d04841c0c8",
+      "_id": "2985f9d04841c0c8"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Glimmer",
+      "_key": "!tables.results!c25eade4d8daa0bc.eef70e0ec86ad1f2",
+      "_id": "eef70e0ec86ad1f2"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Gloam",
+      "_key": "!tables.results!c25eade4d8daa0bc.8abe7f79d408da84",
+      "_id": "8abe7f79d408da84"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Hearth",
+      "_key": "!tables.results!c25eade4d8daa0bc.4f80918623731607",
+      "_id": "4f80918623731607"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Helia",
+      "_key": "!tables.results!c25eade4d8daa0bc.eff2ea9e8cf61e83",
+      "_id": "eff2ea9e8cf61e83"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Hypatia",
+      "_key": "!tables.results!c25eade4d8daa0bc.5a4bc811ddfc68f6",
+      "_id": "5a4bc811ddfc68f6"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Hyperion",
+      "_key": "!tables.results!c25eade4d8daa0bc.f254f2e07c33c6fd",
+      "_id": "f254f2e07c33c6fd"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Janus",
+      "_key": "!tables.results!c25eade4d8daa0bc.569372a056faf325",
+      "_id": "569372a056faf325"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Karma",
+      "_key": "!tables.results!c25eade4d8daa0bc.2e23e96da05cb5c5",
+      "_id": "2e23e96da05cb5c5"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Kepler",
+      "_key": "!tables.results!c25eade4d8daa0bc.0c7d12227e4a6787",
+      "_id": "0c7d12227e4a6787"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Koshiba",
+      "_key": "!tables.results!c25eade4d8daa0bc.9e0cffc56a6b270c",
+      "_id": "9e0cffc56a6b270c"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Lagrange",
+      "_key": "!tables.results!c25eade4d8daa0bc.e2c5bcda13ef5b83",
+      "_id": "e2c5bcda13ef5b83"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Larissa",
+      "_key": "!tables.results!c25eade4d8daa0bc.8456360881be7497",
+      "_id": "8456360881be7497"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Lasthope",
+      "_key": "!tables.results!c25eade4d8daa0bc.2a7d9c1f83807160",
+      "_id": "2a7d9c1f83807160"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Lastport",
+      "_key": "!tables.results!c25eade4d8daa0bc.4852c76b89addf91",
+      "_id": "4852c76b89addf91"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Legacy",
+      "_key": "!tables.results!c25eade4d8daa0bc.092d4fa66102bffc",
+      "_id": "092d4fa66102bffc"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Lodestar",
+      "_key": "!tables.results!c25eade4d8daa0bc.9a936ae0295cdd25",
+      "_id": "9a936ae0295cdd25"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Luminus",
+      "_key": "!tables.results!c25eade4d8daa0bc.2c2417691b3a421e",
+      "_id": "2c2417691b3a421e"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Lyra",
+      "_key": "!tables.results!c25eade4d8daa0bc.1cadef6c358bb602",
+      "_id": "1cadef6c358bb602"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Marrow",
+      "_key": "!tables.results!c25eade4d8daa0bc.fcfb5c6255817c60",
+      "_id": "fcfb5c6255817c60"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Meridian",
+      "_key": "!tables.results!c25eade4d8daa0bc.0d9165b67a178828",
+      "_id": "0d9165b67a178828"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Moirai",
+      "_key": "!tables.results!c25eade4d8daa0bc.de90c1d234eec411",
+      "_id": "de90c1d234eec411"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Mudd",
+      "_key": "!tables.results!c25eade4d8daa0bc.63efcd09c038d2e6",
+      "_id": "63efcd09c038d2e6"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Neoma",
+      "_key": "!tables.results!c25eade4d8daa0bc.a224cf4823a563f9",
+      "_id": "a224cf4823a563f9"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Nerio",
+      "_key": "!tables.results!c25eade4d8daa0bc.9dd215e36f4f58b4",
+      "_id": "9dd215e36f4f58b4"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Nova",
+      "_key": "!tables.results!c25eade4d8daa0bc.50fc51b1f2f32193",
+      "_id": "50fc51b1f2f32193"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Nyx",
+      "_key": "!tables.results!c25eade4d8daa0bc.84b379aee250d72a",
+      "_id": "84b379aee250d72a"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Osseus",
+      "_key": "!tables.results!c25eade4d8daa0bc.66d35e90d54a1082",
+      "_id": "66d35e90d54a1082"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Paradox",
+      "_key": "!tables.results!c25eade4d8daa0bc.dcd22d78f2a65a90",
+      "_id": "dcd22d78f2a65a90"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Paragon",
+      "_key": "!tables.results!c25eade4d8daa0bc.16843811c8c7a630",
+      "_id": "16843811c8c7a630"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Paxton",
+      "_key": "!tables.results!c25eade4d8daa0bc.eeabd2e23ed486bf",
+      "_id": "eeabd2e23ed486bf"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Perchance",
+      "_key": "!tables.results!c25eade4d8daa0bc.ca77d2484358ecad",
+      "_id": "ca77d2484358ecad"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Pinnacle",
+      "_key": "!tables.results!c25eade4d8daa0bc.8f22e5a60f557f2e",
+      "_id": "8f22e5a60f557f2e"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Polaris",
+      "_key": "!tables.results!c25eade4d8daa0bc.06a0ab188c15f908",
+      "_id": "06a0ab188c15f908"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Portent",
+      "_key": "!tables.results!c25eade4d8daa0bc.5570fb48aaea4d13",
+      "_id": "5570fb48aaea4d13"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Prism",
+      "_key": "!tables.results!c25eade4d8daa0bc.98ce06f57dae46e1",
+      "_id": "98ce06f57dae46e1"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Providence",
+      "_key": "!tables.results!c25eade4d8daa0bc.48b0cbdbd9e6fef9",
+      "_id": "48b0cbdbd9e6fef9"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Purgatory",
+      "_key": "!tables.results!c25eade4d8daa0bc.285f70837b08ada2",
+      "_id": "285f70837b08ada2"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Rampart",
+      "_key": "!tables.results!c25eade4d8daa0bc.b411ac51554697f8",
+      "_id": "b411ac51554697f8"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Ramshackle",
+      "_key": "!tables.results!c25eade4d8daa0bc.6187dfee2ca7147f",
+      "_id": "6187dfee2ca7147f"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Redemption",
+      "_key": "!tables.results!c25eade4d8daa0bc.a249eb9326f7dbaa",
+      "_id": "a249eb9326f7dbaa"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Redhaven",
+      "_key": "!tables.results!c25eade4d8daa0bc.45057cd64de57c16",
+      "_id": "45057cd64de57c16"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Relic",
+      "_key": "!tables.results!c25eade4d8daa0bc.cb2be79a4d391843",
+      "_id": "cb2be79a4d391843"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Reprise",
+      "_key": "!tables.results!c25eade4d8daa0bc.d2481bdbe4a2360e",
+      "_id": "d2481bdbe4a2360e"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Reverie",
+      "_key": "!tables.results!c25eade4d8daa0bc.0c51a59888b48d6f",
+      "_id": "0c51a59888b48d6f"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Rhiannon",
+      "_key": "!tables.results!c25eade4d8daa0bc.3d4c8a8f0ffa38b9",
+      "_id": "3d4c8a8f0ffa38b9"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Rockhome",
+      "_key": "!tables.results!c25eade4d8daa0bc.7bfb99a1a2d067c2",
+      "_id": "7bfb99a1a2d067c2"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Rust",
+      "_key": "!tables.results!c25eade4d8daa0bc.09a3be244e8acc23",
+      "_id": "09a3be244e8acc23"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Sagan",
+      "_key": "!tables.results!c25eade4d8daa0bc.f8cc4f902cb6a693",
+      "_id": "f8cc4f902cb6a693"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Sanctity",
+      "_key": "!tables.results!c25eade4d8daa0bc.881e57fb4a191dbc",
+      "_id": "881e57fb4a191dbc"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Selena",
+      "_key": "!tables.results!c25eade4d8daa0bc.21a1e0a9aeb43896",
+      "_id": "21a1e0a9aeb43896"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Sepulcher",
+      "_key": "!tables.results!c25eade4d8daa0bc.b7a83b26204e8c6c",
+      "_id": "b7a83b26204e8c6c"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Sigil",
+      "_key": "!tables.results!c25eade4d8daa0bc.131174a0903a9f8a",
+      "_id": "131174a0903a9f8a"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Silvana",
+      "_key": "!tables.results!c25eade4d8daa0bc.68d4e5aeccd04777",
+      "_id": "68d4e5aeccd04777"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Sirius",
+      "_key": "!tables.results!c25eade4d8daa0bc.4953066a67dc42c3",
+      "_id": "4953066a67dc42c3"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Sisyphus",
+      "_key": "!tables.results!c25eade4d8daa0bc.398f61532d0dfa09",
+      "_id": "398f61532d0dfa09"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Solitude",
+      "_key": "!tables.results!c25eade4d8daa0bc.35acfdde9bdf0325",
+      "_id": "35acfdde9bdf0325"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Spire",
+      "_key": "!tables.results!c25eade4d8daa0bc.fe61de99ca950daa",
+      "_id": "fe61de99ca950daa"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Starfall",
+      "_key": "!tables.results!c25eade4d8daa0bc.5e748d57d6cc15a1",
+      "_id": "5e748d57d6cc15a1"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Summit",
+      "_key": "!tables.results!c25eade4d8daa0bc.f0b0108c764af923",
+      "_id": "f0b0108c764af923"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Tranquility",
+      "_key": "!tables.results!c25eade4d8daa0bc.fd81052868d76cd1",
+      "_id": "fd81052868d76cd1"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Tyson",
+      "_key": "!tables.results!c25eade4d8daa0bc.94307d4c540fb982",
+      "_id": "94307d4c540fb982"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Unity",
+      "_key": "!tables.results!c25eade4d8daa0bc.f9d181f19911b5d1",
+      "_id": "f9d181f19911b5d1"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Utopia",
+      "_key": "!tables.results!c25eade4d8daa0bc.2edbd02b1cd05251",
+      "_id": "2edbd02b1cd05251"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Vega",
+      "_key": "!tables.results!c25eade4d8daa0bc.bfe10b4570674b55",
+      "_id": "bfe10b4570674b55"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Vesper",
+      "_key": "!tables.results!c25eade4d8daa0bc.e9c9950fa08be176",
+      "_id": "e9c9950fa08be176"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Wayward",
+      "_key": "!tables.results!c25eade4d8daa0bc.74aa506468787d17",
+      "_id": "74aa506468787d17"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Welkin",
+      "_key": "!tables.results!c25eade4d8daa0bc.bd4e775816a46ce5",
+      "_id": "bd4e775816a46ce5"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Wellspring",
+      "_key": "!tables.results!c25eade4d8daa0bc.3ee7acb22f929512",
+      "_id": "3ee7acb22f929512"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Weyland",
+      "_key": "!tables.results!c25eade4d8daa0bc.19cec44b24eaaa7f",
+      "_id": "19cec44b24eaaa7f"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Wreck",
+      "_key": "!tables.results!c25eade4d8daa0bc.61a80155234277bc",
+      "_id": "61a80155234277bc"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 325,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!c25eade4d8daa0bc"
+}

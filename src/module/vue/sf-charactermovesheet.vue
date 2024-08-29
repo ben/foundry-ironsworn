@@ -21,20 +21,12 @@
 		<TabPanels>
 			<TabPanel tab-key="moves" class="flexcol">
 				<Suspense>
-					<SfMovesheetmoves
-						ref="movesTab"
-						:class="$style.panelContent"
-						:toolset="data.toolset"
-					/>
+					<SfMovesheetmoves ref="movesTab" :class="$style.panelContent" />
 				</Suspense>
 			</TabPanel>
 			<TabPanel tab-key="oracles" class="flexcol">
 				<Suspense>
-					<SfMovesheetoracles
-						ref="oraclesTab"
-						:class="$style.panelContent"
-						:toolset="data.toolset"
-					/>
+					<SfMovesheetoracles ref="oraclesTab" :class="$style.panelContent" />
 				</Suspense>
 			</TabPanel>
 		</TabPanels>
@@ -57,7 +49,6 @@ import type { CharacterDataProperties } from '../actor/subtypes/character'
 const props = defineProps<{
 	data: {
 		actor: CharacterDataProperties
-		toolset: 'ironsworn' | 'starforged' | 'sunderedisles'
 	}
 }>()
 

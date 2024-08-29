@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Production/Peril",
-      "category": "Starforged/Oracles/Derelicts/Production"
+      "category": "Starforged/Oracles/Derelicts/Production",
+      "dsid": "oracle_rollable:starforged/derelict/production/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Claustrophobic spaces",
-      "_id": "8d57c5831befcb01",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.8d57c5831befcb01"
+      "_key": "!tables.results!dc5d9617bec6283a.eeb74d5bfdce5ef3",
+      "_id": "eeb74d5bfdce5ef3"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Dangerous machinery",
-      "_id": "add5b7f3913e39ba",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.add5b7f3913e39ba"
+      "_key": "!tables.results!dc5d9617bec6283a.5f2a34d74891b4fc",
+      "_id": "5f2a34d74891b4fc"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Disturbing evidence of exploited labor",
-      "_id": "c0ac6a3379b135e8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.c0ac6a3379b135e8"
+      "_key": "!tables.results!dc5d9617bec6283a.4201a2dbee69e991",
+      "_id": "4201a2dbee69e991"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Extreme temperatures",
-      "_id": "be0844a73615ff16",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.be0844a73615ff16"
+      "_key": "!tables.results!dc5d9617bec6283a.3f3a054b3256678a",
+      "_id": "3f3a054b3256678a"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Hazardous materials",
-      "_id": "4f5ba66325aef163",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.4f5ba66325aef163"
+      "_key": "!tables.results!dc5d9617bec6283a.283ac1ca16dd705b",
+      "_id": "283ac1ca16dd705b"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Impending industrial disaster",
-      "_id": "f065cee3f77d1648",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.f065cee3f77d1648"
+      "_key": "!tables.results!dc5d9617bec6283a.bc5d81af48db26d9",
+      "_id": "bc5d81af48db26d9"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Malfunctioning automation",
-      "_id": "38ef5f86d9dca606",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.38ef5f86d9dca606"
+      "_key": "!tables.results!dc5d9617bec6283a.023a87fde0825dc9",
+      "_id": "023a87fde0825dc9"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Rivals seek to secure these resources",
-      "_id": "064518a5ebb401d7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.064518a5ebb401d7"
+      "_key": "!tables.results!dc5d9617bec6283a.a75fba0465a3984b",
+      "_id": "a75fba0465a3984b"
     },
     {
       "range": [
@@ -130,27 +91,17 @@
         90
       ],
       "text": "Signs of an unearthed or manufactured threat",
-      "_id": "ff902b8ce3f4cdf4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.ff902b8ce3f4cdf4"
+      "_key": "!tables.results!dc5d9617bec6283a.89dc867076b40feb",
+      "_id": "89dc867076b40feb"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "9273693c87b53e6a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.9273693c87b53e6a"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!dc5d9617bec6283a.4d8fdc6e0f59b5a9",
+      "_id": "4d8fdc6e0f59b5a9"
     },
     {
       "range": [
@@ -158,29 +109,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "bc6bc20fb52af07d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dc5d9617bec6283a.bc6bc20fb52af07d"
+      "_key": "!tables.results!dc5d9617bec6283a.3aec7adc97693b5d",
+      "_id": "3aec7adc97693b5d"
     }
   ],
   "folder": "2fbcd3395fd34f5d",
   "sort": 358,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!dc5d9617bec6283a"
 }

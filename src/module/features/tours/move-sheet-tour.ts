@@ -1,3 +1,4 @@
+import { IronswornSettings } from '../../helpers/settings'
 import { OracleTable } from '../../roll-table/oracle-table'
 import { IronswornTour } from './ironsworn_tour'
 
@@ -5,46 +6,35 @@ export class MoveSheetTour extends IronswornTour {
 	constructor(sheet: Application) {
 		const sheetSel = `.app[data-appid="${sheet?.appId}"]`
 
-		const moveCategories = [
-			'Starforged/Moves/Adventure',
-			'Ironsworn/Moves/Adventure'
-		]
-		const moveCategorySelector = moveCategories
-			.map((id) => `${sheetSel} [data-tourid="move-category-${id}"]`)
-			.join(',')
-		const moveLinkSelector = moveCategories
-			.map(
-				(id) => `${sheetSel} [data-tourid="move-category-${id}"] .content-link`
-			)
-			.join(',')
+		// If multiple rulesets are enabled, prioritize Ironsworn because those items will be nearer the top
+		const preferIronsworn =
+			IronswornSettings.enabledRulesets.includes('classic')
 
-		const isMoveUuid =
-			'Compendium.foundry-ironsworn.ironswornmoves.c8bacc17f73d3103'
-		const sfMoveUuid =
-			'Compendium.foundry-ironsworn.starforgedmoves.e6ed148eff82c171'
-		const moveButtonsSelector = [sfMoveUuid, isMoveUuid]
-			.map(
-				(u) =>
-					`${sheetSel} [data-move-uuid="${u}"] [data-tourid="move-buttons"]`
-			)
-			.join(',')
+		const moveCategory = preferIronsworn
+			? 'move_category:classic/adventure'
+			: 'move_category:starforged/adventure'
+		const moveCategorySelector = `${sheetSel} [data-tourid="move-category-${moveCategory}"]`
+		const moveLinkSelector = `${sheetSel} [data-tourid="move-category-${moveCategory}"] .content-link`
 
-		const oracleCategorySelector = [
-			'Starforged/Oracles/Core',
-			'Ironsworn/Oracles/Action_and_Theme'
-		]
-			.map((dfid) => `${sheetSel} [data-tourid="oracle-${dfid}"]`)
-			.join(',')
+		const moveUuid = preferIronsworn
+			? 'Compendium.foundry-ironsworn.ironswornmoves.Item.c8bacc17f73d3103'
+			: 'Compendium.foundry-ironsworn.starforgedmoves.Item.e6ed148eff82c171'
+		const moveButtonsSelector = `${sheetSel} [data-move-uuid="${moveUuid}"] [data-tourid="move-buttons"]`
 
-		const oracleRowSelector = [
-			'Starforged/Oracles/Core/Action',
-			'Ironsworn/Oracles/Action_and_Theme/Action'
-		]
-			.map((dfid) => `${sheetSel} [data-tourid="oracle-${dfid}"]`)
-			.join(',')
+		const oracleCategory = preferIronsworn
+			? 'oracle_collection:classic/action_and_theme'
+			: 'oracle_collection:starforged/core'
+		const oracleCategorySelector = `${sheetSel} [data-tourid="oracle-${oracleCategory}"]`
+
+		const oracleRow = preferIronsworn
+			? 'oracle_rollable:classic/action_and_theme/action'
+			: 'oracle_rollable:starforged/core/action'
+		const oracleRowSelector = `${sheetSel} [data-tourid="oracle-${oracleRow}"]`
 
 		const scrollIntoView = async (selector) => {
-			document.querySelector(selector)?.scrollIntoView()
+			const el = document.querySelector(selector)
+			console.log(`Scrolling to ${selector}`, el)
+			el?.scrollIntoView()
 			await new Promise((r) => setTimeout(r, 400))
 		}
 
@@ -70,8 +60,7 @@ export class MoveSheetTour extends IronswornTour {
 					tooltipDirection: 'LEFT',
 					selector: moveCategorySelector,
 					async hook() {
-						CONFIG.IRONSWORN.emitter.emit('highlightMove', isMoveUuid)
-						CONFIG.IRONSWORN.emitter.emit('highlightMove', sfMoveUuid)
+						CONFIG.IRONSWORN.emitter.emit('highlightMove', moveUuid)
 						await new Promise((r) => setTimeout(r, 300))
 						await scrollIntoView(moveCategorySelector)
 					}
@@ -115,11 +104,9 @@ export class MoveSheetTour extends IronswornTour {
 					async hook() {
 						CONFIG.IRONSWORN.emitter.emit(
 							'highlightOracle',
-							'Ironsworn/Oracles/Action_and_Theme'
-						)
-						CONFIG.IRONSWORN.emitter.emit(
-							'highlightOracle',
-							'Starforged/Oracles/Core'
+							preferIronsworn
+								? 'oracle_rollable:classic/action_and_theme'
+								: 'oracle_rollable:starforged/core'
 						)
 						await scrollIntoView(oracleCategorySelector)
 					}
@@ -140,7 +127,11 @@ export class MoveSheetTour extends IronswornTour {
 					tooltipDirection: 'LEFT',
 					async hook() {
 						await sheet.minimize()
-						await OracleTable.ask('Starforged/Oracles/Core/Action')
+						await OracleTable.ask(
+							preferIronsworn
+								? 'oracle_rollable:classic/core/action'
+								: 'oracle_rollable:starforged/core/action'
+						)
 						await new Promise((r) => setTimeout(r, 300))
 					}
 				},

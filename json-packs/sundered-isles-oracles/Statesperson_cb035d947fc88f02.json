@@ -1,0 +1,110 @@
+{
+  "_id": "cb035d947fc88f02",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/statesperson"
+    }
+  },
+  "name": "Statesperson",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Aristocrat",
+      "_key": "!tables.results!cb035d947fc88f02.19c5710a396ac599",
+      "_id": "19c5710a396ac599"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Bureaucrat",
+      "_key": "!tables.results!cb035d947fc88f02.313c71082d339924",
+      "_id": "313c71082d339924"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Commander",
+      "_key": "!tables.results!cb035d947fc88f02.e073e040b793f021",
+      "_id": "e073e040b793f021"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Courtesan",
+      "_key": "!tables.results!cb035d947fc88f02.16f8a9b54959aa35",
+      "_id": "16f8a9b54959aa35"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Courtier",
+      "_key": "!tables.results!cb035d947fc88f02.44909e2098987d34",
+      "_id": "44909e2098987d34"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Diplomat",
+      "_key": "!tables.results!cb035d947fc88f02.8b8b3a20b4321c0a",
+      "_id": "8b8b3a20b4321c0a"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Interpreter",
+      "_key": "!tables.results!cb035d947fc88f02.fa4b963d11543ec7",
+      "_id": "fa4b963d11543ec7"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Lawkeeper",
+      "_key": "!tables.results!cb035d947fc88f02.9d9a397f3b7b90a1",
+      "_id": "9d9a397f3b7b90a1"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Politician",
+      "_key": "!tables.results!cb035d947fc88f02.c32447fa3e287c4c",
+      "_id": "c32447fa3e287c4c"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tax collector",
+      "_key": "!tables.results!cb035d947fc88f02.8d55f1b176ec252e",
+      "_id": "8d55f1b176ec252e"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 189,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cb035d947fc88f02"
+}

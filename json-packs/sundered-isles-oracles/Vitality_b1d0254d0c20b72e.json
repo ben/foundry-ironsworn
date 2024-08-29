@@ -1,0 +1,15 @@
+{
+  "name": "Vitality",
+  "description": "",
+  "type": "RollTable",
+  "_id": "b1d0254d0c20b72e",
+  "sort": 142,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/island/landscape/vitality"
+    }
+  },
+  "folder": "df50a17b971357ff",
+  "sorting": "a",
+  "_key": "!folders!b1d0254d0c20b72e"
+}

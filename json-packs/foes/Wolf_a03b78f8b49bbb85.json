@@ -1,0 +1,27 @@
+{
+  "_id": "a03b78f8b49bbb85",
+  "type": "progress",
+  "name": "Wolf",
+  "img": "icons/creatures/abilities/wolf-howl-moon-purple.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Keen senses</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Fight rivals</p>\n<p class=\"nogrow\">Mark territory</p>\n<p class=\"nogrow\">Run with the pack</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Stalk</p>\n<p class=\"nogrow\">Pack rush</p>\n<p class=\"nogrow\">Drag to the ground</p>\n</div>\n</div>\n\n<p>The Ironlands are home to several breeds of wolves. Most are not aggressive and stay clear of settlements and travelers. Despite that, attacks against Ironlanders are not unknown. A harsh winter and insufficient prey can drive a pack to hunt livestock or even an unwary Ironlander. As night falls we hear their howls, and hope they are well fed.</p>\n\n<blockquote>Quest Starter: <p>You find the grisly remains of a pack of wolves. All are dead, even the cubs. What caused this? Why is it a harbinger of a greater danger?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "80e257c8df770379",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/animals/wolf"
+    }
+  },
+  "_key": "!items!a03b78f8b49bbb85"
+}

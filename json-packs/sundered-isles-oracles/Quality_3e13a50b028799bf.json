@@ -1,0 +1,65 @@
+{
+  "_id": "3e13a50b028799bf",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/magnitude",
+      "dsid": "oracle_rollable:sundered_isles/misc/magnitude/quality"
+    }
+  },
+  "name": "Quality",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Broken",
+      "_key": "!tables.results!3e13a50b028799bf.8c8c0f74ef91bb8b",
+      "_id": "8c8c0f74ef91bb8b"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Fragile",
+      "_key": "!tables.results!3e13a50b028799bf.54cdda858e3c264e",
+      "_id": "54cdda858e3c264e"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Reliable",
+      "_key": "!tables.results!3e13a50b028799bf.93009239747a8b09",
+      "_id": "93009239747a8b09"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Durable",
+      "_key": "!tables.results!3e13a50b028799bf.39c581e9ff579adb",
+      "_id": "39c581e9ff579adb"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Indestructible",
+      "_key": "!tables.results!3e13a50b028799bf.16ddf9c7d359056d",
+      "_id": "16ddf9c7d359056d"
+    }
+  ],
+  "folder": "a547d2b78f39268a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!3e13a50b028799bf"
+}

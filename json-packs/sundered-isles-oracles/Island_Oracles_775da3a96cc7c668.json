@@ -1,0 +1,15 @@
+{
+  "name": "Island Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "775da3a96cc7c668",
+  "sort": 142,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/island"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!775da3a96cc7c668"
+}

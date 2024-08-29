@@ -1,0 +1,53 @@
+{
+  "name": "Bladewing",
+  "img": "icons/creatures/magical/spirit-undead-winged-ghost.webp",
+  "type": "foe",
+  "_id": "0b1a1c56b0fd3dd4",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Bladewing",
+    "texture": {
+      "src": "icons/creatures/magical/spirit-undead-winged-ghost.webp"
+    }
+  },
+  "folder": "75f040afa6c45636",
+  "items": [
+    {
+      "_id": "9e8e5dbb4f466dbc",
+      "type": "progress",
+      "name": "Bladewing",
+      "img": "icons/creatures/magical/spirit-undead-winged-ghost.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Large, dagger-shaped wings</p>\n<p class=\"nogrow\">Elongated jaws with needle-like teeth</p>\n<p class=\"nogrow\">Dark, leathery hide</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Take flight under the cover of darkness</p>\n<p class=\"nogrow\">Hunt from above</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Glide silently</p>\n<p class=\"nogrow\">Sudden, swift attack</p>\n</div>\n</div>\n\n<p>These carnivorous creatures dwell in caves and ruins, and emerge at night to hunt. They have a lean, angular form, with a wingspan as wide as an Ironlander’s outstretched arms.</p>\n<p>They typically feed on smaller prey, but a pack of hungry bladewings will harass larger victims, diving and slashing in coordinated attacks. During the long nights of winter, swarms of these creatures have descended on Ironlander settlements or unwary travelers.</p>\n\n<blockquote>Quest Starter: <p>Night after night, a colony of bladewings emerges to prey on a remote settlement. The creatures are rumored to lair in a long-abandoned @Compendium[foundry-ironsworn.ironsworndelvethemes.d267fd935459da97]{Ravaged} @Compendium[foundry-ironsworn.ironsworndelvedomains.8888b86e2afc8f1e]{Mine}. What is driving their attacks?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "75f040afa6c45636",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/animals/bladewing"
+        }
+      },
+      "_key": "!actors.items!0b1a1c56b0fd3dd4.9e8e5dbb4f466dbc"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/animals/bladewing"
+    }
+  },
+  "_key": "!actors!0b1a1c56b0fd3dd4"
+}

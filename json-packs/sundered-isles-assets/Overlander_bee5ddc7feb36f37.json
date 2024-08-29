@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "bee5ddc7feb36f37",
+  "folder": "e5df7144ec089f12",
+  "name": "Overlander",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition} through uncharted or unfamiliar overland territory, you may reroll one challenge die.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you find or make shelter in the wilds, roll +wits. On a strong hit, you and your allies envision how you pass the time and each take +2 spirit or +2 health, or +1 to each. In addition, any companions in your company take +1 health. On a weak hit, the comfort is fleeting; you and your allies take +1 health or +1 spirit. On a miss, you encounter hardship or a new danger; @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply} by searching out a source of food, water, or other natural resources in the wilds, add +1. On a strong hit with a match, you encounter an unusual or extraordinary location; you may @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} (even if not on an expedition) and reroll any dice.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/overlander",
+      "dsid": "asset:sundered_isles/path/overlander"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!bee5ddc7feb36f37"
+}

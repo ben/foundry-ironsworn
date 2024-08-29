@@ -1,0 +1,200 @@
+{
+  "_id": "1bb3d31309da3f83",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Shattered",
+      "dsid": "oracle_rollable:starforged/planet/shattered/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Cavus",
+      "_key": "!tables.results!1bb3d31309da3f83.facb47bb58312db2",
+      "_id": "facb47bb58312db2"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Chrysalis",
+      "_key": "!tables.results!1bb3d31309da3f83.4931adf26f6dff49",
+      "_id": "4931adf26f6dff49"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Fragment",
+      "_key": "!tables.results!1bb3d31309da3f83.d60a34382824ad15",
+      "_id": "d60a34382824ad15"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Havoc",
+      "_key": "!tables.results!1bb3d31309da3f83.23608a75890f6816",
+      "_id": "23608a75890f6816"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Keres",
+      "_key": "!tables.results!1bb3d31309da3f83.6a1a3083c834f0b7",
+      "_id": "6a1a3083c834f0b7"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Lux",
+      "_key": "!tables.results!1bb3d31309da3f83.f263462d0d9565e6",
+      "_id": "f263462d0d9565e6"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Nemain",
+      "_key": "!tables.results!1bb3d31309da3f83.7e5acabae4c9f2a8",
+      "_id": "7e5acabae4c9f2a8"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Praxis",
+      "_key": "!tables.results!1bb3d31309da3f83.37f47e9a24147ebd",
+      "_id": "37f47e9a24147ebd"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Riven",
+      "_key": "!tables.results!1bb3d31309da3f83.280cd60aa14e0874",
+      "_id": "280cd60aa14e0874"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Schism",
+      "_key": "!tables.results!1bb3d31309da3f83.aa1c035786de184c",
+      "_id": "aa1c035786de184c"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Shell",
+      "_key": "!tables.results!1bb3d31309da3f83.4397e1de2607068d",
+      "_id": "4397e1de2607068d"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Slag",
+      "_key": "!tables.results!1bb3d31309da3f83.e9252df13ec679d5",
+      "_id": "e9252df13ec679d5"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Sliver",
+      "_key": "!tables.results!1bb3d31309da3f83.62bccced4e1d6cf7",
+      "_id": "62bccced4e1d6cf7"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Sunder",
+      "_key": "!tables.results!1bb3d31309da3f83.c673507473e4e230",
+      "_id": "c673507473e4e230"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Torment",
+      "_key": "!tables.results!1bb3d31309da3f83.f5376727977c1eb4",
+      "_id": "f5376727977c1eb4"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Vestige",
+      "_key": "!tables.results!1bb3d31309da3f83.53cd436d91f1b0eb",
+      "_id": "53cd436d91f1b0eb"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Vigrid",
+      "_key": "!tables.results!1bb3d31309da3f83.ec6504bbe524b761",
+      "_id": "ec6504bbe524b761"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Vortex",
+      "_key": "!tables.results!1bb3d31309da3f83.348882568061c9d4",
+      "_id": "348882568061c9d4"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Wrath",
+      "_key": "!tables.results!1bb3d31309da3f83.816ffd8f1246d8ef",
+      "_id": "816ffd8f1246d8ef"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Zix",
+      "_key": "!tables.results!1bb3d31309da3f83.5181bef395b771b6",
+      "_id": "5181bef395b771b6"
+    }
+  ],
+  "folder": "656eb2b3e3476a48",
+  "sort": 316,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1bb3d31309da3f83"
+}

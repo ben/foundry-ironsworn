@@ -1,0 +1,16 @@
+{
+  "name": "Launching Your Campaign",
+  "description": "",
+  "type": "RollTable",
+  "_id": "b582a7b95b531a60",
+  "sort": 74,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation",
+      "dsid": "oracle_collection:starforged/launching_your_campaign"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!b582a7b95b531a60"
+}

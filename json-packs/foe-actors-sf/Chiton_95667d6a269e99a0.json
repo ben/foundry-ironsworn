@@ -1,0 +1,53 @@
+{
+  "name": "Chiton",
+  "img": "icons/creatures/invertebrates/spider-large-white-green.webp",
+  "type": "foe",
+  "_id": "95667d6a269e99a0",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Chiton",
+    "texture": {
+      "src": "icons/creatures/invertebrates/spider-large-white-green.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "b1369309edbce740",
+      "type": "progress",
+      "name": "Chiton",
+      "img": "icons/creatures/invertebrates/spider-large-white-green.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Arachnid monsters with blade-like limbs</p>\n<p class=\"nogrow\">Plated exoskeleton</p>\n<p class=\"nogrow\">Dripping mucus</p>\n<p class=\"nogrow\">Ripping, tearing maw</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Build and expand the nest</p>\n<p class=\"nogrow\">Feed and protect the queen</p>\n<p class=\"nogrow\">Snuff out intelligent life</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Attack with lightning reflexes</p>\n<p class=\"nogrow\">Impale with bladed limbs</p>\n<p class=\"nogrow\">Drag victims back to the nest</p>\n</div>\n</div>\n\n<p>The chiton are not native to any single planet, and are adaptable to most environments. Some suggest they are an ancient precursor bioweapon seeded across the galaxy. The larva of the telepathic queen can lay dormant for thousands of years, emerging only when its sleep is disturbed by the mental energies of intelligent life. An awoken queen quickly metamorphoses into its adult form and lays its first clutch of eggs. Soon after, newly-hatched drones set out to expand the nest and feed their ravenous progenitor.</p>\n\n<blockquote>Quest Starter: <p>At a remote facility, researchers are studying a newly-discovered chiton queen larva. The immature queen is held in frozen stasis, but something might have gone wrong. The return of a transport ship ferrying supplies to the researchers is weeks overdue. What is your connection to the facility or to the faction overseeing it?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.9a8d60a781dcdd14]{Chiton drone pack}</li>\n<li>@Compendium[foundry-ironsworn.starforgedencounters.e878900cfbd469a2]{Chiton queen}</li>\n</ul>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:starforged/sample_npcs/chiton"
+        }
+      },
+      "_key": "!actors.items!95667d6a269e99a0.b1369309edbce740"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/chiton"
+    }
+  },
+  "_key": "!actors!95667d6a269e99a0"
+}

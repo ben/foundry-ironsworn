@@ -1,0 +1,75 @@
+{
+  "_id": "066246ea4ea35d4c",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Sea_Cave",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/sea_cave"
+    }
+  },
+  "name": "Sea Cave",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        16
+      ],
+      "text": "Caves",
+      "_key": "!tables.results!066246ea4ea35d4c.2a425c3d87b3cd90",
+      "_id": "2a425c3d87b3cd90"
+    },
+    {
+      "range": [
+        17,
+        32
+      ],
+      "text": "Channel",
+      "_key": "!tables.results!066246ea4ea35d4c.d95bab1f73a98731",
+      "_id": "d95bab1f73a98731"
+    },
+    {
+      "range": [
+        33,
+        49
+      ],
+      "text": "Cove",
+      "_key": "!tables.results!066246ea4ea35d4c.6aa22281774f8dc8",
+      "_id": "6aa22281774f8dc8"
+    },
+    {
+      "range": [
+        50,
+        66
+      ],
+      "text": "Hollow",
+      "_key": "!tables.results!066246ea4ea35d4c.7ccc2638c78087e7",
+      "_id": "7ccc2638c78087e7"
+    },
+    {
+      "range": [
+        67,
+        83
+      ],
+      "text": "Pools",
+      "_key": "!tables.results!066246ea4ea35d4c.48e690500db19e12",
+      "_id": "48e690500db19e12"
+    },
+    {
+      "range": [
+        84,
+        100
+      ],
+      "text": "Gouge",
+      "_key": "!tables.results!066246ea4ea35d4c.6375818751982897",
+      "_id": "6375818751982897"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 211,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!066246ea4ea35d4c"
+}

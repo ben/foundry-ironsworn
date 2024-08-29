@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Operations/Feature",
-      "category": "Starforged/Oracles/Derelicts/Operations"
+      "category": "Starforged/Oracles/Derelicts/Operations",
+      "dsid": "oracle_rollable:starforged/derelict/operations/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Automated warning",
-      "_id": "228e0cb277822cb9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.228e0cb277822cb9"
+      "_key": "!tables.results!26c2c4c80bcc63d7.203bfda9f69ae037",
+      "_id": "203bfda9f69ae037"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Buckled blast doors",
-      "_id": "150aeb7b0f14f18d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.150aeb7b0f14f18d"
+      "_key": "!tables.results!26c2c4c80bcc63d7.f9902ccb6d43672d",
+      "_id": "f9902ccb6d43672d"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Control terminal",
-      "_id": "9c85e3a65bc966fb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.9c85e3a65bc966fb"
+      "_key": "!tables.results!26c2c4c80bcc63d7.231a93fb914925aa",
+      "_id": "231a93fb914925aa"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Emergency lighting",
-      "_id": "2aa738dd9d78f6bd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.2aa738dd9d78f6bd"
+      "_key": "!tables.results!26c2c4c80bcc63d7.12ddcdca613bb520",
+      "_id": "12ddcdca613bb520"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "EV suit storage",
-      "_id": "a4bf3498b4eb4fef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.a4bf3498b4eb4fef"
+      "_key": "!tables.results!26c2c4c80bcc63d7.504e2adfa72ec200",
+      "_id": "504e2adfa72ec200"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Hissing comms channel",
-      "_id": "cbe5879492c8d3ec",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.cbe5879492c8d3ec"
+      "_key": "!tables.results!26c2c4c80bcc63d7.82cb9f1ee63ab3b7",
+      "_id": "82cb9f1ee63ab3b7"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Intricate control panels",
-      "_id": "c50191fdf85da156",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.c50191fdf85da156"
+      "_key": "!tables.results!26c2c4c80bcc63d7.65bbc61a4b5e3227",
+      "_id": "65bbc61a4b5e3227"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Map of the site",
-      "_id": "cd5e5f28a04ea212",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.cd5e5f28a04ea212"
+      "_key": "!tables.results!26c2c4c80bcc63d7.11d5438d5317b6a9",
+      "_id": "11d5438d5317b6a9"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Recorded message",
-      "_id": "b885dee983df08af",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.b885dee983df08af"
+      "_key": "!tables.results!26c2c4c80bcc63d7.a4b79c8c3cb525f9",
+      "_id": "a4b79c8c3cb525f9"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Video surveillance monitors",
-      "_id": "5b490a2f0231c5c6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.5b490a2f0231c5c6"
+      "_key": "!tables.results!26c2c4c80bcc63d7.c4e6b066770b67b0",
+      "_id": "c4e6b066770b67b0"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         88
       ],
       "text": "Written logs",
-      "_id": "50eef0aed7356c07",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.50eef0aed7356c07"
+      "_key": "!tables.results!26c2c4c80bcc63d7.8942badbd19c8507",
+      "_id": "8942badbd19c8507"
     },
     {
       "range": [
         89,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "940903146b656496",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!26c2c4c80bcc63d7.940903146b656496"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!26c2c4c80bcc63d7.0d61098aba3dd1bc",
+      "_id": "0d61098aba3dd1bc"
     }
   ],
   "folder": "44fbf1f6c622b0b2",
   "sort": 357,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!26c2c4c80bcc63d7"
 }

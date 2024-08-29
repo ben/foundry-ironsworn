@@ -1,0 +1,191 @@
+{
+  "_id": "e78670e6281b8935",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/getting_underway/take_command",
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/take_command/crew"
+    }
+  },
+  "name": "Crew Characteristics",
+  "description": "<p>Envision the makeup of the ship’s crew, using the table below for inspiration. Rolling for a result can inspire details for your own background and potential quests—or it may put you at odds with a crew that is contrary to your nature and goals.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Eclectic mix of all sorts of folk",
+      "_key": "!tables.results!e78670e6281b8935.3620fe255759b313",
+      "_id": "3620fe255759b313"
+    },
+    {
+      "range": [
+        9,
+        14
+      ],
+      "text": "Adventurers and trailblazers, seeking the far horizon",
+      "_key": "!tables.results!e78670e6281b8935.5eee46397192c359",
+      "_id": "5eee46397192c359"
+    },
+    {
+      "range": [
+        15,
+        18
+      ],
+      "text": "Disciplined military force, doing their duty",
+      "_key": "!tables.results!e78670e6281b8935.9979bed8e59318c0",
+      "_id": "9979bed8e59318c0"
+    },
+    {
+      "range": [
+        19,
+        22
+      ],
+      "text": "Experienced mariners, lending an able hand",
+      "_key": "!tables.results!e78670e6281b8935.a138263e857801dc",
+      "_id": "a138263e857801dc"
+    },
+    {
+      "range": [
+        23,
+        26
+      ],
+      "text": "Glory hunters, looking to make a mark",
+      "_key": "!tables.results!e78670e6281b8935.f8c63262784731eb",
+      "_id": "f8c63262784731eb"
+    },
+    {
+      "range": [
+        27,
+        32
+      ],
+      "text": "Kin of a seafaring people, honoring traditions",
+      "_key": "!tables.results!e78670e6281b8935.f1ab8214edb25229",
+      "_id": "f1ab8214edb25229"
+    },
+    {
+      "range": [
+        33,
+        38
+      ],
+      "text": "Marauders and brigands, taking their share of the spoils",
+      "_key": "!tables.results!e78670e6281b8935.b15bc14fd856cdac",
+      "_id": "b15bc14fd856cdac"
+    },
+    {
+      "range": [
+        39,
+        44
+      ],
+      "text": "Novice mariners, undertaking their first adventure",
+      "_key": "!tables.results!e78670e6281b8935.bc05268bd6953df1",
+      "_id": "bc05268bd6953df1"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Old salts brought out of retirement, undertaking a final adventure",
+      "_key": "!tables.results!e78670e6281b8935.a73884d6d416af77",
+      "_id": "a73884d6d416af77"
+    },
+    {
+      "range": [
+        49,
+        54
+      ],
+      "text": "Outcasts and exiles, bound by their differences",
+      "_key": "!tables.results!e78670e6281b8935.28a75a296d8ab734",
+      "_id": "28a75a296d8ab734"
+    },
+    {
+      "range": [
+        55,
+        60
+      ],
+      "text": "Rebels, fighting for freedom",
+      "_key": "!tables.results!e78670e6281b8935.4149ebc3b302d255",
+      "_id": "4149ebc3b302d255"
+    },
+    {
+      "range": [
+        61,
+        66
+      ],
+      "text": "Refugees from a faraway land, finding a new home",
+      "_key": "!tables.results!e78670e6281b8935.dccbfc5ea973e568",
+      "_id": "dccbfc5ea973e568"
+    },
+    {
+      "range": [
+        67,
+        70
+      ],
+      "text": "Religious zealots, serving their god",
+      "_key": "!tables.results!e78670e6281b8935.7fc3dd2c22724aaf",
+      "_id": "7fc3dd2c22724aaf"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Scoundrels and spies, always watching",
+      "_key": "!tables.results!e78670e6281b8935.40f8d3db13d1a075",
+      "_id": "40f8d3db13d1a075"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Survivors of a horrible cataclysm, preserving what remains",
+      "_key": "!tables.results!e78670e6281b8935.b014bcc7834d84db",
+      "_id": "b014bcc7834d84db"
+    },
+    {
+      "range": [
+        79,
+        82
+      ],
+      "text": "Survivors of a terrible attack, seeking revenge",
+      "_key": "!tables.results!e78670e6281b8935.3ac3651625c46bc2",
+      "_id": "3ac3651625c46bc2"
+    },
+    {
+      "range": [
+        83,
+        86
+      ],
+      "text": "Turncoat imperials, sworn against former compatriots",
+      "_key": "!tables.results!e78670e6281b8935.5ffbb83e4ce6e2c3",
+      "_id": "5ffbb83e4ce6e2c3"
+    },
+    {
+      "range": [
+        87,
+        90
+      ],
+      "text": "Unprincipled mercenaries, earning blood money",
+      "_key": "!tables.results!e78670e6281b8935.a39986b131c1e4a6",
+      "_id": "a39986b131c1e4a6"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice; these groups are at odds",
+      "_key": "!tables.results!e78670e6281b8935.3f57e7bef8c96b61",
+      "_id": "3f57e7bef8c96b61"
+    }
+  ],
+  "folder": "73ab87baaf2ebf11",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e78670e6281b8935"
+}

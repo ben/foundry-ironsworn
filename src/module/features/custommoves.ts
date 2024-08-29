@@ -1,147 +1,97 @@
-import type { IMove, IMoveCategory } from 'dataforged'
-import { ISMoveCategories, SFMoveCategories } from '../dataforged/data'
-import type { IronswornItem } from '../item/item'
-import { cachedDocumentsForPack } from './pack-cache'
+import {
+	COMPENDIUM_KEY_MAP,
+	DataswornTree,
+	getPackAndIndexForCompendiumKey
+} from '../datasworn2'
+import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
+import type { Move, MoveCategory } from '@datasworn/core/dist/Datasworn'
 
-export interface MoveCategory {
-	color: string | null
+interface DisplayMoveRuleset {
 	displayName: string
-	moves: Move[]
-	dataforgedCategory?: IMoveCategory
+	categories: DisplayMoveCategory[]
 }
 
-export interface Move {
+export interface DisplayMoveCategory {
 	color: string | null
 	displayName: string
-	moveItem: () => IronswornItem<'sfmove'>
-	dataforgedMove?: IMove
+	moves: DisplayMove[]
+	ds?: MoveCategory
 }
 
-// For some reason, rollupJs mangles this
+export interface DisplayMove {
+	color: string | null
+	displayName: string
+	uuid: string
+	ds?: Move
+}
 
-async function createMoveTree(
-	compendiumName: string,
-	categories: IMoveCategory[]
-): Promise<MoveCategory[]> {
-	const ret = [] as MoveCategory[]
-
-	// Make sure compendium is loaded
-	const compendiumMoves = await cachedDocumentsForPack(compendiumName)
-
-	// Construct the base tree
-	for (const category of categories) {
-		ret.push(
-			walkCategory(category, compendiumMoves as Array<IronswornItem<'sfmove'>>)
-		)
+const INDEXES: Record<string, any> = {}
+async function ensureIndex(rsKey: DataswornRulesetKey) {
+	const compendiumKey = COMPENDIUM_KEY_MAP.move[rsKey]
+	if (INDEXES[compendiumKey] == null) {
+		const { index } = await getPackAndIndexForCompendiumKey(rsKey, 'move')
+		INDEXES[compendiumKey] = index
 	}
-
-	// Add custom moves from well-known folder
-	await augmentWithFolderContents(ret)
-
-	// Fire the hook and allow extensions to modify the list
-	await Hooks.call('ironswornMoves', ret)
-
-	return ret
 }
 
-export async function createIronswornMoveTree(): Promise<MoveCategory[]> {
-	return await createMoveTree(
-		'foundry-ironsworn.ironswornmoves',
-		ISMoveCategories
-	)
+export async function createMoveTreeForRuleset(
+	rsKey: DataswornRulesetKey
+): Promise<DisplayMoveRuleset> {
+	await ensureIndex(rsKey)
+	const rs = DataswornTree.get(rsKey)
+	const index = INDEXES[COMPENDIUM_KEY_MAP.move[rsKey]]
+	const categories = Object.values(rs?.moves ?? {})
+	return {
+		displayName: game.i18n.localize(`IRONSWORN.RULESETS.${rsKey}`),
+		categories: categories.map((cat) => ({
+			color: cat.color ?? MoveCategoryColor[cat.name] ?? null,
+			displayName: game.i18n.localize(`IRONSWORN.MOVES.${cat.name}`),
+			ds: cat,
+			moves: Object.values(cat.contents).map((move) => {
+				const indexEntry = index.contents.find(
+					(x) => x.flags['foundry-ironsworn']?.dsid === move._id
+				)
+				return {
+					color: move.color ?? null,
+					displayName: move.name,
+					uuid: indexEntry.uuid, // TODO: move.uuid
+					ds: move
+				}
+			})
+		}))
+	}
 }
 
-export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
-	return await createMoveTree(
-		'foundry-ironsworn.starforgedmoves',
-		SFMoveCategories
+export async function createMergedMoveTree(): Promise<DisplayMoveRuleset[]> {
+	// Pre-load compendium indexes
+	await Promise.all(IronswornSettings.enabledRulesets.map(ensureIndex))
+	return await Promise.all(
+		IronswornSettings.enabledRulesets.map(createMoveTreeForRuleset)
 	)
 }
 
 // TODO dataforged has a key for move colours...., but they appear to have changed significantly since the last time i updated them! they'll be fixed for 2.0, but until then, here's a workaround.
 export enum MoveCategoryColor {
-	Adventure = '#206087',
-	Combat = '#818992',
-	Connection = '#4A5791',
+	'Adventure Moves' = '#206087',
+	'Combat Moves' = '#818992',
+	'Connection Moves' = '#4A5791',
 	// non-canonical (ironsworn); uses color from 'Exploration'
-	Delve = '#427FAA',
-	Exploration = '#427FAA',
+	'Delve Moves' = '#427FAA',
+	'Exploration Moves' = '#427FAA',
 	// non-canonical (ironsworn); uses color from 'Legacy'.
-	Failure = '#4F5A69',
-	Fate = '#8F477B',
-	Legacy = '#4F5A69',
-	Quest = '#805A90',
+	'Failure Moves' = '#4F5A69',
+	'Fate Moves' = '#8F477B',
+	'Legacy Moves' = '#4F5A69',
+	'Quest Moves' = '#805A90',
 	// non-canonical (ironsworn); uses color from 'Recover'
-	Rarity = '#488B44',
-	Recover = '#488B44',
+	'Rarity Moves' = '#488B44',
+	'Recover Moves' = '#488B44',
 	// non-canonical (ironsworn); uses color from 'Connection'
-	Relationship = '#4A5791',
+	'Relationship Moves' = '#4A5791',
 	'Scene Challenge' = '#206087',
-	Session = '#3F8C8A',
-	Suffer = '#883529',
+	'Session Moves' = '#3F8C8A',
+	'Suffer Moves' = '#883529',
 	// non-canonical (ironsworn); uses color from 'Session'
-	Threat = '#3F8C8A',
-	Threshold = '#1D1D1B'
-}
-
-function walkCategory(
-	category: IMoveCategory,
-	compendiumMoves: Array<IronswornItem<'sfmove'>>
-): MoveCategory {
-	const newCategory: MoveCategory = {
-		// FIXME: revert to pulling directly from DF when it's fixed in 2.0
-		color: MoveCategoryColor[category.Name] ?? null,
-		displayName: game.i18n.localize(`IRONSWORN.MOVES.${category.Name}`),
-		dataforgedCategory: category,
-		moves: [] as Move[]
-	}
-
-	for (const move of category.Moves) {
-		const moveItem = compendiumMoves?.find((x) => x.system.dfid === move.$id)
-		if (moveItem != null) {
-			newCategory.moves.push({
-				color: category.Display.Color ?? null,
-				dataforgedMove: move,
-				displayName:
-					// TODO: ideally, alternate versions wouldn't have the same move at all! they'd be selectable within the move display. maybe a radio select, or expandable into its own tree? or displayed as a second text?
-					// 'alternate version' gets too long for a single line in many cases, so it gets trimmed
-					// move.Display.Title.replace(/alternate version/i, 'alt') ??
-					moveItem.name as string,
-				moveItem: () => moveItem
-			})
-		} else {
-			console.warn(`Couldn't find item for move ${move.$id}`)
-		}
-	}
-
-	return newCategory
-}
-
-async function augmentWithFolderContents(categories: MoveCategory[]) {
-	const name = game.i18n.localize('IRONSWORN.MOVES.Custom')
-	const folder = (game.items?.directory as any)?.folders.find(
-		(x) => x.name === name
-	) as Folder | undefined
-	if (folder == null || folder.contents.length == 0) return
-
-	// @ts-expect-error Exists only in FVTT v10 API
-	const color = (folder.color ?? null) as string | null
-
-	const customMoves = [] as Move[]
-	for (const moveItem of folder.contents) {
-		if (moveItem.documentName !== 'Item' || !moveItem.assert('sfmove')) continue
-		customMoves.push({
-			color,
-			displayName: moveItem.name ?? '(move)',
-			moveItem: () => moveItem
-		})
-	}
-
-	if (customMoves.length > 0) {
-		categories.push({
-			color,
-			displayName: name,
-			moves: customMoves
-		})
-	}
+	'Threat Moves' = '#3F8C8A',
+	'Threshold Moves' = '#1D1D1B'
 }

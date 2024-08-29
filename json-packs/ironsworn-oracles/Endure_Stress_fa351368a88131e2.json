@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Moves/Endure_Stress",
-      "category": "Ironsworn/Oracles/Moves"
+      "category": "Ironsworn/Moves/Suffer",
+      "dsid": "move.oracle_rollable:classic/suffer/endure_stress.endure_stress"
     }
   },
   "name": "Endure Stress",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "You are overwhelmed. @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation}.",
-      "_id": "28e2da3a0a151b81",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fa351368a88131e2.28e2da3a0a151b81"
+      "_key": "!tables.results!fa351368a88131e2.13947328e745b0a0",
+      "_id": "13947328e745b0a0"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         25
       ],
       "text": "You give up. @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow} (if possible, one relevant to your current crisis).",
-      "_id": "3c23102ef0bd85d4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fa351368a88131e2.3c23102ef0bd85d4"
+      "_key": "!tables.results!fa351368a88131e2.56d5750563472c75",
+      "_id": "56d5750563472c75"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         50
       ],
       "text": "You give in to a fear or compulsion, and act against your better instincts.",
-      "_id": "05dfb3b5f5074980",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fa351368a88131e2.05dfb3b5f5074980"
+      "_key": "!tables.results!fa351368a88131e2.3b491c70e69fff6d",
+      "_id": "3b491c70e69fff6d"
     },
     {
       "range": [
@@ -60,29 +46,12 @@
         100
       ],
       "text": "You persevere.",
-      "_id": "bd54f9d585bff9cb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fa351368a88131e2.bd54f9d585bff9cb"
+      "_key": "!tables.results!fa351368a88131e2.29f3fd8fa094cb86",
+      "_id": "29f3fd8fa094cb86"
     }
   ],
-  "folder": "06986fcc791b64bc",
-  "sort": 93,
+  "folder": "88ca8e80b03ed3dd",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!fa351368a88131e2"
 }

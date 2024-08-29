@@ -1,0 +1,53 @@
+{
+  "name": "Worldbreaker brood",
+  "img": "icons/creatures/abilities/mouth-teeth-rows-white.webp",
+  "type": "foe",
+  "_id": "0ef21986d5d0263e",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Worldbreaker brood",
+    "texture": {
+      "src": "icons/creatures/abilities/mouth-teeth-rows-white.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "44f0fb091a831e6c",
+      "type": "progress",
+      "name": "Worldbreaker brood",
+      "img": "icons/creatures/abilities/mouth-teeth-rows-white.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Titanic worm-like creatures</p>\n<p class=\"nogrow\">Gaping maw with rotating, earth-grinding teeth</p>\n<p class=\"nogrow\">Thunderous cry</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Lurk within carved depths</p>\n<p class=\"nogrow\">Shape the landscape</p>\n<p class=\"nogrow\">Endlessly pursue prey</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Detect prey through vibrations</p>\n<p class=\"nogrow\">Shatter stone and steel</p>\n</div>\n</div>\n\n<p>The young of the worldbreakers are a fraction of the size of their older counterparts, yet still dwarf most humans, and boast a voracious appetite. Unlike their solitary parents, immature worms hunt in small packs, working together to burrow beneath easy prey.</p>\n\n<blockquote>Quest Starter: <p>On a lush world at the edge of the Terminus, a titanic worldbreaker worm holds sway. One faction seeks to destroy the worm so that the riches of this place can be harvested. Another swears to protect it. On which side do you fall?</p></blockquote>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc.variant:starforged/sample_npcs/worldbreaker.worldbreaker_brood"
+        }
+      },
+      "_key": "!actors.items!0ef21986d5d0263e.44f0fb091a831e6c"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/worldbreaker.worldbreaker_brood"
+    }
+  },
+  "_key": "!actors!0ef21986d5d0263e"
+}

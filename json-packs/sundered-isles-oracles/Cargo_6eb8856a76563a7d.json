@@ -1,0 +1,416 @@
+{
+  "_id": "6eb8856a76563a7d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/cargo"
+    }
+  },
+  "name": "Cargo",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Ammunition",
+      "_key": "!tables.results!6eb8856a76563a7d.574a015fccf288fc",
+      "_id": "574a015fccf288fc"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Artisan goods",
+      "_key": "!tables.results!6eb8856a76563a7d.4e14c878447f838b",
+      "_id": "4e14c878447f838b"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Artwork or antiques",
+      "_key": "!tables.results!6eb8856a76563a7d.8e33f4009490ace0",
+      "_id": "8e33f4009490ace0"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Beast bones",
+      "_key": "!tables.results!6eb8856a76563a7d.699a8722200a8aa3",
+      "_id": "699a8722200a8aa3"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Books or documents",
+      "_key": "!tables.results!6eb8856a76563a7d.c79859f25b20e48b",
+      "_id": "c79859f25b20e48b"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Cheese",
+      "_key": "!tables.results!6eb8856a76563a7d.88fa42931e8566ee",
+      "_id": "88fa42931e8566ee"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Cocoa",
+      "_key": "!tables.results!6eb8856a76563a7d.c482895685c183c3",
+      "_id": "c482895685c183c3"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Coffee",
+      "_key": "!tables.results!6eb8856a76563a7d.aef1472dd5d2a034",
+      "_id": "aef1472dd5d2a034"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Dyes",
+      "_key": "!tables.results!6eb8856a76563a7d.64c5de68bc99aece",
+      "_id": "64c5de68bc99aece"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Fish",
+      "_key": "!tables.results!6eb8856a76563a7d.450a2648d5373fa6",
+      "_id": "450a2648d5373fa6"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Fresh water",
+      "_key": "!tables.results!6eb8856a76563a7d.16fdc5c1788386f6",
+      "_id": "16fdc5c1788386f6"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Fruit or vegetables",
+      "_key": "!tables.results!6eb8856a76563a7d.a821eca19208150d",
+      "_id": "a821eca19208150d"
+    },
+    {
+      "range": [
+        27,
+        29
+      ],
+      "text": "Grain or rice",
+      "_key": "!tables.results!6eb8856a76563a7d.52057b56b6de5af3",
+      "_id": "52057b56b6de5af3"
+    },
+    {
+      "range": [
+        30,
+        32
+      ],
+      "text": "Gunpowder",
+      "_key": "!tables.results!6eb8856a76563a7d.16104eae82f71e03",
+      "_id": "16104eae82f71e03"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Hides or furs",
+      "_key": "!tables.results!6eb8856a76563a7d.e697061005b7d86d",
+      "_id": "e697061005b7d86d"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Hunting trophies",
+      "_key": "!tables.results!6eb8856a76563a7d.ae0d4042fb061df8",
+      "_id": "ae0d4042fb061df8"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Illicit drugs",
+      "_key": "!tables.results!6eb8856a76563a7d.90e25db25c7d1b0a",
+      "_id": "90e25db25c7d1b0a"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Livestock",
+      "_key": "!tables.results!6eb8856a76563a7d.e09749e1e1dc7038",
+      "_id": "e09749e1e1dc7038"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Logs and charts",
+      "_key": "!tables.results!6eb8856a76563a7d.09d22ac2cce3014f",
+      "_id": "09d22ac2cce3014f"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Lumber or timber",
+      "_key": "!tables.results!6eb8856a76563a7d.6476c20e89106304",
+      "_id": "6476c20e89106304"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Machinery",
+      "_key": "!tables.results!6eb8856a76563a7d.c46b82abc233ff25",
+      "_id": "c46b82abc233ff25"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Mead",
+      "_key": "!tables.results!6eb8856a76563a7d.d392f0aedb03a0c2",
+      "_id": "d392f0aedb03a0c2"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Meat",
+      "_key": "!tables.results!6eb8856a76563a7d.f7d1b28170898017",
+      "_id": "f7d1b28170898017"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Medical supplies",
+      "_key": "!tables.results!6eb8856a76563a7d.5eb005a7302028da",
+      "_id": "5eb005a7302028da"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Medicinal herbs",
+      "_key": "!tables.results!6eb8856a76563a7d.1052fb247e0a4bd1",
+      "_id": "1052fb247e0a4bd1"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Metals",
+      "_key": "!tables.results!6eb8856a76563a7d.47f530f6171f8879",
+      "_id": "47f530f6171f8879"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Mining equipment",
+      "_key": "!tables.results!6eb8856a76563a7d.db9b87271b35f9a5",
+      "_id": "db9b87271b35f9a5"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Perfume",
+      "_key": "!tables.results!6eb8856a76563a7d.022a09abe89de212",
+      "_id": "022a09abe89de212"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Raw ore",
+      "_key": "!tables.results!6eb8856a76563a7d.daedaaa385278202",
+      "_id": "daedaaa385278202"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Rope or hemp",
+      "_key": "!tables.results!6eb8856a76563a7d.2f2dbf3c6a623946",
+      "_id": "2f2dbf3c6a623946"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Rum or grog",
+      "_key": "!tables.results!6eb8856a76563a7d.80996fecb13bc36e",
+      "_id": "80996fecb13bc36e"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "Sailcloth",
+      "_key": "!tables.results!6eb8856a76563a7d.cadac6bbab77d565",
+      "_id": "cadac6bbab77d565"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Scavenged ship parts",
+      "_key": "!tables.results!6eb8856a76563a7d.57632eba3e40eb19",
+      "_id": "57632eba3e40eb19"
+    },
+    {
+      "range": [
+        74,
+        75
+      ],
+      "text": "Spices",
+      "_key": "!tables.results!6eb8856a76563a7d.8fb637b241d26f6c",
+      "_id": "8fb637b241d26f6c"
+    },
+    {
+      "range": [
+        76,
+        77
+      ],
+      "text": "Sugar or molasses",
+      "_key": "!tables.results!6eb8856a76563a7d.e945d14b768b3095",
+      "_id": "e945d14b768b3095"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Tea",
+      "_key": "!tables.results!6eb8856a76563a7d.dd3f3eb07da9f596",
+      "_id": "dd3f3eb07da9f596"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Textiles",
+      "_key": "!tables.results!6eb8856a76563a7d.5e936cb28b4b2900",
+      "_id": "5e936cb28b4b2900"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Tobacco",
+      "_key": "!tables.results!6eb8856a76563a7d.c2e02f6cd13e3e6c",
+      "_id": "c2e02f6cd13e3e6c"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Weapons",
+      "_key": "!tables.results!6eb8856a76563a7d.88135908c3598291",
+      "_id": "88135908c3598291"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Whale oil",
+      "_key": "!tables.results!6eb8856a76563a7d.500af5b95b47634f",
+      "_id": "500af5b95b47634f"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Wild animals",
+      "_key": "!tables.results!6eb8856a76563a7d.32db44e2098dc845",
+      "_id": "32db44e2098dc845"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Wine",
+      "_key": "!tables.results!6eb8856a76563a7d.1c7b6aeaf5150789",
+      "_id": "1c7b6aeaf5150789"
+    },
+    {
+      "range": [
+        95,
+        98
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!6eb8856a76563a7d.71e9f40d11b075c4",
+      "_id": "71e9f40d11b075c4"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/treasure\">\n    <i class=\"fa fa-caret-right\"></i> Treasure\n</a></p>",
+      "_key": "!tables.results!6eb8856a76563a7d.1aa6476bd630947a",
+      "_id": "1aa6476bd630947a"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 139,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6eb8856a76563a7d"
+}

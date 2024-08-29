@@ -1,0 +1,16 @@
+{
+  "name": "Other Names",
+  "description": "Use this oracle to generate names for other firstborn characters.",
+  "type": "RollTable",
+  "_id": "7c9db0bc5d87be12",
+  "sort": 187,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Name/Other",
+      "dsid": "oracle_collection:classic/name/other"
+    }
+  },
+  "folder": "0ea3b5b59a92d1f2",
+  "sorting": "a",
+  "_key": "!folders!7c9db0bc5d87be12"
+}

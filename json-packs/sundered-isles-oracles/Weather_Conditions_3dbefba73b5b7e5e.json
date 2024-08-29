@@ -1,0 +1,15 @@
+{
+  "name": "Weather Conditions",
+  "description": "",
+  "type": "RollTable",
+  "_id": "3dbefba73b5b7e5e",
+  "sort": 130,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/weather/conditions"
+    }
+  },
+  "folder": "14b8249cc0931287",
+  "sorting": "a",
+  "_key": "!folders!3dbefba73b5b7e5e"
+}

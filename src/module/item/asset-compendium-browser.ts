@@ -2,11 +2,8 @@ import AssetCompendiumBrowserVue from '../vue/asset-compendium-browser.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 
 export class AssetCompendiumBrowser extends VueAppMixin(Application) {
-	constructor(
-		protected toolset: 'starforged' | 'ironsworn' | 'sunderedisles',
-		options?: Partial<ApplicationOptions>
-	) {
-		super(options)
+	constructor() {
+		super({})
 	}
 
 	static get defaultOptions() {
@@ -17,14 +14,5 @@ export class AssetCompendiumBrowser extends VueAppMixin(Application) {
 			resizable: true,
 			rootComponent: AssetCompendiumBrowserVue
 		}) as any
-	}
-
-	getData(
-		options?: Partial<ApplicationOptions> | undefined
-	): MaybePromise<object> {
-		return {
-			...super.getData(),
-			toolset: this.toolset
-		}
 	}
 }

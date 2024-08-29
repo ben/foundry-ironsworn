@@ -1,0 +1,15 @@
+{
+  "name": "Mysticism",
+  "description": "",
+  "type": "RollTable",
+  "_id": "c5b37bda9ab33708",
+  "sort": 184,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/name/themes/mysticism"
+    }
+  },
+  "folder": "1aa3b728667629f3",
+  "sorting": "a",
+  "_key": "!folders!c5b37bda9ab33708"
+}

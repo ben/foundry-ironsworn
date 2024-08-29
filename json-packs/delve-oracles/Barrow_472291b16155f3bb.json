@@ -1,0 +1,75 @@
+{
+  "_id": "472291b16155f3bb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Barrow",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/barrow"
+    }
+  },
+  "name": "Barrow",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        16
+      ],
+      "text": "Sepulcher",
+      "_key": "!tables.results!472291b16155f3bb.505fb0f744e3fb8b",
+      "_id": "505fb0f744e3fb8b"
+    },
+    {
+      "range": [
+        17,
+        32
+      ],
+      "text": "Grave",
+      "_key": "!tables.results!472291b16155f3bb.caac99ceb957cfac",
+      "_id": "caac99ceb957cfac"
+    },
+    {
+      "range": [
+        33,
+        49
+      ],
+      "text": "Crypt",
+      "_key": "!tables.results!472291b16155f3bb.9be5f6097626b551",
+      "_id": "9be5f6097626b551"
+    },
+    {
+      "range": [
+        50,
+        66
+      ],
+      "text": "Mound",
+      "_key": "!tables.results!472291b16155f3bb.57ae39a1362db2b8",
+      "_id": "57ae39a1362db2b8"
+    },
+    {
+      "range": [
+        67,
+        83
+      ],
+      "text": "Tomb",
+      "_key": "!tables.results!472291b16155f3bb.9aba597c32ac71a3",
+      "_id": "9aba597c32ac71a3"
+    },
+    {
+      "range": [
+        84,
+        100
+      ],
+      "text": "Barrow",
+      "_key": "!tables.results!472291b16155f3bb.c300df022d041292",
+      "_id": "c300df022d041292"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 210,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!472291b16155f3bb"
+}

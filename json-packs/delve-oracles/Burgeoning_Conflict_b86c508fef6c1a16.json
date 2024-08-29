@@ -1,0 +1,111 @@
+{
+  "_id": "b86c508fef6c1a16",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Burgeoning_Conflict",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/burgeoning_conflict"
+    }
+  },
+  "name": "Burgeoning Conflict",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Allow warmongers to gain influence",
+      "_key": "!tables.results!b86c508fef6c1a16.d73636c64b663e1e",
+      "_id": "d73636c64b663e1e"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Break a treaty",
+      "_key": "!tables.results!b86c508fef6c1a16.09a01b51b4a39c9b",
+      "_id": "09a01b51b4a39c9b"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Force a hasty decision",
+      "_key": "!tables.results!b86c508fef6c1a16.52c9629790c65428",
+      "_id": "52c9629790c65428"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Deepen suspicions",
+      "_key": "!tables.results!b86c508fef6c1a16.f1baf938ff666c08",
+      "_id": "f1baf938ff666c08"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Trigger a confrontation",
+      "_key": "!tables.results!b86c508fef6c1a16.f944585a951586db",
+      "_id": "f944585a951586db"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Subvert a potential accord",
+      "_key": "!tables.results!b86c508fef6c1a16.d6756adc506db00f",
+      "_id": "d6756adc506db00f"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Isolate the antagonists",
+      "_key": "!tables.results!b86c508fef6c1a16.5cd17170c7315966",
+      "_id": "5cd17170c7315966"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Draw new battle lines",
+      "_key": "!tables.results!b86c508fef6c1a16.3b2ad3c248f5c50e",
+      "_id": "3b2ad3c248f5c50e"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Reveal an unexpected aspect of the dispute",
+      "_key": "!tables.results!b86c508fef6c1a16.f2f7e6272b801338",
+      "_id": "f2f7e6272b801338"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Introduce a new person or faction to complicate the situation",
+      "_key": "!tables.results!b86c508fef6c1a16.5322e38f3a40c7b0",
+      "_id": "5322e38f3a40c7b0"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 221,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b86c508fef6c1a16"
+}

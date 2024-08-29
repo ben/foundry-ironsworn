@@ -1,0 +1,47 @@
+{
+  "_id": "f9872156f04012f4",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/nearby_islands",
+      "dsid": "oracle_rollable:sundered_isles/island/nearby_islands/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        50
+      ],
+      "text": "Isolated",
+      "_key": "!tables.results!f9872156f04012f4.84f7558376f23166",
+      "_id": "84f7558376f23166"
+    },
+    {
+      "range": [
+        51,
+        80
+      ],
+      "text": "Island pair",
+      "_key": "!tables.results!f9872156f04012f4.09f68bc7e4dbe42a",
+      "_id": "09f68bc7e4dbe42a"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Island group",
+      "_key": "!tables.results!f9872156f04012f4.60770ab53b40749d",
+      "_id": "60770ab53b40749d"
+    }
+  ],
+  "folder": "4ee166f5068a14b6",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f9872156f04012f4"
+}

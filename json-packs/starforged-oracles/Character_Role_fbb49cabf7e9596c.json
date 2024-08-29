@@ -1,0 +1,453 @@
+{
+  "_id": "fbb49cabf7e9596c",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Characters/Role",
+      "category": "Starforged/Oracles/Characters",
+      "dsid": "oracle_rollable:starforged/character/role"
+    }
+  },
+  "name": "Character Role",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Agent",
+      "_key": "!tables.results!fbb49cabf7e9596c.87949ea1d5004aa8",
+      "_id": "87949ea1d5004aa8"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "AI",
+      "_key": "!tables.results!fbb49cabf7e9596c.f805a938d8c33419",
+      "_id": "f805a938d8c33419"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Artisan",
+      "_key": "!tables.results!fbb49cabf7e9596c.30b7491fc6eb271c",
+      "_id": "30b7491fc6eb271c"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Assassin",
+      "_key": "!tables.results!fbb49cabf7e9596c.186e4c782393b06b",
+      "_id": "186e4c782393b06b"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Bounty Hunter",
+      "_key": "!tables.results!fbb49cabf7e9596c.c379e4193abe9a57",
+      "_id": "c379e4193abe9a57"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Courier",
+      "_key": "!tables.results!fbb49cabf7e9596c.3aefe9c17ac8e3b5",
+      "_id": "3aefe9c17ac8e3b5"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Crew",
+      "_key": "!tables.results!fbb49cabf7e9596c.7fdf04506aa01995",
+      "_id": "7fdf04506aa01995"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Criminal",
+      "_key": "!tables.results!fbb49cabf7e9596c.8dd4a1e6a1695737",
+      "_id": "8dd4a1e6a1695737"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Cultist",
+      "_key": "!tables.results!fbb49cabf7e9596c.34e20e387bd14038",
+      "_id": "34e20e387bd14038"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Diplomat",
+      "_key": "!tables.results!fbb49cabf7e9596c.b22b5f49113a9f7c",
+      "_id": "b22b5f49113a9f7c"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Engineer",
+      "_key": "!tables.results!fbb49cabf7e9596c.183779207161e754",
+      "_id": "183779207161e754"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Entertainer",
+      "_key": "!tables.results!fbb49cabf7e9596c.42efe0323ec2fce5",
+      "_id": "42efe0323ec2fce5"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Explorer",
+      "_key": "!tables.results!fbb49cabf7e9596c.71f31ced8d74b834",
+      "_id": "71f31ced8d74b834"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Farmer",
+      "_key": "!tables.results!fbb49cabf7e9596c.08d157f54c791d59",
+      "_id": "08d157f54c791d59"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Fugitive",
+      "_key": "!tables.results!fbb49cabf7e9596c.d6a65d032b0eb055",
+      "_id": "d6a65d032b0eb055"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Guard",
+      "_key": "!tables.results!fbb49cabf7e9596c.3c15dbbbf71e455f",
+      "_id": "3c15dbbbf71e455f"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Guide",
+      "_key": "!tables.results!fbb49cabf7e9596c.e90767b65551e52c",
+      "_id": "e90767b65551e52c"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Healer",
+      "_key": "!tables.results!fbb49cabf7e9596c.99d964739abfe9d1",
+      "_id": "99d964739abfe9d1"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Historian",
+      "_key": "!tables.results!fbb49cabf7e9596c.eb82e0096ea8e91d",
+      "_id": "eb82e0096ea8e91d"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Hunter",
+      "_key": "!tables.results!fbb49cabf7e9596c.7d33c68b7117cece",
+      "_id": "7d33c68b7117cece"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Investigator",
+      "_key": "!tables.results!fbb49cabf7e9596c.d35de1cef47cbd69",
+      "_id": "d35de1cef47cbd69"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Laborer",
+      "_key": "!tables.results!fbb49cabf7e9596c.f49a0977060d6d34",
+      "_id": "f49a0977060d6d34"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Lawkeeper",
+      "_key": "!tables.results!fbb49cabf7e9596c.bd5328038920d988",
+      "_id": "bd5328038920d988"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Leader",
+      "_key": "!tables.results!fbb49cabf7e9596c.56cb19f5cb3c6b2f",
+      "_id": "56cb19f5cb3c6b2f"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Mercenary",
+      "_key": "!tables.results!fbb49cabf7e9596c.d9cc8e65b0b72751",
+      "_id": "d9cc8e65b0b72751"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Merchant",
+      "_key": "!tables.results!fbb49cabf7e9596c.ad394a5c46c4b052",
+      "_id": "ad394a5c46c4b052"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Miner",
+      "_key": "!tables.results!fbb49cabf7e9596c.0f4f94d6d6d3c6c1",
+      "_id": "0f4f94d6d6d3c6c1"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Mystic",
+      "_key": "!tables.results!fbb49cabf7e9596c.35262371b7d6782f",
+      "_id": "35262371b7d6782f"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Navigator",
+      "_key": "!tables.results!fbb49cabf7e9596c.8f62b7ca572b5272",
+      "_id": "8f62b7ca572b5272"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Outcast",
+      "_key": "!tables.results!fbb49cabf7e9596c.4b1b4a7f33daf9f6",
+      "_id": "4b1b4a7f33daf9f6"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Pilgrim",
+      "_key": "!tables.results!fbb49cabf7e9596c.ced24d22a65a0bdf",
+      "_id": "ced24d22a65a0bdf"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Pilot",
+      "_key": "!tables.results!fbb49cabf7e9596c.11a5da5acff4d0f6",
+      "_id": "11a5da5acff4d0f6"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Pirate",
+      "_key": "!tables.results!fbb49cabf7e9596c.69e498853f92896d",
+      "_id": "69e498853f92896d"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Preacher",
+      "_key": "!tables.results!fbb49cabf7e9596c.eb2675aeed89fb47",
+      "_id": "eb2675aeed89fb47"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Prophet",
+      "_key": "!tables.results!fbb49cabf7e9596c.b990ac667a25a366",
+      "_id": "b990ac667a25a366"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Raider",
+      "_key": "!tables.results!fbb49cabf7e9596c.37dd58c125c10e11",
+      "_id": "37dd58c125c10e11"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Researcher",
+      "_key": "!tables.results!fbb49cabf7e9596c.4e4da285cf50d6b5",
+      "_id": "4e4da285cf50d6b5"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Scavenger",
+      "_key": "!tables.results!fbb49cabf7e9596c.cd45cade89a7b4c2",
+      "_id": "cd45cade89a7b4c2"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Scholar",
+      "_key": "!tables.results!fbb49cabf7e9596c.e6763ec68bc1e3d7",
+      "_id": "e6763ec68bc1e3d7"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Scout",
+      "_key": "!tables.results!fbb49cabf7e9596c.84336322d2328120",
+      "_id": "84336322d2328120"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Shipwright",
+      "_key": "!tables.results!fbb49cabf7e9596c.8b61a41a02276790",
+      "_id": "8b61a41a02276790"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Smuggler",
+      "_key": "!tables.results!fbb49cabf7e9596c.0abffb966d001daf",
+      "_id": "0abffb966d001daf"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Soldier",
+      "_key": "!tables.results!fbb49cabf7e9596c.1a92075201d0123d",
+      "_id": "1a92075201d0123d"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Spacer",
+      "_key": "!tables.results!fbb49cabf7e9596c.7b2f9f6f4bfdd9df",
+      "_id": "7b2f9f6f4bfdd9df"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Technician",
+      "_key": "!tables.results!fbb49cabf7e9596c.4e436869371d6836",
+      "_id": "4e436869371d6836"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Thief",
+      "_key": "!tables.results!fbb49cabf7e9596c.9985a7d02371d0ab",
+      "_id": "9985a7d02371d0ab"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!fbb49cabf7e9596c.eb243c862792c23a",
+      "_id": "eb243c862792c23a"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!fbb49cabf7e9596c.36af74a5119ac2eb",
+      "_id": "36af74a5119ac2eb"
+    }
+  ],
+  "folder": "dfc71f2bbd43cfc1",
+  "sort": 331,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fbb49cabf7e9596c"
+}

@@ -1,22 +1,16 @@
 {
   "name": "Medical",
-  "_id": "1a41c444d69ea97d",
+  "description": "",
   "type": "RollTable",
+  "_id": "1a41c444d69ea97d",
   "sort": 356,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Derelicts/Medical"
+      "dfid": "Starforged/Oracles/Derelicts/Medical",
+      "dsid": "oracle_collection:starforged/derelict/medical"
     }
   },
   "folder": "fd19a02fbd5f71e6",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!1a41c444d69ea97d"
 }

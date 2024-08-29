@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Space/Sector_Name/Suffix",
-      "category": "Starforged/Oracles/Space"
+      "category": "Starforged/Oracles/Space/Sector_Name",
+      "dsid": "oracle_rollable:starforged/space/sector_name/suffix"
     }
   },
   "name": "Suffix",
   "description": "<p>To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         2
       ],
       "text": "Abyss",
-      "_id": "532cbb3601f5f18f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.532cbb3601f5f18f"
+      "_key": "!tables.results!0b2b7f507f8901cc.f5600d0bef9907c8",
+      "_id": "f5600d0bef9907c8"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         4
       ],
       "text": "Anvil",
-      "_id": "2c50a689057e7427",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.2c50a689057e7427"
+      "_key": "!tables.results!0b2b7f507f8901cc.deaac701f7545eef",
+      "_id": "deaac701f7545eef"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         6
       ],
       "text": "Arch",
-      "_id": "81b1cc9ad9777101",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.81b1cc9ad9777101"
+      "_key": "!tables.results!0b2b7f507f8901cc.6f723d9cc9409e25",
+      "_id": "6f723d9cc9409e25"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         8
       ],
       "text": "Breach",
-      "_id": "be61271708b1f27d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.be61271708b1f27d"
+      "_key": "!tables.results!0b2b7f507f8901cc.3b338198f7d53eb6",
+      "_id": "3b338198f7d53eb6"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         10
       ],
       "text": "Chain",
-      "_id": "7dd9e0785be1d217",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.7dd9e0785be1d217"
+      "_key": "!tables.results!0b2b7f507f8901cc.e7057c190cd23b03",
+      "_id": "e7057c190cd23b03"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         12
       ],
       "text": "Channel",
-      "_id": "cc7b55269f065557",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.cc7b55269f065557"
+      "_key": "!tables.results!0b2b7f507f8901cc.69aa8829c294937a",
+      "_id": "69aa8829c294937a"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         14
       ],
       "text": "Chasm",
-      "_id": "66da07cb0d11589b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.66da07cb0d11589b"
+      "_key": "!tables.results!0b2b7f507f8901cc.b58d65c946d4c2bb",
+      "_id": "b58d65c946d4c2bb"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         16
       ],
       "text": "Circlet",
-      "_id": "c36cf14716331da4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.c36cf14716331da4"
+      "_key": "!tables.results!0b2b7f507f8901cc.56a95c164e67aded",
+      "_id": "56a95c164e67aded"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         18
       ],
       "text": "Cluster",
-      "_id": "dd412d9e087663d1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.dd412d9e087663d1"
+      "_key": "!tables.results!0b2b7f507f8901cc.dcdfb9d6f50f663a",
+      "_id": "dcdfb9d6f50f663a"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         20
       ],
       "text": "Crossing",
-      "_id": "95b476ecda28d33a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.95b476ecda28d33a"
+      "_key": "!tables.results!0b2b7f507f8901cc.2bf02bcf43a99b39",
+      "_id": "2bf02bcf43a99b39"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         22
       ],
       "text": "Crown",
-      "_id": "ed2e2bc819fe93f6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.ed2e2bc819fe93f6"
+      "_key": "!tables.results!0b2b7f507f8901cc.6abbbf2c7a1456a4",
+      "_id": "6abbbf2c7a1456a4"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         24
       ],
       "text": "Currents",
-      "_id": "07e806cd1db789f2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.07e806cd1db789f2"
+      "_key": "!tables.results!0b2b7f507f8901cc.a742d418a37a17f4",
+      "_id": "a742d418a37a17f4"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         26
       ],
       "text": "Deep",
-      "_id": "dbec6caade5dcaa5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.dbec6caade5dcaa5"
+      "_key": "!tables.results!0b2b7f507f8901cc.a845b633d828bd79",
+      "_id": "a845b633d828bd79"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         28
       ],
       "text": "Desolation",
-      "_id": "1d706ff9f6773af0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.1d706ff9f6773af0"
+      "_key": "!tables.results!0b2b7f507f8901cc.8e3f2c039ae7a1bb",
+      "_id": "8e3f2c039ae7a1bb"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         30
       ],
       "text": "Drift",
-      "_id": "862dc95fe796ad94",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.862dc95fe796ad94"
+      "_key": "!tables.results!0b2b7f507f8901cc.33f72852eb51a9c0",
+      "_id": "33f72852eb51a9c0"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         32
       ],
       "text": "Flow",
-      "_id": "8c40f4813154278d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.8c40f4813154278d"
+      "_key": "!tables.results!0b2b7f507f8901cc.5c8b6180d875f94f",
+      "_id": "5c8b6180d875f94f"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         34
       ],
       "text": "Flux",
-      "_id": "051466e067fa0597",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.051466e067fa0597"
+      "_key": "!tables.results!0b2b7f507f8901cc.beb9614732b5674a",
+      "_id": "beb9614732b5674a"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         36
       ],
       "text": "Gap",
-      "_id": "18a0806fb6ae629f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.18a0806fb6ae629f"
+      "_key": "!tables.results!0b2b7f507f8901cc.cbc86ddb28db3176",
+      "_id": "cbc86ddb28db3176"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         38
       ],
       "text": "Gate",
-      "_id": "64045f1e54f7c1df",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.64045f1e54f7c1df"
+      "_key": "!tables.results!0b2b7f507f8901cc.3b5159311a7f9b8f",
+      "_id": "3b5159311a7f9b8f"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         40
       ],
       "text": "Gyre",
-      "_id": "4e84a55bcae705b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.4e84a55bcae705b3"
+      "_key": "!tables.results!0b2b7f507f8901cc.be7e08532f3ba9cf",
+      "_id": "be7e08532f3ba9cf"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         42
       ],
       "text": "Heart",
-      "_id": "b496375d748a7e18",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.b496375d748a7e18"
+      "_key": "!tables.results!0b2b7f507f8901cc.fe12d2b8f54e4580",
+      "_id": "fe12d2b8f54e4580"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         44
       ],
       "text": "Helix",
-      "_id": "492bb7b77befabfb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.492bb7b77befabfb"
+      "_key": "!tables.results!0b2b7f507f8901cc.806e40020b08b4a9",
+      "_id": "806e40020b08b4a9"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         46
       ],
       "text": "Juncture",
-      "_id": "391902a982a6d65b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.391902a982a6d65b"
+      "_key": "!tables.results!0b2b7f507f8901cc.b4f1c18bf2f48508",
+      "_id": "b4f1c18bf2f48508"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         48
       ],
       "text": "Limits",
-      "_id": "afc5f4d01cd13e81",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.afc5f4d01cd13e81"
+      "_key": "!tables.results!0b2b7f507f8901cc.06dd763290a3f3a2",
+      "_id": "06dd763290a3f3a2"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         50
       ],
       "text": "Locus",
-      "_id": "66e49e3b635e628f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.66e49e3b635e628f"
+      "_key": "!tables.results!0b2b7f507f8901cc.7ea1d7129a46332e",
+      "_id": "7ea1d7129a46332e"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         52
       ],
       "text": "Maelstrom",
-      "_id": "f9120cde718f6174",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.f9120cde718f6174"
+      "_key": "!tables.results!0b2b7f507f8901cc.b2041c1d6d7ed9cd",
+      "_id": "b2041c1d6d7ed9cd"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         54
       ],
       "text": "Margin",
-      "_id": "d6c8792d869e4c21",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.d6c8792d869e4c21"
+      "_key": "!tables.results!0b2b7f507f8901cc.46709046f8d8e83a",
+      "_id": "46709046f8d8e83a"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         56
       ],
       "text": "Maw",
-      "_id": "c1fc45420cba0341",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.c1fc45420cba0341"
+      "_key": "!tables.results!0b2b7f507f8901cc.65085b1f8372bf08",
+      "_id": "65085b1f8372bf08"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         58
       ],
       "text": "Maze",
-      "_id": "0387b9b8e904184b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.0387b9b8e904184b"
+      "_key": "!tables.results!0b2b7f507f8901cc.99ca4b625adb0a7c",
+      "_id": "99ca4b625adb0a7c"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         60
       ],
       "text": "Nexus",
-      "_id": "a46d4b11fd5f960b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.a46d4b11fd5f960b"
+      "_key": "!tables.results!0b2b7f507f8901cc.2cf09a62367c5213",
+      "_id": "2cf09a62367c5213"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         62
       ],
       "text": "Oasis",
-      "_id": "c4da0c9be2c6cde9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.c4da0c9be2c6cde9"
+      "_key": "!tables.results!0b2b7f507f8901cc.23ed2c7289e69e31",
+      "_id": "23ed2c7289e69e31"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         64
       ],
       "text": "Pass",
-      "_id": "d41cef231991f6b5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.d41cef231991f6b5"
+      "_key": "!tables.results!0b2b7f507f8901cc.001107b1605cdc57",
+      "_id": "001107b1605cdc57"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         66
       ],
       "text": "Pit",
-      "_id": "9d50aaf8a2a93e76",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.9d50aaf8a2a93e76"
+      "_key": "!tables.results!0b2b7f507f8901cc.223d9882e7477ca7",
+      "_id": "223d9882e7477ca7"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         68
       ],
       "text": "Pyre",
-      "_id": "0005892e74f89b34",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.0005892e74f89b34"
+      "_key": "!tables.results!0b2b7f507f8901cc.370f341004afcec2",
+      "_id": "370f341004afcec2"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         70
       ],
       "text": "Reach",
-      "_id": "8bf35acb1a428d25",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.8bf35acb1a428d25"
+      "_key": "!tables.results!0b2b7f507f8901cc.0e862e6a349c237a",
+      "_id": "0e862e6a349c237a"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         72
       ],
       "text": "Rest",
-      "_id": "dcf74e3586b8f55d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.dcf74e3586b8f55d"
+      "_key": "!tables.results!0b2b7f507f8901cc.e9eec575950c3728",
+      "_id": "e9eec575950c3728"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         74
       ],
       "text": "Rift",
-      "_id": "2215c0cd79dde0e0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.2215c0cd79dde0e0"
+      "_key": "!tables.results!0b2b7f507f8901cc.082bf2e4a82fd038",
+      "_id": "082bf2e4a82fd038"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         76
       ],
       "text": "Sanctum",
-      "_id": "7473824e9584a441",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.7473824e9584a441"
+      "_key": "!tables.results!0b2b7f507f8901cc.ec66150b332b8540",
+      "_id": "ec66150b332b8540"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         78
       ],
       "text": "Shallows",
-      "_id": "719ec043df0afff1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.719ec043df0afff1"
+      "_key": "!tables.results!0b2b7f507f8901cc.c88b1ad395bf8958",
+      "_id": "c88b1ad395bf8958"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         80
       ],
       "text": "Shoal",
-      "_id": "48fde0f8da5458ee",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.48fde0f8da5458ee"
+      "_key": "!tables.results!0b2b7f507f8901cc.e41a73fd5b5f69f9",
+      "_id": "e41a73fd5b5f69f9"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         82
       ],
       "text": "Spine",
-      "_id": "c27ef83235cf8554",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.c27ef83235cf8554"
+      "_key": "!tables.results!0b2b7f507f8901cc.183bee987b5d4d52",
+      "_id": "183bee987b5d4d52"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         84
       ],
       "text": "Straits",
-      "_id": "4a1b7a23b19961a5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.4a1b7a23b19961a5"
+      "_key": "!tables.results!0b2b7f507f8901cc.2b2ed3822d67eb22",
+      "_id": "2b2ed3822d67eb22"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         86
       ],
       "text": "Threshold",
-      "_id": "22bab5a267bd9525",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.22bab5a267bd9525"
+      "_key": "!tables.results!0b2b7f507f8901cc.4978db7d9f83dfc9",
+      "_id": "4978db7d9f83dfc9"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         88
       ],
       "text": "Tide",
-      "_id": "11e99677055915c4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.11e99677055915c4"
+      "_key": "!tables.results!0b2b7f507f8901cc.29fcef0879860dc7",
+      "_id": "29fcef0879860dc7"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         90
       ],
       "text": "Verge",
-      "_id": "2090bb045c598313",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.2090bb045c598313"
+      "_key": "!tables.results!0b2b7f507f8901cc.fe397aee74b695df",
+      "_id": "fe397aee74b695df"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         92
       ],
       "text": "Vertex",
-      "_id": "a78f1c55a54c0c2e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.a78f1c55a54c0c2e"
+      "_key": "!tables.results!0b2b7f507f8901cc.194a1b9830b68fe4",
+      "_id": "194a1b9830b68fe4"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         94
       ],
       "text": "Vigil",
-      "_id": "2e02eb67d2f7dad9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.2e02eb67d2f7dad9"
+      "_key": "!tables.results!0b2b7f507f8901cc.1ea3c5947adfe702",
+      "_id": "1ea3c5947adfe702"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         96
       ],
       "text": "Void",
-      "_id": "704038a035209868",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.704038a035209868"
+      "_key": "!tables.results!0b2b7f507f8901cc.cd4d8bd45f5c951d",
+      "_id": "cd4d8bd45f5c951d"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         98
       ],
       "text": "Web",
-      "_id": "e49753b9784ffa34",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.e49753b9784ffa34"
+      "_key": "!tables.results!0b2b7f507f8901cc.3090eb629ad032a1",
+      "_id": "3090eb629ad032a1"
     },
     {
       "range": [
@@ -704,29 +460,12 @@
         100
       ],
       "text": "Zenith",
-      "_id": "04deea1bd775c5c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0b2b7f507f8901cc.04deea1bd775c5c5"
+      "_key": "!tables.results!0b2b7f507f8901cc.bc982ef980893dcd",
+      "_id": "bc982ef980893dcd"
     }
   ],
   "folder": "158580c8f9018e58",
-  "sort": 302,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!0b2b7f507f8901cc"
 }

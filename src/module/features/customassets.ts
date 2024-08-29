@@ -1,96 +1,108 @@
-import type { IAsset, IAssetType } from 'dataforged'
-import { renderLinksInStr, hashLookup } from '../dataforged'
-import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
+import type { Asset, AssetCollection } from '@datasworn/core/dist/Datasworn'
+import { compact } from 'lodash-es'
+import {
+	COMPENDIUM_KEY_MAP,
+	DataswornTree,
+	FoundryIndex,
+	getPackAndIndexForCompendiumKey,
+	IdParser
+} from '../datasworn2'
+import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
 
-export interface DisplayAsset {
-	df?: IAsset
-	foundryItem: () => IronswornItem
+interface DisplayAsset {
+	ds?: Asset
+	assetFetcher: () => Promise<IronswornItem>
 }
 
-export interface DisplayCategory {
-	df?: IAssetType
+interface DisplayAssetCategory {
+	ds?: AssetCollection
 	title: string
 	description?: string
 	expanded: boolean
 	assets: DisplayAsset[]
 }
 
-export async function createIronswornAssetTree(): Promise<DisplayCategory[]> {
-	return await createAssetTree(
-		'foundry-ironsworn.ironswornassets',
-		'Ironsworn',
-		ISAssetTypes
-	)
-}
-export async function createStarforgedAssetTree(): Promise<DisplayCategory[]> {
-	return await createAssetTree(
-		'foundry-ironsworn.starforgedassets',
-		'Starforged',
-		SFAssetTypes
-	)
+interface DisplayAsssetRuleset {
+	title: string
+	categories: DisplayAssetCategory[]
+	index?: FoundryIndex
 }
 
-async function createAssetTree(
-	compendiumName: string,
-	i18nkeyslug: string,
-	assetTypes: IAssetType[]
-): Promise<DisplayCategory[]> {
-	// Load from compendium
-	const ret = await compendiumMoves(compendiumName, i18nkeyslug, assetTypes)
+const INDEXES: Record<string, FoundryIndex | undefined> = {}
 
-	// Add custom omves from well-known folder
-	await augmentWithFolderContents(ret)
+function assetFetcher(dsid: string): () => Promise<IronswornItem> {
+	const parsed = IdParser.parse(dsid)
+	const compendiumKey = COMPENDIUM_KEY_MAP.asset[parsed.rulesPackageId]
+	const pack = game.packs.get(compendiumKey)
+	return async () => {
+		INDEXES[compendiumKey] ||= await pack?.getIndex({ fields: ['flags'] })
+		const indexEntry = INDEXES[compendiumKey]?.contents?.find(
+			(x) => x.flags['foundry-ironsworn']?.dsid === dsid
+		)
+		return (await pack?.getDocument(indexEntry?._id ?? '')) as IronswornItem
+	}
+}
+
+export async function createMergedAssetTree(): Promise<DisplayAsssetRuleset[]> {
+	let ret: DisplayAsssetRuleset[] = compact(
+		await Promise.all(
+			IronswornSettings.enabledRulesets.map(async (rsKey) => {
+				const rs = DataswornTree.get(rsKey)
+				if (!rs) return undefined
+
+				const rsTitle = rsKey.titleCase()
+				const i18n = (categoryName: string, subKey: string) => {
+					const capCat = categoryName.titleCase()
+					return game.i18n.localize(
+						`IRONSWORN.Asset Categories.${rsTitle}.${capCat}.${subKey}`
+					)
+				}
+
+				const { index } = await getPackAndIndexForCompendiumKey(rsKey, 'asset')
+
+				return {
+					title: game.i18n.localize(`IRONSWORN.RULESETS.${rsKey}`),
+					index,
+					categories: Object.values(rs.assets).map((cat) => {
+						return {
+							ds: cat,
+							title: i18n(cat.name, 'Title'),
+							description: i18n(cat.name, 'Description'),
+							expanded: false,
+							assets: Object.values(cat.contents).map((asset) => ({
+								ds: asset,
+								assetFetcher: assetFetcher(asset._id)
+							}))
+						}
+					})
+				}
+			})
+		)
+	)
+
+	// Remove rulesets with no assets
+	ret = ret.filter((rs) => rs.categories.length > 0)
+
+	// Add custom assets from well-known folder
+	const customAssets = await customAssetFolderContents()
+	if (customAssets)
+		ret.push({
+			title: game.i18n.localize('IRONSWORN.Asset Categories.Custom'),
+			categories: [customAssets]
+		})
 
 	// fire the hook and allow extensions to modify the list
-	await Hooks.call('ironswornAssets', ret)
+	for (const rs of ret) {
+		Hooks.call('ironswornAssets', rs)
+	}
 
 	return ret
 }
 
-async function compendiumMoves(
-	compendiumName: string,
-	i18nkeyslug: string,
-	assetTypes: IAssetType[]
-): Promise<DisplayCategory[]> {
-	const pack = game.packs.get(compendiumName)
-	if (pack == null) throw new Error(`can't load pack ${compendiumName}`)
-
-	const i18n = (categoryName: string, extension: string) => {
-		const capCat = categoryName.capitalize()
-		return game.i18n.localize(
-			`IRONSWORN.Asset Categories.${i18nkeyslug}.${capCat}.${extension}`
-		)
-	}
-
-	const categories = [] as DisplayCategory[]
-	for (const dfAssetType of assetTypes) {
-		const i18nDescription = i18n(dfAssetType.Name, 'Description')
-		const cat: DisplayCategory = {
-			df: dfAssetType,
-			title: i18n(dfAssetType.Name, 'Title'),
-			description: renderLinksInStr(i18nDescription),
-			expanded: false,
-			assets: []
-		}
-
-		for (const dfAsset of dfAssetType.Assets) {
-			const item = (await pack.getDocument(
-				hashLookup(dfAsset.$id)
-			)) as IronswornItem
-			cat.assets.push({
-				df: dfAsset,
-				foundryItem: () => item
-			})
-		}
-
-		categories.push(cat)
-	}
-
-	return categories
-}
-
-async function augmentWithFolderContents(categories: DisplayCategory[]) {
+async function customAssetFolderContents(): Promise<
+	DisplayAssetCategory | undefined
+> {
 	const name = game.i18n.localize('IRONSWORN.Asset Categories.Custom')
 	const folder = (game.items?.directory as any)?.folders.find(
 		(x) => x.name === name
@@ -100,12 +112,12 @@ async function augmentWithFolderContents(categories: DisplayCategory[]) {
 	const customAssets = [] as DisplayAsset[]
 	for (const item of folder.contents) {
 		if (item.documentName !== 'Item' || item.type !== 'asset') continue
-		customAssets.push({ foundryItem: () => item })
+		customAssets.push({ assetFetcher: async () => item })
 	}
 
-	categories.push({
+	return {
 		title: name,
 		expanded: false,
 		assets: customAssets
-	})
+	}
 }

@@ -159,34 +159,42 @@ export function activateSceneButtonListeners() {
 		}
 		controls[0].tools.push(oracleButton)
 
-		const control =
-			IronswornSettings.defaultToolbox === 'starforged'
-				? starforgedControl(oracleButton)
-				: IronswornSettings.defaultToolbox === 'sunderedisles'
-				? sunderedIslesControl(oracleButton)
-				: ironswornControl(oracleButton)
+		const control: SceneControl = {
+			name: game.i18n.localize('IRONSWORN.Ironsworn'),
+			title: game.i18n.localize('IRONSWORN.StarforgedTools'),
+			icon: 'isicon-logo-starforged-dk',
+			layer: 'ironsworn',
+			visible: true,
+			activeTool: 'select',
+			tools: [oracleButton]
+		}
 
-		if (control) controls.push(control)
+		// Apply updates in order. If you've got IS and SI both enabled, too bad, you're in the isles
+		if (IronswornSettings.enabledRulesets.includes('classic'))
+			ironswornifyControl(control)
+		// HOWEVER, if you've got both SF and SI enabled, you're only in the isles
+		if (IronswornSettings.enabledRulesets.includes('sundered_isles'))
+			sunderedIslifyControl(control)
+		else if (IronswornSettings.enabledRulesets.includes('starforged'))
+			starforgifyControl(control)
 
+		controls.push(control)
 		return controls
 	})
 }
 
-function starforgedControl(
-	oracleButton: SceneControlToolNoToggle
-): SceneControl {
-	const sfControl: SceneControl = {
-		name: 'Starforged',
-		title: game.i18n.localize('IRONSWORN.StarforgedTools'),
-		icon: 'isicon-logo-starforged-dk',
-		layer: 'ironsworn',
-		visible: true,
-		activeTool: 'select',
-		tools: [oracleButton]
-	}
+function ironswornifyControl(control: SceneControl) {
+	control.name = game.i18n.localize('IRONSWORN.Ironsworn')
+	control.title = game.i18n.localize('IRONSWORN.IronswornTools')
+	control.icon = 'isicon-logo-ironsworn-dk'
+}
+
+function starforgifyControl(control: SceneControl) {
+	control.name = game.i18n.localize('IRONSWORN.Starforged')
+	control.icon = 'isicon-logo-starforged-dk'
 
 	if (game.user?.isGM) {
-		sfControl.tools.push(
+		control.tools.push(
 			{
 				name: 'edit',
 				icon: 'isicon-region-sf',
@@ -243,30 +251,18 @@ function starforgedControl(
 			}
 		)
 	}
-
-	return sfControl
 }
 
-function sunderedIslesControl(
-	oracleButton: SceneControlToolNoToggle
-): SceneControl {
-	const control: SceneControl = {
-		name: 'Starforged',
-		title: game.i18n.localize('IRONSWORN.SunderedIslesTools'),
-		icon: 'isicon-logo-sunderedisles-dk',
-		layer: 'ironsworn',
-		visible: true,
-		activeTool: 'select',
-		tools: [
-			oracleButton,
-			{
-				name: 'moons',
-				icon: 'fas fa-moon',
-				title: 'Roll the Moons',
-				onClick: rollMoons
-			}
-		]
-	}
+function sunderedIslifyControl(control: SceneControl) {
+	control.name = game.i18n.localize('IRONSWORN.SunderedIsles')
+	control.title = game.i18n.localize('IRONSWORN.SunderedIslesTools')
+	control.icon = 'isicon-logo-sunderedisles-dk'
+	control.tools.push({
+		name: 'moons',
+		icon: 'fas fa-moon',
+		title: 'Roll the Moons',
+		onClick: rollMoons
+	})
 
 	if (game.user?.isGM) {
 		control.tools.push({
@@ -277,22 +273,6 @@ function sunderedIslesControl(
 			}),
 			onClick: editSector
 		})
-	}
-
-	return control
-}
-
-function ironswornControl(
-	oracleButton: SceneControlToolNoToggle
-): SceneControl {
-	return {
-		name: 'Ironsworn',
-		title: game.i18n.localize('IRONSWORN.IronswornTools'),
-		icon: 'isicon-logo-ironsworn-dk',
-		layer: 'ironsworn',
-		visible: true,
-		activeTool: 'select',
-		tools: [oracleButton]
 	}
 }
 

@@ -1,0 +1,56 @@
+{
+  "_id": "92112e952165c826",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/size",
+      "dsid": "oracle_rollable:sundered_isles/settlement/size/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        50
+      ],
+      "text": "Village or outpost",
+      "_key": "!tables.results!92112e952165c826.a2ea5529460ececc",
+      "_id": "a2ea5529460ececc"
+    },
+    {
+      "range": [
+        51,
+        80
+      ],
+      "text": "Town",
+      "_key": "!tables.results!92112e952165c826.b00d7083d528c690",
+      "_id": "b00d7083d528c690"
+    },
+    {
+      "range": [
+        81,
+        98
+      ],
+      "text": "City",
+      "_key": "!tables.results!92112e952165c826.a2063628322138b4",
+      "_id": "a2063628322138b4"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "City-state",
+      "_key": "!tables.results!92112e952165c826.67ed5516220cb1ee",
+      "_id": "67ed5516220cb1ee"
+    }
+  ],
+  "folder": "39cb632324e87124",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!92112e952165c826"
+}

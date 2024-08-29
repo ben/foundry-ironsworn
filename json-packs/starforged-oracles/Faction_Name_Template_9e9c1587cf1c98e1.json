@@ -1,0 +1,57 @@
+{
+  "_id": "9e9c1587cf1c98e1",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Factions/Name_Template",
+      "category": "oracle_collection:starforged/faction/name",
+      "dsid": "oracle_rollable:starforged/faction/name/template"
+    }
+  },
+  "name": "Faction Name Template",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.1bc0d594892867ed]{Legacy} @Compendium[foundry-ironsworn.starforgedoracles.b6808ae6711d2c7b]{Affiliation}",
+      "_key": "!tables.results!9e9c1587cf1c98e1.04370530c7409e5c",
+      "_id": "04370530c7409e5c"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.1bc0d594892867ed]{Legacy} @Compendium[foundry-ironsworn.starforgedoracles.4873d9b03e06e901]{Identity}",
+      "_key": "!tables.results!9e9c1587cf1c98e1.8340e4615871adc2",
+      "_id": "8340e4615871adc2"
+    },
+    {
+      "range": [
+        56,
+        70
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.4873d9b03e06e901]{Identity} <em>of the</em> @Compendium[foundry-ironsworn.starforgedoracles.1bc0d594892867ed]{Legacy} @Compendium[foundry-ironsworn.starforgedoracles.b6808ae6711d2c7b]{Affiliation}",
+      "_key": "!tables.results!9e9c1587cf1c98e1.f35a1fddee5d3d04",
+      "_id": "f35a1fddee5d3d04"
+    },
+    {
+      "range": [
+        71,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b6808ae6711d2c7b]{Affiliation} <em>of the</em> @Compendium[foundry-ironsworn.starforgedoracles.1bc0d594892867ed]{Legacy} @Compendium[foundry-ironsworn.starforgedoracles.4873d9b03e06e901]{Identity}",
+      "_key": "!tables.results!9e9c1587cf1c98e1.3516c74df00c0c94",
+      "_id": "3516c74df00c0c94"
+    }
+  ],
+  "folder": "2ee92ba1fb40f90b",
+  "sort": 344,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9e9c1587cf1c98e1"
+}

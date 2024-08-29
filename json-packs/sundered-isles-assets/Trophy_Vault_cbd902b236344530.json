@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "cbd902b236344530",
+  "folder": "38d5b35b5764ca19",
+  "name": "Trophy Vault",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you defeat a notable foe, envision the trophy you take. Then, add it to a list of trophies on display in your ship’s vault. When you make a move to overcome an obstacle or hazard aboard ship, you may use the imbued power of a trophy to reroll any dice. If you do, mark that trophy’s power as spent.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>As above, and if you use a trophy to reroll all dice and score a strong hit with a match, the legacy of that object favors you; mark 2 ticks on your bonds legacy track, and do not mark the trophy as spent. If you instead score a miss with a match, envision the cursed legacy that now haunts you.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you give a tour of the vault and make a move in that space to impress or intimidate, add +2 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/module/trophy_vault",
+      "dsid": "asset:sundered_isles/module/trophy_vault"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!cbd902b236344530"
+}

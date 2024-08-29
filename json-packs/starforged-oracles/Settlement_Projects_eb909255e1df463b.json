@@ -1,0 +1,318 @@
+{
+  "_id": "eb909255e1df463b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Settlements/Projects",
+      "category": "Starforged/Oracles/Settlements",
+      "dsid": "oracle_rollable:starforged/settlement/projects"
+    }
+  },
+  "name": "Settlement Projects",
+  "description": "<p>Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Agriculture",
+      "_key": "!tables.results!eb909255e1df463b.357c59c2e47e4109",
+      "_id": "357c59c2e47e4109"
+    },
+    {
+      "range": [
+        6,
+        7
+      ],
+      "text": "Archeology",
+      "_key": "!tables.results!eb909255e1df463b.1b798e3261cbdaab",
+      "_id": "1b798e3261cbdaab"
+    },
+    {
+      "range": [
+        8,
+        9
+      ],
+      "text": "Automation",
+      "_key": "!tables.results!eb909255e1df463b.da5b786ce310cb7d",
+      "_id": "da5b786ce310cb7d"
+    },
+    {
+      "range": [
+        10,
+        11
+      ],
+      "text": "Black market",
+      "_key": "!tables.results!eb909255e1df463b.b6dc1f50a48bca5a",
+      "_id": "b6dc1f50a48bca5a"
+    },
+    {
+      "range": [
+        12,
+        13
+      ],
+      "text": "Command",
+      "_key": "!tables.results!eb909255e1df463b.6c0a91283cde2483",
+      "_id": "6c0a91283cde2483"
+    },
+    {
+      "range": [
+        14,
+        17
+      ],
+      "text": "Defense",
+      "_key": "!tables.results!eb909255e1df463b.842aadf4dc1e2b46",
+      "_id": "842aadf4dc1e2b46"
+    },
+    {
+      "range": [
+        18,
+        22
+      ],
+      "text": "Energy",
+      "_key": "!tables.results!eb909255e1df463b.d4a9647ce1a65b97",
+      "_id": "d4a9647ce1a65b97"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Engineering",
+      "_key": "!tables.results!eb909255e1df463b.09a9480f97b470dd",
+      "_id": "09a9480f97b470dd"
+    },
+    {
+      "range": [
+        26,
+        27
+      ],
+      "text": "Entertainment",
+      "_key": "!tables.results!eb909255e1df463b.98ab0e04107937b7",
+      "_id": "98ab0e04107937b7"
+    },
+    {
+      "range": [
+        28,
+        29
+      ],
+      "text": "Environmentalism",
+      "_key": "!tables.results!eb909255e1df463b.4d1c1b29d591e074",
+      "_id": "4d1c1b29d591e074"
+    },
+    {
+      "range": [
+        30,
+        31
+      ],
+      "text": "Evacuation",
+      "_key": "!tables.results!eb909255e1df463b.e341475e964a7b40",
+      "_id": "e341475e964a7b40"
+    },
+    {
+      "range": [
+        32,
+        33
+      ],
+      "text": "Expansion",
+      "_key": "!tables.results!eb909255e1df463b.55b96af23da79dbe",
+      "_id": "55b96af23da79dbe"
+    },
+    {
+      "range": [
+        34,
+        37
+      ],
+      "text": "Exploration",
+      "_key": "!tables.results!eb909255e1df463b.6a6210df38b0c81e",
+      "_id": "6a6210df38b0c81e"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Festival",
+      "_key": "!tables.results!eb909255e1df463b.e0e489d55e3ef5ab",
+      "_id": "e0e489d55e3ef5ab"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "History",
+      "_key": "!tables.results!eb909255e1df463b.7b3d2469548a8719",
+      "_id": "7b3d2469548a8719"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Hunting",
+      "_key": "!tables.results!eb909255e1df463b.051cc361494cc0c7",
+      "_id": "051cc361494cc0c7"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Manufacturing",
+      "_key": "!tables.results!eb909255e1df463b.196016194fda3848",
+      "_id": "196016194fda3848"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "Medical",
+      "_key": "!tables.results!eb909255e1df463b.45696bbe4a70ed04",
+      "_id": "45696bbe4a70ed04"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Migration",
+      "_key": "!tables.results!eb909255e1df463b.4c25a3c77c8faacf",
+      "_id": "4c25a3c77c8faacf"
+    },
+    {
+      "range": [
+        52,
+        57
+      ],
+      "text": "Mining",
+      "_key": "!tables.results!eb909255e1df463b.2694e3af2c8b8486",
+      "_id": "2694e3af2c8b8486"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Pacifism",
+      "_key": "!tables.results!eb909255e1df463b.cfc6e5f8d7f1bb76",
+      "_id": "cfc6e5f8d7f1bb76"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "Raiding",
+      "_key": "!tables.results!eb909255e1df463b.1b9293cef3355212",
+      "_id": "1b9293cef3355212"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Research",
+      "_key": "!tables.results!eb909255e1df463b.2502a1cd434d2dd3",
+      "_id": "2502a1cd434d2dd3"
+    },
+    {
+      "range": [
+        66,
+        69
+      ],
+      "text": "Salvage",
+      "_key": "!tables.results!eb909255e1df463b.36ebabda701b7e97",
+      "_id": "36ebabda701b7e97"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Secrecy",
+      "_key": "!tables.results!eb909255e1df463b.3c4048625d597fb8",
+      "_id": "3c4048625d597fb8"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Shipbuilding",
+      "_key": "!tables.results!eb909255e1df463b.bc5b7903b47c1ec8",
+      "_id": "bc5b7903b47c1ec8"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Spirituality",
+      "_key": "!tables.results!eb909255e1df463b.914464c7cd22e587",
+      "_id": "914464c7cd22e587"
+    },
+    {
+      "range": [
+        79,
+        84
+      ],
+      "text": "Subsistence",
+      "_key": "!tables.results!eb909255e1df463b.0013050ec8bba611",
+      "_id": "0013050ec8bba611"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Surveillance",
+      "_key": "!tables.results!eb909255e1df463b.bb5164e25abc31a7",
+      "_id": "bb5164e25abc31a7"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Terraforming",
+      "_key": "!tables.results!eb909255e1df463b.ba94bf5d3363669d",
+      "_id": "ba94bf5d3363669d"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Trade",
+      "_key": "!tables.results!eb909255e1df463b.c3eff663a9956dea",
+      "_id": "c3eff663a9956dea"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Warfare",
+      "_key": "!tables.results!eb909255e1df463b.c6de1ce5d2a34a32",
+      "_id": "c6de1ce5d2a34a32"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!eb909255e1df463b.f1ac10fee33835e8",
+      "_id": "f1ac10fee33835e8"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 324,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!eb909255e1df463b"
+}

@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Clash",
   "img": "icons/dice/d10black.svg",
+  "folder": "19defd673fdc3970",
   "system": {
     "dfid": "Ironsworn/Moves/Combat/Clash",
     "Category": "Ironsworn/Moves/Combat",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **your foe has initiative and you fight with them in close quarters**, roll +iron. When **you exchange a volley at range, or shoot at an advancing foe**, roll +edge.\n\nOn a **strong hit**, inflict your harm and choose one. You have the initiative.\n\n  * You bolster your position: Take +1 momentum.\n  * You find an opening: Inflict +1 harm.\n\nOn a **weak hit**, inflict your harm, but then @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.\n\nOn a **miss**, you are outmatched and must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
+    "Text": "When __your foe has initiative and you fight with them in close quarters__, roll +iron. When __you exchange a volley at range, or shoot at an advancing foe__, roll +edge.\n\nOn a __strong hit__, inflict your harm and choose one. You have the initiative.\n\n  * You bolster your position: Take +1 momentum.\n  * You find an opening: Inflict +1 harm.\n\nOn a __weak hit__, inflict your harm, but then @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.\n\nOn a __miss__, you are outmatched and must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
     "Trigger": {
       "Text": "When your foe has initiative and you...",
       "Options": [
@@ -32,42 +33,29 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Inflict your harm and choose one. You have the initiative.\n\n  * You bolster your position: Take +1 momentum.\n  * You find an opening: Inflict +1 harm.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, inflict your harm and choose one. You have the initiative.\n\n  * You bolster your position: Take +1 momentum.\n  * You find an opening: Inflict +1 harm.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Inflict your harm, but then @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, inflict your harm, but then @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative."
       },
       "Miss": {
-        "Text": "You are outmatched and must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, you are outmatched and must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 80
     },
     "Suggestions": {},
@@ -76,20 +64,11 @@
     }
   },
   "sort": 80,
-  "folder": "19defd673fdc3970",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Combat/Clash",
+      "dsid": "move:classic/combat/clash"
+    }
   },
   "_key": "!items!7e008d0f656dc8b3"
 }

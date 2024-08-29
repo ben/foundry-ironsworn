@@ -1,22 +1,16 @@
 {
   "name": "Name",
-  "_id": "0ea3b5b59a92d1f2",
+  "description": "",
   "type": "RollTable",
+  "_id": "0ea3b5b59a92d1f2",
   "sort": 184,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Ironsworn/Oracles/Name"
+      "dfid": "Ironsworn/Oracles/Name",
+      "dsid": "oracle_collection:classic/name"
     }
   },
   "folder": null,
   "sorting": "a",
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021121,
-    "modifiedTime": 1695949021121,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!folders!0ea3b5b59a92d1f2"
 }

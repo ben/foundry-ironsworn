@@ -1,0 +1,15 @@
+{
+  "name": "Settlement Focus",
+  "description": "",
+  "type": "RollTable",
+  "_id": "8207db831559da44",
+  "sort": 168,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/settlement/focus"
+    }
+  },
+  "folder": "394153020f5e7a87",
+  "sorting": "a",
+  "_key": "!folders!8207db831559da44"
+}

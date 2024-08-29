@@ -1,0 +1,98 @@
+{
+  "_id": "313c82cede0ce9a7",
+  "type": "sfmove",
+  "name": "Escape the Depths",
+  "img": "icons/dice/d10black.svg",
+  "folder": "e9e254f7a3fc7100",
+  "system": {
+    "dfid": "Ironsworn/Moves/Delve/Escape_the_Depths",
+    "Category": "Ironsworn/Moves/Delve",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you flee or withdraw from a site__, consider the situation and your approach. If you...\n\n  * Find the fastest way out: Roll +edge.\n  * Steel yourself against the horrors of this place: Roll +heart.\n  * Fight your way out: Roll +iron.\n  * Retrace your steps or locate an alternate path: Roll +wits.\n  * Keep out of sight: Roll +shadow.\n\nOn a __strong hit__, you make your way safely out of the site. Take +1 momentum.\n\nOn a __weak hit__, you find your way out, but this place exacts its price. Choose one.\n\n  * You are weary or wounded: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}.\n  * The experience leaves you shaken: @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}.\n  * You are delayed, and it costs you.\n  * You leave behind something important.\n  * You face a new complication as you emerge from the depths.\n  * A denizen plots their revenge.\n\nOn a __miss__, a dire threat or imposing obstacle stands in your way. @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}. If you survive, you may make your escape.",
+    "Trigger": {
+      "Text": "When you flee or withdraw from a site...",
+      "Options": [
+        {
+          "Text": "Find the fastest way out",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        },
+        {
+          "Text": "Steel yourself against the horrors of this place",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "Fight your way out",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Keep out of sight",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Retrace your steps or locate an alternate path",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you make your way safely out of the site. Take +1 momentum.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you find your way out, but this place exacts its price. Choose one.\n\n  * You are weary or wounded: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}.\n  * The experience leaves you shaken: @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}.\n  * You are delayed, and it costs you.\n  * You leave behind something important.\n  * You face a new complication as you emerge from the depths.\n  * A denizen plots their revenge."
+      },
+      "Miss": {
+        "Text": "On a __miss__, a dire threat or imposing obstacle stands in your way. @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}. If you survive, you may make your escape.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 42
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 42,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Delve/Escape_the_Depths",
+      "dsid": "move:delve/delve/escape_the_depths"
+    }
+  },
+  "_key": "!items!313c82cede0ce9a7"
+}

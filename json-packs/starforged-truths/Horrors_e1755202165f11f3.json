@@ -1,0 +1,104 @@
+{
+  "name": "Horrors",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Horrors",
+      "dsid": "truth:starforged/horrors"
+    }
+  },
+  "_id": "e1755202165f11f3",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Put enough alcohol in a spacer, and they’ll tell you stories of ghost ships crewed by vengeful undead. It’s nonsense.",
+      "system": {
+        "dsid": "truth.option:starforged/horrors.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Put enough alcohol in a spacer, and they’ll tell you stories of ghost ships crewed by vengeful undead. It’s nonsense.",
+        "Description": "Within the Forge, space and time are as mutable and unstable as a flooding river. When reality can't be trusted, we are bound to encounter unsettling phenomenon.",
+        "Summary": "Put enough alcohol in a spacer, and they’ll tell you stories of ghost ships crewed by vengeful undead. It’s nonsense.",
+        "Quest": "You receive urgent distress calls from a ship stranded in the event horizon of a black hole. The ship itself is broken apart—a shattered hull trailing debris. There are no signs of life. And yet the ghostly messages persist.",
+        "Roll template": {
+          "Description": "Within the Forge, space and time are as mutable and unstable as a flooding river. When reality can't be trusted, we are bound to encounter unsettling phenomenon."
+        }
+      },
+      "_id": "a694e2c54b92e067",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!e1755202165f11f3.a694e2c54b92e067"
+    },
+    {
+      "type": "truth",
+      "name": "Most insist that horrors aren’t real. Spacers know the truth.",
+      "system": {
+        "dsid": "truth.option:starforged/horrors.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Most insist that horrors aren’t real. Spacers know the truth.",
+        "Description": "When you travel the depths of the Forge, be wary. Some say we are cursed by those who did not survive the cataclysm, and the veil between life and death is forever weakened. Supernatural occurrences and entities are especially common near a white dwarf star. These stellar objects, which spacers call ghost lights, are the decaying remnants of a dead star.",
+        "Summary": "Most insist that horrors aren’t real. Spacers know the truth.",
+        "Quest": "A group of settlers established a home in an abandoned orbital station under the light of a white dwarf star. The previous inhabitants were killed in a raider attack years ago, but it seems the dead do not rest there. The people are plagued by constant mechanical issues, strange noises, and unsettling visions.",
+        "Roll template": {
+          "Description": "When you travel the depths of the Forge, be wary. Some say we are cursed by those who did not survive the cataclysm, and the veil between life and death is forever weakened. Supernatural occurrences and entities are especially common near a white dwarf star. These stellar objects, which spacers call ghost lights, are the decaying remnants of a dead star."
+        }
+      },
+      "_id": "21bb474501067217",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!e1755202165f11f3.21bb474501067217"
+    },
+    {
+      "type": "truth",
+      "name": "The strange energies of the Forge give unnatural life to the dead. The Soulbinders are an organization sworn to confront these horrifying entities.",
+      "system": {
+        "dsid": "truth.option:starforged/horrors.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "The strange energies of the Forge give unnatural life to the dead. The Soulbinders are an organization sworn to confront these horrifying entities.",
+        "Description": "The woken dead are a plague within the Forge. Some of these beings are benevolent or seek absolution, but most are hollowed and corrupted by death. They are driven by hate and a hunger for the warmth of life that is forever lost to them. The Soulbinders are dedicated to putting them to rest—whatever the cost.",
+        "Summary": "The strange energies of the Forge give unnatural life to the dead. The Soulbinders are an organization sworn to confront these horrifying entities.",
+        "Quest": "Rumors persist of a fleet of ghost ships, bound for settled domains. Who is said to lead this corrupted armada? Why do they seek revenge against the living?",
+        "Roll template": {
+          "Description": "The woken dead are a plague within the Forge. Some of these beings are benevolent or seek absolution, but most are hollowed and corrupted by death. They are driven by hate and a hunger for the warmth of life that is forever lost to them. The Soulbinders are dedicated to putting them to rest—whatever the cost."
+        }
+      },
+      "_id": "eebebe0b5a154b79",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!e1755202165f11f3.eebebe0b5a154b79"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "Have you experienced any supernatural encounters? If you specialize in battling undead or monstrous forces, you might be a @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer}. If you have a supernatural connection to a spirit, you might be @Compendium[foundry-ironsworn.starforgedassets.7fdebd942b7163b6]{Haunted}.",
+        "format": 2,
+        "content": "<p>Have you experienced any supernatural encounters? If you specialize in battling undead or monstrous forces, you might be a @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer}. If you have a supernatural connection to a spirit, you might be @Compendium[foundry-ironsworn.starforgedassets.7fdebd942b7163b6]{Haunted}.</p>"
+      },
+      "_id": "2afcc78cdc6c05fb",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!e1755202165f11f3.2afcc78cdc6c05fb"
+    }
+  ],
+  "folder": null,
+  "sort": 98,
+  "_key": "!journal!e1755202165f11f3"
+}

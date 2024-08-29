@@ -1,0 +1,1821 @@
+{
+  "_id": "5814a9cf05311334",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Name/Ironlander/B",
+      "category": "Ironsworn/Oracles/Name",
+      "dsid": "oracle_rollable:classic/name/ironlander"
+    }
+  },
+  "name": "Ironlander Names",
+  "description": "<p>Use this oracle to quickly generate a name for an Ironlander character. Surnames are not used in the Ironlands, and names are often gender-neutral.</p>",
+  "formula": "1d200",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Solana",
+      "_key": "!tables.results!5814a9cf05311334.0dcb2cfe8accdf88",
+      "_id": "0dcb2cfe8accdf88"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Keelan",
+      "_key": "!tables.results!5814a9cf05311334.d306fd351f61628d",
+      "_id": "d306fd351f61628d"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Cadigan",
+      "_key": "!tables.results!5814a9cf05311334.c29de601a123b0b5",
+      "_id": "c29de601a123b0b5"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Sola",
+      "_key": "!tables.results!5814a9cf05311334.fc71627882ed6ede",
+      "_id": "fc71627882ed6ede"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Kodroth",
+      "_key": "!tables.results!5814a9cf05311334.71ecdaf72fa84d6f",
+      "_id": "71ecdaf72fa84d6f"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Kione",
+      "_key": "!tables.results!5814a9cf05311334.ef1891d839cbe17b",
+      "_id": "ef1891d839cbe17b"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Katja",
+      "_key": "!tables.results!5814a9cf05311334.184017379eeab7c7",
+      "_id": "184017379eeab7c7"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Tio",
+      "_key": "!tables.results!5814a9cf05311334.f9fe4c149ae5c793",
+      "_id": "f9fe4c149ae5c793"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Artiga",
+      "_key": "!tables.results!5814a9cf05311334.b37f2ced35a058ab",
+      "_id": "b37f2ced35a058ab"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Eos",
+      "_key": "!tables.results!5814a9cf05311334.419da9fc28bd0d72",
+      "_id": "419da9fc28bd0d72"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Bastien",
+      "_key": "!tables.results!5814a9cf05311334.71c46ae086fe1c6f",
+      "_id": "71c46ae086fe1c6f"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Elli",
+      "_key": "!tables.results!5814a9cf05311334.bdb9ab701a3b2a94",
+      "_id": "bdb9ab701a3b2a94"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Maura",
+      "_key": "!tables.results!5814a9cf05311334.07331852a137ecac",
+      "_id": "07331852a137ecac"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Haleema",
+      "_key": "!tables.results!5814a9cf05311334.1e4a9670fc6b47f9",
+      "_id": "1e4a9670fc6b47f9"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Abella",
+      "_key": "!tables.results!5814a9cf05311334.e42edfa1e003d58c",
+      "_id": "e42edfa1e003d58c"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Morter",
+      "_key": "!tables.results!5814a9cf05311334.9e7566251fa00034",
+      "_id": "9e7566251fa00034"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Wulan",
+      "_key": "!tables.results!5814a9cf05311334.ae369a33b18ee75b",
+      "_id": "ae369a33b18ee75b"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Mai",
+      "_key": "!tables.results!5814a9cf05311334.da536d7a892fd1b5",
+      "_id": "da536d7a892fd1b5"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Farina",
+      "_key": "!tables.results!5814a9cf05311334.8631c30065e89a2d",
+      "_id": "8631c30065e89a2d"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Pearce",
+      "_key": "!tables.results!5814a9cf05311334.86aef2ac466523e4",
+      "_id": "86aef2ac466523e4"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Wynne",
+      "_key": "!tables.results!5814a9cf05311334.61ba774f78c0660e",
+      "_id": "61ba774f78c0660e"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Haf",
+      "_key": "!tables.results!5814a9cf05311334.cb22c031b6a2d64e",
+      "_id": "cb22c031b6a2d64e"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Aeddon",
+      "_key": "!tables.results!5814a9cf05311334.2fc3fda2f0f83d76",
+      "_id": "2fc3fda2f0f83d76"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Khinara",
+      "_key": "!tables.results!5814a9cf05311334.d29337f58077d010",
+      "_id": "d29337f58077d010"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Milla",
+      "_key": "!tables.results!5814a9cf05311334.17f707c3ec8983ad",
+      "_id": "17f707c3ec8983ad"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Nakata",
+      "_key": "!tables.results!5814a9cf05311334.21aa728e47f5ee4d",
+      "_id": "21aa728e47f5ee4d"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Kynan",
+      "_key": "!tables.results!5814a9cf05311334.53928edf02c921be",
+      "_id": "53928edf02c921be"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Kiah",
+      "_key": "!tables.results!5814a9cf05311334.822dc06342482994",
+      "_id": "822dc06342482994"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Jaggar",
+      "_key": "!tables.results!5814a9cf05311334.577937205e2843ca",
+      "_id": "577937205e2843ca"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Beca",
+      "_key": "!tables.results!5814a9cf05311334.b489aa7d943b0c8a",
+      "_id": "b489aa7d943b0c8a"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Ikram",
+      "_key": "!tables.results!5814a9cf05311334.2c72c3c39695783c",
+      "_id": "2c72c3c39695783c"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Melia",
+      "_key": "!tables.results!5814a9cf05311334.8ac7c9701a376076",
+      "_id": "8ac7c9701a376076"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Sidan",
+      "_key": "!tables.results!5814a9cf05311334.587263e49cfe2feb",
+      "_id": "587263e49cfe2feb"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Deshi",
+      "_key": "!tables.results!5814a9cf05311334.ff2a09c245947bbb",
+      "_id": "ff2a09c245947bbb"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Tessa",
+      "_key": "!tables.results!5814a9cf05311334.5b071e9b1e97de14",
+      "_id": "5b071e9b1e97de14"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Sibila",
+      "_key": "!tables.results!5814a9cf05311334.16240c12932fde0a",
+      "_id": "16240c12932fde0a"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Morien",
+      "_key": "!tables.results!5814a9cf05311334.d2997c6849bef800",
+      "_id": "d2997c6849bef800"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Mona",
+      "_key": "!tables.results!5814a9cf05311334.0dee402f1a19fba6",
+      "_id": "0dee402f1a19fba6"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Padma",
+      "_key": "!tables.results!5814a9cf05311334.970328b464ca0302",
+      "_id": "970328b464ca0302"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Avella",
+      "_key": "!tables.results!5814a9cf05311334.120e7a5f04373f34",
+      "_id": "120e7a5f04373f34"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Naila",
+      "_key": "!tables.results!5814a9cf05311334.a58e9487dd7dfa96",
+      "_id": "a58e9487dd7dfa96"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Lio",
+      "_key": "!tables.results!5814a9cf05311334.e06e016d0e18a082",
+      "_id": "e06e016d0e18a082"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Cera",
+      "_key": "!tables.results!5814a9cf05311334.0b3a0aeb7fb94787",
+      "_id": "0b3a0aeb7fb94787"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Ithela",
+      "_key": "!tables.results!5814a9cf05311334.f433e6339473fe6d",
+      "_id": "f433e6339473fe6d"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Zhan",
+      "_key": "!tables.results!5814a9cf05311334.84767d4d061cd564",
+      "_id": "84767d4d061cd564"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Kaivan",
+      "_key": "!tables.results!5814a9cf05311334.9af2711b8d96d704",
+      "_id": "9af2711b8d96d704"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Valeri",
+      "_key": "!tables.results!5814a9cf05311334.3f70a9df95653fda",
+      "_id": "3f70a9df95653fda"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Hirsham",
+      "_key": "!tables.results!5814a9cf05311334.7dfb19a85a6aa764",
+      "_id": "7dfb19a85a6aa764"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Pemba",
+      "_key": "!tables.results!5814a9cf05311334.dad0013b327332d6",
+      "_id": "dad0013b327332d6"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Edda",
+      "_key": "!tables.results!5814a9cf05311334.e170c5d8d45e5952",
+      "_id": "e170c5d8d45e5952"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Lestara",
+      "_key": "!tables.results!5814a9cf05311334.47ccc0a3a897524c",
+      "_id": "47ccc0a3a897524c"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Lago",
+      "_key": "!tables.results!5814a9cf05311334.268c576ae1613900",
+      "_id": "268c576ae1613900"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Elstan",
+      "_key": "!tables.results!5814a9cf05311334.9238f06d5767b5b2",
+      "_id": "9238f06d5767b5b2"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Saskia",
+      "_key": "!tables.results!5814a9cf05311334.914dbee493f8992e",
+      "_id": "914dbee493f8992e"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Kabeera",
+      "_key": "!tables.results!5814a9cf05311334.168fc9d83b8384f4",
+      "_id": "168fc9d83b8384f4"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Caldas",
+      "_key": "!tables.results!5814a9cf05311334.dc2ad132a0d490b6",
+      "_id": "dc2ad132a0d490b6"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Nisus",
+      "_key": "!tables.results!5814a9cf05311334.50dbc359b157dba2",
+      "_id": "50dbc359b157dba2"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Serene",
+      "_key": "!tables.results!5814a9cf05311334.79c43e320f03d8fa",
+      "_id": "79c43e320f03d8fa"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Chenda",
+      "_key": "!tables.results!5814a9cf05311334.866278d44db87b7d",
+      "_id": "866278d44db87b7d"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Themon",
+      "_key": "!tables.results!5814a9cf05311334.4bfdc91f1dcb3410",
+      "_id": "4bfdc91f1dcb3410"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Erin",
+      "_key": "!tables.results!5814a9cf05311334.591a98d949448f36",
+      "_id": "591a98d949448f36"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Alban",
+      "_key": "!tables.results!5814a9cf05311334.242b528b688e6eda",
+      "_id": "242b528b688e6eda"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Parcell",
+      "_key": "!tables.results!5814a9cf05311334.7d1c43d81d1282c6",
+      "_id": "7d1c43d81d1282c6"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Jelma",
+      "_key": "!tables.results!5814a9cf05311334.d4f433083075c0aa",
+      "_id": "d4f433083075c0aa"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Willa",
+      "_key": "!tables.results!5814a9cf05311334.5c47682067b8b33a",
+      "_id": "5c47682067b8b33a"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Nadira",
+      "_key": "!tables.results!5814a9cf05311334.abac284e6b6df0c0",
+      "_id": "abac284e6b6df0c0"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Gwen",
+      "_key": "!tables.results!5814a9cf05311334.273c4f93a1354bad",
+      "_id": "273c4f93a1354bad"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Amara",
+      "_key": "!tables.results!5814a9cf05311334.5a5ac90638ced447",
+      "_id": "5a5ac90638ced447"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Masias",
+      "_key": "!tables.results!5814a9cf05311334.16354c928b04e35b",
+      "_id": "16354c928b04e35b"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Kanno",
+      "_key": "!tables.results!5814a9cf05311334.f5e8eb2cfaf9fc03",
+      "_id": "f5e8eb2cfaf9fc03"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Razeena",
+      "_key": "!tables.results!5814a9cf05311334.f521da891302f818",
+      "_id": "f521da891302f818"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Mira",
+      "_key": "!tables.results!5814a9cf05311334.3599acedc2c7167a",
+      "_id": "3599acedc2c7167a"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Perella",
+      "_key": "!tables.results!5814a9cf05311334.92ee27ad66adedbf",
+      "_id": "92ee27ad66adedbf"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Myrick",
+      "_key": "!tables.results!5814a9cf05311334.59549505c4bfc365",
+      "_id": "59549505c4bfc365"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Qamar",
+      "_key": "!tables.results!5814a9cf05311334.9f1084762405b03d",
+      "_id": "9f1084762405b03d"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Kormak",
+      "_key": "!tables.results!5814a9cf05311334.9cfbb168d9b01a5f",
+      "_id": "9cfbb168d9b01a5f"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Zura",
+      "_key": "!tables.results!5814a9cf05311334.8de320914e7259d9",
+      "_id": "8de320914e7259d9"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Zanita",
+      "_key": "!tables.results!5814a9cf05311334.3032aa1ff8751936",
+      "_id": "3032aa1ff8751936"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Brynn",
+      "_key": "!tables.results!5814a9cf05311334.b1effd8ef0b0ac82",
+      "_id": "b1effd8ef0b0ac82"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Tegan",
+      "_key": "!tables.results!5814a9cf05311334.c7a0b1f9ee823fae",
+      "_id": "c7a0b1f9ee823fae"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Pendry",
+      "_key": "!tables.results!5814a9cf05311334.dc8059246fac56cd",
+      "_id": "dc8059246fac56cd"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Quinn",
+      "_key": "!tables.results!5814a9cf05311334.106af5a663e53235",
+      "_id": "106af5a663e53235"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Fanir",
+      "_key": "!tables.results!5814a9cf05311334.15920bb3d1ca5d46",
+      "_id": "15920bb3d1ca5d46"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Glain",
+      "_key": "!tables.results!5814a9cf05311334.2522731501a589f3",
+      "_id": "2522731501a589f3"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Emelyn",
+      "_key": "!tables.results!5814a9cf05311334.6f8f0fcba073b345",
+      "_id": "6f8f0fcba073b345"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Kendi",
+      "_key": "!tables.results!5814a9cf05311334.3832f65c480a7d32",
+      "_id": "3832f65c480a7d32"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Althus",
+      "_key": "!tables.results!5814a9cf05311334.4d0c9daea693d5c4",
+      "_id": "4d0c9daea693d5c4"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Leela",
+      "_key": "!tables.results!5814a9cf05311334.1645db6ed26425be",
+      "_id": "1645db6ed26425be"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Ishana",
+      "_key": "!tables.results!5814a9cf05311334.4492522c597ce3b8",
+      "_id": "4492522c597ce3b8"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Flint",
+      "_key": "!tables.results!5814a9cf05311334.ebda9cc447ee0f45",
+      "_id": "ebda9cc447ee0f45"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Delkash",
+      "_key": "!tables.results!5814a9cf05311334.5297fc44a5188050",
+      "_id": "5297fc44a5188050"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Nia",
+      "_key": "!tables.results!5814a9cf05311334.00d7561f9159ff9c",
+      "_id": "00d7561f9159ff9c"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Nan",
+      "_key": "!tables.results!5814a9cf05311334.efa987cfdb37aa13",
+      "_id": "efa987cfdb37aa13"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Keeara",
+      "_key": "!tables.results!5814a9cf05311334.7851e2b249dae1a0",
+      "_id": "7851e2b249dae1a0"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Katania",
+      "_key": "!tables.results!5814a9cf05311334.f0683d45680ae193",
+      "_id": "f0683d45680ae193"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Morell",
+      "_key": "!tables.results!5814a9cf05311334.db855b48699ef330",
+      "_id": "db855b48699ef330"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Temir",
+      "_key": "!tables.results!5814a9cf05311334.69d7d4111ed819a8",
+      "_id": "69d7d4111ed819a8"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Bas",
+      "_key": "!tables.results!5814a9cf05311334.0b10fd2bd40beaf1",
+      "_id": "0b10fd2bd40beaf1"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Sabine",
+      "_key": "!tables.results!5814a9cf05311334.bca00d1213d57ff3",
+      "_id": "bca00d1213d57ff3"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Tallus",
+      "_key": "!tables.results!5814a9cf05311334.5982e532115aa144",
+      "_id": "5982e532115aa144"
+    },
+    {
+      "range": [
+        101,
+        101
+      ],
+      "text": "Segura",
+      "_key": "!tables.results!5814a9cf05311334.674e888b80d0314d",
+      "_id": "674e888b80d0314d"
+    },
+    {
+      "range": [
+        102,
+        102
+      ],
+      "text": "Gethin",
+      "_key": "!tables.results!5814a9cf05311334.bc8a9aeae47fa49e",
+      "_id": "bc8a9aeae47fa49e"
+    },
+    {
+      "range": [
+        103,
+        103
+      ],
+      "text": "Bataar",
+      "_key": "!tables.results!5814a9cf05311334.fe62cc99e605ead4",
+      "_id": "fe62cc99e605ead4"
+    },
+    {
+      "range": [
+        104,
+        104
+      ],
+      "text": "Basira",
+      "_key": "!tables.results!5814a9cf05311334.d7dab4b994883f13",
+      "_id": "d7dab4b994883f13"
+    },
+    {
+      "range": [
+        105,
+        105
+      ],
+      "text": "Joa",
+      "_key": "!tables.results!5814a9cf05311334.e8089b442c547aba",
+      "_id": "e8089b442c547aba"
+    },
+    {
+      "range": [
+        106,
+        106
+      ],
+      "text": "Glynn",
+      "_key": "!tables.results!5814a9cf05311334.800f9451e7195c00",
+      "_id": "800f9451e7195c00"
+    },
+    {
+      "range": [
+        107,
+        107
+      ],
+      "text": "Toran",
+      "_key": "!tables.results!5814a9cf05311334.2ed917344d34a1ed",
+      "_id": "2ed917344d34a1ed"
+    },
+    {
+      "range": [
+        108,
+        108
+      ],
+      "text": "Arasen",
+      "_key": "!tables.results!5814a9cf05311334.e23ad3a7844fcbac",
+      "_id": "e23ad3a7844fcbac"
+    },
+    {
+      "range": [
+        109,
+        109
+      ],
+      "text": "Kuron",
+      "_key": "!tables.results!5814a9cf05311334.4ef4ee9f40daae96",
+      "_id": "4ef4ee9f40daae96"
+    },
+    {
+      "range": [
+        110,
+        110
+      ],
+      "text": "Griff",
+      "_key": "!tables.results!5814a9cf05311334.629d24374346b31f",
+      "_id": "629d24374346b31f"
+    },
+    {
+      "range": [
+        111,
+        111
+      ],
+      "text": "Owena",
+      "_key": "!tables.results!5814a9cf05311334.1a82c16f23e354dd",
+      "_id": "1a82c16f23e354dd"
+    },
+    {
+      "range": [
+        112,
+        112
+      ],
+      "text": "Adda",
+      "_key": "!tables.results!5814a9cf05311334.58f88acbf7191434",
+      "_id": "58f88acbf7191434"
+    },
+    {
+      "range": [
+        113,
+        113
+      ],
+      "text": "Euros",
+      "_key": "!tables.results!5814a9cf05311334.f1b2923ef8eb0d03",
+      "_id": "f1b2923ef8eb0d03"
+    },
+    {
+      "range": [
+        114,
+        114
+      ],
+      "text": "Kova",
+      "_key": "!tables.results!5814a9cf05311334.bf0182fd78bcbc10",
+      "_id": "bf0182fd78bcbc10"
+    },
+    {
+      "range": [
+        115,
+        115
+      ],
+      "text": "Kara",
+      "_key": "!tables.results!5814a9cf05311334.b8c426450d8df00c",
+      "_id": "b8c426450d8df00c"
+    },
+    {
+      "range": [
+        116,
+        116
+      ],
+      "text": "Morgan",
+      "_key": "!tables.results!5814a9cf05311334.66c980c8828b6245",
+      "_id": "66c980c8828b6245"
+    },
+    {
+      "range": [
+        117,
+        117
+      ],
+      "text": "Nanda",
+      "_key": "!tables.results!5814a9cf05311334.ea54efe0cdad0c06",
+      "_id": "ea54efe0cdad0c06"
+    },
+    {
+      "range": [
+        118,
+        118
+      ],
+      "text": "Tamara",
+      "_key": "!tables.results!5814a9cf05311334.d8f95283a125f534",
+      "_id": "d8f95283a125f534"
+    },
+    {
+      "range": [
+        119,
+        119
+      ],
+      "text": "Asha",
+      "_key": "!tables.results!5814a9cf05311334.0bc331f884fa32cd",
+      "_id": "0bc331f884fa32cd"
+    },
+    {
+      "range": [
+        120,
+        120
+      ],
+      "text": "Delos",
+      "_key": "!tables.results!5814a9cf05311334.70950c4a726cc8c8",
+      "_id": "70950c4a726cc8c8"
+    },
+    {
+      "range": [
+        121,
+        121
+      ],
+      "text": "Torgan",
+      "_key": "!tables.results!5814a9cf05311334.6fd76cb46bb53ee7",
+      "_id": "6fd76cb46bb53ee7"
+    },
+    {
+      "range": [
+        122,
+        122
+      ],
+      "text": "Makari",
+      "_key": "!tables.results!5814a9cf05311334.47feaea2b979c9dd",
+      "_id": "47feaea2b979c9dd"
+    },
+    {
+      "range": [
+        123,
+        123
+      ],
+      "text": "Selva",
+      "_key": "!tables.results!5814a9cf05311334.4344176290d2b01e",
+      "_id": "4344176290d2b01e"
+    },
+    {
+      "range": [
+        124,
+        124
+      ],
+      "text": "Kimura",
+      "_key": "!tables.results!5814a9cf05311334.7e7a223736094d85",
+      "_id": "7e7a223736094d85"
+    },
+    {
+      "range": [
+        125,
+        125
+      ],
+      "text": "Rhian",
+      "_key": "!tables.results!5814a9cf05311334.306452a68636df73",
+      "_id": "306452a68636df73"
+    },
+    {
+      "range": [
+        126,
+        126
+      ],
+      "text": "Tristan",
+      "_key": "!tables.results!5814a9cf05311334.d14332995840ca17",
+      "_id": "d14332995840ca17"
+    },
+    {
+      "range": [
+        127,
+        127
+      ],
+      "text": "Siorra",
+      "_key": "!tables.results!5814a9cf05311334.fe653adc1fac926f",
+      "_id": "fe653adc1fac926f"
+    },
+    {
+      "range": [
+        128,
+        128
+      ],
+      "text": "Sayer",
+      "_key": "!tables.results!5814a9cf05311334.59606488e093c9d9",
+      "_id": "59606488e093c9d9"
+    },
+    {
+      "range": [
+        129,
+        129
+      ],
+      "text": "Cortina",
+      "_key": "!tables.results!5814a9cf05311334.94a4b294ec63428c",
+      "_id": "94a4b294ec63428c"
+    },
+    {
+      "range": [
+        130,
+        130
+      ],
+      "text": "Vesna",
+      "_key": "!tables.results!5814a9cf05311334.4c23a64ccf2d560d",
+      "_id": "4c23a64ccf2d560d"
+    },
+    {
+      "range": [
+        131,
+        131
+      ],
+      "text": "Kataka",
+      "_key": "!tables.results!5814a9cf05311334.e816521f97f62d60",
+      "_id": "e816521f97f62d60"
+    },
+    {
+      "range": [
+        132,
+        132
+      ],
+      "text": "Keyshia",
+      "_key": "!tables.results!5814a9cf05311334.00081617f6b5ec43",
+      "_id": "00081617f6b5ec43"
+    },
+    {
+      "range": [
+        133,
+        133
+      ],
+      "text": "Mila",
+      "_key": "!tables.results!5814a9cf05311334.4d28db917cd3361b",
+      "_id": "4d28db917cd3361b"
+    },
+    {
+      "range": [
+        134,
+        134
+      ],
+      "text": "Lili",
+      "_key": "!tables.results!5814a9cf05311334.20b7b4799815ea91",
+      "_id": "20b7b4799815ea91"
+    },
+    {
+      "range": [
+        135,
+        135
+      ],
+      "text": "Vigo",
+      "_key": "!tables.results!5814a9cf05311334.b6e795150a482eb3",
+      "_id": "b6e795150a482eb3"
+    },
+    {
+      "range": [
+        136,
+        136
+      ],
+      "text": "Sadia",
+      "_key": "!tables.results!5814a9cf05311334.155be5b865e6672d",
+      "_id": "155be5b865e6672d"
+    },
+    {
+      "range": [
+        137,
+        137
+      ],
+      "text": "Malik",
+      "_key": "!tables.results!5814a9cf05311334.68ab3a5b36d87cb4",
+      "_id": "68ab3a5b36d87cb4"
+    },
+    {
+      "range": [
+        138,
+        138
+      ],
+      "text": "Dag",
+      "_key": "!tables.results!5814a9cf05311334.05690e61b2f076ca",
+      "_id": "05690e61b2f076ca"
+    },
+    {
+      "range": [
+        139,
+        139
+      ],
+      "text": "Kuno",
+      "_key": "!tables.results!5814a9cf05311334.ba274785ec7afa3e",
+      "_id": "ba274785ec7afa3e"
+    },
+    {
+      "range": [
+        140,
+        140
+      ],
+      "text": "Reva",
+      "_key": "!tables.results!5814a9cf05311334.71ff093e5216ac00",
+      "_id": "71ff093e5216ac00"
+    },
+    {
+      "range": [
+        141,
+        141
+      ],
+      "text": "Kai",
+      "_key": "!tables.results!5814a9cf05311334.ea7c7ef06a100bd0",
+      "_id": "ea7c7ef06a100bd0"
+    },
+    {
+      "range": [
+        142,
+        142
+      ],
+      "text": "Kalina",
+      "_key": "!tables.results!5814a9cf05311334.381118eb055551c9",
+      "_id": "381118eb055551c9"
+    },
+    {
+      "range": [
+        143,
+        143
+      ],
+      "text": "Jihan",
+      "_key": "!tables.results!5814a9cf05311334.bc070968a0460b9b",
+      "_id": "bc070968a0460b9b"
+    },
+    {
+      "range": [
+        144,
+        144
+      ],
+      "text": "Hennion",
+      "_key": "!tables.results!5814a9cf05311334.9587fa517afe5ea0",
+      "_id": "9587fa517afe5ea0"
+    },
+    {
+      "range": [
+        145,
+        145
+      ],
+      "text": "Abram",
+      "_key": "!tables.results!5814a9cf05311334.1273846c9e433963",
+      "_id": "1273846c9e433963"
+    },
+    {
+      "range": [
+        146,
+        146
+      ],
+      "text": "Aida",
+      "_key": "!tables.results!5814a9cf05311334.791aa450bdaac2d2",
+      "_id": "791aa450bdaac2d2"
+    },
+    {
+      "range": [
+        147,
+        147
+      ],
+      "text": "Myrtle",
+      "_key": "!tables.results!5814a9cf05311334.b36b7bbf45f3b7d1",
+      "_id": "b36b7bbf45f3b7d1"
+    },
+    {
+      "range": [
+        148,
+        148
+      ],
+      "text": "Nekun",
+      "_key": "!tables.results!5814a9cf05311334.b06c8245a7c48f8c",
+      "_id": "b06c8245a7c48f8c"
+    },
+    {
+      "range": [
+        149,
+        149
+      ],
+      "text": "Menna",
+      "_key": "!tables.results!5814a9cf05311334.5b23a19385ed2f5a",
+      "_id": "5b23a19385ed2f5a"
+    },
+    {
+      "range": [
+        150,
+        150
+      ],
+      "text": "Tahir",
+      "_key": "!tables.results!5814a9cf05311334.d980dfc7b201b735",
+      "_id": "d980dfc7b201b735"
+    },
+    {
+      "range": [
+        151,
+        151
+      ],
+      "text": "Sarria",
+      "_key": "!tables.results!5814a9cf05311334.f7569f81b0c8a114",
+      "_id": "f7569f81b0c8a114"
+    },
+    {
+      "range": [
+        152,
+        152
+      ],
+      "text": "Nakura",
+      "_key": "!tables.results!5814a9cf05311334.6d4f1e677a1e9a14",
+      "_id": "6d4f1e677a1e9a14"
+    },
+    {
+      "range": [
+        153,
+        153
+      ],
+      "text": "Akiya",
+      "_key": "!tables.results!5814a9cf05311334.f4f00f02d6a69a52",
+      "_id": "f4f00f02d6a69a52"
+    },
+    {
+      "range": [
+        154,
+        154
+      ],
+      "text": "Talan",
+      "_key": "!tables.results!5814a9cf05311334.92123ae6659a98e1",
+      "_id": "92123ae6659a98e1"
+    },
+    {
+      "range": [
+        155,
+        155
+      ],
+      "text": "Mattick",
+      "_key": "!tables.results!5814a9cf05311334.a9b2914302cb976c",
+      "_id": "a9b2914302cb976c"
+    },
+    {
+      "range": [
+        156,
+        156
+      ],
+      "text": "Okoth",
+      "_key": "!tables.results!5814a9cf05311334.366b558394726d87",
+      "_id": "366b558394726d87"
+    },
+    {
+      "range": [
+        157,
+        157
+      ],
+      "text": "Khulan",
+      "_key": "!tables.results!5814a9cf05311334.176464e9d61887c6",
+      "_id": "176464e9d61887c6"
+    },
+    {
+      "range": [
+        158,
+        158
+      ],
+      "text": "Verena",
+      "_key": "!tables.results!5814a9cf05311334.94abef5ee2b56cd3",
+      "_id": "94abef5ee2b56cd3"
+    },
+    {
+      "range": [
+        159,
+        159
+      ],
+      "text": "Beltran",
+      "_key": "!tables.results!5814a9cf05311334.5a93a422f46081ab",
+      "_id": "5a93a422f46081ab"
+    },
+    {
+      "range": [
+        160,
+        160
+      ],
+      "text": "Del",
+      "_key": "!tables.results!5814a9cf05311334.1953e4bda990642c",
+      "_id": "1953e4bda990642c"
+    },
+    {
+      "range": [
+        161,
+        161
+      ],
+      "text": "Ranna",
+      "_key": "!tables.results!5814a9cf05311334.615a2c3732ab17af",
+      "_id": "615a2c3732ab17af"
+    },
+    {
+      "range": [
+        162,
+        162
+      ],
+      "text": "Alina",
+      "_key": "!tables.results!5814a9cf05311334.b9744108286d5591",
+      "_id": "b9744108286d5591"
+    },
+    {
+      "range": [
+        163,
+        163
+      ],
+      "text": "Muna",
+      "_key": "!tables.results!5814a9cf05311334.052cd14f53492941",
+      "_id": "052cd14f53492941"
+    },
+    {
+      "range": [
+        164,
+        164
+      ],
+      "text": "Mura",
+      "_key": "!tables.results!5814a9cf05311334.bfcc7be85e0ebd75",
+      "_id": "bfcc7be85e0ebd75"
+    },
+    {
+      "range": [
+        165,
+        165
+      ],
+      "text": "Torrens",
+      "_key": "!tables.results!5814a9cf05311334.acfca36e86823792",
+      "_id": "acfca36e86823792"
+    },
+    {
+      "range": [
+        166,
+        166
+      ],
+      "text": "Yuda",
+      "_key": "!tables.results!5814a9cf05311334.5fcd0c1930b2bb51",
+      "_id": "5fcd0c1930b2bb51"
+    },
+    {
+      "range": [
+        167,
+        167
+      ],
+      "text": "Nazmi",
+      "_key": "!tables.results!5814a9cf05311334.3b031b24748023ec",
+      "_id": "3b031b24748023ec"
+    },
+    {
+      "range": [
+        168,
+        168
+      ],
+      "text": "Ghalen",
+      "_key": "!tables.results!5814a9cf05311334.09e3fab96d289975",
+      "_id": "09e3fab96d289975"
+    },
+    {
+      "range": [
+        169,
+        169
+      ],
+      "text": "Sarda",
+      "_key": "!tables.results!5814a9cf05311334.0274e48c5a5b8772",
+      "_id": "0274e48c5a5b8772"
+    },
+    {
+      "range": [
+        170,
+        170
+      ],
+      "text": "Shona",
+      "_key": "!tables.results!5814a9cf05311334.58d581af3c3927ee",
+      "_id": "58d581af3c3927ee"
+    },
+    {
+      "range": [
+        171,
+        171
+      ],
+      "text": "Kalidas",
+      "_key": "!tables.results!5814a9cf05311334.68f73c5a700ed785",
+      "_id": "68f73c5a700ed785"
+    },
+    {
+      "range": [
+        172,
+        172
+      ],
+      "text": "Wena",
+      "_key": "!tables.results!5814a9cf05311334.eb4c42fc5f461f0b",
+      "_id": "eb4c42fc5f461f0b"
+    },
+    {
+      "range": [
+        173,
+        173
+      ],
+      "text": "Sendra",
+      "_key": "!tables.results!5814a9cf05311334.2c824d6a86bf97dd",
+      "_id": "2c824d6a86bf97dd"
+    },
+    {
+      "range": [
+        174,
+        174
+      ],
+      "text": "Kori",
+      "_key": "!tables.results!5814a9cf05311334.79a9e7082ef52f86",
+      "_id": "79a9e7082ef52f86"
+    },
+    {
+      "range": [
+        175,
+        175
+      ],
+      "text": "Setara",
+      "_key": "!tables.results!5814a9cf05311334.05bd29e9a2c34dc0",
+      "_id": "05bd29e9a2c34dc0"
+    },
+    {
+      "range": [
+        176,
+        176
+      ],
+      "text": "Lucia",
+      "_key": "!tables.results!5814a9cf05311334.eb6fb5a4e244cf4d",
+      "_id": "eb6fb5a4e244cf4d"
+    },
+    {
+      "range": [
+        177,
+        177
+      ],
+      "text": "Maya",
+      "_key": "!tables.results!5814a9cf05311334.cfc5616c5c9dfa54",
+      "_id": "cfc5616c5c9dfa54"
+    },
+    {
+      "range": [
+        178,
+        178
+      ],
+      "text": "Reema",
+      "_key": "!tables.results!5814a9cf05311334.1db4a7f061a5f5a0",
+      "_id": "1db4a7f061a5f5a0"
+    },
+    {
+      "range": [
+        179,
+        179
+      ],
+      "text": "Yorath",
+      "_key": "!tables.results!5814a9cf05311334.cbd53556e8c42318",
+      "_id": "cbd53556e8c42318"
+    },
+    {
+      "range": [
+        180,
+        180
+      ],
+      "text": "Rhoddri",
+      "_key": "!tables.results!5814a9cf05311334.1489c5e3ade1fa2e",
+      "_id": "1489c5e3ade1fa2e"
+    },
+    {
+      "range": [
+        181,
+        181
+      ],
+      "text": "Shekhar",
+      "_key": "!tables.results!5814a9cf05311334.5c0e54850f61f975",
+      "_id": "5c0e54850f61f975"
+    },
+    {
+      "range": [
+        182,
+        182
+      ],
+      "text": "Servan",
+      "_key": "!tables.results!5814a9cf05311334.e54d8505c26f6a38",
+      "_id": "e54d8505c26f6a38"
+    },
+    {
+      "range": [
+        183,
+        183
+      ],
+      "text": "Reese",
+      "_key": "!tables.results!5814a9cf05311334.57379b77a8acebc7",
+      "_id": "57379b77a8acebc7"
+    },
+    {
+      "range": [
+        184,
+        184
+      ],
+      "text": "Kenrick",
+      "_key": "!tables.results!5814a9cf05311334.92b0889114ba4aa6",
+      "_id": "92b0889114ba4aa6"
+    },
+    {
+      "range": [
+        185,
+        185
+      ],
+      "text": "Indirra",
+      "_key": "!tables.results!5814a9cf05311334.cbf2fdb6c168967f",
+      "_id": "cbf2fdb6c168967f"
+    },
+    {
+      "range": [
+        186,
+        186
+      ],
+      "text": "Giliana",
+      "_key": "!tables.results!5814a9cf05311334.4b2e8b469c87cf69",
+      "_id": "4b2e8b469c87cf69"
+    },
+    {
+      "range": [
+        187,
+        187
+      ],
+      "text": "Jebran",
+      "_key": "!tables.results!5814a9cf05311334.a672aba9e0b811d3",
+      "_id": "a672aba9e0b811d3"
+    },
+    {
+      "range": [
+        188,
+        188
+      ],
+      "text": "Kotama",
+      "_key": "!tables.results!5814a9cf05311334.76f244fbdbcc9aaa",
+      "_id": "76f244fbdbcc9aaa"
+    },
+    {
+      "range": [
+        189,
+        189
+      ],
+      "text": "Fara",
+      "_key": "!tables.results!5814a9cf05311334.18312a2329acecf3",
+      "_id": "18312a2329acecf3"
+    },
+    {
+      "range": [
+        190,
+        190
+      ],
+      "text": "Katrin",
+      "_key": "!tables.results!5814a9cf05311334.9149aef5aa26990f",
+      "_id": "9149aef5aa26990f"
+    },
+    {
+      "range": [
+        191,
+        191
+      ],
+      "text": "Namba",
+      "_key": "!tables.results!5814a9cf05311334.ca535a0a32ea0a54",
+      "_id": "ca535a0a32ea0a54"
+    },
+    {
+      "range": [
+        192,
+        192
+      ],
+      "text": "Lona",
+      "_key": "!tables.results!5814a9cf05311334.f3ef5112a1ce6ff3",
+      "_id": "f3ef5112a1ce6ff3"
+    },
+    {
+      "range": [
+        193,
+        193
+      ],
+      "text": "Taylah",
+      "_key": "!tables.results!5814a9cf05311334.83646242c625ccf4",
+      "_id": "83646242c625ccf4"
+    },
+    {
+      "range": [
+        194,
+        194
+      ],
+      "text": "Kato",
+      "_key": "!tables.results!5814a9cf05311334.8728b14875a8790a",
+      "_id": "8728b14875a8790a"
+    },
+    {
+      "range": [
+        195,
+        195
+      ],
+      "text": "Esra",
+      "_key": "!tables.results!5814a9cf05311334.917988919f76b5a1",
+      "_id": "917988919f76b5a1"
+    },
+    {
+      "range": [
+        196,
+        196
+      ],
+      "text": "Eleri",
+      "_key": "!tables.results!5814a9cf05311334.818ff59a4b95d211",
+      "_id": "818ff59a4b95d211"
+    },
+    {
+      "range": [
+        197,
+        197
+      ],
+      "text": "Irsia",
+      "_key": "!tables.results!5814a9cf05311334.b6d78f164137bcd1",
+      "_id": "b6d78f164137bcd1"
+    },
+    {
+      "range": [
+        198,
+        198
+      ],
+      "text": "Kayu",
+      "_key": "!tables.results!5814a9cf05311334.1e1b2299833eb229",
+      "_id": "1e1b2299833eb229"
+    },
+    {
+      "range": [
+        199,
+        199
+      ],
+      "text": "Bevan",
+      "_key": "!tables.results!5814a9cf05311334.242f7a90fe939ad2",
+      "_id": "242f7a90fe939ad2"
+    },
+    {
+      "range": [
+        200,
+        200
+      ],
+      "text": "Chandra",
+      "_key": "!tables.results!5814a9cf05311334.9371532119601498",
+      "_id": "9371532119601498"
+    }
+  ],
+  "folder": "0ea3b5b59a92d1f2",
+  "sort": 184,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5814a9cf05311334"
+}

@@ -1,0 +1,155 @@
+{
+  "_id": "cd4163ae3410a41b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/getting_underway/take_command",
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/take_command/crew_cursed"
+    }
+  },
+  "name": "Cursed Crew",
+  "description": "<p>If you roll a curse for Crew Characteristics, take your result on that table and give them an eerie, supernatural, or dreadful aspect. Use the table below for inspiration.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Bound to the ship, unable to sail another",
+      "_key": "!tables.results!cd4163ae3410a41b.00cabc14cd79d3fe",
+      "_id": "00cabc14cd79d3fe"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Bound to the will of a dreadful artifact",
+      "_key": "!tables.results!cd4163ae3410a41b.da6b2b076847319b",
+      "_id": "da6b2b076847319b"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Built or augmented with strange technologies",
+      "_key": "!tables.results!cd4163ae3410a41b.863d10ef971246c5",
+      "_id": "863d10ef971246c5"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Cursed with foreknowledge of a dreadful fate",
+      "_key": "!tables.results!cd4163ae3410a41b.a4b808da9f3b15f6",
+      "_id": "a4b808da9f3b15f6"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Hunted by a vengeful sea beast",
+      "_key": "!tables.results!cd4163ae3410a41b.b16c05583ccd78c8",
+      "_id": "b16c05583ccd78c8"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "In the service of a malevolent god or entity",
+      "_key": "!tables.results!cd4163ae3410a41b.7d70a81ef090dbec",
+      "_id": "7d70a81ef090dbec"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Obsessed with superstitious routines and rituals",
+      "_key": "!tables.results!cd4163ae3410a41b.9c5e4c4c4b6c1b76",
+      "_id": "9c5e4c4c4b6c1b76"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Once dead, now cursed with unnatural life",
+      "_key": "!tables.results!cd4163ae3410a41b.a9c65f05b8d1867c",
+      "_id": "a9c65f05b8d1867c"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Plagued with unnatural sickness",
+      "_key": "!tables.results!cd4163ae3410a41b.302f83ae05601a27",
+      "_id": "302f83ae05601a27"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Suffers a jinxed reputation, and forsaken by others",
+      "_key": "!tables.results!cd4163ae3410a41b.c300ab2f86ab6f5d",
+      "_id": "c300ab2f86ab6f5d"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Suffers an insatiable need",
+      "_key": "!tables.results!cd4163ae3410a41b.02d5cbdc5a0a3f1a",
+      "_id": "02d5cbdc5a0a3f1a"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Survivors of an attack by a horrifying foe or monstrous beast",
+      "_key": "!tables.results!cd4163ae3410a41b.a13ae5fb30e18a09",
+      "_id": "a13ae5fb30e18a09"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "Tattooed with elaborate mystical wards",
+      "_key": "!tables.results!cd4163ae3410a41b.cfbd95730e850bf6",
+      "_id": "cfbd95730e850bf6"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Tormented by unforgiving spirits",
+      "_key": "!tables.results!cd4163ae3410a41b.f9fab517b6b30128",
+      "_id": "f9fab517b6b30128"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "True nature revealed under moonlight",
+      "_key": "!tables.results!cd4163ae3410a41b.82f54869da483440",
+      "_id": "82f54869da483440"
+    }
+  ],
+  "folder": "73ab87baaf2ebf11",
+  "sort": 99,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cd4163ae3410a41b"
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "7f882dad66dfba0f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/magnitude",
+      "dsid": "oracle_rollable:sundered_isles/misc/magnitude/size"
+    }
+  },
+  "name": "Size",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Undersized",
+      "_key": "!tables.results!7f882dad66dfba0f.b5f56707e9d25f13",
+      "_id": "b5f56707e9d25f13"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Small",
+      "_key": "!tables.results!7f882dad66dfba0f.863ce1ebde9e3769",
+      "_id": "863ce1ebde9e3769"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Medium",
+      "_key": "!tables.results!7f882dad66dfba0f.75c9ed45a0cd4d3e",
+      "_id": "75c9ed45a0cd4d3e"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Large",
+      "_key": "!tables.results!7f882dad66dfba0f.3fe5df107c520112",
+      "_id": "3fe5df107c520112"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Huge",
+      "_key": "!tables.results!7f882dad66dfba0f.3eb14330385d8afc",
+      "_id": "3eb14330385d8afc"
+    }
+  ],
+  "folder": "a547d2b78f39268a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7f882dad66dfba0f"
+}

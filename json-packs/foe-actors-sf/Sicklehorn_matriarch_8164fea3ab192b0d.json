@@ -1,0 +1,53 @@
+{
+  "name": "Sicklehorn matriarch",
+  "img": "icons/creatures/mammals/goat-horned-blue.webp",
+  "type": "foe",
+  "_id": "8164fea3ab192b0d",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Sicklehorn matriarch",
+    "texture": {
+      "src": "icons/creatures/mammals/goat-horned-blue.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "92f57a1443260835",
+      "type": "progress",
+      "name": "Sicklehorn matriarch",
+      "img": "icons/creatures/mammals/goat-horned-blue.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Muscular creatures with columnar legs</p>\n<p class=\"nogrow\">Large, curved horns</p>\n<p class=\"nogrow\">Cloven hooves</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Remain with the herd</p>\n<p class=\"nogrow\">Follow the dominant matriarch</p>\n<p class=\"nogrow\">Protect the herd when threatened</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Form a circle to defend the young</p>\n<p class=\"nogrow\">Growl, snort, and stamp to unnerve predators</p>\n<p class=\"nogrow\">Charge head-on</p>\n</div>\n</div>\n\n<p>A powerful matriarch leads each sicklehorn herd. She is larger than other members, with a thicker hide and more elaborate horns. A matriarch is formidable on her own, but typically has the strongest members of the herd by her side.</p>\n\n<blockquote>Quest Starter: <p>A settlement's prized sicklehorn matriarch has been stolen, the herd is in disarray, and the settlers won't survive another year without her return. The theft is blamed on a rival settlement on the same planet, but raiders also plague this sector. How are you involved?</p></blockquote>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc.variant:starforged/sample_npcs/sicklehorn.sicklehorn_matriarch"
+        }
+      },
+      "_key": "!actors.items!8164fea3ab192b0d.92f57a1443260835"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/sicklehorn.sicklehorn_matriarch"
+    }
+  },
+  "_key": "!actors!8164fea3ab192b0d"
+}

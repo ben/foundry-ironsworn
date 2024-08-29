@@ -1,0 +1,65 @@
+{
+  "_id": "36deaa32ab9f6ff7",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/identity/controlling_faction",
+      "dsid": "oracle_rollable:sundered_isles/settlement/identity/controlling_faction/reaches"
+    }
+  },
+  "name": "Reaches",
+  "description": "<p>Remote Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "Known faction",
+      "_key": "!tables.results!36deaa32ab9f6ff7.cd80c5664b40f228",
+      "_id": "cd80c5664b40f228"
+    },
+    {
+      "range": [
+        31,
+        55
+      ],
+      "text": "Unknown faction",
+      "_key": "!tables.results!36deaa32ab9f6ff7.712a4a29484279f7",
+      "_id": "712a4a29484279f7"
+    },
+    {
+      "range": [
+        56,
+        90
+      ],
+      "text": "Independent",
+      "_key": "!tables.results!36deaa32ab9f6ff7.c812aafd5e51495a",
+      "_id": "c812aafd5e51495a"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Factions in cooperation",
+      "_key": "!tables.results!36deaa32ab9f6ff7.725c4bdb9f08f252",
+      "_id": "725c4bdb9f08f252"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Factions in conflict",
+      "_key": "!tables.results!36deaa32ab9f6ff7.b5bb9fa0f2d15354",
+      "_id": "b5bb9fa0f2d15354"
+    }
+  ],
+  "folder": "775cc163a0b5b7fd",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!36deaa32ab9f6ff7"
+}

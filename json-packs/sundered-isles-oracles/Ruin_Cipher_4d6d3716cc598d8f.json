@@ -1,0 +1,110 @@
+{
+  "_id": "4d6d3716cc598d8f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/cipher"
+    }
+  },
+  "name": "Ruin Cipher",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Carved glyphs",
+      "_key": "!tables.results!4d6d3716cc598d8f.8b40e293b48c2e04",
+      "_id": "8b40e293b48c2e04"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Hastily written markings",
+      "_key": "!tables.results!4d6d3716cc598d8f.e38d8e2e1370b3dc",
+      "_id": "e38d8e2e1370b3dc"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Hidden chamber or passage",
+      "_key": "!tables.results!4d6d3716cc598d8f.7f07d6ca3ff79a84",
+      "_id": "7f07d6ca3ff79a84"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Map or document",
+      "_key": "!tables.results!4d6d3716cc598d8f.a8d72ce44659b4e6",
+      "_id": "a8d72ce44659b4e6"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Murals, statues, or other artwork",
+      "_key": "!tables.results!4d6d3716cc598d8f.47d0da6a9dc2d3f6",
+      "_id": "47d0da6a9dc2d3f6"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Personal memento",
+      "_key": "!tables.results!4d6d3716cc598d8f.ce41c0567cf28f31",
+      "_id": "ce41c0567cf28f31"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Puzzle, key, or device",
+      "_key": "!tables.results!4d6d3716cc598d8f.86e87ffc39782a55",
+      "_id": "86e87ffc39782a55"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Remains of the dead",
+      "_key": "!tables.results!4d6d3716cc598d8f.5e20adff96f49c94",
+      "_id": "5e20adff96f49c94"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Signs of other explorers or guardians",
+      "_key": "!tables.results!4d6d3716cc598d8f.9ad80fd6b4d6c599",
+      "_id": "9ad80fd6b4d6c599"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Unusual architecture",
+      "_key": "!tables.results!4d6d3716cc598d8f.572fd83c67743a34",
+      "_id": "572fd83c67743a34"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 216,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4d6d3716cc598d8f"
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "17174b1f2af8bb1e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave",
+      "dsid": "oracle_rollable:sundered_isles/cave/lurking_threat_cursed"
+    }
+  },
+  "name": "Cursed Lurking Threat",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "Dark-dwelling beings",
+      "_key": "!tables.results!17174b1f2af8bb1e.162bb42da7f2e2a8",
+      "_id": "162bb42da7f2e2a8"
+    },
+    {
+      "range": [
+        26,
+        50
+      ],
+      "text": "Eldritch cultists",
+      "_key": "!tables.results!17174b1f2af8bb1e.7f42025372497eee",
+      "_id": "7f42025372497eee"
+    },
+    {
+      "range": [
+        51,
+        70
+      ],
+      "text": "Mighty beast",
+      "_key": "!tables.results!17174b1f2af8bb1e.2b5692a26eccd46e",
+      "_id": "2b5692a26eccd46e"
+    },
+    {
+      "range": [
+        71,
+        85
+      ],
+      "text": "Monstrous infestation",
+      "_key": "!tables.results!17174b1f2af8bb1e.a6f0284ba6953050",
+      "_id": "a6f0284ba6953050"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Restless dead",
+      "_key": "!tables.results!17174b1f2af8bb1e.539b60f3fafb5ce8",
+      "_id": "539b60f3fafb5ce8"
+    }
+  ],
+  "folder": "6e4db0d120c971eb",
+  "sort": 207,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!17174b1f2af8bb1e"
+}

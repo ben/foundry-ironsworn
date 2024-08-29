@@ -3,63 +3,51 @@
   "type": "sfmove",
   "name": "Test Your Bond",
   "img": "icons/dice/d10black.svg",
+  "folder": "31fc8e728c391c80",
   "system": {
     "dfid": "Ironsworn/Moves/Relationship/Test_Your_Bond",
     "Category": "Ironsworn/Moves/Relationship",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **your bond is tested through conflict, betrayal, or circumstance**, roll +heart.\n\nOn a **strong hit**, this test has strengthened your bond. Choose one.\n\n  * Take +1 spirit.\n  * Take +2 momentum.\n\nOn a **weak hit**, your bond is fragile and you must prove your loyalty. Envision what they ask of you (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and do it (or @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}). If you refuse or fail, clear the bond and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.\n\nOn a **miss**, or if you have no interest in maintaining this relationship, clear the bond and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Text": "When __your bond is tested through conflict, betrayal, or circumstance__, roll +heart.\n\nOn a __strong hit__, this test has strengthened your bond. Choose one.\n\n  * Take +1 spirit.\n  * Take +2 momentum.\n\nOn a __weak hit__, your bond is fragile and you must prove your loyalty. Envision what they ask of you (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and do it (or @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}). If you refuse or fail, clear the bond and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.\n\nOn a __miss__, or if you have no interest in maintaining this relationship, clear the bond and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
     "Trigger": {
       "Text": "When your bond is tested through conflict, betrayal, or circumstance...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Heart"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "This test has strengthened your bond. Choose one.\n\n  * Take +1 spirit.\n  * Take +2 momentum.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, this test has strengthened your bond. Choose one.\n\n  * Take +1 spirit.\n  * Take +2 momentum.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Your bond is fragile and you must prove your loyalty. Envision what they ask of you (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and do it (or @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}). If you refuse or fail, clear the bond and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, your bond is fragile and you must prove your loyalty. Envision what they ask of you (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure), and do it (or @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}). If you refuse or fail, clear the bond and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}."
       },
       "Miss": {
-        "Text": "Clear the bond and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, clear the bond and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 75
     },
     "Suggestions": {},
@@ -68,20 +56,11 @@
     }
   },
   "sort": 75,
-  "folder": "31fc8e728c391c80",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Relationship/Test_Your_Bond",
+      "dsid": "move:classic/relationship/test_your_bond"
+    }
   },
   "_key": "!items!421b379cb40b6ab7"
 }

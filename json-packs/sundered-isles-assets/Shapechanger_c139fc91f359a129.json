@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "c139fc91f359a129",
+  "folder": "e5df7144ec089f12",
+  "name": "Shapechanger",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [
+      {
+        "name": "Form",
+        "value": ""
+      },
+      {
+        "name": "Trigger",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You have an alternate form and a trigger that sparks the transformation. If you encounter or activate the trigger, @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} (roll +health) to hasten, endure, or resist the transformation. When you make a move in your alternate form, roll an extra action die. If the move is true to your alternate form’s nature, keep the highest as your action die value. If it is contrary, keep the lowest. To willingly return to your normal form, @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>As above, and when you score a hit with matching values on both action dice, your identities are in harmony; take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Choose your normal or alternate form as your ideal self. When you change to that form, you are partially restored and may take +1 health or +1 spirit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/shapechanger",
+      "dsid": "asset:sundered_isles/path/shapechanger"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!c139fc91f359a129"
+}

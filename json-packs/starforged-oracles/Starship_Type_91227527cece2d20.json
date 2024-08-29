@@ -1,0 +1,219 @@
+{
+  "_id": "91227527cece2d20",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Starships/Type",
+      "category": "Starforged/Oracles/Starships",
+      "dsid": "oracle_rollable:starforged/starship/type"
+    }
+  },
+  "name": "Starship Type",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Carrier",
+      "_key": "!tables.results!91227527cece2d20.98cd2f4a86915d83",
+      "_id": "98cd2f4a86915d83"
+    },
+    {
+      "range": [
+        3,
+        6
+      ],
+      "text": "Corvette",
+      "_key": "!tables.results!91227527cece2d20.5ba1a9c288568474",
+      "_id": "5ba1a9c288568474"
+    },
+    {
+      "range": [
+        7,
+        11
+      ],
+      "text": "Courier",
+      "_key": "!tables.results!91227527cece2d20.930f1d9cdfee5a07",
+      "_id": "930f1d9cdfee5a07"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Cruiser",
+      "_key": "!tables.results!91227527cece2d20.d9832afc336b00fd",
+      "_id": "d9832afc336b00fd"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Dreadnought",
+      "_key": "!tables.results!91227527cece2d20.19f0ddd0bf03bc97",
+      "_id": "19f0ddd0bf03bc97"
+    },
+    {
+      "range": [
+        17,
+        19
+      ],
+      "text": "Escape pod",
+      "_key": "!tables.results!91227527cece2d20.3654e1ed86f5b04c",
+      "_id": "3654e1ed86f5b04c"
+    },
+    {
+      "range": [
+        20,
+        22
+      ],
+      "text": "Foundry",
+      "_key": "!tables.results!91227527cece2d20.b201cdd61b409074",
+      "_id": "b201cdd61b409074"
+    },
+    {
+      "range": [
+        23,
+        27
+      ],
+      "text": "Harvester",
+      "_key": "!tables.results!91227527cece2d20.fb7d7404eb4a363d",
+      "_id": "fb7d7404eb4a363d"
+    },
+    {
+      "range": [
+        28,
+        33
+      ],
+      "text": "Hauler",
+      "_key": "!tables.results!91227527cece2d20.1d06e2dcd7c7630e",
+      "_id": "1d06e2dcd7c7630e"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Hunter",
+      "_key": "!tables.results!91227527cece2d20.8d5cc0b7535a7801",
+      "_id": "8d5cc0b7535a7801"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Ironhome",
+      "_key": "!tables.results!91227527cece2d20.b2b23b8b1923083d",
+      "_id": "b2b23b8b1923083d"
+    },
+    {
+      "range": [
+        39,
+        42
+      ],
+      "text": "Mender",
+      "_key": "!tables.results!91227527cece2d20.6aabd219f067ecca",
+      "_id": "6aabd219f067ecca"
+    },
+    {
+      "range": [
+        43,
+        47
+      ],
+      "text": "Outbounder",
+      "_key": "!tables.results!91227527cece2d20.293574267ff31135",
+      "_id": "293574267ff31135"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Pennant",
+      "_key": "!tables.results!91227527cece2d20.159df41a5277498f",
+      "_id": "159df41a5277498f"
+    },
+    {
+      "range": [
+        51,
+        56
+      ],
+      "text": "Prospector",
+      "_key": "!tables.results!91227527cece2d20.9609aa879e099b73",
+      "_id": "9609aa879e099b73"
+    },
+    {
+      "range": [
+        57,
+        61
+      ],
+      "text": "Reclaimer",
+      "_key": "!tables.results!91227527cece2d20.ac1cd214f3ee15fc",
+      "_id": "ac1cd214f3ee15fc"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Shuttle",
+      "_key": "!tables.results!91227527cece2d20.a918944bd0c20241",
+      "_id": "a918944bd0c20241"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Snub fighter",
+      "_key": "!tables.results!91227527cece2d20.a93e55b7cf3b963b",
+      "_id": "a93e55b7cf3b963b"
+    },
+    {
+      "range": [
+        68,
+        82
+      ],
+      "text": "Multipurpose",
+      "_key": "!tables.results!91227527cece2d20.deeacc41b75cd3d9",
+      "_id": "deeacc41b75cd3d9"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Unusual or unknown",
+      "_key": "!tables.results!91227527cece2d20.b1835091165fdd4f",
+      "_id": "b1835091165fdd4f"
+    },
+    {
+      "range": [
+        85,
+        94
+      ],
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.170fccaeba83c346]{Fleet}",
+      "_key": "!tables.results!91227527cece2d20.ee67a51381d13240",
+      "_id": "ee67a51381d13240"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Ships in conflict (roll twice)",
+      "_key": "!tables.results!91227527cece2d20.13028eed833d457e",
+      "_id": "13028eed833d457e"
+    }
+  ],
+  "folder": "eea3419c88a919cd",
+  "sort": 326,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!91227527cece2d20"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Turning_Point/Combat_Action",
-      "category": "Ironsworn/Oracles/Turning_Point"
+      "category": "Ironsworn/Oracles/Turning_Point",
+      "dsid": "oracle_rollable:classic/turning_point/combat_action"
     }
   },
   "name": "Combat Action",
   "description": "<p>Use this oracle to help inspire an action for an NPC in combat. When you’re not sure what your foe does next, particularly when they have initiative, roll on this table and interpret the result as appropriate to the situation.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Compel a surrender.",
-      "_id": "c50edbab450b8519",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.c50edbab450b8519"
+      "_key": "!tables.results!1fa4912b675a7c96.0277fcdf91810b0e",
+      "_id": "0277fcdf91810b0e"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         6
       ],
       "text": "Coordinate with allies.",
-      "_id": "c5c00b8400a5f531",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.c5c00b8400a5f531"
+      "_key": "!tables.results!1fa4912b675a7c96.2a4a5b2d8415d791",
+      "_id": "2a4a5b2d8415d791"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         9
       ],
       "text": "Gather reinforcements.",
-      "_id": "0be2525e93773d97",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.0be2525e93773d97"
+      "_key": "!tables.results!1fa4912b675a7c96.ac61107d87258f1c",
+      "_id": "ac61107d87258f1c"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         13
       ],
       "text": "Seize something or someone.",
-      "_id": "6d9100abcd22d5bd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.6d9100abcd22d5bd"
+      "_key": "!tables.results!1fa4912b675a7c96.24db88be2f373831",
+      "_id": "24db88be2f373831"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         17
       ],
       "text": "Provoke a reckless response.",
-      "_id": "32daf4c2408a0ca7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.32daf4c2408a0ca7"
+      "_key": "!tables.results!1fa4912b675a7c96.5cbae05151de9357",
+      "_id": "5cbae05151de9357"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         21
       ],
       "text": "Intimidate or frighten.",
-      "_id": "09dec3ca76de9432",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.09dec3ca76de9432"
+      "_key": "!tables.results!1fa4912b675a7c96.ffa807495963f4f4",
+      "_id": "ffa807495963f4f4"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         25
       ],
       "text": "Reveal a surprising truth.",
-      "_id": "c884e13275c38114",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.c884e13275c38114"
+      "_key": "!tables.results!1fa4912b675a7c96.140e3e0c7b83bee0",
+      "_id": "140e3e0c7b83bee0"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         29
       ],
       "text": "Shift focus to someone or something else.",
-      "_id": "d49a444f1e063ead",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.d49a444f1e063ead"
+      "_key": "!tables.results!1fa4912b675a7c96.654770f91068b001",
+      "_id": "654770f91068b001"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         33
       ],
       "text": "Destroy something, or render it useless.",
-      "_id": "990e16976334db55",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.990e16976334db55"
+      "_key": "!tables.results!1fa4912b675a7c96.26b36c6dadcd57d5",
+      "_id": "26b36c6dadcd57d5"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         39
       ],
       "text": "Take a decisive action.",
-      "_id": "aa8e1d7c91291034",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.aa8e1d7c91291034"
+      "_key": "!tables.results!1fa4912b675a7c96.0e587687f63bdcfc",
+      "_id": "0e587687f63bdcfc"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         45
       ],
       "text": "Reinforce defenses.",
-      "_id": "395d23c72b3c8203",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.395d23c72b3c8203"
+      "_key": "!tables.results!1fa4912b675a7c96.4fb2c39e8af3cdeb",
+      "_id": "4fb2c39e8af3cdeb"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         52
       ],
       "text": "Ready an action.",
-      "_id": "ffdbba6c270f250a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.ffdbba6c270f250a"
+      "_key": "!tables.results!1fa4912b675a7c96.e10a37c97af25771",
+      "_id": "e10a37c97af25771"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         60
       ],
       "text": "Use the terrain to gain advantage.",
-      "_id": "f6972b5b105868a0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.f6972b5b105868a0"
+      "_key": "!tables.results!1fa4912b675a7c96.8dd2a306731b1d32",
+      "_id": "8dd2a306731b1d32"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         68
       ],
       "text": "Leverage the advantage of a weapon or ability.",
-      "_id": "9f8346d85d2b6a33",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.9f8346d85d2b6a33"
+      "_key": "!tables.results!1fa4912b675a7c96.27506869e2ab9d1c",
+      "_id": "27506869e2ab9d1c"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         78
       ],
       "text": "Create an opportunity.",
-      "_id": "14eb2e88a4ff0962",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.14eb2e88a4ff0962"
+      "_key": "!tables.results!1fa4912b675a7c96.bdca4be48859e6e0",
+      "_id": "bdca4be48859e6e0"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         89
       ],
       "text": "Attack with precision.",
-      "_id": "d78353e5f37f1b9c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.d78353e5f37f1b9c"
+      "_key": "!tables.results!1fa4912b675a7c96.b68fad4e7dd4c58d",
+      "_id": "b68fad4e7dd4c58d"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         99
       ],
       "text": "Attack with power.",
-      "_id": "1b69ad5623062d50",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.1b69ad5623062d50"
+      "_key": "!tables.results!1fa4912b675a7c96.4b6bf7c6a305d1c9",
+      "_id": "4b6bf7c6a305d1c9"
     },
     {
       "range": [
@@ -256,29 +172,12 @@
         100
       ],
       "text": "Take a completely unexpected action.",
-      "_id": "6de770c08c28e558",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1fa4912b675a7c96.6de770c08c28e558"
+      "_key": "!tables.results!1fa4912b675a7c96.f8c19f9c8579f367",
+      "_id": "f8c19f9c8579f367"
     }
   ],
   "folder": "b4c697d8bd353315",
   "sort": 188,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!1fa4912b675a7c96"
 }

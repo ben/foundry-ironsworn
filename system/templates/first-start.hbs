@@ -1,61 +1,138 @@
 <style>
-	.first-start-content { margin: 1em; } .first-start-content .box label {
-	padding: 1rem; } .first-start-content h1 { border: none; }
-	.first-start-content h2 { border: none; margin-top: 1rem; }
-	.first-start-content .flexcol { align-items: center; } .first-start-content
-	img { border: none; width: 170px; }
+	.first-start-content {
+		margin: 0 1rem 1rem 1rem
+	}
 
+	.first-start-content .box {
+		padding: 5px;
+	}
+
+	.first-start-content h2 {
+		border: none;
+		margin-top: 1rem;
+		margin-bottom: 0;
+	}
+
+	.first-start-content h3 {
+		margin: 0.25rem 0;
+	}
+
+	.first-start-content .flexcol {
+		align-items: center;
+	}
+
+	.first-start-content img {
+		border: none;
+	}
+
+	.first-start-content input[type='checkbox'] {
+		width: inherit;
+		height: inherit;
+	}
 </style>
 
 <form class='first-start-content'>
-	<h1>{{localize 'IRONSWORN.First Start.Welcome'}}</h1>
-	<p>{{localize 'IRONSWORN.First Start.Intro'}}</p>
+
+	<div class='flexcol'>
+		<h2>{{localize 'IRONSWORN.First Start.SheetTitle'}}</h2>
+		<p>{{localize 'IRONSWORN.First Start.SheetHint'}}</p>
+	</div>
+	<div class='boxgroup'>
+		<div class='flexrow boxrow'>
+			<div class='box flexcol' style='padding: 5px'>
+				<label class='flexcol' style='width: 100%;'
+							data-tooltip="{{localize 'IRONSWORN.First Start.IronswornSheetTooltip'}}">
+					<img src='systems/foundry-ironsworn/assets/welcome/ironsworn-sheet.jpg'
+							 alt='Ironsworn-style sheet' />
+					<p>
+						<input type='radio' name='sheet' value='IronswornCharacterSheetV2'
+							{{#if sheetIsIronsworn }}checked{{/if}} />
+						{{localize 'IRONSWORN.Ironsworn'}}
+					</p>
+				</label>
+			</div>
+			<div class='box flexcol' style='padding: 5px'>
+				<label class='flexcol' style='width: 100%;'
+							data-tooltip="{{localize 'IRONSWORN.First Start.StarforgedSheetTooltip'}}">
+					<img src='systems/foundry-ironsworn/assets/welcome/starforged-sheet.jpg'
+							 alt='Starforged-style sheet' />
+					<p>
+						<input type='radio' name='sheet' value='StarforgedCharacterSheet'
+							{{#if sheetIsStarforged }}checked{{/if}} />
+						{{localize 'IRONSWORN.Starforged'}}
+					</p>
+				</label>
+			</div>
+		</div>
+	</div>
+
+	<div class='flexcol'>
+		<h2>{{localize 'IRONSWORN.First Start.RulesetsTitle'}}</h2>
+		<p>{{localize 'IRONSWORN.First Start.RulesetsHint'}}</p>
+	</div>
+
+	{{#*inline "rulesetCheckbox"}}
+	<label>
+		<input type='checkbox' class="ruleset" value='{{id}}' {{#if enabled}}checked{{/if}} />
+		{{name}}
+	</label>
+	{{/inline}}
 
 	<div class='boxgroup'>
 		<div class='flexrow boxrow'>
-			<div
-				class='box flexcol clickable block'
-				id='select-ironsworn'
-				style='padding: 5px'
-			>
-				<img
-					src='systems/foundry-ironsworn/assets/icons/logo-ironsworn-md.svg'
-					alt='Ironsworn sheet'
-				/>
-				<p>
-					{{localize 'IRONSWORN.Ironsworn'}}
-				</p>
+			<div class='box flexcol'>
+				<h3>{{localize 'IRONSWORN.Ironsworn'}}</h3>
+				{{> rulesetCheckbox rulesets.classic}}
+				{{> rulesetCheckbox rulesets.delve}}
 			</div>
-			<div
-				class='box flexcol clickable block'
-				id='select-starforged'
-				style='padding: 5px'
-			>
-				<img
-					src='systems/foundry-ironsworn/assets/icons/logo-starforged-md.svg'
-					alt='Starforged sheet'
-				/>
-				<p>
-					{{localize 'IRONSWORN.Starforged'}}
-				</p>
+			<div class='box flexcol'>
+				<h3>{{localize 'IRONSWORN.Starforged'}}</h3>
+				{{> rulesetCheckbox rulesets.starforged}}
+				{{> rulesetCheckbox rulesets.sundered_isles}}
 			</div>
+		</div>
+	</div>
 
-			{{#if sunderedislesBeta}}
-				<div
-					class='box flexcol clickable block'
-					id='select-sunderedisles'
-					style='padding: 5px'
-				>
-					<img
-						src='systems/foundry-ironsworn/assets/icons/logo-sunderedisles-md.svg'
-						alt='Sundered Isles sheet'
-					/>
+	<div class='flexcol'>
+		<h2>{{localize 'IRONSWORN.First Start.TruthsTitle'}}</h2>
+		<p>{{localize 'IRONSWORN.First Start.TruthsHint'}}</p>
+	</div>
+
+	<div class='boxgroup'>
+		<div class='flexrow boxrow'>
+			<div class='box flexcol'>
+				<label class='flexcol' style='width: 100%;'>
 					<p>
+						<input type='radio' name='truths' value='classic' />
+						{{localize 'IRONSWORN.Ironsworn'}}
+					</p>
+				</label>
+			</div>
+			<div class='box flexcol'>
+				<label class='flexcol' style='width: 100%;'>
+					<p>
+						<input type='radio' name='truths' value='starforged' />
+						{{localize 'IRONSWORN.Starforged'}}
+					</p>
+				</label>
+			</div>
+			<div class='box flexcol'>
+				<label class='flexcol' style='width: 100%;'>
+					<p>
+						<input type='radio' name='truths' value='sundered_isles' />
 						{{localize 'IRONSWORN.SunderedIsles'}}
 					</p>
-				</div>
-			{{/if}}
+				</label>
+			</div>
 		</div>
+	</div>
+
+
+	<div class='flexcol' style='margin-top: 1em;'>
+		<button class='clickable block boxgroup box ironsworn__save' style='flex: 1; justify-content: center; width: 100%'>
+			<i class='fas fa-feather'></i>
+			{{localize 'Save'}}
+		</button>
 	</div>
 
 </form>

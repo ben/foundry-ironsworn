@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Moves/Make_a_Discovery",
-      "category": "Starforged/Oracles/Moves"
+      "category": "Starforged/Moves/Exploration",
+      "dsid": "move.oracle_rollable:starforged/exploration/make_a_discovery.make_a_discovery"
     }
   },
   "name": "Make a Discovery",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "Advanced technology waiting to be harnessed or salvaged",
-      "_id": "e6c979eca2ab1b80",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.e6c979eca2ab1b80"
+      "_key": "!tables.results!dae4ba09f93a3869.b8965f0b007d908d",
+      "_id": "b8965f0b007d908d"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         8
       ],
       "text": "Ancient archive or message",
-      "_id": "c1f5aa439271eac6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.c1f5aa439271eac6"
+      "_key": "!tables.results!dae4ba09f93a3869.73e4918b9f6961d0",
+      "_id": "73e4918b9f6961d0"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         10
       ],
       "text": "Artificial consciousness evolved to a higher state",
-      "_id": "75c20805f583f2f0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.75c20805f583f2f0"
+      "_key": "!tables.results!dae4ba09f93a3869.44a41a772d49c410",
+      "_id": "44a41a772d49c410"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         12
       ],
       "text": "Clues to a crucial resource or uncharted domain",
-      "_id": "1a0f35af03431dd1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.1a0f35af03431dd1"
+      "_key": "!tables.results!dae4ba09f93a3869.bf237e26da117eb3",
+      "_id": "bf237e26da117eb3"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         14
       ],
       "text": "Envoy from another time or reality",
-      "_id": "3a6eecdacf68de50",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.3a6eecdacf68de50"
+      "_key": "!tables.results!dae4ba09f93a3869.d82862fa8559ec4b",
+      "_id": "d82862fa8559ec4b"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         22
       ],
       "text": "Extraordinary natural phenomenon",
-      "_id": "618c5f063ae74387",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.618c5f063ae74387"
+      "_key": "!tables.results!dae4ba09f93a3869.3d3de65d8fcbac17",
+      "_id": "3d3de65d8fcbac17"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         24
       ],
       "text": "First contact with intelligent life",
-      "_id": "a71aa58c89cdbe4c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.a71aa58c89cdbe4c"
+      "_key": "!tables.results!dae4ba09f93a3869.8aea72bc808d653d",
+      "_id": "8aea72bc808d653d"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         26
       ],
       "text": "Gateway to another time or alternate reality",
-      "_id": "7182ff25a3d2461e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.7182ff25a3d2461e"
+      "_key": "!tables.results!dae4ba09f93a3869.5698f11faace6779",
+      "_id": "5698f11faace6779"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         28
       ],
       "text": "Key to unlocking a language or method of communication",
-      "_id": "4b7e4318c22bae7f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.4b7e4318c22bae7f"
+      "_key": "!tables.results!dae4ba09f93a3869.a460647ab957c09d",
+      "_id": "a460647ab957c09d"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         34
       ],
       "text": "Lost or hidden people",
-      "_id": "3019f817b25b7d76",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.3019f817b25b7d76"
+      "_key": "!tables.results!dae4ba09f93a3869.3e91a8cd29ff1d1a",
+      "_id": "3e91a8cd29ff1d1a"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         42
       ],
       "text": "Majestic or unusual lifeforms",
-      "_id": "953e8896a2fc2bc0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.953e8896a2fc2bc0"
+      "_key": "!tables.results!dae4ba09f93a3869.9971dfc7c7778b6d",
+      "_id": "9971dfc7c7778b6d"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         46
       ],
       "text": "Marvel of ancient engineering",
-      "_id": "046bd30f7b7a2eaa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.046bd30f7b7a2eaa"
+      "_key": "!tables.results!dae4ba09f93a3869.8eb2a6d06b9e2673",
+      "_id": "8eb2a6d06b9e2673"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         50
       ],
       "text": "Miraculously preserved artifact or specimen",
-      "_id": "55c0c1dd0076fef9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.55c0c1dd0076fef9"
+      "_key": "!tables.results!dae4ba09f93a3869.b86fc1aa348d4834",
+      "_id": "b86fc1aa348d4834"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         56
       ],
       "text": "Monumental architecture or artistry of an ancient civilization",
-      "_id": "5044133655e2e96f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.5044133655e2e96f"
+      "_key": "!tables.results!dae4ba09f93a3869.f2fef804fce2b555",
+      "_id": "f2fef804fce2b555"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         62
       ],
       "text": "Mysterious device or artifact of potential value",
-      "_id": "dee98e58d2674a0b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.dee98e58d2674a0b"
+      "_key": "!tables.results!dae4ba09f93a3869.99e1a4ec0b7f2a48",
+      "_id": "99e1a4ec0b7f2a48"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         66
       ],
       "text": "New understanding of an enduring mystery",
-      "_id": "ac3a219fc1d9e7e3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.ac3a219fc1d9e7e3"
+      "_key": "!tables.results!dae4ba09f93a3869.6ede829478fb929b",
+      "_id": "6ede829478fb929b"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         68
       ],
       "text": "Pathway or means of travel to a distant location",
-      "_id": "ac9cc5dfec7e82ca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.ac9cc5dfec7e82ca"
+      "_key": "!tables.results!dae4ba09f93a3869.c6bd4232b51c82bf",
+      "_id": "c6bd4232b51c82bf"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         70
       ],
       "text": "Person or lifeform with phenomenal abilities",
-      "_id": "f2a8003ffe264393",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.f2a8003ffe264393"
+      "_key": "!tables.results!dae4ba09f93a3869.708176159770ba4e",
+      "_id": "708176159770ba4e"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         78
       ],
       "text": "Place of awe-inspiring beauty",
-      "_id": "c19aac5be96fa1e8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.c19aac5be96fa1e8"
+      "_key": "!tables.results!dae4ba09f93a3869.0c103e0a08a20b87",
+      "_id": "0c103e0a08a20b87"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         86
       ],
       "text": "Rare and valuable resource",
-      "_id": "e3ce1258a01613d4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.e3ce1258a01613d4"
+      "_key": "!tables.results!dae4ba09f93a3869.081f5384b0d20852",
+      "_id": "081f5384b0d20852"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         88
       ],
       "text": "Safeguarded or idyllic location",
-      "_id": "6c4bf79bc4f5aa95",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.6c4bf79bc4f5aa95"
+      "_key": "!tables.results!dae4ba09f93a3869.2248253a5426b430",
+      "_id": "2248253a5426b430"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         90
       ],
       "text": "Visions or prophesies of the future",
-      "_id": "7ccdb29f6aeec1f5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.7ccdb29f6aeec1f5"
+      "_key": "!tables.results!dae4ba09f93a3869.e200ead35181005a",
+      "_id": "e200ead35181005a"
     },
     {
       "range": [
@@ -326,29 +217,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "bc7a15fd42603cec",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dae4ba09f93a3869.bc7a15fd42603cec"
+      "_key": "!tables.results!dae4ba09f93a3869.4280455cda9dc43f",
+      "_id": "4280455cda9dc43f"
     }
   ],
-  "folder": "adcc4cbc5484a254",
-  "sort": 176,
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!dae4ba09f93a3869"
 }

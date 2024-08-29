@@ -1,0 +1,104 @@
+{
+  "name": "Laws",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Laws",
+      "dsid": "truth:starforged/laws"
+    }
+  },
+  "_id": "4f9c8e255322f6c7",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Much of the settled domains are a lawless frontier. Criminal factions and corrupt leaders often hold sway.",
+      "system": {
+        "dsid": "truth.option:starforged/laws.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Much of the settled domains are a lawless frontier. Criminal factions and corrupt leaders often hold sway.",
+        "Description": "Powers rise and fall in the Forge, so any authority is fleeting. In the end, we must fend for ourselves. A few communities are bastions of successful autonomy, but many are corrupted or preyed upon by petty despots, criminals, and raiders.",
+        "Summary": "Much of the settled domains are a lawless frontier. Criminal factions and corrupt leaders often hold sway.",
+        "Quest": "In the upper atmosphere of a gas giant, transport vehicles carry valuable and volatile fuel from the processing plant to a heavily guarded storage depot. The notorious leader of a criminal organization needs this fuel, and gives you the schedule for the transports. What leverage does this person hold over you? How will you undertake this heist?",
+        "Roll template": {
+          "Description": "Powers rise and fall in the Forge, so any authority is fleeting. In the end, we must fend for ourselves. A few communities are bastions of successful autonomy, but many are corrupted or preyed upon by petty despots, criminals, and raiders."
+        }
+      },
+      "_id": "81a372f30f9462c2",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!4f9c8e255322f6c7.81a372f30f9462c2"
+    },
+    {
+      "type": "truth",
+      "name": "Laws and governance vary across settled domains, but bounty hunters are given wide latitude to pursue their contracts. Their authority is almost universally recognized, and supersedes local laws.",
+      "system": {
+        "dsid": "truth.option:starforged/laws.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Laws and governance vary across settled domains, but bounty hunters are given wide latitude to pursue their contracts. Their authority is almost universally recognized, and supersedes local laws.",
+        "Description": "Through tradition and influence, bounty hunter guilds are given free rein to track and capture fugitives in most settled places. Only the foolish stand between a determined bounty hunter and their target.",
+        "Summary": "Laws and governance vary across settled domains, but bounty hunters are given wide latitude to pursue their contracts. Their authority is almost universally recognized, and supersedes local laws.",
+        "Quest": "A famed bounty hunter needs your help tracking down their quarry. What is your relationship to the fugitive? Do you swear to aid the hunter, or the target?",
+        "Roll template": {
+          "Description": "Through tradition and influence, bounty hunter guilds are given free rein to track and capture fugitives in most settled places. Only the foolish stand between a determined bounty hunter and their target."
+        }
+      },
+      "_id": "ed52594bedf00227",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!4f9c8e255322f6c7.ed52594bedf00227"
+    },
+    {
+      "type": "truth",
+      "name": "Our communities are bound under the terms of the Covenant, a charter established after the Exodus. The organization called the Keepers is sworn to uphold those laws.",
+      "system": {
+        "dsid": "truth.option:starforged/laws.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Our communities are bound under the terms of the Covenant, a charter established after the Exodus. The organization called the Keepers is sworn to uphold those laws.",
+        "Description": "Most settlements are still governed under the Covenant and yield to the authority of the Keepers. But a few view the Covenant as a dogmatic, impractical, and unjust relic of our past; in those places, the Keepers find no welcome.",
+        "Summary": "Our communities are bound under the terms of the Covenant, a charter established after the Exodus. The organization called the Keepers is sworn to uphold those laws.",
+        "Quest": "A Keeper abuses their authority to take control of a settlement, and rules with an iron fist. What do they seek to gain there?",
+        "Roll template": {
+          "Description": "Most settlements are still governed under the Covenant and yield to the authority of the Keepers. But a few view the Covenant as a dogmatic, impractical, and unjust relic of our past; in those places, the Keepers find no welcome."
+        }
+      },
+      "_id": "61c6b22a1281ba6e",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!4f9c8e255322f6c7.61c6b22a1281ba6e"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you chase down outlaws, you might be a @Compendium[foundry-ironsworn.starforgedassets.9e8a91f52b96c95b]{Bounty Hunter}. If you are skilled at getting in and out of protected places and systems, you might be an @Compendium[foundry-ironsworn.starforgedassets.1e03c8d44d0b3ffc]{Infiltrator}. If you are on the run from a power or authority, you might be a @Compendium[foundry-ironsworn.starforgedassets.93b030423d23059d]{Fugitive}. If you an expert investigator, you might be a @Compendium[foundry-ironsworn.starforgedassets.26787f46840c03ad]{Sleuth}. If you have connections within the criminal underworld, you might be a @Compendium[foundry-ironsworn.starforgedassets.d7fbe5fded75531c]{Scoundrel}.",
+        "format": 2,
+        "content": "<p>If you chase down outlaws, you might be a @Compendium[foundry-ironsworn.starforgedassets.9e8a91f52b96c95b]{Bounty Hunter}. If you are skilled at getting in and out of protected places and systems, you might be an @Compendium[foundry-ironsworn.starforgedassets.1e03c8d44d0b3ffc]{Infiltrator}. If you are on the run from a power or authority, you might be a @Compendium[foundry-ironsworn.starforgedassets.93b030423d23059d]{Fugitive}. If you an expert investigator, you might be a @Compendium[foundry-ironsworn.starforgedassets.26787f46840c03ad]{Sleuth}. If you have connections within the criminal underworld, you might be a @Compendium[foundry-ironsworn.starforgedassets.d7fbe5fded75531c]{Scoundrel}.</p>"
+      },
+      "_id": "95b3044df1fa7743",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!4f9c8e255322f6c7.95b3044df1fa7743"
+    }
+  ],
+  "folder": null,
+  "sort": 89,
+  "_key": "!journal!4f9c8e255322f6c7"
+}

@@ -1,0 +1,110 @@
+{
+  "_id": "ed66b4697bba8827",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/identity",
+      "dsid": "oracle_rollable:sundered_isles/settlement/identity/authority"
+    }
+  },
+  "name": "Settlement Authority",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Ruthless",
+      "_key": "!tables.results!ed66b4697bba8827.9ece8789924a4d57",
+      "_id": "9ece8789924a4d57"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Oppressive",
+      "_key": "!tables.results!ed66b4697bba8827.9f838a2b993931b6",
+      "_id": "9f838a2b993931b6"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Corrupt",
+      "_key": "!tables.results!ed66b4697bba8827.417b08024f8e71e9",
+      "_id": "417b08024f8e71e9"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Firm",
+      "_key": "!tables.results!ed66b4697bba8827.e478ad003b1a89a5",
+      "_id": "e478ad003b1a89a5"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Lawless",
+      "_key": "!tables.results!ed66b4697bba8827.c6e29026b35dfb2a",
+      "_id": "c6e29026b35dfb2a"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Disputed",
+      "_key": "!tables.results!ed66b4697bba8827.4e978c9aee1b686b",
+      "_id": "4e978c9aee1b686b"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Ambivalent",
+      "_key": "!tables.results!ed66b4697bba8827.07a18a66047c9761",
+      "_id": "07a18a66047c9761"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Fair",
+      "_key": "!tables.results!ed66b4697bba8827.d206882ed73a25fb",
+      "_id": "d206882ed73a25fb"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Protective",
+      "_key": "!tables.results!ed66b4697bba8827.e19fad9c27cab695",
+      "_id": "e19fad9c27cab695"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Benevolent",
+      "_key": "!tables.results!ed66b4697bba8827.c4ad1dac82178c6a",
+      "_id": "c4ad1dac82178c6a"
+    }
+  ],
+  "folder": "a3c01179678b5698",
+  "sort": 167,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ed66b4697bba8827"
+}

@@ -1,39 +1,96 @@
-{{#*inline "createBox"}}
-<div
-  {{#if id}}id="{{id}}"{{/if}}
-  class="flexrow box clickable block ironsworn__{{type}}__create"
-  style="align-items: center; padding: 1rem;"
-  data-img="{{img}}"
->
-  <div class="flexcol" style="align-items: center;">
-    <img src="{{img}}" width="75" height="75" alt="">
-    <h4 style="margin: 0.1rem 0;">{{localize labelkey}}</h4>
+{{#*inline "hBox"}}
+<div class="flexcol nogrow boxrow">
+  <div class="flexcol box">
+    <div class="flexrow clickable block no-border ironsworn__{{kind}}__create"
+            style="align-items: center;"
+            data-img="{{img}}">
+      <img class="nogrow" src="{{img}}" width="50" height="50" alt="">
+      <h3 style="border: none; margin: 0; padding: 0.5rem;">
+        {{localize labelkey}}
+      </h3>
+    </div>
   </div>
 </div>
 {{/inline}}
 
 <form class='{{cssClass}} flexcol' autocomplete='off'>
   <div class="flexcol">
-    <div class="flexrow boxrow">
-      {{#if ironswornToolbox}}
-      {{>createBox type="character" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{>createBox type="shared" labelkey="IRONSWORN.ACTOR.TypeShared" img="icons/environment/settlement/wagon-black.webp"}}
-      {{>createBox type="site" labelkey="IRONSWORN.ACTOR.TypeDelveSite" img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
-      {{>createBox type="foe" labelkey="IRONSWORN.ACTOR.TypeFoe" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
-      {{/if}}
 
-      {{#if starforgedToolbox}}
-      {{>createBox type="sfcharacter" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{>createBox type="shared" labelkey="IRONSWORN.ACTOR.TypeShared" img="icons/environment/settlement/wagon-black.webp"}}
-      {{>createBox type="sfship" labelkey="IRONSWORN.ACTOR.TypeStarship" img="icons/environment/settlement/wizard-castle.webp"}}
-      {{>createBox type="sflocation" labelkey="IRONSWORN.ACTOR.TypeLocation" img="systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp"}}
-      {{>createBox type="foe" labelkey="IRONSWORN.ACTOR.TypeFoe" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
-      {{/if}}
-
-      {{#if sunderedIslesToolbox}}
-      <p>Sundered Isles coming soon. If you want to see something here, choose a different setting for "Character Tools".</p>
-      {{/if}}
-
+    {{#if both}}
+    <div class="nogrow boxgroup">
+      <div class="flexrow boxrow nogrow">
+        <div class="flexrow box" style="align-items: center; gap: 0.5rem;">
+          <img class="nogrow" src="icons/creatures/eyes/human-single-blue.webp" width="50" height="50" alt="">
+          <h2 style="margin: 0;">{{localize 'IRONSWORN.ACTOR.TypeCharacter'}}</h2>
+        </div>
+      </div>
+      <div class="flexrow boxrow nogrow">
+        <div class="flexcol box ironsworn__character__create" data-img="icons/creatures/eyes/human-single-blue.webp">
+          <h3 class="clickable block" style="border: none; margin: 0; padding: 0.5rem;">
+            {{ localize 'IRONSWORN.Ironsworn' }}
+          </h3>
+        </div>
+        <div class="flexcol box ironsworn__sfcharacter__create" data-img="icons/creatures/eyes/human-single-blue.webp">
+          <h3 class="clickable block" style="border: none; margin: 0; padding: 0.5rem;">
+            {{ localize 'IRONSWORN.Starforged' }}
+          </h3>
+        </div>
+      </div>
     </div>
+
+    <div class="nogrow boxgroup" style="margin-top: 1rem;">
+      {{#each buttons}}
+        {{>hBox type=type labelkey=labelKey img=img}}
+      {{/each}}
+    </div>
+
+    {{else}}
+    <div class="boxgroup nogrow">
+      <div class="flexcol nogrow boxrow">
+        <div class="flexcol box">
+          <div
+            class="flexrow clickable block no-border
+            {{#if classic}}ironsworn__character__create
+            {{else}}ironsworn__sfcharacter__create
+            {{/if}}"
+            style="align-items: center;"
+            data-img="icons/creatures/eyes/human-single-blue.webp"
+          >
+            <img class="nogrow" src="icons/creatures/eyes/human-single-blue.webp" width="50" height="50" alt="">
+
+            <h3 style="border: none; margin: 0; padding: 0.5rem;">
+              Character
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      {{#each buttons}}
+        {{>hBox type=type labelkey=labelKey img=img}}
+      {{/each}}
+    </div>
+    {{/if}}
+
   </div>
 </form>
+
+<style>
+  .create-actor-row {
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .new-actor .no-border {
+    border-width: 0;
+  }
+
+  .new-actor img {
+    border: none;
+  }
+
+  .create-actor-header {
+    margin: 0;
+    padding: 0.5rem 0 0 0;
+    text-transform: uppercase;
+  }
+</style>

@@ -1,0 +1,16 @@
+{
+  "name": "Firstborn",
+  "description": "The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory.",
+  "type": "Item",
+  "_id": "d4239e681a659e2d",
+  "sort": 142,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Encounters/Firstborn",
+      "dsid": "npc_collection:classic/firstborn"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!d4239e681a659e2d"
+}

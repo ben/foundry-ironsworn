@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Enter the Fray",
   "img": "icons/dice/d10black.svg",
+  "folder": "0833ccc5eb06cf7e",
   "system": {
     "dfid": "Starforged/Moves/Combat/Enter_the_Fray",
     "Category": "Starforged/Moves/Combat",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you initiate combat or are forced into a fight**, envision your objective and give it a rank. If the combat includes discrete challenges or phases, set an objective with a rank for each.\n\nThen, roll to see if you are in control. If you are...\n\n  * On the move: Roll +edge\n  * Facing off against your foe: Roll +heart\n  * In the thick of it at close quarters: Roll +iron\n  * Preparing to act against an unaware foe: Roll +shadow\n  * Caught in a trap or sizing up the situation: Roll +wits\n\nOn a **strong hit**, take both. On a **weak hit**, choose one.\n\n  * Take +2 momentum\n  * You are in control\n\nOn a **miss**, the fight begins with you in a bad spot.",
+    "Text": "__When you initiate combat or are forced into a fight__, envision your objective and give it a rank. If the combat includes discrete challenges or phases, set an objective with a rank for each.\n\nThen, roll to see if you are in control. If you are...\n\n  * On the move: Roll +edge\n  * Facing off against your foe: Roll +heart\n  * In the thick of it at close quarters: Roll +iron\n  * Preparing to act against an unaware foe: Roll +shadow\n  * Caught in a trap or sizing up the situation: Roll +wits\n\nOn a __strong hit__, take both. On a __weak hit__, choose one.\n\n  * Take +2 momentum\n  * You are in control\n\nOn a __miss__, the fight begins with you in a bad spot.",
     "Trigger": {
       "Text": "When you initiate combat or are forced into a fight...",
       "Options": [
@@ -56,66 +57,42 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Take +2 momentum. You are in control.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, take +2 momentum. You are in control.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Choose one.\n\n  * Take +2 momentum\n  * You are in control",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, choose one.\n\n  * Take +2 momentum\n  * You are in control"
       },
       "Miss": {
-        "Text": "The fight begins with you in a bad spot.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, the fight begins with you in a bad spot.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 188
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#D68F00",
       "Images": []
     }
   },
   "sort": 188,
-  "folder": "0833ccc5eb06cf7e",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Combat/Enter_the_Fray",
+      "dsid": "move:starforged/combat/enter_the_fray"
+    }
   },
   "_key": "!items!2f2ba4090b22a122"
 }

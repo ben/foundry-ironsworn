@@ -1,0 +1,110 @@
+{
+  "_id": "cf13f2d36b84ff6d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/cipher_cursed"
+    }
+  },
+  "name": "Cursed Ruin Cipher",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Deadly trap or infernal mechanism",
+      "_key": "!tables.results!cf13f2d36b84ff6d.3290ec9bb4ff4612",
+      "_id": "3290ec9bb4ff4612"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Dreadful document or book",
+      "_key": "!tables.results!cf13f2d36b84ff6d.8c202ccc54867f94",
+      "_id": "8c202ccc54867f94"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Ghostly reenactment",
+      "_key": "!tables.results!cf13f2d36b84ff6d.5149452a2e25a78c",
+      "_id": "5149452a2e25a78c"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Harrowing dreams or visions",
+      "_key": "!tables.results!cf13f2d36b84ff6d.597b06f04b798838",
+      "_id": "597b06f04b798838"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Messages or symbols written in blood",
+      "_key": "!tables.results!cf13f2d36b84ff6d.e446aa6e68c6a1a2",
+      "_id": "e446aa6e68c6a1a2"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Monstrous or beastly guardians",
+      "_key": "!tables.results!cf13f2d36b84ff6d.85a5716dbd1d870f",
+      "_id": "85a5716dbd1d870f"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Signs of horrific death or violence",
+      "_key": "!tables.results!cf13f2d36b84ff6d.3bbe804d813a6b5a",
+      "_id": "3bbe804d813a6b5a"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Sorcerous enchantment or artifact",
+      "_key": "!tables.results!cf13f2d36b84ff6d.9f7c2a8bc28048af",
+      "_id": "9f7c2a8bc28048af"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Spectral visitation or warning",
+      "_key": "!tables.results!cf13f2d36b84ff6d.6c9d250b93500ee1",
+      "_id": "6c9d250b93500ee1"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Warning from a dead or dying explorer",
+      "_key": "!tables.results!cf13f2d36b84ff6d.09a2df8b4b6ae5fb",
+      "_id": "09a2df8b4b6ae5fb"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 216,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cf13f2d36b84ff6d"
+}

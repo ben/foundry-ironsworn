@@ -1,22 +1,16 @@
 {
   "name": "Research",
-  "_id": "9987a5b1c316f884",
+  "description": "",
   "type": "RollTable",
+  "_id": "9987a5b1c316f884",
   "sort": 359,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Derelicts/Research"
+      "dfid": "Starforged/Oracles/Derelicts/Research",
+      "dsid": "oracle_collection:starforged/derelict/research"
     }
   },
   "folder": "fd19a02fbd5f71e6",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!9987a5b1c316f884"
 }

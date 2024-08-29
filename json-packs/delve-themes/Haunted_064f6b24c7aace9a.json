@@ -1,0 +1,141 @@
+{
+  "_id": "064f6b24c7aace9a",
+  "type": "delve-theme",
+  "name": "Haunted",
+  "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
+  "system": {
+    "summary": "Restless spirits are bound to this place.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Tomb or burial site"
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Blood was spilled here"
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Unnatural mists or darkness"
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Messages from beyond the grave"
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Apparitions of a person or event"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Denizen haunts this area"
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Unsettling sounds or foreboding signs"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Denizen attacks without warning"
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Denizen makes a costly demand"
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Denizen seizes your body or mind"
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Denizen taunts or lures you"
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "A disturbing truth is revealed"
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Frightening visions"
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "The environment is used against you"
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Trickery leads you astray"
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "True nature of this place is revealed"
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Sudden, shocking manifestation"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 86,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_theme:delve/haunted"
+    }
+  },
+  "_key": "!items!064f6b24c7aace9a"
+}

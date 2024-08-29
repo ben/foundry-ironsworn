@@ -1,0 +1,61 @@
+{
+  "_id": "4265fe492d629800",
+  "type": "sfmove",
+  "name": "Confront Chaos",
+  "img": "icons/dice/d10black.svg",
+  "folder": "b6d8c0a498693d1c",
+  "system": {
+    "dfid": "move:sundered_isles/exploration/confront_chaos",
+    "Category": "move_category:sundered_isles/exploration",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When your exploration of a waypoint uncovers something dreadful__, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.\n\nFor each result, when you first confront that aspect within the scope of the encounter, you and your allies may mark one tick on your discoveries legacy track.",
+    "Trigger": {
+      "Text": "When your exploration of a waypoint uncovers something dreadful...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": ""
+      },
+      "Miss": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [
+      "move.oracle_rollable:sundered_isles/exploration/confront_chaos.confront_chaos"
+    ],
+    "dsOracleIds": [
+      "move.oracle_rollable:sundered_isles/exploration/confront_chaos.confront_chaos"
+    ],
+    "Source": {
+      "Title": "Sundered Isles",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2024-07-01",
+      "Page": 243
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 243,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:sundered_isles/exploration/confront_chaos",
+      "dsid": "move:sundered_isles/exploration/confront_chaos"
+    }
+  },
+  "_key": "!items!4265fe492d629800"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Vaults/Form",
-      "category": "Starforged/Oracles/Vaults"
+      "category": "Starforged/Oracles/Vaults",
+      "dsid": "oracle_rollable:starforged/precursor_vault/form"
     }
   },
   "name": "Form",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         35
       ],
       "text": "Structure",
-      "_id": "c462991ef4ad95bd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e3dab52f40a5fd8.c462991ef4ad95bd"
+      "_key": "!tables.results!0e3dab52f40a5fd8.2bfeb708fb08b88a",
+      "_id": "2bfeb708fb08b88a"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         60
       ],
       "text": "Vessel",
-      "_id": "31b7fea96061b551",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e3dab52f40a5fd8.31b7fea96061b551"
+      "_key": "!tables.results!0e3dab52f40a5fd8.392452eaf0672d57",
+      "_id": "392452eaf0672d57"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         80
       ],
       "text": "Monument",
-      "_id": "01d5f79a7389464a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e3dab52f40a5fd8.01d5f79a7389464a"
+      "_key": "!tables.results!0e3dab52f40a5fd8.e37c67aa29e8e3ef",
+      "_id": "e37c67aa29e8e3ef"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         95
       ],
       "text": "Machine",
-      "_id": "a97927d8798fa580",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e3dab52f40a5fd8.a97927d8798fa580"
+      "_key": "!tables.results!0e3dab52f40a5fd8.a8c500da633d8183",
+      "_id": "a8c500da633d8183"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Incomprehensible",
-      "_id": "0df564ecf3832414",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e3dab52f40a5fd8.0df564ecf3832414"
+      "_key": "!tables.results!0e3dab52f40a5fd8.2a4bca52706e7575",
+      "_id": "2a4bca52706e7575"
     }
   ],
   "folder": "2c4fe25ee600037f",
   "sort": 360,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!0e3dab52f40a5fd8"
 }

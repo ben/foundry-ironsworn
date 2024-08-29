@@ -1,0 +1,111 @@
+{
+  "_id": "05316ee13398ee8e",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Zealous_Cult",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/zealous_cult"
+    }
+  },
+  "name": "Zealous Cult",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Overtake a faction or community",
+      "_key": "!tables.results!05316ee13398ee8e.2cc7f629439d2d0d",
+      "_id": "2cc7f629439d2d0d"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Unlock secrets to greater power",
+      "_key": "!tables.results!05316ee13398ee8e.fb978daa721fc9a5",
+      "_id": "fb978daa721fc9a5"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Establish false credibility",
+      "_key": "!tables.results!05316ee13398ee8e.5c7e65601d75ded6",
+      "_id": "5c7e65601d75ded6"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Appoint or reveal a leader",
+      "_key": "!tables.results!05316ee13398ee8e.ca5ad654e68e0af2",
+      "_id": "ca5ad654e68e0af2"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Lure new members or establish alliances",
+      "_key": "!tables.results!05316ee13398ee8e.18fbb827b9ba1077",
+      "_id": "18fbb827b9ba1077"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Subvert opposition through devious schemes",
+      "_key": "!tables.results!05316ee13398ee8e.4e68687d937e0353",
+      "_id": "4e68687d937e0353"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Attack opposition directly",
+      "_key": "!tables.results!05316ee13398ee8e.b0fd5e4f84e23ab4",
+      "_id": "b0fd5e4f84e23ab4"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Spread the word of its doctrine",
+      "_key": "!tables.results!05316ee13398ee8e.259f60be84c1a7e7",
+      "_id": "259f60be84c1a7e7"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Reveal a dire prophecy",
+      "_key": "!tables.results!05316ee13398ee8e.1fcca809b6214f74",
+      "_id": "1fcca809b6214f74"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Reveal its true nature or goal",
+      "_key": "!tables.results!05316ee13398ee8e.68590f041de5e492",
+      "_id": "68590f041de5e492"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 223,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!05316ee13398ee8e"
+}

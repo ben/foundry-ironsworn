@@ -1,0 +1,110 @@
+{
+  "_id": "6af2c1563158dcfb",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/mysticism",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/mysticism/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Adepts",
+      "_key": "!tables.results!6af2c1563158dcfb.d085aa4c9073b8a0",
+      "_id": "d085aa4c9073b8a0"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Alchemists",
+      "_key": "!tables.results!6af2c1563158dcfb.d789260464fe819c",
+      "_id": "d789260464fe819c"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Augurs",
+      "_key": "!tables.results!6af2c1563158dcfb.5770b09b7fe6750b",
+      "_id": "5770b09b7fe6750b"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Enchanters",
+      "_key": "!tables.results!6af2c1563158dcfb.7fcc7880f9ecc8a4",
+      "_id": "7fcc7880f9ecc8a4"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Mages",
+      "_key": "!tables.results!6af2c1563158dcfb.406ca8c9fc9e0401",
+      "_id": "406ca8c9fc9e0401"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Oracles",
+      "_key": "!tables.results!6af2c1563158dcfb.d5760b6f574e14a4",
+      "_id": "d5760b6f574e14a4"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Sages",
+      "_key": "!tables.results!6af2c1563158dcfb.9e2bbf035280d695",
+      "_id": "9e2bbf035280d695"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Seers",
+      "_key": "!tables.results!6af2c1563158dcfb.b267263b6cb7bd4e",
+      "_id": "b267263b6cb7bd4e"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sorcerers",
+      "_key": "!tables.results!6af2c1563158dcfb.6e7424a6607b4cd2",
+      "_id": "6e7424a6607b4cd2"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Witches",
+      "_key": "!tables.results!6af2c1563158dcfb.c615a33caa81dc31",
+      "_id": "c615a33caa81dc31"
+    }
+  ],
+  "folder": "c5b37bda9ab33708",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6af2c1563158dcfb"
+}

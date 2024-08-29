@@ -1,0 +1,67 @@
+{
+  "type": "asset",
+  "_id": "ef7b0273da4b33b8",
+  "folder": "841fa5bb80d55fd9",
+  "name": "Chattering Skull",
+  "system": {
+    "requirement": "",
+    "category": "Companion",
+    "color": "#3d8b8a",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>This animate skull does not use a health meter, but is as vulnerable to destruction or loss as any object. When you make a move in its presence, add a cursed die (ten-sided) to the roll. If that die rolls a 10, you glean insight from the skull’s incessant chatter as follows.</p>\n<ul>\n<li>If you rolled a miss, reroll all dice. If you miss again, the skull leads you astray.</li>\n<li>If you rolled a hit, take +1 momentum and add +1 on your next related move.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you roll a match with a 10 on the cursed die, you learn a surprising or dreadful aspect of the skull’s history or nature; mark 1 box on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per situation, when you make a move against a supernatural foe, obstacle, or mystery, you may use the value of the cursed die in place of your action die.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/companion/chattering_skull",
+      "dsid": "asset:sundered_isles/companion/chattering_skull"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!ef7b0273da4b33b8"
+}

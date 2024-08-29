@@ -1,0 +1,16 @@
+{
+  "name": "Anomalies",
+  "description": "Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.",
+  "type": "Item",
+  "_id": "3476ad01228adddc",
+  "sort": 138,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Encounters/Anomaly",
+      "dsid": "npc_collection:delve/anomalies"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!3476ad01228adddc"
+}

@@ -1,10 +1,10 @@
 {
   "_id": "952764555a867430",
   "type": "progress",
-  "name": "Pyralis Youngling",
+  "name": "Pyralis youngling",
   "img": "icons/creatures/invertebrates/fly-wasp-mosquito-green.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Flying creatures with a cinder-colored carapace</p>\n    <p class=\"nogrow\">Folding, armored wings</p>\n    <p class=\"nogrow\">Seven pairs of grasping legs</p>\n    <p class=\"nogrow\">Hooked tail</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Hunt from above</p>\n    <p class=\"nogrow\">Mark and defend territory</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Lurk within the cover of ash clouds</p>\n    <p class=\"nogrow\">Swoop down to grapple with enfolding legs</p>\n    <p class=\"nogrow\">Impale with whip-like tail</p>\n    <p class=\"nogrow\">Inject paralyzing toxin</p>\n  </div>\n</div>\n\n<p>The carapace of a dying pyralis cracks and falls away to reveal a single, stone-like egg. This offspring, slowly nurtured by the heat of the fiery landscape, finally emerges after several months. Smaller than its progenitor but no less fierce, the youngling immediately takes flight and goes on the hunt.</p>\n\n<blockquote>Quest Starter: <p>A critically damaged spaceship is stranded amid the hellscape of a furnace world. You are sworn to rescue the crew of this ill-fated vessel, but the frequent ash storms prevent vehicular operations—you'll need to make the perilous journey on foot. To make matters worse, the wreck is within the territory of a particularly aggressive and powerful pyralis. How will you survive the journey across its hunting grounds?</p></blockquote>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Flying creatures with a cinder-colored carapace</p>\n<p class=\"nogrow\">Folding, armored wings</p>\n<p class=\"nogrow\">Seven pairs of grasping legs</p>\n<p class=\"nogrow\">Hooked tail</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Hunt from above</p>\n<p class=\"nogrow\">Mark and defend territory</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Lurk within the cover of ash clouds</p>\n<p class=\"nogrow\">Swoop down to grapple with enfolding legs</p>\n<p class=\"nogrow\">Impale with whip-like tail</p>\n<p class=\"nogrow\">Inject paralyzing toxin</p>\n</div>\n</div>\n\n<p>The carapace of a dying pyralis cracks and falls away to reveal a single, stone-like egg. This offspring, slowly nurtured by the heat of the fiery landscape, finally emerges after several months. Smaller than its progenitor but no less fierce, the youngling immediately takes flight and goes on the hunt.</p>\n\n<blockquote>Quest Starter: <p>A critically damaged spaceship is stranded amid the hellscape of a furnace world. You are sworn to rescue the crew of this ill-fated vessel, but the frequent ash storms prevent vehicular operations—you'll need to make the perilous journey on foot. To make matters worse, the wreck is within the territory of a particularly aggressive and powerful pyralis. How will you survive the journey across its hunting grounds?</p></blockquote>",
     "rank": 2,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/pyralis.pyralis_youngling"
+    }
   },
   "_key": "!items!952764555a867430"
 }

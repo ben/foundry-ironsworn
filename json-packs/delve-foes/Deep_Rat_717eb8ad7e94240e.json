@@ -1,0 +1,27 @@
+{
+  "_id": "717eb8ad7e94240e",
+  "type": "progress",
+  "name": "Deep Rat",
+  "img": "icons/creatures/mammals/rodent-rat-green.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Tiny, blind eyes</p>\n<p class=\"nogrow\">Wrinkled, hairless skin</p>\n<p class=\"nogrow\">Clawed feet</p>\n<p class=\"nogrow\">Jutting incisors</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Dig</p>\n<p class=\"nogrow\">Feed</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Undermine paths</p>\n<p class=\"nogrow\">Swarm and bite</p>\n</div>\n</div>\n\n<p>These foul, oversized rats have squat bodies and stubby tails. They are essentially blind, but navigate through smell and touch.</p>\n<p>Deep rats are constantly collecting food and will eat anything even vaguely edible. They often dwell in caves or subterranean structures, digging compulsively to expand their lair. In those places, they serve as fodder for greater creatures.</p>\n\n<blockquote>Quest Starter: <p>A fallen hero must be laid to rest with their kinfolk, but deep rats have invaded the settlement’s tomb. Within the dark depths of this @Compendium[foundry-ironsworn.ironsworndelvethemes.0d16f80541657b28]{Infested} @Compendium[foundry-ironsworn.ironsworndelvedomains.606c2b87864c1a5e]{Barrow} is the massive brood mother, a formidable creature that will fight savagely to protect the horde.</p></blockquote>",
+    "rank": 1,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "75f040afa6c45636",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/animals/deep_rat"
+    }
+  },
+  "_key": "!items!717eb8ad7e94240e"
+}

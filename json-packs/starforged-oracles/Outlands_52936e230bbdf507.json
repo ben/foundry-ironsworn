@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Tainted/Settlements/Outlands",
-      "category": "Starforged/Oracles/Planets/Tainted"
+      "category": "Starforged/Oracles/Planets/Tainted/Settlements",
+      "dsid": "oracle_rollable:starforged/planet/tainted/settlements/outlands"
     }
   },
   "name": "Outlands",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         90
       ],
       "text": "None",
-      "_id": "cc4a02f2383f8dd3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52936e230bbdf507.cc4a02f2383f8dd3"
+      "_key": "!tables.results!52936e230bbdf507.ff0282a921c6b605",
+      "_id": "ff0282a921c6b605"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         97
       ],
       "text": "Orbital settlement",
-      "_id": "ad6c3b2ae18c89b2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52936e230bbdf507.ad6c3b2ae18c89b2"
+      "_key": "!tables.results!52936e230bbdf507.9f6c6f40358d4e2f",
+      "_id": "9f6c6f40358d4e2f"
     },
     {
       "range": [
@@ -46,29 +37,12 @@
         100
       ],
       "text": "Planetside settlement",
-      "_id": "0c18ab2099390ba8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!52936e230bbdf507.0c18ab2099390ba8"
+      "_key": "!tables.results!52936e230bbdf507.c478c16349bdd176",
+      "_id": "c478c16349bdd176"
     }
   ],
   "folder": "564383da6917aec5",
-  "sort": 317,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!52936e230bbdf507"
 }

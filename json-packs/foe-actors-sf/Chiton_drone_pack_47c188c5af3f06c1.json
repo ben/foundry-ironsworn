@@ -1,0 +1,53 @@
+{
+  "name": "Chiton drone pack",
+  "img": "icons/creatures/invertebrates/spider-large-white-green.webp",
+  "type": "foe",
+  "_id": "47c188c5af3f06c1",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Chiton drone pack",
+    "texture": {
+      "src": "icons/creatures/invertebrates/spider-large-white-green.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "a64ed507059926d2",
+      "type": "progress",
+      "name": "Chiton drone pack",
+      "img": "icons/creatures/invertebrates/spider-large-white-green.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Arachnid monsters with blade-like limbs</p>\n<p class=\"nogrow\">Plated exoskeleton</p>\n<p class=\"nogrow\">Dripping mucus</p>\n<p class=\"nogrow\">Ripping, tearing maw</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Build and expand the nest</p>\n<p class=\"nogrow\">Feed and protect the queen</p>\n<p class=\"nogrow\">Snuff out intelligent life</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Attack with lightning reflexes</p>\n<p class=\"nogrow\">Impale with bladed limbs</p>\n<p class=\"nogrow\">Drag victims back to the nest</p>\n</div>\n</div>\n\n<p>Chiton drones rarely operate independently. Instead, they hunt and attack in packs under the telepathic control of their queen.</p>\n\n<blockquote>Quest Starter: <p>At a remote facility, researchers are studying a newly-discovered chiton queen larva. The immature queen is held in frozen stasis, but something might have gone wrong. The return of a transport ship ferrying supplies to the researchers is weeks overdue. What is your connection to the facility or to the faction overseeing it?</p></blockquote>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc.variant:starforged/sample_npcs/chiton.chiton_drone_pack"
+        }
+      },
+      "_key": "!actors.items!47c188c5af3f06c1.a64ed507059926d2"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/chiton.chiton_drone_pack"
+    }
+  },
+  "_key": "!actors!47c188c5af3f06c1"
+}

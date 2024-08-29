@@ -88,6 +88,7 @@
 		"Iron": "Fer",
 		"Shadow": "Ombre",
 		"Wits": "Astuces",
+		"Progress": "Progrès",
 		"XP": "XP",
 		"NoBonds": "Aucun lien",
 		"Legacies": "Héritages",
@@ -143,24 +144,24 @@
 		"Connections": "Connections",
 		"Connection": "Connection",
 		"MOVES": {
-			"Adventure": "Actions d’aventure",
-			"Combat": "Actions de combat",
-			"Connection": "Actions de connection",
-			"Custom": "Actions personnalisées",
-			"Delve": "Actions de fouilles",
-			"Exploration": "Actions d'exploration",
-			"Fate": "Actions de destin",
-			"Failure": "Actions d'Échec",
-			"Legacy": "Actions d'Héritages",
-			"Quest": "Actions de quête",
-			"Rarity": "Actions de rareté",
-			"Recover": "Action de récupération",
-			"Relationship": "Actions de relations",
-			"Scene Challenge": "Actions de défi de scène",
-			"Session": "Action de session",
-			"Suffer": "Actions de souffrance",
-			"Threat": "Actions de menace",
-			"Threshold": "Action de seuil"
+			"Adventure Moves": "Actions d’aventure",
+			"Combat Moves": "Actions de combat",
+			"Connection Moves": "Actions de connection",
+			"Custom Moves": "Actions personnalisées",
+			"Delve Moves": "Actions de fouilles",
+			"Exploration Moves": "Actions d'exploration",
+			"Fate Moves": "Actions de destin",
+			"Failure Moves": "Actions d'Échec",
+			"Legacy Moves": "Actions d'Héritages",
+			"Quest Moves": "Actions de quête",
+			"Rarity Moves": "Actions de rareté",
+			"Recover Moves": "Action de récupération",
+			"Relationship Moves": "Actions de relations",
+			"Scene Challenge Moves": "Actions de défi de scène",
+			"Session Moves": "Action de session",
+			"Suffer Moves": "Actions de souffrance",
+			"Threat Moves": "Actions de menace",
+			"Threshold Moves": "Action de seuil"
 		},
 		"Failure": "Échec",
 		"Threat": "Menace",
@@ -520,46 +521,46 @@
 		},
 		"Asset Categories": {
 			"Custom": "Ressources personnalisées",
-			"Ironsworn": {
-				"Companion": {
+			"Classic": {
+				"Companion Assets": {
 					"Title": "Compagnon",
 					"Description": "Les compagnons sont vos assistants PNJ. Lorsque vous acquérez un compagnon, donnez-lui un nom et imaginez son apparence et sa personnalité. S'ils n'ont pas de capacité de départ, choisissez-en une. L'amélioration d'un compagnon active des capacités supplémentaires.\n\nLes compagnons utilisent une piste de santé et peuvent subir des dommages à la suite de l'une de vos actions. Lorsque votre compagnon subit des dégâts, effectuez le mouvement [Companion Endure Harm](Ironsworn/Moves/Suffer/Companion_Endure_Harm) (page 94) pour déterminer le résultat. Voir page 43 pour en savoir plus."
 				},
-				"Path": {
+				"Path Assets": {
 					"Title": "Voies",
 					"Description": "Les voies représentent votre background, vos intérêts, votre formation et vos compétences. Ils offrent des avantages mécaniques et narratifs, mais reflètent également qui vous êtes et comment vous interagissez avec le monde. Par exemple, un **Ritualiste** aurait probablement une vision différente de celle d'un **Veteran**. Choisir ces deux voies peut refléter une évolution de votre personnage ou un parcours intéressant."
 				},
-				"Combat Talent": {
+				"Combat Talent Assets": {
 					"Title": "Talent de Combat",
 					"Description": "Les personnages *Ironsworn* sont supposés être des combattants qualifiés. Même sans talent de combat, vous pouvez manier des armes et effectuer des mouvements de combat (page 78). Un talent de combat reflète un domaine d'expertise particulier et vous offre des options et des bonus supplémentaires.\n\nLes atouts des talents de combat nécessitent généralement que vous maniez une arme spécifique, comme indiqué dans le texte de l'actif. Par exemple, si vous êtes un **Shield-Bearer** et que vous n'avez pas de bouclier à portée de main, vous ne pouvez pas utiliser les capacités de cet atout."
 				},
-				"Ritual": {
+				"Ritual Assets": {
 					"Title": "Rituels",
 					"Description": "La magie dans *Ironsworn* est lancée à travers des rituels qui aident à soutenir vos actions ou agissent comme des mouvements uniques. Comme tous les atouts, les rituels peuvent être sélectionnés au fur et à mesure que vous gagnez de l'expérience et peuvent être améliorés au fil du temps pour les rendre plus flexibles ou plus puissants.\n\nTous les rituels utilisent une action comme capacité marquée par défaut. Vous devez effectuer cette action et le jet d'action associé pour déclencher l'effet. Toutes les capacités secondaires que vous gagnez en améliorant l'actif dépendent de l'exécution du rituel décrit comme la capacité par défaut."
 				}
 			},
 			"Starforged": {
-				"Command Vehicle": {
+				"Command Vehicle Assets": {
 					"Title": "Vehicle de Commandement",
 					"Description": "The **command vehicle** is your interstellar STARSHIP. It is a default asset for your character, taken when you begin your campaign. If you are playing with others, this is a shared asset; each of you may use the STARSHIP's abilities while aboard the craft.\n\nThe command vehicle has an integrity meter and starts at 5 integrity. When your STARSHIP takes a hit, make the @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} move to see what happens."
 				},
-				"Module": {
+				"Module Assets": {
 					"Title": "Module",
 					"Description": "**Modules** are linked to your STARSHIP and offer additional options and advantages when aboard that vehicle.\n\nThese assets are earned and managed by a single character. They can be shared with allies, but only if it's practical for them to make use of it (not everyone may know how to use a RESEARCH LAB).\n\nWhen you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} and score a miss, you can mark a module as broken to offset further danger for your STARSHIP. Flip the card over to indicate its broken state. A broken module cannot be used until you successfully @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} it."
 				},
-				"Support Vehicle": {
+				"Support Vehicle Assets": {
 					"Title": "Support Vehicle",
 					"Description": "**Support vehicles** complement your command vehicle for planetside or short-range operations. If you are playing with others, one of you might serve as the pilot or owner of a support vehicle, but anyone on board can use its abilities as appropriate to the situation.\n\nAs with the command vehicle, your support vehicles have integrity meters. The maximum integrity varies based on the type of vehicle. When a support vehicle faces a damaging situation or environment, you must @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} to see how it fares."
 				},
-				"Path": {
+				"Path Assets": {
 					"Title": "Path",
 					"Description": "**Paths** are your background, interests, training, skills, powers, and key equipment. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. When you create your character in the next chapter, you'll select at least two paths to get started.\n\nSome paths represent your skill with a signature weapon style or piece of equipment. If you see a requirement at the top of the asset card, such as “If you wield a bladed weapon…,” the asset is only usable when taking action using that item."
 				},
-				"Companion": {
+				"Companion Assets": {
 					"Title": "Companion",
 					"Description": "**Companions** are NPC helpers. When you gain a companion, give them a name and envision their look and personality.\n\nCompanions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} move. When their health is at 0, they are in danger of being killed or destroyed."
 				},
-				"Deed": {
+				"Deed Assets": {
 					"Title": "Deed",
 					"Description": "**Deeds** represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character."
 				}

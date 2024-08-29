@@ -1,7 +1,7 @@
 <template>
 	<Collapsible
-		v-bind="$props.collapsible"
 		ref="$collapsible"
+		:collapsible="collapsible"
 		class="movesheet-row"
 		:class="$style.wrapper"
 		data-tooltip-direction="LEFT"
@@ -14,6 +14,7 @@
 		:toggle-tooltip="toggleTooltip"
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-label="move?.displayName"
+		:data-highlighted="dataHighlight"
 		:data-move-id="item._id"
 		:data-move-uuid="$item.uuid"
 	>
@@ -38,13 +39,13 @@
 					<slot
 						name="btn-oracle"
 						v-bind="{
-							node: data.oracles[0] ?? {},
+							node: oracleNodes[0] ?? {},
 							disabled: preventOracle,
 							class: $style.btn
 						}"
 					>
 						<BtnOracle
-							:node="data.oracles[0] ?? {}"
+							:node="oracleNodes[0] ?? {}"
 							:disabled="preventOracle"
 							:class="$style.btn"
 						/>
@@ -63,7 +64,7 @@
 			>
 				<template #after-footer>
 					<OracleTreeNode
-						v-for="node of data.oracles"
+						v-for="node of oracleNodes"
 						:key="node.displayName"
 						:class="$style.oracle"
 						:node="node"
@@ -75,10 +76,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, reactive, ref } from 'vue'
-import type { Move } from '../../features/custommoves'
+import { computed, onMounted, provide, ref, watch } from 'vue'
+import type { DisplayMove } from '../../features/custommoves'
 import type { IOracleTreeNode } from '../../features/customoracles'
-import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
 import BtnRollmove from './buttons/btn-rollmove.vue'
@@ -89,12 +89,12 @@ import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
-import { uniq } from 'lodash-es'
+import { compact, uniq } from 'lodash-es'
 import { OracleTable } from '../../roll-table/oracle-table'
 
 const props = withDefaults(
 	defineProps<{
-		move: Move
+		move: DisplayMove
 		headingLevel?: number
 		toggleSectionClass?: any
 		toggleButtonClass?: any
@@ -112,58 +112,83 @@ const props = withDefaults(
 			| 'toggleWrapperClass'
 			| 'toggleLabel'
 		>
+		highlighted?: boolean
+		highlightDuration?: number
 	}>(),
 	{
 		headingLevel: 4,
 		toggleSectionClass: '',
 		toggleButtonClass: '',
-		oracleDisabled: null
+		oracleDisabled: null,
+		highlighted: false,
+		highlightDuration: 2000
 	}
 )
 
-const $item = computed(() => props.move.moveItem())
-const item = computed(
-	() => props.move.moveItem().toObject() as ItemSource<'sfmove'>
-)
+const $item = (await fromUuid(props.move.uuid)) as IronswornItem<'sfmove'>
+const item = ref($item.toObject())
 
-provide(ItemKey, computed(() => $item.value.toObject()) as any)
-provide($ItemKey, $item.value as any)
-
-const data = reactive({
-	oracles: [] as IOracleTreeNode[]
-})
+provide(ItemKey, item as any)
+provide($ItemKey, $item)
 
 const $collapsible = ref<typeof Collapsible>()
 
+const oracleDsIds = uniq([
+	...($item?.system?.dsOracleIds ?? []),
+	...Object.values(props.move.ds?.oracles ?? {}).map((x) => x._id)
+])
+const oracleNodes: IOracleTreeNode[] = await Promise.all(
+	oracleDsIds.map(async (oid) => {
+		const t = await OracleTable.getByDsId(oid)
+		return {
+			displayName: t?.name ?? '(missing)',
+			tables: compact([t?.uuid]),
+			children: []
+		}
+	})
+)
+
 const canRoll = computed(() => {
-	return moveHasRollableOptions($item.value)
+	return moveHasRollableOptions($item)
 })
 const preventOracle = computed(() => {
-	return data.oracles.length !== 1
+	return oracleNodes.length !== 1
 })
 
-const toggleTooltip = ref($item.value.system.Trigger?.Text)
-;(async function () {
-	toggleTooltip.value = await enrichMarkdown(toggleTooltip.value)
-})()
+const toggleTooltip = ref($item.system.Trigger?.Text)
+enrichMarkdown(toggleTooltip.value).then((x) => (toggleTooltip.value = x))
 
-const moveId = computed(() => props.move.moveItem().id)
+const dataHighlight = ref(false)
+async function flashHighlight() {
+	// Expand the collapsible if it's not already expanded
+	if ($collapsible.value?.isExpanded === false) {
+		await $collapsible.value?.expand()
+		await new Promise((r) => setTimeout(r, 100))
+	}
 
-const oracleIds = uniq([
-	...($item?.value.system.Oracles ?? []),
-	...(props.move.dataforgedMove?.Oracles ?? [])
-])
-Promise.all(oracleIds.map(OracleTable.getDFOracleByDfId)).then(
-	async (dfOracles) => {
-		const nodes = await Promise.all(dfOracles.map(walkOracle))
-		data.oracles.push(...nodes)
+	// Flash that highlight and bring into focus
+	dataHighlight.value = true
+	await new Promise((r) => setTimeout(r, 100))
+	await $collapsible.value?.$element.focus()
+
+	// Turn off the highlight after a lil while
+	await new Promise((r) => setTimeout(r, props.highlightDuration))
+	dataHighlight.value = false
+}
+
+// Flash the highlight if the prop is set on mount
+onMounted(() => {
+	if (props.highlighted) flashHighlight()
+})
+// Flash the highlight if the prop is updated after mount
+watch(
+	() => props.highlighted,
+	(newVal) => {
+		if (newVal) flashHighlight()
 	}
 )
 
-defineExpose({
-	moveId: moveId.value,
-	$collapsible
-})
+defineExpose({ $collapsible })
 </script>
 
 <style lang="scss" module>

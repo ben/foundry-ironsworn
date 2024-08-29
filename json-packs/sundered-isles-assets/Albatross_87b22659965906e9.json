@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "87b22659965906e9",
+  "folder": "841fa5bb80d55fd9",
+  "name": "Albatross",
+  "system": {
+    "requirement": "",
+    "category": "Companion",
+    "color": "#3d8b8a",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your albatross companion brings good luck, but its fate is tied to your own. When you are at sea, increase your momentum reset by 1. If the albatross is killed, discard this asset and suffer a permanent impact.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When the albatross flies ahead of your ship or perches on the ship’s mast as you @Compendium[foundry-ironsworn.starforgedmoves.edac426b7c23f060]{Finish an Expedition}, its luck is on your side. You may reroll one challenge die.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} at sea by asking the spirit embodied by the albatross for a favorable boon, you may roll +its health. If you do, take +1 momentum on a hit. On a strong hit with a match, also mark 1 tick on your bonds legacy track as you deepen your connection to your companion.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "max": 3,
+      "value": 3,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Out of Action",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/companion/albatross",
+      "dsid": "asset:sundered_isles/companion/albatross"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!87b22659965906e9"
+}

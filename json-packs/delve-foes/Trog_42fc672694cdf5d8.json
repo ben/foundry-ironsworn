@@ -1,0 +1,27 @@
+{
+  "_id": "42fc672694cdf5d8",
+  "type": "progress",
+  "name": "Trog",
+  "img": "icons/creatures/reptiles/lizard-iguana-green.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Luminescent, scaled hide</p>\n<p class=\"nogrow\">Keen vision</p>\n<p class=\"nogrow\">Long claws and sharp teeth</p>\n<p class=\"nogrow\">Powerful tail</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Lurk in darkness</p>\n<p class=\"nogrow\">Dig tunnels</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Stealthy approach</p>\n<p class=\"nogrow\">Intimidating display</p>\n<p class=\"nogrow\">Pounce</p>\n<p class=\"nogrow\">Bite and thrash</p>\n</div>\n</div>\n\n<p>Trogs are warm-blooded reptilian animals. They dwell in the deepest places of the Ironlands, but have moved closer to the surface in recent years. Some suggest a greater threat in those dark domains is driving them toward the surface. Many a barrow or underkeep has been breached by trogs who tunnel into those spaces.</p>\n<p>They are strong and agile, able to run, climb, and swim with equal speed. When they stand on two legs as a display of aggression, they are nearly as tall as an Ironlander. They have a hunched back lined with a ridge of spines, a long snout, and serrated teeth. Their scales glimmer with a colorful, ghostly light. Their bite is as powerful and unyielding as a hammer blow.</p>\n\n<blockquote>Quest Starter: <p>Pilgrims to a @Compendium[foundry-ironsworn.ironsworndelvethemes.8555753de47119a1]{Hallowed} @Compendium[foundry-ironsworn.ironsworndelvedomains.b4157fd5116746cc]{Ruin} report the site is overrun by trogs. Within the ruins, an altar to ancient gods is said to bestow fair weather and plentiful crops. Spring is near, and the pilgrims must carry out the rites of the harvest. If they don’t, the will of the people in nearby settlements will falter.</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "75f040afa6c45636",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/animals/trog"
+    }
+  },
+  "_key": "!items!42fc672694cdf5d8"
+}

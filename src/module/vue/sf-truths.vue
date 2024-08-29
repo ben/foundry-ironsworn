@@ -40,7 +40,7 @@
 
 <script setup lang="ts">
 import { inject, ref } from 'vue'
-import type { ISettingTruth } from 'dataforged'
+import type { Truth } from '@datasworn/core/dist/Datasworn'
 import { $LocalEmitterKey } from './provisions'
 import IronBtn from './components/buttons/iron-btn.vue'
 import TruthCategory from './components/truth/truth-category.vue'
@@ -50,7 +50,7 @@ import { IronswornJournalPage } from '../journal/journal-entry-page'
 const props = defineProps<{
 	data: {
 		truths: {
-			df: ISettingTruth
+			ds: Truth
 			je: () => IronswornJournalEntry
 		}[]
 	}

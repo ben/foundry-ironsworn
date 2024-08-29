@@ -1,0 +1,920 @@
+{
+  "_id": "09f9e38b2637e39d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/core",
+      "dsid": "oracle_rollable:sundered_isles/core/focus"
+    }
+  },
+  "name": "Focus",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Ammunition",
+      "_key": "!tables.results!09f9e38b2637e39d.52c2391e7a72c23e",
+      "_id": "52c2391e7a72c23e"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Anchorage",
+      "_key": "!tables.results!09f9e38b2637e39d.ee10abe966980b9b",
+      "_id": "ee10abe966980b9b"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Animal",
+      "_key": "!tables.results!09f9e38b2637e39d.bf4f59c3ee46b929",
+      "_id": "bf4f59c3ee46b929"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Apparition",
+      "_key": "!tables.results!09f9e38b2637e39d.427e7e8ae382e3f8",
+      "_id": "427e7e8ae382e3f8"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Art",
+      "_key": "!tables.results!09f9e38b2637e39d.3c8429e12c7d48f3",
+      "_id": "3c8429e12c7d48f3"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Artifact",
+      "_key": "!tables.results!09f9e38b2637e39d.354c23a653911689",
+      "_id": "354c23a653911689"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Battleground",
+      "_key": "!tables.results!09f9e38b2637e39d.5dd3ce8f15b96b92",
+      "_id": "5dd3ce8f15b96b92"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Beast",
+      "_key": "!tables.results!09f9e38b2637e39d.377536f3c5c32bba",
+      "_id": "377536f3c5c32bba"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Blockade",
+      "_key": "!tables.results!09f9e38b2637e39d.39b41787eba2f2b2",
+      "_id": "39b41787eba2f2b2"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Boat",
+      "_key": "!tables.results!09f9e38b2637e39d.02492e2bb072684d",
+      "_id": "02492e2bb072684d"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Book",
+      "_key": "!tables.results!09f9e38b2637e39d.1979a458e4dc1228",
+      "_id": "1979a458e4dc1228"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Boundary",
+      "_key": "!tables.results!09f9e38b2637e39d.48f2efd70be7f8d8",
+      "_id": "48f2efd70be7f8d8"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Cache",
+      "_key": "!tables.results!09f9e38b2637e39d.69219ba884c7cfb1",
+      "_id": "69219ba884c7cfb1"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Cargo",
+      "_key": "!tables.results!09f9e38b2637e39d.399d5f236761588e",
+      "_id": "399d5f236761588e"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Commander",
+      "_key": "!tables.results!09f9e38b2637e39d.b98c78cae1949679",
+      "_id": "b98c78cae1949679"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Commodity",
+      "_key": "!tables.results!09f9e38b2637e39d.e53898308336a98f",
+      "_id": "e53898308336a98f"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Confinement",
+      "_key": "!tables.results!09f9e38b2637e39d.6d22eec4c05aa8e7",
+      "_id": "6d22eec4c05aa8e7"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Connection",
+      "_key": "!tables.results!09f9e38b2637e39d.2f27e47c407893cd",
+      "_id": "2f27e47c407893cd"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Container",
+      "_key": "!tables.results!09f9e38b2637e39d.6975dd58821d49d6",
+      "_id": "6975dd58821d49d6"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Contraband",
+      "_key": "!tables.results!09f9e38b2637e39d.f6ce205196b761fd",
+      "_id": "f6ce205196b761fd"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Corpse",
+      "_key": "!tables.results!09f9e38b2637e39d.b900e37d09938279",
+      "_id": "b900e37d09938279"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Creation",
+      "_key": "!tables.results!09f9e38b2637e39d.a8a19ee4e936f1ce",
+      "_id": "a8a19ee4e936f1ce"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Creature",
+      "_key": "!tables.results!09f9e38b2637e39d.964be3522292cd61",
+      "_id": "964be3522292cd61"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Crew",
+      "_key": "!tables.results!09f9e38b2637e39d.0d7a74f9d4535260",
+      "_id": "0d7a74f9d4535260"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Debris",
+      "_key": "!tables.results!09f9e38b2637e39d.d2dcfde44f8f8f59",
+      "_id": "d2dcfde44f8f8f59"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Derelict",
+      "_key": "!tables.results!09f9e38b2637e39d.47b41c6fb65dd6d2",
+      "_id": "47b41c6fb65dd6d2"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Discovery",
+      "_key": "!tables.results!09f9e38b2637e39d.f2132fae16df60af",
+      "_id": "f2132fae16df60af"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Enclosure",
+      "_key": "!tables.results!09f9e38b2637e39d.2d312ae3e169557d",
+      "_id": "2d312ae3e169557d"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Energy",
+      "_key": "!tables.results!09f9e38b2637e39d.675866e83779eb8f",
+      "_id": "675866e83779eb8f"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Equipment",
+      "_key": "!tables.results!09f9e38b2637e39d.6e4be39eadab992c",
+      "_id": "6e4be39eadab992c"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Faction",
+      "_key": "!tables.results!09f9e38b2637e39d.48d45bfc43b2465c",
+      "_id": "48d45bfc43b2465c"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Flag",
+      "_key": "!tables.results!09f9e38b2637e39d.8c7b3bca27ebfeb9",
+      "_id": "8c7b3bca27ebfeb9"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Fleet",
+      "_key": "!tables.results!09f9e38b2637e39d.f7d47937e7182c0e",
+      "_id": "f7d47937e7182c0e"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Force",
+      "_key": "!tables.results!09f9e38b2637e39d.51ae8c3da8b843b7",
+      "_id": "51ae8c3da8b843b7"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Fortification",
+      "_key": "!tables.results!09f9e38b2637e39d.5130d1dba02a85a1",
+      "_id": "5130d1dba02a85a1"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Gadget",
+      "_key": "!tables.results!09f9e38b2637e39d.aef0682d45c3a327",
+      "_id": "aef0682d45c3a327"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Grave",
+      "_key": "!tables.results!09f9e38b2637e39d.badb1bf870f944ce",
+      "_id": "badb1bf870f944ce"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Habitat",
+      "_key": "!tables.results!09f9e38b2637e39d.44c35b3eb874ccc4",
+      "_id": "44c35b3eb874ccc4"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Hazard",
+      "_key": "!tables.results!09f9e38b2637e39d.017ee668abef0e88",
+      "_id": "017ee668abef0e88"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Hideaway",
+      "_key": "!tables.results!09f9e38b2637e39d.27188c3457422eef",
+      "_id": "27188c3457422eef"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Home",
+      "_key": "!tables.results!09f9e38b2637e39d.16c27032ba02d030",
+      "_id": "16c27032ba02d030"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Illusion",
+      "_key": "!tables.results!09f9e38b2637e39d.9eed34726dd9cfd8",
+      "_id": "9eed34726dd9cfd8"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Island",
+      "_key": "!tables.results!09f9e38b2637e39d.24d00e443f10f868",
+      "_id": "24d00e443f10f868"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Lair",
+      "_key": "!tables.results!09f9e38b2637e39d.70ffedc6eb5a1aca",
+      "_id": "70ffedc6eb5a1aca"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Land",
+      "_key": "!tables.results!09f9e38b2637e39d.7094fb4f24854220",
+      "_id": "7094fb4f24854220"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Leader",
+      "_key": "!tables.results!09f9e38b2637e39d.c4fa7b832f4223e6",
+      "_id": "c4fa7b832f4223e6"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Machine",
+      "_key": "!tables.results!09f9e38b2637e39d.458572f4ed63927c",
+      "_id": "458572f4ed63927c"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Map",
+      "_key": "!tables.results!09f9e38b2637e39d.b7a63d7622b1fc18",
+      "_id": "b7a63d7622b1fc18"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Material",
+      "_key": "!tables.results!09f9e38b2637e39d.90036082e6571299",
+      "_id": "90036082e6571299"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Medicine",
+      "_key": "!tables.results!09f9e38b2637e39d.03ea7a3cf068873e",
+      "_id": "03ea7a3cf068873e"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Message",
+      "_key": "!tables.results!09f9e38b2637e39d.7f88a7416bc88820",
+      "_id": "7f88a7416bc88820"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Mist",
+      "_key": "!tables.results!09f9e38b2637e39d.0b66ade5c6523af0",
+      "_id": "0b66ade5c6523af0"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Monument",
+      "_key": "!tables.results!09f9e38b2637e39d.87a3bb61db01cb27",
+      "_id": "87a3bb61db01cb27"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Obstacle",
+      "_key": "!tables.results!09f9e38b2637e39d.23661c0c78c53040",
+      "_id": "23661c0c78c53040"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Outbreak",
+      "_key": "!tables.results!09f9e38b2637e39d.fa73ef11e3b03a2d",
+      "_id": "fa73ef11e3b03a2d"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Outpost",
+      "_key": "!tables.results!09f9e38b2637e39d.2e63caa4bcb77785",
+      "_id": "2e63caa4bcb77785"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Path",
+      "_key": "!tables.results!09f9e38b2637e39d.1f01a3aa069eeff2",
+      "_id": "1f01a3aa069eeff2"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "People",
+      "_key": "!tables.results!09f9e38b2637e39d.7c9e39a767793a13",
+      "_id": "7c9e39a767793a13"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Person",
+      "_key": "!tables.results!09f9e38b2637e39d.46bed3050f13e476",
+      "_id": "46bed3050f13e476"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Pirate",
+      "_key": "!tables.results!09f9e38b2637e39d.1fafd3c04c977622",
+      "_id": "1fafd3c04c977622"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Port",
+      "_key": "!tables.results!09f9e38b2637e39d.0c074199c7a2ab04",
+      "_id": "0c074199c7a2ab04"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Provisions",
+      "_key": "!tables.results!09f9e38b2637e39d.97e2245989d834c3",
+      "_id": "97e2245989d834c3"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Reef",
+      "_key": "!tables.results!09f9e38b2637e39d.71a618eac95d48d3",
+      "_id": "71a618eac95d48d3"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Refuge",
+      "_key": "!tables.results!09f9e38b2637e39d.d4a1e4dda3168ff7",
+      "_id": "d4a1e4dda3168ff7"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Relic",
+      "_key": "!tables.results!09f9e38b2637e39d.1c74c050a9019780",
+      "_id": "1c74c050a9019780"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Remains",
+      "_key": "!tables.results!09f9e38b2637e39d.03ba40aba814d056",
+      "_id": "03ba40aba814d056"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Rendezvous",
+      "_key": "!tables.results!09f9e38b2637e39d.aebdefd32c4c42b8",
+      "_id": "aebdefd32c4c42b8"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Resource",
+      "_key": "!tables.results!09f9e38b2637e39d.419920fe608ae965",
+      "_id": "419920fe608ae965"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Rock",
+      "_key": "!tables.results!09f9e38b2637e39d.139f7ca18dd0fbaa",
+      "_id": "139f7ca18dd0fbaa"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Ruins",
+      "_key": "!tables.results!09f9e38b2637e39d.535c76159f8e0ace",
+      "_id": "535c76159f8e0ace"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Sail",
+      "_key": "!tables.results!09f9e38b2637e39d.b75e83bc5dd47086",
+      "_id": "b75e83bc5dd47086"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Salvage",
+      "_key": "!tables.results!09f9e38b2637e39d.ca5f4e4ce0da0e60",
+      "_id": "ca5f4e4ce0da0e60"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Sea",
+      "_key": "!tables.results!09f9e38b2637e39d.2fa60bbf9751b477",
+      "_id": "2fa60bbf9751b477"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Shelter",
+      "_key": "!tables.results!09f9e38b2637e39d.e34d2b5d81397682",
+      "_id": "e34d2b5d81397682"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Ship",
+      "_key": "!tables.results!09f9e38b2637e39d.1589ba3553886611",
+      "_id": "1589ba3553886611"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Shore",
+      "_key": "!tables.results!09f9e38b2637e39d.2590e62f3800c2fa",
+      "_id": "2590e62f3800c2fa"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Shortcut",
+      "_key": "!tables.results!09f9e38b2637e39d.acdcf434f1ea8968",
+      "_id": "acdcf434f1ea8968"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Sound",
+      "_key": "!tables.results!09f9e38b2637e39d.f69f763d21b6b199",
+      "_id": "f69f763d21b6b199"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Storage",
+      "_key": "!tables.results!09f9e38b2637e39d.bd9bc1992e2fb977",
+      "_id": "bd9bc1992e2fb977"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Storm",
+      "_key": "!tables.results!09f9e38b2637e39d.6e388c07bd13cb75",
+      "_id": "6e388c07bd13cb75"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Structure",
+      "_key": "!tables.results!09f9e38b2637e39d.67df904f28670883",
+      "_id": "67df904f28670883"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Supply",
+      "_key": "!tables.results!09f9e38b2637e39d.b784592aea7736a1",
+      "_id": "b784592aea7736a1"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Symbol",
+      "_key": "!tables.results!09f9e38b2637e39d.df0b926f2851c8da",
+      "_id": "df0b926f2851c8da"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Terrain",
+      "_key": "!tables.results!09f9e38b2637e39d.222e336488033f08",
+      "_id": "222e336488033f08"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Territory",
+      "_key": "!tables.results!09f9e38b2637e39d.703da5f3af36c652",
+      "_id": "703da5f3af36c652"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Threshold",
+      "_key": "!tables.results!09f9e38b2637e39d.03cedc63fe8a88d3",
+      "_id": "03cedc63fe8a88d3"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Tool",
+      "_key": "!tables.results!09f9e38b2637e39d.aff85569885b98f6",
+      "_id": "aff85569885b98f6"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Town",
+      "_key": "!tables.results!09f9e38b2637e39d.6cd05c837d94db32",
+      "_id": "6cd05c837d94db32"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Trap",
+      "_key": "!tables.results!09f9e38b2637e39d.a3c3b8b4b1d4b798",
+      "_id": "a3c3b8b4b1d4b798"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Treasure",
+      "_key": "!tables.results!09f9e38b2637e39d.6960132e9143c3f1",
+      "_id": "6960132e9143c3f1"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Vault",
+      "_key": "!tables.results!09f9e38b2637e39d.bdb0ec6055958178",
+      "_id": "bdb0ec6055958178"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Vegetation",
+      "_key": "!tables.results!09f9e38b2637e39d.ff7206bd067aa4ee",
+      "_id": "ff7206bd067aa4ee"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Vessel",
+      "_key": "!tables.results!09f9e38b2637e39d.849ce1400c5b8aab",
+      "_id": "849ce1400c5b8aab"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Village",
+      "_key": "!tables.results!09f9e38b2637e39d.d486a5723c75465a",
+      "_id": "d486a5723c75465a"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Void",
+      "_key": "!tables.results!09f9e38b2637e39d.8a3389b6d6b5da67",
+      "_id": "8a3389b6d6b5da67"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Water",
+      "_key": "!tables.results!09f9e38b2637e39d.5bf82917a01c05fa",
+      "_id": "5bf82917a01c05fa"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Weapon",
+      "_key": "!tables.results!09f9e38b2637e39d.89554c75c5a2eb90",
+      "_id": "89554c75c5a2eb90"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Weather",
+      "_key": "!tables.results!09f9e38b2637e39d.4a8598c4d538a92e",
+      "_id": "4a8598c4d538a92e"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Wind",
+      "_key": "!tables.results!09f9e38b2637e39d.b36e84a544667325",
+      "_id": "b36e84a544667325"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Wreckage",
+      "_key": "!tables.results!09f9e38b2637e39d.616d31e6f485b252",
+      "_id": "616d31e6f485b252"
+    }
+  ],
+  "folder": "ece178d45aa72b0a",
+  "sort": 119,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!09f9e38b2637e39d"
+}

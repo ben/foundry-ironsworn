@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Place/Location",
-      "category": "Ironsworn/Oracles/Place"
+      "category": "Ironsworn/Oracles/Place",
+      "dsid": "oracle_rollable:classic/place/location"
     }
   },
   "name": "Location",
   "description": "<p>Use this oracle when traveling to generate a point-of-interest or to answer a question about a place where someone or something can be found.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         1
       ],
       "text": "Hideout",
-      "_id": "98d9955568b5e269",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.98d9955568b5e269"
+      "_key": "!tables.results!c54c388540f5fda7.ee936e433980f259",
+      "_id": "ee936e433980f259"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         2
       ],
       "text": "Ruin",
-      "_id": "a238f82f993a873d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.a238f82f993a873d"
+      "_key": "!tables.results!c54c388540f5fda7.030a020ba5fd1be4",
+      "_id": "030a020ba5fd1be4"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         3
       ],
       "text": "Mine",
-      "_id": "7c79ad331dbb8fed",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.7c79ad331dbb8fed"
+      "_key": "!tables.results!c54c388540f5fda7.bd82056ff612497f",
+      "_id": "bd82056ff612497f"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         4
       ],
       "text": "Waste",
-      "_id": "e31a8c574125d14f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.e31a8c574125d14f"
+      "_key": "!tables.results!c54c388540f5fda7.0d0851f8aa04bafd",
+      "_id": "0d0851f8aa04bafd"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         5
       ],
       "text": "Mystical Site",
-      "_id": "28b7a2d13e33f40b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.28b7a2d13e33f40b"
+      "_key": "!tables.results!c54c388540f5fda7.9aa1d3e9c8511562",
+      "_id": "9aa1d3e9c8511562"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         6
       ],
       "text": "Path",
-      "_id": "e18dfa7cf31cb772",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.e18dfa7cf31cb772"
+      "_key": "!tables.results!c54c388540f5fda7.49e382ec2e7a6952",
+      "_id": "49e382ec2e7a6952"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         7
       ],
       "text": "Outpost",
-      "_id": "6b7a31084e71de51",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.6b7a31084e71de51"
+      "_key": "!tables.results!c54c388540f5fda7.96c4d09c51e44262",
+      "_id": "96c4d09c51e44262"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         8
       ],
       "text": "Wall",
-      "_id": "799137c6d0f9e380",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.799137c6d0f9e380"
+      "_key": "!tables.results!c54c388540f5fda7.b21d9e183e28a002",
+      "_id": "b21d9e183e28a002"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         9
       ],
       "text": "Battlefield",
-      "_id": "1d497f17c26c11e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.1d497f17c26c11e5"
+      "_key": "!tables.results!c54c388540f5fda7.f7a9732560d1f63d",
+      "_id": "f7a9732560d1f63d"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         10
       ],
       "text": "Hovel",
-      "_id": "5d5705804eb0773d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.5d5705804eb0773d"
+      "_key": "!tables.results!c54c388540f5fda7.9263f3d69141d061",
+      "_id": "9263f3d69141d061"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         11
       ],
       "text": "Spring",
-      "_id": "c0fc5a94efa09de6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.c0fc5a94efa09de6"
+      "_key": "!tables.results!c54c388540f5fda7.ac15ca3b467284d6",
+      "_id": "ac15ca3b467284d6"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         12
       ],
       "text": "Lair",
-      "_id": "eac0b73e4c7512ef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.eac0b73e4c7512ef"
+      "_key": "!tables.results!c54c388540f5fda7.93381468bf74e58f",
+      "_id": "93381468bf74e58f"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         13
       ],
       "text": "Fort",
-      "_id": "16ae727bd6398499",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.16ae727bd6398499"
+      "_key": "!tables.results!c54c388540f5fda7.010331aa2c507773",
+      "_id": "010331aa2c507773"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         14
       ],
       "text": "Bridge",
-      "_id": "ff63d7f8ae4d81a8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.ff63d7f8ae4d81a8"
+      "_key": "!tables.results!c54c388540f5fda7.239e79d6529ccb8e",
+      "_id": "239e79d6529ccb8e"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         15
       ],
       "text": "Camp",
-      "_id": "c1308d210b56e817",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.c1308d210b56e817"
+      "_key": "!tables.results!c54c388540f5fda7.839409c677a02c26",
+      "_id": "839409c677a02c26"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         16
       ],
       "text": "Cairn/Grave",
-      "_id": "57146912174703fe",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.57146912174703fe"
+      "_key": "!tables.results!c54c388540f5fda7.570d5a2a9aeedafa",
+      "_id": "570d5a2a9aeedafa"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         18
       ],
       "text": "Caravan",
-      "_id": "162615b37373be3b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.162615b37373be3b"
+      "_key": "!tables.results!c54c388540f5fda7.abe00bb732f453c0",
+      "_id": "abe00bb732f453c0"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         20
       ],
       "text": "Waterfall",
-      "_id": "c38376954ba053d3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.c38376954ba053d3"
+      "_key": "!tables.results!c54c388540f5fda7.b1e253a60b120e2e",
+      "_id": "b1e253a60b120e2e"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         22
       ],
       "text": "Cave",
-      "_id": "c47dad2c91797060",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.c47dad2c91797060"
+      "_key": "!tables.results!c54c388540f5fda7.fa6dc85ff8295a01",
+      "_id": "fa6dc85ff8295a01"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         24
       ],
       "text": "Swamp",
-      "_id": "bf5b2bb9903052de",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.bf5b2bb9903052de"
+      "_key": "!tables.results!c54c388540f5fda7.a05bca05d3a84053",
+      "_id": "a05bca05d3a84053"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         26
       ],
       "text": "Fen",
-      "_id": "7280f1846f026355",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.7280f1846f026355"
+      "_key": "!tables.results!c54c388540f5fda7.3820b42f1005dfcd",
+      "_id": "3820b42f1005dfcd"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         28
       ],
       "text": "Ravine",
-      "_id": "0b186b6471f3bea3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.0b186b6471f3bea3"
+      "_key": "!tables.results!c54c388540f5fda7.c033c34ac311b0ce",
+      "_id": "c033c34ac311b0ce"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         30
       ],
       "text": "Road",
-      "_id": "ec3017bd181ba7d1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.ec3017bd181ba7d1"
+      "_key": "!tables.results!c54c388540f5fda7.fad5f0ab137b2029",
+      "_id": "fad5f0ab137b2029"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         32
       ],
       "text": "Tree",
-      "_id": "8feed9cb0186b41a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.8feed9cb0186b41a"
+      "_key": "!tables.results!c54c388540f5fda7.e1206609e0b6dac2",
+      "_id": "e1206609e0b6dac2"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         34
       ],
       "text": "Pond",
-      "_id": "c097f2267af0216f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.c097f2267af0216f"
+      "_key": "!tables.results!c54c388540f5fda7.4f71cf07534a5f76",
+      "_id": "4f71cf07534a5f76"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         36
       ],
       "text": "Fields",
-      "_id": "c94a643c267043cc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.c94a643c267043cc"
+      "_key": "!tables.results!c54c388540f5fda7.629071bff8a3d6d5",
+      "_id": "629071bff8a3d6d5"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         38
       ],
       "text": "Marsh",
-      "_id": "ee54f1ea45f3e0f9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.ee54f1ea45f3e0f9"
+      "_key": "!tables.results!c54c388540f5fda7.f39f9e3ca81f46be",
+      "_id": "f39f9e3ca81f46be"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         40
       ],
       "text": "Steading",
-      "_id": "7f4dfedd2e32ef0c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.7f4dfedd2e32ef0c"
+      "_key": "!tables.results!c54c388540f5fda7.0a908a98019bd51a",
+      "_id": "0a908a98019bd51a"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         42
       ],
       "text": "Rapids",
-      "_id": "f3fda84f822e2538",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.f3fda84f822e2538"
+      "_key": "!tables.results!c54c388540f5fda7.b5bc0b766f2fbc06",
+      "_id": "b5bc0b766f2fbc06"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         44
       ],
       "text": "Pass",
-      "_id": "90f34a84adfb2e1f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.90f34a84adfb2e1f"
+      "_key": "!tables.results!c54c388540f5fda7.2ca9a23ad9bf2cc2",
+      "_id": "2ca9a23ad9bf2cc2"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         46
       ],
       "text": "Trail",
-      "_id": "5972816e76c09e13",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.5972816e76c09e13"
+      "_key": "!tables.results!c54c388540f5fda7.e0755cb3b815de84",
+      "_id": "e0755cb3b815de84"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         48
       ],
       "text": "Glade",
-      "_id": "83d36c35b42b96f1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.83d36c35b42b96f1"
+      "_key": "!tables.results!c54c388540f5fda7.6fd0533b6f5b7059",
+      "_id": "6fd0533b6f5b7059"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         50
       ],
       "text": "Plain",
-      "_id": "55841c0d74d9dea0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.55841c0d74d9dea0"
+      "_key": "!tables.results!c54c388540f5fda7.5013f2dbe0635109",
+      "_id": "5013f2dbe0635109"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         52
       ],
       "text": "Ridge",
-      "_id": "ae33ff6bb12daed9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.ae33ff6bb12daed9"
+      "_key": "!tables.results!c54c388540f5fda7.556287457186b8c7",
+      "_id": "556287457186b8c7"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         54
       ],
       "text": "Cliff",
-      "_id": "b65e4198648d5651",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.b65e4198648d5651"
+      "_key": "!tables.results!c54c388540f5fda7.5a848fcca4c5cecc",
+      "_id": "5a848fcca4c5cecc"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         56
       ],
       "text": "Grove",
-      "_id": "728ac5c49196f574",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.728ac5c49196f574"
+      "_key": "!tables.results!c54c388540f5fda7.4ef124ed8cf0385a",
+      "_id": "4ef124ed8cf0385a"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         58
       ],
       "text": "Village",
-      "_id": "9c21305edcad86ff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.9c21305edcad86ff"
+      "_key": "!tables.results!c54c388540f5fda7.bc816ca3a70edeea",
+      "_id": "bc816ca3a70edeea"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         60
       ],
       "text": "Moor",
-      "_id": "9f259aa00630034a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.9f259aa00630034a"
+      "_key": "!tables.results!c54c388540f5fda7.323d770abe84bfb6",
+      "_id": "323d770abe84bfb6"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         62
       ],
       "text": "Thicket",
-      "_id": "a16b1f3fb22b1a0c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.a16b1f3fb22b1a0c"
+      "_key": "!tables.results!c54c388540f5fda7.46f0ae8ea3ffe10e",
+      "_id": "46f0ae8ea3ffe10e"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         64
       ],
       "text": "River Ford",
-      "_id": "ae4408843f8c686e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.ae4408843f8c686e"
+      "_key": "!tables.results!c54c388540f5fda7.2b63927a8392b800",
+      "_id": "2b63927a8392b800"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         66
       ],
       "text": "Valley",
-      "_id": "893589cb3b795fc1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.893589cb3b795fc1"
+      "_key": "!tables.results!c54c388540f5fda7.c5811dc8e883ee0f",
+      "_id": "c5811dc8e883ee0f"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         68
       ],
       "text": "Bay/Fjord",
-      "_id": "7d5e106e93c4c263",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.7d5e106e93c4c263"
+      "_key": "!tables.results!c54c388540f5fda7.d878b53553473a6c",
+      "_id": "d878b53553473a6c"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         70
       ],
       "text": "Foothills",
-      "_id": "a1646c7a51f4d54c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.a1646c7a51f4d54c"
+      "_key": "!tables.results!c54c388540f5fda7.0ff208b06e04dd9d",
+      "_id": "0ff208b06e04dd9d"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         72
       ],
       "text": "Lake",
-      "_id": "519881cbbb7e3762",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.519881cbbb7e3762"
+      "_key": "!tables.results!c54c388540f5fda7.0630c0825f0532f9",
+      "_id": "0630c0825f0532f9"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         75
       ],
       "text": "River",
-      "_id": "8e0209e8c6d0e3e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.8e0209e8c6d0e3e5"
+      "_key": "!tables.results!c54c388540f5fda7.c5fe40dec63f7c1e",
+      "_id": "c5fe40dec63f7c1e"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         79
       ],
       "text": "Forest",
-      "_id": "61089ea4cadbea75",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.61089ea4cadbea75"
+      "_key": "!tables.results!c54c388540f5fda7.2e15481c4b3d969c",
+      "_id": "2e15481c4b3d969c"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         83
       ],
       "text": "Coast",
-      "_id": "773bdd2f1550e426",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.773bdd2f1550e426"
+      "_key": "!tables.results!c54c388540f5fda7.68ac706569af33af",
+      "_id": "68ac706569af33af"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         88
       ],
       "text": "Hill",
-      "_id": "25dd4e1c5d4fbf87",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.25dd4e1c5d4fbf87"
+      "_key": "!tables.results!c54c388540f5fda7.87678bac533bf36d",
+      "_id": "87678bac533bf36d"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         93
       ],
       "text": "Mountain",
-      "_id": "92429e6d05c0213b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.92429e6d05c0213b"
+      "_key": "!tables.results!c54c388540f5fda7.b4d9232548dd80d4",
+      "_id": "b4d9232548dd80d4"
     },
     {
       "range": [
@@ -704,13 +460,8 @@
         99
       ],
       "text": "Woods",
-      "_id": "9de67cbf5bdb1b68",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.9de67cbf5bdb1b68"
+      "_key": "!tables.results!c54c388540f5fda7.b02cffa241ed88e7",
+      "_id": "b02cffa241ed88e7"
     },
     {
       "range": [
@@ -718,29 +469,12 @@
         100
       ],
       "text": "Anomaly",
-      "_id": "9219aa80725baff9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c54c388540f5fda7.9219aa80725baff9"
+      "_key": "!tables.results!c54c388540f5fda7.7feaa21044426f94",
+      "_id": "7feaa21044426f94"
     }
   ],
   "folder": "e234710dfe2315ae",
   "sort": 176,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!c54c388540f5fda7"
 }

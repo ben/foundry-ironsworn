@@ -1,0 +1,471 @@
+{
+  "_id": "4d68a549300d665e",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Detail",
+      "category": "Ironsworn/Oracles/Site_Name",
+      "dsid": "oracle_rollable:delve/site_name/detail"
+    }
+  },
+  "name": "Detail",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Blight",
+      "_key": "!tables.results!4d68a549300d665e.67003f15c422d9ce",
+      "_id": "67003f15c422d9ce"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Strife",
+      "_key": "!tables.results!4d68a549300d665e.89d464bdf77f0850",
+      "_id": "89d464bdf77f0850"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Nightfall",
+      "_key": "!tables.results!4d68a549300d665e.8c955650957f1e6d",
+      "_id": "8c955650957f1e6d"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Fury",
+      "_key": "!tables.results!4d68a549300d665e.62e17a52f1cfbf5d",
+      "_id": "62e17a52f1cfbf5d"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Terror",
+      "_key": "!tables.results!4d68a549300d665e.8d49ae8d1e68606d",
+      "_id": "8d49ae8d1e68606d"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Truth",
+      "_key": "!tables.results!4d68a549300d665e.8d99d83e9c1c550f",
+      "_id": "8d99d83e9c1c550f"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Spring",
+      "_key": "!tables.results!4d68a549300d665e.dffece4632667bab",
+      "_id": "dffece4632667bab"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Sanctuary",
+      "_key": "!tables.results!4d68a549300d665e.0267f01b19e887df",
+      "_id": "0267f01b19e887df"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Bone",
+      "_key": "!tables.results!4d68a549300d665e.4bf29f44629bd1c0",
+      "_id": "4bf29f44629bd1c0"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Specters",
+      "_key": "!tables.results!4d68a549300d665e.8ae67b5ada1fd19f",
+      "_id": "8ae67b5ada1fd19f"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Daybreak",
+      "_key": "!tables.results!4d68a549300d665e.97269aa4f0b3bc4e",
+      "_id": "97269aa4f0b3bc4e"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Doom",
+      "_key": "!tables.results!4d68a549300d665e.70f324eb8e3acace",
+      "_id": "70f324eb8e3acace"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Treachery",
+      "_key": "!tables.results!4d68a549300d665e.3fcc0db714bc3671",
+      "_id": "3fcc0db714bc3671"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Blood",
+      "_key": "!tables.results!4d68a549300d665e.22d2bf0576c14850",
+      "_id": "22d2bf0576c14850"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "War",
+      "_key": "!tables.results!4d68a549300d665e.fddad9cee11f2e1e",
+      "_id": "fddad9cee11f2e1e"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Torment",
+      "_key": "!tables.results!4d68a549300d665e.133029e1b7b9afac",
+      "_id": "133029e1b7b9afac"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Iron",
+      "_key": "!tables.results!4d68a549300d665e.27bfc9890b9b5eea",
+      "_id": "27bfc9890b9b5eea"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Silence",
+      "_key": "!tables.results!4d68a549300d665e.79eb1cfdf2ab7eab",
+      "_id": "79eb1cfdf2ab7eab"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Mist",
+      "_key": "!tables.results!4d68a549300d665e.46905c40cea9675d",
+      "_id": "46905c40cea9675d"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Isolation",
+      "_key": "!tables.results!4d68a549300d665e.f39998e7cb0a153b",
+      "_id": "f39998e7cb0a153b"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Runes",
+      "_key": "!tables.results!4d68a549300d665e.097f8084f3a74b71",
+      "_id": "097f8084f3a74b71"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Rot",
+      "_key": "!tables.results!4d68a549300d665e.e8ae02ca6dbf71e1",
+      "_id": "e8ae02ca6dbf71e1"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Corruption",
+      "_key": "!tables.results!4d68a549300d665e.02047338ddb9f2b7",
+      "_id": "02047338ddb9f2b7"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Prophecy",
+      "_key": "!tables.results!4d68a549300d665e.2aefe1a35cdb5a55",
+      "_id": "2aefe1a35cdb5a55"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Fate",
+      "_key": "!tables.results!4d68a549300d665e.25fd8f2bddf9a745",
+      "_id": "25fd8f2bddf9a745"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Twilight",
+      "_key": "!tables.results!4d68a549300d665e.8825bc867e66b9e2",
+      "_id": "8825bc867e66b9e2"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Power",
+      "_key": "!tables.results!4d68a549300d665e.8c8c009545c02cf6",
+      "_id": "8c8c009545c02cf6"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Darkness",
+      "_key": "!tables.results!4d68a549300d665e.fe68bc344ca202f2",
+      "_id": "fe68bc344ca202f2"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Gloom",
+      "_key": "!tables.results!4d68a549300d665e.4929f27ce18cd9c8",
+      "_id": "4929f27ce18cd9c8"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Storms",
+      "_key": "!tables.results!4d68a549300d665e.038c40670c1905b7",
+      "_id": "038c40670c1905b7"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Hope",
+      "_key": "!tables.results!4d68a549300d665e.dbb133f17d5abcbb",
+      "_id": "dbb133f17d5abcbb"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Lament",
+      "_key": "!tables.results!4d68a549300d665e.81618770f1bb46d6",
+      "_id": "81618770f1bb46d6"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Frost",
+      "_key": "!tables.results!4d68a549300d665e.25b7511360205dc3",
+      "_id": "25b7511360205dc3"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Souls",
+      "_key": "!tables.results!4d68a549300d665e.4607e7616ba9aa05",
+      "_id": "4607e7616ba9aa05"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Winter",
+      "_key": "!tables.results!4d68a549300d665e.e538894e75feec2a",
+      "_id": "e538894e75feec2a"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Sadness",
+      "_key": "!tables.results!4d68a549300d665e.6eb3f177d473bda9",
+      "_id": "6eb3f177d473bda9"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Desolation",
+      "_key": "!tables.results!4d68a549300d665e.97232c4db11da72e",
+      "_id": "97232c4db11da72e"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Bane",
+      "_key": "!tables.results!4d68a549300d665e.573a8e23914fdd0a",
+      "_id": "573a8e23914fdd0a"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Lies",
+      "_key": "!tables.results!4d68a549300d665e.df90d6568b49d17b",
+      "_id": "df90d6568b49d17b"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Ash",
+      "_key": "!tables.results!4d68a549300d665e.bf83ed5014ac2d60",
+      "_id": "bf83ed5014ac2d60"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Banishment",
+      "_key": "!tables.results!4d68a549300d665e.7ba07088286994e8",
+      "_id": "7ba07088286994e8"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Shadow",
+      "_key": "!tables.results!4d68a549300d665e.26af4fd1a864372a",
+      "_id": "26af4fd1a864372a"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Madness",
+      "_key": "!tables.results!4d68a549300d665e.671e28d1c6a8148e",
+      "_id": "671e28d1c6a8148e"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Stone",
+      "_key": "!tables.results!4d68a549300d665e.a8bdf92cf894bc60",
+      "_id": "a8bdf92cf894bc60"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Secrets",
+      "_key": "!tables.results!4d68a549300d665e.56ecf91878ca8787",
+      "_id": "56ecf91878ca8787"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Despair",
+      "_key": "!tables.results!4d68a549300d665e.442da51727db7b8f",
+      "_id": "442da51727db7b8f"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Blades",
+      "_key": "!tables.results!4d68a549300d665e.b69fed7e60cd2929",
+      "_id": "b69fed7e60cd2929"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Dread",
+      "_key": "!tables.results!4d68a549300d665e.b7eceeacb4037704",
+      "_id": "b7eceeacb4037704"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Light",
+      "_key": "!tables.results!4d68a549300d665e.0e3694fc50659da5",
+      "_id": "0e3694fc50659da5"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Wrath",
+      "_key": "!tables.results!4d68a549300d665e.0d32369ccffd5e37",
+      "_id": "0d32369ccffd5e37"
+    }
+  ],
+  "folder": "f6b92bad160107de",
+  "sort": 208,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4d68a549300d665e"
+}

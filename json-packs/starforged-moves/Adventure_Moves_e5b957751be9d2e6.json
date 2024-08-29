@@ -1,24 +1,17 @@
 {
   "name": "Adventure Moves",
+  "color": "#206087",
+  "description": "The __adventure moves__ encompass broadly useful actions to overcome obstacles, reinforce your position, conduct investigations, influence others, and support your fellow protagonists. When you face a peril or try to gain leverage, and another move does not apply, you'll likely find your answer among these moves.",
   "type": "Item",
   "_id": "e5b957751be9d2e6",
-  "color": "#206087",
-  "description": "The **adventure moves** encompass broadly useful actions to overcome obstacles, reinforce your position, conduct investigations, influence others, and support your fellow protagonists. When you face a peril or try to gain leverage, and another move does not apply, you'll likely find your answer among these moves.",
   "sort": 146,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Moves/Adventure"
+      "dfid": "Starforged/Moves/Adventure",
+      "dsid": "move_category:starforged/adventure"
     }
   },
   "folder": null,
   "sorting": "a",
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021087,
-    "modifiedTime": 1695949021087,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!folders!e5b957751be9d2e6"
 }

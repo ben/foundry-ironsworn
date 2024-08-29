@@ -1,0 +1,56 @@
+{
+  "_id": "8e46a88307d5847b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/size",
+      "dsid": "oracle_rollable:sundered_isles/settlement/size/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "Village or outpost",
+      "_key": "!tables.results!8e46a88307d5847b.88de28ad7cc0f254",
+      "_id": "88de28ad7cc0f254"
+    },
+    {
+      "range": [
+        41,
+        75
+      ],
+      "text": "Town",
+      "_key": "!tables.results!8e46a88307d5847b.1459c59af4528f83",
+      "_id": "1459c59af4528f83"
+    },
+    {
+      "range": [
+        76,
+        98
+      ],
+      "text": "City",
+      "_key": "!tables.results!8e46a88307d5847b.1da74a2e98e36728",
+      "_id": "1da74a2e98e36728"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "City-state",
+      "_key": "!tables.results!8e46a88307d5847b.b201eeec4d60bf79",
+      "_id": "b201eeec4d60bf79"
+    }
+  ],
+  "folder": "39cb632324e87124",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8e46a88307d5847b"
+}

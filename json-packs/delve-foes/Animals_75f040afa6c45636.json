@@ -1,0 +1,15 @@
+{
+  "name": "Animals",
+  "description": "",
+  "type": "Item",
+  "_id": "75f040afa6c45636",
+  "sort": 114,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc_collection:delve/animals"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!75f040afa6c45636"
+}

@@ -1,0 +1,201 @@
+{
+  "_id": "d7d0c24aa0d7d483",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation/Inciting_Incident",
+      "category": "oracle_collection:starforged/launching_your_campaign/adventure",
+      "dsid": "oracle_rollable:starforged/launching_your_campaign/adventure/inciting_incident"
+    }
+  },
+  "name": "Step 1: Envision an Inciting Incident",
+  "description": "<p>If you need inspiration, do any combination of the following:</p>\n<ul>\n<li>Roll the @Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} and @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme} oracles.</li>\n<li>Roll the @Compendium[foundry-ironsworn.starforgedoracles.a707e132902305f0]{Character Goal} oracle.</li>\n<li>Pick or roll on the table below.</li>\n</ul>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Aid a starship caught in a spacetime fracture",
+      "_key": "!tables.results!d7d0c24aa0d7d483.996460d89b7f6ffd",
+      "_id": "996460d89b7f6ffd"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Broker peace between two feuding settlements",
+      "_key": "!tables.results!d7d0c24aa0d7d483.a8c7d9dc1c6de395",
+      "_id": "a8c7d9dc1c6de395"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Chart a new passage between isolated settlements",
+      "_key": "!tables.results!d7d0c24aa0d7d483.f6544ce596e74547",
+      "_id": "f6544ce596e74547"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Defend the people of a beleaguered settlement against raiders",
+      "_key": "!tables.results!d7d0c24aa0d7d483.e0557cd4ebe59d3b",
+      "_id": "e0557cd4ebe59d3b"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Discover who sabotaged a settlement's air processors",
+      "_key": "!tables.results!d7d0c24aa0d7d483.0e293f7b7ef7fe4a",
+      "_id": "0e293f7b7ef7fe4a"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Escort a tradeship carrying a prized cargo",
+      "_key": "!tables.results!d7d0c24aa0d7d483.0ce763f33a4d1224",
+      "_id": "0ce763f33a4d1224"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Ferry a rescue team to a perilous disaster site",
+      "_key": "!tables.results!d7d0c24aa0d7d483.edbedbb2a5447c8c",
+      "_id": "edbedbb2a5447c8c"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Infiltrate a fortified base to steal crucial data",
+      "_key": "!tables.results!d7d0c24aa0d7d483.3cbf3f10a876fb50",
+      "_id": "3cbf3f10a876fb50"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Investigate terrifying manifestations at a remote settlement",
+      "_key": "!tables.results!d7d0c24aa0d7d483.d33bf17525ac94ff",
+      "_id": "d33bf17525ac94ff"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Liberate prisoners at a cruel labor camp",
+      "_key": "!tables.results!d7d0c24aa0d7d483.72974a4c1b5386ef",
+      "_id": "72974a4c1b5386ef"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Locate a downed spacer on an uninhabited planet",
+      "_key": "!tables.results!d7d0c24aa0d7d483.c947d83a5ed76950",
+      "_id": "c947d83a5ed76950"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Protect a fugitive from a relentless bounty hunter",
+      "_key": "!tables.results!d7d0c24aa0d7d483.d1cf26cbbbee87e3",
+      "_id": "d1cf26cbbbee87e3"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Recover a cherished pre-exodus artifact from an enemy",
+      "_key": "!tables.results!d7d0c24aa0d7d483.6bcec8d1088c30e1",
+      "_id": "6bcec8d1088c30e1"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Rescue a starship crew held captive by mutineers",
+      "_key": "!tables.results!d7d0c24aa0d7d483.aeb98ca00be2d66a",
+      "_id": "aeb98ca00be2d66a"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Retrieve a cache of stolen weapons from a pirate ship",
+      "_key": "!tables.results!d7d0c24aa0d7d483.38cf1d0f2388e4da",
+      "_id": "38cf1d0f2388e4da"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Sabotage an enemy installation",
+      "_key": "!tables.results!d7d0c24aa0d7d483.681f7bb7f9727767",
+      "_id": "681f7bb7f9727767"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Search for a missing expedition in the depths of a precursor vault",
+      "_key": "!tables.results!d7d0c24aa0d7d483.1ff7ee02adee2753",
+      "_id": "1ff7ee02adee2753"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Shield a wondrous lifeform from those who seek to destroy it",
+      "_key": "!tables.results!d7d0c24aa0d7d483.7ec3348ff295aa78",
+      "_id": "7ec3348ff295aa78"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Track and slay a marauding beast",
+      "_key": "!tables.results!d7d0c24aa0d7d483.1d9237580819a3ab",
+      "_id": "1d9237580819a3ab"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Transport a displaced people to their new home",
+      "_key": "!tables.results!d7d0c24aa0d7d483.5c807407bf2422c6",
+      "_id": "5c807407bf2422c6"
+    }
+  ],
+  "folder": "4d29efc903745dfa",
+  "sort": 128,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d7d0c24aa0d7d483"
+}

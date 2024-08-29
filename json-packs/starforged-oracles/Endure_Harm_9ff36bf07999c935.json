@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Moves/Endure_Harm",
-      "category": "Starforged/Oracles/Moves"
+      "category": "Starforged/Moves/Suffer",
+      "dsid": "move.oracle_rollable:starforged/suffer/endure_harm.endure_harm"
     }
   },
   "name": "Endure Harm",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "You suffer mortal harm. @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death}.",
-      "_id": "19ae5cd6a3b5f623",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9ff36bf07999c935.19ae5cd6a3b5f623"
+      "_key": "!tables.results!9ff36bf07999c935.6d97e144e77da1d8",
+      "_id": "6d97e144e77da1d8"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "You are dying. Within an hour or two, you must @Compendium[foundry-ironsworn.starforgedmoves.2051538f0c9d5d27]{Heal} and raise your health above 0, or @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death}.",
-      "_id": "7593c90b8ad0aa71",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9ff36bf07999c935.7593c90b8ad0aa71"
+      "_key": "!tables.results!9ff36bf07999c935.9b11ca12623db7ae",
+      "_id": "9b11ca12623db7ae"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         35
       ],
       "text": "You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death}.",
-      "_id": "ca52a40ef8a81643",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9ff36bf07999c935.ca52a40ef8a81643"
+      "_key": "!tables.results!9ff36bf07999c935.d17c27e0b1faf822",
+      "_id": "d17c27e0b1faf822"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         50
       ],
       "text": "You are reeling and fighting to stay conscious. If you engage in any vigorous activity before taking a breather for a few minutes, roll on this table again (before resolving the other move).",
-      "_id": "c8748844a01bfc82",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9ff36bf07999c935.c8748844a01bfc82"
+      "_key": "!tables.results!9ff36bf07999c935.709d898fc84aeacc",
+      "_id": "709d898fc84aeacc"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "You are still standing.",
-      "_id": "583aae9e8a914df9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!9ff36bf07999c935.583aae9e8a914df9"
+      "_key": "!tables.results!9ff36bf07999c935.e6fd77fdc03ec762",
+      "_id": "e6fd77fdc03ec762"
     }
   ],
-  "folder": "adcc4cbc5484a254",
-  "sort": 200,
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!9ff36bf07999c935"
 }

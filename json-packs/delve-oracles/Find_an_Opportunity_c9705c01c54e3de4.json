@@ -1,0 +1,111 @@
+{
+  "_id": "c9705c01c54e3de4",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Find_an_Opportunity",
+      "category": "Ironsworn/Moves/Delve",
+      "dsid": "move.oracle_rollable:delve/delve/find_an_opportunity.find_an_opportunity"
+    }
+  },
+  "name": "Find an Opportunity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "The terrain favors you, or you find a hidden path.",
+      "_key": "!tables.results!c9705c01c54e3de4.9abcd315236cff09",
+      "_id": "9abcd315236cff09"
+    },
+    {
+      "range": [
+        26,
+        45
+      ],
+      "text": "An aspect of the history or nature of this place is revealed.",
+      "_key": "!tables.results!c9705c01c54e3de4.25491bf63ea8423d",
+      "_id": "25491bf63ea8423d"
+    },
+    {
+      "range": [
+        46,
+        57
+      ],
+      "text": "You locate a secure area.",
+      "_key": "!tables.results!c9705c01c54e3de4.1c27475801754ca8",
+      "_id": "1c27475801754ca8"
+    },
+    {
+      "range": [
+        58,
+        68
+      ],
+      "text": "A clue offers insight or direction.",
+      "_key": "!tables.results!c9705c01c54e3de4.39c9f0a54ac561dd",
+      "_id": "39c9f0a54ac561dd"
+    },
+    {
+      "range": [
+        69,
+        78
+      ],
+      "text": "You get the drop on a denizen.",
+      "_key": "!tables.results!c9705c01c54e3de4.517fc28490544f88",
+      "_id": "517fc28490544f88"
+    },
+    {
+      "range": [
+        79,
+        86
+      ],
+      "text": "This area provides an opportunity to scavenge, forage, or hunt.",
+      "_key": "!tables.results!c9705c01c54e3de4.0739acdd23a538e9",
+      "_id": "0739acdd23a538e9"
+    },
+    {
+      "range": [
+        87,
+        90
+      ],
+      "text": "You locate an interesting or helpful object.",
+      "_key": "!tables.results!c9705c01c54e3de4.dde77b9664c61873",
+      "_id": "dde77b9664c61873"
+    },
+    {
+      "range": [
+        91,
+        94
+      ],
+      "text": "You are alerted to a potential threat.",
+      "_key": "!tables.results!c9705c01c54e3de4.8207fb62080067f2",
+      "_id": "8207fb62080067f2"
+    },
+    {
+      "range": [
+        95,
+        98
+      ],
+      "text": "You encounter a denizen who might support you.",
+      "_key": "!tables.results!c9705c01c54e3de4.fcdf3801effe1316",
+      "_id": "fcdf3801effe1316"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "You encounter a denizen in need of help.",
+      "_key": "!tables.results!c9705c01c54e3de4.81d691d886f8c2e2",
+      "_id": "81d691d886f8c2e2"
+    }
+  ],
+  "folder": "0e08d4bb1591c3a9",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!c9705c01c54e3de4"
+}

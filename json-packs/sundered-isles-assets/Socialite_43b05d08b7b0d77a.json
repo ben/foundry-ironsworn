@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "43b05d08b7b0d77a",
+  "folder": "e5df7144ec089f12",
+  "name": "Socialite",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you make a move using charm, flattery, or seduction, or by navigating elite social circles, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you first make an appearance at a social event, you may attempt a grand or memorable entrance. If you do, roll +heart. On a strong hit, mark 1 tick on your bonds legacy track and take +3 momentum. On a weak hit, take +2 momentum. On a miss, choose one and @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress} (-2).</p>\n<ul>\n<li>You spot an unwelcome rival, authority, or former beau.</li>\n<li>You commit an embarrassing faux pas.</li>\n<li>You are upstaged by another’s entrance.</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.c2c2f31f564caa06]{Hearten} while attending an exclusive social event, reroll any dice. On a strong hit, you and any allies in your company take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/socialite",
+      "dsid": "asset:sundered_isles/path/socialite"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!43b05d08b7b0d77a"
+}

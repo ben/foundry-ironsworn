@@ -1,0 +1,353 @@
+{
+  "_id": "4add7b7073d92003",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/focus",
+      "dsid": "oracle_rollable:sundered_isles/settlement/focus/shore"
+    }
+  },
+  "name": "Shore",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Piracy",
+      "_key": "!tables.results!4add7b7073d92003.2a5f7912a9bca17e",
+      "_id": "2a5f7912a9bca17e"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Whaling",
+      "_key": "!tables.results!4add7b7073d92003.41481f3de6a2d2af",
+      "_id": "41481f3de6a2d2af"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Wrecking",
+      "_key": "!tables.results!4add7b7073d92003.ae657c6b094639ae",
+      "_id": "ae657c6b094639ae"
+    },
+    {
+      "range": [
+        9,
+        14
+      ],
+      "text": "Shipbuilding",
+      "_key": "!tables.results!4add7b7073d92003.57e78502f4ef5aee",
+      "_id": "57e78502f4ef5aee"
+    },
+    {
+      "range": [
+        15,
+        22
+      ],
+      "text": "Fishing",
+      "_key": "!tables.results!4add7b7073d92003.8cb5cb44dd641e63",
+      "_id": "8cb5cb44dd641e63"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Alcohol Production",
+      "_key": "!tables.results!4add7b7073d92003.be08621cf1ef9c12",
+      "_id": "be08621cf1ef9c12"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Archeology",
+      "_key": "!tables.results!4add7b7073d92003.1667eee14709ce37",
+      "_id": "1667eee14709ce37"
+    },
+    {
+      "range": [
+        26,
+        27
+      ],
+      "text": "Crafts",
+      "_key": "!tables.results!4add7b7073d92003.4e71185c3d6e3b9d",
+      "_id": "4e71185c3d6e3b9d"
+    },
+    {
+      "range": [
+        28,
+        29
+      ],
+      "text": "Culture",
+      "_key": "!tables.results!4add7b7073d92003.84a362636e8b6e4e",
+      "_id": "84a362636e8b6e4e"
+    },
+    {
+      "range": [
+        30,
+        35
+      ],
+      "text": "Defense",
+      "_key": "!tables.results!4add7b7073d92003.70ecdc2f0e6c0ec1",
+      "_id": "70ecdc2f0e6c0ec1"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Dueling",
+      "_key": "!tables.results!4add7b7073d92003.0b0cfdc897c27380",
+      "_id": "0b0cfdc897c27380"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Education",
+      "_key": "!tables.results!4add7b7073d92003.3d55946fdc7dc079",
+      "_id": "3d55946fdc7dc079"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Entertainment",
+      "_key": "!tables.results!4add7b7073d92003.fc05ed097bfa8c85",
+      "_id": "fc05ed097bfa8c85"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Espionage",
+      "_key": "!tables.results!4add7b7073d92003.eb3aa28f6ae9d1c2",
+      "_id": "eb3aa28f6ae9d1c2"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Exploration",
+      "_key": "!tables.results!4add7b7073d92003.625e7b15eecbb1e3",
+      "_id": "625e7b15eecbb1e3"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Farming",
+      "_key": "!tables.results!4add7b7073d92003.842822694d0cd384",
+      "_id": "842822694d0cd384"
+    },
+    {
+      "range": [
+        49,
+        54
+      ],
+      "text": "Hospitality",
+      "_key": "!tables.results!4add7b7073d92003.ce15263930123391",
+      "_id": "ce15263930123391"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Hunting",
+      "_key": "!tables.results!4add7b7073d92003.7cb551913924981f",
+      "_id": "7cb551913924981f"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Law",
+      "_key": "!tables.results!4add7b7073d92003.7a00faa6c6096f83",
+      "_id": "7a00faa6c6096f83"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Livestock / horses",
+      "_key": "!tables.results!4add7b7073d92003.219207ec8ce9ae20",
+      "_id": "219207ec8ce9ae20"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Logging",
+      "_key": "!tables.results!4add7b7073d92003.ddf44ab16da59beb",
+      "_id": "ddf44ab16da59beb"
+    },
+    {
+      "range": [
+        60,
+        61
+      ],
+      "text": "Medicine",
+      "_key": "!tables.results!4add7b7073d92003.4311e2f30ca658d4",
+      "_id": "4311e2f30ca658d4"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Metalworking",
+      "_key": "!tables.results!4add7b7073d92003.40998286a9e2f897",
+      "_id": "40998286a9e2f897"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Mining",
+      "_key": "!tables.results!4add7b7073d92003.6e8a00129ff34f28",
+      "_id": "6e8a00129ff34f28"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Mysticism",
+      "_key": "!tables.results!4add7b7073d92003.79d4d267b53d26f8",
+      "_id": "79d4d267b53d26f8"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Nature",
+      "_key": "!tables.results!4add7b7073d92003.2dd8fd5626b7002e",
+      "_id": "2dd8fd5626b7002e"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Religion",
+      "_key": "!tables.results!4add7b7073d92003.c4bba73df2bc0975",
+      "_id": "c4bba73df2bc0975"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Science",
+      "_key": "!tables.results!4add7b7073d92003.2df6943e8f439f73",
+      "_id": "2df6943e8f439f73"
+    },
+    {
+      "range": [
+        71,
+        73
+      ],
+      "text": "Smuggling",
+      "_key": "!tables.results!4add7b7073d92003.67d9ce82b1dc76bc",
+      "_id": "67d9ce82b1dc76bc"
+    },
+    {
+      "range": [
+        74,
+        75
+      ],
+      "text": "Society",
+      "_key": "!tables.results!4add7b7073d92003.5c0314b31148fffb",
+      "_id": "5c0314b31148fffb"
+    },
+    {
+      "range": [
+        76,
+        77
+      ],
+      "text": "Statecraft",
+      "_key": "!tables.results!4add7b7073d92003.8e925b564afca405",
+      "_id": "8e925b564afca405"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Stoneworking",
+      "_key": "!tables.results!4add7b7073d92003.1b502dc6f7ec2781",
+      "_id": "1b502dc6f7ec2781"
+    },
+    {
+      "range": [
+        79,
+        86
+      ],
+      "text": "Trade",
+      "_key": "!tables.results!4add7b7073d92003.0de7e7695a2a6fe7",
+      "_id": "0de7e7695a2a6fe7"
+    },
+    {
+      "range": [
+        87,
+        89
+      ],
+      "text": "Vices",
+      "_key": "!tables.results!4add7b7073d92003.d8fb13ff0b11b7af",
+      "_id": "d8fb13ff0b11b7af"
+    },
+    {
+      "range": [
+        90,
+        93
+      ],
+      "text": "Warfare",
+      "_key": "!tables.results!4add7b7073d92003.565e8b413cdd2fcf",
+      "_id": "565e8b413cdd2fcf"
+    },
+    {
+      "range": [
+        94,
+        95
+      ],
+      "text": "Weaponry",
+      "_key": "!tables.results!4add7b7073d92003.779eb052d40bac32",
+      "_id": "779eb052d40bac32"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.109883b4bcba1339]{Action} + @Compendium[foundry-ironsworn.sunderedislesoracles.ce3644703a52b2bd]{Theme}",
+      "_key": "!tables.results!4add7b7073d92003.4e8580858719344c",
+      "_id": "4e8580858719344c"
+    }
+  ],
+  "folder": "8207db831559da44",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4add7b7073d92003"
+}

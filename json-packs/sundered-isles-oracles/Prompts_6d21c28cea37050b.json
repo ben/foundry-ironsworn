@@ -1,0 +1,65 @@
+{
+  "_id": "6d21c28cea37050b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc",
+      "dsid": "oracle_rollable:sundered_isles/misc/prompts"
+    }
+  },
+  "name": "Prompts",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.109883b4bcba1339]{Action} + @Compendium[foundry-ironsworn.sunderedislesoracles.ce3644703a52b2bd]{Theme}",
+      "_key": "!tables.results!6d21c28cea37050b.3f0682f95f8408b1",
+      "_id": "3f0682f95f8408b1"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.109883b4bcba1339]{Action} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!6d21c28cea37050b.6fb81cdf3b321572",
+      "_id": "6fb81cdf3b321572"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.ce3644703a52b2bd]{Theme}",
+      "_key": "!tables.results!6d21c28cea37050b.0764b4d377858473",
+      "_id": "0764b4d377858473"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!6d21c28cea37050b.0ae7411567e4f2a1",
+      "_id": "0ae7411567e4f2a1"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.109883b4bcba1339]{Action} + @Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!6d21c28cea37050b.bdada23cb256b5ea",
+      "_id": "bdada23cb256b5ea"
+    }
+  ],
+  "folder": "4712a591169fe5d6",
+  "sort": 226,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6d21c28cea37050b"
+}

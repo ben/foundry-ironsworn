@@ -34,7 +34,6 @@
     "track": {
       "enabled": true,
       "name": "Health",
-      "current": 0,
       "max": 3,
       "value": 3,
       "min": 0
@@ -47,17 +46,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Assets/Ritual/Awakening",
+      "dsid": "asset:classic/ritual/awakening"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021198,
-    "modifiedTime": 1695949021198,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!f046c70dae00c59e"
 }

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Settlement/Quick_Name/Prefix",
-      "category": "Ironsworn/Oracles/Settlement"
+      "category": "Ironsworn/Oracles/Settlement/Quick_Name",
+      "dsid": "oracle_rollable:classic/settlement/quick_name/prefix"
     }
   },
   "name": "Prefix",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "Bleak",
-      "_id": "e40d1ab04b1de9fa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.e40d1ab04b1de9fa"
+      "_key": "!tables.results!d56ca12469341474.15816a21bf9f6f1f",
+      "_id": "15816a21bf9f6f1f"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         8
       ],
       "text": "Green",
-      "_id": "4142f3e40347270d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.4142f3e40347270d"
+      "_key": "!tables.results!d56ca12469341474.12f2f8de1bd9b196",
+      "_id": "12f2f8de1bd9b196"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         12
       ],
       "text": "Wolf",
-      "_id": "ff810418d987d0e4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.ff810418d987d0e4"
+      "_key": "!tables.results!d56ca12469341474.64c115a0bd62d3fd",
+      "_id": "64c115a0bd62d3fd"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         16
       ],
       "text": "Raven",
-      "_id": "3110b8131eb369df",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.3110b8131eb369df"
+      "_key": "!tables.results!d56ca12469341474.0d48eafeabb694a4",
+      "_id": "0d48eafeabb694a4"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         20
       ],
       "text": "Gray",
-      "_id": "c8b7818e5cb01675",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.c8b7818e5cb01675"
+      "_key": "!tables.results!d56ca12469341474.410c1661442a4d9d",
+      "_id": "410c1661442a4d9d"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         24
       ],
       "text": "Red",
-      "_id": "9576556d924b15e7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.9576556d924b15e7"
+      "_key": "!tables.results!d56ca12469341474.33ea20f0269f0ef9",
+      "_id": "33ea20f0269f0ef9"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         28
       ],
       "text": "Axe",
-      "_id": "09a8893797ffff30",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.09a8893797ffff30"
+      "_key": "!tables.results!d56ca12469341474.37d55d1c6a9c56c4",
+      "_id": "37d55d1c6a9c56c4"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         32
       ],
       "text": "Great",
-      "_id": "98a691fd53d34020",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.98a691fd53d34020"
+      "_key": "!tables.results!d56ca12469341474.25448f096fa3e817",
+      "_id": "25448f096fa3e817"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         36
       ],
       "text": "Wood",
-      "_id": "1fd505cb854c9595",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.1fd505cb854c9595"
+      "_key": "!tables.results!d56ca12469341474.e9b78c12dfda9706",
+      "_id": "e9b78c12dfda9706"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         40
       ],
       "text": "Low",
-      "_id": "0cc875f75754354b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.0cc875f75754354b"
+      "_key": "!tables.results!d56ca12469341474.aec57e95b99e203d",
+      "_id": "aec57e95b99e203d"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         44
       ],
       "text": "White",
-      "_id": "577561576c3c727e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.577561576c3c727e"
+      "_key": "!tables.results!d56ca12469341474.acb43b4e0bc4ef1e",
+      "_id": "acb43b4e0bc4ef1e"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         48
       ],
       "text": "Storm",
-      "_id": "df1826a77bd4c27c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.df1826a77bd4c27c"
+      "_key": "!tables.results!d56ca12469341474.56ec0897efc7f8ac",
+      "_id": "56ec0897efc7f8ac"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         52
       ],
       "text": "Black",
-      "_id": "44a9308c32555e4a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.44a9308c32555e4a"
+      "_key": "!tables.results!d56ca12469341474.009bd363480ceded",
+      "_id": "009bd363480ceded"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         56
       ],
       "text": "Mourn",
-      "_id": "b7d58682197e5124",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.b7d58682197e5124"
+      "_key": "!tables.results!d56ca12469341474.b0cfe515ff05daf4",
+      "_id": "b0cfe515ff05daf4"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         60
       ],
       "text": "New",
-      "_id": "1eef0904fad037cd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.1eef0904fad037cd"
+      "_key": "!tables.results!d56ca12469341474.7ccd98f0dd7d9831",
+      "_id": "7ccd98f0dd7d9831"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         64
       ],
       "text": "Stone",
-      "_id": "dcf20764a0efd12e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.dcf20764a0efd12e"
+      "_key": "!tables.results!d56ca12469341474.582aa376915ca791",
+      "_id": "582aa376915ca791"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         68
       ],
       "text": "Grim",
-      "_id": "e37e210342e400b4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.e37e210342e400b4"
+      "_key": "!tables.results!d56ca12469341474.b5df1f26d516ffb5",
+      "_id": "b5df1f26d516ffb5"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         72
       ],
       "text": "Lost",
-      "_id": "d274e561243e68ab",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.d274e561243e68ab"
+      "_key": "!tables.results!d56ca12469341474.7358c8781459b1d3",
+      "_id": "7358c8781459b1d3"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         76
       ],
       "text": "High",
-      "_id": "7124376863948cbe",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.7124376863948cbe"
+      "_key": "!tables.results!d56ca12469341474.7083f1a8185b760f",
+      "_id": "7083f1a8185b760f"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         80
       ],
       "text": "Rock",
-      "_id": "45ca8ed0c3e85f2d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.45ca8ed0c3e85f2d"
+      "_key": "!tables.results!d56ca12469341474.b2c55eccb2156d16",
+      "_id": "b2c55eccb2156d16"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         84
       ],
       "text": "Shield",
-      "_id": "ef032cec76c9d6bc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.ef032cec76c9d6bc"
+      "_key": "!tables.results!d56ca12469341474.a7d76e07ed89e1ec",
+      "_id": "a7d76e07ed89e1ec"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         88
       ],
       "text": "Sword",
-      "_id": "476cd537d76c53d5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.476cd537d76c53d5"
+      "_key": "!tables.results!d56ca12469341474.05ab3b7ea3d1e411",
+      "_id": "05ab3b7ea3d1e411"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         92
       ],
       "text": "Frost",
-      "_id": "4d345a7f656c221a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.4d345a7f656c221a"
+      "_key": "!tables.results!d56ca12469341474.ab0a2e4cdf207a1b",
+      "_id": "ab0a2e4cdf207a1b"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         96
       ],
       "text": "Thorn",
-      "_id": "6c6684021d162df1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.6c6684021d162df1"
+      "_key": "!tables.results!d56ca12469341474.6973aa688c65e21d",
+      "_id": "6973aa688c65e21d"
     },
     {
       "range": [
@@ -354,29 +235,12 @@
         100
       ],
       "text": "Long",
-      "_id": "462c46f848da1820",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d56ca12469341474.462c46f848da1820"
+      "_key": "!tables.results!d56ca12469341474.b1296275a736808e",
+      "_id": "b1296275a736808e"
     }
   ],
   "folder": "32aa235a6ba13f03",
-  "sort": 180,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!d56ca12469341474"
 }

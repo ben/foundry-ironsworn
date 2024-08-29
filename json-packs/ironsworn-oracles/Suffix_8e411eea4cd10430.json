@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Settlement/Quick_Name/Suffix",
-      "category": "Ironsworn/Oracles/Settlement"
+      "category": "Ironsworn/Oracles/Settlement/Quick_Name",
+      "dsid": "oracle_rollable:classic/settlement/quick_name/suffix"
     }
   },
   "name": "Suffix",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "moor",
-      "_id": "103f906c00e92c5c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.103f906c00e92c5c"
+      "_key": "!tables.results!8e411eea4cd10430.1dafaa30ac2a1cb3",
+      "_id": "1dafaa30ac2a1cb3"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         8
       ],
       "text": "ford",
-      "_id": "a2c2b8be905877fa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.a2c2b8be905877fa"
+      "_key": "!tables.results!8e411eea4cd10430.c200730604d5db87",
+      "_id": "c200730604d5db87"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         12
       ],
       "text": "crag",
-      "_id": "627a394008ba0bde",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.627a394008ba0bde"
+      "_key": "!tables.results!8e411eea4cd10430.f98d0212dd028de0",
+      "_id": "f98d0212dd028de0"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         16
       ],
       "text": "watch",
-      "_id": "46ec9f5dd77bdd32",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.46ec9f5dd77bdd32"
+      "_key": "!tables.results!8e411eea4cd10430.532eb114e50338da",
+      "_id": "532eb114e50338da"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         20
       ],
       "text": "hope",
-      "_id": "5003ee3c6a75e4e6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.5003ee3c6a75e4e6"
+      "_key": "!tables.results!8e411eea4cd10430.3143d602a092cb0a",
+      "_id": "3143d602a092cb0a"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         24
       ],
       "text": "wood",
-      "_id": "3d9b75998c4dd9cd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.3d9b75998c4dd9cd"
+      "_key": "!tables.results!8e411eea4cd10430.d8bad724b21c8223",
+      "_id": "d8bad724b21c8223"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         28
       ],
       "text": "ridge",
-      "_id": "27ee44d74783a02d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.27ee44d74783a02d"
+      "_key": "!tables.results!8e411eea4cd10430.2a1dfba979968385",
+      "_id": "2a1dfba979968385"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         32
       ],
       "text": "stone",
-      "_id": "6708fb64d03ca7e9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.6708fb64d03ca7e9"
+      "_key": "!tables.results!8e411eea4cd10430.fde184f713b6c1da",
+      "_id": "fde184f713b6c1da"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         36
       ],
       "text": "haven",
-      "_id": "3bb5b110c753fb65",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.3bb5b110c753fb65"
+      "_key": "!tables.results!8e411eea4cd10430.5d178017f72872a7",
+      "_id": "5d178017f72872a7"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         40
       ],
       "text": "fall(s)",
-      "_id": "1d8a272d2dfd60f5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.1d8a272d2dfd60f5"
+      "_key": "!tables.results!8e411eea4cd10430.930e6a5d68332291",
+      "_id": "930e6a5d68332291"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         44
       ],
       "text": "river",
-      "_id": "631b9cc9c75f6bb5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.631b9cc9c75f6bb5"
+      "_key": "!tables.results!8e411eea4cd10430.fed89f064c34318d",
+      "_id": "fed89f064c34318d"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         48
       ],
       "text": "field",
-      "_id": "3c1606d5feb9d387",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.3c1606d5feb9d387"
+      "_key": "!tables.results!8e411eea4cd10430.b0673cfadd781516",
+      "_id": "b0673cfadd781516"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         52
       ],
       "text": "hill",
-      "_id": "d28ea3bc15626907",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.d28ea3bc15626907"
+      "_key": "!tables.results!8e411eea4cd10430.feadcab3ddd83464",
+      "_id": "feadcab3ddd83464"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         56
       ],
       "text": "bridge",
-      "_id": "ae4d2603922ef859",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.ae4d2603922ef859"
+      "_key": "!tables.results!8e411eea4cd10430.8cb84bfee4cba878",
+      "_id": "8cb84bfee4cba878"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         60
       ],
       "text": "mark",
-      "_id": "ca2b72432f0a51f6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.ca2b72432f0a51f6"
+      "_key": "!tables.results!8e411eea4cd10430.c2aab6b2a1b239f2",
+      "_id": "c2aab6b2a1b239f2"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         64
       ],
       "text": "cairn",
-      "_id": "8f71f801c5bedfd0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.8f71f801c5bedfd0"
+      "_key": "!tables.results!8e411eea4cd10430.a62814c767cdf8e1",
+      "_id": "a62814c767cdf8e1"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         68
       ],
       "text": "land",
-      "_id": "5dde8cbbae487a65",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.5dde8cbbae487a65"
+      "_key": "!tables.results!8e411eea4cd10430.446773a0bc80eae9",
+      "_id": "446773a0bc80eae9"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         72
       ],
       "text": "hall",
-      "_id": "dda5d9611d12bf8c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.dda5d9611d12bf8c"
+      "_key": "!tables.results!8e411eea4cd10430.3b03920e109c6a35",
+      "_id": "3b03920e109c6a35"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         76
       ],
       "text": "mount",
-      "_id": "4143d78794dfa175",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.4143d78794dfa175"
+      "_key": "!tables.results!8e411eea4cd10430.60e0a92bd99d1494",
+      "_id": "60e0a92bd99d1494"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         80
       ],
       "text": "rock",
-      "_id": "6e0d4276ea10c3c3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.6e0d4276ea10c3c3"
+      "_key": "!tables.results!8e411eea4cd10430.a934d77e6c20f313",
+      "_id": "a934d77e6c20f313"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         84
       ],
       "text": "brook",
-      "_id": "f56b7116946b0116",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.f56b7116946b0116"
+      "_key": "!tables.results!8e411eea4cd10430.9c14b582f94e8d6c",
+      "_id": "9c14b582f94e8d6c"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         88
       ],
       "text": "barrow",
-      "_id": "1dad25a83be6edc3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.1dad25a83be6edc3"
+      "_key": "!tables.results!8e411eea4cd10430.b86203d5f35ad83b",
+      "_id": "b86203d5f35ad83b"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         92
       ],
       "text": "stead",
-      "_id": "f11f66d200316b33",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.f11f66d200316b33"
+      "_key": "!tables.results!8e411eea4cd10430.a108bee80377703b",
+      "_id": "a108bee80377703b"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         96
       ],
       "text": "home",
-      "_id": "121a55ba0aa4a9c3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.121a55ba0aa4a9c3"
+      "_key": "!tables.results!8e411eea4cd10430.aca17df900fdd3e5",
+      "_id": "aca17df900fdd3e5"
     },
     {
       "range": [
@@ -354,29 +235,12 @@
         100
       ],
       "text": "wick",
-      "_id": "1b50a5e503047175",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8e411eea4cd10430.1b50a5e503047175"
+      "_key": "!tables.results!8e411eea4cd10430.bf0df9eb9bfde2e3",
+      "_id": "bf0df9eb9bfde2e3"
     }
   ],
   "folder": "32aa235a6ba13f03",
-  "sort": 180,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!8e411eea4cd10430"
 }

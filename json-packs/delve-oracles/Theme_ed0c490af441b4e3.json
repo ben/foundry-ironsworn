@@ -1,0 +1,93 @@
+{
+  "_id": "ed0c490af441b4e3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Nature/Theme",
+      "category": "Ironsworn/Oracles/Site_Nature",
+      "dsid": "oracle_rollable:delve/site_nature/theme"
+    }
+  },
+  "name": "Theme",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvethemes.94397e5c9fb65a81]{Ancient}",
+      "_key": "!tables.results!ed0c490af441b4e3.00b7bd423c330540",
+      "_id": "00b7bd423c330540"
+    },
+    {
+      "range": [
+        12,
+        23
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvethemes.cf94fb4e6e77ed17]{Corrupted}",
+      "_key": "!tables.results!ed0c490af441b4e3.d7e9667c32387a70",
+      "_id": "d7e9667c32387a70"
+    },
+    {
+      "range": [
+        24,
+        35
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvethemes.58ffd0a1f84094d0]{Fortified}",
+      "_key": "!tables.results!ed0c490af441b4e3.6b42dec713d78b68",
+      "_id": "6b42dec713d78b68"
+    },
+    {
+      "range": [
+        36,
+        48
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvethemes.8555753de47119a1]{Hallowed}",
+      "_key": "!tables.results!ed0c490af441b4e3.7aca2d024c12b69c",
+      "_id": "7aca2d024c12b69c"
+    },
+    {
+      "range": [
+        49,
+        61
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvethemes.064f6b24c7aace9a]{Haunted}",
+      "_key": "!tables.results!ed0c490af441b4e3.f04878fa88fd4d15",
+      "_id": "f04878fa88fd4d15"
+    },
+    {
+      "range": [
+        62,
+        74
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvethemes.0d16f80541657b28]{Infested}",
+      "_key": "!tables.results!ed0c490af441b4e3.3d721e0d7969f5dc",
+      "_id": "3d721e0d7969f5dc"
+    },
+    {
+      "range": [
+        75,
+        87
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvethemes.d267fd935459da97]{Ravaged}",
+      "_key": "!tables.results!ed0c490af441b4e3.5ea17a05b5b0b111",
+      "_id": "5ea17a05b5b0b111"
+    },
+    {
+      "range": [
+        88,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvethemes.3a633d3ce6079711]{Wild}",
+      "_key": "!tables.results!ed0c490af441b4e3.d76c2f7720920fc7",
+      "_id": "d76c2f7720920fc7"
+    }
+  ],
+  "folder": "62509c23920c5583",
+  "sort": 212,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ed0c490af441b4e3"
+}

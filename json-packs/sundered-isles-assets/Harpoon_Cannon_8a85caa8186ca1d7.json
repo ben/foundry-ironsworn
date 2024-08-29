@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "8a85caa8186ca1d7",
+  "folder": "38d5b35b5764ca19",
+  "name": "Harpoon Cannon",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You may @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by firing your harpoon cannon at a large foe or threat. On a hit, the target is grappled. For the duration of the situation, if you make a move to maneuver against, attack, or board a grappled target, add +1. If you roll a 1 on your action die while taking action against a grappled target, the line is cut, broken, or works against you; @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}, and you no longer gain the bonus against that target.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>As above, and if you fire the cannon in close quarters, add +2. If at a distance, take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by maneuvering against a harpooned target to entangle or hinder, take +1 momentum on a strong hit and envision the ensuing chaos.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/module/harpoon_cannon",
+      "dsid": "asset:sundered_isles/module/harpoon_cannon"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!8a85caa8186ca1d7"
+}

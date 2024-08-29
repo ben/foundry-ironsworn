@@ -1,0 +1,16 @@
+{
+  "name": "Companion Assets",
+  "color": "#3d8b8a",
+  "description": "",
+  "type": "Item",
+  "_id": "841fa5bb80d55fd9",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "asset_collection:sundered_isles/companion"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!841fa5bb80d55fd9"
+}

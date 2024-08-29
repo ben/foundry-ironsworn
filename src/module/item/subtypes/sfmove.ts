@@ -1,6 +1,5 @@
 import type {
 	IMove,
-	IMoveReroll,
 	IMoveTrigger,
 	IMoveTriggerOptionAction,
 	IMoveTriggerOptionProgress,
@@ -10,7 +9,6 @@ import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { Display } from '../../fields/DisplayField'
 import { DisplayField } from '../../fields/DisplayField'
 import { SourceField } from '../../fields/SourceField'
-import type { DataSchema } from '../../fields/utils'
 import type { IronswornItem } from '../item'
 
 export class SFMoveModel extends foundry.abstract.TypeDataModel<
@@ -102,6 +100,7 @@ export class SFMoveModel extends foundry.abstract.TypeDataModel<
 			Display: new DisplayField(),
 			Text: new fields.HTMLField(),
 			Oracles: new fields.ArrayField(new DataforgedIDField()),
+			dsOracleIds: new fields.ArrayField(new fields.StringField()),
 			Trigger: new SFMoveTriggerField(),
 			Outcomes: new fields.SchemaField(
 				{
@@ -194,6 +193,7 @@ export interface SFMoveDataSourceData
 		'Weak Hit': SFMoveOutcome
 		Miss: SFMoveOutcomeMatchable
 	}
+	dsOracleIds: string[]
 }
 
 export interface SFMoveTrigger extends Pick<IMoveTrigger, 'Text'> {

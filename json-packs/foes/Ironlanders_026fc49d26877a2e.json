@@ -1,0 +1,16 @@
+{
+  "name": "Ironlanders",
+  "description": "Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.\n\nThis section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can @Compendium[foundry-ironsworn.ironswornoracles.b2c23660dbcfe5b2]{Ask the Oracle}, or follow these guidelines:\n\n  * A common citizen or brute is __troublesome__.\n  * A trained warrior is __dangerous__.\n  * A powerful or veteran warrior is __formidable__.",
+  "type": "Item",
+  "_id": "026fc49d26877a2e",
+  "sort": 138,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Encounters/Ironlander",
+      "dsid": "npc_collection:classic/ironlanders"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!026fc49d26877a2e"
+}

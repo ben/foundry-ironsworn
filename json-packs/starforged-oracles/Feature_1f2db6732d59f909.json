@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Production/Feature",
-      "category": "Starforged/Oracles/Derelicts/Production"
+      "category": "Starforged/Oracles/Derelicts/Production",
+      "dsid": "oracle_rollable:starforged/derelict/production/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Cargo lifts",
-      "_id": "32a972fb091337b7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.32a972fb091337b7"
+      "_key": "!tables.results!1f2db6732d59f909.f94b8e0a4e110792",
+      "_id": "f94b8e0a4e110792"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Control panels",
-      "_id": "31a01dcf1855453b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.31a01dcf1855453b"
+      "_key": "!tables.results!1f2db6732d59f909.2685269954dd5db1",
+      "_id": "2685269954dd5db1"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Disassembled machinery",
-      "_id": "81b343599750e8c9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.81b343599750e8c9"
+      "_key": "!tables.results!1f2db6732d59f909.34121419428b8d6e",
+      "_id": "34121419428b8d6e"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Elevated walkways",
-      "_id": "671e3a2196cc8085",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.671e3a2196cc8085"
+      "_key": "!tables.results!1f2db6732d59f909.a06a81e0f67f4b80",
+      "_id": "a06a81e0f67f4b80"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Environment suits",
-      "_id": "709b5163a6f070f4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.709b5163a6f070f4"
+      "_key": "!tables.results!1f2db6732d59f909.dfd36a7af9455478",
+      "_id": "dfd36a7af9455478"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Ill-fated workers",
-      "_id": "60e585429deb40b1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.60e585429deb40b1"
+      "_key": "!tables.results!1f2db6732d59f909.02721e10e1b874da",
+      "_id": "02721e10e1b874da"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Immense machinery",
-      "_id": "a8b0e6fb788ad6fc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.a8b0e6fb788ad6fc"
+      "_key": "!tables.results!1f2db6732d59f909.e29f46837f2fdbf1",
+      "_id": "e29f46837f2fdbf1"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Sealed or locked containers",
-      "_id": "29f86ac7d526d94c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.29f86ac7d526d94c"
+      "_key": "!tables.results!1f2db6732d59f909.65a5b40d1b1b02a2",
+      "_id": "65a5b40d1b1b02a2"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Tools",
-      "_id": "b06817cccdec3d81",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.b06817cccdec3d81"
+      "_key": "!tables.results!1f2db6732d59f909.3cbd0049f82ce8db",
+      "_id": "3cbd0049f82ce8db"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Vats of chemicals or gas",
-      "_id": "d15316ec8a66afdf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.d15316ec8a66afdf"
+      "_key": "!tables.results!1f2db6732d59f909.b654efa75c70edbf",
+      "_id": "b654efa75c70edbf"
     },
     {
       "range": [
@@ -158,43 +109,21 @@
         88
       ],
       "text": "Written manifest",
-      "_id": "72d31ad1f0e93886",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.72d31ad1f0e93886"
+      "_key": "!tables.results!1f2db6732d59f909.18e1c4b90b49417b",
+      "_id": "18e1c4b90b49417b"
     },
     {
       "range": [
         89,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "b6478417c3f7680d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!1f2db6732d59f909.b6478417c3f7680d"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!1f2db6732d59f909.600a451b46462113",
+      "_id": "600a451b46462113"
     }
   ],
   "folder": "2fbcd3395fd34f5d",
   "sort": 358,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!1f2db6732d59f909"
 }

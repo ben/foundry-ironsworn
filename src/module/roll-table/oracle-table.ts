@@ -1,15 +1,16 @@
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import type { IOracle, IOracleCategory, IRow } from 'dataforged'
+import type { IOracle, IRow } from 'dataforged'
 import { max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import { hashLookup, renderLinksInStr } from '../dataforged'
-import { ISOracleCategories, SFOracleCategories } from '../dataforged/data'
+import { getPackAndIndexForCompendiumKey, IdParser } from '../datasworn2'
 import {
 	findPathToNodeByTableUuid,
-	getOracleTreeWithCustomOracles
+	getCustomizedOracleTrees,
+	IOracleTreeNode
 } from '../features/customoracles'
-import { cachedDocumentsForPack } from '../features/pack-cache'
+import { DataswornRulesetKey } from '../helpers/settings'
 import type { IronswornJournalEntry } from '../journal/journal-entry'
 import type { IronswornJournalPage } from '../journal/journal-entry-page'
 
@@ -27,64 +28,63 @@ export class OracleTable extends RollTable {
 	static resultTemplate =
 		'systems/foundry-ironsworn/templates/rolls/oracle-roll-message.hbs'
 
-	static getDFOracleByDfId(
-		dfid: string
-	): IOracle | IOracleCategory | undefined {
-		const nodes = OracleTable.findOracleWithIntermediateNodes(dfid)
-		return nodes[nodes.length - 1]
-	}
-
-	static findOracleWithIntermediateNodes(
-		dfid: string
-	): Array<IOracle | IOracleCategory> {
-		const ret: Array<IOracle | IOracleCategory> = []
-
-		function walkCategory(cat: IOracleCategory): boolean {
-			ret.push(cat)
-
-			if (cat.$id === dfid) return true
-			for (const oracle of cat.Oracles ?? []) {
-				if (walkOracle(oracle)) return true
-			}
-			for (const childCat of cat.Categories ?? []) {
-				if (walkCategory(childCat)) return true
-			}
-
-			ret.pop()
-			return false
-		}
-
-		function walkOracle(oracle: IOracle): boolean {
-			ret.push(oracle)
-
-			if (oracle.$id === dfid) return true
-			for (const childOracle of oracle.Oracles ?? []) {
-				if (walkOracle(childOracle)) return true
-			}
-
-			ret.pop()
-			return false
-		}
-
-		for (const cat of [...SFOracleCategories, ...ISOracleCategories]) {
-			walkCategory(cat)
-		}
-		return ret
-	}
-
 	static async getByDfId(
 		dfid: string
 	): Promise<StoredDocument<OracleTable> | undefined> {
-		const isd = await cachedDocumentsForPack(
-			'foundry-ironsworn.ironswornoracles'
+		const isComp = await getPackAndIndexForCompendiumKey(
+			'classic',
+			'oracle_rollable'
 		)
-		const sfd = await cachedDocumentsForPack(
-			'foundry-ironsworn.starforgedoracles'
+		const dvComp = await getPackAndIndexForCompendiumKey(
+			'delve',
+			'oracle_rollable'
 		)
-		const matcher = (x: { id: string }) => x.id === hashLookup(dfid)
-		return (isd?.find(matcher) ?? sfd?.find(matcher)) as
+		const sfComp = await getPackAndIndexForCompendiumKey(
+			'starforged',
+			'oracle_rollable'
+		)
+		const allIndexEntries = [
+			...(isComp.index?.contents ?? []),
+			...(dvComp.index?.contents ?? []),
+			...(sfComp.index?.contents ?? [])
+		]
+		console.log(allIndexEntries)
+		const indexItem = allIndexEntries.find(
+			(x) => x.flags?.['foundry-ironsworn']?.dfid === dfid
+		)
+		return (await fromUuid(indexItem?.uuid ?? '')) as
 			| StoredDocument<OracleTable>
 			| undefined
+	}
+
+	static async getIndexEntryByDsId(dsid: string) {
+		const parsed = IdParser.parse(dsid)
+		const { index } = await getPackAndIndexForCompendiumKey(
+			parsed.rulesPackageId as DataswornRulesetKey,
+			'oracle_rollable'
+		)
+		return index?.find((entry) => {
+			return entry.flags?.['foundry-ironsworn']?.dsid === dsid
+		})
+	}
+
+	static async getByDsId(
+		dsid: string
+	): Promise<StoredDocument<OracleTable> | undefined> {
+		const parsed = IdParser.parse(dsid)
+		const { pack, index } = await getPackAndIndexForCompendiumKey(
+			parsed.rulesPackageId as DataswornRulesetKey,
+			'oracle_rollable'
+		)
+		if (!index || !pack) return
+		for (const entry of index.contents) {
+			if (entry.flags?.['foundry-ironsworn']?.dsid === dsid) {
+				return pack.getDocument(entry._id) as any as
+					| StoredDocument<OracleTable>
+					| undefined
+			}
+		}
+		return undefined
 	}
 
 	/**
@@ -101,6 +101,10 @@ export class OracleTable extends RollTable {
 		for await (const id of ids) {
 			let tbl: OracleTable | undefined
 			switch (true) {
+				case /^oracle_rollable:/i.test(id):
+					// A Datasworn 2 ID
+					tbl = await OracleTable.getByDsId(id)
+					break
 				case /^(ironsworn|starforged)\/oracles/i.test(id):
 					// A Dataforged ID
 					tbl = await OracleTable.getByDfId(id)
@@ -137,16 +141,15 @@ export class OracleTable extends RollTable {
 	/**
 	 * @returns a string representing the path this table in the Ironsworn oracle tree (not including this table) */
 	async getDfPath() {
-		const starforgedRoot = await getOracleTreeWithCustomOracles('starforged')
-		const ironswornRoot = await getOracleTreeWithCustomOracles('ironsworn')
-
-		const pathElements =
-			findPathToNodeByTableUuid(starforgedRoot, this.uuid) ??
-			findPathToNodeByTableUuid(ironswornRoot, this.uuid)
+		const trees = await getCustomizedOracleTrees()
+		let pathElements: IOracleTreeNode[] | undefined
+		for (const tree of trees) {
+			pathElements = findPathToNodeByTableUuid(tree, this.uuid)
+			if (pathElements?.length > 0) break
+		}
+		if (pathElements === undefined || pathElements?.length < 1) return ''
 
 		const pathNames = pathElements.map((x) => x.displayName)
-		// root node (0) has no display name
-		pathNames.shift()
 		// last node is *this* node
 		pathNames.pop()
 

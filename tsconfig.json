@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"target": "es2018",
 		"module": "esnext",
+		"esModuleInterop": true,
 		"lib": ["es2015", "es2019", "dom"],
 		"types": [
 			"@league-of-foundry-developers/foundry-vtt-types",

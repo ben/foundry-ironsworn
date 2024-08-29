@@ -1,0 +1,200 @@
+{
+  "_id": "023706a199dd80af",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "move_category:sundered_isles/exploration",
+      "dsid": "move.oracle_rollable:sundered_isles/exploration/confront_chaos.confront_chaos"
+    }
+  },
+  "name": "Confront Chaos",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Archive or map bearing a dire warning",
+      "_key": "!tables.results!023706a199dd80af.1fd7808997df1b3c",
+      "_id": "1fd7808997df1b3c"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Baneful spells or wards",
+      "_key": "!tables.results!023706a199dd80af.d06b334005b9de7f",
+      "_id": "d06b334005b9de7f"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Blighted or corrupted habitat",
+      "_key": "!tables.results!023706a199dd80af.e3d3916e01049f7d",
+      "_id": "e3d3916e01049f7d"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Cataclysmic natural phenomenon",
+      "_key": "!tables.results!023706a199dd80af.2785a98287581cd0",
+      "_id": "2785a98287581cd0"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Cursed treasure of irresistible lure",
+      "_key": "!tables.results!023706a199dd80af.181aa29c4ff2b1f7",
+      "_id": "181aa29c4ff2b1f7"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Dead given unnatural life",
+      "_key": "!tables.results!023706a199dd80af.312b837f210414de",
+      "_id": "312b837f210414de"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Fanatical followers of a dreadful power",
+      "_key": "!tables.results!023706a199dd80af.80bd4622f2d69aa2",
+      "_id": "80bd4622f2d69aa2"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Fearsome creature of monstrous size",
+      "_key": "!tables.results!023706a199dd80af.8c0933396de3959c",
+      "_id": "8c0933396de3959c"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Harrowing visions or prophesies",
+      "_key": "!tables.results!023706a199dd80af.7e8fcea7f753501c",
+      "_id": "7e8fcea7f753501c"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Malevolent being of dreadful power",
+      "_key": "!tables.results!023706a199dd80af.6a188fcd8bd0e0ed",
+      "_id": "6a188fcd8bd0e0ed"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Malignant affliction or parasite",
+      "_key": "!tables.results!023706a199dd80af.4deb11d1ee423546",
+      "_id": "4deb11d1ee423546"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "People of monstrous form",
+      "_key": "!tables.results!023706a199dd80af.90f55328b2accb4a",
+      "_id": "90f55328b2accb4a"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Relic of accursed power",
+      "_key": "!tables.results!023706a199dd80af.8c3348f58e200ee9",
+      "_id": "8c3348f58e200ee9"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Ruinous machine or technology",
+      "_key": "!tables.results!023706a199dd80af.7928955b4cef4147",
+      "_id": "7928955b4cef4147"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Signs of an awakened evil",
+      "_key": "!tables.results!023706a199dd80af.39066a837919a769",
+      "_id": "39066a837919a769"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Site of a baffling disappearance",
+      "_key": "!tables.results!023706a199dd80af.033bd2a4b1b70aca",
+      "_id": "033bd2a4b1b70aca"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Site of great destruction",
+      "_key": "!tables.results!023706a199dd80af.59c540132a7017f4",
+      "_id": "59c540132a7017f4"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Site of terrible carnage",
+      "_key": "!tables.results!023706a199dd80af.4cd9ab0d55a970f4",
+      "_id": "4cd9ab0d55a970f4"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Swarming creatures of insatiable fury",
+      "_key": "!tables.results!023706a199dd80af.2151ec059a4a9c25",
+      "_id": "2151ec059a4a9c25"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wrathful spirit or apparition",
+      "_key": "!tables.results!023706a199dd80af.53d4679bccb5977f",
+      "_id": "53d4679bccb5977f"
+    }
+  ],
+  "folder": "67765e9e34cc95c5",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!023706a199dd80af"
+}

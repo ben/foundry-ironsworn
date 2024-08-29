@@ -1,0 +1,104 @@
+{
+  "name": "Precursors",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Precursors",
+      "dsid": "truth:starforged/precursors"
+    }
+  },
+  "_id": "301ccb90d9b3abc7",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Over eons, a vast number of civilizations rose and fell within the Forge. Today, the folk we call grubs—scavenger crews and audacious explorers—delve into the mysterious monuments and ruins of those ancient beings.",
+      "system": {
+        "dsid": "truth.option:starforged/precursors.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Over eons, a vast number of civilizations rose and fell within the Forge. Today, the folk we call grubs—scavenger crews and audacious explorers—delve into the mysterious monuments and ruins of those ancient beings.",
+        "Description": "Incomprehensible technologies, inexorable time, and the strange energies of the Forge have corrupted the vaults of the precursors. Despite the perils, grubs scour those places for useful resources and discoveries. But some secrets are best left buried, and many have been lost to the forsaken depths of the vaults.",
+        "Summary": "Over eons, a vast number of civilizations rose and fell within the Forge. Today, the folk we call grubs—scavenger crews and audacious explorers—delve into the mysterious monuments and ruins of those ancient beings.",
+        "Quest": "In the ice rings of a remote world, a precursor vault was discovered by grub scavengers. The team delved into the relic, but never emerged. What is your relationship to the grub crew? Why are you sworn to investigate their fate?",
+        "Roll template": {
+          "Description": "Incomprehensible technologies, inexorable time, and the strange energies of the Forge have corrupted the vaults of the precursors. Despite the perils, grubs scour those places for useful resources and discoveries. But some secrets are best left buried, and many have been lost to the forsaken depths of the vaults."
+        }
+      },
+      "_id": "56708f03a0ad0bc9",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!301ccb90d9b3abc7.56708f03a0ad0bc9"
+    },
+    {
+      "type": "truth",
+      "name": "The Ascendancy, an advanced spacefaring empire, once ruled the entirety of the Forge. Vaults of inscrutable purpose are all that remain to mark the Ascendancy's legacy, but those places are untethered from our own reality.",
+      "system": {
+        "dsid": "truth.option:starforged/precursors.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "The Ascendancy, an advanced spacefaring empire, once ruled the entirety of the Forge. Vaults of inscrutable purpose are all that remain to mark the Ascendancy's legacy, but those places are untethered from our own reality.",
+        "Description": "Ascendancy vaults can appear spontaneously, washed up like flotsam in the tides of time. Their gravity and atmospheres pay no heed to natural laws. Some are corrupted and ruined. Others are unmarred and intact. Some are both at once. They are chaos.",
+        "Summary": "The Ascendancy, an advanced spacefaring empire, once ruled the entirety of the Forge. Vaults of inscrutable purpose are all that remain to mark the Ascendancy's legacy, but those places are untethered from our own reality.",
+        "Quest": "Deep in the Forge, an Ascendancy beacon has activated. The mysterious signal has confounded translation. Why are you sworn to seek out the source of the signal? What other person or faction opposes you?",
+        "Roll template": {
+          "Description": "Ascendancy vaults can appear spontaneously, washed up like flotsam in the tides of time. Their gravity and atmospheres pay no heed to natural laws. Some are corrupted and ruined. Others are unmarred and intact. Some are both at once. They are chaos."
+        }
+      },
+      "_id": "56e6ddb3d54ac519",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!301ccb90d9b3abc7.56e6ddb3d54ac519"
+    },
+    {
+      "type": "truth",
+      "name": "The biomechanical lifeforms we call the Remnants, engineered by civilizations as weapons in a cataclysmic war, survived the death of their creators.",
+      "system": {
+        "dsid": "truth.option:starforged/precursors.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "The biomechanical lifeforms we call the Remnants, engineered by civilizations as weapons in a cataclysmic war, survived the death of their creators.",
+        "Description": "On scarred planets and within precursor vaults throughout the Forge, the Remnants still guard ancient secrets and fight unending wars.",
+        "Summary": "The biomechanical lifeforms we call the Remnants, engineered by civilizations as weapons in a cataclysmic war, survived the death of their creators.",
+        "Quest": "A xenoarchaeologist studying precursor vaults has discovered a powerful form of Remnant. What is the nature of this being? What force seeks to take control of it?",
+        "Roll template": {
+          "Description": "On scarred planets and within precursor vaults throughout the Forge, the Remnants still guard ancient secrets and fight unending wars."
+        }
+      },
+      "_id": "bc0d3bda3541970e",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!301ccb90d9b3abc7.bc0d3bda3541970e"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "Have you had any notable encounters with precursor vaults, relics, or tech? If you are an expert in ancient lore and obscure facts, you might be a @Compendium[foundry-ironsworn.starforgedassets.ce347bbfcee2e8ae]{Lore Hunter}. If you pick the bones of these forsaken places, you might be a @Compendium[foundry-ironsworn.starforgedassets.11de92d262291440]{Scavenger}.",
+        "format": 2,
+        "content": "<p>Have you had any notable encounters with precursor vaults, relics, or tech? If you are an expert in ancient lore and obscure facts, you might be a @Compendium[foundry-ironsworn.starforgedassets.ce347bbfcee2e8ae]{Lore Hunter}. If you pick the bones of these forsaken places, you might be a @Compendium[foundry-ironsworn.starforgedassets.11de92d262291440]{Scavenger}.</p>"
+      },
+      "_id": "070c41b488969d66",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!301ccb90d9b3abc7.070c41b488969d66"
+    }
+  ],
+  "folder": null,
+  "sort": 97,
+  "_key": "!journal!301ccb90d9b3abc7"
+}

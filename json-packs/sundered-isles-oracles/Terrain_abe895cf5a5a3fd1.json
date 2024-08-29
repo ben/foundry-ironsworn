@@ -1,0 +1,92 @@
+{
+  "_id": "abe895cf5a5a3fd1",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/landscape",
+      "dsid": "oracle_rollable:sundered_isles/island/landscape/terrain"
+    }
+  },
+  "name": "Terrain",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Sodden",
+      "_key": "!tables.results!abe895cf5a5a3fd1.8d3792ec507e05a4",
+      "_id": "8d3792ec507e05a4"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Flat",
+      "_key": "!tables.results!abe895cf5a5a3fd1.024aab4a2bf59613",
+      "_id": "024aab4a2bf59613"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Rolling",
+      "_key": "!tables.results!abe895cf5a5a3fd1.1adb7a945f493c37",
+      "_id": "1adb7a945f493c37"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Elevated",
+      "_key": "!tables.results!abe895cf5a5a3fd1.62522d55a07b5189",
+      "_id": "62522d55a07b5189"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Sloped",
+      "_key": "!tables.results!abe895cf5a5a3fd1.5929d11dba29fc1b",
+      "_id": "5929d11dba29fc1b"
+    },
+    {
+      "range": [
+        51,
+        70
+      ],
+      "text": "Rugged",
+      "_key": "!tables.results!abe895cf5a5a3fd1.dae144098d872121",
+      "_id": "dae144098d872121"
+    },
+    {
+      "range": [
+        71,
+        90
+      ],
+      "text": "Mountainous",
+      "_key": "!tables.results!abe895cf5a5a3fd1.a7cd8690f7c608c0",
+      "_id": "a7cd8690f7c608c0"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Volcanic",
+      "_key": "!tables.results!abe895cf5a5a3fd1.7963f3174e2c2e49",
+      "_id": "7963f3174e2c2e49"
+    }
+  ],
+  "folder": "df50a17b971357ff",
+  "sort": 142,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!abe895cf5a5a3fd1"
+}

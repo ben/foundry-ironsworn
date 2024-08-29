@@ -1,0 +1,27 @@
+{
+  "_id": "3a198a997b9f7dc3",
+  "type": "progress",
+  "name": "Hollow",
+  "img": "icons/consumables/plants/grass-leaves-green.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Vaguely humanoid shape formed of earth, plant and vermin</p>\n<p class=\"nogrow\">Empty black eyes behind an elven mask</p>\n<p class=\"nogrow\">Smells of wet soil and dead things</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">See justice done</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Bash with savage strength</p>\n<p class=\"nogrow\">Draw in a whirlwind of materials to reform and enlarge</p>\n<p class=\"nogrow\">Envelop and suffocate</p>\n</div>\n</div>\n\n<p>It is said that @Compendium[foundry-ironsworn.ironswornfoes.7e016842d2a4543f]{elves} who die an unjust death or have cause to seek retribution can rise as a hollow. Their form is a rippling mass of dead leaves, plants, soil, carrion, and insects. They move with a nightmarish, shambling gait. Their face is the wooden mask they wore in life. Their voice is the rattle of the wind through dry leaves.</p>\n<p>As with @Compendium[foundry-ironsworn.ironswornfoes.41c3c91004ddb1c1]{haunts}, they can be temporarily defeated but cannot be killed by physical means. They are a relentless force. They will not stop until they enact their vengeance.</p>\n\n<blockquote>Quest Starter: <p>A hollow terrorizes an Ironlander village. What does it seek? What will you do to stop it?</p></blockquote>",
+    "rank": 4,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "cf2bf1b1d8deebf9",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/horrors/hollow"
+    }
+  },
+  "_key": "!items!3a198a997b9f7dc3"
+}

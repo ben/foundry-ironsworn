@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Moves/Ask_the_Oracle/Almost_Certain",
-      "category": "Ironsworn/Oracles/Moves"
+      "category": "Ironsworn/Moves/Fate",
+      "dsid": "move.oracle_rollable:classic/fate/ask_the_oracle.almost_certain"
     }
   },
   "name": "Almost Certain",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "No",
-      "_id": "00904ee29017aebf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f8ddf2d8098dc74e.00904ee29017aebf"
+      "_key": "!tables.results!f8ddf2d8098dc74e.ee24f439873ee1e1",
+      "_id": "ee24f439873ee1e1"
     },
     {
       "range": [
@@ -32,29 +28,12 @@
         100
       ],
       "text": "Yes",
-      "_id": "d3048d42893afdb0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f8ddf2d8098dc74e.d3048d42893afdb0"
+      "_key": "!tables.results!f8ddf2d8098dc74e.70abf2938b76e0f8",
+      "_id": "70abf2938b76e0f8"
     }
   ],
-  "folder": "e7e8324f007f0cc7",
-  "sort": 107,
+  "folder": "88ca8e80b03ed3dd",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!f8ddf2d8098dc74e"
 }

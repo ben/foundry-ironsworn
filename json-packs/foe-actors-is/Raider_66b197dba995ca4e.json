@@ -1,0 +1,53 @@
+{
+  "name": "Raider",
+  "img": "icons/sundries/flags/banner-flag-pirate.webp",
+  "type": "foe",
+  "_id": "66b197dba995ca4e",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Raider",
+    "texture": {
+      "src": "icons/sundries/flags/banner-flag-pirate.webp"
+    }
+  },
+  "folder": "026fc49d26877a2e",
+  "items": [
+    {
+      "_id": "57e9234ccc6ede43",
+      "type": "progress",
+      "name": "Raider",
+      "img": "icons/sundries/flags/banner-flag-pirate.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Geared for war</p>\n<p class=\"nogrow\">Battle fervor</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">What is theirs will be ours</p>\n<p class=\"nogrow\">Stand with my kin</p>\n<p class=\"nogrow\">Die a glorious death</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Intimidate</p>\n<p class=\"nogrow\">Shield wall</p>\n<p class=\"nogrow\">Burn it down</p>\n</div>\n</div>\n\n<p>Raiders survive by seizing what they need from others. Our grain. Our meat. Our animals. Our iron. They’ll take it all, and leave us facing the long winter with nothing to sustain us but prayers to indifferent gods.</p>\n\n<blockquote>Quest Starter: <p>You were raised as a raider, born to battle, but long ago left that life. Troubled by your past, you vow to wipe this powerful clan from the Ironlands. How can you defeat them? What will happen when you must face your former shield-kin?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "026fc49d26877a2e",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:classic/ironlanders/raider"
+        }
+      },
+      "_key": "!actors.items!66b197dba995ca4e.57e9234ccc6ede43"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/ironlanders/raider"
+    }
+  },
+  "_key": "!actors!66b197dba995ca4e"
+}

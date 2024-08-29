@@ -8,7 +8,7 @@
 			:progress-stars="progressStars"
 			:show-completed="'no-completed'"
 		/>
-		<ProgressControls class="nogrow" :foe-compendium="foeCompendium" />
+		<ProgressControls class="nogrow" />
 		<CompletedProgressList
 			class="nogrow"
 			:collapsible-props="{ toggleWrapperIs: 'h3' }"
@@ -18,7 +18,6 @@
 
 <script setup lang="ts">
 import ProgressControls from 'component:progress/progress-controls.vue'
-import { IronswornSettings } from '../../../helpers/settings'
 import ProgressList from 'component:progress/progress-list.vue'
 import DropTarget from '../../drop-target.vue'
 import CompletedProgressList from 'component:progress/completed-progress-list.vue'
@@ -35,10 +34,4 @@ defineProps<{
 	 */
 	compactProgress?: boolean
 }>()
-
-const foeCompendium = {
-	ironsworn: 'ironswornfoes',
-	starforged: 'starforgedencounters'
-	// TODO: sunderedisles: 'sunderedislesencounters'
-}[IronswornSettings.defaultToolbox]
 </script>

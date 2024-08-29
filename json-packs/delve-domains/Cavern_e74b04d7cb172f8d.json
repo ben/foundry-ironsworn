@@ -1,0 +1,141 @@
+{
+  "_id": "e74b04d7cb172f8d",
+  "type": "delve-domain",
+  "name": "Cavern",
+  "img": "icons/environment/wilderness/cave-entrance-mountain-blue.webp",
+  "system": {
+    "summary": "A place of stone and darkness.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Twisting passages"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Cramped caves"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Vast chamber"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Subterranean waterway"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Cave pool"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Natural bridge"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Towering stone formations"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Natural illumination"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Dark pit"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen lairs here"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Cave-in"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Flooding"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Perilous climb or descent"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Fissure or sinkhole"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 88,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/cavern"
+    }
+  },
+  "_key": "!items!e74b04d7cb172f8d"
+}

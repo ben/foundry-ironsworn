@@ -1,0 +1,110 @@
+{
+  "_id": "39152b750894fbf3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Settlements",
+      "dsid": "oracle_rollable:starforged/settlement/name_tags"
+    }
+  },
+  "name": "Name tags",
+  "description": "",
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Base",
+      "_key": "!tables.results!39152b750894fbf3.10719808f73a3bf2",
+      "_id": "10719808f73a3bf2"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Citadel",
+      "_key": "!tables.results!39152b750894fbf3.94712152e2dc2c68",
+      "_id": "94712152e2dc2c68"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Depot",
+      "_key": "!tables.results!39152b750894fbf3.8a605e55187f3ba2",
+      "_id": "8a605e55187f3ba2"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Fortress",
+      "_key": "!tables.results!39152b750894fbf3.0680746758d792b6",
+      "_id": "0680746758d792b6"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Hold",
+      "_key": "!tables.results!39152b750894fbf3.4c9fe7d6d2841744",
+      "_id": "4c9fe7d6d2841744"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Landing",
+      "_key": "!tables.results!39152b750894fbf3.427c6b76f2b946c6",
+      "_id": "427c6b76f2b946c6"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Outpost",
+      "_key": "!tables.results!39152b750894fbf3.111ab7fe1ac99c1e",
+      "_id": "111ab7fe1ac99c1e"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Port",
+      "_key": "!tables.results!39152b750894fbf3.595d3782ff0faa7b",
+      "_id": "595d3782ff0faa7b"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Station",
+      "_key": "!tables.results!39152b750894fbf3.6f558007b20ac4e9",
+      "_id": "6f558007b20ac4e9"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Terminal",
+      "_key": "!tables.results!39152b750894fbf3.a9a8a01f7427dd72",
+      "_id": "a9a8a01f7427dd72"
+    }
+  ],
+  "folder": "5f78c3140a6e8eaf",
+  "sort": 325,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!39152b750894fbf3"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Moves/Ask_the_Oracle/Small_Chance",
-      "category": "Ironsworn/Oracles/Moves"
+      "category": "Ironsworn/Moves/Fate",
+      "dsid": "move.oracle_rollable:classic/fate/ask_the_oracle.small_chance"
     }
   },
   "name": "Small Chance",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         90
       ],
       "text": "No",
-      "_id": "00106201c8a31d27",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d8f3dc93aa955a7c.00106201c8a31d27"
+      "_key": "!tables.results!d8f3dc93aa955a7c.fcd1bf1cfa93c86a",
+      "_id": "fcd1bf1cfa93c86a"
     },
     {
       "range": [
@@ -32,29 +28,12 @@
         100
       ],
       "text": "Yes",
-      "_id": "995aa0952a5b4e14",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!d8f3dc93aa955a7c.995aa0952a5b4e14"
+      "_key": "!tables.results!d8f3dc93aa955a7c.34364fa586011243",
+      "_id": "34364fa586011243"
     }
   ],
-  "folder": "e7e8324f007f0cc7",
-  "sort": 107,
+  "folder": "88ca8e80b03ed3dd",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!d8f3dc93aa955a7c"
 }

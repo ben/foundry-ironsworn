@@ -1,0 +1,141 @@
+{
+  "_id": "58ffd0a1f84094d0",
+  "type": "delve-theme",
+  "name": "Fortified",
+  "img": "icons/environment/settlement/watchtower-cliff.webp",
+  "system": {
+    "summary": "Foes defend this place against intruders.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Camp or quarters"
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Guarded location"
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Storage or repository"
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Work or training area"
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Command center or leadership"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Denizen patrols the area"
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Denizen on guard"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Denizen ready to sound the alarm"
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Denizen sets an ambush"
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Denizen lures you into a trap"
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Denizens converge on this area"
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "Pets or underlings"
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Unexpected alliance revealed"
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "Nefarious plans revealed"
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Unexpected leader revealed"
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "Trap"
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Alarm trigger"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 85,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_theme:delve/fortified"
+    }
+  },
+  "_key": "!items!58ffd0a1f84094d0"
+}

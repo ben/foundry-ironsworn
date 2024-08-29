@@ -1,0 +1,15 @@
+{
+  "name": "Ship Mission",
+  "description": "",
+  "type": "RollTable",
+  "_id": "e20f7476c2916a1b",
+  "sort": 137,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/ship/mission"
+    }
+  },
+  "folder": "70efe2cd74f8479f",
+  "sorting": "a",
+  "_key": "!folders!e20f7476c2916a1b"
+}

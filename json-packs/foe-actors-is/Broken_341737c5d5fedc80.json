@@ -1,0 +1,53 @@
+{
+  "name": "Broken",
+  "img": "icons/creatures/mammals/humanoid-fox-cat-archer.webp",
+  "type": "foe",
+  "_id": "341737c5d5fedc80",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Broken",
+    "texture": {
+      "src": "icons/creatures/mammals/humanoid-fox-cat-archer.webp"
+    }
+  },
+  "folder": "026fc49d26877a2e",
+  "items": [
+    {
+      "_id": "282a048daf9a567b",
+      "type": "progress",
+      "name": "Broken",
+      "img": "icons/creatures/mammals/humanoid-fox-cat-archer.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Crazed eyes</p>\n<p class=\"nogrow\">Painted skin</p>\n<p class=\"nogrow\">Feral screams</p>\n<p class=\"nogrow\">Scavenged clothing and weapons</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Show my power</p>\n<p class=\"nogrow\">Share my pain</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Spring from hiding</p>\n<p class=\"nogrow\">Ferocious attacks</p>\n</div>\n</div>\n\n<p>Another people sailed to the Ironlands from the @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World} long before our kin settled here. Something happened. Something changed them.</p>\n<p>Whether it was the long struggle in a harsh land, the ravages of war, or the corruption of some dark force, they left their humanity behind and became what we call the broken. Now, they exist only to kill, to destroy.</p>\n<p>We fear the broken for their savagery. But, more than this, we fear them as a dark portent of what we might one day become.</p>\n\n<blockquote>Quest Starter: <p>Years ago, an Ironlander child was taken by a broken tribe. Now they are seen living among them. What is your connection to this person? Can they be brought home, or are they forever lost?</p></blockquote>",
+        "rank": 1,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "026fc49d26877a2e",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:classic/ironlanders/broken"
+        }
+      },
+      "_key": "!actors.items!341737c5d5fedc80.282a048daf9a567b"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/ironlanders/broken"
+    }
+  },
+  "_key": "!actors!341737c5d5fedc80"
+}

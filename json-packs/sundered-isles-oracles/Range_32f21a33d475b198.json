@@ -1,0 +1,56 @@
+{
+  "_id": "32f21a33d475b198",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship/position",
+      "dsid": "oracle_rollable:sundered_isles/ship/position/range"
+    }
+  },
+  "name": "Range",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "Distant",
+      "_key": "!tables.results!32f21a33d475b198.8f8fe9761a89ee8f",
+      "_id": "8f8fe9761a89ee8f"
+    },
+    {
+      "range": [
+        41,
+        75
+      ],
+      "text": "Far",
+      "_key": "!tables.results!32f21a33d475b198.cd8d6b7f64d8f0e5",
+      "_id": "cd8d6b7f64d8f0e5"
+    },
+    {
+      "range": [
+        76,
+        95
+      ],
+      "text": "Medium",
+      "_key": "!tables.results!32f21a33d475b198.6a5cd7a2a88268d8",
+      "_id": "6a5cd7a2a88268d8"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Near",
+      "_key": "!tables.results!32f21a33d475b198.c3daa3d00f9deb48",
+      "_id": "c3daa3d00f9deb48"
+    }
+  ],
+  "folder": "f63b641af96099ce",
+  "sort": 134,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!32f21a33d475b198"
+}

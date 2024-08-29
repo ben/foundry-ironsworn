@@ -1,0 +1,74 @@
+{
+  "_id": "380ff468d45a4511",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/visible_habitation",
+      "dsid": "oracle_rollable:sundered_isles/island/visible_habitation/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        50
+      ],
+      "text": "No signs of habitation",
+      "_key": "!tables.results!380ff468d45a4511.46c0cae950aa60ac",
+      "_id": "46c0cae950aa60ac"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Inland smoke",
+      "_key": "!tables.results!380ff468d45a4511.4a753d0d6542b386",
+      "_id": "4a753d0d6542b386"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Coastal boats",
+      "_key": "!tables.results!380ff468d45a4511.2049f0b0e7edb542",
+      "_id": "2049f0b0e7edb542"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Seaside camp",
+      "_key": "!tables.results!380ff468d45a4511.52c48a7b3555f22e",
+      "_id": "52c48a7b3555f22e"
+    },
+    {
+      "range": [
+        66,
+        90
+      ],
+      "text": "Seaside settlement",
+      "_key": "!tables.results!380ff468d45a4511.59fece8e1b7ab880",
+      "_id": "59fece8e1b7ab880"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Multiple visible communities or extensive cultivation",
+      "_key": "!tables.results!380ff468d45a4511.6cea9dcf51e099f5",
+      "_id": "6cea9dcf51e099f5"
+    }
+  ],
+  "folder": "577d39c93e7b0a34",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!380ff468d45a4511"
+}

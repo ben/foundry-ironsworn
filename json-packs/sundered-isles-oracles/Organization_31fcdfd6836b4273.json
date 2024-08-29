@@ -1,0 +1,15 @@
+{
+  "name": "Organization",
+  "description": "People joined in a collective trade, pursuit, or goal",
+  "type": "RollTable",
+  "_id": "31fcdfd6836b4273",
+  "sort": 180,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/organization"
+    }
+  },
+  "folder": "332fe732886451c6",
+  "sorting": "a",
+  "_key": "!folders!31fcdfd6836b4273"
+}

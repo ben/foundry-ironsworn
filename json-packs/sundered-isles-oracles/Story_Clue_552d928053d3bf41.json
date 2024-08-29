@@ -1,0 +1,299 @@
+{
+  "_id": "552d928053d3bf41",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc",
+      "dsid": "oracle_rollable:sundered_isles/misc/story_clue"
+    }
+  },
+  "name": "Story Clue",
+  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} to investigate a mystery, you might uncover clues in the form of messages, records, rumors, eyewitness reports, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Affirms a previously understood fact or clue",
+      "_key": "!tables.results!552d928053d3bf41.71d1b1fbe322e007",
+      "_id": "71d1b1fbe322e007"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Connects to a known rumor or scandal",
+      "_key": "!tables.results!552d928053d3bf41.c586796031d17f06",
+      "_id": "c586796031d17f06"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Connects to a previously unrelated mystery or quest",
+      "_key": "!tables.results!552d928053d3bf41.34b05ecc25d3a4e9",
+      "_id": "34b05ecc25d3a4e9"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Connects to your own expertise or interests",
+      "_key": "!tables.results!552d928053d3bf41.4b5165f95d53b896",
+      "_id": "4b5165f95d53b896"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Contradicts a previously understood fact or clue",
+      "_key": "!tables.results!552d928053d3bf41.e4280b3ccd072b7f",
+      "_id": "e4280b3ccd072b7f"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Evokes a personal memory",
+      "_key": "!tables.results!552d928053d3bf41.9bce265489c68243",
+      "_id": "9bce265489c68243"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Evokes a remarkable anomaly or phenomenon",
+      "_key": "!tables.results!552d928053d3bf41.37bd78816235eff2",
+      "_id": "37bd78816235eff2"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Evokes a vision or prophecy",
+      "_key": "!tables.results!552d928053d3bf41.6f7587087498f724",
+      "_id": "6f7587087498f724"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Involves a cultural touchstone",
+      "_key": "!tables.results!552d928053d3bf41.072b9e6206e57551",
+      "_id": "072b9e6206e57551"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Involves a hidden or mysterious faction",
+      "_key": "!tables.results!552d928053d3bf41.bacb3974851a6b64",
+      "_id": "bacb3974851a6b64"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Involves a hidden or mysterious person",
+      "_key": "!tables.results!552d928053d3bf41.f4a8d9da1772fa18",
+      "_id": "f4a8d9da1772fa18"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Involves a key or means of access",
+      "_key": "!tables.results!552d928053d3bf41.b505afb5377bed48",
+      "_id": "b505afb5377bed48"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Involves a machine or technology",
+      "_key": "!tables.results!552d928053d3bf41.6c543ef8e7dd5068",
+      "_id": "6c543ef8e7dd5068"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Involves a non-human being or creature",
+      "_key": "!tables.results!552d928053d3bf41.6e389ab1ebb33292",
+      "_id": "6e389ab1ebb33292"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Involves a notable faction",
+      "_key": "!tables.results!552d928053d3bf41.f1fd33b5244a1087",
+      "_id": "f1fd33b5244a1087"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Involves a notable person",
+      "_key": "!tables.results!552d928053d3bf41.b66e2b53c88ab387",
+      "_id": "b66e2b53c88ab387"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Involves a person or faction from your background",
+      "_key": "!tables.results!552d928053d3bf41.d376eef14d57c01a",
+      "_id": "d376eef14d57c01a"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Involves a personal item",
+      "_key": "!tables.results!552d928053d3bf41.1d26e6f66cc15c09",
+      "_id": "1d26e6f66cc15c09"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Involves an enemy or rival",
+      "_key": "!tables.results!552d928053d3bf41.6ac5e9df4fc7c343",
+      "_id": "6ac5e9df4fc7c343"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Involves an organism or biological evidence",
+      "_key": "!tables.results!552d928053d3bf41.ceaeefec60cfb56f",
+      "_id": "ceaeefec60cfb56f"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Involves an unusual ability or power",
+      "_key": "!tables.results!552d928053d3bf41.7d6b61fc5aba546a",
+      "_id": "7d6b61fc5aba546a"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Involves someone you trust",
+      "_key": "!tables.results!552d928053d3bf41.7ae59c6d218230fe",
+      "_id": "7ae59c6d218230fe"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Involves something rare, expensive, or precious",
+      "_key": "!tables.results!552d928053d3bf41.f25d8549460ddb64",
+      "_id": "f25d8549460ddb64"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Leads to a distant or unfamiliar place",
+      "_key": "!tables.results!552d928053d3bf41.b7cd3715b33bb677",
+      "_id": "b7cd3715b33bb677"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Leads to a hidden or forgotten place",
+      "_key": "!tables.results!552d928053d3bf41.16a24707ed1b5165",
+      "_id": "16a24707ed1b5165"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Leads to a nearby or familiar place",
+      "_key": "!tables.results!552d928053d3bf41.42d3866070d0baaf",
+      "_id": "42d3866070d0baaf"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Leads to a notable or central place",
+      "_key": "!tables.results!552d928053d3bf41.17a09853314e2875",
+      "_id": "17a09853314e2875"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Suggests a history of similar incidents",
+      "_key": "!tables.results!552d928053d3bf41.950e0625510f2d43",
+      "_id": "950e0625510f2d43"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Suggests a looming event or deadline",
+      "_key": "!tables.results!552d928053d3bf41.98b60e79c2385752",
+      "_id": "98b60e79c2385752"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Suggests an impostor or forgery",
+      "_key": "!tables.results!552d928053d3bf41.5bbb0a1fe187ce69",
+      "_id": "5bbb0a1fe187ce69"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!552d928053d3bf41.c47cdd4178ac0e7a",
+      "_id": "c47cdd4178ac0e7a"
+    }
+  ],
+  "folder": "4712a591169fe5d6",
+  "sort": 231,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!552d928053d3bf41"
+}

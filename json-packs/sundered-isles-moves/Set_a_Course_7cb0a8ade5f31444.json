@@ -1,0 +1,67 @@
+{
+  "_id": "7cb0a8ade5f31444",
+  "type": "sfmove",
+  "name": "Set a Course",
+  "img": "icons/dice/d10black.svg",
+  "folder": "b6d8c0a498693d1c",
+  "system": {
+    "dfid": "move:sundered_isles/exploration/set_a_course",
+    "Category": "move_category:sundered_isles/exploration",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When you travel a known route through perilous seas, across hazardous terrain, or within a mysterious site__, roll +supply.\n\nOn a __strong hit__, you reach your destination and the situation there favors you. Take +1 momentum.\n\nOn a __weak hit__, you arrive, but face a cost or complication. Choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a complication at the destination: Envision what you encounter.\n\nOn a __miss__, you are waylaid by a significant threat, and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. If you overcome this obstacle, you may push on safely to your destination.",
+    "Trigger": {
+      "Text": "When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site...",
+      "Options": [
+        {
+          "Text": "",
+          "Roll type": "Progress roll",
+          "Method": "Any",
+          "Using": [
+            "Supply",
+            "Asset Control"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you reach your destination and the situation there favors you. Take +1 momentum.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you arrive, but face a cost or complication. Choose one.\n\n  * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).\n  * Face a complication at the destination: Envision what you encounter."
+      },
+      "Miss": {
+        "Text": "On a __miss__, you are waylaid by a significant threat, and must @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. If you overcome this obstacle, you may push on safely to your destination.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Sundered Isles",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2024-07-01",
+      "Page": 242
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 242,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:sundered_isles/exploration/set_a_course",
+      "dsid": "move:sundered_isles/exploration/set_a_course"
+    }
+  },
+  "_key": "!items!7cb0a8ade5f31444"
+}

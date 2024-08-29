@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Ice/Atmosphere",
-      "category": "Starforged/Oracles/Planets/Ice"
+      "category": "Starforged/Oracles/Planets/Ice",
+      "dsid": "oracle_rollable:starforged/planet/ice/atmosphere"
     }
   },
   "name": "Atmosphere",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -17,14 +18,9 @@
         1,
         15
       ],
-      "text": "None/thin",
-      "_id": "1348a809aad4694c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c274f74ecf7ce593.1348a809aad4694c"
+      "text": "None / thin",
+      "_key": "!tables.results!c274f74ecf7ce593.ef7f1e40e0a19cff",
+      "_id": "ef7f1e40e0a19cff"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         35
       ],
       "text": "Toxic",
-      "_id": "6795e7c2a858ef2e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c274f74ecf7ce593.6795e7c2a858ef2e"
+      "_key": "!tables.results!c274f74ecf7ce593.d20ee7f44f337352",
+      "_id": "d20ee7f44f337352"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         40
       ],
       "text": "Corrosive",
-      "_id": "6d7094f656b8511b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c274f74ecf7ce593.6d7094f656b8511b"
+      "_key": "!tables.results!c274f74ecf7ce593.5a69997472b52ed1",
+      "_id": "5a69997472b52ed1"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         70
       ],
       "text": "Marginal",
-      "_id": "10abeb18fa025842",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c274f74ecf7ce593.10abeb18fa025842"
+      "_key": "!tables.results!c274f74ecf7ce593.847434b7ec47934f",
+      "_id": "847434b7ec47934f"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         95
       ],
       "text": "Breathable",
-      "_id": "dc652dbab4f0671c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c274f74ecf7ce593.dc652dbab4f0671c"
+      "_key": "!tables.results!c274f74ecf7ce593.d05215e72432f633",
+      "_id": "d05215e72432f633"
     },
     {
       "range": [
@@ -88,29 +64,12 @@
         100
       ],
       "text": "Ideal",
-      "_id": "e36ff6bd447e54df",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!c274f74ecf7ce593.e36ff6bd447e54df"
+      "_key": "!tables.results!c274f74ecf7ce593.6ac431c1a2e34d3f",
+      "_id": "6ac431c1a2e34d3f"
     }
   ],
   "folder": "402fa1e3f9e7707c",
   "sort": 311,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!c274f74ecf7ce593"
 }

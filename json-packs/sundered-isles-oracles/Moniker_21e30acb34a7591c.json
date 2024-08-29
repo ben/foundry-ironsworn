@@ -1,0 +1,920 @@
+{
+  "_id": "21e30acb34a7591c",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/name",
+      "dsid": "oracle_rollable:sundered_isles/character/name/moniker"
+    }
+  },
+  "name": "Moniker",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Albatross",
+      "_key": "!tables.results!21e30acb34a7591c.d900f58b48ae1b4c",
+      "_id": "d900f58b48ae1b4c"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Angler",
+      "_key": "!tables.results!21e30acb34a7591c.64bd0a280d36a013",
+      "_id": "64bd0a280d36a013"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Bailer",
+      "_key": "!tables.results!21e30acb34a7591c.298cb4b7f2c3637d",
+      "_id": "298cb4b7f2c3637d"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Ballast",
+      "_key": "!tables.results!21e30acb34a7591c.16583022a30f43c1",
+      "_id": "16583022a30f43c1"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Barnacle",
+      "_key": "!tables.results!21e30acb34a7591c.ff97daf33b6c9157",
+      "_id": "ff97daf33b6c9157"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Bilge Rat",
+      "_key": "!tables.results!21e30acb34a7591c.ec4d2cbab5b47f53",
+      "_id": "ec4d2cbab5b47f53"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Blackbeard",
+      "_key": "!tables.results!21e30acb34a7591c.5b2f715ea5867c06",
+      "_id": "5b2f715ea5867c06"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Bluecoat",
+      "_key": "!tables.results!21e30acb34a7591c.6f9655914a5ee8a3",
+      "_id": "6f9655914a5ee8a3"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Blunderbuss",
+      "_key": "!tables.results!21e30acb34a7591c.1d00152e6c0029ff",
+      "_id": "1d00152e6c0029ff"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Bones",
+      "_key": "!tables.results!21e30acb34a7591c.ec520e1769e0c8ef",
+      "_id": "ec520e1769e0c8ef"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Breakwater",
+      "_key": "!tables.results!21e30acb34a7591c.b7876d4aa4eba1c9",
+      "_id": "b7876d4aa4eba1c9"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Brine",
+      "_key": "!tables.results!21e30acb34a7591c.d40214c1b4459a4b",
+      "_id": "d40214c1b4459a4b"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Broadside",
+      "_key": "!tables.results!21e30acb34a7591c.16889b03e3ba2891",
+      "_id": "16889b03e3ba2891"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Castoff",
+      "_key": "!tables.results!21e30acb34a7591c.05961fe54f35d0af",
+      "_id": "05961fe54f35d0af"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Chum",
+      "_key": "!tables.results!21e30acb34a7591c.e0e10a51250b964d",
+      "_id": "e0e10a51250b964d"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Crimson",
+      "_key": "!tables.results!21e30acb34a7591c.eb243427caaec745",
+      "_id": "eb243427caaec745"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Croaker",
+      "_key": "!tables.results!21e30acb34a7591c.d8f60ac15cd32695",
+      "_id": "d8f60ac15cd32695"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Crow",
+      "_key": "!tables.results!21e30acb34a7591c.48ad443918847fc6",
+      "_id": "48ad443918847fc6"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Cutlass",
+      "_key": "!tables.results!21e30acb34a7591c.9a3ce2914ccd0343",
+      "_id": "9a3ce2914ccd0343"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Cuttle",
+      "_key": "!tables.results!21e30acb34a7591c.174ed298388e16aa",
+      "_id": "174ed298388e16aa"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Cyclone",
+      "_key": "!tables.results!21e30acb34a7591c.bbaa68e7e7057d91",
+      "_id": "bbaa68e7e7057d91"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Deadeye",
+      "_key": "!tables.results!21e30acb34a7591c.9643efbca3203d39",
+      "_id": "9643efbca3203d39"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Deadshot",
+      "_key": "!tables.results!21e30acb34a7591c.e9a21e861d9e7def",
+      "_id": "e9a21e861d9e7def"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Derelict",
+      "_key": "!tables.results!21e30acb34a7591c.0b793c5e9f268a14",
+      "_id": "0b793c5e9f268a14"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Dice",
+      "_key": "!tables.results!21e30acb34a7591c.20d1311f624db0cc",
+      "_id": "20d1311f624db0cc"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Doldrum",
+      "_key": "!tables.results!21e30acb34a7591c.64fcd85846e304cf",
+      "_id": "64fcd85846e304cf"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Dredge",
+      "_key": "!tables.results!21e30acb34a7591c.0d3a10c3dc226c80",
+      "_id": "0d3a10c3dc226c80"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Drift",
+      "_key": "!tables.results!21e30acb34a7591c.f541229358ddc26f",
+      "_id": "f541229358ddc26f"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Fetch",
+      "_key": "!tables.results!21e30acb34a7591c.dbf2bc107d28ef4c",
+      "_id": "dbf2bc107d28ef4c"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Fiddle",
+      "_key": "!tables.results!21e30acb34a7591c.d716109a86ba4b08",
+      "_id": "d716109a86ba4b08"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Fishbait",
+      "_key": "!tables.results!21e30acb34a7591c.952fd5f8a34073ef",
+      "_id": "952fd5f8a34073ef"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Flintlock",
+      "_key": "!tables.results!21e30acb34a7591c.83e4367da4c8c57d",
+      "_id": "83e4367da4c8c57d"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Flotsam",
+      "_key": "!tables.results!21e30acb34a7591c.485a81e5e8707608",
+      "_id": "485a81e5e8707608"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Goldtooth",
+      "_key": "!tables.results!21e30acb34a7591c.80d310164726f76b",
+      "_id": "80d310164726f76b"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Graybeard",
+      "_key": "!tables.results!21e30acb34a7591c.75e02831d55c92b3",
+      "_id": "75e02831d55c92b3"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Greenhorn",
+      "_key": "!tables.results!21e30acb34a7591c.a7538dfbb08fdaad",
+      "_id": "a7538dfbb08fdaad"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Groggy",
+      "_key": "!tables.results!21e30acb34a7591c.55bffce9842e5d29",
+      "_id": "55bffce9842e5d29"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Half-hand",
+      "_key": "!tables.results!21e30acb34a7591c.03b181c198debf0d",
+      "_id": "03b181c198debf0d"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Hardtack",
+      "_key": "!tables.results!21e30acb34a7591c.71b24675b8a8de11",
+      "_id": "71b24675b8a8de11"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Havoc",
+      "_key": "!tables.results!21e30acb34a7591c.e8c7f75d8bf8c3d1",
+      "_id": "e8c7f75d8bf8c3d1"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Hook",
+      "_key": "!tables.results!21e30acb34a7591c.d4d6f2fef7aecbad",
+      "_id": "d4d6f2fef7aecbad"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Hound",
+      "_key": "!tables.results!21e30acb34a7591c.aed469df8bad6ef8",
+      "_id": "aed469df8bad6ef8"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Lubber",
+      "_key": "!tables.results!21e30acb34a7591c.e29560d1e0467077",
+      "_id": "e29560d1e0467077"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Lucky",
+      "_key": "!tables.results!21e30acb34a7591c.5154ed9ef193ff29",
+      "_id": "5154ed9ef193ff29"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "No-name",
+      "_key": "!tables.results!21e30acb34a7591c.e5288cc304d25491",
+      "_id": "e5288cc304d25491"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "One-eye",
+      "_key": "!tables.results!21e30acb34a7591c.b3b8078dfabbdf36",
+      "_id": "b3b8078dfabbdf36"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "One-hand",
+      "_key": "!tables.results!21e30acb34a7591c.0110c6ccfbe421c1",
+      "_id": "0110c6ccfbe421c1"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Overboard",
+      "_key": "!tables.results!21e30acb34a7591c.66904c5a01727bee",
+      "_id": "66904c5a01727bee"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Patch",
+      "_key": "!tables.results!21e30acb34a7591c.d8370a195a1b5b63",
+      "_id": "d8370a195a1b5b63"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Pegleg",
+      "_key": "!tables.results!21e30acb34a7591c.48b13dc81b73fbc5",
+      "_id": "48b13dc81b73fbc5"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Plank",
+      "_key": "!tables.results!21e30acb34a7591c.42f054c137279a4b",
+      "_id": "42f054c137279a4b"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Powderkeg",
+      "_key": "!tables.results!21e30acb34a7591c.f98d866af9303b9e",
+      "_id": "f98d866af9303b9e"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Quill",
+      "_key": "!tables.results!21e30acb34a7591c.88513a8fe20359b8",
+      "_id": "88513a8fe20359b8"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Red-eye",
+      "_key": "!tables.results!21e30acb34a7591c.59d0fc8ef895db2c",
+      "_id": "59d0fc8ef895db2c"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Redbeard",
+      "_key": "!tables.results!21e30acb34a7591c.c300b18f31abb183",
+      "_id": "c300b18f31abb183"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Rigger",
+      "_key": "!tables.results!21e30acb34a7591c.25d6ff95a12df63e",
+      "_id": "25d6ff95a12df63e"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Rotgut",
+      "_key": "!tables.results!21e30acb34a7591c.fc1e569ded4bfdcb",
+      "_id": "fc1e569ded4bfdcb"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Rover",
+      "_key": "!tables.results!21e30acb34a7591c.3dc24aa157ab736b",
+      "_id": "3dc24aa157ab736b"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Rudder",
+      "_key": "!tables.results!21e30acb34a7591c.99861128962cf6ed",
+      "_id": "99861128962cf6ed"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Sabre",
+      "_key": "!tables.results!21e30acb34a7591c.c895eec3c3c1bd05",
+      "_id": "c895eec3c3c1bd05"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Sage",
+      "_key": "!tables.results!21e30acb34a7591c.0f21053887ef5c7f",
+      "_id": "0f21053887ef5c7f"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Salt",
+      "_key": "!tables.results!21e30acb34a7591c.4843e112ed76e737",
+      "_id": "4843e112ed76e737"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Saltbeard",
+      "_key": "!tables.results!21e30acb34a7591c.a21a517e5766dd23",
+      "_id": "a21a517e5766dd23"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Saltblood",
+      "_key": "!tables.results!21e30acb34a7591c.5191b0a63d7ba522",
+      "_id": "5191b0a63d7ba522"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Saltbone",
+      "_key": "!tables.results!21e30acb34a7591c.4eea4429100a6ae4",
+      "_id": "4eea4429100a6ae4"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Scratch",
+      "_key": "!tables.results!21e30acb34a7591c.5f0fa4b435bd96e8",
+      "_id": "5f0fa4b435bd96e8"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Scupper",
+      "_key": "!tables.results!21e30acb34a7591c.0f3a85ddf26b44d1",
+      "_id": "0f3a85ddf26b44d1"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Scurvy",
+      "_key": "!tables.results!21e30acb34a7591c.e08c0bd3cb4ef999",
+      "_id": "e08c0bd3cb4ef999"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Scuttle",
+      "_key": "!tables.results!21e30acb34a7591c.a193141e2373523b",
+      "_id": "a193141e2373523b"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Shark-slayer",
+      "_key": "!tables.results!21e30acb34a7591c.07880745c3bfc2ea",
+      "_id": "07880745c3bfc2ea"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Sharkbite",
+      "_key": "!tables.results!21e30acb34a7591c.a5c142b73738eb3f",
+      "_id": "a5c142b73738eb3f"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Sharktooth",
+      "_key": "!tables.results!21e30acb34a7591c.76a2431a2f890a5f",
+      "_id": "76a2431a2f890a5f"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Shivers",
+      "_key": "!tables.results!21e30acb34a7591c.18f888b9d44b87bd",
+      "_id": "18f888b9d44b87bd"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Silverblade",
+      "_key": "!tables.results!21e30acb34a7591c.35fb2272e78ace75",
+      "_id": "35fb2272e78ace75"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Silvereye",
+      "_key": "!tables.results!21e30acb34a7591c.5524777d8a6ad9a2",
+      "_id": "5524777d8a6ad9a2"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Silvertongue",
+      "_key": "!tables.results!21e30acb34a7591c.8f712b317a1274bc",
+      "_id": "8f712b317a1274bc"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Six-finger",
+      "_key": "!tables.results!21e30acb34a7591c.0aee6c3305425353",
+      "_id": "0aee6c3305425353"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Skipjack",
+      "_key": "!tables.results!21e30acb34a7591c.c31a6a2f812ba767",
+      "_id": "c31a6a2f812ba767"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Snipe",
+      "_key": "!tables.results!21e30acb34a7591c.e5907cb3b9b09655",
+      "_id": "e5907cb3b9b09655"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Sparrow",
+      "_key": "!tables.results!21e30acb34a7591c.3053866463665e41",
+      "_id": "3053866463665e41"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Splinter",
+      "_key": "!tables.results!21e30acb34a7591c.d9a15bc7e3889f8a",
+      "_id": "d9a15bc7e3889f8a"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Splitskull",
+      "_key": "!tables.results!21e30acb34a7591c.20b71bd1935cbb21",
+      "_id": "20b71bd1935cbb21"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Squall",
+      "_key": "!tables.results!21e30acb34a7591c.2ad948db52f70510",
+      "_id": "2ad948db52f70510"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Stingray",
+      "_key": "!tables.results!21e30acb34a7591c.533e0f0f0f5233ef",
+      "_id": "533e0f0f0f5233ef"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Stormcrow",
+      "_key": "!tables.results!21e30acb34a7591c.2e247ed016e7cff6",
+      "_id": "2e247ed016e7cff6"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Swab",
+      "_key": "!tables.results!21e30acb34a7591c.e646203c322dc90b",
+      "_id": "e646203c322dc90b"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Swagger",
+      "_key": "!tables.results!21e30acb34a7591c.797fd95166411c3e",
+      "_id": "797fd95166411c3e"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Swiftblade",
+      "_key": "!tables.results!21e30acb34a7591c.973d28e3be9f1c9d",
+      "_id": "973d28e3be9f1c9d"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Tack",
+      "_key": "!tables.results!21e30acb34a7591c.ab1b18af1fcfb90e",
+      "_id": "ab1b18af1fcfb90e"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Tall-tale",
+      "_key": "!tables.results!21e30acb34a7591c.8c979eb244e46c4e",
+      "_id": "8c979eb244e46c4e"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Talon",
+      "_key": "!tables.results!21e30acb34a7591c.cb597a64734d193e",
+      "_id": "cb597a64734d193e"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Three-sheets",
+      "_key": "!tables.results!21e30acb34a7591c.ccdaf357b3342140",
+      "_id": "ccdaf357b3342140"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Timbers",
+      "_key": "!tables.results!21e30acb34a7591c.7380a532f34e5e7b",
+      "_id": "7380a532f34e5e7b"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Tinker",
+      "_key": "!tables.results!21e30acb34a7591c.ef91bcbd7aebce48",
+      "_id": "ef91bcbd7aebce48"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Turncoat",
+      "_key": "!tables.results!21e30acb34a7591c.72a4772ddf8ba587",
+      "_id": "72a4772ddf8ba587"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Two-face",
+      "_key": "!tables.results!21e30acb34a7591c.24deffa74fcd5e69",
+      "_id": "24deffa74fcd5e69"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Vixen",
+      "_key": "!tables.results!21e30acb34a7591c.78bfcc9fd6617448",
+      "_id": "78bfcc9fd6617448"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Weather-eye",
+      "_key": "!tables.results!21e30acb34a7591c.591d6ce15fb4405e",
+      "_id": "591d6ce15fb4405e"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Whisper",
+      "_key": "!tables.results!21e30acb34a7591c.88f3a51cddb1913a",
+      "_id": "88f3a51cddb1913a"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Windward",
+      "_key": "!tables.results!21e30acb34a7591c.08a7373dc569d909",
+      "_id": "08a7373dc569d909"
+    }
+  ],
+  "folder": "d628609182ab4ca0",
+  "sort": 194,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!21e30acb34a7591c"
+}

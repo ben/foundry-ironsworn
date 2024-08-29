@@ -1,22 +1,16 @@
 {
   "name": "Access",
-  "_id": "5a9ded9c6cdc7583",
+  "description": "",
   "type": "RollTable",
+  "_id": "5a9ded9c6cdc7583",
   "sort": 352,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Derelicts/Access"
+      "dfid": "Starforged/Oracles/Derelicts/Access",
+      "dsid": "oracle_collection:starforged/derelict/access"
     }
   },
   "folder": "fd19a02fbd5f71e6",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!5a9ded9c6cdc7583"
 }

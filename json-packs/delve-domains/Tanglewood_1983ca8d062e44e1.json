@@ -1,0 +1,141 @@
+{
+  "_id": "1983ca8d062e44e1",
+  "type": "delve-domain",
+  "name": "Tanglewood",
+  "img": "icons/environment/wilderness/terrain-forest-gray.webp",
+  "system": {
+    "summary": "A perilous forest of eternal shadow.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Dense thicket"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Overgrown path"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Waterway"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Clearing"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Elder tree"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Brambles"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Overgrown structure"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Rocky outcrop"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Camp or outpost"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen hunts"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Denizen lairs here"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Trap or snare"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Path leads you astray"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Entangling plant life"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 93,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/tanglewood"
+    }
+  },
+  "_key": "!items!1983ca8d062e44e1"
+}

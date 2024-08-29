@@ -1,0 +1,164 @@
+{
+  "_id": "70118792eeb9c116",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/name/moniker_cursed",
+      "dsid": "oracle_rollable:sundered_isles/character/name/moniker_cursed/mechanical_form"
+    }
+  },
+  "name": "Mechanical Form",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        7
+      ],
+      "text": "Anvil",
+      "_key": "!tables.results!70118792eeb9c116.423f1b9011465f92",
+      "_id": "423f1b9011465f92"
+    },
+    {
+      "range": [
+        8,
+        13
+      ],
+      "text": "Bladehand",
+      "_key": "!tables.results!70118792eeb9c116.674570638508da70",
+      "_id": "674570638508da70"
+    },
+    {
+      "range": [
+        14,
+        20
+      ],
+      "text": "Brassbolt",
+      "_key": "!tables.results!70118792eeb9c116.e21f10f50c611a97",
+      "_id": "e21f10f50c611a97"
+    },
+    {
+      "range": [
+        21,
+        26
+      ],
+      "text": "Clank",
+      "_key": "!tables.results!70118792eeb9c116.7eddcae1675a0e29",
+      "_id": "7eddcae1675a0e29"
+    },
+    {
+      "range": [
+        27,
+        33
+      ],
+      "text": "Cog",
+      "_key": "!tables.results!70118792eeb9c116.431ada12ffba8000",
+      "_id": "431ada12ffba8000"
+    },
+    {
+      "range": [
+        34,
+        40
+      ],
+      "text": "Forgeheart",
+      "_key": "!tables.results!70118792eeb9c116.9bc372a8f91ed6d8",
+      "_id": "9bc372a8f91ed6d8"
+    },
+    {
+      "range": [
+        41,
+        46
+      ],
+      "text": "Gadget",
+      "_key": "!tables.results!70118792eeb9c116.7c56cfb8583b9406",
+      "_id": "7c56cfb8583b9406"
+    },
+    {
+      "range": [
+        47,
+        52
+      ],
+      "text": "Gear",
+      "_key": "!tables.results!70118792eeb9c116.dc14636317625f4c",
+      "_id": "dc14636317625f4c"
+    },
+    {
+      "range": [
+        53,
+        58
+      ],
+      "text": "Ironclaw",
+      "_key": "!tables.results!70118792eeb9c116.230f2498c3000a52",
+      "_id": "230f2498c3000a52"
+    },
+    {
+      "range": [
+        59,
+        64
+      ],
+      "text": "Ironeye",
+      "_key": "!tables.results!70118792eeb9c116.90067466366542e6",
+      "_id": "90067466366542e6"
+    },
+    {
+      "range": [
+        65,
+        70
+      ],
+      "text": "Ironshell",
+      "_key": "!tables.results!70118792eeb9c116.123a0d99b932aea0",
+      "_id": "123a0d99b932aea0"
+    },
+    {
+      "range": [
+        71,
+        76
+      ],
+      "text": "Rattle",
+      "_key": "!tables.results!70118792eeb9c116.c0fec6e94666bf79",
+      "_id": "c0fec6e94666bf79"
+    },
+    {
+      "range": [
+        77,
+        82
+      ],
+      "text": "Rig",
+      "_key": "!tables.results!70118792eeb9c116.084c428f91dfec29",
+      "_id": "084c428f91dfec29"
+    },
+    {
+      "range": [
+        83,
+        88
+      ],
+      "text": "Rust",
+      "_key": "!tables.results!70118792eeb9c116.4c769db52f77efae",
+      "_id": "4c769db52f77efae"
+    },
+    {
+      "range": [
+        89,
+        94
+      ],
+      "text": "Spark",
+      "_key": "!tables.results!70118792eeb9c116.d5b74de73e174e91",
+      "_id": "d5b74de73e174e91"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Tinker",
+      "_key": "!tables.results!70118792eeb9c116.7ae7dd08a94005cb",
+      "_id": "7ae7dd08a94005cb"
+    }
+  ],
+  "folder": "5c43d16b683d442f",
+  "sort": 197,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!70118792eeb9c116"
+}

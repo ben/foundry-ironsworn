@@ -6,7 +6,7 @@
 // - Rerolls update chat message
 
 import { cloneDeep, compact, pick, range, sum } from 'lodash-es'
-import { getFoundryMoveByDfId } from '../dataforged'
+import { getFoundryMoveByDsId } from '../datasworn2'
 import { cinderAndWraithifyRoll } from '../features/dice'
 import { IronswornSettings } from '../helpers/settings'
 import type { IronswornItem } from '../item/item'
@@ -139,7 +139,7 @@ export interface PreRollOptions {
 	/**
 	 * for "official" moves
 	 */
-	moveDfId?: string
+	moveDsId?: string
 	actorId?: string
 }
 
@@ -276,7 +276,7 @@ export class IronswornRoll {
 
 		if (this.preRollOptions.stat != null) {
 			ret.push(this.preRollOptions.stat)
-		} else if (this.preRollOptions.moveDfId || this.preRollOptions.moveId) {
+		} else if (this.preRollOptions.moveDsId || this.preRollOptions.moveId) {
 			// move rolls will always add a stat
 			ret.push({
 				source: 'Select a stat',
@@ -438,8 +438,8 @@ export class IronswornRoll {
 	}
 
 	get moveItem(): Promise<IronswornItem<'sfmove'> | undefined> | undefined {
-		const { moveDfId, moveId } = this.preRollOptions
-		if (moveDfId != null) return getFoundryMoveByDfId(moveDfId)
+		const { moveDsId, moveId } = this.preRollOptions
+		if (moveDsId != null) return getFoundryMoveByDsId(moveDsId)
 		if (moveId != null)
 			return Promise.resolve(game.items?.get(moveId) as IronswornItem<'sfmove'>)
 		return undefined

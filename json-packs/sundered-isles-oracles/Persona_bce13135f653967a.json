@@ -1,0 +1,110 @@
+{
+  "_id": "bce13135f653967a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/faith",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/faith/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Acolytes",
+      "_key": "!tables.results!bce13135f653967a.b2cb493e79077fac",
+      "_id": "b2cb493e79077fac"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Disciples",
+      "_key": "!tables.results!bce13135f653967a.400769f7e3ebaf8a",
+      "_id": "400769f7e3ebaf8a"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Flames",
+      "_key": "!tables.results!bce13135f653967a.64bd4ec704c15f68",
+      "_id": "64bd4ec704c15f68"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Harbingers",
+      "_key": "!tables.results!bce13135f653967a.0f310b54969000f6",
+      "_id": "0f310b54969000f6"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Heralds",
+      "_key": "!tables.results!bce13135f653967a.6b40f6a86cf36bd2",
+      "_id": "6b40f6a86cf36bd2"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Inquisitors",
+      "_key": "!tables.results!bce13135f653967a.a03e376d92c2dda5",
+      "_id": "a03e376d92c2dda5"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Lightbringers",
+      "_key": "!tables.results!bce13135f653967a.6f7f02238aea1227",
+      "_id": "6f7f02238aea1227"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Martyrs",
+      "_key": "!tables.results!bce13135f653967a.bcc8b79296f5447a",
+      "_id": "bcc8b79296f5447a"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Redeemers",
+      "_key": "!tables.results!bce13135f653967a.25d0676be2600809",
+      "_id": "25d0676be2600809"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Servants",
+      "_key": "!tables.results!bce13135f653967a.0719470b819af7f0",
+      "_id": "0719470b819af7f0"
+    }
+  ],
+  "folder": "22ec474f52af959e",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!bce13135f653967a"
+}

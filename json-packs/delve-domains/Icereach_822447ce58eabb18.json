@@ -1,0 +1,141 @@
+{
+  "_id": "822447ce58eabb18",
+  "type": "delve-domain",
+  "name": "Icereach",
+  "img": "icons/magic/water/barrier-ice-crystal-wall-jagged-blue.webp",
+  "system": {
+    "summary": "A frigid landscape formed of frozen seas.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Plains of ice and snow"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Seawater channel"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Icy highlands"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Crevasse"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Ice floes"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Ship trapped in ice"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Animal herd or habitat"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Frozen carcass"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Camp or outpost"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen hunts"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Fragile ice above watery depths"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Perilous climb or descent"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Avalanche or icefall"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Foul weather"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 89,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/icereach"
+    }
+  },
+  "_key": "!items!822447ce58eabb18"
+}

@@ -1,0 +1,38 @@
+{
+  "_id": "6ff831d368b8ed49",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave",
+      "dsid": "oracle_rollable:sundered_isles/cave/type"
+    }
+  },
+  "name": "Cave Type",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        60
+      ],
+      "text": "Sea Cave",
+      "_key": "!tables.results!6ff831d368b8ed49.87c52ac6d5cf4295",
+      "_id": "87c52ac6d5cf4295"
+    },
+    {
+      "range": [
+        61,
+        100
+      ],
+      "text": "Inland Cave",
+      "_key": "!tables.results!6ff831d368b8ed49.1d3e3ca7f5f392e8",
+      "_id": "1d3e3ca7f5f392e8"
+    }
+  ],
+  "folder": "6e4db0d120c971eb",
+  "sort": 204,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6ff831d368b8ed49"
+}

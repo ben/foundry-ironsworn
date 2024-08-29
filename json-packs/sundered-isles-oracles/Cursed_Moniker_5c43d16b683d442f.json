@@ -1,0 +1,15 @@
+{
+  "name": "Cursed Moniker",
+  "description": "Use these tables to reveal an epitaph for a dreadful, eldritch, ill-fated, or mechanical character. For example, a pirate captain who adopts a much-feared identity would have a @Compendium[foundry-ironsworn.sunderedislesoracles.7f3820c3edc3d9e1]{Dreadful Persona}. A wretched, outcast mariner would have an @Compendium[foundry-ironsworn.sunderedislesoracles.5da6735beb25be78]{Ill-Fated Nature}. Use the result alone, combine with a name, or pair results from two Cursed Moniker categories.",
+  "type": "RollTable",
+  "_id": "5c43d16b683d442f",
+  "sort": 197,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/character/name/moniker_cursed"
+    }
+  },
+  "folder": "d628609182ab4ca0",
+  "sorting": "a",
+  "_key": "!folders!5c43d16b683d442f"
+}

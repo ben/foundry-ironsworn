@@ -1,0 +1,61 @@
+{
+  "type": "asset",
+  "_id": "c42fd7a3e2bd256a",
+  "folder": "38d5b35b5764ca19",
+  "name": "Ironclad Hull",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your ship has 4 hull. When you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage}, you may ignore damage up to the value of your hull. If you do, suffer -1 hull. At 0 hull, mark this module as broken. Spend 3 repair points as you @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} to fix a broken ironclad hull, and 1 point to take +1 hull.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} or @Compendium[foundry-ironsworn.starforgedmoves.d9208f9b7d827aec]{React Under Fire} by letting your ironclad hull take the hit, roll +hull and take +1 momentum on a strong hit. On a strong hit with a match, you are impervious; take another +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition} across an area of rough seas or dangerous shallows, you may rely on your ironclad hull. If you do, roll +hull. You may reroll your action die if its value is less than your hull.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Hull",
+      "max": 4,
+      "value": 4,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/module/ironclad_hull",
+      "dsid": "asset:sundered_isles/module/ironclad_hull"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!c42fd7a3e2bd256a"
+}

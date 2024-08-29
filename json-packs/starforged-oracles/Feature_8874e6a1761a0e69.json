@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Haunted/Feature",
-      "category": "Starforged/Oracles/Location_Themes/Haunted"
+      "category": "Starforged/Oracles/Location_Themes/Haunted",
+      "dsid": "oracle_rollable:starforged/location_theme/haunted/feature"
     }
   },
   "name": "Feature",
   "description": "<p>Use this table to reveal a new aspect of the location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         8
       ],
       "text": "Disembodied voices",
-      "_id": "a6d615ef5dd65745",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.a6d615ef5dd65745"
+      "_key": "!tables.results!8874e6a1761a0e69.8de88760b5fe49ff",
+      "_id": "8de88760b5fe49ff"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         16
       ],
       "text": "Eerie cold",
-      "_id": "00b7bea7f5f0a1c2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.00b7bea7f5f0a1c2"
+      "_key": "!tables.results!8874e6a1761a0e69.d1391d21a96359c3",
+      "_id": "d1391d21a96359c3"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         24
       ],
       "text": "Foreboding omen or message",
-      "_id": "4138a20e27704459",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.4138a20e27704459"
+      "_key": "!tables.results!8874e6a1761a0e69.19afa19f991ce5f7",
+      "_id": "19afa19f991ce5f7"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         32
       ],
       "text": "Ghostly visions of this place in another time",
-      "_id": "fb99913724bc8129",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.fb99913724bc8129"
+      "_key": "!tables.results!8874e6a1761a0e69.d563bbf53cc8809f",
+      "_id": "d563bbf53cc8809f"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         40
       ],
       "text": "Glimpses of shadowy movement",
-      "_id": "ccb2499edcb9ce06",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.ccb2499edcb9ce06"
+      "_key": "!tables.results!8874e6a1761a0e69.e151174c6e656caf",
+      "_id": "e151174c6e656caf"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         48
       ],
       "text": "Objects move of their own accord",
-      "_id": "d5ee4726274d8155",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.d5ee4726274d8155"
+      "_key": "!tables.results!8874e6a1761a0e69.cbfc7834513978e9",
+      "_id": "cbfc7834513978e9"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         56
       ],
       "text": "Sensation of being watched",
-      "_id": "8de8499cee5e1318",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.8de8499cee5e1318"
+      "_key": "!tables.results!8874e6a1761a0e69.ec72d9ac176fd481",
+      "_id": "ec72d9ac176fd481"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         64
       ],
       "text": "Signs of death or violence",
-      "_id": "6877e42748ee052d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.6877e42748ee052d"
+      "_key": "!tables.results!8874e6a1761a0e69.f5a0a29ff4bd3efb",
+      "_id": "f5a0a29ff4bd3efb"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         72
       ],
       "text": "Spectral sounds",
-      "_id": "59ec332f3683cbf0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.59ec332f3683cbf0"
+      "_key": "!tables.results!8874e6a1761a0e69.f7a1c41dac103c5b",
+      "_id": "f7a1c41dac103c5b"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         80
       ],
       "text": "Twisted or altered architecture or terrain",
-      "_id": "f48abbaca065eedd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.f48abbaca065eedd"
+      "_key": "!tables.results!8874e6a1761a0e69.82041b4b86d9c29a",
+      "_id": "82041b4b86d9c29a"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         88
       ],
       "text": "Unnatural blight, decay, or ruin",
-      "_id": "136f65783b5fd102",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.136f65783b5fd102"
+      "_key": "!tables.results!8874e6a1761a0e69.8019e58de9a8bd2c",
+      "_id": "8019e58de9a8bd2c"
     },
     {
       "range": [
@@ -172,43 +118,21 @@
         96
       ],
       "text": "Unnatural mists or darkness",
-      "_id": "faabf7f0338d5d3b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.faabf7f0338d5d3b"
+      "_key": "!tables.results!8874e6a1761a0e69.2556072cfa7e3ada",
+      "_id": "2556072cfa7e3ada"
     },
     {
       "range": [
         97,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "e5771c231fa5ce9a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8874e6a1761a0e69.e5771c231fa5ce9a"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!8874e6a1761a0e69.54d19c8b144b7a5d",
+      "_id": "54d19c8b144b7a5d"
     }
   ],
   "folder": "7b6a3ac881ac8211",
   "sort": 374,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!8874e6a1761a0e69"
 }

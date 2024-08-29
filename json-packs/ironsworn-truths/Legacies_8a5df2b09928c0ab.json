@@ -1,0 +1,87 @@
+{
+  "name": "Legacies",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:classic/legacies",
+      "dsid": "truth:classic/legacies"
+    }
+  },
+  "_id": "8a5df2b09928c0ab",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "truth.option:classic/legacies.0",
+      "system": {
+        "dsid": "truth.option:classic/legacies.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "",
+        "Description": "We are the first humans to walk these lands.",
+        "Summary": "",
+        "Quest": "In the writings of one of the first settlers, there is a description of a glade in the heart of the Deep Wilds. The spirits of this place are said to grant a miraculous blessing. What boon does it bestow?",
+        "Roll template": {
+          "Description": "We are the first humans to walk these lands."
+        }
+      },
+      "_id": "b662345b02d64188",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!8a5df2b09928c0ab.b662345b02d64188"
+    },
+    {
+      "type": "truth",
+      "name": "truth.option:classic/legacies.1",
+      "system": {
+        "dsid": "truth.option:classic/legacies.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "",
+        "Description": "Other humans sailed here from the Old World untold years ago, but all that is left of them is a savage, feral people we call the broken. Is their fate to become our own?",
+        "Summary": "",
+        "Quest": "You find a child—one of the broken. It is wounded, and hunted by others of its kind. Do you protect it, even at the risk of inviting the wrath of the broken tribes?",
+        "Roll template": {
+          "Description": "Other humans sailed here from the Old World untold years ago, but all that is left of them is a savage, feral people we call the broken. Is their fate to become our own?"
+        }
+      },
+      "_id": "794de6488d46c7a7",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!8a5df2b09928c0ab.794de6488d46c7a7"
+    },
+    {
+      "type": "truth",
+      "name": "truth.option:classic/legacies.2",
+      "system": {
+        "dsid": "truth.option:classic/legacies.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "",
+        "Description": "Before the Ironlanders, before even the firstborn, another people lived here. Their ancient ruins are found throughout the Ironlands.",
+        "Summary": "",
+        "Quest": "Miners uncovered an underground ruin. Thereafter, the people of the settlement are haunted by strange dreams. The ruins call to them, they say. Several have disappeared in that dark, ancient place – including someone important to you.",
+        "Roll template": {
+          "Description": "Before the Ironlanders, before even the firstborn, another people lived here. Their ancient ruins are found throughout the Ironlands."
+        }
+      },
+      "_id": "ed2f4376c4fbf3d1",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!8a5df2b09928c0ab.ed2f4376c4fbf3d1"
+    }
+  ],
+  "folder": null,
+  "sort": 124,
+  "_key": "!journal!8a5df2b09928c0ab"
+}

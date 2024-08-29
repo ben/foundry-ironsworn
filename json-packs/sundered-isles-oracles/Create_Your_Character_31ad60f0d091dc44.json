@@ -1,0 +1,15 @@
+{
+  "name": "Create Your Character",
+  "description": "",
+  "type": "RollTable",
+  "_id": "31ad60f0d091dc44",
+  "sort": 90,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/getting_underway/create_your_character"
+    }
+  },
+  "folder": "86986250874e32b0",
+  "sorting": "a",
+  "_key": "!folders!31ad60f0d091dc44"
+}

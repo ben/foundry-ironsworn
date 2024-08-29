@@ -1,0 +1,16 @@
+{
+  "name": "Path Assets",
+  "color": "#3f7faa",
+  "description": "",
+  "type": "Item",
+  "_id": "e5df7144ec089f12",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "asset_collection:sundered_isles/path"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!e5df7144ec089f12"
+}

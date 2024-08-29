@@ -3,87 +3,64 @@
   "type": "sfmove",
   "name": "Finish an Expedition",
   "img": "icons/dice/d10black.svg",
+  "folder": "f57c06b3db7f1676",
   "system": {
     "dfid": "Starforged/Moves/Exploration/Finish_an_Expedition",
     "Category": "Starforged/Moves/Exploration",
     "Progress Move": true,
     "Variant of": "",
-    "Text": "**When your expedition comes to an end**, roll the challenge dice and compare to your progress.\n\nOn a **strong hit**, you reach your destination or complete your survey. Mark a reward on your discoveries legacy track per expedition's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this expedition also mark the reward.\n\nOn a **weak hit**, as above, but you face an unforeseen complication at the end of your expedition. Make the legacy reward one rank lower, and envision what you encounter.\n\nOn a **miss**, your destination is lost to you, or you come to understand the true nature or cost of the expedition. Envision what happens and choose one.\n\n  * Abandon the expedition: Envision the cost of this setback and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.\n  * Return to the expedition: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the expedition's rank by one (if not already epic).",
+    "Text": "__When your expedition comes to an end__, roll the challenge dice and compare to your progress.\n\nOn a __strong hit__, you reach your destination or complete your survey. Mark a reward on your discoveries legacy track per expedition's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this expedition also mark the reward.\n\nOn a __weak hit__, as above, but you face an unforeseen complication at the end of your expedition. Make the legacy reward one rank lower, and envision what you encounter.\n\nOn a __miss__, your destination is lost to you, or you come to understand the true nature or cost of the expedition. Envision what happens and choose one.\n\n  * Abandon the expedition: Envision the cost of this setback and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.\n  * Return to the expedition: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the expedition's rank by one (if not already epic).",
     "Trigger": {
       "Text": "When your expedition comes to an end...",
       "Options": [
         {
+          "Text": "",
           "Roll type": "Progress roll",
           "Method": "Any",
           "Using": [
-            "Expedition"
-          ],
-          "Text": ""
+            "Progress Track"
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "You reach your destination or complete your survey. Mark a reward on your discoveries legacy track per expedition's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this expedition also mark the reward.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, you reach your destination or complete your survey. Mark a reward on your discoveries legacy track per expedition's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this expedition also mark the reward.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "You reach your destination or complete your survey, but you face an unforeseen complication at the end of your expedition. Make the legacy reward one rank lower (troublesome=0 ticks; dangerous=1 tick; formidable=2 box; extreme=1 box; epic=2 boxes), and envision what you encounter.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, you reach your destination or complete your survey, but you face an unforeseen complication at the end of your expedition. Make the legacy reward one rank lower (troublesome=0 ticks; dangerous=1 tick; formidable=2 box; extreme=1 box; epic=2 boxes), and envision what you encounter."
       },
       "Miss": {
-        "Text": "Your destination is lost to you, or you come to understand the true nature or cost of the expedition. Envision what happens and choose one.\n\n  * Abandon the expedition: Envision the cost of this setback and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.\n  * Return to the expedition: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the expedition's rank by one (if not already epic).",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, your destination is lost to you, or you come to understand the true nature or cost of the expedition. Envision what happens and choose one.\n\n  * Abandon the expedition: Envision the cost of this setback and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.\n  * Return to the expedition: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the expedition's rank by one (if not already epic).",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 178
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#7438B8",
       "Images": []
     }
   },
   "sort": 178,
-  "folder": "f57c06b3db7f1676",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Exploration/Finish_an_Expedition",
+      "dsid": "move:starforged/exploration/finish_an_expedition"
+    }
   },
   "_key": "!items!edac426b7c23f060"
 }

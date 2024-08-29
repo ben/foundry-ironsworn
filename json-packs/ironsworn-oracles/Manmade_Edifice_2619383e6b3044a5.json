@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Settlement/Name/Manmade_Edifice",
-      "category": "Ironsworn/Oracles/Settlement"
+      "category": "oracle_collection:classic/settlement/name",
+      "dsid": "oracle_rollable:classic/settlement/name/manmade_edifice"
     }
   },
   "name": "Manmade Edifice",
   "description": "<p><strong>A manmade edifice.</strong> What is it? Why is it important to this settlement’s history?,</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Whitebridge",
-      "_id": "c036ab0d77bf3037",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.c036ab0d77bf3037"
+      "_key": "!tables.results!2619383e6b3044a5.aee8d39cea609d65",
+      "_id": "aee8d39cea609d65"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Lonefort",
-      "_id": "2399ddb040b722ec",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.2399ddb040b722ec"
+      "_key": "!tables.results!2619383e6b3044a5.99df068d37a5c7ed",
+      "_id": "99df068d37a5c7ed"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Highcairn",
-      "_id": "85ea876229bbd0ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.85ea876229bbd0ea"
+      "_key": "!tables.results!2619383e6b3044a5.9d004b9e6d2288e3",
+      "_id": "9d004b9e6d2288e3"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Redhall",
-      "_id": "cca97107bb3029db",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.cca97107bb3029db"
+      "_key": "!tables.results!2619383e6b3044a5.ecb715690e0a6534",
+      "_id": "ecb715690e0a6534"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Darkwell",
-      "_id": "ecb6a60ffcc91ecb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.ecb6a60ffcc91ecb"
+      "_key": "!tables.results!2619383e6b3044a5.d4ce32c5f234ed69",
+      "_id": "d4ce32c5f234ed69"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Timberwall",
-      "_id": "eb0edc384ab2dadf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.eb0edc384ab2dadf"
+      "_key": "!tables.results!2619383e6b3044a5.68d7a46b0fd7cc7c",
+      "_id": "68d7a46b0fd7cc7c"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Stonetower",
-      "_id": "a3583f68b81c5b39",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.a3583f68b81c5b39"
+      "_key": "!tables.results!2619383e6b3044a5.0d50f03601a23676",
+      "_id": "0d50f03601a23676"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Thornhall",
-      "_id": "b9cb29a13c1f38d6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.b9cb29a13c1f38d6"
+      "_key": "!tables.results!2619383e6b3044a5.26d8b5b3023eca47",
+      "_id": "26d8b5b3023eca47"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         90
       ],
       "text": "Cinderhome",
-      "_id": "51f2a90135ca96ad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.51f2a90135ca96ad"
+      "_key": "!tables.results!2619383e6b3044a5.3cefd5471f834ed7",
+      "_id": "3cefd5471f834ed7"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "Fallowfield",
-      "_id": "f5ebe00d0641e1aa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2619383e6b3044a5.f5ebe00d0641e1aa"
+      "_key": "!tables.results!2619383e6b3044a5.9a9eb4279a2fc275",
+      "_id": "9a9eb4279a2fc275"
     }
   ],
-  "folder": "11b98f1da8f07aa2",
+  "folder": "b62c276059f4423c",
   "sort": 178,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!2619383e6b3044a5"
 }

@@ -1,0 +1,246 @@
+{
+  "_id": "4135d73dae285c7f",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Trap/Component",
+      "category": "Ironsworn/Oracles/Trap",
+      "dsid": "oracle_rollable:delve/trap/component"
+    }
+  },
+  "name": "Component",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Pit",
+      "_key": "!tables.results!4135d73dae285c7f.0a453401c0bb2ca5",
+      "_id": "0a453401c0bb2ca5"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Water",
+      "_key": "!tables.results!4135d73dae285c7f.677bcf778fd0eb2b",
+      "_id": "677bcf778fd0eb2b"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Fire",
+      "_key": "!tables.results!4135d73dae285c7f.9af434cab7adf7e8",
+      "_id": "9af434cab7adf7e8"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Projectile",
+      "_key": "!tables.results!4135d73dae285c7f.c1fdcdb5fe59a3ec",
+      "_id": "c1fdcdb5fe59a3ec"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Passage",
+      "_key": "!tables.results!4135d73dae285c7f.bab4b8c799761f5b",
+      "_id": "bab4b8c799761f5b"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Fall",
+      "_key": "!tables.results!4135d73dae285c7f.fdca606e5b6908a5",
+      "_id": "fdca606e5b6908a5"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Debris",
+      "_key": "!tables.results!4135d73dae285c7f.fdc6eae8561d3423",
+      "_id": "fdc6eae8561d3423"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Fear",
+      "_key": "!tables.results!4135d73dae285c7f.c67e064136c4e227",
+      "_id": "c67e064136c4e227"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Alarm",
+      "_key": "!tables.results!4135d73dae285c7f.0cea2c50599c60fc",
+      "_id": "0cea2c50599c60fc"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Trigger",
+      "_key": "!tables.results!4135d73dae285c7f.9376146d4aee14a5",
+      "_id": "9376146d4aee14a5"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Cold",
+      "_key": "!tables.results!4135d73dae285c7f.9fabfa910ef9384b",
+      "_id": "9fabfa910ef9384b"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Weapon",
+      "_key": "!tables.results!4135d73dae285c7f.b63bc985edbf4cb2",
+      "_id": "b63bc985edbf4cb2"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Darkness",
+      "_key": "!tables.results!4135d73dae285c7f.f497afb4aa0692d0",
+      "_id": "f497afb4aa0692d0"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Decay",
+      "_key": "!tables.results!4135d73dae285c7f.6717c07968af7868",
+      "_id": "6717c07968af7868"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Path",
+      "_key": "!tables.results!4135d73dae285c7f.8f3a38bdb68a913b",
+      "_id": "8f3a38bdb68a913b"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Stone",
+      "_key": "!tables.results!4135d73dae285c7f.c24ca2cfa82f746d",
+      "_id": "c24ca2cfa82f746d"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Terrain",
+      "_key": "!tables.results!4135d73dae285c7f.536ec86a767981d2",
+      "_id": "536ec86a767981d2"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Poison",
+      "_key": "!tables.results!4135d73dae285c7f.9c91d8d4cb93ee26",
+      "_id": "9c91d8d4cb93ee26"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Barrier",
+      "_key": "!tables.results!4135d73dae285c7f.e48893e8e4b62f45",
+      "_id": "e48893e8e4b62f45"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Overhead",
+      "_key": "!tables.results!4135d73dae285c7f.fe54db4a46ed71c5",
+      "_id": "fe54db4a46ed71c5"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Magic",
+      "_key": "!tables.results!4135d73dae285c7f.5f2f21da3d1191a1",
+      "_id": "5f2f21da3d1191a1"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Toxin",
+      "_key": "!tables.results!4135d73dae285c7f.e8b874ba2865e606",
+      "_id": "e8b874ba2865e606"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Earth",
+      "_key": "!tables.results!4135d73dae285c7f.328cf57bb0cad92c",
+      "_id": "328cf57bb0cad92c"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Light",
+      "_key": "!tables.results!4135d73dae285c7f.5e138e8a049e6a72",
+      "_id": "5e138e8a049e6a72"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Denizen",
+      "_key": "!tables.results!4135d73dae285c7f.e08fe76eec815e29",
+      "_id": "e08fe76eec815e29"
+    }
+  ],
+  "folder": "7cacf574e6356672",
+  "sort": 217,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4135d73dae285c7f"
+}

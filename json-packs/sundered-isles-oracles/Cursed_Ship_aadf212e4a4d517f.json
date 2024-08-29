@@ -1,0 +1,110 @@
+{
+  "_id": "aadf212e4a4d517f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/getting_underway/take_command",
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/take_command/ship_history_cursed"
+    }
+  },
+  "name": "Cursed Ship",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Awarded by its former—and now dead—captain, who still haunts its decks",
+      "_key": "!tables.results!aadf212e4a4d517f.d70f44548318bd8b",
+      "_id": "d70f44548318bd8b"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Bound to a role as its new commander by a beguiling curse",
+      "_key": "!tables.results!aadf212e4a4d517f.1f3213c7a6e36f56",
+      "_id": "1f3213c7a6e36f56"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Cobbled together from salvage found within a graveyard of forsaken ships",
+      "_key": "!tables.results!aadf212e4a4d517f.73a8007093ec1ce5",
+      "_id": "73a8007093ec1ce5"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Discovered within a hidden sea cave after calling to you in a dream",
+      "_key": "!tables.results!aadf212e4a4d517f.2a0b2424de88fe88",
+      "_id": "2a0b2424de88fe88"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Found adrift in perfect condition, with no sign of the crew",
+      "_key": "!tables.results!aadf212e4a4d517f.3b4c29b67b90368f",
+      "_id": "3b4c29b67b90368f"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Gifted by a dreadful entity in exchange for a dark favor; you reneged on their terms",
+      "_key": "!tables.results!aadf212e4a4d517f.a104800e6283ca75",
+      "_id": "a104800e6283ca75"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Granted in an accursed agreement, sealed in blood",
+      "_key": "!tables.results!aadf212e4a4d517f.b9c541f69bb86661",
+      "_id": "b9c541f69bb86661"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Improbably found as a derelict well inland; moved and refloated with much effort",
+      "_key": "!tables.results!aadf212e4a4d517f.1c53b9949e7ac47b",
+      "_id": "1c53b9949e7ac47b"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Raised from the sunken depths as a boon from the sea itself",
+      "_key": "!tables.results!aadf212e4a4d517f.531bb7160e2b051a",
+      "_id": "531bb7160e2b051a"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Taken in spite of its cursed reputation, when no one else would sail it",
+      "_key": "!tables.results!aadf212e4a4d517f.bfe8cfb64ba433ac",
+      "_id": "bfe8cfb64ba433ac"
+    }
+  ],
+  "folder": "73ab87baaf2ebf11",
+  "sort": 97,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!aadf212e4a4d517f"
+}

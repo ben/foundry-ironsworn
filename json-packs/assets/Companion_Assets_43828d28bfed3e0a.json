@@ -1,0 +1,16 @@
+{
+  "name": "Companion Assets",
+  "description": "Companions are your NPC helpers. When you acquire a companion, give them a name and envision their appearance and personality. If they don’t have a starting ability, choose one. Upgrading a companion enables additional abilities.\n\nCompanions utilize a health track and may suffer harm as a result of one of your moves. When your companion takes damage, make the @Compendium[foundry-ironsworn.ironswornmoves.5042c9574d4faf61]{Companion Endure Harm} move to determine the outcome. See page 43 to learn more.",
+  "type": "Item",
+  "_id": "43828d28bfed3e0a",
+  "sort": 39,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Assets/Companion",
+      "dsid": "asset_collection:classic/companion"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!43828d28bfed3e0a"
+}

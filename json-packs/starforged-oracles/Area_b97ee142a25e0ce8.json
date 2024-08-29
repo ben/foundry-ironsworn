@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Access/Area",
-      "category": "Starforged/Oracles/Derelicts/Access"
+      "category": "Starforged/Oracles/Derelicts/Access",
+      "dsid": "oracle_rollable:starforged/derelict/access/area"
     }
   },
   "name": "Area",
   "description": "<p>Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, an area can serve as a waypoint in your survey of the derelict.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         50
       ],
       "text": "Corridor",
-      "_id": "72edc64ba5c65363",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b97ee142a25e0ce8.72edc64ba5c65363"
+      "_key": "!tables.results!b97ee142a25e0ce8.a3f7519a74f9451f",
+      "_id": "a3f7519a74f9451f"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         60
       ],
       "text": "Stairs",
-      "_id": "42eb1982f8dd5090",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b97ee142a25e0ce8.42eb1982f8dd5090"
+      "_key": "!tables.results!b97ee142a25e0ce8.7b3ee34e97d2b860",
+      "_id": "7b3ee34e97d2b860"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         70
       ],
       "text": "Lift or elevator",
-      "_id": "22522b96eaaa0c4f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b97ee142a25e0ce8.22522b96eaaa0c4f"
+      "_key": "!tables.results!b97ee142a25e0ce8.11bb48c7785f3e0c",
+      "_id": "11bb48c7785f3e0c"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Catwalk or bridge",
-      "_id": "3b55609e0d0cd5a2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b97ee142a25e0ce8.3b55609e0d0cd5a2"
+      "_key": "!tables.results!b97ee142a25e0ce8.d8b99412e31ee427",
+      "_id": "d8b99412e31ee427"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         85
       ],
       "text": "Vertical shaft or ladder",
-      "_id": "c5555c26401df63b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b97ee142a25e0ce8.c5555c26401df63b"
+      "_key": "!tables.results!b97ee142a25e0ce8.bb95795f72aeb56b",
+      "_id": "bb95795f72aeb56b"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         90
       ],
       "text": "Hub or intersection",
-      "_id": "31a5b6001c982672",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b97ee142a25e0ce8.31a5b6001c982672"
+      "_key": "!tables.results!b97ee142a25e0ce8.3d48558c26fdcb8e",
+      "_id": "3d48558c26fdcb8e"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         95
       ],
       "text": "Crawl space or duct",
-      "_id": "9a3a1843b4c7ecba",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b97ee142a25e0ce8.9a3a1843b4c7ecba"
+      "_key": "!tables.results!b97ee142a25e0ce8.a2c69b91a4f5a117",
+      "_id": "a2c69b91a4f5a117"
     },
     {
       "range": [
@@ -116,29 +82,12 @@
         100
       ],
       "text": "Airlock or external",
-      "_id": "16599bbd8783cf4b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b97ee142a25e0ce8.16599bbd8783cf4b"
+      "_key": "!tables.results!b97ee142a25e0ce8.d905578eeb1c9f38",
+      "_id": "d905578eeb1c9f38"
     }
   ],
   "folder": "5a9ded9c6cdc7583",
   "sort": 352,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!b97ee142a25e0ce8"
 }

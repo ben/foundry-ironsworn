@@ -1,0 +1,74 @@
+{
+  "_id": "1e40de8b84dc932e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck/orientation",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/orientation/scale"
+    }
+  },
+  "name": "Scale",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "Small (cutter, sloop)",
+      "_key": "!tables.results!1e40de8b84dc932e.f00b42cce9ee4b86",
+      "_id": "f00b42cce9ee4b86"
+    },
+    {
+      "range": [
+        31,
+        60
+      ],
+      "text": "Medium (corvette, schooner)",
+      "_key": "!tables.results!1e40de8b84dc932e.3e70cc06110c4897",
+      "_id": "3e70cc06110c4897"
+    },
+    {
+      "range": [
+        61,
+        85
+      ],
+      "text": "Large (frigate, galleon)",
+      "_key": "!tables.results!1e40de8b84dc932e.c6659a26c0df30a9",
+      "_id": "c6659a26c0df30a9"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Colossal (titan, dreadnought)",
+      "_key": "!tables.results!1e40de8b84dc932e.d41f15781adb685d",
+      "_id": "d41f15781adb685d"
+    },
+    {
+      "range": [
+        96,
+        99
+      ],
+      "text": "Heap (tangled with another wreck)",
+      "_key": "!tables.results!1e40de8b84dc932e.fc4864e1e56c3bef",
+      "_id": "fc4864e1e56c3bef"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Graveyard (amid a labyrinth of wrecks)",
+      "_key": "!tables.results!1e40de8b84dc932e.3cb64b197edfaf01",
+      "_id": "3cb64b197edfaf01"
+    }
+  ],
+  "folder": "6ee763f7ffc1ce84",
+  "sort": 199,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1e40de8b84dc932e"
+}

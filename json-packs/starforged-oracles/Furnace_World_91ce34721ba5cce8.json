@@ -1,0 +1,16 @@
+{
+  "name": "Furnace World",
+  "description": "A planet with relentless volcanic activity, wreathed in fire and ash.",
+  "type": "RollTable",
+  "_id": "91ce34721ba5cce8",
+  "sort": 309,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Furnace",
+      "dsid": "oracle_collection:starforged/planet/furnace"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!91ce34721ba5cce8"
+}

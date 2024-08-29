@@ -1,12 +1,54 @@
 import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
-import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
-import { IronswornSettings } from '../helpers/settings'
+import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import { OracleTable } from '../roll-table/oracle-table'
 
 interface CreateActorDialogOptions extends FormApplicationOptions {
 	folder: string
 }
+
+interface DialogButton {
+	kind: string
+	labelKey: string
+	img: string
+	ironsworn?: boolean
+	starforged?: boolean
+}
+
+const DIALOG_BUTTONS: DialogButton[] = [
+	{
+		kind: 'shared',
+		labelKey: 'IRONSWORN.ACTOR.TypeShared',
+		img: 'icons/environment/settlement/wagon-black.webp',
+		ironsworn: true,
+		starforged: true
+	},
+	{
+		kind: 'site',
+		labelKey: 'IRONSWORN.ACTOR.TypeDelveSite',
+		img: 'icons/environment/wilderness/cave-entrance-vulcano.webp',
+		ironsworn: true
+	},
+	{
+		kind: 'foe',
+		labelKey: 'IRONSWORN.ACTOR.TypeFoe',
+		img: 'icons/creatures/eyes/lizard-single-slit-pink.webp',
+		ironsworn: true,
+		starforged: true
+	},
+	{
+		kind: 'sfship',
+		labelKey: 'IRONSWORN.ACTOR.TypeStarship',
+		img: 'icons/environment/settlement/wizard-castle.webp',
+		starforged: true
+	},
+	{
+		kind: 'sflocation',
+		labelKey: 'IRONSWORN.ACTOR.TypeLocation',
+		img: 'systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp',
+		starforged: true
+	}
+]
 
 export class CreateActorDialog extends FormApplication<CreateActorDialogOptions> {
 	constructor() {
@@ -17,7 +59,26 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		// No update necessary.
 	}
 
+	static get buttonsForEnabledContent() {
+		return DIALOG_BUTTONS.filter(
+			(x) =>
+				(x.ironsworn &&
+					IronswornSettings.enabledRulesets.includes('classic')) ||
+				(x.starforged &&
+					IronswornSettings.enabledRulesets.includes('starforged'))
+		)
+	}
+
 	static get defaultOptions() {
+		const buttons = this.buttonsForEnabledContent
+		const rulesets = IronswornSettings.enabledRulesets
+		const bothKinds =
+			rulesets.includes('classic') && rulesets.includes('starforged')
+		const height =
+			45 + // Title bar
+			50 * (buttons.length + 1) + // Button height
+			(bothKinds ? 55 : 0) // Space for bigger box if both kinds are enabled
+		// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			title: game.i18n.format('DOCUMENT.Create', {
 				type: game.i18n.localize('DOCUMENT.Actor')
@@ -26,16 +87,23 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 			id: 'new-actor-dialog',
 			resizable: false,
 			classes: ['ironsworn', 'sheet', 'new-actor'],
-			width: 650,
-			height: 200
+			width: 350,
+			height,
+			left: window.innerWidth - 675,
+			top: 40
 		} as FormApplicationOptions)
 	}
 
 	getData(_options?: Application.RenderOptions): any {
+		const rulesets = IronswornSettings.enabledRulesets
+		const classic = rulesets.includes('classic')
+		const starforged = rulesets.includes('starforged')
+
 		return {
-			ironswornToolbox: IronswornSettings.defaultToolbox === 'ironsworn',
-			starforgedToolbox: IronswornSettings.defaultToolbox === 'starforged',
-			sunderedIslesToolbox: IronswornSettings.defaultToolbox === 'sunderedisles'
+			buttons: CreateActorDialog.buttonsForEnabledContent,
+			classic,
+			starforged,
+			both: classic && starforged
 		}
 	}
 
@@ -69,8 +137,9 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		ev.preventDefault()
 
 		// Roll an Ironlander name
-		const tables = await this._ironlanderNameTables()
-		const table = sample(tables)
+		const table = await OracleTable.getByDsId(
+			'oracle_rollable:classic/name/ironlander'
+		)
 		const drawResult = await table?.draw({ displayChat: false })
 
 		this._createWithFolder(
@@ -159,22 +228,11 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		await this.close()
 	}
 
-	async _ironlanderNameTables(): Promise<OracleTable[] | undefined> {
-		const tableA = (await OracleTable.getByDfId(
-			'Ironsworn/Oracles/Name/Ironlander/A'
-		)) as any
-		const tableB = (await OracleTable.getByDfId(
-			'Ironsworn/Oracles/Name/Ironlander/B'
-		)) as any
-		if (tableA && tableB) return [tableA, tableB]
-		return undefined
-	}
-
 	async _randomStarforgedName(): Promise<string | undefined> {
 		const [givenName, familyName] = await OracleTable.ask(
 			[
-				'Starforged/Oracles/Characters/Name/Given_Name',
-				'Starforged/Oracles/Characters/Name/Family_Name'
+				'oracle_rollable:starforged/character/name/given_name',
+				'oracle_rollable:starforged/character/name/family_name'
 			],
 			{ displayChat: false }
 		)

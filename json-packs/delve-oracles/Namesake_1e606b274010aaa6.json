@@ -1,0 +1,471 @@
+{
+  "_id": "1e606b274010aaa6",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Namesake",
+      "category": "Ironsworn/Oracles/Site_Name",
+      "dsid": "oracle_rollable:delve/site_name/namesake"
+    }
+  },
+  "name": "Namesake",
+  "description": "<p>You may also use your preferred name randomizer to generate a Namesake for your site. If you want to add details for the Namesake, use the \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:classic/character\">\n    <i class=\"fa fa-caret-right\"></i> Character oracles\n</a> in <em>Ironsworn Core</em>. This may help inspire a deeper understanding of the history of the site.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Breckon",
+      "_key": "!tables.results!1e606b274010aaa6.471d1fe70c3420c0",
+      "_id": "471d1fe70c3420c0"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Issara",
+      "_key": "!tables.results!1e606b274010aaa6.328c5529659a4665",
+      "_id": "328c5529659a4665"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Milenna",
+      "_key": "!tables.results!1e606b274010aaa6.4b3312bd9c81f27e",
+      "_id": "4b3312bd9c81f27e"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Thorval",
+      "_key": "!tables.results!1e606b274010aaa6.907a2611dfee28c0",
+      "_id": "907a2611dfee28c0"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Khulan",
+      "_key": "!tables.results!1e606b274010aaa6.92330896005804c6",
+      "_id": "92330896005804c6"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Aurvang",
+      "_key": "!tables.results!1e606b274010aaa6.060b9b5cf60997fd",
+      "_id": "060b9b5cf60997fd"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Kalida",
+      "_key": "!tables.results!1e606b274010aaa6.e54893bc6a27a4cf",
+      "_id": "e54893bc6a27a4cf"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Keeara",
+      "_key": "!tables.results!1e606b274010aaa6.116ff52137e0954c",
+      "_id": "116ff52137e0954c"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Andor",
+      "_key": "!tables.results!1e606b274010aaa6.70f0388ba8e9c29b",
+      "_id": "70f0388ba8e9c29b"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Zakaria",
+      "_key": "!tables.results!1e606b274010aaa6.d7361837202050b8",
+      "_id": "d7361837202050b8"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Willa",
+      "_key": "!tables.results!1e606b274010aaa6.02a4ccdca14b19bd",
+      "_id": "02a4ccdca14b19bd"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Etana",
+      "_key": "!tables.results!1e606b274010aaa6.6077118b7d0f8e96",
+      "_id": "6077118b7d0f8e96"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Valgard",
+      "_key": "!tables.results!1e606b274010aaa6.4e7d6d6d7f5bb7a9",
+      "_id": "4e7d6d6d7f5bb7a9"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Kenrick",
+      "_key": "!tables.results!1e606b274010aaa6.f07028d13ab7e0ed",
+      "_id": "f07028d13ab7e0ed"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Wyland",
+      "_key": "!tables.results!1e606b274010aaa6.c53f143cb6442516",
+      "_id": "c53f143cb6442516"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Sidura",
+      "_key": "!tables.results!1e606b274010aaa6.d1142b68c5e62fa7",
+      "_id": "d1142b68c5e62fa7"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Svala",
+      "_key": "!tables.results!1e606b274010aaa6.a207aced3f0ba96f",
+      "_id": "a207aced3f0ba96f"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Kajir",
+      "_key": "!tables.results!1e606b274010aaa6.84980c2ce91b2571",
+      "_id": "84980c2ce91b2571"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Saiven",
+      "_key": "!tables.results!1e606b274010aaa6.eb419924cd94ac6a",
+      "_id": "eb419924cd94ac6a"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Callwen",
+      "_key": "!tables.results!1e606b274010aaa6.c053b3a03a45cf37",
+      "_id": "c053b3a03a45cf37"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Zhan",
+      "_key": "!tables.results!1e606b274010aaa6.a940bb66858d4cd1",
+      "_id": "a940bb66858d4cd1"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Solana",
+      "_key": "!tables.results!1e606b274010aaa6.22b800e2b4d972e5",
+      "_id": "22b800e2b4d972e5"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Ildar",
+      "_key": "!tables.results!1e606b274010aaa6.686c1f7381799a82",
+      "_id": "686c1f7381799a82"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Keelan",
+      "_key": "!tables.results!1e606b274010aaa6.714705aaaf277b6d",
+      "_id": "714705aaaf277b6d"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Thrain",
+      "_key": "!tables.results!1e606b274010aaa6.f06f59eb45229623",
+      "_id": "f06f59eb45229623"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Kynan",
+      "_key": "!tables.results!1e606b274010aaa6.0c6abdbf4a9065e5",
+      "_id": "0c6abdbf4a9065e5"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Jadina",
+      "_key": "!tables.results!1e606b274010aaa6.fe9d92206f9e70cc",
+      "_id": "fe9d92206f9e70cc"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Radek",
+      "_key": "!tables.results!1e606b274010aaa6.a503326e7e8ad6b5",
+      "_id": "a503326e7e8ad6b5"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Wulan",
+      "_key": "!tables.results!1e606b274010aaa6.f0b56d744a1d7f52",
+      "_id": "f0b56d744a1d7f52"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Garion",
+      "_key": "!tables.results!1e606b274010aaa6.68b5cd111a36499e",
+      "_id": "68b5cd111a36499e"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Eysa",
+      "_key": "!tables.results!1e606b274010aaa6.2699cce6cf0169fd",
+      "_id": "2699cce6cf0169fd"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Kolor",
+      "_key": "!tables.results!1e606b274010aaa6.878d89a1b6dbd521",
+      "_id": "878d89a1b6dbd521"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Katarra",
+      "_key": "!tables.results!1e606b274010aaa6.90377fbcc9916f8f",
+      "_id": "90377fbcc9916f8f"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Dain",
+      "_key": "!tables.results!1e606b274010aaa6.6c63830b632156eb",
+      "_id": "6c63830b632156eb"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Farina",
+      "_key": "!tables.results!1e606b274010aaa6.6575ee23b2cd88bf",
+      "_id": "6575ee23b2cd88bf"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Yala",
+      "_key": "!tables.results!1e606b274010aaa6.acd1c7abef2f16a8",
+      "_id": "acd1c7abef2f16a8"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Kodroth",
+      "_key": "!tables.results!1e606b274010aaa6.4c65e1c75f31aa70",
+      "_id": "4c65e1c75f31aa70"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Morien",
+      "_key": "!tables.results!1e606b274010aaa6.7440745a3968a1fa",
+      "_id": "7440745a3968a1fa"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Akida",
+      "_key": "!tables.results!1e606b274010aaa6.4c86ea74d8c26631",
+      "_id": "4c86ea74d8c26631"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Haldorr",
+      "_key": "!tables.results!1e606b274010aaa6.158acdb745fa30a6",
+      "_id": "158acdb745fa30a6"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Nyrad",
+      "_key": "!tables.results!1e606b274010aaa6.d7d916da32217e66",
+      "_id": "d7d916da32217e66"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Edda",
+      "_key": "!tables.results!1e606b274010aaa6.c245788b61cdbc2c",
+      "_id": "c245788b61cdbc2c"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Jorund",
+      "_key": "!tables.results!1e606b274010aaa6.dcad1c000b74c052",
+      "_id": "dcad1c000b74c052"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Morraine",
+      "_key": "!tables.results!1e606b274010aaa6.10b1a168925406a6",
+      "_id": "10b1a168925406a6"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Lindar",
+      "_key": "!tables.results!1e606b274010aaa6.91b61c0cf6afd681",
+      "_id": "91b61c0cf6afd681"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Sithra",
+      "_key": "!tables.results!1e606b274010aaa6.72e68c905221738c",
+      "_id": "72e68c905221738c"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Torgan",
+      "_key": "!tables.results!1e606b274010aaa6.cb1b1d9425df9eef",
+      "_id": "cb1b1d9425df9eef"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Arnorr",
+      "_key": "!tables.results!1e606b274010aaa6.1042352df6e1b78e",
+      "_id": "1042352df6e1b78e"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Thyri",
+      "_key": "!tables.results!1e606b274010aaa6.e3b89c448205910c",
+      "_id": "e3b89c448205910c"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Erisia",
+      "_key": "!tables.results!1e606b274010aaa6.03340f024045e0a0",
+      "_id": "03340f024045e0a0"
+    }
+  ],
+  "folder": "f6b92bad160107de",
+  "sort": 209,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1e606b274010aaa6"
+}

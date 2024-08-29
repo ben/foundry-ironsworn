@@ -67,8 +67,8 @@ export class SiteModel extends foundry.abstract.TypeDataModel<
 	}
 
 	async getDangers() {
-		const revealADanger = await OracleTable.getByDfId(
-			'Ironsworn/Oracles/Moves/Reveal_a_Danger'
+		const revealADanger = await OracleTable.getByDsId(
+			'move.oracle_rollable:delve/delve/reveal_a_danger.reveal_a_danger'
 		)
 		// skip the "Check the theme/domain card" rows
 		const dangerRows = revealADanger?.results.contents.slice(2)

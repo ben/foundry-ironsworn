@@ -1,0 +1,16 @@
+{
+  "name": "Location Theme Oracles",
+  "description": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.\n\nEach theme on the following pages includes a set of oracles.\n\n  * __Feature:__ Use this table to reveal a new aspect of the location.\n  * __Peril:__ Use this table to help envision a complication or hazard.\n  * __Opportunity:__ Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.\n\nYou can answer questions about a place using only the tables provided for a theme, such as when delving into an \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/infested\">\n\t<i class=\"fa fa-caret-right\"></i> Infested\n</a> cave. Or pair a theme with other location oracles for more flavor and variety; for example, you might explore a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/haunted\">\n\t<i class=\"fa fa-caret-right\"></i> Haunted\n</a> \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/grave\">\n\t<i class=\"fa fa-caret-right\"></i> Grave World\n</a>, a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/ruined\">\n\t<i class=\"fa fa-caret-right\"></i> Ruined\n</a> \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict\">\n\t<i class=\"fa fa-caret-right\"></i> Derelict\n</a>, a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/sacred\">\n\t<i class=\"fa fa-caret-right\"></i> Sacred\n</a> \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault\">\n\t<i class=\"fa fa-caret-right\"></i> Precursor Vault\n</a>, or an \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/inhabited\">\n\t<i class=\"fa fa-caret-right\"></i> Inhabited\n</a> \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/settlement\">\n\t<i class=\"fa fa-caret-right\"></i> Settlement\n</a>.\n\nWhen mixing-and-matching a theme with another set of tables, use the techniques described for an __oracle array__ (page 384) to determine which oracle you reference for that question or phase of your exploration.",
+  "type": "RollTable",
+  "_id": "40c330364b963a81",
+  "sort": 370,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Location_Themes",
+      "dsid": "oracle_collection:starforged/location_theme"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!40c330364b963a81"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Companion Assets",
+  "color": "#3d8b8a",
+  "description": "__Companions__ are NPC helpers. When you gain a companion, give them a name and envision their look and personality.\n\nCompanions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} move. When their health is at 0, they are in danger of being killed or destroyed.",
+  "type": "Item",
+  "_id": "fbe54a367c5619ef",
+  "sort": 57,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Companion",
+      "dsid": "asset_collection:starforged/companion"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!fbe54a367c5619ef"
+}

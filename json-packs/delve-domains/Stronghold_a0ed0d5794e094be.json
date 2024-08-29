@@ -1,0 +1,141 @@
+{
+  "_id": "a0ed0d5794e094be",
+  "type": "delve-domain",
+  "name": "Stronghold",
+  "img": "icons/environment/settlement/castle.webp",
+  "system": {
+    "summary": "A fortress secured against trespassers.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Connecting passageways"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Barracks or common quarters"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Large hall"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Workshop or library"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Command center or leadership"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Ladder or stairwell"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Storage"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Kitchen or larder"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Courtyard"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Blocked or guarded path"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Caught in the open"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Chokepoint"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Trap"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Alarm trigger"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 92,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/stronghold"
+    }
+  },
+  "_key": "!items!a0ed0d5794e094be"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Visible Habitation",
+  "description": "",
+  "type": "RollTable",
+  "_id": "577d39c93e7b0a34",
+  "sort": 143,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/island/visible_habitation"
+    }
+  },
+  "folder": "775da3a96cc7c668",
+  "sorting": "a",
+  "_key": "!folders!577d39c93e7b0a34"
+}

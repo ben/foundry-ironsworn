@@ -1,0 +1,104 @@
+{
+  "name": "Sundering",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "truth:sundered_isles/sundering",
+      "dsid": "truth:sundered_isles/sundering"
+    }
+  },
+  "_id": "157472ac83ce20e5",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "A great war left horrible scars upon the isles.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/sundering.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "A great war left horrible scars upon the isles.",
+        "Description": "A generations-old war is only recently ended, and the reminders of that fruitless conflict are all around us. Islands wracked by destruction, seas tainted, people displaced. The cost is immeasurable, but some still squabble over what remains.",
+        "Summary": "A great war left horrible scars upon the isles.",
+        "Quest": "A people, displaced by war, live on a remote island. A recent illness left many sick or dead. Supplies are urgently needed. Why do you swear to give them aid? Who stands against you, and why?",
+        "Roll template": {
+          "Description": "A generations-old war is only recently ended, and the reminders of that fruitless conflict are all around us. Islands wracked by destruction, seas tainted, people displaced. The cost is immeasurable, but some still squabble over what remains."
+        }
+      },
+      "_id": "0e606cad7815d75f",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!157472ac83ce20e5.0e606cad7815d75f"
+    },
+    {
+      "type": "truth",
+      "name": "Eons ago, a vast cataclysm shattered continents.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/sundering.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Eons ago, a vast cataclysm shattered continents.",
+        "Description": "Lands broke apart in an apocalyptic disaster. Powerful cities fell. Fire, lava, and ash scoured what remained. The isles, scattered like broken shards, are the vestiges of these once-great lands, the gravestones of a fallen dominion. Life eventually returned to this realm, but the wounds do not fully heal.",
+        "Summary": "Eons ago, a vast cataclysm shattered continents.",
+        "Quest": "You are haunted by dreams of this ancient cataclysm. In those dreams, you see a grand library of unfathomable scope, the collected knowledge of lost people and fallen dominions. What do you seek within this repository?",
+        "Roll template": {
+          "Description": "Lands broke apart in an apocalyptic disaster. Powerful cities fell. Fire, lava, and ash scoured what remained. The isles, scattered like broken shards, are the vestiges of these once-great lands, the gravestones of a fallen dominion. Life eventually returned to this realm, but the wounds do not fully heal."
+        }
+      },
+      "_id": "2536f2cb3f038ff0",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!157472ac83ce20e5.2536f2cb3f038ff0"
+    },
+    {
+      "type": "truth",
+      "name": "Strange technologies unleashed a reality-fracturing wave of cursed energy, forever reshaping the isles.",
+      "system": {
+        "dsid": "truth.option:sundered_isles/sundering.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "Strange technologies unleashed a reality-fracturing wave of cursed energy, forever reshaping the isles.",
+        "Description": "An ambitious few dabbled in ancient secrets, and in doing so, broke the bonds of reality. Strange energies flowed into our world, allowing uncanny phenomena to take hold. Science and magic took new forms. People and creatures of other realms were cast into our own like jetsam in a turbulent tide. The isles are forever altered by the curse of these chaotic realities.",
+        "Summary": "Strange technologies unleashed a reality-fracturing wave of cursed energy, forever reshaping the isles.",
+        "Quest": "An explorer brings news. They’ve located what they say is a nexus of chaotic energy. If it could be deactivated, the isles might find some measure of peace. Which power or foe seeks to harness this power to their own ends?",
+        "Roll template": {
+          "Description": "An ambitious few dabbled in ancient secrets, and in doing so, broke the bonds of reality. Strange energies flowed into our world, allowing uncanny phenomena to take hold. Science and magic took new forms. People and creatures of other realms were cast into our own like jetsam in a turbulent tide. The isles are forever altered by the curse of these chaotic realities."
+        }
+      },
+      "_id": "e20f1b7515fd60f8",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!157472ac83ce20e5.e20f1b7515fd60f8"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "If you are all that remains of a pre-Sundering people, culture, or tradition, you might be a @Compendium[foundry-ironsworn.starforgedassets.d68e04a72dd54d32]{Vestige}. If the echoes of the cataclysm have left you with unnatural powers, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.a304a030a931cdd7]{Sorcerer}. If you embody the legacy of a deep-dwelling people, you might be @Compendium[foundry-ironsworn.sunderedislesassets.5087a0440ba3299e]{Waterborn}.",
+        "format": 2,
+        "content": "<p>If you are all that remains of a pre-Sundering people, culture, or tradition, you might be a @Compendium[foundry-ironsworn.starforgedassets.d68e04a72dd54d32]{Vestige}. If the echoes of the cataclysm have left you with unnatural powers, you might be a @Compendium[foundry-ironsworn.sunderedislesassets.a304a030a931cdd7]{Sorcerer}. If you embody the legacy of a deep-dwelling people, you might be @Compendium[foundry-ironsworn.sunderedislesassets.5087a0440ba3299e]{Waterborn}.</p>"
+      },
+      "_id": "230ea9c328fda7cb",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!157472ac83ce20e5.230ea9c328fda7cb"
+    }
+  ],
+  "folder": null,
+  "sort": 77,
+  "_key": "!journal!157472ac83ce20e5"
+}

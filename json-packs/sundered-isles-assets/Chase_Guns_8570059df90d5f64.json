@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "8570059df90d5f64",
+  "folder": "38d5b35b5764ca19",
+  "name": "Chase Guns",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your vessel is fitted fore and aft with powerful cannons. When you @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} at a pursuing or fleeing target, take +1 momentum on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per fight, when you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by firing your chase guns to find the range of your target, add +1. On a strong hit, add +1 if you immediately @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike}, and continue to add +1 on each subsequent @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike} as long as you remain in control. If you score a strong hit with a match when using this ability, you damage a vital component; mark progress.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.23ebe48d2b1a1d58]{Face Defeat} in a fight and set a new objective to escape, you may (one time only) immediately @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash} by firing your chase guns as you maneuver away from your foe; if you do, reroll any dice. On a strong hit, take +2 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/module/chase_guns",
+      "dsid": "asset:sundered_isles/module/chase_guns"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!8570059df90d5f64"
+}

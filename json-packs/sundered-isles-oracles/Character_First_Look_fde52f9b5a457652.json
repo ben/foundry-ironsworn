@@ -1,0 +1,380 @@
+{
+  "_id": "fde52f9b5a457652",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/first_look"
+    }
+  },
+  "name": "Character First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Accented",
+      "_key": "!tables.results!fde52f9b5a457652.b646273aff22755e",
+      "_id": "b646273aff22755e"
+    },
+    {
+      "range": [
+        3,
+        5
+      ],
+      "text": "Aged",
+      "_key": "!tables.results!fde52f9b5a457652.38f3670834a3a176",
+      "_id": "38f3670834a3a176"
+    },
+    {
+      "range": [
+        6,
+        8
+      ],
+      "text": "Alluring",
+      "_key": "!tables.results!fde52f9b5a457652.5dfdd65a4193b261",
+      "_id": "5dfdd65a4193b261"
+    },
+    {
+      "range": [
+        9,
+        11
+      ],
+      "text": "Attractive",
+      "_key": "!tables.results!fde52f9b5a457652.b83546b8f0254ba1",
+      "_id": "b83546b8f0254ba1"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Brutish",
+      "_key": "!tables.results!fde52f9b5a457652.cb7d5f3895c5e9dd",
+      "_id": "cb7d5f3895c5e9dd"
+    },
+    {
+      "range": [
+        15,
+        17
+      ],
+      "text": "Commanding",
+      "_key": "!tables.results!fde52f9b5a457652.546da2a17b0b1436",
+      "_id": "546da2a17b0b1436"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Concealed",
+      "_key": "!tables.results!fde52f9b5a457652.9ae642ae7f700bc0",
+      "_id": "9ae642ae7f700bc0"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Distinguished",
+      "_key": "!tables.results!fde52f9b5a457652.835a478eecf5badb",
+      "_id": "835a478eecf5badb"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Distressed",
+      "_key": "!tables.results!fde52f9b5a457652.bf2bb041e17852ec",
+      "_id": "bf2bb041e17852ec"
+    },
+    {
+      "range": [
+        26,
+        28
+      ],
+      "text": "Drunk",
+      "_key": "!tables.results!fde52f9b5a457652.967a80e238b4c49f",
+      "_id": "967a80e238b4c49f"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Encumbered",
+      "_key": "!tables.results!fde52f9b5a457652.9da091f13e22619f",
+      "_id": "9da091f13e22619f"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Fearsome",
+      "_key": "!tables.results!fde52f9b5a457652.be6ced933c0d3e16",
+      "_id": "be6ced933c0d3e16"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Fit",
+      "_key": "!tables.results!fde52f9b5a457652.4ad736feb20d86db",
+      "_id": "4ad736feb20d86db"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "Flashy",
+      "_key": "!tables.results!fde52f9b5a457652.7b4eb12f056fd3ac",
+      "_id": "7b4eb12f056fd3ac"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Furtive",
+      "_key": "!tables.results!fde52f9b5a457652.77d13a7524a89873",
+      "_id": "77d13a7524a89873"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Graceful",
+      "_key": "!tables.results!fde52f9b5a457652.7da91feeb72938de",
+      "_id": "7da91feeb72938de"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Grim",
+      "_key": "!tables.results!fde52f9b5a457652.8f8455acbd6fde14",
+      "_id": "8f8455acbd6fde14"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Guarded",
+      "_key": "!tables.results!fde52f9b5a457652.9a1e199d909595b9",
+      "_id": "9a1e199d909595b9"
+    },
+    {
+      "range": [
+        46,
+        47
+      ],
+      "text": "Haggard",
+      "_key": "!tables.results!fde52f9b5a457652.9ea567867c3b4b6a",
+      "_id": "9ea567867c3b4b6a"
+    },
+    {
+      "range": [
+        48,
+        49
+      ],
+      "text": "Ill-equipped",
+      "_key": "!tables.results!fde52f9b5a457652.0ce1b1e1f2a79f63",
+      "_id": "0ce1b1e1f2a79f63"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "Imposing",
+      "_key": "!tables.results!fde52f9b5a457652.d9138d72b29d7e48",
+      "_id": "d9138d72b29d7e48"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Mysterious",
+      "_key": "!tables.results!fde52f9b5a457652.8e43ae915d95d578",
+      "_id": "8e43ae915d95d578"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Mystical",
+      "_key": "!tables.results!fde52f9b5a457652.8a69a4b1e6cc797b",
+      "_id": "8a69a4b1e6cc797b"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Poised",
+      "_key": "!tables.results!fde52f9b5a457652.acb541b3b962fafd",
+      "_id": "acb541b3b962fafd"
+    },
+    {
+      "range": [
+        60,
+        61
+      ],
+      "text": "Purposeful",
+      "_key": "!tables.results!fde52f9b5a457652.0e4bbfea4de8449a",
+      "_id": "0e4bbfea4de8449a"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Pursued",
+      "_key": "!tables.results!fde52f9b5a457652.b2edb95658f08d75",
+      "_id": "b2edb95658f08d75"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Scarred",
+      "_key": "!tables.results!fde52f9b5a457652.8283ba1c901f4ef7",
+      "_id": "8283ba1c901f4ef7"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Sickly",
+      "_key": "!tables.results!fde52f9b5a457652.b81ec5a06e6b9028",
+      "_id": "b81ec5a06e6b9028"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Slight",
+      "_key": "!tables.results!fde52f9b5a457652.72cb5faddae1d6fc",
+      "_id": "72cb5faddae1d6fc"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Stout",
+      "_key": "!tables.results!fde52f9b5a457652.db82f0883313d46f",
+      "_id": "db82f0883313d46f"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Swaggering",
+      "_key": "!tables.results!fde52f9b5a457652.3350f9d43066ecec",
+      "_id": "3350f9d43066ecec"
+    },
+    {
+      "range": [
+        75,
+        77
+      ],
+      "text": "Tattooed",
+      "_key": "!tables.results!fde52f9b5a457652.190c0fd940e6616b",
+      "_id": "190c0fd940e6616b"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Theatrical",
+      "_key": "!tables.results!fde52f9b5a457652.3df043d3ef7e80aa",
+      "_id": "3df043d3ef7e80aa"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Threatened",
+      "_key": "!tables.results!fde52f9b5a457652.9c89caf46833ddf6",
+      "_id": "9c89caf46833ddf6"
+    },
+    {
+      "range": [
+        84,
+        85
+      ],
+      "text": "Unassuming",
+      "_key": "!tables.results!fde52f9b5a457652.df9552b32bef7712",
+      "_id": "df9552b32bef7712"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "Uniformed",
+      "_key": "!tables.results!fde52f9b5a457652.8cf32549907e72c1",
+      "_id": "8cf32549907e72c1"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "Visibly disabled",
+      "_key": "!tables.results!fde52f9b5a457652.3a6747dff7df59da",
+      "_id": "3a6747dff7df59da"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "Well-armed",
+      "_key": "!tables.results!fde52f9b5a457652.f76eb5f58c90a29d",
+      "_id": "f76eb5f58c90a29d"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "Wounded",
+      "_key": "!tables.results!fde52f9b5a457652.dcd28211d2406670",
+      "_id": "dcd28211d2406670"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Youthful",
+      "_key": "!tables.results!fde52f9b5a457652.c8c319ae5986296c",
+      "_id": "c8c319ae5986296c"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 186,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fde52f9b5a457652"
+}

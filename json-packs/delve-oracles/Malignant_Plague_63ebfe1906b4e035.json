@@ -1,0 +1,111 @@
+{
+  "_id": "63ebfe1906b4e035",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Threat/Malignant_Plague",
+      "category": "Ironsworn/Oracles/Threat",
+      "dsid": "oracle_rollable:delve/threat/malignant_plague"
+    }
+  },
+  "name": "Malignant Plague",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Manifest new symptoms or effects",
+      "_key": "!tables.results!63ebfe1906b4e035.329882ddd1244ce5",
+      "_id": "329882ddd1244ce5"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Infect someone important",
+      "_key": "!tables.results!63ebfe1906b4e035.aadb85382ad8ca3a",
+      "_id": "aadb85382ad8ca3a"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Expand to new territory or communities",
+      "_key": "!tables.results!63ebfe1906b4e035.6f00329ceda3a29d",
+      "_id": "6f00329ceda3a29d"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Allow someone to take advantage",
+      "_key": "!tables.results!63ebfe1906b4e035.00e0dd0cc37318b2",
+      "_id": "00e0dd0cc37318b2"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Allow someone to take the blame",
+      "_key": "!tables.results!63ebfe1906b4e035.76fd95be2d0dc709",
+      "_id": "76fd95be2d0dc709"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Create panic or disorder",
+      "_key": "!tables.results!63ebfe1906b4e035.39ade713d6e0aaed",
+      "_id": "39ade713d6e0aaed"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Force a horrible decision",
+      "_key": "!tables.results!63ebfe1906b4e035.1ebe2bf46eb17aaa",
+      "_id": "1ebe2bf46eb17aaa"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Lure into complacency",
+      "_key": "!tables.results!63ebfe1906b4e035.6179a220576a2e07",
+      "_id": "6179a220576a2e07"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Reveal the root of the sickness",
+      "_key": "!tables.results!63ebfe1906b4e035.35154fada166d77b",
+      "_id": "35154fada166d77b"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Undermine a potential cure",
+      "_key": "!tables.results!63ebfe1906b4e035.e17f05a9190bc9c8",
+      "_id": "e17f05a9190bc9c8"
+    }
+  ],
+  "folder": "b42117d1724e54e9",
+  "sort": 222,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!63ebfe1906b4e035"
+}

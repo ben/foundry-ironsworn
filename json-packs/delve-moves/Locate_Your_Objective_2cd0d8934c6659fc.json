@@ -1,0 +1,66 @@
+{
+  "_id": "2cd0d8934c6659fc",
+  "type": "sfmove",
+  "name": "Locate Your Objective",
+  "img": "icons/dice/d10black.svg",
+  "folder": "e9e254f7a3fc7100",
+  "system": {
+    "dfid": "Ironsworn/Moves/Delve/Locate_Your_Objective",
+    "Category": "Ironsworn/Moves/Delve",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "When __your exploration of a site comes to an end__, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a __strong hit__, you locate your objective and the situation favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.\n\nOn a __weak hit__, you locate your objective but face an unforeseen hazard or complication. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a __miss__, your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic).",
+    "Trigger": {
+      "Text": "When your exploration of a site comes to an end...",
+      "Options": [
+        {
+          "Text": "",
+          "Roll type": "Progress roll",
+          "Method": "Any",
+          "Using": [
+            "Progress Track"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you locate your objective and the situation favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you locate your objective but face an unforeseen hazard or complication. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure)."
+      },
+      "Miss": {
+        "Text": "On a __miss__, your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic).",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 40
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 40,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Delve/Locate_Your_Objective",
+      "dsid": "move:delve/delve/locate_your_objective"
+    }
+  },
+  "_key": "!items!2cd0d8934c6659fc"
+}

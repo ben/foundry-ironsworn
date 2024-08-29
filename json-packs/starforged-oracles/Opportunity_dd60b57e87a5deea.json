@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Engineering/Opportunity",
-      "category": "Starforged/Oracles/Derelicts/Engineering"
+      "category": "Starforged/Oracles/Derelicts/Engineering",
+      "dsid": "oracle_rollable:starforged/derelict/engineering/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Advanced or experimental equipment",
-      "_id": "9d5fe43d85addd58",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dd60b57e87a5deea.9d5fe43d85addd58"
+      "_key": "!tables.results!dd60b57e87a5deea.aa9112b4dbe89fde",
+      "_id": "aa9112b4dbe89fde"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Chance to restore power or function",
-      "_id": "647bbec70dc17f47",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dd60b57e87a5deea.647bbec70dc17f47"
+      "_key": "!tables.results!dd60b57e87a5deea.229efd89f34bb6ad",
+      "_id": "229efd89f34bb6ad"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Helpful plans or schematics",
-      "_id": "b32280057d5d9dc5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dd60b57e87a5deea.b32280057d5d9dc5"
+      "_key": "!tables.results!dd60b57e87a5deea.3b0082b5b42c6c9b",
+      "_id": "3b0082b5b42c6c9b"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Helpful utility bot",
-      "_id": "95fda0fbf3bc718e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dd60b57e87a5deea.95fda0fbf3bc718e"
+      "_key": "!tables.results!dd60b57e87a5deea.e52741ab78be1c62",
+      "_id": "e52741ab78be1c62"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Useful tool or device",
-      "_id": "c4fc76897b5dd4f0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!dd60b57e87a5deea.c4fc76897b5dd4f0"
+      "_key": "!tables.results!dd60b57e87a5deea.ab67a6f92bb51ddd",
+      "_id": "ab67a6f92bb51ddd"
     }
   ],
   "folder": "9851eb5306cbb8fc",
   "sort": 354,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!dd60b57e87a5deea"
 }

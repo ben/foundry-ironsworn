@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Change Your Fate",
   "img": "icons/dice/d10black.svg",
+  "folder": "cb00661cf10b4177",
   "system": {
     "dfid": "Starforged/Moves/Session/Change_Your_Fate",
     "Category": "Starforged/Moves/Session",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment**, pause and identify what needs to be changed. Choose as many options as appropriate.\n\n  * **Reframe:** This didn’t happen the way you first thought. Envision the moment from another perspective in a way that diminishes or changes the content.\n  * **Refocus:** This is not the most important thing happening right now. Envision how the spotlight shifts to change the focus.\n  * **Replace:** This happens but with a small adjustment. Switch out an element and envision how this new detail changes the scenario.\n  * **Redirect:** Adjust the trajectory to involve a helping hand. Envision how another person or party becomes involved.\n  * **Reshape:** The situation changes completely. Envision what happened instead.",
+    "Text": "__When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment__, pause and identify what needs to be changed. Choose as many options as appropriate.\n\n  * __Reframe:__ This didn’t happen the way you first thought. Envision the moment from another perspective in a way that diminishes or changes the content.\n  * __Refocus:__ This is not the most important thing happening right now. Envision how the spotlight shifts to change the focus.\n  * __Replace:__ This happens but with a small adjustment. Switch out an element and envision how this new detail changes the scenario.\n  * __Redirect:__ Adjust the trajectory to involve a helping hand. Envision how another person or party becomes involved.\n  * __Reshape:__ The situation changes completely. Envision what happened instead.",
     "Trigger": {
       "Text": "When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment...",
       "Options": []
@@ -16,65 +17,41 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 143
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#00B3C8",
       "Images": []
     }
   },
   "sort": 143,
-  "folder": "cb00661cf10b4177",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Session/Change_Your_Fate",
+      "dsid": "move:starforged/session/change_your_fate"
+    }
   },
   "_key": "!items!aa6aea2e2f5ce064"
 }

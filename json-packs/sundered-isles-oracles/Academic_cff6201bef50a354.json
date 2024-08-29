@@ -1,0 +1,65 @@
+{
+  "_id": "cff6201bef50a354",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/academic"
+    }
+  },
+  "name": "Academic",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Archaeologist",
+      "_key": "!tables.results!cff6201bef50a354.dc114f39adb52eb4",
+      "_id": "dc114f39adb52eb4"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Cartographer",
+      "_key": "!tables.results!cff6201bef50a354.54dd30a9af2baba2",
+      "_id": "54dd30a9af2baba2"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Historian",
+      "_key": "!tables.results!cff6201bef50a354.0abda1890c79dd8d",
+      "_id": "0abda1890c79dd8d"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Naturalist",
+      "_key": "!tables.results!cff6201bef50a354.c6d424a95ab61a6c",
+      "_id": "c6d424a95ab61a6c"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Philosopher",
+      "_key": "!tables.results!cff6201bef50a354.d7812b0a03d591d5",
+      "_id": "d7812b0a03d591d5"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cff6201bef50a354"
+}

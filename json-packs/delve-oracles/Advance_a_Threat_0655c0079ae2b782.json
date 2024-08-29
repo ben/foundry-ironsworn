@@ -1,0 +1,48 @@
+{
+  "_id": "0655c0079ae2b782",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Advance_a_Threat",
+      "category": "Ironsworn/Moves/Threat",
+      "dsid": "move.oracle_rollable:delve/threat/advance_a_threat.advance_a_threat"
+    }
+  },
+  "name": "Advance a Threat",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, @Compendium[foundry-ironsworn.ironswornmoves.c3696751a921323b]{Reach a Milestone}. Otherwise, mark menace.",
+      "_key": "!tables.results!0655c0079ae2b782.8ddcdf683c2731de",
+      "_id": "8ddcdf683c2731de"
+    },
+    {
+      "range": [
+        31,
+        70
+      ],
+      "text": "The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.",
+      "_key": "!tables.results!0655c0079ae2b782.573130a0dbb8ce71",
+      "_id": "573130a0dbb8ce71"
+    },
+    {
+      "range": [
+        71,
+        100
+      ],
+      "text": "The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.",
+      "_key": "!tables.results!0655c0079ae2b782.d9ea76cd06177a3b",
+      "_id": "d9ea76cd06177a3b"
+    }
+  ],
+  "folder": "0e08d4bb1591c3a9",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0655c0079ae2b782"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Moves/Ask_the_Oracle/Unlikely",
-      "category": "Starforged/Oracles/Moves"
+      "category": "Starforged/Moves/Fate",
+      "dsid": "move.oracle_rollable:starforged/fate/ask_the_oracle.unlikely"
     }
   },
   "name": "Unlikely",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         25
       ],
       "text": "Yes",
-      "_id": "dea33128f89d1ec7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!25538f6a6e7d1565.dea33128f89d1ec7"
+      "_key": "!tables.results!25538f6a6e7d1565.0bb496e71cdf2293",
+      "_id": "0bb496e71cdf2293"
     },
     {
       "range": [
@@ -32,29 +28,12 @@
         100
       ],
       "text": "No",
-      "_id": "1ccaaefd1a4ffa37",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!25538f6a6e7d1565.1ccaaefd1a4ffa37"
+      "_key": "!tables.results!25538f6a6e7d1565.f9b5d79a2b6302d1",
+      "_id": "f9b5d79a2b6302d1"
     }
   ],
-  "folder": "d985dae3484a0e5b",
-  "sort": 229,
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!25538f6a6e7d1565"
 }

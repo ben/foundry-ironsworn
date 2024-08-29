@@ -1,0 +1,110 @@
+{
+  "_id": "f5fef2fa1a15f51a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/sailor"
+    }
+  },
+  "name": "Sailor",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Bosun",
+      "_key": "!tables.results!f5fef2fa1a15f51a.fa632f7d204d40cb",
+      "_id": "fa632f7d204d40cb"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Captain",
+      "_key": "!tables.results!f5fef2fa1a15f51a.75fb91dcaf56f6b3",
+      "_id": "75fb91dcaf56f6b3"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Carpenter",
+      "_key": "!tables.results!f5fef2fa1a15f51a.a8698b0374587e20",
+      "_id": "a8698b0374587e20"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Cook",
+      "_key": "!tables.results!f5fef2fa1a15f51a.edd4d816be77b904",
+      "_id": "edd4d816be77b904"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Deckhand",
+      "_key": "!tables.results!f5fef2fa1a15f51a.e8c91ddd1f82db29",
+      "_id": "e8c91ddd1f82db29"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "First Mate",
+      "_key": "!tables.results!f5fef2fa1a15f51a.b33a87e710c3a930",
+      "_id": "b33a87e710c3a930"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Gunner",
+      "_key": "!tables.results!f5fef2fa1a15f51a.df5c9a738d38f84f",
+      "_id": "df5c9a738d38f84f"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Marine",
+      "_key": "!tables.results!f5fef2fa1a15f51a.47dea34385de38ad",
+      "_id": "47dea34385de38ad"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Master-at-arms",
+      "_key": "!tables.results!f5fef2fa1a15f51a.7f68959dfef01087",
+      "_id": "7f68959dfef01087"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Quartermaster",
+      "_key": "!tables.results!f5fef2fa1a15f51a.1c006fa35b6c378f",
+      "_id": "1c006fa35b6c378f"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 189,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f5fef2fa1a15f51a"
+}

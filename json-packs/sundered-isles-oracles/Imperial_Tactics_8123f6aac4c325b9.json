@@ -1,0 +1,272 @@
+{
+  "_id": "8123f6aac4c325b9",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/empire",
+      "dsid": "oracle_rollable:sundered_isles/faction/empire/tactics"
+    }
+  },
+  "name": "Imperial Tactics",
+  "description": "<p>Empires deploy any number of strategies to expand their power and influence. Use this table to reveal the most visible methods or a current focus for an empire.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Assassination",
+      "_key": "!tables.results!8123f6aac4c325b9.f0a53c958db40122",
+      "_id": "f0a53c958db40122"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Collusion with criminal factions",
+      "_key": "!tables.results!8123f6aac4c325b9.761f6058a04c6f7a",
+      "_id": "761f6058a04c6f7a"
+    },
+    {
+      "range": [
+        7,
+        10
+      ],
+      "text": "Cultural suppression and assimilation",
+      "_key": "!tables.results!8123f6aac4c325b9.60aa2dadad8d6ef0",
+      "_id": "60aa2dadad8d6ef0"
+    },
+    {
+      "range": [
+        11,
+        13
+      ],
+      "text": "Demands of conformity",
+      "_key": "!tables.results!8123f6aac4c325b9.66e5f4e8cf8737aa",
+      "_id": "66e5f4e8cf8737aa"
+    },
+    {
+      "range": [
+        14,
+        17
+      ],
+      "text": "Disciplined military forces",
+      "_key": "!tables.results!8123f6aac4c325b9.f724343c5b934b5a",
+      "_id": "f724343c5b934b5a"
+    },
+    {
+      "range": [
+        18,
+        20
+      ],
+      "text": "Displays of opulence",
+      "_key": "!tables.results!8123f6aac4c325b9.4eae243be8d7c56b",
+      "_id": "4eae243be8d7c56b"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Dogmatic religion",
+      "_key": "!tables.results!8123f6aac4c325b9.8d47a86139571e69",
+      "_id": "8d47a86139571e69"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Elite military units at the vanguard",
+      "_key": "!tables.results!8123f6aac4c325b9.4cda6119f54efb06",
+      "_id": "4cda6119f54efb06"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Embargoes and blockades",
+      "_key": "!tables.results!8123f6aac4c325b9.4bf67870e1b6ecbd",
+      "_id": "4bf67870e1b6ecbd"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Exploitation of natural resources",
+      "_key": "!tables.results!8123f6aac4c325b9.9c3b5d66afd1036f",
+      "_id": "9c3b5d66afd1036f"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Exploitation of workers",
+      "_key": "!tables.results!8123f6aac4c325b9.f1f300e48c9e7054",
+      "_id": "f1f300e48c9e7054"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Exploration and colonization",
+      "_key": "!tables.results!8123f6aac4c325b9.cc90890fcc386809",
+      "_id": "cc90890fcc386809"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Hoarding of relics",
+      "_key": "!tables.results!8123f6aac4c325b9.2f08a852f0c4d05d",
+      "_id": "2f08a852f0c4d05d"
+    },
+    {
+      "range": [
+        48,
+        51
+      ],
+      "text": "Indoctrination and propaganda",
+      "_key": "!tables.results!8123f6aac4c325b9.417fe1ee524333ad",
+      "_id": "417fe1ee524333ad"
+    },
+    {
+      "range": [
+        52,
+        55
+      ],
+      "text": "Industry and commerce",
+      "_key": "!tables.results!8123f6aac4c325b9.522b4d5374f03263",
+      "_id": "522b4d5374f03263"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Mysticism or magic",
+      "_key": "!tables.results!8123f6aac4c325b9.b665a6112230b7e8",
+      "_id": "b665a6112230b7e8"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Naval firepower",
+      "_key": "!tables.results!8123f6aac4c325b9.1d1c084976063123",
+      "_id": "1d1c084976063123"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Privateers and mercenaries",
+      "_key": "!tables.results!8123f6aac4c325b9.a724836b221dbf06",
+      "_id": "a724836b221dbf06"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Proxy wars and subversion",
+      "_key": "!tables.results!8123f6aac4c325b9.0c7de8b2834a453b",
+      "_id": "0c7de8b2834a453b"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Puppet governments",
+      "_key": "!tables.results!8123f6aac4c325b9.8183bd2b6e816f61",
+      "_id": "8183bd2b6e816f61"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Relentless agents or operatives",
+      "_key": "!tables.results!8123f6aac4c325b9.24305e0023fdd239",
+      "_id": "24305e0023fdd239"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Rigid class structures",
+      "_key": "!tables.results!8123f6aac4c325b9.2e43808d15d1d35b",
+      "_id": "2e43808d15d1d35b"
+    },
+    {
+      "range": [
+        80,
+        83
+      ],
+      "text": "Secrecy and espionage",
+      "_key": "!tables.results!8123f6aac4c325b9.6bfd72ba71b92430",
+      "_id": "6bfd72ba71b92430"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "Superstition or prophecy",
+      "_key": "!tables.results!8123f6aac4c325b9.d033c2e88ea6ca76",
+      "_id": "d033c2e88ea6ca76"
+    },
+    {
+      "range": [
+        87,
+        90
+      ],
+      "text": "Theft of resources and riches",
+      "_key": "!tables.results!8123f6aac4c325b9.55fbdf74edc91462",
+      "_id": "55fbdf74edc91462"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "Treaties and alliances",
+      "_key": "!tables.results!8123f6aac4c325b9.605c89b977147c5b",
+      "_id": "605c89b977147c5b"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "Unification of splintered factions",
+      "_key": "!tables.results!8123f6aac4c325b9.ad7a4331acf6f10a",
+      "_id": "ad7a4331acf6f10a"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Unyielding authority and laws",
+      "_key": "!tables.results!8123f6aac4c325b9.81b0075e8b489741",
+      "_id": "81b0075e8b489741"
+    }
+  ],
+  "folder": "5e64db2bcf1b6238",
+  "sort": 181,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8123f6aac4c325b9"
+}

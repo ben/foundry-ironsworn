@@ -1,0 +1,290 @@
+{
+  "_id": "215c8080b9343d3b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/details_cursed"
+    }
+  },
+  "name": "Cursed Shipwreck Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Arcane energies",
+      "_key": "!tables.results!215c8080b9343d3b.1d697740e6f6f2ed",
+      "_id": "1d697740e6f6f2ed"
+    },
+    {
+      "range": [
+        3,
+        6
+      ],
+      "text": "Dead return to life",
+      "_key": "!tables.results!215c8080b9343d3b.c47baf79d234e801",
+      "_id": "c47baf79d234e801"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Eerie phantom music",
+      "_key": "!tables.results!215c8080b9343d3b.daf8f749f16339d3",
+      "_id": "daf8f749f16339d3"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Eldritch artifact",
+      "_key": "!tables.results!215c8080b9343d3b.98a2f9ec77a3a554",
+      "_id": "98a2f9ec77a3a554"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Foreboding message",
+      "_key": "!tables.results!215c8080b9343d3b.4d6cfa558ba5aeef",
+      "_id": "4d6cfa558ba5aeef"
+    },
+    {
+      "range": [
+        15,
+        18
+      ],
+      "text": "Frightful phantom whispers",
+      "_key": "!tables.results!215c8080b9343d3b.cce9e2a81f6241d6",
+      "_id": "cce9e2a81f6241d6"
+    },
+    {
+      "range": [
+        19,
+        22
+      ],
+      "text": "Ghostly crew, going about their duties",
+      "_key": "!tables.results!215c8080b9343d3b.98f5ab53e0912fff",
+      "_id": "98f5ab53e0912fff"
+    },
+    {
+      "range": [
+        23,
+        26
+      ],
+      "text": "Glimpses of a shadowy presence",
+      "_key": "!tables.results!215c8080b9343d3b.ec08884cafccb1d9",
+      "_id": "ec08884cafccb1d9"
+    },
+    {
+      "range": [
+        27,
+        30
+      ],
+      "text": "Haunting visions of the ship's past",
+      "_key": "!tables.results!215c8080b9343d3b.3f91d3ebc82b4edd",
+      "_id": "3f91d3ebc82b4edd"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Infernal machine or device",
+      "_key": "!tables.results!215c8080b9343d3b.dc2117f2a5168ca1",
+      "_id": "dc2117f2a5168ca1"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Lair of a monstrous creature",
+      "_key": "!tables.results!215c8080b9343d3b.12a24a0bc122bcd8",
+      "_id": "12a24a0bc122bcd8"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Monstrous claw marks",
+      "_key": "!tables.results!215c8080b9343d3b.e375b4bcf41a53f0",
+      "_id": "e375b4bcf41a53f0"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Mutated remains of the dead",
+      "_key": "!tables.results!215c8080b9343d3b.bd4522ce3d68baf4",
+      "_id": "bd4522ce3d68baf4"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Objects move of their own accord",
+      "_key": "!tables.results!215c8080b9343d3b.731dee41e19d85f0",
+      "_id": "731dee41e19d85f0"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Rapidly-spreading decay",
+      "_key": "!tables.results!215c8080b9343d3b.c5cb091dc7146301",
+      "_id": "c5cb091dc7146301"
+    },
+    {
+      "range": [
+        47,
+        50
+      ],
+      "text": "Ritual circle or altar",
+      "_key": "!tables.results!215c8080b9343d3b.ecb611f9262039d2",
+      "_id": "ecb611f9262039d2"
+    },
+    {
+      "range": [
+        51,
+        54
+      ],
+      "text": "Rotting stench",
+      "_key": "!tables.results!215c8080b9343d3b.fcb63ab5027d366f",
+      "_id": "fcb63ab5027d366f"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Ship's log tells a dreadful story",
+      "_key": "!tables.results!215c8080b9343d3b.906f4c0fef921e56",
+      "_id": "906f4c0fef921e56"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Signs of a dreadful fate for the crew",
+      "_key": "!tables.results!215c8080b9343d3b.82bc14662c018a47",
+      "_id": "82bc14662c018a47"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Signs of the ship getting underway",
+      "_key": "!tables.results!215c8080b9343d3b.70028c16f53c9dcf",
+      "_id": "70028c16f53c9dcf"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Tortured spirits seeking absolution",
+      "_key": "!tables.results!215c8080b9343d3b.522a975fd80577e2",
+      "_id": "522a975fd80577e2"
+    },
+    {
+      "range": [
+        67,
+        70
+      ],
+      "text": "Unnatural cold",
+      "_key": "!tables.results!215c8080b9343d3b.b55d6b404b466f8e",
+      "_id": "b55d6b404b466f8e"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Unnatural darkness",
+      "_key": "!tables.results!215c8080b9343d3b.b8257d7d57d3ea44",
+      "_id": "b8257d7d57d3ea44"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Unnaturally flooded or air-filled space",
+      "_key": "!tables.results!215c8080b9343d3b.c268e39b99bab91c",
+      "_id": "c268e39b99bab91c"
+    },
+    {
+      "range": [
+        79,
+        82
+      ],
+      "text": "Unnaturally pristine compartment",
+      "_key": "!tables.results!215c8080b9343d3b.7ceaa8154f03d61b",
+      "_id": "7ceaa8154f03d61b"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Unnerving eldritch glyphs",
+      "_key": "!tables.results!215c8080b9343d3b.400b635372f93b20",
+      "_id": "400b635372f93b20"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Victims entombed in ship structure",
+      "_key": "!tables.results!215c8080b9343d3b.4f27c78796348d9e",
+      "_id": "4f27c78796348d9e"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Onset of @Compendium[foundry-ironsworn.sunderedislesoracles.06955e6338aac9c1]{Cursed Weather}",
+      "_key": "!tables.results!215c8080b9343d3b.86293051461003e1",
+      "_id": "86293051461003e1"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0182f479763e4bbe]{Cursed Token}",
+      "_key": "!tables.results!215c8080b9343d3b.45cde6abefc988f8",
+      "_id": "45cde6abefc988f8"
+    },
+    {
+      "range": [
+        93,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.b1cea6878d6a2603]{Cursed Cargo}",
+      "_key": "!tables.results!215c8080b9343d3b.1fe09b67b5192dd5",
+      "_id": "1fe09b67b5192dd5"
+    }
+  ],
+  "folder": "d4fcc34036960bb6",
+  "sort": 202,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!215c8080b9343d3b"
+}

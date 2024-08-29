@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "517078fa992917e7",
+  "folder": "1d5e24a967aa7e62",
+  "name": "Captain's Boat",
+  "system": {
+    "requirement": "",
+    "category": "Support Vehicle",
+    "color": "#495790",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your sleek and speedy personal transport can carry a small number of crew or passengers. When you make a move to outrun a danger, pursue a target, or race against a deadline, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Your boat is armed with light cannons. When you @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash} by firing the cannons, you may add +integrity. If you do, take +1 momentum on a hit, but mark one fewer progress.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Your boat is fitted with impressive or imposing regalia. When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} by seeking to make an impression as you arrive at a location or event, you may roll +integrity. If you do, take +1 momentum or +1 spirit on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Integrity",
+      "max": 3,
+      "value": 3,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Battered",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/support_vehicle/captains_boat",
+      "dsid": "asset:sundered_isles/support_vehicle/captains_boat"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!517078fa992917e7"
+}

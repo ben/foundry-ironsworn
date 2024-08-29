@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Peril/Lifebearing",
-      "category": "Starforged/Oracles/Planets"
+      "category": "Starforged/Oracles/Planets/Peril",
+      "dsid": "oracle_rollable:starforged/planet/peril/lifebearing"
     }
   },
   "name": "Lifebearing",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Corrupted or mutated lifeform",
-      "_id": "0070e44a5f6a65f9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.0070e44a5f6a65f9"
+      "_key": "!tables.results!6973e5b34ea40e49.101c3e3bd6193c18",
+      "_id": "101c3e3bd6193c18"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         6
       ],
       "text": "Signs of a lifeform's power or cunning",
-      "_id": "f89e039c8d168355",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.f89e039c8d168355"
+      "_key": "!tables.results!6973e5b34ea40e49.6df75248aa81d41a",
+      "_id": "6df75248aa81d41a"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         9
       ],
       "text": "Hazardous plant life or malignant spores",
-      "_id": "14de728766e119d5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.14de728766e119d5"
+      "_key": "!tables.results!6973e5b34ea40e49.9a414b44f74e2fec",
+      "_id": "9a414b44f74e2fec"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         12
       ],
       "text": "Lifeform hunts for prey",
-      "_id": "91e4214b97d950ff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.91e4214b97d950ff"
+      "_key": "!tables.results!6973e5b34ea40e49.6db3e37b808247a4",
+      "_id": "6db3e37b808247a4"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         15
       ],
       "text": "Lifeform lairs here",
-      "_id": "60e77f3a2c1b226b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.60e77f3a2c1b226b"
+      "_key": "!tables.results!6973e5b34ea40e49.b6c5f5760a3c2b70",
+      "_id": "b6c5f5760a3c2b70"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         18
       ],
       "text": "Lifeforms guided by a greater threat",
-      "_id": "090a7858dae6ee8b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.090a7858dae6ee8b"
+      "_key": "!tables.results!6973e5b34ea40e49.5629003260b5322d",
+      "_id": "5629003260b5322d"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         21
       ],
       "text": "Lifeforms spooked or stampeding",
-      "_id": "362033d67fcbaed0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.362033d67fcbaed0"
+      "_key": "!tables.results!6973e5b34ea40e49.08877b8c30a56dc1",
+      "_id": "08877b8c30a56dc1"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         24
       ],
       "text": "Threatening lifeform draws near",
-      "_id": "fe68ddb47ceabbf2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.fe68ddb47ceabbf2"
+      "_key": "!tables.results!6973e5b34ea40e49.85a2ae8241846e7a",
+      "_id": "85a2ae8241846e7a"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         27
       ],
       "text": "Life is revealed or takes an unexpected form",
-      "_id": "aecaf8351e3b23f5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.aecaf8351e3b23f5"
+      "_key": "!tables.results!6973e5b34ea40e49.4b03037cb5188fc4",
+      "_id": "4b03037cb5188fc4"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         30
       ],
       "text": "Blocked or impassible path",
-      "_id": "e8937bd241ec9cda",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.e8937bd241ec9cda"
+      "_key": "!tables.results!6973e5b34ea40e49.658fbd9ae65f8b58",
+      "_id": "658fbd9ae65f8b58"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         33
       ],
       "text": "Corrosive substance or environment",
-      "_id": "00eb19dbe663a047",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.00eb19dbe663a047"
+      "_key": "!tables.results!6973e5b34ea40e49.456d69ac787ff656",
+      "_id": "456d69ac787ff656"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         36
       ],
       "text": "Disturbing remains or evidence of death",
-      "_id": "1541987945fcd27a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.1541987945fcd27a"
+      "_key": "!tables.results!6973e5b34ea40e49.1583753de1a2a11f",
+      "_id": "1583753de1a2a11f"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         39
       ],
       "text": "Drastic environmental change",
-      "_id": "12cdf7584bf26ab8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.12cdf7584bf26ab8"
+      "_key": "!tables.results!6973e5b34ea40e49.384dbcd39bc78421",
+      "_id": "384dbcd39bc78421"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         42
       ],
       "text": "Enemy holds this area",
-      "_id": "691569414a17f84b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.691569414a17f84b"
+      "_key": "!tables.results!6973e5b34ea40e49.c462d3be2947acb0",
+      "_id": "c462d3be2947acb0"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         45
       ],
       "text": "Entangling or engulfing hazard",
-      "_id": "7e4d4d7790a57a3e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.7e4d4d7790a57a3e"
+      "_key": "!tables.results!6973e5b34ea40e49.ceedd80761ff08ac",
+      "_id": "ceedd80761ff08ac"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         48
       ],
       "text": "Equipment fails or malfunctions",
-      "_id": "528d7e469da7aab6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.528d7e469da7aab6"
+      "_key": "!tables.results!6973e5b34ea40e49.13ab04f0c751a930",
+      "_id": "13ab04f0c751a930"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         51
       ],
       "text": "Guarded or patrolled path",
-      "_id": "a5d4c6bf39ec57a0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.a5d4c6bf39ec57a0"
+      "_key": "!tables.results!6973e5b34ea40e49.917b9969ee6412b9",
+      "_id": "917b9969ee6412b9"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         54
       ],
       "text": "Led astray",
-      "_id": "7e1e0384d0f09dc6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.7e1e0384d0f09dc6"
+      "_key": "!tables.results!6973e5b34ea40e49.1e3e3220a5760286",
+      "_id": "1e3e3220a5760286"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         57
       ],
       "text": "Lost the path",
-      "_id": "90307ebd1ca413e9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.90307ebd1ca413e9"
+      "_key": "!tables.results!6973e5b34ea40e49.8d34fe8349abaac6",
+      "_id": "8d34fe8349abaac6"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         60
       ],
       "text": "Meteorites fall from the sky",
-      "_id": "3d7dab86dd7657a0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.3d7dab86dd7657a0"
+      "_key": "!tables.results!6973e5b34ea40e49.dfab6ddffad859bd",
+      "_id": "dfab6ddffad859bd"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         63
       ],
       "text": "Irradiated area or object",
-      "_id": "60f69d99650d0969",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.60f69d99650d0969"
+      "_key": "!tables.results!6973e5b34ea40e49.706fba95e8a205a7",
+      "_id": "706fba95e8a205a7"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         66
       ],
       "text": "Realization that something was left behind",
-      "_id": "f456d26a417269ae",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.f456d26a417269ae"
+      "_key": "!tables.results!6973e5b34ea40e49.36c4b6cdd310c331",
+      "_id": "36c4b6cdd310c331"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         69
       ],
       "text": "Seismic or volcanic upheaval",
-      "_id": "2faad8b1f38c12bf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.2faad8b1f38c12bf"
+      "_key": "!tables.results!6973e5b34ea40e49.3645d6e0eb92c694",
+      "_id": "3645d6e0eb92c694"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         72
       ],
       "text": "Signs of a lurking or trailing foe",
-      "_id": "ac9aedef0e7c8fe5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.ac9aedef0e7c8fe5"
+      "_key": "!tables.results!6973e5b34ea40e49.6033275912ffe2bb",
+      "_id": "6033275912ffe2bb"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         75
       ],
       "text": "Storm or atmospheric disruption",
-      "_id": "7a48f3ee5702b047",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.7a48f3ee5702b047"
+      "_key": "!tables.results!6973e5b34ea40e49.446c642854b63c2e",
+      "_id": "446c642854b63c2e"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         78
       ],
       "text": "Toxic or sickening environment",
-      "_id": "e6ca11aea1a94b94",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.e6ca11aea1a94b94"
+      "_key": "!tables.results!6973e5b34ea40e49.bdbdf68623be89e8",
+      "_id": "bdbdf68623be89e8"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         81
       ],
       "text": "Trap or alarm",
-      "_id": "1f301d2dcf34159b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.1f301d2dcf34159b"
+      "_key": "!tables.results!6973e5b34ea40e49.c337e8d6a368bf04",
+      "_id": "c337e8d6a368bf04"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         84
       ],
       "text": "Treacherous or arduous path",
-      "_id": "a83d4faaf04b90e0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.a83d4faaf04b90e0"
+      "_key": "!tables.results!6973e5b34ea40e49.aee3e4d07c08daa9",
+      "_id": "aee3e4d07c08daa9"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         87
       ],
       "text": "Troubling visions or apparitions",
-      "_id": "aab51928d0a50957",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.aab51928d0a50957"
+      "_key": "!tables.results!6973e5b34ea40e49.87dc23557b0e0641",
+      "_id": "87dc23557b0e0641"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         90
       ],
       "text": "Visibility hindered by atmospheric effects",
-      "_id": "d90b989e69e4dc9f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.d90b989e69e4dc9f"
+      "_key": "!tables.results!6973e5b34ea40e49.fe04084a9330f806",
+      "_id": "fe04084a9330f806"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         93
       ],
       "text": "Worrying arrival of a ship or vehicle",
-      "_id": "fa7bbb2443fd81dc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.fa7bbb2443fd81dc"
+      "_key": "!tables.results!6973e5b34ea40e49.ee9d90713725bc92",
+      "_id": "ee9d90713725bc92"
     },
     {
       "range": [
@@ -452,27 +298,17 @@
         96
       ],
       "text": "Wreckage or ruins portend a new threat",
-      "_id": "37f1660fcc1eb628",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.37f1660fcc1eb628"
+      "_key": "!tables.results!6973e5b34ea40e49.645514e274734ff2",
+      "_id": "645514e274734ff2"
     },
     {
       "range": [
         97,
         99
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "66d03ac4bc5a3be1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.66d03ac4bc5a3be1"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!6973e5b34ea40e49.3b304bf94204f6ec",
+      "_id": "3b304bf94204f6ec"
     },
     {
       "range": [
@@ -480,29 +316,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "6b596a0b327d37d1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6973e5b34ea40e49.6b596a0b327d37d1"
+      "_key": "!tables.results!6973e5b34ea40e49.6f577735e7b8f0c2",
+      "_id": "6f577735e7b8f0c2"
     }
   ],
   "folder": "83f8169fbabaecbc",
-  "sort": 320,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!6973e5b34ea40e49"
 }

@@ -1,0 +1,27 @@
+{
+  "_id": "97d1002e4ffee3df",
+  "type": "progress",
+  "name": "Kraken",
+  "img": "icons/creatures/fish/squid-kraken-orange.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Gargantuan size</p>\n<p class=\"nogrow\">Grasping tentacles</p>\n<p class=\"nogrow\">Beaked maw</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Lurk in unfathomable depths</p>\n<p class=\"nogrow\">Destroy those who would trespass</p>\n<p class=\"nogrow\">Inflict terror</p>\n<p class=\"nogrow\">Shatter ships</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Grapple and crush</p>\n<p class=\"nogrow\">Attack from every direction</p>\n<p class=\"nogrow\">Sweep sailors from the deck</p>\n</div>\n</div>\n\n<p>The kraken is a sea beast, as large as the mightiest longship. It is octopoid in form, with eight arms, two longer feeding tentacles, and a beak-like mouth. It emerges from the depths to hunt whales, sharks, and other large sea creatures. It is also prone to attack any Ironlander ships which stray into its waters, plucking the crew off the deck and crushing the vessel as easily as one would snap a piece of kindling.</p>\n\n<blockquote>Quest Starter: <p>A kraken lurks at the mouth of a fjord. Fisher folk refuse to sail those waters, and trade ships rarely survive the passage. The settlement on the fjord cannot survive without resupply, and overland travel is impossible during this harsh winter. Elders tell of the Dawnrunner, a blessed longship of the original settlers, sealed away in a @Compendium[foundry-ironsworn.ironsworndelvethemes.8555753de47119a1]{Hallowed} @Compendium[foundry-ironsworn.ironsworndelvedomains.40439d5f28e56495]{Sea Cave} with the body of its legendary captain. Only this ship, it is said, can outrun the kraken.</p></blockquote>",
+    "rank": 5,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "e31350d7e40b7d78",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/beasts/kraken"
+    }
+  },
+  "_key": "!items!97d1002e4ffee3df"
+}

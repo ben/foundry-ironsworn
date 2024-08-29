@@ -1,0 +1,17 @@
+{
+  "name": "Failure Moves",
+  "color": "#4F5A69",
+  "description": "Failure is a key part of your journey within the Ironlands. If you’d like to make those failures a more influential aspect of your character’s evolution—while taking a bit of the sting out of rolling a miss—use these optional mechanics.",
+  "type": "Item",
+  "_id": "cc14d0c54f0c2869",
+  "sort": 58,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Failure",
+      "dsid": "move_category:delve/failure"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!cc14d0c54f0c2869"
+}

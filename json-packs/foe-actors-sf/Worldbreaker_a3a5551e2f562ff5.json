@@ -1,0 +1,53 @@
+{
+  "name": "Worldbreaker",
+  "img": "icons/creatures/abilities/mouth-teeth-rows-white.webp",
+  "type": "foe",
+  "_id": "a3a5551e2f562ff5",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Worldbreaker",
+    "texture": {
+      "src": "icons/creatures/abilities/mouth-teeth-rows-white.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "e7559c0f48fc1dfb",
+      "type": "progress",
+      "name": "Worldbreaker",
+      "img": "icons/creatures/abilities/mouth-teeth-rows-white.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Titanic worm-like creatures</p>\n<p class=\"nogrow\">Gaping maw with rotating, earth-grinding teeth</p>\n<p class=\"nogrow\">Thunderous cry</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Lurk within carved depths</p>\n<p class=\"nogrow\">Shape the landscape</p>\n<p class=\"nogrow\">Endlessly pursue prey</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Detect prey through vibrations</p>\n<p class=\"nogrow\">Shatter stone and steel</p>\n</div>\n</div>\n\n<p>The scale and strength of the worldbreakers is so beyond our reckoning that some consider them godlike beings. Capable of thriving on verdant jungle worlds, frozen planets, worlds scorched by volcanic activity, and even within barren asteroids in the vacuum of space, these worms possess a wisdom and a cunning that makes them a deadly threat for even the most competent spacer.</p>\n<p>Worldbreakers range in size from about the size of a cargo hauler to an unfathomable scale that dwarfs our largest starship. They bore tunnels to pursue their prey, and hibernate in those dark depths to conserve energy. Though blind, worldbreaker worms can detect even the subtlest of footfalls, and they follow these vibrations to eventually consume their quarry—along with any other creatures, starships, or structures that happen to be nearby.</p>\n\n<blockquote>Quest Starter: <p>On a lush world at the edge of the Terminus, a titanic worldbreaker worm holds sway. One faction seeks to destroy the worm so that the riches of this place can be harvested. Another swears to protect it. On which side do you fall?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.94f8f295090cb8df]{Worldbreaker brood}</li>\n<li>@Compendium[foundry-ironsworn.starforgedencounters.dbf123295e6b89bf]{Elder worm}</li>\n</ul>",
+        "rank": 4,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:starforged/sample_npcs/worldbreaker"
+        }
+      },
+      "_key": "!actors.items!a3a5551e2f562ff5.e7559c0f48fc1dfb"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/worldbreaker"
+    }
+  },
+  "_key": "!actors!a3a5551e2f562ff5"
+}

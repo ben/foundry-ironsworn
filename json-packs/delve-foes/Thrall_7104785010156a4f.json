@@ -1,0 +1,27 @@
+{
+  "_id": "7104785010156a4f",
+  "type": "progress",
+  "name": "Thrall",
+  "img": "icons/creatures/abilities/mouth-teeth-human.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Sickly countenance</p>\n<p class=\"nogrow\">Glimpses of their true nature</p>\n<p class=\"nogrow\">A clash of personalities</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Endure beyond death</p>\n<p class=\"nogrow\">Coerce and manipulate</p>\n<p class=\"nogrow\">Stifle the will of the host</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Reveal their true self</p>\n<p class=\"nogrow\">Lash out with unnatural strength</p>\n</div>\n</div>\n\n<p>A thrall is a living person controlled by the will of a powerful undead spirit. The malignant presence can lie dormant for some time, feeding on the suffering of the host and subtly manipulating them to achieve its mysterious and often malevolent ends. Once the host is weakened, the spirit supplants their will entirely.</p>\n\n<blockquote>Quest Starter: <p>A spirit has taken possession of someone you care about. They are fading, and will soon be a thrall to its will. Within a @Compendium[foundry-ironsworn.ironsworndelvethemes.064f6b24c7aace9a]{Haunted} @Compendium[foundry-ironsworn.ironsworndelvedomains.606c2b87864c1a5e]{Barrow}, the spirit’s remains lie entombed. What ritual must you enact there to banish this foul presence?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "dc29320f4e7ca59c",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/horrors/thrall"
+    }
+  },
+  "_key": "!items!7104785010156a4f"
+}

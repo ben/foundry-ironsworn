@@ -18,6 +18,11 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
+		"@datasworn/core": "../datasworn/pkg/nodejs/@datasworn/core",
+		"@datasworn/ironsworn-classic": "../datasworn/pkg/nodejs/@datasworn/ironsworn-classic",
+		"@datasworn/ironsworn-classic-delve": "../datasworn/pkg/nodejs/@datasworn/ironsworn-classic-delve",
+		"@datasworn/starforged": "../datasworn/pkg/nodejs/@datasworn/starforged",
+		"@datasworn/sundered-isles": "../datasworn/pkg/nodejs/@datasworn/sundered-isles",
 		"@foundryvtt/foundryvtt-cli": "^1.0",
 		"@league-of-foundry-developers/foundry-vtt-types": "github:rsek/foundry-vtt-types#v10-journal",
 		"@mavrin/stylelint-declaration-use-css-custom-properties": "^3.0.1",
@@ -73,5 +78,8 @@
 	},
 	"browserslist": [
 		"defaults"
-	]
+	],
+	"devDependencies": {
+		"showdown": "^2.1.0"
+	}
 }

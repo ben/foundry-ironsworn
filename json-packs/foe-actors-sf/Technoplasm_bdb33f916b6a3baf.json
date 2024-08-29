@@ -1,0 +1,53 @@
+{
+  "name": "Technoplasm",
+  "img": "icons/creatures/slimes/slime-movement-pseudopods-blue.webp",
+  "type": "foe",
+  "_id": "bdb33f916b6a3baf",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Technoplasm",
+    "texture": {
+      "src": "icons/creatures/slimes/slime-movement-pseudopods-blue.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "831035c346c2296c",
+      "type": "progress",
+      "name": "Technoplasm",
+      "img": "icons/creatures/slimes/slime-movement-pseudopods-blue.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Machines fused with biological corruption</p>\n<p class=\"nogrow\">Creeping ooze, scintillating with energy</p>\n<p class=\"nogrow\">Writhing, grasping pseudopods</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Infect and control machines and computer systems</p>\n<p class=\"nogrow\">Expand and multiply</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Use pseudopods to lash out and grapple</p>\n<p class=\"nogrow\">Unleash infected machines</p>\n<p class=\"nogrow\">Overwhelm and engulf</p>\n</div>\n</div>\n\n<p>Theorized to be a precursor bioweapon that persisted long beyond the death of its creators, technoplasm is a malignant lifeform that infects, mutates, and controls machines, robots, and computer systems.</p>\n<p>Technoplasm infestations are tenacious, cunning, and dangerous to eliminate. When in doubt, burn it and deal with the aftermath that comes with generous applications of fire. A ship or settlement with a large outbreak is likely too far gone and best abandoned, although some suggest every infection has its source; if you somehow find and destroy the heart of a technoplasm infestation, can you kill it entirely?</p>\n\n<blockquote>Quest Starter: <p>An outcast cult believes technoplasm is the ultimate synthesis of machine and flesh. They are plotting to unleash it upon populated space. What decisive first strike have they set in motion, and how do you learn of their scheme?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.63ba17a1765b1d08]{Infected bot}</li>\n<li>@Compendium[foundry-ironsworn.starforgedencounters.95112b62d4c65740]{Scourge ship}</li>\n</ul>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:starforged/sample_npcs/technoplasm"
+        }
+      },
+      "_key": "!actors.items!bdb33f916b6a3baf.831035c346c2296c"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/technoplasm"
+    }
+  },
+  "_key": "!actors!bdb33f916b6a3baf"
+}

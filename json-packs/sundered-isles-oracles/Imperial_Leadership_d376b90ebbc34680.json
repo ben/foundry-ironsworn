@@ -1,0 +1,110 @@
+{
+  "_id": "d376b90ebbc34680",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/empire",
+      "dsid": "oracle_rollable:sundered_isles/faction/empire/leadership"
+    }
+  },
+  "name": "Imperial Leadership",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Assembly or council",
+      "_key": "!tables.results!d376b90ebbc34680.0df9cc5557a341c0",
+      "_id": "0df9cc5557a341c0"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Dynastic ruler",
+      "_key": "!tables.results!d376b90ebbc34680.b78ea9ed3a4aabf9",
+      "_id": "b78ea9ed3a4aabf9"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Military leader",
+      "_key": "!tables.results!d376b90ebbc34680.de26c01a9a41fa4d",
+      "_id": "de26c01a9a41fa4d"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Prophesied ruler",
+      "_key": "!tables.results!d376b90ebbc34680.3245930e35c56f52",
+      "_id": "3245930e35c56f52"
+    },
+    {
+      "range": [
+        36,
+        45
+      ],
+      "text": "Regent",
+      "_key": "!tables.results!d376b90ebbc34680.744dd84767e07372",
+      "_id": "744dd84767e07372"
+    },
+    {
+      "range": [
+        46,
+        55
+      ],
+      "text": "Regional governors",
+      "_key": "!tables.results!d376b90ebbc34680.829e11507b86519f",
+      "_id": "829e11507b86519f"
+    },
+    {
+      "range": [
+        56,
+        65
+      ],
+      "text": "Religious leader",
+      "_key": "!tables.results!d376b90ebbc34680.f1523ca230b2f415",
+      "_id": "f1523ca230b2f415"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Self-appointed dictator",
+      "_key": "!tables.results!d376b90ebbc34680.970d4823dc902f0e",
+      "_id": "970d4823dc902f0e"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "Wealthy elite",
+      "_key": "!tables.results!d376b90ebbc34680.c8986481425b125a",
+      "_id": "c8986481425b125a"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Power struggle (roll twice)",
+      "_key": "!tables.results!d376b90ebbc34680.50fd87670ee9d90b",
+      "_id": "50fd87670ee9d90b"
+    }
+  ],
+  "folder": "5e64db2bcf1b6238",
+  "sort": 181,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d376b90ebbc34680"
+}

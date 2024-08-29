@@ -98,13 +98,18 @@
         "ironswornmoves",
         "ironswornassets",
         "ironswornfoes",
-        "ironswornscenes"
+        "ironswornscenes",
+        "ironsworntruths"
       ]
     },
     {
       "name": "Ironsworn: Delve",
       "color": "#444444",
       "packs": [
+        "ironsworndelvefoes",
+        "foeactorsdelve",
+        "ironsworndelvemoves",
+        "ironsworndelveoracles",
         "ironsworndelvethemes",
         "ironsworndelvedomains"
       ]
@@ -126,7 +131,11 @@
       "name": "Sundered Isles Rulebook",
       "color": "#444444",
       "packs": [
-        "sundered-isles-charts"
+        "sundered-isles-charts",
+        "sunderedislesassets",
+        "sunderedislesmoves",
+        "sunderedislesoracles",
+        "sunderedislestruths"
       ]
     }
   ],
@@ -136,6 +145,13 @@
       "label": "Ironsworn Foe Actors",
       "system": "foundry-ironsworn",
       "path": "packs/foe-actors-is",
+      "type": "Actor"
+    },
+    {
+      "name": "foeactorsdelve",
+      "label": "Delve Foe Actors",
+      "system": "foundry-ironsworn",
+      "path": "packs/foe-actors-delve",
       "type": "Actor"
     },
     {
@@ -167,6 +183,20 @@
       "type": "Item"
     },
     {
+      "name": "ironsworndelvemoves",
+      "label": "Ironsworn Delve Moves",
+      "system": "foundry-ironsworn",
+      "path": "packs/delve-moves",
+      "type": "Item"
+    },
+    {
+      "name": "ironsworndelveoracles",
+      "label": "Ironsworn Delve Oracles",
+      "system": "foundry-ironsworn",
+      "path": "packs/delve-oracles",
+      "type": "RollTable"
+    },
+    {
       "name": "ironsworndelvethemes",
       "label": "Ironsworn Delve Themes",
       "system": "foundry-ironsworn",
@@ -188,6 +218,13 @@
       "type": "Item"
     },
     {
+      "name": "ironsworndelvefoes",
+      "label": "Delve Foes",
+      "system": "foundry-ironsworn",
+      "path": "packs/delve-foes",
+      "type": "Item"
+    },
+    {
       "name": "ironswornscenes",
       "label": "Ironsworn Maps",
       "system": "foundry-ironsworn",
@@ -195,17 +232,17 @@
       "type": "Scene"
     },
     {
+      "name": "ironsworntruths",
+      "label": "Ironsworn Setting Truths",
+      "system": "foundry-ironsworn",
+      "path": "packs/ironsworn-truths",
+      "type": "JournalEntry"
+    },
+    {
       "name": "starforged-sectors",
       "label": "Starforged Scenes",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-sectors",
-      "type": "Scene"
-    },
-    {
-      "name": "sundered-isles-charts",
-      "label": "Sundered Isles Charts",
-      "system": "foundry-ironsworn",
-      "path": "packs/sundered-isles-charts",
       "type": "Scene"
     },
     {
@@ -249,6 +286,41 @@
       "system": "foundry-ironsworn",
       "path": "packs/macros",
       "type": "Macro"
+    },
+    {
+      "name": "sundered-isles-charts",
+      "label": "Sundered Isles Charts",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-charts",
+      "type": "Scene"
+    },
+    {
+      "name": "sunderedislesassets",
+      "label": "Sundered Isles Assets",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-assets",
+      "type": "Item"
+    },
+    {
+      "name": "sunderedislesmoves",
+      "label": "Sundered Isles Moves",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-moves",
+      "type": "Item"
+    },
+    {
+      "name": "sunderedislesoracles",
+      "label": "Sundered Isles Oracles",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-oracles",
+      "type": "RollTable"
+    },
+    {
+      "name": "sunderedislestruths",
+      "label": "Sundered Isles Setting Truths",
+      "system": "foundry-ironsworn",
+      "path": "packs/sundered-isles-truths",
+      "type": "JournalEntry"
     }
   ],
   "languages": [

@@ -1,0 +1,111 @@
+{
+  "_id": "e089f0ce410c93b6",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Stronghold",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/stronghold"
+    }
+  },
+  "name": "Stronghold",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Bastion",
+      "_key": "!tables.results!e089f0ce410c93b6.5b07ac13f1bfda2c",
+      "_id": "5b07ac13f1bfda2c"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Citadel",
+      "_key": "!tables.results!e089f0ce410c93b6.5bcbf6a46c5b2be4",
+      "_id": "5bcbf6a46c5b2be4"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Fortress",
+      "_key": "!tables.results!e089f0ce410c93b6.bb79fcc9d865346b",
+      "_id": "bb79fcc9d865346b"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Garrison",
+      "_key": "!tables.results!e089f0ce410c93b6.d28f4ae0d86e0b38",
+      "_id": "d28f4ae0d86e0b38"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Haven",
+      "_key": "!tables.results!e089f0ce410c93b6.14b798a9e4306214",
+      "_id": "14b798a9e4306214"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Keep",
+      "_key": "!tables.results!e089f0ce410c93b6.42693bbdc9a0803e",
+      "_id": "42693bbdc9a0803e"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Outpost",
+      "_key": "!tables.results!e089f0ce410c93b6.c38d5d23d456de45",
+      "_id": "c38d5d23d456de45"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Refuge",
+      "_key": "!tables.results!e089f0ce410c93b6.9439a077fccc5148",
+      "_id": "9439a077fccc5148"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sanctuary",
+      "_key": "!tables.results!e089f0ce410c93b6.f350743aae3544cd",
+      "_id": "f350743aae3544cd"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Watch",
+      "_key": "!tables.results!e089f0ce410c93b6.07d11770eb0ff6dc",
+      "_id": "07d11770eb0ff6dc"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 211,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e089f0ce410c93b6"
+}

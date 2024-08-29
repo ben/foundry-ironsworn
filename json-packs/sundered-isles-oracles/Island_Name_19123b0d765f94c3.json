@@ -1,0 +1,920 @@
+{
+  "_id": "19123b0d765f94c3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island",
+      "dsid": "oracle_rollable:sundered_isles/island/name"
+    }
+  },
+  "name": "Island Name",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Aegis",
+      "_key": "!tables.results!19123b0d765f94c3.dc797818e82f44c8",
+      "_id": "dc797818e82f44c8"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Akun",
+      "_key": "!tables.results!19123b0d765f94c3.ed696a9c3fc899d2",
+      "_id": "ed696a9c3fc899d2"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Amara",
+      "_key": "!tables.results!19123b0d765f94c3.c64caa7d51d42b35",
+      "_id": "c64caa7d51d42b35"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Amaryllis",
+      "_key": "!tables.results!19123b0d765f94c3.28e4215a785fd326",
+      "_id": "28e4215a785fd326"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Amber",
+      "_key": "!tables.results!19123b0d765f94c3.b423cdc48d04b7a0",
+      "_id": "b423cdc48d04b7a0"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Amity",
+      "_key": "!tables.results!19123b0d765f94c3.5f865f5a33114091",
+      "_id": "5f865f5a33114091"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Anchor",
+      "_key": "!tables.results!19123b0d765f94c3.9a4ffd4d4ba0db75",
+      "_id": "9a4ffd4d4ba0db75"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Apex",
+      "_key": "!tables.results!19123b0d765f94c3.d88fd9b2978f54c1",
+      "_id": "d88fd9b2978f54c1"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Arrowhead",
+      "_key": "!tables.results!19123b0d765f94c3.b3cd4f3381ba9078",
+      "_id": "b3cd4f3381ba9078"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Atamu",
+      "_key": "!tables.results!19123b0d765f94c3.094d9a16a4673705",
+      "_id": "094d9a16a4673705"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Auki",
+      "_key": "!tables.results!19123b0d765f94c3.5846eacade93c261",
+      "_id": "5846eacade93c261"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Avian",
+      "_key": "!tables.results!19123b0d765f94c3.d73e17deb3109ced",
+      "_id": "d73e17deb3109ced"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Azure",
+      "_key": "!tables.results!19123b0d765f94c3.66aa4af1b213ca63",
+      "_id": "66aa4af1b213ca63"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Barrier",
+      "_key": "!tables.results!19123b0d765f94c3.0f9b5df8ba4134fb",
+      "_id": "0f9b5df8ba4134fb"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Blackrock",
+      "_key": "!tables.results!19123b0d765f94c3.edd9c2ebdeda738a",
+      "_id": "edd9c2ebdeda738a"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Blade",
+      "_key": "!tables.results!19123b0d765f94c3.40cb643bc588a5b8",
+      "_id": "40cb643bc588a5b8"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Boulder",
+      "_key": "!tables.results!19123b0d765f94c3.7be3e7db7fdd0646",
+      "_id": "7be3e7db7fdd0646"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Carmine",
+      "_key": "!tables.results!19123b0d765f94c3.32c9e5777fde7c52",
+      "_id": "32c9e5777fde7c52"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Carrick",
+      "_key": "!tables.results!19123b0d765f94c3.a907fe9d939f9a09",
+      "_id": "a907fe9d939f9a09"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Colossus",
+      "_key": "!tables.results!19123b0d765f94c3.9164a157d6d92573",
+      "_id": "9164a157d6d92573"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Coral",
+      "_key": "!tables.results!19123b0d765f94c3.eb20abaff2cf959b",
+      "_id": "eb20abaff2cf959b"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Crag",
+      "_key": "!tables.results!19123b0d765f94c3.02d6e508e3d9b48b",
+      "_id": "02d6e508e3d9b48b"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Crater",
+      "_key": "!tables.results!19123b0d765f94c3.b121b60d685def14",
+      "_id": "b121b60d685def14"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Crescent",
+      "_key": "!tables.results!19123b0d765f94c3.30cf600b7c7c2429",
+      "_id": "30cf600b7c7c2429"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Crown",
+      "_key": "!tables.results!19123b0d765f94c3.944259c568f04c89",
+      "_id": "944259c568f04c89"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Dagger",
+      "_key": "!tables.results!19123b0d765f94c3.dbc26341363e91e9",
+      "_id": "dbc26341363e91e9"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Denaga",
+      "_key": "!tables.results!19123b0d765f94c3.b72dfcfc0358fe14",
+      "_id": "b72dfcfc0358fe14"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Diamond",
+      "_key": "!tables.results!19123b0d765f94c3.9d89d424f89e52b5",
+      "_id": "9d89d424f89e52b5"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Dragon",
+      "_key": "!tables.results!19123b0d765f94c3.08cea27185137c41",
+      "_id": "08cea27185137c41"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Emerald",
+      "_key": "!tables.results!19123b0d765f94c3.e529e138f3592ac7",
+      "_id": "e529e138f3592ac7"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Emira",
+      "_key": "!tables.results!19123b0d765f94c3.e3055b87354d0857",
+      "_id": "e3055b87354d0857"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Espirion",
+      "_key": "!tables.results!19123b0d765f94c3.307c4746e557ce07",
+      "_id": "307c4746e557ce07"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Flint",
+      "_key": "!tables.results!19123b0d765f94c3.5535b05344e97f3e",
+      "_id": "5535b05344e97f3e"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Garrison",
+      "_key": "!tables.results!19123b0d765f94c3.b68433640a35d8a7",
+      "_id": "b68433640a35d8a7"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Gull",
+      "_key": "!tables.results!19123b0d765f94c3.f5c5d9a48ca98b5c",
+      "_id": "f5c5d9a48ca98b5c"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Hakana",
+      "_key": "!tables.results!19123b0d765f94c3.7e13a8c526039805",
+      "_id": "7e13a8c526039805"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Halcyon",
+      "_key": "!tables.results!19123b0d765f94c3.e7615df722a570e7",
+      "_id": "e7615df722a570e7"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Harlock",
+      "_key": "!tables.results!19123b0d765f94c3.3bf9044a0a992e3a",
+      "_id": "3bf9044a0a992e3a"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Hideaway",
+      "_key": "!tables.results!19123b0d765f94c3.6e0e375fd97caf9b",
+      "_id": "6e0e375fd97caf9b"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Hook",
+      "_key": "!tables.results!19123b0d765f94c3.fa77a0b86d9ac7bd",
+      "_id": "fa77a0b86d9ac7bd"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Horn",
+      "_key": "!tables.results!19123b0d765f94c3.35804fec5c1b99a2",
+      "_id": "35804fec5c1b99a2"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Ignis",
+      "_key": "!tables.results!19123b0d765f94c3.f6f420752712474e",
+      "_id": "f6f420752712474e"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Iron",
+      "_key": "!tables.results!19123b0d765f94c3.8f3fc77a839e8ac9",
+      "_id": "8f3fc77a839e8ac9"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Kahatu",
+      "_key": "!tables.results!19123b0d765f94c3.ae4add077a1938fd",
+      "_id": "ae4add077a1938fd"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Kairos",
+      "_key": "!tables.results!19123b0d765f94c3.527a8f72e9bf3994",
+      "_id": "527a8f72e9bf3994"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Kamua",
+      "_key": "!tables.results!19123b0d765f94c3.cd53ec2c8a5bb439",
+      "_id": "cd53ec2c8a5bb439"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Kathos",
+      "_key": "!tables.results!19123b0d765f94c3.20c891bd65706381",
+      "_id": "20c891bd65706381"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Kepara",
+      "_key": "!tables.results!19123b0d765f94c3.7c4bb9d7ecd9bb47",
+      "_id": "7c4bb9d7ecd9bb47"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Keyana",
+      "_key": "!tables.results!19123b0d765f94c3.8760a29caf332458",
+      "_id": "8760a29caf332458"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Kiora",
+      "_key": "!tables.results!19123b0d765f94c3.8386bf24f5a62086",
+      "_id": "8386bf24f5a62086"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Kiritari",
+      "_key": "!tables.results!19123b0d765f94c3.254080e50c35c43a",
+      "_id": "254080e50c35c43a"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Kortaka",
+      "_key": "!tables.results!19123b0d765f94c3.491af9d7ae41a4cb",
+      "_id": "491af9d7ae41a4cb"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Kouri",
+      "_key": "!tables.results!19123b0d765f94c3.6c15146eead5d8b8",
+      "_id": "6c15146eead5d8b8"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Kytha",
+      "_key": "!tables.results!19123b0d765f94c3.61bf281e45c99011",
+      "_id": "61bf281e45c99011"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Lahan",
+      "_key": "!tables.results!19123b0d765f94c3.9227ace75f23b994",
+      "_id": "9227ace75f23b994"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Maheena",
+      "_key": "!tables.results!19123b0d765f94c3.550cc3452c4bb80f",
+      "_id": "550cc3452c4bb80f"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Mako",
+      "_key": "!tables.results!19123b0d765f94c3.8262f0ed18964ee2",
+      "_id": "8262f0ed18964ee2"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Malau",
+      "_key": "!tables.results!19123b0d765f94c3.4d7b58921703b49f",
+      "_id": "4d7b58921703b49f"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Matanga",
+      "_key": "!tables.results!19123b0d765f94c3.ee55e0b726912bb8",
+      "_id": "ee55e0b726912bb8"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Matuna",
+      "_key": "!tables.results!19123b0d765f94c3.a55879a52e8dbe9c",
+      "_id": "a55879a52e8dbe9c"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Meridian",
+      "_key": "!tables.results!19123b0d765f94c3.35b6f014642d130a",
+      "_id": "35b6f014642d130a"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Monument",
+      "_key": "!tables.results!19123b0d765f94c3.81b2223d4db0175b",
+      "_id": "81b2223d4db0175b"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Motu",
+      "_key": "!tables.results!19123b0d765f94c3.6ca9e703d311a153",
+      "_id": "6ca9e703d311a153"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Nameera",
+      "_key": "!tables.results!19123b0d765f94c3.3ff9f754b0e1180c",
+      "_id": "3ff9f754b0e1180c"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Nanuca",
+      "_key": "!tables.results!19123b0d765f94c3.b4c8c1404cd66a0a",
+      "_id": "b4c8c1404cd66a0a"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Navini",
+      "_key": "!tables.results!19123b0d765f94c3.7770ac2a145659b6",
+      "_id": "7770ac2a145659b6"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Nerida",
+      "_key": "!tables.results!19123b0d765f94c3.d05c8cc3a689edc9",
+      "_id": "d05c8cc3a689edc9"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Neris",
+      "_key": "!tables.results!19123b0d765f94c3.5e9c2d6c3bab0b54",
+      "_id": "5e9c2d6c3bab0b54"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Nobuka",
+      "_key": "!tables.results!19123b0d765f94c3.b15f433d8b145103",
+      "_id": "b15f433d8b145103"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Nuana",
+      "_key": "!tables.results!19123b0d765f94c3.bce254c88b468035",
+      "_id": "bce254c88b468035"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Ottago",
+      "_key": "!tables.results!19123b0d765f94c3.edc976d57ef9f7bf",
+      "_id": "edc976d57ef9f7bf"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Palm",
+      "_key": "!tables.results!19123b0d765f94c3.72df2f81549c4e54",
+      "_id": "72df2f81549c4e54"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Pirate",
+      "_key": "!tables.results!19123b0d765f94c3.3f18ce10cd343d24",
+      "_id": "3f18ce10cd343d24"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Raitu",
+      "_key": "!tables.results!19123b0d765f94c3.d901415853accc81",
+      "_id": "d901415853accc81"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Rauku",
+      "_key": "!tables.results!19123b0d765f94c3.9fd996dbbf27b983",
+      "_id": "9fd996dbbf27b983"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Raven",
+      "_key": "!tables.results!19123b0d765f94c3.663c8a7453cc8c17",
+      "_id": "663c8a7453cc8c17"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Razor",
+      "_key": "!tables.results!19123b0d765f94c3.e9d5e82600ee5af3",
+      "_id": "e9d5e82600ee5af3"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Relic",
+      "_key": "!tables.results!19123b0d765f94c3.47efeac1d6758f5c",
+      "_id": "47efeac1d6758f5c"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Salida",
+      "_key": "!tables.results!19123b0d765f94c3.f633cec0560edcbf",
+      "_id": "f633cec0560edcbf"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Sanctuary",
+      "_key": "!tables.results!19123b0d765f94c3.b1d18eb3a9f85e03",
+      "_id": "b1d18eb3a9f85e03"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Sapphire",
+      "_key": "!tables.results!19123b0d765f94c3.666ba8cd2e78c63b",
+      "_id": "666ba8cd2e78c63b"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Serenity",
+      "_key": "!tables.results!19123b0d765f94c3.a4f55a98c0a60e86",
+      "_id": "a4f55a98c0a60e86"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Serpent",
+      "_key": "!tables.results!19123b0d765f94c3.17cf1aeaa5c7adee",
+      "_id": "17cf1aeaa5c7adee"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Shale",
+      "_key": "!tables.results!19123b0d765f94c3.7ecdd0f803e23f09",
+      "_id": "7ecdd0f803e23f09"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Shard",
+      "_key": "!tables.results!19123b0d765f94c3.cf631640e7a87d59",
+      "_id": "cf631640e7a87d59"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Sickle",
+      "_key": "!tables.results!19123b0d765f94c3.2712d0216cff683f",
+      "_id": "2712d0216cff683f"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Solene",
+      "_key": "!tables.results!19123b0d765f94c3.583fb75722e8001b",
+      "_id": "583fb75722e8001b"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Spire",
+      "_key": "!tables.results!19123b0d765f94c3.10a2c6f86beb50f0",
+      "_id": "10a2c6f86beb50f0"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Talon",
+      "_key": "!tables.results!19123b0d765f94c3.a855563c48b7f8f4",
+      "_id": "a855563c48b7f8f4"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Taura",
+      "_key": "!tables.results!19123b0d765f94c3.346b9498469d1526",
+      "_id": "346b9498469d1526"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Temoo",
+      "_key": "!tables.results!19123b0d765f94c3.71f7525f1d6c9773",
+      "_id": "71f7525f1d6c9773"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Terion",
+      "_key": "!tables.results!19123b0d765f94c3.1bf142447fbf19c6",
+      "_id": "1bf142447fbf19c6"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Treasure",
+      "_key": "!tables.results!19123b0d765f94c3.a6dc425544d41e15",
+      "_id": "a6dc425544d41e15"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Umbra",
+      "_key": "!tables.results!19123b0d765f94c3.6249be448ebc988d",
+      "_id": "6249be448ebc988d"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Vaheena",
+      "_key": "!tables.results!19123b0d765f94c3.a0e2433eeca3e3a0",
+      "_id": "a0e2433eeca3e3a0"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Vanuca",
+      "_key": "!tables.results!19123b0d765f94c3.56b3a3a08a8e95ec",
+      "_id": "56b3a3a08a8e95ec"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Vasha",
+      "_key": "!tables.results!19123b0d765f94c3.810f0d13305c1667",
+      "_id": "810f0d13305c1667"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Vatuku",
+      "_key": "!tables.results!19123b0d765f94c3.52c55c59943db83f",
+      "_id": "52c55c59943db83f"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Vaunti",
+      "_key": "!tables.results!19123b0d765f94c3.bfc446cec3bda2df",
+      "_id": "bfc446cec3bda2df"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Witaka",
+      "_key": "!tables.results!19123b0d765f94c3.ecbe68410eea57a5",
+      "_id": "ecbe68410eea57a5"
+    }
+  ],
+  "folder": "775da3a96cc7c668",
+  "sort": 147,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!19123b0d765f94c3"
+}

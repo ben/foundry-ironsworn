@@ -1,0 +1,16 @@
+{
+  "name": "Action and Theme Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "a06b333b78c61e6e",
+  "sort": 174,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Action_and_Theme",
+      "dsid": "oracle_collection:classic/action_and_theme"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!a06b333b78c61e6e"
+}

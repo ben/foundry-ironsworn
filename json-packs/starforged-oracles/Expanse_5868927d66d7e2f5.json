@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Rocky/Settlements/Expanse",
-      "category": "Starforged/Oracles/Planets/Rocky"
+      "category": "Starforged/Oracles/Planets/Rocky/Settlements",
+      "dsid": "oracle_rollable:starforged/planet/rocky/settlements/expanse"
     }
   },
   "name": "Expanse",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         90
       ],
       "text": "None",
-      "_id": "8440184fcc1052a6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5868927d66d7e2f5.8440184fcc1052a6"
+      "_key": "!tables.results!5868927d66d7e2f5.17cf6e2ac6a45648",
+      "_id": "17cf6e2ac6a45648"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         96
       ],
       "text": "Orbital settlement",
-      "_id": "4d66037804db5b5e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5868927d66d7e2f5.4d66037804db5b5e"
+      "_key": "!tables.results!5868927d66d7e2f5.ade0389d21822c7b",
+      "_id": "ade0389d21822c7b"
     },
     {
       "range": [
@@ -46,29 +37,12 @@
         100
       ],
       "text": "Planetside settlement",
-      "_id": "a7776299742a6efe",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5868927d66d7e2f5.a7776299742a6efe"
+      "_key": "!tables.results!5868927d66d7e2f5.83e47fae2ec51cd4",
+      "_id": "83e47fae2ec51cd4"
     }
   ],
   "folder": "c3ef88efafb41aa4",
-  "sort": 315,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!5868927d66d7e2f5"
 }

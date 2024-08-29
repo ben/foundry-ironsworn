@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Mechanical/Peril",
-      "category": "Starforged/Oracles/Location_Themes/Mechanical"
+      "category": "Starforged/Oracles/Location_Themes/Mechanical",
+      "dsid": "oracle_rollable:starforged/location_theme/mechanical/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Use this table to help envision a complication or hazard.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         9
       ],
       "text": "Alarm or warning is triggered",
-      "_id": "05dfd02706565de0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.05dfd02706565de0"
+      "_key": "!tables.results!8c5a4c2514797da3.abd6003cd46bc260",
+      "_id": "abd6003cd46bc260"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         18
       ],
       "text": "Automated weapon or trap is activated",
-      "_id": "b5ae33d41103350e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.b5ae33d41103350e"
+      "_key": "!tables.results!8c5a4c2514797da3.4a24b992244f2f56",
+      "_id": "4a24b992244f2f56"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         27
       ],
       "text": "Environment made unsuitable for life",
-      "_id": "b60ccaccff343e09",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.b60ccaccff343e09"
+      "_key": "!tables.results!8c5a4c2514797da3.1a6392ac51c07c9a",
+      "_id": "1a6392ac51c07c9a"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         36
       ],
       "text": "Hostile machines on patrol",
-      "_id": "8e226751da1073ad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.8e226751da1073ad"
+      "_key": "!tables.results!8c5a4c2514797da3.710b21e405355090",
+      "_id": "710b21e405355090"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         45
       ],
       "text": "Machines transform to reveal new capabilities",
-      "_id": "c847b6c593ebe7c6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.c847b6c593ebe7c6"
+      "_key": "!tables.results!8c5a4c2514797da3.c3df1a6ed1b2da7c",
+      "_id": "c3df1a6ed1b2da7c"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         54
       ],
       "text": "Machines with corrupted or hacked programming",
-      "_id": "bdf7dda34a7b126b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.bdf7dda34a7b126b"
+      "_key": "!tables.results!8c5a4c2514797da3.64d306546e0a8b67",
+      "_id": "64d306546e0a8b67"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         63
       ],
       "text": "Malfunctioning machines or technology",
-      "_id": "82e83e4d8571e598",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.82e83e4d8571e598"
+      "_key": "!tables.results!8c5a4c2514797da3.5ac87d2b66bc015d",
+      "_id": "5ac87d2b66bc015d"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         72
       ],
       "text": "Moving machinery creates a danger or obstacle",
-      "_id": "b471ecf68c96c465",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.b471ecf68c96c465"
+      "_key": "!tables.results!8c5a4c2514797da3.0b455a6d39412c85",
+      "_id": "0b455a6d39412c85"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         81
       ],
       "text": "Under surveillance by a central machine intelligence",
-      "_id": "e59be480d506ffd7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.e59be480d506ffd7"
+      "_key": "!tables.results!8c5a4c2514797da3.2cd2909206e0639c",
+      "_id": "2cd2909206e0639c"
     },
     {
       "range": [
@@ -144,27 +100,17 @@
         90
       ],
       "text": "Volatile technology",
-      "_id": "09350d786010db39",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.09350d786010db39"
+      "_key": "!tables.results!8c5a4c2514797da3.351fa90ad58c4b6c",
+      "_id": "351fa90ad58c4b6c"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "1148112ce1ba6753",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.1148112ce1ba6753"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!8c5a4c2514797da3.b424bb0373d28236",
+      "_id": "b424bb0373d28236"
     },
     {
       "range": [
@@ -172,29 +118,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "3b6192a25d0e128f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!8c5a4c2514797da3.3b6192a25d0e128f"
+      "_key": "!tables.results!8c5a4c2514797da3.449fb9dace97e387",
+      "_id": "449fb9dace97e387"
     }
   ],
   "folder": "573c3e802c340f34",
   "sort": 377,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!8c5a4c2514797da3"
 }

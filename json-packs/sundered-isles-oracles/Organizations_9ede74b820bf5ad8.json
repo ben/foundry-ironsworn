@@ -1,0 +1,110 @@
+{
+  "_id": "9ede74b820bf5ad8",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/adventures/factions",
+      "dsid": "oracle_rollable:sundered_isles/adventures/factions/organizations"
+    }
+  },
+  "name": "Organizations",
+  "description": "<p>People joined in a collective trade, pursuit, or goal</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Bloody Skulls",
+      "_key": "!tables.results!9ede74b820bf5ad8.ce36eb87dd988756",
+      "_id": "ce36eb87dd988756"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Cynosure League",
+      "_key": "!tables.results!9ede74b820bf5ad8.93aa4d0fe92b3e22",
+      "_id": "93aa4d0fe92b3e22"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Ebb Tide",
+      "_key": "!tables.results!9ede74b820bf5ad8.d1dc2fd14f43ab4a",
+      "_id": "d1dc2fd14f43ab4a"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Faceless Accord",
+      "_key": "!tables.results!9ede74b820bf5ad8.fe533a6843a339d7",
+      "_id": "fe533a6843a339d7"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Forsaken Fleet",
+      "_key": "!tables.results!9ede74b820bf5ad8.7c4f97878be332a4",
+      "_id": "7c4f97878be332a4"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Ironmongers",
+      "_key": "!tables.results!9ede74b820bf5ad8.cbd8339d40f556f4",
+      "_id": "cbd8339d40f556f4"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Moonsingers",
+      "_key": "!tables.results!9ede74b820bf5ad8.f1467238ee287614",
+      "_id": "f1467238ee287614"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Saltblood",
+      "_key": "!tables.results!9ede74b820bf5ad8.0699f9c261488950",
+      "_id": "0699f9c261488950"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Tide Runners",
+      "_key": "!tables.results!9ede74b820bf5ad8.aad1e7773d4ff7f7",
+      "_id": "aad1e7773d4ff7f7"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wayfarers",
+      "_key": "!tables.results!9ede74b820bf5ad8.91eb2ee5fb9ea192",
+      "_id": "91eb2ee5fb9ea192"
+    }
+  ],
+  "folder": "870705f12043ead0",
+  "sort": 53,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9ede74b820bf5ad8"
+}

@@ -1,0 +1,141 @@
+{
+  "_id": "95455d1a10c32b53",
+  "type": "delve-domain",
+  "name": "Underkeep",
+  "img": "icons/environment/wilderness/mine-interior-dungeon-door.webp",
+  "system": {
+    "summary": "An age-old subterranean dungeon.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Carved passages"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Hall or chamber"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Stairs into the depths"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Grand doorway or entrance"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Tomb or catacombs"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Rough-hewn cave"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Foundry or workshop"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Shrine or temple"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Imposing architecture or artistry"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Ancient mechanism or trap"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Crumbling architecture"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Blocked or broken passage"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Artifact with a hidden danger"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Denizen lurks in darkness"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 93,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/underkeep"
+    }
+  },
+  "_key": "!items!95455d1a10c32b53"
+}

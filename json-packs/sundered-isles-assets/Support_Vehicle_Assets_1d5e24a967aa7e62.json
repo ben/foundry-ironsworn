@@ -1,0 +1,16 @@
+{
+  "name": "Support Vehicle Assets",
+  "color": "#495790",
+  "description": "",
+  "type": "Item",
+  "_id": "1d5e24a967aa7e62",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "asset_collection:sundered_isles/support_vehicle"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!1d5e24a967aa7e62"
+}

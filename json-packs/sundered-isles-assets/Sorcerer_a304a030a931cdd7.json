@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "a304a030a931cdd7",
+  "folder": "e5df7144ec089f12",
+  "name": "Sorcerer",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} by creating a minor mystical effect, roll +spirit. On a strong hit, take +1 momentum. On a weak hit, take the standard benefits of the move, but first @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress} (-1). On a match, you learn something of magic’s nature through an unexpected boon or harrowing backlash; mark 1 tick on your discoveries legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You may purchase assets of a supernatural nature for 1 experience (instead of 3).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.9c9ab6a42daa96e0]{Swear an Iron Vow} (extreme or greater) to gather the components and lore of a complex and powerful ritual, reroll any dice. When you @Compendium[foundry-ironsworn.starforgedmoves.0d7f13818c1c19ed]{Reach a Milestone} on this quest, take +2 momentum. When you enact the ritual to @Compendium[foundry-ironsworn.starforgedmoves.985a5415860a99e9]{Fulfill Your Vow}, you may reroll any challenge dice to draw on unknowable powers at the risk of your soul. If you do, @Compendium[foundry-ironsworn.starforgedmoves.ff17e67a59539df4]{Face Desolation}.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/sorcerer",
+      "dsid": "asset:sundered_isles/path/sorcerer"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!a304a030a931cdd7"
+}

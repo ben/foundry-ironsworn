@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Access/Peril",
-      "category": "Starforged/Oracles/Derelicts/Access"
+      "category": "Starforged/Oracles/Derelicts/Access",
+      "dsid": "oracle_rollable:starforged/derelict/access/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Alarm or failsafe is triggered",
-      "_id": "ef11fa80d43891f2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.ef11fa80d43891f2"
+      "_key": "!tables.results!3e2b6f482533ee52.7e3dbfe805532467",
+      "_id": "7e3dbfe805532467"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Automated defenses",
-      "_id": "e71439f5f16d9197",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.e71439f5f16d9197"
+      "_key": "!tables.results!3e2b6f482533ee52.85b4c0db0e6c6116",
+      "_id": "85b4c0db0e6c6116"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Blocked or sealed path",
-      "_id": "b2a9c245d4729f41",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.b2a9c245d4729f41"
+      "_key": "!tables.results!3e2b6f482533ee52.3e2d4aa4ae408701",
+      "_id": "3e2d4aa4ae408701"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Dreadful scene of death or violence",
-      "_id": "76aeb5d2ed601f2b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.76aeb5d2ed601f2b"
+      "_key": "!tables.results!3e2b6f482533ee52.aac2d6845d1aca9e",
+      "_id": "aac2d6845d1aca9e"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Foe closes in",
-      "_id": "cc5dc2cf6d635aa7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.cc5dc2cf6d635aa7"
+      "_key": "!tables.results!3e2b6f482533ee52.6f0ce7caf46f9f28",
+      "_id": "6f0ce7caf46f9f28"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Gear is failing or broken",
-      "_id": "0cae7e2e92e46cb7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.0cae7e2e92e46cb7"
+      "_key": "!tables.results!3e2b6f482533ee52.2e8d6dfb678259ec",
+      "_id": "2e8d6dfb678259ec"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Hazardous environmental change",
-      "_id": "b4636b6767131932",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.b4636b6767131932"
+      "_key": "!tables.results!3e2b6f482533ee52.feac37abdb4eeef1",
+      "_id": "feac37abdb4eeef1"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Path is trapped",
-      "_id": "77bcf3c2a5aa2727",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.77bcf3c2a5aa2727"
+      "_key": "!tables.results!3e2b6f482533ee52.e980d8ea25d56116",
+      "_id": "e980d8ea25d56116"
     },
     {
       "range": [
@@ -130,27 +91,17 @@
         90
       ],
       "text": "Unsettling sound or disturbance",
-      "_id": "f204f68209e657d7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.f204f68209e657d7"
+      "_key": "!tables.results!3e2b6f482533ee52.880ee59423a3db05",
+      "_id": "880ee59423a3db05"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "100cbd371965d46f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.100cbd371965d46f"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!3e2b6f482533ee52.982a7b6a8a3a385b",
+      "_id": "982a7b6a8a3a385b"
     },
     {
       "range": [
@@ -158,29 +109,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "607d372d188cbb50",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3e2b6f482533ee52.607d372d188cbb50"
+      "_key": "!tables.results!3e2b6f482533ee52.51ecde96fe42d2da",
+      "_id": "51ecde96fe42d2da"
     }
   ],
   "folder": "5a9ded9c6cdc7583",
   "sort": 352,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!3e2b6f482533ee52"
 }

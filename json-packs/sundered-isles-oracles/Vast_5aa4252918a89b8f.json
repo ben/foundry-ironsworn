@@ -1,0 +1,56 @@
+{
+  "_id": "5aa4252918a89b8f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure/value",
+      "dsid": "oracle_rollable:sundered_isles/treasure/value/vast"
+    }
+  },
+  "name": "Vast",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Trifle",
+      "_key": "!tables.results!5aa4252918a89b8f.2689e19780dbcf71",
+      "_id": "2689e19780dbcf71"
+    },
+    {
+      "range": [
+        11,
+        93
+      ],
+      "text": "Stash",
+      "_key": "!tables.results!5aa4252918a89b8f.80b892e0d121659a",
+      "_id": "80b892e0d121659a"
+    },
+    {
+      "range": [
+        94,
+        98
+      ],
+      "text": "Trove",
+      "_key": "!tables.results!5aa4252918a89b8f.79962a45dd32132c",
+      "_id": "79962a45dd32132c"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Hoard",
+      "_key": "!tables.results!5aa4252918a89b8f.6327ec11ffd2afb3",
+      "_id": "6327ec11ffd2afb3"
+    }
+  ],
+  "folder": "0d95146ca62a1214",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5aa4252918a89b8f"
+}

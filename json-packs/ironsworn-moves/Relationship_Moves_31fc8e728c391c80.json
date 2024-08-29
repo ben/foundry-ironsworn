@@ -1,24 +1,17 @@
 {
   "name": "Relationship Moves",
-  "type": "Item",
-  "_id": "31fc8e728c391c80",
   "color": "#4A5791",
   "description": "Relationship moves are made as you interact with others in the world, fight duels, form bonds, support your allies, and determine the ultimate fate of your character.",
+  "type": "Item",
+  "_id": "31fc8e728c391c80",
   "sort": 69,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Ironsworn/Moves/Relationship"
+      "dfid": "Ironsworn/Moves/Relationship",
+      "dsid": "move_category:classic/relationship"
     }
   },
   "folder": null,
   "sorting": "a",
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021086,
-    "modifiedTime": 1695949021086,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!folders!31fc8e728c391c80"
 }
