@@ -6,8 +6,6 @@ import type {
 	IOutcomeInfo
 } from 'dataforged'
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
-import type { Display } from '../../fields/DisplayField'
-import { DisplayField } from '../../fields/DisplayField'
 import { SourceField } from '../../fields/SourceField'
 import type { IronswornItem } from '../item'
 
@@ -97,7 +95,6 @@ export class SFMoveModel extends foundry.abstract.TypeDataModel<
 			Category: new DataforgedIDField(),
 			Source: new SourceField(),
 			'Progress Move': new fields.BooleanField(),
-			Display: new DisplayField(),
 			Text: new fields.HTMLField(),
 			Oracles: new fields.ArrayField(new DataforgedIDField()),
 			dsOracleIds: new fields.ArrayField(new fields.StringField()),
@@ -187,7 +184,6 @@ export interface SFMoveDataSourceData
 	> {
 	dfid: string
 	Trigger: SFMoveTrigger
-	Display: Display
 	Outcomes?: {
 		'Strong Hit': SFMoveOutcomeMatchable
 		'Weak Hit': SFMoveOutcome

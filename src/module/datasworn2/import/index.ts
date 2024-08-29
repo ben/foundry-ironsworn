@@ -353,10 +353,7 @@ for (const collection of collections) {
 						Date: move._source.date,
 						Page: move._source.page
 					},
-					Suggestions: {},
-					Display: {
-						Images: []
-					}
+					Suggestions: {}
 				},
 				sort: move._source.page ?? 0,
 				flags: {
