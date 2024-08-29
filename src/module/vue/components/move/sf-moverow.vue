@@ -77,20 +77,21 @@
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref, watch } from 'vue'
-import type { DisplayMove } from '../../features/custommoves'
-import type { IOracleTreeNode } from '../../features/customoracles'
-import type { IronswornItem } from '../../item/item'
-import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
-import BtnRollmove from './buttons/btn-rollmove.vue'
-import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
-import OracleTreeNode from './oracle-tree-node.vue'
-import RulesTextMove from './rules-text/rules-text-move.vue'
-import Collapsible from './collapsible/collapsible.vue'
-import BtnOracle from './buttons/btn-oracle.vue'
-import { ItemKey, $ItemKey } from '../provisions.js'
-import { enrichMarkdown } from '../vue-plugin.js'
+import type { DisplayMove } from '../../../features/custommoves'
+import type { IOracleTreeNode } from '../../../features/customoracles'
+import type { IronswornItem } from '../../../item/item'
+import { moveHasRollableOptions } from '../../../rolls/preroll-dialog'
+import { ItemKey, $ItemKey } from '../../provisions.js'
+import { enrichMarkdown } from '../../vue-plugin.js'
 import { compact, uniq } from 'lodash-es'
-import { OracleTable } from '../../roll-table/oracle-table'
+import { OracleTable } from '../../../roll-table/oracle-table'
+
+import BtnRollmove from '../buttons/btn-rollmove.vue'
+import BtnSendmovetochat from '../buttons/btn-sendmovetochat.vue'
+import OracleTreeNode from '../oracle-tree-node.vue'
+import RulesTextMove from '../rules-text/rules-text-move.vue'
+import Collapsible from '../collapsible/collapsible.vue'
+import BtnOracle from '../buttons/btn-oracle.vue'
 
 const props = withDefaults(
 	defineProps<{

@@ -39,7 +39,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import type { DisplayMoveCategory } from '../../features/custommoves.js'
-import SfMoverow from './sf-moverow.vue'
+import SfMoverow from './move/sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash-es'
 import { enrichMarkdown } from '../vue-plugin'
