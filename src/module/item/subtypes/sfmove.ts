@@ -1,7 +1,7 @@
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import { SourceField } from '../../fields/SourceField'
 import type { IronswornItem } from '../item'
-import {
+import type {
 	DFIMove,
 	DFIMoveTrigger,
 	DFIMoveTriggerOptionAction,

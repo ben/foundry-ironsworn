@@ -1,6 +1,6 @@
 import shajs from 'sha.js'
 import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
-import { DFKeysWithValuesOfType } from '../item/types'
+import type { DFKeysWithValuesOfType } from '../item/types'
 
 /**
  * @remarks A document-subtype-sensitive replacement for the FVTT document deletion dialog.
