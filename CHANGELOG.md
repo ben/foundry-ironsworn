@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Brought back support for the "Custom Moves" folder ([#1023](https://github.com/ben/foundry-ironsworn/pull/1023))
+
 ## 1.24.0
 
 This is a major update that includes Sundered Isles content, but also brings along a host of changes:
