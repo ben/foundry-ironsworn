@@ -20,6 +20,7 @@ import { AssetConditionMeterField } from '../item/subtypes/asset'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { getFoundryMoveByDsId } from '../datasworn2'
+import { DFRollMethod, DFRollType } from '../item/types'
 
 interface showForMoveOpts {
 	actor?: IronswornActor
@@ -106,7 +107,7 @@ export function getStatData(
 }
 
 function chooseStatToRoll(
-	mode: RollMethod,
+	mode: DFRollMethod,
 	stats: string[],
 	actor: IronswornActor<'character'> | IronswornActor<'starship'>
 ): SourcedValue | undefined {
@@ -365,8 +366,8 @@ export class IronswornPrerollDialog extends Dialog<
 			// Add this so it generates a button, but it won't be passed to
 			// the IronswornRoll object as a stat
 			options.push({
-				'Roll type': 'Progress roll' as RollType,
-				Method: 'Any' as RollMethod,
+				'Roll type': 'Progress roll' as DFRollType,
+				Method: 'Any' as DFRollMethod,
 				Using: ['Progress' as ProgressTypeIronsworn]
 			})
 		}
@@ -394,7 +395,7 @@ export class IronswornPrerollDialog extends Dialog<
 			action: true
 		})
 		const buttons = {}
-		const addButton = (i: number, mode: RollMethod, stats: string[]) => {
+		const addButton = (i: number, mode: DFRollMethod, stats: string[]) => {
 			const localizedStats = stats.map((s) =>
 				game.i18n.localize(`IRONSWORN.${s.capitalize()}`)
 			)

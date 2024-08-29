@@ -1,11 +1,10 @@
-import type {
-	IMoveTrigger,
-	IMoveTriggerOptionAction,
-	IMoveTriggerOptionProgress,
-	IOutcomeInfo
-} from 'dataforged'
 import { DataforgedIDField } from '../../fields/DataforgedIDField'
 import type { IronswornItem } from '../item'
+import {
+	DFIMoveTriggerOptionAction,
+	DFIMoveTriggerOptionProgress,
+	DFIOutcomeInfo
+} from '../types'
 
 export class SFMoveModel extends foundry.abstract.TypeDataModel<
 	SFMoveDataSourceData,
@@ -109,7 +108,7 @@ export class SFMoveModel extends foundry.abstract.TypeDataModel<
 }
 
 export interface SFMoveOutcome
-	extends Omit<IOutcomeInfo, 'With a Match' | '$id'> {}
+	extends Omit<DFIOutcomeInfo, 'With a Match' | '$id'> {}
 export interface SFMoveOutcomeMatchable extends SFMoveOutcome {
 	'With a Match'?: SFMoveOutcome
 }
@@ -196,7 +195,7 @@ export interface SFMoveTrigger {
 }
 
 type SFMoveTriggerOption = Omit<
-	IMoveTriggerOptionAction | IMoveTriggerOptionProgress,
+	DFIMoveTriggerOptionAction | DFIMoveTriggerOptionProgress,
 	'$id' | 'Custom stat'
 >
 
