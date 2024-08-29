@@ -1,11 +1,10 @@
 import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
-import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
-import type { IRow } from 'dataforged'
 import { clamp } from 'lodash-es'
 import { RANK_INCREMENTS } from '../constants'
 import { typedDeleteDialog } from '../helpers/util'
+import { DFIRow } from '../item/types'
 import { OracleTable } from '../roll-table/oracle-table'
 import { OracleTableResult } from '../roll-table/oracle-table-result'
 import type {
@@ -70,7 +69,7 @@ export class IronswornJournalPage<
 			formula: '1d100',
 			results: pageSystem.Subtable.map((row) =>
 				OracleTableResult.getConstructorData(
-					row as IRow & { Floor: number; Ceiling: number }
+					row as DFIRow & { Floor: number; Ceiling: number }
 				)
 			),
 			flags: {

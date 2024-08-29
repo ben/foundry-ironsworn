@@ -1,6 +1,6 @@
 import shajs from 'sha.js'
 import type { Metadata } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
-import type { KeysWithValuesOfType } from 'dataforged'
+import { DFKeysWithValuesOfType } from '../item/types'
 
 /**
  * @remarks A document-subtype-sensitive replacement for the FVTT document deletion dialog.
@@ -12,7 +12,7 @@ export async function typedDeleteDialog<
 	}
 >(document: T, options: Partial<DialogOptions> = {}): Promise<T> {
 	const docType = document.documentName as T['documentName'] &
-		KeysWithValuesOfType<
+		DFKeysWithValuesOfType<
 			typeof CONFIG,
 			{ typeLabels: Record<T['type'], string> }
 		>

@@ -1,4 +1,8 @@
-import type { ProgressTypeIronsworn, RollMethod, RollType } from 'dataforged'
+import type {
+	DFProgressTypeIronsworn,
+	DFRollMethod,
+	DFRollType
+} from '../item/types'
 import { cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
@@ -20,7 +24,6 @@ import { AssetConditionMeterField } from '../item/subtypes/asset'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { getFoundryMoveByDsId } from '../datasworn2'
-import { DFRollMethod, DFRollType } from '../item/types'
 
 interface showForMoveOpts {
 	actor?: IronswornActor
@@ -368,7 +371,7 @@ export class IronswornPrerollDialog extends Dialog<
 			options.push({
 				'Roll type': 'Progress roll' as DFRollType,
 				Method: 'Any' as DFRollMethod,
-				Using: ['Progress' as ProgressTypeIronsworn]
+				Using: ['Progress' as DFProgressTypeIronsworn]
 			})
 		}
 

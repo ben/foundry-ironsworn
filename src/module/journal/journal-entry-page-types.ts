@@ -1,5 +1,5 @@
-import type { ISettingTruthOption } from 'dataforged'
 import type { ChallengeRank } from '../fields/ChallengeRank'
+import type { DFISettingTruthOption } from '../item/types'
 import type { IronswornJournalPage } from './journal-entry-page'
 
 interface CounterBase {
@@ -66,7 +66,7 @@ export interface ClockDataProperties {
 }
 
 /// ///////// SETTING TRUTH OPTION
-export interface TruthOptionDataSourceData extends ISettingTruthOption {
+export interface TruthOptionDataSourceData extends DFISettingTruthOption {
 	dfid: string
 	Summary: string
 	Quest: string
