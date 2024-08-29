@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
 import type { DisplayFoe } from '../../../features/customfoes'
 import { ChallengeRank } from '../../../fields/ChallengeRank'
 
