@@ -83,7 +83,7 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import BtnOracle from '../buttons/btn-oracle.vue'
 import BtnRollmove from '../buttons/btn-rollmove.vue'
 
-import SfMoverow from '../sf-moverow.vue'
+import SfMoverow from '../move/sf-moverow.vue'
 
 const site = inject(ActorKey) as Ref<ActorSource<'site'>>
 const $site = inject($ActorKey) as IronswornActor<'site'>

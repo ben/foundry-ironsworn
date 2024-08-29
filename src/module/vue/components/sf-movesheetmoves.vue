@@ -60,7 +60,7 @@ import { computed, nextTick, provide, reactive, ref } from 'vue'
 import type { DisplayMoveCategory } from '../../features/custommoves'
 import { createMergedMoveTree } from '../../features/custommoves'
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
-import SfMoverow from './sf-moverow.vue'
+import SfMoverow from './move/sf-moverow.vue'
 import IronBtn from './buttons/iron-btn.vue'
 
 const state = reactive({

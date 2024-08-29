@@ -5,6 +5,10 @@ import {
 } from '../datasworn2'
 import { DataswornRulesetKey, IronswornSettings } from '../helpers/settings'
 import type { Move, MoveCategory } from '@datasworn/core/dist/Datasworn'
+import { moveTriggerIsRollable } from '../rolls/preroll-dialog'
+import { compact } from 'lodash-es'
+import { IronswornItem } from '../item/item'
+import { SFMoveModel } from '../item/subtypes/sfmove'
 
 interface DisplayMoveRuleset {
 	displayName: string
@@ -22,6 +26,9 @@ export interface DisplayMove {
 	color: string | null
 	displayName: string
 	uuid: string
+	triggerText?: string
+	isRollable: boolean
+	oracles: string[]
 	ds?: Move
 }
 
@@ -29,7 +36,10 @@ const INDEXES: Record<string, any> = {}
 async function ensureIndex(rsKey: DataswornRulesetKey) {
 	const compendiumKey = COMPENDIUM_KEY_MAP.move[rsKey]
 	if (INDEXES[compendiumKey] == null) {
-		const { index } = await getPackAndIndexForCompendiumKey(rsKey, 'move')
+		const { index } = await getPackAndIndexForCompendiumKey(rsKey, 'move', [
+			'system.Trigger',
+			'system.dsOracleIds'
+		])
 		INDEXES[compendiumKey] = index
 	}
 }
@@ -55,6 +65,9 @@ export async function createMoveTreeForRuleset(
 					color: move.color ?? null,
 					displayName: move.name,
 					uuid: indexEntry.uuid, // TODO: move.uuid
+					triggerText: indexEntry.system?.Trigger?.Text,
+					isRollable: moveTriggerIsRollable(indexEntry?.system?.Trigger),
+					oracles: indexEntry.system?.dsOracleIds ?? [],
 					ds: move
 				}
 			})
@@ -62,12 +75,48 @@ export async function createMoveTreeForRuleset(
 	}
 }
 
+function customFolderMoveCategory(): DisplayMoveRuleset | undefined {
+	const name = game.i18n.localize('IRONSWORN.MOVES.Custom Moves')
+	const rootFolder = game.items?.directory?.folders.find((x) => x.name === name)
+	if (!rootFolder) return undefined
+
+	const category: DisplayMoveCategory = {
+		displayName: name,
+		color: (rootFolder as any).color?.css ?? null,
+		moves: []
+	}
+
+	for (const item of rootFolder.contents) {
+		if (!(item instanceof IronswornItem)) continue
+		if (item.type !== 'sfmove') continue
+		const system = item.system as SFMoveModel
+
+		category.moves.push({
+			displayName: item.name ?? '(unnamed)',
+			uuid: item.uuid,
+			color: null,
+			isRollable: moveTriggerIsRollable(system.Trigger),
+			oracles: system.dsOracleIds ?? [],
+			triggerText: system.Trigger?.Text
+		})
+	}
+	if (category.moves.length === 0) return undefined
+
+	return {
+		displayName: name,
+		categories: [category]
+	}
+}
+
 export async function createMergedMoveTree(): Promise<DisplayMoveRuleset[]> {
 	// Pre-load compendium indexes
 	await Promise.all(IronswornSettings.enabledRulesets.map(ensureIndex))
-	return await Promise.all(
-		IronswornSettings.enabledRulesets.map(createMoveTreeForRuleset)
-	)
+	return compact([
+		...(await Promise.all(
+			IronswornSettings.enabledRulesets.map(createMoveTreeForRuleset)
+		)),
+		customFolderMoveCategory()
+	])
 }
 
 // TODO dataforged has a key for move colours...., but they appear to have changed significantly since the last time i updated them! they'll be fixed for 2.0, but until then, here's a workaround.

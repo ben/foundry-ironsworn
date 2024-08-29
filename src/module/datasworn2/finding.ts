@@ -62,10 +62,13 @@ interface PackAndIndex {
 
 export async function getPackAndIndexForCompendiumKey(
 	ruleset: DataswornRulesetKey,
-	type: keyof typeof COMPENDIUM_KEY_MAP
+	type: keyof typeof COMPENDIUM_KEY_MAP,
+	additionalFields?: string[]
 ): Promise<PackAndIndex> {
 	const pack = game.packs.get(COMPENDIUM_KEY_MAP[type][ruleset])
-	const index = await pack?.getIndex({ fields: ['flags'] })
+	const index = await pack?.getIndex({
+		fields: ['flags', ...((additionalFields ?? []) as any[])]
+	})
 	return { pack, index }
 }
 
