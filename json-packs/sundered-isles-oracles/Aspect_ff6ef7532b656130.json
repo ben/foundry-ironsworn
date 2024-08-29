@@ -1,0 +1,110 @@
+{
+  "_id": "ff6ef7532b656130",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/faith",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/faith/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Blessed",
+      "_key": "!tables.results!ff6ef7532b656130.7064c0c827e541f4",
+      "_id": "7064c0c827e541f4"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Dawning",
+      "_key": "!tables.results!ff6ef7532b656130.875bc7fdbfb7394f",
+      "_id": "875bc7fdbfb7394f"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Enduring",
+      "_key": "!tables.results!ff6ef7532b656130.8640ecfaad12c6de",
+      "_id": "8640ecfaad12c6de"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Exalted",
+      "_key": "!tables.results!ff6ef7532b656130.56fff6996bfbfc7d",
+      "_id": "56fff6996bfbfc7d"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Fated",
+      "_key": "!tables.results!ff6ef7532b656130.c322d4f3928f926c",
+      "_id": "c322d4f3928f926c"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Hallowed",
+      "_key": "!tables.results!ff6ef7532b656130.1eef939e55086aa0",
+      "_id": "1eef939e55086aa0"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Holy",
+      "_key": "!tables.results!ff6ef7532b656130.9097ff51d916f610",
+      "_id": "9097ff51d916f610"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Radiant",
+      "_key": "!tables.results!ff6ef7532b656130.56fceeea52019c47",
+      "_id": "56fceeea52019c47"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sacred",
+      "_key": "!tables.results!ff6ef7532b656130.b1210b6f8a0e3b06",
+      "_id": "b1210b6f8a0e3b06"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Shining",
+      "_key": "!tables.results!ff6ef7532b656130.709ccdd785242c04",
+      "_id": "709ccdd785242c04"
+    }
+  ],
+  "folder": "22ec474f52af959e",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ff6ef7532b656130"
+}

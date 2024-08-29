@@ -1,0 +1,110 @@
+{
+  "_id": "20de0f9b4cbd77d5",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/type"
+    }
+  },
+  "name": "Theme Type",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/affluence\">\n    <i class=\"fa fa-caret-right\"></i> Affluence\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.4ab58ecb80c432dc",
+      "_id": "4ab58ecb80c432dc"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/craft\">\n    <i class=\"fa fa-caret-right\"></i> Craft\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.b7fdf6a6796b1456",
+      "_id": "b7fdf6a6796b1456"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/discovery\">\n    <i class=\"fa fa-caret-right\"></i> Discovery\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.52f33ce612e2b9b9",
+      "_id": "52f33ce612e2b9b9"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/faith\">\n    <i class=\"fa fa-caret-right\"></i> Faith\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.065a8a5890d072cb",
+      "_id": "065a8a5890d072cb"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/loyalty\">\n    <i class=\"fa fa-caret-right\"></i> Loyalty\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.cdbb6dbd4b19ddc3",
+      "_id": "cdbb6dbd4b19ddc3"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/mysticism\">\n    <i class=\"fa fa-caret-right\"></i> Mysticism\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.f109007bab240567",
+      "_id": "f109007bab240567"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/rebellion\">\n    <i class=\"fa fa-caret-right\"></i> Rebellion\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.ec0adc65cbb04bdf",
+      "_id": "ec0adc65cbb04bdf"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/secrecy\">\n    <i class=\"fa fa-caret-right\"></i> Secrecy\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.55f560ef293f6c46",
+      "_id": "55f560ef293f6c46"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/war\">\n    <i class=\"fa fa-caret-right\"></i> War\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.ccee6422de48c7b5",
+      "_id": "ccee6422de48c7b5"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/faction/name/themes/curses\">\n    <i class=\"fa fa-caret-right\"></i> Curses\n</a></p>",
+      "_key": "!tables.results!20de0f9b4cbd77d5.85f46d4ba7550978",
+      "_id": "85f46d4ba7550978"
+    }
+  ],
+  "folder": "1aa3b728667629f3",
+  "sort": 184,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!20de0f9b4cbd77d5"
+}

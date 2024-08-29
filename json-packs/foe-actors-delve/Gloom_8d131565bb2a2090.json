@@ -1,0 +1,53 @@
+{
+  "name": "Gloom",
+  "img": "icons/magic/perception/silhouette-stealth-shadow.webp",
+  "type": "foe",
+  "_id": "8d131565bb2a2090",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Gloom",
+    "texture": {
+      "src": "icons/magic/perception/silhouette-stealth-shadow.webp"
+    }
+  },
+  "folder": "3476ad01228adddc",
+  "items": [
+    {
+      "_id": "357c13a22f08fafc",
+      "type": "progress",
+      "name": "Gloom",
+      "img": "icons/magic/perception/silhouette-stealth-shadow.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Creeping, vaporous murk</p>\n<p class=\"nogrow\">Whispers and illusions</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Envelop all in shadow</p>\n<p class=\"nogrow\">Feed on fear and despair</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Lure with trickery</p>\n<p class=\"nogrow\">Snuff out lights</p>\n<p class=\"nogrow\">Surround and engulf</p>\n<p class=\"nogrow\">Show painful and horrifying visions</p>\n</div>\n</div>\n\n<p>A gloom is a mass of malignant shadow. It dwells in dark places beneath the earth, or in the shadows of thick woods. At twilight and during the long gray days of winter, it emerges from its lightless refuge to sate its hunger.</p>\n<p>The gloom’s amorphous form cannot exert physical force. Instead, it will draw in its victims through illusion, mimicking familiar voices or forms. Or it will use the cover of darkness to ambush unwary prey. Once enveloped, the victim is a captive audience for the gloom’s apparitions, forced to face their innermost doubts and fears. The gloom picks at their sanity like a scavenger cleaning meat from bones. After a time, there is nothing left but an empty shell.</p>\n<p>If trapped within a gloom, let your conviction and courage be your light. Against hopelessness, find hope. Against despair, find peace of mind. Against terror, find faith. In the darkness, it is not the gloom that is your enemy. It is yourself.</p>\n\n<blockquote>Quest Starter: <p>@Compendium[foundry-ironsworn.ironsworndelvefoes.7374896a28a541ad]{Zealots} nurture a gloom within a @Compendium[foundry-ironsworn.ironsworndelvethemes.8555753de47119a1]{Hallowed} @Compendium[foundry-ironsworn.ironsworndelvedomains.95455d1a10c32b53]{Underkeep}. They believe this anomaly offers true enlightenment, and seek a means to unleash it on the Ironlands. Who is the leader of this sect?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "3476ad01228adddc",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/anomalies/gloom"
+        }
+      },
+      "_key": "!actors.items!8d131565bb2a2090.357c13a22f08fafc"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/anomalies/gloom"
+    }
+  },
+  "_key": "!actors!8d131565bb2a2090"
+}

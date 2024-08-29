@@ -1,0 +1,254 @@
+{
+  "_id": "438d363a310ffd3b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/details_cursed"
+    }
+  },
+  "name": "Cursed Ship Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Arcane trap",
+      "_key": "!tables.results!438d363a310ffd3b.fec23180d4209e18",
+      "_id": "fec23180d4209e18"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Bloody trail leads belowdecks",
+      "_key": "!tables.results!438d363a310ffd3b.4f88291fde4d5d21",
+      "_id": "4f88291fde4d5d21"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Crawling with insects",
+      "_key": "!tables.results!438d363a310ffd3b.5c7caf9546a98327",
+      "_id": "5c7caf9546a98327"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Crew held in thrall to sorcerous powers",
+      "_key": "!tables.results!438d363a310ffd3b.a3a2acc74931baed",
+      "_id": "a3a2acc74931baed"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Diseased or corrupted crew",
+      "_key": "!tables.results!438d363a310ffd3b.9b894c90cf64123f",
+      "_id": "9b894c90cf64123f"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "Dreadful phantom whispers",
+      "_key": "!tables.results!438d363a310ffd3b.641a557e43157094",
+      "_id": "641a557e43157094"
+    },
+    {
+      "range": [
+        27,
+        29
+      ],
+      "text": "Fearsome creatures among the shadows",
+      "_key": "!tables.results!438d363a310ffd3b.ae6661574a1c40da",
+      "_id": "ae6661574a1c40da"
+    },
+    {
+      "range": [
+        30,
+        32
+      ],
+      "text": "Illusionary facade",
+      "_key": "!tables.results!438d363a310ffd3b.881a5fb775099920",
+      "_id": "881a5fb775099920"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "Lower decks strung with webs",
+      "_key": "!tables.results!438d363a310ffd3b.0148cbdac17aae22",
+      "_id": "0148cbdac17aae22"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Marked with eldritch symbols",
+      "_key": "!tables.results!438d363a310ffd3b.5c07c3070c4bbe5a",
+      "_id": "5c07c3070c4bbe5a"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Protected by a monstrous beast",
+      "_key": "!tables.results!438d363a310ffd3b.9452135ae13acb97",
+      "_id": "9452135ae13acb97"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Putrefied provisions",
+      "_key": "!tables.results!438d363a310ffd3b.012e47a8e8625ac6",
+      "_id": "012e47a8e8625ac6"
+    },
+    {
+      "range": [
+        49,
+        53
+      ],
+      "text": "Reanimating crew",
+      "_key": "!tables.results!438d363a310ffd3b.c14daac388126cc6",
+      "_id": "c14daac388126cc6"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Ritual circle or altar",
+      "_key": "!tables.results!438d363a310ffd3b.889f28ad2e6c3f81",
+      "_id": "889f28ad2e6c3f81"
+    },
+    {
+      "range": [
+        57,
+        59
+      ],
+      "text": "Rotting stench",
+      "_key": "!tables.results!438d363a310ffd3b.9e182a63b71fcd13",
+      "_id": "9e182a63b71fcd13"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "Scorched black by fire",
+      "_key": "!tables.results!438d363a310ffd3b.013b7d3caffc9b48",
+      "_id": "013b7d3caffc9b48"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Sentient or living ship",
+      "_key": "!tables.results!438d363a310ffd3b.82b2f94dfab475b2",
+      "_id": "82b2f94dfab475b2"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Sorcerous commander",
+      "_key": "!tables.results!438d363a310ffd3b.08af3dab78ef74a9",
+      "_id": "08af3dab78ef74a9"
+    },
+    {
+      "range": [
+        69,
+        73
+      ],
+      "text": "Spectral haunts",
+      "_key": "!tables.results!438d363a310ffd3b.7041bc993d5bb79f",
+      "_id": "7041bc993d5bb79f"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Spreading decay",
+      "_key": "!tables.results!438d363a310ffd3b.8833ba3a4bde17e9",
+      "_id": "8833ba3a4bde17e9"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Strewn with rusting cages and chains",
+      "_key": "!tables.results!438d363a310ffd3b.e0b76b4df39295ec",
+      "_id": "e0b76b4df39295ec"
+    },
+    {
+      "range": [
+        80,
+        84
+      ],
+      "text": "Swarming with large rats",
+      "_key": "!tables.results!438d363a310ffd3b.d7413697b4a99262",
+      "_id": "d7413697b4a99262"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Transforming crew",
+      "_key": "!tables.results!438d363a310ffd3b.95c44379963b079d",
+      "_id": "95c44379963b079d"
+    },
+    {
+      "range": [
+        88,
+        92
+      ],
+      "text": "Truth revealed under moonlight",
+      "_key": "!tables.results!438d363a310ffd3b.78c74532cf40b8c7",
+      "_id": "78c74532cf40b8c7"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Victims entombed within ship structure",
+      "_key": "!tables.results!438d363a310ffd3b.2340270ed53057d7",
+      "_id": "2340270ed53057d7"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Warnings scrawled in blood",
+      "_key": "!tables.results!438d363a310ffd3b.335f3fd0682d743a",
+      "_id": "335f3fd0682d743a"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 138,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!438d363a310ffd3b"
+}

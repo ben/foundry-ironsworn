@@ -1,0 +1,53 @@
+{
+  "name": "Marsh Rat",
+  "img": "icons/creatures/mammals/rodent-rat-diseaed-gray.webp",
+  "type": "foe",
+  "_id": "36a93d799ee1325f",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Marsh Rat",
+    "texture": {
+      "src": "icons/creatures/mammals/rodent-rat-diseaed-gray.webp"
+    }
+  },
+  "folder": "80e257c8df770379",
+  "items": [
+    {
+      "_id": "7040ca5c2b2132cb",
+      "type": "progress",
+      "name": "Marsh Rat",
+      "img": "icons/creatures/mammals/rodent-rat-diseaed-gray.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Beady eyes</p>\n<p class=\"nogrow\">Long tails</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Eat everything</p>\n<p class=\"nogrow\">Breed</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Swarm and bite</p>\n</div>\n</div>\n\n<p>The marsh rat is a rodent of unusual size. They are all-too-common in the Flooded Lands or in wetlands within the Hinterlands and Deep Wilds.</p>\n<p>They will eat almost anything, including carrion and waste. Our grain stores and pantries are an easy target for a hungry pack, who will dig tunnels or chew through walls to get at the food. They will also try to make a meal out of living prey—deer, cattle, or even an unlucky Ironlander. It is said that a swarm of marsh rats can kill a horse and reduce it to bone in a matter of hours.</p>\n\n<blockquote>Quest Starter: <p>Marsh rats raided the stores of an isolated settlement. How will you ensure the Ironlanders have enough food to survive the coming winter?</p></blockquote>",
+        "rank": 1,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "80e257c8df770379",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:classic/animals/marsh_rat"
+        }
+      },
+      "_key": "!actors.items!36a93d799ee1325f.7040ca5c2b2132cb"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/animals/marsh_rat"
+    }
+  },
+  "_key": "!actors!36a93d799ee1325f"
+}

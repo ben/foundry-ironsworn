@@ -1,0 +1,98 @@
+{
+  "_id": "c96bafd5cbda43bc",
+  "type": "sfmove",
+  "name": "Resupply",
+  "img": "icons/dice/d10black.svg",
+  "folder": "8ceba5c59ba6b29f",
+  "system": {
+    "dfid": "move:sundered_isles/recover/resupply",
+    "Category": "move_category:sundered_isles/recover",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When you attempt to bolster your readiness__, envision the opportunity and your approach. If you...\n\n  * Barter or make an appeal: Roll +heart\n  * Threaten or seize: Roll +iron\n  * Steal or swindle: Roll +shadow\n  * Scavenge or craft: Roll +wits\n  * Gear up from your ship's stores: Roll +supply (hold)\n\nOn a __strong hit__, choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.\n\nOn a __weak hit__, as above, but you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.\n\nOn a __miss__, you encounter an unexpected peril. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you attempt to bolster your readiness...",
+      "Options": [
+        {
+          "Text": "Barter or make an appeal",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "Threaten or seize",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Steal or swindle",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Scavenge or craft",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        },
+        {
+          "Text": "Gear up from your ship's stores",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Asset Control"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.\n\nThen choose one.\n\n  * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.\n  * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum."
+      },
+      "Miss": {
+        "Text": "On a __miss__, you encounter an unexpected peril. @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Sundered Isles",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2024-07-01",
+      "Page": 248
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 248,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:sundered_isles/recover/resupply",
+      "dsid": "move:sundered_isles/recover/resupply"
+    }
+  },
+  "_key": "!items!c96bafd5cbda43bc"
+}

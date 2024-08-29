@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "6f7abe8b10d6e6bf",
+  "folder": "1d5e24a967aa7e62",
+  "name": "Longboat",
+  "system": {
+    "requirement": "",
+    "category": "Support Vehicle",
+    "color": "#495790",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": false,
+        "description": "<p>Your longboat transports crew, passengers, and cargo to and from your flagship. When you (or a landing party under your command) use the craft to haul provisions as you @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply}, you may roll +integrity. If you do, take +1 supply or +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Your longboat is reinforced to endure storms, shoals, and cannon fire. When you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} and score a miss, reroll any dice. When you @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} a battered longboat, clear the impact for 1 repair point (instead of 2).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Your crew is trained for a stealthy approach. When you @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} using your longboat to board an enemy vessel or land on hostile shores, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Integrity",
+      "max": 4,
+      "value": 4,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Battered",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/support_vehicle/longboat",
+      "dsid": "asset:sundered_isles/support_vehicle/longboat"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!6f7abe8b10d6e6bf"
+}

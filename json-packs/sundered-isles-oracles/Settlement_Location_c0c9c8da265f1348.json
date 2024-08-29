@@ -1,0 +1,47 @@
+{
+  "_id": "c0c9c8da265f1348",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/location"
+    }
+  },
+  "name": "Settlement Location",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        60
+      ],
+      "text": "Shore",
+      "_key": "!tables.results!c0c9c8da265f1348.8daf0c3f19345653",
+      "_id": "8daf0c3f19345653"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Inland",
+      "_key": "!tables.results!c0c9c8da265f1348.f6f1470cb0aa3825",
+      "_id": "f6f1470cb0aa3825"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Waterside",
+      "_key": "!tables.results!c0c9c8da265f1348.953e130662a21c15",
+      "_id": "953e130662a21c15"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 164,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!c0c9c8da265f1348"
+}

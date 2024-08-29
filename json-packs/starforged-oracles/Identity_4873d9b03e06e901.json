@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Factions/Identity",
-      "category": "Starforged/Oracles/Factions"
+      "category": "oracle_collection:starforged/faction/name",
+      "dsid": "oracle_rollable:starforged/faction/name/identity"
     }
   },
   "name": "Identity",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         2
       ],
       "text": "Blades",
-      "_id": "f5342a6149b78bd0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.f5342a6149b78bd0"
+      "_key": "!tables.results!4873d9b03e06e901.1f44552bf56b8bc6",
+      "_id": "1f44552bf56b8bc6"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         4
       ],
       "text": "Builders",
-      "_id": "63d3134230ae448c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.63d3134230ae448c"
+      "_key": "!tables.results!4873d9b03e06e901.c70e683c03c379a7",
+      "_id": "c70e683c03c379a7"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         6
       ],
       "text": "Daggers",
-      "_id": "8dbc312a9e78a32f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.8dbc312a9e78a32f"
+      "_key": "!tables.results!4873d9b03e06e901.f8ba1636c9d1f2ab",
+      "_id": "f8ba1636c9d1f2ab"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         8
       ],
       "text": "Defenders",
-      "_id": "057b7b7c3ff7ab62",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.057b7b7c3ff7ab62"
+      "_key": "!tables.results!4873d9b03e06e901.4efbb53c5461955a",
+      "_id": "4efbb53c5461955a"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         10
       ],
       "text": "Disciples",
-      "_id": "27eea0b4f4ab899c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.27eea0b4f4ab899c"
+      "_key": "!tables.results!4873d9b03e06e901.d1bbb7ff398b98df",
+      "_id": "d1bbb7ff398b98df"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         12
       ],
       "text": "Domains",
-      "_id": "cf88c0b364620e26",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.cf88c0b364620e26"
+      "_key": "!tables.results!4873d9b03e06e901.880722350ab85276",
+      "_id": "880722350ab85276"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         14
       ],
       "text": "Drifters",
-      "_id": "a23bf8c97d7c0f96",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.a23bf8c97d7c0f96"
+      "_key": "!tables.results!4873d9b03e06e901.3332953b7b85d2fc",
+      "_id": "3332953b7b85d2fc"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         16
       ],
       "text": "Embers",
-      "_id": "846d0be6217495fe",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.846d0be6217495fe"
+      "_key": "!tables.results!4873d9b03e06e901.8c30e9f2959f390a",
+      "_id": "8c30e9f2959f390a"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         18
       ],
       "text": "Flames",
-      "_id": "dce72ce426beae26",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.dce72ce426beae26"
+      "_key": "!tables.results!4873d9b03e06e901.ebe141a5a63d1099",
+      "_id": "ebe141a5a63d1099"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         20
       ],
       "text": "Fleet",
-      "_id": "c3713c0982d6c29a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.c3713c0982d6c29a"
+      "_key": "!tables.results!4873d9b03e06e901.b1f6bfe60868756d",
+      "_id": "b1f6bfe60868756d"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         22
       ],
       "text": "Guardians",
-      "_id": "b7f1b0d5b73e2e6a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.b7f1b0d5b73e2e6a"
+      "_key": "!tables.results!4873d9b03e06e901.6e0d0c94d09407cf",
+      "_id": "6e0d0c94d09407cf"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         24
       ],
       "text": "Hammers",
-      "_id": "4f3dcaf10589ed5b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.4f3dcaf10589ed5b"
+      "_key": "!tables.results!4873d9b03e06e901.dfbb46947c90eb2e",
+      "_id": "dfbb46947c90eb2e"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         26
       ],
       "text": "Harbingers",
-      "_id": "bda7aac9323e7d93",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.bda7aac9323e7d93"
+      "_key": "!tables.results!4873d9b03e06e901.9c098d6da8dc4513",
+      "_id": "9c098d6da8dc4513"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         28
       ],
       "text": "Heralds",
-      "_id": "14d48a8f85e8215f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.14d48a8f85e8215f"
+      "_key": "!tables.results!4873d9b03e06e901.19bb736248afacf7",
+      "_id": "19bb736248afacf7"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         30
       ],
       "text": "Hounds",
-      "_id": "1b3d503b1ad5b4d4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.1b3d503b1ad5b4d4"
+      "_key": "!tables.results!4873d9b03e06e901.13b5a85ff17ecc87",
+      "_id": "13b5a85ff17ecc87"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         32
       ],
       "text": "Hunters",
-      "_id": "0b170d89003c5722",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.0b170d89003c5722"
+      "_key": "!tables.results!4873d9b03e06e901.f0373c92bb8121c0",
+      "_id": "f0373c92bb8121c0"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         34
       ],
       "text": "Jackals",
-      "_id": "6ea3a8151870de05",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.6ea3a8151870de05"
+      "_key": "!tables.results!4873d9b03e06e901.e546feef3767d8aa",
+      "_id": "e546feef3767d8aa"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         36
       ],
       "text": "Keepers",
-      "_id": "fb09bb4d1455d849",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.fb09bb4d1455d849"
+      "_key": "!tables.results!4873d9b03e06e901.5c7f33ce63158bd4",
+      "_id": "5c7f33ce63158bd4"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         38
       ],
       "text": "Knights",
-      "_id": "1e01283cb4d557b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.1e01283cb4d557b3"
+      "_key": "!tables.results!4873d9b03e06e901.2bc70dad29a37a1b",
+      "_id": "2bc70dad29a37a1b"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         40
       ],
       "text": "Menders",
-      "_id": "cd4d35c67628d0c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.cd4d35c67628d0c5"
+      "_key": "!tables.results!4873d9b03e06e901.e36c8350c3b917fd",
+      "_id": "e36c8350c3b917fd"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         42
       ],
       "text": "Outcasts",
-      "_id": "da4b8096d2cf9512",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.da4b8096d2cf9512"
+      "_key": "!tables.results!4873d9b03e06e901.9b6294e85f89fdbc",
+      "_id": "9b6294e85f89fdbc"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         44
       ],
       "text": "Phantoms",
-      "_id": "845ca54f4964eafd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.845ca54f4964eafd"
+      "_key": "!tables.results!4873d9b03e06e901.4211e37b619151aa",
+      "_id": "4211e37b619151aa"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         46
       ],
       "text": "Planets",
-      "_id": "f19e70628f7c3d43",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.f19e70628f7c3d43"
+      "_key": "!tables.results!4873d9b03e06e901.161dc8c4331beb8d",
+      "_id": "161dc8c4331beb8d"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         48
       ],
       "text": "Raiders",
-      "_id": "0a184f1b10082277",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.0a184f1b10082277"
+      "_key": "!tables.results!4873d9b03e06e901.9fb3bcd84b93541c",
+      "_id": "9fb3bcd84b93541c"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         50
       ],
       "text": "Ravens",
-      "_id": "7791cfa1efcf73d9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.7791cfa1efcf73d9"
+      "_key": "!tables.results!4873d9b03e06e901.3808d2cf6efda583",
+      "_id": "3808d2cf6efda583"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         52
       ],
       "text": "Realms",
-      "_id": "7911c5c9f61cc656",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.7911c5c9f61cc656"
+      "_key": "!tables.results!4873d9b03e06e901.97796aa3be761530",
+      "_id": "97796aa3be761530"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         54
       ],
       "text": "Reavers",
-      "_id": "154b3932f6c7e471",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.154b3932f6c7e471"
+      "_key": "!tables.results!4873d9b03e06e901.ea797f02ae560123",
+      "_id": "ea797f02ae560123"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         56
       ],
       "text": "Relics",
-      "_id": "2c867d7a9144aba5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.2c867d7a9144aba5"
+      "_key": "!tables.results!4873d9b03e06e901.66695629f16d3343",
+      "_id": "66695629f16d3343"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         58
       ],
       "text": "Seekers",
-      "_id": "c8f2f1fe7e7c2075",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.c8f2f1fe7e7c2075"
+      "_key": "!tables.results!4873d9b03e06e901.b349350df2e1045a",
+      "_id": "b349350df2e1045a"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         60
       ],
       "text": "Sentinels",
-      "_id": "40482a5c96415745",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.40482a5c96415745"
+      "_key": "!tables.results!4873d9b03e06e901.21c0464fe2b132c1",
+      "_id": "21c0464fe2b132c1"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         62
       ],
       "text": "Serpents",
-      "_id": "c672965291fb1637",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.c672965291fb1637"
+      "_key": "!tables.results!4873d9b03e06e901.29e72a95efa51825",
+      "_id": "29e72a95efa51825"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         64
       ],
       "text": "Servants",
-      "_id": "bb7bc1772f0cd1f6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.bb7bc1772f0cd1f6"
+      "_key": "!tables.results!4873d9b03e06e901.8ab284c521b07bfd",
+      "_id": "8ab284c521b07bfd"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         66
       ],
       "text": "Shadows",
-      "_id": "ec17233f1f895c0a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.ec17233f1f895c0a"
+      "_key": "!tables.results!4873d9b03e06e901.1fdef53a90d00037",
+      "_id": "1fdef53a90d00037"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         68
       ],
       "text": "Shards",
-      "_id": "ba539b601ca929ce",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.ba539b601ca929ce"
+      "_key": "!tables.results!4873d9b03e06e901.1e136be23088a10d",
+      "_id": "1e136be23088a10d"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         70
       ],
       "text": "Skulls",
-      "_id": "7d29a0d4f3cd2700",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.7d29a0d4f3cd2700"
+      "_key": "!tables.results!4873d9b03e06e901.acb97ff3bf3c567c",
+      "_id": "acb97ff3bf3c567c"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         72
       ],
       "text": "Souls",
-      "_id": "ff8bf01e64e2753c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.ff8bf01e64e2753c"
+      "_key": "!tables.results!4873d9b03e06e901.44b070cf758706ed",
+      "_id": "44b070cf758706ed"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         74
       ],
       "text": "Specters",
-      "_id": "2aaf2c01d74bd587",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.2aaf2c01d74bd587"
+      "_key": "!tables.results!4873d9b03e06e901.f50770dba46ff1d1",
+      "_id": "f50770dba46ff1d1"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         76
       ],
       "text": "Stars",
-      "_id": "7177f410097f2644",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.7177f410097f2644"
+      "_key": "!tables.results!4873d9b03e06e901.0a69d8b0b3702009",
+      "_id": "0a69d8b0b3702009"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         78
       ],
       "text": "Suns",
-      "_id": "2fcfc2d46b247d14",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.2fcfc2d46b247d14"
+      "_key": "!tables.results!4873d9b03e06e901.6b209fb8ad23b635",
+      "_id": "6b209fb8ad23b635"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         80
       ],
       "text": "Swarm",
-      "_id": "ad828aef0bc6d5bc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.ad828aef0bc6d5bc"
+      "_key": "!tables.results!4873d9b03e06e901.706a66e533e1ebe0",
+      "_id": "706a66e533e1ebe0"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         82
       ],
       "text": "Swords",
-      "_id": "3528be5776eca3fb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.3528be5776eca3fb"
+      "_key": "!tables.results!4873d9b03e06e901.2e733b70fb56b6a2",
+      "_id": "2e733b70fb56b6a2"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         84
       ],
       "text": "Talons",
-      "_id": "ff3e74c5d8db7589",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.ff3e74c5d8db7589"
+      "_key": "!tables.results!4873d9b03e06e901.47469612abbac3d0",
+      "_id": "47469612abbac3d0"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         86
       ],
       "text": "Vanguards",
-      "_id": "c1719d22640c42aa",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.c1719d22640c42aa"
+      "_key": "!tables.results!4873d9b03e06e901.6ce9eaa21eeae5c5",
+      "_id": "6ce9eaa21eeae5c5"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         88
       ],
       "text": "Wardens",
-      "_id": "246e9377a816cf1f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.246e9377a816cf1f"
+      "_key": "!tables.results!4873d9b03e06e901.e4dfe89fda147417",
+      "_id": "e4dfe89fda147417"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         90
       ],
       "text": "Watchers",
-      "_id": "7d8eca5f7ee65d59",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.7d8eca5f7ee65d59"
+      "_key": "!tables.results!4873d9b03e06e901.68531345960da5e6",
+      "_id": "68531345960da5e6"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         92
       ],
       "text": "Wolves",
-      "_id": "fa2ca5e64cfbf1be",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.fa2ca5e64cfbf1be"
+      "_key": "!tables.results!4873d9b03e06e901.50d24ecec628e2e2",
+      "_id": "50d24ecec628e2e2"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         94
       ],
       "text": "Worlds",
-      "_id": "fd56b43f3de3e225",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.fd56b43f3de3e225"
+      "_key": "!tables.results!4873d9b03e06e901.15e3156ccd7259fe",
+      "_id": "15e3156ccd7259fe"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         96
       ],
       "text": "Wraiths",
-      "_id": "de4730a04e0be7c8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.de4730a04e0be7c8"
+      "_key": "!tables.results!4873d9b03e06e901.a7fcc502c710d716",
+      "_id": "a7fcc502c710d716"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         98
       ],
       "text": "Wreckers",
-      "_id": "4e1e6964a72c6a9b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.4e1e6964a72c6a9b"
+      "_key": "!tables.results!4873d9b03e06e901.350e4430375f737c",
+      "_id": "350e4430375f737c"
     },
     {
       "range": [
@@ -704,29 +460,12 @@
         100
       ],
       "text": "Wrights",
-      "_id": "91a6ae7ab1732c8b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4873d9b03e06e901.91a6ae7ab1732c8b"
+      "_key": "!tables.results!4873d9b03e06e901.0716a338824e5460",
+      "_id": "0716a338824e5460"
     }
   ],
-  "folder": "b6fe3d35ff56995d",
+  "folder": "2ee92ba1fb40f90b",
   "sort": 345,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!4873d9b03e06e901"
 }

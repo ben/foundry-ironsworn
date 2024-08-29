@@ -1,0 +1,182 @@
+{
+  "_id": "888179eec74ecc80",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/weapon_detail_cursed"
+    }
+  },
+  "name": "Cursed Weapon Detail",
+  "description": "<p>If you roll a @Compendium[foundry-ironsworn.sunderedislesoracles.ba4ca6bab80e77d3]{Trademark Weapon} curse, take your result and give that weapon a cursed aspect from the table below.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Adorned with bone or skull motifs",
+      "_key": "!tables.results!888179eec74ecc80.2cd70c6902e404a0",
+      "_id": "2cd70c6902e404a0"
+    },
+    {
+      "range": [
+        6,
+        15
+      ],
+      "text": "Bound to a vengeful spirit",
+      "_key": "!tables.results!888179eec74ecc80.2b1da30cdedc0623",
+      "_id": "2b1da30cdedc0623"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Burning with intense flame",
+      "_key": "!tables.results!888179eec74ecc80.d3c067c726780b8d",
+      "_id": "d3c067c726780b8d"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Charged with arcane energy",
+      "_key": "!tables.results!888179eec74ecc80.c7f1aaa0245660fd",
+      "_id": "c7f1aaa0245660fd"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Consumes the souls of its victims",
+      "_key": "!tables.results!888179eec74ecc80.432e999c1d3680ca",
+      "_id": "432e999c1d3680ca"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Dripping with foul ichor",
+      "_key": "!tables.results!888179eec74ecc80.3ea2e90da52edd95",
+      "_id": "3ea2e90da52edd95"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Enveloped in icy frost",
+      "_key": "!tables.results!888179eec74ecc80.98d1ed6701f37bdc",
+      "_id": "98d1ed6701f37bdc"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Etched with sinister glyphs",
+      "_key": "!tables.results!888179eec74ecc80.39c9d13ae17bab6c",
+      "_id": "39c9d13ae17bab6c"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Feeding upon the lifeforce of its wielder",
+      "_key": "!tables.results!888179eec74ecc80.9fffa619e29faae2",
+      "_id": "9fffa619e29faae2"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Inflicts festering wounds",
+      "_key": "!tables.results!888179eec74ecc80.4bedf3064dcd3d26",
+      "_id": "4bedf3064dcd3d26"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Oozing with corrosive venom",
+      "_key": "!tables.results!888179eec74ecc80.1068df8709f72ca1",
+      "_id": "1068df8709f72ca1"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Powered by strange mechanisms",
+      "_key": "!tables.results!888179eec74ecc80.e6660db300485f54",
+      "_id": "e6660db300485f54"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Radiating a sickly light",
+      "_key": "!tables.results!888179eec74ecc80.d8602528148f2cd1",
+      "_id": "d8602528148f2cd1"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Summoned out of thin air",
+      "_key": "!tables.results!888179eec74ecc80.676dff7aa68a6e63",
+      "_id": "676dff7aa68a6e63"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Tarnished with unnatural decay",
+      "_key": "!tables.results!888179eec74ecc80.480d519dbb53240d",
+      "_id": "480d519dbb53240d"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Transforms its wielder",
+      "_key": "!tables.results!888179eec74ecc80.b4ad2e2b5e2d8053",
+      "_id": "b4ad2e2b5e2d8053"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Whispering irresistible commands",
+      "_key": "!tables.results!888179eec74ecc80.430a5a1c990cfa40",
+      "_id": "430a5a1c990cfa40"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wreathed in smoke and ash",
+      "_key": "!tables.results!888179eec74ecc80.828e54c0c99a598b",
+      "_id": "828e54c0c99a598b"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 191,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!888179eec74ecc80"
+}

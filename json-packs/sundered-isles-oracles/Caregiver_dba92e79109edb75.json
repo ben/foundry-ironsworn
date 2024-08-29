@@ -1,0 +1,65 @@
+{
+  "_id": "dba92e79109edb75",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/caregiver"
+    }
+  },
+  "name": "Caregiver",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Apothecary",
+      "_key": "!tables.results!dba92e79109edb75.66763b8684be3b7a",
+      "_id": "66763b8684be3b7a"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Herbalist",
+      "_key": "!tables.results!dba92e79109edb75.7ee52854ea8a445e",
+      "_id": "7ee52854ea8a445e"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Surgeon",
+      "_key": "!tables.results!dba92e79109edb75.746eba7971f41958",
+      "_id": "746eba7971f41958"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Midwife",
+      "_key": "!tables.results!dba92e79109edb75.72ae8bed862ecdbf",
+      "_id": "72ae8bed862ecdbf"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Physician",
+      "_key": "!tables.results!dba92e79109edb75.c53053c137fc06cd",
+      "_id": "c53053c137fc06cd"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!dba92e79109edb75"
+}

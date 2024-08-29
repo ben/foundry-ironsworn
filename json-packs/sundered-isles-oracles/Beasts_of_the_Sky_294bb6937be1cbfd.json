@@ -1,0 +1,92 @@
+{
+  "_id": "294bb6937be1cbfd",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/adventures/beasts",
+      "dsid": "oracle_rollable:sundered_isles/adventures/beasts/sky"
+    }
+  },
+  "name": "Beasts of the Sky",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Great Hawk",
+      "_key": "!tables.results!294bb6937be1cbfd.2bcb4486103b3888",
+      "_id": "2bcb4486103b3888"
+    },
+    {
+      "range": [
+        21,
+        35
+      ],
+      "text": "Iron Dragon",
+      "_key": "!tables.results!294bb6937be1cbfd.78009040110050ae",
+      "_id": "78009040110050ae"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "Wave Skimmer",
+      "_key": "!tables.results!294bb6937be1cbfd.b3d9f2a6b3920a05",
+      "_id": "b3d9f2a6b3920a05"
+    },
+    {
+      "range": [
+        51,
+        65
+      ],
+      "text": "Goregull",
+      "_key": "!tables.results!294bb6937be1cbfd.120057bd43f61d10",
+      "_id": "120057bd43f61d10"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Monarch Bat",
+      "_key": "!tables.results!294bb6937be1cbfd.55b6d1b0afa99413",
+      "_id": "55b6d1b0afa99413"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "Bloodmite",
+      "_key": "!tables.results!294bb6937be1cbfd.6591f5a8a0155400",
+      "_id": "6591f5a8a0155400"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Thanatoi",
+      "_key": "!tables.results!294bb6937be1cbfd.44f727a15f604a95",
+      "_id": "44f727a15f604a95"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Abomination",
+      "_key": "!tables.results!294bb6937be1cbfd.49f873ab7cf345f0",
+      "_id": "49f873ab7cf345f0"
+    }
+  ],
+  "folder": "a4ce4643e46e22ca",
+  "sort": 63,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!294bb6937be1cbfd"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Local Seas",
+  "description": "",
+  "type": "RollTable",
+  "_id": "443aa575686c8cb0",
+  "sort": 227,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/misc/local_seas"
+    }
+  },
+  "folder": "4712a591169fe5d6",
+  "sorting": "a",
+  "_key": "!folders!443aa575686c8cb0"
+}

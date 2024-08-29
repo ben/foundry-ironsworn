@@ -1,0 +1,15 @@
+{
+  "name": "Craft",
+  "description": "",
+  "type": "RollTable",
+  "_id": "2a7faa3f0fb6d084",
+  "sort": 184,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/name/themes/craft"
+    }
+  },
+  "folder": "1aa3b728667629f3",
+  "sorting": "a",
+  "_key": "!folders!2a7faa3f0fb6d084"
+}

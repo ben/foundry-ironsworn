@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "3b11db40830d9be0",
+  "folder": "841fa5bb80d55fd9",
+  "name": "Rat",
+  "system": {
+    "requirement": "",
+    "category": "Companion",
+    "color": "#3d8b8a",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your rat companion shows the way. When you make a move to flee a danger aboard a ship or within a confined site, and let your rat take the lead, add +its health.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move by setting loose the rat to cause a distraction or commotion among a crowd or in a public space, add +1 and take +1 momentum on a hit. On a strong hit with a match, it creates unexpected chaos; take +1 momentum more.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You may @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} (even if not on an expedition) by sending the rat to search a promising confined area for something of interest or value. If you do, roll +its health. On a miss, its instincts have you forewarned; you may reroll one challenge die.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "max": 2,
+      "value": 2,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Out of Action",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/companion/rat",
+      "dsid": "asset:sundered_isles/companion/rat"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!3b11db40830d9be0"
+}

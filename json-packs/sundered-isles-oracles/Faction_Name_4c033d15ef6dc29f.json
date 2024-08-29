@@ -1,0 +1,15 @@
+{
+  "name": "Faction Name",
+  "description": "",
+  "type": "RollTable",
+  "_id": "4c033d15ef6dc29f",
+  "sort": 183,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/name"
+    }
+  },
+  "folder": "332fe732886451c6",
+  "sorting": "a",
+  "_key": "!folders!4c033d15ef6dc29f"
+}

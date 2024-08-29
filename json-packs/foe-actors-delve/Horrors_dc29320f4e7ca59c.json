@@ -1,0 +1,15 @@
+{
+  "name": "Horrors",
+  "description": "",
+  "type": "Item",
+  "_id": "dc29320f4e7ca59c",
+  "sort": 128,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc_collection:delve/horrors"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!dc29320f4e7ca59c"
+}

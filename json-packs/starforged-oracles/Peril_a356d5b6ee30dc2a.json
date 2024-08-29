@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Engineering/Peril",
-      "category": "Starforged/Oracles/Derelicts/Engineering"
+      "category": "Starforged/Oracles/Derelicts/Engineering",
+      "dsid": "oracle_rollable:starforged/derelict/engineering/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Corrosive leak",
-      "_id": "a84aa4647891f2f4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.a84aa4647891f2f4"
+      "_key": "!tables.results!a356d5b6ee30dc2a.300451736dde1aa7",
+      "_id": "300451736dde1aa7"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Erratic utility bots",
-      "_id": "fc1bc7d4da8c840f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.fc1bc7d4da8c840f"
+      "_key": "!tables.results!a356d5b6ee30dc2a.452e841cbf8fde69",
+      "_id": "452e841cbf8fde69"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Failing equipment requires a specific part or skill",
-      "_id": "28b28f66dfe72d20",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.28b28f66dfe72d20"
+      "_key": "!tables.results!a356d5b6ee30dc2a.710e1aa16658b7ef",
+      "_id": "710e1aa16658b7ef"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Fire or energy surge",
-      "_id": "06d5dfdf4aadacd9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.06d5dfdf4aadacd9"
+      "_key": "!tables.results!a356d5b6ee30dc2a.240317533970aaaa",
+      "_id": "240317533970aaaa"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Precarious or broken path",
-      "_id": "2532e4e0670b3417",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.2532e4e0670b3417"
+      "_key": "!tables.results!a356d5b6ee30dc2a.370ec55f6ffb264f",
+      "_id": "370ec55f6ffb264f"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Radioactive hotspot",
-      "_id": "92761ee3a691e27a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.92761ee3a691e27a"
+      "_key": "!tables.results!a356d5b6ee30dc2a.7d303d3683e29ecf",
+      "_id": "7d303d3683e29ecf"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Sabotaged equipment",
-      "_id": "4f946f3dd4fb1718",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.4f946f3dd4fb1718"
+      "_key": "!tables.results!a356d5b6ee30dc2a.76363af62f7563e3",
+      "_id": "76363af62f7563e3"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Shrouded atmosphere conceals a lurking foe",
-      "_id": "e35f313ddc326581",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.e35f313ddc326581"
+      "_key": "!tables.results!a356d5b6ee30dc2a.2e29ac32285a2e5f",
+      "_id": "2e29ac32285a2e5f"
     },
     {
       "range": [
@@ -130,27 +91,17 @@
         90
       ],
       "text": "Unstable or failing power core",
-      "_id": "dd8a7a8999e39a32",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.dd8a7a8999e39a32"
+      "_key": "!tables.results!a356d5b6ee30dc2a.0629519889a37a1d",
+      "_id": "0629519889a37a1d"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "b0b4abbb515f4a05",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.b0b4abbb515f4a05"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!a356d5b6ee30dc2a.c9dfcfaaba187fa7",
+      "_id": "c9dfcfaaba187fa7"
     },
     {
       "range": [
@@ -158,29 +109,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "e4ff12db3a1e0f72",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!a356d5b6ee30dc2a.e4ff12db3a1e0f72"
+      "_key": "!tables.results!a356d5b6ee30dc2a.37e9ad3984cd7053",
+      "_id": "37e9ad3984cd7053"
     }
   ],
   "folder": "9851eb5306cbb8fc",
   "sort": 354,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!a356d5b6ee30dc2a"
 }

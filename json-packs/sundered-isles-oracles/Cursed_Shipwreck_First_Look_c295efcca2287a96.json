@@ -1,0 +1,272 @@
+{
+  "_id": "c295efcca2287a96",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/first_look_cursed"
+    }
+  },
+  "name": "Cursed Shipwreck First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Alight with unnatural flames",
+      "_key": "!tables.results!c295efcca2287a96.ae8eede171e05573",
+      "_id": "ae8eede171e05573"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Caught within unnatural wind or vortex",
+      "_key": "!tables.results!c295efcca2287a96.38ee3103a5585a6a",
+      "_id": "38ee3103a5585a6a"
+    },
+    {
+      "range": [
+        7,
+        11
+      ],
+      "text": "Defended by undead crew",
+      "_key": "!tables.results!c295efcca2287a96.3d0e3319da7b67b6",
+      "_id": "3d0e3319da7b67b6"
+    },
+    {
+      "range": [
+        12,
+        14
+      ],
+      "text": "Dreadful figurehead, still intact",
+      "_key": "!tables.results!c295efcca2287a96.f71efd0f1410fda3",
+      "_id": "f71efd0f1410fda3"
+    },
+    {
+      "range": [
+        15,
+        19
+      ],
+      "text": "Engulfed in unnatural mist or murk",
+      "_key": "!tables.results!c295efcca2287a96.aac456f8b6eee646",
+      "_id": "aac456f8b6eee646"
+    },
+    {
+      "range": [
+        20,
+        22
+      ],
+      "text": "Foreboding warning scrawled on the hull",
+      "_key": "!tables.results!c295efcca2287a96.41e4f4b37b08aef8",
+      "_id": "41e4f4b37b08aef8"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Gigantic bite marks or claw marks",
+      "_key": "!tables.results!c295efcca2287a96.4422b89a092e5373",
+      "_id": "4422b89a092e5373"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Glimpses of the ship in its heyday",
+      "_key": "!tables.results!c295efcca2287a96.173dead4c430597f",
+      "_id": "173dead4c430597f"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Glimpses of the ship's final moments",
+      "_key": "!tables.results!c295efcca2287a96.f2954bc80bf607f4",
+      "_id": "f2954bc80bf607f4"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "Haunting singing or music",
+      "_key": "!tables.results!c295efcca2287a96.6d95831c2b94095e",
+      "_id": "6d95831c2b94095e"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "Hung or tangled with corpses or bones",
+      "_key": "!tables.results!c295efcca2287a96.8e10e51ec208d594",
+      "_id": "8e10e51ec208d594"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "Hung with webs or mucus",
+      "_key": "!tables.results!c295efcca2287a96.33b48790bcd0fad4",
+      "_id": "33b48790bcd0fad4"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Marked with eldritch symbols",
+      "_key": "!tables.results!c295efcca2287a96.ffcf390281699563",
+      "_id": "ffcf390281699563"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Overtaken by malignant plants",
+      "_key": "!tables.results!c295efcca2287a96.1cbbe9b70ec860e5",
+      "_id": "1cbbe9b70ec860e5"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "Phantom figure beckons from the deck",
+      "_key": "!tables.results!c295efcca2287a96.5da133371e4ce40a",
+      "_id": "5da133371e4ce40a"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Phantom voices call out commands",
+      "_key": "!tables.results!c295efcca2287a96.e04d98151e5f123d",
+      "_id": "e04d98151e5f123d"
+    },
+    {
+      "range": [
+        57,
+        59
+      ],
+      "text": "Rigged with infernal machinery",
+      "_key": "!tables.results!c295efcca2287a96.d0d4cf9b23371bf0",
+      "_id": "d0d4cf9b23371bf0"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "Sails hoist as if getting underway",
+      "_key": "!tables.results!c295efcca2287a96.f171e5e6b30d0fff",
+      "_id": "f171e5e6b30d0fff"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Scarred by weapons of baneful power",
+      "_key": "!tables.results!c295efcca2287a96.d8d0ac557bf0ecbe",
+      "_id": "d8d0ac557bf0ecbe"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Ship's bell rings out",
+      "_key": "!tables.results!c295efcca2287a96.47d59c3400eb16f4",
+      "_id": "47d59c3400eb16f4"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Suffused with eerie light",
+      "_key": "!tables.results!c295efcca2287a96.17e72b3d85da42ab",
+      "_id": "17e72b3d85da42ab"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Surrounded by blighted terrain",
+      "_key": "!tables.results!c295efcca2287a96.95c4fdee6e597b7b",
+      "_id": "95c4fdee6e597b7b"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Surrounded by dead creatures",
+      "_key": "!tables.results!c295efcca2287a96.a9d9f5f20f13f509",
+      "_id": "a9d9f5f20f13f509"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "Swarming with malignant creatures",
+      "_key": "!tables.results!c295efcca2287a96.ad1e3569d6ca755d",
+      "_id": "ad1e3569d6ca755d"
+    },
+    {
+      "range": [
+        87,
+        89
+      ],
+      "text": "True nature revealed in moonlight",
+      "_key": "!tables.results!c295efcca2287a96.831ea6569e51ac2f",
+      "_id": "831ea6569e51ac2f"
+    },
+    {
+      "range": [
+        90,
+        94
+      ],
+      "text": "Unnerving stillness or quiet",
+      "_key": "!tables.results!c295efcca2287a96.39d5a3c32a5e0e0f",
+      "_id": "39d5a3c32a5e0e0f"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "Within the territory of a monstrous beast",
+      "_key": "!tables.results!c295efcca2287a96.4ddf74e5eb6c340d",
+      "_id": "4ddf74e5eb6c340d"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Wreathed in cold and ice",
+      "_key": "!tables.results!c295efcca2287a96.ec6b5bef4460da42",
+      "_id": "ec6b5bef4460da42"
+    }
+  ],
+  "folder": "d4fcc34036960bb6",
+  "sort": 200,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!c295efcca2287a96"
+}

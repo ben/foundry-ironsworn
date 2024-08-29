@@ -1,0 +1,470 @@
+{
+  "_id": "1193319d6bd1d1a2",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/culture"
+    }
+  },
+  "name": "Faction Name: Culture",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Akani",
+      "_key": "!tables.results!1193319d6bd1d1a2.4e5f7623e5836184",
+      "_id": "4e5f7623e5836184"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Altarian",
+      "_key": "!tables.results!1193319d6bd1d1a2.8da64b17f0e98269",
+      "_id": "8da64b17f0e98269"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Ankara",
+      "_key": "!tables.results!1193319d6bd1d1a2.67901659e10c5026",
+      "_id": "67901659e10c5026"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Atlan",
+      "_key": "!tables.results!1193319d6bd1d1a2.49b7adf5697a0278",
+      "_id": "49b7adf5697a0278"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Bakura",
+      "_key": "!tables.results!1193319d6bd1d1a2.b99990d3d34354f5",
+      "_id": "b99990d3d34354f5"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Cassian",
+      "_key": "!tables.results!1193319d6bd1d1a2.3bcd71cd149f1c86",
+      "_id": "3bcd71cd149f1c86"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Damos",
+      "_key": "!tables.results!1193319d6bd1d1a2.f1b428cef17351e1",
+      "_id": "f1b428cef17351e1"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Drago",
+      "_key": "!tables.results!1193319d6bd1d1a2.0e3142c4d040a994",
+      "_id": "0e3142c4d040a994"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Enderian",
+      "_key": "!tables.results!1193319d6bd1d1a2.457a385ba66a409c",
+      "_id": "457a385ba66a409c"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Ettian",
+      "_key": "!tables.results!1193319d6bd1d1a2.29897f95e8f7e375",
+      "_id": "29897f95e8f7e375"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Ferron",
+      "_key": "!tables.results!1193319d6bd1d1a2.14fd8c37a61614ca",
+      "_id": "14fd8c37a61614ca"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Fiorin",
+      "_key": "!tables.results!1193319d6bd1d1a2.5572a71ea0973091",
+      "_id": "5572a71ea0973091"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Ghal",
+      "_key": "!tables.results!1193319d6bd1d1a2.032f2bb28a52cf40",
+      "_id": "032f2bb28a52cf40"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Harkiv",
+      "_key": "!tables.results!1193319d6bd1d1a2.35b2493a666077a3",
+      "_id": "35b2493a666077a3"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Ishana",
+      "_key": "!tables.results!1193319d6bd1d1a2.892cc56b2dc403c2",
+      "_id": "892cc56b2dc403c2"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Jovian",
+      "_key": "!tables.results!1193319d6bd1d1a2.32261e393cef29e0",
+      "_id": "32261e393cef29e0"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Kanori",
+      "_key": "!tables.results!1193319d6bd1d1a2.c33c009394986437",
+      "_id": "c33c009394986437"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Kazara",
+      "_key": "!tables.results!1193319d6bd1d1a2.ad9c12d359b35301",
+      "_id": "ad9c12d359b35301"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Khazu",
+      "_key": "!tables.results!1193319d6bd1d1a2.41588ab60125e329",
+      "_id": "41588ab60125e329"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Kolthu",
+      "_key": "!tables.results!1193319d6bd1d1a2.1de4446351efbf43",
+      "_id": "1de4446351efbf43"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Kumati",
+      "_key": "!tables.results!1193319d6bd1d1a2.33ab8342f7b721bc",
+      "_id": "33ab8342f7b721bc"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Lucian",
+      "_key": "!tables.results!1193319d6bd1d1a2.6eeec9dff20dc0c4",
+      "_id": "6eeec9dff20dc0c4"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Lysian",
+      "_key": "!tables.results!1193319d6bd1d1a2.bd09d8752870ce48",
+      "_id": "bd09d8752870ce48"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Makari",
+      "_key": "!tables.results!1193319d6bd1d1a2.3c658eeb3db487d1",
+      "_id": "3c658eeb3db487d1"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Masaku",
+      "_key": "!tables.results!1193319d6bd1d1a2.e1fb6b4d08c000d3",
+      "_id": "e1fb6b4d08c000d3"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Matu",
+      "_key": "!tables.results!1193319d6bd1d1a2.d34ac2f66adefb92",
+      "_id": "d34ac2f66adefb92"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Moriden",
+      "_key": "!tables.results!1193319d6bd1d1a2.60c5667accdfb145",
+      "_id": "60c5667accdfb145"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Motari",
+      "_key": "!tables.results!1193319d6bd1d1a2.fb697c6468c4ca81",
+      "_id": "fb697c6468c4ca81"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Naveena",
+      "_key": "!tables.results!1193319d6bd1d1a2.d570135446da7793",
+      "_id": "d570135446da7793"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Nazari",
+      "_key": "!tables.results!1193319d6bd1d1a2.de6c43c6dec6c007",
+      "_id": "de6c43c6dec6c007"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Novsk",
+      "_key": "!tables.results!1193319d6bd1d1a2.a021d40dc2303e16",
+      "_id": "a021d40dc2303e16"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Osara",
+      "_key": "!tables.results!1193319d6bd1d1a2.ca0aea118f5eebcf",
+      "_id": "ca0aea118f5eebcf"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Pythian",
+      "_key": "!tables.results!1193319d6bd1d1a2.c8f871c1361d4c03",
+      "_id": "c8f871c1361d4c03"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Qan",
+      "_key": "!tables.results!1193319d6bd1d1a2.85a2a5beafc10fca",
+      "_id": "85a2a5beafc10fca"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Rayan",
+      "_key": "!tables.results!1193319d6bd1d1a2.2e52db7257e1a032",
+      "_id": "2e52db7257e1a032"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Rhugal",
+      "_key": "!tables.results!1193319d6bd1d1a2.4d73af365c46dde8",
+      "_id": "4d73af365c46dde8"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Sadir",
+      "_key": "!tables.results!1193319d6bd1d1a2.61d99a99c0593494",
+      "_id": "61d99a99c0593494"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Sanira",
+      "_key": "!tables.results!1193319d6bd1d1a2.cde3247bd0e33965",
+      "_id": "cde3247bd0e33965"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Savian",
+      "_key": "!tables.results!1193319d6bd1d1a2.549ad303e35cab33",
+      "_id": "549ad303e35cab33"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Shunta",
+      "_key": "!tables.results!1193319d6bd1d1a2.9db33e1e8e4d3ecb",
+      "_id": "9db33e1e8e4d3ecb"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Terion",
+      "_key": "!tables.results!1193319d6bd1d1a2.33ce22be15dcdae0",
+      "_id": "33ce22be15dcdae0"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Thyrian",
+      "_key": "!tables.results!1193319d6bd1d1a2.5b14df3f3711056e",
+      "_id": "5b14df3f3711056e"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Vallos",
+      "_key": "!tables.results!1193319d6bd1d1a2.4988e2bd1c746991",
+      "_id": "4988e2bd1c746991"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Vanuyan",
+      "_key": "!tables.results!1193319d6bd1d1a2.0aec955806a4ec67",
+      "_id": "0aec955806a4ec67"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Verian",
+      "_key": "!tables.results!1193319d6bd1d1a2.ef300332cda64014",
+      "_id": "ef300332cda64014"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Vikani",
+      "_key": "!tables.results!1193319d6bd1d1a2.3d24e34db3516990",
+      "_id": "3d24e34db3516990"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Visen",
+      "_key": "!tables.results!1193319d6bd1d1a2.51e42d8de197a299",
+      "_id": "51e42d8de197a299"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Wulan",
+      "_key": "!tables.results!1193319d6bd1d1a2.32d86b659fcace31",
+      "_id": "32d86b659fcace31"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Yamora",
+      "_key": "!tables.results!1193319d6bd1d1a2.7d2817d2cbd704a9",
+      "_id": "7d2817d2cbd704a9"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Zhuan",
+      "_key": "!tables.results!1193319d6bd1d1a2.22c719fdbfef09eb",
+      "_id": "22c719fdbfef09eb"
+    }
+  ],
+  "folder": "4c033d15ef6dc29f",
+  "sort": 183,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1193319d6bd1d1a2"
+}

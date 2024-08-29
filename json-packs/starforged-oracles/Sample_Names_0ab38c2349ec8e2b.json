@@ -1,0 +1,200 @@
+{
+  "_id": "0ab38c2349ec8e2b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Furnace",
+      "dsid": "oracle_rollable:starforged/planet/furnace/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Ash",
+      "_key": "!tables.results!0ab38c2349ec8e2b.65c1b719468bef9e",
+      "_id": "65c1b719468bef9e"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Azula",
+      "_key": "!tables.results!0ab38c2349ec8e2b.8fa26bbaea8eb1de",
+      "_id": "8fa26bbaea8eb1de"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Cinder",
+      "_key": "!tables.results!0ab38c2349ec8e2b.34b34bea97283d08",
+      "_id": "34b34bea97283d08"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Cyrus",
+      "_key": "!tables.results!0ab38c2349ec8e2b.3cc035dc117b0647",
+      "_id": "3cc035dc117b0647"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Draconus",
+      "_key": "!tables.results!0ab38c2349ec8e2b.e537750d09818adb",
+      "_id": "e537750d09818adb"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Effigy",
+      "_key": "!tables.results!0ab38c2349ec8e2b.b04f98dd97e32c08",
+      "_id": "b04f98dd97e32c08"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Ember",
+      "_key": "!tables.results!0ab38c2349ec8e2b.cff395c8b6842257",
+      "_id": "cff395c8b6842257"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Flint",
+      "_key": "!tables.results!0ab38c2349ec8e2b.47e40ebcef77ad08",
+      "_id": "47e40ebcef77ad08"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Hades",
+      "_key": "!tables.results!0ab38c2349ec8e2b.3bd943fec78ace9b",
+      "_id": "3bd943fec78ace9b"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Hera",
+      "_key": "!tables.results!0ab38c2349ec8e2b.f7c5ff838d9f4694",
+      "_id": "f7c5ff838d9f4694"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Ignis",
+      "_key": "!tables.results!0ab38c2349ec8e2b.b812c8b230f43fff",
+      "_id": "b812c8b230f43fff"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Inferno",
+      "_key": "!tables.results!0ab38c2349ec8e2b.2be8c35d4c758229",
+      "_id": "2be8c35d4c758229"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Ishum",
+      "_key": "!tables.results!0ab38c2349ec8e2b.15e6ea7fcb1047b4",
+      "_id": "15e6ea7fcb1047b4"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Kresnik",
+      "_key": "!tables.results!0ab38c2349ec8e2b.5b55d31905f1fed6",
+      "_id": "5b55d31905f1fed6"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Nemesis",
+      "_key": "!tables.results!0ab38c2349ec8e2b.f75550914b0f0aa6",
+      "_id": "f75550914b0f0aa6"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Obsidian",
+      "_key": "!tables.results!0ab38c2349ec8e2b.172d0b2aeecf8096",
+      "_id": "172d0b2aeecf8096"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Scorch",
+      "_key": "!tables.results!0ab38c2349ec8e2b.3a92d540afb8a6bb",
+      "_id": "3a92d540afb8a6bb"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Tana",
+      "_key": "!tables.results!0ab38c2349ec8e2b.b42ed6513fad0379",
+      "_id": "b42ed6513fad0379"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Vesta",
+      "_key": "!tables.results!0ab38c2349ec8e2b.092245dd27d140f9",
+      "_id": "092245dd27d140f9"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Vesuvius",
+      "_key": "!tables.results!0ab38c2349ec8e2b.2ec8bec3b940bf3f",
+      "_id": "2ec8bec3b940bf3f"
+    }
+  ],
+  "folder": "91ce34721ba5cce8",
+  "sort": 309,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0ab38c2349ec8e2b"
+}

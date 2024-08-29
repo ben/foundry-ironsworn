@@ -1,0 +1,15 @@
+{
+  "name": "Overland Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "0b3f32f3ee7a1a74",
+  "sort": 148,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/overland"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!0b3f32f3ee7a1a74"
+}

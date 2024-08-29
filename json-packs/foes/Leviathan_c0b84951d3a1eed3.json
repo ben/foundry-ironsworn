@@ -1,0 +1,27 @@
+{
+  "_id": "c0b84951d3a1eed3",
+  "type": "progress",
+  "name": "Leviathan",
+  "img": "icons/creatures/reptiles/serpent-horned-green.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Massive bulk</p>\n<p class=\"nogrow\">Flesh as tough as iron</p>\n<p class=\"nogrow\">Cold black eyes</p>\n<p class=\"nogrow\">Sinuous grace</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Slumber in the depths</p>\n<p class=\"nogrow\">Destroy those who trespass</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Rise from the depths</p>\n<p class=\"nogrow\">Ram and swamp ships</p>\n<p class=\"nogrow\">Devour prey whole</p>\n</div>\n</div>\n\n<p>These massive sea beasts lurk in the darkness of the deepest fjords and in the abyssal depths beyond the Barrier Islands. They sometimes surface to hunt within shallower waters. They will indiscriminately destroy any Ironlander craft which stray to close to their hunting grounds.</p>\n<p>Watchful sailors might catch sight of a leviathan circling their boat, studying them, in the moments before it attacks. Their dagger-shaped head is as tough and destructive as any battering ram, able to shatter a ship in a single blow.</p>\n\n<blockquote>Quest Starter: <p>A leviathan lurks off the coast, preying on fishing boats and trade ships. Among the dead is someone important to you. Who is it? You have vowed to send this beast back to the depths, but doing so will require a mythic weapon—The Abyssal Harpoon, an @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World} artifact said to be carved from the bones of a long-dead sea god. Where is this weapon rumored to be held?</p></blockquote>",
+    "rank": 5,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "b8ab7ea53c4096c5",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/beasts/leviathan"
+    }
+  },
+  "_key": "!items!c0b84951d3a1eed3"
+}

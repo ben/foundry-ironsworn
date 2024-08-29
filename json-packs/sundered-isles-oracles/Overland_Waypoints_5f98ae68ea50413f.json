@@ -1,0 +1,15 @@
+{
+  "name": "Overland Waypoints",
+  "description": "",
+  "type": "RollTable",
+  "_id": "5f98ae68ea50413f",
+  "sort": 148,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/overland/waypoints"
+    }
+  },
+  "folder": "0b3f32f3ee7a1a74",
+  "sorting": "a",
+  "_key": "!folders!5f98ae68ea50413f"
+}

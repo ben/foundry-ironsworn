@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Moves/Confront_Chaos",
-      "category": "Starforged/Oracles/Moves"
+      "category": "Starforged/Moves/Exploration",
+      "dsid": "move.oracle_rollable:starforged/exploration/confront_chaos.confront_chaos"
     }
   },
   "name": "Confront Chaos",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         4
       ],
       "text": "Baneful weapon of mass destruction",
-      "_id": "025b30222d30269f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.025b30222d30269f"
+      "_key": "!tables.results!f6ddcafd824d0ecb.a8fd3a35ba62cdbe",
+      "_id": "a8fd3a35ba62cdbe"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         9
       ],
       "text": "Cataclysmic environmental effects",
-      "_id": "eada6cc2da0e9663",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.eada6cc2da0e9663"
+      "_key": "!tables.results!f6ddcafd824d0ecb.e6768d346086a068",
+      "_id": "e6768d346086a068"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         12
       ],
       "text": "Dead given unnatural life",
-      "_id": "48b9a27b0b5560a1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.48b9a27b0b5560a1"
+      "_key": "!tables.results!f6ddcafd824d0ecb.9a3bbffd58c0283b",
+      "_id": "9a3bbffd58c0283b"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         17
       ],
       "text": "Destructive lifeform of monstrous proportion",
-      "_id": "97321687a0cbacd3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.97321687a0cbacd3"
+      "_key": "!tables.results!f6ddcafd824d0ecb.de450c9353cb6b39",
+      "_id": "de450c9353cb6b39"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         20
       ],
       "text": "Dread hallucinations or illusions",
-      "_id": "cfc00e652c33b19a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.cfc00e652c33b19a"
+      "_key": "!tables.results!f6ddcafd824d0ecb.daeb8d9ceb96d968",
+      "_id": "daeb8d9ceb96d968"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         24
       ],
       "text": "Harbingers of an imminent invasion",
-      "_id": "839ead6ae51b5989",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.839ead6ae51b5989"
+      "_key": "!tables.results!f6ddcafd824d0ecb.33ce2e1ee2bc4d35",
+      "_id": "33ce2e1ee2bc4d35"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         27
       ],
       "text": "Horde of insatiable hunger or fury",
-      "_id": "baac4b4088d0ad06",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.baac4b4088d0ad06"
+      "_key": "!tables.results!f6ddcafd824d0ecb.dc45111e3cd3ae11",
+      "_id": "dc45111e3cd3ae11"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         32
       ],
       "text": "Horrific lifeforms of inscrutable purpose",
-      "_id": "57cfb8e6d5a17115",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.57cfb8e6d5a17115"
+      "_key": "!tables.results!f6ddcafd824d0ecb.637b39f43704b08c",
+      "_id": "637b39f43704b08c"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         36
       ],
       "text": "Impostors in human form",
-      "_id": "ba15199300cd4a95",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.ba15199300cd4a95"
+      "_key": "!tables.results!f6ddcafd824d0ecb.d71dcd7f73f11e7f",
+      "_id": "d71dcd7f73f11e7f"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         41
       ],
       "text": "Machines made enemy",
-      "_id": "2865ffe7d8379e8f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.2865ffe7d8379e8f"
+      "_key": "!tables.results!f6ddcafd824d0ecb.3f1500e308ff5cad",
+      "_id": "3f1500e308ff5cad"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         45
       ],
       "text": "Malignant contagion or parasite",
-      "_id": "d2acd472842305d1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.d2acd472842305d1"
+      "_key": "!tables.results!f6ddcafd824d0ecb.8e4c86ce2e9982d1",
+      "_id": "8e4c86ce2e9982d1"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         50
       ],
       "text": "Messenger or signal with a dire warning",
-      "_id": "dda5c8f81f51d7d1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.dda5c8f81f51d7d1"
+      "_key": "!tables.results!f6ddcafd824d0ecb.60ed3e75f17d7a50",
+      "_id": "60ed3e75f17d7a50"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         53
       ],
       "text": "Passage to a grim alternate reality",
-      "_id": "2abd3322b863939f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.2abd3322b863939f"
+      "_key": "!tables.results!f6ddcafd824d0ecb.b663c1633e21c4ce",
+      "_id": "b663c1633e21c4ce"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         58
       ],
       "text": "People corrupted by chaos",
-      "_id": "ae840405eedc6dfd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.ae840405eedc6dfd"
+      "_key": "!tables.results!f6ddcafd824d0ecb.d5a781cb2f5df287",
+      "_id": "d5a781cb2f5df287"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         63
       ],
       "text": "Powerful distortions of time or space",
-      "_id": "275c97103140bc97",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.275c97103140bc97"
+      "_key": "!tables.results!f6ddcafd824d0ecb.9254af161186159b",
+      "_id": "9254af161186159b"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         68
       ],
       "text": "Signs of an impending catastrophe",
-      "_id": "4e10544463ef0118",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.4e10544463ef0118"
+      "_key": "!tables.results!f6ddcafd824d0ecb.1e82886059672e77",
+      "_id": "1e82886059672e77"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         72
       ],
       "text": "Site of a baffling disappearance",
-      "_id": "949ce00f081f2192",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.949ce00f081f2192"
+      "_key": "!tables.results!f6ddcafd824d0ecb.a36eaf544a531754",
+      "_id": "a36eaf544a531754"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         77
       ],
       "text": "Site of a horrible disaster",
-      "_id": "b1d99e9955f6fa6f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.b1d99e9955f6fa6f"
+      "_key": "!tables.results!f6ddcafd824d0ecb.566ac6d715540a0a",
+      "_id": "566ac6d715540a0a"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         82
       ],
       "text": "Site of terrible carnage",
-      "_id": "96271e7a230b4dd9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.96271e7a230b4dd9"
+      "_key": "!tables.results!f6ddcafd824d0ecb.626f3f35a9f5e279",
+      "_id": "626f3f35a9f5e279"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         87
       ],
       "text": "Technology nullified or made unstable",
-      "_id": "a607f0cd52d6d3f2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.a607f0cd52d6d3f2"
+      "_key": "!tables.results!f6ddcafd824d0ecb.16b29371d42e8714",
+      "_id": "16b29371d42e8714"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         92
       ],
       "text": "Technology warped for dark purpose",
-      "_id": "bc28e63fa6fdca95",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.bc28e63fa6fdca95"
+      "_key": "!tables.results!f6ddcafd824d0ecb.f6b3fc9f9683db83",
+      "_id": "f6b3fc9f9683db83"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         96
       ],
       "text": "Vault of dread technology or power",
-      "_id": "995401c5daf87542",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.995401c5daf87542"
+      "_key": "!tables.results!f6ddcafd824d0ecb.16b1cd80379959b0",
+      "_id": "16b1cd80379959b0"
     },
     {
       "range": [
@@ -326,29 +217,12 @@
         100
       ],
       "text": "Worshipers of great and malevolent powers",
-      "_id": "4080b3e811bbf138",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!f6ddcafd824d0ecb.4080b3e811bbf138"
+      "_key": "!tables.results!f6ddcafd824d0ecb.a6b0ca4726a59a62",
+      "_id": "a6b0ca4726a59a62"
     }
   ],
-  "folder": "adcc4cbc5484a254",
-  "sort": 177,
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!f6ddcafd824d0ecb"
 }

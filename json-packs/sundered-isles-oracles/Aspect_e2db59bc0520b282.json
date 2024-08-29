@@ -1,0 +1,110 @@
+{
+  "_id": "e2db59bc0520b282",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/war",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/war/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Battleborn",
+      "_key": "!tables.results!e2db59bc0520b282.69f0267c16bc56da",
+      "_id": "69f0267c16bc56da"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Bloodied",
+      "_key": "!tables.results!e2db59bc0520b282.fe16c349aebc05a3",
+      "_id": "fe16c349aebc05a3"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Crimson",
+      "_key": "!tables.results!e2db59bc0520b282.5779621510bcd3be",
+      "_id": "5779621510bcd3be"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Flamebringer",
+      "_key": "!tables.results!e2db59bc0520b282.f825fccb57f24341",
+      "_id": "f825fccb57f24341"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Hellfire",
+      "_key": "!tables.results!e2db59bc0520b282.15023cc42da62487",
+      "_id": "15023cc42da62487"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Ironclad",
+      "_key": "!tables.results!e2db59bc0520b282.682fccc8971f6c90",
+      "_id": "682fccc8971f6c90"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Scarlet",
+      "_key": "!tables.results!e2db59bc0520b282.7daa28a65db4b21b",
+      "_id": "7daa28a65db4b21b"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Steelheart",
+      "_key": "!tables.results!e2db59bc0520b282.f8375041d0116cd2",
+      "_id": "f8375041d0116cd2"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Undaunted",
+      "_key": "!tables.results!e2db59bc0520b282.04ae26d717c10ccc",
+      "_id": "04ae26d717c10ccc"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Warforged",
+      "_key": "!tables.results!e2db59bc0520b282.aed0cd8d8bac6c31",
+      "_id": "aed0cd8d8bac6c31"
+    }
+  ],
+  "folder": "af3135e348ad4ace",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e2db59bc0520b282"
+}

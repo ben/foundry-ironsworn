@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Factions/Guild",
-      "category": "Starforged/Oracles/Factions"
+      "category": "Starforged/Oracles/Factions",
+      "dsid": "oracle_rollable:starforged/faction/guild"
     }
   },
   "name": "Guild",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         5
       ],
       "text": "Assassins",
-      "_id": "675a066b25f2b251",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.675a066b25f2b251"
+      "_key": "!tables.results!da3a6351fff54ef4.fa9980765de8f6f9",
+      "_id": "fa9980765de8f6f9"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         10
       ],
       "text": "Bounty Hunters",
-      "_id": "0a3471b34a3da9d0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.0a3471b34a3da9d0"
+      "_key": "!tables.results!da3a6351fff54ef4.687ebb7b798e1692",
+      "_id": "687ebb7b798e1692"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         15
       ],
       "text": "Couriers",
-      "_id": "f2aa74ec54e86249",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.f2aa74ec54e86249"
+      "_key": "!tables.results!da3a6351fff54ef4.931ae831d8a8f7be",
+      "_id": "931ae831d8a8f7be"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         20
       ],
       "text": "Courtesans",
-      "_id": "a9a6119fd3cd6dc4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.a9a6119fd3cd6dc4"
+      "_key": "!tables.results!da3a6351fff54ef4.247e356932372035",
+      "_id": "247e356932372035"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         25
       ],
       "text": "Engineers",
-      "_id": "ef6e5076e23b9f7a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.ef6e5076e23b9f7a"
+      "_key": "!tables.results!da3a6351fff54ef4.4596f90664b626fc",
+      "_id": "4596f90664b626fc"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         30
       ],
       "text": "Healers",
-      "_id": "d1cfce9cb8721cc5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.d1cfce9cb8721cc5"
+      "_key": "!tables.results!da3a6351fff54ef4.7912a2ce92520a3b",
+      "_id": "7912a2ce92520a3b"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         40
       ],
       "text": "Industrialists",
-      "_id": "ccf82fbb4a3eb7ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.ccf82fbb4a3eb7ea"
+      "_key": "!tables.results!da3a6351fff54ef4.23c996df398c8a60",
+      "_id": "23c996df398c8a60"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         50
       ],
       "text": "Mercenaries",
-      "_id": "e805cb167cd24d4e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.e805cb167cd24d4e"
+      "_key": "!tables.results!da3a6351fff54ef4.48da12f42665cc4c",
+      "_id": "48da12f42665cc4c"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         60
       ],
       "text": "Merchants",
-      "_id": "6cbcd92ef1f23022",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.6cbcd92ef1f23022"
+      "_key": "!tables.results!da3a6351fff54ef4.e3ff4991bbfd9754",
+      "_id": "e3ff4991bbfd9754"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         65
       ],
       "text": "Mystics",
-      "_id": "f15539c88225c66f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.f15539c88225c66f"
+      "_key": "!tables.results!da3a6351fff54ef4.300b433916bc8343",
+      "_id": "300b433916bc8343"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         75
       ],
       "text": "Navigators",
-      "_id": "1cfc12328c83556e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.1cfc12328c83556e"
+      "_key": "!tables.results!da3a6351fff54ef4.8e55fbc38557e6ce",
+      "_id": "8e55fbc38557e6ce"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         80
       ],
       "text": "Peacekeepers",
-      "_id": "4558e53b03c88f16",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.4558e53b03c88f16"
+      "_key": "!tables.results!da3a6351fff54ef4.ed2d728a38657bd4",
+      "_id": "ed2d728a38657bd4"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         85
       ],
       "text": "Researchers",
-      "_id": "fe414cac396bdd7e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.fe414cac396bdd7e"
+      "_key": "!tables.results!da3a6351fff54ef4.36a97c010605bc1b",
+      "_id": "36a97c010605bc1b"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         90
       ],
       "text": "Spies",
-      "_id": "d54cdcd0ca24b0e2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.d54cdcd0ca24b0e2"
+      "_key": "!tables.results!da3a6351fff54ef4.9f68f61ed38e2ea2",
+      "_id": "9f68f61ed38e2ea2"
     },
     {
       "range": [
@@ -214,29 +145,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "27136507e2d7bdc7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!da3a6351fff54ef4.27136507e2d7bdc7"
+      "_key": "!tables.results!da3a6351fff54ef4.ee2d1071b4df0bf5",
+      "_id": "ee2d1071b4df0bf5"
     }
   ],
   "folder": "b6fe3d35ff56995d",
   "sort": 341,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!da3a6351fff54ef4"
 }

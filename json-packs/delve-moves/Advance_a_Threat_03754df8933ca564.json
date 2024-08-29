@@ -1,0 +1,61 @@
+{
+  "_id": "03754df8933ca564",
+  "type": "sfmove",
+  "name": "Advance a Threat",
+  "img": "icons/dice/d10black.svg",
+  "folder": "559fcae96a68d6ad",
+  "system": {
+    "dfid": "Ironsworn/Moves/Threat/Advance_a_Threat",
+    "Category": "Ironsworn/Moves/Threat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you give ground to a threat through inaction, failure, or delay__, roll on the table below and envision how the change manifests in your world (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\n\n\nOn a match, this development also exposes a surprising aspect of the threat’s plan or nature.\n\nIf __you mark the last box on the threat’s menace track__, the threat achieves its goal, or the final dire outcome occurs. You must @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow}.",
+    "Trigger": {
+      "Text": "When you give ground to a threat through inaction, failure, or delay...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": ""
+      },
+      "Miss": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [
+      "Ironsworn/Oracles/Moves/Advance_a_Threat"
+    ],
+    "dsOracleIds": [
+      "move.oracle_rollable:delve/threat/advance_a_threat.advance_a_threat"
+    ],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 154
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 154,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Threat/Advance_a_Threat",
+      "dsid": "move:delve/threat/advance_a_threat"
+    }
+  },
+  "_key": "!items!03754df8933ca564"
+}

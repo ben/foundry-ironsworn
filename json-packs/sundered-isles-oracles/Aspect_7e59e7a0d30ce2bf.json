@@ -1,0 +1,110 @@
+{
+  "_id": "7e59e7a0d30ce2bf",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/rebellion",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/rebellion/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Apostate",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.9a6d386f0d02c60c",
+      "_id": "9a6d386f0d02c60c"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Forsworn",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.aa4fb3e83a89e5a3",
+      "_id": "aa4fb3e83a89e5a3"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Free",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.da7e3095a96de9be",
+      "_id": "da7e3095a96de9be"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Mutinous",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.ba29bca27c00668e",
+      "_id": "ba29bca27c00668e"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Rebel",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.e86e92b973113d5d",
+      "_id": "e86e92b973113d5d"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Sovereign",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.e2fe2c4743cba3c4",
+      "_id": "e2fe2c4743cba3c4"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Tidebound",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.e226b736a9b9c62e",
+      "_id": "e226b736a9b9c62e"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Unbound",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.54f6cc593f1f09be",
+      "_id": "54f6cc593f1f09be"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Unchained",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.3a3c48ba56ccff2a",
+      "_id": "3a3c48ba56ccff2a"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Wayward",
+      "_key": "!tables.results!7e59e7a0d30ce2bf.fa5691168b2df49a",
+      "_id": "fa5691168b2df49a"
+    }
+  ],
+  "folder": "37cdb646cd60af90",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7e59e7a0d30ce2bf"
+}

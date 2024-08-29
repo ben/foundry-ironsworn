@@ -1,0 +1,66 @@
+{
+  "_id": "2589694cc7fd7bee",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Delve_the_Depths/Edge",
+      "category": "Ironsworn/Moves/Delve",
+      "dsid": "move.oracle_rollable:delve/delve/delve_the_depths.edge"
+    }
+  },
+  "name": "Edge",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        45
+      ],
+      "text": "Mark progress and @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}.",
+      "_key": "!tables.results!2589694cc7fd7bee.90f62da4a2e27a92",
+      "_id": "90f62da4a2e27a92"
+    },
+    {
+      "range": [
+        46,
+        65
+      ],
+      "text": "Mark progress.",
+      "_key": "!tables.results!2589694cc7fd7bee.50af1a0dd18b18b8",
+      "_id": "50af1a0dd18b18b8"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Choose one: Mark progress or @Compendium[foundry-ironsworn.ironsworndelvemoves.4da87fd54eaa1b89]{Find an Opportunity}.",
+      "_key": "!tables.results!2589694cc7fd7bee.26803806f5321f53",
+      "_id": "26803806f5321f53"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Take both: Mark progress and @Compendium[foundry-ironsworn.ironsworndelvemoves.4da87fd54eaa1b89]{Find an Opportunity}.",
+      "_key": "!tables.results!2589694cc7fd7bee.e62e9f9b5228593e",
+      "_id": "e62e9f9b5228593e"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Mark progress twice and @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}.",
+      "_key": "!tables.results!2589694cc7fd7bee.511cda17eaa4524b",
+      "_id": "511cda17eaa4524b"
+    }
+  ],
+  "folder": "0e08d4bb1591c3a9",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!2589694cc7fd7bee"
+}

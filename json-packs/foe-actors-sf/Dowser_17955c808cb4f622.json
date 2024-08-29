@@ -1,0 +1,53 @@
+{
+  "name": "Dowser",
+  "img": "icons/creatures/mammals/elk-moose-marked-green.webp",
+  "type": "foe",
+  "_id": "17955c808cb4f622",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Dowser",
+    "texture": {
+      "src": "icons/creatures/mammals/elk-moose-marked-green.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "9d9b0cda37f504aa",
+      "type": "progress",
+      "name": "Dowser",
+      "img": "icons/creatures/mammals/elk-moose-marked-green.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Affable, horse-sized creatures</p>\n<p class=\"nogrow\">Stout, furry form</p>\n<p class=\"nogrow\">Wide, expressive eyes</p>\n<p class=\"nogrow\">Elongated snout</p>\n<p class=\"nogrow\">Rock-breaking claws</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Find water</p>\n<p class=\"nogrow\">Meet new friends</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Dig and hide</p>\n<p class=\"nogrow\">When desperate, rake with claws</p>\n</div>\n</div>\n\n<p>Waterwitchers are good-natured creatures, and form a close bond with their human handlers. Those folk, the dowsers, rove among remote settlements, peddling their water-finding services to desperate settlers.</p>\n\n<blockquote>Quest Starter: <p>A dowser has gone missing in the vast wastes of a newly-settled desert world, leaving behind their distraught waterwitcher. You are sworn to find the wayward dowser, and must serve as an unlikely keeper for their furry companion. What is your relationship to the dowser?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc.variant:starforged/sample_npcs/water_witcher.dowser"
+        }
+      },
+      "_key": "!actors.items!17955c808cb4f622.9d9b0cda37f504aa"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/water_witcher.dowser"
+    }
+  },
+  "_key": "!actors!17955c808cb4f622"
+}

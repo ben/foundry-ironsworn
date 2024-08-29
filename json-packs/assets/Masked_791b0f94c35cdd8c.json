@@ -10,7 +10,7 @@
     "fields": [],
     "abilities": [
       {
-        "enabled": false,
+        "enabled": true,
         "description": "<p>Choose your mask’s material.</p>\n<ul>\n<li>Thunderwood: Edge / Health</li>\n<li>Bloodwood: Iron / Health</li>\n<li>Ghostwood: Shadow / Spirit</li>\n<li>Whisperwood: Wits / Spirit</li>\n</ul>\n<p>When you wear the mask and make a move which uses its stat, add +1. If you roll a 1 on your action die, suffer -1 to the associated track (in addition to any other outcome of the move).</p>",
         "hasClock": false,
         "clockTicks": 0,
@@ -41,15 +41,15 @@
     },
     "exclusiveOptions": [
       {
-        "name": "Thunderwood",
-        "selected": false
-      },
-      {
         "name": "Bloodwood",
         "selected": false
       },
       {
         "name": "Ghostwood",
+        "selected": false
+      },
+      {
+        "name": "Thunderwood",
         "selected": false
       },
       {
@@ -64,17 +64,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Assets/Path/Masked",
+      "dsid": "asset:classic/path/masked"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021198,
-    "modifiedTime": 1695949021198,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!791b0f94c35cdd8c"
 }

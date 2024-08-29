@@ -1,0 +1,200 @@
+{
+  "_id": "484b4000167c9c82",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/inland_cave",
+      "dsid": "oracle_rollable:sundered_isles/cave/inland_cave/feature_cursed"
+    }
+  },
+  "name": "Inland Cave Cursed Features",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Bewitching illusion",
+      "_key": "!tables.results!484b4000167c9c82.d27ff5474f7baeb1",
+      "_id": "d27ff5474f7baeb1"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Bones of a colossal beast",
+      "_key": "!tables.results!484b4000167c9c82.31e7253f3b801aca",
+      "_id": "31e7253f3b801aca"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Corpses come to life",
+      "_key": "!tables.results!484b4000167c9c82.3872b330876cad84",
+      "_id": "3872b330876cad84"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Corpses entombed within stone",
+      "_key": "!tables.results!484b4000167c9c82.d7a3538180233228",
+      "_id": "d7a3538180233228"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Creepy echoes",
+      "_key": "!tables.results!484b4000167c9c82.322254ad11b85f83",
+      "_id": "322254ad11b85f83"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Eldritch shrine or monument",
+      "_key": "!tables.results!484b4000167c9c82.2870fd274e34ffda",
+      "_id": "2870fd274e34ffda"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Impenetrable darkness",
+      "_key": "!tables.results!484b4000167c9c82.c9ecf3b634180d07",
+      "_id": "c9ecf3b634180d07"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Lights snuffed out",
+      "_key": "!tables.results!484b4000167c9c82.146e958227dde040",
+      "_id": "146e958227dde040"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Monstrous predator",
+      "_key": "!tables.results!484b4000167c9c82.9959ee13568ff12c",
+      "_id": "9959ee13568ff12c"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Oversized eggs",
+      "_key": "!tables.results!484b4000167c9c82.9d4ac2c735646f26",
+      "_id": "9d4ac2c735646f26"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Passage carved by a burrowing beast",
+      "_key": "!tables.results!484b4000167c9c82.2f62cfe5ee819c8b",
+      "_id": "2f62cfe5ee819c8b"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Rotting stench",
+      "_key": "!tables.results!484b4000167c9c82.f0a87c463c25f5ee",
+      "_id": "f0a87c463c25f5ee"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Spectral manifestation",
+      "_key": "!tables.results!484b4000167c9c82.1ddeeb287c4c3392",
+      "_id": "1ddeeb287c4c3392"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Surfaces covered by cyst-like growths",
+      "_key": "!tables.results!484b4000167c9c82.5038597f3370fcf3",
+      "_id": "5038597f3370fcf3"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Trail of ooze",
+      "_key": "!tables.results!484b4000167c9c82.9a3e23cd13dc8b46",
+      "_id": "9a3e23cd13dc8b46"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Unnatural cold",
+      "_key": "!tables.results!484b4000167c9c82.c8740c0418d30959",
+      "_id": "c8740c0418d30959"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Unnaturally aggressive creatures",
+      "_key": "!tables.results!484b4000167c9c82.373b35c7ca5f093b",
+      "_id": "373b35c7ca5f093b"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Unnaturally thick webbing",
+      "_key": "!tables.results!484b4000167c9c82.668069d69c868150",
+      "_id": "668069d69c868150"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Unnerving howls or roars",
+      "_key": "!tables.results!484b4000167c9c82.512b28315f4e6cb0",
+      "_id": "512b28315f4e6cb0"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Webbed or cocooned corpses",
+      "_key": "!tables.results!484b4000167c9c82.4eece8ccdbbee40c",
+      "_id": "4eece8ccdbbee40c"
+    }
+  ],
+  "folder": "ccafff1bc096e52d",
+  "sort": 211,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!484b4000167c9c82"
+}

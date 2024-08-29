@@ -1,24 +1,17 @@
 {
   "name": "Combat Moves",
+  "color": "#818992",
+  "description": "The Forge is a perilous galaxy. Factions fight for control. Pirates hunt the spaceways. Raiders prey on vulnerable settlements. Dangerous creatures and chaotic terrors stalk the unwary. Dreaded foes and powerful forces will oppose your sworn quests. Eventually, you'll be forced to fight.\n\nWhen you face one or more foes in high-stakes, action-oriented conflict, use the __combat moves__. These moves encompass on-foot action and vehicle sorties—or both as part of the same challenge.",
   "type": "Item",
   "_id": "0833ccc5eb06cf7e",
-  "color": "#818992",
-  "description": "The Forge is a perilous galaxy. Factions fight for control. Pirates hunt the spaceways. Raiders prey on vulnerable settlements. Dangerous creatures and chaotic terrors stalk the unwary. Dreaded foes and powerful forces will oppose your sworn quests. Eventually, you'll be forced to fight.\n\nWhen you face one or more foes in high-stakes, action-oriented conflict, use the **combat moves**. These moves encompass on-foot action and vehicle sorties—or both as part of the same challenge.",
   "sort": 182,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Moves/Combat"
+      "dfid": "Starforged/Moves/Combat",
+      "dsid": "move_category:starforged/combat"
     }
   },
   "folder": null,
   "sorting": "a",
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021087,
-    "modifiedTime": 1695949021087,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!folders!0833ccc5eb06cf7e"
 }

@@ -1,22 +1,16 @@
 {
   "name": "Settlements",
-  "_id": "63ed8b1845e91c2a",
+  "description": "",
   "type": "RollTable",
+  "_id": "63ed8b1845e91c2a",
   "sort": 309,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Planets/Furnace/Settlements"
+      "dfid": "Starforged/Oracles/Planets/Furnace/Settlements",
+      "dsid": "oracle_collection:starforged/planet/furnace/settlements"
     }
   },
   "folder": "91ce34721ba5cce8",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!63ed8b1845e91c2a"
 }

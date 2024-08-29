@@ -1,0 +1,273 @@
+{
+  "_id": "4a4c849d215387b9",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Monstrosity/Characteristics",
+      "category": "Ironsworn/Oracles/Monstrosity",
+      "dsid": "oracle_rollable:delve/monstrosity/characteristics"
+    }
+  },
+  "name": "Characteristics",
+  "description": "<p>Roll up to four times for Characteristics and keep up to three of those results.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Extra limbs",
+      "_key": "!tables.results!4a4c849d215387b9.390256e9749afaee",
+      "_id": "390256e9749afaee"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Fangs / rows of sharp teeth",
+      "_key": "!tables.results!4a4c849d215387b9.78d372b640dc4f6f",
+      "_id": "78d372b640dc4f6f"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Claws / talons",
+      "_key": "!tables.results!4a4c849d215387b9.e5d44256b071b275",
+      "_id": "e5d44256b071b275"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Strange color / markings",
+      "_key": "!tables.results!4a4c849d215387b9.2334b8a9a1e89e18",
+      "_id": "2334b8a9a1e89e18"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Horns / tusks",
+      "_key": "!tables.results!4a4c849d215387b9.85ebc6ca7e728a82",
+      "_id": "85ebc6ca7e728a82"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Oversized mouth",
+      "_key": "!tables.results!4a4c849d215387b9.51fb99a7e5303b4e",
+      "_id": "51fb99a7e5303b4e"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Spikes / spines",
+      "_key": "!tables.results!4a4c849d215387b9.89b08d60b2f39fde",
+      "_id": "89b08d60b2f39fde"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Tail",
+      "_key": "!tables.results!4a4c849d215387b9.0654b75ba1a628fd",
+      "_id": "0654b75ba1a628fd"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Multi-segmented body",
+      "_key": "!tables.results!4a4c849d215387b9.4a0308f090ad356b",
+      "_id": "4a0308f090ad356b"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Wings",
+      "_key": "!tables.results!4a4c849d215387b9.2c6c4926a3a6920d",
+      "_id": "2c6c4926a3a6920d"
+    },
+    {
+      "range": [
+        51,
+        54
+      ],
+      "text": "Stinger / barbs",
+      "_key": "!tables.results!4a4c849d215387b9.3ac9ca89ae0f667a",
+      "_id": "3ac9ca89ae0f667a"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Many-eyed",
+      "_key": "!tables.results!4a4c849d215387b9.6e21d88c3f1afaa8",
+      "_id": "6e21d88c3f1afaa8"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Distinctive sound",
+      "_key": "!tables.results!4a4c849d215387b9.7124f7fd9c9a90a4",
+      "_id": "7124f7fd9c9a90a4"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Tentacles / tendrils",
+      "_key": "!tables.results!4a4c849d215387b9.316f9f7cf6f8681a",
+      "_id": "316f9f7cf6f8681a"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Mandibles / pincers",
+      "_key": "!tables.results!4a4c849d215387b9.39820f8e65a2dcdb",
+      "_id": "39820f8e65a2dcdb"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Luminescent",
+      "_key": "!tables.results!4a4c849d215387b9.6105ac88f31cce95",
+      "_id": "6105ac88f31cce95"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Antennae / sensory organs",
+      "_key": "!tables.results!4a4c849d215387b9.e04935c6fe687690",
+      "_id": "e04935c6fe687690"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Proboscis / inner jaw",
+      "_key": "!tables.results!4a4c849d215387b9.5e8bc60674011c9f",
+      "_id": "5e8bc60674011c9f"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Exoskeleton / shell",
+      "_key": "!tables.results!4a4c849d215387b9.d6d742cf0de85d03",
+      "_id": "d6d742cf0de85d03"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Bony protuberances",
+      "_key": "!tables.results!4a4c849d215387b9.cde872d1e613bcd7",
+      "_id": "cde872d1e613bcd7"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Corrupted flesh",
+      "_key": "!tables.results!4a4c849d215387b9.86e01c9789069dd5",
+      "_id": "86e01c9789069dd5"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Semi-transparent",
+      "_key": "!tables.results!4a4c849d215387b9.c7c23b76946ec47f",
+      "_id": "c7c23b76946ec47f"
+    },
+    {
+      "range": [
+        91,
+        93
+      ],
+      "text": "Scarred / injured",
+      "_key": "!tables.results!4a4c849d215387b9.a1a936cdf0875692",
+      "_id": "a1a936cdf0875692"
+    },
+    {
+      "range": [
+        94,
+        95
+      ],
+      "text": "Egg sac / carried offspring",
+      "_key": "!tables.results!4a4c849d215387b9.424d7f04fce5b2cf",
+      "_id": "424d7f04fce5b2cf"
+    },
+    {
+      "range": [
+        96,
+        97
+      ],
+      "text": "Rotting / skeletal",
+      "_key": "!tables.results!4a4c849d215387b9.3375df374588fc9a",
+      "_id": "3375df374588fc9a"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Mummified / desiccated",
+      "_key": "!tables.results!4a4c849d215387b9.bcd1ccf5c6ba93fe",
+      "_id": "bcd1ccf5c6ba93fe"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Multi-headed",
+      "_key": "!tables.results!4a4c849d215387b9.34ce201beaa11767",
+      "_id": "34ce201beaa11767"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Etched with mystic runes",
+      "_key": "!tables.results!4a4c849d215387b9.1cbf8b111d71f511",
+      "_id": "1cbf8b111d71f511"
+    }
+  ],
+  "folder": "feaab449f5044ca1",
+  "sort": 215,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4a4c849d215387b9"
+}

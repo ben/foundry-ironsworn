@@ -1,0 +1,56 @@
+{
+  "_id": "ed4462477855bbde",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/size",
+      "dsid": "oracle_rollable:sundered_isles/settlement/size/reaches"
+    }
+  },
+  "name": "Reaches",
+  "description": "<p>Remote Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        50
+      ],
+      "text": "Village or outpost",
+      "_key": "!tables.results!ed4462477855bbde.0865c18c9aed73d9",
+      "_id": "0865c18c9aed73d9"
+    },
+    {
+      "range": [
+        51,
+        80
+      ],
+      "text": "Town",
+      "_key": "!tables.results!ed4462477855bbde.0b91af5cc960edc2",
+      "_id": "0b91af5cc960edc2"
+    },
+    {
+      "range": [
+        81,
+        98
+      ],
+      "text": "City",
+      "_key": "!tables.results!ed4462477855bbde.df8770b02e0c929f",
+      "_id": "df8770b02e0c929f"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "City-state",
+      "_key": "!tables.results!ed4462477855bbde.b0d6a25b7e28b2b0",
+      "_id": "b0d6a25b7e28b2b0"
+    }
+  ],
+  "folder": "39cb632324e87124",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ed4462477855bbde"
+}

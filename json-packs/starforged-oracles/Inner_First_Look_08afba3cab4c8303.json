@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Inner_First_Look",
-      "category": "Starforged/Oracles/Derelicts"
+      "category": "Starforged/Oracles/Derelicts",
+      "dsid": "oracle_rollable:starforged/derelict/inner_first_look"
     }
   },
   "name": "Inner First Look",
-  "description": "",
-  "formula": "d100",
+  "description": "<p>Use these First Look tables for your initial survey of the derelict's interior.</p>",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         3
       ],
       "text": "Abnormal gravity",
-      "_id": "26db6c3fff7e3b66",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.26db6c3fff7e3b66"
+      "_key": "!tables.results!08afba3cab4c8303.05d6f66c55ec1034",
+      "_id": "05d6f66c55ec1034"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         6
       ],
       "text": "Active bots",
-      "_id": "3e35420f79799943",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.3e35420f79799943"
+      "_key": "!tables.results!08afba3cab4c8303.f806d1a86a75276a",
+      "_id": "f806d1a86a75276a"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         9
       ],
       "text": "Archaic equipment",
-      "_id": "da3109b9ded022a5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.da3109b9ded022a5"
+      "_key": "!tables.results!08afba3cab4c8303.e054e2dcf0d3dc92",
+      "_id": "e054e2dcf0d3dc92"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         12
       ],
       "text": "Automated announcements",
-      "_id": "daa07f1852be4615",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.daa07f1852be4615"
+      "_key": "!tables.results!08afba3cab4c8303.ff38a24ca69e520e",
+      "_id": "ff38a24ca69e520e"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         15
       ],
       "text": "Biological infestation",
-      "_id": "6424e2de13389951",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.6424e2de13389951"
+      "_key": "!tables.results!08afba3cab4c8303.50a235b082dff484",
+      "_id": "50a235b082dff484"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         18
       ],
       "text": "Charred surfaces",
-      "_id": "4709b2774c5f69d7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.4709b2774c5f69d7"
+      "_key": "!tables.results!08afba3cab4c8303.0ad262b1e4da5630",
+      "_id": "0ad262b1e4da5630"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         21
       ],
       "text": "Claw marks",
-      "_id": "0226306159888bdf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.0226306159888bdf"
+      "_key": "!tables.results!08afba3cab4c8303.a5b781b02eff664a",
+      "_id": "a5b781b02eff664a"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         24
       ],
       "text": "Cluttered with debris",
-      "_id": "5d236be56415a848",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.5d236be56415a848"
+      "_key": "!tables.results!08afba3cab4c8303.2238c43ba3bee5f8",
+      "_id": "2238c43ba3bee5f8"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         27
       ],
       "text": "Corroded surfaces",
-      "_id": "c38cba7c8c754c5a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.c38cba7c8c754c5a"
+      "_key": "!tables.results!08afba3cab4c8303.05aa356e7f19c46e",
+      "_id": "05aa356e7f19c46e"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         30
       ],
       "text": "Cramped spaces",
-      "_id": "e7eec3f23efe8e0e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.e7eec3f23efe8e0e"
+      "_key": "!tables.results!08afba3cab4c8303.0bbe5d7293dacc64",
+      "_id": "0bbe5d7293dacc64"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         33
       ],
       "text": "Creaking hull",
-      "_id": "3d765f2bf6d15084",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.3d765f2bf6d15084"
+      "_key": "!tables.results!08afba3cab4c8303.68b687bca8ca8aa8",
+      "_id": "68b687bca8ca8aa8"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         36
       ],
       "text": "Esoteric writing or symbols",
-      "_id": "d3400a2f382b60ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.d3400a2f382b60ea"
+      "_key": "!tables.results!08afba3cab4c8303.ce79e8e7e1e75cd2",
+      "_id": "ce79e8e7e1e75cd2"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         39
       ],
       "text": "Evidence of new inhabitants",
-      "_id": "67cf7bc238e4e8ab",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.67cf7bc238e4e8ab"
+      "_key": "!tables.results!08afba3cab4c8303.a61c61359992ab7d",
+      "_id": "a61c61359992ab7d"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         42
       ],
       "text": "Exposed wiring or conduits",
-      "_id": "ee0cccd57d5462de",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.ee0cccd57d5462de"
+      "_key": "!tables.results!08afba3cab4c8303.7784e1fd60a19419",
+      "_id": "7784e1fd60a19419"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         45
       ],
       "text": "Flashing strobe lights",
-      "_id": "85e2799b7755acdc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.85e2799b7755acdc"
+      "_key": "!tables.results!08afba3cab4c8303.58fc83e0df20177d",
+      "_id": "58fc83e0df20177d"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         48
       ],
       "text": "Fluctuating power",
-      "_id": "e7a1c63ff7c961f1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.e7a1c63ff7c961f1"
+      "_key": "!tables.results!08afba3cab4c8303.25e4569ccc5e503d",
+      "_id": "25e4569ccc5e503d"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         51
       ],
       "text": "Haunting visions of the dead",
-      "_id": "6f7920504c3346a5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.6f7920504c3346a5"
+      "_key": "!tables.results!08afba3cab4c8303.5b690aa913afb4be",
+      "_id": "5b690aa913afb4be"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         54
       ],
       "text": "Hazardous temperature",
-      "_id": "93ec2624bbc9e306",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.93ec2624bbc9e306"
+      "_key": "!tables.results!08afba3cab4c8303.4cd540149d4583f4",
+      "_id": "4cd540149d4583f4"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         57
       ],
       "text": "Heavy steam or moisture",
-      "_id": "fc46a134541907eb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.fc46a134541907eb"
+      "_key": "!tables.results!08afba3cab4c8303.92d0518e02ddbee2",
+      "_id": "92d0518e02ddbee2"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         60
       ],
       "text": "Littered with corpses",
-      "_id": "9a95313930cdb0ca",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.9a95313930cdb0ca"
+      "_key": "!tables.results!08afba3cab4c8303.9b44677bcd63e6c3",
+      "_id": "9b44677bcd63e6c3"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         63
       ],
       "text": "Nesting or feeding creatures",
-      "_id": "8d362c0dd852f9f5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.8d362c0dd852f9f5"
+      "_key": "!tables.results!08afba3cab4c8303.d34f43f13d6e2356",
+      "_id": "d34f43f13d6e2356"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         66
       ],
       "text": "Ornate furnishings",
-      "_id": "98513438045977d9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.98513438045977d9"
+      "_key": "!tables.results!08afba3cab4c8303.c742a911f533f76c",
+      "_id": "c742a911f533f76c"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         69
       ],
       "text": "Scarred by gunfire",
-      "_id": "4da665126a2bcc94",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.4da665126a2bcc94"
+      "_key": "!tables.results!08afba3cab4c8303.8a424ca5574a2651",
+      "_id": "8a424ca5574a2651"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         72
       ],
       "text": "Sealed against intruders",
-      "_id": "abe490ce6addc826",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.abe490ce6addc826"
+      "_key": "!tables.results!08afba3cab4c8303.43f2b184b9b225a3",
+      "_id": "43f2b184b9b225a3"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         75
       ],
       "text": "Signs of looting or scavenging",
-      "_id": "cdcc10dc6922b97a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.cdcc10dc6922b97a"
+      "_key": "!tables.results!08afba3cab4c8303.c136e4c27bccee4b",
+      "_id": "c136e4c27bccee4b"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         78
       ],
       "text": "Smell of decay",
-      "_id": "7eca579ae3531f14",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.7eca579ae3531f14"
+      "_key": "!tables.results!08afba3cab4c8303.61b42a53ff6ce8d4",
+      "_id": "61b42a53ff6ce8d4"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         81
       ],
       "text": "Splattered with blood",
-      "_id": "4fe1989315a0bc0d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.4fe1989315a0bc0d"
+      "_key": "!tables.results!08afba3cab4c8303.09d2d589c70c73f1",
+      "_id": "09d2d589c70c73f1"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         84
       ],
       "text": "Temporal distortions",
-      "_id": "b2805fa4266cf2c7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.b2805fa4266cf2c7"
+      "_key": "!tables.results!08afba3cab4c8303.d9907c7cb48ac78f",
+      "_id": "d9907c7cb48ac78f"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         87
       ],
       "text": "Thick haze or smoke",
-      "_id": "9dfc5d7d963861f9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.9dfc5d7d963861f9"
+      "_key": "!tables.results!08afba3cab4c8303.3755e9e428cafdce",
+      "_id": "3755e9e428cafdce"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         90
       ],
       "text": "Unstable energy surges",
-      "_id": "1b66945dceed2534",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.1b66945dceed2534"
+      "_key": "!tables.results!08afba3cab4c8303.4b1ac01792433e93",
+      "_id": "4b1ac01792433e93"
     },
     {
       "range": [
@@ -438,43 +289,21 @@
         93
       ],
       "text": "Watchful AI",
-      "_id": "c8ab57f579c07855",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.c8ab57f579c07855"
+      "_key": "!tables.results!08afba3cab4c8303.e059cb496a024ccb",
+      "_id": "e059cb496a024ccb"
     },
     {
       "range": [
         94,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "e153a5ff75a81929",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08afba3cab4c8303.e153a5ff75a81929"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!08afba3cab4c8303.6505bf37630fef5a",
+      "_id": "6505bf37630fef5a"
     }
   ],
   "folder": "fd19a02fbd5f71e6",
   "sort": 349,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!08afba3cab4c8303"
 }

@@ -1,0 +1,16 @@
+{
+  "name": "Jungle World",
+  "description": "A humid, rain-soaked planet that keeps its secrets under a thick canopy of vegetation.",
+  "type": "RollTable",
+  "_id": "2a431921f3dabd4b",
+  "sort": 313,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Jungle",
+      "dsid": "oracle_collection:starforged/planet/jungle"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!2a431921f3dabd4b"
+}

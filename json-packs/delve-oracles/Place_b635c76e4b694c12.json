@@ -1,0 +1,129 @@
+{
+  "_id": "b635c76e4b694c12",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place",
+      "category": "Ironsworn/Oracles/Site_Name",
+      "dsid": "oracle_rollable:delve/site_name/place"
+    }
+  },
+  "name": "Place",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        6
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.606c2b87864c1a5e]{Barrow}",
+      "_key": "!tables.results!b635c76e4b694c12.621b992c4f3ed854",
+      "_id": "621b992c4f3ed854"
+    },
+    {
+      "range": [
+        7,
+        18
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.e74b04d7cb172f8d]{Cavern}",
+      "_key": "!tables.results!b635c76e4b694c12.a4044f3f6fcb7647",
+      "_id": "a4044f3f6fcb7647"
+    },
+    {
+      "range": [
+        19,
+        28
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.2a5fe65347585d25]{Frozen Cavern}",
+      "_key": "!tables.results!b635c76e4b694c12.1d4baaa98fecebab",
+      "_id": "1d4baaa98fecebab"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.822447ce58eabb18]{Icereach}",
+      "_key": "!tables.results!b635c76e4b694c12.995f0a66e14276d4",
+      "_id": "995f0a66e14276d4"
+    },
+    {
+      "range": [
+        33,
+        38
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.8888b86e2afc8f1e]{Mine}",
+      "_key": "!tables.results!b635c76e4b694c12.0d59adefccb67da0",
+      "_id": "0d59adefccb67da0"
+    },
+    {
+      "range": [
+        39,
+        48
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.f76f6088712dcfc6]{Pass}",
+      "_key": "!tables.results!b635c76e4b694c12.c1d0bbaa83e70385",
+      "_id": "c1d0bbaa83e70385"
+    },
+    {
+      "range": [
+        49,
+        58
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.b4157fd5116746cc]{Ruin}",
+      "_key": "!tables.results!b635c76e4b694c12.251458e05bff96d2",
+      "_id": "251458e05bff96d2"
+    },
+    {
+      "range": [
+        59,
+        68
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.40439d5f28e56495]{Sea Cave}",
+      "_key": "!tables.results!b635c76e4b694c12.810141a234d5ad53",
+      "_id": "810141a234d5ad53"
+    },
+    {
+      "range": [
+        69,
+        78
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.bd208fdcb58e5485]{Shadowfen}",
+      "_key": "!tables.results!b635c76e4b694c12.0be41ebb41bb1574",
+      "_id": "0be41ebb41bb1574"
+    },
+    {
+      "range": [
+        79,
+        83
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.a0ed0d5794e094be]{Stronghold}",
+      "_key": "!tables.results!b635c76e4b694c12.99e1e1d8d604e59d",
+      "_id": "99e1e1d8d604e59d"
+    },
+    {
+      "range": [
+        84,
+        95
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.1983ca8d062e44e1]{Tanglewood}",
+      "_key": "!tables.results!b635c76e4b694c12.7fe3f5e5077b11ce",
+      "_id": "7fe3f5e5077b11ce"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelvedomains.95455d1a10c32b53]{Underkeep}",
+      "_key": "!tables.results!b635c76e4b694c12.d584d93279f4accc",
+      "_id": "d584d93279f4accc"
+    }
+  ],
+  "folder": "f6b92bad160107de",
+  "sort": 210,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b635c76e4b694c12"
+}

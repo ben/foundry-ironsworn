@@ -1,0 +1,27 @@
+{
+  "_id": "42b34334a8b8a349",
+  "type": "progress",
+  "name": "Wyrm",
+  "img": "icons/creatures/eyes/lizard-single-slit-pink.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Enormous size</p>\n<p class=\"nogrow\">Yellow eyes, bright as a torch</p>\n<p class=\"nogrow\">Long, sinuous tail</p>\n<p class=\"nogrow\">Scaled skin</p>\n<p class=\"nogrow\">Cavernous mouth</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Protect territory</p>\n<p class=\"nogrow\">Kill and feed</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Tail smash</p>\n<p class=\"nogrow\">Pin to the ground</p>\n<p class=\"nogrow\">Savage claw and bite</p>\n</div>\n</div>\n\n<p>Wyrms are massive serpentine creatures. They are kin to the wyverns, but are much larger and wingless. Their lairs are found in deep caves, subterranean vaults, or at the heart of dense forests. They hibernate in those places for weeks or months at a time, waking only to satiate their massive appetites. They are low-slung beasts, with short, thick legs, elongated jaws, and a dense hide.</p>\n<p>Fiercely territorial, a wyrm is sure to attack any who stray into their domain. It can sense movement through vibration, and its golden eyes can pierce the thickest darkness.</p>\n\n<blockquote>Quest Starter: <p>Last year, a huge white wyrm destroyed several mining camps in the Veiled Mountains. Winter has passed, but Ironlander miners are refusing to return to those camps without assurance that the wyrm is dead. Its lair is in an @Compendium[foundry-ironsworn.ironsworndelvethemes.94397e5c9fb65a81]{Ancient} @Compendium[foundry-ironsworn.ironsworndelvedomains.2a5fe65347585d25]{Frozen Cavern} deep within the mountains.</p></blockquote>",
+    "rank": 5,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "e31350d7e40b7d78",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/beasts/wyrm"
+    }
+  },
+  "_key": "!items!42b34334a8b8a349"
+}

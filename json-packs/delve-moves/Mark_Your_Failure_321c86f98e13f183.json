@@ -1,0 +1,57 @@
+{
+  "_id": "321c86f98e13f183",
+  "type": "sfmove",
+  "name": "Mark Your Failure",
+  "img": "icons/dice/d10black.svg",
+  "folder": "cc14d0c54f0c2869",
+  "system": {
+    "dfid": "Ironsworn/Moves/Failure/Mark_Your_Failure",
+    "Category": "Ironsworn/Moves/Failure",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you make a move and score a miss__, mark a tick on your failure track. If __you score a miss when making a progress move__, mark two ticks.",
+    "Trigger": {
+      "Text": "When you make a move and score a miss...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": ""
+      },
+      "Miss": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn: Delve",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2020-02-13",
+      "Page": 58
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 58,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Failure/Mark_Your_Failure",
+      "dsid": "move:delve/failure/mark_your_failure"
+    }
+  },
+  "_key": "!items!321c86f98e13f183"
+}

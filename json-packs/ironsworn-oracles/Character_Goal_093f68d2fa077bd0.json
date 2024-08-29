@@ -1,0 +1,318 @@
+{
+  "_id": "093f68d2fa077bd0",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Character/Goal",
+      "category": "Ironsworn/Oracles/Character",
+      "dsid": "oracle_rollable:classic/character/goal"
+    }
+  },
+  "name": "Character Goal",
+  "description": "<p>Use this oracle to define the primary motivation of an NPC or a faction. It can also be used to kick-off a personal quest for your own character.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Obtain an object",
+      "_key": "!tables.results!093f68d2fa077bd0.b758a40f3d055c22",
+      "_id": "b758a40f3d055c22"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Make an agreement",
+      "_key": "!tables.results!093f68d2fa077bd0.9e7a3b81d1b8c402",
+      "_id": "9e7a3b81d1b8c402"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Build a relationship",
+      "_key": "!tables.results!093f68d2fa077bd0.a3f0db8753171d69",
+      "_id": "a3f0db8753171d69"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Undermine a relationship",
+      "_key": "!tables.results!093f68d2fa077bd0.32e85d9307def346",
+      "_id": "32e85d9307def346"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Seek a truth",
+      "_key": "!tables.results!093f68d2fa077bd0.cae6c3d2741c5e48",
+      "_id": "cae6c3d2741c5e48"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Pay a debt",
+      "_key": "!tables.results!093f68d2fa077bd0.21a3b1e9852708e5",
+      "_id": "21a3b1e9852708e5"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Refute a falsehood",
+      "_key": "!tables.results!093f68d2fa077bd0.85f03c447a384e82",
+      "_id": "85f03c447a384e82"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Harm a rival",
+      "_key": "!tables.results!093f68d2fa077bd0.b78c584d247b365e",
+      "_id": "b78c584d247b365e"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Cure an ill",
+      "_key": "!tables.results!093f68d2fa077bd0.930fa71b59fbce75",
+      "_id": "930fa71b59fbce75"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Find a person",
+      "_key": "!tables.results!093f68d2fa077bd0.c18905d2df8b4353",
+      "_id": "c18905d2df8b4353"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Find a home",
+      "_key": "!tables.results!093f68d2fa077bd0.6906b5573f944b9b",
+      "_id": "6906b5573f944b9b"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Seize power",
+      "_key": "!tables.results!093f68d2fa077bd0.d0c7b56703a37165",
+      "_id": "d0c7b56703a37165"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Restore a relationship",
+      "_key": "!tables.results!093f68d2fa077bd0.58bea1534ca1c62c",
+      "_id": "58bea1534ca1c62c"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Create an item",
+      "_key": "!tables.results!093f68d2fa077bd0.741da854810f90f6",
+      "_id": "741da854810f90f6"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Travel to a place",
+      "_key": "!tables.results!093f68d2fa077bd0.0e8e503212f86ee9",
+      "_id": "0e8e503212f86ee9"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Secure provisions",
+      "_key": "!tables.results!093f68d2fa077bd0.6b3709a63fb19cdf",
+      "_id": "6b3709a63fb19cdf"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Rebel against power",
+      "_key": "!tables.results!093f68d2fa077bd0.67db81fa99493972",
+      "_id": "67db81fa99493972"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Collect a debt",
+      "_key": "!tables.results!093f68d2fa077bd0.d5a01355a15e0af8",
+      "_id": "d5a01355a15e0af8"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Protect a secret",
+      "_key": "!tables.results!093f68d2fa077bd0.d9e76e198992ed2c",
+      "_id": "d9e76e198992ed2c"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Spread faith",
+      "_key": "!tables.results!093f68d2fa077bd0.5075454812912240",
+      "_id": "5075454812912240"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Enrich themselves",
+      "_key": "!tables.results!093f68d2fa077bd0.722e8932d2d4a820",
+      "_id": "722e8932d2d4a820"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Protect a person",
+      "_key": "!tables.results!093f68d2fa077bd0.58ab70e6b161f0c1",
+      "_id": "58ab70e6b161f0c1"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Protect the status quo",
+      "_key": "!tables.results!093f68d2fa077bd0.6eb7f1d5613a4e47",
+      "_id": "6eb7f1d5613a4e47"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Advance status",
+      "_key": "!tables.results!093f68d2fa077bd0.47210205caf3fddd",
+      "_id": "47210205caf3fddd"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Defend a place",
+      "_key": "!tables.results!093f68d2fa077bd0.8fa4f00be590709e",
+      "_id": "8fa4f00be590709e"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Avenge a wrong",
+      "_key": "!tables.results!093f68d2fa077bd0.b7b13180fd5fb5e1",
+      "_id": "b7b13180fd5fb5e1"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Fulfill a duty",
+      "_key": "!tables.results!093f68d2fa077bd0.9695c556ef828e2c",
+      "_id": "9695c556ef828e2c"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Gain knowledge",
+      "_key": "!tables.results!093f68d2fa077bd0.b608b29ea0b1aefe",
+      "_id": "b608b29ea0b1aefe"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Prove worthiness",
+      "_key": "!tables.results!093f68d2fa077bd0.65c9310f17456051",
+      "_id": "65c9310f17456051"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Find redemption",
+      "_key": "!tables.results!093f68d2fa077bd0.cbe8a159fc43c687",
+      "_id": "cbe8a159fc43c687"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Escape from something",
+      "_key": "!tables.results!093f68d2fa077bd0.d26cd637331dfb75",
+      "_id": "d26cd637331dfb75"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Resolve a dispute",
+      "_key": "!tables.results!093f68d2fa077bd0.716d60807664f08d",
+      "_id": "716d60807664f08d"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!093f68d2fa077bd0.2d43560b6391c725",
+      "_id": "2d43560b6391c725"
+    }
+  ],
+  "folder": "aa60f0d1adbed892",
+  "sort": 182,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!093f68d2fa077bd0"
+}

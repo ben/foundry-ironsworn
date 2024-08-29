@@ -1,0 +1,53 @@
+{
+  "name": "Blood Thorn",
+  "img": "icons/consumables/plants/thorned-stem-vine-green.webp",
+  "type": "foe",
+  "_id": "7614eabc9aa7a924",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Blood Thorn",
+    "texture": {
+      "src": "icons/consumables/plants/thorned-stem-vine-green.webp"
+    }
+  },
+  "folder": "3476ad01228adddc",
+  "items": [
+    {
+      "_id": "5ae1fb0b02a542dc",
+      "type": "progress",
+      "name": "Blood Thorn",
+      "img": "icons/consumables/plants/thorned-stem-vine-green.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Thorn-tipped branches</p>\n<p class=\"nogrow\">Scattered bones, stripped clean</p>\n<p class=\"nogrow\">Large central pod</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Consume blood</p>\n<p class=\"nogrow\">Proliferate</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Lie in wait</p>\n<p class=\"nogrow\">Grasp, entangle, and feed</p>\n</div>\n</div>\n\n<p>A blood thorn is a malignant, carnivorous plant. It seizes its victims with long, creeping tendrils. Then, it leeches their life through hollow thorns, eventually bleeding them dry.</p>\n<p>Blood thorns appear in woodland areas throughout the Ironlands. They are especially common in the Deep Wilds, where they often encircle @Compendium[foundry-ironsworn.ironswornfoes.7e016842d2a4543f]{elf} villages. Some suspect they are cultivated by the elves, or share a symbiotic relationship with them.</p>\n\n<blockquote>Quest Starter: <p>Ironlanders attempted to found a settlement at the heart of a @Compendium[foundry-ironsworn.ironsworndelvethemes.3a633d3ce6079711]{Wild} @Compendium[foundry-ironsworn.ironsworndelvedomains.1983ca8d062e44e1]{Tanglewood} a decade ago. That place is now abandoned and infested by blood thorns. Why did the settlers try to create a home in such an untamed place? What object or information do you seek there?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "3476ad01228adddc",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/anomalies/blood_thorn"
+        }
+      },
+      "_key": "!actors.items!7614eabc9aa7a924.5ae1fb0b02a542dc"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/anomalies/blood_thorn"
+    }
+  },
+  "_key": "!actors!7614eabc9aa7a924"
+}

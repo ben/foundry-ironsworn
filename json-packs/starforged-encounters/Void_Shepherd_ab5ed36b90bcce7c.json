@@ -1,10 +1,10 @@
 {
   "_id": "ab5ed36b90bcce7c",
   "type": "progress",
-  "name": "Void Shepherd",
+  "name": "Void shepherd",
   "img": "icons/creatures/fish/fish-bioluminous-blue.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Graceful, spaceborne creatures</p>\n    <p class=\"nogrow\">Shimmering, torpedo-shaped form</p>\n    <p class=\"nogrow\">Energy-laden fins</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Cruise within the boundless depths</p>\n    <p class=\"nogrow\">Lead the way</p>\n    <p class=\"nogrow\">Protect the pod</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Smash with bony snout</p>\n    <p class=\"nogrow\">Disable with powerful electromagnetic pulse</p>\n  </div>\n</div>\n\n<p>Void shepherds are benevolent creatures about the size of a snub fighter, They propel themselves through space on trails of vibrant energy, and seem to delight in riding the wake of starships. For spacers navigating the lonely depths of the Forge, they are welcome company and a sign of good fortune.</p>\n<p>Many spacers tell stories of being aided by a void shepherd pod. These creatures have an extraordinary intuition, and can escort a wayward spacer back to the right path, guide them away from danger, or lead them toward unseen opportunities.</p>\n<p>When threatened, shepherds charge and ram with their armored snouts. If this doesn't dissuade their foe, a pod harmonizes their energy output to unleash a burst of electromagnetic force; this attack can daze a creature or knock out a ship's critical systems.</p>\n\n<blockquote>Quest Starter: <p>Several pods of void shepherds shelter within the debris of a shattered world. An expansive mining operation is harvesting the ore-rich rocks of the system, and the shepherds dance playfully in the wake of prospector and transport ships. But an aberrant, predatory creature has made this place its hunting ground, posing a threat to both the shepherd pods and the miners. What is the nature of this creature, and why are you sworn to end its attacks?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.53d23596f9525114]{Shepherd Pod}</li>\n</ul>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Graceful, spaceborne creatures</p>\n<p class=\"nogrow\">Shimmering, torpedo-shaped form</p>\n<p class=\"nogrow\">Energy-laden fins</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Cruise within the boundless depths</p>\n<p class=\"nogrow\">Lead the way</p>\n<p class=\"nogrow\">Protect the pod</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Smash with bony snout</p>\n<p class=\"nogrow\">Disable with powerful electromagnetic pulse</p>\n</div>\n</div>\n\n<p>Void shepherds are benevolent creatures about the size of a snub fighter. They propel themselves through space on trails of vibrant energy, and seem to delight in riding the wake of starships. For spacers navigating the lonely depths of the Forge, they are welcome company and a sign of good fortune.</p>\n<p>Many spacers tell stories of being aided by a void shepherd pod. These creatures have an extraordinary intuition, and can escort a wayward spacer back to the right path, guide them away from danger, or lead them toward unseen opportunities.</p>\n<p>When threatened, shepherds charge and ram with their armored snouts. If this doesn't dissuade their foe, a pod harmonizes their energy output to unleash a burst of electromagnetic force; this attack can daze a creature or knock out a ship's critical systems.</p>\n\n<blockquote>Quest Starter: <p>Several pods of void shepherds shelter within the debris of a shattered world. An expansive mining operation is harvesting the ore-rich rocks of the system, and the shepherds dance playfully in the wake of prospector and transport ships. But an aberrant, predatory creature has made this place its hunting ground, posing a threat to both the shepherd pods and the miners. What is the nature of this creature, and why are you sworn to end its attacks?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.53d23596f9525114]{Shepherd pod}</li>\n</ul>",
     "rank": 3,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/void_shepherd"
+    }
   },
   "_key": "!items!ab5ed36b90bcce7c"
 }

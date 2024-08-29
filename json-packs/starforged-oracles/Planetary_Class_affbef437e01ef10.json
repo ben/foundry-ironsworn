@@ -1,0 +1,120 @@
+{
+  "_id": "affbef437e01ef10",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Class",
+      "category": "Starforged/Oracles/Planets",
+      "dsid": "oracle_rollable:starforged/planet/class"
+    }
+  },
+  "name": "Planetary Class",
+  "description": "<p>This oracle provides a simple method of generating a planetary class. If this is enough information, stop there and envision the world as appropriate to its type. For a bit more detail, make a roll on the Descriptor oracle and envision how that aspect defines the nature of the planet or a specific planetside location.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/desert\">\n    <i class=\"fa fa-caret-right\"></i> Desert World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.6640ba63bb5c53c1",
+      "_id": "6640ba63bb5c53c1"
+    },
+    {
+      "range": [
+        16,
+        30
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/furnace\">\n    <i class=\"fa fa-caret-right\"></i> Furnace World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.26efb6bec4d7f457",
+      "_id": "26efb6bec4d7f457"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/grave\">\n    <i class=\"fa fa-caret-right\"></i> Grave World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.71593fcb8ca41488",
+      "_id": "71593fcb8ca41488"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/ice\">\n    <i class=\"fa fa-caret-right\"></i> Ice World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.92d7716eacc97223",
+      "_id": "92d7716eacc97223"
+    },
+    {
+      "range": [
+        51,
+        65
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/jovian\">\n    <i class=\"fa fa-caret-right\"></i> Jovian World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.6b5c0c283a707b4d",
+      "_id": "6b5c0c283a707b4d"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/jungle\">\n    <i class=\"fa fa-caret-right\"></i> Jungle World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.cbe19d0487f64087",
+      "_id": "cbe19d0487f64087"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/ocean\">\n    <i class=\"fa fa-caret-right\"></i> Ocean World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.0fc70d938df6db0a",
+      "_id": "0fc70d938df6db0a"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/rocky\">\n    <i class=\"fa fa-caret-right\"></i> Rocky World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.1412f716843adc9c",
+      "_id": "1412f716843adc9c"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/shattered\">\n    <i class=\"fa fa-caret-right\"></i> Shattered World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.60a2a4f09e876b5d",
+      "_id": "60a2a4f09e876b5d"
+    },
+    {
+      "range": [
+        93,
+        98
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/tainted\">\n    <i class=\"fa fa-caret-right\"></i> Tainted World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.b00bf9a4969fb0c5",
+      "_id": "b00bf9a4969fb0c5"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/planet/vital\">\n    <i class=\"fa fa-caret-right\"></i> Vital World\n</a></p>",
+      "_key": "!tables.results!affbef437e01ef10.a1241f3910f99634",
+      "_id": "a1241f3910f99634"
+    }
+  ],
+  "folder": "99ee8a161d0857f8",
+  "sort": 306,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!affbef437e01ef10"
+}

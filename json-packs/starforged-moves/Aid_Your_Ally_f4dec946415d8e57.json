@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Aid Your Ally",
   "img": "icons/dice/d10black.svg",
+  "folder": "e5b957751be9d2e6",
   "system": {
     "dfid": "Starforged/Moves/Adventure/Aid_Your_Ally",
     "Category": "Starforged/Moves/Adventure",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you act in direct support of an ally**, envision how you aid them. Then, @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} to take action. If you score a hit, they (instead of you) take the benefits of the move.\n\nIf you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} and score a strong hit, you are both in control. On a **weak hit**, your ally is in control but you are in a bad spot.",
+    "Text": "__When you act in direct support of an ally__, envision how you aid them. Then, @Compendium[foundry-ironsworn.starforgedmoves.a2d7793b23c17489]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} to take action. If you score a hit, they (instead of you) take the benefits of the move.\n\nIf you @Compendium[foundry-ironsworn.starforgedmoves.3f5a834fa3fea5d1]{Gain Ground} and score a strong hit, you are both in control. On a __weak hit__, your ally is in control but you are in a bad spot.",
     "Trigger": {
       "Text": "When you act in direct support of an ally...",
       "Options": []
@@ -16,65 +17,41 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 152
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#3C70A4",
       "Images": []
     }
   },
   "sort": 152,
-  "folder": "e5b957751be9d2e6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Adventure/Aid_Your_Ally",
+      "dsid": "move:starforged/adventure/aid_your_ally"
+    }
   },
   "_key": "!items!f4dec946415d8e57"
 }

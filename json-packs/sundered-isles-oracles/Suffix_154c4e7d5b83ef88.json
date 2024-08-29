@@ -1,0 +1,470 @@
+{
+  "_id": "154c4e7d5b83ef88",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc/local_seas",
+      "dsid": "oracle_rollable:sundered_isles/misc/local_seas/suffix"
+    }
+  },
+  "name": "Suffix",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Abyss",
+      "_key": "!tables.results!154c4e7d5b83ef88.44d517fcc7941325",
+      "_id": "44d517fcc7941325"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Anchorage",
+      "_key": "!tables.results!154c4e7d5b83ef88.2f5d0a49f5d02d29",
+      "_id": "2f5d0a49f5d02d29"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Atolls",
+      "_key": "!tables.results!154c4e7d5b83ef88.945e1f6ad4684872",
+      "_id": "945e1f6ad4684872"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Breach",
+      "_key": "!tables.results!154c4e7d5b83ef88.c7ff78fef0e5e77c",
+      "_id": "c7ff78fef0e5e77c"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Breakers",
+      "_key": "!tables.results!154c4e7d5b83ef88.cdc1d474e2d4437f",
+      "_id": "cdc1d474e2d4437f"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Brine",
+      "_key": "!tables.results!154c4e7d5b83ef88.a94d6a3610636158",
+      "_id": "a94d6a3610636158"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Cays",
+      "_key": "!tables.results!154c4e7d5b83ef88.48b3361df3f93b0b",
+      "_id": "48b3361df3f93b0b"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Channel",
+      "_key": "!tables.results!154c4e7d5b83ef88.886a997f1b48a70c",
+      "_id": "886a997f1b48a70c"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Chasm",
+      "_key": "!tables.results!154c4e7d5b83ef88.228730ea15dcc34b",
+      "_id": "228730ea15dcc34b"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Coves",
+      "_key": "!tables.results!154c4e7d5b83ef88.bf1ba9c5f5356854",
+      "_id": "bf1ba9c5f5356854"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Crossing",
+      "_key": "!tables.results!154c4e7d5b83ef88.c8ce585950ae91ed",
+      "_id": "c8ce585950ae91ed"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Currents",
+      "_key": "!tables.results!154c4e7d5b83ef88.2b7512f948557792",
+      "_id": "2b7512f948557792"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Deep",
+      "_key": "!tables.results!154c4e7d5b83ef88.6fd04a8ed5fca41a",
+      "_id": "6fd04a8ed5fca41a"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Depths",
+      "_key": "!tables.results!154c4e7d5b83ef88.33490445cbf443d2",
+      "_id": "33490445cbf443d2"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Desolation",
+      "_key": "!tables.results!154c4e7d5b83ef88.0acc87d60d96a734",
+      "_id": "0acc87d60d96a734"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Drift",
+      "_key": "!tables.results!154c4e7d5b83ef88.b6badee647da0d4f",
+      "_id": "b6badee647da0d4f"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Ebb",
+      "_key": "!tables.results!154c4e7d5b83ef88.54efa9436e179bc6",
+      "_id": "54efa9436e179bc6"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Expanse",
+      "_key": "!tables.results!154c4e7d5b83ef88.d4043cdee2dfa893",
+      "_id": "d4043cdee2dfa893"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Fathoms",
+      "_key": "!tables.results!154c4e7d5b83ef88.0546d29bdc47b03a",
+      "_id": "0546d29bdc47b03a"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Flow",
+      "_key": "!tables.results!154c4e7d5b83ef88.f6b5750a13d81e51",
+      "_id": "f6b5750a13d81e51"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Gate",
+      "_key": "!tables.results!154c4e7d5b83ef88.ee56f11f76a89be0",
+      "_id": "ee56f11f76a89be0"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Gulf",
+      "_key": "!tables.results!154c4e7d5b83ef88.fd0f303706bae811",
+      "_id": "fd0f303706bae811"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Gyre",
+      "_key": "!tables.results!154c4e7d5b83ef88.155a75ec7a46e090",
+      "_id": "155a75ec7a46e090"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Havens",
+      "_key": "!tables.results!154c4e7d5b83ef88.bb825f7004b2ee9d",
+      "_id": "bb825f7004b2ee9d"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Horizon",
+      "_key": "!tables.results!154c4e7d5b83ef88.12068d203f4461eb",
+      "_id": "12068d203f4461eb"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Isles",
+      "_key": "!tables.results!154c4e7d5b83ef88.37d9068b064b4624",
+      "_id": "37d9068b064b4624"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Limits",
+      "_key": "!tables.results!154c4e7d5b83ef88.3233e2121bba8fe9",
+      "_id": "3233e2121bba8fe9"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Maelstrom",
+      "_key": "!tables.results!154c4e7d5b83ef88.a49af3dafe94801f",
+      "_id": "a49af3dafe94801f"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Main",
+      "_key": "!tables.results!154c4e7d5b83ef88.97da78b4d9dc8e00",
+      "_id": "97da78b4d9dc8e00"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Maw",
+      "_key": "!tables.results!154c4e7d5b83ef88.572e54fb9279550a",
+      "_id": "572e54fb9279550a"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Morass",
+      "_key": "!tables.results!154c4e7d5b83ef88.852591b01a38feb2",
+      "_id": "852591b01a38feb2"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Oasis",
+      "_key": "!tables.results!154c4e7d5b83ef88.6025346123c743bf",
+      "_id": "6025346123c743bf"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Passage",
+      "_key": "!tables.results!154c4e7d5b83ef88.40ff45656f30ac8c",
+      "_id": "40ff45656f30ac8c"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Pit",
+      "_key": "!tables.results!154c4e7d5b83ef88.ab4ecf5c38db025d",
+      "_id": "ab4ecf5c38db025d"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Reefs",
+      "_key": "!tables.results!154c4e7d5b83ef88.b3a8da9b8e3c0797",
+      "_id": "b3a8da9b8e3c0797"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Remnants",
+      "_key": "!tables.results!154c4e7d5b83ef88.fc0a0fb3ca058706",
+      "_id": "fc0a0fb3ca058706"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Rift",
+      "_key": "!tables.results!154c4e7d5b83ef88.d3751223d7b74289",
+      "_id": "d3751223d7b74289"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Sanctum",
+      "_key": "!tables.results!154c4e7d5b83ef88.bc9519acc992f843",
+      "_id": "bc9519acc992f843"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Sea",
+      "_key": "!tables.results!154c4e7d5b83ef88.6d6cf2d31a949518",
+      "_id": "6d6cf2d31a949518"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Shallows",
+      "_key": "!tables.results!154c4e7d5b83ef88.af94e1c2f893e1cd",
+      "_id": "af94e1c2f893e1cd"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Shards",
+      "_key": "!tables.results!154c4e7d5b83ef88.e54a2f40d294aac8",
+      "_id": "e54a2f40d294aac8"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Shoals",
+      "_key": "!tables.results!154c4e7d5b83ef88.9d7c19db4bb63371",
+      "_id": "9d7c19db4bb63371"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Spine",
+      "_key": "!tables.results!154c4e7d5b83ef88.b73197a56bbef09c",
+      "_id": "b73197a56bbef09c"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Straits",
+      "_key": "!tables.results!154c4e7d5b83ef88.3a8f246af238191a",
+      "_id": "3a8f246af238191a"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Tempest",
+      "_key": "!tables.results!154c4e7d5b83ef88.66880d86b02f9d14",
+      "_id": "66880d86b02f9d14"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Threshold",
+      "_key": "!tables.results!154c4e7d5b83ef88.a196f72dab0e1738",
+      "_id": "a196f72dab0e1738"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Tides",
+      "_key": "!tables.results!154c4e7d5b83ef88.384c9bdbf01a320f",
+      "_id": "384c9bdbf01a320f"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Verge",
+      "_key": "!tables.results!154c4e7d5b83ef88.4c555b558618442a",
+      "_id": "4c555b558618442a"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Vigil",
+      "_key": "!tables.results!154c4e7d5b83ef88.8546af262cf860d8",
+      "_id": "8546af262cf860d8"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Waters",
+      "_key": "!tables.results!154c4e7d5b83ef88.9c07e55fccb088b1",
+      "_id": "9c07e55fccb088b1"
+    }
+  ],
+  "folder": "443aa575686c8cb0",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!154c4e7d5b83ef88"
+}

@@ -1,0 +1,74 @@
+{
+  "_id": "e05a1f8fbb7a54ae",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck/orientation/position",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/orientation/position/swamp"
+    }
+  },
+  "name": "Swamp",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Sunk and fully submerged",
+      "_key": "!tables.results!e05a1f8fbb7a54ae.425c772b78a98462",
+      "_id": "425c772b78a98462"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Adrift on the surface",
+      "_key": "!tables.results!e05a1f8fbb7a54ae.23a1ee1f10e8a62d",
+      "_id": "23a1ee1f10e8a62d"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Anchored in position on the surface",
+      "_key": "!tables.results!e05a1f8fbb7a54ae.c63f5a2f3c5b8d98",
+      "_id": "c63f5a2f3c5b8d98"
+    },
+    {
+      "range": [
+        31,
+        65
+      ],
+      "text": "Awash / partially submerged",
+      "_key": "!tables.results!e05a1f8fbb7a54ae.a3b8f09221679a65",
+      "_id": "a3b8f09221679a65"
+    },
+    {
+      "range": [
+        66,
+        90
+      ],
+      "text": "Stranded on dry ground or rocks",
+      "_key": "!tables.results!e05a1f8fbb7a54ae.3bb8eaf7f7fd021a",
+      "_id": "3bb8eaf7f7fd021a"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Perched on improbably high ground",
+      "_key": "!tables.results!e05a1f8fbb7a54ae.07881eb87f377588",
+      "_id": "07881eb87f377588"
+    }
+  ],
+  "folder": "eb56848e40226443",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e05a1f8fbb7a54ae"
+}

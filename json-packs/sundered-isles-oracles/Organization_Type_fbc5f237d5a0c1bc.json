@@ -1,0 +1,209 @@
+{
+  "_id": "fbc5f237d5a0c1bc",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/organization",
+      "dsid": "oracle_rollable:sundered_isles/faction/organization/type"
+    }
+  },
+  "name": "Organization Type",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Artisans",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.1196899cd36f1a90",
+      "_id": "1196899cd36f1a90"
+    },
+    {
+      "range": [
+        3,
+        6
+      ],
+      "text": "Assassins",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.b7393dd95fa57753",
+      "_id": "b7393dd95fa57753"
+    },
+    {
+      "range": [
+        7,
+        10
+      ],
+      "text": "Couriers",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.37d757c764a1f59f",
+      "_id": "37d757c764a1f59f"
+    },
+    {
+      "range": [
+        11,
+        18
+      ],
+      "text": "Courtesans",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.e5cbfab556212ce1",
+      "_id": "e5cbfab556212ce1"
+    },
+    {
+      "range": [
+        19,
+        24
+      ],
+      "text": "Healers",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.9944fea691949935",
+      "_id": "9944fea691949935"
+    },
+    {
+      "range": [
+        25,
+        30
+      ],
+      "text": "Hunters",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.bd941fb06b9f8db0",
+      "_id": "bd941fb06b9f8db0"
+    },
+    {
+      "range": [
+        31,
+        36
+      ],
+      "text": "Insurgents",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.bb850b62d6b84ea1",
+      "_id": "bb850b62d6b84ea1"
+    },
+    {
+      "range": [
+        37,
+        44
+      ],
+      "text": "Mariners",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.fc5cc2a30dc0b876",
+      "_id": "fc5cc2a30dc0b876"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Mercenaries / privateers",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.667b8173ddcf2970",
+      "_id": "667b8173ddcf2970"
+    },
+    {
+      "range": [
+        47,
+        52
+      ],
+      "text": "Mystics / seers",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.f618058e3c184870",
+      "_id": "f618058e3c184870"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Naturalists",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.8098ad00af782ada",
+      "_id": "8098ad00af782ada"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Navigators / cartographers",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.31ea1630c7e1def0",
+      "_id": "31ea1630c7e1def0"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Pirates / raiders",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.7e06c49682d2f1be",
+      "_id": "7e06c49682d2f1be"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Rebels",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.edc5c3d595bff181",
+      "_id": "edc5c3d595bff181"
+    },
+    {
+      "range": [
+        67,
+        72
+      ],
+      "text": "Relic hunters",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.128e9027ef7f6d22",
+      "_id": "128e9027ef7f6d22"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Religious disciples",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.f0d90c47d3722000",
+      "_id": "f0d90c47d3722000"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Shipbuilders",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.12242440812f8bda",
+      "_id": "12242440812f8bda"
+    },
+    {
+      "range": [
+        79,
+        84
+      ],
+      "text": "Smugglers",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.67651361d13ba8f6",
+      "_id": "67651361d13ba8f6"
+    },
+    {
+      "range": [
+        85,
+        90
+      ],
+      "text": "Spies",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.4a33652207b508ef",
+      "_id": "4a33652207b508ef"
+    },
+    {
+      "range": [
+        91,
+        96
+      ],
+      "text": "Traders",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.e08d3cca010a336d",
+      "_id": "e08d3cca010a336d"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Wreckers",
+      "_key": "!tables.results!fbc5f237d5a0c1bc.0bc6c88691c60351",
+      "_id": "0bc6c88691c60351"
+    }
+  ],
+  "folder": "31fcdfd6836b4273",
+  "sort": 180,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fbc5f237d5a0c1bc"
+}

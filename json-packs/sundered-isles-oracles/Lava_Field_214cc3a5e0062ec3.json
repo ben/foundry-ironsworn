@@ -1,0 +1,200 @@
+{
+  "_id": "214cc3a5e0062ec3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/region_landmarks",
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/lava_field"
+    }
+  },
+  "name": "Lava Field",
+  "description": "<p>Lands scarred by volcanic eruptions</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Boiling lake",
+      "_key": "!tables.results!214cc3a5e0062ec3.b1c6d31570d21397",
+      "_id": "b1c6d31570d21397"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Bubbling lava pool",
+      "_key": "!tables.results!214cc3a5e0062ec3.eff0705dcd155f12",
+      "_id": "eff0705dcd155f12"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Columns of volcanic rock",
+      "_key": "!tables.results!214cc3a5e0062ec3.5cba870d6d2d4b71",
+      "_id": "5cba870d6d2d4b71"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Deep crevice churning with magma",
+      "_key": "!tables.results!214cc3a5e0062ec3.7acc2a4b95933692",
+      "_id": "7acc2a4b95933692"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Devastated structures",
+      "_key": "!tables.results!214cc3a5e0062ec3.4da1108ce40faebf",
+      "_id": "4da1108ce40faebf"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Dunes of volcanic ash",
+      "_key": "!tables.results!214cc3a5e0062ec3.c1a56786d47abe91",
+      "_id": "c1a56786d47abe91"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Erupting lava fissure",
+      "_key": "!tables.results!214cc3a5e0062ec3.610e0ca0923f4b65",
+      "_id": "610e0ca0923f4b65"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Expanse of glassy lava rock",
+      "_key": "!tables.results!214cc3a5e0062ec3.8d8ddf6b029445c2",
+      "_id": "8d8ddf6b029445c2"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Fast-moving river of lava",
+      "_key": "!tables.results!214cc3a5e0062ec3.f2927fd5cc0c1281",
+      "_id": "f2927fd5cc0c1281"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Field of cracked, partially solidified lava",
+      "_key": "!tables.results!214cc3a5e0062ec3.ca76747053bd7907",
+      "_id": "ca76747053bd7907"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Gouts of steam as lava meets water",
+      "_key": "!tables.results!214cc3a5e0062ec3.acca3f0f383771ad",
+      "_id": "acca3f0f383771ad"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Landscape set ablaze",
+      "_key": "!tables.results!214cc3a5e0062ec3.314a53218f2f40ca",
+      "_id": "314a53218f2f40ca"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Lava tube plunges into darkness",
+      "_key": "!tables.results!214cc3a5e0062ec3.aaae36bcdb0e5b2b",
+      "_id": "aaae36bcdb0e5b2b"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Roiling ash clouds",
+      "_key": "!tables.results!214cc3a5e0062ec3.57075ed5b15dbaf9",
+      "_id": "57075ed5b15dbaf9"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Scorched trees amid an ashy plain",
+      "_key": "!tables.results!214cc3a5e0062ec3.3be4f226ad00d050",
+      "_id": "3be4f226ad00d050"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Smoldering crater",
+      "_key": "!tables.results!214cc3a5e0062ec3.576d5e721605e7d0",
+      "_id": "576d5e721605e7d0"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Steaming hot springs",
+      "_key": "!tables.results!214cc3a5e0062ec3.ed415ba84893e5c1",
+      "_id": "ed415ba84893e5c1"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Stubborn plantlife emerges from ruin",
+      "_key": "!tables.results!214cc3a5e0062ec3.7ff06da20cf05539",
+      "_id": "7ff06da20cf05539"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Towering cinder cone",
+      "_key": "!tables.results!214cc3a5e0062ec3.d486762dd9207529",
+      "_id": "d486762dd9207529"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Vents spewing steam and volcanic gases",
+      "_key": "!tables.results!214cc3a5e0062ec3.ade1d7b42f2ec18a",
+      "_id": "ade1d7b42f2ec18a"
+    }
+  ],
+  "folder": "a74b251068596264",
+  "sort": 151,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!214cc3a5e0062ec3"
+}

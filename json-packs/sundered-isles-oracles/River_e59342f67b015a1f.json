@@ -1,0 +1,200 @@
+{
+  "_id": "e59342f67b015a1f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/region_landmarks",
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/river"
+    }
+  },
+  "name": "River",
+  "description": "<p>Major inland waterway</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Branching watercourse",
+      "_key": "!tables.results!e59342f67b015a1f.b18c841052c36c10",
+      "_id": "b18c841052c36c10"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Cascading rapids",
+      "_key": "!tables.results!e59342f67b015a1f.107707dd62e6aa79",
+      "_id": "107707dd62e6aa79"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Debris forming a dam",
+      "_key": "!tables.results!e59342f67b015a1f.ad9f5a5b487f84df",
+      "_id": "ad9f5a5b487f84df"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Eddies swirl in a large, limpid pool",
+      "_key": "!tables.results!e59342f67b015a1f.d307925233dfc202",
+      "_id": "d307925233dfc202"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Flooded riverbanks",
+      "_key": "!tables.results!e59342f67b015a1f.a1eb67762c28cdad",
+      "_id": "a1eb67762c28cdad"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Gulch strewn with mossy boulders",
+      "_key": "!tables.results!e59342f67b015a1f.d2291ec2337ef94d",
+      "_id": "d2291ec2337ef94d"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Landed boat",
+      "_key": "!tables.results!e59342f67b015a1f.94dcf4002052233d",
+      "_id": "94dcf4002052233d"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Mighty fallen tree spans the river",
+      "_key": "!tables.results!e59342f67b015a1f.5bdadf2d5c66997b",
+      "_id": "5bdadf2d5c66997b"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Muddy landing",
+      "_key": "!tables.results!e59342f67b015a1f.5ca846e6b95a6772",
+      "_id": "5ca846e6b95a6772"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Old dock perched over the water",
+      "_key": "!tables.results!e59342f67b015a1f.b3e0db416b730609",
+      "_id": "b3e0db416b730609"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Plunging series of terraced waterfalls",
+      "_key": "!tables.results!e59342f67b015a1f.26db13fd1c18937f",
+      "_id": "26db13fd1c18937f"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Remains of an old bridge",
+      "_key": "!tables.results!e59342f67b015a1f.1908e4048778bd95",
+      "_id": "1908e4048778bd95"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "River-fed lake",
+      "_key": "!tables.results!e59342f67b015a1f.51e5b536b78742f9",
+      "_id": "51e5b536b78742f9"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Sandy shoal in the midst of the river",
+      "_key": "!tables.results!e59342f67b015a1f.e9d7ddf4009e83aa",
+      "_id": "e9d7ddf4009e83aa"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Shadowy passage flanked by tall cliffs",
+      "_key": "!tables.results!e59342f67b015a1f.78cdd541a85ed4b3",
+      "_id": "78cdd541a85ed4b3"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Shallow ford",
+      "_key": "!tables.results!e59342f67b015a1f.71a01c391358c4d6",
+      "_id": "71a01c391358c4d6"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Snaking, slow-moving watercourse",
+      "_key": "!tables.results!e59342f67b015a1f.850a0246eb3bed1b",
+      "_id": "850a0246eb3bed1b"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Strong current leading to a high waterfall",
+      "_key": "!tables.results!e59342f67b015a1f.813a187d6cce0e3b",
+      "_id": "813a187d6cce0e3b"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Trees crowd the river's edge",
+      "_key": "!tables.results!e59342f67b015a1f.ffc877b206bf5875",
+      "_id": "ffc877b206bf5875"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wrecked ship or boat",
+      "_key": "!tables.results!e59342f67b015a1f.18c13dd97e426338",
+      "_id": "18c13dd97e426338"
+    }
+  ],
+  "folder": "a74b251068596264",
+  "sort": 152,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e59342f67b015a1f"
+}

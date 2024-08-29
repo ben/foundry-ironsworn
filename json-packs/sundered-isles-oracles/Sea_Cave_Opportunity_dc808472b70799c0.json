@@ -1,0 +1,110 @@
+{
+  "_id": "dc808472b70799c0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/sea",
+      "dsid": "oracle_rollable:sundered_isles/cave/sea/opportunity"
+    }
+  },
+  "name": "Sea Cave Opportunity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Advance warning of a danger",
+      "_key": "!tables.results!dc808472b70799c0.6d04cbeddc9827fe",
+      "_id": "6d04cbeddc9827fe"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Breathtaking natural feature",
+      "_key": "!tables.results!dc808472b70799c0.0e3ac8de532fe4a5",
+      "_id": "0e3ac8de532fe4a5"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Clue points the way forward",
+      "_key": "!tables.results!dc808472b70799c0.25d1b875ee7ddb23",
+      "_id": "25d1b875ee7ddb23"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Friendly denizen or explorer",
+      "_key": "!tables.results!dc808472b70799c0.9e417062f5c00b5e",
+      "_id": "9e417062f5c00b5e"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Helpful shortcut or detour",
+      "_key": "!tables.results!dc808472b70799c0.f136404a8d25b1f0",
+      "_id": "f136404a8d25b1f0"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Safe refuge",
+      "_key": "!tables.results!dc808472b70799c0.5a5139d18158fefd",
+      "_id": "5a5139d18158fefd"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Useful equipment or supplies",
+      "_key": "!tables.results!dc808472b70799c0.fd4d9fcf22fe66d6",
+      "_id": "fd4d9fcf22fe66d6"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Washed up or lost @Compendium[foundry-ironsworn.sunderedislesoracles.6eb8856a76563a7d]{Cargo}",
+      "_key": "!tables.results!dc808472b70799c0.a441ba877d45f277",
+      "_id": "a441ba877d45f277"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.a1129f68e66db32a]{Treasure} (small repository)",
+      "_key": "!tables.results!dc808472b70799c0.7b9eaa78332a3057",
+      "_id": "7b9eaa78332a3057"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.54ada22a5c08f0d2]{Treasure} (medium repository)",
+      "_key": "!tables.results!dc808472b70799c0.15df2f58120ca2d5",
+      "_id": "15df2f58120ca2d5"
+    }
+  ],
+  "folder": "80ed534e9e0f713e",
+  "sort": 209,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!dc808472b70799c0"
+}

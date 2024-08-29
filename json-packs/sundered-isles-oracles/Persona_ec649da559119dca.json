@@ -1,0 +1,110 @@
+{
+  "_id": "ec649da559119dca",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/craft",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/craft/persona"
+    }
+  },
+  "name": "Persona",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Anvils",
+      "_key": "!tables.results!ec649da559119dca.55fbd185ba8fb281",
+      "_id": "55fbd185ba8fb281"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Artificers",
+      "_key": "!tables.results!ec649da559119dca.d2eb00d1563674b2",
+      "_id": "d2eb00d1563674b2"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Artisans",
+      "_key": "!tables.results!ec649da559119dca.f189a7afe35dcbdd",
+      "_id": "f189a7afe35dcbdd"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Hammers",
+      "_key": "!tables.results!ec649da559119dca.559d0c3448b06f53",
+      "_id": "559d0c3448b06f53"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Hands",
+      "_key": "!tables.results!ec649da559119dca.313fbb394895886a",
+      "_id": "313fbb394895886a"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Machinists",
+      "_key": "!tables.results!ec649da559119dca.b8bc8eb1b3cdba11",
+      "_id": "b8bc8eb1b3cdba11"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Menders",
+      "_key": "!tables.results!ec649da559119dca.08c365adff5d9cb6",
+      "_id": "08c365adff5d9cb6"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Riggers",
+      "_key": "!tables.results!ec649da559119dca.61010595f28ce94c",
+      "_id": "61010595f28ce94c"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Sparks",
+      "_key": "!tables.results!ec649da559119dca.dbcbd01ae9325b82",
+      "_id": "dbcbd01ae9325b82"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tinkers",
+      "_key": "!tables.results!ec649da559119dca.9033c79b1ed82572",
+      "_id": "9033c79b1ed82572"
+    }
+  ],
+  "folder": "2a7faa3f0fb6d084",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ec649da559119dca"
+}

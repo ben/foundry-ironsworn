@@ -1,0 +1,27 @@
+{
+  "_id": "5b011999daf98b65",
+  "type": "progress",
+  "name": "Bonewalker",
+  "img": "icons/magic/death/undead-skeleton-worn-blue.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Skeletal corpse</p>\n<p class=\"nogrow\">Eye sockets glowing with a fetid red light</p>\n<p class=\"nogrow\">Tattered remains of clothing and armor</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Destroy life</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Rush with unexpected speed</p>\n<p class=\"nogrow\">Attack with the weapons they bore in life</p>\n<p class=\"nogrow\">Grasp and claw</p>\n</div>\n</div>\n\n<p>Bonewalkers are human remains given unnatural life. The source of the dark energy that animates them is a mystery. Some say it is the will of dark gods. Some say an ancient evil permeates this land and seeps into porous bones of the dead. Or, perhaps it is the work of corrupt mystics.</p>\n<p>Bonewalkers usually roam the location of their final resting place—a burial site, a cursed battlefield, or a settlement blighted by disease or violence. Nothing remains of their previous selves. They are soulless monsters driven only to destroy the living.</p>\n\n<blockquote>Quest Starter: <p>A horde of bonewalkers marches relentlessly towards the Havens. What dark force has gathered this army of the undead? How will you stop them?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "cf2bf1b1d8deebf9",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/horrors/bonewalker"
+    }
+  },
+  "_key": "!items!5b011999daf98b65"
+}

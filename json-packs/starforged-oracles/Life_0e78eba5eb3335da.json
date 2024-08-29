@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Desert/Life",
-      "category": "Starforged/Oracles/Planets/Desert"
+      "category": "Starforged/Oracles/Planets/Desert",
+      "dsid": "oracle_rollable:starforged/planet/desert/life"
     }
   },
   "name": "Life",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "None",
-      "_id": "b8fcc64109fc9c62",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e78eba5eb3335da.b8fcc64109fc9c62"
+      "_key": "!tables.results!0e78eba5eb3335da.070e6937b5fbea6d",
+      "_id": "070e6937b5fbea6d"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Extinct",
-      "_id": "f987bff2b3810e5b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e78eba5eb3335da.f987bff2b3810e5b"
+      "_key": "!tables.results!0e78eba5eb3335da.f5534498b889e775",
+      "_id": "f5534498b889e775"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         70
       ],
       "text": "Scarce",
-      "_id": "c1cfcc82ed29e5d0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e78eba5eb3335da.c1cfcc82ed29e5d0"
+      "_key": "!tables.results!0e78eba5eb3335da.19249503256d7883",
+      "_id": "19249503256d7883"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         90
       ],
       "text": "Diverse",
-      "_id": "ebc118bd00a2cf76",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e78eba5eb3335da.ebc118bd00a2cf76"
+      "_key": "!tables.results!0e78eba5eb3335da.36e57c2746ebcab2",
+      "_id": "36e57c2746ebcab2"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         97
       ],
       "text": "Bountiful",
-      "_id": "226de74716c8b5af",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e78eba5eb3335da.226de74716c8b5af"
+      "_key": "!tables.results!0e78eba5eb3335da.2f6f7b5921731768",
+      "_id": "2f6f7b5921731768"
     },
     {
       "range": [
@@ -88,29 +64,12 @@
         100
       ],
       "text": "Overrun",
-      "_id": "b4de82e54d6fa401",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0e78eba5eb3335da.b4de82e54d6fa401"
+      "_key": "!tables.results!0e78eba5eb3335da.97b827dcb1c4424f",
+      "_id": "97b827dcb1c4424f"
     }
   ],
   "folder": "ba1bbe7871538aad",
   "sort": 308,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!0e78eba5eb3335da"
 }

@@ -1,0 +1,200 @@
+{
+  "_id": "7b8cdf7783e7f5fc",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/cave/sea",
+      "dsid": "oracle_rollable:sundered_isles/cave/sea/feature_cursed"
+    }
+  },
+  "name": "Sea Cave Cursed Features",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Bewitching illusion",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.05e2c50d4b2a2d52",
+      "_id": "05e2c50d4b2a2d52"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Bloody water",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.2c55e2a11c938b90",
+      "_id": "2c55e2a11c938b90"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Bones of a colossal beast",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.bf29a824fa16675f",
+      "_id": "bf29a824fa16675f"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Corpses encrusted with sea life",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.9b289a895f661351",
+      "_id": "9b289a895f661351"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Creepy echoes",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.2b59786edfd20190",
+      "_id": "2b59786edfd20190"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Drowned corpses come to life",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.ab194d3626b47612",
+      "_id": "ab194d3626b47612"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Eldritch symbols",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.0e9a66d70abbf9a8",
+      "_id": "0e9a66d70abbf9a8"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Fouled water",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.cd39b1ed5aa9b290",
+      "_id": "cd39b1ed5aa9b290"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Frozen water",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.c4674c9f398f7817",
+      "_id": "c4674c9f398f7817"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Ghastly reflections in the water",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.7c05f3b0b64819bd",
+      "_id": "7c05f3b0b64819bd"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Impenetrable darkness",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.7adcca9d48715341",
+      "_id": "7adcca9d48715341"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Lights snuffed out",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.7384a40e1d7dd10e",
+      "_id": "7384a40e1d7dd10e"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Monstrous water-dwelling predator",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.c1fe51cc6867d0c8",
+      "_id": "c1fe51cc6867d0c8"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Rotting stench",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.96e3a45c16e0c899",
+      "_id": "96e3a45c16e0c899"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Sea creatures mutated by darkness",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.68731f05ec989020",
+      "_id": "68731f05ec989020"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Spectral manifestation",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.78870713df03c8e0",
+      "_id": "78870713df03c8e0"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Unnatural cold",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.3f69538f6385c9a3",
+      "_id": "3f69538f6385c9a3"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Unnaturally rising water",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.c15a2440caadf92e",
+      "_id": "c15a2440caadf92e"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Unseen entities grab hold",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.bd1524d93225c082",
+      "_id": "bd1524d93225c082"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Water above, stone below",
+      "_key": "!tables.results!7b8cdf7783e7f5fc.ef84045f46dbf60e",
+      "_id": "ef84045f46dbf60e"
+    }
+  ],
+  "folder": "80ed534e9e0f713e",
+  "sort": 209,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7b8cdf7783e7f5fc"
+}

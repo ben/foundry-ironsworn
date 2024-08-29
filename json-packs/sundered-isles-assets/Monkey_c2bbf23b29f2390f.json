@@ -1,0 +1,71 @@
+{
+  "type": "asset",
+  "_id": "c2bbf23b29f2390f",
+  "folder": "841fa5bb80d55fd9",
+  "name": "Monkey",
+  "system": {
+    "requirement": "",
+    "category": "Companion",
+    "color": "#3d8b8a",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your monkey companion finds its own trouble. Once per situation, when you score a miss, you may suffer the cost by envisioning the monkey causing mischief or getting into danger. If you do, roll +its health. On a strong hit, the monkey unwittingly turns the situation in your favor; take +2 momentum. On a weak hit, it provides a distraction or mild boon; take +1 momentum. On a miss, it faces its own cost or makes the situation worse.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move by sending the monkey to complete a task involving theft, infiltration, or sabotage, roll +its health. On a hit, take +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.703964b8d02355b8]{Resupply} by asking the monkey to search or scavenge, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Health",
+      "max": 3,
+      "value": 3,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [
+      {
+        "name": "Out of Action",
+        "ticked": false
+      }
+    ],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/companion/monkey",
+      "dsid": "asset:sundered_isles/companion/monkey"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!c2bbf23b29f2390f"
+}

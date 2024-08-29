@@ -1,0 +1,16 @@
+{
+  "name": "Ocean World",
+  "description": "A planet completely or almost entirely covered by a boundless ocean.",
+  "type": "RollTable",
+  "_id": "d053017f6e8f47f0",
+  "sort": 314,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Ocean",
+      "dsid": "oracle_collection:starforged/planet/ocean"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!d053017f6e8f47f0"
+}

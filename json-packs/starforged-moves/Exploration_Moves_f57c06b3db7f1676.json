@@ -1,24 +1,17 @@
 {
   "name": "Exploration Moves",
+  "color": "#427FAA",
+  "description": "The Forge is a vast, chaotic, and largely unexplored galaxy. Your sworn vows will take you through uncharted space, across the surface of inhospitable planets, and into the depths of foreboding derelicts, enigmatic alien vaults, and other perilous sites.\n\nWill you survive these expeditions? What will they cost you? What wonders and horrors will you face? Use the __exploration moves__ to find out.",
   "type": "Item",
   "_id": "f57c06b3db7f1676",
-  "color": "#427FAA",
-  "description": "The Forge is a vast, chaotic, and largely unexplored galaxy. Your sworn vows will take you through uncharted space, across the surface of inhospitable planets, and into the depths of foreboding derelicts, enigmatic alien vaults, and other perilous sites.\n\nWill you survive these expeditions? What will they cost you? What wonders and horrors will you face? Use the **exploration moves** to find out.",
   "sort": 168,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Moves/Exploration"
+      "dfid": "Starforged/Moves/Exploration",
+      "dsid": "move_category:starforged/exploration"
     }
   },
   "folder": null,
   "sorting": "a",
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021087,
-    "modifiedTime": 1695949021087,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!folders!f57c06b3db7f1676"
 }

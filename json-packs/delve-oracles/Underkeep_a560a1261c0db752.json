@@ -1,0 +1,111 @@
+{
+  "_id": "a560a1261c0db752",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Underkeep",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/underkeep"
+    }
+  },
+  "name": "Underkeep",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Catacomb",
+      "_key": "!tables.results!a560a1261c0db752.c771690657f712cf",
+      "_id": "c771690657f712cf"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Chambers",
+      "_key": "!tables.results!a560a1261c0db752.3a15040612bdc967",
+      "_id": "3a15040612bdc967"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Den",
+      "_key": "!tables.results!a560a1261c0db752.8bb9b0872ff3585c",
+      "_id": "8bb9b0872ff3585c"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Hall",
+      "_key": "!tables.results!a560a1261c0db752.1d0bdcb4cf411d48",
+      "_id": "1d0bdcb4cf411d48"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Labyrinth",
+      "_key": "!tables.results!a560a1261c0db752.e04d9b4fb8ba7db8",
+      "_id": "e04d9b4fb8ba7db8"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Maze",
+      "_key": "!tables.results!a560a1261c0db752.df5e043592dc55b5",
+      "_id": "df5e043592dc55b5"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Pit",
+      "_key": "!tables.results!a560a1261c0db752.30b3eddbbdc0bc14",
+      "_id": "30b3eddbbdc0bc14"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Sanctum",
+      "_key": "!tables.results!a560a1261c0db752.7d362ad0c6d87691",
+      "_id": "7d362ad0c6d87691"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Underkeep",
+      "_key": "!tables.results!a560a1261c0db752.fc2c8e8bd7f317ae",
+      "_id": "fc2c8e8bd7f317ae"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Vault",
+      "_key": "!tables.results!a560a1261c0db752.03672ff76b99c383",
+      "_id": "03672ff76b99c383"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 211,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a560a1261c0db752"
+}

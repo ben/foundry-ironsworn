@@ -73,17 +73,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Assets/Path/Devotant",
+      "dsid": "asset:starforged/path/devotant"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021246,
-    "modifiedTime": 1695949021246,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!14c1e6ecd4680fee"
 }

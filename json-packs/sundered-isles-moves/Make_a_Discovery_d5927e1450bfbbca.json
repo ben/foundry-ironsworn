@@ -1,0 +1,61 @@
+{
+  "_id": "d5927e1450bfbbca",
+  "type": "sfmove",
+  "name": "Make a Discovery",
+  "img": "icons/dice/d10black.svg",
+  "folder": "b6d8c0a498693d1c",
+  "system": {
+    "dfid": "move:sundered_isles/exploration/make_a_discovery",
+    "Category": "move_category:sundered_isles/exploration",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When your exploration of a waypoint uncovers something wondrous__, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.",
+    "Trigger": {
+      "Text": "When your exploration of a waypoint uncovers something wondrous...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": ""
+      },
+      "Miss": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [
+      "move.oracle_rollable:sundered_isles/exploration/make_a_discovery.make_a_discovery"
+    ],
+    "dsOracleIds": [
+      "move.oracle_rollable:sundered_isles/exploration/make_a_discovery.make_a_discovery"
+    ],
+    "Source": {
+      "Title": "Sundered Isles",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2024-07-01",
+      "Page": 243
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 243,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:sundered_isles/exploration/make_a_discovery",
+      "dsid": "move:sundered_isles/exploration/make_a_discovery"
+    }
+  },
+  "_key": "!items!d5927e1450bfbbca"
+}

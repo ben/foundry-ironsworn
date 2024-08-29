@@ -1,0 +1,201 @@
+{
+  "_id": "eb992ccf692d8592",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation/Background_Assets",
+      "category": "oracle_collection:starforged/launching_your_campaign/character",
+      "dsid": "oracle_rollable:starforged/launching_your_campaign/character/paths"
+    }
+  },
+  "name": "Step 2: Choose Two Paths",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Battlefield Medic",
+      "_key": "!tables.results!eb992ccf692d8592.82e175afedd6b33e",
+      "_id": "82e175afedd6b33e"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Delegate",
+      "_key": "!tables.results!eb992ccf692d8592.1bdcf36ea866f321",
+      "_id": "1bdcf36ea866f321"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Exobiologist",
+      "_key": "!tables.results!eb992ccf692d8592.699d91be88cd4181",
+      "_id": "699d91be88cd4181"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Far Trader",
+      "_key": "!tables.results!eb992ccf692d8592.8c0a8d6730d8096a",
+      "_id": "8c0a8d6730d8096a"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Fugitive Hunter",
+      "_key": "!tables.results!eb992ccf692d8592.8bf2e4226bc5ef95",
+      "_id": "8bf2e4226bc5ef95"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Hacker",
+      "_key": "!tables.results!eb992ccf692d8592.0ef7f0a1012fbc79",
+      "_id": "0ef7f0a1012fbc79"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Hotshot Pilot",
+      "_key": "!tables.results!eb992ccf692d8592.891d1ee0dbcba5e2",
+      "_id": "891d1ee0dbcba5e2"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Interstellar Scout",
+      "_key": "!tables.results!eb992ccf692d8592.1413b51c7c4cf5d0",
+      "_id": "1413b51c7c4cf5d0"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Monster Hunter",
+      "_key": "!tables.results!eb992ccf692d8592.7743c2a79329fac1",
+      "_id": "7743c2a79329fac1"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Occultist",
+      "_key": "!tables.results!eb992ccf692d8592.e52a293ec1d36406",
+      "_id": "e52a293ec1d36406"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Operative",
+      "_key": "!tables.results!eb992ccf692d8592.91b36f87041f5eed",
+      "_id": "91b36f87041f5eed"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Outlaw",
+      "_key": "!tables.results!eb992ccf692d8592.376b7531d6adb93f",
+      "_id": "376b7531d6adb93f"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Private Investigator",
+      "_key": "!tables.results!eb992ccf692d8592.72380acb4340a57f",
+      "_id": "72380acb4340a57f"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Prophet",
+      "_key": "!tables.results!eb992ccf692d8592.919fc01b4584c5e2",
+      "_id": "919fc01b4584c5e2"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Psionicist",
+      "_key": "!tables.results!eb992ccf692d8592.7e5e28c5ada4692a",
+      "_id": "7e5e28c5ada4692a"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Smuggler",
+      "_key": "!tables.results!eb992ccf692d8592.37f74668315b24d9",
+      "_id": "37f74668315b24d9"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Spiritualist",
+      "_key": "!tables.results!eb992ccf692d8592.bb1d7ca439aa640c",
+      "_id": "bb1d7ca439aa640c"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Starship Engineer",
+      "_key": "!tables.results!eb992ccf692d8592.787ebabee8cfb0b6",
+      "_id": "787ebabee8cfb0b6"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Supersoldier",
+      "_key": "!tables.results!eb992ccf692d8592.c887e07cc3f2f707",
+      "_id": "c887e07cc3f2f707"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Tomb Raider",
+      "_key": "!tables.results!eb992ccf692d8592.042d0f1b6e2d22d3",
+      "_id": "042d0f1b6e2d22d3"
+    }
+  ],
+  "folder": "e7741583e9cc5dd1",
+  "sort": 105,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!eb992ccf692d8592"
+}

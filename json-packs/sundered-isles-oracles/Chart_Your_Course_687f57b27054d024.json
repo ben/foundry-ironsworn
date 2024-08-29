@@ -1,0 +1,15 @@
+{
+  "name": "Chart Your Course",
+  "description": "",
+  "type": "RollTable",
+  "_id": "687f57b27054d024",
+  "sort": 100,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/getting_underway/chart_your_course"
+    }
+  },
+  "folder": "86986250874e32b0",
+  "sorting": "a",
+  "_key": "!folders!687f57b27054d024"
+}

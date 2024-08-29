@@ -1,0 +1,15 @@
+{
+  "name": "Empire",
+  "description": "People seeking dominion over the isles",
+  "type": "RollTable",
+  "_id": "5e64db2bcf1b6238",
+  "sort": 181,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/empire"
+    }
+  },
+  "folder": "332fe732886451c6",
+  "sorting": "a",
+  "_key": "!folders!5e64db2bcf1b6238"
+}

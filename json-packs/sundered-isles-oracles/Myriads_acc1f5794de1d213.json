@@ -1,0 +1,74 @@
+{
+  "_id": "acc1f5794de1d213",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island/visible_habitation",
+      "dsid": "oracle_rollable:sundered_isles/island/visible_habitation/myriads"
+    }
+  },
+  "name": "Myriads",
+  "description": "<p>Central Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        35
+      ],
+      "text": "No signs of habitation",
+      "_key": "!tables.results!acc1f5794de1d213.2da017d6ea8305e1",
+      "_id": "2da017d6ea8305e1"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Inland smoke",
+      "_key": "!tables.results!acc1f5794de1d213.30b192a9d0b60359",
+      "_id": "30b192a9d0b60359"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Coastal boats",
+      "_key": "!tables.results!acc1f5794de1d213.72f47f1edee9fe8b",
+      "_id": "72f47f1edee9fe8b"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Seaside camp",
+      "_key": "!tables.results!acc1f5794de1d213.dc745f53662c13e5",
+      "_id": "dc745f53662c13e5"
+    },
+    {
+      "range": [
+        51,
+        85
+      ],
+      "text": "Seaside settlement",
+      "_key": "!tables.results!acc1f5794de1d213.a384d9675bab8b90",
+      "_id": "a384d9675bab8b90"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Multiple visible communities or extensive cultivation",
+      "_key": "!tables.results!acc1f5794de1d213.81a804f4feef2ea3",
+      "_id": "81a804f4feef2ea3"
+    }
+  ],
+  "folder": "577d39c93e7b0a34",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!acc1f5794de1d213"
+}

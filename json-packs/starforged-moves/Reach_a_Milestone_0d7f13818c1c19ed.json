@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Reach a Milestone",
   "img": "icons/dice/d10black.svg",
+  "folder": "e49f552c2c59f214",
   "system": {
     "dfid": "Starforged/Moves/Quest/Reach_a_Milestone",
     "Category": "Starforged/Moves/Quest",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you make headway in your quest** by doing any of the following...\n\n  * overcoming a critical obstacle\n  * gaining meaningful insight\n  * completing a perilous expedition\n  * acquiring a crucial item or resource\n  * earning vital support\n  * defeating a notable foe\n\n...you may mark progress per the rank of the vow.",
+    "Text": "__When you make headway in your quest__ by doing any of the following...\n\n  * overcoming a critical obstacle\n  * gaining meaningful insight\n  * completing a perilous expedition\n  * acquiring a crucial item or resource\n  * earning vital support\n  * defeating a notable foe\n\n...you may mark progress per the rank of the vow.",
     "Trigger": {
       "Text": "When you make headway in your quest...",
       "Options": []
@@ -16,65 +17,41 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 157
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#2F9236",
       "Images": []
     }
   },
   "sort": 157,
-  "folder": "e49f552c2c59f214",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Quest/Reach_a_Milestone",
+      "dsid": "move:starforged/quest/reach_a_milestone"
+    }
   },
   "_key": "!items!0d7f13818c1c19ed"
 }

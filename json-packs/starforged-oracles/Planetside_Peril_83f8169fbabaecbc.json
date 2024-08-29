@@ -1,0 +1,16 @@
+{
+  "name": "Planetside Peril",
+  "description": "Choose or roll on this table when you want inspiration for a trouble during planetside exploration or a planetside expedition.",
+  "type": "RollTable",
+  "_id": "83f8169fbabaecbc",
+  "sort": 320,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Peril",
+      "dsid": "oracle_collection:starforged/planet/peril"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!83f8169fbabaecbc"
+}

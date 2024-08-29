@@ -1,0 +1,128 @@
+{
+  "_id": "999a788dbfc8e923",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/misc",
+      "dsid": "oracle_rollable:sundered_isles/misc/ship_damage"
+    }
+  },
+  "name": "Ship Damage",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Shaken morale",
+      "_key": "!tables.results!999a788dbfc8e923.b51cd1166aac71f6",
+      "_id": "b51cd1166aac71f6"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Minor casualties",
+      "_key": "!tables.results!999a788dbfc8e923.aa40e66a3cc4d52d",
+      "_id": "aa40e66a3cc4d52d"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Tangled rigging",
+      "_key": "!tables.results!999a788dbfc8e923.2e73552a6a56b866",
+      "_id": "2e73552a6a56b866"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Weakened mast",
+      "_key": "!tables.results!999a788dbfc8e923.bc65e3ffadc0e676",
+      "_id": "bc65e3ffadc0e676"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Fouled sail",
+      "_key": "!tables.results!999a788dbfc8e923.7b15f35f0fcc88ad",
+      "_id": "7b15f35f0fcc88ad"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Damaged rudder",
+      "_key": "!tables.results!999a788dbfc8e923.c42a10dbf10fc560",
+      "_id": "c42a10dbf10fc560"
+    },
+    {
+      "range": [
+        56,
+        65
+      ],
+      "text": "Fire on deck",
+      "_key": "!tables.results!999a788dbfc8e923.3c690a35c289836f",
+      "_id": "3c690a35c289836f"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Swamped deck",
+      "_key": "!tables.results!999a788dbfc8e923.1e25c067fccf52e8",
+      "_id": "1e25c067fccf52e8"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Dismounted cannons",
+      "_key": "!tables.results!999a788dbfc8e923.de542012e4b24ab3",
+      "_id": "de542012e4b24ab3"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Battered hull",
+      "_key": "!tables.results!999a788dbfc8e923.2cfc376e24f5a708",
+      "_id": "2cfc376e24f5a708"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Damaged compartment,  module, or support vehicle",
+      "_key": "!tables.results!999a788dbfc8e923.15dd706a3dca2318",
+      "_id": "15dd706a3dca2318"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice; if the same result, step up the severity",
+      "_key": "!tables.results!999a788dbfc8e923.1c5d13be9080fcc1",
+      "_id": "1c5d13be9080fcc1"
+    }
+  ],
+  "folder": "4712a591169fe5d6",
+  "sort": 233,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!999a788dbfc8e923"
+}

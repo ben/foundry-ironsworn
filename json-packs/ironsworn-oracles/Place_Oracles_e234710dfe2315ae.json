@@ -1,0 +1,16 @@
+{
+  "name": "Place Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "e234710dfe2315ae",
+  "sort": 176,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Place",
+      "dsid": "oracle_collection:classic/place"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!e234710dfe2315ae"
+}

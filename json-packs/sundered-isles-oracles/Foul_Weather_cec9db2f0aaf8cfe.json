@@ -1,0 +1,83 @@
+{
+  "_id": "cec9db2f0aaf8cfe",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/weather",
+      "dsid": "oracle_rollable:sundered_isles/weather/foul"
+    }
+  },
+  "name": "Foul Weather",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Stifling",
+      "_key": "!tables.results!cec9db2f0aaf8cfe.f91ac13308465d56",
+      "_id": "f91ac13308465d56"
+    },
+    {
+      "range": [
+        11,
+        25
+      ],
+      "text": "Listless",
+      "_key": "!tables.results!cec9db2f0aaf8cfe.cf5c0f8ad114f0f1",
+      "_id": "cf5c0f8ad114f0f1"
+    },
+    {
+      "range": [
+        26,
+        40
+      ],
+      "text": "Misty",
+      "_key": "!tables.results!cec9db2f0aaf8cfe.996927c5349eef36",
+      "_id": "996927c5349eef36"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "Foggy",
+      "_key": "!tables.results!cec9db2f0aaf8cfe.ec12ed2ef7d6bf3f",
+      "_id": "ec12ed2ef7d6bf3f"
+    },
+    {
+      "range": [
+        56,
+        75
+      ],
+      "text": "Heavy",
+      "_key": "!tables.results!cec9db2f0aaf8cfe.bea9a57220cad206",
+      "_id": "bea9a57220cad206"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "Stormy",
+      "_key": "!tables.results!cec9db2f0aaf8cfe.c45684e7e662100d",
+      "_id": "c45684e7e662100d"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Raging",
+      "_key": "!tables.results!cec9db2f0aaf8cfe.a4961648278d840f",
+      "_id": "a4961648278d840f"
+    }
+  ],
+  "folder": "14b8249cc0931287",
+  "sort": 130,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cec9db2f0aaf8cfe"
+}

@@ -1,0 +1,93 @@
+{
+  "_id": "06a072697b85c067",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Tanglewood",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/tanglewood"
+    }
+  },
+  "name": "Tanglewood",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        11
+      ],
+      "text": "Weald",
+      "_key": "!tables.results!06a072697b85c067.3b4eb44d8acf4a07",
+      "_id": "3b4eb44d8acf4a07"
+    },
+    {
+      "range": [
+        12,
+        23
+      ],
+      "text": "Tangle",
+      "_key": "!tables.results!06a072697b85c067.3ca8a8938a16848c",
+      "_id": "3ca8a8938a16848c"
+    },
+    {
+      "range": [
+        24,
+        35
+      ],
+      "text": "Bramble",
+      "_key": "!tables.results!06a072697b85c067.ccdc9cc83f4c7ccb",
+      "_id": "ccdc9cc83f4c7ccb"
+    },
+    {
+      "range": [
+        36,
+        48
+      ],
+      "text": "Briar",
+      "_key": "!tables.results!06a072697b85c067.7dc05b22764ab1f5",
+      "_id": "7dc05b22764ab1f5"
+    },
+    {
+      "range": [
+        49,
+        61
+      ],
+      "text": "Thicket",
+      "_key": "!tables.results!06a072697b85c067.48caf5f0525bbacb",
+      "_id": "48caf5f0525bbacb"
+    },
+    {
+      "range": [
+        62,
+        74
+      ],
+      "text": "Forest",
+      "_key": "!tables.results!06a072697b85c067.5cf85d8f786cb526",
+      "_id": "5cf85d8f786cb526"
+    },
+    {
+      "range": [
+        75,
+        87
+      ],
+      "text": "Wilds",
+      "_key": "!tables.results!06a072697b85c067.06f863011e2657d3",
+      "_id": "06f863011e2657d3"
+    },
+    {
+      "range": [
+        88,
+        100
+      ],
+      "text": "Wood",
+      "_key": "!tables.results!06a072697b85c067.7bd5d805cd20ac6b",
+      "_id": "7bd5d805cd20ac6b"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 211,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!06a072697b85c067"
+}

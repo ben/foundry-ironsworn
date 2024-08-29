@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Space/Sector_Name/Prefix",
-      "category": "Starforged/Oracles/Space"
+      "category": "Starforged/Oracles/Space/Sector_Name",
+      "dsid": "oracle_rollable:starforged/space/sector_name/prefix"
     }
   },
   "name": "Prefix",
-  "description": "<p>To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.</p>",
-  "formula": "d100",
+  "description": "",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         2
       ],
       "text": "Accursed",
-      "_id": "8e02a94b78e9fa3c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.8e02a94b78e9fa3c"
+      "_key": "!tables.results!306501658d12dbad.7d8025877802b939",
+      "_id": "7d8025877802b939"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         4
       ],
       "text": "Ashen",
-      "_id": "6fe5c684d0a56ee0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.6fe5c684d0a56ee0"
+      "_key": "!tables.results!306501658d12dbad.3424460ad65df3c0",
+      "_id": "3424460ad65df3c0"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         6
       ],
       "text": "Asteria",
-      "_id": "8f20f8b68bb2207c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.8f20f8b68bb2207c"
+      "_key": "!tables.results!306501658d12dbad.07b53989b0fb2d75",
+      "_id": "07b53989b0fb2d75"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         8
       ],
       "text": "Bitter",
-      "_id": "58111a32eb674bac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.58111a32eb674bac"
+      "_key": "!tables.results!306501658d12dbad.214bf2bf525673e2",
+      "_id": "214bf2bf525673e2"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         10
       ],
       "text": "Blighted",
-      "_id": "19db095007da64b3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.19db095007da64b3"
+      "_key": "!tables.results!306501658d12dbad.7e2776f0d6253fc6",
+      "_id": "7e2776f0d6253fc6"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         12
       ],
       "text": "Bloodied",
-      "_id": "247fb784f543856b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.247fb784f543856b"
+      "_key": "!tables.results!306501658d12dbad.a68d3f6be06c26a8",
+      "_id": "a68d3f6be06c26a8"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         14
       ],
       "text": "Boundless",
-      "_id": "147283c653c451f6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.147283c653c451f6"
+      "_key": "!tables.results!306501658d12dbad.830bb916c8ee34b4",
+      "_id": "830bb916c8ee34b4"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         16
       ],
       "text": "Burning",
-      "_id": "b59e570e5f76ae3a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.b59e570e5f76ae3a"
+      "_key": "!tables.results!306501658d12dbad.c429929158e5ce7e",
+      "_id": "c429929158e5ce7e"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         18
       ],
       "text": "Cortana",
-      "_id": "bc8acdd32af3b0f2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.bc8acdd32af3b0f2"
+      "_key": "!tables.results!306501658d12dbad.065064c692733c2f",
+      "_id": "065064c692733c2f"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         20
       ],
       "text": "Corvus",
-      "_id": "3ba49d2a4fcca2a5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.3ba49d2a4fcca2a5"
+      "_key": "!tables.results!306501658d12dbad.dcb12c9b10b697d9",
+      "_id": "dcb12c9b10b697d9"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         22
       ],
       "text": "Crimson",
-      "_id": "3bce41913c828737",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.3bce41913c828737"
+      "_key": "!tables.results!306501658d12dbad.95a409121ac1f187",
+      "_id": "95a409121ac1f187"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         24
       ],
       "text": "Cygnus",
-      "_id": "96b8c6ab83354fc4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.96b8c6ab83354fc4"
+      "_key": "!tables.results!306501658d12dbad.1b19dc15e9946676",
+      "_id": "1b19dc15e9946676"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         26
       ],
       "text": "Delphi",
-      "_id": "e7e425db367d0dad",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.e7e425db367d0dad"
+      "_key": "!tables.results!306501658d12dbad.c25e29c77fcbfa92",
+      "_id": "c25e29c77fcbfa92"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         28
       ],
       "text": "Delphian",
-      "_id": "8d49c973ee5f5b2d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.8d49c973ee5f5b2d"
+      "_key": "!tables.results!306501658d12dbad.4891ded6ffa7f2d1",
+      "_id": "4891ded6ffa7f2d1"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         30
       ],
       "text": "Devil's",
-      "_id": "b778f050d1b74e90",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.b778f050d1b74e90"
+      "_key": "!tables.results!306501658d12dbad.744e355cd2293266",
+      "_id": "744e355cd2293266"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         32
       ],
       "text": "Ebon",
-      "_id": "4e9eb4da08f85ee5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.4e9eb4da08f85ee5"
+      "_key": "!tables.results!306501658d12dbad.13e7f34c69fa98df",
+      "_id": "13e7f34c69fa98df"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         34
       ],
       "text": "Essus",
-      "_id": "50541a194e8c04a9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.50541a194e8c04a9"
+      "_key": "!tables.results!306501658d12dbad.1304d190eda0d92c",
+      "_id": "1304d190eda0d92c"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         36
       ],
       "text": "Fallen",
-      "_id": "3e25c15b08e03c88",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.3e25c15b08e03c88"
+      "_key": "!tables.results!306501658d12dbad.890bf96b18cea776",
+      "_id": "890bf96b18cea776"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         38
       ],
       "text": "Ferrous",
-      "_id": "a06daec918b5d27c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.a06daec918b5d27c"
+      "_key": "!tables.results!306501658d12dbad.76478b71e3896de5",
+      "_id": "76478b71e3896de5"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         40
       ],
       "text": "Fool's",
-      "_id": "9287bd767fc3b07e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.9287bd767fc3b07e"
+      "_key": "!tables.results!306501658d12dbad.fdff81d8dea970f6",
+      "_id": "fdff81d8dea970f6"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         42
       ],
       "text": "Forgotten",
-      "_id": "7ff090a584094b37",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.7ff090a584094b37"
+      "_key": "!tables.results!306501658d12dbad.dbe7a30a7068ec10",
+      "_id": "dbe7a30a7068ec10"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         44
       ],
       "text": "Haunted",
-      "_id": "d29ea1aff36e1695",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.d29ea1aff36e1695"
+      "_key": "!tables.results!306501658d12dbad.b0c448e49146cbf0",
+      "_id": "b0c448e49146cbf0"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         46
       ],
       "text": "Hidden",
-      "_id": "7da8d63f01c1a30f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.7da8d63f01c1a30f"
+      "_key": "!tables.results!306501658d12dbad.472dd5bc4907882c",
+      "_id": "472dd5bc4907882c"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         48
       ],
       "text": "Hollow",
-      "_id": "4fce442d811c591f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.4fce442d811c591f"
+      "_key": "!tables.results!306501658d12dbad.658fcdb398e4a2de",
+      "_id": "658fcdb398e4a2de"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         50
       ],
       "text": "Igneous",
-      "_id": "407ffe8137cf2e45",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.407ffe8137cf2e45"
+      "_key": "!tables.results!306501658d12dbad.f225cdedda645cd0",
+      "_id": "f225cdedda645cd0"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         52
       ],
       "text": "Infernal",
-      "_id": "9862c6bf21adca33",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.9862c6bf21adca33"
+      "_key": "!tables.results!306501658d12dbad.746d4475ef6aba48",
+      "_id": "746d4475ef6aba48"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         54
       ],
       "text": "Invidia",
-      "_id": "d831a3e108f32508",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.d831a3e108f32508"
+      "_key": "!tables.results!306501658d12dbad.d891f6394d24d48e",
+      "_id": "d891f6394d24d48e"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         56
       ],
       "text": "Iron",
-      "_id": "6494d9685ec09e47",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.6494d9685ec09e47"
+      "_key": "!tables.results!306501658d12dbad.dd948cf1079695d9",
+      "_id": "dd948cf1079695d9"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         58
       ],
       "text": "Kalidas",
-      "_id": "bac19c07ff65b68b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.bac19c07ff65b68b"
+      "_key": "!tables.results!306501658d12dbad.c1afaabc77ef5d85",
+      "_id": "c1afaabc77ef5d85"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         60
       ],
       "text": "Kronos",
-      "_id": "bd4d82887d7d8da9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.bd4d82887d7d8da9"
+      "_key": "!tables.results!306501658d12dbad.a8e212def5b57cc0",
+      "_id": "a8e212def5b57cc0"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         62
       ],
       "text": "Lacuna",
-      "_id": "7082add52bab5e44",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.7082add52bab5e44"
+      "_key": "!tables.results!306501658d12dbad.2b100f72e156f168",
+      "_id": "2b100f72e156f168"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         64
       ],
       "text": "Lumen",
-      "_id": "45e120260ecfc87b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.45e120260ecfc87b"
+      "_key": "!tables.results!306501658d12dbad.851850629a511247",
+      "_id": "851850629a511247"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         66
       ],
       "text": "Mobius",
-      "_id": "e37d83f481986946",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.e37d83f481986946"
+      "_key": "!tables.results!306501658d12dbad.3835c208dd926968",
+      "_id": "3835c208dd926968"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         68
       ],
       "text": "Morien",
-      "_id": "63c633cbcc0a939c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.63c633cbcc0a939c"
+      "_key": "!tables.results!306501658d12dbad.46317e7bf4b945c8",
+      "_id": "46317e7bf4b945c8"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         70
       ],
       "text": "Onyx",
-      "_id": "1a9fbad1ca03e85d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.1a9fbad1ca03e85d"
+      "_key": "!tables.results!306501658d12dbad.3c08e04bba7e0497",
+      "_id": "3c08e04bba7e0497"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         72
       ],
       "text": "Outer",
-      "_id": "1af940827e82a87d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.1af940827e82a87d"
+      "_key": "!tables.results!306501658d12dbad.5ae01fbf8bf64dc2",
+      "_id": "5ae01fbf8bf64dc2"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         74
       ],
       "text": "Sanguis",
-      "_id": "450ed6128a633263",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.450ed6128a633263"
+      "_key": "!tables.results!306501658d12dbad.fbc42b0ef1c18787",
+      "_id": "fbc42b0ef1c18787"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         76
       ],
       "text": "Scarred",
-      "_id": "f1d5c2aa2879dfac",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.f1d5c2aa2879dfac"
+      "_key": "!tables.results!306501658d12dbad.b5bead8618807697",
+      "_id": "b5bead8618807697"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         78
       ],
       "text": "Scorched",
-      "_id": "2d4ff66cd8014ed5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.2d4ff66cd8014ed5"
+      "_key": "!tables.results!306501658d12dbad.603f7e299c47b443",
+      "_id": "603f7e299c47b443"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         80
       ],
       "text": "Shattered",
-      "_id": "dbb06c846058dc12",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.dbb06c846058dc12"
+      "_key": "!tables.results!306501658d12dbad.180bd7af2593707d",
+      "_id": "180bd7af2593707d"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         82
       ],
       "text": "Shrouded",
-      "_id": "80a3a5b08d72557b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.80a3a5b08d72557b"
+      "_key": "!tables.results!306501658d12dbad.aa0d57545b361a7e",
+      "_id": "aa0d57545b361a7e"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         84
       ],
       "text": "Sindri",
-      "_id": "940d44d7d206d34b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.940d44d7d206d34b"
+      "_key": "!tables.results!306501658d12dbad.9c675314d214b2ac",
+      "_id": "9c675314d214b2ac"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         86
       ],
       "text": "Solana",
-      "_id": "c3152ab0ece93c3c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.c3152ab0ece93c3c"
+      "_key": "!tables.results!306501658d12dbad.18e93fbbd097a079",
+      "_id": "18e93fbbd097a079"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         88
       ],
       "text": "Stygian",
-      "_id": "c4114bd56974202e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.c4114bd56974202e"
+      "_key": "!tables.results!306501658d12dbad.ded25f60d7e3b1fa",
+      "_id": "ded25f60d7e3b1fa"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         90
       ],
       "text": "Sulaco",
-      "_id": "bfdb994464811c99",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.bfdb994464811c99"
+      "_key": "!tables.results!306501658d12dbad.5a93dce5bad08065",
+      "_id": "5a93dce5bad08065"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         92
       ],
       "text": "Sundered",
-      "_id": "92f40e9ad2f37307",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.92f40e9ad2f37307"
+      "_key": "!tables.results!306501658d12dbad.788ab63c4b374da5",
+      "_id": "788ab63c4b374da5"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         94
       ],
       "text": "Thunor",
-      "_id": "8e6872ff9ce11911",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.8e6872ff9ce11911"
+      "_key": "!tables.results!306501658d12dbad.343ddf8164111f8b",
+      "_id": "343ddf8164111f8b"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         96
       ],
       "text": "Vanguard",
-      "_id": "80045e0edce34cef",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.80045e0edce34cef"
+      "_key": "!tables.results!306501658d12dbad.9b4c9676426eca4f",
+      "_id": "9b4c9676426eca4f"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         98
       ],
       "text": "Veiled",
-      "_id": "7c7d7605f98dae98",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.7c7d7605f98dae98"
+      "_key": "!tables.results!306501658d12dbad.0f824760878ed1fb",
+      "_id": "0f824760878ed1fb"
     },
     {
       "range": [
@@ -704,29 +460,12 @@
         100
       ],
       "text": "Wasted",
-      "_id": "c0b2231fedcf1e2b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!306501658d12dbad.c0b2231fedcf1e2b"
+      "_key": "!tables.results!306501658d12dbad.56a2b735bd7661b7",
+      "_id": "56a2b735bd7661b7"
     }
   ],
   "folder": "158580c8f9018e58",
-  "sort": 302,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!306501658d12dbad"
 }

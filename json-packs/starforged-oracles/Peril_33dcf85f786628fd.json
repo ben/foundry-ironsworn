@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Chaotic/Peril",
-      "category": "Starforged/Oracles/Location_Themes/Chaotic"
+      "category": "Starforged/Oracles/Location_Themes/Chaotic",
+      "dsid": "oracle_rollable:starforged/location_theme/chaotic/peril"
     }
   },
   "name": "Peril",
   "description": "<p>Use this table to help envision a complication or hazard.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         9
       ],
       "text": "Chaos makes its mark upon you",
-      "_id": "d10d81fd8b216402",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.d10d81fd8b216402"
+      "_key": "!tables.results!33dcf85f786628fd.00e89329097fac5c",
+      "_id": "00e89329097fac5c"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         18
       ],
       "text": "Chaos spreads or intensifies",
-      "_id": "727c49ec6b2a2acc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.727c49ec6b2a2acc"
+      "_key": "!tables.results!33dcf85f786628fd.dd4f6627e9ea1b01",
+      "_id": "dd4f6627e9ea1b01"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         27
       ],
       "text": "Chaos tempts or lures you",
-      "_id": "72fbefed09e1b9b6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.72fbefed09e1b9b6"
+      "_key": "!tables.results!33dcf85f786628fd.e4b7eb177f93a1af",
+      "_id": "e4b7eb177f93a1af"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         36
       ],
       "text": "Chaotic energies block the path or assail you",
-      "_id": "3a461f9186ffab49",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.3a461f9186ffab49"
+      "_key": "!tables.results!33dcf85f786628fd.9f826996740c09e4",
+      "_id": "9f826996740c09e4"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         45
       ],
       "text": "Disorienting changes in time or location",
-      "_id": "7993b33b8c033a14",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.7993b33b8c033a14"
+      "_key": "!tables.results!33dcf85f786628fd.7a7250b33b491ba8",
+      "_id": "7a7250b33b491ba8"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         54
       ],
       "text": "Dreadful scene of those who fell prey to chaos",
-      "_id": "3b1e881a7370fe4e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.3b1e881a7370fe4e"
+      "_key": "!tables.results!33dcf85f786628fd.3bf4d84868bf02e5",
+      "_id": "3bf4d84868bf02e5"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         63
       ],
       "text": "Equipment is made unstable or dangerous",
-      "_id": "dd902c208eee3ddd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.dd902c208eee3ddd"
+      "_key": "!tables.results!33dcf85f786628fd.2763ab1095e3721c",
+      "_id": "2763ab1095e3721c"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         72
       ],
       "text": "Foes harness or wield chaos",
-      "_id": "d346ac728cb841a1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.d346ac728cb841a1"
+      "_key": "!tables.results!33dcf85f786628fd.ed877728fd0fe9ad",
+      "_id": "ed877728fd0fe9ad"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         81
       ],
       "text": "Hazardous environmental changes",
-      "_id": "4d2c3b20bf8b37c0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.4d2c3b20bf8b37c0"
+      "_key": "!tables.results!33dcf85f786628fd.adf312b4ec44ebd6",
+      "_id": "adf312b4ec44ebd6"
     },
     {
       "range": [
@@ -144,27 +100,17 @@
         90
       ],
       "text": "Lifeforms made hostile by chaos",
-      "_id": "29f3c13b4c271137",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.29f3c13b4c271137"
+      "_key": "!tables.results!33dcf85f786628fd.65d9ecc5e0c22f38",
+      "_id": "65d9ecc5e0c22f38"
     },
     {
       "range": [
         91,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Action\"><i class=\"fa fa-caret-right\"></i> Action</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Theme\"><i class=\"fa fa-caret-right\"></i> Theme</a>",
-      "_id": "ea30641950de1d67",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.ea30641950de1d67"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} + @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}",
+      "_key": "!tables.results!33dcf85f786628fd.d02388f8992840e8",
+      "_id": "d02388f8992840e8"
     },
     {
       "range": [
@@ -172,29 +118,12 @@
         100
       ],
       "text": "Roll twice",
-      "_id": "db265a65a9fc7f15",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!33dcf85f786628fd.db265a65a9fc7f15"
+      "_key": "!tables.results!33dcf85f786628fd.0e980affee5f3099",
+      "_id": "0e980affee5f3099"
     }
   ],
   "folder": "2c017ba0d0ff0e12",
   "sort": 372,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!33dcf85f786628fd"
 }

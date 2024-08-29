@@ -1,0 +1,435 @@
+{
+  "_id": "07a1e0a1d0bbe788",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Settlement/Trouble",
+      "category": "Ironsworn/Oracles/Settlement",
+      "dsid": "oracle_rollable:classic/settlement/trouble"
+    }
+  },
+  "name": "Settlement Trouble",
+  "description": "<p>Use this table to generate a narrative hook for a problem faced by a community. This oracle can help inspire a vow for your character or serve as a prompt for a trouble you encounter when you interact with a settlement.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Outsiders rejected",
+      "_key": "!tables.results!07a1e0a1d0bbe788.3235568abedad7db",
+      "_id": "3235568abedad7db"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Dangerous discovery",
+      "_key": "!tables.results!07a1e0a1d0bbe788.05996faecb3eb07d",
+      "_id": "05996faecb3eb07d"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Dreadful omens",
+      "_key": "!tables.results!07a1e0a1d0bbe788.9c93fc7d13433e4b",
+      "_id": "9c93fc7d13433e4b"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Natural disaster",
+      "_key": "!tables.results!07a1e0a1d0bbe788.f09c6ecbff3372e4",
+      "_id": "f09c6ecbff3372e4"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Old wounds reopened",
+      "_key": "!tables.results!07a1e0a1d0bbe788.eed267c464d06958",
+      "_id": "eed267c464d06958"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Important object is lost",
+      "_key": "!tables.results!07a1e0a1d0bbe788.58d2d354bdcdc03d",
+      "_id": "58d2d354bdcdc03d"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Someone is captured",
+      "_key": "!tables.results!07a1e0a1d0bbe788.695cba6127145e42",
+      "_id": "695cba6127145e42"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Mysterious phenomenon",
+      "_key": "!tables.results!07a1e0a1d0bbe788.d8d81e0c706045a5",
+      "_id": "d8d81e0c706045a5"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Revolt against a leader",
+      "_key": "!tables.results!07a1e0a1d0bbe788.a4b943b31d248bfc",
+      "_id": "a4b943b31d248bfc"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Vengeful outcast",
+      "_key": "!tables.results!07a1e0a1d0bbe788.fc6d152511ddd87f",
+      "_id": "fc6d152511ddd87f"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Rival settlement",
+      "_key": "!tables.results!07a1e0a1d0bbe788.7b4a4e40fda9f14b",
+      "_id": "7b4a4e40fda9f14b"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Nature strikes back",
+      "_key": "!tables.results!07a1e0a1d0bbe788.6cc05d34892bf221",
+      "_id": "6cc05d34892bf221"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Someone is missing",
+      "_key": "!tables.results!07a1e0a1d0bbe788.9356861040ac2836",
+      "_id": "9356861040ac2836"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Production halts",
+      "_key": "!tables.results!07a1e0a1d0bbe788.aa06f2ff090d4a58",
+      "_id": "aa06f2ff090d4a58"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Mysterious murders",
+      "_key": "!tables.results!07a1e0a1d0bbe788.537ddbac37f89521",
+      "_id": "537ddbac37f89521"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Debt comes due",
+      "_key": "!tables.results!07a1e0a1d0bbe788.7873919734d1b31d",
+      "_id": "7873919734d1b31d"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Unjust leadership",
+      "_key": "!tables.results!07a1e0a1d0bbe788.2f8e633cce2b8147",
+      "_id": "2f8e633cce2b8147"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Disastrous accident",
+      "_key": "!tables.results!07a1e0a1d0bbe788.ce7bfacb2de9735d",
+      "_id": "ce7bfacb2de9735d"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "In league with the enemy",
+      "_key": "!tables.results!07a1e0a1d0bbe788.252b2448b8d40089",
+      "_id": "252b2448b8d40089"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Raiders prey on the weak",
+      "_key": "!tables.results!07a1e0a1d0bbe788.7df60361938a9bf4",
+      "_id": "7df60361938a9bf4"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Cursed past",
+      "_key": "!tables.results!07a1e0a1d0bbe788.f5df507fa6d179d0",
+      "_id": "f5df507fa6d179d0"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "An innocent is accused",
+      "_key": "!tables.results!07a1e0a1d0bbe788.9ce3d77a3b0e7e7d",
+      "_id": "9ce3d77a3b0e7e7d"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Corrupted by dark magic",
+      "_key": "!tables.results!07a1e0a1d0bbe788.d5c9ffe3e892fbce",
+      "_id": "d5c9ffe3e892fbce"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Isolated by brutal weather",
+      "_key": "!tables.results!07a1e0a1d0bbe788.7857d69c071693d5",
+      "_id": "7857d69c071693d5"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Provisions are scarce",
+      "_key": "!tables.results!07a1e0a1d0bbe788.649300acba685252",
+      "_id": "649300acba685252"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Sickness run amok",
+      "_key": "!tables.results!07a1e0a1d0bbe788.56dace1b1d40514c",
+      "_id": "56dace1b1d40514c"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Allies become enemies",
+      "_key": "!tables.results!07a1e0a1d0bbe788.c4701e9400f2b453",
+      "_id": "c4701e9400f2b453"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Attack is imminent",
+      "_key": "!tables.results!07a1e0a1d0bbe788.5ffed49c8fca74ef",
+      "_id": "5ffed49c8fca74ef"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Lost caravan",
+      "_key": "!tables.results!07a1e0a1d0bbe788.3db63223bdadde24",
+      "_id": "3db63223bdadde24"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Dark secret revealed",
+      "_key": "!tables.results!07a1e0a1d0bbe788.8f56d140f20d01f5",
+      "_id": "8f56d140f20d01f5"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Urgent expedition",
+      "_key": "!tables.results!07a1e0a1d0bbe788.35d0a79aa434cce9",
+      "_id": "35d0a79aa434cce9"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "A leader falls",
+      "_key": "!tables.results!07a1e0a1d0bbe788.5fdc4b16a1fa1e9d",
+      "_id": "5fdc4b16a1fa1e9d"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Families in conflict",
+      "_key": "!tables.results!07a1e0a1d0bbe788.b238fe0ce493a86b",
+      "_id": "b238fe0ce493a86b"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Incompetent leadership",
+      "_key": "!tables.results!07a1e0a1d0bbe788.6ed7d02ffe8dfc54",
+      "_id": "6ed7d02ffe8dfc54"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Reckless warmongering",
+      "_key": "!tables.results!07a1e0a1d0bbe788.b05e5895cb8c7cc6",
+      "_id": "b05e5895cb8c7cc6"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Beast on the hunt",
+      "_key": "!tables.results!07a1e0a1d0bbe788.d8e4cd0a70143756",
+      "_id": "d8e4cd0a70143756"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Betrayed from within",
+      "_key": "!tables.results!07a1e0a1d0bbe788.c6375b4297dfc161",
+      "_id": "c6375b4297dfc161"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Broken truce",
+      "_key": "!tables.results!07a1e0a1d0bbe788.bef2d1422571cb6c",
+      "_id": "bef2d1422571cb6c"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Wrathful haunt",
+      "_key": "!tables.results!07a1e0a1d0bbe788.6ddc0cc1ddad9ea6",
+      "_id": "6ddc0cc1ddad9ea6"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Conflict with firstborn",
+      "_key": "!tables.results!07a1e0a1d0bbe788.b73cc8560538df55",
+      "_id": "b73cc8560538df55"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Trade route blocked",
+      "_key": "!tables.results!07a1e0a1d0bbe788.f33c336570156444",
+      "_id": "f33c336570156444"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "In the crossfire",
+      "_key": "!tables.results!07a1e0a1d0bbe788.897f372f53a58dd9",
+      "_id": "897f372f53a58dd9"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Stranger causes discord",
+      "_key": "!tables.results!07a1e0a1d0bbe788.3224590f12b67c4d",
+      "_id": "3224590f12b67c4d"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Important event threatened",
+      "_key": "!tables.results!07a1e0a1d0bbe788.8a39ee726326c14a",
+      "_id": "8a39ee726326c14a"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Dangerous tradition",
+      "_key": "!tables.results!07a1e0a1d0bbe788.b422ce0247e8bc64",
+      "_id": "b422ce0247e8bc64"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!07a1e0a1d0bbe788.abdc5c44a0354ab2",
+      "_id": "abdc5c44a0354ab2"
+    }
+  ],
+  "folder": "1a0cbf46c7e7fb26",
+  "sort": 181,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!07a1e0a1d0bbe788"
+}

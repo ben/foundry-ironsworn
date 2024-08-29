@@ -1,0 +1,92 @@
+{
+  "_id": "d6345a7d8b548623",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/adventures/beasts",
+      "dsid": "oracle_rollable:sundered_isles/adventures/beasts/shore_and_river"
+    }
+  },
+  "name": "Beasts of the Shore and River",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Great Crocodile",
+      "_key": "!tables.results!d6345a7d8b548623.d5d77f8c1d61886e",
+      "_id": "d5d77f8c1d61886e"
+    },
+    {
+      "range": [
+        21,
+        35
+      ],
+      "text": "Tenebrous Squid",
+      "_key": "!tables.results!d6345a7d8b548623.05e75f0f6ff98dfd",
+      "_id": "05e75f0f6ff98dfd"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "Diving Spider",
+      "_key": "!tables.results!d6345a7d8b548623.f602285f80a6716b",
+      "_id": "f602285f80a6716b"
+    },
+    {
+      "range": [
+        51,
+        65
+      ],
+      "text": "Muck Toad",
+      "_key": "!tables.results!d6345a7d8b548623.aa368aad8763cbd8",
+      "_id": "aa368aad8763cbd8"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Sand Dragon",
+      "_key": "!tables.results!d6345a7d8b548623.4b038850edecd362",
+      "_id": "4b038850edecd362"
+    },
+    {
+      "range": [
+        76,
+        85
+      ],
+      "text": "Keelback Crab",
+      "_key": "!tables.results!d6345a7d8b548623.bb5c090a5f3f324a",
+      "_id": "bb5c090a5f3f324a"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Jade Crab",
+      "_key": "!tables.results!d6345a7d8b548623.5a28717fbf7efea6",
+      "_id": "5a28717fbf7efea6"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Abomination",
+      "_key": "!tables.results!d6345a7d8b548623.318c9f782abd98b0",
+      "_id": "318c9f782abd98b0"
+    }
+  ],
+  "folder": "a4ce4643e46e22ca",
+  "sort": 62,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d6345a7d8b548623"
+}

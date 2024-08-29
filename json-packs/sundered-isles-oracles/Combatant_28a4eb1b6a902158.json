@@ -1,0 +1,65 @@
+{
+  "_id": "28a4eb1b6a902158",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character/role_details",
+      "dsid": "oracle_rollable:sundered_isles/character/role_details/combatant"
+    }
+  },
+  "name": "Combatant",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Duelist",
+      "_key": "!tables.results!28a4eb1b6a902158.894e5953bc12b065",
+      "_id": "894e5953bc12b065"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Guard / Militia",
+      "_key": "!tables.results!28a4eb1b6a902158.caa5f186d286e3e5",
+      "_id": "caa5f186d286e3e5"
+    },
+    {
+      "range": [
+        41,
+        60
+      ],
+      "text": "Mercenary",
+      "_key": "!tables.results!28a4eb1b6a902158.27b4267aad80c9ec",
+      "_id": "27b4267aad80c9ec"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Soldier",
+      "_key": "!tables.results!28a4eb1b6a902158.23705445ea873ff1",
+      "_id": "23705445ea873ff1"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Vigilante",
+      "_key": "!tables.results!28a4eb1b6a902158.9394d8939a0f9c3e",
+      "_id": "9394d8939a0f9c3e"
+    }
+  ],
+  "folder": "0be76187b2513bbb",
+  "sort": 188,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!28a4eb1b6a902158"
+}

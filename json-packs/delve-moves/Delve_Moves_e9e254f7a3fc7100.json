@@ -1,0 +1,17 @@
+{
+  "name": "Delve Moves",
+  "color": "#427FAA",
+  "description": "As you explore a perilous site, you’ll trigger moves. The moves included with this supplement help you resolve the outcome of your expedition—whether you make progress, and what dangers or opportunities you encounter.",
+  "type": "Item",
+  "_id": "e9e254f7a3fc7100",
+  "sort": 19,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Delve",
+      "dsid": "move_category:delve/delve"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!e9e254f7a3fc7100"
+}

@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Strike",
   "img": "icons/dice/d10black.svg",
+  "folder": "19defd673fdc3970",
   "system": {
     "dfid": "Ironsworn/Moves/Combat/Strike",
     "Category": "Ironsworn/Moves/Combat",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **you have initiative and attack in close quarters**, roll +iron. When **you have initiative and attack at range**, roll +edge.\n\nOn a **strong hit**, inflict +1 harm. You retain initiative.\n\nOn a **weak hit**, inflict your harm and lose initiative.\n\nOn a **miss**, your attack fails and you must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
+    "Text": "When __you have initiative and attack in close quarters__, roll +iron. When __you have initiative and attack at range__, roll +edge.\n\nOn a __strong hit__, inflict +1 harm. You retain initiative.\n\nOn a __weak hit__, inflict your harm and lose initiative.\n\nOn a __miss__, your attack fails and you must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
     "Trigger": {
       "Text": "When you have initiative and attack...",
       "Options": [
@@ -32,42 +33,29 @@
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Inflict +1 harm. You retain initiative.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, inflict +1 harm. You retain initiative.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Inflict your harm and lose initiative.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, inflict your harm and lose initiative."
       },
       "Miss": {
-        "Text": "Your attack fails and you must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, your attack fails and you must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Your foe has initiative.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 78
     },
     "Suggestions": {},
@@ -76,20 +64,11 @@
     }
   },
   "sort": 78,
-  "folder": "19defd673fdc3970",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Combat/Strike",
+      "dsid": "move:classic/combat/strike"
+    }
   },
   "_key": "!items!5288e935906f6d28"
 }

@@ -1,22 +1,16 @@
 {
   "name": "Engineering",
-  "_id": "9851eb5306cbb8fc",
+  "description": "",
   "type": "RollTable",
+  "_id": "9851eb5306cbb8fc",
   "sort": 354,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Derelicts/Engineering"
+      "dfid": "Starforged/Oracles/Derelicts/Engineering",
+      "dsid": "oracle_collection:starforged/derelict/engineering"
     }
   },
   "folder": "fd19a02fbd5f71e6",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!9851eb5306cbb8fc"
 }

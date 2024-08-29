@@ -1,0 +1,98 @@
+{
+  "_id": "03595d7546a1353f",
+  "type": "sfmove",
+  "name": "Secure an Advantage (Scene Challenge)",
+  "img": "icons/dice/d10black.svg",
+  "folder": "7ac4a2bdc711c6b6",
+  "system": {
+    "dfid": "Starforged/Moves/Scene_Challenge/Secure_an_Advantage",
+    "Category": "Starforged/Moves/Scene_Challenge",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge__, envision your action and roll. If you act...\n\n  * With speed, mobility, or agility: Roll +edge\n  * With resolve, command, or sociability: Roll +heart\n  * With strength, endurance, aggression: Roll +iron\n  * With deception, stealth, or trickery: Roll +shadow\n  * With expertise, focus, or observation: Roll +wits\n\nOn a __hit__, you are successful. On a __strong hit__, take both. On a __strong hit with a match__, take both and mark progress. On a __weak hit__, choose one.\n\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)\n\nOn a __miss__, you fail or your assumptions betray you. Fill a clock segment and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. On a __miss with a match__, fill two segments and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge...",
+      "Options": [
+        {
+          "Text": "With speed, mobility, or agility",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        },
+        {
+          "Text": "With resolve, command, or sociability",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "With strength, endurance, aggression",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "With deception, stealth, or trickery",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "With expertise, focus, or observation",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you are successful. Take +2 momentum and add +1 on your next move (not a progress move).\n\n On a __strong hit with a match__, take both and mark progress.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you are successful. Choose one.\n\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)"
+      },
+      "Miss": {
+        "Text": "On a __miss__, you fail or your assumptions betray you. Fill a clock segment and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}. On a __miss with a match__, fill two segments and @Compendium[foundry-ironsworn.starforgedmoves.78baa51694fe37c5]{Pay the Price}.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2022-05-06",
+      "Page": 240
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 240,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Scene_Challenge/Secure_an_Advantage",
+      "dsid": "move:starforged/scene_challenge/secure_an_advantage"
+    }
+  },
+  "_key": "!items!03595d7546a1353f"
+}

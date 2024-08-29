@@ -1,0 +1,15 @@
+{
+  "name": "Unknown Waters",
+  "description": "",
+  "type": "RollTable",
+  "_id": "50bb18832d2b6eb0",
+  "sort": 121,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/seafaring/waypoints/unknown_waters"
+    }
+  },
+  "folder": "06105a35056c407b",
+  "sorting": "a",
+  "_key": "!folders!50bb18832d2b6eb0"
+}

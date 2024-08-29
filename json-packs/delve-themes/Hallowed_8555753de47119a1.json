@@ -1,0 +1,141 @@
+{
+  "_id": "8555753de47119a1",
+  "type": "delve-theme",
+  "name": "Hallowed",
+  "img": "icons/magic/holy/angel-wings-gray.webp",
+  "system": {
+    "summary": "The faithful worship here.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          1,
+          4
+        ],
+        "text": "Temple or altar"
+      },
+      {
+        "range": [
+          5,
+          8
+        ],
+        "text": "Offerings or atonements"
+      },
+      {
+        "range": [
+          9,
+          12
+        ],
+        "text": "Religious relic or idol"
+      },
+      {
+        "range": [
+          13,
+          16
+        ],
+        "text": "Consecrated ground"
+      },
+      {
+        "range": [
+          17,
+          20
+        ],
+        "text": "Dwellings or gathering place"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          1,
+          5
+        ],
+        "text": "Denizen defends their sanctum"
+      },
+      {
+        "range": [
+          6,
+          10
+        ],
+        "text": "Denizen enacts the will of their god"
+      },
+      {
+        "range": [
+          11,
+          12
+        ],
+        "text": "Denizen seeks martyrdom"
+      },
+      {
+        "range": [
+          13,
+          14
+        ],
+        "text": "Secret of the faith is revealed"
+      },
+      {
+        "range": [
+          15,
+          16
+        ],
+        "text": "Greater purpose is revealed"
+      },
+      {
+        "range": [
+          17,
+          18
+        ],
+        "text": "Unexpected disciples are revealed"
+      },
+      {
+        "range": [
+          19,
+          20
+        ],
+        "text": "Divine manifestations"
+      },
+      {
+        "range": [
+          21,
+          22
+        ],
+        "text": "Aspect of the faith beguiles you"
+      },
+      {
+        "range": [
+          23,
+          24
+        ],
+        "text": "Unexpected leader is revealed"
+      },
+      {
+        "range": [
+          25,
+          26
+        ],
+        "text": "Embodiment of a god or myth"
+      },
+      {
+        "range": [
+          27,
+          28
+        ],
+        "text": "Protective ward or barrier"
+      },
+      {
+        "range": [
+          29,
+          30
+        ],
+        "text": "Prophecies reveal a dark fate"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 85,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_theme:delve/hallowed"
+    }
+  },
+  "_key": "!items!8555753de47119a1"
+}

@@ -1,0 +1,27 @@
+{
+  "_id": "de6df9ea5bd4ebf8",
+  "type": "progress",
+  "name": "Gaunt",
+  "img": "icons/magic/fire/elemental-creature-horse.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Horse-like creature with a lean, skeletal frame</p>\n<p class=\"nogrow\">Ghostly pale eyes</p>\n<p class=\"nogrow\">Black, scaled hide</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Run like the wind</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Rear up</p>\n<p class=\"nogrow\">Charge</p>\n<p class=\"nogrow\">Trample</p>\n</div>\n</div>\n\n<p>A gaunt is a creature unique to the Ironlands. They maneuver across the rough, dense terrain of the Deep Wilds and Hinterlands with uncanny speed and grace. This makes them ideal as mounts for the @Compendium[foundry-ironsworn.ironswornfoes.7e016842d2a4543f]{elves}, who breed and train them.</p>\n<p>A gaunt will not usually act aggressively without provocation, but they are as deadly as the fiercest warhorse under the command of a talented rider.</p>\n\n<blockquote>Quest Starter: <p>Villages in the Hinterlands have fallen prey to a large band of gaunt-riding elves. They attack with sudden and violent force, and are gone before any sort of defense can be mustered. Their leader, a warrior of unmatched skill, rides a distinctive white gaunt. What has driven these elves to strike out against the Ironlanders?</p></blockquote>",
+    "rank": 2,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "80e257c8df770379",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/animals/gaunt"
+    }
+  },
+  "_key": "!items!de6df9ea5bd4ebf8"
+}

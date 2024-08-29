@@ -11,7 +11,7 @@
     "abilities": [
       {
         "enabled": true,
-        "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.48f642fd361e9c03]{Check Your Gear}, you may roll +wits (instead of +supply). If you do, envision how you make do with a clever solution, and take +1 momentum on a hit.</p>",
+        "description": "<p>When you @Compendium[foundry-ironsworn.ironsworndelvemoves.48f642fd361e9c03]{Check Your Gear}, you may roll +wits (instead of +supply). If you do, envision how you make do with a clever solution, and take +1 momentum on a hit.</p>",
         "hasClock": false,
         "clockTicks": 0,
         "clockMax": 4
@@ -47,17 +47,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Assets/Path/Improviser",
+      "dsid": "asset:classic/path/improviser"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021198,
-    "modifiedTime": 1695949021198,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!20909cc1f3071721"
 }

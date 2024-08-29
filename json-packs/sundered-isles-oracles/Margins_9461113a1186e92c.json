@@ -1,0 +1,65 @@
+{
+  "_id": "9461113a1186e92c",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement/identity/controlling_faction",
+      "dsid": "oracle_rollable:sundered_isles/settlement/identity/controlling_faction/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        45
+      ],
+      "text": "Known faction",
+      "_key": "!tables.results!9461113a1186e92c.e47cb7cf8885e909",
+      "_id": "e47cb7cf8885e909"
+    },
+    {
+      "range": [
+        46,
+        65
+      ],
+      "text": "Unknown faction",
+      "_key": "!tables.results!9461113a1186e92c.2b4b6d8a41aaf444",
+      "_id": "2b4b6d8a41aaf444"
+    },
+    {
+      "range": [
+        66,
+        90
+      ],
+      "text": "Independent",
+      "_key": "!tables.results!9461113a1186e92c.1e9c97d246993829",
+      "_id": "1e9c97d246993829"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Factions in cooperation",
+      "_key": "!tables.results!9461113a1186e92c.c828eaa47f2263dd",
+      "_id": "c828eaa47f2263dd"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Factions in conflict",
+      "_key": "!tables.results!9461113a1186e92c.626727a4689ec802",
+      "_id": "626727a4689ec802"
+    }
+  ],
+  "folder": "775cc163a0b5b7fd",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9461113a1186e92c"
+}

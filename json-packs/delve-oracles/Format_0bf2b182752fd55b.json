@@ -1,0 +1,84 @@
+{
+  "_id": "0bf2b182752fd55b",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Format",
+      "category": "Ironsworn/Oracles/Site_Name",
+      "dsid": "oracle_rollable:delve/site_name/format"
+    }
+  },
+  "name": "Format",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place}",
+      "_key": "!tables.results!0bf2b182752fd55b.6bb29853338b4683",
+      "_id": "6bb29853338b4683"
+    },
+    {
+      "range": [
+        26,
+        50
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.4d68a549300d665e]{Detail}",
+      "_key": "!tables.results!0bf2b182752fd55b.50f3a12bdfcbb46b",
+      "_id": "50f3a12bdfcbb46b"
+    },
+    {
+      "range": [
+        51,
+        70
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.ironsworndelveoracles.4d68a549300d665e]{Detail}",
+      "_key": "!tables.results!0bf2b182752fd55b.9def2978a919dfef",
+      "_id": "9def2978a919dfef"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.1e606b274010aaa6]{Namesake's} @Compendium[foundry-ironsworn.ironsworndelveoracles.4d68a549300d665e]{Detail}",
+      "_key": "!tables.results!0bf2b182752fd55b.ec96f2885cc8a776",
+      "_id": "ec96f2885cc8a776"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.1e606b274010aaa6]{Namesake's} @Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place}",
+      "_key": "!tables.results!0bf2b182752fd55b.fd9b885273ab33e4",
+      "_id": "fd9b885273ab33e4"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.8bb90176a16ad6c9]{Description} @Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.1e606b274010aaa6]{Namesake}",
+      "_key": "!tables.results!0bf2b182752fd55b.09df08b5dfbf7abb",
+      "_id": "09df08b5dfbf7abb"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.ironsworndelveoracles.b635c76e4b694c12]{Place} of @Compendium[foundry-ironsworn.ironsworndelveoracles.1e606b274010aaa6]{Namesake}",
+      "_key": "!tables.results!0bf2b182752fd55b.3a46191c97303ee9",
+      "_id": "3a46191c97303ee9"
+    }
+  ],
+  "folder": "f6b92bad160107de",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0bf2b182752fd55b"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Type/Orbital",
-      "category": "Starforged/Oracles/Derelicts"
+      "category": "Starforged/Oracles/Derelicts/Type",
+      "dsid": "oracle_rollable:starforged/derelict/type/orbital"
     }
   },
   "name": "Orbital",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         40
       ],
       "text": "Starship",
-      "_id": "76c6b30809a93a73",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e3b63131a7d3e5a1.76c6b30809a93a73"
+      "_key": "!tables.results!e3b63131a7d3e5a1.6bbc02fca06fdea8",
+      "_id": "6bbc02fca06fdea8"
     },
     {
       "range": [
@@ -32,29 +28,12 @@
         100
       ],
       "text": "Settlement",
-      "_id": "79fde75df9cfc221",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!e3b63131a7d3e5a1.79fde75df9cfc221"
+      "_key": "!tables.results!e3b63131a7d3e5a1.f1da51ea11a7faf5",
+      "_id": "f1da51ea11a7faf5"
     }
   ],
   "folder": "8b3958b3ed0189b7",
-  "sort": 348,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!e3b63131a7d3e5a1"
 }

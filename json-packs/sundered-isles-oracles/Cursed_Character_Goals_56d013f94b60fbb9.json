@@ -1,0 +1,200 @@
+{
+  "_id": "56d013f94b60fbb9",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/goals_cursed"
+    }
+  },
+  "name": "Cursed Character Goals",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        6
+      ],
+      "text": "Avert a harrowing prophecy or vision",
+      "_key": "!tables.results!56d013f94b60fbb9.bdf429659b464188",
+      "_id": "bdf429659b464188"
+    },
+    {
+      "range": [
+        7,
+        12
+      ],
+      "text": "Awaken an ancient evil",
+      "_key": "!tables.results!56d013f94b60fbb9.1202a8167ccef22c",
+      "_id": "1202a8167ccef22c"
+    },
+    {
+      "range": [
+        13,
+        18
+      ],
+      "text": "Banish a restless spirit",
+      "_key": "!tables.results!56d013f94b60fbb9.43914c3caa8e0414",
+      "_id": "43914c3caa8e0414"
+    },
+    {
+      "range": [
+        19,
+        24
+      ],
+      "text": "Bring about an unspeakable prophecy",
+      "_key": "!tables.results!56d013f94b60fbb9.af1c3bdf2080d943",
+      "_id": "af1c3bdf2080d943"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Control a monstrous beast",
+      "_key": "!tables.results!56d013f94b60fbb9.7195a11f971c3b99",
+      "_id": "7195a11f971c3b99"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Destroy an object of terrifying power",
+      "_key": "!tables.results!56d013f94b60fbb9.56a80ab1f5877cdd",
+      "_id": "56a80ab1f5877cdd"
+    },
+    {
+      "range": [
+        33,
+        38
+      ],
+      "text": "Escape or undo a curse",
+      "_key": "!tables.results!56d013f94b60fbb9.e840aef492282859",
+      "_id": "e840aef492282859"
+    },
+    {
+      "range": [
+        39,
+        42
+      ],
+      "text": "Find the truth of a nightmarish legend",
+      "_key": "!tables.results!56d013f94b60fbb9.927b2981a7f1a9a1",
+      "_id": "927b2981a7f1a9a1"
+    },
+    {
+      "range": [
+        43,
+        46
+      ],
+      "text": "Gather components of a baleful ritual",
+      "_key": "!tables.results!56d013f94b60fbb9.4d499c8046421fc9",
+      "_id": "4d499c8046421fc9"
+    },
+    {
+      "range": [
+        47,
+        50
+      ],
+      "text": "Gather supplicants for a dreadful faith",
+      "_key": "!tables.results!56d013f94b60fbb9.9ec67c841c3348f8",
+      "_id": "9ec67c841c3348f8"
+    },
+    {
+      "range": [
+        51,
+        56
+      ],
+      "text": "Infiltrate a forsaken location",
+      "_key": "!tables.results!56d013f94b60fbb9.058f18bcf5e773d4",
+      "_id": "058f18bcf5e773d4"
+    },
+    {
+      "range": [
+        57,
+        62
+      ],
+      "text": "Inflict a curse or corruption upon others",
+      "_key": "!tables.results!56d013f94b60fbb9.dc480846386ad8e7",
+      "_id": "dc480846386ad8e7"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Resist the call of a malevolent power",
+      "_key": "!tables.results!56d013f94b60fbb9.be2bbf864e0c2c50",
+      "_id": "be2bbf864e0c2c50"
+    },
+    {
+      "range": [
+        67,
+        72
+      ],
+      "text": "Restore own humanity or mortality",
+      "_key": "!tables.results!56d013f94b60fbb9.108246250ee12fad",
+      "_id": "108246250ee12fad"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Return a lost loved one to life",
+      "_key": "!tables.results!56d013f94b60fbb9.fad795e2d92c72ca",
+      "_id": "fad795e2d92c72ca"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Serve a black-hearted overlord",
+      "_key": "!tables.results!56d013f94b60fbb9.936e93d3372e5710",
+      "_id": "936e93d3372e5710"
+    },
+    {
+      "range": [
+        81,
+        86
+      ],
+      "text": "Slay a monstrous beast",
+      "_key": "!tables.results!56d013f94b60fbb9.ebd4ccdb6a1fd3f0",
+      "_id": "ebd4ccdb6a1fd3f0"
+    },
+    {
+      "range": [
+        87,
+        90
+      ],
+      "text": "Unlock the secret of immortality",
+      "_key": "!tables.results!56d013f94b60fbb9.546f76bb964e4656",
+      "_id": "546f76bb964e4656"
+    },
+    {
+      "range": [
+        91,
+        94
+      ],
+      "text": "Wield an object of terrifying power",
+      "_key": "!tables.results!56d013f94b60fbb9.d541a3dd555dfa29",
+      "_id": "d541a3dd555dfa29"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Wreak bloody vengeance",
+      "_key": "!tables.results!56d013f94b60fbb9.ff8019d3856901e7",
+      "_id": "ff8019d3856901e7"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 193,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!56d013f94b60fbb9"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Nightmare Spider",
+  "img": "icons/creatures/invertebrates/spider-mandibles-brown.webp",
+  "type": "foe",
+  "_id": "3caeefe11d275bde",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Nightmare Spider",
+    "texture": {
+      "src": "icons/creatures/invertebrates/spider-mandibles-brown.webp"
+    }
+  },
+  "folder": "75f040afa6c45636",
+  "items": [
+    {
+      "_id": "c6b15b796e4f82d5",
+      "type": "progress",
+      "name": "Nightmare Spider",
+      "img": "icons/creatures/invertebrates/spider-mandibles-brown.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Pale, semitransparent body</p>\n<p class=\"nogrow\">Long, skinny legs</p>\n<p class=\"nogrow\">Fangs, dripping with venom</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Lurk in darkness</p>\n<p class=\"nogrow\">Feed</p>\n<p class=\"nogrow\">Lay eggs</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Spin webs</p>\n<p class=\"nogrow\">Drop on prey</p>\n<p class=\"nogrow\">Pierce with venomous fangs</p>\n</div>\n</div>\n\n<p>Nightmare spiders are monstrous creatures which dwell in caves, ruins, thick woods, and other dark places. They have narrow, translucent bodies, three pairs of black eyes, and long, slender legs. They typically feed on bats and rodents, but are opportunistic hunters and attack anything straying into their path or stumbling into their webbing. Their lairs are often strung with large silk egg sacs.</p>\n<p>For smaller animals, the toxic bite of the nightmare spider causes paralysis. For a typical Ironlander, it dulls the senses and induces vivid hallucinations. It is these frightening, dreamlike visions which earn the creature its name.</p>\n\n<blockquote>Quest Starter: <p>Within a @Compendium[foundry-ironsworn.ironsworndelvethemes.3a633d3ce6079711]{Wild} @Compendium[foundry-ironsworn.ironsworndelvedomains.1983ca8d062e44e1]{Tanglewood}, mystics live in cooperation with the spiders, supplying them with live prey. They’ve abducted someone you care about and will use them as food for these foul creatures. What is the aim of these mystics?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "75f040afa6c45636",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/animals/nightmare_spider"
+        }
+      },
+      "_key": "!actors.items!3caeefe11d275bde.c6b15b796e4f82d5"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/animals/nightmare_spider"
+    }
+  },
+  "_key": "!actors!3caeefe11d275bde"
+}

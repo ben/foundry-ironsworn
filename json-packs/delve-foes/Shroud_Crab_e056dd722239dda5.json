@@ -1,0 +1,27 @@
+{
+  "_id": "e056dd722239dda5",
+  "type": "progress",
+  "name": "Shroud Crab",
+  "img": "icons/consumables/meat/claw-crab-lobster-serrated-pink.webp",
+  "system": {
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Ridged shell</p>\n<p class=\"nogrow\">Snapping, slashing claws</p>\n<p class=\"nogrow\">Barbed, whiplike tail</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Lie hidden among rocks and ice</p>\n<p class=\"nogrow\">Feed</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Mimic surroundings</p>\n<p class=\"nogrow\">Leap at unsuspecting prey</p>\n<p class=\"nogrow\">Latch onto victims with powerful legs and tail</p>\n<p class=\"nogrow\">Stab and slash</p>\n</div>\n</div>\n\n<p>Shroud crabs threaten careless or unlucky Ironlanders along coasts and icereaches. They have long legs, a segmented tail, and large, serrated claws.</p>\n<p>Their carapace changes color to perfectly match their environment, making them nearly invisible among rocks or ice. When potential prey strays near, a shroud crab uses its powerful legs to spring at its victim. Then, it wraps around them in a horrible embrace, stabbing and slashing with its claws and barbed tail.</p>\n<p>Packs of shroud crabs are known to work in tandem to bring down large prey. Some report seeing mighty elk engulfed by these voracious creatures. On occasion, the body of a missing Ironlander is found with their flesh picked clean to the bones.</p>\n\n<blockquote>Quest Starter: <p>A vengeful @Compendium[foundry-ironsworn.ironsworndelvefoes.084f870452cf433a]{husk} curses a seaside settlement and summons a horde of shroud crabs to overrun the place in a flood of clattering legs and snapping claws. The husk dwells within an @Compendium[foundry-ironsworn.ironsworndelvethemes.0d16f80541657b28]{Infested} @Compendium[foundry-ironsworn.ironsworndelvedomains.40439d5f28e56495]{Sea Cave}, protected by other shroud crabs. There, she prepares an even more horrible show of her power—one which will threaten villages up and down the Ragged Coast.</p></blockquote>",
+    "rank": 1,
+    "current": 0,
+    "completed": false,
+    "subtype": "progress",
+    "starred": false,
+    "hasTrack": true,
+    "hasClock": false,
+    "clockTicks": 0,
+    "clockMax": 4
+  },
+  "effects": [],
+  "folder": "75f040afa6c45636",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/animals/shroud_crab"
+    }
+  },
+  "_key": "!items!e056dd722239dda5"
+}

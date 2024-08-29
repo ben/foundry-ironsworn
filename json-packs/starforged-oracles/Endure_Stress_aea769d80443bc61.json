@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Moves/Endure_Stress",
-      "category": "Starforged/Oracles/Moves"
+      "category": "Starforged/Moves/Suffer",
+      "dsid": "move.oracle_rollable:starforged/suffer/endure_stress.endure_stress"
     }
   },
   "name": "Endure Stress",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "You are overwhelmed. @Compendium[foundry-ironsworn.starforgedmoves.ff17e67a59539df4]{Face Desolation}.",
-      "_id": "8d386be8e8f12781",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!aea769d80443bc61.8d386be8e8f12781"
+      "_key": "!tables.results!aea769d80443bc61.5b00336ba27635b6",
+      "_id": "5b00336ba27635b6"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         25
       ],
       "text": "You give up. @Compendium[foundry-ironsworn.starforgedmoves.449c1e260c941a40]{Forsake Your Vow}.",
-      "_id": "2c9a7251579358f0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!aea769d80443bc61.2c9a7251579358f0"
+      "_key": "!tables.results!aea769d80443bc61.9f94de3f9b5cd4c5",
+      "_id": "9f94de3f9b5cd4c5"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         50
       ],
       "text": "You give in to fear or compulsion, and act against your better instincts.",
-      "_id": "6f7fbac07a84fa00",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!aea769d80443bc61.6f7fbac07a84fa00"
+      "_key": "!tables.results!aea769d80443bc61.80c0b41b9a7cc2cb",
+      "_id": "80c0b41b9a7cc2cb"
     },
     {
       "range": [
@@ -60,29 +46,12 @@
         100
       ],
       "text": "You persevere.",
-      "_id": "326fbf87a3563c08",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!aea769d80443bc61.326fbf87a3563c08"
+      "_key": "!tables.results!aea769d80443bc61.0779da82219fa3b6",
+      "_id": "0779da82219fa3b6"
     }
   ],
-  "folder": "adcc4cbc5484a254",
-  "sort": 202,
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!aea769d80443bc61"
 }

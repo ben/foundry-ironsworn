@@ -1,0 +1,129 @@
+{
+  "_id": "f5b86c5fa202b8f5",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Reveal_a_Danger",
+      "category": "Ironsworn/Moves/Delve",
+      "dsid": "move.oracle_rollable:delve/delve/reveal_a_danger.reveal_a_danger"
+    }
+  },
+  "name": "Reveal a Danger",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        30
+      ],
+      "text": "Check the theme card.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.8f0e0f663fd51e90",
+      "_id": "8f0e0f663fd51e90"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "Check the domain card.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.db3869fd6566a70d",
+      "_id": "db3869fd6566a70d"
+    },
+    {
+      "range": [
+        46,
+        57
+      ],
+      "text": "You encounter a hostile denizen.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.1390351dd03c1e23",
+      "_id": "1390351dd03c1e23"
+    },
+    {
+      "range": [
+        58,
+        68
+      ],
+      "text": "You face an environmental or architectural hazard.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.fe1771e53e145d4e",
+      "_id": "fe1771e53e145d4e"
+    },
+    {
+      "range": [
+        69,
+        76
+      ],
+      "text": "A discovery undermines or complicates your quest.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.8a4cf409ede5cb41",
+      "_id": "8a4cf409ede5cb41"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "You confront a harrowing situation or sensation.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.09b6f95178dd7f10",
+      "_id": "09b6f95178dd7f10"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "You face the consequences of an earlier choice or approach.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.02daadd5da9bd560",
+      "_id": "02daadd5da9bd560"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Your way is blocked or trapped.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.93bb342c5a61a52a",
+      "_id": "93bb342c5a61a52a"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "A resource is diminished, broken, or lost.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.360b536e84a4c6bf",
+      "_id": "360b536e84a4c6bf"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "You face a perplexing mystery or tough choice.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.d47507f01d3f694f",
+      "_id": "d47507f01d3f694f"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "You lose your way or are delayed.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.df4cc4f93d92e56d",
+      "_id": "df4cc4f93d92e56d"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
+      "_key": "!tables.results!f5b86c5fa202b8f5.b24ae24408966531",
+      "_id": "b24ae24408966531"
+    }
+  ],
+  "folder": "0e08d4bb1591c3a9",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f5b86c5fa202b8f5"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Sacred/Opportunity",
-      "category": "Starforged/Oracles/Location_Themes/Sacred"
+      "category": "Starforged/Oracles/Location_Themes/Sacred",
+      "dsid": "oracle_rollable:starforged/location_theme/sacred/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Access to a hidden or sealed area",
-      "_id": "649c946287fdf373",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!250a2b2b4658be5c.649c946287fdf373"
+      "_key": "!tables.results!250a2b2b4658be5c.9e7bf88e3da35d4b",
+      "_id": "9e7bf88e3da35d4b"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Encounter with a helpful adherent or heretic",
-      "_id": "79edf9e5379907f1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!250a2b2b4658be5c.79edf9e5379907f1"
+      "_key": "!tables.results!250a2b2b4658be5c.0603e74d670cbb42",
+      "_id": "0603e74d670cbb42"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Insight into the nature or history of the faith",
-      "_id": "2ea3d52f22a31ba8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!250a2b2b4658be5c.2ea3d52f22a31ba8"
+      "_key": "!tables.results!250a2b2b4658be5c.7efbf88c9a77eefb",
+      "_id": "7efbf88c9a77eefb"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Insight into the schemes or methods of religious zealots",
-      "_id": "adb369dd2fec5cdf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!250a2b2b4658be5c.adb369dd2fec5cdf"
+      "_key": "!tables.results!250a2b2b4658be5c.71ba8c697090dd4e",
+      "_id": "71ba8c697090dd4e"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Interesting or valuable artifact or device",
-      "_id": "002e070b545f1333",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!250a2b2b4658be5c.002e070b545f1333"
+      "_key": "!tables.results!250a2b2b4658be5c.f06568752f99414e",
+      "_id": "f06568752f99414e"
     }
   ],
   "folder": "0b969801701bcc74",
   "sort": 379,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!250a2b2b4658be5c"
 }

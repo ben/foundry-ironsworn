@@ -1,0 +1,53 @@
+{
+  "name": "Carrion Newt",
+  "img": "icons/creatures/reptiles/chameleon-camouflage-green-brown.webp",
+  "type": "foe",
+  "_id": "ce6ddddde2b2af32",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Carrion Newt",
+    "texture": {
+      "src": "icons/creatures/reptiles/chameleon-camouflage-green-brown.webp"
+    }
+  },
+  "folder": "75f040afa6c45636",
+  "items": [
+    {
+      "_id": "7497c97fe5c612ab",
+      "type": "progress",
+      "name": "Carrion Newt",
+      "img": "icons/creatures/reptiles/chameleon-camouflage-green-brown.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Long, sleek body</p>\n<p class=\"nogrow\">Brightly-colored markings</p>\n<p class=\"nogrow\">Serrated teeth</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Hunt and feed</p>\n<p class=\"nogrow\">Lay eggs within fresh kills</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Lurk in the shallows</p>\n<p class=\"nogrow\">Sudden, ferocious attack</p>\n<p class=\"nogrow\">Unyielding bite</p>\n</div>\n</div>\n\n<p>These semiaquatic creatures dwell within the freshwater rivers and subterranean waterways of the Ironlands. They have a long, eel-like body, a flat head, and short, claw-tipped legs.</p>\n<p>A mature adult grows to the length of a horse. They are ungainly on land, but fast and agile within the water. They prefer to attack landbound prey by lurking along the water’s edge and waiting for an unfortunate animal (or Ironlander) to come near their hiding spot.</p>\n<p>Carrion newts lay their eggs within the carcass of their kills. The rotting body nurtures the eggs and feeds the young newts until they burst forth into the world. If you come upon a corpse at the water’s edge—be cautious. It might be filled with dozens of hungry young newts.</p>\n\n<blockquote>Quest Starter: <p>In the depths of a @Compendium[foundry-ironsworn.ironsworndelvethemes.3a633d3ce6079711]{Wild} @Compendium[foundry-ironsworn.ironsworndelvedomains.bd208fdcb58e5485]{Shadowfen}, the carrion newt they call Old-Gray lurks within a wide, slow river—an important waterway for trade. It is an ancient animal, larger than any newt ever seen. It has one blind eye and ash-colored skin. Recently, a trading boat was attacked and swamped by the creature. Others refuse to make the passage until Old-Gray is dealt with.</p></blockquote>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "75f040afa6c45636",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/animals/carrion_newt"
+        }
+      },
+      "_key": "!actors.items!ce6ddddde2b2af32.7497c97fe5c612ab"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/animals/carrion_newt"
+    }
+  },
+  "_key": "!actors!ce6ddddde2b2af32"
+}

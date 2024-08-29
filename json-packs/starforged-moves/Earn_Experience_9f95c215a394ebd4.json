@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Earn Experience",
   "img": "icons/dice/d10black.svg",
+  "folder": "b19db00aa083d13e",
   "system": {
     "dfid": "Starforged/Moves/Legacy/Earn_Experience",
     "Category": "Starforged/Moves/Legacy",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you fill a box (four ticks) on any legacy track**, take 2 experience. This experience may be spent when you @Compendium[foundry-ironsworn.starforgedmoves.d602da2ce0c05f2c]{Advance}.\n\nOnce you completely fill the tenth box on any legacy track, clear that track. You may start again marking progress on the cleared track, but earn experience at a reduced rate of 1 experience (instead of 2) for each filled progress box. If you make a progress roll against this track, resolve the outcome as if at 10 progress.",
+    "Text": "__When you fill a box (four ticks) on any legacy track__, take 2 experience. This experience may be spent when you @Compendium[foundry-ironsworn.starforgedmoves.d602da2ce0c05f2c]{Advance}.\n\nOnce you completely fill the tenth box on any legacy track, clear that track. You may start again marking progress on the cleared track, but earn experience at a reduced rate of 1 experience (instead of 2) for each filled progress box. If you make a progress roll against this track, resolve the outcome as if at 10 progress.",
     "Trigger": {
       "Text": "When you fill a box (four ticks) on any legacy track...",
       "Options": []
@@ -16,65 +17,41 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 224
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#4D5769",
       "Images": []
     }
   },
   "sort": 224,
-  "folder": "b19db00aa083d13e",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Legacy/Earn_Experience",
+      "dsid": "move:starforged/legacy/earn_experience"
+    }
   },
   "_key": "!items!9f95c215a394ebd4"
 }

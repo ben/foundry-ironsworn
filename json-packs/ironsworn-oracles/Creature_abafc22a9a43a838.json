@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Ironsworn/Oracles/Settlement/Name/Creature",
-      "category": "Ironsworn/Oracles/Settlement"
+      "category": "oracle_collection:classic/settlement/name",
+      "dsid": "oracle_rollable:classic/settlement/name/creature"
     }
   },
   "name": "Creature",
   "description": "<p><strong>A creature.</strong> Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Ravencliff",
-      "_id": "8d437d950f46d6ec",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.8d437d950f46d6ec"
+      "_key": "!tables.results!abafc22a9a43a838.7f75448c6c8c842c",
+      "_id": "7f75448c6c8c842c"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Bearmark",
-      "_id": "c11567d4270fe694",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.c11567d4270fe694"
+      "_key": "!tables.results!abafc22a9a43a838.725819bb0ac27639",
+      "_id": "725819bb0ac27639"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Wolfcrag",
-      "_id": "82df19f7dfef47c1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.82df19f7dfef47c1"
+      "_key": "!tables.results!abafc22a9a43a838.d1b357a6a1adc445",
+      "_id": "d1b357a6a1adc445"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Eaglespire",
-      "_id": "97928291a67db65d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.97928291a67db65d"
+      "_key": "!tables.results!abafc22a9a43a838.e42ac8f3a5817c58",
+      "_id": "e42ac8f3a5817c58"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "Wyvern's Rest",
-      "_id": "7f451dc218876c09",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.7f451dc218876c09"
+      "_key": "!tables.results!abafc22a9a43a838.5b0415b2c82bb9e8",
+      "_id": "5b0415b2c82bb9e8"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Boarwood",
-      "_id": "e0f2eed15b42689d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.e0f2eed15b42689d"
+      "_key": "!tables.results!abafc22a9a43a838.73bd330934d11d11",
+      "_id": "73bd330934d11d11"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Foxhollow",
-      "_id": "82a284373433c98f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.82a284373433c98f"
+      "_key": "!tables.results!abafc22a9a43a838.b74391e1242ec28d",
+      "_id": "b74391e1242ec28d"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Elderwatch",
-      "_id": "beea4c447555ed4c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.beea4c447555ed4c"
+      "_key": "!tables.results!abafc22a9a43a838.f567d5186b95da2d",
+      "_id": "f567d5186b95da2d"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         90
       ],
       "text": "Elkfield",
-      "_id": "a5776501d67115db",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.a5776501d67115db"
+      "_key": "!tables.results!abafc22a9a43a838.7079c4321122faaf",
+      "_id": "7079c4321122faaf"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "Dragonshadow",
-      "_id": "d976d133e4edcfff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!abafc22a9a43a838.d976d133e4edcfff"
+      "_key": "!tables.results!abafc22a9a43a838.6a193133e0cfb720",
+      "_id": "6a193133e0cfb720"
     }
   ],
-  "folder": "11b98f1da8f07aa2",
+  "folder": "b62c276059f4423c",
   "sort": 178,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021364,
-    "modifiedTime": 1695949021364,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!abafc22a9a43a838"
 }

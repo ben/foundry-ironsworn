@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Moves/Ask_the_Oracle/Almost_Certain",
-      "category": "Starforged/Oracles/Moves"
+      "category": "Starforged/Moves/Fate",
+      "dsid": "move.oracle_rollable:starforged/fate/ask_the_oracle.almost_certain"
     }
   },
   "name": "Almost Certain",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         90
       ],
       "text": "Yes",
-      "_id": "32546f5f694fd2d2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!22d02ad7699aea20.32546f5f694fd2d2"
+      "_key": "!tables.results!22d02ad7699aea20.0df69b2fc75a5b53",
+      "_id": "0df69b2fc75a5b53"
     },
     {
       "range": [
@@ -32,29 +28,12 @@
         100
       ],
       "text": "No",
-      "_id": "f5cfeb7b5ed89814",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!22d02ad7699aea20.f5cfeb7b5ed89814"
+      "_key": "!tables.results!22d02ad7699aea20.2c9c94b924f5e718",
+      "_id": "2c9c94b924f5e718"
     }
   ],
-  "folder": "d985dae3484a0e5b",
-  "sort": 229,
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!22d02ad7699aea20"
 }

@@ -1,0 +1,416 @@
+{
+  "_id": "357c11f1cb736462",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/society",
+      "dsid": "oracle_rollable:sundered_isles/faction/society/chronicles"
+    }
+  },
+  "name": "Society Chronicles",
+  "description": "<p>Use this table to generate a history of notable events that shaped a society. Create a timeline of two or three milestones, envisioning how they led the society to its current place among the isles. The most recent event can help inspire a current situation that creates troubles or opportunities for these people.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Betrayed by a longtime ally",
+      "_key": "!tables.results!357c11f1cb736462.4ed9cfcc9d37c95c",
+      "_id": "4ed9cfcc9d37c95c"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Betrayed by a treacherous leader",
+      "_key": "!tables.results!357c11f1cb736462.e3b3eed2dce3607b",
+      "_id": "e3b3eed2dce3607b"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Broke faith with a longtime ally",
+      "_key": "!tables.results!357c11f1cb736462.ade44bbaf5952b36",
+      "_id": "ade44bbaf5952b36"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Built a wondrous monument",
+      "_key": "!tables.results!357c11f1cb736462.5ff6c8665cf02eb3",
+      "_id": "5ff6c8665cf02eb3"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Caught in the crossfire of a war",
+      "_key": "!tables.results!357c11f1cb736462.6c0ecacbec11ca41",
+      "_id": "6c0ecacbec11ca41"
+    },
+    {
+      "range": [
+        11,
+        13
+      ],
+      "text": "Discovered or obtained a rare resource",
+      "_key": "!tables.results!357c11f1cb736462.37a3c0d5f2d424e2",
+      "_id": "37a3c0d5f2d424e2"
+    },
+    {
+      "range": [
+        14,
+        15
+      ],
+      "text": "Established a form of art or expression",
+      "_key": "!tables.results!357c11f1cb736462.0b0fbcbfa3ba41a9",
+      "_id": "0b0fbcbfa3ba41a9"
+    },
+    {
+      "range": [
+        16,
+        17
+      ],
+      "text": "Established a new system of governance",
+      "_key": "!tables.results!357c11f1cb736462.574df96e28e84c61",
+      "_id": "574df96e28e84c61"
+    },
+    {
+      "range": [
+        18,
+        19
+      ],
+      "text": "Established a powerful military force",
+      "_key": "!tables.results!357c11f1cb736462.6cfe0a75c70e3ec3",
+      "_id": "6cfe0a75c70e3ec3"
+    },
+    {
+      "range": [
+        20,
+        22
+      ],
+      "text": "Established a unique trade or craft",
+      "_key": "!tables.results!357c11f1cb736462.43fce79f1af27be0",
+      "_id": "43fce79f1af27be0"
+    },
+    {
+      "range": [
+        23,
+        25
+      ],
+      "text": "Exploited by a self-serving faction",
+      "_key": "!tables.results!357c11f1cb736462.8374746e2a0abf57",
+      "_id": "8374746e2a0abf57"
+    },
+    {
+      "range": [
+        26,
+        27
+      ],
+      "text": "Faced a religious or spiritual schism",
+      "_key": "!tables.results!357c11f1cb736462.a4be7ac0a577f8a4",
+      "_id": "a4be7ac0a577f8a4"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Faced a troubled succession",
+      "_key": "!tables.results!357c11f1cb736462.0280ea4886fd4ef0",
+      "_id": "0280ea4886fd4ef0"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Faced occupation or invasion",
+      "_key": "!tables.results!357c11f1cb736462.16e1dea49f21051b",
+      "_id": "16e1dea49f21051b"
+    },
+    {
+      "range": [
+        34,
+        35
+      ],
+      "text": "Faced the wasting of a place or resource",
+      "_key": "!tables.results!357c11f1cb736462.1b1da77d3f8db0bc",
+      "_id": "1b1da77d3f8db0bc"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "Fateful encounter with another faction",
+      "_key": "!tables.results!357c11f1cb736462.0507158017f05a0f",
+      "_id": "0507158017f05a0f"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Fell into a bad debt or bargain",
+      "_key": "!tables.results!357c11f1cb736462.5e156e69d11b0b0d",
+      "_id": "5e156e69d11b0b0d"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Fled or abandoned an important location",
+      "_key": "!tables.results!357c11f1cb736462.1f08f0b9025eca63",
+      "_id": "1f08f0b9025eca63"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Formed an important bond or alliance",
+      "_key": "!tables.results!357c11f1cb736462.f169ade18b2c736f",
+      "_id": "f169ade18b2c736f"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Forsook a religion or belief system",
+      "_key": "!tables.results!357c11f1cb736462.f265d1745047f35f",
+      "_id": "f265d1745047f35f"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Fought a decisive battle",
+      "_key": "!tables.results!357c11f1cb736462.d0f931e1e142a246",
+      "_id": "d0f931e1e142a246"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Fought a war or revolution",
+      "_key": "!tables.results!357c11f1cb736462.98ac3509e0b01a6b",
+      "_id": "98ac3509e0b01a6b"
+    },
+    {
+      "range": [
+        52,
+        53
+      ],
+      "text": "Founded a great settlement",
+      "_key": "!tables.results!357c11f1cb736462.837b905ad5527366",
+      "_id": "837b905ad5527366"
+    },
+    {
+      "range": [
+        54,
+        55
+      ],
+      "text": "Founded a key academy or archive",
+      "_key": "!tables.results!357c11f1cb736462.53f9602315f66b6d",
+      "_id": "53f9602315f66b6d"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Founded a technology or innovation",
+      "_key": "!tables.results!357c11f1cb736462.9f0c29ae7d3e70d3",
+      "_id": "9f0c29ae7d3e70d3"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Gained a notable artifact or treasure",
+      "_key": "!tables.results!357c11f1cb736462.c371e3f5b4b3ccba",
+      "_id": "c371e3f5b4b3ccba"
+    },
+    {
+      "range": [
+        60,
+        61
+      ],
+      "text": "Lost a notable artifact or treasure",
+      "_key": "!tables.results!357c11f1cb736462.83209f9a08e8efba",
+      "_id": "83209f9a08e8efba"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Made peace with a rival or enemy",
+      "_key": "!tables.results!357c11f1cb736462.63d6da6150b499a0",
+      "_id": "63d6da6150b499a0"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Reclaimed an important location",
+      "_key": "!tables.results!357c11f1cb736462.0b9da52c9218d929",
+      "_id": "0b9da52c9218d929"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Recorded a fateful prophecy",
+      "_key": "!tables.results!357c11f1cb736462.70a2dd5ba649d861",
+      "_id": "70a2dd5ba649d861"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Saw the collapse of a longtime ally",
+      "_key": "!tables.results!357c11f1cb736462.6d8bc5cbef514a8c",
+      "_id": "6d8bc5cbef514a8c"
+    },
+    {
+      "range": [
+        71,
+        73
+      ],
+      "text": "Saw the emergence of a prophesied hero",
+      "_key": "!tables.results!357c11f1cb736462.d85f3ab84ae45676",
+      "_id": "d85f3ab84ae45676"
+    },
+    {
+      "range": [
+        74,
+        75
+      ],
+      "text": "Saw the rise of a self-serving despot",
+      "_key": "!tables.results!357c11f1cb736462.4f6665a0197b4f3d",
+      "_id": "4f6665a0197b4f3d"
+    },
+    {
+      "range": [
+        76,
+        77
+      ],
+      "text": "Saw the rise of an influential organization",
+      "_key": "!tables.results!357c11f1cb736462.280e24297df02c26",
+      "_id": "280e24297df02c26"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Scattered to far-flung locations",
+      "_key": "!tables.results!357c11f1cb736462.746207a756f390c1",
+      "_id": "746207a756f390c1"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Splintered into rival factions",
+      "_key": "!tables.results!357c11f1cb736462.68755b3b82dd4d4d",
+      "_id": "68755b3b82dd4d4d"
+    },
+    {
+      "range": [
+        84,
+        85
+      ],
+      "text": "Suffered a devastating natural disaster",
+      "_key": "!tables.results!357c11f1cb736462.c4bf5d4a75825301",
+      "_id": "c4bf5d4a75825301"
+    },
+    {
+      "range": [
+        86,
+        87
+      ],
+      "text": "Suffered a scarcity of resources",
+      "_key": "!tables.results!357c11f1cb736462.c896cab6e1b763dd",
+      "_id": "c896cab6e1b763dd"
+    },
+    {
+      "range": [
+        88,
+        89
+      ],
+      "text": "Suffered internal strife or unrest",
+      "_key": "!tables.results!357c11f1cb736462.dacf10cc4bb0f17b",
+      "_id": "dacf10cc4bb0f17b"
+    },
+    {
+      "range": [
+        90,
+        91
+      ],
+      "text": "Suffered the loss of a respected leader",
+      "_key": "!tables.results!357c11f1cb736462.f0ddfaea2f5d9520",
+      "_id": "f0ddfaea2f5d9520"
+    },
+    {
+      "range": [
+        92,
+        93
+      ],
+      "text": "Took refuge in a remote or secret place",
+      "_key": "!tables.results!357c11f1cb736462.b4bc2a1f6d186147",
+      "_id": "b4bc2a1f6d186147"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "Undertook a great migration or exodus",
+      "_key": "!tables.results!357c11f1cb736462.a7e6f7077418218a",
+      "_id": "a7e6f7077418218a"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Unified disparate tribes or clans",
+      "_key": "!tables.results!357c11f1cb736462.86bf930b09e82239",
+      "_id": "86bf930b09e82239"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Vanquished a rival or enemy",
+      "_key": "!tables.results!357c11f1cb736462.9bcdf49d84615f77",
+      "_id": "9bcdf49d84615f77"
+    }
+  ],
+  "folder": "cef833f6783b86c0",
+  "sort": 178,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!357c11f1cb736462"
+}

@@ -1,0 +1,200 @@
+{
+  "_id": "f45c90ceb8432000",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Ice",
+      "dsid": "oracle_rollable:starforged/planet/ice/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Beira",
+      "_key": "!tables.results!f45c90ceb8432000.36417d7cdd44ec3e",
+      "_id": "36417d7cdd44ec3e"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Boreas",
+      "_key": "!tables.results!f45c90ceb8432000.1f4169db5228f971",
+      "_id": "1f4169db5228f971"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Caradhras",
+      "_key": "!tables.results!f45c90ceb8432000.bd3d0cb6b34d37ab",
+      "_id": "bd3d0cb6b34d37ab"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Cicero",
+      "_key": "!tables.results!f45c90ceb8432000.aac8aa5014ea2542",
+      "_id": "aac8aa5014ea2542"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Demetria",
+      "_key": "!tables.results!f45c90ceb8432000.b3694f10e4699815",
+      "_id": "b3694f10e4699815"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Enten",
+      "_key": "!tables.results!f45c90ceb8432000.36deab0810fc05a1",
+      "_id": "36deab0810fc05a1"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Fissure",
+      "_key": "!tables.results!f45c90ceb8432000.0d7e060065f182f3",
+      "_id": "0d7e060065f182f3"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Frost",
+      "_key": "!tables.results!f45c90ceb8432000.0c5fa92e14dbf52b",
+      "_id": "0c5fa92e14dbf52b"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Gelida",
+      "_key": "!tables.results!f45c90ceb8432000.9dd5f0078861f984",
+      "_id": "9dd5f0078861f984"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Jotunn",
+      "_key": "!tables.results!f45c90ceb8432000.16a9fe0a970c2bf2",
+      "_id": "16a9fe0a970c2bf2"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Kanna",
+      "_key": "!tables.results!f45c90ceb8432000.e0cdf217e1f025ec",
+      "_id": "e0cdf217e1f025ec"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Karn",
+      "_key": "!tables.results!f45c90ceb8432000.48a1b25f75bb361b",
+      "_id": "48a1b25f75bb361b"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Kheimon",
+      "_key": "!tables.results!f45c90ceb8432000.daafa3bc5d99633a",
+      "_id": "daafa3bc5d99633a"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Moroz",
+      "_key": "!tables.results!f45c90ceb8432000.ef1c66f0a2e9edbd",
+      "_id": "ef1c66f0a2e9edbd"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Nix",
+      "_key": "!tables.results!f45c90ceb8432000.25d855a6d446ab15",
+      "_id": "25d855a6d446ab15"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Olwen",
+      "_key": "!tables.results!f45c90ceb8432000.d21e752dae3baa26",
+      "_id": "d21e752dae3baa26"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Osolok",
+      "_key": "!tables.results!f45c90ceb8432000.e684dc837feaf154",
+      "_id": "e684dc837feaf154"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Taiga",
+      "_key": "!tables.results!f45c90ceb8432000.3053a5da423c56a5",
+      "_id": "3053a5da423c56a5"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Thule",
+      "_key": "!tables.results!f45c90ceb8432000.f7cf0b30394479d6",
+      "_id": "f7cf0b30394479d6"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Varnholme",
+      "_key": "!tables.results!f45c90ceb8432000.f72c05b1550f4476",
+      "_id": "f72c05b1550f4476"
+    }
+  ],
+  "folder": "402fa1e3f9e7707c",
+  "sort": 311,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!f45c90ceb8432000"
+}

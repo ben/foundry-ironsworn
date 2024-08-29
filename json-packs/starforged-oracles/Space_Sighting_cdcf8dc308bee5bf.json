@@ -1,0 +1,16 @@
+{
+  "name": "Space Sighting",
+  "description": "Use the Space Sightings oracle to introduce a location or encounter on a spaceborne expedition. For example, roll on this table when you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} to envision the primary feature of a waypoint as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}. Check your result by referencing the column for your current location: Terminus, Outlands, or Expanse.",
+  "type": "RollTable",
+  "_id": "cdcf8dc308bee5bf",
+  "sort": 300,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Space/Sighting",
+      "dsid": "oracle_collection:starforged/space/sighting"
+    }
+  },
+  "folder": "a17a6892a4e03f3f",
+  "sorting": "a",
+  "_key": "!folders!cdcf8dc308bee5bf"
+}

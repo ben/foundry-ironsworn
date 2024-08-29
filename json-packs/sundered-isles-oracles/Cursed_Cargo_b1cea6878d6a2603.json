@@ -1,0 +1,164 @@
+{
+  "_id": "b1cea6878d6a2603",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/cargo_cursed"
+    }
+  },
+  "name": "Cursed Cargo",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Ancient sarcophagi",
+      "_key": "!tables.results!b1cea6878d6a2603.0fa4afe9549cec12",
+      "_id": "0fa4afe9549cec12"
+    },
+    {
+      "range": [
+        6,
+        12
+      ],
+      "text": "Autonomous mechanical constructs",
+      "_key": "!tables.results!b1cea6878d6a2603.1f5c438c01557ada",
+      "_id": "1f5c438c01557ada"
+    },
+    {
+      "range": [
+        13,
+        17
+      ],
+      "text": "Barrels of foul ichor",
+      "_key": "!tables.results!b1cea6878d6a2603.0e75345828587035",
+      "_id": "0e75345828587035"
+    },
+    {
+      "range": [
+        18,
+        24
+      ],
+      "text": "Chained beast",
+      "_key": "!tables.results!b1cea6878d6a2603.527bb053d3d10f7c",
+      "_id": "527bb053d3d10f7c"
+    },
+    {
+      "range": [
+        25,
+        31
+      ],
+      "text": "Cocooned victims",
+      "_key": "!tables.results!b1cea6878d6a2603.69b6f634bf37c6e2",
+      "_id": "69b6f634bf37c6e2"
+    },
+    {
+      "range": [
+        32,
+        36
+      ],
+      "text": "Human bones",
+      "_key": "!tables.results!b1cea6878d6a2603.1cb0e7ce84b9c49b",
+      "_id": "1cb0e7ce84b9c49b"
+    },
+    {
+      "range": [
+        37,
+        43
+      ],
+      "text": "Illusionary treasure",
+      "_key": "!tables.results!b1cea6878d6a2603.e2005c9754f376b1",
+      "_id": "e2005c9754f376b1"
+    },
+    {
+      "range": [
+        44,
+        48
+      ],
+      "text": "Infernal weapons",
+      "_key": "!tables.results!b1cea6878d6a2603.5d8d43d4df1bd912",
+      "_id": "5d8d43d4df1bd912"
+    },
+    {
+      "range": [
+        49,
+        53
+      ],
+      "text": "Maggot-infested meat",
+      "_key": "!tables.results!b1cea6878d6a2603.580c26ec1ba06b10",
+      "_id": "580c26ec1ba06b10"
+    },
+    {
+      "range": [
+        54,
+        60
+      ],
+      "text": "Monstrous hunting trophies",
+      "_key": "!tables.results!b1cea6878d6a2603.22a4691efd05ba0e",
+      "_id": "22a4691efd05ba0e"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Mutated animals",
+      "_key": "!tables.results!b1cea6878d6a2603.781b476bc28c3ffe",
+      "_id": "781b476bc28c3ffe"
+    },
+    {
+      "range": [
+        66,
+        72
+      ],
+      "text": "Poisoned grog",
+      "_key": "!tables.results!b1cea6878d6a2603.6f8ab6c653cf862c",
+      "_id": "6f8ab6c653cf862c"
+    },
+    {
+      "range": [
+        73,
+        79
+      ],
+      "text": "Rotting corpses",
+      "_key": "!tables.results!b1cea6878d6a2603.9f33fc79df24b8f8",
+      "_id": "9f33fc79df24b8f8"
+    },
+    {
+      "range": [
+        80,
+        86
+      ],
+      "text": "Sorcerous tomes",
+      "_key": "!tables.results!b1cea6878d6a2603.2faf8c6773a6d3e7",
+      "_id": "2faf8c6773a6d3e7"
+    },
+    {
+      "range": [
+        87,
+        93
+      ],
+      "text": "Soul jars",
+      "_key": "!tables.results!b1cea6878d6a2603.808cccf023382007",
+      "_id": "808cccf023382007"
+    },
+    {
+      "range": [
+        94,
+        100
+      ],
+      "text": "Trapped undead",
+      "_key": "!tables.results!b1cea6878d6a2603.0a08f62305431bdb",
+      "_id": "0a08f62305431bdb"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 139,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b1cea6878d6a2603"
+}

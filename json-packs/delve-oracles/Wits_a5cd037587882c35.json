@@ -1,0 +1,66 @@
+{
+  "_id": "a5cd037587882c35",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Moves/Delve_the_Depths/Wits",
+      "category": "Ironsworn/Moves/Delve",
+      "dsid": "move.oracle_rollable:delve/delve/delve_the_depths.wits"
+    }
+  },
+  "name": "Wits",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        40
+      ],
+      "text": "Mark progress and @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}.",
+      "_key": "!tables.results!a5cd037587882c35.549facc27f3c72e1",
+      "_id": "549facc27f3c72e1"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "Mark progress.",
+      "_key": "!tables.results!a5cd037587882c35.6e15eb0f9c28f29d",
+      "_id": "6e15eb0f9c28f29d"
+    },
+    {
+      "range": [
+        56,
+        80
+      ],
+      "text": "Choose one: Mark progress or @Compendium[foundry-ironsworn.ironsworndelvemoves.4da87fd54eaa1b89]{Find an Opportunity}.",
+      "_key": "!tables.results!a5cd037587882c35.b964105534c203f1",
+      "_id": "b964105534c203f1"
+    },
+    {
+      "range": [
+        81,
+        99
+      ],
+      "text": "Take both: Mark progress and @Compendium[foundry-ironsworn.ironsworndelvemoves.4da87fd54eaa1b89]{Find an Opportunity}.",
+      "_key": "!tables.results!a5cd037587882c35.d3f5e5b7eaf21f08",
+      "_id": "d3f5e5b7eaf21f08"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Mark progress twice and @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}.",
+      "_key": "!tables.results!a5cd037587882c35.725a43c354b9efca",
+      "_id": "725a43c354b9efca"
+    }
+  ],
+  "folder": "0e08d4bb1591c3a9",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a5cd037587882c35"
+}

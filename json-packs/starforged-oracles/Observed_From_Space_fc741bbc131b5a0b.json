@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Jovian/Observed_From_Space",
-      "category": "Starforged/Oracles/Planets/Jovian"
+      "category": "Starforged/Oracles/Planets/Jovian",
+      "dsid": "oracle_rollable:starforged/planet/jovian/observed_from_space"
     }
   },
   "name": "Observed From Space",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         11
       ],
       "text": "Complex ring system",
-      "_id": "6a59431ccb7215e7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.6a59431ccb7215e7"
+      "_key": "!tables.results!fc741bbc131b5a0b.2a684baf8a53c83d",
+      "_id": "2a684baf8a53c83d"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         22
       ],
       "text": "Intense gravity well",
-      "_id": "165a7a587214e398",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.165a7a587214e398"
+      "_key": "!tables.results!fc741bbc131b5a0b.62fb8995b096acf1",
+      "_id": "62fb8995b096acf1"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         33
       ],
       "text": "Numerous moons",
-      "_id": "f2dd76477e83a16d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.f2dd76477e83a16d"
+      "_key": "!tables.results!fc741bbc131b5a0b.90f84ff0cde3b4a2",
+      "_id": "90f84ff0cde3b4a2"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         44
       ],
       "text": "Perpetual superstorm",
-      "_id": "c015cc5c584c8cdc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.c015cc5c584c8cdc"
+      "_key": "!tables.results!fc741bbc131b5a0b.da26fbff26026d7d",
+      "_id": "da26fbff26026d7d"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         55
       ],
       "text": "Powerful magnetic field",
-      "_id": "6745b562b3076762",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.6745b562b3076762"
+      "_key": "!tables.results!fc741bbc131b5a0b.2d33123edc80c849",
+      "_id": "2d33123edc80c849"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         66
       ],
       "text": "Severe electrical storms",
-      "_id": "9a60393e44316284",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.9a60393e44316284"
+      "_key": "!tables.results!fc741bbc131b5a0b.79fdd7ce029c99fa",
+      "_id": "79fdd7ce029c99fa"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         77
       ],
       "text": "Superheated atmosphere",
-      "_id": "f2249c9ebfd873d6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.f2249c9ebfd873d6"
+      "_key": "!tables.results!fc741bbc131b5a0b.499f0e42c907e202",
+      "_id": "499f0e42c907e202"
     },
     {
       "range": [
@@ -116,57 +82,30 @@
         88
       ],
       "text": "Unusual atmospheric colors",
-      "_id": "bc9fb2c0ad463969",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.bc9fb2c0ad463969"
+      "_key": "!tables.results!fc741bbc131b5a0b.2dd39c5fe5645b9b",
+      "_id": "2dd39c5fe5645b9b"
     },
     {
       "range": [
         89,
         98
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Descriptor\"><i class=\"fa fa-caret-right\"></i> Descriptor</a> + <a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Core/Focus\"><i class=\"fa fa-caret-right\"></i> Focus</a>",
-      "_id": "080aad169931eb81",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.080aad169931eb81"
+      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e2bae1632870e2d2]{Descriptor} + @Compendium[foundry-ironsworn.starforgedoracles.9d920a9da68abf62]{Focus}",
+      "_key": "!tables.results!fc741bbc131b5a0b.db09f184eca5f26d",
+      "_id": "db09f184eca5f26d"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "<a class=\"entity-link oracle-category-link\" data-dfid=\"Starforged/Oracles/Vaults\"><i class=\"fa fa-caret-right\"></i> Precursor Vault (orbital)</a>",
-      "_id": "f61eeee446978fb0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!fc741bbc131b5a0b.f61eeee446978fb0"
+      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/precursor_vault\">\n    <i class=\"fa fa-caret-right\"></i> Precursor Vault\n</a> (orbital)</p>",
+      "_key": "!tables.results!fc741bbc131b5a0b.21cb8f9c0a0abbe2",
+      "_id": "21cb8f9c0a0abbe2"
     }
   ],
   "folder": "22e197c635fbf259",
   "sort": 312,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!fc741bbc131b5a0b"
 }

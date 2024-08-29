@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Location_Themes/Mechanical/Opportunity",
-      "category": "Starforged/Oracles/Location_Themes/Mechanical"
+      "category": "Starforged/Oracles/Location_Themes/Mechanical",
+      "dsid": "oracle_rollable:starforged/location_theme/mechanical/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Helpful device",
-      "_id": "a895b9d05bdc1c21",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6fe85ab379183432.a895b9d05bdc1c21"
+      "_key": "!tables.results!6fe85ab379183432.2a8c80bee5c6b963",
+      "_id": "2a8c80bee5c6b963"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Insight into the workings or purpose of the machines",
-      "_id": "b60014d3f915bf9f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6fe85ab379183432.b60014d3f915bf9f"
+      "_key": "!tables.results!6fe85ab379183432.204f4ebbf91d8a3f",
+      "_id": "204f4ebbf91d8a3f"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Intelligent machine offers aid",
-      "_id": "1a180d364038df18",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6fe85ab379183432.1a180d364038df18"
+      "_key": "!tables.results!6fe85ab379183432.d8240ceebe825f9e",
+      "_id": "d8240ceebe825f9e"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Salvageable resource",
-      "_id": "53a7c6fae758bbf3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6fe85ab379183432.53a7c6fae758bbf3"
+      "_key": "!tables.results!6fe85ab379183432.849851b921bfce2f",
+      "_id": "849851b921bfce2f"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Wondrous technology",
-      "_id": "63a7b168965be7a8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!6fe85ab379183432.63a7b168965be7a8"
+      "_key": "!tables.results!6fe85ab379183432.df344339ddc1c0ed",
+      "_id": "df344339ddc1c0ed"
     }
   ],
   "folder": "573c3e802c340f34",
   "sort": 377,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!6fe85ab379183432"
 }

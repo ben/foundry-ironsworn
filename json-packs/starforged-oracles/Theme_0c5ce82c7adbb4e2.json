@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Core/Theme",
-      "category": "Starforged/Oracles/Core"
+      "category": "Starforged/Oracles/Core",
+      "dsid": "oracle_rollable:starforged/core/theme"
     }
   },
   "name": "Theme",
-  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} about a goal, situation, or event, roll for an Action and Theme. Together, these provide an interpretative verb/noun prompt.</p>",
-  "formula": "d100",
+  "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.bd6278f18bbd6739]{Ask the Oracle} about a goal, situation, or event, roll for an @Compendium[foundry-ironsworn.starforgedoracles.b347a87fb81a3abb]{Action} and @Compendium[foundry-ironsworn.starforgedoracles.0c5ce82c7adbb4e2]{Theme}. Together, these provide an interpretative verb/noun prompt.</p>",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         1
       ],
       "text": "Ability",
-      "_id": "c8f7fd214ed6cbc7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.c8f7fd214ed6cbc7"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.80990e404bf0fe6d",
+      "_id": "80990e404bf0fe6d"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         2
       ],
       "text": "Advantage",
-      "_id": "b4249c270bb5f677",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.b4249c270bb5f677"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.e1359f48752c9ad3",
+      "_id": "e1359f48752c9ad3"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         3
       ],
       "text": "Alliance",
-      "_id": "b2046d3e7e13997c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.b2046d3e7e13997c"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.d395b1b555b5f85a",
+      "_id": "d395b1b555b5f85a"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         4
       ],
       "text": "Authority",
-      "_id": "309c3740da51ab99",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.309c3740da51ab99"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.2551afc5ab295e93",
+      "_id": "2551afc5ab295e93"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         5
       ],
       "text": "Balance",
-      "_id": "4ca4964f26f57c98",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.4ca4964f26f57c98"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.bde6f4f545d64bd8",
+      "_id": "bde6f4f545d64bd8"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         6
       ],
       "text": "Barrier",
-      "_id": "1f3c97f0cd159f79",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.1f3c97f0cd159f79"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.fb4af28c0483bb90",
+      "_id": "fb4af28c0483bb90"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         7
       ],
       "text": "Belief",
-      "_id": "fc64e6cdc72f1195",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.fc64e6cdc72f1195"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.bf48f70e17553293",
+      "_id": "bf48f70e17553293"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         8
       ],
       "text": "Blood",
-      "_id": "da1cd3e0670bcb96",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.da1cd3e0670bcb96"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.00f2240f8505c4ad",
+      "_id": "00f2240f8505c4ad"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         9
       ],
       "text": "Bond",
-      "_id": "f9d7dd293489c4e9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.f9d7dd293489c4e9"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.81053f03ec846088",
+      "_id": "81053f03ec846088"
     },
     {
       "range": [
@@ -144,13 +100,8 @@
         10
       ],
       "text": "Burden",
-      "_id": "2bf0e197e7487354",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.2bf0e197e7487354"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.3676c2e3e184a86a",
+      "_id": "3676c2e3e184a86a"
     },
     {
       "range": [
@@ -158,13 +109,8 @@
         11
       ],
       "text": "Commerce",
-      "_id": "d5690ba315791d6c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.d5690ba315791d6c"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.a4e1bf0edbf6171e",
+      "_id": "a4e1bf0edbf6171e"
     },
     {
       "range": [
@@ -172,13 +118,8 @@
         12
       ],
       "text": "Community",
-      "_id": "1c56532e8eacdeee",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.1c56532e8eacdeee"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.64bc738488d43015",
+      "_id": "64bc738488d43015"
     },
     {
       "range": [
@@ -186,13 +127,8 @@
         13
       ],
       "text": "Corruption",
-      "_id": "2006002222b218d0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.2006002222b218d0"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.6dcf968b39bd350d",
+      "_id": "6dcf968b39bd350d"
     },
     {
       "range": [
@@ -200,13 +136,8 @@
         14
       ],
       "text": "Creation",
-      "_id": "aafb2235e2b594fd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.aafb2235e2b594fd"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.96f47fbe5c6b0ef3",
+      "_id": "96f47fbe5c6b0ef3"
     },
     {
       "range": [
@@ -214,13 +145,8 @@
         15
       ],
       "text": "Crime",
-      "_id": "827430c56d278a4f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.827430c56d278a4f"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.6a16025c0778c2d1",
+      "_id": "6a16025c0778c2d1"
     },
     {
       "range": [
@@ -228,13 +154,8 @@
         16
       ],
       "text": "Culture",
-      "_id": "7acb91da9ff9fdec",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.7acb91da9ff9fdec"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.6aebc7d7d7c85a4e",
+      "_id": "6aebc7d7d7c85a4e"
     },
     {
       "range": [
@@ -242,13 +163,8 @@
         17
       ],
       "text": "Cure",
-      "_id": "8f2c0768b901b174",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.8f2c0768b901b174"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.845a27d8a37e0a29",
+      "_id": "845a27d8a37e0a29"
     },
     {
       "range": [
@@ -256,13 +172,8 @@
         18
       ],
       "text": "Danger",
-      "_id": "f4348e717795cec8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.f4348e717795cec8"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.72e6ce6d0f41e814",
+      "_id": "72e6ce6d0f41e814"
     },
     {
       "range": [
@@ -270,13 +181,8 @@
         19
       ],
       "text": "Death",
-      "_id": "30a61d8cf7f76126",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.30a61d8cf7f76126"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.15a61955453552b8",
+      "_id": "15a61955453552b8"
     },
     {
       "range": [
@@ -284,13 +190,8 @@
         20
       ],
       "text": "Debt",
-      "_id": "7133f85ab0e72e2d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.7133f85ab0e72e2d"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.8656a00649b926c6",
+      "_id": "8656a00649b926c6"
     },
     {
       "range": [
@@ -298,13 +199,8 @@
         21
       ],
       "text": "Decay",
-      "_id": "ac5c94d3a8988cc4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.ac5c94d3a8988cc4"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.d2e72a9f2335703a",
+      "_id": "d2e72a9f2335703a"
     },
     {
       "range": [
@@ -312,13 +208,8 @@
         22
       ],
       "text": "Deception",
-      "_id": "6f3a3a7127ca1309",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.6f3a3a7127ca1309"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.cfeff75bbbe1f8ab",
+      "_id": "cfeff75bbbe1f8ab"
     },
     {
       "range": [
@@ -326,13 +217,8 @@
         23
       ],
       "text": "Defense",
-      "_id": "cc2ecfc6b464c2d3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.cc2ecfc6b464c2d3"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.602dafa7661eabf3",
+      "_id": "602dafa7661eabf3"
     },
     {
       "range": [
@@ -340,13 +226,8 @@
         24
       ],
       "text": "Destiny",
-      "_id": "7fa199e4ea1be306",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.7fa199e4ea1be306"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.5c6a65acca980878",
+      "_id": "5c6a65acca980878"
     },
     {
       "range": [
@@ -354,13 +235,8 @@
         25
       ],
       "text": "Disaster",
-      "_id": "73d4cc0b69cca604",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.73d4cc0b69cca604"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.c57617748280661d",
+      "_id": "c57617748280661d"
     },
     {
       "range": [
@@ -368,13 +244,8 @@
         26
       ],
       "text": "Discovery",
-      "_id": "97e97a95fa635b1c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.97e97a95fa635b1c"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.aae66f0b2966ff88",
+      "_id": "aae66f0b2966ff88"
     },
     {
       "range": [
@@ -382,13 +253,8 @@
         27
       ],
       "text": "Disease",
-      "_id": "9471d74562f0adf6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.9471d74562f0adf6"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.5b653868b0b216e5",
+      "_id": "5b653868b0b216e5"
     },
     {
       "range": [
@@ -396,13 +262,8 @@
         28
       ],
       "text": "Dominion",
-      "_id": "36865b8b171e59ea",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.36865b8b171e59ea"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.fa13e35cd8560e7b",
+      "_id": "fa13e35cd8560e7b"
     },
     {
       "range": [
@@ -410,13 +271,8 @@
         29
       ],
       "text": "Dream",
-      "_id": "e11cda2eedbeb960",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.e11cda2eedbeb960"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.f6bfe1b7a23bc7f5",
+      "_id": "f6bfe1b7a23bc7f5"
     },
     {
       "range": [
@@ -424,13 +280,8 @@
         30
       ],
       "text": "Duty",
-      "_id": "b46b37f3dc079678",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.b46b37f3dc079678"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.54483b51bf3b113d",
+      "_id": "54483b51bf3b113d"
     },
     {
       "range": [
@@ -438,13 +289,8 @@
         31
       ],
       "text": "Enemy",
-      "_id": "28ab4631d960ba75",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.28ab4631d960ba75"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.360530bce2d23f41",
+      "_id": "360530bce2d23f41"
     },
     {
       "range": [
@@ -452,13 +298,8 @@
         32
       ],
       "text": "Expedition",
-      "_id": "ff798c3fb4af2c29",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.ff798c3fb4af2c29"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.a996ef7f2294b794",
+      "_id": "a996ef7f2294b794"
     },
     {
       "range": [
@@ -466,13 +307,8 @@
         33
       ],
       "text": "Faction",
-      "_id": "26d40c3d50ba3d44",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.26d40c3d50ba3d44"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.4ca0f237ff15d777",
+      "_id": "4ca0f237ff15d777"
     },
     {
       "range": [
@@ -480,13 +316,8 @@
         34
       ],
       "text": "Fame",
-      "_id": "ed0bd3914e360e67",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.ed0bd3914e360e67"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.6ab73adaaba1dea1",
+      "_id": "6ab73adaaba1dea1"
     },
     {
       "range": [
@@ -494,13 +325,8 @@
         35
       ],
       "text": "Family",
-      "_id": "5bbb2420f5ee34d7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.5bbb2420f5ee34d7"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.8b215dbbf6db052a",
+      "_id": "8b215dbbf6db052a"
     },
     {
       "range": [
@@ -508,13 +334,8 @@
         36
       ],
       "text": "Fear",
-      "_id": "a63627eca9673151",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.a63627eca9673151"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.82aa5c423f87f7cf",
+      "_id": "82aa5c423f87f7cf"
     },
     {
       "range": [
@@ -522,13 +343,8 @@
         37
       ],
       "text": "Fellowship",
-      "_id": "d45a0775647ec194",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.d45a0775647ec194"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.27bbbb36447cf1ff",
+      "_id": "27bbbb36447cf1ff"
     },
     {
       "range": [
@@ -536,13 +352,8 @@
         38
       ],
       "text": "Freedom",
-      "_id": "822bb651019eea26",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.822bb651019eea26"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.9f6d05ef6f8ad037",
+      "_id": "9f6d05ef6f8ad037"
     },
     {
       "range": [
@@ -550,13 +361,8 @@
         39
       ],
       "text": "Greed",
-      "_id": "ddf2072655a8d00b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.ddf2072655a8d00b"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.fd0dc86bb63a979e",
+      "_id": "fd0dc86bb63a979e"
     },
     {
       "range": [
@@ -564,13 +370,8 @@
         40
       ],
       "text": "Hardship",
-      "_id": "8818531f8b630f91",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.8818531f8b630f91"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.2de9c7d6b475c586",
+      "_id": "2de9c7d6b475c586"
     },
     {
       "range": [
@@ -578,13 +379,8 @@
         41
       ],
       "text": "Hate",
-      "_id": "ce09ae2c740a3ed1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.ce09ae2c740a3ed1"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.dab1c71fe316a575",
+      "_id": "dab1c71fe316a575"
     },
     {
       "range": [
@@ -592,13 +388,8 @@
         42
       ],
       "text": "Health",
-      "_id": "f5128cbcad1e4f7a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.f5128cbcad1e4f7a"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.e9797f308afc3e84",
+      "_id": "e9797f308afc3e84"
     },
     {
       "range": [
@@ -606,13 +397,8 @@
         43
       ],
       "text": "History",
-      "_id": "b3855f84a90eeff0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.b3855f84a90eeff0"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.ec52596b76252a36",
+      "_id": "ec52596b76252a36"
     },
     {
       "range": [
@@ -620,13 +406,8 @@
         44
       ],
       "text": "Home",
-      "_id": "3b4dea7ead1da16c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.3b4dea7ead1da16c"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.b62f3f6d11f69681",
+      "_id": "b62f3f6d11f69681"
     },
     {
       "range": [
@@ -634,13 +415,8 @@
         45
       ],
       "text": "Honor",
-      "_id": "bfa9b197b2c876f3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.bfa9b197b2c876f3"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.c9be2b1f9cd08cb8",
+      "_id": "c9be2b1f9cd08cb8"
     },
     {
       "range": [
@@ -648,13 +424,8 @@
         46
       ],
       "text": "Hope",
-      "_id": "e9ca8a1b0363bae2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.e9ca8a1b0363bae2"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.a1e04bd50a72dd0d",
+      "_id": "a1e04bd50a72dd0d"
     },
     {
       "range": [
@@ -662,13 +433,8 @@
         47
       ],
       "text": "Humanity",
-      "_id": "4e3486c537130175",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.4e3486c537130175"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.3550268c61400d0b",
+      "_id": "3550268c61400d0b"
     },
     {
       "range": [
@@ -676,13 +442,8 @@
         48
       ],
       "text": "Innocence",
-      "_id": "a304534435a3f875",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.a304534435a3f875"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.50278c895f8a644f",
+      "_id": "50278c895f8a644f"
     },
     {
       "range": [
@@ -690,13 +451,8 @@
         49
       ],
       "text": "Knowledge",
-      "_id": "411e517f6154a803",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.411e517f6154a803"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.17ad0ecb261d389f",
+      "_id": "17ad0ecb261d389f"
     },
     {
       "range": [
@@ -704,13 +460,8 @@
         50
       ],
       "text": "Labor",
-      "_id": "f0f4f31c3e00e9ae",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.f0f4f31c3e00e9ae"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.5a5ee68c92335362",
+      "_id": "5a5ee68c92335362"
     },
     {
       "range": [
@@ -718,13 +469,8 @@
         51
       ],
       "text": "Language",
-      "_id": "b1cc8b1d688f8724",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.b1cc8b1d688f8724"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.e3837b34a35882d7",
+      "_id": "e3837b34a35882d7"
     },
     {
       "range": [
@@ -732,13 +478,8 @@
         52
       ],
       "text": "Law",
-      "_id": "c6a89d3f22c7a16c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.c6a89d3f22c7a16c"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.1b8d39a407911cc8",
+      "_id": "1b8d39a407911cc8"
     },
     {
       "range": [
@@ -746,13 +487,8 @@
         53
       ],
       "text": "Legacy",
-      "_id": "0e1b12a2fc0ea555",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.0e1b12a2fc0ea555"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.0d129d33f2546257",
+      "_id": "0d129d33f2546257"
     },
     {
       "range": [
@@ -760,13 +496,8 @@
         54
       ],
       "text": "Life",
-      "_id": "c438d35f3ac99f36",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.c438d35f3ac99f36"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.57fffb94140c09c9",
+      "_id": "57fffb94140c09c9"
     },
     {
       "range": [
@@ -774,13 +505,8 @@
         55
       ],
       "text": "Love",
-      "_id": "54cfb1303e73f193",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.54cfb1303e73f193"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.481955da3c963a89",
+      "_id": "481955da3c963a89"
     },
     {
       "range": [
@@ -788,13 +514,8 @@
         56
       ],
       "text": "Memory",
-      "_id": "e5be386104ee7c54",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.e5be386104ee7c54"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.2b39511fe4377b34",
+      "_id": "2b39511fe4377b34"
     },
     {
       "range": [
@@ -802,13 +523,8 @@
         57
       ],
       "text": "Nature",
-      "_id": "ffc4300314cdfe30",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.ffc4300314cdfe30"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.5e2e0c2edee5d26a",
+      "_id": "5e2e0c2edee5d26a"
     },
     {
       "range": [
@@ -816,13 +532,8 @@
         58
       ],
       "text": "Opportunity",
-      "_id": "a6c3939e22b55152",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.a6c3939e22b55152"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.029d13559b10dc4c",
+      "_id": "029d13559b10dc4c"
     },
     {
       "range": [
@@ -830,13 +541,8 @@
         59
       ],
       "text": "Passage",
-      "_id": "3bb4958bd95da2ce",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.3bb4958bd95da2ce"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.6d35be77a709be73",
+      "_id": "6d35be77a709be73"
     },
     {
       "range": [
@@ -844,13 +550,8 @@
         60
       ],
       "text": "Peace",
-      "_id": "5d252ccefe832974",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.5d252ccefe832974"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.97bcb85e1f334712",
+      "_id": "97bcb85e1f334712"
     },
     {
       "range": [
@@ -858,13 +559,8 @@
         61
       ],
       "text": "Phenomenon",
-      "_id": "682f3138b71a3cfb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.682f3138b71a3cfb"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.23c4ca86388d365e",
+      "_id": "23c4ca86388d365e"
     },
     {
       "range": [
@@ -872,13 +568,8 @@
         62
       ],
       "text": "Possession",
-      "_id": "557dd99337ed5915",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.557dd99337ed5915"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.b6c3204588555a2f",
+      "_id": "b6c3204588555a2f"
     },
     {
       "range": [
@@ -886,13 +577,8 @@
         63
       ],
       "text": "Power",
-      "_id": "2f2eb4217d58baf3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.2f2eb4217d58baf3"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.2399d713e5333cf5",
+      "_id": "2399d713e5333cf5"
     },
     {
       "range": [
@@ -900,13 +586,8 @@
         64
       ],
       "text": "Price",
-      "_id": "5865f0427038bd6e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.5865f0427038bd6e"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.0925381ff9bbd403",
+      "_id": "0925381ff9bbd403"
     },
     {
       "range": [
@@ -914,13 +595,8 @@
         65
       ],
       "text": "Pride",
-      "_id": "c42c699b1586d826",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.c42c699b1586d826"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.b87402161d8abd74",
+      "_id": "b87402161d8abd74"
     },
     {
       "range": [
@@ -928,13 +604,8 @@
         66
       ],
       "text": "Prize",
-      "_id": "bf692effa1166201",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.bf692effa1166201"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.012646494817342d",
+      "_id": "012646494817342d"
     },
     {
       "range": [
@@ -942,13 +613,8 @@
         67
       ],
       "text": "Prophesy",
-      "_id": "9c31748655b90db0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.9c31748655b90db0"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.c77e6338a90ce9c9",
+      "_id": "c77e6338a90ce9c9"
     },
     {
       "range": [
@@ -956,13 +622,8 @@
         68
       ],
       "text": "Protection",
-      "_id": "947a676f9c5c5206",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.947a676f9c5c5206"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.49578bd7cae3aafb",
+      "_id": "49578bd7cae3aafb"
     },
     {
       "range": [
@@ -970,13 +631,8 @@
         69
       ],
       "text": "Quest",
-      "_id": "df84304c80c7febf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.df84304c80c7febf"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.ce37b5e3adf4335f",
+      "_id": "ce37b5e3adf4335f"
     },
     {
       "range": [
@@ -984,13 +640,8 @@
         70
       ],
       "text": "Relationship",
-      "_id": "aab3f082c105ef20",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.aab3f082c105ef20"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.aaaf754730811487",
+      "_id": "aaaf754730811487"
     },
     {
       "range": [
@@ -998,13 +649,8 @@
         71
       ],
       "text": "Religion",
-      "_id": "fb6a4c3de6037e74",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.fb6a4c3de6037e74"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.28b4c543b73fc790",
+      "_id": "28b4c543b73fc790"
     },
     {
       "range": [
@@ -1012,13 +658,8 @@
         72
       ],
       "text": "Reputation",
-      "_id": "1f77cd93153dbc16",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.1f77cd93153dbc16"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.a163e2f0c6a04acd",
+      "_id": "a163e2f0c6a04acd"
     },
     {
       "range": [
@@ -1026,13 +667,8 @@
         73
       ],
       "text": "Resource",
-      "_id": "36420a491574dd19",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.36420a491574dd19"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.db6f0a6399a3786d",
+      "_id": "db6f0a6399a3786d"
     },
     {
       "range": [
@@ -1040,13 +676,8 @@
         74
       ],
       "text": "Revenge",
-      "_id": "bf4acf0830e4b80b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.bf4acf0830e4b80b"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.7f534bf9f6afd6a6",
+      "_id": "7f534bf9f6afd6a6"
     },
     {
       "range": [
@@ -1054,13 +685,8 @@
         75
       ],
       "text": "Rival",
-      "_id": "5dde12e472253edd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.5dde12e472253edd"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.1708a295b041f84d",
+      "_id": "1708a295b041f84d"
     },
     {
       "range": [
@@ -1068,13 +694,8 @@
         76
       ],
       "text": "Rumor",
-      "_id": "f486f4b20a55e28e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.f486f4b20a55e28e"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.62fbe35595b87cb0",
+      "_id": "62fbe35595b87cb0"
     },
     {
       "range": [
@@ -1082,13 +703,8 @@
         77
       ],
       "text": "Safety",
-      "_id": "4ca3dd124586881e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.4ca3dd124586881e"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.e6782b08e74f3e34",
+      "_id": "e6782b08e74f3e34"
     },
     {
       "range": [
@@ -1096,13 +712,8 @@
         78
       ],
       "text": "Sanctuary",
-      "_id": "b2698349b4f468b2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.b2698349b4f468b2"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.38ffb510016941bf",
+      "_id": "38ffb510016941bf"
     },
     {
       "range": [
@@ -1110,13 +721,8 @@
         79
       ],
       "text": "Secret",
-      "_id": "5eae9362410602c5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.5eae9362410602c5"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.1def17523249ef70",
+      "_id": "1def17523249ef70"
     },
     {
       "range": [
@@ -1124,13 +730,8 @@
         80
       ],
       "text": "Solution",
-      "_id": "5c778f4e7ce4b5d1",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.5c778f4e7ce4b5d1"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.c9bd2ec8df8926eb",
+      "_id": "c9bd2ec8df8926eb"
     },
     {
       "range": [
@@ -1138,13 +739,8 @@
         81
       ],
       "text": "Spirit",
-      "_id": "0564d569d3a07bf0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.0564d569d3a07bf0"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.a69d6f93d0a28afd",
+      "_id": "a69d6f93d0a28afd"
     },
     {
       "range": [
@@ -1152,13 +748,8 @@
         82
       ],
       "text": "Stranger",
-      "_id": "392e154598fd721a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.392e154598fd721a"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.d3f81cb58585f841",
+      "_id": "d3f81cb58585f841"
     },
     {
       "range": [
@@ -1166,13 +757,8 @@
         83
       ],
       "text": "Strategy",
-      "_id": "cb471797fabe3be0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.cb471797fabe3be0"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.a39ff48ce6edb700",
+      "_id": "a39ff48ce6edb700"
     },
     {
       "range": [
@@ -1180,13 +766,8 @@
         84
       ],
       "text": "Strength",
-      "_id": "84f1563911c65c64",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.84f1563911c65c64"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.769b224db00bb1a0",
+      "_id": "769b224db00bb1a0"
     },
     {
       "range": [
@@ -1194,13 +775,8 @@
         85
       ],
       "text": "Superstition",
-      "_id": "4232c40a670b546c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.4232c40a670b546c"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.eaadc07231ab66a9",
+      "_id": "eaadc07231ab66a9"
     },
     {
       "range": [
@@ -1208,13 +784,8 @@
         86
       ],
       "text": "Supply",
-      "_id": "1b4e2f0abc3b8317",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.1b4e2f0abc3b8317"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.d79f01693245047a",
+      "_id": "d79f01693245047a"
     },
     {
       "range": [
@@ -1222,13 +793,8 @@
         87
       ],
       "text": "Survival",
-      "_id": "e59b88cbaa844b73",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.e59b88cbaa844b73"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.75d6be79b867f63f",
+      "_id": "75d6be79b867f63f"
     },
     {
       "range": [
@@ -1236,13 +802,8 @@
         88
       ],
       "text": "Technology",
-      "_id": "53fa15659cc680cf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.53fa15659cc680cf"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.0aed9f41bb4a35cf",
+      "_id": "0aed9f41bb4a35cf"
     },
     {
       "range": [
@@ -1250,13 +811,8 @@
         89
       ],
       "text": "Time",
-      "_id": "15c39eafded8a98d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.15c39eafded8a98d"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.7f01387aefe36943",
+      "_id": "7f01387aefe36943"
     },
     {
       "range": [
@@ -1264,13 +820,8 @@
         90
       ],
       "text": "Tool",
-      "_id": "39b86680da14cd54",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.39b86680da14cd54"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.4dff90baaddf61de",
+      "_id": "4dff90baaddf61de"
     },
     {
       "range": [
@@ -1278,13 +829,8 @@
         91
       ],
       "text": "Trade",
-      "_id": "7e203f5b80b67948",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.7e203f5b80b67948"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.ae4d7b9c0f7bfec9",
+      "_id": "ae4d7b9c0f7bfec9"
     },
     {
       "range": [
@@ -1292,13 +838,8 @@
         92
       ],
       "text": "Truth",
-      "_id": "d7b916b6f2ed01b8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.d7b916b6f2ed01b8"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.97be0e5c3388e00f",
+      "_id": "97be0e5c3388e00f"
     },
     {
       "range": [
@@ -1306,13 +847,8 @@
         93
       ],
       "text": "Vengeance",
-      "_id": "60bbfcc7202aece2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.60bbfcc7202aece2"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.7c59b4f987c738f2",
+      "_id": "7c59b4f987c738f2"
     },
     {
       "range": [
@@ -1320,13 +856,8 @@
         94
       ],
       "text": "Vow",
-      "_id": "79d369256d8ecd5e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.79d369256d8ecd5e"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.985908d66778a88c",
+      "_id": "985908d66778a88c"
     },
     {
       "range": [
@@ -1334,13 +865,8 @@
         95
       ],
       "text": "War",
-      "_id": "887069b078084dc5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.887069b078084dc5"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.4c582dae748f8987",
+      "_id": "4c582dae748f8987"
     },
     {
       "range": [
@@ -1348,13 +874,8 @@
         96
       ],
       "text": "Warning",
-      "_id": "a34b3e43f7164d2d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.a34b3e43f7164d2d"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.9d9484eada667d8c",
+      "_id": "9d9484eada667d8c"
     },
     {
       "range": [
@@ -1362,13 +883,8 @@
         97
       ],
       "text": "Weakness",
-      "_id": "79ae86922047ec6c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.79ae86922047ec6c"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.37a58491ee2affe2",
+      "_id": "37a58491ee2affe2"
     },
     {
       "range": [
@@ -1376,13 +892,8 @@
         98
       ],
       "text": "Wealth",
-      "_id": "a6c49595fe3e8faf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.a6c49595fe3e8faf"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.e1a56ad17510d87d",
+      "_id": "e1a56ad17510d87d"
     },
     {
       "range": [
@@ -1390,13 +901,8 @@
         99
       ],
       "text": "Weapon",
-      "_id": "1e954d2d3a0240b6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.1e954d2d3a0240b6"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.792efe366b613fdb",
+      "_id": "792efe366b613fdb"
     },
     {
       "range": [
@@ -1404,29 +910,12 @@
         100
       ],
       "text": "World",
-      "_id": "ac3f8e4b67e475ff",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0c5ce82c7adbb4e2.ac3f8e4b67e475ff"
+      "_key": "!tables.results!0c5ce82c7adbb4e2.cac3498cb77fd2fa",
+      "_id": "cac3498cb77fd2fa"
     }
   ],
   "folder": "312c7e84afc43125",
   "sort": 297,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!0c5ce82c7adbb4e2"
 }

@@ -3,64 +3,52 @@
   "type": "sfmove",
   "name": "Companion Endure Harm",
   "img": "icons/dice/d10black.svg",
+  "folder": "a6b19a943ff830d6",
   "system": {
     "dfid": "Ironsworn/Moves/Suffer/Companion_Endure_Harm",
     "Category": "Ironsworn/Moves/Suffer",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **your companion faces physical damage**, they suffer -health equal to the amount of harm inflicted. If your companion’s health is 0, exchange any leftover -health for -momentum. Then, roll +heart or +your companion’s health, whichever is higher.\n\nOn a **strong hit**, your companion rallies. Give them +1 health.\n\nOn a **weak hit**, your companion is battered. If their health is 0, they cannot assist you until they gain at least +1 health.\n\nOn a **miss**, also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two. If you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it.",
+    "Text": "When __your companion faces physical damage__, they suffer -health equal to the amount of harm inflicted. If your companion’s health is 0, exchange any leftover -health for -momentum. Then, roll +heart or +your companion’s health, whichever is higher.\n\nOn a __strong hit__, your companion rallies. Give them +1 health.\n\nOn a __weak hit__, your companion is battered. If their health is 0, they cannot assist you until they gain at least +1 health.\n\nOn a __miss__, also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two. If you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it.",
     "Trigger": {
       "Text": "When your companion faces physical damage...",
       "Options": [
         {
-          "Roll type": "Action roll",
+          "Text": "",
+          "Roll type": "Progress roll",
           "Method": "Highest",
           "Using": [
             "Heart",
             "Companion Health"
-          ],
-          "Text": ""
+          ]
         }
       ]
     },
     "Outcomes": {
       "Strong Hit": {
-        "Text": "Your companion rallies. Give them +1 health.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __strong hit__, your companion rallies. Give them +1 health.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "Your companion is battered. If their health is 0, they cannot assist you until they gain at least +1 health.",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": "On a __weak hit__, your companion is battered. If their health is 0, they cannot assist you until they gain at least +1 health."
       },
       "Miss": {
-        "Text": "Also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two.\n\nIf you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it.",
-        "Reroll": {
-          "Text": ""
-        },
+        "Text": "On a __miss__, also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two.\n\nIf you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it.",
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 94
     },
     "Suggestions": {},
@@ -69,20 +57,11 @@
     }
   },
   "sort": 94,
-  "folder": "a6b19a943ff830d6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Suffer/Companion_Endure_Harm",
+      "dsid": "move:classic/suffer/companion_endure_harm"
+    }
   },
   "_key": "!items!5042c9574d4faf61"
 }

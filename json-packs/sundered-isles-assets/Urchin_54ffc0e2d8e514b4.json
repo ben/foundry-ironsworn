@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "54ffc0e2d8e514b4",
+  "folder": "e5df7144ec089f12",
+  "name": "Urchin",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You are unnoticed and underestimated. When you make a move to sneak, hide, or pilfer, add +1 and take +1 momentum on a hit. When you make a move to defy expectations (decide before rolling), add +1 and reroll any dice, but count a weak hit as a miss.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Name a connection as your mentor. When you @Compendium[foundry-ironsworn.starforgedmoves.141aec8b92efd14b]{Develop Your Relationship} with them, take +2 momentum. When you successfully @Compendium[foundry-ironsworn.starforgedmoves.985a5415860a99e9]{Fulfill Your Vow} in their service or to their benefit, also mark 2 ticks on your bonds legacy track. When you @Compendium[foundry-ironsworn.starforgedmoves.287bb4c2b53ea847]{Forge a Bond} with them and score a hit, make the legacy reward one rank higher (1 extra box if already epic).</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you come of age or take on a role beyond your years, gain this ability at no cost. Then, discard this asset and take two others (at no cost) to represent your new status.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/urchin",
+      "dsid": "asset:sundered_isles/path/urchin"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!54ffc0e2d8e514b4"
+}

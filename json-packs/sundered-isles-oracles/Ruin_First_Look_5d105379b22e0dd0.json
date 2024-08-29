@@ -1,0 +1,398 @@
+{
+  "_id": "5d105379b22e0dd0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/first_look"
+    }
+  },
+  "name": "Ruin First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Adorned with faded colors",
+      "_key": "!tables.results!5d105379b22e0dd0.9df896004cd495bf",
+      "_id": "9df896004cd495bf"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Adorned with murals",
+      "_key": "!tables.results!5d105379b22e0dd0.ba2421a4afe41265",
+      "_id": "ba2421a4afe41265"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Adorned with ornate pillars",
+      "_key": "!tables.results!5d105379b22e0dd0.c6f3ddaa633ad354",
+      "_id": "c6f3ddaa633ad354"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Adorned with rare metals",
+      "_key": "!tables.results!5d105379b22e0dd0.027159e3947d469a",
+      "_id": "027159e3947d469a"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Adorned with religious iconography",
+      "_key": "!tables.results!5d105379b22e0dd0.4453c594ac701ff8",
+      "_id": "4453c594ac701ff8"
+    },
+    {
+      "range": [
+        11,
+        13
+      ],
+      "text": "Amid a waterfall or waterway",
+      "_key": "!tables.results!5d105379b22e0dd0.113489e2768a4fa5",
+      "_id": "113489e2768a4fa5"
+    },
+    {
+      "range": [
+        14,
+        16
+      ],
+      "text": "Amid lush vegetation",
+      "_key": "!tables.results!5d105379b22e0dd0.1b6262be4e915de9",
+      "_id": "1b6262be4e915de9"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Blackened by fire",
+      "_key": "!tables.results!5d105379b22e0dd0.8f52b63283d16b03",
+      "_id": "8f52b63283d16b03"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Blocked or barricaded",
+      "_key": "!tables.results!5d105379b22e0dd0.bb859a650696f6f2",
+      "_id": "bb859a650696f6f2"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Breached entrance",
+      "_key": "!tables.results!5d105379b22e0dd0.e90a1c2faef3f673",
+      "_id": "e90a1c2faef3f673"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Built of unusual materials",
+      "_key": "!tables.results!5d105379b22e0dd0.34b867ec6622bb5b",
+      "_id": "34b867ec6622bb5b"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Carved into the terrain",
+      "_key": "!tables.results!5d105379b22e0dd0.f96c118a82573e2f",
+      "_id": "f96c118a82573e2f"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Concentric architecture",
+      "_key": "!tables.results!5d105379b22e0dd0.b1092d54156fe2a9",
+      "_id": "b1092d54156fe2a9"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Connected by lofty bridges",
+      "_key": "!tables.results!5d105379b22e0dd0.d5da3678dea97c67",
+      "_id": "d5da3678dea97c67"
+    },
+    {
+      "range": [
+        34,
+        35
+      ],
+      "text": "Covered in inscrutable symbols",
+      "_key": "!tables.results!5d105379b22e0dd0.f9e86607b3504930",
+      "_id": "f9e86607b3504930"
+    },
+    {
+      "range": [
+        36,
+        37
+      ],
+      "text": "Covered in moss, fungi, or algae",
+      "_key": "!tables.results!5d105379b22e0dd0.18486389a77df745",
+      "_id": "18486389a77df745"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Defiled by vandals",
+      "_key": "!tables.results!5d105379b22e0dd0.27ab0bf1b395ec52",
+      "_id": "27ab0bf1b395ec52"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Difficult or hidden access",
+      "_key": "!tables.results!5d105379b22e0dd0.09a3c4589cea2a7a",
+      "_id": "09a3c4589cea2a7a"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Divided by a sinkhole or chasm",
+      "_key": "!tables.results!5d105379b22e0dd0.51610404c6fb87a6",
+      "_id": "51610404c6fb87a6"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Domed architecture",
+      "_key": "!tables.results!5d105379b22e0dd0.8ce6c573567642ec",
+      "_id": "8ce6c573567642ec"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Encircled by a wall",
+      "_key": "!tables.results!5d105379b22e0dd0.f84d8765f3134402",
+      "_id": "f84d8765f3134402"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Fronted by grand stairs",
+      "_key": "!tables.results!5d105379b22e0dd0.6336e41d3e8e8af7",
+      "_id": "6336e41d3e8e8af7"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Generating light or energy",
+      "_key": "!tables.results!5d105379b22e0dd0.b9da943311397216",
+      "_id": "b9da943311397216"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Hung with tattered heraldry",
+      "_key": "!tables.results!5d105379b22e0dd0.f0cca4a5a8ecb001",
+      "_id": "f0cca4a5a8ecb001"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Imposing statues",
+      "_key": "!tables.results!5d105379b22e0dd0.35647ceadd61cd91",
+      "_id": "35647ceadd61cd91"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Inactive machinery",
+      "_key": "!tables.results!5d105379b22e0dd0.6e01867841924f96",
+      "_id": "6e01867841924f96"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Monolithic architecture",
+      "_key": "!tables.results!5d105379b22e0dd0.2d1b43396e79837d",
+      "_id": "2d1b43396e79837d"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Multi-tiered architecture",
+      "_key": "!tables.results!5d105379b22e0dd0.fe36cafd87c34fa8",
+      "_id": "fe36cafd87c34fa8"
+    },
+    {
+      "range": [
+        66,
+        67
+      ],
+      "text": "Nearby ship or encampment",
+      "_key": "!tables.results!5d105379b22e0dd0.24bd2b6fa95f8279",
+      "_id": "24bd2b6fa95f8279"
+    },
+    {
+      "range": [
+        68,
+        69
+      ],
+      "text": "Open-air structures",
+      "_key": "!tables.results!5d105379b22e0dd0.bf6651cb163af72b",
+      "_id": "bf6651cb163af72b"
+    },
+    {
+      "range": [
+        70,
+        71
+      ],
+      "text": "Overrun by creatures",
+      "_key": "!tables.results!5d105379b22e0dd0.b21d3003bab802a3",
+      "_id": "b21d3003bab802a3"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "Pyramid architecture",
+      "_key": "!tables.results!5d105379b22e0dd0.771d10641dce81b2",
+      "_id": "771d10641dce81b2"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Scarred by war",
+      "_key": "!tables.results!5d105379b22e0dd0.8b443f35ed33f92b",
+      "_id": "8b443f35ed33f92b"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Scattered remains of the dead",
+      "_key": "!tables.results!5d105379b22e0dd0.320ca37eace11187",
+      "_id": "320ca37eace11187"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Signs of lurking predators",
+      "_key": "!tables.results!5d105379b22e0dd0.87bfed1485d04581",
+      "_id": "87bfed1485d04581"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Signs of new inhabitants",
+      "_key": "!tables.results!5d105379b22e0dd0.3966367e2e1bd6f5",
+      "_id": "3966367e2e1bd6f5"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Signs of scavengers or looters",
+      "_key": "!tables.results!5d105379b22e0dd0.efa58ce3b7f9bfdf",
+      "_id": "efa58ce3b7f9bfdf"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "Situated in a high place",
+      "_key": "!tables.results!5d105379b22e0dd0.28600b0fe9550ca5",
+      "_id": "28600b0fe9550ca5"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "Sunken or flooded",
+      "_key": "!tables.results!5d105379b22e0dd0.394f271bc1c6d4a8",
+      "_id": "394f271bc1c6d4a8"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Surrounded by destruction",
+      "_key": "!tables.results!5d105379b22e0dd0.4441c818ee41bbde",
+      "_id": "4441c818ee41bbde"
+    },
+    {
+      "range": [
+        93,
+        95
+      ],
+      "text": "Surrounded by rugged or dense terrain",
+      "_key": "!tables.results!5d105379b22e0dd0.732a122c09e96bf8",
+      "_id": "732a122c09e96bf8"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!5d105379b22e0dd0.1b7578767d2a3d98",
+      "_id": "1b7578767d2a3d98"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 214,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5d105379b22e0dd0"
+}

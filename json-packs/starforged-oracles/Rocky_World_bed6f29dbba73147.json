@@ -1,0 +1,16 @@
+{
+  "name": "Rocky World",
+  "description": "A rugged planet scarred by eons of destructive asteroid impacts.",
+  "type": "RollTable",
+  "_id": "bed6f29dbba73147",
+  "sort": 315,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Rocky",
+      "dsid": "oracle_collection:starforged/planet/rocky"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!bed6f29dbba73147"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Space Encounter Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "a17a6892a4e03f3f",
+  "sort": 300,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Space",
+      "dsid": "oracle_collection:starforged/space"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!a17a6892a4e03f3f"
+}

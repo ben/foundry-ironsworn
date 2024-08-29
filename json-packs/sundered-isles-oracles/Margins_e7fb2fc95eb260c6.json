@@ -1,0 +1,92 @@
+{
+  "_id": "e7fb2fc95eb260c6",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/seafaring/waypoints/unknown_waters",
+      "dsid": "oracle_rollable:sundered_isles/seafaring/waypoints/unknown_waters/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "<strong>Land, ho!</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/island\">\n    <i class=\"fa fa-caret-right\"></i> Island\n</a></p>",
+      "_key": "!tables.results!e7fb2fc95eb260c6.57a0307004edf460",
+      "_id": "57a0307004edf460"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "<strong>Sails, ho!</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/ship\">\n    <i class=\"fa fa-caret-right\"></i> Ship\n</a></p>",
+      "_key": "!tables.results!e7fb2fc95eb260c6.d97635d084205f3d",
+      "_id": "d97635d084205f3d"
+    },
+    {
+      "range": [
+        26,
+        40
+      ],
+      "text": "<strong>Changing weather</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/weather\">\n    <i class=\"fa fa-caret-right\"></i> Weather\n</a></p>",
+      "_key": "!tables.results!e7fb2fc95eb260c6.17eb110492a2a1fb",
+      "_id": "17eb110492a2a1fb"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "<strong>Instance (choose one)</strong>\n<ul>\n<li>@Compendium[foundry-ironsworn.sunderedislesoracles.70db4601738cf167]{Seafaring Details}</li>\n<li>@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}</li>\n</ul>",
+      "_key": "!tables.results!e7fb2fc95eb260c6.3c444fe44c26069a",
+      "_id": "3c444fe44c26069a"
+    },
+    {
+      "range": [
+        56,
+        65
+      ],
+      "text": "<strong>Lost souls</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/shipwreck\">\n    <i class=\"fa fa-caret-right\"></i> Shipwreck\n</a></p>",
+      "_key": "!tables.results!e7fb2fc95eb260c6.082e85abe57eea38",
+      "_id": "082e85abe57eea38"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "<strong>Relic of the past</strong>\n<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/ruin\">\n    <i class=\"fa fa-caret-right\"></i> Ruin\n</a></p>",
+      "_key": "!tables.results!e7fb2fc95eb260c6.819cca1e1f21c73b",
+      "_id": "819cca1e1f21c73b"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "<p><strong>Character focus</strong>\n@Compendium[foundry-ironsworn.sunderedislesoracles.915f8d4f02c33d8e]{Interlude Scene}</p>",
+      "_key": "!tables.results!e7fb2fc95eb260c6.aff708adbe48c5c9",
+      "_id": "aff708adbe48c5c9"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice",
+      "_key": "!tables.results!e7fb2fc95eb260c6.703d1e719ea4c146",
+      "_id": "703d1e719ea4c146"
+    }
+  ],
+  "folder": "50bb18832d2b6eb0",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!e7fb2fc95eb260c6"
+}

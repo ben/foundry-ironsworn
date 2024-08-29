@@ -1,22 +1,16 @@
 {
   "name": "Sector Name",
-  "_id": "158580c8f9018e58",
+  "description": "To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.",
   "type": "RollTable",
+  "_id": "158580c8f9018e58",
   "sort": 302,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Space/Sector_Name"
+      "dfid": "Starforged/Oracles/Space/Sector_Name",
+      "dsid": "oracle_collection:starforged/space/sector_name"
     }
   },
   "folder": "a17a6892a4e03f3f",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!158580c8f9018e58"
 }

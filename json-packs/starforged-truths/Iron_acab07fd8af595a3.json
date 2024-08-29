@@ -1,0 +1,104 @@
+{
+  "name": "Iron",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Setting_Truths/Iron",
+      "dsid": "truth:starforged/iron"
+    }
+  },
+  "_id": "acab07fd8af595a3",
+  "pages": [
+    {
+      "type": "truth",
+      "name": "Iron vows are sworn upon the remnants of ships that carried our people to the Forge.",
+      "system": {
+        "dsid": "truth.option:starforged/iron.0",
+        "Floor": 1,
+        "Ceiling": 33,
+        "Result": "Iron vows are sworn upon the remnants of ships that carried our people to the Forge.",
+        "Description": "Many of our outposts were built from the iron bones of the Exodus ships. Fragments of the ships were also given to survivors as a remembrance, and passed from one generation to the next. Today, the Ironsworn swear vows upon the shards to honor the sacrifice of their forebears, the essence of the places left behind, and the souls of those great ships.",
+        "Summary": "Iron vows are sworn upon the remnants of ships that carried our people to the Forge.",
+        "Quest": "The iron shard you carry is a small piece of the outer hull of an Exodus ship. The navigational chart inscribed on its surface only reveals itself when exposed to the light of a specific star. Where is the map purported to lead, and why are you sworn to follow it? Who seeks to claim the map for themselves?",
+        "Roll template": {
+          "Description": "Many of our outposts were built from the iron bones of the Exodus ships. Fragments of the ships were also given to survivors as a remembrance, and passed from one generation to the next. Today, the Ironsworn swear vows upon the shards to honor the sacrifice of their forebears, the essence of the places left behind, and the souls of those great ships."
+        }
+      },
+      "_id": "f3fa1285dab1c7d9",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!acab07fd8af595a3.f3fa1285dab1c7d9"
+    },
+    {
+      "type": "truth",
+      "name": "Iron vows are sworn upon totems crafted from the enigmatic metal we call black iron.",
+      "system": {
+        "dsid": "truth.option:starforged/iron.1",
+        "Floor": 34,
+        "Ceiling": 67,
+        "Result": "Iron vows are sworn upon totems crafted from the enigmatic metal we call black iron.",
+        "Description": "Black iron was first forged by a long-dead civilization. Some say it is a living metal, attuned to the hidden depths of the universe. Remnants of this prized resource are found within ancient sites throughout the Forge. It is resistant to damage and corrosion, but can be molded using superheated plasma at specialized facilities. The Ironsworn carry weapons, armor, or tokens crafted from black iron, and swear vows upon it.",
+        "Summary": "Iron vows are sworn upon totems crafted from the enigmatic metal we call black iron.",
+        "Quest": "A black iron token of special significance has been stolen. What power or authority is bound to this object? Who has taken it?",
+        "Roll template": {
+          "Description": "Black iron was first forged by a long-dead civilization. Some say it is a living metal, attuned to the hidden depths of the universe. Remnants of this prized resource are found within ancient sites throughout the Forge. It is resistant to damage and corrosion, but can be molded using superheated plasma at specialized facilities. The Ironsworn carry weapons, armor, or tokens crafted from black iron, and swear vows upon it."
+        }
+      },
+      "_id": "c68adfd629335e26",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!acab07fd8af595a3.c68adfd629335e26"
+    },
+    {
+      "type": "truth",
+      "name": "The Ironsworn bind their honor to iron blades.",
+      "system": {
+        "dsid": "truth.option:starforged/iron.2",
+        "Floor": 68,
+        "Ceiling": 100,
+        "Result": "The Ironsworn bind their honor to iron blades.",
+        "Description": "Aboard a starship, where stray gunfire can destroy fragile equipment or pierce hulls, the brutal practicality of a sword makes for a useful weapon. A few also favor the silent efficiency of a blade for infiltration or espionage. Most importantly, when the Ironsworn swear a vow upon a sword, they bind their commitment to the metal. If they forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced.",
+        "Summary": "The Ironsworn bind their honor to iron blades.",
+        "Quest": "You vow to forge a new sword from the iron of an important object or artifact. What is it, and why is it meaningful to you? Who protects it?",
+        "Roll template": {
+          "Description": "Aboard a starship, where stray gunfire can destroy fragile equipment or pierce hulls, the brutal practicality of a sword makes for a useful weapon. A few also favor the silent efficiency of a blade for infiltration or espionage. Most importantly, when the Ironsworn swear a vow upon a sword, they bind their commitment to the metal. If they forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced."
+        }
+      },
+      "_id": "3eaa2c82391b21ea",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!acab07fd8af595a3.3eaa2c82391b21ea"
+    },
+    {
+      "name": "Character Inspiration",
+      "type": "text",
+      "text": {
+        "markdown": "What do you swear vows upon? Why is this object meaningful to you? If swearing iron vows to a leader or organization are a key aspect of your character, you might be @Compendium[foundry-ironsworn.starforgedassets.92c1672053d9fba4]{Bannersworn}.",
+        "format": 2,
+        "content": "<p>What do you swear vows upon? Why is this object meaningful to you? If swearing iron vows to a leader or organization are a key aspect of your character, you might be @Compendium[foundry-ironsworn.starforgedassets.92c1672053d9fba4]{Bannersworn}.</p>"
+      },
+      "_id": "0c0f2022754ffea0",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "src": null,
+      "sort": 0,
+      "_key": "!journal.pages!acab07fd8af595a3.0c0f2022754ffea0"
+    }
+  ],
+  "folder": null,
+  "sort": 88,
+  "_key": "!journal!acab07fd8af595a3"
+}

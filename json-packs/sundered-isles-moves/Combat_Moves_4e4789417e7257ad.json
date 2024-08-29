@@ -1,0 +1,16 @@
+{
+  "name": "Combat Moves",
+  "color": "#818992",
+  "description": "",
+  "type": "Item",
+  "_id": "4e4789417e7257ad",
+  "sort": 244,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "move_category:sundered_isles/combat"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!4e4789417e7257ad"
+}

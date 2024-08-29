@@ -1,0 +1,110 @@
+{
+  "_id": "8cfbb6b88e265bea",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/faction/name/themes/affluence",
+      "dsid": "oracle_rollable:sundered_isles/faction/name/themes/affluence/aspect"
+    }
+  },
+  "name": "Aspect",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Emerald",
+      "_key": "!tables.results!8cfbb6b88e265bea.df16305fa721b54e",
+      "_id": "df16305fa721b54e"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Gilded",
+      "_key": "!tables.results!8cfbb6b88e265bea.1c7a320d9bbf24fe",
+      "_id": "1c7a320d9bbf24fe"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Golden",
+      "_key": "!tables.results!8cfbb6b88e265bea.32ff40f773a692a2",
+      "_id": "32ff40f773a692a2"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Illustrious",
+      "_key": "!tables.results!8cfbb6b88e265bea.832561f3e9b70f3b",
+      "_id": "832561f3e9b70f3b"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Jade",
+      "_key": "!tables.results!8cfbb6b88e265bea.a83ec72d88dd3cb8",
+      "_id": "a83ec72d88dd3cb8"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Sapphire",
+      "_key": "!tables.results!8cfbb6b88e265bea.b90272039686b877",
+      "_id": "b90272039686b877"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Silver",
+      "_key": "!tables.results!8cfbb6b88e265bea.d806e911e8406e5f",
+      "_id": "d806e911e8406e5f"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Sovereign",
+      "_key": "!tables.results!8cfbb6b88e265bea.25859b32a976e4c6",
+      "_id": "25859b32a976e4c6"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Supreme",
+      "_key": "!tables.results!8cfbb6b88e265bea.75c6591ee3944410",
+      "_id": "75c6591ee3944410"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Trueborn",
+      "_key": "!tables.results!8cfbb6b88e265bea.fff6c49c82bc3915",
+      "_id": "fff6c49c82bc3915"
+    }
+  ],
+  "folder": "dec9a2ab35a9f55a",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8cfbb6b88e265bea"
+}

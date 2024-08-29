@@ -1,0 +1,290 @@
+{
+  "_id": "6853b581a85a73bb",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/shipwreck",
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/details"
+    }
+  },
+  "name": "Shipwreck Details",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Abandoned pet or mascot",
+      "_key": "!tables.results!6853b581a85a73bb.70867c72f0bebceb",
+      "_id": "70867c72f0bebceb"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Ad hoc shrine or memorial",
+      "_key": "!tables.results!6853b581a85a73bb.cc00324337596513",
+      "_id": "cc00324337596513"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Barricaded or sealed compartment",
+      "_key": "!tables.results!6853b581a85a73bb.dea662c0ddcf1d0f",
+      "_id": "dea662c0ddcf1d0f"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Blasted or wrecked area",
+      "_key": "!tables.results!6853b581a85a73bb.48f235fb4fe3d747",
+      "_id": "48f235fb4fe3d747"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Bloody or violent trail",
+      "_key": "!tables.results!6853b581a85a73bb.7bb12b8fcb41a040",
+      "_id": "7bb12b8fcb41a040"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Coded message",
+      "_key": "!tables.results!6853b581a85a73bb.164168d82dd12a2a",
+      "_id": "164168d82dd12a2a"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Corpses or bones",
+      "_key": "!tables.results!6853b581a85a73bb.8363bacdc24a394a",
+      "_id": "8363bacdc24a394a"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Creature using the wreck as a refuge",
+      "_key": "!tables.results!6853b581a85a73bb.65f91956f6670a88",
+      "_id": "65f91956f6670a88"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Emptied cargo",
+      "_key": "!tables.results!6853b581a85a73bb.53b038c3c3306a2f",
+      "_id": "53b038c3c3306a2f"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Extravagant furnishings",
+      "_key": "!tables.results!6853b581a85a73bb.0f05e877589c1363",
+      "_id": "0f05e877589c1363"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Forcefully breached door or hatch",
+      "_key": "!tables.results!6853b581a85a73bb.ff54f15e7bc19fe9",
+      "_id": "ff54f15e7bc19fe9"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Gaping hole",
+      "_key": "!tables.results!6853b581a85a73bb.51c62b7c50d15674",
+      "_id": "51c62b7c50d15674"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Hastily written message or warning",
+      "_key": "!tables.results!6853b581a85a73bb.8775a06fe129dd64",
+      "_id": "8775a06fe129dd64"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Hidden compartment",
+      "_key": "!tables.results!6853b581a85a73bb.358896445fceff06",
+      "_id": "358896445fceff06"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Inscrutable machine or device",
+      "_key": "!tables.results!6853b581a85a73bb.bf53ab2e6de770d5",
+      "_id": "bf53ab2e6de770d5"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Invaders or scavengers",
+      "_key": "!tables.results!6853b581a85a73bb.2f805b6924c60d99",
+      "_id": "2f805b6924c60d99"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Invasive plants or sea life",
+      "_key": "!tables.results!6853b581a85a73bb.0899d8066e6ad3b8",
+      "_id": "0899d8066e6ad3b8"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Journal or log reveals the ship's history",
+      "_key": "!tables.results!6853b581a85a73bb.1e4ffb055d5b0830",
+      "_id": "1e4ffb055d5b0830"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Locked brig with unfortunate prisoner",
+      "_key": "!tables.results!6853b581a85a73bb.8a0e1b5eada69ac3",
+      "_id": "8a0e1b5eada69ac3"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Makeshift barricade",
+      "_key": "!tables.results!6853b581a85a73bb.fafbae0fdb80cd62",
+      "_id": "fafbae0fdb80cd62"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Mysterious locked container",
+      "_key": "!tables.results!6853b581a85a73bb.6737029ad427c470",
+      "_id": "6737029ad427c470"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Ominous creaking",
+      "_key": "!tables.results!6853b581a85a73bb.d5fc1525c95f04c2",
+      "_id": "d5fc1525c95f04c2"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Ransacked compartment",
+      "_key": "!tables.results!6853b581a85a73bb.fa19242bc8b1e443",
+      "_id": "fa19242bc8b1e443"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Ruined supplies or provisions",
+      "_key": "!tables.results!6853b581a85a73bb.3931858c07d757f7",
+      "_id": "3931858c07d757f7"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Scene of a last stand or fierce battle",
+      "_key": "!tables.results!6853b581a85a73bb.4744ce92bf6a7b2f",
+      "_id": "4744ce92bf6a7b2f"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Sounds of habitation",
+      "_key": "!tables.results!6853b581a85a73bb.78120ed8e177805f",
+      "_id": "78120ed8e177805f"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Stranded or trapped survivor",
+      "_key": "!tables.results!6853b581a85a73bb.41aae95e97677cc8",
+      "_id": "41aae95e97677cc8"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "Untouched compartment",
+      "_key": "!tables.results!6853b581a85a73bb.4547be19f6d1e786",
+      "_id": "4547be19f6d1e786"
+    },
+    {
+      "range": [
+        85,
+        92
+      ],
+      "text": "Personal memento (@Compendium[foundry-ironsworn.sunderedislesoracles.0aa8af4001afac1f]{Token})",
+      "_key": "!tables.results!6853b581a85a73bb.598b4bfdde82303e",
+      "_id": "598b4bfdde82303e"
+    },
+    {
+      "range": [
+        93,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!6853b581a85a73bb.f6ea807a12c86ac7",
+      "_id": "f6ea807a12c86ac7"
+    }
+  ],
+  "folder": "d4fcc34036960bb6",
+  "sort": 202,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6853b581a85a73bb"
+}

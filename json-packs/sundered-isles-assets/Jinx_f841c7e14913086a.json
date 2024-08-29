@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "f841c7e14913086a",
+  "folder": "e5df7144ec089f12",
+  "name": "Jinx",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You are cursed by ill luck, but persisting offers its own rewards. If you score a miss with a match, this asset counts as an impact for you and your allies. You may undo this only by scoring a strong hit with a match; if you do, you and your allies each clear the impact and mark 1 tick on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you score a weak hit on a progress move, you may test your luck by reducing the progress score by 1 and rerolling all dice.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you roll matched 1’s on your challenge dice while suffering from this asset’s impact, you may activate this ability at no cost. If you do, you are favored by fortune; you and your allies clear the impact and mark 1 box on your bonds legacy track. Then, discard this asset and increase your momentum reset and max momentum (if less than 10) by 1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/jinx",
+      "dsid": "asset:sundered_isles/path/jinx"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!f841c7e14913086a"
+}

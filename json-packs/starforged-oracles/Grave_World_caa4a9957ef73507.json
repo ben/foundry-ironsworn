@@ -1,0 +1,16 @@
+{
+  "name": "Grave World",
+  "description": "A once-thriving world—now a grim monument to a fallen civilization.",
+  "type": "RollTable",
+  "_id": "caa4a9957ef73507",
+  "sort": 310,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Planets/Grave",
+      "dsid": "oracle_collection:starforged/planet/grave"
+    }
+  },
+  "folder": "99ee8a161d0857f8",
+  "sorting": "a",
+  "_key": "!folders!caa4a9957ef73507"
+}

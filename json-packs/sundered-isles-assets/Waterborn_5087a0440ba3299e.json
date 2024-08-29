@@ -1,0 +1,61 @@
+{
+  "type": "asset",
+  "_id": "5087a0440ba3299e",
+  "folder": "e5df7144ec089f12",
+  "name": "Waterborn",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>You have an affinity for the depths. You can spend extended time underwater without need of a breath, and have 5 air. When you exert yourself to make a move underwater, you may suffer -1 air and add +1. When your air is 0, you must @Compendium[foundry-ironsworn.starforgedmoves.905205c073b09eac]{Endure Harm} (-2) before making any move involving physical action. When you return to the surface or an air-filled environment, set your air to 5.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per foray into underwater environs, you may trade air for momentum, or vice-versa. Suffer -2 air and take +2 momentum, or @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-2) and take +2 air.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you make a move to maneuver while diving or swimming, take +1 momentum on a strong hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Air",
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/waterborn",
+      "dsid": "asset:sundered_isles/path/waterborn"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!5087a0440ba3299e"
+}

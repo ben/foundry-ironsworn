@@ -1,0 +1,183 @@
+{
+  "_id": "845f91fcab961f20",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Monstrosity/Primary_Form",
+      "category": "Ironsworn/Oracles/Monstrosity",
+      "dsid": "oracle_rollable:delve/monstrosity/primary_form"
+    }
+  },
+  "name": "Primary Form",
+  "description": "<p>Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and @Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} (using the pick two procedure) to confirm your choice. Or just take both!</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Beast / mammal",
+      "_key": "!tables.results!845f91fcab961f20.2a7a9510322c4c24",
+      "_id": "2a7a9510322c4c24"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Humanoid",
+      "_key": "!tables.results!845f91fcab961f20.615eae832b088142",
+      "_id": "615eae832b088142"
+    },
+    {
+      "range": [
+        26,
+        31
+      ],
+      "text": "Bird",
+      "_key": "!tables.results!845f91fcab961f20.4bee62578aa820ce",
+      "_id": "4bee62578aa820ce"
+    },
+    {
+      "range": [
+        32,
+        37
+      ],
+      "text": "Spider",
+      "_key": "!tables.results!845f91fcab961f20.4146204411e7f45a",
+      "_id": "4146204411e7f45a"
+    },
+    {
+      "range": [
+        38,
+        43
+      ],
+      "text": "Snake",
+      "_key": "!tables.results!845f91fcab961f20.9c47740155cd9371",
+      "_id": "9c47740155cd9371"
+    },
+    {
+      "range": [
+        44,
+        49
+      ],
+      "text": "Worm / slug",
+      "_key": "!tables.results!845f91fcab961f20.b64f921abea50972",
+      "_id": "b64f921abea50972"
+    },
+    {
+      "range": [
+        50,
+        55
+      ],
+      "text": "Lizard",
+      "_key": "!tables.results!845f91fcab961f20.b826d16a80b940b5",
+      "_id": "b826d16a80b940b5"
+    },
+    {
+      "range": [
+        56,
+        61
+      ],
+      "text": "Insect",
+      "_key": "!tables.results!845f91fcab961f20.7d165786cb0ae91d",
+      "_id": "7d165786cb0ae91d"
+    },
+    {
+      "range": [
+        62,
+        66
+      ],
+      "text": "Amorphous",
+      "_key": "!tables.results!845f91fcab961f20.75ee368adc029c5a",
+      "_id": "75ee368adc029c5a"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Crustacean",
+      "_key": "!tables.results!845f91fcab961f20.fa9bd6cf79904049",
+      "_id": "fa9bd6cf79904049"
+    },
+    {
+      "range": [
+        70,
+        71
+      ],
+      "text": "Fish",
+      "_key": "!tables.results!845f91fcab961f20.80f35b8e6a961532",
+      "_id": "80f35b8e6a961532"
+    },
+    {
+      "range": [
+        72,
+        73
+      ],
+      "text": "Octopoid",
+      "_key": "!tables.results!845f91fcab961f20.b04536466610a7f4",
+      "_id": "b04536466610a7f4"
+    },
+    {
+      "range": [
+        74,
+        75
+      ],
+      "text": "Amphibian",
+      "_key": "!tables.results!845f91fcab961f20.ca0a6b691b11fc0f",
+      "_id": "ca0a6b691b11fc0f"
+    },
+    {
+      "range": [
+        76,
+        77
+      ],
+      "text": "Plant",
+      "_key": "!tables.results!845f91fcab961f20.6498e97871bc3090",
+      "_id": "6498e97871bc3090"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Incorporeal",
+      "_key": "!tables.results!845f91fcab961f20.fb06f34e363d8402",
+      "_id": "fb06f34e363d8402"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Mineral",
+      "_key": "!tables.results!845f91fcab961f20.9eb321d043a47d35",
+      "_id": "9eb321d043a47d35"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Elemental",
+      "_key": "!tables.results!845f91fcab961f20.399c88b03f13c1cc",
+      "_id": "399c88b03f13c1cc"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "text": "Hybrid (roll twice)",
+      "_key": "!tables.results!845f91fcab961f20.957b3a605b59bdcb",
+      "_id": "957b3a605b59bdcb"
+    }
+  ],
+  "folder": "feaab449f5044ca1",
+  "sort": 214,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!845f91fcab961f20"
+}

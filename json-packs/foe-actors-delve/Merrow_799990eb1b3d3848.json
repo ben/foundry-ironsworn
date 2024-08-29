@@ -1,0 +1,53 @@
+{
+  "name": "Merrow",
+  "img": "icons/creatures/fish/fish-man-eye-green.webp",
+  "type": "foe",
+  "_id": "799990eb1b3d3848",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Merrow",
+    "texture": {
+      "src": "icons/creatures/fish/fish-man-eye-green.webp"
+    }
+  },
+  "folder": "8f12286764fe5a63",
+  "items": [
+    {
+      "_id": "902408bb2ca646e9",
+      "type": "progress",
+      "name": "Merrow",
+      "img": "icons/creatures/fish/fish-man-eye-green.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Gray scaled skin</p>\n<p class=\"nogrow\">Bulbous eyes</p>\n<p class=\"nogrow\">Webbed claws</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Blood for the deep gods</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Swarm and overwhelm</p>\n<p class=\"nogrow\">Entangle in nets</p>\n<p class=\"nogrow\">Drag back to the depths</p>\n</div>\n</div>\n\n<p>These semiaquatic beings dwell within coastal waters, sea caves, and saltwater marshes. They are fierce protectors of their realm, driven by a zealous devotion to their gods. Their eyes are large and glossy black. They have hunched forms and long limbs, and move with deadly grace in watery environments. Their language is a cacophony of clicks, low grunts, and whistles.</p>\n<p>They war against the @Compendium[foundry-ironsworn.ironsworndelvefoes.9b63a301766b0734]{atanya} clans, rarely interact with other firstborn, and are openly hostile to Ironlanders. They emerge from their sunken lairs to swarm over ships or coastal settlements, dragging their victims into the depths. As night falls, the people of seaside villages light their torches, ward their gates, and keep an eye to the waters.</p>\n\n<blockquote>Quest Starter: <p>Sailors speak in hushed tones of a large merrow, its skin translucent white, wielding a wicked stone blade. It strikes out from a hidden @Compendium[foundry-ironsworn.ironsworndelvethemes.58ffd0a1f84094d0]{Fortified} @Compendium[foundry-ironsworn.ironsworndelvedomains.40439d5f28e56495]{Sea Cave} to raid indiscriminately. This merrow and its clan take no prisoners, instead performing bloodletting rituals aboard the ships they attack. What is the origin of this leader? What is the purpose of these violent rituals?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "8f12286764fe5a63",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/firstborn/merrow"
+        }
+      },
+      "_key": "!actors.items!799990eb1b3d3848.902408bb2ca646e9"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/firstborn/merrow"
+    }
+  },
+  "_key": "!actors!799990eb1b3d3848"
+}

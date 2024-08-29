@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "64cc9fd2fe517619",
+  "folder": "e5df7144ec089f12",
+  "name": "Cutthroat",
+  "system": {
+    "requirement": "<p>If you wield knives…</p>",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike}, add +1. When you make a move using a knife not as a weapon to attack or threaten, but as a tool to cut an object, gain leverage, or grab hold, add +1 and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per situation, when you make a move to ambush an unaware foe, or perform a feint or misdirection to draw someone off their guard, reroll any dice. If in a fight, mark progress on a hit. When you hold an ambushed foe at knifepoint and make a move aided by the prospect of violence, add +1.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.3129f4caa4754caf]{Take Decisive Action} without mercy or restraint, you may reroll one challenge die. If you do, @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress} (-2). If you then choose to resist the stress, roll +iron instead of +spirit or +heart.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/cutthroat",
+      "dsid": "asset:sundered_isles/path/cutthroat"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!64cc9fd2fe517619"
+}

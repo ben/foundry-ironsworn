@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Operations/Opportunity",
-      "category": "Starforged/Oracles/Derelicts/Operations"
+      "category": "Starforged/Oracles/Derelicts/Operations",
+      "dsid": "oracle_rollable:starforged/derelict/operations/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Cache of weapons or ammo",
-      "_id": "698540a3c35849db",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3d33a1c9547a4c28.698540a3c35849db"
+      "_key": "!tables.results!3d33a1c9547a4c28.aa4fc7225b23874e",
+      "_id": "aa4fc7225b23874e"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Helpful AI",
-      "_id": "0b0f866229e48bb8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3d33a1c9547a4c28.0b0f866229e48bb8"
+      "_key": "!tables.results!3d33a1c9547a4c28.ead26c62df1faef1",
+      "_id": "ead26c62df1faef1"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Keycard or access code",
-      "_id": "ffbe8c3d0325fde8",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3d33a1c9547a4c28.ffbe8c3d0325fde8"
+      "_key": "!tables.results!3d33a1c9547a4c28.be9020335b1d6e7d",
+      "_id": "be9020335b1d6e7d"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Log offers insight into this site's downfall",
-      "_id": "73bc4502d0d47d4e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3d33a1c9547a4c28.73bc4502d0d47d4e"
+      "_key": "!tables.results!3d33a1c9547a4c28.e2c4d0c2c2eeaa44",
+      "_id": "e2c4d0c2c2eeaa44"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Secure area offers a moment of peace",
-      "_id": "8926c7aa981368f3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!3d33a1c9547a4c28.8926c7aa981368f3"
+      "_key": "!tables.results!3d33a1c9547a4c28.efaa745f1c3052d4",
+      "_id": "efaa745f1c3052d4"
     }
   ],
   "folder": "44fbf1f6c622b0b2",
   "sort": 357,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!3d33a1c9547a4c28"
 }

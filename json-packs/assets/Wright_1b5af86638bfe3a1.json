@@ -52,17 +52,16 @@
   "effects": [],
   "sort": 0,
   "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
+    "default": 0
   },
-  "flags": {},
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Assets/Path/Wright",
+      "dsid": "asset:classic/path/wright"
+    }
+  },
   "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021198,
-    "modifiedTime": 1695949021198,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+    "systemId": "foundry-ironsworn"
   },
   "_key": "!items!1b5af86638bfe3a1"
 }

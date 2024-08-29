@@ -1,0 +1,200 @@
+{
+  "_id": "d9ccce4a55cf1ba3",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Desert",
+      "dsid": "oracle_rollable:starforged/planet/desert/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Abalos",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.d8b9bda21fb92414",
+      "_id": "d8b9bda21fb92414"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Audun",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.b7a057e994682aae",
+      "_id": "b7a057e994682aae"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Bishop",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.4761fe89dddef96c",
+      "_id": "4761fe89dddef96c"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Desolation",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.8447eb4531417caf",
+      "_id": "8447eb4531417caf"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Dykuma",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.a1078727d5056849",
+      "_id": "a1078727d5056849"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Fallow",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.78b7e89524c9c0a3",
+      "_id": "78b7e89524c9c0a3"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Helios",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.1c01bcd37391e21e",
+      "_id": "1c01bcd37391e21e"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Mirage",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.3f00a7963dd26dde",
+      "_id": "3f00a7963dd26dde"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Morricone",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.c3b17e611c2f4bdf",
+      "_id": "c3b17e611c2f4bdf"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Nux",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.8ff5d6c538ab7e47",
+      "_id": "8ff5d6c538ab7e47"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Ordos",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.0256497898861a93",
+      "_id": "0256497898861a93"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Petra",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.a848613893e143bf",
+      "_id": "a848613893e143bf"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Pyla",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.45bfe25912225aa7",
+      "_id": "45bfe25912225aa7"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Sabulo",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.b39d8c3d6e1a4953",
+      "_id": "b39d8c3d6e1a4953"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Saffron",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.f4debb1cd8fd3df3",
+      "_id": "f4debb1cd8fd3df3"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Sirocco",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.a785e4fccd026b43",
+      "_id": "a785e4fccd026b43"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Sulis",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.3db65b331c9d7790",
+      "_id": "3db65b331c9d7790"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Torrid",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.c8db71a9d85940e0",
+      "_id": "c8db71a9d85940e0"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Umber",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.9e0d65f1bfc74d5c",
+      "_id": "9e0d65f1bfc74d5c"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Vermillion",
+      "_key": "!tables.results!d9ccce4a55cf1ba3.00d0e6b49f08a89c",
+      "_id": "00d0e6b49f08a89c"
+    }
+  ],
+  "folder": "ba1bbe7871538aad",
+  "sort": 308,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d9ccce4a55cf1ba3"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Moves/Begin_a_Session",
-      "category": "Starforged/Oracles/Moves"
+      "category": "Starforged/Moves/Session",
+      "dsid": "move.oracle_rollable:starforged/session/begin_a_session.begin_a_session"
     }
   },
   "name": "Begin a Session",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Flashback reveals an aspect of your background or nature",
-      "_id": "acfb5126949b09c0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.acfb5126949b09c0"
+      "_key": "!tables.results!b47a8af1b3a55f4f.5302fa32f6b54419",
+      "_id": "5302fa32f6b54419"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         20
       ],
       "text": "Flashback reveals an aspect of another character, place, or faction",
-      "_id": "948f2908b272e89c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.948f2908b272e89c"
+      "_key": "!tables.results!b47a8af1b3a55f4f.c9d33abb9d996498",
+      "_id": "c9d33abb9d996498"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         30
       ],
       "text": "Influential character or faction is introduced or given new detail",
-      "_id": "2a9aca5ab36f98e6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.2a9aca5ab36f98e6"
+      "_key": "!tables.results!b47a8af1b3a55f4f.f609c53b8404fa68",
+      "_id": "f609c53b8404fa68"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         40
       ],
       "text": "Seemingly unrelated situations are shown to be connected",
-      "_id": "7ca1c73f47981a90",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.7ca1c73f47981a90"
+      "_key": "!tables.results!b47a8af1b3a55f4f.8baa518197f031bb",
+      "_id": "8baa518197f031bb"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         50
       ],
       "text": "External factors create new danger, urgency, or importance for a quest",
-      "_id": "f9d3b7ca1636c68f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.f9d3b7ca1636c68f"
+      "_key": "!tables.results!b47a8af1b3a55f4f.54e737f2fda0bf64",
+      "_id": "54e737f2fda0bf64"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         60
       ],
       "text": "Important character is put in danger or suffers a misadventure",
-      "_id": "22bc41b9f21743cb",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.22bc41b9f21743cb"
+      "_key": "!tables.results!b47a8af1b3a55f4f.bf40e8b457d00903",
+      "_id": "bf40e8b457d00903"
     },
     {
       "range": [
@@ -102,13 +73,8 @@
         70
       ],
       "text": "Key location is made unsafe or becomes mired in conflict",
-      "_id": "5c0a064a3c6cdd5b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.5c0a064a3c6cdd5b"
+      "_key": "!tables.results!b47a8af1b3a55f4f.5e115e866a6d0722",
+      "_id": "5e115e866a6d0722"
     },
     {
       "range": [
@@ -116,13 +82,8 @@
         80
       ],
       "text": "Unexpected return of an enemy or threat",
-      "_id": "487459da20b28d46",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.487459da20b28d46"
+      "_key": "!tables.results!b47a8af1b3a55f4f.39ff6079a5277648",
+      "_id": "39ff6079a5277648"
     },
     {
       "range": [
@@ -130,13 +91,8 @@
         90
       ],
       "text": "Peril lies ahead or lurks just out of view",
-      "_id": "2c10a5562c58a923",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.2c10a5562c58a923"
+      "_key": "!tables.results!b47a8af1b3a55f4f.75fd8c714bf0edea",
+      "_id": "75fd8c714bf0edea"
     },
     {
       "range": [
@@ -144,29 +100,12 @@
         100
       ],
       "text": "Unforeseen aid is on the way or within reach",
-      "_id": "7c185983861bc937",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!b47a8af1b3a55f4f.7c185983861bc937"
+      "_key": "!tables.results!b47a8af1b3a55f4f.5623378f95e55527",
+      "_id": "5623378f95e55527"
     }
   ],
-  "folder": "adcc4cbc5484a254",
-  "sort": 141,
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!b47a8af1b3a55f4f"
 }

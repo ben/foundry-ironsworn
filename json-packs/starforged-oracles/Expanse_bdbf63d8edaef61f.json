@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Desert/Settlements/Expanse",
-      "category": "Starforged/Oracles/Planets/Desert"
+      "category": "Starforged/Oracles/Planets/Desert/Settlements",
+      "dsid": "oracle_rollable:starforged/planet/desert/settlements/expanse"
     }
   },
   "name": "Expanse",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         90
       ],
       "text": "None",
-      "_id": "29ce41403ac79c34",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bdbf63d8edaef61f.29ce41403ac79c34"
+      "_key": "!tables.results!bdbf63d8edaef61f.f854e5678dfc7879",
+      "_id": "f854e5678dfc7879"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         96
       ],
       "text": "Orbital settlement",
-      "_id": "fad67eee0d16599b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bdbf63d8edaef61f.fad67eee0d16599b"
+      "_key": "!tables.results!bdbf63d8edaef61f.fb06bc222f9c800c",
+      "_id": "fb06bc222f9c800c"
     },
     {
       "range": [
@@ -46,29 +37,12 @@
         100
       ],
       "text": "Planetside settlement",
-      "_id": "06ef138ff01b81e4",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!bdbf63d8edaef61f.06ef138ff01b81e4"
+      "_key": "!tables.results!bdbf63d8edaef61f.6387dcd75ace9349",
+      "_id": "6387dcd75ace9349"
     }
   ],
   "folder": "2f700e3e6f50bf89",
-  "sort": 308,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!bdbf63d8edaef61f"
 }

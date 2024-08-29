@@ -1,0 +1,111 @@
+{
+  "_id": "cc972526537838cb",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Site_Name/Place/Cavern",
+      "category": "oracle_collection:delve/site_name/place",
+      "dsid": "oracle_rollable:delve/site_name/place/cavern"
+    }
+  },
+  "name": "Cavern",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Abyss",
+      "_key": "!tables.results!cc972526537838cb.120493f11a36b6de",
+      "_id": "120493f11a36b6de"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Caverns",
+      "_key": "!tables.results!cc972526537838cb.85e867fbdc44084a",
+      "_id": "85e867fbdc44084a"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Caves",
+      "_key": "!tables.results!cc972526537838cb.ff092f96b563fd44",
+      "_id": "ff092f96b563fd44"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Chasm",
+      "_key": "!tables.results!cc972526537838cb.407e3f788b3fb1ed",
+      "_id": "407e3f788b3fb1ed"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Depths",
+      "_key": "!tables.results!cc972526537838cb.582ec72d7bb3a4e5",
+      "_id": "582ec72d7bb3a4e5"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Hollow",
+      "_key": "!tables.results!cc972526537838cb.5c8fbd472b142eab",
+      "_id": "5c8fbd472b142eab"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Lair",
+      "_key": "!tables.results!cc972526537838cb.e2b880c6aadd4481",
+      "_id": "e2b880c6aadd4481"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Rift",
+      "_key": "!tables.results!cc972526537838cb.9e1c2e2ad84c84c3",
+      "_id": "9e1c2e2ad84c84c3"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Tunnels",
+      "_key": "!tables.results!cc972526537838cb.466bcde01067b2b2",
+      "_id": "466bcde01067b2b2"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Warren",
+      "_key": "!tables.results!cc972526537838cb.31fbf735bf2c9bb5",
+      "_id": "31fbf735bf2c9bb5"
+    }
+  ],
+  "folder": "796f428507d33b43",
+  "sort": 210,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cc972526537838cb"
+}

@@ -4,7 +4,7 @@
   "name": "Ghost",
   "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
   "system": {
-    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n    <p class=\"nogrow\">Restless spirits</p>\n    <p class=\"nogrow\">Manifest through unsettling disturbances</p>\n    <p class=\"nogrow\">Appear as they did in life</p>\n    <p class=\"nogrow\">Ravages of a violent death</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n    <p class=\"nogrow\">Haunt the living</p>\n    <p class=\"nogrow\">Find rest</p>\n  </div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n    <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n    <p class=\"nogrow\">Lure and isolate with subtle visions or sounds</p>\n    <p class=\"nogrow\">Reveal horrifying visions</p>\n    <p class=\"nogrow\">Unleash chaos</p>\n  </div>\n</div>\n\n<p>Ghosts are undead spirits held in the boundary of life and death by forces beyond our knowing. These restless phantasms may be tied to a location, an object, or even a person.</p>\n<p>Their form and nature varies. Some ghosts seek absolution. Others want revenge. Many are so sundered by a traumatic or unjust death that only a tormented, destructive shell of their former selves remain.</p>\n<p>Ghosts might manifest in a physical form or assault with physical force, but they cannot be defeated through violence. To vanquish a ghost, you must instead find the key to unshackle them from our reality.</p>\n\n<blockquote>Quest Starter: <p>A ghost haunts your starship. What is the nature of this spirit, and what quest must you undertake to put it to rest?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.0cfca448a633f1fe]{Ghost Ship}</li>\n</ul>",
+    "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Restless spirits</p>\n<p class=\"nogrow\">Manifest through unsettling disturbances</p>\n<p class=\"nogrow\">Appear as they did in life</p>\n<p class=\"nogrow\">Ravages of a violent death</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Haunt the living</p>\n<p class=\"nogrow\">Find rest</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Lure and isolate with subtle visions or sounds</p>\n<p class=\"nogrow\">Reveal horrifying visions</p>\n<p class=\"nogrow\">Unleash chaos</p>\n</div>\n</div>\n\n<p>Ghosts are undead spirits held in the boundary of life and death by forces beyond our knowing. These restless phantasms may be tied to a location, an object, or even a person.</p>\n<p>Their form and nature varies. Some ghosts seek absolution. Others want revenge. Many are so sundered by a traumatic or unjust death that only a tormented, destructive shell of their former selves remain.</p>\n<p>Ghosts might manifest in a physical form or assault with physical force, but they cannot be defeated through violence. To vanquish a ghost, you must instead find the key to unshackle them from our reality.</p>\n\n<blockquote>Quest Starter: <p>A ghost haunts your starship. What is the nature of this spirit, and what quest must you undertake to put it to rest?</p></blockquote>\n\n<h2>Variants</h2>\n<ul>\n  <li>@Compendium[foundry-ironsworn.starforgedencounters.0cfca448a633f1fe]{Ghost ship}</li>\n</ul>",
     "rank": 3,
     "current": 0,
     "completed": false,
@@ -16,20 +16,12 @@
     "clockMax": 4
   },
   "effects": [],
-  "folder": null,
+  "folder": "9a33d248aee84d89",
   "sort": 0,
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021144,
-    "modifiedTime": 1695949021144,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:starforged/sample_npcs/ghost"
+    }
   },
   "_key": "!items!47aae0ba444eb436"
 }

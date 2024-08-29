@@ -1,0 +1,254 @@
+{
+  "_id": "344d4e6531c3906d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/island",
+      "dsid": "oracle_rollable:sundered_isles/island/coastline_aspects"
+    }
+  },
+  "name": "Coastline Aspects",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Broad bay protected by offshore islet",
+      "_key": "!tables.results!344d4e6531c3906d.1bdda13a401933d0",
+      "_id": "1bdda13a401933d0"
+    },
+    {
+      "range": [
+        3,
+        8
+      ],
+      "text": "Channel separates a neighboring island",
+      "_key": "!tables.results!344d4e6531c3906d.6f1d4e320656e34e",
+      "_id": "6f1d4e320656e34e"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Dramatic columns of volcanic rock",
+      "_key": "!tables.results!344d4e6531c3906d.1f6df286ea6e47a0",
+      "_id": "1f6df286ea6e47a0"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Deep harbor within artificial breakwater",
+      "_key": "!tables.results!344d4e6531c3906d.28a1982cf6de690e",
+      "_id": "28a1982cf6de690e"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Expansive, gently-sloped beach",
+      "_key": "!tables.results!344d4e6531c3906d.b61ccda2be6544fc",
+      "_id": "b61ccda2be6544fc"
+    },
+    {
+      "range": [
+        17,
+        26
+      ],
+      "text": "Exposed mudflats",
+      "_key": "!tables.results!344d4e6531c3906d.d725659d517b730c",
+      "_id": "d725659d517b730c"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Fringing reef and lagoon",
+      "_key": "!tables.results!344d4e6531c3906d.dd776e486cdf4e6f",
+      "_id": "dd776e486cdf4e6f"
+    },
+    {
+      "range": [
+        29,
+        34
+      ],
+      "text": "Inundated by tidal flooding",
+      "_key": "!tables.results!344d4e6531c3906d.1c0e4626b29f6af5",
+      "_id": "1c0e4626b29f6af5"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Jagged outcroppings",
+      "_key": "!tables.results!344d4e6531c3906d.6304d81f0a0dfd9d",
+      "_id": "6304d81f0a0dfd9d"
+    },
+    {
+      "range": [
+        39,
+        42
+      ],
+      "text": "Marshy sloughs",
+      "_key": "!tables.results!344d4e6531c3906d.1631f37251648742",
+      "_id": "1631f37251648742"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Narrow inlet into sheltered cove",
+      "_key": "!tables.results!344d4e6531c3906d.59b4e17472feda1d",
+      "_id": "59b4e17472feda1d"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Numerous small beaches",
+      "_key": "!tables.results!344d4e6531c3906d.98c88783df8addf3",
+      "_id": "98c88783df8addf3"
+    },
+    {
+      "range": [
+        47,
+        50
+      ],
+      "text": "Remains of old seawall",
+      "_key": "!tables.results!344d4e6531c3906d.d6f08a7a0e7cc0d2",
+      "_id": "d6f08a7a0e7cc0d2"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "River estuary",
+      "_key": "!tables.results!344d4e6531c3906d.4d4053933dc4aae8",
+      "_id": "4d4053933dc4aae8"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Rocky ledges beneath stone bluffs",
+      "_key": "!tables.results!344d4e6531c3906d.0211736057e325ca",
+      "_id": "0211736057e325ca"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Rocky promontory extends far out to sea",
+      "_key": "!tables.results!344d4e6531c3906d.f9c09225b41e6676",
+      "_id": "f9c09225b41e6676"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Rocky shoals within shallow waters",
+      "_key": "!tables.results!344d4e6531c3906d.d9b31df5558a25e7",
+      "_id": "d9b31df5558a25e7"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Rugged boulder beaches",
+      "_key": "!tables.results!344d4e6531c3906d.79ac0e31a6f0b612",
+      "_id": "79ac0e31a6f0b612"
+    },
+    {
+      "range": [
+        67,
+        72
+      ],
+      "text": "Sandy beaches and dunes",
+      "_key": "!tables.results!344d4e6531c3906d.4e7c8b8457454b38",
+      "_id": "4e7c8b8457454b38"
+    },
+    {
+      "range": [
+        73,
+        78
+      ],
+      "text": "Sea caves",
+      "_key": "!tables.results!344d4e6531c3906d.b0050d3166a1bc88",
+      "_id": "b0050d3166a1bc88"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Sea stacks",
+      "_key": "!tables.results!344d4e6531c3906d.6334d67cfcd384c5",
+      "_id": "6334d67cfcd384c5"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Shallow waters sheltered by sandbars",
+      "_key": "!tables.results!344d4e6531c3906d.68107be4f59ea0af",
+      "_id": "68107be4f59ea0af"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Steep-sided gorge",
+      "_key": "!tables.results!344d4e6531c3906d.afb7c6f70fe9f980",
+      "_id": "afb7c6f70fe9f980"
+    },
+    {
+      "range": [
+        89,
+        94
+      ],
+      "text": "Swampy mangrove thickets",
+      "_key": "!tables.results!344d4e6531c3906d.de79c8fb47743230",
+      "_id": "de79c8fb47743230"
+    },
+    {
+      "range": [
+        95,
+        98
+      ],
+      "text": "Tall headlands surround pocket beach",
+      "_key": "!tables.results!344d4e6531c3906d.7426d7f0f54fabe5",
+      "_id": "7426d7f0f54fabe5"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Towering cliffs rise directly from the sea",
+      "_key": "!tables.results!344d4e6531c3906d.24bee50ec90e3386",
+      "_id": "24bee50ec90e3386"
+    }
+  ],
+  "folder": "775da3a96cc7c668",
+  "sort": 144,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!344d4e6531c3906d"
+}

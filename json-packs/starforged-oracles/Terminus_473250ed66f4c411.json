@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Settlements/Population/Terminus",
-      "category": "Starforged/Oracles/Settlements"
+      "category": "Starforged/Oracles/Settlements/Population",
+      "dsid": "oracle_rollable:starforged/settlement/population/terminus"
     }
   },
   "name": "Terminus",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         10
       ],
       "text": "Few",
-      "_id": "62b1c57dfa109bb5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!473250ed66f4c411.62b1c57dfa109bb5"
+      "_key": "!tables.results!473250ed66f4c411.72576016797a706c",
+      "_id": "72576016797a706c"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         25
       ],
       "text": "Dozens",
-      "_id": "68307f6cbc1c5a11",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!473250ed66f4c411.68307f6cbc1c5a11"
+      "_key": "!tables.results!473250ed66f4c411.2b8546c2b646230a",
+      "_id": "2b8546c2b646230a"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         55
       ],
       "text": "Hundreds",
-      "_id": "9d311b069cb3cee6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!473250ed66f4c411.9d311b069cb3cee6"
+      "_key": "!tables.results!473250ed66f4c411.2f33ecfde744c879",
+      "_id": "2f33ecfde744c879"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         85
       ],
       "text": "Thousands",
-      "_id": "411062a99fd559e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!473250ed66f4c411.411062a99fd559e5"
+      "_key": "!tables.results!473250ed66f4c411.0cfc2877c6e5ff19",
+      "_id": "0cfc2877c6e5ff19"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Tens of thousands",
-      "_id": "7019ce68fd523fe6",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!473250ed66f4c411.7019ce68fd523fe6"
+      "_key": "!tables.results!473250ed66f4c411.28e9ab7c0f6a3762",
+      "_id": "28e9ab7c0f6a3762"
     }
   ],
   "folder": "e1aa8a2704d1412a",
-  "sort": 322,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!473250ed66f4c411"
 }

@@ -1,0 +1,15 @@
+{
+  "name": "Faction Name: Themes",
+  "description": "",
+  "type": "RollTable",
+  "_id": "1aa3b728667629f3",
+  "sort": 184,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/faction/name/themes"
+    }
+  },
+  "folder": "4c033d15ef6dc29f",
+  "sorting": "a",
+  "_key": "!folders!1aa3b728667629f3"
+}

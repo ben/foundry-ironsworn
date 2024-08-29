@@ -1,0 +1,53 @@
+{
+  "name": "Zealot",
+  "img": "icons/environment/people/cleric-grey.webp",
+  "type": "foe",
+  "_id": "ff3c2338d6b75df7",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Zealot",
+    "texture": {
+      "src": "icons/environment/people/cleric-grey.webp"
+    }
+  },
+  "folder": "4af1a4b568623aa9",
+  "items": [
+    {
+      "_id": "66f15ed2a6c50047",
+      "type": "progress",
+      "name": "Zealot",
+      "img": "icons/environment/people/cleric-grey.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Sickly pallor</p>\n<p class=\"nogrow\">Distant eyes</p>\n<p class=\"nogrow\">Marks of their faith</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Serve the faith</p>\n<p class=\"nogrow\">Bring others into the fold</p>\n<p class=\"nogrow\">Destroy those who oppose them</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Entice with trickery or false promises</p>\n<p class=\"nogrow\">Use the powers of the faith</p>\n<p class=\"nogrow\">Stand together to overcome nonbelievers</p>\n</div>\n</div>\n\n<p>Zealots are those we have lost to their faith. Friends and loved ones are discarded or forgotten. Communities are left behind. Possessions are discarded or turned over to the needs of the sect. They live for one purpose, and all other vows are forsaken. This single-minded devotion changes them, sometimes irrevocably.</p>\n<p>Some zealots worship ancient, forgotten gods, and seek to return them to their former horrible glory. Others serve new religious movements, caught up in promises of a better life. Some worship mortal leaders as if they were gods—perhaps even believing them to be the avatar of divinity.</p>\n<p>This sense of belonging, of purpose, can be a powerful lure in this perilous land.</p>\n\n<blockquote>Quest Starter: <p>You have lost someone to an emerging sect which seeks to unleash a forgotten power or entity. They dwell within a @Compendium[foundry-ironsworn.ironsworndelvethemes.8555753de47119a1]{Hallowed} @Compendium[foundry-ironsworn.ironsworndelvedomains.95455d1a10c32b53]{Underkeep}. What is the nature of their belief? Will you attempt to save this person from their faith, or see them destroyed along with it?</p></blockquote>",
+        "rank": 1,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "4af1a4b568623aa9",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/ironlanders/zealot"
+        }
+      },
+      "_key": "!actors.items!ff3c2338d6b75df7.66f15ed2a6c50047"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/ironlanders/zealot"
+    }
+  },
+  "_key": "!actors!ff3c2338d6b75df7"
+}

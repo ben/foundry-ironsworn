@@ -1,0 +1,15 @@
+{
+  "name": "Seafaring Waypoints",
+  "description": "",
+  "type": "RollTable",
+  "_id": "06105a35056c407b",
+  "sort": 120,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/seafaring/waypoints"
+    }
+  },
+  "folder": "8d239f77c6ee1f9d",
+  "sorting": "a",
+  "_key": "!folders!06105a35056c407b"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Firestorm raiding team",
+  "img": "icons/equipment/head/helm-barbute-white.webp",
+  "type": "foe",
+  "_id": "32155de692a1bb7a",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Firestorm raiding team",
+    "texture": {
+      "src": "icons/equipment/head/helm-barbute-white.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "3b7a6a60d68fbde2",
+      "type": "progress",
+      "name": "Firestorm raiding team",
+      "img": "icons/equipment/head/helm-barbute-white.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Raiders with scarred flesh and polished armor</p>\n<p class=\"nogrow\">Powered exosuits and distinctive helms</p>\n<p class=\"nogrow\">Roaring jetpacks and fluttering banners</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Conquer the Forge</p>\n<p class=\"nogrow\">Reap the resources owed them</p>\n<p class=\"nogrow\">Venerate their leaders, creed, or gods</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Strike sudden and swift</p>\n<p class=\"nogrow\">Attack flanks and weak points from above</p>\n<p class=\"nogrow\">Cull the weak, recruit the strong</p>\n</div>\n</div>\n\n<p>Feared throughout the Forge for their brutal tactics and destructive weaponry, coordinated teams of firestorm troopers descend upon settlements and stations in powered exosuits, flying the banners of their orders amid the smoke and flames of the devastation.</p>\n\n<blockquote>Quest Starter: <p>Despite conflicting creeds, several firestorm clans unite beneath the banner of Torren the Purifier to invade the Terminus. Their next target is a world at the nexus of trade lanes. What is this planet, and why is it important to you?</p></blockquote>",
+        "rank": 4,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc.variant:starforged/sample_npcs/firestorm_trooper.firestorm_raiding_team"
+        }
+      },
+      "_key": "!actors.items!32155de692a1bb7a.3b7a6a60d68fbde2"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/firestorm_trooper.firestorm_raiding_team"
+    }
+  },
+  "_key": "!actors!32155de692a1bb7a"
+}

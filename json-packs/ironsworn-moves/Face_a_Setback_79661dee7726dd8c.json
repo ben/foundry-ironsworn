@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Face a Setback",
   "img": "icons/dice/d10black.svg",
+  "folder": "a6b19a943ff830d6",
   "system": {
     "dfid": "Ironsworn/Moves/Suffer/Face_a_Setback",
     "Category": "Ironsworn/Moves/Suffer",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When **your momentum is at its minimum** (-6), and you suffer additional -momentum, choose one.\n\n  * Exchange each additional -momentum for any combination of -health, -spirit, or -supply as appropriate to the circumstances.\n  * Envision an event or discovery (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional -momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).",
+    "Text": "When __your momentum is at its minimum__ (-6), and you suffer additional -momentum, choose one.\n\n  * Exchange each additional -momentum for any combination of -health, -spirit, or -supply as appropriate to the circumstances.\n  * Envision an event or discovery (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional _momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).",
     "Trigger": {
       "Text": "When your momentum is at its minimum (-6), and you suffer additional -momentum...",
       "Options": []
@@ -16,41 +17,28 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
+      "Date": "2019-06-05",
       "Page": 97
     },
     "Suggestions": {},
@@ -59,20 +47,11 @@
     }
   },
   "sort": 97,
-  "folder": "a6b19a943ff830d6",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021269,
-    "modifiedTime": 1695949021269,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Moves/Suffer/Face_a_Setback",
+      "dsid": "move:classic/suffer/face_a_setback"
+    }
   },
   "_key": "!items!79661dee7726dd8c"
 }

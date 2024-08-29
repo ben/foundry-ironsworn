@@ -1,0 +1,53 @@
+{
+  "name": "Troll",
+  "img": "icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp",
+  "type": "foe",
+  "_id": "103d936d365ae6bd",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Troll",
+    "texture": {
+      "src": "icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp"
+    }
+  },
+  "folder": "d4239e681a659e2d",
+  "items": [
+    {
+      "_id": "5bc427e78e282c06",
+      "type": "progress",
+      "name": "Troll",
+      "img": "icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Long limbs</p>\n<p class=\"nogrow\">Sunken, beady eyes</p>\n<p class=\"nogrow\">Translucent skin camouflaged to the environment</p>\n<p class=\"nogrow\">Keen sense of smell</p>\n<p class=\"nogrow\">Speaks in gibberish</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Find pretty things</p>\n<p class=\"nogrow\">Keep it secret</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Be sneaky</p>\n<p class=\"nogrow\">Bite and claw</p>\n<p class=\"nogrow\">Run and hide</p>\n</div>\n</div>\n\n<p>Trolls mostly live in the Flooded Land, but it’s not unusual to encounter one in the Hinterlands or even in the southern reaches of the Havens. They are solitary creatures, wary of contact with Ironlanders but likely to attack if scared or provoked.</p>\n<p>They move with their back hunched, often skulking on all four gangly limbs. When they stand straight they are much taller than humans—nearly as tall as a giant. Their skin is a sickly pale gray, but they can camouflage themselves by changing it to match their environment.</p>\n<p>Trolls collect objects of all sorts, and particularly value Ironlander trinkets. They are tormented by the fear of others stealing their hoard, and are constantly seeking out new, better hiding places. The items are mostly junk to anyone but a troll, but occasionally an object of real value finds its way into the dregs.</p>\n\n<blockquote>Quest Starter: <p>The villagers tolerate the troll who lives nearby because its presence serves to dissuade a greater threat. They even donate items for its hoard, and put up with its occasional thievery. But now, the troll is missing. What is the looming threat the troll helped avert?</p></blockquote>",
+        "rank": 3,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "d4239e681a659e2d",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:classic/firstborn/troll"
+        }
+      },
+      "_key": "!actors.items!103d936d365ae6bd.5bc427e78e282c06"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:classic/firstborn/troll"
+    }
+  },
+  "_key": "!actors!103d936d365ae6bd"
+}

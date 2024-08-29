@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Creatures/Ultra-scale",
-      "category": "Starforged/Oracles/Creatures"
+      "category": "Starforged/Oracles/Creatures",
+      "dsid": "oracle_rollable:starforged/creature/ultra_scale"
     }
   },
   "name": "Ultra-scale",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         89
       ],
       "text": "Titanic (hill-sized)",
-      "_id": "0e0b9edefc72a6d0",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ef130923fb734a55.0e0b9edefc72a6d0"
+      "_key": "!tables.results!ef130923fb734a55.ba0c6c64bf1386aa",
+      "_id": "ba0c6c64bf1386aa"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         99
       ],
       "text": "Colossal (mountain-sized)",
-      "_id": "ca58b12506c2fa1a",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ef130923fb734a55.ca58b12506c2fa1a"
+      "_key": "!tables.results!ef130923fb734a55.9702adb50fd43a5c",
+      "_id": "9702adb50fd43a5c"
     },
     {
       "range": [
@@ -46,29 +37,12 @@
         100
       ],
       "text": "Vast (planet-sized)",
-      "_id": "f5614a8b5e27f80e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!ef130923fb734a55.f5614a8b5e27f80e"
+      "_key": "!tables.results!ef130923fb734a55.7959b3fba6a6901d",
+      "_id": "7959b3fba6a6901d"
     }
   ],
   "folder": "5b1e2f2fead08924",
   "sort": 336,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!ef130923fb734a55"
 }

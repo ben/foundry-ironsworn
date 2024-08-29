@@ -1,0 +1,111 @@
+{
+  "_id": "b09b699636546611",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Vaults/Interior/Opportunity",
+      "category": "Starforged/Oracles/Vaults/Interior",
+      "dsid": "oracle_rollable:starforged/precursor_vault/interior/opportunity"
+    }
+  },
+  "name": "Interior Opportunity",
+  "description": "<p>Use this table to help envision a favorable circumstance within a vault, such as when you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and are prompted to envision an opportunity.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Clue points the way to your destination or target",
+      "_key": "!tables.results!b09b699636546611.944b5fea181f19b7",
+      "_id": "944b5fea181f19b7"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Clue to a lifeform's nature or vulnerabilities",
+      "_key": "!tables.results!b09b699636546611.803f250519cbc284",
+      "_id": "803f250519cbc284"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Helpful gear left by another explorer",
+      "_key": "!tables.results!b09b699636546611.8a20082e1e7aa6de",
+      "_id": "8a20082e1e7aa6de"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Insight into the nature or history of this site",
+      "_key": "!tables.results!b09b699636546611.7b93688695bdbbb2",
+      "_id": "7b93688695bdbbb2"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Intriguing device or artifact",
+      "_key": "!tables.results!b09b699636546611.8721e3a08d001c4c",
+      "_id": "8721e3a08d001c4c"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Opening to get the drop on a foe",
+      "_key": "!tables.results!b09b699636546611.26cd5a737cc82187",
+      "_id": "26cd5a737cc82187"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Opening to outmaneuver or escape a threat or foe",
+      "_key": "!tables.results!b09b699636546611.bf97a83bcb9675bc",
+      "_id": "bf97a83bcb9675bc"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Salvageable resource",
+      "_key": "!tables.results!b09b699636546611.d2ea964953a71abb",
+      "_id": "d2ea964953a71abb"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Secure area offers a moment of peace",
+      "_key": "!tables.results!b09b699636546611.03bdd6d070c4c8d5",
+      "_id": "03bdd6d070c4c8d5"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Shortcut or less perilous path speeds your way",
+      "_key": "!tables.results!b09b699636546611.5a530c07f5eb0c0d",
+      "_id": "5a530c07f5eb0c0d"
+    }
+  ],
+  "folder": "b4d058fedc071ce9",
+  "sort": 367,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b09b699636546611"
+}

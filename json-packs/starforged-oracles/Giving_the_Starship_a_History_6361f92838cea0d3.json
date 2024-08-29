@@ -1,0 +1,129 @@
+{
+  "_id": "6361f92838cea0d3",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation/Starship_History",
+      "category": "oracle_collection:starforged/launching_your_campaign/character/starship",
+      "dsid": "oracle_rollable:starforged/launching_your_campaign/character/starship/history"
+    }
+  },
+  "name": "Giving the Starship a History",
+  "description": "<p>Envision how you obtained or earned this ship. You can come up with your own origin, or roll or pick from the table below. If you use a result from the table, take a moment to consider and elaborate on the suggestion.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        8
+      ],
+      "text": "Acquired in trade for a precious family heirloom",
+      "_key": "!tables.results!6361f92838cea0d3.92fe8538810df8db",
+      "_id": "92fe8538810df8db"
+    },
+    {
+      "range": [
+        9,
+        17
+      ],
+      "text": "Built out of repurposed scrap",
+      "_key": "!tables.results!6361f92838cea0d3.947739f4943be978",
+      "_id": "947739f4943be978"
+    },
+    {
+      "range": [
+        18,
+        25
+      ],
+      "text": "Claimed as spoils of war",
+      "_key": "!tables.results!6361f92838cea0d3.fd192f035e147aee",
+      "_id": "fd192f035e147aee"
+    },
+    {
+      "range": [
+        26,
+        34
+      ],
+      "text": "Discovered as a derelict, and patched back together",
+      "_key": "!tables.results!6361f92838cea0d3.f2683b0236029b17",
+      "_id": "f2683b0236029b17"
+    },
+    {
+      "range": [
+        35,
+        42
+      ],
+      "text": "Earned in exchange for a promise or vow",
+      "_key": "!tables.results!6361f92838cea0d3.b3ba182568345094",
+      "_id": "b3ba182568345094"
+    },
+    {
+      "range": [
+        43,
+        50
+      ],
+      "text": "Found abandoned in perfect condition",
+      "_key": "!tables.results!6361f92838cea0d3.fb6176b38a9d4efa",
+      "_id": "fb6176b38a9d4efa"
+    },
+    {
+      "range": [
+        51,
+        58
+      ],
+      "text": "Granted by an organization or community",
+      "_key": "!tables.results!6361f92838cea0d3.0be3bb62167529d6",
+      "_id": "0be3bb62167529d6"
+    },
+    {
+      "range": [
+        59,
+        67
+      ],
+      "text": "Inherited from a relative or mentor",
+      "_key": "!tables.results!6361f92838cea0d3.745f1a76e74bdf2c",
+      "_id": "745f1a76e74bdf2c"
+    },
+    {
+      "range": [
+        68,
+        75
+      ],
+      "text": "Purchased at a suspiciously cheap price",
+      "_key": "!tables.results!6361f92838cea0d3.d4244619d5353f7a",
+      "_id": "d4244619d5353f7a"
+    },
+    {
+      "range": [
+        76,
+        84
+      ],
+      "text": "Stolen from a notorious crime boss or criminal organization",
+      "_key": "!tables.results!6361f92838cea0d3.c664becb9739a835",
+      "_id": "c664becb9739a835"
+    },
+    {
+      "range": [
+        85,
+        92
+      ],
+      "text": "Taken while fleeing an attack or disaster",
+      "_key": "!tables.results!6361f92838cea0d3.3a77ee6f788f569c",
+      "_id": "3a77ee6f788f569c"
+    },
+    {
+      "range": [
+        93,
+        100
+      ],
+      "text": "Won in a bet",
+      "_key": "!tables.results!6361f92838cea0d3.0692ccdab6948c63",
+      "_id": "0692ccdab6948c63"
+    }
+  ],
+  "folder": "ac2e4aee1a0769aa",
+  "sort": 108,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6361f92838cea0d3"
+}

@@ -1,22 +1,16 @@
 {
   "name": "Community",
-  "_id": "106a2830d69bfa64",
+  "description": "",
   "type": "RollTable",
+  "_id": "106a2830d69bfa64",
   "sort": 353,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Derelicts/Community"
+      "dfid": "Starforged/Oracles/Derelicts/Community",
+      "dsid": "oracle_collection:starforged/derelict/community"
     }
   },
   "folder": "fd19a02fbd5f71e6",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!106a2830d69bfa64"
 }

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Shattered/Settlements/Outlands",
-      "category": "Starforged/Oracles/Planets/Shattered"
+      "category": "Starforged/Oracles/Planets/Shattered/Settlements",
+      "dsid": "oracle_rollable:starforged/planet/shattered/settlements/outlands"
     }
   },
   "name": "Outlands",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         85
       ],
       "text": "None",
-      "_id": "8cb53a8ad3b1efee",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0ae67f0b015e92ea.8cb53a8ad3b1efee"
+      "_key": "!tables.results!0ae67f0b015e92ea.109d5fa51939906e",
+      "_id": "109d5fa51939906e"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         96
       ],
       "text": "Orbital settlement",
-      "_id": "6c2512003565613e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0ae67f0b015e92ea.6c2512003565613e"
+      "_key": "!tables.results!0ae67f0b015e92ea.6e4a931d3cd130ea",
+      "_id": "6e4a931d3cd130ea"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         99
       ],
       "text": "Planetside settlement",
-      "_id": "07d41c77511dd6c3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0ae67f0b015e92ea.07d41c77511dd6c3"
+      "_key": "!tables.results!0ae67f0b015e92ea.1ea16aadee71c4e6",
+      "_id": "1ea16aadee71c4e6"
     },
     {
       "range": [
@@ -60,29 +46,12 @@
         100
       ],
       "text": "Multiple settlements",
-      "_id": "f814386f9a17d8f9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!0ae67f0b015e92ea.f814386f9a17d8f9"
+      "_key": "!tables.results!0ae67f0b015e92ea.c6d4adc8d38ec05a",
+      "_id": "c6d4adc8d38ec05a"
     }
   ],
   "folder": "a853dd7c20363ff3",
-  "sort": 316,
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!0ae67f0b015e92ea"
 }

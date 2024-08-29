@@ -1,0 +1,128 @@
+{
+  "_id": "144e48ed9c3d19f5",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/character",
+      "dsid": "oracle_rollable:sundered_isles/character/first_look_cursed"
+    }
+  },
+  "name": "Cursed Character First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Abyssal",
+      "_key": "!tables.results!144e48ed9c3d19f5.20b7e876ca3d2492",
+      "_id": "20b7e876ca3d2492"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Aflame",
+      "_key": "!tables.results!144e48ed9c3d19f5.8aaeb8b27979d4f0",
+      "_id": "8aaeb8b27979d4f0"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Beastly",
+      "_key": "!tables.results!144e48ed9c3d19f5.3532efc86d5fe46d",
+      "_id": "3532efc86d5fe46d"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Decaying",
+      "_key": "!tables.results!144e48ed9c3d19f5.64620774969546f9",
+      "_id": "64620774969546f9"
+    },
+    {
+      "range": [
+        31,
+        45
+      ],
+      "text": "Eerie",
+      "_key": "!tables.results!144e48ed9c3d19f5.cfefe5b07d9e908b",
+      "_id": "cfefe5b07d9e908b"
+    },
+    {
+      "range": [
+        46,
+        55
+      ],
+      "text": "Ghostly",
+      "_key": "!tables.results!144e48ed9c3d19f5.eab09583a602edbb",
+      "_id": "eab09583a602edbb"
+    },
+    {
+      "range": [
+        56,
+        65
+      ],
+      "text": "Grotesque",
+      "_key": "!tables.results!144e48ed9c3d19f5.817b9709c4364f84",
+      "_id": "817b9709c4364f84"
+    },
+    {
+      "range": [
+        66,
+        75
+      ],
+      "text": "Mechanical",
+      "_key": "!tables.results!144e48ed9c3d19f5.9ac1da8692ab8f49",
+      "_id": "9ac1da8692ab8f49"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Shadowy",
+      "_key": "!tables.results!144e48ed9c3d19f5.e45d10d9bff00c45",
+      "_id": "e45d10d9bff00c45"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Sinister",
+      "_key": "!tables.results!144e48ed9c3d19f5.64a1a9b1dadbcb33",
+      "_id": "64a1a9b1dadbcb33"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Sorcerous",
+      "_key": "!tables.results!144e48ed9c3d19f5.cf7be4c5f67813b6",
+      "_id": "cf7be4c5f67813b6"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Transforming",
+      "_key": "!tables.results!144e48ed9c3d19f5.772510c05221195f",
+      "_id": "772510c05221195f"
+    }
+  ],
+  "folder": "2e89566166acdaea",
+  "sort": 186,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!144e48ed9c3d19f5"
+}

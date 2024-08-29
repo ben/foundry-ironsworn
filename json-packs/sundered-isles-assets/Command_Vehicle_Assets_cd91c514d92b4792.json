@@ -1,0 +1,16 @@
+{
+  "name": "Command Vehicle Assets",
+  "color": "#9aa3ad",
+  "description": "",
+  "type": "Item",
+  "_id": "cd91c514d92b4792",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "asset_collection:sundered_isles/command_vehicle"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!cd91c514d92b4792"
+}

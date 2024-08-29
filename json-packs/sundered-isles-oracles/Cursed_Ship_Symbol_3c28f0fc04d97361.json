@@ -1,0 +1,128 @@
+{
+  "_id": "3c28f0fc04d97361",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/symbol_cursed"
+    }
+  },
+  "name": "Cursed Ship Symbol",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Demonic figure",
+      "_key": "!tables.results!3c28f0fc04d97361.9a6c411e5a496e75",
+      "_id": "9a6c411e5a496e75"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Eldritch being",
+      "_key": "!tables.results!3c28f0fc04d97361.809aafb54f0625be",
+      "_id": "809aafb54f0625be"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Fanged skull",
+      "_key": "!tables.results!3c28f0fc04d97361.7000c9054d542f6d",
+      "_id": "7000c9054d542f6d"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Gargoyle",
+      "_key": "!tables.results!3c28f0fc04d97361.02b788e73ab4c63a",
+      "_id": "02b788e73ab4c63a"
+    },
+    {
+      "range": [
+        36,
+        45
+      ],
+      "text": "Grim reaper",
+      "_key": "!tables.results!3c28f0fc04d97361.b0d8ec0b250ef39d",
+      "_id": "b0d8ec0b250ef39d"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Headless figure",
+      "_key": "!tables.results!3c28f0fc04d97361.e83df0d18ab21d97",
+      "_id": "e83df0d18ab21d97"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Kraken or tentacles",
+      "_key": "!tables.results!3c28f0fc04d97361.2d533856881c7b4b",
+      "_id": "2d533856881c7b4b"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Menacing Skeleton",
+      "_key": "!tables.results!3c28f0fc04d97361.46830163734ee0ea",
+      "_id": "46830163734ee0ea"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Monstrous claw",
+      "_key": "!tables.results!3c28f0fc04d97361.8643edff7f98d597",
+      "_id": "8643edff7f98d597"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Monstrous eye",
+      "_key": "!tables.results!3c28f0fc04d97361.f5f0727f2c2d1042",
+      "_id": "f5f0727f2c2d1042"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Monstrous skull or jaws",
+      "_key": "!tables.results!3c28f0fc04d97361.d017988d7f296eb2",
+      "_id": "d017988d7f296eb2"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Spider",
+      "_key": "!tables.results!3c28f0fc04d97361.8601401b66d1b314",
+      "_id": "8601401b66d1b314"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 136,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!3c28f0fc04d97361"
+}

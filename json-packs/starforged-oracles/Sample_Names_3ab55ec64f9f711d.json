@@ -1,0 +1,200 @@
+{
+  "_id": "3ab55ec64f9f711d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "Starforged/Oracles/Planets/Ocean",
+      "dsid": "oracle_rollable:starforged/planet/ocean/name"
+    }
+  },
+  "name": "Sample Names",
+  "description": "",
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Aegir",
+      "_key": "!tables.results!3ab55ec64f9f711d.1a182111804bbf75",
+      "_id": "1a182111804bbf75"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Alon",
+      "_key": "!tables.results!3ab55ec64f9f711d.b145aa4e027efcc2",
+      "_id": "b145aa4e027efcc2"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Clarion",
+      "_key": "!tables.results!3ab55ec64f9f711d.61e107fbd89b0b3a",
+      "_id": "61e107fbd89b0b3a"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Darya",
+      "_key": "!tables.results!3ab55ec64f9f711d.76e141b70a24ea2d",
+      "_id": "76e141b70a24ea2d"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Eldoris",
+      "_key": "!tables.results!3ab55ec64f9f711d.a3a41163c662f89c",
+      "_id": "a3a41163c662f89c"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Horizon",
+      "_key": "!tables.results!3ab55ec64f9f711d.011302fa2f007016",
+      "_id": "011302fa2f007016"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Hydra",
+      "_key": "!tables.results!3ab55ec64f9f711d.ae4ed31a2ffc0dbc",
+      "_id": "ae4ed31a2ffc0dbc"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Kai",
+      "_key": "!tables.results!3ab55ec64f9f711d.a8545b891b3ab584",
+      "_id": "a8545b891b3ab584"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Larimar",
+      "_key": "!tables.results!3ab55ec64f9f711d.4dfc514092bbdda5",
+      "_id": "4dfc514092bbdda5"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Lotan",
+      "_key": "!tables.results!3ab55ec64f9f711d.5bda0a7e834b86f2",
+      "_id": "5bda0a7e834b86f2"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Mira",
+      "_key": "!tables.results!3ab55ec64f9f711d.471a31e0212ef6e5",
+      "_id": "471a31e0212ef6e5"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Navini",
+      "_key": "!tables.results!3ab55ec64f9f711d.063ff265f708e48d",
+      "_id": "063ff265f708e48d"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Nerida",
+      "_key": "!tables.results!3ab55ec64f9f711d.f4196fcc0d99bf23",
+      "_id": "f4196fcc0d99bf23"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Oceanus",
+      "_key": "!tables.results!3ab55ec64f9f711d.97ff19a51dafd041",
+      "_id": "97ff19a51dafd041"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Pelagic",
+      "_key": "!tables.results!3ab55ec64f9f711d.eb5efa4c584de1e1",
+      "_id": "eb5efa4c584de1e1"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Proteus",
+      "_key": "!tables.results!3ab55ec64f9f711d.a340eb14bb970378",
+      "_id": "a340eb14bb970378"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Russalka",
+      "_key": "!tables.results!3ab55ec64f9f711d.a120f722dcf7e08a",
+      "_id": "a120f722dcf7e08a"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Siren",
+      "_key": "!tables.results!3ab55ec64f9f711d.7d0656ad6064ec4f",
+      "_id": "7d0656ad6064ec4f"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Thalassa",
+      "_key": "!tables.results!3ab55ec64f9f711d.b3faa22642bc2046",
+      "_id": "b3faa22642bc2046"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Triton",
+      "_key": "!tables.results!3ab55ec64f9f711d.ceb3d685bf0ce00c",
+      "_id": "ceb3d685bf0ce00c"
+    }
+  ],
+  "folder": "d053017f6e8f47f0",
+  "sort": 314,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!3ab55ec64f9f711d"
+}

@@ -1,0 +1,75 @@
+{
+  "_id": "5030865f2f1bcb60",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Monstrosity/Size",
+      "category": "Ironsworn/Oracles/Monstrosity",
+      "dsid": "oracle_rollable:delve/monstrosity/size"
+    }
+  },
+  "name": "Size",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Tiny (rodent-sized)",
+      "_key": "!tables.results!5030865f2f1bcb60.e8e23c59258b4d9e",
+      "_id": "e8e23c59258b4d9e"
+    },
+    {
+      "range": [
+        6,
+        30
+      ],
+      "text": "Small (hound-sized)",
+      "_key": "!tables.results!5030865f2f1bcb60.6bdbfe40fe875ace",
+      "_id": "6bdbfe40fe875ace"
+    },
+    {
+      "range": [
+        31,
+        65
+      ],
+      "text": "Medium (person-sized)",
+      "_key": "!tables.results!5030865f2f1bcb60.f2763072705366e1",
+      "_id": "f2763072705366e1"
+    },
+    {
+      "range": [
+        66,
+        94
+      ],
+      "text": "Large (giant-sized)",
+      "_key": "!tables.results!5030865f2f1bcb60.3aa058aa344c7d15",
+      "_id": "3aa058aa344c7d15"
+    },
+    {
+      "range": [
+        95,
+        99
+      ],
+      "text": "Huge (whale-sized)",
+      "_key": "!tables.results!5030865f2f1bcb60.7655ad9351dd866f",
+      "_id": "7655ad9351dd866f"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Titanic (incomprehensible)",
+      "_key": "!tables.results!5030865f2f1bcb60.7582be40956e7017",
+      "_id": "7582be40956e7017"
+    }
+  ],
+  "folder": "feaab449f5044ca1",
+  "sort": 214,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5030865f2f1bcb60"
+}

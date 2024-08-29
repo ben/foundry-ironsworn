@@ -1,0 +1,98 @@
+{
+  "_id": "24dfbbb42bceb9f8",
+  "type": "sfmove",
+  "name": "Enter the Fray",
+  "img": "icons/dice/d10black.svg",
+  "folder": "4e4789417e7257ad",
+  "system": {
+    "dfid": "move:sundered_isles/combat/enter_the_fray",
+    "Category": "move_category:sundered_isles/combat",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "__When you initiate combat or are forced into a fight__, envision your objective and give it a rank. If the combat includes discrete challenges or phases, set an objective with a rank for each.\n\nThen, roll to see if you are in control. If you are...\n\n  * On the move or maneuvering: Roll +edge\n  * In command or facing off against your foe: Roll +heart\n  * In the thick of it at close quarters: Roll +iron\n  * Preparing to act against an unaware foe: Roll +shadow\n  * Caught in a trap or sizing up the situation: Roll +wits\n\nOn a __strong hit__, take both. On a __weak hit__, choose one.\n\n  * Take +2 momentum\n  * You are in control\n\nOn a __miss__, the fight begins with you in a bad spot.",
+    "Trigger": {
+      "Text": "When you initiate combat or are forced into a fight...",
+      "Options": [
+        {
+          "Text": "On the move or maneuvering",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        },
+        {
+          "Text": "In command or facing off against your foe",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "In the thick of it at close quarters",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "Preparing to act against an unaware foe",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "Caught in a trap or sizing up the situation",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, take +2 momentum. You are in control.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, choose one.\n\n  * Take +2 momentum\n  * You are in control"
+      },
+      "Miss": {
+        "Text": "On a __miss__, the fight begins with you in a bad spot.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Sundered Isles",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2024-07-01",
+      "Page": 244
+    },
+    "Suggestions": {},
+    "Display": {
+      "Images": []
+    }
+  },
+  "sort": 244,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:sundered_isles/combat/enter_the_fray",
+      "dsid": "move:sundered_isles/combat/enter_the_fray"
+    }
+  },
+  "_key": "!items!24dfbbb42bceb9f8"
+}

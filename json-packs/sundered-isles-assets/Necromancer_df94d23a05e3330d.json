@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "df94d23a05e3330d",
+  "folder": "e5df7144ec089f12",
+  "name": "Necromancer",
+  "system": {
+    "requirement": "",
+    "category": "Path",
+    "color": "#3f7faa",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>While in the presence of the remains of an intelligent being, you may @Compendium[foundry-ironsworn.starforgedmoves.13b2d777c6fb719d]{Gather Information} by summoning their spirit to answer your questions. If you do, roll +heart and take +1 momentum on a hit.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death}, or if you @Compendium[foundry-ironsworn.starforgedmoves.f4dec946415d8e57]{Aid Your Ally} by serving as their guide as they face death, mark 2 ticks on your bonds legacy track.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>You may @Compendium[foundry-ironsworn.starforgedmoves.e6ed148eff82c171]{Face Danger} (+heart) to animate a corpse with soulless life. On a hit, it is under your control. When it aids you through force, threat, or fear as you make a move, add +2 and fill one segment of a 4-segment clock. You may also suffer the cost of a move by filling a segment. When the clock is full, the corpse crumbles to ash. You may control only a single corpse at a time.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/path/necromancer",
+      "dsid": "asset:sundered_isles/path/necromancer"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!df94d23a05e3330d"
+}

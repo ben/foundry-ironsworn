@@ -1,0 +1,92 @@
+{
+  "_id": "d68997be8e66ec9e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship",
+      "dsid": "oracle_rollable:sundered_isles/ship/mission_cursed"
+    }
+  },
+  "name": "Cursed Ship Mission",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Acting to fulfill a dreadful bargain",
+      "_key": "!tables.results!d68997be8e66ec9e.c96e28557d0c75f6",
+      "_id": "c96e28557d0c75f6"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Bound unwillingly to the service of a cursed power",
+      "_key": "!tables.results!d68997be8e66ec9e.2345e6f660ebeadb",
+      "_id": "2345e6f660ebeadb"
+    },
+    {
+      "range": [
+        26,
+        35
+      ],
+      "text": "Corrupted or sickened by the effects of a cursed ship or relic",
+      "_key": "!tables.results!d68997be8e66ec9e.3330257b53d41137",
+      "_id": "3330257b53d41137"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "Desperately working in defiance of a cursed power",
+      "_key": "!tables.results!d68997be8e66ec9e.719c6d3a25ae8888",
+      "_id": "719c6d3a25ae8888"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Granted unusual abilities or resources by a cursed power",
+      "_key": "!tables.results!d68997be8e66ec9e.58af669946516570",
+      "_id": "58af669946516570"
+    },
+    {
+      "range": [
+        61,
+        75
+      ],
+      "text": "In zealous service of a cursed power",
+      "_key": "!tables.results!d68997be8e66ec9e.7556ebd1dd8852b7",
+      "_id": "7556ebd1dd8852b7"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "Suffering under the deprivations of a cursed captain",
+      "_key": "!tables.results!d68997be8e66ec9e.dd0144eaf43141b6",
+      "_id": "dd0144eaf43141b6"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Unwittingly helping or unleashing a cursed power",
+      "_key": "!tables.results!d68997be8e66ec9e.50b7803e5d3a72bb",
+      "_id": "50b7803e5d3a72bb"
+    }
+  ],
+  "folder": "70efe2cd74f8479f",
+  "sort": 137,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d68997be8e66ec9e"
+}

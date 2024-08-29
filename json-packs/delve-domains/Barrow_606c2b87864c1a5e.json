@@ -1,0 +1,141 @@
+{
+  "_id": "606c2b87864c1a5e",
+  "type": "delve-domain",
+  "name": "Barrow",
+  "img": "icons/environment/wilderness/cave-entrance-dwarven-hill.webp",
+  "system": {
+    "summary": "The dead are enshrined here.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Burial chambers"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Maze of narrow passages"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Shrine"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Stately vault"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Offerings to the dead"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Statuary or tapestries"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Remains of a grave robber"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Mass grave"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Exhumed corpses"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Denizen guards this area"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Trap"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Death makes its presence known"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Crumbling architecture"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Grave goods with hidden dangers"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 88,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/barrow"
+    }
+  },
+  "_key": "!items!606c2b87864c1a5e"
+}

@@ -1,22 +1,16 @@
 {
   "name": "Settlements",
-  "_id": "9eec63e7a51b6e9a",
+  "description": "",
   "type": "RollTable",
+  "_id": "9eec63e7a51b6e9a",
   "sort": 312,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Planets/Jovian/Settlements"
+      "dfid": "Starforged/Oracles/Planets/Jovian/Settlements",
+      "dsid": "oracle_collection:starforged/planet/jovian/settlements"
     }
   },
   "folder": "22e197c635fbf259",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!9eec63e7a51b6e9a"
 }

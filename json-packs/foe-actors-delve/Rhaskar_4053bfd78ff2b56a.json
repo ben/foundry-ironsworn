@@ -1,0 +1,53 @@
+{
+  "name": "Rhaskar",
+  "img": "icons/creatures/fish/fish-marlin-swordfight-blue.webp",
+  "type": "foe",
+  "_id": "4053bfd78ff2b56a",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Rhaskar",
+    "texture": {
+      "src": "icons/creatures/fish/fish-marlin-swordfight-blue.webp"
+    }
+  },
+  "folder": "e31350d7e40b7d78",
+  "items": [
+    {
+      "_id": "e8c4c55fdaf289bd",
+      "type": "progress",
+      "name": "Rhaskar",
+      "img": "icons/creatures/fish/fish-marlin-swordfight-blue.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">White fur</p>\n<p class=\"nogrow\">Shark-like head</p>\n<p class=\"nogrow\">Rows of razor-sharp teeth</p>\n<p class=\"nogrow\">Massive claws</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Protect territory</p>\n<p class=\"nogrow\">Hunt prey in water and on land</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Burst through ice</p>\n<p class=\"nogrow\">Rend with savage claws</p>\n<p class=\"nogrow\">Clamp down with a powerful bite</p>\n<p class=\"nogrow\">Shake victims like a hound with a rat</p>\n</div>\n</div>\n\n<p>In the language of the @Compendium[foundry-ironsworn.ironsworndelvefoes.9b63a301766b0734]{atanya}, rhaskar means “white death.” This mighty beast dwells within northern waters and amid frozen icereaches. It hunts along shorelines, lurks beneath ice, or tracks the frigid wastes in search of prey. Some rhaskar have even been known to attack ships in coastal waters. It is a highly territorial creature, and does not abide trespassers within its domain.</p>\n<p>With its mane of dorsal fur and long, angular head, the rhaskar looks like a fusion of shark and bear—and embodies the strength and cunning of both. It is the uncaring ferocity of these cold northern realms given form.</p>\n\n<blockquote>Quest Starter: <p>Settlements and ships along the northern expanse of the Ragged Coast face repeated attacks from a large rhaskar. The creature appears amidst a fierce snowstorm, makes it savage assault, and fades back into the blizzard like a ghost. It seems to act out of a pure compulsion to cause terror and inflict violence rather than any need for food. A hunter tracked it to a @Compendium[foundry-ironsworn.ironsworndelvethemes.3a633d3ce6079711]{Wild} @Compendium[foundry-ironsworn.ironsworndelvedomains.2a5fe65347585d25]{Frozen Cavern}. But they heeded the warning of a pile of bones at the entrance and refused to enter that place.</p></blockquote>",
+        "rank": 4,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "e31350d7e40b7d78",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc:delve/beasts/rhaskar"
+        }
+      },
+      "_key": "!actors.items!4053bfd78ff2b56a.e8c4c55fdaf289bd"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc:delve/beasts/rhaskar"
+    }
+  },
+  "_key": "!actors!4053bfd78ff2b56a"
+}

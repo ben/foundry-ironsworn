@@ -1,0 +1,246 @@
+{
+  "_id": "27e0e5b8cf4d4be2",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Space/Opportunity",
+      "category": "Starforged/Oracles/Space",
+      "dsid": "oracle_rollable:starforged/space/opportunity"
+    }
+  },
+  "name": "Spaceborne Opportunity",
+  "description": "<p>Choose or roll on this table when you want inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Advance warning of an environmental threat",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.315b2ec3174f42a3",
+      "_id": "315b2ec3174f42a3"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Automated signal offers a helpful message or warning",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.3064750b134ee41c",
+      "_id": "3064750b134ee41c"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Cache of cargo or supplies",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.f3815d9e2bbcec77",
+      "_id": "f3815d9e2bbcec77"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Chance for fellowship or a moment of inner peace",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.56acc87a93841049",
+      "_id": "56acc87a93841049"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Clear path through otherwise perilous space",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.0da35c792563173b",
+      "_id": "0da35c792563173b"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Clue offers insight into a current quest or mystery",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.f4404ed2e089cce2",
+      "_id": "f4404ed2e089cce2"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Clue to a lifeform's nature or vulnerabilities",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.e5a1b98d5731eb2a",
+      "_id": "e5a1b98d5731eb2a"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Derelict ripe for the picking",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.75dd7607afe7d6ed",
+      "_id": "75dd7607afe7d6ed"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Foe inadvertently reveals themselves or tips their hand",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.480d737ae121e032",
+      "_id": "480d737ae121e032"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Friendly interaction with a benign lifeform",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.f876f8d355b56892",
+      "_id": "f876f8d355b56892"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Friendly settlement in range",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.2361a453f500ca3e",
+      "_id": "2361a453f500ca3e"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Friendly spacers at work here",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.537c9a80c4b19564",
+      "_id": "537c9a80c4b19564"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Friendly starship crosses your path",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.970c259c0672e96f",
+      "_id": "970c259c0672e96f"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Helpful or encouraging message from an acquaintance",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.3cd8277552b602c0",
+      "_id": "3cd8277552b602c0"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Impressive vista offers comfort or inspiration",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.282ff8e5c7ddfec4",
+      "_id": "282ff8e5c7ddfec4"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Interesting site offers opportunities for exploration",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.015286bea9aaef59",
+      "_id": "015286bea9aaef59"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Mineral or energy resource detected",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.4475545dcdce280a",
+      "_id": "4475545dcdce280a"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Navigational or environmental hazard is left behind",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.82dfcc81f5796570",
+      "_id": "82dfcc81f5796570"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Opening to escape or avoid foes",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.16ce7e00ae8e5de9",
+      "_id": "16ce7e00ae8e5de9"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Plea for help from a potential benefactor",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.211500b59797de9b",
+      "_id": "211500b59797de9b"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Probe or beacon with useful data",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.4e0cc0fb32fa36f6",
+      "_id": "4e0cc0fb32fa36f6"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Refuge offers a place to hide, plan, or recover",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.ed59fa60a5593c1e",
+      "_id": "ed59fa60a5593c1e"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Sensors pinpoint a lurking foe",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.8d1413927dd44b3b",
+      "_id": "8d1413927dd44b3b"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Sensors reveal helpful or interesting environmental data",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.e407f473a00ce5c2",
+      "_id": "e407f473a00ce5c2"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Vehicle or equipment performs beyond expectations",
+      "_key": "!tables.results!27e0e5b8cf4d4be2.4dd3c1fd969bc388",
+      "_id": "4dd3c1fd969bc388"
+    }
+  ],
+  "folder": "a17a6892a4e03f3f",
+  "sort": 305,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!27e0e5b8cf4d4be2"
+}

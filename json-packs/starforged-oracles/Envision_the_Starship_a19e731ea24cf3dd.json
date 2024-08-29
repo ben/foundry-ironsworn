@@ -1,0 +1,201 @@
+{
+  "_id": "a19e731ea24cf3dd",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Character_Creation/Starship_Quirks",
+      "category": "oracle_collection:starforged/launching_your_campaign/character/starship",
+      "dsid": "oracle_rollable:starforged/launching_your_campaign/character/starship/quirks"
+    }
+  },
+  "name": "Envision the Starship",
+  "description": "<p>Your ship is an important aspect of your character—and a character in its own right. What does it look like? What makes it interesting or uniquely yours? Does it have any particular quirks? If nothing occurs to you now, you can flesh it out in play, or roll once or twice on the table below.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Engine room is scorched with old burn marks",
+      "_key": "!tables.results!a19e731ea24cf3dd.da8c5561db3dbc93",
+      "_id": "da8c5561db3dbc93"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Exterior is marred by rust and grime",
+      "_key": "!tables.results!a19e731ea24cf3dd.62ece93304afc61e",
+      "_id": "62ece93304afc61e"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Faint, phantom music sometimes echoes through the corridors",
+      "_key": "!tables.results!a19e731ea24cf3dd.1b19e4a492f1da65",
+      "_id": "1b19e4a492f1da65"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Gravity generator is notoriously fickle",
+      "_key": "!tables.results!a19e731ea24cf3dd.73c5d7e698ff2ef8",
+      "_id": "73c5d7e698ff2ef8"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Hull is fused with organic growths",
+      "_key": "!tables.results!a19e731ea24cf3dd.2e350119557dd727",
+      "_id": "2e350119557dd727"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Hull rattles and groans in atmospheric flight",
+      "_key": "!tables.results!a19e731ea24cf3dd.01d131aa886ada23",
+      "_id": "01d131aa886ada23"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Interior spaces are crowded with exposed cables and conduits",
+      "_key": "!tables.results!a19e731ea24cf3dd.81e87688c3a0e1ef",
+      "_id": "81e87688c3a0e1ef"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Looks defenseless, but exterior panels open to reveal weapons",
+      "_key": "!tables.results!a19e731ea24cf3dd.bccad52568fbab02",
+      "_id": "bccad52568fbab02"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Navigation logs contain coordinates to locations that do not—or should not—exist",
+      "_key": "!tables.results!a19e731ea24cf3dd.dc6baa699462af2d",
+      "_id": "dc6baa699462af2d"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Old bloodstain in the airlock reappears even when painted over",
+      "_key": "!tables.results!a19e731ea24cf3dd.f3a5b973c1f06829",
+      "_id": "f3a5b973c1f06829"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Once a beautiful ship, now scarred by a devastating battle",
+      "_key": "!tables.results!a19e731ea24cf3dd.11958ca9d2b96bee",
+      "_id": "11958ca9d2b96bee"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Patched hull covers a recent catastrophic breach",
+      "_key": "!tables.results!a19e731ea24cf3dd.3f938d10ba3accb4",
+      "_id": "3f938d10ba3accb4"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Placards and control labels are in an uncommon language",
+      "_key": "!tables.results!a19e731ea24cf3dd.7005142bb61c9334",
+      "_id": "7005142bb61c9334"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Removable plate decks provide access to hidden storage",
+      "_key": "!tables.results!a19e731ea24cf3dd.6ab7f51ff163b973",
+      "_id": "6ab7f51ff163b973"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Segmented landing gear unfold like gangly spider legs",
+      "_key": "!tables.results!a19e731ea24cf3dd.689f8afbada1ae4d",
+      "_id": "689f8afbada1ae4d"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Ship is powered by an ancient precursor device",
+      "_key": "!tables.results!a19e731ea24cf3dd.53dca913c021a6e8",
+      "_id": "53dca913c021a6e8"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Someone marked the hull with graffiti during a recent layover",
+      "_key": "!tables.results!a19e731ea24cf3dd.0c54ddf3834b350a",
+      "_id": "0c54ddf3834b350a"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Strange symbols are scrawled on the deck and bulkheads in the main corridor",
+      "_key": "!tables.results!a19e731ea24cf3dd.e96e0653780293f1",
+      "_id": "e96e0653780293f1"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Things tend to go missing for no logical reason",
+      "_key": "!tables.results!a19e731ea24cf3dd.9a3e65c2acfe6440",
+      "_id": "9a3e65c2acfe6440"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Timers and clocks are always just a bit off",
+      "_key": "!tables.results!a19e731ea24cf3dd.7679907fc56f3fd6",
+      "_id": "7679907fc56f3fd6"
+    }
+  ],
+  "folder": "ac2e4aee1a0769aa",
+  "sort": 109,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a19e731ea24cf3dd"
+}

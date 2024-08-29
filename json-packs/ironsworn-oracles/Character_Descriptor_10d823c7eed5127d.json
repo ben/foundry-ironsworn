@@ -1,0 +1,921 @@
+{
+  "_id": "10d823c7eed5127d",
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Ironsworn/Oracles/Character/Descriptor",
+      "category": "Ironsworn/Oracles/Character",
+      "dsid": "oracle_rollable:classic/character/descriptor"
+    }
+  },
+  "name": "Character Descriptor",
+  "description": "<p>Use this oracle to help flesh out a character’s personality or physical characteristics. Roll more than once to add additional detail.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Stoic",
+      "_key": "!tables.results!10d823c7eed5127d.f91228c9e72736e9",
+      "_id": "f91228c9e72736e9"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Attractive",
+      "_key": "!tables.results!10d823c7eed5127d.1384b841d2bd4b74",
+      "_id": "1384b841d2bd4b74"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Passive",
+      "_key": "!tables.results!10d823c7eed5127d.74b4acd7db85f339",
+      "_id": "74b4acd7db85f339"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Aloof",
+      "_key": "!tables.results!10d823c7eed5127d.6fb42474b19d045a",
+      "_id": "6fb42474b19d045a"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Affectionate",
+      "_key": "!tables.results!10d823c7eed5127d.dcc1c9ead3426d9b",
+      "_id": "dcc1c9ead3426d9b"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Generous",
+      "_key": "!tables.results!10d823c7eed5127d.be722844f7c441c5",
+      "_id": "be722844f7c441c5"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Smug",
+      "_key": "!tables.results!10d823c7eed5127d.927f9c072584699f",
+      "_id": "927f9c072584699f"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Armed",
+      "_key": "!tables.results!10d823c7eed5127d.adc3246238a546a0",
+      "_id": "adc3246238a546a0"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Clever",
+      "_key": "!tables.results!10d823c7eed5127d.14d1360c57d3fa82",
+      "_id": "14d1360c57d3fa82"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Brave",
+      "_key": "!tables.results!10d823c7eed5127d.e3efc1938d0a3edf",
+      "_id": "e3efc1938d0a3edf"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Ugly",
+      "_key": "!tables.results!10d823c7eed5127d.a04624a2ef8ad166",
+      "_id": "a04624a2ef8ad166"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Sociable",
+      "_key": "!tables.results!10d823c7eed5127d.b71c6e987472b3a4",
+      "_id": "b71c6e987472b3a4"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Doomed",
+      "_key": "!tables.results!10d823c7eed5127d.42b27dca34d469d1",
+      "_id": "42b27dca34d469d1"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Connected",
+      "_key": "!tables.results!10d823c7eed5127d.515c41b7c095de8f",
+      "_id": "515c41b7c095de8f"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Bold",
+      "_key": "!tables.results!10d823c7eed5127d.2754df398f710b31",
+      "_id": "2754df398f710b31"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Jealous",
+      "_key": "!tables.results!10d823c7eed5127d.a83dbc5aabac290c",
+      "_id": "a83dbc5aabac290c"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Angry",
+      "_key": "!tables.results!10d823c7eed5127d.d8efce1df7de6cff",
+      "_id": "d8efce1df7de6cff"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Active",
+      "_key": "!tables.results!10d823c7eed5127d.c38e4190708ac58a",
+      "_id": "c38e4190708ac58a"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Suspicious",
+      "_key": "!tables.results!10d823c7eed5127d.7624c3f5b6f3d83b",
+      "_id": "7624c3f5b6f3d83b"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Hostile",
+      "_key": "!tables.results!10d823c7eed5127d.7992d2a15eea34fa",
+      "_id": "7992d2a15eea34fa"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Hardhearted",
+      "_key": "!tables.results!10d823c7eed5127d.605e57499e0130e2",
+      "_id": "605e57499e0130e2"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Successful",
+      "_key": "!tables.results!10d823c7eed5127d.4e051d0d6519efd5",
+      "_id": "4e051d0d6519efd5"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Talented",
+      "_key": "!tables.results!10d823c7eed5127d.73013b2fa048d72c",
+      "_id": "73013b2fa048d72c"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Experienced",
+      "_key": "!tables.results!10d823c7eed5127d.9866f2077d84475f",
+      "_id": "9866f2077d84475f"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Deceitful",
+      "_key": "!tables.results!10d823c7eed5127d.745204cf6926ef03",
+      "_id": "745204cf6926ef03"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Ambitious",
+      "_key": "!tables.results!10d823c7eed5127d.6050b873419c1e14",
+      "_id": "6050b873419c1e14"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Aggressive",
+      "_key": "!tables.results!10d823c7eed5127d.180528dd80c26187",
+      "_id": "180528dd80c26187"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Conceited",
+      "_key": "!tables.results!10d823c7eed5127d.d76aa5f39695837d",
+      "_id": "d76aa5f39695837d"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Proud",
+      "_key": "!tables.results!10d823c7eed5127d.ec826012d9e2bcd9",
+      "_id": "ec826012d9e2bcd9"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Stern",
+      "_key": "!tables.results!10d823c7eed5127d.8d73d9bf6e64b470",
+      "_id": "8d73d9bf6e64b470"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Dependent",
+      "_key": "!tables.results!10d823c7eed5127d.e7415a9e9099cf31",
+      "_id": "e7415a9e9099cf31"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Wary",
+      "_key": "!tables.results!10d823c7eed5127d.40aab587cf1eed3b",
+      "_id": "40aab587cf1eed3b"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Strong",
+      "_key": "!tables.results!10d823c7eed5127d.f9b453c17df5fa6b",
+      "_id": "f9b453c17df5fa6b"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Insightful",
+      "_key": "!tables.results!10d823c7eed5127d.f26d64ee015992ef",
+      "_id": "f26d64ee015992ef"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Dangerous",
+      "_key": "!tables.results!10d823c7eed5127d.c87c9bb8cb467e40",
+      "_id": "c87c9bb8cb467e40"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Quirky",
+      "_key": "!tables.results!10d823c7eed5127d.6b1c6daaac6cdea5",
+      "_id": "6b1c6daaac6cdea5"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Cheery",
+      "_key": "!tables.results!10d823c7eed5127d.8463523321cd7ede",
+      "_id": "8463523321cd7ede"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Disfigured",
+      "_key": "!tables.results!10d823c7eed5127d.fca7f69c7e2eaaa6",
+      "_id": "fca7f69c7e2eaaa6"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Intolerant",
+      "_key": "!tables.results!10d823c7eed5127d.67d126ccf4994eda",
+      "_id": "67d126ccf4994eda"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Skilled",
+      "_key": "!tables.results!10d823c7eed5127d.23068d796dd28d92",
+      "_id": "23068d796dd28d92"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Stingy",
+      "_key": "!tables.results!10d823c7eed5127d.81e44707e4aa0066",
+      "_id": "81e44707e4aa0066"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Timid",
+      "_key": "!tables.results!10d823c7eed5127d.07ec612c828da435",
+      "_id": "07ec612c828da435"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Insensitive",
+      "_key": "!tables.results!10d823c7eed5127d.7946dfe2b44f6a76",
+      "_id": "7946dfe2b44f6a76"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Wild",
+      "_key": "!tables.results!10d823c7eed5127d.98a12cedb286367b",
+      "_id": "98a12cedb286367b"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Bitter",
+      "_key": "!tables.results!10d823c7eed5127d.ce74c0af8ec8d8ed",
+      "_id": "ce74c0af8ec8d8ed"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Cunning",
+      "_key": "!tables.results!10d823c7eed5127d.be0f59f8265cec01",
+      "_id": "be0f59f8265cec01"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Remorseful",
+      "_key": "!tables.results!10d823c7eed5127d.8fb36858a347bd4a",
+      "_id": "8fb36858a347bd4a"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Kind",
+      "_key": "!tables.results!10d823c7eed5127d.0cecf78ae2f1c350",
+      "_id": "0cecf78ae2f1c350"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Charming",
+      "_key": "!tables.results!10d823c7eed5127d.ed48c31a6f67743d",
+      "_id": "ed48c31a6f67743d"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Oblivious",
+      "_key": "!tables.results!10d823c7eed5127d.a6af2549d464581b",
+      "_id": "a6af2549d464581b"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Critical",
+      "_key": "!tables.results!10d823c7eed5127d.29141d65f90e4528",
+      "_id": "29141d65f90e4528"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Cautious",
+      "_key": "!tables.results!10d823c7eed5127d.b8de834189720805",
+      "_id": "b8de834189720805"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Resourceful",
+      "_key": "!tables.results!10d823c7eed5127d.4c3057c94ec8b32e",
+      "_id": "4c3057c94ec8b32e"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Weary",
+      "_key": "!tables.results!10d823c7eed5127d.0a09cae86c347f30",
+      "_id": "0a09cae86c347f30"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Wounded",
+      "_key": "!tables.results!10d823c7eed5127d.bb656496de93ebb7",
+      "_id": "bb656496de93ebb7"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Anxious",
+      "_key": "!tables.results!10d823c7eed5127d.de71031928e81dcf",
+      "_id": "de71031928e81dcf"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Powerful",
+      "_key": "!tables.results!10d823c7eed5127d.73fee6f1fd4f8188",
+      "_id": "73fee6f1fd4f8188"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Athletic",
+      "_key": "!tables.results!10d823c7eed5127d.dec38fd9f2b76baa",
+      "_id": "dec38fd9f2b76baa"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Driven",
+      "_key": "!tables.results!10d823c7eed5127d.63c41bc7eea31526",
+      "_id": "63c41bc7eea31526"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Cruel",
+      "_key": "!tables.results!10d823c7eed5127d.770fb0d148ea2f1d",
+      "_id": "770fb0d148ea2f1d"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Quiet",
+      "_key": "!tables.results!10d823c7eed5127d.74fc76bde69cd05e",
+      "_id": "74fc76bde69cd05e"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Honest",
+      "_key": "!tables.results!10d823c7eed5127d.c29b82d6f76c16ff",
+      "_id": "c29b82d6f76c16ff"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Infamous",
+      "_key": "!tables.results!10d823c7eed5127d.42d72860a6439c0c",
+      "_id": "42d72860a6439c0c"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Dying",
+      "_key": "!tables.results!10d823c7eed5127d.43e3c5043a3f67f3",
+      "_id": "43e3c5043a3f67f3"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Reclusive",
+      "_key": "!tables.results!10d823c7eed5127d.5abe99a07c9691f4",
+      "_id": "5abe99a07c9691f4"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Artistic",
+      "_key": "!tables.results!10d823c7eed5127d.d6257d3746c624a4",
+      "_id": "d6257d3746c624a4"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Disabled",
+      "_key": "!tables.results!10d823c7eed5127d.7b2da6ee6775ba02",
+      "_id": "7b2da6ee6775ba02"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Confused",
+      "_key": "!tables.results!10d823c7eed5127d.d9f6699626fa0894",
+      "_id": "d9f6699626fa0894"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Manipulative",
+      "_key": "!tables.results!10d823c7eed5127d.384c245e587e3ca0",
+      "_id": "384c245e587e3ca0"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Relaxed",
+      "_key": "!tables.results!10d823c7eed5127d.d4c1c8abf77af4b9",
+      "_id": "d4c1c8abf77af4b9"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Stealthy",
+      "_key": "!tables.results!10d823c7eed5127d.81e225fa47407a50",
+      "_id": "81e225fa47407a50"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Confident",
+      "_key": "!tables.results!10d823c7eed5127d.9890141adbe27434",
+      "_id": "9890141adbe27434"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Weak",
+      "_key": "!tables.results!10d823c7eed5127d.33343133b334a01f",
+      "_id": "33343133b334a01f"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Friendly",
+      "_key": "!tables.results!10d823c7eed5127d.78640513a7c64f5f",
+      "_id": "78640513a7c64f5f"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Wise",
+      "_key": "!tables.results!10d823c7eed5127d.1f8e18a4d96773f4",
+      "_id": "1f8e18a4d96773f4"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Influential",
+      "_key": "!tables.results!10d823c7eed5127d.4177149551018235",
+      "_id": "4177149551018235"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Young",
+      "_key": "!tables.results!10d823c7eed5127d.cced9ec78abc8445",
+      "_id": "cced9ec78abc8445"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Adventurous",
+      "_key": "!tables.results!10d823c7eed5127d.a29101c648c4a26e",
+      "_id": "a29101c648c4a26e"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Oppressed",
+      "_key": "!tables.results!10d823c7eed5127d.5b5ab7ea7faf3a30",
+      "_id": "5b5ab7ea7faf3a30"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Vengeful",
+      "_key": "!tables.results!10d823c7eed5127d.8c87e118098a20b2",
+      "_id": "8c87e118098a20b2"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Cooperative",
+      "_key": "!tables.results!10d823c7eed5127d.ab80d8c77ed53d66",
+      "_id": "ab80d8c77ed53d66"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Armored",
+      "_key": "!tables.results!10d823c7eed5127d.83cc7e6b18ccb25e",
+      "_id": "83cc7e6b18ccb25e"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Apathetic",
+      "_key": "!tables.results!10d823c7eed5127d.6608a5e98d418839",
+      "_id": "6608a5e98d418839"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Determined",
+      "_key": "!tables.results!10d823c7eed5127d.0fc61b89f2f69915",
+      "_id": "0fc61b89f2f69915"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Loyal",
+      "_key": "!tables.results!10d823c7eed5127d.3441d114b3ae5a4b",
+      "_id": "3441d114b3ae5a4b"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Sick",
+      "_key": "!tables.results!10d823c7eed5127d.e1577a06e4fa06ce",
+      "_id": "e1577a06e4fa06ce"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Religious",
+      "_key": "!tables.results!10d823c7eed5127d.d0422fb182abf93c",
+      "_id": "d0422fb182abf93c"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Selfish",
+      "_key": "!tables.results!10d823c7eed5127d.ba7e1e601a8bb3da",
+      "_id": "ba7e1e601a8bb3da"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Old",
+      "_key": "!tables.results!10d823c7eed5127d.54cc65a90a1a0aa8",
+      "_id": "54cc65a90a1a0aa8"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Fervent",
+      "_key": "!tables.results!10d823c7eed5127d.e3801fddf8bb16bc",
+      "_id": "e3801fddf8bb16bc"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Violent",
+      "_key": "!tables.results!10d823c7eed5127d.efd41a3b38b25997",
+      "_id": "efd41a3b38b25997"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Agreeable",
+      "_key": "!tables.results!10d823c7eed5127d.ee0cae5df91cd7a6",
+      "_id": "ee0cae5df91cd7a6"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Hot-tempered",
+      "_key": "!tables.results!10d823c7eed5127d.b30748e9b4031da7",
+      "_id": "b30748e9b4031da7"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Stubborn",
+      "_key": "!tables.results!10d823c7eed5127d.b4ff6f1934310ecf",
+      "_id": "b4ff6f1934310ecf"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Incompetent",
+      "_key": "!tables.results!10d823c7eed5127d.a73f920419e1a095",
+      "_id": "a73f920419e1a095"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Greedy",
+      "_key": "!tables.results!10d823c7eed5127d.1c0c48f413ac252d",
+      "_id": "1c0c48f413ac252d"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Cowardly",
+      "_key": "!tables.results!10d823c7eed5127d.6341a4d628f574ca",
+      "_id": "6341a4d628f574ca"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Obsessed",
+      "_key": "!tables.results!10d823c7eed5127d.7886eca0342d0787",
+      "_id": "7886eca0342d0787"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Careless",
+      "_key": "!tables.results!10d823c7eed5127d.ce67f48a3093042e",
+      "_id": "ce67f48a3093042e"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Ironsworn",
+      "_key": "!tables.results!10d823c7eed5127d.7438448d360b5955",
+      "_id": "7438448d360b5955"
+    }
+  ],
+  "folder": "aa60f0d1adbed892",
+  "sort": 183,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!10d823c7eed5127d"
+}

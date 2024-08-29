@@ -1,0 +1,353 @@
+{
+  "_id": "0182f479763e4bbe",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure",
+      "dsid": "oracle_rollable:sundered_isles/treasure/tokens_cursed"
+    }
+  },
+  "name": "Cursed Tokens",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Astrolabe with complex workings that signal a portentous cosmic event",
+      "_key": "!tables.results!0182f479763e4bbe.b3e5acef4cc16f75",
+      "_id": "b3e5acef4cc16f75"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Black candle that reveals shadowy forms in its sputtering light",
+      "_key": "!tables.results!0182f479763e4bbe.d8f54bcd71111afd",
+      "_id": "d8f54bcd71111afd"
+    },
+    {
+      "range": [
+        5,
+        7
+      ],
+      "text": "Boatswain’s whistle that echoes with the cries of doomed mariners",
+      "_key": "!tables.results!0182f479763e4bbe.84aa10ad423aa2c8",
+      "_id": "84aa10ad423aa2c8"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "Chattering skull with dark gems fitted into its eye sockets",
+      "_key": "!tables.results!0182f479763e4bbe.c917deb6a39e9d35",
+      "_id": "c917deb6a39e9d35"
+    },
+    {
+      "range": [
+        11,
+        13
+      ],
+      "text": "Compass that stubbornly points at an unknown destination",
+      "_key": "!tables.results!0182f479763e4bbe.dc284a167a24dce6",
+      "_id": "dc284a167a24dce6"
+    },
+    {
+      "range": [
+        14,
+        16
+      ],
+      "text": "Conch shell that whispers enticingly of distant seas",
+      "_key": "!tables.results!0182f479763e4bbe.c8b5fc0af0c9f323",
+      "_id": "c8b5fc0af0c9f323"
+    },
+    {
+      "range": [
+        17,
+        19
+      ],
+      "text": "Corroded chronometer that offers glimpses of the past",
+      "_key": "!tables.results!0182f479763e4bbe.d9bfb3b712b97159",
+      "_id": "d9bfb3b712b97159"
+    },
+    {
+      "range": [
+        20,
+        22
+      ],
+      "text": "Cracked lantern that draws a beast of the abyssal depths to its pallid light",
+      "_key": "!tables.results!0182f479763e4bbe.a195a35108439f0a",
+      "_id": "a195a35108439f0a"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Crown of jagged seashells and sharp coral that binds its wearer to the sea",
+      "_key": "!tables.results!0182f479763e4bbe.f58e5d31f1d3b3bb",
+      "_id": "f58e5d31f1d3b3bb"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Dark cloak that transforms the look of the wearer",
+      "_key": "!tables.results!0182f479763e4bbe.fa62a666e0501052",
+      "_id": "fa62a666e0501052"
+    },
+    {
+      "range": [
+        28,
+        29
+      ],
+      "text": "Dueling sword that whispers of vengeful need",
+      "_key": "!tables.results!0182f479763e4bbe.801757ac0db6db59",
+      "_id": "801757ac0db6db59"
+    },
+    {
+      "range": [
+        30,
+        32
+      ],
+      "text": "Enigmatic map carved into a leathery sea serpent scale",
+      "_key": "!tables.results!0182f479763e4bbe.4fa83c930e409611",
+      "_id": "4fa83c930e409611"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Fiddle of dark wood that—when played—evokes profound melancholy",
+      "_key": "!tables.results!0182f479763e4bbe.67438fef4c3617d5",
+      "_id": "67438fef4c3617d5"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "Fiendish puzzle box that compels its keeper to solve the riddle",
+      "_key": "!tables.results!0182f479763e4bbe.30c0fc6973662b0e",
+      "_id": "30c0fc6973662b0e"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Filthy burial shroud that takes the shape of its former occupant on moonless nights",
+      "_key": "!tables.results!0182f479763e4bbe.1bdf8354348c6185",
+      "_id": "1bdf8354348c6185"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Flask of green glass that releases a torrent of brackish seawater when unstopped",
+      "_key": "!tables.results!0182f479763e4bbe.7594b47eff10b3de",
+      "_id": "7594b47eff10b3de"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Frayed and bloodied rope that slithers and coils of its own accord",
+      "_key": "!tables.results!0182f479763e4bbe.a29bae5e7f2e1e8b",
+      "_id": "a29bae5e7f2e1e8b"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Glass eye that peers into the realm of the dead",
+      "_key": "!tables.results!0182f479763e4bbe.11af9d5ce818a8c2",
+      "_id": "11af9d5ce818a8c2"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "Iron mask that—when sworn upon—cannot be removed until the vow is fulfilled",
+      "_key": "!tables.results!0182f479763e4bbe.97e12af22b44fbc6",
+      "_id": "97e12af22b44fbc6"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "Jagged obsidian dagger marked with everlasting bloodstains",
+      "_key": "!tables.results!0182f479763e4bbe.73352ec9143ff8a3",
+      "_id": "73352ec9143ff8a3"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Large, leathery egg that pulses and shudders",
+      "_key": "!tables.results!0182f479763e4bbe.89a68ee7fa6ddb72",
+      "_id": "89a68ee7fa6ddb72"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Leatherbound tome filled with maddening, ever-changing glyphs",
+      "_key": "!tables.results!0182f479763e4bbe.c453b144d6598438",
+      "_id": "c453b144d6598438"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Logbook filled with the rantings of a tormented captain",
+      "_key": "!tables.results!0182f479763e4bbe.e1682f1efc92b425",
+      "_id": "e1682f1efc92b425"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Macabre tarot cards with shifting illustrations",
+      "_key": "!tables.results!0182f479763e4bbe.d322bea23d7cf799",
+      "_id": "d322bea23d7cf799"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Magnetic lodestone that reveals messages within iron shavings",
+      "_key": "!tables.results!0182f479763e4bbe.17f04dd4ffbc4b31",
+      "_id": "17f04dd4ffbc4b31"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Mechanical scarab that skitters, flies, and burrows",
+      "_key": "!tables.results!0182f479763e4bbe.2c6588d6ddad3d62",
+      "_id": "2c6588d6ddad3d62"
+    },
+    {
+      "range": [
+        70,
+        71
+      ],
+      "text": "Mirror that reveals a cadaverous visage of its subject",
+      "_key": "!tables.results!0182f479763e4bbe.dd3893b3e5d9bf98",
+      "_id": "dd3893b3e5d9bf98"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "Mummified hand whose grip is locked tight around a gold coin",
+      "_key": "!tables.results!0182f479763e4bbe.a0ca42cbba84cfb8",
+      "_id": "a0ca42cbba84cfb8"
+    },
+    {
+      "range": [
+        75,
+        77
+      ],
+      "text": "Ornate silver chalice that turns its contents to poison",
+      "_key": "!tables.results!0182f479763e4bbe.88a1120f6e399c8a",
+      "_id": "88a1120f6e399c8a"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Ragged ship's flag that—when raised—summons an infamous cursed vessel",
+      "_key": "!tables.results!0182f479763e4bbe.c55671310829069d",
+      "_id": "c55671310829069d"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Rusted iron sextant that reveals an unfamiliar sky in its silvered mirror",
+      "_key": "!tables.results!0182f479763e4bbe.ff4888e91abdbe05",
+      "_id": "ff4888e91abdbe05"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Ship in a bottle that flounders upon a storm-tossed sea",
+      "_key": "!tables.results!0182f479763e4bbe.1b7cfe61434cffc8",
+      "_id": "1b7cfe61434cffc8"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "Spyglass that offers glimpses of faraway seas through a cracked lens",
+      "_key": "!tables.results!0182f479763e4bbe.f86ea1c8057111f9",
+      "_id": "f86ea1c8057111f9"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "Strongbox containing a still-beating heart",
+      "_key": "!tables.results!0182f479763e4bbe.37403cffad11ac0f",
+      "_id": "37403cffad11ac0f"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "Tarnished ship's bell that calls to the spirits of drowned mariners",
+      "_key": "!tables.results!0182f479763e4bbe.6f0128d7cb0307e1",
+      "_id": "6f0128d7cb0307e1"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "Tattered map that reveals its secrets under moonlight",
+      "_key": "!tables.results!0182f479763e4bbe.4cd57496bcb4f864",
+      "_id": "4cd57496bcb4f864"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Whalebone staff that resonates with dormant power",
+      "_key": "!tables.results!0182f479763e4bbe.e5f0ba60b5f9c31d",
+      "_id": "e5f0ba60b5f9c31d"
+    }
+  ],
+  "folder": "4b1f1e3c1b624444",
+  "sort": 225,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0182f479763e4bbe"
+}

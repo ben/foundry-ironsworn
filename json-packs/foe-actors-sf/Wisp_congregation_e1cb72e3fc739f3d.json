@@ -1,0 +1,53 @@
+{
+  "name": "Wisp congregation",
+  "img": "icons/magic/light/orbs-smoke-pink.webp",
+  "type": "foe",
+  "_id": "e1cb72e3fc739f3d",
+  "system": {
+    "dfid": ""
+  },
+  "prototypeToken": {
+    "name": "Wisp congregation",
+    "texture": {
+      "src": "icons/magic/light/orbs-smoke-pink.webp"
+    }
+  },
+  "folder": "9a33d248aee84d89",
+  "items": [
+    {
+      "_id": "dd74a00ccc3249cb",
+      "type": "progress",
+      "name": "Wisp congregation",
+      "img": "icons/magic/light/orbs-smoke-pink.webp",
+      "system": {
+        "description": "<div class=\"boxgroup flexrow boxrow\" style=\"margin-bottom: 0.5rem;\">\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Features</h4>\n  <p class=\"nogrow\">Ethereal, spaceborne creatures</p>\n<p class=\"nogrow\">Fiery, pulsing glow</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Drives</h4>\n  <p class=\"nogrow\">Ride the drifts</p>\n<p class=\"nogrow\">Move together in dizzying patterns of light</p>\n<p class=\"nogrow\">Seek out sources of energy</p>\n</div>\n  <div class=\"flexcol box\" style=\"justify-content: flex-start;\">\n  <h4 class=\"nogrow\" style=\"margin: 0.5em;\">Tactics</h4>\n  <p class=\"nogrow\">Surround and envelop</p>\n<p class=\"nogrow\">Absorb energy</p>\n</div>\n</div>\n\n<p>In the depths of space where light and warmth are commodities, ember wisps congregate around sources of energy—such as the engine wake of a starship. Their dazzling display of light and motion is an alluring sight for an isolated spacer. But they also pose a potential threat; they can envelop the hull of a vessel, leeching the starship of precious energy.</p>\n\n<blockquote>Quest Starter: <p>Along a remote passage, a swarm of ember wisps left a cargo ship stranded and without power. What crucial and time-sensitive cargo does this ship carry? Who races against you to secure it?</p></blockquote>",
+        "rank": 2,
+        "current": 0,
+        "completed": false,
+        "subtype": "progress",
+        "starred": false,
+        "hasTrack": true,
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      "effects": [],
+      "folder": "9a33d248aee84d89",
+      "sort": 0,
+      "flags": {
+        "foundry-ironsworn": {
+          "dsid": "npc.variant:starforged/sample_npcs/ember_wisp.wisp_congregation"
+        }
+      },
+      "_key": "!actors.items!e1cb72e3fc739f3d.dd74a00ccc3249cb"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "npc.variant:starforged/sample_npcs/ember_wisp.wisp_congregation"
+    }
+  },
+  "_key": "!actors!e1cb72e3fc739f3d"
+}

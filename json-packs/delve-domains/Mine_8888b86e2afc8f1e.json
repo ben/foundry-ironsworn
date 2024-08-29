@@ -1,0 +1,141 @@
+{
+  "_id": "8888b86e2afc8f1e",
+  "type": "delve-domain",
+  "name": "Mine",
+  "img": "icons/environment/settlement/mine-cart-rocks-red.webp",
+  "system": {
+    "summary": "Tunnels dug greedily and deep.",
+    "description": "",
+    "features": [
+      {
+        "range": [
+          21,
+          43
+        ],
+        "text": "Cramped tunnels"
+      },
+      {
+        "range": [
+          44,
+          56
+        ],
+        "text": "Mine works"
+      },
+      {
+        "range": [
+          57,
+          64
+        ],
+        "text": "Excavated chamber"
+      },
+      {
+        "range": [
+          65,
+          68
+        ],
+        "text": "Mineshaft"
+      },
+      {
+        "range": [
+          69,
+          72
+        ],
+        "text": "Collapsed tunnel"
+      },
+      {
+        "range": [
+          73,
+          76
+        ],
+        "text": "Cluttered storage"
+      },
+      {
+        "range": [
+          77,
+          80
+        ],
+        "text": "Housing or common areas"
+      },
+      {
+        "range": [
+          81,
+          84
+        ],
+        "text": "Flooded chamber"
+      },
+      {
+        "range": [
+          85,
+          88
+        ],
+        "text": "Unearthed secret"
+      },
+      {
+        "range": [
+          89,
+          98
+        ],
+        "text": "Something unusual or unexpected"
+      },
+      {
+        "range": [
+          99,
+          99
+        ],
+        "text": "You transition into a new theme"
+      },
+      {
+        "range": [
+          100,
+          100
+        ],
+        "text": "You transition into a new domain"
+      }
+    ],
+    "dangers": [
+      {
+        "range": [
+          31,
+          33
+        ],
+        "text": "Cave-in"
+      },
+      {
+        "range": [
+          34,
+          36
+        ],
+        "text": "Flooding"
+      },
+      {
+        "range": [
+          37,
+          39
+        ],
+        "text": "Unstable platforms or architecture"
+      },
+      {
+        "range": [
+          40,
+          42
+        ],
+        "text": "Hazardous gas pocket"
+      },
+      {
+        "range": [
+          43,
+          45
+        ],
+        "text": "Weakened terrain"
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 90,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "delve_site_domain:delve/mine"
+    }
+  },
+  "_key": "!items!8888b86e2afc8f1e"
+}

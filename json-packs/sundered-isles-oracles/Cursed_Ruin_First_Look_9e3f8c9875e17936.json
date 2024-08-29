@@ -1,0 +1,290 @@
+{
+  "_id": "9e3f8c9875e17936",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/first_look_cursed"
+    }
+  },
+  "name": "Cursed Ruin First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Among titanic bones",
+      "_key": "!tables.results!9e3f8c9875e17936.3223c6fff31ea51e",
+      "_id": "3223c6fff31ea51e"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Cloaked by a grim darkness",
+      "_key": "!tables.results!9e3f8c9875e17936.77335d2617ec514f",
+      "_id": "77335d2617ec514f"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Corpses displayed as a warning",
+      "_key": "!tables.results!9e3f8c9875e17936.a6f1493f2c1256f4",
+      "_id": "a6f1493f2c1256f4"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Covered in mucus or slime",
+      "_key": "!tables.results!9e3f8c9875e17936.bfb8595fc44deeea",
+      "_id": "bfb8595fc44deeea"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Dreadful premonitions",
+      "_key": "!tables.results!9e3f8c9875e17936.efa42b733dd44963",
+      "_id": "efa42b733dd44963"
+    },
+    {
+      "range": [
+        16,
+        19
+      ],
+      "text": "Echoing with beastly howls",
+      "_key": "!tables.results!9e3f8c9875e17936.8fb73c8579fb3b2c",
+      "_id": "8fb73c8579fb3b2c"
+    },
+    {
+      "range": [
+        20,
+        23
+      ],
+      "text": "Engulfed in unnatural mist or murk",
+      "_key": "!tables.results!9e3f8c9875e17936.64112924372b0826",
+      "_id": "64112924372b0826"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "Festooned with bones and skulls",
+      "_key": "!tables.results!9e3f8c9875e17936.af434dcb6dddecc8",
+      "_id": "af434dcb6dddecc8"
+    },
+    {
+      "range": [
+        27,
+        30
+      ],
+      "text": "Frightful phantom whispers",
+      "_key": "!tables.results!9e3f8c9875e17936.012647fc79f7cfa3",
+      "_id": "012647fc79f7cfa3"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Floating structure",
+      "_key": "!tables.results!9e3f8c9875e17936.cde6b8fb10ca051e",
+      "_id": "cde6b8fb10ca051e"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Glimpses of ghostly forms",
+      "_key": "!tables.results!9e3f8c9875e17936.635027fc0ee32e08",
+      "_id": "635027fc0ee32e08"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Hordes of circling carrion birds or bats",
+      "_key": "!tables.results!9e3f8c9875e17936.a22cb6324825cd49",
+      "_id": "a22cb6324825cd49"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Hung with thick strands of webbing",
+      "_key": "!tables.results!9e3f8c9875e17936.f5fdd903f6bddf36",
+      "_id": "f5fdd903f6bddf36"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Incomprehensible architectural forms",
+      "_key": "!tables.results!9e3f8c9875e17936.90b5fc82eb32a224",
+      "_id": "90b5fc82eb32a224"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "Marked with eldritch symbols",
+      "_key": "!tables.results!9e3f8c9875e17936.a1f77b6b5eb2b998",
+      "_id": "a1f77b6b5eb2b998"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "Monstrous claw marks",
+      "_key": "!tables.results!9e3f8c9875e17936.602a2d09fb6a1507",
+      "_id": "602a2d09fb6a1507"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Overpowering stench of decay",
+      "_key": "!tables.results!9e3f8c9875e17936.00e5070145d3dd99",
+      "_id": "00e5070145d3dd99"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Overtaken by malignant plants",
+      "_key": "!tables.results!9e3f8c9875e17936.8ea5b0b1500969ee",
+      "_id": "8ea5b0b1500969ee"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Secrets revealed in moonlight",
+      "_key": "!tables.results!9e3f8c9875e17936.c2602d6ce8f7bbdc",
+      "_id": "c2602d6ce8f7bbdc"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "Skull-shaped edifice",
+      "_key": "!tables.results!9e3f8c9875e17936.d576b4007d32f360",
+      "_id": "d576b4007d32f360"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "Suffused with eerie light",
+      "_key": "!tables.results!9e3f8c9875e17936.1832678ceec7cbf0",
+      "_id": "1832678ceec7cbf0"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "Surrounded by blighted terrain",
+      "_key": "!tables.results!9e3f8c9875e17936.28683e66d6745ce1",
+      "_id": "28683e66d6745ce1"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Surrounded by dead creatures",
+      "_key": "!tables.results!9e3f8c9875e17936.af5c907ee7aaa14e",
+      "_id": "af5c907ee7aaa14e"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Swarming insects or vermin",
+      "_key": "!tables.results!9e3f8c9875e17936.c5dd987f914d2c3b",
+      "_id": "c5dd987f914d2c3b"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Unnatural decay",
+      "_key": "!tables.results!9e3f8c9875e17936.2cc3e2aab2b17e89",
+      "_id": "2cc3e2aab2b17e89"
+    },
+    {
+      "range": [
+        82,
+        85
+      ],
+      "text": "Unnerving stillness or quiet",
+      "_key": "!tables.results!9e3f8c9875e17936.14eadd8531272014",
+      "_id": "14eadd8531272014"
+    },
+    {
+      "range": [
+        86,
+        89
+      ],
+      "text": "Visions of this place in its heyday",
+      "_key": "!tables.results!9e3f8c9875e17936.23298ca6ad8277f4",
+      "_id": "23298ca6ad8277f4"
+    },
+    {
+      "range": [
+        90,
+        93
+      ],
+      "text": "Warded by arcane energies",
+      "_key": "!tables.results!9e3f8c9875e17936.40ec9d32aacc8cf4",
+      "_id": "40ec9d32aacc8cf4"
+    },
+    {
+      "range": [
+        94,
+        96
+      ],
+      "text": "Wreathed in cold and ice",
+      "_key": "!tables.results!9e3f8c9875e17936.2f3c6ee5cb39fd33",
+      "_id": "2f3c6ee5cb39fd33"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.06955e6338aac9c1]{Cursed Weather}",
+      "_key": "!tables.results!9e3f8c9875e17936.20d601d8dc2dbdb3",
+      "_id": "20d601d8dc2dbdb3"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 213,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9e3f8c9875e17936"
+}

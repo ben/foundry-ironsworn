@@ -1,0 +1,200 @@
+{
+  "_id": "747f18d37af50737",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/overland/region_landmarks",
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/shore"
+    }
+  },
+  "name": "Shore",
+  "description": "<p>Where the land meets the sea</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Approaching or anchored ship",
+      "_key": "!tables.results!747f18d37af50737.54cf8b6f73bb3ee0",
+      "_id": "54cf8b6f73bb3ee0"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Beached shipwreck",
+      "_key": "!tables.results!747f18d37af50737.a0c9ac402b051604",
+      "_id": "a0c9ac402b051604"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Black sand beach",
+      "_key": "!tables.results!747f18d37af50737.4823aa23556548b8",
+      "_id": "4823aa23556548b8"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Craggy rocks and tide pools",
+      "_key": "!tables.results!747f18d37af50737.ef9fcf8d5dbe6c95",
+      "_id": "ef9fcf8d5dbe6c95"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Geometric columns of volcanic rock",
+      "_key": "!tables.results!747f18d37af50737.deff66c2268d7057",
+      "_id": "deff66c2268d7057"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Grassy dunes",
+      "_key": "!tables.results!747f18d37af50737.b8637baf10904adb",
+      "_id": "b8637baf10904adb"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Landed boat",
+      "_key": "!tables.results!747f18d37af50737.e6f409e7c84432bb",
+      "_id": "e6f409e7c84432bb"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Mangrove thicket",
+      "_key": "!tables.results!747f18d37af50737.502428b1493aa864",
+      "_id": "502428b1493aa864"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Picturesque sandy beach",
+      "_key": "!tables.results!747f18d37af50737.b140fe78a5783cfa",
+      "_id": "b140fe78a5783cfa"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "River outlet",
+      "_key": "!tables.results!747f18d37af50737.dc3930f5743031df",
+      "_id": "dc3930f5743031df"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Rocky shelf with geysering blowholes",
+      "_key": "!tables.results!747f18d37af50737.1a9526ad14ea4a7e",
+      "_id": "1a9526ad14ea4a7e"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Saltwater gorge",
+      "_key": "!tables.results!747f18d37af50737.4a76ef6467ff39c7",
+      "_id": "4a76ef6467ff39c7"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Sandspit connecting to a rocky islet",
+      "_key": "!tables.results!747f18d37af50737.a6b1b39160ae7ad6",
+      "_id": "a6b1b39160ae7ad6"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Seals basking on rocky outcroppings",
+      "_key": "!tables.results!747f18d37af50737.e4b071ba600ac75f",
+      "_id": "e4b071ba600ac75f"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Squawking seabirds circling tall rocks",
+      "_key": "!tables.results!747f18d37af50737.ba0463b146f31f3e",
+      "_id": "ba0463b146f31f3e"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Storm-swept debris",
+      "_key": "!tables.results!747f18d37af50737.940817c7a53fde00",
+      "_id": "940817c7a53fde00"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Tall seaside cliffs",
+      "_key": "!tables.results!747f18d37af50737.43f484249a142b80",
+      "_id": "43f484249a142b80"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Watery sea cave",
+      "_key": "!tables.results!747f18d37af50737.b933289e3dd51ca1",
+      "_id": "b933289e3dd51ca1"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Wave-swept pebble beach",
+      "_key": "!tables.results!747f18d37af50737.e0b653770f710c7d",
+      "_id": "e0b653770f710c7d"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Wide, saltwater channel",
+      "_key": "!tables.results!747f18d37af50737.3c0d56385eb8eb0f",
+      "_id": "3c0d56385eb8eb0f"
+    }
+  ],
+  "folder": "a74b251068596264",
+  "sort": 153,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!747f18d37af50737"
+}

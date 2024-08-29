@@ -1,0 +1,74 @@
+{
+  "_id": "ded7a7ea1270f5a2",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/treasure",
+      "dsid": "oracle_rollable:sundered_isles/treasure/location"
+    }
+  },
+  "name": "Treasure Location",
+  "description": "<p>If you’re not sure of a treasure’s location—such as when chasing down a rumored treasure or gathering details on a treasure-related quest—check this table.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "<p>Borne on a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/ship\">\n    <i class=\"fa fa-caret-right\"></i> Ship\n</a></p>",
+      "_key": "!tables.results!ded7a7ea1270f5a2.69bb7bb264a01808",
+      "_id": "69bb7bb264a01808"
+    },
+    {
+      "range": [
+        26,
+        50
+      ],
+      "text": "<p>Lost with a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/shipwreck\">\n    <i class=\"fa fa-caret-right\"></i> Shipwreck\n</a></p>",
+      "_key": "!tables.results!ded7a7ea1270f5a2.5264a82fdc335927",
+      "_id": "5264a82fdc335927"
+    },
+    {
+      "range": [
+        51,
+        70
+      ],
+      "text": "<p>Hidden on an \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/island\">\n    <i class=\"fa fa-caret-right\"></i> Island\n</a></p>",
+      "_key": "!tables.results!ded7a7ea1270f5a2.6b6dcd970bc2feb4",
+      "_id": "6b6dcd970bc2feb4"
+    },
+    {
+      "range": [
+        71,
+        85
+      ],
+      "text": "<p>Sheltered in a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/cave\">\n    <i class=\"fa fa-caret-right\"></i> Cave\n</a></p>",
+      "_key": "!tables.results!ded7a7ea1270f5a2.682685ad8066cfb0",
+      "_id": "682685ad8066cfb0"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "<p>Secured in a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/settlement\">\n    <i class=\"fa fa-caret-right\"></i> Settlement\n</a></p>",
+      "_key": "!tables.results!ded7a7ea1270f5a2.b931530ed3e672d8",
+      "_id": "b931530ed3e672d8"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "<p>Preserved in a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/ruin\">\n    <i class=\"fa fa-caret-right\"></i> Ruin\n</a></p>",
+      "_key": "!tables.results!ded7a7ea1270f5a2.d945301d469a1c78",
+      "_id": "d945301d469a1c78"
+    }
+  ],
+  "folder": "4b1f1e3c1b624444",
+  "sort": 220,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ded7a7ea1270f5a2"
+}

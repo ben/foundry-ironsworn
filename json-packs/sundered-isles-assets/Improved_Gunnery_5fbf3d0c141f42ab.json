@@ -1,0 +1,62 @@
+{
+  "type": "asset",
+  "_id": "5fbf3d0c141f42ab",
+  "folder": "38d5b35b5764ca19",
+  "name": "Improved Gunnery",
+  "system": {
+    "requirement": "",
+    "category": "Module",
+    "color": "#7f5a90",
+    "fields": [],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>Your gundecks house an intimidating array of heavy cannons. When you @Compendium[foundry-ironsworn.starforgedmoves.9f538fabf8998c5b]{Compel} or @Compendium[foundry-ironsworn.starforgedmoves.2f2ba4090b22a122]{Enter the Fray} by opening your gunports to send a promise of violence, add +1 and take +1 momentum on a hit. On a strong hit with a match, take another +1 momentum.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Your well-drilled crew brings your cannons to bear with deadly efficiency. When you @Compendium[foundry-ironsworn.starforgedmoves.ae5994ceb3cba098]{Strike}, choose one.</p>\n<ul>\n<li>Coordinated fire: Add +1 and take +1 momentum on a hit.</li>\n<li>Unleash hell: Mark progress on a hit, but @Compendium[foundry-ironsworn.starforgedmoves.93d2d69b7e2b85e1]{Lose Momentum} (-1) or @Compendium[foundry-ironsworn.starforgedmoves.0fcfea7696d1de15]{Sacrifice Resources} (-1).</li>\n</ul>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      },
+      {
+        "enabled": false,
+        "description": "<p>Once per fight, when you @Compendium[foundry-ironsworn.starforgedmoves.723192c97fec4fe2]{Clash} by committing to an all-or-nothing exchange of fire, add +1, count a weak hit as a strong hit, and mark progress on a hit. On a miss, you must suffer a dire outcome.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": false,
+      "name": "Health",
+      "current": 0,
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/module/improved_gunnery",
+      "dsid": "asset:sundered_isles/module/improved_gunnery"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!5fbf3d0c141f42ab"
+}

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Planets/Jovian/Atmosphere",
-      "category": "Starforged/Oracles/Planets/Jovian"
+      "category": "Starforged/Oracles/Planets/Jovian",
+      "dsid": "oracle_rollable:starforged/planet/jovian/atmosphere"
     }
   },
   "name": "Atmosphere",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         50
       ],
       "text": "Toxic",
-      "_id": "1abc5ba7b8257bde",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!32962e84047f17b5.1abc5ba7b8257bde"
+      "_key": "!tables.results!32962e84047f17b5.89c9cbe8665561d0",
+      "_id": "89c9cbe8665561d0"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         65
       ],
       "text": "Corrosive",
-      "_id": "41cb407068c8e7cc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!32962e84047f17b5.41cb407068c8e7cc"
+      "_key": "!tables.results!32962e84047f17b5.d60ad3f3bda23893",
+      "_id": "d60ad3f3bda23893"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         85
       ],
       "text": "Marginal",
-      "_id": "6ff36e0836b302dc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!32962e84047f17b5.6ff36e0836b302dc"
+      "_key": "!tables.results!32962e84047f17b5.9f7699ed3365b0be",
+      "_id": "9f7699ed3365b0be"
     },
     {
       "range": [
@@ -60,29 +46,12 @@
         100
       ],
       "text": "Breathable",
-      "_id": "ba3690022e39464e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!32962e84047f17b5.ba3690022e39464e"
+      "_key": "!tables.results!32962e84047f17b5.86bc90a29f535ff6",
+      "_id": "86bc90a29f535ff6"
     }
   ],
   "folder": "22e197c635fbf259",
   "sort": 312,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!32962e84047f17b5"
 }

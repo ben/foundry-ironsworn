@@ -1,0 +1,110 @@
+{
+  "_id": "ec7e88ba5f37d38e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/adventures/factions",
+      "dsid": "oracle_rollable:sundered_isles/adventures/factions/cursed"
+    }
+  },
+  "name": "The Cursed",
+  "description": "<p>People transformed or bound by dreadful curses</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Acheron’s Armada",
+      "_key": "!tables.results!ec7e88ba5f37d38e.348c11baa158642d",
+      "_id": "348c11baa158642d"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Blighthulk",
+      "_key": "!tables.results!ec7e88ba5f37d38e.d2fa8843ebf28be8",
+      "_id": "d2fa8843ebf28be8"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Bloodmarked League",
+      "_key": "!tables.results!ec7e88ba5f37d38e.fb32d1728f53303b",
+      "_id": "fb32d1728f53303b"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Brineblessed",
+      "_key": "!tables.results!ec7e88ba5f37d38e.66893f76f92a0c16",
+      "_id": "66893f76f92a0c16"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Carrion Fleet",
+      "_key": "!tables.results!ec7e88ba5f37d38e.3655b22958a0b1b0",
+      "_id": "3655b22958a0b1b0"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Fireships",
+      "_key": "!tables.results!ec7e88ba5f37d38e.e217892bd700d97c",
+      "_id": "e217892bd700d97c"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Forgeborn",
+      "_key": "!tables.results!ec7e88ba5f37d38e.7d684dcbadb444f5",
+      "_id": "7d684dcbadb444f5"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Gilded Fleet",
+      "_key": "!tables.results!ec7e88ba5f37d38e.6c1c2bf1c1da8c3f",
+      "_id": "6c1c2bf1c1da8c3f"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Nightships",
+      "_key": "!tables.results!ec7e88ba5f37d38e.230c51faee742226",
+      "_id": "230c51faee742226"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Tidebound",
+      "_key": "!tables.results!ec7e88ba5f37d38e.2e549adc1b1184b7",
+      "_id": "2e549adc1b1184b7"
+    }
+  ],
+  "folder": "870705f12043ead0",
+  "sort": 55,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!ec7e88ba5f37d38e"
+}

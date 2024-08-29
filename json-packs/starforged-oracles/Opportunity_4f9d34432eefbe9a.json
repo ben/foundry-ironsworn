@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Derelicts/Living/Opportunity",
-      "category": "Starforged/Oracles/Derelicts/Living"
+      "category": "Starforged/Oracles/Derelicts/Living",
+      "dsid": "oracle_rollable:starforged/derelict/living/opportunity"
     }
   },
   "name": "Opportunity",
   "description": "<p>Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.3ff03b51f620ab26]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.367804b98f30d5f4]{Explore a Waypoint} and find an opportunity.</p>",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         20
       ],
       "text": "Culturally significant object or artifact",
-      "_id": "06187c0f1e348f00",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4f9d34432eefbe9a.06187c0f1e348f00"
+      "_key": "!tables.results!4f9d34432eefbe9a.05ade76a7c7698e6",
+      "_id": "05ade76a7c7698e6"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         40
       ],
       "text": "Hidden stash of valuable contraband",
-      "_id": "f1c0f1e2851ab74d",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4f9d34432eefbe9a.f1c0f1e2851ab74d"
+      "_key": "!tables.results!4f9d34432eefbe9a.d0e5255473e13d25",
+      "_id": "d0e5255473e13d25"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         60
       ],
       "text": "Intact barricade or protected area",
-      "_id": "0924f418c304b461",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4f9d34432eefbe9a.0924f418c304b461"
+      "_key": "!tables.results!4f9d34432eefbe9a.0f53af7852d43c80",
+      "_id": "0f53af7852d43c80"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         80
       ],
       "text": "Recorded message reveals helpful aspects of this site",
-      "_id": "1da014a5589c3945",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4f9d34432eefbe9a.1da014a5589c3945"
+      "_key": "!tables.results!4f9d34432eefbe9a.2924a01a239919af",
+      "_id": "2924a01a239919af"
     },
     {
       "range": [
@@ -74,29 +55,12 @@
         100
       ],
       "text": "Useful personal gear",
-      "_id": "f938deaacd3c23c3",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!4f9d34432eefbe9a.f938deaacd3c23c3"
+      "_key": "!tables.results!4f9d34432eefbe9a.132f6092a38c9bb7",
+      "_id": "132f6092a38c9bb7"
     }
   ],
   "folder": "026e85bc4b8047b8",
   "sort": 355,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!4f9d34432eefbe9a"
 }

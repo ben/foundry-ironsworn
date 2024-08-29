@@ -1,0 +1,15 @@
+{
+  "name": "Settlement Identity",
+  "description": "",
+  "type": "RollTable",
+  "_id": "a3c01179678b5698",
+  "sort": 167,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/settlement/identity"
+    }
+  },
+  "folder": "394153020f5e7a87",
+  "sorting": "a",
+  "_key": "!folders!a3c01179678b5698"
+}

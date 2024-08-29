@@ -1,0 +1,884 @@
+{
+  "_id": "be7364705b8fd7db",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ruin",
+      "dsid": "oracle_rollable:sundered_isles/ruin/feature"
+    }
+  },
+  "name": "Ruin Features",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Alchemical experiments or supplies",
+      "_key": "!tables.results!be7364705b8fd7db.0402d6c28f604ed2",
+      "_id": "0402d6c28f604ed2"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Amphitheater or arena",
+      "_key": "!tables.results!be7364705b8fd7db.dc36889241b8bd5b",
+      "_id": "dc36889241b8bd5b"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Balcony or overlook",
+      "_key": "!tables.results!be7364705b8fd7db.b4d10581d12b8889",
+      "_id": "b4d10581d12b8889"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Banquet hall",
+      "_key": "!tables.results!be7364705b8fd7db.7022d5d77d8bef48",
+      "_id": "7022d5d77d8bef48"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Barricaded or blocked path",
+      "_key": "!tables.results!be7364705b8fd7db.c2bebe850351495e",
+      "_id": "c2bebe850351495e"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Blood trail",
+      "_key": "!tables.results!be7364705b8fd7db.26b0b240e2e34a91",
+      "_id": "26b0b240e2e34a91"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Breached doorway or gate",
+      "_key": "!tables.results!be7364705b8fd7db.a79c972adf7a343a",
+      "_id": "a79c972adf7a343a"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Bridge or elevated path",
+      "_key": "!tables.results!be7364705b8fd7db.43a6e4cd13c37190",
+      "_id": "43a6e4cd13c37190"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Broken machinery",
+      "_key": "!tables.results!be7364705b8fd7db.6a974ecb89819518",
+      "_id": "6a974ecb89819518"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Broken statues",
+      "_key": "!tables.results!be7364705b8fd7db.0a76f8192542b40e",
+      "_id": "0a76f8192542b40e"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Burial chamber",
+      "_key": "!tables.results!be7364705b8fd7db.c68dd3e3c4eb658e",
+      "_id": "c68dd3e3c4eb658e"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Carcass of an invasive creature",
+      "_key": "!tables.results!be7364705b8fd7db.c0d594f7703a5320",
+      "_id": "c0d594f7703a5320"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Chamber of unusual material and form",
+      "_key": "!tables.results!be7364705b8fd7db.beb68a851aa2e572",
+      "_id": "beb68a851aa2e572"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Chamber reclaimed by nature",
+      "_key": "!tables.results!be7364705b8fd7db.832caa7f8b1245d1",
+      "_id": "832caa7f8b1245d1"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Claw marks",
+      "_key": "!tables.results!be7364705b8fd7db.012b9061e00c9c7c",
+      "_id": "012b9061e00c9c7c"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Clinging webs",
+      "_key": "!tables.results!be7364705b8fd7db.7498fd31daf2ac88",
+      "_id": "7498fd31daf2ac88"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Cluttered workshop",
+      "_key": "!tables.results!be7364705b8fd7db.757dba0c1ab2fe65",
+      "_id": "757dba0c1ab2fe65"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Collapsed architecture",
+      "_key": "!tables.results!be7364705b8fd7db.4d5b7e2be25d4659",
+      "_id": "4d5b7e2be25d4659"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Colony of infesting creatures",
+      "_key": "!tables.results!be7364705b8fd7db.27ac3b6b3e2ecea4",
+      "_id": "27ac3b6b3e2ecea4"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Concealed mechanism or trap",
+      "_key": "!tables.results!be7364705b8fd7db.fffe22089d337dbd",
+      "_id": "fffe22089d337dbd"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Crumbling architecture",
+      "_key": "!tables.results!be7364705b8fd7db.9622b46d7ef86091",
+      "_id": "9622b46d7ef86091"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Deep well or pit",
+      "_key": "!tables.results!be7364705b8fd7db.3edb343520d190bd",
+      "_id": "3edb343520d190bd"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Dormant smithy or forge",
+      "_key": "!tables.results!be7364705b8fd7db.55026d234bad3431",
+      "_id": "55026d234bad3431"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Dried-up pool or fountain",
+      "_key": "!tables.results!be7364705b8fd7db.c2e6a4470dba00b5",
+      "_id": "c2e6a4470dba00b5"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Dripping water",
+      "_key": "!tables.results!be7364705b8fd7db.01592ca600c253ac",
+      "_id": "01592ca600c253ac"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Dusty or murky air",
+      "_key": "!tables.results!be7364705b8fd7db.1f7670df0c199850",
+      "_id": "1f7670df0c199850"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Echoing noises",
+      "_key": "!tables.results!be7364705b8fd7db.da8c2a7b0c081c58",
+      "_id": "da8c2a7b0c081c58"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Elaborate puzzle or cryptic device",
+      "_key": "!tables.results!be7364705b8fd7db.0d53abc77eaa6cea",
+      "_id": "0d53abc77eaa6cea"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Elaborate stained glass or mosaics",
+      "_key": "!tables.results!be7364705b8fd7db.de4c3c68f7a8c394",
+      "_id": "de4c3c68f7a8c394"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Evidence of past skirmishes",
+      "_key": "!tables.results!be7364705b8fd7db.5dae527abf7d7327",
+      "_id": "5dae527abf7d7327"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Expansive courtyard",
+      "_key": "!tables.results!be7364705b8fd7db.b91651c19b07f2a8",
+      "_id": "b91651c19b07f2a8"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Faded banners or flags",
+      "_key": "!tables.results!be7364705b8fd7db.4c9f615851c4fc7c",
+      "_id": "4c9f615851c4fc7c"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Faded murals",
+      "_key": "!tables.results!be7364705b8fd7db.e657754952e153f7",
+      "_id": "e657754952e153f7"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Faint sounds of footsteps or movement",
+      "_key": "!tables.results!be7364705b8fd7db.d3cb44ed0a1eef90",
+      "_id": "d3cb44ed0a1eef90"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Flooded chamber or passage",
+      "_key": "!tables.results!be7364705b8fd7db.37ab6b0926d718fc",
+      "_id": "37ab6b0926d718fc"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Fortification or strongpoint",
+      "_key": "!tables.results!be7364705b8fd7db.1d036416ade9c556",
+      "_id": "1d036416ade9c556"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Foul stench",
+      "_key": "!tables.results!be7364705b8fd7db.abef2445deef1225",
+      "_id": "abef2445deef1225"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Grand or palatial living chamber",
+      "_key": "!tables.results!be7364705b8fd7db.bc762bf8e057b669",
+      "_id": "bc762bf8e057b669"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Great hall or ballroom",
+      "_key": "!tables.results!be7364705b8fd7db.5ba6af523586e3ba",
+      "_id": "5ba6af523586e3ba"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Hidden compartment",
+      "_key": "!tables.results!be7364705b8fd7db.e9291ff961ad666d",
+      "_id": "e9291ff961ad666d"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Hidden passage or chamber",
+      "_key": "!tables.results!be7364705b8fd7db.554934958b699c84",
+      "_id": "554934958b699c84"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Imposing statues or idols",
+      "_key": "!tables.results!be7364705b8fd7db.52de45fe2127810e",
+      "_id": "52de45fe2127810e"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Improvised memorial",
+      "_key": "!tables.results!be7364705b8fd7db.6a84696066493e26",
+      "_id": "6a84696066493e26"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Insect nests or swarms",
+      "_key": "!tables.results!be7364705b8fd7db.6485ab23b1bf2238",
+      "_id": "6485ab23b1bf2238"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Intact stairway",
+      "_key": "!tables.results!be7364705b8fd7db.e9c407c6a7cefd36",
+      "_id": "e9c407c6a7cefd36"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Intricate symbols or pictographs",
+      "_key": "!tables.results!be7364705b8fd7db.be8855ec8203c0ed",
+      "_id": "be8855ec8203c0ed"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Invasive roots or tree limbs",
+      "_key": "!tables.results!be7364705b8fd7db.c631b9e3fb94b702",
+      "_id": "c631b9e3fb94b702"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Lair of a creature",
+      "_key": "!tables.results!be7364705b8fd7db.c81d3551deffdf82",
+      "_id": "c81d3551deffdf82"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Library or archive",
+      "_key": "!tables.results!be7364705b8fd7db.b1850d17dd1f1005",
+      "_id": "b1850d17dd1f1005"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Makeshift defenses",
+      "_key": "!tables.results!be7364705b8fd7db.e31d7711f69e5595",
+      "_id": "e31d7711f69e5595"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Makeshift shelter",
+      "_key": "!tables.results!be7364705b8fd7db.1ab72218adb56c37",
+      "_id": "1ab72218adb56c37"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Mechanical whirring",
+      "_key": "!tables.results!be7364705b8fd7db.98c122c9bd7ee588",
+      "_id": "98c122c9bd7ee588"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Moldering tapestries",
+      "_key": "!tables.results!be7364705b8fd7db.f4651b900171543e",
+      "_id": "f4651b900171543e"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Mummified or decayed corpses",
+      "_key": "!tables.results!be7364705b8fd7db.a657c516debe7561",
+      "_id": "a657c516debe7561"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Mundane living chambers",
+      "_key": "!tables.results!be7364705b8fd7db.66448492de11b523",
+      "_id": "66448492de11b523"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Mysterious locked container",
+      "_key": "!tables.results!be7364705b8fd7db.6fdaf0c815589dcd",
+      "_id": "6fdaf0c815589dcd"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Narrow, maze-like passages",
+      "_key": "!tables.results!be7364705b8fd7db.61fc715c89d51c0b",
+      "_id": "61fc715c89d51c0b"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Observatory or orrery",
+      "_key": "!tables.results!be7364705b8fd7db.dccc7da8a14bdd62",
+      "_id": "dccc7da8a14bdd62"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Ornate burial urns",
+      "_key": "!tables.results!be7364705b8fd7db.bf88d71034f7ac70",
+      "_id": "bf88d71034f7ac70"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Overgrown garden",
+      "_key": "!tables.results!be7364705b8fd7db.d762566f13543439",
+      "_id": "d762566f13543439"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Painted or carved portraits",
+      "_key": "!tables.results!be7364705b8fd7db.e33a055caeba7384",
+      "_id": "e33a055caeba7384"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Piled rubble",
+      "_key": "!tables.results!be7364705b8fd7db.65bab57c71535fda",
+      "_id": "65bab57c71535fda"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Prison or cages",
+      "_key": "!tables.results!be7364705b8fd7db.5f4a0a4aa6808f80",
+      "_id": "5f4a0a4aa6808f80"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Rampant molds and fungi",
+      "_key": "!tables.results!be7364705b8fd7db.48ddc501594e3bd6",
+      "_id": "48ddc501594e3bd6"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Ransacked or looted chamber",
+      "_key": "!tables.results!be7364705b8fd7db.c6054a441c4ae59f",
+      "_id": "c6054a441c4ae59f"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Reflective surfaces",
+      "_key": "!tables.results!be7364705b8fd7db.45ecbe947fce5861",
+      "_id": "45ecbe947fce5861"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Remains of a careless intruder",
+      "_key": "!tables.results!be7364705b8fd7db.e42da930f3c6ef2e",
+      "_id": "e42da930f3c6ef2e"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Rubble-strewn path",
+      "_key": "!tables.results!be7364705b8fd7db.1641905d53fc5c30",
+      "_id": "1641905d53fc5c30"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Sacred space or religious idols",
+      "_key": "!tables.results!be7364705b8fd7db.228ecdf6e3fba960",
+      "_id": "228ecdf6e3fba960"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Scattered animal bones and detritus",
+      "_key": "!tables.results!be7364705b8fd7db.3763efaa14aa8446",
+      "_id": "3763efaa14aa8446"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Scattering of old coins",
+      "_key": "!tables.results!be7364705b8fd7db.9fa2492246a70b66",
+      "_id": "9fa2492246a70b66"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Scrawled message or warning",
+      "_key": "!tables.results!be7364705b8fd7db.26f7cb6e2c8fdede",
+      "_id": "26f7cb6e2c8fdede"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Scuttling vermin",
+      "_key": "!tables.results!be7364705b8fd7db.74e815bf26cef0fa",
+      "_id": "74e815bf26cef0fa"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Sealed vault",
+      "_key": "!tables.results!be7364705b8fd7db.9b12bcbda1e9556c",
+      "_id": "9b12bcbda1e9556c"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Sealed vault",
+      "_key": "!tables.results!be7364705b8fd7db.40e169027b5d26f0",
+      "_id": "40e169027b5d26f0"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Signs of inhabitants or guardians",
+      "_key": "!tables.results!be7364705b8fd7db.7e2a03e4b0c439c2",
+      "_id": "7e2a03e4b0c439c2"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Signs of repair or refurbishment",
+      "_key": "!tables.results!be7364705b8fd7db.b9336eb82b87045f",
+      "_id": "b9336eb82b87045f"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Signs that others passed this way",
+      "_key": "!tables.results!be7364705b8fd7db.15b7cb1d864df3d8",
+      "_id": "15b7cb1d864df3d8"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Skittering or scratching sounds",
+      "_key": "!tables.results!be7364705b8fd7db.824ae1ce7490c70a",
+      "_id": "824ae1ce7490c70a"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Soot-stained surfaces and ashes",
+      "_key": "!tables.results!be7364705b8fd7db.23ff10869439142f",
+      "_id": "23ff10869439142f"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Sound of voices",
+      "_key": "!tables.results!be7364705b8fd7db.2fc3e25131c4bc0d",
+      "_id": "2fc3e25131c4bc0d"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Sounds of structural instability",
+      "_key": "!tables.results!be7364705b8fd7db.13787c6a56702562",
+      "_id": "13787c6a56702562"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Stack of books or scrolls",
+      "_key": "!tables.results!be7364705b8fd7db.7089632be2e63766",
+      "_id": "7089632be2e63766"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Standing water",
+      "_key": "!tables.results!be7364705b8fd7db.5977caa248081fc7",
+      "_id": "5977caa248081fc7"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Storage or armory",
+      "_key": "!tables.results!be7364705b8fd7db.657093586f2f8fdf",
+      "_id": "657093586f2f8fdf"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Throne room or audience chamber",
+      "_key": "!tables.results!be7364705b8fd7db.ba22c945a7ce00ad",
+      "_id": "ba22c945a7ce00ad"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Toppled Pillars",
+      "_key": "!tables.results!be7364705b8fd7db.b63338403ebf1405",
+      "_id": "b63338403ebf1405"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Tracks through dust or dirt",
+      "_key": "!tables.results!be7364705b8fd7db.ef8dddd2aec29a1a",
+      "_id": "ef8dddd2aec29a1a"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Vaulted ceiling with intricate designs",
+      "_key": "!tables.results!be7364705b8fd7db.a008936d46b803a5",
+      "_id": "a008936d46b803a5"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Vertical shaft or broken stairwell",
+      "_key": "!tables.results!be7364705b8fd7db.f5f9382931c3dd61",
+      "_id": "f5f9382931c3dd61"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Wind whistling through gaps",
+      "_key": "!tables.results!be7364705b8fd7db.0c9dd50e7c7144ce",
+      "_id": "0c9dd50e7c7144ce"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Winding staircase",
+      "_key": "!tables.results!be7364705b8fd7db.eea134c31fd5cbc0",
+      "_id": "eea134c31fd5cbc0"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Abandoned @Compendium[foundry-ironsworn.sunderedislesoracles.0aa8af4001afac1f]{Token}",
+      "_key": "!tables.results!be7364705b8fd7db.6989dedbbc62ebf3",
+      "_id": "6989dedbbc62ebf3"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Corpse clutching a @Compendium[foundry-ironsworn.sunderedislesoracles.0aa8af4001afac1f]{Token}",
+      "_key": "!tables.results!be7364705b8fd7db.c0d304fc0f935d78",
+      "_id": "c0d304fc0f935d78"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "<p>Broken wall reveals a \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:sundered_isles/cave\">\n    <i class=\"fa fa-caret-right\"></i> Cave\n</a></p>",
+      "_key": "!tables.results!be7364705b8fd7db.19041729bb5742e3",
+      "_id": "19041729bb5742e3"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.0736f5a2702af5df]{Descriptor} + @Compendium[foundry-ironsworn.sunderedislesoracles.09f9e38b2637e39d]{Focus}",
+      "_key": "!tables.results!be7364705b8fd7db.ba95aab4564ebd0f",
+      "_id": "ba95aab4564ebd0f"
+    }
+  ],
+  "folder": "b4646e2ada8afbc2",
+  "sort": 217,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!be7364705b8fd7db"
+}

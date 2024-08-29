@@ -1,22 +1,16 @@
 {
   "name": "Operations",
-  "_id": "44fbf1f6c622b0b2",
+  "description": "",
   "type": "RollTable",
+  "_id": "44fbf1f6c622b0b2",
   "sort": 357,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Oracles/Derelicts/Operations"
+      "dfid": "Starforged/Oracles/Derelicts/Operations",
+      "dsid": "oracle_collection:starforged/derelict/operations"
     }
   },
   "folder": "fd19a02fbd5f71e6",
   "sorting": "a",
-  "_stats": {
-    "systemId": null,
-    "systemVersion": null,
-    "coreVersion": null,
-    "createdTime": null,
-    "modifiedTime": null,
-    "lastModifiedBy": null
-  },
   "_key": "!folders!44fbf1f6c622b0b2"
 }

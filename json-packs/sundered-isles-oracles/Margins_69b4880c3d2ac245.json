@@ -1,0 +1,47 @@
+{
+  "_id": "69b4880c3d2ac245",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/ship/controlling_faction",
+      "dsid": "oracle_rollable:sundered_isles/ship/controlling_faction/margins"
+    }
+  },
+  "name": "Margins",
+  "description": "<p>Outer Seas</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        45
+      ],
+      "text": "Known faction",
+      "_key": "!tables.results!69b4880c3d2ac245.663f62b74b1b69f1",
+      "_id": "663f62b74b1b69f1"
+    },
+    {
+      "range": [
+        46,
+        70
+      ],
+      "text": "Unknown faction",
+      "_key": "!tables.results!69b4880c3d2ac245.958d2796ab29426e",
+      "_id": "958d2796ab29426e"
+    },
+    {
+      "range": [
+        71,
+        100
+      ],
+      "text": "Independent",
+      "_key": "!tables.results!69b4880c3d2ac245.5878de48fdfc8a67",
+      "_id": "5878de48fdfc8a67"
+    }
+  ],
+  "folder": "039c1449300a350b",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!69b4880c3d2ac245"
+}

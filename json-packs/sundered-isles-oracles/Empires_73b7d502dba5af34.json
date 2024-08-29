@@ -1,0 +1,110 @@
+{
+  "_id": "73b7d502dba5af34",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/adventures/factions",
+      "dsid": "oracle_rollable:sundered_isles/adventures/factions/empires"
+    }
+  },
+  "name": "Empires",
+  "description": "<p>People seeking dominion over the isles</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Argosy Company",
+      "_key": "!tables.results!73b7d502dba5af34.598b62d8ebdec381",
+      "_id": "598b62d8ebdec381"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Eldarian Remnants",
+      "_key": "!tables.results!73b7d502dba5af34.183de93e5e401f36",
+      "_id": "183de93e5e401f36"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Empire of Solas",
+      "_key": "!tables.results!73b7d502dba5af34.5e55b4a16aa8fa56",
+      "_id": "5e55b4a16aa8fa56"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Firgovian Regency",
+      "_key": "!tables.results!73b7d502dba5af34.60b2af4a1101ed8b",
+      "_id": "60b2af4a1101ed8b"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Hand of Theya",
+      "_key": "!tables.results!73b7d502dba5af34.01fed6fc1c70d7dd",
+      "_id": "01fed6fc1c70d7dd"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Kyrody Dominion",
+      "_key": "!tables.results!73b7d502dba5af34.cc5ac75aca1885bc",
+      "_id": "cc5ac75aca1885bc"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "Meridian Company",
+      "_key": "!tables.results!73b7d502dba5af34.6d0dd750b9677d18",
+      "_id": "6d0dd750b9677d18"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Norish Empire",
+      "_key": "!tables.results!73b7d502dba5af34.4c1495b856b513f5",
+      "_id": "4c1495b856b513f5"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Skulde Alliance",
+      "_key": "!tables.results!73b7d502dba5af34.7c79bdf4443ae390",
+      "_id": "7c79bdf4443ae390"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Sovereign States",
+      "_key": "!tables.results!73b7d502dba5af34.82d686b9b3f0e423",
+      "_id": "82d686b9b3f0e423"
+    }
+  ],
+  "folder": "870705f12043ead0",
+  "sort": 54,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!73b7d502dba5af34"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Cave Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "6e4db0d120c971eb",
+  "sort": 204,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:sundered_isles/cave"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!6e4db0d120c971eb"
+}

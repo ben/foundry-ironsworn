@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Moves/Take_Decisive_Action",
-      "category": "Starforged/Oracles/Moves"
+      "category": "Starforged/Moves/Combat",
+      "dsid": "move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action"
     }
   },
   "name": "Take Decisive Action",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         40
       ],
       "text": "It’s worse than you thought: Make a suffer move (-2)",
-      "_id": "bdb883f203dfb786",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08db503a5e422d1c.bdb883f203dfb786"
+      "_key": "!tables.results!08db503a5e422d1c.4a0c76579dc050b6",
+      "_id": "4a0c76579dc050b6"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         52
       ],
       "text": "Victory is short-lived: A new peril or foe appears",
-      "_id": "59e26aee06c5195f",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08db503a5e422d1c.59e26aee06c5195f"
+      "_key": "!tables.results!08db503a5e422d1c.47ea790061e3bc2d",
+      "_id": "47ea790061e3bc2d"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         64
       ],
       "text": "You face collateral damage: Something is lost, damaged, or broken",
-      "_id": "509bd3a98b7c9933",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08db503a5e422d1c.509bd3a98b7c9933"
+      "_key": "!tables.results!08db503a5e422d1c.c9f9453d3db62600",
+      "_id": "c9f9453d3db62600"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         76
       ],
       "text": "Others pay the price: Someone else suffers the cost",
-      "_id": "2bbdecdc35dde567",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08db503a5e422d1c.2bbdecdc35dde567"
+      "_key": "!tables.results!08db503a5e422d1c.8fdffb33ab067922",
+      "_id": "8fdffb33ab067922"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         88
       ],
       "text": "Others won’t forget: You are marked for vengeance",
-      "_id": "542ef380cd2c8e44",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08db503a5e422d1c.542ef380cd2c8e44"
+      "_key": "!tables.results!08db503a5e422d1c.2e40980b18442255",
+      "_id": "2e40980b18442255"
     },
     {
       "range": [
@@ -88,29 +64,12 @@
         100
       ],
       "text": "It gets complicated: The true nature of a foe or objective is revealed",
-      "_id": "babd1ab3e745683b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!08db503a5e422d1c.babd1ab3e745683b"
+      "_key": "!tables.results!08db503a5e422d1c.3873b6cdab8533a7",
+      "_id": "3873b6cdab8533a7"
     }
   ],
-  "folder": "adcc4cbc5484a254",
-  "sort": 194,
+  "folder": "e27cd8105b6b4bab",
+  "sort": 0,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!08db503a5e422d1c"
 }

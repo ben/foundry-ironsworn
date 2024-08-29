@@ -1,24 +1,17 @@
 {
   "name": "Legacy Moves",
+  "color": "#4F5A69",
+  "description": "The three __legacy tracks__—quests, bonds, and discoveries—are a special type of progress track to show the evolution of your character. As you fulfill vows, build relationships, and explore the Forge, you'll mark progress on these tracks and gain experience. This experience is then spent on character assets to represent your character's growing skills, influence, and resources.\nMake these __legacy moves__ to gain and spend experience, and when you face a final test to learn how your accomplishments and failures will echo through time.",
   "type": "Item",
   "_id": "b19db00aa083d13e",
-  "color": "#4F5A69",
-  "description": "The three **legacy tracks**—quests, bonds, and discoveries—are a special type of progress track to show the evolution of your character. As you fulfill vows, build relationships, and explore the Forge, you'll mark progress on these tracks and gain experience. This experience is then spent on character assets to represent your character's growing skills, influence, and resources.\nMake these **legacy moves** to gain and spend experience, and when you face a final test to learn how your accomplishments and failures will echo through time.",
   "sort": 222,
   "flags": {
     "foundry-ironsworn": {
-      "dfid": "Starforged/Moves/Legacy"
+      "dfid": "Starforged/Moves/Legacy",
+      "dsid": "move_category:starforged/legacy"
     }
   },
   "folder": null,
   "sorting": "a",
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021087,
-    "modifiedTime": 1695949021087,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!folders!b19db00aa083d13e"
 }

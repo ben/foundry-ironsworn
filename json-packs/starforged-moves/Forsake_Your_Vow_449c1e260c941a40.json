@@ -3,12 +3,13 @@
   "type": "sfmove",
   "name": "Forsake Your Vow",
   "img": "icons/dice/d10black.svg",
+  "folder": "e49f552c2c59f214",
   "system": {
     "dfid": "Starforged/Moves/Quest/Forsake_Your_Vow",
     "Category": "Starforged/Moves/Quest",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "**When you renounce your quest, betray your promise, or the goal is lost to you**, clear the vow.\n\nThen, envision the impact of this failure and choose one or more as appropriate to the nature of the vow. Any allies who shared this vow may also envision a cost.\n\n  * You are demoralized or dispirited: @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress}.\n  * A connection loses faith: @Compendium[foundry-ironsworn.starforgedmoves.8704c945023355fb]{Test Your Relationship} when you next interact.\n  * You must abandon a path or resource: Discard an asset.\n  * Someone else pays a price: Envision how a person, being, or community bears the cost of the failure.\n  * Someone else takes advantage: Envision how an enemy gains power.\n  * Your reputation suffers: Envision how this failure marks you.",
+    "Text": "__When you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow.\n\nThen, envision the impact of this failure and choose one or more as appropriate to the nature of the vow. Any allies who shared this vow may also envision a cost.\n\n  * You are demoralized or dispirited: @Compendium[foundry-ironsworn.starforgedmoves.ff32c523829d6481]{Endure Stress}.\n  * A connection loses faith: @Compendium[foundry-ironsworn.starforgedmoves.8704c945023355fb]{Test Your Relationship} when you next interact.\n  * You must abandon a path or resource: Discard an asset.\n  * Someone else pays a price: Envision how a person, being, or community bears the cost of the failure.\n  * Someone else takes advantage: Envision how an enemy gains power.\n  * Your reputation suffers: Envision how this failure marks you.",
     "Trigger": {
       "Text": "When you renounce your quest, betray your promise, or the goal is lost to you...",
       "Options": []
@@ -16,65 +17,41 @@
     "Outcomes": {
       "Strong Hit": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       },
       "Weak Hit": {
-        "Text": "",
-        "Reroll": {
-          "Text": ""
-        }
+        "Text": ""
       },
       "Miss": {
         "Text": "",
-        "Reroll": {
-          "Text": ""
-        },
         "With a Match": {
-          "Text": "",
-          "Reroll": {
-            "Text": ""
-          }
+          "Text": ""
         }
       }
     },
     "Oracles": [],
+    "dsOracleIds": [],
     "Source": {
       "Title": "Ironsworn: Starforged Rulebook",
       "Authors": [
         "Shawn Tomkin"
       ],
-      "Date": "050622",
+      "Date": "2022-05-06",
       "Page": 160
     },
     "Suggestions": {},
     "Display": {
-      "Color": "#2F9236",
       "Images": []
     }
   },
   "sort": 160,
-  "folder": "e49f552c2c59f214",
-  "effects": [],
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "flags": {},
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021291,
-    "modifiedTime": 1695949021291,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Moves/Quest/Forsake_Your_Vow",
+      "dsid": "move:starforged/quest/forsake_your_vow"
+    }
   },
   "_key": "!items!449c1e260c941a40"
 }

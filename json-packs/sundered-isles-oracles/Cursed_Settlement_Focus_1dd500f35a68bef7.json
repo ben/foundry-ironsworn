@@ -1,0 +1,110 @@
+{
+  "_id": "1dd500f35a68bef7",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:sundered_isles/settlement",
+      "dsid": "oracle_rollable:sundered_isles/settlement/focus_cursed"
+    }
+  },
+  "name": "Cursed Settlement Focus",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        10
+      ],
+      "text": "Acting to fulfill a dreadful bargain with a cursed power",
+      "_key": "!tables.results!1dd500f35a68bef7.1e9c1eaa738f1b18",
+      "_id": "1e9c1eaa738f1b18"
+    },
+    {
+      "range": [
+        11,
+        20
+      ],
+      "text": "Bound unwillingly to the service of a cursed power",
+      "_key": "!tables.results!1dd500f35a68bef7.e44f11ed22aec842",
+      "_id": "e44f11ed22aec842"
+    },
+    {
+      "range": [
+        21,
+        30
+      ],
+      "text": "Corrupted or sickened by the effects of a cursed location or relic",
+      "_key": "!tables.results!1dd500f35a68bef7.24424fca47b3da05",
+      "_id": "24424fca47b3da05"
+    },
+    {
+      "range": [
+        31,
+        40
+      ],
+      "text": "Desperately working in defiance of a cursed power",
+      "_key": "!tables.results!1dd500f35a68bef7.371266a575e237c9",
+      "_id": "371266a575e237c9"
+    },
+    {
+      "range": [
+        41,
+        50
+      ],
+      "text": "Enduring dreadful conditions",
+      "_key": "!tables.results!1dd500f35a68bef7.05432b287e04db12",
+      "_id": "05432b287e04db12"
+    },
+    {
+      "range": [
+        51,
+        60
+      ],
+      "text": "Granted unusual abilities or resources by a cursed power",
+      "_key": "!tables.results!1dd500f35a68bef7.f36b22559b7820d1",
+      "_id": "f36b22559b7820d1"
+    },
+    {
+      "range": [
+        61,
+        70
+      ],
+      "text": "In zealous service of a cursed power",
+      "_key": "!tables.results!1dd500f35a68bef7.ec226e1e45e52437",
+      "_id": "ec226e1e45e52437"
+    },
+    {
+      "range": [
+        71,
+        80
+      ],
+      "text": "Suffering under the deprivations of a cursed power",
+      "_key": "!tables.results!1dd500f35a68bef7.d6190ac06676eb69",
+      "_id": "d6190ac06676eb69"
+    },
+    {
+      "range": [
+        81,
+        90
+      ],
+      "text": "Targeted by a cursed power",
+      "_key": "!tables.results!1dd500f35a68bef7.b05b28cccfe0d19a",
+      "_id": "b05b28cccfe0d19a"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Unwittingly helping or unleashing a cursed power",
+      "_key": "!tables.results!1dd500f35a68bef7.704e7ef74fcecad1",
+      "_id": "704e7ef74fcecad1"
+    }
+  ],
+  "folder": "394153020f5e7a87",
+  "sort": 169,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1dd500f35a68bef7"
+}

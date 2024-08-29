@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Settlements/Authority",
-      "category": "Starforged/Oracles/Settlements"
+      "category": "Starforged/Oracles/Settlements",
+      "dsid": "oracle_rollable:starforged/settlement/authority"
     }
   },
   "name": "Authority",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -18,13 +19,8 @@
         15
       ],
       "text": "None / lawless",
-      "_id": "561ac8687d71e67b",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2c3224921966f200.561ac8687d71e67b"
+      "_key": "!tables.results!2c3224921966f200.72fff4953a377749",
+      "_id": "72fff4953a377749"
     },
     {
       "range": [
@@ -32,13 +28,8 @@
         30
       ],
       "text": "Ineffectual",
-      "_id": "88559214c199c1bd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2c3224921966f200.88559214c199c1bd"
+      "_key": "!tables.results!2c3224921966f200.2185646aef4cf7a5",
+      "_id": "2185646aef4cf7a5"
     },
     {
       "range": [
@@ -46,13 +37,8 @@
         45
       ],
       "text": "Tolerant",
-      "_id": "316cec37884ad6a2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2c3224921966f200.316cec37884ad6a2"
+      "_key": "!tables.results!2c3224921966f200.dad35bf27649dd07",
+      "_id": "dad35bf27649dd07"
     },
     {
       "range": [
@@ -60,13 +46,8 @@
         55
       ],
       "text": "Fair",
-      "_id": "b2b91d8912d11a2e",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2c3224921966f200.b2b91d8912d11a2e"
+      "_key": "!tables.results!2c3224921966f200.55db114ab9f1336c",
+      "_id": "55db114ab9f1336c"
     },
     {
       "range": [
@@ -74,13 +55,8 @@
         70
       ],
       "text": "Unyielding",
-      "_id": "d34a79c93187df99",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2c3224921966f200.d34a79c93187df99"
+      "_key": "!tables.results!2c3224921966f200.5ef4ae9971549dcb",
+      "_id": "5ef4ae9971549dcb"
     },
     {
       "range": [
@@ -88,13 +64,8 @@
         85
       ],
       "text": "Corrupt",
-      "_id": "f6fef61f77b2f3a9",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2c3224921966f200.f6fef61f77b2f3a9"
+      "_key": "!tables.results!2c3224921966f200.0741d9ffce51fc7a",
+      "_id": "0741d9ffce51fc7a"
     },
     {
       "range": [
@@ -102,29 +73,12 @@
         100
       ],
       "text": "Oppressive",
-      "_id": "1d92f3edc974a7a7",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!2c3224921966f200.1d92f3edc974a7a7"
+      "_key": "!tables.results!2c3224921966f200.8a0abb109aaa2774",
+      "_id": "8a0abb109aaa2774"
     }
   ],
   "folder": "5f78c3140a6e8eaf",
   "sort": 323,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!2c3224921966f200"
 }

@@ -3,12 +3,13 @@
   "flags": {
     "foundry-ironsworn": {
       "dfid": "Starforged/Oracles/Factions/Influence",
-      "category": "Starforged/Oracles/Factions"
+      "category": "Starforged/Oracles/Factions",
+      "dsid": "oracle_rollable:starforged/faction/influence"
     }
   },
   "name": "Influence",
   "description": "",
-  "formula": "d100",
+  "formula": "1d100",
   "replacement": true,
   "displayRoll": true,
   "results": [
@@ -17,114 +18,67 @@
         1,
         10
       ],
-      "text": "Forsaken (Banished or forgotten)",
-      "_id": "0e5a2f806090c5f2",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5f8eb805b526f608.0e5a2f806090c5f2"
+      "text": "Forsaken",
+      "_key": "!tables.results!5f8eb805b526f608.a10362d3c9f29336",
+      "_id": "a10362d3c9f29336"
     },
     {
       "range": [
         11,
         30
       ],
-      "text": "Isolated (Limited influence in a remote location)",
-      "_id": "76f742218f557efc",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5f8eb805b526f608.76f742218f557efc"
+      "text": "Isolated",
+      "_key": "!tables.results!5f8eb805b526f608.03b9fe5b34f487fd",
+      "_id": "03b9fe5b34f487fd"
     },
     {
       "range": [
         31,
         50
       ],
-      "text": "Localized (Marginal influence in a single sector)",
-      "_id": "ce582c75e16104dd",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5f8eb805b526f608.ce582c75e16104dd"
+      "text": "Localized",
+      "_key": "!tables.results!5f8eb805b526f608.ecfda2b73cbe459f",
+      "_id": "ecfda2b73cbe459f"
     },
     {
       "range": [
         51,
         70
       ],
-      "text": "Established (Strong influence in a single sector)",
-      "_id": "0cc18e39295ee58c",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5f8eb805b526f608.0cc18e39295ee58c"
+      "text": "Established",
+      "_key": "!tables.results!5f8eb805b526f608.d47e0b5a16bc7096",
+      "_id": "d47e0b5a16bc7096"
     },
     {
       "range": [
         71,
         85
       ],
-      "text": "Notable (Dispersed influence across a few sectors)",
-      "_id": "df9a834812af7edf",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5f8eb805b526f608.df9a834812af7edf"
+      "text": "Notable",
+      "_key": "!tables.results!5f8eb805b526f608.2c7dcf5408cade34",
+      "_id": "2c7dcf5408cade34"
     },
     {
       "range": [
         86,
         95
       ],
-      "text": "Dominant (Far-reaching influence across many sectors)",
-      "_id": "199018f51f5421e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5f8eb805b526f608.199018f51f5421e5"
+      "text": "Dominant",
+      "_key": "!tables.results!5f8eb805b526f608.2c15d3b9411880be",
+      "_id": "2c15d3b9411880be"
     },
     {
       "range": [
         96,
         100
       ],
-      "text": "Inescapable (Pervasive influence across inhabited space)",
-      "_id": "85a33a17029ac1e5",
-      "type": 0,
-      "documentId": null,
-      "weight": 1,
-      "drawn": false,
-      "flags": {},
-      "_key": "!tables.results!5f8eb805b526f608.85a33a17029ac1e5"
+      "text": "Inescapable",
+      "_key": "!tables.results!5f8eb805b526f608.b34d2a568d9a6cc3",
+      "_id": "b34d2a568d9a6cc3"
     }
   ],
   "folder": "b6fe3d35ff56995d",
   "sort": 340,
   "img": "icons/dice/d10black.svg",
-  "ownership": {
-    "default": 0,
-    "oPggPZM6rWjfN0q2": 3
-  },
-  "_stats": {
-    "systemId": "foundry-ironsworn",
-    "systemVersion": "1.22.4",
-    "coreVersion": "11.309",
-    "createdTime": 1695949021559,
-    "modifiedTime": 1695949021559,
-    "lastModifiedBy": "oPggPZM6rWjfN0q2"
-  },
   "_key": "!tables!5f8eb805b526f608"
 }

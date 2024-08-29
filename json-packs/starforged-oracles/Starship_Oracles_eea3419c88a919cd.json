@@ -1,0 +1,16 @@
+{
+  "name": "Starship Oracles",
+  "description": "",
+  "type": "RollTable",
+  "_id": "eea3419c88a919cd",
+  "sort": 326,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "Starforged/Oracles/Starships",
+      "dsid": "oracle_collection:starforged/starship"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!eea3419c88a919cd"
+}
