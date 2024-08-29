@@ -15,9 +15,13 @@ For information on how to play a game, check out [the wiki](https://github.com/b
 
 # System Development
 
+> [!IMPORTANT]
+> Currently you **must** have [Datasworn](https://github.com/rsek/datasworn/tree/v0.1.0) checked out to the `v0.1.0` branch in the same directory as this repo in order for the build to succeed.
+> I don't like it either, and as soon as there's an NPM release, I'll fix it and remove this note.
+
 Here's what you'll need to make changes to this system:
 
-1. Install Foundry 10 or later, and start it up.
+1. Install Foundry 11 or later, and start it up.
 2. Install the main `foundry-ironsworn` system, and create a world that uses it.
 3. Clone this repo somewhere you can find it, and run `npm install`.
 4. Run `npm start` from this repository.
@@ -36,6 +40,8 @@ Some things to remember:
 # Credits
 
 This work is based on Ironsworn (found at https://www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (creativecommons.org/licenses/by-nc-sa/4.0/).
+
+Data courtesy of [Datasworn](https://github.com/rsek/datasworn), which is used here under its MIT license.
 
 Hand-drawn map scene courtesy of [McSekcer](https://www.reddit.com/user/McSekcer/).
 
