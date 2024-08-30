@@ -61,9 +61,9 @@ const props = defineProps<{
 const pageSystem = props.page.system as TruthOptionDataPropertiesData
 
 const topRadio = ref<HTMLElement>()
-const state = reactive({ suboption: undefined as string | undefined })
+const suboption = ref<string | undefined>()
 function subtableSelect(entry: OracleTableResult) {
-	state.suboption = entry.text
+	suboption.value = entry.text
 	topRadio.value?.click()
 	emitValue()
 }
@@ -72,13 +72,14 @@ const $emit = defineEmits<{
 	change: [string, string] // title, text
 }>()
 function emitValue() {
-	let text = `${pageSystem.Description} ${state.suboption ?? ''}\n\n_${
+	let text = `${pageSystem.Description} ${suboption ?? ''}\n\n_${
 		pageSystem.Quest
 	}_`
+
 	const template = pageSystem['Roll template']
-	if (state.suboption && template?.Description) {
+	if (suboption.value && template?.Description) {
 		text =
-			template.Description.replace(/\${{.*?}}/, state.suboption) +
+			template.Description.replace(/{{table>.*?}}/, `> ${suboption.value}`) +
 			`\n\n_${pageSystem.Quest}_`
 	}
 	$emit('change', props.page.name ?? '???', text.trim())
