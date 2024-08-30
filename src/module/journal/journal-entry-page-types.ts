@@ -68,6 +68,7 @@ export interface ClockDataProperties {
 /// ///////// SETTING TRUTH OPTION
 export interface TruthOptionDataSourceData extends DFISettingTruthOption {
 	dfid: string
+	dsid?: string
 	Summary: string
 	Quest: string
 }

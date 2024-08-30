@@ -10,13 +10,13 @@
 			:key="`truthPage${i}`"
 			ref="selectables"
 			:page="page"
-			:radio-group="dfid"
+			:radio-group="dsid"
 			@change="valueChange"
 		/>
 
 		<CustomTruth
 			ref="customTruth"
-			:radio-group="dfid"
+			:radio-group="dsid"
 			@change="customValueChange"
 		/>
 
@@ -51,7 +51,7 @@ const nonTruthPages = props
 	.je()
 	?.pages.filter((p) => p.type !== 'truth') as NonTruthPage[]
 
-const dfid = props.je().getFlag('foundry-ironsworn', 'dfid') as string
+const dsid = props.je().getFlag('foundry-ironsworn', 'dsid') as string
 
 const state = reactive<{
 	title?: string

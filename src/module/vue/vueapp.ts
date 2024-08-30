@@ -36,7 +36,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 			)
 		}
 
-		setupVueApp(app: App): void {
+		setupVueApp(_app: App): void {
 			// Implement in descendants if needed
 		}
 
@@ -47,6 +47,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 			// Create the Vue App instance
 			if (this.vueApp == null || this.vueRoot == null) {
 				const provides = pickBy(data, (v, k) => k.startsWith('$'))
+				this.localEmitter.on('closeApp', () => this.close())
 
 				this.vueRoot = undefined
 				this.vueApp = createApp({
