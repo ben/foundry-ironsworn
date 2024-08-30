@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.24.1
+
 - Avoided doing a full load of moves when showing the move sheet, resulting in better performance ([#1023](https://github.com/ben/foundry-ironsworn/pull/1023))
 - Brought back support for the "Custom Moves" folder (also [#1023](https://github.com/ben/foundry-ironsworn/pull/1023))
 - First-start dialog: prevent a situation where an expansion is enabled but not the ruleset it builds on (you shouldn't be able to enable Delve without Ironsworn)
