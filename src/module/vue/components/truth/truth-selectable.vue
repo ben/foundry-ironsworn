@@ -1,7 +1,7 @@
 <template>
 	<label class="nogrow flexrow">
 		<input
-			ref="topRadio"
+			:checked="selected"
 			type="radio"
 			class="nogrow"
 			:name="radioGroup"
@@ -28,7 +28,7 @@
 						ref="suboptions"
 						type="radio"
 						class="nogrow"
-						:name="pageSystem.dfid"
+						:name="pageSystem.dsid"
 						@change="subtableSelect(entry)"
 					/>
 					<p v-html="entry.text" />
@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
 import type { TruthOptionDataPropertiesData } from '../../../journal/journal-entry-page-types'
 import { OracleTableResult } from '../../../roll-table/oracle-table-result'
@@ -60,11 +60,12 @@ const props = defineProps<{
 }>()
 const pageSystem = props.page.system as TruthOptionDataPropertiesData
 
-const topRadio = ref<HTMLElement>()
+const selected = ref(false)
+
 const suboption = ref<string | undefined>()
 function subtableSelect(entry: OracleTableResult) {
 	suboption.value = entry.text
-	topRadio.value?.click()
+	selected.value = true
 	emitValue()
 }
 
@@ -88,11 +89,11 @@ function emitValue() {
 const suboptions = ref<HTMLElement[]>([])
 
 async function selectAndRandomize() {
-	topRadio.value?.click()
+	selected.value = true
 
 	if (
 		props.page.subtable &&
-		((props.page.subtable?.results as any)?.length ?? 0) > 0
+		((props.page.subtable?.results as any)?.size ?? 0) > 0
 	) {
 		const { roll } = await props.page.subtable.draw()
 
