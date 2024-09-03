@@ -290,9 +290,7 @@ for (const collection of collections) {
 						Options: move.trigger.conditions.map((c) => ({
 							Text: c.text ?? '',
 							'Roll type':
-								['player_choice', 'highest', 'lowest'].includes(c.method) &&
-								c.roll_options.length === 1 &&
-								c.roll_options[0].using !== 'bonds_legacy'
+								move.roll_type === 'action_roll'
 									? 'Action roll'
 									: 'Progress roll',
 							Method: {

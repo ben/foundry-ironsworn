@@ -15,7 +15,7 @@
       "Options": [
         {
           "Text": "If you already share a bond with the connection",
-          "Roll type": "Progress roll",
+          "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Custom",
@@ -54,10 +54,7 @@
       "Date": "2022-05-06",
       "Page": 164
     },
-    "Suggestions": {},
-    "Display": {
-      "Images": []
-    }
+    "Suggestions": {}
   },
   "sort": 164,
   "flags": {

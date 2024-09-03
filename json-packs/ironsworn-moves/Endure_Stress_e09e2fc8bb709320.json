@@ -15,7 +15,7 @@
       "Options": [
         {
           "Text": "",
-          "Roll type": "Progress roll",
+          "Roll type": "Action roll",
           "Method": "Highest",
           "Using": [
             "Heart",
@@ -55,10 +55,7 @@
       "Date": "2019-06-05",
       "Page": 95
     },
-    "Suggestions": {},
-    "Display": {
-      "Images": []
-    }
+    "Suggestions": {}
   },
   "sort": 95,
   "flags": {
