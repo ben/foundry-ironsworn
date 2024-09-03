@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.24.2
+
 - Some moves had been imported wrongly, and weren't rollable as they should be, e.g. _Endure Stress_ ([#1025](https://github.com/ben/foundry-ironsworn/pull/1025))
 
 ## 1.24.1
