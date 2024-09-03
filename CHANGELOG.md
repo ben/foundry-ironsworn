@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Some moves had been imported wrongly, and weren't rollable as they should be, e.g. _Endure Stress_ ([#1025](https://github.com/ben/foundry-ironsworn/pull/1025))
+
 ## 1.24.1
 
 - Avoided doing a full load of moves when showing the move sheet, resulting in better performance ([#1023](https://github.com/ben/foundry-ironsworn/pull/1023))
