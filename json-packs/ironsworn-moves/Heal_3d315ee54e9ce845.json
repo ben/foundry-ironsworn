@@ -23,7 +23,7 @@
         },
         {
           "Text": "Mend your own wounds",
-          "Roll type": "Progress roll",
+          "Roll type": "Action roll",
           "Method": "Lowest",
           "Using": [
             "Iron",

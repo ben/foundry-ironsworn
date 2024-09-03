@@ -15,7 +15,7 @@
       "Options": [
         {
           "Text": "",
-          "Roll type": "Action roll",
+          "Roll type": "Progress roll",
           "Method": "Any",
           "Using": [
             "Failure Track"

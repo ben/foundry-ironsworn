@@ -15,7 +15,7 @@
       "Options": [
         {
           "Text": "",
-          "Roll type": "Progress roll",
+          "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
             "Supply",
