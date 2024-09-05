@@ -67,6 +67,7 @@
 		"Stat": "Stat",
 		"Stats": "Stats",
 		"OracleTable": {
+			"CursedResult": "Cursed Result:",
 			"ColumnLabel": {
 				"Roll": "Roll",
 				"RollRange": "Roll range",
