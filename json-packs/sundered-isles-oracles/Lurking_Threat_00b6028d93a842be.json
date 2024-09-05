@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/cave",
-      "dsid": "oracle_rollable:sundered_isles/cave/lurking_threat"
+      "dsid": "oracle_rollable:sundered_isles/cave/lurking_threat",
+      "cursed_variant": "oracle_rollable:sundered_isles/cave/lurking_threat_cursed"
     }
   },
   "name": "Lurking Threat",

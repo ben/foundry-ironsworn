@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/treasure",
-      "dsid": "oracle_rollable:sundered_isles/treasure/tokens"
+      "dsid": "oracle_rollable:sundered_isles/treasure/tokens",
+      "cursed_variant": "oracle_rollable:sundered_isles/treasure/tokens_cursed"
     }
   },
   "name": "Tokens",

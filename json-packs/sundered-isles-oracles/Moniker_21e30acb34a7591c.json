@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/character/name",
-      "dsid": "oracle_rollable:sundered_isles/character/name/moniker"
+      "dsid": "oracle_rollable:sundered_isles/character/name/moniker",
+      "cursed_variant": "oracle_rollable:sundered_isles/character/name/moniker_cursed/category"
     }
   },
   "name": "Moniker",

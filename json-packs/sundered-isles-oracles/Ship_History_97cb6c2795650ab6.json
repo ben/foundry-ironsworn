@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/getting_underway/take_command",
-      "dsid": "oracle_rollable:sundered_isles/getting_underway/take_command/ship_history"
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/take_command/ship_history",
+      "cursed_variant": "oracle_rollable:sundered_isles/getting_underway/take_command/ship_history_cursed"
     }
   },
   "name": "Ship History",

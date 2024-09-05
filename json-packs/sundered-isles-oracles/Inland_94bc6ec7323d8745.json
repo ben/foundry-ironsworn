@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/settlement/focus",
-      "dsid": "oracle_rollable:sundered_isles/settlement/focus/inland"
+      "dsid": "oracle_rollable:sundered_isles/settlement/focus/inland",
+      "cursed_variant": "oracle_rollable:sundered_isles/settlement/focus_cursed"
     }
   },
   "name": "Inland",

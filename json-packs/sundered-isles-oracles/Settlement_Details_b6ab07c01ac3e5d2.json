@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/settlement",
-      "dsid": "oracle_rollable:sundered_isles/settlement/details"
+      "dsid": "oracle_rollable:sundered_isles/settlement/details",
+      "cursed_variant": "oracle_rollable:sundered_isles/settlement/details_cursed"
     }
   },
   "name": "Settlement Details",

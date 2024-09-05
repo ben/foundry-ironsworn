@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/cave",
-      "dsid": "oracle_rollable:sundered_isles/cave/threshold"
+      "dsid": "oracle_rollable:sundered_isles/cave/threshold",
+      "cursed_variant": "oracle_rollable:sundered_isles/cave/threshold_cursed"
     }
   },
   "name": "Cave Threshold",

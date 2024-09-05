@@ -388,7 +388,8 @@ const processOracle = async (
 			'foundry-ironsworn': {
 				dfid: DataswornToLegacyIds[oracle._id],
 				category: legacyFolderId,
-				dsid: oracle._id
+				dsid: oracle._id,
+				cursed_variant: oracle.tags?.sundered_isles?.cursed_by
 			}
 		},
 		name: oracle.name,

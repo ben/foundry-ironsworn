@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/getting_underway/create_your_character",
-      "dsid": "oracle_rollable:sundered_isles/getting_underway/create_your_character/your_backstory"
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/create_your_character/your_backstory",
+      "cursed_variant": "oracle_rollable:sundered_isles/getting_underway/create_your_character/your_backstory_cursed"
     }
   },
   "name": "Your Backstory",

@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/character",
-      "dsid": "oracle_rollable:sundered_isles/character/goals"
+      "dsid": "oracle_rollable:sundered_isles/character/goals",
+      "cursed_variant": "oracle_rollable:sundered_isles/character/goals_cursed"
     }
   },
   "name": "Character Goals",

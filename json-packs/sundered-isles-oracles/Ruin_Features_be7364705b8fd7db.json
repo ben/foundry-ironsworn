@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/ruin",
-      "dsid": "oracle_rollable:sundered_isles/ruin/feature"
+      "dsid": "oracle_rollable:sundered_isles/ruin/feature",
+      "cursed_variant": "oracle_rollable:sundered_isles/ruin/feature_cursed"
     }
   },
   "name": "Ruin Features",

@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/cave/sea",
-      "dsid": "oracle_rollable:sundered_isles/cave/sea/feature"
+      "dsid": "oracle_rollable:sundered_isles/cave/sea/feature",
+      "cursed_variant": "oracle_rollable:sundered_isles/cave/sea/feature_cursed"
     }
   },
   "name": "Sea Cave Features",
