@@ -97,6 +97,11 @@
 		border: none;
 
 		.oracle-table.oracle-table-partial {
+			&.cursed {
+				background-color: var(--ironsworn-color-fg);
+				color: var(--ironsworn-color-bg);
+			}
+
 			transition: none;
 			margin: var(--ironsworn-spacer-xs) 0;
 			// tint to make this an easier read when the message uses e.g. FVTT's default background texture
