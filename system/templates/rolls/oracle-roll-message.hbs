@@ -14,6 +14,7 @@
     {{#each result.displayRows}}
       {{#if this}}
       <tr class="oracle-result-row" {{#if (eq @index 1)}}aria-selected="true"{{/if}}>
+
         <td class="oracle-table-column-roll-range">
           <span class="oracle-row-content">
           {{#if (eq this.range.[0] this.range.[1])}}{{this.range.[0]}}{{else}}{{this.range.[0]}}–{{this.range.[1]}}{{/if}}
@@ -28,8 +29,11 @@
             <i class="icon fas fa-copy" role="presentational"></i>
           </button>
         </td>
-        <td class="oracle-table-column-result-text">{{{this.text}}}
+
+        <td class="oracle-table-column-result-text">
+          {{{this.text}}}
         </td>
+
         <td class="oracle-table-column-roll-result" >
           {{#if (eq @index 1)}}
           <span class="oracle-row-content">
@@ -46,9 +50,61 @@
           </button>
           {{/if}}
         </td>
+
       </tr>
       {{/if}}
     {{/each}}
     </tbody>
   </table>
+
+  {{#if cursedDie}}
+  <h3 class="flexrow nogrow">
+    <span>Cursed die:</span>
+    <i class="icon isicon-d10-tilt nogrow" role="presentational"></i>
+    &nbsp;
+    <span class="nogrow" style="text-wrap: nowrap;">{{{ cursedDie.total }}}</span>
+  </h3>
+  {{/if}}
+
+  {{#if cursedResult}}
+  <table class="oracle-table oracle-table-partial cursed">
+    <tbody>
+    {{#each cursedResult.displayRows}}
+      {{#if this}}
+      <tr class="oracle-result-row" {{#if (eq @index 1)}}aria-selected="true"{{/if}}>
+
+        <td class="oracle-table-column-roll-range">
+          <span class="oracle-row-content">
+          {{#if (eq this.range.[0] this.range.[1])}}{{this.range.[0]}}{{else}}{{this.range.[0]}}–{{this.range.[1]}}{{/if}}
+          </span>
+          <button
+            type="button"
+            class="oracle-result-control copy-result clickable text"
+            data-result="{{this.text}}"
+            data-tooltip="{{localize 'IRONSWORN.CopyTextToClipboard'}}"
+            data-tooltip-direction="LEFT"
+          >
+            <i class="icon fas fa-copy" role="presentational"></i>
+          </button>
+        </td>
+
+        <td class="oracle-table-column-result-text">
+          {{{this.text}}}
+        </td>
+
+        <td class="oracle-table-column-roll-result" >
+          {{#if (eq @index 1)}}
+          <span class="oracle-row-content">
+            <i class="icon isicon-d10-tilt" role="presentational"></i>
+            <span>{{{ @root.roll.total }}}</span>
+          </span>
+          {{/if}}
+        </td>
+
+      </tr>
+      {{/if}}
+    {{/each}}
+    </tbody>
+  </table>
+  {{/if}}
 </article>
