@@ -11,16 +11,16 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 			system: 'ironsworn',
 			type: 'ds',
 			labels: [
-				'systems/foundry-ironsworn/assets/dice/dcursed-cursed.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp',
-				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp'
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 1
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 2
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 3
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 4
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 5
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 6
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 7
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 8
+				'systems/foundry-ironsworn/assets/dice/dcursed-blank.webp', // 9
+				'systems/foundry-ironsworn/assets/dice/dcursed-cursed.webp' // 10
 			]
 		},
 		'd10'
