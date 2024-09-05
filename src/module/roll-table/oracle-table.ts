@@ -379,6 +379,7 @@ export class OracleTable extends RollTable {
 		// defer render to chat so we can manually set the chat message id
 		const { results, roll } = await oracleTable.draw({ displayChat: false })
 		const { cursedResults, cursedDie } = await oracleTable.cursedResults(roll)
+		console.log(cursedResults)
 
 		const templateData = await oracleTable._prepareTemplateData(
 			results,
@@ -424,11 +425,11 @@ export class OracleTable extends RollTable {
 		if (cursedDie.total !== 1) return { cursedDie }
 
 		// Draw from the cursed table
-		const { results: cursedResults } = await cursedTable.draw({
-			roll: originalRoll,
-			displayChat: false
-		})
-		return { cursedResults, cursedDie }
+		const cursedResult = cursedTable.results.find(
+			(x) =>
+				originalRoll.total >= x.range[0] && originalRoll.total <= x.range[1]
+		)
+		return { cursedResults: [cursedResult], cursedDie }
 	}
 }
 
