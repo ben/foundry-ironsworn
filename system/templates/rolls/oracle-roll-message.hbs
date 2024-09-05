@@ -57,16 +57,11 @@
     </tbody>
   </table>
 
-  {{#if cursedDie}}
-  <h3 class="flexrow nogrow">
-    <span>Cursed die:</span>
-    <i class="icon isicon-d10-tilt nogrow" role="presentational"></i>
-    &nbsp;
-    <span class="nogrow" style="text-wrap: nowrap;">{{{ cursedDie.total }}}</span>
-  </h3>
-  {{/if}}
-
   {{#if cursedResult}}
+  <h3 class="nogrow">
+    <i class="fa fa-skull"></i>
+    Cursed result:
+  </h3>
   <table class="oracle-table oracle-table-partial cursed">
     <tbody>
     {{#each cursedResult.displayRows}}

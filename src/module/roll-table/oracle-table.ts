@@ -419,9 +419,9 @@ export class OracleTable extends RollTable {
 		if (!cursedTable) return {}
 
 		// Roll the cursed die
-		const cursedDie = await new Roll('1d10').roll()
+		const cursedDie = await new Roll('1ds').roll()
 		cursifyRoll(cursedDie)
-		if (cursedDie.total !== 10) return { cursedDie }
+		if (cursedDie.total !== 1) return { cursedDie }
 
 		// Draw from the cursed table
 		const { results: cursedResults } = await cursedTable.draw({
