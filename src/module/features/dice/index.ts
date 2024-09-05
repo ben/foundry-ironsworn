@@ -55,3 +55,14 @@ export function cinderAndWraithifyRoll(roll: Roll) {
 		edge: wraithColor
 	}
 }
+
+export function cursifyRoll(roll: Roll) {
+	const die = roll.dice[0]
+	const cursedColor = '#228822'
+	;(die.options as any).appearance = {
+		labelColor: (game.dice3d as any).exports?.Utils?.contrastOf(cursedColor),
+		background: cursedColor,
+		outline: cursedColor,
+		edge: cursedColor
+	}
+}
