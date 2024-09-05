@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/cave/inland_cave",
-      "dsid": "oracle_rollable:sundered_isles/cave/inland_cave/feature"
+      "dsid": "oracle_rollable:sundered_isles/cave/inland_cave/feature",
+      "cursed_variant": "oracle_rollable:sundered_isles/cave/inland_cave/feature_cursed"
     }
   },
   "name": "Inland Cave Features",

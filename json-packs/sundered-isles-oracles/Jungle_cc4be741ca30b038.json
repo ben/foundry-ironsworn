@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/overland/region_landmarks",
-      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/jungle"
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/jungle",
+      "cursed_variant": "oracle_rollable:sundered_isles/overland/region_landmarks/cursed"
     }
   },
   "name": "Jungle",

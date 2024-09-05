@@ -31,8 +31,8 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
 		// Auto-check required rulesets
 		html.find('input.ruleset').on('change', (ev) => {
-			console.log(ev)
-			if (ev.target.checked) {
+			const input = ev.target as HTMLInputElement
+			if (input.checked) {
 				// Clicked on, make sure all required checks are checked as well
 				html
 					.find(`input.ruleset[value="${ev.target.dataset.requires}"]`)
@@ -40,7 +40,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 			} else {
 				// Clicked off, make sure all dependents are unchecked
 				html
-					.find(`input.ruleset[data-requires="${ev.target.value}"]`)
+					.find(`input.ruleset[data-requires="${input.value}"]`)
 					.prop('checked', false)
 			}
 		})

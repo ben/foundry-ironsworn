@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/seafaring",
-      "dsid": "oracle_rollable:sundered_isles/seafaring/details"
+      "dsid": "oracle_rollable:sundered_isles/seafaring/details",
+      "cursed_variant": "oracle_rollable:sundered_isles/seafaring/details_cursed"
     }
   },
   "name": "Seafaring Details",

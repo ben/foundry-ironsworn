@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/ship",
-      "dsid": "oracle_rollable:sundered_isles/ship/details_cursed"
+      "dsid": "oracle_rollable:sundered_isles/ship/details_cursed",
+      "cursed_variant": "oracle_rollable:sundered_isles/ship/details_cursed"
     }
   },
   "name": "Cursed Ship Details",

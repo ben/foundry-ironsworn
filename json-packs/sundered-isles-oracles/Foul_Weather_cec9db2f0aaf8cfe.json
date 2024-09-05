@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/weather",
-      "dsid": "oracle_rollable:sundered_isles/weather/foul"
+      "dsid": "oracle_rollable:sundered_isles/weather/foul",
+      "cursed_variant": "oracle_rollable:sundered_isles/weather/cursed"
     }
   },
   "name": "Foul Weather",

@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/settlement",
-      "dsid": "oracle_rollable:sundered_isles/settlement/first_look"
+      "dsid": "oracle_rollable:sundered_isles/settlement/first_look",
+      "cursed_variant": "oracle_rollable:sundered_isles/settlement/first_look_cursed"
     }
   },
   "name": "Settlement First Look",

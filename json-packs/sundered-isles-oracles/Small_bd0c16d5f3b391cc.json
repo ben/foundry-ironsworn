@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/ship/mission",
-      "dsid": "oracle_rollable:sundered_isles/ship/mission/small"
+      "dsid": "oracle_rollable:sundered_isles/ship/mission/small",
+      "cursed_variant": "oracle_rollable:sundered_isles/ship/mission_cursed"
     }
   },
   "name": "Small",

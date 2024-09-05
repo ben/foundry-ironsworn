@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/overland",
-      "dsid": "oracle_rollable:sundered_isles/overland/details"
+      "dsid": "oracle_rollable:sundered_isles/overland/details",
+      "cursed_variant": "oracle_rollable:sundered_isles/overland/details_cursed"
     }
   },
   "name": "Overland Details",

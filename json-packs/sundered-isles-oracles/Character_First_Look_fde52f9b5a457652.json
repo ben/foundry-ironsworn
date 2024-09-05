@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/character",
-      "dsid": "oracle_rollable:sundered_isles/character/first_look"
+      "dsid": "oracle_rollable:sundered_isles/character/first_look",
+      "cursed_variant": "oracle_rollable:sundered_isles/character/first_look_cursed"
     }
   },
   "name": "Character First Look",

@@ -1,6 +1,6 @@
 import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import type { ConfiguredFlags } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes'
-import { max } from 'lodash-es'
+import { compact, max } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import { getPackAndIndexForCompendiumKey, IdParser } from '../datasworn2'
 import {
@@ -8,6 +8,7 @@ import {
 	getCustomizedOracleTrees,
 	IOracleTreeNode
 } from '../features/customoracles'
+import { cursifyRoll } from '../features/dice'
 import { DataswornRulesetKey } from '../helpers/settings'
 import { hashLookup } from '../helpers/util'
 import { DFIOracle, DFIRow } from '../item/types'
@@ -185,64 +186,18 @@ export class OracleTable extends RollTable {
 	}
 
 	/**
-	 * Initialize one or more instances of OracleTable from a Dataforged {@link IOracle} node.
-	 * @param options Default constructor options for the tables.
-	 * @param context Default constructor context for the tables
-	 */
-	static async fromDataforged(
-		tableData: OracleTable.IOracleLeaf,
-		options?: Partial<RollTableDataConstructorData>,
-		context?: DocumentModificationContext
-	): Promise<OracleTable | undefined>
-	static async fromDataforged(
-		tableData: OracleTable.IOracleLeaf[],
-		options?: Partial<RollTableDataConstructorData>,
-		context?: DocumentModificationContext
-	): Promise<OracleTable[]>
-	static async fromDataforged(
-		tableData: OracleTable.IOracleLeaf | OracleTable.IOracleLeaf[],
-		options: Partial<RollTableDataConstructorData> = {},
-		context: DocumentModificationContext = {}
-	): Promise<OracleTable | OracleTable[] | undefined> {
-		const clonedOptions = deepClone(options)
-
-		if (!Array.isArray(tableData)) {
-			logger.info(`Building ${tableData.$id}`)
-			return await OracleTable.create(
-				foundry.utils.mergeObject(
-					clonedOptions,
-					OracleTable.getConstructorData(tableData),
-					{
-						overwrite: false,
-						inplace: false
-					}
-				) as RollTableDataConstructorData,
-				context
-			)
-		}
-		logger.info(`Building ${tableData.map((item) => item.$id).join(', ')}`)
-		return await OracleTable.createDocuments(
-			tableData.map(
-				(table) =>
-					foundry.utils.mergeObject(
-						deepClone(clonedOptions),
-						OracleTable.getConstructorData(table),
-						{
-							overwrite: false,
-							inplace: false
-						}
-					) as RollTableDataConstructorData
-			),
-			context
-		)
-	}
-
-	/**
 	 * Prepares handlebars template data for an oracle roll message.
 	 * @remarks This is provided as its own method so that it can be reused to 'fake' rerolls in OracleTable#reroll
 	 */
-	async _prepareTemplateData(results: OracleTableResult[], roll: null | Roll) {
+	async _prepareTemplateData(
+		results: OracleTableResult[],
+		cursedResults: OracleTableResult[] | undefined,
+		cursedDie: Roll | undefined,
+		roll: null | Roll
+	) {
 		const result = results[0]
+		const cursedResult = cursedResults?.[0]
+
 		return {
 			// NB: with these options, this is async in v10
 			// eslint-disable-next-line @typescript-eslint/await-thenable
@@ -256,7 +211,15 @@ export class OracleTable extends RollTable {
 				icon: result.icon,
 				displayRows: result.displayRows.map((row) => row?.toObject())
 			}),
+			cursedResult:
+				cursedResult &&
+				foundry.utils.mergeObject(cursedResult.toObject(false), {
+					text: cursedResult.getChatText(),
+					icon: cursedResult.icon,
+					displayRows: cursedResult.displayRows.map((row) => row?.toObject())
+				}),
 			roll: roll?.toJSON(),
+			cursedDie: cursedDie?.toJSON?.(),
 			table: this,
 			subtitle:
 				this.getFlag('foundry-ironsworn', 'subtitle') ??
@@ -322,6 +285,9 @@ export class OracleTable extends RollTable {
 			}
 		}
 
+		const { cursedResults, cursedDie } =
+			(roll && (await this.cursedResults(roll))) ?? {}
+
 		// Construct chat data
 		messageData = foundry.utils.mergeObject(
 			{
@@ -332,7 +298,7 @@ export class OracleTable extends RollTable {
 						? CONST.CHAT_MESSAGE_TYPES.ROLL
 						: CONST.CHAT_MESSAGE_TYPES.OTHER,
 				roll,
-				rolls: [roll],
+				rolls: compact([roll, cursedDie]),
 				sound: roll != null ? CONFIG.sounds.dice : null,
 				flags
 			},
@@ -341,7 +307,12 @@ export class OracleTable extends RollTable {
 
 		// console.log('messageData', messageData)
 
-		const templateData = await this._prepareTemplateData(results, roll)
+		const templateData = await this._prepareTemplateData(
+			results,
+			cursedResults,
+			cursedDie,
+			roll
+		)
 
 		// Render the chat card which combines the dice roll with the drawn results
 		messageData.content = await renderTemplate(
@@ -407,8 +378,15 @@ export class OracleTable extends RollTable {
 
 		// defer render to chat so we can manually set the chat message id
 		const { results, roll } = await oracleTable.draw({ displayChat: false })
+		const { cursedResults, cursedDie } = await oracleTable.cursedResults(roll)
+		console.log(cursedResults)
 
-		const templateData = await oracleTable._prepareTemplateData(results, roll)
+		const templateData = await oracleTable._prepareTemplateData(
+			results,
+			cursedResults,
+			cursedDie,
+			roll
+		)
 
 		const flags = foundry.utils.mergeObject(msg.toObject().flags, {
 			'foundry-ironsworn': {
@@ -417,13 +395,41 @@ export class OracleTable extends RollTable {
 		}) as ConfiguredFlags<'ChatMessage'>
 
 		// trigger sound + 3d dice manually because updating the message won't
-		if (game.dice3d != null) void game.dice3d.showForRoll(roll, game.user, true)
-		else void AudioHelper.play({ src: CONFIG.sounds.dice })
+		if (game.dice3d != null) {
+			void game.dice3d.showForRoll(roll, game.user)
+			if (cursedDie) void game.dice3d.showForRoll(cursedDie, game.user)
+		} else void AudioHelper.play({ src: CONFIG.sounds.dice })
 
 		return await msg.update({
 			content: await renderTemplate(OracleTable.resultTemplate, templateData),
 			flags
 		})
+	}
+
+	async cursedResults(originalRoll: Roll): Promise<{
+		cursedResults?: OracleTableResult[]
+		cursedDie?: Roll
+	}> {
+		const cursedAlternateDsId = this.getFlag(
+			'foundry-ironsworn',
+			'cursed_variant'
+		)
+		if (!cursedAlternateDsId) return {}
+
+		const cursedTable = await OracleTable.getByDsId(cursedAlternateDsId)
+		if (!cursedTable) return {}
+
+		// Roll the cursed die
+		const cursedDie = await new Roll('1ds').roll()
+		cursifyRoll(cursedDie)
+		if (cursedDie.total !== 1) return { cursedDie }
+
+		// Draw from the cursed table
+		const cursedResult = cursedTable.results.find(
+			(x) =>
+				originalRoll.total >= x.range[0] && originalRoll.total <= x.range[1]
+		)
+		return { cursedResults: [cursedResult], cursedDie }
 	}
 }
 

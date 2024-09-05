@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/getting_underway/take_command",
-      "dsid": "oracle_rollable:sundered_isles/getting_underway/take_command/crew"
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/take_command/crew",
+      "cursed_variant": "oracle_rollable:sundered_isles/getting_underway/take_command/crew_cursed"
     }
   },
   "name": "Crew Characteristics",

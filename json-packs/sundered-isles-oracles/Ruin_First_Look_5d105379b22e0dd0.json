@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/ruin",
-      "dsid": "oracle_rollable:sundered_isles/ruin/first_look"
+      "dsid": "oracle_rollable:sundered_isles/ruin/first_look",
+      "cursed_variant": "oracle_rollable:sundered_isles/ruin/first_look_cursed"
     }
   },
   "name": "Ruin First Look",

@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/island",
-      "dsid": "oracle_rollable:sundered_isles/island/name"
+      "dsid": "oracle_rollable:sundered_isles/island/name",
+      "cursed_variant": "oracle_rollable:sundered_isles/island/name_cursed"
     }
   },
   "name": "Island Name",

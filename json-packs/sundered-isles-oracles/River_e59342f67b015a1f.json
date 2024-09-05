@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/overland/region_landmarks",
-      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/river"
+      "dsid": "oracle_rollable:sundered_isles/overland/region_landmarks/river",
+      "cursed_variant": "oracle_rollable:sundered_isles/overland/region_landmarks/cursed"
     }
   },
   "name": "River",

@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/treasure",
-      "dsid": "oracle_rollable:sundered_isles/treasure/location"
+      "dsid": "oracle_rollable:sundered_isles/treasure/location",
+      "cursed_variant": "oracle_rollable:sundered_isles/treasure/location_cursed"
     }
   },
   "name": "Treasure Location",

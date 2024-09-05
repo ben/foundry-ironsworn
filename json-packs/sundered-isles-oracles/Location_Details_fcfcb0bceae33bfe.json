@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/getting_underway/chart_your_course",
-      "dsid": "oracle_rollable:sundered_isles/getting_underway/chart_your_course/details"
+      "dsid": "oracle_rollable:sundered_isles/getting_underway/chart_your_course/details",
+      "cursed_variant": "oracle_rollable:sundered_isles/getting_underway/chart_your_course/details_cursed"
     }
   },
   "name": "Location Details",

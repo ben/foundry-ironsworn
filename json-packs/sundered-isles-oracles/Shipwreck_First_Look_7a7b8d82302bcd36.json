@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/shipwreck",
-      "dsid": "oracle_rollable:sundered_isles/shipwreck/first_look"
+      "dsid": "oracle_rollable:sundered_isles/shipwreck/first_look",
+      "cursed_variant": "oracle_rollable:sundered_isles/shipwreck/first_look_cursed"
     }
   },
   "name": "Shipwreck First Look",

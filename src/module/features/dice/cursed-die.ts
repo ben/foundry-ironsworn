@@ -17,18 +17,8 @@ export class DieCursed extends Die {
 	/* -------------------------------------------- */
 
 	/** @override */
-	getResultLabel(result) {
-		return {
-			'1': '&nbsp;',
-			'2': '&nbsp;',
-			'3': '&nbsp;',
-			'4': '&nbsp;',
-			'5': '&nbsp;',
-			'6': '&nbsp;',
-			'7': '&nbsp;',
-			'8': '&nbsp;',
-			'9': '&nbsp;',
-			'10': '💀'
-		}[result.result]
+	getResultLabel({ result }) {
+		if (result === 10) return '💀'
+		return '&nbsp;'
 	}
 }

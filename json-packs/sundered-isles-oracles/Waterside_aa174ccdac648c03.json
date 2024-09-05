@@ -3,7 +3,8 @@
   "flags": {
     "foundry-ironsworn": {
       "category": "oracle_collection:sundered_isles/settlement/focus",
-      "dsid": "oracle_rollable:sundered_isles/settlement/focus/waterside"
+      "dsid": "oracle_rollable:sundered_isles/settlement/focus/waterside",
+      "cursed_variant": "oracle_rollable:sundered_isles/settlement/focus_cursed"
     }
   },
   "name": "Waterside",
