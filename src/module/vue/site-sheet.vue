@@ -3,9 +3,87 @@
 		<!-- HEADER -->
 		<SheetHeaderBasic class="nogrow" :document="data.actor" />
 		<div class="flexrow nogrow" :class="$style.main">
+			<!-- LEFT COLUMN -->
 			<div class="flexcol" :class="$style.leftCol">
 				<!-- RANK -->
-				<article :class="$style.progress">
+				<!-- THEME/DOMAIN -->
+				<div class="boxgroup flexcol nogrow">
+					<div class="flexrow boxrow nogrow">
+						<!-- THEME -->
+						<div class="flexcol box">
+							<div class="flexcol">THEME 1</div>
+							<div class="flexcol" style="border-top: 1px solid">THEME 2</div>
+						</div>
+						<div class="flexcol box">DOMAIN</div>
+						<!-- DOMAIN -->
+					</div>
+
+					<!-- <div class="flexrow boxrow nogrow">
+						<SiteDroparea
+							class="box"
+							:item="theme"
+							item-type="delve-theme"
+							compendium-key="ironsworndelvethemes"
+							title-key="IRONSWORN.ITEM.TypeDelveTheme"
+						/>
+					</div>
+					<div class="flexrow boxrow nogrow">
+						<SiteDroparea
+							class="box"
+							:item="domain"
+							item-type="delve-domain"
+							compendium-key="ironsworndelvedomains"
+							title-key="IRONSWORN.ITEM.TypeDelveDomain"
+						/>
+					</div>-->
+				</div>
+
+				<TabSet
+					class="boxgroup box"
+					:id="`${data.actor._id}-features-dangers-denizens`"
+					:tab-keys="['features', 'dangers', 'denizens']"
+				>
+					<TabList>
+						<Tab tab-key="features" text="Features" />
+						<Tab tab-key="dangers" text="Dangers" />
+						<Tab tab-key="denizens" text="Denizens" />
+					</TabList>
+					<TabPanels>
+						<TabPanel tab-key="features"><h2>Features</h2></TabPanel>
+						<TabPanel tab-key="dangers"><h2>Dangers</h2></TabPanel>
+						<TabPanel tab-key="denizens">
+							<h2 class="flexrow nogrow" :class="$style.heading">
+								<span></span>
+								<BtnCompendium compendium="ironswornfoes" nogrow />
+								<IronBtn
+									nogrow
+									style="padding: var(--ironsworn-spacer-xs)"
+									icon="ironsworn:d10-tilt"
+									@click="randomDenizen"
+								/>
+							</h2>
+							<div class="nogrow">
+								<SiteDenizenbox :ref="(e) => (denizenRefs[0] = e)" :idx="0" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[1] = e)" :idx="1" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[2] = e)" :idx="2" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[3] = e)" :idx="3" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[4] = e)" :idx="4" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[5] = e)" :idx="5" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[6] = e)" :idx="6" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[7] = e)" :idx="7" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[8] = e)" :idx="8" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[9] = e)" :idx="9" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[10] = e)" :idx="10" />
+								<SiteDenizenbox :ref="(e) => (denizenRefs[11] = e)" :idx="11" />
+							</div>
+						</TabPanel>
+					</TabPanels>
+				</TabSet>
+			</div>
+
+			<!-- RIGHT COLUMN -->
+			<div class="scrollable flexcol" :class="$style.rightCol">
+				<article :class="$style.progress" class="nogrow">
 					<div class="flexrow nogrow" :class="$style.progressTopRow">
 						<RankPips
 							:id="`${data.actor._id}_rank`"
@@ -32,68 +110,6 @@
 						:rank="data.actor.system.rank"
 					/>
 				</article>
-				<!-- THEME/DOMAIN -->
-				<div class="boxgroup flexcol nogrow">
-					<div class="flexrow boxrow nogrow">
-						<SiteDroparea
-							class="box"
-							:item="theme"
-							item-type="delve-theme"
-							compendium-key="ironsworndelvethemes"
-							title-key="IRONSWORN.ITEM.TypeDelveTheme"
-						/>
-					</div>
-					<div class="flexrow boxrow nogrow">
-						<SiteDroparea
-							class="box"
-							:item="domain"
-							item-type="delve-domain"
-							compendium-key="ironsworndelvedomains"
-							title-key="IRONSWORN.ITEM.TypeDelveDomain"
-						/>
-					</div>
-				</div>
-				<!-- DENIZENS -->
-				<article :class="$style.matrix">
-					<h2 class="flexrow nogrow" :class="$style.heading">
-						<span>{{ $t('IRONSWORN.DELVESITE.Denizens') }}</span>
-						<IronBtn
-							nogrow
-							style="padding: var(--ironsworn-spacer-xs)"
-							icon="ironsworn:d10-tilt"
-							@click="randomDenizen"
-						/>
-						<BtnCompendium compendium="ironswornfoes" nogrow />
-					</h2>
-					<div class="boxgroup nogrow">
-						<div class="flexrow boxrow">
-							<SiteDenizenbox :ref="(e) => (denizenRefs[0] = e)" :idx="0" />
-							<SiteDenizenbox :ref="(e) => (denizenRefs[1] = e)" :idx="1" />
-						</div>
-						<div class="flexrow boxrow">
-							<SiteDenizenbox :ref="(e) => (denizenRefs[2] = e)" :idx="2" />
-							<SiteDenizenbox :ref="(e) => (denizenRefs[3] = e)" :idx="3" />
-						</div>
-						<div class="flexrow boxrow">
-							<SiteDenizenbox :ref="(e) => (denizenRefs[4] = e)" :idx="4" />
-							<SiteDenizenbox :ref="(e) => (denizenRefs[5] = e)" :idx="5" />
-						</div>
-						<div class="flexrow boxrow">
-							<SiteDenizenbox :ref="(e) => (denizenRefs[6] = e)" :idx="6" />
-							<SiteDenizenbox :ref="(e) => (denizenRefs[7] = e)" :idx="7" />
-						</div>
-						<div class="flexrow boxrow">
-							<SiteDenizenbox :ref="(e) => (denizenRefs[8] = e)" :idx="8" />
-							<SiteDenizenbox :ref="(e) => (denizenRefs[9] = e)" :idx="9" />
-						</div>
-						<div class="flexrow boxrow">
-							<SiteDenizenbox :ref="(e) => (denizenRefs[10] = e)" :idx="10" />
-							<SiteDenizenbox :ref="(e) => (denizenRefs[11] = e)" :idx="11" />
-						</div>
-					</div>
-				</article>
-			</div>
-			<div class="scrollable flexcol" :class="$style.rightCol">
 				<Suspense>
 					<SiteMoves class="nogrow" />
 				</Suspense>
@@ -136,6 +152,12 @@ import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 import type { IronswornActor } from '../actor/actor'
 import { ChallengeRank } from '../fields/ChallengeRank'
+
+import TabSet from 'component:tabs/tab-set.vue'
+import TabList from 'component:tabs/tab-list.vue'
+import TabPanels from 'component:tabs/tab-panels.vue'
+import TabPanel from 'component:tabs/tab-panel.vue'
+import Tab from 'component:tabs/tab.vue'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'site'> }
@@ -205,6 +227,11 @@ function saveDescription() {
 	gap: 0.5em;
 }
 
+.progress {
+	margin: 0.5rem;
+	margin-top: 0;
+}
+
 .progressTopRow {
 	gap: var(--ironsworn-spacer-lg);
 }
@@ -232,13 +259,12 @@ function saveDescription() {
 }
 
 .rightCol {
-	flex-basis: 14em;
-	max-height: 440px;
+	max-height: 30em;
 }
 
 .leftCol {
-	flex-basis: 20em;
 	gap: 1em;
+	min-height: 30em;
 }
 
 .heading {
