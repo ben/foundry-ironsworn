@@ -104,6 +104,8 @@ async function selectAndRandomize() {
 		)
 		suboptions.value[selectedIndex]?.click()
 	}
+
+	emitValue()
 }
 
 defineExpose({ selectAndRandomize })

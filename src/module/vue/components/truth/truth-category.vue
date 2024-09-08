@@ -44,6 +44,8 @@ const props = defineProps<{
 	je: () => IronswornJournalEntry
 }>()
 
+const model = defineModel()
+
 type NonTruthPage = IronswornJournalPage<Exclude<JournalEntryPageType, 'truth'>>
 
 const truthPages = props.je()?.pageTypes.truth
@@ -57,16 +59,19 @@ const state = reactive<{
 	title?: string
 	text?: string
 	html?: string
+	custom?: boolean
 }>({})
-function valueChange(title: string, text: string) {
+async function valueChange(title: string, text: string) {
 	state.title = title
 	state.text = text
 	state.html = undefined
+	model.value = await selectedValue()
 }
-function customValueChange(html: string) {
+async function customValueChange(html: string) {
 	state.title = undefined
 	state.text = undefined
 	state.html = html
+	model.value = await selectedValue()
 }
 
 async function selectedValue() {
