@@ -33,7 +33,7 @@
 				ref="categoryComponents"
 				:key="(truth.je()._id as string)"
 				:je="truth.je"
-				v-model="categoryModels[truth.ds._id]"
+				v-model="categoryModels[truth.je()._id]"
 			/>
 		</section>
 	</div>
@@ -61,7 +61,9 @@ const categoryComponents = ref<(typeof TruthCategory)[]>([])
 const categoryModels = ref<
 	Record<string, { title?: string; html?: string; valid: boolean }>
 >(
-	Object.fromEntries(props.data.truths.map((x) => [x.ds._id, { valid: false }]))
+	Object.fromEntries(
+		props.data.truths.map((x) => [x.je()._id, { valid: false }])
+	)
 )
 
 function scrollToCategory(i: number) {
@@ -73,7 +75,7 @@ async function saveTruths() {
 	// Fetch values from the category components
 	const contentSections: string[] = []
 	for (const t of props.data.truths) {
-		const model = categoryModels.value[t.ds._id]
+		const model = categoryModels.value[t.je()._id]
 		if (model.valid)
 			contentSections.push(
 				`<h2>${model.title}</h2>
