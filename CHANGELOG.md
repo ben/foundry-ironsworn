@@ -4,6 +4,7 @@
 
 - Cursed die support when rolling oracles ([#1026](https://github.com/ben/foundry-ironsworn/pull/1026))
 - Fix an issue with the truths dialog resulting in blank outputs ([#1027](https://github.com/ben/foundry-ironsworn/pull/1027))
+- Fix a move data issue that was preventing SI "Set A Course" from being rollable
 
 ## 1.24.2
 

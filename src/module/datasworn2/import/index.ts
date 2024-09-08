@@ -16,7 +16,7 @@ import type {
 import { IdParser, DataswornTree } from '..'
 import { writeFile, mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
-import { capitalize, compact, flatten } from 'lodash-es'
+import { capitalize, compact, flatten, uniq } from 'lodash-es'
 import { ICON_MAP } from './images'
 import {
 	renderText,
@@ -300,24 +300,28 @@ for (const collection of collections) {
 								progress_roll: 'Any',
 								all: 'All'
 							}[c.method],
-							Using: c.roll_options.map((r) => {
-								if (r.using === 'asset_control') {
-									if (r.assets?.[0]?.includes('companion')) {
-										return 'Companion Health'
+							Using: uniq(
+								c.roll_options.map((r) => {
+									if (r.using === 'asset_control') {
+										console.log('!!!!', r)
+										if (r.assets?.[0]?.includes('companion')) {
+											return 'Companion Health'
+										}
+										if (r.control === 'integrity') {
+											return 'Vehicle Integrity'
+										}
+										return titleCase(r.control)
 									}
-									if (r.control === 'integrity') {
-										return 'Vehicle Integrity'
-									}
-								}
 
-								if (r.using === 'condition_meter') {
-									return capitalize(r.condition_meter)
-								}
-								if (r.stat) {
-									return capitalize(r.stat)
-								}
-								return titleCase(r.using.replace('_', ' '))
-							})
+									if (r.using === 'condition_meter') {
+										return capitalize(r.condition_meter)
+									}
+									if (r.stat) {
+										return capitalize(r.stat)
+									}
+									return titleCase(r.using.replace('_', ' '))
+								})
+							)
 						}))
 					},
 					Outcomes: {

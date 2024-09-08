@@ -18,8 +18,7 @@
           "Roll type": "Action roll",
           "Method": "Any",
           "Using": [
-            "Supply",
-            "Asset Control"
+            "Supply"
           ]
         }
       ]
