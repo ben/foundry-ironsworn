@@ -5,20 +5,22 @@
 			type="radio"
 			:name="radioGroup"
 			class="nogrow"
-			@change="select" />
+			@change="select"
+		/>
 		<MceEditor
 			ref="editor"
 			v-model="state.html"
 			:style="{ height: state.height, 'min-height': state.height }"
-			@save="emitHtml" />
+			@save="emitHtml"
+		/>
 	</label>
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
+import { onBeforeUnmount, reactive, ref } from 'vue'
 import MceEditor from '../mce-editor.vue'
 
-const props = defineProps<{
+defineProps<{
 	radioGroup: string
 }>()
 
@@ -35,11 +37,19 @@ function select() {
 	state.height = '300px'
 }
 
+// Do not emit change events from the editor if we've been unmounted
+let emitChanges = true
+onBeforeUnmount(() => {
+	console.log('onBeforeUnmount')
+	emitChanges = false
+})
+
 const $emit = defineEmits<{
 	change: [string]
 }>()
 function emitHtml() {
-	$emit('change', state.html)
+	console.log({ emitChanges })
+	if (emitChanges) $emit('change', state.html)
 }
 </script>
 
