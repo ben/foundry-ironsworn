@@ -33,6 +33,7 @@
 				ref="categoryComponents"
 				:key="(truth.je()._id as string)"
 				:je="truth.je"
+				v-model="categoryModels[truth.je()._id]"
 			/>
 		</section>
 	</div>
@@ -57,6 +58,13 @@ const props = defineProps<{
 }>()
 
 const categoryComponents = ref<(typeof TruthCategory)[]>([])
+const categoryModels = ref<
+	Record<string, { title?: string; html?: string; valid: boolean }>
+>(
+	Object.fromEntries(
+		props.data.truths.map((x) => [x.je()._id, { valid: false }])
+	)
+)
 
 function scrollToCategory(i: number) {
 	categoryComponents.value[i]?.scrollIntoView()
@@ -65,19 +73,17 @@ function scrollToCategory(i: number) {
 const $localEmitter = inject($LocalEmitterKey)
 async function saveTruths() {
 	// Fetch values from the category components
-	const allValues = await Promise.all(
-		categoryComponents.value.map((x) => x.selectedValue())
-	)
-	const values = allValues.filter((x) => x.valid)
+	const contentSections: string[] = []
+	for (const t of props.data.truths) {
+		const model = categoryModels.value[t.je()._id]
+		if (model.valid)
+			contentSections.push(
+				`<h2>${model.title}</h2>
+				${model.html}`
+			)
+	}
 
-	const content = values
-		.map(
-			({ title, html }) => `
-        <h2>${title}</h2>
-        ${html}
-      `
-		)
-		.join('\n\n')
+	const content = contentSections.join('\n\n')
 
 	const title = game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth')
 	const journal = await IronswornJournalEntry.create({

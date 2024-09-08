@@ -44,6 +44,8 @@ const props = defineProps<{
 	je: () => IronswornJournalEntry
 }>()
 
+const model = defineModel()
+
 type NonTruthPage = IronswornJournalPage<Exclude<JournalEntryPageType, 'truth'>>
 
 const truthPages = props.je()?.pageTypes.truth
@@ -57,32 +59,39 @@ const state = reactive<{
 	title?: string
 	text?: string
 	html?: string
+	custom?: boolean
 }>({})
-function valueChange(title: string, text: string) {
+async function valueChange(title: string, text: string) {
 	state.title = title
 	state.text = text
 	state.html = undefined
+	model.value = await selectedValue()
 }
-function customValueChange(html: string) {
+async function customValueChange(html: string) {
 	state.title = undefined
 	state.text = undefined
 	state.html = html
+	model.value = await selectedValue()
 }
 
 async function selectedValue() {
 	let html = state.html
 	if (!html) {
-		html = `
-      ${await enrichMarkdown(`**${state.title}**`)}
-      ${await enrichMarkdown(state.text)}
-    `
+		if (state.title) {
+			html = `
+				${await enrichMarkdown(`**${state.title}**`)}
+				${await enrichMarkdown(state.text)}
+			`
+		} else {
+			html = await enrichMarkdown(state.text)
+		}
 	}
 	html += nonTruthPages?.map((x) => x.text.content).join('\n\n')
 
 	return {
 		title: props.je()?.name,
 		html: html.trim(),
-		valid: !!(state.title || state.html)
+		valid: true
 	}
 }
 

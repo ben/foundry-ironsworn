@@ -73,7 +73,13 @@ const $emit = defineEmits<{
 	change: [string, string] // title, text
 }>()
 function emitValue() {
-	let text = `${pageSystem.Description} ${suboption ?? ''}\n\n_${
+	// Some pages (i.e. Classic) don't have a title
+	let title = props.page.name ?? ''
+	if (title?.startsWith('truth.option')) {
+		title = ''
+	}
+
+	let text = `${pageSystem.Description} ${suboption.value ?? ''}\n\n_${
 		pageSystem.Quest
 	}_`
 
@@ -83,7 +89,7 @@ function emitValue() {
 			template.Description.replace(/{{table>.*?}}/, `> ${suboption.value}`) +
 			`\n\n_${pageSystem.Quest}_`
 	}
-	$emit('change', props.page.name ?? '???', text.trim())
+	$emit('change', title, text.trim())
 }
 
 const suboptions = ref<HTMLElement[]>([])
@@ -104,6 +110,8 @@ async function selectAndRandomize() {
 		)
 		suboptions.value[selectedIndex]?.click()
 	}
+
+	emitValue()
 }
 
 defineExpose({ selectAndRandomize })
