@@ -1,53 +1,28 @@
 <template>
 	<DropTarget is="div" class="flexcol box" :drop-type="itemType">
-		<div
-			v-if="item"
-			style="position: relative; padding: var(--ironsworn-spacer-xl)">
-			<div class="flexrow">
-				<document-img
-					:document="item"
-					size="40px"
-					class="nogrow"
-					style="margin-right: var(--ironsworn-spacer-md)" />
+		<div v-if="item" class="flexrow" :class="$style.container" style="">
+			<document-img :document="item" size="40px" class="nogrow" />
 
-				<div class="flexcol">
-					<h4 style="margin: 0">{{ item.name }}</h4>
-					<p>{{ item.system.summary }}</p>
-				</div>
+			<h4>{{ item.name }}</h4>
 
-				<div
-					v-if="editMode"
-					class="flexrow"
-					style="
-						position: absolute;
-						top: var(--ironsworn-spacer-md);
-						right: var(--ironsworn-spacer-md);
-					">
-					<BtnDocDelete
-						v-if="foundryitem() != null"
-						block
-						:document="(foundryitem() as IronswornItem)" />
-					<IronBtn block icon="fa:pen-to-square" @click="edit" />
-				</div>
+			<div v-if="editMode" class="flexrow" :class="$style.controls">
+				<BtnDocDelete
+					v-if="foundryitem() != null"
+					block
+					:document="(foundryitem() as IronswornItem)"
+				/>
+				<IronBtn block icon="fa:pen-to-square" @click="edit" />
 			</div>
 		</div>
 
-		<div v-else style="padding: 1em; width: 100%">
-			<div class="flexcol">
-				<h4 style="margin: 0">{{ $t(titleKey) }}</h4>
-				<btn-compendium
-					:compendium="compendiumKey"
-					style="padding: 0 2em"
-					class="inset"
-					block
-					:text="$t('IRONSWORN.OpenCompendium')" />
-			</div>
+		<div v-else class="flexcol" :class="$style.emptyContainer">
+			<btn-compendium block :compendium="compendiumKey" :text="$t(titleKey)" />
 		</div>
 	</DropTarget>
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue'
+import { capitalize, Ref } from 'vue'
 import { inject, computed } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import DocumentImg from '../document-img.vue'
@@ -79,3 +54,27 @@ function edit() {
 	foundryitem()?.sheet?.render(true)
 }
 </script>
+
+<style lang="scss" module>
+.container {
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	padding: 0.5em;
+
+	h4 {
+		margin: 0;
+	}
+}
+
+.emptyContainer {
+	min-height: 54px;
+}
+
+.controls {
+	position: absolute;
+	top: var(--ironsworn-spacer-xs);
+	right: var(--ironsworn-spacer-xs);
+}
+</style>

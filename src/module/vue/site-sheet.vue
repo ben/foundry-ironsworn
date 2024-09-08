@@ -7,35 +7,27 @@
 			<div class="flexcol" :class="$style.leftCol">
 				<!-- RANK -->
 				<!-- THEME/DOMAIN -->
-				<div class="boxgroup flexcol nogrow">
+				<div class="boxgroup flexcol nogrow" :class="$style.themesAndDomains">
 					<div class="flexrow boxrow nogrow">
 						<!-- THEME -->
 						<div class="flexcol box">
-							<div class="flexcol">THEME 1</div>
-							<div class="flexcol" style="border-top: 1px solid">THEME 2</div>
+							<SiteDroparea
+								:item="theme"
+								item-type="delve-theme"
+								compendium-key="ironsworndelvethemes"
+								title-key="IRONSWORN.ITEM.TypeDelveTheme"
+							/>
 						</div>
-						<div class="flexcol box">DOMAIN</div>
+						<div class="flexcol box">
+							<SiteDroparea
+								:item="domain"
+								item-type="delve-domain"
+								compendium-key="ironsworndelvedomains"
+								title-key="IRONSWORN.ITEM.TypeDelveDomain"
+							/>
+						</div>
 						<!-- DOMAIN -->
 					</div>
-
-					<!-- <div class="flexrow boxrow nogrow">
-						<SiteDroparea
-							class="box"
-							:item="theme"
-							item-type="delve-theme"
-							compendium-key="ironsworndelvethemes"
-							title-key="IRONSWORN.ITEM.TypeDelveTheme"
-						/>
-					</div>
-					<div class="flexrow boxrow nogrow">
-						<SiteDroparea
-							class="box"
-							:item="domain"
-							item-type="delve-domain"
-							compendium-key="ironsworndelvedomains"
-							title-key="IRONSWORN.ITEM.TypeDelveDomain"
-						/>
-					</div>-->
 				</div>
 
 				<TabSet
@@ -228,8 +220,6 @@ function saveDescription() {
 }
 
 .progress {
-	margin: 0.5rem;
-	margin-top: 0;
 }
 
 .progressTopRow {
@@ -259,12 +249,14 @@ function saveDescription() {
 }
 
 .rightCol {
+	gap: 1em;
 	max-height: 30em;
 }
 
 .leftCol {
 	gap: 1em;
 	min-height: 30em;
+	margin-left: 0.25rem;
 }
 
 .heading {
