@@ -40,7 +40,6 @@ function select() {
 // Do not emit change events from the editor if we've been unmounted
 let emitChanges = true
 onBeforeUnmount(() => {
-	console.log('onBeforeUnmount')
 	emitChanges = false
 })
 
@@ -48,7 +47,6 @@ const $emit = defineEmits<{
 	change: [string]
 }>()
 function emitHtml() {
-	console.log({ emitChanges })
 	if (emitChanges) $emit('change', state.html)
 }
 </script>
