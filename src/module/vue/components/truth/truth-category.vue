@@ -77,17 +77,21 @@ async function customValueChange(html: string) {
 async function selectedValue() {
 	let html = state.html
 	if (!html) {
-		html = `
-      ${await enrichMarkdown(`**${state.title}**`)}
-      ${await enrichMarkdown(state.text)}
-    `
+		if (state.title) {
+			html = `
+				${await enrichMarkdown(`**${state.title}**`)}
+				${await enrichMarkdown(state.text)}
+			`
+		} else {
+			html = await enrichMarkdown(state.text)
+		}
 	}
 	html += nonTruthPages?.map((x) => x.text.content).join('\n\n')
 
 	return {
 		title: props.je()?.name,
 		html: html.trim(),
-		valid: !!(state.title || state.html)
+		valid: true
 	}
 }
 
