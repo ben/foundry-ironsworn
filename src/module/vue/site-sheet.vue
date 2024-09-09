@@ -31,7 +31,7 @@
 				</div>
 
 				<TabSet
-					class="boxgroup box"
+					:class="$style.tabs"
 					:id="`${data.actor._id}-features-dangers-denizens`"
 					:tab-keys="['features', 'dangers', 'denizens']"
 				>
@@ -267,6 +267,10 @@ function saveDescription() {
 	line-height: 1.5;
 	font-size: var(--font-size-14);
 	font-weight: bold;
+}
+
+.tabs {
+	border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
 }
 
 .featureBtn {
