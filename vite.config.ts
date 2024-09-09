@@ -8,8 +8,8 @@ import type Sass from 'sass'
 import presetEnv from 'postcss-preset-env'
 import { kebabCase } from 'lodash-es'
 import cssnano from 'cssnano'
-import sassIcons, { ICON_DIRS } from './src/module/plugin/custom-icons'
-// import VueTypeImports from '@rah-emil/vite-plugin-vue-type-imports'
+import sassIcons from './src/module/plugin/custom-icons'
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 const PORT = 30000
 
@@ -23,8 +23,10 @@ const config: UserConfig = {
 	root: './',
 	plugins: [
 		vue(),
+		vueDevTools({
+			appendTo: 'src/index.ts'
+		}),
 		// VueTypeImports(),
-		// Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
 		createSvgIconsPlugin({
 			customDomId: 'ironsworn-sprites',
 			iconDirs: [
