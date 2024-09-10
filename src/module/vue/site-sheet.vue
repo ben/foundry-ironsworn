@@ -48,6 +48,10 @@
 								<span></span>
 							</h2>
 							<table>
+								<colgroup>
+									<col span="1" style="width: 4em" />
+									<col span="1" />
+								</colgroup>
 								<thead>
 									<tr>
 										<th>
@@ -73,24 +77,12 @@
 									<SiteDenizenRow
 										v-for="i in range(12)"
 										:key="i"
+										ref="denizenRefs"
 										v-model="denizens[i]"
+										:edit-mode="editMode"
 									/>
 								</tbody>
 							</table>
-							<div class="nogrow">
-								<SiteDenizenbox :ref="(e) => (denizenRefs[0] = e)" :idx="0" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[1] = e)" :idx="1" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[2] = e)" :idx="2" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[3] = e)" :idx="3" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[4] = e)" :idx="4" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[5] = e)" :idx="5" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[6] = e)" :idx="6" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[7] = e)" :idx="7" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[8] = e)" :idx="8" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[9] = e)" :idx="9" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[10] = e)" :idx="10" />
-								<SiteDenizenbox :ref="(e) => (denizenRefs[11] = e)" :idx="11" />
-							</div>
 						</TabPanel>
 					</TabPanels>
 				</TabSet>
@@ -190,7 +182,7 @@ const $actor = inject($ActorKey) as IronswornActor<'site'>
 // Local reactive copy of denizen values
 const denizens = reactive(new Array(12).fill(''))
 $actor.system.denizens.forEach((d, i) => {
-	denizens[i] = d.text
+	denizens[i] = d
 })
 watch(
 	denizens,
@@ -225,7 +217,7 @@ function markProgress() {
 	$actor?.update({ 'system.current': newValue })
 }
 
-const denizenRefs = ref<{ [k: number]: any }>({})
+const denizenRefs = ref<any[]>([])
 async function randomDenizen() {
 	if ($actor?.system.denizens == null) return
 
