@@ -46,14 +46,37 @@
 						<TabPanel tab-key="denizens">
 							<h2 class="flexrow nogrow" :class="$style.heading">
 								<span></span>
-								<BtnCompendium compendium="ironswornfoes" nogrow />
-								<IronBtn
-									nogrow
-									style="padding: var(--ironsworn-spacer-xs)"
-									icon="ironsworn:d10-tilt"
-									@click="randomDenizen"
-								/>
 							</h2>
+							<table>
+								<thead>
+									<tr>
+										<th>
+											<IronBtn
+												icon="ironsworn:d10-tilt"
+												@click="randomDenizen"
+											/>
+										</th>
+										<th class="flexrow">
+											<span style="text-align: left">Denizen</span>
+											<IronBtn
+												text
+												nogrow
+												style="margin: 0 0.5em"
+												icon="fa:book-atlas"
+												@click="openFoeBrowser"
+											/>
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<SiteDenizenRow
+										v-for="i in range(12)"
+										:key="i"
+										v-model="denizens[i]"
+									/>
+								</tbody>
+							</table>
 							<div class="nogrow">
 								<SiteDenizenbox :ref="(e) => (denizenRefs[0] = e)" :idx="0" />
 								<SiteDenizenbox :ref="(e) => (denizenRefs[1] = e)" :idx="1" />
@@ -130,26 +153,28 @@
 </template>
 
 <script setup lang="ts">
-import SheetHeaderBasic from './sheet-header-basic.vue'
-import { provide, computed, inject, nextTick, ref } from 'vue'
+import { provide, computed, inject, nextTick, ref, reactive, watch } from 'vue'
+import { range } from 'lodash-es'
 import { $ActorKey, ActorKey } from './provisions'
+import { RANK_INCREMENTS } from '../constants'
+import type { IronswornActor } from '../actor/actor'
+import { ChallengeRank } from '../fields/ChallengeRank'
+import { FoeBrowser } from '../item/foe-browser'
+
+import SheetHeaderBasic from './sheet-header-basic.vue'
 import RankPips from './components/progress/rank-pips.vue'
-import BtnCompendium from './components/buttons/btn-compendium.vue'
 import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'
 import MceEditor from './components/mce-editor.vue'
-import { RANK_INCREMENTS } from '../constants'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
-import type { IronswornActor } from '../actor/actor'
-import { ChallengeRank } from '../fields/ChallengeRank'
-
 import TabSet from 'component:tabs/tab-set.vue'
 import TabList from 'component:tabs/tab-list.vue'
 import TabPanels from 'component:tabs/tab-panels.vue'
 import TabPanel from 'component:tabs/tab-panel.vue'
 import Tab from 'component:tabs/tab.vue'
+import SiteDenizenRow from 'component:site/site-denizenrow.vue'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'site'> }
@@ -161,6 +186,22 @@ provide(
 )
 
 const $actor = inject($ActorKey) as IronswornActor<'site'>
+
+// Local reactive copy of denizen values
+const denizens = reactive(new Array(12).fill(''))
+$actor.system.denizens.forEach((d, i) => {
+	denizens[i] = d.text
+})
+watch(
+	denizens,
+	(newVal) => {
+		const newDenizens = foundry.utils.deepClone($actor.system.denizens)
+		$actor.update({
+			'system.denizens': newVal.map((text) => ({ text }))
+		})
+	},
+	{ deep: true }
+)
 
 const editMode = computed(() => {
 	return props.data.actor.flags['foundry-ironsworn']?.['edit-mode']
@@ -203,6 +244,10 @@ async function randomDenizen() {
 		await nextTick()
 		denizenRefs.value[idx]?.focus?.()
 	}
+}
+
+function openFoeBrowser() {
+	new FoeBrowser().render(true)
 }
 
 const hasThemeAndDomain = computed(() => {
