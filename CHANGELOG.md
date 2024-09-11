@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix an issue where new Ironsworn characters would have a blank sheet the first time they were opened ([#1030](https://github.com/ben/foundry-ironsworn/pull/1030))
+
 ## 1.24.3
 
 - Cursed die support when rolling oracles ([#1026](https://github.com/ben/foundry-ironsworn/pull/1026))

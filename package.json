@@ -79,6 +79,7 @@
 		"defaults"
 	],
 	"devDependencies": {
-		"showdown": "^2.1.0"
+		"showdown": "^2.1.0",
+		"vite-plugin-vue-devtools": "^7.4.4"
 	}
 }

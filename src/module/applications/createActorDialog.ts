@@ -146,7 +146,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 			drawResult?.results[0]?.text ||
 				game.i18n.localize(CONFIG.Actor.typeLabels.character),
 			'character',
-			ev.currentTarget.dataset.img || undefined
+			ev.currentTarget.dataset.img || undefined,
+			'ironsworn.IronswornCharacterSheetV2'
 		)
 	}
 
@@ -224,7 +225,9 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		if (sheetClass) {
 			data.flags = { core: { sheetClass } }
 		}
-		await IronswornActor.create(data, { renderSheet: true })
+		const actor = await IronswornActor.create(data)
+		await new Promise((resolve) => setTimeout(resolve, 50))
+		await actor?.sheet?.render(true)
 		await this.close()
 	}
 
