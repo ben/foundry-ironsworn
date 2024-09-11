@@ -225,7 +225,9 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 		if (sheetClass) {
 			data.flags = { core: { sheetClass } }
 		}
-		await IronswornActor.create(data, { renderSheet: true })
+		const actor = await IronswornActor.create(data)
+		await new Promise((resolve) => setTimeout(resolve, 50))
+		await actor?.sheet?.render(true)
 		await this.close()
 	}
 
