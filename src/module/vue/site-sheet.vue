@@ -186,11 +186,13 @@ $actor.system.denizens.forEach((d, i) => {
 })
 watch(
 	denizens,
-	(newVal) => {
-		const newDenizens = foundry.utils.deepClone($actor.system.denizens)
-		$actor.update({
-			'system.denizens': newVal.map((text) => ({ text }))
+	(newDenizens) => {
+		const oldDenizens = foundry.utils.deepClone($actor.system.denizens)
+		oldDenizens.forEach((od, i) => {
+			const nd = newDenizens[i]
+			od.text = nd.text
 		})
+		$actor.update({ 'system.denizens': oldDenizens })
 	},
 	{ deep: true }
 )

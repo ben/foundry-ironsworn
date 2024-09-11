@@ -12,9 +12,8 @@
 				ref="description"
 				type="text"
 				:class="{ highlight: focused, [$style.input]: true }"
-				:value="denizen.text"
+				v-model="denizen.text"
 				:placeholder="frequencyLabel"
-				@input="input"
 			/>
 			<Suspense v-else>
 				<RenderedText element="div" :content="denizen.text" />
