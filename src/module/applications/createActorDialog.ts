@@ -146,7 +146,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 			drawResult?.results[0]?.text ||
 				game.i18n.localize(CONFIG.Actor.typeLabels.character),
 			'character',
-			ev.currentTarget.dataset.img || undefined
+			ev.currentTarget.dataset.img || undefined,
+			'ironsworn.IronswornCharacterSheetV2'
 		)
 	}
 
