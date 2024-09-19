@@ -3,7 +3,7 @@
 ![Download count of latest release](https://img.shields.io/github/downloads/ben/foundry-ironsworn/latest/ironsworn.zip?style=for-the-badge)
 [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ffoundry-ironsworn&style=for-the-badge)](https://forge-vtt.com/bazaar/package/foundry-ironsworn)
 
-This is a Foundry VTT implementation of the [**Ironsworn**](https://www.ironswornrpg.com/products-ironsworn), [**Ironsworn: Delve**](https://www.ironswornrpg.com/product-ironsworn-delve), and [**Ironsworn: Starforged**](https://getstarforged.com) games by Shawn Tomkin.
+This is a Foundry VTT implementation of the [**Ironsworn**](https://tomkinpress.com/pages/ironsworn), [**Ironsworn: Delve**](https://tomkinpress.com/pages/ironsworn-delve), [**Ironsworn: Starforged**](https://tomkinpress.com/pages/ironsworn-starforged), and [**Sundered Isles**](https://tomkinpress.com/pages/sundered-isles) games by Shawn Tomkin.
 
 To install it, just search for "ironsworn" in the system-installation UI, or use this URL:
 
@@ -39,7 +39,8 @@ Some things to remember:
 
 # Credits
 
-This work is based on Ironsworn (found at https://www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (creativecommons.org/licenses/by-nc-sa/4.0/).
+
+This work is based on several works created by Shawn Tomkin, and are licensed under the [CC-BY-NC-SA](http://creativecommons.org/licenses/by-nc-sa/4.0/) license, as detailed at https://tomkinpress.com/pages/licensing.
 
 Data courtesy of [Datasworn](https://github.com/rsek/datasworn), which is used here under its MIT license.
 
