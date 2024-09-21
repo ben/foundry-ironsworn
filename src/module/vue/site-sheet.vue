@@ -44,10 +44,7 @@
 						<TabPanel tab-key="features"><h2>Features</h2></TabPanel>
 						<TabPanel tab-key="dangers"><h2>Dangers</h2></TabPanel>
 						<TabPanel tab-key="denizens">
-							<h2 class="flexrow nogrow" :class="$style.heading">
-								<span></span>
-							</h2>
-							<table>
+							<table :class="$style.table">
 								<colgroup>
 									<col span="1" style="width: 4em" />
 									<col span="1" />
@@ -310,6 +307,11 @@ function saveDescription() {
 
 .tabs {
 	border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+}
+
+.table {
+	margin: 0;
+	border-width: 0 !important;
 }
 
 .featureBtn {
