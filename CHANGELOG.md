@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.24.4
+
 - Fix an issue where new Ironsworn characters would have a blank sheet the first time they were opened ([#1030](https://github.com/ben/foundry-ironsworn/pull/1030))
 - Fix an error when rolling "Locate your objective" on a delve site
 
