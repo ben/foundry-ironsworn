@@ -131,7 +131,7 @@ async function locateObjective() {
 		$site.name ?? '',
 		progress,
 		$site,
-		'Ironsworn/Moves/Delve/Locate_Your_Objective'
+		'move:delve/delve/locate_your_objective'
 	)
 }
 </script>
