@@ -427,9 +427,10 @@ export class OracleTable extends RollTable {
 		// Draw from the cursed table
 		const cursedResult = cursedTable.results.find(
 			(x) =>
-				originalRoll.total >= x.range[0] && originalRoll.total <= x.range[1]
+				(originalRoll.total ?? -1) >= x.range[0] &&
+				(originalRoll.total ?? -1) <= x.range[1]
 		)
-		return { cursedResults: [cursedResult], cursedDie }
+		return { cursedResults: compact([cursedResult]), cursedDie }
 	}
 }
 
