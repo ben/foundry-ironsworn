@@ -33,7 +33,7 @@
 				ref="categoryComponents"
 				:key="(truth.je()._id as string)"
 				:je="truth.je"
-				v-model="categoryModels[truth.je()._id]"
+				v-model="categoryModels[truth.je()._id ?? '']"
 			/>
 		</section>
 	</div>
@@ -75,7 +75,7 @@ async function saveTruths() {
 	// Fetch values from the category components
 	const contentSections: string[] = []
 	for (const t of props.data.truths) {
-		const model = categoryModels.value[t.je()._id]
+		const model = categoryModels.value[t.je()._id ?? '']
 		if (model.valid)
 			contentSections.push(
 				`<h2>${model.title}</h2>

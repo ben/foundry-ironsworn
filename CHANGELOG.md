@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a bug where cinder/wraith and cursed-die rolls wouldn't work unless Dice So Nice was enabled ([#1035](https://github.com/ben/foundry-ironsworn/pull/1035))
+
 ## 1.24.4
 
 - Fix an issue where new Ironsworn characters would have a blank sheet the first time they were opened ([#1030](https://github.com/ben/foundry-ironsworn/pull/1030))
