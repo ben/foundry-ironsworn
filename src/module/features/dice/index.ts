@@ -42,14 +42,14 @@ export function cinderAndWraithifyRoll(roll: Roll) {
 
 	const cd0options = challengeDice[0].options as any
 	cd0options.appearance = {
-		labelColor: (game.dice3d as any).exports?.Utils?.contrastOf(cinderColor),
+		labelColor: (game.dice3d as any)?.exports?.Utils?.contrastOf(cinderColor),
 		background: cinderColor,
 		outline: cinderColor,
 		edge: cinderColor
 	}
 	const cd1options = challengeDice[1].options as any
 	cd1options.appearance = {
-		labelColor: (game.dice3d as any).exports?.Utils?.contrastOf(wraithColor),
+		labelColor: (game.dice3d as any)?.exports?.Utils?.contrastOf(wraithColor),
 		background: wraithColor,
 		outline: wraithColor,
 		edge: wraithColor
@@ -60,7 +60,7 @@ export function cursifyRoll(roll: Roll) {
 	const die = roll.dice[0]
 	const cursedColor = '#228822'
 	;(die.options as any).appearance = {
-		labelColor: (game.dice3d as any).exports?.Utils?.contrastOf(cursedColor),
+		labelColor: (game.dice3d as any)?.exports?.Utils?.contrastOf(cursedColor),
 		background: cursedColor,
 		outline: cursedColor,
 		edge: cursedColor
