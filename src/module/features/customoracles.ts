@@ -28,39 +28,6 @@ const emptyNode: () => IOracleTreeNode = () => ({
 	children: []
 })
 
-async function augmentWithFolderContents(node: IOracleTreeNode) {
-	const name = game.i18n.localize('IRONSWORN.OracleCategories.Custom')
-	const rootFolder = game.tables?.directory?.folders.find(
-		(x) => x.name === name
-	)
-	if (rootFolder == null) return
-
-	function walkFolder(parent: IOracleTreeNode, folder: Folder) {
-		// Add this folder
-		const newNode: IOracleTreeNode = {
-			...emptyNode(),
-			displayName: folder.name ?? '(folder)'
-		}
-		parent.children.push(newNode)
-
-		// Add its folder children
-		for (const sub of folder.getSubfolders()) {
-			walkFolder(newNode, sub)
-		}
-
-		// Add its table children
-		for (const table of folder.contents) {
-			newNode.children.push({
-				...emptyNode(),
-				tables: [table.uuid],
-				displayName: table.name ?? '(table)'
-			})
-		}
-	}
-
-	walkFolder(node, rootFolder)
-}
-
 function customFolderOracleCategory(): [IOracleTreeNode, number] {
 	const name = game.i18n.localize('IRONSWORN.OracleCategories.Custom')
 	const ret = { ...emptyNode(), displayName: name }
