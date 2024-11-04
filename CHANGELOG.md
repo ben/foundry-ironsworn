@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.24.6
+
 - Fix a bug where changing the name of a move in the compendium doesn't change it in the move sheet ([#1036](https://github.com/ben/foundry-ironsworn/pull/1036))
 
 ## 1.24.5
