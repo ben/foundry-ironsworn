@@ -63,7 +63,7 @@ export async function createMoveTreeForRuleset(
 				)
 				return {
 					color: move.color ?? null,
-					displayName: move.name,
+					displayName: indexEntry.name,
 					uuid: indexEntry.uuid, // TODO: move.uuid
 					triggerText: indexEntry.system?.Trigger?.Text,
 					isRollable: moveTriggerIsRollable(indexEntry?.system?.Trigger),

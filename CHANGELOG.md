@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a bug where changing the name of a move in the compendium doesn't change it in the move sheet ([#1036](https://github.com/ben/foundry-ironsworn/pull/1036))
+
 ## 1.24.5
 
 - Fix a bug where cinder/wraith and cursed-die rolls wouldn't work unless Dice So Nice was enabled ([#1035](https://github.com/ben/foundry-ironsworn/pull/1035))
