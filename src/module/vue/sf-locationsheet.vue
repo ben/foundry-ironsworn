@@ -9,14 +9,8 @@
 				>
 					<span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
 					<select v-model="region" @change="regionChanged">
-						<option value="terminus">
-							{{ $t('IRONSWORN.REGION.Terminus') }}
-						</option>
-						<option value="outlands">
-							{{ $t('IRONSWORN.REGION.Outlands') }}
-						</option>
-						<option value="expanse">
-							{{ $t('IRONSWORN.REGION.Expanse') }}
+						<option v-for="r in regions" value="r.value">
+							{{ $t(r.label) }}
 						</option>
 					</select>
 				</label>
@@ -157,6 +151,7 @@ import { IdParser } from '../datasworn2'
 import MceEditor from './components/mce-editor.vue'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { IronswornSettings } from '../helpers/settings'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'location'> }
@@ -173,6 +168,42 @@ const state = reactive({
 	region,
 	firstLookHighlight: false
 })
+
+const regions: { label: string; value: string }[] = []
+for (const ruleset of IronswornSettings.enabledRulesets) {
+	if (ruleset === 'starforged') {
+		regions.push(
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Terminus'),
+				value: 'terminus'
+			},
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Outlands'),
+				value: 'outlands'
+			},
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Expanse'),
+				value: 'expanse'
+			}
+		)
+	}
+	if (ruleset === 'sundered_isles') {
+		regions.push(
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Myriads'),
+				value: 'myriads'
+			},
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Margins'),
+				value: 'margins'
+			},
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Reaches'),
+				value: 'reaches'
+			}
+		)
+	}
+}
 
 function randomImage(subtype, klass): string | void {
 	if (subtype === 'planet') {
