@@ -36,7 +36,7 @@ async function addProgressItem(subtype) {
 	const itemData = {
 		name: subtype.capitalize(),
 		type: 'progress',
-		data: { subtype },
+		system: { subtype },
 		sort: 9000000
 	}
 	const item = await Item.create(itemData as any, { parent: $actor })
