@@ -9,7 +9,7 @@
 				>
 					<span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
 					<select v-model="region" @change="regionChanged">
-						<option v-for="r in regions" value="r.value">
+						<option v-for="r in regions" :value="r.value">
 							{{ $t(r.label) }}
 						</option>
 					</select>
@@ -22,11 +22,9 @@
 				>
 					{{ $t('IRONSWORN.LocationType') }}
 					<select v-model="data.actor.system.subtype" @change="subtypeChanged">
-						<option value="planet">Planet</option>
-						<option value="settlement">Settlement</option>
-						<option value="star">Stellar Object</option>
-						<option value="derelict">Derelict</option>
-						<option value="vault">Precursor Vault</option>
+						<option v-for="st in subtypes" :value="st.value">
+							{{ st.label }}
+						</option>
 					</select>
 				</label>
 			</div>
@@ -35,6 +33,7 @@
 			<label
 				class="flexrow nogrow"
 				style="position: relative; gap: var(--ironsworn-spacer-xl)"
+				v-if="klassOptions.length > 0"
 			>
 				<!-- TODO: i18n and subtype text -->
 				<span class="select-label">{{ subtypeSelectText }}:</span>
@@ -169,7 +168,13 @@ const state = reactive({
 	firstLookHighlight: false
 })
 
-const regions: { label: string; value: string }[] = []
+type Selectable = {
+	label: string
+	value: string
+}
+
+const regions: Selectable[] = []
+const subtypes: Selectable[] = []
 for (const ruleset of IronswornSettings.enabledRulesets) {
 	if (ruleset === 'starforged') {
 		regions.push(
@@ -186,6 +191,13 @@ for (const ruleset of IronswornSettings.enabledRulesets) {
 				value: 'expanse'
 			}
 		)
+		subtypes.push(
+			{ value: 'planet', label: 'Planet' },
+			{ value: 'settlement', label: 'Settlement' },
+			{ value: 'star', label: 'Stellar' },
+			{ value: 'derelict', label: 'Derelict' },
+			{ value: 'vault', label: 'Precursor' }
+		)
 	}
 	if (ruleset === 'sundered_isles') {
 		regions.push(
@@ -201,6 +213,10 @@ for (const ruleset of IronswornSettings.enabledRulesets) {
 				label: game.i18n.localize('IRONSWORN.REGION.Reaches'),
 				value: 'reaches'
 			}
+		)
+		subtypes.push(
+			{ value: 'island', label: 'Island' },
+			{ value: 'sunderedsettlement', label: 'Settlement' }
 		)
 	}
 }
@@ -229,6 +245,7 @@ function randomImage(subtype, klass): string | void {
 			''
 		)}.webp`
 	}
+	// TODO: sunderedsettlement and island
 }
 
 const klassOptions = computed((): { value: string; label: string }[] => {
@@ -302,8 +319,15 @@ const klassOptions = computed((): { value: string; label: string }[] => {
 				}
 			]
 
+		case 'sunderedsettlement':
+			return [
+				{ value: 'shore', label: 'Shore' },
+				{ value: 'inland', label: 'Inland' },
+				{ value: 'waterside', label: 'Waterside' }
+			]
+
 		default:
-			throw new Error('bad type yo')
+			return []
 	}
 })
 
@@ -515,7 +539,7 @@ const oracles = computed((): OracleSpec[][] => {
 			]
 
 		default:
-			throw new Error('bad type yo')
+			return []
 	}
 })
 
