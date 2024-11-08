@@ -538,6 +538,49 @@ const oracles = computed((): OracleSpec[][] => {
 				]
 			]
 
+		case 'island':
+			return [
+				[
+					{
+						title: 'Island size',
+						dsid: `oracle_rollable:sundered_isles/island/landscape/size`,
+						fl: true
+					},
+					{
+						title: 'Terrain',
+						dsid: `oracle_rollable:sundered_isles/island/landscape/terrain`,
+						fl: true
+					},
+					{
+						title: 'Vitality',
+						dsid: `oracle_rollable:sundered_isles/island/landscape/vitality/${rc}`,
+						fl: true
+					}
+				],
+				[
+					{
+						title: 'Habitation',
+						dsid: `oracle_rollable:sundered_isles/island/visible_habitation/${rc}`
+					},
+					{
+						title: 'Nearby Islands',
+						dsid: `oracle_rollable:sundered_isles/island/nearby_islands/${rc}`
+					}
+				],
+				[
+					{
+						title: 'Coastline Aspect',
+						qty: '1-2',
+						dsid: `oracle_rollable:sundered_isles/island/coastline_aspects`
+					},
+					{
+						title: 'Offshore Observations 💀',
+						qty: '1-2',
+						dsid: `oracle_rollable:sundered_isles/island/offshore_observations`
+					}
+				]
+			]
+
 		default:
 			return []
 	}
