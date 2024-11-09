@@ -581,6 +581,55 @@ const oracles = computed((): OracleSpec[][] => {
 				]
 			]
 
+		case 'sunderedsettlement':
+			return [
+				[
+					{
+						title: 'Settlement size',
+						dsid: `oracle_rollable:sundered_isles/settlement/size/${rc}`,
+						fl: true
+					},
+					{
+						title: 'Aesthetics',
+						dsid: `oracle_rollable:sundered_isles/settlement/aesthetics`,
+						fl: true,
+						qty: '1-2'
+					},
+					{
+						title: 'First look',
+						dsid: `oracle_rollable:sundered_isles/settlement/first_look`,
+						fl: true,
+						qty: '1-2'
+					}
+				],
+				[
+					{
+						title: 'Controlling faction',
+						dsid: `oracle_rollable:sundered_isles/settlement/identity/controlling_faction/${rc}`
+					},
+					{
+						title: 'Disposition',
+						dsid: `oracle_rollable:sundered_isles/settlement/identity/disposition`
+					},
+					{
+						title: 'Authority',
+						dsid: `oracle_rollable:sundered_isles/settlement/identity/authority`
+					}
+				],
+				[
+					{
+						title: 'Settlement focus',
+						dsid: `oracle_rollable:sundered_isles/settlement/focus/${kc}`,
+						qty: '1-2'
+					},
+					{
+						title: 'Settlement details',
+						dsid: `oracle_rollable:sundered_isles/settlement/details`,
+						qty: '1-2'
+					}
+				]
+			]
+
 		default:
 			return []
 	}
@@ -598,7 +647,7 @@ const canRandomizeName = computed(() => {
 		const dskey = `oracle_rollable:starforged/planet/${kc}/name`
 		const obj = IdParser.get(dskey)
 		if (obj) return true
-	} else if (subtype === 'settlement') {
+	} else if (subtype === 'settlement' || subtype === 'sunderedsettlement') {
 		return true
 	}
 	return false
@@ -707,6 +756,11 @@ async function randomizeName() {
 	} else if (subtype === 'settlement') {
 		const table = await OracleTable.getByDsId(
 			'oracle_rollable:starforged/settlement/name'
+		)
+		name = await drawAndReturnResult(table)
+	} else if (subtype === 'sunderedsettlement') {
+		const table = await OracleTable.getByDsId(
+			'oracle_rollable:sundered_isles/settlement/name'
 		)
 		name = await drawAndReturnResult(table)
 	}
