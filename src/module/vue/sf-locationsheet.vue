@@ -770,6 +770,11 @@ async function randomizeName() {
 			'oracle_rollable:sundered_isles/settlement/name'
 		)
 		name = await drawAndReturnResult(table)
+	} else if (subtype === 'island') {
+		const table = await OracleTable.getByDsId(
+			'oracle_rollable:sundered_isles/island/name'
+		)
+		name = await drawAndReturnResult(table)
 	}
 
 	if (name) {
