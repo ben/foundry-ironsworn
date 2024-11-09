@@ -579,7 +579,7 @@ const oracles = computed((): OracleSpec[][] => {
 						dsid: `oracle_rollable:sundered_isles/island/coastline_aspects`
 					},
 					{
-						title: 'Offshore Observations 💀',
+						title: 'Offshore Observations',
 						qty: '1-2',
 						dsid: `oracle_rollable:sundered_isles/island/offshore_observations`
 					}
