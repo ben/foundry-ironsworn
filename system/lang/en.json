@@ -875,6 +875,7 @@
 			"SheetFoe": "Foe",
 			"SheetStarforgedLocation": "Starforged Location",
 			"SubtypeDerelict": "Derelict",
+			"SubtypeIsland": "Island",
 			"SubtypePlanet": "Planet",
 			"SubtypeSettlement": "Settlement",
 			"SubtypeStar": "Stellar Object",
