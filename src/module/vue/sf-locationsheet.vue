@@ -245,7 +245,12 @@ function randomImage(subtype, klass): string | void {
 			''
 		)}.webp`
 	}
-	// TODO: sunderedsettlement and island
+	if (subtype === 'sunderedsettlement') {
+		return `systems/foundry-ironsworn/assets/icons/settlement-si.svg`
+	}
+	if (subtype === 'island') {
+		return `systems/foundry-ironsworn/assets/icons/island.svg`
+	}
 }
 
 const klassOptions = computed((): { value: string; label: string }[] => {
@@ -647,7 +652,7 @@ const canRandomizeName = computed(() => {
 		const dskey = `oracle_rollable:starforged/planet/${kc}/name`
 		const obj = IdParser.get(dskey)
 		if (obj) return true
-	} else if (subtype === 'settlement' || subtype === 'sunderedsettlement') {
+	} else if (['island', 'settlement', 'sunderedsettlement'].includes(subtype)) {
 		return true
 	}
 	return false
@@ -710,7 +715,9 @@ async function saveSubtype(subtype) {
 		settlement: 2,
 		star: 1,
 		derelict: 2,
-		vault: 2
+		vault: 2,
+		sunderedsettlement: 1,
+		island: 1
 	}[subtype]
 	await updateAllTokens({
 		img, // v11
