@@ -719,16 +719,19 @@ async function randomizeName() {
 
 async function randomizeKlass() {
 	let tableKey
-	if (props.data.actor.system.subtype === 'planet') {
+	const subtype = props.data.actor.system.subtype
+	if (subtype === 'planet') {
 		tableKey = 'oracle_rollable:starforged/planet/class'
-	} else if (props.data.actor.system.subtype === 'settlement') {
+	} else if (subtype === 'settlement') {
 		tableKey = 'oracle_rollable:starforged/settlement/location'
-	} else if (props.data.actor.system.subtype === 'star') {
+	} else if (subtype === 'star') {
 		tableKey = 'oracle_rollable:starforged/space/stellar_object'
-	} else if (props.data.actor.system.subtype === 'derelict') {
+	} else if (subtype === 'derelict') {
 		tableKey = 'oracle_rollable:starforged/derelict/location'
-	} else if (props.data.actor.system.subtype === 'vault') {
+	} else if (subtype === 'vault') {
 		tableKey = 'oracle_rollable:starforged/precursor_vault/location'
+	} else if (subtype === 'sunderedsettlement') {
+		tableKey = 'oracle_rollable:sundered_isles/settlement/location'
 	}
 
 	const table = await OracleTable.getByDsId(tableKey)
