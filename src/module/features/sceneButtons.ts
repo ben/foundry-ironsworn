@@ -135,6 +135,14 @@ function newVault() {
 	newLocation('vault', 'ACTOR.SubtypeVault', 2)
 }
 
+function newIsland() {
+	newLocation('island', 'ACTOR.SubtypeIsland')
+}
+
+function newSiSettlement() {
+	newLocation('sunderedsettlement', 'ACTOR.SubtypeSettlement')
+}
+
 let ORACLE_WINDOW: OracleWindow | undefined
 function theOracleWindow() {
 	if (ORACLE_WINDOW == null) ORACLE_WINDOW = new OracleWindow()
@@ -265,14 +273,32 @@ function sunderedIslifyControl(control: SceneControl) {
 	})
 
 	if (game.user?.isGM) {
-		control.tools.push({
-			name: 'edit',
-			icon: 'isicon-region-si',
-			title: game.i18n.format('DOCUMENT.Update', {
-				type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
-			}),
-			onClick: editSector
-		})
+		control.tools.push(
+			{
+				name: 'edit',
+				icon: 'isicon-region-si',
+				title: game.i18n.format('DOCUMENT.Update', {
+					type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
+				}),
+				onClick: editSector
+			},
+			{
+				name: 'island',
+				icon: 'isicon-island',
+				title: game.i18n.format('DOCUMENT.Create', {
+					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeDerelict')
+				}),
+				onClick: newIsland
+			},
+			{
+				name: 'sisettlement',
+				icon: 'isicon-settlement-si',
+				title: game.i18n.format('DOCUMENT.Create', {
+					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeSettlement')
+				}),
+				onClick: newSiSettlement
+			}
+		)
 	}
 }
 

@@ -9,14 +9,8 @@
 				>
 					<span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
 					<select v-model="region" @change="regionChanged">
-						<option value="terminus">
-							{{ $t('IRONSWORN.REGION.Terminus') }}
-						</option>
-						<option value="outlands">
-							{{ $t('IRONSWORN.REGION.Outlands') }}
-						</option>
-						<option value="expanse">
-							{{ $t('IRONSWORN.REGION.Expanse') }}
+						<option v-for="r in regions" :value="r.value">
+							{{ $t(r.label) }}
 						</option>
 					</select>
 				</label>
@@ -28,11 +22,9 @@
 				>
 					{{ $t('IRONSWORN.LocationType') }}
 					<select v-model="data.actor.system.subtype" @change="subtypeChanged">
-						<option value="planet">Planet</option>
-						<option value="settlement">Settlement</option>
-						<option value="star">Stellar Object</option>
-						<option value="derelict">Derelict</option>
-						<option value="vault">Precursor Vault</option>
+						<option v-for="st in subtypes" :value="st.value">
+							{{ st.label }}
+						</option>
 					</select>
 				</label>
 			</div>
@@ -41,6 +33,7 @@
 			<label
 				class="flexrow nogrow"
 				style="position: relative; gap: var(--ironsworn-spacer-xl)"
+				v-if="klassOptions.length > 0"
 			>
 				<!-- TODO: i18n and subtype text -->
 				<span class="select-label">{{ subtypeSelectText }}:</span>
@@ -157,6 +150,7 @@ import { IdParser } from '../datasworn2'
 import MceEditor from './components/mce-editor.vue'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { IronswornSettings } from '../helpers/settings'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'location'> }
@@ -173,6 +167,59 @@ const state = reactive({
 	region,
 	firstLookHighlight: false
 })
+
+type Selectable = {
+	label: string
+	value: string
+}
+
+const regions: Selectable[] = []
+const subtypes: Selectable[] = []
+for (const ruleset of IronswornSettings.enabledRulesets) {
+	if (ruleset === 'starforged') {
+		regions.push(
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Terminus'),
+				value: 'terminus'
+			},
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Outlands'),
+				value: 'outlands'
+			},
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Expanse'),
+				value: 'expanse'
+			}
+		)
+		subtypes.push(
+			{ value: 'planet', label: 'Planet' },
+			{ value: 'settlement', label: 'Settlement' },
+			{ value: 'star', label: 'Stellar' },
+			{ value: 'derelict', label: 'Derelict' },
+			{ value: 'vault', label: 'Precursor' }
+		)
+	}
+	if (ruleset === 'sundered_isles') {
+		regions.push(
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Myriads'),
+				value: 'myriads'
+			},
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Margins'),
+				value: 'margins'
+			},
+			{
+				label: game.i18n.localize('IRONSWORN.REGION.Reaches'),
+				value: 'reaches'
+			}
+		)
+		subtypes.push(
+			{ value: 'island', label: 'Island' },
+			{ value: 'sunderedsettlement', label: 'Settlement' }
+		)
+	}
+}
 
 function randomImage(subtype, klass): string | void {
 	if (subtype === 'planet') {
@@ -197,6 +244,12 @@ function randomImage(subtype, klass): string | void {
 			/\s+/,
 			''
 		)}.webp`
+	}
+	if (subtype === 'sunderedsettlement') {
+		return `systems/foundry-ironsworn/assets/icons/settlement-si.svg`
+	}
+	if (subtype === 'island') {
+		return `systems/foundry-ironsworn/assets/icons/island.svg`
 	}
 }
 
@@ -271,8 +324,15 @@ const klassOptions = computed((): { value: string; label: string }[] => {
 				}
 			]
 
+		case 'sunderedsettlement':
+			return [
+				{ value: 'shore', label: 'Shore' },
+				{ value: 'inland', label: 'Inland' },
+				{ value: 'waterside', label: 'Waterside' }
+			]
+
 		default:
-			throw new Error('bad type yo')
+			return []
 	}
 })
 
@@ -483,8 +543,100 @@ const oracles = computed((): OracleSpec[][] => {
 				]
 			]
 
+		case 'island':
+			return [
+				[
+					{
+						title: 'Island size',
+						dsid: `oracle_rollable:sundered_isles/island/landscape/size`,
+						fl: true
+					},
+					{
+						title: 'Terrain',
+						dsid: `oracle_rollable:sundered_isles/island/landscape/terrain`,
+						fl: true
+					},
+					{
+						title: 'Vitality',
+						dsid: `oracle_rollable:sundered_isles/island/landscape/vitality/${rc}`,
+						fl: true
+					}
+				],
+				[
+					{
+						title: 'Habitation',
+						dsid: `oracle_rollable:sundered_isles/island/visible_habitation/${rc}`
+					},
+					{
+						title: 'Nearby Islands',
+						dsid: `oracle_rollable:sundered_isles/island/nearby_islands/${rc}`
+					}
+				],
+				[
+					{
+						title: 'Coastline Aspect',
+						qty: '1-2',
+						dsid: `oracle_rollable:sundered_isles/island/coastline_aspects`
+					},
+					{
+						title: 'Offshore Observations',
+						qty: '1-2',
+						dsid: `oracle_rollable:sundered_isles/island/offshore_observations`
+					}
+				]
+			]
+
+		case 'sunderedsettlement':
+			return [
+				[
+					{
+						title: 'Settlement size',
+						dsid: `oracle_rollable:sundered_isles/settlement/size/${rc}`,
+						fl: true
+					},
+					{
+						title: 'Aesthetics',
+						dsid: `oracle_rollable:sundered_isles/settlement/aesthetics`,
+						fl: true,
+						qty: '1-2'
+					},
+					{
+						title: 'First look',
+						dsid: `oracle_rollable:sundered_isles/settlement/first_look`,
+						fl: true,
+						qty: '1-2'
+					}
+				],
+				[
+					{
+						title: 'Controlling faction',
+						dsid: `oracle_rollable:sundered_isles/settlement/identity/controlling_faction/${rc}`
+					},
+					{
+						title: 'Disposition',
+						dsid: `oracle_rollable:sundered_isles/settlement/identity/disposition`
+					},
+					{
+						title: 'Authority',
+						dsid: `oracle_rollable:sundered_isles/settlement/identity/authority`
+					}
+				],
+				[
+					{
+						title: 'Settlement focus',
+						dsid: `oracle_rollable:sundered_isles/settlement/focus/${kc}`,
+						qty: '1-2'
+					},
+					{
+						title: 'Settlement details',
+						dsid: `oracle_rollable:sundered_isles/settlement/details`,
+						qty: '1-2'
+					}
+				]
+			]
+
 		default:
-			throw new Error('bad type yo')
+			return []
 	}
 })
 
@@ -500,7 +652,7 @@ const canRandomizeName = computed(() => {
 		const dskey = `oracle_rollable:starforged/planet/${kc}/name`
 		const obj = IdParser.get(dskey)
 		if (obj) return true
-	} else if (subtype === 'settlement') {
+	} else if (['island', 'settlement', 'sunderedsettlement'].includes(subtype)) {
 		return true
 	}
 	return false
@@ -563,7 +715,9 @@ async function saveSubtype(subtype) {
 		settlement: 2,
 		star: 1,
 		derelict: 2,
-		vault: 2
+		vault: 2,
+		sunderedsettlement: 1,
+		island: 1
 	}[subtype]
 	await updateAllTokens({
 		img, // v11
@@ -611,6 +765,16 @@ async function randomizeName() {
 			'oracle_rollable:starforged/settlement/name'
 		)
 		name = await drawAndReturnResult(table)
+	} else if (subtype === 'sunderedsettlement') {
+		const table = await OracleTable.getByDsId(
+			'oracle_rollable:sundered_isles/settlement/name'
+		)
+		name = await drawAndReturnResult(table)
+	} else if (subtype === 'island') {
+		const table = await OracleTable.getByDsId(
+			'oracle_rollable:sundered_isles/island/name'
+		)
+		name = await drawAndReturnResult(table)
 	}
 
 	if (name) {
@@ -621,16 +785,19 @@ async function randomizeName() {
 
 async function randomizeKlass() {
 	let tableKey
-	if (props.data.actor.system.subtype === 'planet') {
+	const subtype = props.data.actor.system.subtype
+	if (subtype === 'planet') {
 		tableKey = 'oracle_rollable:starforged/planet/class'
-	} else if (props.data.actor.system.subtype === 'settlement') {
+	} else if (subtype === 'settlement') {
 		tableKey = 'oracle_rollable:starforged/settlement/location'
-	} else if (props.data.actor.system.subtype === 'star') {
+	} else if (subtype === 'star') {
 		tableKey = 'oracle_rollable:starforged/space/stellar_object'
-	} else if (props.data.actor.system.subtype === 'derelict') {
+	} else if (subtype === 'derelict') {
 		tableKey = 'oracle_rollable:starforged/derelict/location'
-	} else if (props.data.actor.system.subtype === 'vault') {
+	} else if (subtype === 'vault') {
 		tableKey = 'oracle_rollable:starforged/precursor_vault/location'
+	} else if (subtype === 'sunderedsettlement') {
+		tableKey = 'oracle_rollable:sundered_isles/settlement/location'
 	}
 
 	const table = await OracleTable.getByDsId(tableKey)

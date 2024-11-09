@@ -3,6 +3,7 @@
 ## Next Release
 
 - Fix a bug where clicking "+Vow" would create a "progress" item instead of a "vow" item.
+- Extend the location sheet to include IS islands and settlements ([#1037](https://github.com/ben/foundry-ironsworn/pull/1037))
 
 ## 1.24.6
 
