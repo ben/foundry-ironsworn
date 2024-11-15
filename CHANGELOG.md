@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.24.8
+
 - Expose `SFCharacterMoveSheet` to macro authors as `CONFIG.IRONSWORN.applications.SFCharacterMoveSheet`
 
 ## 1.24.7
