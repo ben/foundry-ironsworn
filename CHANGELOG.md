@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Expose `SFCharacterMoveSheet` to macro authors as `CONFIG.IRONSWORN.applications.SFCharacterMoveSheet`
+
 ## 1.24.7
 
 - Fix a bug where clicking "+Vow" would create a "progress" item instead of a "vow" item.

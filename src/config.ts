@@ -11,6 +11,7 @@ import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTruthsDialog'
 import { OracleWindow } from './module/applications/oracle-window'
+import { SFCharacterMoveSheet } from './module/actor/sheets/sf-charactermovesheet'
 import {
 	getOracleTree,
 	registerOracleTree
@@ -40,6 +41,7 @@ export interface IronswornConfig {
 		AssetCompendiumBrowser: typeof AssetCompendiumBrowser
 		FoeBrowser: typeof FoeBrowser
 		OracleWindow: typeof OracleWindow
+		SFCharacterMoveSheet: typeof SFCharacterMoveSheet
 
 		// Rolling
 		IronswornRoll: typeof IronswornRoll
@@ -71,6 +73,7 @@ export const IRONSWORN: IronswornConfig = {
 		AssetCompendiumBrowser,
 		FoeBrowser,
 		OracleWindow,
+		SFCharacterMoveSheet,
 
 		IronswornRoll,
 		IronswornPrerollDialog,
