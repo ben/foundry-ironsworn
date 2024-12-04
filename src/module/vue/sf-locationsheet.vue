@@ -245,6 +245,9 @@ function randomImage(subtype, klass): string | void {
 			''
 		)}.webp`
 	}
+	if (subtype === 'star') {
+		return 'systems/foundry-ironsworn/assets/icons/stellar-object.svg'
+	}
 	if (subtype === 'sunderedsettlement') {
 		return `systems/foundry-ironsworn/assets/icons/settlement-si.svg`
 	}

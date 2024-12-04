@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Set a default icon for stellar objects, at least when changing their subtype
+
 ## 1.24.8
 
 - Expose `SFCharacterMoveSheet` to macro authors as `CONFIG.IRONSWORN.applications.SFCharacterMoveSheet`
