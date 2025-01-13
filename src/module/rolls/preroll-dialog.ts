@@ -51,14 +51,15 @@ function rollableOptions(trigger: SFMoveTrigger) {
 		'wits',
 		'health',
 		'spirit',
-		'supply'
+		'supply',
+		'hold'
 	]
 	return actionOptions.filter((x) =>
 		(x.Using as string[]).every((u) => allowedUsings.includes(u.toLowerCase()))
 	)
 }
 
-export function moveTriggerIsRollable(trigger?: SFMoveTrigger) : boolean {
+export function moveTriggerIsRollable(trigger?: SFMoveTrigger): boolean {
 	return !!trigger && rollableOptions(trigger).length > 0
 }
 
