@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.24.9
+
 - Set a default icon for stellar objects, at least when changing their subtype
 - Allow rolling +hold from the preroll dialog if a move trigger is written that way
 
