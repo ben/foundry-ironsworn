@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix an i18n issue with the translation of stats in the pre-roll dialog ([#1039](https://github.com/ben/foundry-ironsworn/pull/1039/files)) - thanks [@sharak](https://github.com/sharak)!
+
 ## 1.24.9
 
 - Set a default icon for stellar objects, at least when changing their subtype
