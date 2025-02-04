@@ -2,7 +2,7 @@
 	<div
 		class="block"
 		:class="{ [$style.box]: true, ...classes }"
-		:data-tooltip="formatRollPlusStat(attr, true)"
+		:data-tooltip="formatRollPlusStat(i18nKey, true)"
 		@click="click">
 		<label :class="$style.label">{{ $t(i18nKey) }}</label>
 		<div class="flexrow">

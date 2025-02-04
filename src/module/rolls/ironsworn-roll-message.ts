@@ -40,14 +40,16 @@ export function formatRollPlusStat(stat: string, initialCaps = false) {
  * // returns "roll highest of spirit, heart, wits" for en.json
  */
 export function formatRollMethod(rollMethod: DFRollMethod, stats: string[]) {
-	// skip if there's no choice to be made
-	if (stats.length === 1) {
-		return formatRollPlusStat(stats[0])
-	}
-	// canonical triggers have 2 stats; there's a good chance a nice string already exists, so we check for that first.
 	const localizedStats = stats.map((stat) =>
 		game.i18n.localize('IRONSWORN.' + stat.capitalize())
 	)
+
+	// skip if there's no choice to be made
+	if (localizedStats.length === 1) {
+		return formatRollPlusStat(localizedStats[0])
+	}
+
+	// canonical triggers have 2 stats; there's a good chance a nice string already exists, so we check for that first.
 	const methodKeyRoot = `IRONSWORN.roll method.${rollMethod}`
 	const possibleNiceKey = `${methodKeyRoot}.${stats.length}`
 	if (game.i18n.has(possibleNiceKey)) {
