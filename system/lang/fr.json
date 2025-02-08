@@ -1,7 +1,16 @@
 {
 	"IRONSWORN": {
 		"Ironsworn": "Ironsworn",
+		"IronswornClassic": "Ironsworn Classique",
 		"Starforged": "Starforged",
+		"SunderedIsles": "Îles ensoleillées",
+		"RULESETS": {
+			"Rulesets": "Ensemble de règles",
+			"classic": "Ironsworn Classique",
+			"delve": "Ironsworn: Delve",
+			"starforged": "Starforged",
+			"sundered_isles": "Îles ensoleillées"
+		},
 		"YourWorldTruths": "Votre Monde: Vérités",
 		"TruthsAreOptional": "Créer des Vérités est une étape optionnelle. Vous pouvez toujours y revenir plus tard ans les paramètres",
 		"TruthQuestStarter": "Quête d’introduction :",
@@ -12,6 +21,7 @@
 		"Roll": "Lancer les dés",
 		"SendToChat": "Envoyer le texte des règles dans le chat: <i>{move}</i>",
 		"CopyTextToClipboard": "Copier le texte dans le presse-papier",
+		"ClipboardDisabled": "Le navigateur a empêché l'accès au presse-papiers. Vous devez charger Foundry à partir de localhost ou à l'aide d'une URL <code>https://</code> pour utiliser cette fonctionnalité.",
 		"Adds": "Ajoute",
 		"Versus": "vs.",
 		"CappedAt10": "Le score de l'action est limité à 10",
@@ -25,6 +35,8 @@
 		"On_a_miss": "Sur un échec",
 		"MarkProgress": "Marquer la progression",
 		"ProgressMove": "Progress Move",
+		"Cinder": "Cendres",
+		"Wraith": "Spectre",
 		"PROGRESS": {
 			"Current": "{score} progresse de ({ticks} coches)",
 			"Ticks": "{ticks} coches",
@@ -55,6 +67,7 @@
 		"Stat": "Caractéristique",
 		"Stats": "Caractéristiques",
 		"OracleTable": {
+			"CursedResult": "Résultat maudit :",
 			"ColumnLabel": {
 				"Roll": "Jet de dés",
 				"RollRange": "Porté du jet de dés",
@@ -79,10 +92,16 @@
 				"fallback": "lancez le score le plus bas de {statList}"
 			}
 		},
+		"PreRollMethod": {
+			"All": "Tous les {statList}",
+			"Highest": "Le plus élevé de {statList}",
+			"Lowest": "Le plus bas de {statList}"
+		},
 		"Momentum": "Élan",
 		"Health": "Santé",
 		"Spirit": "Esprit",
 		"Supply": "Provisions",
+		"Hold": "Tenir",
 		"Edge": "Vivacité",
 		"Heart": "Cœur",
 		"Iron": "Fer",
@@ -94,10 +113,11 @@
 		"Legacies": "Héritages",
 		"LEGACY": {
 			"Bonds": "Liens",
-			"Quests": "Quêtes",
-			"Discoveries": "Découvertes"
+			"Discoveries": "Découvertes",
+			"Quests": "Quêtes"
 		},
 		"Clock": "Horloge",
+		"Segments": "Secteurs",
 		"Impacts": "Impacts",
 		"IMPACT": {
 			"Custom": "Custom impact",
@@ -135,7 +155,6 @@
 			"Cursed": "maudit",
 			"Tormented": "tourmenté"
 		},
-
 		"Conditions": "États",
 		"Condition": "État",
 		"ConditionMarkedOnOne": "{condition} is marked on {name}",
@@ -216,6 +235,8 @@
 		"RandomDerelictType": "Type d'épave aléatoire",
 		"VaultType": "Type de chambre forte",
 		"RandomVaultType": "Type de chambre forte aléatoire",
+		"SunderedsettlementType": "Localisation de l'établissement",
+		"RandomSunderedsettlementType": "Emplacement aléatoire de l'établissement",
 		"First": "premier",
 		"Second": "second",
 		"Third": "troisième",
@@ -223,12 +244,16 @@
 		"Fifth": "cinquième",
 		"StarforgedTools": "Outils Starforged",
 		"IronswornTools": "Outils d'Ironsworn",
+		"SunderedIslesTools": "Outils des îles Ensoleillé",
 		"Region": "Région",
 		"RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
 		"REGION": {
 			"Terminus": "Terminus",
 			"Outlands": "Contrées lointaines",
-			"Expanse": "Étendue"
+			"Expanse": "Étendue",
+			"Myriads": "Myriades",
+			"Margins": "Marges",
+			"Reaches": "Atteintes"
 		},
 		"RotateCCW": "Tourner dans le sens inverse des aiguilles d'une montre",
 		"RotateCW": "Tourner dans le sens des aiguilles d'une montre",
@@ -252,6 +277,10 @@
 			"AdjustedStat": "{amt} {stat} (maintenant {val})",
 			"MarkedCondition": "État {condition} marqué",
 			"ClearedCondition": "État {condition} supprimé",
+			"MarkedImpact": "Marqué le {impact} impact",
+			"ClearedImpact": "Effacer le {impact} impact",
+			"MarkedDebility": "Marqué le {debility} débilité",
+			"ClearedDebility": "Effacer le {debility} débilité",
 			"RankChanged": "Rang changé de {old} pour {new}",
 			"rankChanged": "Rang changé de {old} pour {new}",
 			"ProgressAdvanced": "Progression avancée",
@@ -279,7 +308,15 @@
 				"Name": "Thème visuel",
 				"Hint": "Sélection du thème pour cette partie. Nécessite de recharger le monde.",
 				"Ironsworn": "Ironsworn Classic",
-				"Starforged": "Starforged (experimental)"
+				"Starforged": "Starforged (experimental)",
+				"SunderedIsles": "Îles ensoleillées (Beta)"
+			},
+			"ColorScheme": {
+				"Name": "Apparence : Schéma de couleurs",
+				"Hint": "Chaque utilisateur peut définir sa propre palette de couleurs.",
+				"Zinc": "Zinc",
+				"Phosphor": "Phosphore",
+				"Oceanic": "Océanique"
 			},
 			"Tools": {
 				"Name": "Outils pour les personnages",
@@ -289,6 +326,10 @@
 			"SharedSupply": {
 				"Name": "Jauge de provisions partagée",
 				"Hint": "Si activé, la modification de la jauge de provision d'un personnage modifiera aussi les jauges de provisions de tous les autres acteurs."
+			},
+			"AdvancedRollingOpen": {
+				"Name": "Mode de roulement manuel",
+				"Hint": "Si cette option est activée, la section \"advanced\" de la boîte de dialogue du dé sera ouverte par défaut et le focus sera mis sur la première case d'entrée du dé."
 			},
 			"LogChanges": {
 				"Name": "Journalisation des modifications du personnage",
@@ -303,15 +344,13 @@
 				"Name": "Boîte de dialogue de configuration",
 				"Hint": "Choisissez entre les éléments d'interface utilisateur Ironsworn et Starforged.."
 			},
-			"ISTruthsDialog": {
-				"Label": "Vérités d'Ironsworn",
-				"Name": "Vérités d'Ironsworn",
-				"Hint": "Ouvrir la boite de dialogue pour générer les Vérités du monde d'Ironsworn."
+			"CharacterHold": {
+				"Name": "Stats de Maintien",
+				"Hint": "Afficher le tracker 'Maintien' pour les personnages Starforged et les feuilles partagées."
 			},
-			"SFTruthsDialog": {
-				"Label": "Vérités de Starforged",
-				"Name": "Vérités de Starforged",
-				"Hint": "Ouvrir la boite de dialogue pour générer les Vérités du monde de Starforged."
+			"RollCinderAndWraith": {
+				"Name": "Cinder and Wraith",
+				"Hint": "Roll challenge dice as Cinder and Wraith. This will override your Dice-So-Nice color theme for challenge-die rolls, and include which die represents which moon in the tooltips."
 			},
 			"ProgressMarkAnimation": {
 				"Name": "Activer l'animation de la marque de progression",
@@ -321,6 +360,14 @@
 		"First Start": {
 			"Welcome": "Bienvenue",
 			"Intro": "SVP, choisissez le système que vous voulez utiliser. Cela définira la feuille de personnage et les actions par défaut de l'Oracle. Des options détaillées sont disponibles dans les paramètres",
+			"SheetTitle": "Feuille de personnage",
+			"SheetHint": "Choisissez la feuille par défaut à utiliser pour les caractères.",
+			"IronswornSheetTooltip": "Mise en page compacte avec un minimum d'onglets, conçue pour Ironsworn Classic et Delve. Inclut une piste Bonds, mais pas de piste legacy.",
+			"StarforgedSheetTooltip": "Mise en page à onglets, conçue pour Starforged et Sundered Isles. Inclut des pistes sur l'héritage et les connexions.",
+			"RulesetsTitle": "Règles",
+			"RulesetsHint": "Choisissez le contenu des livres qui doivent être actifs dans ce monde.",
+			"TruthsTitle": "Vérités",
+			"TruthsHint": "Lancer une boîte de dialogue pour générer des vérités",
 			"SettingTruths": "Établir les Vérités",
 			"SettingTruth": "Établir la Vérité"
 		},
@@ -340,7 +387,83 @@
 				"OracleToolTitle": "Oracles",
 				"OracleToolContent": "<p>Aucune partie d'Ironsworn ou Starforged ne serait complète sans oracles. Ce bouton fera apparaître une fenêtre avec tous les oracles du jeu choisi. Les oracles sont également disponibles depuis la fiche de personnage.</p>",
 				"ToursTitle": "Prochaines étapes",
-				"ToursContent": "<p>C'est tout pour le moment ! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the <code>#foundry-vtt</code> channel in the <a href=\"https://discord.gg/8bRuZwK\">Ironsworn Discord</a>.</p><p>Enjoy!</p>"
+				"ToursContent": "<p>C'est tout pour l'instant ! Pour plus d'informations sur d'autres sujets, consultez la section Gestion des tournées dans les onglets de configuration. Et si vous souhaitez entrer en contact avec nous, consultez la section <code>#foundry-vtt</code> cannal dans le <a href=\"https://discord.gg/8bRuZwK\">Discord Ironsworn</a>.</p><p>Bonne chance !</p>"
+			},
+			"ISCharacter": {
+				"SheetTitle": "Feuille de personnage",
+				"SheetContent": "<p>Ceci est la feuille de personnage du joueur. Elle peut vous aider à gérer les attributs, les ressources, les biens et les vœux de votre personnage.</p>",
+				"EditButtonTitle": "Bouton d'édition",
+				"EditButtonContent": "<p>Le &quot;<i class=\"fa-solid fa-edit\"></i>Bouton d'édition&quot; dans la barre de titre permet de passer du mode interaction au mode édition pour ce personnage.</p>",
+				"StatsTitle": "Statistiques des personnages",
+				"StatsContent": "<p>Ce sont les attributs de base de votre personnage, qui vous renseignent sur sa personnalité, mais aussi sur le fait que lorsqu&#39;il tente certains types d&#39;actions, l&#39;histoire aura tendance à mieux se dérouler pour lui.</p><p>Pour effectuer un jet contre ces statistiques, cliquez sur l&#39;une d&#39;entre elles. Une boîte de dialogue s'ouvrira, vous permettant d'ajouter des bonus et de confirmer le jet.</p><p><strong>MODE EDITION</strong> vous permet d'ajuster ces chiffres.</p>",
+				"ResourcesTitle": "Ressources",
+				"ResourcesContent": "<p>Sur le côté, nous avons les trois ressources de base : Santé, Esprit et Approvisionnement. Vous pouvez ajuster les niveaux de ces ressources en cliquant sur la nouvelle valeur.</p><p>Vous pouvez également faire des roulades en cliquant sur le nom de la ressource.</p>",
+				"MomentumTitle": "Elan",
+				"MomentumContent": "<p>De l'autre côté se trouve l'indicateur d'élan. Vous pouvez définir l&#39;élan de votre personnage en cliquant sur l&#39;un des nombres, et si vous avez des débilités marquées, une ou plusieurs des valeurs les plus élevées seront désactivées.</p><p>Passez la souris sur l'icône &quot;<i class=\"fa-solid fa-fire\"></i> ELAN&quot; pour avoir un aperçu de ce que la gravure de votre élan va faire, et cliquez dessus pour effectuer la gravure.</p>",
+				"ConditionsTitle": "Conditions",
+				"ConditionsContent": "<p>En bas de la feuille se trouvent les conditions, bannissements et fardeaux de votre personnage. Le fait de les cocher affectera votre élan maximum. Il y a également deux cases où vous pouvez entrer des conditions personnalisées.</p>",
+				"CharacterTabTitle": "Onglet Caractère",
+				"CharacterTabContent": "<p>La zone centrale comporte une série d'onglets. Le premier est l'onglet &quot;Personnage&quot; dans lequel vous trouverez la plupart des informations nécessaires à la création d'un personnage de type Ironsworn.</p>",
+				"BondsTitle": "Obligations",
+				"BondsContent": "<p>En haut à gauche se trouvent vos liens. Il s'agit du nombre de liens que votre personnage a tissés au cours de ses aventures. Cliquez sur l'icône <i class=\"fa-solid fa-edit\"></i> pour ajouter ou supprimer des obligations et prendre des notes à leur sujet. Cliquez sur l'icône <svg fill=\"currentColor\" height=\"1em\" width=\"1em\" role=\"img\" aria-hidden=\"true\" class=\"icon\"><use href=\"#ironsworn-d10-tilt\"></use></svg> pour faire rouler le <em>Rédigez votre épilogue</em> déplacement.</p>",
+				"AssetsTitle": "Actifs",
+				"AssetsContent": "<p>La zone des atouts est l'endroit où les atouts de votre personnage sont affichés et gérés. Vous pouvez cliquer sur n'importe quel atout pour l'agrandir et afficher ses capacités. Cliquez sur le bouton &quot;<i class=\"fa-solid fa-edit\"></i>&quot; pour ouvrir une fiche détaillée pour n'importe quel actif.</p><p><strong>MODE EDITION</strong> affiche des boutons permettant de supprimer et de réorganiser les actifs.</p><p>Le boutton &quot;<i class=\"fa-solid fa-book-atlas\"></i> Actifs&quot; en bas de l'écran permet d'ouvrir le navigateur de ressources. À partir de là, vous pouvez faire glisser n'importe quelle ressource sur votre feuille de personnage pour l'ajouter à votre jeu.</p>",
+				"ProgressTitle": "Progression",
+				"ProgressContent": "<p>La zone de progrès affiche les vœux actuels de votre personnage et d&#39;autres éléments de progrès. Vous pouvez ajouter un nouvel élément vierge en cliquant sur le bouton &quot;+Vœu&quot; ou &quot;+Progression&quot; au bas de l'écran, ou vous pouvez ouvrir le compendium &quot;<i class=\"fa-solid fa-book-atlas\"></i> Ennemis&quot; et faites glisser un ennemi dans la liste.</p><p>Chaque élément indique l'état d'avancement et dispose de commandes permettant de marquer des coches et d'effectuer un relevé de l'état d'avancement. <strong>MODE EDITION</strong> ajoute des boutons pour réordonner les éléments, ajuster les coches de progression et marquer un élément comme terminé, ce qui le cache dans la section au bas de l'onglet.</p>",
+				"NotesTabTitle": "Onglet Notes",
+				"NotesTabContent": "<p>L'onglet Notes est fait pour vous. Gardez une trace de votre récit ici (ou utilisez des entrées de journal), notez le type d'équipement que vous transportez, notez les cicatrices que vous avez gagnées sur votre chemin.</p>",
+				"EndTitle": "Feuille de personnage",
+				"EndContent": "<p>C&#39;est tout pour l&#39;instant. Cherchez le bouton <i class=\"fa-solid fa-circle-question\"></i> dans les barres de titre des autres feuilles pour plus d'informations sur leur fonctionnement.</p>"
+			},
+			"SFCharacter": {
+				"Title": "Feuille de personnage Starforged",
+				"Description": "La feuille de PC d'un personnage Starforged",
+				"SheetTitle": "Feuille de personnage",
+				"SheetContent": "<p>Ceci est la feuille de personnage du joueur. Elle peut vous aider à gérer les attributs, les ressources, les biens et les vœux de votre personnage.</p>",
+				"EditButtonTitle": "Bouton d'édition",
+				"EditButtonContent": "<p>Le boutton d'&quot;<i class=\"fa-solid fa-edit\"></i> Edition&quot; dans la barre de titre permet de passer du mode interaction au mode édition pour ce personnage.</p>",
+				"StatsTitle": "Statistiques des personnages",
+				"StatsContent": "<p>Ce sont les attributs de base de votre personnage, qui vous renseignent sur sa personnalité, mais aussi sur le fait que lorsqu&#39;il tente certains types d&#39;actions, l&#39;histoire aura tendance à mieux se dérouler pour lui.</p><p>Pour effectuer un jet par rapport à ces statistiques, cliquez sur l'une d'entre elles. Une boîte de dialogue s'ouvrira, vous permettant d'ajouter des bonus et de confirmer le jet.</p><p><strong>MODE EDITION</strong> vous permet d'ajuster ces chiffres.</p>",
+				"ResourcesTitle": "Ressources",
+				"ResourcesContent": "<p>Sur le côté, nous avons les trois ressources de base : Santé, Esprit et Ravitaillement. Vous pouvez ajuster les niveaux de ces ressources en cliquant sur la nouvelle valeur.</p><p>Vous pouvez également faire des jets en cliquant sur le nom de la ressource.</p>",
+				"MomentumTitle": "élan",
+				"MomentumContent": "<p>De l'autre côté se trouve l'indicateur d'élan. Vous pouvez définir l&#39;élan de votre personnage en cliquant sur l&#39;un des nombres, et si vous avez des débilités marquées, une ou plusieurs des valeurs les plus élevées seront désactivées.</p><p>Survolez le titre &quot;<i class=\"fa-solid fa-fire\"></i> ELAN&quot; pour avoir un aperçu des effets de la combustion de votre élan, et cliquez dessus pour effectuer la combustion.</p>",
+				"ImpactsTitle": "Impacts",
+				"ImpactsContent": "<p>En bas de la feuille se trouvent les impacts de votre personnage. Les cocher affectera votre élan maximum. Il y a également deux cases où vous pouvez entrer des impacts personnalisés.</p><p>Si un véhicule dans le jeu est marqué par Battered ou Cursed, cet impact sera mis en évidence ici pour vous rappeler qu&#39;il doit s&#39;appliquer lorsque vous êtes sur ce véhicule.</p>",
+				"LegaciesTabTitle": "Onglet « Héritages »",
+				"LegaciesTabContent": "<p>Dans la zone centrale se trouve une série d'onglets. Le premier est l'onglet &quot;Legacies&quot ; où vous suivez vos trois principaux legs Starforgés. Vous y trouverez également tous les éléments « étoilés » des onglets Progrès ou Connexions.</p><p>Pour faire avancer un héritage, cliquez sur le bouton &quot;<i class=\" fa-solid fa-caret-right\"></i>&quot; à droite. Lorsque suffisamment de cases d'héritage sont remplies, des cases d'XP apparaissent; il suffit de cliquer dessus pour dépenser de l'XP. <strong>MODE EDITION</strong> affiche également des boutons permettant de supprimer les coches héritées du passé si vous en avez marqué trop par accident.</p>",
+				"AssetsTabTitle": "Onglet Actifs",
+				"AssetsTabContent": "<p>The Assets tab is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
+				"ProgressTabTitle": "Progress Tab",
+				"ProgressTabContent": "<p>The Progress tab displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. Use the &quot;<i class=\"fa-solid fa-star\"></i>&quot; button to also display an item in the Legacies tab.</p><p><strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
+				"ConnectionsTabTitle": "Connections Tab",
+				"ConnectionsTabContent": "<p>Connections are tracked separately from other progress items, and can be found in this tab. Otherwise this behaves the same as the Progress tab.</p>",
+				"NotesTabTitle": "Notes Tab",
+				"NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
+				"EndTitle": "Character Sheet",
+				"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+			},
+			"MoveSheet": {
+				"Title": "",
+				"Description": "",
+				"SheetTitle": "Move/Oracle Sheet",
+				"SheetContent": "<p>This is the window that provides easy access to moves and oracles.</p>",
+				"MoveCategoryTitle": "Move Categories",
+				"MoveCategoryContent": "<p>Click on a category title to expand that category and show all of the moves. Click on one of the moves to expand its description.</p>",
+				"MoveButtonsTitle": "Move Shortcuts",
+				"MoveButtonsContent": "<p>Up here you&#39;ll see shortcut buttons.</p><p>The first one is a shortcut to &quot;roll this move,&quot; and will open the rolling dialog with some details pre-filled for you. It&#39;s only available if this move has a roll associated with it -- some, like Pay the Price, do not have an action/challenge roll, so this button will be disabled.</p><p>The second one is a shortcut to &quot;roll the oracle,&quot; and immediately rolls on an oracle table. It&#39;s only available if the move has exactly one oracle to roll.</p><p>The third one sends a copy of the description to the chat sidebar.</p>",
+				"MoveLinkTitle": "Move Links",
+				"MoveLinkContent": "<p>Clicking on a link to another move will expand it and scroll it into view.</p>",
+				"OraclesTabTitle": "Oracles Tab",
+				"OraclesTabContent": "<p>The second tab displays oracles, random tables to spark your inspiration.</p>",
+				"OracleCategoryTitle": "Oracle Tree",
+				"OracleCategoryContent": "<p>The oracles are organized into a directory structure. Click anywhere on a category line to expand it and display its contents.</p>",
+				"OracleRowTitle": "Oracle Controls",
+				"OracleRowContent": "<p>Click the <i class=\"fas fa-eye\"></i> icon to display a preview of the oracle table, or click anywhere else on the line to draw a result from the table and display it in chat.</p>",
+				"OracleChatMessageTitle": "Oracle Results",
+				"OracleChatMessageContent": "<p>When you roll an oracle, a chat card is displayed. The highlighted row is the rolled result, and the adjacent rolls are also displayed.</p><p>If you hover your mouse over the message, you&#39;ll see buttons appear, which let you copy a result&#39;s text to your clipboard, or re-roll on the same oracle table.</p>",
+				"EndTitle": "Move Sheet",
+				"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
 			}
 		},
 		"WorldTruths": {
@@ -445,6 +568,105 @@
 			}
 		},
 		"OracleCategories": {
+			"Action and Theme Oracles": "Oracles d'action et de thème",
+			"Other Names": "Autres noms",
+			"Place Oracles": "Place Oracles",
+			"Settlement Name": "Oracles de lieu",
+			"Quick Settlement Name Generator": "Générateur rapide de noms d'établissements",
+			"Turning Point Oracles": "Oracles du point tournant",
+			"Character Oracles": "Oracles de personnages",
+			"Core Oracles": "Oracles de base",
+			"Creature Basic Form": "Forme de base de la créature",
+			"Creature Oracles": "Oracles de créatures",
+			"Derelict Type (by location)": "Type d'abandon (par lieu)",
+			"Derelict Zones": "Zones abandonnées",
+			"Derelict Oracles": "Oracles abandonnés",
+			"Faction Name": "Nom de la faction",
+			"Faction Oracles": "Oracles de factions",
+			"Step 5: Board Your Starship": "Étape 5 : Embarquez à bord de votre vaisseau",
+			"Create Your Character": "Créez votre personnage",
+			"Build Your Starting Sector": "Construisez votre secteur de départ",
+			"Begin Your Adventure": "Commencez votre aventure",
+			"Launching Your Campaign": "Lancer votre campagne",
+			"Location Theme Oracles": "Oracles de thème de localisation",
+			"Miscellaneous Oracles": "Oracles divers",
+			"Desert World": "Monde désertique",
+			"Furnace World": "Monde de la fournaise",
+			"Grave World": "Monde des tombes",
+			"Ice World": "Monde de glace",
+			"Jovian World": "Monde Jovien",
+			"Jungle World": "Monde de la jungle",
+			"Ocean World": "Monde de l'océan",
+			"Rocky World": "Monde rocheux",
+			"Shattered World": "Monde brisé",
+			"Tainted World": "Monde contaminé",
+			"Vital World": "Monde vital",
+			"Planetside Peril": "Le péril de Planetside",
+			"Planetside Opportunity": "Opportunité à Planetside",
+			"Planet Oracles": "Planète Oracles",
+			"Precursor Vault Oracles": "Oracles de la chambre forte du précurseur",
+			"Settlement Oracles": "Oracles d'établissement",
+			"Space Sighting": "Observation de l'espace",
+			"Space Encounter Oracles": "Oracles de rencontre de l'espace",
+			"Starship Mission": "Mission du vaisseau",
+			"Starship Oracles": "Oracles du vaisseau",
+			"Factions of the Isles": "Factions des îles",
+			"Beasts of the Isles": "Bêtes des îles",
+			"Adventures Among the Isles": "Aventures parmi les îles",
+			"Cave Scale": "Échelle de la grotte",
+			"Sea Cave Details": "Détails de la grotte marine",
+			"Inland Cave Details": "Détails de la grotte intérieure",
+			"Cave Oracles": "Oracles de la grotte",
+			"Character Role Details": "Détails sur le rôle du personnage",
+			"Cursed Moniker": "Monogramme maudit",
+			"Society": "Société",
+			"Organization": "Organisation",
+			"Empire": "Empire",
+			"The Cursed": "Les maudits",
+			"Affluence": "L'opulence",
+			"Craft": "Artisanat",
+			"Discovery": "Découverte",
+			"Faith": "Foi",
+			"Loyalty": "Loyauté",
+			"Mysticism": "Mysticisme",
+			"Rebellion": "Rébellion",
+			"Secrecy": "Secret",
+			"War": "Guerre",
+			"Curses": "Malédictions",
+			"Faction Name: Themes": "Nom de la faction : Thèmes",
+			"Take Command": "Prendre le commandement",
+			"Chart Your Course": "Tracez votre chemin",
+			"Getting Underway": "Mise en route",
+			"Vitality": "Vitalité",
+			"Island Landscape": "Paysage de l'île",
+			"Visible Habitation": "Habitation visible",
+			"Nearby Islands": "Îles proches",
+			"Island Oracles": "Oracles de l'île",
+			"Magnitude": "Ampleur",
+			"Local Seas": "Mers locales",
+			"Overland Waypoints": "Points de repère terrestres",
+			"Region Landmarks": "Points de repère de la région",
+			"Overland Oracles": "Oracles de l'arrière-pays",
+			"Ruin Oracles": "Oracles de ruine",
+			"Known Waters": "Eaux connues",
+			"Unknown Waters": "Eaux inconnues",
+			"Seafaring Waypoints": "Points de repère maritimes",
+			"Seafaring Oracles": "Oracles marins",
+			"Settlement Size": "Taille de l'établissement",
+			"Settlement Controlling Faction": "Faction contrôlant l'établissement",
+			"Settlement Identity": "Identité de l'établissement",
+			"Settlement Focus": "L'accent mis sur le règlement",
+			"Ship Position": "Position du navire",
+			"Ship Controlling Faction": "Faction contrôlant le navire",
+			"Ship Mission": "Mission du navire",
+			"Ship Oracles": "Oracles des navires",
+			"Shipwreck Position": "Position du naufrage",
+			"Shipwreck Orientation": "Orientation des naufrages",
+			"Shipwreck Oracles": "Oracles de naufrage",
+			"Treasure Value": "Valeur du trésor",
+			"Treasure Oracles": "Oracles du trésor",
+			"Weather Conditions": "Conditions météorologiques",
+			"Weather Oracles": "Oracles météorologiques",
 			"Access": "Accès",
 			"Action and Theme": "Action et Thème",
 			"Ask the Oracle": "Demander à l'Oracle",
@@ -541,30 +763,99 @@
 			},
 			"Starforged": {
 				"Command Vehicle Assets": {
-					"Title": "Vehicle de Commandement",
-					"Description": "The **command vehicle** is your interstellar STARSHIP. It is a default asset for your character, taken when you begin your campaign. If you are playing with others, this is a shared asset; each of you may use the STARSHIP's abilities while aboard the craft.\n\nThe command vehicle has an integrity meter and starts at 5 integrity. When your STARSHIP takes a hit, make the @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} move to see what happens."
+					"Title": "Véhicule de Commandement",
+					"Description": "Le **véhicule de commandement** est votre vaisseau interstellaire. Il s'agit d'un atout par défaut pour votre personnage, pris lorsque vous commencez votre campagne. Si vous jouez à plusieurs, il s'agit d'un atout partagé ; chacun d'entre vous peut utiliser les capacités du STARSHIP lorsqu'il est à bord du vaisseau. Le véhicule de commandement a un compteur d'intégrité et commence à 5 d'intégrité. Lorsque votre STARSHIP est touché, faites le mouvement @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} pour voir ce qui se passe."
 				},
 				"Module Assets": {
 					"Title": "Module",
-					"Description": "**Modules** are linked to your STARSHIP and offer additional options and advantages when aboard that vehicle.\n\nThese assets are earned and managed by a single character. They can be shared with allies, but only if it's practical for them to make use of it (not everyone may know how to use a RESEARCH LAB).\n\nWhen you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} and score a miss, you can mark a module as broken to offset further danger for your STARSHIP. Flip the card over to indicate its broken state. A broken module cannot be used until you successfully @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} it."
+					"Description": "Les **Modules** sont liés à votre vaisseau spatial et offrent des options et des avantages supplémentaires à bord de ce véhicule.\n\nCes atouts sont gagnés et gérés par un seul personnage. Ils peuvent être partagés avec des alliés, mais seulement s'il est pratique pour eux d'en faire usage (tout le monde ne sait pas forcément comment utiliser un LABORATOIRE DE RECHERCHE).\n\n- Lorsque vous @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} et que vous marquez un échec, vous pouvez marquer un module comme cassé pour éviter tout danger supplémentaire pour votre STARSHIP. Retournez la carte pour indiquer qu'elle est cassée. Un module cassé ne peut pas être utilisé tant que vous n'avez pas réussi à le @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair}."
 				},
 				"Support Vehicle Assets": {
-					"Title": "Support Vehicle",
-					"Description": "**Support vehicles** complement your command vehicle for planetside or short-range operations. If you are playing with others, one of you might serve as the pilot or owner of a support vehicle, but anyone on board can use its abilities as appropriate to the situation.\n\nAs with the command vehicle, your support vehicles have integrity meters. The maximum integrity varies based on the type of vehicle. When a support vehicle faces a damaging situation or environment, you must @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} to see how it fares."
+					"Title": "Véhicule de soutien",
+					"Description": "**Les véhicules de soutien** complètent votre véhicule de commandement pour les opérations sur la planète ou à courte distance. Si vous jouez à plusieurs, l'un d'entre vous peut être le pilote ou le propriétaire d'un véhicule de soutien, mais tous ceux qui sont à bord peuvent utiliser ses capacités en fonction de la situation.n Comme pour le véhicule de commandement, vos véhicules de soutien ont des compteurs d'intégrité. L'intégrité maximale varie en fonction du type de véhicule. Lorsqu'un véhicule de soutien est confronté à une situation ou un environnement dommageable, vous devez @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} pour voir comment il s'en sort."
 				},
 				"Path Assets": {
-					"Title": "Path",
-					"Description": "**Paths** are your background, interests, training, skills, powers, and key equipment. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. When you create your character in the next chapter, you'll select at least two paths to get started.\n\nSome paths represent your skill with a signature weapon style or piece of equipment. If you see a requirement at the top of the asset card, such as “If you wield a bladed weapon…,” the asset is only usable when taking action using that item."
+					"Title": "Chemin d'accès",
+					"Description": "Les **chemins** sont votre passé, vos intérêts, votre formation, vos compétences, vos pouvoirs et votre équipement clé. Elles offrent des avantages mécaniques et narratifs, mais reflètent aussi qui vous êtes et comment vous interagissez avec le monde. Lorsque vous créerez votre personnage dans le chapitre suivant, vous sélectionnerez au moins deux voies pour commencer. Certaines voies représentent vos compétences avec un style d'arme ou une pièce d'équipement caractéristique. Si vous voyez une condition en haut de la carte d'atout, comme « Si vous maniez une arme blanche... », l'atout n'est utilisable que lors d'une action utilisant cet objet."
 				},
 				"Companion Assets": {
-					"Title": "Companion",
-					"Description": "**Companions** are NPC helpers. When you gain a companion, give them a name and envision their look and personality.\n\nCompanions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} move. When their health is at 0, they are in danger of being killed or destroyed."
+					"Title": "Compagnon",
+					"Description": "**Les compagnons sont des PNJ qui vous aident. Lorsque vous obtenez un compagnon, donnez-lui un nom et imaginez son apparence et sa personnalité. Les compagnons utilisent une jauge de santé qui peut être réduite si un résultat les met en danger. Lorsque votre compagnon est en danger, faites le mouvement @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit}. Lorsque sa santé est à 0, il risque d'être tué ou détruit."
 				},
 				"Deed Assets": {
-					"Title": "Deed",
-					"Description": "**Deeds** represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character."
+					"Title": "Hauts faits",
+					"Description": "**Les hauts faits** représentent les réalisations et les situations notables de votre histoire, et la façon dont ces événements changent votre personnage. Les hauts faits ont une exigence indiquée en haut de la carte, formulée comme « Une fois que vous avez [blank] ». Vous ne pouvez pas dépenser d'expérience pour acquérir un acte tant que vous n'avez pas rempli cette condition, et vous ne pouvez pas choisir un acte lors de la création de votre personnage."
+				}
+			},
+			"Sundered_isles": {
+				"Companion Assets": {
+					"Title": "Compagnon",
+					"Description": ""
+				},
+				"Deed Assets": {
+					"Title": "Hauts faits",
+					"Description": ""
+				},
+				"Module Assets": {
+					"Title": "Module",
+					"Description": ""
+				},
+				"Path Assets": {
+					"Title": "Chemin d'accès",
+					"Description": ""
+				},
+				"Command Vehicle Assets": {
+					"Title": "Véhicule de Commandement",
+					"Description": ""
+				},
+				"Support Vehicle Assets": {
+					"Title": "Véhicule de soutien",
+					"Description": ""
 				}
 			}
+		},
+		"NpcCategories": {
+			"Ironlanders": {
+				"Name": "Les hommes de fer",
+				"Description": "Les habitants du Pays du Fer sont les humains qui peuplent ces terres. À moins que votre histoire ne mette l'accent sur des aventures en dehors des régions habitées, la majorité de vos interactions se feront avec des habitants de la Terre de Fer.\nCette section couvre quelques grandes catégories d'habitants de la Terre de Fer. Elles ne sont pas représentatives de la variété des peuples et des cultures de ces terres. Lorsque vous êtes obligé de combattre un Ironlander et que vous devez déterminer son rang, vous pouvez @Compendium[foundry-ironsworn.ironswornoracles.b2c23660dbcfe5b2]{Interroger l'Oracle}, ou suivre les directives suivantes :\n * Un citoyen ordinaire ou une brute est __troubleome__.\n * Un guerrier entraîné est __dangerous__.\n * Un guerrier puissant ou un vétéran est __formidable__."
+			},
+			"Firstborn": {
+				"Name": "Premier-né",
+				"Description": "Les premiers-nés vivaient ici bien avant que les humains ne débarquent sur ces côtes. Les humains, dans leur arrogance, ont nommé cette péninsule les Terres de Fer et se sont appelés eux-mêmes les Terriens de Fer, mais les premiers-nés lui ont donné des noms qui leur sont propres, à une époque où la mémoire n'est pas encore disponible."
+			},
+			"Animals": {
+				"Name": "Animaux",
+				"Description": "Les animaux sont les créatures ordinaires qui vivent dans les Terres de Fer. Certains animaux sont originaires de ces terres; d'autres étaient également communs dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}.\nLa plupart des animaux sauvages sont peureux et ne représentent pas une menace pour les humains. Ces créatures n'ont pas de rang et on peut les attaquer ou interagir avec elles en utilisant les mouvements appropriés. Par exemple, @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} peut représenter la chasse au cerf ou au petit gibier.\nQuelques exceptions notables - les prédateurs, les créatures agressives et les animaux entraînés au combat - sont notées ici."
+			},
+			"Beasts": {
+				"Name": "Bêtes",
+				"Description": "Les bêtes sont des créatures monstrueuses de grande taille et de grande puissance. Ce sont des êtres naturels - et non des entités surnaturelles - mais ils étaient inconnus dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Ancien Monde}."
+			},
+			"Horrors": {
+				"Name": "Horreurs",
+				"Description": "Les horreurs sont des entités surnaturelles. Dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}, elles étaient des superstitions et des légendes. Ici, ce sont des cauchemars qui deviennent réalité. Les Terres de Fer sont un terrain fertile pour que les ténèbres et le mal s'installent, engendrant ces êtres morts-vivants de pure vengeance ou de haine aveugle.\nDe nombreuses horreurs peuvent être temporairement vaincues par des attaques physiques, mais ne peuvent pas être tuées. Elles sont au-delà de la mort."
+			},
+			"Anomalies": {
+				"Name": "Anomalies",
+				"Description": "Une magie ancienne imprègne les Terres de Fer. Ces forces se manifestent parfois sous la forme d'une anomalie, c'est-à-dire d'une caractéristique du terrain ou de l'environnement qui appartient à un autre monde. Certaines sont l'incarnation d'esprits anciens et ont des motivations inconnues. D'autres sont des forces de la nature auxquelles on a donné un but cruel."
+			},
+			"Sample NPCs": {
+				"Name": "Exemples de PNJ",
+				"Description": ""
+			}
+		},
+		"NpcNatures": {
+			"Ironlander": "Homme de fer",
+			"Firstborn": "Premier-né",
+			"Animal": "Animal",
+			"Beast": "Bête",
+			"Horror": "Horreur",
+			"Anomaly": "Anomalie",
+			"Monster": "Monstre",
+			"Machine": "Machine",
+			"Human": "Humain",
+			"Creature": "Créature",
+			"Vehicle": "Véhicule"
 		},
 		"ROLLTABLE": {
 			"TypeOracle": "Oracle"
