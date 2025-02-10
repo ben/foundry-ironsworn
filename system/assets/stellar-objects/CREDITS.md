@@ -43,7 +43,7 @@ All images have been modified. They have been cropped, resized and converted to 
 
 ### Corrupted star
 
-* [The Dying Sun](https://www.deviantart.com/eaglshadow/art/The-Dying-Sun-168224372)
+* URL: [The Dying Sun](https://www.deviantart.com/eaglshadow/art/The-Dying-Sun-168224372)
 * Credit: Mario Kotlar / Eaglshadow
 * License: CC BY-NC-SA 3.0
 
@@ -56,19 +56,19 @@ All images have been modified. They have been cropped, resized and converted to 
 
 ### Two stars in close orbit - Binary
 
-* [A Cosmic Pretzel](https://www.eso.org/public/images/eso1916a/)
+* URL: [A Cosmic Pretzel](https://www.eso.org/public/images/eso1916a/)
 * Credit: ALMA (ESO/NAOJ/NRAO), Alves et al.
 * License: CC BY 4.0
 
 ### Black Hole
 
-* [Black hole's accretion disk blank](https://commons.wikimedia.org/wiki/File:Black_hole%27s_accretion_disk_blank.jpg)
+* URL: [Black hole's accretion disk blank](https://commons.wikimedia.org/wiki/File:Black_hole%27s_accretion_disk_blank.jpg)
 * Credit: NASA’s Goddard Space Flight Center/Jeremy Schnittman, cmglee
 * License: CC BY-SA 4.0
 
 ### Hypergiant
 
-* [Hubble Solves Mystery of Monster Star's Dimming](https://esahubble.org/images/opo2109a/)
+* URL: [Hubble Solves Mystery of Monster Star's Dimming](https://esahubble.org/images/opo2109a/)
 * Credit: NASA, ESA, and R. Humphreys (University of Minnesota), and J. Olmsted (STScI)
 * License: CC BY 4.0
 
@@ -78,7 +78,7 @@ All images have been modified. They have been cropped, resized and converted to 
 
 ### Unstable star with signs of supernova
 
-* [A plume on Betelgeuse (artist’s impression)](https://www.eso.org/public/images/eso0927a/)
+* URL: [A plume on Betelgeuse (artist’s impression)](https://www.eso.org/public/images/eso0927a/)
 * Credit: ESO/L. Calçada
 * License: CC BY 4.0
 
