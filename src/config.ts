@@ -85,5 +85,8 @@ export const IRONSWORN: IronswornConfig = {
 	registerOracleTree,
 	getOracleTree,
 
-	parseUuid: typeof parseUuid === 'function' ? parseUuid : _parseUuid
+	parseUuid:
+		foundry.utils?.parseUuid ?? typeof parseUuid === 'function'
+			? parseUuid
+			: _parseUuid
 }
