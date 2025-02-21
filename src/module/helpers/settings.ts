@@ -259,7 +259,7 @@ export class IronswornSettings {
 			game.actors?.contents.filter((x) => actorTypes.includes(x.type)) ?? []
 
 		for (const actor of actorsToUpdate) {
-			await actor.update(data, {
+			await actor.update({ ...data }, {
 				suppressLog: true
 			} as any)
 		}
