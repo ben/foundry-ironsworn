@@ -21,6 +21,14 @@
 		width: auto;
 		line-height: var(--ironsworn-line-height);
 	}
+
+	:where(.window-content) {
+		.flexcol,
+		.flexrow {
+			display: flex;
+			align-items: initial;
+		}
+	}
 }
 
 @import 'transitions.less';
