@@ -192,11 +192,26 @@ for (const ruleset of IronswornSettings.enabledRulesets) {
 			}
 		)
 		subtypes.push(
-			{ value: 'planet', label: 'Planet' },
-			{ value: 'settlement', label: 'Settlement' },
-			{ value: 'star', label: 'Stellar' },
-			{ value: 'derelict', label: 'Derelict' },
-			{ value: 'vault', label: 'Precursor' }
+			{
+				value: 'planet',
+				label: game.i18n.localize('IRONSWORN.LocationTypes.Planet')
+			},
+			{
+				value: 'settlement',
+				label: game.i18n.localize('IRONSWORN.LocationTypes.Settlement')
+			},
+			{
+				value: 'star',
+				label: game.i18n.localize('IRONSWORN.LocationTypes.Stellar')
+			},
+			{
+				value: 'derelict',
+				label: game.i18n.localize('IRONSWORN.LocationTypes.Derelict')
+			},
+			{
+				value: 'vault',
+				label: game.i18n.localize('IRONSWORN.LocationTypes.Precursor')
+			}
 		)
 	}
 	if (ruleset === 'sundered_isles') {
@@ -215,8 +230,14 @@ for (const ruleset of IronswornSettings.enabledRulesets) {
 			}
 		)
 		subtypes.push(
-			{ value: 'island', label: 'Island' },
-			{ value: 'sunderedsettlement', label: 'Settlement' }
+			{
+				value: 'island',
+				label: game.i18n.localize('IRONSWORN.LocationTypes.Island')
+			},
+			{
+				value: 'sunderedsettlement',
+				label: game.i18n.localize('IRONSWORN.LocationTypes.Settlement')
+			}
 		)
 	}
 }
@@ -260,78 +281,143 @@ const klassOptions = computed((): { value: string; label: string }[] => {
 	switch (props.data.actor.system.subtype) {
 		case 'planet':
 			return [
-				{ value: 'desert', label: 'Desert World' },
-				{ value: 'furnace', label: 'Furnace World' },
-				{ value: 'grave', label: 'Grave World' },
-				{ value: 'ice', label: 'Ice World' },
-				{ value: 'jovian', label: 'Jovian World' },
-				{ value: 'jungle', label: 'Jungle World' },
-				{ value: 'ocean', label: 'Ocean World' },
-				{ value: 'rocky', label: 'Rocky World' },
-				{ value: 'shattered', label: 'Shattered World' },
-				{ value: 'tainted', label: 'Tainted World' },
-				{ value: 'vital', label: 'Vital World' }
+				{
+					value: 'desert',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Desert World')
+				},
+				{
+					value: 'furnace',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Furnace World')
+				},
+				{
+					value: 'grave',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Grave World')
+				},
+				{
+					value: 'ice',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Ice World')
+				},
+				{
+					value: 'jovian',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Jovian World')
+				},
+				{
+					value: 'jungle',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Jungle World')
+				},
+				{
+					value: 'ocean',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Ocean World')
+				},
+				{
+					value: 'rocky',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Rocky World')
+				},
+				{
+					value: 'shattered',
+					label: game.i18n.localize(
+						'IRONSWORN.OracleCategories.Shattered World'
+					)
+				},
+				{
+					value: 'tainted',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Tainted World')
+				},
+				{
+					value: 'vital',
+					label: game.i18n.localize('IRONSWORN.OracleCategories.Vital World')
+				}
 			]
 
 		case 'settlement':
 		case 'derelict':
 		case 'vault':
 			return [
-				{ value: 'planetside', label: 'Planetside' },
-				{ value: 'orbital', label: 'Orbital' },
-				{ value: 'deep space', label: 'Deep Space' }
+				{
+					value: 'planetside',
+					label: game.i18n.localize('IRONSWORN.SettlementTypes.Planetside')
+				},
+				{
+					value: 'orbital',
+					label: game.i18n.localize('IRONSWORN.SettlementTypes.Orbital')
+				},
+				{
+					value: 'deep space',
+					label: game.i18n.localize('IRONSWORN.SettlementTypes.Deep Space')
+				}
 			]
 
 		case 'star':
 			return [
-				{ value: 'smoldering red star', label: 'Smoldering Red Star' },
-				{ value: 'glowing orange star', label: 'Glowing Orange Star' },
-				{ value: 'burning yellow star', label: 'Burning Yellow Star' },
-				{ value: 'blazing blue star', label: 'Blazing Blue Star' },
+				{
+					value: 'smoldering red star',
+					label: game.i18n.localize('IRONSWORN.StarTypes.Smoldering Red Star')
+				},
+				{
+					value: 'glowing orange star',
+					label: game.i18n.localize('IRONSWORN.StarTypes.Glowing Orange Star')
+				},
+				{
+					value: 'burning yellow star',
+					label: game.i18n.localize('IRONSWORN.StarTypes.Burning Yellow Star')
+				},
+				{
+					value: 'blazing blue star',
+					label: game.i18n.localize('IRONSWORN.StarTypes.Blazing Blue Star')
+				},
 				{
 					value: 'young star incubating in a molecular cloud',
-					label: 'Young Star'
+					label: game.i18n.localize('IRONSWORN.StarTypes.Young Star')
 				},
 				{
 					value: 'white dwarf shining with spectral light',
-					label: 'White Dwarf'
+					label: game.i18n.localize('IRONSWORN.StarTypes.White Dwarf')
 				},
 				{
 					value: 'corrupted star radiating with unnatural light',
-					label: 'Corrupted Star'
+					label: game.i18n.localize('IRONSWORN.StarTypes.Corrupted Star')
 				},
 				{
 					value: 'neutron star surrounded by intense magnetic fields',
-					label: 'Neutron Star'
+					label: game.i18n.localize('IRONSWORN.StarTypes.Neutron Star')
 				},
 				{
 					value:
 						'two stars in close orbit connected by fiery tendrils of energy',
-					label: 'Binary Stars'
+					label: game.i18n.localize('IRONSWORN.StarTypes.Binary Stars')
 				},
 				{
 					value: 'black hole allows nothing to escape—not even light',
-					label: 'Black Hole'
+					label: game.i18n.localize('IRONSWORN.StarTypes.Black Hole')
 				},
 				{
 					value: 'hypergiant star generating turbulent solar winds',
-					label: 'Hypergiant'
+					label: game.i18n.localize('IRONSWORN.StarTypes.Hypergiant')
 				},
 				{
 					value: 'artificial star constructed by a long-dead civilization',
-					label: 'Artificial Star'
+					label: game.i18n.localize('IRONSWORN.StarTypes.Artificial Star')
 				},
 				{
 					value: 'unstable star showing signs of impending supernova',
-					label: 'Unstable Star'
+					label: game.i18n.localize('IRONSWORN.StarTypes.Unstable Star')
 				}
 			]
 
 		case 'sunderedsettlement':
 			return [
-				{ value: 'shore', label: 'Shore' },
-				{ value: 'inland', label: 'Inland' },
-				{ value: 'waterside', label: 'Waterside' }
+				{
+					value: 'shore',
+					label: game.i18n.localize('IRONSWORN.SettlementTypes.Shore')
+				},
+				{
+					value: 'inland',
+					label: game.i18n.localize('IRONSWORN.SettlementTypes.Inland')
+				},
+				{
+					value: 'waterside',
+					label: game.i18n.localize('IRONSWORN.SettlementTypes.Waterside')
+				}
 			]
 
 		default:
@@ -346,6 +432,7 @@ interface OracleSpec {
 	fl?: boolean
 	requiresKlass?: boolean
 }
+
 const oracles = computed((): OracleSpec[][] => {
 	const { subtype, klass } = props.data.actor.system
 	const kc = klass
@@ -355,13 +442,13 @@ const oracles = computed((): OracleSpec[][] => {
 			return [
 				[
 					{
-						title: 'Atmosphere',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Atmosphere'),
 						dsid: `oracle_rollable:starforged/planet/${kc}/atmosphere`,
 						fl: true,
 						requiresKlass: true
 					},
 					{
-						title: 'Observed from space',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Observed from space'),
 						qty: '1-2',
 						dsid: `oracle_rollable:starforged/planet/${kc}/observed_from_space`,
 						fl: true,
@@ -370,18 +457,18 @@ const oracles = computed((): OracleSpec[][] => {
 				],
 				[
 					{
-						title: 'Settlements',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Settlements'),
 						dsid: `oracle_rollable:starforged/planet/${kc}/settlements/${rc}`,
 						fl: true,
 						requiresKlass: true
 					},
 					{
-						title: 'Life',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Life'),
 						dsid: `oracle_rollable:starforged/planet/${kc}/life`,
 						requiresKlass: true
 					},
 					{
-						title: 'Planetside feature',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Planetside feature'),
 						qty: '1-2',
 						dsid: `oracle_rollable:starforged/planet/${kc}/feature`,
 						requiresKlass: true
@@ -389,21 +476,21 @@ const oracles = computed((): OracleSpec[][] => {
 				],
 				[
 					{
-						title: 'Peril (life)',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.PerilLife'),
 						dsid: `oracle_rollable:starforged/planet/peril/lifebearing`
 					},
 					{
-						title: 'Opportunity (life)',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.OpportunityLife'),
 						dsid: `oracle_rollable:starforged/planet/opportunity/lifebearing`
 					}
 				],
 				[
 					{
-						title: 'Peril (lifeless)',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.PerilLifeless'),
 						dsid: `oracle_rollable:starforged/planet/peril/lifeless`
 					},
 					{
-						title: 'Opportunity (lifeless)',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.OpportunityLifeless'),
 						dsid: `oracle_rollable:starforged/planet/opportunity/lifeless`
 					}
 				]
@@ -413,12 +500,12 @@ const oracles = computed((): OracleSpec[][] => {
 			return [
 				[
 					{
-						title: 'Population',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Population'),
 						dsid: `oracle_rollable:starforged/settlement/population/${rc}`,
 						fl: true
 					},
 					{
-						title: 'First look',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.First look'),
 						dsid: 'oracle_rollable:starforged/settlement/first_look',
 						qty: '1-2',
 						fl: true
@@ -426,21 +513,21 @@ const oracles = computed((): OracleSpec[][] => {
 				],
 				[
 					{
-						title: 'Initial contact',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Initial contact'),
 						dsid: 'oracle_rollable:starforged/settlement/initial_contact'
 					},
 					{
-						title: 'Authority',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Authority'),
 						dsid: 'oracle_rollable:starforged/settlement/authority'
 					}
 				],
 				[
 					{
-						title: 'Settlement projects',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Settlement projects'),
 						dsid: 'oracle_rollable:starforged/settlement/projects'
 					},
 					{
-						title: 'Settlement trouble',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Settlement trouble'),
 						dsid: 'oracle_rollable:starforged/settlement/trouble'
 					}
 				]
@@ -453,25 +540,25 @@ const oracles = computed((): OracleSpec[][] => {
 			return [
 				[
 					{
-						title: 'Type',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Type'),
 						dsid: `oracle_rollable:starforged/derelict/type/${kc}`,
 						fl: true,
 						requiresKlass: true
 					},
 					{
-						title: 'Condition',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Condition'),
 						dsid: `oracle_rollable:starforged/derelict/condition`,
 						fl: true
 					}
 				],
 				[
 					{
-						title: 'Outer first look',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Outer first look'),
 						dsid: `oracle_rollable:starforged/derelict/outer_first_look`,
 						fl: true
 					},
 					{
-						title: 'Inner first look',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Inner first look'),
 						dsid: `oracle_rollable:starforged/derelict/inner_first_look`
 					}
 				]
@@ -481,66 +568,66 @@ const oracles = computed((): OracleSpec[][] => {
 			return [
 				[
 					{
-						title: 'Scale',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Scale'),
 						dsid: `oracle_rollable:starforged/precursor_vault/scale`,
 						fl: true
 					},
 					{
-						title: 'Form',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Form'),
 						dsid: `oracle_rollable:starforged/precursor_vault/form`,
 						fl: true
 					},
 					{
-						title: 'Shape',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Shape'),
 						dsid: `oracle_rollable:starforged/precursor_vault/shape`,
 						fl: true
 					}
 				],
 				[
 					{
-						title: 'Material',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Material'),
 						dsid: `oracle_rollable:starforged/precursor_vault/material`,
 						fl: true
 					},
 					{
-						title: 'Outer first look',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Outer first look'),
 						dsid: `oracle_rollable:starforged/precursor_vault/outer_first_look`,
 						fl: true
 					}
 				],
 				[
 					{
-						title: 'Interior first look',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Interior first look'),
 						dsid: `oracle_rollable:starforged/precursor_vault/interior/first_look`
 					},
 					{
-						title: 'Interior feature',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Interior feature'),
 						dsid: `oracle_rollable:starforged/precursor_vault/interior/feature`
 					},
 					{
-						title: 'Interior peril',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Interior peril'),
 						dsid: `oracle_rollable:starforged/precursor_vault/interior/peril`
 					},
 					{
-						title: 'Interior opportunity',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Interior opportunity'),
 						dsid: `oracle_rollable:starforged/precursor_vault/interior/opportunity`
 					}
 				],
 				[
 					{
-						title: 'Sanctum purpose',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Sanctum purpose'),
 						dsid: `oracle_rollable:starforged/precursor_vault/sanctum/purpose`
 					},
 					{
-						title: 'Sanctum feature',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Sanctum feature'),
 						dsid: `oracle_rollable:starforged/precursor_vault/sanctum/feature`
 					},
 					{
-						title: 'Sanctum peril',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Sanctum peril'),
 						dsid: `oracle_rollable:starforged/precursor_vault/sanctum/peril`
 					},
 					{
-						title: 'Sanctum opportunity',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Sanctum opportunity'),
 						dsid: `oracle_rollable:starforged/precursor_vault/sanctum/opportunity`
 					}
 				]
@@ -550,39 +637,39 @@ const oracles = computed((): OracleSpec[][] => {
 			return [
 				[
 					{
-						title: 'Island size',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Island size'),
 						dsid: `oracle_rollable:sundered_isles/island/landscape/size`,
 						fl: true
 					},
 					{
-						title: 'Terrain',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Terrain'),
 						dsid: `oracle_rollable:sundered_isles/island/landscape/terrain`,
 						fl: true
 					},
 					{
-						title: 'Vitality',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Vitality'),
 						dsid: `oracle_rollable:sundered_isles/island/landscape/vitality/${rc}`,
 						fl: true
 					}
 				],
 				[
 					{
-						title: 'Habitation',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Habitation'),
 						dsid: `oracle_rollable:sundered_isles/island/visible_habitation/${rc}`
 					},
 					{
-						title: 'Nearby Islands',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Nearby Islands'),
 						dsid: `oracle_rollable:sundered_isles/island/nearby_islands/${rc}`
 					}
 				],
 				[
 					{
-						title: 'Coastline Aspect',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Coastline Aspect'),
 						qty: '1-2',
 						dsid: `oracle_rollable:sundered_isles/island/coastline_aspects`
 					},
 					{
-						title: 'Offshore Observations',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Offshore Observations'),
 						qty: '1-2',
 						dsid: `oracle_rollable:sundered_isles/island/offshore_observations`
 					}
@@ -593,18 +680,18 @@ const oracles = computed((): OracleSpec[][] => {
 			return [
 				[
 					{
-						title: 'Settlement size',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Settlement size'),
 						dsid: `oracle_rollable:sundered_isles/settlement/size/${rc}`,
 						fl: true
 					},
 					{
-						title: 'Aesthetics',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Aesthetics'),
 						dsid: `oracle_rollable:sundered_isles/settlement/aesthetics`,
 						fl: true,
 						qty: '1-2'
 					},
 					{
-						title: 'First look',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.First look'),
 						dsid: `oracle_rollable:sundered_isles/settlement/first_look`,
 						fl: true,
 						qty: '1-2'
@@ -612,26 +699,26 @@ const oracles = computed((): OracleSpec[][] => {
 				],
 				[
 					{
-						title: 'Controlling faction',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Controlling faction'),
 						dsid: `oracle_rollable:sundered_isles/settlement/identity/controlling_faction/${rc}`
 					},
 					{
-						title: 'Disposition',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Disposition'),
 						dsid: `oracle_rollable:sundered_isles/settlement/identity/disposition`
 					},
 					{
-						title: 'Authority',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Authority'),
 						dsid: `oracle_rollable:sundered_isles/settlement/identity/authority`
 					}
 				],
 				[
 					{
-						title: 'Settlement focus',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Settlement focus'),
 						dsid: `oracle_rollable:sundered_isles/settlement/focus/${kc}`,
 						qty: '1-2'
 					},
 					{
-						title: 'Settlement details',
+						title: game.i18n.localize('IRONSWORN.LocationOracleNames.Settlement details'),
 						dsid: `oracle_rollable:sundered_isles/settlement/details`,
 						qty: '1-2'
 					}
@@ -702,9 +789,11 @@ function regionChanged(evt) {
 	const newValue = evt.target.value
 	scene?.setFlag('foundry-ironsworn', 'region', newValue)
 }
+
 function subtypeChanged(evt) {
 	saveSubtype(evt.target.value)
 }
+
 function klassChanged(evt) {
 	saveKlass(evt.target.value)
 }
@@ -731,6 +820,7 @@ async function saveSubtype(subtype) {
 		'texture.scaleY': scale // v12
 	})
 }
+
 async function saveKlass(klass) {
 	const { subtype } = props.data.actor.system
 	const img = randomImage(subtype, klass)
