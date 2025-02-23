@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Stellar object icons, courtesy of [@jendave](https://github.com/jendave) ([#1041](https://github.com/ben/foundry-ironsworn/pull/1041))
 - Compatibility with Foundry v13 ([#1043](https://github.com/ben/foundry-ironsworn/pull/1043))
 
 ## 1.24.10
