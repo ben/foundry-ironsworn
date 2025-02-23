@@ -246,6 +246,10 @@ function randomImage(subtype, klass): string | void {
 		)}.webp`
 	}
 	if (subtype === 'star') {
+		const opts = klassOptions.value.find((x) => x.value === klass)
+		if (opts?.imgKey) {
+			return `systems/foundry-ironsworn/assets/stellar-objects/Starforged-Stellar-Token-${opts.imgKey}-01.webp`
+		}
 		return 'systems/foundry-ironsworn/assets/icons/stellar-object.svg'
 	}
 	if (subtype === 'sunderedsettlement') {
@@ -256,7 +260,8 @@ function randomImage(subtype, klass): string | void {
 	}
 }
 
-const klassOptions = computed((): { value: string; label: string }[] => {
+type KlassOption = { value: string; label: string; imgKey?: string }
+const klassOptions = computed((): KlassOption[] => {
 	switch (props.data.actor.system.subtype) {
 		case 'planet':
 			return [
@@ -284,45 +289,70 @@ const klassOptions = computed((): { value: string; label: string }[] => {
 
 		case 'star':
 			return [
-				{ value: 'smoldering red star', label: 'Smoldering Red Star' },
-				{ value: 'glowing orange star', label: 'Glowing Orange Star' },
-				{ value: 'burning yellow star', label: 'Burning Yellow Star' },
-				{ value: 'blazing blue star', label: 'Blazing Blue Star' },
+				{
+					value: 'smoldering red star',
+					imgKey: 'Red-Star',
+					label: 'Smoldering Red Star'
+				},
+				{
+					value: 'glowing orange star',
+					imgKey: 'Orange-Star',
+					label: 'Glowing Orange Star'
+				},
+				{
+					value: 'burning yellow star',
+					imgKey: 'Yellow-Star',
+					label: 'Burning Yellow Star'
+				},
+				{
+					value: 'blazing blue star',
+					imgKey: 'Blue-Star',
+					label: 'Blazing Blue Star'
+				},
 				{
 					value: 'young star incubating in a molecular cloud',
+					imgKey: 'Star-In-Incubating-Cloud',
 					label: 'Young Star'
 				},
 				{
 					value: 'white dwarf shining with spectral light',
+					imgKey: 'White-Dwarf',
 					label: 'White Dwarf'
 				},
 				{
 					value: 'corrupted star radiating with unnatural light',
+					imgKey: 'Corrupted-Star',
 					label: 'Corrupted Star'
 				},
 				{
 					value: 'neutron star surrounded by intense magnetic fields',
+					imgKey: 'Neutron-Star',
 					label: 'Neutron Star'
 				},
 				{
 					value:
 						'two stars in close orbit connected by fiery tendrils of energy',
+					imgKey: 'Binary-Star',
 					label: 'Binary Stars'
 				},
 				{
 					value: 'black hole allows nothing to escape—not even light',
+					imgKey: 'Black-Hole',
 					label: 'Black Hole'
 				},
 				{
 					value: 'hypergiant star generating turbulent solar winds',
+					imgKey: 'Hypergiant',
 					label: 'Hypergiant'
 				},
 				{
 					value: 'artificial star constructed by a long-dead civilization',
+					// TODO: img: 'Artificial-Star',
 					label: 'Artificial Star'
 				},
 				{
 					value: 'unstable star showing signs of impending supernova',
+					imgKey: 'Unstable-Star',
 					label: 'Unstable Star'
 				}
 			]
