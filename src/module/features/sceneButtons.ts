@@ -158,17 +158,22 @@ export function activateSceneButtonListeners() {
 
 	Hooks.on('getSceneControlButtons', (controls) => {
 		const oracleButton: SceneControlTool = {
-			name: 'Oracles',
+			name: 'oracles',
 			title: game.i18n.localize('IRONSWORN.ROLLTABLES.TypeOracle'),
 			icon: 'isicon-oracle',
 			visible: true,
 			button: true,
 			onClick: async () => await theOracleWindow().render(true, { focus: true })
 		}
-		controls[0].tools.push(oracleButton)
+
+		if (controls.tokens) {
+			controls.tokens.tools.oracles = oracleButton
+		} else {
+			controls[0].tools.push(oracleButton)
+		}
 
 		const control: SceneControl = {
-			name: game.i18n.localize('IRONSWORN.Ironsworn'),
+			name: 'ironsworn',
 			title: game.i18n.localize('IRONSWORN.StarforgedTools'),
 			icon: 'isicon-logo-starforged-dk',
 			layer: 'ironsworn',
@@ -186,7 +191,11 @@ export function activateSceneButtonListeners() {
 		else if (IronswornSettings.enabledRulesets.includes('starforged'))
 			starforgifyControl(control)
 
-		controls.push(control)
+		if (controls[0]) {
+			controls.push(control)
+		} else {
+			controls.ironsworn = control
+		}
 		return controls
 	})
 }

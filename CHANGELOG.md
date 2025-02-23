@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Compatibility with Foundry v13 ([#1043](https://github.com/ben/foundry-ironsworn/pull/1043))
+
 ## 1.24.10
 
 - Fix an i18n issue with the translation of stats in the pre-roll dialog ([#1039](https://github.com/ben/foundry-ironsworn/pull/1039)) - thanks [@sharak](https://github.com/sharak)!

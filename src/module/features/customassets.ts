@@ -104,10 +104,10 @@ async function customAssetFolderContents(): Promise<
 	DisplayAssetCategory | undefined
 > {
 	const name = game.i18n.localize('IRONSWORN.Asset Categories.Custom')
-	const folder = (game.items?.directory as any)?.folders.find(
-		(x) => x.name === name
-	) as Folder | undefined
-	if (folder == null || folder.contents.length == 0) return
+	const folder = (game.items as any)?.folders.find((x) => x.name === name) as
+		| Folder
+		| undefined
+	if (folder == null || folder.contents.length === 0) return
 
 	const customAssets = [] as DisplayAsset[]
 	for (const item of folder.contents) {

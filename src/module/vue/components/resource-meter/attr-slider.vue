@@ -122,7 +122,7 @@ async function onChange(newValue: number) {
 	const data = { [targetKey.value]: newValue }
 
 	// redundant with the below if it's global, but fires anyway so that a single message appears in the chatlog.
-	await $document?.update(data)
+	await $document?.update({ ...data })
 	if (props.global) {
 		await IronswornSettings.updateGlobalAttribute(data)
 	}
