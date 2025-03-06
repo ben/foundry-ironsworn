@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix scene sidebar buttons in v13 ([#1048](https://github.com/ben/foundry-ironsworn/pull/1048))
+
 ## 1.25.0
 
 - Stellar object icons, courtesy of [@jendave](https://github.com/jendave) ([#1041](https://github.com/ben/foundry-ironsworn/pull/1041) and [#1044](https://github.com/ben/foundry-ironsworn/pull/1044))

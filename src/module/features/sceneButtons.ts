@@ -82,9 +82,6 @@ async function dropToken(location: IronswornActor) {
 	// Create the token
 	const cls = getDocumentClass('Token')
 	await cls.create(td, { parent: canvas.scene })
-
-	// Move the user back to the token layer
-	canvas.tokens?.activate()
 }
 
 async function newLocation(subtype: string, i18nKey: string, scale = 1) {
@@ -149,6 +146,17 @@ function theOracleWindow() {
 	return ORACLE_WINDOW
 }
 
+function addTool(control: SceneControl, tool: SceneControlTool) {
+	if (game.version.startsWith('13')) {
+		control.tools ||= {}
+		control.tools[tool.name] = tool
+	} else {
+		// v12 and before
+		control.tools ||= []
+		control.tools.push(tool)
+	}
+}
+
 export function activateSceneButtonListeners() {
 	CONFIG.Canvas.layers.ironsworn = {
 		// @ts-expect-error
@@ -178,9 +186,9 @@ export function activateSceneButtonListeners() {
 			icon: 'isicon-logo-starforged-dk',
 			layer: 'ironsworn',
 			visible: true,
-			activeTool: 'select',
-			tools: [oracleButton]
+			activeTool: 'select'
 		}
+		addTool(control, oracleButton)
 
 		// Apply updates in order. If you've got IS and SI both enabled, too bad, you're in the isles
 		if (IronswornSettings.enabledRulesets.includes('classic'))
@@ -201,113 +209,117 @@ export function activateSceneButtonListeners() {
 }
 
 function ironswornifyControl(control: SceneControl) {
-	control.name = game.i18n.localize('IRONSWORN.Ironsworn')
 	control.title = game.i18n.localize('IRONSWORN.IronswornTools')
 	control.icon = 'isicon-logo-ironsworn-dk'
 }
 
 function starforgifyControl(control: SceneControl) {
-	control.name = game.i18n.localize('IRONSWORN.Starforged')
+	control.title = game.i18n.localize('IRONSWORN.Starforged')
 	control.icon = 'isicon-logo-starforged-dk'
 
 	if (game.user?.isGM) {
-		control.tools.push(
-			{
-				name: 'edit',
-				icon: 'isicon-region-sf',
-				title: game.i18n.format('DOCUMENT.Update', {
-					type: game.i18n.localize('IRONSWORN.SCENE.TypeSector')
-				}),
-				onClick: editSector
-			},
-			// { // TODO: maybe reenable this when we have a good way of doing it
-			//   name: 'sector',
-			//   icon: 'isicon-sector',
-			//   title: game.i18n.format('DOCUMENT.Create',{type: ('IRONSWORN.SCENE.TypeSector')}),
-			//   onClick: warn,
-			// },
-			{
-				name: 'star',
-				icon: 'isicon-stellar-object',
-				title: game.i18n.format('DOCUMENT.Create', {
-					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeStar')
-				}),
-				onClick: newStar
-			},
-			{
-				name: 'planet',
-				icon: 'isicon-world',
-				title: game.i18n.format('DOCUMENT.Create', {
-					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypePlanet')
-				}),
-				onClick: newPlanet
-			},
-			{
-				name: 'settlement',
-				icon: 'isicon-settlement-sf',
-				title: game.i18n.format('DOCUMENT.Create', {
-					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeSettlement')
-				}),
-				onClick: newSettlement
-			},
-			{
-				name: 'derelict',
-				icon: 'isicon-derelict',
-				title: game.i18n.format('DOCUMENT.Create', {
-					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeDerelict')
-				}),
-				onClick: newDerelict
-			},
-			{
-				name: 'vault',
-				icon: 'isicon-precursor-vault',
-				title: game.i18n.format('DOCUMENT.Create', {
-					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeVault')
-				}),
-				onClick: newVault
-			}
-		)
+		addTool(control, {
+			name: 'edit',
+			icon: 'isicon-region-sf',
+			title: game.i18n.format('DOCUMENT.Update', {
+				type: game.i18n.localize('IRONSWORN.SCENE.TypeSector')
+			}),
+			button: true,
+			onClick: editSector
+		})
+		// { // TODO: maybe reenable this when we have a good way of doing it
+		//   name: 'sector',
+		//   icon: 'isicon-sector',
+		//   title: game.i18n.format('DOCUMENT.Create',{type: ('IRONSWORN.SCENE.TypeSector')}),
+		//   onClick: warn,
+		// }
+		addTool(control, {
+			name: 'star',
+			icon: 'isicon-stellar-object',
+			title: game.i18n.format('DOCUMENT.Create', {
+				type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeStar')
+			}),
+			button: true,
+			onClick: newStar
+		})
+		addTool(control, {
+			name: 'planet',
+			icon: 'isicon-world',
+			title: game.i18n.format('DOCUMENT.Create', {
+				type: game.i18n.localize('IRONSWORN.ACTOR.SubtypePlanet')
+			}),
+			button: true,
+			onClick: newPlanet
+		})
+		addTool(control, {
+			name: 'settlement',
+			icon: 'isicon-settlement-sf',
+			title: game.i18n.format('DOCUMENT.Create', {
+				type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeSettlement')
+			}),
+			button: true,
+			onClick: newSettlement
+		})
+		addTool(control, {
+			name: 'derelict',
+			icon: 'isicon-derelict',
+			title: game.i18n.format('DOCUMENT.Create', {
+				type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeDerelict')
+			}),
+			button: true,
+			onClick: newDerelict
+		})
+		addTool(control, {
+			name: 'vault',
+			icon: 'isicon-precursor-vault',
+			title: game.i18n.format('DOCUMENT.Create', {
+				type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeVault')
+			}),
+			button: true,
+			onClick: newVault
+		})
 	}
 }
 
 function sunderedIslifyControl(control: SceneControl) {
-	control.name = game.i18n.localize('IRONSWORN.SunderedIsles')
 	control.title = game.i18n.localize('IRONSWORN.SunderedIslesTools')
 	control.icon = 'isicon-logo-sunderedisles-dk'
-	control.tools.push({
+	addTool(control, {
 		name: 'moons',
 		icon: 'fas fa-moon',
 		title: 'Roll the Moons',
+		button: true,
 		onClick: rollMoons
 	})
 
 	if (game.user?.isGM) {
-		control.tools.push(
-			{
-				name: 'edit',
-				icon: 'isicon-region-si',
-				title: game.i18n.format('DOCUMENT.Update', {
-					type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
-				}),
-				onClick: editSector
-			},
-			{
-				name: 'island',
-				icon: 'isicon-island',
-				title: game.i18n.format('DOCUMENT.Create', {
-					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeDerelict')
-				}),
-				onClick: newIsland
-			},
-			{
-				name: 'sisettlement',
-				icon: 'isicon-settlement-si',
-				title: game.i18n.format('DOCUMENT.Create', {
-					type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeSettlement')
-				}),
-				onClick: newSiSettlement
-			}
-		)
+		addTool(control, {
+			name: 'edit',
+			icon: 'isicon-region-si',
+			title: game.i18n.format('DOCUMENT.Update', {
+				type: game.i18n.localize('IRONSWORN.SCENE.TypeChart')
+			}),
+			button: true,
+			onClick: editSector
+		})
+		addTool(control, {
+			name: 'island',
+			icon: 'isicon-island',
+			title: game.i18n.format('DOCUMENT.Create', {
+				type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeIsland')
+			}),
+			button: true,
+			onClick: newIsland
+		})
+		addTool(control, {
+			name: 'sisettlement',
+			icon: 'isicon-settlement-si',
+			title: game.i18n.format('DOCUMENT.Create', {
+				type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeSettlement')
+			}),
+			button: true,
+			onClick: newSiSettlement
+		})
 	}
 }
 
