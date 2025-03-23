@@ -190,14 +190,16 @@ export function activateSceneButtonListeners() {
 		}
 		addTool(control, oracleButton)
 
-		// Apply updates in order. If you've got IS and SI both enabled, too bad, you're in the isles
-		if (IronswornSettings.enabledRulesets.includes('classic'))
+		// Apply updates in order for all enabled rulesets
+		if (IronswornSettings.enabledRulesets.includes('classic')) {
 			ironswornifyControl(control)
-		// HOWEVER, if you've got both SF and SI enabled, you're only in the isles
-		if (IronswornSettings.enabledRulesets.includes('sundered_isles'))
-			sunderedIslifyControl(control)
-		else if (IronswornSettings.enabledRulesets.includes('starforged'))
+		}
+		if (IronswornSettings.enabledRulesets.includes('starforged')) {
 			starforgifyControl(control)
+		}
+		if (IronswornSettings.enabledRulesets.includes('sundered_isles')) {
+			sunderedIslifyControl(control)
+		}
 
 		if (controls[0]) {
 			controls.push(control)
