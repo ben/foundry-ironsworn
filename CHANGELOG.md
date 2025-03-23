@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.25.1
+
 - Fix scene sidebar buttons in v13 ([#1048](https://github.com/ben/foundry-ironsworn/pull/1048))
 - Enable all ruleset buttons in the sidebar ([#1053](https://github.com/ben/foundry-ironsworn/pull/1053))
 
