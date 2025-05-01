@@ -30,19 +30,13 @@ const pronouns = ref<HTMLInputElement | null>(null)
 const characteristics = ref<HTMLInputElement | null>(null)
 
 function saveName() {
-	$actor?.update({
-		name: name.value?.value
-	})
+	$actor?.update({ name: name.value?.value })
 }
 function saveCallsign() {
-	$actor?.update({
-		'system.callsign': callsign.value?.value
-	})
+	$actor?.update({ 'system.callsign': callsign.value?.value })
 }
 function savePronouns() {
-	$actor?.update({
-		'system.pronouns': pronouns.value?.value
-	})
+	$actor?.update({ 'system.pronouns': pronouns.value?.value })
 }
 function saveCharacteristics() {
 	$actor?.update({
