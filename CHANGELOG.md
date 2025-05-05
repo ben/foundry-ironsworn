@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a syntax error in the French translation ([#1057](https://github.com/ben/foundry-ironsworn/pull/1057))
+
 ## 1.25.2
 
 - Fix chat noise when tabbing among the header text fields (name/callsign/pronouns/characteristics) on the SF character sheet ([#1056](https://github.com/ben/foundry-ironsworn/pull/1056))
