@@ -1,953 +1,953 @@
 {
 	"IRONSWORN": {
-		"Ironsworn": "Ironsworn",
-		"IronswornClassic": "Ironsworn Classique",
-		"Starforged": "Starforged",
-		"SunderedIsles": "Îles ensoleillées",
-		"RULESETS": {
-			"Rulesets": "Ensemble de règles",
-			"classic": "Ironsworn Classique",
-			"delve": "Ironsworn: Delve",
-			"starforged": "Starforged",
-			"sundered_isles": "Îles ensoleillées"
-		},
-		"YourWorldTruths": "Votre Monde: Vérités",
-		"TruthsAreOptional": "Créer des Vérités est une étape optionnelle. Vous pouvez toujours y revenir plus tard ans les paramètres",
-		"TruthQuestStarter": "Quête d’introduction :",
-		"QuestStarter": "Quête d’introduction",
-		"SaveYourTruths": "Enregistrer vos Vérités",
-		"CustomTruth": "Vérité personnalisée",
-		"RandomizeAll": "Rendre tout aléatoire",
-		"Roll": "Lancer les dés",
-		"SendToChat": "Envoyer le texte des règles dans le chat: <i>{move}</i>",
-		"CopyTextToClipboard": "Copier le texte dans le presse-papier",
-		"ClipboardDisabled": "Le navigateur a empêché l'accès au presse-papiers. Vous devez charger Foundry à partir de localhost ou à l'aide d'une URL <code>https://</code> pour utiliser cette fonctionnalité.",
-		"Adds": "Ajoute",
-		"Versus": "vs.",
-		"CappedAt10": "Le score de l'action est limité à 10",
-		"Strong_hit": "Coup fort",
-		"Strong_hit_match": "Coup fort avec une égalité!",
-		"On_a_strong_hit": "Sur un coup fort",
-		"Weak_hit": "Coup faible",
-		"On_a_weak_hit": "Sur un coup faible",
-		"Miss": "Échec",
-		"Miss_match": "Échec avec une égalité!",
-		"On_a_miss": "Sur un échec",
-		"MarkProgress": "Marquer la progression",
-		"ProgressMove": "Progress Move",
-		"Cinder": "Cendres",
-		"Wraith": "Spectre",
-		"PROGRESS": {
-			"Current": "{score} progresse de ({ticks} coches)",
-			"Ticks": "{ticks} coches",
-			"BOX": {
-				"1": "1 case",
-				"2": "2 cases",
-				"3": "3 cases"
+			"Ironsworn": "Ironsworn",
+			"IronswornClassic": "Ironsworn Classique",
+			"Starforged": "Starforged",
+			"SunderedIsles": "Îles ensoleillées",
+			"RULESETS": {
+					"Rulesets": "Ensemble de règles",
+					"classic": "Ironsworn Classique",
+					"delve": "Ironsworn: Delve",
+					"starforged": "Starforged",
+					"sundered_isles": "Îles ensoleillées"
 			},
-			"TICK": {
-				"1": "1 coche",
-				"2": "2 coches",
-				"3": "3 coches",
-				"4": "4 coches"
-			}
-		},
-		"MarkLegacy": "Marquez {amount} sur votre {legacy} progrès d'héritage",
-		"UnmarkProgress": "Progrès non marqué",
-		"ProgressRoll": "Jet de progrès",
-		"MakeAProgressRoll": "Faire un jet de progression avec {score} de progrès",
-		"StarProgress": "Lorsqu'activé, cet objet sera aussi affiché dans l'onglet 'Héritage'.",
-		"CHALLENGERANK": {
-			"Troublesome": "Pénible",
-			"Dangerous": "Dangereux",
-			"Formidable": "Redoutable",
-			"Extreme": "Extrême",
-			"Epic": "Epique"
-		},
-		"Stat": "Caractéristique",
-		"Stats": "Caractéristiques",
-		"OracleTable": {
-			"CursedResult": "Résultat maudit :",
-			"ColumnLabel": {
-				"Roll": "Jet de dés",
-				"RollRange": "Porté du jet de dés",
-				"DiceRollResult": "{dice} résultat du jet",
-				"Result": "Résultat"
-			}
-		},
-		"roll +x": "faites un jet +{stat}",
-		"Roll +x": "Faites un jet +{stat}",
-		"roll method": {
-			"All": "lancez tous les dés de {statList}",
-			"Any": {
-				"2": "faites un jet +{stat1} ou +{stat2}",
-				"fallback": "lancez n'importe quel dé de {statList}"
+			"YourWorldTruths": "Votre Monde: Vérités",
+			"TruthsAreOptional": "Créer des Vérités est une étape optionnelle. Vous pouvez toujours y revenir plus tard ans les paramètres",
+			"TruthQuestStarter": "Quête d’introduction :",
+			"QuestStarter": "Quête d’introduction",
+			"SaveYourTruths": "Enregistrer vos Vérités",
+			"CustomTruth": "Vérité personnalisée",
+			"RandomizeAll": "Rendre tout aléatoire",
+			"Roll": "Lancer les dés",
+			"SendToChat": "Envoyer le texte des règles dans le chat: <i>{move}</i>",
+			"CopyTextToClipboard": "Copier le texte dans le presse-papier",
+			"ClipboardDisabled": "Le navigateur a empêché l'accès au presse-papiers. Vous devez charger Foundry à partir de localhost ou à l'aide d'une URL <code>https://</code> pour utiliser cette fonctionnalité.",
+			"Adds": "Ajoute",
+			"Versus": "vs.",
+			"CappedAt10": "Le score de l'action est limité à 10",
+			"Strong_hit": "Coup fort",
+			"Strong_hit_match": "Coup fort avec une égalité!",
+			"On_a_strong_hit": "Sur un coup fort",
+			"Weak_hit": "Coup faible",
+			"On_a_weak_hit": "Sur un coup faible",
+			"Miss": "Échec",
+			"Miss_match": "Échec avec une égalité!",
+			"On_a_miss": "Sur un échec",
+			"MarkProgress": "Marquer la progression",
+			"ProgressMove": "Progress Move",
+			"Cinder": "Cendres",
+			"Wraith": "Spectre",
+			"PROGRESS": {
+					"Current": "{score} progresse de ({ticks} coches)",
+					"Ticks": "{ticks} coches",
+					"BOX": {
+							"1": "1 case",
+							"2": "2 cases",
+							"3": "3 cases"
+					},
+					"TICK": {
+							"1": "1 coche",
+							"2": "2 coches",
+							"3": "3 coches",
+							"4": "4 coches"
+					}
 			},
-			"Highest": {
-				"2": "faites un jet +{stat1} ou +{stat2}, selon lequel est le plus élevé",
-				"fallback": "lancez le score le plus haut de {statList}"
+			"MarkLegacy": "Marquez {amount} sur votre {legacy} progrès d'héritage",
+			"UnmarkProgress": "Progrès non marqué",
+			"ProgressRoll": "Jet de progrès",
+			"MakeAProgressRoll": "Faire un jet de progression avec {score} de progrès",
+			"StarProgress": "Lorsqu'activé, cet objet sera aussi affiché dans l'onglet 'Héritage'.",
+			"CHALLENGERANK": {
+					"Troublesome": "Pénible",
+					"Dangerous": "Dangereux",
+					"Formidable": "Redoutable",
+					"Extreme": "Extrême",
+					"Epic": "Epique"
 			},
-			"Lowest": {
-				"2": "faites un jet +{stat1} ou +{stat2}, en utilisant la caractéristique la plus faible",
-				"fallback": "lancez le score le plus bas de {statList}"
-			}
-		},
-		"PreRollMethod": {
-			"All": "Tous les {statList}",
-			"Highest": "Le plus élevé de {statList}",
-			"Lowest": "Le plus bas de {statList}"
-		},
-		"Momentum": "Élan",
-		"Health": "Santé",
-		"Spirit": "Esprit",
-		"Supply": "Provisions",
-		"Hold": "Tenir",
-		"Edge": "Vivacité",
-		"Heart": "Cœur",
-		"Iron": "Fer",
-		"Shadow": "Ombre",
-		"Wits": "Astuces",
-		"Progress": "Progrès",
-		"XP": "XP",
-		"NoBonds": "Aucun lien",
-		"Legacies": "Héritages",
-		"LEGACY": {
-			"Bonds": "Liens",
-			"Discoveries": "Découvertes",
-			"Quests": "Quêtes"
-		},
-		"Clock": "Horloge",
-		"Segments": "Secteurs",
-		"Impacts": "Impacts",
-		"IMPACT": {
-			"Custom": "Custom impact",
-			"CATEGORY": {
-				"Misfortunes": "Malheurs",
-				"LastingEffects": "Effets persistants",
-				"Burdens": "Burdens",
-				"Vehicle": "Current vehicle"
+			"Stat": "Caractéristique",
+			"Stats": "Caractéristiques",
+			"OracleTable": {
+					"CursedResult": "Résultat maudit :",
+					"ColumnLabel": {
+							"Roll": "Jet de dés",
+							"RollRange": "Porté du jet de dés",
+							"DiceRollResult": "{dice} résultat du jet",
+							"Result": "Résultat"
+					}
 			},
-			"Wounded": "blessé",
-			"Shaken": "secoué",
-			"Unprepared": "mal préparé",
-			"Permanentlyharmed": "lésions permanentes",
-			"Traumatized": "traumatisé",
-			"Tormented": "tormented",
-			"Doomed": "maudit",
-			"Indebted": "endetté",
-			"Cursed": "maudit",
-			"Battered": "battu"
-		},
-		"Debilities": "Handicaps",
-		"DEBILITY": {
-			"Custom": "Custom debility",
-			"CATEGORY": {
-				"Conditions": "États",
-				"Banes": "Fléaux",
-				"Burdens": "Fardeaux"
+			"roll +x": "faites un jet +{stat}",
+			"Roll +x": "Faites un jet +{stat}",
+			"roll method": {
+					"All": "lancez tous les dés de {statList}",
+					"Any": {
+							"2": "faites un jet +{stat1} ou +{stat2}",
+							"fallback": "lancez n'importe quel dé de {statList}"
+					},
+					"Highest": {
+							"2": "faites un jet +{stat1} ou +{stat2}, selon lequel est le plus élevé",
+							"fallback": "lancez le score le plus haut de {statList}"
+					},
+					"Lowest": {
+							"2": "faites un jet +{stat1} ou +{stat2}, en utilisant la caractéristique la plus faible",
+							"fallback": "lancez le score le plus bas de {statList}"
+					}
 			},
-			"Wounded": "blessé",
-			"Unprepared": "mal préparé",
-			"Shaken": "secoué",
-			"Encumbered": "encombré",
-			"Maimed": "mutilé",
-			"Corrupted": "corrompu",
-			"Cursed": "maudit",
-			"Tormented": "tourmenté"
-		},
-		"Conditions": "États",
-		"Condition": "État",
-		"ConditionMarkedOnOne": "{condition} is marked on {name}",
-		"ConditionMarkedOnMany": "{condition} is marked on:",
-		"Reroll": "Relancez les dés",
-		"Connections": "Connections",
-		"Connection": "Connection",
-		"MOVES": {
-			"Adventure Moves": "Actions d’aventure",
-			"Combat Moves": "Actions de combat",
-			"Connection Moves": "Actions de connection",
-			"Custom Moves": "Actions personnalisées",
-			"Delve Moves": "Actions de fouilles",
-			"Exploration Moves": "Actions d'exploration",
-			"Fate Moves": "Actions de destin",
-			"Failure Moves": "Actions d'Échec",
-			"Legacy Moves": "Actions d'Héritages",
-			"Quest Moves": "Actions de quête",
-			"Rarity Moves": "Actions de rareté",
-			"Recover Moves": "Action de récupération",
-			"Relationship Moves": "Actions de relations",
-			"Scene Challenge Moves": "Actions de défi de scène",
-			"Session Moves": "Action de session",
-			"Suffer Moves": "Actions de souffrance",
-			"Threat Moves": "Actions de menace",
-			"Threshold Moves": "Action de seuil"
-		},
-		"Failure": "Échec",
-		"Threat": "Menace",
-		"Rarity": "Rareté",
-		"LocationType": "Type de lieu",
-		"RollForDetails": "Jet de type de lieu",
-		"RandomName": "Nom aléatoire",
-		"ResolveChallenge": "Résoudre le défi",
-		"ResolveChallengeDisabled": "Choisissez vos deux derniers dés de défi",
-		"BurnForUpgrade": "Brûler de l'Élan: <strong>{type}</strong>",
-		"BurnMomentumAndResetTo": "Brûlez {value} Élan et réinitialisé à {resetValue}",
-		"MomentumBurnt": "Élan brûlé",
-		"NegativeMomentumCancel": "l'Élan négatif annule le dé d'action",
-		"Pronouns": "Pronoms",
-		"Callsign": "Indicatif",
-		"Characteristics": "Caractéristiques",
-		"Summary": "Résumé",
-		"Category": "Catégorie",
-		"Color": "Coleur",
-		"Requirement": "Prérequis",
-		"Trigger": "Déclencheur",
-		"FullText": "Texte complet",
-		"Field": "Champ",
-		"Fields": "Champs",
-		"Label": "Étiquette",
-		"Value": "Valeur",
-		"Abilities": "Capacités",
-		"Ability": "Capacité",
-		"Options": "Options",
-		"Option": "Option",
-		"Track": "Jauge",
-		"Enabled": "Débloqué",
-		"ChallengeRank": "Rang du défi",
-		"Completed": "Achevé",
-		"NotCompleted": "Inachevé",
-		"Foes": "Ennemis",
-		"Foe": "Ennemi",
-		"Edit": "Modifier",
-		"OpenCompendium": "Ouvrir le Compendium",
-		"ConfirmDelete": "Êtes-vous sûr? Cette action est irréversible.",
-		"RequiresLocationType": "Cet oracle nécessite la sélection d'un type de lieu.",
-		"RollOracleTable": "Jet d'oracle: <i>{title}</i>",
-		"RollMove": "Jet d'Action: <i>{title}</i>",
-		"PageReference": "p.{page}",
-		"PlanetType": "Type de planète",
-		"RandomPlanetType": "Type de planète aléatoire",
-		"SettlementType": "Type de colonie",
-		"RandomSettlementType": "Type de colonie aléatoire",
-		"StarType": "Type d'étoile",
-		"RandomStarType": "Type d'étoile aléatoire",
-		"DerelictType": "Type d'épave",
-		"RandomDerelictType": "Type d'épave aléatoire",
-		"VaultType": "Type de chambre forte",
-		"RandomVaultType": "Type de chambre forte aléatoire",
-		"SunderedsettlementType": "Localisation de l'établissement",
-		"RandomSunderedsettlementType": "Emplacement aléatoire de l'établissement",
-		"First": "premier",
-		"Second": "second",
-		"Third": "troisième",
-		"Fourth": "quatrième",
-		"Fifth": "cinquième",
-		"StarforgedTools": "Outils Starforged",
-		"IronswornTools": "Outils d'Ironsworn",
-		"SunderedIslesTools": "Outils des îles Ensoleillé",
-		"Region": "Région",
-		"RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
-		"REGION": {
-			"Terminus": "Terminus",
-			"Outlands": "Contrées lointaines",
-			"Expanse": "Étendue",
-			"Myriads": "Myriades",
-			"Margins": "Marges",
-			"Reaches": "Atteintes"
-		},
-		"RotateCCW": "Tourner dans le sens inverse des aiguilles d'une montre",
-		"RotateCW": "Tourner dans le sens des aiguilles d'une montre",
-		"RollDialog": {
-			"AdvancedRollOptions": "Options avancées",
-			"PresetActionDie": "Dé d'action prédéfinie",
-			"PresetChallengeDice": "Dés de challenge",
-			"PredeterminedOutcome": "Résultat prédéterminé",
-			"ExtraChallengeDice": "Dés de défi supplémentaires"
-		},
-		"ChatAlert": {
-			"Muted": "Chuchote des infos à l'utilisateur qui les a déclenchées",
-			"Unmuted": "Dévoile des infos à tout le monde",
-			"ToggleMute": "Mute",
-			"Renamed": "Renommé {name}",
-			"renamed": "renommé {name}",
-			"Added": "{name} ajouté",
-			"Deleted": "{name} supprimé",
-			"MarkedXP": "{amt} XP notés",
-			"UnmarkedXP": "{amt} XP supprimés",
-			"AdjustedStat": "{amt} {stat} (maintenant {val})",
-			"MarkedCondition": "État {condition} marqué",
-			"ClearedCondition": "État {condition} supprimé",
-			"MarkedImpact": "Marqué le {impact} impact",
-			"ClearedImpact": "Effacer le {impact} impact",
-			"MarkedDebility": "Marqué le {debility} débilité",
-			"ClearedDebility": "Effacer le {debility} débilité",
-			"RankChanged": "Rang changé de {old} pour {new}",
-			"rankChanged": "Rang changé de {old} pour {new}",
-			"ProgressAdvanced": "Progression avancée",
-			"progressAdvanced": "progression avancée",
-			"ProgressReduced": "Progression réduite",
-			"progressReduced": "progression réduite",
-			"MarkedAbility": "Capacité {pos} marquée",
-			"UnmarkedAbility": "Capacité {pos} effacée",
-			"MarkedOption": "{name} marqué",
-			"SetField": "{name} défini à {val}",
-			"AddBond": "Lien ajouté",
-			"LostBond": "Lien perdu",
-			"completedMarked": "marqué terminé",
-			"completedUnmarked": "dé-marqué terminé ",
-			"clockAdvancedOneSegment": "horloge avancée à {new}⁄{max}",
-			"clockAdvancedTwoSegments": "horloge avancée par {change} segments à {new}⁄{max}",
-			"clockAdvancedManySegments": "horloge avancée par {change} segments à {new}⁄{max}",
-			"clockCompletedOneSegment": "horloge avancée à {new}⁄{max}—horloge achevée!",
-			"clockCompletedTwoSegments": "horloge avancée par {change} segments à {new}⁄{max}—clock completed!",
-			"clockCompletedManySegments": "horloge avancée par {change} segments à {new}⁄{max}—clock completed!",
-			"clockSet": "horloge réglée sur {new}⁄{max}"
-		},
-		"Settings": {
-			"Theme": {
-				"Name": "Thème visuel",
-				"Hint": "Sélection du thème pour cette partie. Nécessite de recharger le monde.",
-				"Ironsworn": "Ironsworn Classic",
-				"Starforged": "Starforged (experimental)",
-				"SunderedIsles": "Îles ensoleillées (Beta)"
+			"PreRollMethod": {
+					"All": "Tous les {statList}",
+					"Highest": "Le plus élevé de {statList}",
+					"Lowest": "Le plus bas de {statList}"
 			},
-			"ColorScheme": {
-				"Name": "Apparence : Schéma de couleurs",
-				"Hint": "Chaque utilisateur peut définir sa propre palette de couleurs.",
-				"Zinc": "Zinc",
-				"Phosphor": "Phosphore",
-				"Oceanic": "Océanique"
+			"Momentum": "Élan",
+			"Health": "Santé",
+			"Spirit": "Esprit",
+			"Supply": "Provisions",
+			"Hold": "Tenir",
+			"Edge": "Vivacité",
+			"Heart": "Cœur",
+			"Iron": "Fer",
+			"Shadow": "Ombre",
+			"Wits": "Astuces",
+			"Progress": "Progrès",
+			"XP": "XP",
+			"NoBonds": "Aucun lien",
+			"Legacies": "Héritages",
+			"LEGACY": {
+					"Bonds": "Liens",
+					"Discoveries": "Découvertes",
+					"Quests": "Quêtes"
 			},
-			"Tools": {
-				"Name": "Outils pour les personnages",
-				"Hint": "Quel ensemble d'actions et d'oracles apparaîtrons en ouvrant une fiche de personnage.",
-				"Sheet": "Faire correspondre les fiches"
+			"Clock": "Horloge",
+			"Segments": "Secteurs",
+			"Impacts": "Impacts",
+			"IMPACT": {
+					"Custom": "Custom impact",
+					"CATEGORY": {
+							"Misfortunes": "Malheurs",
+							"LastingEffects": "Effets persistants",
+							"Burdens": "Burdens",
+							"Vehicle": "Current vehicle"
+					},
+					"Wounded": "blessé",
+					"Shaken": "secoué",
+					"Unprepared": "mal préparé",
+					"Permanentlyharmed": "lésions permanentes",
+					"Traumatized": "traumatisé",
+					"Tormented": "tormented",
+					"Doomed": "maudit",
+					"Indebted": "endetté",
+					"Cursed": "maudit",
+					"Battered": "battu"
 			},
-			"SharedSupply": {
-				"Name": "Jauge de provisions partagée",
-				"Hint": "Si activé, la modification de la jauge de provision d'un personnage modifiera aussi les jauges de provisions de tous les autres acteurs."
+			"Debilities": "Handicaps",
+			"DEBILITY": {
+					"Custom": "Custom debility",
+					"CATEGORY": {
+							"Conditions": "États",
+							"Banes": "Fléaux",
+							"Burdens": "Fardeaux"
+					},
+					"Wounded": "blessé",
+					"Unprepared": "mal préparé",
+					"Shaken": "secoué",
+					"Encumbered": "encombré",
+					"Maimed": "mutilé",
+					"Corrupted": "corrompu",
+					"Cursed": "maudit",
+					"Tormented": "tourmenté"
 			},
-			"AdvancedRollingOpen": {
-				"Name": "Mode de roulement manuel",
-				"Hint": "Si cette option est activée, la section \"advanced\" de la boîte de dialogue du dé sera ouverte par défaut et le focus sera mis sur la première case d'entrée du dé."
+			"Conditions": "États",
+			"Condition": "État",
+			"ConditionMarkedOnOne": "{condition} is marked on {name}",
+			"ConditionMarkedOnMany": "{condition} is marked on:",
+			"Reroll": "Relancez les dés",
+			"Connections": "Connections",
+			"Connection": "Connection",
+			"MOVES": {
+					"Adventure Moves": "Actions d’aventure",
+					"Combat Moves": "Actions de combat",
+					"Connection Moves": "Actions de connection",
+					"Custom Moves": "Actions personnalisées",
+					"Delve Moves": "Actions de fouilles",
+					"Exploration Moves": "Actions d'exploration",
+					"Fate Moves": "Actions de destin",
+					"Failure Moves": "Actions d'Échec",
+					"Legacy Moves": "Actions d'Héritages",
+					"Quest Moves": "Actions de quête",
+					"Rarity Moves": "Actions de rareté",
+					"Recover Moves": "Action de récupération",
+					"Relationship Moves": "Actions de relations",
+					"Scene Challenge Moves": "Actions de défi de scène",
+					"Session Moves": "Action de session",
+					"Suffer Moves": "Actions de souffrance",
+					"Threat Moves": "Actions de menace",
+					"Threshold Moves": "Action de seuil"
 			},
-			"LogChanges": {
-				"Name": "Journalisation des modifications du personnage",
-				"Hint": "Si activé, les modifications faites sur la fiche d'un personnage seront journalisées dans le chat."
-			},
-			"PromptTruths": {
-				"Name": "Proposition pour les Vérités du Monde",
-				"Hint": "Propose au démarrage de générer les Vérités de votre Monde avec l'assistant, si ce n'a pas été déjà fait."
-			},
-			"ConfigurationDialog": {
-				"Label": "Ironsworn/Starforged Boîte de dialogue de configuration",
-				"Name": "Boîte de dialogue de configuration",
-				"Hint": "Choisissez entre les éléments d'interface utilisateur Ironsworn et Starforged.."
-			},
-			"CharacterHold": {
-				"Name": "Stats de Maintien",
-				"Hint": "Afficher le tracker 'Maintien' pour les personnages Starforged et les feuilles partagées."
-			},
-			"RollCinderAndWraith": {
-				"Name": "Cinder and Wraith",
-				"Hint": "Roll challenge dice as Cinder and Wraith. This will override your Dice-So-Nice color theme for challenge-die rolls, and include which die represents which moon in the tooltips."
-			},
-			"ProgressMarkAnimation": {
-				"Name": "Activer l'animation de la marque de progression",
-				"Hint": "Activez l'animation de la marque de progression. Notez que l'animation ne verrouille pas le bouton de la marque, ce changement est donc purement cosmétique."
-			}
-		},
-		"First Start": {
-			"Welcome": "Bienvenue",
-			"Intro": "SVP, choisissez le système que vous voulez utiliser. Cela définira la feuille de personnage et les actions par défaut de l'Oracle. Des options détaillées sont disponibles dans les paramètres",
-			"SheetTitle": "Feuille de personnage",
-			"SheetHint": "Choisissez la feuille par défaut à utiliser pour les caractères.",
-			"IronswornSheetTooltip": "Mise en page compacte avec un minimum d'onglets, conçue pour Ironsworn Classic et Delve. Inclut une piste Bonds, mais pas de piste legacy.",
-			"StarforgedSheetTooltip": "Mise en page à onglets, conçue pour Starforged et Sundered Isles. Inclut des pistes sur l'héritage et les connexions.",
-			"RulesetsTitle": "Règles",
-			"RulesetsHint": "Choisissez le contenu des livres qui doivent être actifs dans ce monde.",
-			"TruthsTitle": "Vérités",
-			"TruthsHint": "Lancer une boîte de dialogue pour générer des vérités",
-			"SettingTruths": "Établir les Vérités",
-			"SettingTruth": "Établir la Vérité"
-		},
-		"Tours": {
-			"ChatMessage": "<h3>Bienvenue dans Ironsworn!</h3><p>Si vous utlisez ce système pour la première fois, cliquez ici pour une visite guidée</p> <button id=\"ironsworn-tour-chat-button\"> <i class=\"fas fa-person-hiking\"></i> Lancer la visite </button>",
-			"Welcome": {
-				"Title": "Bienvenue dans Ironsworn",
-				"Description": "Aperçu du système Ironsworn & Starforged",
-				"WelcomeTitle": "Bienvenue",
-				"WelcomeContent": "<p>Bienvenue dans Ironsworn & Starforged! Cette visite vous aidera à trouver toutes les choses nécessaire pour paramétrer et jouer vos parties.</p><p>À ce stade, vous aurez vu la boîte de dialogue de sélection de jeu, qui configure la feuille de personnage, les actions et les oracles par défaut. Voyons où se trouvent les autres fonctionnalités du système.</p>",
-				"ActorTabTitle": "Création de Personnage",
-				"ActorTabContent": "<p>À un moment donné, vous aurez envie de créer un personnage. Pour ce faire, accédez à l'onglet \"Actors\" et cliquez sur ce bouton.</p>",
-				"CharacterCreateTitle": "Créer un Personnage",
-				"CharacterCreateContent": "<p>Ce bouton créera un personnage principal, qui est tout ce dont vous avez besoin pour commencer. Au fur et à mesure que votre jeu progresse, vous aurez peut-être besoin des autres types ici pour organiser les choses.</p>",
-				"CompendiumTitle": "Cartes",
-				"CompendiumContent": "<p>Vous aurez probablement besoin d'une carte des Terres de Fer ou d'un secteur de la Forge. Vous pouvez créer votre propre scène pour cela, ou vous pouvez utiliser l'une des nôtres. Ouvrez l'un de ces compendiums et faites glisser une carte dans votre zone de scènes (l'onglet qui ressemble à une carte pliée).</p>",
-				"OracleToolTitle": "Oracles",
-				"OracleToolContent": "<p>Aucune partie d'Ironsworn ou Starforged ne serait complète sans oracles. Ce bouton fera apparaître une fenêtre avec tous les oracles du jeu choisi. Les oracles sont également disponibles depuis la fiche de personnage.</p>",
-				"ToursTitle": "Prochaines étapes",
-				"ToursContent": "<p>C'est tout pour l'instant ! Pour plus d'informations sur d'autres sujets, consultez la section Gestion des tournées dans les onglets de configuration. Et si vous souhaitez entrer en contact avec nous, consultez la section <code>#foundry-vtt</code> cannal dans le <a href=\"https://discord.gg/8bRuZwK\">Discord Ironsworn</a>.</p><p>Bonne chance !</p>"
-			},
-			"ISCharacter": {
-				"SheetTitle": "Feuille de personnage",
-				"SheetContent": "<p>Ceci est la feuille de personnage du joueur. Elle peut vous aider à gérer les attributs, les ressources, les biens et les vœux de votre personnage.</p>",
-				"EditButtonTitle": "Bouton d'édition",
-				"EditButtonContent": "<p>Le &quot;<i class=\"fa-solid fa-edit\"></i>Bouton d'édition&quot; dans la barre de titre permet de passer du mode interaction au mode édition pour ce personnage.</p>",
-				"StatsTitle": "Statistiques des personnages",
-				"StatsContent": "<p>Ce sont les attributs de base de votre personnage, qui vous renseignent sur sa personnalité, mais aussi sur le fait que lorsqu&#39;il tente certains types d&#39;actions, l&#39;histoire aura tendance à mieux se dérouler pour lui.</p><p>Pour effectuer un jet contre ces statistiques, cliquez sur l&#39;une d&#39;entre elles. Une boîte de dialogue s'ouvrira, vous permettant d'ajouter des bonus et de confirmer le jet.</p><p><strong>MODE EDITION</strong> vous permet d'ajuster ces chiffres.</p>",
-				"ResourcesTitle": "Ressources",
-				"ResourcesContent": "<p>Sur le côté, nous avons les trois ressources de base : Santé, Esprit et Approvisionnement. Vous pouvez ajuster les niveaux de ces ressources en cliquant sur la nouvelle valeur.</p><p>Vous pouvez également faire des roulades en cliquant sur le nom de la ressource.</p>",
-				"MomentumTitle": "Elan",
-				"MomentumContent": "<p>De l'autre côté se trouve l'indicateur d'élan. Vous pouvez définir l&#39;élan de votre personnage en cliquant sur l&#39;un des nombres, et si vous avez des débilités marquées, une ou plusieurs des valeurs les plus élevées seront désactivées.</p><p>Passez la souris sur l'icône &quot;<i class=\"fa-solid fa-fire\"></i> ELAN&quot; pour avoir un aperçu de ce que la gravure de votre élan va faire, et cliquez dessus pour effectuer la gravure.</p>",
-				"ConditionsTitle": "Conditions",
-				"ConditionsContent": "<p>En bas de la feuille se trouvent les conditions, bannissements et fardeaux de votre personnage. Le fait de les cocher affectera votre élan maximum. Il y a également deux cases où vous pouvez entrer des conditions personnalisées.</p>",
-				"CharacterTabTitle": "Onglet Caractère",
-				"CharacterTabContent": "<p>La zone centrale comporte une série d'onglets. Le premier est l'onglet &quot;Personnage&quot; dans lequel vous trouverez la plupart des informations nécessaires à la création d'un personnage de type Ironsworn.</p>",
-				"BondsTitle": "Obligations",
-				"BondsContent": "<p>En haut à gauche se trouvent vos liens. Il s'agit du nombre de liens que votre personnage a tissés au cours de ses aventures. Cliquez sur l'icône <i class=\"fa-solid fa-edit\"></i> pour ajouter ou supprimer des obligations et prendre des notes à leur sujet. Cliquez sur l'icône <svg fill=\"currentColor\" height=\"1em\" width=\"1em\" role=\"img\" aria-hidden=\"true\" class=\"icon\"><use href=\"#ironsworn-d10-tilt\"></use></svg> pour faire rouler le <em>Rédigez votre épilogue</em> déplacement.</p>",
-				"AssetsTitle": "Actifs",
-				"AssetsContent": "<p>La zone des atouts est l'endroit où les atouts de votre personnage sont affichés et gérés. Vous pouvez cliquer sur n'importe quel atout pour l'agrandir et afficher ses capacités. Cliquez sur le bouton &quot;<i class=\"fa-solid fa-edit\"></i>&quot; pour ouvrir une fiche détaillée pour n'importe quel actif.</p><p><strong>MODE EDITION</strong> affiche des boutons permettant de supprimer et de réorganiser les actifs.</p><p>Le boutton &quot;<i class=\"fa-solid fa-book-atlas\"></i> Actifs&quot; en bas de l'écran permet d'ouvrir le navigateur de ressources. À partir de là, vous pouvez faire glisser n'importe quelle ressource sur votre feuille de personnage pour l'ajouter à votre jeu.</p>",
-				"ProgressTitle": "Progression",
-				"ProgressContent": "<p>La zone de progrès affiche les vœux actuels de votre personnage et d&#39;autres éléments de progrès. Vous pouvez ajouter un nouvel élément vierge en cliquant sur le bouton &quot;+Vœu&quot; ou &quot;+Progression&quot; au bas de l'écran, ou vous pouvez ouvrir le compendium &quot;<i class=\"fa-solid fa-book-atlas\"></i> Ennemis&quot; et faites glisser un ennemi dans la liste.</p><p>Chaque élément indique l'état d'avancement et dispose de commandes permettant de marquer des coches et d'effectuer un relevé de l'état d'avancement. <strong>MODE EDITION</strong> ajoute des boutons pour réordonner les éléments, ajuster les coches de progression et marquer un élément comme terminé, ce qui le cache dans la section au bas de l'onglet.</p>",
-				"NotesTabTitle": "Onglet Notes",
-				"NotesTabContent": "<p>L'onglet Notes est fait pour vous. Gardez une trace de votre récit ici (ou utilisez des entrées de journal), notez le type d'équipement que vous transportez, notez les cicatrices que vous avez gagnées sur votre chemin.</p>",
-				"EndTitle": "Feuille de personnage",
-				"EndContent": "<p>C&#39;est tout pour l&#39;instant. Cherchez le bouton <i class=\"fa-solid fa-circle-question\"></i> dans les barres de titre des autres feuilles pour plus d'informations sur leur fonctionnement.</p>"
-			},
-			"SFCharacter": {
-				"Title": "Feuille de personnage Starforged",
-				"Description": "La feuille de PC d'un personnage Starforged",
-				"SheetTitle": "Feuille de personnage",
-				"SheetContent": "<p>Ceci est la feuille de personnage du joueur. Elle peut vous aider à gérer les attributs, les ressources, les biens et les vœux de votre personnage.</p>",
-				"EditButtonTitle": "Bouton d'édition",
-				"EditButtonContent": "<p>Le boutton d'&quot;<i class=\"fa-solid fa-edit\"></i> Edition&quot; dans la barre de titre permet de passer du mode interaction au mode édition pour ce personnage.</p>",
-				"StatsTitle": "Statistiques des personnages",
-				"StatsContent": "<p>Ce sont les attributs de base de votre personnage, qui vous renseignent sur sa personnalité, mais aussi sur le fait que lorsqu&#39;il tente certains types d&#39;actions, l&#39;histoire aura tendance à mieux se dérouler pour lui.</p><p>Pour effectuer un jet par rapport à ces statistiques, cliquez sur l'une d'entre elles. Une boîte de dialogue s'ouvrira, vous permettant d'ajouter des bonus et de confirmer le jet.</p><p><strong>MODE EDITION</strong> vous permet d'ajuster ces chiffres.</p>",
-				"ResourcesTitle": "Ressources",
-				"ResourcesContent": "<p>Sur le côté, nous avons les trois ressources de base : Santé, Esprit et Ravitaillement. Vous pouvez ajuster les niveaux de ces ressources en cliquant sur la nouvelle valeur.</p><p>Vous pouvez également faire des jets en cliquant sur le nom de la ressource.</p>",
-				"MomentumTitle": "élan",
-				"MomentumContent": "<p>De l'autre côté se trouve l'indicateur d'élan. Vous pouvez définir l&#39;élan de votre personnage en cliquant sur l&#39;un des nombres, et si vous avez des débilités marquées, une ou plusieurs des valeurs les plus élevées seront désactivées.</p><p>Survolez le titre &quot;<i class=\"fa-solid fa-fire\"></i> ELAN&quot; pour avoir un aperçu des effets de la combustion de votre élan, et cliquez dessus pour effectuer la combustion.</p>",
-				"ImpactsTitle": "Impacts",
-				"ImpactsContent": "<p>En bas de la feuille se trouvent les impacts de votre personnage. Les cocher affectera votre élan maximum. Il y a également deux cases où vous pouvez entrer des impacts personnalisés.</p><p>Si un véhicule dans le jeu est marqué par Battered ou Cursed, cet impact sera mis en évidence ici pour vous rappeler qu&#39;il doit s&#39;appliquer lorsque vous êtes sur ce véhicule.</p>",
-				"LegaciesTabTitle": "Onglet « Héritages »",
-				"LegaciesTabContent": "<p>Dans la zone centrale se trouve une série d'onglets. Le premier est l'onglet &quot;Legacies&quot ; où vous suivez vos trois principaux legs Starforgés. Vous y trouverez également tous les éléments « étoilés » des onglets Progrès ou Connexions.</p><p>Pour faire avancer un héritage, cliquez sur le bouton &quot;<i class=\" fa-solid fa-caret-right\"></i>&quot; à droite. Lorsque suffisamment de cases d'héritage sont remplies, des cases d'XP apparaissent; il suffit de cliquer dessus pour dépenser de l'XP. <strong>MODE EDITION</strong> affiche également des boutons permettant de supprimer les coches héritées du passé si vous en avez marqué trop par accident.</p>",
-				"AssetsTabTitle": "Onglet Actifs",
-				"AssetsTabContent": "<p>The Assets tab is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
-				"ProgressTabTitle": "Progress Tab",
-				"ProgressTabContent": "<p>The Progress tab displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. Use the &quot;<i class=\"fa-solid fa-star\"></i>&quot; button to also display an item in the Legacies tab.</p><p><strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
-				"ConnectionsTabTitle": "Connections Tab",
-				"ConnectionsTabContent": "<p>Connections are tracked separately from other progress items, and can be found in this tab. Otherwise this behaves the same as the Progress tab.</p>",
-				"NotesTabTitle": "Notes Tab",
-				"NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
-				"EndTitle": "Character Sheet",
-				"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
-			},
-			"MoveSheet": {
-				"Title": "",
-				"Description": "",
-				"SheetTitle": "Move/Oracle Sheet",
-				"SheetContent": "<p>This is the window that provides easy access to moves and oracles.</p>",
-				"MoveCategoryTitle": "Move Categories",
-				"MoveCategoryContent": "<p>Click on a category title to expand that category and show all of the moves. Click on one of the moves to expand its description.</p>",
-				"MoveButtonsTitle": "Move Shortcuts",
-				"MoveButtonsContent": "<p>Up here you&#39;ll see shortcut buttons.</p><p>The first one is a shortcut to &quot;roll this move,&quot; and will open the rolling dialog with some details pre-filled for you. It&#39;s only available if this move has a roll associated with it -- some, like Pay the Price, do not have an action/challenge roll, so this button will be disabled.</p><p>The second one is a shortcut to &quot;roll the oracle,&quot; and immediately rolls on an oracle table. It&#39;s only available if the move has exactly one oracle to roll.</p><p>The third one sends a copy of the description to the chat sidebar.</p>",
-				"MoveLinkTitle": "Move Links",
-				"MoveLinkContent": "<p>Clicking on a link to another move will expand it and scroll it into view.</p>",
-				"OraclesTabTitle": "Oracles Tab",
-				"OraclesTabContent": "<p>The second tab displays oracles, random tables to spark your inspiration.</p>",
-				"OracleCategoryTitle": "Oracle Tree",
-				"OracleCategoryContent": "<p>The oracles are organized into a directory structure. Click anywhere on a category line to expand it and display its contents.</p>",
-				"OracleRowTitle": "Oracle Controls",
-				"OracleRowContent": "<p>Click the <i class=\"fas fa-eye\"></i> icon to display a preview of the oracle table, or click anywhere else on the line to draw a result from the table and display it in chat.</p>",
-				"OracleChatMessageTitle": "Oracle Results",
-				"OracleChatMessageContent": "<p>When you roll an oracle, a chat card is displayed. The highlighted row is the rolled result, and the adjacent rolls are also displayed.</p><p>If you hover your mouse over the message, you&#39;ll see buttons appear, which let you copy a result&#39;s text to your clipboard, or re-roll on the same oracle table.</p>",
-				"EndTitle": "Move Sheet",
-				"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
-			}
-		},
-		"WorldTruths": {
-			"The Old World": {
-				"name": "Le Vieux Monde",
-				"option1": "Les clans sauvages, connus sous le nom de Skuldes, ont envahi les royaume du Vieux Monde. Nos armées leur succombèrent. La plupart furent tués ou réduits en esclavage. Ceux qui parvinrent à s’échapper mirent les voiles, à bord de tout ce qui était en état de flotter. Après plusieurs mois de voyage ardu, les survivants débarquèrent enfin sur les Terres de Fer.",
-				"quest1": "Vous êtes un descendant des Skuldes. En raison de votre héritage, votre famille fait l’objet d’une vieille rancune, de la part des autres Peuples du Fer. Récemment, une petite troupe de Skulde ont débarqué sur vos côtes. Sont-ils les précurseurs d’une invasion ? De quel côté va pencher votre loyauté ?",
-				"option2": "Le fléau se déplaça comme une horrible vague, à travers tout le Vieux Monde, tuant tout ceux qu’il trouvait sur son passage. Des milliers de personnes s’enfuyèrent à bord de navires. Mais la peste ne pouvait pas être distancée. Sur de nombreux navires, elle fût contenue par des mesures radicales – en jetant par-dessus bord tous ceux qui montraient le moindre symptôme. D’autres bateau furent perdus à jamais. Pour finir, les survivants trouvèrent les Terres de Fer et en firent leur nouvelle demeure. Certains disent qu’ils ont été définitivement maudits par ceux qu’ils ont laissé derrière eux.",
-				"quest2": "Un village est frappé par la maladie. Bien que ce mal possède des similitudes avec la peste du Vieux Monde, il ne tue pas ses victimes. Au lieu de cela, celles-ci s’en trouvent changées. Comment est-ce que cette maladie se manifeste ? Pourquoi avez-vous juré d’en trouver le remède ?",
-				"option3": "Le Vieux Monde ne pouvait plus nous nourrir. Nous étions devenus bien trop nombreux. Nous avions abattu toutes les forêts. Nos champs se flétrissaient dans un sol stérile. Les cités et les villages débordaient de personnes désespérées et affamées. Des roitelets se disputaient la moindre miette. Nous jouèrent notre destin sur les flots, pour découvrir les Terres de Fer. Un nouveau monde. Un nouveau départ.",
-				"quest3": "Il y a plusieurs décennies, l’exode pris fin. Depuis cette époque, aucun navire n’est arrivé ici, en provenance du Vieux Monde. Jusqu’à maintenant. Des rumeurs parlent d’un unique navire venant tout juste de traverser le vaste océan, pour venir s’échouer sur les récifs des Îles Barrières. Lorsque vous apprenez le nom de ce navire, vous jurez aussitôt de découvrir ce qu’il est advenu de son équipage. Pourquoi cela est-il aussi important pour vous ?"
-			},
-			"Iron": {
-				"name": "Le Fer",
-				"option1": "Les imposantes collines et montagnes des Terres de Fer sont riches en minerai de fer. Le plus prisé d’entre eux est le fer noir, ou métal-étoile.",
-				"quest1": "La caravane, en partance pour les lointaines terres du sud, a quitté le village minier à la dernière saison, mais elle n’a jamais atteint sa destination. Elle transportait un chargement de fer noir. Pour quelle raison retrouver cette caravane perdue est important pour vous ?",
-				"option2": "Le climat est maussade. La pluie et le vent marin rentrent loin dans les terres. Les hivers sont longs et glaciaux. L’un des premiers colons fit ce triste constat « Seuls ceux qui sont faits de fer oseraient vivre en ce lieu infâme » – et c’est ainsi que ces terres reçurent leur nom.",
-				"quest2": "La récolte a été maigre. Les chutes de neige ininterrompues on isolé le village. Les réserves s’épuisent vite. Qu’allez-vous faire pour permettre aux villageois de survivre à la mauvaise saison ?",
-				"option3": "De mystérieux piliers de métal sont dispersés dans le paysage. De couleur gris fer, ils sont aussi lisse que les galets d’une rivière. Personne ne connaît leur fonction. Certains affirment qu’ils sont aussi anciens que le monde lui-même. D’autres, comme les Prêtre du Fer, les vénèrent en jurant des voeux à leur contact. La plupart des colons font le signe de protection en les apercevant, avant de hâter le pas. Les piliers ne se corrodent pas et même les lames les plus affûtées se montrent incapables d’y laisser la moindre marque.",
-				"quest3": "Vos rêves sont hantés des visions d’un pilier qui se dresse au milieu d’un paysage étrange. Que voyez-vous ? Pourquoi avez-vous juré de le trouver ?"
-			},
-			"Legacies": {
-				"name": "Les Héritages",
-				"option1": "Nous sommes les premiers humains à arpenter ces terres.",
-				"quest1": "Dans les écrits de l’un des premiers colons, on trouve la description d’une clairière située au coeur des Sylves Profondes. Les esprits qui protègent ce lieu sont réputés prodiguer des bénédictions miraculeuses. Quel bienfait dispensent-ils ?",
-				"option2": "D’autres humains étaient parvenus ici, en naviguant depuis le Vieux Monde, il y a des siècles de cela, mais tout ce qu’il reste d’eux est un peuple sauvage et sanguinaire, que nous appelons les brisés. Est-ce aussi votre sort que de finir comme eux ?",
-				"quest2": "Vous trouvez un enfant – l’un de ces brisés. Il est blessé et pourchassé par les autres membres de son peuple. Allez-vous le protéger, au risque de vous attirer le courroux des tribus de brisés ?",
-				"option3": "Avant les peuples du fer, avant-même les premiers-nés, un autre peuple vivait ici. Leurs ruines antiques se retrouvent dans toutes les Terres de Fer.",
-				"quest3": "Des mineurs ont excavé une ruine souterraine. Peu après, les villageois ont commencé à être hanté par des rêves étranges. Les ruines semblent les appeler, selon eux. Plusieurs d’entre eux ont disparu dans ce sombre lieu ancien – parmi lesquels une personne qui vous est chère."
-			},
-			"Communities": {
-				"name": "Les Communautés",
-				"option1": "Nous sommes bien peu sur ces terres maudites. Nombre d’entre nous n’auront jamais de contact avec quiconque en dehors de notre ferme ou de notre village, les étrangers sont donc considérés avec une profonde suspicion.",
-				"quest1": "Au plus fort de l’hiver, un homme désespéré arrive dans une ferme isolée par la neige. Il est blessé, affamé et pratiquement mort de froid. Toute sa famille a été enlevée. Par qui ? Serez-vous assez brave pour affronter l’hiver impitoyable et aller les sauver ?",
-				"option2": "Nous vivons au sein de communautés appelées cercles. Ce sont des colonies allant de la taille d’une ferme de quelques familles, jusqu’à des villages pouvant atteindre plusieurs centaines d’habitants. Certains cercles appartiennent à des peuples nomades. D’autres cercles plus puissants regroupent plusieurs hameaux. Nous commerçons (et parfois bataillons) avec les autres cercles.",
-				"quest2": "Une querelle opposant deux cercles depuis des décennies a dégénéré en conflit armé. Quelle est la cause de cette dispute ? Allez-vous rejoindre le combat, ou jurer d’y mettre un terme ?",
-				"option3": "Nous avons forgé les Terres de Fer pour en faire notre demeure. Les villages situés dans les Havres sont reliés par des routes bien entretenues. Les caravanes de marchands se déplacent entre les différentes colonies réparties dans les Havres et les autres régions périphériques. Mais même ainsi, une grande partie de ce territoire reste indompté.",
-				"quest3": "Les caravanes sont contraintes de payer un droit de passage, le long des routes commerciales. Cette taxe, qui s’élève à un quart des marchandises transportées, laisse plusieurs communautés avec des réserves hivernales insuffisantes. Qui prélève cette taxe ? Comment comptez-vous régler cette injustice ?"
-			},
-			"Leaders": {
-				"name": "Les Meneurs",
-				"option1": "Les façons de gouverner sont aussi variées que les peuples. Certaines communautés sont dirigées par le chef d’une puissante famille. Ou bien, par un conseil des anciens qui prend les décisions et juge les litiges. Chez quelques-uns, les prêtres ont une autorité morale. Chez les derniers, ce sont les duels au milieu du cercle qui décident de tout.",
-				"quest1": "Dans vos rêves enfiévrés, vous voyez sans cesse une ville situé dans les Terres de Fer. Elle possède un solide muraille de pierre, des marchés animés et un donjon perché sur une haute colline. Ses habitants sont innombrables ! Nulle part dans toutes les Terres de Fer, une telle ville n’existe. Mais dans vos rêves, vous êtes le dirigeant de cette ville. Vous ne savez comment, mais quoi qu’il vous en coûte, vous devez absolument faire de cette vision une réalité.",
-				"option2": "Chacune de vos communautés possède son propre meneur, appelé le jarl. Tous les sept printemps, la communauté confirme son jarl actuel ou s’en choisit un nouveau. Certains jarls acceptent malgré eux d’être coiffés d’un bandeau de fer, tandis que des ambitieux tentent de s’en emparer par le complot ou par la menace.",
-				"quest2": "Une jarl est tombée gravement malade. Sans aide, elle est certaine de mourir, puisque le guérisseur du village n’a jamais vu une telle maladie. Celui-ci suspecte que le poison, voire une magie impie, est à l’origine de ce mal. Les familles de cette communauté sont désormais divisées en factions prêtes à tout pour que le bandeau de fer se pose sur la tête de leur candidat. Parviendrez-vous à découvrir la vérité sur la maladie de la jarl et à lui rendre la santé ?",
-				"option3": "De nombreux chefs de clans sont à la tête de petits domaines. La plupart d’entre eux ambitionnent d’être couronnés roi de toute la région. Leurs querelles causeront notre perte.",
-				"quest3": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two wheVous possédez en secret une moitié de la Couronne Véritable, une relique du Vieux Monde. Il y a des siècles de cela, cette couronne fût brisée en deux fragments, lorsque la hache d’un assassin fendit le crâne du dirigeant suprême. Vous êtes l’un des descendants de cette lignée. Qui vous a confié cette relique ? Allez-vous chercher l’autre moitié de la couronne brisée pour tenter de réunir les clans sous votre bannière ? Ou comptez-vous la placer sur la tête d’une autre personne ?"
-			},
-			"Defense": {
-				"name": "Les Défenses",
-				"option1": "Ici dans les Terres de Fer, les ressources sont trop précieuses et le territoire bien trop dépeuplé, pour soutenir la création de forces armées organisées. Quand une communauté est menacée, ses membres se réunissent pour la protéger eux-mêmes.",
-				"quest1": "Un village se montre incapable, ou réticent, à se défendre contre une menace imminente. Pour quelle raison ? Quel est le péril auquel ils font face ? Qu’allez-vous faire pour les protéger ?",
-				"option2": "Les gardiens sont vos soldats, vos gardes et votre milice. Ils servent les communautés en tant que sentinelles, en patrouillant dans les territoires alentours et en organisant les défenses en temps de crise. La plupart ont des liens forts avec leur communauté. D’autres, appelées les gardiens libres, sont des mercenaires en maraude qui monnayent leurs services auprès des communautés ou des caravanes.",
-				"quest2": "Vous découvrez une gardienne mourante. Celle-ci vous révèle une importante mission, en vous chargeant de la mener à bien. « Jure-le moi », dit-elle, en vous tendant une main ensanglantée qui serre un objet crucial à votre quête. De quoi s’agit-il ?",
-				"option3": "Nos troupes se sont ralliés pour frapper l’ennemi ou pour défendre notre territoire. Bien que pâles en comparaison des armées qui parcouraient autrefois le Vieux Monde, ces forces sont bien entraînées et aussi bien équipées que leurs communautés peuvent se le permettre. Nos bannières sont décorées des figures de l’Histoire du Vieux Monde et de nos victoires dans les Terres de Fer.",
-				"quest3": "L’une des troupes a été massacrée, lors d’un combat contre un ennemi implacable. Quelle est votre lien avec cette troupe ? Qui les a vaincu ? Allez-vous porter leur bannière, en quête de vengeance ou allez-vous ramener leurs corps dans leur communauté, pour qu’ils soient inhumés avec les honneurs ?"
-			},
-			"Mysticism": {
-				"name": "Le Mysticisme",
-				"option1": "Certains parviennent à trouver du réconfort dans les traditions. Ils font appel à des mystiques pour leur révéler le destin de leurs nouveaux-nés, ou leurs demandent de mener à bien des rituels censés leur assurer des récoltes abondantes. D’autres agissent par superstition, envers ceux qu’ils estiment avoir des pouvoirs. Toutefois, la plupart estiment que la véritable magie - si elle a bien existé - est désormais perdue pour les mortels.",
-				"quest1": "Une personne proche de vous est accusée d’avoir maudit un village, en provoquant la perte de leurs récoltes et en faisant tomber le bétail malade. Quelles sont les preuves de son implication ? Défendrez-vous cette personne et parviendrez-vous à découvrir la véritable cause des ennuis du village ?",
-				"option2": "La magie est rare et dangereuse, mais les quelques élus à posséder le don sont redoutablement doués.",
-				"quest2": "Vous avez entendu des rumeurs sur une personne détenant un véritable pouvoir. On prétend qu’elle vit dans un lointain village isolé. Qui vous a parlé de ce mystique ? Son pouvoir est-il craint ou respecté ? Pourquoi avez-vous juré d’aller le trouver ?",
-				"option3": "La magie irrigue ces terres comme les torrents qui dévalent les collines. Son pouvoir s’offre à ceux qui choisissent de le dompter, mais même la plupart des colons connaissent souvent un rituel ou deux leur étant utile.",
-				"quest3": "Une personne que vous aimez a suivie la voie du pouvoir, pour lui succomber. Qui était cette personne ? Pourquoi a-t-elle basculé dans les ténèbres ? Où se trouve-t-elle maintenant ? Cherchez-vous à la sauver ou à la vaincre ?"
-			},
-			"Religion": {
-				"name": "Religion",
-				"option1": "Quelques-uns des Peuples du Fer se signent toujours ou marmonnent des prières par habitude ou par tradition, mais la plupart estiment que les dieux les ont depuis longtemps abandonnés.",
-				"quest1": "Un femme charismatique, encourage ses adeptes à renier les vestiges des religions du Vieux Monde, en proposant une nouvelle voie pour ce monde nouveau. Quel doctrine enseigne-t-elle ? Que cherche-t-elle à accomplir ? Avez-vous juré de l’aider ou de l’en empêcher",
-				"option2": "Le peuple honore les anciens dieux comme les nouveaux. En ces terres impitoyables, une prière est un simple mais puissant réconfort.",
-				"quest2": "Un villageois est déterminé à se rendre en pèlerinage dans un territoire hostile. Quel est le sanctuaire qu’il cherche à atteindre ? Pourquoi avez-vous juré de l’aider durant son voyage ? Qui cherche à l’arrêter et pourquoi ?",
-				"option3": "Nos dieux sont nombreux. Ils se manifestent par des apparitions et des miracles. Certains disent même qu’ils marchent parmi nous. Les prêtres se font le relais de la volonté des dieux et exercent une autorité morale sur de nombreuses communautés.",
-				"quest3": "Vous portez la marque d’un dieu. En quoi consiste-t-elle ? Les prêtres ont décrété qu’il s’agissait d’un signe prouvant que vous êtes celui qui accomplira une prophétie. Acceptez-vous ce destin, en jurant de précipiter son avènement ou au contraire, êtes-vous déterminé à l’éviter à tout prix ? Quelle force s’oppose à vous ?"
-			},
-			"Firstborn": {
-				"name": "Les Premiers-nés",
-				"option1": "Les premiers-nés sont passés dans la légende. Certains disent que les derniers descendants des anciennes tribus vivent toujours dans les profondes forêts ou sur les plus hautes montagnes. La plupart estiment qu’ils ne sont rien d’autre que des mythes.",
-				"quest1": "Une personne obsédée par les premiers-nés cherche à trouver des preuves de leur existence. Cela lui demandera de lancer une expédition dans les confins des Terres de Fer. Quel sera votre rôle dans cette mission ?",
-				"option2": "Les premiers-nés vivent en autarcie et protègent jalousement leur territoire.",
-				"quest2": "Un elfe, devenu un paria pour ses semblables, vit désormais dans l’un des Peuples du Fer. Au fil du temps, il est devenu l’un des membres de la communauté. Mais il est désormais mourant. Il se languit de retrouver une dernière fois son peuple avant de rendre l’âme. Cherche-t-il l’absolution ou la justice ? Pourquoi avez-vous juré de l’aider ? Quelles forces s’opposent à son retour ?",
-				"option3": "Les premiers-nés dominent les Terres de Fer. Les elfes des forêts profondes et les géants des collines nous tolèrent et commercent même avec nous - du moins pour l’instant. Mais les Peuples du Fer craignent l’arrivée du jour où les humains ne seront plus les bienvenus sur ce territoire.",
-				"quest3": "Les humains et les géants sont sur le point d’entrer en guerre. Que s’est-il produit ? Dans quel camp vous situez-vous ? Quelque-chose peut-il être tenté pour désamorcer la situation ?"
-			},
-			"Beasts": {
-				"name": "Les Bêtes",
-				"option1": "Les bêtes primales sont tout sauf des légendes. Les quelques rares humains qui se sont aventuré dans les forêts profondes et les hautes montagnes en sont revenus avec des récits d’épouvantes parlant de créatures monstrueuses, mais ils sont clairement délirants. De telles choses ne peuvent exister.",
-				"quest1": "Vous avez été le témoin d’une attaque par ce que vous croyez être un gigantesque animal. Personne ne vous croit. En fait, c’est vous qui êtes accusé du meurtre que vous imputez à cette bête. Comment allez-vous prouver votre innocence ? Pouvez-vous ne serait-ce que faire confiance à votre mémoire de ces événements ?",
-				"option2": "Des bêtes monstrueuses rôdent dans les territoires sauvages de Terres de Fer.",
-				"quest2": "Une personne influente est obsédée par sa vengeance personnelle contre une certaine bête. En quoi cette créature est elle particulière ? Comment a-t-elle mérité le courroux de cette personne ? Allez-vous l’aider dans sa quête ou au contraire, tenter de faire en sorte que sa rage aveugle ne détruise bien plus que cette simple bête ?",
-				"option3": "Des bêtes de toutes sortes rôdent dans les Terres de Fer. On les trouve principalement dans les confins, mais leur territoire de chasse s’étend jusque dans les territoires colonisés. C’est là qu’elles attaquent souvent le bétail, mais aussi les voyageurs, les caravanes, voire les villages eux-mêmes.",
-				"quest3": "Des tueurs professionnels ont pour mission de tuer les bêtes. L’une d’entre eux est célèbre dans toutes les Terres de Fer pour ses nombreux trophées, a disparu durant une battue de chasse. A-t-elle finalement trouvé un proie plus forte qu’elle ou quelque-chose de plus sinistre est-il à l’oeuvre ? Quel lien avez-vous avec elle ?"
-			},
-			"Horrors": {
-				"name": "Les Horreurs",
-				"option1": "Tout cela ne sont que des histoires pour faire peur aux enfants.",
-				"quest1": "Les meurtres ont débuté à la saison dernière. Les rumeurs locales évoquent l’oeuvre d’une horreur vengeresse, mais des forces plus banales sont peut-être impliquées. Quel est votre lien avec ces tueries ? Que ferez-vous pour les stopper ?",
-				"option2": "Nous craignons les sombres forêts et les cours d’eau profonds, où les monstres rôdent. Au coeur de la longue nuit, lorsque le monde est plongé dans les ténèbres, seuls les fous s’aventurent hors de chez eux.",
-				"quest2": "Vous portez les cicatrices de l’attaque d’une horreur. Quelle était-elle ? S’agit-il de cicatrices physiques, émotionnelles ou les deux ? La mort rôde, dans les Terres de Fer. La nuit tombée nous allumons des torches, nous répandons du sel et nous postons des sentinelles sur les palissades. Mais ce n’est jamais assez. Elles reviennent toujours.Comment cherchez-vous à regagner votre intégrité ?",
-				"option3": "La mort rôde, dans les Terres de Fer. La nuit tombée nous allumons des torches, nous répandons du sel et nous postons des sentinelles sur les palissades. Mais ce n’est jamais assez. Elles reviennent toujours.",
-				"quest3": "Un groupe de colons a fondé un village dans un territoire maudit par une horreur virulente. Quel mal ravage ces terres ? Pourquoi est-ce que les colons sont déterminés à s’installer ici ? Allez-vous les aider ou au contraire, allez vous tenter de les forcer à abandonner cette folie ?"
-			}
-		},
-		"OracleCategories": {
-			"Action and Theme Oracles": "Oracles d'action et de thème",
-			"Other Names": "Autres noms",
-			"Place Oracles": "Place Oracles",
-			"Settlement Name": "Oracles de lieu",
-			"Quick Settlement Name Generator": "Générateur rapide de noms d'établissements",
-			"Turning Point Oracles": "Oracles du point tournant",
-			"Character Oracles": "Oracles de personnages",
-			"Core Oracles": "Oracles de base",
-			"Creature Basic Form": "Forme de base de la créature",
-			"Creature Oracles": "Oracles de créatures",
-			"Derelict Type (by location)": "Type d'abandon (par lieu)",
-			"Derelict Zones": "Zones abandonnées",
-			"Derelict Oracles": "Oracles abandonnés",
-			"Faction Name": "Nom de la faction",
-			"Faction Oracles": "Oracles de factions",
-			"Step 5: Board Your Starship": "Étape 5 : Embarquez à bord de votre vaisseau",
-			"Create Your Character": "Créez votre personnage",
-			"Build Your Starting Sector": "Construisez votre secteur de départ",
-			"Begin Your Adventure": "Commencez votre aventure",
-			"Launching Your Campaign": "Lancer votre campagne",
-			"Location Theme Oracles": "Oracles de thème de localisation",
-			"Miscellaneous Oracles": "Oracles divers",
-			"Desert World": "Monde désertique",
-			"Furnace World": "Monde de la fournaise",
-			"Grave World": "Monde des tombes",
-			"Ice World": "Monde de glace",
-			"Jovian World": "Monde Jovien",
-			"Jungle World": "Monde de la jungle",
-			"Ocean World": "Monde de l'océan",
-			"Rocky World": "Monde rocheux",
-			"Shattered World": "Monde brisé",
-			"Tainted World": "Monde contaminé",
-			"Vital World": "Monde vital",
-			"Planetside Peril": "Le péril de Planetside",
-			"Planetside Opportunity": "Opportunité à Planetside",
-			"Planet Oracles": "Planète Oracles",
-			"Precursor Vault Oracles": "Oracles de la chambre forte du précurseur",
-			"Settlement Oracles": "Oracles d'établissement",
-			"Space Sighting": "Observation de l'espace",
-			"Space Encounter Oracles": "Oracles de rencontre de l'espace",
-			"Starship Mission": "Mission du vaisseau",
-			"Starship Oracles": "Oracles du vaisseau",
-			"Factions of the Isles": "Factions des îles",
-			"Beasts of the Isles": "Bêtes des îles",
-			"Adventures Among the Isles": "Aventures parmi les îles",
-			"Cave Scale": "Échelle de la grotte",
-			"Sea Cave Details": "Détails de la grotte marine",
-			"Inland Cave Details": "Détails de la grotte intérieure",
-			"Cave Oracles": "Oracles de la grotte",
-			"Character Role Details": "Détails sur le rôle du personnage",
-			"Cursed Moniker": "Monogramme maudit",
-			"Society": "Société",
-			"Organization": "Organisation",
-			"Empire": "Empire",
-			"The Cursed": "Les maudits",
-			"Affluence": "L'opulence",
-			"Craft": "Artisanat",
-			"Discovery": "Découverte",
-			"Faith": "Foi",
-			"Loyalty": "Loyauté",
-			"Mysticism": "Mysticisme",
-			"Rebellion": "Rébellion",
-			"Secrecy": "Secret",
-			"War": "Guerre",
-			"Curses": "Malédictions",
-			"Faction Name: Themes": "Nom de la faction : Thèmes",
-			"Take Command": "Prendre le commandement",
-			"Chart Your Course": "Tracez votre chemin",
-			"Getting Underway": "Mise en route",
-			"Vitality": "Vitalité",
-			"Island Landscape": "Paysage de l'île",
-			"Visible Habitation": "Habitation visible",
-			"Nearby Islands": "Îles proches",
-			"Island Oracles": "Oracles de l'île",
-			"Magnitude": "Ampleur",
-			"Local Seas": "Mers locales",
-			"Overland Waypoints": "Points de repère terrestres",
-			"Region Landmarks": "Points de repère de la région",
-			"Overland Oracles": "Oracles de l'arrière-pays",
-			"Ruin Oracles": "Oracles de ruine",
-			"Known Waters": "Eaux connues",
-			"Unknown Waters": "Eaux inconnues",
-			"Seafaring Waypoints": "Points de repère maritimes",
-			"Seafaring Oracles": "Oracles marins",
-			"Settlement Size": "Taille de l'établissement",
-			"Settlement Controlling Faction": "Faction contrôlant l'établissement",
-			"Settlement Identity": "Identité de l'établissement",
-			"Settlement Focus": "L'accent mis sur le règlement",
-			"Ship Position": "Position du navire",
-			"Ship Controlling Faction": "Faction contrôlant le navire",
-			"Ship Mission": "Mission du navire",
-			"Ship Oracles": "Oracles des navires",
-			"Shipwreck Position": "Position du naufrage",
-			"Shipwreck Orientation": "Orientation des naufrages",
-			"Shipwreck Oracles": "Oracles de naufrage",
-			"Treasure Value": "Valeur du trésor",
-			"Treasure Oracles": "Oracles du trésor",
-			"Weather Conditions": "Conditions météorologiques",
-			"Weather Oracles": "Oracles météorologiques",
-			"Access": "Accès",
-			"Action and Theme": "Action et Thème",
-			"Ask the Oracle": "Demander à l'Oracle",
-			"Basic Form": "Forme Basique",
-			"Challenge Rank": "Niveau de Challenge",
-			"Chaotic": "Chaotique",
-			"Character Creation": "Création de personnage",
-			"Character Name": "Nom du personnage",
-			"Character": "Personnage",
-			"Characters": "Personnages",
-			"Combat Event": "Évènement de combat",
-			"Community": "Communauté",
-			"Core": "Core",
-			"Creatures": "Créatures",
-			"Delve the Depths": "Fouiller les Profondeurs",
-			"Derelicts": "Derelicts",
-			"Desert": "Désert",
-			"Engineering": "Engineering",
-			"Factions": "Factions",
-			"Feature": "Feature",
-			"Fortified": "Fortifié",
-			"Furnace": "Fourneau",
-			"Grave": "Tombe",
-			"Haunted": "Hanté",
-			"Ice": "Glace",
-			"Infested": "Infesté",
-			"Inhabited": "Inhabited",
-			"Interior": "Intérieur",
-			"Ironlander": "Ironlander",
-			"Jovian": "Jovien",
-			"Jungle": "Jungle",
-			"Living": "Vivant",
-			"Location Themes": "Thèmes des lieux",
-			"Mechanical": "Mécanique",
-			"Medical": "Médical",
-			"Misc": "Divers",
-			"Mission": "Mission",
-			"Moves": "Actions",
-			"Monstrosity": "Monstruosité",
-			"Name": "Nom",
-			"Ocean": "Océan",
-			"Operations": "Opérations",
-			"Opportunity": "Opportunité",
-			"Other": "Autre",
-			"Peril": "Péril",
-			"Place": "Lieu",
-			"Planets": "Planètes",
-			"Population": "Population",
-			"Production": "Production",
-			"Quick Name": "Surnom",
-			"Research": "Recherche",
-			"Rocky": "Rocheux",
-			"Ruined": "En Ruines",
-			"Sacred": "Sacré",
-			"Sanctum": "Sanctuaire",
-			"Sector Name": "Nom du Secteur",
-			"Settlement": "Colonie",
-			"Settlements": "Colonies",
-			"Shattered": "Éclaté",
-			"Sighting": "Observation",
-			"Site Name": "Nom du Site",
-			"Site Nature": "Nature du Site",
-			"Space": "Espace",
-			"Starships": "Vaisseaux",
-			"Tainted": "Teinté",
+			"Failure": "Échec",
 			"Threat": "Menace",
-			"Trap": "Piège",
-			"Turning Point": "Moment Décisif",
-			"Type": "Type",
-			"Vaults": "Coffres",
-			"Vital": "Vital",
-			"Zones": "Zones",
-			"Custom": "Oracles personnalisés"
-		},
-		"Asset Categories": {
-			"Custom": "Ressources personnalisées",
-			"Classic": {
-				"Companion Assets": {
-					"Title": "Compagnon",
-					"Description": "Les compagnons sont vos assistants PNJ. Lorsque vous acquérez un compagnon, donnez-lui un nom et imaginez son apparence et sa personnalité. S'ils n'ont pas de capacité de départ, choisissez-en une. L'amélioration d'un compagnon active des capacités supplémentaires.\n\nLes compagnons utilisent une piste de santé et peuvent subir des dommages à la suite de l'une de vos actions. Lorsque votre compagnon subit des dégâts, effectuez le mouvement [Companion Endure Harm](Ironsworn/Moves/Suffer/Companion_Endure_Harm) (page 94) pour déterminer le résultat. Voir page 43 pour en savoir plus."
-				},
-				"Path Assets": {
-					"Title": "Voies",
-					"Description": "Les voies représentent votre background, vos intérêts, votre formation et vos compétences. Ils offrent des avantages mécaniques et narratifs, mais reflètent également qui vous êtes et comment vous interagissez avec le monde. Par exemple, un **Ritualiste** aurait probablement une vision différente de celle d'un **Veteran**. Choisir ces deux voies peut refléter une évolution de votre personnage ou un parcours intéressant."
-				},
-				"Combat Talent Assets": {
-					"Title": "Talent de Combat",
-					"Description": "Les personnages *Ironsworn* sont supposés être des combattants qualifiés. Même sans talent de combat, vous pouvez manier des armes et effectuer des mouvements de combat (page 78). Un talent de combat reflète un domaine d'expertise particulier et vous offre des options et des bonus supplémentaires.\n\nLes atouts des talents de combat nécessitent généralement que vous maniez une arme spécifique, comme indiqué dans le texte de l'actif. Par exemple, si vous êtes un **Shield-Bearer** et que vous n'avez pas de bouclier à portée de main, vous ne pouvez pas utiliser les capacités de cet atout."
-				},
-				"Ritual Assets": {
-					"Title": "Rituels",
-					"Description": "La magie dans *Ironsworn* est lancée à travers des rituels qui aident à soutenir vos actions ou agissent comme des mouvements uniques. Comme tous les atouts, les rituels peuvent être sélectionnés au fur et à mesure que vous gagnez de l'expérience et peuvent être améliorés au fil du temps pour les rendre plus flexibles ou plus puissants.\n\nTous les rituels utilisent une action comme capacité marquée par défaut. Vous devez effectuer cette action et le jet d'action associé pour déclencher l'effet. Toutes les capacités secondaires que vous gagnez en améliorant l'actif dépendent de l'exécution du rituel décrit comme la capacité par défaut."
-				}
+			"Rarity": "Rareté",
+			"LocationType": "Type de lieu",
+			"RollForDetails": "Jet de type de lieu",
+			"RandomName": "Nom aléatoire",
+			"ResolveChallenge": "Résoudre le défi",
+			"ResolveChallengeDisabled": "Choisissez vos deux derniers dés de défi",
+			"BurnForUpgrade": "Brûler de l'Élan: <strong>{type}</strong>",
+			"BurnMomentumAndResetTo": "Brûlez {value} Élan et réinitialisé à {resetValue}",
+			"MomentumBurnt": "Élan brûlé",
+			"NegativeMomentumCancel": "l'Élan négatif annule le dé d'action",
+			"Pronouns": "Pronoms",
+			"Callsign": "Indicatif",
+			"Characteristics": "Caractéristiques",
+			"Summary": "Résumé",
+			"Category": "Catégorie",
+			"Color": "Coleur",
+			"Requirement": "Prérequis",
+			"Trigger": "Déclencheur",
+			"FullText": "Texte complet",
+			"Field": "Champ",
+			"Fields": "Champs",
+			"Label": "Étiquette",
+			"Value": "Valeur",
+			"Abilities": "Capacités",
+			"Ability": "Capacité",
+			"Options": "Options",
+			"Option": "Option",
+			"Track": "Jauge",
+			"Enabled": "Débloqué",
+			"ChallengeRank": "Rang du défi",
+			"Completed": "Achevé",
+			"NotCompleted": "Inachevé",
+			"Foes": "Ennemis",
+			"Foe": "Ennemi",
+			"Edit": "Modifier",
+			"OpenCompendium": "Ouvrir le Compendium",
+			"ConfirmDelete": "Êtes-vous sûr? Cette action est irréversible.",
+			"RequiresLocationType": "Cet oracle nécessite la sélection d'un type de lieu.",
+			"RollOracleTable": "Jet d'oracle: <i>{title}</i>",
+			"RollMove": "Jet d'Action: <i>{title}</i>",
+			"PageReference": "p.{page}",
+			"PlanetType": "Type de planète",
+			"RandomPlanetType": "Type de planète aléatoire",
+			"SettlementType": "Type de colonie",
+			"RandomSettlementType": "Type de colonie aléatoire",
+			"StarType": "Type d'étoile",
+			"RandomStarType": "Type d'étoile aléatoire",
+			"DerelictType": "Type d'épave",
+			"RandomDerelictType": "Type d'épave aléatoire",
+			"VaultType": "Type de chambre forte",
+			"RandomVaultType": "Type de chambre forte aléatoire",
+			"SunderedsettlementType": "Localisation de l'établissement",
+			"RandomSunderedsettlementType": "Emplacement aléatoire de l'établissement",
+			"First": "premier",
+			"Second": "second",
+			"Third": "troisième",
+			"Fourth": "quatrième",
+			"Fifth": "cinquième",
+			"StarforgedTools": "Outils Starforged",
+			"IronswornTools": "Outils d'Ironsworn",
+			"SunderedIslesTools": "Outils des îles Ensoleillé",
+			"Region": "Région",
+			"RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
+			"REGION": {
+					"Terminus": "Terminus",
+					"Outlands": "Contrées lointaines",
+					"Expanse": "Étendue",
+					"Myriads": "Myriades",
+					"Margins": "Marges",
+					"Reaches": "Atteintes"
 			},
-			"Starforged": {
-				"Command Vehicle Assets": {
-					"Title": "Véhicule de Commandement",
-					"Description": "Le **véhicule de commandement** est votre vaisseau interstellaire. Il s'agit d'un atout par défaut pour votre personnage, pris lorsque vous commencez votre campagne. Si vous jouez à plusieurs, il s'agit d'un atout partagé ; chacun d'entre vous peut utiliser les capacités du STARSHIP lorsqu'il est à bord du vaisseau. Le véhicule de commandement a un compteur d'intégrité et commence à 5 d'intégrité. Lorsque votre STARSHIP est touché, faites le mouvement @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} pour voir ce qui se passe."
-				},
-				"Module Assets": {
-					"Title": "Module",
-					"Description": "Les **Modules** sont liés à votre vaisseau spatial et offrent des options et des avantages supplémentaires à bord de ce véhicule.\n\nCes atouts sont gagnés et gérés par un seul personnage. Ils peuvent être partagés avec des alliés, mais seulement s'il est pratique pour eux d'en faire usage (tout le monde ne sait pas forcément comment utiliser un LABORATOIRE DE RECHERCHE).\n\n- Lorsque vous @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} et que vous marquez un échec, vous pouvez marquer un module comme cassé pour éviter tout danger supplémentaire pour votre STARSHIP. Retournez la carte pour indiquer qu'elle est cassée. Un module cassé ne peut pas être utilisé tant que vous n'avez pas réussi à le @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair}."
-				},
-				"Support Vehicle Assets": {
-					"Title": "Véhicule de soutien",
-					"Description": "**Les véhicules de soutien** complètent votre véhicule de commandement pour les opérations sur la planète ou à courte distance. Si vous jouez à plusieurs, l'un d'entre vous peut être le pilote ou le propriétaire d'un véhicule de soutien, mais tous ceux qui sont à bord peuvent utiliser ses capacités en fonction de la situation.n Comme pour le véhicule de commandement, vos véhicules de soutien ont des compteurs d'intégrité. L'intégrité maximale varie en fonction du type de véhicule. Lorsqu'un véhicule de soutien est confronté à une situation ou un environnement dommageable, vous devez @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} pour voir comment il s'en sort."
-				},
-				"Path Assets": {
-					"Title": "Chemin d'accès",
-					"Description": "Les **chemins** sont votre passé, vos intérêts, votre formation, vos compétences, vos pouvoirs et votre équipement clé. Elles offrent des avantages mécaniques et narratifs, mais reflètent aussi qui vous êtes et comment vous interagissez avec le monde. Lorsque vous créerez votre personnage dans le chapitre suivant, vous sélectionnerez au moins deux voies pour commencer. Certaines voies représentent vos compétences avec un style d'arme ou une pièce d'équipement caractéristique. Si vous voyez une condition en haut de la carte d'atout, comme « Si vous maniez une arme blanche... », l'atout n'est utilisable que lors d'une action utilisant cet objet."
-				},
-				"Companion Assets": {
-					"Title": "Compagnon",
-					"Description": "**Les compagnons sont des PNJ qui vous aident. Lorsque vous obtenez un compagnon, donnez-lui un nom et imaginez son apparence et sa personnalité. Les compagnons utilisent une jauge de santé qui peut être réduite si un résultat les met en danger. Lorsque votre compagnon est en danger, faites le mouvement @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit}. Lorsque sa santé est à 0, il risque d'être tué ou détruit."
-				},
-				"Deed Assets": {
-					"Title": "Hauts faits",
-					"Description": "**Les hauts faits** représentent les réalisations et les situations notables de votre histoire, et la façon dont ces événements changent votre personnage. Les hauts faits ont une exigence indiquée en haut de la carte, formulée comme « Une fois que vous avez [blank] ». Vous ne pouvez pas dépenser d'expérience pour acquérir un acte tant que vous n'avez pas rempli cette condition, et vous ne pouvez pas choisir un acte lors de la création de votre personnage."
-				}
+			"RotateCCW": "Tourner dans le sens inverse des aiguilles d'une montre",
+			"RotateCW": "Tourner dans le sens des aiguilles d'une montre",
+			"RollDialog": {
+					"AdvancedRollOptions": "Options avancées",
+					"PresetActionDie": "Dé d'action prédéfinie",
+					"PresetChallengeDice": "Dés de challenge",
+					"PredeterminedOutcome": "Résultat prédéterminé",
+					"ExtraChallengeDice": "Dés de défi supplémentaires"
 			},
-			"Sundered_isles": {
-				"Companion Assets": {
-					"Title": "Compagnon",
-					"Description": ""
-				},
-				"Deed Assets": {
-					"Title": "Hauts faits",
-					"Description": ""
-				},
-				"Module Assets": {
-					"Title": "Module",
-					"Description": ""
-				},
-				"Path Assets": {
-					"Title": "Chemin d'accès",
-					"Description": ""
-				},
-				"Command Vehicle Assets": {
-					"Title": "Véhicule de Commandement",
-					"Description": ""
-				},
-				"Support Vehicle Assets": {
-					"Title": "Véhicule de soutien",
-					"Description": ""
-				}
+			"ChatAlert": {
+					"Muted": "Chuchote des infos à l'utilisateur qui les a déclenchées",
+					"Unmuted": "Dévoile des infos à tout le monde",
+					"ToggleMute": "Mute",
+					"Renamed": "Renommé {name}",
+					"renamed": "renommé {name}",
+					"Added": "{name} ajouté",
+					"Deleted": "{name} supprimé",
+					"MarkedXP": "{amt} XP notés",
+					"UnmarkedXP": "{amt} XP supprimés",
+					"AdjustedStat": "{amt} {stat} (maintenant {val})",
+					"MarkedCondition": "État {condition} marqué",
+					"ClearedCondition": "État {condition} supprimé",
+					"MarkedImpact": "Marqué le {impact} impact",
+					"ClearedImpact": "Effacer le {impact} impact",
+					"MarkedDebility": "Marqué le {debility} débilité",
+					"ClearedDebility": "Effacer le {debility} débilité",
+					"RankChanged": "Rang changé de {old} pour {new}",
+					"rankChanged": "Rang changé de {old} pour {new}",
+					"ProgressAdvanced": "Progression avancée",
+					"progressAdvanced": "progression avancée",
+					"ProgressReduced": "Progression réduite",
+					"progressReduced": "progression réduite",
+					"MarkedAbility": "Capacité {pos} marquée",
+					"UnmarkedAbility": "Capacité {pos} effacée",
+					"MarkedOption": "{name} marqué",
+					"SetField": "{name} défini à {val}",
+					"AddBond": "Lien ajouté",
+					"LostBond": "Lien perdu",
+					"completedMarked": "marqué terminé",
+					"completedUnmarked": "dé-marqué terminé ",
+					"clockAdvancedOneSegment": "horloge avancée à {new}⁄{max}",
+					"clockAdvancedTwoSegments": "horloge avancée par {change} segments à {new}⁄{max}",
+					"clockAdvancedManySegments": "horloge avancée par {change} segments à {new}⁄{max}",
+					"clockCompletedOneSegment": "horloge avancée à {new}⁄{max}—horloge achevée!",
+					"clockCompletedTwoSegments": "horloge avancée par {change} segments à {new}⁄{max}—clock completed!",
+					"clockCompletedManySegments": "horloge avancée par {change} segments à {new}⁄{max}—clock completed!",
+					"clockSet": "horloge réglée sur {new}⁄{max}"
+			},
+			"Settings": {
+					"Theme": {
+							"Name": "Thème visuel",
+							"Hint": "Sélection du thème pour cette partie. Nécessite de recharger le monde.",
+							"Ironsworn": "Ironsworn Classic",
+							"Starforged": "Starforged (experimental)",
+							"SunderedIsles": "Îles ensoleillées (Beta)"
+					},
+					"ColorScheme": {
+							"Name": "Apparence : Schéma de couleurs",
+							"Hint": "Chaque utilisateur peut définir sa propre palette de couleurs.",
+							"Zinc": "Zinc",
+							"Phosphor": "Phosphore",
+							"Oceanic": "Océanique"
+					},
+					"Tools": {
+							"Name": "Outils pour les personnages",
+							"Hint": "Quel ensemble d'actions et d'oracles apparaîtrons en ouvrant une fiche de personnage.",
+							"Sheet": "Faire correspondre les fiches"
+					},
+					"SharedSupply": {
+							"Name": "Jauge de provisions partagée",
+							"Hint": "Si activé, la modification de la jauge de provision d'un personnage modifiera aussi les jauges de provisions de tous les autres acteurs."
+					},
+					"AdvancedRollingOpen": {
+							"Name": "Mode de roulement manuel",
+							"Hint": "Si cette option est activée, la section \"advanced\" de la boîte de dialogue du dé sera ouverte par défaut et le focus sera mis sur la première case d'entrée du dé."
+					},
+					"LogChanges": {
+							"Name": "Journalisation des modifications du personnage",
+							"Hint": "Si activé, les modifications faites sur la fiche d'un personnage seront journalisées dans le chat."
+					},
+					"PromptTruths": {
+							"Name": "Proposition pour les Vérités du Monde",
+							"Hint": "Propose au démarrage de générer les Vérités de votre Monde avec l'assistant, si ce n'a pas été déjà fait."
+					},
+					"ConfigurationDialog": {
+							"Label": "Ironsworn/Starforged Boîte de dialogue de configuration",
+							"Name": "Boîte de dialogue de configuration",
+							"Hint": "Choisissez entre les éléments d'interface utilisateur Ironsworn et Starforged.."
+					},
+					"CharacterHold": {
+							"Name": "Stats de Maintien",
+							"Hint": "Afficher le tracker 'Maintien' pour les personnages Starforged et les feuilles partagées."
+					},
+					"RollCinderAndWraith": {
+							"Name": "Cinder and Wraith",
+							"Hint": "Roll challenge dice as Cinder and Wraith. This will override your Dice-So-Nice color theme for challenge-die rolls, and include which die represents which moon in the tooltips."
+					},
+					"ProgressMarkAnimation": {
+							"Name": "Activer l'animation de la marque de progression",
+							"Hint": "Activez l'animation de la marque de progression. Notez que l'animation ne verrouille pas le bouton de la marque, ce changement est donc purement cosmétique."
+					}
+			},
+			"First Start": {
+					"Welcome": "Bienvenue",
+					"Intro": "SVP, choisissez le système que vous voulez utiliser. Cela définira la feuille de personnage et les actions par défaut de l'Oracle. Des options détaillées sont disponibles dans les paramètres",
+					"SheetTitle": "Feuille de personnage",
+					"SheetHint": "Choisissez la feuille par défaut à utiliser pour les caractères.",
+					"IronswornSheetTooltip": "Mise en page compacte avec un minimum d'onglets, conçue pour Ironsworn Classic et Delve. Inclut une piste Bonds, mais pas de piste legacy.",
+					"StarforgedSheetTooltip": "Mise en page à onglets, conçue pour Starforged et Sundered Isles. Inclut des pistes sur l'héritage et les connexions.",
+					"RulesetsTitle": "Règles",
+					"RulesetsHint": "Choisissez le contenu des livres qui doivent être actifs dans ce monde.",
+					"TruthsTitle": "Vérités",
+					"TruthsHint": "Lancer une boîte de dialogue pour générer des vérités",
+					"SettingTruths": "Établir les Vérités",
+					"SettingTruth": "Établir la Vérité"
+			},
+			"Tours": {
+					"ChatMessage": "<h3>Bienvenue dans Ironsworn!</h3><p>Si vous utlisez ce système pour la première fois, cliquez ici pour une visite guidée</p> <button id=\"ironsworn-tour-chat-button\"> <i class=\"fas fa-person-hiking\"></i> Lancer la visite </button>",
+					"Welcome": {
+							"Title": "Bienvenue dans Ironsworn",
+							"Description": "Aperçu du système Ironsworn & Starforged",
+							"WelcomeTitle": "Bienvenue",
+							"WelcomeContent": "<p>Bienvenue dans Ironsworn & Starforged! Cette visite vous aidera à trouver toutes les choses nécessaire pour paramétrer et jouer vos parties.</p><p>À ce stade, vous aurez vu la boîte de dialogue de sélection de jeu, qui configure la feuille de personnage, les actions et les oracles par défaut. Voyons où se trouvent les autres fonctionnalités du système.</p>",
+							"ActorTabTitle": "Création de Personnage",
+							"ActorTabContent": "<p>À un moment donné, vous aurez envie de créer un personnage. Pour ce faire, accédez à l'onglet \"Actors\" et cliquez sur ce bouton.</p>",
+							"CharacterCreateTitle": "Créer un Personnage",
+							"CharacterCreateContent": "<p>Ce bouton créera un personnage principal, qui est tout ce dont vous avez besoin pour commencer. Au fur et à mesure que votre jeu progresse, vous aurez peut-être besoin des autres types ici pour organiser les choses.</p>",
+							"CompendiumTitle": "Cartes",
+							"CompendiumContent": "<p>Vous aurez probablement besoin d'une carte des Terres de Fer ou d'un secteur de la Forge. Vous pouvez créer votre propre scène pour cela, ou vous pouvez utiliser l'une des nôtres. Ouvrez l'un de ces compendiums et faites glisser une carte dans votre zone de scènes (l'onglet qui ressemble à une carte pliée).</p>",
+							"OracleToolTitle": "Oracles",
+							"OracleToolContent": "<p>Aucune partie d'Ironsworn ou Starforged ne serait complète sans oracles. Ce bouton fera apparaître une fenêtre avec tous les oracles du jeu choisi. Les oracles sont également disponibles depuis la fiche de personnage.</p>",
+							"ToursTitle": "Prochaines étapes",
+							"ToursContent": "<p>C'est tout pour l'instant ! Pour plus d'informations sur d'autres sujets, consultez la section Gestion des tournées dans les onglets de configuration. Et si vous souhaitez entrer en contact avec nous, consultez la section <code>#foundry-vtt</code> cannal dans le <a href=\"https://discord.gg/8bRuZwK\">Discord Ironsworn</a>.</p><p>Bonne chance !</p>"
+					},
+					"ISCharacter": {
+							"SheetTitle": "Feuille de personnage",
+							"SheetContent": "<p>Ceci est la feuille de personnage du joueur. Elle peut vous aider à gérer les attributs, les ressources, les biens et les vœux de votre personnage.</p>",
+							"EditButtonTitle": "Bouton d'édition",
+							"EditButtonContent": "<p>Le &quot;<i class=\"fa-solid fa-edit\"></i>Bouton d'édition&quot; dans la barre de titre permet de passer du mode interaction au mode édition pour ce personnage.</p>",
+							"StatsTitle": "Statistiques des personnages",
+							"StatsContent": "<p>Ce sont les attributs de base de votre personnage, qui vous renseignent sur sa personnalité, mais aussi sur le fait que lorsqu&#39;il tente certains types d&#39;actions, l&#39;histoire aura tendance à mieux se dérouler pour lui.</p><p>Pour effectuer un jet contre ces statistiques, cliquez sur l&#39;une d&#39;entre elles. Une boîte de dialogue s'ouvrira, vous permettant d'ajouter des bonus et de confirmer le jet.</p><p><strong>MODE EDITION</strong> vous permet d'ajuster ces chiffres.</p>",
+							"ResourcesTitle": "Ressources",
+							"ResourcesContent": "<p>Sur le côté, nous avons les trois ressources de base : Santé, Esprit et Approvisionnement. Vous pouvez ajuster les niveaux de ces ressources en cliquant sur la nouvelle valeur.</p><p>Vous pouvez également faire des roulades en cliquant sur le nom de la ressource.</p>",
+							"MomentumTitle": "Elan",
+							"MomentumContent": "<p>De l'autre côté se trouve l'indicateur d'élan. Vous pouvez définir l&#39;élan de votre personnage en cliquant sur l&#39;un des nombres, et si vous avez des débilités marquées, une ou plusieurs des valeurs les plus élevées seront désactivées.</p><p>Passez la souris sur l'icône &quot;<i class=\"fa-solid fa-fire\"></i> ELAN&quot; pour avoir un aperçu de ce que la gravure de votre élan va faire, et cliquez dessus pour effectuer la gravure.</p>",
+							"ConditionsTitle": "Conditions",
+							"ConditionsContent": "<p>En bas de la feuille se trouvent les conditions, bannissements et fardeaux de votre personnage. Le fait de les cocher affectera votre élan maximum. Il y a également deux cases où vous pouvez entrer des conditions personnalisées.</p>",
+							"CharacterTabTitle": "Onglet Caractère",
+							"CharacterTabContent": "<p>La zone centrale comporte une série d'onglets. Le premier est l'onglet &quot;Personnage&quot; dans lequel vous trouverez la plupart des informations nécessaires à la création d'un personnage de type Ironsworn.</p>",
+							"BondsTitle": "Obligations",
+							"BondsContent": "<p>En haut à gauche se trouvent vos liens. Il s'agit du nombre de liens que votre personnage a tissés au cours de ses aventures. Cliquez sur l'icône <i class=\"fa-solid fa-edit\"></i> pour ajouter ou supprimer des obligations et prendre des notes à leur sujet. Cliquez sur l'icône <svg fill=\"currentColor\" height=\"1em\" width=\"1em\" role=\"img\" aria-hidden=\"true\" class=\"icon\"><use href=\"#ironsworn-d10-tilt\"></use></svg> pour faire rouler le <em>Rédigez votre épilogue</em> déplacement.</p>",
+							"AssetsTitle": "Actifs",
+							"AssetsContent": "<p>La zone des atouts est l'endroit où les atouts de votre personnage sont affichés et gérés. Vous pouvez cliquer sur n'importe quel atout pour l'agrandir et afficher ses capacités. Cliquez sur le bouton &quot;<i class=\"fa-solid fa-edit\"></i>&quot; pour ouvrir une fiche détaillée pour n'importe quel actif.</p><p><strong>MODE EDITION</strong> affiche des boutons permettant de supprimer et de réorganiser les actifs.</p><p>Le boutton &quot;<i class=\"fa-solid fa-book-atlas\"></i> Actifs&quot; en bas de l'écran permet d'ouvrir le navigateur de ressources. À partir de là, vous pouvez faire glisser n'importe quelle ressource sur votre feuille de personnage pour l'ajouter à votre jeu.</p>",
+							"ProgressTitle": "Progression",
+							"ProgressContent": "<p>La zone de progrès affiche les vœux actuels de votre personnage et d&#39;autres éléments de progrès. Vous pouvez ajouter un nouvel élément vierge en cliquant sur le bouton &quot;+Vœu&quot; ou &quot;+Progression&quot; au bas de l'écran, ou vous pouvez ouvrir le compendium &quot;<i class=\"fa-solid fa-book-atlas\"></i> Ennemis&quot; et faites glisser un ennemi dans la liste.</p><p>Chaque élément indique l'état d'avancement et dispose de commandes permettant de marquer des coches et d'effectuer un relevé de l'état d'avancement. <strong>MODE EDITION</strong> ajoute des boutons pour réordonner les éléments, ajuster les coches de progression et marquer un élément comme terminé, ce qui le cache dans la section au bas de l'onglet.</p>",
+							"NotesTabTitle": "Onglet Notes",
+							"NotesTabContent": "<p>L'onglet Notes est fait pour vous. Gardez une trace de votre récit ici (ou utilisez des entrées de journal), notez le type d'équipement que vous transportez, notez les cicatrices que vous avez gagnées sur votre chemin.</p>",
+							"EndTitle": "Feuille de personnage",
+							"EndContent": "<p>C&#39;est tout pour l&#39;instant. Cherchez le bouton <i class=\"fa-solid fa-circle-question\"></i> dans les barres de titre des autres feuilles pour plus d'informations sur leur fonctionnement.</p>"
+					},
+					"SFCharacter": {
+							"Title": "Feuille de personnage Starforged",
+							"Description": "La feuille de PC d'un personnage Starforged",
+							"SheetTitle": "Feuille de personnage",
+							"SheetContent": "<p>Ceci est la feuille de personnage du joueur. Elle peut vous aider à gérer les attributs, les ressources, les biens et les vœux de votre personnage.</p>",
+							"EditButtonTitle": "Bouton d'édition",
+							"EditButtonContent": "<p>Le boutton d'&quot;<i class=\"fa-solid fa-edit\"></i> Edition&quot; dans la barre de titre permet de passer du mode interaction au mode édition pour ce personnage.</p>",
+							"StatsTitle": "Statistiques des personnages",
+							"StatsContent": "<p>Ce sont les attributs de base de votre personnage, qui vous renseignent sur sa personnalité, mais aussi sur le fait que lorsqu&#39;il tente certains types d&#39;actions, l&#39;histoire aura tendance à mieux se dérouler pour lui.</p><p>Pour effectuer un jet par rapport à ces statistiques, cliquez sur l'une d'entre elles. Une boîte de dialogue s'ouvrira, vous permettant d'ajouter des bonus et de confirmer le jet.</p><p><strong>MODE EDITION</strong> vous permet d'ajuster ces chiffres.</p>",
+							"ResourcesTitle": "Ressources",
+							"ResourcesContent": "<p>Sur le côté, nous avons les trois ressources de base : Santé, Esprit et Ravitaillement. Vous pouvez ajuster les niveaux de ces ressources en cliquant sur la nouvelle valeur.</p><p>Vous pouvez également faire des jets en cliquant sur le nom de la ressource.</p>",
+							"MomentumTitle": "élan",
+							"MomentumContent": "<p>De l'autre côté se trouve l'indicateur d'élan. Vous pouvez définir l&#39;élan de votre personnage en cliquant sur l&#39;un des nombres, et si vous avez des débilités marquées, une ou plusieurs des valeurs les plus élevées seront désactivées.</p><p>Survolez le titre &quot;<i class=\"fa-solid fa-fire\"></i> ELAN&quot; pour avoir un aperçu des effets de la combustion de votre élan, et cliquez dessus pour effectuer la combustion.</p>",
+							"ImpactsTitle": "Impacts",
+							"ImpactsContent": "<p>En bas de la feuille se trouvent les impacts de votre personnage. Les cocher affectera votre élan maximum. Il y a également deux cases où vous pouvez entrer des impacts personnalisés.</p><p>Si un véhicule dans le jeu est marqué par Battered ou Cursed, cet impact sera mis en évidence ici pour vous rappeler qu&#39;il doit s&#39;appliquer lorsque vous êtes sur ce véhicule.</p>",
+							"LegaciesTabTitle": "Onglet « Héritages »",
+							"LegaciesTabContent": "<p>Dans la zone centrale se trouve une série d'onglets. Le premier est l'onglet &quot;Legacies&quot ; où vous suivez vos trois principaux legs Starforgés. Vous y trouverez également tous les éléments « étoilés » des onglets Progrès ou Connexions.</p><p>Pour faire avancer un héritage, cliquez sur le bouton &quot;<i class=\" fa-solid fa-caret-right\"></i>&quot; à droite. Lorsque suffisamment de cases d'héritage sont remplies, des cases d'XP apparaissent; il suffit de cliquer dessus pour dépenser de l'XP. <strong>MODE EDITION</strong> affiche également des boutons permettant de supprimer les coches héritées du passé si vous en avez marqué trop par accident.</p>",
+							"AssetsTabTitle": "Onglet Actifs",
+							"AssetsTabContent": "<p>The Assets tab is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
+							"ProgressTabTitle": "Progress Tab",
+							"ProgressTabContent": "<p>The Progress tab displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. Use the &quot;<i class=\"fa-solid fa-star\"></i>&quot; button to also display an item in the Legacies tab.</p><p><strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
+							"ConnectionsTabTitle": "Connections Tab",
+							"ConnectionsTabContent": "<p>Connections are tracked separately from other progress items, and can be found in this tab. Otherwise this behaves the same as the Progress tab.</p>",
+							"NotesTabTitle": "Notes Tab",
+							"NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
+							"EndTitle": "Character Sheet",
+							"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+					},
+					"MoveSheet": {
+							"Title": "",
+							"Description": "",
+							"SheetTitle": "Move/Oracle Sheet",
+							"SheetContent": "<p>This is the window that provides easy access to moves and oracles.</p>",
+							"MoveCategoryTitle": "Move Categories",
+							"MoveCategoryContent": "<p>Click on a category title to expand that category and show all of the moves. Click on one of the moves to expand its description.</p>",
+							"MoveButtonsTitle": "Move Shortcuts",
+							"MoveButtonsContent": "<p>Up here you&#39;ll see shortcut buttons.</p><p>The first one is a shortcut to &quot;roll this move,&quot; and will open the rolling dialog with some details pre-filled for you. It&#39;s only available if this move has a roll associated with it -- some, like Pay the Price, do not have an action/challenge roll, so this button will be disabled.</p><p>The second one is a shortcut to &quot;roll the oracle,&quot; and immediately rolls on an oracle table. It&#39;s only available if the move has exactly one oracle to roll.</p><p>The third one sends a copy of the description to the chat sidebar.</p>",
+							"MoveLinkTitle": "Move Links",
+							"MoveLinkContent": "<p>Clicking on a link to another move will expand it and scroll it into view.</p>",
+							"OraclesTabTitle": "Oracles Tab",
+							"OraclesTabContent": "<p>The second tab displays oracles, random tables to spark your inspiration.</p>",
+							"OracleCategoryTitle": "Oracle Tree",
+							"OracleCategoryContent": "<p>The oracles are organized into a directory structure. Click anywhere on a category line to expand it and display its contents.</p>",
+							"OracleRowTitle": "Oracle Controls",
+							"OracleRowContent": "<p>Click the <i class=\"fas fa-eye\"></i> icon to display a preview of the oracle table, or click anywhere else on the line to draw a result from the table and display it in chat.</p>",
+							"OracleChatMessageTitle": "Oracle Results",
+							"OracleChatMessageContent": "<p>When you roll an oracle, a chat card is displayed. The highlighted row is the rolled result, and the adjacent rolls are also displayed.</p><p>If you hover your mouse over the message, you&#39;ll see buttons appear, which let you copy a result&#39;s text to your clipboard, or re-roll on the same oracle table.</p>",
+							"EndTitle": "Move Sheet",
+							"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+					}
+			},
+			"WorldTruths": {
+					"The Old World": {
+							"name": "Le Vieux Monde",
+							"option1": "Les clans sauvages, connus sous le nom de Skuldes, ont envahi les royaume du Vieux Monde. Nos armées leur succombèrent. La plupart furent tués ou réduits en esclavage. Ceux qui parvinrent à s’échapper mirent les voiles, à bord de tout ce qui était en état de flotter. Après plusieurs mois de voyage ardu, les survivants débarquèrent enfin sur les Terres de Fer.",
+							"quest1": "Vous êtes un descendant des Skuldes. En raison de votre héritage, votre famille fait l’objet d’une vieille rancune, de la part des autres Peuples du Fer. Récemment, une petite troupe de Skulde ont débarqué sur vos côtes. Sont-ils les précurseurs d’une invasion ? De quel côté va pencher votre loyauté ?",
+							"option2": "Le fléau se déplaça comme une horrible vague, à travers tout le Vieux Monde, tuant tout ceux qu’il trouvait sur son passage. Des milliers de personnes s’enfuyèrent à bord de navires. Mais la peste ne pouvait pas être distancée. Sur de nombreux navires, elle fût contenue par des mesures radicales – en jetant par-dessus bord tous ceux qui montraient le moindre symptôme. D’autres bateau furent perdus à jamais. Pour finir, les survivants trouvèrent les Terres de Fer et en firent leur nouvelle demeure. Certains disent qu’ils ont été définitivement maudits par ceux qu’ils ont laissé derrière eux.",
+							"quest2": "Un village est frappé par la maladie. Bien que ce mal possède des similitudes avec la peste du Vieux Monde, il ne tue pas ses victimes. Au lieu de cela, celles-ci s’en trouvent changées. Comment est-ce que cette maladie se manifeste ? Pourquoi avez-vous juré d’en trouver le remède ?",
+							"option3": "Le Vieux Monde ne pouvait plus nous nourrir. Nous étions devenus bien trop nombreux. Nous avions abattu toutes les forêts. Nos champs se flétrissaient dans un sol stérile. Les cités et les villages débordaient de personnes désespérées et affamées. Des roitelets se disputaient la moindre miette. Nous jouèrent notre destin sur les flots, pour découvrir les Terres de Fer. Un nouveau monde. Un nouveau départ.",
+							"quest3": "Il y a plusieurs décennies, l’exode pris fin. Depuis cette époque, aucun navire n’est arrivé ici, en provenance du Vieux Monde. Jusqu’à maintenant. Des rumeurs parlent d’un unique navire venant tout juste de traverser le vaste océan, pour venir s’échouer sur les récifs des Îles Barrières. Lorsque vous apprenez le nom de ce navire, vous jurez aussitôt de découvrir ce qu’il est advenu de son équipage. Pourquoi cela est-il aussi important pour vous ?"
+					},
+					"Iron": {
+							"name": "Le Fer",
+							"option1": "Les imposantes collines et montagnes des Terres de Fer sont riches en minerai de fer. Le plus prisé d’entre eux est le fer noir, ou métal-étoile.",
+							"quest1": "La caravane, en partance pour les lointaines terres du sud, a quitté le village minier à la dernière saison, mais elle n’a jamais atteint sa destination. Elle transportait un chargement de fer noir. Pour quelle raison retrouver cette caravane perdue est important pour vous ?",
+							"option2": "Le climat est maussade. La pluie et le vent marin rentrent loin dans les terres. Les hivers sont longs et glaciaux. L’un des premiers colons fit ce triste constat « Seuls ceux qui sont faits de fer oseraient vivre en ce lieu infâme » – et c’est ainsi que ces terres reçurent leur nom.",
+							"quest2": "La récolte a été maigre. Les chutes de neige ininterrompues on isolé le village. Les réserves s’épuisent vite. Qu’allez-vous faire pour permettre aux villageois de survivre à la mauvaise saison ?",
+							"option3": "De mystérieux piliers de métal sont dispersés dans le paysage. De couleur gris fer, ils sont aussi lisse que les galets d’une rivière. Personne ne connaît leur fonction. Certains affirment qu’ils sont aussi anciens que le monde lui-même. D’autres, comme les Prêtre du Fer, les vénèrent en jurant des voeux à leur contact. La plupart des colons font le signe de protection en les apercevant, avant de hâter le pas. Les piliers ne se corrodent pas et même les lames les plus affûtées se montrent incapables d’y laisser la moindre marque.",
+							"quest3": "Vos rêves sont hantés des visions d’un pilier qui se dresse au milieu d’un paysage étrange. Que voyez-vous ? Pourquoi avez-vous juré de le trouver ?"
+					},
+					"Legacies": {
+							"name": "Les Héritages",
+							"option1": "Nous sommes les premiers humains à arpenter ces terres.",
+							"quest1": "Dans les écrits de l’un des premiers colons, on trouve la description d’une clairière située au coeur des Sylves Profondes. Les esprits qui protègent ce lieu sont réputés prodiguer des bénédictions miraculeuses. Quel bienfait dispensent-ils ?",
+							"option2": "D’autres humains étaient parvenus ici, en naviguant depuis le Vieux Monde, il y a des siècles de cela, mais tout ce qu’il reste d’eux est un peuple sauvage et sanguinaire, que nous appelons les brisés. Est-ce aussi votre sort que de finir comme eux ?",
+							"quest2": "Vous trouvez un enfant – l’un de ces brisés. Il est blessé et pourchassé par les autres membres de son peuple. Allez-vous le protéger, au risque de vous attirer le courroux des tribus de brisés ?",
+							"option3": "Avant les peuples du fer, avant-même les premiers-nés, un autre peuple vivait ici. Leurs ruines antiques se retrouvent dans toutes les Terres de Fer.",
+							"quest3": "Des mineurs ont excavé une ruine souterraine. Peu après, les villageois ont commencé à être hanté par des rêves étranges. Les ruines semblent les appeler, selon eux. Plusieurs d’entre eux ont disparu dans ce sombre lieu ancien – parmi lesquels une personne qui vous est chère."
+					},
+					"Communities": {
+							"name": "Les Communautés",
+							"option1": "Nous sommes bien peu sur ces terres maudites. Nombre d’entre nous n’auront jamais de contact avec quiconque en dehors de notre ferme ou de notre village, les étrangers sont donc considérés avec une profonde suspicion.",
+							"quest1": "Au plus fort de l’hiver, un homme désespéré arrive dans une ferme isolée par la neige. Il est blessé, affamé et pratiquement mort de froid. Toute sa famille a été enlevée. Par qui ? Serez-vous assez brave pour affronter l’hiver impitoyable et aller les sauver ?",
+							"option2": "Nous vivons au sein de communautés appelées cercles. Ce sont des colonies allant de la taille d’une ferme de quelques familles, jusqu’à des villages pouvant atteindre plusieurs centaines d’habitants. Certains cercles appartiennent à des peuples nomades. D’autres cercles plus puissants regroupent plusieurs hameaux. Nous commerçons (et parfois bataillons) avec les autres cercles.",
+							"quest2": "Une querelle opposant deux cercles depuis des décennies a dégénéré en conflit armé. Quelle est la cause de cette dispute ? Allez-vous rejoindre le combat, ou jurer d’y mettre un terme ?",
+							"option3": "Nous avons forgé les Terres de Fer pour en faire notre demeure. Les villages situés dans les Havres sont reliés par des routes bien entretenues. Les caravanes de marchands se déplacent entre les différentes colonies réparties dans les Havres et les autres régions périphériques. Mais même ainsi, une grande partie de ce territoire reste indompté.",
+							"quest3": "Les caravanes sont contraintes de payer un droit de passage, le long des routes commerciales. Cette taxe, qui s’élève à un quart des marchandises transportées, laisse plusieurs communautés avec des réserves hivernales insuffisantes. Qui prélève cette taxe ? Comment comptez-vous régler cette injustice ?"
+					},
+					"Leaders": {
+							"name": "Les Meneurs",
+							"option1": "Les façons de gouverner sont aussi variées que les peuples. Certaines communautés sont dirigées par le chef d’une puissante famille. Ou bien, par un conseil des anciens qui prend les décisions et juge les litiges. Chez quelques-uns, les prêtres ont une autorité morale. Chez les derniers, ce sont les duels au milieu du cercle qui décident de tout.",
+							"quest1": "Dans vos rêves enfiévrés, vous voyez sans cesse une ville situé dans les Terres de Fer. Elle possède un solide muraille de pierre, des marchés animés et un donjon perché sur une haute colline. Ses habitants sont innombrables ! Nulle part dans toutes les Terres de Fer, une telle ville n’existe. Mais dans vos rêves, vous êtes le dirigeant de cette ville. Vous ne savez comment, mais quoi qu’il vous en coûte, vous devez absolument faire de cette vision une réalité.",
+							"option2": "Chacune de vos communautés possède son propre meneur, appelé le jarl. Tous les sept printemps, la communauté confirme son jarl actuel ou s’en choisit un nouveau. Certains jarls acceptent malgré eux d’être coiffés d’un bandeau de fer, tandis que des ambitieux tentent de s’en emparer par le complot ou par la menace.",
+							"quest2": "Une jarl est tombée gravement malade. Sans aide, elle est certaine de mourir, puisque le guérisseur du village n’a jamais vu une telle maladie. Celui-ci suspecte que le poison, voire une magie impie, est à l’origine de ce mal. Les familles de cette communauté sont désormais divisées en factions prêtes à tout pour que le bandeau de fer se pose sur la tête de leur candidat. Parviendrez-vous à découvrir la vérité sur la maladie de la jarl et à lui rendre la santé ?",
+							"option3": "De nombreux chefs de clans sont à la tête de petits domaines. La plupart d’entre eux ambitionnent d’être couronnés roi de toute la région. Leurs querelles causeront notre perte.",
+							"quest3": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two wheVous possédez en secret une moitié de la Couronne Véritable, une relique du Vieux Monde. Il y a des siècles de cela, cette couronne fût brisée en deux fragments, lorsque la hache d’un assassin fendit le crâne du dirigeant suprême. Vous êtes l’un des descendants de cette lignée. Qui vous a confié cette relique ? Allez-vous chercher l’autre moitié de la couronne brisée pour tenter de réunir les clans sous votre bannière ? Ou comptez-vous la placer sur la tête d’une autre personne ?"
+					},
+					"Defense": {
+							"name": "Les Défenses",
+							"option1": "Ici dans les Terres de Fer, les ressources sont trop précieuses et le territoire bien trop dépeuplé, pour soutenir la création de forces armées organisées. Quand une communauté est menacée, ses membres se réunissent pour la protéger eux-mêmes.",
+							"quest1": "Un village se montre incapable, ou réticent, à se défendre contre une menace imminente. Pour quelle raison ? Quel est le péril auquel ils font face ? Qu’allez-vous faire pour les protéger ?",
+							"option2": "Les gardiens sont vos soldats, vos gardes et votre milice. Ils servent les communautés en tant que sentinelles, en patrouillant dans les territoires alentours et en organisant les défenses en temps de crise. La plupart ont des liens forts avec leur communauté. D’autres, appelées les gardiens libres, sont des mercenaires en maraude qui monnayent leurs services auprès des communautés ou des caravanes.",
+							"quest2": "Vous découvrez une gardienne mourante. Celle-ci vous révèle une importante mission, en vous chargeant de la mener à bien. « Jure-le moi », dit-elle, en vous tendant une main ensanglantée qui serre un objet crucial à votre quête. De quoi s’agit-il ?",
+							"option3": "Nos troupes se sont ralliés pour frapper l’ennemi ou pour défendre notre territoire. Bien que pâles en comparaison des armées qui parcouraient autrefois le Vieux Monde, ces forces sont bien entraînées et aussi bien équipées que leurs communautés peuvent se le permettre. Nos bannières sont décorées des figures de l’Histoire du Vieux Monde et de nos victoires dans les Terres de Fer.",
+							"quest3": "L’une des troupes a été massacrée, lors d’un combat contre un ennemi implacable. Quelle est votre lien avec cette troupe ? Qui les a vaincu ? Allez-vous porter leur bannière, en quête de vengeance ou allez-vous ramener leurs corps dans leur communauté, pour qu’ils soient inhumés avec les honneurs ?"
+					},
+					"Mysticism": {
+							"name": "Le Mysticisme",
+							"option1": "Certains parviennent à trouver du réconfort dans les traditions. Ils font appel à des mystiques pour leur révéler le destin de leurs nouveaux-nés, ou leurs demandent de mener à bien des rituels censés leur assurer des récoltes abondantes. D’autres agissent par superstition, envers ceux qu’ils estiment avoir des pouvoirs. Toutefois, la plupart estiment que la véritable magie - si elle a bien existé - est désormais perdue pour les mortels.",
+							"quest1": "Une personne proche de vous est accusée d’avoir maudit un village, en provoquant la perte de leurs récoltes et en faisant tomber le bétail malade. Quelles sont les preuves de son implication ? Défendrez-vous cette personne et parviendrez-vous à découvrir la véritable cause des ennuis du village ?",
+							"option2": "La magie est rare et dangereuse, mais les quelques élus à posséder le don sont redoutablement doués.",
+							"quest2": "Vous avez entendu des rumeurs sur une personne détenant un véritable pouvoir. On prétend qu’elle vit dans un lointain village isolé. Qui vous a parlé de ce mystique ? Son pouvoir est-il craint ou respecté ? Pourquoi avez-vous juré d’aller le trouver ?",
+							"option3": "La magie irrigue ces terres comme les torrents qui dévalent les collines. Son pouvoir s’offre à ceux qui choisissent de le dompter, mais même la plupart des colons connaissent souvent un rituel ou deux leur étant utile.",
+							"quest3": "Une personne que vous aimez a suivie la voie du pouvoir, pour lui succomber. Qui était cette personne ? Pourquoi a-t-elle basculé dans les ténèbres ? Où se trouve-t-elle maintenant ? Cherchez-vous à la sauver ou à la vaincre ?"
+					},
+					"Religion": {
+							"name": "Religion",
+							"option1": "Quelques-uns des Peuples du Fer se signent toujours ou marmonnent des prières par habitude ou par tradition, mais la plupart estiment que les dieux les ont depuis longtemps abandonnés.",
+							"quest1": "Un femme charismatique, encourage ses adeptes à renier les vestiges des religions du Vieux Monde, en proposant une nouvelle voie pour ce monde nouveau. Quel doctrine enseigne-t-elle ? Que cherche-t-elle à accomplir ? Avez-vous juré de l’aider ou de l’en empêcher",
+							"option2": "Le peuple honore les anciens dieux comme les nouveaux. En ces terres impitoyables, une prière est un simple mais puissant réconfort.",
+							"quest2": "Un villageois est déterminé à se rendre en pèlerinage dans un territoire hostile. Quel est le sanctuaire qu’il cherche à atteindre ? Pourquoi avez-vous juré de l’aider durant son voyage ? Qui cherche à l’arrêter et pourquoi ?",
+							"option3": "Nos dieux sont nombreux. Ils se manifestent par des apparitions et des miracles. Certains disent même qu’ils marchent parmi nous. Les prêtres se font le relais de la volonté des dieux et exercent une autorité morale sur de nombreuses communautés.",
+							"quest3": "Vous portez la marque d’un dieu. En quoi consiste-t-elle ? Les prêtres ont décrété qu’il s’agissait d’un signe prouvant que vous êtes celui qui accomplira une prophétie. Acceptez-vous ce destin, en jurant de précipiter son avènement ou au contraire, êtes-vous déterminé à l’éviter à tout prix ? Quelle force s’oppose à vous ?"
+					},
+					"Firstborn": {
+							"name": "Les Premiers-nés",
+							"option1": "Les premiers-nés sont passés dans la légende. Certains disent que les derniers descendants des anciennes tribus vivent toujours dans les profondes forêts ou sur les plus hautes montagnes. La plupart estiment qu’ils ne sont rien d’autre que des mythes.",
+							"quest1": "Une personne obsédée par les premiers-nés cherche à trouver des preuves de leur existence. Cela lui demandera de lancer une expédition dans les confins des Terres de Fer. Quel sera votre rôle dans cette mission ?",
+							"option2": "Les premiers-nés vivent en autarcie et protègent jalousement leur territoire.",
+							"quest2": "Un elfe, devenu un paria pour ses semblables, vit désormais dans l’un des Peuples du Fer. Au fil du temps, il est devenu l’un des membres de la communauté. Mais il est désormais mourant. Il se languit de retrouver une dernière fois son peuple avant de rendre l’âme. Cherche-t-il l’absolution ou la justice ? Pourquoi avez-vous juré de l’aider ? Quelles forces s’opposent à son retour ?",
+							"option3": "Les premiers-nés dominent les Terres de Fer. Les elfes des forêts profondes et les géants des collines nous tolèrent et commercent même avec nous - du moins pour l’instant. Mais les Peuples du Fer craignent l’arrivée du jour où les humains ne seront plus les bienvenus sur ce territoire.",
+							"quest3": "Les humains et les géants sont sur le point d’entrer en guerre. Que s’est-il produit ? Dans quel camp vous situez-vous ? Quelque-chose peut-il être tenté pour désamorcer la situation ?"
+					},
+					"Beasts": {
+							"name": "Les Bêtes",
+							"option1": "Les bêtes primales sont tout sauf des légendes. Les quelques rares humains qui se sont aventuré dans les forêts profondes et les hautes montagnes en sont revenus avec des récits d’épouvantes parlant de créatures monstrueuses, mais ils sont clairement délirants. De telles choses ne peuvent exister.",
+							"quest1": "Vous avez été le témoin d’une attaque par ce que vous croyez être un gigantesque animal. Personne ne vous croit. En fait, c’est vous qui êtes accusé du meurtre que vous imputez à cette bête. Comment allez-vous prouver votre innocence ? Pouvez-vous ne serait-ce que faire confiance à votre mémoire de ces événements ?",
+							"option2": "Des bêtes monstrueuses rôdent dans les territoires sauvages de Terres de Fer.",
+							"quest2": "Une personne influente est obsédée par sa vengeance personnelle contre une certaine bête. En quoi cette créature est elle particulière ? Comment a-t-elle mérité le courroux de cette personne ? Allez-vous l’aider dans sa quête ou au contraire, tenter de faire en sorte que sa rage aveugle ne détruise bien plus que cette simple bête ?",
+							"option3": "Des bêtes de toutes sortes rôdent dans les Terres de Fer. On les trouve principalement dans les confins, mais leur territoire de chasse s’étend jusque dans les territoires colonisés. C’est là qu’elles attaquent souvent le bétail, mais aussi les voyageurs, les caravanes, voire les villages eux-mêmes.",
+							"quest3": "Des tueurs professionnels ont pour mission de tuer les bêtes. L’une d’entre eux est célèbre dans toutes les Terres de Fer pour ses nombreux trophées, a disparu durant une battue de chasse. A-t-elle finalement trouvé un proie plus forte qu’elle ou quelque-chose de plus sinistre est-il à l’oeuvre ? Quel lien avez-vous avec elle ?"
+					},
+					"Horrors": {
+							"name": "Les Horreurs",
+							"option1": "Tout cela ne sont que des histoires pour faire peur aux enfants.",
+							"quest1": "Les meurtres ont débuté à la saison dernière. Les rumeurs locales évoquent l’oeuvre d’une horreur vengeresse, mais des forces plus banales sont peut-être impliquées. Quel est votre lien avec ces tueries ? Que ferez-vous pour les stopper ?",
+							"option2": "Nous craignons les sombres forêts et les cours d’eau profonds, où les monstres rôdent. Au coeur de la longue nuit, lorsque le monde est plongé dans les ténèbres, seuls les fous s’aventurent hors de chez eux.",
+							"quest2": "Vous portez les cicatrices de l’attaque d’une horreur. Quelle était-elle ? S’agit-il de cicatrices physiques, émotionnelles ou les deux ? La mort rôde, dans les Terres de Fer. La nuit tombée nous allumons des torches, nous répandons du sel et nous postons des sentinelles sur les palissades. Mais ce n’est jamais assez. Elles reviennent toujours.Comment cherchez-vous à regagner votre intégrité ?",
+							"option3": "La mort rôde, dans les Terres de Fer. La nuit tombée nous allumons des torches, nous répandons du sel et nous postons des sentinelles sur les palissades. Mais ce n’est jamais assez. Elles reviennent toujours.",
+							"quest3": "Un groupe de colons a fondé un village dans un territoire maudit par une horreur virulente. Quel mal ravage ces terres ? Pourquoi est-ce que les colons sont déterminés à s’installer ici ? Allez-vous les aider ou au contraire, allez vous tenter de les forcer à abandonner cette folie ?"
+					}
+			},
+			"OracleCategories": {
+					"Action and Theme Oracles": "Oracles d'action et de thème",
+					"Other Names": "Autres noms",
+					"Place Oracles": "Place Oracles",
+					"Settlement Name": "Oracles de lieu",
+					"Quick Settlement Name Generator": "Générateur rapide de noms d'établissements",
+					"Turning Point Oracles": "Oracles du point tournant",
+					"Character Oracles": "Oracles de personnages",
+					"Core Oracles": "Oracles de base",
+					"Creature Basic Form": "Forme de base de la créature",
+					"Creature Oracles": "Oracles de créatures",
+					"Derelict Type (by location)": "Type d'abandon (par lieu)",
+					"Derelict Zones": "Zones abandonnées",
+					"Derelict Oracles": "Oracles abandonnés",
+					"Faction Name": "Nom de la faction",
+					"Faction Oracles": "Oracles de factions",
+					"Step 5: Board Your Starship": "Étape 5 : Embarquez à bord de votre vaisseau",
+					"Create Your Character": "Créez votre personnage",
+					"Build Your Starting Sector": "Construisez votre secteur de départ",
+					"Begin Your Adventure": "Commencez votre aventure",
+					"Launching Your Campaign": "Lancer votre campagne",
+					"Location Theme Oracles": "Oracles de thème de localisation",
+					"Miscellaneous Oracles": "Oracles divers",
+					"Desert World": "Monde désertique",
+					"Furnace World": "Monde de la fournaise",
+					"Grave World": "Monde des tombes",
+					"Ice World": "Monde de glace",
+					"Jovian World": "Monde Jovien",
+					"Jungle World": "Monde de la jungle",
+					"Ocean World": "Monde de l'océan",
+					"Rocky World": "Monde rocheux",
+					"Shattered World": "Monde brisé",
+					"Tainted World": "Monde contaminé",
+					"Vital World": "Monde vital",
+					"Planetside Peril": "Le péril de Planetside",
+					"Planetside Opportunity": "Opportunité à Planetside",
+					"Planet Oracles": "Planète Oracles",
+					"Precursor Vault Oracles": "Oracles de la chambre forte du précurseur",
+					"Settlement Oracles": "Oracles d'établissement",
+					"Space Sighting": "Observation de l'espace",
+					"Space Encounter Oracles": "Oracles de rencontre de l'espace",
+					"Starship Mission": "Mission du vaisseau",
+					"Starship Oracles": "Oracles du vaisseau",
+					"Factions of the Isles": "Factions des îles",
+					"Beasts of the Isles": "Bêtes des îles",
+					"Adventures Among the Isles": "Aventures parmi les îles",
+					"Cave Scale": "Échelle de la grotte",
+					"Sea Cave Details": "Détails de la grotte marine",
+					"Inland Cave Details": "Détails de la grotte intérieure",
+					"Cave Oracles": "Oracles de la grotte",
+					"Character Role Details": "Détails sur le rôle du personnage",
+					"Cursed Moniker": "Monogramme maudit",
+					"Society": "Société",
+					"Organization": "Organisation",
+					"Empire": "Empire",
+					"The Cursed": "Les maudits",
+					"Affluence": "L'opulence",
+					"Craft": "Artisanat",
+					"Discovery": "Découverte",
+					"Faith": "Foi",
+					"Loyalty": "Loyauté",
+					"Mysticism": "Mysticisme",
+					"Rebellion": "Rébellion",
+					"Secrecy": "Secret",
+					"War": "Guerre",
+					"Curses": "Malédictions",
+					"Faction Name: Themes": "Nom de la faction : Thèmes",
+					"Take Command": "Prendre le commandement",
+					"Chart Your Course": "Tracez votre chemin",
+					"Getting Underway": "Mise en route",
+					"Vitality": "Vitalité",
+					"Island Landscape": "Paysage de l'île",
+					"Visible Habitation": "Habitation visible",
+					"Nearby Islands": "Îles proches",
+					"Island Oracles": "Oracles de l'île",
+					"Magnitude": "Ampleur",
+					"Local Seas": "Mers locales",
+					"Overland Waypoints": "Points de repère terrestres",
+					"Region Landmarks": "Points de repère de la région",
+					"Overland Oracles": "Oracles de l'arrière-pays",
+					"Ruin Oracles": "Oracles de ruine",
+					"Known Waters": "Eaux connues",
+					"Unknown Waters": "Eaux inconnues",
+					"Seafaring Waypoints": "Points de repère maritimes",
+					"Seafaring Oracles": "Oracles marins",
+					"Settlement Size": "Taille de l'établissement",
+					"Settlement Controlling Faction": "Faction contrôlant l'établissement",
+					"Settlement Identity": "Identité de l'établissement",
+					"Settlement Focus": "L'accent mis sur le règlement",
+					"Ship Position": "Position du navire",
+					"Ship Controlling Faction": "Faction contrôlant le navire",
+					"Ship Mission": "Mission du navire",
+					"Ship Oracles": "Oracles des navires",
+					"Shipwreck Position": "Position du naufrage",
+					"Shipwreck Orientation": "Orientation des naufrages",
+					"Shipwreck Oracles": "Oracles de naufrage",
+					"Treasure Value": "Valeur du trésor",
+					"Treasure Oracles": "Oracles du trésor",
+					"Weather Conditions": "Conditions météorologiques",
+					"Weather Oracles": "Oracles météorologiques",
+					"Access": "Accès",
+					"Action and Theme": "Action et Thème",
+					"Ask the Oracle": "Demander à l'Oracle",
+					"Basic Form": "Forme Basique",
+					"Challenge Rank": "Niveau de Challenge",
+					"Chaotic": "Chaotique",
+					"Character Creation": "Création de personnage",
+					"Character Name": "Nom du personnage",
+					"Character": "Personnage",
+					"Characters": "Personnages",
+					"Combat Event": "Évènement de combat",
+					"Community": "Communauté",
+					"Core": "Core",
+					"Creatures": "Créatures",
+					"Delve the Depths": "Fouiller les Profondeurs",
+					"Derelicts": "Derelicts",
+					"Desert": "Désert",
+					"Engineering": "Engineering",
+					"Factions": "Factions",
+					"Feature": "Feature",
+					"Fortified": "Fortifié",
+					"Furnace": "Fourneau",
+					"Grave": "Tombe",
+					"Haunted": "Hanté",
+					"Ice": "Glace",
+					"Infested": "Infesté",
+					"Inhabited": "Inhabited",
+					"Interior": "Intérieur",
+					"Ironlander": "Ironlander",
+					"Jovian": "Jovien",
+					"Jungle": "Jungle",
+					"Living": "Vivant",
+					"Location Themes": "Thèmes des lieux",
+					"Mechanical": "Mécanique",
+					"Medical": "Médical",
+					"Misc": "Divers",
+					"Mission": "Mission",
+					"Moves": "Actions",
+					"Monstrosity": "Monstruosité",
+					"Name": "Nom",
+					"Ocean": "Océan",
+					"Operations": "Opérations",
+					"Opportunity": "Opportunité",
+					"Other": "Autre",
+					"Peril": "Péril",
+					"Place": "Lieu",
+					"Planets": "Planètes",
+					"Population": "Population",
+					"Production": "Production",
+					"Quick Name": "Surnom",
+					"Research": "Recherche",
+					"Rocky": "Rocheux",
+					"Ruined": "En Ruines",
+					"Sacred": "Sacré",
+					"Sanctum": "Sanctuaire",
+					"Sector Name": "Nom du Secteur",
+					"Settlement": "Colonie",
+					"Settlements": "Colonies",
+					"Shattered": "Éclaté",
+					"Sighting": "Observation",
+					"Site Name": "Nom du Site",
+					"Site Nature": "Nature du Site",
+					"Space": "Espace",
+					"Starships": "Vaisseaux",
+					"Tainted": "Teinté",
+					"Threat": "Menace",
+					"Trap": "Piège",
+					"Turning Point": "Moment Décisif",
+					"Type": "Type",
+					"Vaults": "Coffres",
+					"Vital": "Vital",
+					"Zones": "Zones",
+					"Custom": "Oracles personnalisés"
+			},
+			"Asset Categories": {
+					"Custom": "Ressources personnalisées",
+					"Classic": {
+							"Companion Assets": {
+									"Title": "Compagnon",
+									"Description": "Les compagnons sont vos assistants PNJ. Lorsque vous acquérez un compagnon, donnez-lui un nom et imaginez son apparence et sa personnalité. S'ils n'ont pas de capacité de départ, choisissez-en une. L'amélioration d'un compagnon active des capacités supplémentaires.\n\nLes compagnons utilisent une piste de santé et peuvent subir des dommages à la suite de l'une de vos actions. Lorsque votre compagnon subit des dégâts, effectuez le mouvement [Companion Endure Harm](Ironsworn/Moves/Suffer/Companion_Endure_Harm) (page 94) pour déterminer le résultat. Voir page 43 pour en savoir plus."
+							},
+							"Path Assets": {
+									"Title": "Voies",
+									"Description": "Les voies représentent votre background, vos intérêts, votre formation et vos compétences. Ils offrent des avantages mécaniques et narratifs, mais reflètent également qui vous êtes et comment vous interagissez avec le monde. Par exemple, un **Ritualiste** aurait probablement une vision différente de celle d'un **Veteran**. Choisir ces deux voies peut refléter une évolution de votre personnage ou un parcours intéressant."
+							},
+							"Combat Talent Assets": {
+									"Title": "Talent de Combat",
+									"Description": "Les personnages *Ironsworn* sont supposés être des combattants qualifiés. Même sans talent de combat, vous pouvez manier des armes et effectuer des mouvements de combat (page 78). Un talent de combat reflète un domaine d'expertise particulier et vous offre des options et des bonus supplémentaires.\n\nLes atouts des talents de combat nécessitent généralement que vous maniez une arme spécifique, comme indiqué dans le texte de l'actif. Par exemple, si vous êtes un **Shield-Bearer** et que vous n'avez pas de bouclier à portée de main, vous ne pouvez pas utiliser les capacités de cet atout."
+							},
+							"Ritual Assets": {
+									"Title": "Rituels",
+									"Description": "La magie dans *Ironsworn* est lancée à travers des rituels qui aident à soutenir vos actions ou agissent comme des mouvements uniques. Comme tous les atouts, les rituels peuvent être sélectionnés au fur et à mesure que vous gagnez de l'expérience et peuvent être améliorés au fil du temps pour les rendre plus flexibles ou plus puissants.\n\nTous les rituels utilisent une action comme capacité marquée par défaut. Vous devez effectuer cette action et le jet d'action associé pour déclencher l'effet. Toutes les capacités secondaires que vous gagnez en améliorant l'actif dépendent de l'exécution du rituel décrit comme la capacité par défaut."
+							}
+					},
+					"Starforged": {
+							"Command Vehicle Assets": {
+									"Title": "Véhicule de Commandement",
+									"Description": "Le **véhicule de commandement** est votre vaisseau interstellaire. Il s'agit d'un atout par défaut pour votre personnage, pris lorsque vous commencez votre campagne. Si vous jouez à plusieurs, il s'agit d'un atout partagé ; chacun d'entre vous peut utiliser les capacités du STARSHIP lorsqu'il est à bord du vaisseau. Le véhicule de commandement a un compteur d'intégrité et commence à 5 d'intégrité. Lorsque votre STARSHIP est touché, faites le mouvement @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} pour voir ce qui se passe."
+							},
+							"Module Assets": {
+									"Title": "Module",
+									"Description": "Les **Modules** sont liés à votre vaisseau spatial et offrent des options et des avantages supplémentaires à bord de ce véhicule.\n\nCes atouts sont gagnés et gérés par un seul personnage. Ils peuvent être partagés avec des alliés, mais seulement s'il est pratique pour eux d'en faire usage (tout le monde ne sait pas forcément comment utiliser un LABORATOIRE DE RECHERCHE).\n\n- Lorsque vous @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} et que vous marquez un échec, vous pouvez marquer un module comme cassé pour éviter tout danger supplémentaire pour votre STARSHIP. Retournez la carte pour indiquer qu'elle est cassée. Un module cassé ne peut pas être utilisé tant que vous n'avez pas réussi à le @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair}."
+							},
+							"Support Vehicle Assets": {
+									"Title": "Véhicule de soutien",
+									"Description": "**Les véhicules de soutien** complètent votre véhicule de commandement pour les opérations sur la planète ou à courte distance. Si vous jouez à plusieurs, l'un d'entre vous peut être le pilote ou le propriétaire d'un véhicule de soutien, mais tous ceux qui sont à bord peuvent utiliser ses capacités en fonction de la situation.n Comme pour le véhicule de commandement, vos véhicules de soutien ont des compteurs d'intégrité. L'intégrité maximale varie en fonction du type de véhicule. Lorsqu'un véhicule de soutien est confronté à une situation ou un environnement dommageable, vous devez @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} pour voir comment il s'en sort."
+							},
+							"Path Assets": {
+									"Title": "Chemin d'accès",
+									"Description": "Les **chemins** sont votre passé, vos intérêts, votre formation, vos compétences, vos pouvoirs et votre équipement clé. Elles offrent des avantages mécaniques et narratifs, mais reflètent aussi qui vous êtes et comment vous interagissez avec le monde. Lorsque vous créerez votre personnage dans le chapitre suivant, vous sélectionnerez au moins deux voies pour commencer. Certaines voies représentent vos compétences avec un style d'arme ou une pièce d'équipement caractéristique. Si vous voyez une condition en haut de la carte d'atout, comme « Si vous maniez une arme blanche... », l'atout n'est utilisable que lors d'une action utilisant cet objet."
+							},
+							"Companion Assets": {
+									"Title": "Compagnon",
+									"Description": "**Les compagnons sont des PNJ qui vous aident. Lorsque vous obtenez un compagnon, donnez-lui un nom et imaginez son apparence et sa personnalité. Les compagnons utilisent une jauge de santé qui peut être réduite si un résultat les met en danger. Lorsque votre compagnon est en danger, faites le mouvement @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit}. Lorsque sa santé est à 0, il risque d'être tué ou détruit."
+							},
+							"Deed Assets": {
+									"Title": "Hauts faits",
+									"Description": "**Les hauts faits** représentent les réalisations et les situations notables de votre histoire, et la façon dont ces événements changent votre personnage. Les hauts faits ont une exigence indiquée en haut de la carte, formulée comme « Une fois que vous avez [blank] ». Vous ne pouvez pas dépenser d'expérience pour acquérir un acte tant que vous n'avez pas rempli cette condition, et vous ne pouvez pas choisir un acte lors de la création de votre personnage."
+							}
+					},
+					"Sundered_isles": {
+							"Companion Assets": {
+									"Title": "Compagnon",
+									"Description": ""
+							},
+							"Deed Assets": {
+									"Title": "Hauts faits",
+									"Description": ""
+							},
+							"Module Assets": {
+									"Title": "Module",
+									"Description": ""
+							},
+							"Path Assets": {
+									"Title": "Chemin d'accès",
+									"Description": ""
+							},
+							"Command Vehicle Assets": {
+									"Title": "Véhicule de Commandement",
+									"Description": ""
+							},
+							"Support Vehicle Assets": {
+									"Title": "Véhicule de soutien",
+									"Description": ""
+							}
+					}
+			},
+			"NpcCategories": {
+					"Ironlanders": {
+							"Name": "Les hommes de fer",
+							"Description": "Les habitants du Pays du Fer sont les humains qui peuplent ces terres. À moins que votre histoire ne mette l'accent sur des aventures en dehors des régions habitées, la majorité de vos interactions se feront avec des habitants de la Terre de Fer.\nCette section couvre quelques grandes catégories d'habitants de la Terre de Fer. Elles ne sont pas représentatives de la variété des peuples et des cultures de ces terres. Lorsque vous êtes obligé de combattre un Ironlander et que vous devez déterminer son rang, vous pouvez @Compendium[foundry-ironsworn.ironswornoracles.b2c23660dbcfe5b2]{Interroger l'Oracle}, ou suivre les directives suivantes :\n * Un citoyen ordinaire ou une brute est __troubleome__.\n * Un guerrier entraîné est __dangerous__.\n * Un guerrier puissant ou un vétéran est __formidable__."
+					},
+					"Firstborn": {
+							"Name": "Premier-né",
+							"Description": "Les premiers-nés vivaient ici bien avant que les humains ne débarquent sur ces côtes. Les humains, dans leur arrogance, ont nommé cette péninsule les Terres de Fer et se sont appelés eux-mêmes les Terriens de Fer, mais les premiers-nés lui ont donné des noms qui leur sont propres, à une époque où la mémoire n'est pas encore disponible."
+					},
+					"Animals": {
+							"Name": "Animaux",
+							"Description": "Les animaux sont les créatures ordinaires qui vivent dans les Terres de Fer. Certains animaux sont originaires de ces terres; d'autres étaient également communs dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}.\nLa plupart des animaux sauvages sont peureux et ne représentent pas une menace pour les humains. Ces créatures n'ont pas de rang et on peut les attaquer ou interagir avec elles en utilisant les mouvements appropriés. Par exemple, @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} peut représenter la chasse au cerf ou au petit gibier.\nQuelques exceptions notables - les prédateurs, les créatures agressives et les animaux entraînés au combat - sont notées ici."
+					},
+					"Beasts": {
+							"Name": "Bêtes",
+							"Description": "Les bêtes sont des créatures monstrueuses de grande taille et de grande puissance. Ce sont des êtres naturels - et non des entités surnaturelles - mais ils étaient inconnus dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Ancien Monde}."
+					},
+					"Horrors": {
+							"Name": "Horreurs",
+							"Description": "Les horreurs sont des entités surnaturelles. Dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}, elles étaient des superstitions et des légendes. Ici, ce sont des cauchemars qui deviennent réalité. Les Terres de Fer sont un terrain fertile pour que les ténèbres et le mal s'installent, engendrant ces êtres morts-vivants de pure vengeance ou de haine aveugle.\nDe nombreuses horreurs peuvent être temporairement vaincues par des attaques physiques, mais ne peuvent pas être tuées. Elles sont au-delà de la mort."
+					},
+					"Anomalies": {
+							"Name": "Anomalies",
+							"Description": "Une magie ancienne imprègne les Terres de Fer. Ces forces se manifestent parfois sous la forme d'une anomalie, c'est-à-dire d'une caractéristique du terrain ou de l'environnement qui appartient à un autre monde. Certaines sont l'incarnation d'esprits anciens et ont des motivations inconnues. D'autres sont des forces de la nature auxquelles on a donné un but cruel."
+					},
+					"Sample NPCs": {
+							"Name": "Exemples de PNJ",
+							"Description": ""
+					}
+			},
+			"NpcNatures": {
+					"Ironlander": "Homme de fer",
+					"Firstborn": "Premier-né",
+					"Animal": "Animal",
+					"Beast": "Bête",
+					"Horror": "Horreur",
+					"Anomaly": "Anomalie",
+					"Monster": "Monstre",
+					"Machine": "Machine",
+					"Human": "Humain",
+					"Creature": "Créature",
+					"Vehicle": "Véhicule"
+			},
+			"ROLLTABLE": {
+					"TypeOracle": "Oracle"
+			},
+			"ROLLTABLES": {
+					"TypeOracle": "Oracles"
+			},
+			"SCENE": {
+					"TypeSector": "Secteur"
+			},
+			"SCENES": {
+					"TypeSector": "Secteurs"
+			},
+			"ACTOR": {
+					"SheetCompact": "Compact",
+					"SheetFoe": "Énemi",
+					"SheetStarforgedLocation": "Starforged Location",
+					"SubtypeDerelict": "Épave",
+					"SubtypePlanet": "Planète",
+					"SubtypeSettlement": "Colonie",
+					"SubtypeStar": "Étoile",
+					"SubtypeVault": "Chambre forte de précurseurs",
+					"TypeCharacter": "Personnage",
+					"TypeFoe": "PNJ",
+					"TypeLocation": "Lieu",
+					"TypeShared": "Feuille partagée",
+					"TypeDelveSite": "Site de fouilles",
+					"TypeStarship": "Vaisseau spatial"
+			},
+			"ACTORS": {
+					"SubtypeDerelict": "Épaves",
+					"SubtypePlanet": "Planètes",
+					"SubtypeSettlement": "Colonies",
+					"SubtypeStar": "Étoiles",
+					"SubtypeVault": "Chambres forte de précurseurs",
+					"TypeCharacter": "Personnages",
+					"TypeFoe": "PNJs",
+					"TypeLocation": "Lieux",
+					"TypeDelveSite": "Sites de fouilles",
+					"TypeStarship": "Vaisseaux spatiaux"
+			},
+			"ITEM": {
+					"SubtypeConnection": "Connexion",
+					"SubtypeProgress": "Progrès",
+					"SubtypeVow": "Vœu",
+					"TypeAsset": "Atout",
+					"TypeBond": "Lien",
+					"TypeBondset": "Forger un lien",
+					"TypeDelveDomain": "Domaine du site",
+					"TypeDelveTheme": "Thème du site",
+					"TypeDelveThemeOrDomain": "Thème/domaine du site",
+					"TypeMove": "Action",
+					"TypeProgressTrack": "Jauge de progrès"
+			},
+			"ITEMS": {
+					"SubtypeConnection": "Connexions",
+					"SubtypeProgress": "Progrès",
+					"SubtypeVow": "Vœux",
+					"TypeAsset": "Atouts",
+					"TypeBond": "Liens",
+					"TypeBondset": "Forger des liens",
+					"TypeDelveDomain": "Domaines de site",
+					"TypeDelveTheme": "Thèmes de sites",
+					"TypeMove": "Actions",
+					"TypeProgressTrack": "Jauges de progrès"
+			},
+			"JOURNALENTRYPAGE": {
+					"TypeProgressTrack": "Jauge de progrès",
+					"TypeTruth": "Établir une Vérité",
+					"TypeTruthClassic": "Vérité du monde",
+					"TypeTruthStarforged": "Établir une Vérité"
+			},
+			"JOURNALENTRYPAGES": {
+					"TypeProgressTrack": "Jauges de progrès",
+					"TypeTruth": "Établir les Vérités",
+					"TypeTruthClassic": "Vérités du monde",
+					"TypeTruthStarforged": "Établir les Vérités"
+			},
+			"DELVESITE": {
+					"Danger": "Danger",
+					"Dangers": "Dangers",
+					"Denizen": "Habitant",
+					"Denizens": "Habitants",
+					"Feature": "Caractéristique",
+					"Features": "Caractéristiques",
+					"FREQUENCY": {
+							"VeryCommon": "Très commun",
+							"Common": "Commun",
+							"Uncommon": "Peu commun",
+							"Rare": "Rare",
+							"Unforeseen": "Du jamais vu"
+					}
 			}
-		},
-		"NpcCategories": {
-			"Ironlanders": {
-				"Name": "Les hommes de fer",
-				"Description": "Les habitants du Pays du Fer sont les humains qui peuplent ces terres. À moins que votre histoire ne mette l'accent sur des aventures en dehors des régions habitées, la majorité de vos interactions se feront avec des habitants de la Terre de Fer.\nCette section couvre quelques grandes catégories d'habitants de la Terre de Fer. Elles ne sont pas représentatives de la variété des peuples et des cultures de ces terres. Lorsque vous êtes obligé de combattre un Ironlander et que vous devez déterminer son rang, vous pouvez @Compendium[foundry-ironsworn.ironswornoracles.b2c23660dbcfe5b2]{Interroger l'Oracle}, ou suivre les directives suivantes :\n * Un citoyen ordinaire ou une brute est __troubleome__.\n * Un guerrier entraîné est __dangerous__.\n * Un guerrier puissant ou un vétéran est __formidable__."
-			},
-			"Firstborn": {
-				"Name": "Premier-né",
-				"Description": "Les premiers-nés vivaient ici bien avant que les humains ne débarquent sur ces côtes. Les humains, dans leur arrogance, ont nommé cette péninsule les Terres de Fer et se sont appelés eux-mêmes les Terriens de Fer, mais les premiers-nés lui ont donné des noms qui leur sont propres, à une époque où la mémoire n'est pas encore disponible."
-			},
-			"Animals": {
-				"Name": "Animaux",
-				"Description": "Les animaux sont les créatures ordinaires qui vivent dans les Terres de Fer. Certains animaux sont originaires de ces terres; d'autres étaient également communs dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}.\nLa plupart des animaux sauvages sont peureux et ne représentent pas une menace pour les humains. Ces créatures n'ont pas de rang et on peut les attaquer ou interagir avec elles en utilisant les mouvements appropriés. Par exemple, @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} peut représenter la chasse au cerf ou au petit gibier.\nQuelques exceptions notables - les prédateurs, les créatures agressives et les animaux entraînés au combat - sont notées ici."
-			},
-			"Beasts": {
-				"Name": "Bêtes",
-				"Description": "Les bêtes sont des créatures monstrueuses de grande taille et de grande puissance. Ce sont des êtres naturels - et non des entités surnaturelles - mais ils étaient inconnus dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Ancien Monde}."
-			},
-			"Horrors": {
-				"Name": "Horreurs",
-				"Description": "Les horreurs sont des entités surnaturelles. Dans le @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Old World}, elles étaient des superstitions et des légendes. Ici, ce sont des cauchemars qui deviennent réalité. Les Terres de Fer sont un terrain fertile pour que les ténèbres et le mal s'installent, engendrant ces êtres morts-vivants de pure vengeance ou de haine aveugle.\nDe nombreuses horreurs peuvent être temporairement vaincues par des attaques physiques, mais ne peuvent pas être tuées. Elles sont au-delà de la mort."
-			},
-			"Anomalies": {
-				"Name": "Anomalies",
-				"Description": "Une magie ancienne imprègne les Terres de Fer. Ces forces se manifestent parfois sous la forme d'une anomalie, c'est-à-dire d'une caractéristique du terrain ou de l'environnement qui appartient à un autre monde. Certaines sont l'incarnation d'esprits anciens et ont des motivations inconnues. D'autres sont des forces de la nature auxquelles on a donné un but cruel."
-			},
-			"Sample NPCs": {
-				"Name": "Exemples de PNJ",
-				"Description": ""
-			}
-		},
-		"NpcNatures": {
-			"Ironlander": "Homme de fer",
-			"Firstborn": "Premier-né",
-			"Animal": "Animal",
-			"Beast": "Bête",
-			"Horror": "Horreur",
-			"Anomaly": "Anomalie",
-			"Monster": "Monstre",
-			"Machine": "Machine",
-			"Human": "Humain",
-			"Creature": "Créature",
-			"Vehicle": "Véhicule"
-		},
-		"ROLLTABLE": {
-			"TypeOracle": "Oracle"
-		},
-		"ROLLTABLES": {
-			"TypeOracle": "Oracles"
-		},
-		"SCENE": {
-			"TypeSector": "Secteur"
-		},
-		"SCENES": {
-			"TypeSector": "Secteurs"
-		},
-		"ACTOR": {
-			"SheetCompact": "Compact",
-			"SheetFoe": "Énemi",
-			"SheetStarforgedLocation": "Starforged Location",
-			"SubtypeDerelict": "Épave",
-			"SubtypePlanet": "Planète",
-			"SubtypeSettlement": "Colonie",
-			"SubtypeStar": "Étoile",
-			"SubtypeVault": "Chambre forte de précurseurs",
-			"TypeCharacter": "Personnage",
-			"TypeFoe": "PNJ",
-			"TypeLocation": "Lieu",
-			"TypeShared": "Feuille partagée",
-			"TypeDelveSite": "Site de fouilles",
-			"TypeStarship": "Vaisseau spatial"
-		},
-		"ACTORS": {
-			"SubtypeDerelict": "Épaves",
-			"SubtypePlanet": "Planètes",
-			"SubtypeSettlement": "Colonies",
-			"SubtypeStar": "Étoiles",
-			"SubtypeVault": "Chambres forte de précurseurs",
-			"TypeCharacter": "Personnages",
-			"TypeFoe": "PNJs",
-			"TypeLocation": "Lieux",
-			"TypeDelveSite": "Sites de fouilles",
-			"TypeStarship": "Vaisseaux spatiaux"
-		},
-		"ITEM": {
-			"SubtypeConnection": "Connexion",
-			"SubtypeProgress": "Progrès",
-			"SubtypeVow": "Vœu",
-			"TypeAsset": "Atout",
-			"TypeBond": "Lien",
-			"TypeBondset": "Forger un lien",
-			"TypeDelveDomain": "Domaine du site",
-			"TypeDelveTheme": "Thème du site",
-			"TypeDelveThemeOrDomain": "Thème/domaine du site",
-			"TypeMove": "Action",
-			"TypeProgressTrack": "Jauge de progrès"
-		},
-		"ITEMS": {
-			"SubtypeConnection": "Connexions",
-			"SubtypeProgress": "Progrès",
-			"SubtypeVow": "Vœux",
-			"TypeAsset": "Atouts",
-			"TypeBond": "Liens",
-			"TypeBondset": "Forger des liens",
-			"TypeDelveDomain": "Domaines de site",
-			"TypeDelveTheme": "Thèmes de sites",
-			"TypeMove": "Actions",
-			"TypeProgressTrack": "Jauges de progrès"
-		},
-		"JOURNALENTRYPAGE": {
-			"TypeProgressTrack": "Jauge de progrès",
-			"TypeTruth": "Établir une Vérité",
-			"TypeTruthClassic": "Vérité du monde",
-			"TypeTruthStarforged": "Établir une Vérité"
-		},
-		"JOURNALENTRYPAGES": {
-			"TypeProgressTrack": "Jauges de progrès",
-			"TypeTruth": "Établir les Vérités",
-			"TypeTruthClassic": "Vérités du monde",
-			"TypeTruthStarforged": "Établir les Vérités"
-		},
-		"DELVESITE": {
-			"Danger": "Danger",
-			"Dangers": "Dangers",
-			"Denizen": "Habitant",
-			"Denizens": "Habitants",
-			"Feature": "Caractéristique",
-			"Features": "Caractéristiques"
-		},
-		"FREQUENCY": {
-			"VeryCommon": "Très commun",
-			"Common": "Commun",
-			"Uncommon": "Peu commun",
-			"Rare": "Rare",
-			"Unforeseen": "Du jamais vu"
-		}
 	}
 }
