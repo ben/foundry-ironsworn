@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.25.3
+
 - Fix a syntax error in the French translation ([#1057](https://github.com/ben/foundry-ironsworn/pull/1057))
 
 ## 1.25.2
