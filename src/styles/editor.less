@@ -1,99 +1,126 @@
 /* stylelint-disable no-duplicate-selectors */
 // styles for TinyMCE and ProseMirror editors
 
-// Editors: shared styles
-.editor {
-	--ironsworn-editor-height-min: 100px;
+.app.ironsworn {
+	// Editors: shared styles
+	.editor {
+		--ironsworn-editor-height-min: 100px;
 
-	min-height: var(--ironsworn-editor-height-min);
-}
-
-.editor {
-	border: var(--ironsworn-border-width-md) solid
-		var(--ironsworn-color-input-border);
-	background: var(--ironsworn-color-input-bg);
-	caret-color: var(--ironsworn-color-fg-highlight);
-}
-
-.tab .editor {
-	border-top-width: 0;
-	border-radius: 0 0 var(--ironsworn-border-radius-lg)
-		var(--ironsworn-border-radius-lg);
-}
-
-.editor-edit {
-	.clickableBlockMixin();
-
-	border-radius: var(--ironsworn-border-radius-md);
-	background: var(--ironsworn-color-bg);
-}
-
-// Editor custom select elements
-.prosemirror button,
-.tox .tox-tbtn--bespoke {
-	.clickableBlockMixin();
-
-	border-radius: var(--ironsworn-border-radius-md);
-}
-
-// Editors: ProseMirror
-
-.ProseMirror {
-	.inputFieldMixin();
-
-	padding: var(--ironsworn-spacer-lg);
-}
-
-// Editors: TinyMCE
-.tox-tinymce {
-	border: 0;
-	border-radius: 0;
-}
-
-.tox {
-	font-family: var(--font-primary);
-
-	&:not(.tox-tinymce-inline) .tox-editor-header {
-		justify-content: center;
-		border-bottom: var(--ironsworn-border-width-md) solid
-			var(--ironsworn-color-border-muted);
+		min-height: var(--ironsworn-editor-height-min);
 	}
 
-	:not(svg, rect) {
-		color: currentcolor;
+	.editor {
+		border: var(--ironsworn-border-width-md) solid
+			var(--ironsworn-color-input-border);
+		background: var(--ironsworn-color-input-bg);
+		caret-color: var(--ironsworn-color-fg-highlight);
 	}
 
-	.tox-toolbar__primary {
-		justify-content: center;
-
-		& > .tox-toolbar__group {
-			padding: 0 var(--ironsworn-spacer-md);
-		}
+	.tab .editor {
+		border-top-width: 0;
+		border-radius: 0 0 var(--ironsworn-border-radius-lg)
+			var(--ironsworn-border-radius-lg);
 	}
 
-	.tox-tbtn .tox-toolbar-overlord,
-	.tox-toolbar__primary,
-	&:not(.tox-tinymce-inline) .tox-editor-header {
+	.editor-edit {
+		.clickableBlockMixin();
+
+		border-radius: var(--ironsworn-border-radius-md);
 		background: var(--ironsworn-color-bg);
-		color: var(--ironsworn-color-fg);
 	}
 
-	.tox-tbtn {
-		transition: var(--ironsworn-transition);
-		border-width: var(--ironsworn-border-width-md);
-		border-style: solid;
-		border-color: transparent;
-		background: var(--ironsworn-color-clickable-block-bg);
-		color: var(--ironsworn-color-clickable-block-fg);
-		// margin: 6px 1px var(--ironsworn-spacer-md) 0;
-		&:focus {
+	// Editor custom select elements
+	.prosemirror button,
+	.tox .tox-tbtn--bespoke {
+		.clickableBlockMixin();
+
+		border-radius: var(--ironsworn-border-radius-md);
+	}
+
+	// Editors: ProseMirror
+
+	.ProseMirror {
+		.inputFieldMixin();
+
+		padding: var(--ironsworn-spacer-lg);
+	}
+
+	// Editors: TinyMCE
+	.tox-tinymce {
+		border: 0;
+		border-radius: 0;
+	}
+
+	.tox {
+		font-family: var(--font-primary);
+
+		&:not(.tox-tinymce-inline) .tox-editor-header {
+			justify-content: center;
+			border-bottom: var(--ironsworn-border-width-md) solid
+				var(--ironsworn-color-border-muted);
+		}
+
+		:not(svg, rect) {
+			color: currentcolor;
+		}
+
+		.tox-toolbar__primary {
+			justify-content: center;
+
+			& > .tox-toolbar__group {
+				padding: 0 var(--ironsworn-spacer-md);
+			}
+		}
+
+		.tox-tbtn .tox-toolbar-overlord,
+		.tox-toolbar__primary,
+		&:not(.tox-tinymce-inline) .tox-editor-header {
+			background: var(--ironsworn-color-bg);
+			color: var(--ironsworn-color-fg);
+		}
+
+		.tox-tbtn {
+			transition: var(--ironsworn-transition);
 			border-width: var(--ironsworn-border-width-md);
 			border-style: solid;
+			border-color: transparent;
 			background: var(--ironsworn-color-clickable-block-bg);
 			color: var(--ironsworn-color-clickable-block-fg);
-
-			&:not(.tox-tbtn--disabled) {
+			// margin: 6px 1px var(--ironsworn-spacer-md) 0;
+			&:focus {
+				border-width: var(--ironsworn-border-width-md);
+				border-style: solid;
+				background: var(--ironsworn-color-clickable-block-bg);
 				color: var(--ironsworn-color-clickable-block-fg);
+
+				&:not(.tox-tbtn--disabled) {
+					color: var(--ironsworn-color-clickable-block-fg);
+
+					svg {
+						fill: currentcolor;
+					}
+				}
+			}
+
+			&:hover {
+				border-width: var(--ironsworn-border-width-md);
+				border-style: solid;
+				border-color: var(--ironsworn-color-clickable-block-border-hover);
+				background: var(--ironsworn-color-clickable-block-bg-hover);
+				color: var(--ironsworn-color-clickable-block-fg-hover);
+
+				svg {
+					fill: currentcolor;
+				}
+			}
+
+			svg {
+				fill: currentcolor;
+			}
+
+			&[aria-pressed='true'] {
+				background: var(--ironsworn-color-clickable-block-bg-selected);
+				color: var(--ironsworn-color-clickable-block-fg-selected);
 
 				svg {
 					fill: currentcolor;
@@ -101,257 +128,232 @@
 			}
 		}
 
-		&:hover {
-			border-width: var(--ironsworn-border-width-md);
+		.tox-tbtn--select {
+			.inputFieldMixin();
+
+			text-shadow: none;
+		}
+
+		.tox-collection--list {
+			.tox-collection__item--active {
+				background: var(--ironsworn-color-clickable-block-bg-hover);
+			}
+		}
+	}
+
+	// DROPDOWN MENU
+	//
+	// Menu
+	//
+	// Root variables
+	// from https://github.com/tinymce/tinymce/blob/develop/modules/oxide/src/less/theme/globals/global-variables.less
+	// Begin customization by changing these variables as most other variables are derivatives of these.
+	@background-color: var(--ironsworn-color-input-bg);
+	@base-value: 16px;
+	@color-black: #000;
+	@color-tint: #006ce7;
+	@color-white: var(--ironsworn-color-light);
+	@color-error: #c00;
+	@color-success: #78ab46;
+	@font-stack: var(--font-primary);
+
+	// Content;
+
+	@content-ui-darkmode: false; // Change this to true to get white icons in the content such as bookmarks.
+
+	// Colors
+	@border-color: transparent;
+	@text-color: var(--ironsworn-color-fg);
+	@text-color-muted: var(--ironsworn-color-fg-muted);
+
+	// Some useful generic variables
+
+	@menu-background-color: var(--ironsworn-color-midtone-10);
+	@menu-border-color: var(--ironsworn-color-input-border);
+	@menu-box-shadow: 0 0 2px 0 fade(@color-black, 20%),
+		0 4px 8px 0 fade(@color-black, 15%);
+
+	.tox {
+		.tox-menu {
+			border: var(--ironsworn-border-width-md) solid @menu-border-color;
+			box-shadow: @menu-box-shadow;
+			background: @menu-background-color;
+		}
+	}
+
+	// LIST
+	//
+	// Collection
+	// A list of items that can be arranged as vertical list, horizontal toolbar or a grid.
+	//
+
+	@collection-item-separator-color: var(--ironsworn-color-border-muted);
+
+	@collection-item-label-text-color: var(--ironsworn-color-fg);
+
+	@collection-item-label-disabled-text-color: var(--ironsworn-color-fg-50);
+
+	@toolbar-button-hover-background-color: var(
+		--ironsworn-color-clickable-block-bg-hover
+	);
+
+	@collection-list-item-active-background-color: var(
+		--ironsworn-color-clickable-block-bg-hover
+	);
+	@collection-list-item-label-active-text-color: var(
+		--ironsworn-color-clickable-block-fg-hover
+	);
+	@collection-list-item-enabled-background-color: @menu-background-color;
+	@collection-list-item-label-enabled-text-color: var(
+		--ironsworn-color-clickable-block-fg
+	);
+
+	@collection-toolbar-item-active-background-color: var(
+		--ironsworn-color-clickable-block-bg-hover
+	);
+	@collection-toolbar-item-label-active-text-color: var(
+		--ironsworn-color-clickable-block-fg-selected
+	);
+
+	@toolbar-button-enabled-background-color: var(
+		--ironsworn-color-clickable-block-bg
+	);
+	@collection-toolbar-item-enabled-background-color: @toolbar-button-enabled-background-color;
+	@collection-toolbar-item-label-enabled-text-color: var(
+		--ironsworn-color-clickable-block-fg
+	);
+
+	@collection-grid-item-active-background-color: var(
+		--ironsworn-color-clickable-block-bg-hover
+	);
+	@collection-grid-item-label-active-text-color: var(
+		--ironsworn-color-clickable-block-fg-hover
+	);
+	@collection-grid-item-enabled-background-color: @toolbar-button-enabled-background-color;
+	@collection-grid-item-label-enabled-text-color: var(
+		--ironsworn-color-clickable-block-fg
+	);
+
+	@collection-group-label-background-color: var(--ironsworn-color-bg-20);
+	@collection-group-label-text-color: var(--ironsworn-color-fg-muted);
+
+	.tox {
+		.tox-collection--list .tox-collection__group {
+			border-top-width: var(--ironsworn-border-width-md);
+			border-right-width: 0;
+			border-bottom-width: 0;
+			border-left-width: 0;
 			border-style: solid;
-			border-color: var(--ironsworn-color-clickable-block-border-hover);
-			background: var(--ironsworn-color-clickable-block-bg-hover);
-			color: var(--ironsworn-color-clickable-block-fg-hover);
+			border-color: @collection-item-separator-color;
 
+			&:first-child {
+				border-top-width: 0;
+			}
+		}
+
+		// Group headings should only be used on collection lists.
+		.tox-collection__group-heading {
+			background: @collection-group-label-background-color;
+			color: @collection-group-label-text-color;
+		}
+
+		.tox-collection__item {
+			transition: var(--ironsworn-transition);
+			color: @collection-item-label-text-color;
+		}
+
+		// Note: Ensure "enabled" is before "active", as active styles should have a higher precedence
+		.tox-collection--list .tox-collection__item--enabled {
+			background: @collection-list-item-enabled-background-color;
+			color: @collection-list-item-label-enabled-text-color;
+		}
+
+		.tox-collection--list .tox-collection__item--active {
+			background: @collection-list-item-active-background-color;
+		}
+
+		.tox-collection--toolbar .tox-collection__item--enabled {
+			background: @collection-toolbar-item-enabled-background-color;
+			color: @collection-toolbar-item-label-enabled-text-color;
+		}
+
+		.tox-collection--toolbar .tox-collection__item--active {
+			background: @collection-toolbar-item-active-background-color;
+		}
+
+		.tox-collection--grid .tox-collection__item--enabled {
+			background: @collection-grid-item-enabled-background-color;
+			color: @collection-grid-item-label-enabled-text-color;
+		}
+
+		.tox-collection--grid
+			.tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+			background: @collection-grid-item-active-background-color;
+			color: @collection-grid-item-label-active-text-color;
+		}
+
+		.tox-collection--list
+			.tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+			color: @collection-list-item-label-active-text-color;
+		}
+
+		.tox-collection--toolbar
+			.tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+			color: @collection-toolbar-item-label-active-text-color;
+		}
+
+		.tox-collection__item-icon,
+		.tox-collection__item-checkmark {
 			svg {
 				fill: currentcolor;
 			}
 		}
 
-		svg {
-			fill: currentcolor;
+		.tox-collection__item-label {
+			color: currentcolor;
 		}
 
-		&[aria-pressed='true'] {
-			background: var(--ironsworn-color-clickable-block-bg-selected);
-			color: var(--ironsworn-color-clickable-block-fg-selected);
+		.tox-collection__item-accessory {
+			color: @text-color-muted;
+		}
 
+		.tox-collection__item-caret {
 			svg {
 				fill: currentcolor;
 			}
 		}
-	}
 
-	.tox-tbtn--select {
-		.inputFieldMixin();
+		// Disabled item
+		.tox-collection__item--state-disabled {
+			background: transparent !important;
+			color: @collection-item-label-disabled-text-color;
 
-		text-shadow: none;
-	}
-
-	.tox-collection--list {
-		.tox-collection__item--active {
-			background: var(--ironsworn-color-clickable-block-bg-hover);
+			.tox-collection__item-caret svg {
+				fill: currentcolor;
+			}
 		}
-	}
-}
 
-// DROPDOWN MENU
-//
-// Menu
-//
-// Root variables
-// from https://github.com/tinymce/tinymce/blob/develop/modules/oxide/src/less/theme/globals/global-variables.less
-// Begin customization by changing these variables as most other variables are derivatives of these.
-@background-color: var(--ironsworn-color-input-bg);
-@base-value: 16px;
-@color-black: #000;
-@color-tint: #006ce7;
-@color-white: var(--ironsworn-color-light);
-@color-error: #c00;
-@color-success: #78ab46;
-@font-stack: var(--font-primary);
-
-// Content;
-
-@content-ui-darkmode: false; // Change this to true to get white icons in the content such as bookmarks.
-
-// Colors
-@border-color: transparent;
-@text-color: var(--ironsworn-color-fg);
-@text-color-muted: var(--ironsworn-color-fg-muted);
-
-// Some useful generic variables
-
-@menu-background-color: var(--ironsworn-color-midtone-10);
-@menu-border-color: var(--ironsworn-color-input-border);
-@menu-box-shadow: 0 0 2px 0 fade(@color-black, 20%),
-	0 4px 8px 0 fade(@color-black, 15%);
-
-.tox {
-	.tox-menu {
-		border: var(--ironsworn-border-width-md) solid @menu-border-color;
-		box-shadow: @menu-box-shadow;
-		background: @menu-background-color;
-	}
-}
-
-// LIST
-//
-// Collection
-// A list of items that can be arranged as vertical list, horizontal toolbar or a grid.
-//
-
-@collection-item-separator-color: var(--ironsworn-color-border-muted);
-
-@collection-item-label-text-color: var(--ironsworn-color-fg);
-
-@collection-item-label-disabled-text-color: var(--ironsworn-color-fg-50);
-
-@toolbar-button-hover-background-color: var(
-	--ironsworn-color-clickable-block-bg-hover
-);
-
-@collection-list-item-active-background-color: var(
-	--ironsworn-color-clickable-block-bg-hover
-);
-@collection-list-item-label-active-text-color: var(
-	--ironsworn-color-clickable-block-fg-hover
-);
-@collection-list-item-enabled-background-color: @menu-background-color;
-@collection-list-item-label-enabled-text-color: var(
-	--ironsworn-color-clickable-block-fg
-);
-
-@collection-toolbar-item-active-background-color: var(
-	--ironsworn-color-clickable-block-bg-hover
-);
-@collection-toolbar-item-label-active-text-color: var(
-	--ironsworn-color-clickable-block-fg-selected
-);
-
-@toolbar-button-enabled-background-color: var(
-	--ironsworn-color-clickable-block-bg
-);
-@collection-toolbar-item-enabled-background-color: @toolbar-button-enabled-background-color;
-@collection-toolbar-item-label-enabled-text-color: var(
-	--ironsworn-color-clickable-block-fg
-);
-
-@collection-grid-item-active-background-color: var(
-	--ironsworn-color-clickable-block-bg-hover
-);
-@collection-grid-item-label-active-text-color: var(
-	--ironsworn-color-clickable-block-fg-hover
-);
-@collection-grid-item-enabled-background-color: @toolbar-button-enabled-background-color;
-@collection-grid-item-label-enabled-text-color: var(
-	--ironsworn-color-clickable-block-fg
-);
-
-@collection-group-label-background-color: var(--ironsworn-color-bg-20);
-@collection-group-label-text-color: var(--ironsworn-color-fg-muted);
-
-.tox {
-	.tox-collection--list .tox-collection__group {
-		border-top-width: var(--ironsworn-border-width-md);
-		border-right-width: 0;
-		border-bottom-width: 0;
-		border-left-width: 0;
-		border-style: solid;
-		border-color: @collection-item-separator-color;
-
-		&:first-child {
-			border-top-width: 0;
+		.tox-collection--horizontal {
+			border: var(--ironsworn-border-width-md) solid
+				@collection-item-separator-color;
+			background: @menu-background-color;
 		}
 	}
 
-	// Group headings should only be used on collection lists.
-	.tox-collection__group-heading {
-		background: @collection-group-label-background-color;
-		color: @collection-group-label-text-color;
-	}
+	@toolbar-group-separator-color: var(--ironsworn-color-border-muted);
 
-	.tox-collection__item {
-		transition: var(--ironsworn-transition);
-		color: @collection-item-label-text-color;
-	}
-
-	// Note: Ensure "enabled" is before "active", as active styles should have a higher precedence
-	.tox-collection--list .tox-collection__item--enabled {
-		background: @collection-list-item-enabled-background-color;
-		color: @collection-list-item-label-enabled-text-color;
-	}
-
-	.tox-collection--list .tox-collection__item--active {
-		background: @collection-list-item-active-background-color;
-	}
-
-	.tox-collection--toolbar .tox-collection__item--enabled {
-		background: @collection-toolbar-item-enabled-background-color;
-		color: @collection-toolbar-item-label-enabled-text-color;
-	}
-
-	.tox-collection--toolbar .tox-collection__item--active {
-		background: @collection-toolbar-item-active-background-color;
-	}
-
-	.tox-collection--grid .tox-collection__item--enabled {
-		background: @collection-grid-item-enabled-background-color;
-		color: @collection-grid-item-label-enabled-text-color;
-	}
-
-	.tox-collection--grid
-		.tox-collection__item--active:not(.tox-collection__item--state-disabled) {
-		background: @collection-grid-item-active-background-color;
-		color: @collection-grid-item-label-active-text-color;
-	}
-
-	.tox-collection--list
-		.tox-collection__item--active:not(.tox-collection__item--state-disabled) {
-		color: @collection-list-item-label-active-text-color;
-	}
-
-	.tox-collection--toolbar
-		.tox-collection__item--active:not(.tox-collection__item--state-disabled) {
-		color: @collection-toolbar-item-label-active-text-color;
-	}
-
-	.tox-collection__item-icon,
-	.tox-collection__item-checkmark {
-		svg {
-			fill: currentcolor;
+	.tox:not([dir='rtl']) {
+		.tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
+			border-right: var(--ironsworn-border-width-md) solid
+				@toolbar-group-separator-color;
 		}
 	}
 
-	.tox-collection__item-label {
-		color: currentcolor;
-	}
-
-	.tox-collection__item-accessory {
-		color: @text-color-muted;
-	}
-
-	.tox-collection__item-caret {
-		svg {
-			fill: currentcolor;
+	// RTL
+	.tox[dir='rtl'] {
+		.tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
+			border-left: var(--ironsworn-border-width-md) solid
+				@toolbar-group-separator-color;
 		}
-	}
-
-	// Disabled item
-	.tox-collection__item--state-disabled {
-		background: transparent !important;
-		color: @collection-item-label-disabled-text-color;
-
-		.tox-collection__item-caret svg {
-			fill: currentcolor;
-		}
-	}
-
-	.tox-collection--horizontal {
-		border: var(--ironsworn-border-width-md) solid
-			@collection-item-separator-color;
-		background: @menu-background-color;
-	}
-}
-
-@toolbar-group-separator-color: var(--ironsworn-color-border-muted);
-
-.tox:not([dir='rtl']) {
-	.tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
-		border-right: var(--ironsworn-border-width-md) solid
-			@toolbar-group-separator-color;
-	}
-}
-
-// RTL
-.tox[dir='rtl'] {
-	.tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
-		border-left: var(--ironsworn-border-width-md) solid
-			@toolbar-group-separator-color;
 	}
 }
