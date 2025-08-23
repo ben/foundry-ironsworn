@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a styling issue with Foundry rolltable-result editors ([#1059](https://github.com/ben/foundry-ironsworn/pull/1059))
+
 ## 1.25.3
 
 - Fix a syntax error in the French translation ([#1057](https://github.com/ben/foundry-ironsworn/pull/1057))
