@@ -32,8 +32,7 @@ export class IronswornChatCard {
 		const tables = compact(flatten(await Promise.all(maybeTablePromises)))
 		if (tables.length === 0) return
 
-		ContextMenu.create(
-			ui.chat!,
+		new ContextMenu(
 			html,
 			`.message-content`,
 			tables.map((t) => ({
