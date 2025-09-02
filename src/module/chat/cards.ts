@@ -34,7 +34,7 @@ export class IronswornChatCard {
 
 		new ContextMenu(
 			html,
-			`.message-content`,
+			`.chat-message`,
 			tables.map((t) => ({
 				name: t.name ?? '',
 				icon: '<i class="isicon-oracle inline"></i>',
