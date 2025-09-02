@@ -49,7 +49,6 @@ export class OracleTable extends RollTable {
 			...(dvComp.index?.contents ?? []),
 			...(sfComp.index?.contents ?? [])
 		]
-		console.log(allIndexEntries)
 		const indexItem = allIndexEntries.find(
 			(x) => x.flags?.['foundry-ironsworn']?.dfid === dfid
 		)
@@ -305,8 +304,6 @@ export class OracleTable extends RollTable {
 			messageData
 		)
 
-		// console.log('messageData', messageData)
-
 		const templateData = await this._prepareTemplateData(
 			results,
 			cursedResults,
@@ -365,8 +362,6 @@ export class OracleTable extends RollTable {
 		const sourceId = msg.getFlag('foundry-ironsworn', 'sourceId')
 		const rollTableType = msg.getFlag('foundry-ironsworn', 'rollTableType')
 
-		// console.log(rerolls, sourceId, rollTableType)
-
 		if (sourceId == null) return
 		let oracleTable: OracleTable | undefined
 		if (rollTableType == null)
@@ -379,7 +374,6 @@ export class OracleTable extends RollTable {
 		// defer render to chat so we can manually set the chat message id
 		const { results, roll } = await oracleTable.draw({ displayChat: false })
 		const { cursedResults, cursedDie } = await oracleTable.cursedResults(roll)
-		console.log(cursedResults)
 
 		const templateData = await oracleTable._prepareTemplateData(
 			results,
