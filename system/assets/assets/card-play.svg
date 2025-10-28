@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   width="512"
+   height="512"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="card-play.svg"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1"
+     inkscape:cx="246.5"
+     inkscape:cy="247"
+     inkscape:window-width="1176"
+     inkscape:window-height="947"
+     inkscape:window-x="44"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <path
+     d="M -1,1 H 511 V 513 H -1 Z"
+     id="path1" />
+  <path
+     fill="#ffffff"
+     d="m 235.39924,488.37445 c 14.929,-0.312 25.66,-3.246 32.767,-8.446 l 97.159,-52.146 54.105,-73.514 c 11.373,-17.556 3.276,-51.576 -32.318,-29.773 l -38.9,51.351 c -49.476,42.711 -150.485,23.032 -102.587,-62.591 23.53,-49.582 12.457,-73.79 -17.76,-83.95 l -13.812,46.381 c -23.949,53.825 -68.502,63.51 -66.684,106.904 l -107.301998,-7.724 0.865,112.045 z m 54.09,-103.338 c 17.41,0.3 34.486,-6.898 46.92,-17.375 l 39.044,-51.33 c -10.713,-8.506 -21.413,-3.96 -32.125,6.363 -12.626,-6.394 -22.365,3.522 -30.365,23.297 -3.317,13.489 -8.21,23.037 -23.474,39.045 z m 32.617,-88.324 a 13.49,13.49 0 0 0 5.232,-1.235 l 129.165,-59.51 c 6.784,-3.13 9.763,-11.202 6.633,-17.992 l -85.27,-185.080003 c -3.131,-6.783 -11.204,-9.779 -18,-6.635 l -129.15,59.504003 c -6.796,3.137 -9.776,11.198 -6.646,18 l 85.282,185.068 c 2.344,5.097 7.474,8.043 12.754,7.88 z"
+     id="path2" />
+</svg>
