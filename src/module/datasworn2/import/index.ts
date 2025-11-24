@@ -159,7 +159,7 @@ for (const collection of collections) {
 					conditions: [],
 					description: ''
 				},
-				img: ICON_MAP.starforged.asset[asset.name],
+				img: ICON_MAP.starforged.asset[asset.name] ?? 'icons/svg/item-bag.svg',
 				effects: [],
 				sort: 0,
 				ownership: {
