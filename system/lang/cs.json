@@ -1,0 +1,955 @@
+{
+	"IRONSWORN": {
+		"Ironsworn": "Ironsworn",
+		"IronswornClassic": "Ironsworn (základní)",
+		"Starforged": "Starforge",
+		"SunderedIsles": "Sundered Isles",
+		"RULESETS": {
+			"Rulesets": "Pravidla",
+			"classic": "Ironsworn (základní)",
+			"delve": "Ironsworn: Hlubiny",
+			"starforged": "Starforged",
+			"sundered_isles": "Sundered Isles"
+		},
+		"YourWorldTruths": "Tvá verze světa",
+		"TruthsAreOptional": "Vytváření své verze je volitelný krok. K této části se můžeš vrátit později v nastaveních.",
+		"TruthQuestStarter": "Počáteční úkol:",
+		"QuestStarter": "Počáteční úkol",
+		"SaveYourTruths": "Ulož svou verzi",
+		"CustomTruth": "Vlastní verze",
+		"RandomizeAll": "Náhodně vše",
+		"Roll": "Hod",
+		"SendToChat": "Poslat text do chatu: <i>{move}</i>",
+		"CopyTextToClipboard": "Kopírovat text do schránky",
+		"ClipboardDisabled": "Prohlížeč zablokoval přístup do schránky. Tento nástroj budeš moci použít pouze při načítání Foundry z lokální sítě, nebo pomocí <code>https://</code> URL.",
+		"Adds": "Přidává",
+		"Versus": "vs.",
+		"CappedAt10": "Skóre akce je omezeno na 10",
+		"Strong_hit": "Naprostý úspěch",
+		"Strong_hit_match": "Naprostý úspěchs odpovídajícím výsledkem!",
+		"On_a_strong_hit": "Při naprostém úspěchu",
+		"Weak_hit": "Částečný úspěch",
+		"On_a_weak_hit": "Při částečném úspěchu",
+		"Miss": "Neúspěch",
+		"Miss_match": "Neúspěch s odpovídajícím výsledkem!",
+		"On_a_miss": "Při neúspěchu",
+		"MarkProgress": "Označit pokrok",
+		"ProgressMove": "Tah završení",
+		"Cinder": "Popel",
+		"Wraith": "Přízrak",
+		"PROGRESS": {
+		    "Current": "{score} pokrok ({ticks} čárek)",
+		    "Ticks": "{ticks} čárek",
+		    "BOX": {
+		        "1": "1 políčko",
+		        "2": "2 políčka",
+		        "3": "3 políčka"
+		    },
+		    "TICK": {
+        		"1": "1 čárka",
+   		        "2": "2 čárky",
+		        "3": "3 čárky",
+				"4": "4 čárky"
+		    }
+		},
+		"MarkLegacy": "Označit {amount} na tvé stupnici odkazu {legacy}",
+		"UnmarkProgress": "Zrušit označení pokroku",
+		"ProgressRoll": "Hod završení",
+		"MakeAProgressRoll": "Proveď hod završení s pokrokem {score}",
+		"StarProgress": "Pokud je aktivní, zobrazí se tato položka na kartě 'Odkazy' také.",
+		"CHALLENGERANK": {
+		    "Troublesome": "Nepříjemná",
+		    "Dangerous": "Nebezpečná",
+	 	    "Formidable": "Ohromující",
+		    "Extreme": "Extrémní",
+		    "Epic": "Epická"
+		},
+		"Stat": "Vlastnost",
+		"Stats": "Vlastnosti",
+		"OracleTable": {
+		    "CursedResult": "Prokletý výsledek:",
+		    "ColumnLabel": {
+		        "Roll": "Hod",
+		        "RollRange": "Rozsah hodu",
+		        "DiceRollResult": "výsledek hodu {dice}",
+		        "Result": "Výsledek"
+		    }
+		},
+		"roll +x": "hod +{stat}",
+		"Roll +x": "Hod +{stat}",
+		"roll method": {
+			"All": "hod všech {statList}",
+			"Any": {
+				"2": "hod +{stat1}, nebo +{stat2}",
+				"fallback": "jakýkoli hod z {statList}"
+			},
+			"Highest": {
+				"2": "vyšší z hodu +{stat1}, nebo +{stat2}",
+				"fallback": "nejvyšší hod z {statList}"
+			},
+			"Lowest": {
+				"2": "nižší z hodu +{stat1}, nebo +{stat2}",
+				"fallback": "nejnižší hod z {statList}"
+			}
+		},
+		"PreRollMethod": {
+			"All": "Všechny z {statList}",
+			"Highest": "Nejvyšší z {statList}",
+			"Lowest": "Nejnižší z {statList}"
+		},
+		"Momentum": "odhodlání",
+		"Health": "zdraví",
+		"Spirit": "vůle",
+		"Supply": "zásoby",
+		"Hold": "držba",
+		"Edge": "ostří",
+		"Heart": "srdce",
+		"Iron": "železo",
+		"Shadow": "stín",
+		"Wits": "důvtip",
+		"Progress": "pokrok",
+		"XP": "zkušenosti",
+		"NoBonds": "Žádná pouta",
+		"Legacies": "Odkazy",
+		"LEGACY": {
+			"Bonds": "Pouta",
+			"Discoveries": "Objevy",
+			"Quests": "Úkoly"
+		},
+		"Clock": "Hodiny",
+		"Segments": "Segmenty",
+		"Impacts": "Dopady",
+		"IMPACT": {
+			"Custom": "Vlastní dopad",
+			"CATEGORY": {
+				"Misfortunes": "Neštěstí",
+				"LastingEffects": "Trvalé dopady",
+				"Burdens": "Břímě",
+				"Vehicle": "Současný dopravní prostředek"
+			},
+			"Wounded": "zraněný/á",
+			"Shaken": "otřesený/á",
+			"Unprepared": "nepřipravený/á",
+			"Permanentlyharmed": "zmrzačený/á",
+			"Traumatized": "traumatizovaný/á",
+			"Tormented": "trýzněný/á",
+			"Doomed": "odsouzený/á",
+			"Indebted": "zadlužený/á",
+			"Cursed": "prokletý/á",
+			"Battered": "potlučený"
+		},
+		"Debilities": "Omezení",
+		"DEBILITY": {
+			"Custom": "Vlastní omezení",
+			"CATEGORY": {
+				"Conditions": "Stavy",
+				"Banes": "Postižení",
+				"Burdens": "Břímě"
+			},
+			"Wounded": "zraněný/á",
+			"Unprepared": "nepřipravený/á",
+			"Shaken": "otřesený/á",
+			"Encumbered": "přetížený/á",
+			"Maimed": "zmrzačený/á",
+			"Corrupted": "pokřivený/á",
+			"Cursed": "prokletý/á",
+			"Tormented": "trýzněný/á"
+		},
+		"Conditions": "Stavy",
+		"Condition": "Stav",
+		"ConditionMarkedOnOne": "{condition} je označen na {name}",
+		"ConditionMarkedOnMany": "{condition} je označen na:",
+		"Reroll": "Přehodit",
+		"Connections": "Spojení",
+		"Connection": "Spojení",
+		"MOVES": {
+			"Adventure Moves": "Tahy dobrodružství",
+			"Combat Moves": "Bojové tahy",
+			"Connection Moves": "Tahy spojení",
+			"Custom Moves": "Vlastní tahy",
+			"Delve Moves": "Tahy Hlubin",
+			"Exploration Moves": "Průzkumné tahy",
+			"Fate Moves": "Osudové tahy",
+			"Failure Moves": "Tahy neúspěchů",
+			"Legacy Moves": "Tahy odkazu",
+			"Quest Moves": "Úkolové tahy",
+			"Rarity Moves": "Tahy rarit",
+			"Recover Moves": "Tahy léčení",
+			"Relationship Moves": "Tahy vztahů",
+			"Scene Challenge Moves": "Tahy rozšíření scénické výzvy",
+			"Session Moves": "Tahy sezení",
+			"Suffer Moves": "Tahy strastí",
+			"Threat Moves": "Tahy hrozeb",
+			"Threshold Moves": "Tahy s prahem"
+		},
+		"Failure": "Neúspěch",
+		"Threat": "Hrozba",
+		"Rarity": "Rarita",
+		"LocationType": "Typ lokace",
+		"RollForDetails": "Hod na detaily lokace",
+		"RandomName": "Náhodné jméno",
+		"ResolveChallenge": "Vyřešit výzvu",
+		"ResolveChallengeDisabled": "Vyber dvě své poslední kostky výzvy",
+		"BurnForUpgrade": "Zažehnout odhodlání: <strong>{type}</strong>",
+		"BurnMomentumAndResetTo": "Zažehnout {value} odhodlání a resetovat na {resetValue}",
+		"MomentumBurnt": "Odhodlání zažehnuto",
+		"NegativeMomentumCancel": "Negativní odhodlání zrušilo akční kostku",
+		"Pronouns": "Zájmena",
+		"Callsign": "Volací znak",
+		"Characteristics": "Charakteristiky",
+		"Summary": "Shrnutí",
+		"Category": "Kategorie",
+		"Color": "Barva",
+		"Requirement": "Požadavek",
+		"Trigger": "Spouštěč",
+		"FullText": "Celý text",
+		"Field": "Pole",
+		"Fields": "Pole",
+		"Label": "Štítek",
+		"Value": "Hodnota",
+		"Abilities": "Vlastnosti",
+		"Ability": "Vlastnost",
+		"Options": "Možnosti",
+		"Option": "Možnost",
+		"Track": "Stupnice",
+		"Enabled": "Povoleno",
+		"ChallengeRank": "Úroveň výzvy",
+		"Completed": "Dokončeno",
+		"NotCompleted": "Nedokončeno",
+		"Foes": "Nepřátelé",
+		"Foe": "Nepřítel",
+		"Edit": "Upravit",
+		"OpenCompendium": "Otevřít kompendium",
+		"ConfirmDelete": "Jsi si jistý/á? Toto nelze vrátit zpět.",
+		"RequiresLocationType": "Tato věštba vyžaduje výběr typu lokace.",
+		"RollOracleTable": "Věštecký hod: <i>{title}</i>",
+		"RollMove": "Hod tahu: <i>{title}</i>",
+		"PageReference": "str. {page}",
+		"PlanetType": "Typ planety",
+		"RandomPlanetType": "Náhodný typ planety",
+		"SettlementType": "Typ osídlení",
+		"RandomSettlementType": "Náhodný typ osídlení",
+		"StarType": "Typ hvězdy",
+		"RandomStarType": "Náhodný typ hvězdy",
+		"DerelictType": "Typ vraku",
+		"RandomDerelictType": "Náhodný typ vraku",
+		"VaultType": "Typ pokladnice",
+		"RandomVaultType": "Náhodný typ pokladnice",
+		"SunderedsettlementType": "Lokalita osídlení",
+		"RandomSunderedsettlementType": "Náhodná lokalita osídlení",
+		"First": "první",
+		"Second": "druhý",
+		"Third": "třetí",
+		"Fourth": "čtvrtý",
+		"Fifth": "pátý",
+		"StarforgedTools": "Nástroje Starforged",
+		"IronswornTools": "Nástroje Ironswornu",
+		"SunderedIslesTools": "Nástroje Sundered Isles",
+		"Region": "Region",
+		"RegionTip": "Toto nastavuje výchozí region pro lokace v této scéně. Ovlivňuje výsledky některých lokací orákul.",
+		"REGION": {
+			"Terminus": "Hranice",
+			"Outlands": "Pohraničí",
+			"Expanse": "Rozsah",
+			"Myriads": "Myriády",
+			"Margins": "Okraje",
+			"Reaches": "Dosažitelné oblasti"
+		},
+		"RotateCCW": "Otočit proti směru hodinových ručiček",
+		"RotateCW": "Otočit po směru hodinových ručiček",
+		"RollDialog": {
+			"AdvancedRollOptions": "Pokročilé možnosti",
+			"PresetActionDie": "Přednastavená akční kostka",
+			"PresetChallengeDice": "Přednastavené kostky výzvy",
+			"PredeterminedOutcome": "Předem daný výsledek",
+			"ExtraChallengeDice": "Extra kostky výzvy"
+		},
+		"ChatAlert": {
+			"Muted": "Aktuálně šeptá aktualizace je uživateli, který je spustil",  
+			"Unmuted": "Aktuálně vysílá aktualizace všem uživatelům",  
+			"ToggleMute": "Přepnout ztlumení",
+			"Renamed": "Přejmenováno na {name}",
+			"renamed": "přejmenováno na {name}",
+			"Added": "Přidáno {name}",
+			"Deleted": "Odstraněno {name}",
+			"MarkedXP": "Zapsáno {amt} zkušeností",
+			"UnmarkedXP": "Sníženo o {amt} zkušeností",
+			"AdjustedStat": "{amt} {stat} (nyní {val})",
+			"MarkedCondition": "Zapsán stav {condition}",
+			"ClearedCondition": "Smazán stav {condition}",
+			"MarkedImpact": "Zapsán důsledek {impact}",
+			"ClearedImpact": "Smazán důsledek {impact}",
+			"MarkedDebility": "Zapsáno omezení {debility}",
+			"ClearedDebility": "Smazáno omezení {debility}",
+			"RankChanged": "Úroveň změněna z {old} na {new}",
+			"rankChanged": "Úroveň změněna z {old} na {new}",
+			"ProgressAdvanced": "Pokrok zvýšen",
+			"progressAdvanced": "pokrok zvýšen",
+			"ProgressReduced": "Pokrok snížen",
+			"progressReduced": "pokrok snížen",
+			"MarkedAbility": "Označena vlastnost {pos}",
+			"UnmarkedAbility": "Odznačena vlastnost {pos}",
+			"MarkedOption": "Označeno {name}",
+			"SetField": "Nastaveno {name} na {val}",
+			"AddBond": "Přidáno pouto",
+			"LostBond": "Ztraceno pouto",
+			"completedMarked": "Označeno jako dokončené",
+			"completedUnmarked": "Označeno jako nedokončené",
+			"clockAdvancedOneSegment": "Hodiny postoupily na {new}⁄{max}",
+			"clockAdvancedTwoSegments": "Hodiny postoupily o {change} segmenty na {new}⁄{max}",
+			"clockAdvancedManySegments": "Hodiny postoupily o {change} segmentů na {new}⁄{max}",
+			"clockCompletedOneSegment": "Hodiny postoupily na {new}⁄{max}—hodiny dokončeny!",
+			"clockCompletedTwoSegments": "Hodiny postoupily o {change} segmenty na {new}⁄{max} — hodiny dotikaly!",
+			"clockCompletedManySegments": "Hodiny postoupily o {change} segmentů na {new}⁄{max} — hodiny dotikaly!",
+			"clockSet": "Hodiny nastaveny na {new}⁄{max}"
+		},
+		"Settings": {
+			"Theme": {
+				"Name": "Vzhled: Motiv",
+				"Hint": "Nastaví motivu hry ovlivňujícího vzhled některých prvků uživatelského rozhraní a výchozí písmo. Vyžaduje znovunačtení.",
+				"Ironsworn": "Ironsworn (základní)",
+				"Starforged": "Starforged",
+				"SunderedIsles": "Sundered Isles (Beta)"
+			},
+			"ColorScheme": {
+				"Name": "Vzhled: Barevné schéma",
+				"Hint": "Každý uživatel si může nastavit vlastní barevné schéma.",
+				"Zinc": "Zinek",
+				"Phosphor": "Fosfor",
+				"Oceanic": "Oceánské"
+			},
+			"Tools": {
+				"Name": "Nástroje postavy",
+				"Hint": "Určuje, která sada tahů a orákul se má zobrazit při otevření karty postavy.",
+				"Sheet": "Odpovídající karta"
+			},
+			"SharedSupply": {
+				"Name": "Sdílená stupnice zásob",
+				"Hint": "Pokud je zapnuto, pak změna stupnice zásob u jakékoli postavy sdílející stupnici ovlivní i všechny ostatní postavy."
+			},
+			"AdvancedRollingOpen": {
+				"Name": "Režim ručního hodu",
+				"Hint": "Pokud je zapnuto, pak bude sekce „pokročilého“ hodu ve výchozím stavu otevřená a pozornost se nastaví na první vstupní pole hodu kostkou."
+			},
+			"LogChanges": {
+				"Name": "Zaznamenávání změn postavy",
+				"Hint": "Pokud je zapnuto, budou změny statistik postavy zaznamenávány do chatu."
+			},
+			"PromptTruths": {
+				"Name": "Dialog nastavení při startu",
+				"Hint": "Otevře při příštím znovunačtení dialog nastavení."
+			},
+			"ConfigurationDialog": {
+				"Label": "Dialog nastavení",
+				"Name": "Dialog nastavení",
+				"Hint": "Umožní výběr mezi prvky uživatelského rozhraní Ironswornu a Starforged a vygeneruje tvé verze světa."
+			},
+			"CharacterHold": {
+				"Name": "Statistika 'Držba'",
+				"Hint": "Zobrazí pro postavy Starforged a přidružené karty stupnici 'Držba'."
+			},
+			"RollCinderAndWraith": {
+				"Name": "Popel a Přízrak",
+				"Hint": "Házíš kostkami výzvy jako Popelem a Přízrakem. Toto nastavení přepíše barevné téma hodů výzvy kostek Dice-So-Nice a v nápovědách nástrojů zobrazí, která kostka odpovídá kterému měsíci."
+			},
+			"ProgressMarkAnimation": {
+				"Name": "Povolení animace zápisu pokroku",
+				"Hint": "Přepíná animaci zápisu pokroku. Poznámka: Animace nezamyká tlačítko zaznamenávání, takže je tato volba čistě kosmetická."
+			}
+		},
+		"First Start": {
+			"Welcome": "Vítej",
+			"Intro": "Vyber si, který systém budeš primárně používat. Tím nastavíš výchozí karty posta, tahů a orákula; podrobnější možnosti jsou dostupné v nastavení.",
+			"SheetTitle": "Karta postavy",
+			"SheetHint": "Výběr výchozí karty postavy.",
+			"IronswornSheetTooltip": "Kompaktní rozvržení s minimem záložek, navržené pro základní Ironsworn a Hlubiny. Obsahuje stupnice pout, ale ne stupnice odkazu.",
+			"StarforgedSheetTooltip": "Záložkové rozvržení, navržené pro Starforged a Sundered Isles. Obsahuje stupnice odkazu a spojení.",
+			"RulesetsTitle": "Sady pravidel",
+			"RulesetsHint": "Vyber, obsah knihy knihy bude v tomto světě aktivní.",
+			"TruthsTitle": "Tvá verze",
+			"TruthsHint": "Spustit dialog pro generování tvé verze herního světa.",
+			"SettingTruths": "Tvé verze",
+			"SettingTruth": "Tvá verze"
+		},
+		"Tours": {
+			"ChatMessage": "<h3>Vítej u hraní Ironswornu!</h3><p>Pokud tento systém používáš poprvé, pak klikni zde pro interaktivní prohlídku:</p> <button id=\"ironsworn-tour-chat-button\"> <i class=\"fas fa-person-hiking\"></i> Spustit prohlídku </button>",
+			"Welcome": {
+				"Title": "Uvítání v Ironsworn",
+				"Description": "Přehled systémů Ironsworn & Starforged",
+				"WelcomeTitle": "Vítej",
+				"WelcomeContent": "<p>Vítej v Ironsworn &amp; Starforged! Tato prohlídka ti pomůže zjistit, kde najdeš všechny důležité prvky nastavení a hraní tvé hry.</p><p>Právě jsi viděl/a dialog výběru hry, který nastavuje výchozí kartu postavy, tahy a orákula. Nyní se podíváme, kde najdeš další funkce systému.</p>",
+				"ActorTabTitle": "Vytváření postavy",
+				"ActorTabContent": "<p>Budeš si chtít vytvořit postavu. Chceš-li to udělat, přejdi na záložku &quot;<i class=\"fas fa-user\"></i> Postavy&quot; a klikni na toto tlačítko.</p>",
+				"CharacterCreateTitle": "Vytváření postavy",
+				"CharacterCreateContent": "<p>Toto tlačítko vytvoří primární postavu, což je vše, co potřebujete k zahájení hry. Jak hra postupuje, můžete potřebovat i další typy objektů pro organizaci.</p>",
+				"CompendiumTitle": "Mapy",
+				"CompendiumContent": "<p>Pravděpodobně budeš chtít mapu Železných zemí, nebo sektoru Forge. Můžeš si vytvořit vlastní scénu, nebo použít některou z našich. Otevři jedno z těchto kompendií a přetáhni mapu na plátno &quot;<i class=\"fas fa-map\"></i> Scény&quot;.</p>",
+				"OracleToolTitle": "Orákula",
+				"OracleToolContent": "<p>Žádná hra Ironswornu ani Starforged by nebyla kompletní bez orákul. Toto tlačítko otevře okno se všemi orákuly tebou zvolené hry. Orákula jsou dostupná i v kartě postavy.</p>",
+				"ToursTitle": "Další kroky",
+				"ToursContent": "<p>To je prozatím vše! Další informace o dalších tématech najdeš ve Správě prohlídek v nastavení. Pokud se s námi chceš spojit, podívej se na kanál <code>#foundry-vtt</code> na <a href=\"https://discord.gg/8bRuZwK\">Discordu Ironswornu</a>.</p><p>Užij si hru!</p>"
+			},
+			"ISCharacter": {				
+				"SheetTitle": "Karta postavy",  
+				"SheetContent": "<p>Toto je karta postavy hráče. Pomůže ti spravovat vlastnosti, zdroje, vylepšení a přísahy tvé postavy.</p>",  
+				"EditButtonTitle": "Tlačítko úprav",  
+				"EditButtonContent": "<p>Tlačítko &quot;<i class=\"fa-solid fa-edit\"></i> Upravit&quot; v titulkové liště slouží k přepínání mezi režimy hraní a úprav této postavy.</p>",  
+				"StatsTitle": "Statistiky postavy",  
+				"StatsContent": "<p>Toto jsou základní vlastnosti tvé postavy vypovídající o její osobnosti a zároveň ovlivňují pravděpodobnost úspěchu při určitých akcích.</p><p>Pro hod těmito vlastnostmi klikni na jednu z nich. Otevře se dialog, kde můžeš přidat bonusy a hod následně potvrdit.</p><p><strong>REŽIM ÚPRAV</strong> umožňuje tyto hodnoty upravit.</p>",  
+				"ResourcesTitle": "Zdroje",  
+				"ResourcesContent": "<p>Na této straně jsou tři základní zdroje: Zdraví, Vůle a Zásoby. Úroveň těchto zdrojů můžeš upravit kliknutím na novou hodnotu.</p><p>Hody můžeš provádět kliknutím na název zdroje.</p>",  
+				"MomentumTitle": "Odhodlnání",  
+				"MomentumContent": "<p>Na druhé straně je ukazatel odhodlnání. Kliknutím na číslo nastavíš hodnotu odhodlnání a pokud máš poznačena omezení, některé z nejvyšších hodnot budou deaktivovány.</p><p>Přesuň kurzor na &quot;<i class=\"fa-solid fa-fire\"></i> ODHODLÁNÍ&quot; pro náhled účinku zažehnutí odhodlání, kliknutím jej aktivuješ.</p>",  
+				"ConditionsTitle": "Stavy",  
+				"ConditionsContent": "<p>Na spodní části karty jsou stavy, postižení a břímě tvé postavy. Zaškrtnutí těchto políček ovlivní tvé maximální odhodlání. Jsou zde také dvě pole pro vlastní stavy.</p>",  
+				"CharacterTabTitle": "Záložky postavy",  
+				"CharacterTabContent": "<p>Ve střední části jsou různé záložky. První z nich je &quot;Postava&quot;, kde sleduješ většinu detailů potřebných pro postavu Ironswornu.</p>",  
+				"BondsTitle": "Pouta",  
+				"BondsContent": "<p>V levém horním rohu jsou tvá pouta. Ukazují, kolik pout si tvá postava během dobrodružství vytvořila. Pro přidání či odstranění pouta a psaní poznámek na něj klikni <i class=\"fa-solid fa-edit\"></i>. Klikni na <svg fill=\"currentColor\" height=\"1em\" width=\"1em\" role=\"img\" aria-hidden=\"true\" class=\"icon\"><use href=\"#ironsworn-d10-tilt\"></use></svg> pro zahrání tahu <em>Napsat svůj epilog</em>.</p>",  
+				"AssetsTitle": "Vylepšení",  
+				"AssetsContent": "<p>Oblast vylepšeních zobrazuje a spravuje avylepšení tvé postavy. Kliknutím na vylepšení jej rozbalíš a zobrazíš poznačené schopnosti. Kliknutím na &quot;<i class=\"fa-solid fa-edit\"></i>&quot; otevřeš detailní seznam.</p><p><strong>REŽIM ÚPRAV</strong> zobrazí tlačítka pro odstranění a změnu pořadí vylepšeních.</p><p>Tlačítko &quot;<i class=\"fa-solid fa-book-atlas\"></i> vylepšení; dole otevře prohlížeč vylepšeních. Odtud můžeš přetáhnout jakékoli vylepšení do své karty postavy.</p>",  
+				"ProgressTitle": "Pokrok",  
+				"ProgressContent": "<p>Oblast pokroků zobrazuje aktuální přísahy a další prvky pokroku tvé postavy. Novou položku můžeš přidat kliknutím na &quot;+Přísaha&quot; nebo &quot;+Pokrok&quot;. Můžeš také otevřít &quot;<i class=\"fa-solid fa-book-atlas\"></i> Nepřátelé&quot; a přetáhnout do seznamu nepřítele.</p><p>Každá položka ukazuje současný pokrok a obsahuje ovládací prvky pro zaznamenání čárek a provedení hodu završení. <strong>REŽIM ÚPRAV</strong> umožní měnit pořadí položek, upravovat čárky pokroku a označit položku za dokončenou, čímž se přesune do spodní části záložky.</p>",  
+				"NotesTabTitle": "Poznámky",  
+				"NotesTabContent": "<p>Záložka poznámek je určena pro tvé vlastní záznamy. Zapisuj si zde vývoj příběhu (nebo používej herní deník), zaznamenávej si sem důležité vybavení, nebo si poznamenávej jizvy, které tvá postava cestou získala.</p>",  
+				"EndTitle": "Karta postavy",  
+				"EndContent": "<p>To je zatím vše. Pro více informací o fungování jiných karet hledej tlačítko <i class=\"fa-solid fa-circle-question\"></i> v jejich titulkové liště.</p>"  
+			},  
+			"SFCharacter": {
+				"Title": "Karta postavy Starforged",
+				"Description": "Karta postav postavy ve Starforged",  
+				"SheetTitle": "Karta postavy",  
+				"SheetContent": "<p>Toto je karta postavy hráče. Pomůže ti spravovat vlastnosti, zdroje, vylepšení a přísahy tvé postavy.</p>",  
+				"EditButtonTitle": "Tlačítko úprav",  
+				"EditButtonContent": "<p>Tlačítko &quot;<i class=\"fa-solid fa-edit\"></i> Upravit&quot; v titulkové liště slouží k přepínání mezi režimy hraní a úprav této postavy.</p>",  
+				"StatsTitle": "Vlastnosti postavy",  
+				"StatsContent": "<p>Toto jsou základní vlastnosti tvé postavy vypovídající o její osobnosti, ale také naznačují, že při provádění určitých akcí se příběh bude vyvíjet v její prospěch.</p><p>Pro hod proti těmto statistikám klikni na jednu z nich. Otevře se dialogové okno, kde můžeš přidat bonusy a hod potvrdit.</p><p><strong>REŽIM ÚPRAV</strong> umožňuje tyto hodnoty upravit.</p>",  
+				"ResourcesTitle": "Zdroje",  
+				"ResourcesContent": "<p>Na této straně jsou tři základní zdroje: Zdraví, Vůle a Zásoby. Úroveň těchto zdrojů můžeš upravit kliknutím na novou hodnotu.</p><p>Hody můžeš provádět kliknutím na název zdroje.</p>",  
+				"MomentumTitle": "Odhodlání",  
+				"MomentumContent": "<p>Na druhé straně je ukazatel ohodlání. Kliknutím na číslo nastavíš hodnotu odhodlání a pokud máš pooznačena omezení, některé z nejvyšších hodnot budou deaktivovány.</p><p>Najetím myši na &quot;<i class=\"fa-solid fa-fire\"></i> ODHODLÁNÍ&quot; zobrazíš náhled účinku zažehnutí odhodlání, kliknutím jej aktivuješ.</p>",  
+				"ImpactsTitle": "Dopady",  
+				"ImpactsContent": "<p>Ve spodní části karty jsou dopady na tvou postavu. Zaškrtnutí těchto políček ovlivní tvé maximální odhodlání. Jsou zde také dvě pole pro vlastní dopady.</p><p>Pokud je ve hře dopravní prostředek s označeným stavem 'Potlučené' či 'Prokleté', tento dopad zde bude zvýrazněn, aby tím připomínal, že by měl platit, jen pokud je postava v daném dopravním prostředku.</p>",  
+				"LegaciesTabTitle": "Odkazy",  
+				"LegaciesTabContent": "<p>Ve střední části jsou různé záložky. První z nich jsou &quot;Odkazy&quot;, kde sleduješ tři hlavní odkazy Starforged. Zde se také zobrazí všechny &quot;označené&quot; položky ze záložek 'Pokrok' či 'Spojení'.</p><p>Pro vylepšení odkazu klikni na tlačítko &quot;<i class=\"fa-solid fa-caret-right\"></i>&quot; napravo. Když se vyplní dostatek polí odkazů, objeví se pole zkušenosti; jednoduše na něj klikni, abys zkušenosti utratil/a. <strong>REŽIM ÚPRAV</strong> zobrazí tlačítka pro odstranění zaškrtnutí odkazu, pokud jsi jich označil/a příliš mnoho.</p>",  
+				"AssetsTabTitle": "Vylepšení",  
+				"AssetsTabContent": "<p>Záložka vylepšeních zobrazuje a spravuje vylepšení tvé postavy. Kliknutím na vylepšení jej rozbalíš a zobrazíš poznačené schopnosti. Kliknutím na &quot;<i class=\"fa-solid fa-edit\"></i>&quot; otevřeš detailní seznam.</p><p><strong>REŽIM ÚPRAV</strong> zobrazí tlačítka pro odstranění a změnu pořadí vylepšení.</p><p>Tlačítko &quot;<i class=\"fa-solid fa-book-atlas\"></i> vylepšení; dole otevře prohlížeč vylepšeních. Odtud můžete přetáhnout jakékoli vylepšení do své karty postavy.</p>",  
+				"ProgressTabTitle": "Pokrok",  
+				"ProgressTabContent": "<p>Záložka pokroků zobrazuje aktuální přísahy a další prvky pokroku tvé postavy. Novou položku můžeš přidat kliknutím na tlačítka &quot;+Přísaha&quot; nebo &quot;+Pokrok&quot; dole, nebo můžeš otevřít &quot;<i class=\"fa-solid fa-book-atlas\"></i> Nepřátelé&quot; a přetáhnout do seznamu nepřítele.</p><p>Každá položka ukazuje současný pokrok a obsahuje ovládací prvky pro zaznamenání čárek a provedení hodu završení. Použij tlačítko &quot;<i class=\"fa-solid fa-star\"></i>&quot; pro zobrazení položky i v záložce odkazů.</p><p><strong>REŽIM ÚPRAV</strong> umožňuje měnit pořadí položek, upravovat čárky pokroku a označit položku jako dokončenou, čímž se přesune do spodní části záložky.</p>",  
+				"ConnectionsTabTitle": "Spojení",  
+				"ConnectionsTabContent": "<p>Spojení jsou sledována odděleně od ostatních položek pokroku a nacházejí se v této záložce. Jinak fungují úplně stejně jako zaznamenávání pokroků.</p>",  
+				"NotesTabTitle": "Poznámky",  
+				"NotesTabContent": "<p>Záložka poznámek je určena pro tvé vlastní záznamy. Zapisuj si zde vývoj příběhu (nebo používej herní deník), zaznamenávej si sem vybavení, nebo si poznamenávej jizvy, které tvá postava cestou získala.</p>",  
+				"EndTitle": "Karta postavy",  
+				"EndContent": "<p>To je zatím vše. Pro více informací o fungování jiných karet hledej tlačítko <i class=\"fa-solid fa-circle-question\"></i> v jejich titulkové liště.</p>"
+			},
+			"MoveSheet": {
+				"Title": "",
+				"Description": "",
+				"SheetTitle": "Karty tahů/orákul",  
+				"SheetContent": "<p>Toto je okno, které poskytuje snadný přístup k tahům a orákulům.</p>",  
+				"MoveCategoryTitle": "Kategorie tahů",  
+				"MoveCategoryContent": "<p>Kliknutím na název kategorie ji rozbalíš a zobrazíš všechny tahy. Kliknutím na některý tah zobrazíš jeho popis.</p>",  
+				"MoveButtonsTitle": "Zkratky tahů",  
+				"MoveButtonsContent": "<p>Zde nahoře vidíš tlačítka zkratek.</p><p>První je zkratka pro &quot;hodi tento tah&quot;, která otevře dialogové okno s předvyplněnými detaily. Je dostupná pouze tehdy, pokud je k tomuto tahu přiřazen hod (n)ěkteré tahy, jako například 'Zaplatit za to', nemají akční/výzvový hod, a proto bude toto tlačítko deaktivováno).</p><p>Druhé tlačítko je zkratka pro &quot;věštecký hod&quot;, která okamžitě provede hod podle tabulky orákula. Je dostupné pouze tehdy, pokud tah obsahuje právě jedno orákulum k hodu.</p><p>Třetí tlačítko odešle kopii popisu do bočního chatu.</p>",  
+				"MoveLinkTitle": "Odkazy na tahy",  
+				"MoveLinkContent": "<p>Kliknutím na odkaz jiného tahu jej rozbalíš a posuneš do zobrazení.</p>",  
+				"OraclesTabTitle": "Orákula",  
+				"OraclesTabContent": "<p>Druhá záložka zobrazuje orákula, což jsou tabulky náhod pro inspiraci.</p>",  
+				"OracleCategoryTitle": "Strom orákul",  
+				"OracleCategoryContent": "<p>Orákula jsou uspořádána do adresářové struktury. Kliknutím na řádek kategorie ji rozbalíš a zobrazíš její obsah.</p>",  
+				"OracleRowTitle": "Ovládání orákula",  
+				"OracleRowContent": "<p>Kliknutím na ikonu <i class=\"fas fa-eye\"></i> zobrazíš náhled tabulky orákula, nebo kliknutím kamkoliv jinam provedeš hod, jehož výsledek se zobrazí v chatu.</p>",  
+				"OracleChatMessageTitle": "Výsledky orákula",  
+				"OracleChatMessageContent": "<p>Když provedeš věštecký hod, zobrazí se v chatu karta. Zvýrazněný řádek je tvůj výsledek a jsou zobrazeny i sousední hody.</p><p>Pokud najedeš myší na zprávu, zobrazí se tlačítka pro zkopírování textu výsledku do schránky, nebo k opakování hodu podle stejné tabulky orákula.</p>",  
+				"EndTitle": "Tahy",  
+				"EndContent": "<p>To je zatím vše. Pro více informací o fungování jiných karet hledej tlačítko <i class=\"fa-solid fa-circle-question\"></i> v jejich titulkové liště.</p>"  
+			}
+		},
+		"WorldTruths": {
+			"The Old World": {
+				"name": "Starý svět",
+				"option1": "Divoké klany zvané Skulde napadly království Starého světa. Naše armády podlehly. Většina byla zabita, či odvedena do otroctví. Ti, co unikli, vypluli na palubách čehokoli, co plulo. Po namáhavé měsíce dlouhé plavbě se přeživší dostali na pevninu v Železných zemích.",
+				"quest1": "Jsi potomkem Skulde. Kvůli tvému dědictví byla tvá rodina dlouho tvými železnými soukmenovci považována za nedůvěryhodnou. Nyní malá jednotka Skulde přistála u našich břehů. Je to předzvěst další invaze? Komu patří tvá loajalita?",
+				"option2": "Nákaza se šířila Starým světem jako strašlivá vlna a zabíjela všechny, kteří jí stáli v cestě. Tisíce lidí uprchly na palubách lodí. Nákazu se však nepodařilo překonat. Na mnoha lodích byla nemoc potlačována nemilosrdnými opatřeními – házením přes palubu kohokoliv, kdo vykazoval sebemenší příznaky. Jiné lodě byly navždy ztraceny. Nakonec ti, co přežili, našli Železné země a učinili z nich svůj novýdomov. Někteří říkají, že budeme navždy prokleti těmi, které jsme opustili.",
+				"quest2": "Osada byla zasažena nemocí. Ačkoli tato nemoc má určité podobnosti s nákazou Starého světa, své oběti nezabíjí. Místo toho je mění. Jak se tato nemoc projevuje? Proč přísaháš, že najdeš lék?",
+				"option3": "Starý svět nás už nemohl uživit. Bylo nás příliš mnoho. Vykáceli jsme lesy. Naše úroda uschla na neúrodné půdě. Města a vesnice přetékaly zoufalými, hladovými lidmi. Malí králové bojovali o zbytky. Hledali jsme svůj osud na moři a našli Železné země. Nový svět. Nový začátek.",
+				"quest3": "Před desítkami let exodus skončil. Od té doby sem ze Starého světa nepřipluly žádné další lodě. Do teď. Přichází zpráva o jedné jediné lodi, co nově dorazila přes obrovský oceán. Uvízla na skaliscích Bariérových ostrovů. Když uslyšíš jméno této lodi, přísaháš, že odhalíš osud jejích pasažérů. Proč je to pro tebe tak důležité?"
+			},
+			"Iron": {
+				"name": "Železo",
+				"option1": "Impozantní kopce a hory Železných zemí jsou bohaté na železnou rudu. Nejcennější ze všech je hvězdné černé železo.",
+				"quest1": "Karavana mířící do dalekých jižních krajů opustila těžařskou osadu minulou sezónu, ale nikdy nedorazila na místo určení. Převážela množství černého železa. Proč je pro tebe nalezení této ztracené karavany tak důležité?",
+				"option2": "Počasí je ponuré. Déšť a vítr se valí od oceánu. Zimy jsou tu dlouhé a hořké. Jeden z prvních osadníků si stěžoval: „Na tomto hnusném místě se odváží žít jen ti, kdož jsou stvořeni ze železa“ – a tak byla naše země pojmenována.",
+				"quest2": "Sklizeň se nezdařila. Neutuchající sníh vesnici izoloval. Jídlo dochází. Co uděláš, aby lidé zvládli přežít drsnou zimu?",
+				"option3": "Po celé zemi se nacházejí enigmatické kovové pilíře. Jsou železně šedé a hladké jako říční kámen. Nikdo nezná jejich účel. Někteří říkají, že jsou staré jako sám svět. Někteří, jako například Železní kněží, je uctívají a přísahají na ně. Většina udělá ochranné znamení a spěchá po cestě, když na ně narazí. Sloupy nereziví a nepoznačí je ani ta nejostřejší čepel.",
+				"quest3": "Ve tvých snech tě pronásledují vize sloupu stojícího v neznámé krajině. Co vidíš? Proč jsi přísahal/a, že to budeš hledat?"
+			},
+			"Legacies": {
+				"name": "Odkazy",
+				"option1": "Jsme prvními lidmi procházejícími těmito zeměmi.",
+				"quest1": "Ve spisech jednoho z prvních osadníků je popis mýtiny v srdci Hluboké divočiny. Píše tam, že duchové toho místa udělují zázračné požehnání. Jaké dobrodiní přináší?",
+				"option2": "I jiní lidé sem před nesčetnými lety připluli ze Starého světa, ale zbyli z nich jen divocí, zvířecí lidé, kterým říkáme „Zlomení“. Čeká nás jejich osud?",
+				"quest2": "Našlo se dítě – jedno ze Zlomených. Je zraněné a lovené jinými jeho druhu. Ochráníš ho, i když riskuješ, že tím přivoláš hněv zlomených kmenů?",
+				"option3": "Před Železným lidem, dokonce ještě před Prvorozenými, zde žili jiní lidé. Jejich starověké ruiny se nacházejí po celých Železných zemích.",
+				"quest3": "Horníci odkryli podzemní ruiny. Nyní jsou obyvatelé osady pronásledováni podivnými sny. Volají je ruiny, říkají. Několik jich na tom temném prastarém místě zmizelo – včetně někoho důležitého pro tebe."
+			},
+			"Communities": {
+				"name": "Komunity",
+				"option1": "V této prokleté zemi je nás málo. Málokdy máme kontakt s někým mimo naši malou usedlost nebo vesnici a na cizí lidi se tu pohlíží shlubokým podezřením.",
+				"quest1": "Uprostřed zimy dorazí do zasněžené usedlosti zoufalý muž. Je zraněný, hladový a téměř zmrzlý. Jeho rodina byla unesena. Kým? Odvážíš se jít do nelítostné zimy, abys je zachránil/a?",
+				"option2": "Žijeme v komunitách zvaných „kruhy“. Jedná se o osady velikosti od usedlosti s několika rodinami až po vesnice o několika stovkách lidí. Některé kruhy patří kočovníkům. Některé mocné kruhy mohou zahrnovat celé shluky osad. S jinými kruhy obchodujeme (a někdy se i dohadujeme).",
+				"quest2": "Desítky let trvající spor mezi dvěma kruhy přerostl v otevřený konflikt. Co je příčinou tohoto sporu? Zapojíš se do boje, nebo přísaháš, že jej zastavíš?",
+				"option3": "Učinili jsme si z Železných zemí svůj domov. Vesnice v Přístavech jsou propojeny dobře vyšlapanými stezkami. Obchodní karavany cestují mezi osadami v Přístavech a těmi v odlehlejších oblastech. I tak je velká část této země nezkrotná.",
+				"quest3": "Karavany jsou nuceny platit za průchod po obchodní cestě. Tato platba, jedna čtvrtina přepraveného zboží, nechává několik obcí bez dostatečných zimních zásob. Kdo vyžaduje tyto poplatky? Jak uvedeš věci do pořádku?"
+			},
+			"Leaders": {
+				"name": "Vůdcové",
+				"option1": "Vedení je stejně rozmanité jako lid samotný. Některá společenství jsou řízena hlavou mocné rodiny. Nebo mají radu starších rozhodujících spory. V jiných vládnou kněží. Někde rozhodují souboje v kruhu.",
+				"quest1": "Máš živé opakující se sny o městě. Má silné kamenné zdi, rušné trhy a pevnost na vysokém kopci. A tolik lidí! Nikde v Železných zemích takové město neexistuje. Ve svých snech tomuto městu vládneš. Nějakým způsobem, bez ohleduna to, jak dlouho to potrvá, musíš tuto vizi uskutečnit.",
+				"option2": "Každá naše komunita má svého vůdce, kterému říkáme „dozorce“. Každé sedmé jaro lidé svého současného dozorce potvrdí, nebo zvolí nového. Někteří dozorci nosí železný kroužek neochotně, zatímco jiní po moci touží a získávají ho pomocí plánů nebo hrozeb.",
+				"quest2": "Dozorkyně onemocněla. Je jisté, že bez pomoci zemře a vesnický léčitel na tuto nemoc nestačí. Jed, možná i nečistá magie, šeptá se. Rodiny v komunitě si nyní jdou po krku, každá tlačí své preferované kandidáty, aby železný kroužek převzal. Odhalíš pravdu o nemoci dozorkyně a uzdravíš ji?",
+				"option3": "Drobným doménám vládne mnoho klanových náčelníků. Většina z nich má v úmyslu stát se jediným skutečným králem. Jejich hádky budou naší zkázou.",
+				"quest3": "Tajně vlastníš polovinu Pravé koruny, relikvii Starého světa. Před staletími se tato koruna rozlomila na dvě části, když sekera vraha rozťala hlavu nejvyššího vládce. Pocházíš z jeho linie. Kdo ti tuto relikvii dal? Najdeš druhou polovinu rozbité koruny a pokusíš se sjednotit klany pod svou vládou? Nebo pro ni vidíš jiné využití?"
+			},
+			"Defense": {
+				"name": "Boje",
+				"option1": "V Železných zemích je proviant příliš vzácný a země jsou příliš řídce osídlené, než aby mohly podporovat organizované bojové síly. Když je komunita ohrožena, lidé se spojí, aby ochránili svůj domov.",
+				"quest1": "Osada není schopna, nebo ochotna, bránit se proti bezprostřední hrozbě. Proč? Jaké nebezpečí jim hrozí? Co uděláš pro jejich ochranu?",
+				"option2": "„Strážci“ jsou naši vojáci, stráže i milice. Slouží svým komunitám tím, že stojí na stráži, hlídkují kolem a v dobách krize organizují obranu. Většina z nich má silné vazby na svou komunitu. Jiní, nazývaní svobodní strážci, jsou potulní žoldnéři nechávající se najímat, aby sloužili osadám a chránili karavany.",
+				"quest2": "Narazíš na umírající strážkyni. Řekne ti o důležité misi a pověří tě jejím dokončením. „Přísahej mi,“ řekla a natáhla zkrvavenou ruku, aby ti dala předmět, který je pro úkol zásadní. Co to je?",
+				"option3": "Naše válečné tlupy se shromažďují, aby udeřily na naše nepřátele, nebo bránily naše državy. I když nejsou zdaleka tak působivé jako armády, které kdysi pochodovaly Starým světem, jsou tyto síly tak dobře vycvičené a vybavené, jak to jejich komunity dokážou zvládnout. Korouhve válečných hord zdobí vyobrazení jejich historie ze Starého světa a nových vítězství v Železných zemích.",
+				"quest3": "Válečná banda byla v bitvě proti nepříteli drtivě rozprášena. Jaký je tvůj vztah k této skupině? Kdo je porazil? Poneseš jejich korouhev v honbě za pomstou, nebo přísaháš, že ho přineseš domů na čestné místo?"
+			},
+			"Mysticism": {
+				"name": "Mystika",
+				"option1": "Někteří stále nacházejí útěchu ve starých způsobech. Vyzývají mystiky, aby věštili štěstí novorozencům, nebo je žádají, aby provedli rituály přivolávající bohatou úrodu. Jiní jednají ze strachu proti těm, o nichž mají podezření, že mají magickou moc. Většina lidí však věří,že skutečná magie – pokud kdy vůbec existovala – je pro nás nyní ztracena.",
+				"quest1": "Někdo z tvých blízkých byl obviněn z prokletí osady, což způsobilo, že pole nenesou a dobytek onemocní. Co je toho důkazem? Budeš tuto osobu bránit a odhalíš pravou příčinu potíží osady?",
+				"option2": "Magie je vzácná a nebezpečná, ale těch pár, kteří ji ovládají, jsou skutečně nadaní.",
+				"quest2": "Šíří se příběhy o někom, kdo má skutečnou moc. Žije v daleké izolované osadě. Kdo ti řekl o tomto mystikovi? Mají lidé strach, nebo respekt? Proč přísaháš, že ho vyhledáš?",
+				"option3": "Magie proudí touto zemí, zatímco řeky protékají mezi kopci. Moc je tu pro ty, kdo se rozhodnou ji využít, a dokonce i obyčejní lidé často znají pár užitečných rituálů.",
+				"quest3": "Osoba, kterou miluješ, kráčela po cestách moci a podlehla jí. Kdo to je? Proč upadla do temnoty? Kde je teď? Snažíš se ji zachránit, nebo ji porazit?"
+			},
+			"Religion": {
+				"name": "Náboženství",
+				"option1": "Někteří Železní lidé stále dělají znamení, mumlají modlitby ze zvyku či tradice, ale většina věří, že nás bohové dávno opustili.",
+				"quest1": "Charismatická žena povzbuzuje své následovníky, aby se zřekli pozůstatků náboženství Starého světa, a navrhuje novou cestu pro tento nový svět. Jakou doktrínu učí? Čeho se snaží dosáhnout? Přísaháš, že jí pomůžeš, nebo zastavíš?",
+				"option2": "Lidé ctí staré i nové bohy. V této drsné zemi je modlitba prostou, ale mocnou útěchou.",
+				"quest2": "Jistý muž je odhodlán podniknout pouť na nebezpečné území. Jaké svaté místo hledá? Proč přísaháš, že mu na této cestě pomůžeš? Kdo ho chce zastavit a proč?",
+				"option3": "Našich bohů je mnoho. Dávají o sobě vědět prostřednictvím projevů a zázraků. Někteří říkají, že mezi námi dokonce tajně procházejí. Kněží předávají vůli bohů a ovládají mnoho komunit.",
+				"quest3": "Nosíš boží znamení. Co to je? Kněží to prohlašují za znamení vyvolenosti k naplnění velkého osudu. Přijímáš tento osud a přísaháš, že jej dotáhneš do konce, nebo jsi odhodlán/a nechat to být? Co ti brání?"
+			},
+			"Firstborn": {
+				"name": "Prvorození",
+				"option1": "Prvorození se stali legendou. Někteří říkají, že zbytky starých tlup stále žijí v hlubokých lesích či vysokých horách. Většina věří, že nikdy nebyli ničím víc než mýtem.",
+				"quest1": "Někdo posedlý Prvorozenými chce najít důkazy o jejich existenci. To bude vyžadovat výpravu do odlehlých končin Železných zemí. Jaká je tvá role na této misi?",
+				"option2": "Prvorození žijí v izolaci a zuřivě brání své vlastní území.",
+				"quest2": "Elf, vyvržený svými soukmenovci, žije mezi Železným lidem. Postupem času se stal součástí komunity. Teď umírá. Touží se vrátit ke svému lidu, než odejde. Hledá rozhřešení, nebo spravedlnost? Proč přísaháš, že mu pomůžeš? Co brání jeho návratu?",
+				"option3": "Prvorození vládnou Železným zemím. Elfové z hlubokých lesů a obři z vrchů nás tolerují, ba dokonce s námi obchodují... prozatím. Železní lidé se obávají dne, kdy se rozhodnou, že už tu nejsme vítáni.",
+				"quest3": "Lidé a obři jsou na pokraji války. Co se stalo? Ke komu se hlásíš? Dá se něco udělat pro uklidnění situace?"
+			},
+			"Beasts": {
+				"name": "Bestie",
+				"option1": "Bestie ze starých časů nejsou ničím než legendou. Někteří lidé cestující do hlubokých lesů a vysokých hor se vracejí s divokými příběhy o monstrózních stvůrách, ale zjevně jen žvaní. Žádné takové věci neexistují.",
+				"quest1": "Byl jsi svědkem útoku něčeho, o čem si myslíš, že bylo zvíře monstrózních rozměrů. Nikdo ti nevěří. Dokonce na tebe hází vraždu, kterou ta bestie spáchala. Jak můžeš dokázat svou nevinu? Můžeš nakonec vůbec věřit svým vlastním vzpomínkám na tu událost?",
+				"option2": "Divokými oblastmi Železných zemí se toulají monstrózní bestie.",
+				"quest2": "Významný člověk je pohlcen potřebou pomstít se konkrétní bestii. Čím je tato nestvůra tak výjimečná? Jak si vysloužila hněv tohoto Železného? Pomáháš této osobě v jejím hledání, nebo jednáš tak, abys zabránil/a její slepé nenávisti zničit víc než jen tu bestii?",
+				"option3": "V Železných zemích se potulují bestie všeho druhu. Zdržují se především v odlehlých oblastech, ale loví i v těch osídlených. Tam často loví dobytek, ale vzácné nejsou ani útoky na cestovatele, karavany, ba dokonce celé osady.",
+				"quest3": "Profesionální lovci si vydělávají zabíjením bestií. Jedna konkrétní lovkyně známá po celých Železných zemích svými četnými trofejemi se ztratila na lovu. Setkala se konečně se svým osudem, nebo je ve hře něco horšího? Jaký k ní máš vztah?"
+			},
+			"Horrors": {
+				"name": "Hrůzy",
+				"option1": "Nic než příběhy ke strašení dětí.",
+				"quest1": "Vraždy začaly minulou sezónu. Místní drby naznačují, že jsou dílem pomstychtivé hrůzy, ale mohlo to způsobit i dost světských sil. Jaký je tvůj vztah k těmto vraždám? Co uděláš, aby se to objasnilo?",
+				"option2": "Jsme ostražití před temnými lesy a hlubokými vodními toky, protože v těchto místech číhají příšery. Do hlubin dlouhé noci, kdy je vše zahaleno temnotou, se ze svého domova odvažují jen blázni.",
+				"quest2": "Nosíš jizvy po útoku hrůzy. Co to bylo? Jsou ty jizvy fyzické, na duši, nebo obojí? Snažíš se, aby se zacelily?",
+				"option3": "Mrtví v Železných zemích neodpočívají. V noci zapalujeme pochodně, rozhazujeme sůl a posíláme hlídky k bráně. Nestačí to. Přicházejí.",
+				"quest3": "Skupina Železných lidí založí osadu na území prokletém zlovolnou hrůzou. Jaké zlo sužuje tuto zemi? Proč jsou lidé tak zaujatí touhou usadit se zde? Pomůžeš jim, nebo se je pokusíš přimět, aby se tohoto pošetilého podniku vzdali?"
+			}
+		},
+		"OracleCategories": {  
+			"Action and Theme Oracles": "Akce a Motivy",  
+			"Other Names": "Jiná jména",  
+			"Place Oracles": "Lokace",  
+			"Settlement Name": "Název osady",  
+			"Quick Settlement Name Generator": "Rychlý generátor názvů osad",  
+			"Turning Point Oracles": "Příběhové zvraty",  
+			"Character Oracles": "Postavy",  
+			"Core Oracles": "Základní Orákula",  
+			"Creature Basic Form": "Primární forma",  
+			"Creature Oracles": "Bytosti",  
+			"Derelict Type (by location)": "Typ pozůstatku (podle lokace)",  
+			"Derelict Zones": "Zóny pozůstatků",  
+			"Derelict Oracles": "Místa pozůstatků",  
+			"Faction Name": "Jméno frakce",  
+			"Faction Oracles": "Frakce",  
+			"Step 5: Board Your Starship": "Krok 5: Nastup na svou Hvězdnou Loď",  
+			"Create Your Character": "Vytvoř si postavu",  
+			"Build Your Starting Sector": "Vytvoř počáteční sektor",  
+			"Begin Your Adventure": "Začni dobrodružství",  
+			"Launching Your Campaign": "Zahájení kampaně",  
+			"Location Theme Oracles": "Téma instance",  
+			"Miscellaneous Oracles": "Různá orákula",  
+			"Desert World": "Pouštní svět",  
+			"Furnace World": "Žhnoucí svět",  
+			"Grave World": "Hřbitovní svět",  
+			"Ice World": "Ledový svět",  
+			"Jovian World": "Plynný obr",  
+			"Jungle World": "Džunglový svět",  
+			"Ocean World": "Vodní svět",  
+			"Rocky World": "Skalnatý svět",  
+			"Shattered World": "Roztříštěný svět",  
+			"Tainted World": "Zkažený svět",  
+			"Vital World": "Vitální svět",  
+			"Planetside Peril": "Nebezpečí na planetě",  
+			"Planetside Opportunity": "Příležitost na planetě",  
+			"Planet Oracles": "Planety",  
+			"Precursor Vault Oracles": "Komnaty předků",  
+			"Settlement Oracles": "Osada",  
+			"Space Sighting": "Pozorování ve vesmíru",  
+			"Space Encounter Oracles": "Setkání ve Vesmíru",  
+			"Starship Mission": "Mise hvězdné lodi",  
+			"Starship Oracles": "Hvězdné lodě",  
+			"Access": "Přístup",  
+			"Action and Theme": "Akce a motiv",  
+			"Ask the Oracle": "Dotaž se orákula",  
+			"Basic Form": "Primární forma",  
+			"Challenge Rank": "Úroveň výzvy",  
+			"Chaotic": "Chaos",  
+			"Character Creation": "Vytváření postavy",  
+			"Character Name": "Jméno postavy",  
+			"Character": "Postavy",  
+			"Characters": "Postavy",  
+			"Combat Event": "Bojová událost",  
+			"Community": "Komunita",  
+			"Core": "Jádro",  
+			"Creatures": "Bytost",  
+			"Delve the Depths": "Ponořit se do hlubin",  
+			"Derelicts": "Pozůstatky",  
+			"Desert": "Poušť",  
+			"Engineering": "Inženýrství",  
+			"Factions": "Frakce",  
+			"Feature": "Charakteristika",  
+			"Fortified": "Opevněné",  
+			"Furnace": "Pec",  
+			"Grave": "Hrob",  
+			"Haunted": "Strašidelné",  
+			"Ice": "Led",  
+			"Infested": "Zamořené",  
+			"Inhabited": "Obydlené",  
+			"Interior": "Interiér",  
+			"Ironlander": "Železný",  
+			"Jovian": "Plynný obr",  
+			"Jungle": "Džungle",  
+			"Living": "Živé",  
+			"Location Themes": "Témata lokací",  
+			"Mechanical": "Mechanické",  
+			"Medical": "Lékařské",  
+			"Misc": "Různé",  
+			"Mission": "Mise",  
+			"Moves": "Tahy",  
+			"Monstrosity": "Monstrozita",  
+			"Name": "Jména",  
+			"Ocean": "Oceán",  
+			"Operations": "Operace",  
+			"Opportunity": "Příležitost",  
+			"Other": "Ostatní",  
+			"Peril": "Nebezpečí",  
+			"Place": "Instance",  
+			"Planets": "Planety",  
+			"Population": "Populace",  
+			"Production": "Produkce",  
+			"Quick Name": "Rychlá jména",  
+			"Research": "Výzkum",  
+			"Rocky": "Skalnaté",  
+			"Ruined": "Zničené",  
+			"Sacred": "Posvátné",  
+			"Sanctum": "Svatyně",  
+			"Sector Name": "Název sektoru",  
+			"Settlement": "Osídlení",  
+			"Settlements": "Osídlení",  
+			"Shattered": "Roztříštěné",  
+			"Sighting": "Pozorování",  
+			"Site Name": "Název instance",  
+			"Site Nature": "Povaha instance",  
+			"Space": "Vesmír",  
+			"Starships": "Hvězdné lodě",  
+			"Tainted": "Zkažené",  
+			"Threat": "Hrozba",  
+			"Trap": "Past",  
+			"Turning Point": "Příběhové zvraty",  
+			"Type": "Typ",  
+			"Vaults": "Komnaty",  
+			"Vital": "Životně důležité",  
+			"Zones": "Zóny",  
+			"Factions of the Isles": "Frakce Ostrovů",  
+			"Beasts of the Isles": "Bestie Ostrovů",  
+			"Adventures Among the Isles": "Dobrodružství mezi Ostrovy",  
+			"Cave Scale": "Měřítko jeskyně",  
+			"Sea Cave Details": "Detaily Mořské jeskyně",  
+			"Inland Cave Details": "Detaily Vnitrozemské jeskyně",  
+			"Cave Oracles": "Jeskyně",  
+			"Character Role Details": "Role postav",  
+			"Cursed Moniker": "Prokleté jméno",  
+			"Society": "Společnost",  
+			"Organization": "Organizace",  
+			"Empire": "Impérium",  
+			"The Cursed": "Prokletí", 
+			"Affluence": "Bohatství",
+			"Craft": "Řemeslo",
+			"Discovery": "Objev",
+			"Faith": "Víra",
+			"Loyalty": "Lojalita",
+			"Mysticism": "Mysticismus",
+			"Rebellion": "Povstání",
+			"Secrecy": "Tajemství",
+			"War": "Válka",
+			"Curses": "Prokletí",
+			"Faction Name: Themes": "Název frakce: Témata",
+			"Take Command": "Převzít velení",
+			"Chart Your Course": "Naplánovat kurz",
+			"Getting Underway": "Vyplutí",
+			"Vitality": "Vitalita",
+			"Island Landscape": "Krajina ostrova",
+			"Visible Habitation": "Viditelné obydlí",
+			"Nearby Islands": "Blízké ostrovy",
+			"Island Oracles": "Ostrovy",
+			"Magnitude": "Velikost",
+			"Local Seas": "Místní vody",
+			"Overland Waypoints": "Pozemní orientační body",
+			"Region Landmarks": "Regionální orientační body",
+			"Overland Oracles": "Pozemní orákula",
+			"Ruin Oracles": "Orákula ruin",
+			"Known Waters": "Známé vody",
+			"Unknown Waters": "Neznámé vody",
+			"Seafaring Waypoints": "Námořní orientační body",
+			"Seafaring Oracles": "Námořní orákula",
+			"Settlement Size": "Velikost osédlení",
+			"Settlement Controlling Faction": "Vládnoucí frakce osídlení",
+			"Settlement Identity": "Identita osídlení",
+			"Settlement Focus": "Zaměření osídlení",
+			"Ship Position": "Pozice lodi",
+			"Ship Controlling Faction": "Vládnoucí frakce lodi",
+			"Ship Mission": "Mise lodi",
+			"Ship Oracles": "Lodě",
+			"Shipwreck Position": "Pozice vraku",
+			"Shipwreck Orientation": "Orientace vraku",
+			"Shipwreck Oracles": "Vraky",
+			"Treasure Value": "Hodnota pokladu",
+			"Treasure Oracles": "Poklady",
+			"Weather Conditions": "Povětrnostní podmínky",
+			"Weather Oracles": "Počasí", 
+			"Custom": "Vlastní orákula"  
+		},
+		"Asset Categories": {
+			"Custom": "Vlastní vylepšení",
+			"Classic": {
+				"Companion Assets": {
+					"Title": "Společníci",
+					"Description": "Společníci jsou pomocníci tvé postavy z řad NP. Když postava získá společníka, dej mu jméno a představ si jeho vzhled a osobnost. Pokud nemá počáteční schopnost, pak jednu vyber. Vylepšováníspolečníka umožňuje přidat další schopnosti.\n\nSpolečníci využívají stupnici zdraví a mohou utrpět zranění v důsledku některého z tvých tahů. Když společník utrpí zranění, zahraj pro určení výsledku tah [Společník čelí zranění](Ironsworn/Moves/Suffer/Companion_Endure_Harm) (str. 94). Více se dozvíš na str. 43."
+				},
+				"Path Assets": {
+					"Title": "Cesty",
+					"Description": "Cesty představují zázemí, zájmy, výcvik a dovednosti postavy. Poskytují mechanické a příběhové výhody, ale také odrážejí, kdo tvá postava je a jak interaguje se světem. Například 'Ritualista' by pravděpodobně měl jiný pohled na svět než 'Veterán'. Výběr obou těchto cest může odrážet vývoj tvé postavy či zajímavé zázemí."
+				},
+				"Combat Talent Assets": {
+					"Title": "Bojové talenty",
+					"Description": "Všechny postavy 'Ironswornu' jsou považovány za zkušené bojovníky. I bez bojového talentu může postava ovládat zbraně a provádět bojové tahy (str. 78). Bojový talent odráží určitou oblast odbornosti a poskytuje ti další možnosti a bonusy.\n\nVylepšení bojových talentů obvykle vyžadují použití konkrétní zbraně, jak je uvedeno v textu vylepšení. Například pokud je postava 'Štítonoš' a nemá po ruce štít, nemůže schopnosti tohoto vylepšení používat."
+				},
+				"Ritual Assets": {
+					"Title": "Rituály",
+					"Description": "Magie je v 'Ironswornu' sesílána prostřednictvím rituálů podporujících jiné akce, nebo fungujících jako unikátní tahy. Stejně jako všechna vylepšení, i rituály lze vybrat při získání zkušeností a postupem času je vylepšovat, aby byly flexibilnější či mocnější.\n\nVšechny rituály využívají jako svou výchozí označenou schopnost nějaký tah. Musíš zahrát tento tah a hodit související akční hod, abys spustil/a efekt. Jakékoli sekundární schopnosti, které získáš vylepšením stávajícího vylepšení, závisí na provedení rituálu popsaného coby výchozí schopnost."
+				}
+			},
+			"Starforged": {
+				"Command Vehicle Assets": {
+					"Title": "Velitelský dopravní prostředek",
+					"Description": "'Velitelský dopravní prostředek' je mezihvězdná HVĚZDNÁ LOĎ tvé postavy. Je to výchozí vylepšení tvé postavy, které si bereš na začátku kampaně. Pokud hraješ s ostatními, jedná se o sdílené vylepšení; když je na palubě, může každý z vás využívat schopnosti HVĚZDNÉ LODI.\n\nVelitelský dopravní prostředek má stupnici integrity a začíná s 5 body integrity. Když HVĚZDNÁ LOĎ utrpí zásah, zahraj tah @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Odolat poškození} a zjisti, co se stane."
+				},
+				"Module Assets": {
+					"Title": "Modul",
+					"Description": "'Moduly' jsou připojeny k HVĚZDNÉ LODI a nabízejí další možnosti a výhody při pobytu na palubě.\n\nTato vylepšení jsou získávána a spravována jedinou postavou. Mohou být sdílena se spojenci, ale pouze pokud je praktické je využít (ne každý například umí používat VÝZKUMNOU LABORATOŘ).\n\nKdyž zahraješ tah @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Odolat Poškození} a neuspěješ, můžete označit modul za poškozený, aby netrpěla větším nebezpečím tvá HVĚZDNÁ LOĎ. Aby byl její poškozený stav zřejmý, otoč kartu. Poškozený modul nelze používat, dokud nebude úspěšně opraven pomocí tahu @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Opravit}."
+				},
+				"Support Vehicle Assets": {
+					"Title": "Doprovodný dopravní prostředek",
+					"Description": "'Doprovodné dopravní prostředky' doplňují velitelský dopravní prostředek postavy při operacích na planetě nebo na krátkou vzdálenost. Pokud hraješ s ostatními, může jeden z vás sloužit jako pilot či vlastník doprovodného dopravního prostředku, ale na jeho palubě může využívat jeho schopnosti podle situace kdokoliv.\n\nStejně jako velitelský dopravní prostředek mají i doprovodné dopravní prostředky stupnice integrity. Maximální integrita se liší podle typu dopravního prostředku. Když se doprovodný dopravní prostředek ocitne v nebezpečné situaci či prostředí, musíš provést tah @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Odolat poškození} a zjistit, jak dopadne."
+				},
+					"Path Assets": {
+					"Title": "Cesta",
+					"Description": "'Cesty' představují zázemí, zájmy, výcvik, dovednosti, schopnosti a klíčové vybavení tvé postavy. Poskytují mechanické i příběhové výhody, ale zároveň odrážejí, kým postava je a jak se vztahuje ke světu. Při tvorbě postavy v další kapitole si vybereš alespoň dvě cesty, se kterými začneš.\n\nNěkteré cesty představují  mistrovství postavy v určitém stylu boje, nebo použití specifického vybavení. Pokud je na kartě vylepšení uveden požadavek, například „Pokud postava vládne sečnou zbraní…“, lze toto vylepšení použít pouze při akcích souvisejících s daným předmětem."
+				},
+				"Companion Assets": {
+					"Title": "Společník",
+					"Description": "'Společníci' jsou NP pomocníci postavy. Když postava získá společníka, dej mu jméno a představ si jeho vzhled a osobnost.\n\nSpolečníci mají stupnici zdraví, která se snižuje, pokud se ocitnou v nebezpečí. Když společník utrpí zranění, proveď tah @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Společník inkasuje zásah}. Pokud jejich zdraví klesne na 0, hrozí jim smrt či zničení."
+				},
+				"Deed Assets": {
+					"Title": "Skutek",
+					"Description": "'Skutky' představují významné události a milníky příběhu tvé postavy a jak ji tyto události změnily.\n\nKaždý skutek má uvedený požadavek na vrcholu karty ve formě „Jakmile \\[doplň podmínku\\]…“. Dokud tento požadavek postava nesplní, nemůžeš utratit zkušenosti k získání skutku, skutek si nemůžeš vybrat ani při tvorbě postavy."					
+				}
+			},
+			"Sundered_isles": {
+				"Companion Assets": {
+					"Title": "Společník",
+					"Description": ""
+				},
+				"Deed Assets": {
+					"Název": "Skutek",
+					"Description": ""
+				},
+				"Module Assets": {
+					"Title": "Modul",
+					"Description": ""
+				},
+				"Path Assets": {
+					"Title": "Cesta",
+					"Description": ""
+				},
+				"Command Vehicle Assets": {
+					"Title": "Velitelský dopravní prostředek",
+					"Description": ""
+				},
+				"Support Vehicle Assets": {
+					"Title": "Doprovodný dopravní prostředek",
+					"Description": ""
+				}
+			}
+		},
+		"NpcCategories": {
+			"Ironlanders": {
+				"Name": "Železný lid",
+				"Description": "Železnozemci jsou lidskými obyvateli těchto zemí. Pokud tvůj příběh nezdůrazňuje dobrodružství daleko za osídlenými oblastmi, většina interakcí tvé postavy bude s ostatními Železnými.\n\nTato sekce pokrývá několik širokých kategorií Železných. Nejsou reprezentativní pro rozmanitost lidí a kultur v těchto zemích. Pokud bude tvá poatava nucena bojovat s někým ze Železného lidu a potřebuješ určit jeho úroveň, můžeš se @Compendium[foundry-ironsworn.ironswornoracles.b2c23660dbcfe5b2]{Dotázat orákula}, nebo se řídit těmito pokyny:\n\n  * Obyčejný občan nebo rváč je 'nepříjemný'.\n  * Vycvičený válečník je 'nebezpečný'.\n  * Mocný válečník či veterán je 'hrozivý'."
+			},
+			"Firstborn": {
+				"Name": "Prvorození",
+				"Description": "Prvorození zde žili dávno předtím, než na těchto březích přistáli lidé. Lidé ve své aroganci nazvali tento poloostrov Železné země a sami sebe Železným lidem – ale Prvorození mu dali vlastní jména v časech, které jsou již mimo dosah paměti."
+			},
+			"Animals": {
+				"Name": "Zvířata",
+				"Description": "Zvířata jsou běžné bytosti obývající Železné země. Některá zvířata jsou v těchto krajích původní; jiná byla běžná i ve @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Starém světě}.\n\nVětšina divokých zvířat je plachá a nepředstavuje pro lidi hrozbu. Tyto bytosti nemají úroveň a lze na ně pomocí odpovídajících tahů útočit nebo s nimi jinak interagovat. Například @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Doplnit zásoby} může představovat lov na jeleny či drobnou zvěř.\n\nJe zde uvedeno několik výjimek (predátoři, agresivní stvoření a zvířata vycvičená k boji)."
+			},
+			"Beasts": {
+				"Name": "Bestie",
+				"Description": "Bestie jsou monstrózní bytosti obrovské velikosti a síly. Jsou to přirozená stvoření (ne nadpřirozené entity), ale ve @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Starém světě} byly neznámé."
+			},
+			"Horrors": {
+				"Name": "Hrůzy",
+				"Description": "Hrůzy jsou nadpřirozené entity. Ve @Compendium[foundry-ironsworn.ironsworntruths.8e55416353faa29f]{Starém světě} byly pověrou a legendou. Zde jsou noční můry, které se staly skutečností. Železné země jsou úrodnou půdou pro temnotu a zlo, které zde zakořenily a plodí tyto nemrtvé bytosti čisté pomsty či bezduché nenávisti.\n\nMnohé hrůzy lze dočasně porazit fyzickými útoky, ale nelze je zabít. Jsou mimo dosah smrti."
+			},
+			"Anomalies": {
+				"Name": "Anomálie",
+				"Description": "Stará magie prostupuje Železnými zeměmi. Tyto síly se někdy projevují jako anomálie, což je jinotvorný rys krajiny či prostředí. Některé jsou ztělesněním pradávných duchů s nepoznatelnými motivacemi. Jiné jsou přírodní síly nadané krutým účelem."
+			},
+			"Sample NPCs": {
+				"Name": "Ukázkové NP",
+				"Description": ""
+			}
+		},
+		"NpcNatures": {
+			"Ironlander": "Železnozemec",
+			"Firstborn": "Prvorozený",
+			"Animal": "Zvíře",
+			"Beast": "Bestie",
+			"Horror": "Hrůza",
+			"Anomaly": "Anomálie",
+			"Monster": "Nestvůra",
+			"Machine": "Stroj",
+			"Human": "Člověk",
+			"Creature": "Bytost",
+			"Vehicle": "Dopravní prostředek"
+		},
+		"ROLLTABLE": {
+			"TypeOracle": "Orákulum"
+		},
+		"ROLLTABLES": {
+			"TypeOracle": "Orákula"
+		},
+		"SCENE": {
+			"TypeSector": "Sektor",
+			"TypeChart": "Graf"
+		},
+		"SCENES": {
+			"TypeSector": "Sektory"
+		},
+		"ACTOR": {
+			"SheetCompact": "Kompaktní",
+			"SheetFoe": "Nepřítel",
+			"SheetStarforgedLocation": "Lokace Starforged",
+			"SubtypeDerelict": "Pozůstatek",
+			"SubtypeIsland": "Ostrov",
+			"SubtypePlanet": "Planeta",
+			"SubtypeSettlement": "Osídlení",
+			"SubtypeStar": "Hvězdný objekt",
+			"SubtypeVault": "Pokladnice předchůdců",
+			"TypeCharacter": "Postava",
+			"TypeFoe": "NP",
+			"TypeLocation": "Lokace",
+			"TypeShared": "Sdílená karta postavy",
+			"TypeDelveSite": "Instance Hlubin",
+			"TypeStarship": "Hvězdné"
+		},
+		"ACTORS": {
+			"SubtypeDerelict": "Pozůstatek",
+			"SubtypePlanet": "Planety",
+			"SubtypeSettlement": "Osídlení",
+			"SubtypeStar": "Hvězdný objekt",
+			"SubtypeVault": "Pokladnice Předchůdců",
+			"TypeCharacter": "Postava",
+			"TypeFoe": "NP",
+			"TypeLocation": "Lokace",
+			"TypeDelveSite": "Instance Hlubin",
+			"TypeStarship": "Hvězdná loď"
+		},
+		"ITEM": {
+			"SubtypeConnection": "Spojení",
+			"SubtypeProgress": "Pokrok",
+			"SubtypeVow": "Přísaha",
+			"TypeAsset": "Vylepšení",
+			"TypeBond": "Pouto",
+			"TypeBondset": "Sada pout",
+			"TypeDelveDomain": "Doména instance",
+			"TypeDelveTheme": "Téma instance",
+			"TypeDelveThemeOrDomain": "Téma/oblast instance",
+			"TypeMove": "Tah",
+			"TypeProgressTrack": "Stupnice pokroku"
+		},
+		"ITEMS": {
+			"SubtypeConnection": "Spojení",
+			"SubtypeProgress": "Pokroky",
+			"SubtypeVow": "Přísahy",
+			"TypeAsset": "Vylepšení",
+			"TypeBond": "Pouta",
+			"TypeBondset": "Sady pout",
+			"TypeDelveDomain": "Domény instancí",
+			"TypeDelveTheme": "Témata instancí",
+			"TypeMove": "Tahy",
+			"TypeProgressTrack": "Stupnice pokroků"
+		},
+		"JOURNALENTRYPAGE": {
+			"TypeProgressTrack": "Stupnice pokroku",
+			"TypeTruth": "Tvá verze",
+			"TypeTruthClassic": "Tvá verze (základní)",
+			"TypeTruthStarforged": "Tvá verze (Starforged)"
+		},
+		"JOURNALENTRYPAGES": {
+			"TypeProgressTrack": "Stupnice pokroků",
+			"TypeTruth": "Tvé verze",
+			"TypeTruthClassic": "Tvá verze (základní)",
+			"TypeTruthStarforged": "Tvé verze (Starforged)"
+		},
+		"DELVESITE": {
+			"Danger": "Nebezpečí",
+			"Dangers": "Nebezpečí",
+			"Denizen": "Obyvatel",
+			"Denizens": "Obyvatelé",
+			"Feature": "Charakteristika",
+			"Features": "Charakteristikx",
+			"FREQUENCY": {
+				"VeryCommon": "Velmi častý",
+				"Common": "Běžný",
+				"Uncommon": "Neobvyklý",
+				"Rare": "Vzácný",
+				"Unforeseen": "Nevídaný"
+			}
+		}
+	}
+}
