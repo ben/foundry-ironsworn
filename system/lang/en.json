@@ -116,6 +116,11 @@
 			"Discoveries": "Discoveries",
 			"Quests": "Quests"
 		},
+		"CombatPosition": {
+			"InControl": "In Control",
+			"InABadSpot": "In a Bad Spot",
+			"None": "None"
+		},
 		"Clock": "Clock",
 		"Segments": "Segments",
 		"Impacts": "Impacts",
