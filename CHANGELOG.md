@@ -6,6 +6,7 @@
 - Add field for Combat Position (In Control, In a Bad Spot).
 - Add item icons for Sundered Isles assets ([#1064](https://github.com/ben/foundry-ironsworn/pull/1064), thanks [@jendave](https://github.com/jendave)!)
 - Add item icons for most assets ([#1062](https://github.com/ben/foundry-ironsworn/pull/1062), thanks [@jendave](https://github.com/jendave)!)
+- Add field for Combat Position (In Control, In a Bad Spot).
 - Add Czech translation ([#1061](https://github.com/ben/foundry-ironsworn/pull/1061), thanks [@Lethrendis](https://github.com/Lethrendis)!)
 
 ## 1.25.5
