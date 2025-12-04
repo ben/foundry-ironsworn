@@ -1,6 +1,6 @@
 // A script to import Datasworn 2 data into compendia JSON files.
 // Run this like so:
-//   bun src/module/datasworn2/import/index.ts
+// bun src/module/datasworn2/import/index.ts
 
 import type {
 	AssetCollection,
@@ -159,7 +159,7 @@ for (const collection of collections) {
 					conditions: [],
 					description: ''
 				},
-				img: ICON_MAP.starforged.asset[asset.name] ?? 'icons/svg/item-bag.svg',
+				img: ICON_MAP[collection]?.asset?.[asset.name] ?? 'icons/svg/item-bag.svg',
 				effects: [],
 				sort: 0,
 				ownership: {

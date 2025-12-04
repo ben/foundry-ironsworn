@@ -67,6 +67,15 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 			notes: new fields.HTMLField(),
 			pronouns: new fields.StringField(),
 			callsign: new fields.StringField(),
+			combatPosition: new fields.StringField({
+				required: false,
+				blank: true,
+				choices: {
+					inControl: 'IRONSWORN.CombatPosition.InControl',
+					inABadSpot: 'IRONSWORN.CombatPosition.InABadSpot',
+					none: 'IRONSWORN.CombatPosition.None'
+				}
+			}),
 
 			edge: new StatField({ label: 'IRONSWORN.Edge' }),
 			heart: new StatField({ label: 'IRONSWORN.Heart' }),
@@ -139,6 +148,7 @@ export interface CharacterDataSourceData {
 	notes: string
 	pronouns: string
 	callsign: string
+	combatPosition?: 'inControl' | 'inABadSpot' | 'none'
 
 	edge: number
 	heart: number
