@@ -39,7 +39,7 @@ const DIALOG_BUTTONS: DialogButton[] = [
 	{
 		kind: 'sfship',
 		labelKey: 'IRONSWORN.ACTOR.TypeStarship',
-		img: 'icons/environment/settlement/wizard-castle.webp',
+		img: 'systems/foundry-ironsworn/assets/starships/Ship-10s.webp',
 		starforged: true
 	},
 	{
