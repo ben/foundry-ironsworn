@@ -1,0 +1,52 @@
+{
+  "type": "asset",
+  "_id": "6565d686302d22ce",
+  "folder": "6591a880408cee6a",
+  "name": "Sailing Ship",
+  "system": {
+    "requirement": "",
+    "category": "Incidental Vehicle",
+    "color": "#6b7a8f",
+    "fields": [
+      {
+        "name": "Name",
+        "value": ""
+      }
+    ],
+    "abilities": [
+      {
+        "enabled": true,
+        "description": "<p>When you gain command of this ship, envision its nature and assign a max integrity (5, 4, or 3). If this is your primary ship, it has up to 5 hold. You and your allies use your hold value as supply when taking action or suffering a cost related to shipwide gear and provisions.</p>\n<p>The ship cannot be marked as battered or cursed and cannot be enhanced with modules. If it is destroyed, sunk, lost, abandoned, or upgraded to FLAGSHIP status, discard this card.</p>",
+        "hasClock": false,
+        "clockTicks": 0,
+        "clockMax": 4
+      }
+    ],
+    "track": {
+      "enabled": true,
+      "name": "Integrity",
+      "max": 5,
+      "value": 5,
+      "min": 0
+    },
+    "exclusiveOptions": [],
+    "conditions": [],
+    "description": ""
+  },
+  "img": "systems/foundry-ironsworn/assets/assets/ship-wheel.svg",
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "asset:sundered_isles/incidental_vehicle/sailing_ship",
+      "dsid": "asset:sundered_isles/incidental_vehicle/sailing_ship"
+    }
+  },
+  "_stats": {
+    "systemId": "foundry-ironsworn"
+  },
+  "_key": "!items!6565d686302d22ce"
+}

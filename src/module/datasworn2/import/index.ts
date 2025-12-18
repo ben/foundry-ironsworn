@@ -256,7 +256,7 @@ for (const collection of collections) {
 			// Trim out embedded tables
 			// TODO: insert a link instead?
 			const stripTableEmbeds = (txt: string): string =>
-				txt.replace(/{{table>.*?}}/, '').trim()
+				txt.replace(/{{table(_columns)?>.*?}}/, '').trim()
 
 			// Process oracle IDs
 			const oracleIdPatterns = Object.values(move.oracles ?? {}).map(
@@ -627,7 +627,7 @@ for (const collection of collections) {
 					// Trim out embedded tables
 					// TODO: insert a link instead?
 					const stripTableEmbeds = (txt: string): string =>
-						txt.replace(/{{table>.*?}}/, '(roll below)').trim()
+						txt.replace(/{{table(_columns)?>.*?}}/, '(roll below)').trim()
 					return {
 						type: 'truth',
 						name: o.summary ?? o._id,

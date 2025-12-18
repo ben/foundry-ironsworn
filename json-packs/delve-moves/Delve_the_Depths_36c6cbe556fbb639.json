@@ -9,7 +9,7 @@
     "Category": "Ironsworn/Moves/Delve",
     "Progress Move": false,
     "Variant of": "",
-    "Text": "When you __traverse an area within a perilous site__, envision your surroundings (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Then, consider your approach. If you navigate this area...\n\n  * With haste: Roll +edge.\n  * With stealth or trickery: Roll +shadow.\n  * With observation, intuition, or expertise: Roll +wits.\n\nOn a __strong hit__, you delve deeper. Mark progress and @Compendium[foundry-ironsworn.ironsworndelvemoves.4da87fd54eaa1b89]{Find an Opportunity}. On a __weak hit__, roll on the following table according to your stat.\n\nOn a __miss__, @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}.\n\n{{table_columns>move:delve/delve/delve_the_depths}}",
+    "Text": "When you __traverse an area within a perilous site__, envision your surroundings (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure). Then, consider your approach. If you navigate this area...\n\n  * With haste: Roll +edge.\n  * With stealth or trickery: Roll +shadow.\n  * With observation, intuition, or expertise: Roll +wits.\n\nOn a __strong hit__, you delve deeper. Mark progress and @Compendium[foundry-ironsworn.ironsworndelvemoves.4da87fd54eaa1b89]{Find an Opportunity}. On a __weak hit__, roll on the following table according to your stat.\n\nOn a __miss__, @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}.",
     "Trigger": {
       "Text": "When you traverse an area within a perilous site...",
       "Options": [
@@ -47,7 +47,7 @@
         }
       },
       "Weak Hit": {
-        "Text": "On a __weak hit__, roll on the following table according to your stat.\n\n{{table_columns>move:delve/delve/delve_the_depths}}"
+        "Text": "On a __weak hit__, roll on the following table according to your stat."
       },
       "Miss": {
         "Text": "On a __miss__, @Compendium[foundry-ironsworn.ironsworndelvemoves.06f78b87b9532437]{Reveal a Danger}.",
