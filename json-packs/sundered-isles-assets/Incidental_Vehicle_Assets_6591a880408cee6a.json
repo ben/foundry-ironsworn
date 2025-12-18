@@ -1,0 +1,16 @@
+{
+  "name": "Incidental Vehicle Assets",
+  "color": "#6b7a8f",
+  "description": "",
+  "type": "Item",
+  "_id": "6591a880408cee6a",
+  "sort": 0,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "asset_collection:sundered_isles/incidental_vehicle"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!6591a880408cee6a"
+}

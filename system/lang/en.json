@@ -816,6 +816,10 @@
 				"Support Vehicle Assets": {
 					"Title": "Support Vehicle",
 					"Description": ""
+				},
+				"Incidental Vehicle Assets": {
+					"Title": "Incidental Vehicle",
+					"Description": ""
 				}
 			}
 		},
