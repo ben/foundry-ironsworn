@@ -2,6 +2,10 @@
 
 ## Next Release
 
+- Update to [tbsvttr's fork of datasworn](https://github.com/tbsvttr/datasworn) ([#1066](https://github.com/ben/foundry-ironsworn/pull/1066))
+  - This adds the "Incidental Vehicle" category and "Sailing Ship" item to Sundered Isles assets
+  - It also fixes a couple of small errors in move text and oracle rows
+
 ## 1.25.6
 
 - Add item icons for Starforged, Ironsworn and Sundered Isles assets ([#1062](https://github.com/ben/foundry-ironsworn/pull/1062) and [#1064](https://github.com/ben/foundry-ironsworn/pull/1064), thanks [@jendave](https://github.com/jendave)!)
