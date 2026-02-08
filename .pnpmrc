@@ -1,0 +1,19 @@
+# Allow hoisting to make transitive dependencies importable
+shamefully-hoist=true
+
+# Auto-install peer dependencies
+auto-install-peers=true
+
+# Include dependencies from workspace root
+include-workspace-root=true
+
+# Allow these git dependencies to run build scripts
+only-built-dependencies[]=@datasworn/core
+only-built-dependencies[]=@datasworn/ironsworn-classic
+only-built-dependencies[]=@datasworn/ironsworn-classic-delve
+only-built-dependencies[]=@datasworn/starforged
+only-built-dependencies[]=@datasworn/sundered-isles
+only-built-dependencies[]=@league-of-foundry-developers/foundry-vtt-types
+
+# Store path (optional - for better caching)
+# store-dir=~/.pnpm-store
