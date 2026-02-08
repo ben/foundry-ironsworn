@@ -8,6 +8,7 @@ overrides:
 shamefullyHoist: true
 
 onlyBuiltDependencies:
+  - "@league-of-foundry-developers/foundry-vtt-types"
   - "@parcel/watcher"
   - "classic-level"
   - "esbuild"
