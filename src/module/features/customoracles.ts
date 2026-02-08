@@ -33,7 +33,7 @@ function customFolderOracleCategory(): [IOracleTreeNode, number] {
 	const ret = { ...emptyNode(), displayName: name }
 	let count = 0
 
-	const rootFolder = game.tables?.folders?.find((x) => x.name === name)
+	const rootFolder = (game.tables as any)?.folders?.find((x) => x.name === name)
 	if (rootFolder == null) return [ret, count]
 
 	function walkFolder(parent: IOracleTreeNode, folder: Folder) {

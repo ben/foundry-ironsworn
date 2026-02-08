@@ -102,6 +102,96 @@
       "text": "River crashing through a narrow gorge",
       "_key": "!tables.results!22bfe152e86e3b7c.61e3a10afee2e301",
       "_id": "61e3a10afee2e301"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Scars of a recent landslide",
+      "_key": "!tables.results!22bfe152e86e3b7c.bcb9b9f3b6e0bf21",
+      "_id": "bcb9b9f3b6e0bf21"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Sheer precipice",
+      "_key": "!tables.results!22bfe152e86e3b7c.06d5fc025a6ca126",
+      "_id": "06d5fc025a6ca126"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Sheltered highland lake",
+      "_key": "!tables.results!22bfe152e86e3b7c.70498d87d84633d3",
+      "_id": "70498d87d84633d3"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Steep, rocky slope",
+      "_key": "!tables.results!22bfe152e86e3b7c.51374dfb56446be2",
+      "_id": "51374dfb56446be2"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "Stone stairs carved into a cliff face",
+      "_key": "!tables.results!22bfe152e86e3b7c.72fa385b973da353",
+      "_id": "72fa385b973da353"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Thundering waterfall",
+      "_key": "!tables.results!22bfe152e86e3b7c.321704dab4d1cb5b",
+      "_id": "321704dab4d1cb5b"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "Towering rock spires",
+      "_key": "!tables.results!22bfe152e86e3b7c.795b6402df2e1375",
+      "_id": "795b6402df2e1375"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Vantage point with an expansive view",
+      "_key": "!tables.results!22bfe152e86e3b7c.8ba9b114fdb091a3",
+      "_id": "8ba9b114fdb091a3"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Veins of ore",
+      "_key": "!tables.results!22bfe152e86e3b7c.d8db4fecae75cb3f",
+      "_id": "d8db4fecae75cb3f"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Winding footpath",
+      "_key": "!tables.results!22bfe152e86e3b7c.d831d72935956646",
+      "_id": "d831d72935956646"
     }
   ],
   "folder": "a74b251068596264",

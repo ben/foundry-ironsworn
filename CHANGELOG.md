@@ -3,6 +3,7 @@
 ## Next Release
 
 - Update the default icon for a starship actor to a spaceship ([#1065](https://github.com/ben/foundry-ironsworn/pull/1065), thanks [@jendave](https://github.com/jendave))
+- Transition to the tbsvttr fork of datasworn, and run the import (fixes some data issues) ([#1069](https://github.com/ben/foundry-ironsworn/pull/1069))
 
 ## 1.25.7
 

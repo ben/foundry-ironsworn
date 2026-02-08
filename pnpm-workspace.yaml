@@ -1,0 +1,15 @@
+overrides:
+  "@datasworn/core": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/core"
+  "@datasworn/starforged": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/starforged"
+  "@datasworn/ironsworn-classic": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/ironsworn-classic"
+
+
+# Allow hoisting to make transitive dependencies importable
+shamefullyHoist: true
+
+onlyBuiltDependencies:
+  - "@league-of-foundry-developers/foundry-vtt-types"
+  - "@parcel/watcher"
+  - "classic-level"
+  - "esbuild"
+  - "less"

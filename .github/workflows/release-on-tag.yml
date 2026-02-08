@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js 20
+      - name: Use Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 24.x
 
       - name: Get Version
         shell: bash
@@ -27,10 +27,14 @@ jobs:
           git config --global url."https://github.com/".insteadOf
           ssh://git@github.com/
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Install dependencies and run webpack
         run: |
-          npm ci
-          npm run build:production
+          pnpm install
+          pnpm run build:production
 
       - name: Create installable system zip file
         run: cd dist && zip -r ../ironsworn.zip *

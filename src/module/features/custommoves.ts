@@ -77,7 +77,7 @@ export async function createMoveTreeForRuleset(
 
 function customFolderMoveCategory(): DisplayMoveRuleset | undefined {
 	const name = game.i18n.localize('IRONSWORN.MOVES.Custom Moves')
-	const rootFolder = game.items?.folders.find((x) => x.name === name)
+	const rootFolder = (game.items as any)?.folders.find((x) => x.name === name)
 	if (!rootFolder) return undefined
 
 	const category: DisplayMoveCategory = {
