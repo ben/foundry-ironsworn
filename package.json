@@ -83,7 +83,15 @@
 			"@datasworn/core": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/core",
 			"@datasworn/starforged": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/starforged",
 			"@datasworn/ironsworn-classic": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/ironsworn-classic"
-		}
+		},
+		"onlyBuiltDependencies": [
+			"@datasworn/core",
+			"@datasworn/ironsworn-classic",
+			"@datasworn/ironsworn-classic-delve",
+			"@datasworn/starforged",
+			"@datasworn/sundered-isles",
+			"@league-of-foundry-developers/foundry-vtt-types"
+		]
 	},
 	"browserslist": [
 		"defaults"
