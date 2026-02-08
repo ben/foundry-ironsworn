@@ -18,11 +18,11 @@
 	"license": "MIT",
 	"private": true,
 	"dependencies": {
-		"@datasworn/core": "github:tbsvttr/datasworn#main&path:pkg/nodejs/@datasworn/core",
-		"@datasworn/ironsworn-classic": "github:tbsvttr/datasworn#main&path:pkg/nodejs/@datasworn/ironsworn-classic",
-		"@datasworn/ironsworn-classic-delve": "github:tbsvttr/datasworn#main&path:pkg/nodejs/@datasworn/ironsworn-classic-delve",
-		"@datasworn/starforged": "github:tbsvttr/datasworn#main&path:pkg/nodejs/@datasworn/starforged",
-		"@datasworn/sundered-isles": "github:tbsvttr/datasworn#main&path:pkg/nodejs/@datasworn/sundered-isles",
+		"@datasworn/core": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/core",
+		"@datasworn/ironsworn-classic": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/ironsworn-classic",
+		"@datasworn/ironsworn-classic-delve": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/ironsworn-classic-delve",
+		"@datasworn/starforged": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/starforged",
+		"@datasworn/sundered-isles": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/sundered-isles",
 		"@foundryvtt/foundryvtt-cli": "^1.0",
 		"@league-of-foundry-developers/foundry-vtt-types": "github:rsek/foundry-vtt-types#v10-journal",
 		"@mavrin/stylelint-declaration-use-css-custom-properties": "^3.0.1",
@@ -80,9 +80,9 @@
 	},
 	"pnpm": {
 		"overrides": {
-			"@datasworn/core": "github:tbsvttr/datasworn#main&path:pkg/nodejs/@datasworn/core",
-			"@datasworn/starforged": "github:tbsvttr/datasworn#main&path:pkg/nodejs/@datasworn/starforged",
-			"@datasworn/ironsworn-classic": "github:tbsvttr/datasworn#main&path:pkg/nodejs/@datasworn/ironsworn-classic"
+			"@datasworn/core": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/core",
+			"@datasworn/starforged": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/starforged",
+			"@datasworn/ironsworn-classic": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/ironsworn-classic"
 		}
 	},
 	"browserslist": [
