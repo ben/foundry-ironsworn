@@ -29,8 +29,8 @@ jobs:
 
       - name: Install dependencies and run webpack
         run: |
-          npm ci
-          npm run build:production
+          pnpm install
+          pnpm run build:production
 
       - name: Create installable system zip file
         run: cd dist && zip -r ../ironsworn.zip *
