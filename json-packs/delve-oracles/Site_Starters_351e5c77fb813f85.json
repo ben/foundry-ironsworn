@@ -1,0 +1,200 @@
+{
+  "_id": "351e5c77fb813f85",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:delve/site_starters",
+      "dsid": "oracle_rollable:delve/site_starters/site_starters"
+    }
+  },
+  "name": "Site Starters",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Alva's Rest",
+      "_key": "!tables.results!351e5c77fb813f85.52d47673227aff9d",
+      "_id": "52d47673227aff9d"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Bleakroot Depths",
+      "_key": "!tables.results!351e5c77fb813f85.1bf2473f03659777",
+      "_id": "1bf2473f03659777"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Bonewilds",
+      "_key": "!tables.results!351e5c77fb813f85.5bc17e15b512df80",
+      "_id": "5bc17e15b512df80"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Darkfall Caves",
+      "_key": "!tables.results!351e5c77fb813f85.f855909bf6e7c05f",
+      "_id": "f855909bf6e7c05f"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "Deeprot Bog",
+      "_key": "!tables.results!351e5c77fb813f85.0b998ab780eb08c1",
+      "_id": "0b998ab780eb08c1"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Egan's Folly",
+      "_key": "!tables.results!351e5c77fb813f85.40d7f7fd3eb9db6c",
+      "_id": "40d7f7fd3eb9db6c"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Foulwater Plunge",
+      "_key": "!tables.results!351e5c77fb813f85.2ec3e86df9d5932c",
+      "_id": "2ec3e86df9d5932c"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "Frostmark",
+      "_key": "!tables.results!351e5c77fb813f85.a48053ee061f2177",
+      "_id": "a48053ee061f2177"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "Greathammer Deep",
+      "_key": "!tables.results!351e5c77fb813f85.fb6d8c5d7353850d",
+      "_id": "fb6d8c5d7353850d"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "Holdfast Barrow",
+      "_key": "!tables.results!351e5c77fb813f85.ccd72139f9e1c982",
+      "_id": "ccd72139f9e1c982"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Hollowmount Island",
+      "_key": "!tables.results!351e5c77fb813f85.2594dbb3dcd3ace9",
+      "_id": "2594dbb3dcd3ace9"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "Icebound Reach",
+      "_key": "!tables.results!351e5c77fb813f85.8ba00eef077d0713",
+      "_id": "8ba00eef077d0713"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "Lastrock Mine",
+      "_key": "!tables.results!351e5c77fb813f85.1b68640802343d2d",
+      "_id": "1b68640802343d2d"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "Redhome Sanctum",
+      "_key": "!tables.results!351e5c77fb813f85.8d3b0ce12fb5e53a",
+      "_id": "8d3b0ce12fb5e53a"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Sinking Temple",
+      "_key": "!tables.results!351e5c77fb813f85.e0b2aaacdc69e15e",
+      "_id": "e0b2aaacdc69e15e"
+    },
+    {
+      "range": [
+        75,
+        80
+      ],
+      "text": "Smoldering Wood",
+      "_key": "!tables.results!351e5c77fb813f85.624f36e6733a3470",
+      "_id": "624f36e6733a3470"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Stillgrave Mire",
+      "_key": "!tables.results!351e5c77fb813f85.7a130460d7bf7a99",
+      "_id": "7a130460d7bf7a99"
+    },
+    {
+      "range": [
+        85,
+        90
+      ],
+      "text": "Stonesong Spire",
+      "_key": "!tables.results!351e5c77fb813f85.6d0463bf85c791ae",
+      "_id": "6d0463bf85c791ae"
+    },
+    {
+      "range": [
+        91,
+        94
+      ],
+      "text": "Topplekeep",
+      "_key": "!tables.results!351e5c77fb813f85.59c86cb1f05b9510",
+      "_id": "59c86cb1f05b9510"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "text": "Trail of Spirits",
+      "_key": "!tables.results!351e5c77fb813f85.1cf3391a49550ec8",
+      "_id": "1cf3391a49550ec8"
+    }
+  ],
+  "folder": "a90e7915c66115de",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!351e5c77fb813f85"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Site Starters",
+  "description": "Use this table to randomly select a site in the Ironlands. You can use the result to start a new campaign, or to find a new site to explore.",
+  "type": "RollTable",
+  "_id": "a90e7915c66115de",
+  "sort": 94,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:delve/site_starters"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!a90e7915c66115de"
+}
