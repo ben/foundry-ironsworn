@@ -147,13 +147,14 @@ function theOracleWindow() {
 }
 
 function addTool(control: SceneControl, tool: SceneControlTool) {
-	if (game.version.startsWith('13')) {
-		control.tools ||= {}
-		control.tools[tool.name] = tool
+	const anyCtrl = control as any
+	if ((game as any).version.startsWith('13')) {
+		anyCtrl.tools ||= {}
+		anyCtrl.tools[tool.name] = tool
 	} else {
 		// v12 and before
-		control.tools ||= []
-		control.tools.push(tool)
+		anyCtrl.tools ||= []
+		anyCtrl.tools.push(tool)
 	}
 }
 
@@ -164,7 +165,7 @@ export function activateSceneButtonListeners() {
 		group: 'primary'
 	}
 
-	Hooks.on('getSceneControlButtons', (controls) => {
+	Hooks.on('getSceneControlButtons', (controls: any) => {
 		const oracleButton: SceneControlTool = {
 			name: 'oracles',
 			title: game.i18n.localize('IRONSWORN.ROLLTABLES.TypeOracle'),
@@ -186,7 +187,8 @@ export function activateSceneButtonListeners() {
 			icon: 'isicon-logo-starforged-dk',
 			layer: 'ironsworn',
 			visible: true,
-			activeTool: 'select'
+			activeTool: 'select',
+			tools: [],
 		}
 		addTool(control, oracleButton)
 

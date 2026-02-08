@@ -32,7 +32,7 @@ const props = defineProps<{
 }>()
 
 const foundryMove = (await fromUuid(props.move.uuid)) as IronswornItem<'sfmove'>
-const moveObj = ref(foundryMove.toObject())
+const moveObj = ref(foundryMove.toObject() as any)
 provide(ItemKey, moveObj as any)
 provide($ItemKey, foundryMove)
 
