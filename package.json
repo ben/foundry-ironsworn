@@ -78,13 +78,6 @@
 		"vue2-animate": "^2.1.4",
 		"yaml": "^2.3.4"
 	},
-	"pnpm": {
-		"overrides": {
-			"@datasworn/core": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/core",
-			"@datasworn/starforged": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/starforged",
-			"@datasworn/ironsworn-classic": "github:tbsvttr/datasworn#a537d6c467&path:pkg/nodejs/@datasworn/ironsworn-classic"
-		}
-	},
 	"browserslist": [
 		"defaults"
 	]
