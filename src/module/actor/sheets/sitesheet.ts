@@ -4,7 +4,7 @@ import siteSheetVue from '../../vue/site-sheet.vue'
 export class IronswornSiteSheet extends VueActorSheet {
 	static get defaultOptions() {
 		return foundry.utils.mergeObject(super.defaultOptions, {
-			width: 750,
+			width: 600,
 			height: 700,
 			rootComponent: siteSheetVue
 		}) as any
