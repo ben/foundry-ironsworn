@@ -37,9 +37,6 @@ importers:
       '@mavrin/stylelint-declaration-use-css-custom-properties':
         specifier: ^3.0.1
         version: 3.0.1(stylelint@15.11.0(typescript@4.8.4))
-      '@tinymce/tinymce-vue':
-        specifier: ^5.1.1
-        version: 5.1.1(vue@3.4.38(typescript@4.8.4))
       '@types/chroma-js':
         specifier: ^2.4.4
         version: 2.4.5
@@ -1186,11 +1183,6 @@ packages:
 
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
-
-  '@tinymce/tinymce-vue@5.1.1':
-    resolution: {integrity: sha512-iO57HOWesFOhsaqjA5Ea6sDvQBmJJH3/dq00Uvg7metlct2kLF+ctRgoDsetLt6gmeZ7COPftr814/XzqnJ/dg==}
-    peerDependencies:
-      vue: ^3.0.0
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -4243,9 +4235,6 @@ packages:
   tinymce@6.1.2:
     resolution: {integrity: sha512-tl4KbEKdPzyPTatJkblN2AqzRj9jaRGyATnwaSnsLFGKb4AI6B+4e0Gc8dUDXuqAjgSnHokhzamrQJLbSn4CmQ==}
 
-  tinymce@6.8.6:
-    resolution: {integrity: sha512-++XYEs8lKWvZxDCjrr8Baiw7KiikraZ5JkLMg6EdnUVNKJui0IsrAADj5MsyUeFkcEryfn2jd3p09H7REvewyg==}
-
   tmp@0.2.5:
     resolution: {integrity: sha512-voyz6MApa1rQGUxT3E+BK7/ROe8itEx7vD8/HEvt4xwXucvQ5G5oeEiHkmHZJuBO21RpOf+YYm9MOivj709jow==}
     engines: {node: '>=14.14'}
@@ -5628,11 +5617,6 @@ snapshots:
   '@sindresorhus/merge-streams@4.0.0': {}
 
   '@socket.io/component-emitter@3.1.2': {}
-
-  '@tinymce/tinymce-vue@5.1.1(vue@3.4.38(typescript@4.8.4))':
-    dependencies:
-      tinymce: 6.8.6
-      vue: 3.4.38(typescript@4.8.4)
 
   '@trysound/sax@0.2.0': {}
 
@@ -9220,8 +9204,6 @@ snapshots:
       readable-stream: 3.6.2
 
   tinymce@6.1.2: {}
-
-  tinymce@6.8.6: {}
 
   tmp@0.2.5: {}
 
