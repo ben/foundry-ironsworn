@@ -17,7 +17,8 @@
         1,
         25
       ],
-      "text": "Sea",
+      "name": "Sea",
+      "description": "Amid open waters",
       "_key": "!tables.results!9870230fb41c1fce.20a1ca9088666b5f",
       "_id": "20a1ca9088666b5f"
     },
@@ -26,7 +27,8 @@
         26,
         65
       ],
-      "text": "Shore",
+      "name": "Shore",
+      "description": "Where the land meets the sea",
       "_key": "!tables.results!9870230fb41c1fce.42781f9c4c5d4ff8",
       "_id": "42781f9c4c5d4ff8"
     },
@@ -35,7 +37,8 @@
         66,
         75
       ],
-      "text": "Sea Cave",
+      "name": "Sea Cave",
+      "description": "Within a tidal cave",
       "_key": "!tables.results!9870230fb41c1fce.68407e7a19dd3c2f",
       "_id": "68407e7a19dd3c2f"
     },
@@ -44,7 +47,8 @@
         76,
         85
       ],
-      "text": "Swamp",
+      "name": "Swamp",
+      "description": "Mired in wetlands",
       "_key": "!tables.results!9870230fb41c1fce.56f3eee559ee8681",
       "_id": "56f3eee559ee8681"
     },
@@ -53,7 +57,8 @@
         86,
         98
       ],
-      "text": "River",
+      "name": "River",
+      "description": "Along an inland waterway",
       "_key": "!tables.results!9870230fb41c1fce.6311800acb1ae5d5",
       "_id": "6311800acb1ae5d5"
     },
@@ -62,7 +67,8 @@
         99,
         100
       ],
-      "text": "Inland",
+      "name": "Inland",
+      "description": "Away from the sea",
       "_key": "!tables.results!9870230fb41c1fce.642dede90854084b",
       "_id": "642dede90854084b"
     }

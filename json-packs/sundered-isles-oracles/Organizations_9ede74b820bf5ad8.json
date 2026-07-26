@@ -17,7 +17,8 @@
         1,
         10
       ],
-      "text": "Bloody Skulls",
+      "name": "Bloody Skulls",
+      "description": "Bands of scavenging shipbreakers who lie in wait along hazardous passages. They believe that painting their faces with a death-like visage protect against retribution by spirits of the dead.",
       "_key": "!tables.results!9ede74b820bf5ad8.ce36eb87dd988756",
       "_id": "ce36eb87dd988756"
     },
@@ -26,7 +27,8 @@
         11,
         20
       ],
-      "text": "Cynosure League",
+      "name": "Cynosure League",
+      "description": "Guild of scientists and naturalists who record their findings in exhaustively-detailed journals. Their works are copied and recorded by archivists at a grand central library.",
       "_key": "!tables.results!9ede74b820bf5ad8.93aa4d0fe92b3e22",
       "_id": "93aa4d0fe92b3e22"
     },
@@ -35,7 +37,8 @@
         21,
         30
       ],
-      "text": "Ebb Tide",
+      "name": "Ebb Tide",
+      "description": "Covert insurgency of spies and saboteurs. They seek to cripple imperial ambitions from within, and use trained gulls to carry vital messages to collaborators.",
       "_key": "!tables.results!9ede74b820bf5ad8.d1dc2fd14f43ab4a",
       "_id": "d1dc2fd14f43ab4a"
     },
@@ -44,7 +47,8 @@
         31,
         40
       ],
-      "text": "Faceless Accord",
+      "name": "Faceless Accord",
+      "description": "Renegades sailing in defiance of imperial powers. They conceal their identities behind iron masks to protect kinfolk still under imperial rule.",
       "_key": "!tables.results!9ede74b820bf5ad8.fe533a6843a339d7",
       "_id": "fe533a6843a339d7"
     },
@@ -53,7 +57,8 @@
         41,
         50
       ],
-      "text": "Forsaken Fleet",
+      "name": "Forsaken Fleet",
+      "description": "Powerful clan of pirates led by a marauder known as the Raven Queen. They recently sacked and seized a major port town and made it a refuge for outlaws and outcasts.",
       "_key": "!tables.results!9ede74b820bf5ad8.7c4f97878be332a4",
       "_id": "7c4f97878be332a4"
     },
@@ -62,7 +67,8 @@
         51,
         60
       ],
-      "text": "Ironmongers",
+      "name": "Ironmongers",
+      "description": "Guild of shipbuilders and arms manufacturers who supply their destructive wares to the highest bidder. They secretly incite wars to expand their fortune.",
       "_key": "!tables.results!9ede74b820bf5ad8.cbd8339d40f556f4",
       "_id": "cbd8339d40f556f4"
     },
@@ -71,7 +77,8 @@
         61,
         70
       ],
-      "text": "Moonsingers",
+      "name": "Moonsingers",
+      "description": "Mystic coven that draw their powers from the dance of the moons and the rhythm of the tides. They recruit and train talented initiates from across the isles.",
       "_key": "!tables.results!9ede74b820bf5ad8.f1467238ee287614",
       "_id": "f1467238ee287614"
     },
@@ -80,7 +87,8 @@
         71,
         80
       ],
-      "text": "Saltblood",
+      "name": "Saltblood",
+      "description": "Mariners bound to an age-old seafaring fellowship. They recognize fellow saltbloods and communicate using complex hand signals.",
       "_key": "!tables.results!9ede74b820bf5ad8.0699f9c261488950",
       "_id": "0699f9c261488950"
     },
@@ -89,7 +97,8 @@
         81,
         90
       ],
-      "text": "Tide Runners",
+      "name": "Tide Runners",
+      "description": "Smugglers who ferry their ill-gotten goods from island to island. They rely on speed, stealth, and the cover of foul weather or moonless nights.",
       "_key": "!tables.results!9ede74b820bf5ad8.aad1e7773d4ff7f7",
       "_id": "aad1e7773d4ff7f7"
     },
@@ -98,7 +107,8 @@
         91,
         100
       ],
-      "text": "Wayfarers",
+      "name": "Wayfarers",
+      "description": "Peddlers who range across the isles and beyond. They transport rare and unusual cargo aboard their vibrantly painted ships.",
       "_key": "!tables.results!9ede74b820bf5ad8.91eb2ee5fb9ea192",
       "_id": "91eb2ee5fb9ea192"
     }

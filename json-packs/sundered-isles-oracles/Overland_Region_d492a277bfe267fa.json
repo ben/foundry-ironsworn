@@ -17,7 +17,7 @@
         1,
         20
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.22bfe152e86e3b7c]{Highlands}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.22bfe152e86e3b7c]{Highlands}</p><p>Hilly or mountainous terrain</p>",
       "_key": "!tables.results!d492a277bfe267fa.273e8a9fb59d0e11",
       "_id": "273e8a9fb59d0e11"
     },
@@ -26,7 +26,7 @@
         21,
         45
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.cc4be741ca30b038]{Jungle}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.cc4be741ca30b038]{Jungle}</p><p>Dense tropical rainforest</p>",
       "_key": "!tables.results!d492a277bfe267fa.10f27a6b8a48e878",
       "_id": "10f27a6b8a48e878"
     },
@@ -35,7 +35,7 @@
         46,
         50
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.214cc3a5e0062ec3]{Lava Field}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.214cc3a5e0062ec3]{Lava Field}</p><p>Lands scarred by volcanic eruptions</p>",
       "_key": "!tables.results!d492a277bfe267fa.c2cfe1983c03aea2",
       "_id": "c2cfe1983c03aea2"
     },
@@ -44,7 +44,7 @@
         51,
         55
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.5e3a3041a8ae82c0]{Marsh}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.5e3a3041a8ae82c0]{Marsh}</p><p>Waterlogged region with grasses and reeds</p>",
       "_key": "!tables.results!d492a277bfe267fa.fddadb5f8f539f03",
       "_id": "fddadb5f8f539f03"
     },
@@ -53,7 +53,7 @@
         56,
         60
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.e59342f67b015a1f]{River}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.e59342f67b015a1f]{River}</p><p>Major inland waterway</p>",
       "_key": "!tables.results!d492a277bfe267fa.bb11f7d9de0aef36",
       "_id": "bb11f7d9de0aef36"
     },
@@ -62,7 +62,7 @@
         61,
         65
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.4ed7371f0a5b972a]{Scrub}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.4ed7371f0a5b972a]{Scrub}</p><p>Open landscape dominated by grass or shrubs</p>",
       "_key": "!tables.results!d492a277bfe267fa.18c86d7e22bfba88",
       "_id": "18c86d7e22bfba88"
     },
@@ -71,7 +71,7 @@
         66,
         75
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.747f18d37af50737]{Shore}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.747f18d37af50737]{Shore}</p><p>Where the land meets the sea</p>",
       "_key": "!tables.results!d492a277bfe267fa.efaba2e9fdb33e50",
       "_id": "efaba2e9fdb33e50"
     },
@@ -80,7 +80,7 @@
         76,
         85
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.1e3463e94c54d419]{Swamp}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.1e3463e94c54d419]{Swamp}</p><p>Flooded forest with thick vegetation</p>",
       "_key": "!tables.results!d492a277bfe267fa.3dc0e7674e744b78",
       "_id": "3dc0e7674e744b78"
     },
@@ -89,7 +89,7 @@
         86,
         90
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.6aef040657e5a9ec]{Wastes}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.6aef040657e5a9ec]{Wastes}</p><p>Arid, rocky terrain</p>",
       "_key": "!tables.results!d492a277bfe267fa.b2763ec9598eef44",
       "_id": "b2763ec9598eef44"
     },
@@ -98,7 +98,7 @@
         91,
         100
       ],
-      "text": "@Compendium[foundry-ironsworn.sunderedislesoracles.51df8b454d349a65]{Woodland}",
+      "text": "<p>@Compendium[foundry-ironsworn.sunderedislesoracles.51df8b454d349a65]{Woodland}</p><p>Forested lands</p>",
       "_key": "!tables.results!d492a277bfe267fa.b6a02dd8a9d47a0b",
       "_id": "b6a02dd8a9d47a0b"
     }

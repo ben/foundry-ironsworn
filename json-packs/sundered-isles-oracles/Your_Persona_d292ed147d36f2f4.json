@@ -17,7 +17,8 @@
         1,
         3
       ],
-      "text": "Apothecary",
+      "name": "Apothecary",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.4fafc93fdd8873ce]{Healer}, @Compendium[foundry-ironsworn.sunderedislesassets.19ad0bd745c765c5]{Peddler}",
       "_key": "!tables.results!d292ed147d36f2f4.a1a9e110d161da71",
       "_id": "a1a9e110d161da71"
     },
@@ -26,7 +27,8 @@
         4,
         5
       ],
-      "text": "Apprentice",
+      "name": "Apprentice",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.4314d57a351c8f63]{Shipwright}, @Compendium[foundry-ironsworn.sunderedislesassets.54ffc0e2d8e514b4]{Urchin}",
       "_key": "!tables.results!d292ed147d36f2f4.bb7b39c2a1a49ee8",
       "_id": "bb7b39c2a1a49ee8"
     },
@@ -35,7 +37,8 @@
         6,
         7
       ],
-      "text": "Assassin",
+      "name": "Assassin",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.82cb2564aae5bf0f]{Blademaster}, @Compendium[foundry-ironsworn.starforgedassets.9e8a91f52b96c95b]{Bounty Hunter}",
       "_key": "!tables.results!d292ed147d36f2f4.aae39e2e6c92940b",
       "_id": "aae39e2e6c92940b"
     },
@@ -44,7 +47,8 @@
         8,
         9
       ],
-      "text": "Beast Hunter",
+      "name": "Beast Hunter",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.c26627a81dd578bd]{Harpooner}, @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer}",
       "_key": "!tables.results!d292ed147d36f2f4.b4a160a9cc22a927",
       "_id": "b4a160a9cc22a927"
     },
@@ -53,7 +57,8 @@
         10,
         12
       ],
-      "text": "Blockade Runner",
+      "name": "Blockade Runner",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.87222132d6c0379b]{Courier}, @Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}",
       "_key": "!tables.results!d292ed147d36f2f4.8b81ab18ab36d719",
       "_id": "8b81ab18ab36d719"
     },
@@ -62,7 +67,8 @@
         13,
         15
       ],
-      "text": "Brigand",
+      "name": "Brigand",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.bdfce3738749baff]{Pistoleer}, @Compendium[foundry-ironsworn.starforgedassets.d7fbe5fded75531c]{Scoundrel}",
       "_key": "!tables.results!d292ed147d36f2f4.650e0581f2fb9012",
       "_id": "650e0581f2fb9012"
     },
@@ -71,7 +77,8 @@
         16,
         17
       ],
-      "text": "Buccaneer",
+      "name": "Buccaneer",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.68d3a763f99b8b77]{Swashbuckler}, @Compendium[foundry-ironsworn.sunderedislesassets.3989ffe5d08261bc]{Pirate Captain}",
       "_key": "!tables.results!d292ed147d36f2f4.2b2c7cbf01ef3f9b",
       "_id": "2b2c7cbf01ef3f9b"
     },
@@ -80,7 +87,8 @@
         18,
         20
       ],
-      "text": "Bulwark",
+      "name": "Bulwark",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.6e439be2dd0bd5a4]{Brawler}, @Compendium[foundry-ironsworn.starforgedassets.7978ba0785000e24]{Loyalist}",
       "_key": "!tables.results!d292ed147d36f2f4.cdbf14bd7299ec5f",
       "_id": "cdbf14bd7299ec5f"
     },
@@ -89,7 +97,8 @@
         21,
         23
       ],
-      "text": "Castaway",
+      "name": "Castaway",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.f841c7e14913086a]{Jinx}, @Compendium[foundry-ironsworn.starforgedassets.11de92d262291440]{Scavenger}",
       "_key": "!tables.results!d292ed147d36f2f4.9fe0bd27cf8a1574",
       "_id": "9fe0bd27cf8a1574"
     },
@@ -98,7 +107,8 @@
         24,
         26
       ],
-      "text": "Charlatan",
+      "name": "Charlatan",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.d7fbe5fded75531c]{Scoundrel}, @Compendium[foundry-ironsworn.sunderedislesassets.43b05d08b7b0d77a]{Socialite}",
       "_key": "!tables.results!d292ed147d36f2f4.917d6e5d4d84e28b",
       "_id": "917d6e5d4d84e28b"
     },
@@ -107,7 +117,8 @@
         27,
         28
       ],
-      "text": "Cloak and Dagger",
+      "name": "Cloak and Dagger",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.64cc9fd2fe517619]{Cutthroat}, @Compendium[foundry-ironsworn.sunderedislesassets.a3fbec673ba7bd63]{Spy}",
       "_key": "!tables.results!d292ed147d36f2f4.0a5734a9bbf5bee3",
       "_id": "0a5734a9bbf5bee3"
     },
@@ -116,7 +127,8 @@
         29,
         30
       ],
-      "text": "Cultist",
+      "name": "Cultist",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.14c1e6ecd4680fee]{Devotant}, @Compendium[foundry-ironsworn.sunderedislesassets.df94d23a05e3330d]{Necromancer}",
       "_key": "!tables.results!d292ed147d36f2f4.99a96bc7ae6fffb3",
       "_id": "99a96bc7ae6fffb3"
     },
@@ -125,7 +137,8 @@
         31,
         32
       ],
-      "text": "Deathbound",
+      "name": "Deathbound",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.9ab94d1a123ed80e]{Fated}, @Compendium[foundry-ironsworn.starforgedassets.7fdebd942b7163b6]{Haunted}",
       "_key": "!tables.results!d292ed147d36f2f4.e085b464cb85c9c8",
       "_id": "e085b464cb85c9c8"
     },
@@ -134,7 +147,8 @@
         33,
         34
       ],
-      "text": "Deep One",
+      "name": "Deep One",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.d68e04a72dd54d32]{Vestige}, @Compendium[foundry-ironsworn.sunderedislesassets.5087a0440ba3299e]{Waterborn}",
       "_key": "!tables.results!d292ed147d36f2f4.7ceb6cb2b9050ceb",
       "_id": "7ceb6cb2b9050ceb"
     },
@@ -143,7 +157,8 @@
         35,
         37
       ],
-      "text": "Elementalist",
+      "name": "Elementalist",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.9167e29940b36ec1]{Firebrand}, @Compendium[foundry-ironsworn.sunderedislesassets.a304a030a931cdd7]{Sorcerer}",
       "_key": "!tables.results!d292ed147d36f2f4.089973763d13214e",
       "_id": "089973763d13214e"
     },
@@ -152,7 +167,8 @@
         38,
         40
       ],
-      "text": "Emissary",
+      "name": "Emissary",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.bcc219b0ebfb5c68]{Diplomat}, @Compendium[foundry-ironsworn.sunderedislesassets.a3fbec673ba7bd63]{Spy}",
       "_key": "!tables.results!d292ed147d36f2f4.a8adbaef656798f7",
       "_id": "a8adbaef656798f7"
     },
@@ -161,7 +177,8 @@
         41,
         42
       ],
-      "text": "Gallant",
+      "name": "Gallant",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.8ce3175e11ec3edd]{Duelist}, @Compendium[foundry-ironsworn.sunderedislesassets.43b05d08b7b0d77a]{Socialite}",
       "_key": "!tables.results!d292ed147d36f2f4.36c201a6f15c640a",
       "_id": "36c201a6f15c640a"
     },
@@ -170,7 +187,8 @@
         43,
         44
       ],
-      "text": "Guild Mage",
+      "name": "Guild Mage",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.92c1672053d9fba4]{Bannersworn}, @Compendium[foundry-ironsworn.sunderedislesassets.a304a030a931cdd7]{Sorcerer}",
       "_key": "!tables.results!d292ed147d36f2f4.f785ce74c5a0e801",
       "_id": "f785ce74c5a0e801"
     },
@@ -179,7 +197,8 @@
         45,
         46
       ],
-      "text": "Gunner",
+      "name": "Gunner",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.5e3b215da23a9493]{Cannoneer}, @Compendium[foundry-ironsworn.starforgedassets.5b517486f8722fdb]{Veteran}",
       "_key": "!tables.results!d292ed147d36f2f4.e7dc3efb5f040a4f",
       "_id": "e7dc3efb5f040a4f"
     },
@@ -188,7 +207,8 @@
         47,
         48
       ],
-      "text": "Hired Gun",
+      "name": "Hired Gun",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.9530a642ebdca5a5]{Mercenary}, @Compendium[foundry-ironsworn.sunderedislesassets.7d767f45740b4adf]{Musketeer}",
       "_key": "!tables.results!d292ed147d36f2f4.0a5d37d9f6458eef",
       "_id": "0a5d37d9f6458eef"
     },
@@ -197,7 +217,8 @@
         49,
         50
       ],
-      "text": "Ironclad",
+      "name": "Ironclad",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.3bd3cddf27041c08]{Armored}, @Compendium[foundry-ironsworn.starforgedassets.6e439be2dd0bd5a4]{Brawler}",
       "_key": "!tables.results!d292ed147d36f2f4.0bac87e9f06efbbe",
       "_id": "0bac87e9f06efbbe"
     },
@@ -206,7 +227,8 @@
         51,
         52
       ],
-      "text": "Jury-Rig",
+      "name": "Jury-Rig",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.025095e4809853dd]{Construct}, @Compendium[foundry-ironsworn.starforgedassets.11de92d262291440]{Scavenger}",
       "_key": "!tables.results!d292ed147d36f2f4.b3b30a95776cdb22",
       "_id": "b3b30a95776cdb22"
     },
@@ -215,7 +237,8 @@
         53,
         54
       ],
-      "text": "Lycanthrope",
+      "name": "Lycanthrope",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.085d80b933598615]{Outcast}, @Compendium[foundry-ironsworn.sunderedislesassets.c139fc91f359a129]{Shapechanger}",
       "_key": "!tables.results!d292ed147d36f2f4.67a455cf9886cbc1",
       "_id": "67a455cf9886cbc1"
     },
@@ -224,7 +247,8 @@
         55,
         57
       ],
-      "text": "Monster Hunter",
+      "name": "Monster Hunter",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.82cb2564aae5bf0f]{Blademaster}, @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer}",
       "_key": "!tables.results!d292ed147d36f2f4.51bad82ca33b60a0",
       "_id": "51bad82ca33b60a0"
     },
@@ -233,7 +257,8 @@
         58,
         60
       ],
-      "text": "Naturalist",
+      "name": "Naturalist",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.bee5ddc7feb36f37]{Overlander}, @Compendium[foundry-ironsworn.sunderedislesassets.e5b88e6a5a73260a]{Scholar} (Natural history)",
       "_key": "!tables.results!d292ed147d36f2f4.02152be1b4638f07",
       "_id": "02152be1b4638f07"
     },
@@ -242,7 +267,8 @@
         61,
         62
       ],
-      "text": "Pilgrim",
+      "name": "Pilgrim",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.14c1e6ecd4680fee]{Devotant}, @Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}",
       "_key": "!tables.results!d292ed147d36f2f4.ef60867f0973bf16",
       "_id": "ef60867f0973bf16"
     },
@@ -251,7 +277,8 @@
         63,
         64
       ],
-      "text": "Piper",
+      "name": "Piper",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.1d913e755e8f9352]{Musician}, @Compendium[foundry-ironsworn.starforgedassets.7978ba0785000e24]{Loyalist}",
       "_key": "!tables.results!d292ed147d36f2f4.d388510931579850",
       "_id": "d388510931579850"
     },
@@ -260,7 +287,8 @@
         65,
         67
       ],
-      "text": "Renegade",
+      "name": "Renegade",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.93b030423d23059d]{Fugitive}, @Compendium[foundry-ironsworn.starforgedassets.5b517486f8722fdb]{Veteran}",
       "_key": "!tables.results!d292ed147d36f2f4.98be53bcf3051453",
       "_id": "98be53bcf3051453"
     },
@@ -269,7 +297,8 @@
         68,
         70
       ],
-      "text": "Saboteur",
+      "name": "Saboteur",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.69c86f19e7cbcf43]{Demolitionist}, @Compendium[foundry-ironsworn.sunderedislesassets.a3fbec673ba7bd63]{Spy}",
       "_key": "!tables.results!d292ed147d36f2f4.d29a06de93a6272c",
       "_id": "d29a06de93a6272c"
     },
@@ -278,7 +307,8 @@
         71,
         72
       ],
-      "text": "Sea Witch",
+      "name": "Sea Witch",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.98f1ff9b338b5695]{Seer}, @Compendium[foundry-ironsworn.sunderedislesassets.d4e67aa3e3c3fdb1]{Windbinder}",
       "_key": "!tables.results!d292ed147d36f2f4.ded18e7a205dd339",
       "_id": "ded18e7a205dd339"
     },
@@ -287,7 +317,8 @@
         73,
         74
       ],
-      "text": "Shadow Assassin",
+      "name": "Shadow Assassin",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.64cc9fd2fe517619]{Cutthroat}, @Compendium[foundry-ironsworn.starforgedassets.12a922e088c35efa]{Shade}",
       "_key": "!tables.results!d292ed147d36f2f4.a7b29465f43a9668",
       "_id": "a7b29465f43a9668"
     },
@@ -296,7 +327,8 @@
         75,
         76
       ],
-      "text": "Shipbreaker",
+      "name": "Shipbreaker",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.fd7a1b4ec8ae5771]{Kinetic}, @Compendium[foundry-ironsworn.starforgedassets.11de92d262291440]{Scavenger}",
       "_key": "!tables.results!d292ed147d36f2f4.70ea3f6cefe175f4",
       "_id": "70ea3f6cefe175f4"
     },
@@ -305,7 +337,8 @@
         77,
         78
       ],
-      "text": "Siren",
+      "name": "Siren",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.db0df04af3ca4cc4]{Empath}, @Compendium[foundry-ironsworn.sunderedislesassets.1d913e755e8f9352]{Musician}",
       "_key": "!tables.results!d292ed147d36f2f4.93e4485ba108b39e",
       "_id": "93e4485ba108b39e"
     },
@@ -314,7 +347,8 @@
         79,
         80
       ],
-      "text": "Skipper",
+      "name": "Skipper",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.5700a76b914a881e]{Crew Commander}, @Compendium[foundry-ironsworn.starforgedassets.dabb03f5d0a167f0]{Leader}",
       "_key": "!tables.results!d292ed147d36f2f4.5ff3bb297a0c44ff",
       "_id": "5ff3bb297a0c44ff"
     },
@@ -323,7 +357,8 @@
         81,
         83
       ],
-      "text": "Smuggler",
+      "name": "Smuggler",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.93b030423d23059d]{Fugitive}, @Compendium[foundry-ironsworn.sunderedislesassets.19ad0bd745c765c5]{Peddler}",
       "_key": "!tables.results!d292ed147d36f2f4.b863d3d806523a60",
       "_id": "b863d3d806523a60"
     },
@@ -332,7 +367,8 @@
         84,
         86
       ],
-      "text": "Sole Survivor",
+      "name": "Sole Survivor",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.7fdebd942b7163b6]{Haunted}, @Compendium[foundry-ironsworn.starforgedassets.d68e04a72dd54d32]{Vestige}",
       "_key": "!tables.results!d292ed147d36f2f4.03e4c3cce1816f52",
       "_id": "03e4c3cce1816f52"
     },
@@ -341,7 +377,8 @@
         87,
         88
       ],
-      "text": "Spiritualist",
+      "name": "Spiritualist",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.98f1ff9b338b5695]{Seer}, @Compendium[foundry-ironsworn.starforgedassets.26787f46840c03ad]{Sleuth}",
       "_key": "!tables.results!d292ed147d36f2f4.34cdf618d693c07c",
       "_id": "34cdf618d693c07c"
     },
@@ -350,7 +387,8 @@
         89,
         91
       ],
-      "text": "Stowaway",
+      "name": "Stowaway",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.54ffc0e2d8e514b4]{Urchin}, @Compendium[foundry-ironsworn.starforgedassets.085d80b933598615]{Outcast}",
       "_key": "!tables.results!d292ed147d36f2f4.bcf71141c3914227",
       "_id": "bcf71141c3914227"
     },
@@ -359,7 +397,8 @@
         92,
         94
       ],
-      "text": "Surgeon",
+      "name": "Surgeon",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.4fafc93fdd8873ce]{Healer}, @Compendium[foundry-ironsworn.sunderedislesassets.e5b88e6a5a73260a]{Scholar} (Medicine)",
       "_key": "!tables.results!d292ed147d36f2f4.436900f8839233a7",
       "_id": "436900f8839233a7"
     },
@@ -368,7 +407,8 @@
         95,
         96
       ],
-      "text": "Tinker",
+      "name": "Tinker",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.4c75d631a38fd3b8]{Augmented}, @Compendium[foundry-ironsworn.starforgedassets.2d9f63e491a880c8]{Gearhead}",
       "_key": "!tables.results!d292ed147d36f2f4.858d1cbb33f4d2da",
       "_id": "858d1cbb33f4d2da"
     },
@@ -377,7 +417,8 @@
         97,
         98
       ],
-      "text": "Vanguard",
+      "name": "Vanguard",
+      "description": "@Compendium[foundry-ironsworn.starforgedassets.92c1672053d9fba4]{Bannersworn}, @Compendium[foundry-ironsworn.sunderedislesassets.3267980c4a28e3b4]{Scattershot}",
       "_key": "!tables.results!d292ed147d36f2f4.1ca1d845661f100d",
       "_id": "1ca1d845661f100d"
     },
@@ -386,7 +427,8 @@
         99,
         100
       ],
-      "text": "War Machine",
+      "name": "War Machine",
+      "description": "@Compendium[foundry-ironsworn.sunderedislesassets.025095e4809853dd]{Construct}, @Compendium[foundry-ironsworn.starforgedassets.9530a642ebdca5a5]{Mercenary}",
       "_key": "!tables.results!d292ed147d36f2f4.25c55c97d8d8168c",
       "_id": "25c55c97d8d8168c"
     }

@@ -17,7 +17,8 @@
         1,
         40
       ],
-      "text": "Distant",
+      "name": "Distant",
+      "description": "On the horizon and too far to make out details",
       "_key": "!tables.results!32f21a33d475b198.8f8fe9761a89ee8f",
       "_id": "8f8fe9761a89ee8f"
     },
@@ -26,7 +27,8 @@
         41,
         75
       ],
-      "text": "Far",
+      "name": "Far",
+      "description": "Observable but well beyond weapons range",
       "_key": "!tables.results!32f21a33d475b198.cd8d6b7f64d8f0e5",
       "_id": "cd8d6b7f64d8f0e5"
     },
@@ -35,7 +37,8 @@
         76,
         95
       ],
-      "text": "Medium",
+      "name": "Medium",
+      "description": "Easily discernible and nearly within weapons range",
       "_key": "!tables.results!32f21a33d475b198.6a5cd7a2a88268d8",
       "_id": "6a5cd7a2a88268d8"
     },
@@ -44,7 +47,8 @@
         96,
         100
       ],
-      "text": "Near",
+      "name": "Near",
+      "description": "Sighted or revealed at very close range",
       "_key": "!tables.results!32f21a33d475b198.c3daa3d00f9deb48",
       "_id": "c3daa3d00f9deb48"
     }

@@ -18,7 +18,8 @@
         1,
         15
       ],
-      "text": "Chilling cold",
+      "name": "Chilling cold",
+      "description": "Creeping numbness; teeth- chattering shivers",
       "_key": "!tables.results!00b6028d93a842be.205dd9a669b275ac",
       "_id": "205dd9a669b275ac"
     },
@@ -27,7 +28,8 @@
         16,
         25
       ],
-      "text": "Devious trap",
+      "name": "Devious trap",
+      "description": "Minor puzzle; portentous clues",
       "_key": "!tables.results!00b6028d93a842be.89ead54c94bd2d9d",
       "_id": "89ead54c94bd2d9d"
     },
@@ -36,7 +38,8 @@
         26,
         35
       ],
-      "text": "Flash flood",
+      "name": "Flash flood",
+      "description": "Dripping water; distant rumbles",
       "_key": "!tables.results!00b6028d93a842be.7e1f13fdf48be7c6",
       "_id": "7e1f13fdf48be7c6"
     },
@@ -45,7 +48,8 @@
         36,
         50
       ],
-      "text": "Oppressive  confinement",
+      "name": "Oppressive  confinement",
+      "description": "Suffocating passages; deepening darkness",
       "_key": "!tables.results!00b6028d93a842be.c09e33c41d41b459",
       "_id": "c09e33c41d41b459"
     },
@@ -54,7 +58,8 @@
         51,
         60
       ],
-      "text": "Restless magma",
+      "name": "Restless magma",
+      "description": "Stifling heat; venting steam",
       "_key": "!tables.results!00b6028d93a842be.aea6e42a22015134",
       "_id": "aea6e42a22015134"
     },
@@ -63,7 +68,8 @@
         61,
         70
       ],
-      "text": "Rising water",
+      "name": "Rising water",
+      "description": "Surging current; flooding",
       "_key": "!tables.results!00b6028d93a842be.e672df8f7eb9f917",
       "_id": "e672df8f7eb9f917"
     },
@@ -72,7 +78,8 @@
         71,
         80
       ],
-      "text": "Rival explorers",
+      "name": "Rival explorers",
+      "description": "Echoing sounds; signs they passed this way",
       "_key": "!tables.results!00b6028d93a842be.511be5c6b5e9193a",
       "_id": "511be5c6b5e9193a"
     },
@@ -81,7 +88,8 @@
         81,
         90
       ],
-      "text": "Stalking predator",
+      "name": "Stalking predator",
+      "description": "Glimpses of the creature; remains of previous kills",
       "_key": "!tables.results!00b6028d93a842be.7f14f2762022f838",
       "_id": "7f14f2762022f838"
     },
@@ -90,7 +98,8 @@
         91,
         100
       ],
-      "text": "Unstable caves",
+      "name": "Unstable caves",
+      "description": "Tremors; minor rockfalls",
       "_key": "!tables.results!00b6028d93a842be.e4dad3f524b70424",
       "_id": "e4dad3f524b70424"
     }

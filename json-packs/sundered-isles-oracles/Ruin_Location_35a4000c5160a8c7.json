@@ -17,7 +17,8 @@
         1,
         20
       ],
-      "text": "Sea",
+      "name": "Sea",
+      "description": "Amid open waters",
       "_key": "!tables.results!35a4000c5160a8c7.0c101e5262b15406",
       "_id": "0c101e5262b15406"
     },
@@ -26,7 +27,8 @@
         21,
         60
       ],
-      "text": "Shore",
+      "name": "Shore",
+      "description": "Where land meets the sea",
       "_key": "!tables.results!35a4000c5160a8c7.5e79b3a8109d47dd",
       "_id": "5e79b3a8109d47dd"
     },
@@ -35,7 +37,8 @@
         61,
         90
       ],
-      "text": "Inland",
+      "name": "Inland",
+      "description": "Away from the sea",
       "_key": "!tables.results!35a4000c5160a8c7.5d5f028fda3e5629",
       "_id": "5d5f028fda3e5629"
     },
@@ -44,7 +47,8 @@
         91,
         100
       ],
-      "text": "Buried",
+      "name": "Buried",
+      "description": "Within cavernous depths",
       "_key": "!tables.results!35a4000c5160a8c7.44dab1fcf8076313",
       "_id": "44dab1fcf8076313"
     }

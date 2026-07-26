@@ -17,7 +17,8 @@
         1,
         10
       ],
-      "text": "Ancient",
+      "name": "Ancient",
+      "description": "Ancestral structures that have stood the test of time",
       "_key": "!tables.results!26f21b2c8340b415.2d903fc7d8cc689e",
       "_id": "2d903fc7d8cc689e"
     },
@@ -26,7 +27,8 @@
         11,
         20
       ],
-      "text": "Dismal",
+      "name": "Dismal",
+      "description": "Gloomy, tightly-packed structures and shadowed paths",
       "_key": "!tables.results!26f21b2c8340b415.f9fe47f2f2cfdcba",
       "_id": "f9fe47f2f2cfdcba"
     },
@@ -35,7 +37,8 @@
         21,
         25
       ],
-      "text": "Earthen",
+      "name": "Earthen",
+      "description": "Carved into the terrain",
       "_key": "!tables.results!26f21b2c8340b415.d9a342a2d85024ac",
       "_id": "d9a342a2d85024ac"
     },
@@ -44,7 +47,8 @@
         26,
         35
       ],
-      "text": "Foreboding",
+      "name": "Foreboding",
+      "description": "Structures with ornate, dramatic forms and cavernous interiors",
       "_key": "!tables.results!26f21b2c8340b415.e4304818631d8ade",
       "_id": "e4304818631d8ade"
     },
@@ -53,7 +57,8 @@
         36,
         45
       ],
-      "text": "Fortified",
+      "name": "Fortified",
+      "description": "Imposing structures hardened against assaults",
       "_key": "!tables.results!26f21b2c8340b415.045458ad23f7701a",
       "_id": "045458ad23f7701a"
     },
@@ -62,7 +67,8 @@
         46,
         50
       ],
-      "text": "Garish",
+      "name": "Garish",
+      "description": "Structures with tacky design and showy adornments",
       "_key": "!tables.results!26f21b2c8340b415.374dea64e92eefa2",
       "_id": "374dea64e92eefa2"
     },
@@ -71,7 +77,8 @@
         51,
         55
       ],
-      "text": "Grand",
+      "name": "Grand",
+      "description": "Majestic structures with opulent details",
       "_key": "!tables.results!26f21b2c8340b415.3f7771baf8c92d02",
       "_id": "3f7771baf8c92d02"
     },
@@ -80,7 +87,8 @@
         56,
         65
       ],
-      "text": "Idyllic",
+      "name": "Idyllic",
+      "description": "Organic forms and materials, at one with the landscape",
       "_key": "!tables.results!26f21b2c8340b415.c99e8099258720ab",
       "_id": "c99e8099258720ab"
     },
@@ -89,7 +97,8 @@
         66,
         70
       ],
-      "text": "Industrial",
+      "name": "Industrial",
+      "description": "Grim, utilitarian structures, built for function over form",
       "_key": "!tables.results!26f21b2c8340b415.e1556e56b9919fb1",
       "_id": "e1556e56b9919fb1"
     },
@@ -98,7 +107,8 @@
         71,
         75
       ],
-      "text": "Makeshift",
+      "name": "Makeshift",
+      "description": "Temporary shelters for nomadic or displaced people",
       "_key": "!tables.results!26f21b2c8340b415.90a7fbe6c1537686",
       "_id": "90a7fbe6c1537686"
     },
@@ -107,7 +117,8 @@
         76,
         85
       ],
-      "text": "Modest",
+      "name": "Modest",
+      "description": "Practical, charming structures",
       "_key": "!tables.results!26f21b2c8340b415.992b5294bc0fe8de",
       "_id": "992b5294bc0fe8de"
     },
@@ -116,7 +127,8 @@
         86,
         95
       ],
-      "text": "Ramshackle",
+      "name": "Ramshackle",
+      "description": "Haphazard structures using scavenged or repurposed materials",
       "_key": "!tables.results!26f21b2c8340b415.b9afc0eccae00783",
       "_id": "b9afc0eccae00783"
     },
@@ -125,7 +137,8 @@
         96,
         100
       ],
-      "text": "Wondrous",
+      "name": "Wondrous",
+      "description": "Enigmatic structures of awe-inspiring design or function",
       "_key": "!tables.results!26f21b2c8340b415.a11eb372793c9d75",
       "_id": "a11eb372793c9d75"
     }

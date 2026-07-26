@@ -17,7 +17,8 @@
         1,
         10
       ],
-      "text": "Forsaken",
+      "name": "Forsaken",
+      "description": "Banished or forgotten",
       "_key": "!tables.results!66110f9a7d08cf74.d0bea7e5d68acdb7",
       "_id": "d0bea7e5d68acdb7"
     },
@@ -26,7 +27,8 @@
         11,
         30
       ],
-      "text": "Isolated",
+      "name": "Isolated",
+      "description": "Limited influence in a remote location",
       "_key": "!tables.results!66110f9a7d08cf74.2cc64bd7d8a2df40",
       "_id": "2cc64bd7d8a2df40"
     },
@@ -35,7 +37,8 @@
         31,
         50
       ],
-      "text": "Localized",
+      "name": "Localized",
+      "description": "Marginal influence in a small area",
       "_key": "!tables.results!66110f9a7d08cf74.a67039aa408f1e85",
       "_id": "a67039aa408f1e85"
     },
@@ -44,7 +47,8 @@
         51,
         70
       ],
-      "text": "Established",
+      "name": "Established",
+      "description": "Strong influence in a small area",
       "_key": "!tables.results!66110f9a7d08cf74.0a9b92c5da7b4950",
       "_id": "0a9b92c5da7b4950"
     },
@@ -53,7 +57,8 @@
         71,
         85
       ],
-      "text": "Notable",
+      "name": "Notable",
+      "description": "Dispersed influence across a moderate area",
       "_key": "!tables.results!66110f9a7d08cf74.c17174a34418e9f7",
       "_id": "c17174a34418e9f7"
     },
@@ -62,7 +67,8 @@
         86,
         95
       ],
-      "text": "Dominant",
+      "name": "Dominant",
+      "description": "Far-reaching influence across a large area",
       "_key": "!tables.results!66110f9a7d08cf74.56c6882634a1d448",
       "_id": "56c6882634a1d448"
     },
@@ -71,7 +77,8 @@
         96,
         100
       ],
-      "text": "Inescapable",
+      "name": "Inescapable",
+      "description": "Pervasive influence across a vast area",
       "_key": "!tables.results!66110f9a7d08cf74.10d0bd2863f5b6b7",
       "_id": "10d0bd2863f5b6b7"
     }

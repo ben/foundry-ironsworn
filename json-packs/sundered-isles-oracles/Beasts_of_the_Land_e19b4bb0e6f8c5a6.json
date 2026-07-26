@@ -17,7 +17,8 @@
         1,
         25
       ],
-      "text": "Predatory Big Cat",
+      "name": "Predatory Big Cat",
+      "description": "Various Ranks",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.1ddcccd97673aae8",
       "_id": "1ddcccd97673aae8"
     },
@@ -26,7 +27,8 @@
         26,
         35
       ],
-      "text": "Reaper",
+      "name": "Reaper",
+      "description": "Formidable",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.39447ac1fc7df3b8",
       "_id": "39447ac1fc7df3b8"
     },
@@ -35,7 +37,8 @@
         36,
         40
       ],
-      "text": "Great Ape",
+      "name": "Great Ape",
+      "description": "Epic",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.9d72a866f1be1a1c",
       "_id": "9d72a866f1be1a1c"
     },
@@ -44,7 +47,8 @@
         41,
         45
       ],
-      "text": "Thundermaw",
+      "name": "Thundermaw",
+      "description": "Extreme",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.c9b7613321b656c7",
       "_id": "c9b7613321b656c7"
     },
@@ -53,7 +57,8 @@
         46,
         50
       ],
-      "text": "Primordial",
+      "name": "Primordial",
+      "description": "Epic",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.701d8efa974ea57d",
       "_id": "701d8efa974ea57d"
     },
@@ -62,7 +67,8 @@
         51,
         55
       ],
-      "text": "Avithor",
+      "name": "Avithor",
+      "description": "Dangerous",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.9e77a30359dc7f55",
       "_id": "9e77a30359dc7f55"
     },
@@ -71,7 +77,8 @@
         56,
         60
       ],
-      "text": "Verdant Mammoth",
+      "name": "Verdant Mammoth",
+      "description": "Extreme",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.c54ef9b79a688d55",
       "_id": "c54ef9b79a688d55"
     },
@@ -80,7 +87,8 @@
         61,
         65
       ],
-      "text": "Serrabrus",
+      "name": "Serrabrus",
+      "description": "Formidable",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.b55e20f7964eb8ec",
       "_id": "b55e20f7964eb8ec"
     },
@@ -89,7 +97,8 @@
         66,
         70
       ],
-      "text": "Night Weaver",
+      "name": "Night Weaver",
+      "description": "Formidable",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.e92a166ef5aad59a",
       "_id": "e92a166ef5aad59a"
     },
@@ -98,7 +107,8 @@
         71,
         75
       ],
-      "text": "Sylvan Strider",
+      "name": "Sylvan Strider",
+      "description": "Extreme",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.3c0491fd2b50f415",
       "_id": "3c0491fd2b50f415"
     },
@@ -107,7 +117,8 @@
         76,
         80
       ],
-      "text": "Mimic Serpent",
+      "name": "Mimic Serpent",
+      "description": "Extreme",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.4b26d19b87ffe0a0",
       "_id": "4b26d19b87ffe0a0"
     },
@@ -116,7 +127,8 @@
         81,
         85
       ],
-      "text": "Ghost Rat",
+      "name": "Ghost Rat",
+      "description": "Dangerous",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.bcff97027fa7fcbd",
       "_id": "bcff97027fa7fcbd"
     },
@@ -125,7 +137,8 @@
         86,
         90
       ],
-      "text": "Gangle",
+      "name": "Gangle",
+      "description": "Formidable",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.f88700d6e85b7e67",
       "_id": "f88700d6e85b7e67"
     },
@@ -134,7 +147,8 @@
         91,
         95
       ],
-      "text": "Deep Dragon",
+      "name": "Deep Dragon",
+      "description": "Epic",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.013a87965eb4245f",
       "_id": "013a87965eb4245f"
     },
@@ -143,7 +157,8 @@
         96,
         100
       ],
-      "text": "Abomination",
+      "name": "Abomination",
+      "description": "Various Ranks",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.3903321a99bcd35e",
       "_id": "3903321a99bcd35e"
     }

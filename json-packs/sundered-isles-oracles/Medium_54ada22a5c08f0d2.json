@@ -17,7 +17,8 @@
         1,
         60
       ],
-      "text": "Trifle",
+      "name": "Trifle",
+      "description": "One @Compendium[foundry-ironsworn.sunderedislesoracles.baaff21d3f6897ac]{Precious Item}",
       "_key": "!tables.results!54ada22a5c08f0d2.c886e9918d1147e4",
       "_id": "c886e9918d1147e4"
     },
@@ -26,7 +27,8 @@
         61,
         100
       ],
-      "text": "Stash",
+      "name": "Stash",
+      "description": "Roll the action die and reveal that many @Compendium[foundry-ironsworn.sunderedislesoracles.baaff21d3f6897ac]{Precious Items}",
       "_key": "!tables.results!54ada22a5c08f0d2.fc2a2db0ed0a0b65",
       "_id": "fc2a2db0ed0a0b65"
     }

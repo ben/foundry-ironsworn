@@ -17,7 +17,8 @@
         1,
         50
       ],
-      "text": "Village or outpost",
+      "name": "Village or outpost",
+      "description": "Dozens",
       "_key": "!tables.results!ed4462477855bbde.0865c18c9aed73d9",
       "_id": "0865c18c9aed73d9"
     },
@@ -26,7 +27,8 @@
         51,
         80
       ],
-      "text": "Town",
+      "name": "Town",
+      "description": "Hundreds",
       "_key": "!tables.results!ed4462477855bbde.0b91af5cc960edc2",
       "_id": "0b91af5cc960edc2"
     },
@@ -35,7 +37,8 @@
         81,
         98
       ],
-      "text": "City",
+      "name": "City",
+      "description": "Thousands",
       "_key": "!tables.results!ed4462477855bbde.df8770b02e0c929f",
       "_id": "df8770b02e0c929f"
     },
@@ -44,7 +47,8 @@
         99,
         100
       ],
-      "text": "City-state",
+      "name": "City-state",
+      "description": "Tens of thousands",
       "_key": "!tables.results!ed4462477855bbde.b0d6a25b7e28b2b0",
       "_id": "b0d6a25b7e28b2b0"
     }

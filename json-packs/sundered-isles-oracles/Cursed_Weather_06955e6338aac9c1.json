@@ -17,7 +17,8 @@
         1,
         5
       ],
-      "text": "Ash storm",
+      "name": "Ash storm",
+      "description": "Churning, low-level clouds of gray ash",
       "_key": "!tables.results!06955e6338aac9c1.84e6539d161c2a30",
       "_id": "84e6539d161c2a30"
     },
@@ -26,7 +27,8 @@
         6,
         10
       ],
-      "text": "Blighting muck",
+      "name": "Blighting muck",
+      "description": "Rain of corrosive, mucous-like ooze",
       "_key": "!tables.results!06955e6338aac9c1.43064e344ec1855f",
       "_id": "43064e344ec1855f"
     },
@@ -35,7 +37,8 @@
         11,
         15
       ],
-      "text": "Blood rain",
+      "name": "Blood rain",
+      "description": "Ghastly, crimson rain",
       "_key": "!tables.results!06955e6338aac9c1.39598617c03a281e",
       "_id": "39598617c03a281e"
     },
@@ -44,7 +47,8 @@
         16,
         20
       ],
-      "text": "Cinder rain",
+      "name": "Cinder rain",
+      "description": "Storm of fiery rock and ash",
       "_key": "!tables.results!06955e6338aac9c1.1376910311d6a426",
       "_id": "1376910311d6a426"
     },
@@ -53,7 +57,8 @@
         21,
         25
       ],
-      "text": "Creeping mist",
+      "name": "Creeping mist",
+      "description": "Slithering, grasping fog",
       "_key": "!tables.results!06955e6338aac9c1.38a3078cc13079bd",
       "_id": "38a3078cc13079bd"
     },
@@ -62,7 +67,8 @@
         26,
         30
       ],
-      "text": "Crimson mist",
+      "name": "Crimson mist",
+      "description": "Slow-moving fog that burns like acid",
       "_key": "!tables.results!06955e6338aac9c1.6fb3ea648318d191",
       "_id": "6fb3ea648318d191"
     },
@@ -71,7 +77,8 @@
         31,
         35
       ],
-      "text": "Dead calm",
+      "name": "Dead calm",
+      "description": "Disquieting stillness",
       "_key": "!tables.results!06955e6338aac9c1.d2dd99c22baaa550",
       "_id": "d2dd99c22baaa550"
     },
@@ -80,7 +87,8 @@
         36,
         40
       ],
-      "text": "Fisher's feast",
+      "name": "Fisher's feast",
+      "description": "Shower of fish",
       "_key": "!tables.results!06955e6338aac9c1.9f3e53828b5bff78",
       "_id": "9f3e53828b5bff78"
     },
@@ -89,7 +97,8 @@
         41,
         45
       ],
-      "text": "Forge's fury",
+      "name": "Forge's fury",
+      "description": "Fast-moving storm of scorching heat",
       "_key": "!tables.results!06955e6338aac9c1.7ee3c1eb85916805",
       "_id": "7ee3c1eb85916805"
     },
@@ -98,7 +107,8 @@
         46,
         50
       ],
-      "text": "Gloam tide",
+      "name": "Gloam tide",
+      "description": "Unnatural darkness that moves with the tide",
       "_key": "!tables.results!06955e6338aac9c1.bed9c5a429446275",
       "_id": "bed9c5a429446275"
     },
@@ -107,7 +117,8 @@
         51,
         55
       ],
-      "text": "Ice fall",
+      "name": "Ice fall",
+      "description": "Uncanny cold that leaves surfaces enveloped in thick ice",
       "_key": "!tables.results!06955e6338aac9c1.33b499479fb3ce98",
       "_id": "33b499479fb3ce98"
     },
@@ -116,7 +127,8 @@
         56,
         60
       ],
-      "text": "Iron wind",
+      "name": "Iron wind",
+      "description": "Strong wind that sends ships along an inevitable, fatebound course",
       "_key": "!tables.results!06955e6338aac9c1.798120da749d97c9",
       "_id": "798120da749d97c9"
     },
@@ -125,7 +137,8 @@
         61,
         65
       ],
-      "text": "Knowing mist",
+      "name": "Knowing mist",
+      "description": "Fog that manifests visions of dark secrets and painful memories",
       "_key": "!tables.results!06955e6338aac9c1.5cf56ebc953c8825",
       "_id": "5cf56ebc953c8825"
     },
@@ -134,7 +147,8 @@
         66,
         70
       ],
-      "text": "Phantom mist",
+      "name": "Phantom mist",
+      "description": "Ghost-haunted fog",
       "_key": "!tables.results!06955e6338aac9c1.10ede9080938a9b0",
       "_id": "10ede9080938a9b0"
     },
@@ -143,7 +157,8 @@
         71,
         75
       ],
-      "text": "Rot wind",
+      "name": "Rot wind",
+      "description": "Wind that carries the foul stench of death",
       "_key": "!tables.results!06955e6338aac9c1.0986ce8be14e9ebf",
       "_id": "0986ce8be14e9ebf"
     },
@@ -152,7 +167,8 @@
         76,
         80
       ],
-      "text": "Sand storm",
+      "name": "Sand storm",
+      "description": "Clouds of pelting, stinging sand, ripped from a now-barren island",
       "_key": "!tables.results!06955e6338aac9c1.6c01f8e27f1188e6",
       "_id": "6c01f8e27f1188e6"
     },
@@ -161,7 +177,8 @@
         81,
         85
       ],
-      "text": "Seeking spouts",
+      "name": "Seeking spouts",
+      "description": "Waterspouts and tornadoes that move with dreadful purpose",
       "_key": "!tables.results!06955e6338aac9c1.eee5998bb61801dc",
       "_id": "eee5998bb61801dc"
     },
@@ -170,7 +187,8 @@
         86,
         90
       ],
-      "text": "Tempest",
+      "name": "Tempest",
+      "description": "Undying storm that prowls the isles in search of prey",
       "_key": "!tables.results!06955e6338aac9c1.a2aa0275d9f68dc3",
       "_id": "a2aa0275d9f68dc3"
     },
@@ -179,7 +197,8 @@
         91,
         95
       ],
-      "text": "Wailing wind",
+      "name": "Wailing wind",
+      "description": "Wind that carries the mournful keen of the lost and the drowned",
       "_key": "!tables.results!06955e6338aac9c1.1336ce4773e58e47",
       "_id": "1336ce4773e58e47"
     },
@@ -188,7 +207,8 @@
         96,
         100
       ],
-      "text": "Witch fire",
+      "name": "Witch fire",
+      "description": "Low clouds suffused with tendrils of chaotic, arcane energy",
       "_key": "!tables.results!06955e6338aac9c1.896a8abfd7ae0429",
       "_id": "896a8abfd7ae0429"
     }

@@ -18,7 +18,8 @@
         1,
         3
       ],
-      "text": "Piracy",
+      "name": "Piracy",
+      "description": "Pirate court, smuggler dens, taverns",
       "_key": "!tables.results!4add7b7073d92003.2a5f7912a9bca17e",
       "_id": "2a5f7912a9bca17e"
     },
@@ -27,7 +28,8 @@
         4,
         6
       ],
-      "text": "Whaling",
+      "name": "Whaling",
+      "description": "Whaling ships, processing plants, wharfs",
       "_key": "!tables.results!4add7b7073d92003.41481f3de6a2d2af",
       "_id": "41481f3de6a2d2af"
     },
@@ -36,7 +38,8 @@
         7,
         8
       ],
-      "text": "Wrecking",
+      "name": "Wrecking",
+      "description": "Ship graveyard",
       "_key": "!tables.results!4add7b7073d92003.ae657c6b094639ae",
       "_id": "ae657c6b094639ae"
     },
@@ -45,7 +48,8 @@
         9,
         14
       ],
-      "text": "Shipbuilding",
+      "name": "Shipbuilding",
+      "description": "Dry docks, lumber mills, shipwrights",
       "_key": "!tables.results!4add7b7073d92003.57e78502f4ef5aee",
       "_id": "57e78502f4ef5aee"
     },
@@ -54,7 +58,8 @@
         15,
         22
       ],
-      "text": "Fishing",
+      "name": "Fishing",
+      "description": "Boatwrights, fishmongers, net makers",
       "_key": "!tables.results!4add7b7073d92003.8cb5cb44dd641e63",
       "_id": "8cb5cb44dd641e63"
     },
@@ -63,7 +68,8 @@
         23,
         24
       ],
-      "text": "Alcohol Production",
+      "name": "Alcohol Production",
+      "description": "Breweries, distilleries, wineries",
       "_key": "!tables.results!4add7b7073d92003.be08621cf1ef9c12",
       "_id": "be08621cf1ef9c12"
     },
@@ -72,7 +78,8 @@
         25,
         25
       ],
-      "text": "Archeology",
+      "name": "Archeology",
+      "description": "Excavation sites, field camps, relic hunters",
       "_key": "!tables.results!4add7b7073d92003.1667eee14709ce37",
       "_id": "1667eee14709ce37"
     },
@@ -81,7 +88,8 @@
         26,
         27
       ],
-      "text": "Crafts",
+      "name": "Crafts",
+      "description": "Artisans, markets, workshops",
       "_key": "!tables.results!4add7b7073d92003.4e71185c3d6e3b9d",
       "_id": "4e71185c3d6e3b9d"
     },
@@ -90,7 +98,8 @@
         28,
         29
       ],
-      "text": "Culture",
+      "name": "Culture",
+      "description": "Archives, festivals, historical sites",
       "_key": "!tables.results!4add7b7073d92003.84a362636e8b6e4e",
       "_id": "84a362636e8b6e4e"
     },
@@ -99,7 +108,8 @@
         30,
         35
       ],
-      "text": "Defense",
+      "name": "Defense",
+      "description": "Armories, fortifications, militia",
       "_key": "!tables.results!4add7b7073d92003.70ecdc2f0e6c0ec1",
       "_id": "70ecdc2f0e6c0ec1"
     },
@@ -108,7 +118,8 @@
         36,
         36
       ],
-      "text": "Dueling",
+      "name": "Dueling",
+      "description": "Dueling grounds, fencing schools",
       "_key": "!tables.results!4add7b7073d92003.0b0cfdc897c27380",
       "_id": "0b0cfdc897c27380"
     },
@@ -117,7 +128,8 @@
         37,
         38
       ],
-      "text": "Education",
+      "name": "Education",
+      "description": "Libraries, universities",
       "_key": "!tables.results!4add7b7073d92003.3d55946fdc7dc079",
       "_id": "3d55946fdc7dc079"
     },
@@ -126,7 +138,8 @@
         39,
         40
       ],
-      "text": "Entertainment",
+      "name": "Entertainment",
+      "description": "Arenas, fairs, street performers, theaters",
       "_key": "!tables.results!4add7b7073d92003.fc05ed097bfa8c85",
       "_id": "fc05ed097bfa8c85"
     },
@@ -135,7 +148,8 @@
         41,
         42
       ],
-      "text": "Espionage",
+      "name": "Espionage",
+      "description": "Assassin guild, spy network",
       "_key": "!tables.results!4add7b7073d92003.eb3aa28f6ae9d1c2",
       "_id": "eb3aa28f6ae9d1c2"
     },
@@ -144,7 +158,8 @@
         43,
         44
       ],
-      "text": "Exploration",
+      "name": "Exploration",
+      "description": "Navigators guild, outfitters, scouts",
       "_key": "!tables.results!4add7b7073d92003.625e7b15eecbb1e3",
       "_id": "625e7b15eecbb1e3"
     },
@@ -153,7 +168,8 @@
         45,
         48
       ],
-      "text": "Farming",
+      "name": "Farming",
+      "description": "Fields, granaries, mills, orchards",
       "_key": "!tables.results!4add7b7073d92003.842822694d0cd384",
       "_id": "842822694d0cd384"
     },
@@ -162,7 +178,8 @@
         49,
         54
       ],
-      "text": "Hospitality",
+      "name": "Hospitality",
+      "description": "Bath houses, brothels, inns, taverns",
       "_key": "!tables.results!4add7b7073d92003.ce15263930123391",
       "_id": "ce15263930123391"
     },
@@ -171,7 +188,8 @@
         55,
         55
       ],
-      "text": "Hunting",
+      "name": "Hunting",
+      "description": "Animal trainers, taxidermists, tanners",
       "_key": "!tables.results!4add7b7073d92003.7cb551913924981f",
       "_id": "7cb551913924981f"
     },
@@ -180,7 +198,8 @@
         56,
         57
       ],
-      "text": "Law",
+      "name": "Law",
+      "description": "Courts, gallows, patrols, prisons",
       "_key": "!tables.results!4add7b7073d92003.7a00faa6c6096f83",
       "_id": "7a00faa6c6096f83"
     },
@@ -189,7 +208,8 @@
         58,
         58
       ],
-      "text": "Livestock / horses",
+      "name": "Livestock / horses",
+      "description": "Ranches, slaughterhouses, stables",
       "_key": "!tables.results!4add7b7073d92003.219207ec8ce9ae20",
       "_id": "219207ec8ce9ae20"
     },
@@ -198,7 +218,8 @@
         59,
         59
       ],
-      "text": "Logging",
+      "name": "Logging",
+      "description": "Logging camps, sawmills",
       "_key": "!tables.results!4add7b7073d92003.ddf44ab16da59beb",
       "_id": "ddf44ab16da59beb"
     },
@@ -207,7 +228,8 @@
         60,
         61
       ],
-      "text": "Medicine",
+      "name": "Medicine",
+      "description": "Apothecaries, herbalists, infirmaries",
       "_key": "!tables.results!4add7b7073d92003.4311e2f30ca658d4",
       "_id": "4311e2f30ca658d4"
     },
@@ -216,7 +238,8 @@
         62,
         62
       ],
-      "text": "Metalworking",
+      "name": "Metalworking",
+      "description": "Artificers, blacksmiths, forges",
       "_key": "!tables.results!4add7b7073d92003.40998286a9e2f897",
       "_id": "40998286a9e2f897"
     },
@@ -225,7 +248,8 @@
         63,
         63
       ],
-      "text": "Mining",
+      "name": "Mining",
+      "description": "Foundries, mines, smelters",
       "_key": "!tables.results!4add7b7073d92003.6e8a00129ff34f28",
       "_id": "6e8a00129ff34f28"
     },
@@ -234,7 +258,8 @@
         64,
         65
       ],
-      "text": "Mysticism",
+      "name": "Mysticism",
+      "description": "Alchemists, curio dealers, enclaves, mystics",
       "_key": "!tables.results!4add7b7073d92003.79d4d267b53d26f8",
       "_id": "79d4d267b53d26f8"
     },
@@ -243,7 +268,8 @@
         66,
         66
       ],
-      "text": "Nature",
+      "name": "Nature",
+      "description": "Animal sanctuaries, gardens, groves",
       "_key": "!tables.results!4add7b7073d92003.2dd8fd5626b7002e",
       "_id": "2dd8fd5626b7002e"
     },
@@ -252,7 +278,8 @@
         67,
         68
       ],
-      "text": "Religion",
+      "name": "Religion",
+      "description": "Monasteries, sacred sites, temples",
       "_key": "!tables.results!4add7b7073d92003.c4bba73df2bc0975",
       "_id": "c4bba73df2bc0975"
     },
@@ -261,7 +288,8 @@
         69,
         70
       ],
-      "text": "Science",
+      "name": "Science",
+      "description": "Academies, naturalist guild, observatories",
       "_key": "!tables.results!4add7b7073d92003.2df6943e8f439f73",
       "_id": "2df6943e8f439f73"
     },
@@ -270,7 +298,8 @@
         71,
         73
       ],
-      "text": "Smuggling",
+      "name": "Smuggling",
+      "description": "Black market, fences, smugglers",
       "_key": "!tables.results!4add7b7073d92003.67d9ce82b1dc76bc",
       "_id": "67d9ce82b1dc76bc"
     },
@@ -279,7 +308,8 @@
         74,
         75
       ],
-      "text": "Society",
+      "name": "Society",
+      "description": "Balls, boutiques, social clubs, tailors",
       "_key": "!tables.results!4add7b7073d92003.5c0314b31148fffb",
       "_id": "5c0314b31148fffb"
     },
@@ -288,7 +318,8 @@
         76,
         77
       ],
-      "text": "Statecraft",
+      "name": "Statecraft",
+      "description": "Embassies, envoys, court or council",
       "_key": "!tables.results!4add7b7073d92003.8e925b564afca405",
       "_id": "8e925b564afca405"
     },
@@ -297,7 +328,8 @@
         78,
         78
       ],
-      "text": "Stoneworking",
+      "name": "Stoneworking",
+      "description": "Masons, quarries, stone yards",
       "_key": "!tables.results!4add7b7073d92003.1b502dc6f7ec2781",
       "_id": "1b502dc6f7ec2781"
     },
@@ -306,7 +338,8 @@
         79,
         86
       ],
-      "text": "Trade",
+      "name": "Trade",
+      "description": "Auction house, markets, merchant guild",
       "_key": "!tables.results!4add7b7073d92003.0de7e7695a2a6fe7",
       "_id": "0de7e7695a2a6fe7"
     },
@@ -315,7 +348,8 @@
         87,
         89
       ],
-      "text": "Vices",
+      "name": "Vices",
+      "description": "Brothels, drug dens, gambling halls, taverns",
       "_key": "!tables.results!4add7b7073d92003.d8fb13ff0b11b7af",
       "_id": "d8fb13ff0b11b7af"
     },
@@ -324,7 +358,8 @@
         90,
         93
       ],
-      "text": "Warfare",
+      "name": "Warfare",
+      "description": "Armies or fleets, command post, forts",
       "_key": "!tables.results!4add7b7073d92003.565e8b413cdd2fcf",
       "_id": "565e8b413cdd2fcf"
     },
@@ -333,7 +368,8 @@
         94,
         95
       ],
-      "text": "Weaponry",
+      "name": "Weaponry",
+      "description": "Cannon foundries, gunsmiths, powder mills",
       "_key": "!tables.results!4add7b7073d92003.779eb052d40bac32",
       "_id": "779eb052d40bac32"
     },

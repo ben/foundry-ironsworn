@@ -17,7 +17,8 @@
         1,
         20
       ],
-      "text": "Great Crocodile",
+      "name": "Great Crocodile",
+      "description": "Various Ranks",
       "_key": "!tables.results!d6345a7d8b548623.d5d77f8c1d61886e",
       "_id": "d5d77f8c1d61886e"
     },
@@ -26,7 +27,8 @@
         21,
         35
       ],
-      "text": "Tenebrous Squid",
+      "name": "Tenebrous Squid",
+      "description": "Extreme",
       "_key": "!tables.results!d6345a7d8b548623.05e75f0f6ff98dfd",
       "_id": "05e75f0f6ff98dfd"
     },
@@ -35,7 +37,8 @@
         36,
         50
       ],
-      "text": "Diving Spider",
+      "name": "Diving Spider",
+      "description": "Dangerous",
       "_key": "!tables.results!d6345a7d8b548623.f602285f80a6716b",
       "_id": "f602285f80a6716b"
     },
@@ -44,7 +47,8 @@
         51,
         65
       ],
-      "text": "Muck Toad",
+      "name": "Muck Toad",
+      "description": "Formidable",
       "_key": "!tables.results!d6345a7d8b548623.aa368aad8763cbd8",
       "_id": "aa368aad8763cbd8"
     },
@@ -53,7 +57,8 @@
         66,
         75
       ],
-      "text": "Sand Dragon",
+      "name": "Sand Dragon",
+      "description": "Formidable",
       "_key": "!tables.results!d6345a7d8b548623.4b038850edecd362",
       "_id": "4b038850edecd362"
     },
@@ -62,7 +67,8 @@
         76,
         85
       ],
-      "text": "Keelback Crab",
+      "name": "Keelback Crab",
+      "description": "Extreme",
       "_key": "!tables.results!d6345a7d8b548623.bb5c090a5f3f324a",
       "_id": "bb5c090a5f3f324a"
     },
@@ -71,7 +77,8 @@
         86,
         95
       ],
-      "text": "Jade Crab",
+      "name": "Jade Crab",
+      "description": "Extreme",
       "_key": "!tables.results!d6345a7d8b548623.5a28717fbf7efea6",
       "_id": "5a28717fbf7efea6"
     },
@@ -80,7 +87,8 @@
         96,
         100
       ],
-      "text": "Abomination",
+      "name": "Abomination",
+      "description": "Various Ranks",
       "_key": "!tables.results!d6345a7d8b548623.318c9f782abd98b0",
       "_id": "318c9f782abd98b0"
     }

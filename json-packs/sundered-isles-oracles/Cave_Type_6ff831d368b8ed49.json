@@ -17,7 +17,8 @@
         1,
         60
       ],
-      "text": "Sea Cave",
+      "name": "Sea Cave",
+      "description": "Caves of watery passages; carved by the tides",
       "_key": "!tables.results!6ff831d368b8ed49.87c52ac6d5cf4295",
       "_id": "87c52ac6d5cf4295"
     },
@@ -26,7 +27,8 @@
         61,
         100
       ],
-      "text": "Inland Cave",
+      "name": "Inland Cave",
+      "description": "Caves of echoing stone; plunging deep into the earth",
       "_key": "!tables.results!6ff831d368b8ed49.1d3e3ca7f5f392e8",
       "_id": "1d3e3ca7f5f392e8"
     }

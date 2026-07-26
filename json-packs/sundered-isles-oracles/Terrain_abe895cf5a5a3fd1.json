@@ -17,7 +17,8 @@
         1,
         10
       ],
-      "text": "Sodden",
+      "name": "Sodden",
+      "description": "Low-lying wetlands",
       "_key": "!tables.results!abe895cf5a5a3fd1.8d3792ec507e05a4",
       "_id": "8d3792ec507e05a4"
     },
@@ -26,7 +27,8 @@
         11,
         20
       ],
-      "text": "Flat",
+      "name": "Flat",
+      "description": "Expansive plains",
       "_key": "!tables.results!abe895cf5a5a3fd1.024aab4a2bf59613",
       "_id": "024aab4a2bf59613"
     },
@@ -35,7 +37,8 @@
         21,
         30
       ],
-      "text": "Rolling",
+      "name": "Rolling",
+      "description": "Hills or dunes",
       "_key": "!tables.results!abe895cf5a5a3fd1.1adb7a945f493c37",
       "_id": "1adb7a945f493c37"
     },
@@ -44,7 +47,8 @@
         31,
         40
       ],
-      "text": "Elevated",
+      "name": "Elevated",
+      "description": "Sheer cliffs rising to a mesa or plateau",
       "_key": "!tables.results!abe895cf5a5a3fd1.62522d55a07b5189",
       "_id": "62522d55a07b5189"
     },
@@ -53,7 +57,8 @@
         41,
         50
       ],
-      "text": "Sloped",
+      "name": "Sloped",
+      "description": "Terrain rising gradually to a prominent ridge or peak",
       "_key": "!tables.results!abe895cf5a5a3fd1.5929d11dba29fc1b",
       "_id": "5929d11dba29fc1b"
     },
@@ -62,7 +67,8 @@
         51,
         70
       ],
-      "text": "Rugged",
+      "name": "Rugged",
+      "description": "Varied terrain of craggy hills and dramatic rock formations",
       "_key": "!tables.results!abe895cf5a5a3fd1.dae144098d872121",
       "_id": "dae144098d872121"
     },
@@ -71,7 +77,8 @@
         71,
         90
       ],
-      "text": "Mountainous",
+      "name": "Mountainous",
+      "description": "Imposing heights and deep valleys",
       "_key": "!tables.results!abe895cf5a5a3fd1.a7cd8690f7c608c0",
       "_id": "a7cd8690f7c608c0"
     },
@@ -80,7 +87,8 @@
         91,
         100
       ],
-      "text": "Volcanic",
+      "name": "Volcanic",
+      "description": "Active volcanoes and lava fields",
       "_key": "!tables.results!abe895cf5a5a3fd1.7963f3174e2c2e49",
       "_id": "7963f3174e2c2e49"
     }

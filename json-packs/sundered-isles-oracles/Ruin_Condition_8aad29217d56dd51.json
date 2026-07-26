@@ -17,7 +17,8 @@
         1,
         10
       ],
-      "text": "Devastated",
+      "name": "Devastated",
+      "description": "Ravaged by calamity",
       "_key": "!tables.results!8aad29217d56dd51.cf7a9e1eee730553",
       "_id": "cf7a9e1eee730553"
     },
@@ -26,7 +27,8 @@
         11,
         25
       ],
-      "text": "Unrecognizable",
+      "name": "Unrecognizable",
+      "description": "Reclaimed by nature",
       "_key": "!tables.results!8aad29217d56dd51.3df4064adfdd4a18",
       "_id": "3df4064adfdd4a18"
     },
@@ -35,7 +37,8 @@
         26,
         40
       ],
-      "text": "Collapsed",
+      "name": "Collapsed",
+      "description": "Toppled or in pieces",
       "_key": "!tables.results!8aad29217d56dd51.9d748773e08387ec",
       "_id": "9d748773e08387ec"
     },
@@ -44,7 +47,8 @@
         41,
         60
       ],
-      "text": "Unstable",
+      "name": "Unstable",
+      "description": "Actively crumbling or sinking",
       "_key": "!tables.results!8aad29217d56dd51.31cde1196fe34617",
       "_id": "31cde1196fe34617"
     },
@@ -53,7 +57,8 @@
         61,
         80
       ],
-      "text": "Timeworn",
+      "name": "Timeworn",
+      "description": "Marked by desolation",
       "_key": "!tables.results!8aad29217d56dd51.eab885546649791d",
       "_id": "eab885546649791d"
     },
@@ -62,7 +67,8 @@
         81,
         90
       ],
-      "text": "Whole",
+      "name": "Whole",
+      "description": "Standing the test of time",
       "_key": "!tables.results!8aad29217d56dd51.2b36658d6bfb96c2",
       "_id": "2b36658d6bfb96c2"
     },
@@ -71,7 +77,8 @@
         91,
         95
       ],
-      "text": "Well-preserved",
+      "name": "Well-preserved",
+      "description": "In remarkable condition",
       "_key": "!tables.results!8aad29217d56dd51.0f6ba90fa13ecec0",
       "_id": "0f6ba90fa13ecec0"
     },
@@ -80,7 +87,8 @@
         96,
         100
       ],
-      "text": "Rebuilding",
+      "name": "Rebuilding",
+      "description": "In the process or restoration",
       "_key": "!tables.results!8aad29217d56dd51.d6af10f1a73121d0",
       "_id": "d6af10f1a73121d0"
     }
