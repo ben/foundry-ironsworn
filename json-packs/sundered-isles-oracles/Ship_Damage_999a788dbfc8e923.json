@@ -18,7 +18,7 @@
         10
       ],
       "name": "Shaken morale",
-      "description": "Breaking morale",
+      "description": "<p>Breaking morale</p><p>Broken morale</p>",
       "_key": "!tables.results!999a788dbfc8e923.b51cd1166aac71f6",
       "_id": "b51cd1166aac71f6"
     },
@@ -28,7 +28,7 @@
         20
       ],
       "name": "Minor casualties",
-      "description": "Severe casualties",
+      "description": "<p>Severe casualties</p><p>Horrible casualties</p>",
       "_key": "!tables.results!999a788dbfc8e923.aa40e66a3cc4d52d",
       "_id": "aa40e66a3cc4d52d"
     },
@@ -38,7 +38,7 @@
         30
       ],
       "name": "Tangled rigging",
-      "description": "Fraying rigging",
+      "description": "<p>Fraying rigging</p><p>Broken rigging</p>",
       "_key": "!tables.results!999a788dbfc8e923.2e73552a6a56b866",
       "_id": "2e73552a6a56b866"
     },
@@ -48,7 +48,7 @@
         40
       ],
       "name": "Weakened mast",
-      "description": "Splintering mast",
+      "description": "<p>Splintering mast</p><p>Broken mast</p>",
       "_key": "!tables.results!999a788dbfc8e923.bc65e3ffadc0e676",
       "_id": "bc65e3ffadc0e676"
     },
@@ -58,7 +58,7 @@
         50
       ],
       "name": "Fouled sail",
-      "description": "Torn sail",
+      "description": "<p>Torn sail</p><p>Mangled sail</p>",
       "_key": "!tables.results!999a788dbfc8e923.7b15f35f0fcc88ad",
       "_id": "7b15f35f0fcc88ad"
     },
@@ -68,7 +68,7 @@
         55
       ],
       "name": "Damaged rudder",
-      "description": "Jammed rudder",
+      "description": "<p>Jammed rudder</p><p>Broken rudder</p>",
       "_key": "!tables.results!999a788dbfc8e923.c42a10dbf10fc560",
       "_id": "c42a10dbf10fc560"
     },
@@ -78,7 +78,7 @@
         65
       ],
       "name": "Fire on deck",
-      "description": "Fire below decks",
+      "description": "<p>Fire below decks</p><p>Burning magazine</p>",
       "_key": "!tables.results!999a788dbfc8e923.3c690a35c289836f",
       "_id": "3c690a35c289836f"
     },
@@ -88,7 +88,7 @@
         75
       ],
       "name": "Swamped deck",
-      "description": "Flooded bilge",
+      "description": "<p>Flooded bilge</p><p>Keeling over</p>",
       "_key": "!tables.results!999a788dbfc8e923.1e25c067fccf52e8",
       "_id": "1e25c067fccf52e8"
     },
@@ -98,7 +98,7 @@
         80
       ],
       "name": "Dismounted cannons",
-      "description": "Damaged cannons",
+      "description": "<p>Damaged cannons</p><p>Destroyed cannons</p>",
       "_key": "!tables.results!999a788dbfc8e923.de542012e4b24ab3",
       "_id": "de542012e4b24ab3"
     },
@@ -108,7 +108,7 @@
         90
       ],
       "name": "Battered hull",
-      "description": "Buckling hull",
+      "description": "<p>Buckling hull</p><p>Breached hull</p>",
       "_key": "!tables.results!999a788dbfc8e923.2cfc376e24f5a708",
       "_id": "2cfc376e24f5a708"
     },
@@ -118,7 +118,7 @@
         95
       ],
       "name": "Damaged compartment,  module, or support vehicle",
-      "description": "Failing compartment, module, or support vehicle",
+      "description": "<p>Failing compartment, module, or support vehicle</p><p>Broken compartment, module, or support vehicle</p>",
       "_key": "!tables.results!999a788dbfc8e923.15dd706a3dca2318",
       "_id": "15dd706a3dca2318"
     },

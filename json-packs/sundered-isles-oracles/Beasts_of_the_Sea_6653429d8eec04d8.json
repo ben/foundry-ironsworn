@@ -18,7 +18,7 @@
         15
       ],
       "name": "Predatory Shark",
-      "description": "Various Ranks",
+      "description": "<p>Various Ranks</p><p>Most sharks offer little threat, but certain species of large, aggressive sharks are properly feared and respected by seagoing folk. Mariners also speak of ancient sharks, relentless hunters the size of whales whose teeth splinter hull and bone alike.</p>",
       "_key": "!tables.results!6653429d8eec04d8.ab3b1eb16ae19575",
       "_id": "ab3b1eb16ae19575"
     },
@@ -28,7 +28,7 @@
         30
       ],
       "name": "Great Whale",
-      "description": "Various Ranks",
+      "description": "<p>Various Ranks</p><p>The seas teem with whales of all sorts. Even the largest of them, the great whales, are generally friendly and curious. They are nevertheless under threat by whalers and despoilers, and some islanders sail in defense of these gentle creatures.</p>",
       "_key": "!tables.results!6653429d8eec04d8.6794148c56ff376f",
       "_id": "6794148c56ff376f"
     },
@@ -38,7 +38,7 @@
         35
       ],
       "name": "Leviathan",
-      "description": "Epic",
+      "description": "<p>Epic</p><p>These ancient whales are far larger and more aggressive than their common kin. Their bone-white hide bears the scars of harpoon strikes and hard-won battles with other beasts. They are keenly intelligent, have long memories, and do not forgive or forget.</p>",
       "_key": "!tables.results!6653429d8eec04d8.69ce6e649cd29e2f",
       "_id": "69ce6e649cd29e2f"
     },
@@ -48,7 +48,7 @@
         40
       ],
       "name": "Rothulk",
-      "description": "Extreme",
+      "description": "<p>Extreme</p><p>Circling carrion birds and the stench of death often forewarn the appearance of a rothulk, a cadaverous but still animate great whale. These unfortunate beasts are infested by a multitude of parasites that bind grasping tendrils to flesh and bone. The small creatures steal the life of their host and puppeteer what remains.</p>",
       "_key": "!tables.results!6653429d8eec04d8.042dddda31567328",
       "_id": "042dddda31567328"
     },
@@ -58,7 +58,7 @@
         45
       ],
       "name": "Giant Squid",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>The largest of these creatures can easily crush a longboat with their powerful tentacles, but they only reluctantly emerge from the lightless depths that is their preferred hunting grounds.</p>",
       "_key": "!tables.results!6653429d8eec04d8.f83eeb886d6edaac",
       "_id": "f83eeb886d6edaac"
     },
@@ -68,7 +68,7 @@
         50
       ],
       "name": "The Kraken",
-      "description": "Epic",
+      "description": "<p>Epic</p><p>The Kraken is the singular master of the seas, a beast of horrific scale, cunning, and ferocity. It has the sleek form and speed of a giant whale, but is armed with powerful tentacles and a gaping, toothy maw. Along its flank are rows of luminescent eyes; doom lights, mariners call them, for they are a presage of certain death.</p>",
       "_key": "!tables.results!6653429d8eec04d8.d3e3e04f6fe05f54",
       "_id": "d3e3e04f6fe05f54"
     },
@@ -78,7 +78,7 @@
         55
       ],
       "name": "Sea Dragon",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>These aquatic dragons have glittering scales, toothy jaws, and long, bladed tails. Their winglike fins propel them through the water at amazing speeds, and send them leaping and gliding over the waves.</p>",
       "_key": "!tables.results!6653429d8eec04d8.5ce79fe7789290d9",
       "_id": "5ce79fe7789290d9"
     },
@@ -88,7 +88,7 @@
         60
       ],
       "name": "Elder Ray",
-      "description": "Extreme",
+      "description": "<p>Extreme</p><p>Like their lesser brethren, these creatures have flattened bodies and broad fins. They are inherently gentle, often traveling with seafolk who recognize individual rays by their luminescent markings.</p>",
       "_key": "!tables.results!6653429d8eec04d8.73a16a1b4f25800b",
       "_id": "73a16a1b4f25800b"
     },
@@ -98,7 +98,7 @@
         65
       ],
       "name": "Whipneck",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>These creatures are about the length of a sloop, with long necks, broad bodies, and turtle-like fins. They are not overly aggressive, but often hound fishing boats in hopes of stealing their catch.</p>",
       "_key": "!tables.results!6653429d8eec04d8.4308307ff72dfa1c",
       "_id": "4308307ff72dfa1c"
     },
@@ -108,7 +108,7 @@
         70
       ],
       "name": "Eel Swarm",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>These masses of black-eyed, sharp-toothed eels rely on sheer numbers to overwhelm larger prey. Some say they are capable of chewing through a ship’s hull, and pour into a breached vessel in a slithering, biting torrent.</p>",
       "_key": "!tables.results!6653429d8eec04d8.77a3bcf8b15155be",
       "_id": "77a3bcf8b15155be"
     },
@@ -118,7 +118,7 @@
         75
       ],
       "name": "Sea Serpent",
-      "description": "Epic",
+      "description": "<p>Epic</p><p>These titanic beasts have sinuous bodies, glittering scales, and spiny red fins larger than the greatest mainsail. They are largely ambivalent to the presence of most seagoing folk—all but the largest ship passes beneath their notice.</p>",
       "_key": "!tables.results!6653429d8eec04d8.93838769dbdad0b5",
       "_id": "93838769dbdad0b5"
     },
@@ -128,7 +128,7 @@
         80
       ],
       "name": "Reefstrider",
-      "description": "Extreme",
+      "description": "<p>Extreme</p><p>The shells of these gigantic, squat crustaceans are encrusted with coral and sea life, camouflaging them among reef systems. They are territorial and protective of their habitats.</p>",
       "_key": "!tables.results!6653429d8eec04d8.4dc00ebda155e044",
       "_id": "4dc00ebda155e044"
     },
@@ -138,7 +138,7 @@
         85
       ],
       "name": "Starlume",
-      "description": "Dangerous",
+      "description": "<p>Dangerous</p><p>Hundreds of pinpoint lights shimmer within the translucent form of these gigantic jellyfish. According to legend, the lights of a starlume reveal complex celestial maps. Those who look deeply into those alluring lights may find themselves gifted—or cursed—with visions of lost seas and hidden places.</p>",
       "_key": "!tables.results!6653429d8eec04d8.5984cf53b0ffca55",
       "_id": "5984cf53b0ffca55"
     },
@@ -148,7 +148,7 @@
         90
       ],
       "name": "Vortex Forge",
-      "description": "Epic",
+      "description": "<p>Epic</p><p>From a distance, this titanic entity might be mistaken for a great whale, but it is a crewless metal construct that wanders the seas on an inscrutable mission. Its rotating maw generates powerful whirlpools to draw in prey, sending ship and sailor alike into an ever-burning furnace deep within its mechanical gullet.</p>",
       "_key": "!tables.results!6653429d8eec04d8.ac02eeefc0522b65",
       "_id": "ac02eeefc0522b65"
     },
@@ -158,7 +158,7 @@
         95
       ],
       "name": "Herald",
-      "description": "Epic",
+      "description": "<p>Epic</p><p>These colossal tortoise-like beings are the longest-lived creatures of the isles—perhaps as ancient as the world itself. Islanders interpret wondrous and grim portents from the sighting of a herald, but these creatures often go unseen; their craggy shell is easily mistaken for a small, rocky island.</p>",
       "_key": "!tables.results!6653429d8eec04d8.1b89532e467eaa10",
       "_id": "1b89532e467eaa10"
     },
@@ -168,7 +168,7 @@
         100
       ],
       "name": "Abomination",
-      "description": "Various Ranks",
+      "description": "<p>Various Ranks</p><p><p>Generate this beast using the Starforged \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/creature\">\n    <i class=\"fa fa-caret-right\"></i> creature oracles\n</a>, giving it a @Compendium[foundry-ironsworn.starforgedoracles.3e5b84fccec6c789]{water} form.</p></p>",
       "_key": "!tables.results!6653429d8eec04d8.3193a9a6de49db81",
       "_id": "3193a9a6de49db81"
     }

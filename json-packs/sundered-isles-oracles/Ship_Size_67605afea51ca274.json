@@ -18,7 +18,7 @@
         30
       ],
       "name": "Small",
-      "description": "<ul>\n<li>Such as: Cutter, Sloop</li>\n<li>Rigging: One or two masts</li>\n<li>Crew: 5–25</li>\n<li>Rank: Troublesome or Dangerous</li>\n</ul>",
+      "description": "<p><ul>\n<li>Such as: Cutter, Sloop</li>\n<li>Rigging: One or two masts</li>\n<li>Crew: 5–25</li>\n<li>Rank: Troublesome or Dangerous</li>\n</ul></p>",
       "_key": "!tables.results!67605afea51ca274.7b8cfd87b2751ce3",
       "_id": "7b8cfd87b2751ce3"
     },
@@ -28,7 +28,7 @@
         60
       ],
       "name": "Medium",
-      "description": "<ul>\n<li>Such as: Corvette, Schooner</li>\n<li>Rigging: Two or three masts</li>\n<li>Crew: 25–50</li>\n<li>Rank: Dangerous or Formidable</li>\n</ul>",
+      "description": "<p><ul>\n<li>Such as: Corvette, Schooner</li>\n<li>Rigging: Two or three masts</li>\n<li>Crew: 25–50</li>\n<li>Rank: Dangerous or Formidable</li>\n</ul></p>",
       "_key": "!tables.results!67605afea51ca274.2baaee05b2be6a58",
       "_id": "2baaee05b2be6a58"
     },
@@ -38,7 +38,7 @@
         80
       ],
       "name": "Large",
-      "description": "<ul>\n<li>Such as: Frigate, Galleon</li>\n<li>Rigging: Three or more masts</li>\n<li>Crew: 50–200</li>\n<li>Rank: Formidable or Extreme</li>\n</ul>",
+      "description": "<p><ul>\n<li>Such as: Frigate, Galleon</li>\n<li>Rigging: Three or more masts</li>\n<li>Crew: 50–200</li>\n<li>Rank: Formidable or Extreme</li>\n</ul></p>",
       "_key": "!tables.results!67605afea51ca274.bd940d31d2e1de92",
       "_id": "bd940d31d2e1de92"
     },
@@ -48,7 +48,7 @@
         85
       ],
       "name": "Colossal",
-      "description": "<ul>\n<li>Such as: Dreadnought, Titan</li>\n<li>Rigging: Four or more masts</li>\n<li>Crew: 200–500</li>\n<li>Rank: Extreme or Epic</li>\n</ul>",
+      "description": "<p><ul>\n<li>Such as: Dreadnought, Titan</li>\n<li>Rigging: Four or more masts</li>\n<li>Crew: 200–500</li>\n<li>Rank: Extreme or Epic</li>\n</ul></p>",
       "_key": "!tables.results!67605afea51ca274.cad4762f39390725",
       "_id": "cad4762f39390725"
     },
@@ -58,7 +58,7 @@
         95
       ],
       "name": "Flotilla",
-      "description": "Medium flagship and a few other ships",
+      "description": "<p>Medium flagship and a few other ships</p>",
       "_key": "!tables.results!67605afea51ca274.adc7b9f78cf056b1",
       "_id": "adc7b9f78cf056b1"
     },
@@ -68,7 +68,7 @@
         99
       ],
       "name": "Fleet",
-      "description": "Large flagship and many other ships",
+      "description": "<p>Large flagship and many other ships</p>",
       "_key": "!tables.results!67605afea51ca274.aca31226fb327e1d",
       "_id": "aca31226fb327e1d"
     },
@@ -78,7 +78,7 @@
         100
       ],
       "name": "Armada",
-      "description": "Colossal flagship and countless other ships",
+      "description": "<p>Colossal flagship and countless other ships</p>",
       "_key": "!tables.results!67605afea51ca274.3f510b3e7501776a",
       "_id": "3f510b3e7501776a"
     }

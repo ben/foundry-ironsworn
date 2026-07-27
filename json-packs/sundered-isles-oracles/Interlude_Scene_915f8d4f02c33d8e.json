@@ -18,7 +18,7 @@
         4
       ],
       "name": "Chronicle your adventures",
-      "description": "What do you describe within logs, journals, or maps? What adventure still calls to you?",
+      "description": "<p>What do you describe within logs, journals, or maps? What adventure still calls to you?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.85b098b9739d798c",
       "_id": "85b098b9739d798c"
     },
@@ -28,7 +28,7 @@
         8
       ],
       "name": "Commune with nature",
-      "description": "What flora or fauna do you encounter? What inspiration do you draw from the experience?",
+      "description": "<p>What flora or fauna do you encounter? What inspiration do you draw from the experience?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.6699f10fc0bf4eb9",
       "_id": "6699f10fc0bf4eb9"
     },
@@ -38,7 +38,7 @@
         11
       ],
       "name": "Concoct a plan",
-      "description": "What new strategy do you devise? How will you put this plan in motion?",
+      "description": "<p>What new strategy do you devise? How will you put this plan in motion?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.3b20bb033718954e",
       "_id": "3b20bb033718954e"
     },
@@ -48,7 +48,7 @@
         14
       ],
       "name": "Conduct research",
-      "description": "What is the nature of the research? What information or insight do you gain?",
+      "description": "<p>What is the nature of the research? What information or insight do you gain?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.7b9aeb3edb223c9c",
       "_id": "7b9aeb3edb223c9c"
     },
@@ -58,7 +58,7 @@
         17
       ],
       "name": "Conduct training",
-      "description": "What skills or knowledge do you share? Who accepts the guidance, and who resists it?",
+      "description": "<p>What skills or knowledge do you share? Who accepts the guidance, and who resists it?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.d2735d7f0a652851",
       "_id": "d2735d7f0a652851"
     },
@@ -68,7 +68,7 @@
         20
       ],
       "name": "Confess a secret",
-      "description": "What do you reveal of your nature or background? How do others respond?",
+      "description": "<p>What do you reveal of your nature or background? How do others respond?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.613879cddad7bfcd",
       "_id": "613879cddad7bfcd"
     },
@@ -78,7 +78,7 @@
         24
       ],
       "name": "Conjure up the past",
-      "description": "What is the subject of this reminiscence? Why is it meaningful in this moment?",
+      "description": "<p>What is the subject of this reminiscence? Why is it meaningful in this moment?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.651fc6d11048db57",
       "_id": "651fc6d11048db57"
     },
@@ -88,7 +88,7 @@
         27
       ],
       "name": "Create an object or artwork",
-      "description": "What do you create? What is it intended for?",
+      "description": "<p>What do you create? What is it intended for?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.203c9a5cef2c4a02",
       "_id": "203c9a5cef2c4a02"
     },
@@ -98,7 +98,7 @@
         31
       ],
       "name": "Experience a dream or vision",
-      "description": "What is the nature of the dream or vision? What meaning do you draw from it?",
+      "description": "<p>What is the nature of the dream or vision? What meaning do you draw from it?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.4f4be899ae6dc72d",
       "_id": "4f4be899ae6dc72d"
     },
@@ -108,7 +108,7 @@
         34
       ],
       "name": "Fight in a sparring match",
-      "description": "Who do you spar with? What issues do you provoke or resolve during the match?",
+      "description": "<p>Who do you spar with? What issues do you provoke or resolve during the match?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.975e706c525fca52",
       "_id": "975e706c525fca52"
     },
@@ -118,7 +118,7 @@
         37
       ],
       "name": "Find peace",
-      "description": "How do you reflect, meditate, or pray? What enlightenment do you gain?",
+      "description": "<p>How do you reflect, meditate, or pray? What enlightenment do you gain?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.bfc37b23430d3c4c",
       "_id": "bfc37b23430d3c4c"
     },
@@ -128,7 +128,7 @@
         40
       ],
       "name": "Hear a confession",
-      "description": "Who shares an aspect of their nature or background? What do they reveal?",
+      "description": "<p>Who shares an aspect of their nature or background? What do they reveal?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.06565d051b7930cc",
       "_id": "06565d051b7930cc"
     },
@@ -138,7 +138,7 @@
         43
       ],
       "name": "Indulge a vice",
-      "description": "What weakness or need do you indulge? How is this viewed by others?",
+      "description": "<p>What weakness or need do you indulge? How is this viewed by others?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.888ee5b85f4a9a79",
       "_id": "888ee5b85f4a9a79"
     },
@@ -148,7 +148,7 @@
         47
       ],
       "name": "Join an event",
-      "description": "What is the occasion of this social gathering? How do you participate?",
+      "description": "<p>What is the occasion of this social gathering? How do you participate?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.1593cb8643c95e17",
       "_id": "1593cb8643c95e17"
     },
@@ -158,7 +158,7 @@
         50
       ],
       "name": "Lead or join a song",
-      "description": "What is the subject of this song? Why is it meaningful to you or others?",
+      "description": "<p>What is the subject of this song? Why is it meaningful to you or others?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.a87c02580fc41df0",
       "_id": "a87c02580fc41df0"
     },
@@ -168,7 +168,7 @@
         53
       ],
       "name": "Motivate others",
-      "description": "Why is this motivation needed, and what is your approach? How do they respond?",
+      "description": "<p>Why is this motivation needed, and what is your approach? How do they respond?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.f1c69a1617d0c852",
       "_id": "f1c69a1617d0c852"
     },
@@ -178,7 +178,7 @@
         56
       ],
       "name": "Play a game",
-      "description": "Who do you play with? What is discussed during the game?",
+      "description": "<p>Who do you play with? What is discussed during the game?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.85df7cb5372ab8d7",
       "_id": "85df7cb5372ab8d7"
     },
@@ -188,7 +188,7 @@
         60
       ],
       "name": "Practice a skill",
-      "description": "What talent do you hone? What do you learn from the exercise?",
+      "description": "<p>What talent do you hone? What do you learn from the exercise?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.229b7d1800e7b84b",
       "_id": "229b7d1800e7b84b"
     },
@@ -198,7 +198,7 @@
         64
       ],
       "name": "Ready your gear",
-      "description": "How do you maintain your equipment or gear up? What are you preparing for?",
+      "description": "<p>How do you maintain your equipment or gear up? What are you preparing for?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.1aebd0d532cd2da4",
       "_id": "1aebd0d532cd2da4"
     },
@@ -208,7 +208,7 @@
         67
       ],
       "name": "Record a message",
-      "description": "Who is the message meant for? What news or feelings do you share?",
+      "description": "<p>Who is the message meant for? What news or feelings do you share?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.7c22be4ba3862067",
       "_id": "7c22be4ba3862067"
     },
@@ -218,7 +218,7 @@
         70
       ],
       "name": "Reinvent your look",
-      "description": "What inspires you to remake yourself? How do you debut your new look?",
+      "description": "<p>What inspires you to remake yourself? How do you debut your new look?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.68fcea3411dfd245",
       "_id": "68fcea3411dfd245"
     },
@@ -228,7 +228,7 @@
         73
       ],
       "name": "Settle a conflict",
-      "description": "What caused this argument or fight? How do you resolve the situation?",
+      "description": "<p>What caused this argument or fight? How do you resolve the situation?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.18f15ecfd2fadd6a",
       "_id": "18f15ecfd2fadd6a"
     },
@@ -238,7 +238,7 @@
         76
       ],
       "name": "Share intimacy",
-      "description": "Who do you spend time with? How does your relationship evolve?",
+      "description": "<p>Who do you spend time with? How does your relationship evolve?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.801bdf11a71051d0",
       "_id": "801bdf11a71051d0"
     },
@@ -248,7 +248,7 @@
         79
       ],
       "name": "Share your heritage",
-      "description": "What do you offer of your family's or people's history? What memory or regret does it evoke?",
+      "description": "<p>What do you offer of your family's or people's history? What memory or regret does it evoke?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.4a43427df050226f",
       "_id": "4a43427df050226f"
     },
@@ -258,7 +258,7 @@
         82
       ],
       "name": "Stay vigilant",
-      "description": "What are you on the lookout for? What do you spot or overhear?",
+      "description": "<p>What are you on the lookout for? What do you spot or overhear?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.0c36f8f51056c93a",
       "_id": "0c36f8f51056c93a"
     },
@@ -268,7 +268,7 @@
         85
       ],
       "name": "Stir up trouble",
-      "description": "What conflict do you incite or inflame? Why is the situation left unresolved?",
+      "description": "<p>What conflict do you incite or inflame? Why is the situation left unresolved?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.ff0bf071dc0318f2",
       "_id": "ff0bf071dc0318f2"
     },
@@ -278,7 +278,7 @@
         89
       ],
       "name": "Take in the view",
-      "description": "What sublime or dramatic scenery do you witness? What emotion or memory does it inspire?",
+      "description": "<p>What sublime or dramatic scenery do you witness? What emotion or memory does it inspire?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.982dd645fb7dd937",
       "_id": "982dd645fb7dd937"
     },
@@ -288,7 +288,7 @@
         92
       ],
       "name": "Tell a tale",
-      "description": "What is the nature of this myth or legend? What emotion or lesson lingers after the telling?",
+      "description": "<p>What is the nature of this myth or legend? What emotion or lesson lingers after the telling?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.8c3bf25656262645",
       "_id": "8c3bf25656262645"
     },
@@ -298,7 +298,7 @@
         96
       ],
       "name": "Undertake a communal labor",
-      "description": "What demanding project do you embark on with others? How does this bring you closer together?",
+      "description": "<p>What demanding project do you embark on with others? How does this bring you closer together?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.8a204a89364ed07a",
       "_id": "8a204a89364ed07a"
     },
@@ -308,7 +308,7 @@
         100
       ],
       "name": "Undertake a menial task",
-      "description": "What solitary chore do you perform? What do you daydream about as you work?",
+      "description": "<p>What solitary chore do you perform? What do you daydream about as you work?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.16f32e4833fffe07",
       "_id": "16f32e4833fffe07"
     }

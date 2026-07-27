@@ -18,7 +18,7 @@
         10
       ],
       "name": "Corrupted religion",
-      "description": "What does an eldritch cult seek to accomplish in this place?",
+      "description": "<p>What does an eldritch cult seek to accomplish in this place?</p>",
       "_key": "!tables.results!f365e8799129fa6b.2c628906572176e7",
       "_id": "2c628906572176e7"
     },
@@ -28,7 +28,7 @@
         20
       ],
       "name": "Cursed artifact",
-      "description": "What eldritch relic or treasure is held here?",
+      "description": "<p>What eldritch relic or treasure is held here?</p>",
       "_key": "!tables.results!f365e8799129fa6b.8c84e1e41d0339cb",
       "_id": "8c84e1e41d0339cb"
     },
@@ -38,7 +38,7 @@
         30
       ],
       "name": "Eternal defenders",
-      "description": "What beings or creatures are cursed to forever guard this place?",
+      "description": "<p>What beings or creatures are cursed to forever guard this place?</p>",
       "_key": "!tables.results!f365e8799129fa6b.e4e15c945c4d007e",
       "_id": "e4e15c945c4d007e"
     },
@@ -48,7 +48,7 @@
         40
       ],
       "name": "Grim portent",
-      "description": "What new calamity does this place forebode?",
+      "description": "<p>What new calamity does this place forebode?</p>",
       "_key": "!tables.results!f365e8799129fa6b.7b8a4a626e698c54",
       "_id": "7b8a4a626e698c54"
     },
@@ -58,7 +58,7 @@
         50
       ],
       "name": "Imprisoned entity",
-      "description": "What eldritch being or beast is bound to this site?",
+      "description": "<p>What eldritch being or beast is bound to this site?</p>",
       "_key": "!tables.results!f365e8799129fa6b.d6d99292699d39f0",
       "_id": "d6d99292699d39f0"
     },
@@ -68,7 +68,7 @@
         60
       ],
       "name": "Infernal machines",
-      "description": "What strange technology did these people unleash?",
+      "description": "<p>What strange technology did these people unleash?</p>",
       "_key": "!tables.results!f365e8799129fa6b.ae4f534d3069249f",
       "_id": "ae4f534d3069249f"
     },
@@ -78,7 +78,7 @@
         70
       ],
       "name": "Lingering curse",
-      "description": "What is the secret to breaking this site's curse?",
+      "description": "<p>What is the secret to breaking this site's curse?</p>",
       "_key": "!tables.results!f365e8799129fa6b.c1c195bd703a41d5",
       "_id": "c1c195bd703a41d5"
     },
@@ -88,7 +88,7 @@
         80
       ],
       "name": "Mystic gateway",
-      "description": "What otherworldly realm does this place connect to?",
+      "description": "<p>What otherworldly realm does this place connect to?</p>",
       "_key": "!tables.results!f365e8799129fa6b.8e1806bfc633d5d6",
       "_id": "8e1806bfc633d5d6"
     },
@@ -98,7 +98,7 @@
         90
       ],
       "name": "Sorcerous nexus",
-      "description": "What dangerous arcane powers are harnessed here?",
+      "description": "<p>What dangerous arcane powers are harnessed here?</p>",
       "_key": "!tables.results!f365e8799129fa6b.be64a3d4aa677122",
       "_id": "be64a3d4aa677122"
     },
@@ -108,7 +108,7 @@
         100
       ],
       "name": "Tormented undead",
-      "description": "What is the key to putting these souls to rest?",
+      "description": "<p>What is the key to putting these souls to rest?</p>",
       "_key": "!tables.results!f365e8799129fa6b.3e26dae32c6ade57",
       "_id": "3e26dae32c6ade57"
     }

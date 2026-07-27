@@ -18,7 +18,7 @@
         25
       ],
       "name": "Predatory Big Cat",
-      "description": "Various Ranks",
+      "description": "<p>Various Ranks</p><p>Big cats are the most common land predator in the isles. Some live among the high branches of jungle canopies, climbing and leaping with ease. Others dwell within the shadows of the forest floor or amid the rocks and crags of highland terrain, stalking their prey with deadly skill.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.1ddcccd97673aae8",
       "_id": "1ddcccd97673aae8"
     },
@@ -28,7 +28,7 @@
         35
       ],
       "name": "Reaper",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>Reapers are bipedal, cunning reptiles who move in packs, striking unseen from the shadows and chasing prey into flanking ambushes. They dispatch their quarry with wicked, sickle-shaped claws.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.39447ac1fc7df3b8",
       "_id": "39447ac1fc7df3b8"
     },
@@ -38,7 +38,7 @@
         40
       ],
       "name": "Great Ape",
-      "description": "Epic",
+      "description": "<p>Epic</p><p>The towering great apes of the isles live in the most rugged and remote jungles. They are reclusive creatures and do not abide rivals or trespassers. Their long lives are marked by the innumerable scars of fights with other beasts.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.9d72a866f1be1a1c",
       "_id": "9d72a866f1be1a1c"
     },
@@ -48,7 +48,7 @@
         45
       ],
       "name": "Thundermaw",
-      "description": "Extreme",
+      "description": "<p>Extreme</p><p>This bipedal reptile is feared for its towering size, toothy maw, and dreadful roar. A small circlet of bone rings the beast’s skull, leading some to name the thundermaw a king among the isles. Despite its legendary reputation, the thundermaw prefers to scavenge its meals, and tires easily when giving chase.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.c9b7613321b656c7",
       "_id": "c9b7613321b656c7"
     },
@@ -58,7 +58,7 @@
         50
       ],
       "name": "Primordial",
-      "description": "Epic",
+      "description": "<p>Epic</p><p>This titanic, reptilian beast dwells within deep jungles and mountainous highlands. It is a creature of the ancient world, unconcerned with the petty affairs of island folk but protective of its mist-shrouded domain. It is taller than the highest jungle canopy, and leaves trails of splintered trees and sundered earth in its wake.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.701d8efa974ea57d",
       "_id": "701d8efa974ea57d"
     },
@@ -68,7 +68,7 @@
         55
       ],
       "name": "Avithor",
-      "description": "Dangerous",
+      "description": "<p>Dangerous</p><p>These person-sized, flightless birds are drawn to shiny things, and collect bits of stone, metal, and trinkets in their nests. They are jealously protective of this hoard. When a trespasser comes near, they use a chittering call and display of colorful plumage to warn them away. If that fails, their surprising jumping ability, razor-like claws, and sharp beak make quick work of any threat.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.9e77a30359dc7f55",
       "_id": "9e77a30359dc7f55"
     },
@@ -78,7 +78,7 @@
         60
       ],
       "name": "Verdant Mammoth",
-      "description": "Extreme",
+      "description": "<p>Extreme</p><p>These majestic, nomadic creatures have prehensile trunks, long tusks, and spiraling horns. The largest and oldest of a herd, the matriarch, is covered in a layer of moss, lichen, and plant sprigs—it wears this lush garden like an elaborate, earthy cape. Birds roost along the matriarch’s back and circle above while the herd travels, providing a squawking alarm when danger is near.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.c54ef9b79a688d55",
       "_id": "c54ef9b79a688d55"
     },
@@ -88,7 +88,7 @@
         65
       ],
       "name": "Serrabrus",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>The serrabrus is a large boar-like beast. It is an industrious creature, felling trees, gathering deadwood, and building crude barriers with its sweeping, sawtooth tusks. To find oneself lost within the strange, meandering fences of the serrabrus is to incite the rage of the builder.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.b55e20f7964eb8ec",
       "_id": "b55e20f7964eb8ec"
     },
@@ -98,7 +98,7 @@
         70
       ],
       "name": "Night Weaver",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>These enormous spiders have a sleek, obsidian exoskeleton and slender legs tipped with razor-sharp hooks. They lurk in shadowy places—such as grounded shipwrecks, deep caves, and dense woodlands—building elaborate webs as traps for unwary prey.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.e92a166ef5aad59a",
       "_id": "e92a166ef5aad59a"
     },
@@ -108,7 +108,7 @@
         75
       ],
       "name": "Sylvan Strider",
-      "description": "Extreme",
+      "description": "<p>Extreme</p><p>This gargantuan, insect-like creature moves through woodlands on multi-jointed legs the size of tree trunks. It often stands perfectly still while lying in wait for prey, indiscernible from the surrounding wilds.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.3c0491fd2b50f415",
       "_id": "3c0491fd2b50f415"
     },
@@ -118,7 +118,7 @@
         80
       ],
       "name": "Mimic Serpent",
-      "description": "Extreme",
+      "description": "<p>Extreme</p><p>The scales of this massive, canopy-dwelling snake can shift in hue and texture, allowing it to blend invisibly within its surroundings. After grasping its unaware prey, the mimic serpent coils around its victim, stealing air and crushing bones.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.4b26d19b87ffe0a0",
       "_id": "4b26d19b87ffe0a0"
     },
@@ -128,7 +128,7 @@
         85
       ],
       "name": "Ghost Rat",
-      "description": "Dangerous",
+      "description": "<p>Dangerous</p><p>These pale rats of unusual size are accustomed to life within lightless caves. Ghost rats are blind, and use their keen sense of smell to navigate the depths. They pursue potential meals with hound-like persistence.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.bcff97027fa7fcbd",
       "_id": "bcff97027fa7fcbd"
     },
@@ -138,7 +138,7 @@
         90
       ],
       "name": "Gangle",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>This large, cave-dwelling insect contorts its long limbs with uncanny flexibility—the joints cracking like breaking bones—to navigate the smallest crevices. These limbs, equipped with delicate sensory organs, enable the creature to perceive the subtlest vibrations and detect prey or threats from afar. After unfolding itself from its hiding place, the gangle attacks with a spray of burning saliva.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.f88700d6e85b7e67",
       "_id": "f88700d6e85b7e67"
     },
@@ -148,7 +148,7 @@
         95
       ],
       "name": "Deep Dragon",
-      "description": "Epic",
+      "description": "<p>Epic</p><p>These ancient dragons lair in volcanic chambers, hibernating for centuries amid superheated steam and gases. They are flightless, with only vestigial wings, but their titanic scale and molten breath mark them as the greatest of dragon-kind. The rare emergence of a deep dragon from its burrow is a catastrophic reckoning for the surface world.</p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.013a87965eb4245f",
       "_id": "013a87965eb4245f"
     },
@@ -158,7 +158,7 @@
         100
       ],
       "name": "Abomination",
-      "description": "Various Ranks",
+      "description": "<p>Various Ranks</p><p><p>Generate this beast using the Starforged \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/creature\">\n    <i class=\"fa fa-caret-right\"></i> creature oracles\n</a>, giving it a @Compendium[foundry-ironsworn.starforgedoracles.5dee17188d87278c]{land} form.</p></p>",
       "_key": "!tables.results!e19b4bb0e6f8c5a6.3903321a99bcd35e",
       "_id": "3903321a99bcd35e"
     }

@@ -19,7 +19,7 @@
         5
       ],
       "name": "Battlefield Medic",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.4fafc93fdd8873ce]{Healer}; @Compendium[foundry-ironsworn.starforgedassets.5b517486f8722fdb]{Veteran}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.4fafc93fdd8873ce]{Healer}; @Compendium[foundry-ironsworn.starforgedassets.5b517486f8722fdb]{Veteran}</p>",
       "_key": "!tables.results!eb992ccf692d8592.82e175afedd6b33e",
       "_id": "82e175afedd6b33e"
     },
@@ -29,7 +29,7 @@
         10
       ],
       "name": "Delegate",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.92c1672053d9fba4]{Bannersworn}; @Compendium[foundry-ironsworn.starforgedassets.bcc219b0ebfb5c68]{Diplomat}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.92c1672053d9fba4]{Bannersworn}; @Compendium[foundry-ironsworn.starforgedassets.bcc219b0ebfb5c68]{Diplomat}</p>",
       "_key": "!tables.results!eb992ccf692d8592.1bdcf36ea866f321",
       "_id": "1bdcf36ea866f321"
     },
@@ -39,7 +39,7 @@
         15
       ],
       "name": "Exobiologist",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.ce347bbfcee2e8ae]{Lore Hunter}; @Compendium[foundry-ironsworn.starforgedassets.6830f088164f3c60]{Naturalist}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.ce347bbfcee2e8ae]{Lore Hunter}; @Compendium[foundry-ironsworn.starforgedassets.6830f088164f3c60]{Naturalist}</p>",
       "_key": "!tables.results!eb992ccf692d8592.699d91be88cd4181",
       "_id": "699d91be88cd4181"
     },
@@ -49,7 +49,7 @@
         20
       ],
       "name": "Far Trader",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}; @Compendium[foundry-ironsworn.starforgedassets.f64df27e8f9083bd]{Trader}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}; @Compendium[foundry-ironsworn.starforgedassets.f64df27e8f9083bd]{Trader}</p>",
       "_key": "!tables.results!eb992ccf692d8592.8c0a8d6730d8096a",
       "_id": "8c0a8d6730d8096a"
     },
@@ -59,7 +59,7 @@
         25
       ],
       "name": "Fugitive Hunter",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.3bd3cddf27041c08]{Armored}; @Compendium[foundry-ironsworn.starforgedassets.9e8a91f52b96c95b]{Bounty Hunter}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.3bd3cddf27041c08]{Armored}; @Compendium[foundry-ironsworn.starforgedassets.9e8a91f52b96c95b]{Bounty Hunter}</p>",
       "_key": "!tables.results!eb992ccf692d8592.8bf2e4226bc5ef95",
       "_id": "8bf2e4226bc5ef95"
     },
@@ -69,7 +69,7 @@
         30
       ],
       "name": "Hacker",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.1e03c8d44d0b3ffc]{Infiltrator}; @Compendium[foundry-ironsworn.starforgedassets.fd358fb5b9dcad41]{Tech}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.1e03c8d44d0b3ffc]{Infiltrator}; @Compendium[foundry-ironsworn.starforgedassets.fd358fb5b9dcad41]{Tech}</p>",
       "_key": "!tables.results!eb992ccf692d8592.0ef7f0a1012fbc79",
       "_id": "0ef7f0a1012fbc79"
     },
@@ -79,7 +79,7 @@
         35
       ],
       "name": "Hotshot Pilot",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.c7a0220765d0b579]{Ace}; @Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.c7a0220765d0b579]{Ace}; @Compendium[foundry-ironsworn.starforgedassets.4692e18baff8bd18]{Navigator}</p>",
       "_key": "!tables.results!eb992ccf692d8592.891d1ee0dbcba5e2",
       "_id": "891d1ee0dbcba5e2"
     },
@@ -89,7 +89,7 @@
         40
       ],
       "name": "Interstellar Scout",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.62c8297fab069013]{Explorer}; @Compendium[foundry-ironsworn.starforgedassets.77b99abd50137354]{Voidborn}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.62c8297fab069013]{Explorer}; @Compendium[foundry-ironsworn.starforgedassets.77b99abd50137354]{Voidborn}</p>",
       "_key": "!tables.results!eb992ccf692d8592.1413b51c7c4cf5d0",
       "_id": "1413b51c7c4cf5d0"
     },
@@ -99,7 +99,7 @@
         45
       ],
       "name": "Monster Hunter",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.e6dd0f7e6ac6e3cc]{Gunner}; @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.e6dd0f7e6ac6e3cc]{Gunner}; @Compendium[foundry-ironsworn.starforgedassets.b01dc7301d7d8fb3]{Slayer}</p>",
       "_key": "!tables.results!eb992ccf692d8592.7743c2a79329fac1",
       "_id": "7743c2a79329fac1"
     },
@@ -109,7 +109,7 @@
         50
       ],
       "name": "Occultist",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.085d80b933598615]{Outcast}; @Compendium[foundry-ironsworn.starforgedassets.12a922e088c35efa]{Shade}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.085d80b933598615]{Outcast}; @Compendium[foundry-ironsworn.starforgedassets.12a922e088c35efa]{Shade}</p>",
       "_key": "!tables.results!eb992ccf692d8592.e52a293ec1d36406",
       "_id": "e52a293ec1d36406"
     },
@@ -119,7 +119,7 @@
         55
       ],
       "name": "Operative",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.1e03c8d44d0b3ffc]{Infiltrator}; @Compendium[foundry-ironsworn.starforgedassets.82cb2564aae5bf0f]{Blademaster}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.1e03c8d44d0b3ffc]{Infiltrator}; @Compendium[foundry-ironsworn.starforgedassets.82cb2564aae5bf0f]{Blademaster}</p>",
       "_key": "!tables.results!eb992ccf692d8592.91b36f87041f5eed",
       "_id": "91b36f87041f5eed"
     },
@@ -129,7 +129,7 @@
         60
       ],
       "name": "Outlaw",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.93b030423d23059d]{Fugitive}; @Compendium[foundry-ironsworn.starforgedassets.0b42a1e32bdb10c9]{Gunslinger}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.93b030423d23059d]{Fugitive}; @Compendium[foundry-ironsworn.starforgedassets.0b42a1e32bdb10c9]{Gunslinger}</p>",
       "_key": "!tables.results!eb992ccf692d8592.376b7531d6adb93f",
       "_id": "376b7531d6adb93f"
     },
@@ -139,7 +139,7 @@
         65
       ],
       "name": "Private Investigator",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.6e439be2dd0bd5a4]{Brawler}; @Compendium[foundry-ironsworn.starforgedassets.26787f46840c03ad]{Sleuth}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.6e439be2dd0bd5a4]{Brawler}; @Compendium[foundry-ironsworn.starforgedassets.26787f46840c03ad]{Sleuth}</p>",
       "_key": "!tables.results!eb992ccf692d8592.72380acb4340a57f",
       "_id": "72380acb4340a57f"
     },
@@ -149,7 +149,7 @@
         70
       ],
       "name": "Prophet",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.14c1e6ecd4680fee]{Devotant}; @Compendium[foundry-ironsworn.starforgedassets.98f1ff9b338b5695]{Seer}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.14c1e6ecd4680fee]{Devotant}; @Compendium[foundry-ironsworn.starforgedassets.98f1ff9b338b5695]{Seer}</p>",
       "_key": "!tables.results!eb992ccf692d8592.919fc01b4584c5e2",
       "_id": "919fc01b4584c5e2"
     },
@@ -159,7 +159,7 @@
         75
       ],
       "name": "Psionicist",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.fd7a1b4ec8ae5771]{Kinetic}; @Compendium[foundry-ironsworn.starforgedassets.d68e04a72dd54d32]{Vestige}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.fd7a1b4ec8ae5771]{Kinetic}; @Compendium[foundry-ironsworn.starforgedassets.d68e04a72dd54d32]{Vestige}</p>",
       "_key": "!tables.results!eb992ccf692d8592.7e5e28c5ada4692a",
       "_id": "7e5e28c5ada4692a"
     },
@@ -169,7 +169,7 @@
         80
       ],
       "name": "Smuggler",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.87222132d6c0379b]{Courier}; @Compendium[foundry-ironsworn.starforgedassets.d7fbe5fded75531c]{Scoundrel}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.87222132d6c0379b]{Courier}; @Compendium[foundry-ironsworn.starforgedassets.d7fbe5fded75531c]{Scoundrel}</p>",
       "_key": "!tables.results!eb992ccf692d8592.37f74668315b24d9",
       "_id": "37f74668315b24d9"
     },
@@ -179,7 +179,7 @@
         85
       ],
       "name": "Spiritualist",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.7fdebd942b7163b6]{Haunted}; @Compendium[foundry-ironsworn.starforgedassets.db0df04af3ca4cc4]{Empath}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.7fdebd942b7163b6]{Haunted}; @Compendium[foundry-ironsworn.starforgedassets.db0df04af3ca4cc4]{Empath}</p>",
       "_key": "!tables.results!eb992ccf692d8592.bb1d7ca439aa640c",
       "_id": "bb1d7ca439aa640c"
     },
@@ -189,7 +189,7 @@
         90
       ],
       "name": "Starship Engineer",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.2d9f63e491a880c8]{Gearhead}; @Compendium[foundry-ironsworn.starforgedassets.fd358fb5b9dcad41]{Tech}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.2d9f63e491a880c8]{Gearhead}; @Compendium[foundry-ironsworn.starforgedassets.fd358fb5b9dcad41]{Tech}</p>",
       "_key": "!tables.results!eb992ccf692d8592.787ebabee8cfb0b6",
       "_id": "787ebabee8cfb0b6"
     },
@@ -199,7 +199,7 @@
         95
       ],
       "name": "Supersoldier",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.4c75d631a38fd3b8]{Augmented}; @Compendium[foundry-ironsworn.starforgedassets.9530a642ebdca5a5]{Mercenary}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.4c75d631a38fd3b8]{Augmented}; @Compendium[foundry-ironsworn.starforgedassets.9530a642ebdca5a5]{Mercenary}</p>",
       "_key": "!tables.results!eb992ccf692d8592.c887e07cc3f2f707",
       "_id": "c887e07cc3f2f707"
     },
@@ -209,7 +209,7 @@
         100
       ],
       "name": "Tomb Raider",
-      "description": "@Compendium[foundry-ironsworn.starforgedassets.11de92d262291440]{Scavenger}; @Compendium[foundry-ironsworn.starforgedassets.d7fbe5fded75531c]{Scoundrel}",
+      "description": "<p>@Compendium[foundry-ironsworn.starforgedassets.11de92d262291440]{Scavenger}; @Compendium[foundry-ironsworn.starforgedassets.d7fbe5fded75531c]{Scoundrel}</p>",
       "_key": "!tables.results!eb992ccf692d8592.042d0f1b6e2d22d3",
       "_id": "042d0f1b6e2d22d3"
     }

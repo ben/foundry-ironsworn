@@ -19,7 +19,7 @@
         15
       ],
       "name": "Chilling cold",
-      "description": "Creeping numbness; teeth- chattering shivers",
+      "description": "<p>Creeping numbness; teeth- chattering shivers</p><p>You are chilled to the bone!</p>",
       "_key": "!tables.results!00b6028d93a842be.205dd9a669b275ac",
       "_id": "205dd9a669b275ac"
     },
@@ -29,7 +29,7 @@
         25
       ],
       "name": "Devious trap",
-      "description": "Minor puzzle; portentous clues",
+      "description": "<p>Minor puzzle; portentous clues</p><p>You face a confounding trap!</p>",
       "_key": "!tables.results!00b6028d93a842be.89ead54c94bd2d9d",
       "_id": "89ead54c94bd2d9d"
     },
@@ -39,7 +39,7 @@
         35
       ],
       "name": "Flash flood",
-      "description": "Dripping water; distant rumbles",
+      "description": "<p>Dripping water; distant rumbles</p><p>A torrent of water floods in!</p>",
       "_key": "!tables.results!00b6028d93a842be.7e1f13fdf48be7c6",
       "_id": "7e1f13fdf48be7c6"
     },
@@ -49,7 +49,7 @@
         50
       ],
       "name": "Oppressive  confinement",
-      "description": "Suffocating passages; deepening darkness",
+      "description": "<p>Suffocating passages; deepening darkness</p><p>You face confusion or panic!</p>",
       "_key": "!tables.results!00b6028d93a842be.c09e33c41d41b459",
       "_id": "c09e33c41d41b459"
     },
@@ -59,7 +59,7 @@
         60
       ],
       "name": "Restless magma",
-      "description": "Stifling heat; venting steam",
+      "description": "<p>Stifling heat; venting steam</p><p>Magma causes destruction!</p>",
       "_key": "!tables.results!00b6028d93a842be.aea6e42a22015134",
       "_id": "aea6e42a22015134"
     },
@@ -69,7 +69,7 @@
         70
       ],
       "name": "Rising water",
-      "description": "Surging current; flooding",
+      "description": "<p>Surging current; flooding</p><p>The path is submerged!</p>",
       "_key": "!tables.results!00b6028d93a842be.e672df8f7eb9f917",
       "_id": "e672df8f7eb9f917"
     },
@@ -79,7 +79,7 @@
         80
       ],
       "name": "Rival explorers",
-      "description": "Echoing sounds; signs they passed this way",
+      "description": "<p>Echoing sounds; signs they passed this way</p><p>Your rivals make their move!</p>",
       "_key": "!tables.results!00b6028d93a842be.511be5c6b5e9193a",
       "_id": "511be5c6b5e9193a"
     },
@@ -89,7 +89,7 @@
         90
       ],
       "name": "Stalking predator",
-      "description": "Glimpses of the creature; remains of previous kills",
+      "description": "<p>Glimpses of the creature; remains of previous kills</p><p>The predator attacks!</p>",
       "_key": "!tables.results!00b6028d93a842be.7f14f2762022f838",
       "_id": "7f14f2762022f838"
     },
@@ -99,7 +99,7 @@
         100
       ],
       "name": "Unstable caves",
-      "description": "Tremors; minor rockfalls",
+      "description": "<p>Tremors; minor rockfalls</p><p>The cave collapses!</p>",
       "_key": "!tables.results!00b6028d93a842be.e4dad3f524b70424",
       "_id": "e4dad3f524b70424"
     }

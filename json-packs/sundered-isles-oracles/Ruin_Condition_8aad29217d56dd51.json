@@ -18,7 +18,7 @@
         10
       ],
       "name": "Devastated",
-      "description": "Ravaged by calamity",
+      "description": "<p>Ravaged by calamity</p>",
       "_key": "!tables.results!8aad29217d56dd51.cf7a9e1eee730553",
       "_id": "cf7a9e1eee730553"
     },
@@ -28,7 +28,7 @@
         25
       ],
       "name": "Unrecognizable",
-      "description": "Reclaimed by nature",
+      "description": "<p>Reclaimed by nature</p>",
       "_key": "!tables.results!8aad29217d56dd51.3df4064adfdd4a18",
       "_id": "3df4064adfdd4a18"
     },
@@ -38,7 +38,7 @@
         40
       ],
       "name": "Collapsed",
-      "description": "Toppled or in pieces",
+      "description": "<p>Toppled or in pieces</p>",
       "_key": "!tables.results!8aad29217d56dd51.9d748773e08387ec",
       "_id": "9d748773e08387ec"
     },
@@ -48,7 +48,7 @@
         60
       ],
       "name": "Unstable",
-      "description": "Actively crumbling or sinking",
+      "description": "<p>Actively crumbling or sinking</p>",
       "_key": "!tables.results!8aad29217d56dd51.31cde1196fe34617",
       "_id": "31cde1196fe34617"
     },
@@ -58,7 +58,7 @@
         80
       ],
       "name": "Timeworn",
-      "description": "Marked by desolation",
+      "description": "<p>Marked by desolation</p>",
       "_key": "!tables.results!8aad29217d56dd51.eab885546649791d",
       "_id": "eab885546649791d"
     },
@@ -68,7 +68,7 @@
         90
       ],
       "name": "Whole",
-      "description": "Standing the test of time",
+      "description": "<p>Standing the test of time</p>",
       "_key": "!tables.results!8aad29217d56dd51.2b36658d6bfb96c2",
       "_id": "2b36658d6bfb96c2"
     },
@@ -78,7 +78,7 @@
         95
       ],
       "name": "Well-preserved",
-      "description": "In remarkable condition",
+      "description": "<p>In remarkable condition</p>",
       "_key": "!tables.results!8aad29217d56dd51.0f6ba90fa13ecec0",
       "_id": "0f6ba90fa13ecec0"
     },
@@ -88,7 +88,7 @@
         100
       ],
       "name": "Rebuilding",
-      "description": "In the process or restoration",
+      "description": "<p>In the process or restoration</p>",
       "_key": "!tables.results!8aad29217d56dd51.d6af10f1a73121d0",
       "_id": "d6af10f1a73121d0"
     }

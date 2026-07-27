@@ -18,7 +18,7 @@
         20
       ],
       "name": "Great Hawk",
-      "description": "Various Ranks",
+      "description": "<p>Various Ranks</p><p>Various types of enormous hawks hunt among the isles, including the mangrove-dwelling ash hawk and the coastal wind reaver. The greatest of them, the fabled vastwing, is said to be capable of grasping and lifting a fully loaded longboat in its enormous talons.</p>",
       "_key": "!tables.results!294bb6937be1cbfd.2bcb4486103b3888",
       "_id": "2bcb4486103b3888"
     },
@@ -28,7 +28,7 @@
         35
       ],
       "name": "Iron Dragon",
-      "description": "Extreme",
+      "description": "<p>Extreme</p><p>The most common dragon of the isles, the iron dragon dwells in a variety of environments, from rocky coasts to deep inland jungles. They have a tough hide the color of weathered iron, dreadful claws, and a long, powerful tail. But their most potent weapon is their fiery breath, the bane of any wooden ship that earns their ire. Some island folk revere these creatures. But others harness them and ride into battle, launching from a seaside fort or a ship’s deck to lay waste to their enemies.</p>",
       "_key": "!tables.results!294bb6937be1cbfd.78009040110050ae",
       "_id": "78009040110050ae"
     },
@@ -38,7 +38,7 @@
         50
       ],
       "name": "Wave Skimmer",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>These winged reptilian beasts nest along waterside cliffs, and are adept at diving to spear fish with barbed beaks. Fishing boats and cargo ships often fall prey to wave skimmer ambushes, as the cunning predators have learned of the great bounties hidden within those vessels.</p>",
       "_key": "!tables.results!294bb6937be1cbfd.b3d9f2a6b3920a05",
       "_id": "b3d9f2a6b3920a05"
     },
@@ -48,7 +48,7 @@
         65
       ],
       "name": "Goregull",
-      "description": "Dangerous",
+      "description": "<p>Dangerous</p><p>Scavengers by nature, the vulture-sized goregulls feed primarily on dead sea life, but are known to harass the crews of floundering ships.</p>",
       "_key": "!tables.results!294bb6937be1cbfd.120057bd43f61d10",
       "_id": "120057bd43f61d10"
     },
@@ -58,7 +58,7 @@
         75
       ],
       "name": "Monarch Bat",
-      "description": "Formidable",
+      "description": "<p>Formidable</p><p>These oversized bats, large enough to carry off an unlucky islander, dwell in caves and amid jungle canopies. As the sun sets, they leave their roosts to hunt. They are particularly dangerous on moonless nights when their swift, silent approach goes unnoticed.</p>",
       "_key": "!tables.results!294bb6937be1cbfd.55b6d1b0afa99413",
       "_id": "55b6d1b0afa99413"
     },
@@ -68,7 +68,7 @@
         85
       ],
       "name": "Bloodmite",
-      "description": "Dangerous",
+      "description": "<p>Dangerous</p><p>Bloodmites are hound-sized, flying insects. They primarily cling to the hide of titanic beasts, feeding through a blade-tipped proboscis, but are not averse to preying upon smaller targets.</p>",
       "_key": "!tables.results!294bb6937be1cbfd.6591f5a8a0155400",
       "_id": "6591f5a8a0155400"
     },
@@ -78,7 +78,7 @@
         95
       ],
       "name": "Thanatoi",
-      "description": "Dangerous",
+      "description": "<p>Dangerous</p><p>These moth-like creatures are unsettlingly large but harmless. They are often seen on nights when Wraith is full—they shimmer with a strange, ethereal glow, as if reflecting the light of the moon. Many islanders believe they escort souls into the world beyond. Look too long into their alluring glow, they say, and you suffer a glimpse of your own death.</p>",
       "_key": "!tables.results!294bb6937be1cbfd.44f727a15f604a95",
       "_id": "44f727a15f604a95"
     },
@@ -88,7 +88,7 @@
         100
       ],
       "name": "Abomination",
-      "description": "Various Ranks",
+      "description": "<p>Various Ranks</p><p><p>Generate this beast using the Starforged \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/creature\">\n    <i class=\"fa fa-caret-right\"></i> creature oracles\n</a>, giving it an @Compendium[foundry-ironsworn.starforgedoracles.16fbeb54dfe52e19]{air} form.</p></p>",
       "_key": "!tables.results!294bb6937be1cbfd.49f873ab7cf345f0",
       "_id": "49f873ab7cf345f0"
     }

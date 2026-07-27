@@ -18,7 +18,7 @@
         10
       ],
       "name": "Acheron’s Armada",
-      "description": "Ghost ships under the command of an undead imperial admiral. This vengeful wraith seeks to carry on the war that cost them their life.",
+      "description": "<p>Ghost ships under the command of an undead imperial admiral. This vengeful wraith seeks to carry on the war that cost them their life.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.348c11baa158642d",
       "_id": "348c11baa158642d"
     },
@@ -28,7 +28,7 @@
         20
       ],
       "name": "Blighthulk",
-      "description": "Titanic ship cursed with incessant corrosion and rot. Its crew must constantly add wood, sails, and fittings from salvaged wrecks and defeated foes into this massive and unnerving chimera-craft.",
+      "description": "<p>Titanic ship cursed with incessant corrosion and rot. Its crew must constantly add wood, sails, and fittings from salvaged wrecks and defeated foes into this massive and unnerving chimera-craft.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.d2fa8843ebf28be8",
       "_id": "d2fa8843ebf28be8"
     },
@@ -38,7 +38,7 @@
         30
       ],
       "name": "Bloodmarked League",
-      "description": "An order of occultists, each bearing a blood-red tattoo on their wrist, who are dedicated to hunting and banishing the restless dead.",
+      "description": "<p>An order of occultists, each bearing a blood-red tattoo on their wrist, who are dedicated to hunting and banishing the restless dead.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.fb32d1728f53303b",
       "_id": "fb32d1728f53303b"
     },
@@ -48,7 +48,7 @@
         40
       ],
       "name": "Brineblessed",
-      "description": "Cult of sailors cursed by a drowned god. Their bodies and ships are corrupted by horrible aspects of the sea—riddled with barnacles, rotting seaweed, and brackish slime.",
+      "description": "<p>Cult of sailors cursed by a drowned god. Their bodies and ships are corrupted by horrible aspects of the sea—riddled with barnacles, rotting seaweed, and brackish slime.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.66893f76f92a0c16",
       "_id": "66893f76f92a0c16"
     },
@@ -58,7 +58,7 @@
         50
       ],
       "name": "Carrion Fleet",
-      "description": "Fleet under the command of a necromancer. The dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth.",
+      "description": "<p>Fleet under the command of a necromancer. The dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.3655b22958a0b1b0",
       "_id": "3655b22958a0b1b0"
     },
@@ -68,7 +68,7 @@
         60
       ],
       "name": "Fireships",
-      "description": "Ships burning with unquenchable fire and crewed by bone-scorched undead. The flagship was set aflame by marauders in a port attack, and its cursed commander seeks to spread the fire to other vessels and expand the accursed fleet.",
+      "description": "<p>Ships burning with unquenchable fire and crewed by bone-scorched undead. The flagship was set aflame by marauders in a port attack, and its cursed commander seeks to spread the fire to other vessels and expand the accursed fleet.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.e217892bd700d97c",
       "_id": "e217892bd700d97c"
     },
@@ -78,7 +78,7 @@
         70
       ],
       "name": "Forgeborn",
-      "description": "Uncanny metal automatons who are said to embody the stolen souls of dead mariners. They cruise the isles in ironclad ships.",
+      "description": "<p>Uncanny metal automatons who are said to embody the stolen souls of dead mariners. They cruise the isles in ironclad ships.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.7d684dcbadb444f5",
       "_id": "7d684dcbadb444f5"
     },
@@ -88,7 +88,7 @@
         80
       ],
       "name": "Gilded Fleet",
-      "description": "Pirates who seized a forbidden treasure. They are cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles.",
+      "description": "<p>Pirates who seized a forbidden treasure. They are cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.6c1c2bf1c1da8c3f",
       "_id": "6c1c2bf1c1da8c3f"
     },
@@ -98,7 +98,7 @@
         90
       ],
       "name": "Nightships",
-      "description": "Dread ships of the vampire clans, shrouded in an eternal gloom. Their undead crews leave wrecks and blood-drained corpses in their wake.",
+      "description": "<p>Dread ships of the vampire clans, shrouded in an eternal gloom. Their undead crews leave wrecks and blood-drained corpses in their wake.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.230c51faee742226",
       "_id": "230c51faee742226"
     },
@@ -108,7 +108,7 @@
         100
       ],
       "name": "Tidebound",
-      "description": "Devout cultists who were granted eternal life in exchange for unending service to their patron sea god. They must not tarry on land or at anchor, lest death catches up with them to take its toll.",
+      "description": "<p>Devout cultists who were granted eternal life in exchange for unending service to their patron sea god. They must not tarry on land or at anchor, lest death catches up with them to take its toll.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.2e549adc1b1184b7",
       "_id": "2e549adc1b1184b7"
     }

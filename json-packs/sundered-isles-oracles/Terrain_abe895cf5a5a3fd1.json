@@ -18,7 +18,7 @@
         10
       ],
       "name": "Sodden",
-      "description": "Low-lying wetlands",
+      "description": "<p>Low-lying wetlands</p>",
       "_key": "!tables.results!abe895cf5a5a3fd1.8d3792ec507e05a4",
       "_id": "8d3792ec507e05a4"
     },
@@ -28,7 +28,7 @@
         20
       ],
       "name": "Flat",
-      "description": "Expansive plains",
+      "description": "<p>Expansive plains</p>",
       "_key": "!tables.results!abe895cf5a5a3fd1.024aab4a2bf59613",
       "_id": "024aab4a2bf59613"
     },
@@ -38,7 +38,7 @@
         30
       ],
       "name": "Rolling",
-      "description": "Hills or dunes",
+      "description": "<p>Hills or dunes</p>",
       "_key": "!tables.results!abe895cf5a5a3fd1.1adb7a945f493c37",
       "_id": "1adb7a945f493c37"
     },
@@ -48,7 +48,7 @@
         40
       ],
       "name": "Elevated",
-      "description": "Sheer cliffs rising to a mesa or plateau",
+      "description": "<p>Sheer cliffs rising to a mesa or plateau</p>",
       "_key": "!tables.results!abe895cf5a5a3fd1.62522d55a07b5189",
       "_id": "62522d55a07b5189"
     },
@@ -58,7 +58,7 @@
         50
       ],
       "name": "Sloped",
-      "description": "Terrain rising gradually to a prominent ridge or peak",
+      "description": "<p>Terrain rising gradually to a prominent ridge or peak</p>",
       "_key": "!tables.results!abe895cf5a5a3fd1.5929d11dba29fc1b",
       "_id": "5929d11dba29fc1b"
     },
@@ -68,7 +68,7 @@
         70
       ],
       "name": "Rugged",
-      "description": "Varied terrain of craggy hills and dramatic rock formations",
+      "description": "<p>Varied terrain of craggy hills and dramatic rock formations</p>",
       "_key": "!tables.results!abe895cf5a5a3fd1.dae144098d872121",
       "_id": "dae144098d872121"
     },
@@ -78,7 +78,7 @@
         90
       ],
       "name": "Mountainous",
-      "description": "Imposing heights and deep valleys",
+      "description": "<p>Imposing heights and deep valleys</p>",
       "_key": "!tables.results!abe895cf5a5a3fd1.a7cd8690f7c608c0",
       "_id": "a7cd8690f7c608c0"
     },
@@ -88,7 +88,7 @@
         100
       ],
       "name": "Volcanic",
-      "description": "Active volcanoes and lava fields",
+      "description": "<p>Active volcanoes and lava fields</p>",
       "_key": "!tables.results!abe895cf5a5a3fd1.7963f3174e2c2e49",
       "_id": "7963f3174e2c2e49"
     }

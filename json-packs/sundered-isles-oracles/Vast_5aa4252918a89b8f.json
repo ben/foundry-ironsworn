@@ -18,7 +18,7 @@
         10
       ],
       "name": "Trifle",
-      "description": "One @Compendium[foundry-ironsworn.sunderedislesoracles.baaff21d3f6897ac]{Precious Item}",
+      "description": "<p>One @Compendium[foundry-ironsworn.sunderedislesoracles.baaff21d3f6897ac]{Precious Item}</p>",
       "_key": "!tables.results!5aa4252918a89b8f.2689e19780dbcf71",
       "_id": "2689e19780dbcf71"
     },
@@ -28,7 +28,7 @@
         93
       ],
       "name": "Stash",
-      "description": "Roll the action die and reveal that many @Compendium[foundry-ironsworn.sunderedislesoracles.baaff21d3f6897ac]{Precious Items}",
+      "description": "<p>Roll the action die and reveal that many @Compendium[foundry-ironsworn.sunderedislesoracles.baaff21d3f6897ac]{Precious Items}</p>",
       "_key": "!tables.results!5aa4252918a89b8f.80b892e0d121659a",
       "_id": "80b892e0d121659a"
     },
@@ -38,7 +38,7 @@
         98
       ],
       "name": "Trove",
-      "description": "Bountiful riches",
+      "description": "<p>Bountiful riches</p>",
       "_key": "!tables.results!5aa4252918a89b8f.79962a45dd32132c",
       "_id": "79962a45dd32132c"
     },
@@ -48,7 +48,7 @@
         100
       ],
       "name": "Hoard",
-      "description": "Immeasurable riches",
+      "description": "<p>Immeasurable riches</p>",
       "_key": "!tables.results!5aa4252918a89b8f.6327ec11ffd2afb3",
       "_id": "6327ec11ffd2afb3"
     }

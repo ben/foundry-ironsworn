@@ -18,7 +18,7 @@
         25
       ],
       "name": "Small",
-      "description": "Strongbox; desk drawer; bag or pouch",
+      "description": "<p>Strongbox; desk drawer; bag or pouch</p>",
       "_key": "!tables.results!4f7dcda6a4c1453a.598d5441e27496b7",
       "_id": "598d5441e27496b7"
     },
@@ -28,7 +28,7 @@
         70
       ],
       "name": "Medium",
-      "description": "Chest; crate; ship cabin; cave alcove",
+      "description": "<p>Chest; crate; ship cabin; cave alcove</p>",
       "_key": "!tables.results!4f7dcda6a4c1453a.d639d6ac609e5064",
       "_id": "d639d6ac609e5064"
     },
@@ -38,7 +38,7 @@
         95
       ],
       "name": "Large",
-      "description": "Cargo hold; strongroom; cave chamber",
+      "description": "<p>Cargo hold; strongroom; cave chamber</p>",
       "_key": "!tables.results!4f7dcda6a4c1453a.688162d93755ba82",
       "_id": "688162d93755ba82"
     },
@@ -48,7 +48,7 @@
         100
       ],
       "name": "Vast",
-      "description": "Storehouse; great hall; cavern vault",
+      "description": "<p>Storehouse; great hall; cavern vault</p>",
       "_key": "!tables.results!4f7dcda6a4c1453a.e85e17398c8e59f6",
       "_id": "e85e17398c8e59f6"
     }

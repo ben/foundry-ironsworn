@@ -18,7 +18,7 @@
         10
       ],
       "name": "Ancient",
-      "description": "Ancestral structures that have stood the test of time",
+      "description": "<p>Ancestral structures that have stood the test of time</p>",
       "_key": "!tables.results!26f21b2c8340b415.2d903fc7d8cc689e",
       "_id": "2d903fc7d8cc689e"
     },
@@ -28,7 +28,7 @@
         20
       ],
       "name": "Dismal",
-      "description": "Gloomy, tightly-packed structures and shadowed paths",
+      "description": "<p>Gloomy, tightly-packed structures and shadowed paths</p>",
       "_key": "!tables.results!26f21b2c8340b415.f9fe47f2f2cfdcba",
       "_id": "f9fe47f2f2cfdcba"
     },
@@ -38,7 +38,7 @@
         25
       ],
       "name": "Earthen",
-      "description": "Carved into the terrain",
+      "description": "<p>Carved into the terrain</p>",
       "_key": "!tables.results!26f21b2c8340b415.d9a342a2d85024ac",
       "_id": "d9a342a2d85024ac"
     },
@@ -48,7 +48,7 @@
         35
       ],
       "name": "Foreboding",
-      "description": "Structures with ornate, dramatic forms and cavernous interiors",
+      "description": "<p>Structures with ornate, dramatic forms and cavernous interiors</p>",
       "_key": "!tables.results!26f21b2c8340b415.e4304818631d8ade",
       "_id": "e4304818631d8ade"
     },
@@ -58,7 +58,7 @@
         45
       ],
       "name": "Fortified",
-      "description": "Imposing structures hardened against assaults",
+      "description": "<p>Imposing structures hardened against assaults</p>",
       "_key": "!tables.results!26f21b2c8340b415.045458ad23f7701a",
       "_id": "045458ad23f7701a"
     },
@@ -68,7 +68,7 @@
         50
       ],
       "name": "Garish",
-      "description": "Structures with tacky design and showy adornments",
+      "description": "<p>Structures with tacky design and showy adornments</p>",
       "_key": "!tables.results!26f21b2c8340b415.374dea64e92eefa2",
       "_id": "374dea64e92eefa2"
     },
@@ -78,7 +78,7 @@
         55
       ],
       "name": "Grand",
-      "description": "Majestic structures with opulent details",
+      "description": "<p>Majestic structures with opulent details</p>",
       "_key": "!tables.results!26f21b2c8340b415.3f7771baf8c92d02",
       "_id": "3f7771baf8c92d02"
     },
@@ -88,7 +88,7 @@
         65
       ],
       "name": "Idyllic",
-      "description": "Organic forms and materials, at one with the landscape",
+      "description": "<p>Organic forms and materials, at one with the landscape</p>",
       "_key": "!tables.results!26f21b2c8340b415.c99e8099258720ab",
       "_id": "c99e8099258720ab"
     },
@@ -98,7 +98,7 @@
         70
       ],
       "name": "Industrial",
-      "description": "Grim, utilitarian structures, built for function over form",
+      "description": "<p>Grim, utilitarian structures, built for function over form</p>",
       "_key": "!tables.results!26f21b2c8340b415.e1556e56b9919fb1",
       "_id": "e1556e56b9919fb1"
     },
@@ -108,7 +108,7 @@
         75
       ],
       "name": "Makeshift",
-      "description": "Temporary shelters for nomadic or displaced people",
+      "description": "<p>Temporary shelters for nomadic or displaced people</p>",
       "_key": "!tables.results!26f21b2c8340b415.90a7fbe6c1537686",
       "_id": "90a7fbe6c1537686"
     },
@@ -118,7 +118,7 @@
         85
       ],
       "name": "Modest",
-      "description": "Practical, charming structures",
+      "description": "<p>Practical, charming structures</p>",
       "_key": "!tables.results!26f21b2c8340b415.992b5294bc0fe8de",
       "_id": "992b5294bc0fe8de"
     },
@@ -128,7 +128,7 @@
         95
       ],
       "name": "Ramshackle",
-      "description": "Haphazard structures using scavenged or repurposed materials",
+      "description": "<p>Haphazard structures using scavenged or repurposed materials</p>",
       "_key": "!tables.results!26f21b2c8340b415.b9afc0eccae00783",
       "_id": "b9afc0eccae00783"
     },
@@ -138,7 +138,7 @@
         100
       ],
       "name": "Wondrous",
-      "description": "Enigmatic structures of awe-inspiring design or function",
+      "description": "<p>Enigmatic structures of awe-inspiring design or function</p>",
       "_key": "!tables.results!26f21b2c8340b415.a11eb372793c9d75",
       "_id": "a11eb372793c9d75"
     }

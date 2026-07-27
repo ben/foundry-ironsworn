@@ -18,7 +18,7 @@
         5
       ],
       "name": "Devastated",
-      "description": "Ravaged by natural forces or razed by despoilers",
+      "description": "<p>Ravaged by natural forces or razed by despoilers</p>",
       "_key": "!tables.results!8c922cf5448ed04e.06af563046d27614",
       "_id": "06af563046d27614"
     },
@@ -28,7 +28,7 @@
         10
       ],
       "name": "Dying",
-      "description": "Withered woodlands, blighted scrub, or sickly marshes",
+      "description": "<p>Withered woodlands, blighted scrub, or sickly marshes</p>",
       "_key": "!tables.results!8c922cf5448ed04e.95a45661a24a7c4e",
       "_id": "95a45661a24a7c4e"
     },
@@ -38,7 +38,7 @@
         15
       ],
       "name": "Desolate",
-      "description": "Arid wastes",
+      "description": "<p>Arid wastes</p>",
       "_key": "!tables.results!8c922cf5448ed04e.7a82d938cd8a0ac4",
       "_id": "7a82d938cd8a0ac4"
     },
@@ -48,7 +48,7 @@
         25
       ],
       "name": "Sparse",
-      "description": "Thin woodlands, bleak scrub, or stagnant marshes",
+      "description": "<p>Thin woodlands, bleak scrub, or stagnant marshes</p>",
       "_key": "!tables.results!8c922cf5448ed04e.a0629ddc94986039",
       "_id": "a0629ddc94986039"
     },
@@ -58,7 +58,7 @@
         75
       ],
       "name": "Lush",
-      "description": "Verdant woodlands, dense jungles, or thriving swamps",
+      "description": "<p>Verdant woodlands, dense jungles, or thriving swamps</p>",
       "_key": "!tables.results!8c922cf5448ed04e.2a71cd661a7c2894",
       "_id": "2a71cd661a7c2894"
     },
@@ -68,7 +68,7 @@
         100
       ],
       "name": "Primeval",
-      "description": "Ancient jungles or impenetrable swamps",
+      "description": "<p>Ancient jungles or impenetrable swamps</p>",
       "_key": "!tables.results!8c922cf5448ed04e.57cdbf1bb36c2298",
       "_id": "57cdbf1bb36c2298"
     }

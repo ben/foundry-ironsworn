@@ -19,7 +19,7 @@
         2
       ],
       "name": "Carrier",
-      "description": "Launches fighters",
+      "description": "<p>Launches fighters</p>",
       "_key": "!tables.results!91227527cece2d20.98cd2f4a86915d83",
       "_id": "98cd2f4a86915d83"
     },
@@ -29,7 +29,7 @@
         6
       ],
       "name": "Corvette",
-      "description": "Light attack ship",
+      "description": "<p>Light attack ship</p>",
       "_key": "!tables.results!91227527cece2d20.5ba1a9c288568474",
       "_id": "5ba1a9c288568474"
     },
@@ -39,7 +39,7 @@
         11
       ],
       "name": "Courier",
-      "description": "Fast transport",
+      "description": "<p>Fast transport</p>",
       "_key": "!tables.results!91227527cece2d20.930f1d9cdfee5a07",
       "_id": "930f1d9cdfee5a07"
     },
@@ -49,7 +49,7 @@
         14
       ],
       "name": "Cruiser",
-      "description": "Medium attack ship",
+      "description": "<p>Medium attack ship</p>",
       "_key": "!tables.results!91227527cece2d20.d9832afc336b00fd",
       "_id": "d9832afc336b00fd"
     },
@@ -59,7 +59,7 @@
         16
       ],
       "name": "Dreadnought",
-      "description": "Heavy attack ship",
+      "description": "<p>Heavy attack ship</p>",
       "_key": "!tables.results!91227527cece2d20.19f0ddd0bf03bc97",
       "_id": "19f0ddd0bf03bc97"
     },
@@ -69,7 +69,7 @@
         19
       ],
       "name": "Escape pod",
-      "description": "Survival craft",
+      "description": "<p>Survival craft</p>",
       "_key": "!tables.results!91227527cece2d20.3654e1ed86f5b04c",
       "_id": "3654e1ed86f5b04c"
     },
@@ -79,7 +79,7 @@
         22
       ],
       "name": "Foundry",
-      "description": "Mobile construction platform",
+      "description": "<p>Mobile construction platform</p>",
       "_key": "!tables.results!91227527cece2d20.b201cdd61b409074",
       "_id": "b201cdd61b409074"
     },
@@ -89,7 +89,7 @@
         27
       ],
       "name": "Harvester",
-      "description": "Fuel or energy excavator",
+      "description": "<p>Fuel or energy excavator</p>",
       "_key": "!tables.results!91227527cece2d20.fb7d7404eb4a363d",
       "_id": "fb7d7404eb4a363d"
     },
@@ -99,7 +99,7 @@
         33
       ],
       "name": "Hauler",
-      "description": "Heavy transport",
+      "description": "<p>Heavy transport</p>",
       "_key": "!tables.results!91227527cece2d20.1d06e2dcd7c7630e",
       "_id": "1d06e2dcd7c7630e"
     },
@@ -109,7 +109,7 @@
         36
       ],
       "name": "Hunter",
-      "description": "Stealthy attack ship",
+      "description": "<p>Stealthy attack ship</p>",
       "_key": "!tables.results!91227527cece2d20.8d5cc0b7535a7801",
       "_id": "8d5cc0b7535a7801"
     },
@@ -119,7 +119,7 @@
         38
       ],
       "name": "Ironhome",
-      "description": "Habitat",
+      "description": "<p>Habitat</p>",
       "_key": "!tables.results!91227527cece2d20.b2b23b8b1923083d",
       "_id": "b2b23b8b1923083d"
     },
@@ -129,7 +129,7 @@
         42
       ],
       "name": "Mender",
-      "description": "Utility or repair",
+      "description": "<p>Utility or repair</p>",
       "_key": "!tables.results!91227527cece2d20.6aabd219f067ecca",
       "_id": "6aabd219f067ecca"
     },
@@ -139,7 +139,7 @@
         47
       ],
       "name": "Outbounder",
-      "description": "Remote survey or research",
+      "description": "<p>Remote survey or research</p>",
       "_key": "!tables.results!91227527cece2d20.293574267ff31135",
       "_id": "293574267ff31135"
     },
@@ -149,7 +149,7 @@
         50
       ],
       "name": "Pennant",
-      "description": "Command ship",
+      "description": "<p>Command ship</p>",
       "_key": "!tables.results!91227527cece2d20.159df41a5277498f",
       "_id": "159df41a5277498f"
     },
@@ -159,7 +159,7 @@
         56
       ],
       "name": "Prospector",
-      "description": "Mineral excavator",
+      "description": "<p>Mineral excavator</p>",
       "_key": "!tables.results!91227527cece2d20.9609aa879e099b73",
       "_id": "9609aa879e099b73"
     },
@@ -169,7 +169,7 @@
         61
       ],
       "name": "Reclaimer",
-      "description": "Salvage or rescue",
+      "description": "<p>Salvage or rescue</p>",
       "_key": "!tables.results!91227527cece2d20.ac1cd214f3ee15fc",
       "_id": "ac1cd214f3ee15fc"
     },
@@ -179,7 +179,7 @@
         64
       ],
       "name": "Shuttle",
-      "description": "Short-range transport",
+      "description": "<p>Short-range transport</p>",
       "_key": "!tables.results!91227527cece2d20.a918944bd0c20241",
       "_id": "a918944bd0c20241"
     },
@@ -189,7 +189,7 @@
         67
       ],
       "name": "Snub fighter",
-      "description": "Small attack craft",
+      "description": "<p>Small attack craft</p>",
       "_key": "!tables.results!91227527cece2d20.a93e55b7cf3b963b",
       "_id": "a93e55b7cf3b963b"
     },
@@ -199,7 +199,7 @@
         82
       ],
       "name": "Multipurpose",
-      "description": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/starship/mission\">\n    <i class=\"fa fa-caret-right\"></i> Starship Mission\n</a></p>",
+      "description": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/starship/mission\">\n    <i class=\"fa fa-caret-right\"></i> Starship Mission\n</a></p></p>",
       "_key": "!tables.results!91227527cece2d20.deeacc41b75cd3d9",
       "_id": "deeacc41b75cd3d9"
     },

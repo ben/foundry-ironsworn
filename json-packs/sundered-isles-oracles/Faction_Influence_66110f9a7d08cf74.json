@@ -18,7 +18,7 @@
         10
       ],
       "name": "Forsaken",
-      "description": "Banished or forgotten",
+      "description": "<p>Banished or forgotten</p>",
       "_key": "!tables.results!66110f9a7d08cf74.d0bea7e5d68acdb7",
       "_id": "d0bea7e5d68acdb7"
     },
@@ -28,7 +28,7 @@
         30
       ],
       "name": "Isolated",
-      "description": "Limited influence in a remote location",
+      "description": "<p>Limited influence in a remote location</p>",
       "_key": "!tables.results!66110f9a7d08cf74.2cc64bd7d8a2df40",
       "_id": "2cc64bd7d8a2df40"
     },
@@ -38,7 +38,7 @@
         50
       ],
       "name": "Localized",
-      "description": "Marginal influence in a small area",
+      "description": "<p>Marginal influence in a small area</p>",
       "_key": "!tables.results!66110f9a7d08cf74.a67039aa408f1e85",
       "_id": "a67039aa408f1e85"
     },
@@ -48,7 +48,7 @@
         70
       ],
       "name": "Established",
-      "description": "Strong influence in a small area",
+      "description": "<p>Strong influence in a small area</p>",
       "_key": "!tables.results!66110f9a7d08cf74.0a9b92c5da7b4950",
       "_id": "0a9b92c5da7b4950"
     },
@@ -58,7 +58,7 @@
         85
       ],
       "name": "Notable",
-      "description": "Dispersed influence across a moderate area",
+      "description": "<p>Dispersed influence across a moderate area</p>",
       "_key": "!tables.results!66110f9a7d08cf74.c17174a34418e9f7",
       "_id": "c17174a34418e9f7"
     },
@@ -68,7 +68,7 @@
         95
       ],
       "name": "Dominant",
-      "description": "Far-reaching influence across a large area",
+      "description": "<p>Far-reaching influence across a large area</p>",
       "_key": "!tables.results!66110f9a7d08cf74.56c6882634a1d448",
       "_id": "56c6882634a1d448"
     },
@@ -78,7 +78,7 @@
         100
       ],
       "name": "Inescapable",
-      "description": "Pervasive influence across a vast area",
+      "description": "<p>Pervasive influence across a vast area</p>",
       "_key": "!tables.results!66110f9a7d08cf74.10d0bd2863f5b6b7",
       "_id": "10d0bd2863f5b6b7"
     }

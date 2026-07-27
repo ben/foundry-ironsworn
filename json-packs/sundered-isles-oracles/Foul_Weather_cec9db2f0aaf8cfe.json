@@ -19,7 +19,7 @@
         10
       ],
       "name": "Stifling",
-      "description": "Windless, oppressive heat",
+      "description": "<p>Windless, oppressive heat</p>",
       "_key": "!tables.results!cec9db2f0aaf8cfe.f91ac13308465d56",
       "_id": "f91ac13308465d56"
     },
@@ -29,7 +29,7 @@
         25
       ],
       "name": "Listless",
-      "description": "Light winds and sweltering heat",
+      "description": "<p>Light winds and sweltering heat</p>",
       "_key": "!tables.results!cec9db2f0aaf8cfe.cf5c0f8ad114f0f1",
       "_id": "cf5c0f8ad114f0f1"
     },
@@ -39,7 +39,7 @@
         40
       ],
       "name": "Misty",
-      "description": "Light winds and damp fog",
+      "description": "<p>Light winds and damp fog</p>",
       "_key": "!tables.results!cec9db2f0aaf8cfe.996927c5349eef36",
       "_id": "996927c5349eef36"
     },
@@ -49,7 +49,7 @@
         55
       ],
       "name": "Foggy",
-      "description": "Light winds and dense fog",
+      "description": "<p>Light winds and dense fog</p>",
       "_key": "!tables.results!cec9db2f0aaf8cfe.ec12ed2ef7d6bf3f",
       "_id": "ec12ed2ef7d6bf3f"
     },
@@ -59,7 +59,7 @@
         75
       ],
       "name": "Heavy",
-      "description": "High winds, steady rain, and rough waters",
+      "description": "<p>High winds, steady rain, and rough waters</p>",
       "_key": "!tables.results!cec9db2f0aaf8cfe.bea9a57220cad206",
       "_id": "bea9a57220cad206"
     },
@@ -69,7 +69,7 @@
         90
       ],
       "name": "Stormy",
-      "description": "Powerful winds, pelting rain, and high seas",
+      "description": "<p>Powerful winds, pelting rain, and high seas</p>",
       "_key": "!tables.results!cec9db2f0aaf8cfe.c45684e7e662100d",
       "_id": "c45684e7e662100d"
     },
@@ -79,7 +79,7 @@
         100
       ],
       "name": "Raging",
-      "description": "Destructive winds, torrential rain, and monstrous waves",
+      "description": "<p>Destructive winds, torrential rain, and monstrous waves</p>",
       "_key": "!tables.results!cec9db2f0aaf8cfe.a4961648278d840f",
       "_id": "a4961648278d840f"
     }

@@ -19,7 +19,7 @@
         10
       ],
       "name": "Calamitous downfall",
-      "description": "What brought this place to ruin?",
+      "description": "<p>What brought this place to ruin?</p>",
       "_key": "!tables.results!3e07af2891acbea8.7e8535851f53822d",
       "_id": "7e8535851f53822d"
     },
@@ -29,7 +29,7 @@
         20
       ],
       "name": "Cultural legacy",
-      "description": "What unique beliefs or customs were practiced here?",
+      "description": "<p>What unique beliefs or customs were practiced here?</p>",
       "_key": "!tables.results!3e07af2891acbea8.fc167ac2b7c9054f",
       "_id": "fc167ac2b7c9054f"
     },
@@ -39,7 +39,7 @@
         30
       ],
       "name": "Enemy schemes",
-      "description": "What purpose does a foe or rival have in this place?",
+      "description": "<p>What purpose does a foe or rival have in this place?</p>",
       "_key": "!tables.results!3e07af2891acbea8.81589f526619284f",
       "_id": "81589f526619284f"
     },
@@ -49,7 +49,7 @@
         40
       ],
       "name": "Enigmatic waymarker",
-      "description": "What greater site or discovery does this place lead to?",
+      "description": "<p>What greater site or discovery does this place lead to?</p>",
       "_key": "!tables.results!3e07af2891acbea8.3a0357ebfc1b82e7",
       "_id": "3a0357ebfc1b82e7"
     },
@@ -59,7 +59,7 @@
         50
       ],
       "name": "Fabled relic",
-      "description": "What legendary artifact or treasure is held here?",
+      "description": "<p>What legendary artifact or treasure is held here?</p>",
       "_key": "!tables.results!3e07af2891acbea8.1e2902849ff37355",
       "_id": "1e2902849ff37355"
     },
@@ -69,7 +69,7 @@
         60
       ],
       "name": "Heroes' rest",
-      "description": "What legendary figure is entombed here?",
+      "description": "<p>What legendary figure is entombed here?</p>",
       "_key": "!tables.results!3e07af2891acbea8.8965008d92e62619",
       "_id": "8965008d92e62619"
     },
@@ -79,7 +79,7 @@
         70
       ],
       "name": "Lost people",
-      "description": "What became of the people who once inhabited this site?",
+      "description": "<p>What became of the people who once inhabited this site?</p>",
       "_key": "!tables.results!3e07af2891acbea8.a135fe04354c382e",
       "_id": "a135fe04354c382e"
     },
@@ -89,7 +89,7 @@
         80
       ],
       "name": "Personal heritage",
-      "description": "What connection does this place have to your culture or calling?",
+      "description": "<p>What connection does this place have to your culture or calling?</p>",
       "_key": "!tables.results!3e07af2891acbea8.0fbfe9e49880ffb5",
       "_id": "0fbfe9e49880ffb5"
     },
@@ -99,7 +99,7 @@
         90
       ],
       "name": "Unfulfilled promise",
-      "description": "What forsaken vow or lost destiny hangs heavy over this place?",
+      "description": "<p>What forsaken vow or lost destiny hangs heavy over this place?</p>",
       "_key": "!tables.results!3e07af2891acbea8.50574823968daf1d",
       "_id": "50574823968daf1d"
     },
@@ -109,7 +109,7 @@
         100
       ],
       "name": "Unusual purpose",
-      "description": "What unexpected function did this site serve?",
+      "description": "<p>What unexpected function did this site serve?</p>",
       "_key": "!tables.results!3e07af2891acbea8.3d4b2fbe09f0e329",
       "_id": "3d4b2fbe09f0e329"
     }

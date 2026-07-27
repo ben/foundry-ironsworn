@@ -18,7 +18,7 @@
         5
       ],
       "name": "Alva's Rest",
-      "description": "Fortified",
+      "description": "<p>Fortified</p><p>Domain</p>",
       "_key": "!tables.results!351e5c77fb813f85.52d47673227aff9d",
       "_id": "52d47673227aff9d"
     },
@@ -28,7 +28,7 @@
         10
       ],
       "name": "Bleakroot Depths",
-      "description": "Wild",
+      "description": "<p>Wild</p><p>Frozen Cavern</p>",
       "_key": "!tables.results!351e5c77fb813f85.1bf2473f03659777",
       "_id": "1bf2473f03659777"
     },
@@ -38,7 +38,7 @@
         15
       ],
       "name": "Bonewilds",
-      "description": "Haunted",
+      "description": "<p>Haunted</p><p>Tanglewood</p>",
       "_key": "!tables.results!351e5c77fb813f85.5bc17e15b512df80",
       "_id": "5bc17e15b512df80"
     },
@@ -48,7 +48,7 @@
         20
       ],
       "name": "Darkfall Caves",
-      "description": "Infested",
+      "description": "<p>Infested</p><p>Cavern</p>",
       "_key": "!tables.results!351e5c77fb813f85.f855909bf6e7c05f",
       "_id": "f855909bf6e7c05f"
     },
@@ -58,7 +58,7 @@
         25
       ],
       "name": "Deeprot Bog",
-      "description": "Hallowed",
+      "description": "<p>Hallowed</p><p>Shadowfen</p>",
       "_key": "!tables.results!351e5c77fb813f85.0b998ab780eb08c1",
       "_id": "0b998ab780eb08c1"
     },
@@ -68,7 +68,7 @@
         30
       ],
       "name": "Egan's Folly",
-      "description": "Haunted",
+      "description": "<p>Haunted</p><p>Pass</p>",
       "_key": "!tables.results!351e5c77fb813f85.40d7f7fd3eb9db6c",
       "_id": "40d7f7fd3eb9db6c"
     },
@@ -78,7 +78,7 @@
         35
       ],
       "name": "Foulwater Plunge",
-      "description": "Corrupted",
+      "description": "<p>Corrupted</p><p>Sea Cave</p>",
       "_key": "!tables.results!351e5c77fb813f85.2ec3e86df9d5932c",
       "_id": "2ec3e86df9d5932c"
     },
@@ -88,7 +88,7 @@
         40
       ],
       "name": "Frostmark",
-      "description": "Fortified",
+      "description": "<p>Fortified</p><p>Icereach</p>",
       "_key": "!tables.results!351e5c77fb813f85.a48053ee061f2177",
       "_id": "a48053ee061f2177"
     },
@@ -98,7 +98,7 @@
         45
       ],
       "name": "Greathammer Deep",
-      "description": "Ravaged",
+      "description": "<p>Ravaged</p><p>Mine</p>",
       "_key": "!tables.results!351e5c77fb813f85.fb6d8c5d7353850d",
       "_id": "fb6d8c5d7353850d"
     },
@@ -108,7 +108,7 @@
         50
       ],
       "name": "Holdfast Barrow",
-      "description": "Haunted",
+      "description": "<p>Haunted</p><p>Barrow</p>",
       "_key": "!tables.results!351e5c77fb813f85.ccd72139f9e1c982",
       "_id": "ccd72139f9e1c982"
     },
@@ -118,7 +118,7 @@
         55
       ],
       "name": "Hollowmount Island",
-      "description": "Ancient",
+      "description": "<p>Ancient</p><p>Underkeep</p>",
       "_key": "!tables.results!351e5c77fb813f85.2594dbb3dcd3ace9",
       "_id": "2594dbb3dcd3ace9"
     },
@@ -128,7 +128,7 @@
         60
       ],
       "name": "Icebound Reach",
-      "description": "Wild",
+      "description": "<p>Wild</p><p>Icereach</p>",
       "_key": "!tables.results!351e5c77fb813f85.8ba00eef077d0713",
       "_id": "8ba00eef077d0713"
     },
@@ -138,7 +138,7 @@
         65
       ],
       "name": "Lastrock Mine",
-      "description": "Infested",
+      "description": "<p>Infested</p><p>Mine</p>",
       "_key": "!tables.results!351e5c77fb813f85.1b68640802343d2d",
       "_id": "1b68640802343d2d"
     },
@@ -148,7 +148,7 @@
         70
       ],
       "name": "Redhome Sanctum",
-      "description": "Corrupted",
+      "description": "<p>Corrupted</p><p>Underkeep</p>",
       "_key": "!tables.results!351e5c77fb813f85.8d3b0ce12fb5e53a",
       "_id": "8d3b0ce12fb5e53a"
     },
@@ -158,7 +158,7 @@
         74
       ],
       "name": "Sinking Temple",
-      "description": "Ravaged",
+      "description": "<p>Ravaged</p><p>Ruin</p>",
       "_key": "!tables.results!351e5c77fb813f85.e0b2aaacdc69e15e",
       "_id": "e0b2aaacdc69e15e"
     },
@@ -168,7 +168,7 @@
         80
       ],
       "name": "Smoldering Wood",
-      "description": "Ravaged",
+      "description": "<p>Ravaged</p><p>Tanglewood</p>",
       "_key": "!tables.results!351e5c77fb813f85.624f36e6733a3470",
       "_id": "624f36e6733a3470"
     },
@@ -178,7 +178,7 @@
         84
       ],
       "name": "Stillgrave Mire",
-      "description": "Haunted",
+      "description": "<p>Haunted</p><p>Shadowfen</p>",
       "_key": "!tables.results!351e5c77fb813f85.7a130460d7bf7a99",
       "_id": "7a130460d7bf7a99"
     },
@@ -188,7 +188,7 @@
         90
       ],
       "name": "Stonesong Spire",
-      "description": "Hallowed",
+      "description": "<p>Hallowed</p><p>Stronghold</p>",
       "_key": "!tables.results!351e5c77fb813f85.6d0463bf85c791ae",
       "_id": "6d0463bf85c791ae"
     },
@@ -198,7 +198,7 @@
         94
       ],
       "name": "Topplekeep",
-      "description": "Infested",
+      "description": "<p>Infested</p><p>Ruin</p>",
       "_key": "!tables.results!351e5c77fb813f85.59c86cb1f05b9510",
       "_id": "59c86cb1f05b9510"
     },
@@ -208,7 +208,7 @@
         100
       ],
       "name": "Trail of Spirits",
-      "description": "Ancient",
+      "description": "<p>Ancient</p><p>Pass</p>",
       "_key": "!tables.results!351e5c77fb813f85.1cf3391a49550ec8",
       "_id": "1cf3391a49550ec8"
     }

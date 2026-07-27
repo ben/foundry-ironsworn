@@ -18,7 +18,7 @@
         30
       ],
       "name": "Small",
-      "description": "Hour or two",
+      "description": "<p>Hour or two</p>",
       "_key": "!tables.results!a9a549a0d501f321.bc00309536e492b7",
       "_id": "bc00309536e492b7"
     },
@@ -28,7 +28,7 @@
         70
       ],
       "name": "Medium",
-      "description": "Several hours",
+      "description": "<p>Several hours</p>",
       "_key": "!tables.results!a9a549a0d501f321.a91339a974db8656",
       "_id": "a91339a974db8656"
     },
@@ -38,7 +38,7 @@
         90
       ],
       "name": "Large",
-      "description": "Days",
+      "description": "<p>Days</p>",
       "_key": "!tables.results!a9a549a0d501f321.e0a0fca79763c8fc",
       "_id": "e0a0fca79763c8fc"
     },
@@ -48,7 +48,7 @@
         100
       ],
       "name": "Vast",
-      "description": "Weeks",
+      "description": "<p>Weeks</p>",
       "_key": "!tables.results!a9a549a0d501f321.5a7ba01b7f0bf5a9",
       "_id": "5a7ba01b7f0bf5a9"
     }

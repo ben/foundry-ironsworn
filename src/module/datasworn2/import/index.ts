@@ -414,14 +414,23 @@ const processOracle = async (
 				const hasLink =
 					text.includes('@Compendium[') ||
 					text.includes('entity-link oracle-category-link')
+				// Wrap each present fragment in its own paragraph so they render
+				// on separate lines.
+				const paragraphs = (fragments: Array<string | undefined>) =>
+					fragments
+						.filter((fragment) => fragment)
+						.map(
+							(fragment) => `<p>${renderFragment(fragment as string)}</p>`
+						)
+						.join('')
 				return {
 					range: [row.roll.min, row.roll.max],
 					...(row.text2
 						? hasLink
-							? { text: `<p>${text}</p><p>${renderFragment(row.text2)}</p>` }
+							? { text: paragraphs([row.text, row.text2, row.text3]) }
 							: {
 									name: text,
-									description: renderFragment(row.text2)
+									description: paragraphs([row.text2, row.text3])
 							  }
 						: { text }),
 					_key: `!tables.results!${fid}.${rowId}`,

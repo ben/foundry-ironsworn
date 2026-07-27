@@ -18,7 +18,7 @@
         20
       ],
       "name": "Troublesome",
-      "description": "Minor cave system",
+      "description": "<p>Minor cave system</p>",
       "_key": "!tables.results!6c1cbe7865765efd.a1b9b32652b02a12",
       "_id": "a1b9b32652b02a12"
     },
@@ -28,7 +28,7 @@
         50
       ],
       "name": "Dangerous",
-      "description": "Limited cave system",
+      "description": "<p>Limited cave system</p>",
       "_key": "!tables.results!6c1cbe7865765efd.d7835a76d4248d9d",
       "_id": "d7835a76d4248d9d"
     },
@@ -38,7 +38,7 @@
         75
       ],
       "name": "Formidable",
-      "description": "Extensive cave system",
+      "description": "<p>Extensive cave system</p>",
       "_key": "!tables.results!6c1cbe7865765efd.b487009864467ddb",
       "_id": "b487009864467ddb"
     },
@@ -48,7 +48,7 @@
         90
       ],
       "name": "Extreme",
-      "description": "Vast cave system",
+      "description": "<p>Vast cave system</p>",
       "_key": "!tables.results!6c1cbe7865765efd.45bdd2e6febde0c5",
       "_id": "45bdd2e6febde0c5"
     },
@@ -58,7 +58,7 @@
         100
       ],
       "name": "Epic",
-      "description": "Fathomless cave system",
+      "description": "<p>Fathomless cave system</p>",
       "_key": "!tables.results!6c1cbe7865765efd.42a89be3df84f17e",
       "_id": "42a89be3df84f17e"
     }
