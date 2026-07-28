@@ -17,7 +17,8 @@
         1,
         10
       ],
-      "text": "Akiya",
+      "name": "Akiya",
+      "description": "<p>Coalition of clans known for their sleek and speedy ships. They gather each year to celebrate the ebb of the storm season, and hang rows of vibrantly colored flags from their rigging to honor the dead.</p>",
       "_key": "!tables.results!5de0373154d7ce38.f2ef490ff9470ec3",
       "_id": "f2ef490ff9470ec3"
     },
@@ -26,7 +27,8 @@
         11,
         20
       ],
-      "text": "Arsu / Azizos",
+      "name": "Arsu / Azizos",
+      "description": "<p>Once a single tribe, the loyalty of these people is divided between two rulers descended from rival heirs. They often war against one another, but now have a fragile alliance against a mutual foe.</p>",
       "_key": "!tables.results!5de0373154d7ce38.62169a9ece3f28f5",
       "_id": "62169a9ece3f28f5"
     },
@@ -35,7 +37,8 @@
         21,
         30
       ],
-      "text": "Kai",
+      "name": "Kai",
+      "description": "<p>Seagoing folk who build their homes and ships from luminous glimmerwood. This resource is harvested from the coastal swamps of their homeland, an environment under threat of destruction.</p>",
       "_key": "!tables.results!5de0373154d7ce38.6f3b219c66dcaa92",
       "_id": "6f3b219c66dcaa92"
     },
@@ -44,7 +47,8 @@
         31,
         40
       ],
-      "text": "Khazeera",
+      "name": "Khazeera",
+      "description": "<p>Warring people who inhabit an enduring city-state at the edge of an active volcano. Molten rock and slag from this sacred volcano is used in the heated shot for their destructive cannonry, and their soldiers wield blades forged in its fires.</p>",
       "_key": "!tables.results!5de0373154d7ce38.32cf20eaa9268bf3",
       "_id": "32cf20eaa9268bf3"
     },
@@ -53,7 +57,8 @@
         41,
         50
       ],
-      "text": "Morien",
+      "name": "Morien",
+      "description": "<p>Seafolk who forsake cannons and muskets. They sail low-profile catamarans and set upon their foes with stealthy ambushes.</p>",
       "_key": "!tables.results!5de0373154d7ce38.625c2dca8c173547",
       "_id": "625c2dca8c173547"
     },
@@ -62,7 +67,8 @@
         51,
         60
       ],
-      "text": "Otani",
+      "name": "Otani",
+      "description": "<p>People who dwell in island highlands. They largely forsake the sea, but send out seafaring envoys to build ties with other communities.</p>",
       "_key": "!tables.results!5de0373154d7ce38.dad9a60e5b0acfc4",
       "_id": "dad9a60e5b0acfc4"
     },
@@ -71,7 +77,8 @@
         61,
         70
       ],
-      "text": "Sularia",
+      "name": "Sularia",
+      "description": "<p>Beast-bonded people who commune with magnificent elder rays. They are sworn to protect the seas from hunters and despoilers.</p>",
       "_key": "!tables.results!5de0373154d7ce38.972561b83cff9cb7",
       "_id": "972561b83cff9cb7"
     },
@@ -80,7 +87,8 @@
         71,
         80
       ],
-      "text": "Talan",
+      "name": "Talan",
+      "description": "<p>Scrappy seafolk who range far among the islands. They maintain a floating trade settlement open to any who visit with shuttered gunports.</p>",
       "_key": "!tables.results!5de0373154d7ce38.533ca98da1bdb9ef",
       "_id": "533ca98da1bdb9ef"
     },
@@ -89,7 +97,8 @@
         81,
         90
       ],
-      "text": "Thalassa",
+      "name": "Thalassa",
+      "description": "<p>Recent refugees of a cataclysmic war. They are desperate to gain allies against the enemy they believe will follow them to the isles.</p>",
       "_key": "!tables.results!5de0373154d7ce38.11b357f8afe81b36",
       "_id": "11b357f8afe81b36"
     },
@@ -98,7 +107,8 @@
         91,
         100
       ],
-      "text": "Uktanu",
+      "name": "Uktanu",
+      "description": "<p>Reclusive people who trace their lineage to the first inhabitants of the isles. They are sworn to protect the sacred sites and relics of their ancient forebears.</p>",
       "_key": "!tables.results!5de0373154d7ce38.43ae1fd6bb12f520",
       "_id": "43ae1fd6bb12f520"
     }

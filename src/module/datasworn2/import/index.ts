@@ -405,9 +405,34 @@ const processOracle = async (
 			oracle.rows.map((row) => {
 				if (!row.roll) return undefined
 				const rowId = hash(lookupLegacyId(row._id))
+				const text = renderFragment(row.text)
+				// `name` is rendered as plain text (no HTML, no Foundry
+				// enrichment), so a link there would show as raw markup. When the
+				// primary text contains a compendium link or an oracle-category
+				// link, keep both values together in `text` (which is enriched)
+				// instead of the `name` / `description` split.
+				const hasLink =
+					text.includes('@Compendium[') ||
+					text.includes('entity-link oracle-category-link')
+				// Wrap each present fragment in its own paragraph so they render
+				// on separate lines.
+				const paragraphs = (fragments: Array<string | undefined>) =>
+					fragments
+						.filter((fragment) => fragment)
+						.map(
+							(fragment) => `<p>${renderFragment(fragment as string)}</p>`
+						)
+						.join('')
 				return {
 					range: [row.roll.min, row.roll.max],
-					text: renderFragment(row.text),
+					...(row.text2
+						? hasLink
+							? { text: paragraphs([row.text, row.text2, row.text3]) }
+							: {
+									name: text,
+									description: paragraphs([row.text2, row.text3])
+							  }
+						: { text }),
 					_key: `!tables.results!${fid}.${rowId}`,
 					_id: rowId
 				}

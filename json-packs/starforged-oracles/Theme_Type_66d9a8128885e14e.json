@@ -18,7 +18,7 @@
         1,
         15
       ],
-      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/chaotic\">\n    <i class=\"fa fa-caret-right\"></i> Chaotic\n</a></p>",
+      "text": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/chaotic\">\n    <i class=\"fa fa-caret-right\"></i> Chaotic\n</a></p></p><p>Reality is corrupted or warped in this place.</p>",
       "_key": "!tables.results!66d9a8128885e14e.65d82a4e40f876b2",
       "_id": "65d82a4e40f876b2"
     },
@@ -27,7 +27,7 @@
         16,
         25
       ],
-      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/fortified\">\n    <i class=\"fa fa-caret-right\"></i> Fortified\n</a></p>",
+      "text": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/fortified\">\n    <i class=\"fa fa-caret-right\"></i> Fortified\n</a></p></p><p>Enemies defend this place against intruders.</p>",
       "_key": "!tables.results!66d9a8128885e14e.adc273cc6cebdcf5",
       "_id": "adc273cc6cebdcf5"
     },
@@ -36,7 +36,7 @@
         26,
         35
       ],
-      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/haunted\">\n    <i class=\"fa fa-caret-right\"></i> Haunted\n</a></p>",
+      "text": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/haunted\">\n    <i class=\"fa fa-caret-right\"></i> Haunted\n</a></p></p><p>Restless spirits are bound to this place.</p>",
       "_key": "!tables.results!66d9a8128885e14e.1032754f48ff2c8f",
       "_id": "1032754f48ff2c8f"
     },
@@ -45,7 +45,7 @@
         36,
         50
       ],
-      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/infested\">\n    <i class=\"fa fa-caret-right\"></i> Infested\n</a></p>",
+      "text": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/infested\">\n    <i class=\"fa fa-caret-right\"></i> Infested\n</a></p></p><p>Foul creatures have overrun this place.</p>",
       "_key": "!tables.results!66d9a8128885e14e.dbed96ff07629d32",
       "_id": "dbed96ff07629d32"
     },
@@ -54,7 +54,7 @@
         51,
         60
       ],
-      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/inhabited\">\n    <i class=\"fa fa-caret-right\"></i> Inhabited\n</a></p>",
+      "text": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/inhabited\">\n    <i class=\"fa fa-caret-right\"></i> Inhabited\n</a></p></p><p>People have built a community in this place.</p>",
       "_key": "!tables.results!66d9a8128885e14e.e2eb1d986b6a1970",
       "_id": "e2eb1d986b6a1970"
     },
@@ -63,7 +63,7 @@
         61,
         75
       ],
-      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/mechanical\">\n    <i class=\"fa fa-caret-right\"></i> Mechanical\n</a></p>",
+      "text": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/mechanical\">\n    <i class=\"fa fa-caret-right\"></i> Mechanical\n</a></p></p><p>Machines and technology hold sway in this place.</p>",
       "_key": "!tables.results!66d9a8128885e14e.8d90bc2c3b078dd8",
       "_id": "8d90bc2c3b078dd8"
     },
@@ -72,7 +72,7 @@
         76,
         90
       ],
-      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/ruined\">\n    <i class=\"fa fa-caret-right\"></i> Ruined\n</a></p>",
+      "text": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/ruined\">\n    <i class=\"fa fa-caret-right\"></i> Ruined\n</a></p></p><p>Time, disaster, or war have ravaged this place.</p>",
       "_key": "!tables.results!66d9a8128885e14e.976dd4e819aad1af",
       "_id": "976dd4e819aad1af"
     },
@@ -81,7 +81,7 @@
         91,
         100
       ],
-      "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/sacred\">\n    <i class=\"fa fa-caret-right\"></i> Sacred\n</a></p>",
+      "text": "<p><p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/location_theme/sacred\">\n    <i class=\"fa fa-caret-right\"></i> Sacred\n</a></p></p><p>Worshipers glorify strange powers in this place.</p>",
       "_key": "!tables.results!66d9a8128885e14e.61db78c5874e678e",
       "_id": "61db78c5874e678e"
     }

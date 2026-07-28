@@ -18,7 +18,7 @@
         1,
         40
       ],
-      "text": "@Compendium[foundry-ironsworn.starforgedoracles.e6552ca1c08225e6]{Dominion}",
+      "text": "<p>@Compendium[foundry-ironsworn.starforgedoracles.e6552ca1c08225e6]{Dominion}</p><p>Governing power</p>",
       "_key": "!tables.results!9a3e1b0020e66ddb.63bfe95914abc1ae",
       "_id": "63bfe95914abc1ae"
     },
@@ -27,7 +27,7 @@
         41,
         70
       ],
-      "text": "@Compendium[foundry-ironsworn.starforgedoracles.da3a6351fff54ef4]{Guild}",
+      "text": "<p>@Compendium[foundry-ironsworn.starforgedoracles.da3a6351fff54ef4]{Guild}</p><p>Organization of specialists</p>",
       "_key": "!tables.results!9a3e1b0020e66ddb.87384b8b90a7c44c",
       "_id": "87384b8b90a7c44c"
     },
@@ -36,7 +36,7 @@
         71,
         100
       ],
-      "text": "@Compendium[foundry-ironsworn.starforgedoracles.f3403e14e9e6bd71]{Fringe Group}",
+      "text": "<p>@Compendium[foundry-ironsworn.starforgedoracles.f3403e14e9e6bd71]{Fringe Group}</p><p>Band of outlaws, outcasts, or rogues</p>",
       "_key": "!tables.results!9a3e1b0020e66ddb.ff40a33f485ffff6",
       "_id": "ff40a33f485ffff6"
     }

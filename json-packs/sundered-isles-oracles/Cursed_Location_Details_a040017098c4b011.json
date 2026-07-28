@@ -17,7 +17,8 @@
         1,
         5
       ],
-      "text": "Area of endless dead calm",
+      "name": "Area of endless dead calm",
+      "description": "<p>What ship is trapped in these waters?</p>",
       "_key": "!tables.results!a040017098c4b011.5636c582bfa0a93d",
       "_id": "5636c582bfa0a93d"
     },
@@ -26,7 +27,8 @@
         6,
         10
       ],
-      "text": "Colossal bones",
+      "name": "Colossal bones",
+      "description": "<p>Who lives in the shadow of this age-old corpse?</p>",
       "_key": "!tables.results!a040017098c4b011.087f04e5cf33434e",
       "_id": "087f04e5cf33434e"
     },
@@ -35,7 +37,8 @@
         11,
         15
       ],
-      "text": "Corrupted cave",
+      "name": "Corrupted cave",
+      "description": "<p>What cult is said to practice foul rites here?</p>",
       "_key": "!tables.results!a040017098c4b011.b782615a33234343",
       "_id": "b782615a33234343"
     },
@@ -44,7 +47,8 @@
         16,
         20
       ],
-      "text": "Eldritch monument",
+      "name": "Eldritch monument",
+      "description": "<p>What forsaken god or entity does this monument honor?</p>",
       "_key": "!tables.results!a040017098c4b011.22aa0e3469686dea",
       "_id": "22aa0e3469686dea"
     },
@@ -53,7 +57,8 @@
         21,
         25
       ],
-      "text": "Forsaken settlement",
+      "name": "Forsaken settlement",
+      "description": "<p>What foul creatures now dwell here?</p>",
       "_key": "!tables.results!a040017098c4b011.9356e4927fd3b471",
       "_id": "9356e4927fd3b471"
     },
@@ -62,7 +67,8 @@
         26,
         30
       ],
-      "text": "Frozen wastes",
+      "name": "Frozen wastes",
+      "description": "<p>What long-lost ship lies trapped here?</p>",
       "_key": "!tables.results!a040017098c4b011.115af4ce0cd102ba",
       "_id": "115af4ce0cd102ba"
     },
@@ -71,7 +77,8 @@
         31,
         35
       ],
-      "text": "Ghost-haunted waters",
+      "name": "Ghost-haunted waters",
+      "description": "<p>What infamous cursed ship sails these waters?</p>",
       "_key": "!tables.results!a040017098c4b011.7b49d5442d442c2f",
       "_id": "7b49d5442d442c2f"
     },
@@ -80,7 +87,8 @@
         36,
         40
       ],
-      "text": "Ghost-plagued ruins",
+      "name": "Ghost-plagued ruins",
+      "description": "<p>What sad fate befell these people?</p>",
       "_key": "!tables.results!a040017098c4b011.032ae2af0b13ee60",
       "_id": "032ae2af0b13ee60"
     },
@@ -89,7 +97,8 @@
         41,
         45
       ],
-      "text": "Haunted battlefield",
+      "name": "Haunted battlefield",
+      "description": "<p>What force or faction was defeated in this battle?</p>",
       "_key": "!tables.results!a040017098c4b011.c796a741801c55f4",
       "_id": "c796a741801c55f4"
     },
@@ -98,7 +107,8 @@
         46,
         50
       ],
-      "text": "Hidden island",
+      "name": "Hidden island",
+      "description": "<p>On what rare event does this mystical island reappear?</p>",
       "_key": "!tables.results!a040017098c4b011.0cff2ae3a591b822",
       "_id": "0cff2ae3a591b822"
     },
@@ -107,7 +117,8 @@
         51,
         55
       ],
-      "text": "Inscrutable iron pillars",
+      "name": "Inscrutable iron pillars",
+      "description": "<p>What faction worships these mysterious relics?</p>",
       "_key": "!tables.results!a040017098c4b011.c4a42e50345c63a9",
       "_id": "c4a42e50345c63a9"
     },
@@ -116,7 +127,8 @@
         56,
         60
       ],
-      "text": "Lair of a beast",
+      "name": "Lair of a beast",
+      "description": "<p>What beast is reputed to dwell here?</p>",
       "_key": "!tables.results!a040017098c4b011.c6ed4241654f9e9b",
       "_id": "c6ed4241654f9e9b"
     },
@@ -125,7 +137,8 @@
         61,
         65
       ],
-      "text": "Perpetual fog bank",
+      "name": "Perpetual fog bank",
+      "description": "<p>What is said to lie on the other side of this mist?</p>",
       "_key": "!tables.results!a040017098c4b011.578743259a28538a",
       "_id": "578743259a28538a"
     },
@@ -134,7 +147,8 @@
         66,
         70
       ],
-      "text": "Powerful maelstrom",
+      "name": "Powerful maelstrom",
+      "description": "<p>Who do you know that was lost to this swirling vortex?</p>",
       "_key": "!tables.results!a040017098c4b011.6b63ae395b97710a",
       "_id": "6b63ae395b97710a"
     },
@@ -143,7 +157,8 @@
         71,
         75
       ],
-      "text": "Ship graveyard",
+      "name": "Ship graveyard",
+      "description": "<p>What monstrous creature lurks here?</p>",
       "_key": "!tables.results!a040017098c4b011.9f29067854601a8a",
       "_id": "9f29067854601a8a"
     },
@@ -152,7 +167,8 @@
         76,
         80
       ],
-      "text": "Shipwreck on high ground",
+      "name": "Shipwreck on high ground",
+      "description": "<p>To which faction did this ship belong?</p>",
       "_key": "!tables.results!a040017098c4b011.99aaa8f92db60e3b",
       "_id": "99aaa8f92db60e3b"
     },
@@ -161,7 +177,8 @@
         81,
         85
       ],
-      "text": "Skull-shaped outcrop",
+      "name": "Skull-shaped outcrop",
+      "description": "<p>Why does this place haunt your dreams?</p>",
       "_key": "!tables.results!a040017098c4b011.5db7b58f42ebe9c0",
       "_id": "5db7b58f42ebe9c0"
     },
@@ -170,7 +187,8 @@
         86,
         90
       ],
-      "text": "Sorcerous nexus",
+      "name": "Sorcerous nexus",
+      "description": "<p>Who has gathered to reap the chaotic energy of this place?</p>",
       "_key": "!tables.results!a040017098c4b011.b81608f7cd7929d3",
       "_id": "b81608f7cd7929d3"
     },
@@ -179,7 +197,8 @@
         91,
         95
       ],
-      "text": "Titanic machinery",
+      "name": "Titanic machinery",
+      "description": "<p>Who seeks to reactivate this ancient machine?</p>",
       "_key": "!tables.results!a040017098c4b011.2fc3139ee7cd8daa",
       "_id": "2fc3139ee7cd8daa"
     },
@@ -188,7 +207,8 @@
         96,
         100
       ],
-      "text": "Unending cyclonic storm",
+      "name": "Unending cyclonic storm",
+      "description": "<p>What is said to lie at this storm's center?</p>",
       "_key": "!tables.results!a040017098c4b011.a341b9bf6c124122",
       "_id": "a341b9bf6c124122"
     }

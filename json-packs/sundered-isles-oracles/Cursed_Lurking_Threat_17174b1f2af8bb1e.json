@@ -17,7 +17,8 @@
         1,
         25
       ],
-      "text": "Dark-dwelling beings",
+      "name": "Dark-dwelling beings",
+      "description": "<p>Sense of being watched; skulking shadows</p><p>Denizens defend their domain!</p>",
       "_key": "!tables.results!17174b1f2af8bb1e.162bb42da7f2e2a8",
       "_id": "162bb42da7f2e2a8"
     },
@@ -26,7 +27,8 @@
         26,
         50
       ],
-      "text": "Eldritch cultists",
+      "name": "Eldritch cultists",
+      "description": "<p>Accursed symbols; ritualistic artifacts or remains</p><p>The cultists strike!</p>",
       "_key": "!tables.results!17174b1f2af8bb1e.7f42025372497eee",
       "_id": "7f42025372497eee"
     },
@@ -35,7 +37,8 @@
         51,
         70
       ],
-      "text": "Mighty beast",
+      "name": "Mighty beast",
+      "description": "<p>Territorial markings; signs or sounds of a beast on the hunt</p><p>The beast attacks!</p>",
       "_key": "!tables.results!17174b1f2af8bb1e.2b5692a26eccd46e",
       "_id": "2b5692a26eccd46e"
     },
@@ -44,7 +47,8 @@
         71,
         85
       ],
-      "text": "Monstrous infestation",
+      "name": "Monstrous infestation",
+      "description": "<p>Skitters or splashes; foul nests</p><p>A vile swarm appears!</p>",
       "_key": "!tables.results!17174b1f2af8bb1e.a6f0284ba6953050",
       "_id": "a6f0284ba6953050"
     },
@@ -53,7 +57,8 @@
         86,
         100
       ],
-      "text": "Restless dead",
+      "name": "Restless dead",
+      "description": "<p>Phantom whispers; glimpses of spectral forms</p><p>The wrathful dead manifest!</p>",
       "_key": "!tables.results!17174b1f2af8bb1e.539b60f3fafb5ce8",
       "_id": "539b60f3fafb5ce8"
     }

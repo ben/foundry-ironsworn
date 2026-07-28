@@ -18,7 +18,8 @@
         1,
         4
       ],
-      "text": "Abyssal sinkhole",
+      "name": "Abyssal sinkhole",
+      "description": "<p>What is rumored to lie at the bottom of these depths?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.b581c16c077d23da",
       "_id": "b581c16c077d23da"
     },
@@ -27,7 +28,8 @@
         5,
         8
       ],
-      "text": "Active volcano",
+      "name": "Active volcano",
+      "description": "<p>What important location does this eruption threaten?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.82eb32647553e51d",
       "_id": "82eb32647553e51d"
     },
@@ -36,7 +38,8 @@
         9,
         12
       ],
-      "text": "Ancient ruins",
+      "name": "Ancient ruins",
+      "description": "<p>Who or what defends this place against intruders?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.4b6d74cd763aff62",
       "_id": "4b6d74cd763aff62"
     },
@@ -45,7 +48,8 @@
         13,
         15
       ],
-      "text": "Colossal monument",
+      "name": "Colossal monument",
+      "description": "<p>What legendary figure does this monument honor?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.ae020c1dcf7f1110",
       "_id": "ae020c1dcf7f1110"
     },
@@ -54,7 +58,8 @@
         16,
         19
       ],
-      "text": "Crucial trade route",
+      "name": "Crucial trade route",
+      "description": "<p>What is disrupting trade along this route?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.0a76b44b3ceceb7b",
       "_id": "0a76b44b3ceceb7b"
     },
@@ -63,7 +68,8 @@
         20,
         23
       ],
-      "text": "Deserted settlement",
+      "name": "Deserted settlement",
+      "description": "<p>Why was this place abandoned?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.17808c59ac43d460",
       "_id": "17808c59ac43d460"
     },
@@ -72,7 +78,8 @@
         24,
         27
       ],
-      "text": "Expansive cave",
+      "name": "Expansive cave",
+      "description": "<p>What treasure is said to lie at the heart of this cave?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.121c0fec0f4dd18c",
       "_id": "121c0fec0f4dd18c"
     },
@@ -81,7 +88,8 @@
         28,
         30
       ],
-      "text": "Floating tradepost",
+      "name": "Floating tradepost",
+      "description": "<p>Who is hounding these traders, demanding tribute?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.6f5b94ce7481abe1",
       "_id": "6f5b94ce7481abe1"
     },
@@ -90,7 +98,8 @@
         31,
         34
       ],
-      "text": "Hull-breaching rocks",
+      "name": "Hull-breaching rocks",
+      "description": "<p>Who or what preys upon careless ships in this area?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.bfe0d474647e3aad",
       "_id": "bfe0d474647e3aad"
     },
@@ -99,7 +108,8 @@
         35,
         38
       ],
-      "text": "Kelp-clogged waters",
+      "name": "Kelp-clogged waters",
+      "description": "<p>What ship went missing here?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.cd78b035d5f1bd59",
       "_id": "cd78b035d5f1bd59"
     },
@@ -108,7 +118,8 @@
         39,
         41
       ],
-      "text": "Meteorite scar",
+      "name": "Meteorite scar",
+      "description": "<p>What prophecy foretold the meteorite's fall?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.042fcecfc8eaae43",
       "_id": "042fcecfc8eaae43"
     },
@@ -117,7 +128,8 @@
         42,
         45
       ],
-      "text": "Military encampment",
+      "name": "Military encampment",
+      "description": "<p>Who is this faction warring against?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.b38f2fd79f6d6566",
       "_id": "b38f2fd79f6d6566"
     },
@@ -126,7 +138,8 @@
         46,
         49
       ],
-      "text": "Military fort",
+      "name": "Military fort",
+      "description": "<p>What notable prisoner is held here?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.37780929c7d30fbd",
       "_id": "37780929c7d30fbd"
     },
@@ -135,7 +148,8 @@
         50,
         52
       ],
-      "text": "Mining operation",
+      "name": "Mining operation",
+      "description": "<p>What danger have these miners unearthed?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.fbb48bd07ab2cccc",
       "_id": "fbb48bd07ab2cccc"
     },
@@ -144,7 +158,8 @@
         53,
         55
       ],
-      "text": "Mist-shrouded peak",
+      "name": "Mist-shrouded peak",
+      "description": "<p>What is said to stand atop this mountain?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.28e13eff02efb003",
       "_id": "28e13eff02efb003"
     },
@@ -153,7 +168,8 @@
         56,
         58
       ],
-      "text": "Navigation beacon",
+      "name": "Navigation beacon",
+      "description": "<p>Why has this lighthouse fallen into disrepair?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.4aa33d79934f9427",
       "_id": "4aa33d79934f9427"
     },
@@ -162,7 +178,8 @@
         59,
         61
       ],
-      "text": "Ongoing naval blockade",
+      "name": "Ongoing naval blockade",
+      "description": "<p>Who seeks an escort through or around this blockade?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.0c1dc7be24b39ee0",
       "_id": "0c1dc7be24b39ee0"
     },
@@ -171,7 +188,8 @@
         62,
         65
       ],
-      "text": "Palatial manor",
+      "name": "Palatial manor",
+      "description": "<p>What lavish event is scheduled to take place here?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.da397b72aa40db37",
       "_id": "da397b72aa40db37"
     },
@@ -180,7 +198,8 @@
         66,
         69
       ],
-      "text": "Pirate conclave",
+      "name": "Pirate conclave",
+      "description": "<p>What opportunity or crisis brings the pirates together?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.90dda5326a503f50",
       "_id": "90dda5326a503f50"
     },
@@ -189,7 +208,8 @@
         70,
         73
       ],
-      "text": "Recently wrecked ship",
+      "name": "Recently wrecked ship",
+      "description": "<p>What prize was this ship rumored to carry?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.56e0acb64eabd028",
       "_id": "56e0acb64eabd028"
     },
@@ -198,7 +218,8 @@
         74,
         76
       ],
-      "text": "Refugee encampment",
+      "name": "Refugee encampment",
+      "description": "<p>What danger or crisis displaced these refugees?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.3def68c06383b003",
       "_id": "3def68c06383b003"
     },
@@ -207,7 +228,8 @@
         77,
         79
       ],
-      "text": "Religious commune",
+      "name": "Religious commune",
+      "description": "<p>Why are these adherents desperate for supplies?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.ce662747c08993e1",
       "_id": "ce662747c08993e1"
     },
@@ -216,7 +238,8 @@
         80,
         83
       ],
-      "text": "Sentinel tree",
+      "name": "Sentinel tree",
+      "description": "<p>What threatens this sacred site?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.d554bd99b6f2c965",
       "_id": "d554bd99b6f2c965"
     },
@@ -225,7 +248,8 @@
         84,
         87
       ],
-      "text": "Sheltered anchorage",
+      "name": "Sheltered anchorage",
+      "description": "<p>What infamous ship lies anchored here?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.0c073de88e985bcf",
       "_id": "0c073de88e985bcf"
     },
@@ -234,7 +258,8 @@
         88,
         91
       ],
-      "text": "Warship patrols",
+      "name": "Warship patrols",
+      "description": "<p>What are these ships hunting?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.6862507dc037d26b",
       "_id": "6862507dc037d26b"
     },
@@ -243,7 +268,8 @@
         92,
         94
       ],
-      "text": "Whale graveyard",
+      "name": "Whale graveyard",
+      "description": "<p>Who seeks to harvest these bones?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.690e6c31141c41ef",
       "_id": "690e6c31141c41ef"
     },
@@ -252,7 +278,8 @@
         95,
         97
       ],
-      "text": "Whaling grounds",
+      "name": "Whaling grounds",
+      "description": "<p>Who or what is hunting these creatures to near-extinction?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.b36c58ab42f0de4f",
       "_id": "b36c58ab42f0de4f"
     },
@@ -261,7 +288,8 @@
         98,
         100
       ],
-      "text": "Wide, navigable river",
+      "name": "Wide, navigable river",
+      "description": "<p>What important location lies upriver?</p>",
       "_key": "!tables.results!fcfcb0bceae33bfe.49a18a862d05804d",
       "_id": "49a18a862d05804d"
     }
