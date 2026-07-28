@@ -3,6 +3,7 @@
 ## Next Release
 
 - Fresh import from datasworn-community data.
+- Widen and lengthen Rollable Table rich text editor. Editing icons no longer wrap around and text box can show multiple lines.
 - Add name and description fields to rollable tables.
 
 ## 1.28.0
