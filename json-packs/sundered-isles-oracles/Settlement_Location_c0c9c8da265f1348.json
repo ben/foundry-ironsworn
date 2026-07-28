@@ -17,7 +17,8 @@
         1,
         60
       ],
-      "text": "Shore",
+      "name": "Shore",
+      "description": "<p>Where land meets the sea</p>",
       "_key": "!tables.results!c0c9c8da265f1348.8daf0c3f19345653",
       "_id": "8daf0c3f19345653"
     },
@@ -26,7 +27,8 @@
         61,
         80
       ],
-      "text": "Inland",
+      "name": "Inland",
+      "description": "<p>Within the island interior</p>",
       "_key": "!tables.results!c0c9c8da265f1348.f6f1470cb0aa3825",
       "_id": "f6f1470cb0aa3825"
     },
@@ -35,7 +37,8 @@
         81,
         100
       ],
-      "text": "Waterside",
+      "name": "Waterside",
+      "description": "<p>By a major inland waterway</p>",
       "_key": "!tables.results!c0c9c8da265f1348.953e130662a21c15",
       "_id": "953e130662a21c15"
     }

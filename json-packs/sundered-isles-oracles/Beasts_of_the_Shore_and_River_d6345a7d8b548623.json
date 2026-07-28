@@ -17,7 +17,8 @@
         1,
         20
       ],
-      "text": "Great Crocodile",
+      "name": "Great Crocodile",
+      "description": "<p>Various Ranks</p><p>Large crocodiles dwell in waters throughout the isles, including coastal wetlands, rivers, and the depths of tidal caves. The greatest and fiercest of them are the size of a sloop­­ —armed with dagger-like teeth, impenetrable hides, and powerful tails capable of shattering stone.</p>",
       "_key": "!tables.results!d6345a7d8b548623.d5d77f8c1d61886e",
       "_id": "d5d77f8c1d61886e"
     },
@@ -26,7 +27,8 @@
         21,
         35
       ],
-      "text": "Tenebrous Squid",
+      "name": "Tenebrous Squid",
+      "description": "<p>Extreme</p><p>This beast dwells within shoreline hollows and sea caves. It is a cunning and patient creature, slumbering for months or years until hapless prey wanders into its dark lair. As it awakens, its orb-like eyes glimmer with a foul, hungry light, and its barbed tentacles prepare to strike.</p>",
       "_key": "!tables.results!d6345a7d8b548623.05e75f0f6ff98dfd",
       "_id": "05e75f0f6ff98dfd"
     },
@@ -35,7 +37,8 @@
         36,
         50
       ],
-      "text": "Diving Spider",
+      "name": "Diving Spider",
+      "description": "<p>Dangerous</p><p>These semi-aquatic arachnids trap air with their silk, enabling them to hunt along riverbeds and coastal shallows, or lurk along the shore in wait of prey. They occasionally get caught up in nets, an unlucky catch for fisher folk.</p>",
       "_key": "!tables.results!d6345a7d8b548623.f602285f80a6716b",
       "_id": "f602285f80a6716b"
     },
@@ -44,7 +47,8 @@
         51,
         65
       ],
-      "text": "Muck Toad",
+      "name": "Muck Toad",
+      "description": "<p>Formidable</p><p>This creature lurks within the mire of swamps and muddy rivers. What the muck toad lacks in speed and agility, it makes up for in strength and scale, grasping prey with its prehensile tongue and swallowing it whole with its cavernous maw.</p>",
       "_key": "!tables.results!d6345a7d8b548623.aa368aad8763cbd8",
       "_id": "aa368aad8763cbd8"
     },
@@ -53,7 +57,8 @@
         66,
         75
       ],
-      "text": "Sand Dragon",
+      "name": "Sand Dragon",
+      "description": "<p>Formidable</p><p>Sand dragons are the smallest of dragon-kind, but are still a fearsome foe. Burrowing beneath shoreline dunes, it stirs at the telltale vibrations of footfalls upon its lair. It attacks with dagger-like claws, teeth as long and wicked as cutlasses, and breath of scalding steam.</p>",
       "_key": "!tables.results!d6345a7d8b548623.4b038850edecd362",
       "_id": "4b038850edecd362"
     },
@@ -62,7 +67,8 @@
         76,
         85
       ],
-      "text": "Keelback Crab",
+      "name": "Keelback Crab",
+      "description": "<p>Extreme</p><p>The keelback crab uses a scavenged ship as a protective shell for its soft exoskeleton. Reports of ghost ships can often be attributed to keelbacks, scuttling along coastal waters with wrecks on their backs. As it grows, a keelback must commandeer vessels of increasing size.</p>",
       "_key": "!tables.results!d6345a7d8b548623.bb5c090a5f3f324a",
       "_id": "bb5c090a5f3f324a"
     },
@@ -71,7 +77,8 @@
         86,
         95
       ],
-      "text": "Jade Crab",
+      "name": "Jade Crab",
+      "description": "<p>Extreme</p><p>The jade crab is the largest and most aggressive of the crustaceans, able to snap a longboat or even a small ship in two with its vice-like pincers. At rest, their shell is slate gray, easily mistaken for rocks or reefs. On the hunt, they shimmer with an iridescent blue-green. Fiercely territorial, these creatures often claim a waterway, cove, or sea cave as their lair.</p>",
       "_key": "!tables.results!d6345a7d8b548623.5a28717fbf7efea6",
       "_id": "5a28717fbf7efea6"
     },
@@ -80,7 +87,8 @@
         96,
         100
       ],
-      "text": "Abomination",
+      "name": "Abomination",
+      "description": "<p>Various Ranks</p><p><p>Generate this beast using the Starforged \n<a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/creature\">\n    <i class=\"fa fa-caret-right\"></i> creature oracles\n</a>, giving it a @Compendium[foundry-ironsworn.starforgedoracles.5dee17188d87278c]{land} or @Compendium[foundry-ironsworn.starforgedoracles.3e5b84fccec6c789]{water} form.</p></p>",
       "_key": "!tables.results!d6345a7d8b548623.318c9f782abd98b0",
       "_id": "318c9f782abd98b0"
     }

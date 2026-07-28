@@ -17,7 +17,8 @@
         1,
         4
       ],
-      "text": "Chronicle your adventures",
+      "name": "Chronicle your adventures",
+      "description": "<p>What do you describe within logs, journals, or maps? What adventure still calls to you?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.85b098b9739d798c",
       "_id": "85b098b9739d798c"
     },
@@ -26,7 +27,8 @@
         5,
         8
       ],
-      "text": "Commune with nature",
+      "name": "Commune with nature",
+      "description": "<p>What flora or fauna do you encounter? What inspiration do you draw from the experience?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.6699f10fc0bf4eb9",
       "_id": "6699f10fc0bf4eb9"
     },
@@ -35,7 +37,8 @@
         9,
         11
       ],
-      "text": "Concoct a plan",
+      "name": "Concoct a plan",
+      "description": "<p>What new strategy do you devise? How will you put this plan in motion?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.3b20bb033718954e",
       "_id": "3b20bb033718954e"
     },
@@ -44,7 +47,8 @@
         12,
         14
       ],
-      "text": "Conduct research",
+      "name": "Conduct research",
+      "description": "<p>What is the nature of the research? What information or insight do you gain?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.7b9aeb3edb223c9c",
       "_id": "7b9aeb3edb223c9c"
     },
@@ -53,7 +57,8 @@
         15,
         17
       ],
-      "text": "Conduct training",
+      "name": "Conduct training",
+      "description": "<p>What skills or knowledge do you share? Who accepts the guidance, and who resists it?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.d2735d7f0a652851",
       "_id": "d2735d7f0a652851"
     },
@@ -62,7 +67,8 @@
         18,
         20
       ],
-      "text": "Confess a secret",
+      "name": "Confess a secret",
+      "description": "<p>What do you reveal of your nature or background? How do others respond?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.613879cddad7bfcd",
       "_id": "613879cddad7bfcd"
     },
@@ -71,7 +77,8 @@
         21,
         24
       ],
-      "text": "Conjure up the past",
+      "name": "Conjure up the past",
+      "description": "<p>What is the subject of this reminiscence? Why is it meaningful in this moment?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.651fc6d11048db57",
       "_id": "651fc6d11048db57"
     },
@@ -80,7 +87,8 @@
         25,
         27
       ],
-      "text": "Create an object or artwork",
+      "name": "Create an object or artwork",
+      "description": "<p>What do you create? What is it intended for?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.203c9a5cef2c4a02",
       "_id": "203c9a5cef2c4a02"
     },
@@ -89,7 +97,8 @@
         28,
         31
       ],
-      "text": "Experience a dream or vision",
+      "name": "Experience a dream or vision",
+      "description": "<p>What is the nature of the dream or vision? What meaning do you draw from it?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.4f4be899ae6dc72d",
       "_id": "4f4be899ae6dc72d"
     },
@@ -98,7 +107,8 @@
         32,
         34
       ],
-      "text": "Fight in a sparring match",
+      "name": "Fight in a sparring match",
+      "description": "<p>Who do you spar with? What issues do you provoke or resolve during the match?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.975e706c525fca52",
       "_id": "975e706c525fca52"
     },
@@ -107,7 +117,8 @@
         35,
         37
       ],
-      "text": "Find peace",
+      "name": "Find peace",
+      "description": "<p>How do you reflect, meditate, or pray? What enlightenment do you gain?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.bfc37b23430d3c4c",
       "_id": "bfc37b23430d3c4c"
     },
@@ -116,7 +127,8 @@
         38,
         40
       ],
-      "text": "Hear a confession",
+      "name": "Hear a confession",
+      "description": "<p>Who shares an aspect of their nature or background? What do they reveal?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.06565d051b7930cc",
       "_id": "06565d051b7930cc"
     },
@@ -125,7 +137,8 @@
         41,
         43
       ],
-      "text": "Indulge a vice",
+      "name": "Indulge a vice",
+      "description": "<p>What weakness or need do you indulge? How is this viewed by others?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.888ee5b85f4a9a79",
       "_id": "888ee5b85f4a9a79"
     },
@@ -134,7 +147,8 @@
         44,
         47
       ],
-      "text": "Join an event",
+      "name": "Join an event",
+      "description": "<p>What is the occasion of this social gathering? How do you participate?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.1593cb8643c95e17",
       "_id": "1593cb8643c95e17"
     },
@@ -143,7 +157,8 @@
         48,
         50
       ],
-      "text": "Lead or join a song",
+      "name": "Lead or join a song",
+      "description": "<p>What is the subject of this song? Why is it meaningful to you or others?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.a87c02580fc41df0",
       "_id": "a87c02580fc41df0"
     },
@@ -152,7 +167,8 @@
         51,
         53
       ],
-      "text": "Motivate others",
+      "name": "Motivate others",
+      "description": "<p>Why is this motivation needed, and what is your approach? How do they respond?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.f1c69a1617d0c852",
       "_id": "f1c69a1617d0c852"
     },
@@ -161,7 +177,8 @@
         54,
         56
       ],
-      "text": "Play a game",
+      "name": "Play a game",
+      "description": "<p>Who do you play with? What is discussed during the game?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.85df7cb5372ab8d7",
       "_id": "85df7cb5372ab8d7"
     },
@@ -170,7 +187,8 @@
         57,
         60
       ],
-      "text": "Practice a skill",
+      "name": "Practice a skill",
+      "description": "<p>What talent do you hone? What do you learn from the exercise?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.229b7d1800e7b84b",
       "_id": "229b7d1800e7b84b"
     },
@@ -179,7 +197,8 @@
         61,
         64
       ],
-      "text": "Ready your gear",
+      "name": "Ready your gear",
+      "description": "<p>How do you maintain your equipment or gear up? What are you preparing for?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.1aebd0d532cd2da4",
       "_id": "1aebd0d532cd2da4"
     },
@@ -188,7 +207,8 @@
         65,
         67
       ],
-      "text": "Record a message",
+      "name": "Record a message",
+      "description": "<p>Who is the message meant for? What news or feelings do you share?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.7c22be4ba3862067",
       "_id": "7c22be4ba3862067"
     },
@@ -197,7 +217,8 @@
         68,
         70
       ],
-      "text": "Reinvent your look",
+      "name": "Reinvent your look",
+      "description": "<p>What inspires you to remake yourself? How do you debut your new look?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.68fcea3411dfd245",
       "_id": "68fcea3411dfd245"
     },
@@ -206,7 +227,8 @@
         71,
         73
       ],
-      "text": "Settle a conflict",
+      "name": "Settle a conflict",
+      "description": "<p>What caused this argument or fight? How do you resolve the situation?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.18f15ecfd2fadd6a",
       "_id": "18f15ecfd2fadd6a"
     },
@@ -215,7 +237,8 @@
         74,
         76
       ],
-      "text": "Share intimacy",
+      "name": "Share intimacy",
+      "description": "<p>Who do you spend time with? How does your relationship evolve?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.801bdf11a71051d0",
       "_id": "801bdf11a71051d0"
     },
@@ -224,7 +247,8 @@
         77,
         79
       ],
-      "text": "Share your heritage",
+      "name": "Share your heritage",
+      "description": "<p>What do you offer of your family's or people's history? What memory or regret does it evoke?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.4a43427df050226f",
       "_id": "4a43427df050226f"
     },
@@ -233,7 +257,8 @@
         80,
         82
       ],
-      "text": "Stay vigilant",
+      "name": "Stay vigilant",
+      "description": "<p>What are you on the lookout for? What do you spot or overhear?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.0c36f8f51056c93a",
       "_id": "0c36f8f51056c93a"
     },
@@ -242,7 +267,8 @@
         83,
         85
       ],
-      "text": "Stir up trouble",
+      "name": "Stir up trouble",
+      "description": "<p>What conflict do you incite or inflame? Why is the situation left unresolved?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.ff0bf071dc0318f2",
       "_id": "ff0bf071dc0318f2"
     },
@@ -251,7 +277,8 @@
         86,
         89
       ],
-      "text": "Take in the view",
+      "name": "Take in the view",
+      "description": "<p>What sublime or dramatic scenery do you witness? What emotion or memory does it inspire?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.982dd645fb7dd937",
       "_id": "982dd645fb7dd937"
     },
@@ -260,7 +287,8 @@
         90,
         92
       ],
-      "text": "Tell a tale",
+      "name": "Tell a tale",
+      "description": "<p>What is the nature of this myth or legend? What emotion or lesson lingers after the telling?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.8c3bf25656262645",
       "_id": "8c3bf25656262645"
     },
@@ -269,7 +297,8 @@
         93,
         96
       ],
-      "text": "Undertake a communal labor",
+      "name": "Undertake a communal labor",
+      "description": "<p>What demanding project do you embark on with others? How does this bring you closer together?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.8a204a89364ed07a",
       "_id": "8a204a89364ed07a"
     },
@@ -278,7 +307,8 @@
         97,
         100
       ],
-      "text": "Undertake a menial task",
+      "name": "Undertake a menial task",
+      "description": "<p>What solitary chore do you perform? What do you daydream about as you work?</p>",
       "_key": "!tables.results!915f8d4f02c33d8e.16f32e4833fffe07",
       "_id": "16f32e4833fffe07"
     }

@@ -17,7 +17,8 @@
         1,
         50
       ],
-      "text": "Isolated",
+      "name": "Isolated",
+      "description": "<p>No other islands in sight</p>",
       "_key": "!tables.results!f9872156f04012f4.84f7558376f23166",
       "_id": "84f7558376f23166"
     },
@@ -26,7 +27,8 @@
         51,
         80
       ],
-      "text": "Island pair",
+      "name": "Island pair",
+      "description": "<p>One other island in sight</p>",
       "_key": "!tables.results!f9872156f04012f4.09f68bc7e4dbe42a",
       "_id": "09f68bc7e4dbe42a"
     },
@@ -35,7 +37,8 @@
         81,
         100
       ],
-      "text": "Island group",
+      "name": "Island group",
+      "description": "<p>Several islands in sight</p>",
       "_key": "!tables.results!f9872156f04012f4.60770ab53b40749d",
       "_id": "60770ab53b40749d"
     }

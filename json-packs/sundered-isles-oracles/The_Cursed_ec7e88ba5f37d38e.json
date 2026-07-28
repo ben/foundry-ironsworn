@@ -17,7 +17,8 @@
         1,
         10
       ],
-      "text": "Acheron’s Armada",
+      "name": "Acheron’s Armada",
+      "description": "<p>Ghost ships under the command of an undead imperial admiral. This vengeful wraith seeks to carry on the war that cost them their life.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.348c11baa158642d",
       "_id": "348c11baa158642d"
     },
@@ -26,7 +27,8 @@
         11,
         20
       ],
-      "text": "Blighthulk",
+      "name": "Blighthulk",
+      "description": "<p>Titanic ship cursed with incessant corrosion and rot. Its crew must constantly add wood, sails, and fittings from salvaged wrecks and defeated foes into this massive and unnerving chimera-craft.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.d2fa8843ebf28be8",
       "_id": "d2fa8843ebf28be8"
     },
@@ -35,7 +37,8 @@
         21,
         30
       ],
-      "text": "Bloodmarked League",
+      "name": "Bloodmarked League",
+      "description": "<p>An order of occultists, each bearing a blood-red tattoo on their wrist, who are dedicated to hunting and banishing the restless dead.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.fb32d1728f53303b",
       "_id": "fb32d1728f53303b"
     },
@@ -44,7 +47,8 @@
         31,
         40
       ],
-      "text": "Brineblessed",
+      "name": "Brineblessed",
+      "description": "<p>Cult of sailors cursed by a drowned god. Their bodies and ships are corrupted by horrible aspects of the sea—riddled with barnacles, rotting seaweed, and brackish slime.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.66893f76f92a0c16",
       "_id": "66893f76f92a0c16"
     },
@@ -53,7 +57,8 @@
         41,
         50
       ],
-      "text": "Carrion Fleet",
+      "name": "Carrion Fleet",
+      "description": "<p>Fleet under the command of a necromancer. The dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.3655b22958a0b1b0",
       "_id": "3655b22958a0b1b0"
     },
@@ -62,7 +67,8 @@
         51,
         60
       ],
-      "text": "Fireships",
+      "name": "Fireships",
+      "description": "<p>Ships burning with unquenchable fire and crewed by bone-scorched undead. The flagship was set aflame by marauders in a port attack, and its cursed commander seeks to spread the fire to other vessels and expand the accursed fleet.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.e217892bd700d97c",
       "_id": "e217892bd700d97c"
     },
@@ -71,7 +77,8 @@
         61,
         70
       ],
-      "text": "Forgeborn",
+      "name": "Forgeborn",
+      "description": "<p>Uncanny metal automatons who are said to embody the stolen souls of dead mariners. They cruise the isles in ironclad ships.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.7d684dcbadb444f5",
       "_id": "7d684dcbadb444f5"
     },
@@ -80,7 +87,8 @@
         71,
         80
       ],
-      "text": "Gilded Fleet",
+      "name": "Gilded Fleet",
+      "description": "<p>Pirates who seized a forbidden treasure. They are cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.6c1c2bf1c1da8c3f",
       "_id": "6c1c2bf1c1da8c3f"
     },
@@ -89,7 +97,8 @@
         81,
         90
       ],
-      "text": "Nightships",
+      "name": "Nightships",
+      "description": "<p>Dread ships of the vampire clans, shrouded in an eternal gloom. Their undead crews leave wrecks and blood-drained corpses in their wake.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.230c51faee742226",
       "_id": "230c51faee742226"
     },
@@ -98,7 +107,8 @@
         91,
         100
       ],
-      "text": "Tidebound",
+      "name": "Tidebound",
+      "description": "<p>Devout cultists who were granted eternal life in exchange for unending service to their patron sea god. They must not tarry on land or at anchor, lest death catches up with them to take its toll.</p>",
       "_key": "!tables.results!ec7e88ba5f37d38e.2e549adc1b1184b7",
       "_id": "2e549adc1b1184b7"
     }
