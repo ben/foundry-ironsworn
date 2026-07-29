@@ -1,0 +1,74 @@
+{
+  "_id": "64ba7f0331b61d2f",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement/type",
+      "dsid": "oracle_rollable:lodestar/settlement/type/boundary_lands"
+    }
+  },
+  "name": "Boundary Lands",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Stead",
+      "_key": "!tables.results!64ba7f0331b61d2f.fc26033660ecefc0",
+      "_id": "fc26033660ecefc0"
+    },
+    {
+      "range": [
+        21,
+        35
+      ],
+      "text": "Camp",
+      "_key": "!tables.results!64ba7f0331b61d2f.88b76c89bb4083c2",
+      "_id": "88b76c89bb4083c2"
+    },
+    {
+      "range": [
+        36,
+        60
+      ],
+      "text": "Outpost",
+      "_key": "!tables.results!64ba7f0331b61d2f.23c94c2ec6d53f06",
+      "_id": "23c94c2ec6d53f06"
+    },
+    {
+      "range": [
+        61,
+        80
+      ],
+      "text": "Hamlet",
+      "_key": "!tables.results!64ba7f0331b61d2f.2eb950905e65e828",
+      "_id": "2eb950905e65e828"
+    },
+    {
+      "range": [
+        81,
+        95
+      ],
+      "text": "Village",
+      "_key": "!tables.results!64ba7f0331b61d2f.afe25bb94e392e6a",
+      "_id": "afe25bb94e392e6a"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Hold",
+      "_key": "!tables.results!64ba7f0331b61d2f.39d0fcfacc7e70f8",
+      "_id": "39d0fcfacc7e70f8"
+    }
+  ],
+  "folder": "10ca10cff43070aa",
+  "sort": 64,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!64ba7f0331b61d2f"
+}

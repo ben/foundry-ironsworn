@@ -1,0 +1,74 @@
+{
+  "_id": "18ad28a86761f821",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement/type",
+      "dsid": "oracle_rollable:lodestar/settlement/type/settled_lands"
+    }
+  },
+  "name": "Settled Lands",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Stead",
+      "_key": "!tables.results!18ad28a86761f821.fc1fc3581f2ea219",
+      "_id": "fc1fc3581f2ea219"
+    },
+    {
+      "range": [
+        16,
+        25
+      ],
+      "text": "Camp",
+      "_key": "!tables.results!18ad28a86761f821.a5bb1ac5f6544b96",
+      "_id": "a5bb1ac5f6544b96"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Outpost",
+      "_key": "!tables.results!18ad28a86761f821.2a55d6384f3bf3c2",
+      "_id": "2a55d6384f3bf3c2"
+    },
+    {
+      "range": [
+        31,
+        55
+      ],
+      "text": "Hamlet",
+      "_key": "!tables.results!18ad28a86761f821.8e994c563e1a0945",
+      "_id": "8e994c563e1a0945"
+    },
+    {
+      "range": [
+        56,
+        85
+      ],
+      "text": "Village",
+      "_key": "!tables.results!18ad28a86761f821.455703ab779d3fb1",
+      "_id": "455703ab779d3fb1"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Hold",
+      "_key": "!tables.results!18ad28a86761f821.140a2880ffac2e1b",
+      "_id": "140a2880ffac2e1b"
+    }
+  ],
+  "folder": "10ca10cff43070aa",
+  "sort": 64,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!18ad28a86761f821"
+}

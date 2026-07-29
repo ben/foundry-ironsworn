@@ -1,0 +1,110 @@
+{
+  "_id": "437e6ca70a9b4189",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement",
+      "dsid": "oracle_rollable:lodestar/settlement/condition"
+    }
+  },
+  "name": "Condition",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "Abandoned",
+      "_key": "!tables.results!437e6ca70a9b4189.155e4ec81df1a32e",
+      "_id": "155e4ec81df1a32e"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Devastated",
+      "_key": "!tables.results!437e6ca70a9b4189.8ac3902c3d2dcbc6",
+      "_id": "8ac3902c3d2dcbc6"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "Besieged",
+      "_key": "!tables.results!437e6ca70a9b4189.482a7b2de6b5b8dc",
+      "_id": "482a7b2de6b5b8dc"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "Under construction",
+      "_key": "!tables.results!437e6ca70a9b4189.db3ed1623f68b002",
+      "_id": "db3ed1623f68b002"
+    },
+    {
+      "range": [
+        21,
+        35
+      ],
+      "text": "Wretched",
+      "_key": "!tables.results!437e6ca70a9b4189.dfea24919708b211",
+      "_id": "dfea24919708b211"
+    },
+    {
+      "range": [
+        36,
+        50
+      ],
+      "text": "Ramshackle",
+      "_key": "!tables.results!437e6ca70a9b4189.d2166a97ab1366fa",
+      "_id": "d2166a97ab1366fa"
+    },
+    {
+      "range": [
+        51,
+        70
+      ],
+      "text": "Modest",
+      "_key": "!tables.results!437e6ca70a9b4189.669db711fc9eb1cb",
+      "_id": "669db711fc9eb1cb"
+    },
+    {
+      "range": [
+        71,
+        85
+      ],
+      "text": "Well-kept",
+      "_key": "!tables.results!437e6ca70a9b4189.c96dfab4989eec79",
+      "_id": "c96dfab4989eec79"
+    },
+    {
+      "range": [
+        86,
+        95
+      ],
+      "text": "Prosperous",
+      "_key": "!tables.results!437e6ca70a9b4189.76da8eda75355992",
+      "_id": "76da8eda75355992"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Grand",
+      "_key": "!tables.results!437e6ca70a9b4189.7993058c200127b7",
+      "_id": "7993058c200127b7"
+    }
+  ],
+  "folder": "a456e82f6aca3d1c",
+  "sort": 64,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!437e6ca70a9b4189"
+}

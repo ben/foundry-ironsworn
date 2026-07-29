@@ -1,0 +1,65 @@
+{
+  "_id": "a484e34bd6a7b52a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/time"
+    }
+  },
+  "name": "Time",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Fleeting",
+      "_key": "!tables.results!a484e34bd6a7b52a.0f38a7da23fec44f",
+      "_id": "0f38a7da23fec44f"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Short",
+      "_key": "!tables.results!a484e34bd6a7b52a.73ffef6caa9d5d32",
+      "_id": "73ffef6caa9d5d32"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Moderate",
+      "_key": "!tables.results!a484e34bd6a7b52a.e4a2f7ae1df9560c",
+      "_id": "e4a2f7ae1df9560c"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Lengthy",
+      "_key": "!tables.results!a484e34bd6a7b52a.2cc2d01704aa57cb",
+      "_id": "2cc2d01704aa57cb"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Eternal",
+      "_key": "!tables.results!a484e34bd6a7b52a.b29b30f22caa6373",
+      "_id": "b29b30f22caa6373"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a484e34bd6a7b52a"
+}

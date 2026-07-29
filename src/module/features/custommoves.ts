@@ -141,6 +141,7 @@ export enum MoveCategoryColor {
 	// non-canonical (ironsworn); uses color from 'Connection'
 	'Relationship Moves' = '#4A5791',
 	'Scene Challenge' = '#206087',
+	'Scene Challenge Moves' = '#206087',
 	'Session Moves' = '#3F8C8A',
 	'Suffer Moves' = '#883529',
 	// non-canonical (ironsworn); uses color from 'Session'

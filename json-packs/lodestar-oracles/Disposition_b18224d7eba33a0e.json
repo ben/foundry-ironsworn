@@ -1,0 +1,65 @@
+{
+  "_id": "b18224d7eba33a0e",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/disposition"
+    }
+  },
+  "name": "Disposition",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Friendly",
+      "_key": "!tables.results!b18224d7eba33a0e.c17721e81dc401f2",
+      "_id": "c17721e81dc401f2"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Open",
+      "_key": "!tables.results!b18224d7eba33a0e.8bf174a9e19404bf",
+      "_id": "8bf174a9e19404bf"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Wary",
+      "_key": "!tables.results!b18224d7eba33a0e.9e74eb1df8660f8c",
+      "_id": "9e74eb1df8660f8c"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Threatening",
+      "_key": "!tables.results!b18224d7eba33a0e.61ecb0f40ee52e8e",
+      "_id": "61ecb0f40ee52e8e"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Hostile",
+      "_key": "!tables.results!b18224d7eba33a0e.240ca7aa43db7dcd",
+      "_id": "240ca7aa43db7dcd"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!b18224d7eba33a0e"
+}

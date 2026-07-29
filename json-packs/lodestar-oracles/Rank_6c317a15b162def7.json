@@ -1,0 +1,70 @@
+{
+  "_id": "6c317a15b162def7",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale",
+      "dsid": "oracle_rollable:lodestar/scale/rank"
+    }
+  },
+  "name": "Rank",
+  "description": "<p>Use this oracle to randomly set the challenge rank of a quest, journey, or foe.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "name": "Troublesome",
+      "description": "<p>A challenging quest with a small number of obstacles</p><p>Journey: Traveling a moderate distance within a single region\nFoe: Common enemies</p>",
+      "_key": "!tables.results!6c317a15b162def7.4265e9004e3d46db",
+      "_id": "4265e9004e3d46db"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "name": "Dangerous",
+      "description": "<p>An involved quest with several obstacles</p><p>Journey: Traveling a long distance within a single region, or across rough terrain\nFoe: Capable fighters and deadly creatures</p>",
+      "_key": "!tables.results!6c317a15b162def7.94b81078b7616442",
+      "_id": "94b81078b7616442"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "name": "Formidable",
+      "description": "<p>A complex quest with many obstacles</p><p>Journey: Traveling from one region to another, or across especially challenging terrain\nFoe: Exceptional fighters and mighty creatures</p>",
+      "_key": "!tables.results!6c317a15b162def7.4d4fc3a8628e1f54",
+      "_id": "4d4fc3a8628e1f54"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "name": "Extreme",
+      "description": "<p>An intimidating quest with scores of obstacles</p><p>Journey: Traveling through multiple regions\nFoe: Foes of overwhelming skill or power</p>",
+      "_key": "!tables.results!6c317a15b162def7.637145dbdb3baed4",
+      "_id": "637145dbdb3baed4"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "name": "Epic",
+      "description": "<p>A life-defining quest of unknowable scope</p><p>Journey: Traveling from one end of the Ironlands to another, or to a separate land\nFoe: Legendary foes of mythic power</p>",
+      "_key": "!tables.results!6c317a15b162def7.129838963f5f3c32",
+      "_id": "129838963f5f3c32"
+    }
+  ],
+  "folder": "f2f1d3673a855e49",
+  "sort": 99,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6c317a15b162def7"
+}

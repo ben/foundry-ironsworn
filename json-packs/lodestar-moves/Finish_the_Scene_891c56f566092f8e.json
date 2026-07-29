@@ -1,0 +1,63 @@
+{
+  "_id": "891c56f566092f8e",
+  "type": "sfmove",
+  "name": "Finish the Scene",
+  "img": "icons/dice/d10black.svg",
+  "folder": "38cf8e63be53ee98",
+  "system": {
+    "dfid": "move:lodestar/scene_challenge/finish_the_scene",
+    "Category": "move_category:lodestar/scene_challenge",
+    "Progress Move": true,
+    "Variant of": "",
+    "Text": "When __the scene challenge countdown track or progress track is filled, or when events lead to the scene’s conclusion__, roll the challenge dice and compare to your progress.\n\nOn a __strong hit__, you achieve your objective unconditionally.\n\nOn a __weak hit__, you succeed, but not without cost. You must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Make this a minor cost relative to the scope of the scene.\n\nOn a __miss__, you fail or are undermined by a dire turn of events. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When the scene challenge countdown track or progress track is filled, or when events lead to the scene’s conclusion...",
+      "Options": [
+        {
+          "Text": "",
+          "Roll type": "Progress roll",
+          "Method": "Any",
+          "Using": [
+            "Progress Track"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you achieve your objective unconditionally.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you succeed, but not without cost. You must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. Make this a minor cost relative to the scope of the scene."
+      },
+      "Miss": {
+        "Text": "On a __miss__, you fail or are undermined by a dire turn of events. @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn Lodestar",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2025-05-01",
+      "Page": 11
+    },
+    "Suggestions": {}
+  },
+  "sort": 11,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:lodestar/scene_challenge/finish_the_scene",
+      "dsid": "move:lodestar/scene_challenge/finish_the_scene"
+    }
+  },
+  "_key": "!items!891c56f566092f8e"
+}

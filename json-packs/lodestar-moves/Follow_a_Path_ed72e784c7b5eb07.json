@@ -1,0 +1,63 @@
+{
+  "_id": "ed72e784c7b5eb07",
+  "type": "sfmove",
+  "name": "Follow a Path",
+  "img": "icons/dice/d10black.svg",
+  "folder": "8d960d8d8f8a1dde",
+  "system": {
+    "dfid": "move:lodestar/adventure/follow_a_path",
+    "Category": "move_category:lodestar/adventure",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you journey along a known route, and one day blends into the next__, roll +supply.\n\nOn a __strong hit__, you reach your destination and the situation favors you. Take +1 momentum.\n\nOn a __weak hit__, you complete the journey, but face a cost or complication. Choose one or more.\n\n  * You took longer than expected.\n  * You pressed on through pain, sickness, or weariness: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}.\n  * You suffered under the burden of foul weather, worries, or fearful locations: @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}.\n  * You wasted resources.\n  * You face a complication or hazard at the destination. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure).\n\nOn a __miss__, you are waylaid by a dire threat and must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. If you overcome this obstacle, you may push on safely to your destination.",
+    "Trigger": {
+      "Text": "When you journey along a known route, and one day blends into the next...",
+      "Options": [
+        {
+          "Text": "",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Supply"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, you reach your destination and the situation favors you. Take +1 momentum.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, you complete the journey, but face a cost or complication. Choose one or more.\n\n  * You took longer than expected.\n  * You pressed on through pain, sickness, or weariness: @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}.\n  * You suffered under the burden of foul weather, worries, or fearful locations: @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress}.\n  * You wasted resources.\n  * You face a complication or hazard at the destination. Envision what you find (@Compendium[foundry-ironsworn.ironswornmoves.aba3e44b7e810c0f]{Ask the Oracle} if unsure)."
+      },
+      "Miss": {
+        "Text": "On a __miss__, you are waylaid by a dire threat and must @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. If you overcome this obstacle, you may push on safely to your destination.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn Lodestar",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2025-05-01",
+      "Page": 10
+    },
+    "Suggestions": {}
+  },
+  "sort": 10,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:lodestar/adventure/follow_a_path",
+      "dsid": "move:lodestar/adventure/follow_a_path"
+    }
+  },
+  "_key": "!items!ed72e784c7b5eb07"
+}

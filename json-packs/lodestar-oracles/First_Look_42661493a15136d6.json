@@ -1,0 +1,668 @@
+{
+  "_id": "42661493a15136d6",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement",
+      "dsid": "oracle_rollable:lodestar/settlement/first_look"
+    }
+  },
+  "name": "First Look",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "At a crossroads",
+      "_key": "!tables.results!42661493a15136d6.d8ebb007995d65ad",
+      "_id": "d8ebb007995d65ad"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Beacon or signal fire",
+      "_key": "!tables.results!42661493a15136d6.10db4f042a225c7c",
+      "_id": "10db4f042a225c7c"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Boundary of standing stones",
+      "_key": "!tables.results!42661493a15136d6.002b45b3ba8075a3",
+      "_id": "002b45b3ba8075a3"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Breached or collapsed wall",
+      "_key": "!tables.results!42661493a15136d6.61dfb7d984ef92a3",
+      "_id": "61dfb7d984ef92a3"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Built among ancient ruins",
+      "_key": "!tables.results!42661493a15136d6.810d3d8589d1a930",
+      "_id": "810d3d8589d1a930"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Built on a hill or crag",
+      "_key": "!tables.results!42661493a15136d6.dabcdcf410aeedd3",
+      "_id": "dabcdcf410aeedd3"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Built over or beside water",
+      "_key": "!tables.results!42661493a15136d6.b9baa8e84dbe3fe5",
+      "_id": "b9baa8e84dbe3fe5"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Carved animal motifs",
+      "_key": "!tables.results!42661493a15136d6.2a96a1e8bad65b7e",
+      "_id": "2a96a1e8bad65b7e"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Central tree",
+      "_key": "!tables.results!42661493a15136d6.3b5c64d2f36f1fbc",
+      "_id": "3b5c64d2f36f1fbc"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Building a prominent structure",
+      "_key": "!tables.results!42661493a15136d6.240de88e19f544ed",
+      "_id": "240de88e19f544ed"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Decorated for a festival",
+      "_key": "!tables.results!42661493a15136d6.8b9be70bfe9b3d49",
+      "_id": "8b9be70bfe9b3d49"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Dense smoke from worksites",
+      "_key": "!tables.results!42661493a15136d6.86383e90edb76bd5",
+      "_id": "86383e90edb76bd5"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Nearby encampment",
+      "_key": "!tables.results!42661493a15136d6.36aa2fe27d82388b",
+      "_id": "36aa2fe27d82388b"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Encroaching woodland",
+      "_key": "!tables.results!42661493a15136d6.88dcf37f40ed948d",
+      "_id": "88dcf37f40ed948d"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Expansive fields or agriculture",
+      "_key": "!tables.results!42661493a15136d6.d567a39995aadb98",
+      "_id": "d567a39995aadb98"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Large barrow mound",
+      "_key": "!tables.results!42661493a15136d6.16b1f6a6c8556fcb",
+      "_id": "16b1f6a6c8556fcb"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Filled with song and music",
+      "_key": "!tables.results!42661493a15136d6.118b0e765f0a75f7",
+      "_id": "118b0e765f0a75f7"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Flying a familiar banner",
+      "_key": "!tables.results!42661493a15136d6.187677ec1d6e514f",
+      "_id": "187677ec1d6e514f"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Hastily improvised defenses",
+      "_key": "!tables.results!42661493a15136d6.aa85033a1c999119",
+      "_id": "aa85033a1c999119"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Heavily armed guards",
+      "_key": "!tables.results!42661493a15136d6.867f2e8706e0c74e",
+      "_id": "867f2e8706e0c74e"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Hung with charms and wards",
+      "_key": "!tables.results!42661493a15136d6.10bc8c5e19974f30",
+      "_id": "10bc8c5e19974f30"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "In the shadow of a terrain feature",
+      "_key": "!tables.results!42661493a15136d6.dc5cc635a6bafd9d",
+      "_id": "dc5cc635a6bafd9d"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Large communal building",
+      "_key": "!tables.results!42661493a15136d6.38b88e6169515e97",
+      "_id": "38b88e6169515e97"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Numerous grazing animals",
+      "_key": "!tables.results!42661493a15136d6.9a934d45df6819de",
+      "_id": "9a934d45df6819de"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Protected by stout walls",
+      "_key": "!tables.results!42661493a15136d6.9bc5628328145596",
+      "_id": "9bc5628328145596"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Ringed by a moat or ditch",
+      "_key": "!tables.results!42661493a15136d6.8a0f7618f4c9b8e7",
+      "_id": "8a0f7618f4c9b8e7"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Sections divided by walls",
+      "_key": "!tables.results!42661493a15136d6.82b22cebb52214ad",
+      "_id": "82b22cebb52214ad"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Watchtowers or lookouts",
+      "_key": "!tables.results!42661493a15136d6.90cb8a2f1259f528",
+      "_id": "90cb8a2f1259f528"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Adorned with colorful banners",
+      "_key": "!tables.results!42661493a15136d6.ebad460c2f7b9210",
+      "_id": "ebad460c2f7b9210"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Armed with heavy weapons",
+      "_key": "!tables.results!42661493a15136d6.7ace0c5133f0c0be",
+      "_id": "7ace0c5133f0c0be"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Built into the terrain",
+      "_key": "!tables.results!42661493a15136d6.fb15221b2fe9cb6f",
+      "_id": "fb15221b2fe9cb6f"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Burning pit or pyre",
+      "_key": "!tables.results!42661493a15136d6.06b7165eb96abce8",
+      "_id": "06b7165eb96abce8"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Circling carrion birds",
+      "_key": "!tables.results!42661493a15136d6.fca35baeae206e27",
+      "_id": "fca35baeae206e27"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Connected by bridges",
+      "_key": "!tables.results!42661493a15136d6.f7f2fd6a4d7f7b12",
+      "_id": "f7f2fd6a4d7f7b12"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Large monolith or tower",
+      "_key": "!tables.results!42661493a15136d6.000878b0a3c822a0",
+      "_id": "000878b0a3c822a0"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Large statue or effigy",
+      "_key": "!tables.results!42661493a15136d6.97b2577280d3f577",
+      "_id": "97b2577280d3f577"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Loud laughter or merrymaking",
+      "_key": "!tables.results!42661493a15136d6.d1a9aeb87323bdb4",
+      "_id": "d1a9aeb87323bdb4"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Marked with cryptic symbols",
+      "_key": "!tables.results!42661493a15136d6.9ce5efeda2f80e8b",
+      "_id": "9ce5efeda2f80e8b"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Numerous comings and goings",
+      "_key": "!tables.results!42661493a15136d6.68964e0e18cf477a",
+      "_id": "68964e0e18cf477a"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Oddly quiet",
+      "_key": "!tables.results!42661493a15136d6.ffc643dd58339b4b",
+      "_id": "ffc643dd58339b4b"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "One building set apart",
+      "_key": "!tables.results!42661493a15136d6.19936952be7073a3",
+      "_id": "19936952be7073a3"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Partially abandoned",
+      "_key": "!tables.results!42661493a15136d6.97d765d530299316",
+      "_id": "97d765d530299316"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Prisoners or dead on display",
+      "_key": "!tables.results!42661493a15136d6.ac71a9ca7ea3d5d7",
+      "_id": "ac71a9ca7ea3d5d7"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Repairs underway",
+      "_key": "!tables.results!42661493a15136d6.988f79c4dac63216",
+      "_id": "988f79c4dac63216"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Scars of an attack or disaster",
+      "_key": "!tables.results!42661493a15136d6.fae59d1611fb03e0",
+      "_id": "fae59d1611fb03e0"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Shrouded by mist",
+      "_key": "!tables.results!42661493a15136d6.5c1f2bc7e2545102",
+      "_id": "5c1f2bc7e2545102"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Signs of sickness",
+      "_key": "!tables.results!42661493a15136d6.23da6f8be0e98028",
+      "_id": "23da6f8be0e98028"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Signs of an occupying force",
+      "_key": "!tables.results!42661493a15136d6.dddd25d69e23088f",
+      "_id": "dddd25d69e23088f"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Signs of unrest",
+      "_key": "!tables.results!42661493a15136d6.85d0205f26d4e768",
+      "_id": "85d0205f26d4e768"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "Surrounded by fresh graves",
+      "_key": "!tables.results!42661493a15136d6.21d2dfaa5de4e10a",
+      "_id": "21d2dfaa5de4e10a"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Surrounded by lush terrain",
+      "_key": "!tables.results!42661493a15136d6.e71aaa08dc363f7b",
+      "_id": "e71aaa08dc363f7b"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Trophies of defeated foes",
+      "_key": "!tables.results!42661493a15136d6.e5aa6380f4d9c640",
+      "_id": "e5aa6380f4d9c640"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Lush gardens",
+      "_key": "!tables.results!42661493a15136d6.7203cab2c42848f4",
+      "_id": "7203cab2c42848f4"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Visited by large caravan or fleet",
+      "_key": "!tables.results!42661493a15136d6.13378213aa3b2e41",
+      "_id": "13378213aa3b2e41"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Widely dispersed structures",
+      "_key": "!tables.results!42661493a15136d6.e35b12990733c367",
+      "_id": "e35b12990733c367"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Alluring fragrances",
+      "_key": "!tables.results!42661493a15136d6.28419eb3cc952995",
+      "_id": "28419eb3cc952995"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Built from unusual materials",
+      "_key": "!tables.results!42661493a15136d6.16733cf8a60e296e",
+      "_id": "16733cf8a60e296e"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Busy marketplace",
+      "_key": "!tables.results!42661493a15136d6.baad3e717e3bd8da",
+      "_id": "baad3e717e3bd8da"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Festooned with bones and skulls",
+      "_key": "!tables.results!42661493a15136d6.2d6b81fb6fefd746",
+      "_id": "2d6b81fb6fefd746"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Flooded or waterlogged section",
+      "_key": "!tables.results!42661493a15136d6.fc0af9221ce734bb",
+      "_id": "fc0af9221ce734bb"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Foul stench",
+      "_key": "!tables.results!42661493a15136d6.59aa3a043312032a",
+      "_id": "59aa3a043312032a"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Partially destroyed by fire",
+      "_key": "!tables.results!42661493a15136d6.c1b0ebbc7dcc8e03",
+      "_id": "c1b0ebbc7dcc8e03"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Oddly-shaped structures",
+      "_key": "!tables.results!42661493a15136d6.aeaed7ecb588e1f6",
+      "_id": "aeaed7ecb588e1f6"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Old siege weapons left to rot",
+      "_key": "!tables.results!42661493a15136d6.0ec871af415ec5a6",
+      "_id": "0ec871af415ec5a6"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Signs of infestation or corruption",
+      "_key": "!tables.results!42661493a15136d6.c49c85dda8acc323",
+      "_id": "c49c85dda8acc323"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Solemn procession",
+      "_key": "!tables.results!42661493a15136d6.dc4de8d860aae327",
+      "_id": "dc4de8d860aae327"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Hung with countless torches",
+      "_key": "!tables.results!42661493a15136d6.e4f03fd3b71e25c4",
+      "_id": "e4f03fd3b71e25c4"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Eerie light or strange energies",
+      "_key": "!tables.results!42661493a15136d6.58e2ae3c3abd85d9",
+      "_id": "58e2ae3c3abd85d9"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Surrounded by blighted terrain",
+      "_key": "!tables.results!42661493a15136d6.82d4fcfcf05286a0",
+      "_id": "82d4fcfcf05286a0"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Unusual domesticated creatures",
+      "_key": "!tables.results!42661493a15136d6.d5d10436e780905f",
+      "_id": "d5d10436e780905f"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Eerie chanting or keening",
+      "_key": "!tables.results!42661493a15136d6.f0eb68d4dfcc1018",
+      "_id": "f0eb68d4dfcc1018"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Spectral manifestations",
+      "_key": "!tables.results!42661493a15136d6.bfc14089ee53a909",
+      "_id": "bfc14089ee53a909"
+    }
+  ],
+  "folder": "a456e82f6aca3d1c",
+  "sort": 65,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!42661493a15136d6"
+}

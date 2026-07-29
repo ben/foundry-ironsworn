@@ -1,0 +1,245 @@
+{
+  "_id": "a3315f926803130a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/name/firstborn",
+      "dsid": "oracle_rollable:lodestar/name/firstborn/giant"
+    }
+  },
+  "name": "Giant",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Chony",
+      "_key": "!tables.results!a3315f926803130a.df3ff3d66d8e37eb",
+      "_id": "df3ff3d66d8e37eb"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Banda",
+      "_key": "!tables.results!a3315f926803130a.1d5a5a7871d06ee0",
+      "_id": "1d5a5a7871d06ee0"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Jochu",
+      "_key": "!tables.results!a3315f926803130a.691cbcf3bccc296f",
+      "_id": "691cbcf3bccc296f"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Kira",
+      "_key": "!tables.results!a3315f926803130a.c3f14e037037b6e5",
+      "_id": "c3f14e037037b6e5"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Khatir",
+      "_key": "!tables.results!a3315f926803130a.db002b8846111d90",
+      "_id": "db002b8846111d90"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Chaidu",
+      "_key": "!tables.results!a3315f926803130a.1a251c1a3595983d",
+      "_id": "1a251c1a3595983d"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Atan",
+      "_key": "!tables.results!a3315f926803130a.f585ac22e00c36ea",
+      "_id": "f585ac22e00c36ea"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Buandu",
+      "_key": "!tables.results!a3315f926803130a.d47961219f8bca89",
+      "_id": "d47961219f8bca89"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Javyn",
+      "_key": "!tables.results!a3315f926803130a.5d4daa3ac7158043",
+      "_id": "5d4daa3ac7158043"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Khashin",
+      "_key": "!tables.results!a3315f926803130a.fa7411b849de6e2d",
+      "_id": "fa7411b849de6e2d"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Bayara",
+      "_key": "!tables.results!a3315f926803130a.06543989eb023299",
+      "_id": "06543989eb023299"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Temura",
+      "_key": "!tables.results!a3315f926803130a.4234b701c796cae3",
+      "_id": "4234b701c796cae3"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Kidha",
+      "_key": "!tables.results!a3315f926803130a.385fbd7ee583ff68",
+      "_id": "385fbd7ee583ff68"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Kathos",
+      "_key": "!tables.results!a3315f926803130a.67726044da1a8e2e",
+      "_id": "67726044da1a8e2e"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Tanua",
+      "_key": "!tables.results!a3315f926803130a.803bdd05b256e588",
+      "_id": "803bdd05b256e588"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Bashtu",
+      "_key": "!tables.results!a3315f926803130a.f049df2eab5515cf",
+      "_id": "f049df2eab5515cf"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Jaran",
+      "_key": "!tables.results!a3315f926803130a.e34bf7c02bbb94d7",
+      "_id": "e34bf7c02bbb94d7"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Othos",
+      "_key": "!tables.results!a3315f926803130a.00dbd77b7896e664",
+      "_id": "00dbd77b7896e664"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Khutan",
+      "_key": "!tables.results!a3315f926803130a.18246eb1144769d0",
+      "_id": "18246eb1144769d0"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Otaan",
+      "_key": "!tables.results!a3315f926803130a.c405e67957bd74e6",
+      "_id": "c405e67957bd74e6"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Martu",
+      "_key": "!tables.results!a3315f926803130a.5bb910269cb871ec",
+      "_id": "5bb910269cb871ec"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Baku",
+      "_key": "!tables.results!a3315f926803130a.683943cf415e0a66",
+      "_id": "683943cf415e0a66"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Tuban",
+      "_key": "!tables.results!a3315f926803130a.95c1c4df1808c540",
+      "_id": "95c1c4df1808c540"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Qudan",
+      "_key": "!tables.results!a3315f926803130a.d4715729de95ce86",
+      "_id": "d4715729de95ce86"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Denua",
+      "_key": "!tables.results!a3315f926803130a.fab811f23a6c70cb",
+      "_id": "fab811f23a6c70cb"
+    }
+  ],
+  "folder": "a48dea3f988d2a95",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a3315f926803130a"
+}

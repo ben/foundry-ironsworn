@@ -1,0 +1,15 @@
+{
+  "name": "Type",
+  "description": "When using this oracle to reveal the scale and purpose of a settlement, choose whether the community is located in settled lands, boundary lands, or remote lands.",
+  "type": "RollTable",
+  "_id": "10ca10cff43070aa",
+  "sort": 64,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:lodestar/settlement/type"
+    }
+  },
+  "folder": "a456e82f6aca3d1c",
+  "sorting": "a",
+  "_key": "!folders!10ca10cff43070aa"
+}

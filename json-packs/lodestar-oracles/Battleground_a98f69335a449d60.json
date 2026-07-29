@@ -1,0 +1,220 @@
+{
+  "_id": "a98f69335a449d60",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/combat",
+      "dsid": "oracle_rollable:lodestar/combat/battleground"
+    }
+  },
+  "name": "Battleground",
+  "description": "<p>Roll on this oracle to reveal a feature of the combat environment that affects the fight. Use the result to inspire tactical choices or complicate the situation.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "name": "Slippery surface",
+      "description": "<p>Mud, ice, rain-slick rocks</p>",
+      "_key": "!tables.results!a98f69335a449d60.787aa047bf91ddb6",
+      "_id": "787aa047bf91ddb6"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "name": "Encumbering terrain",
+      "description": "<p>Water, muck, deep snow, webs</p>",
+      "_key": "!tables.results!a98f69335a449d60.904df0f784b64710",
+      "_id": "904df0f784b64710"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "name": "Precipitous drop",
+      "description": "<p>Cliff, ravine, pit, stairs</p>",
+      "_key": "!tables.results!a98f69335a449d60.a5ad493a53a0499c",
+      "_id": "a5ad493a53a0499c"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "name": "Obstructed path",
+      "description": "<p>Barricade, toppled ruin, fallen tree</p>",
+      "_key": "!tables.results!a98f69335a449d60.11d923003e8304aa",
+      "_id": "11d923003e8304aa"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "name": "High ground",
+      "description": "<p>Mound, outcropping, climbable structure</p>",
+      "_key": "!tables.results!a98f69335a449d60.a798861bc7e4d052",
+      "_id": "a798861bc7e4d052"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "name": "Cluttered terrain",
+      "description": "<p>Rubble, rocks, roots</p>",
+      "_key": "!tables.results!a98f69335a449d60.ac87cbc05098adae",
+      "_id": "ac87cbc05098adae"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "name": "Low visibility",
+      "description": "<p>Darkness, smoke, mist, torrential rain</p>",
+      "_key": "!tables.results!a98f69335a449d60.1a983113cc8f9cab",
+      "_id": "1a983113cc8f9cab"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "name": "Impassable border",
+      "description": "<p>Deep waterway, high wall, cliff face, locked door</p>",
+      "_key": "!tables.results!a98f69335a449d60.0dfd67139aed14ed",
+      "_id": "0dfd67139aed14ed"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "name": "Scattered cover",
+      "description": "<p>Low walls, boulders, trees, crates</p>",
+      "_key": "!tables.results!a98f69335a449d60.e52272b3759d6a54",
+      "_id": "e52272b3759d6a54"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "name": "Cramped spaces",
+      "description": "<p>Narrow tunnel, crowded room, dense woods</p>",
+      "_key": "!tables.results!a98f69335a449d60.9ceed014390a460d",
+      "_id": "9ceed014390a460d"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "name": "Treacherous ground",
+      "description": "<p>Fire pit, boiling hot spring, quagmire</p>",
+      "_key": "!tables.results!a98f69335a449d60.74d3a8a25b45bd9c",
+      "_id": "74d3a8a25b45bd9c"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "name": "Restricted approach",
+      "description": "<p>Bridge, corridor, river ford, narrow canyon</p>",
+      "_key": "!tables.results!a98f69335a449d60.05f4682fb230a5fa",
+      "_id": "05f4682fb230a5fa"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "name": "Collapsing foundation",
+      "description": "<p>Crumbling ruins, thin ice, undermined earth</p>",
+      "_key": "!tables.results!a98f69335a449d60.f46591c18b0e2675",
+      "_id": "f46591c18b0e2675"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "name": "Bounded space",
+      "description": "<p>Dueling circle, woodland clearing, standing stones</p>",
+      "_key": "!tables.results!a98f69335a449d60.6599db842047884c",
+      "_id": "6599db842047884c"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "name": "Pitched ground",
+      "description": "<p>Steep hillside, rooftop, collapsed ruin, ship deck</p>",
+      "_key": "!tables.results!a98f69335a449d60.3c70c1c781020eaf",
+      "_id": "3c70c1c781020eaf"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "name": "Hidden hazard",
+      "description": "<p>Trap, sinkhole, lurking creature, waiting ambushers</p>",
+      "_key": "!tables.results!a98f69335a449d60.74357f3595049285",
+      "_id": "74357f3595049285"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "name": "Frenzied distractions",
+      "description": "<p>Noncombatants, panicked creatures, insect swarms</p>",
+      "_key": "!tables.results!a98f69335a449d60.d10e56c92da1febd",
+      "_id": "d10e56c92da1febd"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "name": "Destructive chaos",
+      "description": "<p>Storm, fire, flooding, rampaging creature</p>",
+      "_key": "!tables.results!a98f69335a449d60.0b4de215e36aada9",
+      "_id": "0b4de215e36aada9"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "name": "Unnatural forces",
+      "description": "<p>Mystic energies, runic symbols, sorcerous artifacts</p>",
+      "_key": "!tables.results!a98f69335a449d60.cb9f5f300117a3c1",
+      "_id": "cb9f5f300117a3c1"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "name": "Cursed ground",
+      "description": "<p>Corpses, shambling undead, ghostly specters</p>",
+      "_key": "!tables.results!a98f69335a449d60.915c76eeeb271f6c",
+      "_id": "915c76eeeb271f6c"
+    }
+  ],
+  "folder": "2208de03004d46a8",
+  "sort": 94,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!a98f69335a449d60"
+}

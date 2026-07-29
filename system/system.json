@@ -113,6 +113,14 @@
       ]
     },
     {
+      "name": "Ironsworn: Lodestar",
+      "color": "#444444",
+      "packs": [
+        "ironsworndolestarmoves",
+        "ironsworndolestaroracles"
+      ]
+    },
+    {
       "name": "Starforged Core Rulebook",
       "color": "#444444",
       "packs": [
@@ -235,6 +243,20 @@
       "system": "foundry-ironsworn",
       "path": "packs/ironsworn-truths",
       "type": "JournalEntry"
+    },
+    {
+      "name": "ironsworndolestarmoves",
+      "label": "Ironsworn Lodestar Moves",
+      "system": "foundry-ironsworn",
+      "path": "packs/lodestar-moves",
+      "type": "Item"
+    },
+    {
+      "name": "ironsworndolestaroracles",
+      "label": "Ironsworn Lodestar Oracles",
+      "system": "foundry-ironsworn",
+      "path": "packs/lodestar-oracles",
+      "type": "RollTable"
     },
     {
       "name": "starforged-sectors",

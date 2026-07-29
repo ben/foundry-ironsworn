@@ -1,0 +1,290 @@
+{
+  "_id": "2186fb140d1a8664",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement/quick_name",
+      "dsid": "oracle_rollable:lodestar/settlement/quick_name/suffix_a"
+    }
+  },
+  "name": "Suffix A",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "-grove",
+      "_key": "!tables.results!2186fb140d1a8664.545b204b5e39580a",
+      "_id": "545b204b5e39580a"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "-haven",
+      "_key": "!tables.results!2186fb140d1a8664.c15a54b223f8103c",
+      "_id": "c15a54b223f8103c"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "-bourne",
+      "_key": "!tables.results!2186fb140d1a8664.2c464bee425d28bb",
+      "_id": "2c464bee425d28bb"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "-bridge",
+      "_key": "!tables.results!2186fb140d1a8664.f7dc46ef32facee6",
+      "_id": "f7dc46ef32facee6"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "-peak",
+      "_key": "!tables.results!2186fb140d1a8664.774f45a524111704",
+      "_id": "774f45a524111704"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "-shard",
+      "_key": "!tables.results!2186fb140d1a8664.848c328beff040dc",
+      "_id": "848c328beff040dc"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "-glade",
+      "_key": "!tables.results!2186fb140d1a8664.ceae7b0ba9dca414",
+      "_id": "ceae7b0ba9dca414"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "-hold",
+      "_key": "!tables.results!2186fb140d1a8664.7df8a9f224cb3495",
+      "_id": "7df8a9f224cb3495"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "-stead",
+      "_key": "!tables.results!2186fb140d1a8664.ae727502a1ea6ffd",
+      "_id": "ae727502a1ea6ffd"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "-crest",
+      "_key": "!tables.results!2186fb140d1a8664.6688bdc8959eb2a8",
+      "_id": "6688bdc8959eb2a8"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "-rock",
+      "_key": "!tables.results!2186fb140d1a8664.b88af0b16929f7cc",
+      "_id": "b88af0b16929f7cc"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "-fall",
+      "_key": "!tables.results!2186fb140d1a8664.fa9b98b99ea0585b",
+      "_id": "fa9b98b99ea0585b"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "-mark",
+      "_key": "!tables.results!2186fb140d1a8664.9e9d12dc7caba041",
+      "_id": "9e9d12dc7caba041"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "-fen",
+      "_key": "!tables.results!2186fb140d1a8664.249417ba9d654011",
+      "_id": "249417ba9d654011"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "-barrow",
+      "_key": "!tables.results!2186fb140d1a8664.f125c0b7ecf2c323",
+      "_id": "f125c0b7ecf2c323"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "-ford",
+      "_key": "!tables.results!2186fb140d1a8664.77b4f902b0413b31",
+      "_id": "77b4f902b0413b31"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "-wood",
+      "_key": "!tables.results!2186fb140d1a8664.3124cf590bc00992",
+      "_id": "3124cf590bc00992"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "-run",
+      "_key": "!tables.results!2186fb140d1a8664.9cf69da3a1b03195",
+      "_id": "9cf69da3a1b03195"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "-croft",
+      "_key": "!tables.results!2186fb140d1a8664.17b3f2e9028fbdd0",
+      "_id": "17b3f2e9028fbdd0"
+    },
+    {
+      "range": [
+        68,
+        70
+      ],
+      "text": "-knoll",
+      "_key": "!tables.results!2186fb140d1a8664.8327c00032367286",
+      "_id": "8327c00032367286"
+    },
+    {
+      "range": [
+        71,
+        73
+      ],
+      "text": "-march",
+      "_key": "!tables.results!2186fb140d1a8664.56417267db70f36d",
+      "_id": "56417267db70f36d"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "-reach",
+      "_key": "!tables.results!2186fb140d1a8664.9bbcc446d522ebeb",
+      "_id": "9bbcc446d522ebeb"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "-bluff",
+      "_key": "!tables.results!2186fb140d1a8664.192e1eec0794caf6",
+      "_id": "192e1eec0794caf6"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "-holt",
+      "_key": "!tables.results!2186fb140d1a8664.0c11d89b7f7531a8",
+      "_id": "0c11d89b7f7531a8"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "-home",
+      "_key": "!tables.results!2186fb140d1a8664.a42112d8eb6f3b97",
+      "_id": "a42112d8eb6f3b97"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "-hope",
+      "_key": "!tables.results!2186fb140d1a8664.fe7ae96189038478",
+      "_id": "fe7ae96189038478"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "-wark",
+      "_key": "!tables.results!2186fb140d1a8664.47df2f24ed54be8d",
+      "_id": "47df2f24ed54be8d"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "-burrow",
+      "_key": "!tables.results!2186fb140d1a8664.38c60206f55e4544",
+      "_id": "38c60206f55e4544"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "-glen",
+      "_key": "!tables.results!2186fb140d1a8664.b06ec6f0e9606e39",
+      "_id": "b06ec6f0e9606e39"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "-mist",
+      "_key": "!tables.results!2186fb140d1a8664.6eea6dc29bebf898",
+      "_id": "6eea6dc29bebf898"
+    }
+  ],
+  "folder": "c4bf0c3b4d189653",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!2186fb140d1a8664"
+}

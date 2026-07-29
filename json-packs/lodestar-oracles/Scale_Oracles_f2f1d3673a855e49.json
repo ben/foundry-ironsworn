@@ -1,0 +1,15 @@
+{
+  "name": "Scale Oracles",
+  "description": "Use these oracles to help answer a question related to the scale, extent, or capability of something.",
+  "type": "RollTable",
+  "_id": "f2f1d3673a855e49",
+  "sort": 98,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:lodestar/scale"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!f2f1d3673a855e49"
+}

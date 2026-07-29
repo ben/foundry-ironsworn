@@ -1,0 +1,15 @@
+{
+  "name": "Magnitude",
+  "description": "Ask your question, choose one of the following tables, and roll to reveal the answer.",
+  "type": "RollTable",
+  "_id": "a15b81e917ce5079",
+  "sort": 98,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:lodestar/scale/magnitude"
+    }
+  },
+  "folder": "f2f1d3673a855e49",
+  "sorting": "a",
+  "_key": "!folders!a15b81e917ce5079"
+}

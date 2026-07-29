@@ -1,0 +1,65 @@
+{
+  "_id": "db188781efe5cf9a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/distance"
+    }
+  },
+  "name": "Distance",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Very close",
+      "_key": "!tables.results!db188781efe5cf9a.4e02db3f55178513",
+      "_id": "4e02db3f55178513"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Near",
+      "_key": "!tables.results!db188781efe5cf9a.e028d89e7ae35d71",
+      "_id": "e028d89e7ae35d71"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Far",
+      "_key": "!tables.results!db188781efe5cf9a.880d594e0ae84f46",
+      "_id": "880d594e0ae84f46"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Remote",
+      "_key": "!tables.results!db188781efe5cf9a.2aeb1b95234a3481",
+      "_id": "2aeb1b95234a3481"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Inaccessible",
+      "_key": "!tables.results!db188781efe5cf9a.46a813b32252534b",
+      "_id": "46a813b32252534b"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!db188781efe5cf9a"
+}

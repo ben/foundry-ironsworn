@@ -1,0 +1,290 @@
+{
+  "_id": "426e673e67fc6d2b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/location/coastal_waters",
+      "dsid": "oracle_rollable:lodestar/location/coastal_waters/opportunity"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Use this oracle to reveal the nature of an unexpected and beneficial event on a journey.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "A fortuitous wind or current speeds your way",
+      "_key": "!tables.results!426e673e67fc6d2b.d6c913cda340a54c",
+      "_id": "d6c913cda340a54c"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "Ideal weather takes hold",
+      "_key": "!tables.results!426e673e67fc6d2b.c9e655fa35fb1742",
+      "_id": "c9e655fa35fb1742"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "There are plentiful fishing opportunities in these waters",
+      "_key": "!tables.results!426e673e67fc6d2b.d51f57b66dced020",
+      "_id": "d51f57b66dced020"
+    },
+    {
+      "range": [
+        16,
+        19
+      ],
+      "text": "A desolate shoreline settlement or camp offers scavenging opportunities",
+      "_key": "!tables.results!426e673e67fc6d2b.1f940aa0fce646ea",
+      "_id": "1f940aa0fce646ea"
+    },
+    {
+      "range": [
+        20,
+        23
+      ],
+      "text": "A nearby settlement flies a friendly banner",
+      "_key": "!tables.results!426e673e67fc6d2b.bac74fe9f37f1e65",
+      "_id": "bac74fe9f37f1e65"
+    },
+    {
+      "range": [
+        24,
+        27
+      ],
+      "text": "A nearby shore offers plentiful opportunities for hunting or foraging",
+      "_key": "!tables.results!426e673e67fc6d2b.1345c2bb32690dc8",
+      "_id": "1345c2bb32690dc8"
+    },
+    {
+      "range": [
+        28,
+        31
+      ],
+      "text": "A sheltered bay offers safe harbor",
+      "_key": "!tables.results!426e673e67fc6d2b.e1dccd61928b16f4",
+      "_id": "e1dccd61928b16f4"
+    },
+    {
+      "range": [
+        32,
+        35
+      ],
+      "text": "An intriguing shoreline location offers opportunities for exploration",
+      "_key": "!tables.results!426e673e67fc6d2b.5ab6bb3f9fc1533c",
+      "_id": "5ab6bb3f9fc1533c"
+    },
+    {
+      "range": [
+        36,
+        39
+      ],
+      "text": "You find an ideal location for a safe landing",
+      "_key": "!tables.results!426e673e67fc6d2b.5663db32e2e46c2c",
+      "_id": "5663db32e2e46c2c"
+    },
+    {
+      "range": [
+        40,
+        43
+      ],
+      "text": "You find clear passage through otherwise perilous seas",
+      "_key": "!tables.results!426e673e67fc6d2b.8f95d0d311832b6e",
+      "_id": "8f95d0d311832b6e"
+    },
+    {
+      "range": [
+        44,
+        47
+      ],
+      "text": "You spot a shipwreck ripe for the picking",
+      "_key": "!tables.results!426e673e67fc6d2b.cd0980d0dc32c6d8",
+      "_id": "cd0980d0dc32c6d8"
+    },
+    {
+      "range": [
+        48,
+        51
+      ],
+      "text": "Something about this journey sparks a fond or helpful memory",
+      "_key": "!tables.results!426e673e67fc6d2b.13db4c99e78f840b",
+      "_id": "13db4c99e78f840b"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "A clue offers insight into a current quest or mystery",
+      "_key": "!tables.results!426e673e67fc6d2b.ed1c8bf64cfab2d9",
+      "_id": "ed1c8bf64cfab2d9"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "A friendly sea creature or bird keeps pace with you—a good omen",
+      "_key": "!tables.results!426e673e67fc6d2b.a36ce4eea575874a",
+      "_id": "a36ce4eea575874a"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "A large ship offers the potential comforts and safety of a community",
+      "_key": "!tables.results!426e673e67fc6d2b.68523bbee111bded",
+      "_id": "68523bbee111bded"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "An awe-inspiring vista offers comfort or inspiration",
+      "_key": "!tables.results!426e673e67fc6d2b.9d7954b67db568d8",
+      "_id": "9d7954b67db568d8"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "You are forewarned of a lurking danger",
+      "_key": "!tables.results!426e673e67fc6d2b.42e405b3a3246456",
+      "_id": "42e405b3a3246456"
+    },
+    {
+      "range": [
+        67,
+        69
+      ],
+      "text": "You encounter a helpful or useful animal",
+      "_key": "!tables.results!426e673e67fc6d2b.f5df687defcc1938",
+      "_id": "f5df687defcc1938"
+    },
+    {
+      "range": [
+        70,
+        72
+      ],
+      "text": "You experience a moment of fellowship or inner peace",
+      "_key": "!tables.results!426e673e67fc6d2b.13611b7946af38c0",
+      "_id": "13611b7946af38c0"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "You spot a friendly ship or boat",
+      "_key": "!tables.results!426e673e67fc6d2b.c1d2cb8ec3b55893",
+      "_id": "c1d2cb8ec3b55893"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "A key landmark comes into view",
+      "_key": "!tables.results!426e673e67fc6d2b.aaf1164cda614e94",
+      "_id": "aaf1164cda614e94"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "A helpful mariner crosses your path",
+      "_key": "!tables.results!426e673e67fc6d2b.0095cd2447cd05ed",
+      "_id": "0095cd2447cd05ed"
+    },
+    {
+      "range": [
+        82,
+        84
+      ],
+      "text": "A monument or relic reveals something of the history of this area",
+      "_key": "!tables.results!426e673e67fc6d2b.88b4e0d04f6cfde5",
+      "_id": "88b4e0d04f6cfde5"
+    },
+    {
+      "range": [
+        85,
+        87
+      ],
+      "text": "The winds or terrain offer the means to avoid a threat",
+      "_key": "!tables.results!426e673e67fc6d2b.53d285e9c3b5d336",
+      "_id": "53d285e9c3b5d336"
+    },
+    {
+      "range": [
+        88,
+        90
+      ],
+      "text": "You learn or improve a helpful skill",
+      "_key": "!tables.results!426e673e67fc6d2b.f661db3841a0b04a",
+      "_id": "f661db3841a0b04a"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "A supernatural entity offers helpful guidance",
+      "_key": "!tables.results!426e673e67fc6d2b.d00d0f055e21e9de",
+      "_id": "d00d0f055e21e9de"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "An otherwise dangerous sea creature shows benign interest in you",
+      "_key": "!tables.results!426e673e67fc6d2b.eeba3ea83d48a254",
+      "_id": "eeba3ea83d48a254"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "You encounter a majestic or previously unknown creature",
+      "_key": "!tables.results!426e673e67fc6d2b.5012d7228527215d",
+      "_id": "5012d7228527215d"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "You experience a helpful dream or vision",
+      "_key": "!tables.results!426e673e67fc6d2b.0baa3fb9f5256643",
+      "_id": "0baa3fb9f5256643"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "You spot an object or resource of great value",
+      "_key": "!tables.results!426e673e67fc6d2b.5e6ed86c9b407003",
+      "_id": "5e6ed86c9b407003"
+    }
+  ],
+  "folder": "3ea0b7b6862733f1",
+  "sort": 65,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!426e673e67fc6d2b"
+}

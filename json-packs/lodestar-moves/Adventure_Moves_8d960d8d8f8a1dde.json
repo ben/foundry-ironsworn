@@ -1,0 +1,16 @@
+{
+  "name": "Adventure Moves",
+  "color": "#206087",
+  "description": "",
+  "type": "Item",
+  "_id": "8d960d8d8f8a1dde",
+  "sort": 8,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "move_category:lodestar/adventure"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!8d960d8d8f8a1dde"
+}

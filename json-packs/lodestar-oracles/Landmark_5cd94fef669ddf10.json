@@ -1,0 +1,236 @@
+{
+  "_id": "5cd94fef669ddf10",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/location/coastal_waters",
+      "dsid": "oracle_rollable:lodestar/location/coastal_waters/landmark"
+    }
+  },
+  "name": "Landmark",
+  "description": "<p>Use this oracle to help envision a basic feature of the coastal waters as a journey waypoint or key location.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Anchorage",
+      "_key": "!tables.results!5cd94fef669ddf10.745dd8db923a4821",
+      "_id": "745dd8db923a4821"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Sargassum",
+      "_key": "!tables.results!5cd94fef669ddf10.abc13a0862278520",
+      "_id": "abc13a0862278520"
+    },
+    {
+      "range": [
+        9,
+        13
+      ],
+      "text": "Wreck",
+      "_key": "!tables.results!5cd94fef669ddf10.2019b935ff448aef",
+      "_id": "2019b935ff448aef"
+    },
+    {
+      "range": [
+        14,
+        17
+      ],
+      "text": "Harbor",
+      "_key": "!tables.results!5cd94fef669ddf10.6d7c51962571dcaa",
+      "_id": "6d7c51962571dcaa"
+    },
+    {
+      "range": [
+        18,
+        21
+      ],
+      "text": "Beacon",
+      "_key": "!tables.results!5cd94fef669ddf10.fcbac52626137ee1",
+      "_id": "fcbac52626137ee1"
+    },
+    {
+      "range": [
+        22,
+        25
+      ],
+      "text": "Shoal",
+      "_key": "!tables.results!5cd94fef669ddf10.cddc311990e49760",
+      "_id": "cddc311990e49760"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Fjord",
+      "_key": "!tables.results!5cd94fef669ddf10.74232a98a9109cfe",
+      "_id": "74232a98a9109cfe"
+    },
+    {
+      "range": [
+        31,
+        34
+      ],
+      "text": "Estuary",
+      "_key": "!tables.results!5cd94fef669ddf10.043321aa5d62d0ee",
+      "_id": "043321aa5d62d0ee"
+    },
+    {
+      "range": [
+        35,
+        38
+      ],
+      "text": "Sea arch",
+      "_key": "!tables.results!5cd94fef669ddf10.362124fb562b907a",
+      "_id": "362124fb562b907a"
+    },
+    {
+      "range": [
+        39,
+        42
+      ],
+      "text": "Cove",
+      "_key": "!tables.results!5cd94fef669ddf10.b6fc6ffb14aeb9da",
+      "_id": "b6fc6ffb14aeb9da"
+    },
+    {
+      "range": [
+        43,
+        46
+      ],
+      "text": "Bay",
+      "_key": "!tables.results!5cd94fef669ddf10.485e125e5f0d9019",
+      "_id": "485e125e5f0d9019"
+    },
+    {
+      "range": [
+        47,
+        50
+      ],
+      "text": "Iceberg",
+      "_key": "!tables.results!5cd94fef669ddf10.047a02d6c54487cb",
+      "_id": "047a02d6c54487cb"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "Island",
+      "_key": "!tables.results!5cd94fef669ddf10.85bd1efd920a1166",
+      "_id": "85bd1efd920a1166"
+    },
+    {
+      "range": [
+        56,
+        59
+      ],
+      "text": "Settlement",
+      "_key": "!tables.results!5cd94fef669ddf10.7633605abcd47126",
+      "_id": "7633605abcd47126"
+    },
+    {
+      "range": [
+        60,
+        63
+      ],
+      "text": "Ice shelf",
+      "_key": "!tables.results!5cd94fef669ddf10.4abda2413d32db50",
+      "_id": "4abda2413d32db50"
+    },
+    {
+      "range": [
+        64,
+        68
+      ],
+      "text": "Sea cave",
+      "_key": "!tables.results!5cd94fef669ddf10.12d18a655ecdc013",
+      "_id": "12d18a655ecdc013"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Ruins",
+      "_key": "!tables.results!5cd94fef669ddf10.d8c22521ee397ed9",
+      "_id": "d8c22521ee397ed9"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Landing",
+      "_key": "!tables.results!5cd94fef669ddf10.c1ac3956218bdfad",
+      "_id": "c1ac3956218bdfad"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Kelp forest",
+      "_key": "!tables.results!5cd94fef669ddf10.415db9433a00b81e",
+      "_id": "415db9433a00b81e"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Sea stack",
+      "_key": "!tables.results!5cd94fef669ddf10.670524469055c69b",
+      "_id": "670524469055c69b"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Islet",
+      "_key": "!tables.results!5cd94fef669ddf10.aa67c3146ac1f7f5",
+      "_id": "aa67c3146ac1f7f5"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Beach",
+      "_key": "!tables.results!5cd94fef669ddf10.f5f0cd8243c31403",
+      "_id": "f5f0cd8243c31403"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Sea cliff",
+      "_key": "!tables.results!5cd94fef669ddf10.0e325fd936899211",
+      "_id": "0e325fd936899211"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Anomaly",
+      "_key": "!tables.results!5cd94fef669ddf10.6183b826e81dbf03",
+      "_id": "6183b826e81dbf03"
+    }
+  ],
+  "folder": "3ea0b7b6862733f1",
+  "sort": 60,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5cd94fef669ddf10"
+}

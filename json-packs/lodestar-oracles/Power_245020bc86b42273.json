@@ -1,0 +1,65 @@
+{
+  "_id": "245020bc86b42273",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/power"
+    }
+  },
+  "name": "Power",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Weak",
+      "_key": "!tables.results!245020bc86b42273.13a7fcaa055def26",
+      "_id": "13a7fcaa055def26"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Minor",
+      "_key": "!tables.results!245020bc86b42273.7e0527f18e791026",
+      "_id": "7e0527f18e791026"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Capable",
+      "_key": "!tables.results!245020bc86b42273.ea271d1937b1acb9",
+      "_id": "ea271d1937b1acb9"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Strong",
+      "_key": "!tables.results!245020bc86b42273.496a84afa623bfda",
+      "_id": "496a84afa623bfda"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Overwhelming",
+      "_key": "!tables.results!245020bc86b42273.cfc27b07609923d9",
+      "_id": "cfc27b07609923d9"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!245020bc86b42273"
+}

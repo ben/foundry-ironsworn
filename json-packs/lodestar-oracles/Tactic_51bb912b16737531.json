@@ -1,0 +1,182 @@
+{
+  "_id": "51bb912b16737531",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/combat",
+      "dsid": "oracle_rollable:lodestar/combat/tactic"
+    }
+  },
+  "name": "Tactic",
+  "description": "<p>Use this oracle to help inspire an action for an NPC in combat. When you're not sure what your foe does next, particularly when they have initiative, roll on this table and interpret the result as appropriate to the situation.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Compel a surrender.",
+      "_key": "!tables.results!51bb912b16737531.e5ce44911a2ec9a1",
+      "_id": "e5ce44911a2ec9a1"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Coordinate with allies.",
+      "_key": "!tables.results!51bb912b16737531.9246c208b3dc8036",
+      "_id": "9246c208b3dc8036"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Gather reinforcements.",
+      "_key": "!tables.results!51bb912b16737531.c41a133bbc6f93dc",
+      "_id": "c41a133bbc6f93dc"
+    },
+    {
+      "range": [
+        10,
+        13
+      ],
+      "text": "Seize something or someone.",
+      "_key": "!tables.results!51bb912b16737531.c9c55aa9f764aff6",
+      "_id": "c9c55aa9f764aff6"
+    },
+    {
+      "range": [
+        14,
+        17
+      ],
+      "text": "Provoke a reckless response.",
+      "_key": "!tables.results!51bb912b16737531.b8ff9461ffbaf77a",
+      "_id": "b8ff9461ffbaf77a"
+    },
+    {
+      "range": [
+        18,
+        21
+      ],
+      "text": "Intimidate or frighten.",
+      "_key": "!tables.results!51bb912b16737531.fcce545f1b43b4d2",
+      "_id": "fcce545f1b43b4d2"
+    },
+    {
+      "range": [
+        22,
+        25
+      ],
+      "text": "Reveal a surprising truth.",
+      "_key": "!tables.results!51bb912b16737531.64f7501d640a1ac0",
+      "_id": "64f7501d640a1ac0"
+    },
+    {
+      "range": [
+        26,
+        29
+      ],
+      "text": "Shift focus to something else.",
+      "_key": "!tables.results!51bb912b16737531.75869dc6e1c36ef9",
+      "_id": "75869dc6e1c36ef9"
+    },
+    {
+      "range": [
+        30,
+        33
+      ],
+      "text": "Destroy or damage something.",
+      "_key": "!tables.results!51bb912b16737531.038d6395f7c1ba19",
+      "_id": "038d6395f7c1ba19"
+    },
+    {
+      "range": [
+        34,
+        39
+      ],
+      "text": "Take a decisive action.",
+      "_key": "!tables.results!51bb912b16737531.559ee0e41d674624",
+      "_id": "559ee0e41d674624"
+    },
+    {
+      "range": [
+        40,
+        45
+      ],
+      "text": "Reinforce defenses.",
+      "_key": "!tables.results!51bb912b16737531.9f791c08e7c96aa3",
+      "_id": "9f791c08e7c96aa3"
+    },
+    {
+      "range": [
+        46,
+        52
+      ],
+      "text": "Ready an action.",
+      "_key": "!tables.results!51bb912b16737531.e5c9151ffffdc0c0",
+      "_id": "e5c9151ffffdc0c0"
+    },
+    {
+      "range": [
+        53,
+        60
+      ],
+      "text": "Use the terrain to gain advantage.",
+      "_key": "!tables.results!51bb912b16737531.451800183bb235e7",
+      "_id": "451800183bb235e7"
+    },
+    {
+      "range": [
+        61,
+        68
+      ],
+      "text": "Take advantage of an opening.",
+      "_key": "!tables.results!51bb912b16737531.c58bf44010cf7185",
+      "_id": "c58bf44010cf7185"
+    },
+    {
+      "range": [
+        69,
+        78
+      ],
+      "text": "Create an opportunity.",
+      "_key": "!tables.results!51bb912b16737531.a69944e828fe4420",
+      "_id": "a69944e828fe4420"
+    },
+    {
+      "range": [
+        79,
+        89
+      ],
+      "text": "Attack with precision.",
+      "_key": "!tables.results!51bb912b16737531.c47baaf67af2bdc4",
+      "_id": "c47baaf67af2bdc4"
+    },
+    {
+      "range": [
+        90,
+        99
+      ],
+      "text": "Attack with power.",
+      "_key": "!tables.results!51bb912b16737531.c14baf94d7a1bd58",
+      "_id": "c14baf94d7a1bd58"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Take an unexpected action.",
+      "_key": "!tables.results!51bb912b16737531.7ef1b0886d7edd75",
+      "_id": "7ef1b0886d7edd75"
+    }
+  ],
+  "folder": "2208de03004d46a8",
+  "sort": 95,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!51bb912b16737531"
+}

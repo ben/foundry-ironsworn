@@ -21,6 +21,7 @@
 		"@datasworn-community/core": "^0.2.9",
 		"@datasworn-community/ironsworn-classic": "^0.2.2",
 		"@datasworn-community/ironsworn-classic-delve": "^0.2.3",
+		"@datasworn-community/ironsworn-classic-lodestar": "^0.2.3",
 		"@datasworn-community/starforged": "^0.2.2",
 		"@datasworn-community/sundered-isles": "^0.2.2",
 		"@foundryvtt/foundryvtt-cli": "^1.0",

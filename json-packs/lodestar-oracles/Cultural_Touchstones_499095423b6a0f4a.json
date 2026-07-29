@@ -1,0 +1,470 @@
+{
+  "_id": "499095423b6a0f4a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement",
+      "dsid": "oracle_rollable:lodestar/settlement/cultural_touchstones"
+    }
+  },
+  "name": "Cultural Touchstones",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Austere styles",
+      "_key": "!tables.results!499095423b6a0f4a.beb576e5d4be9641",
+      "_id": "beb576e5d4be9641"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Prophecy",
+      "_key": "!tables.results!499095423b6a0f4a.85987dd5b32376a1",
+      "_id": "85987dd5b32376a1"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Rites of adulthood",
+      "_key": "!tables.results!499095423b6a0f4a.79fcfa44abfe403d",
+      "_id": "79fcfa44abfe403d"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Feasting and merrymaking",
+      "_key": "!tables.results!499095423b6a0f4a.c6e7eac34952a5a9",
+      "_id": "c6e7eac34952a5a9"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Gambling",
+      "_key": "!tables.results!499095423b6a0f4a.81bb745a3b99564c",
+      "_id": "81bb745a3b99564c"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Code of pacifism",
+      "_key": "!tables.results!499095423b6a0f4a.1eed299d6e0d4018",
+      "_id": "1eed299d6e0d4018"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Suspicion of outsiders",
+      "_key": "!tables.results!499095423b6a0f4a.a3fce4d40c52823d",
+      "_id": "a3fce4d40c52823d"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Formal duels",
+      "_key": "!tables.results!499095423b6a0f4a.b4854c44788331e4",
+      "_id": "b4854c44788331e4"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Mysticism",
+      "_key": "!tables.results!499095423b6a0f4a.3a5d7203193212fa",
+      "_id": "3a5d7203193212fa"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Adherence to authority",
+      "_key": "!tables.results!499095423b6a0f4a.ef11499536f0c846",
+      "_id": "ef11499536f0c846"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Song and dance",
+      "_key": "!tables.results!499095423b6a0f4a.21fdbc28adc8d630",
+      "_id": "21fdbc28adc8d630"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Uncommon languages",
+      "_key": "!tables.results!499095423b6a0f4a.0d896442f36a5534",
+      "_id": "0d896442f36a5534"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Heavily-accented speech",
+      "_key": "!tables.results!499095423b6a0f4a.3fa349b55ae22994",
+      "_id": "3fa349b55ae22994"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Artistic expression",
+      "_key": "!tables.results!499095423b6a0f4a.4baa4934e0be95e1",
+      "_id": "4baa4934e0be95e1"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Distinctive armor",
+      "_key": "!tables.results!499095423b6a0f4a.5f00119731834001",
+      "_id": "5f00119731834001"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Bartering",
+      "_key": "!tables.results!499095423b6a0f4a.b1bc48fcd724d223",
+      "_id": "b1bc48fcd724d223"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Long mourning periods",
+      "_key": "!tables.results!499095423b6a0f4a.dbe7b6a47ed103a5",
+      "_id": "dbe7b6a47ed103a5"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Seasonal festivals",
+      "_key": "!tables.results!499095423b6a0f4a.3140f0e4ac14c607",
+      "_id": "3140f0e4ac14c607"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Blood feuds",
+      "_key": "!tables.results!499095423b6a0f4a.abe4467aeffd35a6",
+      "_id": "abe4467aeffd35a6"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Banishment of the disloyal",
+      "_key": "!tables.results!499095423b6a0f4a.64a2044343891ac2",
+      "_id": "64a2044343891ac2"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Rigid hierarchy",
+      "_key": "!tables.results!499095423b6a0f4a.1faaece3ca1839d2",
+      "_id": "1faaece3ca1839d2"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Unbreakable vows",
+      "_key": "!tables.results!499095423b6a0f4a.3086f48495566d5e",
+      "_id": "3086f48495566d5e"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Communal resources",
+      "_key": "!tables.results!499095423b6a0f4a.06fe39f87a37ab23",
+      "_id": "06fe39f87a37ab23"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Spirituality",
+      "_key": "!tables.results!499095423b6a0f4a.9fbf7a22cca3f4dc",
+      "_id": "9fbf7a22cca3f4dc"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Strict laws",
+      "_key": "!tables.results!499095423b6a0f4a.6a29f7e46070842d",
+      "_id": "6a29f7e46070842d"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Respect of elders",
+      "_key": "!tables.results!499095423b6a0f4a.a7f2865c01f1cb56",
+      "_id": "a7f2865c01f1cb56"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Courtesy and hospitality",
+      "_key": "!tables.results!499095423b6a0f4a.8bf6e77865fecfa8",
+      "_id": "8bf6e77865fecfa8"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Body modifications or tattoos",
+      "_key": "!tables.results!499095423b6a0f4a.2b1eea32bfea36f8",
+      "_id": "2b1eea32bfea36f8"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Pilgrimages",
+      "_key": "!tables.results!499095423b6a0f4a.c06ba5737d037b9c",
+      "_id": "c06ba5737d037b9c"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Superstition",
+      "_key": "!tables.results!499095423b6a0f4a.79db15ab129d3108",
+      "_id": "79db15ab129d3108"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Ceremonies and rituals",
+      "_key": "!tables.results!499095423b6a0f4a.dd950e177ee0fe5c",
+      "_id": "dd950e177ee0fe5c"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Blood debts",
+      "_key": "!tables.results!499095423b6a0f4a.4d0c6b40a998a992",
+      "_id": "4d0c6b40a998a992"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Familial clans",
+      "_key": "!tables.results!499095423b6a0f4a.f2c6cb80564fa14f",
+      "_id": "f2c6cb80564fa14f"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Isolationism and privacy",
+      "_key": "!tables.results!499095423b6a0f4a.d5d48a6c3038a427",
+      "_id": "d5d48a6c3038a427"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Communal hunts",
+      "_key": "!tables.results!499095423b6a0f4a.b9228e0e8ce1c2b7",
+      "_id": "b9228e0e8ce1c2b7"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Competitive tournaments",
+      "_key": "!tables.results!499095423b6a0f4a.ac1d02404c4f3e69",
+      "_id": "ac1d02404c4f3e69"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Code of honor",
+      "_key": "!tables.results!499095423b6a0f4a.b38eb7edc07107f7",
+      "_id": "b38eb7edc07107f7"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Storytelling",
+      "_key": "!tables.results!499095423b6a0f4a.66c0355fc3136c02",
+      "_id": "66c0355fc3136c02"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Conquest and battle prowess",
+      "_key": "!tables.results!499095423b6a0f4a.43704100ee9e0c96",
+      "_id": "43704100ee9e0c96"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Martyred heroes",
+      "_key": "!tables.results!499095423b6a0f4a.88c196f5db9415f8",
+      "_id": "88c196f5db9415f8"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Sacred texts",
+      "_key": "!tables.results!499095423b6a0f4a.b6eb742136e558f4",
+      "_id": "b6eb742136e558f4"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Rites of courtship",
+      "_key": "!tables.results!499095423b6a0f4a.b5e045aa0d9f2507",
+      "_id": "b5e045aa0d9f2507"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Bonded creatures",
+      "_key": "!tables.results!499095423b6a0f4a.33f7a6eead774bf5",
+      "_id": "33f7a6eead774bf5"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Signature weapon",
+      "_key": "!tables.results!499095423b6a0f4a.58099c9ab67501ab",
+      "_id": "58099c9ab67501ab"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Hidden identities",
+      "_key": "!tables.results!499095423b6a0f4a.38d2c8a4d41000d7",
+      "_id": "38d2c8a4d41000d7"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Gift-giving",
+      "_key": "!tables.results!499095423b6a0f4a.2e13f10fe4d14c0b",
+      "_id": "2e13f10fe4d14c0b"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Animal or nature motifs",
+      "_key": "!tables.results!499095423b6a0f4a.fb9ebe097bd0d68f",
+      "_id": "fb9ebe097bd0d68f"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Independence from authority",
+      "_key": "!tables.results!499095423b6a0f4a.75dbecc90cfa3961",
+      "_id": "75dbecc90cfa3961"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Unusual death rites",
+      "_key": "!tables.results!499095423b6a0f4a.d75bd12286cb7921",
+      "_id": "d75bd12286cb7921"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Elaborate styles",
+      "_key": "!tables.results!499095423b6a0f4a.4cfcaeceb2a8f324",
+      "_id": "4cfcaeceb2a8f324"
+    }
+  ],
+  "folder": "a456e82f6aca3d1c",
+  "sort": 67,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!499095423b6a0f4a"
+}

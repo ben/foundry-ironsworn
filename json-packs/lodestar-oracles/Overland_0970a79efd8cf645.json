@@ -1,0 +1,15 @@
+{
+  "name": "Overland",
+  "description": "",
+  "type": "RollTable",
+  "_id": "0970a79efd8cf645",
+  "sort": 54,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:lodestar/location/overland"
+    }
+  },
+  "folder": "04f764089683edef",
+  "sorting": "a",
+  "_key": "!folders!0970a79efd8cf645"
+}

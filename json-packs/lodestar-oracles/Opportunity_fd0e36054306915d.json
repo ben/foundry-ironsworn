@@ -1,0 +1,344 @@
+{
+  "_id": "fd0e36054306915d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/location/overland",
+      "dsid": "oracle_rollable:lodestar/location/overland/opportunity"
+    }
+  },
+  "name": "Opportunity",
+  "description": "<p>Use this oracle to reveal the nature of an unexpected and beneficial event on a journey.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Ideal weather takes hold",
+      "_key": "!tables.results!fd0e36054306915d.08013eefea8c2f5a",
+      "_id": "08013eefea8c2f5a"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "The terrain favors you",
+      "_key": "!tables.results!fd0e36054306915d.26d029a62b856f1d",
+      "_id": "26d029a62b856f1d"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "There are plentiful hunting or foraging opportunities in this area",
+      "_key": "!tables.results!fd0e36054306915d.1e7ef908a7762970",
+      "_id": "1e7ef908a7762970"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "A clear path leads through otherwise dangerous terrain",
+      "_key": "!tables.results!fd0e36054306915d.2abb2c8a9464b38f",
+      "_id": "2abb2c8a9464b38f"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "You find an ideal location for a campsite",
+      "_key": "!tables.results!fd0e36054306915d.6b81c3c62edd1179",
+      "_id": "6b81c3c62edd1179"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "An awe-inspiring vista offers comfort or inspiration",
+      "_key": "!tables.results!fd0e36054306915d.7cdce69bf43a8954",
+      "_id": "7cdce69bf43a8954"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "You find a useful item",
+      "_key": "!tables.results!fd0e36054306915d.ca6789b47915da53",
+      "_id": "ca6789b47915da53"
+    },
+    {
+      "range": [
+        27,
+        29
+      ],
+      "text": "A helpful traveler crosses your path",
+      "_key": "!tables.results!fd0e36054306915d.c6c1ac7de62063b9",
+      "_id": "c6c1ac7de62063b9"
+    },
+    {
+      "range": [
+        30,
+        32
+      ],
+      "text": "An intriguing site offers opportunities for exploration",
+      "_key": "!tables.results!fd0e36054306915d.4c4194e7f39b7157",
+      "_id": "4c4194e7f39b7157"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "A vantage point reveals a key landmark",
+      "_key": "!tables.results!fd0e36054306915d.86110b6d2a2fddac",
+      "_id": "86110b6d2a2fddac"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "A nearby settlement flies a friendly banner",
+      "_key": "!tables.results!fd0e36054306915d.800f15018ad807e5",
+      "_id": "800f15018ad807e5"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "Something about this journey sparks a fond or helpful memory",
+      "_key": "!tables.results!fd0e36054306915d.b67ddab6ad21470d",
+      "_id": "b67ddab6ad21470d"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "You encounter a helpful or useful animal",
+      "_key": "!tables.results!fd0e36054306915d.5479ce9a766ca0fc",
+      "_id": "5479ce9a766ca0fc"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "You encounter a friendly group of local denizens",
+      "_key": "!tables.results!fd0e36054306915d.78b246450928b7f2",
+      "_id": "78b246450928b7f2"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "A sheltered refuge offers a place to hide, plan, or recover",
+      "_key": "!tables.results!fd0e36054306915d.bea7b98bfe45c00a",
+      "_id": "bea7b98bfe45c00a"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "A monument or relic reveals something of the history of this land",
+      "_key": "!tables.results!fd0e36054306915d.16d72b79f9f41d09",
+      "_id": "16d72b79f9f41d09"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "You find plants or herbs with potentially helpful qualities",
+      "_key": "!tables.results!fd0e36054306915d.24576adb28968dc1",
+      "_id": "24576adb28968dc1"
+    },
+    {
+      "range": [
+        57,
+        59
+      ],
+      "text": "Tracks or a cooling campfire show that others have passed this way",
+      "_key": "!tables.results!fd0e36054306915d.f813658c89ba3438",
+      "_id": "f813658c89ba3438"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "You are forewarned of a dangerous path",
+      "_key": "!tables.results!fd0e36054306915d.d46ae7bdfd9f02da",
+      "_id": "d46ae7bdfd9f02da"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "A desolate settlement or camp offers scavenging opportunities",
+      "_key": "!tables.results!fd0e36054306915d.8208f3282d31618a",
+      "_id": "8208f3282d31618a"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "You find an opening to distract, escape, or avoid foes",
+      "_key": "!tables.results!fd0e36054306915d.536b6b8416e698a4",
+      "_id": "536b6b8416e698a4"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "A clue offers insight into a current quest or mystery",
+      "_key": "!tables.results!fd0e36054306915d.8ffc1783bd332e59",
+      "_id": "8ffc1783bd332e59"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "You encounter a potential benefactor in need of help",
+      "_key": "!tables.results!fd0e36054306915d.1587e46eacc11662",
+      "_id": "1587e46eacc11662"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "You learn or improve a useful skill",
+      "_key": "!tables.results!fd0e36054306915d.14a57d0f984f262b",
+      "_id": "14a57d0f984f262b"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "A caravan offers the potential comforts and safety of a community",
+      "_key": "!tables.results!fd0e36054306915d.fd43402322a02a9a",
+      "_id": "fd43402322a02a9a"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "You experience a helpful dream or vision",
+      "_key": "!tables.results!fd0e36054306915d.7df07c472337122a",
+      "_id": "7df07c472337122a"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "The terrain offers a defensible position against a threat",
+      "_key": "!tables.results!fd0e36054306915d.76033bf6e182092d",
+      "_id": "76033bf6e182092d"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "A supernatural entity offers helpful guidance",
+      "_key": "!tables.results!fd0e36054306915d.40aa58fdd4b17a0c",
+      "_id": "40aa58fdd4b17a0c"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "You encounter a majestic or previously unknown creature",
+      "_key": "!tables.results!fd0e36054306915d.0235a5ddda0b810f",
+      "_id": "0235a5ddda0b810f"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "A lurking foe unwittingly reveals themselves, giving you the drop on them",
+      "_key": "!tables.results!fd0e36054306915d.84979d41a43ab44c",
+      "_id": "84979d41a43ab44c"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "You spot a friendly animal keeping pace with you—a good omen",
+      "_key": "!tables.results!fd0e36054306915d.da826c10775f6a26",
+      "_id": "da826c10775f6a26"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "A signpost or marker provides guidance",
+      "_key": "!tables.results!fd0e36054306915d.5f4a475fa5ce6d8a",
+      "_id": "5f4a475fa5ce6d8a"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "An otherwise dangerous predator shows benign interest in you",
+      "_key": "!tables.results!fd0e36054306915d.18054357c0bf0b4c",
+      "_id": "18054357c0bf0b4c"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "A stone or tree bears helpful or inspiring markings from past travelers",
+      "_key": "!tables.results!fd0e36054306915d.d18640c93ac93f3c",
+      "_id": "d18640c93ac93f3c"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "You experience a moment of fellowship or inner peace",
+      "_key": "!tables.results!fd0e36054306915d.cb403826cd6e4bb7",
+      "_id": "cb403826cd6e4bb7"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "You find an object or resource of great value",
+      "_key": "!tables.results!fd0e36054306915d.3f521d139536f491",
+      "_id": "3f521d139536f491"
+    }
+  ],
+  "folder": "0970a79efd8cf645",
+  "sort": 59,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fd0e36054306915d"
+}

@@ -1,0 +1,54 @@
+{
+  "_id": "a54dcc1606541cc9",
+  "type": "sfmove",
+  "name": "Begin the Scene",
+  "img": "icons/dice/d10black.svg",
+  "folder": "38cf8e63be53ee98",
+  "system": {
+    "dfid": "move:lodestar/scene_challenge/begin_the_scene",
+    "Category": "move_category:lodestar/scene_challenge",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you face an extended or complex challenge__, name your objective and choose a rank as appropriate to the situation.\n\n  * You have a clear advantage: Troublesome\n  * You are ready to act: Dangerous\n  * You are unprepared or outmatched: Formidable\n\nThen, activate a four-segment countdown track and @Compendium[foundry-ironsworn.ironsworndolestarmoves.13be249ae65798ac]{Face Danger} or @Compendium[foundry-ironsworn.ironsworndolestarmoves.29d091067086ac7f]{Secure an Advantage} to take action.",
+    "Trigger": {
+      "Text": "When you face an extended or complex challenge...",
+      "Options": []
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": ""
+      },
+      "Miss": {
+        "Text": "",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn Lodestar",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2025-05-01",
+      "Page": 11
+    },
+    "Suggestions": {}
+  },
+  "sort": 11,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:lodestar/scene_challenge/begin_the_scene",
+      "dsid": "move:lodestar/scene_challenge/begin_the_scene"
+    }
+  },
+  "_key": "!items!a54dcc1606541cc9"
+}

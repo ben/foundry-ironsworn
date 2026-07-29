@@ -1,5 +1,6 @@
 import classic from '@datasworn-community/ironsworn-classic/json/classic.json'
 import delve from '@datasworn-community/ironsworn-classic-delve/json/delve.json'
+import lodestar from '@datasworn-community/ironsworn-classic-lodestar/json/lodestar.json'
 import starforged from '@datasworn-community/starforged/json/starforged.json'
 import sunderedIsles from '@datasworn-community/sundered-isles/json/sundered_isles.json'
 
@@ -9,6 +10,7 @@ import type { Datasworn } from '@datasworn-community/core'
 const rulesPackages = [
 	classic,
 	delve,
+	lodestar,
 	starforged,
 	sunderedIsles
 ] as Datasworn.RulesPackage[]

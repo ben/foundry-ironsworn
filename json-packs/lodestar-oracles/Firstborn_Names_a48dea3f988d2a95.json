@@ -1,0 +1,15 @@
+{
+  "name": "Firstborn Names",
+  "description": "Use these names for elves, giants, varou, and trolls.",
+  "type": "RollTable",
+  "_id": "a48dea3f988d2a95",
+  "sort": 75,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:lodestar/name/firstborn"
+    }
+  },
+  "folder": "c52e289e6aa4a873",
+  "sorting": "a",
+  "_key": "!folders!a48dea3f988d2a95"
+}

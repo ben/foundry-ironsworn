@@ -1,0 +1,290 @@
+{
+  "_id": "2f32e55f7c26be53",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement/quick_name",
+      "dsid": "oracle_rollable:lodestar/settlement/quick_name/prefix_b"
+    }
+  },
+  "name": "Prefix B",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Forge-",
+      "_key": "!tables.results!2f32e55f7c26be53.90e5ecd40b4252ae",
+      "_id": "90e5ecd40b4252ae"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Fallow-",
+      "_key": "!tables.results!2f32e55f7c26be53.9957b9142209604e",
+      "_id": "9957b9142209604e"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Red-",
+      "_key": "!tables.results!2f32e55f7c26be53.8c888e72656519c8",
+      "_id": "8c888e72656519c8"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Wyrd-",
+      "_key": "!tables.results!2f32e55f7c26be53.abf0c20b945583ca",
+      "_id": "abf0c20b945583ca"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Bleak-",
+      "_key": "!tables.results!2f32e55f7c26be53.85067d8eab3a0bb4",
+      "_id": "85067d8eab3a0bb4"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Wood-",
+      "_key": "!tables.results!2f32e55f7c26be53.fa1b1b5354da8c8e",
+      "_id": "fa1b1b5354da8c8e"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Gray-",
+      "_key": "!tables.results!2f32e55f7c26be53.b9832c1bf1b20d47",
+      "_id": "b9832c1bf1b20d47"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Draug-",
+      "_key": "!tables.results!2f32e55f7c26be53.b7b6abecf91319b6",
+      "_id": "b7b6abecf91319b6"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "High-",
+      "_key": "!tables.results!2f32e55f7c26be53.9086f1750e40ec2e",
+      "_id": "9086f1750e40ec2e"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Raven-",
+      "_key": "!tables.results!2f32e55f7c26be53.22e9b8f21aa30c96",
+      "_id": "22e9b8f21aa30c96"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "Deep-",
+      "_key": "!tables.results!2f32e55f7c26be53.da83e520526417ec",
+      "_id": "da83e520526417ec"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Tide-",
+      "_key": "!tables.results!2f32e55f7c26be53.7057bf2146f2b22e",
+      "_id": "7057bf2146f2b22e"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "Ash-",
+      "_key": "!tables.results!2f32e55f7c26be53.810be54c4949f2d6",
+      "_id": "810be54c4949f2d6"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "Frost-",
+      "_key": "!tables.results!2f32e55f7c26be53.9e51bb848752ba71",
+      "_id": "9e51bb848752ba71"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "Dark-",
+      "_key": "!tables.results!2f32e55f7c26be53.a9339043c57f6042",
+      "_id": "a9339043c57f6042"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "Storm-",
+      "_key": "!tables.results!2f32e55f7c26be53.34e4277810c9570a",
+      "_id": "34e4277810c9570a"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "Ember-",
+      "_key": "!tables.results!2f32e55f7c26be53.c9a39d2a9decc257",
+      "_id": "c9a39d2a9decc257"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "Flint-",
+      "_key": "!tables.results!2f32e55f7c26be53.518c8dbd8b872dff",
+      "_id": "518c8dbd8b872dff"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "Thorn-",
+      "_key": "!tables.results!2f32e55f7c26be53.23a62cd7f0f7fcc2",
+      "_id": "23a62cd7f0f7fcc2"
+    },
+    {
+      "range": [
+        68,
+        70
+      ],
+      "text": "Axe-",
+      "_key": "!tables.results!2f32e55f7c26be53.4fbfc8c0fb9b0cdb",
+      "_id": "4fbfc8c0fb9b0cdb"
+    },
+    {
+      "range": [
+        71,
+        73
+      ],
+      "text": "Black-",
+      "_key": "!tables.results!2f32e55f7c26be53.9314ad0b0aa269a1",
+      "_id": "9314ad0b0aa269a1"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "Nettle-",
+      "_key": "!tables.results!2f32e55f7c26be53.32bb06fbfee754a7",
+      "_id": "32bb06fbfee754a7"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "Broad-",
+      "_key": "!tables.results!2f32e55f7c26be53.a19095cdbc979bc6",
+      "_id": "a19095cdbc979bc6"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "Hearth-",
+      "_key": "!tables.results!2f32e55f7c26be53.4fd4d7de4ef7eea8",
+      "_id": "4fd4d7de4ef7eea8"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "Ice-",
+      "_key": "!tables.results!2f32e55f7c26be53.72d5d60b5bc1799b",
+      "_id": "72d5d60b5bc1799b"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "Bitter-",
+      "_key": "!tables.results!2f32e55f7c26be53.7c66c0509bbe0eda",
+      "_id": "7c66c0509bbe0eda"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "Great-",
+      "_key": "!tables.results!2f32e55f7c26be53.abe626cf45d10752",
+      "_id": "abe626cf45d10752"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "Bear-",
+      "_key": "!tables.results!2f32e55f7c26be53.f572ff0bd5372d06",
+      "_id": "f572ff0bd5372d06"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "Skarn-",
+      "_key": "!tables.results!2f32e55f7c26be53.fd2da449ed8a706b",
+      "_id": "fd2da449ed8a706b"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Shade-",
+      "_key": "!tables.results!2f32e55f7c26be53.95533df8c420db3a",
+      "_id": "95533df8c420db3a"
+    }
+  ],
+  "folder": "c4bf0c3b4d189653",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!2f32e55f7c26be53"
+}
