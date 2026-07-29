@@ -9,11 +9,13 @@ import * as IronTheme from '../features/irontheme'
 export type DataswornRulesetKey =
 	| 'classic'
 	| 'delve'
+	| 'lodestar'
 	| 'starforged'
 	| 'sundered_isles'
 export const RULESETS: DataswornRulesetKey[] = [
 	'classic',
 	'delve',
+	'lodestar',
 	'starforged',
 	'sundered_isles'
 ]
@@ -32,6 +34,7 @@ declare global {
 
 			'foundry-ironsworn.ruleset-classic': boolean
 			'foundry-ironsworn.ruleset-delve': boolean
+			'foundry-ironsworn.ruleset-lodestar': boolean
 			'foundry-ironsworn.ruleset-starforged': boolean
 			'foundry-ironsworn.ruleset-sundered_isles': boolean
 

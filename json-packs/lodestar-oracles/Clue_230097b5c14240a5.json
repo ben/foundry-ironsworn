@@ -1,0 +1,326 @@
+{
+  "_id": "230097b5c14240a5",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/story",
+      "dsid": "oracle_rollable:lodestar/story/clue"
+    }
+  },
+  "name": "Clue",
+  "description": "<p>When you investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, supernatural revelations, or physical evidence. Use this oracle to help reveal what this evidence connects to or implicates.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        3
+      ],
+      "text": "Affirms a previously understood fact or clue",
+      "_key": "!tables.results!230097b5c14240a5.564f05217d031385",
+      "_id": "564f05217d031385"
+    },
+    {
+      "range": [
+        4,
+        6
+      ],
+      "text": "Connects to a known rumor or scandal",
+      "_key": "!tables.results!230097b5c14240a5.95ac01612ed9d5ac",
+      "_id": "95ac01612ed9d5ac"
+    },
+    {
+      "range": [
+        7,
+        9
+      ],
+      "text": "Connects to a previously unrelated mystery or quest",
+      "_key": "!tables.results!230097b5c14240a5.53ad51d2bf553dd2",
+      "_id": "53ad51d2bf553dd2"
+    },
+    {
+      "range": [
+        10,
+        12
+      ],
+      "text": "Connects to your own expertise or interests",
+      "_key": "!tables.results!230097b5c14240a5.05fdc43b35081e14",
+      "_id": "05fdc43b35081e14"
+    },
+    {
+      "range": [
+        13,
+        15
+      ],
+      "text": "Contradicts a previously understood fact or clue",
+      "_key": "!tables.results!230097b5c14240a5.eb7d85e0d247a9f9",
+      "_id": "eb7d85e0d247a9f9"
+    },
+    {
+      "range": [
+        16,
+        18
+      ],
+      "text": "Evokes a personal memory",
+      "_key": "!tables.results!230097b5c14240a5.87fdaa136c429fd9",
+      "_id": "87fdaa136c429fd9"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Evokes a legend or prophecy",
+      "_key": "!tables.results!230097b5c14240a5.b0ae38a555e7abc8",
+      "_id": "b0ae38a555e7abc8"
+    },
+    {
+      "range": [
+        22,
+        24
+      ],
+      "text": "Evokes a dream or vision",
+      "_key": "!tables.results!230097b5c14240a5.8c8a71b06c23badc",
+      "_id": "8c8a71b06c23badc"
+    },
+    {
+      "range": [
+        25,
+        27
+      ],
+      "text": "Involves a hidden or mysterious community",
+      "_key": "!tables.results!230097b5c14240a5.2467f7f231733c2e",
+      "_id": "2467f7f231733c2e"
+    },
+    {
+      "range": [
+        28,
+        30
+      ],
+      "text": "Involves a hidden or mysterious person",
+      "_key": "!tables.results!230097b5c14240a5.2f1586b5279af502",
+      "_id": "2f1586b5279af502"
+    },
+    {
+      "range": [
+        31,
+        33
+      ],
+      "text": "Involves a nonhuman being or entity",
+      "_key": "!tables.results!230097b5c14240a5.f2c82dbe7c062485",
+      "_id": "f2c82dbe7c062485"
+    },
+    {
+      "range": [
+        34,
+        36
+      ],
+      "text": "Involves a creature",
+      "_key": "!tables.results!230097b5c14240a5.17f832af3ce36b27",
+      "_id": "17f832af3ce36b27"
+    },
+    {
+      "range": [
+        37,
+        39
+      ],
+      "text": "Involves an artifact or precious object",
+      "_key": "!tables.results!230097b5c14240a5.b71913eea816d4ab",
+      "_id": "b71913eea816d4ab"
+    },
+    {
+      "range": [
+        40,
+        42
+      ],
+      "text": "Involves a personal item",
+      "_key": "!tables.results!230097b5c14240a5.906679bb9a19455a",
+      "_id": "906679bb9a19455a"
+    },
+    {
+      "range": [
+        43,
+        45
+      ],
+      "text": "Involves a weapon",
+      "_key": "!tables.results!230097b5c14240a5.7be61bd9fb5eaae5",
+      "_id": "7be61bd9fb5eaae5"
+    },
+    {
+      "range": [
+        46,
+        48
+      ],
+      "text": "Involves a valuable resource",
+      "_key": "!tables.results!230097b5c14240a5.4fcabe748f649212",
+      "_id": "4fcabe748f649212"
+    },
+    {
+      "range": [
+        49,
+        51
+      ],
+      "text": "Involves a notable community or faction",
+      "_key": "!tables.results!230097b5c14240a5.863ab3f7264e43da",
+      "_id": "863ab3f7264e43da"
+    },
+    {
+      "range": [
+        52,
+        54
+      ],
+      "text": "Involves a leader or notable person",
+      "_key": "!tables.results!230097b5c14240a5.e48a6d4ffd307604",
+      "_id": "e48a6d4ffd307604"
+    },
+    {
+      "range": [
+        55,
+        57
+      ],
+      "text": "Involves a person or community from your background",
+      "_key": "!tables.results!230097b5c14240a5.72189d3fbeda9d6b",
+      "_id": "72189d3fbeda9d6b"
+    },
+    {
+      "range": [
+        58,
+        60
+      ],
+      "text": "Involves an enemy or rival",
+      "_key": "!tables.results!230097b5c14240a5.7f7e8c8aa9a2b3d3",
+      "_id": "7f7e8c8aa9a2b3d3"
+    },
+    {
+      "range": [
+        61,
+        63
+      ],
+      "text": "Involves someone you trust",
+      "_key": "!tables.results!230097b5c14240a5.44332df38768c0e3",
+      "_id": "44332df38768c0e3"
+    },
+    {
+      "range": [
+        64,
+        65
+      ],
+      "text": "Involves a mystic power or ritual",
+      "_key": "!tables.results!230097b5c14240a5.2839d96f6557de83",
+      "_id": "2839d96f6557de83"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "Involves an ailment or affliction",
+      "_key": "!tables.results!230097b5c14240a5.38f11805d9d085f2",
+      "_id": "38f11805d9d085f2"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "Involves a religion or belief",
+      "_key": "!tables.results!230097b5c14240a5.4e09e720ba8c599b",
+      "_id": "4e09e720ba8c599b"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "Involves a promise or debt",
+      "_key": "!tables.results!230097b5c14240a5.3c6400eafc8984f7",
+      "_id": "3c6400eafc8984f7"
+    },
+    {
+      "range": [
+        75,
+        77
+      ],
+      "text": "Leads to a nearby or familiar place",
+      "_key": "!tables.results!230097b5c14240a5.88876410c73998b1",
+      "_id": "88876410c73998b1"
+    },
+    {
+      "range": [
+        78,
+        80
+      ],
+      "text": "Leads to an ancient or ruined place",
+      "_key": "!tables.results!230097b5c14240a5.f4f618fea3ec2c93",
+      "_id": "f4f618fea3ec2c93"
+    },
+    {
+      "range": [
+        81,
+        83
+      ],
+      "text": "Leads to a settled place",
+      "_key": "!tables.results!230097b5c14240a5.86307abfb556150f",
+      "_id": "86307abfb556150f"
+    },
+    {
+      "range": [
+        84,
+        86
+      ],
+      "text": "Leads to a remote or wild place",
+      "_key": "!tables.results!230097b5c14240a5.a4a4614d6105d97b",
+      "_id": "a4a4614d6105d97b"
+    },
+    {
+      "range": [
+        87,
+        89
+      ],
+      "text": "Leads to a notable landmark",
+      "_key": "!tables.results!230097b5c14240a5.dbbaf64d1da0a7b9",
+      "_id": "dbbaf64d1da0a7b9"
+    },
+    {
+      "range": [
+        90,
+        91
+      ],
+      "text": "Leads to a mystical or unearthly place",
+      "_key": "!tables.results!230097b5c14240a5.f55aaf2d917c58fd",
+      "_id": "f55aaf2d917c58fd"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "Suggests a history of similar incidents",
+      "_key": "!tables.results!230097b5c14240a5.65101f368bcff4e1",
+      "_id": "65101f368bcff4e1"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "Suggests a looming event or deadline",
+      "_key": "!tables.results!230097b5c14240a5.473dde155079dcc2",
+      "_id": "473dde155079dcc2"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "Suggests an imposter or deception",
+      "_key": "!tables.results!230097b5c14240a5.d4c68b34593c8329",
+      "_id": "d4c68b34593c8329"
+    }
+  ],
+  "folder": "0093b58c609db555",
+  "sort": 93,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!230097b5c14240a5"
+}

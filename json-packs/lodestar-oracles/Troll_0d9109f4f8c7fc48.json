@@ -1,0 +1,245 @@
+{
+  "_id": "0d9109f4f8c7fc48",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/name/firstborn",
+      "dsid": "oracle_rollable:lodestar/name/firstborn/troll"
+    }
+  },
+  "name": "Troll",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Rattle",
+      "_key": "!tables.results!0d9109f4f8c7fc48.102fd1951b604b6f",
+      "_id": "102fd1951b604b6f"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Scratch",
+      "_key": "!tables.results!0d9109f4f8c7fc48.e8d563e15c165a3c",
+      "_id": "e8d563e15c165a3c"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Wallow",
+      "_key": "!tables.results!0d9109f4f8c7fc48.9f6198043de00e8a",
+      "_id": "9f6198043de00e8a"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Groak",
+      "_key": "!tables.results!0d9109f4f8c7fc48.3e24e2eb69507cd8",
+      "_id": "3e24e2eb69507cd8"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Gimble",
+      "_key": "!tables.results!0d9109f4f8c7fc48.6dc69d2a3997ebfe",
+      "_id": "6dc69d2a3997ebfe"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Scar",
+      "_key": "!tables.results!0d9109f4f8c7fc48.b2324a56367bf54d",
+      "_id": "b2324a56367bf54d"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Cratch",
+      "_key": "!tables.results!0d9109f4f8c7fc48.3a8cabd3861e578f",
+      "_id": "3a8cabd3861e578f"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Creech",
+      "_key": "!tables.results!0d9109f4f8c7fc48.f81e6878bc619741",
+      "_id": "f81e6878bc619741"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Shush",
+      "_key": "!tables.results!0d9109f4f8c7fc48.dfa01f76ba2b040c",
+      "_id": "dfa01f76ba2b040c"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Glush",
+      "_key": "!tables.results!0d9109f4f8c7fc48.00a807e02f18b410",
+      "_id": "00a807e02f18b410"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Slar",
+      "_key": "!tables.results!0d9109f4f8c7fc48.f0169ed51a29c59d",
+      "_id": "f0169ed51a29c59d"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Gnash",
+      "_key": "!tables.results!0d9109f4f8c7fc48.f3f6942246db8e1a",
+      "_id": "f3f6942246db8e1a"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Stoad",
+      "_key": "!tables.results!0d9109f4f8c7fc48.52df9df995dec8d1",
+      "_id": "52df9df995dec8d1"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Grig",
+      "_key": "!tables.results!0d9109f4f8c7fc48.b2fe8357c52b70fc",
+      "_id": "b2fe8357c52b70fc"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Bleat",
+      "_key": "!tables.results!0d9109f4f8c7fc48.c223ba8443f17103",
+      "_id": "c223ba8443f17103"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Chortle",
+      "_key": "!tables.results!0d9109f4f8c7fc48.01657055501ec2b2",
+      "_id": "01657055501ec2b2"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Cluck",
+      "_key": "!tables.results!0d9109f4f8c7fc48.3b2d20f6dd5a1bed",
+      "_id": "3b2d20f6dd5a1bed"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Slith",
+      "_key": "!tables.results!0d9109f4f8c7fc48.ebe0dffcf2068b5c",
+      "_id": "ebe0dffcf2068b5c"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Mongo",
+      "_key": "!tables.results!0d9109f4f8c7fc48.5b5b803436c87eb6",
+      "_id": "5b5b803436c87eb6"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Creak",
+      "_key": "!tables.results!0d9109f4f8c7fc48.5988243ae54e4b37",
+      "_id": "5988243ae54e4b37"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Burble",
+      "_key": "!tables.results!0d9109f4f8c7fc48.f82652a8f62e454b",
+      "_id": "f82652a8f62e454b"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Vrusk",
+      "_key": "!tables.results!0d9109f4f8c7fc48.be427d967ea689ce",
+      "_id": "be427d967ea689ce"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Snuffle",
+      "_key": "!tables.results!0d9109f4f8c7fc48.d6fe01588fac4ecb",
+      "_id": "d6fe01588fac4ecb"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Leech",
+      "_key": "!tables.results!0d9109f4f8c7fc48.0fd78ef295220670",
+      "_id": "0fd78ef295220670"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Herk",
+      "_key": "!tables.results!0d9109f4f8c7fc48.b94ed2a5947e64c3",
+      "_id": "b94ed2a5947e64c3"
+    }
+  ],
+  "folder": "a48dea3f988d2a95",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0d9109f4f8c7fc48"
+}

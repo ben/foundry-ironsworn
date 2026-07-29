@@ -1,0 +1,344 @@
+{
+  "_id": "779613f596cd663c",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/location/coastal_waters",
+      "dsid": "oracle_rollable:lodestar/location/coastal_waters/peril"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Use this oracle to reveal the nature of a perilous event or complication on a journey.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Provisions are lost, wasted, or spoiled",
+      "_key": "!tables.results!779613f596cd663c.1a78a2118cb9295b",
+      "_id": "1a78a2118cb9295b"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "The weather takes a turn for the worse",
+      "_key": "!tables.results!779613f596cd663c.61728c526b9f5820",
+      "_id": "61728c526b9f5820"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Rough seas hamper your progress",
+      "_key": "!tables.results!779613f596cd663c.a1b521720f8555c1",
+      "_id": "a1b521720f8555c1"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Lingering foul weather tests your endurance",
+      "_key": "!tables.results!779613f596cd663c.1083b160ab18ebee",
+      "_id": "1083b160ab18ebee"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "A piece of important gear is damaged or broken",
+      "_key": "!tables.results!779613f596cd663c.f7e2ad3321de753b",
+      "_id": "f7e2ad3321de753b"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "Rocky shoals or shallows slow your progress",
+      "_key": "!tables.results!779613f596cd663c.0880834f563fa0c5",
+      "_id": "0880834f563fa0c5"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "Powerful currents or winds pull you off course",
+      "_key": "!tables.results!779613f596cd663c.efd205bc3d88a06a",
+      "_id": "efd205bc3d88a06a"
+    },
+    {
+      "range": [
+        27,
+        29
+      ],
+      "text": "You realize something important was lost or left behind",
+      "_key": "!tables.results!779613f596cd663c.7607b10823772574",
+      "_id": "7607b10823772574"
+    },
+    {
+      "range": [
+        30,
+        32
+      ],
+      "text": "An injury or old pain causes trouble",
+      "_key": "!tables.results!779613f596cd663c.8a7a56022d3a99e0",
+      "_id": "8a7a56022d3a99e0"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "Fog or darkness hides a lurking danger",
+      "_key": "!tables.results!779613f596cd663c.67794c629ecaabc7",
+      "_id": "67794c629ecaabc7"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "A sudden storm assails you",
+      "_key": "!tables.results!779613f596cd663c.54564d672f7d7ec3",
+      "_id": "54564d672f7d7ec3"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "A rogue wave crashes into you",
+      "_key": "!tables.results!779613f596cd663c.2adeb2e23b3fab37",
+      "_id": "2adeb2e23b3fab37"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "A critical component of your watercraft is lost or damaged",
+      "_key": "!tables.results!779613f596cd663c.82399ce839c824c4",
+      "_id": "82399ce839c824c4"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Disease or sickness takes hold",
+      "_key": "!tables.results!779613f596cd663c.0fda0c661928aa34",
+      "_id": "0fda0c661928aa34"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "You lose your way amidst an accursed fog",
+      "_key": "!tables.results!779613f596cd663c.f98c2f8aec41b030",
+      "_id": "f98c2f8aec41b030"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "A ship or boat is in distress",
+      "_key": "!tables.results!779613f596cd663c.e8a92d6da62360b8",
+      "_id": "e8a92d6da62360b8"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Your hull is fouled or leaking",
+      "_key": "!tables.results!779613f596cd663c.d7bdf8d3400812de",
+      "_id": "d7bdf8d3400812de"
+    },
+    {
+      "range": [
+        57,
+        59
+      ],
+      "text": "An enemy ship closes on you",
+      "_key": "!tables.results!779613f596cd663c.68a513e229aa2e80",
+      "_id": "68a513e229aa2e80"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "You are lost or off course",
+      "_key": "!tables.results!779613f596cd663c.e12891d998e7bc16",
+      "_id": "e12891d998e7bc16"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Dangerous creatures harass your watercraft",
+      "_key": "!tables.results!779613f596cd663c.457bbd285c0aa622",
+      "_id": "457bbd285c0aa622"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "You encounter a monstrous sea creature",
+      "_key": "!tables.results!779613f596cd663c.f7cbaec4ddccde2a",
+      "_id": "f7cbaec4ddccde2a"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "You are trapped in frozen seas",
+      "_key": "!tables.results!779613f596cd663c.40cb3c3889dbf61b",
+      "_id": "40cb3c3889dbf61b"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "You spot a settlement or camp in crisis",
+      "_key": "!tables.results!779613f596cd663c.3eb7b05beea44237",
+      "_id": "3eb7b05beea44237"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "A flying beast attacks",
+      "_key": "!tables.results!779613f596cd663c.e85c331898efee3b",
+      "_id": "e85c331898efee3b"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "You are caught within unnatural mist or darkness",
+      "_key": "!tables.results!779613f596cd663c.f2609b9233489dce",
+      "_id": "f2609b9233489dce"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "A blockade of ships stands in your way",
+      "_key": "!tables.results!779613f596cd663c.c1cb02ef423477bc",
+      "_id": "c1cb02ef423477bc"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "You face a dreadful apparition or hallucination",
+      "_key": "!tables.results!779613f596cd663c.7b340d5f99f124d6",
+      "_id": "7b340d5f99f124d6"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "A companion or fellow traveler is injured or falls ill",
+      "_key": "!tables.results!779613f596cd663c.b5162331122a45b6",
+      "_id": "b5162331122a45b6"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "A supernatural entity seeks vengeance or absolution",
+      "_key": "!tables.results!779613f596cd663c.79e03912708ab420",
+      "_id": "79e03912708ab420"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "A companion or fellow traveler draws the attention of a new danger",
+      "_key": "!tables.results!779613f596cd663c.65d5413482e98ae6",
+      "_id": "65d5413482e98ae6"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "An unnatural mist or darkness surrounds you",
+      "_key": "!tables.results!779613f596cd663c.faf87c3b64d138bb",
+      "_id": "faf87c3b64d138bb"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "A dangerous current or whirlpool takes hold",
+      "_key": "!tables.results!779613f596cd663c.d4c7155f2668d53a",
+      "_id": "d4c7155f2668d53a"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "You run aground in shallow waters",
+      "_key": "!tables.results!779613f596cd663c.ec8e910a6742a09f",
+      "_id": "ec8e910a6742a09f"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "A maze of rocky outcroppings or ice flows forces careful navigation",
+      "_key": "!tables.results!779613f596cd663c.1b40902dd3047dd4",
+      "_id": "1b40902dd3047dd4"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "A companion or fellow traveler causes a delay",
+      "_key": "!tables.results!779613f596cd663c.eb722a297de9ab4f",
+      "_id": "eb722a297de9ab4f"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Your presence triggers a spell or supernatural anomaly",
+      "_key": "!tables.results!779613f596cd663c.859bcd67803dd6d3",
+      "_id": "859bcd67803dd6d3"
+    }
+  ],
+  "folder": "3ea0b7b6862733f1",
+  "sort": 64,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!779613f596cd663c"
+}

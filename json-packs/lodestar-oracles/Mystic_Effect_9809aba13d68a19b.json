@@ -1,0 +1,434 @@
+{
+  "_id": "9809aba13d68a19b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/magic",
+      "dsid": "oracle_rollable:lodestar/magic/mystic_effect"
+    }
+  },
+  "name": "Mystic Effect",
+  "description": "<p>Use this oracle to reveal the nature or outcome of a mystic power, ritual effect, or supernatural phenomenon.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Alter the weather.",
+      "_key": "!tables.results!9809aba13d68a19b.717f5335602e5fcf",
+      "_id": "717f5335602e5fcf"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Nullify other powers.",
+      "_key": "!tables.results!9809aba13d68a19b.95ebeac4c3dabce4",
+      "_id": "95ebeac4c3dabce4"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Imbue an object with power.",
+      "_key": "!tables.results!9809aba13d68a19b.dcf3896cff64794b",
+      "_id": "dcf3896cff64794b"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Disintegrate or decay objects.",
+      "_key": "!tables.results!9809aba13d68a19b.51cca136f706ae4e",
+      "_id": "51cca136f706ae4e"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Awaken an ancient being.",
+      "_key": "!tables.results!9809aba13d68a19b.811ead7929022a9b",
+      "_id": "811ead7929022a9b"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Summon a monstrous creature.",
+      "_key": "!tables.results!9809aba13d68a19b.318a12ef0537a2a7",
+      "_id": "318a12ef0537a2a7"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Bind to a vow or task.",
+      "_key": "!tables.results!9809aba13d68a19b.91786fbe1ad45d0d",
+      "_id": "91786fbe1ad45d0d"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Give life to inanimate forms.",
+      "_key": "!tables.results!9809aba13d68a19b.177daa1f19a51206",
+      "_id": "177daa1f19a51206"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Unleash a plague.",
+      "_key": "!tables.results!9809aba13d68a19b.9a275d510b4e8cb9",
+      "_id": "9a275d510b4e8cb9"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Control elemental forces.",
+      "_key": "!tables.results!9809aba13d68a19b.b474a58368fef315",
+      "_id": "b474a58368fef315"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Erase or suppresses memories.",
+      "_key": "!tables.results!9809aba13d68a19b.6f23d84b48a3189a",
+      "_id": "6f23d84b48a3189a"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Shroud in lasting darkness.",
+      "_key": "!tables.results!9809aba13d68a19b.04f522c2d0be2a66",
+      "_id": "04f522c2d0be2a66"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Alter surrounding environment.",
+      "_key": "!tables.results!9809aba13d68a19b.6692361d1b5e5040",
+      "_id": "6692361d1b5e5040"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Bind to a location.",
+      "_key": "!tables.results!9809aba13d68a19b.cddc5476e48a3e33",
+      "_id": "cddc5476e48a3e33"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Inflict cursed luck.",
+      "_key": "!tables.results!9809aba13d68a19b.5d5b831355f06dc4",
+      "_id": "5d5b831355f06dc4"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Incite negative emotions.",
+      "_key": "!tables.results!9809aba13d68a19b.9511e97b955d4aed",
+      "_id": "9511e97b955d4aed"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Awaken latent powers in another.",
+      "_key": "!tables.results!9809aba13d68a19b.528553fb703e291a",
+      "_id": "528553fb703e291a"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "Inflict aging or wasting.",
+      "_key": "!tables.results!9809aba13d68a19b.96d78e61165e0938",
+      "_id": "96d78e61165e0938"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "Bind to a restless spirit.",
+      "_key": "!tables.results!9809aba13d68a19b.647519a4bc142cc2",
+      "_id": "647519a4bc142cc2"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "Grant horrifying knowledge.",
+      "_key": "!tables.results!9809aba13d68a19b.3e23bab9b8db9e8f",
+      "_id": "3e23bab9b8db9e8f"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Awaken or animate the dead.",
+      "_key": "!tables.results!9809aba13d68a19b.7f651d747a640425",
+      "_id": "7f651d747a640425"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "Incite an obsession.",
+      "_key": "!tables.results!9809aba13d68a19b.8876200ed669dfdd",
+      "_id": "8876200ed669dfdd"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Manifest inner fears.",
+      "_key": "!tables.results!9809aba13d68a19b.38a689d642e88225",
+      "_id": "38a689d642e88225"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Banish to another time.",
+      "_key": "!tables.results!9809aba13d68a19b.29d5100dbe9fa76a",
+      "_id": "29d5100dbe9fa76a"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Manipulate plant growth.",
+      "_key": "!tables.results!9809aba13d68a19b.a10def93f13795e3",
+      "_id": "a10def93f13795e3"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Trigger a natural disaster.",
+      "_key": "!tables.results!9809aba13d68a19b.e10fff308000dbce",
+      "_id": "e10fff308000dbce"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Reveal past events.",
+      "_key": "!tables.results!9809aba13d68a19b.57c7cc3ef1947601",
+      "_id": "57c7cc3ef1947601"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Emit destructive energies.",
+      "_key": "!tables.results!9809aba13d68a19b.18f2fce1ca34fbac",
+      "_id": "18f2fce1ca34fbac"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Alter the flow of time.",
+      "_key": "!tables.results!9809aba13d68a19b.310f2f50c41c2e20",
+      "_id": "310f2f50c41c2e20"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Inflict a consuming need.",
+      "_key": "!tables.results!9809aba13d68a19b.9401ce7149ce7969",
+      "_id": "9401ce7149ce7969"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "Create hallucinations or illusions.",
+      "_key": "!tables.results!9809aba13d68a19b.132c322b2f30f18d",
+      "_id": "132c322b2f30f18d"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Trigger a celestial event.",
+      "_key": "!tables.results!9809aba13d68a19b.42677e19fc42ee2e",
+      "_id": "42677e19fc42ee2e"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "Summon a swarm of creatures.",
+      "_key": "!tables.results!9809aba13d68a19b.9943181faf144ca8",
+      "_id": "9943181faf144ca8"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Reveal distant places.",
+      "_key": "!tables.results!9809aba13d68a19b.04142f2eed360145",
+      "_id": "04142f2eed360145"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Absorb energy or essence.",
+      "_key": "!tables.results!9809aba13d68a19b.566aaf81979447ca",
+      "_id": "566aaf81979447ca"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Banish to another reality.",
+      "_key": "!tables.results!9809aba13d68a19b.accb5e574185b528",
+      "_id": "accb5e574185b528"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Banish to another location.",
+      "_key": "!tables.results!9809aba13d68a19b.ea1ce2cf8e2cf01e",
+      "_id": "ea1ce2cf8e2cf01e"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "Inflict prophetic visions.",
+      "_key": "!tables.results!9809aba13d68a19b.6d675459b1d34c5e",
+      "_id": "6d675459b1d34c5e"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "Inflict dreadful transformations.",
+      "_key": "!tables.results!9809aba13d68a19b.f2e980fcee4758fd",
+      "_id": "f2e980fcee4758fd"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Inflict sickness or weakness.",
+      "_key": "!tables.results!9809aba13d68a19b.44caf02ab43531e5",
+      "_id": "44caf02ab43531e5"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Absorb life.",
+      "_key": "!tables.results!9809aba13d68a19b.90d2bd07ee33f722",
+      "_id": "90d2bd07ee33f722"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Spread corruption or blight.",
+      "_key": "!tables.results!9809aba13d68a19b.6d0a475794eccdb9",
+      "_id": "6d0a475794eccdb9"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Brand with a cursed mark.",
+      "_key": "!tables.results!9809aba13d68a19b.8fd6ebec69a36dc8",
+      "_id": "8fd6ebec69a36dc8"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Destroy terrain or architecture.",
+      "_key": "!tables.results!9809aba13d68a19b.2b9c9101ca163d28",
+      "_id": "2b9c9101ca163d28"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Grant a lasting boon—at a cost.",
+      "_key": "!tables.results!9809aba13d68a19b.49da24774e087299",
+      "_id": "49da24774e087299"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "text": "Roll twice.",
+      "_key": "!tables.results!9809aba13d68a19b.1d5b3a10282b75ed",
+      "_id": "1d5b3a10282b75ed"
+    }
+  ],
+  "folder": "97453fafb8ce3965",
+  "sort": 97,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9809aba13d68a19b"
+}

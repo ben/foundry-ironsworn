@@ -1,0 +1,560 @@
+{
+  "_id": "0a5d01f7505cb94a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/location/coastal_waters",
+      "dsid": "oracle_rollable:lodestar/location/coastal_waters/waypoint"
+    }
+  },
+  "name": "Waypoint",
+  "description": "<p>Use this oracle to reveal a location, discovery, or event when you Undertake a Journey and reach a waypoint.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "A wrecked ship or boat lies broken upon rocks",
+      "_key": "!tables.results!0a5d01f7505cb94a.fc8ec1d3c976de38",
+      "_id": "fc8ec1d3c976de38"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Mist clings to a shoreline ruin",
+      "_key": "!tables.results!0a5d01f7505cb94a.b59b5cdc06da2820",
+      "_id": "b59b5cdc06da2820"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Dancing ribbons of colorful lights appear in a dark sky",
+      "_key": "!tables.results!0a5d01f7505cb94a.065f368a04e9d628",
+      "_id": "065f368a04e9d628"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "The wind and waters are eerily calm",
+      "_key": "!tables.results!0a5d01f7505cb94a.8a9721e57804e942",
+      "_id": "8a9721e57804e942"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "A ship is anchored in a sheltered bay",
+      "_key": "!tables.results!0a5d01f7505cb94a.6d52374413089dd9",
+      "_id": "6d52374413089dd9"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "A wide river empties into the sea",
+      "_key": "!tables.results!0a5d01f7505cb94a.3ac36560852fc00e",
+      "_id": "3ac36560852fc00e"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "A large animal or beast watches from the shore",
+      "_key": "!tables.results!0a5d01f7505cb94a.e2431b399301e9bb",
+      "_id": "e2431b399301e9bb"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "A ship flounders in high seas",
+      "_key": "!tables.results!0a5d01f7505cb94a.0223069464e079bf",
+      "_id": "0223069464e079bf"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "A pod of orca glides past",
+      "_key": "!tables.results!0a5d01f7505cb94a.ef7e3bb7d2dbbf36",
+      "_id": "ef7e3bb7d2dbbf36"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "An abandoned settlement is partially reclaimed by the sea",
+      "_key": "!tables.results!0a5d01f7505cb94a.abf3c08272b1bc98",
+      "_id": "abf3c08272b1bc98"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Waves break upon a wide rocky beach",
+      "_key": "!tables.results!0a5d01f7505cb94a.f398b4fb76ad6dbc",
+      "_id": "f398b4fb76ad6dbc"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "A beached ship is under repair",
+      "_key": "!tables.results!0a5d01f7505cb94a.6faae942171e3078",
+      "_id": "6faae942171e3078"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "The weather shifts, a portent of things to come",
+      "_key": "!tables.results!0a5d01f7505cb94a.9902fb489853745d",
+      "_id": "9902fb489853745d"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "A waterfall spills from a seaside bluff",
+      "_key": "!tables.results!0a5d01f7505cb94a.707f864455b7ec5d",
+      "_id": "707f864455b7ec5d"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "The skeletal ribs of an old wreck sit upon the shore",
+      "_key": "!tables.results!0a5d01f7505cb94a.b1f1765bbc429e7a",
+      "_id": "b1f1765bbc429e7a"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Whalers or beast hunters prowl these waters in sleek ships",
+      "_key": "!tables.results!0a5d01f7505cb94a.ec45ff220588608d",
+      "_id": "ec45ff220588608d"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "A ruin lies half-submerged in shallow waters",
+      "_key": "!tables.results!0a5d01f7505cb94a.a34beb291bf4ec7f",
+      "_id": "a34beb291bf4ec7f"
+    },
+    {
+      "range": [
+        35,
+        36
+      ],
+      "text": "The water churns as a large school of fish flees a predator",
+      "_key": "!tables.results!0a5d01f7505cb94a.48ef20d0029a0608",
+      "_id": "48ef20d0029a0608"
+    },
+    {
+      "range": [
+        37,
+        38
+      ],
+      "text": "A bleak-looking island appears uninhabited",
+      "_key": "!tables.results!0a5d01f7505cb94a.5af24b69fe79a085",
+      "_id": "5af24b69fe79a085"
+    },
+    {
+      "range": [
+        39,
+        40
+      ],
+      "text": "A landed boat or ship sits upon the shore",
+      "_key": "!tables.results!0a5d01f7505cb94a.3697b18b908d538e",
+      "_id": "3697b18b908d538e"
+    },
+    {
+      "range": [
+        41,
+        42
+      ],
+      "text": "Imposing cliffs rise from the sea",
+      "_key": "!tables.results!0a5d01f7505cb94a.a756cba31af65642",
+      "_id": "a756cba31af65642"
+    },
+    {
+      "range": [
+        43,
+        44
+      ],
+      "text": "A dense fog clings to the water",
+      "_key": "!tables.results!0a5d01f7505cb94a.e759ed8381d5e8d7",
+      "_id": "e759ed8381d5e8d7"
+    },
+    {
+      "range": [
+        45,
+        46
+      ],
+      "text": "Boats and ships gather at a seaside settlement",
+      "_key": "!tables.results!0a5d01f7505cb94a.f233b35c5aed813f",
+      "_id": "f233b35c5aed813f"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Hordes of seabirds nest upon a guano-spattered sea stack",
+      "_key": "!tables.results!0a5d01f7505cb94a.9458a6b73b8026e7",
+      "_id": "9458a6b73b8026e7"
+    },
+    {
+      "range": [
+        49,
+        50
+      ],
+      "text": "Whales crest the surface",
+      "_key": "!tables.results!0a5d01f7505cb94a.95cf091f996d417f",
+      "_id": "95cf091f996d417f"
+    },
+    {
+      "range": [
+        51,
+        52
+      ],
+      "text": "Laborers toil at a waterside worksite",
+      "_key": "!tables.results!0a5d01f7505cb94a.566e13681ea06bf6",
+      "_id": "566e13681ea06bf6"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "An ancient statue or monument stands on the shore",
+      "_key": "!tables.results!0a5d01f7505cb94a.5bff3c5e3077dc30",
+      "_id": "5bff3c5e3077dc30"
+    },
+    {
+      "range": [
+        55,
+        56
+      ],
+      "text": "Rocky shoals lie within shallow waters",
+      "_key": "!tables.results!0a5d01f7505cb94a.a00727c580efb0c2",
+      "_id": "a00727c580efb0c2"
+    },
+    {
+      "range": [
+        57,
+        58
+      ],
+      "text": "Just under the surface, a thick kelp forest dances in the current",
+      "_key": "!tables.results!0a5d01f7505cb94a.18883a60c6a7c5fd",
+      "_id": "18883a60c6a7c5fd"
+    },
+    {
+      "range": [
+        59,
+        60
+      ],
+      "text": "Fisher folk gather their catch",
+      "_key": "!tables.results!0a5d01f7505cb94a.a403b2fcd3c3c20a",
+      "_id": "a403b2fcd3c3c20a"
+    },
+    {
+      "range": [
+        61,
+        62
+      ],
+      "text": "A column of smoke rises from the interior of an island",
+      "_key": "!tables.results!0a5d01f7505cb94a.fdf6ba544d5b5408",
+      "_id": "fdf6ba544d5b5408"
+    },
+    {
+      "range": [
+        63,
+        64
+      ],
+      "text": "Gulls peck at a floating carcass",
+      "_key": "!tables.results!0a5d01f7505cb94a.0b14cbea531bf27a",
+      "_id": "0b14cbea531bf27a"
+    },
+    {
+      "range": [
+        65,
+        66
+      ],
+      "text": "A makeshift shelter or solitary home sits on the shore",
+      "_key": "!tables.results!0a5d01f7505cb94a.613cb5cc308e54fe",
+      "_id": "613cb5cc308e54fe"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Darkness beckons from within a sea cave",
+      "_key": "!tables.results!0a5d01f7505cb94a.dcde4ee923c4d6af",
+      "_id": "dcde4ee923c4d6af"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "A storm gathers in the distance",
+      "_key": "!tables.results!0a5d01f7505cb94a.0e2284c09c9e2082",
+      "_id": "0e2284c09c9e2082"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "You spot a seaside camp or settlement",
+      "_key": "!tables.results!0a5d01f7505cb94a.9ce45e10b0cbdad5",
+      "_id": "9ce45e10b0cbdad5"
+    },
+    {
+      "range": [
+        73,
+        74
+      ],
+      "text": "Seals rest on a wave-swept rock",
+      "_key": "!tables.results!0a5d01f7505cb94a.52edbe7ff0e251eb",
+      "_id": "52edbe7ff0e251eb"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "A boat or ship comes into view",
+      "_key": "!tables.results!0a5d01f7505cb94a.d1d1daedd26c2c17",
+      "_id": "d1d1daedd26c2c17"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "The water stirs with the movement of a great creature",
+      "_key": "!tables.results!0a5d01f7505cb94a.6b2ed1936528e8d3",
+      "_id": "6b2ed1936528e8d3"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Steep cliffs flank a narrow fjord",
+      "_key": "!tables.results!0a5d01f7505cb94a.0877c18bad2df923",
+      "_id": "0877c18bad2df923"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "A rogue iceberg drifts with the current",
+      "_key": "!tables.results!0a5d01f7505cb94a.025243d07b33c531",
+      "_id": "025243d07b33c531"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "A long line of ships appears on the horizon",
+      "_key": "!tables.results!0a5d01f7505cb94a.396c9ab3b260a1da",
+      "_id": "396c9ab3b260a1da"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Sharks circle menacingly",
+      "_key": "!tables.results!0a5d01f7505cb94a.a239f8798559cd5d",
+      "_id": "a239f8798559cd5d"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "A capsized ship or boat drifts on the water",
+      "_key": "!tables.results!0a5d01f7505cb94a.10dc1dc638ad5f80",
+      "_id": "10dc1dc638ad5f80"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "A beacon tower glimmers with a warning flame",
+      "_key": "!tables.results!0a5d01f7505cb94a.d04893ad66657a27",
+      "_id": "d04893ad66657a27"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Debris collects in a swirling eddy",
+      "_key": "!tables.results!0a5d01f7505cb94a.3d295d16b1b46d47",
+      "_id": "3d295d16b1b46d47"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Eerie voices carry on the wind",
+      "_key": "!tables.results!0a5d01f7505cb94a.b58d6b95f90a0d8e",
+      "_id": "b58d6b95f90a0d8e"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "The temperature shifts unnaturally",
+      "_key": "!tables.results!0a5d01f7505cb94a.2dd3a0f77844655d",
+      "_id": "2dd3a0f77844655d"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "A shelf of glacial ice divides sea from land",
+      "_key": "!tables.results!0a5d01f7505cb94a.a7fee2f73c430808",
+      "_id": "a7fee2f73c430808"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "You spot ships engaged in a battle",
+      "_key": "!tables.results!0a5d01f7505cb94a.a67579fee13d8f1b",
+      "_id": "a67579fee13d8f1b"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "A lookout post or tower stands at water's edge",
+      "_key": "!tables.results!0a5d01f7505cb94a.df5b29e0b9bdda33",
+      "_id": "df5b29e0b9bdda33"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "A narrow channel leads through an icy expanse",
+      "_key": "!tables.results!0a5d01f7505cb94a.825fdbcc7178e1c8",
+      "_id": "825fdbcc7178e1c8"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "A whale corpse lies bloated on a beach",
+      "_key": "!tables.results!0a5d01f7505cb94a.d34f6bc0519514f6",
+      "_id": "d34f6bc0519514f6"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "A large natural arch towers over the surrounding waters",
+      "_key": "!tables.results!0a5d01f7505cb94a.eda8bb101f4300ee",
+      "_id": "eda8bb101f4300ee"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "A great flying creature circles overhead",
+      "_key": "!tables.results!0a5d01f7505cb94a.3c8f1ec1ef016f31",
+      "_id": "3c8f1ec1ef016f31"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "A bridge connects the mainland to an offshore island",
+      "_key": "!tables.results!0a5d01f7505cb94a.965d1df92e31f8aa",
+      "_id": "965d1df92e31f8aa"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Mystic stones or strange pillars stand on the shore",
+      "_key": "!tables.results!0a5d01f7505cb94a.97daeaa86fe307bd",
+      "_id": "97daeaa86fe307bd"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "A stone fortification stands at water's edge",
+      "_key": "!tables.results!0a5d01f7505cb94a.6b375416896c256a",
+      "_id": "6b375416896c256a"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Thickly-packed seaweed carpets the water",
+      "_key": "!tables.results!0a5d01f7505cb94a.42a748ac6a3f34c8",
+      "_id": "42a748ac6a3f34c8"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "A spectral manifestation appears",
+      "_key": "!tables.results!0a5d01f7505cb94a.56d40e8e61437252",
+      "_id": "56d40e8e61437252"
+    }
+  ],
+  "folder": "3ea0b7b6862733f1",
+  "sort": 61,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!0a5d01f7505cb94a"
+}

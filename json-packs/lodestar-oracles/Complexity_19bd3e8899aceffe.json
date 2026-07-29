@@ -1,0 +1,65 @@
+{
+  "_id": "19bd3e8899aceffe",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/complexity"
+    }
+  },
+  "name": "Complexity",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Simple",
+      "_key": "!tables.results!19bd3e8899aceffe.a59ed3933c7c058d",
+      "_id": "a59ed3933c7c058d"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Basic",
+      "_key": "!tables.results!19bd3e8899aceffe.30402661e0fdac54",
+      "_id": "30402661e0fdac54"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Manageable",
+      "_key": "!tables.results!19bd3e8899aceffe.a212440d9b44a59f",
+      "_id": "a212440d9b44a59f"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Complicated",
+      "_key": "!tables.results!19bd3e8899aceffe.fcf379a5b5bb6cb9",
+      "_id": "fcf379a5b5bb6cb9"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Bewildering",
+      "_key": "!tables.results!19bd3e8899aceffe.b8d8442e2fef4cb1",
+      "_id": "b8d8442e2fef4cb1"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!19bd3e8899aceffe"
+}

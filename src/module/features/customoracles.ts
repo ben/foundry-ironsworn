@@ -27,6 +27,11 @@ const emptyNode: () => IOracleTreeNode = () => ({
 	children: []
 })
 
+function oracleCategoryDisplayName(name: string): string {
+	const key = `IRONSWORN.OracleCategories.${name}`
+	return game.i18n.has(key) ? game.i18n.localize(key) : name
+}
+
 function customFolderOracleCategory(): [IOracleTreeNode, number] {
 	const name = game.i18n.localize('IRONSWORN.OracleCategories.Custom')
 	const ret = { ...emptyNode(), displayName: name }
@@ -128,7 +133,7 @@ function walkDsOracleCollection(
 	return {
 		dataswornNode: node,
 		dsIdentifier,
-		displayName: game.i18n.localize(`IRONSWORN.OracleCategories.${node.name}`),
+		displayName: oracleCategoryDisplayName(node.name),
 		tables: [],
 		children
 	}

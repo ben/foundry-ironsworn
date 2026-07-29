@@ -1,0 +1,15 @@
+{
+  "name": "Quick Settlement Name Generator",
+  "description": "Roll once for the prefix and once for the suffix, taking your pick of choices in that row.",
+  "type": "RollTable",
+  "_id": "c4bf0c3b4d189653",
+  "sort": 69,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "oracle_collection:lodestar/settlement/quick_name"
+    }
+  },
+  "folder": "a456e82f6aca3d1c",
+  "sorting": "a",
+  "_key": "!folders!c4bf0c3b4d189653"
+}

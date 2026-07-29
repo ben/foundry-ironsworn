@@ -1,0 +1,452 @@
+{
+  "_id": "eaba37a5a4fcd33d",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/location/overland",
+      "dsid": "oracle_rollable:lodestar/location/overland/landmark"
+    }
+  },
+  "name": "Landmark",
+  "description": "<p>Use this oracle to help envision a basic feature of the landscape as a journey waypoint or key location.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        2
+      ],
+      "text": "Ruins",
+      "_key": "!tables.results!eaba37a5a4fcd33d.5389c395078f5da5",
+      "_id": "5389c395078f5da5"
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "text": "Wall",
+      "_key": "!tables.results!eaba37a5a4fcd33d.d8d7477b6a1b4f7e",
+      "_id": "d8d7477b6a1b4f7e"
+    },
+    {
+      "range": [
+        5,
+        6
+      ],
+      "text": "Battlefield",
+      "_key": "!tables.results!eaba37a5a4fcd33d.6f8caef3aaf323b9",
+      "_id": "6f8caef3aaf323b9"
+    },
+    {
+      "range": [
+        7,
+        8
+      ],
+      "text": "Hovel",
+      "_key": "!tables.results!eaba37a5a4fcd33d.06e8b0428dc704c5",
+      "_id": "06e8b0428dc704c5"
+    },
+    {
+      "range": [
+        9,
+        10
+      ],
+      "text": "Springs",
+      "_key": "!tables.results!eaba37a5a4fcd33d.faf071515cf62cbb",
+      "_id": "faf071515cf62cbb"
+    },
+    {
+      "range": [
+        11,
+        12
+      ],
+      "text": "Campsite",
+      "_key": "!tables.results!eaba37a5a4fcd33d.7de25b0572bddfc5",
+      "_id": "7de25b0572bddfc5"
+    },
+    {
+      "range": [
+        13,
+        14
+      ],
+      "text": "Bridge",
+      "_key": "!tables.results!eaba37a5a4fcd33d.ba99d09d14ecfaee",
+      "_id": "ba99d09d14ecfaee"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Barrow",
+      "_key": "!tables.results!eaba37a5a4fcd33d.2067138ef1683489",
+      "_id": "2067138ef1683489"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Gravesite",
+      "_key": "!tables.results!eaba37a5a4fcd33d.a87d2cb21274df62",
+      "_id": "a87d2cb21274df62"
+    },
+    {
+      "range": [
+        19,
+        20
+      ],
+      "text": "Waterfall",
+      "_key": "!tables.results!eaba37a5a4fcd33d.6303c3ba7875e88e",
+      "_id": "6303c3ba7875e88e"
+    },
+    {
+      "range": [
+        21,
+        22
+      ],
+      "text": "Cave",
+      "_key": "!tables.results!eaba37a5a4fcd33d.d78986a1a77f8f6d",
+      "_id": "d78986a1a77f8f6d"
+    },
+    {
+      "range": [
+        23,
+        24
+      ],
+      "text": "Swamp",
+      "_key": "!tables.results!eaba37a5a4fcd33d.c3fbbd59105c3392",
+      "_id": "c3fbbd59105c3392"
+    },
+    {
+      "range": [
+        25,
+        26
+      ],
+      "text": "Road",
+      "_key": "!tables.results!eaba37a5a4fcd33d.ada240b29d7da854",
+      "_id": "ada240b29d7da854"
+    },
+    {
+      "range": [
+        27,
+        28
+      ],
+      "text": "Tree",
+      "_key": "!tables.results!eaba37a5a4fcd33d.11708a9e626e0528",
+      "_id": "11708a9e626e0528"
+    },
+    {
+      "range": [
+        29,
+        30
+      ],
+      "text": "Pond",
+      "_key": "!tables.results!eaba37a5a4fcd33d.8279e8c46d70a459",
+      "_id": "8279e8c46d70a459"
+    },
+    {
+      "range": [
+        31,
+        32
+      ],
+      "text": "Field",
+      "_key": "!tables.results!eaba37a5a4fcd33d.67bfe2ff2424dc01",
+      "_id": "67bfe2ff2424dc01"
+    },
+    {
+      "range": [
+        33,
+        34
+      ],
+      "text": "Marsh",
+      "_key": "!tables.results!eaba37a5a4fcd33d.c457b52319a4ff6c",
+      "_id": "c457b52319a4ff6c"
+    },
+    {
+      "range": [
+        35,
+        37
+      ],
+      "text": "Settlement",
+      "_key": "!tables.results!eaba37a5a4fcd33d.fcc7cacc7323bf78",
+      "_id": "fcc7cacc7323bf78"
+    },
+    {
+      "range": [
+        38,
+        39
+      ],
+      "text": "Rapids",
+      "_key": "!tables.results!eaba37a5a4fcd33d.2449874379e23888",
+      "_id": "2449874379e23888"
+    },
+    {
+      "range": [
+        40,
+        41
+      ],
+      "text": "Pass",
+      "_key": "!tables.results!eaba37a5a4fcd33d.cb42eaeeeb759ae7",
+      "_id": "cb42eaeeeb759ae7"
+    },
+    {
+      "range": [
+        42,
+        43
+      ],
+      "text": "Trail",
+      "_key": "!tables.results!eaba37a5a4fcd33d.701b796a04e78165",
+      "_id": "701b796a04e78165"
+    },
+    {
+      "range": [
+        44,
+        45
+      ],
+      "text": "Ridge",
+      "_key": "!tables.results!eaba37a5a4fcd33d.4fd598bb8629e35d",
+      "_id": "4fd598bb8629e35d"
+    },
+    {
+      "range": [
+        46,
+        47
+      ],
+      "text": "Cliff",
+      "_key": "!tables.results!eaba37a5a4fcd33d.297547119e86b652",
+      "_id": "297547119e86b652"
+    },
+    {
+      "range": [
+        48,
+        49
+      ],
+      "text": "Grove",
+      "_key": "!tables.results!eaba37a5a4fcd33d.572987844c381bdf",
+      "_id": "572987844c381bdf"
+    },
+    {
+      "range": [
+        50,
+        51
+      ],
+      "text": "Moor",
+      "_key": "!tables.results!eaba37a5a4fcd33d.557ff3ce0159484c",
+      "_id": "557ff3ce0159484c"
+    },
+    {
+      "range": [
+        52,
+        53
+      ],
+      "text": "Thicket",
+      "_key": "!tables.results!eaba37a5a4fcd33d.30e248e03c5cc720",
+      "_id": "30e248e03c5cc720"
+    },
+    {
+      "range": [
+        54,
+        55
+      ],
+      "text": "River ford",
+      "_key": "!tables.results!eaba37a5a4fcd33d.f3ebfd27928f80b1",
+      "_id": "f3ebfd27928f80b1"
+    },
+    {
+      "range": [
+        56,
+        57
+      ],
+      "text": "Valley",
+      "_key": "!tables.results!eaba37a5a4fcd33d.c8c536bfa20d7343",
+      "_id": "c8c536bfa20d7343"
+    },
+    {
+      "range": [
+        58,
+        59
+      ],
+      "text": "Fjord / Ravine",
+      "_key": "!tables.results!eaba37a5a4fcd33d.8a1dc20c4cf74bac",
+      "_id": "8a1dc20c4cf74bac"
+    },
+    {
+      "range": [
+        60,
+        61
+      ],
+      "text": "Foothills",
+      "_key": "!tables.results!eaba37a5a4fcd33d.19e5af0d163b221b",
+      "_id": "19e5af0d163b221b"
+    },
+    {
+      "range": [
+        62,
+        63
+      ],
+      "text": "Lake",
+      "_key": "!tables.results!eaba37a5a4fcd33d.a237a1ddff2dc322",
+      "_id": "a237a1ddff2dc322"
+    },
+    {
+      "range": [
+        64,
+        66
+      ],
+      "text": "River",
+      "_key": "!tables.results!eaba37a5a4fcd33d.5f35994da65a595a",
+      "_id": "5f35994da65a595a"
+    },
+    {
+      "range": [
+        67,
+        68
+      ],
+      "text": "Forest",
+      "_key": "!tables.results!eaba37a5a4fcd33d.3899d2b45928a462",
+      "_id": "3899d2b45928a462"
+    },
+    {
+      "range": [
+        69,
+        70
+      ],
+      "text": "Hill",
+      "_key": "!tables.results!eaba37a5a4fcd33d.2427bfc445eab2ee",
+      "_id": "2427bfc445eab2ee"
+    },
+    {
+      "range": [
+        71,
+        72
+      ],
+      "text": "Peak",
+      "_key": "!tables.results!eaba37a5a4fcd33d.44afc40b238268c4",
+      "_id": "44afc40b238268c4"
+    },
+    {
+      "range": [
+        73,
+        75
+      ],
+      "text": "Woods",
+      "_key": "!tables.results!eaba37a5a4fcd33d.d441b7d2c7451bf6",
+      "_id": "d441b7d2c7451bf6"
+    },
+    {
+      "range": [
+        76,
+        78
+      ],
+      "text": "Stream",
+      "_key": "!tables.results!eaba37a5a4fcd33d.de2c160fdd07af95",
+      "_id": "de2c160fdd07af95"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "Clearing",
+      "_key": "!tables.results!eaba37a5a4fcd33d.d1db4e519010b9d8",
+      "_id": "d1db4e519010b9d8"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Mine",
+      "_key": "!tables.results!eaba37a5a4fcd33d.29bd713ee784c6e1",
+      "_id": "29bd713ee784c6e1"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "Ritual site",
+      "_key": "!tables.results!eaba37a5a4fcd33d.ea0b366dc726744c",
+      "_id": "ea0b366dc726744c"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "Monument",
+      "_key": "!tables.results!eaba37a5a4fcd33d.3f3c99ae9ef735c2",
+      "_id": "3f3c99ae9ef735c2"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Standing stones",
+      "_key": "!tables.results!eaba37a5a4fcd33d.01250e33b5f879ae",
+      "_id": "01250e33b5f879ae"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "Watchtower",
+      "_key": "!tables.results!eaba37a5a4fcd33d.52747fed21401866",
+      "_id": "52747fed21401866"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "Sinkhole",
+      "_key": "!tables.results!eaba37a5a4fcd33d.d4688944ab36332b",
+      "_id": "d4688944ab36332b"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Crater",
+      "_key": "!tables.results!eaba37a5a4fcd33d.9d2aca79a924d9a4",
+      "_id": "9d2aca79a924d9a4"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Shrine",
+      "_key": "!tables.results!eaba37a5a4fcd33d.f44de61ef850e349",
+      "_id": "f44de61ef850e349"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Crag",
+      "_key": "!tables.results!eaba37a5a4fcd33d.69bae56e5806bb47",
+      "_id": "69bae56e5806bb47"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Anomaly",
+      "_key": "!tables.results!eaba37a5a4fcd33d.398e1f5e89505cc6",
+      "_id": "398e1f5e89505cc6"
+    }
+  ],
+  "folder": "0970a79efd8cf645",
+  "sort": 54,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!eaba37a5a4fcd33d"
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "fdfb438797963d73",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/number"
+    }
+  },
+  "name": "Number",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "None / one",
+      "_key": "!tables.results!fdfb438797963d73.d4dc13b0055e7a06",
+      "_id": "d4dc13b0055e7a06"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Few",
+      "_key": "!tables.results!fdfb438797963d73.4cb740c685f5eb1f",
+      "_id": "4cb740c685f5eb1f"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Several",
+      "_key": "!tables.results!fdfb438797963d73.5fa74a7d1f021aab",
+      "_id": "5fa74a7d1f021aab"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Many",
+      "_key": "!tables.results!fdfb438797963d73.34e29492c3248310",
+      "_id": "34e29492c3248310"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Countless",
+      "_key": "!tables.results!fdfb438797963d73.7482577bb631c8aa",
+      "_id": "7482577bb631c8aa"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!fdfb438797963d73"
+}

@@ -1,0 +1,245 @@
+{
+  "_id": "03dc3033749c74e0",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/magic",
+      "dsid": "oracle_rollable:lodestar/magic/ritual_backlash"
+    }
+  },
+  "name": "Ritual Backlash",
+  "description": "<p>Those who deal in magic may find themselves at the mercy of chaos. This oracle can supplement, or replace, the Pay the Price table when resolving the outcome of a failed ritual or other negative interaction with mystical forces. Use this oracle in dramatic moments, or to introduce an unexpected outcome triggered by a match.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Your ritual has the opposite effect.",
+      "_key": "!tables.results!03dc3033749c74e0.501b228f25033b3b",
+      "_id": "501b228f25033b3b"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "You are sapped of strength.",
+      "_key": "!tables.results!03dc3033749c74e0.42344c1048209906",
+      "_id": "42344c1048209906"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Your friend, ally, or companion is adversely affected.",
+      "_key": "!tables.results!03dc3033749c74e0.4329e10f1ef94f42",
+      "_id": "4329e10f1ef94f42"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "You destroy an important object.",
+      "_key": "!tables.results!03dc3033749c74e0.cfb5247612ddb6b3",
+      "_id": "cfb5247612ddb6b3"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "You inadvertently summon a spirit or undead being.",
+      "_key": "!tables.results!03dc3033749c74e0.9bfa2aa1dab3c652",
+      "_id": "9bfa2aa1dab3c652"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "You collapse, and drift into a troubled sleep.",
+      "_key": "!tables.results!03dc3033749c74e0.3bda73a14d6ae04a",
+      "_id": "3bda73a14d6ae04a"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "You undergo a physical torment which leaves its mark upon you.",
+      "_key": "!tables.results!03dc3033749c74e0.d3a751b087eeac4e",
+      "_id": "d3a751b087eeac4e"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "You hear ghostly voices whispering of dark portents.",
+      "_key": "!tables.results!03dc3033749c74e0.4f43b5d0be6ab68a",
+      "_id": "4f43b5d0be6ab68a"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "You find yourself in another place without memory of how you got there.",
+      "_key": "!tables.results!03dc3033749c74e0.ca73524d48d540a4",
+      "_id": "ca73524d48d540a4"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "You alert someone or something to your presence.",
+      "_key": "!tables.results!03dc3033749c74e0.d19d247d078825af",
+      "_id": "d19d247d078825af"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "You are not yourself, and act against a friend, ally, or companion.",
+      "_key": "!tables.results!03dc3033749c74e0.75711c6c92353fab",
+      "_id": "75711c6c92353fab"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "You affect your surroundings, causing a disturbance or potential harm.",
+      "_key": "!tables.results!03dc3033749c74e0.b2b598a08d98ec87",
+      "_id": "b2b598a08d98ec87"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "You waste resources.",
+      "_key": "!tables.results!03dc3033749c74e0.7351ac071d377c81",
+      "_id": "7351ac071d377c81"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "You suffer the loss of a sense for several hours.",
+      "_key": "!tables.results!03dc3033749c74e0.1841c6d25358bc2b",
+      "_id": "1841c6d25358bc2b"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "You lose your connection to magic for a day or so.",
+      "_key": "!tables.results!03dc3033749c74e0.71bc3b226542082d",
+      "_id": "71bc3b226542082d"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Your ritual affects the target in an unexpected and problematic way.",
+      "_key": "!tables.results!03dc3033749c74e0.e2061dc37e902577",
+      "_id": "e2061dc37e902577"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Your ritual reveals a surprising and troubling truth.",
+      "_key": "!tables.results!03dc3033749c74e0.13fb19a4d7f3986e",
+      "_id": "13fb19a4d7f3986e"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "You are tempted by dark powers.",
+      "_key": "!tables.results!03dc3033749c74e0.0a13d254d338a129",
+      "_id": "0a13d254d338a129"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "You see a troubling vision of your future.",
+      "_key": "!tables.results!03dc3033749c74e0.a3aac76a90bdf004",
+      "_id": "a3aac76a90bdf004"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "You can't perform this ritual again until you acquire a key component.",
+      "_key": "!tables.results!03dc3033749c74e0.08927e42707d7513",
+      "_id": "08927e42707d7513"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "You develop a strange fear or compulsion.",
+      "_key": "!tables.results!03dc3033749c74e0.44d1bc12bd5c676c",
+      "_id": "44d1bc12bd5c676c"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Your ritual causes creatures to exhibit strange or aggressive behavior.",
+      "_key": "!tables.results!03dc3033749c74e0.d005cf0d252bfbf4",
+      "_id": "d005cf0d252bfbf4"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "You are tormented by an apparition from your past.",
+      "_key": "!tables.results!03dc3033749c74e0.ca580353289f8edb",
+      "_id": "ca580353289f8edb"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "You are wracked with sudden sickness.",
+      "_key": "!tables.results!03dc3033749c74e0.90755ebca503a8fe",
+      "_id": "90755ebca503a8fe"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Roll twice; if they are the same result, make it worse.",
+      "_key": "!tables.results!03dc3033749c74e0.ff5971432b024b79",
+      "_id": "ff5971432b024b79"
+    }
+  ],
+  "folder": "97453fafb8ce3965",
+  "sort": 96,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!03dc3033749c74e0"
+}

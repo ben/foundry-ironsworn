@@ -3,8 +3,9 @@
 ## Next Release
 
 - Fresh import from datasworn-community data.
-- Widen and lengthen Rollable Table rich text editor. Editing icons no longer wrap around and text box can show multiple lines.
-- Add name and description fields to rollable tables.
+- Widen and lengthen Rollable Table rich text editor. Editing icons no longer wrap around and text box can show multiple lines. ([#1089](https://github.com/ben/foundry-ironsworn/pull/1089)).
+- Add name and description fields to rollable tables. ([#1090](https://github.com/ben/foundry-ironsworn/pull/1090)).
+- Add Lodestar Expanded Moves and Oracles.
 
 ## 1.28.0
 

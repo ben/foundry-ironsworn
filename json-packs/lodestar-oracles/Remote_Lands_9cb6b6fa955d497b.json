@@ -1,0 +1,74 @@
+{
+  "_id": "9cb6b6fa955d497b",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement/type",
+      "dsid": "oracle_rollable:lodestar/settlement/type/remote_lands"
+    }
+  },
+  "name": "Remote Lands",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        25
+      ],
+      "text": "Stead",
+      "_key": "!tables.results!9cb6b6fa955d497b.7a1b67e2da17c2ab",
+      "_id": "7a1b67e2da17c2ab"
+    },
+    {
+      "range": [
+        26,
+        50
+      ],
+      "text": "Camp",
+      "_key": "!tables.results!9cb6b6fa955d497b.d28df97f6b162be0",
+      "_id": "d28df97f6b162be0"
+    },
+    {
+      "range": [
+        51,
+        75
+      ],
+      "text": "Outpost",
+      "_key": "!tables.results!9cb6b6fa955d497b.ce2e9785f45bfdec",
+      "_id": "ce2e9785f45bfdec"
+    },
+    {
+      "range": [
+        76,
+        90
+      ],
+      "text": "Hamlet",
+      "_key": "!tables.results!9cb6b6fa955d497b.8631ce0abef2f165",
+      "_id": "8631ce0abef2f165"
+    },
+    {
+      "range": [
+        91,
+        98
+      ],
+      "text": "Village",
+      "_key": "!tables.results!9cb6b6fa955d497b.7982d2af8a0c5283",
+      "_id": "7982d2af8a0c5283"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Hold",
+      "_key": "!tables.results!9cb6b6fa955d497b.ee78f7ae80f64875",
+      "_id": "ee78f7ae80f64875"
+    }
+  ],
+  "folder": "10ca10cff43070aa",
+  "sort": 64,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!9cb6b6fa955d497b"
+}

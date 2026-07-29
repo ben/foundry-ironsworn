@@ -1,0 +1,317 @@
+{
+  "_id": "cf4493fa49f3f2e6",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement",
+      "dsid": "oracle_rollable:lodestar/settlement/projects"
+    }
+  },
+  "name": "Projects",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Farming",
+      "_key": "!tables.results!cf4493fa49f3f2e6.f8b231cae8818231",
+      "_id": "f8b231cae8818231"
+    },
+    {
+      "range": [
+        5,
+        7
+      ],
+      "text": "Celebration",
+      "_key": "!tables.results!cf4493fa49f3f2e6.37ec4466b3c2f8fa",
+      "_id": "37ec4466b3c2f8fa"
+    },
+    {
+      "range": [
+        8,
+        10
+      ],
+      "text": "Conquest",
+      "_key": "!tables.results!cf4493fa49f3f2e6.e5aaa00c805c6a77",
+      "_id": "e5aaa00c805c6a77"
+    },
+    {
+      "range": [
+        11,
+        14
+      ],
+      "text": "Religion",
+      "_key": "!tables.results!cf4493fa49f3f2e6.3d6d7d6e69584066",
+      "_id": "3d6d7d6e69584066"
+    },
+    {
+      "range": [
+        15,
+        16
+      ],
+      "text": "Secrecy",
+      "_key": "!tables.results!cf4493fa49f3f2e6.e47c479094f98d03",
+      "_id": "e47c479094f98d03"
+    },
+    {
+      "range": [
+        17,
+        18
+      ],
+      "text": "Debauchery",
+      "_key": "!tables.results!cf4493fa49f3f2e6.68068bb3d6b3a5ff",
+      "_id": "68068bb3d6b3a5ff"
+    },
+    {
+      "range": [
+        19,
+        21
+      ],
+      "text": "Construction",
+      "_key": "!tables.results!cf4493fa49f3f2e6.332a60ff9136033c",
+      "_id": "332a60ff9136033c"
+    },
+    {
+      "range": [
+        22,
+        23
+      ],
+      "text": "Evacuation",
+      "_key": "!tables.results!cf4493fa49f3f2e6.4da694de8cf327b2",
+      "_id": "4da694de8cf327b2"
+    },
+    {
+      "range": [
+        24,
+        25
+      ],
+      "text": "Diplomacy",
+      "_key": "!tables.results!cf4493fa49f3f2e6.4bed2a98845808be",
+      "_id": "4bed2a98845808be"
+    },
+    {
+      "range": [
+        26,
+        29
+      ],
+      "text": "Mysticism",
+      "_key": "!tables.results!cf4493fa49f3f2e6.b37e756fbed1ddd3",
+      "_id": "b37e756fbed1ddd3"
+    },
+    {
+      "range": [
+        30,
+        31
+      ],
+      "text": "History",
+      "_key": "!tables.results!cf4493fa49f3f2e6.8b898d5f9db22bff",
+      "_id": "8b898d5f9db22bff"
+    },
+    {
+      "range": [
+        32,
+        33
+      ],
+      "text": "Beast hunting",
+      "_key": "!tables.results!cf4493fa49f3f2e6.8488460334f38140",
+      "_id": "8488460334f38140"
+    },
+    {
+      "range": [
+        34,
+        35
+      ],
+      "text": "Scavenging",
+      "_key": "!tables.results!cf4493fa49f3f2e6.6bb847fc5a7c17fd",
+      "_id": "6bb847fc5a7c17fd"
+    },
+    {
+      "range": [
+        36,
+        39
+      ],
+      "text": "Brewing",
+      "_key": "!tables.results!cf4493fa49f3f2e6.6bf7af76b4bdef37",
+      "_id": "6bf7af76b4bdef37"
+    },
+    {
+      "range": [
+        40,
+        43
+      ],
+      "text": "Defense",
+      "_key": "!tables.results!cf4493fa49f3f2e6.a5771fc899f7fc6a",
+      "_id": "a5771fc899f7fc6a"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "Exploration",
+      "_key": "!tables.results!cf4493fa49f3f2e6.f497bd4ae6a73522",
+      "_id": "f497bd4ae6a73522"
+    },
+    {
+      "range": [
+        47,
+        48
+      ],
+      "text": "Patrolling",
+      "_key": "!tables.results!cf4493fa49f3f2e6.6c4d3fa4701d6ad4",
+      "_id": "6c4d3fa4701d6ad4"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Mining",
+      "_key": "!tables.results!cf4493fa49f3f2e6.6a2ceac5698ec304",
+      "_id": "6a2ceac5698ec304"
+    },
+    {
+      "range": [
+        53,
+        54
+      ],
+      "text": "Entertainment",
+      "_key": "!tables.results!cf4493fa49f3f2e6.a3636183941554cd",
+      "_id": "a3636183941554cd"
+    },
+    {
+      "range": [
+        55,
+        58
+      ],
+      "text": "Herding",
+      "_key": "!tables.results!cf4493fa49f3f2e6.f877365778cd61a6",
+      "_id": "f877365778cd61a6"
+    },
+    {
+      "range": [
+        59,
+        62
+      ],
+      "text": "Foraging",
+      "_key": "!tables.results!cf4493fa49f3f2e6.74a995c6aba7cdce",
+      "_id": "74a995c6aba7cdce"
+    },
+    {
+      "range": [
+        63,
+        66
+      ],
+      "text": "Trade",
+      "_key": "!tables.results!cf4493fa49f3f2e6.9d5ec7d0b6a2c215",
+      "_id": "9d5ec7d0b6a2c215"
+    },
+    {
+      "range": [
+        67,
+        70
+      ],
+      "text": "Forestry",
+      "_key": "!tables.results!cf4493fa49f3f2e6.64d15c5dcbfac5af",
+      "_id": "64d15c5dcbfac5af"
+    },
+    {
+      "range": [
+        71,
+        74
+      ],
+      "text": "Healing",
+      "_key": "!tables.results!cf4493fa49f3f2e6.de4579f8fcee2bfe",
+      "_id": "de4579f8fcee2bfe"
+    },
+    {
+      "range": [
+        75,
+        78
+      ],
+      "text": "Hunting or fishing",
+      "_key": "!tables.results!cf4493fa49f3f2e6.7f2e42254748f9df",
+      "_id": "7f2e42254748f9df"
+    },
+    {
+      "range": [
+        79,
+        81
+      ],
+      "text": "Hospitality",
+      "_key": "!tables.results!cf4493fa49f3f2e6.abcae5c34e0c2651",
+      "_id": "abcae5c34e0c2651"
+    },
+    {
+      "range": [
+        82,
+        85
+      ],
+      "text": "Craftwork",
+      "_key": "!tables.results!cf4493fa49f3f2e6.18a80bd57eceae5d",
+      "_id": "18a80bd57eceae5d"
+    },
+    {
+      "range": [
+        86,
+        89
+      ],
+      "text": "Smithing",
+      "_key": "!tables.results!cf4493fa49f3f2e6.5e439a548090870e",
+      "_id": "5e439a548090870e"
+    },
+    {
+      "range": [
+        90,
+        92
+      ],
+      "text": "Raiding",
+      "_key": "!tables.results!cf4493fa49f3f2e6.8b4f7812654014ec",
+      "_id": "8b4f7812654014ec"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "Treasure hunting",
+      "_key": "!tables.results!cf4493fa49f3f2e6.343240e2c47aa3fd",
+      "_id": "343240e2c47aa3fd"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "Taming",
+      "_key": "!tables.results!cf4493fa49f3f2e6.b1c4707d4d87e7ee",
+      "_id": "b1c4707d4d87e7ee"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Preservation",
+      "_key": "!tables.results!cf4493fa49f3f2e6.2326461b0fe57478",
+      "_id": "2326461b0fe57478"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Education",
+      "_key": "!tables.results!cf4493fa49f3f2e6.b21010b0a24799cb",
+      "_id": "b21010b0a24799cb"
+    }
+  ],
+  "folder": "a456e82f6aca3d1c",
+  "sort": 66,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!cf4493fa49f3f2e6"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Scene Challenge Moves",
+  "color": "#206087",
+  "description": "A scene challenge is an optional approach you can use to resolve an extended challenge against an obstacle or NPCs.",
+  "type": "Item",
+  "_id": "38cf8e63be53ee98",
+  "sort": 11,
+  "flags": {
+    "foundry-ironsworn": {
+      "dsid": "move_category:lodestar/scene_challenge"
+    }
+  },
+  "folder": null,
+  "sorting": "a",
+  "_key": "!folders!38cf8e63be53ee98"
+}

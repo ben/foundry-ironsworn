@@ -1,0 +1,95 @@
+{
+  "_id": "29d091067086ac7f",
+  "type": "sfmove",
+  "name": "Secure an Advantage (Scene Challenge)",
+  "img": "icons/dice/d10black.svg",
+  "folder": "38cf8e63be53ee98",
+  "system": {
+    "dfid": "move:lodestar/scene_challenge/secure_an_advantage",
+    "Category": "move_category:lodestar/scene_challenge",
+    "Progress Move": false,
+    "Variant of": "",
+    "Text": "When __you assess a situation, make preparations, or attempt to gain leverage__, envision your action and roll. If you act...\n\n  * With speed, agility, or precision: Roll +edge.\n  * With charm, loyalty, or courage: Roll +heart.\n  * With aggressive action, forceful defense, strength, or endurance: Roll +iron.\n  * With deception, stealth, or trickery: Roll +shadow.\n  * With expertise, insight, or observation: Roll +wits.\n\nOn a __strong hit__, take both. On a __strong hit with a match__, take both and mark progress. On a __weak hit__, choose one.\n\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)\n\nOn a __miss__, you fail or your assumptions betray you. Mark a countdown segment and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. On a __miss with a match__, mark two segments and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+    "Trigger": {
+      "Text": "When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge...",
+      "Options": [
+        {
+          "Text": "With speed, agility, or precision",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Edge"
+          ]
+        },
+        {
+          "Text": "With charm, loyalty, or courage",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Heart"
+          ]
+        },
+        {
+          "Text": "With aggressive action, forceful defense, strength, or endurance",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Iron"
+          ]
+        },
+        {
+          "Text": "With deception, stealth, or trickery",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Shadow"
+          ]
+        },
+        {
+          "Text": "With expertise, insight, or observation",
+          "Roll type": "Action roll",
+          "Method": "Any",
+          "Using": [
+            "Wits"
+          ]
+        }
+      ]
+    },
+    "Outcomes": {
+      "Strong Hit": {
+        "Text": "On a __strong hit__, take +2 momentum and add +1 on your next move (not a progress move).\n\nOn a __strong hit with a match__, take +2 momentum, add +1 on your next move (not a progress move), and mark progress.",
+        "With a Match": {
+          "Text": ""
+        }
+      },
+      "Weak Hit": {
+        "Text": "On a __weak hit__, choose one.\n\n  * Take +2 momentum\n  * Add +1 on your next move (not a progress move)"
+      },
+      "Miss": {
+        "Text": "On a __miss__, you fail or your assumptions betray you. Mark a countdown segment and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}. On a __miss with a match__, mark two segments and @Compendium[foundry-ironsworn.ironswornmoves.c10d64f58dd8c5bf]{Pay the Price}.",
+        "With a Match": {
+          "Text": ""
+        }
+      }
+    },
+    "Oracles": [],
+    "dsOracleIds": [],
+    "Source": {
+      "Title": "Ironsworn Lodestar",
+      "Authors": [
+        "Shawn Tomkin"
+      ],
+      "Date": "2025-05-01",
+      "Page": 11
+    },
+    "Suggestions": {}
+  },
+  "sort": 11,
+  "flags": {
+    "foundry-ironsworn": {
+      "dfid": "move:lodestar/scene_challenge/secure_an_advantage",
+      "dsid": "move:lodestar/scene_challenge/secure_an_advantage"
+    }
+  },
+  "_key": "!items!29d091067086ac7f"
+}

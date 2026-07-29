@@ -1,0 +1,65 @@
+{
+  "_id": "8024a4858ac93630",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/influence"
+    }
+  },
+  "name": "Influence",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Limited",
+      "_key": "!tables.results!8024a4858ac93630.6affbf7f8fd0fa4c",
+      "_id": "6affbf7f8fd0fa4c"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Isolated",
+      "_key": "!tables.results!8024a4858ac93630.8ca19ff89ff9cdea",
+      "_id": "8ca19ff89ff9cdea"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Localized",
+      "_key": "!tables.results!8024a4858ac93630.118d03c403e3c21d",
+      "_id": "118d03c403e3c21d"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Far-reaching",
+      "_key": "!tables.results!8024a4858ac93630.c9be700c426c4d85",
+      "_id": "c9be700c426c4d85"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Dominant",
+      "_key": "!tables.results!8024a4858ac93630.51d7799de8fba67e",
+      "_id": "51d7799de8fba67e"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!8024a4858ac93630"
+}

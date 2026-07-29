@@ -1,0 +1,290 @@
+{
+  "_id": "1e949f34e56e6b50",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/settlement/quick_name",
+      "dsid": "oracle_rollable:lodestar/settlement/quick_name/suffix_b"
+    }
+  },
+  "name": "Suffix B",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "-break",
+      "_key": "!tables.results!1e949f34e56e6b50.0f88ed744a01dcaf",
+      "_id": "0f88ed744a01dcaf"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "-mire",
+      "_key": "!tables.results!1e949f34e56e6b50.57ba4fd52f9b3e41",
+      "_id": "57ba4fd52f9b3e41"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "-brook",
+      "_key": "!tables.results!1e949f34e56e6b50.65f42b0dc44d15f0",
+      "_id": "65f42b0dc44d15f0"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "-wick",
+      "_key": "!tables.results!1e949f34e56e6b50.91993a223027de7c",
+      "_id": "91993a223027de7c"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "-harrow",
+      "_key": "!tables.results!1e949f34e56e6b50.0ec08972f4de2e82",
+      "_id": "0ec08972f4de2e82"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "-hall",
+      "_key": "!tables.results!1e949f34e56e6b50.be8a877aa3b5c327",
+      "_id": "be8a877aa3b5c327"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "-watch",
+      "_key": "!tables.results!1e949f34e56e6b50.7cbcba12614107cf",
+      "_id": "7cbcba12614107cf"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "-well",
+      "_key": "!tables.results!1e949f34e56e6b50.48054fa9a9a59fa8",
+      "_id": "48054fa9a9a59fa8"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "-gate",
+      "_key": "!tables.results!1e949f34e56e6b50.0d6bf7b350bc71fa",
+      "_id": "0d6bf7b350bc71fa"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "-mount",
+      "_key": "!tables.results!1e949f34e56e6b50.9744acc85dbd46b6",
+      "_id": "9744acc85dbd46b6"
+    },
+    {
+      "range": [
+        41,
+        43
+      ],
+      "text": "-ridge",
+      "_key": "!tables.results!1e949f34e56e6b50.f80e5e7c5a185707",
+      "_id": "f80e5e7c5a185707"
+    },
+    {
+      "range": [
+        44,
+        46
+      ],
+      "text": "-ward",
+      "_key": "!tables.results!1e949f34e56e6b50.d4ba394e0572e46e",
+      "_id": "d4ba394e0572e46e"
+    },
+    {
+      "range": [
+        47,
+        49
+      ],
+      "text": "-mere",
+      "_key": "!tables.results!1e949f34e56e6b50.8db1e2142504d25c",
+      "_id": "8db1e2142504d25c"
+    },
+    {
+      "range": [
+        50,
+        52
+      ],
+      "text": "-field",
+      "_key": "!tables.results!1e949f34e56e6b50.74e4cc5821f704b3",
+      "_id": "74e4cc5821f704b3"
+    },
+    {
+      "range": [
+        53,
+        55
+      ],
+      "text": "-river",
+      "_key": "!tables.results!1e949f34e56e6b50.5d041eb97b3286eb",
+      "_id": "5d041eb97b3286eb"
+    },
+    {
+      "range": [
+        56,
+        58
+      ],
+      "text": "-hill",
+      "_key": "!tables.results!1e949f34e56e6b50.6ff63ea635dfa4c2",
+      "_id": "6ff63ea635dfa4c2"
+    },
+    {
+      "range": [
+        59,
+        61
+      ],
+      "text": "-tarn",
+      "_key": "!tables.results!1e949f34e56e6b50.07c00e35b048daed",
+      "_id": "07c00e35b048daed"
+    },
+    {
+      "range": [
+        62,
+        64
+      ],
+      "text": "-spire",
+      "_key": "!tables.results!1e949f34e56e6b50.b08adae93a59d8ea",
+      "_id": "b08adae93a59d8ea"
+    },
+    {
+      "range": [
+        65,
+        67
+      ],
+      "text": "-scar",
+      "_key": "!tables.results!1e949f34e56e6b50.8a39652ea7fcf1ab",
+      "_id": "8a39652ea7fcf1ab"
+    },
+    {
+      "range": [
+        68,
+        70
+      ],
+      "text": "-roost",
+      "_key": "!tables.results!1e949f34e56e6b50.d19e2d778dbc5b5c",
+      "_id": "d19e2d778dbc5b5c"
+    },
+    {
+      "range": [
+        71,
+        73
+      ],
+      "text": "-shade",
+      "_key": "!tables.results!1e949f34e56e6b50.54a63ada0ef0ac86",
+      "_id": "54a63ada0ef0ac86"
+    },
+    {
+      "range": [
+        74,
+        76
+      ],
+      "text": "-stone",
+      "_key": "!tables.results!1e949f34e56e6b50.d102f717350d500c",
+      "_id": "d102f717350d500c"
+    },
+    {
+      "range": [
+        77,
+        79
+      ],
+      "text": "-nest",
+      "_key": "!tables.results!1e949f34e56e6b50.96c1b41c0591d68b",
+      "_id": "96c1b41c0591d68b"
+    },
+    {
+      "range": [
+        80,
+        82
+      ],
+      "text": "-pass",
+      "_key": "!tables.results!1e949f34e56e6b50.16d4386343fb2897",
+      "_id": "16d4386343fb2897"
+    },
+    {
+      "range": [
+        83,
+        85
+      ],
+      "text": "-point",
+      "_key": "!tables.results!1e949f34e56e6b50.6f06e44f9a300216",
+      "_id": "6f06e44f9a300216"
+    },
+    {
+      "range": [
+        86,
+        88
+      ],
+      "text": "-vault",
+      "_key": "!tables.results!1e949f34e56e6b50.ff24902aba21198f",
+      "_id": "ff24902aba21198f"
+    },
+    {
+      "range": [
+        89,
+        91
+      ],
+      "text": "-cairn",
+      "_key": "!tables.results!1e949f34e56e6b50.1e0f23d58fd15021",
+      "_id": "1e0f23d58fd15021"
+    },
+    {
+      "range": [
+        92,
+        94
+      ],
+      "text": "-hollow",
+      "_key": "!tables.results!1e949f34e56e6b50.473e4a56f8586770",
+      "_id": "473e4a56f8586770"
+    },
+    {
+      "range": [
+        95,
+        97
+      ],
+      "text": "-moor",
+      "_key": "!tables.results!1e949f34e56e6b50.adf0672c313ea35f",
+      "_id": "adf0672c313ea35f"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "text": "-crag",
+      "_key": "!tables.results!1e949f34e56e6b50.63c4b9491328d0f0",
+      "_id": "63c4b9491328d0f0"
+    }
+  ],
+  "folder": "c4bf0c3b4d189653",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!1e949f34e56e6b50"
+}

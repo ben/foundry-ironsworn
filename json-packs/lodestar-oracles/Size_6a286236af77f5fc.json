@@ -1,0 +1,65 @@
+{
+  "_id": "6a286236af77f5fc",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/size"
+    }
+  },
+  "name": "Size",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Undersized",
+      "_key": "!tables.results!6a286236af77f5fc.f531cd3b3e16e634",
+      "_id": "f531cd3b3e16e634"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Small",
+      "_key": "!tables.results!6a286236af77f5fc.1c332fccc0814919",
+      "_id": "1c332fccc0814919"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Medium",
+      "_key": "!tables.results!6a286236af77f5fc.1b4ef02213a41074",
+      "_id": "1b4ef02213a41074"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Large",
+      "_key": "!tables.results!6a286236af77f5fc.c79b3419147f9394",
+      "_id": "c79b3419147f9394"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Huge",
+      "_key": "!tables.results!6a286236af77f5fc.ce5b90ab64371f2e",
+      "_id": "ce5b90ab64371f2e"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!6a286236af77f5fc"
+}

@@ -1,0 +1,74 @@
+{
+  "_id": "7955b47d4f185629",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/core",
+      "dsid": "oracle_rollable:lodestar/core/building_prompt"
+    }
+  },
+  "name": "Building a Prompt",
+  "description": "<p>Use this table to choose a structured prompt when you are unsure which Core oracles to combine for a question.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        20
+      ],
+      "text": "Action + Theme",
+      "_key": "!tables.results!7955b47d4f185629.7b4cc1ce782d0f32",
+      "_id": "7b4cc1ce782d0f32"
+    },
+    {
+      "range": [
+        21,
+        40
+      ],
+      "text": "Descriptor + Focus",
+      "_key": "!tables.results!7955b47d4f185629.591ac600e13f2d11",
+      "_id": "591ac600e13f2d11"
+    },
+    {
+      "range": [
+        41,
+        55
+      ],
+      "text": "Action + Focus",
+      "_key": "!tables.results!7955b47d4f185629.bbc063deb618d65c",
+      "_id": "bbc063deb618d65c"
+    },
+    {
+      "range": [
+        56,
+        70
+      ],
+      "text": "Descriptor + Theme",
+      "_key": "!tables.results!7955b47d4f185629.7de30c4d2624137e",
+      "_id": "7de30c4d2624137e"
+    },
+    {
+      "range": [
+        71,
+        85
+      ],
+      "text": "Action + Descriptor + Focus",
+      "_key": "!tables.results!7955b47d4f185629.24b20b48b4a689ff",
+      "_id": "24b20b48b4a689ff"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Action + Descriptor + Theme",
+      "_key": "!tables.results!7955b47d4f185629.16a7e3e06c9d0114",
+      "_id": "16a7e3e06c9d0114"
+    }
+  ],
+  "folder": "8d9ea44a24f8d204",
+  "sort": 51,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!7955b47d4f185629"
+}

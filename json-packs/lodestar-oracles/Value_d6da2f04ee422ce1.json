@@ -1,0 +1,65 @@
+{
+  "_id": "d6da2f04ee422ce1",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/scale/magnitude",
+      "dsid": "oracle_rollable:lodestar/scale/magnitude/value"
+    }
+  },
+  "name": "Value",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        15
+      ],
+      "text": "Worthless",
+      "_key": "!tables.results!d6da2f04ee422ce1.ef80a131ed78d0b5",
+      "_id": "ef80a131ed78d0b5"
+    },
+    {
+      "range": [
+        16,
+        35
+      ],
+      "text": "Cheap",
+      "_key": "!tables.results!d6da2f04ee422ce1.33858050a9fa215d",
+      "_id": "33858050a9fa215d"
+    },
+    {
+      "range": [
+        36,
+        65
+      ],
+      "text": "Common",
+      "_key": "!tables.results!d6da2f04ee422ce1.51a395f18a5b3f23",
+      "_id": "51a395f18a5b3f23"
+    },
+    {
+      "range": [
+        66,
+        85
+      ],
+      "text": "Valuable",
+      "_key": "!tables.results!d6da2f04ee422ce1.946cda7d84104dff",
+      "_id": "946cda7d84104dff"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "text": "Priceless",
+      "_key": "!tables.results!d6da2f04ee422ce1.f7e416fd790c5b34",
+      "_id": "f7e416fd790c5b34"
+    }
+  ],
+  "folder": "a15b81e917ce5079",
+  "sort": 98,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!d6da2f04ee422ce1"
+}

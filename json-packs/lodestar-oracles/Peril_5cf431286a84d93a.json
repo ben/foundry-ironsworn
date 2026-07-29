@@ -1,0 +1,344 @@
+{
+  "_id": "5cf431286a84d93a",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/location/overland",
+      "dsid": "oracle_rollable:lodestar/location/overland/peril"
+    }
+  },
+  "name": "Peril",
+  "description": "<p>Use this oracle to reveal the nature of a perilous event or complication on a journey.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Lingering foul weather tests your endurance",
+      "_key": "!tables.results!5cf431286a84d93a.1312af36b40df71a",
+      "_id": "1312af36b40df71a"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "A piece of important gear is damaged or broken",
+      "_key": "!tables.results!5cf431286a84d93a.f0de57309e090840",
+      "_id": "f0de57309e090840"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Provisions are lost, wasted, or spoiled",
+      "_key": "!tables.results!5cf431286a84d93a.b88d641587d5cd55",
+      "_id": "b88d641587d5cd55"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "The weather takes a turn for the worse",
+      "_key": "!tables.results!5cf431286a84d93a.b344a5a385362976",
+      "_id": "b344a5a385362976"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Rugged terrain or dense vegetation hampers your progress",
+      "_key": "!tables.results!5cf431286a84d93a.e9a8e91cd9abcb20",
+      "_id": "e9a8e91cd9abcb20"
+    },
+    {
+      "range": [
+        21,
+        23
+      ],
+      "text": "An injury or old pain causes trouble",
+      "_key": "!tables.results!5cf431286a84d93a.4af0ac4cba3c01f1",
+      "_id": "4af0ac4cba3c01f1"
+    },
+    {
+      "range": [
+        24,
+        26
+      ],
+      "text": "A cleverly camouflaged or hidden predator attacks",
+      "_key": "!tables.results!5cf431286a84d93a.2342ca82a5e3f479",
+      "_id": "2342ca82a5e3f479"
+    },
+    {
+      "range": [
+        27,
+        29
+      ],
+      "text": "You stumble into the lair or nest of dangerous creatures",
+      "_key": "!tables.results!5cf431286a84d93a.89fb93272ca250ce",
+      "_id": "89fb93272ca250ce"
+    },
+    {
+      "range": [
+        30,
+        32
+      ],
+      "text": "You are caught in a trap or ambush",
+      "_key": "!tables.results!5cf431286a84d93a.f4daf8e14c264f16",
+      "_id": "f4daf8e14c264f16"
+    },
+    {
+      "range": [
+        33,
+        35
+      ],
+      "text": "An impassable path forces a dangerous detour",
+      "_key": "!tables.results!5cf431286a84d93a.fd278af39dbc1a6c",
+      "_id": "fd278af39dbc1a6c"
+    },
+    {
+      "range": [
+        36,
+        38
+      ],
+      "text": "The path forces a treacherous crossing over a river or gap",
+      "_key": "!tables.results!5cf431286a84d93a.4dd75ec64625458e",
+      "_id": "4dd75ec64625458e"
+    },
+    {
+      "range": [
+        39,
+        41
+      ],
+      "text": "A steep cliff or precipitous drop stands in your way",
+      "_key": "!tables.results!5cf431286a84d93a.45b08bd9bf800d1a",
+      "_id": "45b08bd9bf800d1a"
+    },
+    {
+      "range": [
+        42,
+        44
+      ],
+      "text": "Confounding paths cause you to lose your way",
+      "_key": "!tables.results!5cf431286a84d93a.1d3d52323194842a",
+      "_id": "1d3d52323194842a"
+    },
+    {
+      "range": [
+        45,
+        47
+      ],
+      "text": "Disease or sickness takes hold",
+      "_key": "!tables.results!5cf431286a84d93a.6d8d0022810585c2",
+      "_id": "6d8d0022810585c2"
+    },
+    {
+      "range": [
+        48,
+        50
+      ],
+      "text": "You realize something important was lost or left behind",
+      "_key": "!tables.results!5cf431286a84d93a.aee68fd5bf3453b8",
+      "_id": "aee68fd5bf3453b8"
+    },
+    {
+      "range": [
+        51,
+        53
+      ],
+      "text": "You come upon a settlement or camp in crisis",
+      "_key": "!tables.results!5cf431286a84d93a.95c61d2d27168a0d",
+      "_id": "95c61d2d27168a0d"
+    },
+    {
+      "range": [
+        54,
+        56
+      ],
+      "text": "Someone who watches over this area makes a costly demand or threat",
+      "_key": "!tables.results!5cf431286a84d93a.e95ba2ac483ce419",
+      "_id": "e95ba2ac483ce419"
+    },
+    {
+      "range": [
+        57,
+        59
+      ],
+      "text": "An enemy patrol or outpost guards this area",
+      "_key": "!tables.results!5cf431286a84d93a.55ce7a7cbfd50967",
+      "_id": "55ce7a7cbfd50967"
+    },
+    {
+      "range": [
+        60,
+        62
+      ],
+      "text": "You encounter a dangerous animal or pack",
+      "_key": "!tables.results!5cf431286a84d93a.e2d0463a65bf8cdd",
+      "_id": "e2d0463a65bf8cdd"
+    },
+    {
+      "range": [
+        63,
+        65
+      ],
+      "text": "Insects or small creatures swarm to attack",
+      "_key": "!tables.results!5cf431286a84d93a.8a23cece5e6c4fec",
+      "_id": "8a23cece5e6c4fec"
+    },
+    {
+      "range": [
+        66,
+        68
+      ],
+      "text": "You are caught in a flood or forced to navigate a perilous waterway",
+      "_key": "!tables.results!5cf431286a84d93a.f54785aa47474313",
+      "_id": "f54785aa47474313"
+    },
+    {
+      "range": [
+        69,
+        71
+      ],
+      "text": "You encounter a fellow traveler in peril",
+      "_key": "!tables.results!5cf431286a84d93a.a258567789d00402",
+      "_id": "a258567789d00402"
+    },
+    {
+      "range": [
+        72,
+        74
+      ],
+      "text": "Fog or darkness hides a lurking danger",
+      "_key": "!tables.results!5cf431286a84d93a.c521c243ed11f5b7",
+      "_id": "c521c243ed11f5b7"
+    },
+    {
+      "range": [
+        75,
+        76
+      ],
+      "text": "You suffer the effects of toxic plants or venomous creatures",
+      "_key": "!tables.results!5cf431286a84d93a.9f90ad19d88f363b",
+      "_id": "9f90ad19d88f363b"
+    },
+    {
+      "range": [
+        77,
+        78
+      ],
+      "text": "You are caught within unnatural mist or darkness",
+      "_key": "!tables.results!5cf431286a84d93a.d12537742a0ba849",
+      "_id": "d12537742a0ba849"
+    },
+    {
+      "range": [
+        79,
+        80
+      ],
+      "text": "A companion or fellow traveler stumbles into danger",
+      "_key": "!tables.results!5cf431286a84d93a.cf8c044a617475b7",
+      "_id": "cf8c044a617475b7"
+    },
+    {
+      "range": [
+        81,
+        82
+      ],
+      "text": "Muddy ground or a quagmire threatens to drag you down",
+      "_key": "!tables.results!5cf431286a84d93a.65c7393d2164d437",
+      "_id": "65c7393d2164d437"
+    },
+    {
+      "range": [
+        83,
+        84
+      ],
+      "text": "You encounter a monstrous beast",
+      "_key": "!tables.results!5cf431286a84d93a.b134e4eee6fbed3c",
+      "_id": "b134e4eee6fbed3c"
+    },
+    {
+      "range": [
+        85,
+        86
+      ],
+      "text": "A deceptively peaceful location lures you into a false sense of safety",
+      "_key": "!tables.results!5cf431286a84d93a.66b2aa6763d8310b",
+      "_id": "66b2aa6763d8310b"
+    },
+    {
+      "range": [
+        87,
+        88
+      ],
+      "text": "Spooked creatures stampede along your path",
+      "_key": "!tables.results!5cf431286a84d93a.0753c8847523eb5d",
+      "_id": "0753c8847523eb5d"
+    },
+    {
+      "range": [
+        89,
+        90
+      ],
+      "text": "A companion or fellow traveler is injured or falls ill",
+      "_key": "!tables.results!5cf431286a84d93a.7785870d5268697c",
+      "_id": "7785870d5268697c"
+    },
+    {
+      "range": [
+        91,
+        92
+      ],
+      "text": "You face a dreadful vision or hallucination",
+      "_key": "!tables.results!5cf431286a84d93a.328023be88e9d0da",
+      "_id": "328023be88e9d0da"
+    },
+    {
+      "range": [
+        93,
+        94
+      ],
+      "text": "A sinkhole or pit opens beneath you",
+      "_key": "!tables.results!5cf431286a84d93a.0646dfb01b960044",
+      "_id": "0646dfb01b960044"
+    },
+    {
+      "range": [
+        95,
+        96
+      ],
+      "text": "A supernatural entity seeks vengeance or absolution",
+      "_key": "!tables.results!5cf431286a84d93a.4b05e273ffb2d30b",
+      "_id": "4b05e273ffb2d30b"
+    },
+    {
+      "range": [
+        97,
+        98
+      ],
+      "text": "Unstable terrain causes a rockfall or landslide",
+      "_key": "!tables.results!5cf431286a84d93a.3658ff7fffb54223",
+      "_id": "3658ff7fffb54223"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "text": "Your presence triggers a spell or supernatural anomaly",
+      "_key": "!tables.results!5cf431286a84d93a.ff95f859af05252d",
+      "_id": "ff95f859af05252d"
+    }
+  ],
+  "folder": "0970a79efd8cf645",
+  "sort": 58,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!5cf431286a84d93a"
+}

@@ -48,7 +48,7 @@ const ISMoveCategoryColors = {
 	'Recover Moves': '#488B44',
 	// non-canonical (ironsworn); uses color from 'Connection'
 	'Relationship Moves': '#4A5791',
-	'Scene Challenge': '#206087',
+	'Scene Challenge Moves': '#206087',
 	'Session Moves': '#3F8C8A',
 	'Suffer Moves': '#883529',
 	// non-canonical (ironsworn); uses color from 'Session'
@@ -56,7 +56,7 @@ const ISMoveCategoryColors = {
 	'Threshold Moves': '#1D1D1B'
 }
 
-const collections = ['classic', 'delve', 'starforged', 'sundered_isles']
+const collections = ['classic', 'delve', 'lodestar', 'starforged', 'sundered_isles']
 
 async function writeJsonFile(packName: string, json: any) {
 	const fileName = json.name.replace(/\W/g, '_')
@@ -232,6 +232,7 @@ for (const collection of collections) {
 	const packName = {
 		classic: 'ironsworn-moves',
 		delve: 'delve-moves',
+		lodestar: 'lodestar-moves',
 		starforged: 'starforged-moves',
 		sundered_isles: 'sundered-isles-moves'
 	}[collection]
@@ -454,6 +455,7 @@ for (const collection of collections) {
 	const packName = {
 		classic: 'ironsworn-oracles',
 		delve: 'delve-oracles',
+		lodestar: 'lodestar-oracles',
 		starforged: 'starforged-oracles',
 		sundered_isles: 'sundered-isles-oracles'
 	}[collection]

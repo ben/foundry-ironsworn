@@ -1,0 +1,245 @@
+{
+  "_id": "2e03f3a35526c9ce",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/name/firstborn",
+      "dsid": "oracle_rollable:lodestar/name/firstborn/varou"
+    }
+  },
+  "name": "Varou",
+  "description": "",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        4
+      ],
+      "text": "Vata",
+      "_key": "!tables.results!2e03f3a35526c9ce.aeb5c3188464ef83",
+      "_id": "aeb5c3188464ef83"
+    },
+    {
+      "range": [
+        5,
+        8
+      ],
+      "text": "Zora",
+      "_key": "!tables.results!2e03f3a35526c9ce.3398887c4ad2dae0",
+      "_id": "3398887c4ad2dae0"
+    },
+    {
+      "range": [
+        9,
+        12
+      ],
+      "text": "Jasna",
+      "_key": "!tables.results!2e03f3a35526c9ce.a536cad8e15b9a78",
+      "_id": "a536cad8e15b9a78"
+    },
+    {
+      "range": [
+        13,
+        16
+      ],
+      "text": "Charna",
+      "_key": "!tables.results!2e03f3a35526c9ce.ae380ec5756e41be",
+      "_id": "ae380ec5756e41be"
+    },
+    {
+      "range": [
+        17,
+        20
+      ],
+      "text": "Tana",
+      "_key": "!tables.results!2e03f3a35526c9ce.0dcb966a5640be66",
+      "_id": "0dcb966a5640be66"
+    },
+    {
+      "range": [
+        21,
+        24
+      ],
+      "text": "Soveen",
+      "_key": "!tables.results!2e03f3a35526c9ce.4e1d68d190472449",
+      "_id": "4e1d68d190472449"
+    },
+    {
+      "range": [
+        25,
+        28
+      ],
+      "text": "Radka",
+      "_key": "!tables.results!2e03f3a35526c9ce.bf9c9e4789f4d84b",
+      "_id": "bf9c9e4789f4d84b"
+    },
+    {
+      "range": [
+        29,
+        32
+      ],
+      "text": "Zlata",
+      "_key": "!tables.results!2e03f3a35526c9ce.632317433aa4ccbb",
+      "_id": "632317433aa4ccbb"
+    },
+    {
+      "range": [
+        33,
+        36
+      ],
+      "text": "Leesla",
+      "_key": "!tables.results!2e03f3a35526c9ce.a348be1ca6665be5",
+      "_id": "a348be1ca6665be5"
+    },
+    {
+      "range": [
+        37,
+        40
+      ],
+      "text": "Byna",
+      "_key": "!tables.results!2e03f3a35526c9ce.1075df3c401794b6",
+      "_id": "1075df3c401794b6"
+    },
+    {
+      "range": [
+        41,
+        44
+      ],
+      "text": "Meeka",
+      "_key": "!tables.results!2e03f3a35526c9ce.597d1cc497b1151f",
+      "_id": "597d1cc497b1151f"
+    },
+    {
+      "range": [
+        45,
+        48
+      ],
+      "text": "Iskra",
+      "_key": "!tables.results!2e03f3a35526c9ce.59da43c6fcb99851",
+      "_id": "59da43c6fcb99851"
+    },
+    {
+      "range": [
+        49,
+        52
+      ],
+      "text": "Jarek",
+      "_key": "!tables.results!2e03f3a35526c9ce.a55f218a949df5be",
+      "_id": "a55f218a949df5be"
+    },
+    {
+      "range": [
+        53,
+        56
+      ],
+      "text": "Darva",
+      "_key": "!tables.results!2e03f3a35526c9ce.ed2957566e472a31",
+      "_id": "ed2957566e472a31"
+    },
+    {
+      "range": [
+        57,
+        60
+      ],
+      "text": "Neda",
+      "_key": "!tables.results!2e03f3a35526c9ce.dcf35649fe4dfaec",
+      "_id": "dcf35649fe4dfaec"
+    },
+    {
+      "range": [
+        61,
+        64
+      ],
+      "text": "Keha",
+      "_key": "!tables.results!2e03f3a35526c9ce.3a640ccf7c03bc45",
+      "_id": "3a640ccf7c03bc45"
+    },
+    {
+      "range": [
+        65,
+        68
+      ],
+      "text": "Zhivka",
+      "_key": "!tables.results!2e03f3a35526c9ce.7dda8549a0ffbf42",
+      "_id": "7dda8549a0ffbf42"
+    },
+    {
+      "range": [
+        69,
+        72
+      ],
+      "text": "Kvata",
+      "_key": "!tables.results!2e03f3a35526c9ce.6f8d07341095f572",
+      "_id": "6f8d07341095f572"
+    },
+    {
+      "range": [
+        73,
+        76
+      ],
+      "text": "Staysa",
+      "_key": "!tables.results!2e03f3a35526c9ce.c2b0afcb6122cb6e",
+      "_id": "c2b0afcb6122cb6e"
+    },
+    {
+      "range": [
+        77,
+        80
+      ],
+      "text": "Evka",
+      "_key": "!tables.results!2e03f3a35526c9ce.631fd3e248c37904",
+      "_id": "631fd3e248c37904"
+    },
+    {
+      "range": [
+        81,
+        84
+      ],
+      "text": "Vuksha",
+      "_key": "!tables.results!2e03f3a35526c9ce.a1ddc4fe289927a1",
+      "_id": "a1ddc4fe289927a1"
+    },
+    {
+      "range": [
+        85,
+        88
+      ],
+      "text": "Muko",
+      "_key": "!tables.results!2e03f3a35526c9ce.7b499d97edcfc8b8",
+      "_id": "7b499d97edcfc8b8"
+    },
+    {
+      "range": [
+        89,
+        92
+      ],
+      "text": "Dreko",
+      "_key": "!tables.results!2e03f3a35526c9ce.8f31e259066c53c1",
+      "_id": "8f31e259066c53c1"
+    },
+    {
+      "range": [
+        93,
+        96
+      ],
+      "text": "Aleko",
+      "_key": "!tables.results!2e03f3a35526c9ce.dd48712de4d36d59",
+      "_id": "dd48712de4d36d59"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "text": "Vojan",
+      "_key": "!tables.results!2e03f3a35526c9ce.453889e69594bf73",
+      "_id": "453889e69594bf73"
+    }
+  ],
+  "folder": "a48dea3f988d2a95",
+  "sort": 0,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!2e03f3a35526c9ce"
+}

@@ -1,0 +1,200 @@
+{
+  "_id": "4d952f1f3294ee17",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/story",
+      "dsid": "oracle_rollable:lodestar/story/plot_twist"
+    }
+  },
+  "name": "Major Plot Twist",
+  "description": "<p>Use this oracle to introduce a narrative surprise or revelation. Most of these results have a negative implication, and can be used to resolve a match at a crucial moment in your story. In particular, this is an effective tool to leverage when you make a move with matched 10's on the challenge dice.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        5
+      ],
+      "text": "It was all a diversion",
+      "_key": "!tables.results!4d952f1f3294ee17.9b5f3dd3503a0d37",
+      "_id": "9b5f3dd3503a0d37"
+    },
+    {
+      "range": [
+        6,
+        10
+      ],
+      "text": "A dark secret is revealed",
+      "_key": "!tables.results!4d952f1f3294ee17.0b6f5596f6e86aba",
+      "_id": "0b6f5596f6e86aba"
+    },
+    {
+      "range": [
+        11,
+        15
+      ],
+      "text": "A trap is sprung",
+      "_key": "!tables.results!4d952f1f3294ee17.9da360e68df349b7",
+      "_id": "9da360e68df349b7"
+    },
+    {
+      "range": [
+        16,
+        20
+      ],
+      "text": "An assumption is revealed to be false",
+      "_key": "!tables.results!4d952f1f3294ee17.729dc696832c8b59",
+      "_id": "729dc696832c8b59"
+    },
+    {
+      "range": [
+        21,
+        25
+      ],
+      "text": "A secret alliance is revealed",
+      "_key": "!tables.results!4d952f1f3294ee17.55bde6277467aec4",
+      "_id": "55bde6277467aec4"
+    },
+    {
+      "range": [
+        26,
+        30
+      ],
+      "text": "Your actions benefit an enemy",
+      "_key": "!tables.results!4d952f1f3294ee17.e51dce00d9d59584",
+      "_id": "e51dce00d9d59584"
+    },
+    {
+      "range": [
+        31,
+        35
+      ],
+      "text": "Someone returns unexpectedly",
+      "_key": "!tables.results!4d952f1f3294ee17.14af221b5bc2d2e2",
+      "_id": "14af221b5bc2d2e2"
+    },
+    {
+      "range": [
+        36,
+        40
+      ],
+      "text": "A more dangerous foe is revealed",
+      "_key": "!tables.results!4d952f1f3294ee17.ec430d1eab7deea5",
+      "_id": "ec430d1eab7deea5"
+    },
+    {
+      "range": [
+        41,
+        45
+      ],
+      "text": "You and an enemy share a common goal",
+      "_key": "!tables.results!4d952f1f3294ee17.bb7a74eff148ed84",
+      "_id": "bb7a74eff148ed84"
+    },
+    {
+      "range": [
+        46,
+        50
+      ],
+      "text": "A true identity is revealed",
+      "_key": "!tables.results!4d952f1f3294ee17.93724c07e654462a",
+      "_id": "93724c07e654462a"
+    },
+    {
+      "range": [
+        51,
+        55
+      ],
+      "text": "You are betrayed by someone who was trusted",
+      "_key": "!tables.results!4d952f1f3294ee17.6db32c184dc3864c",
+      "_id": "6db32c184dc3864c"
+    },
+    {
+      "range": [
+        56,
+        60
+      ],
+      "text": "You are too late",
+      "_key": "!tables.results!4d952f1f3294ee17.d7738b9f56d81828",
+      "_id": "d7738b9f56d81828"
+    },
+    {
+      "range": [
+        61,
+        65
+      ],
+      "text": "The true enemy is revealed",
+      "_key": "!tables.results!4d952f1f3294ee17.bcf6f55063b27d6c",
+      "_id": "bcf6f55063b27d6c"
+    },
+    {
+      "range": [
+        66,
+        70
+      ],
+      "text": "The enemy gains new allies",
+      "_key": "!tables.results!4d952f1f3294ee17.6abf7c63b1fca637",
+      "_id": "6abf7c63b1fca637"
+    },
+    {
+      "range": [
+        71,
+        75
+      ],
+      "text": "A new danger appears",
+      "_key": "!tables.results!4d952f1f3294ee17.9a1b69b2d6d95cdb",
+      "_id": "9a1b69b2d6d95cdb"
+    },
+    {
+      "range": [
+        76,
+        80
+      ],
+      "text": "Someone or something goes missing",
+      "_key": "!tables.results!4d952f1f3294ee17.74eda546c751f0fa",
+      "_id": "74eda546c751f0fa"
+    },
+    {
+      "range": [
+        81,
+        85
+      ],
+      "text": "The truth of a relationship is revealed",
+      "_key": "!tables.results!4d952f1f3294ee17.883c09900cd2fd20",
+      "_id": "883c09900cd2fd20"
+    },
+    {
+      "range": [
+        86,
+        90
+      ],
+      "text": "Two seemingly unrelated situations are shown to be connected",
+      "_key": "!tables.results!4d952f1f3294ee17.9907089352077efc",
+      "_id": "9907089352077efc"
+    },
+    {
+      "range": [
+        91,
+        95
+      ],
+      "text": "Unexpected powers or abilities are revealed",
+      "_key": "!tables.results!4d952f1f3294ee17.32731d346c560a7d",
+      "_id": "32731d346c560a7d"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "text": "Roll twice; if they are the same result, make it worse",
+      "_key": "!tables.results!4d952f1f3294ee17.212c7ea714dedeeb",
+      "_id": "212c7ea714dedeeb"
+    }
+  ],
+  "folder": "0093b58c609db555",
+  "sort": 95,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!4d952f1f3294ee17"
+}

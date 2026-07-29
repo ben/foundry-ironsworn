@@ -1,0 +1,920 @@
+{
+  "_id": "96ef27af9ebf1fa8",
+  "flags": {
+    "foundry-ironsworn": {
+      "category": "oracle_collection:lodestar/core",
+      "dsid": "oracle_rollable:lodestar/core/descriptor"
+    }
+  },
+  "name": "Descriptor",
+  "description": "<p>Use the Descriptor oracle to add texture to the details of a location or event. Combined with a Focus oracle result, it provides a more specific prompt than either oracle alone.</p>",
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Small",
+      "_key": "!tables.results!96ef27af9ebf1fa8.1551cdcb8c9ce782",
+      "_id": "1551cdcb8c9ce782"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Collapsed",
+      "_key": "!tables.results!96ef27af9ebf1fa8.66fa80338388b770",
+      "_id": "66fa80338388b770"
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Protected",
+      "_key": "!tables.results!96ef27af9ebf1fa8.2cc76081f8cf3d46",
+      "_id": "2cc76081f8cf3d46"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Infested",
+      "_key": "!tables.results!96ef27af9ebf1fa8.1716f1db05131e30",
+      "_id": "1716f1db05131e30"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Misty",
+      "_key": "!tables.results!96ef27af9ebf1fa8.023226ef92383e79",
+      "_id": "023226ef92383e79"
+    },
+    {
+      "range": [
+        6,
+        6
+      ],
+      "text": "Towering",
+      "_key": "!tables.results!96ef27af9ebf1fa8.06dbd01638f0c6f1",
+      "_id": "06dbd01638f0c6f1"
+    },
+    {
+      "range": [
+        7,
+        7
+      ],
+      "text": "Light",
+      "_key": "!tables.results!96ef27af9ebf1fa8.c161b8caae50663d",
+      "_id": "c161b8caae50663d"
+    },
+    {
+      "range": [
+        8,
+        8
+      ],
+      "text": "Marked",
+      "_key": "!tables.results!96ef27af9ebf1fa8.7ea3f818610e7bdd",
+      "_id": "7ea3f818610e7bdd"
+    },
+    {
+      "range": [
+        9,
+        9
+      ],
+      "text": "Crafted",
+      "_key": "!tables.results!96ef27af9ebf1fa8.d9763853dcd97657",
+      "_id": "d9763853dcd97657"
+    },
+    {
+      "range": [
+        10,
+        10
+      ],
+      "text": "Remote",
+      "_key": "!tables.results!96ef27af9ebf1fa8.47f7ced842052d3a",
+      "_id": "47f7ced842052d3a"
+    },
+    {
+      "range": [
+        11,
+        11
+      ],
+      "text": "Deep",
+      "_key": "!tables.results!96ef27af9ebf1fa8.ea2e227125c6e812",
+      "_id": "ea2e227125c6e812"
+    },
+    {
+      "range": [
+        12,
+        12
+      ],
+      "text": "Captured",
+      "_key": "!tables.results!96ef27af9ebf1fa8.18939e44e510c5b6",
+      "_id": "18939e44e510c5b6"
+    },
+    {
+      "range": [
+        13,
+        13
+      ],
+      "text": "Ruined",
+      "_key": "!tables.results!96ef27af9ebf1fa8.b12224439bbd1be4",
+      "_id": "b12224439bbd1be4"
+    },
+    {
+      "range": [
+        14,
+        14
+      ],
+      "text": "Safe",
+      "_key": "!tables.results!96ef27af9ebf1fa8.55f17db04d943187",
+      "_id": "55f17db04d943187"
+    },
+    {
+      "range": [
+        15,
+        15
+      ],
+      "text": "Precious",
+      "_key": "!tables.results!96ef27af9ebf1fa8.63adc028904c94ab",
+      "_id": "63adc028904c94ab"
+    },
+    {
+      "range": [
+        16,
+        16
+      ],
+      "text": "Abandoned",
+      "_key": "!tables.results!96ef27af9ebf1fa8.c95bbaa6da99eda5",
+      "_id": "c95bbaa6da99eda5"
+    },
+    {
+      "range": [
+        17,
+        17
+      ],
+      "text": "Inaccessible",
+      "_key": "!tables.results!96ef27af9ebf1fa8.3ff028462e629b88",
+      "_id": "3ff028462e629b88"
+    },
+    {
+      "range": [
+        18,
+        18
+      ],
+      "text": "Barren",
+      "_key": "!tables.results!96ef27af9ebf1fa8.df9675ee761b9370",
+      "_id": "df9675ee761b9370"
+    },
+    {
+      "range": [
+        19,
+        19
+      ],
+      "text": "Guarded",
+      "_key": "!tables.results!96ef27af9ebf1fa8.45a6b2d343878376",
+      "_id": "45a6b2d343878376"
+    },
+    {
+      "range": [
+        20,
+        20
+      ],
+      "text": "Impassable",
+      "_key": "!tables.results!96ef27af9ebf1fa8.d3e577bfc22b0b4e",
+      "_id": "d3e577bfc22b0b4e"
+    },
+    {
+      "range": [
+        21,
+        21
+      ],
+      "text": "Corrupted",
+      "_key": "!tables.results!96ef27af9ebf1fa8.018bfff613581728",
+      "_id": "018bfff613581728"
+    },
+    {
+      "range": [
+        22,
+        22
+      ],
+      "text": "Foreboding",
+      "_key": "!tables.results!96ef27af9ebf1fa8.f68d063c0e184bd8",
+      "_id": "f68d063c0e184bd8"
+    },
+    {
+      "range": [
+        23,
+        23
+      ],
+      "text": "Wild",
+      "_key": "!tables.results!96ef27af9ebf1fa8.e1fb78799f80fb72",
+      "_id": "e1fb78799f80fb72"
+    },
+    {
+      "range": [
+        24,
+        24
+      ],
+      "text": "Fragile",
+      "_key": "!tables.results!96ef27af9ebf1fa8.7b565e0f96d11d31",
+      "_id": "7b565e0f96d11d31"
+    },
+    {
+      "range": [
+        25,
+        25
+      ],
+      "text": "Isolated",
+      "_key": "!tables.results!96ef27af9ebf1fa8.e9ad3b364f563074",
+      "_id": "e9ad3b364f563074"
+    },
+    {
+      "range": [
+        26,
+        26
+      ],
+      "text": "Inhabited",
+      "_key": "!tables.results!96ef27af9ebf1fa8.5a06fe29a1cc1fa4",
+      "_id": "5a06fe29a1cc1fa4"
+    },
+    {
+      "range": [
+        27,
+        27
+      ],
+      "text": "Defended",
+      "_key": "!tables.results!96ef27af9ebf1fa8.f3563bf3e8d4345d",
+      "_id": "f3563bf3e8d4345d"
+    },
+    {
+      "range": [
+        28,
+        28
+      ],
+      "text": "Active",
+      "_key": "!tables.results!96ef27af9ebf1fa8.63c4e4db3d8844dc",
+      "_id": "63c4e4db3d8844dc"
+    },
+    {
+      "range": [
+        29,
+        29
+      ],
+      "text": "Bloody",
+      "_key": "!tables.results!96ef27af9ebf1fa8.44d4e90be43a12b1",
+      "_id": "44d4e90be43a12b1"
+    },
+    {
+      "range": [
+        30,
+        30
+      ],
+      "text": "Dying",
+      "_key": "!tables.results!96ef27af9ebf1fa8.a5f1d9bb390867c5",
+      "_id": "a5f1d9bb390867c5"
+    },
+    {
+      "range": [
+        31,
+        31
+      ],
+      "text": "Grim",
+      "_key": "!tables.results!96ef27af9ebf1fa8.f26ed7807fa6516c",
+      "_id": "f26ed7807fa6516c"
+    },
+    {
+      "range": [
+        32,
+        32
+      ],
+      "text": "Shrouded",
+      "_key": "!tables.results!96ef27af9ebf1fa8.b4d7aa884fbf3f48",
+      "_id": "b4d7aa884fbf3f48"
+    },
+    {
+      "range": [
+        33,
+        33
+      ],
+      "text": "Dead",
+      "_key": "!tables.results!96ef27af9ebf1fa8.73f4bcf976893117",
+      "_id": "73f4bcf976893117"
+    },
+    {
+      "range": [
+        34,
+        34
+      ],
+      "text": "Sealed",
+      "_key": "!tables.results!96ef27af9ebf1fa8.70da11cfc35a3b6d",
+      "_id": "70da11cfc35a3b6d"
+    },
+    {
+      "range": [
+        35,
+        35
+      ],
+      "text": "Flooded",
+      "_key": "!tables.results!96ef27af9ebf1fa8.57d7fd573c2dc5dc",
+      "_id": "57d7fd573c2dc5dc"
+    },
+    {
+      "range": [
+        36,
+        36
+      ],
+      "text": "Withered",
+      "_key": "!tables.results!96ef27af9ebf1fa8.07f3a77cad4ba54c",
+      "_id": "07f3a77cad4ba54c"
+    },
+    {
+      "range": [
+        37,
+        37
+      ],
+      "text": "Lush",
+      "_key": "!tables.results!96ef27af9ebf1fa8.1158fdb936bba9f3",
+      "_id": "1158fdb936bba9f3"
+    },
+    {
+      "range": [
+        38,
+        38
+      ],
+      "text": "Fortified",
+      "_key": "!tables.results!96ef27af9ebf1fa8.884502627165b0f1",
+      "_id": "884502627165b0f1"
+    },
+    {
+      "range": [
+        39,
+        39
+      ],
+      "text": "Beautiful",
+      "_key": "!tables.results!96ef27af9ebf1fa8.9ed840925eca8cf8",
+      "_id": "9ed840925eca8cf8"
+    },
+    {
+      "range": [
+        40,
+        40
+      ],
+      "text": "Blocked",
+      "_key": "!tables.results!96ef27af9ebf1fa8.320f8f4505e8afb1",
+      "_id": "320f8f4505e8afb1"
+    },
+    {
+      "range": [
+        41,
+        41
+      ],
+      "text": "Desolate",
+      "_key": "!tables.results!96ef27af9ebf1fa8.01697063e007ef75",
+      "_id": "01697063e007ef75"
+    },
+    {
+      "range": [
+        42,
+        42
+      ],
+      "text": "Deadly",
+      "_key": "!tables.results!96ef27af9ebf1fa8.ae477f98bb5d75b5",
+      "_id": "ae477f98bb5d75b5"
+    },
+    {
+      "range": [
+        43,
+        43
+      ],
+      "text": "Massive",
+      "_key": "!tables.results!96ef27af9ebf1fa8.2f0a3c234b309a21",
+      "_id": "2f0a3c234b309a21"
+    },
+    {
+      "range": [
+        44,
+        44
+      ],
+      "text": "Hallowed",
+      "_key": "!tables.results!96ef27af9ebf1fa8.78a2d5bec1cafbc1",
+      "_id": "78a2d5bec1cafbc1"
+    },
+    {
+      "range": [
+        45,
+        45
+      ],
+      "text": "Confined",
+      "_key": "!tables.results!96ef27af9ebf1fa8.966f0979f11acab7",
+      "_id": "966f0979f11acab7"
+    },
+    {
+      "range": [
+        46,
+        46
+      ],
+      "text": "Unusual",
+      "_key": "!tables.results!96ef27af9ebf1fa8.c4e88a2b8d861be1",
+      "_id": "c4e88a2b8d861be1"
+    },
+    {
+      "range": [
+        47,
+        47
+      ],
+      "text": "Mysterious",
+      "_key": "!tables.results!96ef27af9ebf1fa8.e70004fb4d4f5e1e",
+      "_id": "e70004fb4d4f5e1e"
+    },
+    {
+      "range": [
+        48,
+        48
+      ],
+      "text": "Strange",
+      "_key": "!tables.results!96ef27af9ebf1fa8.86ef6c400ebab1d0",
+      "_id": "86ef6c400ebab1d0"
+    },
+    {
+      "range": [
+        49,
+        49
+      ],
+      "text": "Depleted",
+      "_key": "!tables.results!96ef27af9ebf1fa8.67e2257ba7164472",
+      "_id": "67e2257ba7164472"
+    },
+    {
+      "range": [
+        50,
+        50
+      ],
+      "text": "Crowded",
+      "_key": "!tables.results!96ef27af9ebf1fa8.b56efa92fb6940b5",
+      "_id": "b56efa92fb6940b5"
+    },
+    {
+      "range": [
+        51,
+        51
+      ],
+      "text": "Fertile",
+      "_key": "!tables.results!96ef27af9ebf1fa8.24872d1e04cc8848",
+      "_id": "24872d1e04cc8848"
+    },
+    {
+      "range": [
+        52,
+        52
+      ],
+      "text": "Diverse",
+      "_key": "!tables.results!96ef27af9ebf1fa8.156f99f9e8c66781",
+      "_id": "156f99f9e8c66781"
+    },
+    {
+      "range": [
+        53,
+        53
+      ],
+      "text": "Sheltered",
+      "_key": "!tables.results!96ef27af9ebf1fa8.656121edce874031",
+      "_id": "656121edce874031"
+    },
+    {
+      "range": [
+        54,
+        54
+      ],
+      "text": "Destroyed",
+      "_key": "!tables.results!96ef27af9ebf1fa8.e01371d750ee105f",
+      "_id": "e01371d750ee105f"
+    },
+    {
+      "range": [
+        55,
+        55
+      ],
+      "text": "Open",
+      "_key": "!tables.results!96ef27af9ebf1fa8.1dc347664dd45372",
+      "_id": "1dc347664dd45372"
+    },
+    {
+      "range": [
+        56,
+        56
+      ],
+      "text": "Exposed",
+      "_key": "!tables.results!96ef27af9ebf1fa8.6b2ac102a3ab49a3",
+      "_id": "6b2ac102a3ab49a3"
+    },
+    {
+      "range": [
+        57,
+        57
+      ],
+      "text": "Contested",
+      "_key": "!tables.results!96ef27af9ebf1fa8.f85e74e029328be0",
+      "_id": "f85e74e029328be0"
+    },
+    {
+      "range": [
+        58,
+        58
+      ],
+      "text": "Blighted",
+      "_key": "!tables.results!96ef27af9ebf1fa8.5af81735ff8f0247",
+      "_id": "5af81735ff8f0247"
+    },
+    {
+      "range": [
+        59,
+        59
+      ],
+      "text": "Rugged",
+      "_key": "!tables.results!96ef27af9ebf1fa8.229227d9e3b67f07",
+      "_id": "229227d9e3b67f07"
+    },
+    {
+      "range": [
+        60,
+        60
+      ],
+      "text": "Unnatural",
+      "_key": "!tables.results!96ef27af9ebf1fa8.ba88f119b6024759",
+      "_id": "ba88f119b6024759"
+    },
+    {
+      "range": [
+        61,
+        61
+      ],
+      "text": "Secret",
+      "_key": "!tables.results!96ef27af9ebf1fa8.1d92c6b193426fcd",
+      "_id": "1d92c6b193426fcd"
+    },
+    {
+      "range": [
+        62,
+        62
+      ],
+      "text": "Dark",
+      "_key": "!tables.results!96ef27af9ebf1fa8.49604500a6606ab1",
+      "_id": "49604500a6606ab1"
+    },
+    {
+      "range": [
+        63,
+        63
+      ],
+      "text": "Sunken",
+      "_key": "!tables.results!96ef27af9ebf1fa8.47b0ba9f73459105",
+      "_id": "47b0ba9f73459105"
+    },
+    {
+      "range": [
+        64,
+        64
+      ],
+      "text": "Abundant",
+      "_key": "!tables.results!96ef27af9ebf1fa8.8fb2eca69de0789a",
+      "_id": "8fb2eca69de0789a"
+    },
+    {
+      "range": [
+        65,
+        65
+      ],
+      "text": "Raided",
+      "_key": "!tables.results!96ef27af9ebf1fa8.515fba8387be2473",
+      "_id": "515fba8387be2473"
+    },
+    {
+      "range": [
+        66,
+        66
+      ],
+      "text": "Suspended",
+      "_key": "!tables.results!96ef27af9ebf1fa8.c071b9604d23d158",
+      "_id": "c071b9604d23d158"
+    },
+    {
+      "range": [
+        67,
+        67
+      ],
+      "text": "Hostile",
+      "_key": "!tables.results!96ef27af9ebf1fa8.18da7d2e4cb872f3",
+      "_id": "18da7d2e4cb872f3"
+    },
+    {
+      "range": [
+        68,
+        68
+      ],
+      "text": "Empty",
+      "_key": "!tables.results!96ef27af9ebf1fa8.2977d0850d082190",
+      "_id": "2977d0850d082190"
+    },
+    {
+      "range": [
+        69,
+        69
+      ],
+      "text": "Overgrown",
+      "_key": "!tables.results!96ef27af9ebf1fa8.20f22100173a19c0",
+      "_id": "20f22100173a19c0"
+    },
+    {
+      "range": [
+        70,
+        70
+      ],
+      "text": "Chaotic",
+      "_key": "!tables.results!96ef27af9ebf1fa8.1f2f1677f50b0cee",
+      "_id": "1f2f1677f50b0cee"
+    },
+    {
+      "range": [
+        71,
+        71
+      ],
+      "text": "Peaceful",
+      "_key": "!tables.results!96ef27af9ebf1fa8.b9727494b1d4d7ea",
+      "_id": "b9727494b1d4d7ea"
+    },
+    {
+      "range": [
+        72,
+        72
+      ],
+      "text": "Broken",
+      "_key": "!tables.results!96ef27af9ebf1fa8.3e63444e4d16ec2a",
+      "_id": "3e63444e4d16ec2a"
+    },
+    {
+      "range": [
+        73,
+        73
+      ],
+      "text": "Ensnaring",
+      "_key": "!tables.results!96ef27af9ebf1fa8.2d58ff1110d9d8e3",
+      "_id": "2d58ff1110d9d8e3"
+    },
+    {
+      "range": [
+        74,
+        74
+      ],
+      "text": "Frozen",
+      "_key": "!tables.results!96ef27af9ebf1fa8.86425f9c70416cea",
+      "_id": "86425f9c70416cea"
+    },
+    {
+      "range": [
+        75,
+        75
+      ],
+      "text": "Ravaged",
+      "_key": "!tables.results!96ef27af9ebf1fa8.985ab9c990b9f6fb",
+      "_id": "985ab9c990b9f6fb"
+    },
+    {
+      "range": [
+        76,
+        76
+      ],
+      "text": "Expansive",
+      "_key": "!tables.results!96ef27af9ebf1fa8.5ca4d53124d7e5f2",
+      "_id": "5ca4d53124d7e5f2"
+    },
+    {
+      "range": [
+        77,
+        77
+      ],
+      "text": "Toxic",
+      "_key": "!tables.results!96ef27af9ebf1fa8.b402af8fe73c01ca",
+      "_id": "b402af8fe73c01ca"
+    },
+    {
+      "range": [
+        78,
+        78
+      ],
+      "text": "High",
+      "_key": "!tables.results!96ef27af9ebf1fa8.cf9fdcf90650d2ec",
+      "_id": "cf9fdcf90650d2ec"
+    },
+    {
+      "range": [
+        79,
+        79
+      ],
+      "text": "Sacred",
+      "_key": "!tables.results!96ef27af9ebf1fa8.695ef2b9f6a4d203",
+      "_id": "695ef2b9f6a4d203"
+    },
+    {
+      "range": [
+        80,
+        80
+      ],
+      "text": "Low",
+      "_key": "!tables.results!96ef27af9ebf1fa8.5caeefca4640c20e",
+      "_id": "5caeefca4640c20e"
+    },
+    {
+      "range": [
+        81,
+        81
+      ],
+      "text": "Forsaken",
+      "_key": "!tables.results!96ef27af9ebf1fa8.50e4d11cadbe7a6c",
+      "_id": "50e4d11cadbe7a6c"
+    },
+    {
+      "range": [
+        82,
+        82
+      ],
+      "text": "Fallen",
+      "_key": "!tables.results!96ef27af9ebf1fa8.4509343e4a1a01ec",
+      "_id": "4509343e4a1a01ec"
+    },
+    {
+      "range": [
+        83,
+        83
+      ],
+      "text": "Shadowy",
+      "_key": "!tables.results!96ef27af9ebf1fa8.11beb2139f7fb1e0",
+      "_id": "11beb2139f7fb1e0"
+    },
+    {
+      "range": [
+        84,
+        84
+      ],
+      "text": "Unstable",
+      "_key": "!tables.results!96ef27af9ebf1fa8.9e08dc75dc72b7a7",
+      "_id": "9e08dc75dc72b7a7"
+    },
+    {
+      "range": [
+        85,
+        85
+      ],
+      "text": "Hidden",
+      "_key": "!tables.results!96ef27af9ebf1fa8.0535f62e7bf63fa5",
+      "_id": "0535f62e7bf63fa5"
+    },
+    {
+      "range": [
+        86,
+        86
+      ],
+      "text": "Haunted",
+      "_key": "!tables.results!96ef27af9ebf1fa8.33c5d4cef08b74c9",
+      "_id": "33c5d4cef08b74c9"
+    },
+    {
+      "range": [
+        87,
+        87
+      ],
+      "text": "Buried",
+      "_key": "!tables.results!96ef27af9ebf1fa8.26d1d1e75b392549",
+      "_id": "26d1d1e75b392549"
+    },
+    {
+      "range": [
+        88,
+        88
+      ],
+      "text": "Damaged",
+      "_key": "!tables.results!96ef27af9ebf1fa8.8c11241a241483e9",
+      "_id": "8c11241a241483e9"
+    },
+    {
+      "range": [
+        89,
+        89
+      ],
+      "text": "Ancient",
+      "_key": "!tables.results!96ef27af9ebf1fa8.93b008656c8a36a8",
+      "_id": "93b008656c8a36a8"
+    },
+    {
+      "range": [
+        90,
+        90
+      ],
+      "text": "Scarred",
+      "_key": "!tables.results!96ef27af9ebf1fa8.ca5aa80620060f95",
+      "_id": "ca5aa80620060f95"
+    },
+    {
+      "range": [
+        91,
+        91
+      ],
+      "text": "Elevated",
+      "_key": "!tables.results!96ef27af9ebf1fa8.e273882abcf2527f",
+      "_id": "e273882abcf2527f"
+    },
+    {
+      "range": [
+        92,
+        92
+      ],
+      "text": "Forgotten",
+      "_key": "!tables.results!96ef27af9ebf1fa8.3d0b7c373feaba6c",
+      "_id": "3d0b7c373feaba6c"
+    },
+    {
+      "range": [
+        93,
+        93
+      ],
+      "text": "Preserved",
+      "_key": "!tables.results!96ef27af9ebf1fa8.3201fa94d738a2f4",
+      "_id": "3201fa94d738a2f4"
+    },
+    {
+      "range": [
+        94,
+        94
+      ],
+      "text": "Trapped",
+      "_key": "!tables.results!96ef27af9ebf1fa8.f91c67f9de964c98",
+      "_id": "f91c67f9de964c98"
+    },
+    {
+      "range": [
+        95,
+        95
+      ],
+      "text": "Mystic",
+      "_key": "!tables.results!96ef27af9ebf1fa8.6fc8bfbf799d3427",
+      "_id": "6fc8bfbf799d3427"
+    },
+    {
+      "range": [
+        96,
+        96
+      ],
+      "text": "Natural",
+      "_key": "!tables.results!96ef27af9ebf1fa8.91b383a1a9ba7b17",
+      "_id": "91b383a1a9ba7b17"
+    },
+    {
+      "range": [
+        97,
+        97
+      ],
+      "text": "Treacherous",
+      "_key": "!tables.results!96ef27af9ebf1fa8.094c34df24b7ae8b",
+      "_id": "094c34df24b7ae8b"
+    },
+    {
+      "range": [
+        98,
+        98
+      ],
+      "text": "Watery",
+      "_key": "!tables.results!96ef27af9ebf1fa8.eaf076b6141a0897",
+      "_id": "eaf076b6141a0897"
+    },
+    {
+      "range": [
+        99,
+        99
+      ],
+      "text": "Moving",
+      "_key": "!tables.results!96ef27af9ebf1fa8.bd0f19ba792611e0",
+      "_id": "bd0f19ba792611e0"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "text": "Foul",
+      "_key": "!tables.results!96ef27af9ebf1fa8.5af8f6773b2654c5",
+      "_id": "5af8f6773b2654c5"
+    }
+  ],
+  "folder": "8d9ea44a24f8d204",
+  "sort": 52,
+  "img": "icons/dice/d10black.svg",
+  "_key": "!tables!96ef27af9ebf1fa8"
+}
