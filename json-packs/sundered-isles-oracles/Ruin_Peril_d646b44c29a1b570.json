@@ -314,9 +314,32 @@
         98,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!d646b44c29a1b570.a1e8a2da211c2bf9",
-      "_id": "a1e8a2da211c2bf9"
+      "_id": "a1e8a2da211c2bf9",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Ruin Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.d646b44c29a1b570",
+      "_key": "!tables.results!d646b44c29a1b570.a1e8a2da211c2bf9"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "_id": "853318762627930c",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Ruin Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.d646b44c29a1b570",
+      "_key": "!tables.results!d646b44c29a1b570.853318762627930c"
     }
   ],
   "folder": "b4646e2ada8afbc2",

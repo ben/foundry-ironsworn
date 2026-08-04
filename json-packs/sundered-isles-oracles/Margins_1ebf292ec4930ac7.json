@@ -80,9 +80,32 @@
         86,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!1ebf292ec4930ac7.259a461256ad8abf",
-      "_id": "259a461256ad8abf"
+      "_id": "259a461256ad8abf",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Margins",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.1ebf292ec4930ac7",
+      "_key": "!tables.results!1ebf292ec4930ac7.259a461256ad8abf"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "_id": "c0193ada1efa163f",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Margins",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.1ebf292ec4930ac7",
+      "_key": "!tables.results!1ebf292ec4930ac7.c0193ada1efa163f"
     }
   ],
   "folder": "5f98ae68ea50413f",

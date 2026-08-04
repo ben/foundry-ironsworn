@@ -306,9 +306,32 @@
         97,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!42cbdce0fcca6d67.6f49200240eba3f5",
-      "_id": "6f49200240eba3f5"
+      "_id": "6f49200240eba3f5",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Anomaly Effect",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.42cbdce0fcca6d67",
+      "_key": "!tables.results!42cbdce0fcca6d67.6f49200240eba3f5"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "_id": "53b8807bc6c177bc",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Anomaly Effect",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.42cbdce0fcca6d67",
+      "_key": "!tables.results!42cbdce0fcca6d67.53b8807bc6c177bc"
     }
   ],
   "folder": "ffb24a823c4adb09",

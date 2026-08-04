@@ -58,6 +58,79 @@ const ISMoveCategoryColors = {
 
 const collections = ['classic', 'delve', 'lodestar', 'starforged', 'sundered_isles']
 
+const MODULE_ID = 'foundry-ironsworn'
+
+/** json-packs directory name → Foundry compendium pack name. */
+const ORACLE_PACK_COMPENDIUMS: Record<string, string> = {
+	'ironsworn-oracles': 'ironswornoracles',
+	'delve-oracles': 'ironsworndelveoracles',
+	'lodestar-oracles': 'ironsworndolestaroracles',
+	'starforged-oracles': 'starforgedoracles',
+	'sundered-isles-oracles': 'sunderedislesoracles'
+}
+
+function rollInstructionInfo(
+	text: string | undefined
+): { count: 2 | 3; label: string } | null {
+	if (!text) return null
+	const trimmed = text.replace(/<\/?p>/gi, '').trim()
+	const normalized = trimmed.replace(/\.+$/, '').toLowerCase()
+
+	if (normalized === 'roll twice') {
+		return { count: 2, label: 'Roll twice' }
+	}
+	if (normalized === 'roll three times') {
+		return { count: 3, label: 'Roll three times' }
+	}
+	if (/\(roll twice\)$/.test(normalized)) {
+		return { count: 2, label: trimmed }
+	}
+	if (/\(roll three times\)$/.test(normalized)) {
+		return { count: 3, label: trimmed }
+	}
+	if (normalized.startsWith('roll twice more on this table')) {
+		return { count: 2, label: trimmed }
+	}
+	if (normalized.startsWith('roll twice;')) {
+		return { count: 2, label: trimmed }
+	}
+	return null
+}
+
+function oracleDocumentUuid(tableId: string, compendium: string): string {
+	return `Compendium.${MODULE_ID}.${compendium}.RollTable.${tableId}`
+}
+
+function makeRollDocumentResults(
+	row: { roll: { min: number; max: number }; _id: string },
+	tableId: string,
+	tableName: string,
+	compendium: string,
+	count: 2 | 3,
+	label: string
+) {
+	const legacyRowId = lookupLegacyId(row._id)
+	return Array.from({ length: count }, (_, index) => {
+		const resultId =
+			index === 0
+				? hash(legacyRowId)
+				: hash(`${legacyRowId}:roll-document:${index + 1}`)
+		return {
+			range: [row.roll.min, row.roll.max],
+			_id: resultId,
+			type: 'document' as const,
+			weight: 1,
+			drawn: false,
+			flags: {},
+			img: 'icons/dice/d10black.svg',
+			description: `<p>${label}</p>`,
+			name: tableName,
+			documentUuid: oracleDocumentUuid(tableId, compendium),
+			_key: `!tables.results!${tableId}.${resultId}`
+		}
+	})
+}
+
 async function writeJsonFile(packName: string, json: any) {
 	const fileName = json.name.replace(/\W/g, '_')
 	await writeFile(
@@ -385,6 +458,7 @@ const processOracle = async (
 
 	const legacyOracleId = lookupLegacyId(oracle._id)
 	const fid = hash(legacyOracleId ?? oracle._id)
+	const compendium = ORACLE_PACK_COMPENDIUMS[packName]
 
 	const json = {
 		_id: fid,
@@ -402,29 +476,42 @@ const processOracle = async (
 		formula: oracle.dice,
 		replacement: true,
 		displayRoll: true,
-		results: compact(
-			oracle.rows.map((row) => {
-				if (!row.roll) return undefined
-				const rowId = hash(lookupLegacyId(row._id))
-				const text = renderFragment(row.text)
-				// `name` is rendered as plain text (no HTML, no Foundry
-				// enrichment), so a link there would show as raw markup. When the
-				// primary text contains a compendium link or an oracle-category
-				// link, keep both values together in `text` (which is enriched)
-				// instead of the `name` / `description` split.
-				const hasLink =
-					text.includes('@Compendium[') ||
-					text.includes('entity-link oracle-category-link')
-				// Wrap each present fragment in its own paragraph so they render
-				// on separate lines.
-				const paragraphs = (fragments: Array<string | undefined>) =>
-					fragments
-						.filter((fragment) => fragment)
-						.map(
-							(fragment) => `<p>${renderFragment(fragment as string)}</p>`
-						)
-						.join('')
-				return {
+		results: oracle.rows.flatMap((row) => {
+			if (!row.roll) return []
+
+			const rollInfo = rollInstructionInfo(row.text)
+			if (rollInfo && compendium) {
+				return makeRollDocumentResults(
+					row,
+					fid,
+					oracle.name,
+					compendium,
+					rollInfo.count,
+					rollInfo.label
+				)
+			}
+
+			const rowId = hash(lookupLegacyId(row._id))
+			const text = renderFragment(row.text)
+			// `name` is rendered as plain text (no HTML, no Foundry
+			// enrichment), so a link there would show as raw markup. When the
+			// primary text contains a compendium link or an oracle-category
+			// link, keep both values together in `text` (which is enriched)
+			// instead of the `name` / `description` split.
+			const hasLink =
+				text.includes('@Compendium[') ||
+				text.includes('entity-link oracle-category-link')
+			// Wrap each present fragment in its own paragraph so they render
+			// on separate lines.
+			const paragraphs = (fragments: Array<string | undefined>) =>
+				fragments
+					.filter((fragment) => fragment)
+					.map(
+						(fragment) => `<p>${renderFragment(fragment as string)}</p>`
+					)
+					.join('')
+			return [
+				{
 					range: [row.roll.min, row.roll.max],
 					...(row.text2
 						? hasLink
@@ -437,8 +524,8 @@ const processOracle = async (
 					_key: `!tables.results!${fid}.${rowId}`,
 					_id: rowId
 				}
-			})
-		),
+			]
+		}),
 		folder: foundryFolderId,
 		// @ts-expect-error
 		sort: oracle._source?.page ?? 0,

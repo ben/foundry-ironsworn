@@ -314,9 +314,32 @@
         100,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!4f1412380eaa6da4.3d420bcd482ea069",
-      "_id": "3d420bcd482ea069"
+      "_id": "3d420bcd482ea069",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Seafaring Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.4f1412380eaa6da4",
+      "_key": "!tables.results!4f1412380eaa6da4.3d420bcd482ea069"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "_id": "1bfc84833ff9bc11",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Seafaring Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.4f1412380eaa6da4",
+      "_key": "!tables.results!4f1412380eaa6da4.1bfc84833ff9bc11"
     }
   ],
   "folder": "8d239f77c6ee1f9d",

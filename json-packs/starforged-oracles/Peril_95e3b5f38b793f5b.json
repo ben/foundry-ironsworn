@@ -117,9 +117,32 @@
         99,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!95e3b5f38b793f5b.8c9dac17d5b17f18",
-      "_id": "8c9dac17d5b17f18"
+      "_id": "8c9dac17d5b17f18",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.95e3b5f38b793f5b",
+      "_key": "!tables.results!95e3b5f38b793f5b.8c9dac17d5b17f18"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "_id": "3a0becf9b52395c7",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.95e3b5f38b793f5b",
+      "_key": "!tables.results!95e3b5f38b793f5b.3a0becf9b52395c7"
     }
   ],
   "folder": "7b6a3ac881ac8211",

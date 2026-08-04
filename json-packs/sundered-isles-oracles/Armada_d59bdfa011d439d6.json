@@ -144,9 +144,32 @@
         95,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!d59bdfa011d439d6.90b4c6391c4c2bde",
-      "_id": "90b4c6391c4c2bde"
+      "_id": "90b4c6391c4c2bde",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Armada",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.d59bdfa011d439d6",
+      "_key": "!tables.results!d59bdfa011d439d6.90b4c6391c4c2bde"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "_id": "35c6b74fa5435896",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Armada",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.d59bdfa011d439d6",
+      "_key": "!tables.results!d59bdfa011d439d6.35c6b74fa5435896"
     }
   ],
   "folder": "e20f7476c2916a1b",

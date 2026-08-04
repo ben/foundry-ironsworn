@@ -171,9 +171,32 @@
         81,
         100
       ],
-      "text": "Hybrid (roll twice)",
-      "_key": "!tables.results!845f91fcab961f20.957b3a605b59bdcb",
-      "_id": "957b3a605b59bdcb"
+      "_id": "957b3a605b59bdcb",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Hybrid (roll twice)</p>",
+      "name": "Primary Form",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndelveoracles.RollTable.845f91fcab961f20",
+      "_key": "!tables.results!845f91fcab961f20.957b3a605b59bdcb"
+    },
+    {
+      "range": [
+        81,
+        100
+      ],
+      "_id": "4837ea248f502cf9",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Hybrid (roll twice)</p>",
+      "name": "Primary Form",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndelveoracles.RollTable.845f91fcab961f20",
+      "_key": "!tables.results!845f91fcab961f20.4837ea248f502cf9"
     }
   ],
   "folder": "feaab449f5044ca1",

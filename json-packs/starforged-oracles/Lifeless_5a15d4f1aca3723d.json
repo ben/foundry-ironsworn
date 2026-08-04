@@ -243,9 +243,32 @@
         100,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!5a15d4f1aca3723d.ea0995cb24d28064",
-      "_id": "ea0995cb24d28064"
+      "_id": "ea0995cb24d28064",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Lifeless",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.5a15d4f1aca3723d",
+      "_key": "!tables.results!5a15d4f1aca3723d.ea0995cb24d28064"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "_id": "e0415c542da5100e",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Lifeless",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.5a15d4f1aca3723d",
+      "_key": "!tables.results!5a15d4f1aca3723d.e0415c542da5100e"
     }
   ],
   "folder": "83f8169fbabaecbc",

@@ -153,9 +153,32 @@
         99,
         100
       ],
-      "text": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-      "_key": "!tables.results!3fcb4ee313ec1534.a8e034a2aa702aec",
-      "_id": "a8e034a2aa702aec"
+      "_id": "a8e034a2aa702aec",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</p>",
+      "name": "Pay the Price",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornoracles.RollTable.3fcb4ee313ec1534",
+      "_key": "!tables.results!3fcb4ee313ec1534.a8e034a2aa702aec"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "_id": "c4fa27e232508c93",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</p>",
+      "name": "Pay the Price",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornoracles.RollTable.3fcb4ee313ec1534",
+      "_key": "!tables.results!3fcb4ee313ec1534.c4fa27e232508c93"
     }
   ],
   "folder": "88ca8e80b03ed3dd",

@@ -171,9 +171,32 @@
         91,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!5dee17188d87278c.05512245b2affb0a",
-      "_id": "05512245b2affb0a"
+      "_id": "05512245b2affb0a",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Land",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.5dee17188d87278c",
+      "_key": "!tables.results!5dee17188d87278c.05512245b2affb0a"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "595b67c28815ee3c",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Land",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.5dee17188d87278c",
+      "_key": "!tables.results!5dee17188d87278c.595b67c28815ee3c"
     }
   ],
   "folder": "3c4c763fbc099c60",

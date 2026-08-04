@@ -99,9 +99,32 @@
         95,
         100
       ],
-      "text": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-      "_key": "!tables.results!95147fbd7fa7f4a5.6d3721912d3dfc23",
-      "_id": "6d3721912d3dfc23"
+      "_id": "6d3721912d3dfc23",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</p>",
+      "name": "Reveal a Danger (alternate version)",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndelveoracles.RollTable.95147fbd7fa7f4a5",
+      "_key": "!tables.results!95147fbd7fa7f4a5.6d3721912d3dfc23"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "_id": "a4bda8c5357e9203",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</p>",
+      "name": "Reveal a Danger (alternate version)",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndelveoracles.RollTable.95147fbd7fa7f4a5",
+      "_key": "!tables.results!95147fbd7fa7f4a5.a4bda8c5357e9203"
     }
   ],
   "folder": "0e08d4bb1591c3a9",

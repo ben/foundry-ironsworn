@@ -189,18 +189,80 @@
         94,
         98
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!557152a8a249759b.45b1c6cbf3bade78",
-      "_id": "45b1c6cbf3bade78"
+      "_id": "45b1c6cbf3bade78",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Terminus",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.557152a8a249759b",
+      "_key": "!tables.results!557152a8a249759b.45b1c6cbf3bade78"
+    },
+    {
+      "range": [
+        94,
+        98
+      ],
+      "_id": "45e52bdae25fd333",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Terminus",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.557152a8a249759b",
+      "_key": "!tables.results!557152a8a249759b.45e52bdae25fd333"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "Roll three times",
-      "_key": "!tables.results!557152a8a249759b.539b664b204d5415",
-      "_id": "539b664b204d5415"
+      "_id": "539b664b204d5415",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Terminus",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.557152a8a249759b",
+      "_key": "!tables.results!557152a8a249759b.539b664b204d5415"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "_id": "7443870c3d0cad8b",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Terminus",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.557152a8a249759b",
+      "_key": "!tables.results!557152a8a249759b.7443870c3d0cad8b"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "_id": "ca648f5a8469f225",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Terminus",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.557152a8a249759b",
+      "_key": "!tables.results!557152a8a249759b.ca648f5a8469f225"
     }
   ],
   "folder": "cdcf8dc308bee5bf",

@@ -71,9 +71,32 @@
         86,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!5b59180b42ffbc07.cfe3b08a11f6eda5",
-      "_id": "cfe3b08a11f6eda5"
+      "_id": "cfe3b08a11f6eda5",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Myriads",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.5b59180b42ffbc07",
+      "_key": "!tables.results!5b59180b42ffbc07.cfe3b08a11f6eda5"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "_id": "e192e6904bf9a9a1",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Myriads",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.5b59180b42ffbc07",
+      "_key": "!tables.results!5b59180b42ffbc07.e192e6904bf9a9a1"
     }
   ],
   "folder": "864a47190064f649",

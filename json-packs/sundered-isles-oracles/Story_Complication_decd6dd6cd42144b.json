@@ -269,9 +269,32 @@
         96,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!decd6dd6cd42144b.2725c346c9b393fd",
-      "_id": "2725c346c9b393fd"
+      "_id": "2725c346c9b393fd",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Story Complication",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.decd6dd6cd42144b",
+      "_key": "!tables.results!decd6dd6cd42144b.2725c346c9b393fd"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "d751b13bc2c7a66b",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Story Complication",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.decd6dd6cd42144b",
+      "_key": "!tables.results!decd6dd6cd42144b.d751b13bc2c7a66b"
     }
   ],
   "folder": "4712a591169fe5d6",

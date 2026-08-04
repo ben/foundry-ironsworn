@@ -315,9 +315,32 @@
         100,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!6973e5b34ea40e49.6f577735e7b8f0c2",
-      "_id": "6f577735e7b8f0c2"
+      "_id": "6f577735e7b8f0c2",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Lifebearing",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.6973e5b34ea40e49",
+      "_key": "!tables.results!6973e5b34ea40e49.6f577735e7b8f0c2"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "_id": "ab2ac1340a8ce21c",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Lifebearing",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.6973e5b34ea40e49",
+      "_key": "!tables.results!6973e5b34ea40e49.ab2ac1340a8ce21c"
     }
   ],
   "folder": "83f8169fbabaecbc",

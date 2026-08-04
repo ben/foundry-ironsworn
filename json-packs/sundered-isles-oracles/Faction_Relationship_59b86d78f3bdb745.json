@@ -260,9 +260,32 @@
         97,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!59b86d78f3bdb745.c837add5a8e1e03b",
-      "_id": "c837add5a8e1e03b"
+      "_id": "c837add5a8e1e03b",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Faction Relationship",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.59b86d78f3bdb745",
+      "_key": "!tables.results!59b86d78f3bdb745.c837add5a8e1e03b"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "_id": "ff09f41fc58b734c",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Faction Relationship",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.59b86d78f3bdb745",
+      "_key": "!tables.results!59b86d78f3bdb745.ff09f41fc58b734c"
     }
   ],
   "folder": "332fe732886451c6",

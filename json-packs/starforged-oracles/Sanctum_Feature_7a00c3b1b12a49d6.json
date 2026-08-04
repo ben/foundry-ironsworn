@@ -324,9 +324,32 @@
         96,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!7a00c3b1b12a49d6.eaaee4399c122a94",
-      "_id": "eaaee4399c122a94"
+      "_id": "eaaee4399c122a94",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Sanctum Feature",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.7a00c3b1b12a49d6",
+      "_key": "!tables.results!7a00c3b1b12a49d6.eaaee4399c122a94"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "9d719257641bba56",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Sanctum Feature",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.7a00c3b1b12a49d6",
+      "_key": "!tables.results!7a00c3b1b12a49d6.9d719257641bba56"
     }
   ],
   "folder": "c80cfc9efec8dc33",

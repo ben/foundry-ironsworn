@@ -188,9 +188,32 @@
         91,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!bc12976c7d6a8d97.44257e9c684fc6d4",
-      "_id": "44257e9c684fc6d4"
+      "_id": "44257e9c684fc6d4",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Make a Discovery",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.bc12976c7d6a8d97",
+      "_key": "!tables.results!bc12976c7d6a8d97.44257e9c684fc6d4"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "6e6657731680198d",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Make a Discovery",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.bc12976c7d6a8d97",
+      "_key": "!tables.results!bc12976c7d6a8d97.6e6657731680198d"
     }
   ],
   "folder": "67765e9e34cc95c5",

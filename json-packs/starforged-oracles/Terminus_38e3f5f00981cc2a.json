@@ -297,9 +297,32 @@
         91,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!38e3f5f00981cc2a.ae4e56fc4b967d7d",
-      "_id": "ae4e56fc4b967d7d"
+      "_id": "ae4e56fc4b967d7d",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Terminus",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.38e3f5f00981cc2a",
+      "_key": "!tables.results!38e3f5f00981cc2a.ae4e56fc4b967d7d"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "180f05ea1cedac0e",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Terminus",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.38e3f5f00981cc2a",
+      "_key": "!tables.results!38e3f5f00981cc2a.180f05ea1cedac0e"
     }
   ],
   "folder": "576cfdeddb886db1",

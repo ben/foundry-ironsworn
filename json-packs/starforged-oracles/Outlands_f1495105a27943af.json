@@ -297,9 +297,32 @@
         91,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!f1495105a27943af.d773fff54953e0be",
-      "_id": "d773fff54953e0be"
+      "_id": "d773fff54953e0be",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Outlands",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.f1495105a27943af",
+      "_key": "!tables.results!f1495105a27943af.d773fff54953e0be"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "9f0f868387771949",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Outlands",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.f1495105a27943af",
+      "_key": "!tables.results!f1495105a27943af.9f0f868387771949"
     }
   ],
   "folder": "576cfdeddb886db1",

@@ -117,9 +117,32 @@
         96,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!f3403e14e9e6bd71.273c1e8c0a1519f0",
-      "_id": "273c1e8c0a1519f0"
+      "_id": "273c1e8c0a1519f0",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Fringe Group",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.f3403e14e9e6bd71",
+      "_key": "!tables.results!f3403e14e9e6bd71.273c1e8c0a1519f0"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "e4b9c30fe7fbb643",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Fringe Group",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.f3403e14e9e6bd71",
+      "_key": "!tables.results!f3403e14e9e6bd71.e4b9c30fe7fbb643"
     }
   ],
   "folder": "b6fe3d35ff56995d",

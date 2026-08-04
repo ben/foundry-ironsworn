@@ -306,9 +306,32 @@
         96,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!093f68d2fa077bd0.2d43560b6391c725",
-      "_id": "2d43560b6391c725"
+      "_id": "2d43560b6391c725",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Character Goal",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornoracles.RollTable.093f68d2fa077bd0",
+      "_key": "!tables.results!093f68d2fa077bd0.2d43560b6391c725"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "f629dbc604a7cd79",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Character Goal",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornoracles.RollTable.093f68d2fa077bd0",
+      "_key": "!tables.results!093f68d2fa077bd0.f629dbc604a7cd79"
     }
   ],
   "folder": "aa60f0d1adbed892",

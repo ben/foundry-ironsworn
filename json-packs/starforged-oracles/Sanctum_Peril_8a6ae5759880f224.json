@@ -198,9 +198,32 @@
         100,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!8a6ae5759880f224.f013f09f9ffecc26",
-      "_id": "f013f09f9ffecc26"
+      "_id": "f013f09f9ffecc26",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Sanctum Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.8a6ae5759880f224",
+      "_key": "!tables.results!8a6ae5759880f224.f013f09f9ffecc26"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "_id": "7c0b71dfd99ae15b",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Sanctum Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.8a6ae5759880f224",
+      "_key": "!tables.results!8a6ae5759880f224.7c0b71dfd99ae15b"
     }
   ],
   "folder": "c80cfc9efec8dc33",

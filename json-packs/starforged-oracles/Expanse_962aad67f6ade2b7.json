@@ -189,18 +189,80 @@
         94,
         98
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!962aad67f6ade2b7.f66726130b2ce159",
-      "_id": "f66726130b2ce159"
+      "_id": "f66726130b2ce159",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Expanse",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.962aad67f6ade2b7",
+      "_key": "!tables.results!962aad67f6ade2b7.f66726130b2ce159"
+    },
+    {
+      "range": [
+        94,
+        98
+      ],
+      "_id": "a3e9f1842adeb828",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Expanse",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.962aad67f6ade2b7",
+      "_key": "!tables.results!962aad67f6ade2b7.a3e9f1842adeb828"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "Roll three times",
-      "_key": "!tables.results!962aad67f6ade2b7.ad7de3d5d016c153",
-      "_id": "ad7de3d5d016c153"
+      "_id": "ad7de3d5d016c153",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Expanse",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.962aad67f6ade2b7",
+      "_key": "!tables.results!962aad67f6ade2b7.ad7de3d5d016c153"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "_id": "21e20ac54ee2f6fd",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Expanse",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.962aad67f6ade2b7",
+      "_key": "!tables.results!962aad67f6ade2b7.21e20ac54ee2f6fd"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "_id": "bba8734f6f214286",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Expanse",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.962aad67f6ade2b7",
+      "_key": "!tables.results!962aad67f6ade2b7.bba8734f6f214286"
     }
   ],
   "folder": "cdcf8dc308bee5bf",
