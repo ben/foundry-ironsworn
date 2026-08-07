@@ -270,9 +270,32 @@
         96,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!94c38ec6dc7eaf55.63c14e3b99583f49",
-      "_id": "63c14e3b99583f49"
+      "_id": "63c14e3b99583f49",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Vault Purpose",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.94c38ec6dc7eaf55",
+      "_key": "!tables.results!94c38ec6dc7eaf55.63c14e3b99583f49"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "8d8ac09f6cf3668e",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Vault Purpose",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.94c38ec6dc7eaf55",
+      "_key": "!tables.results!94c38ec6dc7eaf55.8d8ac09f6cf3668e"
     }
   ],
   "folder": "c80cfc9efec8dc33",

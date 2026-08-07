@@ -189,9 +189,32 @@
         96,
         100
       ],
-      "text": "Roll twice more on this table. Both results occur. If they are the same result, make it more dramatic.",
-      "_key": "!tables.results!425cab9e4749acb0.0eceddc7e3e45269",
-      "_id": "0eceddc7e3e45269"
+      "_id": "0eceddc7e3e45269",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice more on this table. Both results occur. If they are the same result, make it more dramatic.</p>",
+      "name": "Major Plot Twist",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornoracles.RollTable.425cab9e4749acb0",
+      "_key": "!tables.results!425cab9e4749acb0.0eceddc7e3e45269"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "2c6dea19ee0867e6",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice more on this table. Both results occur. If they are the same result, make it more dramatic.</p>",
+      "name": "Major Plot Twist",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornoracles.RollTable.425cab9e4749acb0",
+      "_key": "!tables.results!425cab9e4749acb0.2c6dea19ee0867e6"
     }
   ],
   "folder": "b4c697d8bd353315",

@@ -171,9 +171,32 @@
         91,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!3e5b84fccec6c789.5df0af223e9e95bb",
-      "_id": "5df0af223e9e95bb"
+      "_id": "5df0af223e9e95bb",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Liquid",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.3e5b84fccec6c789",
+      "_key": "!tables.results!3e5b84fccec6c789.5df0af223e9e95bb"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "5f85136e0888b7a5",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Liquid",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.3e5b84fccec6c789",
+      "_key": "!tables.results!3e5b84fccec6c789.5f85136e0888b7a5"
     }
   ],
   "folder": "3c4c763fbc099c60",

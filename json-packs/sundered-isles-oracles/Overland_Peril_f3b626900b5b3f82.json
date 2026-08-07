@@ -314,9 +314,32 @@
         100,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!f3b626900b5b3f82.89e5b0364cfa8d11",
-      "_id": "89e5b0364cfa8d11"
+      "_id": "89e5b0364cfa8d11",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Overland Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.f3b626900b5b3f82",
+      "_key": "!tables.results!f3b626900b5b3f82.89e5b0364cfa8d11"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "_id": "9a13d6564d7f8379",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Overland Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.f3b626900b5b3f82",
+      "_key": "!tables.results!f3b626900b5b3f82.9a13d6564d7f8379"
     }
   ],
   "folder": "0b3f32f3ee7a1a74",

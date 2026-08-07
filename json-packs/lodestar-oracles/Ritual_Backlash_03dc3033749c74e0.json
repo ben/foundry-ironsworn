@@ -233,9 +233,32 @@
         97,
         100
       ],
-      "text": "Roll twice; if they are the same result, make it worse.",
-      "_key": "!tables.results!03dc3033749c74e0.ff5971432b024b79",
-      "_id": "ff5971432b024b79"
+      "_id": "ff5971432b024b79",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice; if they are the same result, make it worse.</p>",
+      "name": "Ritual Backlash",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndolestaroracles.RollTable.03dc3033749c74e0",
+      "_key": "!tables.results!03dc3033749c74e0.ff5971432b024b79"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "_id": "29fd7b9e427cada3",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice; if they are the same result, make it worse.</p>",
+      "name": "Ritual Backlash",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndolestaroracles.RollTable.03dc3033749c74e0",
+      "_key": "!tables.results!03dc3033749c74e0.29fd7b9e427cada3"
     }
   ],
   "folder": "97453fafb8ce3965",

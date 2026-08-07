@@ -180,9 +180,32 @@
         91,
         100
       ],
-      "text": "Roll twice; these groups are at odds",
-      "_key": "!tables.results!e78670e6281b8935.3f57e7bef8c96b61",
-      "_id": "3f57e7bef8c96b61"
+      "_id": "3f57e7bef8c96b61",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice; these groups are at odds</p>",
+      "name": "Crew Characteristics",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.e78670e6281b8935",
+      "_key": "!tables.results!e78670e6281b8935.3f57e7bef8c96b61"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "a6a81e397f526fcd",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice; these groups are at odds</p>",
+      "name": "Crew Characteristics",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.e78670e6281b8935",
+      "_key": "!tables.results!e78670e6281b8935.a6a81e397f526fcd"
     }
   ],
   "folder": "73ab87baaf2ebf11",

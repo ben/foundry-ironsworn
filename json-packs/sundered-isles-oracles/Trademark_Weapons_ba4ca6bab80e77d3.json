@@ -350,9 +350,32 @@
         98,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!ba4ca6bab80e77d3.fa25bc5838466abf",
-      "_id": "fa25bc5838466abf"
+      "_id": "fa25bc5838466abf",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Trademark Weapons",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.ba4ca6bab80e77d3",
+      "_key": "!tables.results!ba4ca6bab80e77d3.fa25bc5838466abf"
+    },
+    {
+      "range": [
+        98,
+        100
+      ],
+      "_id": "da68fb5a3449596c",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Trademark Weapons",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.ba4ca6bab80e77d3",
+      "_key": "!tables.results!ba4ca6bab80e77d3.da68fb5a3449596c"
     }
   ],
   "folder": "2e89566166acdaea",

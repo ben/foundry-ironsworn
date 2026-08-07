@@ -206,9 +206,32 @@
         95,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!d15117876e80b9ef.8ad4763941468742",
-      "_id": "8ad4763941468742"
+      "_id": "8ad4763941468742",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Sea Cave Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.d15117876e80b9ef",
+      "_key": "!tables.results!d15117876e80b9ef.8ad4763941468742"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "_id": "f10da80366d2f99a",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Sea Cave Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.d15117876e80b9ef",
+      "_key": "!tables.results!d15117876e80b9ef.f10da80366d2f99a"
     }
   ],
   "folder": "80ed534e9e0f713e",

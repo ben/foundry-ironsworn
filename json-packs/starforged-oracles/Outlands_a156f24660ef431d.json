@@ -189,18 +189,80 @@
         94,
         98
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!a156f24660ef431d.b051952511447092",
-      "_id": "b051952511447092"
+      "_id": "b051952511447092",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Outlands",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.a156f24660ef431d",
+      "_key": "!tables.results!a156f24660ef431d.b051952511447092"
+    },
+    {
+      "range": [
+        94,
+        98
+      ],
+      "_id": "232c9bba9991374a",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Outlands",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.a156f24660ef431d",
+      "_key": "!tables.results!a156f24660ef431d.232c9bba9991374a"
     },
     {
       "range": [
         99,
         100
       ],
-      "text": "Roll three times",
-      "_key": "!tables.results!a156f24660ef431d.38a555fe26830b6f",
-      "_id": "38a555fe26830b6f"
+      "_id": "38a555fe26830b6f",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Outlands",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.a156f24660ef431d",
+      "_key": "!tables.results!a156f24660ef431d.38a555fe26830b6f"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "_id": "721aabca57ca85d5",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Outlands",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.a156f24660ef431d",
+      "_key": "!tables.results!a156f24660ef431d.721aabca57ca85d5"
+    },
+    {
+      "range": [
+        99,
+        100
+      ],
+      "_id": "57e7cf2d8e411ad2",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll three times</p>",
+      "name": "Outlands",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.a156f24660ef431d",
+      "_key": "!tables.results!a156f24660ef431d.57e7cf2d8e411ad2"
     }
   ],
   "folder": "cdcf8dc308bee5bf",

@@ -206,9 +206,32 @@
         95,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!72012f9a3793bf2f.076c190a4623bfef",
-      "_id": "076c190a4623bfef"
+      "_id": "076c190a4623bfef",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Inland Cave Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.72012f9a3793bf2f",
+      "_key": "!tables.results!72012f9a3793bf2f.076c190a4623bfef"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "_id": "620425b08c9f8bb3",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Inland Cave Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.72012f9a3793bf2f",
+      "_key": "!tables.results!72012f9a3793bf2f.620425b08c9f8bb3"
     }
   ],
   "folder": "ccafff1bc096e52d",

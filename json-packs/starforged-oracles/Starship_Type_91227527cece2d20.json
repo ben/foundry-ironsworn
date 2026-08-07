@@ -226,9 +226,32 @@
         95,
         100
       ],
-      "text": "Ships in conflict (roll twice)",
-      "_key": "!tables.results!91227527cece2d20.13028eed833d457e",
-      "_id": "13028eed833d457e"
+      "_id": "13028eed833d457e",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Ships in conflict (roll twice)</p>",
+      "name": "Starship Type",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.91227527cece2d20",
+      "_key": "!tables.results!91227527cece2d20.13028eed833d457e"
+    },
+    {
+      "range": [
+        95,
+        100
+      ],
+      "_id": "b682a593f28f34af",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Ships in conflict (roll twice)</p>",
+      "name": "Starship Type",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.91227527cece2d20",
+      "_key": "!tables.results!91227527cece2d20.b682a593f28f34af"
     }
   ],
   "folder": "eea3419c88a919cd",

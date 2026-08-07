@@ -270,9 +270,32 @@
         96,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!1a103f5ed9e2cab6.9b1f13c64de74446",
-      "_id": "9b1f13c64de74446"
+      "_id": "9b1f13c64de74446",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Story Complication",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.1a103f5ed9e2cab6",
+      "_key": "!tables.results!1a103f5ed9e2cab6.9b1f13c64de74446"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "e96bd69a21a2b636",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Story Complication",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.1a103f5ed9e2cab6",
+      "_key": "!tables.results!1a103f5ed9e2cab6.e96bd69a21a2b636"
     }
   ],
   "folder": "ffb24a823c4adb09",

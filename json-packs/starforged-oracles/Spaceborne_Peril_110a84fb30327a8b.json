@@ -315,9 +315,32 @@
         100,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!110a84fb30327a8b.eca677e7460a391b",
-      "_id": "eca677e7460a391b"
+      "_id": "eca677e7460a391b",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Spaceborne Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.110a84fb30327a8b",
+      "_key": "!tables.results!110a84fb30327a8b.eca677e7460a391b"
+    },
+    {
+      "range": [
+        100,
+        100
+      ],
+      "_id": "68c345289e24eed4",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Spaceborne Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.110a84fb30327a8b",
+      "_key": "!tables.results!110a84fb30327a8b.68c345289e24eed4"
     }
   ],
   "folder": "a17a6892a4e03f3f",

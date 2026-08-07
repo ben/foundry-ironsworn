@@ -99,9 +99,32 @@
         91,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!a3327b88a5bd074f.b3abc7f6766cd0db",
-      "_id": "b3abc7f6766cd0db"
+      "_id": "b3abc7f6766cd0db",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Category",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndelveoracles.RollTable.a3327b88a5bd074f",
+      "_key": "!tables.results!a3327b88a5bd074f.b3abc7f6766cd0db"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "d746bae635cff948",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Category",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndelveoracles.RollTable.a3327b88a5bd074f",
+      "_key": "!tables.results!a3327b88a5bd074f.d746bae635cff948"
     }
   ],
   "folder": "b42117d1724e54e9",

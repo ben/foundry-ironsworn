@@ -234,9 +234,32 @@
         97,
         100
       ],
-      "text": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-      "_key": "!tables.results!800b70d26ca31f93.aa953366315f30ec",
-      "_id": "aa953366315f30ec"
+      "_id": "aa953366315f30ec",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</p>",
+      "name": "Mystic Backlash",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornoracles.RollTable.800b70d26ca31f93",
+      "_key": "!tables.results!800b70d26ca31f93.aa953366315f30ec"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "_id": "9dde7c2e811f9e47",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</p>",
+      "name": "Mystic Backlash",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornoracles.RollTable.800b70d26ca31f93",
+      "_key": "!tables.results!800b70d26ca31f93.9dde7c2e811f9e47"
     }
   ],
   "folder": "b4c697d8bd353315",

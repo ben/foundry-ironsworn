@@ -134,9 +134,32 @@
         91,
         100
       ],
-      "text": "Roll twice; combine those results as a single faction or set them against each other as opposing factions",
-      "_key": "!tables.results!0001ccabdf0d3b5a.73eceed488243626",
-      "_id": "73eceed488243626"
+      "_id": "73eceed488243626",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice; combine those results as a single faction or set them against each other as opposing factions</p>",
+      "name": "Role",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.0001ccabdf0d3b5a",
+      "_key": "!tables.results!0001ccabdf0d3b5a.73eceed488243626"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "02d12c72c0fa6467",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice; combine those results as a single faction or set them against each other as opposing factions</p>",
+      "name": "Role",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.0001ccabdf0d3b5a",
+      "_key": "!tables.results!0001ccabdf0d3b5a.02d12c72c0fa6467"
     }
   ],
   "folder": "898ffa592fe619eb",

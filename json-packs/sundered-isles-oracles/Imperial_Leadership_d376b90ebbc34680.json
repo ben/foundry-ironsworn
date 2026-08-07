@@ -98,9 +98,32 @@
         86,
         100
       ],
-      "text": "Power struggle (roll twice)",
-      "_key": "!tables.results!d376b90ebbc34680.50fd87670ee9d90b",
-      "_id": "50fd87670ee9d90b"
+      "_id": "50fd87670ee9d90b",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Power struggle (roll twice)</p>",
+      "name": "Imperial Leadership",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.d376b90ebbc34680",
+      "_key": "!tables.results!d376b90ebbc34680.50fd87670ee9d90b"
+    },
+    {
+      "range": [
+        86,
+        100
+      ],
+      "_id": "fa5714923f4837df",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Power struggle (roll twice)</p>",
+      "name": "Imperial Leadership",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.d376b90ebbc34680",
+      "_key": "!tables.results!d376b90ebbc34680.fa5714923f4837df"
     }
   ],
   "folder": "5e64db2bcf1b6238",

@@ -422,9 +422,32 @@
         91,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!f404b2f124ed6861.78c9b197b6ec507d",
-      "_id": "78c9b197b6ec507d"
+      "_id": "78c9b197b6ec507d",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Settlement Trouble",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndolestaroracles.RollTable.f404b2f124ed6861",
+      "_key": "!tables.results!f404b2f124ed6861.78c9b197b6ec507d"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "f4e643e132514765",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Settlement Trouble",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndolestaroracles.RollTable.f404b2f124ed6861",
+      "_key": "!tables.results!f404b2f124ed6861.f4e643e132514765"
     }
   ],
   "folder": "a456e82f6aca3d1c",

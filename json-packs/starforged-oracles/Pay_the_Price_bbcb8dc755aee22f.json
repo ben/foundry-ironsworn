@@ -189,9 +189,32 @@
         96,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!bbcb8dc755aee22f.98d909e4a1ccf3cf",
-      "_id": "98d909e4a1ccf3cf"
+      "_id": "98d909e4a1ccf3cf",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Pay the Price",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.bbcb8dc755aee22f",
+      "_key": "!tables.results!bbcb8dc755aee22f.98d909e4a1ccf3cf"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "b7311dd468c0cd8e",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Pay the Price",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.bbcb8dc755aee22f",
+      "_key": "!tables.results!bbcb8dc755aee22f.b7311dd468c0cd8e"
     }
   ],
   "folder": "e27cd8105b6b4bab",

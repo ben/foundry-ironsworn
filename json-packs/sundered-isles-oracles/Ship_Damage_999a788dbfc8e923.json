@@ -127,9 +127,32 @@
         96,
         100
       ],
-      "text": "Roll twice; if the same result, step up the severity",
-      "_key": "!tables.results!999a788dbfc8e923.1c5d13be9080fcc1",
-      "_id": "1c5d13be9080fcc1"
+      "_id": "1c5d13be9080fcc1",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice; if the same result, step up the severity</p>",
+      "name": "Ship Damage",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.999a788dbfc8e923",
+      "_key": "!tables.results!999a788dbfc8e923.1c5d13be9080fcc1"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "7186e3449766df12",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice; if the same result, step up the severity</p>",
+      "name": "Ship Damage",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.999a788dbfc8e923",
+      "_key": "!tables.results!999a788dbfc8e923.7186e3449766df12"
     }
   ],
   "folder": "4712a591169fe5d6",

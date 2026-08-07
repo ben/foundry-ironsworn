@@ -188,9 +188,32 @@
         96,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!882030be5074ea01.8d7230c28d82cd88",
-      "_id": "8d7230c28d82cd88"
+      "_id": "8d7230c28d82cd88",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Shipwreck Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.882030be5074ea01",
+      "_key": "!tables.results!882030be5074ea01.8d7230c28d82cd88"
+    },
+    {
+      "range": [
+        96,
+        100
+      ],
+      "_id": "fea4a6d19f35c8bb",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Shipwreck Peril",
+      "documentUuid": "Compendium.foundry-ironsworn.sunderedislesoracles.RollTable.882030be5074ea01",
+      "_key": "!tables.results!882030be5074ea01.fea4a6d19f35c8bb"
     }
   ],
   "folder": "d4fcc34036960bb6",

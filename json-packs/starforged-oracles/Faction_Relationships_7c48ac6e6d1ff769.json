@@ -261,9 +261,32 @@
         97,
         100
       ],
-      "text": "Roll twice",
-      "_key": "!tables.results!7c48ac6e6d1ff769.13b33324ec702a70",
-      "_id": "13b33324ec702a70"
+      "_id": "13b33324ec702a70",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Faction Relationships",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.7c48ac6e6d1ff769",
+      "_key": "!tables.results!7c48ac6e6d1ff769.13b33324ec702a70"
+    },
+    {
+      "range": [
+        97,
+        100
+      ],
+      "_id": "cc929fc1b752fa81",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Faction Relationships",
+      "documentUuid": "Compendium.foundry-ironsworn.starforgedoracles.RollTable.7c48ac6e6d1ff769",
+      "_key": "!tables.results!7c48ac6e6d1ff769.cc929fc1b752fa81"
     }
   ],
   "folder": "b6fe3d35ff56995d",

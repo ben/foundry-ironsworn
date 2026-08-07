@@ -422,9 +422,32 @@
         91,
         100
       ],
-      "text": "Roll twice.",
-      "_key": "!tables.results!9809aba13d68a19b.1d5b3a10282b75ed",
-      "_id": "1d5b3a10282b75ed"
+      "_id": "1d5b3a10282b75ed",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Mystic Effect",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndolestaroracles.RollTable.9809aba13d68a19b",
+      "_key": "!tables.results!9809aba13d68a19b.1d5b3a10282b75ed"
+    },
+    {
+      "range": [
+        91,
+        100
+      ],
+      "_id": "53b6ed20137f5514",
+      "type": "document",
+      "weight": 1,
+      "drawn": false,
+      "flags": {},
+      "img": "icons/dice/d10black.svg",
+      "description": "<p>Roll twice</p>",
+      "name": "Mystic Effect",
+      "documentUuid": "Compendium.foundry-ironsworn.ironsworndolestaroracles.RollTable.9809aba13d68a19b",
+      "_key": "!tables.results!9809aba13d68a19b.53b6ed20137f5514"
     }
   ],
   "folder": "97453fafb8ce3965",
