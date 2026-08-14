@@ -5,8 +5,8 @@
 - Fresh import from datasworn-community data.
 - Widen and lengthen Rollable Table rich text editor. Editing icons no longer wrap around and text box can show multiple lines. ([#1089](https://github.com/ben/foundry-ironsworn/pull/1089)).
 - Add name and description fields to rollable tables. ([#1090](https://github.com/ben/foundry-ironsworn/pull/1090)).
-- Add Lodestar Expanded Moves and Oracles.
-- Add "Roll twice" and "Roll three times" functionality to tables.
+- Add Lodestar Expanded Moves and Oracles. ([#1091](https://github.com/ben/foundry-ironsworn/pull/1091)).
+- Add "Roll twice" and "Roll three times" functionality to tables. ([#1092](https://github.com/ben/foundry-ironsworn/pull/1092)).
 
 ## 1.28.0
 
