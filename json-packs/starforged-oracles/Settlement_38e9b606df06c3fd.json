@@ -34,7 +34,7 @@
     {
       "range": [
         31,
-        50
+        55
       ],
       "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/living\">\n    <i class=\"fa fa-caret-right\"></i> Living\n</a></p>",
       "_key": "!tables.results!38e9b606df06c3fd.f0dea0a92989d5fa",
@@ -42,8 +42,8 @@
     },
     {
       "range": [
-        51,
-        60
+        56,
+        65
       ],
       "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/medical\">\n    <i class=\"fa fa-caret-right\"></i> Medical\n</a></p>",
       "_key": "!tables.results!38e9b606df06c3fd.cb1a0487caf0bccd",
@@ -51,8 +51,8 @@
     },
     {
       "range": [
-        61,
-        70
+        66,
+        75
       ],
       "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/operations\">\n    <i class=\"fa fa-caret-right\"></i> Operations\n</a></p>",
       "_key": "!tables.results!38e9b606df06c3fd.cc355e37d2ede972",
@@ -60,7 +60,7 @@
     },
     {
       "range": [
-        71,
+        76,
         90
       ],
       "text": "<p><a class=\"entity-link oracle-category-link\" data-dsid=\"oracle_collection:starforged/derelict/production\">\n    <i class=\"fa fa-caret-right\"></i> Production\n</a></p>",
