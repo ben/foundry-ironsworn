@@ -7,6 +7,7 @@
 		"build": "vite build && script/build-packs",
 		"build:production": "vite build && script/build-packs",
 		"start": "vite",
+		"update-datasworn": "pnpm update @datasworn-community/core @datasworn-community/ironsworn-classic @datasworn-community/ironsworn-classic-delve @datasworn-community/ironsworn-classic-lodestar @datasworn-community/starforged @datasworn-community/sundered-isles",
 		"bump": "node script/bump-version.js",
 		"bump:patch": "node script/bump-version.js patch",
 		"bump:minor": "node script/bump-version.js minor",
@@ -22,7 +23,7 @@
 		"@datasworn-community/ironsworn-classic": "^0.2.2",
 		"@datasworn-community/ironsworn-classic-delve": "^0.2.3",
 		"@datasworn-community/ironsworn-classic-lodestar": "^0.2.3",
-		"@datasworn-community/starforged": "^0.2.2",
+		"@datasworn-community/starforged": "^0.2.4",
 		"@datasworn-community/sundered-isles": "^0.2.2",
 		"@foundryvtt/foundryvtt-cli": "^1.0",
 		"@league-of-foundry-developers/foundry-vtt-types": "github:rsek/foundry-vtt-types#v10-journal",
@@ -81,5 +82,6 @@
 	},
 	"browserslist": [
 		"defaults"
-	]
+	],
+	"packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
 }
