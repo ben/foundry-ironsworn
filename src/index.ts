@@ -219,7 +219,7 @@ Hooks.once('init', async () => {
 	)
 
 	// Register Handlebars partials used by the progress journal page
-	await (loadTemplates as any)({
+	await (foundry.applications.handlebars.loadTemplates as any)({
 		progressButtons:
 			'systems/foundry-ironsworn/templates/journal/progress-buttons.hbs',
 		progressBoxes:
