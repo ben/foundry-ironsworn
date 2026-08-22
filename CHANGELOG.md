@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix chat-message momentum button width
+
 ## 1.28.1
 
 - Fresh import from datasworn-community data.
