@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.28.2
+
 - Fix chat-message momentum button width
 
 ## 1.28.1
