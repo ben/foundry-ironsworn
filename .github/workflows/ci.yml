@@ -21,6 +21,8 @@ jobs:
 
       - name: Use Node.js 24
         uses: actions/setup-node@v7
+        with:
+          node-version: 24.x
 
       - run: pnpm install
       - run: pnpm run build
@@ -32,8 +34,10 @@ jobs:
 
       - uses: pnpm/action-setup@v6
 
-      - name: Use Node.js
+      - name: Use Node.js 24
         uses: actions/setup-node@v7
+        with:
+          node-version: 24.x
 
       - run: pnpm install
       - run: ./node_modules/.bin/tsc --noEmit
