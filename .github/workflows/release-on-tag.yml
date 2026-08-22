@@ -3,19 +3,16 @@ name: Release on Tag
 on:
   push:
     tags:
-      - '0.*'
       - '1.*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - name: Use Node.js 24
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24.x
+      - name: Use Node.js
+        uses: actions/setup-node@v7
 
       - name: Get Version
         shell: bash
@@ -27,7 +24,7 @@ jobs:
           git config --global url."https://github.com/".insteadOf
           ssh://git@github.com/
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
       - name: Install dependencies and run webpack
         run: |
