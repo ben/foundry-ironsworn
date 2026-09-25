@@ -45,7 +45,14 @@ function optionClick(selectedIdx: number) {
 
 <style lang="scss" module>
 .wrapper {
-}
-.option {
+	// core pins button height to `--button-size`, so a sentence-length option name
+	// wraps but renders outside the border. `min-height` still comes from core, so
+	// single-line options keep their current height. The doubled class outranks
+	// the two-class `.stack .stack-row` line height.
+	.option.option {
+		padding: var(--ironsworn-spacer-xs) var(--ironsworn-spacer-sm);
+		height: auto;
+		line-height: var(--ironsworn-line-height-md);
+	}
 }
 </style>

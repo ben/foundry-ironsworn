@@ -7,12 +7,13 @@
 				class="form-group nogrow"
 				style="gap: var(--ironsworn-spacer-md)"
 			>
-				<input
+				<textarea
 					v-model="option.name"
-					type="text"
+					rows="2"
 					:placeholder="$t('IRONSWORN.Label')"
+					:class="$style.optionName"
 					@blur="save"
-				/>
+				></textarea>
 				<IronBtn icon="fa:trash" @click="deleteOption(i)" />
 			</div>
 		</CollapseTransition>
@@ -63,3 +64,14 @@ async function addOption() {
 	$item?.update({ system: { exclusiveOptions } })
 }
 </script>
+
+<style lang="scss" module>
+.optionName {
+	// grows with the text where supported; the `rows` attribute is the fallback.
+	// `width` is needed because content sizing applies to it as well.
+	/* stylelint-disable-next-line property-no-unknown */
+	field-sizing: content;
+	width: 100%;
+	resize: vertical;
+}
+</style>
