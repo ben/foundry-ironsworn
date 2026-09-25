@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix wraparound for text in asset Options field.
+
 ## 1.28.2
 
 - Fix chat-message momentum button width
