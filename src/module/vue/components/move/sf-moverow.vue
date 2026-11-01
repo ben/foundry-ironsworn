@@ -67,6 +67,7 @@ import type { DisplayMove } from '../../../features/custommoves'
 import type { IOracleTreeNode } from '../../../features/customoracles'
 import { compact } from 'lodash-es'
 import { OracleTable } from '../../../roll-table/oracle-table'
+import { IronswornSettings } from '../../../helpers/settings.js'
 
 import BtnRollmove from '../buttons/btn-rollmove.vue'
 import BtnSendmovetochat from '../buttons/btn-sendmovetochat.vue'
@@ -124,7 +125,9 @@ const preventOracle = computed(() => {
 	return oracleNodes.length !== 1
 })
 
-const toggleTooltip = props.move.triggerText
+const toggleTooltip = computed(() =>
+	IronswornSettings.get('row-tooltips') ? props.move.triggerText : undefined
+)
 
 const dataHighlight = ref(false)
 async function flashHighlight() {

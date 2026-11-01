@@ -366,6 +366,10 @@
 			"ProgressMarkAnimation": {
 				"Name": "Enable progress mark animation",
 				"Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."
+			},
+			"RowTooltips": {
+				"Name": "Show row tooltips",
+				"Hint": "If on, hovering the title of a move or move category displays a tooltip with more information, such as a move's trigger."
 			}
 		},
 		"First Start": {
