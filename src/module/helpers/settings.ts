@@ -157,8 +157,8 @@ export class IronswornSettings {
 			requiresReload: true
 		})
 		game.settings.register('foundry-ironsworn', 'row-tooltips', {
-			name: 'IRONSWORN.Settings.RowTooltips.Name',
-			hint: 'IRONSWORN.Settings.RowTooltips.Hint',
+			name: 'IRONSWORN.Settings.MoveOracleTooltips.Name',
+			hint: 'IRONSWORN.Settings.MoveOracleTooltips.Hint',
 			scope: 'client',
 			type: Boolean,
 			default: true,

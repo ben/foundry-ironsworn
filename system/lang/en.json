@@ -367,9 +367,9 @@
 				"Name": "Enable progress mark animation",
 				"Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."
 			},
-			"RowTooltips": {
-				"Name": "Show row tooltips",
-				"Hint": "If on, hovering the title of a move, move category, or oracle row displays a tooltip with more information, such as a move's trigger."
+			"MoveOracleTooltips": {
+				"Name": "Enable move/oracle tooltips",
+				"Hint": "Enables tooltips on move, move category, and oracles in the move sheet."
 			}
 		},
 		"First Start": {
