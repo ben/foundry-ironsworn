@@ -41,6 +41,7 @@ declare global {
 			'foundry-ironsworn.theme': keyof typeof IronTheme.THEMES
 			'foundry-ironsworn.color-scheme': 'zinc' | 'phosphor' | 'oceanic'
 			'foundry-ironsworn.progress-mark-animation': boolean
+			'foundry-ironsworn.row-tooltips': boolean
 
 			'foundry-ironsworn.log-changes': boolean
 			'foundry-ironsworn.show-first-start-dialog': boolean
@@ -149,6 +150,15 @@ export class IronswornSettings {
 		game.settings.register('foundry-ironsworn', 'progress-mark-animation', {
 			name: 'IRONSWORN.Settings.ProgressMarkAnimation.Name',
 			hint: 'IRONSWORN.Settings.ProgressMarkAnimation.Hint',
+			scope: 'client',
+			type: Boolean,
+			default: true,
+			config: true,
+			requiresReload: true
+		})
+		game.settings.register('foundry-ironsworn', 'row-tooltips', {
+			name: 'IRONSWORN.Settings.MoveOracleTooltips.Name',
+			hint: 'IRONSWORN.Settings.MoveOracleTooltips.Hint',
 			scope: 'client',
 			type: Boolean,
 			default: true,

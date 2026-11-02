@@ -366,6 +366,10 @@
 			"ProgressMarkAnimation": {
 				"Name": "Enable progress mark animation",
 				"Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."
+			},
+			"MoveOracleTooltips": {
+				"Name": "Enable move/oracle tooltips",
+				"Hint": "Enables tooltips on move, move category, and oracles in the move sheet."
 			}
 		},
 		"First Start": {

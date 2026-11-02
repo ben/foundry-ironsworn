@@ -5,7 +5,7 @@
 		:expanded="props.expanded"
 		:class="$style.wrapper"
 		:toggle-button-class="$style.toggleBtn"
-		:toggle-tooltip="categoryTooltip"
+		:toggle-tooltip="displayCategoryTooltip"
 		:toggle-wrapper-is="`h${headingLevel}`"
 		:toggle-wrapper-class="$style.toggleWrapper"
 		:toggle-section-class="`${$style.toggleSection} list-block-header`"
@@ -43,6 +43,7 @@ import SfMoverow from './move/sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash-es'
 import { enrichMarkdown } from '../vue-plugin'
+import { IronswornSettings } from '../../helpers/settings.js'
 
 const props = withDefaults(
 	defineProps<{
@@ -74,6 +75,13 @@ const $children = ref<InstanceType<typeof SfMoverow>[]>([])
 const categoryTooltip = ref()
 enrichMarkdown(props.category.ds?.description).then(
 	(x) => (categoryTooltip.value = x)
+)
+
+const categoryTooltipSetting = computed(() =>
+	IronswornSettings.get('row-tooltips')
+)
+const displayCategoryTooltip = computed(() =>
+	categoryTooltipSetting.value ? categoryTooltip.value : undefined
 )
 
 const moveUuids = computed(() => props.category.moves.map((move) => move.uuid))

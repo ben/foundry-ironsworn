@@ -10,7 +10,7 @@
 		<!-- Leaf node -->
 		<div v-if="isLeaf">
 			<h4 class="flexrow">
-				<BtnOracle :node="node" :text="node?.displayName">
+				<BtnOracle :node="node" :text="node?.displayName" v-bind="leafTooltipAttrs">
 					<template #icon>
 						<IronIcon name="oracle" :size="spacerSize" />
 					</template>
@@ -76,8 +76,17 @@ import IronBtn from './buttons/iron-btn.vue'
 import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
 import OracleExpandedDescription from './oracle-expanded-description.vue'
+import { IronswornSettings } from '../../helpers/settings.js'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
+
+/**
+ * A `v-bind` spill for the leaf node's oracle button: when tooltips are disabled,
+ * this overrides the button's built-in tooltip with an empty one.
+ */
+const leafTooltipAttrs = computed(() =>
+	IronswornSettings.get('row-tooltips') ? {} : { tooltip: '' }
+)
 
 const state = reactive({
 	manuallyExpanded: props.node.forceExpanded ?? false,
