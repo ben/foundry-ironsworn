@@ -118,9 +118,15 @@
 			"Quests": "Quests"
 		},
 		"CombatPosition": {
+			"Label": "Combat Position",
 			"InControl": "In Control",
 			"InABadSpot": "In a Bad Spot",
-			"None": "None"
+			"None": "None",
+			"NotInCombat": "Not in Combat",
+			"Initiative": "Initiative",
+			"YouHaveInitiative": "You Have Initiative",
+			"FoeHasInitiative": "Foe Has Initiative",
+			"SetTooltip": "Set your combat position"
 		},
 		"Clock": "Clock",
 		"Segments": "Segments",

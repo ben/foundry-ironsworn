@@ -5,6 +5,12 @@ import { IronswornActor } from '../actor/actor'
 import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
+import type { CombatPosition } from './combat-position'
+import {
+	combatPositionLabelKey,
+	combatPositionsForOutcome,
+	isClassicMove
+} from './combat-position'
 import { renderRollGraphic } from './roll-graphic'
 
 interface MoveTemplateData {
@@ -170,6 +176,15 @@ export class IronswornRollMessage {
 		return await this.createOrUpdate()
 	}
 
+	/**
+	 * Sets the rolling character's combat position (in control / in a bad spot;
+	 * classic: initiative), as offered by the outcome of a combat move.
+	 */
+	async setCombatPosition(position: CombatPosition) {
+		if (!IronswornActor.assert(this.actor, 'character')) return
+		await this.actor.update({ system: { combatPosition: position } })
+	}
+
 	async createOrUpdate() {
 		await this.roll.evaluate()
 
@@ -182,7 +197,8 @@ export class IronswornRollMessage {
 			...(await this.moveData()),
 			...(await this.challengeDiceData()),
 			...(await this.momentumData()),
-			...(await this.oraclesData())
+			...(await this.oraclesData()),
+			...(await this.combatPositionData())
 		}
 		const content = await foundry.applications.handlebars.renderTemplate(
 			'systems/foundry-ironsworn/templates/rolls/ironsworn-roll-message.hbs',
@@ -330,5 +346,31 @@ export class IronswornRollMessage {
 			await Promise.all(dsids.map((x) => OracleTable.getByDsId(x)))
 		)
 		return { nextOracles }
+	}
+
+	private async moveDsId(): Promise<string | undefined> {
+		const move = await this.roll.moveItem
+		const dsid = move?.getFlag('foundry-ironsworn', 'dsid')
+		return typeof dsid === 'string' ? dsid : this.roll.preRollOptions.moveDsId
+	}
+
+	private async combatPositionData(): Promise<{
+		combatPositions?: Array<{ position: CombatPosition; label: string }>
+	}> {
+		if (!IronswornActor.assert(this.actor, 'character')) return {}
+		const moveDsId = await this.moveDsId()
+		const positions = combatPositionsForOutcome(
+			moveDsId,
+			this.roll.finalOutcome?.value
+		)
+		if (positions.length === 0) return {}
+
+		const classic = isClassicMove(moveDsId)
+		return {
+			combatPositions: positions.map((position) => ({
+				position,
+				label: game.i18n.localize(combatPositionLabelKey(position, classic))
+			}))
+		}
 	}
 }
