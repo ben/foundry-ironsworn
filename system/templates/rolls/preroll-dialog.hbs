@@ -26,6 +26,28 @@
   </fieldset>
   {{/if}}
 
+  {{#each nextMoveBonusGroups}}
+  <fieldset class='form-group next-move-bonuses' data-actor-id='{{actorId}}'>
+    <label>{{localize 'IRONSWORN.NextMoveBonus.Label'}}</label>
+    <div class='form-fields flexcol'>
+      {{#each bonuses}}
+      <label class='checkbox'>
+        <input
+          type='checkbox'
+          data-next-move-bonus
+          data-actor-id='{{../actorId}}'
+          data-source='{{source}}'
+          data-value='{{value}}'
+          value='{{id}}'
+          checked
+        />
+        {{label}}
+      </label>
+      {{/each}}
+    </div>
+  </fieldset>
+  {{/each}}
+
   {{#if showActorSelect}}
   <fieldset class='form-group'>
     <label for='char'>{{localize 'IRONSWORN.ACTOR.TypeCharacter'}}</label>

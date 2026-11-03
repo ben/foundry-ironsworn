@@ -109,6 +109,11 @@ export interface PreRollOptions {
 	 * Indicates this is an action roll
 	 */
 	adds?: number
+	/**
+	 * Pending "next move" bonuses spent on this roll, e.g. "add +1 on your next
+	 * move" from Secure an Advantage. Shown separately in the score breakdown.
+	 */
+	bonuses?: SourcedValue[]
 
 	/**
 	 * Negative momentum can cancel an action die
@@ -162,6 +167,12 @@ export interface PostRollOptions {
 	 */
 	allowReplacingOutcome?: boolean
 	replacedOutcome?: SourcedValue<RollOutcome>
+
+	/**
+	 * The outcome's "+1 on your next move" has been added to the character's
+	 * pending next-move bonuses from this roll's chat card.
+	 */
+	nextMoveBonusAdded?: boolean
 }
 
 export class IronswornRoll {
@@ -291,6 +302,7 @@ export class IronswornRoll {
 			})
 		}
 
+		ret.push(...(this.preRollOptions.bonuses ?? []))
 		ret.push(...(this.postRollOptions.adds ?? []))
 
 		return ret
@@ -323,6 +335,7 @@ export class IronswornRoll {
 
 		// Third term: all other adds
 		terms.push(this.preRollOptions.adds ?? 0)
+		terms.push(sum((this.preRollOptions.bonuses ?? []).map((x) => x.value)))
 
 		// Will it add?
 		if (terms.every((x) => x !== undefined)) {

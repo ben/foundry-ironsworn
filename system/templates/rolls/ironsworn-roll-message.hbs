@@ -69,6 +69,19 @@
 				{{/each}}
 			</section>
 		{{/if}}
+		{{#if nextMoveBonus}}
+			<section class='next-move-bonus-button'>
+				<button
+					class='icon-button fas fa-plus'
+					data-iron-action='addNextMoveBonus'
+					data-tooltip='{{localize "IRONSWORN.NextMoveBonus.Hint"}}'
+					type='button'
+					{{#if nextMoveBonus.added}}disabled{{/if}}
+				>
+					<span class='button-text'>{{nextMoveBonus.label}}</span>
+				</button>
+			</section>
+		{{/if}}
 		{{#if nextOracles}}
 			<section class='move-oracle-buttons flexrow'>
 				{{#each nextOracles}}

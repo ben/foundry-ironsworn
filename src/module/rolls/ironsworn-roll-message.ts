@@ -11,6 +11,7 @@ import {
 	combatPositionsForOutcome,
 	isClassicMove
 } from './combat-position'
+import { nextMoveBonusForOutcome } from './next-move-bonus'
 import { renderRollGraphic } from './roll-graphic'
 
 interface MoveTemplateData {
@@ -185,6 +186,26 @@ export class IronswornRollMessage {
 		await this.actor.update({ system: { combatPosition: position } })
 	}
 
+	/**
+	 * Adds the outcome's "+1 on your next move" to the rolling character's
+	 * pending next-move bonuses, once per roll.
+	 */
+	async addNextMoveBonus() {
+		if (!IronswornActor.assert(this.actor, 'character')) return
+		if (this.roll.postRollOptions.nextMoveBonusAdded) return
+
+		const value = nextMoveBonusForOutcome(
+			await this.moveDsId(),
+			this.roll.finalOutcome?.value
+		)
+		if (value == null) return
+
+		const move = await this.roll.moveItem
+		await this.actor.system.addNextMoveBonus(move?.name ?? '', value)
+		this.roll.postRollOptions.nextMoveBonusAdded = true
+		return await this.createOrUpdate()
+	}
+
 	async createOrUpdate() {
 		await this.roll.evaluate()
 
@@ -198,7 +219,8 @@ export class IronswornRollMessage {
 			...(await this.challengeDiceData()),
 			...(await this.momentumData()),
 			...(await this.oraclesData()),
-			...(await this.combatPositionData())
+			...(await this.combatPositionData()),
+			...(await this.nextMoveBonusData())
 		}
 		const content = await foundry.applications.handlebars.renderTemplate(
 			'systems/foundry-ironsworn/templates/rolls/ironsworn-roll-message.hbs',
@@ -371,6 +393,30 @@ export class IronswornRollMessage {
 				position,
 				label: game.i18n.localize(combatPositionLabelKey(position, classic))
 			}))
+		}
+	}
+
+	private async nextMoveBonusData(): Promise<{
+		nextMoveBonus?: { label: string; added: boolean }
+	}> {
+		if (!IronswornActor.assert(this.actor, 'character')) return {}
+		const value = nextMoveBonusForOutcome(
+			await this.moveDsId(),
+			this.roll.finalOutcome?.value
+		)
+		if (value == null) return {}
+
+		const added = this.roll.postRollOptions.nextMoveBonusAdded ?? false
+		return {
+			nextMoveBonus: {
+				added,
+				label: game.i18n.format(
+					added
+						? 'IRONSWORN.NextMoveBonus.Added'
+						: 'IRONSWORN.NextMoveBonus.AddFromRoll',
+					{ value: `${value >= 0 ? '+' : ''}${value}` }
+				)
+			}
 		}
 	}
 }

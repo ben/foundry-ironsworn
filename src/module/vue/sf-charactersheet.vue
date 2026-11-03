@@ -72,6 +72,7 @@
 					meters and cover the HOLD track when the sheet is resized. -->
 				<section class="nogrow" :class="$style.impacts" data-tourid="impacts">
 					<hr class="nogrow" />
+					<NextMoveBonuses :class="$style.nextMoveBonuses" />
 					<sf-impacts />
 					<CombatPosition :class="$style.combatPosition" ruleset="starforged" />
 				</section>
@@ -107,6 +108,7 @@ import TabPanel from './components/tabs/tab-panel.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import PlayerAssets from './components/asset/player-assets.vue'
 import CombatPosition from './components/combat-position.vue'
+import NextMoveBonuses from './components/next-move-bonuses.vue'
 
 const props = defineProps<{
 	data: {
@@ -156,6 +158,9 @@ provide(ActorKey, computed(() => props.data.actor) as any)
 }
 .combatPosition {
 	margin-top: var(--ironsworn-spacer-md);
+}
+.nextMoveBonuses {
+	margin-bottom: var(--ironsworn-spacer-md);
 }
 </style>
 

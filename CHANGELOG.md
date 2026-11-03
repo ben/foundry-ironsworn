@@ -3,6 +3,7 @@
 ## Next Release
 
 - Show and set combat position on the character sheets: in control / in a bad spot (Starforged), or initiative (Ironsworn). Combat move results in chat get a button to set it.
+- Track "+1 on your next move" bonuses on character sheets. Moves that grant one (e.g. Secure an Advantage, Gain Ground) get a button on the roll card to add it, and the roll dialog offers pending bonuses on action rolls, removing them once spent.
 
 ## 1.28.3
 
