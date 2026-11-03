@@ -78,7 +78,7 @@ export function combatPositionsForOutcome(
 	return COMBAT_MOVE_POSITIONS[moveDsId]?.[outcome] ?? []
 }
 
-/** Is this a classic Ironsworn move, which talks about initiative instead? */
+/** Classic Ironsworn moves use "initiative" terminology, so we need to check for that. */
 export function isClassicMove(moveDsId: string | undefined): boolean {
 	return moveDsId?.startsWith('move:classic/') ?? false
 }
