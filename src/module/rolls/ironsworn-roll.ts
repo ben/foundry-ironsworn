@@ -169,10 +169,11 @@ export interface PostRollOptions {
 	replacedOutcome?: SourcedValue<RollOutcome>
 
 	/**
-	 * The outcome's "+1 on your next move" has been added to the character's
-	 * pending next-move bonuses from this roll's chat card.
+	 * Outcome gains already applied from this roll's chat card, by the keys
+	 * `IronswornRollMessage` gives them. A key includes the outcome, so a
+	 * changed outcome starts with none used.
 	 */
-	nextMoveBonusAdded?: boolean
+	usedOutcomeGains?: string[]
 }
 
 export class IronswornRoll {

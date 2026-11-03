@@ -90,8 +90,8 @@ export class IronswornChatCard {
 			.find('[data-iron-action="setCombatPosition"]')
 			.on('click', async (ev) => await this._setCombatPosition.call(this, ev))
 		html
-			.find('[data-iron-action="addNextMoveBonus"]')
-			.on('click', async (ev) => await this._addNextMoveBonus.call(this, ev))
+			.find('[data-iron-action="applyOutcomeGain"]')
+			.on('click', async (ev) => await this._applyOutcomeGain.call(this, ev))
 	}
 
 	async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -136,12 +136,13 @@ export class IronswornChatCard {
 		return await irmsg?.setCombatPosition(position)
 	}
 
-	async _addNextMoveBonus(ev: JQuery.ClickEvent) {
+	async _applyOutcomeGain(ev: JQuery.ClickEvent) {
 		ev.preventDefault()
 
+		const { gainKey } = ev.currentTarget.dataset
 		const msgId = $(ev.target).parents('.chat-message').data('message-id')
 		const irmsg = await IronswornRollMessage.fromMessage(msgId)
-		return await irmsg?.addNextMoveBonus()
+		return await irmsg?.applyOutcomeGain(gainKey)
 	}
 
 	async _resolveChallenge(ev: JQuery.ClickEvent) {

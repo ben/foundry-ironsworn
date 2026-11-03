@@ -91,6 +91,21 @@
 			// embedded buttons for momentum burn, oracle roll suggestions, etc.
 			display: contents;
 		}
+
+		.outcome-gain-buttons {
+			gap: var(--ironsworn-spacer-xs);
+
+			.flexrow {
+				gap: var(--ironsworn-spacer-xs);
+			}
+		}
+
+		.outcome-gain-heading {
+			text-align: center;
+			text-transform: uppercase;
+			font-size: var(--font-size-12);
+			font-weight: bold;
+		}
 	}
 
 	// Oracle rolls
