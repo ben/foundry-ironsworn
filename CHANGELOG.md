@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Track "+1 on your next move" bonuses on character sheets. Moves that grant one (e.g. Secure an Advantage, Gain Ground) get a button on the roll card to add it, and the roll dialog offers pending bonuses on action rolls, removing them once spent.
+
 ## 1.28.3
 
 - Fix wraparound for text in asset Options field.
