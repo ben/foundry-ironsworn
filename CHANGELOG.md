@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Show and set combat position on the character sheets: in control / in a bad spot (Starforged), or initiative (Ironsworn). Combat move results in chat get a button to set it.
+
 ## 1.28.3
 
 - Fix wraparound for text in asset Options field.

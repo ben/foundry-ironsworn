@@ -54,6 +54,21 @@
 				</button>
 			</section>
 		{{/if}}
+		{{#if combatPositions}}
+			<section class='combat-position-buttons flexrow'>
+				{{#each combatPositions}}
+					<button
+						class='icon-button fas fa-crosshairs'
+						data-tooltip='{{localize "IRONSWORN.CombatPosition.SetTooltip"}}'
+						data-iron-action='setCombatPosition'
+						data-position='{{position}}'
+						type='button'
+					>
+						<span class='button-text'>{{label}}</span>
+					</button>
+				{{/each}}
+			</section>
+		{{/if}}
 		{{#if nextOracles}}
 			<section class='move-oracle-buttons flexrow'>
 				{{#each nextOracles}}
