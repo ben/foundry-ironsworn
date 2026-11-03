@@ -5,7 +5,37 @@ import { IronswornActor } from '../actor/actor'
 import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
+import type { CombatPosition } from './combat-position'
+import { combatPositionLabelKey, isClassicMove } from './combat-position'
+import type { OutcomeGain } from './move-outcome-effects'
+import { isOutcomeChoice, outcomeEffects } from './move-outcome-effects'
 import { renderRollGraphic } from './roll-graphic'
+import { IronswornSettings } from '../helpers/settings'
+
+/** A gain the roll card can apply, with the key that records its use. */
+interface KeyedGain {
+	key: string
+	gain: OutcomeGain
+}
+
+/** A row of gain buttons on the roll card: a lone gain, or one choice. */
+interface KeyedGainGroup {
+	/** How many of the gains may be used: 1 for a lone gain. */
+	choose: number
+	gains: KeyedGain[]
+}
+
+interface OutcomeGainButton {
+	key: string
+	label: string
+	used: boolean
+	disabled: boolean
+}
+
+interface OutcomeGainGroupData {
+	heading?: string
+	buttons: OutcomeGainButton[]
+}
 
 interface MoveTemplateData {
 	outcomeClass?: string
@@ -170,6 +200,60 @@ export class IronswornRollMessage {
 		return await this.createOrUpdate()
 	}
 
+	/**
+	 * Sets the rolling character's combat position (in control / in a bad spot;
+	 * classic: initiative), as offered by the outcome of a combat move.
+	 */
+	async setCombatPosition(position: CombatPosition) {
+		if (!IronswornActor.assert(this.actor, 'character')) return
+		await this.actor.update({ system: { combatPosition: position } })
+	}
+
+	/**
+	 * Applies one of the outcome's gains (e.g. "+2 momentum", "+1 on your next
+	 * move") to the rolling character. Each gain can be used once per roll, and
+	 * a choice only as many times as it allows.
+	 * @param key The gain's key, from the roll card's button.
+	 */
+	async applyOutcomeGain(key: string) {
+		if (!IronswornActor.assert(this.actor, 'character')) return
+		const used = this.roll.postRollOptions.usedOutcomeGains ?? []
+		if (used.includes(key)) return
+
+		const group = (await this.outcomeGainGroups()).find((g) =>
+			g.gains.some((x) => x.key === key)
+		)
+		if (group == null) return
+		const usedInGroup = group.gains.filter((x) => used.includes(x.key)).length
+		if (usedInGroup >= group.choose) return
+
+		const { gain } = group.gains.find((x) => x.key === key)!
+		await this.applyGain(this.actor, gain)
+		this.roll.postRollOptions.usedOutcomeGains = [...used, key]
+		return await this.createOrUpdate()
+	}
+
+	private async applyGain(
+		actor: IronswornActor<'character'>,
+		gain: OutcomeGain
+	) {
+		if (gain.kind === 'nextMoveBonus') {
+			const move = await this.roll.moveItem
+			await actor.system.addNextMoveBonus(move?.name ?? '', gain.value)
+			return
+		}
+
+		const meter = actor.system[gain.meter]
+		const max = gain.meter === 'momentum' ? actor.system.momentumMax : meter.max
+		// Never lower a meter that's already over its maximum
+		const value = Math.max(meter.value, Math.min(meter.value + gain.value, max))
+		const data = { [`system.${gain.meter}.value`]: value }
+		await actor.update(data)
+		if (gain.meter === 'supply' && IronswornSettings.get('shared-supply')) {
+			await IronswornSettings.updateGlobalAttribute(data)
+		}
+	}
+
 	async createOrUpdate() {
 		await this.roll.evaluate()
 
@@ -182,7 +266,9 @@ export class IronswornRollMessage {
 			...(await this.moveData()),
 			...(await this.challengeDiceData()),
 			...(await this.momentumData()),
-			...(await this.oraclesData())
+			...(await this.oraclesData()),
+			...(await this.combatPositionData()),
+			...(await this.outcomeGainData())
 		}
 		const content = await foundry.applications.handlebars.renderTemplate(
 			'systems/foundry-ironsworn/templates/rolls/ironsworn-roll-message.hbs',
@@ -331,4 +417,113 @@ export class IronswornRollMessage {
 		)
 		return { nextOracles }
 	}
+
+	private async moveDsId(): Promise<string | undefined> {
+		const move = await this.roll.moveItem
+		const dsid = move?.getFlag('foundry-ironsworn', 'dsid')
+		return typeof dsid === 'string' ? dsid : this.roll.preRollOptions.moveDsId
+	}
+
+	private async combatPositionData(): Promise<{
+		combatPositions?: Array<{ position: CombatPosition; label: string }>
+	}> {
+		if (!IronswornActor.assert(this.actor, 'character')) return {}
+		const moveDsId = await this.moveDsId()
+		const positions =
+			outcomeEffects(moveDsId, this.roll.finalOutcome?.value)?.positions ?? []
+		if (positions.length === 0) return {}
+
+		const classic = isClassicMove(moveDsId)
+		return {
+			combatPositions: positions.map((position) => ({
+				position,
+				label: game.i18n.localize(combatPositionLabelKey(position, classic))
+			}))
+		}
+	}
+
+	/**
+	 * The current outcome's gains, each with a key that records its use. Gains
+	 * ruled out by the character's impacts ("if you are not wounded") are left
+	 * out.
+	 */
+	private async outcomeGainGroups(): Promise<KeyedGainGroup[]> {
+		if (!IronswornActor.assert(this.actor, 'character')) return []
+		const outcome = this.roll.finalOutcome?.value
+		const effects = outcomeEffects(await this.moveDsId(), outcome)
+		const { debility } = this.actor.system
+
+		const groups: KeyedGainGroup[] = []
+		for (const [i, entry] of (effects?.gains ?? []).entries()) {
+			const keyed: KeyedGain[] = isOutcomeChoice(entry)
+				? entry.options.map((gain, j) => ({
+						key: `${outcome}:${i}.${j}`,
+						gain
+				  }))
+				: [{ key: `${outcome}:${i}`, gain: entry }]
+			const gains = keyed.filter(
+				({ gain }) =>
+					gain.kind !== 'meter' ||
+					gain.unlessImpact == null ||
+					!debility[gain.unlessImpact]
+			)
+			if (gains.length === 0) continue
+			groups.push({
+				choose: isOutcomeChoice(entry) ? entry.choose : 1,
+				gains
+			})
+		}
+		return groups
+	}
+
+	private async outcomeGainData(): Promise<{
+		outcomeGains?: OutcomeGainGroupData[]
+	}> {
+		const groups = await this.outcomeGainGroups()
+		if (groups.length === 0) return {}
+
+		const used = this.roll.postRollOptions.usedOutcomeGains ?? []
+		return {
+			outcomeGains: groups.map(({ choose, gains }) => {
+				const usedInGroup = gains.filter((x) => used.includes(x.key)).length
+				return {
+					// A choice whose other options aren't buttons needs no heading
+					heading:
+						gains.length > choose
+							? game.i18n.localize(
+									choose === 1
+										? 'IRONSWORN.OutcomeGain.ChooseOne'
+										: 'IRONSWORN.OutcomeGain.ChooseTwo'
+							  )
+							: undefined,
+					buttons: gains.map(({ key, gain }) => {
+						const isUsed = used.includes(key)
+						return {
+							key,
+							label: outcomeGainLabel(gain, isUsed),
+							used: isUsed,
+							disabled: isUsed || usedInGroup >= choose
+						}
+					})
+				}
+			})
+		}
+	}
+}
+
+/** The roll-card label for a gain, e.g. "Take +2 Momentum" or "Took +2 Momentum". */
+function outcomeGainLabel(gain: OutcomeGain, used: boolean): string {
+	const value = `${gain.value >= 0 ? '+' : ''}${gain.value}`
+	if (gain.kind === 'nextMoveBonus') {
+		return game.i18n.format(
+			used
+				? 'IRONSWORN.NextMoveBonus.Added'
+				: 'IRONSWORN.NextMoveBonus.AddFromRoll',
+			{ value }
+		)
+	}
+	return game.i18n.format(
+		used ? 'IRONSWORN.OutcomeGain.Took' : 'IRONSWORN.OutcomeGain.Take',
+		{ value, meter: game.i18n.localize(`IRONSWORN.${gain.meter.capitalize()}`) }
+	)
 }

@@ -86,6 +86,12 @@ export class IronswornChatCard {
 		html
 			.find('[data-iron-action="oracleRoll"]')
 			.on('click', (ev) => this._oracleRoll.call(this, ev))
+		html
+			.find('[data-iron-action="setCombatPosition"]')
+			.on('click', async (ev) => await this._setCombatPosition.call(this, ev))
+		html
+			.find('[data-iron-action="applyOutcomeGain"]')
+			.on('click', async (ev) => await this._applyOutcomeGain.call(this, ev))
 	}
 
 	async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -119,6 +125,24 @@ export class IronswornChatCard {
 		const msgId = $(ev.target).parents('.chat-message').data('message-id')
 		const irmsg = await IronswornRollMessage.fromMessage(msgId)
 		return await irmsg?.burnMomentum()
+	}
+
+	async _setCombatPosition(ev: JQuery.ClickEvent) {
+		ev.preventDefault()
+
+		const { position } = ev.currentTarget.dataset
+		const msgId = $(ev.target).parents('.chat-message').data('message-id')
+		const irmsg = await IronswornRollMessage.fromMessage(msgId)
+		return await irmsg?.setCombatPosition(position)
+	}
+
+	async _applyOutcomeGain(ev: JQuery.ClickEvent) {
+		ev.preventDefault()
+
+		const { gainKey } = ev.currentTarget.dataset
+		const msgId = $(ev.target).parents('.chat-message').data('message-id')
+		const irmsg = await IronswornRollMessage.fromMessage(msgId)
+		return await irmsg?.applyOutcomeGain(gainKey)
 	}
 
 	async _resolveChallenge(ev: JQuery.ClickEvent) {

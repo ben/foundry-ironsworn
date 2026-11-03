@@ -52,7 +52,9 @@
 
 			<!-- Conditions & Banes & Burdens -->
 			<section class="sheet-area nogrow" :class="$style.conditions" data-tourid="conditions">
+				<NextMoveBonuses :class="$style.nextMoveBonuses" />
 				<conditions />
+				<CombatPosition :class="$style.combatPosition" ruleset="classic" />
 			</section>
 		</div>
 
@@ -81,6 +83,8 @@ import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
+import CombatPosition from './components/combat-position.vue'
+import NextMoveBonuses from './components/next-move-bonuses.vue'
 
 const props = defineProps<{
 	data: { actor: ActorSource<'character'> }
@@ -105,6 +109,14 @@ provide(
 
 .conditions {
 	margin-top: auto;
+}
+
+.combatPosition {
+	margin-top: var(--ironsworn-spacer-md);
+}
+
+.nextMoveBonuses {
+	margin-bottom: var(--ironsworn-spacer-md);
 }
 </style>
 
