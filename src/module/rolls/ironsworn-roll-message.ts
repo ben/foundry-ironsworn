@@ -5,6 +5,7 @@ import { IronswornActor } from '../actor/actor'
 import { OracleTable } from '../roll-table/oracle-table'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
+import { nextMoveBonusForOutcome } from './next-move-bonus'
 import { renderRollGraphic } from './roll-graphic'
 
 interface MoveTemplateData {
@@ -170,6 +171,26 @@ export class IronswornRollMessage {
 		return await this.createOrUpdate()
 	}
 
+	/**
+	 * Adds the outcome's "+1 on your next move" to the rolling character's
+	 * pending next-move bonuses, once per roll.
+	 */
+	async addNextMoveBonus() {
+		if (!IronswornActor.assert(this.actor, 'character')) return
+		if (this.roll.postRollOptions.nextMoveBonusAdded) return
+
+		const value = nextMoveBonusForOutcome(
+			await this.moveDsId(),
+			this.roll.finalOutcome?.value
+		)
+		if (value == null) return
+
+		const move = await this.roll.moveItem
+		await this.actor.system.addNextMoveBonus(move?.name ?? '', value)
+		this.roll.postRollOptions.nextMoveBonusAdded = true
+		return await this.createOrUpdate()
+	}
+
 	async createOrUpdate() {
 		await this.roll.evaluate()
 
@@ -182,7 +203,8 @@ export class IronswornRollMessage {
 			...(await this.moveData()),
 			...(await this.challengeDiceData()),
 			...(await this.momentumData()),
-			...(await this.oraclesData())
+			...(await this.oraclesData()),
+			...(await this.nextMoveBonusData())
 		}
 		const content = await foundry.applications.handlebars.renderTemplate(
 			'systems/foundry-ironsworn/templates/rolls/ironsworn-roll-message.hbs',
@@ -330,5 +352,35 @@ export class IronswornRollMessage {
 			await Promise.all(dsids.map((x) => OracleTable.getByDsId(x)))
 		)
 		return { nextOracles }
+	}
+
+	private async moveDsId(): Promise<string | undefined> {
+		const move = await this.roll.moveItem
+		const dsid = move?.getFlag('foundry-ironsworn', 'dsid')
+		return typeof dsid === 'string' ? dsid : this.roll.preRollOptions.moveDsId
+	}
+
+	private async nextMoveBonusData(): Promise<{
+		nextMoveBonus?: { label: string; added: boolean }
+	}> {
+		if (!IronswornActor.assert(this.actor, 'character')) return {}
+		const value = nextMoveBonusForOutcome(
+			await this.moveDsId(),
+			this.roll.finalOutcome?.value
+		)
+		if (value == null) return {}
+
+		const added = this.roll.postRollOptions.nextMoveBonusAdded ?? false
+		return {
+			nextMoveBonus: {
+				added,
+				label: game.i18n.format(
+					added
+						? 'IRONSWORN.NextMoveBonus.Added'
+						: 'IRONSWORN.NextMoveBonus.AddFromRoll',
+					{ value: `${value >= 0 ? '+' : ''}${value}` }
+				)
+			}
+		}
 	}
 }

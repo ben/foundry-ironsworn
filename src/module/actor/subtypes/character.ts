@@ -34,6 +34,32 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 		}
 	}
 
+	/**
+	 * Adds a pending bonus to the character's next move, e.g. "add +1 on your
+	 * next move" from Secure an Advantage. It stays pending until a roll is made
+	 * with it ticked in the roll dialog.
+	 */
+	async addNextMoveBonus(this: CharacterModel, source: string, value = 1) {
+		const bonus: NextMoveBonus = {
+			id: foundry.utils.randomID(),
+			source,
+			value
+		}
+		await this.parent.update({
+			system: { nextMoveBonuses: [...this.nextMoveBonuses, bonus] }
+		})
+	}
+
+	/** Removes pending next-move bonuses, e.g. once a roll has spent them. */
+	async removeNextMoveBonuses(this: CharacterModel, ids: string[]) {
+		if (ids.length === 0) return
+		await this.parent.update({
+			system: {
+				nextMoveBonuses: this.nextMoveBonuses.filter((x) => !ids.includes(x.id))
+			}
+		})
+	}
+
 	get canBurnMomentum() {
 		return this.parent.system.momentum.value > this.parent.system.momentumReset
 	}
@@ -119,6 +145,14 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 				custom2name: new fields.StringField({})
 			}),
 
+			nextMoveBonuses: new fields.ArrayField(
+				new fields.SchemaField({
+					id: new fields.StringField({ required: true, blank: false }),
+					source: new fields.StringField({ initial: '' }),
+					value: new fields.NumberField({ integer: true, initial: 1 })
+				})
+			),
+
 			legacies: new fields.SchemaField<CharacterDataSourceData['legacies']>({
 				quests: new ProgressTicksField({
 					max: undefined
@@ -143,6 +177,13 @@ export class CharacterModel extends foundry.abstract.TypeDataModel<
 	}
 }
 export interface CharacterModel extends CharacterDataSourceData {}
+
+/** A pending bonus to a character's next (non-progress) move. */
+export interface NextMoveBonus {
+	id: string
+	source: string
+	value: number
+}
 export interface CharacterDataSourceData {
 	biography: string
 	notes: string
@@ -163,6 +204,7 @@ export interface CharacterDataSourceData {
 	momentum: MomentumSource
 
 	xp: number
+	nextMoveBonuses: NextMoveBonus[]
 	legacies: {
 		quests: number
 		questsXpSpent: number

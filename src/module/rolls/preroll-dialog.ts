@@ -24,6 +24,7 @@ import { AssetConditionMeterField } from '../item/subtypes/asset'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { getFoundryMoveByDsId } from '../datasworn2'
+import type { NextMoveBonus } from '../actor/subtypes/character'
 
 interface showForMoveOpts {
 	actor?: IronswornActor
@@ -148,6 +149,62 @@ function parseCheckbox(value?: string) {
 	}
 }
 
+interface NextMoveBonusGroup {
+	actorId: string
+	bonuses: Array<NextMoveBonus & { label: string }>
+}
+
+/**
+ * Lists each character's pending next-move bonuses for the roll dialog,
+ * ticked. Characters without any are left out. Action rolls only: a progress
+ * roll takes no adds, and the bonus is "not a progress move".
+ */
+function nextMoveBonusGroups(
+	actors: Array<IronswornActor | null | undefined>
+): NextMoveBonusGroup[] {
+	const groups: NextMoveBonusGroup[] = []
+	for (const actor of actors) {
+		if (!IronswornActor.assert(actor, 'character')) continue
+		const bonuses = actor.system.nextMoveBonuses ?? []
+		if (bonuses.length === 0 || actor.id == null) continue
+		groups.push({
+			actorId: actor.id,
+			bonuses: bonuses.map((bonus) => ({
+				...bonus,
+				label: `${bonus.value >= 0 ? '+' : ''}${bonus.value} ${
+					bonus.source || game.i18n.localize('IRONSWORN.NextMoveBonus.Unnamed')
+				}`
+			}))
+		})
+	}
+	return groups
+}
+
+/**
+ * The next-move bonuses ticked in the roll dialog. When the dialog lets you
+ * pick the character, only that character's bonuses count.
+ */
+function checkedNextMoveBonuses(
+	form: HTMLFormElement
+): Array<{ actorId: string; id: string; source: string; value: number }> {
+	const selectedActorId = (
+		form.elements.namedItem('char') as HTMLSelectElement | null
+	)?.value
+	return Array.from(
+		form.querySelectorAll<HTMLInputElement>('input[data-next-move-bonus]')
+	)
+		.filter((el) => el.checked)
+		.filter((el) => !selectedActorId || el.dataset.actorId === selectedActorId)
+		.map((el) => ({
+			actorId: el.dataset.actorId ?? '',
+			id: el.value,
+			source:
+				el.dataset.source ||
+				game.i18n.localize('IRONSWORN.NextMoveBonus.Unnamed'),
+			value: Number(el.dataset.value ?? 0)
+		}))
+}
+
 function prerollOptionsWithFormData(
 	form: HTMLFormElement,
 	base: PreRollOptions
@@ -175,6 +232,12 @@ function prerollOptionsWithFormData(
 	}
 
 	opts.adds = valMap.adds
+
+	const bonuses = checkedNextMoveBonuses(form)
+	opts.bonuses =
+		bonuses.length > 0
+			? bonuses.map(({ source, value }) => ({ source, value }))
+			: undefined
 
 	if (isSet(valMap.automaticOutcomeValue)) {
 		opts.automaticOutcome = {
@@ -246,6 +309,21 @@ export class IronswornPrerollDialog extends DialogV2 {
 				document.createRange().createContextualFragment(graphic)
 			)
 		}
+		// Only show the selected character's next-move bonuses
+		const showBonusesForSelectedActor = () => {
+			const select = form.elements.namedItem('char') as HTMLSelectElement | null
+			element
+				.querySelectorAll<HTMLElement>('.next-move-bonuses[data-actor-id]')
+				.forEach((el) => {
+					el.hidden = select != null && el.dataset.actorId !== select.value
+				})
+		}
+		showBonusesForSelectedActor()
+		element
+			.querySelector('select[name="char"]')
+			?.addEventListener('change', showBonusesForSelectedActor)
+		void rerender()
+
 		element.querySelectorAll('input').forEach((el) => el.addEventListener('change', rerender))
 		element.querySelectorAll('select').forEach((el) => el.addEventListener('change', rerender))
 	}
@@ -270,9 +348,12 @@ export class IronswornPrerollDialog extends DialogV2 {
 					: undefined
 		}
 
+		const rollingActor =
+			document instanceof IronswornActor ? document : document.parent
 		const content = await this.renderContent({
 			prerollOptions,
-			action: true
+			action: true,
+			nextMoveBonusGroups: nextMoveBonusGroups([rollingActor])
 		})
 
 		return new IronswornPrerollDialog(prerollOptions, {
@@ -319,7 +400,10 @@ export class IronswornPrerollDialog extends DialogV2 {
 			moveDsId
 		}
 
-		const content = await this.renderContent({ prerollOptions, move })
+		const content = await this.renderContent({
+			prerollOptions,
+			move
+		})
 
 		return new IronswornPrerollDialog(prerollOptions, {
 			window: { title },
@@ -414,7 +498,9 @@ export class IronswornPrerollDialog extends DialogV2 {
 			actor: opts?.actor,
 			allActors,
 			showActorSelect,
-			action: true
+			action: true,
+			nextMoveBonusGroups:
+				prerollOptions.progress == null ? nextMoveBonusGroups(allActors) : []
 		})
 
 		const buttons = options.map((option, i) => {
@@ -469,10 +555,17 @@ export class IronswornPrerollDialog extends DialogV2 {
 		opts: PreRollOptions
 	) {
 		const realOpts = prerollOptionsWithFormData(form, opts)
+		const spentBonuses = checkedNextMoveBonuses(form)
 
 		const r = new IronswornRoll(realOpts)
 		const msg = new IronswornRollMessage(r)
 		await msg.createOrUpdate()
+
+		// The roll has been made, so its ticked next-move bonuses are spent
+		const spender = game.actors?.get(spentBonuses[0]?.actorId ?? '')
+		if (IronswornActor.assert(spender, 'character')) {
+			await spender.system.removeNextMoveBonuses(spentBonuses.map((x) => x.id))
+		}
 		await new Promise((r) => setTimeout(r, 50))
 
 		// Show resolution dialog if needed
@@ -490,6 +583,7 @@ export class IronswornPrerollDialog extends DialogV2 {
 		allActors?: IronswornActor[]
 		showActorSelect?: boolean
 		action?: boolean
+		nextMoveBonusGroups?: NextMoveBonusGroup[]
 	}): Promise<string> {
 		const graphic = await renderRollGraphic({
 			preRollOptions: data.prerollOptions

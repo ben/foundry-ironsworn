@@ -117,6 +117,16 @@
 			"Discoveries": "Discoveries",
 			"Quests": "Quests"
 		},
+		"NextMoveBonus": {
+			"Label": "Next Move Bonus",
+			"Unnamed": "Bonus",
+			"Add": "Add a bonus to your next move",
+			"Remove": "Discard this bonus",
+			"SourcePlaceholder": "Source, e.g. Secure an Advantage",
+			"AddFromRoll": "{value} on your next move",
+			"Added": "{value} added to your next move",
+			"Hint": "Bonuses waiting for your next move. Ticked bonuses are added to the next roll you make and then removed; progress rolls don't use them by default."
+		},
 		"CombatPosition": {
 			"InControl": "In Control",
 			"InABadSpot": "In a Bad Spot",

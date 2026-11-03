@@ -72,6 +72,7 @@
 					meters and cover the HOLD track when the sheet is resized. -->
 				<section class="nogrow" :class="$style.impacts" data-tourid="impacts">
 					<hr class="nogrow" />
+					<NextMoveBonuses :class="$style.nextMoveBonuses" />
 					<sf-impacts />
 				</section>
 			</div>
@@ -105,6 +106,7 @@ import Tab from './components/tabs/tab.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import PlayerAssets from './components/asset/player-assets.vue'
+import NextMoveBonuses from './components/next-move-bonuses.vue'
 
 const props = defineProps<{
 	data: {
@@ -151,6 +153,9 @@ provide(ActorKey, computed(() => props.data.actor) as any)
 .tabSet {
 	flex: 1 1 0;
 	min-height: 0;
+}
+.nextMoveBonuses {
+	margin-bottom: var(--ironsworn-spacer-md);
 }
 </style>
 
