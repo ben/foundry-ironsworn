@@ -2,7 +2,10 @@
 
 ## Next Release
 
+## 1.28.3
+
 - Fix wraparound for text in asset Options field.
+- Allow disabling of move-sheet tooltips ([#1099](https://github.com/ben/foundry-ironsworn/pull/1099))
 
 ## 1.28.2
 
