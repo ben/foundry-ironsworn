@@ -105,6 +105,11 @@ export function VueAppMixin<TBase extends Constructor>(Base: TBase) {
 
 			const vuerootEl = element.querySelector('.vueroot')
 			if (vuerootEl != null) {
+				// .vueroot is a <form> nested in the AppV2 <form>; browsers don't bubble
+				// its submit to the outer form, so Enter would trigger a native page load.
+				vuerootEl.addEventListener('submit', (event) => {
+					event.preventDefault()
+				})
 				this.vueRoot = this.vueApp.mount(vuerootEl as Element)
 				setTimeout(() => this._activateVueListeners(element, true), 150)
 			}
