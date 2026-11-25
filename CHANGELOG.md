@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.28.5
+
 - Fix typos in Lodestar pack IDs ([#1104](https://github.com/ben/foundry-ironsworn/pull/1104))
 
 ## 1.28.4
