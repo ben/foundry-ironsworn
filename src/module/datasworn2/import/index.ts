@@ -64,7 +64,7 @@ const MODULE_ID = 'foundry-ironsworn'
 const ORACLE_PACK_COMPENDIUMS: Record<string, string> = {
 	'ironsworn-oracles': 'ironswornoracles',
 	'delve-oracles': 'ironsworndelveoracles',
-	'lodestar-oracles': 'ironsworndolestaroracles',
+	'lodestar-oracles': 'ironswornlodestaroracles',
 	'starforged-oracles': 'starforgedoracles',
 	'sundered-isles-oracles': 'sunderedislesoracles'
 }
