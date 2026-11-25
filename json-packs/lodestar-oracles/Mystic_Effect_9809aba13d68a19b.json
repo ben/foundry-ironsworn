@@ -430,7 +430,7 @@
       "img": "icons/dice/d10black.svg",
       "description": "<p>Roll twice</p>",
       "name": "Mystic Effect",
-      "documentUuid": "Compendium.foundry-ironsworn.ironsworndolestaroracles.RollTable.9809aba13d68a19b",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornlodestaroracles.RollTable.9809aba13d68a19b",
       "_key": "!tables.results!9809aba13d68a19b.1d5b3a10282b75ed"
     },
     {
@@ -446,7 +446,7 @@
       "img": "icons/dice/d10black.svg",
       "description": "<p>Roll twice</p>",
       "name": "Mystic Effect",
-      "documentUuid": "Compendium.foundry-ironsworn.ironsworndolestaroracles.RollTable.9809aba13d68a19b",
+      "documentUuid": "Compendium.foundry-ironsworn.ironswornlodestaroracles.RollTable.9809aba13d68a19b",
       "_key": "!tables.results!9809aba13d68a19b.53b6ed20137f5514"
     }
   ],

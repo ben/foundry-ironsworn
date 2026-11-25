@@ -17,21 +17,21 @@ export const COMPENDIUM_KEY_MAP = {
 	move: {
 		classic: 'foundry-ironsworn.ironswornmoves',
 		delve: 'foundry-ironsworn.ironsworndelvemoves',
-		lodestar: 'foundry-ironsworn.ironsworndolestarmoves',
+		lodestar: 'foundry-ironsworn.ironswornlodestarmoves',
 		starforged: 'foundry-ironsworn.starforgedmoves',
 		sundered_isles: 'foundry-ironsworn.sunderedislesmoves'
 	},
 	oracle_collection: {
 		classic: 'foundry-ironsworn.ironswornoracles',
 		delve: 'foundry-ironsworn.ironsworndelveoracles',
-		lodestar: 'foundry-ironsworn.ironsworndolestaroracles',
+		lodestar: 'foundry-ironsworn.ironswornlodestaroracles',
 		starforged: 'foundry-ironsworn.starforgedoracles',
 		sundered_isles: 'foundry-ironsworn.sunderedislesmoves'
 	},
 	oracle_rollable: {
 		classic: 'foundry-ironsworn.ironswornoracles',
 		delve: 'foundry-ironsworn.ironsworndelveoracles',
-		lodestar: 'foundry-ironsworn.ironsworndolestaroracles',
+		lodestar: 'foundry-ironsworn.ironswornlodestaroracles',
 		starforged: 'foundry-ironsworn.starforgedoracles',
 		sundered_isles: 'foundry-ironsworn.sunderedislesoracles'
 	},

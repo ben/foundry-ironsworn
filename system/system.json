@@ -116,8 +116,8 @@
       "name": "Ironsworn: Lodestar",
       "color": "#444444",
       "packs": [
-        "ironsworndolestarmoves",
-        "ironsworndolestaroracles"
+        "ironswornlodestarmoves",
+        "ironswornlodestaroracles"
       ]
     },
     {
@@ -245,14 +245,14 @@
       "type": "JournalEntry"
     },
     {
-      "name": "ironsworndolestarmoves",
+      "name": "ironswornlodestarmoves",
       "label": "Ironsworn Lodestar Moves",
       "system": "foundry-ironsworn",
       "path": "packs/lodestar-moves",
       "type": "Item"
     },
     {
-      "name": "ironsworndolestaroracles",
+      "name": "ironswornlodestaroracles",
       "label": "Ironsworn Lodestar Oracles",
       "system": "foundry-ironsworn",
       "path": "packs/lodestar-oracles",
