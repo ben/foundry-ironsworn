@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix typos in Lodestar pack IDs ([#1104](https://github.com/ben/foundry-ironsworn/pull/1104))
+
 ## 1.28.4
 
 - Fix the "enter" key breaking foundry's UI ([#1103](https://github.com/ben/foundry-ironsworn/pull/1103))
